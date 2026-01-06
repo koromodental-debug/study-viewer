@@ -9,7 +9,8 @@
     searchQuery: '',
     collapsedCategories: new Set(),
     sidebarOpen: false,
-    searchOpen: false
+    searchOpen: false,
+    qaShowAll: false
   };
 
   // DOM要素
@@ -28,6 +29,8 @@
     htmlContent: document.getElementById('html-content'),
     qaContent: document.getElementById('qa-content'),
     htmlFrame: document.getElementById('html-frame'),
+    qaToolbar: document.getElementById('qa-toolbar'),
+    qaModeToggle: document.getElementById('qa-mode-toggle'),
     qaDisplay: document.getElementById('qa-display')
   };
 
@@ -84,6 +87,9 @@
         switchTab(tab.dataset.tab);
       });
     });
+
+    // Q&Aモード切り替え
+    elements.qaModeToggle.addEventListener('click', toggleQAMode);
 
     // キーボードショートカット
     document.addEventListener('keydown', (e) => {
@@ -314,6 +320,7 @@
     } else {
       elements.qaDisplay.innerHTML = '';
       elements.qaDisplay.style.display = 'none';
+      elements.qaToolbar.style.display = 'none';
       elements.qaContent.querySelector('.placeholder').style.display = 'flex';
       elements.qaContent.querySelector('.placeholder p').textContent = 'このトピックにはQ&Aがありません';
     }
@@ -331,11 +338,18 @@
       const html = parseQA(text);
       elements.qaDisplay.innerHTML = html;
       elements.qaDisplay.style.display = 'block';
+      elements.qaToolbar.style.display = 'flex';
       elements.qaContent.querySelector('.placeholder').style.display = 'none';
 
-      // Q&Aの折りたたみイベント
+      // 現在のモードを適用
+      if (state.qaShowAll) {
+        elements.qaDisplay.classList.add('show-all');
+      }
+
+      // Q&Aの折りたたみイベント（全表示モードでは無効）
       elements.qaDisplay.querySelectorAll('.qa-question').forEach(q => {
         q.addEventListener('click', () => {
+          if (state.qaShowAll) return;
           const answer = q.nextElementSibling;
           if (answer && answer.classList.contains('qa-answer')) {
             answer.classList.toggle('show');
@@ -443,6 +457,28 @@
 
     elements.htmlContent.classList.toggle('active', tab === 'html');
     elements.qaContent.classList.toggle('active', tab === 'qa');
+  }
+
+  /**
+   * Q&A表示モードを切り替え
+   */
+  function toggleQAMode() {
+    state.qaShowAll = !state.qaShowAll;
+
+    elements.qaModeToggle.classList.toggle('active', state.qaShowAll);
+    elements.qaDisplay.classList.toggle('show-all', state.qaShowAll);
+
+    // ボタンテキストを更新
+    const modeIcon = elements.qaModeToggle.querySelector('.mode-icon');
+    const modeText = elements.qaModeToggle.querySelector('.mode-text');
+
+    if (state.qaShowAll) {
+      modeIcon.textContent = '📕';
+      modeText.textContent = '折りたたむ';
+    } else {
+      modeIcon.textContent = '📖';
+      modeText.textContent = '全て表示';
+    }
   }
 
   /**

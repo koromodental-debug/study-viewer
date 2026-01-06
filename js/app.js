@@ -146,7 +146,9 @@
     elements.qaContent.addEventListener('scroll', handleScroll);
 
     function handleScroll(e) {
-      const currentScrollY = e.target.scrollTop;
+      const currentScrollY = e.target.scrollTop !== undefined
+        ? e.target.scrollTop
+        : (e.target.documentElement || e.target.body).scrollTop;
       const diff = currentScrollY - state.lastScrollY;
 
       // 一定量以上スクロールした場合のみ反応
@@ -170,6 +172,21 @@
 
       state.lastScrollY = currentScrollY;
     }
+
+    // iframeスクロール監視を公開
+    window.setupIframeScrollHandler = function(iframe) {
+      try {
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        const iframeWin = iframe.contentWindow;
+
+        iframeWin.addEventListener('scroll', function() {
+          const scrollY = iframeWin.scrollY || iframeDoc.documentElement.scrollTop || 0;
+          handleScroll({ target: { scrollTop: scrollY } });
+        });
+      } catch (e) {
+        console.log('Could not setup iframe scroll handler:', e.message);
+      }
+    };
   }
 
   /**
@@ -437,9 +454,12 @@
       elements.htmlFrame.style.display = 'block';
       elements.htmlContent.querySelector('.placeholder').style.display = 'none';
 
-      // iframeロード後にモバイル用CSSを注入
+      // iframeロード後にモバイル用CSSを注入 & スクロール監視
       elements.htmlFrame.onload = function() {
         injectMobileStyles(elements.htmlFrame);
+        if (window.setupIframeScrollHandler) {
+          window.setupIframeScrollHandler(elements.htmlFrame);
+        }
       };
     } else {
       elements.htmlFrame.src = '';

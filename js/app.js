@@ -35,7 +35,9 @@
     htmlContent: document.getElementById('html-content'),
     qaContent: document.getElementById('qa-content'),
     htmlFrame: document.getElementById('html-frame'),
-    qaDisplay: document.getElementById('qa-display')
+    qaDisplay: document.getElementById('qa-display'),
+    qaToolbar: document.getElementById('qa-toolbar'),
+    qaToggleBtn: document.getElementById('qa-toggle-btn')
   };
 
   // 検索エンジン
@@ -113,6 +115,14 @@
       qaModeToggle.addEventListener('click', toggleQAMode);
     }
 
+    // Q&Aトグルボタン
+    if (elements.qaToggleBtn) {
+      elements.qaToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleQAMode();
+      });
+    }
+
     // キーボードショートカット
     document.addEventListener('keydown', (e) => {
       // Ctrl+K or Cmd+K で検索を開く
@@ -145,59 +155,71 @@
    * スワイプでタブを切り替える
    */
   function setupSwipeTabSwitch() {
-    const swipeThreshold = 50; // スワイプ判定の閾値（px）
-    const swipeVelocityThreshold = 0.2; // スワイプ速度の閾値（px/ms）
+    const swipeThreshold = 80; // スワイプ判定の閾値（px）
     let touchStartX = 0;
     let touchStartY = 0;
-    let touchStartTime = 0;
+    let isSwiping = false;
 
-    function handleTouchStart(e) {
-      if (e.touches && e.touches.length > 0) {
+    // メインコンテンツ全体でスワイプを検出
+    const mainContent = elements.mainContent;
+
+    mainContent.addEventListener('touchstart', function(e) {
+      if (e.touches && e.touches.length === 1) {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
-        touchStartTime = Date.now();
+        isSwiping = true;
       }
-    }
+    }, { passive: true });
 
-    function handleTouchEnd(e) {
-      if (!e.changedTouches || e.changedTouches.length === 0) return;
+    mainContent.addEventListener('touchend', function(e) {
+      if (!isSwiping || !e.changedTouches || e.changedTouches.length === 0) return;
+      isSwiping = false;
 
       const touchEndX = e.changedTouches[0].clientX;
       const touchEndY = e.changedTouches[0].clientY;
-      const touchEndTime = Date.now();
-
       const diffX = touchEndX - touchStartX;
       const diffY = touchEndY - touchStartY;
-      const duration = touchEndTime - touchStartTime;
-      const velocity = Math.abs(diffX) / duration;
 
-      // 横方向の移動が縦より大きく、閾値を超えた場合のみスワイプと判定
-      if (Math.abs(diffX) > Math.abs(diffY) &&
-          (Math.abs(diffX) > swipeThreshold || velocity > swipeVelocityThreshold)) {
-        if (diffX < 0 && state.activeTab === 'html') {
-          // 左スワイプ → Q&Aへ
+      // 横方向の移動が縦より大きく、閾値を超えた場合
+      if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+        if (diffX < 0 && state.currentTab === 'html') {
           switchTab('qa');
-        } else if (diffX > 0 && state.activeTab === 'qa') {
-          // 右スワイプ → HTMLへ
+        } else if (diffX > 0 && state.currentTab === 'qa') {
           switchTab('html');
         }
       }
-    }
+    }, { passive: true });
 
-    // Q&Aコンテンツのスワイプ監視
-    elements.qaContent.addEventListener('touchstart', handleTouchStart, { passive: true });
-    elements.qaContent.addEventListener('touchend', handleTouchEnd, { passive: true });
-
-    // HTMLコンテンツ（iframe外側）のスワイプ監視
-    elements.htmlContent.addEventListener('touchstart', handleTouchStart, { passive: true });
-    elements.htmlContent.addEventListener('touchend', handleTouchEnd, { passive: true });
-
-    // iframeスワイプ監視を公開
+    // iframe内のスワイプも検出
     window.setupIframeSwipeHandler = function(iframe) {
       try {
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-        iframeDoc.addEventListener('touchstart', handleTouchStart, { passive: true });
-        iframeDoc.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+        iframeDoc.addEventListener('touchstart', function(e) {
+          if (e.touches && e.touches.length === 1) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            isSwiping = true;
+          }
+        }, { passive: true });
+
+        iframeDoc.addEventListener('touchend', function(e) {
+          if (!isSwiping || !e.changedTouches || e.changedTouches.length === 0) return;
+          isSwiping = false;
+
+          const touchEndX = e.changedTouches[0].clientX;
+          const touchEndY = e.changedTouches[0].clientY;
+          const diffX = touchEndX - touchStartX;
+          const diffY = touchEndY - touchStartY;
+
+          if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+            if (diffX < 0 && state.currentTab === 'html') {
+              switchTab('qa');
+            } else if (diffX > 0 && state.currentTab === 'qa') {
+              switchTab('html');
+            }
+          }
+        }, { passive: true });
       } catch (e) {
         console.log('Could not setup iframe swipe handler:', e.message);
       }
@@ -498,7 +520,7 @@
 
         /* 全体の幅と余白を調整 */
         body {
-          padding: 20px !important;
+          padding: 0 !important;
           padding-bottom: 150px !important;
           line-height: 1.8 !important;
         }
@@ -574,9 +596,9 @@
           background: #fafafa !important;
         }
         .page {
-          max-width: 800px !important;
-          margin: 0 auto !important;
-          padding: 32px 20px !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding: 16px !important;
           padding-bottom: 150px !important;
         }
 
@@ -676,9 +698,33 @@
           background: white !important;
           border-radius: 16px !important;
           box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
-          border-left: 4px solid #e52222 !important;
+          border: none !important;
+          border-left: none !important;
           padding: 12px 16px !important;
           margin: 16px 0 !important;
+        }
+
+        /* 全てのボーダーラインを削除 */
+        .syllabus-item,
+        .definition-box,
+        .exam-box,
+        .note-box,
+        blockquote,
+        [class*="box"],
+        [class*="item"] {
+          border-left: none !important;
+          border-right: none !important;
+        }
+
+        /* カード内の要素も */
+        .syllabus-item,
+        .exam-item {
+          background: white !important;
+          border-radius: 16px !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+          border: none !important;
+          padding: 12px 16px !important;
+          margin: 12px 0 !important;
         }
       `;
       doc.head.appendChild(style);
@@ -723,6 +769,10 @@
       elements.qaDisplay.style.display = 'none';
       elements.qaContent.querySelector('.placeholder').style.display = 'flex';
       elements.qaContent.querySelector('.placeholder p').textContent = 'このトピックにはQ&Aがありません';
+      // ツールバーを非表示
+      if (elements.qaToolbar) {
+        elements.qaToolbar.style.display = 'none';
+      }
     }
   }
 
@@ -745,6 +795,15 @@
         elements.qaDisplay.classList.add('show-all');
       }
 
+      // ツールバーを表示し、ボタンの状態を同期
+      if (elements.qaToolbar) {
+        elements.qaToolbar.style.display = 'block';
+      }
+      if (elements.qaToggleBtn) {
+        elements.qaToggleBtn.classList.toggle('active', state.qaShowAll);
+        elements.qaToggleBtn.textContent = state.qaShowAll ? '折りたたむ' : '全て表示';
+      }
+
       // Q&Aの折りたたみイベント（全表示モードでは無効）
       elements.qaDisplay.querySelectorAll('.qa-question').forEach(q => {
         q.addEventListener('click', () => {
@@ -755,6 +814,7 @@
           }
         });
       });
+
     } catch (e) {
       elements.qaDisplay.innerHTML = '<div class="no-results">Q&Aを読み込めませんでした</div>';
       elements.qaDisplay.style.display = 'block';
@@ -1081,6 +1141,12 @@
     if (qaModeToggle) {
       qaModeToggle.classList.toggle('active', state.qaShowAll);
       qaModeToggle.textContent = state.qaShowAll ? '折りたたむ' : '全て表示';
+    }
+
+    // トグルボタンを更新
+    if (elements.qaToggleBtn) {
+      elements.qaToggleBtn.classList.toggle('active', state.qaShowAll);
+      elements.qaToggleBtn.textContent = state.qaShowAll ? '折りたたむ' : '全て表示';
     }
   }
 

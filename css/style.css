@@ -828,6 +828,13 @@ body {
   padding: 12px 16px;
   z-index: 10;
   border-bottom: 1px solid var(--border-color);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.qa-toolbar.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .qa-toggle-btn {

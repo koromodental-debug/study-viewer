@@ -149,6 +149,9 @@
 
     // スワイプでタブ切り替え
     setupSwipeTabSwitch();
+
+    // Q&Aツールバーのスクロール表示/非表示
+    setupQAToolbarScroll();
   }
 
   /**
@@ -236,6 +239,32 @@
     window.setupIframeScrollHandler = function(iframe) {
       // 無効化
     };
+  }
+
+  /**
+   * Q&Aツールバーをスクロール方向に応じて表示/非表示
+   */
+  function setupQAToolbarScroll() {
+    let lastScrollTop = 0;
+    const threshold = 10; // スクロール検知の閾値
+
+    elements.qaContent.addEventListener('scroll', function() {
+      if (!elements.qaToolbar) return;
+
+      const scrollTop = elements.qaContent.scrollTop;
+      const diff = scrollTop - lastScrollTop;
+
+      // 下にスクロール（コンテンツを読み進める）→ ツールバーを隠す
+      if (diff > threshold) {
+        elements.qaToolbar.classList.add('hidden');
+      }
+      // 上にスクロール（戻る）→ ツールバーを表示
+      else if (diff < -threshold) {
+        elements.qaToolbar.classList.remove('hidden');
+      }
+
+      lastScrollTop = scrollTop;
+    }, { passive: true });
   }
 
   /**

@@ -550,6 +550,49 @@
           max-width: 100% !important;
           height: auto !important;
         }
+
+        /* ===== Leicaスタイル統一 ===== */
+
+        /* CSS変数の上書き */
+        :root {
+          --accent: #e52222 !important;
+          --bg-blue-light: #f5f5f5 !important;
+          --border-blue: #e8e8e8 !important;
+          --text-primary: #2c2c2c !important;
+        }
+
+        /* 見出し */
+        h1 {
+          color: #2c2c2c !important;
+        }
+        h2 {
+          color: #2c2c2c !important;
+          border-color: #2c2c2c !important;
+        }
+        h2 .num {
+          color: #2c2c2c !important;
+        }
+        h3::before {
+          color: #e52222 !important;
+        }
+
+        /* ポイントボックス・サマリーボックス */
+        .point-box, .summary-box {
+          background: #f5f5f5 !important;
+        }
+        .point-box-title, .summary-box-title {
+          color: #2c2c2c !important;
+        }
+
+        /* 問題ボックスの正解表示 */
+        .question-box .answer {
+          color: #e52222 !important;
+        }
+
+        /* シラバスセクション */
+        .syllabus-section {
+          border-left-color: #e52222 !important;
+        }
       `;
       doc.head.appendChild(style);
     } catch (e) {

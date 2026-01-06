@@ -124,7 +124,7 @@ body {
 }
 
 .header-tab.active {
-  background: var(--text-color);
+  background: #007AFF;
   color: white;
 }
 

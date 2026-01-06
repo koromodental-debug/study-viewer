@@ -220,7 +220,7 @@
       .overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 99; }
       .overlay.active { display: block; }
     }
-  @media (max-width: 768px) { .container, [class*="column"] { column-count: 1 !important; columns: 1 !important; } .page { padding: 10px !important; } table { display: block; overflow-x: auto; } }</style>
+  </style>
 </head>
 <body>
   <div class="app">
@@ -649,6 +649,467 @@ const contentData = {
           <li><span class="red">病院</span>＝20床以上、<span class="red">診療所</span>＝19床以下</li>
           <li><span class="red">介護保険</span>＝保険者は市町村、65歳以上が第1号</li>
           <li><span class="red">国民医療費</span>＝約48兆円、保険料50%・公費38%・患者12%</li>
+        </ul>
+      </div>
+
+    </div>`
+  },
+  "イ_医療法": {
+    title: `医療法`,
+    category: `必修02 社会と歯科医療`,
+    mainCategory: `必修`,
+    ratio: `約22%`,
+    content: `<h1>医療法</h1>
+    <p style="color: #6E6E73; margin-bottom: 12px;">必修 ＞ 2. 社会と歯科医療 ＞ イ. 保健・医療・福祉・介護の制度と医療経済 ＞ b. 医療法</p>
+
+    <div class="container">
+
+      <!-- 医療法の概要 -->
+      <h2>1. 医療法の構成</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">医療法の章構成</div>
+        <ul>
+          <li><span class="highlight">第1章 総則</span>：医療の目的、医療提供の理念</li>
+          <li><span class="highlight">第2章</span>：医療に関する選択の支援等</li>
+          <li><span class="highlight">第3章</span>：医療の安全の確保</li>
+          <li><span class="highlight">第4章</span>：病院、診療所及び助産所</li>
+          <li><span class="highlight">第5章</span>：医療提供体制の確保（医療計画）</li>
+        </ul>
+      </div>
+
+      <h3>医療法で規定される主な事項</h3>
+      <table>
+        <tr><th>規定事項</th><th>内容</th></tr>
+        <tr><td>医療施設の定義</td><td>病院・診療所・助産所の区分</td></tr>
+        <tr><td>インフォームド・コンセント</td><td>適切な説明を行い<span class="highlight">理解を得るよう努める</span>（努力義務）</td></tr>
+        <tr><td>医療計画</td><td>都道府県が策定（5疾病5事業）</td></tr>
+        <tr><td>広告規制</td><td>標榜可能な診療科名の制限</td></tr>
+        <tr><td>記録の保存</td><td>手術記録・検査所見記録等の保存義務</td></tr>
+        <tr><td>院内感染対策</td><td>院内感染対策委員会の開催義務</td></tr>
+        <tr><td>医療安全</td><td>医療安全指針の策定義務</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">118D-6</div>
+        <p>医療法に基づいて患者への説明のために作成されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 処方箋<br>
+          b: 診断書<br>
+          c: 診療録<br>
+          d: 診療報酬請求書<br>
+          e: 入院診療計画書
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <!-- 医療施設 -->
+      <h2>2. 医療施設の定義</h2>
+
+      <table>
+        <tr><th>施設</th><th>定義</th><th>備考</th></tr>
+        <tr><td><span class="highlight">病院</span></td><td><span class="red">20床以上</span>の病床を有する</td><td>都道府県知事の許可が必要</td></tr>
+        <tr><td><span class="highlight">診療所</span></td><td><span class="red">19床以下</span>（または無床）</td><td>開設後10日以内に届出</td></tr>
+        <tr><td>助産所</td><td>9床以下</td><td>嘱託医師・嘱託医療機関が必要</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">特別な病院の種類</div>
+        <ul>
+          <li><span class="highlight">特定機能病院</span>：高度医療の提供・研修（厚生労働大臣の承認）</li>
+          <li><span class="highlight">地域医療支援病院</span>：紹介患者の受入、救急医療（都道府県知事の承認）</li>
+          <li><span class="highlight">臨床研修病院</span>：臨床研修を行う病院（厚生労働大臣の指定）</li>
+        </ul>
+      </div>
+
+      <h3>開設届・許可</h3>
+      <table>
+        <tr><th>施設</th><th>開設者</th><th>届出・許可</th></tr>
+        <tr><td>診療所（臨床研修修了医師・歯科医師）</td><td>本人</td><td>開設後10日以内に都道府県知事へ届出</td></tr>
+        <tr><td>診療所（それ以外）</td><td>法人等</td><td>都道府県知事の許可が必要</td></tr>
+        <tr><td>病院</td><td>—</td><td>都道府県知事の許可が必要</td></tr>
+      </table>
+
+      <!-- 医療計画 -->
+      <h2>3. 医療計画</h2>
+
+      <p><span class="highlight">都道府県</span>が策定する。医療圏の設定、病床数の規制、医療連携体制の構築を定める。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">5疾病5事業（＋在宅医療）</div>
+        <table>
+          <tr><th>5疾病</th><th>5事業</th></tr>
+          <tr><td>がん</td><td><span class="highlight">救急医療</span></td></tr>
+          <tr><td>脳卒中</td><td>災害時医療</td></tr>
+          <tr><td>心筋梗塞等の心血管疾患</td><td>へき地医療</td></tr>
+          <tr><td>糖尿病</td><td>周産期医療</td></tr>
+          <tr><td>精神疾患</td><td>小児医療（小児救急含む）</td></tr>
+        </table>
+        <p style="margin-top: 6px;">※ 在宅医療の確保も医療計画に含まれる</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B-8</div>
+        <p>医療法で定める都道府県の業務はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 特殊健康診断の実施<br>
+          b: 一般介護予防事業の実施<br>
+          c: 医療費適正化計画の立案<br>
+          d: 終末期医療を担う病院の配置<br>
+          e: 救急医療に関する医療計画の策定
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D-12</div>
+        <p>医療法に基づく第7次医療計画（2018年）の5事業に含まれるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 遠隔医療<br>
+          b: 再生医療<br>
+          c: 周術期医療<br>
+          d: 終末期医療<br>
+          e: へき地の医療
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A-26</div>
+        <p>医療法に基づく医療計画で定められているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 医療圏の設定<br>
+          b: 医療費の削減<br>
+          c: 在宅医療の確保<br>
+          d: 介護老人福祉施設の確保<br>
+          e: 80歳で20歯以上有する者の増加
+        </div>
+        <div class="answer">正解: a, c</div>
+      </div>
+
+      <!-- インフォームド・コンセント -->
+      <h2>4. インフォームド・コンセント</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">医療法の規定（第1条の4第2項）</div>
+        <p>「医師、歯科医師、薬剤師、看護師その他の医療の担い手は、医療を提供するに当たり、適切な説明を行い、医療を受ける者の<span class="highlight">理解</span>を得るよう努めなければならない」</p>
+      </div>
+
+      <ul>
+        <li>医療法で規定されているのは<span class="highlight">努力義務</span></li>
+        <li>目的は<span class="highlight">患者の自己決定権</span>の尊重</li>
+        <li><span class="red">「同意」ではなく「理解」</span>を得る</li>
+        <li>説明文書は必須ではない（口頭でも可）</li>
+        <li>患者は同意後も<span class="highlight">撤回可能</span></li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">117A-20</div>
+        <p>医療法の一部を示す。<br>
+医師、歯科医師、薬剤師、看護師その他の医療の担い手は、医療を提供するに当たり、適切な説明を行い、医療を受ける者の（　　）を得るよう努めなければならない<br>
+（　　）に入るのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 協力<br>
+          b: 許可<br>
+          c: 情報<br>
+          d: 信頼<br>
+          e: 理解
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C-2</div>
+        <p>インフォームド・コンセントで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 歯科医師法に定められている。<br>
+          b: 説明文書による説明を必須とする。<br>
+          c: 患者が同意した後の変更はできない。<br>
+          d: 患者の自己決定権の行使を目的とする。<br>
+          e: 歯科医師が決めた治療法に対する承諾である。
+        </div>
+        <div class="answer">正解: d</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A-4</div>
+        <p>患者の自己決定権を尊重する理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 説明時間の短縮<br>
+          b: 医療事故の回避<br>
+          c: 歯科医師法の遵守<br>
+          d: 患者の価値観の優先<br>
+          e: 診療代支払いの容易化
+        </div>
+        <div class="answer">正解: d</div>
+      </div>
+
+      <!-- 広告規制 -->
+      <h2>5. 広告規制</h2>
+
+      <p>医療法により、医療機関の広告は制限されている。<span class="highlight">標榜可能な診療科名</span>は限定列挙されている。</p>
+
+      <table>
+        <tr><th>標榜可能（○）</th><th>標榜不可（×）</th></tr>
+        <tr><td>歯科</td><td><span class="red">審美歯科</span></td></tr>
+        <tr><td><span class="highlight">小児歯科</span></td><td><span class="red">予防歯科</span></td></tr>
+        <tr><td>矯正歯科</td><td><span class="red">補綴歯科</span></td></tr>
+        <tr><td>歯科口腔外科</td><td><span class="red">障害者歯科</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108A-35</div>
+        <p>医療法に基づき広告可能な診療科名はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 予防歯科<br>
+          b: 審美歯科<br>
+          c: 小児歯科<br>
+          d: 補綴歯科<br>
+          e: 障害者歯科
+        </div>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <!-- 診療録・記録の保存 -->
+      <h2>6. 診療録・記録の保存</h2>
+
+      <table>
+        <tr><th>記録の種類</th><th>保存期間</th><th>根拠法</th></tr>
+        <tr><td><span class="highlight">診療録</span></td><td>5年</td><td>歯科医師法（医師法）</td></tr>
+        <tr><td>処方せん（医療機関）</td><td>3年</td><td>歯科医師法</td></tr>
+        <tr><td>処方せん（薬局）</td><td>3年</td><td>薬剤師法</td></tr>
+        <tr><td><span class="highlight">手術記録</span></td><td>2年</td><td><span class="highlight">医療法</span></td></tr>
+        <tr><td><span class="highlight">検査所見記録</span></td><td>2年</td><td><span class="highlight">医療法</span></td></tr>
+        <tr><td>エックス線写真</td><td>2年</td><td>医療法</td></tr>
+        <tr><td>歯科技工指示書</td><td>2年</td><td>歯科技工士法</td></tr>
+        <tr><td>保険診療録</td><td>完結の日から5年</td><td>療養担当規則</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">保存義務者</div>
+        <ul>
+          <li>診療録の保存義務者 = <span class="highlight">診療所管理者</span>（病院管理者）</li>
+          <li>電子媒体での保存は認められている</li>
+          <li>診療録の開示 = 医療法で<span class="highlight">努力義務</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C-6</div>
+        <p>診療に関する記録とその保存について規定している法令の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 処方箋 ーーーーー 歯科医師法<br>
+          b: 診療録 ーーーーー 医療法<br>
+          c: 手術記録 ーーーー 医療法<br>
+          d: 検査所見記録 ーー 歯科技工士法<br>
+          e: 歯科技工指示書 ー 歯科医師法
+        </div>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A-31</div>
+        <p>診療録で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 保存は初診時から5年間である。<br>
+          b: 記載の修正時には修正液を用いる。<br>
+          c: 診療内容ごとに行を空けて記載する。<br>
+          d: 電子媒体での保存が認められている。<br>
+          e: 医療機関内に保存しなければならない。
+        </div>
+        <div class="answer">正解: d</div>
+      </div>
+
+      <!-- 院内感染対策・医療安全 -->
+      <h2>7. 院内感染対策・医療安全</h2>
+
+      <h3>院内感染対策委員会</h3>
+      <p><span class="highlight">医療法</span>により、病院には院内感染対策のための委員会の開催が義務付けられている。</p>
+
+      <div class="question-box">
+        <div class="q-number">115B-3</div>
+        <p>病院における院内感染対策のための委員会の開催を規定しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 医療法<br>
+          b: 健康増進法<br>
+          c: 廃棄物の処理及び清掃に関する法律<br>
+          d: 感染症の予防及び感染症の患者に対する医療に関する法律<br>
+          e: 医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律
+        </div>
+        <div class="answer">正解: a</div>
+      </div>
+
+      <h3>医療安全指針</h3>
+      <p>歯科診療所における「医療の安全を確保するための指針」の策定は<span class="highlight">医療法</span>で規定。</p>
+
+      <div class="question-box">
+        <div class="q-number">104A-23</div>
+        <p>歯科診療所における「医療の安全を確保するための指針」の策定を定めているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 医療法<br>
+          b: 歯科医師法<br>
+          c: 健康増進法<br>
+          d: 地域保健法<br>
+          e: 国民健康保険法
+        </div>
+        <div class="answer">正解: a</div>
+      </div>
+
+      <!-- 医療安全支援センター -->
+      <h2>8. 医療安全支援センター</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">医療安全支援センターの特徴</div>
+        <ul>
+          <li>根拠法：<span class="highlight">医療法</span></li>
+          <li>設置場所：都道府県、保健所設置市、特別区</li>
+          <li>主な業務：<span class="highlight">医療に関する患者からの相談に対応</span></li>
+          <li><span class="red">医療事故の報告先ではない</span>（報告先は医療事故調査・支援センター）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118A-1</div>
+        <p>医療安全支援センターについて正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 医療事故の報告先である。<br>
+          b: 根拠法は地域保健法である。<br>
+          c: 医療安全管理者が配置される。<br>
+          d: 地域医療支援病院に設置する。<br>
+          e: 医療に関する患者からの相談に対応する。
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <!-- 報告義務・届出先 -->
+      <h2>9. 報告義務・届出先</h2>
+
+      <table>
+        <tr><th>報告事項</th><th>届出先</th><th>根拠法</th></tr>
+        <tr><td>医療事故（予期せぬ死亡）</td><td><span class="highlight">医療事故調査・支援センター</span></td><td>医療法</td></tr>
+        <tr><td>医療機器による重篤な副作用</td><td><span class="highlight">厚生労働大臣</span></td><td>医薬品医療機器等法</td></tr>
+        <tr><td>診療所開設届</td><td>都道府県知事</td><td>医療法</td></tr>
+        <tr><td>異状死体</td><td>警察（24時間以内）</td><td>医師法・歯科医師法</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111A-19</div>
+        <p>患者の「予期せぬ死亡」が発生した場合に、医療事故調査制度に基づいて医療機関が医療事故を報告する先はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 警察<br>
+          b: 保健所<br>
+          c: 厚生労働省<br>
+          d: 医療事故調査等支援団体<br>
+          e: 医療事故調査・支援センター
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118C-17</div>
+        <p>疾患の治療を目的に使用した医療機器が原因と考えられる重篤な副作用が発生した。医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律に規定されている報告義務先はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 警察署長<br>
+          b: 保健所長<br>
+          c: 市区町村長<br>
+          d: 厚生労働大臣<br>
+          e: 都道府県知事
+        </div>
+        <div class="answer">正解: d</div>
+      </div>
+
+      <!-- 法律と規定の組合せ -->
+      <h2>10. 法律と規定の整理</h2>
+
+      <h3>医療法で規定されるもの</h3>
+      <ul>
+        <li>医療施設の定義（病院・診療所）</li>
+        <li>インフォームド・コンセント（理解を得る努力義務）</li>
+        <li>医療計画（都道府県が策定）</li>
+        <li>広告規制</li>
+        <li>手術記録・検査所見記録の保存（2年）</li>
+        <li>院内感染対策委員会</li>
+        <li>医療安全指針の策定</li>
+        <li>入院診療計画書の作成</li>
+        <li>診療録の開示（努力義務）</li>
+        <li>放射線管理区域の標識</li>
+      </ul>
+
+      <h3>歯科医師法で規定されるもの</h3>
+      <ul>
+        <li>第1条：<span class="highlight">公衆衛生</span>の向上及び増進</li>
+        <li>診療録の記載・保存（5年）</li>
+        <li>処方せんの交付義務</li>
+        <li><span class="highlight">診断書の交付義務</span></li>
+        <li><span class="highlight">保健指導を行う義務</span></li>
+        <li>異状死体の届出（24時間以内）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">117D-11</div>
+        <p>歯科医師の義務と規定する法律の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 守秘義務 ーーーーーーーーーーー 医療法<br>
+          b: 処方箋の交付義務 ーーーーーーー 健康保険法<br>
+          c: 保健指導を行う義務 ーーーーーー 歯科医師法<br>
+          d: 業務従事状況の届出義務 ーーーー 地域保健法<br>
+          e: 歯科診療所開設の届出義務 ーーー 歯科口腔保健の推進に関する法律
+        </div>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D-5</div>
+        <p>歯科医師法に規定されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 診断書の交付<br>
+          b: 診療録の開示<br>
+          c: 異状死体の届出<br>
+          d: 診療所開設届の提出<br>
+          e: 医療事故報告書の作成
+        </div>
+        <div class="answer">正解: a</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A-34</div>
+        <p>歯科医師法により作成が規定されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 照射録<br>
+          b: 処方せん<br>
+          c: 死体検案書<br>
+          d: 医療事故報告書<br>
+          e: 歯科技工指示書
+        </div>
+        <div class="answer">正解: b</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A-16</div>
+        <p>下記の文は歯科医師法第1条である。（　　）に入るのはどれか。1つ選べ。<br>
+「歯科医師は、歯科医療及び保健指導を掌ることによって、（　　）の向上及び増進に寄与し、もって国民の健康な生活を確保するものとする」</p>
+        <div class="choices">
+          a: 地域保健<br>
+          b: 歯科保健<br>
+          c: 口腔衛生<br>
+          d: 公衆衛生<br>
+          e: 社会福祉
+        </div>
+        <div class="answer">正解: d</div>
+      </div>
+
+      <!-- まとめ -->
+      <div class="summary-box">
+        <div class="summary-box-title">国試で狙われるポイント</div>
+        <ul>
+          <li>病院 = <span class="highlight">20床以上</span>、診療所 = 19床以下</li>
+          <li>インフォームド・コンセント = 「<span class="highlight">理解</span>」を得る（同意ではない）</li>
+          <li>医療計画 = <span class="highlight">都道府県</span>が策定、5疾病<span class="highlight">5事業</span></li>
+          <li>広告可能：小児歯科○、審美歯科×、予防歯科×</li>
+          <li>手術記録・検査所見 = <span class="highlight">医療法</span>で2年保存</li>
+          <li>診療録 = <span class="highlight">歯科医師法</span>で5年保存</li>
+          <li>医療事故報告先 = 医療事故調査・<span class="highlight">支援センター</span></li>
+          <li>歯科医師法第1条 = 「<span class="highlight">公衆衛生</span>」の向上</li>
         </ul>
       </div>
 

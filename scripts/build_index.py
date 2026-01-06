@@ -62,10 +62,11 @@ def extract_html_text(filepath):
 def normalize_name(filename):
     """ファイル名を正規化してマッチング用のキーを生成"""
     name = Path(filename).stem
+    # 順序重要: _QA を先に削除してから _国試対策まとめ を削除
     patterns = [
+        r'_QA$',
         r'_国試対策まとめ$',
         r'_国試分析.*$',
-        r'_QA$',
         r'_v\d+$',
         r' \d+$',
     ]

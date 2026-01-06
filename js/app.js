@@ -937,6 +937,7 @@
       // ツールバーを表示し、ボタンの状態を同期
       if (elements.qaToolbar) {
         elements.qaToolbar.style.display = 'block';
+        elements.qaToolbar.classList.remove('hidden');
       }
       if (elements.qaToggleBtn) {
         elements.qaToggleBtn.classList.toggle('active', state.qaShowAll);

@@ -54,9 +54,9 @@
 
     searchEngine = new SearchEngine(DATA);
 
-    // 全カテゴリをデフォルトで折りたたみ
-    const categories = new Set(DATA.map(item => item.category || 'その他'));
-    categories.forEach(cat => state.collapsedCategories.add(cat));
+    // 科目をデフォルトで折りたたみ（科目カテゴリは展開）
+    const subjects = new Set(DATA.map(item => item.subject || 'その他'));
+    subjects.forEach(subj => state.collapsedCategories.add(`subj_${subj}`));
 
     renderTopicList(DATA);
     bindEvents();
@@ -344,7 +344,7 @@
   }
 
   /**
-   * トピックリストを描画
+   * トピックリストを描画（科目別2階層）
    */
   function renderTopicList(items) {
     const filter = state.sidebarFilter.toLowerCase().trim();
@@ -355,7 +355,8 @@
     if (isFiltering) {
       filteredItems = items.filter(item =>
         item.title.toLowerCase().includes(filter) ||
-        (item.category && item.category.toLowerCase().includes(filter))
+        (item.subject && item.subject.toLowerCase().includes(filter)) ||
+        (item.subjectCategory && item.subjectCategory.toLowerCase().includes(filter))
       );
     }
 
@@ -364,36 +365,73 @@
       return;
     }
 
-    // カテゴリでグループ化
+    // 科目カテゴリ → 科目 → トピック の3階層でグループ化
+    const categoryOrder = ['基礎', '臨床', '必修', 'その他'];
     const groups = {};
+
     filteredItems.forEach(item => {
-      const category = item.category || 'その他';
-      if (!groups[category]) {
-        groups[category] = [];
+      const subjectCat = item.subjectCategory || 'その他';
+      const subject = item.subject || 'その他';
+
+      if (!groups[subjectCat]) {
+        groups[subjectCat] = {};
       }
-      groups[category].push(item);
+      if (!groups[subjectCat][subject]) {
+        groups[subjectCat][subject] = [];
+      }
+      groups[subjectCat][subject].push(item);
     });
 
     let html = '';
-    Object.keys(groups).sort().forEach(category => {
-      // フィルター中は全カテゴリを展開
-      const isCollapsed = isFiltering ? false : state.collapsedCategories.has(category);
+
+    // 科目カテゴリ順にソート
+    const sortedCategories = Object.keys(groups).sort((a, b) => {
+      const idxA = categoryOrder.indexOf(a);
+      const idxB = categoryOrder.indexOf(b);
+      return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+    });
+
+    sortedCategories.forEach(subjectCat => {
+      const subjectCatKey = `cat_${subjectCat}`;
+      const isCatCollapsed = isFiltering ? false : state.collapsedCategories.has(subjectCatKey);
+
       html += `
-        <div class="category-group">
-          <div class="category-header" data-category="${escapeHtml(category)}">
-            <span>${escapeHtml(category)}</span>
-            <span class="toggle">${isCollapsed ? '▶' : '▼'}</span>
+        <div class="subject-category-group">
+          <div class="subject-category-header" data-category="${escapeHtml(subjectCatKey)}">
+            <span>${escapeHtml(subjectCat)}</span>
+            <span class="toggle">${isCatCollapsed ? '▶' : '▼'}</span>
           </div>
-          <div class="category-items${isCollapsed ? ' collapsed' : ''}">
+          <div class="subject-category-items${isCatCollapsed ? ' collapsed' : ''}">
       `;
 
-      groups[category].forEach(item => {
-        const isActive = state.currentItem && state.currentItem.id === item.id;
+      // 科目をソート
+      const subjects = Object.keys(groups[subjectCat]).sort();
+
+      subjects.forEach(subject => {
+        const subjectKey = `subj_${subject}`;
+        const isSubjCollapsed = isFiltering ? false : state.collapsedCategories.has(subjectKey);
+        const topicCount = groups[subjectCat][subject].length;
+
         html += `
-          <div class="topic-item${isActive ? ' active' : ''}" data-id="${escapeHtml(item.id)}">
-            <span class="title">${escapeHtml(item.title)}</span>
-          </div>
+          <div class="subject-group">
+            <div class="subject-header" data-category="${escapeHtml(subjectKey)}">
+              <span>${escapeHtml(subject)}</span>
+              <span class="count">${topicCount}</span>
+              <span class="toggle">${isSubjCollapsed ? '▶' : '▼'}</span>
+            </div>
+            <div class="subject-items${isSubjCollapsed ? ' collapsed' : ''}">
         `;
+
+        groups[subjectCat][subject].forEach(item => {
+          const isActive = state.currentItem && state.currentItem.id === item.id;
+          html += `
+            <div class="topic-item${isActive ? ' active' : ''}" data-id="${escapeHtml(item.id)}">
+              <span class="title">${escapeHtml(item.title)}</span>
+            </div>
+          `;
+        });
+
+        html += '</div></div>';
       });
 
       html += '</div></div>';
@@ -401,8 +439,16 @@
 
     elements.topicList.innerHTML = html;
 
-    // イベント登録
-    elements.topicList.querySelectorAll('.category-header').forEach(header => {
+    // イベント登録（科目カテゴリ）
+    elements.topicList.querySelectorAll('.subject-category-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const category = header.dataset.category;
+        toggleCategory(category);
+      });
+    });
+
+    // イベント登録（科目）
+    elements.topicList.querySelectorAll('.subject-header').forEach(header => {
       header.addEventListener('click', () => {
         const category = header.dataset.category;
         toggleCategory(category);

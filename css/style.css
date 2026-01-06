@@ -237,6 +237,89 @@ body {
   padding: 16px;
 }
 
+/* 科目カテゴリ（基礎/臨床） */
+.subject-category-group {
+  margin-bottom: 16px;
+}
+
+.subject-category-header {
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  background: var(--primary-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.subject-category-header:hover {
+  background: var(--primary-hover);
+}
+
+.subject-category-header .toggle {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.subject-category-items {
+  padding: 8px 0 0 0;
+}
+
+.subject-category-items.collapsed {
+  display: none;
+}
+
+/* 科目（解剖学、歯周病学など） */
+.subject-group {
+  margin-bottom: 8px;
+}
+
+.subject-header {
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-color);
+  background: var(--bg-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  margin-left: 8px;
+}
+
+.subject-header:hover {
+  background: var(--border-color);
+}
+
+.subject-header .count {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: white;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.subject-header .toggle {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-left: auto;
+}
+
+.subject-items {
+  padding: 4px 0 0 16px;
+}
+
+.subject-items.collapsed {
+  display: none;
+}
+
+/* 旧カテゴリスタイル（互換性用） */
 .category-group {
   margin-bottom: 12px;
 }

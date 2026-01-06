@@ -141,16 +141,38 @@
    * スクロール方向に応じてヘッダーを隠す/表示する
    */
   function setupScrollHideHeader() {
-    const scrollThreshold = 10;
+    const scrollThreshold = 15;
+    let ticking = false;
+    let lastProcessedScrollY = 0;
 
     // Q&Aコンテンツのスクロール監視
-    elements.qaContent.addEventListener('scroll', handleScroll);
+    elements.qaContent.addEventListener('scroll', onScroll, { passive: true });
+
+    function onScroll(e) {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll(e);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
 
     function handleScroll(e) {
-      const currentScrollY = e.target.scrollTop !== undefined
-        ? e.target.scrollTop
-        : (e.target.documentElement || e.target.body).scrollTop;
-      const diff = currentScrollY - state.lastScrollY;
+      const target = e.target;
+      const currentScrollY = target.scrollTop !== undefined
+        ? target.scrollTop
+        : (target.documentElement || target.body).scrollTop;
+
+      // 最下部付近ではスクロール処理をスキップ（バウンス干渉防止）
+      const scrollHeight = target.scrollHeight || 0;
+      const clientHeight = target.clientHeight || 0;
+      const maxScroll = scrollHeight - clientHeight;
+      if (maxScroll > 0 && currentScrollY >= maxScroll - 10) {
+        return;
+      }
+
+      const diff = currentScrollY - lastProcessedScrollY;
 
       // 一定量以上スクロールした場合のみ反応
       if (Math.abs(diff) < scrollThreshold) return;
@@ -173,7 +195,7 @@
         }
       }
 
-      state.lastScrollY = currentScrollY;
+      lastProcessedScrollY = currentScrollY;
     }
 
     // iframeスクロール監視を公開
@@ -181,11 +203,47 @@
       try {
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
         const iframeWin = iframe.contentWindow;
+        let iframeTicking = false;
+        let iframeLastScrollY = 0;
 
         iframeWin.addEventListener('scroll', function() {
-          const scrollY = iframeWin.scrollY || iframeDoc.documentElement.scrollTop || 0;
-          handleScroll({ target: { scrollTop: scrollY } });
-        });
+          if (!iframeTicking) {
+            requestAnimationFrame(() => {
+              const scrollY = iframeWin.scrollY || iframeDoc.documentElement.scrollTop || 0;
+
+              // 最下部付近ではスキップ
+              const scrollHeight = iframeDoc.documentElement.scrollHeight || iframeDoc.body.scrollHeight;
+              const clientHeight = iframeWin.innerHeight;
+              const maxScroll = scrollHeight - clientHeight;
+              if (maxScroll > 0 && scrollY >= maxScroll - 10) {
+                iframeTicking = false;
+                return;
+              }
+
+              const diff = scrollY - iframeLastScrollY;
+              if (Math.abs(diff) >= scrollThreshold) {
+                if (diff > 0 && scrollY > 60) {
+                  if (!state.headerHidden) {
+                    state.headerHidden = true;
+                    elements.header.classList.add('hidden');
+                    elements.tabsContainer.classList.add('hidden');
+                    elements.mainContent.classList.add('header-hidden');
+                  }
+                } else if (diff < 0) {
+                  if (state.headerHidden) {
+                    state.headerHidden = false;
+                    elements.header.classList.remove('hidden');
+                    elements.tabsContainer.classList.remove('hidden');
+                    elements.mainContent.classList.remove('header-hidden');
+                  }
+                }
+                iframeLastScrollY = scrollY;
+              }
+              iframeTicking = false;
+            });
+            iframeTicking = true;
+          }
+        }, { passive: true });
       } catch (e) {
         console.log('Could not setup iframe scroll handler:', e.message);
       }

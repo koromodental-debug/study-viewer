@@ -11,11 +11,15 @@
     sidebarOpen: false,
     searchOpen: false,
     qaShowAll: false,
-    sidebarFilter: ''
+    sidebarFilter: '',
+    lastScrollY: 0,
+    headerHidden: false
   };
 
   // DOM要素
   const elements = {
+    header: document.querySelector('.header'),
+    tabsContainer: document.querySelector('.tabs'),
     menuBtn: document.getElementById('menu-btn'),
     sidebar: document.getElementById('sidebar'),
     sidebarClose: document.getElementById('sidebar-close'),
@@ -127,6 +131,45 @@
         }
       }
     });
+
+    // スクロールでヘッダー表示/非表示
+    setupScrollHideHeader();
+  }
+
+  /**
+   * スクロール方向に応じてヘッダーを隠す/表示する
+   */
+  function setupScrollHideHeader() {
+    const scrollThreshold = 10;
+
+    // Q&Aコンテンツのスクロール監視
+    elements.qaContent.addEventListener('scroll', handleScroll);
+
+    function handleScroll(e) {
+      const currentScrollY = e.target.scrollTop;
+      const diff = currentScrollY - state.lastScrollY;
+
+      // 一定量以上スクロールした場合のみ反応
+      if (Math.abs(diff) < scrollThreshold) return;
+
+      if (diff > 0 && currentScrollY > 60) {
+        // 下スクロール → ヘッダーを隠す
+        if (!state.headerHidden) {
+          state.headerHidden = true;
+          elements.header.classList.add('hidden');
+          elements.tabsContainer.classList.add('hidden');
+        }
+      } else if (diff < 0) {
+        // 上スクロール → ヘッダーを表示
+        if (state.headerHidden) {
+          state.headerHidden = false;
+          elements.header.classList.remove('hidden');
+          elements.tabsContainer.classList.remove('hidden');
+        }
+      }
+
+      state.lastScrollY = currentScrollY;
+    }
   }
 
   /**

@@ -682,12 +682,18 @@
           border-collapse: separate !important;
           border-spacing: 0 !important;
         }
+        /* 横ヘッダー行（th + th）は黒 */
         th {
           background: #2c2c2c !important;
           color: white !important;
           padding: 10px 14px !important;
           font-weight: 600 !important;
           font-size: 13px !important;
+        }
+        /* 縦ラベル列（th + td）はライトグレー */
+        tr:has(th + td) th {
+          background: #f5f5f5 !important;
+          color: #2c2c2c !important;
         }
         td {
           padding: 12px 14px !important;

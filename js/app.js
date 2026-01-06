@@ -584,54 +584,56 @@
           height: auto !important;
         }
 
-        /* ===== Leicaスタイル統一 ===== */
+        /* ===== Apple風スタイル ===== */
 
         /* CSS変数の上書き */
         :root {
-          --accent: #e52222 !important;
-          --bg-blue-light: #f5f5f5 !important;
-          --border-blue: #e8e8e8 !important;
-          --text-primary: #2c2c2c !important;
+          --accent: #007AFF !important;
+          --bg-blue-light: #f5f5f7 !important;
+          --border-blue: #e5e5e7 !important;
+          --text-primary: #1d1d1f !important;
         }
 
         /* 見出し */
         h1 {
-          color: #2c2c2c !important;
+          color: #1d1d1f !important;
         }
         h2 {
-          color: #2c2c2c !important;
-          border-color: #2c2c2c !important;
+          color: #1d1d1f !important;
+          border-color: #1d1d1f !important;
         }
         h2 .num {
-          color: #2c2c2c !important;
-        }
-        h3::before {
-          color: #e52222 !important;
+          color: #1d1d1f !important;
         }
 
         /* ポイントボックス・サマリーボックス */
         .point-box, .summary-box {
-          background: #f5f5f5 !important;
+          background: #f5f5f7 !important;
         }
         .point-box-title, .summary-box-title {
-          color: #2c2c2c !important;
+          color: #1d1d1f !important;
         }
 
         /* 問題ボックスの正解表示 */
         .question-box .answer {
-          color: #e52222 !important;
+          color: #007AFF !important;
         }
 
         /* シラバスセクション */
         .syllabus-section {
-          border-left-color: #e52222 !important;
+          border-left-color: #007AFF !important;
         }
 
-        /* ===== Q&A風カードレイアウト ===== */
+        /* 強調文字（赤→青） */
+        .red, .highlight {
+          color: #007AFF !important;
+        }
 
-        /* 中央寄せ（Q&Aと統一） */
+        /* ===== カードレイアウト ===== */
+
+        /* 背景（Apple風グレー） */
         body {
-          background: #fafafa !important;
+          background: #f5f5f7 !important;
         }
         .page {
           max-width: 100% !important;
@@ -664,9 +666,10 @@
           box-shadow: none !important;
           font-size: 17px !important;
           font-weight: 700 !important;
+          color: #1d1d1f !important;
         }
         h3::before {
-          content: "■ " !important;
+          content: none !important;
         }
 
         /* テーブルをカード風に（単独でカード化） */

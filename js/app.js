@@ -693,7 +693,7 @@
         .page {
           max-width: 100% !important;
           margin: 0 !important;
-          padding: 28px !important;
+          padding: 32px !important;
           padding-bottom: 150px !important;
         }
 

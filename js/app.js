@@ -82,8 +82,10 @@
       }, 150);
     });
 
-    // 検索ボタン → サイドバーを開いて検索にフォーカス
-    elements.searchBtn.addEventListener('click', openSidebarWithSearch);
+    // 検索ボタン → サイドバーを開いて検索にフォーカス（ボタンがある場合のみ）
+    if (elements.searchBtn) {
+      elements.searchBtn.addEventListener('click', openSidebarWithSearch);
+    }
 
     // 検索オーバーレイを閉じる
     elements.closeSearch.addEventListener('click', closeSearch);

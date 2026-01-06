@@ -88,6 +88,12 @@ body {
   height: 1.5px;
   background: var(--text-color);
   border-radius: 2px;
+}
+
+/* タブを中央揃えにするためのスペーサー */
+.header-spacer {
+  width: 36px;
+  height: 36px;
   transition: all 0.3s ease;
 }
 

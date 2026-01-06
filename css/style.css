@@ -62,13 +62,13 @@ body {
 .menu-btn {
   background: rgba(255,255,255,0.15);
   border: none;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   cursor: pointer;
   border-radius: var(--radius-full);
   transition: all 0.3s ease;
@@ -81,7 +81,7 @@ body {
 
 .menu-btn span {
   display: block;
-  width: 20px;
+  width: 16px;
   height: 2px;
   background: white;
   border-radius: 2px;
@@ -128,8 +128,8 @@ body {
 .header-search-btn {
   background: rgba(255,255,255,0.15);
   border: none;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -144,8 +144,8 @@ body {
 }
 
 .search-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border: 2px solid white;
   border-radius: 50%;
   position: relative;
@@ -825,10 +825,11 @@ body {
   position: sticky;
   top: 0;
   background: var(--bg-color);
-  padding: 12px 16px;
+  padding: 8px 16px;
   z-index: 10;
   border-bottom: 1px solid var(--border-color);
   transition: transform 0.2s ease, opacity 0.2s ease;
+  text-align: center;
 }
 
 .qa-toolbar.hidden {
@@ -838,12 +839,12 @@ body {
 }
 
 .qa-toggle-btn {
-  padding: 10px 20px;
+  padding: 6px 14px;
   background: var(--primary-color);
   color: white;
   border: none;
   border-radius: var(--radius-full);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;

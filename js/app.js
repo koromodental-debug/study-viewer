@@ -82,8 +82,8 @@
       }, 150);
     });
 
-    // 検索ボタン
-    elements.searchBtn.addEventListener('click', openSearch);
+    // 検索ボタン → サイドバーを開いて検索にフォーカス
+    elements.searchBtn.addEventListener('click', openSidebarWithSearch);
 
     // 検索オーバーレイを閉じる
     elements.closeSearch.addEventListener('click', closeSearch);
@@ -125,20 +125,18 @@
 
     // キーボードショートカット
     document.addEventListener('keydown', (e) => {
-      // Ctrl+K or Cmd+K で検索を開く
+      // Ctrl+K or Cmd+K でサイドバー検索を開く
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
-        if (state.searchOpen) {
-          closeSearch();
+        if (state.sidebarOpen) {
+          closeSidebar();
         } else {
-          openSearch();
+          openSidebarWithSearch();
         }
       }
       // Escape で閉じる
       if (e.key === 'Escape') {
-        if (state.searchOpen) {
-          closeSearch();
-        } else if (state.sidebarOpen) {
+        if (state.sidebarOpen) {
           closeSidebar();
         }
       }
@@ -283,6 +281,17 @@
     state.sidebarOpen = false;
     elements.sidebar.classList.remove('open');
     elements.sidebarOverlay.classList.remove('show');
+  }
+
+  /**
+   * サイドバーを開いて検索にフォーカス
+   */
+  function openSidebarWithSearch() {
+    openSidebar();
+    // 少し待ってからフォーカス（アニメーション後）
+    setTimeout(() => {
+      elements.sidebarFilter.focus();
+    }, 100);
   }
 
   /**

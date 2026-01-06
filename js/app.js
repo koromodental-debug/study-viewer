@@ -764,6 +764,37 @@
           padding: 12px 16px !important;
           margin: 12px 0 !important;
         }
+
+        /* カテゴリヘッダー（漢方等）をLeicaスタイルに */
+        .category-header {
+          background: #2c2c2c !important;
+          color: white !important;
+          border-radius: 16px 16px 0 0 !important;
+          padding: 12px 16px !important;
+          margin-top: 16px !important;
+        }
+        .category-content {
+          background: white !important;
+          border: none !important;
+          border-radius: 0 0 16px 16px !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+          padding: 16px !important;
+          margin-bottom: 16px !important;
+        }
+
+        /* 警告ボックスもLeicaスタイルに */
+        .warning-box {
+          background: #f5f5f5 !important;
+          border: none !important;
+          border-radius: 16px !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+        }
+
+        /* accent色を使う要素を黒に統一 */
+        [style*="background"][style*="accent"],
+        [class*="header"][style*="background"] {
+          background: #2c2c2c !important;
+        }
       `;
       doc.head.appendChild(style);
     } catch (e) {

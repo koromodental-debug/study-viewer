@@ -663,7 +663,7 @@
 
         /* ポイントボックス・サマリーボックス */
         .point-box, .summary-box {
-          background: #f5f5f7 !important;
+          background: #fafafa !important;
         }
         .point-box-title, .summary-box-title {
           color: #1d1d1f !important;
@@ -688,7 +688,7 @@
 
         /* 背景（Apple風グレー） */
         body {
-          background: #f5f5f7 !important;
+          background: #fafafa !important;
         }
         .page {
           max-width: 100% !important;

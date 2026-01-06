@@ -298,6 +298,55 @@
   }
 
   /**
+   * iframe内にモバイル用CSSを注入
+   */
+  function injectMobileStyles(iframe) {
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc) return;
+
+      // 既存のスタイルがあれば削除
+      const existingStyle = doc.getElementById('mobile-override-style');
+      if (existingStyle) existingStyle.remove();
+
+      // モバイル用CSSを注入
+      const style = doc.createElement('style');
+      style.id = 'mobile-override-style';
+      style.textContent = `
+        /* モバイル用：1カラム強制 */
+        .container, [class*="column"], [style*="column"] {
+          column-count: 1 !important;
+          columns: 1 !important;
+        }
+
+        /* テーブルをスクロール可能に */
+        table {
+          display: block;
+          overflow-x: auto;
+          max-width: 100%;
+        }
+
+        /* 全体の幅を調整 */
+        .page, body > * {
+          max-width: 100% !important;
+          padding-left: 12px !important;
+          padding-right: 12px !important;
+        }
+
+        /* 画像を幅に収める */
+        img {
+          max-width: 100% !important;
+          height: auto !important;
+        }
+      `;
+      doc.head.appendChild(style);
+    } catch (e) {
+      // クロスオリジンエラーは無視
+      console.log('Could not inject styles:', e.message);
+    }
+  }
+
+  /**
    * コンテンツを読み込み
    */
   function loadContent(item) {
@@ -306,6 +355,11 @@
       elements.htmlFrame.src = item.htmlPath;
       elements.htmlFrame.style.display = 'block';
       elements.htmlContent.querySelector('.placeholder').style.display = 'none';
+
+      // iframeロード後にモバイル用CSSを注入
+      elements.htmlFrame.onload = function() {
+        injectMobileStyles(elements.htmlFrame);
+      };
     } else {
       elements.htmlFrame.src = '';
       elements.htmlFrame.style.display = 'none';

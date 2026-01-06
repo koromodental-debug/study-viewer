@@ -547,7 +547,7 @@ body {
 .qa-answer {
   padding: 20px;
   padding-left: 68px;
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
   border-top: none;
   display: none;
   font-size: 15px;
@@ -573,7 +573,7 @@ body {
 
 .qa-answer::before {
   content: "A";
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
   color: white;
   width: 32px;
   height: 32px;

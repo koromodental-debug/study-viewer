@@ -655,13 +655,15 @@
           border-bottom: 2px solid #2c2c2c !important;
         }
 
-        /* h3小見出し */
+        /* h3小見出し - ジャンプ率を上げる */
         h3 {
           background: transparent !important;
           padding: 0 !important;
           border-radius: 0 !important;
-          margin: 20px 0 12px 0 !important;
+          margin: 24px 0 12px 0 !important;
           box-shadow: none !important;
+          font-size: 17px !important;
+          font-weight: 700 !important;
         }
         h3::before {
           content: "■ " !important;
@@ -683,11 +685,13 @@
         th {
           background: #2c2c2c !important;
           color: white !important;
-          padding: 12px 16px !important;
+          padding: 10px 14px !important;
           font-weight: 600 !important;
+          font-size: 13px !important;
         }
         td {
-          padding: 12px 16px !important;
+          padding: 12px 14px !important;
+          font-size: 14px !important;
         }
         th, td {
           border: none !important;

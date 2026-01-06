@@ -587,11 +587,9 @@
           columns: 1 !important;
         }
 
-        /* テーブルをスクロール可能に */
-        table {
-          display: block;
+        /* テーブルの横スクロール対応（親要素で） */
+        .page {
           overflow-x: auto;
-          max-width: 100%;
         }
 
         /* 全体の幅と余白を調整 */
@@ -693,44 +691,57 @@
           border-bottom: 2px solid #2c2c2c !important;
         }
 
-        /* h3小見出しをカード風に */
+        /* h3小見出し */
         h3 {
-          background: white !important;
-          padding: 14px 20px !important;
-          border-radius: 16px 16px 0 0 !important;
-          margin: 16px 0 0 0 !important;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+          background: transparent !important;
+          padding: 0 !important;
+          border-radius: 0 !important;
+          margin: 20px 0 12px 0 !important;
+          box-shadow: none !important;
         }
         h3::before {
           content: "■ " !important;
         }
 
-        /* h3直後の要素（テーブル、リスト、段落） */
-        h3 + table,
-        h3 + ul,
-        h3 + ol,
-        h3 + p {
-          background: white !important;
-          padding: 16px 20px !important;
-          border-radius: 0 0 16px 16px !important;
-          margin-top: 0 !important;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
-        }
-
-        /* テーブルをカード風に */
+        /* テーブルをカード風に（単独でカード化） */
         table {
+          display: table !important;
+          width: 100% !important;
           background: white !important;
           border-radius: 16px !important;
           box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
           border: none !important;
           overflow: hidden !important;
-          margin: 16px 0 !important;
+          margin: 12px 0 !important;
+          border-collapse: separate !important;
+          border-spacing: 0 !important;
         }
         th {
           background: #f5f5f5 !important;
+          padding: 12px 16px !important;
+        }
+        td {
+          padding: 12px 16px !important;
         }
         th, td {
-          border-color: #e8e8e8 !important;
+          border: none !important;
+          border-bottom: 1px solid #e8e8e8 !important;
+        }
+        tr:last-child td {
+          border-bottom: none !important;
+        }
+        /* テーブル角丸対応 */
+        tr:first-child th:first-child {
+          border-top-left-radius: 16px !important;
+        }
+        tr:first-child th:last-child {
+          border-top-right-radius: 16px !important;
+        }
+        tr:last-child td:first-child {
+          border-bottom-left-radius: 16px !important;
+        }
+        tr:last-child td:last-child {
+          border-bottom-right-radius: 16px !important;
         }
 
         /* ポイントボックス・サマリーボックスをカード風に */

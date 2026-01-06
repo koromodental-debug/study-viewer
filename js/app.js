@@ -20,6 +20,7 @@
   const elements = {
     header: document.querySelector('.header'),
     tabsContainer: document.querySelector('.tabs'),
+    mainContent: document.querySelector('.main-content'),
     menuBtn: document.getElementById('menu-btn'),
     sidebar: document.getElementById('sidebar'),
     sidebarClose: document.getElementById('sidebar-close'),
@@ -160,6 +161,7 @@
           state.headerHidden = true;
           elements.header.classList.add('hidden');
           elements.tabsContainer.classList.add('hidden');
+          elements.mainContent.classList.add('header-hidden');
         }
       } else if (diff < 0) {
         // 上スクロール → ヘッダーを表示
@@ -167,6 +169,7 @@
           state.headerHidden = false;
           elements.header.classList.remove('hidden');
           elements.tabsContainer.classList.remove('hidden');
+          elements.mainContent.classList.remove('header-hidden');
         }
       }
 

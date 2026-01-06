@@ -1260,7 +1260,16 @@
    * 状態を復元
    */
   function restoreState() {
+    const hasVisited = localStorage.getItem('studyViewer_visited');
     const lastItemId = localStorage.getItem('studyViewer_lastItem');
+
+    // 初回訪問時はウェルカム画面を表示（復元しない）
+    if (!hasVisited) {
+      localStorage.setItem('studyViewer_visited', 'true');
+      return;
+    }
+
+    // 2回目以降は前回のトピックを復元
     if (lastItemId) {
       selectItem(lastItemId);
     }

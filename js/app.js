@@ -703,23 +703,23 @@
           margin-bottom: 8px !important;
         }
 
-        /* h2セクション見出し */
+        /* h2セクション見出し - Q&Aに合わせる */
         h2 {
-          font-size: 18px !important;
+          font-size: 20px !important;
           padding-bottom: 12px !important;
           margin-top: 32px !important;
           margin-bottom: 16px !important;
           border-bottom: 2px solid #2c2c2c !important;
         }
 
-        /* h3小見出し - ジャンプ率を上げる */
+        /* h3小見出し */
         h3 {
           background: transparent !important;
           padding: 0 !important;
           border-radius: 0 !important;
           margin: 24px 0 12px 0 !important;
           box-shadow: none !important;
-          font-size: 17px !important;
+          font-size: 18px !important;
           font-weight: 700 !important;
           color: #1d1d1f !important;
         }

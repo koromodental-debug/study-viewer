@@ -746,16 +746,14 @@ body {
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
+/* アイコンコンテナ（固定幅で揃える） */
 .welcome-card-icon {
-  width: 48px;
-  height: 48px;
-  background: #f2f2f7;
-  border-radius: 12px;
+  width: 64px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #007AFF;
 }
 
 /* メニューボタン風アイコン（丸い） */
@@ -764,7 +762,10 @@ body {
   height: 40px;
   border-radius: 50%;
   background: rgba(0,0,0,0.05);
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 4px;
 }
 
@@ -777,9 +778,12 @@ body {
 
 /* タブボタン風アイコン */
 .welcome-icon-tab {
-  width: auto;
-  height: 40px;
-  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  height: 32px;
+  padding: 0 12px;
   border-radius: 999px;
   background: rgba(0,0,0,0.05);
   font-size: 13px;

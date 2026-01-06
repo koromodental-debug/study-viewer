@@ -205,69 +205,13 @@
 
   /**
    * スクロール方向に応じてヘッダーを隠す/表示する
+   * ※現在は無効化（ヘッダー常に表示の方が使いやすい）
    */
   function setupScrollHideHeader() {
-    const scrollThreshold = 20; // iframeスクロール安定化のため閾値を上げる
-    let ticking = false;
-    let lastProcessedScrollY = 0;
-
-    // Q&Aコンテンツのスクロール監視
-    elements.qaContent.addEventListener('scroll', onScroll, { passive: true });
-
-    function onScroll(e) {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll(e);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    function handleScroll(e) {
-      const target = e.target;
-      const currentScrollY = target.scrollTop !== undefined
-        ? target.scrollTop
-        : (target.documentElement || target.body).scrollTop;
-
-      // 最下部付近ではスクロール処理をスキップ（バウンス干渉防止）
-      const scrollHeight = target.scrollHeight || 0;
-      const clientHeight = target.clientHeight || 0;
-      const maxScroll = scrollHeight - clientHeight;
-      if (maxScroll > 0 && currentScrollY >= maxScroll - 10) {
-        return;
-      }
-
-      const diff = currentScrollY - lastProcessedScrollY;
-
-      // 一定量以上スクロールした場合のみ反応
-      if (Math.abs(diff) < scrollThreshold) return;
-
-      if (diff > 0 && currentScrollY > 60) {
-        // 下スクロール → ヘッダーを隠す
-        if (!state.headerHidden) {
-          state.headerHidden = true;
-          elements.header.classList.add('hidden');
-          elements.tabsContainer.classList.add('hidden');
-          elements.mainContent.classList.add('header-hidden');
-        }
-      } else if (diff < 0) {
-        // 上スクロール → ヘッダーを表示
-        if (state.headerHidden) {
-          state.headerHidden = false;
-          elements.header.classList.remove('hidden');
-          elements.tabsContainer.classList.remove('hidden');
-          elements.mainContent.classList.remove('header-hidden');
-        }
-      }
-
-      lastProcessedScrollY = currentScrollY;
-    }
-
-    // iframeスクロール監視は無効化（スクロールの滑らかさを優先）
-    // HTMLタブではヘッダーは常に表示
+    // 無効化: ヘッダーは常に表示
+    // スクロールの滑らかさとUI安定性を優先
     window.setupIframeScrollHandler = function(iframe) {
-      // 無効化: iframeスクロールでのヘッダー制御はスクロールをカクつかせるため
+      // 無効化
     };
   }
 

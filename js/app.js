@@ -8,11 +8,16 @@
     currentTab: 'html',
     searchQuery: '',
     collapsedCategories: new Set(),
+    sidebarOpen: false,
     searchOpen: false
   };
 
   // DOM要素
   const elements = {
+    menuBtn: document.getElementById('menu-btn'),
+    sidebar: document.getElementById('sidebar'),
+    sidebarClose: document.getElementById('sidebar-close'),
+    sidebarOverlay: document.getElementById('sidebar-overlay'),
     topicList: document.getElementById('topic-list'),
     searchBtn: document.getElementById('search-btn'),
     searchOverlay: document.getElementById('search-overlay'),
@@ -34,7 +39,7 @@
    */
   function init() {
     if (typeof DATA === 'undefined') {
-      elements.topicList.innerHTML = '<div class="no-results">データを読み込めませんでした。<br>build_index.py を実行してください。</div>';
+      elements.topicList.innerHTML = '<div class="no-results">データを読み込めませんでした。</div>';
       return;
     }
 
@@ -48,6 +53,11 @@
    * イベントバインド
    */
   function bindEvents() {
+    // サイドバー開閉
+    elements.menuBtn.addEventListener('click', openSidebar);
+    elements.sidebarClose.addEventListener('click', closeSidebar);
+    elements.sidebarOverlay.addEventListener('click', closeSidebar);
+
     // 検索ボタン
     elements.searchBtn.addEventListener('click', openSearch);
 
@@ -86,11 +96,33 @@
           openSearch();
         }
       }
-      // Escape で検索を閉じる
-      if (e.key === 'Escape' && state.searchOpen) {
-        closeSearch();
+      // Escape で閉じる
+      if (e.key === 'Escape') {
+        if (state.searchOpen) {
+          closeSearch();
+        } else if (state.sidebarOpen) {
+          closeSidebar();
+        }
       }
     });
+  }
+
+  /**
+   * サイドバーを開く
+   */
+  function openSidebar() {
+    state.sidebarOpen = true;
+    elements.sidebar.classList.add('open');
+    elements.sidebarOverlay.classList.add('show');
+  }
+
+  /**
+   * サイドバーを閉じる
+   */
+  function closeSidebar() {
+    state.sidebarOpen = false;
+    elements.sidebar.classList.remove('open');
+    elements.sidebarOverlay.classList.remove('show');
   }
 
   /**
@@ -98,7 +130,7 @@
    */
   function openSearch() {
     state.searchOpen = true;
-    elements.searchOverlay.style.display = 'flex';
+    elements.searchOverlay.classList.add('show');
     elements.searchInput.value = '';
     elements.searchInput.focus();
     renderSearchResults(DATA.slice(0, 20));
@@ -109,7 +141,7 @@
    */
   function closeSearch() {
     state.searchOpen = false;
-    elements.searchOverlay.style.display = 'none';
+    elements.searchOverlay.classList.remove('show');
     elements.searchInput.value = '';
   }
 
@@ -162,7 +194,7 @@
   }
 
   /**
-   * トピックリストを描画（検索フィルタなし）
+   * トピックリストを描画
    */
   function renderTopicList(items) {
     if (items.length === 0) {
@@ -224,6 +256,7 @@
     elements.topicList.querySelectorAll('.topic-item').forEach(item => {
       item.addEventListener('click', () => {
         selectItem(item.dataset.id);
+        closeSidebar();
       });
     });
   }
@@ -328,7 +361,6 @@
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim();
 
-      // セクションヘッダ
       if (line.startsWith('## ')) {
         if (relatedItems.length > 0) {
           html += renderRelated(relatedItems);
@@ -340,7 +372,6 @@
         continue;
       }
 
-      // セパレータ
       if (line === '---') {
         if (relatedItems.length > 0) {
           html += renderRelated(relatedItems);
@@ -354,19 +385,16 @@
         continue;
       }
 
-      // 関連質問開始
       if (line === '[関連質問]') {
         inRelated = true;
         continue;
       }
 
-      // 関連質問項目
       if (inRelated && line.startsWith('- ')) {
         relatedItems.push(line.slice(2));
         continue;
       }
 
-      // Q&A
       if (line.startsWith('Q: ')) {
         if (relatedItems.length > 0) {
           html += renderRelated(relatedItems);

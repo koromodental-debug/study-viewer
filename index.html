@@ -8,23 +8,35 @@
 </head>
 <body>
   <div class="app">
+    <!-- ヘッダー -->
+    <header class="header">
+      <button id="menu-btn" class="menu-btn" aria-label="メニュー">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <h1 class="header-title">Study Viewer</h1>
+      <button id="search-btn" class="header-search-btn" aria-label="検索">
+        🔍
+      </button>
+    </header>
+
     <!-- サイドバー -->
-    <aside class="sidebar">
+    <aside id="sidebar" class="sidebar">
       <div class="sidebar-header">
-        <h1>Study Viewer</h1>
-        <button id="search-btn" class="search-btn">
-          <span class="search-icon">🔍</span>
-          <span>検索</span>
-          <span class="shortcut">⌘K</span>
-        </button>
+        <span class="sidebar-title">トピック一覧</span>
+        <button id="sidebar-close" class="sidebar-close">✕</button>
       </div>
       <nav class="topic-list" id="topic-list">
         <!-- 動的に生成 -->
       </nav>
     </aside>
 
+    <!-- サイドバーオーバーレイ -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
     <!-- 検索オーバーレイ -->
-    <div id="search-overlay" class="search-overlay" style="display:none;">
+    <div id="search-overlay" class="search-overlay">
       <div class="search-modal">
         <div class="search-modal-header">
           <input type="text" id="search-input" placeholder="トピックを検索..." autofocus>
@@ -45,13 +57,13 @@
       <div class="content-area">
         <div class="tab-content active" id="html-content">
           <div class="placeholder">
-            <p>左のリストからトピックを選択してください</p>
+            <p>検索またはメニューからトピックを選択</p>
           </div>
           <iframe id="html-frame" style="display:none;"></iframe>
         </div>
         <div class="tab-content" id="qa-content">
           <div class="placeholder">
-            <p>左のリストからトピックを選択してください</p>
+            <p>検索またはメニューからトピックを選択</p>
           </div>
           <div id="qa-display" class="qa-display" style="display:none;"></div>
         </div>

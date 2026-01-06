@@ -860,7 +860,7 @@ body {
 }
 
 .qa-toggle-btn.active {
-  background: var(--accent-color);
+  background: var(--primary-color);
 }
 
 /* 検索ハイライト */

@@ -10,7 +10,8 @@
     collapsedCategories: new Set(),
     sidebarOpen: false,
     searchOpen: false,
-    qaShowAll: false
+    qaShowAll: false,
+    sidebarFilter: ''
   };
 
   // DOM要素
@@ -19,6 +20,7 @@
     sidebar: document.getElementById('sidebar'),
     sidebarClose: document.getElementById('sidebar-close'),
     sidebarOverlay: document.getElementById('sidebar-overlay'),
+    sidebarFilter: document.getElementById('sidebar-filter'),
     topicList: document.getElementById('topic-list'),
     searchBtn: document.getElementById('search-btn'),
     searchOverlay: document.getElementById('search-overlay'),
@@ -46,6 +48,11 @@
     }
 
     searchEngine = new SearchEngine(DATA);
+
+    // 全カテゴリをデフォルトで折りたたみ
+    const categories = new Set(DATA.map(item => item.category || 'その他'));
+    categories.forEach(cat => state.collapsedCategories.add(cat));
+
     renderTopicList(DATA);
     bindEvents();
     restoreState();
@@ -59,6 +66,16 @@
     elements.menuBtn.addEventListener('click', openSidebar);
     elements.sidebarClose.addEventListener('click', closeSidebar);
     elements.sidebarOverlay.addEventListener('click', closeSidebar);
+
+    // サイドバーフィルター
+    let filterDebounce;
+    elements.sidebarFilter.addEventListener('input', (e) => {
+      clearTimeout(filterDebounce);
+      filterDebounce = setTimeout(() => {
+        state.sidebarFilter = e.target.value;
+        renderTopicList(DATA);
+      }, 150);
+    });
 
     // 検索ボタン
     elements.searchBtn.addEventListener('click', openSearch);
@@ -202,14 +219,26 @@
    * トピックリストを描画
    */
   function renderTopicList(items) {
-    if (items.length === 0) {
+    const filter = state.sidebarFilter.toLowerCase().trim();
+    const isFiltering = filter.length > 0;
+
+    // フィルタリング
+    let filteredItems = items;
+    if (isFiltering) {
+      filteredItems = items.filter(item =>
+        item.title.toLowerCase().includes(filter) ||
+        (item.category && item.category.toLowerCase().includes(filter))
+      );
+    }
+
+    if (filteredItems.length === 0) {
       elements.topicList.innerHTML = '<div class="no-results">トピックがありません</div>';
       return;
     }
 
     // カテゴリでグループ化
     const groups = {};
-    items.forEach(item => {
+    filteredItems.forEach(item => {
       const category = item.category || 'その他';
       if (!groups[category]) {
         groups[category] = [];
@@ -219,7 +248,8 @@
 
     let html = '';
     Object.keys(groups).sort().forEach(category => {
-      const isCollapsed = state.collapsedCategories.has(category);
+      // フィルター中は全カテゴリを展開
+      const isCollapsed = isFiltering ? false : state.collapsedCategories.has(category);
       html += `
         <div class="category-group">
           <div class="category-header" data-category="${escapeHtml(category)}">
@@ -231,16 +261,9 @@
 
       groups[category].forEach(item => {
         const isActive = state.currentItem && state.currentItem.id === item.id;
-        const badges = [];
-        if (item.htmlPath) badges.push('HTML');
-        if (item.qaPath) badges.push('Q&A');
-
         html += `
           <div class="topic-item${isActive ? ' active' : ''}" data-id="${escapeHtml(item.id)}">
             <span class="title">${escapeHtml(item.title)}</span>
-            <span class="badges">
-              ${badges.map(b => `<span class="badge">${b}</span>`).join('')}
-            </span>
           </div>
         `;
       });
@@ -326,11 +349,26 @@
           max-width: 100%;
         }
 
-        /* 全体の幅を調整 */
+        /* 全体の幅と余白を調整 */
+        body {
+          padding: 20px !important;
+          padding-bottom: 120px !important;
+          line-height: 1.8 !important;
+        }
+
         .page, body > * {
           max-width: 100% !important;
-          padding-left: 12px !important;
-          padding-right: 12px !important;
+        }
+
+        /* 本文の読みやすさ向上 */
+        p, li, td, th {
+          line-height: 1.8 !important;
+        }
+
+        /* 見出しの余白 */
+        h1, h2, h3, h4, h5, h6 {
+          margin-top: 1.5em !important;
+          margin-bottom: 0.8em !important;
         }
 
         /* 画像を幅に収める */

@@ -194,6 +194,32 @@ body {
   visibility: visible;
 }
 
+/* サイドバー検索 */
+.sidebar-search {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-search input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  outline: none;
+  background: var(--bg-color);
+  transition: all 0.2s ease;
+}
+
+.sidebar-search input:focus {
+  border-color: #764ba2;
+  background: white;
+}
+
+.sidebar-search input::placeholder {
+  color: var(--text-muted);
+}
+
 /* トピックリスト */
 .topic-list {
   flex: 1;

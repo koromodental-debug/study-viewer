@@ -593,8 +593,9 @@ body {
 }
 
 .qa-answer {
-  padding: 14px 20px 16px 60px;
-  background: #f8f9fa;
+  padding: 14px 20px 16px 56px;
+  background: #eef0f4;
+  border-left: 4px solid #764ba2;
   display: none;
   font-size: 15px;
   line-height: 1.7;

@@ -678,6 +678,8 @@
           box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
           padding: 16px 20px !important;
           margin: 16px 0 !important;
+          border: none !important;
+          border-left: none !important;
         }
 
         /* シラバスセクションをカード風に */

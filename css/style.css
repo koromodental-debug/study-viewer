@@ -49,11 +49,14 @@ body {
   padding: 0 16px;
   gap: 16px;
   z-index: 100;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .header.hidden {
-  transform: translateY(-100%);
+  transform: translate3d(0, -100%, 0);
 }
 
 .menu-btn {
@@ -536,7 +539,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   padding-top: calc(var(--header-height) + var(--tabs-height));
-  transition: padding-top 0.3s ease;
+  transition: padding-top 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-content.header-hidden {
@@ -554,11 +557,14 @@ body {
   background: var(--sidebar-bg);
   border-bottom: 1px solid var(--border-color);
   z-index: 99;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .tabs.hidden {
-  transform: translateY(-120px);
+  transform: translate3d(0, -120px, 0);
 }
 
 .tab {

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>窩洞 国試対策まとめ</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue: #CBD5E0;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: white;
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 12mm 15mm;
+      }
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    .page {
+      padding: 12mm 15mm;
+      max-width: 297mm;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 24pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .container {
+      column-count: 2;
+      column-gap: 25px;
+    }
+
+    h2 {
+      font-size: 12pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin: 14px 0 8px 0;
+      break-after: avoid;
+    }
+
+    h2 .num {
+      color: var(--accent);
+    }
+
+    h3 {
+      font-size: 10pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin: 10px 0 6px 0;
+      break-after: avoid;
+    }
+
+    h3::before {
+      content: "■ ";
+      color: var(--accent);
+    }
+
+    p {
+      margin: 6px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 8.5pt;
+      break-inside: avoid;
+    }
+
+    th, td {
+      padding: 5px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    th {
+      background: var(--bg-gray);
+      font-weight: bold;
+      color: var(--text-primary);
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .red {
+      color: #C53030;
+      font-weight: bold;
+    }
+
+    ul {
+      padding-left: 1.5em;
+      margin: 6px 0;
+    }
+
+    li {
+      margin: 3px 0;
+    }
+
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 8px 12px;
+      margin: 10px 0;
+      break-inside: avoid;
+    }
+
+    .point-box-title {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px;
+      margin: 10px 0;
+      break-inside: avoid;
+      font-size: 9pt;
+    }
+
+    .question-box .q-number {
+      font-weight: bold;
+      color: #744210;
+      font-size: 9.5pt;
+      margin-bottom: 4px;
+    }
+
+    .question-box .q-text {
+      margin: 6px 0;
+    }
+
+    .question-box .choices {
+      margin: 6px 0;
+      line-height: 1.6;
+    }
+
+    .question-box .answer {
+      color: var(--accent);
+      font-weight: bold;
+      margin-top: 6px;
+    }
+
+    .summary-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px;
+      margin: 12px 0;
+      break-inside: avoid;
+    }
+
+    .summary-box-title {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .summary-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .summary-list li {
+      margin: 4px 0;
+      padding-left: 1.5em;
+      position: relative;
+    }
+
+    .summary-list li .list-num {
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>窩洞（Cavity）</h1>
+
+    <div class="container">
+
+      <h2><span class="num">1.</span> 窩洞の分類（Blackの分類）</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>部位</th>
+          <th>好発歯</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">I級</span></td>
+          <td>小窩裂溝</td>
+          <td>臼歯咬合面、前歯舌側面</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">II級</span></td>
+          <td>臼歯隣接面</td>
+          <td>小臼歯・大臼歯</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">III級</span></td>
+          <td>前歯隣接面（切縁含まず）</td>
+          <td>切歯・犬歯</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">IV級</span></td>
+          <td>前歯隣接面（切縁含む）</td>
+          <td>切歯・犬歯</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">V級</span></td>
+          <td>歯頸部平滑面</td>
+          <td>全歯種</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">2.</span> 窩洞形成の基本原則</h2>
+
+      <table>
+        <tr>
+          <th>形態</th>
+          <th>目的</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">外形</span></td>
+          <td>齲蝕の完全除去</td>
+          <td>予防拡大（メタルインレー）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">抵抗形態</span></td>
+          <td>咬合力への抵抗</td>
+          <td>箱型、平坦な窩底</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">保持形態</span></td>
+          <td>修復物の脱落防止</td>
+          <td>鳩尾形、アンダーカット</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">便宜形態</span></td>
+          <td>操作性の向上</td>
+          <td>窩洞への視野・器具到達性</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">窩縁形態</span></td>
+          <td>辺縁封鎖性の向上</td>
+          <td>ベベル、バットジョイント</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">3.</span> 窩縁形態の種類</h2>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>適用</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ストレートベベル</span></td>
+          <td>メタルインレー窩洞<br>前歯部CR修復</td>
+          <td>①エナメル質窩縁の保護<br>②辺縁封鎖の向上<br>③鋳造収縮の補償</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ラウンドベベル</span></td>
+          <td>前歯部CR修復</td>
+          <td>①窩縁部レジンの接着力強化<br>②窩縁部レジンの破折防止<br>③色調移行性の向上</td>
+        </tr>
+        <tr>
+          <td><span class="red">バットジョイント</span></td>
+          <td>GIC修復<br>セラミックインレー<br>CRインレー</td>
+          <td>接着に依存する修復<br>（機械的嵌合に依存しない）</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">4.</span> 修復法別の窩洞特徴</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">メタルインレー窩洞 vs セラミック/CRインレー窩洞</div>
+        <table>
+          <tr>
+            <th>項目</th>
+            <th>メタルインレー</th>
+            <th>セラミック/CRインレー</th>
+          </tr>
+          <tr>
+            <td>窩縁形態</td>
+            <td>ストレートベベル</td>
+            <td><span class="red">バットジョイント</span></td>
+          </tr>
+          <tr>
+            <td>線角部</td>
+            <td>明瞭</td>
+            <td><span class="highlight">曲面化</span></td>
+          </tr>
+          <tr>
+            <td>テーパー</td>
+            <td>小さい（2〜5°）</td>
+            <td><span class="highlight">大きい</span>（6〜12°）</td>
+          </tr>
+          <tr>
+            <td>保持形態</td>
+            <td>鳩尾形、箱型</td>
+            <td>接着に依存</td>
+          </tr>
+        </table>
+      </div>
+
+      <h2><span class="num">5.</span> 2級メタルインレー窩洞</h2>
+
+      <h3>基本的保持形態</h3>
+      <ul>
+        <li><span class="highlight">箱型</span>（隣接面窩洞）</li>
+        <li><span class="highlight">外開き形態</span>（咬合面窩洞）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">保持形態の分類（保存修復学21 第五版 p.114-115）</div>
+        <table>
+          <tr>
+            <th>分類</th>
+            <th>形態</th>
+          </tr>
+          <tr>
+            <td><span class="highlight">基本的保持形態</span></td>
+            <td>①箱形（box form）<br>②内開き形（undercut form）<br>③<span class="highlight">外開き形</span>（tapered form）</td>
+          </tr>
+          <tr>
+            <td><span class="red">補助的保持形態</span></td>
+            <td>①階段（step）<br>②<span class="red">鳩尾形</span>（dovetail form）<br>③溝（channel）<br>④穿下（undercut）</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">なぜ「鳩尾形」ではなく「外開き形態」？（正答率27.5%）</div>
+        <p>問題文は「<span class="highlight">基本的</span>保持形態」を問うている。</p>
+        <ul>
+          <li><span class="highlight">外開き形</span>：基本的保持形態 → <span class="highlight">正解</span></li>
+          <li><span class="red">鳩尾形</span>：補助的保持形態 → <span class="red">不正解</span></li>
+        </ul>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">教科書の記載（p.115）</div>
+        <p><span class="highlight">外開き形</span>：「インレー修復の場合、インレー体を窩洞内に装着するため外開きを与える。しかし、あまり外開きの程度を強くすると保持力は失われる。」</p>
+        <p><span class="red">鳩尾形</span>：「修復物の側方脱出力に抵抗する<span class="highlight">水平拘止効力</span>である。」</p>
+      </div>
+
+      <h3>窩洞形成の原則</h3>
+      <ul>
+        <li><span class="highlight">予防拡大</span>：自浄域まで拡大</li>
+        <li><span class="highlight">咬頭隆線の保存</span>：可能な限り保存</li>
+        <li><span class="highlight">凸隅角部の曲面化</span>：応力集中防止</li>
+        <li><span class="red">遊離エナメル質の除去</span>：破折防止</li>
+      </ul>
+
+      <h2><span class="num">6.</span> GIC修復窩洞の特徴</h2>
+
+      <ul>
+        <li>窩縁形態：<span class="red">バットジョイント</span></li>
+        <li>予防拡大：<span class="highlight">不要</span>（接着性修復）</li>
+        <li>アンダーカット：<span class="highlight">不要</span></li>
+        <li>便宜形態：<span class="highlight">口蓋側への開放</span></li>
+        <li>歯面処理：<span class="highlight">ポリアクリル酸</span>（10〜20秒）</li>
+        <li>齲蝕検知液：<span class="highlight">アシッドレッド</span></li>
+      </ul>
+
+      <h2><span class="num">7.</span> CR修復のポイント</h2>
+
+      <h3>ベベル付与の目的（前歯部）</h3>
+      <ul>
+        <li><span class="highlight">接着面積の増大</span></li>
+        <li><span class="highlight">窩縁部亀裂の防止</span></li>
+        <li><span class="highlight">色調適合性の向上</span></li>
+      </ul>
+
+      <h3>窩洞形成で配慮する事項</h3>
+      <ul>
+        <li><span class="highlight">円滑な曲線の付与</span></li>
+        <li>コントラクションギャップの防止</li>
+      </ul>
+
+      <h2><span class="num">8.</span> 関連過去問</h2>
+
+      <div class="question-box">
+        <p class="q-number">116B-36</p>
+        <p class="q-text">2級メタルインレーの基本的保持形態はどれか。2つ選べ。</p>
+        <p class="choices">
+          a: 階段<br>
+          b: 小窩<br>
+          c: 箱型<br>
+          d: 鳩尾形<br>
+          e: 外開き形態
+        </p>
+        <p class="answer">正解: c, e</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">113A-83</p>
+        <p class="q-text">2級メタルインレー修復の窩洞形成で正しいのはどれか。3つ選べ。</p>
+        <p class="choices">
+          a: 予防拡大<br>
+          b: 咬頭隆線の保存<br>
+          c: 凸隅角部の曲面化<br>
+          d: バットジョイント<br>
+          e: 遊離エナメル質の保存
+        </p>
+        <p class="answer">正解: a, b, c</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">113A-87</p>
+        <p class="q-text">上顎前歯唇側面に形成したコンポジットレジン修復窩洞にベベルを付与する目的はどれか。3つ選べ。</p>
+        <p class="choices">
+          a: 拘止効力の付与<br>
+          b: 重合収縮の補償<br>
+          c: 接着面積の増大<br>
+          d: 窩縁部亀裂の防止<br>
+          e: 色調適合性の向上
+        </p>
+        <p class="answer">正解: c, d, e</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">112C-40</p>
+        <p class="q-text">メタルインレー窩洞と比べたセラミックインレー窩洞の特徴はどれか。2つ選べ。</p>
+        <p class="choices">
+          a: 保持溝の付与<br>
+          b: 線角部の曲面化<br>
+          c: 大きなテーパー角<br>
+          d: 明瞭なイスムスの付与<br>
+          e: ラウンドベベルの形成
+        </p>
+        <p class="answer">正解: b, c</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">113C-56</p>
+        <p class="q-text">従来型グラスアイオノマーセメント修復窩洞の写真を別に示す。窩洞の形態と操作の組合せで正しいのはどれか。2つ選べ。</p>
+        <p class="choices">
+          a: 窩洞外形―予防拡大<br>
+          b: 保持形態―鳩尾形の付与<br>
+          c: 抵抗形態―円形穿下の付与<br>
+          d: 便宜形態―口蓋側への開放<br>
+          e: 窩縁形態―バットジョイント
+        </p>
+        <p class="answer">正解: d, e</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">115C-84</p>
+        <p class="q-text">35歳の女性。従来型グラスアイオノマーセメント修復を行うこととした。齲蝕除去時と窩洞形成後の歯面に塗布されている材料の成分の組合せで正しいのはどれか。1つ選べ。</p>
+        <p class="choices">
+          a: フクシン―ポリアクリル酸<br>
+          b: フクシン―フッ化ナトリウム<br>
+          c: フクシン―酢酸イソプロピル<br>
+          d: アシッドレッド―ポリアクリル酸<br>
+          e: アシッドレッド―酢酸イソプロピル
+        </p>
+        <p class="answer">正解: d</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">118A-24</p>
+        <p class="q-text">コンポジットレジン修復を行うこととした。窩洞形成前後の口腔内写真を別に示す。窩洞形成で配慮した事項はどれか。1つ選べ。</p>
+        <p class="choices">
+          a: 審美性<br>
+          b: 窩縁斜面の付与<br>
+          c: 円滑な曲線の付与<br>
+          d: 遊離エナメル質の除去<br>
+          e: リバースカーブの付与
+        </p>
+        <p class="answer">正解: c</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">116B-58</p>
+        <p class="q-text">メタルインレーの2級窩洞の模式図を示す。アの窩洞形態がイと比較して優れているのはどれか。2つ選べ。</p>
+        <p class="choices">
+          a: 審美性<br>
+          b: 辺縁封鎖性<br>
+          c: 健全歯質の保存<br>
+          d: 修復物の適合性<br>
+          e: 短い歯間距離への対応
+        </p>
+        <p class="answer">正解: a, c</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">116C-23</p>
+        <p class="q-text">59歳の男性。下顎右側第一大臼歯の冷水痛を主訴として来院した。接着処理を行った後の修復操作中の口腔内写真を別に示す。この充塡法で得られる効果はどれか。1つ選べ。</p>
+        <p class="choices">
+          a: 研磨性の向上<br>
+          b: 透明性の向上<br>
+          c: 象牙質の即時封鎖<br>
+          d: 遊離エナメル質の保護<br>
+          e: コントラクションギャップの防止
+        </p>
+        <p class="answer">正解: e</p>
+      </div>
+
+      <h2><span class="num">9.</span> 試験対策ポイント</h2>
+
+      <div class="summary-box">
+        <div class="summary-box-title">必ず覚えるポイント</div>
+        <ul class="summary-list">
+          <li><span class="list-num">1</span>2級メタルインレーの保持形態 = <span class="highlight">箱型 + 外開き形態</span></li>
+          <li><span class="list-num">2</span>メタルインレー窩洞形成 = 予防拡大 + 咬頭隆線保存 + 凸隅角曲面化</li>
+          <li><span class="list-num">3</span>セラミック/CRインレー = <span class="red">バットジョイント</span> + <span class="highlight">線角部曲面化</span> + 大テーパー</li>
+          <li><span class="list-num">4</span>GIC修復 = <span class="red">バットジョイント</span> + 便宜形態（口蓋側開放） + <span class="highlight">ポリアクリル酸</span>処理</li>
+          <li><span class="list-num">5</span>齲蝕検知液 = <span class="highlight">アシッドレッド</span>（フクシンではない）</li>
+          <li><span class="list-num">6</span>CR修復ベベルの目的 = 接着面積増大 + 窩縁亀裂防止 + 色調適合性向上</li>
+          <li><span class="list-num">7</span>CR窩洞形成の配慮 = <span class="highlight">円滑な曲線の付与</span></li>
+          <li><span class="list-num">8</span><span class="red">遊離エナメル質</span>は除去する（保存ではない）</li>
+          <li><span class="list-num">9</span>積層充填 = <span class="highlight">コントラクションギャップの防止</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

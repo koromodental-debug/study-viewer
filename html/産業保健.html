@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>産業保健（労働3管理）</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 24pt; font-weight: bold; margin-bottom: 16px; }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 8px 12px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .summary-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .summary-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .syllabus-section {
+      background: #EDF2F7;
+      padding: 6px 10px;
+      margin: 10px 0 6px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: bold;
+    }
+    .syllabus-item {
+      color: var(--text-secondary);
+      font-size: 9pt;
+      margin-left: 1em;
+    }
+    .small { font-size: 8pt; color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>産業保健（労働3管理）</h1>
+    <div class="container">
+
+      <div class="syllabus-section">エ. 産業保健（労働者の歯科保健）</div>
+      <div class="syllabus-item">小項目: a. 関連制度, b. 職業病、作業関連疾患</div>
+
+      <!-- 労働衛生の3管理 -->
+      <h3>労働衛生の3管理</h3>
+      <div class="point-box">
+        <div class="point-box-title">3管理の概要</div>
+        <table>
+          <tr><th>管理</th><th>目的</th><th>具体例</th></tr>
+          <tr>
+            <td><span class="highlight">作業環境管理</span></td>
+            <td>有害物の<span class="red">除去・発生抑制</span></td>
+            <td>換気、環境測定、遠隔操作<br><span class="red">※最優先で行う</span></td>
+          </tr>
+          <tr>
+            <td><span class="highlight">作業管理</span></td>
+            <td>有害物<span class="red">侵入の抑制</span></td>
+            <td>曝露時間の短縮、防塵マスク着用、<br>作業姿勢の改善、休憩</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">健康管理</span></td>
+            <td>有害物による<span class="red">障害の予防</span></td>
+            <td>健康診断、保健指導、<br>適正配置</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B-17</div>
+        <p>労働衛生の3管理における作業管理の目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 有害物の隔離<br>
+          b: 有害物の除去<br>
+          c: 有害物侵入の抑制<br>
+          d: 有害物発生の抑制<br>
+          e: 有害物による障害の予防
+        </div>
+        <div class="answer">正解: c（作業管理＝侵入抑制、環境管理＝除去・発生抑制）</div>
+      </div>
+
+      <!-- 関連法規 -->
+      <h3>関連法規</h3>
+      <table>
+        <tr><th>法律</th><th>主な内容</th></tr>
+        <tr>
+          <td><span class="highlight">労働基準法</span></td>
+          <td>労働時間（1日8時間、週40時間）<br>年少者の労働制限（15歳未満就労禁止）<br>妊産婦の就業制限（産前6週、産後8週）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">労働安全衛生法</span></td>
+          <td>衛生管理者、産業医、衛生委員会<br>作業環境管理、作業管理、健康管理<br>THP（トータル・ヘルスプロモーション・プラン）</td>
+        </tr>
+      </table>
+
+      <!-- 産業保健スタッフ -->
+      <h3>産業保健スタッフの選任</h3>
+      <table>
+        <tr><th>職種</th><th>選任義務</th></tr>
+        <tr>
+          <td><span class="highlight">衛生管理者</span></td>
+          <td>常時<span class="red">50人以上</span>の事業場<br>週1回以上の作業場定期巡視</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">産業医</span></td>
+          <td>常時<span class="red">50人以上</span>（非常勤可）<br>常時500人以上の有害作業（<span class="red">専属</span>）<br>常時1,000人以上（<span class="red">専属</span>）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">衛生委員会</span></td>
+          <td>常時<span class="red">50人以上</span>の事業所に設置</td>
+        </tr>
+        <tr>
+          <td>総括安全衛生管理者</td>
+          <td>運送業100人以上、製造業300人以上<br>危険の少ない業種1,000人以上</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">産業医の職務</div>
+        <ul>
+          <li>健康診断の実施・結果に基づく措置</li>
+          <li>作業管理、職場巡視</li>
+          <li><span class="highlight">事業者への勧告</span>（健康障害防止など）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A-41</div>
+        <p>産業医が作業場での有害発生の危険性を勧告する対象はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 事業者<br>
+          b: 従業員<br>
+          c: 衛生委員会<br>
+          d: 衛生管理者<br>
+          e: 衛生推進者
+        </div>
+        <div class="answer">正解: a（産業医は事業者に勧告する）</div>
+      </div>
+
+      <!-- 健康診断 -->
+      <h3>健康診断</h3>
+
+      <h2>一般健康診断</h2>
+      <table>
+        <tr><th>種類</th><th>対象・頻度</th></tr>
+        <tr><td>定期健康診断</td><td>常時使用する労働者に<span class="highlight">1年に1回</span>以上</td></tr>
+        <tr><td>雇い入れ時健康診断</td><td>常時使用する労働者を雇い入れるとき</td></tr>
+        <tr><td>特定業務従事者の健康診断</td><td><span class="highlight">6か月以内に1回</span></td></tr>
+        <tr><td>海外派遣労働者の健康診断</td><td>6か月以上の海外勤務の前後</td></tr>
+      </table>
+
+      <h2>特殊健康診断（歯科医師による健康診断）</h2>
+      <div class="point-box">
+        <div class="point-box-title">歯科特殊健診の対象物質</div>
+        <p>労働安全衛生法により<span class="highlight">6か月以内に1回</span>実施</p>
+        <table>
+          <tr><th>対象物質</th><th>引き起こす疾患</th></tr>
+          <tr><td><span class="highlight">塩酸</span></td><td rowspan="5"><span class="red">酸蝕症</span></td></tr>
+          <tr><td><span class="highlight">硝酸</span></td></tr>
+          <tr><td><span class="highlight">硫酸</span></td></tr>
+          <tr><td><span class="highlight">亜硫酸</span></td></tr>
+          <tr><td><span class="highlight">弗化水素</span></td></tr>
+          <tr><td><span class="highlight">黄りん</span></td><td>潰瘍性口内炎、<span class="red">顎骨壊死</span></td></tr>
+        </table>
+        <p class="small" style="margin-top:6px;">※<span class="red">カドミウム</span>は歯科健診の対象<span class="red">外</span>（腎障害が主）</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A-39</div>
+        <p>労働安全衛生法で、取り扱う労働者に歯科医師による健康診断が義務付けられているのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a: 塩酸<br>
+          b: 酢酸<br>
+          c: 亜硫酸<br>
+          d: リン酸<br>
+          e: フッ化水素
+        </div>
+        <div class="answer">正解: a, c, e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C-105</div>
+        <p>労働安全衛生法に基づき、常時従事する労働者に対し、歯科医師による健康診断が義務付けられているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 鉛業務<br>
+          b: 除染等業務<br>
+          c: 管理区域に立ち入る放射線業務<br>
+          d: 屋内作業場等における有機溶剤業務<br>
+          e: 塩酸のガスを発散する場所における業務
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <!-- 職業性疾患 -->
+      <h3>職業性疾患（歯科関連）</h3>
+
+      <h2>酸蝕症</h2>
+      <div class="point-box">
+        <div class="point-box-title">職業性酸蝕症</div>
+        <ul>
+          <li>原因：酸性ガス・ミストへの曝露</li>
+          <li>好発職場：メッキ工場、バッテリー工場、化学物質製造工場</li>
+          <li>原因物質：<span class="highlight">二酸化硫黄</span>（水に溶解すると硫酸になる）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A-71</div>
+        <p>職業性の歯の酸蝕症の原因物質はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 黄リン<br>
+          b: クロム<br>
+          c: カドミウム<br>
+          d: 二酸化硫黄<br>
+          e: 苛性ソーダ
+        </div>
+        <div class="answer">正解: d（二酸化硫黄は水に溶けて硫酸になる）</div>
+      </div>
+
+      <h2>酸蝕症の好発部位</h2>
+      <table>
+        <tr><th>原因</th><th>好発部位</th></tr>
+        <tr>
+          <td>職業性（外因性）</td>
+          <td>上下顎前歯<span class="highlight">唇側面</span></td>
+        </tr>
+        <tr>
+          <td>胃食道逆流症（内因性）</td>
+          <td>上顎前歯<span class="highlight">口蓋側面</span></td>
+        </tr>
+        <tr>
+          <td>酸性食品・飲料</td>
+          <td>上顎前歯唇側面、臼歯咬合面</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113C-2</div>
+        <p>胃食道逆流症による酸蝕症の好発部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 上顎前歯口蓋側面<br>
+          b: 上顎臼歯咬合面<br>
+          c: 下顎前歯切縁<br>
+          d: 下顎前歯唇側面<br>
+          e: 下顎臼歯咬合面
+        </div>
+        <div class="answer">正解: a（胃酸の逆流→上顎口蓋側）</div>
+      </div>
+
+      <!-- THP -->
+      <h3>THP（トータル・ヘルスプロモーション・プラン）</h3>
+      <ul>
+        <li>すべての働く人を対象とした「心とからだの健康づくり運動」</li>
+        <li>労働者の健康保持増進を目的（<span class="highlight">一次予防</span>）</li>
+        <li>事業者の<span class="highlight">努力義務</span></li>
+      </ul>
+
+      <!-- まとめ -->
+      <div class="summary-box">
+        <div class="summary-box-title">国試頻出ポイント</div>
+        <ul>
+          <li>労働衛生の3管理：<span class="highlight">作業環境管理</span>（除去）、<span class="highlight">作業管理</span>（侵入抑制）、<span class="highlight">健康管理</span>（障害予防）</li>
+          <li>作業環境管理が<span class="red">最優先</span></li>
+          <li>産業医・衛生管理者・衛生委員会：<span class="highlight">50人以上</span>の事業場</li>
+          <li>産業医の勧告先：<span class="highlight">事業者</span></li>
+          <li>歯科特殊健診：<span class="highlight">塩酸、硝酸、硫酸、亜硫酸、弗化水素、黄りん</span></li>
+          <li><span class="red">カドミウム</span>は歯科健診<span class="red">対象外</span></li>
+          <li>職業性酸蝕症の原因：<span class="highlight">二酸化硫黄</span></li>
+          <li>胃食道逆流症の酸蝕症：<span class="highlight">上顎前歯口蓋側面</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

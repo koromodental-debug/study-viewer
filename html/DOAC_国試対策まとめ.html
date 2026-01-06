@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOAC 国試対策まとめ</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue: #CBD5E0;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: white;
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 12mm 15mm;
+      }
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    .page {
+      padding: 12mm 15mm;
+      max-width: 297mm;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 24pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .container {
+      column-count: 2;
+      column-gap: 25px;
+    }
+
+    h2 {
+      font-size: 12pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin: 14px 0 8px 0;
+      break-after: avoid;
+    }
+
+    h2 .num {
+      color: var(--accent);
+    }
+
+    h3 {
+      font-size: 10pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin: 10px 0 6px 0;
+      break-after: avoid;
+    }
+
+    h3::before {
+      content: "■ ";
+      color: var(--accent);
+    }
+
+    p {
+      margin: 6px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 8.5pt;
+      break-inside: avoid;
+    }
+
+    th, td {
+      padding: 5px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    th {
+      background: var(--bg-gray);
+      font-weight: bold;
+      color: var(--text-primary);
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .red {
+      color: #C53030;
+      font-weight: bold;
+    }
+
+    ul {
+      padding-left: 1.5em;
+      margin: 6px 0;
+    }
+
+    li {
+      margin: 3px 0;
+    }
+
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 8px 12px;
+      margin: 10px 0;
+      break-inside: avoid;
+    }
+
+    .point-box-title {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px;
+      margin: 10px 0;
+      break-inside: avoid;
+      font-size: 9pt;
+    }
+
+    .question-box .q-number {
+      font-weight: bold;
+      color: #744210;
+      font-size: 9.5pt;
+      margin-bottom: 4px;
+    }
+
+    .question-box .q-text {
+      margin: 6px 0;
+    }
+
+    .question-box .choices {
+      margin: 6px 0;
+      line-height: 1.6;
+    }
+
+    .question-box .answer {
+      color: var(--accent);
+      font-weight: bold;
+      margin-top: 6px;
+    }
+
+    .summary-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px;
+      margin: 12px 0;
+      break-inside: avoid;
+    }
+
+    .summary-box-title {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .summary-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .summary-list li {
+      margin: 4px 0;
+      padding-left: 1.5em;
+      position: relative;
+    }
+
+    .summary-list li .list-num {
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>DOAC（直接経口抗凝固薬）</h1>
+
+    <div class="container">
+
+      <h2><span class="num">1.</span> 血液凝固阻害薬の分類</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>薬剤名</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>ヘパリン</td>
+          <td>ヘパリンナトリウム<br>ヘパリンカルシウム</td>
+          <td>アンチトロンビンIIIの作用を増強</td>
+        </tr>
+        <tr>
+          <td>低分子ヘパリン</td>
+          <td>ダルテパリン</td>
+          <td>Xa因子選択的に阻害</td>
+        </tr>
+        <tr>
+          <td>経口抗凝固薬</td>
+          <td><span class="highlight">ワルファリン</span></td>
+          <td>ビタミンK拮抗、凝固因子合成阻害</td>
+        </tr>
+        <tr>
+          <td><span class="red">直接的Xa因子阻害薬</span></td>
+          <td>リバーロキサバン<br>アピキサバン<br>エドキサバン</td>
+          <td rowspan="2"><span class="highlight">DOAC</span><br>直接的に凝固因子を阻害</td>
+        </tr>
+        <tr>
+          <td><span class="red">直接的トロンビン阻害薬</span></td>
+          <td><span class="red">ダビガトラン</span></td>
+        </tr>
+      </table>
+
+      <h2><span class="num">2.</span> ワルファリン vs DOAC</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>ワルファリン</th>
+          <th>DOAC</th>
+        </tr>
+        <tr>
+          <td>作用機序</td>
+          <td>ビタミンK拮抗（間接的）</td>
+          <td>凝固因子を<span class="highlight">直接</span>阻害</td>
+        </tr>
+        <tr>
+          <td>効果発現</td>
+          <td><span class="red">24〜48時間</span></td>
+          <td>速い（数時間）</td>
+        </tr>
+        <tr>
+          <td>モニタリング</td>
+          <td>必要（PT-INR）</td>
+          <td><span class="highlight">不要</span></td>
+        </tr>
+        <tr>
+          <td>食事制限</td>
+          <td><span class="red">必要</span>（納豆等禁忌）</td>
+          <td><span class="highlight">不要</span></td>
+        </tr>
+        <tr>
+          <td>NSAIDs併用</td>
+          <td><span class="red">出血リスク増加</span></td>
+          <td>注意が必要</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">3.</span> DOAC各薬剤の特徴</h2>
+
+      <h3>直接的Xa因子阻害薬</h3>
+      <ul>
+        <li><span class="highlight">リバーロキサバン</span>（イグザレルト）</li>
+        <li><span class="highlight">アピキサバン</span>（エリキュース）</li>
+        <li><span class="highlight">エドキサバン</span>（リクシアナ）</li>
+      </ul>
+
+      <h3>直接的トロンビン阻害薬</h3>
+      <ul>
+        <li><span class="red">ダビガトラン</span>（プラザキサ）- <span class="highlight">唯一のトロンビン阻害薬</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">DOAC vs ワルファリンの鑑別</div>
+        <table>
+          <tr>
+            <th>ワルファリン適応</th>
+            <th>DOAC適応</th>
+          </tr>
+          <tr>
+            <td><span class="red">弁膜症性</span>心房細動<br>（僧帽弁狭窄症、機械弁）</td>
+            <td><span class="highlight">非弁膜症性</span>心房細動</td>
+          </tr>
+          <tr>
+            <td>重度腎機能障害</td>
+            <td>軽度〜中等度腎機能障害</td>
+          </tr>
+        </table>
+      </div>
+
+      <h2><span class="num">4.</span> 関連過去問</h2>
+
+      <div class="question-box">
+        <p class="q-number">118D-80</p>
+        <p class="q-text">直接経口抗凝固薬〈DOAC〉服用患者の抜歯で適切なのはどれか。2つ選べ。</p>
+        <p class="choices">
+          a: 抜歯創を縫合する。<br>
+          b: 永久的止血法を行う。<br>
+          c: 抜歯前にPT-INRを測定する。<br>
+          d: 原則として休薬せずに抜歯する。<br>
+          e: 抜歯前にステロイドカバーをする。
+        </p>
+        <p class="answer">正解: a, d</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">114B-43</p>
+        <p class="q-text">抗血栓薬と作用機序の組合せで正しいのはどれか。2つ選べ。</p>
+        <p class="choices">
+          a: アスピリン ─ 第IIa因子阻害<br>
+          b: ダビガトラン ─ 血小板凝集抑制<br>
+          c: チクロピジン塩酸塩 ─ シクロオキシゲナーゼ阻害<br>
+          d: ヘパリンナトリウム ─ 第Xa因子阻害<br>
+          e: ワルファリンカリウム ─ ビタミンK活性化阻害
+        </p>
+        <p class="answer">正解: d, e</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">117D-4</p>
+        <p class="q-text">ワルファリンカリウムの薬理作用を増強するのはどれか。1つ選べ。</p>
+        <p class="choices">
+          a: アシクロビル<br>
+          b: アザチオプリン<br>
+          c: カルバマゼピン<br>
+          d: リファンピシン<br>
+          e: ミコナゾール硝酸塩
+        </p>
+        <p class="answer">正解: e</p>
+      </div>
+
+      <h2><span class="num">5.</span> 試験対策ポイント</h2>
+
+      <div class="summary-box">
+        <div class="summary-box-title">必ず覚えるポイント</div>
+        <ul class="summary-list">
+          <li><span class="list-num">1</span><span class="red">ダビガトラン</span> = 唯一の直接的トロンビン阻害薬</li>
+          <li><span class="list-num">2</span>DOAC = <span class="highlight">モニタリング不要</span>（PT-INR測定しない）</li>
+          <li><span class="list-num">3</span>ワルファリン = <span class="red">ビタミンK制限</span>（納豆禁忌）</li>
+          <li><span class="list-num">4</span>弁膜症性心房細動 → <span class="highlight">ワルファリン</span></li>
+          <li><span class="list-num">5</span>非弁膜症性心房細動 → <span class="highlight">DOAC可</span></li>
+          <li><span class="list-num">6</span>DOAC抜歯 = <span class="highlight">休薬せず</span> + 縫合 + 局所止血</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

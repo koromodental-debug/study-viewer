@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医療事故の防止</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>カ. 医療事故の防止</h1>
+    <div class="subtitle">必修2 社会と歯科医療</div>
+    <div class="container">
+
+      <h3>医療事故 vs 医療過誤</h3>
+      <table>
+        <tr><th></th><th>医療事故</th><th>医療過誤</th></tr>
+        <tr><td>定義</td><td>医療に関わる場所で発生する<span class="red">すべての</span>人身事故</td><td>医療従事者の<span class="red">過失</span>によって生じたもの</td></tr>
+        <tr><td>過失</td><td><span class="highlight">問わない</span></td><td><span class="red">あり</span></td></tr>
+        <tr><td>関係</td><td colspan="2">医療過誤 ⊂ 医療事故（医療過誤は医療事故の一部）</td></tr>
+      </table>
+
+      <h3>医療事故・医療過誤の発生要因</h3>
+      <ul>
+        <li>医療従事者の<span class="red">不注意</span></li>
+        <li>医療機器の<span class="red">故障、汚染</span></li>
+        <li>事故報告しにくい環境</li>
+      </ul>
+
+      <h3>医療危機管理（リスクマネージメント）の手順</h3>
+      <p>事故を未然に防ぐための手順：</p>
+      <p><span class="red">①把握 → ②分析 → ③対応 → ④評価</span></p>
+
+      <h3>インシデント vs アクシデント</h3>
+      <table>
+        <tr><th></th><th>インシデント（ヒヤリハット）</th><th>アクシデント</th></tr>
+        <tr><td>定義</td><td>事故にはいたらなかったが、思わず<span class="red">「ヒヤリ」</span>とするような出来事</td><td><span class="red">実際に起こってしまった</span>事故</td></tr>
+        <tr><td>患者への実害</td><td><span class="highlight">なし</span></td><td><span class="red">あり</span></td></tr>
+      </table>
+
+      <h3>事故原因と防止策</h3>
+      <table>
+        <tr><th>事故原因</th><th>防止策</th></tr>
+        <tr><td><span class="red">誤飲・誤嚥</span></td><td><span class="red">ラバーダム</span>の使用、口腔内にガーゼを敷く、落下しうるものにフロス、<span class="red">バキューム</span>の位置を考慮</td></tr>
+        <tr><td><span class="red">誤薬</span></td><td>各種指示書の同時投与を控える、<span class="red">ダブルチェック</span></td></tr>
+        <tr><td>出血</td><td>診療前の確認（問診）</td></tr>
+        <tr><td>感染</td><td>被覆交換の減滅、手術操作の慎重、<span class="red">スタンダードプリコーション</span></td></tr>
+        <tr><td><span class="red">被曝</span></td><td>防護衣、<span class="red">鉛エプロン</span>の使用</td></tr>
+        <tr><td>目・顔面の外傷</td><td><span class="red">保護メガネ</span>、プロテクター、ラバーダム</td></tr>
+      </table>
+
+      <h3>医療者の安全管理</h3>
+      <table>
+        <tr><th>リスク</th><th>対策</th></tr>
+        <tr><td><span class="red">針刺し事故</span></td><td><span class="red">ワンハンドテクニック</span>、リキャップしない、刃物の取り扱い注意</td></tr>
+      </table>
+
+      <h3>医療事故調査制度</h3>
+      <p>医療法に基づく制度（2015年施行）</p>
+      <ul>
+        <li>対象：<span class="red">予期しなかった死亡・死産</span></li>
+        <li>報告先：<span class="highlight">医療事故調査・支援センター</span></li>
+        <li>目的：<span class="red">原因究明と再発防止</span>（責任追及ではない）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">117A-12</div>
+        <p>医療事故と医療過誤の関係で正しいのはどれか。1つ選べ。</p>
+        <p>a: 同義語である　b: 医療事故は医療過誤の一部である　c: 医療過誤は医療事故の一部である　d: 両者に包含関係はない　e: 医療過誤には過失がない</p>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A-9</div>
+        <p>インシデントの説明で正しいのはどれか。1つ選べ。</p>
+        <p>a: 患者に実害が生じた事象　b: 医療従事者の過失による事象　c: 患者に実害が及ばなかった事象　d: 医療従事者に被害が生じた事象　e: 医療行為に関係のない事象</p>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B-9</div>
+        <p>歯科治療中の誤飲・誤嚥防止に有効なのはどれか。2つ選べ。</p>
+        <p>a: 鉛エプロン　b: ラバーダム防湿　c: 保護眼鏡　d: デンタルフロス　e: バキューム吸引</p>
+        <div class="answer">正解: b, e</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">医療事故</span>＝過失を問わない、<span class="red">医療過誤</span>＝過失あり</li>
+          <li><span class="red">インシデント</span>＝ヒヤリハット（実害なし）、<span class="red">アクシデント</span>＝実際の事故</li>
+          <li>リスクマネージメント＝<span class="red">把握→分析→対応→評価</span></li>
+          <li><span class="red">誤飲・誤嚥防止</span>＝ラバーダム、バキューム</li>
+          <li><span class="red">針刺し防止</span>＝ワンハンドテクニック、リキャップ禁止</li>
+          <li><span class="red">医療事故調査制度</span>＝原因究明・再発防止が目的</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

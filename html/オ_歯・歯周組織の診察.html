@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯・歯周組織の診察</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>オ. 歯・歯周組織の診察</h1>
+    <div class="subtitle">必修9 診察の基本</div>
+    <div class="container">
+
+      <h3>仮性ポケットと真性ポケット</h3>
+      <table>
+        <tr><th>種類</th><th>特徴</th></tr>
+        <tr><td><span class="red">仮性ポケット</span></td><td>ポケット底部の位置に変化はなく、歯肉の炎症により歯肉が肥大してポケットが深くなったもの＝<span class="red">歯肉炎</span></td></tr>
+        <tr><td><span class="red">真性ポケット</span></td><td>歯周組織の破壊があり、ポケット底部の位置が歯根側へ進み、ポケットが深くなったもの＝<span class="red">歯周炎</span></td></tr>
+      </table>
+
+      <h3>齲蝕・歯周疾患の診査項目</h3>
+      <table>
+        <tr><th>項目</th><th>Miller の動揺度分類など</th><th>内容</th></tr>
+        <tr><td><span class="red">歯髄感受診査</span></td><td>0〜Ⅲ</td><td>ほとんど動揺なし（1°打診触知験）</td></tr>
+        <tr><td><span class="highlight">温度診</span></td><td>冷・温</td><td>象牙質知覚過敏試験</td></tr>
+        <tr><td><span class="red">歯髄電気診</span></td><td>＋/−</td><td>歯髄の生死判定</td></tr>
+        <tr><td><span class="red">歯周ポケット</span></td><td>約20gの挿入圧で行う</td><td>ポケットの深さ測定</td></tr>
+        <tr><td><span class="highlight">アタッチメントレベル</span></td><td>アタッチメントゲイン・アタッチメントロス</td><td>CEJからポケット底までの距離</td></tr>
+        <tr><td><span class="highlight">プラーク/バイオフィルム</span></td><td>OHI-S、PHI、付着量を表示</td><td>歯周病変と歯石指数からなる</td></tr>
+        <tr><td><span class="highlight">歯石</span></td><td>O'LearyのPCR＝評価プラーク/全歯面×100</td><td>歯石の有無を評価</td></tr>
+      </table>
+
+      <h3>Miller の動揺度分類</h3>
+      <table>
+        <tr><th>度数</th><th>動揺の程度</th></tr>
+        <tr><td><span class="highlight">0度</span></td><td>生理的動揺（0.2mm以下）</td></tr>
+        <tr><td><span class="red">1度</span></td><td>唇舌（頬舌）方向にわずかに動揺（0.2〜1mm）</td></tr>
+        <tr><td><span class="red">2度</span></td><td>唇舌方向＋近遠心方向に動揺（1〜2mm）</td></tr>
+        <tr><td><span class="red">3度</span></td><td>唇舌方向＋近遠心方向＋<span class="red">垂直方向</span>に動揺</td></tr>
+      </table>
+
+      <h3>歯髄の生死判定</h3>
+      <table>
+        <tr><th>検査</th><th>方法</th><th>判定</th></tr>
+        <tr><td><span class="red">歯髄電気診</span></td><td>電気刺激</td><td>反応あり＝生活歯</td></tr>
+        <tr><td><span class="red">温度診</span></td><td>冷温刺激</td><td>反応あり＝生活歯</td></tr>
+        <tr><td><span class="highlight">切削診</span></td><td>麻酔なしで切削</td><td>疼痛あり＝生活歯</td></tr>
+      </table>
+
+      <h3>プラークコントロールレコード（PCR）</h3>
+      <ul>
+        <li><span class="red">O'Leary の PCR</span>＝（プラーク付着歯面数/全歯面数）×100</li>
+        <li>目標値：<span class="red">20%以下</span></li>
+        <li>歯周治療開始の目安：<span class="highlight">10〜20%</span></li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">117B-20</div>
+        <p>Miller の動揺度分類で3度に該当するのはどれか。1つ選べ。</p>
+        <p>a: 生理的動揺　b: 唇舌方向のみ　c: 近遠心方向を含む　d: 垂直方向を含む　e: 0.2mm以下</p>
+        <div class="answer">正解: d（Miller 3度は垂直方向を含む動揺）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A-22</div>
+        <p>服薬歴の確認が必要がないのはどれか。1つ選べ。</p>
+        <p>a: 顔貌　b: 歯頸炎　c: 白板症　d: 歯周腫瘤　e: 象牙質知覚過敏症</p>
+        <div class="answer">正解: e（象牙質知覚過敏症は服薬歴と直接関連しない）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">仮性ポケット</span>＝歯肉炎、ポケット底部位置不変</li>
+          <li><span class="red">真性ポケット</span>＝歯周炎、歯周組織破壊あり</li>
+          <li><span class="red">Miller 動揺度3度</span>＝垂直方向を含む動揺</li>
+          <li><span class="red">歯髄電気診・温度診</span>＝歯髄の生死判定</li>
+          <li><span class="red">O'Leary PCR</span>＝目標20%以下</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

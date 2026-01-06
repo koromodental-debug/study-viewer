@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>9. 環境保健</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 24pt; font-weight: bold; margin-bottom: 16px; }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 8px 12px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .syllabus-section {
+      background: #EDF2F7;
+      padding: 6px 10px;
+      margin: 10px 0 6px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: bold;
+    }
+    .syllabus-item {
+      color: var(--text-secondary);
+      font-size: 9pt;
+      margin-left: 1em;
+    }
+    .check-box {
+      background: #FFF5F5;
+      border: 1px solid #FC8181;
+      padding: 8px 12px;
+      margin: 8px 0;
+      border-radius: 4px;
+    }
+    .check-box-title { color: #C53030; font-weight: bold; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>9. 環境保健</h1>
+    <div class="container">
+
+      <div class="syllabus-section">ア. 環境保健</div>
+      <div class="syllabus-item">小項目: a. 環境の保全, b. 環境と適応, c. 生活環境, d. 物理的環境因子, e. 化学的環境因子</div>
+
+      <h2>I. 環境基本法</h2>
+
+      <h3>環境基本法の定義</h3>
+      <p>「<span class="highlight">環境への負荷</span>」「<span class="highlight">地球環境保全</span>」「<span class="highlight">公害</span>」について定義している。</p>
+
+      <ul>
+        <li><strong>地球環境保全</strong>：温暖化またはオゾン層の破壊の進行、海洋の汚染、野生生物の種の減少などに影響を及ぼす環境の保全</li>
+      </ul>
+
+      <h3>典型七公害</h3>
+      <table>
+        <tr><th>公害</th><th>関連法規</th></tr>
+        <tr><td>①大気の汚染</td><td>大気汚染防止法</td></tr>
+        <tr><td>②水質の汚濁</td><td>水質汚濁防止法、下水道法</td></tr>
+        <tr><td>③土壌の汚染</td><td>土壌汚染対策法</td></tr>
+        <tr><td>④騒音</td><td>騒音規制法</td></tr>
+        <tr><td>⑤振動</td><td>振動規制法</td></tr>
+        <tr><td>⑥地盤沈下</td><td>工業用水法</td></tr>
+        <tr><td>⑦悪臭</td><td>悪臭防止法</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">環境基準</div>
+        <p><span class="highlight">大気の汚染、水質の汚濁、土壌の汚染、騒音</span>の4項目の基準を定めている。</p>
+      </div>
+
+      <h2>II. 地球環境の変化と健康への影響</h2>
+
+      <table>
+        <tr><th>環境問題</th><th>原因</th><th>疾病・影響</th><th>関連条約・法律</th></tr>
+        <tr><td><span class="highlight">地球温暖化</span></td><td>温室効果ガス（赤外線を吸収するガス6種類）</td><td>マラリア、デング熱、熱中症</td><td>気候枠組条約（京都議定書、パリ協定）</td></tr>
+        <tr><td><span class="highlight">オゾン層破壊</span></td><td>フロン、ハロンなど</td><td>紫外線の影響：白内障、がん、免疫低下による感染症</td><td>ウイーン条約、モントリオール議定書、家電リサイクル法、自動車リサイクル法</td></tr>
+        <tr><td>砂漠化</td><td>森林伐採、家畜の過放牧</td><td>森林破壊</td><td>－</td></tr>
+        <tr><td>酸性雨</td><td>硫黄酸化物、窒素酸化物、塩化水素</td><td>森林破壊、温室効果ガス増加</td><td>－</td></tr>
+        <tr><td>森林の減少</td><td>－</td><td>二酸化炭素の吸収源の減少</td><td>－</td></tr>
+        <tr><td>生物種の減少</td><td>－</td><td>－</td><td>ラムサール条約（湿地）、ワシントン条約（国際取引）</td></tr>
+      </table>
+
+      <h3>温室効果ガス</h3>
+      <ul>
+        <li><span class="highlight">赤外線を吸収する</span>ガスのこと</li>
+        <li>京都議定書で数値目標が定められたもの：<span class="red">二酸化炭素、メタン、亜酸化窒素、ハイドロフルオロカーボン類、パーフルオロカーボン類、六フッ化硫黄</span></li>
+        <li>温室効果は<span class="highlight">約5割が水蒸気、2割が二酸化炭素</span>による</li>
+      </ul>
+
+      <h3>温暖化係数（CO2を1とした温室効果の強さ）</h3>
+      <table>
+        <tr><th>ガス</th><th>温暖化係数</th></tr>
+        <tr><td>二酸化炭素（CO2）</td><td class="highlight">1</td></tr>
+        <tr><td>メタン</td><td>25.6</td></tr>
+        <tr><td>六フッ化硫黄（SF6）</td><td class="red">22,800</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102A-93</div>
+        <p>地球温暖化に影響すると考えられている温室効果ガスはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: メタン<br>
+          b: ハロン<br>
+          c: 硫化水素<br>
+          d: 一酸化炭素<br>
+          e: 二酸化炭素
+        </div>
+        <div class="answer">正解: A, E</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D-28</div>
+        <p>地球温暖化に最も影響している大気成分の濃度に近いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 0.04%<br>
+          b: 0.1%<br>
+          c: 0.93%<br>
+          d: 4%<br>
+          e: 21%
+        </div>
+        <div class="answer">正解: A（CO2の大気中濃度は約0.04%）</div>
+      </div>
+
+      <h2>III. 国際条約</h2>
+
+      <table>
+        <tr><th>条約名</th><th>内容</th></tr>
+        <tr><td><span class="highlight">京都議定書</span>（1997年）</td><td>温室効果ガスの排出規制</td></tr>
+        <tr><td><span class="highlight">パリ協定</span>（2015年）</td><td>世界の平均気温上昇を<span class="red">1.5℃</span>に抑える</td></tr>
+        <tr><td>ウイーン条約</td><td>オゾン層の変化により生ずる悪影響から人の健康および環境を保護するために適当な措置</td></tr>
+        <tr><td>モントリオール議定書</td><td>特定フロン、ハロン、四塩化炭素などオゾン層を破壊するおそれのある物質を指定し、製造、消費、貿易を規制</td></tr>
+        <tr><td>カルタヘナ条約</td><td>バイオテクノロジーにより改変された生物による、生物多様性への悪影響を防止するための措置</td></tr>
+        <tr><td>バーゼル条約</td><td>有害廃棄物越境移動規制</td></tr>
+        <tr><td><span class="highlight">ストックホルム条約</span></td><td>残留性有機化合物に対する規制（<span class="red">ダイオキシン、PCB、DDT</span>）</td></tr>
+        <tr><td><span class="highlight">ラムサール条約</span></td><td>国際的に重要な<span class="highlight">湿地</span>に関する国際的な条約</td></tr>
+        <tr><td><span class="highlight">ワシントン条約</span></td><td><span class="highlight">野生動植物</span>の国際取引規制</td></tr>
+        <tr><td>ロンドン条約</td><td>海洋の汚染防止</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114C-51</div>
+        <p>パリ協定（2015年）で正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a: 参加国に開発途上国を含めた。<br>
+          b: 参加国一律の目標値を設定した。<br>
+          c: 温室効果ガスの削減を目標とした。<br>
+          d: 経済活動よりも環境保全を重視した。<br>
+          e: 再生可能エネルギーの導入を推奨した。
+        </div>
+        <div class="answer">正解: A, C, E</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A-67</div>
+        <p>地球環境の保全と保護に関する国際的な取り組みはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: リスボン宣言<br>
+          b: ジュネーブ条約<br>
+          c: ヘルシンキ宣言<br>
+          d: ラムサール条約<br>
+          e: ワシントン条約
+        </div>
+        <div class="answer">正解: D, E</div>
+      </div>
+
+      <h2>IV. 公害</h2>
+
+      <h3>四大公害</h3>
+      <table>
+        <tr><th>公害病</th><th>発生地域</th><th>原因物質</th><th>症状</th></tr>
+        <tr><td><span class="highlight">水俣病</span></td><td>熊本県水俣市・不知火海沿岸</td><td>水質汚濁（<span class="red">生物濃縮</span>による）<br><span class="red">メチル水銀</span>（有機水銀）</td><td>手足のふるえ、感覚障害、聴力障害、神経障害、運動失調、視野狭窄、平衡機能障害、言語障害</td></tr>
+        <tr><td><span class="highlight">新潟水俣病</span>（第二水俣病）</td><td>新潟県阿賀野川流域</td><td>水質汚濁（生物濃縮による）<br>メチル水銀（有機水銀）</td><td>水俣病と同様</td></tr>
+        <tr><td><span class="highlight">イタイイタイ病</span></td><td>富山県神通川流域</td><td>水質汚濁<br><span class="red">カドミウム</span></td><td><span class="red">骨軟化症、腎機能障害</span></td></tr>
+        <tr><td><span class="highlight">四日市ぜんそく</span></td><td>三重県四日市市</td><td><span class="red">大気汚染</span><br><span class="red">硫黄酸化物</span></td><td>気管支炎、気管支喘息、咽喉頭炎、肺気腫</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107C-100</div>
+        <p>生物濃縮が原因で生じたのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 水俣病<br>
+          b: カネミ油症<br>
+          c: 四日市喘息<br>
+          d: 歯のフッ素症<br>
+          e: サリドマイド奇形
+        </div>
+        <div class="answer">正解: A</div>
+      </div>
+
+      <h3>その他の公害事件</h3>
+      <ul>
+        <li><strong>足尾鉱毒事件</strong>：渡良瀬川</li>
+        <li><strong>大阪空港訴訟</strong>：伊丹空港の航空機騒音</li>
+        <li><strong>田子の浦港ヘドロ公害</strong>：製紙会社からの排水によるヘドロ公害</li>
+        <li><strong>土呂久ヒ素公害</strong>：ヒ素焼きをしていた鉱山の周囲にヒ素公害が発生</li>
+        <li><strong>PCB（ポリ塩化ビフェニル）によるカネミ油症事件</strong>（1968年）：食中毒事件（皮膚に色素が沈着した状態の新生児が誕生）</li>
+        <li><strong>スモン</strong>（亜急性脊髄視神経症）：整腸剤キノホルムによる薬害。激しい腹痛が起こり、2〜3週間後に下肢の痺れ、脱力、歩行困難などの症状</li>
+        <li><strong>サリドマイド</strong>：催奇形性、サリドマイド胎芽症、胎児死亡</li>
+      </ul>
+
+      <h2>V. 大気汚染</h2>
+
+      <table>
+        <tr><th>汚染物質</th><th>発生源</th><th>人体への影響</th><th>備考</th></tr>
+        <tr><td><span class="highlight">硫黄酸化物（SOx）</span></td><td>化石燃料の燃焼、工場からの煙など</td><td>気管支炎、ぜん息</td><td><span class="red">酸性雨の原因</span></td></tr>
+        <tr><td><span class="highlight">窒素酸化物（NOx）</span></td><td>燃料中や空気中の窒素と酸素が結びついて発生。工場や火力発電所、自動車、家庭など</td><td>のど、気管、肺などの呼吸器に悪影響</td><td>－</td></tr>
+        <tr><td><span class="highlight">光化学オキシダント（Ox）</span></td><td>NOxやVOCが<span class="red">紫外線</span>で光化学反応を起こし発生</td><td>目の痛み、吐き気、頭痛など</td><td>「注意報」「警報」「重大警報」を発令</td></tr>
+        <tr><td>粒子状物質（PM）</td><td>工場の煙から出る煤塵、粉塵、ディーゼル車の排出ガス、土ぼこりなど</td><td>呼吸器疾患、がん</td><td>－</td></tr>
+        <tr><td>浮遊粒子状物質（SPM）</td><td>粒径<span class="highlight">10μm以下</span>、自動車交通量の急増</td><td>がん、アレルギー疾患</td><td>－</td></tr>
+        <tr><td><span class="red">微小粒子状物質（PM2.5）</span></td><td>浮遊粒子状物質で粒径<span class="highlight">2.5μm以下</span></td><td>呼吸器疾患、肺がん</td><td>－</td></tr>
+        <tr><td><span class="highlight">ダイオキシン</span></td><td>廃棄物の焼却、金属精錬施設、自動車排ガス、たばこの煙</td><td>発がん性、催奇形性、免疫毒性</td><td>脂溶性、食物連鎖による<span class="red">生物濃縮</span></td></tr>
+        <tr><td>一酸化炭素（CO）</td><td>不完全燃焼</td><td>血液の酸素運搬能力低下</td><td>－</td></tr>
+      </table>
+
+      <div class="check-box">
+        <div class="check-box-title">環境基準達成率</div>
+        <p><span class="red">PM2.5：37.8%</span>、<span class="red">光化学オキシダント：0%</span>、その他はほぼ100%</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A-98</div>
+        <p>環境基本法に基づく大気汚染物質のうち、平成24年度における環境基準達成率が最も低いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 一酸化炭素〈CO〉<br>
+          b: 二酸化硫黄〈SO2〉<br>
+          c: 二酸化窒素〈NO2〉<br>
+          d: 浮遊粒子状物質〈SPM〉<br>
+          e: 微小粒子状物質〈PM2.5〉
+        </div>
+        <div class="answer">正解: E</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D-43</div>
+        <p>光化学オキシダントで正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a: 光化学スモッグの原因となる。<br>
+          b: 二次汚染物質としてPM2.5がある。<br>
+          c: 有機物の不完全燃焼によって生じる。<br>
+          d: 一次汚染物質として窒素酸化物がある。<br>
+          e: 紫外線によって二次汚染物質が生じる。
+        </div>
+        <div class="answer">正解: A, D, E</div>
+      </div>
+
+      <h2>VI. 騒音・振動・悪臭</h2>
+
+      <h3>騒音</h3>
+      <ul>
+        <li>単位：<span class="highlight">dB（デシベル）</span></li>
+        <li><span class="red">85dB</span>を超える音を聞き続けると難聴になるリスクが高まる</li>
+        <li>通常の会話は40〜60dB</li>
+      </ul>
+
+      <p><strong>1）騒音性難聴</strong></p>
+      <ul>
+        <li>職業性難聴ともいう。騒音を聞くのをやめると回復する</li>
+      </ul>
+
+      <p><strong>2）感音性難聴</strong></p>
+      <ul>
+        <li>伝音性難聴が続いて内耳に影響が出た難聴</li>
+        <li><span class="highlight">補充現象</span>：感音性難聴に伴う聴覚過敏症の症状</li>
+      </ul>
+
+      <h3>振動</h3>
+      <ul>
+        <li>単位：dB</li>
+        <li><span class="highlight">はくろう病（白蝋病）</span>：手足の血管が収縮することで起こる血管性運動神経障害</li>
+        <li>チェーンソーなど、強い振動を伴う工具を用いる職種の人が発病</li>
+        <li>手指の白色化現象（<span class="highlight">レイノー現象</span>）が起こる</li>
+      </ul>
+
+      <h3>悪臭</h3>
+      <p>悪臭防止法で、特定悪臭物質として<span class="highlight">アンモニア、メチルメルカプタン、硫化水素</span>などの基準を設けている。</p>
+
+      <h2>VII. 水の衛生</h2>
+
+      <h3>浄水の処理（上水道）</h3>
+      <p><span class="highlight">着水井 → フロック形成 → 沈殿池 → ろ過池 → 塩素消毒 → 配水池</span></p>
+
+      <ul>
+        <li><strong>フロック形成</strong>：水中の細かな塵やごみをかたまり（フロック）にして取り除く。凝集剤（ポリ塩化アルミニウム）を使用</li>
+        <li><strong>オゾン消毒</strong>：トリハロメタンを少なくする</li>
+        <li><strong>塩素消毒</strong>（次亜塩素酸ナトリウム）：塩素消毒副生成物として<span class="red">トリハロメタン</span>（発がん性あり）が生成</li>
+        <li><span class="highlight">クリプトスポリジウム</span>：塩素耐性原虫、水系感染症を起こす</li>
+      </ul>
+
+      <h3>下水の処理</h3>
+      <ul>
+        <li><strong>一次処理</strong>：沈砂池 → 最初沈殿池</li>
+        <li><strong>二次処理</strong>：反応槽（<span class="highlight">活性汚泥法</span>、散水処理法）→ 最終沈殿池</li>
+        <li><strong>高度処理</strong>：窒素、リンを除去（富栄養化・赤潮の原因となるため）</li>
+        <li>日本では活性汚泥法を用いている</li>
+      </ul>
+
+      <h3>水質汚染物質</h3>
+      <ul>
+        <li><strong>トリハロメタン</strong>：発がん性、催奇形性</li>
+        <li><strong>クロロホルム</strong>：肝障害、腎障害</li>
+        <li><strong>フミン質</strong>：植物を微生物が分解した最終分解生成物。トリハロメタンの前駆物質</li>
+        <li><strong>窒素、リン</strong>：富栄養化、赤潮の原因</li>
+      </ul>
+
+      <h3>水質汚濁の指標</h3>
+      <table>
+        <tr><th>指標</th><th>意味</th><th>汚染との関係</th></tr>
+        <tr><td><span class="highlight">DO（溶存酸素）</span></td><td>溶存酸素</td><td class="red">低いほど汚染が高度</td></tr>
+        <tr><td><span class="highlight">BOD</span></td><td>生物学的酸素要求量</td><td>高いほど汚染が高度</td></tr>
+        <tr><td><span class="highlight">COD</span></td><td>化学的酸素要求量</td><td>高いほど汚染が高度</td></tr>
+        <tr><td>SS</td><td>浮遊物質量</td><td>高いほど汚染が高度</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">CHECK! 値が低いほど汚染されているのは溶存酸素だけ</div>
+      </div>
+
+      <h3>水質基準</h3>
+      <table>
+        <tr><th></th><th>水道水の水質基準（水道法）</th><th>排水基準（水質汚濁防止法）</th><th>人の健康の保護に関する環境基準（公共用水域）</th></tr>
+        <tr><td>検出されてはいけないもの</td><td><span class="red">大腸菌</span></td><td>アルキル水銀化合物</td><td>アルキル水銀、PCB、全シアン</td></tr>
+        <tr><td>その他</td><td>フッ素 <span class="highlight">0.8ppm</span></td><td>BOD, COD, SS</td><td>DO, (COD, BOD, SS)</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109C-90</div>
+        <p>WHOが社会的・経済的な状態によらず住民の齲蝕予防に有効としているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 予防塡塞<br>
+          b: 甘味制限の指導<br>
+          c: ブラッシング指導<br>
+          d: フッ化物歯面塗布<br>
+          e: 上水道フッ化物濃度調整
+        </div>
+        <div class="answer">正解: E</div>
+      </div>
+
+      <h2>VIII. 室内環境</h2>
+
+      <h3>建築物衛生法（ビル管理法）</h3>
+      <p>空気環境の調整、給水および排水の管理、清掃、ねずみ、昆虫などの防除について規定</p>
+
+      <h3>温熱の4要素</h3>
+      <p><span class="highlight">気温、気湿、気流（気動）、輻射熱</span>（遠赤外線の熱線によって直接伝わる熱）</p>
+
+      <h3>温度計</h3>
+      <table>
+        <tr><th>温度計</th><th>測定できるもの</th><th>特徴</th></tr>
+        <tr><td>アウグスト乾湿計</td><td>気温、気湿、不快指数</td><td>気流の影響を<span class="red">受ける</span></td></tr>
+        <tr><td>アスマン通風乾湿計</td><td>気温、気湿、不快指数</td><td>気流の影響を<span class="highlight">受けにくい</span></td></tr>
+        <tr><td>カタ寒暖計</td><td>気流</td><td>室内の微気流を計る</td></tr>
+        <tr><td>黒球温度計</td><td>輻射熱</td><td>黒つや消しエナメル、輻射熱を吸収する</td></tr>
+      </table>
+
+      <div class="check-box">
+        <div class="check-box-title">感覚温度が上昇するのは</div>
+        <ul>
+          <li>気温が高い</li>
+          <li>気湿が高い</li>
+          <li>気流が少ない</li>
+        </ul>
+        <p><span class="red">気圧、輻射熱は関係しない！</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A-100</div>
+        <p>感覚温度が低下するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 気圧の上昇<br>
+          b: 気湿の上昇<br>
+          c: 気流の増加<br>
+          d: 輻射熱の低下<br>
+          e: カタ冷却力の低下
+        </div>
+        <div class="answer">正解: C</div>
+      </div>
+
+      <h3>建築物環境衛生基準</h3>
+      <table>
+        <tr><th>項目</th><th>基準値</th></tr>
+        <tr><td>浮遊粉じん量</td><td>0.15 mg/m³以下</td></tr>
+        <tr><td><span class="highlight">CO（一酸化炭素）</span></td><td><span class="red">10 ppm以下</span>（0.0001%）衛生学的許容濃度とよばれる</td></tr>
+        <tr><td><span class="highlight">CO2（二酸化炭素）</span></td><td><span class="red">1,000 ppm以下</span>（0.1%：大気中の濃度の3倍）室内換気量の目安</td></tr>
+        <tr><td>温度</td><td>17〜28℃</td></tr>
+        <tr><td>湿度</td><td>40〜70%</td></tr>
+        <tr><td>気流</td><td>0.5 m/秒以下</td></tr>
+        <tr><td>ホルムアルデヒド</td><td>0.1 mg/m³以下</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">CHECK! COとCO2の違い</div>
+        <ul>
+          <li><strong>CO</strong>：無色・無臭、Hbとの結合力はCO2の300倍</li>
+          <li><strong>CO2</strong>：大気中に<span class="red">0.04%</span>、呼気に<span class="red">4%</span>、成人1時間あたり20L排出、<span class="highlight">換気の指標</span></li>
+        </ul>
+      </div>
+
+      <h3>シックハウス症候群</h3>
+      <ul>
+        <li>原因：<span class="highlight">揮発性有機化合物（VOC）</span>、カビ、ダニ、細菌</li>
+        <li>症状：めまい、のどの痛みなど</li>
+      </ul>
+
+      <h3>照度（単位：ルクス Lx）</h3>
+      <ul>
+        <li>診療室：750〜1,000 Lx</li>
+        <li>手術室：1,000〜1,500 Lx</li>
+      </ul>
+
+      <div class="syllabus-section">イ. 廃棄物処理</div>
+      <div class="syllabus-item">小項目: a. 廃棄物処理</div>
+
+      <h2>IX. 廃棄物処理</h2>
+
+      <h3>廃棄物の分類</h3>
+      <table>
+        <tr><th>分類</th><th>内容</th><th>例</th></tr>
+        <tr><td>一般廃棄物</td><td>産業廃棄物以外の廃棄物</td><td>家庭ごみ、し尿</td></tr>
+        <tr><td><span class="highlight">産業廃棄物</span></td><td>事業活動に伴って生じた廃棄物</td><td>汚泥、廃油、廃プラスチック</td></tr>
+        <tr><td><span class="highlight">感染性廃棄物</span></td><td>医療機関等から排出される感染性のある廃棄物</td><td>血液、注射針、メス</td></tr>
+      </table>
+
+      <h3>歯科診療所における廃棄物</h3>
+      <ul>
+        <li>歯科診療所からは<span class="highlight">一般廃棄物と産業廃棄物の両方</span>が排出される</li>
+        <li><span class="highlight">感染性廃棄物は発生時点から分別</span>する</li>
+        <li>印象材は一般廃棄物（産業廃棄物ではない）</li>
+        <li>医療廃棄物の処理責任は<span class="highlight">排出事業者</span>にある（都道府県や処理業者ではない）</li>
+      </ul>
+
+      <h3>感染性産業廃棄物の例</h3>
+      <ul>
+        <li>縫合に用いた針</li>
+        <li>使用済み血液製剤</li>
+        <li>使用済み注射針</li>
+        <li>切除組織片</li>
+        <li>細菌検査済培地</li>
+      </ul>
+
+      <div class="check-box">
+        <div class="check-box-title">感染性産業廃棄物でないもの</div>
+        <ul>
+          <li>抜去した歯（感染性一般廃棄物）</li>
+          <li>作業用石膏模型</li>
+          <li>血液の付着したガーゼ（特別管理一般廃棄物）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C-89</div>
+        <p>歯科診療所における廃棄物処理について正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 印象材は一般廃棄物として処理する。<br>
+          b: 感染性廃棄物は発生時点から分別する。<br>
+          c: 一般廃棄物と産業廃棄物とが排出される。<br>
+          d: 医療廃棄物の処理は都道府県の責任で行う。<br>
+          e: 感染性廃棄物処理の責任者は処理業者である。
+        </div>
+        <div class="answer">正解: B, C</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C-35</div>
+        <p>感染性産業廃棄物はどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 抜去した歯<br>
+          b: 作業用石膏模型<br>
+          c: 縫合に用いた針<br>
+          d: 使用済み血液製剤<br>
+          e: 血液の付着したガーゼ
+        </div>
+        <div class="answer">正解: C, D</div>
+      </div>
+
+      <h2>X. 職業性口腔疾患</h2>
+
+      <h3>歯科医師による健康診断</h3>
+      <p>労働安全衛生法に基づき、以下の物質を扱う労働者には<span class="highlight">6か月以内に1回</span>、歯科医師による健康診断が義務付けられている。</p>
+      <ul>
+        <li><span class="red">塩酸、硝酸、硫酸、亜硫酸、弗化水素、黄りん</span></li>
+        <li>※カドミウムは健診対象外</li>
+      </ul>
+
+      <h3>職業性の歯の酸蝕症</h3>
+      <ul>
+        <li>メッキ工場、バッテリー工場、化学物質製造工場で多い</li>
+        <li>二酸化硫黄は水に溶解すると硫酸になる</li>
+        <li>予防には<span class="highlight">作業環境管理が優先</span>される</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">105A-71</div>
+        <p>職業性の歯の酸蝕症の原因物質はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 黄リン<br>
+          b: クロム<br>
+          c: カドミウム<br>
+          d: 二酸化硫黄<br>
+          e: 苛性ソーダ
+        </div>
+        <div class="answer">正解: D</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C-105</div>
+        <p>メッキ工場の従業員に労働安全衛生法に基づいて歯科医師による健康診断を実施することとなった。特に留意すべきなのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 歯石の沈着<br>
+          b: 顎骨の壊死<br>
+          c: 歯表面の脱灰<br>
+          d: カドミウム黄色環<br>
+          e: 口腔粘膜のびらん
+        </div>
+        <div class="answer">正解: C（酸蝕症による歯表面の脱灰）</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

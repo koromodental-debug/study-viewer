@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>必修9-カ 画像検査：エックス線撮影装置・検出器・撮影補助器材</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue: #CBD5E0;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FAF8F5;
+      --yellow-border: #E8E4DE;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 16px; color: var(--accent); }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+    h2 .num { color: var(--accent); }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    tr:last-child td { border-bottom: none; }
+    .highlight { font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .syllabus-section {
+      background: #EDF2F7;
+      padding: 6px 10px;
+      margin: 10px 0 6px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: bold;
+    }
+    .syllabus-item {
+      color: var(--text-secondary);
+      font-size: 9pt;
+      margin-left: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>必修9-カ 画像検査：撮影装置の名称</h1>
+    <div class="container">
+
+      <div class="syllabus-section">出題基準：カ. 画像検査</div>
+      <div class="syllabus-item">b. エックス線撮影装置、検出器、撮影補助器材</div>
+
+      <!-- ==================== -->
+      <h2>1. エックス線撮影装置の構成</h2>
+      <!-- ==================== -->
+
+      <h3>X線管球に求められる4つの具備条件</h3>
+      <table>
+        <tr>
+          <th>条件</th>
+          <th>内容</th>
+          <th>構成要素</th>
+        </tr>
+        <tr>
+          <td>①熱電子の放出</td>
+          <td>陰極フィラメントを加熱して自由電子をつくる</td>
+          <td class="highlight">フィラメント（タングステン製）</td>
+        </tr>
+        <tr>
+          <td>②高い管電圧</td>
+          <td>電子を加速する</td>
+          <td class="highlight">高電圧発生装置</td>
+        </tr>
+        <tr>
+          <td>③管球の真空性</td>
+          <td>電子の方向と運動を保つ</td>
+          <td>ガラス容器</td>
+        </tr>
+        <tr>
+          <td>④陰極ターゲットの存在</td>
+          <td>電子の阻止</td>
+          <td class="highlight">ターゲット（タングステン板）</td>
+        </tr>
+      </table>
+
+      <h3>X線撮影装置の主要構成要素</h3>
+      <table>
+        <tr>
+          <th>構成要素</th>
+          <th>役割</th>
+          <th>材質・特徴</th>
+        </tr>
+        <tr>
+          <td class="highlight">点火装置</td>
+          <td>フィラメントへ電圧をかけ熱電子を発生させる</td>
+          <td>同時点火方式 / 先点火方式</td>
+        </tr>
+        <tr>
+          <td class="highlight">陽極（ターゲット）</td>
+          <td>電子がぶつかってX線が発生する場所を焦点とよぶ</td>
+          <td>タングステン（融点3,380℃、熱伝導性良好）</td>
+        </tr>
+        <tr>
+          <td class="highlight">収束装置</td>
+          <td>フィラメントから出る熱電子をターゲットの方向に収束させる</td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td class="highlight">整流装置</td>
+          <td>ダイオードなどを使って電流を一方向に流す</td>
+          <td>全波整流回路 → 半影が小さくなる</td>
+        </tr>
+        <tr>
+          <td class="highlight">ろ過（フィルタ）</td>
+          <td>人体に有害でしかない長波長X線をアルミニウム板などで除去</td>
+          <td class="red">Al（アルミニウム）1.5mm以上</td>
+        </tr>
+        <tr>
+          <td class="highlight">絞り（コリメータ）</td>
+          <td>X線の広がりを防ぎ、必要最低限の照射野を得る</td>
+          <td>鉛製、口内法では直径6cm以下</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">104A-4</div>
+        <p>歯科用エックス線撮影装置の構造で低エネルギーエックス線の除去を目的としているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: コーン<br>
+          b: トランス<br>
+          c: フィルタ<br>
+          d: ターゲット<br>
+          e: コリメータ
+        </div>
+        <div class="answer">正解: c（フィルタ）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：フィルタ vs コリメータ</div>
+        <ul>
+          <li><span class="highlight">フィルタ（ろ過板）</span>：<span class="red">低エネルギー（長波長）X線を除去</span> → 被曝低減</li>
+          <li><span class="highlight">コリメータ（絞り）</span>：照射野を絞る → 散乱線減少・被曝低減</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A-24</div>
+        <p>口内法エックス線撮影で使用すると半影が小さくなるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: ろ過板<br>
+          b: 全波整流回路<br>
+          c: ロングコーン<br>
+          d: 高感度フィルム<br>
+          e: 固体半導体センサー
+        </div>
+        <div class="answer">正解: b（全波整流回路）</div>
+      </div>
+
+      <!-- ==================== -->
+      <h2>2. 撮影条件（管電圧・管電流）</h2>
+      <!-- ==================== -->
+
+      <h3>口内法エックス線撮影の条件</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>値</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td>管電圧</td>
+          <td class="red">60〜70kV</td>
+          <td>70kVp以下の装置ではAl 1.5mm以上のろ過</td>
+        </tr>
+        <tr>
+          <td>管電流</td>
+          <td class="red">10mA</td>
+          <td>μAではない！</td>
+        </tr>
+        <tr>
+          <td>照射野</td>
+          <td>直径6cm以下</td>
+          <td>コーン先端で</td>
+        </tr>
+        <tr>
+          <td>焦点皮膚間距離</td>
+          <td>15cm以上</td>
+          <td>近すぎると被曝増加</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">105A-13</div>
+        <p>歯科用エックス線装置の管電圧はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 60〜70V<br>
+          b: 600〜700V<br>
+          c: 6〜7kV<br>
+          d: 60〜70kV<br>
+          e: 600〜700kV
+        </div>
+        <div class="answer">正解: d（60〜70kV）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A-10</div>
+        <p>口内法エックス線装置の管電流はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 10μA<br>
+          b: 100μA<br>
+          c: 1mA<br>
+          d: 10mA<br>
+          e: 100mA
+        </div>
+        <div class="answer">正解: d（10mA）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A-22</div>
+        <p>フイルムを用いた口内法エックス線撮影で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 管電圧を60〜70kVにする。<br>
+          b: エックス線グリッドを使用する。<br>
+          c: 焦点皮膚間距離を15cm以下にする。<br>
+          d: スクリーンタイプフイルムを使用する。<br>
+          e: 照射筒の先端で照射野を直径6cm以上にする。
+        </div>
+        <div class="answer">正解: a（管電圧60〜70kV）</div>
+      </div>
+
+      <!-- ==================== -->
+      <h2>3. 検出器の種類</h2>
+      <!-- ==================== -->
+
+      <h3>エックス線検出器の分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>種類</th>
+          <th>特徴</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td rowspan="2">フィルム</td>
+          <td class="highlight">ノンスクリーンタイプ</td>
+          <td>X線に対しての感度が高い</td>
+          <td class="red">口内法撮影</td>
+        </tr>
+        <tr>
+          <td class="highlight">スクリーンタイプ</td>
+          <td>増感紙にはさんで用いる</td>
+          <td class="red">口外法撮影</td>
+        </tr>
+        <tr>
+          <td rowspan="2">デジタル検出器</td>
+          <td class="highlight">半導体エックス線検出器</td>
+          <td>入射X線を電気や光に変換<br>CCD・CMOSセンサー<br>即時性が高い</td>
+          <td>口内法</td>
+        </tr>
+        <tr>
+          <td class="highlight">IP（イメージングプレート）</td>
+          <td>輝尽発光現象を利用<br>半導体に比べて即時性に劣る</td>
+          <td>口内法・口外法</td>
+        </tr>
+      </table>
+
+      <h3>増感紙の役割</h3>
+      <div class="point-box">
+        <div class="point-box-title">増感紙（スクリーン）の特徴</div>
+        <ul>
+          <li>感度を<span class="red">10倍以上</span>にするため、照射線量は<span class="red">10分の1以下</span>となる</li>
+          <li>増感紙を用いると<span class="red">鮮鋭度は低下</span>する</li>
+          <li>ベースに蛍光体が塗布されている</li>
+          <li>蛍光体の主成分はCaWO<sub>4</sub>やGd<sub>2</sub>O<sub>2</sub>Sである</li>
+          <li>X線のエネルギーを可視光線に変換する</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A-7</div>
+        <p>パノラマエックス線検査で蛍光増感紙を用いる理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 解像力の向上<br>
+          b: 散乱線の減少<br>
+          c: 障害陰影の防止<br>
+          d: 被曝線量の低減<br>
+          e: 被写体コントラストの上昇
+        </div>
+        <div class="answer">正解: d（被曝線量の低減）</div>
+      </div>
+
+      <!-- ==================== -->
+      <h2>4. 撮影補助器材</h2>
+      <!-- ==================== -->
+
+      <h3>グリッド</h3>
+      <div class="point-box">
+        <div class="point-box-title">グリッドの役割</div>
+        <ul>
+          <li><span class="red">散乱線の除去</span>（フィルムに入射する散乱線を減らす）</li>
+          <li>画像コントラストの向上</li>
+          <li>口外法撮影で使用（パノラマなど）</li>
+          <li>口内法では使用しない</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A-24</div>
+        <p>エックス線画像検査でフィルムに入射する散乱線が少なくなるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 管電圧を高くする。<br>
+          b: 増感紙を使用する。<br>
+          c: 照射野を大きくする。<br>
+          d: グリッドを使用する。<br>
+          e: 被写体・フィルム間距離を短くする。
+        </div>
+        <div class="answer">正解: d（グリッドを使用する）</div>
+      </div>
+
+      <h3>検出器保持具（インジケーター）</h3>
+      <div class="question-box">
+        <div class="q-number">117C-2</div>
+        <p>口内法エックス線撮影の補助具の写真を別に示す。使用目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 線量の調整<br>
+          b: 頭部の固定<br>
+          c: 検出器の保持<br>
+          d: 散乱線の除去<br>
+          e: 画像コントラストの向上
+        </div>
+        <div class="answer">正解: c（検出器の保持）</div>
+      </div>
+
+      <!-- ==================== -->
+      <h2>5. 被曝低減の方法</h2>
+      <!-- ==================== -->
+
+      <h3>被曝低減に関係する要素</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>効果</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td class="red">矩形絞りの使用</td>
+          <td>照射野を最小限に</td>
+          <td>画質に影響せず被曝低減</td>
+        </tr>
+        <tr>
+          <td>フィルタの使用</td>
+          <td>低エネルギーX線の除去</td>
+          <td>Al 1.5mm以上</td>
+        </tr>
+        <tr>
+          <td>増感紙の使用</td>
+          <td>感度向上で照射量低減</td>
+          <td>鮮鋭度は低下</td>
+        </tr>
+        <tr>
+          <td>高感度検出器</td>
+          <td>少ない線量で撮影可能</td>
+          <td>デジタルセンサー</td>
+        </tr>
+        <tr>
+          <td>適切な焦点皮膚間距離</td>
+          <td>15cm以上で被曝低減</td>
+          <td>近すぎると増加</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109A-30</div>
+        <p>口内法エックス線撮影で画質に影響せずに患者被曝を低減できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 管電圧を下げる。<br>
+          b: 管電流を下げる。<br>
+          c: 照射時間を短縮する。<br>
+          d: フイルム撮影にする。<br>
+          e: 矩形絞りを使用する。
+        </div>
+        <div class="answer">正解: e（矩形絞りを使用する）</div>
+      </div>
+
+      <!-- ==================== -->
+      <h2>6. 医療情報システム</h2>
+      <!-- ==================== -->
+
+      <h3>DICOM（Digital Imaging and Communications in Medicine）</h3>
+      <div class="point-box">
+        <div class="point-box-title">DICOMの特徴</div>
+        <ul>
+          <li><span class="red">医用画像フォーマットと通信の標準規格</span></li>
+          <li>医用画像のフォーマットを統一することで、どんな施設でも、どんなパソコンでも閲覧することが可能となる</li>
+          <li>診療所間の画像のやりとりや遠隔画像診断に応用できる</li>
+          <li>患者個人情報データを含む</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A-2</div>
+        <p>患者個人情報データを含む医用画像情報の標準規格はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: BMP<br>
+          b: PNG<br>
+          c: JPEG<br>
+          d: TIFF<br>
+          e: DICOM
+        </div>
+        <div class="answer">正解: e（DICOM）</div>
+      </div>
+
+      <!-- ==================== -->
+      <h2>7. 各撮影法の装置特徴</h2>
+      <!-- ==================== -->
+
+      <table>
+        <tr>
+          <th>撮影法</th>
+          <th>焦点・被写体間距離</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>口内法（平行法）</td>
+          <td>約30cm</td>
+          <td>歪みが少ない</td>
+        </tr>
+        <tr>
+          <td>口内法（二等分法）</td>
+          <td>約20cm</td>
+          <td>歪みあり</td>
+        </tr>
+        <tr>
+          <td>パノラマ</td>
+          <td>約50cm</td>
+          <td>断層撮影、増感紙使用</td>
+        </tr>
+        <tr>
+          <td class="red">頭部エックス線規格撮影</td>
+          <td class="red">150cm（最長）</td>
+          <td>セファロ、規格化のため</td>
+        </tr>
+        <tr>
+          <td>CT</td>
+          <td>約60-80cm</td>
+          <td>断層像</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107A-10</div>
+        <p>焦点・被写体間距離が最も長いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: CT<br>
+          b: 咬合法撮影<br>
+          c: 平行法撮影<br>
+          d: パノラマエックス線撮影<br>
+          e: 頭部エックス線規格撮影
+        </div>
+        <div class="answer">正解: e（頭部エックス線規格撮影）</div>
+      </div>
+
+      <!-- ==================== -->
+      <h2>まとめ：頻出暗記事項</h2>
+      <!-- ==================== -->
+
+      <div class="point-box">
+        <div class="point-box-title">絶対に覚える数値</div>
+        <table>
+          <tr>
+            <th>項目</th>
+            <th>数値</th>
+          </tr>
+          <tr>
+            <td>口内法の管電圧</td>
+            <td class="red">60〜70kV</td>
+          </tr>
+          <tr>
+            <td>口内法の管電流</td>
+            <td class="red">10mA</td>
+          </tr>
+          <tr>
+            <td>フィルタ（Al）の厚さ</td>
+            <td class="red">1.5mm以上</td>
+          </tr>
+          <tr>
+            <td>照射野の直径</td>
+            <td class="red">6cm以下</td>
+          </tr>
+          <tr>
+            <td>焦点皮膚間距離</td>
+            <td class="red">15cm以上</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">装置の役割 早見表</div>
+        <table>
+          <tr>
+            <th>装置</th>
+            <th>役割</th>
+          </tr>
+          <tr>
+            <td>フィルタ</td>
+            <td>低エネルギーX線の除去</td>
+          </tr>
+          <tr>
+            <td>コリメータ</td>
+            <td>照射野の絞り</td>
+          </tr>
+          <tr>
+            <td>グリッド</td>
+            <td>散乱線の除去</td>
+          </tr>
+          <tr>
+            <td>増感紙</td>
+            <td>被曝低減（感度向上）</td>
+          </tr>
+          <tr>
+            <td>整流装置</td>
+            <td>電流を一方向に（半影↓）</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

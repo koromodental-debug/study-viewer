@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細胞内液と細胞外液</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 24pt; font-weight: bold; margin-bottom: 16px; }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; }
+    h2 .num { color: var(--accent); }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 8px 12px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .syllabus-section {
+      background: #EDF2F7;
+      padding: 6px 10px;
+      margin: 10px 0 6px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: bold;
+    }
+    .syllabus-item {
+      color: var(--text-secondary);
+      font-size: 9pt;
+      margin-left: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>細胞内液と細胞外液</h1>
+    <div class="container">
+
+      <div class="syllabus-section">総論II. 正常構造と機能</div>
+      <div class="syllabus-item">関連: 生体構成成分、体液の恒常性、腎機能と体液調節</div>
+
+      <div class="point-box">
+        <div class="point-box-title">最重要ポイント</div>
+        <ul>
+          <li><span class="red">細胞外液の主要陽イオン = Na+</span>（約140 mEq/L）</li>
+          <li><span class="red">細胞内液の主要陽イオン = K+</span>（約140 mEq/L）</li>
+          <li>細胞外液にK+が増加すると → <span class="highlight">脱分極</span>（静止膜電位に影響）</li>
+          <li>血漿K+濃度の基準値 = <span class="highlight">約4 mEq/L</span></li>
+        </ul>
+      </div>
+
+      <h2><span class="num">1.</span> 体液の区分</h2>
+
+      <h3>体液量の割合</h3>
+      <table>
+        <tr>
+          <th>区分</th>
+          <th>体重比</th>
+          <th>全体液に対する割合</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">全体液量</span></td>
+          <td>60%（女性55%）</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">細胞内液</span></td>
+          <td>40%</td>
+          <td>2/3</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">細胞外液</span></td>
+          <td>20%</td>
+          <td>1/3</td>
+        </tr>
+        <tr>
+          <td>　├ 間質液</td>
+          <td>15%</td>
+          <td>細胞外液の3/4</td>
+        </tr>
+        <tr>
+          <td>　└ 血漿</td>
+          <td>5%</td>
+          <td>細胞外液の1/4</td>
+        </tr>
+      </table>
+
+      <h3>加齢による体液量の変化</h3>
+      <ul>
+        <li>新生児：75〜80%</li>
+        <li>乳児：70%</li>
+        <li>成人：60%（女性55%）</li>
+        <li>高齢者：50〜55%</li>
+      </ul>
+      <p>→ 加齢とともに体液量は<span class="red">減少</span>する（脂肪組織の増加による）</p>
+
+      <h2><span class="num">2.</span> 電解質組成</h2>
+
+      <h3>細胞外液 vs 細胞内液の電解質組成（mEq/L）</h3>
+      <table>
+        <tr>
+          <th>イオン</th>
+          <th>細胞外液（血漿）</th>
+          <th>細胞内液</th>
+          <th>ポイント</th>
+        </tr>
+        <tr>
+          <td class="highlight">Na+</td>
+          <td class="red">142</td>
+          <td>15</td>
+          <td>細胞外液で最多</td>
+        </tr>
+        <tr>
+          <td class="highlight">K+</td>
+          <td>4</td>
+          <td class="red">140</td>
+          <td>細胞内液で最多</td>
+        </tr>
+        <tr>
+          <td>Cl-</td>
+          <td>108</td>
+          <td>10</td>
+          <td>細胞外液の主要陰イオン</td>
+        </tr>
+        <tr>
+          <td>HCO3-</td>
+          <td>24</td>
+          <td>10</td>
+          <td>緩衝作用</td>
+        </tr>
+        <tr>
+          <td>Ca2+</td>
+          <td>2.6</td>
+          <td>微量</td>
+          <td>筋収縮に関与</td>
+        </tr>
+        <tr>
+          <td>Mg2+</td>
+          <td>1.6</td>
+          <td>26</td>
+          <td>細胞内に多い</td>
+        </tr>
+        <tr>
+          <td>タンパク質</td>
+          <td>16</td>
+          <td>40</td>
+          <td>細胞内に多い</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <p><span class="highlight">「外はナトリウム、内はカリウム」</span></p>
+        <ul>
+          <li>細胞<span class="red">外</span>液 → <span class="red">Na</span>+（ナトリウム）が多い</li>
+          <li>細胞<span class="red">内</span>液 → <span class="red">K</span>+（カリウム）が多い</li>
+        </ul>
+      </div>
+
+      <h2><span class="num">3.</span> 膜電位と脱分極</h2>
+
+      <h3>静止膜電位</h3>
+      <ul>
+        <li>細胞内は細胞外に比べて約<span class="highlight">-70〜-90 mV</span></li>
+        <li>主にK+の細胞内外の濃度差によって形成される</li>
+        <li>Na+-K+ポンプ（Na+-K+ ATPase）が濃度勾配を維持</li>
+      </ul>
+
+      <h3>細胞外K+濃度上昇と脱分極</h3>
+      <p>細胞外液中のK+が増加すると：</p>
+      <ul>
+        <li>K+の濃度勾配が減少</li>
+        <li>静止膜電位が<span class="red">脱分極</span>方向へ変化（0に近づく）</li>
+        <li>神経・筋の興奮性が変化</li>
+        <li>高カリウム血症 → 心停止のリスク</li>
+      </ul>
+
+      <h2><span class="num">4.</span> 体液調節</h2>
+
+      <h3>体液の電解質濃度を調節する臓器</h3>
+      <p><span class="red">腎臓</span>が主に担当</p>
+      <ul>
+        <li>糸球体濾過 → 尿細管での再吸収・分泌</li>
+        <li>水・電解質のバランスを調節</li>
+        <li>酸塩基平衡の維持</li>
+      </ul>
+
+      <h3>体液量調節に関与するホルモン</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>分泌部位</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td class="highlight">アルドステロン</td>
+          <td>副腎皮質</td>
+          <td>Na+再吸収↑ → <span class="red">細胞外液量↑</span></td>
+        </tr>
+        <tr>
+          <td class="highlight">バソプレシン（ADH）</td>
+          <td>下垂体後葉（視床下部で産生）</td>
+          <td>水の再吸収↑ → 尿量↓</td>
+        </tr>
+        <tr>
+          <td>ANP（心房性Na利尿ペプチド）</td>
+          <td>心房</td>
+          <td>Na+再吸収↓（アルドステロン拮抗）</td>
+        </tr>
+        <tr>
+          <td>パラトルモン（PTH）</td>
+          <td>副甲状腺</td>
+          <td>Ca2+再吸収↑</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">5.</span> 浸透圧</h2>
+
+      <h3>浸透圧と体液移動</h3>
+      <ul>
+        <li>血漿浸透圧：約280〜290 mOsm/L</li>
+        <li>細胞膜は半透膜 → 水は自由に移動</li>
+        <li>浸透圧が高い方へ水が移動</li>
+      </ul>
+
+      <h3>浮腫の原因</h3>
+      <ul>
+        <li>Na+の貯留</li>
+        <li>血漿膠質浸透圧の低下（低アルブミン血症）</li>
+        <li>毛細血管内圧の上昇</li>
+        <li>リンパ管の閉塞</li>
+        <li>血管透過性の亢進</li>
+      </ul>
+
+      <h2><span class="num">6.</span> 臨床的意義</h2>
+
+      <h3>血清カリウム値の基準</h3>
+      <ul>
+        <li>基準値：<span class="highlight">3.5〜5.0 mEq/L（約4 mEq/L）</span></li>
+        <li>高カリウム血症 → T波増高、心室細動のリスク</li>
+        <li>低カリウム血症 → U波出現、筋力低下</li>
+      </ul>
+
+      <h3>腎機能低下と電解質異常</h3>
+      <ul>
+        <li>腎機能低下 → K+排泄↓ → <span class="red">血清カリウム値上昇</span></li>
+        <li>透析患者：K+制限食が必要</li>
+      </ul>
+
+      <h2><span class="num">7.</span> 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106C-35</div>
+        <p>細胞外液のイオン組成で最も多いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: K+<br>
+          b: Na+<br>
+          c: Ca2+<br>
+          d: Mg2+<br>
+          e: NH4+
+        </div>
+        <div class="answer">正解: b（Na+）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A-88</div>
+        <p>細胞外液中に増加すると神経細胞の著明な脱分極を起こすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: K+<br>
+          b: Na+<br>
+          c: Fe2+<br>
+          d: Mg2+<br>
+          e: Zn2+
+        </div>
+        <div class="answer">正解: a（K+）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A-46</div>
+        <p>静止膜電位の時に心筋細胞内で最も濃度が高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: K+<br>
+          b: Cl-<br>
+          c: Na+<br>
+          d: Ca2+<br>
+          e: Mg2+
+        </div>
+        <div class="answer">正解: a（K+）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A-27</div>
+        <p>体液の電解質濃度を一定に保つのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 肝臓<br>
+          b: 腎臓<br>
+          c: 脾臓<br>
+          d: 膵臓<br>
+          e: 副腎
+        </div>
+        <div class="answer">正解: b（腎臓）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C-47</div>
+        <p>ホルモンと作用との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: ガストリン ─ 胃酸分泌抑制<br>
+          b: インスリン ─ グリコーゲン合成抑制<br>
+          c: サイロキシン ─ 基礎代謝率低下<br>
+          d: コルチゾール ─ プロスタグランジン合成促進<br>
+          e: アルドステロン ─ 細胞外液量増加
+        </div>
+        <div class="answer">正解: e（アルドステロン─細胞外液量増加）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C-17</div>
+        <p>血漿中のカリウム濃度（mEq/L）はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 1<br>
+          b: 4<br>
+          c: 10<br>
+          d: 100<br>
+          e: 140
+        </div>
+        <div class="answer">正解: b（4 mEq/L）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A-12</div>
+        <p>腎機能低下に伴う変化はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 血小板数の減少<br>
+          b: Dダイマー値の上昇<br>
+          c: 血清カリウム値の上昇<br>
+          d: ヘモグロビン量の増加<br>
+          e: プロトロンビン時間の延長
+        </div>
+        <div class="answer">正解: c（血清カリウム値の上昇）</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

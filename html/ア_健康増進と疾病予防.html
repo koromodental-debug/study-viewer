@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>健康増進と疾病予防</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>ア. 健康増進と疾病予防</h1>
+    <div class="subtitle">必修3 予防と健康管理・増進</div>
+    <div class="container">
+
+      <h3>プライマリヘルスケアとヘルスプロモーション</h3>
+      <table>
+        <tr><th></th><th>プライマリヘルスケア</th><th>ヘルスプロモーション</th></tr>
+        <tr><td>提唱</td><td><span class="red">アルマ・アタ宣言</span>（1978年）</td><td><span class="red">オタワ憲章</span>（1986年）</td></tr>
+        <tr><td>対象</td><td>発展途上国中心</td><td>先進国中心</td></tr>
+        <tr><td>特徴</td><td>必要不可欠なヘルスケア</td><td>健康を支援する環境づくり</td></tr>
+      </table>
+
+      <h3>プライマリヘルスケアの4原則（Kaprioの4原則）</h3>
+      <ul>
+        <li><span class="red">ニーズ指向性</span>のある保健活動</li>
+        <li>住民の<span class="red">主体的参加</span></li>
+        <li><span class="red">有限資源の最大限</span>の活用</li>
+        <li><span class="highlight">多職種間の協調</span></li>
+      </ul>
+
+      <h3>ヘルスプロモーションの5つの活動領域</h3>
+      <ul>
+        <li><span class="red">健康的な公共政策</span>づくり</li>
+        <li>健康を<span class="red">支援する環境</span>づくり</li>
+        <li><span class="highlight">地域活動の強化</span></li>
+        <li><span class="highlight">個人技術の開発</span></li>
+        <li><span class="highlight">ヘルスサービスの方向転換</span></li>
+      </ul>
+
+      <h3>健康日本21（第二次）歯の健康に関する目標</h3>
+      <table>
+        <tr><th>目標</th><th>ベースライン</th><th>目標値</th></tr>
+        <tr><td><span class="red">80歳で20歯以上</span></td><td>25.0%</td><td><span class="red">50%</span></td></tr>
+        <tr><td><span class="highlight">60歳で24歯以上</span></td><td>60.2%</td><td>70%</td></tr>
+        <tr><td>40歳で喪失歯なし</td><td>54.1%</td><td>75%</td></tr>
+        <tr><td><span class="red">60歳代で咀嚼良好者</span></td><td>73.4%</td><td><span class="red">80%</span></td></tr>
+        <tr><td>過去1年間に歯科検診受診</td><td>34.1%</td><td>65%</td></tr>
+      </table>
+
+      <h3>メタボリックシンドロームの診断基準</h3>
+      <p><span class="red">必須項目</span>：ウエスト周囲径（男性<span class="red">85cm以上</span>、女性<span class="red">90cm以上</span>）</p>
+      <p>＋以下の<span class="red">2項目以上</span>該当：</p>
+      <table>
+        <tr><th>項目</th><th>基準値</th></tr>
+        <tr><td><span class="highlight">トリグリセライド</span></td><td><span class="red">150mg/dL以上</span>、かつ/または HDLコレステロール<span class="red">40mg/dL未満</span></td></tr>
+        <tr><td><span class="highlight">血圧</span></td><td>収縮期<span class="red">130mmHg以上</span>、かつ/または 拡張期<span class="red">85mmHg以上</span></td></tr>
+        <tr><td><span class="highlight">空腹時血糖</span></td><td><span class="red">110mg/dL以上</span></td></tr>
+      </table>
+
+      <h3>予防の段階</h3>
+      <table>
+        <tr><th>段階</th><th>内容</th><th>具体例</th></tr>
+        <tr><td><span class="red">一次予防</span></td><td>疾病の発生予防</td><td>健康教育、予防接種、フッ化物応用</td></tr>
+        <tr><td><span class="red">二次予防</span></td><td>早期発見・早期治療</td><td>健康診査、スクリーニング</td></tr>
+        <tr><td><span class="red">三次予防</span></td><td>機能回復・再発防止</td><td>リハビリテーション</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117A-1</div>
+        <p>プライマリヘルスケアに関連するサービスで誤っているのはどれか。1つ選べ。</p>
+        <p>a: サービス拠点を住民の近くに設ける　b: 有病予防を強調したサービスを行う　c: サービスに関する責任を国に帰結する　d: 地域の各機関の連携システムを構築する</p>
+        <div class="answer">正解: c（サービスへの住民参加・自治が重要）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B-2</div>
+        <p>健康日本21（第二次）で平成34年度における過去1年間に歯科検診を受診した者の割合の目標値はどれか。1つ選べ。</p>
+        <p>a: 45%以上　b: 50%以上　c: 55%以上　d: 60%以上　e: 65%以上</p>
+        <div class="answer">正解: e（過去1年間に歯科検診受診者の目標は65%）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118A-3</div>
+        <p>メタボリックシンドロームの診断基準に含まれるのはどれか。1つ選べ。</p>
+        <p>a: ALT　b: HbA1c　c: ウエスト周囲径　d: 血清アルブミン　e: クレアチニンクリアランス</p>
+        <div class="answer">正解: c（必須項目はウエスト周囲径）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">プライマリヘルスケア</span>＝アルマ・アタ宣言、住民参加・ニーズ指向</li>
+          <li><span class="red">ヘルスプロモーション</span>＝オタワ憲章、環境づくり</li>
+          <li><span class="red">健康日本21（第二次）</span>＝8020運動、歯科検診65%目標</li>
+          <li><span class="red">メタボ必須</span>＝ウエスト周囲径（男85cm、女90cm）＋2項目以上</li>
+          <li><span class="red">一次予防</span>＝発生予防、<span class="red">二次予防</span>＝早期発見、<span class="red">三次予防</span>＝機能回復</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

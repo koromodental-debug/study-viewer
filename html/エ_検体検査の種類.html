@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>検体検査の種類</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>エ. 検体検査の種類</h1>
+    <div class="subtitle">必修10 検査・臨床判断の基本</div>
+    <div class="container">
+
+      <h3>検体検査 vs 生体検査（生理機能検査）</h3>
+      <table>
+        <tr><th>分類</th><th>内容</th><th>具体例</th></tr>
+        <tr><td><span class="red">検体検査</span></td><td>患者から採取した検体を分析</td><td>血液検査、尿検査、生化学検査、微生物検査</td></tr>
+        <tr><td><span class="highlight">生体検査</span></td><td>患者の体を直接測定</td><td>心電図、脳波、筋電図、スパイロメトリ</td></tr>
+      </table>
+
+      <h3>検体検査法と目的</h3>
+      <table>
+        <tr><th>検査法</th><th>目的</th></tr>
+        <tr><td><span class="red">PCR法</span></td><td><span class="red">DNAの増幅</span></td></tr>
+        <tr><td><span class="highlight">ウエスタンブロット法</span></td><td>タンパク質の検出・定量</td></tr>
+        <tr><td><span class="highlight">ノーザンブロット法</span></td><td>RNAの検出</td></tr>
+        <tr><td><span class="highlight">サザンブロット法</span></td><td>DNAの検出</td></tr>
+        <tr><td><span class="highlight">in situハイブリダイゼーション</span></td><td>組織内の核酸の局在</td></tr>
+        <tr><td><span class="highlight">ELISA法</span></td><td>抗原・抗体の定量</td></tr>
+      </table>
+
+      <h3>一般臨床検査（尿検査）</h3>
+      <table>
+        <tr><th>検査項目</th><th>陽性で疑う病態</th></tr>
+        <tr><td>尿糖</td><td>糖尿病</td></tr>
+        <tr><td>尿タンパク</td><td>腎疾患、糖尿病性腎症</td></tr>
+        <tr><td>尿潜血</td><td>腎・尿路疾患</td></tr>
+        <tr><td>ケトン体</td><td>糖尿病性ケトアシドーシス、飢餓</td></tr>
+      </table>
+
+      <h3>免疫血清学検査</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td><span class="red">HBs抗体</span></td><td><span class="red">B型肝炎ワクチン接種後の免疫獲得指標</span></td></tr>
+        <tr><td><span class="highlight">HBs抗原</span></td><td>B型肝炎の感染（現在の感染）</td></tr>
+        <tr><td><span class="highlight">HBc抗体</span></td><td>B型肝炎の既往感染</td></tr>
+        <tr><td><span class="red">β-グルカン</span></td><td><span class="red">真菌症の血清診断</span>（真菌細胞壁成分）</td></tr>
+        <tr><td><span class="highlight">CRP</span></td><td>炎症マーカー</td></tr>
+        <tr><td><span class="highlight">RF（リウマトイド因子）</span></td><td>関節リウマチ</td></tr>
+      </table>
+
+      <h3>免疫グロブリンの種類と機能</h3>
+      <table>
+        <tr><th>種類</th><th>特徴・機能</th></tr>
+        <tr><td><span class="red">IgG</span></td><td>血中最多、<span class="red">オプソニン化</span>（貪食促進）、胎盤通過</td></tr>
+        <tr><td><span class="highlight">IgA</span></td><td>分泌型、粘膜免疫（唾液、母乳）</td></tr>
+        <tr><td><span class="highlight">IgM</span></td><td>初期免疫応答、五量体</td></tr>
+        <tr><td><span class="highlight">IgE</span></td><td>I型アレルギー、寄生虫感染</td></tr>
+        <tr><td><span class="highlight">IgD</span></td><td>B細胞表面の抗原受容体</td></tr>
+      </table>
+
+      <h3>自然免疫 vs 獲得免疫</h3>
+      <table>
+        <tr><th>分類</th><th>担当細胞</th><th>特徴</th></tr>
+        <tr><td><span class="red">自然免疫</span></td><td><span class="red">NK細胞</span>、マクロファージ、好中球、樹状細胞</td><td>非特異的、即座に反応</td></tr>
+        <tr><td><span class="highlight">獲得免疫</span></td><td>T細胞、B細胞、形質細胞</td><td>特異的、記憶あり</td></tr>
+      </table>
+
+      <h3>微生物学検査</h3>
+      <ul>
+        <li><span class="highlight">グラム染色</span>：細菌の分類（陽性/陰性）</li>
+        <li><span class="highlight">培養検査</span>：起因菌の同定</li>
+        <li><span class="highlight">薬剤感受性試験</span>：有効な抗菌薬の選択</li>
+        <li><span class="highlight">PCR法</span>：病原体DNAの検出</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">107A-33</div>
+        <p>検体検査法と目的との組合せで正しいのはどれか。1つ選べ。</p>
+        <p>a: 比色法－溶液体積の測定　b: ノーザンブロット法－抗原タンパク質の定量　c: ウエスタンブロット法－RNAの検出　d: in situハイブリダイゼーション法－アミノ酸配列の決定　e: PCR法－DNAの増幅</p>
+        <div class="answer">正解: e（PCR = Polymerase Chain Reaction = DNAの増幅）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A-16</div>
+        <p>B型肝炎ワクチン接種終了6か月後の免疫獲得の血中指標はどれか。1つ選べ。</p>
+        <p>a: HBc抗体価　b: HBe抗原量　c: HBe抗体価　d: HBs抗原量　e: HBs抗体価</p>
+        <div class="answer">正解: e（HBs抗体はワクチン接種による免疫獲得を示す）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A-9</div>
+        <p>好中球の貪食活性を高めるのはどれか。1つ選べ。</p>
+        <p>a: IgA　b: IgD　c: IgE　d: IgG　e: IgM</p>
+        <div class="answer">正解: d（IgGはオプソニン化により貪食を促進する）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">検体検査</span>＝血液・尿など検体を分析、<span class="red">生体検査</span>＝心電図・脳波など</li>
+          <li><span class="red">PCR法</span>＝DNAの増幅</li>
+          <li><span class="red">HBs抗体</span>＝B型肝炎ワクチンの免疫獲得指標</li>
+          <li><span class="red">β-グルカン</span>＝真菌症の血清診断</li>
+          <li><span class="red">IgG</span>＝オプソニン化（貪食促進）</li>
+          <li><span class="red">NK細胞</span>＝自然免疫に関与</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

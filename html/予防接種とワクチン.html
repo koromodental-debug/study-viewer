@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>予防接種とワクチン</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue: #CBD5E0;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FAF8F5;
+      --yellow-border: #E8E4DE;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 0; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 22pt; font-weight: bold; margin-bottom: 16px; color: var(--accent); }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+    h2 .num { color: var(--accent); }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    tr:last-child td { border-bottom: none; }
+    .highlight { font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .summary-box {
+      background: var(--bg-blue-light);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 12px 0; break-inside: avoid;
+    }
+    .summary-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .syllabus-section {
+      background: #EDF2F7;
+      padding: 6px 10px;
+      margin: 10px 0 6px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: bold;
+    }
+    .syllabus-item {
+      color: var(--text-secondary);
+      font-size: 9pt;
+      margin-left: 1em;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .compact-table th, .compact-table td { padding: 3px 6px; font-size: 8pt; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>予防接種とワクチン</h1>
+    <div class="container">
+
+      <div class="syllabus-section">出題基準：総論I-7 感染症対策 / イ. 感染症の予防・管理</div>
+      <div class="syllabus-item">小項目: a.関連法規 b.歯科と関連する感染症 c.職業感染予防 d.院内感染対策</div>
+
+      <!-- ワクチンの種類 -->
+      <h2><span class="num">1</span> ワクチンの種類</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">ワクチンの3分類</div>
+        <ul>
+          <li><span class="highlight">生ワクチン</span>：弱毒化した病原体を使用。免疫持続期間が長い</li>
+          <li><span class="highlight">不活化ワクチン</span>：死滅させた病原体や成分を使用。複数回接種が必要</li>
+          <li><span class="highlight">トキソイド</span>：毒素を無毒化したもの。破傷風・ジフテリアに使用</li>
+        </ul>
+      </div>
+
+      <h3>ワクチンの種類と対象疾患</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>対象疾患</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">生ワクチン</span></td>
+          <td>BCG（結核）、MR（麻疹・風疹）、水痘、ムンプス、<span class="highlight">ロタウイルス（経口）</span></td>
+          <td>弱毒化病原体、免疫持続長い</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">不活化ワクチン</span></td>
+          <td>インフルエンザ、日本脳炎、<span class="highlight">B型肝炎</span>、ポリオ（IPV）、Hib、肺炎球菌、HPV</td>
+          <td>複数回接種が必要</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">トキソイド</span></td>
+          <td><span class="highlight">破傷風</span>、<span class="highlight">ジフテリア</span></td>
+          <td>毒素を無毒化</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112D-39</div>
+        <p>感染症とワクチンの組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 結核 ーー 生ワクチン<br>
+          b: 水痘 ーー 不活化ワクチン<br>
+          c: 日本脳炎 ーー 成分ワクチン<br>
+          d: 破傷風 ーー トキソイドワクチン<br>
+          e: 麻疹 ーー 成分ワクチン
+        </div>
+        <div class="answer">正解: A, D（結核=生ワクチン(BCG)、破傷風=トキソイド。日本脳炎は不活化ワクチンであり「成分ワクチン」とは言わない）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118A-40</div>
+        <p>日本で経口投与されるワクチンはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 水痘<br>
+          b: 風疹<br>
+          c: 麻疹<br>
+          d: 日本脳炎<br>
+          e: ロタウイルス
+        </div>
+        <div class="answer">正解: E（ロタウイルスワクチンは経口生ワクチン）</div>
+      </div>
+
+      <!-- 予防接種法 -->
+      <h2><span class="num">2</span> 予防接種法</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">予防接種法の基本</div>
+        <ul>
+          <li>予防接種は<span class="highlight">宿主対策</span>であり、健常者を対象とする</li>
+          <li><span class="highlight">定期接種</span>と<span class="highlight">任意接種</span>に分類</li>
+          <li>定期接種は<span class="highlight">A類疾病</span>（集団予防目的）と<span class="highlight">B類疾病</span>（個人予防目的）に分類</li>
+        </ul>
+      </div>
+
+      <h3>定期接種 A類疾病とB類疾病</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>対象疾患</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">A類疾病</span><br>（集団予防）</td>
+          <td>ジフテリア、百日咳、ポリオ、麻疹、風疹、日本脳炎、破傷風、結核、Hib感染症、小児肺炎球菌、HPV、<span class="highlight">B型肝炎</span>、水痘、ロタウイルス</td>
+          <td><span class="highlight">努力義務あり</span><br>主に乳幼児対象</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">B類疾病</span><br>（個人予防）</td>
+          <td>インフルエンザ、肺炎球菌感染症（高齢者）</td>
+          <td><span class="red">努力義務なし</span><br>65歳以上対象</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117C-39</div>
+        <p>予防接種法に基づいて0歳児に定期接種されるワクチンはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 黄熱<br>
+          b: 狂犬病<br>
+          c: B型肝炎<br>
+          d: 帯状疱疹<br>
+          e: 流行性耳下腺炎
+        </div>
+        <div class="answer">正解: C（B型肝炎は2016年から0歳児の定期接種対象）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D-47</div>
+        <p>予防接種法に基づく定期の予防接種の対象はどれか。3つ選べ。</p>
+        <div class="choices">
+          a: 麻疹<br>
+          b: 風疹<br>
+          c: 流行性耳下腺炎<br>
+          d: 水痘<br>
+          e: 帯状疱疹
+        </div>
+        <div class="answer">正解: A, B, D（ムンプス=任意接種、帯状疱疹=2025年度から定期接種化）</div>
+      </div>
+
+      <!-- 国民医療費 -->
+      <h2><span class="num">3</span> 国民医療費と予防接種</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">国民医療費に含まれないもの（頻出！）</div>
+        <ul>
+          <li><span class="red">予防接種</span>（予防は医療費に含まれない）</li>
+          <li><span class="red">健康診断・人間ドック</span></li>
+          <li><span class="red">正常分娩</span></li>
+          <li>歯の漂白、入院時室料差額</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118A-44</div>
+        <p>国民医療費に含まれるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 医療扶助<br>
+          b: 健康診断<br>
+          c: 正常分娩<br>
+          d: 薬局調剤<br>
+          e: 予防接種
+        </div>
+        <div class="answer">正解: A, D（予防接種・健康診断・正常分娩は含まれない）</div>
+      </div>
+
+      <!-- B型肝炎 -->
+      <h2><span class="num">4</span> B型肝炎とワクチン</h2>
+
+      <h3>B型肝炎ウイルス（HBV）の構造と抗原・抗体</h3>
+      <table>
+        <tr>
+          <th>抗原/抗体</th>
+          <th>意味</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">HBs抗原</span></td>
+          <td>表面抗原（エンベロープ）</td>
+          <td><span class="highlight">感染の指標</span>、ワクチン成分</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">HBs抗体</span></td>
+          <td>表面抗体</td>
+          <td><span class="highlight">免疫獲得の指標</span>（ワクチン効果判定）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">HBe抗原</span></td>
+          <td>コア関連抗原</td>
+          <td><span class="red">感染力が高い</span>（ウイルス増殖活発）</td>
+        </tr>
+        <tr>
+          <td>HBe抗体</td>
+          <td>コア関連抗体</td>
+          <td>感染力低下（セロコンバージョン）</td>
+        </tr>
+        <tr>
+          <td>HBc抗体</td>
+          <td>コア抗体</td>
+          <td>感染既往の指標</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">B型肝炎の感染経路（4つ）</div>
+        <ul>
+          <li>①性行為</li>
+          <li>②注射針（<span class="highlight">針刺し事故</span>、入れ墨、ピアス、麻薬静脈注射の回し打ち）</li>
+          <li>③母子感染（<span class="highlight">垂直感染</span>）</li>
+          <li>④輸血</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A-16【必修】</div>
+        <p>B型肝炎ワクチン接種終了6か月後の免疫獲得の血中指標はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: HBc抗体価<br>
+          b: HBe抗原量<br>
+          c: HBe抗体価<br>
+          d: HBs抗原量<br>
+          e: HBs抗体価
+        </div>
+        <div class="answer">正解: E（HBs抗体陽性＝免疫獲得）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C-30</div>
+        <p>B型肝炎患者の検査結果で感染力が最も高いと考えられる組合せはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: HBs抗原（−）ーー HBs抗体（＋）<br>
+          b: HBs抗原（−）ーー HBe抗体（＋）<br>
+          c: HBs抗原（−）ーー HBc抗体（＋）<br>
+          d: HBs抗原（＋）ーー HBe抗原（＋）<br>
+          e: HBs抗原（＋）ーー HBe抗原（−）
+        </div>
+        <div class="answer">正解: D（HBs抗原＋かつHBe抗原＋＝感染力最大）</div>
+      </div>
+
+      <!-- 針刺し事故 -->
+      <h2><span class="num">5</span> 針刺し事故への対応</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">針刺し事故発生時の対応手順</div>
+        <ol>
+          <li><span class="highlight">まず流水で洗浄</span>（最優先！）</li>
+          <li>患者のHBs抗原・HCV抗体・HIV抗体を確認</li>
+          <li>術者のHBs抗体を確認</li>
+          <li>HBs抗体陰性の場合→<span class="highlight">HBワクチン＋HBIG（抗HBsヒト免疫グロブリン）投与</span></li>
+        </ol>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C-21</div>
+        <p>処置中に誤って術者が縫合針を指に刺した。まず行うべき対応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 抗菌薬の服用<br>
+          b: 流水による洗浄<br>
+          c: アルコール消毒<br>
+          d: 滅菌ガーゼによる圧迫<br>
+          e: 患者のHBV抗体の検査
+        </div>
+        <div class="answer">正解: B（まず流水洗浄が最優先）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A-8【必修】</div>
+        <p>針刺し事故による感染の予防にワクチン接種が有効なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: ポリオウイルス<br>
+          b: B型肝炎ウイルス<br>
+          c: C型肝炎ウイルス<br>
+          d: 単純ヘルペスウイルス<br>
+          e: ヒトT細胞白血病ウイルス
+        </div>
+        <div class="answer">正解: B（C型肝炎にはワクチンがない）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">B型肝炎 vs C型肝炎の比較</div>
+        <table class="compact-table">
+          <tr>
+            <th></th>
+            <th>B型肝炎</th>
+            <th>C型肝炎</th>
+          </tr>
+          <tr>
+            <td>ワクチン</td>
+            <td><span class="highlight">あり</span>（組換え）</td>
+            <td><span class="red">なし</span></td>
+          </tr>
+          <tr>
+            <td>慢性化</td>
+            <td>成人感染では稀</td>
+            <td>70%以上が慢性化</td>
+          </tr>
+          <tr>
+            <td>治療</td>
+            <td>インターフェロン等</td>
+            <td>完治可能（ハーボニー等）</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- 感染症法 -->
+      <h2><span class="num">6</span> 感染症法の分類</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>主な感染症</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">一類</span></td>
+          <td>エボラ出血熱、ペスト、<span class="highlight">痘瘡</span>（天然痘）、ラッサ熱、クリミア・コンゴ出血熱</td>
+          <td>感染力・致死率が極めて高い</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">二類</span></td>
+          <td><span class="highlight">結核</span>、SARS、MERS、鳥インフルエンザ（H5N1, H7N9）、ポリオ、ジフテリア</td>
+          <td>入院勧告の対象</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">三類</span></td>
+          <td>コレラ、細菌性赤痢、腸管出血性大腸菌感染症（O157）、腸チフス、パラチフス</td>
+          <td>就業制限の対象</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">四類</span></td>
+          <td><span class="highlight">A型肝炎</span>、E型肝炎、デング熱、日本脳炎、マラリア、狂犬病</td>
+          <td>動物由来・蚊媒介など</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">五類</span></td>
+          <td><span class="highlight">梅毒</span>、HIV/AIDS、麻疹、風疹、水痘、インフルエンザ</td>
+          <td>発生動向調査の対象</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116C-26</div>
+        <p>感染症法における分類と感染症の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 一類 ーー 結核<br>
+          b: 二類 ーー エボラ出血熱<br>
+          c: 三類 ーー 重症急性呼吸器症候群（SARS）<br>
+          d: 四類 ーー A型肝炎<br>
+          e: 五類 ーー 梅毒
+        </div>
+        <div class="answer">正解: D, E（結核=二類、エボラ=一類、SARS=二類）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B-30【必修】</div>
+        <p>感染症法における一類感染症はどれか。2つ選べ。</p>
+        <div class="choices">
+          a: コレラ<br>
+          b: 痘瘡<br>
+          c: ペスト<br>
+          d: マラリア<br>
+          e: 急性灰白髄炎
+        </div>
+        <div class="answer">正解: B, C（コレラ=三類、マラリア=四類、ポリオ=二類）</div>
+      </div>
+
+      <!-- 感染経路 -->
+      <h2><span class="num">7</span> 感染経路と予防</h2>
+
+      <h3>空気感染（飛沫核感染）する疾患</h3>
+      <div class="point-box">
+        <div class="point-box-title">空気感染する3大疾患（重要！）</div>
+        <ul>
+          <li><span class="highlight">結核</span></li>
+          <li><span class="highlight">麻疹</span></li>
+          <li><span class="highlight">水痘</span></li>
+        </ul>
+        <p>※N95マスクが必要</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D-24</div>
+        <p>空気感染するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 結核菌<br>
+          b: 麻疹ウイルス<br>
+          c: 黄色ブドウ球菌<br>
+          d: 日本脳炎ウイルス<br>
+          e: Epstein-Barrウイルス
+        </div>
+        <div class="answer">正解: A, B（結核と麻疹は空気感染）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B-13【必修】</div>
+        <p>医療従事者がN95マスクを着用すべき対象疾患はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 結核<br>
+          b: 梅毒<br>
+          c: 淋病<br>
+          d: 破傷風<br>
+          e: マラリア
+        </div>
+        <div class="answer">正解: A（結核は空気感染するためN95マスクが必要）</div>
+      </div>
+
+      <h3>垂直感染（母子感染）</h3>
+      <div class="point-box">
+        <div class="point-box-title">垂直感染する主な感染症</div>
+        <ul>
+          <li><span class="highlight">B型肝炎ウイルス</span>（経胎盤・産道）※予防措置済みなら授乳可</li>
+          <li><span class="highlight">風疹ウイルス</span>→先天性風疹症候群（心奇形・白内障・難聴）</li>
+          <li>HIV、HTLV-1、梅毒、トキソプラズマ、サイトメガロウイルス</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D-20【必修】</div>
+        <p>経胎盤感染するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: ノロウイルス<br>
+          b: 風疹ウイルス<br>
+          c: ムンプスウイルス<br>
+          d: インフルエンザウイルス<br>
+          e: ヒトパピローマウイルス
+        </div>
+        <div class="answer">正解: B（風疹の経胎盤感染→先天性風疹症候群）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A-5【必修】</div>
+        <p>妊娠初期の母体感染で、胎児の心臓、耳および眼に不可逆的な異常を生じるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: ノロウイルス<br>
+          b: 風疹ウイルス<br>
+          c: 単純疱疹ウイルス<br>
+          d: ムンプスウイルス<br>
+          e: インフルエンザウイルス
+        </div>
+        <div class="answer">正解: B（先天性風疹症候群：心奇形・難聴・白内障の三徴）</div>
+      </div>
+
+      <!-- 学校保健 -->
+      <h2><span class="num">8</span> 学校保健安全法と出席停止</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">学校保健安全法のポイント</div>
+        <ul>
+          <li>学校感染症に罹患した児童生徒の<span class="highlight">出席停止</span>を規定</li>
+          <li>出席停止を決定するのは<span class="highlight">学校長</span></li>
+          <li>インフルエンザ：発症後5日を経過し、かつ解熱後2日（幼児は3日）を経過するまで</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A-40【必修】</div>
+        <p>インフルエンザによる学校の出席停止期間を規定しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 医療法<br>
+          b: 学校教育法<br>
+          c: 予防接種法<br>
+          d: 学校保健安全法<br>
+          e: 感染症の予防及び感染症の患者に対する医療に関する法律
+        </div>
+        <div class="answer">正解: D（学校保健安全法が出席停止を規定）</div>
+      </div>
+
+      <!-- まとめ -->
+      <h2><span class="num">9</span> まとめ：頻出ポイント</h2>
+
+      <div class="summary-box">
+        <div class="summary-box-title">試験で狙われるポイント</div>
+        <ul>
+          <li><span class="highlight">ワクチンの種類</span>：生（BCG, MR, 水痘, ムンプス, ロタ）、不活化（B肝, インフル, 日脳, ポリオ）、トキソイド（破傷風, ジフテリア）</li>
+          <li><span class="highlight">経口ワクチン</span>：ロタウイルスワクチンのみ</li>
+          <li><span class="highlight">定期接種A類 vs B類</span>：A類=努力義務あり、B類（インフル・高齢者肺炎球菌）=努力義務なし</li>
+          <li><span class="highlight">0歳児の定期接種</span>：B型肝炎（2016年〜）</li>
+          <li><span class="highlight">国民医療費に含まれない</span>：予防接種、健康診断、正常分娩</li>
+          <li><span class="highlight">HBs抗体</span>＝免疫獲得の指標、<span class="highlight">HBe抗原陽性</span>＝感染力が高い</li>
+          <li><span class="highlight">針刺し事故</span>：まず流水洗浄→HBs抗体確認→陰性ならワクチン+HBIG</li>
+          <li><span class="highlight">C型肝炎</span>：ワクチンなし（B型肝炎との違い）</li>
+          <li><span class="highlight">空気感染</span>：結核、麻疹、水痘（N95マスク必要）</li>
+          <li><span class="highlight">先天性風疹症候群</span>：心奇形・白内障・難聴の三徴</li>
+          <li><span class="highlight">感染症法</span>：一類（エボラ,ペスト,痘瘡）、二類（結核）、五類（梅毒,HIV,麻疹）</li>
+          <li><span class="highlight">出席停止</span>：学校保健安全法で規定、学校長が決定</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

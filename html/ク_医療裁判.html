@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医療裁判</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>ク. 医療裁判</h1>
+    <div class="subtitle">必修2 社会と歯科医療</div>
+    <div class="container">
+
+      <h3>医事紛争から医療訴訟への流れ</h3>
+      <p><span class="highlight">医事紛争</span>（患者とのトラブル）→<span class="highlight">民事紛争</span>→裁判で争う→<span class="red">医療訴訟</span></p>
+
+      <h3>医事紛争の解決方法</h3>
+      <table>
+        <tr><th>方法</th><th>内容</th></tr>
+        <tr><td><span class="highlight">示談</span></td><td>当事者間の話し合いによる解決</td></tr>
+        <tr><td><span class="highlight">調停</span></td><td>第三者を介した話し合い</td></tr>
+        <tr><td><span class="highlight">ADR</span></td><td>裁判外紛争解決</td></tr>
+        <tr><td><span class="red">訴訟</span></td><td>裁判所による判断</td></tr>
+      </table>
+
+      <h3>民事裁判 vs 刑事裁判</h3>
+      <table>
+        <tr><th></th><th>民事裁判</th><th>刑事裁判</th></tr>
+        <tr><td>目的</td><td><span class="red">損害賠償</span></td><td><span class="red">刑罰</span></td></tr>
+        <tr><td>訴える人</td><td><span class="highlight">被害者（患者）</span></td><td><span class="highlight">検察官</span></td></tr>
+        <tr><td>医療訴訟</td><td><span class="red">大半が民事</span></td><td>重大な過失のみ</td></tr>
+      </table>
+
+      <h3>医療過誤の成立要件（民事）</h3>
+      <table>
+        <tr><th>要件</th><th>内容</th></tr>
+        <tr><td><span class="red">過失</span></td><td>注意義務違反</td></tr>
+        <tr><td><span class="red">損害</span></td><td>患者に生じた被害</td></tr>
+        <tr><td><span class="red">因果関係</span></td><td>過失と損害の因果関係</td></tr>
+      </table>
+      <p>※<span class="highlight">故意は不要</span>（過失があれば成立）</p>
+
+      <h3>説明義務違反</h3>
+      <p>説明義務違反→<span class="red">自己決定権の侵害</span>→損害賠償</p>
+
+      <h3>行政処分</h3>
+      <p><span class="highlight">厚生労働大臣</span>が歯科医師に対して行う処分</p>
+      <table>
+        <tr><th>処分</th><th>内容</th></tr>
+        <tr><td><span class="red">免許取消</span></td><td>最も重い処分</td></tr>
+        <tr><td><span class="red">業務停止</span></td><td>一定期間の業務禁止</td></tr>
+        <tr><td><span class="highlight">戒告</span></td><td>注意（最も軽い）</td></tr>
+      </table>
+      <p>処分の判断：<span class="highlight">医道審議会</span>が意見を述べる</p>
+
+      <h3>リスクマネージメント</h3>
+      <table>
+        <tr><th>種類</th><th>内容</th></tr>
+        <tr><td>診療上</td><td>ヒヤリハットの収集・分析、事故防止</td></tr>
+        <tr><td>財務的</td><td><span class="red">医師賠償責任保険</span>への加入</td></tr>
+        <tr><td>個人対象</td><td>医師派遣制度（同窓会など）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117A-6</div>
+        <p>医療訴訟で正しいのはどれか。1つ選べ。</p>
+        <p>a: 刑事裁判が大半を占める　b: 民事裁判では検察官が訴える　c: 民事裁判は損害賠償を求める　d: 刑事裁判の立証責任は被害者にある　e: 医療ADRは訴訟の一種である</p>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B-6</div>
+        <p>歯科医師に対する行政処分を行うのはどれか。1つ選べ。</p>
+        <p>a: 裁判所　b: 保健所長　c: 都道府県知事　d: 厚生労働大臣　e: 日本歯科医師会</p>
+        <div class="answer">正解: d</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li>医事紛争→民事紛争→<span class="red">医療訴訟</span></li>
+          <li><span class="red">民事裁判</span>＝損害賠償、患者が訴える、大半</li>
+          <li><span class="red">刑事裁判</span>＝刑罰、検察官が訴える</li>
+          <li>過誤成立＝<span class="red">過失＋損害＋因果関係</span>（故意不要）</li>
+          <li><span class="red">行政処分</span>＝厚生労働大臣（医道審議会が意見）</li>
+          <li>財務的リスク対策＝<span class="red">医師賠償責任保険</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

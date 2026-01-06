@@ -141,7 +141,7 @@
    * スクロール方向に応じてヘッダーを隠す/表示する
    */
   function setupScrollHideHeader() {
-    const scrollThreshold = 15;
+    const scrollThreshold = 20; // iframeスクロール安定化のため閾値を上げる
     let ticking = false;
     let lastProcessedScrollY = 0;
 
@@ -510,6 +510,15 @@
       const style = doc.createElement('style');
       style.id = 'mobile-override-style';
       style.textContent = `
+        /* スクロール最適化 */
+        html {
+          scroll-behavior: auto !important;
+          -webkit-overflow-scrolling: touch;
+        }
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+
         /* モバイル用：1カラム強制 */
         .container, [class*="column"], [style*="column"] {
           column-count: 1 !important;

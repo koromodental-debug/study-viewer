@@ -35,15 +35,17 @@ body {
   height: 100vh;
 }
 
-/* ヘッダー */
+/* ヘッダー（Apple風：白背景） */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: var(--header-height);
-  background: var(--primary-color);
-  color: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-color);
   display: flex;
   align-items: center;
   padding: 0 16px;
@@ -53,6 +55,7 @@ body {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header.hidden {
@@ -60,7 +63,7 @@ body {
 }
 
 .menu-btn {
-  background: rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.05);
   border: none;
   width: 36px;
   height: 36px;
@@ -75,7 +78,7 @@ body {
 }
 
 .menu-btn:hover {
-  background: rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.1);
   transform: scale(1.05);
 }
 
@@ -83,7 +86,7 @@ body {
   display: block;
   width: 14px;
   height: 1.5px;
-  background: white;
+  background: var(--text-color);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -106,27 +109,27 @@ body {
 .header-tab {
   padding: 8px 20px;
   border: none;
-  background: rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.05);
   border-radius: var(--radius-full);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-muted);
   transition: all 0.2s ease;
 }
 
 .header-tab:hover {
-  background: rgba(255,255,255,0.25);
-  color: white;
+  background: rgba(0,0,0,0.1);
+  color: var(--text-color);
 }
 
 .header-tab.active {
-  background: white;
-  color: var(--primary-color);
+  background: var(--text-color);
+  color: white;
 }
 
 .header-search-btn {
-  background: rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.05);
   border: none;
   width: 36px;
   height: 36px;
@@ -139,14 +142,14 @@ body {
 }
 
 .header-search-btn:hover {
-  background: rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.1);
   transform: scale(1.05);
 }
 
 .search-icon {
   width: 11px;
   height: 11px;
-  border: 2px solid white;
+  border: 2px solid var(--text-color);
   border-radius: 50%;
   position: relative;
   margin-bottom: 4px;
@@ -157,7 +160,7 @@ body {
   position: absolute;
   width: 2px;
   height: 6px;
-  background: white;
+  background: var(--text-color);
   bottom: -5px;
   right: -2px;
   transform: rotate(-45deg);

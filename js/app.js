@@ -685,18 +685,13 @@
           border-collapse: separate !important;
           border-spacing: 0 !important;
         }
-        /* 横ヘッダー行（th + th）は黒 */
+        /* テーブルヘッダー（Apple風ライトグレー） */
         th {
-          background: #2c2c2c !important;
-          color: white !important;
+          background: #f2f2f7 !important;
+          color: #1d1d1f !important;
           padding: 10px 14px !important;
           font-weight: 600 !important;
           font-size: 13px !important;
-        }
-        /* 縦ラベル列（th + td）はライトグレー */
-        tr:has(th + td) th {
-          background: #f5f5f5 !important;
-          color: #2c2c2c !important;
         }
         td {
           padding: 12px 14px !important;
@@ -778,13 +773,14 @@
           margin: 12px 0 !important;
         }
 
-        /* カテゴリヘッダー（漢方等）をLeicaスタイルに */
+        /* カテゴリヘッダー（Apple風ライトグレー） */
         .category-header {
-          background: #2c2c2c !important;
-          color: white !important;
+          background: #f2f2f7 !important;
+          color: #1d1d1f !important;
           border-radius: 16px 16px 0 0 !important;
           padding: 12px 16px !important;
           margin-top: 16px !important;
+          font-weight: 600 !important;
         }
         .category-content {
           background: white !important;

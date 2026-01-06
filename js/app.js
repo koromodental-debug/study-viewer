@@ -672,8 +672,10 @@
           border-spacing: 0 !important;
         }
         th {
-          background: #f5f5f5 !important;
+          background: #2c2c2c !important;
+          color: white !important;
           padding: 12px 16px !important;
+          font-weight: 600 !important;
         }
         td {
           padding: 12px 16px !important;

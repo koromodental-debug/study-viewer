@@ -53,6 +53,10 @@
       <div class="tabs">
         <button class="tab active" data-tab="html">HTML</button>
         <button class="tab" data-tab="qa">Q&A</button>
+        <button id="qa-mode-toggle" class="qa-mode-btn" style="display:none;">
+          <span class="mode-icon">📖</span>
+          <span class="mode-text">全て表示</span>
+        </button>
       </div>
       <div class="content-area">
         <div class="tab-content active" id="html-content">
@@ -64,12 +68,6 @@
         <div class="tab-content" id="qa-content">
           <div class="placeholder">
             <p>検索またはメニューからトピックを選択</p>
-          </div>
-          <div class="qa-toolbar" id="qa-toolbar" style="display:none;">
-            <button id="qa-mode-toggle" class="qa-mode-btn">
-              <span class="mode-icon">📖</span>
-              <span class="mode-text">全て表示</span>
-            </button>
           </div>
           <div id="qa-display" class="qa-display" style="display:none;"></div>
         </div>

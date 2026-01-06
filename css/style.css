@@ -415,16 +415,9 @@ body {
   border: none;
 }
 
-/* Q&Aツールバー */
-.qa-toolbar {
-  padding: 12px 24px;
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-}
-
+/* Q&Aモード切り替えボタン */
 .qa-mode-btn {
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -454,7 +447,7 @@ body {
 
 /* Q&A表示 */
 .qa-display {
-  padding: 0 24px 24px;
+  padding: 24px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -512,8 +505,8 @@ body {
 .qa-answer {
   padding: 16px;
   padding-left: 52px;
-  background: var(--bg-color);
-  border-top: 1px solid var(--border-color);
+  background: #f0fdf4;
+  border-top: 1px solid #bbf7d0;
   display: none;
 }
 

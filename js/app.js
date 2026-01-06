@@ -29,7 +29,6 @@
     htmlContent: document.getElementById('html-content'),
     qaContent: document.getElementById('qa-content'),
     htmlFrame: document.getElementById('html-frame'),
-    qaToolbar: document.getElementById('qa-toolbar'),
     qaModeToggle: document.getElementById('qa-mode-toggle'),
     qaDisplay: document.getElementById('qa-display')
   };
@@ -320,7 +319,7 @@
     } else {
       elements.qaDisplay.innerHTML = '';
       elements.qaDisplay.style.display = 'none';
-      elements.qaToolbar.style.display = 'none';
+      elements.qaModeToggle.style.display = 'none';
       elements.qaContent.querySelector('.placeholder').style.display = 'flex';
       elements.qaContent.querySelector('.placeholder p').textContent = 'このトピックにはQ&Aがありません';
     }
@@ -338,7 +337,7 @@
       const html = parseQA(text);
       elements.qaDisplay.innerHTML = html;
       elements.qaDisplay.style.display = 'block';
-      elements.qaToolbar.style.display = 'flex';
+      elements.qaModeToggle.style.display = 'flex';
       elements.qaContent.querySelector('.placeholder').style.display = 'none';
 
       // 現在のモードを適用

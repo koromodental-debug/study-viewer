@@ -12,15 +12,29 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <h1>Study Viewer</h1>
-        <div class="search-box">
-          <input type="text" id="search-input" placeholder="検索...">
-          <button id="clear-search" class="clear-btn" style="display:none;">×</button>
-        </div>
+        <button id="search-btn" class="search-btn">
+          <span class="search-icon">🔍</span>
+          <span>検索</span>
+          <span class="shortcut">⌘K</span>
+        </button>
       </div>
       <nav class="topic-list" id="topic-list">
         <!-- 動的に生成 -->
       </nav>
     </aside>
+
+    <!-- 検索オーバーレイ -->
+    <div id="search-overlay" class="search-overlay" style="display:none;">
+      <div class="search-modal">
+        <div class="search-modal-header">
+          <input type="text" id="search-input" placeholder="トピックを検索..." autofocus>
+          <button id="close-search" class="close-search-btn">✕</button>
+        </div>
+        <div class="search-results" id="search-results">
+          <!-- 検索結果 -->
+        </div>
+      </div>
+    </div>
 
     <!-- メインコンテンツ -->
     <main class="main-content">

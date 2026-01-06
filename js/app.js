@@ -7,14 +7,18 @@
     currentItem: null,
     currentTab: 'html',
     searchQuery: '',
-    collapsedCategories: new Set()
+    collapsedCategories: new Set(),
+    searchOpen: false
   };
 
   // DOM要素
   const elements = {
     topicList: document.getElementById('topic-list'),
+    searchBtn: document.getElementById('search-btn'),
+    searchOverlay: document.getElementById('search-overlay'),
     searchInput: document.getElementById('search-input'),
-    clearSearch: document.getElementById('clear-search'),
+    closeSearch: document.getElementById('close-search'),
+    searchResults: document.getElementById('search-results'),
     tabs: document.querySelectorAll('.tab'),
     htmlContent: document.getElementById('html-content'),
     qaContent: document.getElementById('qa-content'),
@@ -44,18 +48,24 @@
    * イベントバインド
    */
   function bindEvents() {
-    // 検索
+    // 検索ボタン
+    elements.searchBtn.addEventListener('click', openSearch);
+
+    // 検索オーバーレイを閉じる
+    elements.closeSearch.addEventListener('click', closeSearch);
+    elements.searchOverlay.addEventListener('click', (e) => {
+      if (e.target === elements.searchOverlay) {
+        closeSearch();
+      }
+    });
+
+    // 検索入力
     let debounceTimer;
     elements.searchInput.addEventListener('input', (e) => {
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(() => {
         handleSearch(e.target.value);
-      }, 200);
-    });
-
-    elements.clearSearch.addEventListener('click', () => {
-      elements.searchInput.value = '';
-      handleSearch('');
+      }, 150);
     });
 
     // タブ切り替え
@@ -67,19 +77,40 @@
 
     // キーボードショートカット
     document.addEventListener('keydown', (e) => {
-      // Ctrl+K or Cmd+K で検索フォーカス
+      // Ctrl+K or Cmd+K で検索を開く
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
-        elements.searchInput.focus();
-        elements.searchInput.select();
+        if (state.searchOpen) {
+          closeSearch();
+        } else {
+          openSearch();
+        }
       }
-      // Escape で検索クリア
-      if (e.key === 'Escape' && document.activeElement === elements.searchInput) {
-        elements.searchInput.value = '';
-        handleSearch('');
-        elements.searchInput.blur();
+      // Escape で検索を閉じる
+      if (e.key === 'Escape' && state.searchOpen) {
+        closeSearch();
       }
     });
+  }
+
+  /**
+   * 検索を開く
+   */
+  function openSearch() {
+    state.searchOpen = true;
+    elements.searchOverlay.style.display = 'flex';
+    elements.searchInput.value = '';
+    elements.searchInput.focus();
+    renderSearchResults(DATA.slice(0, 20));
+  }
+
+  /**
+   * 検索を閉じる
+   */
+  function closeSearch() {
+    state.searchOpen = false;
+    elements.searchOverlay.style.display = 'none';
+    elements.searchInput.value = '';
   }
 
   /**
@@ -87,18 +118,55 @@
    */
   function handleSearch(query) {
     state.searchQuery = query;
-    elements.clearSearch.style.display = query ? 'block' : 'none';
-
     const results = searchEngine.search(query);
-    renderTopicList(results);
+    renderSearchResults(results.slice(0, 30));
   }
 
   /**
-   * トピックリストを描画
+   * 検索結果を描画
+   */
+  function renderSearchResults(items) {
+    if (items.length === 0) {
+      elements.searchResults.innerHTML = '<div class="search-empty">検索結果がありません</div>';
+      return;
+    }
+
+    let html = '';
+    items.forEach(item => {
+      const badges = [];
+      if (item.htmlPath) badges.push('HTML');
+      if (item.qaPath) badges.push('Q&A');
+
+      html += `
+        <div class="search-result-item" data-id="${escapeHtml(item.id)}">
+          <div>
+            <div class="result-title">${searchEngine.highlight(escapeHtml(item.title), state.searchQuery)}</div>
+            <div class="result-category">${escapeHtml(item.category)}</div>
+          </div>
+          <div class="result-badges">
+            ${badges.map(b => `<span class="badge">${b}</span>`).join('')}
+          </div>
+        </div>
+      `;
+    });
+
+    elements.searchResults.innerHTML = html;
+
+    // 検索結果クリック
+    elements.searchResults.querySelectorAll('.search-result-item').forEach(el => {
+      el.addEventListener('click', () => {
+        selectItem(el.dataset.id);
+        closeSearch();
+      });
+    });
+  }
+
+  /**
+   * トピックリストを描画（検索フィルタなし）
    */
   function renderTopicList(items) {
     if (items.length === 0) {
-      elements.topicList.innerHTML = '<div class="no-results">検索結果がありません</div>';
+      elements.topicList.innerHTML = '<div class="no-results">トピックがありません</div>';
       return;
     }
 
@@ -132,7 +200,7 @@
 
         html += `
           <div class="topic-item${isActive ? ' active' : ''}" data-id="${escapeHtml(item.id)}">
-            <span class="title">${searchEngine.highlight(escapeHtml(item.title), state.searchQuery)}</span>
+            <span class="title">${escapeHtml(item.title)}</span>
             <span class="badges">
               ${badges.map(b => `<span class="badge">${b}</span>`).join('')}
             </span>
@@ -169,8 +237,7 @@
     } else {
       state.collapsedCategories.add(category);
     }
-    const results = searchEngine.search(state.searchQuery);
-    renderTopicList(results);
+    renderTopicList(DATA);
   }
 
   /**

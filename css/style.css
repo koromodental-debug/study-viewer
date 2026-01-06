@@ -778,18 +778,13 @@ body {
 /* タブボタン風アイコン */
 .welcome-icon-tab {
   width: auto;
-  height: auto;
-  padding: 6px 14px;
+  height: 40px;
+  padding: 0 16px;
   border-radius: 999px;
   background: rgba(0,0,0,0.05);
   font-size: 13px;
   font-weight: 600;
-  color: #8e8e93;
-}
-
-.welcome-icon-tab-active {
-  background: #007AFF;
-  color: white;
+  color: #1d1d1f;
 }
 
 .welcome-card-content h3 {

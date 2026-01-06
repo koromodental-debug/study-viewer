@@ -778,9 +778,35 @@
     let currentSection = '';
     let inRelated = false;
     let relatedItems = [];
+    let inTable = false;
+    let tableRows = [];
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim();
+
+      // Markdownテーブルの検出
+      if (line.startsWith('|') && line.endsWith('|')) {
+        // 区切り行（|---|---|）はスキップ
+        if (line.match(/^\|[\s\-:|]+\|$/)) {
+          inTable = true;
+          continue;
+        }
+        // テーブル行
+        if (!inTable && tableRows.length === 0) {
+          // ヘッダー行
+          tableRows.push({ cells: parseTableRow(line), isHeader: true });
+        } else {
+          // データ行
+          inTable = true;
+          tableRows.push({ cells: parseTableRow(line), isHeader: false });
+        }
+        continue;
+      } else if (inTable || tableRows.length > 0) {
+        // テーブル終了、HTMLに変換
+        html += renderTable(tableRows);
+        tableRows = [];
+        inTable = false;
+      }
 
       if (line.startsWith('## ')) {
         if (relatedItems.length > 0) {
@@ -834,6 +860,11 @@
       }
     }
 
+    // 最後にテーブルが残っていれば出力
+    if (tableRows.length > 0) {
+      html += renderTable(tableRows);
+    }
+
     if (relatedItems.length > 0) {
       html += renderRelated(relatedItems);
     }
@@ -841,6 +872,34 @@
       html += '</div>';
     }
 
+    return html;
+  }
+
+  /**
+   * Markdownテーブル行をパース
+   */
+  function parseTableRow(line) {
+    return line.split('|').slice(1, -1).map(cell => cell.trim());
+  }
+
+  /**
+   * テーブルをHTMLに変換
+   */
+  function renderTable(rows) {
+    if (rows.length === 0) return '';
+
+    let html = '<div class="qa-table-wrapper"><table class="qa-table">';
+
+    for (const row of rows) {
+      html += '<tr>';
+      const tag = row.isHeader ? 'th' : 'td';
+      for (const cell of row.cells) {
+        html += `<${tag}>${escapeHtml(cell)}</${tag}>`;
+      }
+      html += '</tr>';
+    }
+
+    html += '</table></div>';
     return html;
   }
 

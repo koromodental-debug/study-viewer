@@ -468,16 +468,7 @@
     elements.qaDisplay.classList.toggle('show-all', state.qaShowAll);
 
     // ボタンテキストを更新
-    const modeIcon = elements.qaModeToggle.querySelector('.mode-icon');
-    const modeText = elements.qaModeToggle.querySelector('.mode-text');
-
-    if (state.qaShowAll) {
-      modeIcon.textContent = '📕';
-      modeText.textContent = '折りたたむ';
-    } else {
-      modeIcon.textContent = '📖';
-      modeText.textContent = '全て表示';
-    }
+    elements.qaModeToggle.textContent = state.qaShowAll ? '折りたたむ' : '全て表示';
   }
 
   /**

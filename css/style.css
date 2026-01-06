@@ -5,15 +5,15 @@
 }
 
 :root {
-  --primary-color: #32373c;
-  --primary-hover: #1a1d20;
-  --accent-gradient: linear-gradient(135deg, #4a7fb5 0%, #3d5a80 100%);
-  --accent-color: #3d5a80;
-  --bg-color: #f9fafb;
+  --primary-color: #2c2c2c;
+  --primary-hover: #1a1a1a;
+  --accent-color: #e52222;
+  --accent-hover: #cc1e1e;
+  --bg-color: #fafafa;
   --sidebar-bg: #ffffff;
-  --border-color: #e5e7eb;
-  --text-color: #1f2937;
-  --text-muted: #6b7280;
+  --border-color: #e8e8e8;
+  --text-color: #2c2c2c;
+  --text-muted: #888888;
   --header-height: 60px;
   --radius-full: 9999px;
   --radius-lg: 16px;
@@ -34,10 +34,10 @@ body {
   height: 100vh;
 }
 
-/* ヘッダー - グラデーション */
+/* ヘッダー */
 .header {
   height: var(--header-height);
-  background: var(--accent-gradient);
+  background: var(--primary-color);
   color: white;
   display: flex;
   align-items: center;
@@ -144,7 +144,7 @@ body {
 
 .sidebar-header {
   padding: 20px;
-  background: var(--accent-gradient);
+  background: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -544,8 +544,7 @@ body {
   color: var(--text-color);
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 3px solid;
-  border-image: var(--accent-gradient) 1;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .qa-item {
@@ -580,7 +579,7 @@ body {
 
 .qa-question::before {
   content: "Q";
-  background: var(--accent-gradient);
+  background: var(--accent-color);
   color: white;
   width: 28px;
   height: 28px;
@@ -595,8 +594,8 @@ body {
 
 .qa-answer {
   padding: 14px 20px 16px 56px;
-  background: #e8eef4;
-  border-left: 4px solid var(--accent-color);
+  background: #f5f5f5;
+  border-left: 4px solid var(--text-muted);
   display: none;
   font-size: 15px;
   line-height: 1.7;
@@ -622,15 +621,15 @@ body {
 
 .qa-related {
   padding: 16px 20px;
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  background: #f0f0f0;
   font-size: 13px;
   font-weight: 500;
-  color: #92400e;
+  color: var(--text-muted);
 }
 
 /* 検索ハイライト */
 .highlight {
-  background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
+  background: #fff3cd;
   padding: 2px 4px;
   border-radius: 4px;
 }

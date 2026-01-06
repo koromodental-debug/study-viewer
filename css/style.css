@@ -95,6 +95,36 @@ body {
   letter-spacing: -0.5px;
 }
 
+/* ヘッダー内タブ */
+.header-tabs {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.header-tab {
+  padding: 8px 20px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s ease;
+}
+
+.header-tab:hover {
+  background: rgba(255,255,255,0.25);
+  color: white;
+}
+
+.header-tab.active {
+  background: white;
+  color: var(--primary-color);
+}
+
 .header-search-btn {
   background: rgba(255,255,255,0.15);
   border: none;
@@ -538,7 +568,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding-top: calc(var(--header-height) + var(--tabs-height));
+  padding-top: var(--header-height);
   transition: padding-top 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

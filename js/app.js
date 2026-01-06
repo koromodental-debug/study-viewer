@@ -19,7 +19,6 @@
   // DOM要素
   const elements = {
     header: document.querySelector('.header'),
-    tabsContainer: document.querySelector('.tabs'),
     mainContent: document.querySelector('.main-content'),
     menuBtn: document.getElementById('menu-btn'),
     sidebar: document.getElementById('sidebar'),
@@ -32,11 +31,10 @@
     searchInput: document.getElementById('search-input'),
     closeSearch: document.getElementById('close-search'),
     searchResults: document.getElementById('search-results'),
-    tabs: document.querySelectorAll('.tab'),
+    tabs: document.querySelectorAll('.header-tab'),
     htmlContent: document.getElementById('html-content'),
     qaContent: document.getElementById('qa-content'),
     htmlFrame: document.getElementById('html-frame'),
-    qaModeToggle: document.getElementById('qa-mode-toggle'),
     qaDisplay: document.getElementById('qa-display')
   };
 
@@ -109,8 +107,11 @@
       });
     });
 
-    // Q&Aモード切り替え
-    elements.qaModeToggle.addEventListener('click', toggleQAMode);
+    // Q&Aモード切り替え（ボタンがある場合のみ）
+    const qaModeToggle = document.getElementById('qa-mode-toggle');
+    if (qaModeToggle) {
+      qaModeToggle.addEventListener('click', toggleQAMode);
+    }
 
     // キーボードショートカット
     document.addEventListener('keydown', (e) => {
@@ -720,7 +721,6 @@
     } else {
       elements.qaDisplay.innerHTML = '';
       elements.qaDisplay.style.display = 'none';
-      elements.qaModeToggle.style.display = 'none';
       elements.qaContent.querySelector('.placeholder').style.display = 'flex';
       elements.qaContent.querySelector('.placeholder p').textContent = 'このトピックにはQ&Aがありません';
     }
@@ -738,7 +738,6 @@
       const html = parseQA(text);
       elements.qaDisplay.innerHTML = html;
       elements.qaDisplay.style.display = 'block';
-      elements.qaModeToggle.style.display = 'flex';
       elements.qaContent.querySelector('.placeholder').style.display = 'none';
 
       // 現在のモードを適用
@@ -1040,10 +1039,6 @@
     elements.htmlContent.classList.toggle('active', tab === 'html');
     elements.qaContent.classList.toggle('active', tab === 'qa');
 
-    // Q&Aタブの時だけ「全て表示」ボタンを表示
-    const hasQA = state.currentItem && state.currentItem.qaPath;
-    elements.qaModeToggle.style.display = (tab === 'qa' && hasQA) ? 'flex' : 'none';
-
     // 新しいタブにスクロール（セクション優先、フォールバックで%）
     setTimeout(() => {
       let scrolled = false;
@@ -1079,12 +1074,14 @@
    */
   function toggleQAMode() {
     state.qaShowAll = !state.qaShowAll;
-
-    elements.qaModeToggle.classList.toggle('active', state.qaShowAll);
     elements.qaDisplay.classList.toggle('show-all', state.qaShowAll);
 
-    // ボタンテキストを更新
-    elements.qaModeToggle.textContent = state.qaShowAll ? '折りたたむ' : '全て表示';
+    // ボタンがあれば更新
+    const qaModeToggle = document.getElementById('qa-mode-toggle');
+    if (qaModeToggle) {
+      qaModeToggle.classList.toggle('active', state.qaShowAll);
+      qaModeToggle.textContent = state.qaShowAll ? '折りたたむ' : '全て表示';
+    }
   }
 
   /**

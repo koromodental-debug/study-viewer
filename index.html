@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Study Viewer - 国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=24">
+  <link rel="stylesheet" href="css/style.css?v=25">
 </head>
 <body>
   <div class="app">
-    <!-- ヘッダー -->
+    <!-- ヘッダー（タブ統合） -->
     <header class="header">
       <button id="menu-btn" class="menu-btn" aria-label="メニュー">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <h1 class="header-title">Study Viewer</h1>
+      <div class="header-tabs">
+        <button class="header-tab active" data-tab="html">HTML</button>
+        <button class="header-tab" data-tab="qa">Q&A</button>
+      </div>
       <button id="search-btn" class="header-search-btn" aria-label="検索">
         <span class="search-icon"></span>
       </button>
@@ -53,11 +56,6 @@
 
     <!-- メインコンテンツ -->
     <main class="main-content">
-      <div class="tabs">
-        <button class="tab active" data-tab="html">HTML</button>
-        <button class="tab" data-tab="qa">Q&A</button>
-        <button id="qa-mode-toggle" class="qa-mode-btn" style="display:none;">全て表示</button>
-      </div>
       <div class="content-area">
         <div class="tab-content active" id="html-content">
           <div class="placeholder">
@@ -77,6 +75,6 @@
 
   <script src="js/data.js?v=2"></script>
   <script src="js/search.js?v=1"></script>
-  <script src="js/app.js?v=17"></script>
+  <script src="js/app.js?v=18"></script>
 </body>
 </html>

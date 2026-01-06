@@ -37,7 +37,10 @@
     htmlFrame: document.getElementById('html-frame'),
     qaDisplay: document.getElementById('qa-display'),
     qaToolbar: document.getElementById('qa-toolbar'),
-    qaToggleBtn: document.getElementById('qa-toggle-btn')
+    qaToggleBtn: document.getElementById('qa-toggle-btn'),
+    welcomeScreen: document.getElementById('welcome-screen'),
+    welcomeStartBtn: document.getElementById('welcome-start-btn'),
+    welcomeCardMenu: document.getElementById('welcome-card-menu')
   };
 
   // 検索エンジン
@@ -152,6 +155,14 @@
 
     // Q&Aツールバーのスクロール表示/非表示
     setupQAToolbarScroll();
+
+    // ウェルカム画面のボタン
+    if (elements.welcomeStartBtn) {
+      elements.welcomeStartBtn.addEventListener('click', openSidebar);
+    }
+    if (elements.welcomeCardMenu) {
+      elements.welcomeCardMenu.addEventListener('click', openSidebar);
+    }
   }
 
   /**
@@ -818,11 +829,15 @@
    * コンテンツを読み込み
    */
   function loadContent(item) {
+    // ウェルカム画面を非表示
+    if (elements.welcomeScreen) {
+      elements.welcomeScreen.classList.add('hidden');
+    }
+
     // HTML
     if (item.htmlPath) {
       elements.htmlFrame.src = item.htmlPath;
       elements.htmlFrame.style.display = 'block';
-      elements.htmlContent.querySelector('.placeholder').style.display = 'none';
 
       // iframeロード後にモバイル用CSSを注入 & スクロール監視
       elements.htmlFrame.onload = function() {
@@ -837,8 +852,10 @@
     } else {
       elements.htmlFrame.src = '';
       elements.htmlFrame.style.display = 'none';
-      elements.htmlContent.querySelector('.placeholder').style.display = 'flex';
-      elements.htmlContent.querySelector('.placeholder p').textContent = 'このトピックにはHTMLがありません';
+      // HTMLがない場合はウェルカム画面を表示（メッセージ付き）
+      if (elements.welcomeScreen) {
+        elements.welcomeScreen.classList.remove('hidden');
+      }
     }
 
     // Q&A

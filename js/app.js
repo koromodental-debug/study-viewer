@@ -218,7 +218,7 @@
     elements.searchOverlay.classList.add('show');
     elements.searchInput.value = '';
     elements.searchInput.focus();
-    renderSearchResults(DATA.slice(0, 20));
+    elements.searchResults.innerHTML = '<div class="search-hint">キーワードを入力して検索</div>';
   }
 
   /**

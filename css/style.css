@@ -439,6 +439,13 @@ body {
   font-size: 15px;
 }
 
+.search-hint {
+  padding: 48px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
 /* メインコンテンツ */
 .main-content {
   flex: 1;

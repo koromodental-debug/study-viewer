@@ -530,6 +530,7 @@ body {
 /* Q&A表示 */
 .qa-display {
   padding: 32px;
+  padding-bottom: 120px;
   max-width: 800px;
   margin: 0 auto;
 }

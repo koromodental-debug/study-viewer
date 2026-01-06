@@ -671,6 +671,30 @@
    * タブを切り替え
    */
   function switchTab(tab) {
+    const prevTab = state.currentTab;
+
+    // 切り替え前のスクロール位置（%）を取得
+    let scrollPercent = 0;
+    if (prevTab === 'qa') {
+      const el = elements.qaContent;
+      const maxScroll = el.scrollHeight - el.clientHeight;
+      if (maxScroll > 0) {
+        scrollPercent = el.scrollTop / maxScroll;
+      }
+    } else if (prevTab === 'html') {
+      try {
+        const iframeWin = elements.htmlFrame.contentWindow;
+        const iframeDoc = elements.htmlFrame.contentDocument;
+        if (iframeWin && iframeDoc) {
+          const scrollY = iframeWin.scrollY || 0;
+          const maxScroll = iframeDoc.documentElement.scrollHeight - iframeWin.innerHeight;
+          if (maxScroll > 0) {
+            scrollPercent = scrollY / maxScroll;
+          }
+        }
+      } catch (e) {}
+    }
+
     state.currentTab = tab;
 
     elements.tabs.forEach(t => {
@@ -683,6 +707,24 @@
     // Q&Aタブの時だけ「全て表示」ボタンを表示
     const hasQA = state.currentItem && state.currentItem.qaPath;
     elements.qaModeToggle.style.display = (tab === 'qa' && hasQA) ? 'flex' : 'none';
+
+    // 新しいタブに同じ%位置をスクロール
+    setTimeout(() => {
+      if (tab === 'qa') {
+        const el = elements.qaContent;
+        const maxScroll = el.scrollHeight - el.clientHeight;
+        el.scrollTop = maxScroll * scrollPercent;
+      } else if (tab === 'html') {
+        try {
+          const iframeWin = elements.htmlFrame.contentWindow;
+          const iframeDoc = elements.htmlFrame.contentDocument;
+          if (iframeWin && iframeDoc) {
+            const maxScroll = iframeDoc.documentElement.scrollHeight - iframeWin.innerHeight;
+            iframeWin.scrollTo(0, maxScroll * scrollPercent);
+          }
+        } catch (e) {}
+      }
+    }, 50);
   }
 
   /**

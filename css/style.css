@@ -81,8 +81,8 @@ body {
 
 .menu-btn span {
   display: block;
-  width: 16px;
-  height: 2px;
+  width: 14px;
+  height: 1.5px;
   background: white;
   border-radius: 2px;
   transition: all 0.3s ease;
@@ -144,20 +144,21 @@ body {
 }
 
 .search-icon {
-  width: 14px;
-  height: 14px;
+  width: 11px;
+  height: 11px;
   border: 2px solid white;
   border-radius: 50%;
   position: relative;
+  margin-bottom: 4px;
 }
 
 .search-icon::after {
   content: "";
   position: absolute;
   width: 2px;
-  height: 8px;
+  height: 6px;
   background: white;
-  bottom: -7px;
+  bottom: -5px;
   right: -2px;
   transform: rotate(-45deg);
   border-radius: 1px;

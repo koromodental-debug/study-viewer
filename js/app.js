@@ -235,6 +235,13 @@
    */
   function handleSearch(query) {
     state.searchQuery = query;
+
+    // 未入力時はヒントを表示
+    if (!query || query.trim() === '') {
+      elements.searchResults.innerHTML = '<div class="search-hint">キーワードを入力して検索</div>';
+      return;
+    }
+
     const results = searchEngine.search(query);
     renderSearchResults(results.slice(0, 30));
   }
@@ -415,7 +422,7 @@
         /* 全体の幅と余白を調整 */
         body {
           padding: 20px !important;
-          padding-bottom: 120px !important;
+          padding-bottom: 150px !important;
           line-height: 1.8 !important;
         }
 

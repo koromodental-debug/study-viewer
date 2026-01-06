@@ -14,7 +14,7 @@ class SearchEngine {
    */
   search(query) {
     if (!query || query.trim() === '') {
-      return this.data;
+      return [];
     }
 
     const normalizedQuery = query.toLowerCase().trim();

@@ -397,7 +397,7 @@
     let html = '';
     items.forEach(item => {
       const badges = [];
-      if (item.htmlPath) badges.push('HTML');
+      if (item.htmlPath) badges.push('まとめ');
       if (item.qaPath) badges.push('Q&A');
 
       html += `

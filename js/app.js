@@ -742,7 +742,7 @@
         }
         /* テーブルヘッダー（Apple風ライトグレー） */
         th {
-          background: #f2f2f7 !important;
+          background: #e5e5ea !important;
           color: #1d1d1f !important;
           padding: 10px 14px !important;
           font-weight: 600 !important;

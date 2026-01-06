@@ -668,20 +668,119 @@
   }
 
   /**
+   * Q&Aで現在表示中のセクション名を取得
+   */
+  function getCurrentQASection() {
+    const sections = elements.qaDisplay.querySelectorAll('.qa-section-title');
+    const scrollTop = elements.qaContent.scrollTop;
+    let currentSection = null;
+
+    for (const section of sections) {
+      const rect = section.getBoundingClientRect();
+      const containerRect = elements.qaContent.getBoundingClientRect();
+      // コンテナ上部から100px以内にある見出しを現在のセクションとする
+      if (rect.top - containerRect.top <= 100) {
+        currentSection = section.textContent.trim();
+      }
+    }
+    return currentSection;
+  }
+
+  /**
+   * HTMLで現在表示中のセクション名を取得
+   */
+  function getCurrentHTMLSection() {
+    try {
+      const iframeDoc = elements.htmlFrame.contentDocument;
+      const iframeWin = elements.htmlFrame.contentWindow;
+      if (!iframeDoc || !iframeWin) return null;
+
+      const headings = iframeDoc.querySelectorAll('h1, h2, h3, h4');
+      let currentSection = null;
+
+      for (const heading of headings) {
+        const rect = heading.getBoundingClientRect();
+        // 画面上部から100px以内にある見出しを現在のセクションとする
+        if (rect.top <= 100) {
+          currentSection = heading.textContent.trim();
+        }
+      }
+      return currentSection;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /**
+   * Q&Aで指定セクションにスクロール
+   */
+  function scrollToQASection(sectionName) {
+    if (!sectionName) return false;
+
+    const sections = elements.qaDisplay.querySelectorAll('.qa-section-title');
+    for (const section of sections) {
+      const text = section.textContent.trim();
+      // 完全一致または部分一致
+      if (text === sectionName || text.includes(sectionName) || sectionName.includes(text)) {
+        const containerRect = elements.qaContent.getBoundingClientRect();
+        const sectionRect = section.getBoundingClientRect();
+        const offset = sectionRect.top - containerRect.top + elements.qaContent.scrollTop - 20;
+        elements.qaContent.scrollTo({ top: offset, behavior: 'auto' });
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * HTMLで指定セクションにスクロール
+   */
+  function scrollToHTMLSection(sectionName) {
+    if (!sectionName) return false;
+
+    try {
+      const iframeDoc = elements.htmlFrame.contentDocument;
+      const iframeWin = elements.htmlFrame.contentWindow;
+      if (!iframeDoc || !iframeWin) return false;
+
+      const headings = iframeDoc.querySelectorAll('h1, h2, h3, h4');
+      for (const heading of headings) {
+        const text = heading.textContent.trim();
+        // 完全一致または部分一致
+        if (text === sectionName || text.includes(sectionName) || sectionName.includes(text)) {
+          const rect = heading.getBoundingClientRect();
+          const scrollY = iframeWin.scrollY || 0;
+          iframeWin.scrollTo({ top: scrollY + rect.top - 20, behavior: 'auto' });
+          return true;
+        }
+      }
+      return false;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /**
    * タブを切り替え
    */
   function switchTab(tab) {
     const prevTab = state.currentTab;
 
-    // 切り替え前のスクロール位置（%）を取得
+    // 切り替え前のセクション名を取得
+    let currentSection = null;
     let scrollPercent = 0;
+
     if (prevTab === 'qa') {
+      currentSection = getCurrentQASection();
+      // フォールバック用に%も取得
       const el = elements.qaContent;
       const maxScroll = el.scrollHeight - el.clientHeight;
       if (maxScroll > 0) {
         scrollPercent = el.scrollTop / maxScroll;
       }
     } else if (prevTab === 'html') {
+      currentSection = getCurrentHTMLSection();
+      // フォールバック用に%も取得
       try {
         const iframeWin = elements.htmlFrame.contentWindow;
         const iframeDoc = elements.htmlFrame.contentDocument;
@@ -708,21 +807,32 @@
     const hasQA = state.currentItem && state.currentItem.qaPath;
     elements.qaModeToggle.style.display = (tab === 'qa' && hasQA) ? 'flex' : 'none';
 
-    // 新しいタブに同じ%位置をスクロール
+    // 新しいタブにスクロール（セクション優先、フォールバックで%）
     setTimeout(() => {
-      if (tab === 'qa') {
-        const el = elements.qaContent;
-        const maxScroll = el.scrollHeight - el.clientHeight;
-        el.scrollTop = maxScroll * scrollPercent;
-      } else if (tab === 'html') {
-        try {
-          const iframeWin = elements.htmlFrame.contentWindow;
-          const iframeDoc = elements.htmlFrame.contentDocument;
-          if (iframeWin && iframeDoc) {
-            const maxScroll = iframeDoc.documentElement.scrollHeight - iframeWin.innerHeight;
-            iframeWin.scrollTo(0, maxScroll * scrollPercent);
-          }
-        } catch (e) {}
+      let scrolled = false;
+
+      if (tab === 'qa' && currentSection) {
+        scrolled = scrollToQASection(currentSection);
+      } else if (tab === 'html' && currentSection) {
+        scrolled = scrollToHTMLSection(currentSection);
+      }
+
+      // セクションが見つからなければ%でスクロール
+      if (!scrolled) {
+        if (tab === 'qa') {
+          const el = elements.qaContent;
+          const maxScroll = el.scrollHeight - el.clientHeight;
+          el.scrollTop = maxScroll * scrollPercent;
+        } else if (tab === 'html') {
+          try {
+            const iframeWin = elements.htmlFrame.contentWindow;
+            const iframeDoc = elements.htmlFrame.contentDocument;
+            if (iframeWin && iframeDoc) {
+              const maxScroll = iframeDoc.documentElement.scrollHeight - iframeWin.innerHeight;
+              iframeWin.scrollTo(0, maxScroll * scrollPercent);
+            }
+          } catch (e) {}
+        }
       }
     }, 50);
   }

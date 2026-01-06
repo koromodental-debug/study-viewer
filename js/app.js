@@ -135,6 +135,68 @@
 
     // スクロールでヘッダー表示/非表示
     setupScrollHideHeader();
+
+    // スワイプでタブ切り替え
+    setupSwipeTabSwitch();
+  }
+
+  /**
+   * スワイプでタブを切り替える
+   */
+  function setupSwipeTabSwitch() {
+    const swipeThreshold = 80; // スワイプ判定の閾値（px）
+    const swipeVelocityThreshold = 0.3; // スワイプ速度の閾値（px/ms）
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+
+    function handleTouchStart(e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    }
+
+    function handleTouchEnd(e) {
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const touchEndTime = Date.now();
+
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+      const duration = touchEndTime - touchStartTime;
+      const velocity = Math.abs(diffX) / duration;
+
+      // 横方向の移動が縦より大きく、閾値を超えた場合のみスワイプと判定
+      if (Math.abs(diffX) > Math.abs(diffY) * 1.5 &&
+          (Math.abs(diffX) > swipeThreshold || velocity > swipeVelocityThreshold)) {
+        if (diffX < 0 && state.activeTab === 'html') {
+          // 左スワイプ → Q&Aへ
+          switchTab('qa');
+        } else if (diffX > 0 && state.activeTab === 'qa') {
+          // 右スワイプ → HTMLへ
+          switchTab('html');
+        }
+      }
+    }
+
+    // Q&Aコンテンツのスワイプ監視
+    elements.qaContent.addEventListener('touchstart', handleTouchStart, { passive: true });
+    elements.qaContent.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    // HTMLコンテンツ（iframe外側）のスワイプ監視
+    elements.htmlContent.addEventListener('touchstart', handleTouchStart, { passive: true });
+    elements.htmlContent.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    // iframeスワイプ監視を公開
+    window.setupIframeSwipeHandler = function(iframe) {
+      try {
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        iframeDoc.addEventListener('touchstart', handleTouchStart, { passive: true });
+        iframeDoc.addEventListener('touchend', handleTouchEnd, { passive: true });
+      } catch (e) {
+        console.log('Could not setup iframe swipe handler:', e.message);
+      }
+    };
   }
 
   /**
@@ -724,6 +786,9 @@
         injectMobileStyles(elements.htmlFrame);
         if (window.setupIframeScrollHandler) {
           window.setupIframeScrollHandler(elements.htmlFrame);
+        }
+        if (window.setupIframeSwipeHandler) {
+          window.setupIframeSwipeHandler(elements.htmlFrame);
         }
       };
     } else {

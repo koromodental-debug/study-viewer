@@ -593,6 +593,102 @@
         .syllabus-section {
           border-left-color: #e52222 !important;
         }
+
+        /* ===== Q&A風カードレイアウト ===== */
+
+        /* 中央寄せ（Q&Aと統一） */
+        body {
+          background: #fafafa !important;
+        }
+        .page {
+          max-width: 800px !important;
+          margin: 0 auto !important;
+          padding: 32px 20px !important;
+          padding-bottom: 150px !important;
+        }
+
+        /* h1タイトル */
+        h1 {
+          font-size: 20px !important;
+          margin-bottom: 8px !important;
+        }
+
+        /* h2セクション見出し */
+        h2 {
+          font-size: 18px !important;
+          padding-bottom: 12px !important;
+          margin-top: 32px !important;
+          margin-bottom: 16px !important;
+          border-bottom: 2px solid #2c2c2c !important;
+        }
+
+        /* h3小見出しをカード風に */
+        h3 {
+          background: white !important;
+          padding: 14px 20px !important;
+          border-radius: 16px 16px 0 0 !important;
+          margin: 16px 0 0 0 !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+        }
+        h3::before {
+          content: "■ " !important;
+        }
+
+        /* h3直後の要素（テーブル、リスト、段落） */
+        h3 + table,
+        h3 + ul,
+        h3 + ol,
+        h3 + p {
+          background: white !important;
+          padding: 16px 20px !important;
+          border-radius: 0 0 16px 16px !important;
+          margin-top: 0 !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+        }
+
+        /* テーブルをカード風に */
+        table {
+          background: white !important;
+          border-radius: 16px !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+          border: none !important;
+          overflow: hidden !important;
+          margin: 16px 0 !important;
+        }
+        th {
+          background: #f5f5f5 !important;
+        }
+        th, td {
+          border-color: #e8e8e8 !important;
+        }
+
+        /* ポイントボックス・サマリーボックスをカード風に */
+        .point-box, .summary-box {
+          background: white !important;
+          border-radius: 16px !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+          padding: 16px 20px !important;
+          margin: 16px 0 !important;
+        }
+
+        /* 問題ボックスをカード風に */
+        .question-box {
+          background: white !important;
+          border-radius: 16px !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+          padding: 16px 20px !important;
+          margin: 16px 0 !important;
+        }
+
+        /* シラバスセクションをカード風に */
+        .syllabus-section {
+          background: white !important;
+          border-radius: 16px !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+          border-left: 4px solid #e52222 !important;
+          padding: 12px 16px !important;
+          margin: 16px 0 !important;
+        }
       `;
       doc.head.appendChild(style);
     } catch (e) {

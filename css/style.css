@@ -758,6 +758,40 @@ body {
   color: #007AFF;
 }
 
+/* メニューボタン風アイコン（丸い） */
+.welcome-icon-menu {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.05);
+  flex-direction: column;
+  gap: 4px;
+}
+
+.welcome-icon-menu span {
+  width: 16px;
+  height: 2px;
+  background: #1d1d1f;
+  border-radius: 1px;
+}
+
+/* タブボタン風アイコン */
+.welcome-icon-tab {
+  width: auto;
+  height: auto;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.05);
+  font-size: 13px;
+  font-weight: 600;
+  color: #8e8e93;
+}
+
+.welcome-icon-tab-active {
+  background: #007AFF;
+  color: white;
+}
+
 .welcome-card-content h3 {
   font-size: 15px;
   font-weight: 600;

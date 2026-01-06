@@ -621,6 +621,10 @@
 
     elements.htmlContent.classList.toggle('active', tab === 'html');
     elements.qaContent.classList.toggle('active', tab === 'qa');
+
+    // Q&Aタブの時だけ「全て表示」ボタンを表示
+    const hasQA = state.currentItem && state.currentItem.qaPath;
+    elements.qaModeToggle.style.display = (tab === 'qa' && hasQA) ? 'flex' : 'none';
   }
 
   /**

@@ -274,6 +274,33 @@ body {
   color: var(--text-muted);
 }
 
+/* ホームボタン */
+.sidebar-home {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.home-btn {
+  width: 100%;
+  padding: 10px 14px;
+  background: #f2f2f7;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: #007AFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home-btn:hover {
+  background: #e5e5ea;
+}
+
+.home-btn:active {
+  transform: scale(0.98);
+}
+
 /* トピックリスト */
 .topic-list {
   flex: 1;

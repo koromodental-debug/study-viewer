@@ -40,7 +40,8 @@
     qaToggleBtn: document.getElementById('qa-toggle-btn'),
     welcomeScreen: document.getElementById('welcome-screen'),
     welcomeStartBtn: document.getElementById('welcome-start-btn'),
-    welcomeCardMenu: document.getElementById('welcome-card-menu')
+    welcomeCardMenu: document.getElementById('welcome-card-menu'),
+    homeBtn: document.getElementById('home-btn')
   };
 
   // 検索エンジン
@@ -162,6 +163,11 @@
     }
     if (elements.welcomeCardMenu) {
       elements.welcomeCardMenu.addEventListener('click', openSidebar);
+    }
+
+    // ホームボタン
+    if (elements.homeBtn) {
+      elements.homeBtn.addEventListener('click', goHome);
     }
   }
 
@@ -294,6 +300,42 @@
     state.sidebarOpen = false;
     elements.sidebar.classList.remove('open');
     elements.sidebarOverlay.classList.remove('show');
+  }
+
+  /**
+   * ホーム画面に戻る
+   */
+  function goHome() {
+    // 現在のアイテムをクリア
+    state.currentItem = null;
+
+    // iframe を非表示
+    elements.htmlFrame.src = '';
+    elements.htmlFrame.style.display = 'none';
+
+    // Q&A を非表示
+    elements.qaDisplay.innerHTML = '';
+    elements.qaDisplay.style.display = 'none';
+    elements.qaContent.querySelector('.placeholder').style.display = 'flex';
+    if (elements.qaToolbar) {
+      elements.qaToolbar.style.display = 'none';
+    }
+
+    // ウェルカム画面を表示
+    if (elements.welcomeScreen) {
+      elements.welcomeScreen.classList.remove('hidden');
+    }
+
+    // トピックリストのアクティブ状態をクリア
+    elements.topicList.querySelectorAll('.topic-item').forEach(el => {
+      el.classList.remove('active');
+    });
+
+    // サイドバーを閉じる
+    closeSidebar();
+
+    // HTMLタブに切り替え
+    switchTab('html');
   }
 
   /**

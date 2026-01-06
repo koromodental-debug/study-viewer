@@ -144,19 +144,23 @@
    * スワイプでタブを切り替える
    */
   function setupSwipeTabSwitch() {
-    const swipeThreshold = 80; // スワイプ判定の閾値（px）
-    const swipeVelocityThreshold = 0.3; // スワイプ速度の閾値（px/ms）
+    const swipeThreshold = 50; // スワイプ判定の閾値（px）
+    const swipeVelocityThreshold = 0.2; // スワイプ速度の閾値（px/ms）
     let touchStartX = 0;
     let touchStartY = 0;
     let touchStartTime = 0;
 
     function handleTouchStart(e) {
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-      touchStartTime = Date.now();
+      if (e.touches && e.touches.length > 0) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+      }
     }
 
     function handleTouchEnd(e) {
+      if (!e.changedTouches || e.changedTouches.length === 0) return;
+
       const touchEndX = e.changedTouches[0].clientX;
       const touchEndY = e.changedTouches[0].clientY;
       const touchEndTime = Date.now();
@@ -167,7 +171,7 @@
       const velocity = Math.abs(diffX) / duration;
 
       // 横方向の移動が縦より大きく、閾値を超えた場合のみスワイプと判定
-      if (Math.abs(diffX) > Math.abs(diffY) * 1.5 &&
+      if (Math.abs(diffX) > Math.abs(diffY) &&
           (Math.abs(diffX) > swipeThreshold || velocity > swipeVelocityThreshold)) {
         if (diffX < 0 && state.activeTab === 'html') {
           // 左スワイプ → Q&Aへ

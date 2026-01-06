@@ -10,6 +10,7 @@ import os
 import re
 import json
 import shutil
+import unicodedata
 from pathlib import Path
 from html.parser import HTMLParser
 
@@ -61,7 +62,8 @@ def extract_html_text(filepath):
 
 def normalize_name(filename):
     """ファイル名を正規化してマッチング用のキーを生成"""
-    name = Path(filename).stem
+    # macOSのNFD対策: NFC正規化
+    name = unicodedata.normalize('NFC', Path(filename).stem)
     # 順序重要: _QA を先に削除してから _国試対策まとめ を削除
     patterns = [
         r'_QA$',

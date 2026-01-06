@@ -731,12 +731,13 @@
         table {
           display: table !important;
           width: 100% !important;
+          max-width: 100% !important;
           background: white !important;
           border-radius: 16px !important;
           box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
           border: none !important;
           overflow: hidden !important;
-          margin: 12px 0 !important;
+          margin: 12px auto !important;
           border-collapse: separate !important;
           border-spacing: 0 !important;
         }

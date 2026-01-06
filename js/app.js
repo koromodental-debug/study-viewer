@@ -598,7 +598,7 @@
         .page {
           max-width: 100% !important;
           margin: 0 !important;
-          padding: 16px !important;
+          padding: 12px !important;
           padding-bottom: 150px !important;
         }
 

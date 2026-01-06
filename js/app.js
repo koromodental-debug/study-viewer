@@ -260,55 +260,10 @@
       lastProcessedScrollY = currentScrollY;
     }
 
-    // iframeスクロール監視を公開
+    // iframeスクロール監視は無効化（スクロールの滑らかさを優先）
+    // HTMLタブではヘッダーは常に表示
     window.setupIframeScrollHandler = function(iframe) {
-      try {
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-        const iframeWin = iframe.contentWindow;
-        let iframeTicking = false;
-        let iframeLastScrollY = 0;
-
-        iframeWin.addEventListener('scroll', function() {
-          if (!iframeTicking) {
-            requestAnimationFrame(() => {
-              const scrollY = iframeWin.scrollY || iframeDoc.documentElement.scrollTop || 0;
-
-              // 最下部付近ではスキップ
-              const scrollHeight = iframeDoc.documentElement.scrollHeight || iframeDoc.body.scrollHeight;
-              const clientHeight = iframeWin.innerHeight;
-              const maxScroll = scrollHeight - clientHeight;
-              if (maxScroll > 0 && scrollY >= maxScroll - 10) {
-                iframeTicking = false;
-                return;
-              }
-
-              const diff = scrollY - iframeLastScrollY;
-              if (Math.abs(diff) >= scrollThreshold) {
-                if (diff > 0 && scrollY > 60) {
-                  if (!state.headerHidden) {
-                    state.headerHidden = true;
-                    elements.header.classList.add('hidden');
-                    elements.tabsContainer.classList.add('hidden');
-                    elements.mainContent.classList.add('header-hidden');
-                  }
-                } else if (diff < 0) {
-                  if (state.headerHidden) {
-                    state.headerHidden = false;
-                    elements.header.classList.remove('hidden');
-                    elements.tabsContainer.classList.remove('hidden');
-                    elements.mainContent.classList.remove('header-hidden');
-                  }
-                }
-                iframeLastScrollY = scrollY;
-              }
-              iframeTicking = false;
-            });
-            iframeTicking = true;
-          }
-        }, { passive: true });
-      } catch (e) {
-        console.log('Could not setup iframe scroll handler:', e.message);
-      }
+      // 無効化: iframeスクロールでのヘッダー制御はスクロールをカクつかせるため
     };
   }
 

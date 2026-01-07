@@ -777,8 +777,9 @@
           margin-bottom: 16px !important;
         }
 
-        .highlight {
-          background: linear-gradient(transparent 60%, #FFE066 60%) !important;
+        .highlight, .red, .key, .caution {
+          background: none !important;
+          color: inherit !important;
           font-weight: 600 !important;
         }
 

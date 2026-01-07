@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯周疾患 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 疾患の分類と特徴</span>
+    <h1>歯周疾患</h1>
+    <div class="container">
+
+      <h2>歯周病の定義</h2>
+      <p><span class="key">歯周病</span>（periodontal diseases）とは、歯周組織に発症し、歯周組織を破壊する疾患の総称。主に以下の3つに分類される。</p>
+      <ul>
+        <li><span class="key">歯肉炎</span>（gingivitis）</li>
+        <li><span class="key">歯周炎</span>（periodontitis）</li>
+        <li><span class="key">咬合性外傷</span>（occlusal trauma）</li>
+      </ul>
+
+      <h2>歯肉炎と歯周炎の違い</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">歯肉炎 vs 歯周炎（頻出）</div>
+        <ul>
+          <li><span class="key">歯肉炎</span>：炎症が<span class="highlight">歯肉に限局</span>、アタッチメントロス・骨吸収なし</li>
+          <li><span class="key">歯周炎</span>：炎症が歯肉・セメント質・歯根膜・歯槽骨に波及、<span class="highlight">アタッチメントロス・骨吸収あり</span></li>
+        </ul>
+      </div>
+
+      <h3>歯肉炎・歯周炎・咬合性外傷の比較</h3>
+      <table>
+        <tr><th>所見</th><th>歯肉炎</th><th>歯周炎</th><th>一次性咬合性外傷</th><th>二次性咬合性外傷</th></tr>
+        <tr><td>歯肉の発赤・腫脹</td><td>あり</td><td>あり</td><td><span class="caution">なし</span></td><td>あり</td></tr>
+        <tr><td>ポケットの形成</td><td>歯肉ポケット</td><td>歯周ポケット</td><td>なし</td><td>あり</td></tr>
+        <tr><td>アタッチメントロス</td><td><span class="highlight">なし</span></td><td><span class="highlight">あり</span></td><td>なし</td><td>あり</td></tr>
+        <tr><td>歯槽骨吸収</td><td>なし</td><td>あり</td><td>あり</td><td>あり</td></tr>
+        <tr><td>歯の動揺</td><td>なし</td><td>あり</td><td>あり</td><td>あり</td></tr>
+        <tr><td>原因</td><td>プラーク</td><td>プラーク</td><td>強い咬合力</td><td>通常の咬合力</td></tr>
+      </table>
+
+      <h2>歯周炎の臨床症状</h2>
+      <ul>
+        <li>歯肉の発赤・腫脹</li>
+        <li>歯肉からの出血（BOP陽性）</li>
+        <li><span class="key">アタッチメントロス</span>（付着の喪失）</li>
+        <li><span class="key">歯周ポケット</span>（3mm以上の深い溝）の形成</li>
+        <li>歯槽骨吸収（エックス線所見）</li>
+        <li>歯の動揺</li>
+        <li>歯の病的移動</li>
+        <li>排膿</li>
+        <li>歯周膿瘍</li>
+      </ul>
+
+      <h2>慢性歯周炎と侵襲性歯周炎</h2>
+      <table>
+        <tr><th>項目</th><th>慢性歯周炎</th><th>侵襲性歯周炎</th></tr>
+        <tr><td>発症年齢</td><td>主に<span class="highlight">35歳以降</span></td><td>主に<span class="highlight">20歳代</span>から</td></tr>
+        <tr><td>進行速度</td><td>緩徐</td><td><span class="caution">急速</span></td></tr>
+        <tr><td>罹患率</td><td>高い（大多数）</td><td><span class="highlight">0.05〜0.1%</span></td></tr>
+        <tr><td>全身的健康</td><td>様々</td><td>全身的に健康なことが多い</td></tr>
+        <tr><td>家族内集積</td><td>少ない</td><td><span class="key">あり</span></td></tr>
+      </table>
+      <p class="note"><span class="caution">注意</span>：両者は治療法も異なるため、臨床的鑑別診断が重要。</p>
+
+      <h2>歯周病の罹患率</h2>
+      <ul>
+        <li>5歳以上：歯肉炎 <span class="highlight">40%</span>（約5,100万人）、歯周炎 <span class="highlight">34%</span>（約4,300万人）</li>
+        <li>20〜24歳：74%</li>
+        <li>50〜54歳：81%</li>
+      </ul>
+      <p><span class="key">歯周病は国民病</span>であり、歯の喪失の主な原因である。</p>
+
+      <h2>咬合性外傷</h2>
+
+      <h3>一次性咬合性外傷と二次性咬合性外傷</h3>
+      <table>
+        <tr><th>項目</th><th>一次性咬合性外傷</th><th>二次性咬合性外傷</th></tr>
+        <tr><td>歯周組織</td><td><span class="highlight">健全</span></td><td>歯周炎により<span class="highlight">脆弱化</span></td></tr>
+        <tr><td>原因</td><td><span class="key">過大な咬合力</span></td><td><span class="key">正常な咬合力</span></td></tr>
+        <tr><td>臨床所見</td><td>歯肉に炎症なし</td><td>歯肉に炎症あり</td></tr>
+      </table>
+
+      <h3>咬合性外傷の臨床所見</h3>
+      <ul>
+        <li>歯の動揺</li>
+        <li><span class="key">歯根膜腔の拡大</span>（エックス線所見）</li>
+        <li>歯槽硬線の肥厚または消失</li>
+        <li>早期接触、過度の咬耗、ブラキシズム</li>
+      </ul>
+
+      <h2>ペリオドンタルメディシン</h2>
+      <p>歯周炎と全身疾患の関連を研究する学問。</p>
+
+      <h3>歯周炎と関連する全身疾患</h3>
+      <ul>
+        <li><span class="key">糖尿病</span>（双方向性の関係）</li>
+        <li>心血管系疾患（動脈硬化、冠状動脈疾患）</li>
+        <li>誤嚥性肺炎</li>
+        <li>低体重児出産・早産</li>
+        <li>骨粗鬆症</li>
+        <li>免疫疾患（リウマチなど）</li>
+        <li>肥満</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102C28</div>
+        <p>49歳の男性。歯周基本治療後の再評価で上顎右側臼歯部に深い歯周ポケットが残存していたためフラップ手術を行うこととした。再評価時の口腔内写真（別冊No.25A）、エックス線写真（別冊No.25B）及び切開線を示す口腔内写真（別冊No.25C）を別に示す。<br>
+        写真(別冊No.25C)に示す切開線で適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102C28_1.png" alt="別冊No.25A">
+          <img src="../../../images/102回_Web画像/102C28_2.png" alt="別冊No.25B">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】フラップ手術の切開線は、歯周ポケットの深さや角化歯肉幅を考慮して選択する。深いポケットには内斜切開（歯肉頂縁から0.5〜1mm離れた部位）が適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B35</div>
+        <p>歯周炎で正しいのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 喫煙者の有病率は高い。<br>
+          b 糖尿病患者の有病率は低い。<br>
+          c 歯種による発生率に差はない。<br>
+          d 永久歯喪失の主な原因である。<br>
+          e 20歳以下の低年齢群には認められない。
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="key">喫煙は歯周炎の主要なリスクファクター</span>。<span class="key">歯周病は永久歯喪失の主な原因</span>。糖尿病患者では有病率が<span class="caution">高い</span>。歯種により発生率は異なる（大臼歯に多い）。侵襲性歯周炎は若年者にも発症する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B87</div>
+        <p>ペリオドンタルメディシンに関わる疾患はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 肝炎<br>
+          b 糖尿病<br>
+          c 中耳炎<br>
+          d 胃潰瘍<br>
+          e 冠状動脈疾患
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】ペリオドンタルメディシンで関連が明らかな疾患は、<span class="highlight">糖尿病</span>と<span class="highlight">心血管系疾患（冠状動脈疾患）</span>。その他、誤嚥性肺炎、低体重児出産・早産なども関連する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

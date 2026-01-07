@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=56">
+  <link rel="stylesheet" href="css/style.css?v=57">
 </head>
 <body>
   <div class="app">
@@ -22,15 +22,17 @@
 
     <!-- サイドバー -->
     <aside id="sidebar" class="sidebar">
-      <div class="sidebar-header">
-        <span class="sidebar-title">トピック一覧</span>
-        <button id="sidebar-close" class="sidebar-close">✕</button>
-      </div>
-      <div class="sidebar-search">
-        <input type="text" id="sidebar-filter" placeholder="検索...">
-      </div>
-      <div class="sidebar-home">
-        <button id="home-btn" class="home-btn">ホーム</button>
+      <div class="sidebar-fixed">
+        <div class="sidebar-header">
+          <span class="sidebar-title">トピック一覧</span>
+          <button id="sidebar-close" class="sidebar-close">✕</button>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="sidebar-filter" placeholder="検索...">
+        </div>
+        <div class="sidebar-home">
+          <button id="home-btn" class="home-btn">ホーム</button>
+        </div>
       </div>
       <nav class="topic-list" id="topic-list">
         <!-- 動的に生成 -->
@@ -168,6 +170,6 @@
   <script src="js/data.js?v=3"></script>
   <script src="js/search.js?v=1"></script>
   <script src="js/kakomon.js?v=2"></script>
-  <script src="js/app.js?v=56"></script>
+  <script src="js/app.js?v=57"></script>
 </body>
 </html>

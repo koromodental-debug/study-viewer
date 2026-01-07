@@ -6,64 +6,71 @@
   <style>
     :root {
       --text-primary: #1D1D1F;
-      --text-secondary: #6E6E73;
-      --accent: #2C5282;
-      --bg-blue-light: #F7FAFC;
-      --bg-gray: #F7F7F7;
-      --border-light: #E2E8F0;
-      --yellow-bg: #FAF8F5;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
       font-size: 10pt;
-      line-height: 1.7;
+      line-height: 1.8;
       color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
     }
-    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
     .container { column-count: 1; }
     @media print {
       @page { size: A4 landscape; margin: 12mm 15mm; }
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .page { padding: 12mm 15mm; max-width: 297mm; }
-      .container { column-count: 2; column-gap: 25px; }
+      .container { column-count: 2; column-gap: 30px; }
     }
-    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 16px; color: var(--accent); }
-    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; }
-    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; }
-    h3::before { content: "■ "; color: var(--accent); }
-    table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0; font-size: 9pt; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); }
-    th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border-light); }
-    th { background: var(--bg-gray); font-weight: bold; }
-    tr:last-child td { border-bottom: none; }
-    .red { color: #C53030; font-weight: bold; }
-    ul { padding-left: 1.5em; margin: 6px 0; }
-    li { margin: 3px 0; }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
     .point-box {
-      background: var(--bg-blue-light);
+      background: var(--accent-light);
       border-radius: 12px;
-      padding: 12px 16px; margin: 10px 0;
+      padding: 16px 20px;
+      margin: 14px 0;
     }
-    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
     .question-box {
-      background: var(--yellow-bg);
+      background: var(--bg-secondary);
       border-radius: 12px;
-      padding: 12px 16px; margin: 10px 0; font-size: 9pt;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
     }
-    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
-    .question-box .choices { margin: 6px 0; line-height: 1.6; }
-    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
-    .question-images { margin: 10px 0; }
-    .question-images img { max-width: 45%; margin: 5px; border-radius: 4px; }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
     .category-tag {
       display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 2px 8px;
-      border-radius: 4px;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
       font-size: 9pt;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      font-weight: 500;
     }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -73,26 +80,25 @@
     <div class="container">
 
       <h3>歯周炎の定義</h3>
-      <p>歯周炎（periodontitis）は、歯肉炎が進行し、炎症が歯周組織深部（歯根膜、セメント質、歯槽骨）に波及した状態。アタッチメントロスと歯槽骨吸収を特徴とする。</p>
+      <p><span class="key">歯周炎</span>（periodontitis）は、歯肉炎が進行し、炎症が歯周組織深部（歯根膜、セメント質、歯槽骨）に波及した状態。アタッチメントロスと歯槽骨吸収を特徴とする。</p>
 
       <h3>歯周炎の病原因子</h3>
-      <p>歯周病原細菌は<span class="red">グラム陰性桿菌</span>であり、基本的に病原性因子として<span class="red">内毒素（エンドトキシン＝LPS：リポ多糖）</span>を有する。</p>
+      <p>歯周病原細菌は<span class="highlight">グラム陰性桿菌</span>であり、基本的に病原性因子として<span class="highlight">内毒素（エンドトキシン＝LPS：リポ多糖）</span>を有する。</p>
       <ul>
-        <li><strong>P. gingivalis</strong>：慢性歯周炎患者の歯肉縁下プラークから高頻度で分離</li>
-        <li><strong>A. actinomycetemcomitans</strong>：侵襲性歯周炎との関連</li>
-        <li><strong>T. forsythia</strong>：慢性歯周炎の原因菌</li>
+        <li><span class="key">P. gingivalis</span>：慢性歯周炎患者の歯肉縁下プラークから高頻度で分離</li>
+        <li><span class="key">A. actinomycetemcomitans</span>：侵襲性歯周炎との関連</li>
+        <li><span class="key">T. forsythia</span>：慢性歯周炎の原因菌</li>
       </ul>
 
-      <h3>歯周炎によるセメント質の変化</h3>
       <div class="point-box">
         <div class="point-box-title">国試頻出ポイント</div>
         <p>歯周炎により、セメント質には以下の変化が生じる：</p>
         <ul>
-          <li><span class="red">LPS（リポ多糖/内毒素）の浸透</span> ← 最重要</li>
+          <li><span class="highlight">LPS（リポ多糖/内毒素）の浸透</span> ← 最重要</li>
           <li>細菌由来の起炎物質の浸透</li>
           <li>表面が粗造化</li>
         </ul>
-        <p>※ルートプレーニングは、このLPSが浸透した病的セメント質を除去する処置である。</p>
+        <p class="note">※ルートプレーニングは、このLPSが浸透した病的セメント質を除去する処置である。</p>
       </div>
 
       <h3>セメント質の分類（正常構造）</h3>
@@ -140,7 +146,7 @@
         </tr>
         <tr>
           <td>セメント質</td>
-          <td><span class="red">LPSの浸透</span>、表面粗造化</td>
+          <td><span class="highlight">LPSの浸透</span>、表面粗造化</td>
         </tr>
         <tr>
           <td>歯槽骨</td>
@@ -157,7 +163,7 @@
         </tr>
         <tr>
           <td>LPSの浸透</td>
-          <td><span class="red">○</span></td>
+          <td><span class="highlight">○</span></td>
           <td>歯周病原細菌由来のLPSがセメント質に浸透する</td>
         </tr>
         <tr>
@@ -182,7 +188,7 @@
         </tr>
       </table>
 
-      <h2>過去問</h2>
+      <h2>関連過去問</h2>
       <div class="question-box">
         <div class="q-number">108C81</div>
         <p>歯周炎によりセメント質に生じる変化はどれか。1つ選べ。</p>
@@ -194,7 +200,7 @@
           e 有細胞セメント質の肥厚
         </div>
         <div class="answer">正解：a</div>
-        <p>【解説】歯周病原細菌はグラム陰性桿菌であり、LPS（リポ多糖＝内毒素）を産生する。このLPSは歯周炎罹患歯のセメント質に浸透し、ルートプレーニングで除去される病的セメント質の主要因となる。好中球の浸潤は結合組織で起こる変化であり、セメント質自体への浸潤ではない。</p>
+        <p>【解説】歯周病原細菌はグラム陰性桿菌であり、<span class="key">LPS（リポ多糖＝内毒素）</span>を産生する。このLPSは歯周炎罹患歯のセメント質に浸透し、ルートプレーニングで除去される病的セメント質の主要因となる。<span class="caution">好中球の浸潤は結合組織で起こる変化</span>であり、セメント質自体への浸潤ではない。</p>
       </div>
 
     </div>

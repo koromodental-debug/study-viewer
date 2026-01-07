@@ -195,6 +195,13 @@ body {
   transform: translateY(0);
 }
 
+/* 固定部分（検索欄含む） */
+.sidebar-fixed {
+  flex-shrink: 0;
+  background: white;
+  border-radius: 20px 20px 0 0;
+}
+
 .sidebar-header {
   position: relative;
   padding: 24px 20px 16px;
@@ -204,7 +211,6 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
   border-radius: 20px 20px 0 0;
-  flex-shrink: 0;
 }
 
 /* ドラッグハンドル */
@@ -267,13 +273,9 @@ body {
 
 /* サイドバー検索 */
 .sidebar-search {
-  position: sticky;
-  top: 0;
   padding: 12px 16px;
   border-bottom: 1px solid var(--border-color);
-  flex-shrink: 0;
   background: white;
-  z-index: 10;
 }
 
 .sidebar-search input {
@@ -300,7 +302,6 @@ body {
 .sidebar-home {
   padding: 8px 16px;
   border-bottom: 1px solid var(--border-color);
-  flex-shrink: 0;
   background: white;
 }
 

@@ -73,6 +73,27 @@
     renderTopicList(DATA);
     bindEvents();
     restoreState();
+    setupKeyboardHandler();
+  }
+
+  /**
+   * キーボード表示時の処理（iOS対応）
+   */
+  function setupKeyboardHandler() {
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', () => {
+        const keyboardHeight = window.innerHeight - window.visualViewport.height;
+        if (keyboardHeight > 100) {
+          // キーボードが表示されている
+          elements.sidebar.style.maxHeight = `${window.visualViewport.height * 0.75}px`;
+          elements.sidebar.style.bottom = `${keyboardHeight}px`;
+        } else {
+          // キーボードが非表示
+          elements.sidebar.style.maxHeight = '';
+          elements.sidebar.style.bottom = '';
+        }
+      });
+    }
   }
 
   /**

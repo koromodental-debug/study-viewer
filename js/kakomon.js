@@ -122,10 +122,10 @@ const KakomonModule = (function() {
       elements.kakomonPlaceholder.style.display = 'none';
     }
 
-    // ツールバーを表示
-    if (elements.kakomonToolbar) {
-      elements.kakomonToolbar.style.display = 'flex';
-    }
+    // ツールバーは非表示のまま（下部ナビのみ使用）
+    // if (elements.kakomonToolbar) {
+    //   elements.kakomonToolbar.style.display = 'flex';
+    // }
     if (elements.kakomonCurrent) {
       elements.kakomonCurrent.textContent = state.currentIndex + 1;
     }
@@ -156,11 +156,6 @@ const KakomonModule = (function() {
 
     return `
       <div class="kakomon-card" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}">
-        <div class="kakomon-header">
-          <span class="kakomon-code">${escapeHtml(question.code)}</span>
-          <span class="kakomon-meta">第${question.examNum}回 ${question.section}問題</span>
-        </div>
-
         <div class="kakomon-question">
           <p class="kakomon-text">${escapeHtml(question.text)}</p>
         </div>

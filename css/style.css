@@ -267,10 +267,13 @@ body {
 
 /* サイドバー検索 */
 .sidebar-search {
+  position: sticky;
+  top: 0;
   padding: 12px 16px;
   border-bottom: 1px solid var(--border-color);
   flex-shrink: 0;
   background: white;
+  z-index: 10;
 }
 
 .sidebar-search input {

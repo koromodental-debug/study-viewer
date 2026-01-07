@@ -1622,52 +1622,47 @@ body {
 }
 
 /* ===== Q&Aフローティングトグルボタン ===== */
-.qa-floating-toggle {
+/* フローティングタブバーを相対配置に */
+.floating-tabbar {
   position: fixed;
   bottom: 24px;
-  left: 20px;
-  padding: 10px 18px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.qa-floating-toggle {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  margin-bottom: 8px;
+  padding: 8px 14px;
+  background: #1d1d1f;
   border: none;
-  border-radius: 30px;
-  font-size: 14px;
+  border-radius: 20px;
+  font-size: 13px;
   font-weight: 600;
-  color: #1d1d1f;
+  color: white;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1001;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
 }
 
 .qa-floating-toggle.show {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
-}
-
-.qa-floating-toggle:hover {
-  background: #1d1d1f;
-  color: white;
+  transform: translateX(-50%) translateY(0);
 }
 
 .qa-floating-toggle:active {
-  transform: scale(0.95);
+  transform: translateX(-50%) translateY(0) scale(0.95);
 }
 
 .qa-floating-toggle.active {
-  background: #1d1d1f;
-  color: white;
-}
-
-/* Safe area対応 */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-  .qa-floating-toggle {
-    bottom: calc(24px + env(safe-area-inset-bottom));
-  }
+  background: #007AFF;
 }
 
 /* モバイル最適化 */
@@ -1695,9 +1690,7 @@ body {
   }
 
   .qa-floating-toggle {
-    bottom: 16px;
-    left: 16px;
-    padding: 8px 14px;
-    font-size: 13px;
+    padding: 6px 12px;
+    font-size: 12px;
   }
 }

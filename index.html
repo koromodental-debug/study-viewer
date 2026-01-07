@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=61">
+  <link rel="stylesheet" href="css/style.css?v=62">
 </head>
 <body>
   <div class="app">
@@ -151,6 +151,10 @@
 
     <!-- フローティングタブバー -->
     <nav class="floating-tabbar">
+      <!-- Q&Aトグルボタン（タブバーの上に出現） -->
+      <button id="qa-floating-toggle" class="qa-floating-toggle">
+        <span>全て表示</span>
+      </button>
       <button class="floating-tab active" data-tab="html">
         <svg class="tab-icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M6 2C4.9 2 4 2.9 4 4v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
@@ -170,11 +174,6 @@
         <span>過去問</span>
       </button>
     </nav>
-
-    <!-- Q&Aトグルボタン（フローティング） -->
-    <button id="qa-floating-toggle" class="qa-floating-toggle">
-      <span>全て表示</span>
-    </button>
 
   </div>
 

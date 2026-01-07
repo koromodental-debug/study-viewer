@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>治療計画 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    ol { padding-left: 1.5em; margin: 8px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .flow-box {
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 8px 0;
+      text-align: center;
+    }
+    .flow-arrow { color: var(--accent); font-weight: bold; margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 歯周基本治療・再評価</span>
+    <h1>治療計画</h1>
+    <div class="container">
+
+      <h2>歯周治療の流れ</h2>
+      <p>歯周治療は以下の<span class="highlight">4つの治療カテゴリー</span>から構成される。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">歯周治療の4大カテゴリー</div>
+        <ol>
+          <li><span class="key">歯周基本治療</span>（Initial preparation）</li>
+          <li><span class="key">歯周外科治療</span>（Periodontal surgery）</li>
+          <li><span class="key">口腔機能回復治療</span>（Oral rehabilitation）</li>
+          <li><span class="key">メインテナンス・SPT</span></li>
+        </ol>
+      </div>
+
+      <h3>治療の流れ</h3>
+      <p>医療面接 → 検査・診断・治療計画立案 → 歯周基本治療 → <span class="key">再評価</span> → 歯周外科治療 → 再評価 → 口腔機能回復治療 → 再評価 → メインテナンス/SPT</p>
+      <p class="note">各段階で<span class="highlight">再評価</span>を行い、次のステップに進むかを判断する。</p>
+
+      <h2>治療計画立案の3要素</h2>
+      <h3>1. 医療面接（メディカルインタビュー）</h3>
+      <table>
+        <tr>
+          <th>確認項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>健康状態</td>
+          <td>口腔内および全身状態</td>
+        </tr>
+        <tr>
+          <td><span class="key">コンプライアンス</span></td>
+          <td>歯周治療に対する協力度</td>
+        </tr>
+        <tr>
+          <td>患者の希望</td>
+          <td>審美性、経済性など</td>
+        </tr>
+      </table>
+      <p class="note">インフォームドコンセント（十分な説明に基づく同意）を得ることが重要。</p>
+
+      <h3>2. 検査・診断</h3>
+      <p>病態の診断、治療経過および再評価時の指標となる。</p>
+
+      <h3>3. 治療方法の選択</h3>
+      <p>検査結果や医療面接の情報によって診断を行い、患者に適した治療方法の選択、治療計画の立案を行う。</p>
+
+      <h2>歯周基本治療の内容</h2>
+      <h3>治療原則（3つの柱）</h3>
+      <ul>
+        <li><span class="highlight">起炎性因子であるプラークの除去</span></li>
+        <li><span class="key">プラークリテンションファクター</span>（プラーク蓄積因子）の改善</li>
+        <li><span class="key">咬合のコントロール</span></li>
+      </ul>
+
+      <h3>歯周基本治療の具体的内容</h3>
+      <table>
+        <tr>
+          <th>No.</th>
+          <th>治療内容</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><span class="key">プラークコントロール</span>（口腔清掃指導）</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><span class="key">スケーリング・ルートプレーニング</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>プラークリテンションファクターの除去</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><span class="key">咬合調整</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><span class="key">暫間固定</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>習癖の修正（ブラキシズムなど）</td>
+        </tr>
+      </table>
+
+      <h2>咬合調整の原則</h2>
+      <p>咬合性外傷が咬合調整のみでは改善できない場合や歯の動揺が強い場合は、<span class="key">暫間固定</span>を行う。</p>
+
+      <h3>削合部位の原則（BULL rule）</h3>
+      <p>側方運動時の作業側における削合は：</p>
+      <ul>
+        <li><span class="highlight">B</span>uccal of <span class="highlight">U</span>pper：上顎頬側咬頭内斜面</li>
+        <li><span class="highlight">L</span>ingual of <span class="highlight">L</span>ower：下顎舌側咬頭内斜面</li>
+      </ul>
+
+      <h2>関連過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112B61</div>
+        <p>二次性咬合性外傷を伴う正常被蓋の歯に対して咬合調整を行うこととした。<br>
+        側方運動時作業側における削合部位はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 下顎頬側咬頭内斜面<br>
+          b 下顎舌側咬頭内斜面<br>
+          c 上顎頬側咬頭外斜面<br>
+          d 上顎頬側咬頭内斜面<br>
+          e 上顎舌側咬頭内斜面
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】側方運動時作業側の削合は<span class="highlight">BULL rule</span>に従う。<span class="key">B</span>uccal of <span class="key">U</span>pper（上顎頬側咬頭内斜面）と<span class="key">L</span>ingual of <span class="key">L</span>ower（下顎舌側咬頭内斜面）を削合する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

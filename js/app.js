@@ -80,17 +80,23 @@
    * キーボード表示時の処理（iOS対応）
    */
   function setupKeyboardHandler() {
+    const sidebarHome = document.querySelector('.sidebar-home');
+
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', () => {
         const keyboardHeight = window.innerHeight - window.visualViewport.height;
         if (keyboardHeight > 100) {
           // キーボードが表示されている
-          elements.sidebar.style.maxHeight = `${window.visualViewport.height * 0.75}px`;
+          elements.sidebar.style.maxHeight = `${window.visualViewport.height - 20}px`;
           elements.sidebar.style.bottom = `${keyboardHeight}px`;
+          // ホームボタンを非表示
+          if (sidebarHome) sidebarHome.style.display = 'none';
         } else {
           // キーボードが非表示
           elements.sidebar.style.maxHeight = '';
           elements.sidebar.style.bottom = '';
+          // ホームボタンを再表示
+          if (sidebarHome) sidebarHome.style.display = '';
         }
       });
     }

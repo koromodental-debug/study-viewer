@@ -1260,6 +1260,13 @@
     state.qaShowAll = !state.qaShowAll;
     elements.qaDisplay.classList.toggle('show-all', state.qaShowAll);
 
+    // 折りたたむ時は手動で開いたQ&Aも全て閉じる
+    if (!state.qaShowAll) {
+      elements.qaDisplay.querySelectorAll('.qa-answer.show').forEach(el => {
+        el.classList.remove('show');
+      });
+    }
+
     // ボタンがあれば更新
     const qaModeToggle = document.getElementById('qa-mode-toggle');
     if (qaModeToggle) {

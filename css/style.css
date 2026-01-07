@@ -1414,10 +1414,11 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 6px 8px;
   border-radius: 40px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
 
@@ -1467,18 +1468,10 @@ body {
   display: inline;
 }
 
-/* メインコンテンツの下部余白を調整 */
-.main-content {
-  padding-bottom: 100px;
-}
-
 /* Safe area対応（iPhone X以降） */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   .floating-tabbar {
     bottom: calc(16px + env(safe-area-inset-bottom));
-  }
-  .main-content {
-    padding-bottom: calc(100px + env(safe-area-inset-bottom));
   }
 }
 

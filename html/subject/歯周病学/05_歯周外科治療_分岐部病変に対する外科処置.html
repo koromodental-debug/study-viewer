@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>分岐部病変に対する外科処置 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 歯周外科治療</span>
+    <h1>分岐部病変に対する外科処置</h1>
+    <div class="container">
+
+      <h2>Lindhe & Nymanの分類と治療法【最重要】</h2>
+      <table>
+        <tr>
+          <th>処置法</th>
+          <th>1度</th>
+          <th>2度</th>
+          <th>3度</th>
+        </tr>
+        <tr>
+          <td>歯周ポケット掻爬</td>
+          <td>○</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="key">ファーケーションプラスティ</span></td>
+          <td>○</td>
+          <td>○</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="key">トンネリング</span></td>
+          <td></td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯根分離</span></td>
+          <td></td>
+          <td>○</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">歯周組織再生療法</span></td>
+          <td></td>
+          <td>○</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="key">歯根切除（ルートリセクション）</span></td>
+          <td></td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="key">ヘミセクション・トライセクション</span></td>
+          <td></td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="caution">抜歯</span></td>
+          <td></td>
+          <td></td>
+          <td>○</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方のポイント</div>
+        <ul>
+          <li><span class="key">1度</span>：保存療法（歯周ポケット掻爬、ファーケーションプラスティ）</li>
+          <li><span class="key">2度</span>：<span class="highlight">歯周組織再生療法</span>の適応、保存療法または切断除去療法</li>
+          <li><span class="key">3度</span>：切断除去療法（トンネリング、ルートリセクション、ヘミセクション）または抜歯</li>
+        </ul>
+      </div>
+
+      <h2>保存療法</h2>
+
+      <h3>1. ファーケーションプラスティ（ファルカプラスティ）</h3>
+      <p>根分岐部の形態修正により自浄性・清掃性を改善する術式。</p>
+      <ul>
+        <li><span class="key">オドントプラスティ</span>（歯の整形）：<span class="highlight">エナメル突起</span>、<span class="highlight">エナメル滴</span>などの歯質を削除</li>
+        <li><span class="key">オステオプラスティ</span>（歯槽骨整形）：病変部歯槽骨の形態を修正</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：生活歯では術後の知覚過敏、整形面の齲蝕に注意</p>
+
+      <h3>2. トンネリング（トンネル形成）</h3>
+      <p>根分岐部を完全にトンネル状に貫通させ、<span class="key">歯間ブラシ</span>による清掃を可能にする。</p>
+      <ul>
+        <li>適応：進行した<span class="highlight">2〜3度</span>の根分岐部病変</li>
+        <li>主な対象：<span class="key">下顎大臼歯</span></li>
+        <li>条件：歯根が長く、根分岐部が離開していること</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：術後の根面齲蝕に注意、メインテナンスが重要</p>
+
+      <h3>3. 歯根分離（ルートセパレーション）</h3>
+      <p>歯冠を近遠心的に2分割し、2本の単根歯として保存する。</p>
+      <ul>
+        <li>適応：進行した<span class="highlight">2〜3度</span>の根分岐部病変</li>
+        <li>主な対象：<span class="key">下顎大臼歯</span></li>
+        <li>通常、分割した2根を連結固定する</li>
+      </ul>
+
+      <h2>切断除去療法</h2>
+
+      <h3>歯根切除（ルートリセクション）</h3>
+      <p>多（複）根歯の保存不可能な歯根を<span class="key">歯冠を含まず</span>歯根のみ切除する。</p>
+      <ul>
+        <li>主に<span class="key">上顎大臼歯</span>に適用</li>
+        <li>明視野下で3根のうち1根を除去する</li>
+      </ul>
+
+      <h3>ヘミセクション・トライセクション</h3>
+      <ul>
+        <li><span class="key">ヘミセクション</span>：<span class="highlight">歯冠を含めて</span>歯根分割抜去（下顎大臼歯）</li>
+        <li><span class="key">トライセクション</span>：上顎大臼歯で歯冠ごと分割し抜去</li>
+      </ul>
+
+      <h2>関連過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113D53</div>
+        <p>LindheとNymanの根分岐部病変の分類と治療法の組合せで適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1度 ーーーーー 歯根分離<br>
+          b 1度 ーーーーー ルートリセクション<br>
+          c 2度 ーーーーー 歯周組織再生療法<br>
+          d 2度 ーーーーー トンネリング<br>
+          e 3度 ーーーーー 歯周ポケット掻爬
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">2度の根分岐部病変には歯周組織再生療法</span>（GTR法、EMD）が適応となる。歯根分離やルートリセクションは2〜3度、トンネリングは2〜3度に適応。歯周ポケット掻爬は1度のみ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A93</div>
+        <p>ファルカプラスティで除去するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 口蓋裂溝<br>
+          b 臼傍結節<br>
+          c エナメル滴<br>
+          d エナメル突起<br>
+          e カラベリー結節
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】ファルカプラスティ（オドントプラスティ）では<span class="highlight">エナメル滴</span>や<span class="highlight">エナメル突起</span>を除去する。これらは根分岐部病変の原因となる解剖学的形態異常である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C57</div>
+        <p>52歳の男性。下顎左側第一大臼歯部歯肉の違和感を主訴として来院した。検査の結果、根分岐部病変を伴う慢性歯周炎と診断し、歯周基本治療後に歯周外科治療を行うこととした。初診時のエックス線画像（別冊No.17）を別に示す。歯周基本治療後の再評価時の歯周組織検査結果の一部を表に示す。<br>
+        適切な処置はどれか。2つ選べ。</p>
+        <div class="choices">
+          a GTR<br>
+          b 歯根切除<br>
+          c トンネリング<br>
+          d ヘミセクション<br>
+          e ファーケーションプラスティ
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】根分岐部病変2度に対しては<span class="key">GTR法</span>（歯周組織再生療法）と<span class="key">ファーケーションプラスティ</span>が適応となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B79</div>
+        <p>35歳の男性。下顎左側臼歯部の違和感を主訴として来院した。診察と検査の結果、慢性歯周炎と診断し、歯周基本治療後に歯周外科治療を行うこととした。<br>
+        ⎿6に対する治療方針として考えられるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯根分離<br>
+          b トンネリング<br>
+          c 近心根分割抜去<br>
+          d FGF-2製剤の応用<br>
+          e Widman改良フラップ手術
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】下顎大臼歯の進行した根分岐部病変（2〜3度）に対しては<span class="key">歯根分離</span>と<span class="key">トンネリング</span>が適応となる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

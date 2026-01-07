@@ -6,64 +6,71 @@
   <style>
     :root {
       --text-primary: #1D1D1F;
-      --text-secondary: #6E6E73;
-      --accent: #2C5282;
-      --bg-blue-light: #F7FAFC;
-      --bg-gray: #F7F7F7;
-      --border-light: #E2E8F0;
-      --yellow-bg: #FAF8F5;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
       font-size: 10pt;
-      line-height: 1.7;
+      line-height: 1.8;
       color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
     }
-    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
     .container { column-count: 1; }
     @media print {
       @page { size: A4 landscape; margin: 12mm 15mm; }
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .page { padding: 12mm 15mm; max-width: 297mm; }
-      .container { column-count: 2; column-gap: 25px; }
+      .container { column-count: 2; column-gap: 30px; }
     }
-    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 16px; color: var(--accent); }
-    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; }
-    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; }
-    h3::before { content: "■ "; color: var(--accent); }
-    table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0; font-size: 9pt; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); }
-    th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border-light); }
-    th { background: var(--bg-gray); font-weight: bold; }
-    tr:last-child td { border-bottom: none; }
-    .red { color: #C53030; font-weight: bold; }
-    ul { padding-left: 1.5em; margin: 6px 0; }
-    li { margin: 3px 0; }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
     .point-box {
-      background: var(--bg-blue-light);
+      background: var(--accent-light);
       border-radius: 12px;
-      padding: 12px 16px; margin: 10px 0;
+      padding: 16px 20px;
+      margin: 14px 0;
     }
-    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
     .question-box {
-      background: var(--yellow-bg);
+      background: var(--bg-secondary);
       border-radius: 12px;
-      padding: 12px 16px; margin: 10px 0; font-size: 9pt;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
     }
-    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
-    .question-box .choices { margin: 6px 0; line-height: 1.6; }
-    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
-    .question-images { margin: 10px 0; }
-    .question-images img { max-width: 45%; margin: 5px; border-radius: 4px; }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
     .category-tag {
       display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 2px 8px;
-      border-radius: 4px;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
       font-size: 9pt;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      font-weight: 500;
     }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -72,41 +79,38 @@
     <h1>スケーリング</h1>
     <div class="container">
 
-      <h3>定義</h3>
-      <p>スケーリング（Scaling）とは、歯冠と歯根の表面に付着した<span class="red">プラーク・歯石・着色を除去</span>する操作である。</p>
+      <h2>定義</h2>
+      <p>スケーリング（Scaling）とは、歯冠と歯根の表面に付着した<span class="highlight">プラーク・歯石・着色を除去</span>する操作である。</p>
 
-      <h3>スケーリングの分類</h3>
+      <h2>スケーリングの分類</h2>
       <table>
+        <tr><th>種類</th><th>内容</th></tr>
         <tr>
-          <th>歯肉縁上スケーリング</th>
-          <td>歯肉縁より上部（歯冠部）の歯石を除去<br>主に<span class="red">シックル型スケーラー</span>、超音波スケーラーを使用</td>
+          <td><span class="key">歯肉縁上スケーリング</span></td>
+          <td>歯肉縁より上部（歯冠部）の歯石を除去。主に<span class="highlight">シックル型スケーラー</span>、超音波スケーラーを使用</td>
         </tr>
         <tr>
-          <th>歯肉縁下スケーリング</th>
-          <td>歯周ポケット内の歯石を除去<br>主に<span class="red">キュレット型スケーラー</span>を使用</td>
+          <td><span class="key">歯肉縁下スケーリング</span></td>
+          <td>歯周ポケット内の歯石を除去。主に<span class="highlight">キュレット型スケーラー</span>を使用</td>
         </tr>
       </table>
 
-      <h3>使用器具</h3>
+      <h2>使用器具</h2>
       <table>
+        <tr><th>器具</th><th>特徴</th><th>主な用途</th></tr>
         <tr>
-          <th>器具</th>
-          <th>特徴</th>
-          <th>主な用途</th>
-        </tr>
-        <tr>
-          <td><span class="red">シックル型</span></td>
+          <td><span class="key">シックル型</span></td>
           <td>先端が尖った鎌型</td>
           <td>歯肉縁上スケーリング</td>
         </tr>
         <tr>
-          <td><span class="red">キュレット型</span></td>
+          <td><span class="key">キュレット型</span></td>
           <td>先端が丸みを帯びた匙型</td>
           <td>歯肉縁上・縁下両方</td>
         </tr>
         <tr>
-          <td><span class="red">超音波スケーラー</span></td>
-          <td>25,000〜42,000Hz/秒</td>
+          <td><span class="key">超音波スケーラー</span></td>
+          <td><span class="highlight">25,000〜42,000Hz/秒</span></td>
           <td>効率的な歯石除去</td>
         </tr>
         <tr>
@@ -115,53 +119,52 @@
           <td>歯石除去</td>
         </tr>
         <tr>
-          <td><span class="red">Er:YAGレーザー</span></td>
+          <td><span class="key">Er:YAGレーザー</span></td>
           <td>水への吸収が高い</td>
           <td>歯石除去、肉芽除去など</td>
         </tr>
       </table>
 
-      <h3>Er:YAGレーザーの歯周治療における用途</h3>
-      <div class="point-box">
-        <div class="point-box-title">Er:YAGレーザーでできること</div>
-        <ul>
-          <li><span class="red">歯石除去</span>（スケーリング）</li>
-          <li><span class="red">歯肉切開</span></li>
-          <li><span class="red">肉芽組織の除去</span></li>
-          <li><span class="red">メラニン色素の除去</span>（歯肉の黒ずみ改善）</li>
-        </ul>
-        <p>※<b>瘻孔の閉鎖</b>はEr:YAGレーザーの適応外</p>
-      </div>
+      <h2>Er:YAGレーザーの歯周治療における用途</h2>
 
-      <h3>スケーリング後の注意点</h3>
+      <div class="point-box">
+        <div class="point-box-title">Er:YAGレーザーでできること（頻出）</div>
+        <ul>
+          <li><span class="highlight">歯石除去</span>（スケーリング）</li>
+          <li><span class="highlight">歯肉切開</span></li>
+          <li><span class="highlight">肉芽組織の除去</span></li>
+          <li><span class="highlight">メラニン色素の除去</span>（歯肉の黒ずみ改善）</li>
+        </ul>
+      </div>
+      <p class="note"><span class="caution">瘻孔の閉鎖</span>はEr:YAGレーザーの適応外（瘻孔は原因除去により自然閉鎖）</p>
+
+      <h2>スケーリング後の注意点</h2>
+
+      <h3>偶発症</h3>
       <table>
+        <tr><th>症状</th><th>原因・対応</th></tr>
         <tr>
-          <th>偶発症</th>
-          <th>原因・対応</th>
-        </tr>
-        <tr>
-          <td><span class="red">歯の動揺</span></td>
+          <td><span class="highlight">歯の動揺</span></td>
           <td>歯石除去による一時的な支持喪失（通常は改善）</td>
         </tr>
         <tr>
-          <td><span class="red">象牙質知覚過敏症</span></td>
+          <td><span class="highlight">象牙質知覚過敏症</span></td>
           <td>歯根面露出による。知覚過敏処置剤、フッ化物塗布で対応</td>
         </tr>
       </table>
 
       <h3>象牙質知覚過敏への対応</h3>
-      <p>スケーリング後に知覚過敏が生じた場合：</p>
       <ul>
-        <li><span class="red">口腔清掃指導</span>（適切なブラッシング圧の指導）</li>
+        <li><span class="key">口腔清掃指導</span>（適切なブラッシング圧の指導）</li>
         <li>知覚過敏処置剤の塗布</li>
         <li>フッ化物歯面塗布</li>
-        <li><span class="red">接着性レジンによる被覆</span>（重度の場合）</li>
+        <li><span class="key">接着性レジンによる被覆</span>（重度の場合）</li>
       </ul>
-      <p>※ルートプレーニングは知覚過敏を悪化させる可能性があるため、<span class="red">知覚過敏がある歯には慎重に行う</span></p>
+      <p class="note"><span class="caution">注意</span>：ルートプレーニングは知覚過敏を悪化させる可能性があるため、知覚過敏がある歯には慎重に行う</p>
 
       <h3>超音波スケーラーの注意点</h3>
       <ul>
-        <li><span class="red">ペースメーカー装着患者に禁忌</span></li>
+        <li><span class="caution">ペースメーカー装着患者に禁忌</span></li>
         <li>チップ側面の角度を5〜15°に保つ</li>
         <li>1か所に留まらないようにする</li>
         <li>メタルボンドクラウンのポーセレン破壊のリスク</li>
@@ -180,7 +183,7 @@
           e メラニン色素の除去
         </div>
         <div class="answer">正解：a, b, d, e</div>
-        <p>【解説】Er:YAGレーザーは水への吸収が高く、硬組織・軟組織両方に使用可能。歯周治療では<span class="red">歯石除去、歯肉切開、肉芽組織の除去、メラニン色素の除去</span>に用いる。<span class="red">瘻孔の閉鎖</span>はEr:YAGレーザーの適応ではない（瘻孔は原因除去により自然閉鎖）。</p>
+        <p>【解説】Er:YAGレーザーは水への吸収が高く、硬組織・軟組織両方に使用可能。歯周治療では<span class="highlight">歯石除去、歯肉切開、肉芽組織の除去、メラニン色素の除去</span>に用いる。<span class="caution">瘻孔の閉鎖はEr:YAGレーザーの適応ではない</span>（瘻孔は原因除去により自然閉鎖）。</p>
       </div>
 
       <div class="question-box">
@@ -199,7 +202,7 @@
           e 接着性レジンによる被覆
         </div>
         <div class="answer">正解：b, e</div>
-        <p>【解説】露出根面に一過性の接触痛と冷水痛→<span class="red">象牙質知覚過敏症</span>。適切な対応は<span class="red">口腔清掃指導</span>（適切なブラッシング指導）と<span class="red">接着性レジンによる被覆</span>。ルートプレーニング（c）はセメント質をさらに除去するため知覚過敏を悪化させる。抜髄（a）は可逆性の知覚過敏には不適切。</p>
+        <p>【解説】露出根面に一過性の接触痛と冷水痛→<span class="highlight">象牙質知覚過敏症</span>。適切な対応は<span class="highlight">口腔清掃指導</span>（適切なブラッシング指導）と<span class="highlight">接着性レジンによる被覆</span>。<span class="caution">ルートプレーニング（c）はセメント質をさらに除去するため知覚過敏を悪化させる</span>。抜髄（a）は可逆性の知覚過敏には不適切。</p>
       </div>
 
     </div>

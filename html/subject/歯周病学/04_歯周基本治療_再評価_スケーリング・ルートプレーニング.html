@@ -6,64 +6,71 @@
   <style>
     :root {
       --text-primary: #1D1D1F;
-      --text-secondary: #6E6E73;
-      --accent: #2C5282;
-      --bg-blue-light: #F7FAFC;
-      --bg-gray: #F7F7F7;
-      --border-light: #E2E8F0;
-      --yellow-bg: #FAF8F5;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
       font-size: 10pt;
-      line-height: 1.7;
+      line-height: 1.8;
       color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
     }
-    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
     .container { column-count: 1; }
     @media print {
       @page { size: A4 landscape; margin: 12mm 15mm; }
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .page { padding: 12mm 15mm; max-width: 297mm; }
-      .container { column-count: 2; column-gap: 25px; }
+      .container { column-count: 2; column-gap: 30px; }
     }
-    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 16px; color: var(--accent); }
-    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; }
-    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; }
-    h3::before { content: "■ "; color: var(--accent); }
-    table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0; font-size: 9pt; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); }
-    th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border-light); }
-    th { background: var(--bg-gray); font-weight: bold; }
-    tr:last-child td { border-bottom: none; }
-    .red { color: #C53030; font-weight: bold; }
-    ul { padding-left: 1.5em; margin: 6px 0; }
-    li { margin: 3px 0; }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
     .point-box {
-      background: var(--bg-blue-light);
+      background: var(--accent-light);
       border-radius: 12px;
-      padding: 12px 16px; margin: 10px 0;
+      padding: 16px 20px;
+      margin: 14px 0;
     }
-    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
     .question-box {
-      background: var(--yellow-bg);
+      background: var(--bg-secondary);
       border-radius: 12px;
-      padding: 12px 16px; margin: 10px 0; font-size: 9pt;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
     }
-    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
-    .question-box .choices { margin: 6px 0; line-height: 1.6; }
-    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
-    .question-images { margin: 10px 0; }
-    .question-images img { max-width: 45%; margin: 5px; border-radius: 4px; }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
     .category-tag {
       display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 2px 8px;
-      border-radius: 4px;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
       font-size: 9pt;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      font-weight: 500;
     }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -72,29 +79,29 @@
     <h1>スケーリング・ルートプレーニング</h1>
     <div class="container">
 
-      <h3>定義</h3>
+      <h2>定義</h2>
       <table>
         <tr>
-          <th>スケーリング<br>(Scaling)</th>
-          <td>歯冠と歯根の表面に付着した<span class="red">プラーク・歯石・着色を除去</span>する操作</td>
+          <th>スケーリング</th>
+          <td>歯冠と歯根の表面に付着した<span class="highlight">プラーク・歯石・着色を除去</span>する操作</td>
         </tr>
         <tr>
-          <th>ルートプレーニング<br>(Root Planing)</th>
-          <td>歯石や起炎物質、細菌が入り込んで粗糙になった<span class="red">セメント質や象牙質を一層除去</span>し、表面を<span class="red">滑沢</span>にする処置</td>
+          <th>ルートプレーニング</th>
+          <td>歯石や起炎物質、細菌が入り込んで粗糙になった<span class="highlight">セメント質や象牙質を一層除去</span>し、表面を<span class="highlight">滑沢</span>にする処置</td>
         </tr>
       </table>
 
-      <h3>スケーラーの種類</h3>
+      <h2>スケーラーの種類</h2>
+
+      <h3>手用スケーラー</h3>
       <table>
+        <tr><th>種類</th><th>特徴・適応</th></tr>
         <tr>
-          <th colspan="2">手用スケーラー</th>
+          <td><span class="key">キュレット型</span></td>
+          <td>ユニバーサル型（両刃）、<span class="highlight">グレーシー型</span>（片刃）。歯肉縁上・縁下両方に使用</td>
         </tr>
         <tr>
-          <td><span class="red">キュレット型</span></td>
-          <td>ユニバーサル型（両刃）、<span class="red">グレーシー型</span>（片刃）<br>歯肉縁上・縁下両方に使用</td>
-        </tr>
-        <tr>
-          <td><span class="red">シックル型</span></td>
+          <td><span class="key">シックル型</span></td>
           <td>歯肉縁上スケーリングに主に使用</td>
         </tr>
         <tr>
@@ -107,83 +114,77 @@
         </tr>
         <tr>
           <td>チゼル型</td>
-          <td>前歯部隣接面（操作が頬側歯肉を傷つけやすく、現在はあまり用いられない）</td>
+          <td>前歯部隣接面（現在はあまり用いられない）</td>
         </tr>
+      </table>
+
+      <h3>機械駆動スケーラー</h3>
+      <table>
+        <tr><th>種類</th><th>振動数</th><th>注意点</th></tr>
         <tr>
-          <th colspan="2">機械駆動スケーラー</th>
-        </tr>
-        <tr>
-          <td><span class="red">超音波スケーラー</span></td>
-          <td><span class="red">25,000〜42,000Hz/秒</span>、注水下で使用<br>※<span class="red">ペースメーカー装着患者に禁忌</span></td>
+          <td><span class="key">超音波スケーラー</span></td>
+          <td><span class="highlight">25,000〜42,000Hz/秒</span></td>
+          <td><span class="caution">ペースメーカー装着患者に禁忌</span></td>
         </tr>
         <tr>
           <td>エアスケーラー</td>
           <td>約6,000Hz/秒</td>
+          <td>注水下で使用</td>
         </tr>
       </table>
 
-      <h3>グレーシー型キュレットの番号と適応部位</h3>
+      <h2>グレーシー型キュレット</h2>
+
       <div class="point-box">
-        <div class="point-box-title">部位別のグレーシーキュレット</div>
-        <table>
-          <tr><th>番号</th><th>適応部位</th></tr>
-          <tr><td>#1/2、#3/4</td><td><span class="red">前歯部</span></td></tr>
-          <tr><td>#5/6</td><td>前歯部と<span class="red">小臼歯部</span></td></tr>
-          <tr><td>#7/8、#9/10</td><td>臼歯部<span class="red">舌側・口蓋側</span></td></tr>
-          <tr><td>#11/12</td><td>臼歯部<span class="red">近心</span></td></tr>
-          <tr><td>#13/14</td><td>臼歯部<span class="red">遠心</span></td></tr>
-        </table>
+        <div class="point-box-title">部位別のグレーシーキュレット（頻出）</div>
+        <ul>
+          <li>#1/2、#3/4 → <span class="highlight">前歯部</span></li>
+          <li>#5/6 → 前歯部と<span class="highlight">小臼歯部</span></li>
+          <li>#7/8、#9/10 → 臼歯部<span class="highlight">舌側・口蓋側</span></li>
+          <li>#11/12 → 臼歯部<span class="highlight">近心</span></li>
+          <li>#13/14 → 臼歯部<span class="highlight">遠心</span></li>
+        </ul>
       </div>
 
-      <p><b>グレーシー型キュレットのバリエーション：</b></p>
+      <h3>グレーシー型キュレットのバリエーション</h3>
       <ul>
-        <li><b>リジッドタイプ</b>：シャンクの柔軟性が少ない→多量の歯石除去に適</li>
-        <li><b>アフターファイブ</b>：シャンクより<span class="red">3mm長い</span>→<span class="red">深いポケット</span>の操作に優れる</li>
-        <li><b>ミニファイブ</b>：ブレードが<span class="red">1/2と短い</span>→<span class="red">狭いポケット・根分岐部</span>の操作に優れる</li>
+        <li><span class="key">リジッドタイプ</span>：シャンクの柔軟性が少ない→多量の歯石除去に適</li>
+        <li><span class="key">アフターファイブ</span>：シャンクより<span class="highlight">3mm長い</span>→<span class="highlight">深いポケット</span>の操作に優れる</li>
+        <li><span class="key">ミニファイブ</span>：ブレードが<span class="highlight">1/2と短い</span>→<span class="highlight">狭いポケット・根分岐部</span>の操作に優れる</li>
       </ul>
 
-      <h3>器具の角度</h3>
+      <h2>器具の角度</h2>
       <table>
-        <tr>
-          <th>器具</th>
-          <th>角度（歯面に対して）</th>
-        </tr>
-        <tr>
-          <td>シックル型</td>
-          <td>約<span class="red">85°</span></td>
-        </tr>
-        <tr>
-          <td>キュレット型（スケーリング時）</td>
-          <td><span class="red">45〜85°</span></td>
-        </tr>
-        <tr>
-          <td>キュレット型（ルートプレーニング時）</td>
-          <td><span class="red">45〜60°</span></td>
-        </tr>
+        <tr><th>器具</th><th>歯面に対する角度</th></tr>
+        <tr><td>シックル型</td><td>約<span class="highlight">85°</span></td></tr>
+        <tr><td>キュレット型（スケーリング時）</td><td><span class="highlight">45〜85°</span></td></tr>
+        <tr><td>キュレット型（ルートプレーニング時）</td><td><span class="highlight">45〜60°</span></td></tr>
       </table>
-      <p>※グレーシー型キュレットの<span class="red">第1シャンクは歯根面の長軸方向と平行</span>にする</p>
+      <p class="note">グレーシー型キュレットの<span class="highlight">第1シャンクは歯根面の長軸方向と平行</span>にする</p>
 
-      <h3>スケーリング・ルートプレーニングの手順</h3>
+      <h2>スケーリング・ルートプレーニングの手順</h2>
       <ol>
         <li>口腔内清掃と消毒</li>
         <li>歯石の検査（視診、エックス線、触診）</li>
-        <li><span class="red">歯肉縁上スケーリング</span></li>
-        <li><span class="red">歯肉縁下スケーリング・ルートプレーニング</span></li>
+        <li><span class="key">歯肉縁上スケーリング</span></li>
+        <li><span class="key">歯肉縁下スケーリング・ルートプレーニング</span></li>
         <li>歯面研磨</li>
         <li>術後の洗浄と消毒</li>
       </ol>
 
-      <h3>注意点・偶発症</h3>
+      <h2>注意点・偶発症</h2>
+
       <div class="point-box">
-        <div class="point-box-title">歯石除去後に発現しやすい症状</div>
+        <div class="point-box-title">歯石除去後に発現しやすい症状（頻出）</div>
         <ul>
-          <li><span class="red">歯の動揺</span>（歯石除去により歯の支持が一時的に減少）</li>
-          <li><span class="red">象牙質知覚過敏症</span>（歯根面露出による）</li>
+          <li><span class="highlight">歯の動揺</span>（歯石除去により歯の支持が一時的に減少）</li>
+          <li><span class="highlight">象牙質知覚過敏症</span>（歯根面露出による）</li>
         </ul>
       </div>
+
       <ul>
-        <li>過度のルートプレーニング→セメント質・象牙質の過剰除去→<span class="red">象牙質知覚過敏</span></li>
-        <li>超音波スケーラー→<span class="red">ペースメーカー装着患者に禁忌</span></li>
+        <li>過度のルートプレーニング→セメント質・象牙質の過剰除去→<span class="caution">象牙質知覚過敏</span></li>
+        <li>超音波スケーラー→<span class="caution">ペースメーカー装着患者に禁忌</span></li>
         <li>超音波スケーラー→メタルボンドクラウンのポーセレン破壊のリスク</li>
       </ul>
 
@@ -204,7 +205,7 @@
           e オ
         </div>
         <div class="answer">正解：d</div>
-        <p>【解説】グレーシー型キュレットの各部位の名称を問う問題。スケーリング時に歯根面の長軸方向と平行になるのは<span class="red">第1シャンク（エ）</span>である。刃部（ブレード）は歯面に対して45〜85°の角度で当てる。</p>
+        <p>【解説】グレーシー型キュレットの各部位の名称を問う問題。スケーリング時に歯根面の長軸方向と平行になるのは<span class="highlight">第1シャンク（エ）</span>である。刃部（ブレード）は歯面に対して45〜85°の角度で当てる。</p>
       </div>
 
       <div class="question-box">
@@ -222,7 +223,7 @@
           e 象牙質知覚過敏症
         </div>
         <div class="answer">正解：a, e</div>
-        <p>【解説】歯石除去後に発現しやすい症状は、<span class="red">歯の動揺</span>（歯石による支持の喪失）と<span class="red">象牙質知覚過敏症</span>（歯根面露出）である。歯肉の発赤・増殖は歯石除去後にはむしろ改善する。</p>
+        <p>【解説】歯石除去後に発現しやすい症状は、<span class="highlight">歯の動揺</span>（歯石による支持の喪失）と<span class="highlight">象牙質知覚過敏症</span>（歯根面露出）である。<span class="caution">歯肉の発赤・増殖は歯石除去後にはむしろ改善する</span>。</p>
       </div>
 
       <div class="question-box">
@@ -242,7 +243,7 @@
           e 歯根膜腔の拡大
         </div>
         <div class="answer">正解：d, e（66の解答）</div>
-        <p>【解説】咬合調整の根拠となるのは、咬合性外傷を示す所見である。<span class="red">垂直性骨吸収</span>と<span class="red">歯根膜腔の拡大</span>は咬合性外傷の所見。歯の動揺は結果であり根拠とは言えない。歯石沈着は咬合とは無関係。</p>
+        <p>【解説】咬合調整の根拠となるのは、咬合性外傷を示す所見である。<span class="highlight">垂直性骨吸収</span>と<span class="highlight">歯根膜腔の拡大</span>は咬合性外傷の所見。歯の動揺は結果であり根拠とは言えない。歯石沈着は咬合とは無関係。</p>
       </div>
 
     </div>

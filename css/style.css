@@ -1326,6 +1326,31 @@ body {
   color: var(--text-color);
 }
 
+/* 解答ボタン */
+.kakomon-submit {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px 24px;
+  background: #007AFF;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kakomon-submit:hover:not(:disabled) {
+  background: #0056CC;
+}
+
+.kakomon-submit:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
 /* 結果表示 */
 .kakomon-result {
   margin-top: 16px;

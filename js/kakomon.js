@@ -177,6 +177,8 @@ const KakomonModule = (function() {
           `).join('')}
         </div>
 
+        <button class="kakomon-submit" disabled>解答</button>
+
         <div class="kakomon-result" style="display:none;">
           <div class="result-answer">正解: ${formatAnswer(question.answer)}</div>
           <div class="result-message"></div>
@@ -210,6 +212,18 @@ const KakomonModule = (function() {
     display.querySelectorAll('.kakomon-choice').forEach(btn => {
       btn.addEventListener('click', () => handleChoiceClick(btn, elements));
     });
+
+    // 解答ボタン
+    const submitBtn = display.querySelector('.kakomon-submit');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', () => {
+        if (state.answered) return;
+        const card = display.querySelector('.kakomon-card');
+        const answer = card.dataset.answer;
+        checkAnswer(card, answer);
+        submitBtn.style.display = 'none';
+      });
+    }
 
     // ナビゲーション
     const prevBtn = display.querySelector('.kakomon-prev');
@@ -275,9 +289,10 @@ const KakomonModule = (function() {
       btn.classList.add('selected');
     }
 
-    // 選択数が必要数に達したら答え合わせ
-    if (state.selectedChoices.size === numChoices) {
-      checkAnswer(card, answer);
+    // 選択数が必要数に達したら解答ボタンを有効化
+    const submitBtn = card.querySelector('.kakomon-submit');
+    if (submitBtn) {
+      submitBtn.disabled = state.selectedChoices.size !== numChoices;
     }
   }
 

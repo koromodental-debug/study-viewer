@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抗菌療法 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 歯周基本治療・再評価</span>
+    <h1>抗菌療法</h1>
+    <div class="container">
+
+      <h2>薬物療法の概要</h2>
+      <p><span class="key">薬物療法</span>（drug therapeutics）とは、抗菌薬や抗炎症薬などを全身的あるいは局所的に応用して歯周病の治療を行うことをいう。歯周病は内因性感染症であり、その主体はグラム陰性嫌気性桿菌であることから、薬物を効果的に用いることは有効であると考えられる。</p>
+      <p>しかし、細菌プラークはバイオフィルムを形成していることから、基本的にはブラッシングやスケーリング・ルートプレーニング（SRP）を中心とした<span class="highlight">機械的プラークコントロールによりバイオフィルムを破壊した後に薬物を応用</span>することが重要である。</p>
+
+      <h3>薬物療法開始の条件</h3>
+      <ul>
+        <li>急性症状を呈する場合</li>
+        <li>歯周基本治療によりバイオフィルムが除去されていないこと</li>
+        <li>歯周基本治療後でも状態が改善しない場合</li>
+        <li>歯周外科治療後</li>
+        <li>全身疾患を有する患者に対する予防投与</li>
+        <li>全くポケットが残存できないがポケットを発生したまま維持する場合</li>
+      </ul>
+
+      <h2>抗菌薬の投与方法</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">全身投与と局所投与（頻出）</div>
+        <ul>
+          <li><span class="key">全身投与（経口投与）</span>：広汎性の歯周炎、歯周外科治療後の感染予防、膿瘍切開直後など</li>
+          <li><span class="key">局所投与（LDDS）</span>：部分的に深い歯周ポケットが残存する場合</li>
+        </ul>
+      </div>
+
+      <h3>経口投与に用いる代表的な抗菌薬</h3>
+      <table>
+        <tr><th>系統</th><th>一般名</th><th>商品名</th><th>投与期間</th></tr>
+        <tr><td>ペニシリン系</td><td>アモキシシリン</td><td>サワシリン</td><td>7日間</td></tr>
+        <tr><td>セフェム系</td><td>セフカペンピボキシル</td><td>フロモックス</td><td>3〜5日間</td></tr>
+        <tr><td>リンコマイシン系</td><td>塩酸クリンダマイシン</td><td>ダラシンカプセル</td><td>3〜5日間</td></tr>
+        <tr><td>マクロライド系</td><td>アジスロマイシン</td><td>ジスロマックSR</td><td>1日間</td></tr>
+        <tr><td>ニューキノロン系</td><td>レボフロキサシン</td><td>クラビット錠</td><td>5〜7日間</td></tr>
+        <tr><td><span class="highlight">テトラサイクリン系</span></td><td><span class="highlight">ミノサイクリン塩酸塩</span></td><td>ミノマイシン</td><td>7〜10日間</td></tr>
+      </table>
+
+      <h2>局所薬物配送システム（LDDS）</h2>
+      <p><span class="key">LDDS</span>（local drug delivery system：局所薬物配送システム）は、<span class="highlight">少ない投与量で高濃度の薬効成分が長時間維持</span>でき、耐性菌の出現、副作用、腸内細菌への影響がきわめて少ないという利点をもつ。</p>
+
+      <h3>LDDS製剤</h3>
+      <table>
+        <tr><th>薬剤</th><th>商品名</th><th>形状</th><th>用量</th></tr>
+        <tr>
+          <td><span class="highlight">ミノサイクリン塩酸塩</span></td>
+          <td>ペリオクリン、ペリオフィール</td>
+          <td>ペースト</td>
+          <td>10mg 0.5g 1シリンジ</td>
+        </tr>
+        <tr>
+          <td>テトラサイクリン塩酸塩</td>
+          <td>テトラサイクリン・プレステリン</td>
+          <td>ペースト</td>
+          <td>18mg 0.6g 1カートリッジ</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">ポイント</span>：LDDSで最も使用されるのは<span class="highlight">ミノサイクリン塩酸塩</span>（ペリオクリン）。シリンジタイプで歯周ポケット内に直接注入する。</p>
+
+      <h2>術前与薬</h2>
+      <p>SRPや抜歯などの歯科治療後に<span class="key">菌血症</span>が生じることが報告されている。感染性心内膜炎、人工弁置換術後患者のようなハイリスク患者においては、菌血症により感染性心内膜炎を引き起こす可能性があることから、術前の抗菌薬投与が行われる。</p>
+
+      <h3>代表的な術前投与薬と用法</h3>
+      <table>
+        <tr><th>系統</th><th>一般名</th><th>投与量</th></tr>
+        <tr><td>ペニシリン系</td><td>アモキシシリン</td><td>処置1時間前に<span class="highlight">2g</span>を経口投与</td></tr>
+        <tr><td>リンコマイシン系</td><td>クリンダマイシン</td><td>処置1時間前に600mgを経口投与</td></tr>
+        <tr><td>セフェム系</td><td>セファレキシン</td><td>処置1時間前に2gを経口投与</td></tr>
+        <tr><td>マクロライド系</td><td>アジスロマイシン</td><td>処置1時間前に2gを経口投与</td></tr>
+      </table>
+
+      <h2>歯周病原細菌と抗菌薬の選択</h2>
+      <ul>
+        <li><span class="key">P. gingivalis</span>：テトラサイクリン系、ペニシリン系、リンコマイシン系が有効</li>
+        <li><span class="key">A. actinomycetemcomitans</span>：ニューキノロン系、テトラサイクリン系、ペニシリン系が有効</li>
+      </ul>
+      <p>アジスロマイシンには<span class="key">バイオフィルム形成抑制作用</span>と破壊作用があることが示されている。</p>
+
+      <h2>フルマウスディスインフェクション（FMD）</h2>
+      <p><span class="key">FMD</span>（full mouth disinfection）は、化学的プラークコントロールとしての薬物療法と機械的な歯肉縁下プラークコントロール（SRP）を併用した方法であり、<span class="highlight">抗菌薬を投与した上で全顎のSRPを1回で行う</span>術式である。これによりポケット内に存在する歯周病原細菌を一掃し、安定したポケット内細菌叢を形成することで、早期に歯周ポケットの減少とアタッチメントゲインが得られ、長期間安定した歯周組織の状態を得ることができるとされる。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107C115</div>
+        <p>52歳の女性。慢性歯周炎と診断し、歯周基本治療を行った。再評価後の残存ポケットに薬剤を適用した。使用した薬剤（別冊No.16A）と適用中の口腔内写真（別冊No.16B）とを別に示す。<br>
+        使用した薬剤の有効成分はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107C115_1.png" alt="別冊No.16A">
+          <img src="../../../images/107回_Web画像/107C115_2.png" alt="別冊No.16B">
+        </div>
+        <div class="choices">
+          a ミノサイクリン塩酸塩<br>
+          b アミノ安息香酸エチル<br>
+          c セフカペンピボキシル塩酸塩<br>
+          d グルコン酸クロルヘキシジン<br>
+          e エナメルマトリックスタンパク質
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】写真はLDDS（局所薬物配送システム）の適用。<span class="highlight">ミノサイクリン塩酸塩</span>（ペリオクリン）をシリンジで歯周ポケット内に注入している。アミノ安息香酸エチルは表面麻酔薬、セフカペンピボキシルは経口抗菌薬、グルコン酸クロルヘキシジンは含嗽剤、EMDは歯周組織再生療法に用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104B33</div>
+        <p>53歳の女性。下顎右側側切歯部歯肉の疼痛と腫脹とを主訴として来院した。2┐の歯周ポケットは全周で12mm、動揺度は3度である。初診時の口腔内写真（別冊No.32A）とエックス線写真（別冊No.32B）とを別に示す。<br>
+        まず行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104B33_1.png" alt="別冊No.32A">
+          <img src="../../../images/104回_Web画像/104B33_2.png" alt="別冊No.32B">
+        </div>
+        <div class="choices">
+          a 抜　歯<br>
+          b 抜　髄<br>
+          c 経口抗菌薬投与<br>
+          d 歯周ポケット掻爬<br>
+          e スケーリング・ルートプレーニング
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】急性歯周膿瘍の症例。<span class="caution">急性期には経口抗菌薬投与を優先</span>する。全周12mm、動揺度3度と重度だが、急性症状がある場合はまず消炎を図る。炎症が落ち着いてから抜歯やSRPなどの処置を検討する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

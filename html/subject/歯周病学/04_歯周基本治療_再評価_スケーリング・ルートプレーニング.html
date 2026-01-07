@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>スケーリング・ルートプレーニング - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FAF8F5;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 16px; color: var(--accent); }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0; font-size: 9pt; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); }
+    th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    tr:last-child td { border-bottom: none; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .question-images { margin: 10px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 4px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 9pt;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 歯周基本治療・再評価</span>
+    <h1>スケーリング・ルートプレーニング</h1>
+    <div class="container">
+
+      <h3>定義</h3>
+      <table>
+        <tr>
+          <th>スケーリング<br>(Scaling)</th>
+          <td>歯冠と歯根の表面に付着した<span class="red">プラーク・歯石・着色を除去</span>する操作</td>
+        </tr>
+        <tr>
+          <th>ルートプレーニング<br>(Root Planing)</th>
+          <td>歯石や起炎物質、細菌が入り込んで粗糙になった<span class="red">セメント質や象牙質を一層除去</span>し、表面を<span class="red">滑沢</span>にする処置</td>
+        </tr>
+      </table>
+
+      <h3>スケーラーの種類</h3>
+      <table>
+        <tr>
+          <th colspan="2">手用スケーラー</th>
+        </tr>
+        <tr>
+          <td><span class="red">キュレット型</span></td>
+          <td>ユニバーサル型（両刃）、<span class="red">グレーシー型</span>（片刃）<br>歯肉縁上・縁下両方に使用</td>
+        </tr>
+        <tr>
+          <td><span class="red">シックル型</span></td>
+          <td>歯肉縁上スケーリングに主に使用</td>
+        </tr>
+        <tr>
+          <td>ホウ型</td>
+          <td>強固に付着した歯肉縁下歯石の除去</td>
+        </tr>
+        <tr>
+          <td>ファイル型</td>
+          <td>歯根面の滑沢化</td>
+        </tr>
+        <tr>
+          <td>チゼル型</td>
+          <td>前歯部隣接面（操作が頬側歯肉を傷つけやすく、現在はあまり用いられない）</td>
+        </tr>
+        <tr>
+          <th colspan="2">機械駆動スケーラー</th>
+        </tr>
+        <tr>
+          <td><span class="red">超音波スケーラー</span></td>
+          <td><span class="red">25,000〜42,000Hz/秒</span>、注水下で使用<br>※<span class="red">ペースメーカー装着患者に禁忌</span></td>
+        </tr>
+        <tr>
+          <td>エアスケーラー</td>
+          <td>約6,000Hz/秒</td>
+        </tr>
+      </table>
+
+      <h3>グレーシー型キュレットの番号と適応部位</h3>
+      <div class="point-box">
+        <div class="point-box-title">部位別のグレーシーキュレット</div>
+        <table>
+          <tr><th>番号</th><th>適応部位</th></tr>
+          <tr><td>#1/2、#3/4</td><td><span class="red">前歯部</span></td></tr>
+          <tr><td>#5/6</td><td>前歯部と<span class="red">小臼歯部</span></td></tr>
+          <tr><td>#7/8、#9/10</td><td>臼歯部<span class="red">舌側・口蓋側</span></td></tr>
+          <tr><td>#11/12</td><td>臼歯部<span class="red">近心</span></td></tr>
+          <tr><td>#13/14</td><td>臼歯部<span class="red">遠心</span></td></tr>
+        </table>
+      </div>
+
+      <p><b>グレーシー型キュレットのバリエーション：</b></p>
+      <ul>
+        <li><b>リジッドタイプ</b>：シャンクの柔軟性が少ない→多量の歯石除去に適</li>
+        <li><b>アフターファイブ</b>：シャンクより<span class="red">3mm長い</span>→<span class="red">深いポケット</span>の操作に優れる</li>
+        <li><b>ミニファイブ</b>：ブレードが<span class="red">1/2と短い</span>→<span class="red">狭いポケット・根分岐部</span>の操作に優れる</li>
+      </ul>
+
+      <h3>器具の角度</h3>
+      <table>
+        <tr>
+          <th>器具</th>
+          <th>角度（歯面に対して）</th>
+        </tr>
+        <tr>
+          <td>シックル型</td>
+          <td>約<span class="red">85°</span></td>
+        </tr>
+        <tr>
+          <td>キュレット型（スケーリング時）</td>
+          <td><span class="red">45〜85°</span></td>
+        </tr>
+        <tr>
+          <td>キュレット型（ルートプレーニング時）</td>
+          <td><span class="red">45〜60°</span></td>
+        </tr>
+      </table>
+      <p>※グレーシー型キュレットの<span class="red">第1シャンクは歯根面の長軸方向と平行</span>にする</p>
+
+      <h3>スケーリング・ルートプレーニングの手順</h3>
+      <ol>
+        <li>口腔内清掃と消毒</li>
+        <li>歯石の検査（視診、エックス線、触診）</li>
+        <li><span class="red">歯肉縁上スケーリング</span></li>
+        <li><span class="red">歯肉縁下スケーリング・ルートプレーニング</span></li>
+        <li>歯面研磨</li>
+        <li>術後の洗浄と消毒</li>
+      </ol>
+
+      <h3>注意点・偶発症</h3>
+      <div class="point-box">
+        <div class="point-box-title">歯石除去後に発現しやすい症状</div>
+        <ul>
+          <li><span class="red">歯の動揺</span>（歯石除去により歯の支持が一時的に減少）</li>
+          <li><span class="red">象牙質知覚過敏症</span>（歯根面露出による）</li>
+        </ul>
+      </div>
+      <ul>
+        <li>過度のルートプレーニング→セメント質・象牙質の過剰除去→<span class="red">象牙質知覚過敏</span></li>
+        <li>超音波スケーラー→<span class="red">ペースメーカー装着患者に禁忌</span></li>
+        <li>超音波スケーラー→メタルボンドクラウンのポーセレン破壊のリスク</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A130</div>
+        <p>歯肉縁下スケーリングに用いる器具の写真（別冊No.00）を別に示す。<br>
+        スケーリング時に歯根面の長軸方向と平行になるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107A130.png" alt="別冊No.00">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】グレーシー型キュレットの各部位の名称を問う問題。スケーリング時に歯根面の長軸方向と平行になるのは<span class="red">第1シャンク（エ）</span>である。刃部（ブレード）は歯面に対して45〜85°の角度で当てる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104B38</div>
+        <p>41歳の女性。下顎前歯部の歯肉の腫れを主訴として来院した。ブラッシング指導に続いて歯肉縁上歯石除去を行うこととした。初診時の口腔内写真（別冊No.37A）とエックス線写真（別冊No.37B）とを別に示す。<br>
+        歯石除去後に発現しやすいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104B38.png" alt="別冊No.37A, 37B">
+        </div>
+        <div class="choices">
+          a 歯の動揺<br>
+          b 歯肉の発赤<br>
+          c 歯肉の増殖<br>
+          d 歯の舌側傾斜<br>
+          e 象牙質知覚過敏症
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】歯石除去後に発現しやすい症状は、<span class="red">歯の動揺</span>（歯石による支持の喪失）と<span class="red">象牙質知覚過敏症</span>（歯根面露出）である。歯肉の発赤・増殖は歯石除去後にはむしろ改善する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C65</div>
+        <p>次の文により65、66の問いに答えよ。<br>
+        56歳の女性。下顎前歯部の動揺を主訴として来院した。3か月前に気付いていたがそのままにしていたという。前方滑走運動時に前歯部の咬合接触を認める。検査の結果、慢性歯周炎と診断し、歯周基本治療を行うこととした。初診時の口腔内写真（別冊No.25A）、エックス線画像（別冊No.25B）及び歯周基本治療に用いた器具の写真（別冊No.25C）を別に示す。歯周組織検査結果の一部を表に示す。<br>
+        65 口腔清掃後、使用する器具として適切なのはどれか。2つ選べ。<br>
+        66 続いて咬合調整を行うこととした。根拠はどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C65.png" alt="別冊No.25A, 25B, 25C">
+        </div>
+        <div class="choices">
+          a 咬耗<br>
+          b 歯石沈着<br>
+          c 歯の動揺<br>
+          d 垂直性骨吸収<br>
+          e 歯根膜腔の拡大
+        </div>
+        <div class="answer">正解：d, e（66の解答）</div>
+        <p>【解説】咬合調整の根拠となるのは、咬合性外傷を示す所見である。<span class="red">垂直性骨吸収</span>と<span class="red">歯根膜腔の拡大</span>は咬合性外傷の所見。歯の動揺は結果であり根拠とは言えない。歯石沈着は咬合とは無関係。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1637,12 +1637,14 @@ body {
   transform: translateX(-50%) translateY(10px);
   margin-bottom: 8px;
   padding: 8px 14px;
-  background: #007AFF;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: none;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
-  color: white;
+  color: #8e8e93;
   cursor: pointer;
   z-index: 1001;
   opacity: 0;
@@ -1662,7 +1664,8 @@ body {
 }
 
 .qa-floating-toggle.active {
-  background: #007AFF;
+  background: #1d1d1f;
+  color: white;
 }
 
 /* モバイル最適化 */

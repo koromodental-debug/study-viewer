@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細菌性歯周炎 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FAF8F5;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 16px; color: var(--accent); }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0; font-size: 9pt; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); }
+    th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    tr:last-child td { border-bottom: none; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .question-images { margin: 10px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 4px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 9pt;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 疾患の分類と特徴</span>
+    <h1>細菌性歯周炎</h1>
+    <div class="container">
+
+      <h3>歯周炎の定義</h3>
+      <p>歯周炎（periodontitis）は、歯肉炎が進行し、炎症が歯周組織深部（歯根膜、セメント質、歯槽骨）に波及した状態。アタッチメントロスと歯槽骨吸収を特徴とする。</p>
+
+      <h3>歯周炎の病原因子</h3>
+      <p>歯周病原細菌は<span class="red">グラム陰性桿菌</span>であり、基本的に病原性因子として<span class="red">内毒素（エンドトキシン＝LPS：リポ多糖）</span>を有する。</p>
+      <ul>
+        <li><strong>P. gingivalis</strong>：慢性歯周炎患者の歯肉縁下プラークから高頻度で分離</li>
+        <li><strong>A. actinomycetemcomitans</strong>：侵襲性歯周炎との関連</li>
+        <li><strong>T. forsythia</strong>：慢性歯周炎の原因菌</li>
+      </ul>
+
+      <h3>歯周炎によるセメント質の変化</h3>
+      <div class="point-box">
+        <div class="point-box-title">国試頻出ポイント</div>
+        <p>歯周炎により、セメント質には以下の変化が生じる：</p>
+        <ul>
+          <li><span class="red">LPS（リポ多糖/内毒素）の浸透</span> ← 最重要</li>
+          <li>細菌由来の起炎物質の浸透</li>
+          <li>表面が粗造化</li>
+        </ul>
+        <p>※ルートプレーニングは、このLPSが浸透した病的セメント質を除去する処置である。</p>
+      </div>
+
+      <h3>セメント質の分類（正常構造）</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+          <th>部位</th>
+        </tr>
+        <tr>
+          <td>無細胞性無線維性セメント質</td>
+          <td>コラーゲン線維・セメント細胞なし</td>
+          <td>CEJ付近のエナメル質表面</td>
+        </tr>
+        <tr>
+          <td>無細胞性線維性セメント質</td>
+          <td>シャーピー線維あり、細胞なし</td>
+          <td>歯根の歯冠側1/2</td>
+        </tr>
+        <tr>
+          <td>細胞性固有線維性セメント質</td>
+          <td>固有線維あり、病理的（吸収修復）</td>
+          <td>吸収部位の修復</td>
+        </tr>
+        <tr>
+          <td>細胞性混合線維性セメント質</td>
+          <td>シャーピー線維＋固有線維、セメント細胞あり</td>
+          <td>歯根の根尖側1/3</td>
+        </tr>
+      </table>
+
+      <h3>歯周炎の病理組織学的変化</h3>
+      <table>
+        <tr>
+          <th>組織</th>
+          <th>変化</th>
+        </tr>
+        <tr>
+          <td>接合上皮</td>
+          <td>根尖側への増殖（ポケット形成）</td>
+        </tr>
+        <tr>
+          <td>結合組織</td>
+          <td>コラーゲン線維の破壊、B細胞・形質細胞主体の浸潤</td>
+        </tr>
+        <tr>
+          <td>セメント質</td>
+          <td><span class="red">LPSの浸透</span>、表面粗造化</td>
+        </tr>
+        <tr>
+          <td>歯槽骨</td>
+          <td>骨吸収（水平性/垂直性）</td>
+        </tr>
+      </table>
+
+      <h3>各選択肢の解説</h3>
+      <table>
+        <tr>
+          <th>選択肢</th>
+          <th>正誤</th>
+          <th>解説</th>
+        </tr>
+        <tr>
+          <td>LPSの浸透</td>
+          <td><span class="red">○</span></td>
+          <td>歯周病原細菌由来のLPSがセメント質に浸透する</td>
+        </tr>
+        <tr>
+          <td>好中球の浸潤</td>
+          <td>×</td>
+          <td>好中球は結合組織に浸潤する（セメント質ではない）</td>
+        </tr>
+        <tr>
+          <td>セメント芽細胞の増加</td>
+          <td>×</td>
+          <td>炎症時には破壊が優位（増加ではない）</td>
+        </tr>
+        <tr>
+          <td>シャーピー線維の増加</td>
+          <td>×</td>
+          <td>歯周炎ではシャーピー線維は破壊される</td>
+        </tr>
+        <tr>
+          <td>有細胞セメント質の肥厚</td>
+          <td>×</td>
+          <td>炎症による肥厚は生じない</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">108C81</div>
+        <p>歯周炎によりセメント質に生じる変化はどれか。1つ選べ。</p>
+        <div class="choices">
+          a LPSの浸透<br>
+          b 好中球の浸潤<br>
+          c セメント芽細胞の増加<br>
+          d シャーピー線維の増加<br>
+          e 有細胞セメント質の肥厚
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】歯周病原細菌はグラム陰性桿菌であり、LPS（リポ多糖＝内毒素）を産生する。このLPSは歯周炎罹患歯のセメント質に浸透し、ルートプレーニングで除去される病的セメント質の主要因となる。好中球の浸潤は結合組織で起こる変化であり、セメント質自体への浸潤ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

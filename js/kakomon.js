@@ -126,11 +126,74 @@ const KakomonModule = (function() {
         html += renderQuizCard(question, index, total);
       });
 
+      // クイックナビを追加（3問以上の場合）
+      if (total >= 3) {
+        html += renderQuickNav(total);
+      }
+
       elements.kakomonDisplay.innerHTML = html;
 
       // イベントをバインド
       bindAllQuizEvents(elements);
+      bindQuickNavEvents(elements);
     }
+  }
+
+  /**
+   * クイックナビHTMLを生成
+   */
+  function renderQuickNav(total) {
+    // ナビに表示する番号を決定
+    const navNumbers = [1]; // 1は必ず表示
+
+    // 5問ごとに表示
+    for (let i = 5; i <= total; i += 5) {
+      navNumbers.push(i);
+    }
+
+    // 最後の問題を追加（5の倍数でない場合）
+    if (total % 5 !== 0 && total > 1) {
+      navNumbers.push(total);
+    }
+
+    return `
+      <div class="kakomon-quick-nav">
+        ${navNumbers.map(num => `
+          <button class="quick-nav-item" data-target="${num - 1}">${num}</button>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  /**
+   * クイックナビのイベントをバインド
+   */
+  function bindQuickNavEvents(elements) {
+    const display = elements.kakomonDisplay;
+    const quickNav = display.querySelector('.kakomon-quick-nav');
+    if (!quickNav) return;
+
+    const kakomonContent = elements.kakomonContent;
+
+    quickNav.querySelectorAll('.quick-nav-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetIndex = parseInt(btn.dataset.target);
+        const targetCard = display.querySelector(`.kakomon-card[data-index="${targetIndex}"]`);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // スクロール時にナビを表示/非表示
+    let scrollTimer;
+    kakomonContent.addEventListener('scroll', () => {
+      quickNav.classList.add('show');
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        quickNav.classList.remove('show');
+      }, 1500);
+    }, { passive: true });
   }
 
   /**

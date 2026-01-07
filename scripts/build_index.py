@@ -439,6 +439,46 @@ def build_subject_index(html_files, qa_files, subjects):
     return items
 
 
+def update_cache_version():
+    """index.htmlのキャッシュバスター（バージョン番号）を更新"""
+    from datetime import datetime
+
+    index_path = Path(__file__).parent.parent / 'index.html'
+    if not index_path.exists():
+        return
+
+    # タイムスタンプベースのバージョン（YYYYMMDD + 連番）
+    timestamp = datetime.now().strftime('%Y%m%d')
+
+    with open(index_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # 現在のバージョンを取得して連番をインクリメント
+    match = re.search(r'\?v=(\d{8})([a-z])?', content)
+    if match:
+        current_date = match.group(1)
+        current_suffix = match.group(2) or 'a'
+        if current_date == timestamp:
+            # 同じ日付なら連番をインクリメント
+            new_suffix = chr(ord(current_suffix) + 1)
+            if new_suffix > 'z':
+                new_suffix = 'a'
+        else:
+            new_suffix = 'a'
+    else:
+        new_suffix = 'a'
+
+    new_version = f'{timestamp}{new_suffix}'
+
+    # すべての ?v= パラメータを更新
+    new_content = re.sub(r'\?v=[\w]+', f'?v={new_version}', content)
+
+    with open(index_path, 'w', encoding='utf-8') as f:
+        f.write(new_content)
+
+    print(f"\nCache version updated: v={new_version}")
+
+
 def main():
     # コマンドライン引数の解析
     parser = argparse.ArgumentParser(description='Build index for study-viewer')
@@ -527,6 +567,9 @@ def main():
         print(f"\nFiles copied to:")
         print(f"  HTML: {DEST_HTML_DIR}")
         print(f"  Q&A: {DEST_QA_DIR}")
+
+    # index.htmlのバージョン番号を自動更新
+    update_cache_version()
 
 
 if __name__ == '__main__':

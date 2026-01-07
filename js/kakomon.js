@@ -1,16 +1,13 @@
 /**
- * 過去問モジュール
+ * 過去問モジュール（縦スクロール一覧形式）
  */
 const KakomonModule = (function() {
   // キャッシュ
   const dataCache = new Map();
 
-  // 状態
+  // 状態（カードごとの状態はdata属性で管理）
   const state = {
-    currentQuestions: [],
-    currentIndex: 0,
-    selectedChoices: new Set(),
-    answered: false
+    currentQuestions: []
   };
 
   /**
@@ -86,12 +83,9 @@ const KakomonModule = (function() {
 
     // 状態を更新
     state.currentQuestions = filtered;
-    state.currentIndex = 0;
-    state.selectedChoices = new Set();
-    state.answered = false;
 
-    // 表示
-    renderCurrentQuestion(elements);
+    // 全問を一覧表示
+    renderAllQuestions(elements);
   }
 
   /**
@@ -111,10 +105,9 @@ const KakomonModule = (function() {
   }
 
   /**
-   * 現在の問題を描画
+   * 全問を一覧表示
    */
-  function renderCurrentQuestion(elements) {
-    const question = state.currentQuestions[state.currentIndex];
+  function renderAllQuestions(elements) {
     const total = state.currentQuestions.length;
 
     // プレースホルダーを非表示
@@ -122,31 +115,28 @@ const KakomonModule = (function() {
       elements.kakomonPlaceholder.style.display = 'none';
     }
 
-    // ツールバーは非表示のまま（下部ナビのみ使用）
-    // if (elements.kakomonToolbar) {
-    //   elements.kakomonToolbar.style.display = 'flex';
-    // }
-    if (elements.kakomonCurrent) {
-      elements.kakomonCurrent.textContent = state.currentIndex + 1;
-    }
-    if (elements.kakomonTotal) {
-      elements.kakomonTotal.textContent = total;
-    }
-
     // コンテンツを表示
     if (elements.kakomonDisplay) {
       elements.kakomonDisplay.style.display = 'block';
-      elements.kakomonDisplay.innerHTML = renderQuiz(question, state.currentIndex, total);
+
+      // 問題数ヘッダー + 全問のHTML
+      let html = `<div class="kakomon-list-header">${total}問</div>`;
+
+      state.currentQuestions.forEach((question, index) => {
+        html += renderQuizCard(question, index, total);
+      });
+
+      elements.kakomonDisplay.innerHTML = html;
 
       // イベントをバインド
-      bindQuizEvents(elements);
+      bindAllQuizEvents(elements);
     }
   }
 
   /**
-   * クイズHTMLを生成
+   * クイズカードHTMLを生成（ナビなし）
    */
-  function renderQuiz(question, index, total) {
+  function renderQuizCard(question, index, total) {
     const choices = question.choices || {};
     const numChoices = question.numChoices || 1;
 
@@ -169,9 +159,10 @@ const KakomonModule = (function() {
     }
 
     return `
-      <div class="kakomon-card" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}">
+      <div class="kakomon-card" data-index="${index}" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}" data-answered="false">
         <div class="kakomon-header">
           <span class="kakomon-code">${escapeHtml(question.code)}</span>
+          <span class="kakomon-index">${index + 1} / ${total}</span>
         </div>
 
         <div class="kakomon-question">
@@ -199,12 +190,6 @@ const KakomonModule = (function() {
           <div class="result-answer">正解: ${formatAnswer(question.answer)}</div>
           <div class="result-message"></div>
         </div>
-
-        <div class="kakomon-nav">
-          <button class="kakomon-prev" ${index === 0 ? 'disabled' : ''}>前へ</button>
-          <span class="kakomon-progress-text">${index + 1} / ${total}</span>
-          <button class="kakomon-next" ${index === total - 1 ? 'disabled' : ''}>次へ</button>
-        </div>
       </div>
     `;
   }
@@ -219,106 +204,68 @@ const KakomonModule = (function() {
   }
 
   /**
-   * クイズイベントをバインド
+   * 全カードにイベントをバインド
    */
-  function bindQuizEvents(elements) {
+  function bindAllQuizEvents(elements) {
     const display = elements.kakomonDisplay;
 
-    // 選択肢クリック
-    display.querySelectorAll('.kakomon-choice').forEach(btn => {
-      btn.addEventListener('click', () => handleChoiceClick(btn, elements));
-    });
+    // 各カードごとにイベント設定
+    display.querySelectorAll('.kakomon-card').forEach(card => {
+      const numChoices = parseInt(card.dataset.num) || 1;
+      let selectedChoices = new Set();
 
-    // 解答ボタン
-    const submitBtn = display.querySelector('.kakomon-submit');
-    if (submitBtn) {
-      submitBtn.addEventListener('click', () => {
-        if (state.answered) return;
-        const card = display.querySelector('.kakomon-card');
-        const answer = card.dataset.answer;
-        checkAnswer(card, answer);
-        submitBtn.style.display = 'none';
-      });
-    }
+      // 選択肢クリック
+      card.querySelectorAll('.kakomon-choice').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (card.dataset.answered === 'true') return;
 
-    // ナビゲーション
-    const prevBtn = display.querySelector('.kakomon-prev');
-    const nextBtn = display.querySelector('.kakomon-next');
+          const choiceKey = btn.dataset.choice;
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        if (state.currentIndex > 0) {
-          state.currentIndex--;
-          state.selectedChoices = new Set();
-          state.answered = false;
-          renderCurrentQuestion(elements);
-        }
-      });
-    }
+          // 選択状態の切り替え
+          if (selectedChoices.has(choiceKey)) {
+            selectedChoices.delete(choiceKey);
+            btn.classList.remove('selected');
+          } else {
+            // 単一選択の場合は他を解除
+            if (numChoices === 1) {
+              card.querySelectorAll('.kakomon-choice').forEach(b => {
+                b.classList.remove('selected');
+              });
+              selectedChoices.clear();
+            }
+            selectedChoices.add(choiceKey);
+            btn.classList.add('selected');
+          }
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        if (state.currentIndex < state.currentQuestions.length - 1) {
-          state.currentIndex++;
-          state.selectedChoices = new Set();
-          state.answered = false;
-          renderCurrentQuestion(elements);
-        }
-      });
-    }
-
-    // リセットボタン
-    if (elements.kakomonReset) {
-      elements.kakomonReset.onclick = () => {
-        state.currentIndex = 0;
-        state.selectedChoices = new Set();
-        state.answered = false;
-        renderCurrentQuestion(elements);
-      };
-    }
-  }
-
-  /**
-   * 選択肢クリック処理
-   */
-  function handleChoiceClick(btn, elements) {
-    if (state.answered) return;
-
-    const card = btn.closest('.kakomon-card');
-    const answer = card.dataset.answer;
-    const numChoices = parseInt(card.dataset.num) || 1;
-    const choiceKey = btn.dataset.choice;
-
-    // 選択状態の切り替え
-    if (state.selectedChoices.has(choiceKey)) {
-      state.selectedChoices.delete(choiceKey);
-      btn.classList.remove('selected');
-    } else {
-      // 単一選択の場合は他を解除
-      if (numChoices === 1) {
-        card.querySelectorAll('.kakomon-choice').forEach(b => {
-          b.classList.remove('selected');
+          // 選択数が必要数に達したら解答ボタンを有効化
+          const submitBtn = card.querySelector('.kakomon-submit');
+          if (submitBtn) {
+            submitBtn.disabled = selectedChoices.size !== numChoices;
+          }
         });
-        state.selectedChoices.clear();
-      }
-      state.selectedChoices.add(choiceKey);
-      btn.classList.add('selected');
-    }
+      });
 
-    // 選択数が必要数に達したら解答ボタンを有効化
-    const submitBtn = card.querySelector('.kakomon-submit');
-    if (submitBtn) {
-      submitBtn.disabled = state.selectedChoices.size !== numChoices;
-    }
+      // 解答ボタン
+      const submitBtn = card.querySelector('.kakomon-submit');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', () => {
+          if (card.dataset.answered === 'true') return;
+
+          const correctAnswer = card.dataset.answer;
+          checkAnswer(card, correctAnswer, selectedChoices);
+          submitBtn.style.display = 'none';
+        });
+      }
+    });
   }
 
   /**
    * 答え合わせ
    */
-  function checkAnswer(card, correctAnswer) {
-    state.answered = true;
+  function checkAnswer(card, correctAnswer, selectedChoices) {
+    card.dataset.answered = 'true';
 
-    const selectedKeys = Array.from(state.selectedChoices)
+    const selectedKeys = Array.from(selectedChoices)
       .map(k => k.toUpperCase())
       .sort()
       .join('');

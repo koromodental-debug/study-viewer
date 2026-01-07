@@ -1252,9 +1252,23 @@ body {
   color: var(--text-color);
 }
 
+.kakomon-index {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
 .kakomon-meta {
   font-size: 12px;
   color: var(--text-muted);
+}
+
+/* 問題数ヘッダー */
+.kakomon-list-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  padding-left: 4px;
 }
 
 /* 問題文 */

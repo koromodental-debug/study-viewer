@@ -19,7 +19,7 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "01_病因",
-      "theme": "リスクファクター：歯石",
+      "theme": "リスクファクター",
       "keyword": "歯石"
     },
     {
@@ -40,7 +40,7 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "01_病因",
-      "theme": "歯学",
+      "theme": "歯周疾患",
       "keyword": "細菌と歯周疾患の疫学特性"
     },
     {
@@ -61,7 +61,7 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "01_病因",
-      "theme": "歯周疾患と全身疾患のかかわり",
+      "theme": "歯周疾患と全身疾患",
       "keyword": "細菌と歯周疾患の疫学特性"
     },
     {
@@ -166,7 +166,7 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "01_病因",
-      "theme": "リスクファクター：軟膜",
+      "theme": "リスクファクター",
       "keyword": "局所修飾因子"
     },
     {
@@ -187,7 +187,7 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "01_病因",
-      "theme": "歯周疾患と全身疾患のかかわり",
+      "theme": "歯周疾患と全身疾患",
       "keyword": "全身性修飾因子"
     },
     {
@@ -272,7 +272,7 @@
       "imageFiles": "108D7_1.png, 108D7_2.png",
       "chapter": "01_病因",
       "theme": "局所修飾因子",
-      "keyword": "その他"
+      "keyword": "局所修飾因子"
     },
     {
       "code": "111A59",
@@ -292,8 +292,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "01_病因",
-      "theme": "リスクファクター：攻撃",
-      "keyword": "全身性修飾因子、環境"
+      "theme": "リスクファクター",
+      "keyword": "全身性修飾因子"
     },
     {
       "code": "112A86",
@@ -314,7 +314,7 @@
       "imageFiles": "112A86_1.png, 112A86_2.png",
       "chapter": "01_病因",
       "theme": "局所修飾因子",
-      "keyword": "局所性修飾因子、環境"
+      "keyword": "局所修飾因子"
     },
     {
       "code": "114D73",
@@ -334,8 +334,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "01_病因",
-      "theme": "リスクファクター：歯周炎",
-      "keyword": "細菌叢因子、環境因子"
+      "theme": "リスクファクター",
+      "keyword": "全身性修飾因子"
     },
     {
       "code": "115D76",
@@ -376,8 +376,8 @@
       "hasImage": true,
       "imageFiles": "116C29.png",
       "chapter": "01_病因",
-      "theme": "全身疾患をもつ患者への対応",
-      "keyword": "全身性（他）"
+      "theme": "全身疾患",
+      "keyword": "全身性修飾因子"
     },
     {
       "code": "102C28",
@@ -396,9 +396,9 @@
       "numChoices": 1,
       "hasImage": true,
       "imageFiles": "102C28_1.png, 102C28_2.png, 102C28_3.png",
-      "chapter": "02_疾患の分類と特徴",
-      "theme": "攻撃な歯周疾患",
-      "keyword": "歯周疾患"
+      "chapter": "05_歯周外科治療",
+      "theme": "GTR法",
+      "keyword": "GTR法"
     },
     {
       "code": "103C107",
@@ -419,7 +419,7 @@
       "imageFiles": "",
       "chapter": "02_疾患の分類と特徴",
       "theme": "壊死性歯周疾患",
-      "keyword": "壊死性外傷"
+      "keyword": "壊死性歯周疾患"
     },
     {
       "code": "103C90",
@@ -439,7 +439,7 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "02_疾患の分類と特徴",
-      "theme": "攻撃な歯周疾患",
+      "theme": "歯周炎",
       "keyword": "歯周炎"
     },
     {
@@ -460,8 +460,8 @@
       "hasImage": true,
       "imageFiles": "103D28.png",
       "chapter": "02_疾患の分類と特徴",
-      "theme": "攻撃性外傷",
-      "keyword": "歯周組織の構造"
+      "theme": "咬合性外傷",
+      "keyword": "咬合性外傷"
     },
     {
       "code": "105D17",
@@ -482,7 +482,7 @@
       "imageFiles": "105D17.png",
       "chapter": "02_疾患の分類と特徴",
       "theme": "壊死性歯周疾患",
-      "keyword": "壊死性外傷"
+      "keyword": "壊死性歯周疾患"
     },
     {
       "code": "108C81",
@@ -502,8 +502,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "02_疾患の分類と特徴",
-      "theme": "構成性歯周炎",
-      "keyword": "細菌性歯周炎"
+      "theme": "慢性歯周炎",
+      "keyword": "歯周炎"
     },
     {
       "code": "109B22",
@@ -523,8 +523,8 @@
       "hasImage": true,
       "imageFiles": "109B22_1.png, 109B22_2.png",
       "chapter": "02_疾患の分類と特徴",
-      "theme": "特殊な歯周疾患",
-      "keyword": "歯周炎症性疾患"
+      "theme": "歯周疾患",
+      "keyword": "歯周炎"
     },
     {
       "code": "109B51",
@@ -565,8 +565,8 @@
       "hasImage": true,
       "imageFiles": "111B76_1.png, 111B76_2.png",
       "chapter": "02_疾患の分類と特徴",
-      "theme": "プラキシズム",
-      "keyword": "攻撃性外傷"
+      "theme": "ブラキシズム",
+      "keyword": "咬合性外傷"
     },
     {
       "code": "111C45",
@@ -586,8 +586,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "02_疾患の分類と特徴",
-      "theme": "攻撃性外傷",
-      "keyword": "攻撃性外傷"
+      "theme": "咬合性外傷",
+      "keyword": "咬合性外傷"
     },
     {
       "code": "113A80",
@@ -607,8 +607,8 @@
       "hasImage": true,
       "imageFiles": "113A80.png",
       "chapter": "02_疾患の分類と特徴",
-      "theme": "壊死性歯周炎疾患",
-      "keyword": "壊死性歯周炎疾患"
+      "theme": "壊死性歯周疾患",
+      "keyword": "壊死性歯周疾患"
     },
     {
       "code": "105D38",
@@ -650,7 +650,7 @@
       "imageFiles": "108A105.png",
       "chapter": "03_診査診断",
       "theme": "アタッチメントレベル",
-      "keyword": "アタッチメントレベル検査"
+      "keyword": "アタッチメントレベル"
     },
     {
       "code": "114C26",
@@ -670,7 +670,7 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "03_診査診断",
-      "theme": "ポケット・プロービング",
+      "theme": "歯周組織検査",
       "keyword": "ポケット検査"
     },
     {
@@ -734,7 +734,7 @@
       "imageFiles": "104B33.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "抗菌療法",
-      "keyword": "歯周組織再生療法"
+      "keyword": "抗菌療法"
     },
     {
       "code": "104B38",
@@ -797,7 +797,7 @@
       "imageFiles": "105B52.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "全身疾患をもつ患者への対応",
-      "keyword": "新分類への対応"
+      "keyword": "全身疾患をもつ患者への対応"
     },
     {
       "code": "105C82",
@@ -860,7 +860,7 @@
       "imageFiles": "",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "全身疾患をもつ患者への対応",
-      "keyword": "患者への対応"
+      "keyword": "全身疾患をもつ患者への対応"
     },
     {
       "code": "107A130",
@@ -902,7 +902,7 @@
       "imageFiles": "107B22_1.png, 107B22_2.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "歯内―歯周病変",
-      "keyword": "歯周病変"
+      "keyword": "歯内―歯周病変"
     },
     {
       "code": "107C115",
@@ -922,8 +922,8 @@
       "hasImage": true,
       "imageFiles": "107C115.png",
       "chapter": "04_歯周基本治療_再評価",
-      "theme": "抗菌療法：LDDS",
-      "keyword": "抗菌物療法の概要"
+      "theme": "抗菌療法",
+      "keyword": "抗菌療法"
     },
     {
       "code": "108A46",
@@ -944,7 +944,7 @@
       "imageFiles": "108A46.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "全身疾患をもつ患者への対応",
-      "keyword": "新分類への対応"
+      "keyword": "全身疾患をもつ患者への対応"
     },
     {
       "code": "108B48",
@@ -965,7 +965,7 @@
       "imageFiles": "108B48_1.png, 108B48_2.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "歯内―歯周病変",
-      "keyword": "歯周組織再生療法"
+      "keyword": "歯内―歯周病変"
     },
     {
       "code": "108B49",
@@ -986,7 +986,7 @@
       "imageFiles": "",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "歯内―歯周病変",
-      "keyword": "歯周組織再生療法"
+      "keyword": "歯内―歯周病変"
     },
     {
       "code": "109B52",
@@ -1091,7 +1091,7 @@
       "imageFiles": "112A69_1.png, 112A69_2.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "咬合調整",
-      "keyword": "咬合性外傷の治療"
+      "keyword": "咬合調整"
     },
     {
       "code": "112A85",
@@ -1217,7 +1217,7 @@
       "imageFiles": "114C55_1.png, 114C55_2.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "咬合調整",
-      "keyword": "咬合性外傷の治療"
+      "keyword": "咬合調整"
     },
     {
       "code": "114D78",
@@ -1238,7 +1238,7 @@
       "imageFiles": "114D78.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "全身疾患をもつ患者への対応",
-      "keyword": "新分類への対応"
+      "keyword": "全身疾患をもつ患者への対応"
     },
     {
       "code": "114D89",
@@ -1259,7 +1259,7 @@
       "imageFiles": "114D89_1.png, 114D89_2.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "歯内―歯周病変",
-      "keyword": "歯周病変"
+      "keyword": "歯内―歯周病変"
     },
     {
       "code": "115A64",
@@ -1301,7 +1301,7 @@
       "imageFiles": "115C62_1.png, 115C62_2.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "歯内―歯周病変",
-      "keyword": "上行性歯髄炎"
+      "keyword": "歯内―歯周病変"
     },
     {
       "code": "115C65",
@@ -1364,7 +1364,7 @@
       "imageFiles": "116B35.png",
       "chapter": "04_歯周基本治療_再評価",
       "theme": "暫間固定",
-      "keyword": "局所修飾因子の是正"
+      "keyword": "暫間固定"
     },
     {
       "code": "116B51",
@@ -1405,8 +1405,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "04_歯周基本治療_再評価",
-      "theme": "抗菌療法：LDDS",
-      "keyword": "抗菌物療法の概要"
+      "theme": "抗菌療法",
+      "keyword": "抗菌療法"
     },
     {
       "code": "102A51",
@@ -1447,8 +1447,8 @@
       "hasImage": true,
       "imageFiles": "102D45_1.png, 102D45_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "エナメルマトリックスタンパク質：形式",
-      "keyword": "歯周組織再生療法2"
+      "theme": "エナメルマトリックスタンパク質",
+      "keyword": "エナメルマトリックスタンパク質"
     },
     {
       "code": "103A58",
@@ -1510,7 +1510,7 @@
       "hasImage": true,
       "imageFiles": "103B48_1.png, 103B48_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周外科治療に対する外科処置",
+      "theme": "根分岐部病変の治療",
       "keyword": "分岐部病変に対する外科処置"
     },
     {
@@ -1552,8 +1552,8 @@
       "hasImage": true,
       "imageFiles": "103D4.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周保存療法の処置",
-      "keyword": "歯根保存療法"
+      "theme": "歯根切除術",
+      "keyword": "歯根切除術・ヘミセクション"
     },
     {
       "code": "104A17",
@@ -1636,8 +1636,8 @@
       "hasImage": true,
       "imageFiles": "105B50_1.png, 105B50_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "ウェッジ手術：形式",
-      "keyword": "フラップ手術、骨移植術、骨形成術"
+      "theme": "骨移植術",
+      "keyword": "骨移植術"
     },
     {
       "code": "105C114",
@@ -1657,8 +1657,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "歯肉整形術形態",
-      "keyword": "歯周外科の分類"
+      "theme": "歯肉切除術・歯肉整形術",
+      "keyword": "歯肉切除術・歯肉整形術"
     },
     {
       "code": "105C119",
@@ -1699,7 +1699,7 @@
       "hasImage": true,
       "imageFiles": "106B32_1.png, 106B32_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周外科治療の処置",
+      "theme": "歯周組織再生療法",
       "keyword": "歯周組織再生療法"
     },
     {
@@ -1742,7 +1742,7 @@
       "imageFiles": "107A86.png",
       "chapter": "05_歯周外科治療",
       "theme": "エナメルマトリックスタンパク質",
-      "keyword": "歯周組織再生療法2"
+      "keyword": "エナメルマトリックスタンパク質"
     },
     {
       "code": "107D39",
@@ -1783,8 +1783,8 @@
       "hasImage": true,
       "imageFiles": "108A96.png",
       "chapter": "05_歯周外科治療",
-      "theme": "ウェッジ手術：形式",
-      "keyword": "フラップ手術、骨移植術"
+      "theme": "骨移植術",
+      "keyword": "骨移植術"
     },
     {
       "code": "108B17",
@@ -1867,8 +1867,8 @@
       "hasImage": true,
       "imageFiles": "109B26_1.png, 109B26_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "エナメルマトリックスタンパク質：形式",
-      "keyword": "歯周組織再生療法2"
+      "theme": "エナメルマトリックスタンパク質",
+      "keyword": "エナメルマトリックスタンパク質"
     },
     {
       "code": "109C105",
@@ -1889,7 +1889,7 @@
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
       "theme": "エナメルマトリックスタンパク質",
-      "keyword": "歯周組織再生療法2"
+      "keyword": "エナメルマトリックスタンパク質"
     },
     {
       "code": "109D44",
@@ -1909,8 +1909,8 @@
       "hasImage": true,
       "imageFiles": "109D44_1.png, 109D44_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "骨整形術、歯槽骨整形術",
-      "keyword": "骨切除術、骨整形術"
+      "theme": "骨切除術・骨整形術",
+      "keyword": "骨切除術・骨整形術"
     },
     {
       "code": "110A97",
@@ -1993,8 +1993,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周保存療法の処置",
-      "keyword": "歯周外科処置1"
+      "theme": "歯周形成手術",
+      "keyword": "歯周形成手術"
     },
     {
       "code": "111C56",
@@ -2035,8 +2035,8 @@
       "hasImage": true,
       "imageFiles": "111C67_1.png, 111C67_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周外科治療の処置",
-      "keyword": "根尖除去術"
+      "theme": "歯根切除術",
+      "keyword": "歯根切除術・ヘミセクション"
     },
     {
       "code": "112A56",
@@ -2056,8 +2056,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周保存療法の処置",
-      "keyword": "歯周外科処置4"
+      "theme": "結合組織移植術",
+      "keyword": "結合組織移植術"
     },
     {
       "code": "112B60",
@@ -2078,7 +2078,7 @@
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
       "theme": "フラップ手術",
-      "keyword": "歯周外科の検討"
+      "keyword": "フラップ手術"
     },
     {
       "code": "112C28",
@@ -2119,7 +2119,7 @@
       "hasImage": true,
       "imageFiles": "112C86.png",
       "chapter": "05_歯周外科治療",
-      "theme": "全身疾患をもつ患者への対応",
+      "theme": "根分岐部病変の治療",
       "keyword": "分岐部病変に対する外科処置"
     },
     {
@@ -2162,7 +2162,7 @@
       "imageFiles": "113B57.png",
       "chapter": "05_歯周外科治療",
       "theme": "遊離歯肉移植術",
-      "keyword": "歯肉退縮治療"
+      "keyword": "遊離歯肉移植術"
     },
     {
       "code": "113B71",
@@ -2224,7 +2224,7 @@
       "hasImage": true,
       "imageFiles": "113C57_1.png, 113C57_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周外科治療に対する外科処置",
+      "theme": "根分岐部病変の治療",
       "keyword": "分岐部病変に対する外科処置"
     },
     {
@@ -2266,8 +2266,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "術後造成形態",
-      "keyword": "歯周組織、新付着術、ウェッジ手術"
+      "theme": "組織付着療法",
+      "keyword": "新付着術（ENAP）"
     },
     {
       "code": "113D47",
@@ -2308,7 +2308,7 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "全身疾患をもつ患者への対応",
+      "theme": "根分岐部病変の治療",
       "keyword": "分岐部病変に対する外科処置"
     },
     {
@@ -2330,7 +2330,7 @@
       "imageFiles": "113D58.png",
       "chapter": "05_歯周外科治療",
       "theme": "GTR法",
-      "keyword": "歯周組織再生療法"
+      "keyword": "GTR法"
     },
     {
       "code": "113D62",
@@ -2350,8 +2350,8 @@
       "hasImage": true,
       "imageFiles": "113D62_1.png, 113D62_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯肉弁を用いた歯周組織再生療法",
-      "keyword": "フラップ手術、歯周組織再生療法2"
+      "theme": "歯周組織再生療法",
+      "keyword": "歯周組織再生療法"
     },
     {
       "code": "114A50",
@@ -2434,8 +2434,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "術後造成形態",
-      "keyword": "歯周組織、新付着術(ENAP)"
+      "theme": "組織付着療法",
+      "keyword": "新付着術（ENAP）"
     },
     {
       "code": "114B45",
@@ -2497,7 +2497,7 @@
       "hasImage": true,
       "imageFiles": "114B79_1.png, 114B79_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周外科治療に対する外科処置",
+      "theme": "根分岐部病変の治療",
       "keyword": "分岐部病変に対する外科処置"
     },
     {
@@ -2519,7 +2519,7 @@
       "imageFiles": "114C33_1.png, 114C33_2.png",
       "chapter": "05_歯周外科治療",
       "theme": "GTR法",
-      "keyword": "歯周組織再生療法"
+      "keyword": "GTR法"
     },
     {
       "code": "114C52",
@@ -2602,8 +2602,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "術後造成形態",
-      "keyword": "歯周組織、新付着術(ENAP)"
+      "theme": "組織付着療法",
+      "keyword": "新付着術（ENAP）"
     },
     {
       "code": "115B56",
@@ -2623,8 +2623,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周保存療法の処置",
-      "keyword": "歯周外科処置2"
+      "theme": "歯周形成手術",
+      "keyword": "歯周形成手術"
     },
     {
       "code": "115B81",
@@ -2644,8 +2644,8 @@
       "hasImage": true,
       "imageFiles": "115B81_1.png, 115B81_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周外科治療に対する外科処置",
-      "keyword": "分岐部病変に対する外科処置、歯根離断術"
+      "theme": "根分岐部病変の治療",
+      "keyword": "歯根切除術・ヘミセクション"
     },
     {
       "code": "115C46",
@@ -2666,7 +2666,7 @@
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
       "theme": "遊離歯肉移植術",
-      "keyword": "歯肉退縮治療"
+      "keyword": "遊離歯肉移植術"
     },
     {
       "code": "115C77",
@@ -2686,8 +2686,8 @@
       "hasImage": true,
       "imageFiles": "115C77_1.png, 115C77_2.png",
       "chapter": "05_歯周外科治療",
-      "theme": "GTR法：適応症",
-      "keyword": "歯周組織再生療法2"
+      "theme": "GTR法",
+      "keyword": "歯周組織再生療法"
     },
     {
       "code": "115D32",
@@ -2707,8 +2707,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "術後造成形態",
-      "keyword": "歯周外科の分類"
+      "theme": "組織付着療法",
+      "keyword": "フラップ手術"
     },
     {
       "code": "115D53",
@@ -2770,8 +2770,8 @@
       "hasImage": true,
       "imageFiles": "116A83.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周保存療法の処置",
-      "keyword": "歯周外科処置1"
+      "theme": "歯周形成手術",
+      "keyword": "歯周形成手術"
     },
     {
       "code": "116B50",
@@ -2812,8 +2812,8 @@
       "hasImage": true,
       "imageFiles": "116B65.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周保存療法の処置",
-      "keyword": "歯周外科処置4"
+      "theme": "結合組織移植術",
+      "keyword": "結合組織移植術"
     },
     {
       "code": "116B71",
@@ -2833,8 +2833,8 @@
       "hasImage": true,
       "imageFiles": "116B71.png",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周保存療法の処置",
-      "keyword": "歯周外科処置4"
+      "theme": "遊離歯肉移植術",
+      "keyword": "遊離歯肉移植術"
     },
     {
       "code": "116C52",
@@ -2855,7 +2855,7 @@
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
       "theme": "GTR法",
-      "keyword": "歯周組織再生療法"
+      "keyword": "GTR法"
     },
     {
       "code": "116C71",
@@ -2876,7 +2876,7 @@
       "imageFiles": "116C71_1.png, 116C71_2.png, 116C71_3.png",
       "chapter": "05_歯周外科治療",
       "theme": "フラップ手術",
-      "keyword": "歯肉整形術、歯周整形術2"
+      "keyword": "フラップ手術"
     },
     {
       "code": "116D26",
@@ -2896,8 +2896,8 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "GTR法：適応症",
-      "keyword": "歯周組織再生療法2"
+      "theme": "GTR法",
+      "keyword": "歯周組織再生療法"
     },
     {
       "code": "116D49",
@@ -2938,7 +2938,7 @@
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
-      "theme": "歯周保存療法の処置：分岐",
+      "theme": "根分岐部病変の治療",
       "keyword": "分岐部病変に対する外科処置"
     },
     {
@@ -2958,9 +2958,9 @@
       "numChoices": 1,
       "hasImage": true,
       "imageFiles": "103D25.png",
-      "chapter": "05_歯周外科治療_再評価",
-      "theme": "歯周保存療法の処置",
-      "keyword": "歯周外科処置1"
+      "chapter": "05_歯周外科治療",
+      "theme": "歯周形成手術",
+      "keyword": "歯周形成手術"
     },
     {
       "code": "103B26",
@@ -2979,9 +2979,9 @@
       "numChoices": 2,
       "hasImage": true,
       "imageFiles": "103B26.png",
-      "chapter": "06_メインテナンスと口腔機能回復治療",
-      "theme": "SPT：治療",
-      "keyword": "メインテナンス、SPT"
+      "chapter": "06_メインテナンス",
+      "theme": "SPT",
+      "keyword": "メインテナンス・SPT"
     },
     {
       "code": "106D17",
@@ -3000,9 +3000,9 @@
       "numChoices": 2,
       "hasImage": true,
       "imageFiles": "106D17_1.png, 106D17_2.png, 106D17_3.png",
-      "chapter": "06_メインテナンスと口腔機能回復治療",
-      "theme": "SPT：治療",
-      "keyword": "メインテナンス、SPT"
+      "chapter": "06_メインテナンス",
+      "theme": "SPT",
+      "keyword": "メインテナンス・SPT"
     },
     {
       "code": "107C98",
@@ -3042,9 +3042,9 @@
       "numChoices": 2,
       "hasImage": true,
       "imageFiles": "108D43_1.png, 108D43_2.png",
-      "chapter": "06_メインテナンスと口腔機能回復治療",
-      "theme": "SPT：治療",
-      "keyword": "歯周治療後の処置"
+      "chapter": "06_メインテナンス",
+      "theme": "SPT",
+      "keyword": "メインテナンス・SPT"
     },
     {
       "code": "109A116",

@@ -31,7 +31,7 @@
     searchInput: document.getElementById('search-input'),
     closeSearch: document.getElementById('close-search'),
     searchResults: document.getElementById('search-results'),
-    tabs: document.querySelectorAll('.header-tab'),
+    tabs: document.querySelectorAll('.floating-tab'),
     htmlContent: document.getElementById('html-content'),
     qaContent: document.getElementById('qa-content'),
     htmlFrame: document.getElementById('html-frame'),

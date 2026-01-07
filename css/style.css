@@ -1404,3 +1404,102 @@ body {
     font-size: 13px;
   }
 }
+
+/* ===== フローティングタブバー ===== */
+.floating-tabbar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(245, 245, 247, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 6px 8px;
+  border-radius: 40px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.floating-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border: none;
+  background: transparent;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8e8e93;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.floating-tab .tab-icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.floating-tab span {
+  display: none;
+}
+
+.floating-tab:hover {
+  color: #1d1d1f;
+}
+
+.floating-tab.active {
+  background: white;
+  color: #1d1d1f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.floating-tab.active span {
+  display: inline;
+}
+
+/* メインコンテンツの下部余白を調整 */
+.main-content {
+  padding-bottom: 100px;
+}
+
+/* Safe area対応（iPhone X以降） */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .floating-tabbar {
+    bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+  .main-content {
+    padding-bottom: calc(100px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ヘッダータイトル（タブ削除後） */
+.header-title {
+  flex: 1;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+/* モバイル最適化 */
+@media (max-width: 480px) {
+  .floating-tabbar {
+    bottom: 16px;
+    padding: 5px 6px;
+  }
+
+  .floating-tab {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .floating-tab .tab-icon {
+    width: 18px;
+    height: 18px;
+  }
+}

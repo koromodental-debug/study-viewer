@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=46">
+  <link rel="stylesheet" href="css/style.css?v=47">
 </head>
 <body>
   <div class="app">
@@ -15,11 +15,7 @@
         <span></span>
         <span></span>
       </button>
-      <div class="header-tabs">
-        <button class="header-tab active" data-tab="html">まとめ</button>
-        <button class="header-tab" data-tab="qa">Q&A</button>
-        <button class="header-tab" data-tab="kakomon">過去問</button>
-      </div>
+      <h1 class="header-title">ココシカ</h1>
       <div class="header-spacer"></div>
     </header>
 
@@ -144,11 +140,39 @@
       </div>
     </main>
 
+    <!-- フローティングタブバー -->
+    <nav class="floating-tabbar">
+      <button class="floating-tab active" data-tab="html">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span>まとめ</span>
+      </button>
+      <button class="floating-tab" data-tab="qa">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <span>Q&A</span>
+      </button>
+      <button class="floating-tab" data-tab="kakomon">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+        <span>過去問</span>
+      </button>
+    </nav>
+
   </div>
 
   <script src="js/data.js?v=3"></script>
   <script src="js/search.js?v=1"></script>
   <script src="js/kakomon.js?v=2"></script>
-  <script src="js/app.js?v=53"></script>
+  <script src="js/app.js?v=54"></script>
 </body>
 </html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯石 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 病因</span>
+    <h1>歯石</h1>
+    <div class="container">
+
+      <h2>1. 歯石の定義</h2>
+      <p><span class="key">歯石（dental calculus, tartar）</span>とは、プラークが<span class="key">石灰化</span>し結晶構造を呈して歯の表面に強固に沈着したもの。</p>
+      <ul>
+        <li>組成：<span class="highlight">70〜80%がカルシウムやリン酸</span>などの無機塩</li>
+        <li>歯石の表面は<span class="key">粗糙かつ多孔性</span>で不規則な形態</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">重要ポイント：歯石の病原性</div>
+        <ul>
+          <li><span class="highlight">歯石自体に病原性はない</span></li>
+          <li>歯石は歯周病の直接的な起因物質ではない</li>
+          <li>歯石は<span class="key">プラークリテンションファクター（プラーク蓄積因子）</span>として働く</li>
+          <li>粗糙な表面にプラークが付着しやすく、除去が困難になる</li>
+        </ul>
+      </div>
+
+      <h2>2. 歯石の分類</h2>
+      <p>歯石は沈着位置によって<span class="key">歯肉縁上歯石</span>と<span class="key">歯肉縁下歯石</span>に分類される。</p>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>歯肉縁上歯石</th>
+          <th>歯肉縁下歯石</th>
+        </tr>
+        <tr>
+          <td><span class="key">沈着位置</span></td>
+          <td>歯肉辺縁より<span class="key">歯冠側</span></td>
+          <td>歯肉辺縁より<span class="key">根尖側</span>（歯周ポケット内）</td>
+        </tr>
+        <tr>
+          <td><span class="key">形成機序</span></td>
+          <td><span class="highlight">唾液</span>中のカルシウム・リン酸による石灰化</td>
+          <td><span class="highlight">歯肉溝滲出液</span>中のカルシウム・リン酸による石灰化</td>
+        </tr>
+        <tr>
+          <td><span class="key">色調</span></td>
+          <td>乳白色〜黄色</td>
+          <td><span class="highlight">茶褐色〜黒色</span>（鉄分・血液成分を含む）</td>
+        </tr>
+        <tr>
+          <td><span class="key">好発部位</span></td>
+          <td><span class="highlight">下顎前歯部舌側</span>、<span class="highlight">上顎臼歯部頬側</span>（唾液腺開口部付近）</td>
+          <td>深い歯周ポケット内</td>
+        </tr>
+        <tr>
+          <td>硬さ</td>
+          <td>比較的軟らかい</td>
+          <td><span class="key">硬い</span>、歯面に強固に付着</td>
+        </tr>
+      </table>
+
+      <h3>唾液腺開口部と歯石の好発部位</h3>
+      <ul>
+        <li><span class="key">舌下腺・顎下腺</span>の開口部 → 下顎前歯部舌側に歯肉縁上歯石が好発</li>
+        <li><span class="key">耳下腺</span>の開口部 → 上顎臼歯部頬側に歯肉縁上歯石が好発</li>
+      </ul>
+
+      <h2>3. 歯石と骨吸収パターン</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">国試頻出：垂直性骨欠損の原因</div>
+        <ul>
+          <li><span class="caution">歯肉縁上歯石は垂直性骨欠損の原因ではない</span></li>
+          <li>歯肉縁上歯石 → プラーク蓄積 → 炎症 → 主に<span class="key">水平性骨吸収</span></li>
+          <li><span class="highlight">垂直性骨欠損の原因</span>：食片圧入、咬合性外傷などの<span class="key">局所的要因</span></li>
+        </ul>
+      </div>
+
+      <h2>4. 歯石の除去</h2>
+      <ul>
+        <li><span class="key">スケーリング</span>：歯石を除去する操作</li>
+        <li><span class="key">ルートプレーニング</span>：歯根面を滑沢にする操作</li>
+        <li>歯石除去により、プラーク付着の促進因子を除去し、プラークコントロールを容易にする</li>
+      </ul>
+
+      <h2>5. 関連過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A73</div>
+        <p>垂直性骨欠損の原因となるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 口呼吸<br>
+          b 歯肉退縮<br>
+          c 食片圧入<br>
+          d 咬合性外傷<br>
+          e 歯肉縁上歯石
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p class="note">【解説】垂直性骨欠損は<span class="key">局所的な要因</span>によって生じる。<span class="key">食片圧入</span>は歯間部への食物の圧入により局所的な炎症と骨吸収を起こす。<span class="key">咬合性外傷</span>は過度な咬合力により歯周組織に障害を与え、垂直性骨欠損の原因となる。一方、<span class="caution">歯肉縁上歯石</span>はプラークリテンションファクターとして働き、主に水平性骨吸収に関与するため、垂直性骨欠損の直接的原因ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

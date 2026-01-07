@@ -41,7 +41,15 @@
     welcomeScreen: document.getElementById('welcome-screen'),
     welcomeStartBtn: document.getElementById('welcome-start-btn'),
     welcomeCardMenu: document.getElementById('welcome-card-menu'),
-    homeBtn: document.getElementById('home-btn')
+    homeBtn: document.getElementById('home-btn'),
+    // 過去問
+    kakomonContent: document.getElementById('kakomon-content'),
+    kakomonDisplay: document.getElementById('kakomon-display'),
+    kakomonToolbar: document.getElementById('kakomon-toolbar'),
+    kakomonPlaceholder: document.getElementById('kakomon-placeholder'),
+    kakomonCurrent: document.getElementById('kakomon-current'),
+    kakomonTotal: document.getElementById('kakomon-total'),
+    kakomonReset: document.getElementById('kakomon-reset')
   };
 
   // 検索エンジン
@@ -200,12 +208,16 @@
       const diffX = touchEndX - touchStartX;
       const diffY = touchEndY - touchStartY;
 
-      // 横方向の移動が縦より大きく、閾値を超えた場合
+      // 横方向の移動が縦より大きく、閾値を超えた場合（3タブ対応）
+      const tabOrder = ['html', 'qa', 'kakomon'];
       if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
-        if (diffX < 0 && state.currentTab === 'html') {
-          switchTab('qa');
-        } else if (diffX > 0 && state.currentTab === 'qa') {
-          switchTab('html');
+        const currentIndex = tabOrder.indexOf(state.currentTab);
+        if (diffX < 0 && currentIndex < tabOrder.length - 1) {
+          // 左スワイプ → 次のタブ
+          switchTab(tabOrder[currentIndex + 1]);
+        } else if (diffX > 0 && currentIndex > 0) {
+          // 右スワイプ → 前のタブ
+          switchTab(tabOrder[currentIndex - 1]);
         }
       }
     }, { passive: true });
@@ -232,11 +244,14 @@
           const diffX = touchEndX - touchStartX;
           const diffY = touchEndY - touchStartY;
 
+          // 3タブ対応
+          const tabOrder = ['html', 'qa', 'kakomon'];
           if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
-            if (diffX < 0 && state.currentTab === 'html') {
-              switchTab('qa');
-            } else if (diffX > 0 && state.currentTab === 'qa') {
-              switchTab('html');
+            const currentIndex = tabOrder.indexOf(state.currentTab);
+            if (diffX < 0 && currentIndex < tabOrder.length - 1) {
+              switchTab(tabOrder[currentIndex + 1]);
+            } else if (diffX > 0 && currentIndex > 0) {
+              switchTab(tabOrder[currentIndex - 1]);
             }
           }
         }, { passive: true });
@@ -319,6 +334,18 @@
     elements.qaContent.querySelector('.placeholder').style.display = 'flex';
     if (elements.qaToolbar) {
       elements.qaToolbar.style.display = 'none';
+    }
+
+    // 過去問を非表示
+    if (elements.kakomonDisplay) {
+      elements.kakomonDisplay.innerHTML = '';
+      elements.kakomonDisplay.style.display = 'none';
+    }
+    if (elements.kakomonPlaceholder) {
+      elements.kakomonPlaceholder.style.display = 'flex';
+    }
+    if (elements.kakomonToolbar) {
+      elements.kakomonToolbar.style.display = 'none';
     }
 
     // ウェルカム画面を表示
@@ -914,6 +941,11 @@
         elements.qaToolbar.style.display = 'none';
       }
     }
+
+    // 過去問
+    if (typeof KakomonModule !== 'undefined') {
+      KakomonModule.loadKakomon(item, elements);
+    }
   }
 
   /**
@@ -1239,6 +1271,9 @@
 
     elements.htmlContent.classList.toggle('active', tab === 'html');
     elements.qaContent.classList.toggle('active', tab === 'qa');
+    if (elements.kakomonContent) {
+      elements.kakomonContent.classList.toggle('active', tab === 'kakomon');
+    }
 
     // 新しいタブにスクロール（セクション優先、フォールバックで%）
     setTimeout(() => {

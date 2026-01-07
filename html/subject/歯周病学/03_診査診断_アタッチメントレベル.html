@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アタッチメントレベル - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 診査診断</span>
+    <h1>アタッチメントレベル</h1>
+    <div class="container">
+
+      <h3>定義</h3>
+      <p>歯肉が歯に付着する位置、すなわち<span class="key">歯肉溝底部やポケット底部の位置</span>をアタッチメントレベル attachment level（付着レベル）という。</p>
+      <p><span class="key">クリニカルアタッチメントレベル（CAL）</span>：歯周プローブなどで測定した、<span class="highlight">セメントエナメル境（CEJ）から歯肉溝またはポケット底部までの距離</span>。この値が大きくなるほど歯の支持組織がなくなっていることを意味する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">プロービングポケットデプス（PPD）との違い</div>
+        <table>
+          <tr>
+            <th>項目</th>
+            <th>基準点</th>
+            <th>測定点</th>
+          </tr>
+          <tr>
+            <td><span class="key">アタッチメントレベル（CAL）</span></td>
+            <td>セメントエナメル境（CEJ）</td>
+            <td>ポケット底部</td>
+          </tr>
+          <tr>
+            <td><span class="key">プロービングポケットデプス（PPD）</span></td>
+            <td>歯肉辺縁</td>
+            <td>プローブ先端位置</td>
+          </tr>
+        </table>
+        <p class="note">※PPD（臨床的ポケット深さ）とPD（組織学的ポケット深さ）は異なる。プローブ先端は結合組織に炎症性細胞の浸潤があれば接合上皮を貫通するため、PPDとPDは一致しない。</p>
+      </div>
+
+      <h3>アタッチメントロスとアタッチメントゲイン</h3>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>意味</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="key">アタッチメントロス</span><br>（付着の喪失）</td>
+          <td>アタッチメントレベルが<span class="highlight">根尖側に移動</span>すること</td>
+          <td>歯周炎の<span class="key">進行・重症度</span>の判定</td>
+        </tr>
+        <tr>
+          <td><span class="key">アタッチメントゲイン</span><br>（付着の獲得）</td>
+          <td>アタッチメントレベルが<span class="key">回復</span>すること</td>
+          <td>歯周治療後の<span class="key">組織の修復・再生</span>の評価</td>
+        </tr>
+      </table>
+
+      <h3>歯周プローブで評価できる項目</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>評価内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">プロービングポケットデプス（PPD）</span></td>
+          <td>歯肉辺縁〜プローブ先端位置</td>
+        </tr>
+        <tr>
+          <td><span class="key">アタッチメントレベル（CAL）</span></td>
+          <td>CEJ〜ポケット底部</td>
+        </tr>
+        <tr>
+          <td><span class="key">BOP（プロービング時の出血）</span></td>
+          <td>歯周組織の炎症の有無</td>
+        </tr>
+        <tr>
+          <td><span class="key">根分岐部病変</span></td>
+          <td>ファーケーションプローブで検査</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">混同しやすいポイント</div>
+        <ul>
+          <li><span class="key">BOP</span>：<span class="key">プロービング時</span>の出血（<span class="caution">歯肉辺縁部の自然出血ではない</span>）</li>
+          <li><span class="key">O'LearyのPCR</span>：プラークの<span class="key">付着の有無</span>（<span class="caution">厚さではない</span>）</li>
+          <li><span class="key">歯の動揺度</span>：歯周組織の破壊程度の指標（プローブではなく<span class="key">ピンセット</span>で検査）</li>
+          <li><span class="key">歯根膜腔の拡大</span>：<span class="key">エックス線写真</span>で評価</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115D24</div>
+        <p>歯周組織検査の項目と評価内容の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a BOP ーーーーーーー 歯肉辺縁部の自然出血<br>
+          b 歯の動揺度 ーーーー 歯周組織の破壊程度<br>
+          c O'LearyのPCR ーー プラークの厚さ<br>
+          d プロービング深さ ー 歯肉辺縁からポケット底部までの距離<br>
+          e アタッチメントロス ー 付着の喪失量
+        </div>
+        <div class="answer">正解：BD／DE／BE（いずれも正解）</div>
+        <p class="note">
+          「2つ選べ」だがb・d・eの3つが正しいため、厚労省はBD・DE・BEいずれも正解として採点<br>
+          a：BOPは「プロービング時の出血」であり自然出血ではない<br>
+          c：PCRはプラークの「有無」を見る（厚さではない）
+        </p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C26</div>
+        <p>歯周プローブを用いて評価するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a BOP<br>
+          b 歯の動揺度<br>
+          c プラークの付着状態<br>
+          d アタッチメントレベル<br>
+          e 歯根膜腔の拡大の程度
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p class="note">
+          歯周プローブで評価：PPD、CAL、BOP<br>
+          b：動揺度はピンセットで検査<br>
+          c：プラークは染色液で評価<br>
+          e：歯根膜腔はエックス線で評価
+        </p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A105</div>
+        <p>歯科器具の一部の写真を示す。歯周組織破壊の程度の検査に用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a エキスプローラー<br>
+          b ピンセット<br>
+          c 歯周プローブ<br>
+          d スケーラー<br>
+          e ファーケーションプローブ
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p class="note">
+          歯周プローブ：PPD、CAL、BOPの測定<br>
+          ファーケーションプローブ：根分岐部病変の検査<br>
+          どちらも歯周組織の破壊程度を評価する器具
+        </p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="key">アタッチメントレベル（CAL）</span> = CEJからポケット底部までの距離</li>
+          <li><span class="key">プロービングポケットデプス（PPD）</span> = 歯肉辺縁からプローブ先端までの距離</li>
+          <li><span class="key">アタッチメントロス</span> = 付着の喪失（根尖側への移動）→ 進行・重症度判定</li>
+          <li><span class="key">アタッチメントゲイン</span> = 付着の獲得 → 治療効果の評価</li>
+          <li><span class="highlight">歯周プローブで評価</span>：PPD、CAL、BOP</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

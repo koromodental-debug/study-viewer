@@ -4,6 +4,10 @@
 インデックス生成スクリプト
 HTML/Q&Aファイルをスキャンしてマッピングを構築
 GitHub Pages用にファイルをコピー
+
+Usage:
+  python3 build_index.py              # 通常（legacy + subject両方）
+  python3 build_index.py --exclude-legacy  # subjectのみ
 """
 
 import os
@@ -11,6 +15,7 @@ import re
 import json
 import shutil
 import unicodedata
+import argparse
 from pathlib import Path
 from html.parser import HTMLParser
 
@@ -30,6 +35,10 @@ EXCEL_FILE = BASE_DIR / "歯科国試データベース.xlsx"
 # GitHub Pages用のコピー先
 DEST_HTML_DIR = APP_DIR / "html"
 DEST_QA_DIR = APP_DIR / "qa"
+
+# 科目別コンテンツ用フォルダ
+SUBJECT_HTML_DIR = APP_DIR / "html" / "subject"
+SUBJECT_QA_DIR = APP_DIR / "qa" / "subject"
 
 # 科目マスター（Excelがない場合のフォールバック）
 SUBJECT_MASTER = [
@@ -208,6 +217,74 @@ def find_qa_files():
     return qa_files
 
 
+def find_subject_html_files():
+    """科目別HTMLファイルを検索（html/subject/配下）"""
+    html_files = {}
+    if not SUBJECT_HTML_DIR.exists():
+        return html_files
+
+    for subject_dir in SUBJECT_HTML_DIR.iterdir():
+        if not subject_dir.is_dir():
+            continue
+        subject_name = subject_dir.name
+
+        for file in subject_dir.iterdir():
+            if file.suffix == '.html' and not file.name.startswith('.'):
+                # キーは科目名_ファイル名
+                key = f"{subject_name}_{file.stem}"
+                rel_path = file.relative_to(APP_DIR)
+
+                # Chapterとキーワードを抽出
+                match = re.match(r'(\d+)_([^_]+)_(.+)', file.stem)
+                if match:
+                    chapter_num = match.group(1)
+                    chapter_name = match.group(2)
+                    keyword = match.group(3)
+                    category = f"{subject_name}/{chapter_num}_{chapter_name}"
+                    title = keyword
+                else:
+                    category = subject_name
+                    title = file.stem
+
+                html_files[key] = {
+                    'path': str(rel_path),
+                    'filename': file.name,
+                    'category': category,
+                    'fullpath': file,
+                    'subject': subject_name,
+                    'title': title,
+                    'source': 'subject'
+                }
+
+    return html_files
+
+
+def find_subject_qa_files():
+    """科目別Q&Aファイルを検索（qa/subject/配下）"""
+    qa_files = {}
+    if not SUBJECT_QA_DIR.exists():
+        return qa_files
+
+    for subject_dir in SUBJECT_QA_DIR.iterdir():
+        if not subject_dir.is_dir():
+            continue
+        subject_name = subject_dir.name
+
+        for file in subject_dir.iterdir():
+            if file.suffix == '.txt' and file.name.endswith('_QA.txt'):
+                # キーは科目名_ファイル名（_QA除く）
+                base_name = file.stem.replace('_QA', '')
+                key = f"{subject_name}_{base_name}"
+                rel_path = file.relative_to(APP_DIR)
+                qa_files[key] = {
+                    'path': str(rel_path),
+                    'filename': file.name,
+                    'fullpath': file
+                }
+
+    return qa_files
+
+
 def read_qa_content(filepath):
     """Q&Aファイルの内容を読み込み"""
     try:
@@ -220,11 +297,21 @@ def read_qa_content(filepath):
 
 def copy_files(html_files, qa_files):
     """ファイルをコピー"""
-    # ディレクトリをクリア
+    # ディレクトリをクリア（subjectフォルダは保持）
     if DEST_HTML_DIR.exists():
-        shutil.rmtree(DEST_HTML_DIR)
+        for item in DEST_HTML_DIR.iterdir():
+            if item.name != 'subject':  # subjectフォルダは削除しない
+                if item.is_dir():
+                    shutil.rmtree(item)
+                else:
+                    item.unlink()
     if DEST_QA_DIR.exists():
-        shutil.rmtree(DEST_QA_DIR)
+        for item in DEST_QA_DIR.iterdir():
+            if item.name != 'subject':  # subjectフォルダは削除しない
+                if item.is_dir():
+                    shutil.rmtree(item)
+                else:
+                    item.unlink()
 
     DEST_HTML_DIR.mkdir(parents=True, exist_ok=True)
     DEST_QA_DIR.mkdir(parents=True, exist_ok=True)
@@ -248,7 +335,7 @@ def copy_files(html_files, qa_files):
     return html_mapping, qa_mapping
 
 
-def build_index(html_files, qa_files, html_mapping, qa_mapping, subjects):
+def build_index(html_files, qa_files, html_mapping, qa_mapping, subjects, source='legacy'):
     """インデックスを構築"""
     items = []
     matched_qa = set()
@@ -256,7 +343,11 @@ def build_index(html_files, qa_files, html_mapping, qa_mapping, subjects):
     for key, html_info in html_files.items():
         qa_info = qa_files.get(key)
 
-        title = Path(html_info['filename']).stem.replace('_国試対策まとめ', '').replace('_国試分析', '')
+        # 科目別コンテンツの場合はtitleを使う
+        if html_info.get('source') == 'subject':
+            title = html_info.get('title', Path(html_info['filename']).stem)
+        else:
+            title = Path(html_info['filename']).stem.replace('_国試対策まとめ', '').replace('_国試分析', '')
 
         item = {
             'id': key.lower().replace(' ', '-'),
@@ -264,7 +355,8 @@ def build_index(html_files, qa_files, html_mapping, qa_mapping, subjects):
             'category': html_info['category'],
             'htmlPath': html_mapping.get(key),
             'qaPath': qa_mapping.get(key) if qa_info else None,
-            'searchText': ''
+            'searchText': '',
+            'source': html_info.get('source', source)  # sourceフラグを追加
         }
 
         html_text = extract_html_text(html_info['fullpath'])
@@ -275,10 +367,15 @@ def build_index(html_files, qa_files, html_mapping, qa_mapping, subjects):
             item['searchText'] += ' ' + qa_content
             matched_qa.add(key)
 
-        # 科目を判定
-        subject_name, subject_category = classify_subject(title, item['searchText'], subjects)
-        item['subject'] = subject_name
-        item['subjectCategory'] = subject_category
+        # 科目別コンテンツの場合は科目名をそのまま使う
+        if html_info.get('source') == 'subject':
+            item['subject'] = html_info.get('subject', 'その他')
+            item['subjectCategory'] = '臨床'  # 科目別は臨床科目として扱う
+        else:
+            # 科目を判定
+            subject_name, subject_category = classify_subject(title, item['searchText'], subjects)
+            item['subject'] = subject_name
+            item['subjectCategory'] = subject_category
 
         items.append(item)
 
@@ -299,7 +396,8 @@ def build_index(html_files, qa_files, html_mapping, qa_mapping, subjects):
                 'qaPath': qa_mapping.get(key),
                 'searchText': search_text,
                 'subject': subject_name,
-                'subjectCategory': subject_category
+                'subjectCategory': subject_category,
+                'source': source
             })
 
     # 科目カテゴリ → 科目 → タイトル でソート
@@ -307,36 +405,113 @@ def build_index(html_files, qa_files, html_mapping, qa_mapping, subjects):
     return items
 
 
+def build_subject_index(html_files, qa_files, subjects):
+    """科目別コンテンツのインデックスを構築（コピー不要）"""
+    items = []
+    matched_qa = set()
+
+    for key, html_info in html_files.items():
+        qa_info = qa_files.get(key)
+        title = html_info.get('title', Path(html_info['filename']).stem)
+
+        item = {
+            'id': key.lower().replace(' ', '-'),
+            'title': title,
+            'category': html_info['category'],
+            'htmlPath': html_info['path'],  # 相対パスをそのまま使う
+            'qaPath': qa_info['path'] if qa_info else None,
+            'searchText': '',
+            'source': 'subject',
+            'subject': html_info.get('subject', 'その他'),
+            'subjectCategory': '臨床'
+        }
+
+        html_text = extract_html_text(html_info['fullpath'])
+        item['searchText'] = title + ' ' + html_text
+
+        if qa_info:
+            qa_content = read_qa_content(qa_info['fullpath'])
+            item['searchText'] += ' ' + qa_content
+            matched_qa.add(key)
+
+        items.append(item)
+
+    return items
+
+
 def main():
+    # コマンドライン引数の解析
+    parser = argparse.ArgumentParser(description='Build index for study-viewer')
+    parser.add_argument('--exclude-legacy', action='store_true',
+                        help='科目別コンテンツのみを含める（旧コンテンツを除外）')
+    args = parser.parse_args()
+
     print("Building index for GitHub Pages...")
+    if args.exclude_legacy:
+        print("  Mode: subject only (excluding legacy)")
+    else:
+        print("  Mode: legacy + subject")
 
     # 科目マスターを読み込み
     subjects = load_subject_master()
 
-    html_files = find_html_files()
-    qa_files = find_qa_files()
+    all_items = []
 
-    print(f"Found {len(html_files)} HTML files")
-    print(f"Found {len(qa_files)} Q&A files")
+    # Legacyコンテンツ（旧来のHTML）
+    if not args.exclude_legacy:
+        html_files = find_html_files()
+        qa_files = find_qa_files()
 
-    print("Copying files...")
-    html_mapping, qa_mapping = copy_files(html_files, qa_files)
+        print(f"\nLegacy content:")
+        print(f"  Found {len(html_files)} HTML files")
+        print(f"  Found {len(qa_files)} Q&A files")
 
-    print("Building index with subject classification...")
-    items = build_index(html_files, qa_files, html_mapping, qa_mapping, subjects)
+        print("  Copying files...")
+        html_mapping, qa_mapping = copy_files(html_files, qa_files)
 
-    js_content = f"// Auto-generated by build_index.py\nconst DATA = {json.dumps(items, ensure_ascii=False, indent=2)};\n"
+        print("  Building index...")
+        legacy_items = build_index(html_files, qa_files, html_mapping, qa_mapping, subjects, source='legacy')
+        all_items.extend(legacy_items)
+
+    # 科目別コンテンツ
+    subject_html_files = find_subject_html_files()
+    subject_qa_files = find_subject_qa_files()
+
+    print(f"\nSubject content:")
+    print(f"  Found {len(subject_html_files)} HTML files")
+    print(f"  Found {len(subject_qa_files)} Q&A files")
+
+    if subject_html_files:
+        print("  Building index...")
+        subject_items = build_subject_index(subject_html_files, subject_qa_files, subjects)
+        all_items.extend(subject_items)
+
+    # ソート
+    all_items.sort(key=lambda x: (
+        x.get('source', 'legacy'),  # subjectを先に
+        x.get('subjectCategory', 'その他'),
+        x.get('subject', 'その他'),
+        x['title']
+    ))
+
+    js_content = f"// Auto-generated by build_index.py\nconst DATA = {json.dumps(all_items, ensure_ascii=False, indent=2)};\n"
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(js_content)
 
-    print(f"Generated {OUTPUT_FILE}")
-    print(f"Total items: {len(items)}")
+    print(f"\nGenerated {OUTPUT_FILE}")
+    print(f"Total items: {len(all_items)}")
 
-    with_both = sum(1 for i in items if i['htmlPath'] and i['qaPath'])
-    html_only = sum(1 for i in items if i['htmlPath'] and not i['qaPath'])
-    qa_only = sum(1 for i in items if not i['htmlPath'] and i['qaPath'])
+    # 統計
+    legacy_count = sum(1 for i in all_items if i.get('source') == 'legacy')
+    subject_count = sum(1 for i in all_items if i.get('source') == 'subject')
+    print(f"  Legacy: {legacy_count}")
+    print(f"  Subject: {subject_count}")
+
+    with_both = sum(1 for i in all_items if i['htmlPath'] and i['qaPath'])
+    html_only = sum(1 for i in all_items if i['htmlPath'] and not i['qaPath'])
+    qa_only = sum(1 for i in all_items if not i['htmlPath'] and i['qaPath'])
     print(f"  HTML + Q&A: {with_both}")
     print(f"  HTML only: {html_only}")
     print(f"  Q&A only: {qa_only}")
@@ -344,13 +519,14 @@ def main():
     # 科目別統計
     print(f"\n科目別統計:")
     from collections import Counter
-    subject_counts = Counter(i.get('subject', 'その他') for i in items)
+    subject_counts = Counter(i.get('subject', 'その他') for i in all_items)
     for subj, count in sorted(subject_counts.items(), key=lambda x: -x[1]):
         print(f"  {subj}: {count}")
 
-    print(f"\nFiles copied to:")
-    print(f"  HTML: {DEST_HTML_DIR}")
-    print(f"  Q&A: {DEST_QA_DIR}")
+    if not args.exclude_legacy:
+        print(f"\nFiles copied to:")
+        print(f"  HTML: {DEST_HTML_DIR}")
+        print(f"  Q&A: {DEST_QA_DIR}")
 
 
 if __name__ == '__main__':

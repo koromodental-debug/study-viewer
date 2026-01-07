@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細菌と歯周疾患の疫学特性 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 病因</span>
+    <h1>細菌と歯周疾患の疫学特性</h1>
+    <div class="container">
+
+      <h3>歯周病は多因子性疾患</h3>
+      <p>歯周病の発症・進行には、<span class="key">細菌因子</span>・<span class="key">宿主因子</span>・<span class="key">環境因子</span>の3つが複雑に影響し合う。</p>
+
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">細菌因子</span>（初発因子）</td>
+          <td>歯周病原細菌（P.g., A.a., T.f.など）がバイオフィルムを形成し、病原因子（LPS、プロテアーゼなど）を産生</td>
+        </tr>
+        <tr>
+          <td><span class="key">宿主因子</span></td>
+          <td>局所性修飾因子（歯石、食片圧入など）、全身性修飾因子（年齢、遺伝、全身疾患など）</td>
+        </tr>
+        <tr>
+          <td><span class="key">環境因子</span>（後天的リスク）</td>
+          <td><span class="highlight">喫煙</span>、ストレス、栄養障害、薬物、社会経済的環境</td>
+        </tr>
+      </table>
+
+      <h3>歯周病の疫学的特徴</h3>
+      <ul>
+        <li><span class="highlight">永久歯喪失の主な原因</span>である</li>
+        <li>年齢とともに有病率が上昇（加齢はリスクファクター）</li>
+        <li>歯種により発生率に差がある（大臼歯に多いなど）</li>
+        <li>20歳以下でも歯周炎は認められる（侵襲性歯周炎など）</li>
+      </ul>
+
+      <h3>喫煙と歯周病</h3>
+      <div class="point-box">
+        <div class="point-box-title">喫煙は歯周病の主要なリスクファクター</div>
+        <ul>
+          <li><span class="highlight">喫煙者の歯周炎オッズ比：3.97倍</span></li>
+          <li>受動喫煙のオッズ比：1.57倍</li>
+          <li>喫煙により歯周組織の治癒が遅延</li>
+          <li>歯周外科治療の予後不良因子</li>
+        </ul>
+      </div>
+
+      <h3>糖尿病と歯周病</h3>
+      <div class="point-box">
+        <div class="point-box-title">双方向の関係</div>
+        <ul>
+          <li>糖尿病は歯周病の<span class="highlight">第6番目の合併症</span></li>
+          <li><span class="caution">糖尿病患者の歯周病有病率は高い</span>（×低くない）</li>
+          <li>歯周病は血糖コントロールを悪化させる</li>
+          <li>歯周治療により血糖コントロールが改善する可能性</li>
+        </ul>
+      </div>
+
+      <h3>ペリオドンタルメディシン（歯周医学）</h3>
+      <p>歯周病と全身の健康との関連性を追究する分野。</p>
+      <table>
+        <tr>
+          <th colspan="2">歯周病と関連する全身疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">糖尿病</span></td>
+          <td>双方向の関係、第6番目の合併症</td>
+        </tr>
+        <tr>
+          <td><span class="key">動脈硬化・虚血性心疾患</span></td>
+          <td>冠動脈疾患リスク オッズ比1.5〜2.8倍</td>
+        </tr>
+        <tr>
+          <td>慢性腎臓病</td>
+          <td>メタボリックシンドロームとの関連</td>
+        </tr>
+        <tr>
+          <td>低体重児出産・早産</td>
+          <td>歯周病原細菌・炎症性サイトカインの影響</td>
+        </tr>
+        <tr>
+          <td>誤嚥性肺炎</td>
+          <td>高齢者で特に注意</td>
+        </tr>
+        <tr>
+          <td>骨粗鬆症</td>
+          <td>歯槽骨吸収との関連</td>
+        </tr>
+      </table>
+      <p class="note">※肝炎、中耳炎、胃潰瘍は関連なし</p>
+
+      <div class="question-box">
+        <div class="q-number">102B35</div>
+        <p>歯周炎で正しいのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 喫煙者の有病率は高い。<br>
+          b 糖尿病患者の有病率は低い。<br>
+          c 歯種による発生率に差はない。<br>
+          d 永久歯喪失の主な原因である。<br>
+          e 20歳以下の低年齢群には認められない。
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p class="note">
+          <span class="caution">b×</span>：糖尿病患者の有病率は高い
+          c×：大臼歯に多い
+          e×：侵襲性歯周炎は若年者にも
+        </p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B87</div>
+        <p>ペリオドンタルメディシンに関わる疾患はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 肝炎<br>
+          b 糖尿病<br>
+          c 中耳炎<br>
+          d 胃潰瘍<br>
+          e 冠状動脈疾患
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p class="note">
+          糖尿病と冠状動脈疾患（動脈硬化・虚血性心疾患）がペリオドンタルメディシンの代表的疾患
+        </p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

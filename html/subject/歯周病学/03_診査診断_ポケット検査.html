@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ポケット検査 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --highlight-bg: #FFF9E6;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 診査診断</span>
+    <h1>ポケット検査</h1>
+    <div class="container">
+
+      <h2>1. プロービングとは</h2>
+      <p><span class="key">歯周プローブ</span>で歯肉溝やポケットへ挿入し、その深さなどを探る動作を<span class="key">プロービング</span>という。</p>
+
+      <h3>プロービングの基本</h3>
+      <ul>
+        <li>荷重は<span class="highlight">約25g程度</span>がよいとされる</li>
+        <li>口腔内にフィンガーレストを確保し、歯の長軸に平行に挿入する</li>
+        <li>エックス線写真を参考にしながら行う</li>
+        <li>不適合修復・補綴物、歯石、齲蝕、歯冠や歯根のカントゥアなどは正確な挿入を阻害する</li>
+      </ul>
+
+      <h3>ウォーキングテクニック</h3>
+      <p>ポケットの形態は単純ではないので、歯周プローブを細かく上下に動かしながら近遠心方向に移動させる<span class="key">ウォーキングテクニック</span>を使って探査するとよい。</p>
+
+      <h2>2. プロービングポケットデプス（PPD）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">PPDとPDの違い</div>
+        <ul>
+          <li><span class="key">PPD（プロービングポケットデプス）</span>：歯周プローブを挿入した時の、<span class="highlight">歯肉辺縁</span>から歯周プローブの先端までの距離（臨床的なポケット深さ）</li>
+          <li><span class="key">PD（ポケットデプス）</span>：組織学的に計測した歯肉溝やポケットの深さ</li>
+        </ul>
+        <p class="note">歯周プローブの先端は、結合組織に炎症性細胞の浸潤があれば接合上皮を貫通するので、PPDの深さはPDとは一致しない。</p>
+      </div>
+
+      <h3>測定法</h3>
+      <table>
+        <tr>
+          <th>測定法</th>
+          <th>測定部位</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">6点法</span></td>
+          <td>頬側と舌口蓋側の<span class="key">近心隅角部・中央部・遠心隅角部</span>の計6箇所</td>
+        </tr>
+        <tr>
+          <td>4点法</td>
+          <td>近心・遠心・頬側中央・舌側中央の計4箇所</td>
+        </tr>
+      </table>
+      <p>測定値は<span class="key">mm単位</span>で記録する。</p>
+
+      <h2>3. 歯肉ポケットと歯周ポケット</h2>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>別名</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">歯肉ポケット</span></td>
+          <td>仮性ポケット</td>
+          <td>歯肉炎により、浮腫や線維化による<span class="key">歯肉外形の腫大</span>が原因で生じる</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯周ポケット</span></td>
+          <td>真性ポケット</td>
+          <td><span class="highlight">歯周支持組織の破壊</span>に伴って生じる</td>
+        </tr>
+      </table>
+
+      <h3>歯周ポケットの分類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>ポケット底部の位置</th>
+        </tr>
+        <tr>
+          <td><span class="key">骨縁上ポケット</span></td>
+          <td>ポケット底部が歯槽骨頂より<span class="key">歯冠側</span>に位置</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨縁下ポケット</span></td>
+          <td>ポケット底部が歯槽骨頂より<span class="key">根尖側</span>に位置</td>
+        </tr>
+      </table>
+
+      <h2>4. 歯周プローブで評価できる項目</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">歯周プローブで評価する項目</div>
+        <ul>
+          <li><span class="key">プロービングポケットデプス（PPD）</span></li>
+          <li><span class="key">アタッチメントレベル（CAL）</span></li>
+          <li><span class="key">BOP（プロービング時の出血）</span></li>
+          <li>歯石の沈着状態</li>
+          <li>歯根表面の形状</li>
+          <li>歯槽骨の形態</li>
+        </ul>
+      </div>
+
+      <h2>5. BOP（Bleeding on Probing）</h2>
+      <p><span class="key">BOP</span>は歯肉の炎症の<span class="highlight">初期徴候</span>であり、肉眼的な歯肉の色調や形態の変化よりも<span class="highlight">早期に出現</span>することが多い。</p>
+      <ul>
+        <li>臨床的に炎症の評価をする際の<span class="key">最も確実な指標</span>である</li>
+        <li>近年の研究では、<span class="caution">喫煙によってBOPがマスキング（潜在化）される</span>ことも報告されている</li>
+      </ul>
+
+      <h2>6. 歯周基本治療後のPPD減少理由</h2>
+      <div class="point-box">
+        <div class="point-box-title">PPDが減少する理由</div>
+        <ul>
+          <li><span class="highlight">歯肉炎症の消退</span>（歯肉の腫脹軽減）</li>
+          <li><span class="highlight">上皮性付着量の増加</span>（長い接合上皮による治癒）</li>
+        </ul>
+        <p class="note"><span class="caution">注意</span>：付着歯肉幅の減少、接合上皮の根尖側移動、結合組織性付着の獲得はPPD減少の理由ではない</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C26</div>
+        <p>歯周プローブを用いて評価するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a BOP<br>
+          b 歯の動揺度<br>
+          c プラークの付着状態<br>
+          d アタッチメントレベル<br>
+          e 歯根膜腔の拡大の程度
+        </div>
+        <div class="answer">答え：a, d</div>
+        <p>【解説】歯周プローブで評価できるのはBOP、アタッチメントレベル、PPDなど。動揺度はピンセット、プラークは染色液、歯根膜腔はX線で評価。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C74</div>
+        <p>歯周基本治療後にプロービングデプスが減少する理由はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯肉炎症の消退<br>
+          b 付着歯肉幅の減少<br>
+          c 上皮性付着量の増加<br>
+          d 接合上皮の根尖側移動<br>
+          e 結合組織性付着の獲得
+        </div>
+        <div class="answer">答え：a, c</div>
+        <p>【解説】歯周基本治療後、歯肉の腫脹が消退し、長い接合上皮による治癒が起こることでPPDが減少する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

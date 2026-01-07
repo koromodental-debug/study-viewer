@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>局所修飾因子 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --highlight-bg: #FFF9E6;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 病因</span>
+    <h1>局所修飾因子</h1>
+    <div class="container">
+
+      <h2>1. 局所修飾因子とは</h2>
+      <p><span class="key">局所修飾因子</span>とは、歯周病の発症・進行に関係する<span class="key">口腔内の因子</span>のこと。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">局所修飾因子の分類</div>
+        <ul>
+          <li><span class="key">炎症因子</span>：プラークリテンションファクター（プラーク蓄積因子）</li>
+          <li><span class="key">外傷性因子</span>：外傷性咬合</li>
+        </ul>
+      </div>
+
+      <h2>2. プラークリテンションファクター</h2>
+      <p>プラークの蓄積を促進する因子。炎症因子として歯周病の発症・進行に関与する。</p>
+
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>特徴・機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">歯石</span></td>
+          <td>プラークが石灰化したもの。歯石自体に病原性はないが、プラークが付着しやすくなる</td>
+        </tr>
+        <tr>
+          <td><span class="key">食片圧入</span></td>
+          <td>食物が歯間部に強く押し込まれる状態。<span class="key">接触点不良</span>、辺縁隆線の不揃い、<span class="key">プランジャーカスプ</span>などが原因</td>
+        </tr>
+        <tr>
+          <td><span class="key">口呼吸</span></td>
+          <td>口腔内粘膜が乾燥し自浄作用が低下。上顎口蓋側に<span class="highlight">堤状隆起</span>と呼ばれる腫脹が見られる</td>
+        </tr>
+        <tr>
+          <td><span class="key">不適合修復・補綴物</span></td>
+          <td>カントゥア（歯冠豊隆形態）やマージンの形態不良により、食物残渣の滞留や食片圧入を引き起こす</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯列不正</span></td>
+          <td>叢生、捻転、転位などによりプラークコントロールが困難となる</td>
+        </tr>
+        <tr>
+          <td><span class="key">口腔内の形態異常</span></td>
+          <td>エナメル突起、根面溝、口蓋裂溝、小帯の付着位置異常、口腔前庭狭小など</td>
+        </tr>
+      </table>
+
+      <h3>歯石の分類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>位置</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>歯肉縁上歯石</td>
+          <td>歯肉辺縁より歯冠側</td>
+          <td>黄白色、比較的軟らかい</td>
+        </tr>
+        <tr>
+          <td>歯肉縁下歯石</td>
+          <td>歯肉辺縁より根尖側</td>
+          <td><span class="highlight">暗褐色〜黒色</span>、硬い、歯面に強固に付着</td>
+        </tr>
+      </table>
+
+      <h2>3. 外傷性修飾因子</h2>
+
+      <h3>外傷性咬合と咬合性外傷</h3>
+      <p><span class="key">外傷性咬合</span>とは、歯周組織に障害を引き起こす咬合のこと。外傷性咬合の結果起きる病変を<span class="key">咬合性外傷</span>と呼ぶ。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">外傷性咬合の原因</div>
+        <ul>
+          <li><span class="key">ブラキシズム</span>（歯ぎしり、くいしばり）</li>
+          <li><span class="key">早期接触</span></li>
+          <li>舌や口唇の悪習癖</li>
+          <li>職業の習慣</li>
+        </ul>
+      </div>
+
+      <h2>4. 歯肉退縮の原因</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">歯肉退縮を引き起こす局所修飾因子</div>
+        <ul>
+          <li><span class="highlight">不適切なブラッシング</span>（過度のブラッシング圧）</li>
+          <li><span class="highlight">外傷性咬合</span></li>
+          <li>小帯の付着位置異常</li>
+          <li>口腔前庭狭小</li>
+          <li>歯列不正</li>
+        </ul>
+        <p class="note"><span class="caution">注意</span>：歯肉炎は歯肉退縮の直接的原因ではない</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D7</div>
+        <p>40歳の女性。下顎右側側切歯と犬歯の歯肉退縮を主訴として来院した。これまでに夜間の歯ぎしりを指摘されたことがあったが、矯正治療や歯周治療を受けたことはなかったという。初診時の口腔内写真（別冊No.7A）とエックス線写真（別冊No.7B）を別に示す。歯周組織検査結果の一部を表に示す。<br>
+        歯肉退縮の原因として考えられるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D7_1.png" alt="別冊No.7A">
+          <img src="../../../images/108回_Web画像/108D7_2.png" alt="別冊No.7B">
+        </div>
+        <div class="choices">
+          a 歯肉炎<br>
+          b 外傷性咬合<br>
+          c 口腔前庭狭小<br>
+          d 小帯の付着位置異常<br>
+          e 不適切な歯ブラシの使用
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】歯肉退縮の原因は、不適切なブラッシング、外傷性咬合、小帯付着異常など。<span class="caution">歯肉炎は腫脹を起こすが退縮の原因ではない</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D31</div>
+        <p>48歳の女性。上顎両側側切歯の冷水痛を主訴として来院した。2年前から自覚していたが放置していたという。現在、高血圧症の治療を受けている。初診時の口腔内写真（別冊No.31A）とエックス線写真（別冊No.31B）を別に示す。歯周組織検査結果の一部を表に示す。<br>
+        考えられる原因はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D31_1.png" alt="別冊No.31A">
+          <img src="../../../images/108回_Web画像/108D31_2.png" alt="別冊No.31B">
+        </div>
+        <div class="choices">
+          a 口呼吸<br>
+          b 歯周炎<br>
+          c 降圧薬の服用<br>
+          d 小帯の位置異常<br>
+          e 不適切なブラッシング
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】歯周炎による付着の喪失と不適切なブラッシングが歯肉退縮の原因。<span class="caution">口呼吸は堤状隆起の原因</span>であり退縮ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A86</div>
+        <p>40歳の女性。噛み合わせると上顎左側中切歯が動くことを主訴として来院した。1年前から食事中に違和感があったがそのままにしていたという。検査の結果、慢性歯周炎と診断した。初診時の口腔内写真（別冊No.32A）とエックス線画像（別冊No.32B）を別に示す。歯周組織検査結果の一部を表に示す。<br>
+        └1の病態の主な修飾因子はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112A86_1.png" alt="別冊No.32A">
+          <img src="../../../images/112回_Web画像/112A86_2.png" alt="別冊No.32B">
+        </div>
+        <div class="choices">
+          a 根尖病変<br>
+          b プラーク<br>
+          c 外傷性咬合<br>
+          d セメント質の肥厚<br>
+          e 小帯の付着位置異常
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】歯内-歯周病変では根尖病変と外傷性咬合が修飾因子となる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

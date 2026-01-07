@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細菌叢因子・環境因子 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); break-after: avoid; }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); break-after: avoid; }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      break-inside: avoid;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+      break-inside: avoid;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    /* Socransky's complex colors */
+    .complex-red { background: #FED7D7; color: #C53030; padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+    .complex-orange { background: #FEEBC8; color: #C05621; padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+    .complex-green { background: #C6F6D5; color: #276749; padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+    .complex-yellow { background: #FAF089; color: #975A16; padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+    .complex-purple { background: #E9D8FD; color: #6B46C1; padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+    .warning-box {
+      background: #FEF3C7;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .warning-box .point-box-title { color: #92400E; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 病因</span>
+    <h1>細菌叢因子・環境因子</h1>
+    <div class="container">
+
+      <h2>1. プラークとバイオフィルム</h2>
+
+      <h3>プラーク（デンタルプラーク）</h3>
+      <p>歯周病の原因物質が歯の表面に付着した細菌の塊。1960年代のLöeらの「実験的歯肉炎」臨床実験により、プラークと歯肉炎の因果関係が明らかになった。</p>
+
+      <h3>バイオフィルム</h3>
+      <ul>
+        <li>プラークは口腔内に形成される<span class="key">バイオフィルム</span>と定義できる</li>
+        <li>バイオフィルムとは<span class="key">白色のフィルム状物質</span>で、その中では複数の細菌が様々な環境の中で生き延びている</li>
+        <li>細菌同士で付着・凝集し、<span class="key">細胞外マトリックス</span>の産生などによって互いに機能しながら生息</li>
+      </ul>
+
+      <h3>歯表面への沈着物</h3>
+      <table>
+        <tr><th>種類</th><th>細菌</th><th>特徴</th></tr>
+        <tr><td><span class="key">ペリクル</span>（獲得被膜）</td><td>なし</td><td>唾液の糖タンパク由来、厚さ0.05〜0.8μm</td></tr>
+        <tr><td>色素沈着</td><td>なし</td><td>ステイン</td></tr>
+        <tr><td>食物残渣</td><td>可能</td><td>うがいで除去可能</td></tr>
+        <tr><td>白質（マテリアアルバ）</td><td>あり</td><td>うがいで除去可能</td></tr>
+        <tr><td><span class="key">プラーク</span></td><td>あり</td><td>歯ブラシで除去、<span class="caution">うがいでは除去不可</span></td></tr>
+        <tr><td>歯石</td><td>なし</td><td>プラークが石灰化したもの</td></tr>
+      </table>
+
+      <h2>2. プラークの形成機序</h2>
+
+      <h3>1) ペリクル（獲得被膜）の形成</h3>
+      <p>唾液由来の糖タンパクにより歯の表面にペリクルが形成される（厚さ約0.05〜0.8μm）。</p>
+
+      <h3>2) 初期集落形成細菌群（early colonizer）</h3>
+      <ul>
+        <li>ペリクルに直接吸着するグラム陽性球菌などの細菌群</li>
+        <li>主に<span class="key">唾液中の糖</span>などを栄養源として生息</li>
+        <li>例：連鎖球菌、放線菌</li>
+      </ul>
+
+      <h3>3) 後期集落形成細菌群（late colonizer）</h3>
+      <ul>
+        <li>バイオフィルム形成の遅い時期に初期集落形成細菌群に吸着・凝集</li>
+        <li>糸状菌、紡錘菌、スピロヘータなど</li>
+        <li>歯肉溝浸出液中の<span class="key">タンパク質</span>などを栄養源として生息</li>
+      </ul>
+
+      <h3>4) 細胞外マトリックスの形成</h3>
+      <p>プラークの成熟に伴い、<span class="key">ムタンやグルカン</span>などによって細胞外マトリックスが形成される。これにより細菌間のネットワークが構築される。</p>
+
+      <h2>3. 歯周病原細菌（Socransky's complex）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">Socranskyの細菌複合体（ピラミッド構造）</div>
+        <p style="margin-bottom: 8px;">歯周炎が重度であるほど<span class="complex-red">Red complex</span>の存在下で検出される頻度が高い。</p>
+        <table>
+          <tr><th>複合体</th><th>細菌</th><th>特徴</th></tr>
+          <tr>
+            <td><span class="complex-red">Red complex</span></td>
+            <td><em>P. gingivalis</em><br><em>T. forsythia</em><br><em>T. denticola</em></td>
+            <td><span class="highlight">重度歯周炎と最も関連</span><br>頂点に位置</td>
+          </tr>
+          <tr>
+            <td><span class="complex-orange">Orange complex</span></td>
+            <td><em>P. intermedia</em><br><em>P. nigrescens</em><br><em>F. nucleatum</em><br><em>C. rectus</em> など</td>
+            <td>Red complexへの橋渡し役<br><em>F. nucleatum</em>は共凝集の中心</td>
+          </tr>
+          <tr>
+            <td><span class="complex-green">Green complex</span></td>
+            <td><em>Capnocytophaga</em> spp.<br><em>A. actinomycetemcomitans</em> serotype a<br><em>E. corrodens</em></td>
+            <td>侵襲性歯周炎との関連</td>
+          </tr>
+          <tr>
+            <td><span class="complex-yellow">Yellow complex</span></td>
+            <td><em>Streptococcus</em>属</td>
+            <td>初期定着菌</td>
+          </tr>
+          <tr>
+            <td><span class="complex-purple">Purple complex</span></td>
+            <td><em>V. parvula</em><br><em>A. odontolyticus</em></td>
+            <td>初期定着菌</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C-52</div>
+        <p>Socranskyらの報告による歯肉縁下プラーク細菌の分類で、Red complexに属するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a <em>Porphyromonas gingivalis</em><br>
+          b <em>Prevotella intermedia</em><br>
+          c <em>Tannerella forsythia</em><br>
+          d <em>Eikenella corrodens</em><br>
+          e <em>Fusobacterium nucleatum</em>
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p class="note">b: Orange complex、d: Green complex、e: Orange complex</p>
+      </div>
+
+      <h2>4. 主要な歯周病原細菌</h2>
+
+      <h3><em>Porphyromonas gingivalis</em>（P.g.）</h3>
+      <table>
+        <tr><th>分類</th><td>グラム陰性偏性嫌気性桿菌、黒色色素産生</td></tr>
+        <tr><th>関連疾患</th><td><span class="key">慢性歯周炎</span>（成人）</td></tr>
+        <tr><th>病原因子</th><td>
+          <span class="highlight">線毛</span>（細胞付着能）、
+          <span class="highlight">ジンジパイン</span>（トリプシン様酵素）、
+          <span class="key">コラゲナーゼ</span>、
+          LPS（内毒素）、
+          赤血球凝集能
+        </td></tr>
+        <tr><th>特徴</th><td>白血球の食食作用に抵抗、莢膜を持つ</td></tr>
+      </table>
+
+      <h3><em>Aggregatibacter actinomycetemcomitans</em>（A.a.）</h3>
+      <table>
+        <tr><th>分類</th><td>グラム陰性通性嫌気性桿菌</td></tr>
+        <tr><th>関連疾患</th><td><span class="highlight">侵襲性歯周炎</span>（若年者）、<span class="key">限局型</span></td></tr>
+        <tr><th>病原因子</th><td>
+          <span class="highlight">ロイコトキシン</span>（白血球毒素）、
+          <span class="key">細胞膨化致死毒素（CDT）</span>、
+          コラゲナーゼ、
+          LPS
+        </td></tr>
+        <tr><th>特徴</th><td>比較的プラークコントロールが良好な状態でも検出されうる<br>JP2株（高病原性）はロイコトキシン産生量が多い</td></tr>
+      </table>
+
+      <h3><em>Tannerella forsythia</em>（T.f.）</h3>
+      <table>
+        <tr><th>分類</th><td>グラム陰性偏性嫌気性紡錘状桿菌</td></tr>
+        <tr><th>関連疾患</th><td>慢性歯周炎</td></tr>
+        <tr><th>病原因子</th><td><span class="key">トリプシン様酵素</span>、<span class="key">シアリダーゼ</span></td></tr>
+        <tr><th>旧名</th><td><em>Bacteroides forsythus</em></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111A-67</div>
+        <p><em>Porphyromonas gingivalis</em>の病原因子はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 線毛<br>
+          b 莢膜<br>
+          c ジンジパイン<br>
+          d ロイコトキシン<br>
+          e 細胞膨化致死毒素
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p class="note"><span class="caution">d, e</span>は<em>A. actinomycetemcomitans</em>の病原因子</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A-58</div>
+        <p>ロイコトキシンを産生するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a <em>Porphyromonas gingivalis</em><br>
+          b <em>Prevotella intermedia</em><br>
+          c <em>Tannerella forsythia</em><br>
+          d <em>Treponema denticola</em><br>
+          e <em>Aggregatibacter actinomycetemcomitans</em>
+        </div>
+        <div class="answer">正解：e</div>
+        <p class="note">ロイコトキシン（白血球毒素）は<em>A. actinomycetemcomitans</em>の代表的病原因子</p>
+      </div>
+
+      <h2>5. 歯周病原細菌の条件（修正Koch原則）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">Socranskyらによる歯周病原細菌の条件</div>
+        <ol>
+          <li>病変が進行している時にはその細菌が<span class="key">多数あるいは高率</span>に認められ、健全あるいは病変が進行していない時には<span class="key">少数あるいは低率</span>に認められる</li>
+          <li>その細菌を排除あるいは病原因子に修飾を加えると病態的な変化が生じる</li>
+          <li>その細菌が疾患の進行に<span class="key">先立って</span>検出される</li>
+          <li>細菌に対する<span class="key">免疫反応</span>が認められる</li>
+          <li>その細菌が病原性あるいは疾患の進行に関連した病原因子を産生する</li>
+          <li>その細菌により組織破壊が認められる<span class="key">動物実験モデル</span>が存在する</li>
+        </ol>
+      </div>
+
+      <h2>6. 環境因子（後天的リスクファクター）</h2>
+
+      <table>
+        <tr><th>因子</th><th>歯周病への影響</th></tr>
+        <tr><td><span class="key">喫煙</span></td><td>オッズ比2〜4倍、組織酸素分圧低下、創傷治癒遅延</td></tr>
+        <tr><td><span class="key">ストレス</span></td><td>ANUGとの関連、免疫抑制</td></tr>
+        <tr><td>栄養障害</td><td>ビタミンC欠乏→コラーゲン合成障害<br>カルシウム不足→歯周病リスク30〜60%増加</td></tr>
+        <tr><td>薬物</td><td>免疫抑制剤、抗てんかん薬（フェニトイン）→歯肉増殖</td></tr>
+        <tr><td>社会経済的因子</td><td>低所得層で歯周病罹患率が高い傾向</td></tr>
+      </table>
+
+      <div class="warning-box">
+        <div class="point-box-title">国試で狙われるポイント</div>
+        <ul>
+          <li><span class="complex-red">Red complex</span> = <em>P. gingivalis</em>, <em>T. forsythia</em>, <em>T. denticola</em></li>
+          <li><em>P. gingivalis</em>の病原因子 = <span class="highlight">ジンジパイン</span>、線毛、コラゲナーゼ</li>
+          <li><em>A. actinomycetemcomitans</em>の病原因子 = <span class="highlight">ロイコトキシン</span>、細胞膨化致死毒素（CDT）</li>
+          <li><em>A.a.</em>は<span class="key">侵襲性歯周炎（限局型）</span>と関連</li>
+          <li>プラークは<span class="caution">うがいでは除去できない</span>（歯ブラシが必要）</li>
+          <li><em>F. nucleatum</em>は<span class="key">共凝集の中心的役割</span>を果たす</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

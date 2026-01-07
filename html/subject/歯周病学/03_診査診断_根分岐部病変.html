@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>根分岐部病変 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 診査診断</span>
+    <h1>根分岐部病変</h1>
+    <div class="container">
+
+      <h3>定義</h3>
+      <p>多（複）根歯の<span class="key">根間中隔に歯周病や歯髄疾患による病変が波及した状態</span>を根分岐部病変という。上顎の大臼歯や小臼歯、下顎の大臼歯（2根もしくは3根に分岐）に発生する。</p>
+
+      <h3>根分岐部病変の分類</h3>
+      <h2>Glickmanの分類（1958）</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>病変の程度</th>
+        </tr>
+        <tr>
+          <td><span class="key">1級</span></td>
+          <td>病変があるが、臨床的・X線的に<span class="key">異常を認めない</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">2級</span></td>
+          <td>歯槽骨の破壊・吸収があるが、歯周プローブは<span class="key">貫通しない</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">3級</span></td>
+          <td>歯周プローブが<span class="key">貫通</span>するが、根分岐部は<span class="key">歯肉で覆われている</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">4級</span></td>
+          <td>根分岐部が<span class="highlight">口腔内に露出</span>し、歯周プローブが貫通する</td>
+        </tr>
+      </table>
+
+      <h2>Lindhe & Nymanの分類（1982）</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>水平的組織破壊</th>
+          <th>プローブの状態</th>
+        </tr>
+        <tr>
+          <td><span class="key">1度</span></td>
+          <td><span class="highlight">歯の幅径の1/3以内</span></td>
+          <td>わずかに挿入可能</td>
+        </tr>
+        <tr>
+          <td><span class="key">2度</span></td>
+          <td>歯の幅径の1/3を超える</td>
+          <td>深く挿入可能だが<span class="key">貫通しない</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">3度</span></td>
+          <td>付着が完全に破壊</td>
+          <td>頬舌的/近遠心的に<span class="highlight">貫通</span>する</td>
+        </tr>
+      </table>
+      <p class="note">※これらの分類は、病変の進行程度の把握や予後判定、治療法選択の指針として重要</p>
+
+      <h3>根分岐部病変の原因</h3>
+      <table>
+        <tr>
+          <th>原因分類</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="key">直接原因</span></td>
+          <td>プラーク</td>
+        </tr>
+        <tr>
+          <td><span class="key">修飾因子</span></td>
+          <td>プラークリテンションファクター、外傷性咬合</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯髄疾患</span></td>
+          <td>副根管（髄管）や細枝を経由した感染</td>
+        </tr>
+        <tr>
+          <td><span class="key">解剖学的形態</span></td>
+          <td><span class="key">エナメル突起</span>（下顎大臼歯頬側に多い）、エナメル滴、<span class="key">根面溝</span>（下顎大臼歯ほぼ100%）、根間稜（70%以上）、樋状根</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">検査・診断のポイント</div>
+        <p><span class="key">1. エックス線検査</span></p>
+        <ul>
+          <li>根分岐部の透過像から病変の有無、進行状況を読影</li>
+          <li>上顎歯は頬側と口蓋側の歯槽骨が重なり不鮮明になりやすい</li>
+        </ul>
+        <p><span class="key">2. プロービング検査</span></p>
+        <ul>
+          <li><span class="key">使用器具</span>：<span class="highlight">ファーケーションプローブ</span>（根分岐部の形態に適合）</li>
+          <li>通常の歯周プローブは垂直方向には適するが、水平方向は隆起部が障害となる</li>
+        </ul>
+        <p><span class="key">3. 検査項目</span></p>
+        <ul>
+          <li><span class="key">ルートトランク</span>：CEJから根分岐部入口までの距離（長いと病変は生じにくいが、生じると保存困難）</li>
+          <li><span class="key">歯根離開度・歯根間距離</span>：大きいと器具が到達しやすく処置が容易</li>
+          <li><span class="key">解剖学的形態</span>：エナメル突起、根面溝、根間稜</li>
+          <li>破折・穿孔、歯髄疾患との関連、外傷性咬合、歯冠歯根比</li>
+        </ul>
+      </div>
+
+      <h3>治療法の選択</h3>
+      <table>
+        <tr>
+          <th>Lindhe分類</th>
+          <th>治療法</th>
+        </tr>
+        <tr>
+          <td><span class="key">1度</span></td>
+          <td>スケーリング・ルートプレーニング、フラップ手術</td>
+        </tr>
+        <tr>
+          <td><span class="key">2度</span></td>
+          <td><span class="highlight">歯周組織再生療法（GTR法）</span>、骨移植、ルートセパレーション、トンネリング</td>
+        </tr>
+        <tr>
+          <td><span class="key">3度</span></td>
+          <td>トンネリング、ルートセパレーション、ヘミセクション、抜歯</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105D38</div>
+        <p>67歳の女性。下顎右側第一大臼歯部の歯肉腫脹を主訴として来院した。自発痛はないという。<br>
+        行うべき検査はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 透照診<br>
+          b 切削診<br>
+          c 波動の触診<br>
+          d 歯髄電気診<br>
+          e 歯周ポケット検査
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p class="note">
+          下顎大臼歯部の歯肉腫脹 → 歯周病変か歯内病変かの鑑別が必要<br>
+          d：歯髄電気診で歯髄の生死を確認（歯髄疾患が原因の場合もある）<br>
+          e：歯周ポケット検査で歯周病変の有無を確認<br>
+          根分岐部病変が疑われる場合はファーケーションプローブも使用
+        </p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D53</div>
+        <p>LindheとNymanの根分岐部病変の分類と治療法の組合せで適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1度 ーーー 歯根分離<br>
+          b 1度 ーーー ルートリセクション<br>
+          c 2度 ーーー 歯周組織再生療法<br>
+          d 2度 ーーー トンネリング<br>
+          e 3度 ーーー 歯周ポケット掻爬
+        </div>
+        <div class="answer">正解：c</div>
+        <p class="note">
+          1度：SRP、フラップ手術（歯根分離・リセクションは過剰治療）<br>
+          2度：GTR法（歯周組織再生療法）が適応<br>
+          3度：トンネリング、ヘミセクションなど（ポケット掻爬では不十分）
+        </p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="key">根分岐部病変</span> = 複根歯の根間中隔への病変波及（歯周病 or 歯髄疾患）</li>
+          <li><span class="key">検査</span>：ファーケーションプローブ（水平方向）+ エックス線（垂直方向）</li>
+          <li><span class="key">Glickman分類</span>：1〜4級（4級は口腔内露出）</li>
+          <li><span class="key">Lindhe分類</span>：1度（1/3以内）、2度（1/3超・貫通せず）、3度（貫通）</li>
+          <li><span class="highlight">2度の治療</span>：<span class="highlight">歯周組織再生療法（GTR法）</span>が適応</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

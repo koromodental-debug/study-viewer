@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>全身疾患をもつ患者への対応 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 歯周基本治療・再評価</span>
+    <h1>全身疾患をもつ患者への対応</h1>
+    <div class="container">
+
+      <h2>有病者の歯周治療の原則</h2>
+      <p>高齢者は複数の基礎疾患を有していることが多く、多種類の薬を服用している場合もある。診療時のリスクが高いため、事前に主治医と対診し、注意事項を十分に把握しておく必要がある。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">有病者への対応の基本</div>
+        <ul>
+          <li>健常者と比べ診療時のリスクが高い</li>
+          <li>当日の体調チェック（血圧や脈拍などのモニタリング）</li>
+          <li>服用薬との相互作用に注意</li>
+          <li>主治医との対診が必須</li>
+        </ul>
+      </div>
+
+      <h2>注意すべき疾患と主な注意事項</h2>
+
+      <h3>循環器疾患</h3>
+      <table>
+        <tr><th>疾患</th><th>注意事項</th></tr>
+        <tr><td>高血圧症</td><td><span class="highlight">Ca拮抗薬による歯肉増殖</span>、β遮断薬と局所麻酔薬の相互作用</td></tr>
+        <tr><td>慢性心不全</td><td>抗凝固薬、抗血小板薬による<span class="key">出血傾向</span></td></tr>
+        <tr><td>心房細動</td><td>抗凝固薬、抗血小板薬による出血傾向</td></tr>
+      </table>
+
+      <h3>代謝性疾患</h3>
+      <table>
+        <tr><th>疾患</th><th>注意事項</th></tr>
+        <tr><td>糖尿病</td><td><span class="key">低血糖症状</span>、口腔乾燥症、<span class="highlight">術後感染症</span></td></tr>
+        <tr><td>骨粗鬆症</td><td>BP製剤・デノスマブ服用者の<span class="caution">顎骨壊死（MRONJ）</span></td></tr>
+      </table>
+
+      <h3>その他の疾患</h3>
+      <table>
+        <tr><th>疾患</th><th>注意事項</th></tr>
+        <tr><td>脳血管障害</td><td>降圧薬、抗凝固薬、糖尿病薬等の服用薬の確認</td></tr>
+        <tr><td>呼吸器疾患</td><td>感染予防、処方薬の制限（禁忌薬の確認）</td></tr>
+        <tr><td>神経・筋疾患</td><td>誤嚥性誤嚥、治療中の血圧変動、誤嚥・誤飲</td></tr>
+        <tr><td>精神疾患</td><td>服薬による口腔乾燥症</td></tr>
+        <tr><td>認知症</td><td>家族との連携</td></tr>
+      </table>
+
+      <h2>糖尿病患者への対応</h2>
+      <p>60歳以上の約20%が糖尿病を指摘されている。<span class="highlight">糖尿病は歯周病のリスクファクター</span>であると同時に、<span class="highlight">歯周病は糖尿病の6番目の合併症</span>である。歯周治療を行うことは血糖値のコントロール改善に影響を与える。</p>
+      <p class="note"><span class="caution">注意</span>：治療中は低血糖や糖尿病性昏睡に注意する。</p>
+
+      <h2>骨粗鬆症患者への対応</h2>
+      <p>ビスホスホネート（BP）製剤や抗RANKL抗体（デノスマブ）服用者には<span class="caution">顎骨壊死（MRONJ）</span>のリスクがある。歯科治療を行い感染源を除去し、口腔を清潔に保つことが重要。</p>
+      <p class="note"><span class="caution">注意</span>：観血的処置時の対応について明確なガイドラインはなく、常に最新の情報を確認する。</p>
+
+      <h2>妊婦への対応</h2>
+      <p><span class="key">妊娠性歯肉炎</span>は妊娠期に発症する歯肉炎で、ホルモンバランスの変化により歯肉の炎症が起こりやすくなる。</p>
+      <ul>
+        <li>まずブラッシング指導を行う</li>
+        <li>次にスケーリングを実施</li>
+        <li>酸性NSAIDsの投与は避ける</li>
+        <li>妊娠中期（安定期）での治療が望ましい</li>
+      </ul>
+
+      <h2>薬物性歯肉増殖症</h2>
+
+      <h3>原因薬物と特徴</h3>
+      <table>
+        <tr><th>薬物</th><th>薬理効果</th><th>対象疾患</th><th>発現率</th></tr>
+        <tr><td><span class="key">フェニトイン</span></td><td>抗けいれん作用</td><td>てんかん</td><td><span class="highlight">50%</span></td></tr>
+        <tr><td><span class="key">ニフェジピン</span></td><td>血管拡張作用</td><td>高血圧症、狭心症</td><td>20%</td></tr>
+        <tr><td><span class="key">シクロスポリンA</span></td><td>免疫抑制作用</td><td>臓器移植、自己免疫疾患</td><td>30%</td></tr>
+      </table>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>固く締まった<span class="key">線維性</span>の歯肉増大</li>
+        <li>前歯部に現れやすい</li>
+        <li>服用後<span class="highlight">3か月程度</span>で発症</li>
+        <li>プラークの存在で増殖が著しくなる</li>
+      </ul>
+
+      <h3>治療の流れ</h3>
+      <div class="point-box">
+        <div class="point-box-title">薬物性歯肉増殖症の治療</div>
+        <p>① 内科主治医への問い合わせ（薬物変更の可能性）<br>
+        ② <span class="highlight">口腔清掃指導</span>（プラークコントロール）<br>
+        ③ スケーリング・ルートプレーニング<br>
+        ④ 再評価<br>
+        ⑤ 必要に応じて歯肉切除術またはフラップ手術</p>
+      </div>
+      <p class="note"><span class="caution">重要</span>：軽度の場合、薬物変更と歯周基本治療で歯肉増殖が消退することがある。</p>
+
+      <h3>鑑別が必要な疾患</h3>
+      <ul>
+        <li>炎症に伴う歯肉増殖</li>
+        <li>妊娠性歯肉炎</li>
+        <li>白血病性歯肉炎（易出血性が特徴）</li>
+        <li>歯肉線維腫症（遺伝性・特発性）</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105B52</div>
+        <p>32歳の女性。全顎にわたる歯肉の腫脹を主訴として来院した。7歳時に、てんかんを発症し通院服薬中であるという。歯周ポケットの深さは平均3.5mmで、エックス線検査で骨吸収を認めない。初診時の口腔内写真（別冊No.51）を別に示す。<br>
+        服用中の薬物とまず行うべき対応との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B52.png" alt="別冊No.51">
+        </div>
+        <div class="choices">
+          a ニフェジピン－歯肉切除術<br>
+          b ニフェジピン－口腔清掃指導<br>
+          c ニフェジピン－ルートプレーニング<br>
+          d フェニトイン－歯肉切除術<br>
+          e フェニトイン－口腔清掃指導
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】てんかん患者が服用する抗けいれん薬は<span class="key">フェニトイン</span>。骨吸収がなくポケットも浅いため、まず<span class="highlight">口腔清掃指導</span>から始める。プラークコントロールで改善しない場合に歯肉切除術を検討する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D78</div>
+        <p>60歳の女性。前歯部の歯肉腫脹を主訴として来院した。6か月前に降圧薬を服用してから自覚するようになったが、痛みがないためにそのままにしていたという。プロービングの深さは上下前歯部唇舌口蓋側近遠心で6〜8mm、中央部で4〜5mm、プロービング時には全測定部位で出血を認めた。初診時の口腔内写真（別冊No.27）を別に示す。<br>
+        まず行うのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114D78.png" alt="別冊No.27">
+        </div>
+        <div class="choices">
+          a 歯肉切除術<br>
+          b 口腔清掃指導<br>
+          c フラップ手術<br>
+          d 抗菌薬の局所投与<br>
+          e スケーリング・ルートプレーニング
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】降圧薬（Ca拮抗薬）による<span class="key">薬物性歯肉増殖症</span>。ポケットが深くBOPもあるため、まず<span class="highlight">口腔清掃指導</span>と<span class="highlight">SRP</span>を行う。歯肉切除術やフラップ手術は歯周基本治療後の再評価で検討する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A46</div>
+        <p>28歳の女性。ブラッシング時の歯肉出血を主訴として来院した。妊娠9か月だという。歯周組織検査の結果、ポケット深さは全顎的に3mm以下であった。まず、ブラッシング指導を行った。初診時の口腔内写真（別冊No.5）を別に示す。<br>
+        次に行う対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108A46.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a 歯肉切除<br>
+          b スケーリング<br>
+          c ルートプレーニング<br>
+          d 酸性NSAIDsの投与<br>
+          e オーラルスクリーンの使用
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">妊娠性歯肉炎</span>。ポケットが3mm以下と浅いため、ブラッシング指導後は<span class="highlight">スケーリング</span>を行う。<span class="caution">酸性NSAIDsは妊婦に禁忌</span>（動脈管早期閉鎖のリスク）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

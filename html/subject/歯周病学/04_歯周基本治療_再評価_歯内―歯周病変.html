@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯内―歯周病変 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 歯周基本治療・再評価</span>
+    <h1>歯内―歯周病変</h1>
+    <div class="container">
+
+      <h3>定義</h3>
+      <p><span class="key">歯内-歯周病変</span>（endo-perio lesion）とは、歯内病変または歯周病によって生じる病変であり、<span class="highlight">両疾患が複合した複雑な病変</span>を示す疾患。歯周炎が進展すると、歯周ポケットから根管側枝や根尖孔を介して歯内病変を誘発することがある。</p>
+
+      <h3>感染経路</h3>
+      <ul>
+        <li><span class="key">副根管（側枝）</span>：主根管より分枝した細管。管外側枝は歯根面の側面に開口し歯根膜組織と交通</li>
+        <li><span class="key">根尖孔</span>：歯髄病変が根尖を経路として根尖周囲組織の炎症性疾患を引き起こす</li>
+        <li><span class="key">歯周ポケット</span>：深い歯周ポケットから副根管や根尖孔を経由して歯髄に感染が波及</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">歯内-歯周病変の3分類（国試頻出）</div>
+        <ul>
+          <li><span class="highlight">歯内病変由来型</span>：歯内病変が原因 → 次いで歯周病が発症</li>
+          <li><span class="highlight">歯周病由来型</span>：歯周病が原因 → 次いで歯内病変が発症（<span class="caution">上行性歯髄炎</span>）</li>
+          <li><span class="highlight">複合型</span>：歯内病変と歯周病がそれぞれ独立して発症し、その後合併</li>
+        </ul>
+      </div>
+
+      <h3>各型の臨床症状と特徴</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>歯髄</th>
+          <th>打診痛</th>
+          <th>エックス線所見</th>
+        </tr>
+        <tr>
+          <td><span class="key">歯内病変由来型</span></td>
+          <td>失活</td>
+          <td>垂直打診痛</td>
+          <td>根尖部や根分岐部、根尖部から片側の歯槽骨への透過像</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯周病由来型</span></td>
+          <td>生活（異常反応）or 失活</td>
+          <td>水平打診痛</td>
+          <td>歯槽骨頂部より根尖部に至る透過像</td>
+        </tr>
+        <tr>
+          <td><span class="key">複合型</span></td>
+          <td>失活</td>
+          <td>水平＋垂直</td>
+          <td>歯槽骨頂より根尖部に至る透過像</td>
+        </tr>
+      </table>
+
+      <h3>上行性歯髄炎（逆行性歯髄炎）</h3>
+      <p><span class="key">上行性歯髄炎</span>とは、深い歯周ポケットから副根管（側枝）や根尖孔を経由して歯髄に感染が波及し発症する歯髄炎。<span class="highlight">歯周病由来型</span>の歯内-歯周病変で見られる。</p>
+      <ul>
+        <li>歯髄電気診で<span class="highlight">生活反応を示す</span>（または異常反応）</li>
+        <li>自発痛、温熱痛などの歯髄炎症状を呈する</li>
+        <li>治療：<span class="highlight">まず抜髄</span>を行う</li>
+      </ul>
+
+      <h3>治療方針（国試最重要）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>治療方針</th>
+        </tr>
+        <tr>
+          <td><span class="key">歯内病変由来型</span></td>
+          <td><span class="highlight">まず歯内治療（感染根管治療）</span>を行い、経過観察。積極的な歯周治療は行わない</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯周病由来型</span></td>
+          <td><span class="highlight">歯内治療と歯周治療の両方</span>。上行性歯髄炎の症状があれば<span class="caution">まず歯内治療を優先</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">複合型</span></td>
+          <td>歯内治療と歯周治療の両方を行う</td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">重要</span>：歯周外科治療に先立って、感染根管治療・口腔清掃指導・SRPを行う（歯周基本治療の完了が前提）</p>
+
+      <h3>検査と鑑別診断</h3>
+      <ul>
+        <li><span class="key">歯髄電気診</span>：生死を判定。生活反応あり→歯周病由来型を疑う</li>
+        <li><span class="key">エックス線検査</span>：骨破壊の部位と形態、根尖病変の有無</li>
+        <li><span class="key">瘻孔からのプローブ挿入</span>：先端が根尖部へ→歯内病変由来型、歯頸部から根尖部の歯面に到達→歯周病由来型</li>
+        <li><span class="key">歯周組織検査</span>：ポケットの深さ、アタッチメントロス</li>
+      </ul>
+
+      <h2>関連過去問</h2>
+      <div class="question-box">
+        <div class="q-number">115C62</div>
+        <p>65歳の女性。上顎右側第一大臼歯の自発痛を主訴として来院した。1年前から時々軽度の自発痛を自覚していたが、昨夜就寝後から症状が強くなり、熱いものを口に入れると増悪するという。打診痛を認め、歯髄電気診で生活反応を示した。初診時の口腔内写真（別冊No.23A）とエックス線画像（別冊No.23B）を別に示す。歯周組織検査結果の一部を表に示す。<br>
+        まず行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C62_1.png" alt="別冊No.23A">
+          <img src="../../../images/115回_Web画像/115C62_2.png" alt="別冊No.23B">
+        </div>
+        <div class="choices">
+          a 局所薬物配送システム〈LDDS〉<br>
+          b スケーリング・ルートプレーニング<br>
+          c 抜髄<br>
+          d 歯根切除<br>
+          e 抜歯
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">歯髄電気診で生活反応を示す</span>＋<span class="key">自発痛・温熱痛</span>＋<span class="key">深い歯周ポケット</span>→<span class="highlight">上行性歯髄炎（歯周病由来型）</span>を疑う。まず<span class="highlight">抜髄</span>を行い、歯髄炎症状を除去する。その後、歯周治療を行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B51</div>
+        <p>53歳の男性。上顎右側第一小臼歯の違和感を主訴として来院した。3か月前から自覚していたがそのままにしていたという。４」は歯髄電気診で生活反応を示さなかった。検査の結果、慢性歯周炎と診断し、歯周基本治療を行うこととした。初診時の口腔内写真（別冊No.18A）とエックス線画像（別冊No.18B）を別に示す。歯周組織検査結果の一部を表に示す。<br>
+        まず行うのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116B51_1.png" alt="別冊No.18A">
+          <img src="../../../images/116回_Web画像/116B51_2.png" alt="別冊No.18B">
+        </div>
+        <div class="choices">
+          a 暫間固定<br>
+          b 感染根管治療<br>
+          c 口腔清掃指導<br>
+          d フッ化物歯面塗布<br>
+          e スケーリング・ルートプレーニング
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】<span class="key">歯髄電気診で生活反応なし</span>→歯髄壊死。歯周基本治療として、<span class="highlight">感染根管治療</span>と<span class="highlight">口腔清掃指導</span>をまず行う。SRPは口腔清掃指導の後に行うべき処置。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107B22</div>
+        <p>45歳の男性。下顎右側臼歯部の違和感と出血とを主訴として来院した。6┐は打診痛があり、歯髄電気診に反応しなかった。初診時の口腔内写真（別冊No.22A）とエックス線写真（別冊No.22B）とを別に示す。初診時の歯周組織検査結果の一部を表に示す。<br>
+        歯周外科治療に先立って行うべき処置はどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107B22_1.png" alt="別冊No.22A">
+          <img src="../../../images/107回_Web画像/107B22_2.png" alt="別冊No.22B">
+        </div>
+        <div class="choices">
+          a 抜髄<br>
+          b 口腔清掃指導<br>
+          c 感染根管治療<br>
+          d ファルカプラスティ<br>
+          e スケーリング・ルートプレーニング
+        </div>
+        <div class="answer">正解：b, c, e</div>
+        <p>【解説】<span class="key">歯髄電気診に反応なし</span>→歯髄壊死。歯周外科治療の前に<span class="highlight">歯周基本治療</span>（口腔清掃指導、感染根管治療、SRP）を完了させる必要がある。抜髄は生活歯髄に対する処置であり、失活歯には<span class="caution">感染根管治療</span>を行う。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

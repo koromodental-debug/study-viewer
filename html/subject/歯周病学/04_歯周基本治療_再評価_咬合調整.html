@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>咬合調整 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 歯周基本治療・再評価</span>
+    <h1>咬合調整</h1>
+    <div class="container">
+
+      <h3>咬合治療の目的</h3>
+      <p>咀嚼に必要な咬合運動やブラキシズムなどの習癖による<span class="key">咬合性外傷</span>を除去し、歯周炎を増悪させないようにすること。</p>
+
+      <h3>基本用語</h3>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>定義</th>
+        </tr>
+        <tr>
+          <td><span class="key">外傷性咬合</span></td>
+          <td>咬合性外傷を生じさせる咬合（<span class="highlight">原因</span>）</td>
+        </tr>
+        <tr>
+          <td><span class="key">咬合性外傷</span></td>
+          <td>咬合運動により歯と歯周組織に生じる外傷（<span class="highlight">結果</span>）</td>
+        </tr>
+        <tr>
+          <td><span class="key">早期接触</span></td>
+          <td>咬頭嵌合位に至る過程で特定の歯が早期に接触すること</td>
+        </tr>
+        <tr>
+          <td><span class="key">咬合干渉</span></td>
+          <td>側方や前方運動などの偏心位において、正常な機能運動を障害する歯の接触状態</td>
+        </tr>
+        <tr>
+          <td><span class="key">フレミタス</span></td>
+          <td>咬合時に歯が突き上げられる感覚・動揺</td>
+        </tr>
+      </table>
+
+      <h3>咬合性外傷に対する咬合調整の3原則</h3>
+      <ul>
+        <li><span class="highlight">早期接触や咬合干渉の除去</span></li>
+        <li>過度の咬合力がかかる<span class="highlight">負担過重</span>（主に臼歯の偏位力）の除去</li>
+        <li><span class="highlight">ブラキシズム</span>による過度な力のコントロール</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">BULLの法則（国試最頻出）</div>
+        <p>作業側で早期接触や咬合干渉の見られる歯の削合部位：</p>
+        <ul>
+          <li><span class="highlight">上顎</span>：<span class="highlight">頬側咬頭内斜面</span>（Buccal Upper）</li>
+          <li><span class="highlight">下顎</span>：<span class="highlight">舌側咬頭内斜面</span>（Lingual Lower）</li>
+        </ul>
+        <p class="note">覚え方：BULL = <span class="key">B</span>uccal <span class="key">U</span>pper, <span class="key">L</span>ingual <span class="key">L</span>ower</p>
+      </div>
+
+      <h3>Jankelsonの分類（咬頭嵌合位での早期接触）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>接触部位</th>
+          <th>削合部位</th>
+        </tr>
+        <tr>
+          <td><span class="key">I級</span></td>
+          <td>上顎頬側咬頭外斜面 vs 下顎頬側咬頭外斜面</td>
+          <td>外斜面を削合</td>
+        </tr>
+        <tr>
+          <td><span class="key">II級</span></td>
+          <td>上顎舌側咬頭内斜面 vs 下顎舌側咬頭内斜面</td>
+          <td>外斜面を削合</td>
+        </tr>
+        <tr>
+          <td><span class="key">III級</span></td>
+          <td>内斜面同士の接触</td>
+          <td>上顎舌側咬頭頬側斜面 or 下顎頬側咬頭舌側斜面</td>
+        </tr>
+      </table>
+
+      <h3>咬頭嵌合位の調整原則</h3>
+      <ul>
+        <li>早期接触をなくす</li>
+        <li>偏位力を少なくする</li>
+        <li>固有咬合面の大きさをなるべく小さくする</li>
+        <li>咬合面の咬頭傾斜を緩くする</li>
+      </ul>
+
+      <h3>動揺度別の対応</h3>
+      <table>
+        <tr>
+          <th>動揺度</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td>正常〜軽度</td>
+          <td>歯肉炎症の有無を確認。炎症があれば歯周基本治療後に再評価して咬合調整</td>
+        </tr>
+        <tr>
+          <td><span class="caution">2度以上</span></td>
+          <td><span class="highlight">ただちに暫間固定</span>を併用して咬合の安定を図る</td>
+        </tr>
+      </table>
+
+      <h3>ブラキシズムへの対応</h3>
+      <p>咬合調整でブラキシズムを止めることは困難。歯周組織への障害を軽減するために<span class="highlight">オクルーザルスプリント</span>の使用が一般的。</p>
+
+      <h2>関連過去問</h2>
+      <div class="question-box">
+        <div class="q-number">112B61</div>
+        <p>二次性咬合性外傷を伴う正常被蓋の歯に対して咬合調整を行うこととした。<br>
+        側方運動時作業側における削合部位はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 下顎頬側咬頭内斜面<br>
+          b 下顎舌側咬頭内斜面<br>
+          c 上顎頬側咬頭外斜面<br>
+          d 上顎頬側咬頭内斜面<br>
+          e 上顎舌側咬頭内斜面
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】<span class="key">BULLの法則</span>に従う。作業側で咬合干渉がある場合、<span class="highlight">上顎は頬側咬頭内斜面（Buccal Upper）</span>、<span class="highlight">下顎は舌側咬頭内斜面（Lingual Lower）</span>を削合する。「BULL」で覚える。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C55</div>
+        <p>43歳の女性。下顎左側小臼歯部の違和感を主訴として来院した。2年前から内科で糖尿病の治療を受けているという。歯周基本治療終了後の再評価時のHbA1cは7.5％であった。再評価時の口腔内写真（別冊No.21A）とエックス線画像（別冊No.21B）を別に示す。再評価時の歯周組織検査結果の一部を表に示す。<br>
+        次に行うのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C55_1.png" alt="別冊No.21A">
+          <img src="../../../images/114回_Web画像/114C55_2.png" alt="別冊No.21B">
+        </div>
+        <div class="choices">
+          a 骨移植術<br>
+          b 抗菌薬の局所投与<br>
+          c オクルーザルスプリントの装着<br>
+          d スケーリング・ルートプレーニング<br>
+          e エナメルマトリックスタンパク質の応用
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】歯周基本治療後の再評価で残存ポケットがある場合、<span class="highlight">追加のSRP</span>と<span class="highlight">抗菌薬の局所投与（LDDS）</span>を行う。糖尿病患者ではHbA1c 7.5%は血糖コントロール不十分だが、歯周治療は継続可能。オクルーザルスプリントはブラキシズムの所見がある場合に検討。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

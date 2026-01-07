@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>フラップ手術 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 歯周外科治療</span>
+    <h1>フラップ手術</h1>
+    <div class="container">
+
+      <h2>定義</h2>
+      <p><span class="key">フラップ手術</span>（flap surgery）とは、歯周病変部の歯根面や歯槽骨欠損部の<span class="highlight">視野の確保</span>ならびに<span class="highlight">器具の到達性</span>を容易にするために骨膜を含んだ全層弁、または部分層弁を形成・翻転後、原因因子および病変の除去、あるいは改善などを図る歯周外科治療である。</p>
+
+      <h2>意義</h2>
+      <p>非外科的歯周治療では除去困難な深い歯周ポケットがある部位からの細菌や病変部の除去が可能であり、歯周外科治療の基本テクニックである。根分岐部病変の治療、骨移植術、GTR法や歯周形成手術の習得にも不可欠。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">適応症</div>
+        <ul>
+          <li><span class="highlight">4mm以上</span>の歯周ポケット</li>
+          <li>垂直性骨吸収</li>
+          <li>高度な水平性骨吸収</li>
+          <li>歯槽骨の形態異常</li>
+          <li>根分岐部病変</li>
+        </ul>
+      </div>
+
+      <h2>フラップの分類</h2>
+
+      <h3>骨膜の有無による分類</h3>
+      <table>
+        <tr><th>種類</th><th>構成</th><th>歯槽骨</th></tr>
+        <tr><td><span class="key">全層弁</span>（粘膜骨膜弁）</td><td>骨膜を含む</td><td>露出する</td></tr>
+        <tr><td><span class="key">部分層弁</span>（粘膜弁）</td><td>骨膜を含まない</td><td>露出しない</td></tr>
+      </table>
+
+      <h3>形態による分類</h3>
+      <table>
+        <tr><th>種類</th><th>切開法</th></tr>
+        <tr><td>エンベロップフラップ</td><td>水平切開のみで封筒状に翻転</td></tr>
+        <tr><td>三角（トライアンギュラー）フラップ</td><td>水平切開＋片側に縦切開</td></tr>
+        <tr><td>フルフラップ</td><td>水平切開＋両側に縦切開</td></tr>
+      </table>
+
+      <h3>フラップの戻す位置による分類</h3>
+      <table>
+        <tr><th>位置</th><th>目的・適応</th></tr>
+        <tr><td>元の位置</td><td>通常のフラップ手術</td></tr>
+        <tr><td>歯冠側</td><td>露出歯根面の被覆（十分な角化歯肉幅が必要）</td></tr>
+        <tr><td>根尖側</td><td>付着歯肉幅の増加、ポケット除去（角化歯肉幅が狭くても可能）</td></tr>
+        <tr><td>側方</td><td>露出歯根面の被覆、付着歯肉幅の増加</td></tr>
+      </table>
+
+      <h2>一般的なフラップ手術の術式</h2>
+      <p>浸潤麻酔 → 切開 → 剥離 → 肉芽除去 → SRP → 縫合</p>
+
+      <h3>術式の詳細</h3>
+      <table>
+        <tr><th>順序</th><th>手技</th><th>ポイント</th></tr>
+        <tr><td>1</td><td>口腔内清拭・消毒・麻酔</td><td>術前のプラークコントロール徹底</td></tr>
+        <tr><td>2</td><td>プロービング</td><td>ポケットデプスの測定</td></tr>
+        <tr><td>3</td><td>切開</td><td>内斜切開（2mm以上のポケット）または歯肉溝内切開</td></tr>
+        <tr><td>4</td><td>フラップの剥離・翻転</td><td>全層弁を必要最小限の範囲で剥離</td></tr>
+        <tr><td>5</td><td>切除歯肉片の除去</td><td>二次切開でポケット部歯肉を遊離</td></tr>
+        <tr><td>6</td><td>肉芽組織の除去</td><td>骨欠損底部の郭清を十分に</td></tr>
+        <tr><td>7</td><td>SRP</td><td>直視下で残存歯石・病的セメント質を除去</td></tr>
+        <tr><td>8</td><td>（必要時）骨整形・骨切除</td><td>形態異常や浅い骨欠損の処置</td></tr>
+        <tr><td>9</td><td>洗浄・フラップ内面処置</td><td>一次創傷治癒を得るため緊密な接触を確認</td></tr>
+        <tr><td>10</td><td>縫合（歯周パック）</td><td>死腔を避け創傷治癒を促進</td></tr>
+      </table>
+
+      <h2>Widman改良フラップ手術</h2>
+      <p><span class="key">Widman改良フラップ手術</span>は、<span class="highlight">最小の外科的侵襲で最大の治療効果</span>を得ることを目的とした術式。フラップの剥離は根尖方向<span class="highlight">1〜2mm程度</span>とし、歯槽骨欠損部は郭清のみにとどめ、可及的に歯槽骨の温存を図る。術後の不快症状が少なく、審美的にも優れている。</p>
+
+      <h2>歯周外科治療の比較</h2>
+
+      <h3>術後に創面が露出する術式</h3>
+      <p><span class="caution">注意</span>：フラップ手術は創面を縫合するため露出しない。以下の術式は創面が露出する。</p>
+      <ul>
+        <li><span class="key">遊離歯肉移植術</span>：採取部位（口蓋）が露出</li>
+        <li><span class="key">歯肉弁側方移動術</span>：供給側の創面が露出</li>
+      </ul>
+
+      <h3>付着歯肉幅が減少するリスクが高い術式</h3>
+      <ul>
+        <li><span class="key">歯肉切除術</span>：角化歯肉を切除するため減少</li>
+        <li><span class="key">歯肉弁歯冠側移動術</span>：歯肉を歯冠側に移動するため減少</li>
+      </ul>
+
+      <h3>骨縁下ポケットへの適応</h3>
+      <p><span class="caution">歯肉切除術は骨縁下ポケットに適応できない</span>（歯槽骨頂より根尖側の病変にアクセスできないため）</p>
+
+      <h3>外科的侵襲の程度</h3>
+      <p>最も侵襲が小さいのは<span class="highlight">歯周ポケット掻爬術</span>（切開・剥離を行わない）</p>
+
+      <h2>使用器具</h2>
+      <table>
+        <tr><th>器具</th><th>用途</th></tr>
+        <tr><td>替刃メス（#11, 12, 15など）</td><td>切開</td></tr>
+        <tr><td>歯肉剥離子（オルバンメス、カークランドメスなど）</td><td>フラップの剥離</td></tr>
+        <tr><td>キュレット型スケーラー</td><td>肉芽除去、SRP</td></tr>
+        <tr><td>骨ノミ・骨ヤスリ</td><td>骨整形術</td></tr>
+        <tr><td>縫合針・縫合糸</td><td>縫合</td></tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116C52</div>
+        <p>フラップ手術の治療過程を示す。<br>
+        浸潤麻酔 → ① → ② → ③ → ④ → ⑤ →縫合<br>
+        ④に入るのはどれか。1つ選べ。ただし、①〜⑤はa〜eのいずれかに該当する。</p>
+        <div class="choices">
+          a 切開<br>
+          b 剥離<br>
+          c 肉芽除去<br>
+          d ボーンサウンディング<br>
+          e スケーリング・ルートプレーニング
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】フラップ手術の順序は「浸潤麻酔→切開→剥離→肉芽除去→SRP→縫合」。④に入るのは肉芽除去。ボーンサウンディングは術前の診査で行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D58</div>
+        <p>フラップ手術に使用する器具の写真（別冊No.13）を別に示す。<br>
+        使用順序で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D58.png" alt="別冊No.13">
+        </div>
+        <div class="choices">
+          a ア→イ→エ→オ→ウ<br>
+          b イ→ア→オ→ウ→エ<br>
+          c ウ→ア→オ→イ→エ<br>
+          d ウ→イ→ア→オ→エ<br>
+          e オ→ウ→ア→エ→イ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】器具の使用順序は術式の流れに対応。ウ（メス：切開）→ア（剥離子：剥離）→オ（キュレット：肉芽除去・SRP）→イ（縫合針：縫合）→エ（はさみ：糸切断）の順。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C114</div>
+        <p>骨縁下ポケットに適応できないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a GTR法<br>
+          b 歯肉切除術<br>
+          c 歯周ポケット掻爬術<br>
+          d エナメルタンパク質の応用<br>
+          e Widman改良フラップ手術
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="caution">歯肉切除術は骨縁下ポケットに適応できない</span>。歯槽骨頂より根尖側の病変にはアクセスできないため。GTR法、エナメルマトリックスタンパク質、Widman改良フラップ手術は骨縁下ポケットに適応可能。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C75</div>
+        <p>術後に創面が露出する歯周外科治療はどれか。2つ選べ。</p>
+        <div class="choices">
+          a ENAP<br>
+          b GTR法<br>
+          c フラップ手術<br>
+          d 遊離歯肉移植術<br>
+          e 歯肉弁側方移動術
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】遊離歯肉移植術は口蓋の採取部が露出。歯肉弁側方移動術は供給側の創面が露出。フラップ手術やENAP、GTR法は縫合により創面を閉鎖する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B31</div>
+        <p>付着歯肉幅が減少するリスクが高いのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 新付着術<br>
+          b 歯肉切除術<br>
+          c 歯周ポケット掻爬術<br>
+          d 歯肉弁歯冠側移動術<br>
+          e Widman改良フラップ手術
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】歯肉切除術は角化歯肉を切除するため付着歯肉幅が減少。歯肉弁歯冠側移動術は歯肉を歯冠側に移動させるため、歯肉歯槽粘膜境（MGJ）の位置は変わらず付着歯肉幅が減少する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D87</div>
+        <p>外科的侵襲が最も小さい歯周外科手術はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯肉切除術<br>
+          b 歯槽骨切除術<br>
+          c 歯周ポケット掻爬術<br>
+          d 歯肉弁根尖側移動術<br>
+          e Widman改良フラップ手術
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】歯周ポケット掻爬術は切開・剥離を行わず、キュレットでポケット内壁を掻爬するのみのため、最も侵襲が小さい。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

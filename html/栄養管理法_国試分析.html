@@ -6,143 +6,99 @@
   <style>
     :root {
       --text-primary: #1D1D1F;
-      --text-secondary: #6E6E73;
-      --accent: #2C5282;
-      --bg-blue-light: #F0F5FA;
-      --border-blue: #B8CCE4;
-      --border-blue-medium: #8FAFD4;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
       --bg-secondary: #F5F5F7;
-      --border-light: #E8E8ED;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
-      font-family: "Hiragino Kaku Gothic ProN", "游ゴシック", sans-serif;
-      font-size: 9pt;
-      line-height: 1.6;
-      color: var(--text-primary);
-      background: white;
-    }
-
-    @media print {
-      @page { size: A4 landscape; margin: 12mm; }
-      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-    }
-
-    .container {
-      max-width: 297mm;
-      margin: 0 auto;
-      padding: 15mm;
-      column-count: 2;
-      column-gap: 8mm;
-    }
-
-    h1 {
-      font-size: 34pt;
-      font-weight: bold;
-      color: var(--text-primary);
-      margin-bottom: 8mm;
-      padding-bottom: 3mm;
-      border-bottom: 1px solid var(--border-light);
-      column-span: all;
-    }
-
-    h2 {
-      font-size: 14pt;
-      font-weight: bold;
-      color: var(--text-primary);
-      margin-top: 6mm;
-      margin-bottom: 3mm;
-      padding-bottom: 2mm;
-      border-bottom: 1px solid var(--border-light);
-      break-after: avoid;
-    }
-
-    h2 .num { color: var(--accent); }
-
-    h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
       font-size: 10pt;
-      font-weight: normal;
+      line-height: 1.8;
       color: var(--text-primary);
-      margin-top: 4mm;
-      margin-bottom: 2mm;
-      break-after: avoid;
+      -webkit-font-smoothing: antialiased;
     }
-
-    h3::before { content: "■ "; color: var(--accent); }
-
-    p { margin-bottom: 2mm; }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 4mm;
-      font-size: 8pt;
-      break-inside: avoid;
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
     }
-
-    th {
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .red { color: var(--caution); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .summary-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .summary-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
       background: var(--bg-secondary);
       color: var(--text-secondary);
-      font-weight: bold;
-      text-align: left;
-      padding: 2mm 3mm;
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    td {
-      padding: 2mm 3mm;
-      border-bottom: 1px solid var(--border-light);
-      vertical-align: top;
-    }
-
-    .highlight { color: var(--accent); font-weight: bold; }
-    .secondary { color: var(--text-secondary); }
-
-    .important-box {
-      background: var(--bg-blue-light);
-      border-top: 2px solid var(--border-blue);
-      border-bottom: 2px solid var(--border-blue);
-      padding: 3mm 4mm;
-      margin: 4mm 0;
-      break-inside: avoid;
-    }
-
-    .important-box h4 {
+      padding: 4px 12px;
+      border-radius: 20px;
       font-size: 9pt;
-      font-weight: bold;
-      color: var(--text-primary);
-      margin-bottom: 2mm;
+      margin-bottom: 12px;
+      font-weight: 500;
     }
-
-    .important-box ul { margin: 0; padding-left: 5mm; }
-    .important-box li { margin-bottom: 1mm; }
-    .important-box .hint { font-size: 7pt; color: var(--text-secondary); margin-top: 2mm; }
-
-    .note-box {
-      border-left: 3px solid var(--border-blue-medium);
-      padding: 2mm 0 2mm 4mm;
-      margin: 3mm 0;
-    }
-
-    .note-box h4 { font-size: 8pt; font-weight: bold; color: var(--text-secondary); margin-bottom: 1mm; }
-    .note-box p { font-size: 7pt; color: var(--text-secondary); margin: 0; }
-
-    ul { padding-left: 5mm; margin-bottom: 2mm; }
-    li { margin-bottom: 1mm; }
-
-    .source { font-size: 7pt; color: var(--text-secondary); margin-top: 1mm; }
-
-    .exam-tag {
+    .subtitle {
       display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-size: 7pt;
-      padding: 0.5mm 2mm;
-      border-radius: 2mm;
-      margin-left: 2mm;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
     }
+    .pattern-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 8pt;
+      margin-left: 8px;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .summary-list { list-style: none; padding-left: 0; }
+    .summary-list li { margin: 4px 0; padding-left: 1.5em; position: relative; }
+    .summary-list li .list-num { position: absolute; left: 0; color: var(--accent); font-weight: bold; }
   </style>
 </head>
 <body>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>メインテナンス・SPT - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / メインテナンス</span>
+    <h1>メインテナンス・SPT</h1>
+    <div class="container">
+
+      <h2>メインテナンスとSPTの違い</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>メインテナンス</th>
+          <th>SPT</th>
+        </tr>
+        <tr>
+          <td>対象</td>
+          <td><span class="key">治癒</span>（healing）した状態</td>
+          <td><span class="key">病状安定</span>（stable lesion）</td>
+        </tr>
+        <tr>
+          <td>歯周ポケット</td>
+          <td><span class="highlight">3mm以下</span></td>
+          <td><span class="highlight">4mm以上</span>が残存</td>
+        </tr>
+        <tr>
+          <td>BOP</td>
+          <td>なし</td>
+          <td>一部に残存</td>
+        </tr>
+        <tr>
+          <td>歯の動揺</td>
+          <td>生理的範囲</td>
+          <td>動揺が残存することも</td>
+        </tr>
+        <tr>
+          <td>リコール間隔</td>
+          <td>6か月〜1年</td>
+          <td><span class="highlight">3か月以内</span></td>
+        </tr>
+      </table>
+
+      <h2>メインテナンスの目的</h2>
+      <div class="point-box">
+        <div class="point-box-title">主な目的</div>
+        <ul>
+          <li>歯周治療で獲得された<span class="highlight">アタッチメントレベルを維持</span></li>
+          <li><span class="key">アタッチメントロスを予防</span></li>
+          <li>補綴物・修復物の破損、齲蝕の発生を予防</li>
+          <li>口腔疾患の予防プログラムを遂行</li>
+        </ul>
+      </div>
+
+      <h2>メインテナンス間隔の決定</h2>
+      <h3>基本的な目安</h3>
+      <table>
+        <tr>
+          <th>状態</th>
+          <th>間隔</th>
+        </tr>
+        <tr>
+          <td>移行直後</td>
+          <td>1〜2か月後に再来院</td>
+        </tr>
+        <tr>
+          <td>PCR 20%以下で良好</td>
+          <td>6か月〜1年</td>
+        </tr>
+        <tr>
+          <td>不安要素がある場合</td>
+          <td>3〜4か月</td>
+        </tr>
+        <tr>
+          <td>SPT</td>
+          <td><span class="highlight">3か月以内</span></td>
+        </tr>
+      </table>
+
+      <h3>間隔を短くする要因</h3>
+      <ul>
+        <li>プラークコントロールレベルが低い</li>
+        <li>コンプライアンスのレベルが低い</li>
+        <li>歯周組織の再発傾向がある</li>
+        <li>リスクファクター（糖尿病、喫煙など）の存在</li>
+        <li>ブラキシズムなどの異常咬合習慣</li>
+      </ul>
+
+      <h2>メインテナンスの流れ</h2>
+      <h3>1. 医療面接</h3>
+      <p>口腔内の異常、セルフケアの状況、生活環境の変化、全身疾患、ストレスなどを確認。</p>
+
+      <h3>2. 口腔内検査</h3>
+      <table>
+        <tr>
+          <th>検査項目</th>
+          <th>内容・ポイント</th>
+        </tr>
+        <tr>
+          <td>視診・触診</td>
+          <td>歯肉の色、形態、硬さ、露出根面の状態</td>
+        </tr>
+        <tr>
+          <td>プラーク付着状態</td>
+          <td>PCR、プラーク指数（PI）</td>
+        </tr>
+        <tr>
+          <td>歯周ポケット測定</td>
+          <td>1歯4点または6点法</td>
+        </tr>
+        <tr>
+          <td>アタッチメントレベル</td>
+          <td>経時的変化を評価</td>
+        </tr>
+        <tr>
+          <td><span class="key">BOP</span></td>
+          <td>歯周病活動性の評価に重要</td>
+        </tr>
+        <tr>
+          <td>歯の動揺度</td>
+          <td>ブラキシズムの習癖がある患者で厳密に検査</td>
+        </tr>
+        <tr>
+          <td>根分岐部病変</td>
+          <td><span class="caution">最も問題を起こしやすい部位</span></td>
+        </tr>
+        <tr>
+          <td>エックス線検査</td>
+          <td>1〜2年に1回</td>
+        </tr>
+      </table>
+
+      <h3>3. 検査結果の説明とモチベーション強化</h3>
+
+      <h3>4. メインテナンスにおける処置</h3>
+      <ul>
+        <li><span class="key">口腔清掃指導</span>（OHI）</li>
+        <li><span class="key">スケーリング・ルートプレーニング</span></li>
+        <li><span class="key">歯面研磨</span>（エアポリッシング）</li>
+        <li><span class="key">PMTC</span>（プロフェッショナルメカニカルトゥースクリーニング）</li>
+        <li>薬剤の応用（0.2%クロルヘキシジンなど）</li>
+      </ul>
+
+      <h3>5. 次回来院の予約</h3>
+
+      <h2>臨床効果</h2>
+      <div class="point-box">
+        <div class="point-box-title">Beckerの報告（1984年）</div>
+        <ul>
+          <li>SPTなし: 年間<span class="caution">0.22本</span>の歯の喪失</li>
+          <li>SPTあり: 年間<span class="highlight">0.11本</span>の歯の喪失</li>
+          <li>→ <span class="highlight">喪失リスクを半分</span>に抑制可能</li>
+        </ul>
+      </div>
+
+      <h2>関連過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103B26</div>
+        <p>70歳の男性。歯周治療終了後、SPT〈supportive periodontal therapy〉に移行することとした。移行時の口腔内写真（別冊No.24A）とエックス線写真（別冊No.24B）とを別に示す。<br>
+        SPT期間中に前歯部で発生するリスクが高いのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103B26.png" alt="別冊No.24A, 24B">
+        </div>
+        <div class="choices">
+          a 食片圧入<br>
+          b 歯根破折<br>
+          c 急性歯髄炎<br>
+          d 暫間固定の破損<br>
+          e 歯肉縁上歯石の付着
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】SPT中の前歯部では、<span class="key">暫間固定の破損</span>と<span class="key">歯肉縁上歯石の付着</span>がリスクとなる。暫間固定されている歯では固定装置の破損に注意が必要。また、歯肉退縮により露出した歯根面には歯石が付着しやすい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D43</div>
+        <p>43歳の女性。上顎前歯部の軽度の冷水痛を訴えて来院した。歯周基本治療後、2型糖尿病で血糖コントロール不良のため、SPT〈supportive periodontal therapy〉を実施していた。3日前のリコール来院時にスケーリング・ルートプレーニングを行ったところ、冷たいものがしみるようになったという。SPT開始時の口腔内写真（別冊No.43A）とエックス線写真（別冊No.43B）を別に示す。歯周組織検査結果の一部を表に示す。<br>
+        適切な対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D43_1.png" alt="別冊No.43A">
+          <img src="../../../images/108回_Web画像/108D43_2.png" alt="別冊No.43B">
+        </div>
+        <div class="choices">
+          a 咬合調整<br>
+          b 歯周ポケット掻爬<br>
+          c 抗菌薬の局所投与<br>
+          d プラークコントロール<br>
+          e 露出根面へのフッ化物の塗布
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】SRP後の<span class="key">知覚過敏</span>への対応。露出した象牙質への刺激を軽減するため、<span class="key">フッ化物塗布</span>が有効。また、適切な<span class="key">プラークコントロール</span>を継続することが重要。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

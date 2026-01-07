@@ -6,69 +6,99 @@
   <style>
     :root {
       --text-primary: #1D1D1F;
-      --text-secondary: #6E6E73;
-      --accent: #2C5282;
-      --bg-blue-light: #F7FAFC;
-      --border-blue-dark: #4A5568;
-      --bg-gray: #F7F7F7;
-      --border-light: #E2E8F0;
-      --yellow-bg: #FFFBEB;
-      --yellow-border: #F6E05E;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
       font-size: 10pt;
-      line-height: 1.7;
+      line-height: 1.8;
       color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
     }
-    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
     .container { column-count: 1; }
     @media print {
       @page { size: A4 landscape; margin: 12mm 15mm; }
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .page { padding: 12mm 15mm; max-width: 297mm; }
-      .container { column-count: 2; column-gap: 25px; }
+      .container { column-count: 2; column-gap: 30px; }
     }
-    h1 { font-size: 24pt; font-weight: bold; margin-bottom: 16px; }
-    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; }
-    h2 .num { color: var(--accent); }
-    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
-    h3::before { content: "■ "; color: var(--accent); }
-    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; }
-    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
-    th { background: var(--bg-gray); font-weight: bold; }
-    .highlight { color: var(--accent); font-weight: bold; }
-    .red { color: #C53030; font-weight: bold; }
-    ul { padding-left: 1.5em; margin: 6px 0; }
-    li { margin: 3px 0; }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .red { color: var(--caution); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
     .point-box {
-      background: var(--bg-blue-light);
-      border-top: 2px solid var(--border-blue-dark);
-      border-bottom: 2px solid var(--border-blue-dark);
-      padding: 8px 12px; margin: 10px 0; break-inside: avoid;
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
     }
-    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .summary-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .summary-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
     .question-box {
-      background: var(--yellow-bg);
-      border-left: 4px solid var(--yellow-border);
-      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
-    }
-    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
-    .question-box .choices { margin: 6px 0; line-height: 1.6; }
-    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
-    .syllabus-section {
-      background: #EDF2F7;
-      padding: 6px 10px;
-      margin: 10px 0 6px 0;
-      border-left: 3px solid var(--accent);
-      font-weight: bold;
-    }
-    .syllabus-item {
-      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
       font-size: 9pt;
-      margin-left: 1em;
     }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .subtitle {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .pattern-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 8pt;
+      margin-left: 8px;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .summary-list { list-style: none; padding-left: 0; }
+    .summary-list li { margin: 4px 0; padding-left: 1.5em; position: relative; }
+    .summary-list li .list-num { position: absolute; left: 0; color: var(--accent); font-weight: bold; }
   </style>
 </head>
 <body>

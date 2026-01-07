@@ -275,14 +275,14 @@ body {
   padding: 10px 14px;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
   background: var(--bg-color);
   transition: all 0.2s ease;
 }
 
 .sidebar-search input:focus {
-  border-color: var(--accent-color);
+  border-color: #1d1d1f;
   background: white;
 }
 
@@ -538,7 +538,7 @@ body {
 }
 
 .search-modal-header input:focus {
-  border-color: var(--accent-color);
+  border-color: #1d1d1f;
   background: white;
 }
 

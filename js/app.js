@@ -656,7 +656,7 @@
       const existingStyle = doc.getElementById('mobile-override-style');
       if (existingStyle) existingStyle.remove();
 
-      // HTMLのスタイルをそのまま活かす（最小限の注入のみ）
+      // スマホ用に最適化
       const style = doc.createElement('style');
       style.id = 'mobile-override-style';
       style.textContent = `
@@ -668,9 +668,63 @@
         * {
           -webkit-tap-highlight-color: transparent;
         }
+
+        /* スマホ用サイズ調整 */
         body {
+          font-size: 15px !important;
+          line-height: 1.8 !important;
+          padding: 0 !important;
           padding-bottom: 150px !important;
         }
+        .page {
+          padding: 20px !important;
+          max-width: 100% !important;
+        }
+
+        /* 見出し */
+        h1 {
+          font-size: 24px !important;
+          margin-bottom: 16px !important;
+        }
+        h2 {
+          font-size: 18px !important;
+          margin: 24px 0 12px 0 !important;
+        }
+        h3 {
+          font-size: 15px !important;
+          margin: 16px 0 8px 0 !important;
+        }
+
+        /* テーブル */
+        table {
+          font-size: 14px !important;
+        }
+        th {
+          font-size: 12px !important;
+          padding: 10px 12px !important;
+        }
+        td {
+          padding: 12px !important;
+        }
+
+        /* ボックス */
+        .point-box, .summary-box, .question-box {
+          padding: 16px !important;
+          margin: 16px 0 !important;
+        }
+        .point-box-title, .summary-box-title {
+          font-size: 15px !important;
+        }
+        .question-box {
+          font-size: 14px !important;
+        }
+
+        /* カテゴリタグ */
+        .category-tag {
+          font-size: 12px !important;
+        }
+
+        /* 画像 */
         img {
           max-width: 100% !important;
           height: auto !important;

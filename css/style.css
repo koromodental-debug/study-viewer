@@ -344,7 +344,6 @@ body {
   color: #1d1d1f;
   background: #E5E5EA;
   border-radius: var(--radius-md);
-  border-left: 4px solid #007AFF;
   cursor: pointer;
   display: flex;
   justify-content: space-between;

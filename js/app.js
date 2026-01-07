@@ -64,7 +64,9 @@
 
     searchEngine = new SearchEngine(DATA);
 
-    // 科目をデフォルトで折りたたみ（科目カテゴリは展開）
+    // 全てデフォルトで折りたたみ
+    const categories = new Set(DATA.map(item => item.subjectCategory || 'その他'));
+    categories.forEach(cat => state.collapsedCategories.add(`cat_${cat}`));
     const subjects = new Set(DATA.map(item => item.subject || 'その他'));
     subjects.forEach(subj => state.collapsedCategories.add(`subj_${subj}`));
 
@@ -529,13 +531,11 @@
       subjects.forEach(subject => {
         const subjectKey = `subj_${subject}`;
         const isSubjCollapsed = state.collapsedCategories.has(subjectKey);
-        const topicCount = groups[subjectCat][subject].length;
 
         html += `
           <div class="subject-group">
             <div class="subject-header" data-category="${escapeHtml(subjectKey)}">
               <span>${escapeHtml(subject)}</span>
-              <span class="count">${topicCount}</span>
               <span class="toggle">${isSubjCollapsed ? '▶' : '▼'}</span>
             </div>
             <div class="subject-items${isSubjCollapsed ? ' collapsed' : ''}">

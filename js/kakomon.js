@@ -156,6 +156,10 @@ const KakomonModule = (function() {
 
     return `
       <div class="kakomon-card" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}">
+        <div class="kakomon-header">
+          <span class="kakomon-code">${escapeHtml(question.code)}</span>
+        </div>
+
         <div class="kakomon-question">
           <p class="kakomon-text">${escapeHtml(question.text)}</p>
         </div>

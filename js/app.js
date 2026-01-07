@@ -306,6 +306,8 @@
     state.sidebarOpen = true;
     elements.sidebar.classList.add('open');
     elements.sidebarOverlay.classList.add('show');
+    // フローティング要素を非表示
+    document.querySelector('.floating-tabbar').classList.add('hidden');
   }
 
   /**
@@ -326,6 +328,8 @@
     state.sidebarOpen = false;
     elements.sidebar.classList.remove('open');
     elements.sidebarOverlay.classList.remove('show');
+    // フローティング要素を再表示
+    document.querySelector('.floating-tabbar').classList.remove('hidden');
   }
 
   /**

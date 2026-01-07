@@ -1436,6 +1436,7 @@ body {
   padding: 6px 8px;
   border-radius: 40px;
   z-index: 1000;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .floating-tab {
@@ -1482,6 +1483,12 @@ body {
 
 .floating-tab.active span {
   display: inline;
+}
+
+.floating-tabbar.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(20px);
 }
 
 /* Safe area対応（iPhone X以降） */

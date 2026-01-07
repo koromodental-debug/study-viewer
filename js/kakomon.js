@@ -154,6 +154,20 @@ const KakomonModule = (function() {
     const validChoices = Object.entries(choices)
       .filter(([key, value]) => value && value.trim() !== '');
 
+    // 画像HTMLを生成
+    let imagesHtml = '';
+    if (question.hasImage && question.imageFiles) {
+      const examNum = question.examNum || question.code.match(/^\d+/)?.[0];
+      const imageList = question.imageFiles.split(',').map(f => f.trim()).filter(f => f);
+      if (imageList.length > 0 && examNum) {
+        imagesHtml = `
+          <div class="kakomon-images">
+            ${imageList.map(file => `<img src="images/${examNum}回_Web画像/${file}" alt="${file}">`).join('')}
+          </div>
+        `;
+      }
+    }
+
     return `
       <div class="kakomon-card" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}">
         <div class="kakomon-header">
@@ -163,6 +177,8 @@ const KakomonModule = (function() {
         <div class="kakomon-question">
           <p class="kakomon-text">${escapeHtml(question.text)}</p>
         </div>
+
+        ${imagesHtml}
 
         <div class="kakomon-instruction">
           ${numChoices > 1 ? `${numChoices}つ選べ。` : '1つ選べ。'}

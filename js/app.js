@@ -656,7 +656,7 @@
       const existingStyle = doc.getElementById('mobile-override-style');
       if (existingStyle) existingStyle.remove();
 
-      // スマホ用に最適化
+      // スマホ用に最適化 - Q&A風デザインに統一
       const style = doc.createElement('style');
       style.id = 'mobile-override-style';
       style.textContent = `
@@ -669,65 +669,138 @@
           -webkit-tap-highlight-color: transparent;
         }
 
-        /* スマホ用サイズ調整 */
+        /* ===== 基本レイアウト ===== */
         body {
           font-size: 15px !important;
           line-height: 1.8 !important;
           padding: 0 !important;
           padding-bottom: 150px !important;
+          background: #fafafa !important;
         }
         .page {
           padding: 20px !important;
           max-width: 100% !important;
         }
 
-        /* 見出し */
+        /* ===== 見出し（Q&A風：黒 + 下線） ===== */
         h1 {
-          font-size: 24px !important;
-          margin-bottom: 16px !important;
+          font-size: 22px !important;
+          font-weight: 700 !important;
+          color: #1d1d1f !important;
+          margin-bottom: 20px !important;
         }
         h2 {
           font-size: 18px !important;
-          margin: 24px 0 12px 0 !important;
+          font-weight: 700 !important;
+          color: #1d1d1f !important;
+          margin: 32px 0 16px 0 !important;
+          padding-bottom: 12px !important;
+          border-bottom: 2px solid #1d1d1f !important;
         }
         h3 {
           font-size: 15px !important;
-          margin: 16px 0 8px 0 !important;
+          font-weight: 600 !important;
+          color: #1d1d1f !important;
+          margin: 24px 0 12px 0 !important;
         }
 
-        /* テーブル */
+        /* ===== テーブル（カード風） ===== */
         table {
+          background: #F5F5F7 !important;
+          border-radius: 12px !important;
+          overflow: hidden !important;
           font-size: 14px !important;
+          margin: 16px 0 !important;
+          border-collapse: separate !important;
+          border-spacing: 0 !important;
         }
         th {
+          background: #E8E8ED !important;
+          color: #1d1d1f !important;
           font-size: 12px !important;
-          padding: 10px 12px !important;
+          font-weight: 600 !important;
+          padding: 12px 16px !important;
+          border: none !important;
         }
         td {
-          padding: 12px !important;
+          padding: 14px 16px !important;
+          border: none !important;
+          border-bottom: 1px solid #E0E0E0 !important;
+          background: #F5F5F7 !important;
+        }
+        tr:last-child td {
+          border-bottom: none !important;
         }
 
-        /* ボックス */
-        .point-box, .summary-box, .question-box {
-          padding: 16px !important;
-          margin: 16px 0 !important;
+        /* ===== ボックス（グレー背景に統一） ===== */
+        .point-box, .summary-box {
+          background: #F5F5F7 !important;
+          border-radius: 12px !important;
+          padding: 16px 20px !important;
+          margin: 20px 0 !important;
+          border: none !important;
         }
         .point-box-title, .summary-box-title {
           font-size: 15px !important;
+          font-weight: 600 !important;
+          color: #1d1d1f !important;
+          margin-bottom: 10px !important;
         }
+
+        /* 問題ボックス */
         .question-box {
+          background: #F5F5F7 !important;
+          border-radius: 12px !important;
+          padding: 16px 20px !important;
+          margin: 20px 0 !important;
+          border: none !important;
           font-size: 14px !important;
         }
-
-        /* カテゴリタグ */
-        .category-tag {
-          font-size: 12px !important;
+        .question-box .q-number {
+          font-weight: 600 !important;
+          color: #86868B !important;
+          margin-bottom: 8px !important;
+        }
+        .question-box .answer {
+          color: #1d1d1f !important;
+          font-weight: 600 !important;
+          margin-top: 12px !important;
         }
 
-        /* 画像 */
+        /* ===== その他 ===== */
+        .category-tag, .subtitle {
+          background: #E8E8ED !important;
+          color: #86868B !important;
+          font-size: 12px !important;
+          padding: 6px 12px !important;
+          border-radius: 20px !important;
+          margin-bottom: 16px !important;
+        }
+
+        .highlight {
+          background: linear-gradient(transparent 60%, #FFE066 60%) !important;
+          font-weight: 600 !important;
+        }
+
+        .note {
+          font-size: 13px !important;
+          color: #86868B !important;
+          margin-top: 10px !important;
+        }
+
         img {
           max-width: 100% !important;
           height: auto !important;
+          border-radius: 8px !important;
+        }
+
+        /* リスト余白 */
+        ul, ol {
+          margin: 12px 0 !important;
+          padding-left: 1.5em !important;
+        }
+        li {
+          margin: 8px 0 !important;
         }
       `;
       doc.head.appendChild(style);

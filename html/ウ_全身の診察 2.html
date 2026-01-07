@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>全身の診察</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .red { color: var(--caution); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .summary-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .summary-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .subtitle {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .pattern-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 8pt;
+      margin-left: 8px;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .summary-list { list-style: none; padding-left: 0; }
+    .summary-list li { margin: 4px 0; padding-left: 1.5em; position: relative; }
+    .summary-list li .list-num { position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>ウ. 全身の診察</h1>
+    <div class="subtitle">必修9 診察の基本</div>
+    <div class="container">
+
+      <h3>バイタルサイン</h3>
+      <table>
+        <tr><th>項目</th><th>正常値</th><th>備考</th></tr>
+        <tr><td><span class="red">呼吸数</span></td><td>成人：<span class="red">12〜20回</span>/分</td><td>小児の場合：25〜30回/分</td></tr>
+        <tr><td><span class="red">脈拍</span></td><td>成人：<span class="red">60〜80回</span>/分</td><td>小児の場合：90〜100回/分</td></tr>
+        <tr><td><span class="red">血圧</span></td><td>成人：<span class="red">&lt;140</span>mmHg（収縮期血圧）、&lt;90mmHg（拡張期血圧）</td><td>高血圧：≧140/90mmHg</td></tr>
+        <tr><td><span class="red">体温</span></td><td><span class="red">36〜37℃</span></td><td>腋窩温が一般的</td></tr>
+      </table>
+
+      <h3>血圧の分類</h3>
+      <table>
+        <tr><th>分類</th><th>収縮期血圧</th><th>拡張期血圧</th></tr>
+        <tr><td><span class="highlight">正常血圧</span></td><td>&lt;120mmHg</td><td>かつ &lt;80mmHg</td></tr>
+        <tr><td><span class="highlight">正常高値血圧</span></td><td>120〜129mmHg</td><td>かつ &lt;80mmHg</td></tr>
+        <tr><td><span class="highlight">高値血圧</span></td><td>130〜139mmHg</td><td>かつ/または 80〜89mmHg</td></tr>
+        <tr><td><span class="red">Ⅰ度高血圧</span></td><td>140〜159mmHg</td><td>かつ/または 90〜99mmHg</td></tr>
+        <tr><td><span class="red">Ⅱ度高血圧</span></td><td>160〜179mmHg</td><td>かつ/または 100〜109mmHg</td></tr>
+        <tr><td><span class="red">Ⅲ度高血圧</span></td><td>≧180mmHg</td><td>かつ/または ≧110mmHg</td></tr>
+      </table>
+
+      <h3>意識レベルの評価（JCS：Japan Coma Scale）</h3>
+      <table>
+        <tr><th>レベル</th><th>状態</th></tr>
+        <tr><td><span class="highlight">Ⅰ（1桁）</span></td><td>刺激しなくても覚醒している（1: 清明とはいえない、2: 見当識障害、3: 名前・生年月日が言えない）</td></tr>
+        <tr><td><span class="red">Ⅱ（2桁）</span></td><td>刺激すると覚醒する（10: 普通の呼びかけで開眼、20: 大声や揺すると開眼、30: 痛み刺激で開眼）</td></tr>
+        <tr><td><span class="red">Ⅲ（3桁）</span></td><td>刺激しても覚醒しない（100: 払いのける、200: 少し動く、300: 全く動かない）</td></tr>
+      </table>
+
+      <h3>意識レベルの評価（GCS：Glasgow Coma Scale）</h3>
+      <table>
+        <tr><th>評価項目</th><th>スコア</th></tr>
+        <tr><td><span class="red">開眼（E）</span></td><td>4: 自発的、3: 呼びかけで、2: 痛み刺激で、1: 開眼しない</td></tr>
+        <tr><td><span class="red">言語反応（V）</span></td><td>5: 見当識あり、4: 混乱した会話、3: 不適切な言葉、2: 理解不能な音声、1: なし</td></tr>
+        <tr><td><span class="red">運動反応（M）</span></td><td>6: 命令に従う、5: 疼痛部位認識、4: 逃避反応、3: 異常屈曲、2: 伸展反応、1: なし</td></tr>
+      </table>
+      <p>※GCS合計点：3〜15点（正常15点、重症≦8点）</p>
+
+      <div class="question-box">
+        <div class="q-number">117A-20</div>
+        <p>成人の正常なバイタルサインはどれか。1つ選べ。</p>
+        <p>a: 呼吸数 25回/分　b: 脈拍 100回/分　c: 収縮期血圧 150mmHg　d: 体温 36.5℃　e: SpO2 90%</p>
+        <div class="answer">正解: d（成人の正常体温は36〜37℃）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">呼吸数</span>＝成人12〜20回/分</li>
+          <li><span class="red">脈拍</span>＝成人60〜80回/分</li>
+          <li><span class="red">血圧</span>＝正常&lt;120/80、高血圧≧140/90</li>
+          <li><span class="red">体温</span>＝36〜37℃</li>
+          <li><span class="red">JCS</span>＝Ⅰ（1桁）覚醒、Ⅱ（2桁）刺激で覚醒、Ⅲ（3桁）覚醒しない</li>
+          <li><span class="red">GCS</span>＝E（開眼）+V（言語）+M（運動）、正常15点</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

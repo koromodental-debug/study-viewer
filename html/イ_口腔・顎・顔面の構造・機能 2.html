@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔・顎・顔面の構造・機能</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .red { color: var(--caution); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .summary-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .summary-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .subtitle {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .pattern-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 8pt;
+      margin-left: 8px;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .summary-list { list-style: none; padding-left: 0; }
+    .summary-list li { margin: 4px 0; padding-left: 1.5em; position: relative; }
+    .summary-list li .list-num { position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>イ. 口腔・顎・顔面の構造・機能</h1>
+    <div class="subtitle">必修4 人体の正常構造・機能</div>
+    <div class="container">
+
+      <h3>三大唾液腺</h3>
+      <table>
+        <tr><th>唾液腺</th><th>導管</th><th>開口部</th><th>性状</th></tr>
+        <tr><td><span class="red">耳下腺</span></td><td><span class="red">Stensen管</span></td><td>上顎第二大臼歯頬粘膜</td><td><span class="red">漿液性</span></td></tr>
+        <tr><td><span class="red">顎下腺</span></td><td><span class="red">Wharton管</span></td><td>舌下小丘</td><td><span class="highlight">混合性</span></td></tr>
+        <tr><td><span class="highlight">舌下腺</span></td><td>Bartholin管</td><td>舌下小丘・舌下ヒダ</td><td><span class="highlight">粘液性</span></td></tr>
+      </table>
+
+      <h3>咀嚼筋</h3>
+      <table>
+        <tr><th>筋</th><th>起始</th><th>停止</th><th>作用</th></tr>
+        <tr><td><span class="red">咬筋</span></td><td>頬骨弓</td><td>下顎角外面</td><td><span class="red">閉口</span></td></tr>
+        <tr><td><span class="red">側頭筋</span></td><td>側頭窩</td><td>筋突起</td><td><span class="red">閉口</span>、後方移動</td></tr>
+        <tr><td><span class="highlight">内側翼突筋</span></td><td>翼突窩</td><td>下顎角内面</td><td>閉口</td></tr>
+        <tr><td><span class="red">外側翼突筋</span></td><td>翼状突起外側板</td><td>関節円板・下顎頸</td><td><span class="red">開口</span>、前方・側方</td></tr>
+      </table>
+      <p>咀嚼筋の支配神経＝<span class="red">三叉神経第3枝（下顎神経）</span></p>
+
+      <h3>表情筋（顔面神経支配）</h3>
+      <table>
+        <tr><th>筋</th><th>作用</th></tr>
+        <tr><td><span class="highlight">前頭筋</span></td><td>額のしわ</td></tr>
+        <tr><td><span class="highlight">眼輪筋</span></td><td>閉眼</td></tr>
+        <tr><td><span class="red">口輪筋</span></td><td>口を閉じる</td></tr>
+        <tr><td><span class="highlight">頬筋</span></td><td>頬を膨らませる、吸啜</td></tr>
+      </table>
+
+      <h3>脳神経（12対）</h3>
+      <table>
+        <tr><th>番号</th><th>神経</th><th>機能</th></tr>
+        <tr><td>I</td><td>嗅神経</td><td>嗅覚</td></tr>
+        <tr><td>V</td><td><span class="red">三叉神経</span></td><td>顔面の知覚、咀嚼筋</td></tr>
+        <tr><td>VII</td><td><span class="red">顔面神経</span></td><td>表情筋、舌前2/3味覚</td></tr>
+        <tr><td>IX</td><td><span class="highlight">舌咽神経</span></td><td>舌後1/3味覚・知覚</td></tr>
+        <tr><td>X</td><td><span class="highlight">迷走神経</span></td><td>内臓、咽頭・喉頭</td></tr>
+        <tr><td>XII</td><td><span class="red">舌下神経</span></td><td>舌の運動</td></tr>
+      </table>
+
+      <h3>三叉神経の知覚領域</h3>
+      <table>
+        <tr><th>枝</th><th>支配領域</th></tr>
+        <tr><td><span class="highlight">V1（眼神経）</span></td><td>額、上眼瞼、鼻背</td></tr>
+        <tr><td><span class="red">V2（上顎神経）</span></td><td>下眼瞼、頬、上唇、上顎歯・歯肉</td></tr>
+        <tr><td><span class="red">V3（下顎神経）</span></td><td>下唇、下顎歯・歯肉、舌前2/3知覚</td></tr>
+      </table>
+
+      <h3>顎関節</h3>
+      <ul>
+        <li>構成：<span class="red">下顎頭</span>と<span class="red">側頭骨</span>（下顎窩・関節結節）</li>
+        <li><span class="red">関節円板</span>が介在する複関節</li>
+        <li>外側翼突筋上頭が関節円板に付着</li>
+        <li><span class="highlight">外側靱帯</span>・<span class="highlight">蝶下顎靱帯</span>・茎突下顎靱帯</li>
+      </ul>
+
+      <h3>顎運動</h3>
+      <table>
+        <tr><th>運動</th><th>主動筋</th></tr>
+        <tr><td><span class="red">開口</span></td><td><span class="red">外側翼突筋</span>、舌骨上筋群</td></tr>
+        <tr><td><span class="red">閉口</span></td><td>咬筋、側頭筋、内側翼突筋</td></tr>
+        <tr><td>前方運動</td><td>外側翼突筋（両側）</td></tr>
+        <tr><td>側方運動</td><td>外側翼突筋（片側）</td></tr>
+      </table>
+
+      <h3>舌の知覚・味覚の支配</h3>
+      <table>
+        <tr><th>部位</th><th>知覚</th><th>味覚</th></tr>
+        <tr><td><span class="red">前2/3</span></td><td><span class="red">三叉神経</span>（舌神経）</td><td><span class="red">顔面神経</span>（鼓索神経）</td></tr>
+        <tr><td><span class="highlight">後1/3</span></td><td colspan="2"><span class="highlight">舌咽神経</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117A-17</div>
+        <p>外側翼突筋の枝はどれか。1つ選べ。</p>
+        <p>a: 舌動脈　b: 下歯槽動脈　c: 眼窩下動脈　d: 顔面下動脈　e: 後上歯槽動脈</p>
+        <div class="answer">正解: b（下歯槽動脈は外頸動脈→顎動脈の枝）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B-17</div>
+        <p>純運動神経はどれか。1つ選べ。</p>
+        <p>a: 三叉神経　b: 顔面神経　c: 舌咽神経　d: 迷走神経　e: 舌下神経</p>
+        <div class="answer">正解: e（舌下神経は純運動神経で舌の運動を支配）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">耳下腺</span>＝Stensen管、漿液性</li>
+          <li><span class="red">顎下腺</span>＝Wharton管、混合性、舌下小丘開口</li>
+          <li><span class="red">咀嚼筋</span>＝三叉神経V3支配、外側翼突筋のみ開口</li>
+          <li><span class="red">舌前2/3</span>＝知覚は三叉、味覚は顔面神経</li>
+          <li><span class="red">舌後1/3</span>＝知覚・味覚ともに舌咽神経</li>
+          <li><span class="red">舌下神経</span>＝純運動神経、舌の運動</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

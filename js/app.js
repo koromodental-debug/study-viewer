@@ -204,8 +204,8 @@
     // スワイプでタブ切り替え
     setupSwipeTabSwitch();
 
-    // Q&Aツールバーのスクロール表示/非表示
-    setupQAToolbarScroll();
+    // Q&Aフローティングトグルボタンのスクロール表示/非表示
+    setupQAFloatingToggleScroll();
 
     // ウェルカム画面のボタン
     if (elements.welcomeStartBtn) {
@@ -311,25 +311,26 @@
   }
 
   /**
-   * Q&Aツールバーをスクロール方向に応じて表示/非表示
+   * Q&Aフローティングトグルボタンをスクロール方向に応じて表示/非表示
    */
-  function setupQAToolbarScroll() {
+  function setupQAFloatingToggleScroll() {
     let lastScrollTop = 0;
     const threshold = 10; // スクロール検知の閾値
 
     elements.qaContent.addEventListener('scroll', function() {
-      if (!elements.qaToolbar) return;
+      if (!elements.qaFloatingToggle) return;
+      if (state.currentTab !== 'qa') return;
 
       const scrollTop = elements.qaContent.scrollTop;
       const diff = scrollTop - lastScrollTop;
 
-      // 下にスクロール（コンテンツを読み進める）→ ツールバーを隠す
+      // 下にスクロール（コンテンツを読み進める）→ ボタンを隠す
       if (diff > threshold) {
-        elements.qaToolbar.classList.add('hidden');
+        elements.qaFloatingToggle.classList.remove('show');
       }
-      // 上にスクロール（戻る）→ ツールバーを表示
+      // 上にスクロール（戻る）→ ボタンを表示
       else if (diff < -threshold) {
-        elements.qaToolbar.classList.remove('hidden');
+        elements.qaFloatingToggle.classList.add('show');
       }
 
       lastScrollTop = scrollTop;

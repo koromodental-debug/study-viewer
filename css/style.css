@@ -1414,20 +1414,19 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: rgba(245, 245, 247, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: white;
   padding: 6px 8px;
   border-radius: 40px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
 
 .floating-tab {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 10px 18px;
+  padding: 10px 16px;
   border: none;
   background: transparent;
   border-radius: 30px;
@@ -1439,11 +1438,12 @@ body {
 }
 
 .floating-tab .tab-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   stroke-width: 2;
 }
 
+/* 非選択時：アイコンのみ表示 */
 .floating-tab span {
   display: none;
 }
@@ -1452,10 +1452,15 @@ body {
   color: #1d1d1f;
 }
 
+/* 選択時：テキストのみ表示、アイコン非表示 */
 .floating-tab.active {
-  background: white;
-  color: #1d1d1f;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: #1d1d1f;
+  color: white;
+  padding: 10px 20px;
+}
+
+.floating-tab.active .tab-icon {
+  display: none;
 }
 
 .floating-tab.active span {

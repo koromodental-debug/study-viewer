@@ -476,7 +476,16 @@
   }
 
   /**
-   * トピックリストを描画（科目別2階層）
+   * IDからチャプター情報を抽出
+   */
+  function extractChapter(item) {
+    // パターン: 科目名_XX_チャプター名_トピック名
+    const match = item.id.match(/^.+?_(\d+_.+?)_/);
+    return match ? match[1] : null;
+  }
+
+  /**
+   * トピックリストを描画（科目別4階層）
    */
   function renderTopicList(items) {
     if (items.length === 0) {
@@ -484,23 +493,19 @@
       return;
     }
 
-    const filteredItems = items;
-
-    // 科目カテゴリ → 科目 → トピック の3階層でグループ化
+    // 科目カテゴリ → 科目 → チャプター → トピック の4階層でグループ化
     const categoryOrder = ['基礎', '臨床', '必修', 'その他'];
     const groups = {};
 
-    filteredItems.forEach(item => {
+    items.forEach(item => {
       const subjectCat = item.subjectCategory || 'その他';
       const subject = item.subject || 'その他';
+      const chapter = extractChapter(item) || 'その他';
 
-      if (!groups[subjectCat]) {
-        groups[subjectCat] = {};
-      }
-      if (!groups[subjectCat][subject]) {
-        groups[subjectCat][subject] = [];
-      }
-      groups[subjectCat][subject].push(item);
+      if (!groups[subjectCat]) groups[subjectCat] = {};
+      if (!groups[subjectCat][subject]) groups[subjectCat][subject] = {};
+      if (!groups[subjectCat][subject][chapter]) groups[subjectCat][subject][chapter] = [];
+      groups[subjectCat][subject][chapter].push(item);
     });
 
     let html = '';
@@ -531,6 +536,9 @@
       subjects.forEach(subject => {
         const subjectKey = `subj_${subject}`;
         const isSubjCollapsed = state.collapsedCategories.has(subjectKey);
+        const chapters = groups[subjectCat][subject];
+        const chapterKeys = Object.keys(chapters).sort();
+        const hasMultipleChapters = chapterKeys.length > 1 || (chapterKeys.length === 1 && chapterKeys[0] !== 'その他');
 
         html += `
           <div class="subject-group">
@@ -541,14 +549,46 @@
             <div class="subject-items${isSubjCollapsed ? ' collapsed' : ''}">
         `;
 
-        groups[subjectCat][subject].forEach(item => {
-          const isActive = state.currentItem && state.currentItem.id === item.id;
-          html += `
-            <div class="topic-item${isActive ? ' active' : ''}" data-id="${escapeHtml(item.id)}">
-              <span class="title">${escapeHtml(item.title)}</span>
-            </div>
-          `;
-        });
+        // チャプターが複数ある場合のみチャプター階層を表示
+        if (hasMultipleChapters) {
+          chapterKeys.forEach(chapter => {
+            const chapterKey = `chap_${subject}_${chapter}`;
+            const isChapCollapsed = state.collapsedCategories.has(chapterKey);
+            const chapterDisplay = chapter === 'その他' ? 'その他' : chapter.replace(/_/g, ' ');
+
+            html += `
+              <div class="chapter-group">
+                <div class="chapter-header" data-category="${escapeHtml(chapterKey)}">
+                  <span>${escapeHtml(chapterDisplay)}</span>
+                  <span class="toggle">${isChapCollapsed ? '▶' : '▼'}</span>
+                </div>
+                <div class="chapter-items${isChapCollapsed ? ' collapsed' : ''}">
+            `;
+
+            chapters[chapter].forEach(item => {
+              const isActive = state.currentItem && state.currentItem.id === item.id;
+              html += `
+                <div class="topic-item${isActive ? ' active' : ''}" data-id="${escapeHtml(item.id)}">
+                  <span class="title">${escapeHtml(item.title)}</span>
+                </div>
+              `;
+            });
+
+            html += '</div></div>';
+          });
+        } else {
+          // チャプターが1つだけ（その他）の場合は直接トピックを表示
+          chapterKeys.forEach(chapter => {
+            chapters[chapter].forEach(item => {
+              const isActive = state.currentItem && state.currentItem.id === item.id;
+              html += `
+                <div class="topic-item${isActive ? ' active' : ''}" data-id="${escapeHtml(item.id)}">
+                  <span class="title">${escapeHtml(item.title)}</span>
+                </div>
+              `;
+            });
+          });
+        }
 
         html += '</div></div>';
       });
@@ -560,20 +600,20 @@
 
     // イベント登録（科目カテゴリ）
     elements.topicList.querySelectorAll('.subject-category-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const category = header.dataset.category;
-        toggleCategory(category);
-      });
+      header.addEventListener('click', () => toggleCategory(header.dataset.category));
     });
 
     // イベント登録（科目）
     elements.topicList.querySelectorAll('.subject-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const category = header.dataset.category;
-        toggleCategory(category);
-      });
+      header.addEventListener('click', () => toggleCategory(header.dataset.category));
     });
 
+    // イベント登録（チャプター）
+    elements.topicList.querySelectorAll('.chapter-header').forEach(header => {
+      header.addEventListener('click', () => toggleCategory(header.dataset.category));
+    });
+
+    // イベント登録（トピック）
     elements.topicList.querySelectorAll('.topic-item').forEach(item => {
       item.addEventListener('click', () => {
         selectItem(item.dataset.id);

@@ -415,6 +415,44 @@ body {
   display: none;
 }
 
+/* チャプター（01_病因など） */
+.chapter-group {
+  margin-bottom: 8px;
+}
+
+.chapter-header {
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: #FAFAFA;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  margin-left: 24px;
+}
+
+.chapter-header:hover {
+  background: #F0F0F5;
+}
+
+.chapter-header .toggle {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-left: auto;
+}
+
+.chapter-items {
+  padding: 6px 0 0 32px;
+}
+
+.chapter-items.collapsed {
+  display: none;
+}
+
 /* 旧カテゴリスタイル（互換性用） */
 .category-group {
   margin-bottom: 12px;

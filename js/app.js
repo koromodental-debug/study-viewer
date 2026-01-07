@@ -37,6 +37,7 @@
     qaDisplay: document.getElementById('qa-display'),
     qaToolbar: document.getElementById('qa-toolbar'),
     qaToggleBtn: document.getElementById('qa-toggle-btn'),
+    qaFloatingToggle: document.getElementById('qa-floating-toggle'),
     welcomeScreen: document.getElementById('welcome-screen'),
     welcomeStartBtn: document.getElementById('welcome-start-btn'),
     welcomeCardMenu: document.getElementById('welcome-card-menu'),
@@ -165,6 +166,14 @@
     // Q&Aトグルボタン
     if (elements.qaToggleBtn) {
       elements.qaToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleQAMode();
+      });
+    }
+
+    // Q&Aフローティングトグルボタン
+    if (elements.qaFloatingToggle) {
+      elements.qaFloatingToggle.addEventListener('click', function(e) {
         e.preventDefault();
         toggleQAMode();
       });
@@ -1208,6 +1217,11 @@
       elements.kakomonContent.classList.toggle('active', tab === 'kakomon');
     }
 
+    // Q&Aフローティングトグルボタンの表示制御
+    if (elements.qaFloatingToggle) {
+      elements.qaFloatingToggle.classList.toggle('show', tab === 'qa');
+    }
+
     // 新しいタブにスクロール（セクション優先、フォールバックで%）
     setTimeout(() => {
       let scrolled = false;
@@ -1256,6 +1270,12 @@
     if (elements.qaToggleBtn) {
       elements.qaToggleBtn.classList.toggle('active', state.qaShowAll);
       elements.qaToggleBtn.textContent = state.qaShowAll ? '折りたたむ' : '全て表示';
+    }
+
+    // フローティングトグルボタンを更新
+    if (elements.qaFloatingToggle) {
+      elements.qaFloatingToggle.classList.toggle('active', state.qaShowAll);
+      elements.qaFloatingToggle.querySelector('span').textContent = state.qaShowAll ? '折りたたむ' : '全て表示';
     }
   }
 

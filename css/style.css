@@ -1078,16 +1078,9 @@ body {
   background: var(--bg-color);
 }
 
-/* Q&Aツールバー */
+/* Q&Aツールバー（フローティングボタンに移行のため非表示） */
 .qa-toolbar {
-  position: sticky;
-  top: 0;
-  background: var(--bg-color);
-  padding: 8px 16px;
-  z-index: 10;
-  border-bottom: 1px solid var(--border-color);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  text-align: center;
+  display: none !important;
 }
 
 .qa-toolbar.hidden {
@@ -1628,6 +1621,55 @@ body {
   }
 }
 
+/* ===== Q&Aフローティングトグルボタン ===== */
+.qa-floating-toggle {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1f;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.25s ease;
+}
+
+.qa-floating-toggle.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.qa-floating-toggle:hover {
+  background: #1d1d1f;
+  color: white;
+}
+
+.qa-floating-toggle:active {
+  transform: scale(0.95);
+}
+
+.qa-floating-toggle.active {
+  background: #1d1d1f;
+  color: white;
+}
+
+/* Safe area対応 */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .qa-floating-toggle {
+    bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+}
+
 /* モバイル最適化 */
 @media (max-width: 480px) {
   .floating-tabbar {
@@ -1650,5 +1692,12 @@ body {
     right: 16px;
     width: 48px;
     height: 48px;
+  }
+
+  .qa-floating-toggle {
+    bottom: 16px;
+    left: 16px;
+    padding: 8px 14px;
+    font-size: 13px;
   }
 }

@@ -69,6 +69,14 @@
     categories.forEach(cat => state.collapsedCategories.add(`cat_${cat}`));
     const subjects = new Set(DATA.map(item => item.subject || 'その他'));
     subjects.forEach(subj => state.collapsedCategories.add(`subj_${subj}`));
+    // チャプターも折りたたみ
+    DATA.forEach(item => {
+      const subject = item.subject || 'その他';
+      const chapter = extractChapter(item);
+      if (chapter) {
+        state.collapsedCategories.add(`chap_${subject}_${chapter}`);
+      }
+    });
 
     renderTopicList(DATA);
     bindEvents();

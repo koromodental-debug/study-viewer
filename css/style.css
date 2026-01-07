@@ -1475,13 +1475,57 @@ body {
   }
 }
 
-/* ヘッダータイトル（タブ削除後） */
+/* ヘッダータイトル */
 .header-title {
   flex: 1;
   text-align: center;
   font-size: 17px;
   font-weight: 600;
   color: #1d1d1f;
+  margin: 0;
+}
+
+/* ===== フローティングメニューボタン ===== */
+.floating-menu-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #1d1d1f;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.floating-menu-btn:hover {
+  transform: scale(1.05);
+}
+
+.floating-menu-btn:active {
+  transform: scale(0.95);
+}
+
+.floating-menu-btn span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+}
+
+/* Safe area対応 */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .floating-menu-btn {
+    bottom: calc(24px + env(safe-area-inset-bottom));
+  }
 }
 
 /* モバイル最適化 */
@@ -1499,5 +1543,12 @@ body {
   .floating-tab .tab-icon {
     width: 18px;
     height: 18px;
+  }
+
+  .floating-menu-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
   }
 }

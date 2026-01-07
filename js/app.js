@@ -80,7 +80,7 @@
    */
   function bindEvents() {
     // サイドバー開閉
-    elements.menuBtn.addEventListener('click', openSidebar);
+    elements.menuBtn.addEventListener('click', toggleSidebar);
     elements.sidebarClose.addEventListener('click', closeSidebar);
     elements.sidebarOverlay.addEventListener('click', closeSidebar);
 
@@ -306,6 +306,17 @@
     state.sidebarOpen = true;
     elements.sidebar.classList.add('open');
     elements.sidebarOverlay.classList.add('show');
+  }
+
+  /**
+   * サイドバーをトグル
+   */
+  function toggleSidebar() {
+    if (state.sidebarOpen) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
   }
 
   /**

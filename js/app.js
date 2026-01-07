@@ -11,7 +11,6 @@
     sidebarOpen: false,
     searchOpen: false,
     qaShowAll: false,
-    sidebarFilter: '',
     lastScrollY: 0,
     headerHidden: false
   };
@@ -24,7 +23,7 @@
     sidebar: document.getElementById('sidebar'),
     sidebarClose: document.getElementById('sidebar-close'),
     sidebarOverlay: document.getElementById('sidebar-overlay'),
-    sidebarFilter: document.getElementById('sidebar-filter'),
+    sidebarSearchBtn: document.getElementById('sidebar-search-btn'),
     topicList: document.getElementById('topic-list'),
     searchBtn: document.getElementById('search-btn'),
     searchOverlay: document.getElementById('search-overlay'),
@@ -41,7 +40,6 @@
     welcomeScreen: document.getElementById('welcome-screen'),
     welcomeStartBtn: document.getElementById('welcome-start-btn'),
     welcomeCardMenu: document.getElementById('welcome-card-menu'),
-    homeBtn: document.getElementById('home-btn'),
     // 過去問
     kakomonContent: document.getElementById('kakomon-content'),
     kakomonDisplay: document.getElementById('kakomon-display'),
@@ -111,19 +109,17 @@
     elements.sidebarClose.addEventListener('click', closeSidebar);
     elements.sidebarOverlay.addEventListener('click', closeSidebar);
 
-    // サイドバーフィルター
-    let filterDebounce;
-    elements.sidebarFilter.addEventListener('input', (e) => {
-      clearTimeout(filterDebounce);
-      filterDebounce = setTimeout(() => {
-        state.sidebarFilter = e.target.value;
-        renderTopicList(DATA);
-      }, 150);
-    });
+    // サイドバー内の検索ボタン → 検索オーバーレイを開く
+    if (elements.sidebarSearchBtn) {
+      elements.sidebarSearchBtn.addEventListener('click', () => {
+        closeSidebar();
+        setTimeout(openSearch, 100);
+      });
+    }
 
-    // 検索ボタン → サイドバーを開いて検索にフォーカス（ボタンがある場合のみ）
+    // 検索ボタン（ヘッダーにある場合）
     if (elements.searchBtn) {
-      elements.searchBtn.addEventListener('click', openSidebarWithSearch);
+      elements.searchBtn.addEventListener('click', openSearch);
     }
 
     // 検索オーバーレイを閉じる
@@ -198,11 +194,6 @@
     }
     if (elements.welcomeCardMenu) {
       elements.welcomeCardMenu.addEventListener('click', openSidebar);
-    }
-
-    // ホームボタン
-    if (elements.homeBtn) {
-      elements.homeBtn.addEventListener('click', goHome);
     }
   }
 
@@ -408,17 +399,6 @@
   }
 
   /**
-   * サイドバーを開いて検索にフォーカス
-   */
-  function openSidebarWithSearch() {
-    openSidebar();
-    // 少し待ってからフォーカス（アニメーション後）
-    setTimeout(() => {
-      elements.sidebarFilter.focus();
-    }, 100);
-  }
-
-  /**
    * 検索を開く
    */
   function openSearch() {
@@ -497,23 +477,12 @@
    * トピックリストを描画（科目別2階層）
    */
   function renderTopicList(items) {
-    const filter = state.sidebarFilter.toLowerCase().trim();
-    const isFiltering = filter.length > 0;
-
-    // フィルタリング
-    let filteredItems = items;
-    if (isFiltering) {
-      filteredItems = items.filter(item =>
-        item.title.toLowerCase().includes(filter) ||
-        (item.subject && item.subject.toLowerCase().includes(filter)) ||
-        (item.subjectCategory && item.subjectCategory.toLowerCase().includes(filter))
-      );
-    }
-
-    if (filteredItems.length === 0) {
+    if (items.length === 0) {
       elements.topicList.innerHTML = '<div class="no-results">トピックがありません</div>';
       return;
     }
+
+    const filteredItems = items;
 
     // 科目カテゴリ → 科目 → トピック の3階層でグループ化
     const categoryOrder = ['基礎', '臨床', '必修', 'その他'];
@@ -543,7 +512,7 @@
 
     sortedCategories.forEach(subjectCat => {
       const subjectCatKey = `cat_${subjectCat}`;
-      const isCatCollapsed = isFiltering ? false : state.collapsedCategories.has(subjectCatKey);
+      const isCatCollapsed = state.collapsedCategories.has(subjectCatKey);
 
       html += `
         <div class="subject-category-group">
@@ -559,7 +528,7 @@
 
       subjects.forEach(subject => {
         const subjectKey = `subj_${subject}`;
-        const isSubjCollapsed = isFiltering ? false : state.collapsedCategories.has(subjectKey);
+        const isSubjCollapsed = state.collapsedCategories.has(subjectKey);
         const topicCount = groups[subjectCat][subject].length;
 
         html += `

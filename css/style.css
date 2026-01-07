@@ -217,24 +217,37 @@ body {
   color: var(--text-color);
 }
 
-.sidebar-close {
+.sidebar-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-icon-btn {
   background: rgba(0,0,0,0.05);
   border: none;
-  font-size: 18px;
   color: var(--text-color);
   cursor: pointer;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
-.sidebar-close:hover {
+.sidebar-icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-icon-btn:hover {
   background: rgba(0,0,0,0.1);
-  transform: scale(1.1);
+}
+
+.sidebar-icon-btn:active {
+  transform: scale(0.95);
 }
 
 .sidebar-overlay {

@@ -1410,7 +1410,7 @@ body {
 @media (max-width: 768px) {
   .kakomon-display {
     padding: 12px;
-    padding-bottom: 150px;
+    padding-bottom: 250px;
   }
 
   .kakomon-card {

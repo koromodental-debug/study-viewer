@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>GTR法 - 歯周病学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯周病学 / 歯周外科治療</span>
+    <h1>GTR法</h1>
+    <div class="container">
+
+      <h2>定義</h2>
+      <p><span class="key">GTR法</span>（guided tissue regeneration method：組織再生誘導法）は、非吸収性膜または吸収性膜を用いて、<span class="highlight">歯肉上皮および歯肉結合組織細胞の根尖側方向への移動を阻止</span>し、<span class="highlight">歯根膜組織由来の細胞を歯根面へ誘導</span>することで新付着を形成する歯周組織再生療法の1つである。</p>
+
+      <h2>生物学的原理（Melcherの仮説）</h2>
+      <p>創傷部位には4つの組織由来の細胞が競合して移動する：</p>
+      <ul>
+        <li>①歯肉上皮</li>
+        <li>②歯肉結合組織</li>
+        <li>③歯槽骨</li>
+        <li>④歯根膜</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">GTR法の原理（頻出）</div>
+        <ul>
+          <li><span class="key">GTR法なし</span>：歯肉上皮由来細胞の移動が速く、<span class="caution">長い上皮性付着</span>による治癒</li>
+          <li><span class="key">GTR法あり</span>：膜が上皮・結合組織の侵入を阻止 → <span class="highlight">歯根膜由来細胞を誘導</span> → <span class="highlight">結合組織性付着</span>を伴う歯周組織再生</li>
+        </ul>
+      </div>
+
+      <h2>GTR膜の種類</h2>
+
+      <h3>非吸収性膜と吸収性膜の比較</h3>
+      <table>
+        <tr><th>種類</th><th>材料</th><th>利点</th><th>欠点</th></tr>
+        <tr>
+          <td><span class="key">非吸収性膜</span></td>
+          <td>ePTFE（延伸加工ポリテトラフルオロエチレン）</td>
+          <td>長期間の細胞遮断性・スペースメイキング、新生組織の確認可能</td>
+          <td><span class="caution">二次手術が必要</span>、膜露出時の感染リスク</td>
+        </tr>
+        <tr>
+          <td><span class="key">吸収性膜</span></td>
+          <td>コラーゲン膜、合成高分子膜（乳酸-グリコール酸共重合体）</td>
+          <td>二次手術不要、患者負担少ない</td>
+          <td>新生組織の確認不可、スペースメイキング困難</td>
+        </tr>
+      </table>
+
+      <h3>非吸収性膜の構造</h3>
+      <ul>
+        <li><span class="key">カラー部</span>：歯肉上皮細胞の根尖側への侵入を防ぐ</li>
+        <li><span class="key">スカート部</span>：歯肉結合組織の侵入を防ぎ、スペースメイキング能を有する</li>
+      </ul>
+
+      <h2>GTR膜の所要条件</h2>
+      <ul>
+        <li><span class="key">生体親和性</span>：歯周組織に親和性を有する</li>
+        <li><span class="key">細胞遮断性</span>：上皮・結合組織細胞の侵入を防ぐ</li>
+        <li><span class="key">歯肉縁線との結合</span>：膜の露出を阻止</li>
+        <li><span class="key">スペースメイキング</span>：歯根膜由来細胞の誘導スペースを確保</li>
+        <li><span class="key">操作性</span>：骨欠損形態への適合、固定、被覆が可能</li>
+      </ul>
+
+      <h2>適応症と禁忌症</h2>
+
+      <h3>適応症</h3>
+      <table>
+        <tr><th>病変</th><th>条件</th></tr>
+        <tr><td>根分岐部病変</td><td>Lindhe <span class="highlight">1度・2度</span>、Glickman 2級、ルートトランクが長いもの</td></tr>
+        <tr><td>垂直性骨欠損</td><td><span class="highlight">2壁性・3壁性</span>骨欠損</td></tr>
+        <tr><td>その他</td><td>臼歯部に十分な幅の角化歯肉が存在</td></tr>
+      </table>
+
+      <h3>禁忌症</h3>
+      <ul>
+        <li>一般的な歯周外科治療が行えない全身状態</li>
+        <li>重度の根分岐部病変（Lindhe <span class="caution">3度</span>、Glickman 3・4級）</li>
+        <li><span class="caution">水平性骨欠損</span></li>
+        <li>GTR膜をフラップで被覆できない場合</li>
+        <li>残存歯根膜組織の著しい減少を伴う重度の病変</li>
+      </ul>
+
+      <h2>術式の要点</h2>
+      <ul>
+        <li>術前のプラークコントロールが重要</li>
+        <li>喫煙は治癒を阻害するため禁煙指導</li>
+        <li>フラップの形成：歯肉溝内切開または内斜切開</li>
+        <li>不良肉芽の除去および徹底したSRP</li>
+        <li>GTR膜の調整と応用：欠損部を過不足なく覆う</li>
+        <li>フラップの閉鎖：緊密に縫合</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108B17</div>
+        <p>39歳の男性。下顎左側臼歯部のブラッシング時の出血を主訴として来院した。慢性歯周炎と診断し、歯周基本治療後に歯周外科治療を行うこととした。歯周外科治療時の口腔内写真（別冊No.17A）と再評価時のエックス線写真（別冊No.17B）を別に示す。<br>
+        ⎾6に行う処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108B17_1.png" alt="別冊No.17A">
+          <img src="../../../images/108回_Web画像/108B17_2.png" alt="別冊No.17B">
+        </div>
+        <div class="choices">
+          a GTR法<br>
+          b トンネリング<br>
+          c へミセクション<br>
+          d ルートリセクション<br>
+          e ルートセパレーション
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】エックス線写真で2壁性の垂直性骨欠損が認められる。<span class="highlight">GTR法は2壁性・3壁性の垂直性骨欠損に適応</span>。根分岐部病変の程度が軽度であり、両根とも保存可能なためヘミセクション等は不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C114</div>
+        <p>骨縁下ポケットに適応できないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a GTR法<br>
+          b 歯肉切除術<br>
+          c 歯周ポケット掻爬術<br>
+          d エナメルタンパク質の応用<br>
+          e Widman改良フラップ手術
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="caution">歯肉切除術は骨縁下ポケットに適応できない</span>（骨縁より根尖側にはアクセス不可）。GTR法、EMD、Widman改良フラップ手術は骨縁下ポケット（垂直性骨欠損）に適応可能。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A97</div>
+        <p>根分岐部病変の治療で用いられるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a GTR法<br>
+          b トンネリング<br>
+          c ヘミセクション<br>
+          d 遊離歯肉移植術<br>
+          e 歯肉弁側方移動術
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】根分岐部病変の治療にはGTR法（1〜2度）、トンネリング（2〜3度）、ヘミセクション（2〜3度）が用いられる。遊離歯肉移植術と歯肉弁側方移動術は歯周形成手術であり、根分岐部病変の治療には用いない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C77</div>
+        <p>66歳の女性。下顎左側臼歯部の違和感を主訴として来院した。5年前から骨粗鬆症の治療を受けているという。慢性歯周炎と診断し、歯周基本治療を行った。<br>
+        続いて行うのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C77_1.png" alt="別冊No.30A">
+          <img src="../../../images/115回_Web画像/115C77_2.png" alt="別冊No.30B">
+        </div>
+        <div class="choices">
+          a 咬合調整<br>
+          b 歯肉切除術<br>
+          c 組織再生誘導法<br>
+          d 歯周ポケット掻爬術<br>
+          e 内科主治医への対診
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】垂直性骨欠損があり<span class="key">GTR法（組織再生誘導法）</span>の適応。骨粗鬆症の治療を受けているため、BP製剤やデノスマブ服用の可能性があり、<span class="highlight">内科主治医への対診</span>が必要。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

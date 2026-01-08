@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>DMF歯率 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula { font-family: "Times New Roman", serif; font-size: 11pt; margin: 8px 0; background: var(--bg-secondary); padding: 12px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 疫学の指標</span>
+    <h1>DMF歯率</h1>
+    <div class="container">
+
+      <h2>DMF指数とは</h2>
+      <p><span class="key">永久歯</span>のう蝕（むし歯）経験を表す指標。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">DMFの意味</div>
+        <ul>
+          <li><span class="highlight">D</span>（Decayed）：<span class="key">未処置う蝕歯</span></li>
+          <li><span class="highlight">M</span>（Missing）：う蝕が原因で<span class="key">抜去した歯</span></li>
+          <li><span class="highlight">F</span>（Filled）：う蝕が原因で<span class="key">処置した歯</span></li>
+        </ul>
+      </div>
+
+      <p class="note"><span class="caution">注意</span>：矯正治療や外傷による抜歯はMに含めない。30歳以上ではう蝕以外の原因で抜去した歯をMに含めることがある。</p>
+
+      <h2>計算式</h2>
+      <h3>1人平均DMF歯数（DMFT指数）</h3>
+      <div class="formula">
+        1人平均DMF歯数 = <span class="highlight">DMF歯の合計</span> ÷ <span class="highlight">被験者数</span>
+      </div>
+
+      <h3>DMF歯率</h3>
+      <div class="formula">
+        DMF歯率(%) = <span class="highlight">DMF歯の合計</span> ÷ <span class="highlight">被験歯数</span> × 100
+      </div>
+
+      <h3>DMF者率</h3>
+      <div class="formula">
+        DMF者率(%) = <span class="highlight">DMF歯を持つ者の数</span> ÷ <span class="highlight">被験者数</span> × 100
+      </div>
+
+      <h2>齲蝕抑制率</h2>
+      <p>フッ化物応用などの予防処置の効果を評価する指標。</p>
+      <div class="formula">
+        齲蝕抑制率(%) = (<span class="key">対照群の増加DMF</span> − <span class="key">実験群の増加DMF</span>) ÷ <span class="key">対照群の増加DMF</span> × 100
+      </div>
+
+      <p class="note">増加DMF = 調査終了時のDMF − 調査開始時のDMF</p>
+
+      <h2>DMF指数とdmf指数の違い</h2>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>対象</th>
+          <th>表記</th>
+        </tr>
+        <tr>
+          <td><span class="key">DMF指数</span></td>
+          <td><span class="highlight">永久歯</span></td>
+          <td>大文字</td>
+        </tr>
+        <tr>
+          <td><span class="key">dmf指数</span></td>
+          <td><span class="highlight">乳歯</span></td>
+          <td>小文字</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">注意</span>：乳歯のm（missing）は「う蝕による喪失歯」または「う蝕による要抜去歯」を指す。</p>
+
+      <h2>国試過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108D53【計算】</div>
+        <p>フッ化物洗口法を実施しているA小学校と実施していないB小学校における1年時と6年時の1人平均DMF歯数を図に示す。<br>フッ化物洗口法による齲蝕抑制率を求めよ。ただし、小数点以下第1位を四捨五入すること。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D53.png" alt="DMF歯数の図">
+        </div>
+        <div class="answer">正解：43%</div>
+        <p>【解説】<br>
+        ・A小学校（フッ化物洗口あり）：増加DMF = 1.2 - 0 = 1.2<br>
+        ・B小学校（対照群）：増加DMF = 2.1 - 0 = 2.1<br>
+        ・齲蝕抑制率 = (2.1 - 1.2) / 2.1 × 100 = 0.9 / 2.1 × 100 ≒ <span class="highlight">43%</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109D53【計算・参考】</div>
+        <p>中学校1年生100名の学校歯科健康診断の集計結果を表に示す。DMF歯率を求めよ。</p>
+        <div class="answer">正解：7.4%</div>
+        <p>【解説】DMF歯率 = DMF歯の合計 / 被験歯数 × 100<br>
+        被験歯数 = 100名 × 28歯 = 2800歯として計算。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>費用対効果分析 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>費用対効果分析</h1>
+    <div class="container">
+
+      <h2>医療経済評価の位置づけ</h2>
+      <p>公衆衛生活動やプログラムの評価において、費用対効果分析はPDCAサイクルの<span class="key">Check（評価）</span>の段階で行われる。</p>
+
+      <h2>医療経済評価の分析手法</h2>
+      <p>医療経済評価では、投入した<span class="key">費用</span>と得られた<span class="key">効果</span>を比較する。効果の測定単位によって分析手法が異なる。</p>
+
+      <h3>4つの分析手法</h3>
+      <table>
+        <tr>
+          <th>分析手法</th>
+          <th>効果の単位</th>
+          <th>特徴・用途</th>
+        </tr>
+        <tr>
+          <td><span class="key">費用最小化分析</span></td>
+          <td>なし（効果同等）</td>
+          <td>効果が同等の介入間で費用のみを比較</td>
+        </tr>
+        <tr>
+          <td><span class="key">費用効果分析</span></td>
+          <td><span class="highlight">自然単位</span><br>（死亡率、血圧など）</td>
+          <td>死亡率改善、血圧低下などの臨床指標で評価</td>
+        </tr>
+        <tr>
+          <td><span class="key">費用効用分析</span></td>
+          <td><span class="highlight">QALY</span><br>（質調整生存年）</td>
+          <td>QOL（生活の質）を考慮した評価</td>
+        </tr>
+        <tr>
+          <td><span class="key">費用便益分析</span></td>
+          <td><span class="highlight">金銭</span></td>
+          <td>効果をすべて金銭換算して評価</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方のポイント</div>
+        <ul>
+          <li><span class="key">費用効果</span>分析 → <span class="highlight">効果</span>（死亡率など自然単位）</li>
+          <li><span class="key">費用効用</span>分析 → <span class="highlight">効用</span>（QALY、QOL）</li>
+          <li><span class="key">費用便益</span>分析 → <span class="highlight">便益</span>（金銭）</li>
+        </ul>
+      </div>
+
+      <h2>QALY（質調整生存年）</h2>
+      <p><span class="key">QALY</span>（Quality-Adjusted Life Year）は、生存年数にQOL（生活の質）を掛け合わせた指標。</p>
+      <ul>
+        <li>完全な健康状態 = 1、死亡 = 0</li>
+        <li>QALY = QOL値 × 生存年数</li>
+        <li>例）QOL値0.8で5年生存 → 0.8 × 5 = 4 QALY</li>
+      </ul>
+
+      <h2>国試過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115C27</div>
+        <p>同種の薬効を持つ医薬品について、死亡率の改善にかかる費用を比較するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 費用分析<br>
+          b 費用効果分析<br>
+          c 費用効用分析<br>
+          d 費用便益分析<br>
+          e 費用最小化分析
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">死亡率の改善</span>という自然単位で効果を測定しているため、<span class="key">費用効果分析</span>が正解。費用効用分析はQALY、費用便益分析は金銭で効果を評価する。</p>
+      </div>
+
+      <p class="note"><span class="caution">注意</span>：「効果」「効用」「便益」の違いを押さえる。死亡率・血圧など臨床指標は「効果」、QALYは「効用」、金銭は「便益」。</p>
+
+    </div>
+  </div>
+</body>
+</html>

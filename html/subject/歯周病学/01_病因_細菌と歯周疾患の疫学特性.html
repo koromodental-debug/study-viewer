@@ -99,6 +99,36 @@
         </tr>
       </table>
 
+      <!-- 歯周病の3因子関係図 -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 200" style="font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; max-width: 100%; height: auto; display: block; margin: 16px auto;">
+        <rect width="650" height="200" fill="white"/>
+        <defs>
+          <marker id="arrow-factor" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#0071E3"/>
+          </marker>
+        </defs>
+        <!-- 中央：歯周病 -->
+        <rect x="260" y="75" width="130" height="50" rx="25" fill="#0071E3"/>
+        <text x="325" y="105" text-anchor="middle" font-size="12" font-weight="600" fill="white">歯周病</text>
+        <!-- 細菌因子（上） -->
+        <rect x="235" y="10" width="180" height="45" rx="12" fill="#FED7D7"/>
+        <text x="325" y="30" text-anchor="middle" font-size="10" font-weight="600" fill="#C53030">細菌因子（初発因子）</text>
+        <text x="325" y="46" text-anchor="middle" font-size="8" fill="#C53030">P.g., A.a., T.f. など</text>
+        <path d="M 325 55 L 325 72" stroke="#C53030" stroke-width="2" fill="none" marker-end="url(#arrow-factor)"/>
+        <!-- 宿主因子（左下） -->
+        <rect x="40" y="130" width="180" height="55" rx="12" fill="#E8F4FD"/>
+        <text x="130" y="150" text-anchor="middle" font-size="10" font-weight="600" fill="#0071E3">宿主因子</text>
+        <text x="130" y="166" text-anchor="middle" font-size="8" fill="#0071E3">局所性・全身性修飾因子</text>
+        <text x="130" y="180" text-anchor="middle" font-size="8" fill="#86868B">年齢・遺伝・歯石など</text>
+        <path d="M 220 145 L 262 118" stroke="#0071E3" stroke-width="2" fill="none" marker-end="url(#arrow-factor)"/>
+        <!-- 環境因子（右下） -->
+        <rect x="430" y="130" width="180" height="55" rx="12" fill="#FEEBC8"/>
+        <text x="520" y="150" text-anchor="middle" font-size="10" font-weight="600" fill="#BF5600">環境因子</text>
+        <text x="520" y="166" text-anchor="middle" font-size="8" fill="#BF5600">後天的リスク</text>
+        <text x="520" y="180" text-anchor="middle" font-size="8" fill="#86868B">喫煙・ストレスなど</text>
+        <path d="M 430 145 L 388 118" stroke="#BF5600" stroke-width="2" fill="none" marker-end="url(#arrow-factor)"/>
+      </svg>
+
       <h3>歯周病の疫学的特徴</h3>
       <ul>
         <li><span class="highlight">永久歯喪失の主な原因</span>である</li>

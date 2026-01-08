@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>スクリーニング検査 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula { font-family: "Times New Roman", serif; font-size: 11pt; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 疫学の指標</span>
+    <h1>スクリーニング検査</h1>
+    <div class="container">
+
+      <h2>スクリーニングとは</h2>
+      <p>疾病をもつ可能性のある者をふるい分けし、無症状で治療可能な早期の段階で発見すること。<span class="key">二次予防</span>の<span class="highlight">早期発見</span>に相当する。</p>
+
+      <h2>2×2表と指標</h2>
+      <h3>基本の2×2表</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>疾病あり</th>
+          <th>疾病なし</th>
+        </tr>
+        <tr>
+          <td><span class="key">検査陽性(+)</span></td>
+          <td>真陽性 (a)</td>
+          <td>偽陽性 (b)</td>
+        </tr>
+        <tr>
+          <td><span class="key">検査陰性(-)</span></td>
+          <td>偽陰性 (c)</td>
+          <td>真陰性 (d)</td>
+        </tr>
+      </table>
+
+      <h3>各指標の計算式</h3>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>計算式</th>
+          <th>意味</th>
+        </tr>
+        <tr>
+          <td><span class="key">感度（敏感度）</span></td>
+          <td><span class="highlight">a/(a+c)</span></td>
+          <td>疾病ありを陽性と判定する確率</td>
+        </tr>
+        <tr>
+          <td><span class="key">特異度</span></td>
+          <td><span class="highlight">d/(b+d)</span></td>
+          <td>疾病なしを陰性と判定する確率</td>
+        </tr>
+        <tr>
+          <td><span class="key">陽性的中率</span></td>
+          <td>a/(a+b)</td>
+          <td>陽性者のうち真に疾病ありの確率</td>
+        </tr>
+        <tr>
+          <td><span class="key">陰性的中率</span></td>
+          <td>d/(c+d)</td>
+          <td>陰性者のうち真に疾病なしの確率</td>
+        </tr>
+        <tr>
+          <td><span class="key">偽陽性率</span></td>
+          <td>b/(b+d) = 1-特異度</td>
+          <td>疾病なしを陽性と誤判定</td>
+        </tr>
+        <tr>
+          <td><span class="key">偽陰性率</span></td>
+          <td>c/(a+c) = 1-感度</td>
+          <td>疾病ありを陰性と誤判定</td>
+        </tr>
+      </table>
+
+      <h3>陽性尤度比</h3>
+      <p class="formula"><span class="key">陽性尤度比</span> = 感度 / (1-特異度) = 感度 / 偽陽性率</p>
+
+      <h2>カットオフ値の変化</h2>
+      <div class="point-box">
+        <div class="point-box-title">カットオフ値を低く設定すると</div>
+        <ul>
+          <li>感度 → <span class="highlight">上がる</span></li>
+          <li>特異度 → <span class="caution">下がる</span></li>
+          <li>偽陽性率 → 高くなる</li>
+        </ul>
+      </div>
+
+      <p><span class="caution">重要</span>：<span class="highlight">致命率が高い疾病では感度を優先</span>する（見逃しを防ぐ）</p>
+
+      <h2>ROC曲線</h2>
+      <ul>
+        <li>縦軸：<span class="key">感度</span></li>
+        <li>横軸：<span class="key">1-特異度</span>（偽陽性率）</li>
+        <li><span class="highlight">曲線下面積（AUC）が大きいほど有用な検査</span></li>
+        <li>左上に近い曲線ほど優れている</li>
+      </ul>
+
+      <h2>有病率と的中率</h2>
+      <ul>
+        <li>有病率が変化しても<span class="key">感度・特異度は変わらない</span></li>
+        <li>有病率↑ → 陽性的中率↑、陰性的中率↓</li>
+        <li>有病率↓ → 陽性的中率↓、陰性的中率↑</li>
+      </ul>
+
+      <h2>国試過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C96</div>
+        <p>疾病の有無とスクリーニング検査結果とを表に示す。<br>A/(A+B)はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 敏感度〈感度〉<br>
+          b 特異度<br>
+          c 陽性反応的中度<br>
+          d 陰性反応的中度<br>
+          e 偽陽性率
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】A/(A+B)は「疾病ありの人のうち検査陽性の割合」で、これは<span class="highlight">感度</span>の定義。感度=a/(a+c)と同じ形式。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C72</div>
+        <p>死亡率の高い疾患のスクリーニング検査法の評価において、最も重視するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 敏感度〈感度〉<br>
+          b 特異度<br>
+          c 偽陽性率<br>
+          d 陽性反応適中度<br>
+          e 陰性反応適中度
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】死亡率（致命率）が高い疾患では、見逃し（偽陰性）を防ぐため<span class="highlight">感度を優先</span>する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D70</div>
+        <p>疾病の有無とスクリーニング検査値の分布の関係を図に示す。<br>カットオフ値を低く設定したときの数値の変化の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 感度：上がる ── 特異度：上がる<br>
+          b 感度：上がる ── 特異度：下がる<br>
+          c 感度：下がる ── 特異度：上がる<br>
+          d 感度：下がる ── 特異度：下がる<br>
+          e 変化なし ── 変化なし
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】カットオフ値を低くすると陽性判定が増えるため、<span class="highlight">感度は上がるが特異度は下がる</span>。感度と特異度はトレードオフの関係。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D90【計算】</div>
+        <p>ある成人集団に対して歯周病のスクリーニング検査を実施した結果、感度は0.90で特異度は0.80であった。この検査の尤度比（陽性尤度比）を求めよ。</p>
+        <div class="answer">正解：4.5</div>
+        <p>【解説】陽性尤度比 = 感度/(1-特異度) = 0.90/(1-0.80) = 0.90/0.20 = <span class="highlight">4.5</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B27</div>
+        <p>5つの検査法のROC曲線を図に示す。スクリーニング検査に最も有用なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】ROC曲線では<span class="highlight">左上に近い（曲線下面積が大きい）ほど有用</span>。アが最も左上に位置する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

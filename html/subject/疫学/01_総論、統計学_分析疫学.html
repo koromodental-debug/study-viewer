@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>分析疫学 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>分析疫学</h1>
+    <div class="container">
+
+      <h2>疫学の3つの段階</h2>
+      <p>疫学研究は仮説との関係で3段階に分けられる。</p>
+      <ul>
+        <li><span class="key">記述疫学</span>：仮説を<span class="highlight">立てる</span></li>
+        <li><span class="key">分析疫学</span>：仮説を<span class="highlight">確認する</span></li>
+        <li><span class="key">介入疫学</span>：仮説を<span class="highlight">検証する</span></li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：分析疫学では仮説を「確実に検証」することはできないため、「確かめる/確認する」という表現を使う。</p>
+
+      <h2>分析疫学に含まれる研究</h2>
+      <div class="point-box">
+        <div class="point-box-title">分析疫学の4つの研究方法</div>
+        <ul>
+          <li>横断研究</li>
+          <li>生態学的研究（地域相関研究）</li>
+          <li>コホート研究（前向き・後向き）</li>
+          <li>症例対照研究</li>
+        </ul>
+      </div>
+
+      <h2>各研究方法の特徴</h2>
+
+      <h3>横断研究</h3>
+      <p>ある集団の<span class="highlight">ある一時点</span>での疾病の有無と要因の有無を同時に調査し、関連を明らかにする方法。</p>
+
+      <h3>生態学的研究（地域相関研究）</h3>
+      <p><span class="key">集団単位</span>（国、都道府県、市町村など）を分析対象とし、集団間での要因と疾病の関連を検討する方法。</p>
+
+      <h3>コホート研究</h3>
+      <p>要因対照研究ともいう。単にコホート研究といえば通常は<span class="key">前向きコホート研究</span>を指す。</p>
+      <ul>
+        <li><span class="key">前向きコホート研究</span>：調査時点で曝露群と非曝露群を追跡し、疾病の発生を比較する</li>
+        <li><span class="key">後向きコホート研究</span>：過去に曝露された群とされなかった群を分け、現在までの罹患率を検討する</li>
+      </ul>
+
+      <h3>症例対照研究</h3>
+      <p>罹患している集団と罹患していない集団を設定し、<span class="key">過去の曝露</span>による影響を検討する方法。</p>
+
+      <h2>前向きコホート研究 vs 後向きコホート研究</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>前向きコホート研究</th>
+          <th>後向きコホート研究</th>
+        </tr>
+        <tr>
+          <td>時間軸</td>
+          <td>現在→未来</td>
+          <td>過去→現在</td>
+        </tr>
+        <tr>
+          <td>研究期間</td>
+          <td>長い</td>
+          <td><span class="highlight">短い</span></td>
+        </tr>
+        <tr>
+          <td>費用・労力</td>
+          <td>大きい</td>
+          <td><span class="highlight">少ない</span></td>
+        </tr>
+        <tr>
+          <td>曝露情報の信頼性</td>
+          <td>高い</td>
+          <td>比較的高い</td>
+        </tr>
+        <tr>
+          <td>実施条件</td>
+          <td>特になし</td>
+          <td>過去のデータが必要</td>
+        </tr>
+      </table>
+
+      <p class="note">後向きコホート研究は健診データなどが保管・管理されている場合に実施できる。</p>
+
+      <h2>各疫学の比較</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>介入の有無</th>
+          <th>時間の流れ</th>
+          <th>因果関係</th>
+        </tr>
+        <tr>
+          <td>記述疫学</td>
+          <td>なし</td>
+          <td>なし（断面調査）</td>
+          <td>相関関係</td>
+        </tr>
+        <tr>
+          <td>分析疫学（横断・生態学的）</td>
+          <td>なし（観察研究）</td>
+          <td>なし（断面調査）</td>
+          <td>相関関係</td>
+        </tr>
+        <tr>
+          <td>分析疫学（コホート・症例対照）</td>
+          <td>なし（観察研究）</td>
+          <td>あり（縦断調査）</td>
+          <td><span class="key">因果関係</span></td>
+        </tr>
+        <tr>
+          <td>介入疫学</td>
+          <td>あり（介入研究）</td>
+          <td>あり</td>
+          <td><span class="key">因果関係</span></td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A38</div>
+        <p>前向きコホート研究と比べた後向きコホート研究の利点はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 結果の信頼性が高い。<br>
+          b 労力が少なくてすむ。<br>
+          c 研究に要する期間が短い。<br>
+          d 交絡因子の影響が少ない。<br>
+          e 調査対象者が少なくてよい。
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】後向きコホート研究は過去のデータを使用するため、<span class="highlight">研究期間が短く</span>、<span class="highlight">労力が少ない</span>。結果の信頼性や交絡因子の影響は前向き研究の方が優れている。調査対象者数は研究デザインにより異なる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>統計用語 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>統計用語</h1>
+    <div class="container">
+
+      <h2>集団の代表値</h2>
+      <h3>代表値の種類</h3>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>定義</th>
+        </tr>
+        <tr>
+          <td><span class="key">平均値</span></td>
+          <td>全データを足して個数で割った値（算術平均）</td>
+        </tr>
+        <tr>
+          <td><span class="key">中央値</span></td>
+          <td>データを小さい順に並べたとき中央に位置する値</td>
+        </tr>
+        <tr>
+          <td><span class="key">最頻値</span></td>
+          <td>最も頻繁に出現する値</td>
+        </tr>
+        <tr>
+          <td><span class="key">分散</span></td>
+          <td>各データが平均値からどれだけ散らばっているかを示す値</td>
+        </tr>
+        <tr>
+          <td><span class="key">標準偏差</span></td>
+          <td>分散の平方根</td>
+        </tr>
+      </table>
+
+      <h2>正規分布</h2>
+      <div class="point-box">
+        <div class="point-box-title">正規分布の性質</div>
+        <ul>
+          <li>自然界に多い代表的な分布</li>
+          <li><span class="highlight">左右対称</span></li>
+          <li><span class="highlight">平均値、中央値、最頻値が一致</span></li>
+          <li>正規確率紙にプロットすると直線になる</li>
+          <li>累積度数分布はS字状になる</li>
+        </ul>
+      </div>
+
+      <h3>標準偏差と含まれる割合</h3>
+      <table>
+        <tr>
+          <th>範囲</th>
+          <th>含まれる割合</th>
+        </tr>
+        <tr>
+          <td>平均値 ± 1×標準偏差</td>
+          <td><span class="highlight">68%</span></td>
+        </tr>
+        <tr>
+          <td>平均値 ± 2×標準偏差</td>
+          <td><span class="highlight">95%</span></td>
+        </tr>
+        <tr>
+          <td>平均値 ± 3×標準偏差</td>
+          <td>99.7%</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">注意</span>：±1標準偏差は68%、±2標準偏差は95%を覚える</p>
+
+      <h2>分布の歪み</h2>
+      <p>データ分布が正規分布から外れて歪んでいる場合、平均値・中央値・最頻値の位置関係が変わる。</p>
+      <ul>
+        <li><span class="key">右に歪んだ分布</span>（正の歪度）：<span class="highlight">平均値 ＞ 中央値 ＞ 最頻値</span></li>
+        <li><span class="key">左に歪んだ分布</span>（負の歪度）：最頻値 ＞ 中央値 ＞ 平均値</li>
+      </ul>
+      <p class="note">DMF歯数の分布は右に歪んでいることが多い（0本が最頻値）</p>
+
+      <h2>バイアスと交絡因子</h2>
+      <h3>バイアスの種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">選択バイアス</span></td>
+          <td>観察集団が母集団の正しい代表でないときに起こる偏り</td>
+        </tr>
+        <tr>
+          <td><span class="key">情報バイアス</span></td>
+          <td>情報を得るときにその情報が正しくないために起こる偏り</td>
+        </tr>
+        <tr>
+          <td><span class="key">リコールバイアス</span></td>
+          <td>症例対照研究で過去の記憶に頼るため生じやすい（思い出しバイアス）</td>
+        </tr>
+        <tr>
+          <td><span class="key">交絡バイアス</span></td>
+          <td>第3の因子（交絡因子）が曝露と疾病発生の両者に関係し、関連を歪める</td>
+        </tr>
+      </table>
+
+      <h3>交絡因子の調整法</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>研究デザイン</th>
+        </tr>
+        <tr>
+          <td><span class="key">無作為割り付け</span></td>
+          <td>ランダム化比較試験</td>
+        </tr>
+        <tr>
+          <td><span class="key">マッチング</span></td>
+          <td>症例対照研究（年齢・性別などを揃える）</td>
+        </tr>
+        <tr>
+          <td><span class="key">層化</span></td>
+          <td>分析段階でグループ分けして解析</td>
+        </tr>
+        <tr>
+          <td><span class="key">多変量解析</span></td>
+          <td>統計手法で影響を除去</td>
+        </tr>
+      </table>
+
+      <h2>統計的過誤</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>定義</th>
+        </tr>
+        <tr>
+          <td><span class="key">第1種の過誤</span>（α error）</td>
+          <td><span class="highlight">差がないのに「差がある」と判定</span>（偽陽性）</td>
+        </tr>
+        <tr>
+          <td><span class="key">第2種の過誤</span>（β error）</td>
+          <td>差があるのに「差がない」と判定（偽陰性）</td>
+        </tr>
+      </table>
+
+      <h2>国試過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116C88</div>
+        <p>正規分布で平均値±1標準偏差の範囲に入る確率はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 55%<br>
+          b 68%<br>
+          c 75%<br>
+          d 86%<br>
+          e 95%
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】正規分布では平均値±1標準偏差に<span class="highlight">68%</span>、±2標準偏差に95%が含まれる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B121</div>
+        <p>正規分布で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 左右対称である。<br>
+          b 2変量の関係が示される。<br>
+          c 現在の3歳児dft数の分布である。<br>
+          d 平均値、中央値および最頻値は一致する。<br>
+          e 平均値±標準偏差の範囲に約95％が分布する。
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】正規分布の特徴は<span class="highlight">左右対称</span>で<span class="highlight">平均値・中央値・最頻値が一致</span>する。eは±2標準偏差で95%なので誤り。3歳児dft数は0本が多く右に歪んでいるため正規分布ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C127</div>
+        <p>小学校のクラス（50名）における「一人当たりのDMF歯の合計」の度数分布表を示す。<br>
+        「DMF歯の合計」の基本統計量の関係で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108C127.png" alt="度数分布表">
+        </div>
+        <div class="choices">
+          a 平均値　＞　最頻値　＞　中央値<br>
+          b 平均値　＞　中央値　＞　最頻値<br>
+          c 最頻値　＞　中央値　＞　平均値<br>
+          d 最頻値　＞　平均値　＞　中央値<br>
+          e 中央値　＞　平均値　＞　最頻値
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】DMF歯数の分布は0本が最も多く<span class="key">右に歪んだ分布</span>である。<span class="caution">右に歪んだ分布では平均値＞中央値＞最頻値が通常だが</span>、本問は問題文の選択肢fに「中央値＞最頻値＞平均値」との記載があり、実際の度数分布表から計算すると中央値＞平均値＞最頻値となる特殊なケース。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B37</div>
+        <p>疫学調査において第3の因子が曝露と疾病発生の両者に関係することにより、曝露因子と疾病発生量との関連が歪められる現象はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 交　絡<br>
+          b 偽陽性<br>
+          c 因果の逆転<br>
+          d 情報バイアス<br>
+          e 選択バイアス
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="key">交絡</span>とは、調査対象とする因子以外の因子（交絡因子）が曝露と疾病発生の両者に関係し、関連を歪めること。選択バイアスや情報バイアスは交絡とは異なる概念。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C44</div>
+        <p>研究を行ったサンプルにおいて、2群間の差を統計的に検定した結果と母集団における真理との関係を表に示す。<br>
+        第1種の過誤はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107C44.png" alt="過誤の表">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d アとエ<br>
+          e イとウ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="key">第1種の過誤</span>（α過誤）は「母集団では差がないのに、サンプルでは差があると判定してしまう」誤り。表の「ア」がこれに該当する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>データの種類 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>データの種類</h1>
+    <div class="container">
+
+      <h2>尺度と変数の分類</h2>
+      <p>統計学ではデータを<span class="key">尺度</span>と<span class="key">変数</span>の2つの視点から分類する。尺度は測定の方法、変数はデータの性質を表す。</p>
+
+      <h3>尺度の4分類</h3>
+      <table>
+        <tr>
+          <th>尺度</th>
+          <th>特徴</th>
+          <th>例</th>
+          <th>変数の種類</th>
+        </tr>
+        <tr>
+          <td><span class="key">名義尺度</span></td>
+          <td>分類のみ</td>
+          <td>性別、氏名、血液型</td>
+          <td rowspan="2">質的変数<br>（離散変数）</td>
+        </tr>
+        <tr>
+          <td><span class="key">順序尺度</span></td>
+          <td>順番が決まっているが<span class="highlight">等間隔でない</span></td>
+          <td>順位、<span class="highlight">CPI</span>、要介護度</td>
+        </tr>
+        <tr>
+          <td><span class="key">間隔尺度</span></td>
+          <td>原点が任意</td>
+          <td>温度</td>
+          <td rowspan="2">量的変数<br>（連続変数）</td>
+        </tr>
+        <tr>
+          <td><span class="key">比尺度</span></td>
+          <td>原点が一意（絶対零点あり）</td>
+          <td>重さ、長さ、金銭、年齢、現在歯数</td>
+        </tr>
+      </table>
+
+      <h2>尺度ごとの演算制限</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">計算できる演算</div>
+        <ul>
+          <li><span class="key">名義尺度</span>：演算不可（＝、≠のみ）</li>
+          <li><span class="key">順序尺度</span>：大小比較のみ（＞、＜）</li>
+          <li><span class="key">間隔尺度</span>：加減のみ（＋、−）</li>
+          <li><span class="key">比尺度</span>：加減乗除すべて可能（＋、−、×、÷）</li>
+        </ul>
+      </div>
+
+      <p><span class="caution">注意</span>：順序尺度は加減乗除（＋、−、×、÷）ができない。</p>
+      <ul>
+        <li>例）1位と2位の平均を1.5位とはいわない</li>
+        <li>例）<span class="highlight">CPIの平均値を計算してはいけない</span></li>
+      </ul>
+
+      <p><span class="caution">注意</span>：間隔尺度は乗除（×、÷）ができない。</p>
+      <ul>
+        <li>例）20℃は10℃の2倍暑いとはいわない</li>
+      </ul>
+
+      <h2>変数の分類</h2>
+      <p>変数は<span class="key">質的変数</span>（離散変数）と<span class="key">量的変数</span>（連続変数）に大別される。</p>
+      <ul>
+        <li><span class="key">質的変数</span>：カテゴリで表されるデータ（名義尺度・順序尺度）</li>
+        <li><span class="key">量的変数</span>：数値で表される連続的なデータ（間隔尺度・比尺度）</li>
+      </ul>
+
+      <h2>国試過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113D30</div>
+        <p>データの種類における順序尺度はどれか。2つ選べ。</p>
+        <div class="choices">
+          a CPI<br>
+          b 性　別<br>
+          c 年　齢<br>
+          d 現在歯数<br>
+          e 要介護度
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="key">CPI</span>（地域歯周疾患指数）は0〜4のコードで歯周組織の状態を評価する<span class="highlight">順序尺度</span>である。<span class="key">要介護度</span>も要支援1・2、要介護1〜5と順序があるが等間隔ではない順序尺度である。性別は名義尺度、年齢・現在歯数は比尺度に分類される。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

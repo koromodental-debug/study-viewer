@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>検定法 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>検定法</h1>
+    <div class="container">
+
+      <h2>検定方法の選択</h2>
+      <p>検定方法は<span class="key">変数のタイプの組み合わせ</span>、<span class="key">正規分布に従うか</span>、<span class="key">質的変数が何種あるか</span>で決まる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">検定法選択の3つのポイント</div>
+        <ul>
+          <li>質的変数か量的変数か？</li>
+          <li>正規分布に従うか？</li>
+          <li>比較する群は2群か3群以上か？</li>
+        </ul>
+      </div>
+
+      <h2>変数の組み合わせ別の検定法</h2>
+
+      <h3>質的変数 × 質的変数</h3>
+      <p>例：男女と歯周病の有無</p>
+      <p>検定方法：<span class="highlight">カイ二乗検定（χ²検定）</span></p>
+
+      <h3>量的変数 × 量的変数</h3>
+      <p>例：身長と体重の関係</p>
+      <p>検定方法：<span class="highlight">相関分析</span>（ピアソンの相関係数）</p>
+
+      <h3>質的変数（2値）× 量的変数</h3>
+      <p>例：男女と身長の関係</p>
+      <table>
+        <tr>
+          <th>正規分布</th>
+          <th>検定方法</th>
+        </tr>
+        <tr>
+          <td>従う</td>
+          <td><span class="key">t検定</span>（二標本t検定）</td>
+        </tr>
+        <tr>
+          <td>従わない</td>
+          <td><span class="key">マン・ホイットニーのU検定</span></td>
+        </tr>
+      </table>
+
+      <h3>質的変数（3種以上）× 量的変数</h3>
+      <p>例：血液型（A,B,AB,O）と身長の関係</p>
+      <table>
+        <tr>
+          <th>正規分布</th>
+          <th>検定方法</th>
+        </tr>
+        <tr>
+          <td>従う</td>
+          <td><span class="key">一元配置分散分析</span>（ANOVA, F検定）</td>
+        </tr>
+        <tr>
+          <td>従わない</td>
+          <td><span class="key">クラスカル・ウォリス検定</span></td>
+        </tr>
+      </table>
+
+      <h2>パラメトリック検定とノンパラメトリック検定</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>正規分布</th>
+          <th>代表的な検定</th>
+        </tr>
+        <tr>
+          <td>パラメトリック検定</td>
+          <td>従う</td>
+          <td>t検定、分散分析</td>
+        </tr>
+        <tr>
+          <td>ノンパラメトリック検定</td>
+          <td>従わない</td>
+          <td>U検定、クラスカル・ウォリス検定</td>
+        </tr>
+      </table>
+
+      <h2>統計学的検定の原理</h2>
+      <ul>
+        <li><span class="key">帰無仮説</span>：差がない（例：男女で身長に差がない）</li>
+        <li><span class="key">対立仮説</span>：差がある（例：男女で身長に差がある）</li>
+      </ul>
+      <p>有意確率（p値）が<span class="highlight">0.05未満</span>：帰無仮説を棄却 → 有意差あり</p>
+      <p>有意確率（p値）が0.05以上：帰無仮説を採択 → 有意差なし</p>
+
+      <h3>過誤の種類</h3>
+      <table>
+        <tr>
+          <th>過誤</th>
+          <th>意味</th>
+        </tr>
+        <tr>
+          <td>第一種の過誤（α過誤）</td>
+          <td>差がないのに差があるとする誤り</td>
+        </tr>
+        <tr>
+          <td>第二種の過誤（β過誤）</td>
+          <td>差があるのに差がないとする誤り</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103C89</div>
+        <p>無作為抽出した標本に同一の食品を摂取させ、アンケートに回答してもらった結果を表に示す。<br>
+        この結果から食品の好き嫌いが性別によって影響されているか否かを分析する方法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a t検定<br>
+          b U検定<br>
+          c χ²検定<br>
+          d 相関分析<br>
+          e 分散分析
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】食品の好き嫌い（好き/嫌い）と性別（男/女）はどちらも<span class="key">質的変数（名義尺度）</span>。質的変数と質的変数の関連を調べるには<span class="highlight">χ²検定（カイ二乗検定）</span>を用いる。<br>
+        <span class="caution">注意</span>：t検定やU検定は量的変数の平均の差を調べる検定。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

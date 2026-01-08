@@ -2324,6 +2324,13 @@ body {
   line-height: 1.3;
 }
 
+/* Q&Aのトピックヘッダーを画面幅いっぱいに */
+.qa-topic-section .topic-section-header {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+}
+
 /* トピックセクションコンテンツ */
 .topic-section-content {
   padding: 20px;

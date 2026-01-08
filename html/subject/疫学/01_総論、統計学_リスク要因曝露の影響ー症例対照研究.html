@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>症例対照研究 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>症例対照研究</h1>
+    <div class="container">
+
+      <h2>症例対照研究（患者対照研究）とは</h2>
+      <p>ある疾患に<span class="key">罹患している集団</span>と<span class="key">罹患していない集団</span>を設定し、<span class="highlight">過去の曝露</span>による疾患への影響を検討する方法。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">症例対照研究の特徴</div>
+        <ul>
+          <li>時間軸：<span class="highlight">後向き</span>（過去を振り返る）</li>
+          <li><span class="key">まれな疾患</span>に適している</li>
+          <li>研究期間が<span class="key">短い</span>、費用が<span class="key">小さい</span></li>
+          <li>相対危険度の代わりに<span class="key">オッズ比</span>を用いる</li>
+        </ul>
+      </div>
+
+      <h2>リコールバイアス（思い出しバイアス）</h2>
+      <p>症例対照研究では、患者・対照者の<span class="highlight">過去の記憶に頼る</span>ためバイアスを生じやすい。</p>
+      <ul>
+        <li>患者群は過去の曝露を思い出しやすい傾向がある</li>
+        <li>対照群は過去の曝露を忘れやすい傾向がある</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：これが症例対照研究の最大の欠点であり、曝露情報の信頼性が低くなる原因。</p>
+
+      <h2>マッチング</h2>
+      <p>患者群と対照群の<span class="key">年齢や性別</span>などを揃えておくこと。</p>
+      <p>交絡因子の調整法の一つ。</p>
+
+      <h2>コホート研究との比較</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>コホート研究</th>
+          <th>症例対照研究</th>
+        </tr>
+        <tr>
+          <td>時間軸</td>
+          <td>前向き</td>
+          <td><span class="highlight">後向き</span></td>
+        </tr>
+        <tr>
+          <td>研究期間</td>
+          <td>長い</td>
+          <td>短い</td>
+        </tr>
+        <tr>
+          <td>費用・労力</td>
+          <td>大きい</td>
+          <td>比較的小さい</td>
+        </tr>
+        <tr>
+          <td>曝露情報の信頼性</td>
+          <td>高い</td>
+          <td><span class="caution">低い（思い出しバイアス）</span></td>
+        </tr>
+        <tr>
+          <td>まれな疾患</td>
+          <td>不向き</td>
+          <td><span class="highlight">適している</span></td>
+        </tr>
+        <tr>
+          <td>相対危険度</td>
+          <td>算出できる</td>
+          <td>オッズ比で近似</td>
+        </tr>
+        <tr>
+          <td>寄与危険度</td>
+          <td>算出できる</td>
+          <td>算出できない</td>
+        </tr>
+        <tr>
+          <td>累積罹患率</td>
+          <td>算出できる</td>
+          <td>算出できない</td>
+        </tr>
+      </table>
+
+      <h2>症例対照研究が適している疾患</h2>
+      <p><span class="highlight">まれな疾患</span>（発生率が低い疾患）に適している。</p>
+      <ul>
+        <li>舌癌（口腔癌）</li>
+        <li>その他の悪性腫瘍</li>
+        <li>まれな先天異常</li>
+      </ul>
+      <p class="note">齲蝕、歯周炎、歯肉炎などの<span class="caution">よくある疾患</span>はコホート研究が適している。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">111B21</div>
+        <p>リスク因子の解析で、コホート研究に比べて患者対照研究が適しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 齲蝕<br>
+          b 舌癌<br>
+          c 歯周炎<br>
+          d 歯肉炎<br>
+          e 歯の喪失
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】症例対照研究は<span class="highlight">まれな疾患</span>に適している。舌癌は発生率が低いまれな疾患であるため、症例対照研究が適切。齲蝕、歯周炎、歯肉炎、歯の喪失は発生率が高い疾患のためコホート研究が適している。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A52</div>
+        <p>疾病発生要因の解明で症例対照研究が前向きコホート研究に比べてバイアスを生じやすい理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 調査期間が短い。<br>
+          b 情報の信頼性が低い。<br>
+          c 罹患率を算出できない。<br>
+          d 相対危険度を直接計算できない。<br>
+          e 発病率の低い疾患を対象とすることが多い。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】症例対照研究は過去の曝露を調査するため、<span class="highlight">リコールバイアス（思い出しバイアス）</span>が生じやすく、情報の信頼性が低くなる。他の選択肢は症例対照研究の特徴ではあるが、バイアスを生じやすい理由ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

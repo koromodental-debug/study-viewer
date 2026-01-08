@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>疫学の研究方法 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>疫学の研究方法</h1>
+    <div class="container">
+
+      <h2>疫学とは</h2>
+      <p><span class="key">人間集団</span>で健康関連の流行現象を扱う学問。都道府県の医療計画、医療費適正計画などの政策樹立に役立てる。</p>
+      <p>疫学研究は「<span class="highlight">仮説を立てる（記述疫学）→ 仮説を確認する（分析疫学）→ 仮説を検証する（介入疫学）</span>」という手順で実施する。</p>
+
+      <h2>疫学の分類</h2>
+
+      <h3>疫学研究の全体像</h3>
+      <table>
+        <tr>
+          <th>大分類</th>
+          <th>研究方法</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">記述疫学</span></td>
+          <td>横断研究</td>
+          <td>一時点での断面調査、相関関係を見る</td>
+        </tr>
+        <tr>
+          <td>生態学的研究</td>
+          <td>集団単位（国、都道府県など）で分析</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">分析疫学</span></td>
+          <td>コホート研究</td>
+          <td>要因曝露群を追跡、因果関係を確認</td>
+        </tr>
+        <tr>
+          <td>症例対照研究</td>
+          <td>疾患の有無から過去を調査</td>
+        </tr>
+        <tr>
+          <td><span class="key">介入疫学</span></td>
+          <td>RCT等</td>
+          <td>人為的介入で仮説を検証</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">縦断研究と横断研究の違い</div>
+        <ul>
+          <li><span class="key">縦断研究</span>：<span class="highlight">同じ集団を追跡</span>して経時的変化を観察</li>
+          <li><span class="key">横断研究</span>：ある一時点での断面調査（時間経過なし）</li>
+        </ul>
+        <p class="note"><span class="caution">注意</span>：時系列で比較しても、同じ集団を追跡しなければ縦断研究にはならない</p>
+      </div>
+
+      <h2>記述疫学</h2>
+      <p>人間集団における疾病の発症頻度、分布、関連情報を<span class="key">人、場所、時間</span>別に記述する方法。既存の資料の分析は記述疫学に含まれる。</p>
+
+      <h3>生態学的研究（地域相関研究）</h3>
+      <p><span class="highlight">集団単位</span>（国、都道府県、市町村など）を分析対象とし、集団間での要因と疾病の関連を検討する方法。</p>
+      <p>例：都道府県別でがんによる死亡率の分析、フッ化物洗口実施率と12歳児DMFTの関連</p>
+
+      <h2>分析疫学</h2>
+      <p>横断研究、生態学的研究、コホート研究、症例対照研究が含まれる。</p>
+
+      <h3>コホート研究と症例対照研究の比較</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>コホート研究</th>
+          <th>症例対照研究</th>
+        </tr>
+        <tr>
+          <td>時間軸</td>
+          <td><span class="key">前向き</span></td>
+          <td><span class="key">後ろ向き</span></td>
+        </tr>
+        <tr>
+          <td>研究期間</td>
+          <td>長い</td>
+          <td>短い</td>
+        </tr>
+        <tr>
+          <td>費用・労力</td>
+          <td>大きい</td>
+          <td>比較的小さい</td>
+        </tr>
+        <tr>
+          <td>曝露情報の信頼性</td>
+          <td>高い</td>
+          <td><span class="caution">低い（思い出しバイアス）</span></td>
+        </tr>
+        <tr>
+          <td>まれな疾患</td>
+          <td>不向き</td>
+          <td><span class="highlight">適している</span></td>
+        </tr>
+        <tr>
+          <td>相対危険度</td>
+          <td>算出できる</td>
+          <td>オッズ比で近似</td>
+        </tr>
+        <tr>
+          <td>寄与危険度</td>
+          <td>算出できる</td>
+          <td>算出できない</td>
+        </tr>
+      </table>
+
+      <h2>介入疫学（実験疫学）</h2>
+      <p>ヒトに対して人為的な介入、実験を行う方法。介入群と対照群の比較や介入前後の比較によって評価を行う。</p>
+
+      <h3>ランダム化比較試験（RCT）</h3>
+      <p>対象者を介入群と対照群に<span class="highlight">無作為に割り付け</span>し、介入効果を判定する方法。新薬開発の際には必ず行われる。</p>
+      <p><span class="key">最もエビデンスの質が高く</span>、仮説を検証することができる。</p>
+      <p class="note"><span class="caution">注意</span>：害やリスク因子に対する研究には倫理的に不向き</p>
+
+      <h3>エビデンスレベル（高い順）</h3>
+      <ol>
+        <li><span class="highlight">システマティックレビュー・メタアナリシス</span></li>
+        <li>ランダム化比較試験（RCT）</li>
+        <li>非ランダム化比較試験</li>
+        <li>コホート研究</li>
+        <li>症例対照研究</li>
+        <li>症例報告・専門家の意見</li>
+      </ol>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115A56</div>
+        <p>る年度の都道府県別のフッ化物洗口事業実施率と学校保健統計調査による12歳児DMFTとの関連性を調べた。<br>この研究方法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 介入研究<br>
+          b 症例対照研究<br>
+          c 生態学的研究<br>
+          d 前向きコホート研究<br>
+          e 後ろ向きコホート研究
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】都道府県別（集団単位）での関連性を調べているため、生態学的研究（地域相関研究）に該当する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C88</div>
+        <p>ある地域の健常高齢者を対象に、現在歯数が健康寿命に及ぼす影響を調査することとした。<br>この調査に適した研究方法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 横断研究<br>
+          b 介入研究<br>
+          c コホート研究<br>
+          d 症例対照研究<br>
+          e 生態学的研究
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】健常高齢者を追跡して現在歯数と健康寿命の関連を調べるため、コホート研究が適切。因果関係の確認には前向きの追跡が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C103</div>
+        <p>エビデンスレベルが最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a コホート研究<br>
+          b 症例対照研究<br>
+          c オープンラベル試験<br>
+          d 非ランダム化比較試験<br>
+          e システマティックレビュー
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】システマティックレビューは複数のRCTを系統的に収集・統合して分析するため、最もエビデンスレベルが高い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A35</div>
+        <p>縦断研究はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 定期管理患者群と非管理患者群とのDMFT指数の変化の比較<br>
+          b フッ化物洗口実施小学校における6年生DMFT指数の経年的比較<br>
+          c 歯科疾患実態調査での第1回と第9回との12歳児DMFT指数の比較<br>
+          d 2007年度の1歳6か月児と3歳児との歯科健康診査のdft指数の比較<br>
+          e 学校保健統計調査での2000年と2005年との12歳児う蝕有病者率の比較
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】縦断研究は<span class="highlight">同じ集団を追跡</span>する研究。選択肢aは同じ患者群を追跡してDMFT指数の変化を比較している。b〜eは異なる集団を比較しているため横断研究。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A49</div>
+        <p>う蝕の疫学に横断研究が有効である理由はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 疾患の進行が遅い。<br>
+          b 視診で診断が可能である。<br>
+          c 治療後に罹患の痕跡が残る。<br>
+          d 再石灰化によって自然治癒する。<br>
+          e 初期の段階では自覚症状がない。
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】う蝕は進行が遅く（a）、治療後も修復物として痕跡が残る（c）ため、一時点の調査でも有病状態を把握しやすい。DMF指数で「処置歯」も含めてカウントできるのはこのため。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

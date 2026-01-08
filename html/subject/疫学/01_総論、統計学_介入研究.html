@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>介入研究 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>介入研究</h1>
+    <div class="container">
+
+      <h2>介入疫学（実験疫学）とは</h2>
+      <p>ヒトに対して<span class="key">人為的な介入</span>、実験を行う方法。<span class="highlight">介入群と対照群の比較</span>や介入前後の比較によって評価を行う。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">対照群をおくことの大切さ</div>
+        <p>「医者にかかってもらった薬を飲んだら風邪が治った」という表現には、<span class="key">自然治癒の効果、ホーソン効果、プラセボ効果、治療効果</span>が含まれているため治療効果を正確に判定できない。</p>
+        <p><span class="highlight">同等にした対照群と比較</span>することによって治療効果の判定ができる。</p>
+      </div>
+
+      <h2>介入研究の構成要素</h2>
+
+      <h3>1. 対照群（コントロール群）</h3>
+      <p>介入の効果を判定するための<span class="key">比較対象</span>。対照群がないと、観察された変化が介入の効果なのか、他の要因（時代の変化など）によるものなのか判断できない。</p>
+
+      <h3>2. 無作為割り付け（ランダム化）</h3>
+      <p>対象者を、乱数表などを用いて<span class="highlight">無作為に介入群と対照群に割り付ける</span>方法。一方の群に都合のよい患者が偏らないようにする。交絡因子の調整法の一つ。</p>
+
+      <h3>3. プラセボ（偽薬）効果</h3>
+      <p>有効成分を含まない（治療効果のない）偽薬を服用しているにもかかわらず、患者の<span class="key">心理的作用</span>（薬を服用している安心感など）から生じる疾病の改善効果。</p>
+
+      <h3>4. ホーソン効果</h3>
+      <p>人（医師など）に<span class="key">観察されること</span>による効果。医師の診察を受けただけでよくなったと感じてしまう安心感による効果。</p>
+
+      <h3>5. 盲検（マスキング、ブラインディング）</h3>
+      <p>実験の被験者や評価者、分析者などに、介入群・対照群のどちらに割り付けられているかを<span class="highlight">知らせない</span>ようにし、評価に対するバイアスを抑える方法。</p>
+
+      <h3>盲検の種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>マスキング対象</th>
+        </tr>
+        <tr>
+          <td>単盲検（シングルブラインド）</td>
+          <td>被験者</td>
+        </tr>
+        <tr>
+          <td>二重盲検（ダブルブラインド）</td>
+          <td>被験者、評価者</td>
+        </tr>
+        <tr>
+          <td>三重盲検（トリプルブラインド）</td>
+          <td>被験者、評価者、分析者</td>
+        </tr>
+      </table>
+
+      <h2>介入研究の種類</h2>
+
+      <h3>ランダム化比較試験（RCT）</h3>
+      <p>対象者を介入群と対照群に<span class="highlight">無作為に割り付け</span>し、介入を行い、介入効果を判定する方法。</p>
+      <ul>
+        <li>新薬開発の際には必ず行われる</li>
+        <li><span class="key">最もエビデンスの質が高い</span>、仮説を検証できる</li>
+        <li>盲検を行うとエビデンスの質が上がる</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：非喫煙者に強制的に喫煙をさせるような、害やリスク因子に対する試験は倫理的に行うことができないため、害やリスク因子に対する研究には不向き。</p>
+
+      <h3>非ランダム化試験</h3>
+      <p>介入群と対照群の無作為割り付けを行わない比較試験。RCTより<span class="caution">エビデンスの質が低い</span>。</p>
+
+      <h3>オープンラベル試験</h3>
+      <p>盲検（マスキング）を行わない試験。RCTより<span class="caution">エビデンスの質が低い</span>。</p>
+
+      <h3>地域介入研究</h3>
+      <p><span class="key">地域単位</span>でリスク因子に介入を行う研究方法。</p>
+      <p>例：水道水のフッ化物添加</p>
+
+      <h2>臨床試験の種類</h2>
+      <p>ヒトで医薬品などの有用性、安全性を調べる介入試験。</p>
+
+      <h3>臨床試験の相（フェーズ）</h3>
+      <table>
+        <tr>
+          <th>相</th>
+          <th>対象</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td>第I相</td>
+          <td>健常人</td>
+          <td><span class="key">安全性</span>、体内動態の検討</td>
+        </tr>
+        <tr>
+          <td>第II相（探索的）</td>
+          <td>少数の患者</td>
+          <td><span class="key">臨床効果</span>の検討（前期：効果の有無、後期：用法・用量）</td>
+        </tr>
+        <tr>
+          <td>第III相（検証的）</td>
+          <td>多数の対象者</td>
+          <td><span class="highlight">有効性の有無</span>を検討（RCT実施）</td>
+        </tr>
+        <tr>
+          <td>第IV相</td>
+          <td>市販後</td>
+          <td>副作用などの<span class="key">有害事象</span>のデータ収集</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110C59</div>
+        <p>A小学校で2001〜2015年の間、全児童を対象に実施した齲蝕予防事業の評価結果を表に示す。この結果からでは、本事業に齲蝕予防効果があったと言えない。<br>その理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 児童数が同じでない。<br>
+          b ランダム化比較試験でない。<br>
+          c DMF歯数（平均値）の差が小さい。<br>
+          d 齲蝕のない児童の割合が分からない。<br>
+          e 事業を実施していない他校のデータがない。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】介入研究の効果を評価するには<span class="highlight">対照群（事業を実施していない他校のデータ）</span>が必要。対照群がないと、DMF歯数の減少が事業の効果なのか、時代の変化（フッ化物配合歯磨剤の普及など）によるものなのか判断できない。<span class="caution">対照群をおくことの大切さ</span>を問う頻出テーマ。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

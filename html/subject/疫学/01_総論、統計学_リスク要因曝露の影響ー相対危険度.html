@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>相対危険度 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: center; border: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula { background: var(--bg-secondary); padding: 12px 16px; border-radius: 8px; margin: 10px 0; font-family: monospace; font-size: 11pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>相対危険度</h1>
+    <div class="container">
+
+      <h2>コホート研究の疫学指標</h2>
+      <p>コホート研究では、要因曝露による発症の危険度を評価するために以下の指標を用いる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">3つの指標の違い</div>
+        <ul>
+          <li><span class="key">相対危険度</span>：曝露群と非曝露群の罹患率の<span class="highlight">比</span></li>
+          <li><span class="key">寄与危険度</span>：曝露群と非曝露群の罹患率の<span class="highlight">差</span></li>
+          <li><span class="key">寄与危険割合</span>：曝露群のうち何%が曝露によって疾患になったか</li>
+        </ul>
+      </div>
+
+      <h2>相対危険度（リスク比）</h2>
+      <p>曝露群と非曝露群の<span class="highlight">罹患率の比</span>。要因への曝露によって、疾患にかかるリスクが何倍になるかを示す。</p>
+
+      <div class="formula">
+        相対危険度 = 曝露群の罹患率 ÷ 非曝露群の罹患率
+      </div>
+
+      <h3>コホート研究の2×2表</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>疾患あり(+)</th>
+          <th>疾患なし(-)</th>
+          <th>合計</th>
+        </tr>
+        <tr>
+          <th>曝露あり(+)</th>
+          <td>a</td>
+          <td>b</td>
+          <td>a+b</td>
+        </tr>
+        <tr>
+          <th>曝露なし(-)</th>
+          <td>c</td>
+          <td>d</td>
+          <td>c+d</td>
+        </tr>
+      </table>
+
+      <div class="formula">
+        相対危険度 = {a/(a+b)} ÷ {c/(c+d)}
+      </div>
+
+      <h3>解釈</h3>
+      <ul>
+        <li>相対危険度 = 1：曝露の影響なし</li>
+        <li>相対危険度 > 1：曝露により疾患リスク<span class="key">上昇</span></li>
+        <li>相対危険度 < 1：曝露により疾患リスク<span class="key">低下</span>（予防因子）</li>
+      </ul>
+
+      <h3>計算例</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>肺がん(+)</th>
+          <th>肺がん(-)</th>
+          <th>合計</th>
+        </tr>
+        <tr>
+          <th>喫煙者</th>
+          <td>5</td>
+          <td>95</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>非喫煙者</th>
+          <td>1</td>
+          <td>99</td>
+          <td>100</td>
+        </tr>
+      </table>
+
+      <p>相対危険度 = (5/100) ÷ (1/100) = <span class="highlight">5</span></p>
+      <p>→ 喫煙者は非喫煙者と比較して<span class="key">5倍</span>肺がんに罹患しやすい</p>
+
+      <h2>寄与危険度（リスク差）</h2>
+      <p>曝露群と非曝露群の<span class="highlight">罹患率の差</span>。曝露をなくすことで減少する罹患率を示す。</p>
+
+      <div class="formula">
+        寄与危険度 = 曝露群の罹患率 − 非曝露群の罹患率
+      </div>
+
+      <h3>計算例（上記と同じデータ）</h3>
+      <p>寄与危険度 = 5/100 − 1/100 = <span class="highlight">0.04（4%）</span></p>
+      <p>→ 喫煙者が全員たばこをやめると、肺がんになる人が<span class="key">4%減少</span>する</p>
+
+      <p class="note"><span class="caution">注意</span>：寄与危険度は罹患率の影響を受けるため、相対危険度が同じでも寄与危険度は異なる結果になる。</p>
+
+      <h2>寄与危険割合</h2>
+      <p>曝露群のうち、<span class="highlight">曝露によって疾患になった人の割合</span>を示す指標。</p>
+
+      <div class="formula">
+        寄与危険割合 = (相対危険度 − 1) ÷ 相対危険度<br>
+        　　　　　　 = 寄与危険度 ÷ 曝露群の罹患率
+      </div>
+
+      <h3>計算例</h3>
+      <p>寄与危険割合 = (5 − 1) ÷ 5 = <span class="highlight">80%</span></p>
+      <p>→ 喫煙者で肺がんになった人のうち、たばこが原因で肺がんになった人は<span class="key">80%</span></p>
+
+      <h2>指標の使い分け</h2>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>意味</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td>相対危険度</td>
+          <td>リスクが何倍か</td>
+          <td><span class="key">個人</span>のための指標</td>
+        </tr>
+        <tr>
+          <td>寄与危険度</td>
+          <td>どれだけ減らせるか</td>
+          <td><span class="key">公衆衛生</span>のための指標</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105C87</div>
+        <p>30歳時点でのCPI診査で所見を認めなかった200人を対象に前向きコホート調査を実施した。20年後の再診査の結果を表に示す。<br>4mm以上の歯周ポケット保有者の喫煙の相対危険度はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1.7<br>
+          b 1.9<br>
+          c 2.0<br>
+          d 2.5<br>
+          e 3.0
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】表から相対危険度を計算する。<br>
+        相対危険度 = 喫煙者の罹患率 ÷ 非喫煙者の罹患率<br>
+        表の数値を代入して計算すると<span class="highlight">2.0</span>となる。<br>
+        コホート研究では相対危険度を直接算出できることを覚えておく。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

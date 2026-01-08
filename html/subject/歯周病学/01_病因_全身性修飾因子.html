@@ -88,6 +88,38 @@
         <tr><td><span class="key">環境因子</span>（後天的リスクファクター）</td><td>喫煙、ストレス、栄養障害、薬物、社会経済的環境</td></tr>
       </table>
 
+      <!-- リスクファクター分類図 -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" style="font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; max-width: 100%; height: auto; display: block; margin: 16px auto;">
+        <rect width="700" height="340" fill="white"/>
+        <defs>
+          <marker id="arrow-risk" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#0071E3"/>
+          </marker>
+        </defs>
+        <!-- 中央：歯周病 -->
+        <rect x="270" y="140" width="160" height="50" rx="25" fill="#0071E3"/>
+        <text x="350" y="172" text-anchor="middle" font-size="14" font-weight="600" fill="white">歯周病</text>
+        <!-- 細菌因子（左上） -->
+        <rect x="40" y="40" width="180" height="80" rx="12" fill="#E8F4FD"/>
+        <text x="130" y="68" text-anchor="middle" font-size="12" font-weight="600" fill="#0071E3">細菌因子</text>
+        <text x="130" y="88" text-anchor="middle" font-size="9" fill="#86868B">（初発因子・原因因子）</text>
+        <text x="130" y="108" text-anchor="middle" font-size="9" fill="#1D1D1F">プラーク、歯周病原細菌</text>
+        <!-- 宿主因子（右上） -->
+        <rect x="480" y="40" width="180" height="80" rx="12" fill="#E8F4FD"/>
+        <text x="570" y="68" text-anchor="middle" font-size="12" font-weight="600" fill="#0071E3">宿主因子</text>
+        <text x="570" y="88" text-anchor="middle" font-size="9" fill="#86868B">（局所・全身性修飾因子）</text>
+        <text x="570" y="108" text-anchor="middle" font-size="9" fill="#1D1D1F">年齢、遺伝、全身疾患</text>
+        <!-- 環境因子（下） -->
+        <rect x="260" y="240" width="180" height="80" rx="12" fill="#E8F4FD"/>
+        <text x="350" y="268" text-anchor="middle" font-size="12" font-weight="600" fill="#0071E3">環境因子</text>
+        <text x="350" y="288" text-anchor="middle" font-size="9" fill="#86868B">（後天的リスクファクター）</text>
+        <text x="350" y="308" text-anchor="middle" font-size="9" fill="#1D1D1F">喫煙、ストレス、栄養障害</text>
+        <!-- 矢印 -->
+        <path d="M 220 100 Q 250 125 270 145" stroke="#0071E3" stroke-width="2" fill="none" marker-end="url(#arrow-risk)"/>
+        <path d="M 480 100 Q 450 125 430 145" stroke="#0071E3" stroke-width="2" fill="none" marker-end="url(#arrow-risk)"/>
+        <path d="M 350 240 L 350 190" stroke="#0071E3" stroke-width="2" fill="none" marker-end="url(#arrow-risk)"/>
+      </svg>
+
       <h2>2. 全身性修飾因子の種類</h2>
 
       <h3>年齢（加齢）</h3>
@@ -141,6 +173,42 @@
           <li>歯周治療により<span class="key">HbA1cが改善</span>する可能性がある</li>
         </ul>
       </div>
+
+      <!-- 糖尿病と歯周病の双方向性関係図 -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" style="font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; max-width: 100%; height: auto; display: block; margin: 16px auto;">
+        <rect width="600" height="200" fill="white"/>
+        <defs>
+          <marker id="arrow-dm-right" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#BF5600"/>
+          </marker>
+          <marker id="arrow-dm-left" markerWidth="8" markerHeight="8" refX="1" refY="3" orient="auto">
+            <path d="M8,0 L8,6 L0,3 z" fill="#0071E3"/>
+          </marker>
+        </defs>
+        <!-- 糖尿病ボックス -->
+        <rect x="40" y="50" width="150" height="100" rx="12" fill="#E8F4FD"/>
+        <text x="115" y="85" text-anchor="middle" font-size="14" font-weight="600" fill="#0071E3">糖尿病</text>
+        <line x1="60" y1="100" x2="170" y2="100" stroke="#D2D2D7" stroke-width="1"/>
+        <text x="115" y="120" text-anchor="middle" font-size="8" fill="#1D1D1F">AGEs蓄積</text>
+        <text x="115" y="135" text-anchor="middle" font-size="8" fill="#1D1D1F">好中球機能低下</text>
+        <!-- 歯周病ボックス -->
+        <rect x="410" y="50" width="150" height="100" rx="12" fill="#E8F4FD"/>
+        <text x="485" y="85" text-anchor="middle" font-size="14" font-weight="600" fill="#0071E3">歯周病</text>
+        <line x1="430" y1="100" x2="540" y2="100" stroke="#D2D2D7" stroke-width="1"/>
+        <text x="485" y="120" text-anchor="middle" font-size="8" fill="#1D1D1F">炎症性サイトカイン</text>
+        <text x="485" y="135" text-anchor="middle" font-size="8" fill="#1D1D1F">インスリン抵抗性</text>
+        <!-- 上矢印（糖尿病→歯周病） -->
+        <path d="M 190 80 L 400 80" stroke="#BF5600" stroke-width="2" fill="none" marker-end="url(#arrow-dm-right)"/>
+        <rect x="240" y="58" width="120" height="18" rx="9" fill="#F5F5F7"/>
+        <text x="300" y="71" text-anchor="middle" font-size="9" font-weight="600" fill="#BF5600">悪化させる</text>
+        <!-- 下矢印（歯周病→糖尿病） -->
+        <path d="M 410 120 L 200 120" stroke="#0071E3" stroke-width="2" fill="none" marker-end="url(#arrow-dm-left)"/>
+        <rect x="220" y="125" width="160" height="18" rx="9" fill="#F5F5F7"/>
+        <text x="300" y="138" text-anchor="middle" font-size="9" font-weight="600" fill="#0071E3">血糖コントロール悪化</text>
+        <!-- 下部ラベル -->
+        <rect x="200" y="165" width="200" height="24" rx="12" fill="#E8F4FD"/>
+        <text x="300" y="182" text-anchor="middle" font-size="9" font-weight="600" fill="#0071E3">第6の合併症・双方向性</text>
+      </svg>
 
       <h3>糖尿病が歯周病に及ぼすメカニズム</h3>
       <ul>

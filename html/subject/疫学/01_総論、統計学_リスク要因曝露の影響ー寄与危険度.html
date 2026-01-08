@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>寄与危険度 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: center; border: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula { background: var(--bg-secondary); padding: 12px 16px; border-radius: 8px; margin: 10px 0; font-family: monospace; font-size: 11pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>寄与危険度</h1>
+    <div class="container">
+
+      <h2>寄与危険度（リスク差）とは</h2>
+      <p>曝露群と非曝露群の<span class="highlight">罹患率の差</span>。曝露をなくすことで減少する罹患率を示す。</p>
+
+      <div class="formula">
+        寄与危険度 = 曝露群の罹患率 − 非曝露群の罹患率
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">相対危険度との違い</div>
+        <ul>
+          <li><span class="key">相対危険度</span>：罹患率の<span class="highlight">比</span>（何倍か）</li>
+          <li><span class="key">寄与危険度</span>：罹患率の<span class="highlight">差</span>（どれだけ減るか）</li>
+        </ul>
+      </div>
+
+      <h2>計算例で理解する</h2>
+      <p>喫煙と肺がんの関連を2つの集団で調査した結果を比較する。</p>
+
+      <h3>集団A（罹患率が低い集団）</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>肺がん(+)</th>
+          <th>肺がん(-)</th>
+          <th>合計</th>
+        </tr>
+        <tr>
+          <th>喫煙者</th>
+          <td>5</td>
+          <td>95</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>非喫煙者</th>
+          <td>1</td>
+          <td>99</td>
+          <td>100</td>
+        </tr>
+      </table>
+
+      <h3>集団B（罹患率が高い集団）</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>肺がん(+)</th>
+          <th>肺がん(-)</th>
+          <th>合計</th>
+        </tr>
+        <tr>
+          <th>喫煙者</th>
+          <td>50</td>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>非喫煙者</th>
+          <td>10</td>
+          <td>90</td>
+          <td>100</td>
+        </tr>
+      </table>
+
+      <h3>各指標の計算結果</h3>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>集団A</th>
+          <th>集団B</th>
+        </tr>
+        <tr>
+          <td>相対危険度</td>
+          <td>(5/100)÷(1/100) = 5</td>
+          <td>(50/100)÷(10/100) = 5</td>
+        </tr>
+        <tr>
+          <td>寄与危険度</td>
+          <td>5/100 − 1/100 = <span class="highlight">0.04（4%）</span></td>
+          <td>50/100 − 10/100 = <span class="highlight">0.4（40%）</span></td>
+        </tr>
+        <tr>
+          <td>寄与危険割合</td>
+          <td>(5−1)÷5 = 80%</td>
+          <td>(5−1)÷5 = 80%</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">重要</span>：相対危険度が同じでも、<span class="key">寄与危険度は罹患率の影響を受ける</span>ため異なる結果になる。</p>
+
+      <h2>寄与危険度の解釈</h2>
+      <p>寄与危険度は「曝露をやめると何人が疾患を免れるか」を示す。</p>
+      <ul>
+        <li>集団A：喫煙者が全員たばこをやめると、肺がん患者が<span class="key">4%減少</span></li>
+        <li>集団B：喫煙者が全員たばこをやめると、肺がん患者が<span class="key">40%減少</span></li>
+      </ul>
+
+      <h2>指標の使い分け</h2>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>意味</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td>相対危険度</td>
+          <td>リスクが何倍か</td>
+          <td><span class="key">個人</span>のための指標</td>
+        </tr>
+        <tr>
+          <td>寄与危険度</td>
+          <td>どれだけ減らせるか</td>
+          <td><span class="key">公衆衛生</span>のための指標</td>
+        </tr>
+      </table>
+
+      <p class="note">寄与危険度は減少する実数を予想できるため、<span class="key">政策立案に重要な指標</span>となる。</p>
+
+      <h2>寄与危険割合</h2>
+      <p>曝露群のうち、<span class="highlight">曝露によって疾患になった人の割合</span>を示す。</p>
+
+      <div class="formula">
+        寄与危険割合 = (相対危険度 − 1) ÷ 相対危険度<br>
+        　　　　　　 = 寄与危険度 ÷ 曝露群の罹患率
+      </div>
+
+      <p>上記の計算例では、喫煙者で肺がんになった人のうち、たばこが原因の人は<span class="key">80%</span>。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113C89【計算問題】</div>
+        <p>歯周炎の認められない集団を10年間追跡調査し、得られた結果を喫煙者と非喫煙者に分けて表に示す。<br>
+        喫煙の歯周炎発症に対する寄与危険度を求めよ。<br>
+        ただし、小数点以下の数値が得られた場合には、小数点以下第3位を四捨五入すること。</p>
+        <div class="choices">
+          【計算問題】数値を入力
+        </div>
+        <div class="answer">正解：22</div>
+        <p>【解説】寄与危険度 = 曝露群の罹患率 − 非曝露群の罹患率<br>
+        表の数値を代入して計算する。例えば喫煙者の罹患率が32%、非喫煙者の罹患率が10%であれば、寄与危険度 = 32 − 10 = <span class="highlight">22（%）</span>となる。<br>
+        <span class="caution">注意</span>：相対危険度（比）と間違えないこと。寄与危険度は<span class="key">差</span>で求める。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

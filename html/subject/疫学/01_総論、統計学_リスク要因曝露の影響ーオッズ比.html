@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>オッズ比 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: center; border: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula { background: var(--bg-secondary); padding: 12px 16px; border-radius: 8px; margin: 10px 0; font-family: monospace; font-size: 11pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 総論、統計学</span>
+    <h1>オッズ比</h1>
+    <div class="container">
+
+      <h2>オッズ比とは</h2>
+      <p><span class="key">事象が起こった人数</span>と<span class="key">起こらなかった人数</span>の比。</p>
+      <p>症例対照研究で<span class="highlight">相対危険度の代わり</span>に用いる指標。</p>
+
+      <div class="formula">
+        オッズ比 = 起こる確率 ÷ 起こらない確率
+      </div>
+
+      <h2>2×2表からの計算</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>疾病(+)</th>
+          <th>疾病(-)</th>
+        </tr>
+        <tr>
+          <th>曝露(+)</th>
+          <td>A</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <th>曝露(-)</th>
+          <td>C</td>
+          <td>D</td>
+        </tr>
+      </table>
+
+      <div class="formula">
+        オッズ比 = (A × D) ÷ (B × C)
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">オッズ比の計算のコツ</div>
+        <ul>
+          <li>表の<span class="highlight">＋、−を確認</span>した後、<span class="highlight">たすき掛け</span></li>
+          <li>表の縦横（曝露と疾病）が逆になっても計算結果は同じ</li>
+        </ul>
+      </div>
+
+      <h2>オッズ比の解釈</h2>
+      <table>
+        <tr>
+          <th>オッズ比</th>
+          <th>意味</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td>= 1</td>
+          <td>関連なし</td>
+          <td>曝露の影響なし</td>
+        </tr>
+        <tr>
+          <td>> 1</td>
+          <td><span class="key">リスク因子</span></td>
+          <td>喫煙→歯周病</td>
+        </tr>
+        <tr>
+          <td>< 1</td>
+          <td><span class="key">予防因子</span></td>
+          <td>フッ化物→齲蝕予防</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">注意</span>：リスク因子の解析では通常1以上、予防介入の有無では通常1以下になる。</p>
+
+      <h2>計算例1：リスク因子（喫煙と歯周病）</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>歯周病(+)</th>
+          <th>歯周病(-)</th>
+        </tr>
+        <tr>
+          <th>喫煙者</th>
+          <td>50</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <th>非喫煙者</th>
+          <td>20</td>
+          <td>20</td>
+        </tr>
+      </table>
+
+      <p>オッズ比 = (50 × 20) ÷ (10 × 20) = 1000 ÷ 200 = <span class="highlight">5</span></p>
+      <p>→ 喫煙者は非喫煙者の5倍歯周病になりやすい</p>
+
+      <h2>計算例2：予防因子（フッ化物と齲蝕）</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>齲蝕(+)</th>
+          <th>齲蝕(-)</th>
+        </tr>
+        <tr>
+          <th>フッ化物塗布(+)</th>
+          <td>25%</td>
+          <td>40%</td>
+        </tr>
+        <tr>
+          <th>フッ化物塗布(-)</th>
+          <td>75%</td>
+          <td>60%</td>
+        </tr>
+      </table>
+
+      <p>オッズ比 = (25 × 60) ÷ (40 × 75) = 1500 ÷ 3000 = <span class="highlight">0.5</span></p>
+      <p>→ フッ化物塗布は齲蝕の<span class="key">予防因子</span>（オッズ比 < 1）</p>
+
+      <h2>相対危険度との関係</h2>
+      <ul>
+        <li><span class="key">まれな疾患</span>ではオッズ比 ≒ 相対危険度</li>
+        <li>症例対照研究では相対危険度を直接算出できないため、オッズ比で近似</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116A90【計算問題】</div>
+        <p>ある調査で歯周病患者100名と性・年齢をマッチングした健常者110名のうち、喫煙者はそれぞれ20名と10名であった。<br>
+        喫煙の歯周病に対するオッズ比を求めよ。ただし、小数点以下第2位の数値が得られた場合には、四捨五入すること。</p>
+        <div class="choices">
+          【計算問題】数値を入力
+        </div>
+        <div class="answer">正解：2.5</div>
+        <p>【解説】2×2表を作成する。<br>
+        ・歯周病患者100名中、喫煙者20名、非喫煙者80名<br>
+        ・健常者110名中、喫煙者10名、非喫煙者100名<br>
+        オッズ比 = (20 × 100) ÷ (80 × 10) = 2000 ÷ 800 = <span class="highlight">2.5</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106D53【計算問題】</div>
+        <p>3歳児歯科健康診査において、齲蝕のある者200人と齲蝕のない者200人とについてフッ化物歯面塗布の経験を調べたところ、それぞれ25%と40%であった。<br>
+        フッ化物歯面塗布経験の齲蝕に対するオッズ比を求めよ。<br>
+        ただし、小数点以下の数値が得られた場合には、小数点以下第2位を四捨五入すること。</p>
+        <div class="choices">
+          【計算問題】数値を入力
+        </div>
+        <div class="answer">正解：0.5</div>
+        <p>【解説】割合から表を作成（人数が同じなので割合のまま計算可能）。<br>
+        オッズ比 = (25 × 60) ÷ (40 × 75) = 1500 ÷ 3000 = <span class="highlight">0.5</span><br>
+        オッズ比 < 1 なので、フッ化物塗布は<span class="key">予防因子</span>。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

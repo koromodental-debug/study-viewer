@@ -7,6 +7,7 @@
     currentItem: null,
     currentTab: 'html',
     searchQuery: '',
+    highlightQuery: null,  // 検索結果からジャンプ時のハイライト用
     collapsedCategories: new Set(),
     sidebarOpen: false,
     searchOpen: false,
@@ -557,6 +558,8 @@
     // 検索結果クリック
     elements.searchResults.querySelectorAll('.search-result-item').forEach(el => {
       el.addEventListener('click', () => {
+        // 検索クエリを保持（ページ内ハイライト用）
+        state.highlightQuery = state.searchQuery;
         selectItem(el.dataset.id);
         closeSearch();
       });
@@ -1018,6 +1021,14 @@
       // お気に入りボタンを追加（セクション内のh3に対して）
       injectFavoriteButtonsToSection(section, item);
 
+      // 検索からのジャンプ時：該当箇所をハイライト＆スクロール
+      if (isFirst && state.highlightQuery) {
+        setTimeout(() => {
+          highlightAndScrollToMatch(section, state.highlightQuery);
+          state.highlightQuery = null;
+        }, 100);
+      }
+
     } catch (e) {
       console.log('トピックHTML読み込みエラー:', e);
     }
@@ -1077,6 +1088,85 @@
     section.appendChild(content);
 
     return section;
+  }
+
+  /**
+   * 検索クエリに一致する箇所をハイライト＆スクロール
+   */
+  function highlightAndScrollToMatch(container, query) {
+    if (!query || !container) return;
+
+    const terms = query.toLowerCase().trim().split(/\s+/).filter(t => t.length >= 2);
+    if (terms.length === 0) return;
+
+    // 既存のハイライトをクリア
+    container.querySelectorAll('.search-highlight').forEach(el => {
+      const parent = el.parentNode;
+      parent.replaceChild(document.createTextNode(el.textContent), el);
+      parent.normalize();
+    });
+
+    // テキストノードを走査してハイライト
+    const walker = document.createTreeWalker(
+      container,
+      NodeFilter.SHOW_TEXT,
+      null,
+      false
+    );
+
+    const nodesToHighlight = [];
+    let firstMatch = null;
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const text = node.textContent.toLowerCase();
+
+      for (const term of terms) {
+        if (text.includes(term)) {
+          nodesToHighlight.push({ node, term });
+          if (!firstMatch) {
+            firstMatch = node;
+          }
+          break;
+        }
+      }
+    }
+
+    // ハイライトを適用（最初の5件のみ）
+    let highlightCount = 0;
+    for (const { node, term } of nodesToHighlight) {
+      if (highlightCount >= 5) break;
+
+      const text = node.textContent;
+      const lowerText = text.toLowerCase();
+      const index = lowerText.indexOf(term);
+
+      if (index !== -1) {
+        const before = text.substring(0, index);
+        const match = text.substring(index, index + term.length);
+        const after = text.substring(index + term.length);
+
+        const span = document.createElement('span');
+        span.className = 'search-highlight';
+        span.textContent = match;
+
+        const fragment = document.createDocumentFragment();
+        if (before) fragment.appendChild(document.createTextNode(before));
+        fragment.appendChild(span);
+        if (after) fragment.appendChild(document.createTextNode(after));
+
+        node.parentNode.replaceChild(fragment, node);
+        highlightCount++;
+      }
+    }
+
+    // 最初のハイライトにスクロール
+    const firstHighlight = container.querySelector('.search-highlight');
+    if (firstHighlight) {
+      setTimeout(() => {
+        firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 50);
+    }
   }
 
   /**

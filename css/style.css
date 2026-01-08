@@ -612,6 +612,20 @@ body {
   color: var(--text-color);
 }
 
+/* 検索ハイライト（ページ内ジャンプ時） */
+.search-highlight {
+  background: #ffeb3b;
+  padding: 2px 4px;
+  border-radius: 3px;
+  animation: highlight-fade 3s ease-out forwards;
+}
+
+@keyframes highlight-fade {
+  0% { background: #ffeb3b; }
+  70% { background: #ffeb3b; }
+  100% { background: transparent; }
+}
+
 .search-results {
   overflow-y: auto;
   max-height: 60vh;

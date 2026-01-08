@@ -2394,6 +2394,7 @@ body {
 .qa-topic-content {
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
+  padding: 20px 16px;
 }
 
 /* Q&Aのトピックヘッダーを画面幅いっぱいに */

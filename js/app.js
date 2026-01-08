@@ -7,7 +7,6 @@
     currentItem: null,
     currentTab: 'html',
     searchQuery: '',
-    searchFilter: 'all',  // 検索フィルター: 'all', 'html', 'qa', 'kakomon'
     highlightQuery: null,  // 検索結果からジャンプ時のハイライト用
     collapsedCategories: new Set(),
     sidebarOpen: false,
@@ -45,7 +44,6 @@
     searchInput: document.getElementById('search-input'),
     closeSearch: document.getElementById('close-search'),
     searchResults: document.getElementById('search-results'),
-    searchFilterTabs: document.getElementById('search-filter-tabs'),
     tabs: document.querySelectorAll('.floating-tab'),
     htmlContent: document.getElementById('html-content'),
     qaContent: document.getElementById('qa-content'),
@@ -182,20 +180,6 @@
         handleSearch(e.target.value);
       }, 150);
     });
-
-    // 検索フィルタータブ
-    if (elements.searchFilterTabs) {
-      elements.searchFilterTabs.querySelectorAll('.search-filter').forEach(btn => {
-        btn.addEventListener('click', () => {
-          // アクティブ状態を更新
-          elements.searchFilterTabs.querySelectorAll('.search-filter').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          // フィルターを更新して再検索
-          state.searchFilter = btn.dataset.filter;
-          handleSearch(state.searchQuery);
-        });
-      });
-    }
 
     // タブ切り替え
     elements.tabs.forEach(tab => {
@@ -537,25 +521,7 @@
       return;
     }
 
-    let results = searchEngine.search(query);
-
-    // フィルターを適用
-    if (state.searchFilter !== 'all') {
-      results = results.filter(item => {
-        switch (state.searchFilter) {
-          case 'html':
-            return item.htmlPath;
-          case 'qa':
-            return item.qaPath;
-          case 'kakomon':
-            // 過去問は科目が設定されているトピック
-            return item.subject && item.subject !== 'その他';
-          default:
-            return true;
-        }
-      });
-    }
-
+    const results = searchEngine.search(query);
     renderSearchResults(results.slice(0, 30));
   }
 
@@ -645,17 +611,6 @@
       el.addEventListener('click', () => {
         // 検索クエリを保持（ページ内ハイライト用）
         state.highlightQuery = state.searchQuery;
-
-        // フィルターに応じてタブを切り替え
-        const filterToTab = {
-          'html': 'html',
-          'qa': 'qa',
-          'kakomon': 'kakomon'
-        };
-        const targetTab = filterToTab[state.searchFilter];
-        if (targetTab) {
-          switchTab(targetTab);
-        }
 
         selectItem(el.dataset.id);
         closeSearch();

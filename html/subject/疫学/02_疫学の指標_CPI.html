@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CPI - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 60%; margin: 5px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 疫学の指標</span>
+    <h1>CPI（地域歯周疾患指数）</h1>
+    <div class="container">
+
+      <h2>CPIとは</h2>
+      <p><span class="key">CPI</span>（Community Periodontal Index：地域歯周疾患指数）は、<span class="key">WHO</span>が制定した歯周病の疫学指標。大規模集団における歯周疾患の実態把握に用いられる。</p>
+      <p class="note">1997年にCPITN（地域歯周疾患処置必要度指数）から改変された。</p>
+
+      <h2>検査方法</h2>
+      <ul>
+        <li><span class="key">CPI専用プローブ</span>を使用</li>
+        <li>先端に<span class="highlight">0.5mm</span>の球状構造</li>
+        <li>黒色バンド：<span class="highlight">3.5〜5.5mm</span></li>
+        <li>プロービング圧：<span class="key">20g</span>程度</li>
+      </ul>
+
+      <h2>代表歯（10歯法）</h2>
+      <p>以下の<span class="key">10歯</span>を検査対象とする。</p>
+      <table>
+        <tr>
+          <th>上顎</th>
+          <td>17, 16, 11, 26, 27</td>
+        </tr>
+        <tr>
+          <th>下顎</th>
+          <td>47, 46, 31, 36, 37</td>
+        </tr>
+      </table>
+      <p class="note">代表歯がない場合は、その分画のすべての残存歯を検査。</p>
+
+      <h2>CPIコード</h2>
+      <table>
+        <tr>
+          <th>コード</th>
+          <th>状態</th>
+          <th>処置</th>
+        </tr>
+        <tr>
+          <td><span class="key">0</span></td>
+          <td>健全</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">1</span></td>
+          <td>プロービング後の<span class="highlight">出血</span></td>
+          <td>TBI</td>
+        </tr>
+        <tr>
+          <td><span class="key">2</span></td>
+          <td><span class="highlight">歯石</span>の存在</td>
+          <td>TBI + スケーリング</td>
+        </tr>
+        <tr>
+          <td><span class="key">3</span></td>
+          <td><span class="highlight">4〜5mm</span>のポケット</td>
+          <td>TBI + SRP</td>
+        </tr>
+        <tr>
+          <td><span class="key">4</span></td>
+          <td><span class="highlight">6mm以上</span>のポケット</td>
+          <td>TBI + SRP + 歯周外科</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">要精密検査の判定基準</div>
+        <ul>
+          <li>歯周疾患検診では<span class="highlight">コード3以上</span>（4mm以上のポケット）が<span class="key">要精密検査</span></li>
+          <li>コード1, 2は「要指導」</li>
+        </ul>
+      </div>
+
+      <h2>国試過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114B78【計算】</div>
+        <p>ある市が行った歯周疾患検診の検査結果の一部を表に示す。<br>「要精密検査」に該当する受診者はどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114B78.png" alt="検診結果の表">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】<br>
+        要精密検査 = <span class="highlight">CPIコード3以上</span>（4mm以上のポケット）<br>
+        ・イ：コード3あり → 要精密検査<br>
+        ・エ：コード3あり → 要精密検査<br>
+        ・オ：コード4あり → 要精密検査<br>
+        <span class="caution">注意：コード2（歯石）は「要指導」であり要精密検査ではない</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A68</div>
+        <p>歯周プローブを用いて評価するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a GI<br>
+          b OHI<br>
+          c BOP<br>
+          d PMA Index<br>
+          e O'LearyのPCR
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】<br>
+        プローブを使用する指標：<br>
+        ・<span class="key">GI</span>（Gingival Index）：プローブで歯肉を軽く触れ出血を確認<br>
+        ・<span class="key">BOP</span>（Bleeding on Probing）：プロービング時の出血<br>
+        ・CPI：専用プローブでポケット深さと出血を評価<br><br>
+        プローブを使用しない指標：<br>
+        ・OHI：視診で歯垢・歯石を評価<br>
+        ・PMA Index：視診で歯肉の炎症を評価<br>
+        ・PCR：染め出し後、視診でプラーク付着を評価</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験での注意点</div>
+        <ul>
+          <li>CPIコード3以上が「要精密検査」</li>
+          <li>コード2（歯石）は「要指導」で要精密検査ではない</li>
+          <li>専用プローブの黒色バンドは3.5〜5.5mm</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

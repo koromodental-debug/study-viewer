@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>齲蝕抑制率 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula { font-family: "Times New Roman", serif; font-size: 11pt; margin: 8px 0; background: var(--bg-secondary); padding: 12px; border-radius: 8px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 60%; margin: 5px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 疫学の指標</span>
+    <h1>齲蝕抑制率</h1>
+    <div class="container">
+
+      <h2>齲蝕抑制率とは</h2>
+      <p>フッ化物応用などの<span class="key">予防処置の効果</span>を評価するための指標。対照群と比較して、どれだけう蝕の増加を抑えられたかを示す。</p>
+
+      <h2>計算式</h2>
+      <div class="formula">
+        齲蝕抑制率(%) = <span class="highlight">(対照群の増加DMF − 実験群の増加DMF)</span> ÷ <span class="highlight">対照群の増加DMF</span> × 100
+      </div>
+
+      <h3>増加DMFの計算</h3>
+      <div class="formula">
+        増加DMF = 調査<span class="key">終了時</span>のDMF − 調査<span class="key">開始時</span>のDMF
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">計算のポイント</div>
+        <ul>
+          <li>分子は「<span class="highlight">対照群 − 実験群</span>」の順</li>
+          <li>分母は「<span class="highlight">対照群</span>」の増加DMF</li>
+          <li>実験群と対照群を間違えないこと</li>
+        </ul>
+      </div>
+
+      <h2>計算例</h2>
+      <table>
+        <tr>
+          <th>群</th>
+          <th>開始時DMF</th>
+          <th>終了時DMF</th>
+          <th>増加DMF</th>
+        </tr>
+        <tr>
+          <td>A校（フッ化物洗口あり）</td>
+          <td>0.0</td>
+          <td>1.2</td>
+          <td>1.2</td>
+        </tr>
+        <tr>
+          <td>B校（対照群）</td>
+          <td>0.0</td>
+          <td>2.1</td>
+          <td>2.1</td>
+        </tr>
+      </table>
+      <p>齲蝕抑制率 = (2.1 − 1.2) / 2.1 × 100 = 0.9 / 2.1 × 100 ≒ <span class="highlight">43%</span></p>
+
+      <h2>齲蝕抑制率の解釈</h2>
+      <ul>
+        <li><span class="key">高い値</span>：予防効果が高い</li>
+        <li><span class="key">低い値</span>：予防効果が低い</li>
+        <li><span class="key">0%</span>：効果なし（対照群と同じ）</li>
+        <li><span class="key">負の値</span>：逆効果（通常はあり得ない）</li>
+      </ul>
+
+      <p class="note">フッ化物洗口の齲蝕抑制率は一般的に<span class="key">30〜80%</span>程度とされている。</p>
+
+      <h2>国試過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108D53【計算】</div>
+        <p>フッ化物洗口法を実施しているA小学校と実施していないB小学校における1年時と6年時の1人平均DMF歯数を図に示す。<br>フッ化物洗口法による齲蝕抑制率を求めよ。ただし、小数点以下第1位を四捨五入すること。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D53.png" alt="DMF歯数の図">
+        </div>
+        <div class="answer">正解：43%</div>
+        <p>【解説】<br>
+        1. A小学校（実験群）：増加DMF = 1.2 − 0 = 1.2<br>
+        2. B小学校（対照群）：増加DMF = 2.1 − 0 = 2.1<br>
+        3. 齲蝕抑制率 = (2.1 − 1.2) / 2.1 × 100<br>
+        　= 0.9 / 2.1 × 100 = 42.857...<br>
+        4. 小数点以下第1位を四捨五入 → <span class="highlight">43%</span></p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験での注意点</div>
+        <ul>
+          <li>実験群と対照群を正しく識別する</li>
+          <li>「増加DMF」を先に計算してから式に代入</li>
+          <li>四捨五入の指示に従う</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

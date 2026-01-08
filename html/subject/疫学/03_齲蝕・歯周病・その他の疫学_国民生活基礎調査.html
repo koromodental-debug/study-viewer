@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>国民生活基礎調査 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 齲蝕・歯周病・その他の疫学</span>
+    <h1>国民生活基礎調査</h1>
+    <div class="container">
+
+      <h2>調査の概要</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>種類</td>
+          <td><span class="key">基幹統計</span></td>
+        </tr>
+        <tr>
+          <td>実施機関</td>
+          <td><span class="key">厚生労働省</span></td>
+        </tr>
+        <tr>
+          <td>調査周期</td>
+          <td><span class="highlight">毎年</span>（3年ごとに大規模調査）</td>
+        </tr>
+        <tr>
+          <td>調査対象</td>
+          <td>全国の世帯および世帯員</td>
+        </tr>
+        <tr>
+          <td>調査方法</td>
+          <td><span class="key">標本調査</span></td>
+        </tr>
+      </table>
+
+      <h3>調査内容</h3>
+      <table>
+        <tr>
+          <th>調査種別</th>
+          <th>調査項目</th>
+        </tr>
+        <tr>
+          <td>簡易調査（毎年）</td>
+          <td>世帯、所得</td>
+        </tr>
+        <tr>
+          <td>大規模調査（3年ごと）</td>
+          <td>世帯、所得、<span class="highlight">健康</span>、<span class="highlight">介護</span>、健康票、有訴者率、通院者率</td>
+        </tr>
+      </table>
+
+      <h2>介護が必要となった原因</h2>
+      <p>国民生活基礎調査では、要介護者の<span class="highlight">介護が必要となった主な原因</span>を調査している。</p>
+
+      <h3>原因の順位変化</h3>
+      <table>
+        <tr>
+          <th>順位</th>
+          <th>2007年頃まで</th>
+          <th>2019年</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">1位</span></td>
+          <td>脳血管疾患（脳卒中）</td>
+          <td><span class="highlight">認知症</span></td>
+        </tr>
+        <tr>
+          <td>2位</td>
+          <td>認知症</td>
+          <td>脳血管疾患（脳卒中）</td>
+        </tr>
+        <tr>
+          <td>3位</td>
+          <td>高齢による衰弱</td>
+          <td>高齢による衰弱</td>
+        </tr>
+        <tr>
+          <td>4位</td>
+          <td>骨折・転倒</td>
+          <td>骨折・転倒</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">介護原因の変化のポイント</div>
+        <ul>
+          <li>かつては<span class="key">脳血管疾患</span>が第1位だった</li>
+          <li>近年は<span class="highlight">認知症</span>が第1位に変化</li>
+          <li>高齢化の進行と脳卒中治療の進歩が背景</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">118D24</div>
+        <p>2019年の国民生活基礎調査における介護が必要となった主な原因で最も多いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 認知症<br>
+          b 関節疾患<br>
+          c 骨折・転倒<br>
+          d 悪性新生物（がん）<br>
+          e 脳血管疾患（脳卒中）
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】2019年の調査では<span class="highlight">認知症</span>が第1位。かつては脳血管疾患が第1位だったが、高齢化の進行により認知症が増加している。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A29 / 103A36</div>
+        <p>高齢者で介護が必要となる原因疾患で最も多いのはどれか。</p>
+        <div class="choices">
+          a 肝硬変<br>
+          b 糖尿病<br>
+          c 心筋梗塞<br>
+          d 悪性腫瘍<br>
+          e 脳血管疾患
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】2007年頃までの調査では<span class="highlight">脳血管疾患（脳卒中）</span>が第1位だった。<span class="caution">出題年度によって正解が異なる可能性がある</span>ので、最新のデータを確認すること。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験対策</div>
+        <ul>
+          <li>調査周期は<span class="highlight">毎年</span>（大規模調査は3年ごと）</li>
+          <li>調査項目に<span class="highlight">健康・介護</span>が含まれる</li>
+          <li>介護原因は年代で異なる：かつては脳血管疾患、近年は認知症</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

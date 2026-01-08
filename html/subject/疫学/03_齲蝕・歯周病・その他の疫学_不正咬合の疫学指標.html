@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>不正咬合の疫学指標 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 齲蝕・歯周病・その他の疫学</span>
+    <h1>不正咬合の疫学指標</h1>
+    <div class="container">
+
+      <h2>DAI（審美歯科指数）</h2>
+      <p><span class="key">DAI</span>（Dental Aesthetic Index）は、Consが1986年に提唱した指標で、<span class="highlight">WHOが口腔診査における咬合異常の診査基準</span>として採用している。</p>
+
+      <h3>診査方法</h3>
+      <ul>
+        <li>CPIプローブを使用して診査</li>
+        <li>主に<span class="highlight">前歯部</span>の状態を評価</li>
+      </ul>
+
+      <h3>DAIの診査項目</h3>
+      <table>
+        <tr>
+          <th>診査項目</th>
+          <th>評価内容</th>
+        </tr>
+        <tr>
+          <td>切歯、犬歯、小臼歯の欠損歯数</td>
+          <td>欠損の有無</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">切歯部の叢生</span></td>
+          <td>前歯の叢生状態</td>
+        </tr>
+        <tr>
+          <td>切歯部の空隙</td>
+          <td>歯間の空隙</td>
+        </tr>
+        <tr>
+          <td>上顎前歯部の最大偏位</td>
+          <td>上顎前歯の位置異常</td>
+        </tr>
+        <tr>
+          <td>下顎前歯部の最大偏位</td>
+          <td>下顎前歯の位置異常</td>
+        </tr>
+        <tr>
+          <td>上顎前歯部のオーバージェット</td>
+          <td>水平被蓋</td>
+        </tr>
+        <tr>
+          <td>下顎前歯部のオーバージェット</td>
+          <td>反対咬合の程度</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">前歯部の開咬</span></td>
+          <td>垂直的被蓋異常</td>
+        </tr>
+        <tr>
+          <td>臼歯の近遠心関係</td>
+          <td>大臼歯の咬合関係</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">DAIの特徴</div>
+        <ul>
+          <li><span class="highlight">WHOが採用</span>した国際的な指標</li>
+          <li>主に<span class="highlight">前歯部（切歯部）</span>の状態を評価</li>
+          <li><span class="caution">臼歯部の開咬や交叉咬合は含まない</span></li>
+        </ul>
+      </div>
+
+      <h2>PAR Index</h2>
+      <p><span class="key">PAR Index</span>（Peer Assessment Rating）は、1987年に英国矯正標準作業部会によって開発された指標で、<span class="highlight">矯正治療の効果を評価</span>するために用いられる。</p>
+
+      <h3>PAR Indexの特徴</h3>
+      <ul>
+        <li><span class="highlight">治療前後の模型</span>を比較評価</li>
+        <li>不正咬合の重症度を数値化</li>
+        <li>スコア0が理想的咬合（スコアが高いほど重症）</li>
+        <li>改善率70%以上で高い治療水準</li>
+      </ul>
+
+      <h3>PAR Indexの評価項目</h3>
+      <ul>
+        <li>上下顎前歯部のコンタクトポイント</li>
+        <li>上下顎左右側方歯群のコンタクトポイント</li>
+        <li>左右側臼歯関係</li>
+        <li>オーバージェット</li>
+        <li>オーバーバイト</li>
+        <li>正中線</li>
+      </ul>
+
+      <h2>指標の比較</h2>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>目的</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">DAI</span></td>
+          <td>不正咬合の診査・分類</td>
+          <td>WHO採用、疫学調査向け</td>
+        </tr>
+        <tr>
+          <td><span class="key">PAR Index</span></td>
+          <td>矯正治療効果の評価</td>
+          <td>治療前後の比較</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">114D52</div>
+        <p>不正咬合を評価する指標はどれか。2つ選べ。</p>
+        <div class="choices">
+          a CFI<br>
+          b PDI<br>
+          c DAI<br>
+          d PHP<br>
+          e PAR Index
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a CFI：<span class="caution">フッ素症</span>の指標</li>
+          <li>b PDI：歯周疾患指数</li>
+          <li>c <span class="highlight">DAI</span>：不正咬合の指標（WHO採用）</li>
+          <li>d PHP：口腔清掃状態の指標</li>
+          <li>e <span class="highlight">PAR Index</span>：矯正治療効果の評価</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C48</div>
+        <p>DAIの診査項目に含まれるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 臼歯部の開咬<br>
+          b 切歯部の叢生<br>
+          c 前歯部の開咬<br>
+          d 臼歯部の交叉咬合<br>
+          e 大臼歯部の欠損歯数
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】DAIは主に<span class="highlight">前歯部（切歯部）</span>の状態を評価する。<span class="caution">臼歯部の開咬や交叉咬合は診査項目に含まれない</span>。大臼歯の欠損歯数ではなく、切歯・犬歯・小臼歯の欠損歯数を評価する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A63</div>
+        <p>DAIで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咀嚼能力を調べる。<br>
+          b 骨格性の異常を分類する。<br>
+          c Angleの分類を基本とする。<br>
+          d 前歯部の叢生状態を調べる。<br>
+          e 臼歯部交叉咬合の有無を判定する。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】DAIは<span class="highlight">前歯部の叢生状態</span>を調べる指標。咀嚼能力の評価、骨格性異常の分類、Angleの分類、臼歯部交叉咬合の判定は行わない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

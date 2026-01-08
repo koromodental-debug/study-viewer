@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯口清掃状態の統計指標 - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula { font-family: "Times New Roman", serif; font-size: 11pt; margin: 8px 0; background: var(--bg-secondary); padding: 12px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 疫学の指標</span>
+    <h1>歯口清掃状態の統計指標</h1>
+    <div class="container">
+
+      <h2>主な口腔清掃状態の指標</h2>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>正式名称</th>
+          <th>評価対象</th>
+        </tr>
+        <tr>
+          <td><span class="key">OHI</span></td>
+          <td>Oral Hygiene Index</td>
+          <td>歯垢 + 歯石</td>
+        </tr>
+        <tr>
+          <td><span class="key">OHI-S</span></td>
+          <td>Simplified OHI</td>
+          <td>歯垢 + 歯石（6歯）</td>
+        </tr>
+        <tr>
+          <td><span class="key">PCR</span></td>
+          <td>Plaque Control Record</td>
+          <td>プラーク付着率</td>
+        </tr>
+        <tr>
+          <td><span class="key">PHP</span></td>
+          <td>Patient Hygiene Performance</td>
+          <td>プラーク付着範囲</td>
+        </tr>
+      </table>
+
+      <h2>OHI（Oral Hygiene Index）</h2>
+      <p>1960年にGreene & Vermillionが提唱した口腔清掃状態の指標。</p>
+      
+      <h3>構成要素</h3>
+      <div class="formula">
+        OHI = <span class="highlight">DI（歯垢指数）</span> + <span class="highlight">CI（歯石指数）</span>
+      </div>
+
+      <h3>DIスコア（Debris Index：歯垢指数）</h3>
+      <table>
+        <tr>
+          <th>スコア</th>
+          <th>状態</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>付着物なし</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>歯冠部<span class="highlight">1/3以内</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>歯冠部<span class="highlight">1/3〜2/3</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>歯冠部<span class="highlight">2/3以上</span></td>
+        </tr>
+      </table>
+
+      <h3>CIスコア（Calculus Index：歯石指数）</h3>
+      <table>
+        <tr>
+          <th>スコア</th>
+          <th>状態</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>付着なし</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>縁上歯石が歯面<span class="key">1/3以内</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>縁上歯石が1/3〜2/3、または<span class="key">点状の縁下歯石</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>縁上歯石が2/3以上、または<span class="key">帯状の縁下歯石</span></td>
+        </tr>
+      </table>
+      <p class="note">OHIの最高値：<span class="key">12点</span>（DI 6点 + CI 6点）</p>
+
+      <h2>OHI-S（Simplified OHI）</h2>
+      <p>1964年に提唱されたOHIの簡略版。<span class="highlight">6歯</span>のみを診査。</p>
+
+      <h3>被験歯（6歯）</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>歯</th>
+          <th>診査面</th>
+        </tr>
+        <tr>
+          <td>上顎</td>
+          <td>16、11、26</td>
+          <td><span class="highlight">頬側面</span></td>
+        </tr>
+        <tr>
+          <td>下顎</td>
+          <td>46、31、36</td>
+          <td>46・36は<span class="highlight">舌側面</span>、31は頬側面</td>
+        </tr>
+      </table>
+      <p class="note">OHI-Sの最高値：<span class="key">6点</span>（DI-S 3点 + CI-S 3点）</p>
+
+      <div class="point-box">
+        <div class="point-box-title">欠損時の代替歯</div>
+        <ul>
+          <li>中切歯欠損 → <span class="key">反対側中切歯</span></li>
+          <li>第一大臼歯欠損 → <span class="key">第二大臼歯</span></li>
+        </ul>
+      </div>
+
+      <h2>PCR（Plaque Control Record）</h2>
+      <p>O'Learyが提唱した<span class="key">プラーク付着率</span>を示す指標。</p>
+      
+      <h3>計算式</h3>
+      <div class="formula">
+        PCR(%) = プラーク付着歯面数 ÷ 全被検歯面数 × 100
+      </div>
+      <ul>
+        <li>全歯の<span class="key">4面</span>（頬・舌・近心・遠心）を評価</li>
+        <li>染め出し後に<span class="highlight">視診</span>で判定</li>
+        <li>目標値：<span class="highlight">20%以下</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">指標の比較</div>
+        <ul>
+          <li><span class="key">OHI・OHI-S</span>：歯垢＋歯石を評価、プローブ不要</li>
+          <li><span class="key">PCR</span>：プラークのみ評価、染め出し使用</li>
+          <li><span class="key">PHP</span>：プラーク付着範囲を評価</li>
+        </ul>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験での注意点</div>
+        <ul>
+          <li>OHI = DI + CI（歯垢 + 歯石）</li>
+          <li>OHI-Sは6歯のみ診査</li>
+          <li>下顎臼歯は舌側面を診査</li>
+          <li>PCRは染め出し後に視診で評価</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

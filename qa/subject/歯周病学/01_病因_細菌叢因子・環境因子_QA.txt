@@ -1,3 +1,5 @@
+# 細菌叢因子・環境因子 Q&A
+
 ## プラークとバイオフィルム
 
 Q: バイオフィルムとは？
@@ -17,7 +19,7 @@ Q: ペリクル（獲得被膜）とは？
 A: 唾液の糖タンパク由来の被膜（厚さ0.05〜0.8μm）、細菌は含まない
 
 [関連質問]
-- 歯石とプラークの違いは？ → 歯石はプラークが石灰化したもの（細菌は含まない）
+- 歯石とプラークの違いは？ → 歯石はプラークが石灰化したもの
 - マテリアアルバとプラークの違いは？ → マテリアアルバはうがいで除去可能
 
 ---
@@ -42,45 +44,55 @@ A: 糸状菌、紡錘菌、スピロヘータ
 Q: 細胞外マトリックスを構成する物質は？
 A: ムタンやグルカン
 
+[関連質問]
+- プラーク形成の順序は？ → ペリクル→初期定着菌→後期定着菌
+
 ---
 
 ## Socransky's complex
 
 Q: Socranskyの細菌複合体でRed complexに属する菌は？
-A: P. gingivalis, T. forsythia, T. denticola
+A: P. gingivalis、T. forsythia、T. denticola
+   [混同注意] Red complexは3菌種のみ！
 
 Q: Red complexの特徴は？
 A: 重度歯周炎と最も関連、ピラミッドの頂点に位置
 
 Q: Orange complexの代表的な菌は？
-A: P. intermedia, P. nigrescens, F. nucleatum, C. rectus
+A: P. intermedia、P. nigrescens、F. nucleatum、C. rectus
 
 Q: F. nucleatumの特徴は？
 A: 共凝集の中心的役割を果たす（Orange complex）
-   [混同注意] Red complexではない
+   [混同注意] Red complexではない！
 
 Q: Green complexの特徴は？
 A: 侵襲性歯周炎との関連（A. actinomycetemcomitans serotype aなど）
 
-Q: Yellow complex, Purple complexの特徴は？
-A: 初期定着菌（Streptococcus属、V. parvula, A. odontolyticusなど）
+Q: Yellow complex、Purple complexの特徴は？
+A: 初期定着菌（Streptococcus属、V. parvula、A. odontolyticusなど）
+
+[関連質問]
+- Red complex以外で重要な菌は？ → Orange complexのF. nucleatum（共凝集の中心）
 
 ---
-[113C-52] ★★★
-Q: Red complexに属するのは？
-A: P. gingivalis, T. forsythia
+
+[113C52] ★★★
+Q: Red complexに属するのはどれか。2つ選べ。
+A: P. gingivalis、T. forsythia
 
 [他の選択肢との違い]
-- P. intermedia: Orange complex ← 間違えやすい
-- E. corrodens: Green complex
-- F. nucleatum: Orange complex ← 間違えやすい
+- a P. intermedia：Orange complex ← 超頻出ひっかけ
+- b E. corrodens：Green complex
+- c P. gingivalis ← 正解
+- d F. nucleatum：Orange complex ← 超頻出ひっかけ
+- e T. forsythia ← 正解
 
 [ポイント]
-Red = P.g., T.f., T.d.（3菌種のみ）
+Red = P.g.、T.f.、T.d.の3菌種のみ。P. intermediaとF. nucleatumはOrange
 
 ---
 
-## 主要な歯周病原細菌
+## P. gingivalis
 
 Q: P. gingivalisの分類は？
 A: グラム陰性偏性嫌気性桿菌、黒色色素産生
@@ -94,18 +106,24 @@ A: 線毛、ジンジパイン、コラゲナーゼ、LPS
 Q: ジンジパインとは？
 A: トリプシン様酵素（P. gingivalis特有）
 
+[関連質問]
+- 黒色色素産生菌は他に？ → P. intermedia
+
 ---
-[111A-67] ★★★
-Q: P. gingivalisの病原因子は？
+
+[111A67] ★★★
+Q: P. gingivalisの病原因子はどれか。2つ選べ。
 A: 線毛、ジンジパイン
 
 [他の選択肢との違い]
-- 莢膜: 病原因子というより構造
-- ロイコトキシン: A.a.の病原因子 ← 最頻出の引っかけ
-- 細胞膨化致死毒素: A.a.の病原因子 ← 最頻出の引っかけ
+- a 莢膜：病原因子というより構造
+- b 線毛 ← 正解
+- c ジンジパイン ← 正解
+- d ロイコトキシン：A.a.の病原因子 ← 超頻出ひっかけ
+- e 細胞膨化致死毒素：A.a.の病原因子 ← 超頻出ひっかけ
 
 [ポイント]
-P.g.＝ジンジパイン、A.a.＝ロイコトキシン
+P.g.＝ジンジパイン、A.a.＝ロイコトキシン・CDT
 
 ---
 
@@ -113,6 +131,7 @@ P.g.＝ジンジパイン、A.a.＝ロイコトキシン
 
 Q: A.a.の分類は？
 A: グラム陰性通性嫌気性桿菌
+   [混同注意] P.g.は「偏性」嫌気性、A.a.は「通性」嫌気性
 
 Q: A.a.の関連疾患は？
 A: 侵襲性歯周炎（若年者）、特に限局型
@@ -123,19 +142,24 @@ A: ロイコトキシン（白血球毒素）、細胞膨化致死毒素（CDT�
 Q: JP2株の特徴は？
 A: 高病原性、ロイコトキシン産生量が多い
 
+[関連質問]
+- 侵襲性歯周炎の特徴は？ → 若年発症、急速進行、家族内集積
+
 ---
-[116A-58] ★★★
-Q: ロイコトキシンを産生するのは？
+
+[116A58] ★★★
+Q: ロイコトキシンを産生するのはどれか。
 A: A. actinomycetemcomitans
 
 [他の選択肢との違い]
-- P. gingivalis: ジンジパイン ← 最頻出の引っかけ
-- P. intermedia: Orange complex
-- T. forsythia: トリプシン様酵素
-- T. denticola: Red complex
+- a P. gingivalis：ジンジパイン ← 超頻出ひっかけ
+- b P. intermedia：Orange complex
+- c A. actinomycetemcomitans ← 正解
+- d T. forsythia：トリプシン様酵素
+- e T. denticola：Red complex
 
 [ポイント]
-ロイコトキシン＝A.a.（侵襲性歯周炎）
+ロイコトキシン＝A.a.（侵襲性歯周炎）、ジンジパイン＝P.g.（慢性歯周炎）
 
 ---
 
@@ -150,18 +174,18 @@ A: トリプシン様酵素、シアリダーゼ
 Q: T. forsythiaの旧名は？
 A: Bacteroides forsythus
 
+[関連質問]
+- Red complexの特徴は？ → 重度歯周炎と最も関連
+
 ---
 
 ## 歯周病原細菌の条件（修正Koch原則）
 
 Q: Socranskyらによる歯周病原細菌の条件のポイントは？
-A:
-1. 病変進行時に多数・高率、健全時に少数・低率
-2. 細菌排除で病態変化
-3. 疾患進行に先立って検出
-4. 免疫反応が認められる
-5. 病原因子を産生
-6. 動物実験モデルが存在
+A: 病変進行時に多数・高率、細菌排除で病態変化、疾患進行に先立って検出、免疫反応が認められる、病原因子を産生、動物実験モデルが存在
+
+[関連質問]
+- なぜ修正Koch原則？ → 細菌を分離培養して感染させる従来のKochの原則が適用困難なため
 
 ---
 
@@ -176,24 +200,7 @@ A: コラーゲン合成障害を引き起こす
 Q: 歯肉増殖を起こす薬物は？
 A: フェニトイン（抗てんかん薬）、免疫抑制剤
 
+[関連質問]
+- 喫煙は最も重要な環境因子？ → そうである
+
 ---
-
-## 国試頻出まとめ
-
-Q: Red complexの3菌種は？
-A: P. gingivalis, T. forsythia, T. denticola
-
-Q: P. gingivalisの代表的病原因子は？
-A: ジンジパイン
-
-Q: A.a.の代表的病原因子は？
-A: ロイコトキシン
-
-Q: A.a.と関連する疾患は？
-A: 侵襲性歯周炎（限局型）
-
-Q: F. nucleatumの役割は？
-A: 共凝集の中心的役割
-
-Q: プラークはうがいで除去できる？
-A: できない（歯ブラシが必要）

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CFI - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 80%; margin: 5px 0; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .calc-box {
+      background: #FFF8E7;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 疫学の指標</span>
+    <h1>CFI</h1>
+    <div class="container">
+
+      <h2>CFI（地域フッ素症指数）</h2>
+      <p><span class="key">CFI</span>（Community Fluorosis Index）は、Deanが1942年に提唱した指標で、<span class="highlight">地域における歯のフッ素症の発生程度</span>を評価する。</p>
+
+      <h3>診査方法</h3>
+      <ul>
+        <li>現在歯すべてを診査</li>
+        <li>Deanの分類に基づいて評価</li>
+        <li><span class="highlight">最も症状の強い2歯</span>で個人の程度を判定</li>
+        <li>個人の点数の和を被験者数で割る</li>
+      </ul>
+
+      <h3>Deanの分類（診査基準）</h3>
+      <table>
+        <tr>
+          <th>点数</th>
+          <th>分類</th>
+          <th>診査基準</th>
+        </tr>
+        <tr>
+          <td><span class="key">0</span></td>
+          <td>normal</td>
+          <td>正常の形態、透明度</td>
+        </tr>
+        <tr>
+          <td><span class="key">0.5</span></td>
+          <td>questionable</td>
+          <td>点在するわずかな白斑</td>
+        </tr>
+        <tr>
+          <td><span class="key">1</span></td>
+          <td>very mild</td>
+          <td>白濁部が歯面の<span class="highlight">1/4以下</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">2</span></td>
+          <td>mild</td>
+          <td>白濁部が歯面の<span class="highlight">1/2以下</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">3</span></td>
+          <td>moderate</td>
+          <td>全歯面の白濁および小窩、着色を認める</td>
+        </tr>
+        <tr>
+          <td><span class="key">4</span></td>
+          <td>severe</td>
+          <td>形成不全を伴う、着色も著しい</td>
+        </tr>
+      </table>
+
+      <h3>計算式</h3>
+      <div class="calc-box">
+        <p><span class="highlight">CFI</span> = 個人の点数の合計 ÷ 被験者数</p>
+      </div>
+
+      <h3>判定基準</h3>
+      <table>
+        <tr>
+          <th>CFI値</th>
+          <th>判定</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">0.4以下</span></td>
+          <td>公衆衛生上問題なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">0.4〜0.6</span></td>
+          <td>境界域</td>
+        </tr>
+        <tr>
+          <td><span class="caution">0.6以上</span></td>
+          <td>流行地（飲料水中のフッ化物量を減らす必要性あり）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">CFIの重要ポイント</div>
+        <ul>
+          <li>歯のフッ素症の<span class="highlight">地域レベル</span>の評価指標</li>
+          <li>個人評価は<span class="highlight">最も症状の強い2歯</span>で判定</li>
+          <li>判定の境界値：<span class="highlight">0.4</span>と<span class="highlight">0.6</span></li>
+          <li>0.6以上で飲料水中フッ化物量を減らす必要あり</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">112A29</div>
+        <p>24歳の男性。CFIの検査結果を表に示す。<br>この被検者の値はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112A29.png" alt="CFI検査結果表">
+        </div>
+        <div class="choices">
+          a 0.5<br>
+          b 1<br>
+          c 2<br>
+          d 3<br>
+          e 4
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】表から各歯のフッ素症の程度を読み取り、<span class="highlight">最も症状の強い2歯</span>でその個人の程度を判定する。表の値を確認すると、最も重症度の高い歯が「moderate（3点）」に該当するため、この被験者のCFI値は<span class="highlight">3</span>となる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

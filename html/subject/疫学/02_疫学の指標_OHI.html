@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>OHI - 疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 80%; margin: 5px 0; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .calc-box {
+      background: #FFF8E7;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">疫学 / 疫学の指標</span>
+    <h1>OHI</h1>
+    <div class="container">
+
+      <h2>OHI-Sの計算方法</h2>
+      <p><span class="key">OHI-S</span>（Oral Hygiene Index-Simplified）は、特定の6歯を対象とした簡略化口腔衛生指数。</p>
+
+      <h3>対象歯と診査面</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>対象歯</th>
+          <th>診査面</th>
+        </tr>
+        <tr>
+          <td>上顎右側</td>
+          <td>第一大臼歯（6番）</td>
+          <td>頬側面</td>
+        </tr>
+        <tr>
+          <td>上顎前歯</td>
+          <td>中切歯（1番）</td>
+          <td>唇側面</td>
+        </tr>
+        <tr>
+          <td>上顎左側</td>
+          <td>第一大臼歯（6番）</td>
+          <td>頬側面</td>
+        </tr>
+        <tr>
+          <td>下顎左側</td>
+          <td>第一大臼歯（6番）</td>
+          <td><span class="caution">舌側面</span></td>
+        </tr>
+        <tr>
+          <td>下顎前歯</td>
+          <td>中切歯（1番）</td>
+          <td>唇側面</td>
+        </tr>
+        <tr>
+          <td>下顎右側</td>
+          <td>第一大臼歯（6番）</td>
+          <td><span class="caution">舌側面</span></td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">注意</span>：下顎大臼歯は舌側面を診査（頬側ではない）</p>
+
+      <h3>計算式</h3>
+      <div class="calc-box">
+        <p><span class="key">DI-S</span> = Debris点数の合計 ÷ 被験歯数</p>
+        <p><span class="key">CI-S</span> = Calculus点数の合計 ÷ 被験歯数</p>
+        <p><span class="highlight">OHI-S = DI-S + CI-S</span></p>
+      </div>
+
+      <h3>最大値の比較</h3>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>DI/CI各最大</th>
+          <th>合計最大</th>
+        </tr>
+        <tr>
+          <td><span class="key">OHI</span>（全顎6ブロック）</td>
+          <td>各6点</td>
+          <td><span class="highlight">12点</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">OHI-S</span>（6歯のみ）</td>
+          <td>各3点</td>
+          <td><span class="highlight">6点</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">計算のポイント</div>
+        <ul>
+          <li>DI-SとCI-Sをそれぞれ計算してから合計する</li>
+          <li>欠損歯は除外して被験歯数を調整</li>
+          <li>小数点以下の計算に注意（四捨五入のルールを確認）</li>
+        </ul>
+      </div>
+
+      <h2>計算例</h2>
+      <h3>例題：以下の記録からOHI-Sを計算せよ</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>上顎右6</th>
+          <th>上顎1</th>
+          <th>上顎左6</th>
+          <th>下顎左6</th>
+          <th>下顎1</th>
+          <th>下顎右6</th>
+        </tr>
+        <tr>
+          <td>DI</td>
+          <td>2</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>CI</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </table>
+      <div class="calc-box">
+        <p>DI-S = (2+1+2+3+2+2) ÷ 6 = 12 ÷ 6 = <span class="highlight">2.0</span></p>
+        <p>CI-S = (1+0+1+2+1+1) ÷ 6 = 6 ÷ 6 = <span class="highlight">1.0</span></p>
+        <p>OHI-S = 2.0 + 1.0 = <span class="highlight">3.0</span></p>
+      </div>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">109A108</div>
+        <p>OHI記録の一部を表に示す。<br>OHI-Sの値はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109A108.png" alt="OHI記録表">
+        </div>
+        <div class="choices">
+          a 2.0<br>
+          b 2.5<br>
+          c 3.0<br>
+          d 3.5<br>
+          e 4.0
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】表からDebris（DI）とCalculus（CI）の値を読み取り、それぞれの平均を計算する。DI-S + CI-S = OHI-Sとなる。表の値を正確に読み取り、<span class="highlight">3.5</span>が正解。計算問題では、DI-SとCI-Sを別々に計算してから合計することがポイント。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験対策</div>
+        <ul>
+          <li>OHI-Sの最大値は<span class="highlight">6点</span>（OHIの最大12点と混同しない）</li>
+          <li>下顎大臼歯は<span class="caution">舌側面</span>を診査</li>
+          <li>計算は DI-S + CI-S で求める</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

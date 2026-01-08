@@ -345,14 +345,32 @@
 
   /**
    * スクロール方向に応じてヘッダーを隠す/表示する
-   * ※現在は無効化（ヘッダー常に表示の方が使いやすい）
    */
   function setupScrollHideHeader() {
-    // 無効化: ヘッダーは常に表示
-    // スクロールの滑らかさとUI安定性を優先
-    window.setupIframeScrollHandler = function(iframe) {
-      // 無効化
-    };
+    const threshold = 10;
+
+    // 各タブのコンテンツにスクロールリスナーを設定
+    [elements.htmlContent, elements.qaContent, elements.kakomonContent].forEach(container => {
+      if (!container) return;
+
+      let lastScrollTop = 0;
+
+      container.addEventListener('scroll', function() {
+        const scrollTop = container.scrollTop;
+        const diff = scrollTop - lastScrollTop;
+
+        // 下にスクロール → ヘッダーを隠す（60px以上スクロールした場合のみ）
+        if (diff > threshold && scrollTop > 60) {
+          elements.header.classList.add('hidden');
+        }
+        // 上にスクロール → ヘッダーを表示
+        else if (diff < -threshold) {
+          elements.header.classList.remove('hidden');
+        }
+
+        lastScrollTop = scrollTop;
+      }, { passive: true });
+    });
   }
 
   /**

@@ -12,7 +12,11 @@
     searchOpen: false,
     qaShowAll: false,
     lastScrollY: 0,
-    headerHidden: false
+    headerHidden: false,
+    // 無限スクロール用
+    loadedTopicIndex: -1,      // 現在読み込み済みの最後のトピックのインデックス
+    isLoadingMore: false,       // 追加読み込み中フラグ
+    startTopicIndex: -1         // 最初に選択されたトピックのインデックス
   };
 
   // DOM要素
@@ -33,7 +37,7 @@
     tabs: document.querySelectorAll('.floating-tab'),
     htmlContent: document.getElementById('html-content'),
     qaContent: document.getElementById('qa-content'),
-    htmlFrame: document.getElementById('html-frame'),
+    htmlDisplay: document.getElementById('html-display'),
     qaDisplay: document.getElementById('qa-display'),
     qaToolbar: document.getElementById('qa-toolbar'),
     qaToggleBtn: document.getElementById('qa-toggle-btn'),
@@ -409,9 +413,11 @@
     // 現在のアイテムをクリア
     state.currentItem = null;
 
-    // iframe を非表示
-    elements.htmlFrame.src = '';
-    elements.htmlFrame.style.display = 'none';
+    // まとめ表示を非表示
+    elements.htmlDisplay.innerHTML = '';
+    elements.htmlDisplay.style.display = 'none';
+    state.loadedTopicIndex = -1;
+    state.startTopicIndex = -1;
 
     // Q&A を非表示
     elements.qaDisplay.innerHTML = '';
@@ -879,26 +885,26 @@
       elements.welcomeScreen.classList.add('hidden');
     }
 
-    // HTML
-    if (item.htmlPath) {
-      elements.htmlFrame.src = item.htmlPath;
-      elements.htmlFrame.style.display = 'block';
+    // 無限スクロール用：開始インデックスをセット
+    const itemIndex = DATA.findIndex(d => d.id === item.id);
+    state.startTopicIndex = itemIndex;
+    state.loadedTopicIndex = itemIndex;
+    state.isLoadingMore = false;
 
-      // iframeロード後にモバイル用CSSを注入 & スクロール監視
-      elements.htmlFrame.onload = function() {
-        injectMobileStyles(elements.htmlFrame);
-        if (window.setupIframeScrollHandler) {
-          window.setupIframeScrollHandler(elements.htmlFrame);
-        }
-        if (window.setupIframeSwipeHandler) {
-          window.setupIframeSwipeHandler(elements.htmlFrame);
-        }
-        // まとめカードにお気に入りボタンを追加
-        injectFavoriteButtons(elements.htmlFrame, item);
-      };
+    // HTML（無限スクロール対応）
+    if (item.htmlPath) {
+      // 表示をクリアして新規読み込み
+      elements.htmlDisplay.innerHTML = '';
+      elements.htmlDisplay.style.display = 'block';
+
+      // 最初のトピックを読み込み
+      loadTopicHTML(item, true);
+
+      // 無限スクロールのセットアップ
+      setupInfiniteScroll();
     } else {
-      elements.htmlFrame.src = '';
-      elements.htmlFrame.style.display = 'none';
+      elements.htmlDisplay.innerHTML = '';
+      elements.htmlDisplay.style.display = 'none';
       // HTMLがない場合はウェルカム画面を表示（メッセージ付き）
       if (elements.welcomeScreen) {
         elements.welcomeScreen.classList.remove('hidden');
@@ -923,6 +929,160 @@
     if (typeof KakomonModule !== 'undefined') {
       KakomonModule.loadKakomon(item, elements);
     }
+  }
+
+  /**
+   * トピックのHTMLを読み込んでdivに追加
+   */
+  async function loadTopicHTML(item, isFirst = false) {
+    if (!item || !item.htmlPath) return;
+
+    try {
+      const response = await fetch(item.htmlPath);
+      if (!response.ok) throw new Error('Failed to load');
+      const html = await response.text();
+
+      // HTMLからbodyの中身を抽出
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const bodyContent = doc.body.innerHTML;
+
+      // トピックセクションを作成
+      const section = document.createElement('div');
+      section.className = 'topic-section';
+      section.dataset.topicId = item.id;
+
+      // トピックヘッダー（区切り）を追加
+      const header = document.createElement('div');
+      header.className = 'topic-section-header';
+      header.innerHTML = `
+        <span class="topic-section-subject">${escapeHtml(item.subject || '')}</span>
+        <span class="topic-section-title">${escapeHtml(item.title || item.id)}</span>
+      `;
+      section.appendChild(header);
+
+      // コンテンツを追加
+      const content = document.createElement('div');
+      content.className = 'topic-section-content';
+      content.innerHTML = bodyContent;
+      section.appendChild(content);
+
+      // 表示領域に追加
+      elements.htmlDisplay.appendChild(section);
+
+      // お気に入りボタンを追加（セクション内のh3に対して）
+      injectFavoriteButtonsToSection(section, item);
+
+    } catch (e) {
+      console.log('トピックHTML読み込みエラー:', e);
+    }
+  }
+
+  /**
+   * 無限スクロールのセットアップ
+   */
+  function setupInfiniteScroll() {
+    const container = elements.htmlContent;
+
+    // 既存のリスナーを削除（重複防止）
+    container.removeEventListener('scroll', handleInfiniteScroll);
+    container.addEventListener('scroll', handleInfiniteScroll, { passive: true });
+  }
+
+  /**
+   * 無限スクロールのハンドラ
+   */
+  function handleInfiniteScroll() {
+    if (state.isLoadingMore) return;
+
+    const container = elements.htmlContent;
+    const scrollTop = container.scrollTop;
+    const scrollHeight = container.scrollHeight;
+    const clientHeight = container.clientHeight;
+
+    // 底部から200px以内に達したら次を読み込み
+    if (scrollTop + clientHeight >= scrollHeight - 200) {
+      loadNextTopic();
+    }
+  }
+
+  /**
+   * 次のトピックを読み込み
+   */
+  async function loadNextTopic() {
+    if (state.isLoadingMore) return;
+
+    const nextIndex = state.loadedTopicIndex + 1;
+    if (nextIndex >= DATA.length) {
+      // 最後のトピックに到達
+      return;
+    }
+
+    state.isLoadingMore = true;
+
+    const nextItem = DATA[nextIndex];
+    if (nextItem && nextItem.htmlPath) {
+      await loadTopicHTML(nextItem, false);
+      state.loadedTopicIndex = nextIndex;
+    }
+
+    state.isLoadingMore = false;
+  }
+
+  /**
+   * セクション内のh3にお気に入りボタンを追加
+   */
+  function injectFavoriteButtonsToSection(section, item) {
+    if (typeof FavoritesManager === 'undefined') return;
+
+    const topicId = item.id;
+    const h3Elements = section.querySelectorAll('.topic-section-content h3');
+
+    h3Elements.forEach((h3, index) => {
+      // 既にラッパーがあればスキップ
+      if (h3.parentElement.classList.contains('html-card-wrapper')) return;
+
+      // h3をラッパーで囲む
+      const wrapper = document.createElement('div');
+      wrapper.className = 'html-card-wrapper';
+      wrapper.dataset.cardIndex = index;
+      wrapper.dataset.title = h3.textContent || '';
+
+      // h3の後の要素を含める（次のh3まで）
+      const elements = [];
+      let sibling = h3.nextElementSibling;
+      while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2' && sibling.tagName !== 'H1') {
+        elements.push(sibling);
+        sibling = sibling.nextElementSibling;
+      }
+
+      h3.parentNode.insertBefore(wrapper, h3);
+      wrapper.appendChild(h3);
+      elements.forEach(el => wrapper.appendChild(el));
+
+      // お気に入りボタンを追加
+      const favBtn = document.createElement('button');
+      favBtn.className = 'favorite-btn';
+      favBtn.setAttribute('aria-label', 'お気に入り');
+      favBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>';
+
+      // 既にお気に入りかチェック
+      const isFav = FavoritesManager.isFavoriteByParams('html', topicId, index);
+      if (isFav) favBtn.classList.add('active');
+
+      favBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const content = {
+          title: h3.textContent || '',
+          html: wrapper.innerHTML
+        };
+        const isNowFavorite = FavoritesManager.toggle('html', topicId, index, content);
+        this.classList.toggle('active', isNowFavorite);
+        updateNoteBadge();
+      });
+
+      wrapper.insertBefore(favBtn, wrapper.firstChild);
+    });
   }
 
   /**
@@ -1180,17 +1340,16 @@
    */
   function getCurrentHTMLSection() {
     try {
-      const iframeDoc = elements.htmlFrame.contentDocument;
-      const iframeWin = elements.htmlFrame.contentWindow;
-      if (!iframeDoc || !iframeWin) return null;
+      if (!elements.htmlDisplay) return null;
 
-      const headings = iframeDoc.querySelectorAll('h1, h2, h3, h4');
+      const headings = elements.htmlDisplay.querySelectorAll('h1, h2, h3, h4');
       let currentSection = null;
+      const containerRect = elements.htmlContent.getBoundingClientRect();
 
       for (const heading of headings) {
         const rect = heading.getBoundingClientRect();
-        // 画面上部から100px以内にある見出しを現在のセクションとする
-        if (rect.top <= 100) {
+        // コンテナ上部から100px以内にある見出しを現在のセクションとする
+        if (rect.top - containerRect.top <= 100) {
           currentSection = heading.textContent.trim();
         }
       }
@@ -1228,18 +1387,17 @@
     if (!sectionName) return false;
 
     try {
-      const iframeDoc = elements.htmlFrame.contentDocument;
-      const iframeWin = elements.htmlFrame.contentWindow;
-      if (!iframeDoc || !iframeWin) return false;
+      if (!elements.htmlDisplay) return false;
 
-      const headings = iframeDoc.querySelectorAll('h1, h2, h3, h4');
+      const headings = elements.htmlDisplay.querySelectorAll('h1, h2, h3, h4');
       for (const heading of headings) {
         const text = heading.textContent.trim();
         // 完全一致または部分一致
         if (text === sectionName || text.includes(sectionName) || sectionName.includes(text)) {
-          const rect = heading.getBoundingClientRect();
-          const scrollY = iframeWin.scrollY || 0;
-          iframeWin.scrollTo({ top: scrollY + rect.top - 20, behavior: 'auto' });
+          const containerRect = elements.htmlContent.getBoundingClientRect();
+          const headingRect = heading.getBoundingClientRect();
+          const offset = headingRect.top - containerRect.top + elements.htmlContent.scrollTop - 20;
+          elements.htmlContent.scrollTo({ top: offset, behavior: 'auto' });
           return true;
         }
       }
@@ -1270,17 +1428,11 @@
     } else if (prevTab === 'html') {
       currentSection = getCurrentHTMLSection();
       // フォールバック用に%も取得
-      try {
-        const iframeWin = elements.htmlFrame.contentWindow;
-        const iframeDoc = elements.htmlFrame.contentDocument;
-        if (iframeWin && iframeDoc) {
-          const scrollY = iframeWin.scrollY || 0;
-          const maxScroll = iframeDoc.documentElement.scrollHeight - iframeWin.innerHeight;
-          if (maxScroll > 0) {
-            scrollPercent = scrollY / maxScroll;
-          }
-        }
-      } catch (e) {}
+      const el = elements.htmlContent;
+      const maxScroll = el.scrollHeight - el.clientHeight;
+      if (maxScroll > 0) {
+        scrollPercent = el.scrollTop / maxScroll;
+      }
     }
 
     state.currentTab = tab;
@@ -1317,14 +1469,9 @@
           const maxScroll = el.scrollHeight - el.clientHeight;
           el.scrollTop = maxScroll * scrollPercent;
         } else if (tab === 'html') {
-          try {
-            const iframeWin = elements.htmlFrame.contentWindow;
-            const iframeDoc = elements.htmlFrame.contentDocument;
-            if (iframeWin && iframeDoc) {
-              const maxScroll = iframeDoc.documentElement.scrollHeight - iframeWin.innerHeight;
-              iframeWin.scrollTo(0, maxScroll * scrollPercent);
-            }
-          } catch (e) {}
+          const el = elements.htmlContent;
+          const maxScroll = el.scrollHeight - el.clientHeight;
+          el.scrollTop = maxScroll * scrollPercent;
         }
       }
     }, 50);

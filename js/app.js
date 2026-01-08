@@ -1070,8 +1070,10 @@
       // 表示領域に追加（末尾）
       elements.htmlDisplay.appendChild(section);
 
-      // お気に入りボタンを追加（セクション内のh3に対して）
-      injectFavoriteButtonsToSection(section, item);
+      // お気に入りボタンを追加（セクション内のh3に対して）- 遅延実行でパフォーマンス改善
+      requestAnimationFrame(() => {
+        injectFavoriteButtonsToSection(section, item);
+      });
 
       // 検索からのジャンプ時：該当箇所をハイライト＆スクロール
       if (isFirst && state.highlightQuery) {
@@ -1108,8 +1110,10 @@
       // 表示領域に追加（先頭）
       elements.htmlDisplay.insertBefore(section, elements.htmlDisplay.firstChild);
 
-      // お気に入りボタンを追加（セクション内のh3に対して）
-      injectFavoriteButtonsToSection(section, item);
+      // お気に入りボタンを追加（セクション内のh3に対して）- 遅延実行でパフォーマンス改善
+      requestAnimationFrame(() => {
+        injectFavoriteButtonsToSection(section, item);
+      });
 
     } catch (e) {
       console.log('トピックHTML読み込みエラー:', e);
@@ -1453,8 +1457,10 @@
         elements.qaDisplay.classList.add('show-all');
       }
 
-      // イベントをバインド
-      bindQAEventsInSection(section, item.id);
+      // イベントをバインド - 遅延実行でパフォーマンス改善
+      requestAnimationFrame(() => {
+        bindQAEventsInSection(section, item.id);
+      });
 
     } catch (e) {
       console.log('Q&A読み込みエラー:', e);
@@ -1500,8 +1506,10 @@
         elements.qaDisplay.classList.add('show-all');
       }
 
-      // イベントをバインド
-      bindQAEventsInSection(section, item.id);
+      // イベントをバインド - 遅延実行でパフォーマンス改善
+      requestAnimationFrame(() => {
+        bindQAEventsInSection(section, item.id);
+      });
 
     } catch (e) {
       console.log('Q&A読み込みエラー:', e);

@@ -959,11 +959,23 @@
         q.addEventListener('click', () => {
           if (state.qaShowAll) return;
           const answer = q.nextElementSibling;
+          const favoriteArea = q.parentElement.querySelector('.qa-favorite-area');
           if (answer && answer.classList.contains('qa-answer')) {
-            answer.classList.toggle('show');
+            const isShowing = answer.classList.toggle('show');
+            // 答えが表示されたらお気に入りボタンも表示
+            if (favoriteArea) {
+              favoriteArea.classList.toggle('show', isShowing);
+            }
           }
         });
       });
+
+      // 全表示モードの場合はお気に入りエリアも表示
+      if (state.qaShowAll) {
+        elements.qaDisplay.querySelectorAll('.qa-favorite-area').forEach(area => {
+          area.classList.add('show');
+        });
+      }
 
       // お気に入りボタンのイベント
       bindQAFavoriteButtons();
@@ -1091,7 +1103,6 @@
         inRelated = false;
         const question = line.slice(3);
         html += `<div class="qa-item" data-card-index="${qaIndex}" data-question="${escapeHtml(question)}">`;
-        html += `<button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>`;
         html += `<div class="qa-question">${escapeHtml(question)}</div>`;
         qaIndex++;
         continue;
@@ -1099,7 +1110,9 @@
 
       if (line.startsWith('A: ')) {
         const answer = line.slice(3);
-        html += `<div class="qa-answer" data-answer="${escapeHtml(answer)}">${escapeHtml(answer)}</div></div>`;
+        html += `<div class="qa-answer" data-answer="${escapeHtml(answer)}">${escapeHtml(answer)}</div>`;
+        html += `<div class="qa-favorite-area"><button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button><span class="qa-favorite-label">ノートに追加</span></div>`;
+        html += `</div>`;
         continue;
       }
     }
@@ -1336,9 +1349,18 @@
     state.qaShowAll = !state.qaShowAll;
     elements.qaDisplay.classList.toggle('show-all', state.qaShowAll);
 
-    // 折りたたむ時は手動で開いたQ&Aも全て閉じる
-    if (!state.qaShowAll) {
+    // 全て表示/折りたたむ時の処理
+    if (state.qaShowAll) {
+      // 全て表示：お気に入りエリアも表示
+      elements.qaDisplay.querySelectorAll('.qa-favorite-area').forEach(el => {
+        el.classList.add('show');
+      });
+    } else {
+      // 折りたたむ：手動で開いたQ&Aも全て閉じる＆お気に入りエリアも非表示
       elements.qaDisplay.querySelectorAll('.qa-answer.show').forEach(el => {
+        el.classList.remove('show');
+      });
+      elements.qaDisplay.querySelectorAll('.qa-favorite-area.show').forEach(el => {
         el.classList.remove('show');
       });
     }
@@ -1413,6 +1435,10 @@
     if (elements.noteOverlay) {
       elements.noteOverlay.classList.add('open');
       renderNoteTimeline();
+      // バッジを非表示にする（開いたので確認済み）
+      if (elements.noteBadge) {
+        elements.noteBadge.style.display = 'none';
+      }
     }
   }
 

@@ -2192,39 +2192,47 @@ body {
   fill: #ff9500;
 }
 
-/* Q&Aカード内のお気に入りボタン - 控えめに */
+/* Q&Aカード内のお気に入りボタン - 答えの下に配置 */
 .qa-item {
   position: relative;
 }
 
+.qa-item .qa-favorite-area {
+  display: none;
+  padding: 8px 20px 12px 60px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.qa-item .qa-favorite-area.show {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .qa-item .favorite-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 28px;
-  height: 28px;
-  background: transparent;
-  opacity: 0.3;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  width: 32px;
+  height: 32px;
+  background: #f5f5f7;
+  border-radius: 50%;
+  transition: all 0.2s ease;
 }
 
 .qa-item .favorite-btn svg {
-  width: 14px;
-  height: 14px;
-}
-
-.qa-item:hover .favorite-btn,
-.qa-item .favorite-btn:focus {
-  opacity: 0.6;
+  width: 16px;
+  height: 16px;
 }
 
 .qa-item .favorite-btn.active {
-  opacity: 1;
+  background: #fff3e0;
 }
 
 .qa-item .favorite-btn:hover {
-  background: transparent;
-  opacity: 0.8;
+  background: #e8e8ed;
+}
+
+.qa-item .qa-favorite-label {
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
 /* 過去問カード内のお気に入りボタン */

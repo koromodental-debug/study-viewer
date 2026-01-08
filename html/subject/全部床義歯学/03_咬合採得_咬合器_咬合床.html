@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>咬合床 - 全部床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">全部床義歯学 / 咬合採得・咬合器</span>
+    <h1>咬合床</h1>
+    <div class="container">
+
+      <h2>咬合床の意義</h2>
+      <p>無歯顎患者は指標になる歯が存在しないため、上下対に製作された<span class="key">咬合床</span>にて上下顎の三次元的空間位置関係を記録し、咬合器上に転写して義歯を製作する。</p>
+
+      <h2>咬合床の構成</h2>
+      <table>
+        <tr>
+          <th>構成要素</th>
+          <th>材料</th>
+          <th>役割</th>
+        </tr>
+        <tr>
+          <td><span class="key">基礎床</span></td>
+          <td>常温重合レジン</td>
+          <td>咬合堤を支える基底部</td>
+        </tr>
+        <tr>
+          <td><span class="key">咬合堤（ろう堤）</span></td>
+          <td>パラフィンワックス</td>
+          <td>顎間関係を記録する部分</td>
+        </tr>
+      </table>
+
+      <h3>基礎床の要件</h3>
+      <ul>
+        <li>外形は最終義歯に準じる</li>
+        <li>顎間記録、ろう義歯試適、ゴシックアーチ描記に耐える機械的性質</li>
+        <li>適合性が必要</li>
+      </ul>
+
+      <h3>咬合堤で記録する内容</h3>
+      <ul>
+        <li><span class="key">仮想咬合平面</span>の設定</li>
+        <li><span class="highlight">垂直的顎間関係</span>（咬合高径）の決定</li>
+        <li><span class="key">水平的顎間関係</span>の記録</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">全部床義歯の製作順序</div>
+        <ol>
+          <li>印象採得（概形印象→精密印象）</li>
+          <li>作業用模型の製作</li>
+          <li>咬合床の製作</li>
+          <li><span class="highlight">垂直的顎間関係の計測</span>（咬合高径の決定）</li>
+          <li>水平的顎間関係の記録（ゴシックアーチなど）</li>
+          <li>咬合器装着</li>
+          <li>人工歯排列・歯肉形成</li>
+          <li>ろう義歯試適</li>
+          <li>埋没・重合</li>
+          <li>義歯装着</li>
+        </ol>
+      </div>
+
+      <h2>咬合床の製作</h2>
+
+      <h3>作業用模型の調整</h3>
+      <p>模型基底面が仮想咬合平面とほぼ平行になるように調整する。咬合堤の上面が模型基底面とほぼ平行になることで作業効率が向上する。</p>
+
+      <h3>基準線の記入</h3>
+      <ul>
+        <li><span class="key">歯槽頂線</span>：人工歯排列の基準</li>
+        <li><span class="key">正中線</span>：上唇小帯、切歯乳頭、正中口蓋縫合線などを参考</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112C87</div>
+        <p>75歳の男性。下顎義歯による痛みを主訴として来院した。8年前に上下顎全部床義歯を製作し問題なく使用していたが、2週前から痛みを感じるようになったという。検査の結果、新義歯を製作することとした。実施の順番に並べた製作過程の写真（別冊No.35）を別に示す。<br>
+        ①に入るのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112C87.png" alt="製作過程">
+        </div>
+        <div class="choices">
+          a 人工歯の選択<br>
+          b パラトグラム検査<br>
+          c ゴシックアーチの描記<br>
+          d 垂直的顎間関係の計測<br>
+          e 偏心位でのチェックバイト
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】咬合床製作後、最初に行うのは<span class="highlight">垂直的顎間関係の計測</span>（咬合高径の決定）。ゴシックアーチ描記は水平的顎間関係の記録で、垂直的顎間関係の決定後に行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A90</div>
+        <p>80歳の女性。咀嚼困難を主訴として来院した。使用中の義歯は12年前に装着したという。診察と検査の結果、上下顎全部床義歯を新製することとした。製作過程の一連の写真（別冊No.40）を別に示す。<br>
+        製作過程を実施の順番に並べよ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A90_1.png" alt="製作過程1">
+          <img src="../../../images/114回_Web画像/114A90_2.png" alt="製作過程2">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：ウ→オ→ア→エ→イ（CEADB）</div>
+        <p>【解説】全部床義歯の製作順序：印象採得→咬合床製作→顎間関係の記録→人工歯排列→ろう義歯試適→埋没・重合→義歯装着。写真の内容に応じて正しい順序を選択する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

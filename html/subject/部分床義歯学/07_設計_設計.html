@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>設計 - 部分床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">部分床義歯学 / 設計</span>
+    <h1>設計</h1>
+    <div class="container">
+
+      <h2>義歯設計の基本</h2>
+      <p>パーシャルデンチャーの設計は、正確な検査と診断に基づき歯科医師自身により行われる。設計には<span class="key">基本設計（予備設計）</span>と<span class="key">製作設計（本設計）</span>の2つがある。</p>
+
+      <h3>設計の手順</h3>
+      <table>
+        <tr><th>順序</th><th>項目</th><th>内容</th></tr>
+        <tr><td>1</td><td>残存歯による支持</td><td>レストの設計</td></tr>
+        <tr><td>2</td><td>顎堤による支持</td><td>義歯床の設計</td></tr>
+        <tr><td>3</td><td>連結装置</td><td>大連結子・小連結子の選択</td></tr>
+        <tr><td>4</td><td>支台装置維持部</td><td>クラスプの設計</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">遊離端義歯の設計で最も優先すべきこと</div>
+        <p><span class="highlight">咬合圧の分散</span>が最も重要。遊離端義歯では咬合圧が支台歯と顎堤に分散されるため、適切な設計により過度な負担を防ぐ。</p>
+      </div>
+
+      <h2>サベイヤーと義歯設計</h2>
+      <p><span class="key">サベイヤー</span>とは、模型上で残存歯と顎堤の最大豊隆部や複数の残存歯の平行関係を調べ、義歯の設計に必要なサベイライン（最大豊隆線）を描記し、義歯の着脱方向を検討するための装置。</p>
+
+      <h3>サベイヤーの構造</h3>
+      <table>
+        <tr><th>部位</th><th>構成</th></tr>
+        <tr><td>本体</td><td>円筒（スピンドル）、円筒固定ねじ、付属品固定ねじ、基底面、支柱</td></tr>
+        <tr><td>模型台</td><td>傾斜板、傾斜板固定ねじ、模型固定ねじ</td></tr>
+      </table>
+
+      <h3>サベイヤー付属品と用途</h3>
+      <table>
+        <tr><th>付属品</th><th>用途</th></tr>
+        <tr><td>測定杆（アナライジングロッド）</td><td><span class="highlight">着脱方向の決定</span>、アンダーカットの目測</td></tr>
+        <tr><td>アンダーカットゲージ</td><td><span class="highlight">鉤尖位置の決定</span>（0.25, 0.50, 0.75mm）</td></tr>
+        <tr><td>炭素棒（カーボンマーカー）</td><td><span class="highlight">サベイラインの描記</span></td></tr>
+        <tr><td>蝋形成用へら（ワックストリマー）</td><td><span class="highlight">ブロックアウト</span></td></tr>
+        <tr><td>補強鞘</td><td>炭素棒の破折防止</td></tr>
+        <tr><td>テーパーツール</td><td>ブロックアウト（2度と6度）</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">サベイヤー付属品の使用順序</div>
+        <p><span class="highlight">測定杆 → アンダーカットゲージ → 炭素棒 → 蝋形成用へら</span></p>
+        <ul>
+          <li>まず測定杆で着脱方向を決定</li>
+          <li>アンダーカットゲージで鉤尖位置を決定</li>
+          <li>炭素棒でサベイラインを描記</li>
+          <li>蝋形成用へらでブロックアウト</li>
+        </ul>
+      </div>
+
+      <h3>サベイライン描記後に行うこと</h3>
+      <ul>
+        <li><span class="key">鉤尖位置の決定</span>：アンダーカットゲージで適切なアンダーカット量を測定</li>
+        <li><span class="key">ブロックアウト</span>：不要なアンダーカットを石膏やワックスで埋没</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：義歯床の記入や大連結子の選択はサベイライン描記前に行う設計段階の作業</p>
+
+      <h3>ブロックアウト</h3>
+      <p><span class="key">ブロックアウト</span>とは、残存歯や顎堤に生じる不必要なアンダーカットを石膏やワックスを用いて埋没すること。義歯の着脱を妨げるアンダーカットを解消し、義歯の円滑な着脱を可能にする。</p>
+
+      <h2>リジッドサポート</h2>
+      <p><span class="key">リジッドサポート</span>とは、義歯の支持を主に支台歯のレストに求める設計概念。咬合力を残存歯に伝達することで、義歯床下粘膜への負担を軽減する。</p>
+
+      <h3>リジッドサポート適用の条件</h3>
+      <ul>
+        <li>支台歯の負担能力が十分である</li>
+        <li>欠損部顎堤の<span class="highlight">被圧変位量が小さい</span></li>
+        <li>支台歯の歯列内配置が<span class="highlight">対角線的</span>である</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：被圧変位量が大きい場合や支台歯の負担能力が低い場合は、粘膜負担を併用する設計が必要</p>
+
+      <h2>特殊な設計配慮</h2>
+
+      <h3>片麻痺のある要介護高齢者への設計</h3>
+      <ul>
+        <li><span class="key">リムーバルノブの設置</span>：片手での着脱を容易にする</li>
+        <li><span class="key">オーバーデンチャーの採用</span>：残存歯を支台とし、着脱を容易にする</li>
+        <li>一定方向の着脱方向の設定：複雑な操作を不要にする</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：維持の最大化は着脱困難の原因となり不適切</p>
+
+      <h3>大連結子を臼歯舌側歯面に接触させる効果</h3>
+      <ul>
+        <li><span class="key">舌感の向上</span>：連結子が歯面に沿うことで異物感を軽減</li>
+        <li><span class="key">義歯床部の動揺の抑制</span>：歯面との接触により安定性向上</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102D46</div>
+        <p>60歳の女性。上顎部分床義歯を製作中である。作業用模型の写真（別冊No.41A）、器具の写真（別冊No.41B）及び器具の付属品の写真（別冊No.41C）を別に示す。<br>
+        付属品の使用順序で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102D46_1.png" alt="別冊No.41">
+          <img src="../../../images/102回_Web画像/102D46_2.png" alt="付属品">
+        </div>
+        <div class="choices">
+          a ア→イ→ウ→エ<br>
+          b ア→ウ→エ→イ<br>
+          c イ→エ→ウ→ア<br>
+          d ウ→ア→イ→エ<br>
+          e エ→イ→ア→ウ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】サベイヤー付属品の使用順序は、ア（測定杆）で着脱方向決定→イ（アンダーカットゲージ）で鉤尖位置決定→ウ（炭素棒）でサベイライン描記→エ（蝋形成用へら）でブロックアウト。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C37</div>
+        <p>部分床義歯製作過程の写真（別冊No.3A、B）を別に示す。<br>
+        写真Aから写真Bへの過程で行ったのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106C37.png" alt="別冊No.3A、B">
+        </div>
+        <div class="choices">
+          a ブロックアウト<br>
+          b 着脱方向の変更<br>
+          c ディンプルの形成<br>
+          d カントゥアの修正<br>
+          e ガイドプレーンの形成
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】写真Aから写真Bでは歯冠部の形態（カントゥア）が修正されている。サベイドクラウンにより適切な外形線を付与し、クラスプの維持・把持に適した形態としている。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A74</div>
+        <p>部分床義歯を用いた補綴治療を行う際にリジッドサポートの概念を適用できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 支台歯の歯冠歯根長比が大きい。<br>
+          b 支台歯の帯環効果が得られない。<br>
+          c 遊離端欠損部の欠損歯数が多い。<br>
+          d 欠損部顎堤の被圧変位量が大きい。<br>
+          e 支台歯の歯列内配置が対角線的である。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】リジッドサポートは支台歯に咬合力を負担させる設計。支台歯が対角線的に配置されていると、義歯の回転軸が長くなり安定する。<span class="caution">被圧変位量が大きい（d）場合は粘膜負担が必要</span>でリジッドサポート不適。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110D26</div>
+        <p>60歳の男性。下顎右側臼歯部の腫瘍に対し下顎辺縁切除術を施行し、皮弁を用いて再建した後、同部の補綴治療を行うこととした。補綴治療後の口腔内写真（別冊No.25A）と製作した義歯の写真（別冊No.25B）を別に示す。<br>
+        大連結子を臼歯舌側歯面に接触させることで期待できるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110D26.png" alt="別冊No.25A、B">
+        </div>
+        <div class="choices">
+          a 維持の向上<br>
+          b 舌感の向上<br>
+          c 自浄性の向上<br>
+          d 着脱の容易さ<br>
+          e 義歯床部の動揺の抑制
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】大連結子を歯面に接触させることで、連結子が歯列の形態に沿い<span class="key">舌感が向上</span>する。また、歯面との接触により<span class="key">義歯の動揺が抑制</span>される。維持力の向上は支台装置（クラスプ）の機能。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A54</div>
+        <p>研究用模型にサベイラインを描記した。<br>
+        引き続きサベイヤー上で行う必要があるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 義歯床の記入<br>
+          b 鉤尖位置の決定<br>
+          c 大連結子の選択<br>
+          d ブロックアウト<br>
+          e ワックスステップの付与
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】サベイライン描記後は、<span class="key">アンダーカットゲージで鉤尖位置を決定</span>し、<span class="key">ブロックアウト</span>を行う。義歯床の記入や大連結子の選択は設計段階で行う。ワックスステップは蝋義歯製作時の操作。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D76</div>
+        <p>遊離端義歯の設計で、最も優先すべきなのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 囲繞性の確保<br>
+          b 維持力の付与<br>
+          c 咬合圧の分散<br>
+          d 受動性の付与<br>
+          e 拮抗作用の確保
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】遊離端義歯では支台歯と顎堤粘膜の被圧変位量の差が問題となる。<span class="highlight">咬合圧を適切に分散</span>させることで、支台歯への過度な負担や顎堤の吸収を防ぐことが最も重要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D30</div>
+        <p>上肢に片麻痺のある要介護高齢者に対する部分床義歯の設計において考慮すべきなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 維持の最大化<br>
+          b 支持の最小化<br>
+          c リムーバルノブの設置<br>
+          d 一定方向の着脱方向の設定<br>
+          e オーバーデンチャーの採用
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】片麻痺患者では片手での操作が必要。<span class="key">リムーバルノブ</span>は把持しやすく着脱を容易にする。<span class="key">オーバーデンチャー</span>は残存歯根を支台とし、単純な着脱動作で使用可能。<span class="caution">維持の最大化は着脱を困難にするため不適切</span>。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>術後管理 - 全部床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">全部床義歯学 / 術後管理・術後のトラブル</span>
+    <h1>術後管理</h1>
+    <div class="container">
+
+      <h2>定期診査の意義</h2>
+      <p>義歯装着後は、生体の変化（顎堤吸収など）と義歯の変化（人工歯の咬耗など）が経時的に進行する。これらの変化は患者が自覚することなく徐々に進行するため、無症状であっても<span class="highlight">定期的なリコール</span>と調整が必要である。</p>
+
+      <h2>定期診査項目</h2>
+      <ul>
+        <li><span class="key">維持力</span>の評価</li>
+        <li><span class="key">咬合接触</span>の確認</li>
+        <li><span class="key">義歯清掃状態</span>の確認</li>
+        <li><span class="key">床内面の適合</span>の評価</li>
+        <li><span class="key">人工歯咬合面の状態</span>（咬耗の有無）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">定期診査で確認すべき5項目</div>
+        <p>①維持力、②咬合接触、③義歯清掃状態、④床内面の適合、⑤人工歯咬合面の状態（<span class="highlight">すべて重要</span>）</p>
+      </div>
+
+      <h2>治療効果の評価</h2>
+
+      <h3>評価方法の分類</h3>
+      <table>
+        <tr>
+          <th>評価の視点</th>
+          <th>評価方法</th>
+        </tr>
+        <tr>
+          <td><span class="key">術者立脚型</span></td>
+          <td>咀嚼能率、咀嚼運動、最大咬合力、補綴装置の生存率</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">患者立脚型</span></td>
+          <td>口腔関連QOL（OHIP、GOHAIなど）</td>
+        </tr>
+      </table>
+
+      <h3>患者立脚型アウトカム</h3>
+      <p><span class="highlight">口腔関連QOL</span>は患者の主観的評価に基づく指標で、<span class="key">患者立脚型</span>のアウトカムである。代表的な評価法に<span class="key">OHIP</span>（Oral Health Impact Profile）や<span class="key">GOHAI</span>（General Oral Health Assessment Index）がある。</p>
+
+      <h2>経過観察で発見される問題</h2>
+      <ul>
+        <li><span class="key">顎堤吸収</span>：床下粘膜の不適合、義歯の維持力低下</li>
+        <li><span class="key">フラビーガム</span>：顎堤吸収に伴う粘膜下組織の線維性増生</li>
+        <li><span class="key">義歯性線維腫</span>：床縁部の慢性的機械的刺激による炎症性反応物</li>
+        <li><span class="key">義歯性口内炎</span>：Candida albicansによる感染</li>
+        <li><span class="key">人工歯の咬耗</span>：咬合接触の減少、咬合高径の低下</li>
+        <li><span class="key">義歯床の変色</span>：デンチャープラークの付着</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104A115</div>
+        <p>義歯装着後の定期診査項目はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 維持力<br>
+          b 咬合接触<br>
+          c 義歯清掃状態<br>
+          d 床内面の適合<br>
+          e 人工歯咬合面の状態
+        </div>
+        <div class="answer">正解：a, b, c, d, e</div>
+        <p>【解説】義歯装着後の定期診査では、<span class="highlight">すべての項目</span>を確認する。維持力、咬合接触、義歯清掃状態、床内面の適合、人工歯咬合面の状態（咬耗）はいずれも重要な診査項目である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A81</div>
+        <p>補綴歯科治療を評価する患者立脚型の指標はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咀嚼能率<br>
+          b 咀嚼運動<br>
+          c 最大咬合力<br>
+          d 口腔関連QOL<br>
+          e 補綴装置の生存率
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">口腔関連QOL</span>は患者の主観的評価に基づく<span class="highlight">患者立脚型</span>の指標。咀嚼能率、咀嚼運動、最大咬合力、補綴装置の生存率は術者立脚型の指標。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>精密印象 - 全部床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">全部床義歯学 / 印象採得・模型製作</span>
+    <h1>精密印象</h1>
+    <div class="container">
+
+      <h2>精密印象採得の目的</h2>
+      <p>概形印象で得られた印象域の概形をもとに、個人トレーを用いて精密な印象を採得する。</p>
+      <p>粘膜表面の解剖学的構造を精密に再現しつつ、<span class="key">筋圧形成</span>により床縁形態を決定する。</p>
+
+      <h2>筋圧形成（個人トレーによる）</h2>
+      <p>個人トレーにモデリングコンパウンドを付着させ、口腔の機能運動を行わせながら辺縁形成を行う。</p>
+
+      <h3>上顎の筋圧形成</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>機能運動</th>
+          <th>形成される構造</th>
+        </tr>
+        <tr>
+          <td><span class="key">上顎前歯部</span></td>
+          <td>上唇伸展、口角牽引、示指吸引</td>
+          <td>上唇小帯切痕</td>
+        </tr>
+        <tr>
+          <td><span class="key">上顎臼歯部（右側）</span></td>
+          <td><span class="highlight">左側方運動</span></td>
+          <td>右側頬側面</td>
+        </tr>
+        <tr>
+          <td><span class="key">上顎臼歯部（左側）</span></td>
+          <td><span class="highlight">右側方運動</span></td>
+          <td>左側頬側面</td>
+        </tr>
+        <tr>
+          <td>翼突下顎ヒダ</td>
+          <td><span class="highlight">最大開口</span></td>
+          <td>後縁切痕</td>
+        </tr>
+        <tr>
+          <td>口蓋後縁（ポストダム）</td>
+          <td>圧接</td>
+          <td>後縁封鎖</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">上顎臼歯部の筋圧形成</div>
+        <p><span class="key">反対側への側方運動</span>で頬側面を形成する。<br>
+        右側を形成 → 左側方運動<br>
+        左側を形成 → 右側方運動</p>
+      </div>
+
+      <h3>下顎の筋圧形成</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>機能運動</th>
+          <th>関与する筋</th>
+        </tr>
+        <tr>
+          <td><span class="key">下唇小帯</span></td>
+          <td>口唇突出、口角牽引、術者が牽引</td>
+          <td>口輪筋</td>
+        </tr>
+        <tr>
+          <td>頬側前庭部</td>
+          <td>下口唇挙上</td>
+          <td><span class="key">オトガイ筋</span></td>
+        </tr>
+        <tr>
+          <td>頬小帯部</td>
+          <td>頬を引張る</td>
+          <td>頬筋</td>
+        </tr>
+        <tr>
+          <td><span class="key">頬棚</span></td>
+          <td>頬粘膜を排除しながら形成</td>
+          <td>頬筋</td>
+        </tr>
+        <tr>
+          <td>大臼歯後方</td>
+          <td><span class="highlight">閉口運動</span></td>
+          <td>咬筋</td>
+        </tr>
+        <tr>
+          <td>舌側</td>
+          <td>舌運動、嚥下</td>
+          <td>舌筋群</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">注意</span>：オトガイ筋は義歯を脱離させる方向に作用する。顎堤吸収が進むと影響が大きくなる。</p>
+
+      <h2>精密印象材</h2>
+      <ul>
+        <li><span class="key">シリコーンゴム印象材</span>：細部再現性に優れる</li>
+        <li><span class="key">ポリサルファイドゴム印象材</span>：流動性良好</li>
+        <li><span class="key">酸化亜鉛ユージノール印象材</span>：無圧印象に適する</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105D11</div>
+        <p>68歳の男性。新義歯製作のため印象採得を行うこととした。口腔内写真（別冊No.11A）と筋圧形成時の写真（別冊No.11B）とを別に示す。<br>
+        写真Aの矢印で示す部位の筋圧形成に有効な機能運動の組合せはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105D11_1.png" alt="口腔内">
+          <img src="../../../images/105回_Web画像/105D11_2.png" alt="筋圧形成">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】矢印部位に対応する筋圧形成の機能運動の組合せを選択する問題。各部位に適切な機能運動を行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B22</div>
+        <p>65歳の男性。上下顎全部床義歯を製作中である。初診時の口腔内写真（別冊No.22A）と筋圧形成後の個人トレーの写真（別冊No.22B）とを別に示す。<br>
+        矢印で示す部位の筋圧形成に必要な下顎の運動はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106B22.png" alt="個人トレー">
+        </div>
+        <div class="choices">
+          a 前方運動<br>
+          b 後方運動<br>
+          c 右側方運動<br>
+          d 左側方運動<br>
+          e タッピング運動
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】上顎左側臼歯部の頬側面の筋圧形成には<span class="highlight">右側方運動</span>が必要。また<span class="key">前方運動</span>も頬筋の緊張に関与する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110B28</div>
+        <p>70歳の女性。咀嚼困難を主訴として来院した。検査の結果、上下顎全部床義歯を新製することとした。印象採得操作中の上顎個人トレーの写真（別冊No.25）を別に示す。<br>
+        この部位の筋圧形成に有効な運動はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110B28.png" alt="上顎筋圧形成">
+        </div>
+        <div class="choices">
+          a 大きく開口する。<br>
+          b 唾液を嚥下する。<br>
+          c 下顎を左右に動かす。<br>
+          d 頰部を前後に牽引する。<br>
+          e 口唇・頰部をすぼめる。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】上顎頬側部の筋圧形成には<span class="key">頰部を前後に牽引</span>と<span class="key">口唇・頰部をすぼめる</span>運動が有効。頬筋の動きを記録する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110B8</div>
+        <p>68歳の女性。咀嚼困難を主訴として来院した。検査の結果、上下顎全部床義歯を新たに製作することとした。アルジネート印象材を用いて概形印象を採得した後、個人トレーを製作し筋圧形成を行っている。筋圧形成操作中の写真（別冊No.8）を別に示す。<br>
+        この操作で形成される解剖学的構造はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110B8.png" alt="下顎筋圧形成">
+        </div>
+        <div class="choices">
+          a 頰　棚<br>
+          b 舌小帯<br>
+          c 下唇小帯<br>
+          d 後顎舌骨筋窩<br>
+          e 前顎舌骨筋窩
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】写真は下顎前歯部唇側の筋圧形成。術者が下唇を牽引して<span class="highlight">下唇小帯</span>の付着部位を明瞭に印記させている。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D83</div>
+        <p>75歳の女性。全部床義歯の脱落を主訴として来院した。検査の結果、新義歯を製作することとした。製作過程で行ったある操作の写真（別冊No.29）を別に示す。<br>
+        この操作中に行う機能運動はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111D83.png" alt="下顎筋圧形成">
+        </div>
+        <div class="choices">
+          a 嚥　下<br>
+          b 舌突出<br>
+          c 口角牽引<br>
+          d 最大開口<br>
+          e 下顎側方運動
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】写真は下顎臼歯部頬側の筋圧形成。<span class="highlight">最大開口</span>で咬筋の影響を排除し、<span class="highlight">下顎側方運動</span>で頬筋の動きを記録する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A54</div>
+        <p>精密印象の採得前に行ったある操作の写真（別冊No.13A、B、C）を別に示す。<br>
+        この操作の目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A54.png" alt="筋圧形成">
+        </div>
+        <div class="choices">
+          a 床縁形態の形成<br>
+          b 小帯付着位置の印記<br>
+          c 前歯排列位置の参考<br>
+          d リップサポートの確保<br>
+          e フラビーガムの変形防止
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】写真は筋圧形成の操作。目的は<span class="key">床縁形態の形成</span>と<span class="key">小帯付着位置の印記</span>。前歯排列やリップサポートは別の段階で考慮する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

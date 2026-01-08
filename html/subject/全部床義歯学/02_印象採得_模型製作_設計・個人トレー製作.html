@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>設計・個人トレー製作 - 全部床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">全部床義歯学 / 印象採得・模型製作</span>
+    <h1>設計・個人トレー製作</h1>
+    <div class="container">
+
+      <h2>個人トレーの設計</h2>
+      <p>研究用模型上に、トレーの外形線、リリーフすべき範囲、ブロックアウトすべき範囲を表示する。</p>
+
+      <h3>リリーフ（緩衝）</h3>
+      <p><span class="key">リリーフ</span>とは、被圧変位量の大きい部位や骨隆起部などに緩衝を付与すること。</p>
+      <table>
+        <tr>
+          <th>リリーフすべき部位</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">フラビーガム</span></td>
+          <td>被圧変位量が大きい（変形しやすい）</td>
+        </tr>
+        <tr>
+          <td><span class="key">口蓋隆起・下顎隆起</span></td>
+          <td>被圧変位量が小さい（疼痛を生じやすい）</td>
+        </tr>
+        <tr>
+          <td>頬舌骨筋線部</td>
+          <td>骨が表在し疼痛を生じやすい</td>
+        </tr>
+        <tr>
+          <td>ナイフエッジ状顎堤</td>
+          <td>鋭縁で疼痛を生じやすい</td>
+        </tr>
+        <tr>
+          <td>オトガイ孔部、切歯乳頭</td>
+          <td>神経・血管が存在</td>
+        </tr>
+      </table>
+      <p class="note">骨隆起部はシートワックス1〜2枚（0.2〜0.5mm）でリリーフする。</p>
+
+      <h3>ブロックアウト</h3>
+      <p>顎堤に著明なアンダーカットがある場合、サベイングした後、該当部をブロックアウトする。</p>
+      <ul>
+        <li>下顎隆起下方部</li>
+        <li>後顎舌骨筋窩</li>
+        <li>上顎結節頬側方部</li>
+        <li>顎堤のアンダーカット部</li>
+      </ul>
+
+      <h3>遁路（ストップ・穴）</h3>
+      <p>トレーに穴を開けることで、<span class="highlight">印象圧を減少</span>させることができる。</p>
+      <p>フラビーガム部に遁路を設けることで、その部位を無圧的に印象採得できる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">フラビーガムの印象法（窓あきトレー）</div>
+        <p>フラビーガム部に窓を開けた個人トレーを使用する。</p>
+        <ul>
+          <li><span class="key">浮動性歯肉部</span>：無圧状態で印象する</li>
+          <li><span class="key">正常粘膜部</span>：咬合圧を加えて印象する</li>
+        </ul>
+        <p>窓の目的は<span class="highlight">顎堤粘膜の変形防止</span>（フラビーガムを変形させない）</p>
+      </div>
+
+      <h3>ポストダム</h3>
+      <p>上顎後方の義歯床後縁部に付与し、後縁封鎖を図る。</p>
+      <ul>
+        <li>位置：アーライン（Ah-line）＝硬口蓋と軟口蓋の境界部</li>
+        <li>軟口蓋寄りの粘膜組織の厚い部分を圧迫して印象</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104D26</div>
+        <p>70歳の男性。義歯の新製を希望して来院した。口腔内写真（別冊No.26A）と筋圧形成後の個人トレーの写真（別冊No.26B）とを別に示す。<br>
+        矢印が示す構造の目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D26.png" alt="個人トレー">
+        </div>
+        <div class="choices">
+          a 印象圧の減少<br>
+          b 細部再現性の向上<br>
+          c 印象体変形の防止<br>
+          d 印象材の硬化遅延<br>
+          e 印象材のトレーヘの保持向上
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】矢印はトレーの穴（遁路・ストップ）を示している。穴を設けることで<span class="highlight">印象圧を減少</span>させ、フラビーガム部などを無圧的に印象できる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B48</div>
+        <p>78歳の女性。全部床義歯を製作することとした。粘膜の被圧変位量の検査結果を図に示す。個人トレー製作のためのリリーフの状態（別冊No. 48）を別に示す。<br>
+        リリーフの状態で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B48_1.png" alt="被圧変位量">
+          <img src="../../../images/105回_Web画像/105B48_2.png" alt="リリーフ">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】被圧変位量の大きい部位（フラビーガム）と小さい部位（骨隆起など）の両方にリリーフが必要。被圧変位量の検査結果に基づき、適切な部位にリリーフを付与する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C66</div>
+        <p>70歳の男性。上顎義歯の動揺と前歯部顎堤の疼痛を主訴として来院した。検査の結果、義歯を新製することとした。ミラーの柄を用いた顎堤粘膜の診査時の口腔内写真（別冊No.17A）と個人トレーの写真（別冊No.17B）を別に示す。<br>
+        この個人トレーを用いる印象法の目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111C66.png" alt="フラビーガム印象">
+        </div>
+        <div class="choices">
+          a 全顎にわたり均等圧で印象する。<br>
+          b ニュートラルゾーンを記録する。<br>
+          c 個人トレーの挿入位置を的確にする。<br>
+          d 浮動性歯肉部を無圧状態で印象する。<br>
+          e 正常粘膜部に咬合圧を加えて印象する。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】写真はフラビーガムの診査と窓あきトレー。<span class="key">浮動性歯肉部（フラビーガム）は無圧状態</span>で、<span class="key">正常粘膜部には咬合圧を加えて</span>印象する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B75</div>
+        <p>64歳の女性。下顎全部床義歯の不適合による咀嚼困難を主訴として来院した。使用中の義歯は3年前に装着したという。検査の結果、下顎義歯を新製することとした。初診時の口腔内写真（別冊No.23A）と研究用模型の写真（別冊No.23B）を別に示す。<br>
+        個人トレーの製作にあたり点線で囲んだ部位に行うのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B75.png" alt="下顎模型">
+        </div>
+        <div class="choices">
+          a 遁路の付与<br>
+          b リリーフの付与<br>
+          c ストッパーの付与<br>
+          d ビーディングの付与<br>
+          e アンダーカットのブロックアウト
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】点線部位は下顎隆起。下顎隆起には<span class="key">リリーフの付与</span>（被圧変位量が小さいため緩衝が必要）と<span class="key">アンダーカットのブロックアウト</span>が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B38</div>
+        <p>79歳の女性。上顎義歯の不安定による咀嚼困難を主訴として来院した。義歯は15年前に装着したが、数年前から義歯の動揺を認めるようになったという。診察の結果、上顎義歯を製作することとした。初診時の口腔内写真（別冊No.13A）と個人トレーの写真（別冊No.13B、C）を別に示す。<br>
+        矢印が示す構造の目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116B38.png" alt="窓あきトレー">
+        </div>
+        <div class="choices">
+          a 動的印象の採得<br>
+          b 印象材の硬化促進<br>
+          c 印象材の変形防止<br>
+          d 顎堤粘膜の変形防止<br>
+          e 個人トレーの位置決め
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】矢印は窓あきトレーの窓（開口部）を示している。窓の目的は<span class="highlight">顎堤粘膜（フラビーガム）の変形防止</span>。フラビーガム部を無圧で印象し、変形させないようにする。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

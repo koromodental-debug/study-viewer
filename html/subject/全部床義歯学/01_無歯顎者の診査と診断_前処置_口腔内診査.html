@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔内診査 - 全部床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">全部床義歯学 / 無歯顎者の診査と診断・前処置</span>
+    <h1>口腔内診査</h1>
+    <div class="container">
+
+      <h2>口腔内の解剖学的指標</h2>
+      <p>全部床義歯製作において、口腔内の解剖学的指標は義歯設計・人工歯排列の基準として重要である。</p>
+
+      <h3>切歯乳頭</h3>
+      <p><span class="key">切歯乳頭</span>は上顎前歯部の排列位置を決定する際の重要な指標である。</p>
+      <ul>
+        <li>咬合堤前縁は切歯乳頭より<span class="highlight">約10mm前方</span>に位置する</li>
+        <li>上顎歯槽突起は外側（唇・頬側）から吸収するため、この位置関係が生じる</li>
+      </ul>
+
+      <h3>切歯乳頭を利用して設定するもの</h3>
+      <table>
+        <tr>
+          <th>設定項目</th>
+          <th>基準</th>
+        </tr>
+        <tr>
+          <td><span class="key">正中線</span></td>
+          <td>切歯乳頭の中央</td>
+        </tr>
+        <tr>
+          <td><span class="key">咬合平面</span></td>
+          <td>切歯乳頭中央点とハミュラーノッチを基準（HIP平面）</td>
+        </tr>
+        <tr>
+          <td><span class="key">中切歯の排列位置</span></td>
+          <td>切歯乳頭より約8〜10mm前方</td>
+        </tr>
+      </table>
+
+      <h3>レトロモラーパッド</h3>
+      <p><span class="key">レトロモラーパッド</span>は下顎臼後部に位置する粘膜組織で、義歯製作の重要な指標となる。</p>
+
+      <h3>レトロモラーパッドを利用して設定するもの</h3>
+      <table>
+        <tr>
+          <th>設定項目</th>
+          <th>基準</th>
+        </tr>
+        <tr>
+          <td><span class="key">咬合平面</span></td>
+          <td>レトロモラーパッドの<span class="highlight">中央〜下1/3</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">義歯床後縁</span></td>
+          <td>レトロモラーパッドの<span class="highlight">1/2〜2/3を被覆</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">臼歯部人工歯の排列位置</span></td>
+          <td>パウンドラインを参考に</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">パウンドライン（Pound's line）</div>
+        <p><span class="key">レトロモラーパッドの舌側面</span>と<span class="key">下顎犬歯の近心隅角</span>を結んだ線。下顎臼歯舌側面がこのラインより舌側に位置すると舌房が侵害される。</p>
+      </div>
+
+      <h2>高度吸収顎堤への対応</h2>
+      <p>顎堤が高度に吸収している場合、通常の義歯設計では維持・安定が困難となる。</p>
+
+      <h3>考慮すべき対応</h3>
+      <ul>
+        <li><span class="key">軟質裏装材の適用</span>：粘膜への圧集中を緩和</li>
+        <li><span class="key">筋圧中立帯（ニュートラルゾーン）への人工歯排列</span>：周囲筋からの力を利用</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：高度吸収顎堤では解剖学的人工臼歯の選択や調節彎曲の強い排列は不適。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107C83</div>
+        <p>下顎全部床義歯製作中である。初診時の口腔内写真（別冊No.10）を別に示す。丸印で示す部位を利用して設定するのはどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107C83.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a 咬合平面<br>
+          b S字状隆起<br>
+          c 義歯床後縁<br>
+          d ポストダム<br>
+          e 臼歯部人工歯の排列位置
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】丸印はレトロモラーパッド。咬合平面（中央〜下1/3）、義歯床後縁（1/2〜2/3被覆）、臼歯部人工歯排列位置の設定に利用する。S字状隆起は上顎、ポストダムは上顎義歯床後縁部。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D47</div>
+        <p>無歯顎患者の作業用模型の写真（別冊No.12）を別に示す。矢印で示す解剖学的指標を用いて設定するのはどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114D47.png" alt="作業用模型">
+        </div>
+        <div class="choices">
+          a 正中線<br>
+          b 咬合平面<br>
+          c 歯槽頂線<br>
+          d 口唇接合線<br>
+          e 中切歯の排列位置
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】矢印は切歯乳頭。正中線（切歯乳頭の中央）、咬合平面（HIP平面の前方基準）、中切歯の排列位置（約8〜10mm前方）の設定に利用する。歯槽頂線・口唇接合線は切歯乳頭とは無関係。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C55</div>
+        <p>形態の異なる2つの下顎顎堤の写真（別冊No.8A、B）を別に示す。義歯製作にあたり、8Aと比較して8Bで考慮すべきなのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112C55.png" alt="下顎顎堤比較">
+        </div>
+        <div class="choices">
+          a 軟質裏装材の適用<br>
+          b 解剖学的人工臼歯の選択<br>
+          c 矢状切歯路傾斜角の増大<br>
+          d 筋圧中立帯への人工歯排列<br>
+          e 調節彎曲の強い臼歯部人工歯排列
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】8Bは高度吸収顎堤。軟質裏装材の適用と筋圧中立帯（ニュートラルゾーン）への排列が有効。高度吸収顎堤では機能的（非解剖学的）人工歯を選択し、咬合様式は両側性平衡咬合が適する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

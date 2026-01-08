@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>印象採得 - 部分床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">部分床義歯学 / 印象採得</span>
+    <h1>印象採得</h1>
+    <div class="container">
+
+      <h2>印象採得の手順</h2>
+      <ol>
+        <li>概形印象（既製トレー）→ 研究用模型</li>
+        <li>個人トレー製作</li>
+        <li>印象前準備（ブロックアウト、リリーフ）</li>
+        <li>筋圧形成（辺縁形成）</li>
+        <li>精密印象（最終印象）→ 作業用模型</li>
+      </ol>
+
+      <h2>概形印象</h2>
+      <p>既製トレーとアルジネート印象材で研究用模型を製作する。</p>
+      <ul>
+        <li>欠損部顎堤とトレーのスペースにコンパウンドを補填</li>
+        <li>辺縁をモデリングコンパウンドで延長</li>
+      </ul>
+
+      <h2>個人トレーの製作</h2>
+      <p>研究用模型上で製作。精密印象用に使用する。</p>
+
+      <h3>個人トレーの構造</h3>
+      <ul>
+        <li><span class="key">トレー本体</span>：常温重合レジン製</li>
+        <li><span class="key">柄</span>：把持用</li>
+        <li><span class="key">ストッパー</span>：トレーの定位置を決定</li>
+        <li><span class="key">モデリングコンパウンド</span>：辺縁封鎖</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">個人トレーの利点</div>
+        <ul>
+          <li>製作する義歯の設計にかなった印象採得ができる</li>
+          <li>印象材の厚みを均一にできる</li>
+          <li>辺縁にコンパウンドを付与し、適切な筋圧形成ができる</li>
+          <li>リリーフ量を調整することにより<span class="highlight">印象圧をコントロール</span>できる</li>
+        </ul>
+      </div>
+
+      <h3>個人トレー製作手順</h3>
+      <ol>
+        <li>トレー外形線の記入</li>
+        <li>サベイヤーでトレーの着脱方向を決定</li>
+        <li>アンダーカットのブロックアウト</li>
+        <li>残存歯上をワックスで被覆</li>
+        <li>印象圧を減圧したい部位をリリーフ</li>
+        <li>トレー用常温重合レジンの圧接</li>
+        <li>コンパウンドの付与</li>
+      </ol>
+
+      <h2>印象採得の種類</h2>
+
+      <h3>機能印象（加圧印象）法</h3>
+      <p>粘膜支持型義歯の製作に用いる。床下粘膜を加圧した状態で印象採得。</p>
+
+      <table>
+        <tr>
+          <th>印象法</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">咬合圧印象</span></td>
+          <td>患者に咬合させて印象採得。<span class="highlight">床下粘膜支持を高める</span>。</td>
+        </tr>
+        <tr>
+          <td><span class="key">筋圧形成</span></td>
+          <td>辺縁部をコンパウンドで形成。機能時の頬・口唇・舌の動きを記録。</td>
+        </tr>
+        <tr>
+          <td><span class="key">無圧印象</span></td>
+          <td>粘膜を加圧せず印象採得。歯根膜支持型に使用。</td>
+        </tr>
+      </table>
+
+      <h3>遊離端欠損部の機能印象</h3>
+      <ul>
+        <li><span class="highlight">モデリングコンパウンドによる辺縁封鎖</span></li>
+        <li><span class="highlight">ミディアムタイプのシリコーンゴム印象材</span>の使用</li>
+        <li>レストシート部のストッパーを適合させる</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：スペーサーや遁出孔の付与は加圧印象には不要（無圧印象向け）。</p>
+
+      <h2>ストッパーの役割</h2>
+      <ul>
+        <li>トレーの<span class="highlight">位置決め</span></li>
+        <li><span class="highlight">印象圧のコントロール</span></li>
+        <li>印象材厚みの均一化</li>
+      </ul>
+
+      <h2>印象体の消毒</h2>
+      <p>アルジネート印象体は水洗後、<span class="highlight">次亜塩素酸ナトリウム</span>で消毒する。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105A106</div>
+        <p>床下粘膜支持を高める印象法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 無圧印象<br>
+          b 咬合圧印象<br>
+          c 解剖学的印象<br>
+          d ポストダミング<br>
+          e ウォッシュインプレッション
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">咬合圧印象</span>は患者に咬合させて粘膜を加圧した状態で印象採得し、床下粘膜支持を高める。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C34</div>
+        <p>個人トレーを用いた遊離端欠損部の機能印象で行うのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a トレー全面の遁出孔の付与<br>
+          b レストシート部のストッパーの適合<br>
+          c トレー顎堤粘膜面のスペーサーの付与<br>
+          d モデリングコンパウンドによる辺縁封鎖<br>
+          e ミディアムタイプのシリコーンゴム印象材の使用
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】機能印象では<span class="highlight">辺縁封鎖</span>と<span class="highlight">ミディアムタイプ印象材</span>を使用。遁出孔やスペーサーは無圧印象向け。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C58</div>
+        <p>個人トレー製作のための模型の写真（別冊No. 4A）と製作した個人トレーの内面の写真（別冊No. 4B）とを別に示す。<br>矢印で示す部位の役割で正しいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105C58.png" alt="個人トレー">
+        </div>
+        <div class="choices">
+          a 辺縁封鎖<br>
+          b 位置決め<br>
+          c 印象圧のコントロール<br>
+          d 印象材の厚みの確保<br>
+          e 印象材の口腔内への流出防止
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】矢印はストッパー。<span class="highlight">位置決め</span>と<span class="highlight">印象圧のコントロール</span>の役割を持つ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C97</div>
+        <p>補綴装置作製のための印象採得を行った。印象体の写真（別冊No.20）を別に示す。<br>印象体水洗後の消毒に用いるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108C97.png" alt="印象体">
+        </div>
+        <div class="choices">
+          a エタノール<br>
+          b グルタラール<br>
+          c 塩化ベンザルコニウム<br>
+          d ポビドンヨード<br>
+          e 次亜塩素酸ナトリウム
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】アルジネート印象体の消毒には<span class="highlight">次亜塩素酸ナトリウム</span>を使用する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

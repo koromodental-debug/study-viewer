@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>人工歯排列 - 全部床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">全部床義歯学 / 人工歯排列・歯肉形成</span>
+    <h1>人工歯排列</h1>
+    <div class="container">
+
+      <h2>人工歯の材質</h2>
+      <table>
+        <tr>
+          <th>材質</th>
+          <th>長所</th>
+          <th>短所</th>
+        </tr>
+        <tr>
+          <td><span class="key">陶歯</span></td>
+          <td>耐摩耗性、審美性に優れる</td>
+          <td>破折しやすい、咬合調整困難、義歯床と接着しない</td>
+        </tr>
+        <tr>
+          <td><span class="key">レジン歯</span></td>
+          <td>破折しにくい、義歯床と化学的に接着、咬合調整容易</td>
+          <td>摩耗しやすい、審美性に劣る</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">硬質レジン歯</span></td>
+          <td>耐摩耗性、義歯床と化学的に接着、咬合調整比較的容易</td>
+          <td>常温重合レジンと接着しにくい</td>
+        </tr>
+      </table>
+
+      <h2>臼歯部人工歯の形態</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>咬頭傾斜角</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">解剖学的人工歯</span></td>
+          <td>30°以上</td>
+          <td>咀嚼能率高い、咬合平衡保ちやすい、咬合調整困難</td>
+        </tr>
+        <tr>
+          <td>機能的人工歯</td>
+          <td>約20°</td>
+          <td>解剖学的人工歯の形態をもち機能性を重視</td>
+        </tr>
+        <tr>
+          <td><span class="key">非解剖学的人工歯</span></td>
+          <td>0°</td>
+          <td>咬合調整容易、義歯床下組織への為害性少ない、咀嚼能率低下</td>
+        </tr>
+      </table>
+
+      <h2>臼歯部人工歯の排列位置</h2>
+
+      <h3>頬舌的排列位置の基準</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>基準</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">歯槽頂間線法</span></td>
+          <td>上下顎歯槽頂を結ぶ線上に臼歯を排列</td>
+        </tr>
+        <tr>
+          <td>共通帯法</td>
+          <td>上下顎顎堤の頬側縁から舌側縁までの共通部分に排列</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">パウンドライン</span></td>
+          <td>レトロモラーパッドと下顎犬歯近心隅角を結ぶ線（下顎臼歯舌側咬頭の排列基準）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">パウンドラインの臨床的意義</div>
+        <p>パウンドラインを基準に臼歯部人工歯を排列すると、顎堤吸収の進んだ患者では下顎臼歯は顎堤頂よりも頬側に位置することになる。このような場合、<span class="highlight">リンガライズドオクルージョン</span>を採用し、咬合力を舌側化して義歯の安定をはかる。</p>
+      </div>
+
+      <h2>咬合様式</h2>
+      <table>
+        <tr>
+          <th>咬合様式</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">両側性平衡咬合</span></td>
+          <td>咬頭嵌合位と偏心運動時の両者において作業側・平衡側ともに咬合接触を与える</td>
+        </tr>
+        <tr>
+          <td>片側性平衡咬合</td>
+          <td>作業側臼歯部の頬側咬頭斜面のみの咬合接触により力学的平衡状態を付与</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">リンガライズドオクルージョン</span></td>
+          <td>上顎舌側咬頭のみが下顎臼歯と咬合接触（咬合力を舌側化）</td>
+        </tr>
+        <tr>
+          <td>モノプレーンオクルージョン</td>
+          <td>非解剖学的人工歯（0°臼歯）を用いた平衡咬合</td>
+        </tr>
+      </table>
+
+      <h3>Hanauの咬合の5要素</h3>
+      <ul>
+        <li>顆路傾斜角</li>
+        <li>切歯路傾斜角</li>
+        <li>咬頭傾斜角</li>
+        <li>咬合平面の傾斜</li>
+        <li>調節彎曲の深さ</li>
+      </ul>
+
+      <h2>前歯部人工歯の排列</h2>
+      <ul>
+        <li><span class="key">リップサポート</span>：人工歯唇側面を上顎咬合床唇側面に一致させる</li>
+        <li><span class="key">オーバージェット</span>：標準的には約1mm（矢状顆路傾斜角30°で約4mm）</li>
+        <li><span class="key">オーバーバイト</span>：標準的には約1mm</li>
+        <li>切歯乳頭から上顎中切歯唇面まで約<span class="highlight">10mm</span></li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A74</div>
+        <p>全部床義歯の咬合様式を図に示す。<br>
+        リンガライズドオクルージョンはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102A74.png" alt="咬合様式">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">リンガライズドオクルージョン</span>は上顎舌側咬頭のみが下顎臼歯と咬合接触する様式。咬合力を舌側化して義歯の安定を図る。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A45</div>
+        <p>無歯顎者の補綴処置でパウンドラインを基準として決定するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 人工歯の色調<br>
+          b 咬合平面の傾斜<br>
+          c 上顎臼歯の排列位置<br>
+          d 下顎臼歯の排列位置<br>
+          e 切歯乳頭からの前歯排列位置
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">パウンドライン</span>はレトロモラーパッドと下顎犬歯近心隅角を結ぶ線で、<span class="key">下顎臼歯</span>の舌側咬頭の排列基準となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108B30</div>
+        <p>下顎全部床義歯の人工歯排列で臼歯部の舌側への転位を防止するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咬合床<br>
+          b 個人トレー<br>
+          c パウンドライン<br>
+          d レトロモラーパッド<br>
+          e 歯槽頂間線
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">パウンドライン</span>は下顎臼歯の排列基準で、この線より舌側に排列すると舌圧で義歯が脱離しやすくなる。パウンドラインを基準とすることで臼歯部の舌側への転位を防止できる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C68</div>
+        <p>全部床義歯の下顎臼歯の排列位置を決定する際の基準はどれか。2つ選べ。</p>
+        <div class="choices">
+          a HIP平面<br>
+          b 正中口蓋縫線<br>
+          c パウンドライン<br>
+          d カンペル平面<br>
+          e 歯槽頂間線
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】下顎臼歯の排列位置の基準は<span class="highlight">パウンドライン</span>と<span class="highlight">歯槽頂間線</span>。HIP平面とカンペル平面は仮想咬合平面の設定、正中口蓋縫線は正中線の設定に用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D59</div>
+        <p>71歳の女性。下顎義歯の動揺を主訴として来院した。義歯は5年前に装着したが、以後下顎顎堤の吸収が進行したという。検査の結果、義歯の新製を行うこととした。下顎の現義歯の咬合面観の写真（別冊No.00）を別に示す。<br>
+        新義歯の人工歯排列で適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D59.png" alt="現義歯の咬合面観">
+        </div>
+        <div class="choices">
+          a 歯槽頂間線上への排列<br>
+          b パウンドライン舌側への排列<br>
+          c フルバランスドオクルージョンの付与<br>
+          d リンガライズドオクルージョンの付与<br>
+          e 交叉咬合排列
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】顎堤吸収が進行した患者では、歯槽頂間線法では下顎臼歯が頬側に排列されすぎることがある。<span class="highlight">リンガライズドオクルージョン</span>を採用し、咬合力を舌側化して義歯の安定を図る。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>義歯の不具合 - 全部床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">全部床義歯学 / 術後管理・術後のトラブル</span>
+    <h1>義歯の不具合</h1>
+    <div class="container">
+
+      <h2>義歯脱離の原因</h2>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td><span class="key">床縁形態の不良</span></td>
+          <td>床縁の調整、リライン</td>
+        </tr>
+        <tr>
+          <td><span class="key">床研磨面の豊隆不良</span></td>
+          <td>研磨面形態の修正</td>
+        </tr>
+        <tr>
+          <td><span class="key">後縁の位置不良</span></td>
+          <td>後縁位置の修正、ポストダムの調整</td>
+        </tr>
+        <tr>
+          <td><span class="key">唾液分泌量の減少</span></td>
+          <td>粘膜調整、保湿剤の使用</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">顎堤の経年変化</span></td>
+          <td>リライン、リベース、新義歯製作</td>
+        </tr>
+        <tr>
+          <td><span class="key">咬合接触の不良</span></td>
+          <td>咬合調整、咬合面再形成</td>
+        </tr>
+      </table>
+
+      <h2>咀嚼困難の原因</h2>
+      <ul>
+        <li><span class="highlight">咬合高径の低下</span>：人工歯の咬耗による</li>
+        <li><span class="key">咬合接触面積の減少</span>：人工歯の咬耗、咬合調整過多</li>
+        <li><span class="key">義歯の動揺</span>：床内面の不適合、咬合不調和</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">人工歯咬耗への対応</div>
+        <ul>
+          <li>軽度の場合：<span class="highlight">咬合面再形成</span>（レジンの添加）</li>
+          <li>重度の場合：<span class="highlight">新義歯の製作</span></li>
+        </ul>
+      </div>
+
+      <h2>抗コリン薬と義歯脱離</h2>
+      <p><span class="key">抗コリン薬</span>（気管支喘息治療薬など）の使用により<span class="highlight">唾液分泌量が減少</span>し、義歯の維持力が低下する。</p>
+
+      <h2>顎間関係の修正</h2>
+      <p>長期使用による咬合高径の低下がある場合、旧義歯に前処置として<span class="highlight">咬合面再形成</span>を行い、<span class="highlight">顎間関係を修正</span>してから新義歯を製作する。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104B19</div>
+        <p>75歳の女性。会話時の上顎義歯脱離を主訴として来院した。口唇と頬をすぼめたときの適合試験の写真（別冊No.18A）と咬合接触状態を印記した義歯の写真（別冊No.18B）とを別に示す。<br>
+        原因はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104B19.png" alt="適合試験と咬合接触">
+        </div>
+        <div class="choices">
+          a 咬合接触<br>
+          b 床縁形態<br>
+          c 後縁の位置<br>
+          d 床研磨面の豊隆<br>
+          e 床粘膜面の適合
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】会話時の義歯脱離は<span class="highlight">床縁形態</span>と<span class="highlight">床研磨面の豊隆</span>の不良が原因。適合試験で確認できる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B14</div>
+        <p>74歳の女性。上顎義歯の脱落を主訴として来院した。数年前から気管支喘息の治療で抗コリン薬を常用しているという。咀嚼時に疼痛はない。初診時の口腔内写真（別冊No.14）を別に示す。<br>
+        原因として疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B14.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a 口蓋隆起の存在<br>
+          b 唾液分泌量の減少<br>
+          c 横口蓋ヒダの消失<br>
+          d 義歯性口内炎の存在<br>
+          e 右側臼歯部顎堤のアンダーカット
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">抗コリン薬</span>の使用により<span class="highlight">唾液分泌量が減少</span>し、義歯の維持力が低下する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109D10</div>
+        <p>70歳の女性。咬合時の義歯の脱落を主訴として来院した。義歯は5年前に製作し、1年前から徐々に外れやすくなってきたという。咬頭嵌合位と両側の第一大臼歯部手圧時の適合検査結果の写真（別冊No.10A）、咬合時の口腔内写真（別冊No.10B）及び咬合接触検査結果の写真（別冊No.10C）を別に示す。<br>
+        まず行うべき処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109D10.png" alt="適合検査と咬合接触検査">
+        </div>
+        <div class="choices">
+          a リベース<br>
+          b 人工歯の咬合修正<br>
+          c 直接法によるリライン<br>
+          d 義歯粘膜面の過圧部位の削合<br>
+          e ティッシュコンディショニング
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】咬合接触検査で早期接触が認められる場合、まず<span class="highlight">人工歯の咬合修正</span>（咬合調整）を行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B76</div>
+        <p>76歳の男性。軽度の咀嚼困難を主訴として来院した。10年前に上下顎全部床義歯を製作し、問題なく使用していたが、2年前から食事時に下顎の義歯が動くようになったという。初診時の口腔内写真（別冊No.26A）、義歯装着時の口腔内写真（別冊No.26B）、義歯装着時の顔貌写真（別冊No.26C）、偏心運動時（青）とタッピング運動時（赤）の咬合接触を印記した義歯の写真（別冊No.26D）及び適合検査後の義歯の写真（別冊No.26E）を別に示す。<br>
+        考えられる原因はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113B76.png" alt="口腔内写真と適合検査">
+        </div>
+        <div class="choices">
+          a 義歯の清掃不良<br>
+          b 咬合高径の低下<br>
+          c 顎堤の経年変化<br>
+          d 義歯床外形の不良<br>
+          e 咬合接触関係の不良
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】長期使用後の義歯動揺は<span class="highlight">顎堤の経年変化</span>（顎堤吸収）が原因。適合検査で不適合が確認される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B41</div>
+        <p>73歳の男性。咀嚼時の義歯の不安定を主訴として来院した。8年前に上下顎全部床義歯を装着したが、6か月前から咬合時に上顎義歯が脱離しやすくなったという。使用中の義歯の写真（別冊No.11A）と義歯装着時の口腔内写真（別冊No.11B）を別に示す。<br>
+        まず行うべき処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114B41.png" alt="義歯と口腔内写真">
+        </div>
+        <div class="choices">
+          a 粘膜調整<br>
+          b リライン<br>
+          c 咬合面再形成<br>
+          d 義歯床後緑の削除<br>
+          e 前歯部の咬合調整
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】人工歯の咬耗による咬合高径低下がある場合、<span class="highlight">咬合面再形成</span>を行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C88</div>
+        <p>長期間全部床義歯を使用している患者が最近食事がしづらくなったことを主訴として来院した。上下顎全部床義歯の写真（別冊No.33）を別に示す。<br>
+        咀嚼障害の原因として考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C88.png" alt="義歯の写真">
+        </div>
+        <div class="choices">
+          a 咬合高径の低下<br>
+          b 咬合接触面積の減少<br>
+          c 不適切な口蓋床の形態<br>
+          d 不適切な補強線の埋入<br>
+          e 過大な臼歯部人工歯の排列
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】長期使用による人工歯の咬耗で<span class="highlight">咬合高径が低下</span>し、咀嚼障害を生じる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A37</div>
+        <p>84歳の女性。上下顎全部床義歯の維持安定不良と上顎前歯部顎堤の咀嚼時疼痛を主訴として来院した。義歯は10年以上前に製作したが、5年前から外れやすくなり数回のリラインが施されたという。上下顎義歯の写真（別冊No.7A）、上顎義歯の後縁方向からの写真（別冊No.7B）及び義歯装着時の口腔内写真（別冊No.7C）を別に示す。<br>
+        適切な対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A37.png" alt="義歯の写真">
+        </div>
+        <div class="choices">
+          a 咬合面再形成<br>
+          b 新義歯の製作<br>
+          c 金属口蓋床の除去<br>
+          d ポストダムの付与<br>
+          e リップサポートの改善
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】長期使用による咬耗と不適合がある場合、<span class="highlight">咬合面再形成</span>と<span class="highlight">新義歯の製作</span>が適切。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

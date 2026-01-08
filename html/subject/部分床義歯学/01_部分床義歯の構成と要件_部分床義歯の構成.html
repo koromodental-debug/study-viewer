@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>部分床義歯の構成 - 部分床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">部分床義歯学 / 部分床義歯の構成と要件</span>
+    <h1>部分床義歯の構成</h1>
+    <div class="container">
+
+      <h2>パーシャルデンチャーの構成要素</h2>
+      <p>パーシャルデンチャーは、<span class="key">支台装置</span>、<span class="key">連結装置</span>、<span class="key">人工歯</span>、<span class="key">義歯床</span>、<span class="key">隣接面板</span>から構成される。</p>
+
+      <h3>構成要素と機能</h3>
+      <table>
+        <tr>
+          <th>構成要素</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">支台装置</span></td>
+          <td>支持・把持・維持（クラスプ、アタッチメント、テレスコープクラウン）</td>
+        </tr>
+        <tr>
+          <td><span class="key">連結装置</span></td>
+          <td>義歯各部を連結（大連結子、小連結子）</td>
+        </tr>
+        <tr>
+          <td><span class="key">義歯床</span></td>
+          <td>人工歯を保持、咬合圧を顎堤に伝達、<span class="highlight">支持・把持</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">人工歯</span></td>
+          <td>咬合接触を担う</td>
+        </tr>
+        <tr>
+          <td><span class="key">隣接面板</span></td>
+          <td>支台歯の誘導面に対応、把持作用</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">義歯構造体の設定手順</div>
+        <p><span class="highlight">レスト → 義歯床 → 連結装置 → 支台装置維持部</span></p>
+        <p class="note">まず支持を確保（レスト）し、次に支持域（義歯床）、連結、最後に維持部を設定する。</p>
+      </div>
+
+      <h2>歯の欠損による障害の分類</h2>
+
+      <h3>一次性障害</h3>
+      <p>歯の欠損直後、短期間に生じる障害。</p>
+      <ul>
+        <li><span class="highlight">咀嚼障害</span>（咀嚼能率の低下）</li>
+        <li>発音障害</li>
+        <li>審美障害（外観不良）</li>
+        <li>感覚障害</li>
+      </ul>
+
+      <h3>二次性障害</h3>
+      <p>欠損を放置することで徐々に生じる形態的・機能的変化。</p>
+      <ul>
+        <li>歯列の変化（残存歯の移動・傾斜）</li>
+        <li><span class="highlight">対合歯の挺出</span></li>
+        <li>咬合の変化（早期接触、咬頭干渉）</li>
+        <li>食片圧入、隣接接触点の喪失</li>
+        <li>歯周組織の変化</li>
+      </ul>
+
+      <h3>三次性障害</h3>
+      <p>二次性障害が進行して生じる全身的・機能的障害。</p>
+      <ul>
+        <li><span class="highlight">咀嚼筋痛</span>、顎関節障害</li>
+        <li>顎関節雑音</li>
+        <li>開口障害</li>
+      </ul>
+
+      <h2>欠損の分類</h2>
+
+      <h3>Kennedy分類（欠損部位による分類）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>欠損様式</th>
+        </tr>
+        <tr>
+          <td>Ⅰ級</td>
+          <td>両側性の<span class="key">遊離端欠損</span>（後方）</td>
+        </tr>
+        <tr>
+          <td>Ⅱ級</td>
+          <td>片側性の遊離端欠損</td>
+        </tr>
+        <tr>
+          <td>Ⅲ級</td>
+          <td>片側性の中間欠損</td>
+        </tr>
+        <tr>
+          <td>Ⅳ級</td>
+          <td>正中線を越える<span class="key">前歯部欠損</span></td>
+        </tr>
+      </table>
+
+      <h3>Eichner分類（咬合支持域による分類）</h3>
+      <p>上下顎臼歯部の<span class="highlight">咬合支持域</span>（4箇所：左右小臼歯部・大臼歯部）の接触状態で分類。</p>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>定義</th>
+        </tr>
+        <tr>
+          <td>A群</td>
+          <td>4支持域<span class="key">すべて</span>に対合歯との接触がある</td>
+        </tr>
+        <tr>
+          <td>B群</td>
+          <td>4支持域の<span class="key">一部</span>に対合歯との接触がない</td>
+        </tr>
+        <tr>
+          <td>C群</td>
+          <td>対合歯との接触が<span class="key">まったくない</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Eichner B群の細分類</div>
+        <ul>
+          <li>B1：3つの支持域に接触あり</li>
+          <li>B2：2つの支持域に接触あり</li>
+          <li>B3：1つの支持域に接触あり</li>
+          <li><span class="highlight">B4</span>：支持域以外（前歯部）に接触あり</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109C103</div>
+        <p>部分床義歯の製作設計に際し、義歯構造体の設定手順で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 支台装置維持部 → 連結装置 → 義歯床 → レスト<br>
+          b 義歯床 → 連結装置 → 支台装置維持部 → レスト<br>
+          c レスト → 義歯床 → 連結装置 → 支台装置維持部<br>
+          d レスト → 連結装置 → 支台装置維持部 → 義歯床<br>
+          e レスト → 支台装置維持部 → 連結装置 → 義歯床
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】設計手順は<span class="highlight">レスト→義歯床→連結装置→維持部</span>。まず支持（レスト）を確保し、次に支持域（義歯床）、連結、最後に維持部を設定する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C116</div>
+        <p>歯列の部分欠損に伴う二次性障害はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 外観不良<br>
+          b 開口障害<br>
+          c 咀嚼筋痛<br>
+          d 発音障害<br>
+          e 対合歯の挺出
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">対合歯の挺出</span>は欠損放置による二次性障害。外観不良・発音障害は一次性障害、開口障害・咀嚼筋痛は三次性障害。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A36</div>
+        <p>歯の喪失に伴う障害とその分類の組合せで適切なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 審美不良 ーーーーー 一次性障害<br>
+          b 早期接触 ーーーーー 一次性障害<br>
+          c 咬頭干渉 ーーーーー 二次性障害<br>
+          d 咀嚼筋痛 ーーーーー 二次性障害<br>
+          e 食片圧入 ーーーーー 三次性障害
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】<span class="highlight">審美不良は一次性障害</span>（欠損直後）、<span class="highlight">咬頭干渉は二次性障害</span>（欠損放置による咬合変化）。早期接触・食片圧入は二次性、咀嚼筋痛は三次性障害。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C48</div>
+        <p>上顎は全歯残存、下顎は2歯残存でKennedyⅣ級の欠損様式である。上下顎とも第三大臼歯は存在しない。<br>Eichnerの分類はどれか。1つ選べ。</p>
+        <div class="choices">
+          a A2<br>
+          b B2<br>
+          c B4<br>
+          d C1<br>
+          e C2
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】KennedyⅣ級は前歯部欠損。下顎2歯残存が臼歯部にあり、上顎全歯残存との間で<span class="highlight">2つの支持域に咬合接触</span>がある→B2。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D34</div>
+        <p>Eichnerの分類B4の欠損様式に対して、長期に補綴処置がなされない場合に生じる可能性があるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 下顎位の不安定<br>
+          b 咬合高径の低下<br>
+          c 欠損部対合歯の挺出<br>
+          d 前方滑走運動時の干渉<br>
+          e 大臼歯部における早期接触
+        </div>
+        <div class="answer">正解：a, b, c, d</div>
+        <p>【解説】B4は臼歯部の咬合支持がなく前歯部のみ接触。放置すると下顎位の不安定、咬合高径低下、対合歯挺出、前方運動時の干渉が生じる。<span class="caution">大臼歯部に歯がないため早期接触は起こらない</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A43</div>
+        <p>下顎のKennedyⅠ級症例で支持作用と把持作用の両方を発揮するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 義歯床<br>
+          b 維持格子<br>
+          c 小連結子<br>
+          d 大連結子<br>
+          e 隣接面板
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="highlight">義歯床</span>は咬合圧を顎堤に伝達（支持）し、顎堤形態に適合（把持）。<span class="highlight">大連結子</span>も剛性により支持・把持に寄与。維持格子は維持、小連結子は連結、隣接面板は把持のみ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A49</div>
+        <p>前歯残存の下顎遊離端欠損で臼歯人工歯のモールド選択の参考にするのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 対合歯<br>
+          b 鼻翼幅線<br>
+          c 歯槽頂線<br>
+          d Camper平面<br>
+          e レトロモラーパッド
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】臼歯人工歯のモールド（大きさ）選択には<span class="highlight">対合歯</span>の大きさと<span class="highlight">レトロモラーパッド</span>の幅を参考にする。鼻翼幅線は前歯部の参考。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107D15</div>
+        <p>70歳の男性。義歯の新製を希望して来院した。初診時の口腔内写真（別冊No.15A）と新製義歯の写真（別冊No.15B）とを別に示す。<br>丸印で示す部位で義歯の支持に有効なのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107D15_1.png" alt="口腔内写真">
+          <img src="../../../images/107回_Web画像/107D15_2.png" alt="新製義歯">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】義歯の支持に有効な部位は<span class="highlight">顎堤</span>（義歯床による粘膜支持）と<span class="highlight">レスト</span>（歯牙支持）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -833,7 +833,7 @@
         "d": "ルートセパレーション",
         "e": "エナメルマトリックスタンパク質の応用"
       },
-      "answer": "A",
+      "answer": "D",
       "numChoices": 1,
       "hasImage": true,
       "imageFiles": "106B32_1.png, 106B32_2.png",
@@ -854,7 +854,7 @@
         "d": "経時的な吸収が少ない。",
         "e": "形態保持が容易である。"
       },
-      "answer": "CE",
+      "answer": "AB",
       "numChoices": 2,
       "hasImage": false,
       "imageFiles": "",
@@ -959,7 +959,7 @@
         "d": "1壁・2壁混合性骨欠損",
         "e": "2壁・3壁混合性骨欠損"
       },
-      "answer": "B",
+      "answer": "E",
       "numChoices": 1,
       "hasImage": true,
       "imageFiles": "106D36_1.png, 106D36_2.png",
@@ -980,7 +980,7 @@
         "d": "サービカルマトリックス",
         "e": "ポリエステル製ストリップス"
       },
-      "answer": "CD",
+      "answer": "BE",
       "numChoices": 2,
       "hasImage": true,
       "imageFiles": "106D42.png",
@@ -1065,7 +1065,7 @@
         "e": "スケーリング・ルートプレーニング"
       },
       "answer": "BCE",
-      "numChoices": 1,
+      "numChoices": 3,
       "hasImage": true,
       "imageFiles": "107B22_1.png, 107B22_2.png",
       "chapter": "04_歯周基本治療_再評価",
@@ -1695,7 +1695,7 @@
         "e": "スケーリング・ルートプレーニング"
       },
       "answer": "ABDE",
-      "numChoices": 1,
+      "numChoices": 4,
       "hasImage": false,
       "imageFiles": "",
       "chapter": "05_歯周外科治療",
@@ -2198,7 +2198,7 @@
         "d": "セメント質の肥厚",
         "e": "小帯の付着位置異常"
       },
-      "answer": "AC",
+      "answer": "BC",
       "numChoices": 2,
       "hasImage": true,
       "imageFiles": "112A86_1.png, 112A86_2.png",
@@ -2261,7 +2261,7 @@
         "d": "エ",
         "e": "オ"
       },
-      "answer": "AD",
+      "answer": "CD",
       "numChoices": 2,
       "hasImage": true,
       "imageFiles": "112B87.png",
@@ -2661,7 +2661,7 @@
         "e": "メラニン色素の除去"
       },
       "answer": "ABDE",
-      "numChoices": 1,
+      "numChoices": 4,
       "hasImage": false,
       "imageFiles": "",
       "chapter": "04_歯周基本治療_再評価",
@@ -3269,8 +3269,8 @@
         "d": "エ",
         "e": "オ"
       },
-      "answer": "DE",
-      "numChoices": 1,
+      "answer": "CDE",
+      "numChoices": 3,
       "hasImage": false,
       "imageFiles": "",
       "chapter": "04_歯周基本治療_再評価",
@@ -3753,7 +3753,7 @@
         "e": "歯肉のメラニン色素沈着部位の拡大"
       },
       "answer": "ABCE",
-      "numChoices": 1,
+      "numChoices": 4,
       "hasImage": false,
       "imageFiles": "",
       "chapter": "01_病因",

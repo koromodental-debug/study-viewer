@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>仮想咬合平面 - 全部床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">全部床義歯学 / 咬合採得・咬合器</span>
+    <h1>仮想咬合平面</h1>
+    <div class="container">
+
+      <h2>仮想咬合平面とは</h2>
+      <p><span class="key">仮想咬合平面</span>は、無歯顎患者において人工歯排列の基準となる平面である。有歯顎では咬合平面が存在するが、無歯顎では歯が喪失しているため、咬合堤上面に仮想的に設定する。</p>
+
+      <h2>仮想咬合平面の設定基準</h2>
+      <p>仮想咬合平面は<span class="highlight">前額面</span>と<span class="highlight">矢状面</span>の2方向から設定する。</p>
+
+      <h3>前額面での基準</h3>
+      <p><span class="key">両瞳孔線</span>（瞳孔間線）に平行に設定する。咬合平面板を用いて、上顎咬合堤の前歯部上面を両瞳孔線と平行にする。</p>
+
+      <h3>矢状面での基準</h3>
+      <p><span class="highlight">Camper平面</span>（カンペル平面）に平行に設定する。</p>
+      <ul>
+        <li>Camper平面：<span class="key">鼻翼下縁</span>と<span class="key">外耳孔上縁</span>を結ぶ平面</li>
+        <li>咬合平面との関係：咬合平面はCamper平面とほぼ平行</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">仮想咬合平面の設定基準（まとめ）</div>
+        <ul>
+          <li><span class="highlight">両瞳孔線</span>：前額面での基準</li>
+          <li><span class="highlight">Camper平面</span>：矢状面での基準（鼻翼下縁〜外耳孔上縁）</li>
+          <li><span class="key">HIP平面</span>：口腔内指標による基準</li>
+        </ul>
+      </div>
+
+      <h2>HIP平面</h2>
+      <p><span class="key">HIP平面</span>は口腔内の解剖学的指標のみで決定できる平面である。</p>
+      <ul>
+        <li>H：<span class="key">Hamular notch</span>（翼突上顎切痕）の最深点</li>
+        <li>I：<span class="key">Incisive papilla</span>（切歯乳頭）の中央点</li>
+        <li>P：Plane（平面）</li>
+      </ul>
+      <p>切歯乳頭の中央点と左右のハミュラーノッチを結ぶ3点で決定される平面。外部指標に頼らず口腔内のみで設定できる利点がある。</p>
+
+      <h2>切歯乳頭の臨床的意義</h2>
+      <p><span class="key">切歯乳頭</span>は無歯顎においても位置が安定しており、重要な基準点となる。</p>
+
+      <h3>切歯乳頭を利用して設定するもの</h3>
+      <ul>
+        <li><span class="key">咬合平面</span>（HIP平面の構成要素）</li>
+        <li><span class="key">模型の正中線</span></li>
+        <li><span class="key">人工歯排列位置</span>：上顎中切歯唇面は切歯乳頭前縁から約8〜10mm前方</li>
+      </ul>
+
+      <p class="note"><span class="caution">注意</span>：義歯床後縁やCamper平面の設定には切歯乳頭は使用しない。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102D50</div>
+        <p>73歳の女性。全部床義歯製作中の側貌写真（別冊No.45）を別に示す。ある基準平面に平行に仮想咬合平面を決定することとした。<br>
+        この基準平面の決定に用いる点はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102D50.png" alt="側貌写真">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】矢状面での仮想咬合平面は<span class="highlight">Camper平面</span>に平行に設定する。Camper平面は<span class="key">鼻翼下縁（ア）</span>と<span class="key">外耳孔上縁（オ）</span>を結ぶ平面である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A51</div>
+        <p>無歯顎者の補綴処置において切歯乳頭の位置を利用して設定するのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 咬合平面<br>
+          b 義歯床後縁<br>
+          c Camper平面<br>
+          d 模型の正中線<br>
+          e 人工歯排列位置
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】切歯乳頭は無歯顎でも位置が安定しており、<span class="key">咬合平面</span>（HIP平面）、<span class="key">模型の正中線</span>、<span class="key">人工歯排列位置</span>の基準となる。義歯床後縁はアーラインを基準とし、Camper平面は外部指標（鼻翼・外耳孔）を用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B84</div>
+        <p>全部床義歯製作過程における仮想咬合平面の設定で基準になるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 両瞳孔線<br>
+          b HIP平面<br>
+          c Bonwill三角<br>
+          d Camper平面<br>
+          e フランクフルト平面
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】仮想咬合平面の設定基準は、<span class="highlight">両瞳孔線</span>（前額面）、<span class="highlight">Camper平面</span>（矢状面）、<span class="highlight">HIP平面</span>（口腔内指標）。Bonwill三角は下顎運動の解剖学的概念、フランクフルト平面は頭蓋計測の基準平面で仮想咬合平面の設定には用いない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

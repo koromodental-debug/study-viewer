@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>患者教育 - 全部床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">全部床義歯学 / 装着・調整・患者教育</span>
+    <h1>患者教育</h1>
+    <div class="container">
+
+      <h2>1. 義歯への慣れに関する指導</h2>
+      <p>新義歯の装着によって、一時的な唾液分泌量の増加、異物感、発語障害、嘔吐反射などの不都合を生じることがある。義歯に慣れるには、通常<span class="highlight">1か月程度</span>が必要であることを説明する。</p>
+
+      <h2>2. 摂食に関する指導</h2>
+      <ul>
+        <li>比較的軟らかい食品を小さく切って摂取するように指導</li>
+        <li><span class="key">片側のみでの咀嚼を行わない</span>ように指導</li>
+        <li>時間をかけて行うように指導</li>
+        <li>舌の先端および側面を義歯の舌側面に接触させたままで開口を行うように指導</li>
+      </ul>
+
+      <h2>3. 口腔機能のリハビリテーション</h2>
+      <p>咀嚼や構音など、口腔機能の回復・改善にはある程度の慣れと訓練が必要。<span class="key">口腔筋機能療法（MFT）</span>、咀嚼訓練、栄養と食事形態の指導を実施する。</p>
+
+      <h2>4. 義歯および口腔内の清掃に関する指導</h2>
+
+      <h3>機械的清掃</h3>
+      <ul>
+        <li><span class="key">義歯用ブラシ</span>を用いて<span class="highlight">流水下</span>で刷掃する</li>
+        <li><span class="caution">歯磨剤を使用してのブラッシングは行わない</span>（義歯床用レジンや人工歯を摩耗させ、不適合や変色の原因となる）</li>
+        <li><span class="key">超音波洗浄器</span>による清掃が有効</li>
+      </ul>
+
+      <h3>化学的清掃</h3>
+      <p>義歯性口内炎の起因菌である<span class="key">Candida albicans</span>は機械的清掃では完全には除去されないため、<span class="highlight">義歯洗浄剤</span>による化学的清掃の併用が不可欠。</p>
+
+      <h3>義歯洗浄剤の種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>過酸化物系</td>
+          <td>最も広く使用されている</td>
+        </tr>
+        <tr>
+          <td>次亜塩素酸塩系</td>
+          <td>漂白作用が強い</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">酵素系</span></td>
+          <td>長期使用に適している</td>
+        </tr>
+      </table>
+
+      <h2>5. 就寝時における義歯の取り扱い</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">基本原則</div>
+        <p>一般的には、睡眠中は<span class="highlight">義歯を外しておく</span>ように指導する。義歯床下粘膜の安静化と化学的清掃の時間確保が目的。義歯を外す場合は、乾燥による変形を防止するため、<span class="highlight">義歯洗浄剤を入れた水中</span>に保管する。</p>
+      </div>
+
+      <h3>就寝時に義歯装着を推奨する場合</h3>
+      <ul>
+        <li><span class="highlight">顎関節症患者</span></li>
+        <li><span class="highlight">下顎位が不安定</span>な患者</li>
+        <li>残存歯がある場合（<span class="key">残存歯の負担軽減</span>、<span class="key">動揺歯のスプリンティング</span>）</li>
+        <li>対合顎堤の損傷防止</li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：「唾液の分泌促進」は義歯装着の目的ではない。</p>
+
+      <h2>6. 粘膜調整材で裏装した義歯の取り扱い</h2>
+      <ul>
+        <li>夜は義歯を外す</li>
+        <li>毎日、義歯洗浄剤に浸ける</li>
+        <li><span class="caution">ペースト状の義歯安定剤は使用しない</span></li>
+        <li><span class="caution">硬めのブラシでの清掃は避ける</span>（粘膜調整材が剥がれる）</li>
+      </ul>
+
+      <h2>7. リコールとメインテナンス</h2>
+      <p>顎堤吸収や人工歯の咬耗は、義歯使用において不可避な経時的変化である。これらの変化に伴い、義歯に不適合が生じ、フラビーガム、義歯性線維腫、義歯性口内炎などが発症する。無症状であっても<span class="highlight">定期的なリコールと調整</span>が必要であることを理解させる。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106A127</div>
+        <p>就寝時に義歯装着を推奨する場合の目的はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 唾液の分泌促進<br>
+          b 顎関節の負担軽減<br>
+          c 残存歯の負担軽減<br>
+          d 対合顎堤の損傷防止<br>
+          e 動揺歯のスプリンティング
+        </div>
+        <div class="answer">正解：b, c, d, e</div>
+        <p>【解説】就寝時に義歯装着を推奨するのは、<span class="highlight">顎関節症患者</span>や<span class="highlight">下顎位が不安定</span>な患者の場合。残存歯の保護や動揺歯のスプリンティングも目的となる。<span class="caution">唾液の分泌促進</span>は義歯装着の目的ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A71</div>
+        <p>78歳の女性。上顎全部床義歯が外れやすいことを主訴として来院した。使用中の義歯は3年前に製作したという。診察の結果、義歯床粘膜面に粘膜調整材で裏装したところ、義歯の維持は向上した。初診時の口腔内写真（別冊No.28A）と粘膜調整材で裏装した義歯床粘膜面の写真（別冊No.28B）を別に示す。<br>
+        患者への説明で適切なのはどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A71.png" alt="口腔内写真と義歯床粘膜面">
+        </div>
+        <div class="choices">
+          a 「 3か月後に再来院してください」<br>
+          b 「夜寝る時は義歯を外してください」<br>
+          c 「毎日、義歯洗浄剤に浸けてください」<br>
+          d 「ペースト状の義歯安定剤は使用しないでください」<br>
+          e 「硬めの義歯用ブラシで義歯の裏表をきれいに清掃してください」
+        </div>
+        <div class="answer">正解：b, c, d</div>
+        <p>【解説】粘膜調整材で裏装した義歯の取り扱い：①夜は外す、②毎日義歯洗浄剤に浸ける、③<span class="caution">ペースト状の義歯安定剤は使用しない</span>。<span class="caution">硬めのブラシでの清掃は粘膜調整材が剥がれる</span>ため不適切。3か月後ではなく、より早期の再来院が必要。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

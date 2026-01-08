@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診査・診断 - 部分床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">部分床義歯学 / 診査診断・前処置</span>
+    <h1>診査・診断</h1>
+    <div class="container">
+
+      <h2>診査の項目</h2>
+
+      <h3>残存歯の診査</h3>
+      <ul>
+        <li>歯冠歯根比、動揺度、歯周ポケット</li>
+        <li>う蝕、修復物の状態</li>
+        <li>支台歯としての活用可能性</li>
+        <li>プラークの付着状態</li>
+      </ul>
+
+      <h3>欠損部顎堤の診査</h3>
+      <ul>
+        <li>顎堤の吸収程度</li>
+        <li>顎堤形態（骨隆起、アンダーカットの有無）</li>
+        <li>粘膜の性状</li>
+      </ul>
+
+      <h3>咬合の診査</h3>
+      <ul>
+        <li>咬頭嵌合位の安定性</li>
+        <li>咬合平面、咬合彎曲</li>
+        <li>咬頭干渉の有無</li>
+        <li>下顎位と顎関節の状態</li>
+      </ul>
+
+      <h2>研究用模型</h2>
+      <p>診査・診断、治療計画の立案などを目的に製作する模型。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">研究用模型から得られる情報</div>
+        <ul>
+          <li><span class="highlight">欠損部顎堤の形態</span></li>
+          <li>歯の形態、残存歯の状態</li>
+          <li><span class="highlight">咬耗の状態</span></li>
+          <li><span class="highlight">臼歯部の被蓋関係</span>（咬合器装着時）</li>
+          <li>口蓋隆起の有無</li>
+          <li>残存歯と顎堤の位置関係</li>
+          <li>咬合平面の彎曲</li>
+          <li><span class="highlight">個人トレーの外形</span></li>
+          <li><span class="highlight">レストシート設置部位</span></li>
+        </ul>
+        <p class="note"><span class="caution">注意</span>：顎堤粘膜の厚みや被圧変位量、骨縁下ポケットは研究用模型からは得られない。</p>
+      </div>
+
+      <h3>研究用模型で検討するもの</h3>
+      <ul>
+        <li>大連結子の設計（外形）</li>
+        <li>個人トレーの外形</li>
+        <li>レストシート設置部位</li>
+        <li>サベイライン、アンダーカット</li>
+      </ul>
+
+      <h2>サベイヤーによる模型の検査</h2>
+      <p>義歯の設計には、着脱方向と支台装置の決定が必要。サベイヤーを用いて模型を分析する。</p>
+      <ul>
+        <li>支台歯として予想される歯</li>
+        <li>欠損部顎堤の形態</li>
+        <li>大連結子の設定</li>
+        <li>残存歯のアンダーカット</li>
+      </ul>
+
+      <h2>咬頭干渉の検査</h2>
+      <table>
+        <tr>
+          <th>器具</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="key">咬合紙</span></td>
+          <td>咬頭干渉の位置を着色して確認</td>
+        </tr>
+        <tr>
+          <td><span class="key">手指の感覚</span></td>
+          <td>義歯の動揺を触知して干渉を確認</td>
+        </tr>
+        <tr>
+          <td><span class="key">ストリップス</span></td>
+          <td>咬合接触の有無を確認</td>
+        </tr>
+      </table>
+      <p class="note">割り箸やコンタクトゲージは咬頭干渉の検査には用いない。</p>
+
+      <h2>治療用義歯</h2>
+      <p>最終義歯製作前に診断・治療目的で用いる暫間義歯。</p>
+      <ul>
+        <li>咬合位の修正・確認</li>
+        <li>咬合高径の回復</li>
+        <li>咬合平面の修正</li>
+        <li>顎堤粘膜の安静</li>
+        <li>残存歯の評価</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114A32</div>
+        <p>研究用模型から得られる情報はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 咬耗の状態<br>
+          b 顎堤粘膜の厚み<br>
+          c 臼歯部の被蓋関係<br>
+          d 欠損部顎堤の形態<br>
+          e 骨縁下ポケットの有無
+        </div>
+        <div class="answer">正解：a, c, d</div>
+        <p>【解説】研究用模型からは<span class="highlight">咬耗の状態</span>、<span class="highlight">臼歯部の被蓋関係</span>（咬合器装着時）、<span class="highlight">欠損部顎堤の形態</span>が得られる。粘膜の厚みや骨縁下ポケットは得られない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A114</div>
+        <p>部分床義歯製作のための研究用模型で検討するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 人工歯の種類<br>
+          b 機能的床縁形態<br>
+          c 個人トレーの外形<br>
+          d 義歯床用材料の種類<br>
+          e レストシート設置部位
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】研究用模型では<span class="highlight">個人トレーの外形</span>と<span class="highlight">レストシート設置部位</span>を検討する。機能的床縁形態は精密印象で決定。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D54</div>
+        <p>ある模型の写真（別冊No.18）を別に示す。<br>得られる情報はどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D54.png" alt="研究用模型">
+        </div>
+        <div class="choices">
+          a 口蓋粘膜の厚さ<br>
+          b 口蓋隆起の有無<br>
+          c 咬合平面の彎曲<br>
+          d 顎堤粘膜の被圧変位量<br>
+          e 残存歯と顎堤の位置関係
+        </div>
+        <div class="answer">正解：b, c, e</div>
+        <p>【解説】咬合器装着した研究用模型から<span class="highlight">口蓋隆起の有無</span>、<span class="highlight">咬合平面の彎曲</span>、<span class="highlight">残存歯と顎堤の位置関係</span>が得られる。<span class="caution">粘膜の厚さや被圧変位量は模型では得られない</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C58</div>
+        <p>有床義歯で咬頭干渉の検査に用いるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 咬合紙<br>
+          b 割り箸<br>
+          c 手指の感覚<br>
+          d ストリップス<br>
+          e コンタクトゲージ
+        </div>
+        <div class="answer">正解：a, c, d</div>
+        <p>【解説】咬頭干渉の検査には<span class="highlight">咬合紙</span>、<span class="highlight">手指の感覚</span>、<span class="highlight">ストリップス</span>を用いる。割り箸やコンタクトゲージは使用しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

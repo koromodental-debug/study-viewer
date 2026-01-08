@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>メタルフレームの製作 - 部分床義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">部分床義歯学 / メタルフレームの製作</span>
+    <h1>メタルフレームの製作</h1>
+    <div class="container">
+
+      <h2>フレームワーク製作の流れ</h2>
+      <table>
+        <tr><th>順序</th><th>工程</th><th>内容</th></tr>
+        <tr><td>1</td><td>作業用模型の修正</td><td>ブロックアウト、リリーフ、ビーディング</td></tr>
+        <tr><td>2</td><td>複印象・耐火模型の製作</td><td>シリコーンラバー印象材で複製</td></tr>
+        <tr><td>3</td><td>ワックスアップ</td><td>耐火模型上でワックスパターン製作</td></tr>
+        <tr><td>4</td><td>埋没</td><td>スプルーイング後、埋没材に埋入</td></tr>
+        <tr><td>5</td><td>鋳造・研磨</td><td>鋳造後、サンドブラスターで研磨</td></tr>
+        <tr><td>6</td><td>フレームワークの試適</td><td>模型上→口腔内で適合確認</td></tr>
+      </table>
+
+      <h2>作業用模型の修正</h2>
+
+      <h3>ブロックアウト</h3>
+      <p>義歯の着脱方向に対して生じる不必要なアンダーカットを埋没すること。石膏またはワックスを用いる。</p>
+      <ul>
+        <li>歯や金属に接する部位には<span class="key">石膏</span></li>
+        <li>最終的にレジンに置換するブロックアウト部には<span class="key">ワックス</span></li>
+      </ul>
+
+      <h3>リリーフ</h3>
+      <p>義歯床粘膜面の一部に凹型の空隙を設けること。粘膜に加わる圧を緩衝し、顎堤粘膜の疼痛や潰瘍を防止する。</p>
+
+      <table>
+        <tr><th>種類</th><th>部位</th><th>リリーフ量</th></tr>
+        <tr><td>粘膜リリーフ</td><td>下顎隆起、口蓋隆起、歯槽骨の鋭縁、鋭い顎堤頂</td><td><span class="highlight">0.2〜0.3mm</span></td></tr>
+        <tr><td>維持格子部のリリーフ</td><td>維持格子（レジン連結部）</td><td><span class="highlight">0.5mm程度</span></td></tr>
+      </table>
+      <p class="note">維持格子部のリリーフは、義歯床のレジン部分を連結するためのスペースを確保する目的</p>
+
+      <h3>ビーディング</h3>
+      <p>上顎口蓋部にパラタルバーやパラタルプレートが設計される場合、設計線に沿って模型表面を<span class="highlight">0.3〜0.5mm</span>削り込むこと。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">ビーディングの効果</div>
+        <ul>
+          <li><span class="key">辺縁封鎖性の向上</span>：鋳造床粘膜面の辺縁がわずかに凸状となり、床縁の確実な封鎖が得られる</li>
+          <li><span class="key">鋳造収縮の補償</span>：削り込みにより鋳造収縮分を補う</li>
+          <li><span class="key">舌感の向上</span>：床縁が粘膜に圧入し滑らかな移行となる</li>
+        </ul>
+      </div>
+
+      <h3>耐火模型製作前に作業用模型上で行うこと</h3>
+      <ul>
+        <li><span class="key">骨隆起のリリーフ</span></li>
+        <li><span class="key">ビーディングの付与</span></li>
+      </ul>
+      <p class="note"><span class="caution">注意</span>：ガイドプレーンの形成は支台歯形成時、維持腕のワックスアップは耐火模型上で行う</p>
+
+      <h3>ティッシュストップ</h3>
+      <p><span class="key">ティッシュストップ</span>とは、レジン填入時のフレームの変位や維持格子の変形を防止するために、維持格子の遊離端遠心部に模型粘膜面と直接接するように設定する突起。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">ティッシュストップの目的</div>
+        <p><span class="highlight">レジン重合時のメタルフレームの安定</span>（変位防止）</p>
+      </div>
+
+      <h3>ワックスステップ</h3>
+      <p>支台歯のクラスプ外形線の下縁に沿ってワックスを用いて設けたステップ。作業用模型上の設計線を耐火模型上に再現する方法。</p>
+
+      <h3>フィニッシュライン</h3>
+      <p>レジンとフレームワークの移行部。義歯の強度やレジンの厚みを考慮して付与される。</p>
+      <ul>
+        <li><span class="key">外側フィニッシュライン</span>：床外形線に沿った部分</li>
+        <li><span class="key">内側フィニッシュライン</span>：床内面側の移行部</li>
+      </ul>
+      <p>フィニッシュラインの目的は<span class="highlight">床用レジンとの円滑な移行</span>を確保すること。</p>
+
+      <h2>埋没法</h2>
+
+      <h3>型ごと埋没法</h3>
+      <p>フレームワーク製作時に選択される埋没法。耐火模型ごと埋没材に埋入する方法。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">型ごと埋没法を選択する理由</div>
+        <p><span class="highlight">ワックスパターンの変形防止</span></p>
+        <p class="note">フレームワークは複雑な形態のため、模型から外すと変形しやすい</p>
+      </div>
+
+      <h2>フレームワーク試適時のトラブル</h2>
+
+      <h3>印象時の加圧過多による問題</h3>
+      <p>印象採得時に加圧しすぎると、模型上では適合するが口腔内では粘膜を圧迫する。</p>
+      <ul>
+        <li>支台装置は適合するが、粘膜部に圧迫感</li>
+        <li>対応：<span class="highlight">印象採得から再び行う</span></li>
+      </ul>
+
+      <h3>床内面を金属にする理由</h3>
+      <p>義歯床の一部を金属にする場合、その理由として<span class="key">生物学的要件</span>が挙げられる。金属は清掃性が良く、プラーク付着が少ないため、残存組織の保全に有利。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A103</div>
+        <p>金属床義歯製作中の写真（別冊No.12）を別に示す。<br>
+        矢印で示す部位の目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102A103.png" alt="別冊No.12">
+        </div>
+        <div class="choices">
+          a レジン床の維持<br>
+          b 隣接面板の設置<br>
+          c 人工歯排列スペースの確保<br>
+          d メタルフレーム試適時のガイド<br>
+          e レジン重合時のメタルフレームの安定
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】矢印はティッシュストップを示す。レジン填入時のフレームの変位や維持格子の変形を防止する目的で設置される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A53</div>
+        <p>耐火模型の製作にあたり作業用模型上で行うのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 骨隆起のリリーフ<br>
+          b ビーディングの付与<br>
+          c ガイドプレーンの形成<br>
+          d 維持腕のワックスアップ<br>
+          e ティッシュストップの付与
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】耐火模型製作前に作業用模型上で行うのは<span class="key">骨隆起のリリーフ</span>と<span class="key">ビーディングの付与</span>。ガイドプレーンは支台歯形成時、維持腕のワックスアップとティッシュストップは耐火模型上で行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104D51・52</div>
+        <p>60歳の男性。咀嚼障害を主訴として来院した。部分床義歯を製作することとした。フレームワークを試適したところ、支台装置は適合したが、前歯部舌側歯肉に圧迫感を訴えた。口腔内写真（別冊No.50A）、口腔内と模型とにフレームワークを装着した写真（別冊No.50B）及び適合試験の写真（別冊No.50C）を別に示す。原因は印象時に加圧しすぎたことである。<br>
+        適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D51_1.png" alt="別冊No.50A">
+          <img src="../../../images/104回_Web画像/104D51_2.png" alt="別冊No.50B、C">
+        </div>
+        <div class="choices">
+          a 粘膜調整を行う。<br>
+          b 咬合採得から再び行う。<br>
+          c 印象採得から再び行う。<br>
+          d 義歯完成後に大連結子を調整する。<br>
+          e 同じ模型上でフレームワークを再製作する。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】印象時の加圧過多が原因なので、<span class="highlight">印象採得から再び行う</span>必要がある。同じ模型を使用しても問題は解決しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B12</div>
+        <p>65歳の女性。上顎部分床義歯の新製を希望して来院した。加熱重合によるレジン床義歯製作用の作業用模型の写真（別冊No.12A、B、C）を別に示す。<br>
+        矢印で示す部位とその部位の調整に用いる材料との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B12.png" alt="別冊No.12">
+        </div>
+        <div class="choices">
+          a ア────パラフィンワックス<br>
+          b イ────ユーティリティワックス<br>
+          c ウ────石膏<br>
+          d エ────レディキャスティングワックス<br>
+          e オ────錫箔
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ウは歯や金属に接する部位のブロックアウトであり、<span class="key">石膏</span>を用いる。最終的にレジンに置換する部位にはワックスを用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A54</div>
+        <p>部分床義歯の床内面の写真（別冊No.6）を別に示す。<br>
+        矢印で示す部位を金属にした理由はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111A54.png" alt="別冊No.6">
+        </div>
+        <div class="choices">
+          a 機能的要件<br>
+          b 形態的要件<br>
+          c 審美的要件<br>
+          d 力学的要件<br>
+          e 生物学的要件
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】金属は清掃性が良くプラーク付着が少ないため、<span class="key">生物学的要件</span>（残存組織の保全）を満たす目的で金属床とする。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C51</div>
+        <p>サベイングを終えた作業用模型の写真（別冊No.4）を別に示す。<br>
+        矢印で示すサベイラインをもとに決定するのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112C51.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a 隣接面板の幅<br>
+          b ブロックアウトの領域<br>
+          c 維持格子部のリリーフ量<br>
+          d ティッシュストップの位置<br>
+          e 内フィニッシュラインの走行
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】サベイラインは着脱方向に対する最大豊隆線。これをもとに<span class="key">ブロックアウトの領域</span>と<span class="key">内フィニッシュラインの走行</span>を決定する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C47</div>
+        <p>部分床義歯のフレームワーク製作時に型ごと埋没法を選択する理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 研磨の簡便化<br>
+          b 鋳造収縮の補償<br>
+          c 鋳造体取り出しの簡便化<br>
+          d ワックス焼却時間の短縮<br>
+          e ワックスパターンの変形防止
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】型ごと埋没法は耐火模型ごと埋没材に埋入する方法。フレームワークは複雑な形態のため、模型から外すと変形しやすい。<span class="highlight">ワックスパターンの変形防止</span>が目的。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C48</div>
+        <p>68歳の女性。上顎義歯の破折による咀嚼困難を主訴として来院した。使用中の義歯は5年前に製作したが、何度も破折し修理を繰り返しているという。診察の結果、金属床による部分床義歯を新製することとした。義歯製作中のある過程の写真（別冊No.17）を別に示す。<br>
+        矢印で示す構造の目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C48.png" alt="別冊No.17">
+        </div>
+        <div class="choices">
+          a フレームワークの補強<br>
+          b 床用レジンの機械的保持<br>
+          c 粘膜面との適合性の向上<br>
+          d レジン填入時の変位防止<br>
+          e 床用レジンとの円滑な移行
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】矢印はフィニッシュラインを示す。<span class="highlight">床用レジンとの円滑な移行</span>を確保するために付与される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C46</div>
+        <p>上顎義歯の写真（別冊No.17）を別に示す。<br>
+        矢印で示す構造の役割はどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116C46.png" alt="別冊No.17">
+        </div>
+        <div class="choices">
+          a 舌感の向上<br>
+          b 鋳造収縮の補償<br>
+          c 辺縁封鎖性の向上<br>
+          d レジン填入時の移動防止<br>
+          e フィニッシュラインの明示
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】矢印はビーディングによる凸部を示す。ビーディングの効果は<span class="key">舌感の向上</span>、<span class="key">鋳造収縮の補償</span>、<span class="key">辺縁封鎖性の向上</span>。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

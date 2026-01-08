@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>加齢と老化</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>イ. 加齢と老化</h1>
+    <div class="subtitle">必修5 人体の発生・成長・発達・加齢</div>
+    <div class="container">
+
+      <h3>加齢による全身の変化</h3>
+      <table>
+        <tr><th>系統</th><th>変化</th></tr>
+        <tr><td><span class="red">呼吸器系</span></td><td>肺活量低下、<span class="red">肺胞コンプライアンス低下</span>、気管支の変化</td></tr>
+        <tr><td><span class="red">循環器系</span></td><td><span class="red">心拍出量減少</span>、動脈硬化、血管コンプライアンス低下</td></tr>
+        <tr><td><span class="highlight">骨格系</span></td><td><span class="red">骨密度低下</span>、未熟骨置換抵抗、血圧上昇</td></tr>
+        <tr><td><span class="highlight">内分泌・代謝</span></td><td>基礎代謝低下、耐糖能低下、体液量減少</td></tr>
+        <tr><td><span class="highlight">精神・心理</span></td><td>認知機能低下、うつ傾向</td></tr>
+      </table>
+
+      <h3>加齢による歯・口腔・顔面の変化</h3>
+      <table>
+        <tr><th>部位</th><th>変化</th></tr>
+        <tr><td><span class="red">歯の変化</span></td><td>咬耗、歯髄腔狭窄、<span class="red">セメント質肥厚</span>、第二象牙質・死腔形成、透明象牙質</td></tr>
+        <tr><td><span class="red">歯髄の変化</span></td><td><span class="red">石灰変性</span>、樹状突起萎縮、<span class="highlight">細胞数減少</span>、象牙芽細胞の不活性化</td></tr>
+        <tr><td><span class="highlight">歯周組織</span></td><td>歯肉退縮、歯根露出、<span class="highlight">歯槽骨吸収</span></td></tr>
+        <tr><td><span class="highlight">顔面の変化</span></td><td><span class="red">顔面結節</span>の喪失、大状頭蓋角は<span class="red">鈍くなる</span></td></tr>
+        <tr><td><span class="highlight">顎関節</span></td><td>関節円板の菲薄化・穿孔、関節面の摩耗</td></tr>
+      </table>
+
+      <h3>加齢による唾液腺の変化</h3>
+      <ul>
+        <li><span class="red">唾液分泌量</span>の減少</li>
+        <li>腺房細胞の<span class="highlight">萎縮・脂肪変性</span></li>
+        <li><span class="highlight">口腔乾燥症</span>（ドライマウス）のリスク上昇</li>
+        <li>味覚閾値の上昇→<span class="highlight">濃い味を好む</span></li>
+      </ul>
+
+      <h3>加齢による口腔粘膜の変化</h3>
+      <ul>
+        <li>粘膜上皮の<span class="highlight">菲薄化</span></li>
+        <li>角化層の減少</li>
+        <li><span class="red">創傷治癒の遅延</span></li>
+        <li>感染抵抗性の低下</li>
+      </ul>
+
+      <h3>加齢による神経系の変化</h3>
+      <ul>
+        <li><span class="red">反射機能の低下</span></li>
+        <li><span class="highlight">感覚機能の低下</span>（視覚、聴覚、触覚）</li>
+        <li>運動機能の低下</li>
+        <li>嚥下反射の遅延</li>
+      </ul>
+
+      <h3>歯の喪失に伴う変化</h3>
+      <table>
+        <tr><th>部位</th><th>変化</th></tr>
+        <tr><td><span class="red">顔面</span></td><td>咬合高径の低下、老人性顔貌、浅い顎溝</td></tr>
+        <tr><td><span class="red">顎骨</span></td><td><span class="red">歯槽骨の吸収</span>、顎堤の退縮</td></tr>
+        <tr><td><span class="highlight">咀嚼</span></td><td><span class="red">咀嚼能力の低下</span></td></tr>
+      </table>
+
+      <h3>高齢者の特徴</h3>
+      <ul>
+        <li><span class="red">予備能力</span>の低下</li>
+        <li><span class="highlight">複数の疾患</span>を有することが多い</li>
+        <li>症状が<span class="highlight">非定型的</span></li>
+        <li><span class="red">薬物の副作用</span>が出やすい</li>
+        <li>社会的・心理的問題を抱えやすい</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">117A-7</div>
+        <p>加齢に伴う変化で正しいのはどれか。1つ選べ。</p>
+        <p>a: 肺活量の増加　b: 骨密度の増加　c: 心拍出量の減少　d: 基礎代謝の亢進　e: 糸球体濾過量の増加</p>
+        <div class="answer">正解: c（心拍出量は加齢により減少）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B-7</div>
+        <p>加齢による歯・口腔の変化で正しいのはどれか。1つ選べ。</p>
+        <p>a: 歯髄腔の拡大　b: セメント質の菲薄化　c: 象牙細管の狭窄　d: エナメル質の肥厚　e: 歯根膜腔の拡大</p>
+        <div class="answer">正解: c（象牙細管は管周象牙質の石灰化により狭窄）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B-8</div>
+        <p>加齢による顔面の変化で正しいのはどれか。1つ選べ。</p>
+        <p>a: 下顎角の減少　b: 顔面高の増大　c: 大状頭蓋角の増大　d: オトガイ部の後退　e: 鼻唇溝の浅化</p>
+        <div class="answer">正解: c（大状頭蓋角は加齢により鈍くなる＝増大）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">心拍出量減少</span>、<span class="red">骨密度低下</span>、基礎代謝低下</li>
+          <li><span class="red">歯髄腔狭窄</span>、<span class="red">セメント質肥厚</span>、透明象牙質</li>
+          <li><span class="red">唾液分泌量減少</span>→口腔乾燥症</li>
+          <li>顔面：<span class="red">大状頭蓋角は鈍くなる</span>（増大）</li>
+          <li>歯の喪失→<span class="red">歯槽骨吸収</span>、咀嚼能力低下</li>
+          <li>高齢者：<span class="red">予備能力低下</span>、薬物副作用出やすい</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

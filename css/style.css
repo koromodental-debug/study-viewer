@@ -764,6 +764,9 @@ body {
   display: none;
   height: 100%;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  contain: layout style;
 }
 
 .tab-content.active {

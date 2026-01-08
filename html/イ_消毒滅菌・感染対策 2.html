@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>消毒滅菌・感染対策</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+    .pattern-tag {
+      display: inline-block;
+      background: #EDF2F7;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      color: var(--accent);
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>イ. 消毒滅菌・感染対策</h1>
+    <div class="subtitle">必修12 治療の基礎・基本手技</div>
+    <div class="container">
+
+      <!-- ========== 感染症の分類 ========== -->
+      <h3>感染症の分類 <span class="pattern-tag">出題4件</span></h3>
+      <table>
+        <tr><th>分類</th><th>疾患例</th><th>対応</th></tr>
+        <tr><td><span class="red">1類</span></td><td>エボラ出血熱、ペスト、マールブルグ病</td><td>原則入院</td></tr>
+        <tr><td><span class="red">2類</span></td><td>結核、SARS、MERS、鳥インフルエンザ</td><td>状況に応じて入院</td></tr>
+        <tr><td><span class="highlight">3類</span></td><td>コレラ、細菌性赤痢、腸チフス</td><td>特定職種への就業制限</td></tr>
+        <tr><td><span class="highlight">4類</span></td><td>マラリア、デング熱、狂犬病</td><td>動物由来感染症</td></tr>
+        <tr><td><span class="highlight">5類</span></td><td>インフルエンザ、麻疹、梅毒、<span class="red">HIV</span></td><td>発生動向調査</td></tr>
+      </table>
+
+      <!-- ========== スタンダードプリコーション ========== -->
+      <h3>スタンダードプリコーション（標準予防策）</h3>
+      <table>
+        <tr><th>対象</th><th>内容</th></tr>
+        <tr><td><span class="red">基本概念</span></td><td><span class="red">全ての患者の血液・体液</span>を感染性があるものとして扱う</td></tr>
+        <tr><td><span class="highlight">手指衛生</span></td><td>患者接触前後、手袋着脱後</td></tr>
+        <tr><td><span class="highlight">個人防護具</span></td><td>手袋、マスク、ゴーグル、ガウン</td></tr>
+      </table>
+
+      <!-- ========== 消毒薬の分類 ========== -->
+      <h3>消毒薬の分類と適応 <span class="pattern-tag">出題6件</span></h3>
+      <table>
+        <tr><th>レベル</th><th>消毒薬</th><th>適応</th></tr>
+        <tr><td><span class="red">高水準</span></td><td><span class="red">グルタラール</span>、過酢酸、フタラール</td><td>芽胞以外すべて</td></tr>
+        <tr><td><span class="highlight">中水準</span></td><td>次亜塩素酸Na、ポビドンヨード、エタノール</td><td>結核菌、一般細菌、ウイルス</td></tr>
+        <tr><td><span class="highlight">低水準</span></td><td>クロルヘキシジン、<span class="red">ベンザルコニウム塩化物</span></td><td>一般細菌</td></tr>
+      </table>
+      <p>※<span class="red">ベンザルコニウム塩化物</span>＝逆性石けん（陽イオン界面活性剤）</p>
+
+      <div class="question-box">
+        <div class="q-number">112B1</div>
+        <p>手指の消毒に使用できる逆性石けんはどれか。1つ選べ。</p>
+        <p>a: クレゾール<br>
+        b: グルタラール<br>
+        c: ホルムアルデヒド<br>
+        d: 次亜塩素酸ナトリウム<br>
+        e: ベンザルコニウム塩化物</p>
+        <div class="answer">正解: e（ベンザルコニウム塩化物は逆性石けん）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A16</div>
+        <p>滅菌・消毒のSpaulding分類で高水準消毒に用いられるのはどれか。1つ選べ。</p>
+        <p>a: 高圧蒸気<br>
+        b: グルタラール<br>
+        c: 両性界面活性剤<br>
+        d: エチレンオキサイドガス<br>
+        e: ベンザルコニウム塩化物</p>
+        <div class="answer">正解: b（グルタラールは高水準消毒薬）</div>
+      </div>
+
+      <!-- ========== 滅菌法 ========== -->
+      <h3>滅菌法の種類</h3>
+      <table>
+        <tr><th>方法</th><th>条件</th><th>適応</th></tr>
+        <tr><td><span class="red">高圧蒸気滅菌</span></td><td><span class="red">121℃ 20分</span>または134℃ 3分</td><td>金属器具、布類</td></tr>
+        <tr><td><span class="highlight">乾熱滅菌</span></td><td>160℃ 60分、180℃ 30分</td><td>ガラス、金属</td></tr>
+        <tr><td><span class="highlight">EOG滅菌</span></td><td>エチレンオキサイドガス</td><td>プラスチック、ゴム</td></tr>
+        <tr><td><span class="highlight">プラズマ滅菌</span></td><td>過酸化水素プラズマ</td><td>熱に弱い器具</td></tr>
+      </table>
+
+      <!-- ========== ラバーダム防湿 ========== -->
+      <h3>ラバーダム防湿 <span class="pattern-tag">出題4件</span></h3>
+      <table>
+        <tr><th>目的</th><th>内容</th></tr>
+        <tr><td><span class="red">無菌的処置</span></td><td>唾液からの細菌遮断</td></tr>
+        <tr><td><span class="red">乾燥維持</span></td><td>患歯の乾燥状態保持</td></tr>
+        <tr><td><span class="highlight">視野確保</span></td><td>患歯を見やすくする</td></tr>
+        <tr><td><span class="highlight">誤飲防止</span></td><td>リーマー・ファイル等の誤飲防止</td></tr>
+        <tr><td><span class="highlight">軟組織保護</span></td><td>舌・頬粘膜・口唇の隔離</td></tr>
+        <tr><td><span class="red">封鎖性の確保</span></td><td>隔壁形成の目的</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102B15</div>
+        <p>ラバーダム防湿時における隔壁形成の目的はどれか。1つ選べ。</p>
+        <p>a: 舌の排除<br>
+        b: 咬合の確保<br>
+        c: 歯肉の圧排<br>
+        d: 封鎖性の確保<br>
+        e: 接触点の回復</p>
+        <div class="answer">正解: d（隔壁形成の目的は封鎖性の確保）</div>
+      </div>
+
+      <!-- ========== 基本セット ========== -->
+      <h3>基本セット器具 <span class="pattern-tag">出題3件</span></h3>
+      <table>
+        <tr><th>器具</th><th>用途</th></tr>
+        <tr><td><span class="red">ミラー</span></td><td>間接視野の確保、軟組織の圧排、光の反射</td></tr>
+        <tr><td><span class="red">ピンセット</span></td><td>歯や材料の把持、<span class="red">動揺度診査</span>や打診にも用いる</td></tr>
+        <tr><td><span class="highlight">エキスカベーター</span></td><td><span class="red">軟化象牙質の除去</span></td></tr>
+        <tr><td><span class="highlight">探針</span></td><td>歯質の硬さや、<span class="red">齲蝕の深さ</span>の診査</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">1類感染症</span>＝エボラ、ペスト、マールブルグ</li>
+          <li><span class="red">スタンダードプリコーション</span>＝全患者の体液を感染性として扱う</li>
+          <li><span class="red">高水準消毒薬</span>＝グルタラール（芽胞以外すべて）</li>
+          <li><span class="red">逆性石けん</span>＝ベンザルコニウム塩化物</li>
+          <li><span class="red">高圧蒸気滅菌</span>＝121℃ 20分</li>
+          <li><span class="red">ラバーダム隔壁</span>＝封鎖性の確保が目的</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

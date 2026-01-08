@@ -526,6 +526,57 @@
   }
 
   /**
+   * 検索テキストからスニペット（ヒット箇所のプレビュー）を取得
+   */
+  function getSearchSnippet(searchText, query) {
+    if (!searchText || !query) return '';
+
+    const terms = query.toLowerCase().trim().split(/\s+/).filter(t => t.length >= 2);
+    if (terms.length === 0) return '';
+
+    const lowerText = searchText.toLowerCase();
+
+    // 最初にヒットするタームを探す
+    let bestIndex = -1;
+    let bestTerm = '';
+    for (const term of terms) {
+      const idx = lowerText.indexOf(term);
+      if (idx !== -1 && (bestIndex === -1 || idx < bestIndex)) {
+        bestIndex = idx;
+        bestTerm = term;
+      }
+    }
+
+    if (bestIndex === -1) return '';
+
+    // 前後の文字を取得（約25文字ずつ）
+    const contextBefore = 25;
+    const contextAfter = 25;
+
+    const start = Math.max(0, bestIndex - contextBefore);
+    const end = Math.min(searchText.length, bestIndex + bestTerm.length + contextAfter);
+
+    let snippet = searchText.substring(start, end);
+
+    // 先頭・末尾を調整
+    if (start > 0) snippet = '...' + snippet;
+    if (end < searchText.length) snippet = snippet + '...';
+
+    // 検索ワードをハイライト
+    const regex = new RegExp(`(${escapeRegexForSnippet(bestTerm)})`, 'gi');
+    snippet = escapeHtml(snippet).replace(regex, '<mark>$1</mark>');
+
+    return snippet;
+  }
+
+  /**
+   * 正規表現用エスケープ（スニペット用）
+   */
+  function escapeRegexForSnippet(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  /**
    * 検索結果を描画
    */
   function renderSearchResults(items) {
@@ -540,11 +591,18 @@
       if (item.htmlPath) badges.push('まとめ');
       if (item.qaPath) badges.push('Q&A');
 
+      // スニペットを取得（タイトルにヒットしていない場合のみ表示）
+      const titleLower = (item.title || '').toLowerCase();
+      const queryLower = state.searchQuery.toLowerCase();
+      const showSnippet = !titleLower.includes(queryLower);
+      const snippet = showSnippet ? getSearchSnippet(item.searchText, state.searchQuery) : '';
+
       html += `
         <div class="search-result-item" data-id="${escapeHtml(item.id)}">
           <div>
             <div class="result-title">${searchEngine.highlight(escapeHtml(item.title), state.searchQuery)}</div>
             <div class="result-category">${escapeHtml(item.category)}</div>
+            ${snippet ? `<div class="result-snippet">${snippet}</div>` : ''}
           </div>
           <div class="result-badges">
             ${badges.map(b => `<span class="badge">${b}</span>`).join('')}

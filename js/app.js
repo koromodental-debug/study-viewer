@@ -2527,6 +2527,24 @@
    * Q&A表示モードを切り替え
    */
   function toggleQAMode() {
+    // 1. 切り替え前に現在見えている要素の位置を記録
+    const container = elements.qaContent;
+    const items = elements.qaDisplay.querySelectorAll('.qa-item');
+    let anchorElement = null;
+    let anchorOffset = 0;
+
+    for (const item of items) {
+      const rect = item.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      // コンテナ内で見えている要素を探す
+      if (rect.top >= containerRect.top && rect.top < containerRect.bottom) {
+        anchorElement = item;
+        anchorOffset = rect.top - containerRect.top;
+        break;
+      }
+    }
+
+    // 2. 状態を切り替え
     state.qaShowAll = !state.qaShowAll;
     elements.qaDisplay.classList.toggle('show-all', state.qaShowAll);
 
@@ -2554,6 +2572,17 @@
     if (elements.qaFloatingToggle) {
       elements.qaFloatingToggle.classList.toggle('active', state.qaShowAll);
       elements.qaFloatingToggle.querySelector('span').textContent = state.qaShowAll ? '折りたたむ' : '全て表示';
+    }
+
+    // 3. アンカー要素の位置を復元
+    if (anchorElement) {
+      requestAnimationFrame(() => {
+        const newRect = anchorElement.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const newOffset = newRect.top - containerRect.top;
+        const diff = newOffset - anchorOffset;
+        container.scrollTop += diff;
+      });
     }
   }
 

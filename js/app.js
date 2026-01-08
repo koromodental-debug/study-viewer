@@ -1521,11 +1521,20 @@
       // まとめカード
       content.innerHTML = item.content.html || '<p>コンテンツなし</p>';
     } else if (item.type === 'qa') {
-      // Q&Aカード
+      // Q&Aカード - タップで答えを表示
       content.innerHTML = `
         <div class="qa-q">${escapeHtml(item.content.question)}</div>
+        <div class="qa-tap-hint">タップで答えを表示</div>
         <div class="qa-a">${escapeHtml(item.content.answer)}</div>
       `;
+      // 質問タップで答えを表示
+      const qaQ = content.querySelector('.qa-q');
+      const qaA = content.querySelector('.qa-a');
+      const hint = content.querySelector('.qa-tap-hint');
+      qaQ.addEventListener('click', function() {
+        qaA.classList.toggle('show');
+        hint.style.display = qaA.classList.contains('show') ? 'none' : 'block';
+      });
     } else if (item.type === 'kakomon') {
       // 過去問カード
       const questionText = item.content.text || item.content.question || '';

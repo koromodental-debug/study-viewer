@@ -2094,11 +2094,13 @@ body {
   margin: 4px 0;
 }
 
-/* Q&Aカード */
+/* Q&Aカード - タップで答えを表示 */
 .note-card-content.qa-content .qa-q {
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   color: var(--text-color);
+  cursor: pointer;
+  padding: 8px 0;
 }
 
 .note-card-content.qa-content .qa-q::before {
@@ -2109,12 +2111,27 @@ body {
 .note-card-content.qa-content .qa-a {
   color: var(--text-color);
   line-height: 1.6;
+  display: none;
+  padding: 12px;
+  margin-top: 8px;
+  background: #f5f5f7;
+  border-radius: 8px;
 }
 
 .note-card-content.qa-content .qa-a::before {
   content: "A. ";
   color: var(--text-muted);
   font-weight: 600;
+}
+
+.note-card-content.qa-content .qa-a.show {
+  display: block;
+}
+
+.note-card-content.qa-content .qa-tap-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
 }
 
 /* 過去問カード */
@@ -2175,20 +2192,39 @@ body {
   fill: #ff9500;
 }
 
-/* Q&Aカード内のお気に入りボタン */
+/* Q&Aカード内のお気に入りボタン - 控えめに */
 .qa-item {
   position: relative;
 }
 
 .qa-item .favorite-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.03);
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  opacity: 0.3;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.qa-item .favorite-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.qa-item:hover .favorite-btn,
+.qa-item .favorite-btn:focus {
+  opacity: 0.6;
+}
+
+.qa-item .favorite-btn.active {
+  opacity: 1;
 }
 
 .qa-item .favorite-btn:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: transparent;
+  opacity: 0.8;
 }
 
 /* 過去問カード内のお気に入りボタン */

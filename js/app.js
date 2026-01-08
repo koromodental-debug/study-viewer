@@ -7,6 +7,7 @@
     currentItem: null,
     currentTab: 'html',
     searchQuery: '',
+    searchFilter: 'all',  // 検索フィルター: 'all', 'html', 'qa', 'kakomon'
     highlightQuery: null,  // 検索結果からジャンプ時のハイライト用
     collapsedCategories: new Set(),
     sidebarOpen: false,
@@ -44,6 +45,7 @@
     searchInput: document.getElementById('search-input'),
     closeSearch: document.getElementById('close-search'),
     searchResults: document.getElementById('search-results'),
+    searchFilterTabs: document.getElementById('search-filter-tabs'),
     tabs: document.querySelectorAll('.floating-tab'),
     htmlContent: document.getElementById('html-content'),
     qaContent: document.getElementById('qa-content'),
@@ -180,6 +182,20 @@
         handleSearch(e.target.value);
       }, 150);
     });
+
+    // 検索フィルタータブ
+    if (elements.searchFilterTabs) {
+      elements.searchFilterTabs.querySelectorAll('.search-filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          // アクティブ状態を更新
+          elements.searchFilterTabs.querySelectorAll('.search-filter').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          // フィルターを更新して再検索
+          state.searchFilter = btn.dataset.filter;
+          handleSearch(state.searchQuery);
+        });
+      });
+    }
 
     // タブ切り替え
     elements.tabs.forEach(tab => {
@@ -521,7 +537,25 @@
       return;
     }
 
-    const results = searchEngine.search(query);
+    let results = searchEngine.search(query);
+
+    // フィルターを適用
+    if (state.searchFilter !== 'all') {
+      results = results.filter(item => {
+        switch (state.searchFilter) {
+          case 'html':
+            return item.htmlPath;
+          case 'qa':
+            return item.qaPath;
+          case 'kakomon':
+            // 過去問は科目が設定されているトピック
+            return item.subject && item.subject !== 'その他';
+          default:
+            return true;
+        }
+      });
+    }
+
     renderSearchResults(results.slice(0, 30));
   }
 
@@ -587,10 +621,6 @@
 
     let html = '';
     items.forEach(item => {
-      const badges = [];
-      if (item.htmlPath) badges.push('まとめ');
-      if (item.qaPath) badges.push('Q&A');
-
       // スニペットを取得（タイトルにヒットしていない場合のみ表示）
       const titleLower = (item.title || '').toLowerCase();
       const queryLower = state.searchQuery.toLowerCase();
@@ -599,13 +629,10 @@
 
       html += `
         <div class="search-result-item" data-id="${escapeHtml(item.id)}">
-          <div>
+          <div class="result-content">
             <div class="result-title">${searchEngine.highlight(escapeHtml(item.title), state.searchQuery)}</div>
             <div class="result-category">${escapeHtml(item.category)}</div>
             ${snippet ? `<div class="result-snippet">${snippet}</div>` : ''}
-          </div>
-          <div class="result-badges">
-            ${badges.map(b => `<span class="badge">${b}</span>`).join('')}
           </div>
         </div>
       `;

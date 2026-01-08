@@ -575,6 +575,36 @@ body {
   z-index: 10;
 }
 
+/* 検索フィルタータブ */
+.search-filter-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background: #ffffff;
+}
+
+.search-filter {
+  padding: 8px 16px;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-filter:hover {
+  background: #e0e0e0;
+}
+
+.search-filter.active {
+  background: var(--primary-color);
+  color: white;
+}
+
 .search-modal-header input {
   flex: 1;
   padding: 14px 16px;

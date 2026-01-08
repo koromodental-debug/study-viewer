@@ -7,7 +7,8 @@ const KakomonModule = (function() {
 
   // 状態（カードごとの状態はdata属性で管理）
   const state = {
-    currentQuestions: []
+    currentQuestions: [],
+    currentItem: null
   };
 
   /**
@@ -83,6 +84,7 @@ const KakomonModule = (function() {
 
     // 状態を更新
     state.currentQuestions = filtered;
+    state.currentItem = item; // トピック情報を保存
 
     // 全問を一覧表示
     renderAllQuestions(elements);
@@ -222,10 +224,15 @@ const KakomonModule = (function() {
     }
 
     return `
-      <div class="kakomon-card" data-index="${index}" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}" data-answered="false">
+      <div class="kakomon-card" data-index="${index}" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}" data-answered="false" data-code="${escapeHtml(question.code)}" data-text="${escapeHtml(question.text)}">
         <div class="kakomon-header">
           <span class="kakomon-code">${escapeHtml(question.code)}</span>
           <span class="kakomon-index">${index + 1} / ${total}</span>
+          <button class="favorite-btn" aria-label="お気に入り">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          </button>
         </div>
 
         <div class="kakomon-question">
@@ -271,6 +278,9 @@ const KakomonModule = (function() {
    */
   function bindAllQuizEvents(elements) {
     const display = elements.kakomonDisplay;
+
+    // お気に入りボタンのイベントをバインド
+    bindKakomonFavoriteButtons(display);
 
     // 各カードごとにイベント設定
     display.querySelectorAll('.kakomon-card').forEach(card => {
@@ -368,6 +378,41 @@ const KakomonModule = (function() {
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
+  }
+
+  /**
+   * 過去問カードのお気に入りボタンにイベントをバインド
+   */
+  function bindKakomonFavoriteButtons(display) {
+    if (typeof FavoritesManager === 'undefined' || !state.currentItem) return;
+
+    const topicId = state.currentItem.subject || state.currentItem.id;
+
+    display.querySelectorAll('.kakomon-card').forEach(card => {
+      const code = card.dataset.code;
+      const favoriteBtn = card.querySelector('.favorite-btn');
+      if (!favoriteBtn) return;
+
+      // 既にお気に入りかどうかをチェックして状態を反映
+      const isFav = FavoritesManager.isFavoriteByParams('kakomon', topicId, code);
+      favoriteBtn.classList.toggle('active', isFav);
+
+      favoriteBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+
+        const questionText = card.dataset.text || '';
+        const answer = card.dataset.answer || '';
+
+        const content = {
+          code: code,
+          text: questionText,
+          answer: answer
+        };
+
+        const isNowFavorite = FavoritesManager.toggle('kakomon', topicId, code, content);
+        this.classList.toggle('active', isNowFavorite);
+      });
+    });
   }
 
   // 公開API

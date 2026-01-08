@@ -1758,3 +1758,445 @@ body {
     font-size: 12px;
   }
 }
+
+/* ===== フローティングノートボタン（左下） ===== */
+.floating-note-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #1d1d1f;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.floating-note-btn:hover {
+  transform: scale(1.05);
+}
+
+.floating-note-btn:active {
+  transform: scale(0.95);
+}
+
+.floating-note-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.floating-note-btn .note-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: #ff3b30;
+  color: white;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Safe area対応 */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .floating-note-btn {
+    bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+}
+
+/* モバイル最適化 */
+@media (max-width: 480px) {
+  .floating-note-btn {
+    bottom: 16px;
+    left: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .floating-note-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ===== ノートオーバーレイ ===== */
+.note-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.note-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.note-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.note-overlay.open .note-modal {
+  transform: translateY(0);
+}
+
+.note-modal-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.note-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  flex: 1;
+}
+
+.note-count {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-right: 16px;
+}
+
+.close-note-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.close-note-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.close-note-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--text-color);
+}
+
+/* ノートタイムライン */
+.note-timeline {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px;
+  padding-bottom: 100px;
+}
+
+/* 空状態 */
+.note-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 300px;
+  text-align: center;
+  padding: 40px;
+}
+
+.note-empty.hidden {
+  display: none;
+}
+
+.note-empty-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.note-empty-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--text-muted);
+}
+
+.note-empty-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0 0 8px 0;
+}
+
+.note-empty-hint {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ノートカード */
+.note-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.note-card-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.note-card-type {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+.note-card-type.html {
+  background: #e8f4ff;
+  color: #007AFF;
+}
+
+.note-card-type.qa {
+  background: #fff3e0;
+  color: #ff9500;
+}
+
+.note-card-type.kakomon {
+  background: #e8f5e9;
+  color: #34c759;
+}
+
+.note-card-topic {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-card-delete {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.note-card-delete:hover {
+  background: #ffebee;
+  color: #ff3b30;
+}
+
+.note-card-delete svg {
+  width: 16px;
+  height: 16px;
+}
+
+.note-card-content {
+  padding: 16px;
+}
+
+/* まとめカード */
+.note-card-content.html-content {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.note-card-content.html-content h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--text-color);
+}
+
+.note-card-content.html-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+.note-card-content.html-content th,
+.note-card-content.html-content td {
+  padding: 8px 10px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.note-card-content.html-content th {
+  background: var(--bg-color);
+  font-weight: 600;
+}
+
+.note-card-content.html-content ul,
+.note-card-content.html-content ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.note-card-content.html-content li {
+  margin: 4px 0;
+}
+
+/* Q&Aカード */
+.note-card-content.qa-content .qa-q {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.note-card-content.qa-content .qa-q::before {
+  content: "Q. ";
+  color: var(--text-muted);
+}
+
+.note-card-content.qa-content .qa-a {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.note-card-content.qa-content .qa-a::before {
+  content: "A. ";
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* 過去問カード */
+.note-card-content.kakomon-content .kakomon-code-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  background: var(--bg-color);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.note-card-content.kakomon-content .kakomon-q {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.note-card-content.kakomon-content .kakomon-answer {
+  font-size: 14px;
+  font-weight: 600;
+  color: #28a745;
+}
+
+/* ===== お気に入りボタン（各カード用） ===== */
+.favorite-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+  background: white;
+}
+
+.favorite-btn:active {
+  transform: scale(0.9);
+}
+
+.favorite-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: #d1d1d6;
+  transition: fill 0.2s ease;
+}
+
+.favorite-btn.active svg {
+  fill: #ff9500;
+}
+
+/* Q&Aカード内のお気に入りボタン */
+.qa-item {
+  position: relative;
+}
+
+.qa-item .favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.qa-item .favorite-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* 過去問カード内のお気に入りボタン */
+.kakomon-header .favorite-btn {
+  background: rgba(0, 0, 0, 0.03);
+  margin-left: 8px;
+}
+
+.kakomon-header .favorite-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}

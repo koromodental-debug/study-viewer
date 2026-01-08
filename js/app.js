@@ -48,7 +48,15 @@
     kakomonPlaceholder: document.getElementById('kakomon-placeholder'),
     kakomonCurrent: document.getElementById('kakomon-current'),
     kakomonTotal: document.getElementById('kakomon-total'),
-    kakomonReset: document.getElementById('kakomon-reset')
+    kakomonReset: document.getElementById('kakomon-reset'),
+    // ノート（お気に入り）
+    noteBtn: document.getElementById('note-btn'),
+    noteBadge: document.getElementById('note-badge'),
+    noteOverlay: document.getElementById('note-overlay'),
+    closeNote: document.getElementById('close-note'),
+    noteTimeline: document.getElementById('note-timeline'),
+    noteCount: document.getElementById('note-count'),
+    noteEmpty: document.getElementById('note-empty')
   };
 
   // 検索エンジン
@@ -83,6 +91,15 @@
     bindEvents();
     restoreState();
     setupKeyboardHandler();
+
+    // お気に入り機能の初期化
+    if (typeof FavoritesManager !== 'undefined') {
+      FavoritesManager.init();
+      updateNoteBadge();
+      FavoritesManager.addListener(function() {
+        updateNoteBadge();
+      });
+    }
   }
 
   /**
@@ -213,6 +230,21 @@
     }
     if (elements.welcomeCardMenu) {
       elements.welcomeCardMenu.addEventListener('click', openSidebar);
+    }
+
+    // ノートボタン
+    if (elements.noteBtn) {
+      elements.noteBtn.addEventListener('click', openNoteOverlay);
+    }
+    if (elements.closeNote) {
+      elements.closeNote.addEventListener('click', closeNoteOverlay);
+    }
+    if (elements.noteOverlay) {
+      elements.noteOverlay.addEventListener('click', function(e) {
+        if (e.target === elements.noteOverlay) {
+          closeNoteOverlay();
+        }
+      });
     }
   }
 
@@ -861,6 +893,8 @@
         if (window.setupIframeSwipeHandler) {
           window.setupIframeSwipeHandler(elements.htmlFrame);
         }
+        // まとめカードにお気に入りボタンを追加
+        injectFavoriteButtons(elements.htmlFrame, item);
       };
     } else {
       elements.htmlFrame.src = '';
@@ -931,10 +965,48 @@
         });
       });
 
+      // お気に入りボタンのイベント
+      bindQAFavoriteButtons();
+
     } catch (e) {
       elements.qaDisplay.innerHTML = '<div class="no-results">Q&Aを読み込めませんでした</div>';
       elements.qaDisplay.style.display = 'block';
     }
+  }
+
+  /**
+   * Q&Aのお気に入りボタンにイベントをバインド
+   */
+  function bindQAFavoriteButtons() {
+    if (typeof FavoritesManager === 'undefined' || !state.currentItem) return;
+
+    const topicId = state.currentItem.id;
+
+    elements.qaDisplay.querySelectorAll('.qa-item').forEach(item => {
+      const cardIndex = item.dataset.cardIndex;
+      const favoriteBtn = item.querySelector('.favorite-btn');
+      if (!favoriteBtn) return;
+
+      // 既にお気に入りかどうかをチェックして状態を反映
+      const isFav = FavoritesManager.isFavoriteByParams('qa', topicId, cardIndex);
+      favoriteBtn.classList.toggle('active', isFav);
+
+      favoriteBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+
+        const question = item.dataset.question || '';
+        const answerEl = item.querySelector('.qa-answer');
+        const answer = answerEl ? (answerEl.dataset.answer || answerEl.textContent) : '';
+
+        const content = {
+          question: question,
+          answer: answer
+        };
+
+        const isNowFavorite = FavoritesManager.toggle('qa', topicId, cardIndex, content);
+        this.classList.toggle('active', isNowFavorite);
+      });
+    });
   }
 
   /**
@@ -948,6 +1020,7 @@
     let relatedItems = [];
     let inTable = false;
     let tableRows = [];
+    let qaIndex = 0; // Q&Aカードのインデックス
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim();
@@ -1017,13 +1090,16 @@
         }
         inRelated = false;
         const question = line.slice(3);
-        html += `<div class="qa-item"><div class="qa-question">${escapeHtml(question)}</div>`;
+        html += `<div class="qa-item" data-card-index="${qaIndex}" data-question="${escapeHtml(question)}">`;
+        html += `<button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>`;
+        html += `<div class="qa-question">${escapeHtml(question)}</div>`;
+        qaIndex++;
         continue;
       }
 
       if (line.startsWith('A: ')) {
         const answer = line.slice(3);
-        html += `<div class="qa-answer">${escapeHtml(answer)}</div></div>`;
+        html += `<div class="qa-answer" data-answer="${escapeHtml(answer)}">${escapeHtml(answer)}</div></div>`;
         continue;
       }
     }
@@ -1327,6 +1403,299 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
   }
+
+  // ===== ノート（お気に入り）機能 =====
+
+  /**
+   * ノートオーバーレイを開く
+   */
+  function openNoteOverlay() {
+    if (elements.noteOverlay) {
+      elements.noteOverlay.classList.add('open');
+      renderNoteTimeline();
+    }
+  }
+
+  /**
+   * ノートオーバーレイを閉じる
+   */
+  function closeNoteOverlay() {
+    if (elements.noteOverlay) {
+      elements.noteOverlay.classList.remove('open');
+    }
+  }
+
+  /**
+   * ノートバッジを更新
+   */
+  function updateNoteBadge() {
+    if (!elements.noteBadge || typeof FavoritesManager === 'undefined') return;
+
+    const count = FavoritesManager.count();
+    if (count > 0) {
+      elements.noteBadge.textContent = count > 99 ? '99+' : count;
+      elements.noteBadge.style.display = 'flex';
+    } else {
+      elements.noteBadge.style.display = 'none';
+    }
+
+    // カウント表示も更新
+    if (elements.noteCount) {
+      elements.noteCount.textContent = count + '件';
+    }
+  }
+
+  /**
+   * ノートタイムラインを描画
+   */
+  function renderNoteTimeline() {
+    if (!elements.noteTimeline || typeof FavoritesManager === 'undefined') return;
+
+    const favorites = FavoritesManager.getAll();
+
+    // 空状態の表示切り替え
+    if (elements.noteEmpty) {
+      elements.noteEmpty.classList.toggle('hidden', favorites.length > 0);
+    }
+
+    // カード部分をクリア（空状態以外）
+    const existingCards = elements.noteTimeline.querySelectorAll('.note-card');
+    existingCards.forEach(card => card.remove());
+
+    if (favorites.length === 0) return;
+
+    // カードを生成
+    favorites.forEach(function(item) {
+      const card = createNoteCard(item);
+      elements.noteTimeline.appendChild(card);
+    });
+  }
+
+  /**
+   * ノートカードを生成
+   */
+  function createNoteCard(item) {
+    const card = document.createElement('div');
+    card.className = 'note-card';
+    card.dataset.id = item.id;
+
+    // タイプラベル
+    const typeLabels = {
+      html: 'まとめ',
+      qa: 'Q&A',
+      kakomon: '過去問'
+    };
+
+    // ヘッダー
+    const header = document.createElement('div');
+    header.className = 'note-card-header';
+    header.innerHTML = `
+      <span class="note-card-type ${item.type}">${typeLabels[item.type] || item.type}</span>
+      <span class="note-card-topic">${escapeHtml(item.topicId)}</span>
+      <button class="note-card-delete" data-id="${escapeHtml(item.id)}" aria-label="削除">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    `;
+
+    // 削除ボタンのイベント
+    const deleteBtn = header.querySelector('.note-card-delete');
+    deleteBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const id = this.dataset.id;
+      FavoritesManager.remove(id);
+      card.remove();
+
+      // 空状態の再チェック
+      if (FavoritesManager.count() === 0 && elements.noteEmpty) {
+        elements.noteEmpty.classList.remove('hidden');
+      }
+    });
+
+    // コンテンツ
+    const content = document.createElement('div');
+    content.className = 'note-card-content ' + item.type + '-content';
+
+    if (item.type === 'html') {
+      // まとめカード
+      content.innerHTML = item.content.html || '<p>コンテンツなし</p>';
+    } else if (item.type === 'qa') {
+      // Q&Aカード
+      content.innerHTML = `
+        <div class="qa-q">${escapeHtml(item.content.question)}</div>
+        <div class="qa-a">${escapeHtml(item.content.answer)}</div>
+      `;
+    } else if (item.type === 'kakomon') {
+      // 過去問カード
+      const questionText = item.content.text || item.content.question || '';
+      const answerText = item.content.answer || '';
+      content.innerHTML = `
+        <span class="kakomon-code-badge">${escapeHtml(item.content.code || item.cardIndex)}</span>
+        <div class="kakomon-q">${escapeHtml(questionText.substring(0, 200))}${questionText.length > 200 ? '...' : ''}</div>
+        <div class="kakomon-answer">正解: ${escapeHtml(answerText)}</div>
+      `;
+    }
+
+    card.appendChild(header);
+    card.appendChild(content);
+
+    return card;
+  }
+
+  /**
+   * お気に入りボタンのSVG
+   */
+  function getFavoriteButtonHTML(isActive) {
+    const activeClass = isActive ? 'active' : '';
+    return `
+      <button class="favorite-btn ${activeClass}" aria-label="お気に入り">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+      </button>
+    `;
+  }
+
+  /**
+   * まとめHTML（iframe内）にお気に入りボタンを注入
+   */
+  function injectFavoriteButtons(iframe, item) {
+    if (typeof FavoritesManager === 'undefined') return;
+
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc) return;
+
+      const topicId = item.id;
+      let cardIndex = 0;
+
+      // お気に入りボタン用のCSS
+      const style = doc.createElement('style');
+      style.id = 'favorite-btn-style';
+      style.textContent = `
+        .html-card-wrapper {
+          position: relative;
+          margin: 16px 0;
+          padding: 16px;
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .html-card-wrapper .favorite-btn {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          width: 32px;
+          height: 32px;
+          border: none;
+          background: rgba(0, 0, 0, 0.03);
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+          z-index: 10;
+        }
+        .html-card-wrapper .favorite-btn:hover {
+          transform: scale(1.1);
+          background: rgba(0, 0, 0, 0.08);
+        }
+        .html-card-wrapper .favorite-btn:active {
+          transform: scale(0.9);
+        }
+        .html-card-wrapper .favorite-btn svg {
+          width: 18px;
+          height: 18px;
+          fill: #d1d1d6;
+          transition: fill 0.2s ease;
+        }
+        .html-card-wrapper .favorite-btn.active svg {
+          fill: #ff9500;
+        }
+      `;
+      doc.head.appendChild(style);
+
+      // h3要素をカード化
+      const h3Elements = doc.querySelectorAll('.container h3');
+      h3Elements.forEach((h3, index) => {
+        // 既にラップ済みならスキップ
+        if (h3.parentElement.classList.contains('html-card-wrapper')) return;
+
+        // h3と次のh3/h2までの要素を収集
+        const cardContent = collectContentUntilNextHeading(h3);
+
+        // ラッパーを作成
+        const wrapper = doc.createElement('div');
+        wrapper.className = 'html-card-wrapper';
+        wrapper.dataset.cardIndex = cardIndex;
+        wrapper.dataset.title = h3.textContent;
+
+        // お気に入りボタンを追加
+        const isFav = FavoritesManager.isFavoriteByParams('html', topicId, cardIndex);
+        const btn = doc.createElement('button');
+        btn.className = 'favorite-btn' + (isFav ? ' active' : '');
+        btn.setAttribute('aria-label', 'お気に入り');
+        btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>';
+
+        // クリックイベント
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          e.preventDefault();
+
+          const content = {
+            title: h3.textContent,
+            html: cardContent
+          };
+
+          const isNowFavorite = FavoritesManager.toggle('html', topicId, wrapper.dataset.cardIndex, content);
+          this.classList.toggle('active', isNowFavorite);
+        });
+
+        // h3の前にラッパーを挿入
+        h3.parentNode.insertBefore(wrapper, h3);
+        wrapper.appendChild(btn);
+        wrapper.appendChild(h3);
+
+        cardIndex++;
+      });
+
+    } catch (e) {
+      console.log('[Favorites] iframe注入エラー:', e);
+    }
+  }
+
+  /**
+   * h3から次の見出しまでのコンテンツを収集（HTMLとして）
+   */
+  function collectContentUntilNextHeading(h3) {
+    let html = h3.outerHTML;
+    let sibling = h3.nextElementSibling;
+
+    while (sibling) {
+      const tagName = sibling.tagName.toLowerCase();
+      // 次の見出しまたはhtml-card-wrapperで停止
+      if (tagName === 'h2' || tagName === 'h3' || sibling.classList.contains('html-card-wrapper')) {
+        break;
+      }
+      // point-boxは含めない（別カード扱い）
+      if (sibling.classList.contains('point-box')) {
+        break;
+      }
+      html += sibling.outerHTML;
+      sibling = sibling.nextElementSibling;
+    }
+
+    return html;
+  }
+
+  // グローバルに公開（他モジュールから使用するため）
+  window.FavoritesUI = {
+    getFavoriteButtonHTML: getFavoriteButtonHTML,
+    updateNoteBadge: updateNoteBadge,
+    renderNoteTimeline: renderNoteTimeline
+  };
 
   // 起動
   document.addEventListener('DOMContentLoaded', init);

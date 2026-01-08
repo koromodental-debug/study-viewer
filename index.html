@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=20260108b">
+  <link rel="stylesheet" href="css/style.css?v=20260108c">
 </head>
 <body>
   <div class="app">
@@ -16,11 +16,19 @@
       <h1 class="header-title">ココシカ</h1>
     </header>
 
-    <!-- フローティングメニューボタン -->
+    <!-- フローティングメニューボタン（右下） -->
     <button id="menu-btn" class="floating-menu-btn" aria-label="メニュー">
       <span></span>
       <span></span>
       <span></span>
+    </button>
+
+    <!-- フローティングノートボタン（左下） -->
+    <button id="note-btn" class="floating-note-btn" aria-label="ノート">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+      </svg>
+      <span class="note-badge" id="note-badge" style="display:none;">0</span>
     </button>
 
     <!-- サイドバー -->
@@ -50,6 +58,33 @@
 
     <!-- サイドバーオーバーレイ -->
     <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- ノートオーバーレイ -->
+    <div id="note-overlay" class="note-overlay">
+      <div class="note-modal">
+        <div class="note-modal-header">
+          <h2 class="note-modal-title">お気に入りノート</h2>
+          <span class="note-count" id="note-count">0件</span>
+          <button id="close-note" class="close-note-btn" aria-label="閉じる">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="note-timeline" id="note-timeline">
+          <!-- お気に入りカードが動的に生成される -->
+          <div class="note-empty" id="note-empty">
+            <div class="note-empty-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+            </div>
+            <p class="note-empty-text">まだお気に入りがありません</p>
+            <p class="note-empty-hint">各カードの★をタップして追加</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- 検索オーバーレイ -->
     <div id="search-overlay" class="search-overlay">
@@ -180,9 +215,10 @@
 
   </div>
 
-  <script src="js/data.js?v=20260108b"></script>
-  <script src="js/search.js?v=20260108b"></script>
-  <script src="js/kakomon.js?v=20260108b"></script>
-  <script src="js/app.js?v=20260108b"></script>
+  <script src="js/data.js?v=20260108c"></script>
+  <script src="js/search.js?v=20260108c"></script>
+  <script src="js/favorites.js?v=20260108c"></script>
+  <script src="js/kakomon.js?v=20260108c"></script>
+  <script src="js/app.js?v=20260108c"></script>
 </body>
 </html>

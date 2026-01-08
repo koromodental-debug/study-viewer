@@ -1562,12 +1562,32 @@
         hint.style.display = qaA.classList.contains('show') ? 'none' : 'block';
       });
     } else if (item.type === 'kakomon') {
-      // 過去問カード
+      // 過去問カード（全文表示）
       const questionText = item.content.text || item.content.question || '';
       const answerText = item.content.answer || '';
+      const numChoices = item.content.numChoices || '1';
+      const choices = item.content.choices || {};
+      const images = item.content.images || [];
+
+      // 画像HTML
+      let imagesHtml = '';
+      if (images.length > 0) {
+        imagesHtml = `<div class="note-kakomon-images">${images.map(src => `<img src="${escapeHtml(src)}" alt="問題画像">`).join('')}</div>`;
+      }
+
+      // 選択肢HTML
+      let choicesHtml = '';
+      const choiceEntries = Object.entries(choices);
+      if (choiceEntries.length > 0) {
+        choicesHtml = `<div class="note-kakomon-choices">${choiceEntries.map(([key, value]) => `<div class="note-choice"><span class="note-choice-label">${escapeHtml(key)}</span>${escapeHtml(value)}</div>`).join('')}</div>`;
+      }
+
       content.innerHTML = `
         <span class="kakomon-code-badge">${escapeHtml(item.content.code || item.cardIndex)}</span>
-        <div class="kakomon-q">${escapeHtml(questionText.substring(0, 200))}${questionText.length > 200 ? '...' : ''}</div>
+        <div class="kakomon-q">${escapeHtml(questionText)}</div>
+        ${imagesHtml}
+        <div class="kakomon-instruction">${numChoices > 1 ? numChoices + 'つ選べ。' : '1つ選べ。'}</div>
+        ${choicesHtml}
         <div class="kakomon-answer">正解: ${escapeHtml(answerText)}</div>
       `;
     }

@@ -223,8 +223,22 @@ const KakomonModule = (function() {
       }
     }
 
+    // 選択肢をJSON形式で保存
+    const choicesJson = JSON.stringify(Object.fromEntries(validChoices));
+
+    // 画像パスを保存
+    let imagePathsJson = '[]';
+    if (question.hasImage && question.imageFiles) {
+      const examNum = question.examNum || question.code.match(/^\d+/)?.[0];
+      const imageList = question.imageFiles.split(',').map(f => f.trim()).filter(f => f);
+      if (imageList.length > 0 && examNum) {
+        const paths = imageList.map(file => `images/${examNum}回_Web画像/${file}`);
+        imagePathsJson = JSON.stringify(paths);
+      }
+    }
+
     return `
-      <div class="kakomon-card" data-index="${index}" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}" data-answered="false" data-code="${escapeHtml(question.code)}" data-text="${escapeHtml(question.text)}">
+      <div class="kakomon-card" data-index="${index}" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}" data-answered="false" data-code="${escapeHtml(question.code)}" data-text="${escapeHtml(question.text)}" data-choices='${choicesJson.replace(/'/g, "&#39;")}' data-images='${imagePathsJson}'>
         <div class="kakomon-header">
           <span class="kakomon-code">${escapeHtml(question.code)}</span>
           <span class="kakomon-index">${index + 1} / ${total}</span>
@@ -402,11 +416,25 @@ const KakomonModule = (function() {
 
         const questionText = card.dataset.text || '';
         const answer = card.dataset.answer || '';
+        const numChoices = card.dataset.num || '1';
+
+        // 選択肢と画像を取得
+        let choices = {};
+        let images = [];
+        try {
+          choices = JSON.parse(card.dataset.choices || '{}');
+          images = JSON.parse(card.dataset.images || '[]');
+        } catch (err) {
+          console.log('パースエラー:', err);
+        }
 
         const content = {
           code: code,
           text: questionText,
-          answer: answer
+          answer: answer,
+          numChoices: numChoices,
+          choices: choices,
+          images: images
         };
 
         const isNowFavorite = FavoritesManager.toggle('kakomon', topicId, code, content);

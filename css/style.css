@@ -2361,13 +2361,14 @@ body {
   position: sticky;
   top: var(--header-offset);
   z-index: 10;
-  background: linear-gradient(135deg, #1d1d1f 0%, #2c2c2e 100%);
+  background: #1d1d1f;
   color: white;
   padding: 12px 20px;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  transition: top 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  contain: layout style;
 }
 
 .topic-section-subject {

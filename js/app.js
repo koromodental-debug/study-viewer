@@ -645,6 +645,18 @@
       el.addEventListener('click', () => {
         // 検索クエリを保持（ページ内ハイライト用）
         state.highlightQuery = state.searchQuery;
+
+        // フィルターに応じてタブを切り替え
+        const filterToTab = {
+          'html': 'html',
+          'qa': 'qa',
+          'kakomon': 'kakomon'
+        };
+        const targetTab = filterToTab[state.searchFilter];
+        if (targetTab) {
+          switchTab(targetTab);
+        }
+
         selectItem(el.dataset.id);
         closeSearch();
       });

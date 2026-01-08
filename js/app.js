@@ -362,10 +362,12 @@
         // 下にスクロール → ヘッダーを隠す（60px以上スクロールした場合のみ）
         if (diff > threshold && scrollTop > 60) {
           elements.header.classList.add('hidden');
+          document.documentElement.style.setProperty('--header-offset', '0px');
         }
         // 上にスクロール → ヘッダーを表示
         else if (diff < -threshold) {
           elements.header.classList.remove('hidden');
+          document.documentElement.style.setProperty('--header-offset', '0px');
         }
 
         lastScrollTop = scrollTop;

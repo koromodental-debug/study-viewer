@@ -15,6 +15,7 @@
   --text-color: #2c2c2c;
   --text-muted: #888888;
   --header-height: 60px;
+  --header-offset: 0px;
   --tabs-height: 61px;
   --radius-full: 9999px;
   --radius-lg: 16px;
@@ -2301,7 +2302,7 @@ body {
 /* トピックセクションヘッダー（区切り） */
 .topic-section-header {
   position: sticky;
-  top: 0;
+  top: var(--header-offset);
   z-index: 10;
   background: linear-gradient(135deg, #1d1d1f 0%, #2c2c2e 100%);
   color: white;
@@ -2309,6 +2310,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  transition: top 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .topic-section-subject {

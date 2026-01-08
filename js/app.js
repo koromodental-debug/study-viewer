@@ -13,10 +13,19 @@
     qaShowAll: false,
     lastScrollY: 0,
     headerHidden: false,
-    // 無限スクロール用
-    loadedTopicIndex: -1,      // 現在読み込み済みの最後のトピックのインデックス
+    // 無限スクロール用（まとめ）
+    loadedTopicIndex: -1,       // 下方向：読み込み済みの最後のトピックインデックス
+    firstLoadedTopicIndex: -1,  // 上方向：読み込み済みの最初のトピックインデックス
     isLoadingMore: false,       // 追加読み込み中フラグ
-    startTopicIndex: -1         // 最初に選択されたトピックのインデックス
+    startTopicIndex: -1,        // 最初に選択されたトピックのインデックス
+    // 無限スクロール用（Q&A）
+    qaLoadedTopicIndex: -1,
+    qaFirstLoadedTopicIndex: -1,
+    isLoadingMoreQA: false,
+    // 無限スクロール用（過去問）
+    kakomonLoadedTopicIndex: -1,
+    kakomonFirstLoadedTopicIndex: -1,
+    isLoadingMoreKakomon: false
   };
 
   // DOM要素
@@ -417,6 +426,7 @@
     elements.htmlDisplay.innerHTML = '';
     elements.htmlDisplay.style.display = 'none';
     state.loadedTopicIndex = -1;
+    state.firstLoadedTopicIndex = -1;
     state.startTopicIndex = -1;
 
     // Q&A を非表示
@@ -889,6 +899,7 @@
     const itemIndex = DATA.findIndex(d => d.id === item.id);
     state.startTopicIndex = itemIndex;
     state.loadedTopicIndex = itemIndex;
+    state.firstLoadedTopicIndex = itemIndex;
     state.isLoadingMore = false;
 
     // HTML（無限スクロール対応）
@@ -911,9 +922,23 @@
       }
     }
 
-    // Q&A
+    // Q&A（無限スクロール対応）
+    state.qaLoadedTopicIndex = itemIndex;
+    state.qaFirstLoadedTopicIndex = itemIndex;
+    state.isLoadingMoreQA = false;
+
     if (item.qaPath) {
-      loadQA(item.qaPath);
+      elements.qaDisplay.innerHTML = '';
+      elements.qaDisplay.style.display = 'block';
+      elements.qaContent.querySelector('.placeholder').style.display = 'none';
+      if (elements.qaToolbar) {
+        elements.qaToolbar.style.display = 'block';
+        elements.qaToolbar.classList.remove('hidden');
+      }
+      // 最初のトピックを読み込み
+      loadQATopic(item, true);
+      // 無限スクロールのセットアップ
+      setupQAInfiniteScroll();
     } else {
       elements.qaDisplay.innerHTML = '';
       elements.qaDisplay.style.display = 'none';
@@ -925,14 +950,29 @@
       }
     }
 
-    // 過去問
+    // 過去問（無限スクロール対応）
+    state.kakomonLoadedTopicIndex = itemIndex;
+    state.kakomonFirstLoadedTopicIndex = itemIndex;
+    state.isLoadingMoreKakomon = false;
+
     if (typeof KakomonModule !== 'undefined') {
-      KakomonModule.loadKakomon(item, elements);
+      elements.kakomonDisplay.innerHTML = '';
+      elements.kakomonDisplay.style.display = 'block';
+      if (elements.kakomonPlaceholder) {
+        elements.kakomonPlaceholder.style.display = 'none';
+      }
+      if (elements.kakomonToolbar) {
+        elements.kakomonToolbar.style.display = 'none';
+      }
+      // 最初のトピックを読み込み
+      loadKakomonTopic(item, true);
+      // 無限スクロールのセットアップ
+      setupKakomonInfiniteScroll();
     }
   }
 
   /**
-   * トピックのHTMLを読み込んでdivに追加
+   * トピックのHTMLを読み込んでdivに追加（末尾）
    */
   async function loadTopicHTML(item, isFirst = false) {
     if (!item || !item.htmlPath) return;
@@ -948,26 +988,9 @@
       const bodyContent = doc.body.innerHTML;
 
       // トピックセクションを作成
-      const section = document.createElement('div');
-      section.className = 'topic-section';
-      section.dataset.topicId = item.id;
+      const section = createTopicSection(item, bodyContent);
 
-      // トピックヘッダー（区切り）を追加
-      const header = document.createElement('div');
-      header.className = 'topic-section-header';
-      header.innerHTML = `
-        <span class="topic-section-subject">${escapeHtml(item.subject || '')}</span>
-        <span class="topic-section-title">${escapeHtml(item.title || item.id)}</span>
-      `;
-      section.appendChild(header);
-
-      // コンテンツを追加
-      const content = document.createElement('div');
-      content.className = 'topic-section-content';
-      content.innerHTML = bodyContent;
-      section.appendChild(content);
-
-      // 表示領域に追加
+      // 表示領域に追加（末尾）
       elements.htmlDisplay.appendChild(section);
 
       // お気に入りボタンを追加（セクション内のh3に対して）
@@ -976,6 +999,62 @@
     } catch (e) {
       console.log('トピックHTML読み込みエラー:', e);
     }
+  }
+
+  /**
+   * トピックのHTMLを読み込んでdivに追加（先頭）
+   */
+  async function loadTopicHTMLPrepend(item) {
+    if (!item || !item.htmlPath) return;
+
+    try {
+      const response = await fetch(item.htmlPath);
+      if (!response.ok) throw new Error('Failed to load');
+      const html = await response.text();
+
+      // HTMLからbodyの中身を抽出
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const bodyContent = doc.body.innerHTML;
+
+      // トピックセクションを作成
+      const section = createTopicSection(item, bodyContent);
+
+      // 表示領域に追加（先頭）
+      elements.htmlDisplay.insertBefore(section, elements.htmlDisplay.firstChild);
+
+      // お気に入りボタンを追加（セクション内のh3に対して）
+      injectFavoriteButtonsToSection(section, item);
+
+    } catch (e) {
+      console.log('トピックHTML読み込みエラー:', e);
+    }
+  }
+
+  /**
+   * トピックセクション要素を作成
+   */
+  function createTopicSection(item, bodyContent) {
+    const section = document.createElement('div');
+    section.className = 'topic-section';
+    section.dataset.topicId = item.id;
+
+    // トピックヘッダー（区切り）を追加
+    const header = document.createElement('div');
+    header.className = 'topic-section-header';
+    header.innerHTML = `
+      <span class="topic-section-subject">${escapeHtml(item.subject || '')}</span>
+      <span class="topic-section-title">${escapeHtml(item.title || item.id)}</span>
+    `;
+    section.appendChild(header);
+
+    // コンテンツを追加
+    const content = document.createElement('div');
+    content.className = 'topic-section-content';
+    content.innerHTML = bodyContent;
+    section.appendChild(content);
+
+    return section;
   }
 
   /**
@@ -1000,6 +1079,11 @@
     const scrollHeight = container.scrollHeight;
     const clientHeight = container.clientHeight;
 
+    // 上部から200px以内に達したら前のトピックを読み込み
+    if (scrollTop <= 200) {
+      loadPreviousTopic();
+    }
+
     // 底部から200px以内に達したら次を読み込み
     if (scrollTop + clientHeight >= scrollHeight - 200) {
       loadNextTopic();
@@ -1007,7 +1091,39 @@
   }
 
   /**
-   * 次のトピックを読み込み
+   * 前のトピックを読み込み（上方向スクロール）
+   */
+  async function loadPreviousTopic() {
+    if (state.isLoadingMore) return;
+
+    const prevIndex = state.firstLoadedTopicIndex - 1;
+    if (prevIndex < 0) {
+      // 最初のトピックに到達
+      return;
+    }
+
+    state.isLoadingMore = true;
+
+    const prevItem = DATA[prevIndex];
+    if (prevItem && prevItem.htmlPath) {
+      // スクロール位置を保持するため、挿入前の高さを記録
+      const container = elements.htmlContent;
+      const scrollHeightBefore = container.scrollHeight;
+
+      await loadTopicHTMLPrepend(prevItem);
+      state.firstLoadedTopicIndex = prevIndex;
+
+      // 挿入後、スクロール位置を調整（追加された分だけ下にずらす）
+      const scrollHeightAfter = container.scrollHeight;
+      const heightDiff = scrollHeightAfter - scrollHeightBefore;
+      container.scrollTop += heightDiff;
+    }
+
+    state.isLoadingMore = false;
+  }
+
+  /**
+   * 次のトピックを読み込み（下方向スクロール）
    */
   async function loadNextTopic() {
     if (state.isLoadingMore) return;
@@ -1132,6 +1248,727 @@
       elements.qaDisplay.innerHTML = '<div class="no-results">Q&Aを読み込めませんでした</div>';
       elements.qaDisplay.style.display = 'block';
     }
+  }
+
+  /**
+   * Q&A無限スクロール用：トピックを読み込み（末尾）
+   */
+  async function loadQATopic(item, isFirst = false) {
+    if (!item || !item.qaPath) return;
+
+    try {
+      const response = await fetch(item.qaPath);
+      if (!response.ok) throw new Error('Failed to load');
+      const text = await response.text();
+
+      // Q&Aセクションを作成
+      const section = document.createElement('div');
+      section.className = 'qa-topic-section';
+      section.dataset.topicId = item.id;
+
+      // トピックヘッダー（区切り）を追加
+      const header = document.createElement('div');
+      header.className = 'topic-section-header';
+      header.innerHTML = `
+        <span class="topic-section-subject">${escapeHtml(item.subject || '')}</span>
+        <span class="topic-section-title">${escapeHtml(item.title || item.id)}</span>
+      `;
+      section.appendChild(header);
+
+      // Q&Aコンテンツを追加
+      const content = document.createElement('div');
+      content.className = 'qa-topic-content';
+      content.innerHTML = parseQAForSection(text, item.id);
+      section.appendChild(content);
+
+      // 表示領域に追加（末尾）
+      elements.qaDisplay.appendChild(section);
+
+      // モードを適用
+      if (state.qaShowAll) {
+        elements.qaDisplay.classList.add('show-all');
+      }
+
+      // イベントをバインド
+      bindQAEventsInSection(section, item.id);
+
+    } catch (e) {
+      console.log('Q&A読み込みエラー:', e);
+    }
+  }
+
+  /**
+   * Q&A無限スクロール用：トピックを読み込み（先頭）
+   */
+  async function loadQATopicPrepend(item) {
+    if (!item || !item.qaPath) return;
+
+    try {
+      const response = await fetch(item.qaPath);
+      if (!response.ok) throw new Error('Failed to load');
+      const text = await response.text();
+
+      // Q&Aセクションを作成
+      const section = document.createElement('div');
+      section.className = 'qa-topic-section';
+      section.dataset.topicId = item.id;
+
+      // トピックヘッダー（区切り）を追加
+      const header = document.createElement('div');
+      header.className = 'topic-section-header';
+      header.innerHTML = `
+        <span class="topic-section-subject">${escapeHtml(item.subject || '')}</span>
+        <span class="topic-section-title">${escapeHtml(item.title || item.id)}</span>
+      `;
+      section.appendChild(header);
+
+      // Q&Aコンテンツを追加
+      const content = document.createElement('div');
+      content.className = 'qa-topic-content';
+      content.innerHTML = parseQAForSection(text, item.id);
+      section.appendChild(content);
+
+      // 表示領域に追加（先頭）
+      elements.qaDisplay.insertBefore(section, elements.qaDisplay.firstChild);
+
+      // モードを適用
+      if (state.qaShowAll) {
+        elements.qaDisplay.classList.add('show-all');
+      }
+
+      // イベントをバインド
+      bindQAEventsInSection(section, item.id);
+
+    } catch (e) {
+      console.log('Q&A読み込みエラー:', e);
+    }
+  }
+
+  /**
+   * Q&Aテキストをパース（セクション用・topicId付き）
+   */
+  function parseQAForSection(text, topicId) {
+    const lines = text.split('\n');
+    let html = '';
+    let currentSection = '';
+    let inRelated = false;
+    let relatedItems = [];
+    let inTable = false;
+    let tableRows = [];
+    let qaIndex = 0;
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+
+      // Markdownテーブルの検出
+      if (line.startsWith('|') && line.endsWith('|')) {
+        if (line.match(/^\|[\s\-:|]+\|$/)) {
+          inTable = true;
+          continue;
+        }
+        if (!inTable && tableRows.length === 0) {
+          tableRows.push({ cells: parseTableRow(line), isHeader: true });
+        } else {
+          inTable = true;
+          tableRows.push({ cells: parseTableRow(line), isHeader: false });
+        }
+        continue;
+      } else if (inTable || tableRows.length > 0) {
+        html += renderTable(tableRows);
+        tableRows = [];
+        inTable = false;
+      }
+
+      if (line.startsWith('## ')) {
+        if (relatedItems.length > 0) {
+          html += renderRelated(relatedItems);
+          relatedItems = [];
+        }
+        inRelated = false;
+        currentSection = line.slice(3);
+        html += `<div class="qa-section"><div class="qa-section-title">${escapeHtml(currentSection)}</div>`;
+        continue;
+      }
+
+      if (line === '---') {
+        if (relatedItems.length > 0) {
+          html += renderRelated(relatedItems);
+          relatedItems = [];
+        }
+        if (currentSection) {
+          html += '</div>';
+          currentSection = '';
+        }
+        inRelated = false;
+        continue;
+      }
+
+      if (line === '[関連質問]') {
+        inRelated = true;
+        continue;
+      }
+
+      if (inRelated && line.startsWith('- ')) {
+        relatedItems.push(line.slice(2));
+        continue;
+      }
+
+      if (line.startsWith('Q: ')) {
+        if (relatedItems.length > 0) {
+          html += renderRelated(relatedItems);
+          relatedItems = [];
+        }
+        inRelated = false;
+        const question = line.slice(3);
+        html += `<div class="qa-item" data-topic-id="${escapeHtml(topicId)}" data-card-index="${qaIndex}" data-question="${escapeHtml(question)}">`;
+        html += `<button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>`;
+        html += `<div class="qa-question">${escapeHtml(question)}</div>`;
+        qaIndex++;
+        continue;
+      }
+
+      if (line.startsWith('A: ')) {
+        const answer = line.slice(3);
+        html += `<div class="qa-answer" data-answer="${escapeHtml(answer)}">${escapeHtml(answer)}</div>`;
+        html += `</div>`;
+        continue;
+      }
+    }
+
+    if (tableRows.length > 0) {
+      html += renderTable(tableRows);
+    }
+    if (relatedItems.length > 0) {
+      html += renderRelated(relatedItems);
+    }
+    if (currentSection) {
+      html += '</div>';
+    }
+
+    return html;
+  }
+
+  /**
+   * Q&Aセクション内のイベントをバインド
+   */
+  function bindQAEventsInSection(section, topicId) {
+    // 折りたたみイベント
+    section.querySelectorAll('.qa-question').forEach(q => {
+      q.addEventListener('click', () => {
+        if (state.qaShowAll) return;
+        const answer = q.nextElementSibling;
+        if (answer && answer.classList.contains('qa-answer')) {
+          answer.classList.toggle('show');
+        }
+      });
+    });
+
+    // お気に入りボタン
+    if (typeof FavoritesManager !== 'undefined') {
+      section.querySelectorAll('.qa-item').forEach(item => {
+        const cardIndex = item.dataset.cardIndex;
+        const itemTopicId = item.dataset.topicId || topicId;
+        const favoriteBtn = item.querySelector('.favorite-btn');
+        if (!favoriteBtn) return;
+
+        const isFav = FavoritesManager.isFavoriteByParams('qa', itemTopicId, cardIndex);
+        favoriteBtn.classList.toggle('active', isFav);
+
+        favoriteBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+
+          const question = item.dataset.question || '';
+          const answerEl = item.querySelector('.qa-answer');
+          const answer = answerEl ? (answerEl.dataset.answer || answerEl.textContent) : '';
+
+          const content = {
+            question: question,
+            answer: answer
+          };
+
+          const isNowFavorite = FavoritesManager.toggle('qa', itemTopicId, cardIndex, content);
+          this.classList.toggle('active', isNowFavorite);
+        });
+      });
+    }
+  }
+
+  /**
+   * Q&A無限スクロールのセットアップ
+   */
+  function setupQAInfiniteScroll() {
+    const container = elements.qaContent;
+    container.removeEventListener('scroll', handleQAInfiniteScroll);
+    container.addEventListener('scroll', handleQAInfiniteScroll, { passive: true });
+  }
+
+  /**
+   * Q&A無限スクロールのハンドラ
+   */
+  function handleQAInfiniteScroll() {
+    if (state.isLoadingMoreQA) return;
+
+    const container = elements.qaContent;
+    const scrollTop = container.scrollTop;
+    const scrollHeight = container.scrollHeight;
+    const clientHeight = container.clientHeight;
+
+    // 上部から200px以内
+    if (scrollTop <= 200) {
+      loadPreviousQATopic();
+    }
+
+    // 底部から200px以内
+    if (scrollTop + clientHeight >= scrollHeight - 200) {
+      loadNextQATopic();
+    }
+  }
+
+  /**
+   * Q&A：前のトピックを読み込み
+   */
+  async function loadPreviousQATopic() {
+    if (state.isLoadingMoreQA) return;
+
+    const prevIndex = state.qaFirstLoadedTopicIndex - 1;
+    if (prevIndex < 0) return;
+
+    state.isLoadingMoreQA = true;
+
+    const prevItem = DATA[prevIndex];
+    if (prevItem && prevItem.qaPath) {
+      const container = elements.qaContent;
+      const scrollHeightBefore = container.scrollHeight;
+
+      await loadQATopicPrepend(prevItem);
+      state.qaFirstLoadedTopicIndex = prevIndex;
+
+      const scrollHeightAfter = container.scrollHeight;
+      const heightDiff = scrollHeightAfter - scrollHeightBefore;
+      container.scrollTop += heightDiff;
+    } else {
+      // qaPathがない場合、さらに前を探す
+      state.qaFirstLoadedTopicIndex = prevIndex;
+    }
+
+    state.isLoadingMoreQA = false;
+  }
+
+  /**
+   * Q&A：次のトピックを読み込み
+   */
+  async function loadNextQATopic() {
+    if (state.isLoadingMoreQA) return;
+
+    const nextIndex = state.qaLoadedTopicIndex + 1;
+    if (nextIndex >= DATA.length) return;
+
+    state.isLoadingMoreQA = true;
+
+    const nextItem = DATA[nextIndex];
+    if (nextItem && nextItem.qaPath) {
+      await loadQATopic(nextItem, false);
+      state.qaLoadedTopicIndex = nextIndex;
+    } else {
+      // qaPathがない場合、さらに次を探す
+      state.qaLoadedTopicIndex = nextIndex;
+    }
+
+    state.isLoadingMoreQA = false;
+  }
+
+  /**
+   * 過去問無限スクロール用：トピックを読み込み（末尾）
+   */
+  async function loadKakomonTopic(item, isFirst = false) {
+    if (!item || typeof KakomonModule === 'undefined') return;
+
+    try {
+      const subject = item.subject;
+      const keyword = item.title;
+
+      // 科目データを読み込み
+      const subjectData = await KakomonModule.loadSubjectData(subject);
+      if (!subjectData) return;
+
+      // キーワードでフィルタリング
+      const filtered = KakomonModule.filterByKeyword(subjectData.questions, keyword);
+      if (filtered.length === 0) return;
+
+      // セクションを作成
+      const section = document.createElement('div');
+      section.className = 'kakomon-topic-section';
+      section.dataset.topicId = item.id;
+
+      // トピックヘッダー
+      const header = document.createElement('div');
+      header.className = 'topic-section-header';
+      header.innerHTML = `
+        <span class="topic-section-subject">${escapeHtml(item.subject || '')}</span>
+        <span class="topic-section-title">${escapeHtml(item.title || item.id)}</span>
+      `;
+      section.appendChild(header);
+
+      // 問題数ヘッダー
+      const countHeader = document.createElement('div');
+      countHeader.className = 'kakomon-list-header';
+      countHeader.textContent = `${filtered.length}問`;
+      section.appendChild(countHeader);
+
+      // 問題カードを追加
+      filtered.forEach((question, index) => {
+        const cardHtml = renderKakomonCard(question, index, filtered.length, item);
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = cardHtml;
+        section.appendChild(tempDiv.firstElementChild);
+      });
+
+      // 表示領域に追加（末尾）
+      elements.kakomonDisplay.appendChild(section);
+
+      // イベントをバインド
+      bindKakomonEventsInSection(section, item);
+
+    } catch (e) {
+      console.log('過去問読み込みエラー:', e);
+    }
+  }
+
+  /**
+   * 過去問無限スクロール用：トピックを読み込み（先頭）
+   */
+  async function loadKakomonTopicPrepend(item) {
+    if (!item || typeof KakomonModule === 'undefined') return;
+
+    try {
+      const subject = item.subject;
+      const keyword = item.title;
+
+      const subjectData = await KakomonModule.loadSubjectData(subject);
+      if (!subjectData) return;
+
+      const filtered = KakomonModule.filterByKeyword(subjectData.questions, keyword);
+      if (filtered.length === 0) return;
+
+      const section = document.createElement('div');
+      section.className = 'kakomon-topic-section';
+      section.dataset.topicId = item.id;
+
+      const header = document.createElement('div');
+      header.className = 'topic-section-header';
+      header.innerHTML = `
+        <span class="topic-section-subject">${escapeHtml(item.subject || '')}</span>
+        <span class="topic-section-title">${escapeHtml(item.title || item.id)}</span>
+      `;
+      section.appendChild(header);
+
+      const countHeader = document.createElement('div');
+      countHeader.className = 'kakomon-list-header';
+      countHeader.textContent = `${filtered.length}問`;
+      section.appendChild(countHeader);
+
+      filtered.forEach((question, index) => {
+        const cardHtml = renderKakomonCard(question, index, filtered.length, item);
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = cardHtml;
+        section.appendChild(tempDiv.firstElementChild);
+      });
+
+      // 表示領域に追加（先頭）
+      elements.kakomonDisplay.insertBefore(section, elements.kakomonDisplay.firstChild);
+
+      bindKakomonEventsInSection(section, item);
+
+    } catch (e) {
+      console.log('過去問読み込みエラー:', e);
+    }
+  }
+
+  /**
+   * 過去問カードのHTMLを生成
+   */
+  function renderKakomonCard(question, index, total, item) {
+    const choices = question.choices || {};
+    const numChoices = question.numChoices || 1;
+
+    const validChoices = Object.entries(choices)
+      .filter(([key, value]) => value && value.trim() !== '');
+
+    let imagesHtml = '';
+    if (question.hasImage && question.imageFiles) {
+      const examNum = question.examNum || question.code.match(/^\d+/)?.[0];
+      const imageList = question.imageFiles.split(',').map(f => f.trim()).filter(f => f);
+      if (imageList.length > 0 && examNum) {
+        imagesHtml = `
+          <div class="kakomon-images">
+            ${imageList.map(file => `<img src="images/${examNum}回_Web画像/${file}" alt="${file}">`).join('')}
+          </div>
+        `;
+      }
+    }
+
+    const choicesJson = JSON.stringify(Object.fromEntries(validChoices));
+
+    let imagePathsJson = '[]';
+    if (question.hasImage && question.imageFiles) {
+      const examNum = question.examNum || question.code.match(/^\d+/)?.[0];
+      const imageList = question.imageFiles.split(',').map(f => f.trim()).filter(f => f);
+      if (imageList.length > 0 && examNum) {
+        const paths = imageList.map(file => `images/${examNum}回_Web画像/${file}`);
+        imagePathsJson = JSON.stringify(paths);
+      }
+    }
+
+    const topicId = item.subject || item.id;
+
+    return `
+      <div class="kakomon-card" data-index="${index}" data-topic-id="${escapeHtml(topicId)}" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}" data-answered="false" data-code="${escapeHtml(question.code)}" data-text="${escapeHtml(question.text)}" data-choices='${choicesJson.replace(/'/g, "&#39;")}' data-images='${imagePathsJson}'>
+        <div class="kakomon-header">
+          <span class="kakomon-code">${escapeHtml(question.code)}</span>
+          <span class="kakomon-index">${index + 1} / ${total}</span>
+          <button class="favorite-btn" aria-label="お気に入り">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="kakomon-question">
+          <p class="kakomon-text">${escapeHtml(question.text)}</p>
+        </div>
+
+        ${imagesHtml}
+
+        <div class="kakomon-instruction">
+          ${numChoices > 1 ? `${numChoices}つ選べ。` : '1つ選べ。'}
+        </div>
+
+        <div class="kakomon-choices">
+          ${validChoices.map(([key, value]) => `
+            <button class="kakomon-choice" data-choice="${key}">
+              <span class="choice-label">${key}</span>
+              <span class="choice-text">${escapeHtml(value)}</span>
+            </button>
+          `).join('')}
+        </div>
+
+        <button class="kakomon-submit" disabled>解答</button>
+
+        <div class="kakomon-result" style="display:none;">
+          <div class="result-answer">正解: ${formatKakomonAnswer(question.answer)}</div>
+          <div class="result-message"></div>
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * 過去問の正解をフォーマット
+   */
+  function formatKakomonAnswer(answer) {
+    if (!answer) return '';
+    return answer.toLowerCase().split('').join(', ');
+  }
+
+  /**
+   * 過去問セクション内のイベントをバインド
+   */
+  function bindKakomonEventsInSection(section, item) {
+    const topicId = item.subject || item.id;
+
+    // お気に入りボタン
+    if (typeof FavoritesManager !== 'undefined') {
+      section.querySelectorAll('.kakomon-card').forEach(card => {
+        const code = card.dataset.code;
+        const favoriteBtn = card.querySelector('.favorite-btn');
+        if (!favoriteBtn) return;
+
+        const isFav = FavoritesManager.isFavoriteByParams('kakomon', topicId, code);
+        favoriteBtn.classList.toggle('active', isFav);
+
+        favoriteBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+
+          const questionText = card.dataset.text || '';
+          const answer = card.dataset.answer || '';
+          const numChoices = card.dataset.num || '1';
+
+          let choices = {};
+          let images = [];
+          try {
+            choices = JSON.parse(card.dataset.choices || '{}');
+            images = JSON.parse(card.dataset.images || '[]');
+          } catch (err) {
+            console.log('パースエラー:', err);
+          }
+
+          const content = {
+            code: code,
+            text: questionText,
+            answer: answer,
+            numChoices: numChoices,
+            choices: choices,
+            images: images
+          };
+
+          const isNowFavorite = FavoritesManager.toggle('kakomon', topicId, code, content);
+          this.classList.toggle('active', isNowFavorite);
+        });
+      });
+    }
+
+    // 選択肢・解答ボタンイベント
+    section.querySelectorAll('.kakomon-card').forEach(card => {
+      const numChoices = parseInt(card.dataset.num) || 1;
+      let selectedChoices = new Set();
+
+      card.querySelectorAll('.kakomon-choice').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (card.dataset.answered === 'true') return;
+
+          const choiceKey = btn.dataset.choice;
+
+          if (selectedChoices.has(choiceKey)) {
+            selectedChoices.delete(choiceKey);
+            btn.classList.remove('selected');
+          } else {
+            if (numChoices === 1) {
+              card.querySelectorAll('.kakomon-choice').forEach(b => {
+                b.classList.remove('selected');
+              });
+              selectedChoices.clear();
+            }
+            selectedChoices.add(choiceKey);
+            btn.classList.add('selected');
+          }
+
+          const submitBtn = card.querySelector('.kakomon-submit');
+          if (submitBtn) {
+            submitBtn.disabled = selectedChoices.size !== numChoices;
+          }
+        });
+      });
+
+      const submitBtn = card.querySelector('.kakomon-submit');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', () => {
+          if (card.dataset.answered === 'true') return;
+
+          const correctAnswer = card.dataset.answer;
+          checkKakomonAnswer(card, correctAnswer, selectedChoices);
+          submitBtn.style.display = 'none';
+        });
+      }
+    });
+  }
+
+  /**
+   * 過去問の答え合わせ
+   */
+  function checkKakomonAnswer(card, correctAnswer, selectedChoices) {
+    card.dataset.answered = 'true';
+
+    const selectedKeys = Array.from(selectedChoices)
+      .map(k => k.toUpperCase())
+      .sort()
+      .join('');
+
+    const sortedCorrect = correctAnswer.toUpperCase().split('').sort().join('');
+    const isCorrect = selectedKeys === sortedCorrect;
+
+    card.querySelectorAll('.kakomon-choice').forEach(btn => {
+      btn.disabled = true;
+      const key = btn.dataset.choice.toUpperCase();
+
+      if (correctAnswer.toUpperCase().includes(key)) {
+        btn.classList.add('correct');
+      } else if (btn.classList.contains('selected')) {
+        btn.classList.add('incorrect');
+      }
+    });
+
+    const resultDiv = card.querySelector('.kakomon-result');
+    const messageDiv = resultDiv.querySelector('.result-message');
+
+    messageDiv.textContent = isCorrect ? '正解！' : '不正解';
+    messageDiv.className = 'result-message ' + (isCorrect ? 'correct' : 'incorrect');
+    resultDiv.style.display = 'block';
+  }
+
+  /**
+   * 過去問無限スクロールのセットアップ
+   */
+  function setupKakomonInfiniteScroll() {
+    const container = elements.kakomonContent;
+    container.removeEventListener('scroll', handleKakomonInfiniteScroll);
+    container.addEventListener('scroll', handleKakomonInfiniteScroll, { passive: true });
+  }
+
+  /**
+   * 過去問無限スクロールのハンドラ
+   */
+  function handleKakomonInfiniteScroll() {
+    if (state.isLoadingMoreKakomon) return;
+
+    const container = elements.kakomonContent;
+    const scrollTop = container.scrollTop;
+    const scrollHeight = container.scrollHeight;
+    const clientHeight = container.clientHeight;
+
+    if (scrollTop <= 200) {
+      loadPreviousKakomonTopic();
+    }
+
+    if (scrollTop + clientHeight >= scrollHeight - 200) {
+      loadNextKakomonTopic();
+    }
+  }
+
+  /**
+   * 過去問：前のトピックを読み込み
+   */
+  async function loadPreviousKakomonTopic() {
+    if (state.isLoadingMoreKakomon) return;
+
+    const prevIndex = state.kakomonFirstLoadedTopicIndex - 1;
+    if (prevIndex < 0) return;
+
+    state.isLoadingMoreKakomon = true;
+
+    const prevItem = DATA[prevIndex];
+    if (prevItem) {
+      const container = elements.kakomonContent;
+      const scrollHeightBefore = container.scrollHeight;
+
+      await loadKakomonTopicPrepend(prevItem);
+      state.kakomonFirstLoadedTopicIndex = prevIndex;
+
+      const scrollHeightAfter = container.scrollHeight;
+      const heightDiff = scrollHeightAfter - scrollHeightBefore;
+      container.scrollTop += heightDiff;
+    }
+
+    state.isLoadingMoreKakomon = false;
+  }
+
+  /**
+   * 過去問：次のトピックを読み込み
+   */
+  async function loadNextKakomonTopic() {
+    if (state.isLoadingMoreKakomon) return;
+
+    const nextIndex = state.kakomonLoadedTopicIndex + 1;
+    if (nextIndex >= DATA.length) return;
+
+    state.isLoadingMoreKakomon = true;
+
+    const nextItem = DATA[nextIndex];
+    if (nextItem) {
+      await loadKakomonTopic(nextItem, false);
+      state.kakomonLoadedTopicIndex = nextIndex;
+    }
+
+    state.isLoadingMoreKakomon = false;
   }
 
   /**

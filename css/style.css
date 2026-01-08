@@ -2246,42 +2246,35 @@ body {
   position: relative;
 }
 
-.qa-item .qa-favorite-area {
-  display: none;
-  padding: 8px 20px 12px 60px;
-  border-top: 1px solid #f0f0f0;
-}
-
-.qa-item .qa-favorite-area.show {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
+/* Q&Aカード内のお気に入りボタン（右上に小さく表示） */
 .qa-item .favorite-btn {
-  width: 32px;
-  height: 32px;
-  background: #f5f5f7;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  background: transparent;
   border-radius: 50%;
+  opacity: 0.4;
   transition: all 0.2s ease;
 }
 
 .qa-item .favorite-btn svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 .qa-item .favorite-btn.active {
-  background: #fff3e0;
+  opacity: 1;
+}
+
+.qa-item .favorite-btn.active svg {
+  fill: #ff9500;
 }
 
 .qa-item .favorite-btn:hover {
-  background: #e8e8ed;
-}
-
-.qa-item .qa-favorite-label {
-  font-size: 12px;
-  color: var(--text-muted);
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /* 過去問カード内のお気に入りボタン */

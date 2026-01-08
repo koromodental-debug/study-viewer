@@ -1640,8 +1640,40 @@ body {
   margin: 0;
 }
 
-/* ===== フローティングメニューボタン ===== */
-.floating-menu-btn {
+/* ===== ヘッダー内メニューボタン ===== */
+.header-menu-btn {
+  background: rgba(0,0,0,0.05);
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.header-menu-btn:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.header-menu-btn:active {
+  transform: scale(0.95);
+}
+
+.header-menu-btn span {
+  display: block;
+  width: 14px;
+  height: 1.5px;
+  background: var(--text-color);
+  border-radius: 2px;
+}
+
+/* ===== フローティング検索ボタン ===== */
+.floating-search-btn {
   position: fixed;
   bottom: 24px;
   right: 20px;
@@ -1651,34 +1683,30 @@ body {
   background: #1d1d1f;
   border: none;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4px;
   cursor: pointer;
   z-index: 1000;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.floating-menu-btn:hover {
+.floating-search-btn:hover {
   transform: scale(1.05);
 }
 
-.floating-menu-btn:active {
+.floating-search-btn:active {
   transform: scale(0.95);
 }
 
-.floating-menu-btn span {
-  display: block;
-  width: 16px;
-  height: 2px;
-  background: white;
-  border-radius: 1px;
+.floating-search-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
 }
 
 /* Safe area対応 */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
-  .floating-menu-btn {
+  .floating-search-btn {
     bottom: calc(24px + env(safe-area-inset-bottom));
   }
 }
@@ -1747,15 +1775,16 @@ body {
     height: 18px;
   }
 
-  .floating-menu-btn {
+  .floating-search-btn {
     bottom: 16px;
     right: 16px;
     width: 36px;
     height: 36px;
   }
 
-  .floating-menu-btn span {
-    width: 14px;
+  .floating-search-btn svg {
+    width: 18px;
+    height: 18px;
   }
 
   .qa-floating-toggle {

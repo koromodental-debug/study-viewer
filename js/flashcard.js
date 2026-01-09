@@ -280,8 +280,7 @@ const FlashcardModule = (function() {
           </div>
         </div>
 
-        ${state.isFlipped ? `
-        <div class="flashcard-actions">
+        <div class="flashcard-actions ${state.isFlipped ? 'show' : ''}">
           <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
             覚えた
           </button>
@@ -289,8 +288,9 @@ const FlashcardModule = (function() {
             もう一度
           </button>
         </div>
+        <p class="flashcard-swipe-hint ${state.isFlipped ? 'show' : ''}">← スワイプで前後移動 →</p>
 
-        <div class="flashcard-summary" id="flashcard-summary">
+        <div class="flashcard-summary ${state.isFlipped ? 'show' : ''}" id="flashcard-summary">
           <div class="flashcard-summary-header">
             <span>まとめ</span>
           </div>
@@ -298,14 +298,13 @@ const FlashcardModule = (function() {
             読み込み中...
           </div>
         </div>
-        ` : ''}
       </div>
     `;
 
     bindCardEvents();
 
-    // 答え表示時のみまとめを読み込み
-    if (state.isFlipped) {
+    // まとめを読み込み
+    if (state.currentTopic && state.currentTopic.htmlPath) {
       loadHtmlSummary(state.currentTopic.htmlPath);
     }
   }
@@ -341,11 +340,9 @@ const FlashcardModule = (function() {
     cardContainer.addEventListener('touchstart', onTouchStart, { passive: true });
     cardContainer.addEventListener('touchend', onTouchEnd, { passive: true });
 
-    // 学習ボタン（答え表示後のみ存在）
-    const memorizedBtn = document.getElementById('flashcard-memorized-btn');
-    const againBtn = document.getElementById('flashcard-again-btn');
-    if (memorizedBtn) memorizedBtn.addEventListener('click', markMemorized);
-    if (againBtn) againBtn.addEventListener('click', markAgain);
+    // 学習ボタン
+    document.getElementById('flashcard-memorized-btn').addEventListener('click', markMemorized);
+    document.getElementById('flashcard-again-btn').addEventListener('click', markAgain);
   }
 
   // === スワイプ処理 ===

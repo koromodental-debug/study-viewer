@@ -1093,9 +1093,15 @@ body {
   transform: none;
 }
 
+/* セクション内のQ&Aには個別ボタンを表示しない */
+.qa-section-content .qa-item .save-image-btn,
+.qa-section-content .qa-item .favorite-btn {
+  display: none;
+}
+
 .qa-question {
   padding: 16px 20px;
-  padding-right: 80px; /* セクション外：ボタンエリア確保 */
+  padding-right: 90px; /* セクション外：ボタン2つ分のエリア確保 */
   font-weight: 600;
   cursor: pointer;
   display: flex;

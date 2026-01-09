@@ -2497,9 +2497,12 @@ body {
 
 /* Q&Aのトピックヘッダーを画面幅いっぱいに */
 .qa-topic-section .topic-section-header {
-  margin-left: -32px;
-  margin-right: -32px;
-  width: calc(100% + 64px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* トピックセクションコンテンツ */

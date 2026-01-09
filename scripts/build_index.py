@@ -50,7 +50,9 @@ SUBJECT_MASTER = [
     {"subject_id": "B06", "subject_name": "薬理学", "category": "基礎", "keywords": "薬理,薬物,投与,副作用,薬剤,禁忌,アドレナリン,リドカイン,抗菌薬,鎮痛,NSAIDs,ステロイド"},
     {"subject_id": "B07", "subject_name": "微生物・免疫", "category": "基礎", "keywords": "微生物,細菌,ウイルス,免疫,感染,抗体,抗原,リンパ,グラム,培養,消毒,滅菌,IgG,IgA,T細胞,B細胞"},
     {"subject_id": "B08", "subject_name": "理工学", "category": "基礎", "keywords": "材料,理工,物性,接着,器械,セメント,レジン,金属,セラミック,印象材,石膏,ワックス,鋳造,研磨"},
-    {"subject_id": "B09", "subject_name": "衛生学", "category": "基礎", "keywords": "衛生,予防,疫学,統計,法規,保健,フッ化物,DMF,CPI,WHO,医療法,歯科医師法,介護保険,産業保健,労働"},
+    {"subject_id": "B09", "subject_name": "衛生学", "category": "基礎", "keywords": "衛生,予防,フッ化物,DMF,CPI,WHO,産業保健,労働"},
+    {"subject_id": "B10", "subject_name": "公衆衛生", "category": "基礎", "keywords": "公衆衛生,法規,医療法,歯科医師法,歯科衛生士法,介護保険,社会保障,感染対策,倫理"},
+    {"subject_id": "B11", "subject_name": "疫学", "category": "基礎", "keywords": "疫学,統計,有病率,罹患率,相対危険度,オッズ比,感度,特異度,スクリーニング"},
     {"subject_id": "C01", "subject_name": "小児歯科", "category": "臨床", "keywords": "小児,乳歯,萌出,成長発育,乳歯列,混合歯列,小児患者,男児,女児,歳,生後,永久歯萌出,既製冠,保隙"},
     {"subject_id": "C02", "subject_name": "矯正歯科", "category": "臨床", "keywords": "矯正,不正咬合,装置,セファロ,反対咬合,上顎前突,下顎前突,開咬,過蓋咬合,叢生,ブラケット,ワイヤー,アクチバトール,バイオネーター"},
     {"subject_id": "C03", "subject_name": "保存修復", "category": "臨床", "keywords": "修復,充填,インレー,CR,窩洞,コンポジットレジン,齲蝕,う蝕,齲窩,窩壁,裏層,接着,エッチング,ボンディング"},
@@ -410,9 +412,14 @@ def build_subject_index(html_files, qa_files, subjects):
     items = []
     matched_qa = set()
 
+    # 科目名からカテゴリを取得するマッピングを作成
+    subject_to_category = {s['subject_name']: s['category'] for s in subjects}
+
     for key, html_info in html_files.items():
         qa_info = qa_files.get(key)
         title = html_info.get('title', Path(html_info['filename']).stem)
+        subject_name = html_info.get('subject', 'その他')
+        subject_category = subject_to_category.get(subject_name, '基礎')  # デフォルトは基礎
 
         item = {
             'id': key.lower().replace(' ', '-'),
@@ -422,8 +429,8 @@ def build_subject_index(html_files, qa_files, subjects):
             'qaPath': qa_info['path'] if qa_info else None,
             'searchText': '',
             'source': 'subject',
-            'subject': html_info.get('subject', 'その他'),
-            'subjectCategory': '臨床'
+            'subject': subject_name,
+            'subjectCategory': subject_category
         }
 
         html_text = extract_html_text(html_info['fullpath'])

@@ -1967,25 +1967,25 @@
   async function loadPreviousQATopic() {
     if (state.isLoadingMoreQA) return;
 
-    const prevIndex = state.qaFirstLoadedTopicIndex - 1;
-    if (prevIndex < 0) return;
-
     state.isLoadingMoreQA = true;
 
-    const prevItem = DATA[prevIndex];
-    if (prevItem && prevItem.qaPath) {
-      const container = elements.qaContent;
-      const scrollHeightBefore = container.scrollHeight;
+    // qaPathを持つ前のアイテムを探す
+    let prevIndex = state.qaFirstLoadedTopicIndex - 1;
+    while (prevIndex >= 0) {
+      const prevItem = DATA[prevIndex];
+      if (prevItem && prevItem.qaPath) {
+        const container = elements.qaContent;
+        const scrollHeightBefore = container.scrollHeight;
 
-      await loadQATopicPrepend(prevItem);
-      state.qaFirstLoadedTopicIndex = prevIndex;
+        await loadQATopicPrepend(prevItem);
+        state.qaFirstLoadedTopicIndex = prevIndex;
 
-      const scrollHeightAfter = container.scrollHeight;
-      const heightDiff = scrollHeightAfter - scrollHeightBefore;
-      container.scrollTop += heightDiff;
-    } else {
-      // qaPathがない場合、さらに前を探す
-      state.qaFirstLoadedTopicIndex = prevIndex;
+        const scrollHeightAfter = container.scrollHeight;
+        const heightDiff = scrollHeightAfter - scrollHeightBefore;
+        container.scrollTop += heightDiff;
+        break;
+      }
+      prevIndex--;
     }
 
     state.isLoadingMoreQA = false;
@@ -1997,18 +1997,18 @@
   async function loadNextQATopic() {
     if (state.isLoadingMoreQA) return;
 
-    const nextIndex = state.qaLoadedTopicIndex + 1;
-    if (nextIndex >= DATA.length) return;
-
     state.isLoadingMoreQA = true;
 
-    const nextItem = DATA[nextIndex];
-    if (nextItem && nextItem.qaPath) {
-      await loadQATopic(nextItem, false);
-      state.qaLoadedTopicIndex = nextIndex;
-    } else {
-      // qaPathがない場合、さらに次を探す
-      state.qaLoadedTopicIndex = nextIndex;
+    // qaPathを持つ次のアイテムを探す
+    let nextIndex = state.qaLoadedTopicIndex + 1;
+    while (nextIndex < DATA.length) {
+      const nextItem = DATA[nextIndex];
+      if (nextItem && nextItem.qaPath) {
+        await loadQATopic(nextItem, false);
+        state.qaLoadedTopicIndex = nextIndex;
+        break;
+      }
+      nextIndex++;
     }
 
     state.isLoadingMoreQA = false;

@@ -1500,29 +1500,35 @@
     if (typeof FavoritesManager === 'undefined') return;
 
     const topicId = item.id;
-    const h2Elements = section.querySelectorAll('.topic-section-content h2');
+    // h2を探し、なければh3を使用
+    let headingElements = section.querySelectorAll('.topic-section-content h2');
+    if (headingElements.length === 0) {
+      headingElements = section.querySelectorAll('.topic-section-content h3');
+    }
 
-    h2Elements.forEach((h2, index) => {
+    headingElements.forEach((heading, index) => {
       // 既にラッパーがあればスキップ
-      if (h2.parentElement.classList.contains('html-card-wrapper')) return;
+      if (heading.parentElement.classList.contains('html-card-wrapper')) return;
 
-      // h2をラッパーで囲む
+      const headingTag = heading.tagName; // H2 or H3
+
+      // 見出しをラッパーで囲む
       const wrapper = document.createElement('div');
       wrapper.className = 'html-card-wrapper';
       wrapper.dataset.cardIndex = index;
-      wrapper.dataset.title = h2.textContent || '';
+      wrapper.dataset.title = heading.textContent || '';
 
-      // h2の後の要素を含める（次のh2またはh1まで）
-      const elements = [];
-      let sibling = h2.nextElementSibling;
-      while (sibling && sibling.tagName !== 'H2' && sibling.tagName !== 'H1') {
-        elements.push(sibling);
+      // 見出しの後の要素を含める（次の同じ見出しまたはh1まで）
+      const elementsToWrap = [];
+      let sibling = heading.nextElementSibling;
+      while (sibling && sibling.tagName !== headingTag && sibling.tagName !== 'H1' && sibling.tagName !== 'H2') {
+        elementsToWrap.push(sibling);
         sibling = sibling.nextElementSibling;
       }
 
-      h2.parentNode.insertBefore(wrapper, h2);
-      wrapper.appendChild(h2);
-      elements.forEach(el => wrapper.appendChild(el));
+      heading.parentNode.insertBefore(wrapper, heading);
+      wrapper.appendChild(heading);
+      elementsToWrap.forEach(el => wrapper.appendChild(el));
 
       // お気に入りボタンを追加
       const favBtn = document.createElement('button');
@@ -1537,7 +1543,7 @@
       favBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         const content = {
-          title: h2.textContent || '',
+          title: heading.textContent || '',
           html: wrapper.innerHTML
         };
         const isNowFavorite = FavoritesManager.toggle('html', topicId, index, content);
@@ -1552,7 +1558,7 @@
       saveBtn.innerHTML = createSaveButtonSVG();
       saveBtn.addEventListener('click', function(e) {
         e.stopPropagation();
-        const filename = `まとめ_${topicId}_${h2.textContent || index}`;
+        const filename = `まとめ_${topicId}_${heading.textContent || index}`;
         saveCardAsImage(wrapper, filename);
       });
 

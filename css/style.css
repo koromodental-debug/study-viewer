@@ -3332,8 +3332,6 @@ body {
   padding: 16px;
   font-size: 14px;
   line-height: 1.7;
-  max-height: 400px;
-  overflow-y: auto;
 }
 
 .flashcard-summary-content h1,

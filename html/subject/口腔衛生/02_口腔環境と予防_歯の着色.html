@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯の着色 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 口腔環境と予防</span>
+    <h1>歯の着色</h1>
+    <div class="container">
+
+      <h2>着色の分類</h2>
+      <p>歯の着色は発生部位により<span class="highlight">外因性着色</span>と<span class="highlight">内因性着色</span>に分類される。</p>
+      <ul>
+        <li><span class="key">外因性着色</span>：歯の表面またはペリクル内部に存在</li>
+        <li><span class="key">内因性着色</span>：先天的・後天的理由により歯質内に存在</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">外因性 vs 内因性の鑑別ポイント</div>
+        <ul>
+          <li>外因性 → PMTCや超音波スケーラーで<span class="key">除去可能</span></li>
+          <li>内因性 → 機械的清掃では除去<span class="caution">不可</span>、ホワイトニングや補綴処置が必要</li>
+        </ul>
+      </div>
+
+      <h2>外因性着色</h2>
+      <p>ペリクルの厚い箇所や清掃不良箇所に好発する。</p>
+
+      <h3>非金属性着色</h3>
+      <table>
+        <tr><th>原因</th><th>色調</th><th>特徴</th></tr>
+        <tr><td>飲食物</td><td>茶褐色</td><td>コーヒー、茶、カレーなど</td></tr>
+        <tr><td>タバコ</td><td>黒〜黒褐色</td><td>タール成分、舌側に好発</td></tr>
+        <tr><td>洗口剤</td><td>茶褐色</td><td>クロルヘキシジンの長期使用</td></tr>
+        <tr><td class="key">色素産生細菌</td><td class="highlight">緑色、黒色、オレンジ色</td><td>口腔清掃不良の小児に多い</td></tr>
+      </table>
+
+      <h3>金属性着色（職業性）</h3>
+      <table>
+        <tr><th>金属</th><th>色調</th></tr>
+        <tr><td>銅、ニッケル</td><td>緑色</td></tr>
+        <tr><td>鉄、マンガン</td><td>黒色</td></tr>
+      </table>
+
+      <h2>内因性着色</h2>
+      <p>歯の形成時期に起こり、歯の構造に影響を及ぼすことで変色する。</p>
+
+      <h3>内因性着色の原因</h3>
+      <table>
+        <tr><th>原因</th><th>色調</th><th>特徴</th></tr>
+        <tr><td>代謝異常</td><td>茶色、赤茶色</td><td>チロシン・フェニルアラニン代謝異常、ポルフィリン代謝異常</td></tr>
+        <tr><td>エナメル質形成不全</td><td>白斑〜褐色</td><td>「雪帽子」状など程度は多様</td></tr>
+        <tr><td>象牙質形成不全</td><td>半透明〜茶色</td><td>遺伝的・環境的要因</td></tr>
+        <tr><td class="key">テトラサイクリン</td><td>黄色〜茶褐色、紫色</td><td>光により色調が濃くなる</td></tr>
+        <tr><td class="key">歯のフッ素症</td><td>灰白色〜茶〜黒色</td><td>フッ化物の過剰摂取</td></tr>
+        <tr><td>歯髄壊死</td><td>淡黄色〜黒色</td><td>出血・壊死による分解産物の浸透</td></tr>
+      </table>
+
+      <h2>色素産生細菌による着色</h2>
+      <p>国試で最も問われるポイント。外因性着色の一種。</p>
+      <ul>
+        <li><span class="key">緑色着色（green stain）</span>：口腔清掃不良の小児の唇側歯頸部に好発</li>
+        <li><span class="key">黒色着色（black stain）</span>：口腔清掃良好で齲蝕経験の少ない小児にみられることもある</li>
+        <li>原因菌：<em>Prevotella</em>属、<em>Actinomyces</em>属などの色素産生細菌</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110D36</div>
+        <p>13歳の男子。歯面の着色を主訴として来院した。約1か月前から気になり始め、着色の範囲に大きな変化はないという。初診時の口腔内写真（別冊No.35）を別に示す。<br>原因として考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110D36.png" alt="別冊No.35">
+        </div>
+        <div class="choices">
+          a 緑茶<br>
+          b 口腔細菌<br>
+          c フッ化物<br>
+          d テトラサイクリン<br>
+          e エナメル質形成不全
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】写真では上顎前歯の唇側歯頸部に<span class="key">緑色の着色</span>が認められる。これは<span class="highlight">色素産生細菌</span>による外因性着色（緑色着色：green stain）である。約1か月で範囲に変化がないことから、歯の形成時期に生じる内因性着色（c〜e）は否定的。緑茶による着色は茶褐色であり、この緑色の所見とは合致しない。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">選択肢の整理</div>
+        <ul>
+          <li>a 緑茶 → 外因性、茶褐色</li>
+          <li><span class="key">b 口腔細菌</span> → 外因性、緑〜黒色 ✓</li>
+          <li>c フッ化物 → 内因性（フッ素症）、灰白〜茶色</li>
+          <li>d テトラサイクリン → 内因性、黄〜茶褐色</li>
+          <li>e エナメル質形成不全 → 内因性、白斑〜褐色</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -2794,31 +2794,127 @@
   }
 
   /**
+   * 現在表示中のトピックIDを取得（HTML）
+   */
+  function getCurrentHTMLTopicId() {
+    try {
+      const sections = elements.htmlDisplay.querySelectorAll('.topic-section');
+      const containerRect = elements.htmlContent.getBoundingClientRect();
+
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        // セクションの上端がコンテナ内にあるものを見つける
+        if (rect.top <= containerRect.top + 150 && rect.bottom > containerRect.top + 50) {
+          return section.dataset.topicId || null;
+        }
+      }
+      // 見つからなければ最初のセクション
+      const firstSection = elements.htmlDisplay.querySelector('.topic-section');
+      return firstSection ? firstSection.dataset.topicId : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /**
+   * 現在表示中のトピックIDを取得（QA）
+   */
+  function getCurrentQATopicId() {
+    try {
+      const sections = elements.qaDisplay.querySelectorAll('.qa-topic-section');
+      const containerRect = elements.qaContent.getBoundingClientRect();
+
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= containerRect.top + 150 && rect.bottom > containerRect.top + 50) {
+          return section.dataset.topicId || null;
+        }
+      }
+      const firstSection = elements.qaDisplay.querySelector('.qa-topic-section');
+      return firstSection ? firstSection.dataset.topicId : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /**
+   * 指定トピックIDの位置にスクロール（HTML）
+   */
+  function scrollToHTMLTopic(topicId) {
+    if (!topicId) return false;
+    const section = elements.htmlDisplay.querySelector(`.topic-section[data-topic-id="${topicId}"]`);
+    if (section) {
+      section.scrollIntoView({ behavior: 'auto', block: 'start' });
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * 指定トピックIDの位置にスクロール（QA）- 存在しなければ読み込む
+   */
+  async function scrollToQATopic(topicId) {
+    if (!topicId) return false;
+
+    // まず既存のセクションを探す
+    let section = elements.qaDisplay.querySelector(`.qa-topic-section[data-topic-id="${topicId}"]`);
+
+    if (!section) {
+      // セクションがない場合、トピックを読み込む
+      const item = DATA.find(d => d.id === topicId);
+      if (item && item.qaPath) {
+        await loadQATopic(item, false);
+        // 読み込み後に再度セクションを探す
+        section = elements.qaDisplay.querySelector(`.qa-topic-section[data-topic-id="${topicId}"]`);
+      }
+    }
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'auto', block: 'start' });
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * 指定トピックIDの位置にスクロール（HTML）- 存在しなければ読み込む
+   */
+  async function scrollToHTMLTopic(topicId) {
+    if (!topicId) return false;
+
+    let section = elements.htmlDisplay.querySelector(`.topic-section[data-topic-id="${topicId}"]`);
+
+    if (!section) {
+      const item = DATA.find(d => d.id === topicId);
+      if (item && item.htmlPath) {
+        await loadTopicHTML(item, false);
+        section = elements.htmlDisplay.querySelector(`.topic-section[data-topic-id="${topicId}"]`);
+      }
+    }
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'auto', block: 'start' });
+      return true;
+    }
+    return false;
+  }
+
+  /**
    * タブを切り替え
    */
   function switchTab(tab) {
     const prevTab = state.currentTab;
 
-    // 切り替え前のセクション名を取得
+    // 切り替え前のトピックIDとセクション名を取得
+    let currentTopicId = null;
     let currentSection = null;
-    let scrollPercent = 0;
 
     if (prevTab === 'qa') {
+      currentTopicId = getCurrentQATopicId();
       currentSection = getCurrentQASection();
-      // フォールバック用に%も取得
-      const el = elements.qaContent;
-      const maxScroll = el.scrollHeight - el.clientHeight;
-      if (maxScroll > 0) {
-        scrollPercent = el.scrollTop / maxScroll;
-      }
     } else if (prevTab === 'html') {
+      currentTopicId = getCurrentHTMLTopicId();
       currentSection = getCurrentHTMLSection();
-      // フォールバック用に%も取得
-      const el = elements.htmlContent;
-      const maxScroll = el.scrollHeight - el.clientHeight;
-      if (maxScroll > 0) {
-        scrollPercent = el.scrollTop / maxScroll;
-      }
     }
 
     state.currentTab = tab;
@@ -2844,29 +2940,36 @@
       elements.qaFloatingToggle.classList.toggle('show', tab === 'qa');
     }
 
-    // 新しいタブにスクロール（セクション優先、フォールバックで%）
-    setTimeout(() => {
+    // 新しいタブにスクロール（トピックID優先、セクション名、最後にトップ）
+    // 非同期処理のためsetTimeoutではなくasync即時関数
+    (async () => {
       let scrolled = false;
 
-      if (tab === 'qa' && currentSection) {
-        scrolled = scrollToQASection(currentSection);
-      } else if (tab === 'html' && currentSection) {
-        scrolled = scrollToHTMLSection(currentSection);
+      // まずトピックIDでスクロールを試みる（存在しなければ読み込む）
+      if (tab === 'qa' && currentTopicId) {
+        scrolled = await scrollToQATopic(currentTopicId);
+      } else if (tab === 'html' && currentTopicId) {
+        scrolled = await scrollToHTMLTopic(currentTopicId);
       }
 
-      // セクションが見つからなければ%でスクロール
-      if (!scrolled) {
+      // トピックが見つからなければセクション名で試みる
+      if (!scrolled && currentSection) {
         if (tab === 'qa') {
-          const el = elements.qaContent;
-          const maxScroll = el.scrollHeight - el.clientHeight;
-          el.scrollTop = maxScroll * scrollPercent;
+          scrolled = scrollToQASection(currentSection);
         } else if (tab === 'html') {
-          const el = elements.htmlContent;
-          const maxScroll = el.scrollHeight - el.clientHeight;
-          el.scrollTop = maxScroll * scrollPercent;
+          scrolled = scrollToHTMLSection(currentSection);
         }
       }
-    }, 50);
+
+      // それでも見つからなければトップにスクロール
+      if (!scrolled) {
+        if (tab === 'qa') {
+          elements.qaContent.scrollTop = 0;
+        } else if (tab === 'html') {
+          elements.htmlContent.scrollTop = 0;
+        }
+      }
+    })();
   }
 
   /**

@@ -2873,6 +2873,155 @@ body {
   border-color: #007AFF;
 }
 
+/* === Ankiスタイル デッキ一覧 === */
+.deck-list {
+  padding: 16px;
+  padding-bottom: 100px;
+}
+
+.deck-header {
+  margin-bottom: 16px;
+}
+
+.deck-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.deck-subjects {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 科目行 */
+.deck-subject {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.deck-subject-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.deck-subject-header:active {
+  background: #f5f5f5;
+}
+
+.deck-arrow {
+  margin-right: 12px;
+  font-size: 12px;
+  color: #999;
+  transition: transform 0.2s ease;
+}
+
+.deck-subject.open .deck-arrow {
+  transform: rotate(90deg);
+}
+
+.deck-subject-name {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.deck-subject-stats {
+  font-size: 14px;
+  color: #666;
+}
+
+/* トピック一覧（アコーディオン） */
+.deck-topics {
+  display: none;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+
+.deck-subject.open .deck-topics {
+  display: block;
+}
+
+/* トピック行 */
+.deck-topic {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px 14px 40px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.deck-topic:last-child {
+  border-bottom: none;
+}
+
+.deck-topic:active {
+  background: #e8e8e8;
+}
+
+.deck-topic-name {
+  flex: 1;
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+/* 統計バッジ */
+.deck-topic-stats {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.deck-stat {
+  min-width: 24px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.deck-stat.total {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.deck-stat.memorized {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.deck-stat.again {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.deck-stat-new {
+  font-size: 12px;
+  color: #999;
+  font-style: italic;
+}
+
+/* デッキオプション */
+.deck-options {
+  display: flex;
+  gap: 20px;
+  padding: 16px;
+  margin-top: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
 .flashcard-options {
   display: flex;
   flex-direction: column;
@@ -3078,6 +3227,17 @@ body {
 
 .flashcard-answer.show {
   display: block;
+}
+
+/* 次へインジケーター */
+.flashcard-next-indicator {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e8e8e8;
+  text-align: right;
+  color: #007aff;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* スワイプヒント */

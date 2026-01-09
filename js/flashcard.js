@@ -31,7 +31,7 @@ const FlashcardModule = (function() {
     if (!container) return;
 
     loadProgress();
-    renderSelectScreen();
+    renderDeckList();
   }
 
   // === localStorage管理 ===
@@ -60,109 +60,122 @@ const FlashcardModule = (function() {
     }
   }
 
-  // === 科目・トピック選択画面 ===
-  function renderSelectScreen() {
-    // 科目一覧を取得
+  // === 統計計算 ===
+  function getTopicStats(topicId) {
+    // トピックに関連する進捗を集計
+    const keys = Object.keys(state.progress).filter(k => k.startsWith(topicId + ':'));
+    const memorized = keys.filter(k => state.progress[k].status === 'memorized').length;
+    const again = keys.filter(k => state.progress[k].status === 'again').length;
+    return { memorized, again };
+  }
+
+  function getSubjectStats(subject) {
+    // 科目配下の全トピックの統計を集計
+    const topics = DATA.filter(d => d.subject === subject && d.qaPath);
+    let totalMemorized = 0;
+    let totalAgain = 0;
+    let totalCards = 0;
+
+    for (const topic of topics) {
+      const stats = getTopicStats(topic.id);
+      totalMemorized += stats.memorized;
+      totalAgain += stats.again;
+      // 推定カード数（進捗がある分だけカウント）
+      totalCards += stats.memorized + stats.again;
+    }
+
+    return { memorized: totalMemorized, again: totalAgain, total: totalCards };
+  }
+
+  // === Ankiスタイル デッキ一覧画面 ===
+  function renderDeckList() {
     const subjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))];
 
     container.innerHTML = `
-      <div class="flashcard-select">
-        <div class="flashcard-select-header">
-          <h2>フラッシュカード演習</h2>
-          <p>科目とトピックを選んで演習を開始</p>
+      <div class="deck-list">
+        <div class="deck-header">
+          <h2>フラッシュカード</h2>
         </div>
-
-        <div class="flashcard-select-form">
-          <div class="flashcard-select-group">
-            <label>科目を選択</label>
-            <select id="flashcard-subject-select" class="flashcard-select-input">
-              <option value="">科目を選んでください</option>
-              ${subjects.map(s => `<option value="${s}">${s}</option>`).join('')}
-            </select>
-          </div>
-
-          <div class="flashcard-select-group" id="flashcard-topic-group" style="display:none;">
-            <label>トピックを選択</label>
-            <select id="flashcard-topic-select" class="flashcard-select-input">
-              <option value="">トピックを選んでください</option>
-            </select>
-          </div>
-
-          <div class="flashcard-options">
-            <label class="flashcard-checkbox">
-              <input type="checkbox" id="flashcard-review-mode">
-              <span>復習モード（「もう一度」のみ表示）</span>
-            </label>
-            <label class="flashcard-checkbox">
-              <input type="checkbox" id="flashcard-shuffle-mode">
-              <span>シャッフル</span>
-            </label>
-          </div>
-
-          <button id="flashcard-start-btn" class="flashcard-start-btn" disabled>
-            演習を開始
-          </button>
+        <div class="deck-subjects" id="deck-subjects">
+          ${subjects.map(subject => renderSubjectRow(subject)).join('')}
         </div>
-
-        <div class="flashcard-stats" id="flashcard-stats">
-          <!-- 学習統計を表示 -->
+        <div class="deck-options">
+          <label class="flashcard-checkbox">
+            <input type="checkbox" id="flashcard-review-mode">
+            <span>復習モード</span>
+          </label>
+          <label class="flashcard-checkbox">
+            <input type="checkbox" id="flashcard-shuffle-mode">
+            <span>シャッフル</span>
+          </label>
         </div>
       </div>
     `;
 
     // イベントバインド
-    const subjectSelect = document.getElementById('flashcard-subject-select');
-    const topicSelect = document.getElementById('flashcard-topic-select');
-    const startBtn = document.getElementById('flashcard-start-btn');
-
-    subjectSelect.addEventListener('change', onSubjectChange);
-    topicSelect.addEventListener('change', onTopicChange);
-    startBtn.addEventListener('click', onStartClick);
-
-    // 統計表示
-    renderStats();
+    bindDeckListEvents();
   }
 
-  function onSubjectChange(e) {
-    const subject = e.target.value;
-    const topicGroup = document.getElementById('flashcard-topic-group');
-    const topicSelect = document.getElementById('flashcard-topic-select');
-    const startBtn = document.getElementById('flashcard-start-btn');
-
-    if (!subject) {
-      topicGroup.style.display = 'none';
-      startBtn.disabled = true;
-      return;
-    }
-
-    // 選択された科目のトピック一覧
+  function renderSubjectRow(subject) {
     const topics = DATA.filter(d => d.subject === subject && d.qaPath);
+    const stats = getSubjectStats(subject);
+    const statsText = stats.total > 0 ? `${stats.memorized}/${stats.total}` : '';
 
-    topicSelect.innerHTML = `
-      <option value="">トピックを選んでください</option>
-      ${topics.map(t => `<option value="${t.id}">${t.title}</option>`).join('')}
+    return `
+      <div class="deck-subject" data-subject="${subject}">
+        <div class="deck-subject-header">
+          <span class="deck-arrow">▶</span>
+          <span class="deck-subject-name">${subject}</span>
+          <span class="deck-subject-stats">${statsText}</span>
+        </div>
+        <div class="deck-topics">
+          ${topics.map(topic => renderTopicRow(topic)).join('')}
+        </div>
+      </div>
     `;
-
-    topicGroup.style.display = 'block';
-    startBtn.disabled = true;
   }
 
-  function onTopicChange(e) {
-    const topicId = e.target.value;
-    const startBtn = document.getElementById('flashcard-start-btn');
-    startBtn.disabled = !topicId;
+  function renderTopicRow(topic) {
+    const stats = getTopicStats(topic.id);
+    const total = stats.memorized + stats.again;
+
+    return `
+      <div class="deck-topic" data-topic-id="${topic.id}">
+        <span class="deck-topic-name">${topic.title}</span>
+        <div class="deck-topic-stats">
+          ${total > 0 ? `
+            <span class="deck-stat total">${total}</span>
+            <span class="deck-stat memorized">${stats.memorized}</span>
+            <span class="deck-stat again">${stats.again}</span>
+          ` : '<span class="deck-stat-new">New</span>'}
+        </div>
+      </div>
+    `;
   }
 
-  async function onStartClick() {
-    const topicId = document.getElementById('flashcard-topic-select').value;
-    const isReviewMode = document.getElementById('flashcard-review-mode').checked;
-    const isShuffleMode = document.getElementById('flashcard-shuffle-mode').checked;
+  function bindDeckListEvents() {
+    // 科目ヘッダークリック（アコーディオン）
+    const subjectHeaders = container.querySelectorAll('.deck-subject-header');
+    subjectHeaders.forEach(header => {
+      header.addEventListener('click', (e) => {
+        const subjectEl = header.closest('.deck-subject');
+        subjectEl.classList.toggle('open');
+      });
+    });
 
-    if (!topicId) return;
+    // トピック行クリック（学習開始）
+    const topicRows = container.querySelectorAll('.deck-topic');
+    topicRows.forEach(row => {
+      row.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const topicId = row.dataset.topicId;
+        const isReviewMode = document.getElementById('flashcard-review-mode').checked;
+        const isShuffleMode = document.getElementById('flashcard-shuffle-mode').checked;
 
-    state.isReviewMode = isReviewMode;
-
-    await loadTopic(topicId, isShuffleMode);
+        state.isReviewMode = isReviewMode;
+        await loadTopic(topicId, isShuffleMode);
+      });
+    });
   }
 
   // === トピック読み込み ===
@@ -275,6 +288,9 @@ const FlashcardModule = (function() {
             </div>
             <div class="flashcard-answer ${state.isFlipped ? 'show' : ''}">
               ${card.answer}
+              <div class="flashcard-next-indicator" id="flashcard-next-indicator">
+                左スワイプで次へ →
+              </div>
             </div>
           </div>
         </div>
@@ -371,17 +387,23 @@ const FlashcardModule = (function() {
   function flip() {
     state.isFlipped = !state.isFlipped;
     const card = document.getElementById('flashcard-card');
-    const hint = document.getElementById('flashcard-tap-hint');
     const answer = card.querySelector('.flashcard-answer');
+    const actions = document.querySelector('.flashcard-actions');
+    const swipeHint = document.querySelector('.flashcard-swipe-hint');
+    const summary = document.getElementById('flashcard-summary');
 
     if (state.isFlipped) {
       card.classList.add('flipped');
       answer.classList.add('show');
-      hint.textContent = '';
+      if (actions) actions.classList.add('show');
+      if (swipeHint) swipeHint.classList.add('show');
+      if (summary) summary.classList.add('show');
     } else {
       card.classList.remove('flipped');
       answer.classList.remove('show');
-      hint.textContent = 'タップで答えを見る';
+      if (actions) actions.classList.remove('show');
+      if (swipeHint) swipeHint.classList.remove('show');
+      if (summary) summary.classList.remove('show');
     }
   }
 
@@ -471,7 +493,7 @@ const FlashcardModule = (function() {
     state.filteredCards = [];
     state.currentIndex = 0;
     state.isFlipped = false;
-    renderSelectScreen();
+    renderDeckList();
   }
 
   // === 統計表示 ===
@@ -512,7 +534,7 @@ const FlashcardModule = (function() {
   // === 公開関数 ===
   function show() {
     if (!state.isActive) {
-      renderSelectScreen();
+      renderDeckList();
     }
   }
 

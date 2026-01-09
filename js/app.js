@@ -1157,6 +1157,7 @@
     if (!item || !item.htmlPath) return;
 
     try {
+      console.log('[Debug] loadTopicHTML:', item.htmlPath);
       const response = await fetch(item.htmlPath);
       if (!response.ok) throw new Error('Failed to load');
       const html = await response.text();
@@ -1165,9 +1166,11 @@
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
       const bodyContent = doc.body.innerHTML;
+      console.log('[Debug] bodyContent length:', bodyContent.length, 'h2 in doc:', doc.querySelectorAll('h2').length);
 
       // トピックセクションを作成
       const section = createTopicSection(item, bodyContent);
+      console.log('[Debug] section h2 count:', section.querySelectorAll('.topic-section-content h2').length);
 
       // 表示領域に追加（末尾）
       elements.htmlDisplay.appendChild(section);
@@ -1179,6 +1182,7 @@
 
       // お気に入りボタンを追加（セクション内のh3に対して）- 遅延実行でパフォーマンス改善
       requestAnimationFrame(() => {
+        console.log('[Debug] requestAnimationFrame called for:', item.id);
         injectFavoriteButtonsToSection(section, item);
       });
 
@@ -1501,10 +1505,15 @@
 
     const topicId = item.id;
     const h2Elements = section.querySelectorAll('.topic-section-content h2');
+    console.log('[Debug] injectFavoriteButtonsToSection:', topicId, 'h2数:', h2Elements.length);
 
     h2Elements.forEach((h2, index) => {
       // 既にラッパーがあればスキップ
-      if (h2.parentElement.classList.contains('html-card-wrapper')) return;
+      if (h2.parentElement.classList.contains('html-card-wrapper')) {
+        console.log('[Debug] Skip - already wrapped:', h2.textContent);
+        return;
+      }
+      console.log('[Debug] Processing h2:', index, h2.textContent);
 
       // h2をラッパーで囲む
       const wrapper = document.createElement('div');

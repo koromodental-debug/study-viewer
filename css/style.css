@@ -2800,3 +2800,557 @@ body {
 .image-lightbox.open .lightbox-close-hint {
   display: block;
 }
+
+/* ===== フラッシュカード演習 ===== */
+
+/* タブコンテンツ */
+#flashcard-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 選択画面 */
+.flashcard-select {
+  padding: 24px 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.flashcard-select-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.flashcard-select-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px 0;
+}
+
+.flashcard-select-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.flashcard-select-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flashcard-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flashcard-select-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.flashcard-select-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  background: white;
+  color: var(--text-color);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  cursor: pointer;
+}
+
+.flashcard-select-input:focus {
+  outline: none;
+  border-color: #007AFF;
+}
+
+.flashcard-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.flashcard-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.flashcard-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #007AFF;
+  cursor: pointer;
+}
+
+.flashcard-start-btn {
+  width: 100%;
+  padding: 16px;
+  background: #007AFF;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flashcard-start-btn:hover:not(:disabled) {
+  background: #0056CC;
+}
+
+.flashcard-start-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.flashcard-start-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* 統計 */
+.flashcard-stats {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.flashcard-stats-empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.flashcard-stats-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: var(--text-color);
+}
+
+.flashcard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.flashcard-stat {
+  text-align: center;
+  padding: 16px;
+  background: var(--bg-color);
+  border-radius: var(--radius-md);
+}
+
+.flashcard-stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.flashcard-stat-label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.flashcard-stat.memorized .flashcard-stat-value {
+  color: #34c759;
+}
+
+.flashcard-stat.again .flashcard-stat-value {
+  color: #ff9500;
+}
+
+/* 演習画面 */
+.flashcard-exercise {
+  padding: 16px;
+  padding-bottom: 120px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.flashcard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.flashcard-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: #007AFF;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background 0.2s ease;
+}
+
+.flashcard-back-btn:hover {
+  background: rgba(0, 122, 255, 0.1);
+}
+
+.flashcard-back-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.flashcard-progress {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.flashcard-status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--bg-color);
+  color: var(--text-muted);
+}
+
+.flashcard-status.status-memorized {
+  background: #d4edda;
+  color: #28a745;
+}
+
+.flashcard-status.status-again {
+  background: #fff3cd;
+  color: #ff9500;
+}
+
+/* カードコンテナ */
+.flashcard-card-container {
+  perspective: 1000px;
+  margin-bottom: 20px;
+}
+
+.flashcard-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  min-height: 200px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flashcard-card:active {
+  transform: scale(0.98);
+}
+
+.flashcard-section {
+  font-size: 12px;
+  font-weight: 600;
+  color: #007AFF;
+  margin-bottom: 12px;
+  padding: 4px 10px;
+  background: #e8f4ff;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.flashcard-question {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.flashcard-label {
+  color: var(--text-muted);
+  margin-right: 8px;
+}
+
+.flashcard-tap-hint {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 12px 0;
+}
+
+.flashcard-answer {
+  display: none;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-color);
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.flashcard-answer.show {
+  display: block;
+}
+
+/* アクションボタン */
+.flashcard-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.flashcard-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flashcard-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.flashcard-btn.memorized {
+  background: #34c759;
+  color: white;
+}
+
+.flashcard-btn.memorized:hover {
+  background: #2da44e;
+}
+
+.flashcard-btn.again {
+  background: #ff9500;
+  color: white;
+}
+
+.flashcard-btn.again:hover {
+  background: #e68600;
+}
+
+.flashcard-btn:active {
+  transform: scale(0.98);
+}
+
+/* ナビゲーション */
+.flashcard-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.flashcard-nav-btn {
+  padding: 10px 20px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flashcard-nav-btn:hover:not(:disabled) {
+  background: var(--border-color);
+}
+
+.flashcard-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* まとめ埋め込み */
+.flashcard-summary {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.flashcard-summary-header {
+  padding: 12px 16px;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.flashcard-summary-content {
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.flashcard-summary-content h1,
+.flashcard-summary-content h2,
+.flashcard-summary-content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 16px 0 8px 0;
+}
+
+.flashcard-summary-content h1:first-child,
+.flashcard-summary-content h2:first-child,
+.flashcard-summary-content h3:first-child {
+  margin-top: 0;
+}
+
+.flashcard-summary-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.flashcard-summary-content th,
+.flashcard-summary-content td {
+  padding: 8px 10px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.flashcard-summary-content th {
+  background: var(--bg-color);
+  font-weight: 600;
+}
+
+.flashcard-summary-content ul,
+.flashcard-summary-content ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.flashcard-summary-content li {
+  margin: 4px 0;
+}
+
+/* カードなしメッセージ */
+.flashcard-no-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.flashcard-no-cards-icon {
+  width: 64px;
+  height: 64px;
+  background: #d4edda;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.flashcard-no-cards-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: #28a745;
+}
+
+.flashcard-no-cards h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px 0;
+}
+
+.flashcard-no-cards p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 24px 0;
+}
+
+.flashcard-back-btn-large {
+  padding: 12px 24px;
+  background: #007AFF;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flashcard-back-btn-large:hover {
+  background: #0056CC;
+}
+
+/* エラー */
+.flashcard-error {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* モバイル対応 */
+@media (max-width: 480px) {
+  .flashcard-select {
+    padding: 20px 16px;
+  }
+
+  .flashcard-exercise {
+    padding: 12px;
+    padding-bottom: 140px;
+  }
+
+  .flashcard-card {
+    padding: 20px;
+  }
+
+  .flashcard-question {
+    font-size: 16px;
+  }
+
+  .flashcard-answer {
+    font-size: 15px;
+  }
+
+  .flashcard-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .flashcard-stats-grid {
+    gap: 8px;
+  }
+
+  .flashcard-stat {
+    padding: 12px;
+  }
+
+  .flashcard-stat-value {
+    font-size: 20px;
+  }
+}

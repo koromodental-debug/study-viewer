@@ -59,6 +59,8 @@
     welcomeCardMenu: document.getElementById('welcome-card-menu'),
     // 過去問
     kakomonContent: document.getElementById('kakomon-content'),
+    // フラッシュカード
+    flashcardContent: document.getElementById('flashcard-content'),
     kakomonDisplay: document.getElementById('kakomon-display'),
     kakomonToolbar: document.getElementById('kakomon-toolbar'),
     kakomonPlaceholder: document.getElementById('kakomon-placeholder'),
@@ -120,6 +122,11 @@
       FavoritesManager.addListener(function() {
         updateNoteBadge();
       });
+    }
+
+    // フラッシュカード機能の初期化
+    if (typeof FlashcardModule !== 'undefined') {
+      FlashcardModule.init();
     }
   }
 
@@ -327,8 +334,8 @@
       }
       isEdgeSwipe = false;
 
-      // 横方向の移動が縦より大きく、閾値を超えた場合（3タブ対応）
-      const tabOrder = ['html', 'qa', 'kakomon'];
+      // 横方向の移動が縦より大きく、閾値を超えた場合（4タブ対応）
+      const tabOrder = ['html', 'qa', 'kakomon', 'flashcard'];
       if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
         const currentIndex = tabOrder.indexOf(state.currentTab);
         if (diffX < 0 && currentIndex < tabOrder.length - 1) {
@@ -375,8 +382,8 @@
           }
           isEdgeSwipe = false;
 
-          // 3タブ対応
-          const tabOrder = ['html', 'qa', 'kakomon'];
+          // 4タブ対応
+          const tabOrder = ['html', 'qa', 'kakomon', 'flashcard'];
           if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
             const currentIndex = tabOrder.indexOf(state.currentTab);
             if (diffX < 0 && currentIndex < tabOrder.length - 1) {
@@ -2824,6 +2831,12 @@
     elements.qaContent.classList.toggle('active', tab === 'qa');
     if (elements.kakomonContent) {
       elements.kakomonContent.classList.toggle('active', tab === 'kakomon');
+    }
+    if (elements.flashcardContent) {
+      elements.flashcardContent.classList.toggle('active', tab === 'flashcard');
+      if (tab === 'flashcard' && typeof FlashcardModule !== 'undefined') {
+        FlashcardModule.show();
+      }
     }
 
     // Q&Aフローティングトグルボタンの表示制御

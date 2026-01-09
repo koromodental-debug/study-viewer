@@ -53,7 +53,7 @@ SUBJECT_MASTER = [
     {"subject_id": "B09", "subject_name": "衛生学", "category": "基礎", "keywords": "衛生,予防,フッ化物,DMF,CPI,WHO,産業保健,労働"},
     {"subject_id": "B10", "subject_name": "口腔衛生", "category": "基礎", "keywords": "口腔衛生,ブラッシング,PMTC,歯磨剤,洗口液,禁煙,ペリクル,バイオフィルム,プラーク,齲蝕予防,フッ化物,ステファン曲線"},
     {"subject_id": "B11", "subject_name": "疫学", "category": "基礎", "keywords": "疫学,統計,有病率,罹患率,相対危険度,オッズ比,感度,特異度,スクリーニング"},
-    {"subject_id": "B12", "subject_name": "公衆衛生", "category": "基礎", "keywords": "公衆衛生,法規,医療法,歯科医師法,歯科衛生士法,介護保険,社会保障,感染対策,倫理"},
+    {"subject_id": "B12", "subject_name": "公衆衛生", "category": "基礎", "keywords": "公衆衛生,法規,医療法,歯科医師法,歯科衛生士法,介護保険,社会保障,感染対策,倫理,臨床試験,治験,GCP,GLP,医療の質,患者満足度,EBM,クリニカルパス"},
     {"subject_id": "C01", "subject_name": "小児歯科", "category": "臨床", "keywords": "小児,乳歯,萌出,成長発育,乳歯列,混合歯列,小児患者,男児,女児,歳,生後,永久歯萌出,既製冠,保隙"},
     {"subject_id": "C02", "subject_name": "矯正歯科", "category": "臨床", "keywords": "矯正,不正咬合,装置,セファロ,反対咬合,上顎前突,下顎前突,開咬,過蓋咬合,叢生,ブラケット,ワイヤー,アクチバトール,バイオネーター"},
     {"subject_id": "C03", "subject_name": "保存修復", "category": "臨床", "keywords": "修復,充填,インレー,CR,窩洞,コンポジットレジン,齲蝕,う蝕,齲窩,窩壁,裏層,接着,エッチング,ボンディング"},
@@ -68,16 +68,21 @@ SUBJECT_MASTER = [
     {"subject_id": "C12", "subject_name": "歯科麻酔", "category": "臨床", "keywords": "麻酔,鎮静,全身管理,モニタリング,局所麻酔,伝達麻酔,浸潤麻酔,笑気,静脈内鎮静,バイタルサイン,救急,ショック"},
     {"subject_id": "C13", "subject_name": "高齢者歯科学", "category": "臨床", "keywords": "高齢者,介護,訪問,口腔ケア,要介護,認知症,フレイル,サルコペニア,在宅"},
     {"subject_id": "C14", "subject_name": "摂食嚥下", "category": "臨床", "keywords": "摂食嚥下,嚥下訓練,舌接触補助床,PAP,軟口蓋挙上装置,PLP,誤嚥,誤嚥性肺炎,栄養療法,リハビリテーション,要介護者"},
-    {"subject_id": "A01", "subject_name": "必修", "category": "必修", "keywords": ""},
+    {"subject_id": "A01", "subject_name": "必修", "category": "必修", "keywords": "必修,バイタルサイン,全身の診察,診察,JCS,GCS,意識レベル"},
+]
+
+# 除外するファイル名のリスト
+EXCLUDE_FILES = [
+    '国試対策参考書',
 ]
 
 
 def load_subject_master():
-    """Excelから科目マスターを読み込む（なければフォールバック）"""
+    """Excelから科目マスターを読み込む（なければフォールバック）+ SUBJECT_MASTERをマージ"""
+    subjects = []
     if HAS_PANDAS and EXCEL_FILE.exists():
         try:
             df = pd.read_excel(EXCEL_FILE, sheet_name='subject_master')
-            subjects = []
             for _, row in df.iterrows():
                 subjects.append({
                     "subject_id": row['subject_code'],
@@ -86,10 +91,27 @@ def load_subject_master():
                     "keywords": row['keywords'] if pd.notna(row['keywords']) else ""
                 })
             print(f"Loaded {len(subjects)} subjects from Excel")
-            return subjects
         except Exception as e:
             print(f"Failed to load subject_master from Excel: {e}")
-    return SUBJECT_MASTER
+            return SUBJECT_MASTER
+    else:
+        return SUBJECT_MASTER
+
+    # SUBJECT_MASTERのキーワードをマージ（Excelにない科目を追加 & キーワードを補完）
+    existing_names = {s['subject_name'] for s in subjects}
+    for master_subj in SUBJECT_MASTER:
+        if master_subj['subject_name'] not in existing_names:
+            subjects.append(master_subj)
+        else:
+            # 既存の科目にキーワードを追加
+            for s in subjects:
+                if s['subject_name'] == master_subj['subject_name'] and master_subj['keywords']:
+                    if s['keywords']:
+                        s['keywords'] = s['keywords'] + ',' + master_subj['keywords']
+                    else:
+                        s['keywords'] = master_subj['keywords']
+
+    return subjects
 
 
 def classify_subject(title, search_text, subjects):
@@ -189,6 +211,11 @@ def find_html_files():
     for root, dirs, files in os.walk(HTML_DIR):
         for file in files:
             if file.endswith('.html') and not file.startswith('.'):
+                # 除外リストに含まれるファイルはスキップ
+                stem = Path(file).stem
+                if any(excl in stem for excl in EXCLUDE_FILES):
+                    print(f"  Excluding: {file}")
+                    continue
                 filepath = Path(root) / file
                 key = normalize_name(file)
                 rel_path = filepath.relative_to(BASE_DIR)

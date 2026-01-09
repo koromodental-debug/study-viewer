@@ -28,9 +28,7 @@
     kakomonFirstLoadedTopicIndex: -1,
     isLoadingMoreKakomon: false,
     // ノートバッジ表示制御（最後に閲覧した時刻）
-    lastNoteViewTime: parseInt(localStorage.getItem('studyViewer_lastNoteViewTime') || '0'),
-    // スクロール位置とサイドバー同期用Observer
-    topicObserver: null
+    lastNoteViewTime: parseInt(localStorage.getItem('studyViewer_lastNoteViewTime') || '0')
   };
 
   // DOM要素
@@ -113,7 +111,6 @@
     bindEvents();
     restoreState();
     setupKeyboardHandler();
-    setupScrollToTopicSync();
 
     // お気に入り機能の初期化
     if (typeof FavoritesManager !== 'undefined') {
@@ -150,34 +147,6 @@
         }
       });
     }
-  }
-
-  /**
-   * スクロール位置とサイドバートピック同期のセットアップ
-   */
-  function setupScrollToTopicSync() {
-    state.topicObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
-          const topicId = entry.target.dataset.topicId;
-          if (topicId) {
-            updateActiveTopicInSidebar(topicId);
-          }
-        }
-      });
-    }, {
-      root: null, // viewport
-      threshold: 0.3
-    });
-  }
-
-  /**
-   * サイドバーのアクティブトピックを更新
-   */
-  function updateActiveTopicInSidebar(topicId) {
-    document.querySelectorAll('.topic-item').forEach(el => {
-      el.classList.toggle('active', el.dataset.id === topicId);
-    });
   }
 
   /**
@@ -1172,11 +1141,6 @@
       // 表示領域に追加（末尾）
       elements.htmlDisplay.appendChild(section);
 
-      // スクロール同期用Observerに登録
-      if (state.topicObserver) {
-        state.topicObserver.observe(section);
-      }
-
       // お気に入りボタンを追加（セクション内のh2に対して）- 遅延実行でパフォーマンス改善
       requestAnimationFrame(() => {
         injectFavoriteButtonsToSection(section, item);
@@ -1216,11 +1180,6 @@
 
       // 表示領域に追加（先頭）
       elements.htmlDisplay.insertBefore(section, elements.htmlDisplay.firstChild);
-
-      // スクロール同期用Observerに登録
-      if (state.topicObserver) {
-        state.topicObserver.observe(section);
-      }
 
       // お気に入りボタンを追加（セクション内のh3に対して）- 遅延実行でパフォーマンス改善
       requestAnimationFrame(() => {

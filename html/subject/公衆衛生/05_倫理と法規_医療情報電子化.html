@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医療情報電子化 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>医療情報電子化</h1>
+    <div class="container">
+
+      <h2>医療情報電子化の目的</h2>
+      <div class="point-box">
+        <div class="point-box-title">電子化のメリット</div>
+        <ul>
+          <li><span class="key">管理スペースの削減</span>（紙カルテの保管場所不要）</li>
+          <li><span class="key">書類作成の簡便化</span>（医療情報提供書、診療報酬請求書など）</li>
+          <li><span class="key">支払い明細書発行の迅速化</span></li>
+          <li>情報共有の効率化</li>
+          <li>検索性の向上</li>
+        </ul>
+      </div>
+      <p class="note"><span class="caution">患者の負担額の軽減は電子化の目的ではない</span></p>
+
+      <h2>電子保存の3原則</h2>
+      <p>厚生労働省のガイドラインで定められた、医療情報を電子保存する際の要件。</p>
+
+      <table>
+        <tr><th>原則</th><th>意味</th><th>確保のための対策</th></tr>
+        <tr>
+          <td class="key">真正性</td>
+          <td>作成責任が明確で、虚偽入力・改ざん・消去が防止されていること</td>
+          <td>アクセス権限管理、操作履歴の記録、電子署名</td>
+        </tr>
+        <tr>
+          <td class="key">見読性</td>
+          <td>必要に応じて肉眼で読み取れる状態にできること</td>
+          <td>適切な応答時間、印刷機能、バックアップ</td>
+        </tr>
+        <tr>
+          <td class="key">保存性</td>
+          <td>法定期間にわたり真正性・見読性が確保された状態で保存されること</td>
+          <td>ウイルス対策、媒体劣化対策、データ移行</td>
+        </tr>
+      </table>
+
+      <h2>医療情報システムの種類</h2>
+      <table>
+        <tr><th>略称</th><th>正式名称</th><th>内容</th></tr>
+        <tr>
+          <td class="key">HIS</td>
+          <td>Hospital Information Systems<br>（病院情報システム）</td>
+          <td>病院全体の情報管理（電子カルテ、医事会計、オーダリング等）</td>
+        </tr>
+        <tr>
+          <td class="key">RIS</td>
+          <td>Radiology Information Systems<br>（放射線科情報システム）</td>
+          <td>放射線検査の予約・撮影情報管理</td>
+        </tr>
+        <tr>
+          <td class="key">PACS</td>
+          <td>Picture Archiving and Communication Systems<br>（画像保存通信システム）</td>
+          <td>医用画像データの保存・配信</td>
+        </tr>
+      </table>
+
+      <h2>DICOM（頻出）</h2>
+      <p><span class="key">DICOM</span>（Digital Imaging and Communications in Medicine）は、<span class="highlight">デジタル医用画像の保存・転送における国際標準規格</span>。</p>
+
+      <h3>DICOMの特徴</h3>
+      <ul>
+        <li>CT、MRI、CR、内視鏡などの画像データを統一規格で管理</li>
+        <li><span class="highlight">患者個人情報を含む</span>（氏名、ID、性別、生年月日など）</li>
+        <li>異なるメーカーの機器間でも画像データをやり取り可能</li>
+      </ul>
+
+      <h3>DICOMファイルに含まれる情報</h3>
+      <table>
+        <tr><th>含まれる情報</th><th>含まれない情報</th></tr>
+        <tr>
+          <td>
+            <ul>
+              <li>患者ID</li>
+              <li>患者氏名</li>
+              <li><span class="highlight">性別</span></li>
+              <li>生年月日</li>
+              <li>検査日時</li>
+              <li>モダリティ情報</li>
+              <li>画像データ</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li><span class="caution">主訴</span></li>
+              <li><span class="caution">現病歴</span></li>
+              <li><span class="caution">既往歴</span></li>
+              <li><span class="caution">家族歴</span></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <p class="note">※DICOMは画像情報と基本的な患者属性を含むが、問診情報（主訴、病歴等）は含まない</p>
+
+      <h3>DICOMと他の画像形式の違い</h3>
+      <table>
+        <tr><th>形式</th><th>特徴</th><th>医療情報</th></tr>
+        <tr><td class="key">DICOM</td><td>医用画像専用規格</td><td><span class="highlight">含む</span></td></tr>
+        <tr><td>JPEG</td><td>一般的な圧縮画像形式</td><td>含まない</td></tr>
+        <tr><td>PNG</td><td>可逆圧縮画像形式</td><td>含まない</td></tr>
+        <tr><td>BMP</td><td>非圧縮画像形式</td><td>含まない</td></tr>
+        <tr><td>TIFF</td><td>高品質画像形式</td><td>含まない</td></tr>
+      </table>
+
+      <h2>その他の医療情報関連用語</h2>
+      <table>
+        <tr><th>用語</th><th>内容</th></tr>
+        <tr><td class="key">HL7</td><td>医療情報交換の国際標準規格（テキスト情報）</td></tr>
+        <tr><td class="key">ICD-10</td><td>国際疾病分類（疾病コード）</td></tr>
+        <tr><td class="key">レセプト電算処理</td><td>診療報酬請求の電子化</td></tr>
+        <tr><td class="key">オンライン資格確認</td><td>マイナンバーカードによる保険資格確認</td></tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B70</div>
+        <p>医療情報電子化の目的はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 管理スペースの削減<br>
+          b 患者の負担額の軽減<br>
+          c 支払い明細書発行の迅速化<br>
+          d 医療情報提供書作成の簡便化<br>
+          e 診療報酬請求書作成の簡便化
+        </div>
+        <div class="answer">正解：a, c, d, e</div>
+        <p>【解説】医療情報電子化の目的は<span class="highlight">管理スペースの削減</span>、<span class="highlight">書類作成の簡便化・迅速化</span>など。<span class="caution">患者の負担額の軽減（b）は電子化の直接的な目的ではない</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118D67</div>
+        <p>医療情報のシステムで、デジタル医用画像の保存や転送における国際標準規格はどれか。1つ選べ。</p>
+        <div class="choices">
+          a DICOM<br>
+          b HIS<br>
+          c ICD10<br>
+          d PACS<br>
+          e RIS
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">DICOM</span>はデジタル医用画像の保存・転送における国際標準規格。HIS（b）は病院情報システム、ICD10（c）は国際疾病分類、PACS（d）は画像保存通信システム、RIS（e）は放射線科情報システム。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A2</div>
+        <p>患者個人情報データを含む医用画像情報の標準規格はどれか。1つ選べ。</p>
+        <div class="choices">
+          a BMP<br>
+          b PNG<br>
+          c JPEG<br>
+          d TIFF<br>
+          e DICOM
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">DICOMは患者個人情報を含む</span>医用画像の標準規格。BMP、PNG、JPEG、TIFFは一般的な画像形式で、患者情報は含まない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B9</div>
+        <p>DICOMファイルの情報に含まれるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 主　訴<br>
+          b 性　別<br>
+          c 家族歴<br>
+          d 既往歴<br>
+          e 現病歴
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】DICOMファイルには<span class="highlight">性別</span>などの基本的な患者属性が含まれる。<span class="caution">主訴、家族歴、既往歴、現病歴などの問診情報は含まれない</span>（これらは電子カルテで管理）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

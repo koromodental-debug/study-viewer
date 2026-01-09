@@ -27,8 +27,8 @@
     kakomonLoadedTopicIndex: -1,
     kakomonFirstLoadedTopicIndex: -1,
     isLoadingMoreKakomon: false,
-    // ノートバッジ表示制御
-    noteBadgeDismissed: false
+    // ノートバッジ表示制御（最後に閲覧した時刻）
+    lastNoteViewTime: parseInt(localStorage.getItem('studyViewer_lastNoteViewTime') || '0')
   };
 
   // DOM要素
@@ -116,11 +116,8 @@
     if (typeof FavoritesManager !== 'undefined') {
       FavoritesManager.init();
       updateNoteBadge();
-      FavoritesManager.addListener(function(action) {
-        // 新規追加の場合のみバッジを再表示可能にする
-        if (action === 'add') {
-          state.noteBadgeDismissed = false;
-        }
+      // お気に入りの追加・削除時にバッジを更新
+      FavoritesManager.addListener(function() {
         updateNoteBadge();
       });
     }
@@ -1361,27 +1358,27 @@
   async function loadPreviousTopic() {
     if (state.isLoadingMore) return;
 
-    const prevIndex = state.firstLoadedTopicIndex - 1;
-    if (prevIndex < 0) {
-      // 最初のトピックに到達
-      return;
-    }
-
     state.isLoadingMore = true;
 
-    const prevItem = DATA[prevIndex];
-    if (prevItem && prevItem.htmlPath) {
-      // スクロール位置を保持するため、挿入前の高さを記録
-      const container = elements.htmlContent;
-      const scrollHeightBefore = container.scrollHeight;
+    // htmlPathを持つ前のアイテムを探す
+    let prevIndex = state.firstLoadedTopicIndex - 1;
+    while (prevIndex >= 0) {
+      const prevItem = DATA[prevIndex];
+      if (prevItem && prevItem.htmlPath) {
+        // スクロール位置を保持するため、挿入前の高さを記録
+        const container = elements.htmlContent;
+        const scrollHeightBefore = container.scrollHeight;
 
-      await loadTopicHTMLPrepend(prevItem);
-      state.firstLoadedTopicIndex = prevIndex;
+        await loadTopicHTMLPrepend(prevItem);
+        state.firstLoadedTopicIndex = prevIndex;
 
-      // 挿入後、スクロール位置を調整（追加された分だけ下にずらす）
-      const scrollHeightAfter = container.scrollHeight;
-      const heightDiff = scrollHeightAfter - scrollHeightBefore;
-      container.scrollTop += heightDiff;
+        // 挿入後、スクロール位置を調整（追加された分だけ下にずらす）
+        const scrollHeightAfter = container.scrollHeight;
+        const heightDiff = scrollHeightAfter - scrollHeightBefore;
+        container.scrollTop += heightDiff;
+        break;
+      }
+      prevIndex--;
     }
 
     state.isLoadingMore = false;
@@ -1393,18 +1390,18 @@
   async function loadNextTopic() {
     if (state.isLoadingMore) return;
 
-    const nextIndex = state.loadedTopicIndex + 1;
-    if (nextIndex >= DATA.length) {
-      // 最後のトピックに到達
-      return;
-    }
-
     state.isLoadingMore = true;
 
-    const nextItem = DATA[nextIndex];
-    if (nextItem && nextItem.htmlPath) {
-      await loadTopicHTML(nextItem, false);
-      state.loadedTopicIndex = nextIndex;
+    // htmlPathを持つ次のアイテムを探す
+    let nextIndex = state.loadedTopicIndex + 1;
+    while (nextIndex < DATA.length) {
+      const nextItem = DATA[nextIndex];
+      if (nextItem && nextItem.htmlPath) {
+        await loadTopicHTML(nextItem, false);
+        state.loadedTopicIndex = nextIndex;
+        break;
+      }
+      nextIndex++;
     }
 
     state.isLoadingMore = false;
@@ -2936,8 +2933,10 @@
     if (elements.noteOverlay) {
       elements.noteOverlay.classList.add('open');
       renderNoteTimeline();
-      // バッジを非表示にし、確認済みフラグを立てる
-      state.noteBadgeDismissed = true;
+      // 閲覧時刻を保存（リロード後も維持）
+      state.lastNoteViewTime = Date.now();
+      localStorage.setItem('studyViewer_lastNoteViewTime', state.lastNoteViewTime.toString());
+      // バッジを非表示
       if (elements.noteBadge) {
         elements.noteBadge.style.display = 'none';
       }
@@ -2959,20 +2958,19 @@
   function updateNoteBadge() {
     if (!elements.noteBadge || typeof FavoritesManager === 'undefined') return;
 
-    const count = FavoritesManager.count();
-    // カウント表示は常に更新
+    const allFavorites = FavoritesManager.getAll();
+    const totalCount = allFavorites.length;
+
+    // カウント表示は常に総数を更新
     if (elements.noteCount) {
-      elements.noteCount.textContent = count + '件';
+      elements.noteCount.textContent = totalCount + '件';
     }
 
-    // バッジ表示：確認済みなら表示しない（新規追加時のみリセット）
-    if (state.noteBadgeDismissed) {
-      elements.noteBadge.style.display = 'none';
-      return;
-    }
+    // バッジ表示：最後に閲覧した時刻以降に追加されたお気に入りの数
+    const newCount = allFavorites.filter(fav => fav.addedAt > state.lastNoteViewTime).length;
 
-    if (count > 0) {
-      elements.noteBadge.textContent = count > 99 ? '99+' : count;
+    if (newCount > 0) {
+      elements.noteBadge.textContent = newCount > 99 ? '99+' : newCount;
       elements.noteBadge.style.display = 'flex';
     } else {
       elements.noteBadge.style.display = 'none';

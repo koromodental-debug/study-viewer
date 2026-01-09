@@ -3129,6 +3129,7 @@ body {
 /* 演習画面 */
 .flashcard-exercise {
   padding: 12px 16px;
+  padding-top: calc(12px + env(safe-area-inset-top, 0px));
   padding-bottom: 120px;
   max-width: 600px;
   margin: 0 auto;

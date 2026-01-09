@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>水質基準 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .flow-box { background: var(--bg-secondary); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 9pt; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 食生活と環境</span>
+    <h1>水質基準</h1>
+    <div class="container">
+
+      <h2>浄水の処理プロセス</h2>
+      <div class="flow-box">
+        着水井 → フロック形成 → 沈殿池 → ろ過池 → <span class="highlight">塩素消毒</span> → 配水池
+      </div>
+      <ul>
+        <li><span class="key">フロック形成</span>：凝集剤（ポリ塩化アルミニウム）で塵やゴミを固まりにして除去</li>
+        <li><span class="key">塩素消毒</span>：次亜塩素酸ナトリウムで消毒</li>
+        <li>末端の給水栓で塩素が検出されなければならない</li>
+      </ul>
+
+      <h2>トリハロメタン</h2>
+      <p><span class="highlight">塩素</span>が水中の<span class="highlight">有機物（フミン質）</span>と反応して生じる有害物質。</p>
+      <ul>
+        <li><span class="caution">発がん性</span>、催奇形性がある</li>
+        <li>前駆物質：<span class="key">フミン質</span>（植物を微生物が分解した最終分解生成物）</li>
+        <li><span class="key">オゾン消毒</span>を併用するとトリハロメタンを減らせる</li>
+      </ul>
+
+      <h3>その他の水質汚染物質</h3>
+      <table>
+        <tr>
+          <th>物質</th>
+          <th>影響・特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">トリハロメタン</span></td>
+          <td>発がん性、催奇形性</td>
+        </tr>
+        <tr>
+          <td>クロロホルム</td>
+          <td>肝障害、腎障害</td>
+        </tr>
+        <tr>
+          <td>窒素、リン</td>
+          <td>富栄養化、赤潮の原因</td>
+        </tr>
+        <tr>
+          <td>クリプトスポリジウム</td>
+          <td>塩素耐性原虫、水系感染症</td>
+        </tr>
+      </table>
+
+      <h2>水質基準と関連法規</h2>
+      <table>
+        <tr>
+          <th>基準</th>
+          <th>根拠法</th>
+          <th>主な項目</th>
+        </tr>
+        <tr>
+          <td><span class="key">水道水の水質基準</span></td>
+          <td>水道法</td>
+          <td>大腸菌検出不可、フッ素0.8ppm</td>
+        </tr>
+        <tr>
+          <td><span class="key">排水基準</span></td>
+          <td>水質汚濁防止法</td>
+          <td>アルキル水銀化合物、BOD、COD、SS</td>
+        </tr>
+        <tr>
+          <td><span class="key">環境基準</span></td>
+          <td>環境基本法</td>
+          <td>アルキル水銀、PCB、全シアン</td>
+        </tr>
+      </table>
+      <p class="note">BOD：生物学的酸素要求量、COD：化学的酸素要求量、SS：浮遊物質量</p>
+
+      <h2>上水道フッ化物濃度調整</h2>
+      <p><span class="key">WHO</span>が社会的・経済的な状態によらず住民の齲蝕予防に有効としている方法。</p>
+      <ul>
+        <li>水道水のフッ素濃度を<span class="key">0.7〜1.2ppm</span>に調整</li>
+        <li>公衆衛生的アプローチ（ポピュレーションアプローチ）</li>
+        <li>日本では実施されていない</li>
+      </ul>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">112B24</div>
+        <p>上水道に含まれる塩素が有機物と反応して生じる有害物質はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ベンゼン<br>
+          b シアン化合物<br>
+          c 塩化カルシウム<br>
+          d トリハロメタン<br>
+          e ホルムアルデヒド
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】塩素消毒により、水中の有機物（フミン質など）と塩素が反応してトリハロメタンが生成される。トリハロメタンは発がん性、催奇形性がある有害物質。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C90</div>
+        <p>WHOが社会的・経済的な状態によらず住民の齲蝕予防に有効としているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 予防塡塞<br>
+          b 甘味制限の指導<br>
+          c ブラッシング指導<br>
+          d フッ化物歯面塗布<br>
+          e 上水道フッ化物濃度調整
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】上水道フッ化物濃度調整は、水道水を飲むだけで齲蝕予防効果が得られるため、社会的・経済的な状態に関係なく全住民に効果がある。WHOが推奨するポピュレーションアプローチ。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイントまとめ</div>
+        <ul>
+          <li><span class="highlight">トリハロメタン</span>＝塩素＋有機物（発がん性）</li>
+          <li>水道水の水質基準は<span class="key">水道法</span></li>
+          <li><span class="key">上水道フッ化物濃度調整</span>＝WHOが推奨する齲蝕予防</li>
+          <li>日本ではフッ素濃度<span class="key">0.8ppm</span>以下（水質基準）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

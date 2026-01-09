@@ -1408,6 +1408,18 @@
         updateNoteBadge();
       });
 
+      // 画像保存ボタンを追加
+      const saveBtn = document.createElement('button');
+      saveBtn.className = 'save-image-btn';
+      saveBtn.setAttribute('aria-label', '画像保存');
+      saveBtn.innerHTML = createSaveButtonSVG();
+      saveBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const filename = `まとめ_${topicId}_${h2.textContent || index}`;
+        saveCardAsImage(wrapper, filename);
+      });
+
+      wrapper.insertBefore(saveBtn, wrapper.firstChild);
       wrapper.insertBefore(favBtn, wrapper.firstChild);
     });
   }
@@ -1678,14 +1690,14 @@
       });
     });
 
-    // お気に入りボタン
-    if (typeof FavoritesManager !== 'undefined') {
-      section.querySelectorAll('.qa-item').forEach(item => {
-        const cardIndex = item.dataset.cardIndex;
-        const itemTopicId = item.dataset.topicId || topicId;
-        const favoriteBtn = item.querySelector('.favorite-btn');
-        if (!favoriteBtn) return;
+    // お気に入りボタンと画像保存ボタン
+    section.querySelectorAll('.qa-item').forEach(item => {
+      const cardIndex = item.dataset.cardIndex;
+      const itemTopicId = item.dataset.topicId || topicId;
+      const favoriteBtn = item.querySelector('.favorite-btn');
 
+      // お気に入りボタン
+      if (favoriteBtn && typeof FavoritesManager !== 'undefined') {
         const isFav = FavoritesManager.isFavoriteByParams('qa', itemTopicId, cardIndex);
         favoriteBtn.classList.toggle('active', isFav);
 
@@ -1704,8 +1716,23 @@
           const isNowFavorite = FavoritesManager.toggle('qa', itemTopicId, cardIndex, content);
           this.classList.toggle('active', isNowFavorite);
         });
-      });
-    }
+      }
+
+      // 画像保存ボタンを追加（まだなければ）
+      if (!item.querySelector('.save-image-btn')) {
+        const saveBtn = document.createElement('button');
+        saveBtn.className = 'save-image-btn';
+        saveBtn.setAttribute('aria-label', '画像保存');
+        saveBtn.innerHTML = createSaveButtonSVG();
+        saveBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const question = item.dataset.question || '';
+          const filename = `QA_${itemTopicId}_${question.substring(0, 20)}`;
+          saveCardAsImage(item, filename);
+        });
+        item.appendChild(saveBtn);
+      }
+    });
   }
 
   /**
@@ -2633,6 +2660,87 @@
       .replace(/'/g, '&#039;');
   }
 
+  /**
+   * カードを画像として保存
+   */
+  async function saveCardAsImage(element, filename) {
+    if (typeof html2canvas === 'undefined') {
+      alert('画像保存機能を読み込めませんでした');
+      return;
+    }
+
+    // ローディング表示
+    const overlay = document.createElement('div');
+    overlay.className = 'saving-overlay';
+    overlay.innerHTML = '<div class="saving-spinner">画像を生成中...</div>';
+    document.body.appendChild(overlay);
+
+    try {
+      const canvas = await html2canvas(element, {
+        backgroundColor: '#ffffff',
+        scale: 2,
+        useCORS: true,
+        logging: false
+      });
+
+      const dataUrl = canvas.toDataURL('image/png');
+
+      // iOS Safari対応: 新しいタブで画像を開く（長押しで保存可能）
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      if (isIOS) {
+        const newWindow = window.open();
+        if (newWindow) {
+          newWindow.document.write(`
+            <html>
+              <head>
+                <title>${filename}</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <style>
+                  body { margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f5f5f7; }
+                  img { max-width: 100%; height: auto; }
+                  p { text-align: center; padding: 16px; color: #666; font-family: sans-serif; }
+                </style>
+              </head>
+              <body>
+                <div>
+                  <p>画像を長押しして「写真に保存」を選択してください</p>
+                  <img src="${dataUrl}" alt="${filename}">
+                </div>
+              </body>
+            </html>
+          `);
+          newWindow.document.close();
+        }
+      } else {
+        // その他のブラウザ: ダウンロード
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = filename + '.png';
+        link.click();
+      }
+    } catch (err) {
+      console.error('画像保存エラー:', err);
+      alert('画像の生成に失敗しました');
+    } finally {
+      overlay.remove();
+    }
+  }
+
+  /**
+   * 保存ボタンのSVGアイコンを生成
+   */
+  function createSaveButtonSVG() {
+    return `<svg viewBox="0 0 24 24" stroke-width="2">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>`;
+  }
+
+  // グローバルに公開（kakomon.jsから使用）
+  window.saveCardAsImage = saveCardAsImage;
+  window.createSaveButtonSVG = createSaveButtonSVG;
+
   // ===== ノート（お気に入り）機能 =====
 
   /**
@@ -2725,12 +2833,23 @@
     header.innerHTML = `
       <span class="note-card-type ${item.type}">${typeLabels[item.type] || item.type}</span>
       <span class="note-card-topic">${escapeHtml(item.topicId)}</span>
+      <button class="save-image-btn" aria-label="画像保存">
+        ${createSaveButtonSVG()}
+      </button>
       <button class="note-card-delete" data-id="${escapeHtml(item.id)}" aria-label="削除">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M18 6L6 18M6 6l12 12"/>
         </svg>
       </button>
     `;
+
+    // 保存ボタンのイベント
+    const saveBtn = header.querySelector('.save-image-btn');
+    saveBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const filename = `${typeLabels[item.type]}_${item.topicId}_${item.cardIndex}`;
+      saveCardAsImage(content, filename);
+    });
 
     // 削除ボタンのイベント
     const deleteBtn = header.querySelector('.note-card-delete');

@@ -2516,3 +2516,82 @@ body {
   color: var(--text-muted);
   font-size: 13px;
 }
+
+/* ===== 画像保存ボタン ===== */
+.save-image-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+.save-image-btn:hover {
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.save-image-btn:active {
+  transform: scale(0.9);
+}
+
+.save-image-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--text-color);
+  fill: none;
+}
+
+/* ノートカード内の保存ボタン */
+.note-card-header .save-image-btn {
+  margin-right: 4px;
+}
+
+/* まとめカード内の保存ボタン */
+.topic-section-content .html-card-wrapper .save-image-btn {
+  position: absolute;
+  top: 0;
+  right: 32px;
+}
+
+/* Q&Aカード内の保存ボタン */
+.qa-item .save-image-btn {
+  position: absolute;
+  top: 12px;
+  right: 44px;
+}
+
+/* 過去問カード内の保存ボタン */
+.kakomon-header .save-image-btn {
+  margin-left: 4px;
+}
+
+/* 画像保存中のオーバーレイ */
+.saving-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.saving-spinner {
+  background: white;
+  padding: 24px 32px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+}

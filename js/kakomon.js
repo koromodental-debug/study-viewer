@@ -247,6 +247,13 @@ const KakomonModule = (function() {
               <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
             </svg>
           </button>
+          <button class="save-image-btn" aria-label="画像保存">
+            <svg viewBox="0 0 24 24" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </button>
         </div>
 
         <div class="kakomon-question">
@@ -395,51 +402,63 @@ const KakomonModule = (function() {
   }
 
   /**
-   * 過去問カードのお気に入りボタンにイベントをバインド
+   * 過去問カードのお気に入りボタンと画像保存ボタンにイベントをバインド
    */
   function bindKakomonFavoriteButtons(display) {
-    if (typeof FavoritesManager === 'undefined' || !state.currentItem) return;
-
-    const topicId = state.currentItem.subject || state.currentItem.id;
+    const topicId = state.currentItem ? (state.currentItem.subject || state.currentItem.id) : '';
 
     display.querySelectorAll('.kakomon-card').forEach(card => {
       const code = card.dataset.code;
-      const favoriteBtn = card.querySelector('.favorite-btn');
-      if (!favoriteBtn) return;
 
-      // 既にお気に入りかどうかをチェックして状態を反映
-      const isFav = FavoritesManager.isFavoriteByParams('kakomon', topicId, code);
-      favoriteBtn.classList.toggle('active', isFav);
+      // お気に入りボタン
+      if (typeof FavoritesManager !== 'undefined' && state.currentItem) {
+        const favoriteBtn = card.querySelector('.favorite-btn');
+        if (favoriteBtn) {
+          // 既にお気に入りかどうかをチェックして状態を反映
+          const isFav = FavoritesManager.isFavoriteByParams('kakomon', topicId, code);
+          favoriteBtn.classList.toggle('active', isFav);
 
-      favoriteBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
+          favoriteBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
 
-        const questionText = card.dataset.text || '';
-        const answer = card.dataset.answer || '';
-        const numChoices = card.dataset.num || '1';
+            const questionText = card.dataset.text || '';
+            const answer = card.dataset.answer || '';
+            const numChoices = card.dataset.num || '1';
 
-        // 選択肢と画像を取得
-        let choices = {};
-        let images = [];
-        try {
-          choices = JSON.parse(card.dataset.choices || '{}');
-          images = JSON.parse(card.dataset.images || '[]');
-        } catch (err) {
-          console.log('パースエラー:', err);
+            // 選択肢と画像を取得
+            let choices = {};
+            let images = [];
+            try {
+              choices = JSON.parse(card.dataset.choices || '{}');
+              images = JSON.parse(card.dataset.images || '[]');
+            } catch (err) {
+              console.log('パースエラー:', err);
+            }
+
+            const content = {
+              code: code,
+              text: questionText,
+              answer: answer,
+              numChoices: numChoices,
+              choices: choices,
+              images: images
+            };
+
+            const isNowFavorite = FavoritesManager.toggle('kakomon', topicId, code, content);
+            this.classList.toggle('active', isNowFavorite);
+          });
         }
+      }
 
-        const content = {
-          code: code,
-          text: questionText,
-          answer: answer,
-          numChoices: numChoices,
-          choices: choices,
-          images: images
-        };
-
-        const isNowFavorite = FavoritesManager.toggle('kakomon', topicId, code, content);
-        this.classList.toggle('active', isNowFavorite);
-      });
+      // 画像保存ボタン
+      const saveBtn = card.querySelector('.save-image-btn');
+      if (saveBtn && typeof window.saveCardAsImage === 'function') {
+        saveBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const filename = `過去問_${code}`;
+          window.saveCardAsImage(card, filename);
+        });
+      }
     });
   }
 

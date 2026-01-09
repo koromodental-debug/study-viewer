@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>国際生活機能分類（ICF） - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 健康と疾病</span>
+    <h1>国際生活機能分類（ICF）</h1>
+    <div class="container">
+
+      <h2>ICFとは</h2>
+      <p><span class="highlight">ICF（International Classification of Functioning, Disability and Health）</span>は、WHOが2001年に採択した<span class="key">国際生活機能分類</span>である。</p>
+      <ul>
+        <li>障害を個人の問題としてではなく、<span class="highlight">環境との関係</span>でとらえる</li>
+        <li>障害だけでなく<span class="key">健康に至る全般の生活状態</span>を対象とする</li>
+        <li>ICIDHの後継として、環境因子・個人因子を追加</li>
+      </ul>
+
+      <h2>ICFの構成要素</h2>
+      <p>ICFは<span class="key">生活機能と障害</span>、<span class="key">背景因子</span>の2つの部門から構成される。</p>
+
+      <h3>生活機能と障害</h3>
+      <table>
+        <tr>
+          <th>要素</th>
+          <th>説明</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="key">心身機能</span></td>
+          <td>身体系の生理的機能（心理的機能含む）</td>
+          <td>咀嚼機能、視覚、記憶</td>
+        </tr>
+        <tr>
+          <td><span class="key">身体構造</span></td>
+          <td>身体の解剖学的部分</td>
+          <td>歯、眼、四肢</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">活動</span></td>
+          <td>課題や行為の個人による遂行</td>
+          <td>食事、歩行、会話</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">参加</span></td>
+          <td>生活・人生場面への関わり</td>
+          <td>就職、ボランティア活動、婚姻</td>
+        </tr>
+      </table>
+
+      <h3>背景因子</h3>
+      <table>
+        <tr>
+          <th>要素</th>
+          <th>説明</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">環境因子</span></td>
+          <td>物的・社会的・態度的環境</td>
+          <td>バリアフリー、車椅子、家族の介護</td>
+        </tr>
+        <tr>
+          <td><span class="key">個人因子</span></td>
+          <td>年齢、性別、意欲、態度など</td>
+          <td>性格、ライフスタイル、価値観</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">活動と参加の違い（頻出）</div>
+        <ul>
+          <li><span class="key">活動</span>：個人レベルの行為 → 食事、歩行、<span class="caution">咀嚼</span></li>
+          <li><span class="key">参加</span>：社会レベルの関わり → <span class="highlight">就職</span>、ボランティア、<span class="highlight">婚姻</span></li>
+        </ul>
+      </div>
+
+      <h2>ICFとICIDHの違い</h2>
+      <h3>ICIDH（国際障害分類）の考え方</h3>
+      <p>疾病 → 機能不全 → 能力低下 → 社会的不利（<span class="caution">一方向的</span>）</p>
+
+      <h3>ICFの考え方</h3>
+      <p>各要素が<span class="highlight">相互作用</span>する双方向モデル。環境因子・個人因子が加わった。</p>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">105C95</div>
+        <p>国際生活機能分類〈ICF〉で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 障害を異常の面で捉えている。<br>
+          b 心身の構造の異常を能力低下という。<br>
+          c 障害から健康に至る全般の生活状態を対象とする。<br>
+          d 障害によって就業できないことを活動制限という。<br>
+          e 障害によって咀嚼できないことを参加制約という。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ICFは障害だけでなく健康全般を対象とする。aは誤り（生活機能の面でとらえる）。bは誤り（機能障害という）。dは誤り（就業できないことは参加制約）。eは誤り（咀嚼は活動制限）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D32</div>
+        <p>国際生活機能分類〈ICF〉の要素と具体例の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 活動 ーーーーーー 就職<br>
+          b 参加 ーーーーーー ボランティア活動<br>
+          c 環境因子 ーーーーー バリアフリー<br>
+          d 個人因子 ーーーーー 車椅子の使用<br>
+          e 心身機能・構造 ーー 婚姻
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】bのボランティア活動は社会参加であり「参加」。cのバリアフリーは物的環境であり「環境因子」。aの就職は社会参加なので「参加」（活動ではない）。dの車椅子は環境因子（個人因子ではない）。eの婚姻は「参加」。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">ひっかけポイント</div>
+        <ul>
+          <li><span class="caution">就職・婚姻</span> → 参加（活動ではない）</li>
+          <li><span class="caution">車椅子</span> → 環境因子（個人因子ではない）</li>
+          <li><span class="caution">咀嚼できない</span> → 活動制限（参加制約ではない）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1143,7 +1143,50 @@
     content.innerHTML = bodyContent;
     section.appendChild(content);
 
+    // 画像パスを修正（相対パスを正しいパスに変換）
+    fixImagePaths(content, item.htmlPath);
+
     return section;
+  }
+
+  /**
+   * HTML内の画像パスを修正
+   */
+  function fixImagePaths(container, htmlPath) {
+    if (!htmlPath) return;
+
+    const images = container.querySelectorAll('img');
+    images.forEach(img => {
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      // 相対パス（../）を含む場合、正しいパスに変換
+      if (src.startsWith('../')) {
+        // htmlPathからディレクトリ部分を取得
+        const htmlDir = htmlPath.substring(0, htmlPath.lastIndexOf('/'));
+        // 相対パスを解決
+        const resolvedPath = resolveRelativePath(htmlDir, src);
+        img.setAttribute('src', resolvedPath);
+      }
+    });
+  }
+
+  /**
+   * 相対パスを解決
+   */
+  function resolveRelativePath(basePath, relativePath) {
+    const baseParts = basePath.split('/');
+    const relativeParts = relativePath.split('/');
+
+    for (const part of relativeParts) {
+      if (part === '..') {
+        baseParts.pop();
+      } else if (part !== '.') {
+        baseParts.push(part);
+      }
+    }
+
+    return baseParts.join('/');
   }
 
   /**

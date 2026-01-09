@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ICD - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 健康と疾病</span>
+    <h1>ICD（国際疾病分類）</h1>
+    <div class="container">
+
+      <h2>ICDとは</h2>
+      <p><span class="highlight">ICD（International Classification of Diseases）</span>は、WHOが定める<span class="key">「疾病及び関連保健問題の国際統計分類」</span>である。</p>
+      <ul>
+        <li>疾病、傷害、死因を分類するための国際的な統一基準</li>
+        <li>現行版は<span class="key">ICD-10</span>（第10版）、2022年からICD-11が発効</li>
+      </ul>
+
+      <h3>ICDの使用場面</h3>
+      <ul>
+        <li><span class="key">人口動態調査</span>（死因統計）</li>
+        <li><span class="key">患者調査</span></li>
+        <li><span class="key">社会保険診療点数表</span>（診療報酬請求）</li>
+      </ul>
+
+      <h2>WHOの国際分類体系</h2>
+      <p>WHOは疾病や障害に関する複数の国際分類を策定している。<span class="caution">略語の混同に注意</span>。</p>
+
+      <h3>主要な国際分類</h3>
+      <table>
+        <tr>
+          <th>略語</th>
+          <th>正式名称</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ICD</span></td>
+          <td>国際疾病分類</td>
+          <td>疾病・死因の分類</td>
+        </tr>
+        <tr>
+          <td><span class="key">ICF</span></td>
+          <td>国際生活機能分類</td>
+          <td>障害を環境との関係でとらえる</td>
+        </tr>
+        <tr>
+          <td><span class="key">ICIDH</span></td>
+          <td>国際障害分類</td>
+          <td>ICFの前身。環境因子を考慮していない</td>
+        </tr>
+      </table>
+
+      <h3>ICFとICIDHの違い</h3>
+      <p><span class="key">ICIDH</span>：疾病 → 機能不全 → 能力低下 → 社会的不利（一方向的）</p>
+      <p><span class="key">ICF</span>：<span class="highlight">環境因子</span>と<span class="highlight">個人因子</span>を加え、相互作用としてとらえる</p>
+
+      <div class="point-box">
+        <div class="point-box-title">試験で出る紛らわしい略語</div>
+        <ul>
+          <li><span class="key">ICNP</span>：看護実践国際分類（Nursing Practice）</li>
+          <li><span class="key">ICDAS</span>：国際う蝕探知評価システム（歯科分野）</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">111C23</div>
+        <p>WHOが定める「疾病及び関連保健問題の国際統計分類」はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ICD<br>
+          b ICF<br>
+          c ICNP<br>
+          d ICIDH<br>
+          e ICDAS
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】「疾病及び関連保健問題の国際統計分類」はICDの正式名称そのものである。bのICFは「国際生活機能分類」、dのICIDHは「国際障害分類」でICFの前身。cのICNPは看護分野、eのICDASは歯科のう蝕評価システムであり、いずれも疾病分類ではない。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <ul>
+          <li>ICD = <span class="highlight">D</span>isease（疾病）の分類</li>
+          <li>ICF = <span class="highlight">F</span>unctioning（生活機能）の分類</li>
+          <li>ICIDH = ICFの前身（<span class="highlight">H</span>andicap = 障害）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

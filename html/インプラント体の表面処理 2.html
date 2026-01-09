@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>インプラント体の表面処理</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F0F5FA;
+      --border-blue: #B8CCE4;
+      --border-blue-medium: #8FAFD4;
+      --bg-secondary: #F5F5F7;
+      --border-light: #E8E8ED;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "游ゴシック", "Yu Gothic", sans-serif;
+      font-size: 9pt;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: white;
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 12mm;
+      }
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    .page {
+      width: 100%;
+      max-width: 297mm;
+      margin: 0 auto;
+      padding: 10mm;
+    }
+
+    h1 {
+      font-size: 26pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      border-bottom: 2px solid var(--text-primary);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+
+    .container {
+      column-count: 2;
+      column-gap: 8mm;
+    }
+
+    h2 {
+      font-size: 12pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin-top: 14px;
+      margin-bottom: 8px;
+      break-after: avoid;
+    }
+
+    h2 .num {
+      color: var(--accent);
+    }
+
+    h3 {
+      font-size: 10pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin-top: 10px;
+      margin-bottom: 6px;
+      break-after: avoid;
+    }
+
+    h3::before {
+      content: "■ ";
+      color: var(--accent);
+    }
+
+    p {
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 8.5pt;
+    }
+
+    th, td {
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    th {
+      background-color: var(--bg-secondary);
+      font-weight: bold;
+      color: var(--text-primary);
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .important-box {
+      background-color: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-medium);
+      border-bottom: 2px solid var(--border-blue-medium);
+      padding: 10px 12px;
+      margin: 12px 0;
+      break-inside: avoid;
+    }
+
+    .important-box-title {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .note-box {
+      background-color: #FAFAFA;
+      border-left: 3px solid var(--accent);
+      padding: 8px 12px;
+      margin: 10px 0;
+      break-inside: avoid;
+    }
+
+    .note-box-title {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .source {
+      font-size: 7pt;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .question-box {
+      background-color: #FFFBF0;
+      border: 1px solid #E8D4A8;
+      border-radius: 4px;
+      padding: 10px 12px;
+      margin: 10px 0;
+      break-inside: avoid;
+    }
+
+    .question-title {
+      font-weight: bold;
+      color: #8B6914;
+      margin-bottom: 6px;
+    }
+
+    .answer {
+      color: #C41E3A;
+      font-weight: bold;
+    }
+
+    .wrong {
+      color: var(--text-secondary);
+      text-decoration: line-through;
+    }
+
+    .correct {
+      color: #16A34A;
+      font-weight: bold;
+    }
+
+    .incorrect {
+      color: #DC2626;
+      font-weight: bold;
+    }
+
+    ul {
+      margin: 6px 0 6px 20px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .page-num {
+      text-align: center;
+      font-size: 8pt;
+      color: var(--text-secondary);
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>インプラント体の表面処理</h1>
+
+    <div class="container">
+      <h2><span class="num">1.</span> 表面処理の目的</h2>
+      <p>チタンインプラント体の表面処理には、<span class="highlight">2つの系統</span>がある：</p>
+      <ul>
+        <li><span class="highlight">表面微小凹凸形状の付与</span>（粗面化）</li>
+        <li><span class="highlight">親水性の付与</span></li>
+      </ul>
+      <p>表面処理により、骨系細胞の付着・増殖・分化が促進され、早期にオッセオインテグレーションを獲得できる。</p>
+
+      <div class="important-box">
+        <div class="important-box-title">オッセオインテグレーションとは</div>
+        <p>光学顕微鏡レベルで、インプラントと骨の間に<span class="highlight">線維性結合組織が介在せず</span>、機能を維持する状態のこと。チタンは接触性骨結合（オッセオインテグレーション）を獲得しやすい。</p>
+      </div>
+      <p class="source">出典：パーフェクトマスター歯科理工 p.122、よくわかる口腔インプラント学 p.54</p>
+
+      <h2><span class="num">2.</span> 表面処理法一覧</h2>
+
+      <table>
+        <tr>
+          <th>処理法</th>
+          <th>分類</th>
+          <th>処理内容</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">サンドブラスト</span></td>
+          <td>物理的</td>
+          <td>アルミナ粉末、アパタイト粉末などを用いた物理的噴射法</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">酸エッチング</span></td>
+          <td>化学的</td>
+          <td>フッ酸、フッ酸＋硫酸などを用いた化学的溶解</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">陽極酸化</span></td>
+          <td>電気化学的</td>
+          <td>電解液中での電気化学的処理</td>
+        </tr>
+        <tr>
+          <td>ワイヤ放電加工</td>
+          <td>物理的</td>
+          <td>超純水中での火花放電処理</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">HAコーティング</span></td>
+          <td>コーティング</td>
+          <td>プラズマ溶射法、水熱処理、スパッタリング法など</td>
+        </tr>
+        <tr>
+          <td>チタンコーティング</td>
+          <td>コーティング</td>
+          <td>チタン粒子のプラズマ溶射法</td>
+        </tr>
+      </table>
+      <p class="source">出典：パーフェクトマスター歯科理工 p.122</p>
+
+      <h2><span class="num">3.</span> 各処理法の詳細</h2>
+
+      <h3>サンドブラスト</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>方法</td>
+          <td><span class="highlight">Al<sub>2</sub>O<sub>3</sub>粒子</span>を高圧で吹き付け</td>
+        </tr>
+        <tr>
+          <td>形成物</td>
+          <td>マクロレベルの粗面</td>
+        </tr>
+        <tr>
+          <td>効果</td>
+          <td>表面積増大、機械的嵌合力向上</td>
+        </tr>
+      </table>
+
+      <h3>酸エッチング</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>使用酸</td>
+          <td>HF、HF＋H<sub>2</sub>SO<sub>4</sub>など</td>
+        </tr>
+        <tr>
+          <td>形成物</td>
+          <td>ミクロレベルの粗面（micropits）</td>
+        </tr>
+        <tr>
+          <td>効果</td>
+          <td>残留粒子除去、骨芽細胞接着促進</td>
+        </tr>
+      </table>
+
+      <h3>陽極酸化</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>方法</td>
+          <td>チタンを<span class="highlight">陽極</span>として電解質溶液中で通電</td>
+        </tr>
+        <tr>
+          <td>形成物</td>
+          <td>酸化チタン（TiO<sub>2</sub>）被膜と微小孔</td>
+        </tr>
+        <tr>
+          <td>特徴</td>
+          <td>ガスが抜けた小穴を有する特徴的表面</td>
+        </tr>
+      </table>
+
+      <h3>HAコーティング</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>化学式</td>
+          <td>Ca<sub>10</sub>(PO<sub>4</sub>)<sub>6</sub>(OH)<sub>2</sub></td>
+        </tr>
+        <tr>
+          <td>主な方法</td>
+          <td><span class="highlight">プラズマ溶射法</span></td>
+        </tr>
+        <tr>
+          <td>特徴</td>
+          <td>骨と化学的に結合（バイオインテグレーション）</td>
+        </tr>
+        <tr>
+          <td>課題</td>
+          <td>長期使用で剥離・亀裂の可能性、感染時に除去困難</td>
+        </tr>
+      </table>
+      <p class="source">出典：よくわかる口腔インプラント学 p.55-57</p>
+
+      <h2><span class="num">4.</span> 複合表面処理（SLA）</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>正式名</td>
+          <td>Sandblasted, Large-grit, Acid-etched</td>
+        </tr>
+        <tr>
+          <td>方法</td>
+          <td><span class="highlight">サンドブラスト + 酸エッチング</span></td>
+        </tr>
+        <tr>
+          <td>表面形態</td>
+          <td>大きいくぼみの中に細かい凹凸（二重構造）</td>
+        </tr>
+        <tr>
+          <td>特徴</td>
+          <td>現在最も普及している方法</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">5.</span> 親水化処理</h2>
+      <p>チタン表面の酸化チタン膜は本来親水性だが、大気中の炭化水素分子が吸着すると親水性が低下する。</p>
+
+      <table>
+        <tr>
+          <th>処理法</th>
+          <th>原理</th>
+        </tr>
+        <tr>
+          <td>紫外線照射</td>
+          <td>付着した炭化水素分子を除去</td>
+        </tr>
+        <tr>
+          <td>大気プラズマ</td>
+          <td>粒子の運動エネルギーで吸着分子を除去</td>
+        </tr>
+        <tr>
+          <td>溶液浸漬</td>
+          <td>食塩水、NaOH溶液、H<sub>2</sub>O<sub>2</sub>などに浸漬</td>
+        </tr>
+      </table>
+      <p class="source">出典：よくわかる口腔インプラント学 p.55-56</p>
+
+      <h2><span class="num">6.</span> 国試での鑑別ポイント</h2>
+
+      <div class="important-box">
+        <div class="important-box-title">表面処理 vs 熱処理の違い</div>
+        <table>
+          <tr>
+            <th>表面処理（正解）</th>
+            <th>熱処理（不正解）</th>
+          </tr>
+          <tr>
+            <td>サンドブラスト</td>
+            <td rowspan="4" style="vertical-align: middle;"><span class="wrong">時効硬化</span><br>（金属内部の組織変化であり、<br>表面処理ではない）</td>
+          </tr>
+          <tr>
+            <td>酸エッチング</td>
+          </tr>
+          <tr>
+            <td>陽極酸化</td>
+          </tr>
+          <tr>
+            <td>HAコーティング</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>インプラント材としてのチタンの特徴</h3>
+      <ul>
+        <li>オッセオインテグレーションしやすい（骨形成速度が速い、骨接触率が高い）</li>
+        <li>優れた耐食性（不動態皮膜の存在）</li>
+        <li>リン酸カルシウムの析出が起こりやすい</li>
+        <li>骨関連タンパク質の吸着が起こりやすい</li>
+      </ul>
+      <p class="source">出典：パーフェクトマスター歯科理工 p.122</p>
+
+      <h2><span class="num">7.</span> 関連過去問</h2>
+
+      <div class="question-box">
+        <div class="question-title">115B-46</div>
+        <p><strong>チタン製インプラント材料の表面処理はどれか。4つ選べ。</strong></p>
+        <p>a: <span class="wrong">時効硬化</span>　b: 陽極酸化　c: 酸エッチング<br>
+        d: サンドブラスト　e: ハイドロキシアパタイトコーティング</p>
+        <p><span class="answer">正解：b, c, d, e</span></p>
+        <p class="source">※時効硬化は金属の熱処理であり、表面処理ではない</p>
+      </div>
+
+      <div class="question-box">
+        <div class="question-title">116C-67</div>
+        <p><strong>CAD/CAMを応用したコンポジットレジンクラウンの接着で内面処理として行われるサンドブラストに使うのはどれか。</strong></p>
+        <p>a: Al<sub>2</sub>O<sub>3</sub>　b: CaSO<sub>4</sub>　c: SiO<sub>2</sub>　d: TiO<sub>2</sub>　e: ZrO<sub>2</sub></p>
+        <p><span class="answer">正解：a（酸化アルミニウム＝アルミナ）</span></p>
+      </div>
+
+      <h2><span class="num">8.</span> 試験対策ポイント</h2>
+
+      <div class="note-box">
+        <div class="note-box-title">最頻出の鑑別ポイント</div>
+        <p><strong>1</strong> 表面処理＝サンドブラスト、酸エッチング、陽極酸化、HAコーティング</p>
+        <p><strong>2</strong> 時効硬化は熱処理（表面処理ではない）</p>
+        <p><strong>3</strong> サンドブラストにはアルミナ（Al<sub>2</sub>O<sub>3</sub>）を使用</p>
+        <p><strong>4</strong> HAコーティング＝プラズマ溶射法</p>
+      </div>
+
+      <div class="note-box">
+        <div class="note-box-title">覚え方</div>
+        <p>「<span class="highlight">さ・さ・陽・ハ</span>」で表面処理4つを覚える</p>
+        <p>・<strong>さ</strong>んどブラスト　・<strong>さ</strong>んエッチング<br>
+        ・<strong>陽</strong>極酸化　・<strong>ハ</strong>イドロキシアパタイトコーティング</p>
+      </div>
+
+    </div>
+
+    <p class="page-num">- 1 -</p>
+  </div>
+</body>
+</html>

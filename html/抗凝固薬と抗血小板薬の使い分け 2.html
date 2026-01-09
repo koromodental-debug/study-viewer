@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抗凝固薬と抗血小板薬の使い分け</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+      --green-bg: #F0FFF4;
+      --green-border: #68D391;
+      --red-bg: #FFF5F5;
+      --red-border: #FC8181;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 24pt; font-weight: bold; margin-bottom: 16px; }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; }
+    h2 .num { color: var(--accent); }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 8px 12px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .compare-box {
+      display: flex; gap: 10px; margin: 10px 0; break-inside: avoid;
+    }
+    .compare-item {
+      flex: 1; padding: 10px; border-radius: 4px;
+    }
+    .compare-item.antiplatelet {
+      background: var(--green-bg); border: 1px solid var(--green-border);
+    }
+    .compare-item.anticoagulant {
+      background: var(--red-bg); border: 1px solid var(--red-border);
+    }
+    .compare-item h4 {
+      font-size: 10pt; font-weight: bold; margin-bottom: 6px; text-align: center;
+    }
+    .compare-item.antiplatelet h4 { color: #276749; }
+    .compare-item.anticoagulant h4 { color: #C53030; }
+    .syllabus-section {
+      background: #EDF2F7;
+      padding: 6px 10px;
+      margin: 10px 0 6px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: bold;
+    }
+    .flow-box {
+      background: #FAFAFA;
+      border: 1px solid #E2E8F0;
+      padding: 12px;
+      margin: 10px 0;
+      text-align: center;
+      break-inside: avoid;
+    }
+    .flow-arrow { color: var(--accent); font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>抗凝固薬と抗血小板薬の使い分け</h1>
+    <div class="syllabus-section">出題基準: 総論VII-8 薬物療法 ウ.疾患に応じた薬物療法 f.止血薬、抗血栓薬</div>
+
+    <div class="container">
+
+      <h2><span class="num">1.</span> 使い分けの基本原則</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">核心：血栓の種類で使い分ける</div>
+        <table>
+          <tr>
+            <th>血栓の種類</th>
+            <th>形成部位</th>
+            <th>主成分</th>
+            <th>治療薬</th>
+          </tr>
+          <tr>
+            <td><span class="highlight">白色血栓</span></td>
+            <td>動脈（血流速い）</td>
+            <td>血小板</td>
+            <td><span class="highlight">抗血小板薬</span></td>
+          </tr>
+          <tr>
+            <td><span class="red">赤色血栓</span></td>
+            <td>静脈（血流遅い）</td>
+            <td>フィブリン・赤血球</td>
+            <td><span class="red">抗凝固薬</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="compare-box">
+        <div class="compare-item antiplatelet">
+          <h4>抗血小板薬</h4>
+          <p><strong>動脈血栓</strong>を予防</p>
+          <ul>
+            <li>心筋梗塞</li>
+            <li>アテローム血栓性脳梗塞</li>
+            <li>狭心症</li>
+            <li>末梢動脈疾患</li>
+          </ul>
+        </div>
+        <div class="compare-item anticoagulant">
+          <h4>抗凝固薬</h4>
+          <p><strong>静脈血栓・心原性塞栓</strong>を予防</p>
+          <ul>
+            <li>心房細動</li>
+            <li>深部静脈血栓症</li>
+            <li>肺塞栓症</li>
+            <li>人工弁置換後</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2><span class="num">2.</span> 適応疾患の詳細</h2>
+
+      <h3>抗血小板薬の適応</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>病態</th>
+          <th>代表的薬剤</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">心筋梗塞</span></td>
+          <td>冠動脈プラーク破綻→血小板凝集</td>
+          <td>アスピリン</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">アテローム血栓性脳梗塞</span></td>
+          <td>頸動脈・脳動脈のアテローム血栓</td>
+          <td>アスピリン、クロピドグレル</td>
+        </tr>
+        <tr>
+          <td>狭心症</td>
+          <td>冠動脈狭窄・血小板凝集</td>
+          <td>アスピリン</td>
+        </tr>
+        <tr>
+          <td>川崎病（急性期）</td>
+          <td>冠動脈炎→血栓形成リスク</td>
+          <td>アスピリン</td>
+        </tr>
+      </table>
+
+      <h3>抗凝固薬の適応</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>病態</th>
+          <th>代表的薬剤</th>
+        </tr>
+        <tr>
+          <td><span class="red">心房細動</span></td>
+          <td>心房内うっ滞→凝固系活性化</td>
+          <td>ワルファリン、DOAC</td>
+        </tr>
+        <tr>
+          <td><span class="red">深部静脈血栓症</span></td>
+          <td>下肢静脈うっ滞→凝固系活性化</td>
+          <td>ヘパリン→ワルファリン/DOAC</td>
+        </tr>
+        <tr>
+          <td><span class="red">肺塞栓症</span></td>
+          <td>深部静脈血栓が肺動脈に飛ぶ</td>
+          <td>ヘパリン→ワルファリン/DOAC</td>
+        </tr>
+        <tr>
+          <td>人工弁置換後</td>
+          <td>人工物表面で凝固系活性化</td>
+          <td>ワルファリン（機械弁）</td>
+        </tr>
+        <tr>
+          <td>血液透析</td>
+          <td>体外循環中の凝固防止</td>
+          <td>ヘパリン</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">心房細動と脳梗塞の関係</div>
+        <div class="flow-box">
+          心房細動 <span class="flow-arrow">→</span> 心房内血液うっ滞 <span class="flow-arrow">→</span> <span class="red">赤色血栓形成</span> <span class="flow-arrow">→</span> 塞栓が脳へ <span class="flow-arrow">→</span> <span class="red">心原性脳塞栓症</span>
+        </div>
+        <p>心房細動による脳梗塞 = <span class="red">抗凝固薬</span>で予防（抗血小板薬は無効）</p>
+      </div>
+
+      <h2><span class="num">3.</span> 薬理作用の機序</h2>
+
+      <h3>抗血小板薬の作用機序</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>機序</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">アスピリン</span></td>
+          <td>COX-1を<span class="red">不可逆的</span>にアセチル化<br>→TXA2産生抑制</td>
+          <td>作用持続：血小板寿命（7-10日）</td>
+        </tr>
+        <tr>
+          <td>クロピドグレル</td>
+          <td>ADP受容体(P2Y12)拮抗</td>
+          <td>アスピリン不耐症に使用</td>
+        </tr>
+        <tr>
+          <td>シロスタゾール</td>
+          <td>PDE阻害→cAMP上昇</td>
+          <td>血管拡張作用もあり</td>
+        </tr>
+      </table>
+
+      <h3>抗凝固薬の作用機序</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>機序</th>
+          <th>モニタリング</th>
+        </tr>
+        <tr>
+          <td><span class="red">ワルファリン</span></td>
+          <td><span class="highlight">ビタミンK拮抗</span><br>→凝固因子(II,VII,IX,X)合成阻害</td>
+          <td><span class="highlight">PT-INR</span></td>
+        </tr>
+        <tr>
+          <td>ヘパリン</td>
+          <td>アンチトロンビンIII増強<br>→Xa因子・トロンビン阻害</td>
+          <td>APTT</td>
+        </tr>
+        <tr>
+          <td>DOAC（Xa阻害）<br>リバーロキサバン等</td>
+          <td>Xa因子を直接阻害</td>
+          <td><span class="highlight">不要</span></td>
+        </tr>
+        <tr>
+          <td>DOAC（トロンビン阻害）<br>ダビガトラン</td>
+          <td>トロンビンを直接阻害</td>
+          <td><span class="highlight">不要</span></td>
+        </tr>
+      </table>
+
+      <h2><span class="num">4.</span> 歯科治療時の対応</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">原則：休薬せずに抜歯</div>
+        <p>抗血栓薬の休薬 → 血栓塞栓症のリスク > 出血リスク</p>
+        <p><span class="red">休薬による脳梗塞・心筋梗塞は致死的</span>になりうる</p>
+      </div>
+
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>抜歯時の対応</th>
+          <th>確認事項</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">抗血小板薬</span><br>(アスピリン等)</td>
+          <td><span class="highlight">休薬せず抜歯</span></td>
+          <td>・原疾患の状態<br>・服用薬の種類<br>・抜歯の侵襲程度</td>
+        </tr>
+        <tr>
+          <td><span class="red">ワルファリン</span></td>
+          <td><span class="highlight">休薬せず抜歯</span><br>（PT-INR 3.0以下なら）</td>
+          <td><span class="red">PT-INRの確認</span><br>（治療域：2.0-3.0）</td>
+        </tr>
+        <tr>
+          <td><span class="red">DOAC</span></td>
+          <td><span class="highlight">原則休薬せず抜歯</span><br>・抜歯創を縫合<br>・局所止血を徹底</td>
+          <td>PT-INR測定は<span class="highlight">不要</span><br>（DOACはPT-INRで評価できない）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">DOAC抜歯の3原則（118D-80）</div>
+        <ul>
+          <li><span class="highlight">原則として休薬せずに抜歯</span></li>
+          <li><span class="highlight">抜歯創を縫合する</span></li>
+          <li>局所止血を徹底（圧迫止血、止血剤使用）</li>
+        </ul>
+      </div>
+
+      <h2><span class="num">5.</span> 検査値の評価</h2>
+
+      <table>
+        <tr>
+          <th>検査</th>
+          <th>評価対象</th>
+          <th>関連薬剤・疾患</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">PT-INR</span></td>
+          <td>外因系・共通系（凝固系）</td>
+          <td><span class="red">ワルファリン</span>の効果判定</td>
+        </tr>
+        <tr>
+          <td>APTT</td>
+          <td>内因系・共通系（凝固系）</td>
+          <td>ヘパリンの効果判定<br>血友病のスクリーニング</td>
+        </tr>
+        <tr>
+          <td>出血時間</td>
+          <td>血小板機能</td>
+          <td>抗血小板薬服用時に延長</td>
+        </tr>
+        <tr>
+          <td><span class="red">Dダイマー</span></td>
+          <td>線溶亢進（血栓溶解）</td>
+          <td><span class="red">深部静脈血栓症</span>のリスク評価</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">6.</span> 薬物相互作用</h2>
+
+      <h3>ワルファリンの相互作用</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>影響</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="red">ミコナゾール</span></td>
+          <td><span class="red">作用増強</span></td>
+          <td>CYP2C9阻害</td>
+        </tr>
+        <tr>
+          <td>NSAIDs（アスピリン等）</td>
+          <td><span class="red">出血リスク増加</span></td>
+          <td>血漿タンパク結合競合<br>+抗血小板作用</td>
+        </tr>
+        <tr>
+          <td>カルバマゼピン</td>
+          <td>作用減弱</td>
+          <td>CYP誘導</td>
+        </tr>
+        <tr>
+          <td>リファンピシン</td>
+          <td>作用減弱</td>
+          <td>CYP誘導</td>
+        </tr>
+        <tr>
+          <td><span class="red">ビタミンK（納豆）</span></td>
+          <td>作用減弱</td>
+          <td>凝固因子合成促進</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">7.</span> 関連過去問</h2>
+
+      <div class="question-box">
+        <p class="q-number">114D-38</p>
+        <p>抗血小板薬が予防に有効なのはどれか。2つ選べ。</p>
+        <p class="choices">
+          a: 心筋梗塞<br>
+          b: 肺血栓塞栓症<br>
+          c: 心原性脳塞栓症<br>
+          d: 深部静脈血栓症<br>
+          e: アテローム血栓性脳梗塞
+        </p>
+        <p class="answer">正解: a, e（動脈血栓に有効）</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">115A-62</p>
+        <p>心原性脳塞栓症の原因となる不整脈はどれか。1つ選べ。</p>
+        <p class="choices">
+          a: 心室細動<br>
+          b: 心室頻拍<br>
+          c: 心房細動<br>
+          d: 上室性期外収縮<br>
+          e: II度房室ブロック（Wenckebach型）
+        </p>
+        <p class="answer">正解: c（心房細動→心原性脳塞栓）</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">114B-43</p>
+        <p>抗血栓薬と作用機序の組合せで正しいのはどれか。2つ選べ。</p>
+        <p class="choices">
+          a: アスピリン ─ 第IIa因子阻害<br>
+          b: ダビガトラン ─ 血小板凝集抑制<br>
+          c: チクロピジン塩酸塩 ─ シクロオキシゲナーゼ阻害<br>
+          d: ヘパリンナトリウム ─ 第Xa因子阻害<br>
+          e: ワルファリンカリウム ─ ビタミンK活性化阻害
+        </p>
+        <p class="answer">正解: d, e</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">118D-80</p>
+        <p>直接経口抗凝固薬〈DOAC〉服用患者の抜歯で適切なのはどれか。2つ選べ。</p>
+        <p class="choices">
+          a: 抜歯創を縫合する。<br>
+          b: 永久的止血法を行う。<br>
+          c: 抜歯前にPT-INRを測定する。<br>
+          d: 原則として休薬せずに抜歯する。<br>
+          e: 抜歯前にステロイドカバーをする。
+        </p>
+        <p class="answer">正解: a, d</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">118A-67</p>
+        <p>75歳の男性。10年前に人工弁置換術、5年前から血液透析。ワルファリン服用中。抜歯時の適切な対応はどれか。2つ選べ。</p>
+        <p class="choices">
+          a: PT-INRの確認<br>
+          b: 透析翌日の抜歯<br>
+          c: 左上腕での血圧測定<br>
+          d: ワルファリンの休薬指示<br>
+          e: 抜歯後からのアモキシシリン投与
+        </p>
+        <p class="answer">正解: a, b</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">117D-4</p>
+        <p>ワルファリンカリウムの薬理作用を増強するのはどれか。1つ選べ。</p>
+        <p class="choices">
+          a: アシクロビル<br>
+          b: アザチオプリン<br>
+          c: カルバマゼピン<br>
+          d: リファンピシン<br>
+          e: ミコナゾール硝酸塩
+        </p>
+        <p class="answer">正解: e</p>
+      </div>
+
+      <div class="question-box">
+        <p class="q-number">118B-4</p>
+        <p>深部静脈血栓症のリスク評価に用いられるのはどれか。1つ選べ。</p>
+        <p class="choices">
+          a: ALP<br>
+          b: BUN<br>
+          c: CRP<br>
+          d: Dダイマー<br>
+          e: gamma-GTP
+        </p>
+        <p class="answer">正解: d</p>
+      </div>
+
+      <h2><span class="num">8.</span> まとめ：使い分けの要点</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">試験対策 最重要ポイント</div>
+        <table>
+          <tr>
+            <th>項目</th>
+            <th>抗血小板薬</th>
+            <th>抗凝固薬</th>
+          </tr>
+          <tr>
+            <td>対象血栓</td>
+            <td><span class="highlight">動脈血栓（白色）</span></td>
+            <td><span class="red">静脈血栓（赤色）</span></td>
+          </tr>
+          <tr>
+            <td>代表的適応</td>
+            <td>心筋梗塞<br>アテローム血栓性脳梗塞</td>
+            <td>心房細動<br>深部静脈血栓症</td>
+          </tr>
+          <tr>
+            <td>代表薬</td>
+            <td>アスピリン</td>
+            <td>ワルファリン、DOAC</td>
+          </tr>
+          <tr>
+            <td>機序</td>
+            <td>COX阻害（TXA2↓）</td>
+            <td>ビタミンK拮抗/Xa阻害</td>
+          </tr>
+          <tr>
+            <td>検査</td>
+            <td>出血時間</td>
+            <td>PT-INR（ワルファリン）</td>
+          </tr>
+          <tr>
+            <td>抜歯時</td>
+            <td colspan="2"><span class="red">原則休薬せず</span>（局所止血徹底）</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

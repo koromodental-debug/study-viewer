@@ -981,18 +981,86 @@ body {
 
 .qa-section {
   margin-bottom: 40px;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.qa-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: #f8f8f8;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .qa-section-title {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--primary-color);
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
+.qa-section-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.qa-section-actions .save-image-btn,
+.qa-section-actions .favorite-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+
+.qa-section-actions .save-image-btn:hover,
+.qa-section-actions .favorite-btn:hover {
+  opacity: 1;
+  background: rgba(0,0,0,0.05);
+}
+
+.qa-section-actions .save-image-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--text-color);
+  fill: none;
+}
+
+.qa-section-actions .favorite-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: #d1d1d6;
+}
+
+.qa-section-actions .favorite-btn.active svg {
+  fill: #ff9500;
+}
+
+.qa-section-actions .favorite-btn.active {
+  opacity: 1;
+}
+
+.qa-section-content {
+  padding: 8px 0;
+}
+
+/* セクション外の個別Q&A（ボタンあり） */
 .qa-item {
+  position: relative;
   background: white;
   border: none;
   border-radius: var(--radius-lg);
@@ -1007,8 +1075,27 @@ body {
   transform: translateY(-2px);
 }
 
+/* セクション内のQ&A（ボタンなし）- カードスタイル不要 */
+.qa-section-content .qa-item {
+  background: transparent;
+  border-radius: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.qa-section-content .qa-item:last-child {
+  border-bottom: none;
+}
+
+.qa-section-content .qa-item:hover {
+  box-shadow: none;
+  transform: none;
+}
+
 .qa-question {
   padding: 16px 20px;
+  padding-right: 80px; /* セクション外：ボタンエリア確保 */
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -1016,6 +1103,11 @@ body {
   gap: 12px;
   transition: background 0.2s ease;
   font-size: 15px;
+}
+
+/* セクション内：ボタンなしなので通常のパディング */
+.qa-section-content .qa-question {
+  padding-right: 20px;
 }
 
 .qa-question:hover {

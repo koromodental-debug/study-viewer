@@ -1649,7 +1649,15 @@
         }
         inRelated = false;
         currentSection = line.slice(3);
-        html += `<div class="qa-section"><div class="qa-section-title">${escapeHtml(currentSection)}</div>`;
+        html += `<div class="qa-section" data-section-title="${escapeHtml(currentSection)}">
+          <div class="qa-section-header">
+            <div class="qa-section-title">${escapeHtml(currentSection)}</div>
+            <div class="qa-section-actions">
+              <button class="save-image-btn" aria-label="画像保存">${createSaveButtonSVG()}</button>
+              <button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>
+            </div>
+          </div>
+          <div class="qa-section-content">`;
         continue;
       }
 
@@ -1659,7 +1667,7 @@
           relatedItems = [];
         }
         if (currentSection) {
-          html += '</div>';
+          html += '</div></div>'; // qa-section-content と qa-section を閉じる
           currentSection = '';
         }
         inRelated = false;
@@ -1684,7 +1692,11 @@
         inRelated = false;
         const question = line.slice(3);
         html += `<div class="qa-item" data-topic-id="${escapeHtml(topicId)}" data-card-index="${qaIndex}" data-question="${escapeHtml(question)}">`;
-        html += `<button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>`;
+        // セクションがない場合のみ個別ボタンを表示
+        if (!currentSection) {
+          html += `<button class="save-image-btn" aria-label="画像保存">${createSaveButtonSVG()}</button>`;
+          html += `<button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>`;
+        }
         html += `<div class="qa-question">${escapeHtml(question)}</div>`;
         qaIndex++;
         continue;
@@ -1705,7 +1717,7 @@
       html += renderRelated(relatedItems);
     }
     if (currentSection) {
-      html += '</div>';
+      html += '</div></div>'; // qa-section-content と qa-section を閉じる
     }
 
     return html;
@@ -2250,37 +2262,96 @@
   }
 
   /**
-   * Q&Aのお気に入りボタンにイベントをバインド
+   * Q&Aのお気に入り・保存ボタンにイベントをバインド
    */
   function bindQAFavoriteButtons() {
     if (typeof FavoritesManager === 'undefined' || !state.currentItem) return;
 
     const topicId = state.currentItem.id;
+    let sectionIndex = 0;
 
+    // セクション単位のボタンバインド
+    elements.qaDisplay.querySelectorAll('.qa-section').forEach(section => {
+      const sectionTitle = section.dataset.sectionTitle || `section_${sectionIndex}`;
+      const favoriteBtn = section.querySelector('.qa-section-actions .favorite-btn');
+      const saveBtn = section.querySelector('.qa-section-actions .save-image-btn');
+
+      if (favoriteBtn) {
+        const isFav = FavoritesManager.isFavoriteByParams('qa-section', topicId, sectionTitle);
+        favoriteBtn.classList.toggle('active', isFav);
+
+        favoriteBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+
+          // セクション内の全Q&Aを取得
+          const qaItems = section.querySelectorAll('.qa-item');
+          const qaList = [];
+          qaItems.forEach(item => {
+            const question = item.dataset.question || '';
+            const answerEl = item.querySelector('.qa-answer');
+            const answer = answerEl ? (answerEl.dataset.answer || answerEl.textContent) : '';
+            qaList.push({ question, answer });
+          });
+
+          const content = {
+            sectionTitle: sectionTitle,
+            qaList: qaList
+          };
+
+          const isNowFavorite = FavoritesManager.toggle('qa-section', topicId, sectionTitle, content);
+          this.classList.toggle('active', isNowFavorite);
+        });
+      }
+
+      if (saveBtn) {
+        saveBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const filename = `QA_${topicId}_${sectionTitle}`;
+          saveCardAsImage(section, filename);
+        });
+      }
+
+      sectionIndex++;
+    });
+
+    // セクション外の個別Q&A（ボタンがあるもの）のバインド
     elements.qaDisplay.querySelectorAll('.qa-item').forEach(item => {
-      const cardIndex = item.dataset.cardIndex;
+      // セクション内のQ&Aはスキップ（ボタンがない）
       const favoriteBtn = item.querySelector('.favorite-btn');
-      if (!favoriteBtn) return;
+      const saveBtn = item.querySelector('.save-image-btn');
+      if (!favoriteBtn && !saveBtn) return;
 
-      // 既にお気に入りかどうかをチェックして状態を反映
-      const isFav = FavoritesManager.isFavoriteByParams('qa', topicId, cardIndex);
-      favoriteBtn.classList.toggle('active', isFav);
+      const cardIndex = item.dataset.cardIndex;
 
-      favoriteBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
+      if (favoriteBtn) {
+        const isFav = FavoritesManager.isFavoriteByParams('qa', topicId, cardIndex);
+        favoriteBtn.classList.toggle('active', isFav);
 
-        const question = item.dataset.question || '';
-        const answerEl = item.querySelector('.qa-answer');
-        const answer = answerEl ? (answerEl.dataset.answer || answerEl.textContent) : '';
+        favoriteBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
 
-        const content = {
-          question: question,
-          answer: answer
-        };
+          const question = item.dataset.question || '';
+          const answerEl = item.querySelector('.qa-answer');
+          const answer = answerEl ? (answerEl.dataset.answer || answerEl.textContent) : '';
 
-        const isNowFavorite = FavoritesManager.toggle('qa', topicId, cardIndex, content);
-        this.classList.toggle('active', isNowFavorite);
-      });
+          const content = {
+            question: question,
+            answer: answer
+          };
+
+          const isNowFavorite = FavoritesManager.toggle('qa', topicId, cardIndex, content);
+          this.classList.toggle('active', isNowFavorite);
+        });
+      }
+
+      if (saveBtn) {
+        saveBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const question = item.dataset.question || '';
+          const filename = `QA_${topicId}_${question.substring(0, 20)}`;
+          saveCardAsImage(item, filename);
+        });
+      }
     });
   }
 
@@ -2331,7 +2402,15 @@
         }
         inRelated = false;
         currentSection = line.slice(3);
-        html += `<div class="qa-section"><div class="qa-section-title">${escapeHtml(currentSection)}</div>`;
+        html += `<div class="qa-section" data-section-title="${escapeHtml(currentSection)}">
+          <div class="qa-section-header">
+            <div class="qa-section-title">${escapeHtml(currentSection)}</div>
+            <div class="qa-section-actions">
+              <button class="save-image-btn" aria-label="画像保存">${createSaveButtonSVG()}</button>
+              <button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>
+            </div>
+          </div>
+          <div class="qa-section-content">`;
         continue;
       }
 
@@ -2341,7 +2420,7 @@
           relatedItems = [];
         }
         if (currentSection) {
-          html += '</div>';
+          html += '</div></div>'; // qa-section-content と qa-section を閉じる
           currentSection = '';
         }
         inRelated = false;
@@ -2366,7 +2445,11 @@
         inRelated = false;
         const question = line.slice(3);
         html += `<div class="qa-item" data-card-index="${qaIndex}" data-question="${escapeHtml(question)}">`;
-        html += `<button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>`;
+        // セクションがない場合のみ個別ボタンを表示
+        if (!currentSection) {
+          html += `<button class="save-image-btn" aria-label="画像保存">${createSaveButtonSVG()}</button>`;
+          html += `<button class="favorite-btn" aria-label="お気に入り"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>`;
+        }
         html += `<div class="qa-question">${escapeHtml(question)}</div>`;
         qaIndex++;
         continue;
@@ -2389,7 +2472,7 @@
       html += renderRelated(relatedItems);
     }
     if (currentSection) {
-      html += '</div>';
+      html += '</div></div>'; // qa-section-content と qa-section を閉じる
     }
 
     return html;

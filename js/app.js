@@ -547,7 +547,9 @@
     }
 
     const results = searchEngine.search(query);
-    renderSearchResults(results.slice(0, 30));
+    // まとめ（htmlPath）があるもののみ表示（Q&Aや過去問は除外）
+    const filteredResults = results.filter(item => item.htmlPath);
+    renderSearchResults(filteredResults.slice(0, 30));
   }
 
   /**

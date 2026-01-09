@@ -2210,6 +2210,12 @@ body {
   padding: 16px;
 }
 
+/* ノートカード内のボタンを非表示（ヘッダーにあるので不要） */
+.note-card-content .favorite-btn,
+.note-card-content .save-image-btn {
+  display: none !important;
+}
+
 /* まとめカード */
 .note-card-content.html-content {
   font-size: 14px;

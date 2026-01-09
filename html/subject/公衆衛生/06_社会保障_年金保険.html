@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>年金保険 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 社会保障</span>
+    <h1>年金保険</h1>
+    <div class="container">
+
+      <h2>公的年金制度の基本</h2>
+      <p>公的年金制度は、老齢・障害・死亡を保険事故として各種年金を給付する制度である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li><span class="highlight">強制加入</span>である（任意加入ではない）</li>
+          <li><span class="highlight">社会保険方式</span>で運営</li>
+          <li><span class="highlight">賦課方式</span>（現役世代の保険料で高齢者の年金を支給）</li>
+          <li>主たる財源は<span class="highlight">保険料</span></li>
+          <li>所管は<span class="key">厚生労働省</span>（<span class="caution">財務省ではない</span>）</li>
+        </ul>
+      </div>
+
+      <h2>年金制度の体系</h2>
+      <p>2015（平成27）年10月に共済年金と厚生年金が一元化された。</p>
+
+      <h3>2階建て構造</h3>
+      <table>
+        <tr>
+          <th>階層</th>
+          <th>制度</th>
+          <th>対象</th>
+        </tr>
+        <tr>
+          <td>2階</td>
+          <td><span class="key">厚生年金</span></td>
+          <td>被用者（会社員・公務員等）</td>
+        </tr>
+        <tr>
+          <td>1階</td>
+          <td><span class="key">国民年金（基礎年金）</span></td>
+          <td>全国民</td>
+        </tr>
+      </table>
+
+      <h2>被保険者の分類</h2>
+
+      <h3>国民年金の被保険者</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>対象者</th>
+          <th>年齢要件</th>
+        </tr>
+        <tr>
+          <td><span class="key">第1号</span></td>
+          <td>自営業者、学生、フリーター、無職等</td>
+          <td><span class="highlight">20歳以上60歳未満</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">第2号</span></td>
+          <td>厚生年金加入者（会社員・公務員等）</td>
+          <td>70歳未満</td>
+        </tr>
+        <tr>
+          <td><span class="key">第3号</span></td>
+          <td>第2号の被扶養配偶者（年収130万円未満）</td>
+          <td>20歳以上60歳未満</td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">注意</span>：被保険者は「40歳以上」「65歳以上」ではない</p>
+
+      <h2>保険料負担</h2>
+
+      <h3>各被保険者の保険料</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>保険料負担</th>
+        </tr>
+        <tr>
+          <td>第1号被保険者</td>
+          <td>月額16,490円（本人が全額負担）</td>
+        </tr>
+        <tr>
+          <td>第2号被保険者</td>
+          <td><span class="highlight">事業主と被保険者で折半（労使折半）</span></td>
+        </tr>
+        <tr>
+          <td>第3号被保険者</td>
+          <td>負担なし</td>
+        </tr>
+      </table>
+      <p>厚生年金の保険料率は標準報酬月額の18.3%（労使で折半）</p>
+
+      <h2>給付</h2>
+      <p>老齢年金の給付開始は<span class="highlight">原則65歳</span>から（<span class="caution">75歳ではない</span>）</p>
+
+      <h3>給付の種類</h3>
+      <table>
+        <tr>
+          <th>国民年金（基礎年金）</th>
+          <th>厚生年金</th>
+        </tr>
+        <tr>
+          <td>老齢基礎年金</td>
+          <td>老齢厚生年金</td>
+        </tr>
+        <tr>
+          <td>障害基礎年金</td>
+          <td>障害厚生年金・障害手当金</td>
+        </tr>
+        <tr>
+          <td>遺族基礎年金</td>
+          <td>遺族厚生年金</td>
+        </tr>
+        <tr>
+          <td>寡婦年金・死亡一時金</td>
+          <td>－</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B107</div>
+        <p>我が国の公的年金制度で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 任意加入保険である。<br>
+          b 財務省が所管している。<br>
+          c 給付開始は75歳である。<br>
+          d 40歳以上の国民が被保険者である。<br>
+          e 被用者保険では事業主も保険料を負担する。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】公的年金は強制加入（a×）、厚生労働省所管（b×）、給付開始は65歳（c×）、被保険者は20歳以上60歳未満（d×）。厚生年金では事業主と被保険者が保険料を折半する（e○）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C21</div>
+        <p>我が国の公的年金制度で正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 任意加入である。<br>
+          b 賦課方式である。<br>
+          c 社会保険方式である。<br>
+          d 主たる財源は保険料である。<br>
+          e 被保険者は65歳以上である。
+        </div>
+        <div class="answer">正解：b, c, d</div>
+        <p>【解説】公的年金は強制加入で任意ではない（a×）。現役世代の保険料で高齢者の年金を賄う賦課方式（b○）、保険料を財源とする社会保険方式（c○）で運営され、主たる財源は保険料である（d○）。被保険者は20歳以上60歳未満であり65歳以上ではない（e×）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

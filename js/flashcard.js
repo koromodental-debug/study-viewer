@@ -252,7 +252,6 @@ const FlashcardModule = (function() {
 
     const key = `${state.currentTopicId}:${card.originalIndex}`;
     const progress = state.progress[key];
-    const statusClass = progress ? (progress.status === 'memorized' ? 'status-memorized' : 'status-again') : '';
 
     container.innerHTML = `
       <div class="flashcard-exercise">
@@ -266,50 +265,28 @@ const FlashcardModule = (function() {
           <div class="flashcard-progress">
             ${state.currentIndex + 1} / ${state.filteredCards.length}
           </div>
-          <div class="flashcard-status ${statusClass}">
-            ${progress ? (progress.status === 'memorized' ? '覚えた' : 'もう一度') : '未学習'}
-          </div>
         </div>
 
         <div class="flashcard-card-container" id="flashcard-card-container">
           <div class="flashcard-card ${state.isFlipped ? 'flipped' : ''}" id="flashcard-card">
             ${card.section ? `<div class="flashcard-section">${card.section}</div>` : ''}
             <div class="flashcard-question">
-              <span class="flashcard-label">Q.</span>
               ${card.question}
             </div>
-            <div class="flashcard-tap-hint" id="flashcard-tap-hint">
-              ${state.isFlipped ? '' : 'タップで答えを見る'}
-            </div>
+            ${!state.isFlipped ? '<div class="flashcard-tap-hint">タップで答えを見る</div>' : ''}
             <div class="flashcard-answer ${state.isFlipped ? 'show' : ''}">
-              <span class="flashcard-label">A.</span>
               ${card.answer}
             </div>
           </div>
         </div>
 
+        ${state.isFlipped ? `
         <div class="flashcard-actions">
           <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 6L9 17l-5-5"/>
-            </svg>
             覚えた
           </button>
           <button class="flashcard-btn again" id="flashcard-again-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M1 4v6h6M23 20v-6h-6"/>
-              <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
-            </svg>
             もう一度
-          </button>
-        </div>
-
-        <div class="flashcard-nav">
-          <button class="flashcard-nav-btn" id="flashcard-prev-btn" ${state.currentIndex === 0 ? 'disabled' : ''}>
-            ← 前へ
-          </button>
-          <button class="flashcard-nav-btn" id="flashcard-next-btn" ${state.currentIndex >= state.filteredCards.length - 1 ? 'disabled' : ''}>
-            次へ →
           </button>
         </div>
 
@@ -321,10 +298,16 @@ const FlashcardModule = (function() {
             読み込み中...
           </div>
         </div>
+        ` : ''}
       </div>
     `;
 
     bindCardEvents();
+
+    // 答え表示時のみまとめを読み込み
+    if (state.isFlipped) {
+      loadHtmlSummary(state.currentTopic.htmlPath);
+    }
   }
 
   function renderNoCardsMessage() {
@@ -358,13 +341,11 @@ const FlashcardModule = (function() {
     cardContainer.addEventListener('touchstart', onTouchStart, { passive: true });
     cardContainer.addEventListener('touchend', onTouchEnd, { passive: true });
 
-    // 学習ボタン
-    document.getElementById('flashcard-memorized-btn').addEventListener('click', markMemorized);
-    document.getElementById('flashcard-again-btn').addEventListener('click', markAgain);
-
-    // ナビゲーション
-    document.getElementById('flashcard-prev-btn').addEventListener('click', prev);
-    document.getElementById('flashcard-next-btn').addEventListener('click', next);
+    // 学習ボタン（答え表示後のみ存在）
+    const memorizedBtn = document.getElementById('flashcard-memorized-btn');
+    const againBtn = document.getElementById('flashcard-again-btn');
+    if (memorizedBtn) memorizedBtn.addEventListener('click', markMemorized);
+    if (againBtn) againBtn.addEventListener('click', markAgain);
   }
 
   // === スワイプ処理 ===

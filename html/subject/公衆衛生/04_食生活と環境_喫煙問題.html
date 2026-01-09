@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>喫煙問題 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 食生活と環境</span>
+    <h1>喫煙問題</h1>
+    <div class="container">
+
+      <h2>喫煙と疾患の関係</h2>
+      <p>喫煙は多くの疾患のリスク因子である。</p>
+      <ul>
+        <li><span class="highlight">歯周病</span>：喫煙は歯周病の主要なリスク因子</li>
+        <li><span class="key">がん</span>：ほとんどのがん（肺がん、口腔がん等）</li>
+        <li><span class="key">循環器疾患</span>：虚血性心疾患、脳卒中</li>
+        <li><span class="key">インプラント</span>：成功率低下のリスク因子</li>
+      </ul>
+
+      <h2>たばこの成分と毒性</h2>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>作用・毒性</th>
+        </tr>
+        <tr>
+          <td><span class="key">ニコチン</span></td>
+          <td>血圧上昇、血管収縮、心収縮力増加、<span class="highlight">依存症</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">一酸化炭素</span></td>
+          <td>虚血性心疾患、胎児への影響</td>
+        </tr>
+        <tr>
+          <td><span class="key">タール</span></td>
+          <td>固形物質の総称、<span class="highlight">発がん性</span></td>
+        </tr>
+      </table>
+      <p><span class="caution">副流煙</span>は主流煙より有害物質の濃度が高い（受動喫煙の問題）</p>
+
+      <h2>禁煙指導（行動変容ステージモデル）</h2>
+      <p>禁煙指導はステージに応じた支援が重要。</p>
+      <table>
+        <tr>
+          <th>ステージ</th>
+          <th>特徴</th>
+          <th>支援策</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">無関心期</span></td>
+          <td>禁煙に関心がない</td>
+          <td><span class="key">情報提供</span>（禁煙のメリット）</td>
+        </tr>
+        <tr>
+          <td><span class="key">関心期</span></td>
+          <td>禁煙に関心はあるが行動なし</td>
+          <td>動機づけ</td>
+        </tr>
+        <tr>
+          <td><span class="key">準備期</span></td>
+          <td>禁煙を決意</td>
+          <td>計画支援、禁煙開始日の設定</td>
+        </tr>
+        <tr>
+          <td><span class="key">実行期</span></td>
+          <td>禁煙開始後6か月未満</td>
+          <td>意欲強化、環境づくり</td>
+        </tr>
+        <tr>
+          <td><span class="key">維持期</span></td>
+          <td>禁煙6か月以上</td>
+          <td>再喫煙防止</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">無関心期の患者への対応（頻出）</div>
+        <ul>
+          <li>禁煙のメリットに関する<span class="key">情報提供</span></li>
+          <li>喫煙が<span class="key">疾患のリスク因子</span>であることを説明</li>
+          <li><span class="caution">禁煙開始日の設定は準備期</span>（無関心期ではない）</li>
+        </ul>
+      </div>
+
+      <h2>歯科医療機関での禁煙指導</h2>
+      <h3>歯科で禁煙指導を行う理由</h3>
+      <ul>
+        <li><span class="highlight">口腔内から喫煙状況が把握できる</span>（歯肉の色素沈着等）</li>
+        <li>喫煙を<span class="highlight">リスク因子とする口腔疾患がある</span>（歯周病等）</li>
+      </ul>
+
+      <h3>歯科での禁煙指導の限界</h3>
+      <ul>
+        <li><span class="caution">歯科医師は禁煙補助剤を処方できない</span></li>
+        <li>ニコチン依存にはニコチン代替療法が有効だが、医師の処方が必要</li>
+      </ul>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">111D32</div>
+        <p>歯科医療機関で禁煙指導・支援を行う理由はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 患者の体調管理が行える。<br>
+          b 禁煙補助薬を処方できる。<br>
+          c 口腔内状態から喫煙状況が把握できる。<br>
+          d 喫煙をリスク因子とする口腔疾患がある。<br>
+          e 医療施設内での喫煙は法律で禁止されている。
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】cは正しい（歯肉のメラニン色素沈着などから喫煙状況を把握できる）。dは正しい（歯周病は喫煙がリスク因子）。bは誤り（歯科医師は禁煙補助薬を処方できない）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A59</div>
+        <p>40歳の男性。インプラント治療を希望して来院した。問診の結果、喫煙者であり禁煙には関心がないという。禁煙ステージとしてこの期の指導で適切なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 禁煙開始日の設定を促す。<br>
+          b 禁煙補助薬の使用を勧める。<br>
+          c ニコチン依存は疾病であることを説明する。<br>
+          d 喫煙欲求のコントロールの仕方について助言する。<br>
+          e 喫煙がインプラント治療の成功率を低下させることを説明する。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】「禁煙に関心がない」＝無関心期。無関心期には情報提供が適切。cは喫煙の害についての情報提供、eは喫煙がインプラントのリスク因子であることの情報提供。aは準備期の対応。dは実行期の対応。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイントまとめ</div>
+        <ul>
+          <li>喫煙は<span class="highlight">歯周病</span>・インプラント失敗のリスク因子</li>
+          <li><span class="highlight">無関心期</span>には情報提供（禁煙のメリット、リスク）</li>
+          <li>禁煙開始日の設定は<span class="key">準備期</span></li>
+          <li>歯科医師は<span class="caution">禁煙補助剤を処方できない</span></li>
+          <li><span class="caution">副流煙</span>は主流煙より有害</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1357,34 +1357,34 @@
   }
 
   /**
-   * セクション内のh3にお気に入りボタンを追加
+   * セクション内のh2にお気に入りボタンを追加
    */
   function injectFavoriteButtonsToSection(section, item) {
     if (typeof FavoritesManager === 'undefined') return;
 
     const topicId = item.id;
-    const h3Elements = section.querySelectorAll('.topic-section-content h3');
+    const h2Elements = section.querySelectorAll('.topic-section-content h2');
 
-    h3Elements.forEach((h3, index) => {
+    h2Elements.forEach((h2, index) => {
       // 既にラッパーがあればスキップ
-      if (h3.parentElement.classList.contains('html-card-wrapper')) return;
+      if (h2.parentElement.classList.contains('html-card-wrapper')) return;
 
-      // h3をラッパーで囲む
+      // h2をラッパーで囲む
       const wrapper = document.createElement('div');
       wrapper.className = 'html-card-wrapper';
       wrapper.dataset.cardIndex = index;
-      wrapper.dataset.title = h3.textContent || '';
+      wrapper.dataset.title = h2.textContent || '';
 
-      // h3の後の要素を含める（次のh3まで）
+      // h2の後の要素を含める（次のh2またはh1まで）
       const elements = [];
-      let sibling = h3.nextElementSibling;
-      while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2' && sibling.tagName !== 'H1') {
+      let sibling = h2.nextElementSibling;
+      while (sibling && sibling.tagName !== 'H2' && sibling.tagName !== 'H1') {
         elements.push(sibling);
         sibling = sibling.nextElementSibling;
       }
 
-      h3.parentNode.insertBefore(wrapper, h3);
-      wrapper.appendChild(h3);
+      h2.parentNode.insertBefore(wrapper, h2);
+      wrapper.appendChild(h2);
       elements.forEach(el => wrapper.appendChild(el));
 
       // お気に入りボタンを追加
@@ -1400,7 +1400,7 @@
       favBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         const content = {
-          title: h3.textContent || '',
+          title: h2.textContent || '',
           html: wrapper.innerHTML
         };
         const isNowFavorite = FavoritesManager.toggle('html', topicId, index, content);

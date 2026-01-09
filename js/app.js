@@ -289,9 +289,11 @@
    */
   function setupSwipeTabSwitch() {
     const swipeThreshold = 80; // スワイプ判定の閾値（px）
+    const edgeSwipeThreshold = 30; // 左端と判定する範囲（px）
     let touchStartX = 0;
     let touchStartY = 0;
     let isSwiping = false;
+    let isEdgeSwipe = false; // 左端からのスワイプか
 
     // メインコンテンツ全体でスワイプを検出
     const mainContent = elements.mainContent;
@@ -301,6 +303,8 @@
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
         isSwiping = true;
+        // 左端からのスワイプ開始を検出
+        isEdgeSwipe = (touchStartX < edgeSwipeThreshold);
       }
     }, { passive: true });
 
@@ -312,6 +316,16 @@
       const touchEndY = e.changedTouches[0].clientY;
       const diffX = touchEndX - touchStartX;
       const diffY = touchEndY - touchStartY;
+
+      // 左端から右スワイプ → サイドバーを開く
+      if (isEdgeSwipe && diffX > swipeThreshold && !state.sidebarOpen) {
+        if (Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+          openSidebar();
+          isEdgeSwipe = false;
+          return;
+        }
+      }
+      isEdgeSwipe = false;
 
       // 横方向の移動が縦より大きく、閾値を超えた場合（3タブ対応）
       const tabOrder = ['html', 'qa', 'kakomon'];
@@ -337,6 +351,8 @@
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
             isSwiping = true;
+            // 左端からのスワイプ開始を検出
+            isEdgeSwipe = (touchStartX < edgeSwipeThreshold);
           }
         }, { passive: true });
 
@@ -348,6 +364,16 @@
           const touchEndY = e.changedTouches[0].clientY;
           const diffX = touchEndX - touchStartX;
           const diffY = touchEndY - touchStartY;
+
+          // 左端から右スワイプ → サイドバーを開く
+          if (isEdgeSwipe && diffX > swipeThreshold && !state.sidebarOpen) {
+            if (Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+              openSidebar();
+              isEdgeSwipe = false;
+              return;
+            }
+          }
+          isEdgeSwipe = false;
 
           // 3タブ対応
           const tabOrder = ['html', 'qa', 'kakomon'];

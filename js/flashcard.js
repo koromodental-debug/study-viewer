@@ -273,7 +273,6 @@ const FlashcardModule = (function() {
             <div class="flashcard-question">
               ${card.question}
             </div>
-            ${!state.isFlipped ? '<div class="flashcard-tap-hint">タップで答えを見る</div>' : ''}
             <div class="flashcard-answer ${state.isFlipped ? 'show' : ''}">
               ${card.answer}
             </div>

@@ -973,10 +973,8 @@ body {
 
 /* Q&A表示 */
 .qa-display {
-  padding: 32px;
+  padding: 0;
   padding-bottom: 120px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .qa-section {
@@ -1280,7 +1278,7 @@ body {
   }
 
   .qa-display {
-    padding: 32px;
+    padding: 0;
     padding-bottom: 150px;
   }
 
@@ -2498,11 +2496,8 @@ body {
 /* Q&Aのトピックヘッダーを画面幅いっぱいに */
 .qa-topic-section .topic-section-header {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100vw;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: calc(50% - 50vw);
 }
 
 /* トピックセクションコンテンツ */

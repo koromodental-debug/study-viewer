@@ -26,7 +26,9 @@
     // 無限スクロール用（過去問）
     kakomonLoadedTopicIndex: -1,
     kakomonFirstLoadedTopicIndex: -1,
-    isLoadingMoreKakomon: false
+    isLoadingMoreKakomon: false,
+    // ノートバッジ表示制御
+    noteBadgeDismissed: false
   };
 
   // DOM要素
@@ -114,7 +116,11 @@
     if (typeof FavoritesManager !== 'undefined') {
       FavoritesManager.init();
       updateNoteBadge();
-      FavoritesManager.addListener(function() {
+      FavoritesManager.addListener(function(action) {
+        // 新規追加の場合のみバッジを再表示可能にする
+        if (action === 'add') {
+          state.noteBadgeDismissed = false;
+        }
         updateNoteBadge();
       });
     }
@@ -1746,11 +1752,56 @@
       });
     });
 
-    // お気に入りボタンと画像保存ボタン
+    // セクション単位のボタン（.qa-section-actions内）
+    section.querySelectorAll('.qa-section').forEach(qaSection => {
+      const sectionTitle = qaSection.dataset.sectionTitle || '';
+      const favoriteBtn = qaSection.querySelector('.qa-section-actions .favorite-btn');
+      const saveBtn = qaSection.querySelector('.qa-section-actions .save-image-btn');
+
+      // お気に入りボタン
+      if (favoriteBtn && typeof FavoritesManager !== 'undefined') {
+        const isFav = FavoritesManager.isFavoriteByParams('qa-section', topicId, sectionTitle);
+        favoriteBtn.classList.toggle('active', isFav);
+
+        favoriteBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+
+          // セクション内の全Q&Aを取得
+          const qaItems = qaSection.querySelectorAll('.qa-item');
+          const qaList = [];
+          qaItems.forEach(item => {
+            const question = item.dataset.question || '';
+            const answerEl = item.querySelector('.qa-answer');
+            const answer = answerEl ? (answerEl.dataset.answer || answerEl.textContent) : '';
+            qaList.push({ question, answer });
+          });
+
+          const content = {
+            sectionTitle: sectionTitle,
+            qaList: qaList
+          };
+
+          const isNowFavorite = FavoritesManager.toggle('qa-section', topicId, sectionTitle, content);
+          this.classList.toggle('active', isNowFavorite);
+        });
+      }
+
+      // 画像保存ボタン
+      if (saveBtn) {
+        saveBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const filename = `QA_${topicId}_${sectionTitle}`;
+          saveCardAsImage(qaSection, filename);
+        });
+      }
+    });
+
+    // 個別Q&Aのボタン（セクション外のもの）
     section.querySelectorAll('.qa-item').forEach(item => {
       const cardIndex = item.dataset.cardIndex;
       const itemTopicId = item.dataset.topicId || topicId;
       const favoriteBtn = item.querySelector('.favorite-btn');
+      const saveBtn = item.querySelector('.save-image-btn');
 
       // お気に入りボタン
       if (favoriteBtn && typeof FavoritesManager !== 'undefined') {
@@ -1774,19 +1825,14 @@
         });
       }
 
-      // 画像保存ボタンを追加（まだなければ）
-      if (!item.querySelector('.save-image-btn')) {
-        const saveBtn = document.createElement('button');
-        saveBtn.className = 'save-image-btn';
-        saveBtn.setAttribute('aria-label', '画像保存');
-        saveBtn.innerHTML = createSaveButtonSVG();
+      // 画像保存ボタン
+      if (saveBtn) {
         saveBtn.addEventListener('click', function(e) {
           e.stopPropagation();
           const question = item.dataset.question || '';
           const filename = `QA_${itemTopicId}_${question.substring(0, 20)}`;
           saveCardAsImage(item, filename);
         });
-        item.appendChild(saveBtn);
       }
     });
   }
@@ -2802,13 +2848,37 @@
     overlay.innerHTML = '<div class="saving-spinner">画像を生成中...</div>';
     document.body.appendChild(overlay);
 
+    // Q&Aの答えを一時的に表示（画像に含めるため）
+    const hiddenAnswers = [];
+    const answers = element.querySelectorAll('.qa-answer');
+    answers.forEach(answer => {
+      if (!answer.classList.contains('show') && getComputedStyle(answer).display === 'none') {
+        answer.style.display = 'block';
+        hiddenAnswers.push(answer);
+      }
+    });
+
     try {
-      const canvas = await html2canvas(element, {
+      const originalCanvas = await html2canvas(element, {
         backgroundColor: '#ffffff',
         scale: 2,
         useCORS: true,
         logging: false
       });
+
+      // 余白を追加した新しいcanvasを作成
+      const padding = 40; // 余白のサイズ（px）
+      const canvas = document.createElement('canvas');
+      canvas.width = originalCanvas.width + padding * 2;
+      canvas.height = originalCanvas.height + padding * 2;
+      const ctx = canvas.getContext('2d');
+
+      // 背景を白で塗りつぶし
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // 元の画像を中央に配置
+      ctx.drawImage(originalCanvas, padding, padding);
 
       const dataUrl = canvas.toDataURL('image/png');
 
@@ -2830,6 +2900,10 @@
       console.error('画像保存エラー:', err);
       alert('画像の生成に失敗しました');
     } finally {
+      // 一時的に表示した答えを非表示に戻す
+      hiddenAnswers.forEach(answer => {
+        answer.style.display = '';
+      });
       overlay.remove();
     }
   }
@@ -2858,7 +2932,8 @@
     if (elements.noteOverlay) {
       elements.noteOverlay.classList.add('open');
       renderNoteTimeline();
-      // バッジを非表示にする（開いたので確認済み）
+      // バッジを非表示にし、確認済みフラグを立てる
+      state.noteBadgeDismissed = true;
       if (elements.noteBadge) {
         elements.noteBadge.style.display = 'none';
       }
@@ -2881,16 +2956,22 @@
     if (!elements.noteBadge || typeof FavoritesManager === 'undefined') return;
 
     const count = FavoritesManager.count();
+    // カウント表示は常に更新
+    if (elements.noteCount) {
+      elements.noteCount.textContent = count + '件';
+    }
+
+    // バッジ表示：確認済みなら表示しない（新規追加時のみリセット）
+    if (state.noteBadgeDismissed) {
+      elements.noteBadge.style.display = 'none';
+      return;
+    }
+
     if (count > 0) {
       elements.noteBadge.textContent = count > 99 ? '99+' : count;
       elements.noteBadge.style.display = 'flex';
     } else {
       elements.noteBadge.style.display = 'none';
-    }
-
-    // カウント表示も更新
-    if (elements.noteCount) {
-      elements.noteCount.textContent = count + '件';
     }
   }
 

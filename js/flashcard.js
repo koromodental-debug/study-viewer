@@ -16,6 +16,7 @@ const FlashcardModule = (function() {
     currentIndex: 0,
     isFlipped: false,
     isReviewMode: false,
+    shuffleEnabled: localStorage.getItem('flashcard-shuffle') === 'true',
     isActive: false,     // 演習中かどうか
     progress: {},        // { "topicId:index": { status, lastReview } }
     touchStartX: 0,
@@ -144,9 +145,9 @@ const FlashcardModule = (function() {
         <span class="deck-topic-name">${topic.title}</span>
         <div class="deck-topic-stats">
           ${total > 0 ? `
-            <span class="deck-stat total">${total}</span>
-            <span class="deck-stat memorized">${stats.memorized}</span>
-            <span class="deck-stat again">${stats.again}</span>
+            <span class="deck-stat total">${total}問</span>
+            <span class="deck-stat memorized">覚${stats.memorized}</span>
+            <span class="deck-stat again">再${stats.again}</span>
           ` : '<span class="deck-stat-new">New</span>'}
         </div>
       </div>
@@ -201,15 +202,34 @@ const FlashcardModule = (function() {
         state.filteredCards = [...state.cards];
       }
 
-      // シャッフル
-      if (shuffle && state.filteredCards.length > 0) {
+      // 保存されたセッションを復元
+      let savedIndex = 0;
+      const savedSession = localStorage.getItem(`flashcard-session-${topicId}`);
+
+      if (savedSession) {
+        try {
+          const session = JSON.parse(savedSession);
+          // 保存された順序でカードを並べ替え
+          if (session.order && session.order.length === state.filteredCards.length) {
+            const orderMap = new Map(state.filteredCards.map(c => [c.originalIndex, c]));
+            const reordered = session.order.map(idx => orderMap.get(idx)).filter(Boolean);
+            if (reordered.length === state.filteredCards.length) {
+              state.filteredCards = reordered;
+              savedIndex = Math.min(session.index, state.filteredCards.length - 1);
+            }
+          }
+        } catch (e) {
+          console.log('セッション復元エラー:', e);
+        }
+      } else if (state.shuffleEnabled && state.filteredCards.length > 0) {
+        // 新規シャッフル（保存セッションがない場合のみ）
         for (let i = state.filteredCards.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
         }
       }
 
-      state.currentIndex = 0;
+      state.currentIndex = savedIndex;
       state.isFlipped = false;
       state.isActive = true;
 
@@ -217,7 +237,6 @@ const FlashcardModule = (function() {
         renderNoCardsMessage();
       } else {
         renderCard();
-        loadHtmlSummary(topic.htmlPath);
       }
     } catch (e) {
       console.log('Q&A読み込みエラー:', e);
@@ -266,49 +285,48 @@ const FlashcardModule = (function() {
     const key = `${state.currentTopicId}:${card.originalIndex}`;
     const progress = state.progress[key];
 
+    const progressPercent = ((state.currentIndex + 1) / state.filteredCards.length) * 100;
+
     container.innerHTML = `
       <div class="flashcard-exercise">
         <div class="flashcard-header">
-          <button class="flashcard-back-btn" id="flashcard-back-btn">
+          <button class="flashcard-back-btn" id="flashcard-back-btn" aria-label="戻る">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M19 12H5M12 19l-7-7 7-7"/>
             </svg>
-            戻る
           </button>
-          <div class="flashcard-progress">
-            ${state.currentIndex + 1} / ${state.filteredCards.length}
+          <div class="flashcard-progress-bar">
+            <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
+            <span class="flashcard-progress-text">${state.currentIndex + 1}/${state.filteredCards.length}</span>
           </div>
+          <button class="flashcard-shuffle-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn" aria-label="シャッフル">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
+            </svg>
+          </button>
         </div>
 
         <div class="flashcard-card-container" id="flashcard-card-container">
           <div class="flashcard-card ${state.isFlipped ? 'flipped' : ''}" id="flashcard-card">
-            ${card.section ? `<div class="flashcard-section">${card.section}</div>` : ''}
             <div class="flashcard-question">
               ${card.question}
             </div>
             <div class="flashcard-answer ${state.isFlipped ? 'show' : ''}">
               ${card.answer}
-              <div class="flashcard-next-indicator" id="flashcard-next-indicator">
-                左スワイプで次へ →
-              </div>
             </div>
           </div>
         </div>
 
         <div class="flashcard-actions ${state.isFlipped ? 'show' : ''}">
-          <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
-            覚えた
-          </button>
           <button class="flashcard-btn again" id="flashcard-again-btn">
             もう一度
           </button>
+          <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
+            覚えた
+          </button>
         </div>
-        <p class="flashcard-swipe-hint ${state.isFlipped ? 'show' : ''}">← スワイプで前後移動 →</p>
 
         <div class="flashcard-summary ${state.isFlipped ? 'show' : ''}" id="flashcard-summary">
-          <div class="flashcard-summary-header">
-            <span>まとめ</span>
-          </div>
           <div class="flashcard-summary-content" id="flashcard-summary-content">
             読み込み中...
           </div>
@@ -320,7 +338,7 @@ const FlashcardModule = (function() {
 
     // まとめを読み込み
     if (state.currentTopic && state.currentTopic.htmlPath) {
-      loadHtmlSummary(state.currentTopic.htmlPath);
+      loadHtmlSummary(state.currentTopic.htmlPath, card.section);
     }
   }
 
@@ -346,6 +364,9 @@ const FlashcardModule = (function() {
   function bindCardEvents() {
     // 戻るボタン
     document.getElementById('flashcard-back-btn').addEventListener('click', goBack);
+
+    // シャッフルボタン
+    document.getElementById('flashcard-shuffle-btn').addEventListener('click', toggleShuffle);
 
     // カードタップ
     const cardContainer = document.getElementById('flashcard-card-container');
@@ -389,20 +410,17 @@ const FlashcardModule = (function() {
     const card = document.getElementById('flashcard-card');
     const answer = card.querySelector('.flashcard-answer');
     const actions = document.querySelector('.flashcard-actions');
-    const swipeHint = document.querySelector('.flashcard-swipe-hint');
     const summary = document.getElementById('flashcard-summary');
 
     if (state.isFlipped) {
       card.classList.add('flipped');
       answer.classList.add('show');
       if (actions) actions.classList.add('show');
-      if (swipeHint) swipeHint.classList.add('show');
       if (summary) summary.classList.add('show');
     } else {
       card.classList.remove('flipped');
       answer.classList.remove('show');
       if (actions) actions.classList.remove('show');
-      if (swipeHint) swipeHint.classList.remove('show');
       if (summary) summary.classList.remove('show');
     }
   }
@@ -412,7 +430,6 @@ const FlashcardModule = (function() {
       state.currentIndex++;
       state.isFlipped = false;
       renderCard();
-      loadHtmlSummary(state.currentTopic.htmlPath);
     }
   }
 
@@ -421,7 +438,6 @@ const FlashcardModule = (function() {
       state.currentIndex--;
       state.isFlipped = false;
       renderCard();
-      loadHtmlSummary(state.currentTopic.htmlPath);
     }
   }
 
@@ -441,7 +457,7 @@ const FlashcardModule = (function() {
     if (state.currentIndex < state.filteredCards.length - 1) {
       next();
     } else {
-      renderCard(); // 最後のカードの場合はステータス更新のみ
+      renderCompletionScreen();
     }
   }
 
@@ -460,12 +476,49 @@ const FlashcardModule = (function() {
     if (state.currentIndex < state.filteredCards.length - 1) {
       next();
     } else {
-      renderCard();
+      renderCompletionScreen();
     }
   }
 
+  // === 完了画面 ===
+  function renderCompletionScreen() {
+    // 完了したのでセッションをクリア
+    localStorage.removeItem(`flashcard-session-${state.currentTopicId}`);
+
+    const stats = getTopicStats(state.currentTopicId);
+
+    container.innerHTML = `
+      <div class="flashcard-completion">
+        <div class="completion-icon">✓</div>
+        <h2 class="completion-title">デッキ完了！</h2>
+        <p class="completion-subtitle">${state.filteredCards.length}問を学習しました</p>
+        <div class="completion-stats">
+          <div class="completion-stat memorized">
+            <span class="completion-stat-value">${stats.memorized}</span>
+            <span class="completion-stat-label">覚えた</span>
+          </div>
+          <div class="completion-stat again">
+            <span class="completion-stat-value">${stats.again}</span>
+            <span class="completion-stat-label">もう一度</span>
+          </div>
+        </div>
+        <div class="completion-actions">
+          <button class="completion-btn" id="completion-back-btn">デッキ一覧へ</button>
+          <button class="completion-btn primary" id="completion-retry-btn">もう一度学習</button>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('completion-back-btn').addEventListener('click', goBack);
+    document.getElementById('completion-retry-btn').addEventListener('click', () => {
+      state.currentIndex = 0;
+      state.isFlipped = false;
+      renderCard();
+    });
+  }
+
   // === HTMLまとめ埋め込み ===
-  async function loadHtmlSummary(htmlPath) {
+  async function loadHtmlSummary(htmlPath, sectionName) {
     const summaryContent = document.getElementById('flashcard-summary-content');
     if (!summaryContent) return;
 
@@ -473,19 +526,62 @@ const FlashcardModule = (function() {
       const response = await fetch(htmlPath);
       const html = await response.text();
 
-      // DOMParserでbody内容のみ抽出
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      const bodyContent = doc.body ? doc.body.innerHTML : html;
 
-      summaryContent.innerHTML = bodyContent;
+      // セクション名がある場合、該当セクションのみ抽出
+      if (sectionName) {
+        const sectionContent = extractSection(doc, sectionName);
+        if (sectionContent) {
+          summaryContent.innerHTML = sectionContent;
+          return;
+        }
+      }
+
+      // フォールバック: 全体表示
+      summaryContent.innerHTML = doc.body ? doc.body.innerHTML : html;
     } catch (e) {
       summaryContent.innerHTML = '<p>まとめの読み込みに失敗しました</p>';
     }
   }
 
+  // セクション抽出関数
+  function extractSection(doc, sectionName) {
+    const h3Elements = doc.querySelectorAll('h3');
+
+    for (const h3 of h3Elements) {
+      // h3のテキスト部分のみ取得（spanタグ等を除外）
+      const h3Text = h3.childNodes[0]?.textContent?.trim() || h3.textContent.trim();
+
+      if (h3Text.includes(sectionName) || sectionName.includes(h3Text)) {
+        // このh3から次のh3までの内容を収集
+        const content = [h3.outerHTML];
+        let sibling = h3.nextElementSibling;
+
+        while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+          content.push(sibling.outerHTML);
+          sibling = sibling.nextElementSibling;
+        }
+
+        return content.join('');
+      }
+    }
+
+    return null; // 見つからない場合
+  }
+
   // === 戻る ===
   function goBack() {
+    // 現在位置とカード順序を保存
+    if (state.currentTopicId && state.currentIndex > 0) {
+      const saveData = {
+        index: state.currentIndex,
+        order: state.filteredCards.map(c => c.originalIndex),
+        shuffled: state.shuffleEnabled
+      };
+      localStorage.setItem(`flashcard-session-${state.currentTopicId}`, JSON.stringify(saveData));
+    }
+
     state.isActive = false;
     state.currentTopicId = null;
     state.currentTopic = null;
@@ -494,6 +590,18 @@ const FlashcardModule = (function() {
     state.currentIndex = 0;
     state.isFlipped = false;
     renderDeckList();
+  }
+
+  // === シャッフルトグル ===
+  function toggleShuffle() {
+    state.shuffleEnabled = !state.shuffleEnabled;
+    localStorage.setItem('flashcard-shuffle', state.shuffleEnabled);
+
+    // ボタンの見た目を更新
+    const btn = document.getElementById('flashcard-shuffle-btn');
+    if (btn) {
+      btn.classList.toggle('active', state.shuffleEnabled);
+    }
   }
 
   // === 統計表示 ===

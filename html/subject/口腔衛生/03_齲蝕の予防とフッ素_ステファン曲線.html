@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ステファン曲線 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 60%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 齲蝕の予防とフッ素</span>
+    <h1>ステファン曲線</h1>
+    <div class="container">
+
+      <h2>ステファン曲線とは</h2>
+      <p><span class="key">ステファン曲線</span>（Stephan curve）は、糖質摂取後の<span class="highlight">歯垢pHの経時的変化</span>を示す曲線。1940年代にStephanが発表した。</p>
+
+      <h3>曲線の特徴</h3>
+      <ul>
+        <li>発酵性糖質の摂取後、歯垢pHは<span class="key">急速に低下</span></li>
+        <li>約5〜20分で<span class="highlight">最低pH</span>に達する</li>
+        <li>その後、唾液の緩衝作用により<span class="key">徐々に回復</span></li>
+        <li>回復には<span class="key">30〜60分</span>程度かかる</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">臨床的意義</div>
+        <ul>
+          <li>pHが<span class="highlight">臨界pH（5.5）以下</span>の時間が長いほど齲蝕リスク上昇</li>
+          <li>間食の<span class="key">頻度</span>が多いと、pH回復前に再度低下 → 脱灰時間延長</li>
+          <li>糖質の種類により曲線の形状が異なる</li>
+        </ul>
+      </div>
+
+      <h2>糖質によるpH変化の違い</h2>
+
+      <h3>発酵性糖質（pH低下大）</h3>
+      <table>
+        <tr><th>糖質</th><th>分類</th><th>pH低下</th></tr>
+        <tr><td class="caution">スクロース（蔗糖）</td><td>二糖類</td><td class="caution">大きい</td></tr>
+        <tr><td class="caution">グルコース（ブドウ糖）</td><td>単糖類</td><td class="caution">大きい</td></tr>
+        <tr><td class="caution">フルクトース（果糖）</td><td>単糖類</td><td class="caution">大きい</td></tr>
+        <tr><td>マルトース（麦芽糖）</td><td>二糖類</td><td>大きい</td></tr>
+        <tr><td>ラクトース（乳糖）</td><td>二糖類</td><td>中程度</td></tr>
+        <tr><td>ガラクトース</td><td>単糖類</td><td>中程度</td></tr>
+      </table>
+
+      <h3>非発酵性・低発酵性（pH低下小〜なし）</h3>
+      <table>
+        <tr><th>物質</th><th>分類</th><th>pH低下</th></tr>
+        <tr><td class="key">キシリトール</td><td>糖アルコール</td><td class="highlight">なし</td></tr>
+        <tr><td class="key">ソルビトール</td><td>糖アルコール</td><td class="highlight">ほぼなし</td></tr>
+        <tr><td class="key">アスパルテーム</td><td>人工甘味料</td><td class="highlight">なし</td></tr>
+        <tr><td>マンノース</td><td>単糖類</td><td>ほぼなし</td></tr>
+        <tr><td>デンプン（生）</td><td>多糖類</td><td>小さい</td></tr>
+        <tr><td>カップリングシュガー</td><td>オリゴ糖</td><td>小さい</td></tr>
+      </table>
+      <p class="note">※デンプンは調理（加熱）すると発酵性が上昇する</p>
+
+      <div class="point-box">
+        <div class="point-box-title">代用甘味料のポイント</div>
+        <ul>
+          <li><span class="key">キシリトール</span>：ミュータンスレンサ球菌が代謝<span class="caution">できない</span></li>
+          <li><span class="key">ソルビトール</span>：代謝されにくい（一部の菌は利用可能）</li>
+          <li><span class="key">アスパルテーム</span>：糖質ではないため酸産生<span class="caution">なし</span></li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106A102</div>
+        <p>溶液①あるいはグルコースで洗口後の歯垢中のpHの変化を図に示す。<br>①に該当するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106A102.png" alt="歯垢pHの変化">
+        </div>
+        <div class="choices">
+          a スクロース<br>
+          b フルクトース<br>
+          c ガラクトース<br>
+          d アスパルテーム<br>
+          e カップリングシュガー
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】図では①は<span class="highlight">pH低下がほとんどない</span>（pH 7付近で横ばい）。一方、グルコースは典型的なステファン曲線を示しpH 5付近まで低下後に回復。①のようにpH低下がないのは<span class="key">代用甘味料</span>であり、選択肢の中では<span class="highlight">アスパルテーム</span>（人工甘味料）が該当。a〜cは発酵性糖質でpH低下を起こす。eのカップリングシュガーも低発酵性だが、完全に低下しないわけではない。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">選択肢の整理</div>
+        <ul>
+          <li>a スクロース → 発酵性、pH低下<span class="caution">大</span></li>
+          <li>b フルクトース → 発酵性、pH低下<span class="caution">大</span></li>
+          <li>c ガラクトース → 発酵性、pH低下<span class="caution">中</span></li>
+          <li><span class="key">d アスパルテーム</span> → 非発酵性、pH低下<span class="highlight">なし</span> ✓</li>
+          <li>e カップリングシュガー → 低発酵性、pH低下<span class="key">小</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

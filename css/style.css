@@ -3128,7 +3128,7 @@ body {
 
 /* 演習画面 */
 .flashcard-exercise {
-  padding: 16px;
+  padding: 12px 16px;
   padding-bottom: 120px;
   max-width: 600px;
   margin: 0 auto;
@@ -3138,22 +3138,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  gap: 12px;
 }
 
 .flashcard-back-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
   background: transparent;
   border: none;
   color: #007AFF;
-  font-size: 14px;
-  font-weight: 600;
   cursor: pointer;
   border-radius: var(--radius-md);
   transition: background 0.2s ease;
+  flex-shrink: 0;
 }
 
 .flashcard-back-btn:hover {
@@ -3161,14 +3163,69 @@ body {
 }
 
 .flashcard-back-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
-.flashcard-progress {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-muted);
+.flashcard-progress-bar {
+  position: relative;
+  flex: 1;
+  max-width: 180px;
+  height: 22px;
+  background: #e8e8e8;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.flashcard-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #007AFF, #34C759);
+  border-radius: 11px;
+  transition: width 0.3s ease;
+}
+
+.flashcard-progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.flashcard-shuffle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.flashcard-shuffle-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.flashcard-shuffle-btn.active {
+  color: #007AFF;
+}
+
+.flashcard-shuffle-btn svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* カードコンテナ */
@@ -3187,17 +3244,6 @@ body {
 
 .flashcard-card:active {
   transform: scale(0.98);
-}
-
-.flashcard-section {
-  font-size: 12px;
-  font-weight: 600;
-  color: #007AFF;
-  margin-bottom: 12px;
-  padding: 4px 10px;
-  background: #e8f4ff;
-  border-radius: var(--radius-full);
-  display: inline-block;
 }
 
 .flashcard-question {
@@ -3319,15 +3365,6 @@ body {
   display: block;
 }
 
-.flashcard-summary-header {
-  padding: 12px 16px;
-  background: var(--bg-color);
-  border-bottom: 1px solid var(--border-color);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-color);
-}
-
 .flashcard-summary-content {
   padding: 16px;
   font-size: 14px;
@@ -3439,6 +3476,105 @@ body {
   text-align: center;
   color: var(--text-muted);
   font-size: 14px;
+}
+
+/* 完了画面 */
+.flashcard-completion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  min-height: 400px;
+}
+
+.completion-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #34C759, #30D158);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: white;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(52, 199, 89, 0.3);
+}
+
+.completion-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px 0;
+}
+
+.completion-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 32px 0;
+}
+
+.completion-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.completion-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.completion-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.completion-stat.memorized .completion-stat-value {
+  color: #34C759;
+}
+
+.completion-stat.again .completion-stat-value {
+  color: #FF9500;
+}
+
+.completion-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.completion-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.completion-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #f0f0f0;
+  color: var(--text-color);
+}
+
+.completion-btn:hover {
+  background: #e0e0e0;
+}
+
+.completion-btn.primary {
+  background: #007AFF;
+  color: white;
+}
+
+.completion-btn.primary:hover {
+  background: #0056CC;
 }
 
 /* モバイル対応 */

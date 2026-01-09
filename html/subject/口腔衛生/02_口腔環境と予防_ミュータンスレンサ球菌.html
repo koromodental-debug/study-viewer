@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ミュータンスレンサ球菌 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 口腔環境と予防</span>
+    <h1>ミュータンスレンサ球菌</h1>
+    <div class="container">
+
+      <h2>概要</h2>
+      <p><span class="key">ミュータンスレンサ球菌</span>（mutans streptococci）は、齲蝕の主要な原因細菌である。グラム陽性の通性嫌気性球菌で、連鎖状に配列する。</p>
+
+      <h3>菌種</h3>
+      <table>
+        <tr><th>菌種</th><th>検出率</th><th>特徴</th></tr>
+        <tr><td class="key">S. mutans</td><td>ほとんどの日本人</td><td>主要な齲蝕原因菌</td></tr>
+        <tr><td class="key">S. sobrinus</td><td>数%の日本人</td><td>酸産生能がS. mutansより高い</td></tr>
+      </table>
+      <p class="note">※S. sobrinusは以前S. mutansの血清型d, gとされていた</p>
+
+      <h2>S. mutansの4つの病原因子</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">病原因子（よく出る）</div>
+        <ul>
+          <li><span class="highlight">PAc（Ag I/II）</span>：初期付着に関与する線毛様タンパク質</li>
+          <li><span class="highlight">GTF</span>：グルカン合成酵素（グルコシルトランスフェラーゼ）</li>
+          <li><span class="key">酸（乳酸）産生能</span>：スクロースを基質に乳酸発酵</li>
+          <li><span class="key">耐酸性</span>：自己産生の酸で死滅しない</li>
+        </ul>
+      </div>
+
+      <h3>GTF（グルコシルトランスフェラーゼ）の種類</h3>
+      <table>
+        <tr><th>酵素</th><th>別名</th><th>産生物</th></tr>
+        <tr><td class="key">GTF-B</td><td>GTF-I</td><td class="highlight">不溶性グルカン（ムタン）</td></tr>
+        <tr><td class="key">GTF-C</td><td>GTF-SI</td><td>不溶性・水溶性両方</td></tr>
+        <tr><td class="key">GTF-D</td><td>GTF-S</td><td>水溶性グルカン</td></tr>
+      </table>
+      <p class="note">※GTF-B, GTF-Cは菌体結合型（CA-GTF）、GTF-Dは菌体遊離型（CF-GTF）</p>
+      <p class="note">※不溶性グルカン（ムタン）が歯面への強固な付着に重要</p>
+
+      <h2>S. mutansによる齲蝕発生機序</h2>
+      <p>スクロース依存性の齲蝕発症機序を理解することが重要。</p>
+
+      <h3>発生機序（5ステップ）</h3>
+      <table>
+        <tr><th>順序</th><th>過程</th><th>関与因子</th></tr>
+        <tr><td>①</td><td>ペリクルへの初期付着</td><td class="key">PAc（Ag I/II）</td></tr>
+        <tr><td>②</td><td>スクロースからグルカン合成</td><td class="key">GTF</td></tr>
+        <tr><td>③</td><td>グルカンを介して強固に付着</td><td>GBP（グルカン結合タンパク）</td></tr>
+        <tr><td>④</td><td>酸を産生しエナメル質を脱灰</td><td class="key">乳酸発酵</td></tr>
+        <tr><td>⑤</td><td>①〜④を繰り返し齲蝕進行</td><td class="key">耐酸性</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ポイント</div>
+        <ul>
+          <li><span class="highlight">スクロース</span>がグルカン合成と酸産生の基質となる</li>
+          <li>グルコース、フルクトースではグルカンは合成<span class="caution">されない</span></li>
+          <li>キシリトールではS. mutansは酸を産生<span class="caution">しない</span></li>
+        </ul>
+      </div>
+
+      <h2>病因論に基づく齲蝕予防</h2>
+      <p>Keyesの3つの輪（宿主・微生物・飲食物）に基づく予防戦略。</p>
+
+      <h3>A. 歯質の強化（宿主要因）</h3>
+      <ul>
+        <li>フッ化物の歯面塗布</li>
+        <li>小窩裂溝の予防充填（フィッシャーシーラント）</li>
+      </ul>
+
+      <h3>B. 齲蝕原性細菌の制御（微生物要因）</h3>
+      <ul>
+        <li>ブラッシングによる歯面細菌数の減少</li>
+        <li>茶由来ポリフェノール洗口（S. mutans初期付着の抑制）</li>
+      </ul>
+
+      <h3>C. スクロースの制御（飲食物要因）</h3>
+      <ul>
+        <li><span class="key">キシリトール</span>などの代用糖の利用</li>
+        <li>スクロース摂取回数の制限</li>
+      </ul>
+
+      <h2>関連する齲蝕原性細菌</h2>
+      <table>
+        <tr><th>細菌</th><th>関連する齲蝕</th></tr>
+        <tr><td>ミュータンスレンサ球菌</td><td>エナメル質齲蝕（初期）、根面齲蝕</td></tr>
+        <tr><td>Lactobacillus</td><td>象牙質齲蝕（進行期）</td></tr>
+        <tr><td>Actinomyces</td><td>根面齲蝕</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">注意</div>
+        <p>ミュータンスレンサ球菌の存在は齲蝕発症の<span class="caution">絶対条件ではない</span>。近年、S. mitis、S. gordonii、S. oralisなども同程度の酸産生能・耐酸性を有することが報告されている。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

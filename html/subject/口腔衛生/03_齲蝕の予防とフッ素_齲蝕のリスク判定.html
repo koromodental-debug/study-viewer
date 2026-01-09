@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>齲蝕のリスク判定 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 60%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 齲蝕の予防とフッ素</span>
+    <h1>齲蝕のリスク判定</h1>
+    <div class="container">
+
+      <h2>リスク判定の目的</h2>
+      <p>個人の齲蝕発生リスクを評価し、<span class="key">予防プログラム</span>を立案するために行う。リスク因子を特定し、改善可能な因子に介入する。</p>
+
+      <h2>リスク診断項目</h2>
+
+      <h3>（1）歯・宿主の要因</h3>
+      <table>
+        <tr><th>項目</th><th>高い/多い場合</th><th>リスク</th></tr>
+        <tr><td class="key">歯質の耐酸性</td><td>耐酸性が高い</td><td class="highlight">低下 ↓</td></tr>
+        <tr><td class="key">唾液緩衝能</td><td>緩衝能が高い</td><td class="highlight">低下 ↓</td></tr>
+        <tr><td>唾液分泌量</td><td>分泌量が多い</td><td>低下 ↓</td></tr>
+        <tr><td>フッ化物使用</td><td>使用している</td><td>低下 ↓</td></tr>
+        <tr><td>小窩裂溝・歯列不正</td><td>深い/ある</td><td class="caution">上昇 ↑</td></tr>
+      </table>
+
+      <h3>（2）食事の要因</h3>
+      <table>
+        <tr><th>項目</th><th>高い/多い場合</th><th>リスク</th></tr>
+        <tr><td class="caution">砂糖摂取量</td><td>摂取量が多い</td><td class="caution">上昇 ↑</td></tr>
+        <tr><td class="caution">間食の頻度</td><td>頻度が高い</td><td class="caution">上昇 ↑</td></tr>
+        <tr><td>抗齲蝕性食品</td><td>摂取している</td><td>低下 ↓</td></tr>
+      </table>
+
+      <h3>（3）微生物の要因</h3>
+      <table>
+        <tr><th>項目</th><th>高い/多い場合</th><th>リスク</th></tr>
+        <tr><td class="caution">ミュータンスレンサ球菌数</td><td>菌数が多い</td><td class="caution">上昇 ↑</td></tr>
+        <tr><td class="caution">プラークの酸産生能</td><td>酸産生能が高い</td><td class="caution">上昇 ↑</td></tr>
+        <tr><td>歯垢（プラーク）の量</td><td>量が多い</td><td class="caution">上昇 ↑</td></tr>
+      </table>
+
+      <h3>（4）その他</h3>
+      <table>
+        <tr><th>項目</th><th>ある場合</th><th>リスク</th></tr>
+        <tr><td class="caution">過去の齲蝕経験</td><td>経験あり</td><td class="caution">上昇 ↑</td></tr>
+        <tr><td>口腔乾燥</td><td>乾燥あり</td><td class="caution">上昇 ↑</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">「高い」の意味を見極める</div>
+        <ul>
+          <li><span class="highlight">防御因子</span>が高い → リスク<span class="key">低下</span>（改善不要）</li>
+          <li><span class="caution">攻撃因子</span>が高い → リスク<span class="caution">上昇</span>（改善すべき）</li>
+        </ul>
+        <p class="note">※「唾液緩衝能が高い」「歯質の耐酸性が高い」は防御因子 → 良いこと</p>
+        <p class="note">※「酸産生能が高い」「摂取頻度が高い」は攻撃因子 → 悪いこと</p>
+      </div>
+
+      <h2>改善可能な因子 vs 改善困難な因子</h2>
+
+      <h3>改善可能な因子</h3>
+      <ul>
+        <li>砂糖摂取量・間食頻度（食事指導）</li>
+        <li>プラーク量・酸産生能（口腔清掃指導）</li>
+        <li>フッ化物使用（フッ化物応用）</li>
+        <li>ミュータンスレンサ球菌数（口腔清掃、キシリトール）</li>
+      </ul>
+
+      <h3>改善困難な因子</h3>
+      <ul>
+        <li>歯質の耐酸性（ただしフッ化物で向上可能）</li>
+        <li>歯の形態（小窩裂溝はシーラントで対応）</li>
+        <li>過去の齲蝕経験（変えられない）</li>
+        <li>唾液分泌量（薬物・疾患による低下は困難）</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105A60</div>
+        <p>齲蝕リスク評価の結果で改善すべきなのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 唾液緩衝能が高い。<br>
+          b 砂糖摂取量が多い。<br>
+          c 歯質の耐酸性が高い。<br>
+          d 間食の摂取頻度が高い。<br>
+          e プラークの酸産生能が高い。
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】「高い」がリスク上昇か低下かを判断する。</p>
+        <ul>
+          <li>a 唾液緩衝能が高い → <span class="key">防御因子</span>、リスク低下 → 改善不要</li>
+          <li>b 砂糖摂取量が多い → <span class="caution">攻撃因子</span>、リスク上昇 → <span class="highlight">改善すべき</span></li>
+          <li>c 歯質の耐酸性が高い → <span class="key">防御因子</span>、リスク低下 → 改善不要</li>
+          <li>d 間食の摂取頻度が高い → <span class="caution">攻撃因子</span>、リスク上昇 → <span class="highlight">改善すべき</span></li>
+          <li>e プラークの酸産生能が高い → <span class="caution">攻撃因子</span>、リスク上昇 → <span class="highlight">改善すべき</span></li>
+        </ul>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="key">防御因子</span>：唾液緩衝能、歯質耐酸性、唾液分泌量、フッ化物</li>
+          <li><span class="caution">攻撃因子</span>：砂糖摂取、間食頻度、酸産生能、細菌数、プラーク量</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

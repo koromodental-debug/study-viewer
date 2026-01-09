@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>齲蝕活動性試験 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 齲蝕の予防とフッ素</span>
+    <h1>齲蝕活動性試験</h1>
+    <div class="container">
+
+      <h2>齲蝕活動性試験とは</h2>
+      <p><span class="key">齲蝕活動性試験</span>は、齲蝕のリスク因子を分析し、患者の齲蝕感受性や将来の齲蝕発生リスクを評価するための検査である。主に<span class="key">唾液検査（saliva test）</span>として実施される。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">検査の実施方式</div>
+        <ul>
+          <li><span class="key">インハウス方式</span>：検査を自院で実施する</li>
+          <li><span class="key">アウトソーシング方式</span>：外部の事業者に検査を委託する</li>
+        </ul>
+      </div>
+
+      <h2>齲蝕活動性試験の分類</h2>
+      <p>齲蝕活動性試験は<span class="highlight">測定対象</span>によって分類される。試験ごとに<span class="highlight">検体（唾液 or 歯垢）</span>と<span class="highlight">測定原理</span>が異なる。</p>
+
+      <h3>日本国内で利用できる唾液検査キット</h3>
+      <table>
+        <tr>
+          <th>評価項目</th>
+          <th>商品名（例）</th>
+          <th>検体</th>
+        </tr>
+        <tr>
+          <td><span class="key">ミュータンスレンサ球菌数</span></td>
+          <td>デントカルトSM、ミューカウント</td>
+          <td>唾液</td>
+        </tr>
+        <tr>
+          <td><span class="key">MS菌＋乳酸桿菌</span>（同時評価）</td>
+          <td>カリオチェックセット、CRTバクテリア</td>
+          <td>唾液</td>
+        </tr>
+        <tr>
+          <td><span class="key">MS菌感染の有無</span></td>
+          <td>サリバチェックミュータンス</td>
+          <td>唾液</td>
+        </tr>
+        <tr>
+          <td><span class="key">乳酸桿菌数</span></td>
+          <td>デントカルトLB</td>
+          <td>唾液</td>
+        </tr>
+        <tr>
+          <td><span class="key">口腔内細菌数</span></td>
+          <td>RDテスト</td>
+          <td>唾液</td>
+        </tr>
+        <tr>
+          <td class="highlight">唾液緩衝能</td>
+          <td>デントバフストリップ、CRTバッファ、オーラルバッファ</td>
+          <td>唾液</td>
+        </tr>
+        <tr>
+          <td><span class="key">プラークの酸産生能</span></td>
+          <td>カリオスタット</td>
+          <td>歯垢</td>
+        </tr>
+      </table>
+
+      <h2>唾液緩衝能検査</h2>
+      <p><span class="key">唾液緩衝能</span>とは、唾液が酸を中和する能力のことである。緩衝能が高いほど齲蝕リスクは低くなる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">緩衝能検査のポイント</div>
+        <ul>
+          <li>検体：<span class="highlight">唾液</span></li>
+          <li>測定原理：<span class="highlight">乳酸</span>に対する緩衝能を測定</li>
+          <li>唾液の主要緩衝成分：<span class="key">重炭酸塩（HCO₃⁻）</span></li>
+        </ul>
+      </div>
+
+      <p class="note">※唾液緩衝能に影響する主な因子は重炭酸塩である（107A67）</p>
+
+      <h2>各試験の測定原理</h2>
+      <h3>細菌数を測定する試験</h3>
+      <ul>
+        <li><span class="key">デントカルトSM</span>：選択培地でMS菌を培養し、コロニー密度で判定</li>
+        <li><span class="key">デントカルトLB</span>：乳酸桿菌を選択培地で培養</li>
+        <li><span class="key">RDテスト</span>：レサズリンの還元による色調変化で細菌数を判定</li>
+      </ul>
+
+      <h3>プラークの酸産生能を測定する試験</h3>
+      <ul>
+        <li><span class="key">カリオスタット</span>：<span class="caution">検体は歯垢</span>。スクロース添加培地でpH低下を色調変化で判定</li>
+      </ul>
+      <p class="note">※カリオスタットは唾液ではなく歯垢を検体とする点に注意</p>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">103A130</div>
+        <p>緩衝能を測定する齲蝕活動性試験の検体と検査に用いる材との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 唾液————乳酸<br>
+          b 唾液————グルコース<br>
+          c 唾液————エナメル質<br>
+          d 歯垢————pH指示薬<br>
+          e 歯垢————スクロース
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】唾液緩衝能検査は、<span class="highlight">唾液</span>を検体とし、<span class="highlight">乳酸</span>に対する緩衝能を測定する。選択肢dの「歯垢＋pH指示薬」はカリオスタットの原理に近いが、カリオスタットは緩衝能ではなく酸産生能を測定する。選択肢eの「歯垢＋スクロース」もカリオスタットの培地成分だが、やはり酸産生能の測定である。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">試験で問われるポイント</div>
+        <ul>
+          <li>試験ごとの<span class="key">測定対象</span>（MS菌数、乳酸桿菌数、緩衝能、酸産生能）</li>
+          <li><span class="key">検体の違い</span>：唾液検査が多いが、<span class="caution">カリオスタットは歯垢</span></li>
+          <li>唾液緩衝能検査：唾液＋乳酸</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

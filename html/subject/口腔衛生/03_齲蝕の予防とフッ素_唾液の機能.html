@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唾液の機能 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 齲蝕の予防とフッ素</span>
+    <h1>唾液の機能</h1>
+    <div class="container">
+
+      <h2>唾液の役割</h2>
+      <p>唾液は口腔機能の維持に重要な役割を果たす。99%が水分で、残り1%に有機成分（タンパク質など）と無機成分（電解質）を含む。</p>
+
+      <h3>唾液の主な機能</h3>
+      <table>
+        <tr>
+          <th>機能</th>
+          <th>内容</th>
+          <th>関連成分</th>
+        </tr>
+        <tr>
+          <td><span class="key">食塊形成作用</span></td>
+          <td>咀嚼・嚥下の補助</td>
+          <td>ムチン、水分</td>
+        </tr>
+        <tr>
+          <td><span class="key">味覚作用</span></td>
+          <td>味物質を溶解して味蕾と反応</td>
+          <td>水分</td>
+        </tr>
+        <tr>
+          <td><span class="key">消化作用</span></td>
+          <td>デンプンをマルトースに分解</td>
+          <td>α-アミラーゼ</td>
+        </tr>
+        <tr>
+          <td class="highlight">緩衝作用</td>
+          <td>pHの急激な変動を緩和</td>
+          <td>重炭酸イオン（HCO₃⁻）</td>
+        </tr>
+        <tr>
+          <td><span class="key">脱灰保護作用</span></td>
+          <td>ペリクル形成による保護</td>
+          <td>ムチン、PRPs</td>
+        </tr>
+        <tr>
+          <td><span class="key">再石灰化作用</span></td>
+          <td>脱灰された歯質の修復促進</td>
+          <td>Ca²⁺、リン酸イオン、PRPs</td>
+        </tr>
+        <tr>
+          <td><span class="key">潤滑作用</span></td>
+          <td>口腔粘膜の保護</td>
+          <td>ムチン、PRG</td>
+        </tr>
+        <tr>
+          <td><span class="key">洗浄作用</span></td>
+          <td>異物を希釈・洗い流す</td>
+          <td>水分</td>
+        </tr>
+        <tr>
+          <td><span class="key">抗菌作用</span></td>
+          <td>細菌・真菌・ウイルスに対する防御</td>
+          <td>リゾチーム、ラクトフェリン等</td>
+        </tr>
+      </table>
+
+      <h2>唾液の緩衝能</h2>
+      <p>唾液緩衝能とは、唾液が酸を中和してpHを一定に保つ能力である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">緩衝能に関与する成分</div>
+        <ul>
+          <li><span class="highlight">重炭酸イオン（HCO₃⁻）</span>：最も強い緩衝作用を発揮</li>
+          <li><span class="key">リン酸イオン</span>：緩衝作用に寄与</li>
+          <li><span class="key">タンパク質</span>：補助的な緩衝作用</li>
+        </ul>
+      </div>
+      <p class="note">※重炭酸イオンは特に刺激唾液に多く含まれる</p>
+
+      <h2>唾液の抗菌因子</h2>
+      <p>唾液には細菌・真菌・ウイルスに対する防御成分が含まれる。<span class="highlight">酵素性</span>と<span class="highlight">非酵素性</span>に分類される。</p>
+
+      <h3>酵素性抗菌因子</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>作用機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">リゾチーム</span></td>
+          <td>細菌細胞壁のペプチドグリカンを加水分解</td>
+        </tr>
+        <tr>
+          <td><span class="key">ペルオキシダーゼ</span></td>
+          <td>過酸化水素を利用して抗菌物質を生成</td>
+        </tr>
+      </table>
+
+      <h3>非酵素性抗菌因子</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>作用機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">ラクトフェリン</span></td>
+          <td>鉄を結合・隔離し、細菌の増殖を抑制</td>
+        </tr>
+        <tr>
+          <td><span class="key">シスタチン</span></td>
+          <td>システインプロテアーゼを阻害</td>
+        </tr>
+        <tr>
+          <td><span class="key">ヒスタチン</span></td>
+          <td>抗真菌作用（特にカンジダに有効）</td>
+        </tr>
+        <tr>
+          <td><span class="key">分泌型IgA</span></td>
+          <td>細菌の付着を阻害（免疫グロブリン）</td>
+        </tr>
+        <tr>
+          <td><span class="key">ディフェンシン</span></td>
+          <td>細菌の細胞膜を破壊</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">酵素性 vs 非酵素性の見分け方</div>
+        <ul>
+          <li><span class="key">酵素性</span>：リゾチーム、ペルオキシダーゼ（名前に「〜ase」）</li>
+          <li><span class="key">非酵素性</span>：ラクトフェリン、シスタチン、ヒスタチン</li>
+          <li><span class="caution">スタテリン</span>は抗菌因子ではなく<span class="caution">再石灰化関連</span>タンパク質</li>
+        </ul>
+      </div>
+
+      <h2>その他の唾液タンパク質</h2>
+      <h3>石灰化関連タンパク質</h3>
+      <ul>
+        <li><span class="key">スタテリン</span>：Ca²⁺と結合し、過剰な石灰化を抑制</li>
+        <li><span class="key">PRPs（高プロリン含有タンパク質）</span>：ペリクル形成、再石灰化促進</li>
+      </ul>
+
+      <h3>その他</h3>
+      <ul>
+        <li><span class="key">ムチン</span>：粘性を付与、潤滑・保護作用</li>
+        <li><span class="key">α-アミラーゼ</span>：デンプン消化酵素</li>
+      </ul>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">107A67</div>
+        <p>唾液緩衝能に影響するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 尿素<br>
+          b ムチン<br>
+          c 重炭酸塩<br>
+          d アミラーゼ<br>
+          e リゾチーム
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】唾液緩衝能に最も影響するのは<span class="highlight">重炭酸塩（重炭酸イオン）</span>である。ムチンは粘性・潤滑、アミラーゼは消化、リゾチームは抗菌に関与する。尿素は口腔内細菌によって分解されアンモニアを生成するが、緩衝能への影響は重炭酸塩ほど大きくない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D56</div>
+        <p>唾液に含まれる非酵素性抗菌因子はどれか。3つ選べ。</p>
+        <div class="choices">
+          a シスタチン<br>
+          b スタテリン<br>
+          c ヒスタチン<br>
+          d リゾチーム<br>
+          e ラクトフェリン
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】<span class="key">シスタチン</span>（システインプロテアーゼ阻害）、<span class="key">ヒスタチン</span>（抗真菌作用）、<span class="key">ラクトフェリン</span>（鉄結合による抗菌）は非酵素性抗菌因子である。<span class="caution">リゾチーム</span>は酵素性抗菌因子（ペプチドグリカン分解酵素）。<span class="caution">スタテリン</span>は抗菌因子ではなく、Ca²⁺と結合して石灰化を調節するタンパク質である。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">試験で問われるポイント</div>
+        <ul>
+          <li>唾液緩衝能 → <span class="highlight">重炭酸イオン</span>が最重要</li>
+          <li>酵素性抗菌因子 → リゾチーム、ペルオキシダーゼ</li>
+          <li>非酵素性抗菌因子 → ラクトフェリン、シスタチン、ヒスタチン</li>
+          <li><span class="caution">スタテリンは抗菌因子ではない</span>（石灰化関連）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

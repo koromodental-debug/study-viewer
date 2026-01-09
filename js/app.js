@@ -1497,10 +1497,14 @@
    * セクション内のh2にお気に入りボタンを追加
    */
   function injectFavoriteButtonsToSection(section, item) {
-    if (typeof FavoritesManager === 'undefined') return;
+    if (typeof FavoritesManager === 'undefined') {
+      console.log('[Debug] FavoritesManager未定義');
+      return;
+    }
 
     const topicId = item.id;
     const h2Elements = section.querySelectorAll('.topic-section-content h2');
+    console.log('[Debug] injectFavoriteButtonsToSection:', topicId, 'h2数:', h2Elements.length);
 
     h2Elements.forEach((h2, index) => {
       // 既にラッパーがあればスキップ

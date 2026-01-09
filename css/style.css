@@ -2399,9 +2399,9 @@ body {
 
 /* Q&Aのトピックヘッダーを画面幅いっぱいに */
 .qa-topic-section .topic-section-header {
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  width: 100vw;
+  margin-left: -32px;
+  margin-right: -32px;
+  width: calc(100% + 64px);
 }
 
 /* トピックセクションコンテンツ */
@@ -2594,4 +2594,63 @@ body {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-color);
+}
+
+/* ===== まとめ内の過去問画像サムネイル ===== */
+.topic-section-content img {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f5f5f7;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.topic-section-content img:hover {
+  opacity: 0.8;
+}
+
+/* ===== 画像ライトボックス ===== */
+.image-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  cursor: pointer;
+}
+
+.image-lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image-lightbox img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* 画像保存案内メッセージ（iOS用） */
+.lightbox-hint {
+  display: none;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 0 12px 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.image-lightbox.show-hint .lightbox-hint {
+  display: block;
 }

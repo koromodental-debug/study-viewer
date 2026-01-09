@@ -70,7 +70,10 @@
     closeNote: document.getElementById('close-note'),
     noteTimeline: document.getElementById('note-timeline'),
     noteCount: document.getElementById('note-count'),
-    noteEmpty: document.getElementById('note-empty')
+    noteEmpty: document.getElementById('note-empty'),
+    // 画像ライトボックス
+    imageLightbox: document.getElementById('image-lightbox'),
+    lightboxImage: document.getElementById('lightbox-image')
   };
 
   // 検索エンジン
@@ -257,6 +260,14 @@
       elements.noteOverlay.addEventListener('click', function(e) {
         if (e.target === elements.noteOverlay) {
           closeNoteOverlay();
+        }
+      });
+    }
+    // 画像ライトボックス：背景クリックで閉じる
+    if (elements.imageLightbox) {
+      elements.imageLightbox.addEventListener('click', function(e) {
+        if (e.target === elements.imageLightbox) {
+          closeImageLightbox();
         }
       });
     }
@@ -1146,6 +1157,14 @@
     // 画像パスを修正（相対パスを正しいパスに変換）
     fixImagePaths(content, item.htmlPath);
 
+    // 画像にクリックイベントを追加（ライトボックス用）
+    const images = content.querySelectorAll('img');
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        openImageLightbox(img.src);
+      });
+    });
+
     return section;
   }
 
@@ -1187,6 +1206,23 @@
     }
 
     return baseParts.join('/');
+  }
+
+  /**
+   * 画像ライトボックスを開く
+   */
+  function openImageLightbox(imgSrc) {
+    elements.lightboxImage.src = imgSrc;
+    elements.imageLightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  /**
+   * 画像ライトボックスを閉じる
+   */
+  function closeImageLightbox() {
+    elements.imageLightbox.classList.remove('open', 'show-hint');
+    document.body.style.overflow = '';
   }
 
   /**
@@ -2685,32 +2721,13 @@
 
       const dataUrl = canvas.toDataURL('image/png');
 
-      // iOS Safari対応: 新しいタブで画像を開く（長押しで保存可能）
+      // iOS Safari対応: ライトボックスで画像を表示（長押しで保存可能）
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
       if (isIOS) {
-        const newWindow = window.open();
-        if (newWindow) {
-          newWindow.document.write(`
-            <html>
-              <head>
-                <title>${filename}</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <style>
-                  body { margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f5f5f7; }
-                  img { max-width: 100%; height: auto; }
-                  p { text-align: center; padding: 16px; color: #666; font-family: sans-serif; }
-                </style>
-              </head>
-              <body>
-                <div>
-                  <p>画像を長押しして「写真に保存」を選択してください</p>
-                  <img src="${dataUrl}" alt="${filename}">
-                </div>
-              </body>
-            </html>
-          `);
-          newWindow.document.close();
-        }
+        // 既存のライトボックスを使用（ポップアップブロック回避）
+        elements.lightboxImage.src = dataUrl;
+        elements.imageLightbox.classList.add('open', 'show-hint');
+        document.body.style.overflow = 'hidden';
       } else {
         // その他のブラウザ: ダウンロード
         const link = document.createElement('a');

@@ -2645,16 +2645,38 @@
     if (!sectionName) return false;
 
     const sections = elements.qaDisplay.querySelectorAll('.qa-section-title');
+    let bestMatch = null;
+    let bestScore = 0;
+
     for (const section of sections) {
       const text = section.textContent.trim();
-      // 完全一致または部分一致
-      if (text === sectionName || text.includes(sectionName) || sectionName.includes(text)) {
-        const containerRect = elements.qaContent.getBoundingClientRect();
-        const sectionRect = section.getBoundingClientRect();
-        const offset = sectionRect.top - containerRect.top + elements.qaContent.scrollTop - 20;
-        elements.qaContent.scrollTo({ top: offset, behavior: 'auto' });
-        return true;
+      let score = 0;
+
+      // 完全一致は最高スコア
+      if (text === sectionName) {
+        score = 100;
       }
+      // 先頭が一致する場合は高スコア
+      else if (text.startsWith(sectionName) || sectionName.startsWith(text)) {
+        score = 50 + Math.min(text.length, sectionName.length);
+      }
+      // 部分一致は低スコア（最後の手段）
+      else if (text.includes(sectionName) || sectionName.includes(text)) {
+        score = Math.min(text.length, sectionName.length);
+      }
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = section;
+      }
+    }
+
+    if (bestMatch && bestScore >= 3) {
+      const containerRect = elements.qaContent.getBoundingClientRect();
+      const sectionRect = bestMatch.getBoundingClientRect();
+      const offset = sectionRect.top - containerRect.top + elements.qaContent.scrollTop - 20;
+      elements.qaContent.scrollTo({ top: offset, behavior: 'auto' });
+      return true;
     }
     return false;
   }
@@ -2669,16 +2691,38 @@
       if (!elements.htmlDisplay) return false;
 
       const headings = elements.htmlDisplay.querySelectorAll('h1, h2, h3, h4');
+      let bestMatch = null;
+      let bestScore = 0;
+
       for (const heading of headings) {
         const text = heading.textContent.trim();
-        // 完全一致または部分一致
-        if (text === sectionName || text.includes(sectionName) || sectionName.includes(text)) {
-          const containerRect = elements.htmlContent.getBoundingClientRect();
-          const headingRect = heading.getBoundingClientRect();
-          const offset = headingRect.top - containerRect.top + elements.htmlContent.scrollTop - 20;
-          elements.htmlContent.scrollTo({ top: offset, behavior: 'auto' });
-          return true;
+        let score = 0;
+
+        // 完全一致は最高スコア
+        if (text === sectionName) {
+          score = 100;
         }
+        // 先頭が一致する場合は高スコア
+        else if (text.startsWith(sectionName) || sectionName.startsWith(text)) {
+          score = 50 + Math.min(text.length, sectionName.length);
+        }
+        // 部分一致は低スコア（最後の手段）
+        else if (text.includes(sectionName) || sectionName.includes(text)) {
+          score = Math.min(text.length, sectionName.length);
+        }
+
+        if (score > bestScore) {
+          bestScore = score;
+          bestMatch = heading;
+        }
+      }
+
+      if (bestMatch && bestScore >= 3) {
+        const containerRect = elements.htmlContent.getBoundingClientRect();
+        const headingRect = bestMatch.getBoundingClientRect();
+        const offset = headingRect.top - containerRect.top + elements.htmlContent.scrollTop - 20;
+        elements.htmlContent.scrollTo({ top: offset, behavior: 'auto' });
+        return true;
       }
       return false;
     } catch (e) {

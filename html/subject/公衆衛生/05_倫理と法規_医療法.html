@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医療法 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>医療法</h1>
+    <div class="container">
+
+      <h2>医療法の概要</h2>
+      <p><span class="key">医療法</span>は、医療を提供する体制の確保を図り、国民の健康の保持に寄与することを目的とする法律。</p>
+
+      <h3>医療法で規定されるもの</h3>
+      <ul>
+        <li>病院・診療所・助産所の開設管理</li>
+        <li><span class="key">医療安全支援センター</span>の設置</li>
+        <li><span class="key">医療法人</span>の設立・業務範囲</li>
+        <li><span class="key">インフォームド・コンセント</span>の実施</li>
+        <li>医療計画の策定</li>
+        <li>広告規制</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">医療法で規定されないもの【ひっかけ注意】</div>
+        <ul>
+          <li><span class="caution">歯科技工所</span> → 歯科技工士法</li>
+          <li><span class="caution">薬局</span> → 薬機法</li>
+          <li><span class="caution">市町村保健センター</span> → 地域保健法</li>
+          <li><span class="caution">地域包括支援センター</span> → 介護保険法</li>
+          <li><span class="caution">無診察治療の禁止</span> → 歯科医師法</li>
+        </ul>
+      </div>
+
+      <h2>病院と診療所の違い</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>病院</th>
+          <th>診療所</th>
+        </tr>
+        <tr>
+          <td>病床数</td>
+          <td><span class="highlight">20床以上</span></td>
+          <td><span class="highlight">19床以下</span>（または無床）</td>
+        </tr>
+        <tr>
+          <td>開設</td>
+          <td>都道府県知事の<span class="key">許可</span></td>
+          <td>開設後10日以内に<span class="key">届出</span></td>
+        </tr>
+        <tr>
+          <td>管理者</td>
+          <td colspan="2">臨床研修修了後の医師・歯科医師</td>
+        </tr>
+      </table>
+
+      <h3>歯科診療所の開設</h3>
+      <ul>
+        <li>開設は都道府県知事に<span class="key">届出</span></li>
+        <li><span class="caution">歯科医師会の許可は不要</span></li>
+        <li>歯科衛生士がいなくても開設可能</li>
+      </ul>
+
+      <h2>インフォームド・コンセント</h2>
+      <p>医療法は「医師、歯科医師、薬剤師、看護師その他の医療の担い手は、医療を提供するに当たり、適切な説明を行い、医療を受ける者の<span class="highlight">理解</span>を得るよう努めなければならない」と定めている。</p>
+      <p><span class="key">入院診療計画書</span>は医療法に基づき、患者への説明のために作成される。</p>
+
+      <h2>医療計画【超頻出】</h2>
+      <p><span class="key">都道府県知事</span>が策定し、<span class="highlight">5年ごと</span>に見直す。</p>
+
+      <h3>5疾病</h3>
+      <table>
+        <tr>
+          <th>対象疾病</th>
+          <th>対象外</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="key">がん</span><br>
+            <span class="key">脳卒中</span><br>
+            <span class="key">急性心筋梗塞</span><br>
+            <span class="key">糖尿病</span><br>
+            <span class="key">精神疾患</span>
+          </td>
+          <td>
+            <span class="caution">肺炎</span><br>
+            <span class="caution">結核</span><br>
+            <span class="caution">高血圧症</span><br>
+            <span class="caution">慢性閉塞性肺疾患</span><br>
+            <span class="caution">肝疾患</span>（※）
+          </td>
+        </tr>
+      </table>
+      <p class="note">※肝疾患は一部出題で正解とされることもあるが、基本は5疾病に含まれない</p>
+
+      <h3>5事業</h3>
+      <table>
+        <tr>
+          <th>対象事業</th>
+          <th>対象外</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="key">救急医療</span><br>
+            <span class="key">災害医療</span><br>
+            <span class="key">へき地医療</span><br>
+            <span class="key">周産期医療</span><br>
+            <span class="key">小児医療</span>
+          </td>
+          <td>
+            <span class="caution">終末期医療</span><br>
+            <span class="caution">障害者医療</span><br>
+            <span class="caution">遠隔医療</span><br>
+            <span class="caution">再生医療</span><br>
+            <span class="caution">周術期医療</span>
+          </td>
+        </tr>
+      </table>
+
+      <h2>医療圏と病院の種類</h2>
+      <table>
+        <tr>
+          <th>医療圏</th>
+          <th>範囲</th>
+          <th>提供する医療</th>
+        </tr>
+        <tr>
+          <td>一次医療圏</td>
+          <td>市町村</td>
+          <td>身近な医療</td>
+        </tr>
+        <tr>
+          <td>二次医療圏</td>
+          <td>複数市町村</td>
+          <td>一般的な医療</td>
+        </tr>
+        <tr>
+          <td>三次医療圏</td>
+          <td>都道府県</td>
+          <td>高度・専門医療</td>
+        </tr>
+      </table>
+
+      <h3>病院の種類</h3>
+      <table>
+        <tr>
+          <th>病院</th>
+          <th>承認者</th>
+          <th>医療圏</th>
+          <th>要件・機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">特定機能病院</span></td>
+          <td><span class="highlight">厚生労働大臣</span></td>
+          <td>三次</td>
+          <td>高度の医療技術の<span class="key">開発</span>・評価・提供</td>
+        </tr>
+        <tr>
+          <td>地域医療支援病院</td>
+          <td>都道府県知事</td>
+          <td>二次</td>
+          <td>紹介患者への医療、地域医療従事者の研修</td>
+        </tr>
+        <tr>
+          <td>臨床研究中核病院</td>
+          <td>厚生労働大臣</td>
+          <td>-</td>
+          <td><span class="key">特定臨床研究</span>の立案・実施</td>
+        </tr>
+      </table>
+
+      <h2>広告規制</h2>
+      <h3>広告可能な診療科名（4科）</h3>
+      <p><span class="highlight">歯科、矯正歯科、小児歯科、歯科口腔外科</span></p>
+
+      <div class="point-box">
+        <div class="point-box-title">広告不可の診療科名</div>
+        <ul>
+          <li><span class="caution">予防歯科</span>、<span class="caution">審美歯科</span>、<span class="caution">補綴歯科</span>、<span class="caution">障害者歯科</span></li>
+        </ul>
+      </div>
+
+      <h3>その他広告できるもの</h3>
+      <ul>
+        <li>歯科医師の<span class="key">専門医資格</span>（歯周病専門医など）</li>
+        <li><span class="key">予約による診療</span>の実施の有無</li>
+        <li>病院・診療所の名称、所在地、電話番号、診療時間</li>
+      </ul>
+
+      <h3>院内掲示義務</h3>
+      <p><span class="key">診療時間</span>、管理者の氏名、診療日などの掲示が義務付けられている。</p>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">113C32</div>
+        <p>医療法に基づく医療計画の対象となる疾病はどれか。3つ選べ。</p>
+        <div class="choices">
+          a がん<br>
+          b 肺炎<br>
+          c 肝疾患<br>
+          d 脳卒中<br>
+          e 精神疾患
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】5疾病は<span class="key">がん、脳卒中、急性心筋梗塞、糖尿病、精神疾患</span>。肺炎・肝疾患は含まれない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117A20</div>
+        <p>医療法の一部を示す。医師、歯科医師、薬剤師、看護師その他の医療の担い手は、医療を提供するに当たり、適切な説明を行い、医療を受ける者の（　　）を得るよう努めなければならない。（　　）に入るのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 協力<br>
+          b 許可<br>
+          c 情報<br>
+          d 信頼<br>
+          e 理解
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】インフォームド・コンセントの条文。医療を受ける者の<span class="key">「理解」</span>を得るよう努める。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C23</div>
+        <p>医療法に定める特定機能病院の要件はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 救急医療の提供<br>
+          b 特定臨床研究の実施<br>
+          c 高度の医療技術の開発<br>
+          d 200床以上の入院病床数<br>
+          e 地域の医療従事者の研修
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】特定機能病院は<span class="key">高度の医療技術の開発</span>・評価・提供が要件。特定臨床研究は臨床研究中核病院。地域の医療従事者の研修は地域医療支援病院。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A35</div>
+        <p>医療法に基づき広告可能な診療科名はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 予防歯科<br>
+          b 審美歯科<br>
+          c 小児歯科<br>
+          d 補綴歯科<br>
+          e 障害者歯科
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】広告可能な診療科名は<span class="key">歯科、矯正歯科、小児歯科、歯科口腔外科</span>の4科のみ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D4</div>
+        <p>医療法で規定されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 市町村保健センター<br>
+          b 医療安全支援センター<br>
+          c 精神保健福祉センター<br>
+          d 地域包括支援センター<br>
+          e 老人介護支援センター
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">医療安全支援センター</span>は医療法で規定。市町村保健センターは地域保健法、地域包括支援センターは介護保険法で規定。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A36</div>
+        <p>医療法で開設について規定されている施設はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 薬局<br>
+          b 病院<br>
+          c 施術所<br>
+          d 診療所<br>
+          e 歯科技工所
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】医療法で開設管理を規定するのは<span class="key">病院、診療所、助産所</span>。薬局は薬機法、歯科技工所は歯科技工士法で規定。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

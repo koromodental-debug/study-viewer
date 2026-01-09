@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>高齢者医療確保法 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>高齢者医療確保法</h1>
+    <div class="container">
+
+      <h2>高齢者の医療の確保に関する法律の概要</h2>
+      <p><span class="key">高齢者の医療の確保に関する法律</span>（高齢者医療確保法）は、後期高齢者医療制度と特定健康診査・特定保健指導を規定する法律。</p>
+
+      <h3>高齢者医療確保法で規定されるもの【超頻出】</h3>
+      <table>
+        <tr>
+          <th>規定内容</th>
+          <th>詳細</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">後期高齢者医療制度</span></td>
+          <td>75歳以上の医療制度</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">特定健康診査</span></td>
+          <td>40〜74歳対象のメタボ健診</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">特定保健指導</span></td>
+          <td>動機づけ支援・積極的支援</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">健康増進法との違い【ひっかけ注意】</div>
+        <ul>
+          <li>特定健康診査・特定保健指導 → <span class="key">高齢者医療確保法</span></li>
+          <li>歯周疾患検診・骨粗鬆症検診 → <span class="caution">健康増進法</span></li>
+        </ul>
+      </div>
+
+      <h2>後期高齢者医療制度【頻出】</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>対象年齢</td>
+          <td><span class="highlight">75歳以上</span>（65〜74歳で一定の障害がある者も含む）</td>
+        </tr>
+        <tr>
+          <td>運営主体</td>
+          <td><span class="highlight">後期高齢者医療広域連合</span>（都道府県単位）</td>
+        </tr>
+        <tr>
+          <td>自己負担</td>
+          <td>原則<span class="key">1割</span>（一定以上所得者は3割）</td>
+        </tr>
+        <tr>
+          <td>財源</td>
+          <td><span class="key">現役世代からの支援金</span>を含む</td>
+        </tr>
+        <tr>
+          <td>加入</td>
+          <td><span class="key">強制加入</span>（任意ではない）</td>
+        </tr>
+      </table>
+      <p class="note">※運営主体は「市町村」ではなく「広域連合」であることに注意</p>
+
+      <h2>特定健康診査・特定保健指導【超頻出】</h2>
+      <p><span class="key">メタボリックシンドローム</span>（内臓脂肪症候群）対策として実施される。</p>
+
+      <h3>基本情報</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>対象年齢</td>
+          <td><span class="highlight">40〜74歳</span></td>
+        </tr>
+        <tr>
+          <td>実施主体</td>
+          <td><span class="key">医療保険者</span>（健康保険組合など）</td>
+        </tr>
+        <tr>
+          <td>目的</td>
+          <td><span class="highlight">メタボリックシンドローム</span>の予防・改善</td>
+        </tr>
+      </table>
+
+      <h3>特定健康診査の必須項目</h3>
+      <ul>
+        <li><span class="highlight">腹囲</span>（メタボ判定の必須項目）</li>
+        <li>身長・体重・BMI</li>
+        <li>血圧</li>
+        <li>脂質（中性脂肪、HDLコレステロール、LDLコレステロール）</li>
+        <li><span class="key">空腹時血糖</span>またはHbA1c</li>
+        <li><span class="key">喫煙歴</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">必須項目ではないもの【ひっかけ注意】</div>
+        <ul>
+          <li><span class="caution">歯科検診</span> → 特定健康診査に含まれない</li>
+          <li><span class="caution">現在歯数</span> → 特定健康診査に含まれない</li>
+          <li><span class="caution">胸部エックス線撮影</span> → 特定健康診査に含まれない</li>
+        </ul>
+      </div>
+
+      <h3>特定保健指導の種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>対象</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">動機づけ支援</span></td>
+          <td>リスクが中程度</td>
+          <td>原則1回の面接</td>
+        </tr>
+        <tr>
+          <td><span class="key">積極的支援</span></td>
+          <td>リスクが高い</td>
+          <td>3か月以上の継続的支援</td>
+        </tr>
+      </table>
+
+      <h3>階層化の基準</h3>
+      <p>腹囲・BMI + 追加リスク（血圧・脂質・血糖・<span class="highlight">喫煙歴</span>）で判定する。</p>
+      <p class="note">※喫煙歴は階層化の基準に含まれる重要な項目</p>
+
+      <h3>特定保健指導のアウトカム</h3>
+      <p>最も重要なアウトカムは<span class="highlight">対象者の行動変容</span>である。</p>
+      <ul>
+        <li>指導回数の増加ではない</li>
+        <li>受診率の増加でもない</li>
+        <li>生活習慣の改善（行動変容）が目標</li>
+      </ul>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">104A50</div>
+        <p>40〜74歳を対象とした特定健康診査の根拠法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 健康増進法<br>
+          b 介護保険法<br>
+          c 健康保険法<br>
+          d 国民健康保険法<br>
+          e 高齢者の医療の確保に関する法律
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】特定健康診査の根拠法は<span class="key">高齢者の医療の確保に関する法律</span>。健康増進法ではないことに注意。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117A9</div>
+        <p>高齢者の医療の確保に関する法律によって規定されている「特定健康診査・特定保健指導」で対策されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 大腸癌<br>
+          b 認知機能低下<br>
+          c メンタルヘルス<br>
+          d 慢性閉塞性肺疾患<br>
+          e メタボリックシンドローム
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】特定健康診査・特定保健指導は<span class="key">メタボリックシンドローム</span>（内臓脂肪症候群）対策。がん対策ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117C56</div>
+        <p>後期高齢者医療制度を規定しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医療法<br>
+          b 介護保険法<br>
+          c 老人福祉法<br>
+          d 国民健康保険法<br>
+          e 高齢者の医療の確保に関する法律
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】後期高齢者医療制度は<span class="key">高齢者の医療の確保に関する法律</span>で規定。介護保険法は介護サービスを規定。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117C80</div>
+        <p>特定健康診査で必須の項目はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 腹囲<br>
+          b 喫煙歴<br>
+          c 現在歯数<br>
+          d 空腹時血糖値<br>
+          e 胸部エックス線撮影
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】必須項目は<span class="key">腹囲、喫煙歴、空腹時血糖値</span>など。現在歯数、胸部X線は含まれない。歯科検診は特定健康診査に含まれない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C99</div>
+        <p>後期高齢者医療制度で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 任意加入である。<br>
+          b 運営主体は市町村である。<br>
+          c 自己負担は原則3割である。<br>
+          d 原則75歳以上を対象とする。<br>
+          e 財源の一部を現役世代が支援する。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】後期高齢者医療制度は<span class="key">75歳以上</span>が対象、<span class="key">現役世代からの支援金</span>を含む。強制加入であり、運営主体は広域連合、自己負担は原則1割。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D13</div>
+        <p>特定保健指導のアウトカムとして重要なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 指導内容の一般化<br>
+          b 指導対象者の行動変容<br>
+          c 特定健康診査の受診率の増加<br>
+          d 特定疾患に対する治療的介入<br>
+          e 指導対象者への指導回数の増加
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】特定保健指導の最重要アウトカムは<span class="key">対象者の行動変容</span>（生活習慣の改善）。指導回数や受診率ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C25</div>
+        <p>特定健康診査・特定保健指導の対象となる最低年齢で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 30歳<br>
+          b 35歳<br>
+          c 40歳<br>
+          d 45歳<br>
+          e 50歳
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】特定健康診査・特定保健指導の対象は<span class="key">40〜74歳</span>。40歳から開始される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A15</div>
+        <p>高齢者の医療の確保に関する法律によって規定されている「特定健康診査・特定保健指導」について正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 都道府県が実施主体である。<br>
+          b 対象年齢は65歳以上である。<br>
+          c 特定健康診査に歯科検診が含まれる。<br>
+          d 悪性新生物に対する予防を主目的とする。<br>
+          e 特定保健指導には動機づけ支援と積極的支援がある。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】特定保健指導には<span class="key">動機づけ支援</span>と<span class="key">積極的支援</span>がある。実施主体は医療保険者、対象は40〜74歳、歯科検診は含まれない、メタボ対策が目的。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

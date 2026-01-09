@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>舌接触補助床 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 口腔環境と予防</span>
+    <h1>舌接触補助床（PAP）</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核</div>
+        <ul>
+          <li>PAPで改善するもの：<span class="highlight">嚥下圧、食塊形成能</span></li>
+          <li>適応：舌運動障害による<span class="highlight">食物残留、構音障害（カ行）</span></li>
+          <li>類似装置（PLP、スピーチエイド等）との鑑別</li>
+        </ul>
+      </div>
+
+      <h2>PAP（舌接触補助床）とは</h2>
+      <p><span class="key">PAP</span>（Palatal Augmentation Prosthesis）は、口蓋に床を付与することで<span class="highlight">舌の口蓋への接触を補助</span>する装置。</p>
+
+      <h3>メカニズム</h3>
+      <ul>
+        <li>舌の萎縮や運動障害により固有口腔容積が相対的に増大</li>
+        <li>→ 舌と口蓋の接触が不十分になる</li>
+        <li>→ 咀嚼・嚥下・構音に障害が生じる</li>
+        <li>PAPで口蓋を厚くし、舌との距離を縮めて接触を補助</li>
+      </ul>
+
+      <h3>適応</h3>
+      <ul>
+        <li>舌切除後</li>
+        <li>舌萎縮（ALS：筋萎縮性側索硬化症 など）</li>
+        <li>舌運動障害（脳血管障害後遺症 など）</li>
+      </ul>
+
+      <h3>PAPによって改善するもの</h3>
+      <table>
+        <tr>
+          <th>改善項目</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">嚥下圧</span></td>
+          <td>舌と口蓋の接触により嚥下時の圧が上昇</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">食塊形成能</span></td>
+          <td>舌による食物の押しつぶし・まとめが可能に</td>
+        </tr>
+        <tr>
+          <td>構音機能</td>
+          <td>特にカ行（舌背と口蓋の接触）が改善</td>
+        </tr>
+        <tr>
+          <td>食物移送</td>
+          <td>口腔から咽頭への送り込みが改善</td>
+        </tr>
+      </table>
+
+      <h2>類似装置との鑑別</h2>
+      <table>
+        <tr>
+          <th>装置</th>
+          <th>英語名</th>
+          <th>目的</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td class="key">PAP<br>（舌接触補助床）</td>
+          <td>Palatal Augmentation Prosthesis</td>
+          <td>舌の口蓋接触を補助</td>
+          <td>舌運動障害、舌萎縮<br><span class="caution">開鼻声なし</span></td>
+        </tr>
+        <tr>
+          <td class="key">PLP<br>（軟口蓋挙上装置）</td>
+          <td>Palatal Lift Prosthesis</td>
+          <td>軟口蓋を挙上</td>
+          <td>鼻咽腔閉鎖不全<br><span class="highlight">開鼻声あり</span></td>
+        </tr>
+        <tr>
+          <td class="key">スピーチエイド</td>
+          <td>Speech Aid</td>
+          <td>構音機能の回復<br>（鼻咽腔閉鎖を補助）</td>
+          <td>開鼻声を伴う構音障害</td>
+        </tr>
+        <tr>
+          <td class="key">オブチュレーター</td>
+          <td>Obturator</td>
+          <td>欠損部の閉鎖</td>
+          <td>口蓋裂、上顎欠損</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">鑑別のポイント</div>
+        <ul>
+          <li><span class="caution">開鼻声なし</span>＋カ行不明瞭＋食物残留 → <span class="key">PAP</span></li>
+          <li><span class="highlight">開鼻声あり</span> → <span class="key">PLP</span> または <span class="key">スピーチエイド</span></li>
+          <li>口蓋に穴がある（欠損） → <span class="key">オブチュレーター</span></li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112A78</div>
+        <p>68歳の男性。食事中にむせることを主訴として来院した。6か月前から脳梗塞後の後遺症に対するリハビリテーションを受けているという。検査の結果、装置を用いて治療を行うこととした。治療に用いた装置の写真（別冊No.24A）と装置装着時の口腔内写真（別冊No.24B）を別に示す。<br>この装置によって改善するのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112A78_1.png" alt="別冊No.24A">
+          <img src="../../../images/112回_Web画像/112A78_2.png" alt="別冊No.24B">
+        </div>
+        <div class="choices">
+          a 嚥下圧<br>
+          b 咬合力<br>
+          c 口唇閉鎖力<br>
+          d 食塊形成能<br>
+          e 鼻咽腔閉鎖機能
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】写真はPAP（舌接触補助床）。脳梗塞後の舌運動障害に対して使用。PAPは舌と口蓋の接触を補助することで<span class="highlight">嚥下圧</span>と<span class="highlight">食塊形成能</span>を改善する。咬合力・口唇閉鎖力はPAPと無関係。鼻咽腔閉鎖機能の改善にはPLPを使用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A86</div>
+        <p>81歳の女性。口腔内に食物が残留することを主訴として来院した。3か月前に脳梗塞で救急搬送され、2週前に退院したという。後遺障害として、右手にしびれ感があり、カ行の発音が不明瞭であるが、<span class="caution">開鼻声は認めない</span>。咬頭嵌合位での咬合接触状態を印記した義歯の写真（別冊No.32A）と食物の残留部位を示す写真（別冊No.32B）を別に示す。<br>主訴を改善するために適用するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115A86_1.png" alt="別冊No.32A">
+          <img src="../../../images/115回_Web画像/115A86_2.png" alt="別冊No.32B">
+        </div>
+        <div class="choices">
+          a 金属床義歯<br>
+          b 舌接触補助床<br>
+          c スピーチエイド<br>
+          d 軟口蓋挙上装置<br>
+          e オブチュレーター
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】脳梗塞後遺症で「食物残留」「カ行の発音が不明瞭」「<span class="caution">開鼻声なし</span>」→ 舌運動障害を示唆。開鼻声がないためPLP・スピーチエイドは除外。舌と口蓋の接触を補助する<span class="highlight">PAP（舌接触補助床）</span>が適応。</p>
+      </div>
+
+      <h2>関連事項</h2>
+      <h3>PAPの作製方法</h3>
+      <ol>
+        <li>口蓋床（咬合床）を作製</li>
+        <li>パラトグラムや超音波検査で舌の接触程度を確認</li>
+        <li>口蓋部分にユーティリティワックスを築盛</li>
+        <li>テストフードで嚥下させ、舌の接触程度を確認</li>
+        <li>レジンに置き換えて完成</li>
+      </ol>
+
+    </div>
+  </div>
+</body>
+</html>

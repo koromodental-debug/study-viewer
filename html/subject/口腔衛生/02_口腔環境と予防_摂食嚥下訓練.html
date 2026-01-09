@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>摂食嚥下訓練 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 口腔環境と予防</span>
+    <h1>摂食嚥下訓練</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核</div>
+        <ul>
+          <li><span class="highlight">機能障害と訓練法の対応</span>が最頻出（舌筋力低下→舌抵抗訓練など）</li>
+          <li>直接訓練の体位・姿勢・嚥下法の選択</li>
+          <li>頭部挙上訓練（Shaker exercise）で鍛える筋</li>
+        </ul>
+      </div>
+
+      <h2>訓練の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>定義</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td class="key">間接訓練</td>
+          <td>食物を<span class="caution">用いない</span>基礎的訓練</td>
+          <td>舌抵抗訓練、アイスマッサージ、Shaker exercise</td>
+        </tr>
+        <tr>
+          <td class="key">直接訓練</td>
+          <td>食物を<span class="highlight">用いる</span>訓練</td>
+          <td>交互嚥下、横向き嚥下、うなずき嚥下</td>
+        </tr>
+      </table>
+
+      <h2>間接訓練：機能障害と訓練の対応</h2>
+      <p class="note">★★★ 最頻出パターン：「どの障害に、どの訓練を行うか」</p>
+
+      <h3>咀嚼期（準備期）の障害</h3>
+      <table>
+        <tr>
+          <th>機能障害</th>
+          <th>訓練法</th>
+        </tr>
+        <tr>
+          <td>舌筋力低下</td>
+          <td><span class="highlight">舌抵抗訓練</span></td>
+        </tr>
+        <tr>
+          <td>舌可動域低下</td>
+          <td>舌可動域訓練</td>
+        </tr>
+        <tr>
+          <td>口唇閉鎖不全</td>
+          <td>口唇訓練</td>
+        </tr>
+        <tr>
+          <td>咀嚼機能低下</td>
+          <td>咀嚼訓練</td>
+        </tr>
+        <tr>
+          <td>構音障害</td>
+          <td>構音訓練（パタカラ体操）</td>
+        </tr>
+      </table>
+
+      <h3>咽頭期の障害</h3>
+      <table>
+        <tr>
+          <th>機能障害</th>
+          <th>訓練法</th>
+        </tr>
+        <tr>
+          <td>嚥下反射遅延・消失</td>
+          <td>アイスマッサージ（冷圧刺激法）</td>
+        </tr>
+        <tr>
+          <td>喉頭挙上能低下</td>
+          <td><span class="highlight">頭部挙上訓練</span>（Shaker exercise）</td>
+        </tr>
+        <tr>
+          <td>声門閉鎖機能不全</td>
+          <td><span class="highlight">Pushing exercise</span>（押し運動）</td>
+        </tr>
+        <tr>
+          <td>喉頭閉鎖不全（誤嚥）</td>
+          <td>息こらえ嚥下（Supraglottic swallow）</td>
+        </tr>
+      </table>
+
+      <h3>食道期の障害</h3>
+      <table>
+        <tr>
+          <th>機能障害</th>
+          <th>訓練法</th>
+        </tr>
+        <tr>
+          <td>食道入口部開大不全</td>
+          <td>バルーン拡張法、Shaker exercise</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">頭部挙上訓練（Shaker exercise）</div>
+        <ul>
+          <li>仰臥位で頭部のみを挙上し60秒保持×3回</li>
+          <li>鍛えられる筋：<span class="highlight">顎舌骨筋、甲状舌骨筋、オトガイ舌骨筋、顎二腹筋前腹</span>（舌骨上筋群）</li>
+          <li>効果：食道入口部の開大促進</li>
+        </ul>
+      </div>
+
+      <h2>直接訓練：嚥下法の種類</h2>
+      <table>
+        <tr>
+          <th>嚥下法</th>
+          <th>方法</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td class="key">交互嚥下</td>
+          <td><span class="highlight">異なる物性</span>の食品を交互に嚥下</td>
+          <td>咽頭残留</td>
+        </tr>
+        <tr>
+          <td class="key">複数回嚥下</td>
+          <td>1回の摂取で複数回嚥下</td>
+          <td>咽頭残留</td>
+        </tr>
+        <tr>
+          <td class="key">横向き嚥下</td>
+          <td>頸部を患側に回旋して嚥下</td>
+          <td>一側性咽頭麻痺</td>
+        </tr>
+        <tr>
+          <td class="key">息こらえ嚥下</td>
+          <td>息を止めて嚥下後に咳払い</td>
+          <td>声門閉鎖不全</td>
+        </tr>
+        <tr>
+          <td class="key">うなずき嚥下</td>
+          <td>頸部を前屈させて嚥下</td>
+          <td>咽頭蓋谷の残留</td>
+        </tr>
+      </table>
+
+      <h2>嚥下調整食分類2013</h2>
+      <table>
+        <tr>
+          <th>コード</th>
+          <th>名称</th>
+          <th>形態</th>
+        </tr>
+        <tr>
+          <td>0j</td>
+          <td>嚥下訓練食品</td>
+          <td>均質なゼリー</td>
+        </tr>
+        <tr>
+          <td>0t</td>
+          <td>嚥下訓練食品</td>
+          <td>とろみ水</td>
+        </tr>
+        <tr>
+          <td>1j</td>
+          <td>嚥下調整食1</td>
+          <td>ゼリー・プリン・ムース状</td>
+        </tr>
+        <tr>
+          <td>2-1</td>
+          <td>嚥下調整食2</td>
+          <td>ミキサー食（均質）</td>
+        </tr>
+        <tr>
+          <td>2-2</td>
+          <td>嚥下調整食2</td>
+          <td>ミキサー食（不均質）</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>嚥下調整食3</td>
+          <td>やわらか食</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">4</span></td>
+          <td>嚥下調整食4</td>
+          <td><span class="highlight">軟飯・全粥</span></td>
+        </tr>
+      </table>
+
+      <h2>評価法</h2>
+      <table>
+        <tr>
+          <th>検査</th>
+          <th>評価内容</th>
+        </tr>
+        <tr>
+          <td>RSST</td>
+          <td>30秒間の空嚥下回数（3回未満で異常）</td>
+        </tr>
+        <tr>
+          <td>MWST</td>
+          <td>改訂水飲みテスト（3mL冷水）</td>
+        </tr>
+        <tr>
+          <td>フードテスト</td>
+          <td>プリン4gを嚥下</td>
+        </tr>
+        <tr>
+          <td>オーラルディアドコキネシス</td>
+          <td>「パタカ」の発音速度（<span class="highlight">構音機能</span>の評価）</td>
+        </tr>
+        <tr>
+          <td>舌圧検査</td>
+          <td>舌と口蓋の接触圧</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <h3>間接訓練の選択</h3>
+
+      <div class="question-box">
+        <div class="q-number">111B26</div>
+        <p>摂食嚥下障害に伴う機能低下と訓練の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 開口量減少－－アイスマッサージ<br>
+          b 舌筋力低下－－舌抵抗訓練<br>
+          c 食塊移送能低下－－息こらえ嚥下<br>
+          d 喉頭挙上能低下－－頭部挙上訓練<br>
+          e 声門閉鎖機能不全－－バルーン拡張法
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】舌筋力低下には舌抵抗訓練、喉頭挙上能低下には頭部挙上訓練（Shaker exercise）が適応。アイスマッサージは嚥下反射遅延に、息こらえ嚥下は声門閉鎖不全に、バルーン拡張法は食道入口部開大不全に適応。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A29</div>
+        <p>摂食嚥下リハビリテーションにおける頭部挙上訓練により機能回復が期待できる筋はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 咬筋<br>
+          b 顎舌骨筋<br>
+          c 茎突舌筋<br>
+          d 顎二腹筋前腹<br>
+          e オトガイ舌骨筋
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】頭部挙上訓練（Shaker exercise）は舌骨上筋群を鍛える。顎舌骨筋、顎二腹筋前腹、オトガイ舌骨筋は舌骨上筋群に含まれる。咬筋は咀嚼筋、茎突舌筋は舌の外舌筋。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B85</div>
+        <p>72歳の男性。食事時のむせを主訴として来院した。脳梗塞の既往があり、脳神経内科に通院中であるという。口腔機能検査では異常が認められなかったものの、嗄声を生じていたので耳鼻咽喉科医に精査を依頼した。嚥下内視鏡検査の結果、液体摂取時に誤嚥が認められたため、機能改善を目指した訓練を行うこととした。安静時と「イ」発声時の嚥下内視鏡画像（別冊No.37）を別に示す。<br>推奨されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咀嚼訓練<br>
+          b 舌抵抗訓練<br>
+          c プッシング訓練<br>
+          d バルーン拡張訓練<br>
+          e ブローイング訓練
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】嗄声＋液体誤嚥→声門閉鎖不全を示唆。Pushing exercise（プッシング訓練）は声帯の内転を強化し、声門閉鎖機能を改善する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A53</div>
+        <p>74歳の男性。食事摂取の困難を主訴として来院した。既往歴として脳梗塞がある。嚥下造影検査を行ったところ、喉頭閉鎖不良による水分誤嚥を認めた。<br>適切な対応はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 水分摂取制限<br>
+          b プッシング訓練<br>
+          c アイスマッサージ<br>
+          d 息こらえ嚥下訓練<br>
+          e 舌接触補助床製作
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】喉頭閉鎖不良による誤嚥に対しては、声門閉鎖を強化するPushing exercise（b）と、嚥下時に声門を閉鎖する息こらえ嚥下（d）が適応。</p>
+      </div>
+
+      <h3>直接訓練</h3>
+
+      <div class="question-box">
+        <div class="q-number">113A85</div>
+        <p>異なる物性の検査食を用いて行う直接訓練法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 交互嚥下<br>
+          b 複数回嚥下<br>
+          c 横向き嚥下<br>
+          d 息こらえ嚥下<br>
+          e うなずき嚥下
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】交互嚥下は、ゼリーと水など<span class="highlight">異なる物性</span>の食品を交互に嚥下することで咽頭残留を除去する直接訓練法。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A118</div>
+        <p>90歳の男性。脳梗塞による摂食・嚥下障害によって経口摂取を禁止されている。右片麻痺がある。経口摂取の再開にあたり、直接訓練を行うこととした。<br>適切なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 仰臥位にする。<br>
+          b 横向き嚥下とする。<br>
+          c 箸を使って訓練する。<br>
+          d 水分にとろみをつける。<br>
+          e 水分を多く含む粥を摂取する。
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】右片麻痺→右側の咽頭麻痺→横向き嚥下（頸部を患側に回旋）で健側を使う。嚥下障害では<span class="caution">水分にとろみをつける</span>（誤嚥防止）。仰臥位は誤嚥リスク↑、箸は困難、水分の多い粥は誤嚥リスク↑。</p>
+      </div>
+
+      <h3>嚥下調整食分類</h3>
+
+      <div class="question-box">
+        <div class="q-number">114A38</div>
+        <p>日本摂食嚥下リハビリテーション学会の嚥下調整食分類2013を図に示す。<br>軟飯や全粥はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ア（コード0j）<br>
+          b イ（コード1j）<br>
+          c ウ（コード2）<br>
+          d エ（コード3）<br>
+          e オ（コード4）
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】嚥下調整食分類2013で、軟飯・全粥は<span class="highlight">コード4</span>に分類される。コード4は嚥下調整食の中で最も普通食に近い段階。</p>
+      </div>
+
+      <h3>評価と指導</h3>
+
+      <div class="question-box">
+        <div class="q-number">114C46</div>
+        <p>76歳の女性。よだれが垂れることを主訴として来院した。最近、夫から指摘されるようになったという。特記すべき既往歴はない。顔面の運動障害や知的障害は認めない。診察の結果、ある特訓を行うこととした。訓練前と訓練中の写真（別冊 No.15）を別に示す。<br>この訓練の効果を評価するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a RSST<br>
+          b MWST<br>
+          c 舌圧検査<br>
+          d フードテスト<br>
+          e オーラルディアドコキネシス
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】写真から「パタカラ体操」（構音訓練）を実施中と推測。構音機能の評価には<span class="highlight">オーラルディアドコキネシス</span>（「パタカ」の発音速度測定）が適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A46</div>
+        <p>82歳の女性。食事中のむせを主訴として訪問歯科診療の依頼があった。 Alzheimer 型認知症で施設に入所している。ミールラウンドで食事の観察を行ったところ、食形態は普通食で、多量の食物を急いで掻き込む動作がみられた。初診時の口腔内写真（別冊No.16）を別に示す。口腔機能評価の結果を表に示す。<br>口腔衛生指導とともにまず行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 嚥下訓練<br>
+          b 構音訓練<br>
+          c 義歯の新製<br>
+          d 舌抵抗訓練<br>
+          e 食形態の指導
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】認知症患者で「普通食を急いで掻き込む」→食形態が不適切。口腔機能に問題がなくても、<span class="highlight">食形態の指導</span>（食事の調整）がまず必要。</p>
+      </div>
+
+      <h3>舌接触補助床（PAP）</h3>
+
+      <div class="question-box">
+        <div class="q-number">112D55</div>
+        <p>77歳の女性。食事時間の延長を主訴として来院した。半年前から自覚しているという。脳梗塞の既往がある。口腔内診査の結果、上下顎全部床義歯の適合は良好であった。ある検査を行ったところ基準値よりも低値を示した。検査機器の写真（別冊No.7）を別に示す。<br>適切な対応はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌抵抗訓練<br>
+          b 舌可動域訓練<br>
+          c バルーン拡張訓練<br>
+          d 舌接触補助床の製作<br>
+          e タングガードの製作
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】写真は舌圧測定器。舌圧低下に対しては、舌抵抗訓練（機能訓練）と舌接触補助床（PAP：代償的アプローチ）が適応。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D73</div>
+        <p>75歳の男性。食事に時間がかかることを主訴として家族と来院した。半年前に気付いたがそのままにしていたという。検査結果の一部を表に示す。<br>適切な対応はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 構音訓練<br>
+          b 舌抵抗訓練<br>
+          c 頸部可動域訓練<br>
+          d バルーン拡張訓練<br>
+          e プッシング・プリング訓練
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】検査結果（表）から舌圧低下・構音機能低下を読み取る。舌抵抗訓練（舌筋力強化）と構音訓練が適応。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

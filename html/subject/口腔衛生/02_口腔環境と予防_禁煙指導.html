@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>禁煙指導 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 口腔環境と予防</span>
+    <h1>禁煙指導</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核</div>
+        <ul>
+          <li><span class="highlight">行動変容ステージ</span>（5段階）と指導内容の対応が頻出</li>
+          <li>無関心期：情報提供（害を伝える、依存は疾病と説明）</li>
+          <li>関心期〜準備期：禁煙開始日の設定、過去の成功体験の振り返り</li>
+          <li>喫煙のリスク：<span class="highlight">口腔癌</span>、<span class="highlight">インプラント周囲炎</span></li>
+        </ul>
+      </div>
+
+      <h2>行動変容ステージモデル（超頻出）</h2>
+      <table>
+        <tr>
+          <th>ステージ</th>
+          <th>特徴</th>
+          <th>適切な指導</th>
+        </tr>
+        <tr>
+          <td class="key">無関心期<br>（前熟考期）</td>
+          <td>禁煙に関心がない<br>6か月以内に禁煙予定なし</td>
+          <td><span class="highlight">情報提供</span><br>・喫煙の害を伝える<br>・ニコチン依存は疾病と説明</td>
+        </tr>
+        <tr>
+          <td class="key">関心期<br>（熟考期）</td>
+          <td>禁煙を考えている<br>6か月以内に禁煙予定</td>
+          <td>・過去の禁煙経験を振り返る<br>・<span class="highlight">禁煙開始日の設定</span><br>・禁煙宣言書の作成</td>
+        </tr>
+        <tr>
+          <td class="key">準備期</td>
+          <td>1か月以内に禁煙予定<br>禁煙準備中</td>
+          <td>・<span class="highlight">ニコチン代替療法</span>の説明<br>・禁煙補助薬の紹介</td>
+        </tr>
+        <tr>
+          <td class="key">実行期</td>
+          <td>禁煙開始<br>6か月未満</td>
+          <td>・<span class="highlight">褒美を考えさせる</span><br>・吸いたい欲求への対処法</td>
+        </tr>
+        <tr>
+          <td class="key">維持期</td>
+          <td>禁煙継続<br>6か月以上</td>
+          <td>・再喫煙防止<br>・自己効力感の維持</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">各ステージの指導ポイント</div>
+        <ul>
+          <li><span class="caution">無関心期</span>：いきなり禁煙を勧めない → まず<span class="highlight">情報提供</span></li>
+          <li><span class="highlight">関心期</span>：「いずれ禁煙したい」→ <span class="highlight">禁煙開始日を決める</span></li>
+          <li><span class="highlight">準備期</span>：具体的な禁煙法 → <span class="highlight">ニコチン代替療法</span></li>
+        </ul>
+      </div>
+
+      <h2>喫煙の害と口腔への影響</h2>
+
+      <h3>喫煙がリスクファクターとなる疾患</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">口腔癌（口底癌など）</span></td>
+          <td>発癌物質への曝露</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">インプラント周囲炎</span></td>
+          <td>血流低下、免疫機能低下</td>
+        </tr>
+        <tr>
+          <td>歯周炎</td>
+          <td>歯肉血流低下、炎症反応減弱</td>
+        </tr>
+        <tr>
+          <td>口腔白板症</td>
+          <td>粘膜への慢性刺激</td>
+        </tr>
+      </table>
+
+      <h3>喫煙と関連しないもの</h3>
+      <ul>
+        <li>齲蝕（直接的関連なし）</li>
+        <li>地図状舌（原因不明）</li>
+        <li>慢性再発性アフタ（原因不明）</li>
+      </ul>
+
+      <h2>禁煙支援の方法</h2>
+
+      <h3>5A's アプローチ</h3>
+      <table>
+        <tr>
+          <th>5A's</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">Ask</td>
+          <td>喫煙状況を尋ねる</td>
+        </tr>
+        <tr>
+          <td class="key">Advise</td>
+          <td>禁煙を勧める</td>
+        </tr>
+        <tr>
+          <td class="key">Assess</td>
+          <td>禁煙意思を評価</td>
+        </tr>
+        <tr>
+          <td class="key">Assist</td>
+          <td>禁煙を支援する</td>
+        </tr>
+        <tr>
+          <td class="key">Arrange</td>
+          <td>フォローアップの手配</td>
+        </tr>
+      </table>
+
+      <h3>禁煙補助薬</h3>
+      <ul>
+        <li>ニコチンパッチ（貼付剤）</li>
+        <li>ニコチンガム</li>
+        <li>バレニクリン（チャンピックス®）：ニコチン受容体部分作動薬</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A108</div>
+        <p>禁煙指導において対象者の行動変容ステージと指導内容との組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 無関心期（前熟考期）―禁煙開始日を設定させる。<br>
+          b 関心期（熟考期）――禁煙宣言書を作成させる。<br>
+          c 準備期―――――ニコチン代替療法を説明する。<br>
+          d 実行期――――――禁煙達成時の自分への褒美を考えさせる。<br>
+          e 維持期―――――ニコチン依存度の自己評価を行う。
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="highlight">準備期</span>では具体的な禁煙法（<span class="highlight">ニコチン代替療法</span>）を説明。<span class="highlight">実行期</span>では禁煙継続のモチベーション維持のため<span class="highlight">褒美を考えさせる</span>。無関心期に開始日設定は時期尚早。維持期のニコチン依存度評価は不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A59</div>
+        <p>40歳の男性。インプラント治療を希望して来院した。問診の結果、喫煙者であり禁煙には関心がないという。<br>禁煙ステージとしてこの期の指導で適切なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 禁煙開始日の設定を促す。<br>
+          b 禁煙補助薬の使用を勧める。<br>
+          c ニコチン依存は疾病であることを説明する。<br>
+          d 喫煙欲求のコントロールの仕方について助言する。<br>
+          e 喫煙がインプラント治療の成功率を低下させることを説明する。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】「禁煙には関心がない」→<span class="caution">無関心期</span>。この時期は<span class="highlight">情報提供</span>が適切。<span class="highlight">ニコチン依存は疾病と説明</span>し、<span class="highlight">喫煙の害</span>（インプラント成功率低下）を伝える。禁煙開始日設定（a）や補助薬（b）は関心期以降。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B75</div>
+        <p>40歳の男性。慢性歯周炎と診断し、歯周基本治療を行うこととした。喫煙者で、いずれ禁煙したいと考えているが、今すぐに行う予定はないという。<br>・一度、1か月間の禁煙ができたことがある。<br>患者への説明で適切なのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 「禁煙開始日を決めましょう」<br>
+          b 「加熱式タバコに変更しましょう」<br>
+          c 「ニコチンの依存性は強くありません」<br>
+          d 「禁煙できた経過を振り返ってみましょう」<br>
+          e 「喫煙により治療の予後が不良となりやすいです」
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】「いずれ禁煙したい」→<span class="highlight">関心期</span>。<span class="highlight">禁煙開始日を決める</span>（a）、過去の<span class="highlight">成功体験を振り返る</span>（d）、<span class="highlight">喫煙の害を伝える</span>（e）が適切。加熱式タバコも有害（b×）。ニコチン依存性は強い（c×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C58</div>
+        <p>喫煙がリスクファクターと考えられているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 齲蝕<br>
+          b 口底癌<br>
+          c 地図状舌<br>
+          d 慢性再発性アフタ<br>
+          e インプラント周囲炎
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】喫煙がリスクファクターとなるのは<span class="highlight">口底癌</span>（口腔癌）と<span class="highlight">インプラント周囲炎</span>。齲蝕、地図状舌、慢性再発性アフタは喫煙との直接的関連なし。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

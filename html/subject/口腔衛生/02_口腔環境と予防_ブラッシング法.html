@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ブラッシング法 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 口腔環境と予防</span>
+    <h1>ブラッシング法</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核</div>
+        <ul>
+          <li><span class="highlight">毛先を使う</span>：バス法、フォーンズ法、スクラビング法</li>
+          <li><span class="caution">脇腹を使う</span>：スティルマン法、チャーターズ法</li>
+          <li><span class="highlight">振動させる</span>：バス法、チャーターズ法、スティルマン改良法</li>
+        </ul>
+      </div>
+
+      <h2>ブラッシング法の分類</h2>
+      <table>
+        <tr>
+          <th>使用部位</th>
+          <th>ブラッシング法</th>
+          <th>重視する効果</th>
+        </tr>
+        <tr>
+          <td class="key">毛先を使う</td>
+          <td>スクラビング法、フォーンズ法、<span class="highlight">バス法</span></td>
+          <td>プラーク除去</td>
+        </tr>
+        <tr>
+          <td class="key">脇腹を使う</td>
+          <td>ローリング法、<span class="caution">スティルマン法</span>、<span class="caution">チャーターズ法</span></td>
+          <td>歯肉マッサージ</td>
+        </tr>
+      </table>
+
+      <h2>各ブラッシング法の特徴</h2>
+
+      <h3>毛先を使う方法</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>当て方</th>
+          <th>動かし方</th>
+          <th>振動</th>
+        </tr>
+        <tr>
+          <td class="key">スクラビング法</td>
+          <td>毛先を歯面に<span class="highlight">直角</span></td>
+          <td>水平に小刻み</td>
+          <td>×</td>
+        </tr>
+        <tr>
+          <td class="key">フォーンズ法<br>（描円法）</td>
+          <td>毛先を歯面に<span class="highlight">直角</span></td>
+          <td><span class="highlight">描円運動</span></td>
+          <td>×</td>
+        </tr>
+        <tr>
+          <td class="key">バス法</td>
+          <td>毛先を歯軸に<span class="highlight">45°</span><br>（歯肉溝に1mm挿入）</td>
+          <td>小刻みな<span class="highlight">振動</span></td>
+          <td><span class="highlight">○</span></td>
+        </tr>
+      </table>
+
+      <h3>脇腹を使う方法</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>当て方</th>
+          <th>動かし方</th>
+          <th>振動</th>
+        </tr>
+        <tr>
+          <td class="key">ローリング法</td>
+          <td>脇腹を歯肉に</td>
+          <td>回転のみ</td>
+          <td>×</td>
+        </tr>
+        <tr>
+          <td class="key">スティルマン法</td>
+          <td>脇腹を歯肉に</td>
+          <td>圧迫のみ</td>
+          <td>×</td>
+        </tr>
+        <tr>
+          <td class="key">スティルマン改良法</td>
+          <td>脇腹を歯肉に</td>
+          <td>圧迫<span class="highlight">振動</span>→回転</td>
+          <td><span class="highlight">○</span></td>
+        </tr>
+        <tr>
+          <td class="key">チャーターズ法</td>
+          <td><span class="caution">45°で切端側に</span><br>（歯間部に毛先）</td>
+          <td>圧迫<span class="highlight">振動</span></td>
+          <td><span class="highlight">○</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">振動させる3つの方法</div>
+        <ul>
+          <li><span class="key">バス法</span>：歯肉溝に毛先を入れて振動</li>
+          <li><span class="key">スティルマン改良法</span>：脇腹で歯肉を圧迫振動後、回転</li>
+          <li><span class="key">チャーターズ法</span>：歯間部に毛先を入れて振動</li>
+        </ul>
+      </div>
+
+      <h2>フォーンズ法の特徴</h2>
+      <ul>
+        <li>唇頬側面：<span class="highlight">描円運動</span></li>
+        <li>舌側面：前後運動</li>
+        <li>毛先を使う方法</li>
+        <li>小児や高齢者に適する（操作が簡単）</li>
+        <li><span class="caution">叢生には不向き</span>（毛先が届きにくい）</li>
+      </ul>
+
+      <h2>バス法 vs チャーターズ法</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>バス法</th>
+          <th>チャーターズ法</th>
+        </tr>
+        <tr>
+          <td class="key">毛先の向き</td>
+          <td><span class="highlight">歯肉側</span>（根尖方向）</td>
+          <td><span class="caution">切端側</span></td>
+        </tr>
+        <tr>
+          <td class="key">毛先の位置</td>
+          <td>歯肉溝内</td>
+          <td>歯間部</td>
+        </tr>
+        <tr>
+          <td class="key">適応</td>
+          <td>歯周病予防、歯肉溝の清掃</td>
+          <td>歯間部清掃、矯正装置装着者</td>
+        </tr>
+        <tr>
+          <td class="key">共通点</td>
+          <td colspan="2">45°、振動させる</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A95</div>
+        <p>歯ブラシの毛先を用いる方法はどれか。すべて選べ。</p>
+        <div class="choices">
+          a バス法<br>
+          b フォーンズ法<br>
+          c スティルマン法<br>
+          d スクラビング法<br>
+          e チャーターズ法
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】毛先を使う方法は<span class="highlight">バス法、フォーンズ法、スクラビング法</span>。スティルマン法とチャーターズ法は<span class="caution">脇腹を使う</span>方法。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C104</div>
+        <p>振動させるブラッシング法はどれか。すべて選べ。</p>
+        <div class="choices">
+          a バス法<br>
+          b ローリング法<br>
+          c フォーンズ法<br>
+          d チャータース法<br>
+          e スティルマン改良法
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】振動させる方法は<span class="highlight">バス法、チャーターズ法、スティルマン改良法</span>。ローリング法は回転のみ、フォーンズ法は描円運動で振動はしない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D54</div>
+        <p>フォーンズ法について正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 叢生の児童に適する。<br>
+          b 唇頬側面は描円運動をする。<br>
+          c 主に歯ブラシの毛先を用いる。<br>
+          d 植毛が1列の歯ブラシを用いる。<br>
+          e バス法と比較して歯頸部の清掃に適する。
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】フォーンズ法は<span class="highlight">毛先を使い</span>、唇頬側面で<span class="highlight">描円運動</span>を行う。叢生には不向き（a×）。1列歯ブラシはつまようじ法（d×）。バス法の方が歯肉溝の清掃に適する（e×）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>メタボリックシンドローム - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>メタボリックシンドローム</h1>
+    <div class="container">
+
+      <h2>メタボリックシンドロームとは</h2>
+      <p><span class="key">メタボリックシンドローム</span>（内臓脂肪症候群）は、内臓脂肪の蓄積に加え、高血圧・脂質異常・高血糖が重なった状態。動脈硬化性疾患のリスクが高い。</p>
+
+      <h2>診断基準【超頻出】</h2>
+      <p>日本の診断基準（2005年）は以下の通り。</p>
+
+      <h3>必須項目：腹囲</h3>
+      <table>
+        <tr>
+          <th>性別</th>
+          <th>基準値</th>
+        </tr>
+        <tr>
+          <td><span class="key">男性</span></td>
+          <td><span class="highlight">≥85cm</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">女性</span></td>
+          <td><span class="highlight">≥90cm</span></td>
+        </tr>
+      </table>
+      <p class="note">※<span class="caution">腹囲の基準は男女で異なる</span>（他の項目は男女同一）</p>
+
+      <div class="point-box">
+        <div class="point-box-title">腹囲が必須【最重要】</div>
+        <ul>
+          <li><span class="highlight">腹囲</span>は診断に必須の項目</li>
+          <li>腹囲が基準を満たさなければ、他の基準を満たしてもメタボには該当しない</li>
+          <li>男性の方が基準値が低い（男性85cm、女性90cm）</li>
+        </ul>
+      </div>
+
+      <h3>追加基準（3項目中2項目以上）</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>基準値</th>
+        </tr>
+        <tr>
+          <td><span class="key">脂質異常</span></td>
+          <td>中性脂肪≥150mg/dL かつ/または HDLコレステロール<span class="highlight">&lt;40mg/dL</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">高血圧</span></td>
+          <td>収縮期血圧≥130mmHg かつ/または 拡張期血圧≥85mmHg</td>
+        </tr>
+        <tr>
+          <td><span class="key">高血糖</span></td>
+          <td>空腹時血糖≥110mg/dL</td>
+        </tr>
+      </table>
+
+      <h3>診断基準項目のまとめ</h3>
+      <ul>
+        <li><span class="key">腹囲</span>（必須）</li>
+        <li><span class="key">中性脂肪</span>（トリグリセライド）</li>
+        <li><span class="key">HDLコレステロール</span></li>
+        <li><span class="key">血圧</span></li>
+        <li><span class="key">空腹時血糖</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">診断基準に含まれないもの【ひっかけ注意】</div>
+        <ul>
+          <li><span class="caution">LDLコレステロール</span> → 含まれない</li>
+          <li><span class="caution">総コレステロール</span> → 含まれない</li>
+          <li><span class="caution">n-3系脂肪酸・n-6系脂肪酸</span> → 含まれない</li>
+        </ul>
+      </div>
+
+      <h2>特定健康診査との関係</h2>
+      <p>メタボリックシンドロームの予防・改善を目的として、<span class="key">高齢者医療確保法</span>に基づき<span class="key">特定健康診査・特定保健指導</span>が実施される。</p>
+      <ul>
+        <li>対象：40〜74歳</li>
+        <li>実施主体：医療保険者</li>
+        <li>特定健康診査で判定されるのは<span class="highlight">内臓脂肪症候群</span>（＝メタボリックシンドローム）</li>
+      </ul>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">103C26</div>
+        <p>特定健康診査におけるメタボリックシンドロームの診断で基準値を超えることが必須なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 腹囲<br>
+          b 中性脂肪値<br>
+          c 最高血圧値<br>
+          d 空腹時血糖値<br>
+          e HDL−コレステロール値
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】メタボリックシンドロームの診断では<span class="key">腹囲</span>が必須項目。腹囲が基準を満たさなければ、他の基準を満たしてもメタボには該当しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A14</div>
+        <p>メタボリックシンドロームの診断基準が男女間で異なるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 腹囲<br>
+          b 血圧値<br>
+          c 血糖値<br>
+          d トリグリセライド値<br>
+          e HDLコレステロール値
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】診断基準で男女間で異なるのは<span class="key">腹囲</span>のみ（男性≥85cm、女性≥90cm）。血圧・血糖・脂質の基準は男女同一。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B17</div>
+        <p>メタボリックシンドロームの診断基準項目はどれか。1つ選べ。</p>
+        <div class="choices">
+          a n-3系脂肪酸<br>
+          b n-6系脂肪酸<br>
+          c 総コレステロール<br>
+          d HDLコレステロール<br>
+          e LDLコレステロール
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】診断基準項目に含まれるのは<span class="key">HDLコレステロール</span>。LDLコレステロール、総コレステロール、n-3/n-6系脂肪酸は含まれない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A19</div>
+        <p>特定健康診査で判定されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 特定疾病<br>
+          b 難治性疾患<br>
+          c 新興感染症<br>
+          d 内臓脂肪症候群<br>
+          e アレルギー性疾患
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】特定健康診査で判定されるのは<span class="key">内臓脂肪症候群</span>（＝メタボリックシンドローム）。特定健康診査はメタボ対策として実施される。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>健康増進事業 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>健康増進事業</h1>
+    <div class="container">
+
+      <h2>健康増進法の概要</h2>
+      <p><span class="key">健康増進法</span>は、国民の健康の増進を総合的に推進するための法律。</p>
+
+      <h3>健康増進法で規定されるもの</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">食事摂取基準</span></td>
+          <td>厚生労働大臣が定める</td>
+        </tr>
+        <tr>
+          <td><span class="key">国民健康・栄養調査</span></td>
+          <td>厚生労働大臣が実施</td>
+        </tr>
+        <tr>
+          <td><span class="key">受動喫煙の防止</span></td>
+          <td>施設管理者の努力義務</td>
+        </tr>
+        <tr>
+          <td>特別用途表示の許可</td>
+          <td>内閣総理大臣の許可</td>
+        </tr>
+        <tr>
+          <td>健康増進計画</td>
+          <td><span class="highlight">都道府県：義務</span>、市町村：努力義務</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">健康増進法で規定されないもの</div>
+        <ul>
+          <li><span class="caution">特定健康診査</span> → 高齢者医療確保法</li>
+          <li><span class="caution">食育推進基本計画</span> → 食育基本法</li>
+          <li><span class="caution">母子健康手帳</span> → 母子保健法</li>
+          <li><span class="caution">市町村保健センター</span> → 地域保健法</li>
+        </ul>
+      </div>
+
+      <h2>市町村が実施する健康増進事業【頻出】</h2>
+      <table>
+        <tr>
+          <th>検診</th>
+          <th>対象年齢</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">歯周疾患検診</span></td>
+          <td>40, 50, 60, 70歳</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">骨粗鬆症検診</span></td>
+          <td>40, 45, 50, 55, 60, 65, 70歳の<span class="key">女性</span></td>
+        </tr>
+        <tr>
+          <td>肝炎ウイルス検診</td>
+          <td>40歳以上</td>
+        </tr>
+        <tr>
+          <td>がん検診</td>
+          <td>胃・肺・大腸：40歳以上、乳・子宮：20歳以上</td>
+        </tr>
+        <tr>
+          <td>健康教育・健康相談</td>
+          <td>全年齢</td>
+        </tr>
+      </table>
+
+      <h3>歯周疾患検診の特徴</h3>
+      <ul>
+        <li>実施主体：<span class="key">市町村</span></li>
+        <li>根拠法：<span class="key">健康増進法</span>（地域保健法ではない）</li>
+        <li>診査法：<span class="key">代表歯</span>を診査（CPITNに基づく）</li>
+        <li>受診率：全国平均<span class="caution">約5%</span>（50%ではない）</li>
+      </ul>
+
+      <h2>健康日本21の歴史</h2>
+      <table>
+        <tr>
+          <th>対策名</th>
+          <th>期間</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>健康日本21</td>
+          <td>2000年〜</td>
+          <td>数値目標の設定、一次予防重視</td>
+        </tr>
+        <tr>
+          <td>健康日本21（第二次）</td>
+          <td>2013年〜2023年</td>
+          <td>健康寿命の延伸、健康格差の縮小</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">健康日本21（第三次）</span></td>
+          <td><span class="highlight">2024年〜2035年</span></td>
+          <td><span class="key">誰一人取り残さない健康づくり</span></td>
+        </tr>
+      </table>
+
+      <h2>健康日本21（第二次）【頻出】</h2>
+      <p>健康増進法に基づき策定された国民健康運動計画（2013〜2023年度）。</p>
+
+      <h3>基本的な方向</h3>
+      <ul>
+        <li><span class="highlight">健康寿命の延伸</span>と<span class="highlight">健康格差の縮小</span></li>
+        <li>生活習慣病の発症予防と重症化予防（NCD対策）</li>
+        <li>社会生活を営むために必要な機能の維持・向上</li>
+      </ul>
+      <p class="note">※「平均寿命の延伸」ではなく「健康寿命の延伸」</p>
+
+      <h3>歯・口腔の健康目標（第二次）</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>目標値</th>
+        </tr>
+        <tr>
+          <td>80歳で20歯以上有する者の割合</td>
+          <td><span class="key">50%</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">60歳で24歯以上</span>有する者の割合</td>
+          <td><span class="highlight">70%</span></td>
+        </tr>
+        <tr>
+          <td>40歳で喪失歯のない者の割合</td>
+          <td><span class="key">75%</span></td>
+        </tr>
+        <tr>
+          <td>60歳代における咀嚼良好者の割合</td>
+          <td><span class="key">80%</span></td>
+        </tr>
+        <tr>
+          <td>過去1年間に歯科検診を受診した者の割合</td>
+          <td><span class="key">65%</span></td>
+        </tr>
+      </table>
+
+      <h3>認知度向上の目標</h3>
+      <p><span class="highlight">COPD（慢性閉塞性肺疾患）</span>の認知度向上が目標に掲げられている。</p>
+
+      <h2>健康日本21（第三次）【2024年〜】</h2>
+      <p>2024年度から開始された新たな国民健康運動計画（〜2035年度）。</p>
+
+      <h3>基本理念</h3>
+      <ul>
+        <li><span class="highlight">誰一人取り残さない健康づくり</span></li>
+        <li>健康寿命の延伸・健康格差の縮小（継続）</li>
+      </ul>
+
+      <h3>歯・口腔の健康目標（第三次）【重要】</h3>
+      <p>第三次では指標が整理され、<span class="key">3項目に集約</span>された。</p>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>第二次目標</th>
+          <th>第三次目標</th>
+        </tr>
+        <tr>
+          <td>歯周病を有する者の減少</td>
+          <td>25%（40歳代）</td>
+          <td><span class="highlight">40%</span></td>
+        </tr>
+        <tr>
+          <td>咀嚼良好者の増加</td>
+          <td>80%（60歳代）</td>
+          <td><span class="key">80%</span></td>
+        </tr>
+        <tr>
+          <td>歯科検診受診者の増加</td>
+          <td>65%</td>
+          <td><span class="highlight">95%</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">第三次の変更点【ひっかけ注意】</div>
+        <ul>
+          <li>「80歳20歯」「60歳24歯」などの残存歯数目標は<span class="caution">削除</span></li>
+          <li>歯周病・咀嚼・歯科検診の<span class="key">3項目に集約</span></li>
+          <li>歯科検診受診率の目標が65%→<span class="highlight">95%</span>に大幅引上げ</li>
+        </ul>
+      </div>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A56</div>
+        <p>健康増進法に基づき市町村が行う健康増進事業はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 特定健康診査<br>
+          b 歯周疾患検診<br>
+          c 骨粗鬆症検診<br>
+          d 未熟児訪問指導<br>
+          e 国民健康・栄養調査
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】市町村が行う健康増進事業は<span class="key">歯周疾患検診、骨粗鬆症検診</span>など。特定健康診査は高齢者医療確保法、未熟児訪問指導は母子保健法、国民健康・栄養調査は厚生労働大臣が実施。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C22</div>
+        <p>健康増進法で規定しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 食品添加物<br>
+          b 食事摂取基準<br>
+          c 特定保健指導<br>
+          d 食育推進基本計画<br>
+          e 食事バランスガイド
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">食事摂取基準</span>は健康増進法で規定。特定保健指導は高齢者医療確保法、食育推進基本計画は食育基本法で規定。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C32</div>
+        <p>健康日本21（第二次）では「①歳で24歯以上の自分の歯を有する者」の割合の目標値は②％である。①と②に入る組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 40 ― 70<br>
+          b 60 ― 50<br>
+          c 60 ― 70<br>
+          d 80 ― 50<br>
+          e 80 ― 70
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】健康日本21では「<span class="key">60歳で24歯以上</span>有する者の割合を<span class="key">70%</span>」が目標。80歳20歯は50%が目標。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A9</div>
+        <p>健康日本21（第二次）の目標はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 平均寿命の延伸<br>
+          b 健康格差の縮小<br>
+          c 新興感染症の予防<br>
+          d 職業性疾患の減少<br>
+          e リハビリテーション事業の充実
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】健康日本21の目標は<span class="key">健康寿命の延伸</span>と<span class="key">健康格差の縮小</span>。「平均寿命」ではなく「健康寿命」がポイント。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118C41</div>
+        <p>健康増進事業として実施される歯周疾患検診で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 代表歯を診査する。<br>
+          b 実施主体は市町村である。<br>
+          c 根拠法は地域保健法である。<br>
+          d 成人の全住民を対象とする。<br>
+          e 受診率の全国平均は約50％である。
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】歯周疾患検診は<span class="key">代表歯</span>を診査し、<span class="key">市町村</span>が実施。根拠法は健康増進法（地域保健法ではない）、対象は節目年齢（40,50,60,70歳）、受診率は約5%。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>母子保健事業 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>母子保健事業</h1>
+    <div class="container">
+
+      <h2>母子保健法の概要</h2>
+      <p><span class="key">母子保健法</span>は、母性と乳幼児の健康の保持増進を図ることを目的とする。母子保健の中心的役割は<span class="highlight">市町村</span>が担う。</p>
+
+      <h2>用語の定義【超頻出】</h2>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>定義</th>
+          <th>基準</th>
+        </tr>
+        <tr>
+          <td>早期新生児</td>
+          <td>生後<span class="key">1週</span>未満</td>
+          <td>年齢</td>
+        </tr>
+        <tr>
+          <td><span class="key">新生児</span></td>
+          <td>生後<span class="highlight">28日（4週）</span>未満</td>
+          <td>年齢</td>
+        </tr>
+        <tr>
+          <td><span class="key">乳児</span></td>
+          <td>生後<span class="highlight">1年</span>未満</td>
+          <td>年齢</td>
+        </tr>
+        <tr>
+          <td><span class="key">幼児</span></td>
+          <td>満1歳〜<span class="highlight">就学前</span></td>
+          <td>年齢</td>
+        </tr>
+        <tr>
+          <td><span class="key">妊産婦</span></td>
+          <td>妊娠中〜出産後<span class="highlight">1年以内</span></td>
+          <td>年齢</td>
+        </tr>
+        <tr>
+          <td><span class="key">未熟児</span></td>
+          <td><span class="highlight">身体機能</span>が未熟なまま出生</td>
+          <td><span class="caution">身体機能</span></td>
+        </tr>
+        <tr>
+          <td>低体重児</td>
+          <td>出生時体重<span class="key">2,500g未満</span></td>
+          <td>体重</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">未熟児と低体重児の違い【ひっかけ注意】</div>
+        <ul>
+          <li><span class="key">未熟児</span>：身体機能で定義（体重ではない！）</li>
+          <li><span class="key">低体重児</span>：出生時体重2,500g未満で定義</li>
+          <li>低体重児≠未熟児（別の概念）</li>
+        </ul>
+      </div>
+
+      <h2>市町村の役割【頻出】</h2>
+      <h3>母子健康手帳の交付</h3>
+      <ul>
+        <li>妊娠の届出（<span class="caution">診断書不要</span>、自己申告）に対し<span class="key">市町村長</span>が交付</li>
+        <li>記録の様式は<span class="key">全国統一</span>（省令様式）</li>
+        <li>情報、体裁は各自治体が決定</li>
+      </ul>
+
+      <h3>乳幼児健康診査</h3>
+      <table>
+        <tr>
+          <th>健診</th>
+          <th>根拠</th>
+          <th>実施主体</th>
+        </tr>
+        <tr>
+          <td><span class="key">1歳6か月児健診</span></td>
+          <td>母子保健法（<span class="highlight">義務</span>）</td>
+          <td>市町村</td>
+        </tr>
+        <tr>
+          <td><span class="key">3歳児健診</span></td>
+          <td>母子保健法（<span class="highlight">義務</span>）</td>
+          <td>市町村</td>
+        </tr>
+        <tr>
+          <td>妊産婦健診</td>
+          <td>母子保健事業</td>
+          <td>市町村</td>
+        </tr>
+        <tr>
+          <td>乳児健診</td>
+          <td>母子保健事業</td>
+          <td>市町村</td>
+        </tr>
+      </table>
+      <p class="note">※母子保健法で義務化されている健診は1歳6か月児健診と3歳児健診のみ</p>
+
+      <h3>その他の市町村の事業</h3>
+      <ul>
+        <li>低体重児の届出受理・訪問指導</li>
+        <li>母子健康包括支援センターの設置（努力義務）</li>
+      </ul>
+
+      <h2>都道府県の役割</h2>
+      <ul>
+        <li><span class="key">未熟児訪問指導</span>（保健所が実施）</li>
+        <li>B型肝炎母子感染防止事業</li>
+        <li>新生児タンデムマススクリーニング</li>
+      </ul>
+
+      <h2>1歳6か月児歯科健診の判定</h2>
+      <table>
+        <tr>
+          <th>型</th>
+          <th>齲蝕</th>
+          <th>状態</th>
+        </tr>
+        <tr>
+          <td><span class="key">O1型</span></td>
+          <td>なし</td>
+          <td>問題なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">O2型</span></td>
+          <td>なし</td>
+          <td><span class="highlight">要注意</span></td>
+        </tr>
+        <tr>
+          <td>A型</td>
+          <td>あり</td>
+          <td>上顎前歯のみ</td>
+        </tr>
+        <tr>
+          <td>B型</td>
+          <td>あり</td>
+          <td>臼歯のみ</td>
+        </tr>
+        <tr>
+          <td>C型</td>
+          <td>あり</td>
+          <td>A+B（重症）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">O2型の要注意因子</div>
+        <ul>
+          <li>哺乳ビンでスポーツ飲料・ジュースを飲んでいる</li>
+          <li>祖父母が養育者である</li>
+          <li>間食時間が決まっていない</li>
+          <li>歯磨きに非協力的</li>
+        </ul>
+      </div>
+
+      <h2>母子健康手帳の記載事項</h2>
+      <h3>「妊娠中と産後の歯の状態」の記載</h3>
+      <ul>
+        <li><span class="key">歯肉の炎症</span>の有無</li>
+        <li><span class="key">要治療のむし歯</span>の有無</li>
+        <li>むし歯は妊娠中に悪くなりやすい</li>
+        <li>歯周病は<span class="key">早産</span>の原因となることがある</li>
+        <li>歯科医師にかかるときは妊娠中であることを話す</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114D71</div>
+        <p>母子保健法で規定している用語の定義で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 妊産婦：妊娠中または出産後1年以内の女子<br>
+          b 未熟児：出生時体重が2,500g未満の乳児<br>
+          c 新生児：出生後28日を経過しない乳児<br>
+          d 乳児：3歳に満たない者<br>
+          e 幼児：6歳に満たない者
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】<span class="key">妊産婦</span>は妊娠中〜出産後1年以内、<span class="key">新生児</span>は生後28日未満。未熟児は体重ではなく身体機能で定義。乳児は1歳未満、幼児は就学前まで。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A8</div>
+        <p>母子保健法で身体機能によって定義されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 乳児<br>
+          b 幼児<br>
+          c 新生児<br>
+          d 未熟児<br>
+          e 早期新生児
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="key">未熟児</span>のみが身体機能で定義される。他は全て年齢（期間）で定義。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B61</div>
+        <p>母子保健法に規定されているのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 母子健康手帳の交付<br>
+          b 出生証明書の交付<br>
+          c 低出生体重児の届出<br>
+          d 乳幼児の定期予防接種<br>
+          e 1歳6か月児健康診査
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】母子保健法で規定：母子健康手帳の交付、低体重児の届出、1歳6か月児健診、3歳児健診。出生証明書は戸籍法、予防接種は予防接種法。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117C9</div>
+        <p>母子健康手帳の省令様式において、妊娠中と産後の歯科の記載事項はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 口臭<br>
+          b 歯肉の炎症<br>
+          c 顎関節の異常<br>
+          d 歯列咬合の異常<br>
+          e 要治療のむし歯
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】省令様式の歯科記載事項は<span class="key">歯肉の炎症</span>と<span class="key">要治療のむし歯</span>の有無。口臭・顎関節・歯列咬合は含まれない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C2</div>
+        <p>1歳6か月児歯科健康診査において、齲蝕はないが注意を促すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a O1型<br>
+          b O2型<br>
+          c A型<br>
+          d B型<br>
+          e C型
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">O2型</span>は齲蝕なしだが要注意（哺乳ビン使用、祖父母養育など）。O1型は問題なし、A〜C型は齲蝕あり。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

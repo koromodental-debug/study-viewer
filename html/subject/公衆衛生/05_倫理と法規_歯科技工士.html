@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯科技工士 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>歯科技工士</h1>
+    <div class="container">
+
+      <h2>歯科技工士法の概要</h2>
+      <p><span class="key">歯科技工士法</span>は、歯科技工士の資格を定めるとともに、歯科技工の業務を適正に規律し、歯科医療の普及・向上に寄与することを目的とする。</p>
+
+      <h3>歯科技工の定義</h3>
+      <p>特定人に対する歯科医療の用に供する<span class="key">補てつ物</span>または<span class="key">矯正装置</span>を作成・修理・加工すること。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">歯科技工士の特徴</div>
+        <ul>
+          <li><span class="highlight">国家資格</span>である（厚生労働大臣の免許）</li>
+          <li><span class="highlight">業務独占</span>：歯科医師または歯科技工士でなければ業として歯科技工を行えない</li>
+          <li><span class="caution">名称独占ではない</span>（歯科衛生士は名称独占）</li>
+          <li><span class="caution">歯科診療の補助はできない</span>（歯科衛生士の業務）</li>
+        </ul>
+      </div>
+
+      <h3>欠格事由</h3>
+      <p>歯科技工士法には<span class="highlight">相対的欠格事由のみ</span>が規定されている（<span class="caution">絶対的欠格事由はない</span>）。</p>
+      <ul>
+        <li>心身の障害により業務を適正に行えない者</li>
+        <li>麻薬、大麻またはあへんの中毒者</li>
+        <li>罰金以上の刑に処せられた者</li>
+        <li>業務に関し犯罪または不正の行為があった者</li>
+      </ul>
+
+      <h2>歯科技工指示書【最頻出】</h2>
+      <p>歯科技工は<span class="key">歯科医師の指示書</span>に基づいて行わなければならない。</p>
+
+      <h3>保存義務</h3>
+      <p>病院・診療所または歯科技工所の管理者が<span class="highlight">2年間保存</span>する。</p>
+      <p class="note">※診療録の保存期間（5年）と混同しないこと</p>
+
+      <h3>施行規則で定められた記載事項（第12条）</h3>
+      <table>
+        <tr>
+          <th>記載必須</th>
+          <th>具体的内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">患者の氏名</span></td>
+          <td>患者を特定するため</td>
+        </tr>
+        <tr>
+          <td><span class="key">設計</span></td>
+          <td>補綴装置の形態・構造</td>
+        </tr>
+        <tr>
+          <td><span class="key">作成の方法</span></td>
+          <td>製作手順・工程</td>
+        </tr>
+        <tr>
+          <td><span class="key">使用材料</span></td>
+          <td>金属の種類、レジンなど</td>
+        </tr>
+        <tr>
+          <td>発行の年月日</td>
+          <td>指示書の発行日</td>
+        </tr>
+        <tr>
+          <td>歯科医師の氏名・勤務先</td>
+          <td>発行した歯科医師の情報</td>
+        </tr>
+        <tr>
+          <td>歯科技工所の名称・所在地</td>
+          <td>技工所で行う場合</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">記載義務がないもの【ひっかけ注意】</div>
+        <ul>
+          <li><span class="caution">患者の年齢</span> → 記載不要</li>
+          <li><span class="caution">患者の病名</span> → 記載不要</li>
+          <li><span class="caution">感染症の有無</span> → 記載不要</li>
+          <li><span class="caution">装着予定年月日</span> → 記載不要</li>
+          <li><span class="caution">歯科技工士の氏名</span> → 記載不要</li>
+        </ul>
+      </div>
+
+      <h3>記載者</h3>
+      <p>歯科技工指示書は<span class="highlight">歯科医師が記載</span>する（<span class="caution">歯科技工士ではない</span>）。</p>
+
+      <h2>歯科技工士と歯科衛生士の比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>歯科技工士</th>
+          <th>歯科衛生士</th>
+        </tr>
+        <tr>
+          <td>資格</td>
+          <td>国家資格</td>
+          <td>国家資格</td>
+        </tr>
+        <tr>
+          <td>業務独占</td>
+          <td><span class="key">あり</span></td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>名称独占</td>
+          <td>なし</td>
+          <td><span class="key">あり</span></td>
+        </tr>
+        <tr>
+          <td>診療補助</td>
+          <td><span class="caution">できない</span></td>
+          <td>できる</td>
+        </tr>
+        <tr>
+          <td>就業者数</td>
+          <td>約3.4万人</td>
+          <td>約14万人（多い）</td>
+        </tr>
+        <tr>
+          <td>欠格事由</td>
+          <td>相対的のみ</td>
+          <td>相対的のみ</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">118D17</div>
+        <p>歯科技工指示書の記載事項のうち、歯科技工士法施行規則で規定されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 使用材料<br>
+          b 患者の年齢<br>
+          c 患者の病名<br>
+          d 歯科技工士名<br>
+          e 装着予定年月日
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】施行規則第12条で記載事項として定められているのは、患者の氏名・設計・作成の方法・<span class="key">使用材料</span>・発行年月日・歯科医師の氏名と勤務先・技工所の情報。患者の年齢・病名・感染症・装着予定日・技工士名は記載義務なし。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D16</div>
+        <p>歯科技工士法で規定しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 絶対的欠格事由<br>
+          b 歯科技工士の名称使用の制限<br>
+          c 歯科技工指示書の2年間の保存<br>
+          d 市町村保健センターヘの免許申請<br>
+          e 都道府県知事による歯科技工所の開設承認
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】歯科技工士法では歯科技工指示書の<span class="key">2年間保存</span>を規定。絶対的欠格事由はなく相対的欠格事由のみ。名称独占ではなく業務独占。免許は厚生労働大臣。技工所は届出制（承認制ではない）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C32</div>
+        <p>歯科技工士法施行規則に規定されている歯科技工指示書に記載義務があるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 患者の氏名<br>
+          b 患者の年齢<br>
+          c 装着予定年月日<br>
+          d 歯科技工士の氏名<br>
+          e 患者の感染症の有無
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】施行規則第12条で<span class="key">患者の氏名</span>は記載必須。年齢・装着予定日・技工士名・感染症の有無は記載義務なし。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C39</div>
+        <p>歯科技工士について正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 国家資格である。<br>
+          b 矯正装置を作製できる。<br>
+          c 歯科診療の補助ができる。<br>
+          d 歯科技工指示書を記載できる。<br>
+          e 歯科衛生士よりも就業者数が多い。
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】歯科技工士は<span class="key">国家資格</span>で、補てつ物や<span class="key">矯正装置</span>を作製できる。診療補助は歯科衛生士の業務。指示書は歯科医師が記載。就業者数は歯科衛生士の方が多い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A7</div>
+        <p>歯科技工指示書で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 設計を記載する。<br>
+          b 初診日を記載する。<br>
+          c 検査結果を記載する。<br>
+          d 歯科技工士が記載する。<br>
+          e 保存期間は5年である。
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】歯科技工指示書には<span class="key">設計</span>を記載する。記載者は歯科医師（技工士ではない）。保存期間は<span class="key">2年</span>（5年ではない）。初診日・検査結果は記載義務なし。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B58</div>
+        <p>レジン前装冠の製作にあたり、模型の提供とともに歯科技工指示書に記載が必要なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯冠の色調<br>
+          b 支台歯の形態<br>
+          c 使用金属の種類<br>
+          d 辺縁歯肉の形態<br>
+          e 対合歯とのクリアランス
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】レジン前装冠では<span class="key">歯冠の色調</span>（シェード）と<span class="key">使用金属の種類</span>が技工指示書に必要。支台歯の形態・辺縁歯肉・クリアランスは模型から読み取れる情報。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

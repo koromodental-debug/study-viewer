@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医薬品医療機器等法 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .label-box { display: inline-block; padding: 4px 10px; border-radius: 4px; font-weight: 600; font-size: 9pt; }
+    .label-doku { background: #000; color: #fff; border: 2px solid #fff; }
+    .label-geki { background: #fff; color: #c00; border: 2px solid #c00; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>医薬品医療機器等法（薬機法）</h1>
+    <div class="container">
+
+      <h2>薬機法の概要</h2>
+      <p><span class="key">医薬品医療機器等法</span>（薬機法、旧薬事法）は、医薬品、医薬部外品、化粧品、医療機器等の品質、有効性及び安全性の確保等に関する法律。</p>
+
+      <h3>薬機法で規定されるもの</h3>
+      <ul>
+        <li>医薬品（毒薬・劇薬を含む）</li>
+        <li>医薬部外品（薬用歯みがき、洗口剤など）</li>
+        <li>化粧品</li>
+        <li>医療機器（スケーラー、コンポジットレジンなど）</li>
+        <li>再生医療等製品</li>
+        <li><span class="key">薬局</span>の開設</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">薬機法で規定されないもの【ひっかけ注意】</div>
+        <ul>
+          <li><span class="caution">麻薬</span> → 麻薬及び向精神薬取締法</li>
+          <li><span class="caution">向精神薬</span> → 麻薬及び向精神薬取締法</li>
+          <li><span class="caution">覚せい剤</span> → 覚せい剤取締法</li>
+          <li><span class="caution">大麻</span> → 大麻取締法</li>
+        </ul>
+      </div>
+
+      <h2>毒薬・劇薬の表示と保管【頻出】</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>表示</th>
+          <th>保管</th>
+        </tr>
+        <tr>
+          <td><span class="key">毒薬</span></td>
+          <td><span class="label-box label-doku">毒</span> 黒地に白枠・白字</td>
+          <td><span class="highlight">鍵をかけて</span>区別保管</td>
+        </tr>
+        <tr>
+          <td><span class="key">劇薬</span></td>
+          <td><span class="label-box label-geki">劇</span> 白地に赤枠・赤字</td>
+          <td>区別して保管（鍵は不要）</td>
+        </tr>
+      </table>
+
+      <h3>代表的な毒薬・劇薬</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>代表的な薬物</th>
+        </tr>
+        <tr>
+          <td>毒薬</td>
+          <td>三酸化ヒ素、スキサメトニウム、マイトマイシンC</td>
+        </tr>
+        <tr>
+          <td><span class="key">劇薬</span></td>
+          <td><span class="highlight">リドカイン注射液</span>、歯科用フェノール、ヨードチンキ、インドメタシン</td>
+        </tr>
+      </table>
+      <p class="note">※リドカイン（局所麻酔薬）は劇薬に分類される。処方せん医薬品でもある。</p>
+
+      <h2>麻薬・向精神薬の管理</h2>
+      <p>麻薬及び向精神薬取締法で規定される。</p>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>表示</th>
+          <th>保管</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="key">麻薬</span></td>
+          <td>◎の記号</td>
+          <td>鍵付き<span class="highlight">堅固な設備</span>（金庫等）</td>
+          <td>モルヒネ、フェンタニル</td>
+        </tr>
+        <tr>
+          <td>向精神薬</td>
+          <td>⊕の記号</td>
+          <td>鍵付き施設内</td>
+          <td>ジアゼパム、トリアゾラム</td>
+        </tr>
+        <tr>
+          <td>覚せい剤</td>
+          <td>-</td>
+          <td>堅固な設備（麻薬と同一可）</td>
+          <td>アンフェタミン</td>
+        </tr>
+      </table>
+
+      <h2>医療機器のクラス分類</h2>
+      <p>医療機器はリスクに応じて4つのクラスに分類される。</p>
+      <table>
+        <tr>
+          <th>クラス</th>
+          <th>分類</th>
+          <th>リスク</th>
+          <th>歯科の例</th>
+        </tr>
+        <tr>
+          <td>Ⅰ</td>
+          <td>一般医療機器</td>
+          <td>低い</td>
+          <td>メス、ピンセット、歯ブラシ</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅱ</span></td>
+          <td><span class="key">管理医療機器</span></td>
+          <td>中程度</td>
+          <td><span class="highlight">CBCT、コンポジットレジン</span></td>
+        </tr>
+        <tr>
+          <td>Ⅲ</td>
+          <td rowspan="2">高度管理医療機器</td>
+          <td rowspan="2">高い</td>
+          <td>透析器、人工骨</td>
+        </tr>
+        <tr>
+          <td>Ⅳ</td>
+          <td>ペースメーカー、人工心臓弁</td>
+        </tr>
+      </table>
+
+      <h2>特定生物由来製品</h2>
+      <p>血液製剤など、人の血液や組織に由来する製品。</p>
+      <ul>
+        <li>使用記録を<span class="highlight">20年間保存</span>する義務がある</li>
+        <li>感染症等の被害発生時に遡及調査が可能になるため</li>
+      </ul>
+
+      <h2>副作用報告</h2>
+      <p>医療機器が原因と考えられる重篤な副作用が発生した場合、<span class="highlight">厚生労働大臣</span>に報告する義務がある。</p>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">117B2</div>
+        <p>医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律における分類で、歯科用コーンビームCTが該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医薬部外品<br>
+          b 一般医療機器（クラスⅠ）<br>
+          c 管理医療機器（クラスⅡ）<br>
+          d 高度管理医療機器（クラスⅢ）<br>
+          e 高度管理医療機器（クラスⅣ）
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】歯科用CBCTは<span class="key">管理医療機器（クラスⅡ）</span>に分類される。一般的なX線撮影装置と同様の分類。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D28</div>
+        <p>医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律における分類で、コンポジットレジンが該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医薬品<br>
+          b 医薬部外品<br>
+          c 一般医療機器（クラスⅠ）<br>
+          d 管理医療機器（クラスⅡ）<br>
+          e 高度管理医療機器（クラスⅢ）
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】コンポジットレジンは<span class="key">管理医療機器（クラスⅡ）</span>に分類される。体内に留置される歯科材料として中程度のリスク。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B118</div>
+        <p>薬事法で取り扱いを定めているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 麻薬<br>
+          b 大麻<br>
+          c 毒薬<br>
+          d 向精神薬<br>
+          e 覚せい剤
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">毒薬</span>は薬機法で規定。麻薬・向精神薬は麻薬及び向精神薬取締法、覚せい剤は覚せい剤取締法、大麻は大麻取締法で規定。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A117</div>
+        <p>薬事法の規定に基づき医療機関の管理者が少なくとも20年間使用記録を保存しなければならないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 麻薬<br>
+          b 抗菌薬<br>
+          c 向精神薬<br>
+          d 覚せい剤<br>
+          e 特定生物由来製品（血液製剤など）
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">特定生物由来製品</span>（血液製剤など）は使用記録を<span class="key">20年間保存</span>する義務がある。感染症等の遡及調査のため。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118C17</div>
+        <p>疾患の治療を目的に使用した医療機器が原因と考えられる重篤な副作用が発生し医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律に規定されている報告義務先はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 警察署長<br>
+          b 保健所長<br>
+          c 市区町村長<br>
+          d 厚生労働大臣<br>
+          e 都道府県知事
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】医療機器による重篤な副作用は<span class="key">厚生労働大臣</span>に報告する義務がある。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

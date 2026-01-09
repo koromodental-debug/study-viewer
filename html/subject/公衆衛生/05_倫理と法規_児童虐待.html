@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>児童虐待 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>児童虐待</h1>
+    <div class="container">
+
+      <h2>児童虐待防止法の概要</h2>
+      <p><span class="key">児童虐待の防止等に関する法律</span>（児童虐待防止法）は、児童虐待の禁止、早期発見、通告義務などを定めている。</p>
+
+      <h2>児童虐待の分類【頻出】</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>内容</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td><span class="key">身体的虐待</span></td>
+          <td>殴る、蹴る、火傷を負わせるなど</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="key">性的虐待</span></td>
+          <td>性的行為の強要など</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="key">ネグレクト</span></td>
+          <td>養育放棄、食事を与えない、不潔にするなど</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="key">心理的虐待</span></td>
+          <td>暴言、無視、DV目撃させるなど</td>
+          <td><span class="highlight">最も多い</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">経済的虐待は含まれない【ひっかけ注意】</div>
+        <ul>
+          <li><span class="caution">経済的虐待</span>は児童虐待防止法の定義に<span class="caution">含まれない</span></li>
+          <li>経済的虐待は<span class="key">高齢者虐待防止法</span>で規定されている</li>
+        </ul>
+      </div>
+
+      <h2>通告の義務【超頻出】</h2>
+      <p>児童虐待を発見した者は、速やかに通告しなければならない。</p>
+
+      <h3>通告先（3か所）</h3>
+      <table>
+        <tr>
+          <th>通告先</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">市町村</span></td>
+          <td>最も身近な窓口</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">福祉事務所</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">児童相談所</span></td>
+          <td>都道府県・指定都市に設置</td>
+        </tr>
+      </table>
+      <p class="note">※児童委員（民生委員）を通じて通告することも可能</p>
+
+      <div class="point-box">
+        <div class="point-box-title">通告先ではないもの</div>
+        <ul>
+          <li><span class="caution">警察署</span> → 通告先ではない</li>
+          <li><span class="caution">保健所</span> → 通告先ではない</li>
+          <li><span class="caution">教育委員会</span> → 通告先ではない</li>
+          <li><span class="caution">学校保健委員会</span> → 通告先ではない</li>
+        </ul>
+      </div>
+
+      <h2>早期発見の努力義務</h2>
+      <p>以下の者は、児童虐待の<span class="key">早期発見に努めなければならない</span>。</p>
+      <ul>
+        <li>学校の教職員</li>
+        <li>児童福祉施設の職員</li>
+        <li><span class="key">医師</span>、<span class="key">歯科医師</span></li>
+        <li>保健師、弁護士</li>
+        <li>その他児童の福祉に職務上関係のある者</li>
+      </ul>
+
+      <h2>児童相談所</h2>
+      <ul>
+        <li>根拠法：<span class="key">児童福祉法</span></li>
+        <li>設置：都道府県、指定都市</li>
+        <li>職員：児童福祉司、児童心理司、医師</li>
+        <li>所長は児童の<span class="key">一時保護</span>ができる</li>
+      </ul>
+
+      <h2>歯科で虐待を疑う所見</h2>
+      <ul>
+        <li><span class="highlight">複数の皮下出血</span>（様々な時期の打撲痕）</li>
+        <li>多数の未処置齲蝕（ネグレクトの可能性）</li>
+        <li>説明と一致しない外傷</li>
+        <li>受診の遅れ</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109C71</div>
+        <p>児童虐待の分類に該当するのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 性的虐待<br>
+          b 経済的虐待<br>
+          c 身体的虐待<br>
+          d 心理的虐待<br>
+          e ネグレクト
+        </div>
+        <div class="answer">正解：a, c, d, e</div>
+        <p>【解説】児童虐待は<span class="key">身体的・性的・心理的虐待とネグレクト</span>の4分類。<span class="caution">経済的虐待は含まれない</span>（高齢者虐待では含まれる）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117C27</div>
+        <p>虐待を受けた疑いがある児童が来院した。児童虐待の防止等に関する法律に規定されている通告先はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 警察署<br>
+          b 保健所<br>
+          c 児童相談所<br>
+          d 福祉事務所<br>
+          e 学校保健委員会
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】通告先は<span class="key">市町村、福祉事務所、児童相談所</span>の3か所。警察署・保健所・学校保健委員会は通告先ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C34</div>
+        <p>児童虐待の防止等に関する法律に基づき、虐待を受けたと思われる児童を発見した際の通告先として規定されているのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 警察署<br>
+          b 市町村<br>
+          c 教育委員会<br>
+          d 児童相談所<br>
+          e 福祉事務所
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】通告先は<span class="key">市町村、児童相談所、福祉事務所</span>。警察署・教育委員会は通告先ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A57</div>
+        <p>歯科治療のため受診した幼児で虐待を疑うべき所見はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 反対咬合がみられる。<br>
+          b 異常嚥下癖がみられる。<br>
+          c 舌小帯の肥厚がみられる。<br>
+          d 保隙装置を装着している。<br>
+          e 複数の皮下出血がみられる。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">複数の皮下出血</span>（様々な時期の打撲痕）は身体的虐待を疑う重要な所見。反対咬合・異常嚥下癖・舌小帯肥厚・保隙装置は虐待との関連はない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

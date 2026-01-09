@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>社会保障 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 社会保障</span>
+    <h1>社会保障</h1>
+    <div class="container">
+
+      <h2>社会保障制度の概要</h2>
+      <p>社会保障制度は、国民の生活を保障するための制度。社会保険、社会福祉、公的扶助、公衆衛生の4つの柱からなる。</p>
+
+      <h2>社会保障給付費【超頻出】</h2>
+      <p>社会保障給付費の内訳は以下の順。</p>
+      <table>
+        <tr>
+          <th>順位</th>
+          <th>項目</th>
+          <th>割合</th>
+        </tr>
+        <tr>
+          <td>1位</td>
+          <td><span class="highlight">年金</span></td>
+          <td>約47〜50%</td>
+        </tr>
+        <tr>
+          <td>2位</td>
+          <td><span class="highlight">医療</span></td>
+          <td>約30〜33%</td>
+        </tr>
+        <tr>
+          <td>3位</td>
+          <td><span class="key">福祉その他</span></td>
+          <td>約19〜22%</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方【必須】</div>
+        <ul>
+          <li><span class="highlight">年金 ＞ 医療 ＞ 福祉</span>（年医福）</li>
+          <li>年金が最も多く、約半分を占める</li>
+          <li>高齢化により年金・医療費は増加傾向</li>
+        </ul>
+      </div>
+
+      <h2>介護保険制度【超頻出】</h2>
+      <p>介護保険法に基づき、高齢者の介護を社会全体で支える制度。</p>
+
+      <h3>基本情報</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">保険者</span></td>
+          <td><span class="highlight">市町村及び特別区</span></td>
+        </tr>
+        <tr>
+          <td>被保険者</td>
+          <td>第1号：65歳以上、第2号：40〜64歳</td>
+        </tr>
+        <tr>
+          <td>要介護認定の申請先</td>
+          <td><span class="key">市町村</span></td>
+        </tr>
+        <tr>
+          <td>介護認定審査会</td>
+          <td><span class="key">市町村</span>が設置</td>
+        </tr>
+        <tr>
+          <td>自己負担</td>
+          <td>原則<span class="key">1割</span>（一定所得以上は2〜3割）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">介護保険でよく間違えるポイント</div>
+        <ul>
+          <li>保険者は<span class="caution">都道府県ではなく市町村</span></li>
+          <li>申請先は<span class="caution">保健所ではなく市町村</span></li>
+          <li>保険料は<span class="caution">全国一律ではない</span>（市町村によって異なる）</li>
+        </ul>
+      </div>
+
+      <h2>生活保護法【頻出】</h2>
+      <p>生存権を保障する制度。8つの扶助がある。</p>
+
+      <h3>8つの扶助</h3>
+      <table>
+        <tr>
+          <th>扶助</th>
+          <th>給付形態</th>
+        </tr>
+        <tr>
+          <td><span class="key">生活扶助</span></td>
+          <td>現金給付</td>
+        </tr>
+        <tr>
+          <td><span class="key">教育扶助</span></td>
+          <td>現金給付</td>
+        </tr>
+        <tr>
+          <td><span class="key">住宅扶助</span></td>
+          <td>現金給付</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">医療扶助</span></td>
+          <td><span class="highlight">現物給付</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">介護扶助</span></td>
+          <td><span class="highlight">現物給付</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">出産扶助</span></td>
+          <td>現金給付</td>
+        </tr>
+        <tr>
+          <td><span class="key">生業扶助</span></td>
+          <td>現金給付</td>
+        </tr>
+        <tr>
+          <td><span class="key">葬祭扶助</span></td>
+          <td>現金給付</td>
+        </tr>
+      </table>
+      <p class="note">※現物給付は<span class="caution">医療扶助と介護扶助</span>のみ（他は全て現金給付）</p>
+
+      <h2>医療保険制度【頻出】</h2>
+
+      <h3>医療保険者の役割</h3>
+      <ul>
+        <li><span class="key">保険料の徴収</span></li>
+        <li><span class="key">特定健康診査の実施</span></li>
+        <li>療養の給付（保険給付）</li>
+      </ul>
+      <p class="note">※診療報酬の請求は<span class="caution">医療機関</span>が行う（保険者ではない）</p>
+
+      <h3>公的医療保険の特徴</h3>
+      <ul>
+        <li>国民皆保険制度（強制加入）</li>
+        <li>療養の給付は<span class="key">現物給付</span>（現金給付ではない）</li>
+        <li>一部負担金は<span class="caution">医療機関</span>に支払う（保険者ではない）</li>
+        <li>保険医療機関は<span class="key">厚生労働大臣</span>の指定が必要</li>
+        <li><span class="caution">正常分娩</span>は保険診療の対象外</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">118C26</div>
+        <p>2020年度の我が国における社会保障給付費の内訳の関係で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医療 ＞ 年金 ＞ 福祉<br>
+          b 医療 ＞ 福祉 ＞ 年金<br>
+          c 年金 ＞ 医療 ＞ 福祉<br>
+          d 年金 ＞ 福祉 ＞ 医療<br>
+          e 福祉 ＞ 医療 ＞ 年金
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】社会保障給付費は<span class="key">年金 ＞ 医療 ＞ 福祉</span>の順。年金が最大で約半分を占める。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A13</div>
+        <p>介護保険制度における保険者はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 国<br>
+          b 保健所<br>
+          c 都道府県<br>
+          d 介護老人福祉施設<br>
+          e 市町村及び特別区
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】介護保険の保険者は<span class="key">市町村及び特別区</span>。都道府県や国ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A104</div>
+        <p>介護保険制度で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 保険料は全国一律である。<br>
+          b 要介護認定は保健所に申請する。<br>
+          c 介護認定審査会は市町村が設置する。<br>
+          d 介護サービス費用の9割が給付される。<br>
+          e 要介護者の訪問歯科診療は給付の対象である。
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】介護認定審査会は<span class="key">市町村</span>が設置、自己負担は原則1割（9割給付）。保険料は市町村ごとに異なる、申請は市町村に行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C6</div>
+        <p>生活保護法で、原則として現物給付とされているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 介護扶助<br>
+          b 教育扶助<br>
+          c 住宅扶助<br>
+          d 出産扶助<br>
+          e 生活扶助
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】現物給付は<span class="key">医療扶助と介護扶助</span>のみ。教育・住宅・出産・生活扶助は現金給付。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D39</div>
+        <p>医療保険者の役割はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 療養の給付<br>
+          b 保険料の徴収<br>
+          c 診療報酬の請求<br>
+          d 一部負担金の支払い<br>
+          e 特定健康診査の実施
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】医療保険者の役割は<span class="key">保険料の徴収</span>と<span class="key">特定健康診査の実施</span>。診療報酬の請求は医療機関が行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A28</div>
+        <p>我が国の公的医療保険制度で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 療養の給付は現金給付である。<br>
+          b 診療費の一部負担金は保険者に支払う。<br>
+          c 後期高齢者医療制度の対象者は75歳以上である。<br>
+          d 正常な妊娠・分娩の費用は保険診療の対象となる。<br>
+          e 保険医療機関は厚生労働大臣の指定を受ける必要がある。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】後期高齢者は<span class="key">75歳以上</span>、保険医療機関は<span class="key">厚生労働大臣の指定</span>が必要。療養の給付は現物給付、一部負担金は医療機関に支払う、正常分娩は保険対象外。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

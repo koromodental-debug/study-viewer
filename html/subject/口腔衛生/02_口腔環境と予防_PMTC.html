@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>PMTC - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 口腔環境と予防</span>
+    <h1>PMTC</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核</div>
+        <ul>
+          <li>PMTCで使用する器具：<span class="highlight">ラバーカップ</span>、<span class="highlight">ポリッシングブラシ</span>、<span class="highlight">フッ化物配合ペースト</span></li>
+          <li><span class="caution">電動歯ブラシ・超音波スケーラーは不正解</span></li>
+          <li>PMTCは「<span class="highlight">専門家による機械的歯面清掃</span>」</li>
+        </ul>
+      </div>
+
+      <h2>PMTCとは</h2>
+      <p><span class="key">PMTC</span>（Professional Mechanical Tooth Cleaning）= <span class="highlight">専門家による機械的歯面清掃</span></p>
+      <p>歯科医師・歯科衛生士が専用の器具を用いて、セルフケアでは除去困難なプラークやバイオフィルムを機械的に除去する処置。</p>
+
+      <h3>PMTCの目的</h3>
+      <ul>
+        <li>バイオフィルムの除去</li>
+        <li>歯面の研磨・清掃</li>
+        <li>齲蝕・歯周病の予防</li>
+        <li>フッ化物の歯面塗布</li>
+      </ul>
+
+      <h2>PMTCで使用する器具</h2>
+      <table>
+        <tr>
+          <th>器具</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ラバーカップ</span></td>
+          <td>歯面・歯頸部の研磨</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ポリッシングブラシ</span></td>
+          <td>咬合面・小窩裂溝の清掃</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">フッ化物配合ペースト</span></td>
+          <td>研磨＋齲蝕予防効果</td>
+        </tr>
+        <tr>
+          <td>コントラアングル</td>
+          <td>回転器具の駆動</td>
+        </tr>
+        <tr>
+          <td>フロス・歯間ブラシ</td>
+          <td>隣接面の清掃</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">PMTCに用いないもの</div>
+        <ul>
+          <li><span class="caution">電動歯ブラシ</span>：セルフケア用（専門家用ではない）</li>
+          <li><span class="caution">超音波スケーラー</span>：歯石除去用（PMTCの目的ではない）</li>
+        </ul>
+      </div>
+
+      <h2>PMTCの手順</h2>
+      <table>
+        <tr>
+          <th>順序</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>①</td>
+          <td>染め出しでプラーク確認</td>
+        </tr>
+        <tr>
+          <td>②</td>
+          <td>ブラシ・カップで歯面清掃</td>
+        </tr>
+        <tr>
+          <td>③</td>
+          <td>隣接面の清掃（フロス等）</td>
+        </tr>
+        <tr>
+          <td>④</td>
+          <td>研磨ペーストで歯面研磨</td>
+        </tr>
+        <tr>
+          <td>⑤</td>
+          <td>洗浄・フッ化物塗布</td>
+        </tr>
+      </table>
+
+      <h2>PMTCとスケーリングの違い</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>PMTC</th>
+          <th>スケーリング</th>
+        </tr>
+        <tr>
+          <td class="key">目的</td>
+          <td><span class="highlight">バイオフィルム除去</span></td>
+          <td>歯石除去</td>
+        </tr>
+        <tr>
+          <td class="key">対象</td>
+          <td>プラーク・着色</td>
+          <td>歯石</td>
+        </tr>
+        <tr>
+          <td class="key">器具</td>
+          <td>ラバーカップ、ブラシ</td>
+          <td>スケーラー</td>
+        </tr>
+        <tr>
+          <td class="key">痛み</td>
+          <td>ほぼなし</td>
+          <td>あることも</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114A78</div>
+        <p>PMTCに用いるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 電動歯ブラシ<br>
+          b 超音波スケーラー<br>
+          c ポリッシングブラシ<br>
+          d フッ化物配合ペースト<br>
+          e 歯面研磨用ラバーカップ
+        </div>
+        <div class="answer">正解：c, d, e</div>
+        <p>【解説】PMTCで使用するのは<span class="highlight">ポリッシングブラシ</span>、<span class="highlight">フッ化物配合ペースト</span>、<span class="highlight">歯面研磨用ラバーカップ</span>。電動歯ブラシはセルフケア用、超音波スケーラーは歯石除去用でPMTCには用いない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

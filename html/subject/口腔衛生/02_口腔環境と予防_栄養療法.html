@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>栄養療法 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .flow-box {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 口腔環境と予防</span>
+    <h1>栄養療法</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核</div>
+        <ul>
+          <li>経口摂取が静脈栄養より優れている点 → <span class="highlight">腸管免疫能の維持</span></li>
+          <li>栄養投与経路の選択順序を理解する</li>
+          <li>長期経管栄養 → <span class="highlight">胃瘻・腸瘻</span></li>
+        </ul>
+      </div>
+
+      <h2>栄養療法の大原則</h2>
+      <div class="point-box">
+        <div class="point-box-title">"When the gut works, use it!"</div>
+        <p>腸が働いているなら、腸を使え！</p>
+        <p>→ 可能な限り<span class="highlight">経腸栄養</span>（経口・経管）を選択する</p>
+      </div>
+
+      <h2>栄養投与経路の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>種類</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td rowspan="3" class="key">経腸栄養<br>（EN）</td>
+          <td>経口栄養</td>
+          <td>嚥下機能が保たれている</td>
+        </tr>
+        <tr>
+          <td>経鼻経管栄養</td>
+          <td>短期間（4週未満）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">胃瘻・腸瘻</span></td>
+          <td>長期間（4週以上）</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">静脈栄養<br>（PN）</td>
+          <td>末梢静脈栄養（PPN）</td>
+          <td>短期間（2週未満）</td>
+        </tr>
+        <tr>
+          <td>中心静脈栄養（TPN）</td>
+          <td>長期間（2週以上）</td>
+        </tr>
+      </table>
+
+      <h2>栄養投与経路の選択フローチャート</h2>
+      <div class="flow-box">
+        <p><span class="key">① 腸管は機能しているか？</span></p>
+        <p>　├ <span class="highlight">YES</span> → 経腸栄養へ</p>
+        <p>　└ NO → 静脈栄養（PPN or TPN）</p>
+        <br>
+        <p><span class="key">② 経口摂取は可能か？</span></p>
+        <p>　├ <span class="highlight">YES</span> → <span class="highlight">経口栄養</span></p>
+        <p>　└ NO → 経管栄養へ</p>
+        <br>
+        <p><span class="key">③ 経管栄養の期間は？</span></p>
+        <p>　├ 短期（4週未満） → 経鼻経管栄養</p>
+        <p>　└ 長期（4週以上） → <span class="highlight">胃瘻・腸瘻</span></p>
+      </div>
+
+      <h2>経腸栄養 vs 静脈栄養</h2>
+      <h3>経腸栄養の利点</h3>
+      <table>
+        <tr>
+          <th>利点</th>
+          <th>説明</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">腸管免疫能の維持</span></td>
+          <td>消化管には免疫細胞の50〜80%が存在</td>
+        </tr>
+        <tr>
+          <td>腸管粘膜の維持</td>
+          <td>絶食による粘膜萎縮を防止</td>
+        </tr>
+        <tr>
+          <td>Bacterial translocation回避</td>
+          <td>腸内細菌の血中移行を防止</td>
+        </tr>
+        <tr>
+          <td>感染リスク低下</td>
+          <td>カテーテル関連血流感染がない</td>
+        </tr>
+        <tr>
+          <td>生理的</td>
+          <td>消化管ホルモン分泌、腸蠕動維持</td>
+        </tr>
+        <tr>
+          <td>低コスト</td>
+          <td>静脈栄養より安価</td>
+        </tr>
+      </table>
+
+      <h3>経腸栄養の禁忌</h3>
+      <ul>
+        <li>腸閉塞</li>
+        <li>汎発性腹膜炎</li>
+        <li>難治性嘔吐・下痢</li>
+        <li>腸管虚血</li>
+        <li>消化管出血（活動性）</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108C79</div>
+        <p>摂食・嚥下障害患者で経静脈栄養に比べて経口摂取が優れているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 脱水防止<br>
+          b 尿量の維持<br>
+          c 血圧の調整<br>
+          d 電解質の補正<br>
+          e 腸管免疫能の維持
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】経口摂取（経腸栄養）が経静脈栄養より優れている点は<span class="highlight">腸管免疫能の維持</span>。消化管には全身の免疫細胞の50〜80%が存在し、腸管を使うことで免疫能が維持される。脱水防止、尿量維持、血圧調整、電解質補正は静脈栄養でも可能。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A25</div>
+        <p>栄養投与経路を選択する際のフローチャートを示す。<br>ウはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A25_1.png" alt="フローチャート">
+        </div>
+        <div class="choices">
+          a 経口栄養<br>
+          b 胃・腸瘻栄養<br>
+          c 経鼻経管栄養<br>
+          d 中心静脈栄養<br>
+          e 末梢静脈栄養
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】フローチャートで「腸管機能あり → 経口摂取不可 → 長期」の場合は<span class="highlight">胃・腸瘻栄養</span>を選択。4週以上の長期経管栄養では、経鼻チューブによる合併症（鼻腔・咽頭の損傷、誤嚥）を避けるため胃瘻・腸瘻が推奨される。</p>
+      </div>
+
+      <h2>関連事項</h2>
+      <h3>経管栄養患者の口腔ケア</h3>
+      <ul>
+        <li>経管栄養中も口腔ケアは<span class="caution">毎日実施</span></li>
+        <li>経口摂取がなくても口腔内は汚染される（唾液分泌低下、自浄作用低下）</li>
+        <li>口腔機能低下の予防とリハビリテーション</li>
+        <li>誤嚥性肺炎の予防</li>
+      </ul>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>各医療従事者の業務範囲 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>各医療従事者の業務範囲</h1>
+    <div class="container">
+
+      <h2>歯科医師の指示が必要な職種【最頻出】</h2>
+      <p>歯科診療において、<span class="highlight">歯科医師の指示</span>の下で業務を行える職種を正確に把握することが重要。</p>
+
+      <h3>歯科医師が指示できる職種</h3>
+      <table>
+        <tr>
+          <th>職種</th>
+          <th>根拠法</th>
+          <th>指示者</th>
+        </tr>
+        <tr>
+          <td><span class="key">歯科衛生士</span></td>
+          <td>歯科衛生士法</td>
+          <td>歯科医師</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯科技工士</span></td>
+          <td>歯科技工士法</td>
+          <td>歯科医師</td>
+        </tr>
+        <tr>
+          <td><span class="key">診療放射線技師</span></td>
+          <td>診療放射線技師法</td>
+          <td>医師または歯科医師</td>
+        </tr>
+        <tr>
+          <td><span class="key">臨床検査技師</span></td>
+          <td>臨床検査技師法</td>
+          <td>医師または歯科医師</td>
+        </tr>
+        <tr>
+          <td><span class="key">言語聴覚士</span></td>
+          <td>言語聴覚士法</td>
+          <td>医師または歯科医師</td>
+        </tr>
+        <tr>
+          <td><span class="key">保健師・看護師</span></td>
+          <td>保助看法</td>
+          <td>医師または歯科医師</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">歯科医師が指示できない職種【ひっかけ注意】</div>
+        <ul>
+          <li><span class="caution">理学療法士</span> → 医師のみ（歯科医師は不可）</li>
+          <li><span class="caution">作業療法士</span> → 医師のみ（歯科医師は不可）</li>
+          <li><span class="caution">救急救命士</span> → 医師のみ</li>
+          <li><span class="caution">公認心理師</span> → 医師のみ</li>
+        </ul>
+      </div>
+
+      <h2>歯科関連職種の業務範囲</h2>
+
+      <h3>歯科衛生士の業務</h3>
+      <table>
+        <tr>
+          <th>できる業務</th>
+          <th>できない業務</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="key">フッ化物歯面塗布</span><br>
+            歯石除去（予防処置）<br>
+            歯科診療の補助<br>
+            歯科保健指導<br>
+            <span class="key">訪問歯科診療の補助</span>
+          </td>
+          <td>
+            <span class="caution">咬合調整</span>（歯科医師）<br>
+            <span class="caution">齲蝕の診断</span>（歯科医師）<br>
+            <span class="caution">インレーの装着</span>（歯科医師）<br>
+            <span class="caution">エックス線撮影</span>（放射線技師）
+          </td>
+        </tr>
+      </table>
+
+      <h3>歯科技工士の業務</h3>
+      <table>
+        <tr>
+          <th>できる業務</th>
+          <th>できない業務</th>
+        </tr>
+        <tr>
+          <td>
+            補綴物の作製<br>
+            矯正装置の作製<br>
+            修理・加工
+          </td>
+          <td>
+            <span class="caution">歯科診療の補助</span><br>
+            <span class="caution">義歯の試適</span>（患者への装着）<br>
+            <span class="caution">歯科技工指示書の記載</span>
+          </td>
+        </tr>
+      </table>
+
+      <h2>リハビリテーション職の業務範囲</h2>
+      <table>
+        <tr>
+          <th>職種</th>
+          <th>主な業務</th>
+          <th>指示者</th>
+        </tr>
+        <tr>
+          <td><span class="key">言語聴覚士</span></td>
+          <td><span class="highlight">嚥下訓練</span>、人工内耳の調整、言語訓練</td>
+          <td>医師または歯科医師</td>
+        </tr>
+        <tr>
+          <td>理学療法士</td>
+          <td>運動療法、物理療法、<span class="caution">義足歩行訓練</span></td>
+          <td>医師のみ</td>
+        </tr>
+        <tr>
+          <td>作業療法士</td>
+          <td>日常生活動作訓練、<span class="caution">自助具指導</span></td>
+          <td>医師のみ</td>
+        </tr>
+      </table>
+      <p class="note">※理学療法士・作業療法士は医師のみの指示。歯科医師は指示できない。</p>
+
+      <h2>その他の医療従事者</h2>
+      <table>
+        <tr>
+          <th>職種</th>
+          <th>主な業務</th>
+        </tr>
+        <tr>
+          <td><span class="key">臨床検査技師</span></td>
+          <td>微生物学的検査、血清学的検査、<span class="highlight">採血</span></td>
+        </tr>
+        <tr>
+          <td>診療放射線技師</td>
+          <td>エックス線撮影（<span class="caution">診断は不可</span>）</td>
+        </tr>
+        <tr>
+          <td>薬剤師</td>
+          <td>調剤、服薬指導（<span class="caution">処方は不可</span>）</td>
+        </tr>
+        <tr>
+          <td><span class="key">訪問介護員</span></td>
+          <td><span class="highlight">身体介護、家事援助</span></td>
+        </tr>
+        <tr>
+          <td>介護支援専門員</td>
+          <td>ケアプラン作成</td>
+        </tr>
+        <tr>
+          <td>介護福祉士</td>
+          <td>介護業務（<span class="caution">温熱療法は不可</span>）</td>
+        </tr>
+      </table>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">118B25</div>
+        <p>法令に定められた業務を歯科医師が指示できる職種はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 保健師<br>
+          b 救急救命士<br>
+          c 公認心理師<br>
+          d 作業療法士<br>
+          e 臨床検査技師
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="key">保健師</span>と<span class="key">臨床検査技師</span>は医師または歯科医師の指示で業務可能。救急救命士・公認心理師・作業療法士は医師のみの指示。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C15</div>
+        <p>歯科医師の指導の下、歯科衛生士が行えるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咬合調整<br>
+          b 齲蝕の診断<br>
+          c インレーの装着<br>
+          d エックス線撮影<br>
+          e フッ化物歯面塗布
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】歯科衛生士は<span class="key">フッ化物歯面塗布</span>（予防処置）が可能。咬合調整・診断・インレー装着は歯科医師の業務。エックス線撮影は診療放射線技師。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A3</div>
+        <p>職種と業務の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 薬剤師 ── 薬の処方<br>
+          b 歯科衛生士 ── 齲蝕の診断<br>
+          c 歯科技工士 ── 義歯の試適<br>
+          d 介護福祉士 ── 嚥下造影検査<br>
+          e 臨床検査技師 ── 採血
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">臨床検査技師は採血</span>が可能。薬の処方は医師・歯科医師。齲蝕の診断は歯科医師。義歯の試適は歯科医師。嚥下造影検査は医師の業務。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A100</div>
+        <p>歯科医師の指示の下に業務を遂行する職種はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 作業療法士<br>
+          b 救急救命士<br>
+          c 理学療法士<br>
+          d 言語聴覚士<br>
+          e 診療放射線技師
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】<span class="key">言語聴覚士</span>と<span class="key">診療放射線技師</span>は医師または歯科医師の指示で業務可能。作業療法士・理学療法士・救急救命士は医師のみの指示。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C31</div>
+        <p>資格と法律で規定されている業務との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 社会福祉士 ── 家事援助<br>
+          b 言語聴覚士 ── 嚥下訓練<br>
+          c 介護福祉士 ── 温熱療法<br>
+          d 理学療法士 ── 自助具指導<br>
+          e 作業療法士 ── 義足歩行訓練
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">言語聴覚士の業務に嚥下訓練</span>が含まれる。家事援助は訪問介護員。温熱療法は理学療法士。自助具指導は作業療法士。義足歩行訓練は理学療法士。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B9</div>
+        <p>要介護高齢者の自宅療養において、身体介護や家事援助介護サービスを主業務とする職種はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 看護師<br>
+          b 保健師<br>
+          c 訪問介護員<br>
+          d 介護支援専門員<br>
+          e 医療ソーシャルワーカー
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">訪問介護員（ホームヘルパー）</span>が身体介護・家事援助を主業務とする。介護支援専門員はケアプラン作成が主業務。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B49</div>
+        <p>医療従事者と業務内容との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 薬剤師 ── 薬の処方<br>
+          b 看護師 ── 訪問歯科診療の補助<br>
+          c 歯科衛生士 ── エックス線撮影<br>
+          d 歯科技工士 ── 歯科診療の補助<br>
+          e 診療放射線技師 ── エックス線写真の診断
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">看護師は訪問歯科診療の補助</span>が可能（保助看法）。薬の処方は医師・歯科医師。エックス線撮影は放射線技師。歯科技工士は診療補助不可。診断は医師・歯科医師。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

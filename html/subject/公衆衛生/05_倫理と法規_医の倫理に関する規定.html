@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医の倫理に関する規定 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>医の倫理に関する規定</h1>
+    <div class="container">
+
+      <h2>医療倫理と医学研究倫理の歴史</h2>
+
+      <h3>医療の倫理（医師・患者関係）</h3>
+      <table>
+        <tr>
+          <th>年代</th>
+          <th>名称</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>B.C.4</td>
+          <td><span class="key">ヒポクラテスの誓い</span></td>
+          <td>患者利益の優先、守秘義務</td>
+        </tr>
+        <tr>
+          <td>1946</td>
+          <td><span class="key">ジュネーブ宣言</span></td>
+          <td>ヒポクラテスの誓いの現代版</td>
+        </tr>
+        <tr>
+          <td>1981</td>
+          <td><span class="key">リスボン宣言</span></td>
+          <td>患者の権利</td>
+        </tr>
+        <tr>
+          <td>2002</td>
+          <td><span class="key">医師憲章</span></td>
+          <td>患者福利優先・自律性・社会正義</td>
+        </tr>
+      </table>
+
+      <h3>医学研究の倫理</h3>
+      <table>
+        <tr>
+          <th>年代</th>
+          <th>名称</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>1947</td>
+          <td><span class="key">ニュルンベルク綱領</span></td>
+          <td>被験者の自発的同意</td>
+        </tr>
+        <tr>
+          <td>1964</td>
+          <td><span class="key">ヘルシンキ宣言</span></td>
+          <td>医学研究の倫理原則</td>
+        </tr>
+      </table>
+
+      <h2>主要な宣言・綱領の内容</h2>
+
+      <h3>リスボン宣言（患者の権利）</h3>
+      <ul>
+        <li>良質の医療行為を受ける権利</li>
+        <li><span class="key">選択の自由の権利</span>（セカンドオピニオン）</li>
+        <li><span class="key">自己決定の権利</span></li>
+        <li>情報に対する権利（インフォームド・コンセント）</li>
+        <li>守秘義務に対する権利</li>
+        <li><span class="highlight">健康教育を受ける権利</span></li>
+        <li>尊厳の権利</li>
+      </ul>
+
+      <h3>ジュネーブ宣言（医師の誓い）</h3>
+      <div class="point-box">
+        <div class="point-box-title">ポイント</div>
+        <ul>
+          <li>ヒポクラテスの誓いの<span class="key">現代版</span></li>
+          <li>「<span class="highlight">患者の健康（health）を私の第一の関心事とする</span>」</li>
+          <li>患者の秘密を死後においても尊重</li>
+        </ul>
+      </div>
+
+      <h3>ニュルンベルク綱領</h3>
+      <ul>
+        <li><span class="highlight">被験者の自発的な同意</span>（医学研究のIC）</li>
+        <li>社会の福利のために実り多い結果を生む</li>
+        <li>被験者の実験を中止させる自由</li>
+        <li>科学者による実験の中止</li>
+      </ul>
+
+      <h2>医療倫理学の4原則</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">4原則（試験頻出）</div>
+        <ul>
+          <li><span class="key">自律尊重原則</span>：患者の決定を尊重し従う</li>
+          <li><span class="key">善行原則</span>：患者の最善の利益を考慮</li>
+          <li><span class="key">無危害原則</span>：危害を加えない</li>
+          <li><span class="key">正義原則</span>：資源配分の公正</li>
+        </ul>
+      </div>
+
+      <p class="note"><span class="caution">「医学的進歩」は4原則に含まれない</span></p>
+
+      <h2>パターナリズムと自己決定権</h2>
+      <p><span class="key">パターナリズム</span>（父権主義）：医師が患者の利益のために、患者の意思に反しても介入すること</p>
+      <p>人権意識の高揚とともに<span class="highlight">パターナリズムは否定</span>され、<span class="key">患者の自己決定権</span>が重視されるようになった。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A13</div>
+        <p>医の倫理原則に含まれないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 善行<br>
+          b 正義<br>
+          c 無危害<br>
+          d 自律尊重<br>
+          e 医学的進歩
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】医療倫理学の4原則は<span class="highlight">善行・正義・無危害・自律尊重</span>である。医学的進歩は倫理原則ではなく、研究の目的である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B13</div>
+        <p>リスボン宣言で述べられているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 死の判定<br>
+          b 健康格差の縮小<br>
+          c 国民皆保険制度<br>
+          d 倫理審査委員会の設置<br>
+          e 患者が健康教育を受ける権利
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】リスボン宣言は<span class="highlight">患者の権利</span>を定めたもの。健康教育を受ける権利は11項目の1つ。死の判定はシドニー宣言、倫理審査委員会はヘルシンキ宣言に関連。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A11</div>
+        <p>医の倫理の変遷において、人権意識の高揚とともに否定されたのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a パターナリズム<br>
+          b セカンドオピニオン<br>
+          c プロフェッショナリズム<br>
+          d エンド・オブ・ライフケア<br>
+          e インフォームド・コンセント
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">パターナリズム（父権主義）</span>は、医師が「患者のため」と判断して患者の意思に反して介入すること。人権意識の高揚により否定され、患者の自己決定権が重視されるようになった。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C1</div>
+        <p>以下はジュネーブ宣言の一部である。<br>
+        The（　　）of my patient will be my first consideration.<br>
+        （　　）に入るのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a activity<br>
+          b body<br>
+          c health<br>
+          d information<br>
+          e mind
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ジュネーブ宣言では「<span class="highlight">患者の健康（health）を私の第一の関心事とする</span>」と述べている。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B114</div>
+        <p>医の倫理に関する宣言等の歴史的変遷の流れを図に示す。（　　）はどれか。1つ選べ。</p>
+        <div class="choices">
+          a オタワ憲章<br>
+          b シドニー宣言<br>
+          c 患者の権利章典<br>
+          d アルマ・アタ宣言<br>
+          e ニュールンベルグ綱領
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】医学研究の倫理の出発点は<span class="highlight">ニュルンベルク綱領</span>（1947年）。第二次世界大戦中のナチスによる人体実験への反省から生まれた。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

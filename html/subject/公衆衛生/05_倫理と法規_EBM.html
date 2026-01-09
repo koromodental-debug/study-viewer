@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>EBM - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    ol { padding-left: 1.5em; margin: 8px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>EBM（根拠に基づく医療）</h1>
+    <div class="container">
+
+      <h2>EBMとは</h2>
+      <p><span class="highlight">EBM（Evidence-Based Medicine）</span>は、<span class="key">科学的根拠に基づいて医療を行う</span>考え方である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">EBMの3要素</div>
+        <ul>
+          <li><span class="key">科学的根拠</span>（エビデンス）</li>
+          <li><span class="key">医師の技能・経験</span></li>
+          <li><span class="key">患者の価値観・希望</span></li>
+        </ul>
+      </div>
+
+      <p class="note"><span class="caution">専門家の個人的意見・経験だけではEBMではない</span></p>
+
+      <h2>EBMの5ステップ</h2>
+
+      <ol>
+        <li><span class="highlight">患者の問題の定式化</span>（PICO）</li>
+        <li><span class="key">文献情報の収集</span></li>
+        <li><span class="highlight">文献の批判的吟味</span></li>
+        <li><span class="key">患者への適用</span></li>
+        <li><span class="key">事後評価</span></li>
+      </ol>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <p>「<span class="highlight">定・収・吟・適・評</span>」（ていしゅうぎんてきひょう）</p>
+      </div>
+
+      <h2>エビデンスレベル</h2>
+
+      <table>
+        <tr>
+          <th>レベル</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">1（最高）</span></td>
+          <td>システマティックレビュー / メタ分析</td>
+        </tr>
+        <tr>
+          <td><span class="key">2</span></td>
+          <td>ランダム化比較試験（RCT）</td>
+        </tr>
+        <tr>
+          <td><span class="key">3</span></td>
+          <td>コホート研究</td>
+        </tr>
+        <tr>
+          <td><span class="key">4</span></td>
+          <td>症例対照研究</td>
+        </tr>
+        <tr>
+          <td><span class="key">5</span></td>
+          <td>症例報告、ケースシリーズ</td>
+        </tr>
+        <tr>
+          <td><span class="caution">6（最低）</span></td>
+          <td>専門家の個人的意見</td>
+        </tr>
+      </table>
+
+      <h2>メタ分析とシステマティックレビュー</h2>
+
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>意味</th>
+        </tr>
+        <tr>
+          <td><span class="key">メタ分析</span></td>
+          <td>統計の<span class="highlight">手法</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">システマティックレビュー</span></td>
+          <td>論文の<span class="highlight">種類</span></td>
+        </tr>
+      </table>
+
+      <p><span class="key">出版バイアス</span>：症例数の少ない研究は統計学的に有意になりにくいため発表されないこと</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A5</div>
+        <p>EBMを実践する際のステップを以下に示す。<br>
+        ア 事後評価　イ 患者への適用　ウ 文献情報の収集<br>
+        エ 文献の批判的吟味　オ 患者の問題の定式化<br>
+        手順で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ウ→イ→エ→オ→ア<br>
+          b ウ→エ→オ→イ→ア<br>
+          c ウ→オ→エ→イ→ア<br>
+          d オ→ウ→イ→エ→ア<br>
+          e オ→ウ→エ→イ→ア
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】EBMの5ステップは<span class="highlight">定式化→収集→吟味→適用→評価</span>の順。オ→ウ→エ→イ→ア。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C103</div>
+        <p>エビデンスレベルが最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a コホート研究<br>
+          b 症例対照研究<br>
+          c オープンラベル試験<br>
+          d 非ランダム化比較試験<br>
+          e システマティックレビュー
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">システマティックレビュー</span>はエビデンスレベルが最も高い。複数のRCTを系統的にまとめた論文。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C24</div>
+        <p>エビデンスレベルが最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 症例報告<br>
+          b 横断的研究<br>
+          c コホート研究<br>
+          d メタアナリシス<br>
+          e 非ランダム化比較試験
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">メタアナリシス</span>（メタ分析）はエビデンスレベルが最も高い。複数の研究結果を統計的に統合した分析。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C45</div>
+        <p>根拠に基づいた医療〈EBM〉について正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 医療費の削減を目的に行う。<br>
+          b 動物実験の結果を根拠とする。<br>
+          c 得られた情報は批判的に吟味する。<br>
+          d 得られた根拠は患者に説明せずに用いてよい。<br>
+          e 患者への適用にあたり歯科医師の技能を考慮する。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】EBMでは<span class="highlight">批判的吟味</span>が重要。また、エビデンスだけでなく<span class="highlight">医師の技能</span>や患者の価値観も考慮する。動物実験はヒトへのエビデンスではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

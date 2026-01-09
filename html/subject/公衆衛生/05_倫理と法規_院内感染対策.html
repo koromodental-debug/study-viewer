@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>院内感染対策 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>院内感染対策</h1>
+    <div class="container">
+
+      <h2>院内感染とは</h2>
+      <p><span class="key">院内感染</span>とは、病院・診療所などの医療施設内で患者や医療従事者が感染することをいう。対象は患者だけでなく<span class="highlight">病院スタッフも含まれる</span>。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">院内感染対策の法的根拠</div>
+        <ul>
+          <li><span class="highlight">医療法</span>で院内感染対策委員会の開催を規定</li>
+          <li>医療安全確保の指針策定が義務</li>
+          <li>従業者への研修実施が必要</li>
+        </ul>
+      </div>
+
+      <h2>感染予防の三原則</h2>
+      <table>
+        <tr><th>対策</th><th>対象</th><th>予防法</th></tr>
+        <tr><td class="key">感染源対策</td><td>細菌・ウイルスを持つ人や物</td><td>滅菌、消毒、隔離、発症者の入院加療</td></tr>
+        <tr><td class="key">感染経路対策</td><td>接触・飛沫・空気感染など</td><td><span class="highlight">手洗い</span>、マスク、消毒</td></tr>
+        <tr><td class="key">感受性対策</td><td>抵抗力の弱い人</td><td>予防接種、健康増進</td></tr>
+      </table>
+
+      <h2>標準予防策（Standard Precautions）</h2>
+      <p><span class="highlight">すべての患者</span>に対して適用する基本的な感染対策。感染症の有無に関わらず、血液・体液・分泌物・排泄物・傷のある皮膚・粘膜を感染性があるものとして扱う。</p>
+
+      <h3>標準予防策の内容</h3>
+      <ul>
+        <li><span class="key">手指衛生</span>：患者接触前後、清潔操作前、体液曝露後</li>
+        <li><span class="key">個人防護具（PPE）</span>：手袋、マスク、ゴーグル、ガウン</li>
+        <li>咳エチケット</li>
+        <li>患者配置（隔離）</li>
+        <li>器材の適切な処理</li>
+      </ul>
+      <p class="note">※<span class="caution">汗は標準予防策の対象外</span>（感染リスクが低いため）</p>
+
+      <h2>Spaulding分類</h2>
+      <p>医療器具の感染リスクに基づき、必要な消毒・滅菌レベルを分類したもの。</p>
+
+      <h3>3つのカテゴリー</h3>
+      <table>
+        <tr><th>分類</th><th>接触部位</th><th>処理</th><th>歯科器具の例</th></tr>
+        <tr>
+          <td class="key">クリティカル</td>
+          <td>無菌組織・血管内</td>
+          <td><span class="highlight">滅菌</span></td>
+          <td>抜歯鉗子、リーマー、スケーラー、注射針</td>
+        </tr>
+        <tr>
+          <td class="key">セミクリティカル</td>
+          <td>粘膜・損傷皮膚</td>
+          <td>高水準消毒<br>（できれば滅菌）</td>
+          <td><span class="highlight">印象用トレー</span>、ミラー</td>
+        </tr>
+        <tr>
+          <td class="key">ノンクリティカル</td>
+          <td>正常皮膚のみ</td>
+          <td>低〜中水準消毒</td>
+          <td>歯科用チェア、無影灯</td>
+        </tr>
+      </table>
+      <p class="note">※ハンドピースはセミクリティカルだが、サックバック現象のため<span class="caution">患者ごとに滅菌</span>が推奨</p>
+
+      <h2>滅菌と消毒</h2>
+
+      <h3>滅菌法</h3>
+      <table>
+        <tr><th>方法</th><th>条件</th><th>対象</th></tr>
+        <tr><td class="key">高圧蒸気滅菌<br>（オートクレーブ）</td><td><span class="highlight">121℃ 2気圧 15〜20分</span></td><td>耐熱性の器具（第一選択）</td></tr>
+        <tr><td>乾熱滅菌</td><td>160〜170℃ 2〜4時間</td><td>ガラス、金属</td></tr>
+        <tr><td>ガンマ線滅菌</td><td>放射線</td><td>プラスチック製品</td></tr>
+        <tr><td>EOG滅菌</td><td>エチレンオキサイドガス</td><td>非耐熱性器具</td></tr>
+        <tr><td>低温プラズマ滅菌</td><td>過酸化水素ガス</td><td>非耐熱性器具</td></tr>
+      </table>
+      <p class="note">※<span class="caution">プリオンは通常のオートクレーブで失活しない</span>→低温プラズマ滅菌が有効</p>
+
+      <h3>消毒薬の水準</h3>
+      <table>
+        <tr><th>水準</th><th>消毒薬</th><th>芽胞</th><th>用途</th></tr>
+        <tr><td class="key">高水準</td><td>グルタラール、過酢酸、フタラール</td><td>○</td><td>セミクリティカル器具</td></tr>
+        <tr><td class="key">中水準</td><td>次亜塩素酸Na、ポビドンヨード、エタノール</td><td>×</td><td>環境表面、皮膚</td></tr>
+        <tr><td class="key">低水準</td><td>ベンザルコニウム、クロルヘキシジン</td><td>×</td><td>手指、環境</td></tr>
+      </table>
+
+      <h2>歯科におけるエアロゾル対策</h2>
+      <p>歯科治療ではエアロゾル（飛沫核）が発生しやすく、<span class="key">口腔外バキューム</span>の併用が推奨される。</p>
+
+      <h3>エアロゾル発生機器</h3>
+      <ul>
+        <li><span class="highlight">エアタービン</span></li>
+        <li><span class="highlight">超音波スケーラー</span></li>
+        <li><span class="highlight">スリーウェイシリンジ</span></li>
+      </ul>
+      <p class="note">※光照射器、マイクロスコープはエアロゾルを発生しない</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">115B3</div>
+        <p>病院における院内感染対策のための委員会の開催を規定しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医療法<br>
+          b 健康増進法<br>
+          c 廃棄物の処理及び清掃に関する法律<br>
+          d 感染症の予防及び感染症の患者に対する医療に関する法律<br>
+          e 医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】院内感染対策委員会の開催は<span class="highlight">医療法</span>で規定されている。感染症法（d）は感染症の類型や届出を規定するもので、院内感染対策委員会とは関係がない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C15</div>
+        <p>標準予防策〈standard precautions〉に基づく、接触による院内感染の予防で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 手洗いの実施<br>
+          b N95マスクの着用<br>
+          c 抗菌薬の予防投与<br>
+          d 個室での入院治療<br>
+          e 汗が付着した機器の清拭
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】標準予防策における接触感染予防の基本は<span class="highlight">手洗い（手指衛生）</span>である。N95マスク（b）は空気感染対策、個室隔離（d）は感染経路別予防策。<span class="caution">汗は標準予防策の対象外</span>なので（e）は不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A20</div>
+        <p>院内感染リスクのSpaulding分類でセミクリテイカルに該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 抜歯鉗子<br>
+          b リーマー<br>
+          c スケーラー<br>
+          d 印象用トレー<br>
+          e 歯科用チェア
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">印象用トレー</span>は粘膜に接触するがセミクリティカル。抜歯鉗子（a）、リーマー（b）、スケーラー（c）は血液・無菌組織に接触するためクリティカル。歯科用チェア（e）は正常皮膚のみなのでノンクリティカル。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A59</div>
+        <p>ある機器の写真（別冊No.23A）とその機器を使用している写真（別冊No.23B）を別に示す。
+院内感染予防対策でこの機器を併用する必要があるのはどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A59_1.png" alt="別冊No.23A">
+          <img src="../../../images/114回_Web画像/114A59_2.png" alt="別冊No.23B">
+        </div>
+        <div class="choices">
+          a 光照射器<br>
+          b エアタービン<br>
+          c 超音波スケーラー<br>
+          d マイクロスコープ<br>
+          e スリーウェイシリンジ
+        </div>
+        <div class="answer">正解：b, c, e</div>
+        <p>【解説】写真は口腔外バキューム。エアロゾルを発生させる<span class="highlight">エアタービン、超音波スケーラー、スリーウェイシリンジ</span>の使用時に併用が必要。光照射器やマイクロスコープはエアロゾルを発生しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C24</div>
+        <p>院内感染対策で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 外因感染は対象としない。<br>
+          b 病院スタッフは対象外である。<br>
+          c 消毒・滅菌は対策の一つである。<br>
+          d 抗菌薬の使用方法とは無関係である。<br>
+          e 一般社会環境と同様の対策をとることが望ましい。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】院内感染対策には<span class="highlight">消毒・滅菌</span>が含まれる（c）。外因感染も内因感染も対象（a×）、<span class="caution">病院スタッフも対象</span>（b×）、抗菌薬の適正使用も重要（d×）、病院は一般環境より厳格な対策が必要（e×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A16</div>
+        <p>医療事故防止対策で適切でないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 防護メガネ着用の推奨<br>
+          b 院内感染対策指針の策定<br>
+          c ヒヤリハット事象の収集<br>
+          d 医療機器安全管理責任者の配置<br>
+          e 事故を起こした個人の責任追及
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】医療安全は<span class="caution">個人の責任追及ではなくシステムの改善</span>が重要。院内感染対策指針の策定（b）は医療法で義務付けられた適切な対策である。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

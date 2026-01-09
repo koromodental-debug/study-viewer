@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医療面接 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>医療面接</h1>
+    <div class="container">
+
+      <h2>医療面接とは</h2>
+      <p>患者から情報を収集し、信頼関係を構築するためのコミュニケーション技法。</p>
+
+      <h2>質問の種類</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="key">開放型質問</span></td>
+          <td>自由に回答できる</td>
+          <td>「どのような症状ですか？」</td>
+        </tr>
+        <tr>
+          <td><span class="key">閉鎖型質問</span></td>
+          <td>はい/いいえで回答</td>
+          <td>「痛みはありますか？」</td>
+        </tr>
+      </table>
+
+      <h2>既往歴の聴取</h2>
+      <p>既往歴聴取で得るべき情報：</p>
+
+      <div class="point-box">
+        <div class="point-box-title">既往歴聴取のポイント</div>
+        <ul>
+          <li><span class="highlight">現疾患との関連性</span></li>
+          <li><span class="highlight">薬物アレルギーの有無</span></li>
+          <li>服用中の薬剤</li>
+          <li>過去の手術歴</li>
+        </ul>
+      </div>
+
+      <p class="note"><span class="caution">患者の人生観・解釈モデルは既往歴ではなく「患者背景」</span></p>
+
+      <h2>認知症患者への医療面接</h2>
+
+      <h3>適切な対応</h3>
+      <ul>
+        <li><span class="highlight">正面から話しかける</span></li>
+        <li><span class="highlight">非言語的コミュニケーション</span>を重視</li>
+        <li><span class="key">表情やしぐさに注意を払う</span></li>
+        <li><span class="key">安心の場を与える</span></li>
+        <li>ゆっくり、はっきり話す</li>
+        <li>短い文で伝える</li>
+      </ul>
+
+      <h3>不適切な対応</h3>
+      <ul>
+        <li><span class="caution">幼児言葉で話す</span>（尊厳を傷つける）</li>
+        <li><span class="caution">作話があれば指摘・訂正する</span>（混乱を招く）</li>
+        <li><span class="caution">説得を心がける</span>（効果がない）</li>
+        <li>後ろから急に話しかける</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">認知症患者対応の原則</div>
+        <ul>
+          <li>否定しない、訂正しない</li>
+          <li>急がせない</li>
+          <li>自尊心を傷つけない</li>
+        </ul>
+      </div>
+
+      <h2>非言語的コミュニケーション</h2>
+      <p>言葉以外で伝えるコミュニケーション手段：</p>
+      <ul>
+        <li>表情</li>
+        <li>視線</li>
+        <li>姿勢</li>
+        <li>ジェスチャー</li>
+        <li>声のトーン</li>
+        <li>タッチング（接触）</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114C31</div>
+        <p>重度認知症の高齢者の医療面接で適切なのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 幼児言葉で話す。<br>
+          b 正面から話しかける。<br>
+          c 作話があれば指摘する。<br>
+          d 表情やしぐさに注意を払う。<br>
+          e 非言語的メッセージを多用する。
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】認知症患者には<span class="highlight">正面から話しかけ、非言語的コミュニケーションを重視</span>する。幼児言葉は尊厳を傷つけ、作話の指摘は混乱を招くためNG。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A69</div>
+        <p>認知症患者への接し方で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 説得を心がける。<br>
+          b 安心の場を与える。<br>
+          c 作話の内容を訂正する。<br>
+          d 幼児語を用いて説明する。<br>
+          e 非言語的コミュニケーションを大切にする。
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】<span class="highlight">安心の場を与え、非言語的コミュニケーションを大切に</span>する。説得は効果がなく、作話の訂正・幼児語は不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C96</div>
+        <p>既往歴の聴取で得るべき情報はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 患者の人生観<br>
+          b 現疾患との関連性<br>
+          c 現疾患の発病日時<br>
+          d 患者の解釈モデル<br>
+          e 薬物アレルギーの有無
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】既往歴聴取では<span class="highlight">現疾患との関連性と薬物アレルギーの有無</span>が重要。人生観・解釈モデルは患者背景、発病日時は現病歴に含まれる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

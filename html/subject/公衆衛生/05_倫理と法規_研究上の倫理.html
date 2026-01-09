@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>研究上の倫理 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>研究上の倫理</h1>
+    <div class="container">
+
+      <h2>医学研究の倫理を定めた宣言・綱領</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">医学研究の倫理（2つ覚える）</div>
+        <ul>
+          <li><span class="highlight">ニュルンベルク綱領</span>（1947年）：被験者の自発的同意（最初の国際規範）</li>
+          <li><span class="highlight">ヘルシンキ宣言</span>（1964年）：医学研究の倫理原則</li>
+        </ul>
+      </div>
+
+      <p class="note">ジュネーブ宣言、ヒポクラテスの誓いは<span class="caution">医療の倫理</span>であり、医学研究の倫理ではない</p>
+
+      <h2>ヘルシンキ宣言の内容</h2>
+      <ul>
+        <li>医学の進歩は人間を対象とする研究に基づく</li>
+        <li><span class="key">個々の被験者の権利および利益の優先</span></li>
+        <li>被験者の生命、健康、尊厳、<span class="key">自己決定権</span>、プライバシーを守る</li>
+        <li>損害を受けた被験者への適切な<span class="key">補償と治療の保証</span></li>
+        <li><span class="highlight">研究倫理委員会</span>の設置</li>
+        <li><span class="key">インフォームド・コンセント</span></li>
+        <li>研究への不参加、<span class="key">同意撤回の自由</span></li>
+        <li>研究成果について報告を受ける権利</li>
+      </ul>
+
+      <h2>倫理審査委員会（IRB）</h2>
+      <p>臨床研究において<span class="highlight">研究の科学的・倫理的妥当性を評価</span>する。</p>
+
+      <h3>委員会の構成（5名以上）</h3>
+      <ul>
+        <li>医学・医療の専門家</li>
+        <li>倫理学・法律学の有識者</li>
+        <li>一般の立場から意見を述べる者</li>
+        <li>所属機関に所属しない者（複数）</li>
+        <li>男女両性</li>
+      </ul>
+
+      <p class="note"><span class="caution">被験者の同意取得は研究者が行う</span>（倫理審査委員会の役割ではない）</p>
+
+      <h2>被験者への説明事項</h2>
+      <p>臨床研究のインフォームド・コンセントで必要な説明：</p>
+      <ul>
+        <li><span class="highlight">起こり得る危険</span>（リスク）</li>
+        <li><span class="highlight">期待される成果</span>（ベネフィット）</li>
+        <li>研究への不参加・同意撤回の自由</li>
+        <li>個人情報の保護</li>
+      </ul>
+
+      <h2>研究不正行為（FFP）</h2>
+
+      <h3>3つの研究不正</h3>
+      <table>
+        <tr>
+          <th>英語</th>
+          <th>日本語</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">Fabrication</span></td>
+          <td>捏造</td>
+          <td>存在しないデータを作成</td>
+        </tr>
+        <tr>
+          <td><span class="key">Falsification</span></td>
+          <td>改ざん</td>
+          <td>データを変更・操作</td>
+        </tr>
+        <tr>
+          <td><span class="key">Plagiarism</span></td>
+          <td>剽窃</td>
+          <td><span class="highlight">他人の論文を自説として発表</span></td>
+        </tr>
+      </table>
+
+      <p class="note">シンガポール宣言：研究の誠実性、説明責任に関する宣言</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">118A13</div>
+        <p>人を対象とする医学研究の倫理を示したのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a シドニー宣言<br>
+          b ジュネーブ宣言<br>
+          c ヘルシンキ宣言<br>
+          d ニュルンベルグ綱領<br>
+          e ヒポクラテスの誓い
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="highlight">医学研究の倫理</span>を示すのはヘルシンキ宣言とニュルンベルク綱領。ジュネーブ宣言・ヒポクラテスの誓いは医療（医師）の倫理、シドニー宣言は死の判定に関する宣言。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C4</div>
+        <p>臨床研究において倫理審査委員会が行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 研究資金を調達する。<br>
+          b 研究成果を公表する。<br>
+          c 被験者の同意を取得する。<br>
+          d 被験者の健康被害を補償する。<br>
+          e 研究の科学的妥当性を評価する。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】倫理審査委員会は<span class="highlight">研究の科学的・倫理的妥当性を評価</span>する。被験者の同意取得は研究者の役割。健康被害の補償は研究実施者の責任。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D33</div>
+        <p>研究における「剽窃」行為にあたるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 研究費を不正に使用する。<br>
+          b データの書き換えを行う。<br>
+          c 架空のデータを作成して発表する。<br>
+          d 同一の内容を複数の雑誌に投稿する。<br>
+          e 他人の論文の内容を自説として発表する。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">剽窃（Plagiarism）</span>は他人の論文を自説として発表すること。bは改ざん、cは捏造。dは二重投稿で不正だが剽窃ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A26</div>
+        <p>臨床研究に参加する被験者への説明事項で必要なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 研究者の住所<br>
+          b 他の被験者名<br>
+          c 起こり得る危険<br>
+          d 期待される成果<br>
+          e 成果が公表される学会名
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】被験者へのICでは<span class="highlight">起こり得る危険（リスク）と期待される成果（ベネフィット）</span>の説明が必要。他の被験者名は個人情報保護の観点から教えてはならない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

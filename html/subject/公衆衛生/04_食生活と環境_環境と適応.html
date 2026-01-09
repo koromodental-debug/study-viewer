@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>環境と適応 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 食生活と環境</span>
+    <h1>環境と適応</h1>
+    <div class="container">
+
+      <h2>温熱環境の4要素</h2>
+      <p>人が温熱感覚（暑い・寒いの感覚）を感じる際に関与する環境要因は以下の<span class="highlight">4要素</span>である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">温熱の4要素</div>
+        <ul>
+          <li><span class="key">気温</span>（空気の温度）</li>
+          <li><span class="key">気湿</span>（空気中の水蒸気量・湿度）</li>
+          <li><span class="key">気流</span>（空気の流れ・気動）</li>
+          <li><span class="key">輻射熱</span>（遠赤外線による熱放射）</li>
+        </ul>
+      </div>
+
+      <p class="note"><span class="caution">気圧は温熱の4要素に含まれない</span>（国試で頻出の引っかけ）</p>
+
+      <h2>温度計の種類と測定項目</h2>
+
+      <h3>各温度計の特徴</h3>
+      <table>
+        <tr>
+          <th>温度計</th>
+          <th>測定項目</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">アウグスト乾湿計</span></td>
+          <td>気温・気湿</td>
+          <td><span class="caution">気流の影響を受ける</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">アスマン通風乾湿計</span></td>
+          <td>気温・気湿</td>
+          <td>気流の影響を受けにくい</td>
+        </tr>
+        <tr>
+          <td><span class="key">カタ寒暖計</span></td>
+          <td>気流</td>
+          <td>室内の微気流を測定</td>
+        </tr>
+        <tr>
+          <td><span class="key">黒球温度計</span></td>
+          <td>輻射熱</td>
+          <td>黒色の銅板で輻射熱を吸収</td>
+        </tr>
+      </table>
+
+      <h3>カタ冷却力</h3>
+      <p><span class="highlight">カタ冷却力 = カタ係数 / アルコール柱の下降する時間</span></p>
+      <p>気流を算出するための指標。冷却力が大きいほど気流が強い。</p>
+
+      <h2>温熱指標</h2>
+
+      <h3>感覚温度と測定機器の関係</h3>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>必要な測定機器</th>
+          <th>考慮する要素</th>
+        </tr>
+        <tr>
+          <td><span class="key">不快指数</span></td>
+          <td>アウグスト or アスマン</td>
+          <td>気温・気湿</td>
+        </tr>
+        <tr>
+          <td><span class="key">感覚温度</span></td>
+          <td>アスマン＋カタ寒暖計</td>
+          <td>気温・気湿・気流</td>
+        </tr>
+        <tr>
+          <td><span class="key">修正感覚温度</span></td>
+          <td>アスマン＋カタ＋黒球</td>
+          <td>気温・気湿・気流・輻射熱</td>
+        </tr>
+      </table>
+
+      <h3>感覚温度に影響する因子</h3>
+      <div class="point-box">
+        <div class="point-box-title">感覚温度が低下する条件</div>
+        <ul>
+          <li><span class="highlight">気流の増加</span>：体表面の空気が入れ替わり、熱が奪われやすくなる</li>
+          <li>気温の低下</li>
+          <li>気湿の低下：汗の蒸発が促進される</li>
+        </ul>
+      </div>
+
+      <p><span class="caution">カタ冷却力の低下は気流の低下を意味し、感覚温度は上昇する</span>（引っかけ注意）</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A34</div>
+        <p>温熱感覚の要素はどれか。4つ選べ。</p>
+        <div class="choices">
+          a 気圧<br>
+          b 気温<br>
+          c 気湿<br>
+          d 気流<br>
+          e 輻射熱
+        </div>
+        <div class="answer">正解：b, c, d, e</div>
+        <p>【解説】温熱感覚の4要素は気温・気湿・気流・輻射熱である。<span class="caution">気圧は温熱感覚の要素ではない</span>。気圧は高山病など気圧変化による影響はあるが、温熱感覚には直接関与しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A100</div>
+        <p>感覚温度が低下するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 気圧の上昇<br>
+          b 気湿の上昇<br>
+          c 気流の増加<br>
+          d 輻射熱の低下<br>
+          e カタ冷却力の低下
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">気流が増加すると感覚温度は低下する</span>。気流によって体表面の空気が入れ替わり、対流による熱放散が促進されるため。気湿の上昇は汗の蒸発を妨げ感覚温度を上昇させる。輻射熱は感覚温度の測定要素に含まれない（修正感覚温度には含まれる）。カタ冷却力の低下は気流の低下を意味し、感覚温度は上昇する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

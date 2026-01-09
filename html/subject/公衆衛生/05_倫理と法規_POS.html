@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>POS - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>POS（問題志向型システム）</h1>
+    <div class="container">
+
+      <h2>POSとは</h2>
+      <p><span class="highlight">POS（Problem Oriented System）</span>は、<span class="key">問題志向型システム</span>のこと。</p>
+      <p>診察から治療計画立案までを<span class="key">系統的に</span>行う診療記録システム。</p>
+
+      <h3>関連用語</h3>
+      <table>
+        <tr>
+          <th>略語</th>
+          <th>正式名称</th>
+          <th>意味</th>
+        </tr>
+        <tr>
+          <td><span class="key">POS</span></td>
+          <td>Problem Oriented System</td>
+          <td>問題志向型システム</td>
+        </tr>
+        <tr>
+          <td><span class="key">POMR</span></td>
+          <td>Problem Oriented Medical Record</td>
+          <td>問題志向型診療録</td>
+        </tr>
+      </table>
+
+      <h2>SOAP形式（超頻出）</h2>
+      <p>POMRで用いられる記録形式。患者の問題ごとに記載する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">SOAPの4要素</div>
+        <ul>
+          <li><span class="highlight">S</span>（Subjective）：<span class="highlight">主観的情報</span> = 患者の訴え、自覚症状</li>
+          <li><span class="highlight">O</span>（Objective）：<span class="highlight">客観的情報</span> = 他覚所見、検査結果</li>
+          <li><span class="highlight">A</span>（Assessment）：<span class="highlight">評価</span> = 診断、鑑別診断</li>
+          <li><span class="highlight">P</span>（Plan）：<span class="highlight">計画</span> = 治療計画</li>
+        </ul>
+      </div>
+
+      <h2>SOAPの具体例</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>該当するもの</th>
+          <th>該当しないもの</th>
+        </tr>
+        <tr>
+          <td><span class="key">S</span></td>
+          <td>患者の訴え、脱離時期、痛みの訴え</td>
+          <td>検査所見、他覚所見</td>
+        </tr>
+        <tr>
+          <td><span class="key">O</span></td>
+          <td>視診所見、検査結果、モニタ情報、他覚所見</td>
+          <td>患者の訴え、治療計画</td>
+        </tr>
+        <tr>
+          <td><span class="key">A</span></td>
+          <td>鑑別診断、診断名</td>
+          <td>検査所見、治療計画</td>
+        </tr>
+        <tr>
+          <td><span class="key">P</span></td>
+          <td>治療計画、処方、指導計画</td>
+          <td>検査所見、診断</td>
+        </tr>
+      </table>
+
+      <h3>「O」の判断ポイント</h3>
+      <p>「O」は<span class="highlight">医療者が客観的に得た情報</span>。</p>
+      <ul>
+        <li>視診で齲窩が認められる → <span class="key">O</span></li>
+        <li>生体監視モニタ情報 → <span class="key">O</span></li>
+        <li>エックス線所見 → <span class="key">O</span></li>
+        <li>2日前に冷水痛があった → <span class="caution">S</span>（患者の訴え）</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115A34</div>
+        <p>診察から治療計画立案までを系統的に行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a DNR〈Do Not Resuscitate〉<br>
+          b DOS〈Disease Oriented System〉<br>
+          c EBM〈Evidence Based Medicine〉<br>
+          d NBM〈Narrative Based Medicine〉<br>
+          e POS〈Problem Oriented System〉
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">POS（問題志向型システム）</span>は診察から治療計画立案までを系統的に行う。EBMは根拠に基づく医療、NBMは物語に基づく医療。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117D13</div>
+        <p>問題解決指向型診療録作成に用いられるSOAPの「O」に該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 主訴<br>
+          b 感染源の推定<br>
+          c 処方する薬剤<br>
+          d 予定手術術式<br>
+          e 生体監視モニタ情報
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】「O」は<span class="highlight">客観的情報（他覚所見、検査結果）</span>。生体監視モニタ情報は客観的データ。主訴はS、処方や手術術式はP。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C20</div>
+        <p>上顎右側臼歯部の疼痛を主訴とする患者の診療録記載内容のうち、SOAPの「O」にあたるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 2日前に冷水痛があった。<br>
+          b 視診で齲窩が認められる。<br>
+          c コンポジットレジン修復をする。<br>
+          d 審美的な歯科治療を希望している。<br>
+          e これまで歯科治療を受けたことがある。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">視診所見は「O」</span>（客観的情報）。冷水痛の訴えや希望はS、修復計画はP。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B11</div>
+        <p>問題解決指向型診療録におけるSOAPの「A」にあたる事項はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 鑑別診断<br>
+          b 検査所見<br>
+          c 指導計画<br>
+          d 治療結果<br>
+          e 治療方針
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】「A」は<span class="highlight">評価（Assessment）＝鑑別診断</span>。検査所見はO、指導計画・治療方針はP。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A31</div>
+        <p>修復物の脱離を主訴とする患者に対し、診察と検査後に再装着処置を行った。この診療記録をSOAPに準拠して作成する場合、「S」に該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 窩洞形態<br>
+          b 治療方針<br>
+          c 脱離時期<br>
+          d 再装着処置<br>
+          e エックス線所見
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】「S」は<span class="highlight">主観的情報＝患者の訴え</span>。脱離時期は患者から聴取する情報。窩洞形態・エックス線所見はO、治療方針・処置はP。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

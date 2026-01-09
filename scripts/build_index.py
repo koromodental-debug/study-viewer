@@ -51,8 +51,9 @@ SUBJECT_MASTER = [
     {"subject_id": "B07", "subject_name": "微生物・免疫", "category": "基礎", "keywords": "微生物,細菌,ウイルス,免疫,感染,抗体,抗原,リンパ,グラム,培養,消毒,滅菌,IgG,IgA,T細胞,B細胞"},
     {"subject_id": "B08", "subject_name": "理工学", "category": "基礎", "keywords": "材料,理工,物性,接着,器械,セメント,レジン,金属,セラミック,印象材,石膏,ワックス,鋳造,研磨"},
     {"subject_id": "B09", "subject_name": "衛生学", "category": "基礎", "keywords": "衛生,予防,フッ化物,DMF,CPI,WHO,産業保健,労働"},
-    {"subject_id": "B10", "subject_name": "公衆衛生", "category": "基礎", "keywords": "公衆衛生,法規,医療法,歯科医師法,歯科衛生士法,介護保険,社会保障,感染対策,倫理"},
+    {"subject_id": "B10", "subject_name": "口腔衛生", "category": "基礎", "keywords": "口腔衛生,ブラッシング,PMTC,歯磨剤,洗口液,禁煙,ペリクル,バイオフィルム,プラーク,齲蝕予防,フッ化物,ステファン曲線"},
     {"subject_id": "B11", "subject_name": "疫学", "category": "基礎", "keywords": "疫学,統計,有病率,罹患率,相対危険度,オッズ比,感度,特異度,スクリーニング"},
+    {"subject_id": "B12", "subject_name": "公衆衛生", "category": "基礎", "keywords": "公衆衛生,法規,医療法,歯科医師法,歯科衛生士法,介護保険,社会保障,感染対策,倫理"},
     {"subject_id": "C01", "subject_name": "小児歯科", "category": "臨床", "keywords": "小児,乳歯,萌出,成長発育,乳歯列,混合歯列,小児患者,男児,女児,歳,生後,永久歯萌出,既製冠,保隙"},
     {"subject_id": "C02", "subject_name": "矯正歯科", "category": "臨床", "keywords": "矯正,不正咬合,装置,セファロ,反対咬合,上顎前突,下顎前突,開咬,過蓋咬合,叢生,ブラケット,ワイヤー,アクチバトール,バイオネーター"},
     {"subject_id": "C03", "subject_name": "保存修復", "category": "臨床", "keywords": "修復,充填,インレー,CR,窩洞,コンポジットレジン,齲蝕,う蝕,齲窩,窩壁,裏層,接着,エッチング,ボンディング"},
@@ -65,7 +66,8 @@ SUBJECT_MASTER = [
     {"subject_id": "C10", "subject_name": "口腔外科", "category": "臨床", "keywords": "外科,抜歯,腫瘍,外傷,顎関節,骨折,嚢胞,膿瘍,蜂窩織炎,切開,縫合,止血,顎変形,唇顎口蓋裂"},
     {"subject_id": "C11", "subject_name": "放射線", "category": "臨床", "keywords": "放射線,X線,CT,画像,パノラマ,エックス線,MRI,造影,被曝,防護,デンタル,咬翼法,CBCT"},
     {"subject_id": "C12", "subject_name": "歯科麻酔", "category": "臨床", "keywords": "麻酔,鎮静,全身管理,モニタリング,局所麻酔,伝達麻酔,浸潤麻酔,笑気,静脈内鎮静,バイタルサイン,救急,ショック"},
-    {"subject_id": "C13", "subject_name": "高齢者歯科", "category": "臨床", "keywords": "高齢者,摂食嚥下,介護,訪問,口腔ケア,誤嚥,誤嚥性肺炎,要介護,認知症,フレイル,サルコペニア,在宅"},
+    {"subject_id": "C13", "subject_name": "高齢者歯科学", "category": "臨床", "keywords": "高齢者,介護,訪問,口腔ケア,要介護,認知症,フレイル,サルコペニア,在宅"},
+    {"subject_id": "C14", "subject_name": "摂食嚥下", "category": "臨床", "keywords": "摂食嚥下,嚥下訓練,舌接触補助床,PAP,軟口蓋挙上装置,PLP,誤嚥,誤嚥性肺炎,栄養療法,リハビリテーション,要介護者"},
     {"subject_id": "A01", "subject_name": "必修", "category": "必修", "keywords": ""},
 ]
 
@@ -414,6 +416,10 @@ def build_subject_index(html_files, qa_files, subjects):
 
     # 科目名からカテゴリを取得するマッピングを作成
     subject_to_category = {s['subject_name']: s['category'] for s in subjects}
+    # SUBJECT_MASTERからも追加（Excelにない科目用）
+    for s in SUBJECT_MASTER:
+        if s['subject_name'] not in subject_to_category:
+            subject_to_category[s['subject_name']] = s['category']
 
     for key, html_info in html_files.items():
         qa_info = qa_files.get(key)

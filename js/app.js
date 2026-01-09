@@ -690,6 +690,16 @@
 
     // 科目カテゴリ → 科目 → チャプター → トピック の4階層でグループ化
     const categoryOrder = ['基礎', '臨床', '必修', 'その他'];
+    // 科目の表示順序（基礎科目）
+    const subjectOrder = [
+      '解剖学', '組織学', '病理学', '生理学', '生化学',
+      '微生物学・免疫学', '薬理学', '理工学', '衛生学', '口腔衛生', '疫学',
+      // 臨床科目
+      '保存修復学', '歯内療法学', '歯周病学', 'クラウンブリッジ',
+      '部分床義歯学', '全部床義歯学', 'インプラント',
+      '口腔外科学', '歯科放射線学', '歯科麻酔学',
+      '小児歯科学', '矯正歯科学', '高齢者歯科学', '摂食嚥下', '公衆衛生'
+    ];
     const groups = {};
 
     items.forEach(item => {
@@ -725,8 +735,16 @@
           <div class="subject-category-items${isCatCollapsed ? ' collapsed' : ''}">
       `;
 
-      // 科目をソート
-      const subjects = Object.keys(groups[subjectCat]).sort();
+      // 科目を指定順序でソート
+      const subjects = Object.keys(groups[subjectCat]).sort((a, b) => {
+        const idxA = subjectOrder.indexOf(a);
+        const idxB = subjectOrder.indexOf(b);
+        // 順序に含まれない科目は末尾に（アルファベット順）
+        if (idxA === -1 && idxB === -1) return a.localeCompare(b);
+        if (idxA === -1) return 1;
+        if (idxB === -1) return -1;
+        return idxA - idxB;
+      });
 
       subjects.forEach(subject => {
         const subjectKey = `subj_${subject}`;
@@ -2647,22 +2665,32 @@
     const sections = elements.qaDisplay.querySelectorAll('.qa-section-title');
     let bestMatch = null;
     let bestScore = 0;
+    const strippedSearch = stripBrackets(sectionName);
 
     for (const section of sections) {
       const text = section.textContent.trim();
+      const strippedText = stripBrackets(text);
       let score = 0;
 
       // 完全一致は最高スコア
       if (text === sectionName) {
         score = 100;
       }
+      // 括弧除去後の完全一致
+      else if (strippedText === strippedSearch) {
+        score = 90;
+      }
       // 先頭が一致する場合は高スコア
       else if (text.startsWith(sectionName) || sectionName.startsWith(text)) {
         score = 50 + Math.min(text.length, sectionName.length);
       }
-      // 部分一致は低スコア（最後の手段）
-      else if (text.includes(sectionName) || sectionName.includes(text)) {
-        score = Math.min(text.length, sectionName.length);
+      // 括弧除去後の先頭一致
+      else if (strippedText.startsWith(strippedSearch) || strippedSearch.startsWith(strippedText)) {
+        score = 45 + Math.min(strippedText.length, strippedSearch.length);
+      }
+      // 部分一致（括弧除去後）
+      else if (strippedText.includes(strippedSearch) || strippedSearch.includes(strippedText)) {
+        score = Math.min(strippedText.length, strippedSearch.length);
       }
 
       if (score > bestScore) {
@@ -2682,6 +2710,17 @@
   }
 
   /**
+   * 括弧内を除去してコアテキストを抽出
+   */
+  function stripBrackets(text) {
+    return text
+      .replace(/【[^】]*】/g, '')
+      .replace(/（[^）]*）/g, '')
+      .replace(/\([^)]*\)/g, '')
+      .trim();
+  }
+
+  /**
    * HTMLで指定セクションにスクロール
    */
   function scrollToHTMLSection(sectionName) {
@@ -2693,22 +2732,32 @@
       const headings = elements.htmlDisplay.querySelectorAll('h1, h2, h3, h4');
       let bestMatch = null;
       let bestScore = 0;
+      const strippedSearch = stripBrackets(sectionName);
 
       for (const heading of headings) {
         const text = heading.textContent.trim();
+        const strippedText = stripBrackets(text);
         let score = 0;
 
         // 完全一致は最高スコア
         if (text === sectionName) {
           score = 100;
         }
+        // 括弧除去後の完全一致
+        else if (strippedText === strippedSearch) {
+          score = 90;
+        }
         // 先頭が一致する場合は高スコア
         else if (text.startsWith(sectionName) || sectionName.startsWith(text)) {
           score = 50 + Math.min(text.length, sectionName.length);
         }
-        // 部分一致は低スコア（最後の手段）
-        else if (text.includes(sectionName) || sectionName.includes(text)) {
-          score = Math.min(text.length, sectionName.length);
+        // 括弧除去後の先頭一致
+        else if (strippedText.startsWith(strippedSearch) || strippedSearch.startsWith(strippedText)) {
+          score = 45 + Math.min(strippedText.length, strippedSearch.length);
+        }
+        // 部分一致（括弧除去後）
+        else if (strippedText.includes(strippedSearch) || strippedSearch.includes(strippedText)) {
+          score = Math.min(strippedText.length, strippedSearch.length);
         }
 
         if (score > bestScore) {

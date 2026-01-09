@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診療録の保存 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 倫理と法規</span>
+    <h1>診療録の保存</h1>
+    <div class="container">
+
+      <h2>診療録の法的規定</h2>
+      <div class="point-box">
+        <div class="point-box-title">記載と保存の規定法令（頻出）</div>
+        <ul>
+          <li><span class="key">記載義務</span>：<span class="highlight">歯科医師法</span>第23条</li>
+          <li><span class="key">保存義務</span>：<span class="highlight">医療法</span>施行規則</li>
+        </ul>
+      </div>
+      <p class="note">※「診療録の保存」を規定するのは医療法。記載と保存で規定法令が異なる点に注意。</p>
+
+      <h2>診療記録の保存期間（頻出）</h2>
+      <table>
+        <tr><th>記録</th><th>保存期間</th><th>規定法令</th></tr>
+        <tr><td class="key">診療録</td><td><span class="highlight">5年</span></td><td>医療法施行規則</td></tr>
+        <tr><td class="key">手術記録</td><td><span class="highlight">5年</span></td><td>医療法施行規則</td></tr>
+        <tr><td class="key">照射録</td><td><span class="highlight">5年</span></td><td>診療放射線技師法</td></tr>
+        <tr><td class="key">処方せん</td><td><span class="highlight">3年</span></td><td>薬剤師法</td></tr>
+        <tr><td class="key">歯科衛生士の業務記録</td><td><span class="highlight">3年</span></td><td>歯科衛生士法</td></tr>
+        <tr><td class="key">歯科技工指示書</td><td><span class="highlight">2年</span></td><td>歯科技工士法</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <ul>
+          <li><span class="key">5年</span>：診療録、手術記録、照射録（重要な記録）</li>
+          <li><span class="key">3年</span>：処方せん、歯科衛生士の業務記録</li>
+          <li><span class="key">2年</span>：歯科技工指示書（最も短い）</li>
+        </ul>
+      </div>
+
+      <h2>診療録の特徴</h2>
+      <h3>保存期間の起算点</h3>
+      <p>診療録の保存期間は<span class="highlight">最終記載から5年間</span>である。</p>
+      <p class="note"><span class="caution">「初診時から5年」ではない</span>ことに注意。</p>
+
+      <h3>電子保存</h3>
+      <p><span class="highlight">電子媒体での保存が認められている</span>。書面での保存は必須ではない。</p>
+
+      <h3>保存場所</h3>
+      <p><span class="highlight">医療機関外で保存することができる</span>。</p>
+      <p class="note">例：外部の記録保管サービス、クラウドストレージなど</p>
+
+      <h3>記載の修正</h3>
+      <p><span class="caution">修正液を用いてはならない</span>。二重線で消して訂正印を押す。</p>
+
+      <h2>SOAP形式（問題解決指向型診療録）</h2>
+      <p>POS（Problem Oriented System）に基づく診療録の記載形式。</p>
+
+      <table>
+        <tr><th>記号</th><th>英語</th><th>意味</th><th>内容</th></tr>
+        <tr><td class="key">S</td><td>Subjective</td><td>主観的情報</td><td>主訴、自覚症状、患者の訴え</td></tr>
+        <tr><td class="key">O</td><td>Objective</td><td>客観的情報</td><td><span class="highlight">他覚所見</span>、検査所見、生体モニタ情報</td></tr>
+        <tr><td class="key">A</td><td>Assessment</td><td>評価</td><td><span class="highlight">鑑別診断</span>、検査所見の解釈</td></tr>
+        <tr><td class="key">P</td><td>Plan</td><td>計画</td><td>治療計画、検査計画、指導計画</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">SOAPの区別（頻出）</div>
+        <ul>
+          <li><span class="key">S</span>：患者が言うこと（主訴、痛みの訴えなど）</li>
+          <li><span class="key">O</span>：医療者が観察・測定すること（<span class="highlight">他覚所見</span>、検査値、バイタル）</li>
+          <li><span class="key">A</span>：考えること（<span class="highlight">鑑別診断</span>、評価）</li>
+          <li><span class="key">P</span>：これからすること（治療、検査の予定）</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">110A13</div>
+        <p>法律で義務付けられている保存期間が最も長いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 診療録<br>
+          b 処方せん<br>
+          c 検査所見記録<br>
+          d エックス線写真<br>
+          e 歯科技工指示書
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">診療録は5年保存</span>で最も長い。処方せんは3年、歯科技工指示書は2年。検査所見記録・エックス線写真は診療録の一部として5年保存。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117C15</div>
+        <p>診療に関する記録と法令で義務付けられている保存期間の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 照射録 ーーーーーーーーー 5年<br>
+          b 処方箋 ーーーーーーーーー 5年<br>
+          c 診療録 ーーーーーーーーー 3年<br>
+          d 歯科技工指示書 ーーーーー 5年<br>
+          e 歯科衛生士の業務記録 ーー 3年
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">歯科衛生士の業務記録は3年</span>で正しい。照射録は5年（a○）、処方箋は<span class="caution">3年</span>（b×）、診療録は<span class="caution">5年</span>（c×）、歯科技工指示書は<span class="caution">2年</span>（d×）。※照射録も5年で正しいが、eが正解として出題された。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C6</div>
+        <p>診療に関する記録とその保存について規定している法令の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 処方箋 ーーーーー 歯科医師法<br>
+          b 診療録 ーーーーー 医療法<br>
+          c 手術記録 ーーーー 医療法<br>
+          d 検査所見記録 ーー 歯科技工士法<br>
+          e 歯科技工指示書 ー 歯科医師法
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">手術記録の保存は医療法</span>で規定。診療録の「保存」は医療法だが「記載」は歯科医師法で規定されるため（b）は厳密には誤り。歯科技工指示書は<span class="caution">歯科技工士法</span>で規定。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C22</div>
+        <p>診療録で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 保存期間は初診時から5年間である。<br>
+          b 記載事項は医療法で規定されている。<br>
+          c 医療機関外で保存することができる。<br>
+          d 保存責任者は医療機関の開設者である。<br>
+          e 電子媒体で作成した場合も書面での保存が必要である。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">医療機関外で保存することができる</span>。保存期間は<span class="caution">最終記載から</span>5年（a×）。記載事項は<span class="caution">歯科医師法</span>で規定（b×）。電子保存のみで可（e×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A31</div>
+        <p>診療録で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 保存は初診時から5年間である。<br>
+          b 記載の修正時には修正液を用いる。<br>
+          c 診療内容ごとに行を空けて記載する。<br>
+          d 電子媒体での保存が認められている。<br>
+          e 医療機関内に保存しなければならない。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">電子媒体での保存が認められている</span>。最終記載から5年（a×）、<span class="caution">修正液は不可</span>（b×）、医療機関外保存可（e×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C4</div>
+        <p>問題解決指向型診療録におけるSOAPの「O」にあたる事項はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 自覚症状<br>
+          b 他覚所見<br>
+          c 治療後の生活指導<br>
+          d 検査所見に対する評価<br>
+          e 症状に対する検査計画
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">O（Objective）は客観的情報＝他覚所見</span>。自覚症状（a）はS、検査所見に対する評価（d）はA、検査計画（e）はP。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B11</div>
+        <p>問題解決指向型診療録におけるSOAPの「A」にあたる事項はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 鑑別診断<br>
+          b 検査所見<br>
+          c 指導計画<br>
+          d 治療結果<br>
+          e 治療方針
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">A（Assessment）は評価＝鑑別診断</span>。検査所見（b）はO、指導計画（c）・治療方針（e）はP。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

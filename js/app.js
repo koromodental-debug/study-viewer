@@ -639,6 +639,8 @@
         // 検索クエリを保持（ページ内ハイライト用）
         state.highlightQuery = state.searchQuery;
 
+        // まとめタブに切り替えてから選択
+        switchTab('html');
         selectItem(el.dataset.id);
         closeSearch();
       });

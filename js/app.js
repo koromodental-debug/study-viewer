@@ -73,7 +73,8 @@
     noteEmpty: document.getElementById('note-empty'),
     // 画像ライトボックス
     imageLightbox: document.getElementById('image-lightbox'),
-    lightboxImage: document.getElementById('lightbox-image')
+    lightboxImage: document.getElementById('lightbox-image'),
+    lightboxClose: document.getElementById('lightbox-close')
   };
 
   // 検索エンジン
@@ -269,6 +270,13 @@
         if (e.target === elements.imageLightbox) {
           closeImageLightbox();
         }
+      });
+    }
+    // ライトボックス：✕ボタンで閉じる
+    if (elements.lightboxClose) {
+      elements.lightboxClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeImageLightbox();
       });
     }
   }

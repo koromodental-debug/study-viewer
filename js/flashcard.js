@@ -1150,9 +1150,13 @@ const FlashcardModule = (function() {
           summaryContent.innerHTML = sectionContent;
           return;
         }
+        // マッチ失敗: まとめセクションを非表示
+        const summaryEl = document.getElementById('flashcard-summary');
+        if (summaryEl) summaryEl.classList.remove('show');
+        return;
       }
 
-      // フォールバック: 全体表示
+      // セクション名なし: 全体表示（トピック単位のまとめ）
       summaryContent.innerHTML = doc.body ? doc.body.innerHTML : html;
     } catch (e) {
       summaryContent.innerHTML = '<p>まとめの読み込みに失敗しました</p>';

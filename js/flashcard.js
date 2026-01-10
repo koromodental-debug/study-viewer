@@ -181,51 +181,92 @@ const FlashcardModule = (function() {
   // 通常のデッキホームをレンダリング
   function renderDeckHome(overall, subjects) {
     return `
-      <!-- B案: 今日のセッションを主役に -->
-      <div class="deck-session-hero">
-        <h1 class="deck-session-large-title">今日のセッション</h1>
-        <div class="deck-session-controls">
-          <div class="deck-session-sizes">
-            <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5">5問</button>
-            <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10">10問</button>
-            <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20">20問</button>
+      <!-- 演習するデッキ（3つの入口を同列カードで表示） -->
+      <div class="deck-entries">
+        <h2 class="deck-section-title">演習するデッキ</h2>
+
+        <!-- カード1: 今日のセッション -->
+        <div class="deck-entry-card recommended" id="start-recommended-deck">
+          <div class="deck-entry-main">
+            <div class="deck-entry-header">
+              <span class="deck-entry-title">今日のセッション</span>
+              <span class="deck-entry-badge recommend">おすすめ</span>
+            </div>
+            <div class="deck-entry-sizes">
+              <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5">5問</button>
+              <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10">10問</button>
+              <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20">20問</button>
+            </div>
           </div>
-          <button class="deck-session-start" id="start-recommended-deck">練習</button>
+          <button class="deck-entry-cta primary">${state.sessionSize}問で開始</button>
         </div>
+
+        <!-- カード2: 復習（もう一度） -->
+        ${overall.again > 0 ? `
+        <div class="deck-entry-card" id="start-again-deck">
+          <div class="deck-entry-main">
+            <div class="deck-entry-header">
+              <span class="deck-entry-title">復習</span>
+              <span class="deck-entry-badge again">${overall.again}問</span>
+            </div>
+            ${overall.again > 10 ? `
+            <div class="deck-entry-sizes">
+              <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5" data-deck="again">5問</button>
+              <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10" data-deck="again">10問</button>
+              <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20" data-deck="again">20問</button>
+            </div>
+            ` : `
+            <p class="deck-entry-desc">間違えた問題を復習</p>
+            `}
+          </div>
+          <button class="deck-entry-cta secondary">${overall.again > 10 ? Math.min(overall.again, state.sessionSize) + '問で開始' : overall.again + '問で開始'}</button>
+        </div>
+        ` : `
+        <div class="deck-entry-card empty-state" id="start-again-deck">
+          <div class="deck-entry-main">
+            <div class="deck-entry-header">
+              <span class="deck-entry-title">復習</span>
+            </div>
+            <p class="deck-entry-desc muted">復習はありません。順調です！</p>
+          </div>
+        </div>
+        `}
+
+        <!-- カード3: 確認（覚えた） -->
+        ${overall.memorized > 0 ? `
+        <div class="deck-entry-card" id="start-memorized-deck">
+          <div class="deck-entry-main">
+            <div class="deck-entry-header">
+              <span class="deck-entry-title">確認</span>
+              <span class="deck-entry-badge memorized">${overall.memorized}問</span>
+            </div>
+            ${overall.memorized > 10 ? `
+            <div class="deck-entry-sizes">
+              <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5" data-deck="memorized">5問</button>
+              <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10" data-deck="memorized">10問</button>
+              <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20" data-deck="memorized">20問</button>
+            </div>
+            ` : `
+            <p class="deck-entry-desc">定着チェック（ランダム）</p>
+            `}
+          </div>
+          <button class="deck-entry-cta secondary">${overall.memorized > 10 ? 'ランダム' + Math.min(overall.memorized, state.sessionSize) + '問' : 'ランダム' + overall.memorized + '問'}</button>
+        </div>
+        ` : `
+        <div class="deck-entry-card empty-state" id="start-memorized-deck">
+          <div class="deck-entry-main">
+            <div class="deck-entry-header">
+              <span class="deck-entry-title">確認</span>
+            </div>
+            <p class="deck-entry-desc muted">まだ確認できる問題がありません</p>
+          </div>
+        </div>
+        `}
       </div>
 
-      <!-- 検索バー（控えめ） -->
-      <div class="deck-search-wrapper">
-        <div class="deck-search-bar">
-          <svg class="deck-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="M21 21l-4.35-4.35"/>
-          </svg>
-          <input type="text" id="deck-inline-search" class="deck-search-input"
-                 placeholder="デッキを検索" value="">
-          <button id="deck-search-clear" class="deck-search-clear" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-            </svg>
-          </button>
-        </div>
-        <button id="deck-search-cancel" class="deck-search-cancel">キャンセル</button>
-      </div>
-
-      <div class="deck-stats-row">
-        <div class="deck-stat-item ${overall.memorized > 0 ? 'clickable' : ''}" id="start-memorized-deck">
-          <span class="deck-stat-label">覚えた</span>
-          <span class="deck-stat-value memorized">${overall.memorized}</span>
-          ${overall.memorized > 0 ? '<span class="deck-stat-action">練習 ›</span>' : ''}
-        </div>
-        <div class="deck-stat-item ${overall.again > 0 ? 'clickable' : ''}" id="start-again-deck">
-          <span class="deck-stat-label">もう一度</span>
-          <span class="deck-stat-value again">${overall.again}</span>
-          ${overall.again > 0 ? '<span class="deck-stat-action">練習 ›</span>' : ''}
-        </div>
-      </div>
-
+      <!-- 科目一覧 -->
       <div class="deck-subjects" id="deck-subjects">
+        <h2 class="deck-section-title">科目から選ぶ</h2>
         ${subjects.map(subject => renderSubjectRow(subject)).join('')}
       </div>
     `;
@@ -266,13 +307,33 @@ const FlashcardModule = (function() {
   function renderSubjectRow(subject) {
     const topics = DATA.filter(d => d.subject === subject && d.qaPath);
     const stats = getSubjectStats(subject);
+    const totalLearned = stats.memorized + stats.again;
+
+    // 未学習トピックをカウント（進捗が0のトピック）
+    const unlearnedTopics = topics.filter(topic => {
+      const topicStats = getTopicStats(topic.id);
+      return topicStats.memorized === 0 && topicStats.again === 0;
+    }).length;
+
+    // サブ情報を構築
+    let subInfo = `${topics.length}トピック`;
+    if (totalLearned > 0) {
+      subInfo += ` · ${totalLearned}問学習済`;
+    }
+    if (unlearnedTopics > 0 && totalLearned > 0) {
+      subInfo += ` · 未${unlearnedTopics}`;
+    }
 
     return `
       <div class="deck-subject" data-subject="${subject}">
         <div class="deck-subject-header">
-          <span class="deck-subject-name">${subject}</span>
+          <div class="deck-subject-main">
+            <span class="deck-subject-name">${subject}</span>
+            <span class="deck-subject-sub">${subInfo}</span>
+          </div>
           <div class="deck-subject-right">
             ${stats.again > 0 ? `<span class="deck-subject-again">要復習 ${stats.again}</span>` : ''}
+            ${unlearnedTopics > 0 && stats.again === 0 ? `<span class="deck-subject-unlearned">未あり</span>` : ''}
             <span class="deck-subject-chevron">›</span>
           </div>
         </div>
@@ -309,7 +370,7 @@ const FlashcardModule = (function() {
   }
 
   function bindDeckListEvents() {
-    // 検索バーのイベント
+    // 検索バーのイベント（検索モード時）
     const searchWrapper = document.querySelector('.deck-search-wrapper');
     const searchInput = document.getElementById('deck-inline-search');
     const searchClear = document.getElementById('deck-search-clear');
@@ -408,34 +469,63 @@ const FlashcardModule = (function() {
       });
     });
 
-    // 「覚えた」デッキ開始
-    const memorizedBtn = document.getElementById('start-memorized-deck');
-    if (memorizedBtn && memorizedBtn.classList.contains('clickable')) {
-      memorizedBtn.addEventListener('click', () => startStatusDeck('memorized'));
+    // 「確認」デッキ開始（カードまたはCTAクリック）
+    const memorizedCard = document.getElementById('start-memorized-deck');
+    if (memorizedCard && !memorizedCard.classList.contains('empty-state')) {
+      memorizedCard.addEventListener('click', (e) => {
+        // セッションサイズボタンのクリックは除外
+        if (e.target.closest('.session-size-btn')) return;
+        startStatusDeck('memorized');
+      });
     }
 
-    // 「もう一度」デッキ開始
-    const againBtn = document.getElementById('start-again-deck');
-    if (againBtn && againBtn.classList.contains('clickable')) {
-      againBtn.addEventListener('click', () => startStatusDeck('again'));
+    // 「復習」デッキ開始（カードまたはCTAクリック）
+    const againCard = document.getElementById('start-again-deck');
+    if (againCard && !againCard.classList.contains('empty-state')) {
+      againCard.addEventListener('click', (e) => {
+        if (e.target.closest('.session-size-btn')) return;
+        startStatusDeck('again');
+      });
     }
 
-    // 「今日のおすすめ」デッキ開始
-    const recommendedBtn = document.getElementById('start-recommended-deck');
-    if (recommendedBtn) {
-      recommendedBtn.addEventListener('click', () => startRecommendedDeck());
+    // 「今日のセッション」デッキ開始（カードまたはCTAクリック）
+    const recommendedCard = document.getElementById('start-recommended-deck');
+    if (recommendedCard) {
+      recommendedCard.addEventListener('click', (e) => {
+        // セッションサイズボタンのクリックは除外
+        if (e.target.closest('.session-size-btn')) return;
+        startRecommendedDeck();
+      });
     }
 
-    // セッションサイズ選択
+    // セッションサイズ選択（クリックイベントの伝播を止める）
     const sizeBtns = container.querySelectorAll('.session-size-btn');
     sizeBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // カードクリックを防止
         const size = parseInt(btn.dataset.size);
         state.sessionSize = size;
         localStorage.setItem('flashcard-session-size', size);
-        // ボタンの見た目を更新
+
+        // 全てのサイズボタンの見た目を更新
         sizeBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        container.querySelectorAll(`.session-size-btn[data-size="${size}"]`).forEach(b => b.classList.add('active'));
+
+        // CTAラベルを更新（今日のセッションのみ - 復習・確認は条件分岐があるため再描画不要）
+        const recommendedCta = document.querySelector('#start-recommended-deck .deck-entry-cta');
+        if (recommendedCta) recommendedCta.textContent = `${size}問で開始`;
+
+        // 復習・確認のCTA更新（セグメントがある場合のみ）
+        const overall = getOverallStats();
+        const againCta = document.querySelector('#start-again-deck .deck-entry-cta');
+        if (againCta && overall.again > 10) {
+          againCta.textContent = `${Math.min(overall.again, size)}問で開始`;
+        }
+
+        const memorizedCta = document.querySelector('#start-memorized-deck .deck-entry-cta');
+        if (memorizedCta && overall.memorized > 10) {
+          memorizedCta.textContent = `ランダム${Math.min(overall.memorized, size)}問`;
+        }
       });
     });
   }
@@ -560,7 +650,7 @@ const FlashcardModule = (function() {
 
     // ステータスデッキとして開始
     state.currentTopicId = `__status_${status}`;
-    state.currentTopic = { title: status === 'memorized' ? '覚えたカード' : 'もう一度カード' };
+    state.currentTopic = { title: status === 'memorized' ? '確認デッキ' : '復習デッキ' };
     state.cards = filteredCards;
     state.filteredCards = [...filteredCards];
     state.currentIndex = 0;

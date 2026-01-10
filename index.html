@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=20260111aa">
+  <link rel="stylesheet" href="css/style.css?v=20260111e">
 </head>
 <body>
   <div class="app">
@@ -19,14 +19,22 @@
         <span></span>
       </button>
       <h1 class="header-title">ココシカ</h1>
-      <button id="theme-toggle" class="header-theme-btn" aria-label="テーマ切り替え">
+      <div class="header-actions">
+        <button id="search-btn" class="header-icon-btn" aria-label="検索">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </button>
+        <button id="theme-toggle" class="header-icon-btn" aria-label="テーマ切り替え">
         <svg class="theme-icon-light" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3a1 1 0 011 1v1a1 1 0 11-2 0V4a1 1 0 011-1zm0 15a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm9-6a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5 12a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zm14.07-6.36a1 1 0 010 1.41l-.71.71a1 1 0 11-1.41-1.41l.71-.71a1 1 0 011.41 0zM7.05 16.95a1 1 0 010 1.41l-.71.71a1 1 0 11-1.41-1.41l.71-.71a1 1 0 011.41 0zm11.9 1.41a1 1 0 01-1.41 0l-.71-.71a1 1 0 111.41-1.41l.71.71a1 1 0 010 1.41zM7.05 7.05a1 1 0 01-1.41 0l-.71-.71a1 1 0 111.41-1.41l.71.71a1 1 0 010 1.41zM12 8a4 4 0 100 8 4 4 0 000-8z"/>
         </svg>
         <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
         </svg>
-      </button>
+        </button>
+      </div>
     </header>
 
     <!-- フローティングお気に入りボタン（右下） -->
@@ -314,12 +322,42 @@
 
   </div>
 
+  <!-- 検索シート（モーダル） -->
+  <div id="search-sheet" class="search-sheet">
+    <div class="search-sheet-backdrop"></div>
+    <div class="search-sheet-content">
+      <div class="search-sheet-header">
+        <div class="search-sheet-input-wrap">
+          <svg class="search-sheet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" id="search-sheet-input" class="search-sheet-input" placeholder="デッキ・用語を検索">
+          <button id="search-sheet-clear" class="search-sheet-clear" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
+            </svg>
+          </button>
+        </div>
+        <button id="search-sheet-cancel" class="search-sheet-cancel">キャンセル</button>
+      </div>
+      <div class="search-sheet-body">
+        <div id="search-sheet-initial" class="search-sheet-initial">
+          <!-- 初期表示：最近・候補 -->
+        </div>
+        <div id="search-sheet-results" class="search-sheet-results" style="display:none;">
+          <!-- 検索結果 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="js/data.js?v=20260110m"></script>
   <script src="js/search.js?v=20260110m"></script>
   <script src="js/favorites.js?v=20260110m"></script>
   <script src="js/kakomon.js?v=20260110m"></script>
-  <script src="js/flashcard.js?v=20260111q"></script>
-  <script src="js/app.js?v=20260111m"></script>
+  <script src="js/flashcard.js?v=20260111e"></script>
+  <script src="js/app.js?v=20260111e"></script>
 </body>
 </html>

@@ -48,6 +48,13 @@
     searchInput: document.getElementById('search-input'),
     closeSearch: document.getElementById('close-search'),
     searchResults: document.getElementById('search-results'),
+    // 検索シート
+    searchSheet: document.getElementById('search-sheet'),
+    searchSheetInput: document.getElementById('search-sheet-input'),
+    searchSheetClear: document.getElementById('search-sheet-clear'),
+    searchSheetCancel: document.getElementById('search-sheet-cancel'),
+    searchSheetInitial: document.getElementById('search-sheet-initial'),
+    searchSheetResults: document.getElementById('search-sheet-results'),
     tabs: document.querySelectorAll('.floating-tab'),
     htmlContent: document.getElementById('html-content'),
     htmlDisplay: document.getElementById('html-display'),
@@ -251,9 +258,14 @@
       });
     }
 
-    // 検索ボタン（ヘッダーにある場合）
+    // 検索ボタン（ヘッダー）→ 検索シートを開く
     if (elements.searchBtn) {
-      elements.searchBtn.addEventListener('click', openSearch);
+      elements.searchBtn.addEventListener('click', openSearchSheet);
+    }
+
+    // 検索シートのイベント
+    if (elements.searchSheet) {
+      setupSearchSheet();
     }
 
     // 検索オーバーレイを閉じる
@@ -623,7 +635,7 @@
   }
 
   /**
-   * 検索を開く
+   * 検索を開く（旧：サイドバー検索用）
    */
   function openSearch() {
     state.searchOpen = true;
@@ -634,12 +646,200 @@
   }
 
   /**
-   * 検索を閉じる
+   * 検索を閉じる（旧：サイドバー検索用）
    */
   function closeSearch() {
     state.searchOpen = false;
     elements.searchOverlay.classList.remove('show');
     elements.searchInput.value = '';
+  }
+
+  /**
+   * 検索シートのセットアップ
+   */
+  function setupSearchSheet() {
+    const backdrop = elements.searchSheet.querySelector('.search-sheet-backdrop');
+
+    // 背景タップで閉じる
+    backdrop.addEventListener('click', closeSearchSheet);
+
+    // キャンセルボタン
+    elements.searchSheetCancel.addEventListener('click', closeSearchSheet);
+
+    // クリアボタン
+    elements.searchSheetClear.addEventListener('click', () => {
+      elements.searchSheetInput.value = '';
+      elements.searchSheetClear.style.display = 'none';
+      renderSearchSheetInitial();
+      elements.searchSheetInput.focus();
+    });
+
+    // 入力イベント
+    let debounceTimer;
+    elements.searchSheetInput.addEventListener('input', (e) => {
+      const query = e.target.value;
+      elements.searchSheetClear.style.display = query ? 'flex' : 'none';
+
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        handleSearchSheet(query);
+      }, 150);
+    });
+
+    // Escapeで閉じる
+    elements.searchSheetInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeSearchSheet();
+      }
+    });
+
+    // 初期表示を準備
+    renderSearchSheetInitial();
+  }
+
+  /**
+   * 検索シートを開く
+   */
+  function openSearchSheet() {
+    elements.searchSheet.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // 少し遅延してフォーカス（アニメーション後）
+    setTimeout(() => {
+      elements.searchSheetInput.focus();
+    }, 100);
+
+    renderSearchSheetInitial();
+  }
+
+  /**
+   * 検索シートを閉じる
+   */
+  function closeSearchSheet() {
+    elements.searchSheet.classList.remove('open');
+    document.body.style.overflow = '';
+    elements.searchSheetInput.value = '';
+    elements.searchSheetClear.style.display = 'none';
+  }
+
+  /**
+   * 検索シートの初期表示（候補チップ）
+   */
+  function renderSearchSheetInitial() {
+    elements.searchSheetInitial.style.display = 'block';
+    elements.searchSheetResults.style.display = 'none';
+
+    // 最近の検索履歴
+    const recentSearches = JSON.parse(localStorage.getItem('studyViewer_recentSearches') || '[]');
+
+    // 候補キーワード（科目名から）
+    const subjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))].slice(0, 6);
+
+    let html = '';
+
+    if (recentSearches.length > 0) {
+      html += `
+        <div class="search-section-title">最近</div>
+        <div class="search-chips">
+          ${recentSearches.slice(0, 5).map(q => `<button class="search-chip" data-query="${escapeHtml(q)}">${escapeHtml(q)}</button>`).join('')}
+        </div>
+      `;
+    }
+
+    html += `
+      <div class="search-section-title">科目</div>
+      <div class="search-chips">
+        ${subjects.map(s => `<button class="search-chip" data-query="${escapeHtml(s)}">${escapeHtml(s)}</button>`).join('')}
+      </div>
+    `;
+
+    elements.searchSheetInitial.innerHTML = html;
+
+    // チップのクリックイベント
+    elements.searchSheetInitial.querySelectorAll('.search-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const query = chip.dataset.query;
+        elements.searchSheetInput.value = query;
+        elements.searchSheetClear.style.display = 'flex';
+        handleSearchSheet(query);
+      });
+    });
+  }
+
+  /**
+   * 検索シートの検索処理
+   */
+  function handleSearchSheet(query) {
+    if (!query || query.trim() === '') {
+      renderSearchSheetInitial();
+      return;
+    }
+
+    elements.searchSheetInitial.style.display = 'none';
+    elements.searchSheetResults.style.display = 'block';
+
+    // 検索履歴に追加
+    saveRecentSearch(query);
+
+    // 検索実行
+    const results = searchEngine.search(query);
+    // Q&AパスがあるものをQ&A演習用として表示
+    const qaResults = results.filter(item => item.qaPath);
+
+    if (qaResults.length === 0) {
+      elements.searchSheetResults.innerHTML = `
+        <div class="search-no-results">
+          <div class="search-no-results-icon">🔍</div>
+          <p>「${escapeHtml(query)}」に一致するデッキはありません</p>
+        </div>
+      `;
+      return;
+    }
+
+    let html = qaResults.slice(0, 20).map(item => {
+      const subject = item.subject || 'その他';
+      const title = item.title.replace(/^[ア-オ]_/, '');
+
+      return `
+        <div class="search-result-item" data-id="${item.id}">
+          <div class="search-result-info">
+            <div class="search-result-title">${escapeHtml(title)}</div>
+            <div class="search-result-meta">${escapeHtml(subject)}</div>
+          </div>
+          <span class="search-result-badge">開始</span>
+        </div>
+      `;
+    }).join('');
+
+    elements.searchSheetResults.innerHTML = html;
+
+    // 結果クリックでデッキ開始
+    elements.searchSheetResults.querySelectorAll('.search-result-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const id = item.dataset.id;
+        closeSearchSheet();
+
+        // フラッシュカードタブに切り替えてデッキを開始
+        switchTab('flashcard');
+        if (typeof FlashcardModule !== 'undefined' && FlashcardModule.startDeck) {
+          FlashcardModule.startDeck(id);
+        }
+      });
+    });
+  }
+
+  /**
+   * 最近の検索を保存
+   */
+  function saveRecentSearch(query) {
+    const key = 'studyViewer_recentSearches';
+    let recent = JSON.parse(localStorage.getItem(key) || '[]');
+    // 重複を除去して先頭に追加
+    recent = recent.filter(q => q !== query);
+    recent.unshift(query);
+    // 最大10件
+    recent = recent.slice(0, 10);
+    localStorage.setItem(key, JSON.stringify(recent));
   }
 
   /**

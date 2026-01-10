@@ -179,7 +179,45 @@ body {
   pointer-events: none;
 }
 
-/* テーマ切り替えボタン */
+/* ヘッダー右側のアクションボタン群 */
+.header-actions {
+  position: absolute;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 統一アイコンボタン（検索・テーマ共通） */
+.header-icon-btn {
+  background: rgba(0,0,0,0.05);
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header-icon-btn:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.header-icon-btn:active {
+  transform: scale(0.92);
+}
+
+.header-icon-btn svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-color);
+}
+
+/* テーマ切り替えボタン（後方互換） */
 .header-theme-btn {
   position: absolute;
   right: 16px;
@@ -3736,6 +3774,41 @@ body {
   display: block;
 }
 
+/* 検索トリガーボタン（入口群の後ろ） */
+.deck-search-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 16px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  color: var(--secondary-label);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.deck-search-trigger svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+
+.deck-search-trigger:active {
+  transform: scale(0.98);
+  background: var(--border-subtle);
+}
+
+[data-theme="dark"] .deck-search-trigger {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
 /* 検索モード全体 */
 .deck-search-mode {
   padding-top: 8px;
@@ -3846,82 +3919,226 @@ body {
   min-width: 45px;
 }
 
-/* B案: 今日のセッション ヒーローセクション */
-.deck-session-hero {
-  padding: 16px 0 20px;
-  margin-bottom: 0;
+/* ===== 演習デッキ入口（3カード統一デザイン） ===== */
+
+.deck-entries {
+  margin-bottom: 24px;
 }
 
-.deck-session-large-title {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text-color);
-  margin: 0 0 16px;
-  line-height: 1.2;
+.deck-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--secondary-label);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px 4px;
 }
 
-.deck-session-controls {
+/* 統一カードコンポーネント */
+.deck-entry-card {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
+  padding: 16px;
+  margin-bottom: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
 }
 
-.deck-session-sizes {
+.deck-entry-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 空状態（0件時）のカード */
+.deck-entry-card.empty-state {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.deck-entry-card.empty-state:active {
+  transform: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.deck-entry-desc.muted {
+  color: var(--tertiary-label);
+  font-style: italic;
+}
+
+.deck-entry-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.deck-entry-card.disabled:active {
+  transform: none;
+}
+
+.deck-entry-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.deck-entry-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.deck-entry-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.deck-entry-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.deck-entry-badge.recommend {
+  background: rgba(0, 122, 255, 0.12);
+  color: var(--system-blue);
+}
+
+.deck-entry-badge.again {
+  background: rgba(255, 149, 0, 0.15);
+  color: #e68600;
+}
+
+.deck-entry-badge.memorized {
+  background: rgba(48, 209, 88, 0.12);
+  color: #28a745;
+}
+
+.deck-entry-badge.empty {
+  background: var(--surface-alt);
+  color: var(--secondary-label);
+}
+
+.deck-entry-desc {
+  font-size: 13px;
+  color: var(--secondary-label);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* セッションサイズセグメント（今日のセッション用） */
+.deck-entry-sizes {
   display: flex;
   gap: 1px;
   background: rgba(118, 118, 128, 0.12);
-  border-radius: 9px;
+  border-radius: 8px;
   padding: 2px;
-  flex: 1;
-  max-width: 220px;
+  margin-top: 4px;
 }
 
-.deck-session-start {
-  padding: 10px 20px;
+.deck-entry-sizes .session-size-btn {
+  flex: 1;
+  padding: 6px 10px;
+  border: none;
+  background: transparent;
+  color: var(--secondary-label);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.deck-entry-sizes .session-size-btn.active {
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* CTAボタン */
+.deck-entry-cta {
+  padding: 10px 18px;
   background: var(--system-blue);
   color: white;
   border: none;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.1s ease, opacity 0.1s ease;
   -webkit-tap-highlight-color: transparent;
   flex-shrink: 0;
 }
 
-.deck-session-start:active {
+.deck-entry-cta:active {
   transform: scale(0.96);
   opacity: 0.9;
 }
 
-/* 統計行（カード型ボタン） */
-.deck-stats-row {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
+.deck-entry-cta:disabled {
+  background: var(--surface-alt);
+  color: var(--secondary-label);
+  cursor: not-allowed;
 }
 
-.deck-stat-item {
-  flex: 1;
-  min-height: 52px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  background: var(--surface);
+/* Primary CTA（今日のセッション） */
+.deck-entry-cta.primary {
+  background: var(--system-blue);
+  color: white;
+}
+
+/* Secondary CTA（復習・確認） */
+.deck-entry-cta.secondary {
+  background: var(--surface-alt);
+  color: var(--primary-label);
   border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.06);
-  transition: transform .12s ease, box-shadow .12s ease;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.deck-stat-item:active {
-  transform: translateY(0px);
-  box-shadow: 0 2px 8px rgba(0,0,0,.10);
+.deck-entry-cta.secondary:active {
+  background: var(--border-subtle);
+}
+
+/* 推奨カード（装飾なし、CTAのスタイル差のみで主役化） */
+.deck-entry-card.recommended {
+  /* 他カードと同じ見た目 */
+  margin-bottom: 16px; /* 他より少し広い余白で"見出し的"に */
+}
+
+/* ダークモード */
+[data-theme="dark"] .deck-entry-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .deck-entry-sizes {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .deck-entry-sizes .session-size-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .deck-entry-cta.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* recommended は装飾不要 */
+
+/* ===== 旧スタイル（後方互換性） ===== */
+
+/* 統計行（旧・非表示） */
+.deck-stats-row {
+  display: none;
 }
 
 .deck-stat-label {
@@ -4002,11 +4219,23 @@ body {
   background: #f5f5f5;
 }
 
-.deck-subject-name {
+.deck-subject-main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.deck-subject-name {
   font-size: 16px;
   font-weight: 600;
   color: var(--text-color);
+}
+
+.deck-subject-sub {
+  font-size: 12px;
+  color: var(--secondary-label);
+  font-weight: 400;
 }
 
 .deck-subject-right {
@@ -4054,6 +4283,15 @@ body {
   font-weight: 500;
   color: var(--system-orange);
   background: rgba(255, 149, 0, 0.1);
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.deck-subject-unlearned {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--tertiary-label);
+  background: var(--surface-alt);
   padding: 3px 8px;
   border-radius: 10px;
 }
@@ -6363,4 +6601,248 @@ body.is-practice .tab-content {
 /* ダークモード対応 */
 [data-theme="dark"] .deck-result-title .highlight {
   background: rgba(255, 204, 0, 0.2);
+}
+
+/* ===== 検索シート ===== */
+.search-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.search-sheet.open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.search-sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.search-sheet-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 85vh;
+  background: var(--surface);
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.search-sheet.open .search-sheet-content {
+  transform: translateY(0);
+}
+
+.search-sheet-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.search-sheet-input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-alt);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.search-sheet-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--secondary-label);
+  flex-shrink: 0;
+}
+
+.search-sheet-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: var(--label);
+  outline: none;
+}
+
+.search-sheet-input::placeholder {
+  color: var(--tertiary-label);
+}
+
+.search-sheet-clear {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--tertiary-label);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-sheet-clear svg {
+  width: 18px;
+  height: 18px;
+}
+
+.search-sheet-cancel {
+  border: none;
+  background: transparent;
+  color: var(--system-blue);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px;
+  margin: -8px;
+  white-space: nowrap;
+}
+
+.search-sheet-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px;
+}
+
+/* 初期表示（最近・候補） */
+.search-sheet-initial {
+  /* スタイルは後で追加 */
+}
+
+.search-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.search-chip {
+  padding: 8px 14px;
+  background: var(--surface-alt);
+  border: none;
+  border-radius: 16px;
+  font-size: 14px;
+  color: var(--label);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.search-chip:active {
+  background: var(--border-subtle);
+}
+
+.search-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary-label);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+/* 検索結果 */
+.search-sheet-results {
+  /* 結果表示エリア */
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+}
+
+.search-result-item:active {
+  background: var(--surface-alt);
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.search-result-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-result-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--label);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-result-meta {
+  font-size: 13px;
+  color: var(--secondary-label);
+}
+
+.search-result-badge {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--system-blue);
+  background: rgba(10, 132, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.search-no-results {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--secondary-label);
+}
+
+.search-no-results-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+/* ダークモード */
+[data-theme="dark"] .search-sheet-backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .header-icon-btn {
+  background: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .header-icon-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .search-sheet-backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  :root:not([data-theme="light"]) .header-icon-btn {
+    background: rgba(255,255,255,0.1);
+  }
+
+  :root:not([data-theme="light"]) .header-icon-btn:hover {
+    background: rgba(255,255,255,0.15);
+  }
 }

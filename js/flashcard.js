@@ -1272,12 +1272,33 @@ const FlashcardModule = (function() {
     // 特に処理なし
   }
 
+  /**
+   * 外部からデッキを指定して演習を開始
+   */
+  async function startDeck(topicId) {
+    const topic = DATA.find(d => d.id === topicId);
+    if (!topic || !topic.qaPath) return;
+
+    // 演習モードに入る
+    state.isActive = true;
+    state.isReviewMode = false;
+    state.currentIndex = 0;
+
+    // トピックを読み込み
+    await loadTopic(topicId, state.shuffleEnabled);
+
+    // 演習画面をレンダリング
+    renderCard();
+    enterPracticeMode();
+  }
+
   // === 公開API ===
   return {
     init,
     show,
     hide,
     loadTopic,
+    startDeck,
     next,
     prev,
     flip,

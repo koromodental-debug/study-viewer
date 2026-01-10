@@ -5,7 +5,7 @@
   // 状態管理
   const state = {
     currentItem: null,
-    currentTab: 'html',
+    currentTab: localStorage.getItem('studyViewer_lastTab') || 'flashcard',
     searchQuery: '',
     highlightQuery: null,  // 検索結果からジャンプ時のハイライト用
     collapsedCategories: new Set(),
@@ -48,12 +48,12 @@
     searchResults: document.getElementById('search-results'),
     tabs: document.querySelectorAll('.floating-tab'),
     htmlContent: document.getElementById('html-content'),
-    qaContent: document.getElementById('qa-content'),
+    searchContent: document.getElementById('search-content'),
     htmlDisplay: document.getElementById('html-display'),
-    qaDisplay: document.getElementById('qa-display'),
-    qaToolbar: document.getElementById('qa-toolbar'),
-    qaToggleBtn: document.getElementById('qa-toggle-btn'),
-    qaFloatingToggle: document.getElementById('qa-floating-toggle'),
+    // デッキ検索（新検索タブ）
+    deckSearchInput: document.getElementById('deck-search-input'),
+    deckSearchResults: document.getElementById('search-results'),
+    searchClearBtn: document.getElementById('search-clear-btn'),
     welcomeScreen: document.getElementById('welcome-screen'),
     welcomeStartBtn: document.getElementById('welcome-start-btn'),
     welcomeCardMenu: document.getElementById('welcome-card-menu'),
@@ -131,6 +131,13 @@
 
     // テーマ切り替え機能の初期化
     initThemeToggle();
+
+    // デッキ検索機能の初期化
+    initDeckSearch();
+
+    // 初期タブの設定（前回のタブを復元）
+    const initialTab = state.currentTab;
+    switchTab(initialTab);
   }
 
   /**
@@ -164,6 +171,137 @@
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('studyViewer_theme', newTheme);
     });
+  }
+
+  /**
+   * デッキ検索機能の初期化
+   */
+  function initDeckSearch() {
+    const input = elements.deckSearchInput;
+    const resultsContainer = elements.deckSearchResults;
+    const clearBtn = elements.searchClearBtn;
+
+    if (!input || !resultsContainer) return;
+
+    let debounceTimer = null;
+
+    // 入力イベント
+    input.addEventListener('input', function() {
+      const query = this.value.trim();
+
+      // クリアボタンの表示制御
+      if (clearBtn) {
+        clearBtn.style.display = query ? 'flex' : 'none';
+      }
+
+      // デバウンス（150ms）
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        renderDeckSearchResults(query);
+      }, 150);
+    });
+
+    // クリアボタン
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function() {
+        input.value = '';
+        clearBtn.style.display = 'none';
+        renderDeckSearchResults('');
+        input.focus();
+      });
+    }
+
+    // Enterキーで最初の結果を選択
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const firstResult = resultsContainer.querySelector('.deck-search-result');
+        if (firstResult) {
+          firstResult.click();
+        }
+      }
+    });
+  }
+
+  /**
+   * デッキ検索結果をレンダリング
+   */
+  function renderDeckSearchResults(query) {
+    const resultsContainer = elements.deckSearchResults;
+    if (!resultsContainer) return;
+
+    if (!query) {
+      resultsContainer.innerHTML = `
+        <div class="search-placeholder">
+          <p>キーワードを入力してデッキを検索</p>
+        </div>
+      `;
+      return;
+    }
+
+    // 検索実行（既存のSearchEngineを使用）
+    const results = searchEngine.search(query);
+
+    // qaPathがあるもの（フラッシュカード対応デッキ）のみフィルタ
+    const deckResults = results.filter(item => item.qaPath);
+
+    if (deckResults.length === 0) {
+      resultsContainer.innerHTML = `
+        <div class="search-placeholder">
+          <p>「${escapeHtml(query)}」に一致するデッキはありません</p>
+        </div>
+      `;
+      return;
+    }
+
+    // 結果をレンダリング
+    const html = deckResults.map(item => {
+      const subject = item.subject || 'その他';
+      const title = item.title.replace(/^[ア-オ]_/, '');
+
+      // ヒット数をカウント（簡易的にsearchText内の出現回数）
+      const searchText = (item.searchText || '').toLowerCase();
+      const queryLower = query.toLowerCase();
+      const hitCount = (searchText.match(new RegExp(queryLower, 'g')) || []).length;
+
+      return `
+        <div class="deck-search-result" data-id="${item.id}">
+          <div class="deck-result-info">
+            <div class="deck-result-subject">${escapeHtml(subject)}</div>
+            <div class="deck-result-title">${searchEngine.highlight(title, query)}</div>
+          </div>
+          <div class="deck-result-action">
+            ${hitCount > 0 ? `<span class="deck-hit-count">${hitCount}件</span>` : ''}
+            <button class="deck-start-btn">演習</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    resultsContainer.innerHTML = html;
+
+    // クリックイベントを設定
+    resultsContainer.querySelectorAll('.deck-search-result').forEach(el => {
+      el.addEventListener('click', function() {
+        const id = this.dataset.id;
+        const item = DATA.find(d => d.id === id);
+        if (item && typeof FlashcardModule !== 'undefined') {
+          // フラッシュカードの演習を開始
+          switchTab('flashcard');
+          setTimeout(() => {
+            FlashcardModule.startDeck(item.id);
+          }, 100);
+        }
+      });
+    });
+  }
+
+  /**
+   * HTMLエスケープ
+   */
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
   }
 
   /**
@@ -371,7 +509,7 @@
       isEdgeSwipe = false;
 
       // 横方向の移動が縦より大きく、閾値を超えた場合（4タブ対応）
-      const tabOrder = ['html', 'qa', 'kakomon', 'flashcard'];
+      const tabOrder = ['flashcard', 'html', 'kakomon', 'search'];
       if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
         const currentIndex = tabOrder.indexOf(state.currentTab);
         if (diffX < 0 && currentIndex < tabOrder.length - 1) {
@@ -419,7 +557,7 @@
           isEdgeSwipe = false;
 
           // 4タブ対応
-          const tabOrder = ['html', 'qa', 'kakomon', 'flashcard'];
+          const tabOrder = ['flashcard', 'html', 'kakomon', 'search'];
           if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
             const currentIndex = tabOrder.indexOf(state.currentTab);
             if (diffX < 0 && currentIndex < tabOrder.length - 1) {
@@ -2945,22 +3083,23 @@
     let currentTopicId = null;
     let currentSection = null;
 
-    if (prevTab === 'qa') {
-      currentTopicId = getCurrentQATopicId();
-      currentSection = getCurrentQASection();
-    } else if (prevTab === 'html') {
+    if (prevTab === 'html') {
       currentTopicId = getCurrentHTMLTopicId();
       currentSection = getCurrentHTMLSection();
     }
 
     state.currentTab = tab;
+    // 前回のタブを保存
+    localStorage.setItem('studyViewer_lastTab', tab);
 
     elements.tabs.forEach(t => {
       t.classList.toggle('active', t.dataset.tab === tab);
     });
 
     elements.htmlContent.classList.toggle('active', tab === 'html');
-    elements.qaContent.classList.toggle('active', tab === 'qa');
+    if (elements.searchContent) {
+      elements.searchContent.classList.toggle('active', tab === 'search');
+    }
     if (elements.kakomonContent) {
       elements.kakomonContent.classList.toggle('active', tab === 'kakomon');
     }
@@ -2971,9 +3110,9 @@
       }
     }
 
-    // Q&Aフローティングトグルボタンの表示制御
-    if (elements.qaFloatingToggle) {
-      elements.qaFloatingToggle.classList.toggle('show', tab === 'qa');
+    // 検索タブに切り替えたら入力にフォーカス
+    if (tab === 'search' && elements.deckSearchInput) {
+      setTimeout(() => elements.deckSearchInput.focus(), 100);
     }
 
     // 新しいタブにスクロール（トピックID優先、セクション名、最後にトップ）
@@ -2982,26 +3121,20 @@
       let scrolled = false;
 
       // まずトピックIDでスクロールを試みる（存在しなければ読み込む）
-      if (tab === 'qa' && currentTopicId) {
-        scrolled = await scrollToQATopic(currentTopicId);
-      } else if (tab === 'html' && currentTopicId) {
+      if (tab === 'html' && currentTopicId) {
         scrolled = await scrollToHTMLTopic(currentTopicId);
       }
 
       // トピックが見つからなければセクション名で試みる
       if (!scrolled && currentSection) {
-        if (tab === 'qa') {
-          scrolled = scrollToQASection(currentSection);
-        } else if (tab === 'html') {
+        if (tab === 'html') {
           scrolled = scrollToHTMLSection(currentSection);
         }
       }
 
       // それでも見つからなければトップにスクロール
       if (!scrolled) {
-        if (tab === 'qa') {
-          elements.qaContent.scrollTop = 0;
-        } else if (tab === 'html') {
+        if (tab === 'html') {
           elements.htmlContent.scrollTop = 0;
         }
       }

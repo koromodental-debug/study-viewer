@@ -5346,3 +5346,175 @@ body.is-practice .tab-content {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ===== デッキ検索タブ ===== */
+
+#search-content {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.search-container {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 0 16px;
+  transition: all 0.2s ease;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #007AFF;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.search-input-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.deck-search-input {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 14px 12px;
+  font-size: 16px;
+  color: var(--text-color);
+  outline: none;
+}
+
+.deck-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: var(--bg-tertiary);
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.search-clear-btn svg {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+}
+
+.search-results {
+  margin-top: 16px;
+}
+
+.search-placeholder {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--text-muted);
+}
+
+.search-placeholder p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* 検索結果のデッキカード */
+.deck-search-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deck-search-result:hover {
+  border-color: #007AFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.deck-search-result:active {
+  transform: scale(0.98);
+}
+
+.deck-result-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.deck-result-subject {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.deck-result-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deck-result-title .highlight {
+  background: rgba(255, 204, 0, 0.3);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.deck-result-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.deck-hit-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.deck-start-btn {
+  padding: 8px 16px;
+  background: #007AFF;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deck-start-btn:hover {
+  background: #0056CC;
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .deck-result-title .highlight {
+  background: rgba(255, 204, 0, 0.2);
+}

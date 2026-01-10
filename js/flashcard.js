@@ -134,29 +134,7 @@ const FlashcardModule = (function() {
 
     container.innerHTML = `
       <div class="deck-list">
-        <div class="deck-header">
-          <h2>フラッシュカード</h2>
-        </div>
-
-        <!-- 検索バー（常時表示） -->
-        <div class="deck-search-wrapper">
-          <div class="deck-search-bar">
-            <svg class="deck-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="M21 21l-4.35-4.35"/>
-            </svg>
-            <input type="text" id="deck-inline-search" class="deck-search-input"
-                   placeholder="キーワードでデッキ検索" value="${escapeHtml(state.searchQuery)}">
-            <button id="deck-search-clear" class="deck-search-clear" style="display:${isSearchMode ? 'flex' : 'none'};">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-              </svg>
-            </button>
-          </div>
-          <button id="deck-search-cancel" class="deck-search-cancel">キャンセル</button>
-        </div>
-
-        ${isSearchMode ? renderSearchResults(searchResults) : renderDeckHome(overall, subjects)}
+        ${isSearchMode ? renderSearchMode(searchResults) : renderDeckHome(overall, subjects)}
       </div>
     `;
 
@@ -203,33 +181,77 @@ const FlashcardModule = (function() {
   // 通常のデッキホームをレンダリング
   function renderDeckHome(overall, subjects) {
     return `
-      <div class="deck-session-card">
-        <div class="deck-session-header">
-          <span class="deck-session-title">今日のセッション</span>
+      <!-- B案: 今日のセッションを主役に -->
+      <div class="deck-session-hero">
+        <h1 class="deck-session-large-title">今日のセッション</h1>
+        <div class="deck-session-controls">
+          <div class="deck-session-sizes">
+            <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5">5問</button>
+            <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10">10問</button>
+            <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20">20問</button>
+          </div>
           <button class="deck-session-start" id="start-recommended-deck">練習</button>
         </div>
-        <div class="deck-session-sizes">
-          <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5">5問</button>
-          <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10">10問</button>
-          <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20">20問</button>
+      </div>
+
+      <!-- 検索バー（控えめ） -->
+      <div class="deck-search-wrapper">
+        <div class="deck-search-bar">
+          <svg class="deck-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" id="deck-inline-search" class="deck-search-input"
+                 placeholder="デッキを検索" value="">
+          <button id="deck-search-clear" class="deck-search-clear" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </button>
         </div>
+        <button id="deck-search-cancel" class="deck-search-cancel">キャンセル</button>
       </div>
 
       <div class="deck-stats-row">
         <div class="deck-stat-item ${overall.memorized > 0 ? 'clickable' : ''}" id="start-memorized-deck">
           <span class="deck-stat-label">覚えた</span>
           <span class="deck-stat-value memorized">${overall.memorized}</span>
-          ${overall.memorized > 0 ? '<span class="deck-stat-action">練習</span>' : ''}
+          ${overall.memorized > 0 ? '<span class="deck-stat-action">練習 ›</span>' : ''}
         </div>
         <div class="deck-stat-item ${overall.again > 0 ? 'clickable' : ''}" id="start-again-deck">
           <span class="deck-stat-label">もう一度</span>
           <span class="deck-stat-value again">${overall.again}</span>
-          ${overall.again > 0 ? '<span class="deck-stat-action">練習</span>' : ''}
+          ${overall.again > 0 ? '<span class="deck-stat-action">練習 ›</span>' : ''}
         </div>
       </div>
 
       <div class="deck-subjects" id="deck-subjects">
         ${subjects.map(subject => renderSubjectRow(subject)).join('')}
+      </div>
+    `;
+  }
+
+  // 検索モードの表示
+  function renderSearchMode(searchResults) {
+    return `
+      <div class="deck-search-mode">
+        <div class="deck-search-wrapper active">
+          <div class="deck-search-bar">
+            <svg class="deck-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" id="deck-inline-search" class="deck-search-input"
+                   placeholder="デッキを検索" value="${escapeHtml(state.searchQuery)}" autofocus>
+            <button id="deck-search-clear" class="deck-search-clear" style="display:flex;">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
+          </div>
+          <button id="deck-search-cancel" class="deck-search-cancel">キャンセル</button>
+        </div>
+        ${renderSearchResults(searchResults)}
       </div>
     `;
   }
@@ -778,21 +800,22 @@ const FlashcardModule = (function() {
           </div>
         </div>
 
-        <!-- アクションバー（画面下固定） -->
-        <div class="flashcard-action-bar ${state.isFlipped ? 'show' : ''}">
-          <button class="flashcard-btn again" id="flashcard-again-btn">
-            もう一度
-          </button>
-          <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
-            覚えた
-          </button>
-        </div>
+      </div>
 
-        <!-- Undoスナックバー -->
-        <div class="flashcard-snackbar" id="flashcard-snackbar">
-          <span class="snackbar-message" id="snackbar-message"></span>
-          <button class="snackbar-undo" id="flashcard-undo-btn">元に戻す</button>
-        </div>
+      <!-- アクションバー（iOS Safari対応のため.flashcard-exerciseの外に配置） -->
+      <div class="flashcard-action-bar ${state.isFlipped ? 'show' : ''}">
+        <button class="flashcard-btn again" id="flashcard-again-btn">
+          もう一度
+        </button>
+        <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
+          覚えた
+        </button>
+      </div>
+
+      <!-- Undoスナックバー -->
+      <div class="flashcard-snackbar" id="flashcard-snackbar">
+        <span class="snackbar-message" id="snackbar-message"></span>
+        <button class="snackbar-undo" id="flashcard-undo-btn">元に戻す</button>
       </div>
     `;
 

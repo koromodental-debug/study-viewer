@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=20260111t">
+  <link rel="stylesheet" href="css/style.css?v=20260111aa">
 </head>
 <body>
   <div class="app">
@@ -112,6 +112,91 @@
       <img id="lightbox-image" src="" alt="">
       <p class="lightbox-close-hint">どこかをタップして閉じる</p>
     </div>
+
+    <!-- 目次シート -->
+    <div id="toc-overlay" class="toc-overlay">
+      <div class="toc-sheet">
+        <div class="toc-sheet-header">
+          <button id="toc-back-btn" class="toc-back-btn" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>元の位置</span>
+          </button>
+          <h3 class="toc-sheet-title">目次</h3>
+          <button id="toc-close-btn" class="toc-close-btn" aria-label="閉じる">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="toc-search-wrapper">
+          <input type="text" id="toc-search-input" class="toc-search-input" placeholder="見出しを検索...">
+        </div>
+        <div class="toc-list" id="toc-list">
+          <!-- 動的に生成 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- フローティング目次ボタン -->
+    <button id="toc-fab" class="toc-fab" aria-label="目次" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+      </svg>
+    </button>
+
+    <!-- 読書モード（Aa）ボタン -->
+    <button id="reading-mode-btn" class="reading-mode-btn" aria-label="表示設定" style="display:none;">
+      <span>Aa</span>
+    </button>
+
+    <!-- 読書モードメニュー -->
+    <div id="reading-mode-overlay" class="reading-mode-overlay">
+      <div class="reading-mode-sheet">
+        <div class="reading-mode-header">
+          <h3>表示設定</h3>
+          <button id="reading-mode-close" class="reading-mode-close" aria-label="閉じる">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="reading-mode-section">
+          <div class="reading-mode-label">文字サイズ</div>
+          <div class="reading-mode-font-controls">
+            <button id="font-decrease" class="font-btn">A−</button>
+            <span id="font-size-display" class="font-size-display">標準</span>
+            <button id="font-increase" class="font-btn">A+</button>
+          </div>
+        </div>
+
+        <div class="reading-mode-section">
+          <div class="reading-mode-label">行間</div>
+          <div class="reading-mode-toggle-group">
+            <button class="reading-toggle" data-line-height="compact">狭い</button>
+            <button class="reading-toggle active" data-line-height="normal">標準</button>
+            <button class="reading-toggle" data-line-height="wide">広い</button>
+          </div>
+        </div>
+
+        <div class="reading-mode-section">
+          <div class="reading-mode-label">表示密度</div>
+          <div class="reading-mode-toggle-group">
+            <button class="reading-toggle" data-density="compact">コンパクト</button>
+            <button class="reading-toggle active" data-density="normal">標準</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 前の見出しへボタン -->
+    <button id="prev-heading-btn" class="prev-heading-btn" aria-label="前の見出しへ" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
 
     <!-- メインコンテンツ -->
     <main class="main-content">
@@ -234,7 +319,7 @@
   <script src="js/search.js?v=20260110m"></script>
   <script src="js/favorites.js?v=20260110m"></script>
   <script src="js/kakomon.js?v=20260110m"></script>
-  <script src="js/flashcard.js?v=20260111o"></script>
-  <script src="js/app.js?v=20260111f"></script>
+  <script src="js/flashcard.js?v=20260111q"></script>
+  <script src="js/app.js?v=20260111m"></script>
 </body>
 </html>

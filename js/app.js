@@ -81,7 +81,39 @@
     // 画像ライトボックス
     imageLightbox: document.getElementById('image-lightbox'),
     lightboxImage: document.getElementById('lightbox-image'),
-    lightboxClose: document.getElementById('lightbox-close')
+    lightboxClose: document.getElementById('lightbox-close'),
+    // 目次
+    tocOverlay: document.getElementById('toc-overlay'),
+    tocList: document.getElementById('toc-list'),
+    tocCloseBtn: document.getElementById('toc-close-btn'),
+    tocBackBtn: document.getElementById('toc-back-btn'),
+    tocSearchInput: document.getElementById('toc-search-input'),
+    tocFab: document.getElementById('toc-fab'),
+    prevHeadingBtn: document.getElementById('prev-heading-btn'),
+    // 読書モード
+    readingModeBtn: document.getElementById('reading-mode-btn'),
+    readingModeOverlay: document.getElementById('reading-mode-overlay'),
+    readingModeClose: document.getElementById('reading-mode-close'),
+    fontDecrease: document.getElementById('font-decrease'),
+    fontIncrease: document.getElementById('font-increase'),
+    fontSizeDisplay: document.getElementById('font-size-display')
+  };
+
+  // 目次の状態管理
+  const tocState = {
+    headings: [],           // 見出し要素の配列
+    currentHeadingIndex: 0, // 現在の見出しインデックス
+    previousScrollY: null,  // ジャンプ前のスクロール位置
+    observer: null          // IntersectionObserver
+  };
+
+  // 読書モードの状態管理
+  const FONT_SIZES = ['small', 'medium', 'large', 'xlarge'];
+  const FONT_LABELS = { small: '小', medium: '標準', large: '大', xlarge: '特大' };
+  const readingState = {
+    fontSize: localStorage.getItem('reading-font-size') || 'medium',
+    lineHeight: localStorage.getItem('reading-line-height') || 'normal',
+    density: localStorage.getItem('reading-density') || 'normal'
   };
 
   // 検索エンジン
@@ -138,6 +170,9 @@
     // 初期タブの設定（前回のタブを復元）
     const initialTab = state.currentTab;
     switchTab(initialTab);
+
+    // スクロール履歴管理の初期化
+    initScrollHistory();
   }
 
   /**
@@ -1196,6 +1231,12 @@
         injectFavoriteButtonsToSection(section, item);
       });
 
+      // 過去問カードの折りたたみ・画像遅延読み込み初期化（新規コンテンツ）
+      requestAnimationFrame(() => {
+        initQuestionCards();
+        initLazyImages();
+      });
+
       // 検索からのジャンプ時：該当箇所をハイライト＆スクロール
       if (isFirst && state.highlightQuery) {
         setTimeout(() => {
@@ -1236,6 +1277,12 @@
         injectFavoriteButtonsToSection(section, item);
       });
 
+      // 過去問カードの折りたたみ・画像遅延読み込み初期化（新規コンテンツ）
+      requestAnimationFrame(() => {
+        initQuestionCards();
+        initLazyImages();
+      });
+
     } catch (e) {
       console.log('トピックHTML読み込みエラー:', e);
     }
@@ -1258,6 +1305,15 @@
     `;
     section.appendChild(header);
 
+    // ラージタイトル（iOS風）を追加
+    const largeTitle = document.createElement('div');
+    largeTitle.className = 'topic-section-large-title';
+    largeTitle.innerHTML = `<h2>${escapeHtml(item.title || item.id)}</h2>`;
+    section.appendChild(largeTitle);
+
+    // スクロール監視（ラージタイトルが見えなくなったらヘッダーにタイトル表示）
+    setupLargeTitleObserver(header, largeTitle);
+
     // コンテンツを追加
     const content = document.createElement('div');
     content.className = 'topic-section-content';
@@ -1276,6 +1332,34 @@
     });
 
     return section;
+  }
+
+  /**
+   * ラージタイトルのスクロール監視をセットアップ
+   */
+  function setupLargeTitleObserver(header, largeTitle) {
+    // ヘッダーの高さ分をrootMarginで調整
+    const headerHeight = 56; // ヘッダーの高さ（--header-offset）
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // ラージタイトルが見えている→ナビのタイトルを隠す
+            header.classList.remove('scrolled');
+            largeTitle.classList.remove('hidden');
+          } else {
+            // ラージタイトルが見えない→ナビにタイトルを表示
+            header.classList.add('scrolled');
+            largeTitle.classList.add('hidden');
+          }
+        });
+      },
+      {
+        rootMargin: `-${headerHeight + 44}px 0px 0px 0px`,
+        threshold: 0
+      }
+    );
+    observer.observe(largeTitle);
   }
 
   /**
@@ -2944,9 +3028,19 @@
 
   /**
    * タブを切り替え
+   * @param {string} tab - 切り替え先のタブ
+   * @param {boolean} skipHistory - trueの場合、履歴にpushしない（popstate時）
    */
-  function switchTab(tab) {
+  function switchTab(tab, skipHistory = false) {
     const prevTab = state.currentTab;
+
+    // 同じタブなら何もしない（初期化済みの場合のみ）
+    if (prevTab === tab && scrollHistory.initialized) return;
+
+    // 履歴にpush（popstate以外かつ初期化済みの場合）
+    if (!skipHistory && scrollHistory.initialized) {
+      pushScrollState(tab);
+    }
 
     // 切り替え前のトピックIDとセクション名を取得
     let currentTopicId = null;
@@ -2979,6 +3073,22 @@
     // 演習タブではお気に入りボタンを非表示
     if (elements.noteBtn) {
       elements.noteBtn.style.display = (tab === 'flashcard') ? 'none' : 'flex';
+    }
+
+    // 目次・読書モード機能の切り替え
+    if (tab === 'html') {
+      // まとめタブに切り替えたら目次・読書モード・過去問カード・画像遅延読み込みを初期化
+      setTimeout(() => {
+        initTOC();
+        initReadingMode();
+        initQuestionCards();
+        initLazyImages();
+      }, 100);
+    } else if (prevTab === 'html') {
+      // まとめタブから離れたらクリーンアップ
+      cleanupTOC();
+      cleanupReadingMode();
+      cleanupLazyImages();
     }
 
     // 新しいタブにスクロール（トピックID優先、セクション名、最後にトップ）
@@ -3549,6 +3659,781 @@
     updateNoteBadge: updateNoteBadge,
     renderNoteTimeline: renderNoteTimeline
   };
+
+  // ===== 目次機能 =====
+
+  /**
+   * 目次を初期化（まとめタブ表示時）
+   */
+  function initTOC() {
+    if (!elements.htmlDisplay) return;
+
+    // 見出しを収集
+    const headings = elements.htmlDisplay.querySelectorAll('h1, h2, h3');
+    tocState.headings = Array.from(headings).map((h, i) => {
+      h.dataset.tocIndex = i;
+      return {
+        element: h,
+        text: h.textContent.trim(),
+        level: parseInt(h.tagName.charAt(1))
+      };
+    });
+
+    if (tocState.headings.length === 0) {
+      hideTOCButtons();
+      return;
+    }
+
+    // 目次ボタンを表示
+    showTOCButtons();
+
+    // IntersectionObserverをセットアップ
+    setupTOCObserver();
+
+    // 目次リストを構築
+    buildTOCList();
+
+    // イベントをバインド
+    bindTOCEvents();
+  }
+
+  /**
+   * 目次ボタンを表示
+   */
+  function showTOCButtons() {
+    if (elements.tocFab) elements.tocFab.style.display = 'flex';
+    if (elements.prevHeadingBtn) elements.prevHeadingBtn.style.display = 'flex';
+  }
+
+  /**
+   * 目次ボタンを非表示
+   */
+  function hideTOCButtons() {
+    if (elements.tocFab) elements.tocFab.style.display = 'none';
+    if (elements.prevHeadingBtn) elements.prevHeadingBtn.style.display = 'none';
+  }
+
+  /**
+   * IntersectionObserverで現在の見出しを追跡
+   */
+  function setupTOCObserver() {
+    // 既存のオブザーバーをクリア
+    if (tocState.observer) {
+      tocState.observer.disconnect();
+    }
+
+    const headerHeight = 56 + 44; // ヘッダー + 余裕
+
+    tocState.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.dataset.tocIndex);
+            if (!isNaN(index)) {
+              tocState.currentHeadingIndex = index;
+              updateTOCHighlight(index);
+            }
+          }
+        });
+      },
+      {
+        rootMargin: `-${headerHeight}px 0px -60% 0px`,
+        threshold: 0
+      }
+    );
+
+    // 見出しを監視
+    tocState.headings.forEach(h => {
+      tocState.observer.observe(h.element);
+    });
+  }
+
+  /**
+   * 目次リストを構築
+   */
+  function buildTOCList(filter = '') {
+    if (!elements.tocList) return;
+
+    const filterLower = filter.toLowerCase();
+
+    // 全トピックをDATAから取得（htmlPathがあるもののみ）
+    const allTopics = DATA.filter(item => item.htmlPath);
+
+    // 科目でグループ化
+    const topicsBySubject = {};
+    allTopics.forEach(item => {
+      const subject = item.subject || 'その他';
+      if (!topicsBySubject[subject]) {
+        topicsBySubject[subject] = [];
+      }
+      topicsBySubject[subject].push(item);
+    });
+
+    // 現在表示中のトピックIDを取得
+    const currentTopicId = getCurrentHTMLTopicId();
+
+    // HTMLを構築
+    let html = '';
+    Object.entries(topicsBySubject).forEach(([subject, topics]) => {
+      // フィルタ適用
+      const filteredTopics = topics.filter(t =>
+        !filter || t.title.toLowerCase().includes(filterLower) || subject.toLowerCase().includes(filterLower)
+      );
+
+      if (filteredTopics.length === 0) return;
+
+      // 科目ヘッダー
+      html += `<div class="toc-subject-header">${escapeHtml(subject)}</div>`;
+
+      // トピック一覧
+      filteredTopics.forEach(topic => {
+        const isCurrent = topic.id === currentTopicId;
+        const isLoaded = elements.htmlDisplay?.querySelector(`.topic-section[data-topic-id="${topic.id}"]`);
+
+        html += `
+          <button class="toc-item toc-topic-item ${isCurrent ? 'current' : ''} ${isLoaded ? 'loaded' : ''}" data-topic-id="${topic.id}">
+            <span class="toc-item-indicator"></span>
+            <span class="toc-item-text">${escapeHtml(topic.title)}</span>
+          </button>
+        `;
+
+        // 読み込み済みトピックの見出しを表示
+        if (isLoaded) {
+          const section = elements.htmlDisplay.querySelector(`.topic-section[data-topic-id="${topic.id}"]`);
+          const headings = section?.querySelectorAll('h2, h3') || [];
+          headings.forEach(h => {
+            const headingIndex = tocState.headings.findIndex(th => th.element === h);
+            const isHeadingCurrent = headingIndex === tocState.currentHeadingIndex;
+            const level = parseInt(h.tagName.charAt(1));
+
+            if (!filter || h.textContent.toLowerCase().includes(filterLower)) {
+              html += `
+                <button class="toc-item level-${level} ${isHeadingCurrent ? 'current' : ''}" data-index="${headingIndex}">
+                  <span class="toc-item-indicator"></span>
+                  <span class="toc-item-text">${escapeHtml(h.textContent.trim())}</span>
+                </button>
+              `;
+            }
+          });
+        }
+      });
+    });
+
+    if (html === '') {
+      elements.tocList.innerHTML = `<div class="toc-empty">一致する見出しがありません</div>`;
+    } else {
+      elements.tocList.innerHTML = html;
+    }
+  }
+
+  /**
+   * 目次のハイライトを更新
+   */
+  function updateTOCHighlight(index) {
+    if (!elements.tocList) return;
+
+    const items = elements.tocList.querySelectorAll('.toc-item');
+    items.forEach(item => {
+      const itemIndex = parseInt(item.dataset.index);
+      if (itemIndex === index) {
+        item.classList.add('current');
+      } else {
+        item.classList.remove('current');
+      }
+    });
+  }
+
+  /**
+   * 目次シートを開く
+   */
+  function openTOC() {
+    if (!elements.tocOverlay) return;
+
+    // 現在のスクロール位置を記録
+    tocState.previousScrollY = window.scrollY;
+
+    // 「元の位置へ」ボタンを隠す（まだジャンプしていない）
+    if (elements.tocBackBtn) {
+      elements.tocBackBtn.style.display = 'none';
+    }
+
+    // 目次リストを再構築（現在位置のハイライト付き）
+    buildTOCList(elements.tocSearchInput?.value || '');
+
+    // シートを開く
+    elements.tocOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // 現在の見出しまでスクロール
+    setTimeout(() => {
+      const currentItem = elements.tocList?.querySelector('.toc-item.current');
+      if (currentItem) {
+        currentItem.scrollIntoView({ block: 'center', behavior: 'instant' });
+      }
+    }, 100);
+  }
+
+  /**
+   * 目次シートを閉じる
+   */
+  function closeTOC() {
+    if (!elements.tocOverlay) return;
+
+    elements.tocOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+
+    // 検索をクリア
+    if (elements.tocSearchInput) {
+      elements.tocSearchInput.value = '';
+    }
+  }
+
+  /**
+   * 見出しへジャンプ
+   */
+  function jumpToHeading(index) {
+    if (index < 0 || index >= tocState.headings.length) return;
+
+    const heading = tocState.headings[index];
+    if (!heading || !heading.element) return;
+
+    // ジャンプ前の位置を保存
+    tocState.previousScrollY = window.scrollY;
+
+    // 「元の位置へ」ボタンを表示
+    if (elements.tocBackBtn) {
+      elements.tocBackBtn.style.display = 'flex';
+    }
+
+    // シートを閉じる
+    closeTOC();
+
+    // スクロール
+    const headerHeight = 56 + 44 + 16; // ヘッダー + ラージタイトル + 余裕
+    const targetY = heading.element.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+    window.scrollTo({
+      top: targetY,
+      behavior: 'smooth'
+    });
+
+    // 現在位置を更新
+    tocState.currentHeadingIndex = index;
+  }
+
+  /**
+   * 元の位置へ戻る
+   */
+  function returnToPreviousPosition() {
+    if (tocState.previousScrollY === null) return;
+
+    window.scrollTo({
+      top: tocState.previousScrollY,
+      behavior: 'smooth'
+    });
+
+    tocState.previousScrollY = null;
+
+    // ボタンを隠す
+    if (elements.tocBackBtn) {
+      elements.tocBackBtn.style.display = 'none';
+    }
+
+    closeTOC();
+  }
+
+  /**
+   * 前の見出しへ移動
+   */
+  function goToPreviousHeading() {
+    if (tocState.headings.length === 0) return;
+
+    // 現在位置より上にある最も近い見出しを探す
+    const currentY = window.scrollY;
+    const headerHeight = 56 + 44 + 20;
+
+    let targetIndex = 0;
+    for (let i = tocState.headings.length - 1; i >= 0; i--) {
+      const heading = tocState.headings[i];
+      const headingY = heading.element.getBoundingClientRect().top + window.scrollY - headerHeight;
+      if (headingY < currentY - 10) {
+        targetIndex = i;
+        break;
+      }
+    }
+
+    jumpToHeading(targetIndex);
+  }
+
+  /**
+   * 目次イベントをバインド
+   */
+  function bindTOCEvents() {
+    // 目次FABクリック
+    if (elements.tocFab) {
+      elements.tocFab.onclick = openTOC;
+    }
+
+    // 閉じるボタン
+    if (elements.tocCloseBtn) {
+      elements.tocCloseBtn.onclick = closeTOC;
+    }
+
+    // オーバーレイクリックで閉じる
+    if (elements.tocOverlay) {
+      elements.tocOverlay.onclick = (e) => {
+        if (e.target === elements.tocOverlay) {
+          closeTOC();
+        }
+      };
+    }
+
+    // 「元の位置へ」ボタン
+    if (elements.tocBackBtn) {
+      elements.tocBackBtn.onclick = returnToPreviousPosition;
+    }
+
+    // 目次項目クリック
+    if (elements.tocList) {
+      elements.tocList.onclick = async (e) => {
+        const item = e.target.closest('.toc-item');
+        if (!item) return;
+
+        // トピック項目の場合
+        if (item.dataset.topicId) {
+          const topicId = item.dataset.topicId;
+          closeTOC();
+          // トピックへスクロール（読み込んでいなければ読み込む）
+          await scrollToHTMLTopic(topicId);
+          return;
+        }
+
+        // 見出し項目の場合
+        const index = parseInt(item.dataset.index);
+        if (!isNaN(index)) {
+          jumpToHeading(index);
+        }
+      };
+    }
+
+    // 目次内検索
+    if (elements.tocSearchInput) {
+      elements.tocSearchInput.oninput = (e) => {
+        buildTOCList(e.target.value);
+      };
+    }
+
+    // 前の見出しへボタン
+    if (elements.prevHeadingBtn) {
+      elements.prevHeadingBtn.onclick = goToPreviousHeading;
+    }
+  }
+
+  /**
+   * 目次をクリーンアップ
+   */
+  function cleanupTOC() {
+    if (tocState.observer) {
+      tocState.observer.disconnect();
+      tocState.observer = null;
+    }
+    tocState.headings = [];
+    tocState.currentHeadingIndex = 0;
+    tocState.previousScrollY = null;
+    hideTOCButtons();
+  }
+
+  // ===== 読書モード機能 =====
+
+  /**
+   * 読書モードを初期化
+   */
+  function initReadingMode() {
+    // 保存された設定を適用
+    applyReadingSettings();
+
+    // ボタンを表示
+    if (elements.readingModeBtn) {
+      elements.readingModeBtn.style.display = 'flex';
+    }
+
+    // イベントをバインド
+    bindReadingModeEvents();
+  }
+
+  /**
+   * 読書モードをクリーンアップ
+   */
+  function cleanupReadingMode() {
+    if (elements.readingModeBtn) {
+      elements.readingModeBtn.style.display = 'none';
+    }
+    closeReadingMode();
+  }
+
+  /**
+   * 読書設定を適用
+   */
+  function applyReadingSettings() {
+    if (!elements.htmlDisplay) return;
+
+    // 既存のクラスを削除
+    FONT_SIZES.forEach(size => elements.htmlDisplay.classList.remove(`font-${size}`));
+    ['compact', 'normal', 'wide'].forEach(lh => elements.htmlDisplay.classList.remove(`line-${lh}`));
+    ['compact', 'normal'].forEach(d => elements.htmlDisplay.classList.remove(`density-${d}`));
+
+    // 新しいクラスを追加
+    elements.htmlDisplay.classList.add(`font-${readingState.fontSize}`);
+    elements.htmlDisplay.classList.add(`line-${readingState.lineHeight}`);
+    elements.htmlDisplay.classList.add(`density-${readingState.density}`);
+
+    // 表示を更新
+    updateFontSizeDisplay();
+    updateToggleButtons();
+  }
+
+  /**
+   * 文字サイズ表示を更新
+   */
+  function updateFontSizeDisplay() {
+    if (elements.fontSizeDisplay) {
+      elements.fontSizeDisplay.textContent = FONT_LABELS[readingState.fontSize];
+    }
+  }
+
+  /**
+   * トグルボタンのアクティブ状態を更新
+   */
+  function updateToggleButtons() {
+    // 行間
+    document.querySelectorAll('[data-line-height]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lineHeight === readingState.lineHeight);
+    });
+
+    // 表示密度
+    document.querySelectorAll('[data-density]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.density === readingState.density);
+    });
+  }
+
+  /**
+   * 文字サイズを変更
+   */
+  function changeFontSize(delta) {
+    const currentIndex = FONT_SIZES.indexOf(readingState.fontSize);
+    const newIndex = Math.max(0, Math.min(FONT_SIZES.length - 1, currentIndex + delta));
+    readingState.fontSize = FONT_SIZES[newIndex];
+    localStorage.setItem('reading-font-size', readingState.fontSize);
+    applyReadingSettings();
+  }
+
+  /**
+   * 行間を変更
+   */
+  function changeLineHeight(value) {
+    readingState.lineHeight = value;
+    localStorage.setItem('reading-line-height', value);
+    applyReadingSettings();
+  }
+
+  /**
+   * 表示密度を変更
+   */
+  function changeDensity(value) {
+    readingState.density = value;
+    localStorage.setItem('reading-density', value);
+    applyReadingSettings();
+  }
+
+  /**
+   * 読書モードメニューを開く
+   */
+  function openReadingMode() {
+    if (elements.readingModeOverlay) {
+      elements.readingModeOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  /**
+   * 読書モードメニューを閉じる
+   */
+  function closeReadingMode() {
+    if (elements.readingModeOverlay) {
+      elements.readingModeOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // ===== 過去問カード折りたたみ機能 =====
+
+  /**
+   * 過去問カードを折りたたみ可能にする
+   */
+  function initQuestionCards() {
+    if (!elements.htmlDisplay) return;
+
+    const questionBoxes = elements.htmlDisplay.querySelectorAll('.question-box:not(.question-card-processed)');
+
+    questionBoxes.forEach(box => {
+      // 処理済みマークを付ける
+      box.classList.add('question-card-processed');
+
+      // 情報を抽出
+      const qNumber = box.querySelector('.q-number')?.textContent || '';
+      const qText = box.querySelector('.q-text')?.textContent || '';
+      const answer = box.querySelector('.answer')?.textContent || '';
+
+      // プレビューテキスト（最初の30文字）
+      const preview = qText.length > 35 ? qText.substring(0, 35) + '…' : qText;
+
+      // ラッパーを作成
+      const wrapper = document.createElement('div');
+      wrapper.className = 'question-card-wrapper';
+      wrapper.innerHTML = `
+        <div class="question-card-header">
+          <div class="question-card-summary">
+            <div class="question-card-number">${escapeHtml(qNumber)}</div>
+            <div class="question-card-preview">${escapeHtml(preview)}</div>
+            <div class="question-card-answer">${escapeHtml(answer)}</div>
+          </div>
+          <button class="question-card-toggle">
+            <span>問題を見る</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+        </div>
+        <div class="question-card-content"></div>
+      `;
+
+      // 元のquestion-boxをコンテンツ領域に移動
+      const content = wrapper.querySelector('.question-card-content');
+      box.parentNode.insertBefore(wrapper, box);
+      content.appendChild(box);
+
+      // トグルイベント
+      const header = wrapper.querySelector('.question-card-header');
+      header.addEventListener('click', () => {
+        wrapper.classList.toggle('expanded');
+      });
+    });
+  }
+
+  /**
+   * 画像の遅延読み込みを初期化
+   */
+  let lazyImageObserver = null;
+
+  function initLazyImages() {
+    if (!elements.htmlDisplay) return;
+
+    // 未処理の画像を取得
+    const images = elements.htmlDisplay.querySelectorAll('img:not(.lazy-processed)');
+    if (images.length === 0) return;
+
+    // Intersection Observer がサポートされているか確認
+    if ('IntersectionObserver' in window) {
+      // Observer がまだなければ作成
+      if (!lazyImageObserver) {
+        lazyImageObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              // data-src から src にコピー
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+              }
+              img.classList.add('lazy-loaded');
+              lazyImageObserver.unobserve(img);
+            }
+          });
+        }, {
+          rootMargin: '200px 0px', // 200px手前から読み込み開始
+          threshold: 0.01
+        });
+      }
+
+      images.forEach(img => {
+        img.classList.add('lazy-processed');
+
+        // すでにsrcがある場合はdata-srcに移動
+        if (img.src && !img.dataset.src) {
+          img.dataset.src = img.src;
+          // 小さなプレースホルダーを設定
+          img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E';
+          img.classList.add('lazy-image');
+        }
+
+        lazyImageObserver.observe(img);
+      });
+    } else {
+      // フォールバック: ネイティブ loading="lazy" を使用
+      images.forEach(img => {
+        img.classList.add('lazy-processed');
+        img.loading = 'lazy';
+      });
+    }
+  }
+
+  function cleanupLazyImages() {
+    if (lazyImageObserver) {
+      lazyImageObserver.disconnect();
+      lazyImageObserver = null;
+    }
+  }
+
+  /**
+   * スクロール位置の履歴管理
+   */
+  const scrollHistory = {
+    saveTimeout: null,
+    initialized: false
+  };
+
+  function initScrollHistory() {
+    if (scrollHistory.initialized) return;
+    scrollHistory.initialized = true;
+
+    // 初期状態を設定
+    const initialState = {
+      tab: state.currentTab,
+      scrollPositions: {}
+    };
+    history.replaceState(initialState, '');
+
+    // popstateイベント（戻る/進む）
+    window.addEventListener('popstate', (e) => {
+      if (e.state && e.state.tab) {
+        // タブを復元
+        switchTab(e.state.tab, true); // skipHistory=trueで再度pushしない
+
+        // スクロール位置を復元
+        if (e.state.scrollPositions) {
+          setTimeout(() => {
+            restoreScrollPositions(e.state.scrollPositions);
+          }, 150);
+        }
+      }
+    });
+
+    // スクロールイベントで位置を保存（デバウンス）
+    const containers = [
+      elements.htmlContent,
+      elements.qaContent,
+      elements.kakomonContent,
+      elements.flashcardContent
+    ].filter(Boolean);
+
+    containers.forEach(container => {
+      container.addEventListener('scroll', () => {
+        debounceSaveScrollState();
+      }, { passive: true });
+    });
+  }
+
+  function debounceSaveScrollState() {
+    if (scrollHistory.saveTimeout) {
+      clearTimeout(scrollHistory.saveTimeout);
+    }
+    scrollHistory.saveTimeout = setTimeout(() => {
+      saveScrollState();
+    }, 300);
+  }
+
+  function saveScrollState() {
+    const scrollPositions = getScrollPositions();
+    const currentState = {
+      tab: state.currentTab,
+      scrollPositions: scrollPositions
+    };
+    history.replaceState(currentState, '');
+  }
+
+  function getScrollPositions() {
+    const positions = {};
+    if (elements.htmlContent) {
+      positions.html = elements.htmlContent.scrollTop;
+    }
+    if (elements.qaContent) {
+      positions.qa = elements.qaContent.scrollTop;
+    }
+    if (elements.kakomonContent) {
+      positions.kakomon = elements.kakomonContent.scrollTop;
+    }
+    if (elements.flashcardContent) {
+      positions.flashcard = elements.flashcardContent.scrollTop;
+    }
+    return positions;
+  }
+
+  function restoreScrollPositions(positions) {
+    if (!positions) return;
+    if (positions.html && elements.htmlContent) {
+      elements.htmlContent.scrollTop = positions.html;
+    }
+    if (positions.qa && elements.qaContent) {
+      elements.qaContent.scrollTop = positions.qa;
+    }
+    if (positions.kakomon && elements.kakomonContent) {
+      elements.kakomonContent.scrollTop = positions.kakomon;
+    }
+    if (positions.flashcard && elements.flashcardContent) {
+      elements.flashcardContent.scrollTop = positions.flashcard;
+    }
+  }
+
+  function pushScrollState(newTab) {
+    const scrollPositions = getScrollPositions();
+    const newState = {
+      tab: newTab,
+      scrollPositions: scrollPositions
+    };
+    history.pushState(newState, '');
+  }
+
+  /**
+   * 読書モードイベントをバインド
+   */
+  function bindReadingModeEvents() {
+    // Aaボタン
+    if (elements.readingModeBtn) {
+      elements.readingModeBtn.onclick = openReadingMode;
+    }
+
+    // 閉じるボタン
+    if (elements.readingModeClose) {
+      elements.readingModeClose.onclick = closeReadingMode;
+    }
+
+    // オーバーレイクリックで閉じる
+    if (elements.readingModeOverlay) {
+      elements.readingModeOverlay.onclick = (e) => {
+        if (e.target === elements.readingModeOverlay) {
+          closeReadingMode();
+        }
+      };
+    }
+
+    // 文字サイズ
+    if (elements.fontDecrease) {
+      elements.fontDecrease.onclick = () => changeFontSize(-1);
+    }
+    if (elements.fontIncrease) {
+      elements.fontIncrease.onclick = () => changeFontSize(1);
+    }
+
+    // 行間トグル
+    document.querySelectorAll('[data-line-height]').forEach(btn => {
+      btn.onclick = () => changeLineHeight(btn.dataset.lineHeight);
+    });
+
+    // 表示密度トグル
+    document.querySelectorAll('[data-density]').forEach(btn => {
+      btn.onclick = () => changeDensity(btn.dataset.density);
+    });
+  }
 
   // 起動
   document.addEventListener('DOMContentLoaded', init);

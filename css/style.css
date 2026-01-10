@@ -5112,7 +5112,7 @@ body.is-practice .tab-content {
   background: var(--bg-color);
   border-radius: var(--radius-lg);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
+  /* overflow: hidden を削除 - 中のスクロールを妨げるため */
 }
 
 .flashcard-summary.show {

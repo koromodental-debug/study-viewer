@@ -890,16 +890,16 @@ const FlashcardModule = (function() {
           </div>
         </div>
 
-      </div>
+        <!-- アクションバー（flexレイアウトで下部配置） -->
+        <div class="flashcard-action-bar ${state.isFlipped ? 'show' : ''}">
+          <button class="flashcard-btn again" id="flashcard-again-btn">
+            もう一度
+          </button>
+          <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
+            覚えた
+          </button>
+        </div>
 
-      <!-- アクションバー（iOS Safari対応のため.flashcard-exerciseの外に配置） -->
-      <div class="flashcard-action-bar ${state.isFlipped ? 'show' : ''}">
-        <button class="flashcard-btn again" id="flashcard-again-btn">
-          もう一度
-        </button>
-        <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
-          覚えた
-        </button>
       </div>
 
       <!-- Undoスナックバー -->

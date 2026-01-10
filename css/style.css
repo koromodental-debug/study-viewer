@@ -4871,45 +4871,33 @@ body.is-practice .tab-content {
   display: block;
 }
 
-/* アクションバー（画面下固定・iOS風すりガラス） */
+/* アクションバー（flexレイアウトで下部配置・Safari対応） */
 .flashcard-action-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
+  display: none;
   gap: 12px;
   padding: 16px;
   padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(60, 60, 67, 0.18);
-  z-index: 9999;
-  opacity: 0;
-  transform: translateY(100%);
-  pointer-events: none;
-  transition: opacity 180ms ease, transform 180ms cubic-bezier(.2,.9,.2,1);
-  will-change: transform, opacity;
+  background: var(--card-bg, #fff);
+  border-top: 1px solid var(--border-subtle, rgba(60, 60, 67, 0.18));
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 /* ダークモード対応 */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .flashcard-action-bar {
-    background: rgba(28, 28, 30, 0.92);
-    border-top-color: rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
+    border-top-color: var(--border-subtle);
   }
 }
 
 [data-theme="dark"] .flashcard-action-bar {
-  background: rgba(28, 28, 30, 0.92);
-  border-top-color: rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
+  border-top-color: var(--border-subtle);
 }
 
 .flashcard-action-bar.show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  display: flex;
 }
 
 /* タップ遅延を減らす */

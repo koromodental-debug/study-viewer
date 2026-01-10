@@ -4531,19 +4531,14 @@ body.is-practice .tab-content {
 .flashcard-exercise {
   display: flex;
   flex-direction: column;
-  height: calc(100svh - var(--header-height, 56px) - env(safe-area-inset-top, 0px));
+  /* 親コンテナ(.tab-content)の高さに合わせる */
+  height: 100%;
   max-width: 600px;
   margin: 0 auto;
   padding: 0 16px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   box-sizing: border-box;
   overflow: hidden;
-}
-
-@supports not (height: 100svh) {
-  .flashcard-exercise {
-    height: calc(100vh - var(--header-height, 56px) - env(safe-area-inset-top, 0px));
-  }
 }
 
 .flashcard-header {

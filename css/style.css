@@ -17,6 +17,7 @@
   --header-height: 60px;
   --header-offset: 0px;
   --tabs-height: 61px;
+  --tabbar-height: 72px;
   --radius-full: 9999px;
   --radius-lg: 16px;
   --radius-md: 12px;
@@ -3048,50 +3049,53 @@ body {
   min-width: 45px;
 }
 
-/* 今日のおすすめボタン */
+/* 今日のおすすめボタン（白背景+青アクセント） */
 .deck-recommended {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 18px;
-  margin-bottom: 16px;
-  background: linear-gradient(135deg, var(--system-blue), #5856D6);
-  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 4px 12px rgba(10, 132, 255, 0.3);
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
 .deck-recommended:active {
   transform: scale(0.98);
+  background: rgba(0, 122, 255, 0.05);
 }
 
 .deck-recommended-label {
   font-size: 15px;
   font-weight: 600;
-  color: white;
+  color: var(--text-color);
 }
 
 .deck-recommended-count {
-  font-size: 18px;
-  font-weight: 800;
-  color: white;
-  background: rgba(255, 255, 255, 0.25);
-  padding: 4px 12px;
-  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 .deck-recommended-action {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
+  color: var(--system-blue);
+  background: var(--system-blue);
   color: white;
-  opacity: 0.9;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 
 .deck-recommended-action::after {
-  content: " ›";
-  font-size: 18px;
+  content: "";
 }
 
 /* 統計行（カード型ボタン） */
@@ -3147,7 +3151,16 @@ body {
   background: rgba(255, 159, 10, 0.18);
 }
 
-/* アクション（右端にシェブロン付き） */
+/* シェブロン（右端） */
+.deck-stat-chevron {
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--tertiary-label);
+  line-height: 1;
+}
+
+/* アクション（互換性用） */
 .deck-stat-action {
   margin-left: auto;
   display: inline-flex;
@@ -3237,6 +3250,15 @@ body {
   text-align: right;
 }
 
+.deck-subject-again {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--system-orange);
+  background: rgba(255, 149, 0, 0.1);
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
 /* トピック一覧（アコーディオン） */
 .deck-topics {
   display: none;
@@ -3304,20 +3326,65 @@ body {
 }
 
 .deck-stat-new {
-  font-size: 12px;
-  color: #999;
-  font-style: italic;
+  font-size: 11px;
+  color: #8E8E93;
+  font-weight: 500;
 }
 
 /* デッキオプション */
 .deck-options {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 16px 20px;
   padding: 16px;
   margin-top: 16px;
   background: var(--bg-color);
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* セッションサイズ選択（今日のおすすめ直下） */
+.session-size-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px 12px;
+}
+
+.session-size-buttons {
+  display: flex;
+  gap: 1px;
+  background: rgba(118, 118, 128, 0.12);
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.session-size-btn {
+  padding: 5px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-width: 40px;
+}
+
+.session-size-btn.active {
+  background: white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 0 1px rgba(0,0,0,0.04);
+}
+
+.session-size-btn:not(.active):active {
+  opacity: 0.6;
+}
+
+.session-size-hint {
+  font-size: 11px;
+  color: var(--tertiary-label);
 }
 
 .flashcard-options {
@@ -3424,21 +3491,38 @@ body {
   color: #ff9500;
 }
 
-/* 演習画面 */
+/* 演習中はタブバーを非表示 */
+.floating-tabbar.exercise-hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 演習画面（4段構成: header + stage + actionBar） */
 .flashcard-exercise {
-  padding: 12px 16px;
-  padding-top: calc(12px + env(safe-area-inset-top, 0px));
-  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh - var(--header-height, 56px));
   max-width: 600px;
   margin: 0 auto;
+  padding: 0 16px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-sizing: border-box;
+}
+
+@supports not (height: 100svh) {
+  .flashcard-exercise {
+    height: calc(100vh - var(--header-height, 56px));
+  }
 }
 
 .flashcard-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  padding: 12px 0;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .flashcard-back-btn {
@@ -3527,22 +3611,43 @@ body {
   height: 20px;
 }
 
+/* メインステージ（カード中央配置） */
+.flashcard-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 16px;
+}
+
+/* 表面のときはカードを中央寄せ */
+.flashcard-exercise:not(.flipped) .flashcard-stage {
+  justify-content: center;
+}
+
 /* カードコンテナ */
 .flashcard-card-container {
-  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .flashcard-card {
+  position: relative;
   background: var(--card-bg);
   border-radius: var(--radius-lg);
   box-shadow: var(--card-shadow);
-  padding: 24px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 120px;
 }
 
 .flashcard-card:active {
   transform: scale(0.98);
+}
+
+.flashcard-card-inner {
+  padding: 24px;
 }
 
 .flashcard-question {
@@ -3552,15 +3657,25 @@ body {
   line-height: 1.6;
 }
 
+/* タップヒント（カード内） */
 .flashcard-tap-hint {
   text-align: center;
-  font-size: 13px;
-  color: var(--text-muted);
-  padding: 16px 0 0 0;
+  font-size: 12px;
+  color: var(--tertiary-label);
+  padding: 20px 0 4px 0;
+  opacity: 1;
+  transition: opacity 0.2s ease, max-height 0.2s ease;
 }
 
+.flashcard-tap-hint.hide {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 答え（常にDOMにあるがopacityで切り替え） */
 .flashcard-answer {
-  display: none;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.7;
@@ -3568,10 +3683,15 @@ body {
   padding-top: 16px;
   margin-top: 16px;
   border-top: 1px solid var(--border-color);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, max-height 0.25s ease;
 }
 
-.flashcard-answer.show {
-  display: block;
+.flashcard-card.flipped .flashcard-answer {
+  opacity: 1;
+  max-height: 500px;
 }
 
 /* スワイプオーバーレイ */
@@ -3648,15 +3768,23 @@ body {
   display: block;
 }
 
-/* アクションボタン */
-.flashcard-actions {
-  display: none;
+/* アクションバー（画面下固定） */
+.flashcard-action-bar {
+  display: flex;
   gap: 12px;
-  margin-bottom: 16px;
+  padding: 12px 0;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.flashcard-actions.show {
-  display: flex;
+.flashcard-action-bar.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .flashcard-btn {
@@ -3699,6 +3827,97 @@ body {
 
 .flashcard-btn:active {
   transform: scale(0.98);
+}
+
+/* Undoスナックバー */
+.flashcard-snackbar {
+  position: fixed;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #323232;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.25s ease;
+  z-index: 1000;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.flashcard-snackbar.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.snackbar-message {
+  flex: 1;
+}
+
+.snackbar-undo {
+  background: transparent;
+  border: none;
+  color: #BB86FC;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.snackbar-undo:active {
+  opacity: 0.7;
+}
+
+/* トースト */
+.flashcard-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  padding: 16px 28px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.flashcard-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 飛びアニメーション */
+.flashcard-card.flying {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+}
+
+.flashcard-card.fly-right {
+  transform: translateX(120%) rotate(20deg) !important;
+  opacity: 0;
+}
+
+.flashcard-card.fly-left {
+  transform: translateX(-120%) rotate(-20deg) !important;
+  opacity: 0;
 }
 
 /* まとめ埋め込み */
@@ -3933,8 +4152,7 @@ body {
   }
 
   .flashcard-exercise {
-    padding: 12px;
-    padding-bottom: 140px;
+    padding: 0 12px;
   }
 
   .flashcard-card {
@@ -4008,9 +4226,10 @@ body {
     background: var(--sidebar-bg);
   }
 
-  /* 今日のおすすめ（ダークでも目立つように） */
+  /* 今日のおすすめ */
   .deck-recommended {
-    box-shadow: 0 4px 16px rgba(10, 132, 255, 0.4);
+    background: var(--card-bg);
+    border-color: var(--border-color);
   }
 }
 
@@ -4049,7 +4268,8 @@ body {
 }
 
 [data-theme="dark"] .deck-recommended {
-  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.4);
+  background: var(--card-bg);
+  border-color: var(--border-color);
 }
 
 /* ダークモード：フラッシュカードデッキ一覧 */
@@ -4084,6 +4304,10 @@ body {
 
 [data-theme="dark"] .deck-subject-percent {
   color: #EBEBF5;
+}
+
+[data-theme="dark"] .deck-subject-again {
+  background: rgba(255, 149, 0, 0.2);
 }
 
 [data-theme="dark"] .deck-topics {
@@ -4140,6 +4364,22 @@ body {
 
 [data-theme="dark"] .deck-options {
   color: var(--text-color);
+}
+
+[data-theme="dark"] .session-size-buttons {
+  background: rgba(118, 118, 128, 0.24);
+}
+
+[data-theme="dark"] .session-size-btn {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .session-size-btn.active {
+  background: #636366;
+}
+
+[data-theme="dark"] .session-size-hint {
+  color: rgba(235, 235, 245, 0.3);
 }
 
 [data-theme="dark"] .flashcard-checkbox span {
@@ -4556,6 +4796,10 @@ body {
     color: #EBEBF5;
   }
 
+  :root:not([data-theme="light"]) .deck-subject-again {
+    background: rgba(255, 149, 0, 0.2);
+  }
+
   :root:not([data-theme="light"]) .deck-topics {
     background: #1C1C1E;
     border-top-color: var(--border-color);
@@ -4610,6 +4854,22 @@ body {
 
   :root:not([data-theme="light"]) .deck-options {
     color: var(--text-color);
+  }
+
+  :root:not([data-theme="light"]) .session-size-buttons {
+    background: rgba(118, 118, 128, 0.24);
+  }
+
+  :root:not([data-theme="light"]) .session-size-btn {
+    color: var(--text-color);
+  }
+
+  :root:not([data-theme="light"]) .session-size-btn.active {
+    background: #636366;
+  }
+
+  :root:not([data-theme="light"]) .session-size-hint {
+    color: rgba(235, 235, 245, 0.3);
   }
 
   :root:not([data-theme="light"]) .flashcard-checkbox span {

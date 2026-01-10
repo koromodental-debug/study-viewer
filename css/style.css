@@ -4688,8 +4688,7 @@ body.is-practice .tab-content {
   justify-content: flex-start;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  /* アクションバー（約80px + safe-area）分の余白を確保 */
-  padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: 16px;
 }
 
 /* 表面のときはカードを中央寄せ */

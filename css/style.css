@@ -3599,6 +3599,10 @@ body {
 /* タブコンテンツ */
 #flashcard-content {
   overflow-y: auto;
+}
+
+/* 演習中は-webkit-overflow-scrollingを無効化（position: fixedを壊すため） */
+body:not(.is-practice) #flashcard-content {
   -webkit-overflow-scrolling: touch;
 }
 

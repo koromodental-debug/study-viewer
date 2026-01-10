@@ -279,8 +279,8 @@
       }
     });
 
-    // スクロールでヘッダー表示/非表示
-    setupScrollHideHeader();
+    // スクロールでヘッダー表示/非表示（無効化：固定表示に変更）
+    // setupScrollHideHeader();
 
     // スワイプでタブ切り替え
     setupSwipeTabSwitch();

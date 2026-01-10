@@ -874,11 +874,11 @@ const FlashcardModule = (function() {
         clearTimeout(state.undoTimer);
       }
 
-      // 3秒後に自動非表示
+      // 2秒後に自動非表示（控えめに）
       state.undoTimer = setTimeout(() => {
         hideSnackbar();
         state.undoState = null;
-      }, 3000);
+      }, 2000);
     }
   }
 

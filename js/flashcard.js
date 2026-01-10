@@ -610,8 +610,8 @@ const FlashcardModule = (function() {
             </div>
           </div>
 
-          <!-- まとめ（裏面で表示） -->
-          <div class="flashcard-summary ${state.isFlipped ? 'show' : ''} ${state.summaryCollapsed ? 'collapsed' : ''}" id="flashcard-summary">
+          <!-- まとめ（読み込み成功時のみ表示） -->
+          <div class="flashcard-summary ${state.summaryCollapsed ? 'collapsed' : ''}" id="flashcard-summary">
             <div class="flashcard-summary-header" id="flashcard-summary-toggle">
               <span>まとめ</span>
               <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -619,7 +619,6 @@ const FlashcardModule = (function() {
               </svg>
             </div>
             <div class="flashcard-summary-content" id="flashcard-summary-content">
-              読み込み中...
             </div>
           </div>
         </div>
@@ -1143,21 +1142,24 @@ const FlashcardModule = (function() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
 
+      const summaryEl = document.getElementById('flashcard-summary');
+
       // セクション名がある場合、該当セクションのみ抽出
       if (sectionName) {
         const sectionContent = extractSection(doc, sectionName);
         if (sectionContent) {
           summaryContent.innerHTML = sectionContent;
+          // 成功時のみ表示
+          if (summaryEl) summaryEl.classList.add('show');
           return;
         }
-        // マッチ失敗: まとめセクションを非表示
-        const summaryEl = document.getElementById('flashcard-summary');
-        if (summaryEl) summaryEl.classList.remove('show');
+        // マッチ失敗: まとめセクションを非表示のまま
         return;
       }
 
       // セクション名なし: 全体表示（トピック単位のまとめ）
       summaryContent.innerHTML = doc.body ? doc.body.innerHTML : html;
+      if (summaryEl) summaryEl.classList.add('show');
     } catch (e) {
       summaryContent.innerHTML = '<p>まとめの読み込みに失敗しました</p>';
     }

@@ -2937,7 +2937,6 @@ body {
 #flashcard-content {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding-top: var(--header-height);
 }
 
 /* 選択画面 */

@@ -96,14 +96,26 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
+}
+
+@supports not (height: 100dvh) {
+  body {
+    height: 100vh;
+  }
 }
 
 .app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
+}
+
+@supports not (height: 100dvh) {
+  .app {
+    height: 100vh;
+  }
 }
 
 /* ヘッダー（Apple風：白背景） */
@@ -4535,21 +4547,13 @@ body.is-practice .tab-content {
 .flashcard-exercise {
   display: flex;
   flex-direction: column;
-  /* dvh = dynamic viewport height（Safari対応） */
-  height: calc(100dvh - var(--header-height, 60px) - env(safe-area-inset-top, 0px));
+  height: 100%;
   max-width: 600px;
   margin: 0 auto;
   padding: 0 16px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   box-sizing: border-box;
   overflow: hidden;
-}
-
-/* dvh非対応ブラウザ用フォールバック */
-@supports not (height: 100dvh) {
-  .flashcard-exercise {
-    height: calc(100vh - var(--header-height, 60px) - env(safe-area-inset-top, 0px));
-  }
 }
 
 .flashcard-header {

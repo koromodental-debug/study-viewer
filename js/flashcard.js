@@ -907,18 +907,6 @@ const FlashcardModule = (function() {
         <span class="snackbar-message" id="snackbar-message"></span>
         <button class="snackbar-undo" id="flashcard-undo-btn">元に戻す</button>
       </div>
-
-      <!-- まとめモーダル（全画面表示用） -->
-      <div class="summary-modal-backdrop" id="summary-modal-backdrop">
-        <div class="summary-modal" id="summary-modal">
-          <div class="summary-modal-header">
-            <span>まとめ</span>
-            <button class="summary-modal-close" id="summary-modal-close">✕</button>
-          </div>
-          <div class="summary-modal-content" id="summary-modal-content">
-          </div>
-        </div>
-      </div>
     `;
 
     bindCardEvents();
@@ -997,15 +985,6 @@ const FlashcardModule = (function() {
 
     // まとめ折りたたみトグル
     document.getElementById('flashcard-summary-toggle').addEventListener('click', toggleSummary);
-
-    // まとめコンテンツタップでモーダル表示
-    document.getElementById('flashcard-summary-content').addEventListener('click', openSummaryModal);
-
-    // モーダル閉じる
-    document.getElementById('summary-modal-backdrop').addEventListener('click', (e) => {
-      if (e.target.id === 'summary-modal-backdrop') closeSummaryModal();
-    });
-    document.getElementById('summary-modal-close').addEventListener('click', closeSummaryModal);
   }
 
   // === まとめ折りたたみ ===
@@ -1016,27 +995,6 @@ const FlashcardModule = (function() {
     const summary = document.getElementById('flashcard-summary');
     if (summary) {
       summary.classList.toggle('collapsed', state.summaryCollapsed);
-    }
-  }
-
-  // === まとめモーダル ===
-  function openSummaryModal() {
-    const content = document.getElementById('flashcard-summary-content');
-    const modalContent = document.getElementById('summary-modal-content');
-    const backdrop = document.getElementById('summary-modal-backdrop');
-
-    if (content && modalContent && backdrop) {
-      modalContent.innerHTML = content.innerHTML;
-      backdrop.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  function closeSummaryModal() {
-    const backdrop = document.getElementById('summary-modal-backdrop');
-    if (backdrop) {
-      backdrop.classList.remove('show');
-      document.body.style.overflow = '';
     }
   }
 

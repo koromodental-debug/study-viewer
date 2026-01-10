@@ -24,7 +24,7 @@
 
   /* Apple HIG tokens */
   --label: #1C1C1E;
-  --secondary-label: rgba(60,60,67,.6);
+  --secondary-label: rgba(60,60,67,.72);
   --tertiary-label: rgba(60,60,67,.36);
   --surface: #FFFFFF;
   --surface-alt: #F5F5F7;
@@ -51,7 +51,7 @@
 
     /* Apple HIG tokens (dark) */
     --label: #FFFFFF;
-    --secondary-label: rgba(235,235,245,.6);
+    --secondary-label: rgba(235,235,245,.72);
     --tertiary-label: rgba(235,235,245,.36);
     --surface: #1C1C1E;
     --surface-alt: #2C2C2E;
@@ -78,7 +78,7 @@
 
   /* Apple HIG tokens (dark) */
   --label: #FFFFFF;
-  --secondary-label: rgba(235,235,245,.6);
+  --secondary-label: rgba(235,235,245,.72);
   --tertiary-label: rgba(235,235,245,.36);
   --surface: #1C1C1E;
   --surface-alt: #2C2C2E;
@@ -3491,12 +3491,9 @@ body {
   color: #ff9500;
 }
 
-/* 演習中はタブバーを非表示 */
+/* 演習中はタブバーを完全非表示（display:noneでタップ吸収を防ぐ） */
 .floating-tabbar.exercise-hidden {
-  transform: translateX(-50%) translateY(calc(100% + 40px));
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  display: none !important;
 }
 
 /* 演習画面（4段構成: header + stage + actionBar） */
@@ -3659,11 +3656,13 @@ body {
   line-height: 1.6;
 }
 
-/* タップヒント（カード内） */
+/* タップヒント（カード内）- 読めるけど邪魔しない */
 .flashcard-tap-hint {
   text-align: center;
-  font-size: 12px;
-  color: var(--tertiary-label);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--secondary-label);
   padding: 20px 0 4px 0;
   opacity: 1;
   transition: opacity 0.2s ease, max-height 0.2s ease;
@@ -3770,7 +3769,7 @@ body {
   display: block;
 }
 
-/* アクションバー（画面下固定） */
+/* アクションバー（画面下固定・iOS風すりガラス） */
 .flashcard-action-bar {
   position: fixed;
   left: 0;
@@ -3780,7 +3779,9 @@ body {
   gap: 12px;
   padding: 12px 16px;
   padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  background: var(--bg-color);
+  background: color-mix(in srgb, var(--bg-color) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid var(--border-subtle);
   z-index: 100;
   opacity: 0;
@@ -3793,6 +3794,12 @@ body {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+/* タップ遅延を減らす */
+.flashcard-action-bar,
+.flashcard-action-bar * {
+  touch-action: manipulation;
 }
 
 .flashcard-btn {
@@ -3873,14 +3880,12 @@ body {
 .snackbar-undo {
   background: transparent;
   border: none;
-  color: #BB86FC;
+  color: #0A84FF;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 4px 8px;
   margin: -4px -8px;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .snackbar-undo:active {

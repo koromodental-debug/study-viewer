@@ -532,20 +532,22 @@ const FlashcardModule = (function() {
     return cards;
   }
 
-  // === タブバー制御 ===
-  function hideTabbar() {
+  // === 演習モード制御（タブバー・フローティングボタンを隠す） ===
+  function enterPracticeMode() {
+    document.body.classList.add('is-practice');
     const tabbar = document.querySelector('.floating-tabbar');
     if (tabbar) tabbar.classList.add('exercise-hidden');
   }
 
-  function showTabbar() {
+  function exitPracticeMode() {
+    document.body.classList.remove('is-practice');
     const tabbar = document.querySelector('.floating-tabbar');
     if (tabbar) tabbar.classList.remove('exercise-hidden');
   }
 
   // === カード表示 ===
   function renderCard() {
-    hideTabbar(); // 演習中はタブバーを隠す
+    enterPracticeMode(); // 演習中はUI要素を隠す
 
     const card = state.filteredCards[state.currentIndex];
     if (!card) return;
@@ -1082,7 +1084,7 @@ const FlashcardModule = (function() {
     state.currentIndex = 0;
     state.isFlipped = false;
 
-    showTabbar(); // タブバーを再表示
+    exitPracticeMode(); // UI要素を再表示
     renderDeckList();
   }
 

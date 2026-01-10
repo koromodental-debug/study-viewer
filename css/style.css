@@ -3491,8 +3491,11 @@ body {
   color: #ff9500;
 }
 
-/* 演習中はタブバーを完全非表示（display:noneでタップ吸収を防ぐ） */
-.floating-tabbar.exercise-hidden {
+/* 演習中はタブバー・フローティングボタンを完全非表示 */
+.floating-tabbar.exercise-hidden,
+body.is-practice .floating-tabbar,
+body.is-practice .floating-note-btn,
+body.is-practice .floating-search-btn {
   display: none !important;
 }
 
@@ -3777,17 +3780,30 @@ body {
   bottom: 0;
   display: flex;
   gap: 12px;
-  padding: 12px 16px;
-  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  background: color-mix(in srgb, var(--bg-color) 88%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border-subtle);
-  z-index: 100;
+  padding: 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(60, 60, 67, 0.18);
+  z-index: 9999;
   opacity: 0;
   transform: translateY(100%);
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .flashcard-action-bar {
+    background: rgba(28, 28, 30, 0.92);
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+[data-theme="dark"] .flashcard-action-bar {
+  background: rgba(28, 28, 30, 0.92);
+  border-top-color: rgba(255, 255, 255, 0.1);
 }
 
 .flashcard-action-bar.show {

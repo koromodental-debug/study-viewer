@@ -50,6 +50,12 @@
     htmlContent: document.getElementById('html-content'),
     searchContent: document.getElementById('search-content'),
     htmlDisplay: document.getElementById('html-display'),
+    // QA関連（後方互換性のため残す - 要素がなければnull）
+    qaContent: document.getElementById('qa-content'),
+    qaDisplay: document.getElementById('qa-display'),
+    qaToolbar: document.getElementById('qa-toolbar'),
+    qaToggleBtn: document.getElementById('qa-toggle-btn'),
+    qaFloatingToggle: document.getElementById('qa-floating-toggle'),
     // デッキ検索（新検索タブ）
     deckSearchInput: document.getElementById('deck-search-input'),
     deckSearchResults: document.getElementById('search-results'),

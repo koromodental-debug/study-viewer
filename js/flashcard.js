@@ -1064,6 +1064,13 @@ const FlashcardModule = (function() {
       return;
     }
 
+    // インラインスタイルをクリアしてCSSアニメーションを有効に
+    card.style.transition = '';
+    card.style.transform = '';
+
+    // 強制リフローでスタイルリセットを確定
+    void card.offsetWidth;
+
     // アニメーションクラス追加
     card.classList.add('flying', `fly-${direction}`);
 

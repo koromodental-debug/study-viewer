@@ -2,12 +2,12 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=20260111m">
+  <link rel="stylesheet" href="css/style.css?v=20260111t">
 </head>
 <body>
   <div class="app">
@@ -29,15 +29,7 @@
       </button>
     </header>
 
-    <!-- フローティング検索ボタン（右下） -->
-    <button id="search-btn" class="floating-search-btn" aria-label="検索">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8"/>
-        <path d="M21 21l-4.35-4.35"/>
-      </svg>
-    </button>
-
-    <!-- フローティングノートボタン（左下） -->
+    <!-- フローティングお気に入りボタン（右下） -->
     <button id="note-btn" class="floating-note-btn" aria-label="ノート">
       <svg viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
@@ -187,27 +179,6 @@
           </div>
           <div id="html-display" class="html-display" style="display:none;"></div>
         </div>
-        <div class="tab-content" id="search-content">
-          <div class="search-container">
-            <div class="search-input-wrapper">
-              <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="M21 21l-4.35-4.35"/>
-              </svg>
-              <input type="text" id="deck-search-input" class="deck-search-input" placeholder="キーワードで検索...">
-              <button id="search-clear-btn" class="search-clear-btn" style="display:none;">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                </svg>
-              </button>
-            </div>
-            <div id="search-results" class="search-results">
-              <div class="search-placeholder">
-                <p>キーワードを入力してデッキを検索</p>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- QA機能用ダミー要素（後方互換性のため非表示で残す） -->
         <div class="tab-content" id="qa-content" style="display:none;">
           <div class="placeholder"><p></p></div>
@@ -254,13 +225,6 @@
         </svg>
         <span>過去問</span>
       </button>
-      <button class="floating-tab" data-tab="search">
-        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="M21 21l-4.35-4.35"/>
-        </svg>
-        <span>検索</span>
-      </button>
     </nav>
 
   </div>
@@ -270,7 +234,7 @@
   <script src="js/search.js?v=20260110m"></script>
   <script src="js/favorites.js?v=20260110m"></script>
   <script src="js/kakomon.js?v=20260110m"></script>
-  <script src="js/flashcard.js?v=20260111j"></script>
-  <script src="js/app.js?v=20260111c"></script>
+  <script src="js/flashcard.js?v=20260111o"></script>
+  <script src="js/app.js?v=20260111f"></script>
 </body>
 </html>

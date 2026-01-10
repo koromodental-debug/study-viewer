@@ -112,12 +112,14 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: var(--header-height);
+  height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
   background: var(--bg-color);
   color: var(--text-color);
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding-left: 16px;
+  padding-right: 16px;
   gap: 16px;
   z-index: 100;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -833,7 +835,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding-top: var(--header-height);
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
   transition: padding-top 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -843,7 +845,7 @@ body {
 
 .tabs {
   position: fixed;
-  top: var(--header-height);
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
   left: 0;
   right: 0;
   display: flex;
@@ -1454,7 +1456,7 @@ body {
 
 .kakomon-display {
   padding: 16px;
-  padding-bottom: 120px;
+  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
   max-width: 800px;
   margin: 0 auto;
 }
@@ -1808,81 +1810,84 @@ body {
   transform: scale(0.95);
 }
 
-/* ===== フローティングタブバー ===== */
+/* ===== iOS標準タブバー ===== */
 .floating-tabbar {
   position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 56px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(60, 60, 67, 0.12);
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  gap: 4px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 6px 8px;
-  border-radius: 40px;
   z-index: 1000;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+[data-theme="dark"] .floating-tabbar {
+  background: rgba(30, 30, 30, 0.88);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
 .floating-tab {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 10px 16px;
+  gap: 3px;
+  width: 76px;
+  height: 44px;
   border: none;
   background: transparent;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #8e8e93;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(60, 60, 67, 0.6);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .floating-tab .tab-icon {
-  width: 22px;
-  height: 22px;
-  stroke-width: 2;
+  width: 24px;
+  height: 24px;
 }
 
-/* 非選択時：アイコンのみ表示 */
+/* ラベル常時表示 */
 .floating-tab span {
-  display: none;
+  display: block;
+  line-height: 1;
 }
 
-.floating-tab:hover {
-  color: var(--label);
+.floating-tab:active {
+  opacity: 0.6;
 }
 
-/* 選択時：テキストのみ表示、アイコン非表示 */
+/* アクティブ状態 */
 .floating-tab.active {
-  background: #1d1d1f;
-  color: white;
-  padding: 10px 20px;
+  color: #007AFF;
 }
 
 .floating-tab.active .tab-icon {
-  display: none;
+  display: block;
 }
 
-.floating-tab.active span {
-  display: inline;
+[data-theme="dark"] .floating-tab {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .floating-tab.active {
+  color: #0A84FF;
 }
 
 .floating-tabbar.hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-50%) translateY(20px);
-}
-
-/* Safe area対応（iPhone X以降） */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-  .floating-tabbar {
-    bottom: calc(16px + env(safe-area-inset-bottom));
-  }
+  transform: translateY(100%);
 }
 
 /* ヘッダータイトル */
@@ -1927,196 +1932,62 @@ body {
   border-radius: 2px;
 }
 
-/* ===== フローティング検索ボタン ===== */
-.floating-search-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #1d1d1f;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 1000;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.floating-search-btn:hover {
-  transform: scale(1.05);
-}
-
-.floating-search-btn:active {
-  transform: scale(0.95);
-}
-
-.floating-search-btn svg {
-  width: 20px;
-  height: 20px;
-  stroke: white;
-}
-
-/* Safe area対応 */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-  .floating-search-btn {
-    bottom: calc(24px + env(safe-area-inset-bottom));
-  }
-}
-
-/* ===== Q&Aフローティングトグルボタン ===== */
-/* フローティングタブバーを相対配置に */
-.floating-tabbar {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
+/* ===== Q&Aフローティングトグルボタン（非表示） ===== */
 .qa-floating-toggle {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  margin-bottom: 8px;
-  padding: 8px 14px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: none;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #8e8e93;
-  cursor: pointer;
-  z-index: 1001;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
+  display: none;
 }
 
-.qa-floating-toggle.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
-.qa-floating-toggle:active {
-  transform: translateX(-50%) translateY(0) scale(0.95);
-}
-
-.qa-floating-toggle.active {
-  background: #1d1d1f;
-  color: white;
-}
-
-/* モバイル最適化 */
-@media (max-width: 480px) {
-  .floating-tabbar {
-    bottom: 16px;
-    padding: 5px 6px;
-  }
-
-  .floating-tab {
-    padding: 8px 14px;
-    font-size: 13px;
-  }
-
-  .floating-tab .tab-icon {
-    width: 18px;
-    height: 18px;
-  }
-
-  .floating-search-btn {
-    bottom: 16px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
-  }
-
-  .floating-search-btn svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .qa-floating-toggle {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-}
-
-/* ===== フローティングノートボタン（左下） ===== */
+/* ===== フローティングお気に入りボタン（右下・タブバー上） ===== */
 .floating-note-btn {
   position: fixed;
-  bottom: 24px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
+  bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  right: 16px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #1d1d1f;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 1000;
-  transition: transform 0.2s ease, background 0.2s ease;
+  z-index: 999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.floating-note-btn:hover {
-  transform: scale(1.05);
+[data-theme="dark"] .floating-note-btn {
+  background: rgba(44, 44, 46, 0.95);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .floating-note-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
 }
 
 .floating-note-btn svg {
-  width: 18px;
-  height: 18px;
-  fill: white;
+  width: 22px;
+  height: 22px;
+  fill: #FF9500;
 }
 
 .floating-note-btn .note-badge {
   position: absolute;
-  top: -2px;
-  right: -2px;
-  min-width: 16px;
-  height: 16px;
-  padding: 0 4px;
-  background: #ff3b30;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: #FF3B30;
   color: white;
-  border-radius: 8px;
-  font-size: 10px;
+  border-radius: 9px;
+  font-size: 11px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Safe area対応 */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-  .floating-note-btn {
-    bottom: calc(24px + env(safe-area-inset-bottom));
-  }
-}
-
-/* モバイル最適化 */
-@media (max-width: 480px) {
-  .floating-note-btn {
-    bottom: 16px;
-    left: 16px;
-    width: 36px;
-    height: 36px;
-  }
-
-  .floating-note-btn svg {
-    width: 16px;
-    height: 16px;
-  }
 }
 
 /* ===== ノートオーバーレイ ===== */
@@ -2581,6 +2452,7 @@ body {
 /* ===== 無限スクロール まとめ表示 ===== */
 .html-display {
   padding: 0;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
 }
 
 /* トピックセクション */
@@ -3005,7 +2877,7 @@ body {
 /* === Ankiスタイル デッキ一覧 === */
 .deck-list {
   padding: 16px;
-  padding-bottom: 100px;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
 }
 
 .deck-header {
@@ -3017,6 +2889,164 @@ body {
   font-weight: 700;
   color: var(--text-color);
   margin: 0;
+}
+
+/* デッキ検索バー（演習タブ内） */
+.deck-search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.deck-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  padding: 10px 14px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.deck-search-bar:focus-within {
+  border-color: var(--system-blue);
+  background: var(--bg-color);
+}
+
+.deck-search-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--secondary-label);
+  flex-shrink: 0;
+}
+
+.deck-search-bar .deck-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: var(--text-color);
+  outline: none;
+}
+
+.deck-search-bar .deck-search-input::placeholder {
+  color: var(--secondary-label);
+}
+
+.deck-search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: var(--secondary-label);
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.deck-search-clear svg {
+  width: 12px;
+  height: 12px;
+  color: var(--bg-color);
+}
+
+/* キャンセルボタン（iOS風） */
+.deck-search-cancel {
+  display: none;
+  padding: 8px 4px;
+  border: none;
+  background: transparent;
+  color: var(--system-blue);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.deck-search-wrapper.focused .deck-search-cancel {
+  display: block;
+}
+
+/* 検索結果リスト */
+.deck-search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.deck-search-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.deck-search-result:active {
+  transform: scale(0.98);
+}
+
+.deck-result-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.deck-result-subject {
+  font-size: 12px;
+  color: var(--secondary-label);
+  margin-bottom: 2px;
+}
+
+.deck-result-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--label);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deck-result-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.deck-hit-count {
+  font-size: 13px;
+  color: var(--secondary-label);
+}
+
+.deck-start-btn {
+  padding: 8px 16px;
+  background: var(--system-blue);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.deck-search-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--secondary-label);
+}
+
+.deck-search-empty p {
+  font-size: 15px;
 }
 
 /* 総合プログレスバー */
@@ -3048,53 +3078,52 @@ body {
   min-width: 45px;
 }
 
-/* 今日のおすすめボタン（白背景+青アクセント） */
-.deck-recommended {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
+/* 今日のセッションカード */
+.deck-session-card {
   background: var(--surface);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
 }
 
-.deck-recommended:active {
-  transform: scale(0.98);
-  background: rgba(0, 122, 255, 0.05);
+.deck-session-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
 }
 
-.deck-recommended-label {
-  font-size: 15px;
-  font-weight: 600;
+.deck-session-title {
+  font-size: 17px;
+  font-weight: 700;
   color: var(--text-color);
 }
 
-.deck-recommended-count {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-secondary);
-}
-
-.deck-recommended-action {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--system-blue);
+.deck-session-start {
+  padding: 10px 24px;
   background: var(--system-blue);
   color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.deck-recommended-action::after {
-  content: "";
+.deck-session-start:active {
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
+.deck-session-sizes {
+  display: flex;
+  gap: 1px;
+  background: rgba(118, 118, 128, 0.12);
+  border-radius: 9px;
+  padding: 2px;
 }
 
 /* 統計行（カード型ボタン） */
@@ -3203,17 +3232,6 @@ body {
   background: #f5f5f5;
 }
 
-.deck-arrow {
-  margin-right: 12px;
-  font-size: 12px;
-  color: #999;
-  transition: transform 0.2s ease;
-}
-
-.deck-subject.open .deck-arrow {
-  transform: rotate(90deg);
-}
-
 .deck-subject-name {
   flex: 1;
   font-size: 16px;
@@ -3221,10 +3239,22 @@ body {
   color: var(--text-color);
 }
 
-.deck-subject-stats {
+.deck-subject-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+
+.deck-subject-chevron {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--tertiary-label);
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.deck-subject.open .deck-subject-chevron {
+  transform: rotate(90deg);
 }
 
 .deck-subject-progress {
@@ -3342,48 +3372,34 @@ body {
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
-/* セッションサイズ選択（今日のおすすめ直下） */
-.session-size-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px 12px;
-}
-
-.session-size-buttons {
-  display: flex;
-  gap: 1px;
-  background: rgba(118, 118, 128, 0.12);
-  border-radius: 8px;
-  padding: 2px;
-}
-
+/* セッションサイズボタン（セッションカード内） */
 .session-size-btn {
-  padding: 5px 18px;
+  flex: 1;
+  padding: 8px 12px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
-  border-radius: 6px;
+  border-radius: 7px;
   background: transparent;
-  color: var(--text-color);
+  color: var(--secondary-label);
   cursor: pointer;
   transition: all 0.15s ease;
-  min-width: 40px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .session-size-btn.active {
   background: white;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 0 1px rgba(0,0,0,0.04);
+  color: var(--text-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 0 1px rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .session-size-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
 }
 
 .session-size-btn:not(.active):active {
-  opacity: 0.6;
-}
-
-.session-size-hint {
-  font-size: 11px;
-  color: var(--tertiary-label);
+  opacity: 0.5;
 }
 
 .flashcard-options {
@@ -3507,7 +3523,7 @@ body.is-practice .tab-content {
 .flashcard-exercise {
   display: flex;
   flex-direction: column;
-  height: calc(100svh - var(--header-height, 56px));
+  height: calc(100svh - var(--header-height, 56px) - env(safe-area-inset-top, 0px));
   max-width: 600px;
   margin: 0 auto;
   padding: 0 16px;
@@ -3518,7 +3534,7 @@ body.is-practice .tab-content {
 
 @supports not (height: 100svh) {
   .flashcard-exercise {
-    height: calc(100vh - var(--header-height, 56px));
+    height: calc(100vh - var(--header-height, 56px) - env(safe-area-inset-top, 0px));
   }
 }
 
@@ -3583,9 +3599,20 @@ body.is-practice .tab-content {
   transform: translate(-50%, -50%);
   font-size: 12px;
   font-weight: 600;
-  color: var(--label);
+  color: #1c1c1e;
   white-space: nowrap;
   z-index: 1;
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .flashcard-progress-text {
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .flashcard-progress-text {
+    color: white;
+  }
 }
 
 .flashcard-progress-text.bump {
@@ -3663,15 +3690,9 @@ body.is-practice .tab-content {
   border-radius: var(--radius-lg);
   box-shadow: var(--card-shadow);
   cursor: pointer;
-  transition: transform 150ms cubic-bezier(.2,.9,.2,1), opacity 150ms ease;
+  transition: transform 220ms cubic-bezier(.16,1,.3,1), opacity 220ms ease, box-shadow 80ms ease;
   min-height: 120px;
   will-change: transform, opacity;
-}
-
-/* カード入場アニメーション（ふわっ） */
-.flashcard-card.entering {
-  transform: scale(0.96);
-  opacity: 0.8;
 }
 
 .flashcard-card:active {
@@ -4030,19 +4051,51 @@ body.is-practice .tab-content {
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* 飛びアニメーション（Duolingo風 飛び出しeasing） */
+/* === 2フェーズアニメーション === */
+
+/* フェーズ1: 確定感（押した瞬間の手応え） */
+.flashcard-card.is-commit {
+  transition: transform 80ms cubic-bezier(.2,.9,.2,1), box-shadow 80ms ease;
+  transform: scale(0.97);
+}
+
+.flashcard-card.commit-right {
+  box-shadow: inset 0 0 0 3px rgba(52, 199, 89, 0.25), var(--card-shadow);
+}
+
+.flashcard-card.commit-left {
+  box-shadow: inset 0 0 0 3px rgba(255, 149, 0, 0.25), var(--card-shadow);
+}
+
+/* フェーズ2: 飛び出し（カードが抜ける） */
 .flashcard-card.flying {
-  transition: transform 200ms cubic-bezier(.3,1.2,.2,1), opacity 200ms ease;
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
 }
 
 .flashcard-card.fly-right {
-  transform: translateX(120%) rotate(12deg) !important;
+  transform: translateX(110%) rotate(8deg) !important;
   opacity: 0;
 }
 
 .flashcard-card.fly-left {
-  transform: translateX(-120%) rotate(-12deg) !important;
+  transform: translateX(-110%) rotate(-8deg) !important;
   opacity: 0;
+}
+
+/* 次カード入場（ふわっと下から） */
+.flashcard-card.entering {
+  transform: translateY(12px) scale(0.97);
+  opacity: 0;
+}
+
+/* Reduce Motion対応 */
+@media (prefers-reduced-motion: reduce) {
+  .flashcard-card,
+  .flashcard-card.is-commit,
+  .flashcard-card.flying,
+  .flashcard-card.entering {
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* まとめ埋め込み */

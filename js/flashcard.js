@@ -26,7 +26,9 @@ const FlashcardModule = (function() {
     undoState: null,     // { index, filteredCards, progress, card }
     undoTimer: null,     // Undoボタン自動非表示タイマー
     // まとめ折りたたみ状態
-    summaryCollapsed: localStorage.getItem('flashcard-summary-collapsed') === 'true'
+    summaryCollapsed: localStorage.getItem('flashcard-summary-collapsed') === 'true',
+    // デッキ検索
+    searchQuery: ''
   };
 
   // DOM要素
@@ -121,6 +123,14 @@ const FlashcardModule = (function() {
     const subjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))];
     const overall = getOverallStats();
     const recommendedCount = getRecommendedCount();
+    const isSearchMode = state.searchQuery.length > 0;
+
+    // 検索結果を取得
+    let searchResults = [];
+    if (isSearchMode && typeof searchEngine !== 'undefined') {
+      const results = searchEngine.search(state.searchQuery);
+      searchResults = results.filter(item => item.qaPath);
+    }
 
     container.innerHTML = `
       <div class="deck-list">
@@ -128,41 +138,107 @@ const FlashcardModule = (function() {
           <h2>フラッシュカード</h2>
         </div>
 
-        <div class="deck-recommended" id="start-recommended-deck">
-          <span class="deck-recommended-label">今日のおすすめ</span>
-          <span class="deck-recommended-action">開始</span>
+        <!-- 検索バー（常時表示） -->
+        <div class="deck-search-wrapper">
+          <div class="deck-search-bar">
+            <svg class="deck-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" id="deck-inline-search" class="deck-search-input"
+                   placeholder="キーワードでデッキ検索" value="${escapeHtml(state.searchQuery)}">
+            <button id="deck-search-clear" class="deck-search-clear" style="display:${isSearchMode ? 'flex' : 'none'};">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
+          </div>
+          <button id="deck-search-cancel" class="deck-search-cancel">キャンセル</button>
         </div>
 
-        <div class="session-size-row">
-          <div class="session-size-buttons">
-            <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5">5枚</button>
-            <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10">10枚</button>
-            <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20">20枚</button>
-          </div>
-          <span class="session-size-hint">おすすめ/覚えた/もう一度に適用</span>
-        </div>
-
-        <div class="deck-stats-row">
-          <div class="deck-stat-item ${overall.memorized > 0 ? 'clickable' : ''}" id="start-memorized-deck">
-            <span class="deck-stat-label">覚えた</span>
-            <span class="deck-stat-value memorized">${overall.memorized}</span>
-            ${overall.memorized > 0 ? '<span class="deck-stat-chevron">›</span>' : ''}
-          </div>
-          <div class="deck-stat-item ${overall.again > 0 ? 'clickable' : ''}" id="start-again-deck">
-            <span class="deck-stat-label">もう一度</span>
-            <span class="deck-stat-value again">${overall.again}</span>
-            ${overall.again > 0 ? '<span class="deck-stat-chevron">›</span>' : ''}
-          </div>
-        </div>
-
-        <div class="deck-subjects" id="deck-subjects">
-          ${subjects.map(subject => renderSubjectRow(subject)).join('')}
-        </div>
+        ${isSearchMode ? renderSearchResults(searchResults) : renderDeckHome(overall, subjects)}
       </div>
     `;
 
     // イベントバインド
     bindDeckListEvents();
+  }
+
+  // 検索結果をレンダリング
+  function renderSearchResults(results) {
+    if (results.length === 0) {
+      return `
+        <div class="deck-search-empty">
+          <p>「${escapeHtml(state.searchQuery)}」に一致するデッキはありません</p>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="deck-search-results">
+        ${results.map(item => {
+          const subject = item.subject || 'その他';
+          const title = item.title.replace(/^[ア-オ]_/, '');
+          const searchText = (item.searchText || '').toLowerCase();
+          const queryLower = state.searchQuery.toLowerCase();
+          const hitCount = (searchText.match(new RegExp(queryLower, 'g')) || []).length;
+
+          return `
+            <div class="deck-search-result" data-id="${item.id}">
+              <div class="deck-result-info">
+                <div class="deck-result-subject">${escapeHtml(subject)}</div>
+                <div class="deck-result-title">${escapeHtml(title)}</div>
+              </div>
+              <div class="deck-result-action">
+                ${hitCount > 0 ? `<span class="deck-hit-count">${hitCount}件</span>` : ''}
+                <button class="deck-start-btn">演習</button>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  // 通常のデッキホームをレンダリング
+  function renderDeckHome(overall, subjects) {
+    return `
+      <div class="deck-session-card">
+        <div class="deck-session-header">
+          <span class="deck-session-title">今日のセッション</span>
+          <button class="deck-session-start" id="start-recommended-deck">練習</button>
+        </div>
+        <div class="deck-session-sizes">
+          <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5">5問</button>
+          <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10">10問</button>
+          <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20">20問</button>
+        </div>
+      </div>
+
+      <div class="deck-stats-row">
+        <div class="deck-stat-item ${overall.memorized > 0 ? 'clickable' : ''}" id="start-memorized-deck">
+          <span class="deck-stat-label">覚えた</span>
+          <span class="deck-stat-value memorized">${overall.memorized}</span>
+          ${overall.memorized > 0 ? '<span class="deck-stat-action">練習</span>' : ''}
+        </div>
+        <div class="deck-stat-item ${overall.again > 0 ? 'clickable' : ''}" id="start-again-deck">
+          <span class="deck-stat-label">もう一度</span>
+          <span class="deck-stat-value again">${overall.again}</span>
+          ${overall.again > 0 ? '<span class="deck-stat-action">練習</span>' : ''}
+        </div>
+      </div>
+
+      <div class="deck-subjects" id="deck-subjects">
+        ${subjects.map(subject => renderSubjectRow(subject)).join('')}
+      </div>
+    `;
+  }
+
+  // HTMLエスケープ
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
   }
 
   function renderSubjectRow(subject) {
@@ -172,10 +248,10 @@ const FlashcardModule = (function() {
     return `
       <div class="deck-subject" data-subject="${subject}">
         <div class="deck-subject-header">
-          <span class="deck-arrow">▶</span>
           <span class="deck-subject-name">${subject}</span>
-          <div class="deck-subject-stats">
+          <div class="deck-subject-right">
             ${stats.again > 0 ? `<span class="deck-subject-again">要復習 ${stats.again}</span>` : ''}
+            <span class="deck-subject-chevron">›</span>
           </div>
         </div>
         <div class="deck-topics">
@@ -211,6 +287,85 @@ const FlashcardModule = (function() {
   }
 
   function bindDeckListEvents() {
+    // 検索バーのイベント
+    const searchWrapper = document.querySelector('.deck-search-wrapper');
+    const searchInput = document.getElementById('deck-inline-search');
+    const searchClear = document.getElementById('deck-search-clear');
+    const searchCancel = document.getElementById('deck-search-cancel');
+    let debounceTimer = null;
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const query = this.value.trim();
+        if (searchClear) {
+          searchClear.style.display = query ? 'flex' : 'none';
+        }
+        // デバウンス（150ms）
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          state.searchQuery = query;
+          renderDeckList();
+          // 入力欄にフォーカスを戻す
+          const newInput = document.getElementById('deck-inline-search');
+          if (newInput) {
+            newInput.focus();
+            newInput.setSelectionRange(query.length, query.length);
+          }
+        }, 150);
+      });
+
+      // フォーカス時にキャンセルボタン表示
+      searchInput.addEventListener('focus', function() {
+        if (searchWrapper) searchWrapper.classList.add('focused');
+      });
+
+      // ブラー時にキャンセルボタン非表示（遅延して検索結果クリックを許可）
+      searchInput.addEventListener('blur', function() {
+        setTimeout(() => {
+          if (searchWrapper && !state.searchQuery) {
+            searchWrapper.classList.remove('focused');
+          }
+        }, 150);
+      });
+
+      // Enterキーで最初の結果を選択
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          const firstResult = container.querySelector('.deck-search-result');
+          if (firstResult) {
+            firstResult.click();
+          }
+        }
+      });
+    }
+
+    if (searchClear) {
+      searchClear.addEventListener('click', function() {
+        state.searchQuery = '';
+        renderDeckList();
+      });
+    }
+
+    // キャンセルボタン
+    if (searchCancel) {
+      searchCancel.addEventListener('click', function() {
+        state.searchQuery = '';
+        if (searchWrapper) searchWrapper.classList.remove('focused');
+        renderDeckList();
+      });
+    }
+
+    // 検索結果のクリック
+    const searchResults = container.querySelectorAll('.deck-search-result');
+    searchResults.forEach(result => {
+      result.addEventListener('click', async function() {
+        const id = this.dataset.id;
+        state.searchQuery = ''; // 検索をクリア
+        state.isReviewMode = false;
+        await loadTopic(id, state.shuffleEnabled);
+      });
+    });
+
     // 科目ヘッダークリック（アコーディオン）
     const subjectHeaders = container.querySelectorAll('.deck-subject-header');
     subjectHeaders.forEach(header => {
@@ -855,7 +1010,10 @@ const FlashcardModule = (function() {
       if (exercise) exercise.classList.add('flipped');
       if (card) card.classList.add('flipped');
       if (actionBar) actionBar.classList.add('show');
-      if (summary) summary.classList.add('show');
+      // まとめはコンテンツがある場合のみ表示
+      if (summary && summary.classList.contains('has-content')) {
+        summary.classList.add('show');
+      }
       if (tapHint) tapHint.classList.add('hide');
     } else {
       if (exercise) exercise.classList.remove('flipped');
@@ -1054,29 +1212,32 @@ const FlashcardModule = (function() {
     }
   }
 
-  // === 飛びアニメーション ===
+  // === 飛びアニメーション（2フェーズ） ===
   function flyCardOut(direction, callback) {
-    const cardContainer = document.getElementById('flashcard-card-container');
     const card = document.getElementById('flashcard-card');
     if (!card) {
       callback();
       return;
     }
 
-    // インラインスタイルをクリアしてCSSアニメーションを有効に
+    // インラインスタイルをクリア
     card.style.transition = '';
     card.style.transform = '';
-
-    // 強制リフローでスタイルリセットを確定
     void card.offsetWidth;
 
-    // アニメーションクラス追加
-    card.classList.add('flying', `fly-${direction}`);
+    // フェーズ1: 確定感（80ms）- 軽く縮む + 色フラッシュ
+    card.classList.add('is-commit', `commit-${direction}`);
 
-    // アニメーション完了後にコールバック
     setTimeout(() => {
-      callback();
-    }, 250);
+      // フェーズ2: 飛び出し（260ms）
+      card.classList.remove('is-commit', `commit-${direction}`);
+      card.classList.add('flying', `fly-${direction}`);
+
+      // アニメーション完了後にコールバック
+      setTimeout(() => {
+        callback();
+      }, 280);
+    }, 80);
   }
 
   // === 完了画面 ===
@@ -1149,8 +1310,12 @@ const FlashcardModule = (function() {
         const sectionContent = extractSection(doc, sectionName);
         if (sectionContent) {
           summaryContent.innerHTML = sectionContent;
-          // 成功時のみ表示
-          if (summaryEl) summaryEl.classList.add('show');
+          // コンテンツがあることを示すクラスを追加（showはflip時に追加）
+          if (summaryEl) {
+            summaryEl.classList.add('has-content');
+            // フリップ済みなら表示
+            if (state.isFlipped) summaryEl.classList.add('show');
+          }
           return;
         }
         // マッチ失敗: まとめセクションを非表示のまま
@@ -1159,7 +1324,11 @@ const FlashcardModule = (function() {
 
       // セクション名なし: 全体表示（トピック単位のまとめ）
       summaryContent.innerHTML = doc.body ? doc.body.innerHTML : html;
-      if (summaryEl) summaryEl.classList.add('show');
+      if (summaryEl) {
+        summaryEl.classList.add('has-content');
+        // フリップ済みなら表示
+        if (state.isFlipped) summaryEl.classList.add('show');
+      }
     } catch (e) {
       summaryContent.innerHTML = '<p>まとめの読み込みに失敗しました</p>';
     }

@@ -24,7 +24,9 @@ const FlashcardModule = (function() {
     touchStartY: 0,
     // Undo用
     undoState: null,     // { index, filteredCards, progress, card }
-    undoTimer: null      // Undoボタン自動非表示タイマー
+    undoTimer: null,     // Undoボタン自動非表示タイマー
+    // まとめ折りたたみ状態
+    summaryCollapsed: localStorage.getItem('flashcard-summary-collapsed') === 'true'
   };
 
   // DOM要素
@@ -592,8 +594,8 @@ const FlashcardModule = (function() {
                   ${card.question}
                 </div>
                 <!-- タップヒント（カード内、表面のみ） -->
-                <div class="flashcard-tap-hint ${state.isFlipped ? 'hide' : ''}">
-                  タップで答えを表示
+                <div class="flashcard-tap-hint ${state.isFlipped ? 'hide' : ''}" id="tap-hint">
+                  タップで答え
                 </div>
                 <div class="flashcard-answer">
                   ${card.answer}
@@ -609,7 +611,13 @@ const FlashcardModule = (function() {
           </div>
 
           <!-- まとめ（裏面で表示） -->
-          <div class="flashcard-summary ${state.isFlipped ? 'show' : ''}" id="flashcard-summary">
+          <div class="flashcard-summary ${state.isFlipped ? 'show' : ''} ${state.summaryCollapsed ? 'collapsed' : ''}" id="flashcard-summary">
+            <div class="flashcard-summary-header" id="flashcard-summary-toggle">
+              <span>まとめ</span>
+              <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </div>
             <div class="flashcard-summary-content" id="flashcard-summary-content">
               読み込み中...
             </div>
@@ -635,6 +643,29 @@ const FlashcardModule = (function() {
     `;
 
     bindCardEvents();
+
+    // カード入場アニメーション（ふわっ）
+    const cardEl = document.getElementById('flashcard-card');
+    if (cardEl) {
+      cardEl.classList.add('entering');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          cardEl.classList.remove('entering');
+        });
+      });
+    }
+
+    // 初回のみタップヒントをパルス
+    if (!localStorage.getItem('flashcard-hint-shown')) {
+      const hint = document.getElementById('tap-hint');
+      if (hint) {
+        hint.classList.add('pulse');
+        setTimeout(() => {
+          hint.classList.remove('pulse');
+          localStorage.setItem('flashcard-hint-shown', 'true');
+        }, 2000);
+      }
+    }
 
     // まとめを読み込み（ステータスデッキの場合はcard.htmlPathを優先）
     const htmlPath = card.htmlPath || (state.currentTopic && state.currentTopic.htmlPath);
@@ -684,25 +715,56 @@ const FlashcardModule = (function() {
 
     // Undoボタン
     document.getElementById('flashcard-undo-btn').addEventListener('click', undo);
+
+    // まとめ折りたたみトグル
+    document.getElementById('flashcard-summary-toggle').addEventListener('click', toggleSummary);
+  }
+
+  // === まとめ折りたたみ ===
+  function toggleSummary() {
+    state.summaryCollapsed = !state.summaryCollapsed;
+    localStorage.setItem('flashcard-summary-collapsed', state.summaryCollapsed);
+
+    const summary = document.getElementById('flashcard-summary');
+    if (summary) {
+      summary.classList.toggle('collapsed', state.summaryCollapsed);
+    }
   }
 
   // === スワイプ処理 ===
-  const SWIPE_THRESHOLD = 80;
+  const SWIPE_THRESHOLD = 72;
+  let swipeRAF = null;
+  let swipeDiffX = 0;
+  let swipeDiffY = 0;
 
   function onTouchStart(e) {
     state.touchStartX = e.touches[0].clientX;
     state.touchStartY = e.touches[0].clientY;
+    swipeDiffX = 0;
+    swipeDiffY = 0;
 
     const card = document.getElementById('flashcard-card');
-    if (card) card.classList.add('swiping');
+    if (card) {
+      card.classList.add('swiping');
+      card.style.transition = 'none';
+    }
   }
 
   function onTouchMove(e) {
-    const diffX = e.touches[0].clientX - state.touchStartX;
-    const diffY = e.touches[0].clientY - state.touchStartY;
+    swipeDiffX = e.touches[0].clientX - state.touchStartX;
+    swipeDiffY = e.touches[0].clientY - state.touchStartY;
 
     // 縦スクロールが優勢なら何もしない
-    if (Math.abs(diffY) > Math.abs(diffX) * 0.8) return;
+    if (Math.abs(swipeDiffY) > Math.abs(swipeDiffX) * 0.8) return;
+
+    // rAFでまとめて更新（60fps維持）
+    if (!swipeRAF) {
+      swipeRAF = requestAnimationFrame(updateSwipeVisuals);
+    }
+  }
+
+  function updateSwipeVisuals() {
+    swipeRAF = null;
 
     const card = document.getElementById('flashcard-card');
     const overlayLeft = document.getElementById('swipe-overlay-left');
@@ -710,29 +772,43 @@ const FlashcardModule = (function() {
 
     if (!card || !overlayLeft || !overlayRight) return;
 
-    // カードを移動
-    const moveX = Math.max(-150, Math.min(150, diffX * 0.5));
-    const rotation = moveX * 0.05;
-    card.style.transform = `translateX(${moveX}px) rotate(${rotation}deg)`;
+    // カードを移動（横は1:1追従、縦は弱める）
+    const moveX = Math.max(-150, Math.min(150, swipeDiffX * 0.6));
+    const moveY = swipeDiffY * 0.1;
+    const rotation = Math.max(-6, Math.min(6, moveX / 18));
+    card.style.transform = `translate3d(${moveX}px,${moveY}px,0) rotate(${rotation}deg)`;
 
     // オーバーレイの透明度（閾値に近づくほど濃く）
-    const progress = Math.min(1, Math.abs(diffX) / SWIPE_THRESHOLD);
+    const progress = Math.min(1, Math.abs(swipeDiffX) / SWIPE_THRESHOLD);
+    const exceeded = Math.abs(swipeDiffX) >= SWIPE_THRESHOLD;
 
-    if (diffX < -20) {
+    if (swipeDiffX < -20) {
       // 左スワイプ → もう一度（オレンジ）
       overlayLeft.style.opacity = progress;
       overlayRight.style.opacity = 0;
-    } else if (diffX > 20) {
+      overlayLeft.classList.toggle('pop', exceeded);
+      overlayRight.classList.remove('pop');
+    } else if (swipeDiffX > 20) {
       // 右スワイプ → 覚えた（緑）
       overlayRight.style.opacity = progress;
       overlayLeft.style.opacity = 0;
+      overlayRight.classList.toggle('pop', exceeded);
+      overlayLeft.classList.remove('pop');
     } else {
       overlayLeft.style.opacity = 0;
       overlayRight.style.opacity = 0;
+      overlayLeft.classList.remove('pop');
+      overlayRight.classList.remove('pop');
     }
   }
 
   function onTouchEnd(e) {
+    // rAFをキャンセル
+    if (swipeRAF) {
+      cancelAnimationFrame(swipeRAF);
+      swipeRAF = null;
+    }
+
     const diffX = e.changedTouches[0].clientX - state.touchStartX;
     const diffY = e.changedTouches[0].clientY - state.touchStartY;
 
@@ -740,13 +816,20 @@ const FlashcardModule = (function() {
     const overlayLeft = document.getElementById('swipe-overlay-left');
     const overlayRight = document.getElementById('swipe-overlay-right');
 
-    // リセット
+    // リセット（ぬるっとeasingで戻す）
     if (card) {
       card.classList.remove('swiping');
+      card.style.transition = 'transform 180ms cubic-bezier(.2,.9,.2,1)';
       card.style.transform = '';
     }
-    if (overlayLeft) overlayLeft.style.opacity = 0;
-    if (overlayRight) overlayRight.style.opacity = 0;
+    if (overlayLeft) {
+      overlayLeft.style.opacity = 0;
+      overlayLeft.classList.remove('pop');
+    }
+    if (overlayRight) {
+      overlayRight.style.opacity = 0;
+      overlayRight.classList.remove('pop');
+    }
 
     // 横方向のスワイプが縦より大きい場合
     if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
@@ -912,6 +995,7 @@ const FlashcardModule = (function() {
     if (state.currentIndex < state.filteredCards.length - 1) {
       flyCardOut('right', () => {
         next();
+        bumpProgress();
         showSnackbar('覚えたに分類');
       });
     } else {
@@ -952,10 +1036,22 @@ const FlashcardModule = (function() {
     if (state.currentIndex < state.filteredCards.length - 1) {
       flyCardOut('left', () => {
         next();
+        bumpProgress();
         showSnackbar('まもなく再出題');
       });
     } else {
       renderCompletionScreen();
+    }
+  }
+
+  // === 進捗ポンアニメーション ===
+  function bumpProgress() {
+    const progressText = document.querySelector('.flashcard-progress-text');
+    if (progressText) {
+      progressText.classList.remove('bump');
+      // 強制リフローでアニメーションリセット
+      void progressText.offsetWidth;
+      progressText.classList.add('bump');
     }
   }
 

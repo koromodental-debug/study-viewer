@@ -3583,6 +3583,16 @@ body.is-practice .floating-search-btn {
   z-index: 1;
 }
 
+.flashcard-progress-text.bump {
+  animation: progress-bump 160ms cubic-bezier(.2,.9,.2,1);
+}
+
+@keyframes progress-bump {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.15); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
 /* 再出題待ち表示 */
 .progress-pending {
   font-size: 10px;
@@ -3648,8 +3658,15 @@ body.is-practice .floating-search-btn {
   border-radius: var(--radius-lg);
   box-shadow: var(--card-shadow);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 150ms cubic-bezier(.2,.9,.2,1), opacity 150ms ease;
   min-height: 120px;
+  will-change: transform, opacity;
+}
+
+/* カード入場アニメーション（ふわっ） */
+.flashcard-card.entering {
+  transform: scale(0.96);
+  opacity: 0.8;
 }
 
 .flashcard-card:active {
@@ -3687,6 +3704,16 @@ body.is-practice .floating-search-btn {
   overflow: hidden;
 }
 
+/* 初回パルスアニメーション */
+.flashcard-tap-hint.pulse {
+  animation: hint-pulse 0.8s ease-in-out 2;
+}
+
+@keyframes hint-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
 /* 答え（黒太字・リンク色は使わない） */
 .flashcard-answer {
   font-size: 17px;
@@ -3707,10 +3734,10 @@ body.is-practice .floating-search-btn {
   max-height: 500px;
 }
 
-/* スワイプオーバーレイ */
+/* スワイプオーバーレイ（ピル形式） */
 .flashcard-card {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .flashcard-card.swiping {
@@ -3719,42 +3746,65 @@ body.is-practice .floating-search-btn {
 
 .swipe-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.1s ease;
-  border-radius: var(--radius-lg);
+  transition: opacity 140ms ease, transform 140ms cubic-bezier(.2,.9,.2,1);
+  z-index: 10;
+  will-change: transform, opacity;
 }
 
 .swipe-overlay span {
-  font-size: 24px;
-  font-weight: 800;
-  padding: 12px 24px;
-  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 
+/* 左スワイプ（もう一度） */
 .swipe-overlay.swipe-left {
-  background: rgba(255, 159, 10, 0.15);
+  left: 20px;
+  transform: translateX(0) scale(0.8);
 }
 
 .swipe-overlay.swipe-left span {
-  color: var(--system-orange);
-  background: rgba(255, 159, 10, 0.2);
+  color: white;
+  background: var(--system-orange);
+  box-shadow: 0 2px 8px rgba(255, 159, 10, 0.4);
 }
 
+/* 右スワイプ（覚えた） */
 .swipe-overlay.swipe-right {
-  background: rgba(52, 199, 89, 0.15);
+  left: auto;
+  right: 20px;
+  transform: translateX(0) scale(0.8);
 }
 
 .swipe-overlay.swipe-right span {
-  color: var(--system-green);
-  background: rgba(52, 199, 89, 0.2);
+  color: white;
+  background: var(--system-green);
+  box-shadow: 0 2px 8px rgba(52, 199, 89, 0.4);
+}
+
+/* 閾値を超えたらpop */
+.swipe-overlay.pop {
+  transform: translateX(0) scale(1.1);
+}
+
+.swipe-overlay.pop span {
+  animation: pill-pop 140ms cubic-bezier(.2,.9,.2,1);
+}
+
+@keyframes pill-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
 
 /* 次へインジケーター */
@@ -3799,7 +3849,8 @@ body.is-practice .floating-search-btn {
   opacity: 0;
   transform: translateY(100%);
   pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 180ms ease, transform 180ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform, opacity;
 }
 
 /* ダークモード対応 */
@@ -3839,7 +3890,7 @@ body.is-practice .floating-search-btn {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 90ms cubic-bezier(.2,0,0,1), filter 90ms;
 }
 
 .flashcard-btn svg {
@@ -3867,6 +3918,7 @@ body.is-practice .floating-search-btn {
 
 .flashcard-btn:active {
   transform: scale(0.98);
+  filter: brightness(0.96);
 }
 
 /* Undoスナックバー（控えめ・ライト/ダーク対応） */
@@ -3884,10 +3936,11 @@ body.is-practice .floating-search-btn {
   font-size: 13px;
   opacity: 0;
   transform: translateY(12px);
-  transition: all 0.2s ease;
+  transition: opacity 160ms ease, transform 160ms cubic-bezier(.2,.9,.2,1);
   z-index: 10001;
   max-width: 360px;
   margin: 0 auto;
+  will-change: transform, opacity;
   /* ライトモード：白半透明＋blur */
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
@@ -3972,18 +4025,18 @@ body.is-practice .floating-search-btn {
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* 飛びアニメーション */
+/* 飛びアニメーション（Duolingo風 飛び出しeasing） */
 .flashcard-card.flying {
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  transition: transform 200ms cubic-bezier(.3,1.2,.2,1), opacity 200ms ease;
 }
 
 .flashcard-card.fly-right {
-  transform: translateX(120%) rotate(20deg) !important;
+  transform: translateX(120%) rotate(12deg) !important;
   opacity: 0;
 }
 
 .flashcard-card.fly-left {
-  transform: translateX(-120%) rotate(-20deg) !important;
+  transform: translateX(-120%) rotate(-12deg) !important;
   opacity: 0;
 }
 
@@ -4000,10 +4053,46 @@ body.is-practice .floating-search-btn {
   display: block;
 }
 
+/* まとめヘッダー（折りたたみトグル） */
+.flashcard-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid var(--separator-color);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.flashcard-summary-header span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--label);
+}
+
+.flashcard-summary-header .summary-chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--secondary-label);
+  transition: transform 0.2s ease;
+}
+
+.flashcard-summary.collapsed .summary-chevron {
+  transform: rotate(-90deg);
+}
+
+.flashcard-summary.collapsed .flashcard-summary-content {
+  display: none;
+}
+
 .flashcard-summary-content {
   padding: 16px;
   font-size: 14px;
   line-height: 1.7;
+  max-height: 40vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .flashcard-summary-content h1,
@@ -5205,5 +5294,50 @@ body.is-practice .floating-search-btn {
   :root:not([data-theme="light"]) .search-result-item .result-snippet mark {
     background: rgba(255, 214, 10, 0.3);
     color: #FFD60A;
+  }
+}
+
+
+/* ============================================
+   prefers-reduced-motion 対応
+   アニメーションを減らしたいユーザー向け
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  /* アニメーションを無効化 */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* フラッシュカード関連のwill-changeを解除（バッテリー節約） */
+  .flashcard-card,
+  .swipe-overlay,
+  .flashcard-action-bar,
+  .flashcard-snackbar {
+    will-change: auto;
+  }
+
+  /* スワイプ時のカード移動は維持（操作性のため） */
+  .flashcard-card.swiping {
+    transition: none;
+  }
+
+  /* 進捗バンプは無効化 */
+  .flashcard-progress-text.bump {
+    animation: none;
+  }
+
+  /* カード入場は即座に表示 */
+  .flashcard-card.entering {
+    transform: none;
+    opacity: 1;
+  }
+
+  /* 飛びアニメーションは最小限に */
+  .flashcard-card.flying {
+    transition-duration: 0.01ms !important;
   }
 }

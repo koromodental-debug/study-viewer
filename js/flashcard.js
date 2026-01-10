@@ -557,8 +557,11 @@ const FlashcardModule = (function() {
     const key = `${keyTopicId}:${card.originalIndex}`;
     const progress = state.progress[key];
 
-    const remaining = state.filteredCards.length - state.currentIndex - 1;
-    const progressPercent = ((state.currentIndex + 1) / state.filteredCards.length) * 100;
+    const current = state.currentIndex + 1;
+    const total = state.filteredCards.length;
+    const progressPercent = (current / total) * 100;
+    // 再出題待ちカード数（_reinsertCountを持つカード）
+    const pendingAgain = state.filteredCards.slice(state.currentIndex + 1).filter(c => c._reinsertCount).length;
 
     container.innerHTML = `
       <div class="flashcard-exercise ${state.isFlipped ? 'flipped' : ''}">
@@ -571,7 +574,7 @@ const FlashcardModule = (function() {
           </button>
           <div class="flashcard-progress-bar">
             <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
-            <span class="flashcard-progress-text">残り ${remaining}</span>
+            <span class="flashcard-progress-text">${current} / ${total}${pendingAgain > 0 ? ` <span class="progress-pending">再${pendingAgain}</span>` : ''}</span>
           </div>
           <button class="flashcard-shuffle-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn" aria-label="シャッフル">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -980,13 +983,22 @@ const FlashcardModule = (function() {
     localStorage.removeItem(`flashcard-session-${state.currentTopicId}`);
 
     const stats = getTopicStats(state.currentTopicId);
+    const cardCount = state.filteredCards.length;
 
     container.innerHTML = `
       <div class="flashcard-completion">
-        <div class="completion-icon">✓</div>
-        <h2 class="completion-title">デッキ完了！</h2>
-        <p class="completion-subtitle">${state.filteredCards.length}問を学習しました</p>
+        <div class="completion-check">
+          <svg class="completion-check-svg" viewBox="0 0 52 52">
+            <circle class="completion-check-circle" cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path class="completion-check-mark" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M14 27l8 8 16-16"/>
+          </svg>
+        </div>
+        <h2 class="completion-title">おつかれさま</h2>
         <div class="completion-stats">
+          <div class="completion-stat">
+            <span class="completion-stat-value">${cardCount}</span>
+            <span class="completion-stat-label">枚</span>
+          </div>
           <div class="completion-stat memorized">
             <span class="completion-stat-value">${stats.memorized}</span>
             <span class="completion-stat-label">覚えた</span>
@@ -997,17 +1009,22 @@ const FlashcardModule = (function() {
           </div>
         </div>
         <div class="completion-actions">
-          <button class="completion-btn" id="completion-back-btn">デッキ一覧へ</button>
-          <button class="completion-btn primary" id="completion-retry-btn">もう一度学習</button>
+          <button class="completion-btn primary" id="completion-continue-btn">もう${state.sessionSize}枚やる</button>
+          <button class="completion-btn secondary" id="completion-back-btn">デッキに戻る</button>
         </div>
       </div>
     `;
 
+    // チェックアニメーション
+    setTimeout(() => {
+      const svg = container.querySelector('.completion-check-svg');
+      if (svg) svg.classList.add('animate');
+    }, 100);
+
     document.getElementById('completion-back-btn').addEventListener('click', goBack);
-    document.getElementById('completion-retry-btn').addEventListener('click', () => {
-      state.currentIndex = 0;
-      state.isFlipped = false;
-      renderCard();
+    document.getElementById('completion-continue-btn').addEventListener('click', () => {
+      // 同じデッキでもう一度
+      startRecommendedDeck();
     });
   }
 

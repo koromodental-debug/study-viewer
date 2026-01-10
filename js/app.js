@@ -128,6 +128,42 @@
     if (typeof FlashcardModule !== 'undefined') {
       FlashcardModule.init();
     }
+
+    // テーマ切り替え機能の初期化
+    initThemeToggle();
+  }
+
+  /**
+   * テーマ切り替え
+   */
+  function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+
+    // 保存されたテーマを適用
+    const savedTheme = localStorage.getItem('studyViewer_theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // トグルボタンのクリックイベント
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      let newTheme;
+      if (currentTheme === 'dark') {
+        newTheme = 'light';
+      } else if (currentTheme === 'light') {
+        newTheme = 'dark';
+      } else {
+        // 未設定の場合、システム設定と逆にする
+        newTheme = systemDark ? 'light' : 'dark';
+      }
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('studyViewer_theme', newTheme);
+    });
   }
 
   /**
@@ -3106,7 +3142,11 @@
         backgroundColor: '#ffffff',
         scale: 2,
         useCORS: true,
-        logging: false
+        logging: false,
+        // キャプチャ用クローンのみライトモードに（画面は変わらない）
+        onclone: (clonedDoc) => {
+          clonedDoc.documentElement.setAttribute('data-theme', 'light');
+        }
       });
 
       // 余白を追加した新しいcanvasを作成

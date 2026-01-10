@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>フッ化物応用法 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 80%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .calc-box {
+      background: #FFF9E6;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .calc-box-title { font-weight: 600; color: #B8860B; margin-bottom: 8px; font-size: 10pt; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 齲蝕の予防とフッ素</span>
+    <h1>フッ化物応用法</h1>
+    <div class="container">
+
+      <h2>フッ化物応用法の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>方法</th>
+          <th>濃度</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">全身応用</span></td>
+          <td>水道水フロリデーション</td>
+          <td>0.7〜1.0 ppmF</td>
+          <td>公衆衛生的、日本では未実施</td>
+        </tr>
+        <tr>
+          <td>フッ化物錠剤・液剤</td>
+          <td>0.25〜1.0 mg/日</td>
+          <td>サプリメント</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="key">局所応用</span></td>
+          <td>フッ化物配合歯磨剤</td>
+          <td>〜1,500 ppmF</td>
+          <td>家庭で毎日使用</td>
+        </tr>
+        <tr>
+          <td><span class="key">フッ化物洗口</span></td>
+          <td><span class="key">225〜900 ppmF</span></td>
+          <td>集団応用可能</td>
+        </tr>
+        <tr>
+          <td>フッ化物歯面塗布</td>
+          <td>9,000 ppmF</td>
+          <td>歯科医院で実施</td>
+        </tr>
+      </table>
+
+      <h2>フッ化物の齲蝕予防機序</h2>
+      <div class="point-box">
+        <div class="point-box-title">水道水フロリデーションの予防機序</div>
+        <ul>
+          <li><span class="highlight">結晶性の向上</span>：エナメル質の結晶構造が安定化</li>
+          <li><span class="highlight">再石灰化の促進</span>：脱灰されたエナメル質の修復</li>
+          <li><span class="highlight">フルオロアパタイトの生成</span>：耐酸性の向上</li>
+          <li><span class="caution">唾液緩衝能の向上は含まれない</span></li>
+        </ul>
+      </div>
+      <p class="note">※フッ化カルシウム（CaF₂）の生成は局所応用の機序であり、水道水フロリデーションの主な機序ではない</p>
+
+      <h2>フッ化物洗口</h2>
+
+      <h3>濃度と実施方法</h3>
+      <table>
+        <tr>
+          <th>濃度</th>
+          <th>方法</th>
+          <th>時間</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">225〜250 ppmF</span></td>
+          <td><span class="highlight">週5回法（毎日法）</span></td>
+          <td>30秒間</td>
+        </tr>
+        <tr>
+          <td><span class="key">450〜900 ppmF</span></td>
+          <td><span class="key">週1回法</span></td>
+          <td>60秒間</td>
+        </tr>
+      </table>
+
+      <h3>洗口の方法</h3>
+      <ul>
+        <li>洗口量：<span class="highlight">5〜10 mL</span></li>
+        <li>時間：30〜60秒間、<span class="key">うつむき加減</span>で「ぶくぶくうがい」</li>
+        <li>洗口後：洗口液を吐き出す（<span class="caution">水ですすがない</span>）</li>
+        <li>実施年齢：<span class="highlight">4〜5歳から中学校卒業まで</span></li>
+      </ul>
+
+      <h3>洗口法が歯面塗布法より優れている点</h3>
+      <div class="point-box">
+        <div class="point-box-title">洗口法の利点</div>
+        <ul>
+          <li><span class="highlight">家庭で実施できる</span>（専門家不要）</li>
+          <li><span class="highlight">費用対効果が高い</span>（安価）</li>
+          <li><span class="highlight">健康格差を縮小する効果が高い</span>（集団応用）</li>
+        </ul>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">洗口法が歯面塗布法より劣る点</div>
+        <ul>
+          <li><span class="caution">乳児には適用できない</span>（うがいができないため）</li>
+          <li><span class="caution">実施頻度が多い</span>（毎日〜週1回 vs 年2〜4回）</li>
+        </ul>
+      </div>
+
+      <h2>フッ化物洗口液の希釈計算</h2>
+      <div class="calc-box">
+        <div class="calc-box-title">計算問題の解き方</div>
+        <p><span class="key">2% NaF溶液</span>のフッ素濃度を求める：</p>
+        <ul>
+          <li>NaF分子量：23 + 19 = 42</li>
+          <li>F原子量：19</li>
+          <li>2% NaF = 20,000 ppm NaF</li>
+          <li>F濃度 = 20,000 × (19/42) ≒ <span class="highlight">9,000 ppmF</span></li>
+        </ul>
+        <p>希釈計算：C₁V₁ = C₂V₂</p>
+        <p>9,000 × V₁ = 225 × 600</p>
+        <p>V₁ = 135,000 ÷ 9,000 = <span class="highlight">15 mL</span></p>
+      </div>
+
+      <h2>齲蝕予防に用いる適切な濃度</h2>
+      <table>
+        <tr>
+          <th>用途</th>
+          <th>適切な濃度</th>
+          <th>不適切な例</th>
+        </tr>
+        <tr>
+          <td>フッ化物洗口</td>
+          <td><span class="key">0.2% NaF（900 ppmF）</span></td>
+          <td>0.1%（低すぎる）</td>
+        </tr>
+        <tr>
+          <td>フッ化物歯面塗布</td>
+          <td>2% NaF（9,000 ppmF）</td>
+          <td>1% SnF₂（低すぎる）</td>
+        </tr>
+        <tr>
+          <td>フッ化物配合歯磨剤</td>
+          <td>〜0.15%（1,500 ppmF）</td>
+          <td>10%（高すぎる）</td>
+        </tr>
+      </table>
+      <p class="note">※フッ化水素酸はエッチング用であり、齲蝕予防には使用しない</p>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">107A63</div>
+        <p>齲蝕予防に用いられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 10%フッ化水素酸溶液<br>
+          b 10%フッ化物配合歯磨剤<br>
+          c 1%フッ化第一スズ塗布液<br>
+          d 0.1%リン酸酸性フッ化物溶液<br>
+          e 0.2%フッ化ナトリウム洗口液
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">0.2% NaF洗口液（900 ppmF）</span>は週1回法のフッ化物洗口に用いられる。フッ化水素酸はエッチング用。10%歯磨剤は濃度が高すぎる。1% SnF₂や0.1% APFは濃度が低すぎる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C81</div>
+        <p>フッ化物応用で、洗口法が歯面塗布法よりも優れているのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 家庭で実施できる。<br>
+          b 乳児に適用できる。<br>
+          c 費用対効果が高い。<br>
+          d 実施頻度が少なくてすむ。<br>
+          e 健康格差を縮小する効果が高い。
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】洗口法は<span class="highlight">家庭で実施でき</span>、<span class="highlight">費用対効果が高く</span>、集団応用により<span class="highlight">健康格差を縮小</span>できる。<span class="caution">乳児は「ぶくぶくうがい」ができないため適用できない</span>。実施頻度は洗口法の方が多い（毎日〜週1回 vs 年2〜4回）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D78</div>
+        <p>水道水フロリデーションの齲蝕予防機序はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 結晶性の向上<br>
+          b 再石灰化の促進<br>
+          c 唾液緩衝能の向上<br>
+          d フッ化カルシウムの生成<br>
+          e フルオロアパタイトの生成
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】水道水フロリデーションの予防機序は、<span class="highlight">結晶性の向上</span>、<span class="highlight">再石灰化の促進</span>、<span class="highlight">フルオロアパタイトの生成</span>である。<span class="caution">唾液緩衝能の向上</span>はフッ化物の作用ではない。<span class="caution">フッ化カルシウムの生成</span>は高濃度局所応用の機序であり、低濃度の水道水フロリデーションでは主要な機序ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D89</div>
+        <p>ある小学校で集団フッ化物洗口を実施するため、2%NaF溶液を希釈して600mLのフッ化物洗口液（F濃度：225 ppm）を作製することとした。<br>2%NaF溶液の必要量を求めよ。</p>
+        <div class="answer">正解：15 mL</div>
+        <p>【解説】2% NaF = 9,000 ppmF。希釈の公式 C₁V₁ = C₂V₂ より、9,000 × V₁ = 225 × 600。V₁ = 135,000 ÷ 9,000 = <span class="highlight">15 mL</span></p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">試験で問われるポイント</div>
+        <ul>
+          <li>洗口法の濃度：<span class="highlight">225 ppmF（毎日）/ 900 ppmF（週1）</span></li>
+          <li>洗口法の利点：家庭実施可、費用対効果高、健康格差縮小</li>
+          <li>水道水フロリデーション機序：結晶性向上、再石灰化、フルオロアパタイト（<span class="caution">唾液緩衝能は×</span>）</li>
+          <li>希釈計算：<span class="highlight">2% NaF = 9,000 ppmF</span>を覚える</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

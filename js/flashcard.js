@@ -88,15 +88,64 @@ const FlashcardModule = (function() {
     return { memorized: totalMemorized, again: totalAgain, total: totalCards };
   }
 
+  function getOverallStats() {
+    const subjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))];
+    let totalCards = 0;
+    let memorized = 0;
+    let again = 0;
+
+    for (const subject of subjects) {
+      const stats = getSubjectStats(subject);
+      totalCards += stats.total;
+      memorized += stats.memorized;
+      again += stats.again;
+    }
+
+    return { total: totalCards, memorized, again };
+  }
+
+  // 今日のおすすめカード数を計算
+  function getRecommendedCount() {
+    const overall = getOverallStats();
+    // again優先 + 目標10枚に足りない分は未学習から
+    const againCount = overall.again;
+    const targetCount = 10;
+    return Math.max(againCount, Math.min(targetCount, againCount + 5));
+  }
+
   // === Ankiスタイル デッキ一覧画面 ===
   function renderDeckList() {
     const subjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))];
+    const overall = getOverallStats();
+    const recommendedCount = getRecommendedCount();
 
     container.innerHTML = `
       <div class="deck-list">
         <div class="deck-header">
           <h2>フラッシュカード</h2>
         </div>
+
+        ${recommendedCount > 0 ? `
+        <div class="deck-recommended" id="start-recommended-deck">
+          <span class="deck-recommended-label">今日のおすすめ</span>
+          <span class="deck-recommended-count">${recommendedCount}枚</span>
+          <span class="deck-recommended-action">練習</span>
+        </div>
+        ` : ''}
+
+        <div class="deck-stats-row">
+          <div class="deck-stat-item ${overall.memorized > 0 ? 'clickable' : ''}" id="start-memorized-deck">
+            <span class="deck-stat-label">覚えた</span>
+            <span class="deck-stat-value memorized">${overall.memorized}</span>
+            ${overall.memorized > 0 ? '<span class="deck-stat-action">練習</span>' : ''}
+          </div>
+          <div class="deck-stat-item ${overall.again > 0 ? 'clickable' : ''}" id="start-again-deck">
+            <span class="deck-stat-label">もう一度</span>
+            <span class="deck-stat-value again">${overall.again}</span>
+            ${overall.again > 0 ? '<span class="deck-stat-action">練習</span>' : ''}
+          </div>
+        </div>
+
         <div class="deck-subjects" id="deck-subjects">
           ${subjects.map(subject => renderSubjectRow(subject)).join('')}
         </div>
@@ -120,14 +169,21 @@ const FlashcardModule = (function() {
   function renderSubjectRow(subject) {
     const topics = DATA.filter(d => d.subject === subject && d.qaPath);
     const stats = getSubjectStats(subject);
-    const statsText = stats.total > 0 ? `${stats.memorized}/${stats.total}` : '';
+    const percent = stats.total > 0 ? Math.round((stats.memorized / stats.total) * 100) : 0;
 
     return `
       <div class="deck-subject" data-subject="${subject}">
         <div class="deck-subject-header">
           <span class="deck-arrow">▶</span>
           <span class="deck-subject-name">${subject}</span>
-          <span class="deck-subject-stats">${statsText}</span>
+          <div class="deck-subject-stats">
+            ${stats.total > 0 ? `
+              <div class="deck-subject-progress">
+                <div class="deck-subject-progress-fill" style="width: ${percent}%"></div>
+              </div>
+              <span class="deck-subject-percent">${percent}%</span>
+            ` : ''}
+          </div>
         </div>
         <div class="deck-topics">
           ${topics.map(topic => renderTopicRow(topic)).join('')}
@@ -177,6 +233,24 @@ const FlashcardModule = (function() {
         await loadTopic(topicId, isShuffleMode);
       });
     });
+
+    // 「覚えた」デッキ開始
+    const memorizedBtn = document.getElementById('start-memorized-deck');
+    if (memorizedBtn && memorizedBtn.classList.contains('clickable')) {
+      memorizedBtn.addEventListener('click', () => startStatusDeck('memorized'));
+    }
+
+    // 「もう一度」デッキ開始
+    const againBtn = document.getElementById('start-again-deck');
+    if (againBtn && againBtn.classList.contains('clickable')) {
+      againBtn.addEventListener('click', () => startStatusDeck('again'));
+    }
+
+    // 「今日のおすすめ」デッキ開始
+    const recommendedBtn = document.getElementById('start-recommended-deck');
+    if (recommendedBtn) {
+      recommendedBtn.addEventListener('click', () => startRecommendedDeck());
+    }
   }
 
   // === トピック読み込み ===
@@ -244,6 +318,169 @@ const FlashcardModule = (function() {
     }
   }
 
+  // === ステータスデッキ（覚えた/もう一度のみ） ===
+  async function startStatusDeck(status) {
+    // 指定ステータスのカード参照を収集
+    const cardRefs = [];
+    for (const [key, value] of Object.entries(state.progress)) {
+      if (value.status === status) {
+        const [topicId, cardIndex] = key.split(':');
+        cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
+      }
+    }
+
+    if (cardRefs.length === 0) {
+      return;
+    }
+
+    // 必要なトピックのQAファイルを取得
+    const uniqueTopicIds = [...new Set(cardRefs.map(r => r.topicId))];
+    const topicCardsMap = new Map();
+
+    for (const topicId of uniqueTopicIds) {
+      const topic = DATA.find(d => d.id === topicId);
+      if (!topic || !topic.qaPath) continue;
+
+      try {
+        const response = await fetch(topic.qaPath);
+        const text = await response.text();
+        const cards = parseQAToCards(text, topicId);
+        topicCardsMap.set(topicId, { cards, topic });
+      } catch (e) {
+        console.log(`QA読み込みエラー (${topicId}):`, e);
+      }
+    }
+
+    // フィルタ済みカード配列を構築
+    const filteredCards = [];
+    for (const ref of cardRefs) {
+      const topicData = topicCardsMap.get(ref.topicId);
+      if (topicData) {
+        const card = topicData.cards.find(c => c.originalIndex === ref.cardIndex);
+        if (card) {
+          filteredCards.push({
+            ...card,
+            topicTitle: topicData.topic.title,
+            htmlPath: topicData.topic.htmlPath
+          });
+        }
+      }
+    }
+
+    if (filteredCards.length === 0) {
+      return;
+    }
+
+    // ステータスデッキとして開始
+    state.currentTopicId = `__status_${status}`;
+    state.currentTopic = { title: status === 'memorized' ? '覚えたカード' : 'もう一度カード' };
+    state.cards = filteredCards;
+    state.filteredCards = [...filteredCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+
+    if (state.shuffleEnabled) {
+      for (let i = state.filteredCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+      }
+    }
+
+    renderCard();
+  }
+
+  // === 今日のおすすめデッキ ===
+  async function startRecommendedDeck() {
+    const targetCount = getRecommendedCount();
+    const cardRefs = [];
+
+    // 1. まず「もう一度」カードを全て収集
+    for (const [key, value] of Object.entries(state.progress)) {
+      if (value.status === 'again') {
+        const [topicId, cardIndex] = key.split(':');
+        cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key, priority: 1 });
+      }
+    }
+
+    // 2. 不足分は各トピックから未学習カードを追加
+    if (cardRefs.length < targetCount) {
+      const topicsWithQa = DATA.filter(d => d.qaPath);
+      for (const topic of topicsWithQa) {
+        if (cardRefs.length >= targetCount) break;
+
+        // このトピックの進捗キーを取得
+        const topicKeys = Object.keys(state.progress).filter(k => k.startsWith(topic.id + ':'));
+        const learnedIndices = new Set(topicKeys.map(k => parseInt(k.split(':')[1])));
+
+        // 未学習カードを追加（最大3枚/トピック）
+        let addedFromTopic = 0;
+        for (let i = 0; i < 50 && addedFromTopic < 3; i++) {
+          if (!learnedIndices.has(i)) {
+            cardRefs.push({ topicId: topic.id, cardIndex: i, key: `${topic.id}:${i}`, priority: 2 });
+            addedFromTopic++;
+            if (cardRefs.length >= targetCount) break;
+          }
+        }
+      }
+    }
+
+    if (cardRefs.length === 0) return;
+
+    // トピックごとにQAファイルを読み込み
+    const uniqueTopicIds = [...new Set(cardRefs.map(r => r.topicId))];
+    const topicCardsMap = new Map();
+
+    for (const topicId of uniqueTopicIds) {
+      const topic = DATA.find(d => d.id === topicId);
+      if (!topic || !topic.qaPath) continue;
+
+      try {
+        const response = await fetch(topic.qaPath);
+        const text = await response.text();
+        const cards = parseQAToCards(text, topicId);
+        topicCardsMap.set(topicId, { cards, topic });
+      } catch (e) {
+        console.log(`QA読み込みエラー (${topicId}):`, e);
+      }
+    }
+
+    // フィルタ済みカード配列を構築
+    const filteredCards = [];
+    for (const ref of cardRefs) {
+      const topicData = topicCardsMap.get(ref.topicId);
+      if (topicData) {
+        const card = topicData.cards.find(c => c.originalIndex === ref.cardIndex);
+        if (card) {
+          filteredCards.push({
+            ...card,
+            topicTitle: topicData.topic.title,
+            htmlPath: topicData.topic.htmlPath
+          });
+        }
+      }
+    }
+
+    if (filteredCards.length === 0) return;
+
+    // おすすめデッキとして開始
+    state.currentTopicId = '__recommended';
+    state.currentTopic = { title: '今日のおすすめ' };
+    state.cards = filteredCards;
+    state.filteredCards = [...filteredCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+
+    // シャッフル
+    for (let i = state.filteredCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+    }
+
+    renderCard();
+  }
+
   // === Q&Aパース ===
   function parseQAToCards(text, topicId) {
     const cards = [];
@@ -282,9 +519,12 @@ const FlashcardModule = (function() {
     const card = state.filteredCards[state.currentIndex];
     if (!card) return;
 
-    const key = `${state.currentTopicId}:${card.originalIndex}`;
+    // ステータスデッキの場合はcard.topicIdを使用
+    const keyTopicId = card.topicId || state.currentTopicId;
+    const key = `${keyTopicId}:${card.originalIndex}`;
     const progress = state.progress[key];
 
+    const remaining = state.filteredCards.length - state.currentIndex - 1;
     const progressPercent = ((state.currentIndex + 1) / state.filteredCards.length) * 100;
 
     container.innerHTML = `
@@ -297,7 +537,7 @@ const FlashcardModule = (function() {
           </button>
           <div class="flashcard-progress-bar">
             <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
-            <span class="flashcard-progress-text">${state.currentIndex + 1}/${state.filteredCards.length}</span>
+            <span class="flashcard-progress-text">残り ${remaining}</span>
           </div>
           <button class="flashcard-shuffle-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn" aria-label="シャッフル">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -313,6 +553,12 @@ const FlashcardModule = (function() {
             </div>
             <div class="flashcard-answer ${state.isFlipped ? 'show' : ''}">
               ${card.answer}
+            </div>
+            <div class="swipe-overlay swipe-left" id="swipe-overlay-left">
+              <span>もう一度</span>
+            </div>
+            <div class="swipe-overlay swipe-right" id="swipe-overlay-right">
+              <span>覚えた</span>
             </div>
           </div>
         </div>
@@ -336,9 +582,10 @@ const FlashcardModule = (function() {
 
     bindCardEvents();
 
-    // まとめを読み込み
-    if (state.currentTopic && state.currentTopic.htmlPath) {
-      loadHtmlSummary(state.currentTopic.htmlPath, card.section);
+    // まとめを読み込み（ステータスデッキの場合はcard.htmlPathを優先）
+    const htmlPath = card.htmlPath || (state.currentTopic && state.currentTopic.htmlPath);
+    if (htmlPath) {
+      loadHtmlSummary(htmlPath, card.section);
     }
   }
 
@@ -374,6 +621,7 @@ const FlashcardModule = (function() {
 
     // スワイプ
     cardContainer.addEventListener('touchstart', onTouchStart, { passive: true });
+    cardContainer.addEventListener('touchmove', onTouchMove, { passive: true });
     cardContainer.addEventListener('touchend', onTouchEnd, { passive: true });
 
     // 学習ボタン
@@ -382,24 +630,75 @@ const FlashcardModule = (function() {
   }
 
   // === スワイプ処理 ===
+  const SWIPE_THRESHOLD = 80;
+
   function onTouchStart(e) {
     state.touchStartX = e.touches[0].clientX;
     state.touchStartY = e.touches[0].clientY;
+
+    const card = document.getElementById('flashcard-card');
+    if (card) card.classList.add('swiping');
+  }
+
+  function onTouchMove(e) {
+    const diffX = e.touches[0].clientX - state.touchStartX;
+    const diffY = e.touches[0].clientY - state.touchStartY;
+
+    // 縦スクロールが優勢なら何もしない
+    if (Math.abs(diffY) > Math.abs(diffX) * 0.8) return;
+
+    const card = document.getElementById('flashcard-card');
+    const overlayLeft = document.getElementById('swipe-overlay-left');
+    const overlayRight = document.getElementById('swipe-overlay-right');
+
+    if (!card || !overlayLeft || !overlayRight) return;
+
+    // カードを移動
+    const moveX = Math.max(-150, Math.min(150, diffX * 0.5));
+    const rotation = moveX * 0.05;
+    card.style.transform = `translateX(${moveX}px) rotate(${rotation}deg)`;
+
+    // オーバーレイの透明度（閾値に近づくほど濃く）
+    const progress = Math.min(1, Math.abs(diffX) / SWIPE_THRESHOLD);
+
+    if (diffX < -20) {
+      // 左スワイプ → もう一度（オレンジ）
+      overlayLeft.style.opacity = progress;
+      overlayRight.style.opacity = 0;
+    } else if (diffX > 20) {
+      // 右スワイプ → 覚えた（緑）
+      overlayRight.style.opacity = progress;
+      overlayLeft.style.opacity = 0;
+    } else {
+      overlayLeft.style.opacity = 0;
+      overlayRight.style.opacity = 0;
+    }
   }
 
   function onTouchEnd(e) {
     const diffX = e.changedTouches[0].clientX - state.touchStartX;
     const diffY = e.changedTouches[0].clientY - state.touchStartY;
-    const threshold = 80;
+
+    const card = document.getElementById('flashcard-card');
+    const overlayLeft = document.getElementById('swipe-overlay-left');
+    const overlayRight = document.getElementById('swipe-overlay-right');
+
+    // リセット
+    if (card) {
+      card.classList.remove('swiping');
+      card.style.transform = '';
+    }
+    if (overlayLeft) overlayLeft.style.opacity = 0;
+    if (overlayRight) overlayRight.style.opacity = 0;
 
     // 横方向のスワイプが縦より大きい場合
-    if (Math.abs(diffX) > threshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
       if (diffX < 0) {
-        // 左スワイプ → 次のカード
-        next();
+        // 左スワイプ → もう一度
+        markAgain();
       } else {
-        // 右スワイプ → 前のカード
-        prev();
+        // 右スワイプ → 覚えた
+        markMemorized();
       }
     }
   }
@@ -446,7 +745,8 @@ const FlashcardModule = (function() {
     const card = state.filteredCards[state.currentIndex];
     if (!card) return;
 
-    const key = `${state.currentTopicId}:${card.originalIndex}`;
+    const keyTopicId = card.topicId || state.currentTopicId;
+    const key = `${keyTopicId}:${card.originalIndex}`;
     state.progress[key] = {
       status: 'memorized',
       lastReview: Date.now()
@@ -465,12 +765,27 @@ const FlashcardModule = (function() {
     const card = state.filteredCards[state.currentIndex];
     if (!card) return;
 
-    const key = `${state.currentTopicId}:${card.originalIndex}`;
+    const keyTopicId = card.topicId || state.currentTopicId;
+    const key = `${keyTopicId}:${card.originalIndex}`;
     state.progress[key] = {
       status: 'again',
       lastReview: Date.now()
     };
     saveProgress();
+
+    // 再出題ロジック：このカードを後で再度出題（最大2回まで）
+    const reinsertCount = card._reinsertCount || 0;
+    if (reinsertCount < 2) {
+      const reinsertCard = { ...card, _reinsertCount: reinsertCount + 1 };
+      // 残りカード数に応じて挿入位置を決定
+      const remaining = state.filteredCards.length - state.currentIndex - 1;
+      const insertOffset = Math.min(4, Math.max(2, Math.floor(remaining / 2)));
+      const insertPosition = Math.min(
+        state.currentIndex + insertOffset,
+        state.filteredCards.length
+      );
+      state.filteredCards.splice(insertPosition, 0, reinsertCard);
+    }
 
     // 次のカードへ自動移動
     if (state.currentIndex < state.filteredCards.length - 1) {

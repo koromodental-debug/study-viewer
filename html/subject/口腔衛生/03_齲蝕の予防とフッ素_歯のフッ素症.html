@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯のフッ素症 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 齲蝕の予防とフッ素</span>
+    <h1>歯のフッ素症</h1>
+    <div class="container">
+
+      <h2>定義</h2>
+      <p><span class="key">エナメル質の石灰化期</span>に、過量のフッ化物を含有する飲料水を摂取した場合に生じる<span class="highlight">エナメル質の石灰化不全</span>である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">ひっかけ注意</div>
+        <ul style="margin:0; padding-left:1.2em;">
+          <li><span class="caution">象牙質ではなくエナメル質</span>の形成不全</li>
+          <li><span class="caution">急性中毒ではなく慢性中毒</span>による</li>
+        </ul>
+      </div>
+
+      <h2>発症の特徴</h2>
+
+      <h3>永久歯と乳歯の違い</h3>
+      <table>
+        <tr>
+          <th>歯種</th>
+          <th>発症</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td class="key">永久歯</td>
+          <td><span class="highlight">発症する</span></td>
+          <td>石灰化期に飲料水からフッ化物を摂取</td>
+        </tr>
+        <tr>
+          <td class="key">乳歯</td>
+          <td><span class="caution">発症しにくい</span></td>
+          <td>胎盤がフッ化物を通過しにくい</td>
+        </tr>
+      </table>
+
+      <h3>対称性</h3>
+      <p>全身性の原因（飲料水からの摂取）であるため、<span class="highlight">左右側同名歯に発症</span>する（対称性がある）。</p>
+
+      <h2>臨床的特徴</h2>
+
+      <h3>重症度による違い</h3>
+      <table>
+        <tr>
+          <th>重症度</th>
+          <th>臨床所見</th>
+          <th>齲蝕抵抗性</th>
+        </tr>
+        <tr>
+          <td class="key">軽度</td>
+          <td>白斑、白濁</td>
+          <td><span class="highlight">高い</span></td>
+        </tr>
+        <tr>
+          <td class="key">中等度</td>
+          <td>着色（黄褐色）</td>
+          <td>高い</td>
+        </tr>
+        <tr>
+          <td class="key">重度</td>
+          <td>実質欠損、陥凹</td>
+          <td>低下する場合あり</td>
+        </tr>
+      </table>
+
+      <h2>Deanの分類</h2>
+      <p>歯のフッ素症の重症度評価に用いられる国際的な分類法。</p>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>日本語</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>Normal</td>
+          <td>正常</td>
+          <td>エナメル質は滑沢で光沢がある</td>
+        </tr>
+        <tr>
+          <td>Questionable</td>
+          <td>疑わしい</td>
+          <td>わずかな変化</td>
+        </tr>
+        <tr>
+          <td>Very mild</td>
+          <td>ごく軽度</td>
+          <td>小さな白斑が散在</td>
+        </tr>
+        <tr>
+          <td>Mild</td>
+          <td>軽度</td>
+          <td>白濁が歯面の50%未満</td>
+        </tr>
+        <tr>
+          <td>Moderate</td>
+          <td>中等度</td>
+          <td>白濁が歯面全体、着色あり</td>
+        </tr>
+        <tr>
+          <td>Severe</td>
+          <td>重度</td>
+          <td>実質欠損、陥凹を伴う</td>
+        </tr>
+      </table>
+
+      <h2>急性中毒との比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>歯のフッ素症（慢性）</th>
+          <th>急性中毒</th>
+        </tr>
+        <tr>
+          <td class="key">原因</td>
+          <td>長期間の過量摂取</td>
+          <td>一度に多量摂取</td>
+        </tr>
+        <tr>
+          <td class="key">摂取源</td>
+          <td>飲料水（高F濃度地域）</td>
+          <td>フッ化物製剤の誤飲</td>
+        </tr>
+        <tr>
+          <td class="key">症状</td>
+          <td>エナメル質の石灰化不全</td>
+          <td>悪心・嘔吐、消化器症状</td>
+        </tr>
+        <tr>
+          <td class="key">発症時期</td>
+          <td>歯の形成期（出生〜8歳頃）</td>
+          <td>摂取直後</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A77</div>
+        <p>歯のフッ素症の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 齲蝕抵抗性が高い。<br>
+          b 左右側同名歯に発症する。<br>
+          c 象牙質の形成不全である。<br>
+          d フッ化物の急性中毒である。<br>
+          e 永久歯に比べて乳歯に発症しやすい。
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<br>
+        <span class="key">a ○</span>：軽度の歯のフッ素症では<span class="highlight">齲蝕抵抗性が高い</span>。<br><br>
+        <span class="key">b ○</span>：全身性の原因（飲料水）であるため、<span class="highlight">左右側同名歯に対称性に発症</span>する。<br><br>
+        <span class="caution">c ×</span>：象牙質ではなく<span class="key">エナメル質</span>の石灰化不全である。<br><br>
+        <span class="caution">d ×</span>：急性中毒ではなく<span class="key">慢性中毒</span>である。長期間の過量摂取が原因。<br><br>
+        <span class="caution">e ×</span>：乳歯ではなく<span class="key">永久歯</span>に発症しやすい。乳歯は胎盤がフッ化物を通過しにくいため保護される。</p>
+      </div>
+
+      <p class="note">※歯のフッ素症の成立要因については別項目で解説</p>
+
+    </div>
+  </div>
+</body>
+</html>

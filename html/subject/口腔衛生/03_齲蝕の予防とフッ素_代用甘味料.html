@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>代用甘味料 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / 齲蝕の予防とフッ素</span>
+    <h1>代用甘味料</h1>
+    <div class="container">
+
+      <h2>代用甘味料とは</h2>
+      <p><span class="key">代用甘味料</span>は、砂糖（スクロース）の代わりに甘味を付与する目的で使用される甘味料である。齲蝕予防の観点から、齲蝕原性が低い甘味料が注目されている。</p>
+
+      <h2>代用甘味料の分類</h2>
+
+      <h3>糖アルコール</h3>
+      <table>
+        <tr>
+          <th>甘味料</th>
+          <th>原材料</th>
+          <th>齲蝕原性</th>
+        </tr>
+        <tr>
+          <td><span class="key">キシリトール</span></td>
+          <td>キシロース（木糖）</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">ソルビトール</span></td>
+          <td>グルコース</td>
+          <td>低い</td>
+        </tr>
+        <tr>
+          <td><span class="key">マルチトール</span></td>
+          <td>マルトース（麦芽糖）</td>
+          <td>低い</td>
+        </tr>
+        <tr>
+          <td><span class="key">エリスリトール</span></td>
+          <td>グルコース</td>
+          <td>なし</td>
+        </tr>
+      </table>
+
+      <h3>非糖質系（高甘味度甘味料）</h3>
+      <table>
+        <tr>
+          <th>甘味料</th>
+          <th>原材料</th>
+          <th>齲蝕原性</th>
+        </tr>
+        <tr>
+          <td><span class="key">アスパルテーム</span></td>
+          <td>アミノ酸（Phe + Asp）</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">サッカリン</span></td>
+          <td>化学合成</td>
+          <td>なし</td>
+        </tr>
+      </table>
+
+      <h3>その他</h3>
+      <table>
+        <tr>
+          <th>甘味料</th>
+          <th>分類</th>
+          <th>齲蝕原性</th>
+        </tr>
+        <tr>
+          <td><span class="key">パラチノース</span></td>
+          <td>二糖類（スクロース異性化）</td>
+          <td>低い</td>
+        </tr>
+      </table>
+
+      <h2>キシリトール</h2>
+      <p><span class="key">キシリトール</span>は最も広く使用されている代用甘味料の一つで、<span class="highlight">糖アルコール</span>に分類される。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">キシリトールで正しいこと</div>
+        <ul>
+          <li><span class="key">糖アルコール</span>である</li>
+          <li>甘味度は<span class="key">砂糖とほぼ同じ</span>（約1.0）</li>
+          <li><span class="key">ミュータンスレンサ球菌が酸を産生しない</span></li>
+          <li>プラーク中pHが臨界pH以下に下がらない</li>
+          <li>Turku研究で齲蝕予防効果が実証された</li>
+        </ul>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">キシリトールで誤っていること</div>
+        <ul>
+          <li><span class="caution">血糖値を上昇させる → 誤り</span>（血糖値への影響は少ない）</li>
+          <li><span class="caution">多量摂取で便秘 → 誤り</span>（下痢が生じる）</li>
+        </ul>
+      </div>
+
+      <p>糖アルコールは小腸で吸収されにくいため、多量に摂取すると浸透圧性の<span class="highlight">下痢</span>を引き起こすことがある。</p>
+      <p class="note">※便秘ではなく下痢である点に注意</p>
+
+      <h2>アスパルテーム</h2>
+      <p><span class="key">アスパルテーム</span>は<span class="highlight">アミノ酸を原材料とする</span>非糖質系の高甘味度甘味料である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">アスパルテームの特徴</div>
+        <ul>
+          <li>原材料：<span class="key">フェニルアラニン（Phe）＋ アスパラギン酸（Asp）</span></li>
+          <li>甘味度：砂糖の約200倍</li>
+          <li>カロリー：ほぼゼロ（使用量が少ないため）</li>
+          <li><span class="caution">フェニルケトン尿症患者は摂取禁忌</span></li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A125</div>
+        <p>キシリトールで正しいのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 血糖値を上昇させる。<br>
+          b 糖アルコールである。<br>
+          c 多量摂取によって便秘が生じる。<br>
+          d 甘味度は砂糖とほぼ同じである。<br>
+          e ミュータンス連鎖球菌が酸を産生しない。
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】キシリトールは<span class="key">糖アルコール</span>であり、甘味度は<span class="key">砂糖とほぼ同じ</span>。ミュータンスレンサ球菌が利用できないため酸を産生しない。血糖値への影響は少なく、多量摂取では便秘ではなく<span class="caution">下痢</span>が生じる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C113</div>
+        <p>アミノ酸を原材料とする代用甘味料はどれか。1つ選べ。</p>
+        <div class="choices">
+          a サッカリン<br>
+          b キシリトール<br>
+          c パラチノース<br>
+          d マルチトール<br>
+          e アスパルテーム
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">アスパルテーム</span>はフェニルアラニンとアスパラギン酸という2種類のアミノ酸を原材料とする。サッカリンは化学合成品。キシリトール、マルチトールは糖アルコール。パラチノースはスクロースの異性化糖。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">試験で問われるポイント</div>
+        <ul>
+          <li>キシリトール → <span class="key">糖アルコール</span>、甘味度≒砂糖、酸産生なし、<span class="caution">下痢</span>（便秘×）</li>
+          <li>アスパルテーム → <span class="highlight">アミノ酸由来</span>（Phe + Asp）</li>
+          <li>代用甘味料の分類を整理して覚える</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

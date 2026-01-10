@@ -3493,9 +3493,10 @@ body {
 
 /* 演習中はタブバーを非表示 */
 .floating-tabbar.exercise-hidden {
-  transform: translateY(100%);
+  transform: translateX(-50%) translateY(calc(100% + 40px));
   opacity: 0;
   pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 /* 演習画面（4段構成: header + stage + actionBar） */
@@ -3619,7 +3620,8 @@ body {
   justify-content: flex-start;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 16px;
+  /* アクションバー（約80px + safe-area）分の余白を確保 */
+  padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
 }
 
 /* 表面のときはカードを中央寄せ */
@@ -3770,13 +3772,19 @@ body {
 
 /* アクションバー（画面下固定） */
 .flashcard-action-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   gap: 12px;
-  padding: 12px 0;
+  padding: 12px 16px;
   padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  flex-shrink: 0;
+  background: var(--bg-color);
+  border-top: 1px solid var(--border-subtle);
+  z-index: 100;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(100%);
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
@@ -3829,10 +3837,11 @@ body {
   transform: scale(0.98);
 }
 
-/* Undoスナックバー */
+/* Undoスナックバー（アクションバーの上に表示） */
 .flashcard-snackbar {
   position: fixed;
-  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  /* アクションバー（約72px + safe-area）の上に配置 */
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
   left: 16px;
   right: 16px;
   display: flex;
@@ -3845,9 +3854,9 @@ body {
   border-radius: 8px;
   font-size: 14px;
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateY(20px);
   transition: all 0.25s ease;
-  z-index: 1000;
+  z-index: 1001;
   max-width: 400px;
   margin: 0 auto;
 }

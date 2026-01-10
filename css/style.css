@@ -4925,6 +4925,9 @@ body.is-practice .tab-content {
   font-weight: 600;
   cursor: pointer;
   transition: transform 90ms cubic-bezier(.2,0,0,1), filter 90ms;
+  /* Safari対応: デフォルトボタンスタイルを無効化 */
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .flashcard-btn svg {

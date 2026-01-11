@@ -1,0 +1,29 @@
+{
+  "name": "study-viewer",
+  "version": "1.0.0",
+  "description": "歯科国試対策アプリ ココシカ",
+  "main": "index.js",
+  "scripts": {
+    "sync": "rm -rf www && mkdir -p www && cp -r index.html css js html qa kakomon images www/ && npx cap sync ios",
+    "ios": "npm run sync && npx cap open ios",
+    "build:web": "echo 'Static site - no build needed'",
+    "deploy:web": "git add -A && git commit -m 'Update' && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koromodental-debug/study-viewer.git"
+  },
+  "keywords": ["dental", "education", "flashcard"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/koromodental-debug/study-viewer/issues"
+  },
+  "homepage": "https://github.com/koromodental-debug/study-viewer#readme",
+  "dependencies": {
+    "@capacitor/cli": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/ios": "^8.0.0"
+  }
+}

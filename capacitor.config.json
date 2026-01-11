@@ -1,0 +1,11 @@
+{
+  "appId": "com.kokoshika.studyapp",
+  "appName": "ココシカ",
+  "webDir": "www",
+  "ios": {
+    "contentInset": "automatic"
+  },
+  "server": {
+    "iosScheme": "capacitor"
+  }
+}

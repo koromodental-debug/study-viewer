@@ -2,3 +2,9 @@
 *.pyc
 __pycache__/
 images/*_backup/
+
+# Capacitor
+www/
+ios/
+node_modules/
+package-lock.json

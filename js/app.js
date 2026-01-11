@@ -116,7 +116,8 @@
     previousScrollY: null,  // ジャンプ前のスクロール位置
     observer: null,         // IntersectionObserver
     mode: 'medium',         // 'medium' or 'full'
-    hasH2: false            // h2がある場合true（階層表示用）
+    hasH2: false,           // h2がある場合true（階層表示用）
+    targetTopicId: null     // 前後トピックナビ用：現在のターゲットトピックID
   };
 
   // 読書モードの状態管理
@@ -3836,6 +3837,9 @@
     const container = elements.htmlContent;
     tocState.previousScrollY = container ? container.scrollTop : 0;
 
+    // ターゲットトピックをリセット（スクロール位置から取得するように）
+    tocState.targetTopicId = null;
+
     // 「元の位置へ」ボタンを隠す（まだジャンプしていない）
     if (elements.tocBackBtn) {
       elements.tocBackBtn.style.display = 'none';
@@ -3917,13 +3921,14 @@
 
   /**
    * 前後トピックボタンの状態を更新
+   * @param {string} [targetTopicId] - 指定した場合、このトピックを基準にボタンを更新
    */
-  function updateTopicNavButtons() {
+  function updateTopicNavButtons(targetTopicId = null) {
     if (!elements.tocPrevTopic || !elements.tocNextTopic) return;
 
     // 読み込み済みトピックを取得
     const loadedTopics = getLoadedTopicIds();
-    const currentTopicId = getCurrentTopicId();
+    const currentTopicId = targetTopicId || getCurrentTopicId();
 
     if (loadedTopics.length === 0 || !currentTopicId) {
       elements.tocPrevTopic.disabled = true;
@@ -4003,30 +4008,54 @@
    * 前のトピックへ移動
    */
   async function goToPrevTopic() {
-    const currentTopicId = getCurrentTopicId();
-    if (!currentTopicId) return;
+    const prevBtn = elements.tocPrevTopic;
+    if (!prevBtn || prevBtn.disabled) return;
 
-    const currentIndex = DATA.findIndex(d => d.id === currentTopicId);
+    // tocState.targetTopicId があればそれを基準に、なければスクロール位置から
+    const baseTopicId = tocState.targetTopicId || getCurrentTopicId();
+    if (!baseTopicId) return;
+
+    const currentIndex = DATA.findIndex(d => d.id === baseTopicId);
     if (currentIndex <= 0) return;
 
     const prevTopic = DATA[currentIndex - 1];
-    closeTOC();
+
+    // ターゲットを更新（連続クリック対応）
+    tocState.targetTopicId = prevTopic.id;
+
+    // TOCは閉じずに読み込み＆スクロール
     await loadAndScrollToTopic(prevTopic.id);
+    // ボタンを更新（移動先トピックを基準に）
+    updateTopicNavButtons(prevTopic.id);
+    // 現在地も更新
+    updateTocNow();
   }
 
   /**
    * 次のトピックへ移動
    */
   async function goToNextTopic() {
-    const currentTopicId = getCurrentTopicId();
-    if (!currentTopicId) return;
+    const nextBtn = elements.tocNextTopic;
+    if (!nextBtn || nextBtn.disabled) return;
 
-    const currentIndex = DATA.findIndex(d => d.id === currentTopicId);
+    // tocState.targetTopicId があればそれを基準に、なければスクロール位置から
+    const baseTopicId = tocState.targetTopicId || getCurrentTopicId();
+    if (!baseTopicId) return;
+
+    const currentIndex = DATA.findIndex(d => d.id === baseTopicId);
     if (currentIndex === -1 || currentIndex >= DATA.length - 1) return;
 
     const nextTopic = DATA[currentIndex + 1];
-    closeTOC();
+
+    // ターゲットを更新（連続クリック対応）
+    tocState.targetTopicId = nextTopic.id;
+
+    // TOCは閉じずに読み込み＆スクロール
     await loadAndScrollToTopic(nextTopic.id);
+    // ボタンを更新（移動先トピックを基準に）
+    updateTopicNavButtons(nextTopic.id);
+    // 現在地も更新
+    updateTocNow();
   }
 
   /**

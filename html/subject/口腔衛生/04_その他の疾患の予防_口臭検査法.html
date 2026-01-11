@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口臭検査法 - 口腔衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔衛生 / その他の疾患の予防</span>
+    <h1>口臭検査法</h1>
+    <div class="container">
+
+      <h2>口臭検査法の種類</h2>
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>原理</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">官能検査</span></td>
+          <td>検査者の嗅覚で判定</td>
+          <td>簡便、多様な有臭成分に対応</td>
+        </tr>
+        <tr>
+          <td><span class="key">ガスクロマトグラフィー</span></td>
+          <td>炎光光度検出器（FPD）</td>
+          <td>ゴールドスタンダード、再現性◎</td>
+        </tr>
+        <tr>
+          <td><span class="key">半導体ガスセンサー</span></td>
+          <td>硫黄化合物の総量を測定</td>
+          <td>簡便だが個別定量不可</td>
+        </tr>
+      </table>
+
+      <h2>官能検査</h2>
+      <p>検査者の嗅覚によって口臭を判定する方法。最終診断は官能検査に基づかなければならない。</p>
+
+      <h3>官能検査の判定基準（スコア0〜5）</h3>
+      <table>
+        <tr>
+          <th>スコア</th>
+          <th>判定基準</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>においなし</td>
+          <td>嗅覚閾値以下</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">1</span></td>
+          <td>非常に軽度</td>
+          <td><span class="highlight">検知閾値</span>（においを感知するが認知できない）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">2</span></td>
+          <td>軽度</td>
+          <td><span class="highlight">認知閾値</span>（かろうじて臭いと感じる）</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>中等度</td>
+          <td>我慢できる強い悪臭</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>強度</td>
+          <td>我慢できない強い悪臭</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>非常に強度</td>
+          <td>我慢できない強烈な悪臭</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">真性口臭症の診断</div>
+        <p><span class="highlight">スコア2以上</span>（認知閾値以上）で真性口臭症と診断する</p>
+      </div>
+
+      <h3>検査者の禁止事項</h3>
+      <p>検査者は正常な嗅覚を持たなければならないため、検査前に以下を控える：</p>
+      <ul>
+        <li><span class="highlight">喫煙</span></li>
+        <li><span class="highlight">コーヒー</span>、お茶、ジュース</li>
+        <li><span class="key">香料入り化粧品</span>の使用</li>
+      </ul>
+      <p class="note">※洗口、舌苔除去、ブラッシングは<span class="caution">禁止ではない</span>（被験者の条件）</p>
+
+      <h3>被験者（患者）の条件</h3>
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>禁止事項</th>
+        </tr>
+        <tr>
+          <td>検査当日</td>
+          <td>飲食、歯口清掃、洗口、口中清涼剤、禁煙（12時間前〜）</td>
+        </tr>
+        <tr>
+          <td>24時間前〜</td>
+          <td>香料入り化粧品の使用</td>
+        </tr>
+        <tr>
+          <td>48時間前〜</td>
+          <td>ニンニクなど揮発成分含有食品</td>
+        </tr>
+        <tr>
+          <td>3週間前〜</td>
+          <td>抗菌薬の投与</td>
+        </tr>
+      </table>
+
+      <h2>ガスクロマトグラフィー検査</h2>
+      <p><span class="highlight">口臭検査機器のゴールドスタンダード</span>。炎光光度検出器（FPD）を用いて、VSCを個別に定量・定性する。</p>
+
+      <h3>特徴</h3>
+      <ul>
+        <li><span class="key">再現性</span>に優れる</li>
+        <li>個々の硫黄化合物を<span class="key">正確に定量・定性</span></li>
+        <li>原因の特定（鑑定）や治療効果の判定に有用</li>
+        <li>官能検査を補完するデータとして有用性が高い</li>
+      </ul>
+
+      <h3>嗅覚閾値（ガスクロマトグラフィー測定値）</h3>
+      <table>
+        <tr>
+          <th>物質</th>
+          <th>嗅覚閾値</th>
+        </tr>
+        <tr>
+          <td>硫化水素</td>
+          <td>1.5 ng/10mL</td>
+        </tr>
+        <tr>
+          <td>メチルメルカプタン</td>
+          <td>0.5 ng/10mL</td>
+        </tr>
+        <tr>
+          <td>ジメチルサルファイド</td>
+          <td>0.2 ng/10mL</td>
+        </tr>
+      </table>
+
+      <h2>半導体ガスセンサー検査</h2>
+      <p>小型・軽量で使いやすいが、以下の欠点がある：</p>
+      <ul>
+        <li>3種のVSCを<span class="caution">単体分離できない</span>（一括した濃度のみ）</li>
+        <li><span class="caution">アルコールや香料</span>などの影響を受ける</li>
+        <li>口臭の質的評価ができない</li>
+        <li><span class="caution">治療効果の判定には使えない</span></li>
+      </ul>
+
+      <h2>官能検査 vs ガスクロマトグラフィー</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>官能検査</th>
+          <th>ガスクロマトグラフィー</th>
+        </tr>
+        <tr>
+          <td>簡便さ</td>
+          <td><span class="highlight">◎ 簡便</span></td>
+          <td>△ 機器が必要</td>
+        </tr>
+        <tr>
+          <td>再現性</td>
+          <td>△ 主観的</td>
+          <td><span class="key">◎ 一貫した結果</span></td>
+        </tr>
+        <tr>
+          <td>対応成分</td>
+          <td><span class="highlight">◎ 多様な有臭成分</span></td>
+          <td>△ VSCのみ</td>
+        </tr>
+        <tr>
+          <td>連続測定</td>
+          <td>× 嗅覚疲労</td>
+          <td><span class="key">◎ 可能</span></td>
+        </tr>
+        <tr>
+          <td>飲食の影響</td>
+          <td>△ 受けやすい</td>
+          <td><span class="key">○ 受けにくい</span></td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C44</div>
+        <p>口臭官能試験前における検査者の禁止事項はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 洗口<br>
+          b 喫煙<br>
+          c 舌苔除去<br>
+          d ブラッシング<br>
+          e コーヒーの飲用
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】検査者は正常な嗅覚を保つため、喫煙とコーヒーを控える。洗口・舌苔除去・ブラッシングは被験者（患者）側の条件であり、検査者には適用されない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C126</div>
+        <p>口臭検査で、官能検査がガスクロマトグラフィー検査よりも優れている点はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 簡便である。<br>
+          b 結果の再現性がよい。<br>
+          c 連続測定が可能である。<br>
+          d 多様な有臭成分に対応できる。<br>
+          e 被験者の直前の飲食に左右されにくい。
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】官能検査は機器不要で簡便、またVSC以外の有臭成分（インドール、アンモニア等）にも対応できる。再現性・連続測定・飲食の影響はガスクロマトグラフィーが優れている。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

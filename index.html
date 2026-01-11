@@ -7,17 +7,12 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=20260111r">
+  <link rel="stylesheet" href="css/style.css?v=20260111x">
 </head>
 <body>
   <div class="app">
     <!-- ヘッダー -->
     <header class="header">
-      <button id="menu-btn" class="header-menu-btn" aria-label="メニュー">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <h1 class="header-title">ココシカ</h1>
       <div class="header-actions">
         <button id="search-btn" class="header-icon-btn" aria-label="検索">
@@ -37,41 +32,15 @@
       </div>
     </header>
 
-    <!-- フローティングお気に入りボタン（右下） -->
-    <button id="note-btn" class="floating-note-btn" aria-label="ノート">
+    <!-- 統合ツールボタン（右下） -->
+    <button id="tool-fab" class="tool-fab" aria-label="ツール" style="display:none;">
       <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        <circle cx="12" cy="5" r="2"/>
+        <circle cx="12" cy="12" r="2"/>
+        <circle cx="12" cy="19" r="2"/>
       </svg>
-      <span class="note-badge" id="note-badge" style="display:none;">0</span>
     </button>
 
-    <!-- サイドバー -->
-    <aside id="sidebar" class="sidebar">
-      <div class="sidebar-fixed">
-        <div class="sidebar-header">
-          <span class="sidebar-title">トピック一覧</span>
-          <div class="sidebar-header-actions">
-            <button id="sidebar-search-btn" class="sidebar-icon-btn" aria-label="検索">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="M21 21l-4.35-4.35"/>
-              </svg>
-            </button>
-            <button id="sidebar-close" class="sidebar-icon-btn" aria-label="閉じる">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 6L6 18M6 6l12 12"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <nav class="topic-list" id="topic-list">
-        <!-- 動的に生成 -->
-      </nav>
-    </aside>
-
-    <!-- サイドバーオーバーレイ -->
-    <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
     <!-- ノートオーバーレイ -->
     <div id="note-overlay" class="note-overlay">
@@ -121,9 +90,13 @@
       <p class="lightbox-close-hint">どこかをタップして閉じる</p>
     </div>
 
-    <!-- 目次シート -->
+    <!-- 目次シート（2段階：Medium/Full） -->
     <div id="toc-overlay" class="toc-overlay">
-      <div class="toc-sheet">
+      <div class="toc-sheet" id="toc-sheet">
+        <!-- ドラッグハンドル -->
+        <div class="toc-sheet-handle" id="toc-handle">
+          <div class="toc-sheet-handle-bar"></div>
+        </div>
         <div class="toc-sheet-header">
           <button id="toc-back-btn" class="toc-back-btn" style="display:none;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -138,26 +111,35 @@
             </svg>
           </button>
         </div>
+        <!-- 現在地セクション -->
+        <div class="toc-now-section" id="toc-now-section">
+          <div class="toc-now-label">現在地</div>
+          <div class="toc-now-text" id="toc-now-text">-</div>
+        </div>
         <div class="toc-search-wrapper">
           <input type="text" id="toc-search-input" class="toc-search-input" placeholder="見出しを検索...">
         </div>
         <div class="toc-list" id="toc-list">
           <!-- 動的に生成 -->
         </div>
+        <!-- 前後トピックナビゲーション -->
+        <div class="toc-topic-nav" id="toc-topic-nav">
+          <button class="toc-topic-btn" id="toc-prev-topic" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+            <span class="toc-topic-btn-text">前のトピック</span>
+          </button>
+          <button class="toc-topic-btn" id="toc-next-topic" disabled>
+            <span class="toc-topic-btn-text">次のトピック</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- フローティング目次ボタン -->
-    <button id="toc-fab" class="toc-fab" aria-label="目次" style="display:none;">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
-      </svg>
-    </button>
-
-    <!-- 読書モード（Aa）ボタン -->
-    <button id="reading-mode-btn" class="reading-mode-btn" aria-label="表示設定" style="display:none;">
-      <span>Aa</span>
-    </button>
 
     <!-- 読書モードメニュー -->
     <div id="reading-mode-overlay" class="reading-mode-overlay">
@@ -195,6 +177,53 @@
             <button class="reading-toggle" data-density="compact">コンパクト</button>
             <button class="reading-toggle active" data-density="normal">標準</button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 統合ツールシート -->
+    <div id="tool-sheet-overlay" class="tool-sheet-overlay">
+      <div class="tool-sheet">
+        <div class="tool-sheet-handle"></div>
+        <div class="tool-sheet-content">
+          <!-- 目次 -->
+          <button id="tool-toc" class="tool-sheet-item">
+            <div class="tool-sheet-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+              </svg>
+            </div>
+            <span class="tool-sheet-label">目次</span>
+            <span class="tool-sheet-hint" id="tool-toc-hint"></span>
+          </button>
+          <!-- 表示設定 -->
+          <button id="tool-reading" class="tool-sheet-item">
+            <div class="tool-sheet-icon">
+              <span class="tool-aa">Aa</span>
+            </div>
+            <span class="tool-sheet-label">表示設定</span>
+          </button>
+          <!-- 区切り -->
+          <div class="tool-sheet-divider"></div>
+          <!-- 前の見出しへ -->
+          <button id="tool-prev-heading" class="tool-sheet-item">
+            <div class="tool-sheet-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+              </svg>
+            </div>
+            <span class="tool-sheet-label">前の見出しへ</span>
+          </button>
+          <!-- トップへ -->
+          <button id="tool-top" class="tool-sheet-item">
+            <div class="tool-sheet-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+                <path d="M5 5h14"/>
+              </svg>
+            </div>
+            <span class="tool-sheet-label">トップへ</span>
+          </button>
         </div>
       </div>
     </div>
@@ -353,11 +382,11 @@
   </div>
 
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script src="js/data.js?v=20260110m"></script>
-  <script src="js/search.js?v=20260110m"></script>
-  <script src="js/favorites.js?v=20260110m"></script>
-  <script src="js/kakomon.js?v=20260110m"></script>
-  <script src="js/flashcard.js?v=20260111h"></script>
-  <script src="js/app.js?v=20260111e"></script>
+  <script src="js/data.js?v=20260111t"></script>
+  <script src="js/search.js?v=20260111t"></script>
+  <script src="js/favorites.js?v=20260111t"></script>
+  <script src="js/kakomon.js?v=20260111t"></script>
+  <script src="js/flashcard.js?v=20260111t"></script>
+  <script src="js/app.js?v=20260111w"></script>
 </body>
 </html>

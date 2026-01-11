@@ -11,7 +11,6 @@
     searchQuery: '',
     highlightQuery: null,  // 検索結果からジャンプ時のハイライト用
     collapsedCategories: new Set(),
-    sidebarOpen: false,
     searchOpen: false,
     qaShowAll: false,
     lastScrollY: 0,
@@ -37,12 +36,6 @@
   const elements = {
     header: document.querySelector('.header'),
     mainContent: document.querySelector('.main-content'),
-    menuBtn: document.getElementById('menu-btn'),
-    sidebar: document.getElementById('sidebar'),
-    sidebarClose: document.getElementById('sidebar-close'),
-    sidebarOverlay: document.getElementById('sidebar-overlay'),
-    sidebarSearchBtn: document.getElementById('sidebar-search-btn'),
-    topicList: document.getElementById('topic-list'),
     searchBtn: document.getElementById('search-btn'),
     searchOverlay: document.getElementById('search-overlay'),
     searchInput: document.getElementById('search-input'),
@@ -77,28 +70,38 @@
     kakomonCurrent: document.getElementById('kakomon-current'),
     kakomonTotal: document.getElementById('kakomon-total'),
     kakomonReset: document.getElementById('kakomon-reset'),
-    // ノート（お気に入り）
-    noteBtn: document.getElementById('note-btn'),
-    noteBadge: document.getElementById('note-badge'),
+    // 統合ツールシート
+    toolFab: document.getElementById('tool-fab'),
+    toolSheetOverlay: document.getElementById('tool-sheet-overlay'),
+    toolToc: document.getElementById('tool-toc'),
+    toolTocHint: document.getElementById('tool-toc-hint'),
+    toolReading: document.getElementById('tool-reading'),
+    toolPrevHeading: document.getElementById('tool-prev-heading'),
+    toolTop: document.getElementById('tool-top'),
+    // ノート（お気に入り）- 後方互換性のため残す
     noteOverlay: document.getElementById('note-overlay'),
     closeNote: document.getElementById('close-note'),
     noteTimeline: document.getElementById('note-timeline'),
     noteCount: document.getElementById('note-count'),
     noteEmpty: document.getElementById('note-empty'),
+    noteBadge: document.getElementById('note-badge'),
     // 画像ライトボックス
     imageLightbox: document.getElementById('image-lightbox'),
     lightboxImage: document.getElementById('lightbox-image'),
     lightboxClose: document.getElementById('lightbox-close'),
     // 目次
     tocOverlay: document.getElementById('toc-overlay'),
+    tocSheet: document.getElementById('toc-sheet'),
+    tocHandle: document.getElementById('toc-handle'),
+    tocNowText: document.getElementById('toc-now-text'),
     tocList: document.getElementById('toc-list'),
     tocCloseBtn: document.getElementById('toc-close-btn'),
     tocBackBtn: document.getElementById('toc-back-btn'),
     tocSearchInput: document.getElementById('toc-search-input'),
-    tocFab: document.getElementById('toc-fab'),
     prevHeadingBtn: document.getElementById('prev-heading-btn'),
+    tocPrevTopic: document.getElementById('toc-prev-topic'),
+    tocNextTopic: document.getElementById('toc-next-topic'),
     // 読書モード
-    readingModeBtn: document.getElementById('reading-mode-btn'),
     readingModeOverlay: document.getElementById('reading-mode-overlay'),
     readingModeClose: document.getElementById('reading-mode-close'),
     fontDecrease: document.getElementById('font-decrease'),
@@ -111,7 +114,9 @@
     headings: [],           // 見出し要素の配列
     currentHeadingIndex: 0, // 現在の見出しインデックス
     previousScrollY: null,  // ジャンプ前のスクロール位置
-    observer: null          // IntersectionObserver
+    observer: null,         // IntersectionObserver
+    mode: 'medium',         // 'medium' or 'full'
+    hasH2: false            // h2がある場合true（階層表示用）
   };
 
   // 読書モードの状態管理
@@ -131,7 +136,7 @@
    */
   function init() {
     if (typeof DATA === 'undefined') {
-      elements.topicList.innerHTML = '<div class="no-results">データを読み込めませんでした。</div>';
+      console.error('データを読み込めませんでした');
       return;
     }
 
@@ -151,20 +156,18 @@
       }
     });
 
-    renderTopicList(DATA);
     bindEvents();
     restoreState();
     setupKeyboardHandler();
 
-    // お気に入り機能の初期化
-    if (typeof FavoritesManager !== 'undefined') {
-      FavoritesManager.init();
-      updateNoteBadge();
-      // お気に入りの追加・削除時にバッジを更新
-      FavoritesManager.addListener(function() {
-        updateNoteBadge();
-      });
-    }
+    // ツールシートのイベントをバインド
+    bindToolSheetEvents();
+
+    // 読書モードのイベントをバインド（一度だけ）
+    bindReadingModeEvents();
+
+    // ↑ボタンの条件付き表示
+    setupPrevHeadingButtonScroll();
 
     // フラッシュカード機能の初期化
     if (typeof FlashcardModule !== 'undefined') {
@@ -219,45 +222,13 @@
    * キーボード表示時の処理（iOS対応）
    */
   function setupKeyboardHandler() {
-    const sidebarHome = document.querySelector('.sidebar-home');
-
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', () => {
-        const keyboardHeight = window.innerHeight - window.visualViewport.height;
-        if (keyboardHeight > 100) {
-          // キーボードが表示されている
-          elements.sidebar.style.maxHeight = `${window.visualViewport.height - 20}px`;
-          elements.sidebar.style.bottom = `${keyboardHeight}px`;
-          // ホームボタンを非表示
-          if (sidebarHome) sidebarHome.style.display = 'none';
-        } else {
-          // キーボードが非表示
-          elements.sidebar.style.maxHeight = '';
-          elements.sidebar.style.bottom = '';
-          // ホームボタンを再表示
-          if (sidebarHome) sidebarHome.style.display = '';
-        }
-      });
-    }
+    // 現在は特別な処理なし（将来の拡張用）
   }
 
   /**
    * イベントバインド
    */
   function bindEvents() {
-    // サイドバー開閉
-    elements.menuBtn.addEventListener('click', toggleSidebar);
-    elements.sidebarClose.addEventListener('click', closeSidebar);
-    elements.sidebarOverlay.addEventListener('click', closeSidebar);
-
-    // サイドバー内の検索ボタン → 検索オーバーレイを開く
-    if (elements.sidebarSearchBtn) {
-      elements.sidebarSearchBtn.addEventListener('click', () => {
-        closeSidebar();
-        setTimeout(openSearch, 100);
-      });
-    }
-
     // 検索ボタン（ヘッダー）→ 検索シートを開く
     if (elements.searchBtn) {
       elements.searchBtn.addEventListener('click', openSearchSheet);
@@ -316,20 +287,10 @@
 
     // キーボードショートカット
     document.addEventListener('keydown', (e) => {
-      // Ctrl+K or Cmd+K でサイドバー検索を開く
+      // Ctrl+K or Cmd+K で検索シートを開く
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
-        if (state.sidebarOpen) {
-          closeSidebar();
-        } else {
-          openSidebarWithSearch();
-        }
-      }
-      // Escape で閉じる
-      if (e.key === 'Escape') {
-        if (state.sidebarOpen) {
-          closeSidebar();
-        }
+        openSearchSheet();
       }
     });
 
@@ -342,28 +303,14 @@
     // Q&Aフローティングトグルボタンのスクロール表示/非表示
     setupQAFloatingToggleScroll();
 
-    // ウェルカム画面のボタン
+    // ウェルカム画面のボタン → 検索シートを開く
     if (elements.welcomeStartBtn) {
-      elements.welcomeStartBtn.addEventListener('click', openSidebar);
+      elements.welcomeStartBtn.addEventListener('click', openSearchSheet);
     }
     if (elements.welcomeCardMenu) {
-      elements.welcomeCardMenu.addEventListener('click', openSidebar);
+      elements.welcomeCardMenu.addEventListener('click', openSearchSheet);
     }
 
-    // ノートボタン
-    if (elements.noteBtn) {
-      elements.noteBtn.addEventListener('click', openNoteOverlay);
-    }
-    if (elements.closeNote) {
-      elements.closeNote.addEventListener('click', closeNoteOverlay);
-    }
-    if (elements.noteOverlay) {
-      elements.noteOverlay.addEventListener('click', function(e) {
-        if (e.target === elements.noteOverlay) {
-          closeNoteOverlay();
-        }
-      });
-    }
     // 画像ライトボックス：背景クリックで閉じる
     if (elements.imageLightbox) {
       elements.imageLightbox.addEventListener('click', function(e) {
@@ -386,11 +333,9 @@
    */
   function setupSwipeTabSwitch() {
     const swipeThreshold = 80; // スワイプ判定の閾値（px）
-    const edgeSwipeThreshold = 30; // 左端と判定する範囲（px）
     let touchStartX = 0;
     let touchStartY = 0;
     let isSwiping = false;
-    let isEdgeSwipe = false; // 左端からのスワイプか
 
     // メインコンテンツ全体でスワイプを検出
     const mainContent = elements.mainContent;
@@ -400,8 +345,6 @@
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
         isSwiping = true;
-        // 左端からのスワイプ開始を検出
-        isEdgeSwipe = (touchStartX < edgeSwipeThreshold);
       }
     }, { passive: true });
 
@@ -414,17 +357,7 @@
       const diffX = touchEndX - touchStartX;
       const diffY = touchEndY - touchStartY;
 
-      // 左端から右スワイプ → サイドバーを開く
-      if (isEdgeSwipe && diffX > swipeThreshold && !state.sidebarOpen) {
-        if (Math.abs(diffX) > Math.abs(diffY) * 1.5) {
-          openSidebar();
-          isEdgeSwipe = false;
-          return;
-        }
-      }
-      isEdgeSwipe = false;
-
-      // 横方向の移動が縦より大きく、閾値を超えた場合（4タブ対応）
+      // 横方向の移動が縦より大きく、閾値を超えた場合（タブ切り替え）
       const tabOrder = ['flashcard', 'html', 'kakomon'];
       if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
         const currentIndex = tabOrder.indexOf(state.currentTab);
@@ -448,8 +381,6 @@
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
             isSwiping = true;
-            // 左端からのスワイプ開始を検出
-            isEdgeSwipe = (touchStartX < edgeSwipeThreshold);
           }
         }, { passive: true });
 
@@ -462,17 +393,7 @@
           const diffX = touchEndX - touchStartX;
           const diffY = touchEndY - touchStartY;
 
-          // 左端から右スワイプ → サイドバーを開く
-          if (isEdgeSwipe && diffX > swipeThreshold && !state.sidebarOpen) {
-            if (Math.abs(diffX) > Math.abs(diffY) * 1.5) {
-              openSidebar();
-              isEdgeSwipe = false;
-              return;
-            }
-          }
-          isEdgeSwipe = false;
-
-          // 4タブ対応
+          // タブ切り替え
           const tabOrder = ['flashcard', 'html', 'kakomon'];
           if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
             const currentIndex = tabOrder.indexOf(state.currentTab);
@@ -551,39 +472,6 @@
   }
 
   /**
-   * サイドバーを開く
-   */
-  function openSidebar() {
-    state.sidebarOpen = true;
-    elements.sidebar.classList.add('open');
-    elements.sidebarOverlay.classList.add('show');
-    // フローティング要素を非表示
-    document.querySelector('.floating-tabbar').classList.add('hidden');
-  }
-
-  /**
-   * サイドバーをトグル
-   */
-  function toggleSidebar() {
-    if (state.sidebarOpen) {
-      closeSidebar();
-    } else {
-      openSidebar();
-    }
-  }
-
-  /**
-   * サイドバーを閉じる
-   */
-  function closeSidebar() {
-    state.sidebarOpen = false;
-    elements.sidebar.classList.remove('open');
-    elements.sidebarOverlay.classList.remove('show');
-    // フローティング要素を再表示
-    document.querySelector('.floating-tabbar').classList.remove('hidden');
-  }
-
-  /**
    * ホーム画面に戻る
    */
   function goHome() {
@@ -621,14 +509,6 @@
     if (elements.welcomeScreen) {
       elements.welcomeScreen.classList.remove('hidden');
     }
-
-    // トピックリストのアクティブ状態をクリア
-    elements.topicList.querySelectorAll('.topic-item').forEach(el => {
-      el.classList.remove('active');
-    });
-
-    // サイドバーを閉じる
-    closeSidebar();
 
     // HTMLタブに切り替え
     switchTab('html');
@@ -767,7 +647,7 @@
   }
 
   /**
-   * 検索シートの検索処理
+   * 検索シートの検索処理（まとめ + フラッシュカード両対応）
    */
   function handleSearchSheet(query) {
     if (!query || query.trim() === '') {
@@ -783,49 +663,110 @@
 
     // 検索実行
     const results = searchEngine.search(query);
-    // Q&AパスがあるものをQ&A演習用として表示
-    const qaResults = results.filter(item => item.qaPath);
 
-    if (qaResults.length === 0) {
+    if (results.length === 0) {
       elements.searchSheetResults.innerHTML = `
         <div class="search-no-results">
           <div class="search-no-results-icon">🔍</div>
-          <p>「${escapeHtml(query)}」に一致するデッキはありません</p>
+          <p>「${escapeHtml(query)}」に一致するトピックはありません</p>
         </div>
       `;
       return;
     }
 
-    let html = qaResults.slice(0, 20).map(item => {
-      const subject = item.subject || 'その他';
-      const title = item.title.replace(/^[ア-オ]_/, '');
+    // まとめ（HTMLあり）とフラッシュカード（QAあり）を分けて表示
+    const htmlResults = results.filter(item => item.htmlPath).slice(0, 15);
+    const qaResults = results.filter(item => item.qaPath).slice(0, 10);
 
-      return `
-        <div class="search-result-item" data-id="${item.id}">
-          <div class="search-result-info">
-            <div class="search-result-title">${escapeHtml(title)}</div>
-            <div class="search-result-meta">${escapeHtml(subject)}</div>
+    let html = '';
+
+    // まとめセクション
+    if (htmlResults.length > 0) {
+      html += `<div class="search-section-title">まとめ</div>`;
+      html += htmlResults.map(item => {
+        const subject = item.subject || 'その他';
+        const title = item.title.replace(/^[ア-ン]_/, '');
+        return `
+          <div class="search-result-item" data-id="${item.id}" data-type="html">
+            <div class="search-result-info">
+              <div class="search-result-title">${escapeHtml(title)}</div>
+              <div class="search-result-meta">${escapeHtml(subject)}</div>
+            </div>
+            <span class="search-result-badge badge-html">読む</span>
           </div>
-          <span class="search-result-badge">開始</span>
-        </div>
-      `;
-    }).join('');
+        `;
+      }).join('');
+    }
+
+    // フラッシュカードセクション
+    if (qaResults.length > 0) {
+      html += `<div class="search-section-title">フラッシュカード</div>`;
+      html += qaResults.map(item => {
+        const subject = item.subject || 'その他';
+        const title = item.title.replace(/^[ア-ン]_/, '');
+        return `
+          <div class="search-result-item" data-id="${item.id}" data-type="flashcard">
+            <div class="search-result-info">
+              <div class="search-result-title">${escapeHtml(title)}</div>
+              <div class="search-result-meta">${escapeHtml(subject)}</div>
+            </div>
+            <span class="search-result-badge badge-flashcard">演習</span>
+          </div>
+        `;
+      }).join('');
+    }
 
     elements.searchSheetResults.innerHTML = html;
 
-    // 結果クリックでデッキ開始
+    // 結果クリックでジャンプ
     elements.searchSheetResults.querySelectorAll('.search-result-item').forEach(item => {
-      item.addEventListener('click', () => {
+      item.addEventListener('click', async () => {
         const id = item.dataset.id;
+        const type = item.dataset.type;
         closeSearchSheet();
 
-        // フラッシュカードタブに切り替えてデッキを開始
-        switchTab('flashcard');
-        if (typeof FlashcardModule !== 'undefined' && FlashcardModule.startDeck) {
-          FlashcardModule.startDeck(id);
+        if (type === 'html') {
+          // まとめタブに切り替えてトピックを読み込み
+          switchTab('html');
+          await loadAndScrollToTopic(id);
+        } else {
+          // フラッシュカードタブに切り替えてデッキを開始
+          switchTab('flashcard');
+          if (typeof FlashcardModule !== 'undefined' && FlashcardModule.startDeck) {
+            FlashcardModule.startDeck(id);
+          }
         }
       });
     });
+  }
+
+  /**
+   * トピックを読み込んでスクロール
+   */
+  async function loadAndScrollToTopic(topicId) {
+    // scrollToHTMLTopic が読み込み＋スクロールを行う
+    await scrollToHTMLTopic(topicId);
+  }
+
+  /**
+   * トピックセクションへスクロール
+   */
+  function scrollToTopicSection(section) {
+    if (!section || !elements.htmlContent) return;
+
+    const headerHeight = 56 + 16;
+    const containerRect = elements.htmlContent.getBoundingClientRect();
+    const sectionRect = section.getBoundingClientRect();
+    const targetY = elements.htmlContent.scrollTop + sectionRect.top - containerRect.top - headerHeight;
+
+    elements.htmlContent.scrollTo({
+      top: targetY,
+      behavior: 'smooth'
+    });
+
+    // ハイライトアニメーション
+    section.classList.add('topic-highlight');
+    setTimeout(() => section.classList.remove('topic-highlight'), 1500);
   }
 
   /**
@@ -965,175 +906,6 @@
   }
 
   /**
-   * トピックリストを描画（科目別4階層）
-   */
-  function renderTopicList(items) {
-    if (items.length === 0) {
-      elements.topicList.innerHTML = '<div class="no-results">トピックがありません</div>';
-      return;
-    }
-
-    // 科目カテゴリ → 科目 → チャプター → トピック の4階層でグループ化
-    const categoryOrder = ['基礎', '臨床', '必修', 'その他'];
-    // 科目の表示順序（基礎科目）
-    const subjectOrder = [
-      '解剖学', '組織学', '病理学', '生理学', '生化学',
-      '微生物学・免疫学', '薬理学', '理工学', '衛生学', '口腔衛生', '疫学', '公衆衛生',
-      // 臨床科目
-      '保存修復学', '歯内療法学', '歯周病学',
-      '全部床義歯学', '部分床義歯学', 'クラウンブリッジ', 'インプラント',
-      '小児歯科学', '矯正歯科学',
-      '口腔外科学', '歯科麻酔学', '歯科放射線学',
-      '高齢者歯科学', '摂食嚥下'
-    ];
-    const groups = {};
-
-    items.forEach(item => {
-      const subjectCat = item.subjectCategory || 'その他';
-      const subject = item.subject || 'その他';
-      const chapter = extractChapter(item) || 'その他';
-
-      if (!groups[subjectCat]) groups[subjectCat] = {};
-      if (!groups[subjectCat][subject]) groups[subjectCat][subject] = {};
-      if (!groups[subjectCat][subject][chapter]) groups[subjectCat][subject][chapter] = [];
-      groups[subjectCat][subject][chapter].push(item);
-    });
-
-    let html = '';
-
-    // 科目カテゴリ順にソート
-    const sortedCategories = Object.keys(groups).sort((a, b) => {
-      const idxA = categoryOrder.indexOf(a);
-      const idxB = categoryOrder.indexOf(b);
-      return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
-    });
-
-    sortedCategories.forEach(subjectCat => {
-      const subjectCatKey = `cat_${subjectCat}`;
-      const isCatCollapsed = state.collapsedCategories.has(subjectCatKey);
-
-      html += `
-        <div class="subject-category-group">
-          <div class="subject-category-header" data-category="${escapeHtml(subjectCatKey)}">
-            <span>${escapeHtml(subjectCat)}</span>
-            <span class="toggle">${isCatCollapsed ? '▶' : '▼'}</span>
-          </div>
-          <div class="subject-category-items${isCatCollapsed ? ' collapsed' : ''}">
-      `;
-
-      // 科目を指定順序でソート
-      const subjects = Object.keys(groups[subjectCat]).sort((a, b) => {
-        const idxA = subjectOrder.indexOf(a);
-        const idxB = subjectOrder.indexOf(b);
-        // 順序に含まれない科目は末尾に（アルファベット順）
-        if (idxA === -1 && idxB === -1) return a.localeCompare(b);
-        if (idxA === -1) return 1;
-        if (idxB === -1) return -1;
-        return idxA - idxB;
-      });
-
-      subjects.forEach(subject => {
-        const subjectKey = `subj_${subject}`;
-        const isSubjCollapsed = state.collapsedCategories.has(subjectKey);
-        const chapters = groups[subjectCat][subject];
-        const chapterKeys = Object.keys(chapters).sort();
-        const hasMultipleChapters = chapterKeys.length > 1 || (chapterKeys.length === 1 && chapterKeys[0] !== 'その他');
-
-        html += `
-          <div class="subject-group">
-            <div class="subject-header" data-category="${escapeHtml(subjectKey)}">
-              <span>${escapeHtml(subject)}</span>
-              <span class="toggle">${isSubjCollapsed ? '▶' : '▼'}</span>
-            </div>
-            <div class="subject-items${isSubjCollapsed ? ' collapsed' : ''}">
-        `;
-
-        // チャプターが複数ある場合のみチャプター階層を表示
-        if (hasMultipleChapters) {
-          chapterKeys.forEach(chapter => {
-            const chapterKey = `chap_${subject}_${chapter}`;
-            const isChapCollapsed = state.collapsedCategories.has(chapterKey);
-            const chapterDisplay = chapter === 'その他' ? 'その他' : chapter.replace(/_/g, ' ');
-
-            html += `
-              <div class="chapter-group">
-                <div class="chapter-header" data-category="${escapeHtml(chapterKey)}">
-                  <span>${escapeHtml(chapterDisplay)}</span>
-                  <span class="toggle">${isChapCollapsed ? '▶' : '▼'}</span>
-                </div>
-                <div class="chapter-items${isChapCollapsed ? ' collapsed' : ''}">
-            `;
-
-            chapters[chapter].forEach(item => {
-              const isActive = state.currentItem && state.currentItem.id === item.id;
-              html += `
-                <div class="topic-item${isActive ? ' active' : ''}" data-id="${escapeHtml(item.id)}">
-                  <span class="title">${escapeHtml(item.title)}</span>
-                </div>
-              `;
-            });
-
-            html += '</div></div>';
-          });
-        } else {
-          // チャプターが1つだけ（その他）の場合は直接トピックを表示
-          chapterKeys.forEach(chapter => {
-            chapters[chapter].forEach(item => {
-              const isActive = state.currentItem && state.currentItem.id === item.id;
-              html += `
-                <div class="topic-item${isActive ? ' active' : ''}" data-id="${escapeHtml(item.id)}">
-                  <span class="title">${escapeHtml(item.title)}</span>
-                </div>
-              `;
-            });
-          });
-        }
-
-        html += '</div></div>';
-      });
-
-      html += '</div></div>';
-    });
-
-    elements.topicList.innerHTML = html;
-
-    // イベント登録（科目カテゴリ）
-    elements.topicList.querySelectorAll('.subject-category-header').forEach(header => {
-      header.addEventListener('click', () => toggleCategory(header.dataset.category));
-    });
-
-    // イベント登録（科目）
-    elements.topicList.querySelectorAll('.subject-header').forEach(header => {
-      header.addEventListener('click', () => toggleCategory(header.dataset.category));
-    });
-
-    // イベント登録（チャプター）
-    elements.topicList.querySelectorAll('.chapter-header').forEach(header => {
-      header.addEventListener('click', () => toggleCategory(header.dataset.category));
-    });
-
-    // イベント登録（トピック）
-    elements.topicList.querySelectorAll('.topic-item').forEach(item => {
-      item.addEventListener('click', () => {
-        selectItem(item.dataset.id);
-        closeSidebar();
-      });
-    });
-  }
-
-  /**
-   * カテゴリの折りたたみ切り替え
-   */
-  function toggleCategory(category) {
-    if (state.collapsedCategories.has(category)) {
-      state.collapsedCategories.delete(category);
-    } else {
-      state.collapsedCategories.add(category);
-    }
-    renderTopicList(DATA);
-  }
-
-  /**
    * アイテムを選択
    */
   function selectItem(id) {
@@ -1142,11 +914,6 @@
 
     state.currentItem = item;
     saveState();
-
-    // リストのアクティブ状態を更新
-    elements.topicList.querySelectorAll('.topic-item').forEach(el => {
-      el.classList.toggle('active', el.dataset.id === id);
-    });
 
     // コンテンツを読み込み
     loadContent(item);
@@ -1841,7 +1608,6 @@
         };
         const isNowFavorite = FavoritesManager.toggle('html', topicId, index, content);
         this.classList.toggle('active', isNowFavorite);
-        updateNoteBadge();
       });
 
       // 画像保存ボタンを追加
@@ -3270,11 +3036,6 @@
       }
     }
 
-    // 演習タブではお気に入りボタンを非表示
-    if (elements.noteBtn) {
-      elements.noteBtn.style.display = (tab === 'flashcard') ? 'none' : 'flex';
-    }
-
     // 目次・読書モード機能の切り替え
     if (tab === 'html') {
       // まとめタブに切り替えたら目次・読書モード・過去問カード・画像遅延読み込みを初期化
@@ -3856,7 +3617,6 @@
   // グローバルに公開（他モジュールから使用するため）
   window.FavoritesUI = {
     getFavoriteButtonHTML: getFavoriteButtonHTML,
-    updateNoteBadge: updateNoteBadge,
     renderNoteTimeline: renderNoteTimeline
   };
 
@@ -3868,8 +3628,8 @@
   function initTOC() {
     if (!elements.htmlDisplay) return;
 
-    // 見出しを収集
-    const headings = elements.htmlDisplay.querySelectorAll('h1, h2, h3');
+    // 見出しを収集（topic-section-content内のみ、ラッパーh2は除外）
+    const headings = elements.htmlDisplay.querySelectorAll('.topic-section-content h2, .topic-section-content h3');
     tocState.headings = Array.from(headings).map((h, i) => {
       h.dataset.tocIndex = i;
       return {
@@ -3879,13 +3639,19 @@
       };
     });
 
+    // h2があるか検出（コンテンツ内の実際のh2のみ）
+    tocState.hasH2 = tocState.headings.some(h => h.level === 2);
+
+    // 初期モードはmedium
+    tocState.mode = 'medium';
+
     if (tocState.headings.length === 0) {
-      hideTOCButtons();
+      hideToolButtons();
       return;
     }
 
     // 目次ボタンを表示
-    showTOCButtons();
+    showToolButtons();
 
     // IntersectionObserverをセットアップ
     setupTOCObserver();
@@ -3898,18 +3664,18 @@
   }
 
   /**
-   * 目次ボタンを表示
+   * ツールボタンを表示（まとめタブ用）
    */
-  function showTOCButtons() {
-    if (elements.tocFab) elements.tocFab.style.display = 'flex';
-    if (elements.prevHeadingBtn) elements.prevHeadingBtn.style.display = 'flex';
+  function showToolButtons() {
+    if (elements.toolFab) elements.toolFab.style.display = 'flex';
+    // prev-heading-btnは条件付き表示のため、ここでは制御しない
   }
 
   /**
-   * 目次ボタンを非表示
+   * ツールボタンを非表示
    */
-  function hideTOCButtons() {
-    if (elements.tocFab) elements.tocFab.style.display = 'none';
+  function hideToolButtons() {
+    if (elements.toolFab) elements.toolFab.style.display = 'none';
     if (elements.prevHeadingBtn) elements.prevHeadingBtn.style.display = 'none';
   }
 
@@ -3949,74 +3715,91 @@
   }
 
   /**
-   * 目次リストを構築
+   * 検索用テキスト正規化（全角/半角、記号、番号を統一）
+   */
+  function normalizeForSearch(text) {
+    return text
+      // 全角英数字→半角
+      .replace(/[Ａ-Ｚａ-ｚ０-９]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
+      // 全角スペース→半角
+      .replace(/　/g, ' ')
+      // 番号プレフィックス除去（1. ① ア. など）
+      .replace(/^[\d０-９]+[.．、]\s*/g, '')
+      .replace(/^[①②③④⑤⑥⑦⑧⑨⑩]\s*/g, '')
+      .replace(/^[ア-ン][.．、_]\s*/g, '')
+      // 記号を除去（■□●○など）
+      .replace(/[■□●○▶▷◆◇★☆]/g, '')
+      .toLowerCase()
+      .trim();
+  }
+
+  /**
+   * 目次リストを構築（2段階対応：medium/full）
    */
   function buildTOCList(filter = '') {
     if (!elements.tocList) return;
 
-    const filterLower = filter.toLowerCase();
+    const filterNormalized = normalizeForSearch(filter);
+    const isFiltering = filter.length > 0;
+    const isFull = tocState.mode === 'full' || isFiltering;
 
-    // 全トピックをDATAから取得（htmlPathがあるもののみ）
-    const allTopics = DATA.filter(item => item.htmlPath);
-
-    // 科目でグループ化
-    const topicsBySubject = {};
-    allTopics.forEach(item => {
-      const subject = item.subject || 'その他';
-      if (!topicsBySubject[subject]) {
-        topicsBySubject[subject] = [];
-      }
-      topicsBySubject[subject].push(item);
-    });
-
-    // 現在表示中のトピックIDを取得
-    const currentTopicId = getCurrentHTMLTopicId();
+    // 見出しがない場合
+    if (tocState.headings.length === 0) {
+      elements.tocList.innerHTML = `<div class="toc-empty">見出しがありません</div>`;
+      return;
+    }
 
     // HTMLを構築
     let html = '';
-    Object.entries(topicsBySubject).forEach(([subject, topics]) => {
-      // フィルタ適用
-      const filteredTopics = topics.filter(t =>
-        !filter || t.title.toLowerCase().includes(filterLower) || subject.toLowerCase().includes(filterLower)
-      );
 
-      if (filteredTopics.length === 0) return;
+    tocState.headings.forEach((heading, index) => {
+      const text = heading.text;
+      const level = heading.level;
+      const isCurrent = index === tocState.currentHeadingIndex;
 
-      // 科目ヘッダー
-      html += `<div class="toc-subject-header">${escapeHtml(subject)}</div>`;
+      // フィルタチェック（正規化して比較）
+      if (isFiltering) {
+        const textNormalized = normalizeForSearch(text);
+        if (!textNormalized.includes(filterNormalized)) {
+          return;
+        }
+      }
 
-      // トピック一覧
-      filteredTopics.forEach(topic => {
-        const isCurrent = topic.id === currentTopicId;
-        const isLoaded = elements.htmlDisplay?.querySelector(`.topic-section[data-topic-id="${topic.id}"]`);
+      // Medium時の表示ルール：
+      // - h2がある場合 → h2のみ表示
+      // - h2がない場合 → h3を章扱いで表示
+      if (!isFull) {
+        if (tocState.hasH2) {
+          if (level !== 2) return; // h2のみ
+        } else {
+          if (level !== 3) return; // h3のみ（h2がない場合）
+        }
+      }
 
+      // 長いテキストは省略
+      const displayText = text.length > 35 ? text.substring(0, 35) + '…' : text;
+
+      // h2がない場合、h3を章スタイルで表示
+      const isChapter = (level === 2) || (!tocState.hasH2 && level === 3);
+
+      if (isChapter) {
+        // 章として表示（太字・大きめ）
         html += `
-          <button class="toc-item toc-topic-item ${isCurrent ? 'current' : ''} ${isLoaded ? 'loaded' : ''}" data-topic-id="${topic.id}">
-            <span class="toc-item-indicator"></span>
-            <span class="toc-item-text">${escapeHtml(topic.title)}</span>
+          <button class="toc-item toc-h2 ${isCurrent ? 'current' : ''}" data-index="${index}">
+            <span class="toc-item-bar"></span>
+            <span class="toc-item-text">${escapeHtml(displayText)}</span>
           </button>
         `;
-
-        // 読み込み済みトピックの見出しを表示
-        if (isLoaded) {
-          const section = elements.htmlDisplay.querySelector(`.topic-section[data-topic-id="${topic.id}"]`);
-          const headings = section?.querySelectorAll('h2, h3') || [];
-          headings.forEach(h => {
-            const headingIndex = tocState.headings.findIndex(th => th.element === h);
-            const isHeadingCurrent = headingIndex === tocState.currentHeadingIndex;
-            const level = parseInt(h.tagName.charAt(1));
-
-            if (!filter || h.textContent.toLowerCase().includes(filterLower)) {
-              html += `
-                <button class="toc-item level-${level} ${isHeadingCurrent ? 'current' : ''}" data-index="${headingIndex}">
-                  <span class="toc-item-indicator"></span>
-                  <span class="toc-item-text">${escapeHtml(h.textContent.trim())}</span>
-                </button>
-              `;
-            }
-          });
-        }
-      });
+      } else if (level === 3) {
+        // 節として表示（インデント） - Full時のみ
+        html += `
+          <button class="toc-item toc-h3 ${isCurrent ? 'current' : ''}" data-index="${index}">
+            <span class="toc-item-bar"></span>
+            <span class="toc-item-text">${escapeHtml(displayText)}</span>
+          </button>
+        `;
+      }
+      // H4以下は省略
     });
 
     if (html === '') {
@@ -4050,12 +3833,22 @@
     if (!elements.tocOverlay) return;
 
     // 現在のスクロール位置を記録
-    tocState.previousScrollY = window.scrollY;
+    const container = elements.htmlContent;
+    tocState.previousScrollY = container ? container.scrollTop : 0;
 
     // 「元の位置へ」ボタンを隠す（まだジャンプしていない）
     if (elements.tocBackBtn) {
       elements.tocBackBtn.style.display = 'none';
     }
+
+    // Mediumモードで開始
+    setTocMode('medium');
+
+    // 現在地を更新
+    updateTocNow();
+
+    // 前後トピックボタンを更新
+    updateTopicNavButtons();
 
     // 目次リストを再構築（現在位置のハイライト付き）
     buildTOCList(elements.tocSearchInput?.value || '');
@@ -4086,6 +3879,154 @@
     if (elements.tocSearchInput) {
       elements.tocSearchInput.value = '';
     }
+
+    // モードをリセット
+    tocState.mode = 'medium';
+  }
+
+  /**
+   * TOCモードを設定（medium/full）
+   */
+  function setTocMode(mode) {
+    tocState.mode = mode;
+    if (elements.tocSheet) {
+      if (mode === 'full') {
+        elements.tocSheet.classList.add('toc-full');
+      } else {
+        elements.tocSheet.classList.remove('toc-full');
+      }
+    }
+    // リスト再構築（モードに応じた表示）
+    buildTOCList(elements.tocSearchInput?.value || '');
+  }
+
+  /**
+   * 現在地（Now）表示を更新
+   */
+  function updateTocNow() {
+    if (!elements.tocNowText) return;
+
+    const current = tocState.headings[tocState.currentHeadingIndex];
+    if (current) {
+      const text = current.text.length > 40 ? current.text.substring(0, 40) + '…' : current.text;
+      elements.tocNowText.textContent = text;
+    } else {
+      elements.tocNowText.textContent = '-';
+    }
+  }
+
+  /**
+   * 前後トピックボタンの状態を更新
+   */
+  function updateTopicNavButtons() {
+    if (!elements.tocPrevTopic || !elements.tocNextTopic) return;
+
+    // 読み込み済みトピックを取得
+    const loadedTopics = getLoadedTopicIds();
+    const currentTopicId = getCurrentTopicId();
+
+    if (loadedTopics.length === 0 || !currentTopicId) {
+      elements.tocPrevTopic.disabled = true;
+      elements.tocNextTopic.disabled = true;
+      return;
+    }
+
+    // DATA内でのインデックスを取得
+    const currentDataIndex = DATA.findIndex(d => d.id === currentTopicId);
+    if (currentDataIndex === -1) {
+      elements.tocPrevTopic.disabled = true;
+      elements.tocNextTopic.disabled = true;
+      return;
+    }
+
+    // 前後のトピックがあるか確認（DATA順）
+    const hasPrev = currentDataIndex > 0;
+    const hasNext = currentDataIndex < DATA.length - 1;
+
+    elements.tocPrevTopic.disabled = !hasPrev;
+    elements.tocNextTopic.disabled = !hasNext;
+
+    // ボタンテキストにトピック名を表示（オプション）
+    if (hasPrev) {
+      const prevTopic = DATA[currentDataIndex - 1];
+      const prevTitle = (prevTopic.title || prevTopic.id).replace(/^[ア-ン]_/, '');
+      elements.tocPrevTopic.querySelector('.toc-topic-btn-text').textContent =
+        prevTitle.length > 10 ? prevTitle.substring(0, 10) + '…' : prevTitle;
+    } else {
+      elements.tocPrevTopic.querySelector('.toc-topic-btn-text').textContent = '前のトピック';
+    }
+
+    if (hasNext) {
+      const nextTopic = DATA[currentDataIndex + 1];
+      const nextTitle = (nextTopic.title || nextTopic.id).replace(/^[ア-ン]_/, '');
+      elements.tocNextTopic.querySelector('.toc-topic-btn-text').textContent =
+        nextTitle.length > 10 ? nextTitle.substring(0, 10) + '…' : nextTitle;
+    } else {
+      elements.tocNextTopic.querySelector('.toc-topic-btn-text').textContent = '次のトピック';
+    }
+  }
+
+  /**
+   * 読み込み済みトピックIDを取得
+   */
+  function getLoadedTopicIds() {
+    const sections = elements.htmlDisplay?.querySelectorAll('.topic-section[data-topic-id]') || [];
+    return Array.from(sections).map(s => s.dataset.topicId);
+  }
+
+  /**
+   * 現在表示中のトピックIDを取得
+   */
+  function getCurrentTopicId() {
+    if (!elements.htmlContent || !elements.htmlDisplay) return null;
+
+    const sections = elements.htmlDisplay.querySelectorAll('.topic-section[data-topic-id]');
+    if (sections.length === 0) return null;
+
+    // スクロール位置から現在のトピックを判定
+    const containerRect = elements.htmlContent.getBoundingClientRect();
+    const headerHeight = 80;
+
+    for (const section of sections) {
+      const rect = section.getBoundingClientRect();
+      // セクションの上部がヘッダー下にあれば現在のトピック
+      if (rect.top <= containerRect.top + headerHeight && rect.bottom > containerRect.top + headerHeight) {
+        return section.dataset.topicId;
+      }
+    }
+
+    // 最初のセクションを返す
+    return sections[0]?.dataset.topicId || null;
+  }
+
+  /**
+   * 前のトピックへ移動
+   */
+  async function goToPrevTopic() {
+    const currentTopicId = getCurrentTopicId();
+    if (!currentTopicId) return;
+
+    const currentIndex = DATA.findIndex(d => d.id === currentTopicId);
+    if (currentIndex <= 0) return;
+
+    const prevTopic = DATA[currentIndex - 1];
+    closeTOC();
+    await loadAndScrollToTopic(prevTopic.id);
+  }
+
+  /**
+   * 次のトピックへ移動
+   */
+  async function goToNextTopic() {
+    const currentTopicId = getCurrentTopicId();
+    if (!currentTopicId) return;
+
+    const currentIndex = DATA.findIndex(d => d.id === currentTopicId);
+    if (currentIndex === -1 || currentIndex >= DATA.length - 1) return;
+
+    const nextTopic = DATA[currentIndex + 1];
+    closeTOC();
+    await loadAndScrollToTopic(nextTopic.id);
   }
 
   /**
@@ -4097,8 +4038,12 @@
     const heading = tocState.headings[index];
     if (!heading || !heading.element) return;
 
+    // スクロールコンテナを取得
+    const container = elements.htmlContent;
+    if (!container) return;
+
     // ジャンプ前の位置を保存
-    tocState.previousScrollY = window.scrollY;
+    tocState.previousScrollY = container.scrollTop;
 
     // 「元の位置へ」ボタンを表示
     if (elements.tocBackBtn) {
@@ -4108,11 +4053,13 @@
     // シートを閉じる
     closeTOC();
 
-    // スクロール
-    const headerHeight = 56 + 44 + 16; // ヘッダー + ラージタイトル + 余裕
-    const targetY = heading.element.getBoundingClientRect().top + window.scrollY - headerHeight;
+    // スクロール（コンテナ内）
+    const headerHeight = 56 + 16; // ヘッダー + 余裕
+    const containerRect = container.getBoundingClientRect();
+    const headingRect = heading.element.getBoundingClientRect();
+    const targetY = container.scrollTop + headingRect.top - containerRect.top - headerHeight;
 
-    window.scrollTo({
+    container.scrollTo({
       top: targetY,
       behavior: 'smooth'
     });
@@ -4127,10 +4074,13 @@
   function returnToPreviousPosition() {
     if (tocState.previousScrollY === null) return;
 
-    window.scrollTo({
-      top: tocState.previousScrollY,
-      behavior: 'smooth'
-    });
+    const container = elements.htmlContent;
+    if (container) {
+      container.scrollTo({
+        top: tocState.previousScrollY,
+        behavior: 'smooth'
+      });
+    }
 
     tocState.previousScrollY = null;
 
@@ -4148,15 +4098,19 @@
   function goToPreviousHeading() {
     if (tocState.headings.length === 0) return;
 
+    const container = elements.htmlContent;
+    if (!container) return;
+
     // 現在位置より上にある最も近い見出しを探す
-    const currentY = window.scrollY;
-    const headerHeight = 56 + 44 + 20;
+    const containerRect = container.getBoundingClientRect();
+    const headerHeight = 56 + 20;
 
     let targetIndex = 0;
     for (let i = tocState.headings.length - 1; i >= 0; i--) {
       const heading = tocState.headings[i];
-      const headingY = heading.element.getBoundingClientRect().top + window.scrollY - headerHeight;
-      if (headingY < currentY - 10) {
+      const headingRect = heading.element.getBoundingClientRect();
+      // 見出しがコンテナ上部（ヘッダー分下）より上にあるか
+      if (headingRect.top < containerRect.top + headerHeight - 10) {
         targetIndex = i;
         break;
       }
@@ -4169,11 +4123,6 @@
    * 目次イベントをバインド
    */
   function bindTOCEvents() {
-    // 目次FABクリック
-    if (elements.tocFab) {
-      elements.tocFab.onclick = openTOC;
-    }
-
     // 閉じるボタン
     if (elements.tocCloseBtn) {
       elements.tocCloseBtn.onclick = closeTOC;
@@ -4218,14 +4167,69 @@
 
     // 目次内検索
     if (elements.tocSearchInput) {
+      // 入力時：フィルタリング
       elements.tocSearchInput.oninput = (e) => {
         buildTOCList(e.target.value);
+      };
+      // フォーカス時：Full展開
+      elements.tocSearchInput.onfocus = () => {
+        if (tocState.mode === 'medium') {
+          setTocMode('full');
+        }
       };
     }
 
     // 前の見出しへボタン
     if (elements.prevHeadingBtn) {
       elements.prevHeadingBtn.onclick = goToPreviousHeading;
+    }
+
+    // ドラッグハンドルでスワイプ操作
+    if (elements.tocHandle) {
+      let startY = 0;
+      let startHeight = 0;
+
+      elements.tocHandle.addEventListener('touchstart', (e) => {
+        startY = e.touches[0].clientY;
+        startHeight = elements.tocSheet?.offsetHeight || 0;
+      }, { passive: true });
+
+      elements.tocHandle.addEventListener('touchend', (e) => {
+        const endY = e.changedTouches[0].clientY;
+        const deltaY = startY - endY;
+
+        // 上スワイプ（50px以上）でFull展開
+        if (deltaY > 50 && tocState.mode === 'medium') {
+          setTocMode('full');
+        }
+        // 下スワイプ（50px以上）でMediumに縮小、またはさらに下で閉じる
+        else if (deltaY < -50) {
+          if (tocState.mode === 'full') {
+            setTocMode('medium');
+          } else {
+            closeTOC();
+          }
+        }
+      }, { passive: true });
+
+      // ハンドルダブルタップでトグル
+      let lastTap = 0;
+      elements.tocHandle.addEventListener('click', () => {
+        const now = Date.now();
+        if (now - lastTap < 300) {
+          // ダブルタップ：モードトグル
+          setTocMode(tocState.mode === 'medium' ? 'full' : 'medium');
+        }
+        lastTap = now;
+      });
+    }
+
+    // 前後トピックボタン
+    if (elements.tocPrevTopic) {
+      elements.tocPrevTopic.onclick = goToPrevTopic;
+    }
+    if (elements.tocNextTopic) {
+      elements.tocNextTopic.onclick = goToNextTopic;
     }
   }
 
@@ -4240,7 +4244,13 @@
     tocState.headings = [];
     tocState.currentHeadingIndex = 0;
     tocState.previousScrollY = null;
-    hideTOCButtons();
+    tocState.mode = 'medium';
+    tocState.hasH2 = false;
+    // シートのFullクラスも除去
+    if (elements.tocSheet) {
+      elements.tocSheet.classList.remove('toc-full');
+    }
+    hideToolButtons();
   }
 
   // ===== 読書モード機能 =====
@@ -4251,23 +4261,12 @@
   function initReadingMode() {
     // 保存された設定を適用
     applyReadingSettings();
-
-    // ボタンを表示
-    if (elements.readingModeBtn) {
-      elements.readingModeBtn.style.display = 'flex';
-    }
-
-    // イベントをバインド
-    bindReadingModeEvents();
   }
 
   /**
    * 読書モードをクリーンアップ
    */
   function cleanupReadingMode() {
-    if (elements.readingModeBtn) {
-      elements.readingModeBtn.style.display = 'none';
-    }
     closeReadingMode();
   }
 
@@ -4597,11 +4596,6 @@
    * 読書モードイベントをバインド
    */
   function bindReadingModeEvents() {
-    // Aaボタン
-    if (elements.readingModeBtn) {
-      elements.readingModeBtn.onclick = openReadingMode;
-    }
-
     // 閉じるボタン
     if (elements.readingModeClose) {
       elements.readingModeClose.onclick = closeReadingMode;
@@ -4633,6 +4627,126 @@
     document.querySelectorAll('[data-density]').forEach(btn => {
       btn.onclick = () => changeDensity(btn.dataset.density);
     });
+  }
+
+  // ===== 統合ツールシート =====
+
+  /**
+   * ツールシートを開く
+   */
+  function openToolSheet() {
+    if (!elements.toolSheetOverlay) return;
+    elements.toolSheetOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // 現在地ヒントを更新
+    if (elements.toolTocHint && tocState.headings.length > 0) {
+      const current = tocState.headings[tocState.currentHeadingIndex];
+      if (current) {
+        elements.toolTocHint.textContent = current.text.substring(0, 15) + (current.text.length > 15 ? '…' : '');
+      }
+    }
+  }
+
+  /**
+   * ツールシートを閉じる
+   */
+  function closeToolSheet() {
+    if (!elements.toolSheetOverlay) return;
+    elements.toolSheetOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /**
+   * ツールシートのイベントをバインド
+   */
+  function bindToolSheetEvents() {
+    // ツールFABクリック
+    if (elements.toolFab) {
+      elements.toolFab.onclick = openToolSheet;
+    }
+
+    // オーバーレイクリックで閉じる
+    if (elements.toolSheetOverlay) {
+      elements.toolSheetOverlay.onclick = (e) => {
+        if (e.target === elements.toolSheetOverlay) {
+          closeToolSheet();
+        }
+      };
+    }
+
+    // 目次ボタン
+    if (elements.toolToc) {
+      elements.toolToc.onclick = () => {
+        closeToolSheet();
+        openTOC();
+      };
+    }
+
+    // 表示設定ボタン
+    if (elements.toolReading) {
+      elements.toolReading.onclick = () => {
+        closeToolSheet();
+        openReadingMode();
+      };
+    }
+
+    // 前の見出しへボタン
+    if (elements.toolPrevHeading) {
+      elements.toolPrevHeading.onclick = () => {
+        closeToolSheet();
+        goToPreviousHeading();
+      };
+    }
+
+    // トップへボタン
+    if (elements.toolTop) {
+      elements.toolTop.onclick = () => {
+        closeToolSheet();
+        scrollToTop();
+      };
+    }
+  }
+
+  /**
+   * トップへスクロール
+   */
+  function scrollToTop() {
+    if (elements.htmlContent) {
+      elements.htmlContent.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  /**
+   * ↑ボタンの条件付き表示を設定
+   */
+  function setupPrevHeadingButtonScroll() {
+    if (!elements.htmlContent || !elements.prevHeadingBtn) return;
+
+    let lastScrollY = 0;
+    const threshold = window.innerHeight * 1.5; // 1.5画面
+
+    elements.htmlContent.addEventListener('scroll', () => {
+      const scrollY = elements.htmlContent.scrollTop;
+      const isScrollingDown = scrollY > lastScrollY;
+      const isPastThreshold = scrollY > threshold;
+
+      if (isPastThreshold && !isScrollingDown) {
+        // 1.5画面以上スクロール済み + 上スクロール中 → 表示
+        elements.prevHeadingBtn.style.display = 'flex';
+        elements.prevHeadingBtn.style.opacity = '1';
+      } else if (isScrollingDown || scrollY < threshold) {
+        // 下スクロール中 or 閾値未満 → 非表示
+        elements.prevHeadingBtn.style.opacity = '0';
+        setTimeout(() => {
+          if (elements.prevHeadingBtn.style.opacity === '0') {
+            elements.prevHeadingBtn.style.display = 'none';
+          }
+        }, 200);
+      }
+
+      lastScrollY = scrollY;
+    }, { passive: true });
   }
 
   // 起動

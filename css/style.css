@@ -7144,6 +7144,9 @@ body.is-practice .tab-content {
 
 .account-sheet-body {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 56px);
 }
 
 .account-section {
@@ -7225,7 +7228,63 @@ body.is-practice .tab-content {
   color: var(--secondary-label);
 }
 
-/* 同期ステータス */
+.account-user-details {
+  flex: 1;
+}
+
+/* 同期ステータスバッジ（小さなインライン表示） */
+.sync-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: rgba(52, 199, 89, 0.12);
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #34c759;
+  white-space: nowrap;
+}
+
+.sync-status-badge svg {
+  flex-shrink: 0;
+}
+
+.sync-status-badge.syncing {
+  background: rgba(0, 122, 255, 0.12);
+  color: #007aff;
+}
+
+.sync-status-badge.error {
+  background: rgba(255, 59, 48, 0.12);
+  color: #ff3b30;
+}
+
+/* ログアウトセクション（最下段・隔離） */
+.account-logout-section {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.account-logout-section .account-signout-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: transparent;
+  border: 1px solid rgba(255, 59, 48, 0.3);
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ff3b30;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.account-logout-section .account-signout-btn:hover {
+  background: rgba(255, 59, 48, 0.08);
+}
+
+/* 同期ステータス（古い：削除予定） */
 .account-sync-status {
   text-align: center;
   padding: 8px;

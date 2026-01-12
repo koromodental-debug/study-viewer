@@ -488,12 +488,15 @@ function initAccountUI() {
 
   // UI状態を更新
   function updateUI(user) {
+    const logoutSection = document.getElementById('account-logout-section');
+
     if (user) {
       // ログイン済み
       accountLoggedOut.style.display = 'none';
       accountLoggedIn.style.display = 'flex';
       accountIconLoggedOut.style.display = 'none';
       accountIconLoggedIn.style.display = 'block';
+      if (logoutSection) logoutSection.style.display = 'block';
 
       // ユーザー情報を表示
       const userPhoto = document.getElementById('account-user-photo');
@@ -514,6 +517,7 @@ function initAccountUI() {
       accountLoggedIn.style.display = 'none';
       accountIconLoggedOut.style.display = 'block';
       accountIconLoggedIn.style.display = 'none';
+      if (logoutSection) logoutSection.style.display = 'none';
     }
   }
 
@@ -548,22 +552,44 @@ function initAccountUI() {
     }
   });
 
+  // 同期バッジの状態を更新
+  function updateSyncBadge(status) {
+    const badge = document.getElementById('sync-status-badge');
+    const statusText = document.getElementById('sync-status-text');
+    if (!badge || !statusText) return;
+
+    badge.classList.remove('syncing', 'error');
+
+    switch (status) {
+      case 'syncing':
+        badge.classList.add('syncing');
+        statusText.textContent = '同期中...';
+        if (manualSyncBtn) manualSyncBtn.style.display = 'none';
+        break;
+      case 'success':
+        statusText.textContent = '同期済み';
+        if (manualSyncBtn) manualSyncBtn.style.display = 'none';
+        break;
+      case 'error':
+        badge.classList.add('error');
+        statusText.textContent = 'エラー';
+        if (manualSyncBtn) manualSyncBtn.style.display = 'flex';
+        break;
+    }
+  }
+
   // 手動同期
   manualSyncBtn?.addEventListener('click', async () => {
     try {
-      const statusText = document.getElementById('sync-status-text');
-      statusText.textContent = '同期中...';
+      updateSyncBadge('syncing');
       manualSyncBtn.disabled = true;
 
       await FirebaseSync.sync();
 
-      statusText.textContent = '同期完了';
-      setTimeout(() => {
-        statusText.textContent = '同期済み';
-      }, 2000);
+      updateSyncBadge('success');
     } catch (error) {
       console.error('同期エラー:', error);
-      document.getElementById('sync-status-text').textContent = '同期エラー';
+      updateSyncBadge('error');
     } finally {
       manualSyncBtn.disabled = false;
     }

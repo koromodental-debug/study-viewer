@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=20260112h">
+  <link rel="stylesheet" href="css/style.css?v=20260113a">
 </head>
 <body>
   <div class="app">
@@ -66,27 +66,26 @@
           </div>
           <!-- ログイン済み状態 -->
           <div id="account-logged-in" class="account-section" style="display:none;">
+            <!-- アカウント情報 + 同期状態バッジ -->
             <div class="account-user-info">
               <img id="account-user-photo" class="account-user-photo" src="" alt="">
               <div class="account-user-details">
                 <span id="account-user-name" class="account-user-name"></span>
                 <span id="account-user-email" class="account-user-email"></span>
               </div>
+              <span id="sync-status-badge" class="sync-status-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                <span id="sync-status-text">同期済み</span>
+              </span>
             </div>
-            <div class="account-sync-status">
-              <span id="sync-status-text">同期済み</span>
-            </div>
-            <button id="manual-sync-btn" class="account-action-btn">
+            <!-- 同期ボタン（未同期/エラー時のみ表示） -->
+            <button id="manual-sync-btn" class="account-action-btn account-sync-btn" style="display:none;">
               <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                 <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
               </svg>
-              <span>今すぐ同期</span>
-            </button>
-            <button id="signout-btn" class="account-action-btn account-signout-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
-              </svg>
-              <span>ログアウト</span>
+              <span>手動で同期</span>
             </button>
           </div>
           <!-- テーマ切替（共通） -->
@@ -103,6 +102,12 @@
                 <span class="theme-toggle-label">ライト</span>
               </button>
             </div>
+          </div>
+          <!-- ログアウト（最下段・隔離） -->
+          <div id="account-logout-section" class="account-section account-logout-section" style="display:none;">
+            <button id="signout-btn" class="account-signout-btn">
+              <span>ログアウト</span>
+            </button>
           </div>
         </div>
       </div>

@@ -13,7 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/koromodental-debug/study-viewer.git"
   },
-  "keywords": ["dental", "education", "flashcard"],
+  "keywords": [
+    "dental",
+    "education",
+    "flashcard"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
@@ -24,6 +28,7 @@
   "dependencies": {
     "@capacitor/cli": "^8.0.0",
     "@capacitor/core": "^8.0.0",
-    "@capacitor/ios": "^8.0.0"
+    "@capacitor/ios": "^8.0.0",
+    "firebase": "^12.7.0"
   }
 }

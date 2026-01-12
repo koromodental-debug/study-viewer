@@ -26,6 +26,7 @@ const FirebaseSync = (function() {
   // 同期対象のlocalStorageキー
   const SYNC_KEYS = [
     'studyViewer_flashcardProgress',
+    'studyViewer_flashcardSessions',
     'studyViewer_favorites'
   ];
 

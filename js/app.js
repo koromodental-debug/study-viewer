@@ -190,8 +190,7 @@
    * テーマ切り替え
    */
   function initThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
-    if (!themeToggle) return;
+    const themeToggleSheet = document.getElementById('theme-toggle-sheet');
 
     // 保存されたテーマを適用
     const savedTheme = localStorage.getItem('studyViewer_theme');
@@ -199,24 +198,51 @@
       document.documentElement.setAttribute('data-theme', savedTheme);
     }
 
-    // トグルボタンのクリックイベント
-    themeToggle.addEventListener('click', function() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // テーマラベルを更新
+    updateThemeLabel();
 
-      let newTheme;
-      if (currentTheme === 'dark') {
-        newTheme = 'light';
-      } else if (currentTheme === 'light') {
-        newTheme = 'dark';
-      } else {
-        // 未設定の場合、システム設定と逆にする
-        newTheme = systemDark ? 'light' : 'dark';
-      }
+    // アカウントシート内のテーマトグル
+    if (themeToggleSheet) {
+      themeToggleSheet.addEventListener('click', toggleTheme);
+    }
+  }
 
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('studyViewer_theme', newTheme);
-    });
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    let newTheme;
+    if (currentTheme === 'dark') {
+      newTheme = 'light';
+    } else if (currentTheme === 'light') {
+      newTheme = 'dark';
+    } else {
+      // 未設定の場合、システム設定と逆にする
+      newTheme = systemDark ? 'light' : 'dark';
+    }
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('studyViewer_theme', newTheme);
+    updateThemeLabel();
+  }
+
+  function updateThemeLabel() {
+    const label = document.querySelector('.theme-toggle-label');
+    if (!label) return;
+
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    let isDark;
+    if (currentTheme === 'dark') {
+      isDark = true;
+    } else if (currentTheme === 'light') {
+      isDark = false;
+    } else {
+      isDark = systemDark;
+    }
+
+    label.textContent = isDark ? 'ダーク' : 'ライト';
   }
 
   /**
@@ -3034,6 +3060,9 @@
       elements.flashcardContent.classList.toggle('active', tab === 'flashcard');
       if (tab === 'flashcard' && typeof FlashcardModule !== 'undefined') {
         FlashcardModule.show();
+      } else if (prevTab === 'flashcard' && typeof FlashcardModule !== 'undefined') {
+        // 演習タブから離れる時にセッションを保存
+        FlashcardModule.saveSession();
       }
     }
 

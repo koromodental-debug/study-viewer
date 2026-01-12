@@ -5,6 +5,7 @@
 const FlashcardModule = (function() {
   // 定数
   const STORAGE_KEY = 'studyViewer_flashcardProgress';
+  const SESSIONS_KEY = 'studyViewer_flashcardSessions';
   const STORAGE_VERSION = 1;
 
   // 状態
@@ -17,7 +18,7 @@ const FlashcardModule = (function() {
     isFlipped: false,
     isReviewMode: false,
     shuffleEnabled: localStorage.getItem('flashcard-shuffle') === 'true',
-    sessionSize: parseInt(localStorage.getItem('flashcard-session-size')) || 10, // 5, 10, 20
+    sessionSize: parseInt(localStorage.getItem('flashcard-session-size')) || 5, // 5, 10, 20
     isActive: false,     // 演習中かどうか
     progress: {},        // { "topicId:index": { status, lastReview } }
     touchStartX: 0,
@@ -28,7 +29,9 @@ const FlashcardModule = (function() {
     // まとめ折りたたみ状態
     summaryCollapsed: localStorage.getItem('flashcard-summary-collapsed') === 'true',
     // デッキ検索
-    searchQuery: ''
+    searchQuery: '',
+    // 演習モード（mix, memorized, again）
+    currentMode: 'mix'
   };
 
   // DOM要素
@@ -118,6 +121,87 @@ const FlashcardModule = (function() {
     return state.sessionSize;
   }
 
+  // 開始ボタンのサブテキストを生成（1行目：問数と時間）
+  function buildStartSub(overall, mode) {
+    const timeEstimate = Math.ceil(state.sessionSize * 0.5);
+
+    if (mode === 'mix') {
+      return `${state.sessionSize}問 · 約${timeEstimate}分`;
+    } else if (mode === 'memorized') {
+      const count = Math.min(state.sessionSize, overall.memorized);
+      return `${count}問 · 約${Math.ceil(count * 0.5)}分`;
+    } else if (mode === 'again') {
+      const count = Math.min(state.sessionSize, overall.again);
+      return `${count}問 · 約${Math.ceil(count * 0.5)}分`;
+    }
+    return `${state.sessionSize}問 · 約${timeEstimate}分`;
+  }
+
+  // 内訳テキストを生成（シート内表示用）
+  function buildBreakdown(overall, mode) {
+    if (mode === 'mix') {
+      return `全${overall.total}カードから出題`;
+    } else if (mode === 'memorized') {
+      return `覚えた${overall.memorized}カードをテスト`;
+    } else if (mode === 'again') {
+      return `もう一度${overall.again}カードを優先`;
+    }
+    return '';
+  }
+
+  // 内訳シートを開く
+  function openBreakdownSheet() {
+    const overlay = document.getElementById('breakdown-overlay');
+    const body = document.getElementById('breakdown-sheet-body');
+    if (!overlay || !body) return;
+
+    // 今回の出題数から内訳を計算
+    const overall = getOverallStats();
+    const sessionSize = state.sessionSize;
+
+    // 覚えた・もう一度から出る分
+    const fromMemorized = Math.min(overall.memorized, sessionSize);
+    const fromAgain = Math.min(overall.again, sessionSize - fromMemorized);
+    const fromNew = sessionSize - fromMemorized - fromAgain;
+
+    // 行を動的に生成（0件は非表示）
+    let rows = '';
+    if (fromNew > 0) {
+      rows += `<div class="breakdown-row"><span class="breakdown-label">新規</span><span class="breakdown-value">${fromNew}カード</span></div>`;
+    }
+    if (fromAgain > 0) {
+      rows += `<div class="breakdown-row"><span class="breakdown-label">もう一度</span><span class="breakdown-value">${fromAgain}カード</span></div>`;
+    }
+    if (fromMemorized > 0) {
+      rows += `<div class="breakdown-row"><span class="breakdown-label">覚えた</span><span class="breakdown-value">${fromMemorized}カード</span></div>`;
+    }
+
+    body.innerHTML = rows;
+
+    // シートを開く
+    overlay.classList.add('active');
+
+    // 閉じるボタン
+    const closeBtn = document.getElementById('breakdown-close');
+    if (closeBtn) {
+      closeBtn.onclick = () => closeBreakdownSheet();
+    }
+
+    // 背景クリックで閉じる
+    const backdrop = overlay.querySelector('.breakdown-backdrop');
+    if (backdrop) {
+      backdrop.onclick = () => closeBreakdownSheet();
+    }
+  }
+
+  // 内訳シートを閉じる
+  function closeBreakdownSheet() {
+    const overlay = document.getElementById('breakdown-overlay');
+    if (overlay) {
+      overlay.classList.remove('active');
+    }
+  }
+
   // === Ankiスタイル デッキ一覧画面 ===
   function renderDeckList() {
     const subjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))];
@@ -180,94 +264,79 @@ const FlashcardModule = (function() {
 
   // 通常のデッキホームをレンダリング
   function renderDeckHome(overall, subjects) {
+    // 時間目安を計算（1問約30秒）
+    const timeEstimate = Math.ceil(state.sessionSize * 0.5);
+
     return `
-      <!-- 演習するデッキ（3つの入口を同列カードで表示） -->
-      <div class="deck-entries">
-        <h2 class="deck-section-title">演習するデッキ</h2>
-
-        <!-- カード1: 今日のセッション -->
-        <div class="deck-entry-card recommended" id="start-recommended-deck">
-          <div class="deck-entry-main">
-            <div class="deck-entry-header">
-              <span class="deck-entry-title">今日のセッション</span>
-              <span class="deck-entry-badge recommend">おすすめ</span>
-            </div>
-            <div class="deck-entry-sizes">
-              <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5">5問</button>
-              <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10">10問</button>
-              <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20">20問</button>
-            </div>
-          </div>
-          <button class="deck-entry-cta primary">${state.sessionSize}問で開始</button>
+      <!-- 今日の演習：メインCTA -->
+      <div class="deck-main-cta" id="start-recommended-deck">
+        <h2 class="deck-main-title">今日の演習</h2>
+        <button class="deck-start-btn" id="deck-start-btn">
+          <span class="deck-start-label">開始</span>
+          <span class="deck-start-sub" id="deck-start-sub">${buildStartSub(overall, 'mix')}</span>
+        </button>
+        <button class="deck-breakdown-link" id="deck-breakdown-link">
+          出題範囲
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+          </svg>
+        </button>
+        <button class="deck-size-toggle" id="deck-size-toggle">
+          問数：${state.sessionSize}
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </button>
+        <div class="deck-size-dropdown" id="deck-size-dropdown" style="display:none;">
+          <button class="deck-size-option ${state.sessionSize === 5 ? 'active' : ''}" data-size="5">5問（約2分）</button>
+          <button class="deck-size-option ${state.sessionSize === 10 ? 'active' : ''}" data-size="10">10問（約5分）</button>
+          <button class="deck-size-option ${state.sessionSize === 20 ? 'active' : ''}" data-size="20">20問（約10分）</button>
         </div>
 
-        <!-- カード2: 復習（もう一度） -->
-        ${overall.again > 0 ? `
-        <div class="deck-entry-card" id="start-again-deck">
-          <div class="deck-entry-main">
-            <div class="deck-entry-header">
-              <span class="deck-entry-title">復習</span>
-              <span class="deck-entry-badge again">${overall.again}問</span>
-            </div>
-            ${overall.again > 10 ? `
-            <div class="deck-entry-sizes">
-              <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5" data-deck="again">5問</button>
-              <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10" data-deck="again">10問</button>
-              <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20" data-deck="again">20問</button>
-            </div>
-            ` : `
-            <p class="deck-entry-desc">間違えた問題を復習</p>
-            `}
-          </div>
-          <button class="deck-entry-cta secondary">${overall.again > 10 ? Math.min(overall.again, state.sessionSize) + '問で開始' : overall.again + '問で開始'}</button>
-        </div>
-        ` : `
-        <div class="deck-entry-card empty-state" id="start-again-deck">
-          <div class="deck-entry-main">
-            <div class="deck-entry-header">
-              <span class="deck-entry-title">復習</span>
-            </div>
-            <p class="deck-entry-desc muted">復習はありません。順調です！</p>
+        <!-- モード切替セグメント（0件は非表示） -->
+        ${(overall.again > 0 || overall.memorized > 0) ? `
+        <div class="deck-mode-wrapper">
+          <div class="deck-mode-segment">
+            <button class="deck-mode-seg active" data-mode="mix">
+              <span class="deck-mode-seg-label">ミックス</span>
+            </button>
+            ${overall.again > 0 ? `
+            <button class="deck-mode-seg" data-mode="again">
+              <span class="deck-mode-seg-label">もう一度</span>
+              <span class="deck-mode-seg-count">${overall.again}</span>
+            </button>
+            ` : ''}
+            ${overall.memorized > 0 ? `
+            <button class="deck-mode-seg" data-mode="memorized">
+              <span class="deck-mode-seg-label">覚えた</span>
+              <span class="deck-mode-seg-count">${overall.memorized}</span>
+            </button>
+            ` : ''}
           </div>
         </div>
-        `}
-
-        <!-- カード3: 確認（覚えた） -->
-        ${overall.memorized > 0 ? `
-        <div class="deck-entry-card" id="start-memorized-deck">
-          <div class="deck-entry-main">
-            <div class="deck-entry-header">
-              <span class="deck-entry-title">確認</span>
-              <span class="deck-entry-badge memorized">${overall.memorized}問</span>
-            </div>
-            ${overall.memorized > 10 ? `
-            <div class="deck-entry-sizes">
-              <button class="session-size-btn ${state.sessionSize === 5 ? 'active' : ''}" data-size="5" data-deck="memorized">5問</button>
-              <button class="session-size-btn ${state.sessionSize === 10 ? 'active' : ''}" data-size="10" data-deck="memorized">10問</button>
-              <button class="session-size-btn ${state.sessionSize === 20 ? 'active' : ''}" data-size="20" data-deck="memorized">20問</button>
-            </div>
-            ` : `
-            <p class="deck-entry-desc">定着チェック（ランダム）</p>
-            `}
-          </div>
-          <button class="deck-entry-cta secondary">${overall.memorized > 10 ? 'ランダム' + Math.min(overall.memorized, state.sessionSize) + '問' : 'ランダム' + overall.memorized + '問'}</button>
-        </div>
-        ` : `
-        <div class="deck-entry-card empty-state" id="start-memorized-deck">
-          <div class="deck-entry-main">
-            <div class="deck-entry-header">
-              <span class="deck-entry-title">確認</span>
-            </div>
-            <p class="deck-entry-desc muted">まだ確認できる問題がありません</p>
-          </div>
-        </div>
-        `}
+        ` : ''}
       </div>
 
-      <!-- 科目一覧 -->
-      <div class="deck-subjects" id="deck-subjects">
-        <h2 class="deck-section-title">科目から選ぶ</h2>
-        ${subjects.map(subject => renderSubjectRow(subject)).join('')}
+      <!-- 科目一覧（折りたたみ＋検索） -->
+      <div class="deck-subjects-wrapper">
+        <button class="deck-subjects-toggle" id="deck-subjects-toggle">
+          <span>科目・デッキを探す</span>
+          <svg class="deck-subjects-arrow" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </button>
+        <div class="deck-subjects collapsed" id="deck-subjects">
+          <div class="deck-subjects-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" id="subjects-search-input" placeholder="科目・デッキを検索" />
+          </div>
+          <div class="deck-subjects-list" id="deck-subjects-list">
+            ${subjects.map(subject => renderSubjectRow(subject)).join('')}
+          </div>
+        </div>
       </div>
     `;
   }
@@ -469,65 +538,173 @@ const FlashcardModule = (function() {
       });
     });
 
-    // 「確認」デッキ開始（カードまたはCTAクリック）
-    const memorizedCard = document.getElementById('start-memorized-deck');
-    if (memorizedCard && !memorizedCard.classList.contains('empty-state')) {
-      memorizedCard.addEventListener('click', (e) => {
-        // セッションサイズボタンのクリックは除外
-        if (e.target.closest('.session-size-btn')) return;
-        startStatusDeck('memorized');
+    // 問数変更ドロップダウン
+    const sizeToggle = document.getElementById('deck-size-toggle');
+    const sizeDropdown = document.getElementById('deck-size-dropdown');
+    if (sizeToggle && sizeDropdown) {
+      sizeToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = sizeDropdown.style.display !== 'none';
+        sizeDropdown.style.display = isOpen ? 'none' : 'flex';
+        sizeToggle.classList.toggle('open', !isOpen);
+      });
+
+      // ドロップダウン外クリックで閉じる
+      document.addEventListener('click', (e) => {
+        if (!sizeToggle.contains(e.target) && !sizeDropdown.contains(e.target)) {
+          sizeDropdown.style.display = 'none';
+          sizeToggle.classList.remove('open');
+        }
+      });
+
+      // 問数選択
+      const sizeOptions = sizeDropdown.querySelectorAll('.deck-size-option');
+      sizeOptions.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const size = parseInt(btn.dataset.size);
+          state.sessionSize = size;
+          localStorage.setItem('flashcard-session-size', size);
+
+          // アクティブ状態を更新
+          sizeOptions.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // トグルボタンのテキストを更新
+          sizeToggle.innerHTML = `問数：${size}<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>`;
+
+          // サブテキストを現在のモードで更新
+          const overall = getOverallStats();
+          const mode = state.currentMode || 'mix';
+          const subLabel = container.querySelector('.deck-start-sub');
+          if (subLabel) subLabel.textContent = buildStartSub(overall, mode);
+
+          // ドロップダウンを閉じる
+          sizeDropdown.style.display = 'none';
+          sizeToggle.classList.remove('open');
+        });
       });
     }
 
-    // 「復習」デッキ開始（カードまたはCTAクリック）
-    const againCard = document.getElementById('start-again-deck');
-    if (againCard && !againCard.classList.contains('empty-state')) {
-      againCard.addEventListener('click', (e) => {
-        if (e.target.closest('.session-size-btn')) return;
-        startStatusDeck('again');
+    // 内訳シートの開閉
+    const breakdownLink = document.getElementById('deck-breakdown-link');
+    if (breakdownLink) {
+      breakdownLink.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openBreakdownSheet();
       });
     }
 
-    // 「今日のセッション」デッキ開始（カードまたはCTAクリック）
-    const recommendedCard = document.getElementById('start-recommended-deck');
-    if (recommendedCard) {
-      recommendedCard.addEventListener('click', (e) => {
-        // セッションサイズボタンのクリックは除外
-        if (e.target.closest('.session-size-btn')) return;
-        startRecommendedDeck();
+    // 「確認」ボタン
+    const memorizedBtn = document.getElementById('start-memorized-deck');
+    if (memorizedBtn) {
+      memorizedBtn.addEventListener('click', () => startStatusDeck('memorized'));
+    }
+
+    // 「復習」ボタン
+    const againBtn = document.getElementById('start-again-deck');
+    if (againBtn) {
+      againBtn.addEventListener('click', () => startStatusDeck('again'));
+    }
+
+    // 科目一覧の折りたたみ
+    const subjectsToggle = document.getElementById('deck-subjects-toggle');
+    const subjectsList = document.getElementById('deck-subjects');
+    if (subjectsToggle && subjectsList) {
+      subjectsToggle.addEventListener('click', () => {
+        const isCollapsed = subjectsList.classList.contains('collapsed');
+        subjectsList.classList.toggle('collapsed', !isCollapsed);
+        subjectsToggle.classList.toggle('open', isCollapsed);
+
+        // 展開時に検索入力にフォーカス
+        if (isCollapsed) {
+          setTimeout(() => {
+            const searchInput = document.getElementById('subjects-search-input');
+            if (searchInput) searchInput.focus();
+          }, 100);
+        }
       });
     }
 
-    // セッションサイズ選択（クリックイベントの伝播を止める）
-    const sizeBtns = container.querySelectorAll('.session-size-btn');
-    sizeBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation(); // カードクリックを防止
-        const size = parseInt(btn.dataset.size);
-        state.sessionSize = size;
-        localStorage.setItem('flashcard-session-size', size);
+    // 科目検索
+    const subjectsSearchInput = document.getElementById('subjects-search-input');
+    if (subjectsSearchInput) {
+      subjectsSearchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        const subjectRows = container.querySelectorAll('.deck-subject');
 
-        // 全てのサイズボタンの見た目を更新
-        sizeBtns.forEach(b => b.classList.remove('active'));
-        container.querySelectorAll(`.session-size-btn[data-size="${size}"]`).forEach(b => b.classList.add('active'));
+        subjectRows.forEach(row => {
+          const subjectName = row.dataset.subject.toLowerCase();
+          const topics = row.querySelectorAll('.deck-topic');
+          let hasMatch = subjectName.includes(query);
 
-        // CTAラベルを更新（今日のセッションのみ - 復習・確認は条件分岐があるため再描画不要）
-        const recommendedCta = document.querySelector('#start-recommended-deck .deck-entry-cta');
-        if (recommendedCta) recommendedCta.textContent = `${size}問で開始`;
+          // トピック名も検索
+          topics.forEach(topic => {
+            const topicName = topic.querySelector('.deck-topic-name')?.textContent.toLowerCase() || '';
+            if (topicName.includes(query)) {
+              hasMatch = true;
+              topic.style.display = query ? 'flex' : 'flex';
+            } else {
+              topic.style.display = query && !subjectName.includes(query) ? 'none' : 'flex';
+            }
+          });
 
-        // 復習・確認のCTA更新（セグメントがある場合のみ）
-        const overall = getOverallStats();
-        const againCta = document.querySelector('#start-again-deck .deck-entry-cta');
-        if (againCta && overall.again > 10) {
-          againCta.textContent = `${Math.min(overall.again, size)}問で開始`;
+          row.style.display = hasMatch || !query ? 'block' : 'none';
+
+          // クエリがある場合、マッチした科目を展開
+          if (query && hasMatch) {
+            row.classList.add('expanded');
+          } else if (!query) {
+            row.classList.remove('expanded');
+          }
+        });
+      });
+    }
+
+    // モード切替セグメント
+    const modeSegs = container.querySelectorAll('.deck-mode-seg');
+    const startSub = document.getElementById('deck-start-sub');
+    const startBreakdown = document.getElementById('deck-start-breakdown');
+    const overall = getOverallStats();
+
+    modeSegs.forEach(seg => {
+      seg.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const mode = seg.dataset.mode;
+
+        // アクティブ状態を切り替え
+        modeSegs.forEach(s => s.classList.remove('active'));
+        seg.classList.add('active');
+
+        // サブテキストと内訳を更新
+        if (startSub) {
+          startSub.textContent = buildStartSub(overall, mode);
+        }
+        if (startBreakdown) {
+          startBreakdown.textContent = buildBreakdown(overall, mode);
         }
 
-        const memorizedCta = document.querySelector('#start-memorized-deck .deck-entry-cta');
-        if (memorizedCta && overall.memorized > 10) {
-          memorizedCta.textContent = `ランダム${Math.min(overall.memorized, size)}問`;
-        }
+        // 現在のモードを保存
+        state.currentMode = mode;
       });
     });
+
+    // 開始ボタンのクリックでモードに応じて開始
+    const startBtn = document.getElementById('deck-start-btn');
+    if (startBtn) {
+      startBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const mode = state.currentMode || 'mix';
+
+        if (mode === 'mix') {
+          startRecommendedDeck();
+        } else if (mode === 'memorized') {
+          startStatusDeck('memorized');
+        } else if (mode === 'again') {
+          startStatusDeck('again');
+        }
+      });
+    }
   }
 
   // === トピック読み込み ===
@@ -555,22 +732,17 @@ const FlashcardModule = (function() {
 
       // 保存されたセッションを復元
       let savedIndex = 0;
-      const savedSession = localStorage.getItem(`flashcard-session-${topicId}`);
+      const session = getSession(topicId);
 
-      if (savedSession) {
-        try {
-          const session = JSON.parse(savedSession);
-          // 保存された順序でカードを並べ替え
-          if (session.order && session.order.length === state.filteredCards.length) {
-            const orderMap = new Map(state.filteredCards.map(c => [c.originalIndex, c]));
-            const reordered = session.order.map(idx => orderMap.get(idx)).filter(Boolean);
-            if (reordered.length === state.filteredCards.length) {
-              state.filteredCards = reordered;
-              savedIndex = Math.min(session.index, state.filteredCards.length - 1);
-            }
+      if (session) {
+        // 保存された順序でカードを並べ替え
+        if (session.order && session.order.length === state.filteredCards.length) {
+          const orderMap = new Map(state.filteredCards.map(c => [c.originalIndex, c]));
+          const reordered = session.order.map(idx => orderMap.get(idx)).filter(Boolean);
+          if (reordered.length === state.filteredCards.length) {
+            state.filteredCards = reordered;
+            savedIndex = Math.min(session.index, state.filteredCards.length - 1);
           }
-        } catch (e) {
-          console.log('セッション復元エラー:', e);
         }
       } else if (state.shuffleEnabled && state.filteredCards.length > 0) {
         // 新規シャッフル（保存セッションがない場合のみ）
@@ -1356,7 +1528,7 @@ const FlashcardModule = (function() {
   // === 完了画面 ===
   function renderCompletionScreen() {
     // 完了したのでセッションをクリア
-    localStorage.removeItem(`flashcard-session-${state.currentTopicId}`);
+    clearSession(state.currentTopicId);
 
     const stats = getTopicStats(state.currentTopicId);
     const cardCount = state.filteredCards.length;
@@ -1574,6 +1746,76 @@ const FlashcardModule = (function() {
     enterPracticeMode();
   }
 
+  // === セッション保存（外部から呼び出し可能） ===
+  function saveSession() {
+    if (state.currentTopicId && state.isActive && state.currentIndex > 0) {
+      const saveData = {
+        index: state.currentIndex,
+        order: state.filteredCards.map(c => c.originalIndex),
+        shuffled: state.shuffleEnabled,
+        timestamp: Date.now()
+      };
+
+      // 全セッションを1つのオブジェクトで管理（Firebase同期用）
+      let allSessions = {};
+      try {
+        const stored = localStorage.getItem(SESSIONS_KEY);
+        if (stored) allSessions = JSON.parse(stored);
+      } catch (e) {}
+
+      allSessions[state.currentTopicId] = saveData;
+      localStorage.setItem(SESSIONS_KEY, JSON.stringify(allSessions));
+
+      // 旧形式との互換性（一時的）
+      localStorage.setItem(`flashcard-session-${state.currentTopicId}`, JSON.stringify(saveData));
+      return true;
+    }
+    return false;
+  }
+
+  // セッション取得
+  function getSession(topicId) {
+    // 新形式を優先
+    try {
+      const stored = localStorage.getItem(SESSIONS_KEY);
+      if (stored) {
+        const allSessions = JSON.parse(stored);
+        if (allSessions[topicId]) return allSessions[topicId];
+      }
+    } catch (e) {}
+
+    // 旧形式にフォールバック
+    try {
+      const old = localStorage.getItem(`flashcard-session-${topicId}`);
+      if (old) return JSON.parse(old);
+    } catch (e) {}
+
+    return null;
+  }
+
+  // セッション削除
+  function clearSession(topicId) {
+    try {
+      const stored = localStorage.getItem(SESSIONS_KEY);
+      if (stored) {
+        const allSessions = JSON.parse(stored);
+        delete allSessions[topicId];
+        localStorage.setItem(SESSIONS_KEY, JSON.stringify(allSessions));
+      }
+    } catch (e) {}
+
+    // 旧形式も削除
+    localStorage.removeItem(`flashcard-session-${topicId}`);
+  }
+
+  // ページ離脱時にセッションを保存
+  window.addEventListener('beforeunload', saveSession);
+  window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      saveSession();
+    }
+  });
+
   // === 公開API ===
   return {
     init,
@@ -1586,6 +1828,7 @@ const FlashcardModule = (function() {
     flip,
     markMemorized,
     markAgain,
-    goBack
+    goBack,
+    saveSession
   };
 })();

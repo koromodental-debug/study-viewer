@@ -735,14 +735,17 @@ const FlashcardModule = (function() {
       const session = getSession(topicId);
 
       if (session) {
-        // 保存された順序でカードを並べ替え
+        // 保存された順序でカードを並べ替え（可能な場合）
         if (session.order && session.order.length === state.filteredCards.length) {
           const orderMap = new Map(state.filteredCards.map(c => [c.originalIndex, c]));
           const reordered = session.order.map(idx => orderMap.get(idx)).filter(Boolean);
           if (reordered.length === state.filteredCards.length) {
             state.filteredCards = reordered;
-            savedIndex = Math.min(session.index, state.filteredCards.length - 1);
           }
+        }
+        // インデックスは常に復元を試みる
+        if (session.index !== undefined && session.index > 0) {
+          savedIndex = Math.min(session.index, state.filteredCards.length - 1);
         }
       } else if (state.shuffleEnabled && state.filteredCards.length > 0) {
         // 新規シャッフル（保存セッションがない場合のみ）

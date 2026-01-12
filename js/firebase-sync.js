@@ -113,7 +113,7 @@ const FirebaseSync = (function() {
   /**
    * Googleでログイン
    */
-  async function signInWithGoogle() {
+  async function signInWithGoogle(forceAccountSelect = false) {
     if (!auth) {
       console.error('[FirebaseSync] 未初期化');
       return null;
@@ -121,6 +121,10 @@ const FirebaseSync = (function() {
 
     try {
       const provider = new firebase.auth.GoogleAuthProvider();
+      // アカウント選択を強制する場合
+      if (forceAccountSelect) {
+        provider.setCustomParameters({ prompt: 'select_account' });
+      }
       const result = await auth.signInWithPopup(provider);
       return result.user;
     } catch (error) {
@@ -129,6 +133,9 @@ const FirebaseSync = (function() {
       // ポップアップブロック時はリダイレクト方式にフォールバック
       if (error.code === 'auth/popup-blocked') {
         const provider = new firebase.auth.GoogleAuthProvider();
+        if (forceAccountSelect) {
+          provider.setCustomParameters({ prompt: 'select_account' });
+        }
         await auth.signInWithRedirect(provider);
       }
 
@@ -542,8 +549,11 @@ function initAccountUI() {
     }
   });
 
-  // ログアウト
+  // ログアウト（確認ダイアログ付き）
   signoutBtn?.addEventListener('click', async () => {
+    if (!confirm('ログアウトしますか？\n\n学習データはこのデバイスに残りますが、他のデバイスとの同期は停止します。')) {
+      return;
+    }
     try {
       await FirebaseSync.signOut();
       closeAccountSheet();
@@ -551,6 +561,51 @@ function initAccountUI() {
       console.error('ログアウトエラー:', error);
     }
   });
+
+  // アカウント切り替え
+  const switchAccountBtn = document.getElementById('switch-account-btn');
+  switchAccountBtn?.addEventListener('click', async () => {
+    try {
+      switchAccountBtn.disabled = true;
+      switchAccountBtn.querySelector('span').textContent = '切り替え中...';
+      // アカウント選択画面を強制表示
+      await FirebaseSync.signInWithGoogle(true);
+      closeAccountSheet();
+    } catch (error) {
+      console.error('アカウント切り替えエラー:', error);
+      alert('アカウントの切り替えに失敗しました。');
+    } finally {
+      switchAccountBtn.disabled = false;
+      switchAccountBtn.querySelector('span').textContent = 'アカウントを切り替え';
+    }
+  });
+
+  // 相対時間を取得
+  function getRelativeTime(timestamp) {
+    const now = Date.now();
+    const diff = now - timestamp;
+    const minutes = Math.floor(diff / 60000);
+    const hours = Math.floor(diff / 3600000);
+    const days = Math.floor(diff / 86400000);
+
+    if (minutes < 1) return 'たった今';
+    if (minutes < 60) return `${minutes}分前`;
+    if (hours < 24) return `${hours}時間前`;
+    return `${days}日前`;
+  }
+
+  // 最終同期時刻を更新
+  function updateLastSyncTime() {
+    const lastSyncEl = document.getElementById('last-sync-time');
+    if (!lastSyncEl) return;
+
+    const lastSync = localStorage.getItem('studyViewer_lastSyncTime');
+    if (lastSync) {
+      lastSyncEl.textContent = getRelativeTime(parseInt(lastSync, 10));
+    } else {
+      lastSyncEl.textContent = '';
+    }
+  }
 
   // 同期バッジの状態を更新
   function updateSyncBadge(status) {
@@ -569,6 +624,9 @@ function initAccountUI() {
       case 'success':
         statusText.textContent = '同期済み';
         if (manualSyncBtn) manualSyncBtn.style.display = 'none';
+        // 最終同期時刻を保存・表示
+        localStorage.setItem('studyViewer_lastSyncTime', Date.now().toString());
+        updateLastSyncTime();
         break;
       case 'error':
         badge.classList.add('error');
@@ -577,6 +635,11 @@ function initAccountUI() {
         break;
     }
   }
+
+  // 定期的に相対時間を更新（1分ごと）
+  setInterval(updateLastSyncTime, 60000);
+  // 初期表示
+  updateLastSyncTime();
 
   // 手動同期
   manualSyncBtn?.addEventListener('click', async () => {

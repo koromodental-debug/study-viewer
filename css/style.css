@@ -7232,6 +7232,20 @@ body.is-practice .tab-content {
   flex: 1;
 }
 
+/* 同期ステータスコンテナ */
+.sync-status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.last-sync-time {
+  font-size: 10px;
+  color: var(--secondary-label);
+  opacity: 0.7;
+}
+
 /* 同期ステータスバッジ（小さなインライン表示） */
 .sync-status-badge {
   display: inline-flex;
@@ -7260,28 +7274,61 @@ body.is-practice .tab-content {
   color: #ff3b30;
 }
 
-/* ログアウトセクション（最下段・隔離） */
+/* ログアウトセクション（最下段・リンク） */
 .account-logout-section {
   margin-top: auto;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
 }
 
-.account-logout-section .account-signout-btn {
+.account-signout-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ff3b30;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.account-signout-link:hover {
+  opacity: 1;
+}
+
+.account-signout-link svg {
+  opacity: 0.6;
+}
+
+/* アカウント切り替えボタン */
+.account-switch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
   padding: 14px 20px;
-  background: transparent;
-  border: 1px solid rgba(255, 59, 48, 0.3);
+  margin-top: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   font-size: 15px;
   font-weight: 500;
-  color: #ff3b30;
+  color: var(--text-color);
   cursor: pointer;
   transition: background 0.2s;
 }
 
-.account-logout-section .account-signout-btn:hover {
-  background: rgba(255, 59, 48, 0.08);
+.account-switch-btn:hover {
+  background: var(--hover-bg);
+}
+
+.account-switch-btn svg {
+  color: var(--secondary-label);
 }
 
 /* 同期ステータス（古い：削除予定） */

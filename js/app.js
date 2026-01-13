@@ -292,6 +292,66 @@
         renderSearchHistory();
       });
     }
+
+    // おすすめキーワードを表示
+    renderRecommendedKeywords();
+
+    // おすすめキーワードクリック
+    const keywordChips = document.getElementById('welcome-keyword-chips');
+    if (keywordChips) {
+      keywordChips.addEventListener('click', (e) => {
+        const chip = e.target.closest('.keyword-chip');
+        if (chip && elements.welcomeSearchInput) {
+          const keyword = chip.dataset.keyword;
+          elements.welcomeSearchInput.value = keyword;
+          elements.welcomeSearchInput.dispatchEvent(new Event('input'));
+        }
+      });
+    }
+  }
+
+  /**
+   * おすすめキーワードをランダムに表示
+   */
+  function renderRecommendedKeywords() {
+    const container = document.getElementById('welcome-keyword-chips');
+    const section = document.getElementById('welcome-recommend-section');
+    if (!container) return;
+
+    // トピックタイトルからキーワードを抽出
+    const topics = DATA.filter(d => d.htmlPath && d.title);
+    if (topics.length === 0) {
+      if (section) section.style.display = 'none';
+      return;
+    }
+
+    // タイトルからキーワードを抽出（短いものを優先）
+    const keywords = [];
+    topics.forEach(topic => {
+      const title = topic.title || '';
+      // タイトルをそのまま使う（短いもの優先）
+      if (title.length <= 12) {
+        keywords.push(title);
+      } else {
+        // 長いタイトルは「_」や「・」で分割して短い部分を使う
+        const parts = title.split(/[_・（）\(\)]/);
+        parts.forEach(part => {
+          const trimmed = part.trim();
+          if (trimmed.length >= 2 && trimmed.length <= 10) {
+            keywords.push(trimmed);
+          }
+        });
+      }
+    });
+
+    // 重複を除去してシャッフル
+    const uniqueKeywords = [...new Set(keywords)];
+    const shuffled = uniqueKeywords.sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, 8);
+
+    container.innerHTML = selected.map(keyword => `
+      <span class="keyword-chip" data-keyword="${escapeHtml(keyword)}">${escapeHtml(keyword)}</span>
+    `).join('');
   }
 
   /**
@@ -5052,9 +5112,9 @@
    * ツールシートのイベントをバインド
    */
   function bindToolSheetEvents() {
-    // ツールFABクリック
+    // 検索FABクリック → ホームに戻る
     if (elements.toolFab) {
-      elements.toolFab.onclick = openToolSheet;
+      elements.toolFab.onclick = showWelcomeScreen;
     }
 
     // オーバーレイクリックで閉じる

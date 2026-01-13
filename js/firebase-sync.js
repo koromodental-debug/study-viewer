@@ -27,7 +27,8 @@ const FirebaseSync = (function() {
   const SYNC_KEYS = [
     'studyViewer_flashcardProgress',
     'studyViewer_flashcardSessions',
-    'studyViewer_favorites'
+    'studyViewer_favorites',
+    'studyViewer_searchHistory'
   ];
 
   // 設定キー（デバイスごとに保持、同期しない）

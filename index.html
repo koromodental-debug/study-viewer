@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=20260113n">
+  <link rel="stylesheet" href="css/style.css?v=20260114a">
 </head>
 <body>
   <div class="app">
@@ -60,12 +60,11 @@
       </button>
     </div>
 
-    <!-- 統合ツールボタン（右下） -->
-    <button id="tool-fab" class="tool-fab" aria-label="ツール" style="display:none;">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <circle cx="12" cy="5" r="2"/>
-        <circle cx="12" cy="12" r="2"/>
-        <circle cx="12" cy="19" r="2"/>
+    <!-- 検索に戻るボタン（右下） -->
+    <button id="tool-fab" class="tool-fab" aria-label="検索に戻る" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="10.5" cy="10.5" r="6.5"/>
+        <line x1="15.5" y1="15.5" x2="21" y2="21"/>
       </svg>
     </button>
 
@@ -390,6 +389,16 @@
                 <button id="clear-history-btn" class="clear-history-btn">履歴を消去</button>
               </div>
               <div class="welcome-history-list" id="welcome-history-list">
+                <!-- JSで動的に生成 -->
+              </div>
+            </div>
+
+            <!-- おすすめキーワード -->
+            <div class="welcome-recommend-section" id="welcome-recommend-section">
+              <div class="welcome-section-header">
+                <span class="welcome-section-title">おすすめキーワード</span>
+              </div>
+              <div class="welcome-keyword-chips" id="welcome-keyword-chips">
                 <!-- JSで動的に生成 -->
               </div>
             </div>

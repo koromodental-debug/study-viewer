@@ -1793,11 +1793,16 @@ const FlashcardModule = (function() {
       const h3Text = h3.childNodes[0]?.textContent?.trim() || h3.textContent.trim();
 
       if (h3Text.includes(sectionName) || sectionName.includes(h3Text)) {
-        // このh3から次のh3までの内容を収集
+        // このh3から次のh3までの内容を収集（過去問は除外）
         const content = [h3.outerHTML];
         let sibling = h3.nextElementSibling;
 
         while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+          // 過去問セクション・question-boxは除外
+          if (sibling.classList?.contains('question-box')) {
+            sibling = sibling.nextElementSibling;
+            continue;
+          }
           content.push(sibling.outerHTML);
           sibling = sibling.nextElementSibling;
         }

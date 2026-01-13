@@ -1288,6 +1288,9 @@ const FlashcardModule = (function() {
     content.style.overflow = 'visible';
     content.style.maxHeight = 'none';
 
+    // ダークモードでも白背景・黒文字で描画するため一時的にクラス追加
+    content.classList.add('capture-light-mode');
+
     try {
       const canvas = await html2canvas(content, {
         backgroundColor: '#ffffff',
@@ -1326,6 +1329,7 @@ const FlashcardModule = (function() {
       });
 
     } finally {
+      content.classList.remove('capture-light-mode');
       content.style.overflow = originalOverflow;
       content.style.maxHeight = originalMaxHeight;
     }

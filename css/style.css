@@ -5693,6 +5693,33 @@ body.is-practice .tab-content {
   -webkit-touch-callout: default; /* 長押しメニュー有効化 */
 }
 
+/* 画像キャプチャ用：ダークモードでもライトモード風に描画 */
+.capture-light-mode,
+.capture-light-mode * {
+  color: #1c1c1e !important;
+  background-color: transparent !important;
+}
+
+.capture-light-mode table {
+  border-color: #c6c6c8 !important;
+}
+
+.capture-light-mode th,
+.capture-light-mode td {
+  border-color: #c6c6c8 !important;
+  background-color: #ffffff !important;
+}
+
+.capture-light-mode th {
+  background-color: #f2f2f7 !important;
+}
+
+.capture-light-mode mark,
+.capture-light-mode .keyword-highlight {
+  background-color: #fff3cd !important;
+  color: #1c1c1e !important;
+}
+
 .flashcard-summary.collapsed .summary-chevron {
   transform: rotate(-90deg);
 }

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細菌と感染症 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 細菌と感染症</span>
+    <h1>細菌と感染症</h1>
+    <div class="container">
+
+      <h2>I. 主要な病原細菌</h2>
+
+      <h3>細菌と疾患の対応一覧</h3>
+      <table>
+        <tr>
+          <th>菌名</th>
+          <th>グラム染色</th>
+          <th>主な疾患</th>
+          <th>特徴・キーワード</th>
+        </tr>
+        <tr>
+          <td class="key">化膿レンサ球菌<br><span class="note">（A群レンサ球菌）</span></td>
+          <td>陽性球菌</td>
+          <td>咽頭炎、扁桃炎<br><span class="highlight">急性糸球体腎炎</span></td>
+          <td>β溶血、苺舌<br>劇症型＝人喰いバクテリア</td>
+        </tr>
+        <tr>
+          <td class="key">肺炎球菌<br><span class="note">（S. pneumoniae）</span></td>
+          <td><span class="highlight">陽性双球菌</span></td>
+          <td>肺炎、中耳炎<br>髄膜炎</td>
+          <td>高齢者の<span class="highlight">誤嚥性肺炎</span><br>莢膜を有する</td>
+        </tr>
+        <tr>
+          <td class="key">破傷風菌<br><span class="note">（C. tetani）</span></td>
+          <td>陽性桿菌</td>
+          <td><span class="highlight">開口障害</span><br>（牙関緊急）</td>
+          <td>芽胞形成菌<br><span class="highlight">テタノスパスミン</span>（神経毒）</td>
+        </tr>
+        <tr>
+          <td class="key">梅毒トレポネーマ<br><span class="note">（T. pallidum）</span></td>
+          <td>陰性らせん菌</td>
+          <td>梅毒<br>先天性梅毒</td>
+          <td><span class="highlight">ハッチンソンの3徴候</span><br>性行為感染症</td>
+        </tr>
+        <tr>
+          <td class="key">結核菌<br><span class="note">（M. tuberculosis）</span></td>
+          <td><span class="caution">抗酸菌</span></td>
+          <td>結核</td>
+          <td><span class="highlight">空気感染</span><br>Ziehl-Neelsen染色</td>
+        </tr>
+      </table>
+
+      <h2>II. 化膿レンサ球菌（A群レンサ球菌）</h2>
+
+      <p><span class="key">Streptococcus pyogenes</span>は、血液寒天培地上で<span class="highlight">β溶血</span>（完全溶血）を示す。</p>
+
+      <h3>主な病原因子</h3>
+      <ul>
+        <li><span class="key">Mタンパク</span>：菌体表層の病原因子、免疫回避に関与</li>
+        <li><span class="key">ストレプトリジンO（SLO）</span>：溶血毒素、<span class="highlight">ASO検査</span>の指標</li>
+        <li><span class="key">スーパー抗原</span>：T細胞を非特異的に活性化、免疫攪乱</li>
+      </ul>
+
+      <h3>疾患と続発症</h3>
+      <ul>
+        <li>急性疾患：咽頭炎、扁桃炎、苺舌、膿痂疹、産褥熱</li>
+        <li>続発症：<span class="highlight">急性糸球体腎炎</span>、リウマチ熱</li>
+        <li>劇症型A群レンサ球菌感染症（「人喰いバクテリア」）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108C37</div>
+        <p>急性感染の続発症として急性糸球体腎炎を起こすことがあるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 緑膿菌<br>
+          b ウェルシュ菌<br>
+          c 黄色ブドウ球菌<br>
+          d 化膿レンサ球菌<br>
+          e へリコバクター・ピロリ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">化膿レンサ球菌</span>（A群レンサ球菌）感染後の続発症として<span class="highlight">急性糸球体腎炎</span>やリウマチ熱がある。菌体成分と腎糸球体基底膜の交差反応による。</p>
+      </div>
+
+      <h2>III. 破傷風菌</h2>
+
+      <p><span class="key">Clostridium tetani</span>は<span class="highlight">芽胞形成菌</span>で、土壌中に広く分布する。</p>
+
+      <h3>病原因子と症状</h3>
+      <ul>
+        <li><span class="key">テタノスパスミン</span>：神経毒素、抑制性神経伝達を遮断</li>
+        <li>症状：<span class="highlight">開口障害（牙関緊急）</span>、強直性痙攣、後弓反張</li>
+      </ul>
+
+      <h3>予防</h3>
+      <p><span class="highlight">DPT-IPVワクチン</span>（4種混合）で予防。成分はジフテリア（D）、百日咳（P）、破傷風（T）、ポリオ（IPV）。</p>
+
+      <div class="question-box">
+        <div class="q-number">113B74</div>
+        <p>開口障害を生じやすいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Candida albicans<br>
+          b Clostridium tetani<br>
+          c Treponema pallidum<br>
+          d Porphyromonas gingivalis<br>
+          e Mycobacterium tuberculosis
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">Clostridium tetani</span>（破傷風菌）は神経毒素テタノスパスミンを産生し、<span class="highlight">開口障害（牙関緊急）</span>や強直性痙攣を引き起こす。咬筋の強直により開口が困難となる。</p>
+      </div>
+
+      <h2>IV. 梅毒トレポネーマ</h2>
+
+      <p><span class="key">Treponema pallidum</span>はスピロヘータ（らせん菌）で、<span class="key">性行為感染症</span>の原因菌。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">先天性梅毒：ハッチンソンの3徴候</div>
+        <ul>
+          <li><span class="highlight">Hutchinson歯</span>（前歯部）/ Fournier歯（臼歯部）</li>
+          <li><span class="highlight">実質性角膜炎</span></li>
+          <li><span class="highlight">内耳性難聴</span></li>
+        </ul>
+      </div>
+
+      <h3>検査と治療</h3>
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">Wassermann反応</td>
+          <td>STS法（カルジオリピン法）、非特異的</td>
+        </tr>
+        <tr>
+          <td class="key">TPHA試験</td>
+          <td>トレポネーマ抗原法、特異的</td>
+        </tr>
+      </table>
+      <p class="note">治療には<span class="key">ペニシリン系抗菌薬</span>を使用。</p>
+
+      <div class="question-box">
+        <div class="q-number">112D53</div>
+        <p>妊婦の感染で出生児に歯の形態異常をきたすことが確認されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 結核菌<br>
+          b 破傷風菌<br>
+          c サルモネラ菌<br>
+          d ジフテリア菌<br>
+          e 梅毒トレポネーマ
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">梅毒トレポネーマ</span>は胎盤を通過し、先天性梅毒を引き起こす。<span class="highlight">Hutchinson歯</span>（切歯の形態異常）は先天性梅毒の3徴候の一つ。</p>
+      </div>
+
+      <h2>V. 肺炎球菌</h2>
+
+      <p><span class="key">Streptococcus pneumoniae</span>は<span class="highlight">グラム陽性双球菌</span>で、莢膜を有する。</p>
+
+      <h3>特徴</h3>
+      <ul>
+        <li>グラム染色で<span class="highlight">ランセット状（槍型）の双球菌</span></li>
+        <li>α溶血（不完全溶血）を示す</li>
+        <li>高齢者の<span class="highlight">誤嚥性肺炎</span>の主要原因菌</li>
+        <li>薬剤耐性菌（PRSP）が問題</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">116D25</div>
+        <p>発熱を生じた施設入居高齢者の喀痰Gram染色像（別冊No.4）を別に示す。<br>矢印に示す病原微生物で最も可能性が高いのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D25_1.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a Escherichia coli<br>
+          b Haemophilus influenzae<br>
+          c Pseudomonas aeruginosa<br>
+          d Porphyromonas gingivalis<br>
+          e Streptococcus pneumoniae
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】高齢者の肺炎 + グラム陽性双球菌 = <span class="highlight">肺炎球菌</span>。施設入居高齢者では誤嚥性肺炎が多く、肺炎球菌が主要な原因菌となる。ランセット状の双球菌が特徴的。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

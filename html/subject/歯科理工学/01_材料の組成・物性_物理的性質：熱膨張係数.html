@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>物理的性質：熱膨張係数 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の組成・物性</span>
+    <h1>物理的性質：熱膨張係数</h1>
+    <div class="container">
+
+      <h2>I. 熱膨張係数の定義</h2>
+      <p><span class="key">熱膨張係数</span>：温度が<span class="highlight">1℃変化</span>したときの単位体積当たりの体積変化</p>
+      <p>単位：<span class="key">×10⁻⁶/℃</span></p>
+      <p class="note">数値が大きい材料ほど熱変化の影響を受けやすい</p>
+
+      <div class="point-box">
+        <div class="point-box-title">熱膨張係数の大小関係</div>
+        <p><span class="highlight">有機材料 ＞ 金属 ＞ セラミックス ≒ 歯質</span></p>
+      </div>
+
+      <h2>II. 歯科材料の熱膨張係数</h2>
+      <h3>材料別の熱膨張係数（×10⁻⁶/℃）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>材料</th>
+          <th>熱膨張係数</th>
+        </tr>
+        <tr>
+          <td rowspan="3" class="key">有機材料</td>
+          <td>インレーワックス</td>
+          <td><span class="highlight">350〜450</span></td>
+        </tr>
+        <tr>
+          <td>シリコーンゴム印象材</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td>アクリルレジン</td>
+          <td><span class="highlight">81〜90</span></td>
+        </tr>
+        <tr>
+          <td class="key">複合材料</td>
+          <td>コンポジットレジン</td>
+          <td>20〜40</td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="key">金属</td>
+          <td>アマルガム</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td>コバルトクロム合金</td>
+          <td>18〜20</td>
+        </tr>
+        <tr>
+          <td>金合金</td>
+          <td><span class="highlight">14〜16</span></td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">セラミックス</td>
+          <td>陶材</td>
+          <td><span class="highlight">4〜10</span></td>
+        </tr>
+        <tr>
+          <td>ジルコニア</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">歯質</td>
+          <td>象牙質</td>
+          <td>7〜8</td>
+        </tr>
+        <tr>
+          <td>エナメル質</td>
+          <td><span class="highlight">10〜13</span></td>
+        </tr>
+      </table>
+
+      <h2>III. 陶材焼付における熱膨張係数</h2>
+      <div class="point-box">
+        <div class="point-box-title">陶材焼付用金合金と陶材の関係</div>
+        <p><span class="highlight">金合金（14〜16）＞ 陶材（4〜10）</span></p>
+        <ul>
+          <li>金合金の熱膨張係数は陶材より<span class="key">わずかに大きい</span></li>
+          <li>冷却時に金合金が先に収縮 → 陶材に<span class="key">圧縮応力</span>が加わる</li>
+          <li>陶材は圧縮に強く引張に弱い → 圧縮応力で強度向上</li>
+        </ul>
+      </div>
+
+      <h3>陶材焼付用金合金 vs 金属焼付陶材</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>陶材焼付用金合金</th>
+          <th>金属焼付陶材</th>
+        </tr>
+        <tr>
+          <td>熱膨張係数</td>
+          <td><span class="highlight">大きい</span></td>
+          <td>小さい</td>
+        </tr>
+        <tr>
+          <td>密度</td>
+          <td>大きい</td>
+          <td>小さい</td>
+        </tr>
+        <tr>
+          <td>熱伝導率</td>
+          <td>大きい</td>
+          <td>小さい</td>
+        </tr>
+        <tr>
+          <td>引張強さ</td>
+          <td>大きい</td>
+          <td>小さい</td>
+        </tr>
+        <tr>
+          <td>硬さ</td>
+          <td><span class="caution">小さい</span></td>
+          <td>大きい</td>
+        </tr>
+      </table>
+      <p class="note">硬さのみ陶材の方が大きい（セラミックスは硬い）</p>
+
+      <h2>IV. 臨床的意義</h2>
+      <h3>熱膨張係数と材料選択</h3>
+      <ul>
+        <li><span class="key">コンポジットレジン</span>（20〜40）は歯質（7〜13）に近い → 歯質との適合が良好</li>
+        <li><span class="key">アクリルレジン</span>（81〜90）は熱膨張係数が大きい → 温度変化で寸法変化しやすい</li>
+        <li><span class="key">インレーワックス</span>（350〜450）は非常に大きい → 冷却時の収縮に注意</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A106</div>
+        <p>陶材焼付用金合金が金属焼付陶材より大きい値を示すのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 硬さ<br>
+          b 密度<br>
+          c 熱伝導率<br>
+          d 引張強さ<br>
+          e 熱膨張係数
+        </div>
+        <div class="answer">正解：b, c, d, e</div>
+        <p>【解説】陶材焼付用金合金（金属）は金属焼付陶材（セラミックス）より、<span class="key">密度、熱伝導率、引張強さ、熱膨張係数</span>が大きい。<span class="caution">硬さのみ陶材の方が大きい</span>（セラミックスは硬いが脆い）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C73</div>
+        <p>金属焼付用陶材について正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 主成分は長石である。<br>
+          b 中温焼成陶材に分類される。<br>
+          c 焼成すると約50％収縮する。<br>
+          d ファンデルワールス力が焼付強さの主体である。<br>
+          e 熱膨張係数は陶材焼付用合金よりわずかに大きい。
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】金属焼付用陶材の主成分は<span class="key">長石</span>である。熱膨張係数は<span class="caution">陶材焼付用合金よりわずかに小さい</span>（金合金＞陶材）。焼付強さは化学結合と機械的嵌合が主体。焼成収縮は約40%程度。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B82</div>
+        <p>歯冠補綴用硬質レジンが長石系陶材よりも大きい値を示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 硬さ<br>
+          b 密度<br>
+          c 弾性係数<br>
+          d 熱伝導係数<br>
+          e 熱膨張係数
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】硬質レジン（有機材料）は長石系陶材（セラミックス）より<span class="highlight">熱膨張係数</span>が大きい。硬さ、密度、弾性係数、熱伝導係数はセラミックスの方が大きい。有機材料は熱膨張係数が大きいのが特徴。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

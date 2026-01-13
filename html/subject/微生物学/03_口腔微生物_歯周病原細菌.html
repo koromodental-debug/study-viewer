@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯周病原細菌 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 口腔微生物</span>
+    <h1>歯周病原細菌</h1>
+    <div class="container">
+
+      <h2>I. 主要な歯周病原細菌</h2>
+
+      <h3>歯周病原細菌の特徴一覧</h3>
+      <table>
+        <tr>
+          <th>菌名</th>
+          <th>グラム染色</th>
+          <th>酸素要求性</th>
+          <th>黒色色素</th>
+          <th>主な病原因子</th>
+        </tr>
+        <tr>
+          <td class="key">P. gingivalis</td>
+          <td>陰性桿菌</td>
+          <td>偏性嫌気性</td>
+          <td style="text-align:center"><span class="highlight">○</span></td>
+          <td><span class="highlight">ジンジパイン</span>、LPS</td>
+        </tr>
+        <tr>
+          <td class="key">P. intermedia</td>
+          <td>陰性桿菌</td>
+          <td>偏性嫌気性</td>
+          <td style="text-align:center"><span class="highlight">○</span></td>
+          <td>LPS</td>
+        </tr>
+        <tr>
+          <td class="key">A. actinomycetem-<br>comitans</td>
+          <td>陰性桿菌</td>
+          <td><span class="highlight">通性嫌気性</span></td>
+          <td style="text-align:center"><span class="caution">×</span></td>
+          <td><span class="highlight">ロイコトキシン</span>、LPS</td>
+        </tr>
+        <tr>
+          <td class="key">T. denticola</td>
+          <td>陰性らせん菌</td>
+          <td>偏性嫌気性</td>
+          <td style="text-align:center">×</td>
+          <td><span class="highlight">デンティリジン</span></td>
+        </tr>
+        <tr>
+          <td class="key">T. forsythia</td>
+          <td>陰性桿菌</td>
+          <td>偏性嫌気性</td>
+          <td style="text-align:center">×</td>
+          <td>LPS</td>
+        </tr>
+        <tr>
+          <td class="key">F. nucleatum</td>
+          <td>陰性桿菌<br><span class="note">（紡錘形）</span></td>
+          <td>偏性嫌気性</td>
+          <td style="text-align:center">×</td>
+          <td>LPS（架橋菌）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Red Complex（レッドコンプレックス）</div>
+        <p>重度歯周炎と関連が深い3菌種：</p>
+        <ul>
+          <li><span class="highlight">P. gingivalis</span></li>
+          <li><span class="highlight">T. denticola</span></li>
+          <li><span class="highlight">T. forsythia</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A44</div>
+        <p>黒色色素産生菌はどれか。2つ選べ。</p>
+        <div class="choices">
+          a Tannerella forsythia<br>
+          b Treponema denticola<br>
+          c Actinomyces viscosus<br>
+          d Prevotella intermedia<br>
+          e Porphyromonas gingivalis
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】<span class="highlight">P. intermedia</span>と<span class="highlight">P. gingivalis</span>が黒色色素産生菌。血液寒天培地上で黒色コロニーを形成する。T. forsythia、T. denticola、A. viscosusは黒色色素を産生しない。</p>
+      </div>
+
+      <h2>II. 病原因子</h2>
+
+      <h3>菌種と病原因子の対応</h3>
+      <table>
+        <tr>
+          <th>菌種</th>
+          <th>病原因子</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td class="key">P. gingivalis</td>
+          <td><span class="highlight">ジンジパイン</span></td>
+          <td><span class="highlight">タンパク分解酵素</span><br>組織破壊、免疫回避</td>
+        </tr>
+        <tr>
+          <td class="key">P. gingivalis</td>
+          <td>酪酸</td>
+          <td>細胞毒性</td>
+        </tr>
+        <tr>
+          <td class="key">A.a.</td>
+          <td><span class="highlight">ロイコトキシン</span></td>
+          <td><span class="highlight">白血球傷害毒素</span><br>好中球・単球を傷害</td>
+        </tr>
+        <tr>
+          <td class="key">T. denticola</td>
+          <td><span class="highlight">デンティリジン</span></td>
+          <td>タンパク分解酵素</td>
+        </tr>
+        <tr>
+          <td class="key">グラム陰性菌共通</td>
+          <td>LPS（内毒素）</td>
+          <td>炎症誘発、骨吸収</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112C28</div>
+        <p>ジンジパインによって分解されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 糖<br>
+          b DNA<br>
+          c RNA<br>
+          d 脂質<br>
+          e タンパク質
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">ジンジパイン</span>はP. gingivalisが産生する<span class="highlight">タンパク分解酵素</span>（プロテアーゼ）である。歯周組織のコラーゲンなどを分解し、組織破壊に関与する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B38</div>
+        <p>細菌と病原因子の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Aggregatibacter actinomycetemcomitans ― ロイコトキシン<br>
+          b Porphyromonas gingivalis ― 酪酸<br>
+          c Prevotella intermedia ― デンティリジン<br>
+          d Tannerella forsythia ― ジンジバイン<br>
+          e Treponema denticola ― 莢膜
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">A.a.はロイコトキシン</span>、<span class="highlight">P. gingivalisは酪酸</span>（およびジンジパイン）を産生。デンティリジンはT. denticola、ジンジパインはP. gingivalisが産生。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A110</div>
+        <p>細菌と病原因子の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Lactobacillus casei ― リポ多糖<br>
+          b Actinomyces israelii ― ロイコトキシン<br>
+          c Staphylococcus aureus ― エンテロトキシン<br>
+          d Fusobacterium nucleatum ― スーパー抗原<br>
+          e Porphyromonas gingivalis ― ジンジパイン
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】<span class="highlight">S. aureusはエンテロトキシン</span>（食中毒の原因）、<span class="highlight">P. gingivalisはジンジパイン</span>を産生。L. caseiはグラム陽性菌でLPSを持たない。ロイコトキシンはA.a.が産生。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D61</div>
+        <p>Treponema denticolaの特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 紡錘状<br>
+          b 非運動性<br>
+          c グラム陽性<br>
+          d 通性嫌気性<br>
+          e デンティリジンの産生
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】T. denticolaは<span class="highlight">デンティリジン</span>を産生するスピロヘータ。形態は<span class="caution">らせん状</span>（紡錘状ではない）、<span class="caution">運動性あり</span>、グラム<span class="caution">陰性</span>、<span class="caution">偏性嫌気性</span>。</p>
+      </div>
+
+      <h2>III. 菌の特徴（培養・運動性）</h2>
+
+      <h3>運動性を有する歯周病原菌</h3>
+      <table>
+        <tr>
+          <th>菌名</th>
+          <th>運動器官</th>
+          <th>形態</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">Treponema denticola</span></td>
+          <td>軸糸（内部鞭毛）</td>
+          <td>らせん状（スピロヘータ）</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">Campylobacter rectus</span></td>
+          <td>鞭毛</td>
+          <td>らせん状</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109C48</div>
+        <p>運動性を有するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Tannerella forsythia<br>
+          b Actinomyces viscosus<br>
+          c Campylobacter rectus<br>
+          d Treponema denticola<br>
+          e Fusobacterium nucleatum
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="highlight">C. rectus</span>（鞭毛）と<span class="highlight">T. denticola</span>（軸糸）は運動性を有する。T. forsythia、A. viscosus、F. nucleatumは運動性を持たない。</p>
+      </div>
+
+      <h3>好気培養で生育可能な歯周病原菌</h3>
+      <p><span class="highlight">A. actinomycetemcomitans</span>は<span class="key">通性嫌気性</span>のため、5%CO2存在下の好気培養でも生育する。他の主要歯周病原菌は偏性嫌気性。</p>
+
+      <div class="question-box">
+        <div class="q-number">107A97</div>
+        <p>デンタルプラークを細菌用寒天培地に播種し、5%CO2存在下で好気培養した。得られたコロニーをグラム染色すると赤色の桿状菌を認めた。考えられる菌はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Actinomyces israelii<br>
+          b Aggregatibacter actinomycetemcomitans<br>
+          c Fusobacterium nucleatum<br>
+          d Porphyromonas gingivalis<br>
+          e Streptococcus sanguinis
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】好気培養で生育 + グラム陰性（赤色）桿菌 = <span class="highlight">A. actinomycetemcomitans</span>。A. israeliiはグラム陽性、F. nucleatumとP. gingivalisは偏性嫌気性、S. sanguinisは球菌。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

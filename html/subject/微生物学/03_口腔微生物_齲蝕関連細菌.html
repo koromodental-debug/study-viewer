@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>齲蝕関連細菌 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 口腔微生物</span>
+    <h1>齲蝕関連細菌</h1>
+    <div class="container">
+
+      <h2>I. 齲蝕原性細菌の種類</h2>
+
+      <h3>主な齲蝕原性菌</h3>
+      <table>
+        <tr>
+          <th>菌種</th>
+          <th>特徴</th>
+          <th>関連する齲蝕</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">Streptococcus mutans</span></td>
+          <td>最も重要な齲蝕原性菌<br>ほとんどの日本人から検出</td>
+          <td>小窩裂溝齲蝕<br>平滑面齲蝕</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">Streptococcus sobrinus</span></td>
+          <td>数%の日本人から検出<br>S. mutansと同様の機序</td>
+          <td>小窩裂溝齲蝕<br>平滑面齲蝕</td>
+        </tr>
+        <tr>
+          <td class="key">Lactobacillus属</td>
+          <td>酸産生能が高い<br>齲蝕の進行に関与</td>
+          <td>象牙質齲蝕</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">Actinomyces属</span></td>
+          <td>根面への付着能が高い</td>
+          <td>根面齲蝕</td>
+        </tr>
+      </table>
+
+      <h2>II. S. mutansの病原因子</h2>
+
+      <h3>齲蝕発生の4つの病原因子</h3>
+      <table>
+        <tr>
+          <th>病原因子</th>
+          <th>役割</th>
+        </tr>
+        <tr>
+          <td class="key">①PAc（AgI/II）<br><span class="note">線毛様タンパク質</span></td>
+          <td><span class="highlight">ペリクルへの初期付着</span></td>
+        </tr>
+        <tr>
+          <td class="key">②<span class="highlight">GTF</span><br><span class="note">グルコシルトランスフェラーゼ</span></td>
+          <td>スクロースから<span class="highlight">グルカンを合成</span><br>→歯面への強固な付着</td>
+        </tr>
+        <tr>
+          <td class="key">③酸産生能</td>
+          <td><span class="highlight">乳酸</span>を産生しエナメル質を脱灰</td>
+        </tr>
+        <tr>
+          <td class="key">④耐酸性</td>
+          <td>低pH環境でも生存・増殖可能</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">GTFの種類</div>
+        <ul>
+          <li><span class="key">CA-GTF</span>（菌体結合型）：GTF-B, GTF-C → <span class="highlight">不溶性グルカン</span>合成</li>
+          <li><span class="key">CF-GTF</span>（遊離型）：GTF-D → 水溶性グルカン合成</li>
+        </ul>
+      </div>
+
+      <h3>S. mutans / S. sobrinusが産生する酵素</h3>
+      <table>
+        <tr>
+          <th>酵素</th>
+          <th>基質</th>
+          <th>産物</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">GTF</span><br><span class="note">グルコシルトランスフェラーゼ</span></td>
+          <td>スクロース</td>
+          <td><span class="highlight">グルカン</span>（グルコース多糖）</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">FTF</span><br><span class="note">フルクトシルトランスフェラーゼ</span></td>
+          <td>スクロース</td>
+          <td><span class="highlight">フルクタン</span>（フルクトース多糖）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114A66</div>
+        <p>Streptococcus sobrinusが産生するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ジンジパイン<br>
+          b デンティリシン<br>
+          c ロイコトキシン<br>
+          d グルコシルトランスフェラーゼ<br>
+          e フルクトシルトランスフェラーゼ
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】S. sobrinusは<span class="highlight">GTF</span>と<span class="highlight">FTF</span>を産生する。ジンジパインはP. gingivalis、デンティリシンはT. denticola、ロイコトキシンはA. actinomycetemcomitansが産生する<span class="caution">歯周病原菌の病原因子</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A43</div>
+        <p>各口腔細菌の性質を表に示す。①から⑤は、「グルカン合成」、「歯面への付着」、「キシリトールの利用」、「スクロースからの酸産生」および「小窩裂溝齲蝕中からの分離」のいずれかである。「グルカン合成」はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ①<br>
+          b ②<br>
+          c ③<br>
+          d ④<br>
+          e ⑤
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】表の問題では、S. mutansとS. sobrinusのみが「+」で、他の口腔レンサ球菌が「−」となる性質が<span class="highlight">グルカン合成</span>（GTF活性）。S. mutansの特徴的な病原因子である。</p>
+      </div>
+
+      <h2>III. 齲蝕部位と関連細菌</h2>
+
+      <h3>部位別の関連細菌</h3>
+      <table>
+        <tr>
+          <th>齲蝕部位</th>
+          <th>主な関連細菌</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">小窩裂溝齲蝕</td>
+          <td>S. mutans<br>S. sobrinus</td>
+          <td>咬合面の溝に発生</td>
+        </tr>
+        <tr>
+          <td class="key">平滑面齲蝕</td>
+          <td>S. mutans<br>S. sobrinus</td>
+          <td>隣接面に好発</td>
+        </tr>
+        <tr>
+          <td class="key">根面齲蝕</td>
+          <td><span class="highlight">S. mutans</span><br><span class="highlight">Actinomyces属</span></td>
+          <td>高齢者に多い<br>セメント質・象牙質が露出</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">105A98</div>
+        <p>根面齲蝕の細菌叢で高い割合を示すのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Streptococcus mitis<br>
+          b Treponema denticola<br>
+          c Streptococcus mutans<br>
+          d Actinomyces viscosus<br>
+          e Porphyromonas gingivalis
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】根面齲蝕には<span class="highlight">S. mutans</span>と<span class="highlight">Actinomyces viscosus</span>が高頻度で関与する。T. denticolaとP. gingivalisは歯周病原菌、S. mitisは齲蝕原性が低い。</p>
+      </div>
+
+      <h2>IV. キシリトールと齲蝕予防</h2>
+
+      <p><span class="key">キシリトール</span>は5炭糖の糖アルコール。S. mutansはキシリトールを代謝できず、酸を産生しない。</p>
+
+      <h3>キシリトールの特徴</h3>
+      <ul>
+        <li>S. mutansは<span class="highlight">キシリトールを利用できない</span></li>
+        <li>酸産生がない → 齲蝕予防効果</li>
+        <li>グルカン合成もされない</li>
+        <li>甘味度はスクロースとほぼ同等</li>
+      </ul>
+
+    </div>
+  </div>
+</body>
+</html>

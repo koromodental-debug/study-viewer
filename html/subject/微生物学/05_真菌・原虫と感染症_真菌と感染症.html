@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>真菌と感染症 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 真菌・原虫と感染症</span>
+    <h1>真菌と感染症</h1>
+    <div class="container">
+
+      <h2>I. 真菌の基本構造</h2>
+
+      <p><span class="key">真菌</span>は<span class="highlight">真核生物</span>であり、細菌（原核生物）とは異なる構造を持つ。</p>
+
+      <h3>真菌と細菌の構造比較</h3>
+      <table>
+        <tr>
+          <th>構造</th>
+          <th>真菌</th>
+          <th>細菌</th>
+        </tr>
+        <tr>
+          <td class="key">核</td>
+          <td><span class="highlight">核膜あり</span>（真核）</td>
+          <td>核膜なし（原核）</td>
+        </tr>
+        <tr>
+          <td class="key">リボソーム</td>
+          <td><span class="highlight">80S</span>（ヒトと同じ）</td>
+          <td>70S</td>
+        </tr>
+        <tr>
+          <td class="key">細胞壁</td>
+          <td>キチン、β-グルカン、マンナン</td>
+          <td>ペプチドグリカン</td>
+        </tr>
+        <tr>
+          <td class="key">細胞膜</td>
+          <td><span class="highlight">エルゴステロール</span></td>
+          <td>コレステロールなし</td>
+        </tr>
+        <tr>
+          <td class="key">ミトコンドリア</td>
+          <td>あり</td>
+          <td>なし</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">抗真菌薬の作用点</div>
+        <ul>
+          <li><span class="key">アゾール系</span>：エルゴステロール合成阻害</li>
+          <li><span class="key">ポリエン系</span>：エルゴステロールに結合→膜破壊</li>
+          <li><span class="key">キャンディン系</span>：β-グルカン合成阻害</li>
+        </ul>
+      </div>
+
+      <h2>II. 主な真菌感染症</h2>
+
+      <h3>真菌感染症の分類</h3>
+      <table>
+        <tr>
+          <th>真菌</th>
+          <th>疾患</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">Candida albicans<br><span class="note">（カンジダ）</span></td>
+          <td><span class="highlight">口腔カンジダ症</span></td>
+          <td>白苔状斑点、口角びらん<br>易感染性患者・高齢者に好発</td>
+        </tr>
+        <tr>
+          <td class="key">Aspergillus属<br><span class="note">（アスペルギルス）</span></td>
+          <td><span class="highlight">アスペルギルス症</span></td>
+          <td>肺アスペルギルス症<br>日和見感染</td>
+        </tr>
+        <tr>
+          <td class="key">Cryptococcus<br><span class="note">（クリプトコッカス）</span></td>
+          <td>クリプトコッカス症</td>
+          <td>髄膜炎<br>HIV/AIDS患者に好発</td>
+        </tr>
+        <tr>
+          <td class="key">皮膚糸状菌</td>
+          <td>白癬（水虫）</td>
+          <td>足白癬、爪白癬</td>
+        </tr>
+      </table>
+
+      <h2>III. 口腔カンジダ症</h2>
+
+      <p><span class="key">Candida albicans</span>は口腔カンジダ症の主要な原因真菌。</p>
+
+      <h3>好発因子</h3>
+      <ul>
+        <li><span class="key">易感染性患者</span>：免疫不全、糖尿病</li>
+        <li><span class="key">義歯装着高齢者</span></li>
+        <li>ステロイド（プレドニゾン）長期服用</li>
+        <li>免疫抑制剤（シクロスポリン）使用</li>
+        <li>抗菌薬長期投与（菌交代現象）</li>
+      </ul>
+
+      <h3>症状と治療</h3>
+      <ul>
+        <li>症状：白苔状の斑点、口角びらん、嚥下困難</li>
+        <li>治療：<span class="highlight">アゾール系抗真菌薬</span>（ミコナゾール等）</li>
+      </ul>
+
+      <h2>IV. 真菌感染症の識別</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">真菌感染症 vs 非真菌感染症</div>
+        <ul>
+          <li><span class="highlight">真菌感染症</span>：カンジダ症、アスペルギルス症、クリプトコッカス症、白癬</li>
+          <li><span class="caution">原虫感染症</span>：マラリア、アメーバ赤痢、トキソプラズマ症</li>
+          <li><span class="caution">細菌感染症</span>：マイコプラズマ肺炎、ツツガムシ病（リケッチア）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D24</div>
+        <p>真菌による感染症はどれか。1つ選べ。</p>
+        <div class="choices">
+          a マラリア<br>
+          b アメーバ赤痢<br>
+          c ツツガムシ病<br>
+          d アスペルギルス症<br>
+          e マイコプラズマ肺炎
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">アスペルギルス症</span>はAspergillus属（真菌）による感染症。マラリア・アメーバ赤痢は<span class="caution">原虫</span>、ツツガムシ病は<span class="caution">リケッチア</span>（細菌）、マイコプラズマ肺炎は<span class="caution">マイコプラズマ</span>（細菌）による感染症。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

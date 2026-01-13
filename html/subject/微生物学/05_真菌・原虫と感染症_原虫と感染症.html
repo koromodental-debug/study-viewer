@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>原虫と感染症 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 真菌・原虫と感染症</span>
+    <h1>原虫と感染症</h1>
+    <div class="container">
+
+      <h2>I. 原虫の基本</h2>
+
+      <p><span class="key">原虫</span>は単細胞の<span class="highlight">真核生物</span>。形態と運動能から4つに分類される。</p>
+
+      <h3>原虫の分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>運動様式</th>
+          <th>代表例</th>
+          <th>疾患</th>
+        </tr>
+        <tr>
+          <td class="key">根足虫類</td>
+          <td>偽足</td>
+          <td>歯肉アメーバ<br>赤痢アメーバ</td>
+          <td><span class="highlight">アメーバ赤痢</span></td>
+        </tr>
+        <tr>
+          <td class="key">鞭毛虫類</td>
+          <td>鞭毛</td>
+          <td>口腔トリコモナス<br>トリパノソーマ</td>
+          <td>睡眠病<br>シャーガス病</td>
+        </tr>
+        <tr>
+          <td class="key">胞子虫類</td>
+          <td>運動器官なし</td>
+          <td>トキソプラズマ<br>マラリア原虫</td>
+          <td><span class="highlight">トキソプラズマ症</span><br><span class="highlight">マラリア</span></td>
+        </tr>
+        <tr>
+          <td class="key">繊毛虫類</td>
+          <td>繊毛</td>
+          <td>大腸バランチジウム</td>
+          <td>バランチジウム症</td>
+        </tr>
+      </table>
+
+      <h2>II. 主な原虫感染症</h2>
+
+      <h3>トキソプラズマ症</h3>
+      <ul>
+        <li>病原体：<span class="key">Toxoplasma gondii</span>（胞子虫類）</li>
+        <li>感染経路：ネコの糞便、生肉の摂取</li>
+        <li>妊婦が感染すると<span class="highlight">先天性トキソプラズマ症</span>（胎児への影響）</li>
+        <li>免疫不全者では脳炎を発症することがある</li>
+      </ul>
+
+      <h3>マラリア</h3>
+      <ul>
+        <li>病原体：<span class="key">Plasmodium属</span>（マラリア原虫）</li>
+        <li>媒介：<span class="highlight">ハマダラカ</span>（蚊）</li>
+        <li>症状：周期的な発熱、貧血、脾腫</li>
+        <li>熱帯・亜熱帯地域で流行</li>
+      </ul>
+
+      <h3>アメーバ赤痢</h3>
+      <ul>
+        <li>病原体：<span class="key">Entamoeba histolytica</span>（赤痢アメーバ）</li>
+        <li>感染経路：糞口感染（汚染された水・食物）</li>
+        <li>症状：血性下痢、腹痛</li>
+      </ul>
+
+      <h2>III. 口腔に関連する原虫</h2>
+
+      <h3>歯肉アメーバ</h3>
+      <p>口腔衛生状態や歯周疾患の病態が悪化すると<span class="key">検出率が高まる</span>。病原性は低い。</p>
+
+      <h3>口腔トリコモナス</h3>
+      <p>歯周疾患の病態が悪化すると<span class="key">検出率が高まる</span>。</p>
+
+      <h2>IV. 原虫感染症の識別</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">原虫感染症 vs 非原虫感染症</div>
+        <ul>
+          <li><span class="highlight">原虫感染症</span>：トキソプラズマ症、マラリア、アメーバ赤痢</li>
+          <li><span class="caution">真菌感染症</span>：アスペルギルス症、カンジダ症</li>
+          <li><span class="caution">細菌感染症</span>：オウム病（クラミジア）、日本紅斑熱（リケッチア）、ハンセン病（らい菌）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C113</div>
+        <p>原虫感染症はどれか。1つ選べ。</p>
+        <div class="choices">
+          a オウム病<br>
+          b 日本紅斑熱<br>
+          c ハンセン病<br>
+          d アスペルギルス症<br>
+          e トキソプラズマ症
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">トキソプラズマ症</span>はToxoplasma gondii（胞子虫類の原虫）による感染症。オウム病は<span class="caution">クラミジア</span>、日本紅斑熱は<span class="caution">リケッチア</span>、ハンセン病は<span class="caution">らい菌</span>（細菌）、アスペルギルス症は<span class="caution">真菌</span>による感染症。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

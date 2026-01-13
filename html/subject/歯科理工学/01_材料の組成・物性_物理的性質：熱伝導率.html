@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>物理的性質：熱伝導率 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の組成・物性</span>
+    <h1>物理的性質：熱伝導率</h1>
+    <div class="container">
+
+      <h2>I. 熱伝導率の定義</h2>
+      <p><span class="key">熱伝導率</span>：熱の伝わりやすさを表す物性値</p>
+      <p>単位：<span class="key">W/m・K</span>（ワット毎メートル毎ケルビン）</p>
+      <p class="note">数値を暗記する必要はない → 大小関係を理解することが重要</p>
+
+      <div class="point-box">
+        <div class="point-box-title">熱伝導率の大小関係</div>
+        <p><span class="highlight">金属（貴金属＞卑金属）＞ セラミックス ＞ 有機材料</span></p>
+        <p class="note">金属は自由電子が熱を伝達するため熱伝導率が高い</p>
+      </div>
+
+      <h2>II. 歯科材料の熱伝導率</h2>
+      <h3>材料別の熱伝導率（W/m・K）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>材料</th>
+          <th>熱伝導率</th>
+        </tr>
+        <tr>
+          <td rowspan="3" class="key">貴金属</td>
+          <td>銀</td>
+          <td><span class="highlight">420</span></td>
+        </tr>
+        <tr>
+          <td>金</td>
+          <td><span class="highlight">320</span></td>
+        </tr>
+        <tr>
+          <td>金合金</td>
+          <td><span class="highlight">298</span></td>
+        </tr>
+        <tr>
+          <td class="key">卑金属</td>
+          <td>チタン</td>
+          <td><span class="caution">17.3</span></td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="key">セラミックス</td>
+          <td>リン酸亜鉛セメント</td>
+          <td>1.07</td>
+        </tr>
+        <tr>
+          <td>陶材</td>
+          <td>1.05</td>
+        </tr>
+        <tr>
+          <td>グラスアイオノマーセメント</td>
+          <td>0.51〜0.71</td>
+        </tr>
+        <tr>
+          <td class="key">複合材料</td>
+          <td>コンポジットレジン</td>
+          <td>0.4〜1.1</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">有機材料</td>
+          <td>アクリルレジン</td>
+          <td>0.21</td>
+        </tr>
+        <tr>
+          <td>ワックス</td>
+          <td><span class="highlight">0.04</span></td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">歯質</td>
+          <td>エナメル質</td>
+          <td>0.92</td>
+        </tr>
+        <tr>
+          <td>象牙質</td>
+          <td>0.63</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">チタンの特徴</div>
+        <p><span class="caution">チタンは金属だが熱伝導率が低い</span>（17.3 W/m・K）</p>
+        <ul>
+          <li>貴金属（金合金298）の約1/17</li>
+          <li>生体親和性が高く、熱刺激が少ない</li>
+        </ul>
+      </div>
+
+      <h2>III. 臨床的意義</h2>
+      <h3>熱伝導と歯科臨床</h3>
+      <table>
+        <tr>
+          <th>臨床例</th>
+          <th>関連する熱伝導</th>
+        </tr>
+        <tr>
+          <td>金属修復物の合着</td>
+          <td>セメントによる<span class="key">断熱</span>（歯髄保護）</td>
+        </tr>
+        <tr>
+          <td>義歯床の温度感覚</td>
+          <td>金属床は熱伝導率が高い → 温度感覚良好<br>レジン床は熱伝導率が低い → 温度感覚が鈍い</td>
+        </tr>
+        <tr>
+          <td>ワックスの加熱操作</td>
+          <td>熱伝導率が低い → 均一に加熱するのが難しい</td>
+        </tr>
+      </table>
+
+      <h3>金属床 vs レジン床</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>金属床</th>
+          <th>レジン床</th>
+        </tr>
+        <tr>
+          <td>熱伝導率</td>
+          <td><span class="highlight">高い</span></td>
+          <td>低い</td>
+        </tr>
+        <tr>
+          <td>温度感覚</td>
+          <td>良好</td>
+          <td>鈍い</td>
+        </tr>
+        <tr>
+          <td>厚み</td>
+          <td>薄くできる</td>
+          <td>厚い</td>
+        </tr>
+        <tr>
+          <td>重量</td>
+          <td>材料による</td>
+          <td>軽い</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105A68</div>
+        <p>熱伝導率が最も大きいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 陶材<br>
+          b 純チタン<br>
+          c 金銀パラジウム合金<br>
+          d コバルトクロム合金<br>
+          e コンポジットレジン
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">金銀パラジウム合金</span>は貴金属を含む合金であり、熱伝導率が最も高い。熱伝導率の順序は、金銀パラジウム合金（約100）＞コバルトクロム合金（約15）＞純チタン（17.3）＞陶材（1.05）＞コンポジットレジン（0.4〜1.1）。<span class="caution">チタンは金属だが熱伝導率が低い</span>ことに注意。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

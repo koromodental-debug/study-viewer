@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>物理的性質：密度 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の組成・物性</span>
+    <h1>物理的性質：密度</h1>
+    <div class="container">
+
+      <h2>I. 密度・比重の定義</h2>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>定義</th>
+          <th>単位</th>
+        </tr>
+        <tr>
+          <td class="key">密度</td>
+          <td>単位体積あたりの質量</td>
+          <td>g/cm³</td>
+        </tr>
+        <tr>
+          <td class="key">比重</td>
+          <td>4℃の純水（密度≒1 g/cm³）の密度で除したもの</td>
+          <td>無次元</td>
+        </tr>
+      </table>
+      <p class="note">数値上は密度と比重はほぼ同じ値になる</p>
+
+      <div class="point-box">
+        <div class="point-box-title">密度の大小関係</div>
+        <p><span class="highlight">金属 ＞ セラミックス ＞ 有機材料</span></p>
+        <p class="note">歯との比較が重要（よく出る！）</p>
+      </div>
+
+      <h2>II. 金属元素の密度</h2>
+      <h3>歯科用金属に含まれる元素</h3>
+      <table>
+        <tr>
+          <th>元素</th>
+          <th>原子番号</th>
+          <th>密度（g/cm³）</th>
+        </tr>
+        <tr>
+          <td>Al（アルミニウム）</td>
+          <td>13</td>
+          <td>2.7</td>
+        </tr>
+        <tr>
+          <td class="key">Ti（チタン）</td>
+          <td>22</td>
+          <td><span class="highlight">4.5</span></td>
+        </tr>
+        <tr>
+          <td>Cr（クロム）</td>
+          <td>24</td>
+          <td>7.2</td>
+        </tr>
+        <tr>
+          <td>Fe（鉄）</td>
+          <td>26</td>
+          <td>7.9</td>
+        </tr>
+        <tr>
+          <td>Co, Ni, Cu</td>
+          <td>27-29</td>
+          <td>8.9</td>
+        </tr>
+        <tr>
+          <td>Ag（銀）</td>
+          <td>47</td>
+          <td>10.5</td>
+        </tr>
+        <tr>
+          <td>Pd（パラジウム）</td>
+          <td>46</td>
+          <td>12.0</td>
+        </tr>
+        <tr>
+          <td class="key">Au（金）</td>
+          <td>79</td>
+          <td><span class="highlight">19.3</span></td>
+        </tr>
+        <tr>
+          <td>Pt（白金）</td>
+          <td>78</td>
+          <td><span class="highlight">21.4</span></td>
+        </tr>
+      </table>
+      <p class="note">貴金属（Au, Pt, Pd）は密度が大きく、チタンは歯科用金属の中で最も軽い</p>
+
+      <h2>III. 代表的な歯科材料の密度</h2>
+      <h3>材料別の密度（g/cm³）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>材料</th>
+          <th>密度</th>
+        </tr>
+        <tr>
+          <td rowspan="4" class="key">金属</td>
+          <td>金合金</td>
+          <td><span class="highlight">15〜16</span></td>
+        </tr>
+        <tr>
+          <td>コバルトクロム合金</td>
+          <td>8.3</td>
+        </tr>
+        <tr>
+          <td>チタン</td>
+          <td><span class="highlight">4.5</span></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="note">金属床義歯ではチタン合金が最も軽い</td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="key">セラミックス</td>
+          <td>ジルコニア</td>
+          <td>6.0</td>
+        </tr>
+        <tr>
+          <td>陶材</td>
+          <td>2.4</td>
+        </tr>
+        <tr>
+          <td>石膏</td>
+          <td>2.3</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">有機材料</td>
+          <td>アクリルレジン</td>
+          <td><span class="highlight">1.2</span></td>
+        </tr>
+        <tr>
+          <td>ワックス</td>
+          <td><span class="highlight">0.9</span></td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">歯質</td>
+          <td>エナメル質</td>
+          <td><span class="highlight">2.97</span></td>
+        </tr>
+        <tr>
+          <td>象牙質</td>
+          <td><span class="highlight">2.14</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">密度の比較ポイント</div>
+        <ul>
+          <li><span class="key">歯科用金属で最も軽い</span>：チタン（4.5）</li>
+          <li><span class="key">貴金属は重い</span>：金合金（15〜16）、白金加金はさらに重い</li>
+          <li><span class="key">歯質の密度</span>：エナメル質（2.97）＞ 象牙質（2.14）</li>
+          <li><span class="key">有機材料は軽い</span>：アクリルレジン義歯は金属床より軽量</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110A124</div>
+        <p>密度が最も小さいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a チタン<br>
+          b タイプ3金合金<br>
+          c 陶材焼付用金合金<br>
+          d 金銀パラジウム合金<br>
+          e コバルトクロム合金
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】歯科用金属の中で<span class="highlight">チタン（4.5 g/cm³）</span>は最も密度が小さい。金合金系（b, c）は15〜16、金銀パラジウム合金は約11、コバルトクロム合金は8.3 g/cm³である。金属床義歯を軽量化するにはチタンが最適である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B37</div>
+        <p>密度が最も小さいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 金合金<br>
+          b 象牙質<br>
+          c チタン<br>
+          d ジルコニア<br>
+          e アルミナ陶材
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】各材料の密度は、金合金15〜16、チタン4.5、ジルコニア6.0、アルミナ陶材約4.0、<span class="highlight">象牙質2.14 g/cm³</span>である。象牙質は有機成分を含むため、セラミックスや金属より密度が小さい。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

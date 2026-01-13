@@ -38,7 +38,10 @@
     floatingSearchCurrentMatchInTopic: -1,  // トピック内のマッチインデックス
     floatingSearchGlobalIndex: 0,           // グローバルインデックス（1-based表示用）
     floatingSearchLocalMatches: [],         // 現在のページ内のマッチspan要素
-    floatingSearchLocalMatchIdx: -1,        // 現在のページ内マッチインデックス
+    floatingSearchLocalMatchIdx: -1,        // 現在のページ内セクションインデックス
+    floatingSearchSections: [],             // セクション単位の結果
+    floatingSearchCurrentSectionIdx: 0,     // 現在のグローバルセクションインデックス
+    floatingSearchTotalSections: 0,         // 総セクション数
     pendingFloatingSearch: null             // トピック切り替え後に継続する検索 {query, matchIndex}
   };
 
@@ -5296,6 +5299,28 @@
     state.floatingSearchGlobalIndex = 0;
     state.floatingSearchLocalMatches = [];
     state.floatingSearchLocalMatchIdx = -1;
+    state.floatingSearchSections = [];        // セクション単位の結果
+    state.floatingSearchCurrentSectionIdx = 0; // 現在のセクションインデックス
+    state.floatingSearchTotalSections = 0;    // 総セクション数
+  }
+
+  /**
+   * DOM要素が属するセクション（h2/h3）を見つける
+   */
+  function findParentSection(element) {
+    let current = element;
+    while (current && current !== document.body) {
+      // 前の兄弟要素を遡ってh2/h3を探す
+      let sibling = current.previousElementSibling;
+      while (sibling) {
+        if (sibling.tagName === 'H2' || sibling.tagName === 'H3' || sibling.tagName === 'H1') {
+          return sibling;
+        }
+        sibling = sibling.previousElementSibling;
+      }
+      current = current.parentElement;
+    }
+    return null;
   }
 
   /**
@@ -5332,6 +5357,7 @@
           title: item.title || item.id,
           subject: item.subject || '',
           matchCount: count,
+          sectionCount: 1, // 初期値（実際のセクション数はトピック読み込み時に更新）
           globalStartIndex: totalMatches + 1 // 1-based
         });
         totalMatches += count;
@@ -5342,10 +5368,11 @@
     state.floatingSearchQuery = query;
     state.floatingSearchResults = results;
     state.floatingSearchTotalMatches = totalMatches;
+    state.floatingSearchTotalSections = results.length; // 初期値はトピック数
 
-    if (totalMatches === 0) {
+    if (results.length === 0) {
       state.floatingSearchCurrentTopicIdx = -1;
-      state.floatingSearchGlobalIndex = 0;
+      state.floatingSearchCurrentSectionIdx = 0;
       updateFloatingSearchCount(0, 0);
       clearFloatingSearchHighlights();
       return;
@@ -5368,55 +5395,45 @@
   }
 
   /**
-   * グローバルマッチに移動
+   * グローバルセクションに移動
    * @param {number} topicIdx - 検索結果内のトピックインデックス
-   * @param {number} matchInTopic - トピック内のマッチインデックス
+   * @param {number} sectionInTopic - トピック内のセクションインデックス
    */
-  async function goToGlobalMatch(topicIdx, matchInTopic) {
+  async function goToGlobalMatch(topicIdx, sectionInTopic) {
     const results = state.floatingSearchResults;
     if (results.length === 0) return;
 
     // 範囲チェック（トピックインデックス）
     if (topicIdx < 0) {
       topicIdx = results.length - 1;
-      matchInTopic = -1; // 末尾を指定
+      sectionInTopic = -1; // 末尾を指定
     } else if (topicIdx >= results.length) {
       topicIdx = 0;
-      matchInTopic = 0;
+      sectionInTopic = 0;
     }
 
     const result = results[topicIdx];
+    const sectionCount = result.sectionCount || 1;
 
-    // matchInTopic = -1 は末尾を意味する
-    if (matchInTopic === -1) {
-      matchInTopic = result.matchCount - 1;
+    // sectionInTopic = -1 は末尾を意味する
+    if (sectionInTopic === -1) {
+      sectionInTopic = sectionCount - 1;
     }
 
-    // マッチインデックスの範囲チェック（通常は発生しないが安全のため）
-    if (matchInTopic < 0) {
-      matchInTopic = 0;
-    } else if (matchInTopic >= result.matchCount) {
+    // セクションインデックスの範囲チェック
+    if (sectionInTopic < 0) {
+      sectionInTopic = 0;
+    } else if (sectionInTopic >= sectionCount) {
       // 次のトピックへ
       topicIdx++;
       if (topicIdx >= results.length) topicIdx = 0;
-      matchInTopic = 0;
-      return goToGlobalMatch(topicIdx, matchInTopic);
+      sectionInTopic = 0;
+      return goToGlobalMatch(topicIdx, sectionInTopic);
     }
 
     // 状態を更新
     state.floatingSearchCurrentTopicIdx = topicIdx;
-    state.floatingSearchCurrentMatchInTopic = matchInTopic;
-
-    // グローバルインデックスを計算
-    let globalIndex = 0;
-    for (let i = 0; i < topicIdx; i++) {
-      globalIndex += results[i].matchCount;
-    }
-    globalIndex += matchInTopic + 1;
-    state.floatingSearchGlobalIndex = globalIndex;
-
-    // カウント表示を更新
-    updateFloatingSearchCount(globalIndex, state.floatingSearchTotalMatches);
+    state.floatingSearchCurrentMatchInTopic = sectionInTopic;
 
     // 現在のトピックと違う場合はトピックを切り替え
     const currentTopicId = state.currentItem?.id;
@@ -5424,25 +5441,26 @@
       // トピックを切り替え
       clearFloatingSearchHighlights();
       state.floatingSearchLocalMatches = [];
+      state.floatingSearchSections = [];
 
       // selectItemを呼び出してトピックを読み込み
       // ハイライトは読み込み完了後に行う
       state.pendingFloatingSearch = {
         query: state.floatingSearchQuery,
-        matchIndex: matchInTopic
+        matchIndex: sectionInTopic
       };
       selectItem(result.topicId);
       return;
     }
 
     // 同じトピック内での移動：現在のページ内でハイライト
-    highlightAndGoToMatchInCurrentPage(matchInTopic);
+    highlightAndGoToMatchInCurrentPage(sectionInTopic);
   }
 
   /**
    * 現在のページ内でハイライトして指定マッチに移動
    */
-  function highlightAndGoToMatchInCurrentPage(matchIndex) {
+  function highlightAndGoToMatchInCurrentPage(sectionIndex) {
     const query = state.floatingSearchQuery;
     if (!query) return;
 
@@ -5535,103 +5553,119 @@
       parent.replaceChild(fragment, originalNode);
     });
 
-    // DOM順序で再取得（ハイライト処理の順序に依存しない）
+    // DOM順序で再取得
     const orderedSpans = Array.from(container.querySelectorAll('.search-match-highlight'));
-    const actualMatchCount = orderedSpans.length;
-
     state.floatingSearchLocalMatches = orderedSpans;
 
-    // 実際のDOMマッチ数でトピックのカウントを更新
+    // セクション（h2/h3）ごとにマッチをグループ化
+    const sectionMap = new Map();
+    orderedSpans.forEach(span => {
+      const section = findParentSection(span);
+      const sectionKey = section ? section.textContent : '__top__';
+      if (!sectionMap.has(sectionKey)) {
+        sectionMap.set(sectionKey, { heading: section, spans: [] });
+      }
+      sectionMap.get(sectionKey).spans.push(span);
+    });
+
+    // セクション配列を作成（DOM順序を維持）
+    const sections = Array.from(sectionMap.values());
+    state.floatingSearchSections = sections;
+
+    // このトピックのセクション数を更新
     const topicIdx = state.floatingSearchCurrentTopicIdx;
     if (topicIdx >= 0 && state.floatingSearchResults[topicIdx]) {
-      const oldCount = state.floatingSearchResults[topicIdx].matchCount;
-      if (oldCount !== actualMatchCount) {
-        // カウントの差分を計算してトータルを更新
-        const diff = actualMatchCount - oldCount;
-        state.floatingSearchResults[topicIdx].matchCount = actualMatchCount;
-        state.floatingSearchTotalMatches += diff;
+      state.floatingSearchResults[topicIdx].sectionCount = sections.length;
 
-        // 後続トピックのglobalStartIndexを調整
-        for (let i = topicIdx + 1; i < state.floatingSearchResults.length; i++) {
-          state.floatingSearchResults[i].globalStartIndex += diff;
-        }
-      }
+      // 総セクション数を再計算
+      let totalSections = 0;
+      state.floatingSearchResults.forEach(r => {
+        totalSections += r.sectionCount || 1;
+      });
+      state.floatingSearchTotalSections = totalSections;
     }
 
-    // matchIndexが実際のマッチ数を超えている場合は調整
-    const safeMatchIndex = Math.min(matchIndex, actualMatchCount - 1);
-    state.floatingSearchLocalMatchIdx = Math.max(0, safeMatchIndex);
+    // sectionIndexの範囲チェック
+    const safeSectionIndex = Math.max(0, Math.min(sectionIndex, sections.length - 1));
+    state.floatingSearchLocalMatchIdx = safeSectionIndex;
 
-    // グローバルインデックスを再計算
-    let globalIndex = 0;
+    // グローバルセクションインデックスを再計算
+    let globalSectionIndex = 0;
     for (let i = 0; i < topicIdx; i++) {
-      globalIndex += state.floatingSearchResults[i].matchCount;
+      globalSectionIndex += state.floatingSearchResults[i].sectionCount || 1;
     }
-    globalIndex += state.floatingSearchLocalMatchIdx + 1;
-    state.floatingSearchGlobalIndex = globalIndex;
+    globalSectionIndex += safeSectionIndex + 1;
+    state.floatingSearchCurrentSectionIdx = globalSectionIndex;
 
-    // カウント表示を更新
-    updateFloatingSearchCount(globalIndex, state.floatingSearchTotalMatches);
+    // カウント表示を更新（セクション単位）
+    updateFloatingSearchCount(globalSectionIndex, state.floatingSearchTotalSections);
 
-    // 指定マッチに移動
-    if (orderedSpans.length > 0 && state.floatingSearchLocalMatchIdx >= 0) {
-      orderedSpans.forEach(span => span.classList.remove('current'));
-      const currentSpan = orderedSpans[state.floatingSearchLocalMatchIdx];
-      if (currentSpan) {
-        currentSpan.classList.add('current');
+    // 指定セクションに移動
+    if (sections.length > 0 && safeSectionIndex >= 0) {
+      const currentSection = sections[safeSectionIndex];
+      if (currentSection) {
+        // セクション内の全マッチをcurrentとしてハイライト
+        currentSection.spans.forEach(span => span.classList.add('current'));
 
         // 過去問カード内にある場合は展開する
-        const questionCard = currentSpan.closest('.question-card-wrapper');
-        if (questionCard && !questionCard.classList.contains('expanded')) {
-          questionCard.classList.add('expanded');
+        const firstSpan = currentSection.spans[0];
+        if (firstSpan) {
+          const questionCard = firstSpan.closest('.question-card-wrapper');
+          if (questionCard && !questionCard.classList.contains('expanded')) {
+            questionCard.classList.add('expanded');
+          }
         }
 
-        setTimeout(() => {
-          currentSpan.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-          });
-        }, 150); // カード展開後にスクロール
+        // 見出しまたは最初のマッチにスクロール
+        const scrollTarget = currentSection.heading || currentSection.spans[0];
+        if (scrollTarget) {
+          setTimeout(() => {
+            scrollTarget.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+          }, 150);
+        }
       }
     }
   }
 
   /**
-   * 次のマッチに移動（全トピック横断）
+   * 次のセクションに移動（全トピック横断）
    */
   function nextFloatingSearchMatch() {
-    if (state.floatingSearchTotalMatches === 0) return;
+    if (state.floatingSearchTotalSections === 0) return;
 
     const topicIdx = state.floatingSearchCurrentTopicIdx;
-    let matchInTopic = state.floatingSearchLocalMatchIdx + 1;
+    let sectionInTopic = state.floatingSearchLocalMatchIdx + 1;
 
-    // 実際のローカルマッチ数を使用
-    const localMatchCount = state.floatingSearchLocalMatches.length;
-    if (localMatchCount > 0 && matchInTopic >= localMatchCount) {
+    // ローカルセクション数を使用
+    const localSectionCount = state.floatingSearchSections.length;
+    if (localSectionCount > 0 && sectionInTopic >= localSectionCount) {
       // 次のトピックへ
       goToGlobalMatch(topicIdx + 1, 0);
       return;
     }
 
-    goToGlobalMatch(topicIdx, matchInTopic);
+    goToGlobalMatch(topicIdx, sectionInTopic);
   }
 
   /**
-   * 前のマッチに移動（全トピック横断）
+   * 前のセクションに移動（全トピック横断）
    */
   function prevFloatingSearchMatch() {
-    if (state.floatingSearchTotalMatches === 0) return;
+    if (state.floatingSearchTotalSections === 0) return;
 
     const topicIdx = state.floatingSearchCurrentTopicIdx;
-    let matchInTopic = state.floatingSearchLocalMatchIdx - 1;
+    let sectionInTopic = state.floatingSearchLocalMatchIdx - 1;
 
-    if (matchInTopic < 0) {
+    if (sectionInTopic < 0) {
       // 前のトピックへ
       goToGlobalMatch(topicIdx - 1, -1); // -1は末尾を意味
       return;
     }
 
-    goToGlobalMatch(topicIdx, matchInTopic);
+    goToGlobalMatch(topicIdx, sectionInTopic);
   }
 
   /**
@@ -5648,6 +5682,7 @@
     });
     state.floatingSearchLocalMatches = [];
     state.floatingSearchLocalMatchIdx = -1;
+    state.floatingSearchSections = [];
   }
 
   /**

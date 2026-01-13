@@ -8750,37 +8750,36 @@ body.is-practice .tab-content {
 
 /* 検索マッチのハイライトスタイル（上書き） */
 .search-match-highlight {
-  background: #FEF3CD !important;
+  background: transparent !important;
   padding: 2px 0;
   border-radius: 3px;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 179, 0, 0.5);
+  text-underline-offset: 2px;
 }
 
 .search-match-highlight.current {
   background: #FFE082 !important;
   border-radius: 3px;
-  outline: 2px solid #FFB300;
-  outline-offset: 0px;
+  text-decoration: none;
+  color: #1a1a1a !important;
 }
 
 [data-theme="dark"] .search-match-highlight {
-  background: #FEF3CD !important;
-  color: #1a1a1a !important;
+  text-decoration-color: rgba(255, 179, 0, 0.6);
 }
 
 [data-theme="dark"] .search-match-highlight.current {
   background: #FFE082 !important;
   color: #1a1a1a !important;
-  outline: 2px solid #FFB300;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .search-match-highlight {
-    background: #FEF3CD !important;
-    color: #1a1a1a !important;
+    text-decoration-color: rgba(255, 179, 0, 0.6);
   }
   :root:not([data-theme="light"]) .search-match-highlight.current {
     background: #FFE082 !important;
     color: #1a1a1a !important;
-    outline: 2px solid #FFB300;
   }
 }

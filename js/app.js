@@ -5709,17 +5709,17 @@
       elements.floatingSearchInput.focus();
     });
 
-    elements.floatingSearchPrev.addEventListener('click', prevFloatingSearchMatch);
-    elements.floatingSearchNext.addEventListener('click', nextFloatingSearchMatch);
+    elements.floatingSearchPrev.addEventListener('click', nextFloatingSearchMatch);
+    elements.floatingSearchNext.addEventListener('click', prevFloatingSearchMatch);
     elements.floatingSearchClose.addEventListener('click', hideFloatingSearch);
 
     elements.floatingSearchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
         if (e.shiftKey) {
-          prevFloatingSearchMatch();
-        } else {
           nextFloatingSearchMatch();
+        } else {
+          prevFloatingSearchMatch();
         }
       } else if (e.key === 'Escape') {
         hideFloatingSearch();

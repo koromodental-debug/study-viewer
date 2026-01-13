@@ -608,6 +608,121 @@ body {
   margin: 0;
 }
 
+/* 検索バー */
+.welcome-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 24px;
+}
+
+.welcome-search-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  font-size: 16px;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.welcome-search-input:focus {
+  border-color: var(--system-blue);
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.15);
+}
+
+.welcome-search-input::placeholder {
+  color: var(--secondary-label);
+}
+
+.welcome-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--secondary-label);
+  pointer-events: none;
+}
+
+/* トピック一覧 */
+.welcome-topics {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
+  padding-bottom: 32px;
+}
+
+.welcome-topic-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.welcome-topic-item:active {
+  transform: scale(0.98);
+  background: var(--surface-alt);
+}
+
+.welcome-topic-subject {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--system-blue);
+  background: rgba(10, 132, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.welcome-topic-title {
+  font-size: 15px;
+  color: var(--text-color);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.welcome-topic-arrow {
+  color: var(--tertiary-label);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* 検索結果なし */
+.welcome-no-results {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--secondary-label);
+  font-size: 14px;
+}
+
+/* 検索マッチハイライト */
+.welcome-topic-title mark {
+  background-color: #fef08a;
+  padding: 0 2px;
+  border-radius: 2px;
+  color: inherit;
+}
+
+[data-theme="dark"] .welcome-topic-title mark {
+  background-color: #854d0e;
+  color: #fef9c3;
+}
+
 .welcome-cards {
   display: flex;
   flex-direction: column;

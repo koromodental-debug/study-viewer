@@ -60,6 +60,8 @@
     welcomeScreen: document.getElementById('welcome-screen'),
     welcomeStartBtn: document.getElementById('welcome-start-btn'),
     welcomeCardMenu: document.getElementById('welcome-card-menu'),
+    welcomeSearchInput: document.getElementById('welcome-search-input'),
+    welcomeTopics: document.getElementById('welcome-topics'),
     // 過去問
     kakomonContent: document.getElementById('kakomon-content'),
     // フラッシュカード
@@ -77,7 +79,7 @@
     toolTocHint: document.getElementById('tool-toc-hint'),
     toolReading: document.getElementById('tool-reading'),
     toolPrevHeading: document.getElementById('tool-prev-heading'),
-    toolTop: document.getElementById('tool-top'),
+    toolHome: document.getElementById('tool-home'),
     // ノート（お気に入り）- 後方互換性のため残す
     noteOverlay: document.getElementById('note-overlay'),
     closeNote: document.getElementById('close-note'),
@@ -184,6 +186,92 @@
 
     // スクロール履歴管理の初期化
     initScrollHistory();
+
+    // ウェルカム画面のトピック検索を初期化
+    initWelcomeSearch();
+  }
+
+  /**
+   * ウェルカム画面のトピック検索を初期化
+   */
+  function initWelcomeSearch() {
+    if (!elements.welcomeTopics || !elements.welcomeSearchInput) return;
+
+    // 初期表示：全トピック
+    renderWelcomeTopics('');
+
+    // 検索入力イベント
+    elements.welcomeSearchInput.addEventListener('input', (e) => {
+      renderWelcomeTopics(e.target.value);
+    });
+
+    // トピッククリックイベント
+    elements.welcomeTopics.addEventListener('click', (e) => {
+      const item = e.target.closest('.welcome-topic-item');
+      if (!item) return;
+
+      const topicId = item.dataset.topicId;
+      if (topicId) {
+        const topic = DATA.find(d => d.id === topicId);
+        if (topic) {
+          loadHtmlContent(topic);
+        }
+      }
+    });
+  }
+
+  /**
+   * ウェルカム画面のトピック一覧をレンダリング
+   */
+  function renderWelcomeTopics(filter) {
+    if (!elements.welcomeTopics) return;
+
+    const filterLower = filter.toLowerCase().trim();
+
+    // フィルタリング
+    let topics = DATA.filter(d => d.htmlPath);
+    if (filterLower) {
+      topics = topics.filter(d => {
+        const title = (d.title || d.id || '').toLowerCase();
+        const subject = (d.subject || '').toLowerCase();
+        return title.includes(filterLower) || subject.includes(filterLower);
+      });
+    }
+
+    // 最大50件に制限
+    const limitedTopics = topics.slice(0, 50);
+
+    if (limitedTopics.length === 0) {
+      elements.welcomeTopics.innerHTML = `<div class="welcome-no-results">「${escapeHtml(filter)}」に一致するトピックがありません</div>`;
+      return;
+    }
+
+    // HTML生成
+    const html = limitedTopics.map(topic => {
+      const title = topic.title || topic.id;
+      const displayTitle = filterLower ? highlightWelcomeSearch(title, filter) : escapeHtml(title);
+      const subject = topic.subject || '';
+
+      return `
+        <div class="welcome-topic-item" data-topic-id="${escapeHtml(topic.id)}">
+          <span class="welcome-topic-subject">${escapeHtml(subject)}</span>
+          <span class="welcome-topic-title">${displayTitle}</span>
+          <span class="welcome-topic-arrow">›</span>
+        </div>
+      `;
+    }).join('');
+
+    elements.welcomeTopics.innerHTML = html;
+  }
+
+  /**
+   * ウェルカム検索のハイライト
+   */
+  function highlightWelcomeSearch(text, query) {
+    if (!query) return escapeHtml(text);
+    const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escaped})`, 'gi');
+    return escapeHtml(text).replace(regex, '<mark>$1</mark>');
   }
 
   /**
@@ -4792,11 +4880,11 @@
       };
     }
 
-    // トップへボタン
-    if (elements.toolTop) {
-      elements.toolTop.onclick = () => {
+    // ホームボタン
+    if (elements.toolHome) {
+      elements.toolHome.onclick = () => {
         closeToolSheet();
-        scrollToTop();
+        showWelcomeScreen();
       };
     }
   }
@@ -4808,6 +4896,30 @@
     if (elements.htmlContent) {
       elements.htmlContent.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  }
+
+  /**
+   * ウェルカム画面を表示
+   */
+  function showWelcomeScreen() {
+    // HTMLコンテンツを非表示
+    if (elements.htmlDisplay) {
+      elements.htmlDisplay.style.display = 'none';
+    }
+    // ウェルカム画面を表示
+    if (elements.welcomeScreen) {
+      elements.welcomeScreen.style.display = 'flex';
+      elements.welcomeScreen.classList.remove('hidden');
+    }
+    // 検索入力をクリア
+    if (elements.welcomeSearchInput) {
+      elements.welcomeSearchInput.value = '';
+      renderWelcomeTopics('');
+    }
+    // 現在のトピック情報をクリア
+    state.currentItem = null;
+    // ローカルストレージから現在のトピックをクリア
+    localStorage.removeItem('studyViewer_lastTopicId');
   }
 
   /**

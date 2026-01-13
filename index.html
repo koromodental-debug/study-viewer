@@ -321,15 +321,15 @@
             </div>
             <span class="tool-sheet-label">前の見出しへ</span>
           </button>
-          <!-- トップへ -->
-          <button id="tool-top" class="tool-sheet-item">
+          <!-- ホームへ -->
+          <button id="tool-home" class="tool-sheet-item">
             <div class="tool-sheet-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 19V5M5 12l7-7 7 7"/>
-                <path d="M5 5h14"/>
+                <path d="M3 12l9-9 9 9"/>
+                <path d="M9 21V12h6v9"/>
               </svg>
             </div>
-            <span class="tool-sheet-label">トップへ</span>
+            <span class="tool-sheet-label">ホーム</span>
           </button>
         </div>
       </div>
@@ -349,62 +349,22 @@
           <div class="welcome-screen" id="welcome-screen">
             <div class="welcome-header">
               <h1 class="welcome-title">ココシカ</h1>
-              <p class="welcome-subtitle">歯科国試対策</p>
+              <p class="welcome-subtitle">何を調べたいですか？</p>
             </div>
 
-            <div class="welcome-cards">
-              <div class="welcome-card" id="welcome-card-menu">
-                <div class="welcome-card-icon">
-                  <div class="welcome-icon-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-                <div class="welcome-card-content">
-                  <h3>トピックを選ぶ</h3>
-                  <p>左上のメニューから<br>学習したいトピックを選択</p>
-                </div>
-              </div>
-
-              <div class="welcome-card">
-                <div class="welcome-card-icon">
-                  <span class="welcome-icon-tab">まとめ</span>
-                </div>
-                <div class="welcome-card-content">
-                  <h3>まとめで学ぶ</h3>
-                  <p>まとめ資料で<br>知識をインプット</p>
-                </div>
-              </div>
-
-              <div class="welcome-card">
-                <div class="welcome-card-icon">
-                  <span class="welcome-icon-tab">Q&A</span>
-                </div>
-                <div class="welcome-card-content">
-                  <h3>Q&Aで確認</h3>
-                  <p>一問一答形式で<br>理解度をチェック</p>
-                </div>
-              </div>
-
-              <div class="welcome-card">
-                <div class="welcome-card-icon">
-                  <span class="welcome-icon-tab">過去問</span>
-                </div>
-                <div class="welcome-card-content">
-                  <h3>過去問に挑戦</h3>
-                  <p>国試過去問で<br>実力をテスト</p>
-                </div>
-              </div>
+            <!-- 検索バー -->
+            <div class="welcome-search-wrapper">
+              <input type="text" id="welcome-search-input" class="welcome-search-input" placeholder="トピックを検索...">
+              <svg class="welcome-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
             </div>
 
-            <div class="welcome-tips">
-              <p>← スワイプでタブ切り替え →</p>
+            <!-- トピック一覧 -->
+            <div class="welcome-topics" id="welcome-topics">
+              <!-- JSで動的に生成 -->
             </div>
-
-            <button class="welcome-start-btn" id="welcome-start-btn">
-              はじめる
-            </button>
           </div>
           <div id="html-display" class="html-display" style="display:none;"></div>
         </div>

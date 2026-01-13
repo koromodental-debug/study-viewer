@@ -3,25 +3,17 @@
 ## グラム染色による分類
 
 Q: デンタルプラークとは？
-A: 歯面に形成される細菌性バイオフィルム。約700種類の細菌が存在する。
+A: 歯面に形成される細菌性バイオフィルム
 
-Q: プラーク中のグラム陽性球菌は？
-A: Streptococcus、Enterococcus
-
-Q: プラーク中のグラム陽性桿菌は？
-A: Actinomyces、Propionibacterium
-
-Q: プラーク中のグラム陰性球菌は？
-A: Veillonella、Neisseria
-
-Q: プラーク中のグラム陰性桿菌は？
-A: Fusobacterium、Prevotella、Porphyromonas
+Q: Actinomycesはグラム陽性球菌か桿菌か？
+A: グラム陽性桿菌
+   [混同注意] Streptococcusは球菌
 
 ---
 
 [112A30] ★★★
-Q: デンタルプラーク中に存在するグラム陽性球菌は？
-A: Enterococcus、Streptococcus
+Q: Streptococcusはグラム陽性球菌か陰性球菌か？
+A: グラム陽性球菌
 
 [他の選択肢との違い]
 - Actinomyces: グラム陽性桿菌 ← ひっかけ
@@ -36,8 +28,8 @@ A: Enterococcus、Streptococcus
 ---
 
 [108C63] ★★★
-Q: デンタルプラーク中のグラム陽性桿菌は？
-A: Actinomyces viscosus、Propionibacterium acnes
+Q: Actinomyces viscosusはグラム陽性桿菌か球菌か？
+A: グラム陽性桿菌
 
 [他の選択肢との違い]
 - Actinomyces viscosus: グラム陽性桿菌 ← 正解
@@ -52,8 +44,8 @@ A: Actinomyces viscosus、Propionibacterium acnes
 ---
 
 [113C24] ★★★
-Q: 口腔常在細菌は？
-A: Fusobacterium nucleatum、Lactobacillus casei、Streptococcus sanguinis
+Q: 結核菌は口腔常在菌か？
+A: 口腔常在菌ではない（肺の病原菌）
 
 [他の選択肢との違い]
 - Corynebacterium diphtheriae: ジフテリア菌（咽頭の病原菌）
@@ -122,8 +114,8 @@ A: 深層部
 ---
 
 [109C89] ★★★
-Q: 成熟プラークで表層部に比べた深層部の特徴は？
-A: 代謝産物が多い、酸化還元電位が低い
+Q: 成熟プラークの深層部は酸化還元電位が高いか低いか？
+A: 低い（嫌気的環境）
 
 [他の選択肢との違い]
 - pHが高い: × 深層部は酸性（pHが低い）
@@ -169,17 +161,9 @@ A: オートインデューサー
 
 ---
 
-Q: 歯性感染症の閉鎖膿瘍から分離される菌の特徴は？
-A: 嫌気性菌が高頻度で分離される
-
-Q: 閉鎖膿瘍から分離される代表的な嫌気性菌は？
-A: Prevotella（グラム陰性嫌気性桿菌）、Peptostreptococcus（グラム陽性嫌気性球菌）
-
----
-
 [104A96] ★★★
-Q: 歯性感染症の閉鎖膿瘍から分離される頻度が高いのは？
-A: Prevotella、Peptostreptococcus
+Q: 閉鎖膿瘍から分離される頻度が高いのは好気性菌か嫌気性菌か？
+A: 嫌気性菌（Prevotella、Peptostreptococcusなど）
 
 [他の選択肢との違い]
 - Serratia: 腸内細菌、好気性菌

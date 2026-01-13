@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=20260113aa">
+  <link rel="stylesheet" href="css/style.css?v=20260113n">
 </head>
 <body>
   <div class="app">
@@ -25,6 +25,40 @@
         </button>
       </div>
     </header>
+
+    <!-- フローティング検索バー（GoodNotes風） -->
+    <div id="floating-search-bar" class="floating-search-bar" style="display:none;">
+      <div class="floating-search-input-wrapper">
+        <svg class="floating-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="text" id="floating-search-input" class="floating-search-input" placeholder="ページ内を検索">
+        <button id="floating-search-clear" class="floating-search-clear" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="floating-search-nav">
+        <span id="floating-search-count" class="floating-search-count">0/0</span>
+        <button id="floating-search-prev" class="floating-search-nav-btn" aria-label="前へ">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        <button id="floating-search-next" class="floating-search-nav-btn" aria-label="次へ">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+      </div>
+      <button id="floating-search-close" class="floating-search-close" aria-label="閉じる">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
 
     <!-- 統合ツールボタン（右下） -->
     <button id="tool-fab" class="tool-fab" aria-label="ツール" style="display:none;">
@@ -312,24 +346,15 @@
           </button>
           <!-- 区切り -->
           <div class="tool-sheet-divider"></div>
-          <!-- 前の見出しへ -->
-          <button id="tool-prev-heading" class="tool-sheet-item">
-            <div class="tool-sheet-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 19V5M5 12l7-7 7 7"/>
-              </svg>
-            </div>
-            <span class="tool-sheet-label">前の見出しへ</span>
-          </button>
-          <!-- ホームへ -->
+          <!-- トピック検索へ -->
           <button id="tool-home" class="tool-sheet-item">
             <div class="tool-sheet-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 12l9-9 9 9"/>
-                <path d="M9 21V12h6v9"/>
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
               </svg>
             </div>
-            <span class="tool-sheet-label">ホーム</span>
+            <span class="tool-sheet-label">検索</span>
           </button>
         </div>
       </div>
@@ -347,22 +372,30 @@
       <div class="content-area">
         <div class="tab-content" id="html-content">
           <div class="welcome-screen" id="welcome-screen">
-            <div class="welcome-header">
-              <h1 class="welcome-title">ココシカ</h1>
-              <p class="welcome-subtitle">何を調べたいですか？</p>
+            <!-- 検索エリア（中央配置） -->
+            <div class="welcome-search-area">
+              <div class="welcome-search-wrapper">
+                <svg class="welcome-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" id="welcome-search-input" class="welcome-search-input" placeholder="トピック・キーワードを検索">
+              </div>
             </div>
 
-            <!-- 検索バー -->
-            <div class="welcome-search-wrapper">
-              <input type="text" id="welcome-search-input" class="welcome-search-input" placeholder="トピックを検索...">
-              <svg class="welcome-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="M21 21l-4.35-4.35"/>
-              </svg>
+            <!-- 最近の検索 -->
+            <div class="welcome-history-section" id="welcome-history-section">
+              <div class="welcome-section-header">
+                <span class="welcome-section-title">最近の検索</span>
+                <button id="clear-history-btn" class="clear-history-btn">履歴を消去</button>
+              </div>
+              <div class="welcome-history-list" id="welcome-history-list">
+                <!-- JSで動的に生成 -->
+              </div>
             </div>
 
-            <!-- トピック一覧 -->
-            <div class="welcome-topics" id="welcome-topics">
+            <!-- 検索結果（検索時のみ表示） -->
+            <div class="welcome-topics" id="welcome-topics" style="display:none;">
               <!-- JSで動的に生成 -->
             </div>
           </div>
@@ -461,6 +494,6 @@
   <script src="js/favorites.js?v=20260111t"></script>
   <script src="js/kakomon.js?v=20260111t"></script>
   <script src="js/flashcard.js?v=20260113aa"></script>
-  <script src="js/app.js?v=20260113h"></script>
+  <script src="js/app.js?v=20260113n"></script>
 </body>
 </html>

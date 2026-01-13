@@ -29,7 +29,17 @@
     kakomonFirstLoadedTopicIndex: -1,
     isLoadingMoreKakomon: false,
     // ノートバッジ表示制御（最後に閲覧した時刻）
-    lastNoteViewTime: parseInt(localStorage.getItem('studyViewer_lastNoteViewTime') || '0')
+    lastNoteViewTime: parseInt(localStorage.getItem('studyViewer_lastNoteViewTime') || '0'),
+    // フローティング検索（GoodNotes風・全トピック横断）
+    floatingSearchQuery: '',                // 検索クエリ
+    floatingSearchResults: [],              // マッチしたトピック [{topicId, title, matchCount, matchPositions}]
+    floatingSearchTotalMatches: 0,          // 総マッチ数
+    floatingSearchCurrentTopicIdx: -1,      // 現在のトピックインデックス
+    floatingSearchCurrentMatchInTopic: -1,  // トピック内のマッチインデックス
+    floatingSearchGlobalIndex: 0,           // グローバルインデックス（1-based表示用）
+    floatingSearchLocalMatches: [],         // 現在のページ内のマッチspan要素
+    floatingSearchLocalMatchIdx: -1,        // 現在のページ内マッチインデックス
+    pendingFloatingSearch: null             // トピック切り替え後に継続する検索 {query, matchIndex}
   };
 
   // DOM要素
@@ -77,6 +87,7 @@
     toolSheetOverlay: document.getElementById('tool-sheet-overlay'),
     toolToc: document.getElementById('tool-toc'),
     toolTocHint: document.getElementById('tool-toc-hint'),
+    toolPageSearch: document.getElementById('tool-page-search'),
     toolReading: document.getElementById('tool-reading'),
     toolPrevHeading: document.getElementById('tool-prev-heading'),
     toolHome: document.getElementById('tool-home'),
@@ -108,7 +119,15 @@
     readingModeClose: document.getElementById('reading-mode-close'),
     fontDecrease: document.getElementById('font-decrease'),
     fontIncrease: document.getElementById('font-increase'),
-    fontSizeDisplay: document.getElementById('font-size-display')
+    fontSizeDisplay: document.getElementById('font-size-display'),
+    // フローティング検索バー（GoodNotes風）
+    floatingSearchBar: document.getElementById('floating-search-bar'),
+    floatingSearchInput: document.getElementById('floating-search-input'),
+    floatingSearchClear: document.getElementById('floating-search-clear'),
+    floatingSearchCount: document.getElementById('floating-search-count'),
+    floatingSearchPrev: document.getElementById('floating-search-prev'),
+    floatingSearchNext: document.getElementById('floating-search-next'),
+    floatingSearchClose: document.getElementById('floating-search-close')
   };
 
   // 目次の状態管理
@@ -172,6 +191,9 @@
     // ↑ボタンの条件付き表示
     setupPrevHeadingButtonScroll();
 
+    // フローティング検索バー（GoodNotes風）のイベント設定
+    setupFloatingSearchEvents();
+
     // フラッシュカード機能の初期化
     if (typeof FlashcardModule !== 'undefined') {
       FlashcardModule.init();
@@ -197,12 +219,30 @@
   function initWelcomeSearch() {
     if (!elements.welcomeTopics || !elements.welcomeSearchInput) return;
 
-    // 初期表示：全トピック
-    renderWelcomeTopics('');
+    const historySection = document.getElementById('welcome-history-section');
+    const historyList = document.getElementById('welcome-history-list');
+    const clearHistoryBtn = document.getElementById('clear-history-btn');
+
+    // 検索履歴を表示
+    renderSearchHistory();
+
+    // 初期表示：履歴を表示、トピック一覧は非表示
+    elements.welcomeTopics.style.display = 'none';
 
     // 検索入力イベント
     elements.welcomeSearchInput.addEventListener('input', (e) => {
-      renderWelcomeTopics(e.target.value);
+      const query = e.target.value.trim();
+      if (query) {
+        // 検索中は履歴を隠してトピック一覧を表示
+        if (historySection) historySection.style.display = 'none';
+        elements.welcomeTopics.style.display = '';
+        renderWelcomeTopics(query);
+      } else {
+        // 空の場合は履歴を表示、トピック一覧は非表示
+        if (historySection) historySection.style.display = '';
+        elements.welcomeTopics.style.display = 'none';
+        renderSearchHistory();
+      }
     });
 
     // トピッククリックイベント
@@ -212,9 +252,123 @@
 
       const topicId = item.dataset.topicId;
       if (topicId) {
+        // 検索キーワードを履歴に保存
+        const searchQuery = elements.welcomeSearchInput ? elements.welcomeSearchInput.value.trim() : '';
+        if (searchQuery) {
+          addSearchHistory(searchQuery);
+        }
+        state.highlightQuery = searchQuery || null;
         selectItem(topicId);
       }
     });
+
+    // 履歴アイテムクリック
+    if (historyList) {
+      historyList.addEventListener('click', (e) => {
+        // 削除ボタンのクリック
+        const deleteBtn = e.target.closest('.history-delete');
+        if (deleteBtn) {
+          const query = deleteBtn.dataset.query;
+          removeSearchHistory(query);
+          renderSearchHistory();
+          return;
+        }
+        // 履歴アイテムのクリック
+        const historyItem = e.target.closest('.history-item');
+        if (historyItem) {
+          const query = historyItem.dataset.query;
+          if (query && elements.welcomeSearchInput) {
+            elements.welcomeSearchInput.value = query;
+            elements.welcomeSearchInput.dispatchEvent(new Event('input'));
+          }
+        }
+      });
+    }
+
+    // 履歴を消去ボタン
+    if (clearHistoryBtn) {
+      clearHistoryBtn.addEventListener('click', () => {
+        clearSearchHistory();
+        renderSearchHistory();
+      });
+    }
+  }
+
+  /**
+   * 検索履歴を取得
+   */
+  function getSearchHistory() {
+    try {
+      const history = localStorage.getItem('studyViewer_searchHistory');
+      return history ? JSON.parse(history) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  /**
+   * 検索履歴に追加
+   */
+  function addSearchHistory(query) {
+    if (!query) return;
+    let history = getSearchHistory();
+    // 重複を削除
+    history = history.filter(h => h !== query);
+    // 先頭に追加
+    history.unshift(query);
+    // 最大10件
+    if (history.length > 10) history = history.slice(0, 10);
+    localStorage.setItem('studyViewer_searchHistory', JSON.stringify(history));
+  }
+
+  /**
+   * 検索履歴から削除
+   */
+  function removeSearchHistory(query) {
+    let history = getSearchHistory();
+    history = history.filter(h => h !== query);
+    localStorage.setItem('studyViewer_searchHistory', JSON.stringify(history));
+  }
+
+  /**
+   * 検索履歴をクリア
+   */
+  function clearSearchHistory() {
+    localStorage.removeItem('studyViewer_searchHistory');
+  }
+
+  /**
+   * 検索履歴を描画
+   */
+  function renderSearchHistory() {
+    const historyList = document.getElementById('welcome-history-list');
+    const historySection = document.getElementById('welcome-history-section');
+    if (!historyList) return;
+
+    const history = getSearchHistory();
+
+    if (history.length === 0) {
+      // 履歴なし
+      if (historySection) historySection.style.display = 'none';
+      return;
+    }
+
+    if (historySection) historySection.style.display = '';
+
+    historyList.innerHTML = history.map(query => `
+      <div class="history-item" data-query="${escapeHtml(query)}">
+        <svg class="history-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        <span class="history-text">${escapeHtml(query)}</span>
+        <button class="history-delete" data-query="${escapeHtml(query)}" aria-label="削除">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    `).join('');
   }
 
   /**
@@ -231,7 +385,8 @@
       topics = topics.filter(d => {
         const title = (d.title || d.id || '').toLowerCase();
         const subject = (d.subject || '').toLowerCase();
-        return title.includes(filterLower) || subject.includes(filterLower);
+        const searchText = (d.searchText || '').toLowerCase();
+        return title.includes(filterLower) || subject.includes(filterLower) || searchText.includes(filterLower);
       });
     }
 
@@ -249,10 +404,23 @@
       const displayTitle = filterLower ? highlightWelcomeSearch(title, filter) : escapeHtml(title);
       const subject = topic.subject || '';
 
+      // タイトルにマッチしない場合、本文からスニペットを取得
+      let snippet = '';
+      if (filterLower) {
+        const titleLower = title.toLowerCase();
+        const subjectLower = subject.toLowerCase();
+        if (!titleLower.includes(filterLower) && !subjectLower.includes(filterLower)) {
+          snippet = getSearchSnippet(topic.searchText || '', filter);
+        }
+      }
+
       return `
         <div class="welcome-topic-item" data-topic-id="${escapeHtml(topic.id)}">
           <span class="welcome-topic-subject">${escapeHtml(subject)}</span>
-          <span class="welcome-topic-title">${displayTitle}</span>
+          <div class="welcome-topic-content">
+            <span class="welcome-topic-title">${displayTitle}</span>
+            ${snippet ? `<span class="welcome-topic-snippet">${snippet}</span>` : ''}
+          </div>
           <span class="welcome-topic-arrow">›</span>
         </div>
       `;
@@ -269,6 +437,31 @@
     const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const regex = new RegExp(`(${escaped})`, 'gi');
     return escapeHtml(text).replace(regex, '<mark>$1</mark>');
+  }
+
+  /**
+   * 検索スニペットを取得（マッチ箇所の前後を抽出）
+   */
+  function getSearchSnippet(text, query) {
+    if (!text || !query) return '';
+    const lowerText = text.toLowerCase();
+    const lowerQuery = query.toLowerCase();
+    const index = lowerText.indexOf(lowerQuery);
+    if (index === -1) return '';
+
+    // マッチ箇所の前後30文字を抽出
+    const start = Math.max(0, index - 20);
+    const end = Math.min(text.length, index + query.length + 30);
+    let snippet = text.substring(start, end);
+
+    // 前後に「...」を追加
+    if (start > 0) snippet = '...' + snippet;
+    if (end < text.length) snippet = snippet + '...';
+
+    // マッチ箇所をハイライト
+    const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escaped})`, 'gi');
+    return escapeHtml(snippet).replace(regex, '<mark>$1</mark>');
   }
 
   /**
@@ -1208,6 +1401,11 @@
       elements.welcomeScreen.style.display = 'none';
     }
 
+    // FABを表示（本文閲覧時のみ）
+    if (elements.toolFab) {
+      elements.toolFab.style.display = 'flex';
+    }
+
     // 無限スクロール用：開始インデックスをセット
     const itemIndex = DATA.findIndex(d => d.id === item.id);
     state.startTopicIndex = itemIndex;
@@ -1317,12 +1515,17 @@
         initLazyImages();
       });
 
-      // 検索からのジャンプ時：該当箇所をハイライト＆スクロール
+      // 検索からのジャンプ時：フローティング検索バーを表示
       if (isFirst && state.highlightQuery) {
         setTimeout(() => {
-          highlightAndScrollToMatch(section, state.highlightQuery);
+          showFloatingSearch(state.highlightQuery);
           state.highlightQuery = null;
-        }, 100);
+        }, 300);
+      }
+
+      // フローティング検索継続（トピック切り替え後）
+      if (isFirst && state.pendingFloatingSearch) {
+        continueFloatingSearchAfterLoad();
       }
 
     } catch (e) {
@@ -3276,12 +3479,21 @@
     // 初回訪問時はウェルカム画面を表示（復元しない）
     if (!hasVisited) {
       localStorage.setItem('studyViewer_visited', 'true');
+      // FABを非表示（ウェルカム画面では不要）
+      if (elements.toolFab) {
+        elements.toolFab.style.display = 'none';
+      }
       return;
     }
 
     // 2回目以降は前回のトピックを復元
     if (lastItemId) {
       selectItem(lastItemId);
+    } else {
+      // 復元するトピックがない場合もFABを非表示
+      if (elements.toolFab) {
+        elements.toolFab.style.display = 'none';
+      }
     }
   }
 
@@ -4862,6 +5074,14 @@
       };
     }
 
+    // ページ内検索ボタン
+    if (elements.toolPageSearch) {
+      elements.toolPageSearch.onclick = () => {
+        closeToolSheet();
+        showFloatingSearch();
+      };
+    }
+
     // 表示設定ボタン
     if (elements.toolReading) {
       elements.toolReading.onclick = () => {
@@ -4914,6 +5134,10 @@
       elements.welcomeSearchInput.value = '';
       renderWelcomeTopics('');
     }
+    // FABを非表示（検索画面では不要）
+    if (elements.toolFab) {
+      elements.toolFab.style.display = 'none';
+    }
     // 現在のトピック情報をクリア
     state.currentItem = null;
     // ローカルストレージから現在のトピックをクリア
@@ -4950,6 +5174,497 @@
 
       lastScrollY = scrollY;
     }, { passive: true });
+  }
+
+  // ===== フローティング検索バー（GoodNotes風・全トピック横断） =====
+
+  /**
+   * フローティング検索バーを表示
+   * @param {string} query - 初期検索クエリ（オプション）
+   */
+  function showFloatingSearch(query = '') {
+    if (!elements.floatingSearchBar) return;
+
+    elements.floatingSearchBar.style.display = 'flex';
+    elements.floatingSearchInput.value = query;
+
+    // FABを非表示
+    if (elements.toolFab) {
+      elements.toolFab.style.display = 'none';
+    }
+
+    if (query) {
+      performGlobalSearch(query);
+      elements.floatingSearchClear.style.display = 'flex';
+    } else {
+      elements.floatingSearchClear.style.display = 'none';
+      updateFloatingSearchCount(0, 0);
+    }
+
+    // 入力欄にフォーカス（クエリがない場合）
+    if (!query) {
+      setTimeout(() => elements.floatingSearchInput.focus(), 100);
+    }
+  }
+
+  /**
+   * フローティング検索バーを非表示
+   */
+  function hideFloatingSearch() {
+    if (!elements.floatingSearchBar) return;
+
+    elements.floatingSearchBar.style.display = 'none';
+    elements.floatingSearchInput.value = '';
+    clearFloatingSearchHighlights();
+    resetFloatingSearchState();
+
+    // FABを再表示
+    if (elements.toolFab) {
+      elements.toolFab.style.display = 'flex';
+    }
+  }
+
+  /**
+   * 検索状態をリセット
+   */
+  function resetFloatingSearchState() {
+    state.floatingSearchQuery = '';
+    state.floatingSearchResults = [];
+    state.floatingSearchTotalMatches = 0;
+    state.floatingSearchCurrentTopicIdx = -1;
+    state.floatingSearchCurrentMatchInTopic = -1;
+    state.floatingSearchGlobalIndex = 0;
+    state.floatingSearchLocalMatches = [];
+    state.floatingSearchLocalMatchIdx = -1;
+  }
+
+  /**
+   * 全トピックを横断して検索
+   */
+  function performGlobalSearch(query) {
+    if (!query || query.length < 1) {
+      clearFloatingSearchHighlights();
+      resetFloatingSearchState();
+      updateFloatingSearchCount(0, 0);
+      return;
+    }
+
+    const lowerQuery = query.toLowerCase();
+    const results = [];
+    let totalMatches = 0;
+
+    // 全トピックのsearchTextを検索
+    DATA.forEach((item, index) => {
+      const searchText = (item.searchText || item.title || '').toLowerCase();
+      let count = 0;
+      let pos = 0;
+
+      // マッチ数をカウント
+      while ((pos = searchText.indexOf(lowerQuery, pos)) !== -1) {
+        count++;
+        pos++;
+      }
+
+      if (count > 0) {
+        results.push({
+          topicId: item.id,
+          topicIndex: index,
+          title: item.title || item.id,
+          subject: item.subject || '',
+          matchCount: count,
+          globalStartIndex: totalMatches + 1 // 1-based
+        });
+        totalMatches += count;
+      }
+    });
+
+    // 状態を更新
+    state.floatingSearchQuery = query;
+    state.floatingSearchResults = results;
+    state.floatingSearchTotalMatches = totalMatches;
+
+    if (totalMatches === 0) {
+      state.floatingSearchCurrentTopicIdx = -1;
+      state.floatingSearchGlobalIndex = 0;
+      updateFloatingSearchCount(0, 0);
+      clearFloatingSearchHighlights();
+      return;
+    }
+
+    // 現在開いているトピックがマッチしているか確認
+    const currentTopicId = state.currentItem?.id;
+    let startTopicIdx = 0;
+    let startMatchInTopic = 0;
+
+    if (currentTopicId) {
+      const currentResultIdx = results.findIndex(r => r.topicId === currentTopicId);
+      if (currentResultIdx !== -1) {
+        startTopicIdx = currentResultIdx;
+      }
+    }
+
+    // 最初のマッチに移動
+    goToGlobalMatch(startTopicIdx, startMatchInTopic);
+  }
+
+  /**
+   * グローバルマッチに移動
+   * @param {number} topicIdx - 検索結果内のトピックインデックス
+   * @param {number} matchInTopic - トピック内のマッチインデックス
+   */
+  async function goToGlobalMatch(topicIdx, matchInTopic) {
+    const results = state.floatingSearchResults;
+    if (results.length === 0) return;
+
+    // 範囲チェック（トピックインデックス）
+    if (topicIdx < 0) {
+      topicIdx = results.length - 1;
+      matchInTopic = -1; // 末尾を指定
+    } else if (topicIdx >= results.length) {
+      topicIdx = 0;
+      matchInTopic = 0;
+    }
+
+    const result = results[topicIdx];
+
+    // matchInTopic = -1 は末尾を意味する
+    if (matchInTopic === -1) {
+      matchInTopic = result.matchCount - 1;
+    }
+
+    // マッチインデックスの範囲チェック（通常は発生しないが安全のため）
+    if (matchInTopic < 0) {
+      matchInTopic = 0;
+    } else if (matchInTopic >= result.matchCount) {
+      // 次のトピックへ
+      topicIdx++;
+      if (topicIdx >= results.length) topicIdx = 0;
+      matchInTopic = 0;
+      return goToGlobalMatch(topicIdx, matchInTopic);
+    }
+
+    // 状態を更新
+    state.floatingSearchCurrentTopicIdx = topicIdx;
+    state.floatingSearchCurrentMatchInTopic = matchInTopic;
+
+    // グローバルインデックスを計算
+    let globalIndex = 0;
+    for (let i = 0; i < topicIdx; i++) {
+      globalIndex += results[i].matchCount;
+    }
+    globalIndex += matchInTopic + 1;
+    state.floatingSearchGlobalIndex = globalIndex;
+
+    // カウント表示を更新
+    updateFloatingSearchCount(globalIndex, state.floatingSearchTotalMatches);
+
+    // 現在のトピックと違う場合はトピックを切り替え
+    const currentTopicId = state.currentItem?.id;
+    if (currentTopicId !== result.topicId) {
+      // トピックを切り替え
+      clearFloatingSearchHighlights();
+      state.floatingSearchLocalMatches = [];
+
+      // selectItemを呼び出してトピックを読み込み
+      // ハイライトは読み込み完了後に行う
+      state.pendingFloatingSearch = {
+        query: state.floatingSearchQuery,
+        matchIndex: matchInTopic
+      };
+      selectItem(result.topicId);
+      return;
+    }
+
+    // 同じトピック内での移動：現在のページ内でハイライト
+    highlightAndGoToMatchInCurrentPage(matchInTopic);
+  }
+
+  /**
+   * 現在のページ内でハイライトして指定マッチに移動
+   */
+  function highlightAndGoToMatchInCurrentPage(matchIndex) {
+    const query = state.floatingSearchQuery;
+    if (!query) return;
+
+    // 前回のハイライトをクリア
+    clearFloatingSearchHighlights();
+
+    const container = elements.htmlDisplay;
+    if (!container) return;
+
+    // テキストノードを走査してマッチを探す
+    const walker = document.createTreeWalker(
+      container,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: (node) => {
+          if (!node.textContent.trim()) return NodeFilter.FILTER_REJECT;
+          const parent = node.parentNode;
+          if (parent && parent.classList && parent.classList.contains('search-match-highlight')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      }
+    );
+
+    const matches = [];
+    const lowerQuery = query.toLowerCase();
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const text = node.textContent;
+      const lowerText = text.toLowerCase();
+
+      let startIndex = 0;
+      let index;
+
+      while ((index = lowerText.indexOf(lowerQuery, startIndex)) !== -1) {
+        matches.push({
+          node: node,
+          index: index,
+          length: query.length
+        });
+        startIndex = index + 1;
+      }
+    }
+
+    if (matches.length === 0) return;
+
+    // マッチをハイライト
+    const processedNodes = new Map();
+
+    for (let i = matches.length - 1; i >= 0; i--) {
+      const match = matches[i];
+      const node = match.node;
+
+      if (!processedNodes.has(node)) {
+        processedNodes.set(node, []);
+      }
+      processedNodes.get(node).unshift(match);
+    }
+
+    const highlightedSpans = [];
+
+    processedNodes.forEach((nodeMatches, originalNode) => {
+      const parent = originalNode.parentNode;
+      if (!parent) return;
+
+      const text = originalNode.textContent;
+      const fragment = document.createDocumentFragment();
+      let lastIndex = 0;
+
+      nodeMatches.forEach((match) => {
+        if (match.index > lastIndex) {
+          fragment.appendChild(document.createTextNode(text.substring(lastIndex, match.index)));
+        }
+
+        const span = document.createElement('span');
+        span.className = 'search-match-highlight';
+        span.textContent = text.substring(match.index, match.index + match.length);
+        fragment.appendChild(span);
+        highlightedSpans.push(span);
+
+        lastIndex = match.index + match.length;
+      });
+
+      if (lastIndex < text.length) {
+        fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
+      }
+
+      parent.replaceChild(fragment, originalNode);
+    });
+
+    // DOM順序で再取得（ハイライト処理の順序に依存しない）
+    const orderedSpans = Array.from(container.querySelectorAll('.search-match-highlight'));
+    const actualMatchCount = orderedSpans.length;
+
+    state.floatingSearchLocalMatches = orderedSpans;
+
+    // 実際のDOMマッチ数でトピックのカウントを更新
+    const topicIdx = state.floatingSearchCurrentTopicIdx;
+    if (topicIdx >= 0 && state.floatingSearchResults[topicIdx]) {
+      const oldCount = state.floatingSearchResults[topicIdx].matchCount;
+      if (oldCount !== actualMatchCount) {
+        // カウントの差分を計算してトータルを更新
+        const diff = actualMatchCount - oldCount;
+        state.floatingSearchResults[topicIdx].matchCount = actualMatchCount;
+        state.floatingSearchTotalMatches += diff;
+
+        // 後続トピックのglobalStartIndexを調整
+        for (let i = topicIdx + 1; i < state.floatingSearchResults.length; i++) {
+          state.floatingSearchResults[i].globalStartIndex += diff;
+        }
+      }
+    }
+
+    // matchIndexが実際のマッチ数を超えている場合は調整
+    const safeMatchIndex = Math.min(matchIndex, actualMatchCount - 1);
+    state.floatingSearchLocalMatchIdx = Math.max(0, safeMatchIndex);
+
+    // グローバルインデックスを再計算
+    let globalIndex = 0;
+    for (let i = 0; i < topicIdx; i++) {
+      globalIndex += state.floatingSearchResults[i].matchCount;
+    }
+    globalIndex += state.floatingSearchLocalMatchIdx + 1;
+    state.floatingSearchGlobalIndex = globalIndex;
+
+    // カウント表示を更新
+    updateFloatingSearchCount(globalIndex, state.floatingSearchTotalMatches);
+
+    // 指定マッチに移動
+    if (orderedSpans.length > 0 && state.floatingSearchLocalMatchIdx >= 0) {
+      orderedSpans.forEach(span => span.classList.remove('current'));
+      const currentSpan = orderedSpans[state.floatingSearchLocalMatchIdx];
+      if (currentSpan) {
+        currentSpan.classList.add('current');
+
+        // 過去問カード内にある場合は展開する
+        const questionCard = currentSpan.closest('.question-card-wrapper');
+        if (questionCard && !questionCard.classList.contains('expanded')) {
+          questionCard.classList.add('expanded');
+        }
+
+        setTimeout(() => {
+          currentSpan.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }, 150); // カード展開後にスクロール
+      }
+    }
+  }
+
+  /**
+   * 次のマッチに移動（全トピック横断）
+   */
+  function nextFloatingSearchMatch() {
+    if (state.floatingSearchTotalMatches === 0) return;
+
+    const topicIdx = state.floatingSearchCurrentTopicIdx;
+    let matchInTopic = state.floatingSearchLocalMatchIdx + 1;
+
+    // 実際のローカルマッチ数を使用
+    const localMatchCount = state.floatingSearchLocalMatches.length;
+    if (localMatchCount > 0 && matchInTopic >= localMatchCount) {
+      // 次のトピックへ
+      goToGlobalMatch(topicIdx + 1, 0);
+      return;
+    }
+
+    goToGlobalMatch(topicIdx, matchInTopic);
+  }
+
+  /**
+   * 前のマッチに移動（全トピック横断）
+   */
+  function prevFloatingSearchMatch() {
+    if (state.floatingSearchTotalMatches === 0) return;
+
+    const topicIdx = state.floatingSearchCurrentTopicIdx;
+    let matchInTopic = state.floatingSearchLocalMatchIdx - 1;
+
+    if (matchInTopic < 0) {
+      // 前のトピックへ
+      goToGlobalMatch(topicIdx - 1, -1); // -1は末尾を意味
+      return;
+    }
+
+    goToGlobalMatch(topicIdx, matchInTopic);
+  }
+
+  /**
+   * ハイライトをクリア
+   */
+  function clearFloatingSearchHighlights() {
+    const highlights = document.querySelectorAll('.search-match-highlight');
+    highlights.forEach(span => {
+      const parent = span.parentNode;
+      if (parent) {
+        parent.replaceChild(document.createTextNode(span.textContent), span);
+        parent.normalize();
+      }
+    });
+    state.floatingSearchLocalMatches = [];
+    state.floatingSearchLocalMatchIdx = -1;
+  }
+
+  /**
+   * カウント表示を更新
+   */
+  function updateFloatingSearchCount(current, total) {
+    if (elements.floatingSearchCount) {
+      elements.floatingSearchCount.textContent = total > 0 ? `${current}/${total}` : '0/0';
+    }
+
+    if (elements.floatingSearchPrev) {
+      elements.floatingSearchPrev.disabled = total === 0;
+    }
+    if (elements.floatingSearchNext) {
+      elements.floatingSearchNext.disabled = total === 0;
+    }
+  }
+
+  /**
+   * トピック読み込み完了後にフローティング検索を継続
+   */
+  function continueFloatingSearchAfterLoad() {
+    if (!state.pendingFloatingSearch) return;
+
+    const { query, matchIndex } = state.pendingFloatingSearch;
+    state.pendingFloatingSearch = null;
+
+    if (query === state.floatingSearchQuery) {
+      setTimeout(() => {
+        highlightAndGoToMatchInCurrentPage(matchIndex);
+      }, 200);
+    }
+  }
+
+  /**
+   * フローティング検索バーのイベント設定
+   */
+  function setupFloatingSearchEvents() {
+    if (!elements.floatingSearchBar) return;
+
+    let searchTimeout;
+    elements.floatingSearchInput.addEventListener('input', (e) => {
+      const query = e.target.value.trim();
+
+      elements.floatingSearchClear.style.display = query ? 'flex' : 'none';
+
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        performGlobalSearch(query);
+      }, 300);
+    });
+
+    elements.floatingSearchClear.addEventListener('click', () => {
+      elements.floatingSearchInput.value = '';
+      elements.floatingSearchClear.style.display = 'none';
+      clearFloatingSearchHighlights();
+      resetFloatingSearchState();
+      updateFloatingSearchCount(0, 0);
+      elements.floatingSearchInput.focus();
+    });
+
+    elements.floatingSearchPrev.addEventListener('click', prevFloatingSearchMatch);
+    elements.floatingSearchNext.addEventListener('click', nextFloatingSearchMatch);
+    elements.floatingSearchClose.addEventListener('click', hideFloatingSearch);
+
+    elements.floatingSearchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (e.shiftKey) {
+          prevFloatingSearchMatch();
+        } else {
+          nextFloatingSearchMatch();
+        }
+      } else if (e.key === 'Escape') {
+        hideFloatingSearch();
+      }
+    });
   }
 
   // 起動

@@ -30,8 +30,10 @@ const FlashcardModule = (function() {
     summaryCollapsed: localStorage.getItem('flashcard-summary-collapsed') === 'true',
     // デッキ検索
     searchQuery: '',
-    // 演習モード（mix, memorized, again）
-    currentMode: 'mix'
+    // 演習モード（mix, memorized, again, new）
+    currentMode: 'mix',
+    // おまかせの割合（newHeavy, balanced, reviewHeavy）
+    mixRatio: localStorage.getItem('flashcard-mix-ratio') || 'balanced'
   };
 
   // DOM要素
@@ -124,16 +126,6 @@ const FlashcardModule = (function() {
   // 開始ボタンのサブテキストを生成（1行目：問数と時間）
   function buildStartSub(overall, mode) {
     const timeEstimate = Math.ceil(state.sessionSize * 0.5);
-
-    if (mode === 'mix') {
-      return `${state.sessionSize}問 · 約${timeEstimate}分`;
-    } else if (mode === 'memorized') {
-      const count = Math.min(state.sessionSize, overall.memorized);
-      return `${count}問 · 約${Math.ceil(count * 0.5)}分`;
-    } else if (mode === 'again') {
-      const count = Math.min(state.sessionSize, overall.again);
-      return `${count}問 · 約${Math.ceil(count * 0.5)}分`;
-    }
     return `${state.sessionSize}問 · 約${timeEstimate}分`;
   }
 
@@ -155,31 +147,113 @@ const FlashcardModule = (function() {
     const body = document.getElementById('breakdown-sheet-body');
     if (!overlay || !body) return;
 
-    // 今回の出題数から内訳を計算
     const overall = getOverallStats();
     const sessionSize = state.sessionSize;
+    const currentMode = state.currentMode || 'mix';
 
-    // 覚えた・もう一度から出る分
-    const fromMemorized = Math.min(overall.memorized, sessionSize);
-    const fromAgain = Math.min(overall.again, sessionSize - fromMemorized);
-    const fromNew = sessionSize - fromMemorized - fromAgain;
+    // 新規カード数を計算（セッション数 - 覚えた数）
+    const newCount = Math.max(0, sessionSize - overall.memorized);
 
-    // 行を動的に生成（0件は非表示）
-    let rows = '';
-    if (fromNew > 0) {
-      rows += `<div class="breakdown-row"><span class="breakdown-label">新規</span><span class="breakdown-value">${fromNew}カード</span></div>`;
-    }
-    if (fromAgain > 0) {
-      rows += `<div class="breakdown-row"><span class="breakdown-label">もう一度</span><span class="breakdown-value">${fromAgain}カード</span></div>`;
-    }
-    if (fromMemorized > 0) {
-      rows += `<div class="breakdown-row"><span class="breakdown-label">覚えた</span><span class="breakdown-value">${fromMemorized}カード</span></div>`;
-    }
+    // 出題範囲の選択肢
+    const mixRatio = state.mixRatio || 'balanced';
+    const modeSection = `
+      <div class="breakdown-section">
+        <div class="breakdown-section-title">出題範囲</div>
+        <div class="breakdown-mode-buttons">
+          <button class="breakdown-mode-btn ${currentMode === 'mix' ? 'active' : ''}" data-mode="mix">
+            <span class="breakdown-mode-label">おまかせ</span>
+            <span class="breakdown-mode-desc">新規${newCount} + 覚えた${Math.min(sessionSize, overall.memorized)}</span>
+          </button>
+          <div class="breakdown-ratio-row ${currentMode === 'mix' ? '' : 'hidden'}" id="ratio-selector">
+            <button class="breakdown-ratio-btn ${mixRatio === 'newHeavy' ? 'active' : ''}" data-ratio="newHeavy">新規多め</button>
+            <button class="breakdown-ratio-btn ${mixRatio === 'balanced' ? 'active' : ''}" data-ratio="balanced">バランス</button>
+            <button class="breakdown-ratio-btn ${mixRatio === 'reviewHeavy' ? 'active' : ''}" data-ratio="reviewHeavy">復習多め</button>
+          </div>
+          <button class="breakdown-mode-btn ${currentMode === 'new' ? 'active' : ''}" data-mode="new">
+            <span class="breakdown-mode-label">新規のみ</span>
+            <span class="breakdown-mode-desc">${sessionSize}問</span>
+          </button>
+          <button class="breakdown-mode-btn ${currentMode === 'memorized' ? 'active' : ''}" data-mode="memorized">
+            <span class="breakdown-mode-label">覚えたのみ</span>
+            <span class="breakdown-mode-desc">${overall.memorized}カード</span>
+          </button>
+        </div>
+      </div>
+    `;
 
-    body.innerHTML = rows;
+    // 問数選択ボタン
+    const sizeSection = `
+      <div class="breakdown-section">
+        <div class="breakdown-section-title">問数</div>
+        <div class="breakdown-size-buttons">
+          <button class="breakdown-size-btn ${sessionSize === 5 ? 'active' : ''}" data-size="5">5問</button>
+          <button class="breakdown-size-btn ${sessionSize === 10 ? 'active' : ''}" data-size="10">10問</button>
+          <button class="breakdown-size-btn ${sessionSize === 20 ? 'active' : ''}" data-size="20">20問</button>
+        </div>
+      </div>
+    `;
+
+    body.innerHTML = `${modeSection}${sizeSection}`;
 
     // シートを開く
     overlay.classList.add('active');
+
+    // 出題範囲ボタンのイベント
+    body.querySelectorAll('.breakdown-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+        state.currentMode = mode;
+        localStorage.setItem('flashcard-mode', mode);
+
+        // ボタンのアクティブ状態を更新
+        body.querySelectorAll('.breakdown-mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // おまかせ選択時のみ割合セレクターを表示
+        const ratioSelector = document.getElementById('ratio-selector');
+        if (ratioSelector) {
+          ratioSelector.classList.toggle('hidden', mode !== 'mix');
+        }
+      });
+    });
+
+    // 割合ボタンのイベント
+    body.querySelectorAll('.breakdown-ratio-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const ratio = btn.dataset.ratio;
+        state.mixRatio = ratio;
+        localStorage.setItem('flashcard-mix-ratio', ratio);
+
+        // ボタンのアクティブ状態を更新
+        body.querySelectorAll('.breakdown-ratio-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // 問数選択ボタンのイベント
+    body.querySelectorAll('.breakdown-size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const newSize = parseInt(btn.dataset.size);
+        state.sessionSize = newSize;
+        localStorage.setItem('flashcard-session-size', newSize);
+
+        // ボタンのアクティブ状態を更新
+        body.querySelectorAll('.breakdown-size-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // 出題範囲の数値を更新
+        const newNewCount = Math.max(0, newSize - overall.memorized);
+        const newMemCount = Math.min(newSize, overall.memorized);
+
+        // すべての説明を更新
+        const allDesc = body.querySelector('.breakdown-mode-btn[data-mode="mix"] .breakdown-mode-desc');
+        if (allDesc) allDesc.textContent = `新規${newNewCount} + 覚えた${newMemCount}`;
+
+        // 新規のみの説明を更新
+        const newDesc = body.querySelector('.breakdown-mode-btn[data-mode="new"] .breakdown-mode-desc');
+        if (newDesc) newDesc.textContent = `${newSize}問`;
+      });
+    });
 
     // 閉じるボタン
     const closeBtn = document.getElementById('breakdown-close');
@@ -200,6 +274,8 @@ const FlashcardModule = (function() {
     if (overlay) {
       overlay.classList.remove('active');
     }
+    // トップ画面を再描画
+    renderDeckList();
   }
 
   // === Ankiスタイル デッキ一覧画面 ===
@@ -262,63 +338,37 @@ const FlashcardModule = (function() {
     `;
   }
 
+  // モードラベルを取得
+  function getModeLabel(mode) {
+    switch (mode) {
+      case 'new': return '新規のみ';
+      case 'memorized': return '覚えたのみ';
+      default: return 'おまかせ';
+    }
+  }
+
   // 通常のデッキホームをレンダリング
   function renderDeckHome(overall, subjects) {
     // 時間目安を計算（1問約30秒）
     const timeEstimate = Math.ceil(state.sessionSize * 0.5);
 
     return `
-      <!-- 今日の演習：メインCTA -->
-      <div class="deck-main-cta" id="start-recommended-deck">
-        <h2 class="deck-main-title">今日の演習</h2>
-        <button class="deck-start-btn" id="deck-start-btn">
-          <span class="deck-start-label">開始</span>
-          <span class="deck-start-sub" id="deck-start-sub">${buildStartSub(overall, 'mix')}</span>
-        </button>
-        <button class="deck-breakdown-link" id="deck-breakdown-link">
-          出題範囲
-          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
-            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
-          </svg>
-        </button>
-        <button class="deck-size-toggle" id="deck-size-toggle">
-          問数：${state.sessionSize}
-          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-            <path d="M7 10l5 5 5-5z"/>
-          </svg>
-        </button>
-        <div class="deck-size-dropdown" id="deck-size-dropdown" style="display:none;">
-          <button class="deck-size-option ${state.sessionSize === 5 ? 'active' : ''}" data-size="5">5問（約2分）</button>
-          <button class="deck-size-option ${state.sessionSize === 10 ? 'active' : ''}" data-size="10">10問（約5分）</button>
-          <button class="deck-size-option ${state.sessionSize === 20 ? 'active' : ''}" data-size="20">20問（約10分）</button>
-        </div>
-
-        <!-- モード切替セグメント（0件は非表示） -->
-        ${(overall.again > 0 || overall.memorized > 0) ? `
-        <div class="deck-mode-wrapper">
-          <div class="deck-mode-segment">
-            <button class="deck-mode-seg active" data-mode="mix">
-              <span class="deck-mode-seg-label">ミックス</span>
-            </button>
-            ${overall.again > 0 ? `
-            <button class="deck-mode-seg" data-mode="again">
-              <span class="deck-mode-seg-label">もう一度</span>
-              <span class="deck-mode-seg-count">${overall.again}</span>
-            </button>
-            ` : ''}
-            ${overall.memorized > 0 ? `
-            <button class="deck-mode-seg" data-mode="memorized">
-              <span class="deck-mode-seg-label">覚えた</span>
-              <span class="deck-mode-seg-count">${overall.memorized}</span>
-            </button>
-            ` : ''}
-          </div>
-        </div>
-        ` : ''}
+      <!-- 開始ボタン（カード風） -->
+      <div class="deck-start-card" id="deck-start-btn">
+        <span class="deck-start-label">開始</span>
+        <span class="deck-start-sub" id="deck-start-sub">${state.sessionSize}問 · 約${timeEstimate}分</span>
       </div>
 
+      <!-- 設定（1行に集約） -->
+      <button class="deck-settings-line" id="deck-breakdown-link">
+        <span class="deck-settings-text">設定：${getModeLabel(state.currentMode)}／${state.sessionSize}問</span>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+          <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+        </svg>
+      </button>
+
       <!-- 科目一覧（折りたたみ＋検索） -->
-      <div class="deck-subjects-wrapper">
+      <div class="deck-subjects-wrapper muted">
         <button class="deck-subjects-toggle" id="deck-subjects-toggle">
           <span>科目・デッキを探す</span>
           <svg class="deck-subjects-arrow" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -538,55 +588,7 @@ const FlashcardModule = (function() {
       });
     });
 
-    // 問数変更ドロップダウン
-    const sizeToggle = document.getElementById('deck-size-toggle');
-    const sizeDropdown = document.getElementById('deck-size-dropdown');
-    if (sizeToggle && sizeDropdown) {
-      sizeToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = sizeDropdown.style.display !== 'none';
-        sizeDropdown.style.display = isOpen ? 'none' : 'flex';
-        sizeToggle.classList.toggle('open', !isOpen);
-      });
-
-      // ドロップダウン外クリックで閉じる
-      document.addEventListener('click', (e) => {
-        if (!sizeToggle.contains(e.target) && !sizeDropdown.contains(e.target)) {
-          sizeDropdown.style.display = 'none';
-          sizeToggle.classList.remove('open');
-        }
-      });
-
-      // 問数選択
-      const sizeOptions = sizeDropdown.querySelectorAll('.deck-size-option');
-      sizeOptions.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const size = parseInt(btn.dataset.size);
-          state.sessionSize = size;
-          localStorage.setItem('flashcard-session-size', size);
-
-          // アクティブ状態を更新
-          sizeOptions.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          // トグルボタンのテキストを更新
-          sizeToggle.innerHTML = `問数：${size}<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>`;
-
-          // サブテキストを現在のモードで更新
-          const overall = getOverallStats();
-          const mode = state.currentMode || 'mix';
-          const subLabel = container.querySelector('.deck-start-sub');
-          if (subLabel) subLabel.textContent = buildStartSub(overall, mode);
-
-          // ドロップダウンを閉じる
-          sizeDropdown.style.display = 'none';
-          sizeToggle.classList.remove('open');
-        });
-      });
-    }
-
-    // 内訳シートの開閉
+    // 設定ボタン（内訳シートを開く）
     const breakdownLink = document.getElementById('deck-breakdown-link');
     if (breakdownLink) {
       breakdownLink.addEventListener('click', (e) => {
@@ -661,34 +663,6 @@ const FlashcardModule = (function() {
       });
     }
 
-    // モード切替セグメント
-    const modeSegs = container.querySelectorAll('.deck-mode-seg');
-    const startSub = document.getElementById('deck-start-sub');
-    const startBreakdown = document.getElementById('deck-start-breakdown');
-    const overall = getOverallStats();
-
-    modeSegs.forEach(seg => {
-      seg.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const mode = seg.dataset.mode;
-
-        // アクティブ状態を切り替え
-        modeSegs.forEach(s => s.classList.remove('active'));
-        seg.classList.add('active');
-
-        // サブテキストと内訳を更新
-        if (startSub) {
-          startSub.textContent = buildStartSub(overall, mode);
-        }
-        if (startBreakdown) {
-          startBreakdown.textContent = buildBreakdown(overall, mode);
-        }
-
-        // 現在のモードを保存
-        state.currentMode = mode;
-      });
-    });
-
     // 開始ボタンのクリックでモードに応じて開始
     const startBtn = document.getElementById('deck-start-btn');
     if (startBtn) {
@@ -698,6 +672,8 @@ const FlashcardModule = (function() {
 
         if (mode === 'mix') {
           startRecommendedDeck();
+        } else if (mode === 'new') {
+          startNewOnlyDeck();
         } else if (mode === 'memorized') {
           startStatusDeck('memorized');
         } else if (mode === 'again') {
@@ -849,34 +825,64 @@ const FlashcardModule = (function() {
 
   // === 今日のおすすめデッキ ===
   async function startRecommendedDeck() {
-    const targetCount = getRecommendedCount();
+    const targetCount = state.sessionSize;
+    const ratio = state.mixRatio || 'balanced';
+
+    // 割合に応じてターゲット数を計算
+    let newTarget, memorizedTarget;
+    if (ratio === 'newHeavy') {
+      newTarget = Math.ceil(targetCount * 0.7);      // 70% 新規
+      memorizedTarget = targetCount - newTarget;     // 30% 覚えた
+    } else if (ratio === 'reviewHeavy') {
+      memorizedTarget = Math.ceil(targetCount * 0.7); // 70% 覚えた
+      newTarget = targetCount - memorizedTarget;      // 30% 新規
+    } else {
+      newTarget = Math.ceil(targetCount * 0.5);       // 50% 新規
+      memorizedTarget = targetCount - newTarget;      // 50% 覚えた
+    }
+
     const cardRefs = [];
 
-    // 1. まず「もう一度」カードを全て収集
+    // 1. 覚えたカードを収集
     for (const [key, value] of Object.entries(state.progress)) {
-      if (value.status === 'again') {
+      if (value.status === 'memorized' && cardRefs.filter(r => r.type === 'memorized').length < memorizedTarget) {
         const [topicId, cardIndex] = key.split(':');
-        cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key, priority: 1 });
+        cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key, type: 'memorized' });
       }
     }
 
-    // 2. 不足分は各トピックから未学習カードを追加
-    if (cardRefs.length < targetCount) {
-      const topicsWithQa = DATA.filter(d => d.qaPath);
+    // 2. 新規（未学習）カードを収集
+    const topicsWithQa = DATA.filter(d => d.qaPath);
+    for (const topic of topicsWithQa) {
+      if (cardRefs.filter(r => r.type === 'new').length >= newTarget) break;
+
+      const topicKeys = Object.keys(state.progress).filter(k => k.startsWith(topic.id + ':'));
+      const learnedIndices = new Set(topicKeys.map(k => parseInt(k.split(':')[1])));
+
+      for (let i = 0; i < 100 && cardRefs.filter(r => r.type === 'new').length < newTarget; i++) {
+        if (!learnedIndices.has(i)) {
+          cardRefs.push({ topicId: topic.id, cardIndex: i, key: `${topic.id}:${i}`, type: 'new' });
+        }
+      }
+    }
+
+    // 3. 足りない分を補充（新規 or 覚えた）
+    const currentNew = cardRefs.filter(r => r.type === 'new').length;
+    const currentMem = cardRefs.filter(r => r.type === 'memorized').length;
+    const shortage = targetCount - currentNew - currentMem;
+
+    if (shortage > 0) {
+      // 新規で補充
       for (const topic of topicsWithQa) {
         if (cardRefs.length >= targetCount) break;
-
-        // このトピックの進捗キーを取得
         const topicKeys = Object.keys(state.progress).filter(k => k.startsWith(topic.id + ':'));
-        const learnedIndices = new Set(topicKeys.map(k => parseInt(k.split(':')[1])));
-
-        // 未学習カードを追加（最大3枚/トピック）
-        let addedFromTopic = 0;
-        for (let i = 0; i < 50 && addedFromTopic < 3; i++) {
-          if (!learnedIndices.has(i)) {
-            cardRefs.push({ topicId: topic.id, cardIndex: i, key: `${topic.id}:${i}`, priority: 2 });
-            addedFromTopic++;
-            if (cardRefs.length >= targetCount) break;
+        const usedIndices = new Set([
+          ...topicKeys.map(k => parseInt(k.split(':')[1])),
+          ...cardRefs.filter(r => r.topicId === topic.id).map(r => r.cardIndex)
+        ]);
+        for (let i = 0; i < 100 && cardRefs.length < targetCount; i++) {
+          if (!usedIndices.has(i)) {
+            cardRefs.push({ topicId: topic.id, cardIndex: i, key: `${topic.id}:${i}`, type: 'new' });
           }
         }
       }
@@ -923,6 +929,89 @@ const FlashcardModule = (function() {
     // おすすめデッキとして開始
     state.currentTopicId = '__recommended';
     state.currentTopic = { title: '今日のおすすめ' };
+    state.cards = filteredCards;
+    state.filteredCards = [...filteredCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+
+    // シャッフル
+    for (let i = state.filteredCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+    }
+
+    // セッションサイズで制限
+    if (state.filteredCards.length > state.sessionSize) {
+      state.filteredCards = state.filteredCards.slice(0, state.sessionSize);
+    }
+
+    renderCard();
+  }
+
+  // 新規のみモードでデッキ開始
+  async function startNewOnlyDeck() {
+    const targetCount = state.sessionSize;
+    const cardRefs = [];
+
+    // 各トピックから未学習カードのみを収集
+    const topicsWithQa = DATA.filter(d => d.qaPath);
+    for (const topic of topicsWithQa) {
+      if (cardRefs.length >= targetCount) break;
+
+      // このトピックの進捗キーを取得
+      const topicKeys = Object.keys(state.progress).filter(k => k.startsWith(topic.id + ':'));
+      const learnedIndices = new Set(topicKeys.map(k => parseInt(k.split(':')[1])));
+
+      // 未学習カードを追加
+      for (let i = 0; i < 100 && cardRefs.length < targetCount; i++) {
+        if (!learnedIndices.has(i)) {
+          cardRefs.push({ topicId: topic.id, cardIndex: i, key: `${topic.id}:${i}` });
+        }
+      }
+    }
+
+    if (cardRefs.length === 0) return;
+
+    // トピックごとにQAファイルを読み込み
+    const uniqueTopicIds = [...new Set(cardRefs.map(r => r.topicId))];
+    const topicCardsMap = new Map();
+
+    for (const topicId of uniqueTopicIds) {
+      const topic = DATA.find(d => d.id === topicId);
+      if (!topic || !topic.qaPath) continue;
+
+      try {
+        const response = await fetch(topic.qaPath);
+        const text = await response.text();
+        const cards = parseQAToCards(text, topicId);
+        topicCardsMap.set(topicId, { cards, topic });
+      } catch (e) {
+        console.log(`QA読み込みエラー (${topicId}):`, e);
+      }
+    }
+
+    // フィルタ済みカード配列を構築
+    const filteredCards = [];
+    for (const ref of cardRefs) {
+      const topicData = topicCardsMap.get(ref.topicId);
+      if (topicData) {
+        const card = topicData.cards.find(c => c.originalIndex === ref.cardIndex);
+        if (card) {
+          filteredCards.push({
+            ...card,
+            topicTitle: topicData.topic.title,
+            htmlPath: topicData.topic.htmlPath
+          });
+        }
+      }
+    }
+
+    if (filteredCards.length === 0) return;
+
+    // 新規のみデッキとして開始
+    state.currentTopicId = '__new_only';
+    state.currentTopic = { title: '新規カード' };
     state.cards = filteredCards;
     state.filteredCards = [...filteredCards];
     state.currentIndex = 0;

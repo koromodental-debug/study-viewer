@@ -1288,8 +1288,24 @@ const FlashcardModule = (function() {
     content.style.overflow = 'visible';
     content.style.maxHeight = 'none';
 
-    // ダークモードでも白背景・黒文字で描画するため一時的にクラス追加
-    content.classList.add('capture-light-mode');
+    // 全要素の色を直接インラインスタイルで黒に変更（元のスタイルを保存）
+    const elements = content.querySelectorAll('*');
+    const originalStyles = [];
+    elements.forEach((el, i) => {
+      originalStyles[i] = {
+        color: el.style.color,
+        webkitTextFillColor: el.style.webkitTextFillColor,
+        backgroundColor: el.style.backgroundColor
+      };
+      el.style.color = '#1c1c1e';
+      el.style.webkitTextFillColor = '#1c1c1e';
+      if (el.tagName === 'TH') {
+        el.style.backgroundColor = '#f2f2f7';
+      } else if (el.tagName === 'TD') {
+        el.style.backgroundColor = '#ffffff';
+      }
+    });
+    content.style.backgroundColor = '#ffffff';
 
     try {
       const canvas = await html2canvas(content, {
@@ -1329,7 +1345,13 @@ const FlashcardModule = (function() {
       });
 
     } finally {
-      content.classList.remove('capture-light-mode');
+      // 元のスタイルを復元
+      elements.forEach((el, i) => {
+        el.style.color = originalStyles[i].color;
+        el.style.webkitTextFillColor = originalStyles[i].webkitTextFillColor;
+        el.style.backgroundColor = originalStyles[i].backgroundColor;
+      });
+      content.style.backgroundColor = '';
       content.style.overflow = originalOverflow;
       content.style.maxHeight = originalMaxHeight;
     }

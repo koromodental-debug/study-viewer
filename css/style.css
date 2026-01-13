@@ -5588,6 +5588,104 @@ body.is-practice .tab-content {
   transition: transform 0.2s ease;
 }
 
+/* まとめヘッダーアクション（保存ボタン + シェブロン） */
+.summary-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-save-btn {
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  background: none;
+  border: none;
+  color: var(--secondary-label);
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.summary-save-btn:active {
+  background: var(--surface-alt);
+}
+
+.summary-save-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* 画像プレビューオーバーレイ */
+.image-preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.image-preview-container {
+  background: var(--card-bg);
+  border-radius: 16px;
+  max-width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--separator-color);
+}
+
+.image-preview-header span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-label);
+}
+
+.image-preview-close {
+  width: 32px;
+  height: 32px;
+  background: var(--surface-alt);
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  color: var(--secondary-label);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-preview-body {
+  padding: 16px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.image-preview-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  -webkit-touch-callout: default; /* 長押しメニュー有効化 */
+}
+
 .flashcard-summary.collapsed .summary-chevron {
   transform: rotate(-90deg);
 }

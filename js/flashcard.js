@@ -1145,9 +1145,18 @@ const FlashcardModule = (function() {
           <div class="flashcard-summary ${state.summaryCollapsed ? 'collapsed' : ''}" id="flashcard-summary">
             <div class="flashcard-summary-header" id="flashcard-summary-toggle">
               <span>まとめ</span>
-              <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 9l6 6 6-6"/>
-              </svg>
+              <div class="summary-header-actions">
+                <button class="summary-save-btn" id="summary-save-btn" title="画像として保存">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                  </svg>
+                </button>
+                <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </div>
             </div>
             <div class="flashcard-summary-content" id="flashcard-summary-content">
             </div>
@@ -1249,6 +1258,12 @@ const FlashcardModule = (function() {
 
     // まとめ折りたたみトグル
     document.getElementById('flashcard-summary-toggle').addEventListener('click', toggleSummary);
+
+    // まとめ画像保存ボタン
+    document.getElementById('summary-save-btn')?.addEventListener('click', (e) => {
+      e.stopPropagation(); // 折りたたみトグルを防止
+      saveSummaryAsImage();
+    });
   }
 
   // === まとめ折りたたみ ===
@@ -1259,6 +1274,60 @@ const FlashcardModule = (function() {
     const summary = document.getElementById('flashcard-summary');
     if (summary) {
       summary.classList.toggle('collapsed', state.summaryCollapsed);
+    }
+  }
+
+  // まとめを画像として保存（長押しで保存できるプレビュー表示）
+  async function saveSummaryAsImage() {
+    const content = document.getElementById('flashcard-summary-content');
+    if (!content || typeof html2canvas === 'undefined') return;
+
+    // スクロールを一時的にリセット（全体をキャプチャするため）
+    const originalOverflow = content.style.overflow;
+    const originalMaxHeight = content.style.maxHeight;
+    content.style.overflow = 'visible';
+    content.style.maxHeight = 'none';
+
+    try {
+      const canvas = await html2canvas(content, {
+        backgroundColor: '#ffffff',
+        scale: 2,
+        useCORS: true
+      });
+
+      const dataUrl = canvas.toDataURL('image/png');
+
+      // プレビューオーバーレイを作成
+      const overlay = document.createElement('div');
+      overlay.className = 'image-preview-overlay';
+      overlay.innerHTML = `
+        <div class="image-preview-container">
+          <div class="image-preview-header">
+            <span>長押しで写真に保存</span>
+            <button class="image-preview-close" id="image-preview-close">✕</button>
+          </div>
+          <div class="image-preview-body">
+            <img src="${dataUrl}" alt="まとめ" />
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+
+      // 閉じるボタン
+      document.getElementById('image-preview-close').addEventListener('click', () => {
+        overlay.remove();
+      });
+
+      // オーバーレイ背景クリックで閉じる
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.remove();
+        }
+      });
+
+    } finally {
+      content.style.overflow = originalOverflow;
+      content.style.maxHeight = originalMaxHeight;
     }
   }
 

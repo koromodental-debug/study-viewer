@@ -5737,6 +5737,15 @@ body.is-practice .tab-content {
   -webkit-overflow-scrolling: touch;
 }
 
+/* まとめ内のハイライト（マーカー）を無効化 */
+.flashcard-summary-content .highlight,
+.flashcard-summary-content mark,
+.flashcard-summary-content .keyword-highlight {
+  background: none !important;
+  color: inherit !important;
+  font-weight: inherit;
+}
+
 .flashcard-summary-content h1,
 .flashcard-summary-content h2,
 .flashcard-summary-content h3 {

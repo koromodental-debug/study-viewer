@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ヘルペスウイルス - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / ウイルスと感染症</span>
+    <h1>ヘルペスウイルス</h1>
+    <div class="container">
+
+      <h2>I. ヘルペスウイルス科の概要</h2>
+
+      <p><span class="key">ヘルペスウイルス科</span>は<span class="highlight">二本鎖DNAウイルス</span>で、エンベロープを有する。<span class="highlight">潜伏感染</span>を特徴とし、再活性化により再発する。</p>
+
+      <h3>ヒトヘルペスウイルスの分類</h3>
+      <table>
+        <tr>
+          <th>略称</th>
+          <th>正式名</th>
+          <th>潜伏部位</th>
+          <th>主な疾患</th>
+        </tr>
+        <tr>
+          <td class="key">HSV-1<br><span class="note">HHV-1</span></td>
+          <td>単純ヘルペスウイルス1型</td>
+          <td><span class="highlight">三叉神経節</span></td>
+          <td>ヘルペス性歯肉口内炎<br>口唇ヘルペス</td>
+        </tr>
+        <tr>
+          <td class="key">HSV-2<br><span class="note">HHV-2</span></td>
+          <td>単純ヘルペスウイルス2型</td>
+          <td>仙骨神経節</td>
+          <td>性器ヘルペス</td>
+        </tr>
+        <tr>
+          <td class="key">VZV<br><span class="note">HHV-3</span></td>
+          <td>水痘・帯状疱疹ウイルス</td>
+          <td><span class="highlight">知覚神経節</span></td>
+          <td>水痘、<span class="highlight">帯状疱疹</span><br>Ramsay Hunt症候群</td>
+        </tr>
+        <tr>
+          <td class="key">EBV<br><span class="note">HHV-4</span></td>
+          <td>Epstein-Barrウイルス</td>
+          <td>B細胞</td>
+          <td>伝染性単核球症<br>Burkittリンパ腫</td>
+        </tr>
+        <tr>
+          <td class="key">HCMV<br><span class="note">HHV-5</span></td>
+          <td>ヒトサイトメガロウイルス</td>
+          <td>唾液腺など</td>
+          <td>日和見感染<br>フクロウの眼（巨大核内封入体）</td>
+        </tr>
+        <tr style="background:#E8F4FD">
+          <td class="key">HHV-6</td>
+          <td>ヒトヘルペスウイルス6型</td>
+          <td>CD4陽性T細胞</td>
+          <td><span class="highlight">突発性発疹</span></td>
+        </tr>
+        <tr>
+          <td class="key">HHV-7</td>
+          <td>ヒトヘルペスウイルス7型</td>
+          <td>T細胞</td>
+          <td>突発性発疹（一部）</td>
+        </tr>
+        <tr>
+          <td class="key">HHV-8</td>
+          <td>ヒトヘルペスウイルス8型</td>
+          <td>B細胞</td>
+          <td>カポジ肉腫</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方：ヘルペスウイルスと疾患</div>
+        <ul>
+          <li><span class="key">HSV-1</span>：口唇ヘルペス（三叉神経）→ 顔面領域</li>
+          <li><span class="key">HSV-2</span>：性器ヘルペス（仙骨神経）→ 性行為感染</li>
+          <li><span class="key">VZV</span>：水痘→帯状疱疹（初感染→再活性化）</li>
+          <li><span class="key">HHV-6</span>：<span class="highlight">突発性発疹</span>（乳児に好発）</li>
+        </ul>
+      </div>
+
+      <h2>II. 口腔に関連するヘルペスウイルス感染症</h2>
+
+      <h3>ヘルペス性歯肉口内炎（HSV-1）</h3>
+      <ul>
+        <li>初感染で発症することが多い</li>
+        <li>口腔粘膜に紅暈を伴った小水疱・アフタが多発</li>
+        <li>高熱、リンパ節腫脹を伴う</li>
+        <li>治療：<span class="highlight">アシクロビル</span>などの抗ウイルス薬</li>
+      </ul>
+
+      <h3>帯状疱疹（VZV）</h3>
+      <ul>
+        <li>水痘の既往者に発症（ウイルスの再活性化）</li>
+        <li>片側性の神経支配領域に一致した水疱</li>
+        <li>三叉神経領域では顔面・口腔に発症</li>
+        <li><span class="key">Ramsay Hunt症候群</span>：顔面神経麻痺＋耳介の水疱</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">109A118</div>
+        <p>突発性発疹の病原体はどれか。1つ選べ。</p>
+        <div class="choices">
+          a EBウイルス<br>
+          b 水痘・帯状疱疹ウイルス<br>
+          c ヒトサイトメガロウイルス<br>
+          d 単純ヘルペスウイルス1型<br>
+          e ヒトヘルペスウイルス6型
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">突発性発疹</span>は<span class="highlight">ヒトヘルペスウイルス6型（HHV-6）</span>が原因。乳児に好発し、高熱が3〜4日続いた後に解熱とともに発疹が出現する。EBVは伝染性単核球症、VZVは水痘・帯状疱疹、HCMVは日和見感染、HSV-1は口唇ヘルペスが代表的疾患。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -3745,6 +3745,19 @@
   }
 
   /**
+   * 検索キーワードをハイライト表示する
+   */
+  function highlightSearchText(text, query) {
+    if (!query || query.length === 0) return escapeHtml(text);
+    // 正規表現の特殊文字をエスケープ
+    const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escaped})`, 'gi');
+    // テキストをエスケープしてからハイライト適用
+    const escapedText = escapeHtml(text);
+    return escapedText.replace(regex, '<mark>$1</mark>');
+  }
+
+  /**
    * 検索用テキスト正規化（全角/半角、記号、番号を統一）
    */
   function normalizeForSearch(text) {
@@ -3812,20 +3825,24 @@
       // h2がない場合、h3を章スタイルで表示
       const isChapter = (level === 2) || (!tocState.hasH2 && level === 3);
 
+      // 検索マッチ時のクラスとテキスト表示
+      const matchClass = isFiltering ? ' toc-search-match' : '';
+      const displayHtml = isFiltering ? highlightSearchText(displayText, filter) : escapeHtml(displayText);
+
       if (isChapter) {
         // 章として表示（太字・大きめ）
         html += `
-          <button class="toc-item toc-h2 ${isCurrent ? 'current' : ''}" data-index="${index}">
+          <button class="toc-item toc-h2${matchClass} ${isCurrent ? 'current' : ''}" data-index="${index}">
             <span class="toc-item-bar"></span>
-            <span class="toc-item-text">${escapeHtml(displayText)}</span>
+            <span class="toc-item-text">${displayHtml}</span>
           </button>
         `;
       } else if (level === 3) {
         // 節として表示（インデント） - Full時のみ
         html += `
-          <button class="toc-item toc-h3 ${isCurrent ? 'current' : ''}" data-index="${index}">
+          <button class="toc-item toc-h3${matchClass} ${isCurrent ? 'current' : ''}" data-index="${index}">
             <span class="toc-item-bar"></span>
-            <span class="toc-item-text">${escapeHtml(displayText)}</span>
+            <span class="toc-item-text">${displayHtml}</span>
           </button>
         `;
       }
@@ -3833,7 +3850,11 @@
     });
 
     if (html === '') {
-      elements.tocList.innerHTML = `<div class="toc-empty">一致する見出しがありません</div>`;
+      if (isFiltering) {
+        elements.tocList.innerHTML = `<div class="toc-no-results">見つかりません</div>`;
+      } else {
+        elements.tocList.innerHTML = `<div class="toc-empty">見出しがありません</div>`;
+      }
     } else {
       elements.tocList.innerHTML = html;
     }
@@ -4122,6 +4143,12 @@
       behavior: 'smooth'
     });
 
+    // ジャンプ先をハイライト（2秒間）
+    heading.element.classList.add('jump-highlight');
+    setTimeout(() => {
+      heading.element.classList.remove('jump-highlight');
+    }, 2000);
+
     // 現在位置を更新
     tocState.currentHeadingIndex = index;
   }
@@ -4184,6 +4211,14 @@
     // 閉じるボタン
     if (elements.tocCloseBtn) {
       elements.tocCloseBtn.onclick = closeTOC;
+    }
+
+    // 「全ての見出しを見る」ボタン
+    const expandBtn = document.getElementById('toc-expand-btn');
+    if (expandBtn) {
+      expandBtn.onclick = () => {
+        setTocMode('full');
+      };
     }
 
     // オーバーレイクリックで閉じる

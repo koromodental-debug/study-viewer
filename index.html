@@ -219,11 +219,16 @@
           <div class="toc-now-text" id="toc-now-text">-</div>
         </div>
         <div class="toc-search-wrapper">
-          <input type="text" id="toc-search-input" class="toc-search-input" placeholder="見出しを検索...">
+          <input type="text" id="toc-search-input" class="toc-search-input" placeholder="このページ内を検索（見出し）">
         </div>
         <div class="toc-list" id="toc-list">
           <!-- 動的に生成 -->
         </div>
+        <!-- 全ての見出しを見るボタン（Mediumモード時のみ表示） -->
+        <button id="toc-expand-btn" class="toc-expand-btn">
+          全ての見出しを見る
+          <span class="toc-expand-arrow">›</span>
+        </button>
         <!-- 前後トピックナビゲーション -->
         <div class="toc-topic-nav" id="toc-topic-nav">
           <button class="toc-topic-btn" id="toc-prev-topic" disabled>

@@ -2648,10 +2648,12 @@ body {
 }
 
 .toc-now-text {
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--system-blue);
-  line-height: 1.3;
+  line-height: 1.4;
+  padding-left: 12px;
+  border-left: 3px solid var(--system-blue);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2748,6 +2750,45 @@ body {
   -webkit-overflow-scrolling: touch;
   padding: 0 0 16px;
   min-height: 0; /* flexboxでのスクロール有効化 */
+}
+
+/* 全ての見出しを見るボタン */
+.toc-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 15px;
+  color: var(--secondary-label);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.toc-expand-btn:active {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.toc-expand-arrow {
+  font-size: 18px;
+  color: var(--tertiary-label);
+}
+
+/* Fullモード時は非表示 */
+.toc-sheet.toc-full .toc-expand-btn {
+  display: none;
+}
+
+/* 検索結果なし */
+.toc-no-results {
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--secondary-label);
 }
 
 .toc-item {
@@ -2968,6 +3009,51 @@ body {
 
 [data-theme="dark"] .prev-heading-btn {
   background: rgba(44, 44, 46, 0.9);
+}
+
+/* 検索マッチハイライト */
+.toc-item.toc-search-match {
+  background-color: #dbeafe;
+  border-left: 3px solid #3b82f6;
+}
+
+.toc-item.toc-search-match .toc-item-bar {
+  display: none;
+}
+
+.toc-item mark {
+  background-color: #fef08a;
+  padding: 0 2px;
+  border-radius: 2px;
+  color: inherit;
+}
+
+[data-theme="dark"] .toc-item.toc-search-match {
+  background-color: #1e3a5f;
+}
+
+[data-theme="dark"] .toc-item mark {
+  background-color: #854d0e;
+  color: #fef9c3;
+}
+
+/* ジャンプ先ハイライト */
+.jump-highlight {
+  animation: highlight-flash 2s ease-out;
+}
+
+@keyframes highlight-flash {
+  0% { background-color: rgba(59, 130, 246, 0.3); }
+  100% { background-color: transparent; }
+}
+
+[data-theme="dark"] .jump-highlight {
+  animation: highlight-flash-dark 2s ease-out;
+}
+
+@keyframes highlight-flash-dark {
+  0% { background-color: rgba(59, 130, 246, 0.4); }
+  100% { background-color: transparent; }
 }
 
 /* ===== 読書モード ===== */

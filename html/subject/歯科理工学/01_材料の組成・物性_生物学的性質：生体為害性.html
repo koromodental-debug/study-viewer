@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>生物学的性質：生体為害性 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の組成・物性</span>
+    <h1>生物学的性質：生体為害性</h1>
+    <div class="container">
+
+      <h2>生体為害性とは</h2>
+      <p>歯科材料が生体に及ぼす有害作用のこと。材料選択において、機械的・物理的・化学的性質だけでなく、<span class="key">生物学的性質</span>を考慮することが重要である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">生体為害性の3つの側面</div>
+        <ul>
+          <li><span class="key">細胞毒性</span>：材料が細胞に直接与える毒性</li>
+          <li><span class="key">アレルギー性</span>：免疫反応による過敏症（IV型アレルギー）</li>
+          <li><span class="key">内分泌撹乱</span>：環境ホルモン様作用</li>
+        </ul>
+      </div>
+
+      <h2>細胞毒性</h2>
+      <p>金属の細胞毒性は元素によって大きく異なる。</p>
+
+      <h3>金属の細胞毒性（大→小）</h3>
+      <table>
+        <tr>
+          <th>毒性</th>
+          <th>金属</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">高い</span></td>
+          <td>Ni（ニッケル）</td>
+          <td>細胞毒性＋アレルギー性</td>
+        </tr>
+        <tr>
+          <td>低い</td>
+          <td>Al, Au, Si, Ti</td>
+          <td>生体適合性が高い</td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">ニッケルは細胞毒性・アレルギー性の両方をもつ</span>ため、特に注意が必要。</p>
+
+      <h3>その他の毒性物質</h3>
+      <ul>
+        <li><span class="key">許容量を超えたフッ化物</span>の使用</li>
+        <li><span class="key">アマルガムの遊離水銀</span></li>
+      </ul>
+
+      <h2>金属アレルギー</h2>
+      <p>金属アレルギーは<span class="highlight">IV型アレルギー（遅延型）</span>に分類される。金属イオンがハプテンとして作用し、感作が成立する。</p>
+
+      <h3>アレルギーを起こしやすい金属</h3>
+      <div class="point-box">
+        <div class="point-box-title">パッチテスト陽性率が高い金属</div>
+        <p><span class="highlight">Ni, Co, Hg, Cr, Pd</span></p>
+        <p class="note">覚え方：「ニッコリ（Ni, Co）水銀（Hg）クロム（Cr）パラジウム（Pd）」</p>
+      </div>
+
+      <h3>アレルギー患者への材料選択</h3>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>Cr含有</th>
+          <th>Crアレルギー患者</th>
+        </tr>
+        <tr>
+          <td>PMMA</td>
+          <td>なし</td>
+          <td><span class="key">使用可</span></td>
+        </tr>
+        <tr>
+          <td>純チタン</td>
+          <td>なし</td>
+          <td><span class="key">使用可</span></td>
+        </tr>
+        <tr>
+          <td>ポリスルフォン</td>
+          <td>なし</td>
+          <td><span class="key">使用可</span></td>
+        </tr>
+        <tr>
+          <td>ステンレス鋼</td>
+          <td><span class="caution">あり</span></td>
+          <td>使用不可</td>
+        </tr>
+        <tr>
+          <td>磁性合金（磁性ステンレス鋼）</td>
+          <td><span class="caution">あり</span></td>
+          <td>使用不可</td>
+        </tr>
+      </table>
+
+      <h3>金属以外のアレルゲン</h3>
+      <ul>
+        <li><span class="key">レジンモノマー</span>（MMAなど）</li>
+        <li><span class="key">ユージノール</span></li>
+        <li><span class="key">ラテックス</span></li>
+      </ul>
+
+      <h2>内分泌撹乱物質</h2>
+      <p><span class="key">ビスフェノールA</span>：コンポジットレジンのモノマーである<span class="key">Bis-GMA</span>の原材料。環境ホルモン様作用をもち、生殖機能や発生への影響が懸念される。</p>
+
+      <h2>生物学的安全性評価</h2>
+      <p>歯科材料の安全性は段階的に評価される。</p>
+
+      <h3>評価試験の3段階</h3>
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>種類</th>
+          <th>主な試験</th>
+        </tr>
+        <tr>
+          <td>1次テスト</td>
+          <td><span class="key">in vitro試験</span><br>（試験管内）</td>
+          <td><span class="highlight">細胞毒性試験</span>★頻出<br>変異原性試験（遺伝毒性試験）<br>溶血試験</td>
+        </tr>
+        <tr>
+          <td>2次テスト</td>
+          <td><span class="key">in vivo試験</span><br>（生体内）</td>
+          <td>全身毒性試験<br>動物埋植試験（組織反応試験）<br>感作性試験・抗原性試験</td>
+        </tr>
+        <tr>
+          <td>3次テスト</td>
+          <td><span class="key">臨床的試験</span><br>（臨床類似テスト）</td>
+          <td>歯髄・象牙質使用模擬試験<br>覆髄試験<br>根管充填使用模擬試験</td>
+        </tr>
+      </table>
+      <p class="note">in vitro = 試験管内（人工環境）、in vivo = 生体内（動物実験）</p>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A108</div>
+        <p>細胞毒性が最も大きいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Al<br>
+          b Au<br>
+          c Ni<br>
+          d Si<br>
+          e Ti
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">Ni（ニッケル）が最も細胞毒性が大きい</span>。Al（アルミニウム）、Au（金）、Si（ケイ素）、Ti（チタン）はNiと比較して細胞毒性は低い。ニッケルは細胞毒性だけでなくアレルギー性ももっている。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A88</div>
+        <p>クロムアレルギー患者で使用可能な床用材料はどれか。すべて選べ。</p>
+        <div class="choices">
+          a PMMA<br>
+          b 磁性合金<br>
+          c 純チタン<br>
+          d ステンレス鋼<br>
+          e ポリスルフォン
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】クロムアレルギー患者には<span class="highlight">クロムを含有しない材料</span>を選択する。<span class="key">PMMA</span>（レジン）、<span class="key">純チタン</span>、<span class="key">ポリスルフォン</span>はクロムを含まない。<span class="caution">ステンレス鋼・磁性合金（磁性ステンレス鋼）はクロムを含有</span>するため使用不可。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

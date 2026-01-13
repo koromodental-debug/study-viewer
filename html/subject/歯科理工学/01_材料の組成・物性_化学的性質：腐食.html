@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>化学的性質：腐食 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の組成・物性</span>
+    <h1>化学的性質：腐食</h1>
+    <div class="container">
+
+      <h2>I. 腐食とは</h2>
+      <p><span class="key">腐食</span>：金属が環境との化学反応（主に酸化）により劣化する現象</p>
+      <p>金属イオンが溶出し、材料の性質が変化する</p>
+
+      <h2>II. イオン化傾向</h2>
+      <p>金属がイオンになりやすい順序（腐食のしやすさに関連）</p>
+
+      <div class="point-box">
+        <div class="point-box-title">イオン化傾向の順序</div>
+        <p style="font-size: 9pt;">K＞Ca＞Na＞Mg＞Al＞Mn＞Zn＞<span class="key">Cr</span>＞Fe＞Co＞<span class="key">Ni</span>＞Sn＞Pb＞H＞<span class="highlight">Cu＞Hg＞Ag＞Pt＞Au</span></p>
+        <p>←（大）イオン化傾向（小）→</p>
+        <p>←<span class="caution">卑金属</span>　　　　　　<span class="highlight">貴金属</span>→</p>
+      </div>
+
+      <h3>イオン化傾向と耐食性</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>イオン化傾向</th>
+          <th>耐食性</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">卑金属</td>
+          <td>大きい</td>
+          <td><span class="caution">低い</span></td>
+          <td>Fe, Ni, Cr, Co, Ti</td>
+        </tr>
+        <tr>
+          <td class="key">貴金属</td>
+          <td>小さい</td>
+          <td><span class="highlight">高い</span></td>
+          <td>Au, Pt, Ag, Pd</td>
+        </tr>
+      </table>
+      <p class="note">卑金属でも不動態皮膜により耐食性が良好なものもある</p>
+
+      <h2>III. 不動態皮膜（防食）</h2>
+      <p><span class="key">不動態皮膜</span>：金属表面に形成される<span class="highlight">緻密な酸化膜</span></p>
+      <ul>
+        <li>本来腐食されやすい（溶出しやすい）金属が保護される</li>
+        <li><span class="caution">貴金属系合金には存在しない</span>（そもそも耐食性が高い）</li>
+        <li><span class="key">クロム、チタン</span>を含む金属材料が不動態を形成しやすい</li>
+      </ul>
+
+      <h3>不動態皮膜を形成する金属</h3>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>不動態皮膜</th>
+          <th>含有元素</th>
+        </tr>
+        <tr>
+          <td class="key">チタン・チタン合金</td>
+          <td><span class="highlight">TiO₂</span></td>
+          <td>Ti</td>
+        </tr>
+        <tr>
+          <td class="key">ステンレス鋼</td>
+          <td><span class="highlight">Cr₂O₃</span></td>
+          <td>Cr（12%以上）</td>
+        </tr>
+        <tr>
+          <td class="key">コバルトクロム合金</td>
+          <td><span class="highlight">Cr₂O₃</span></td>
+          <td>Cr</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">不動態化する金属・しない金属</div>
+        <ul>
+          <li><span class="key">不動態化する</span>：チタン、ステンレス鋼、コバルトクロム合金</li>
+          <li><span class="caution">不動態化しない</span>：金合金、白金加金（貴金属系）</li>
+        </ul>
+        <p class="note">白金加金は貴金属系なので不動態化しない（そもそも耐食性が高い）</p>
+      </div>
+
+      <h2>IV. ガルバニ腐食</h2>
+      <p><span class="key">ガルバニ腐食</span>（異種金属接触腐食）：異なる金属が接触し電解質中にあると、イオン化傾向の大きい金属が腐食される現象</p>
+      <ul>
+        <li>口腔内は唾液（電解質）が存在する</li>
+        <li>異種金属の修復物が接触すると電流が流れる</li>
+        <li>疼痛やメタリックテイストの原因となる</li>
+      </ul>
+
+      <h2>V. 陶材焼付用金合金の酸化膜</h2>
+      <p>陶材焼付用金合金には<span class="key">インジウム（In）、スズ（Sn）</span>などが添加される</p>
+      <ul>
+        <li>ディギャッシング時に<span class="highlight">酸化膜を形成</span></li>
+        <li>陶材との<span class="key">化学的結合</span>に寄与</li>
+        <li>銅による陶材の変色を抑制する効果もある</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A70</div>
+        <p>歯科用白金加金線の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 高靱性<br>
+          b 超弾性<br>
+          c 不動態化<br>
+          d 時効硬化<br>
+          e 形状記憶
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】白金加金は<span class="key">高靱性</span>と<span class="key">時効硬化</span>（硬化熱処理）が特徴。<span class="caution">不動態化は誤り</span>。白金加金は貴金属系合金であり、不動態皮膜は形成しない（そもそも耐食性が高い）。超弾性、形状記憶はニッケルチタン合金の特徴。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A130</div>
+        <p>陶材焼付用金合金にインジウムを添加する理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 酸化膜の形成<br>
+          b 結晶粒の微細化<br>
+          c 熱膨張係数の低下<br>
+          d 合金の融解温度の低下<br>
+          e 銅による陶材の変色抑制
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】インジウム（In）やスズ（Sn）は、ディギャッシング時に<span class="highlight">酸化膜を形成</span>し、陶材との化学的結合に寄与する。銅による陶材の変色抑制はインジウムの副次的効果であり、主目的は酸化膜形成である。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

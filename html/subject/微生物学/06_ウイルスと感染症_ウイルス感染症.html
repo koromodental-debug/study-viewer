@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ウイルス感染症 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / ウイルスと感染症</span>
+    <h1>ウイルス感染症</h1>
+    <div class="container">
+
+      <h2>I. ウイルスの基本</h2>
+
+      <p><span class="key">ウイルス</span>は<span class="highlight">偏性細胞内寄生性</span>であり、生きた細胞内でのみ増殖できる。</p>
+
+      <h3>ウイルスの特徴</h3>
+      <ul>
+        <li>核酸は<span class="highlight">DNAかRNAのどちらか一方</span>のみ</li>
+        <li><span class="highlight">抗菌薬（抗生物質）は奏効しない</span></li>
+        <li>宿主特異性がある（特定細胞にのみ感染）</li>
+        <li>エンベロープの有無で分類される</li>
+      </ul>
+
+      <h3>ウイルスの構造</h3>
+      <table>
+        <tr>
+          <th>構造</th>
+          <th>エンベロープあり</th>
+          <th>エンベロープなし</th>
+        </tr>
+        <tr>
+          <td class="key">構成</td>
+          <td>ヌクレオカプシド＋エンベロープ</td>
+          <td>ヌクレオカプシドのみ</td>
+        </tr>
+        <tr>
+          <td class="key">消毒耐性</td>
+          <td>弱い（アルコール有効）</td>
+          <td>強い</td>
+        </tr>
+        <tr>
+          <td class="key">代表例</td>
+          <td>ヘルペス、インフルエンザ、HIV</td>
+          <td>ノロ、アデノ、ポリオ</td>
+        </tr>
+      </table>
+
+      <h2>II. 主なウイルス感染症</h2>
+
+      <h3>DNAウイルスによる感染症</h3>
+      <table>
+        <tr>
+          <th>ウイルス</th>
+          <th>疾患</th>
+        </tr>
+        <tr>
+          <td class="key">単純ヘルペスウイルス</td>
+          <td>ヘルペス性歯肉口内炎、<span class="highlight">帯状疱疹</span></td>
+        </tr>
+        <tr>
+          <td class="key">水痘帯状疱疹ウイルス</td>
+          <td>水痘（みずぼうそう）、帯状疱疹</td>
+        </tr>
+        <tr>
+          <td class="key">EBウイルス</td>
+          <td>伝染性単核球症</td>
+        </tr>
+        <tr>
+          <td class="key">B型肝炎ウイルス</td>
+          <td>B型肝炎</td>
+        </tr>
+      </table>
+
+      <h3>RNAウイルスによる感染症</h3>
+      <table>
+        <tr>
+          <th>ウイルス</th>
+          <th>疾患</th>
+        </tr>
+        <tr>
+          <td class="key">麻疹ウイルス</td>
+          <td><span class="highlight">麻疹</span>（はしか）、コプリック斑</td>
+        </tr>
+        <tr>
+          <td class="key">ムンプスウイルス</td>
+          <td><span class="highlight">流行性耳下腺炎</span>（おたふくかぜ）</td>
+        </tr>
+        <tr>
+          <td class="key">風疹ウイルス</td>
+          <td>風疹（三日はしか）</td>
+        </tr>
+        <tr>
+          <td class="key">インフルエンザウイルス</td>
+          <td>インフルエンザ</td>
+        </tr>
+        <tr>
+          <td class="key">ノロウイルス</td>
+          <td>感染性胃腸炎</td>
+        </tr>
+      </table>
+
+      <h2>III. ウイルス感染症の識別</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">ウイルス感染症 vs 細菌感染症</div>
+        <ul>
+          <li><span class="highlight">ウイルス感染症</span>：麻疹、帯状疱疹、流行性耳下腺炎、風疹、インフルエンザ</li>
+          <li><span class="caution">細菌感染症</span>：百日咳、ジフテリア、破傷風、結核</li>
+        </ul>
+      </div>
+
+      <h3>よく出る紛らわしい疾患</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>病原体</th>
+          <th>分類</th>
+        </tr>
+        <tr>
+          <td class="key">麻疹</td>
+          <td>麻疹ウイルス</td>
+          <td><span class="highlight">ウイルス</span></td>
+        </tr>
+        <tr>
+          <td class="key">百日咳</td>
+          <td>百日咳菌</td>
+          <td><span class="caution">細菌</span></td>
+        </tr>
+        <tr>
+          <td class="key">帯状疱疹</td>
+          <td>水痘帯状疱疹ウイルス</td>
+          <td><span class="highlight">ウイルス</span></td>
+        </tr>
+        <tr>
+          <td class="key">ジフテリア</td>
+          <td>ジフテリア菌</td>
+          <td><span class="caution">細菌</span></td>
+        </tr>
+        <tr>
+          <td class="key">流行性耳下腺炎</td>
+          <td>ムンプスウイルス</td>
+          <td><span class="highlight">ウイルス</span></td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115D40</div>
+        <p>ウイルス感染症はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 麻　疹<br>
+          b 百日咳<br>
+          c 帯状疱疹<br>
+          d ジフテリア<br>
+          e 流行性耳下腺炎
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】<span class="highlight">麻疹</span>（麻疹ウイルス）、<span class="highlight">帯状疱疹</span>（水痘帯状疱疹ウイルス）、<span class="highlight">流行性耳下腺炎</span>（ムンプスウイルス）がウイルス感染症。百日咳は<span class="caution">百日咳菌</span>、ジフテリアは<span class="caution">ジフテリア菌</span>による細菌感染症。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

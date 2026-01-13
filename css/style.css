@@ -5695,9 +5695,26 @@ body.is-practice .tab-content {
 
 /* 画像キャプチャ用：ダークモードでもライトモード風に描画 */
 .capture-light-mode,
-.capture-light-mode * {
+.capture-light-mode *,
+.capture-light-mode span,
+.capture-light-mode p,
+.capture-light-mode li,
+.capture-light-mode td,
+.capture-light-mode th,
+.capture-light-mode h1,
+.capture-light-mode h2,
+.capture-light-mode h3,
+.capture-light-mode .key,
+.capture-light-mode .highlight,
+.capture-light-mode .caution,
+.capture-light-mode mark,
+.capture-light-mode .keyword-highlight {
   color: #1c1c1e !important;
-  background-color: transparent !important;
+  -webkit-text-fill-color: #1c1c1e !important;
+}
+
+.capture-light-mode {
+  background-color: #ffffff !important;
 }
 
 .capture-light-mode table {
@@ -5712,12 +5729,6 @@ body.is-practice .tab-content {
 
 .capture-light-mode th {
   background-color: #f2f2f7 !important;
-}
-
-.capture-light-mode mark,
-.capture-light-mode .keyword-highlight {
-  background-color: #fff3cd !important;
-  color: #1c1c1e !important;
 }
 
 .flashcard-summary.collapsed .summary-chevron {

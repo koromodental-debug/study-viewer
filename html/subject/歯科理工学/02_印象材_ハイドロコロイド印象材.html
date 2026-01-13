@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ハイドロコロイド印象材 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 印象材</span>
+    <h1>ハイドロコロイド印象材</h1>
+    <div class="container">
+
+      <h2>ハイドロコロイド印象材とは</h2>
+      <p><span class="key">ハイドロコロイド</span>＝水を分散媒とするコロイド系の印象材</p>
+      <p>アルジネート印象材と寒天印象材の2種類がある。いずれも<span class="key">親水性</span>で、水分の吸収・放出により寸法変化を起こしやすい。</p>
+
+      <h2>アルジネート印象材</h2>
+
+      <h3>組成と役割</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>配合量</th>
+          <th>役割</th>
+        </tr>
+        <tr>
+          <td class="key">アルギン酸塩</td>
+          <td>12%</td>
+          <td>主成分（アルギン酸ナトリウム or カリウム）</td>
+        </tr>
+        <tr>
+          <td class="key">硫酸カルシウム</td>
+          <td>12%</td>
+          <td>硬化剤（Ca²⁺を供給）</td>
+        </tr>
+        <tr>
+          <td>珪藻土</td>
+          <td>70%</td>
+          <td>フィラー（強度・ねばり強さ）</td>
+        </tr>
+        <tr>
+          <td>リン酸三ナトリウム</td>
+          <td>2%</td>
+          <td>硬化反応調整剤（硬化時間の調整）</td>
+        </tr>
+      </table>
+      <p class="note">※アルギン酸：コンブ、ワカメなど褐藻類に含まれる天然多糖類</p>
+
+      <h3>硬化反応</h3>
+      <div class="point-box">
+        <div class="point-box-title">硬化機構のポイント</div>
+        <p>水溶性アルギン酸塩 + Ca²⁺ → 不溶性アルギン酸カルシウム</p>
+        <p><span class="highlight">カルボキシ基（-COO）がCa²⁺によりイオン架橋</span>して硬化</p>
+        <p>→ 不可逆性（一度硬化すると元に戻らない）</p>
+      </div>
+
+      <h3>特性</h3>
+      <table>
+        <tr>
+          <th>長所</th>
+          <th>短所</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>操作性に優れる</li>
+              <li>硬化が速い（練和水温度で調節可）</li>
+              <li><span class="highlight">弾性ひずみが大きい</span>（アンダーカット部の印象が可能）</li>
+              <li>親水性である</li>
+              <li><span class="highlight">安価</span>（経済性に優れる）</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li class="caution">経時的寸法変化が大きい</li>
+              <li class="caution">細部再現性に劣る</li>
+              <li>永久ひずみが大きい</li>
+              <li>弾性回復が遅い</li>
+              <li>強度が不足</li>
+              <li>石膏模型表面があれる</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <h2>寒天印象材</h2>
+
+      <h3>組成と役割</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>配合量</th>
+          <th>役割</th>
+        </tr>
+        <tr>
+          <td class="key">寒天（ガラクトース）</td>
+          <td>8〜15%</td>
+          <td>主成分（テングサなど紅藻類由来）</td>
+        </tr>
+        <tr>
+          <td>硫酸カリウム</td>
+          <td>1〜2%</td>
+          <td>石膏の硬化促進、表面あれ防止</td>
+        </tr>
+        <tr>
+          <td>水</td>
+          <td>70〜85%</td>
+          <td>寒天の溶媒</td>
+        </tr>
+      </table>
+
+      <h3>硬化反応（ゾル-ゲル転移）</h3>
+      <div class="point-box">
+        <div class="point-box-title">温度による状態変化</div>
+        <ul>
+          <li><span class="key">90℃以上</span>：ゾル化（流動性あり）</li>
+          <li><span class="key">65℃付近</span>：ゾル状態を維持</li>
+          <li><span class="key">40℃以下</span>：ゲル化（硬化）</li>
+        </ul>
+        <p>水素結合によるゲル化 → <span class="highlight">可逆性</span>（加熱で再びゾル化可能）</p>
+      </div>
+
+      <h3>特性</h3>
+      <table>
+        <tr>
+          <th>長所</th>
+          <th>短所</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li><span class="key">流動性に優れる</span></li>
+              <li><span class="key">細部再現性に優れる</span></li>
+              <li>弾性回復がよい（速い）</li>
+              <li>練和不要、材質が均一</li>
+              <li>親水性である</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>硬化後の強度が弱い</li>
+              <li class="caution">経時的寸法安定性が悪い</li>
+              <li>石膏模型表面があれやすい</li>
+              <li>熱による歯髄刺激性に注意</li>
+              <li class="caution">専用装置（コンディショナー）が必要</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <h2>アルジネートと寒天の比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>アルジネート</th>
+          <th>寒天</th>
+        </tr>
+        <tr>
+          <td class="key">硬化機構</td>
+          <td>イオン架橋（Ca²⁺）</td>
+          <td>水素結合（ゲル化）</td>
+        </tr>
+        <tr>
+          <td class="key">可逆性</td>
+          <td>不可逆性</td>
+          <td>可逆性</td>
+        </tr>
+        <tr>
+          <td class="key">細部再現性</td>
+          <td>劣る</td>
+          <td><span class="key">優れる</span></td>
+        </tr>
+        <tr>
+          <td class="key">弾性ひずみ</td>
+          <td><span class="key">大きい</span></td>
+          <td>大きい</td>
+        </tr>
+        <tr>
+          <td class="key">弾性回復</td>
+          <td>遅い</td>
+          <td><span class="key">速い</span></td>
+        </tr>
+        <tr>
+          <td class="key">操作性</td>
+          <td>簡便</td>
+          <td>専用装置が必要</td>
+        </tr>
+        <tr>
+          <td class="key">コスト</td>
+          <td><span class="key">安価</span></td>
+          <td>やや高価</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">109C91</div>
+        <p>アルジネート印象材の硬化反応に関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アミノ基<br>
+          b リン酸基<br>
+          c アルデヒド基<br>
+          d カルボキシ基<br>
+          e ヒドロキシ基
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】アルジネートの硬化は、アルギン酸の<span class="highlight">カルボキシ基（-COO）</span>がCa²⁺によってイオン架橋されることで起こる。水溶性のアルギン酸ナトリウムが、不溶性のアルギン酸カルシウムに変化して硬化する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A109</div>
+        <p>アルジネート印象材がレギュラータイプ付加型シリコーンゴム印象材よりも優れているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 弾　性<br>
+          b 経済性<br>
+          c 流動性<br>
+          d 細線再現性<br>
+          e 寸法安定性
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】アルジネートは<span class="highlight">弾性ひずみが大きい</span>ため、アンダーカット部の印象採得に有利。また<span class="highlight">安価</span>で経済性に優れる。一方、流動性・細線再現性・寸法安定性はシリコーンゴムが優れる。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li>アルジネートの硬化：<span class="highlight">カルボキシ基</span>がCa²⁺でイオン架橋</li>
+          <li>寒天の硬化：水素結合によるゲル化（可逆性）</li>
+          <li>アルジネートの長所：<span class="key">弾性</span>（大）と<span class="key">経済性</span>（安価）</li>
+          <li>共通の短所：寸法安定性に劣る、石膏表面があれる</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

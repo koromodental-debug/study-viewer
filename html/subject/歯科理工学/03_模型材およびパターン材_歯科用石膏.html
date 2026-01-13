@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯科用石膏 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 模型材およびパターン材</span>
+    <h1>歯科用石膏</h1>
+    <div class="container">
+
+      <h2>石膏の化学式と硬化反応</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">硬化反応の本質</div>
+        <p><span class="highlight">半水石膏 + 水 → 二水石膏</span></p>
+        <p>CaSO₄・1/2H₂O + 3/2H₂O → <span class="highlight">CaSO₄・2H₂O</span></p>
+        <p class="note">硬化した石膏 ＝ 硫酸カルシウム二水和物</p>
+      </div>
+
+      <h3>理論と実際の寸法変化</h3>
+      <ul>
+        <li><span class="key">理論上</span>：体積が減少（55.0→51.1cm³）→ 収縮するはず</li>
+        <li><span class="key">実際</span>：<span class="highlight">針状結晶の析出により膨張</span></li>
+      </ul>
+
+      <h2>石膏の種類と製法</h2>
+
+      <h3>半水石膏の種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>製法</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">β型半水石膏</td>
+          <td>大気中で乾式加熱（120〜130℃）</td>
+          <td>多孔質、混水比大</td>
+        </tr>
+        <tr>
+          <td class="key">α型半水石膏</td>
+          <td>オートクレーブで湿式加熱（120〜140℃）</td>
+          <td>緻密、混水比小</td>
+        </tr>
+      </table>
+
+      <h3>石膏の分類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>主成分</th>
+          <th>製法</th>
+        </tr>
+        <tr>
+          <td class="key">普通石膏</td>
+          <td>β型半水石膏</td>
+          <td>乾式加熱</td>
+        </tr>
+        <tr>
+          <td class="key">硬質石膏</td>
+          <td>α型半水石膏</td>
+          <td>湿式加熱</td>
+        </tr>
+        <tr>
+          <td class="key">超硬質石膏</td>
+          <td>α型半水石膏</td>
+          <td>湿式加熱＋減水剤</td>
+        </tr>
+      </table>
+
+      <h2>混水比と諸性質の比較</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>普通石膏</th>
+          <th>硬質石膏</th>
+          <th>超硬質石膏</th>
+        </tr>
+        <tr>
+          <td class="key">混水比（W/P）</td>
+          <td>0.40〜0.50</td>
+          <td>0.24〜0.26</td>
+          <td>0.20〜0.23</td>
+        </tr>
+        <tr>
+          <td class="key">硬化時間（分）</td>
+          <td>15〜30</td>
+          <td>10〜15</td>
+          <td>約15</td>
+        </tr>
+        <tr>
+          <td class="key">硬化膨張率（%）</td>
+          <td>&lt;0.3</td>
+          <td><span class="highlight">0.2〜0.3</span></td>
+          <td>0〜0.20</td>
+        </tr>
+        <tr>
+          <td class="key">圧縮強さ</td>
+          <td>弱（20〜40MPa）</td>
+          <td>中（60〜130MPa）</td>
+          <td>強（90〜150MPa）</td>
+        </tr>
+      </table>
+      <p class="note">※理論上の混水比：0.186（粉末100gに18.6mLの水）</p>
+
+      <div class="point-box">
+        <div class="point-box-title">普通石膏と硬質石膏の比較</div>
+        <ul>
+          <li><span class="highlight">共通</span>：化学式（CaSO₄・1/2H₂O）、硬化体結晶形状（針状結晶）</li>
+          <li><span class="key">異なる</span>：混水比、粉末粒径、硬化膨張率、強さ</li>
+        </ul>
+      </div>
+
+      <h2>硬化に影響する因子</h2>
+
+      <h3>硬化促進</h3>
+      <ul>
+        <li>練和速度が速い、練和時間が長い</li>
+        <li>水温が高い（10〜40℃の範囲）</li>
+        <li>硬化した石膏（二水石膏）がラバーボールに付着</li>
+        <li><span class="key">硬化促進剤</span>：塩化ナトリウム（5%食塩水）、硫酸塩</li>
+      </ul>
+
+      <h3>硬化遅延</h3>
+      <ul>
+        <li>混水比が大きい</li>
+        <li>印象材への血液の付着</li>
+        <li><span class="key">硬化遅延剤</span>：ホウ砂、クエン酸カリウム、コロイド</li>
+      </ul>
+
+      <h3>強さに影響する因子</h3>
+      <ul>
+        <li>石膏の種類：普通 ＜ 硬質 ＜ 超硬質</li>
+        <li>混水比：<span class="key">小さいほど強い</span></li>
+        <li>乾燥度：90%以上で強い</li>
+        <li>減圧下・器械練和：強くなる</li>
+        <li class="caution">気泡の存在：弱くなる</li>
+      </ul>
+
+      <h2>石膏を含む材料</h2>
+
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>石膏の役割</th>
+        </tr>
+        <tr>
+          <td class="key">アルジネート印象材</td>
+          <td>硫酸カルシウムが硬化剤（Ca²⁺供給）</td>
+        </tr>
+        <tr>
+          <td class="key">石膏系埋没材</td>
+          <td>結合材</td>
+        </tr>
+        <tr>
+          <td class="key">水硬性セメント</td>
+          <td>成分として含有</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">108C69</div>
+        <p>硬化した石膏はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 炭酸カルシウム半水和物<br>
+          b 炭酸カルシウム一水和物<br>
+          c 炭酸カルシウム二水和物<br>
+          d 硫酸カルシウム半水和物<br>
+          e 硫酸カルシウム二水和物
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】石膏は<span class="highlight">硫酸カルシウム</span>の水和物。硬化前は半水和物（CaSO₄・1/2H₂O）、硬化後は<span class="highlight">二水和物（CaSO₄・2H₂O）</span>となる。炭�ite カルシウムは大理石などの成分で石膏ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A59</div>
+        <p>普通石膏と硬質石膏で共通するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 化学式<br>
+          b 混水比<br>
+          c 粉末粒径<br>
+          d 硬化膨張率<br>
+          e 硬化体結晶形状
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】普通石膏（β型）も硬質石膏（α型）も<span class="highlight">化学式は同じCaSO₄・1/2H₂O</span>であり、硬化後は針状結晶を形成するため<span class="highlight">硬化体結晶形状も同じ</span>。混水比・粉末粒径・硬化膨張率は製法の違いにより異なる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D21</div>
+        <p>硬化した石膏の走査型電子顕微鏡像（別冊No.3）を別に示す。<br>この石膏の線硬化膨張率に最も近いのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D21_1.png" alt="石膏のSEM像">
+        </div>
+        <div class="choices">
+          a 0.01 %<br>
+          b 0.03%<br>
+          c 0.1 %<br>
+          d 0.3%<br>
+          e 1.0%
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】SEM像に見られる針状結晶は硬質石膏（α型半水石膏）の特徴。硬質石膏の硬化膨張率は<span class="highlight">0.2〜0.3%</span>であり、約0.3%が最も近い。普通石膏は0.3%未満、超硬質石膏は0.2%未満。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B45</div>
+        <p>成分に石膏を含んでいる材料はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 歯科用陶材<br>
+          b 水硬性セメント<br>
+          c アルジネート印象材<br>
+          d ガッタパーチャポイント<br>
+          e クリストバライト埋没材
+        </div>
+        <div class="answer">正解：b, c, e</div>
+        <p>【解説】<span class="key">アルジネート印象材</span>は硫酸カルシウムを硬化剤として含む。<span class="key">埋没材</span>（クリストバライト埋没材含む）は石膏を結合材として含む。<span class="key">水硬性セメント</span>も石膏を成分として含有。陶材やガッタパーチャは石膏を含まない。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li>硬化した石膏 ＝ <span class="highlight">硫酸カルシウム二水和物</span></li>
+          <li>普通石膏と硬質石膏の<span class="key">共通点</span>：化学式、硬化体結晶形状</li>
+          <li>硬質石膏の硬化膨張率：<span class="highlight">約0.3%</span></li>
+          <li>石膏を含む材料：アルジネート、埋没材、水硬性セメント</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

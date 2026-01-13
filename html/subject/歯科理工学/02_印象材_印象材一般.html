@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>印象材一般 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 印象材</span>
+    <h1>印象材一般</h1>
+    <div class="container">
+
+      <h2>印象材の分類</h2>
+
+      <h3>硬化後の弾性による分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>印象材</th>
+        </tr>
+        <tr>
+          <td class="key">弾性印象材</td>
+          <td>アルジネート、寒天、ゴム質印象材（シリコーン、ポリエーテル、ポリサルファイド）</td>
+        </tr>
+        <tr>
+          <td class="key">非弾性印象材</td>
+          <td>印象用石膏、モデリングコンパウンド、酸化亜鉛ユージノール、印象用ワックス</td>
+        </tr>
+      </table>
+
+      <h3>硬化方法による分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>印象材</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">化学反応で硬化<br>（不可逆性）</td>
+          <td>アルジネート、ゴム質印象材、印象用石膏、酸化亜鉛ユージノール</td>
+          <td>一度硬化すると元に戻らない</td>
+        </tr>
+        <tr>
+          <td class="key">熱的反応で硬化<br>（可逆性）</td>
+          <td>寒天、モデリングコンパウンド、印象用ワックス</td>
+          <td>加熱で軟化、冷却で硬化を繰り返せる</td>
+        </tr>
+      </table>
+
+      <h2>硬化機構の比較</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">硬化機構のポイント</div>
+        <ul>
+          <li><span class="highlight">共有結合で硬化するのは付加型シリコーンのみ</span></li>
+          <li>縮合反応で硬化 → 副産物を放出（寸法安定性↓）</li>
+          <li>イオン架橋・水素結合 → 親水性が高い</li>
+        </ul>
+      </div>
+
+      <h3>各印象材の硬化機構と副産物</h3>
+      <table>
+        <tr>
+          <th>印象材</th>
+          <th>硬化機構</th>
+          <th>副産物</th>
+        </tr>
+        <tr>
+          <td class="key">付加型シリコーン</td>
+          <td><span class="highlight">共有結合（付加重合）</span></td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>縮合型シリコーン</td>
+          <td>縮合反応</td>
+          <td class="caution">アルコール</td>
+        </tr>
+        <tr>
+          <td>ポリサルファイド</td>
+          <td>縮合反応（脱水縮合）</td>
+          <td class="caution">水</td>
+        </tr>
+        <tr>
+          <td>ポリエーテル</td>
+          <td>カチオン開環重合</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>アルジネート</td>
+          <td>イオン架橋（Ca²⁺）</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>寒天</td>
+          <td>水素結合（ゲル化）</td>
+          <td>なし</td>
+        </tr>
+      </table>
+
+      <h2>物性の比較</h2>
+
+      <h3>寸法安定性</h3>
+      <p><span class="highlight">付加型シリコーン</span> ＞ ポリエーテル ＞ 縮合型シリコーン ＞ ポリサルファイド ＞ アルジネート・寒天</p>
+      <p class="note">※副産物を放出しない印象材ほど寸法安定性に優れる</p>
+
+      <h3>永久ひずみ（小さいほど良い）</h3>
+      <p><span class="highlight">付加型シリコーンが最小</span> ＜ ポリエーテル ＜ 縮合型シリコーン ＜ ポリサルファイド ＜ アルジネート・寒天</p>
+
+      <h3>弾性回復</h3>
+      <p>付加型シリコーン・ポリエーテル（速い） ＞ 縮合型シリコーン ＞ <span class="caution">アルジネート・ポリサルファイド（遅い）</span></p>
+
+      <h3>親水性と消毒薬への耐性</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>印象材</th>
+          <th>消毒薬浸漬の影響</th>
+        </tr>
+        <tr>
+          <td class="key">親水性（高い）</td>
+          <td>アルジネート、寒天、ポリエーテル</td>
+          <td class="caution">寸法変化しやすい</td>
+        </tr>
+        <tr>
+          <td class="key">疎水性</td>
+          <td>シリコーンゴム、モデリングコンパウンド</td>
+          <td><span class="highlight">寸法変化が少ない</span></td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">114C30</div>
+        <p>共有結合で硬化する印象材はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 寒天印象材<br>
+          b アルジネート印象材<br>
+          c アクリル系機能印象材<br>
+          d 酸化亜鉛ユージノール印象材<br>
+          e 付加型シリコーンゴム印象材
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】付加型シリコーンは、ビニル基（CH₂=CH-）とSiH基が付加重合（共有結合）して硬化する。他の印象材はイオン架橋（アルジネート）、水素結合（寒天）、キレート結合（酸化亜鉛ユージノール）で硬化する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A54</div>
+        <p>消毒薬液への浸漬による寸法変化が少ない印象材はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 寒　天<br>
+          b アルジネート<br>
+          c シリコーンゴム<br>
+          d ポリエーテルゴム<br>
+          e モデリングコンパウンド
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】親水性の高い印象材（寒天、アルジネート、ポリエーテル）は消毒薬液を吸収して膨張しやすい。疎水性のシリコーンゴムとモデリングコンパウンドは薬液の影響を受けにくく、寸法変化が少ない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D43</div>
+        <p>5種類の印象材（アルジネート、付加型シリコーンゴム、ポリエーテルゴム、酸化亜鉛ユージノール、ポリサルファイドゴム：ア〜オのいずれかに該当）による円柱形（直径13mm、高さ20mm）硬化体に一定の荷重を負荷（加重）し、30秒後に除重した際の時間-変形曲線を図に示す。<br>付加型シリコーンゴム印象材はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D43_1.png" alt="時間-変形曲線">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】付加型シリコーンは<span class="highlight">永久ひずみが最も小さく</span>、弾性回復に優れる。図では、除重後に変形がほぼ完全に回復するウが該当する。アルジネートやポリサルファイドは永久ひずみが大きく、酸化亜鉛ユージノールは非弾性印象材のため弾性回復がない。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li><span class="highlight">付加型シリコーン</span>は寸法安定性・弾性回復・永久ひずみすべてで最優秀</li>
+          <li>共有結合で硬化 → 副産物なし → 寸法安定性良好</li>
+          <li>消毒薬浸漬に強いのは<span class="key">疎水性</span>の印象材</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

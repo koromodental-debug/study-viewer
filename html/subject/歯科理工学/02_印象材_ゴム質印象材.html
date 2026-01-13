@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ゴム質印象材 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 印象材</span>
+    <h1>ゴム質印象材</h1>
+    <div class="container">
+
+      <h2>ゴム質印象材の種類</h2>
+      <p>ゴム質印象材は4種類あり、いずれも<span class="key">弾性印象材</span>かつ<span class="key">不可逆性</span>（化学反応で硬化）である。</p>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>硬化機構</th>
+          <th>副生成物</th>
+        </tr>
+        <tr>
+          <td class="key">付加型シリコーン</td>
+          <td><span class="highlight">付加重合（共有結合）</span></td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>縮合型シリコーン</td>
+          <td>縮合反応</td>
+          <td class="caution">アルコール</td>
+        </tr>
+        <tr>
+          <td>ポリエーテル</td>
+          <td>カチオン開環重合</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>ポリサルファイド</td>
+          <td>脱水縮合</td>
+          <td class="caution">水</td>
+        </tr>
+      </table>
+
+      <h2>付加型シリコーンゴム印象材</h2>
+
+      <h3>組成</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">基材</td>
+          <td>ポリジメチルシロキサン</td>
+        </tr>
+        <tr>
+          <td class="key">反応剤</td>
+          <td>ポリジメチルシロキサン（SiH基を持つ）</td>
+        </tr>
+        <tr>
+          <td class="key">触媒</td>
+          <td><span class="highlight">白金系触媒</span>（塩化白金酸）</td>
+        </tr>
+      </table>
+
+      <h3>硬化反応</h3>
+      <div class="point-box">
+        <div class="point-box-title">付加重合（重合反応）</div>
+        <p>末端のビニル基（CH₂=CH-）とSiH基が<span class="highlight">共有結合</span>で架橋</p>
+        <p>→ 副生成物を生じない → 寸法安定性に優れる</p>
+      </div>
+
+      <h3>特性</h3>
+      <table>
+        <tr>
+          <th>長所</th>
+          <th>短所</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li><span class="highlight">寸法安定性が最も優れる</span></li>
+              <li>硬化が速い</li>
+              <li><span class="highlight">永久ひずみが最も小さい</span></li>
+              <li>弾性ひずみが小さい</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>温度の影響を受けやすい</li>
+              <li>硬化時に水素ガス発生（石膏に気泡）</li>
+              <li class="caution">ラテックスグローブで硬化阻害</li>
+              <li>疎水性（親水性に劣る）</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <h2>縮合型シリコーンゴム印象材</h2>
+
+      <h3>組成</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">基材</td>
+          <td>ポリジメチルシロキサン</td>
+        </tr>
+        <tr>
+          <td class="key">反応剤</td>
+          <td>エチルシリケート</td>
+        </tr>
+        <tr>
+          <td class="key">触媒</td>
+          <td>有機金属化合物（カプリル酸スズ）</td>
+        </tr>
+      </table>
+
+      <h3>硬化反応と特性</h3>
+      <p>縮合反応により硬化し、<span class="caution">アルコール（C₂H₅OH）を副生成物として放出</span>する。</p>
+      <p>→ アルコール揮発により収縮 → 付加型より<span class="caution">寸法安定性に劣る</span></p>
+
+      <h2>ポリエーテルゴム印象材</h2>
+
+      <h3>組成と硬化</h3>
+      <p>基材：ポリエーテル、反応促進剤：パラトルエンスルホン酸メチル</p>
+      <p>硬化：<span class="key">カチオン開環重合</span>（副生成物なし）</p>
+
+      <h3>特性</h3>
+      <ul>
+        <li>寸法安定性に優れる（付加型シリコーンと同等）</li>
+        <li>永久ひずみ・弾性ひずみが小さい</li>
+        <li><span class="caution">親水性</span>（吸水により膨張する）</li>
+      </ul>
+
+      <h2>ポリサルファイドゴム印象材</h2>
+
+      <h3>組成と硬化</h3>
+      <p>基材：チオコールゴムLP2（メルカプト基＝SH基を持つ）</p>
+      <p>硬化：脱水縮合反応（<span class="caution">水を副生成物として放出</span>）</p>
+
+      <h3>特性</h3>
+      <ul>
+        <li class="caution">寸法安定性に劣る</li>
+        <li>永久ひずみが大きい（ゴム質印象材中で最大）</li>
+        <li>弾性回復が遅い</li>
+        <li>硬化時間が長い</li>
+        <li>特有の臭い（イオウ含有）</li>
+        <li>歯科用合金と接着しやすい</li>
+      </ul>
+
+      <h2>ゴム質印象材の比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>付加型シリコーン</th>
+          <th>縮合型シリコーン</th>
+          <th>ポリエーテル</th>
+          <th>ポリサルファイド</th>
+        </tr>
+        <tr>
+          <td class="key">寸法安定性</td>
+          <td><span class="highlight">最良</span></td>
+          <td>やや劣る</td>
+          <td>良好</td>
+          <td class="caution">劣る</td>
+        </tr>
+        <tr>
+          <td class="key">永久ひずみ</td>
+          <td><span class="highlight">最小</span></td>
+          <td>小</td>
+          <td>小</td>
+          <td class="caution">大</td>
+        </tr>
+        <tr>
+          <td class="key">弾性回復</td>
+          <td>速い</td>
+          <td>速い</td>
+          <td>速い</td>
+          <td class="caution">遅い</td>
+        </tr>
+        <tr>
+          <td class="key">親水性</td>
+          <td>疎水性</td>
+          <td>疎水性</td>
+          <td><span class="key">親水性</span></td>
+          <td>疎水性</td>
+        </tr>
+        <tr>
+          <td class="key">副生成物</td>
+          <td>なし</td>
+          <td>アルコール</td>
+          <td>なし</td>
+          <td>水</td>
+        </tr>
+      </table>
+
+      <h2>稠度タイプの違い</h2>
+
+      <h3>稠度による分類</h3>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>稠度</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td class="key">ヘビーボディ（パテ）</td>
+          <td>高稠度</td>
+          <td>トレーに盛る</td>
+        </tr>
+        <tr>
+          <td>レギュラーボディ</td>
+          <td>中稠度</td>
+          <td>汎用</td>
+        </tr>
+        <tr>
+          <td class="key">ライトボディ（インジェクション）</td>
+          <td>低稠度</td>
+          <td>シリンジで注入</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">稠度タイプによる違い</div>
+        <ul>
+          <li><span class="key">異なるもの</span>：稠度、弾性ひずみ、細部再現性、引き裂き強度</li>
+          <li><span class="highlight">同等なもの：寸法安定性</span>（材料が同じなら稠度に関係なく同等）</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">106A100</div>
+        <p>付加型シリコーンゴム印象材で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 離液現象を生じる。<br>
+          b 重合反応で硬化する。<br>
+          c 組成に白金系触媒を含む。<br>
+          d 硬化反応で副生成物を生じる。<br>
+          e ヘビーボディータイプはシリンジに入れて用いる。
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】付加型シリコーンは<span class="highlight">付加重合（重合反応）</span>で硬化し、<span class="highlight">白金系触媒</span>（塩化白金酸）を含む。副生成物は生じない（dは誤り）。離液現象はハイドロコロイドに見られる（aは誤り）。ヘビーボディはトレーに盛る（eは誤り）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A66</div>
+        <p>築造窩洞の印象採得を行った。印象面の写真（別冊No.9）を別に示す。<br>使用した2種類の印象材で同等であるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109A66_1.png" alt="印象面の写真">
+        </div>
+        <div class="choices">
+          a 稠　度<br>
+          b 弾性ひずみ<br>
+          c 細部再現性<br>
+          d 寸法安定性<br>
+          e 引き裂き強度
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】写真はヘビーボディとライトボディの2層印象。同じ材料（付加型シリコーン）であれば、稠度タイプが異なっても<span class="highlight">寸法安定性は同等</span>。稠度、弾性ひずみ、細部再現性、引き裂き強度はフィラー量の違いにより異なる。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li>付加型シリコーン：<span class="highlight">白金触媒</span>、<span class="highlight">重合反応</span>、副生成物なし</li>
+          <li>寸法安定性：付加型シリコーン ＞ ポリエーテル ＞ 縮合型 ＞ ポリサルファイド</li>
+          <li>稠度タイプが違っても<span class="key">寸法安定性は同等</span></li>
+          <li>親水性があるのは<span class="key">ポリエーテル</span>のみ</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -212,10 +212,7 @@
 
       const topicId = item.dataset.topicId;
       if (topicId) {
-        const topic = DATA.find(d => d.id === topicId);
-        if (topic) {
-          loadHtmlContent(topic);
-        }
+        selectItem(topicId);
       }
     });
   }
@@ -1208,6 +1205,7 @@
     // ウェルカム画面を非表示
     if (elements.welcomeScreen) {
       elements.welcomeScreen.classList.add('hidden');
+      elements.welcomeScreen.style.display = 'none';
     }
 
     // 無限スクロール用：開始インデックスをセット

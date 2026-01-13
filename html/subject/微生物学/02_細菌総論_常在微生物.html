@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>常在微生物 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 細菌総論</span>
+    <h1>常在微生物</h1>
+    <div class="container">
+
+      <h2>I. 部位別の主要常在菌</h2>
+
+      <p><span class="key">常在微生物（常在菌叢）</span>とは、健常者の体表面や体腔に定着している微生物群のこと。部位によって構成が異なる。</p>
+
+      <h3>部位別常在菌の一覧</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>主要常在菌</th>
+          <th>特徴・役割</th>
+        </tr>
+        <tr style="background:#E8F4FD">
+          <td class="key">口腔（舌背）</td>
+          <td><span class="highlight">Streptococcus salivarius</span></td>
+          <td>舌乳頭に定着、唾液中に多い</td>
+        </tr>
+        <tr>
+          <td class="key">口腔（歯面）</td>
+          <td>S. sanguinis、S. gordonii</td>
+          <td>初期定着菌、ペリクルに付着</td>
+        </tr>
+        <tr style="background:#E8F4FD">
+          <td class="key">皮膚</td>
+          <td><span class="highlight">Staphylococcus属</span><br><span class="note">（表皮ブドウ球菌など）</span></td>
+          <td>皮脂を分解、病原菌の定着を阻止</td>
+        </tr>
+        <tr style="background:#E8F4FD">
+          <td class="key">膣</td>
+          <td><span class="highlight">Lactobacillus属</span><br><span class="note">（デーデルライン桿菌）</span></td>
+          <td>乳酸産生→膣内を酸性に保つ</td>
+        </tr>
+        <tr>
+          <td class="key">腸管（成人）</td>
+          <td>Bacteroides属<br>Bifidobacterium属<br>大腸菌など</td>
+          <td>消化補助、ビタミン合成</td>
+        </tr>
+        <tr style="background:#E8F4FD">
+          <td class="key">腸管（母乳児）</td>
+          <td><span class="highlight">Bifidobacterium属</span></td>
+          <td>母乳中のオリゴ糖を利用</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">常在菌の役割</div>
+        <ul>
+          <li><span class="key">定着阻止</span>：病原菌の定着を競合的に阻止</li>
+          <li><span class="key">免疫刺激</span>：免疫系の発達・維持に関与</li>
+          <li><span class="key">代謝補助</span>：ビタミン合成、消化補助</li>
+        </ul>
+      </div>
+
+      <h2>II. 口腔の常在菌</h2>
+
+      <h3>口腔内レンサ球菌の分類</h3>
+      <table>
+        <tr>
+          <th>グループ</th>
+          <th>代表菌種</th>
+          <th>定着部位</th>
+        </tr>
+        <tr>
+          <td class="key">Salivarius群</td>
+          <td><span class="highlight">S. salivarius</span></td>
+          <td><span class="highlight">舌背</span>、唾液</td>
+        </tr>
+        <tr>
+          <td class="key">Mitis群</td>
+          <td>S. sanguinis<br>S. gordonii<br>S. oralis</td>
+          <td>歯面（初期定着）</td>
+        </tr>
+        <tr>
+          <td class="key">Mutans群</td>
+          <td>S. mutans<br>S. sobrinus</td>
+          <td>歯面（齲蝕原性）</td>
+        </tr>
+        <tr>
+          <td class="key">Anginosus群</td>
+          <td>S. intermedius<br>S. anginosus</td>
+          <td>歯肉溝、膿瘍形成</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116C83</div>
+        <p>ヒトの舌背を主たる定着部位とするのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Streptococcus mutans<br>
+          b Streptococcus pyogenes<br>
+          c Streptococcus sanguinis<br>
+          d Streptococcus salivarius<br>
+          e Streptococcus intermedius
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">S. salivarius</span>は舌背の乳頭に定着し、唾液中に最も多いレンサ球菌。S. mutansは歯面、S. sanguinisも歯面の初期定着菌、S. pyogenesは咽頭の病原菌、S. intermediusは歯肉溝。</p>
+      </div>
+
+      <h2>III. 皮膚の常在菌</h2>
+
+      <p><span class="key">Staphylococcus属</span>（ブドウ球菌属）が主要な常在菌。</p>
+
+      <h3>皮膚常在ブドウ球菌</h3>
+      <table>
+        <tr>
+          <th>菌種</th>
+          <th>コアグラーゼ</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">表皮ブドウ球菌<br><span class="note">S. epidermidis</span></td>
+          <td style="text-align:center">陰性</td>
+          <td>皮膚の主要常在菌、日和見感染</td>
+        </tr>
+        <tr>
+          <td class="key">黄色ブドウ球菌<br><span class="note">S. aureus</span></td>
+          <td style="text-align:center">陽性</td>
+          <td>鼻腔に常在、病原性あり</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113D28</div>
+        <p>皮膚の主要常在細菌はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Clostridium属<br>
+          b Enterococcus属<br>
+          c Lactobacillus属<br>
+          d Staphylococcus属<br>
+          e Bifidobacterium属
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">Staphylococcus属</span>（特に表皮ブドウ球菌）が皮膚の主要常在菌。Clostridiumは腸管、Enterococcusは腸管、Lactobacillusは膣・腸管、Bifidobacteriumは腸管。</p>
+      </div>
+
+      <h2>IV. 膣・腸管の常在菌</h2>
+
+      <h3>膣の常在菌</h3>
+      <p><span class="key">デーデルライン桿菌</span>（<span class="highlight">Lactobacillus属</span>）が膣内に常在し、<span class="key">乳酸</span>を産生して膣内を<span class="highlight">酸性（pH 4〜5）</span>に保つ。これにより病原菌の増殖を抑制する。</p>
+
+      <div class="question-box">
+        <div class="q-number">112A21</div>
+        <p>デーデルライン〈Doderlein〉桿菌が常在するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 胃<br>
+          b 膣<br>
+          c 口腔<br>
+          d 大腸<br>
+          e 皮膚
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">デーデルライン桿菌</span>（Lactobacillus属）は<span class="highlight">膣</span>に常在し、乳酸産生により膣内を酸性に保って感染防御に寄与する。</p>
+      </div>
+
+      <h3>腸内細菌叢</h3>
+      <table>
+        <tr>
+          <th>栄養形態</th>
+          <th>優勢菌</th>
+          <th>特徴</th>
+        </tr>
+        <tr style="background:#E8F4FD">
+          <td class="key">母乳栄養児</td>
+          <td><span class="highlight">Bifidobacterium属</span></td>
+          <td>母乳中のオリゴ糖を利用<br>腸内細菌叢が単純</td>
+        </tr>
+        <tr>
+          <td class="key">人工栄養児</td>
+          <td>多様（Bacteroides等）</td>
+          <td>腸内細菌叢が複雑</td>
+        </tr>
+        <tr>
+          <td class="key">成人</td>
+          <td>Bacteroides属<br>Bifidobacterium属</td>
+          <td>嫌気性菌が優勢</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115A40</div>
+        <p>母乳栄養児の腸内細菌叢で割合が高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Bacteroides属<br>
+          b Clostridium属<br>
+          c Enterobacter属<br>
+          d Lactobacillus属<br>
+          e Bifidobacterium属
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">母乳栄養児</span>では<span class="highlight">Bifidobacterium属</span>（ビフィズス菌）が腸内細菌叢の大部分を占める。母乳中のオリゴ糖がBifidobacteriumの増殖を促進する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

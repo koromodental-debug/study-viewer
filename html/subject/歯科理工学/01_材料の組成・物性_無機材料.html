@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>無機材料 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の組成・物性</span>
+    <h1>無機材料</h1>
+    <div class="container">
+
+      <h2>I. 無機材料の分類</h2>
+      <p>無機材料は<span class="key">セラミックス</span>と<span class="key">金属</span>に大別される。</p>
+
+      <h3>セラミックス vs 金属</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>セラミックス</th>
+          <th>金属</th>
+        </tr>
+        <tr>
+          <td>結合</td>
+          <td><span class="highlight">共有結合・イオン結合</span></td>
+          <td><span class="highlight">金属結合</span></td>
+        </tr>
+        <tr>
+          <td>結合力</td>
+          <td>大</td>
+          <td>大</td>
+        </tr>
+        <tr>
+          <td>機械的性質</td>
+          <td>硬いが<span class="highlight">脆い（脆性）</span></td>
+          <td>硬く粘り強い</td>
+        </tr>
+        <tr>
+          <td>展延性</td>
+          <td><span class="caution">なし</span></td>
+          <td><span class="highlight">大</span></td>
+        </tr>
+        <tr>
+          <td>弾性係数</td>
+          <td>大</td>
+          <td>中〜大</td>
+        </tr>
+        <tr>
+          <td>熱膨張係数</td>
+          <td>小</td>
+          <td>中</td>
+        </tr>
+        <tr>
+          <td>熱・電気伝導性</td>
+          <td>小（絶縁体）</td>
+          <td><span class="highlight">大</span></td>
+        </tr>
+        <tr>
+          <td>化学的安定性</td>
+          <td>安定</td>
+          <td>腐食あり</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">脆性と展延性</div>
+        <ul>
+          <li><span class="key">脆性</span>：塑性変形をほとんど示さず破壊する性質（セラミックス）</li>
+          <li><span class="key">展延性</span>：塑性変形により薄く延ばせる性質（金属）</li>
+        </ul>
+        <p class="note">金属は自由電子の存在により展延性を持つ</p>
+      </div>
+
+      <h2>II. セラミックスの特徴</h2>
+      <h3>結合と物性</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>結合</td>
+          <td>共有結合（150〜700 kJ/mol）、イオン結合（600〜1,000 kJ/mol）</td>
+        </tr>
+        <tr>
+          <td>硬さ</td>
+          <td>高い（ジルコニア 1,250 HK）</td>
+        </tr>
+        <tr>
+          <td>強度</td>
+          <td>圧縮強さ：大、<span class="caution">引張強さ：小</span></td>
+        </tr>
+        <tr>
+          <td>破壊様式</td>
+          <td><span class="highlight">脆性破壊</span>（塑性変形なし）</td>
+        </tr>
+        <tr>
+          <td>弾性係数</td>
+          <td>大（ジルコニア 200〜250 GPa）</td>
+        </tr>
+        <tr>
+          <td>熱膨張係数</td>
+          <td>小（陶材 4〜10 ×10<sup>-6</sup>/℃）</td>
+        </tr>
+      </table>
+
+      <h2>III. セラミックスの分類</h2>
+      <h3>酸化物系と非酸化物系</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>材料</th>
+          <th>化学式</th>
+        </tr>
+        <tr>
+          <td rowspan="4" class="key">酸化物系</td>
+          <td>シリカ</td>
+          <td>SiO<sub>2</sub></td>
+        </tr>
+        <tr>
+          <td>アルミナ</td>
+          <td>Al<sub>2</sub>O<sub>3</sub></td>
+        </tr>
+        <tr>
+          <td>ジルコニア</td>
+          <td>ZrO<sub>2</sub></td>
+        </tr>
+        <tr>
+          <td>酸化チタン（チタニア）</td>
+          <td>TiO<sub>2</sub></td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="key">炭化物系</td>
+          <td>ダイヤモンド</td>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>炭化ケイ素（カーボランダム）</td>
+          <td>SiC</td>
+        </tr>
+        <tr>
+          <td>タングステンカーバイド</td>
+          <td>WC</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">水化物</td>
+          <td>石膏</td>
+          <td>CaSO<sub>4</sub>・2H<sub>2</sub>O</td>
+        </tr>
+        <tr>
+          <td>ハイドロキシアパタイト</td>
+          <td>Ca<sub>10</sub>(PO<sub>4</sub>)<sub>6</sub>(OH)<sub>2</sub></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">炭素を含むセラミックス</div>
+        <ul>
+          <li><span class="key">ダイヤモンド</span>（C）：純粋な炭素の結晶</li>
+          <li><span class="key">炭化ケイ素</span>（SiC）：カーボランダム、研削材</li>
+          <li><span class="key">タングステンカーバイド</span>（WC）：超硬合金の成分</li>
+        </ul>
+        <p class="note">シリカ（SiO<sub>2</sub>）、チタニア（TiO<sub>2</sub>）は酸化物であり炭素を含まない</p>
+      </div>
+
+      <h2>IV. 歯科材料に用いられるセラミックス</h2>
+      <h3>酸化物系セラミックス</h3>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td class="key">シリカ（SiO<sub>2</sub>）</td>
+          <td>陶材、埋没材、コンポジットレジン、セメント</td>
+        </tr>
+        <tr>
+          <td class="key">アルミナ（Al<sub>2</sub>O<sub>3</sub>）</td>
+          <td>陶材、オールセラミックス、インプラント、研磨材</td>
+        </tr>
+        <tr>
+          <td class="key">ジルコニア（ZrO<sub>2</sub>）</td>
+          <td>オールセラミックス、インプラント</td>
+        </tr>
+        <tr>
+          <td>酸化亜鉛（ZnO）</td>
+          <td>セメント、研磨材</td>
+        </tr>
+        <tr>
+          <td>酸化チタン（TiO<sub>2</sub>）</td>
+          <td>着色剤（陶材、アクリルレジン）</td>
+        </tr>
+      </table>
+
+      <h3>炭化物・水化物</h3>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td class="key">ダイヤモンド</td>
+          <td>研削材、研磨材</td>
+        </tr>
+        <tr>
+          <td class="key">炭化ケイ素（SiC）</td>
+          <td>研削材</td>
+        </tr>
+        <tr>
+          <td class="key">石膏</td>
+          <td>模型材、印象材、埋没材</td>
+        </tr>
+        <tr>
+          <td class="key">ハイドロキシアパタイト</td>
+          <td>骨補填材、インプラント</td>
+        </tr>
+      </table>
+
+      <h2>V. 金属の特徴</h2>
+      <h3>金属結合と自由電子</h3>
+      <p>金属は<span class="highlight">金属結合</span>により結合し、<span class="key">自由電子</span>の存在が特有の性質をもたらす。</p>
+
+      <table>
+        <tr>
+          <th>性質</th>
+          <th>原因</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">展延性</span></td>
+          <td>自由電子により原子間の滑りが可能</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">熱・電気伝導性</span></td>
+          <td>自由電子が熱・電気を伝達</td>
+        </tr>
+        <tr>
+          <td>金属光沢</td>
+          <td>自由電子が光を反射</td>
+        </tr>
+      </table>
+
+      <h3>歯科用金属の例</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>材料</th>
+        </tr>
+        <tr>
+          <td class="key">貴金属</td>
+          <td>金合金、金銀パラジウム合金、白金加金</td>
+        </tr>
+        <tr>
+          <td class="key">卑金属</td>
+          <td>チタン合金、コバルトクロム合金、ステンレス鋼</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A104</div>
+        <p>脆性材料はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Ti<br>
+          b Au<br>
+          c SiO<sub>2</sub><br>
+          d PMMA<br>
+          e Bis-GMA
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">SiO<sub>2</sub>（シリカ）</span>はセラミックスであり、<span class="highlight">脆性材料</span>である。Ti（チタン）、Au（金）は金属で展延性を持つ。PMMA、Bis-GMAは有機材料（高分子）で塑性変形を示す。セラミックスは共有結合・イオン結合により硬いが、塑性変形をほとんど示さず脆性破壊する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C36</div>
+        <p>炭素を含むセラミックスはどれか。すべて選べ。</p>
+        <div class="choices">
+          a シリカ<br>
+          b チタニア<br>
+          c ダイヤモンド<br>
+          d カーボランダム<br>
+          e タングステンカーバイド
+        </div>
+        <div class="answer">正解：c, d, e</div>
+        <p>【解説】<span class="key">ダイヤモンド</span>（C）は純粋な炭素の結晶。<span class="key">カーボランダム</span>は炭化ケイ素（SiC）の別名。<span class="key">タングステンカーバイド</span>（WC）は炭化タングステン。いずれも炭素を含む。シリカ（SiO<sub>2</sub>）とチタニア（TiO<sub>2</sub>）は酸化物であり、炭素を含まない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

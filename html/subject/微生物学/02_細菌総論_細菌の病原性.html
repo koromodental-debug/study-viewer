@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細菌の病原性 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 細菌総論</span>
+    <h1>細菌の病原性</h1>
+    <div class="container">
+
+      <h2>I. 芽胞</h2>
+
+      <p><span class="key">芽胞</span>とは、一部の<span class="highlight">グラム陽性菌</span>が不利な環境下で形成する、極めて耐久性の高い構造体である。</p>
+
+      <h3>芽胞の特徴</h3>
+      <ul>
+        <li>ペプチドグリカンを再構成して形成</li>
+        <li>核（遺伝子）を保護し、長期生存を可能にする</li>
+        <li><span class="highlight">熱、薬品、乾燥、紫外線に強い耐性</span>を持つ</li>
+        <li>100℃の煮沸でも死滅しない</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">芽胞の殺菌法</div>
+        <p><span class="highlight">オートクレーブ（高圧蒸気滅菌）：121℃・20分間</span></p>
+        <p class="note">歯科診療室での滅菌に必須の知識</p>
+      </div>
+
+      <h3>芽胞形成菌</h3>
+      <table>
+        <tr>
+          <th>属</th>
+          <th>代表的な菌</th>
+          <th>疾患</th>
+        </tr>
+        <tr>
+          <td class="key">Bacillus属<br><span class="note">好気性</span></td>
+          <td><span class="highlight">炭疽菌</span><br>枯草菌</td>
+          <td>炭疽（皮膚・肺・腸）</td>
+        </tr>
+        <tr>
+          <td class="key">Clostridium属<br><span class="note">嫌気性</span></td>
+          <td>破傷風菌<br>ボツリヌス菌<br>ウェルシュ菌<br>ディフィシル菌</td>
+          <td>破傷風<br>ボツリヌス症<br>ガス壊疽<br>偽膜性大腸炎</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107C94</div>
+        <p>芽胞形成性細菌はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 炭疽菌<br>
+          b 緑膿菌<br>
+          c 黄色ブドウ球菌<br>
+          d 肺炎レンサ球菌<br>
+          e 肺炎マイコプラズマ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">炭疽菌</span>（Bacillus anthracis）はグラム陽性桿菌で芽胞を形成する。他の選択肢はいずれも芽胞を形成しない。緑膿菌はグラム陰性桿菌、黄色ブドウ球菌・肺炎レンサ球菌はグラム陽性球菌だが芽胞非形成、マイコプラズマは細胞壁を持たない。</p>
+      </div>
+
+      <h2>II. 細菌毒素</h2>
+
+      <p>細菌の産生する毒素は<span class="key">外毒素</span>と<span class="key">内毒素</span>に大別される。</p>
+
+      <h3>外毒素と内毒素の比較</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>外毒素</th>
+          <th>内毒素</th>
+        </tr>
+        <tr>
+          <td class="key">産生菌</td>
+          <td>主にグラム陽性菌</td>
+          <td><span class="highlight">グラム陰性菌</span></td>
+        </tr>
+        <tr>
+          <td class="key">化学本体</td>
+          <td>タンパク質</td>
+          <td><span class="highlight">リポ多糖（LPS）</span></td>
+        </tr>
+        <tr>
+          <td class="key">存在部位</td>
+          <td>菌体外に分泌</td>
+          <td>菌体成分（外膜）</td>
+        </tr>
+        <tr>
+          <td class="key">放出時期</td>
+          <td>生菌が分泌</td>
+          <td><span class="caution">菌の死滅・溶解時</span></td>
+        </tr>
+        <tr>
+          <td class="key">熱安定性</td>
+          <td><span class="caution">不安定（60℃で失活）</span></td>
+          <td><span class="highlight">安定（100℃でも活性維持）</span></td>
+        </tr>
+        <tr>
+          <td class="key">ホルマリン処理</td>
+          <td>無毒化される（トキソイド）</td>
+          <td><span class="caution">無毒化されない</span></td>
+        </tr>
+        <tr>
+          <td class="key">作用</td>
+          <td>特異的（各毒素固有）</td>
+          <td>非特異的（発熱、ショック等）</td>
+        </tr>
+        <tr>
+          <td class="key">免疫原性</td>
+          <td>強い（抗体産生）</td>
+          <td>弱い</td>
+        </tr>
+      </table>
+
+      <h3>内毒素（エンドトキシン）の作用機序</h3>
+      <ul>
+        <li><span class="highlight">補体を活性化</span>する（副経路）</li>
+        <li><span class="highlight">宿主の受容体（TLR4）に作用</span>する</li>
+        <li>マクロファージを活性化し、TNF-α、IL-1などのサイトカインを放出させる</li>
+        <li>発熱、血圧低下、DIC（播種性血管内凝固）を引き起こす</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">102A72</div>
+        <p>内毒素で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 熱に弱い。<br>
+          b 補体を活性化する。<br>
+          c 生きた細菌が放出する。<br>
+          d 宿主の受容体に作用する。<br>
+          e ホルマリンで無毒化される。
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ×：内毒素は<span class="caution">熱に強い</span>（100℃でも安定）</li>
+          <li>b ○：<span class="highlight">補体を活性化</span>する（副経路）</li>
+          <li>c ×：内毒素は菌体成分であり、<span class="caution">菌の死滅時に放出</span>される</li>
+          <li>d ○：<span class="highlight">TLR4（Toll様受容体4）に作用</span>する</li>
+          <li>e ×：<span class="caution">ホルマリンで無毒化されない</span>（外毒素は無毒化される）</li>
+        </ul>
+      </div>
+
+      <h3>代表的な外毒素</h3>
+      <table>
+        <tr>
+          <th>毒素</th>
+          <th>産生菌</th>
+          <th>作用・疾患</th>
+        </tr>
+        <tr>
+          <td class="key">破傷風毒素</td>
+          <td>破傷風菌</td>
+          <td>痙性麻痺（強直性痙攣）</td>
+        </tr>
+        <tr>
+          <td class="key">ボツリヌス毒素</td>
+          <td>ボツリヌス菌</td>
+          <td>弛緩性麻痺</td>
+        </tr>
+        <tr>
+          <td class="key">ジフテリア毒素</td>
+          <td>ジフテリア菌</td>
+          <td>タンパク質合成阻害</td>
+        </tr>
+        <tr>
+          <td class="key">コレラ毒素</td>
+          <td>コレラ菌</td>
+          <td>水様性下痢</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

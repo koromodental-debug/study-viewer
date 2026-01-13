@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>プラーク - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 口腔微生物</span>
+    <h1>プラーク（デンタルプラーク）</h1>
+    <div class="container">
+
+      <h2>I. プラークの構成菌</h2>
+
+      <p><span class="key">デンタルプラーク</span>は歯面に形成される細菌性バイオフィルム。約700種類の細菌が存在する。</p>
+
+      <h3>グラム染色による分類</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>球菌</th>
+          <th>桿菌</th>
+        </tr>
+        <tr style="background:#E8F0FF">
+          <td class="key">グラム陽性</td>
+          <td><span class="highlight">Streptococcus</span><br><span class="highlight">Enterococcus</span></td>
+          <td><span class="highlight">Actinomyces</span><br><span class="highlight">Propionibacterium</span></td>
+        </tr>
+        <tr style="background:#FFE8E8">
+          <td class="key">グラム陰性</td>
+          <td>Veillonella<br>Neisseria</td>
+          <td>Fusobacterium<br>Prevotella<br>Porphyromonas</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112A30</div>
+        <p>デンタルプラーク中に存在するグラム陽性球菌はどれか。2つ選べ。</p>
+        <div class="choices">
+          a Actinomyces<br>
+          b Enterococcus<br>
+          c Neisseria<br>
+          d Streptococcus<br>
+          e Veillonella
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】グラム陽性球菌は<span class="highlight">Enterococcus</span>と<span class="highlight">Streptococcus</span>。Actinomycesはグラム陽性<span class="caution">桿菌</span>。Neisseria・Veillonellaはグラム<span class="caution">陰性</span>球菌。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C63</div>
+        <p>デンタルプラーク中のグラム陽性桿菌はどれか。2つ選べ。</p>
+        <div class="choices">
+          a Actinomyces viscosus<br>
+          b Bacillus subtilis<br>
+          c Porphyromonas gingivalis<br>
+          d Propionibacterium acnes<br>
+          e Staphylococcus aureus
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】グラム陽性桿菌は<span class="highlight">Actinomyces viscosus</span>と<span class="highlight">Propionibacterium acnes</span>。Bacillusは土壌菌、P. gingivalisはグラム陰性桿菌、S. aureusはグラム陽性<span class="caution">球菌</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C24</div>
+        <p>口腔常在細菌はどれか。3つ選べ。</p>
+        <div class="choices">
+          a Corynebacterium diphtheriae<br>
+          b Fusobacterium nucleatum<br>
+          c Lactobacillus casei<br>
+          d Mycobacterium tuberculosis<br>
+          e Streptococcus sanguinis
+        </div>
+        <div class="answer">正解：b, c, e</div>
+        <p>【解説】口腔常在菌は<span class="highlight">F. nucleatum</span>、<span class="highlight">L. casei</span>、<span class="highlight">S. sanguinis</span>。C. diphtheriaeはジフテリア菌（咽頭の病原菌）、M. tuberculosisは結核菌。</p>
+      </div>
+
+      <h2>II. プラークの成熟過程</h2>
+
+      <h3>成熟に伴う菌叢の変化</h3>
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>優勢菌</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">初期<br><span class="note">（0〜2日）</span></td>
+          <td><span class="highlight">Streptococcus</span><br>S. sanguinis, S. oralis</td>
+          <td>好気性・通性嫌気性菌<br>ペリクルに付着</td>
+        </tr>
+        <tr>
+          <td class="key">中期<br><span class="note">（3〜7日）</span></td>
+          <td><span class="highlight">Fusobacterium</span><br>F. nucleatum</td>
+          <td>架橋菌として凝集に介在<br>菌種の多様化</td>
+        </tr>
+        <tr>
+          <td class="key">成熟期<br><span class="note">（1〜2週以降）</span></td>
+          <td>偏性嫌気性菌<br>グラム陰性桿菌</td>
+          <td>歯周病原菌が増加<br>複雑なバイオフィルム</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">成熟の流れ（覚え方）</div>
+        <p><span class="highlight">S → F → N</span>（Streptococcus → Fusobacterium → Nocardia等の嫌気性菌）</p>
+        <p class="note">初期の好気性菌が酸素を消費 → 嫌気的環境 → 嫌気性菌が増加</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A41</div>
+        <p>歯肉縁上プラークの成熟に伴うプラーク内のStreptococcus（S）、Nocardia（N）及びFusobacterium（F）の割合の変化を模式図に示す。組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a S ─ N ─ F<br>
+          b S ─ F ─ N<br>
+          c N ─ S ─ F<br>
+          d F ─ N ─ S<br>
+          e F ─ S ─ N
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】プラーク成熟の順序は<span class="highlight">Streptococcus → Fusobacterium → Nocardia</span>。初期は好気性のStreptococcus、次にFusobacteriumが架橋菌として増加、最後に嫌気性のNocardia等が増加する。</p>
+      </div>
+
+      <h2>III. 成熟プラークの特徴</h2>
+
+      <h3>表層部 vs 深層部</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th style="text-align:center">表層部</th>
+          <th style="text-align:center">深層部</th>
+        </tr>
+        <tr>
+          <td class="key">酸素濃度</td>
+          <td style="text-align:center">高い</td>
+          <td style="text-align:center">低い</td>
+        </tr>
+        <tr>
+          <td class="key">酸化還元電位</td>
+          <td style="text-align:center">高い</td>
+          <td style="text-align:center"><span class="highlight">低い</span></td>
+        </tr>
+        <tr>
+          <td class="key">代謝産物</td>
+          <td style="text-align:center">少ない</td>
+          <td style="text-align:center"><span class="highlight">多い</span></td>
+        </tr>
+        <tr>
+          <td class="key">優勢菌</td>
+          <td style="text-align:center">好気性菌</td>
+          <td style="text-align:center">嫌気性菌</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109C89</div>
+        <p>成熟プラークで表層部に比べた深層部の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a pHが高い。<br>
+          b 緩衝能が高い。<br>
+          c 代謝産物が多い。<br>
+          d 嫌気性菌が少ない。<br>
+          e 酸化還元電位が低い。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】深層部は酸素が少なく<span class="highlight">酸化還元電位が低い</span>（嫌気的環境）。また、細菌の<span class="highlight">代謝産物が蓄積</span>する。嫌気性菌は深層部に<span class="caution">多い</span>（少なくない）。</p>
+      </div>
+
+      <h2>IV. クオラムセンシング</h2>
+
+      <p><span class="key">クオラムセンシング</span>とは、細菌が自らの菌密度を感知し、遺伝子発現を制御する機構。</p>
+
+      <h3>機構</h3>
+      <ul>
+        <li>細菌が<span class="highlight">オートインデューサー</span>（シグナル分子）を分泌</li>
+        <li>菌密度が高まると濃度が上昇</li>
+        <li>閾値を超えると受容体に結合 → 遺伝子発現が変化</li>
+        <li><span class="key">バイオフィルム形成</span>や病原因子産生を制御</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">115C87</div>
+        <p>クオラムセンシング機構でプラーク細菌が感知しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 補体<br>
+          b サイトカイン<br>
+          c 免疫グロブリン<br>
+          d 副腎皮質ホルモン<br>
+          e オートインデューサー
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】クオラムセンシングでは<span class="highlight">オートインデューサー</span>（細菌が産生するシグナル分子）を感知する。補体・サイトカイン・免疫グロブリンは宿主由来、副腎皮質ホルモンはステロイドホルモン。</p>
+      </div>
+
+      <h2>V. 歯性感染症</h2>
+
+      <div class="question-box">
+        <div class="q-number">104A96</div>
+        <p>歯性感染症の閉鎖膿瘍から分離される頻度が高いのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Serratia<br>
+          b Neisseria<br>
+          c Prevotella<br>
+          d Enterococcus<br>
+          e Peptostreptococcus（Finegoldia、Micromonas）
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】閉鎖膿瘍からは<span class="highlight">嫌気性菌</span>が高頻度で分離される。<span class="highlight">Prevotella</span>（グラム陰性嫌気性桿菌）と<span class="highlight">Peptostreptococcus</span>（グラム陽性嫌気性球菌）が代表的。Serratiaは腸内細菌、Neisseriaは好気性菌。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

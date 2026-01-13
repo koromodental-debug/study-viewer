@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>機械的性質：硬さ - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の組成・物性</span>
+    <h1>機械的性質：硬さ</h1>
+    <div class="container">
+
+      <h2>I. 硬さの分類</h2>
+      <h3>静的な硬さと動的な硬さ</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>評価方法</th>
+          <th>試験法</th>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">静的な硬さ</td>
+          <td>押し込み（塑性変形）</td>
+          <td>ヌープ、ビッカース、ブリネル</td>
+        </tr>
+        <tr>
+          <td>引っかき</td>
+          <td>モース、マルテンス</td>
+        </tr>
+        <tr>
+          <td class="key">動的な硬さ</td>
+          <td>弾性反発</td>
+          <td>ショア</td>
+        </tr>
+      </table>
+
+      <h2>II. 押し込み硬さ試験法</h2>
+      <p>圧子を材料に押し込み、<span class="key">圧痕の大きさ</span>から硬さを算出する。</p>
+
+      <h3>3つの押し込み硬さ試験法</h3>
+      <table>
+        <tr>
+          <th>試験法</th>
+          <th>記号</th>
+          <th>圧子の材質</th>
+          <th>圧痕の形状</th>
+          <th>算出方法</th>
+        </tr>
+        <tr>
+          <td class="key">ヌープ硬さ</td>
+          <td>HK</td>
+          <td>ダイヤモンド</td>
+          <td><span class="highlight">菱形（細長い）</span></td>
+          <td><span class="highlight">対角線長軸</span>の長さ</td>
+        </tr>
+        <tr>
+          <td class="key">ビッカース硬さ</td>
+          <td>HV</td>
+          <td>ダイヤモンド</td>
+          <td><span class="highlight">正方形</span></td>
+          <td>対角線の長さ</td>
+        </tr>
+        <tr>
+          <td class="key">ブリネル硬さ</td>
+          <td>HB</td>
+          <td><span class="caution">鋼球</span></td>
+          <td><span class="highlight">円形</span></td>
+          <td>圧痕の直径</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ヌープ硬さの特徴</div>
+        <ul>
+          <li>圧痕が<span class="highlight">菱形（細長い）</span>：長軸と短軸の比が約7:1</li>
+          <li><span class="key">対角線長軸</span>の長さから硬さを算出</li>
+          <li>歯科材料の硬さ測定に最もよく使用される</li>
+          <li>薄い試料や脆い材料の測定に適する</li>
+        </ul>
+      </div>
+
+      <h2>III. その他の硬さ試験法</h2>
+      <h3>引っかき硬さ</h3>
+      <table>
+        <tr>
+          <th>試験法</th>
+          <th>原理</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">モース硬さ</td>
+          <td>鉱物同士を引っかき合う</td>
+          <td>1（滑石）〜10（ダイヤモンド）の10段階</td>
+        </tr>
+        <tr>
+          <td class="key">マルテンス硬さ</td>
+          <td>ダイヤモンド針で引っかく</td>
+          <td>引っかき溝の幅から算出</td>
+        </tr>
+      </table>
+
+      <h3>弾性反発硬さ</h3>
+      <table>
+        <tr>
+          <th>試験法</th>
+          <th>原理</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">ショア硬さ</td>
+          <td>ハンマーを落下させ跳ね返り高さを測定</td>
+          <td>弾性応答から評価（動的な硬さ）</td>
+        </tr>
+      </table>
+
+      <h2>IV. 代表的な歯科材料の硬さ</h2>
+      <h3>ヌープ硬さ（HK）の比較</h3>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>ヌープ硬さ（HK）</th>
+        </tr>
+        <tr>
+          <td class="key">ジルコニア</td>
+          <td><span class="highlight">1,250</span></td>
+        </tr>
+        <tr>
+          <td class="key">陶材</td>
+          <td>460</td>
+        </tr>
+        <tr>
+          <td class="key">エナメル質</td>
+          <td><span class="highlight">370</span></td>
+        </tr>
+        <tr>
+          <td>コバルトクロム合金</td>
+          <td>300〜400</td>
+        </tr>
+        <tr>
+          <td>タイプ4金合金</td>
+          <td>200〜270</td>
+        </tr>
+        <tr>
+          <td>アマルガム</td>
+          <td>110</td>
+        </tr>
+        <tr>
+          <td class="key">象牙質</td>
+          <td><span class="highlight">68</span></td>
+        </tr>
+        <tr>
+          <td>コンポジットレジン</td>
+          <td>50〜100</td>
+        </tr>
+        <tr>
+          <td>セメント質</td>
+          <td>43</td>
+        </tr>
+        <tr>
+          <td>リン酸亜鉛セメント</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>純金</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>アクリルレジン</td>
+          <td>16〜20</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">歯質の硬さの順序</div>
+        <p><span class="highlight">エナメル質（370）＞ 象牙質（68）＞ セメント質（43）</span></p>
+        <p class="note">エナメル質は象牙質の約5倍の硬さ</p>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110C89</div>
+        <p>菱形圧痕部の対角線長軸の長さで算出する硬さはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ヌープ<br>
+          b モース<br>
+          c ブリネル<br>
+          d ビッカース<br>
+          e ロックウェル
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">ヌープ硬さ</span>は菱形（細長い）の圧痕を形成し、<span class="key">対角線長軸の長さ</span>から硬さを算出する。ビッカース硬さは正方形の圧痕（対角線の長さ）、ブリネル硬さは円形の圧痕（直径）から算出する。モース硬さは引っかき法、ロックウェル硬さは押し込み深さから算出する方法である。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細菌の検査 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 細菌総論</span>
+    <h1>細菌の検査</h1>
+    <div class="container">
+
+      <h2>I. グラム染色</h2>
+
+      <p>細菌を<span class="key">グラム陽性菌</span>と<span class="key">グラム陰性菌</span>に分類する基本的な染色法。</p>
+
+      <h3>染色手順</h3>
+      <table>
+        <tr>
+          <th>順序</th>
+          <th>試薬</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td class="key"><span class="highlight">クリスタルバイオレット</span></td>
+          <td>一次染色（青紫色）</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="key">ルゴール液（ヨウ素）</td>
+          <td>媒染（色素を固定）</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td class="key">アルコール</td>
+          <td>脱色</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td class="key"><span class="highlight">サフラニン</span>（フクシン）</td>
+          <td>対比染色（赤色）</td>
+        </tr>
+      </table>
+
+      <h3>染色結果</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th style="text-align:center">色</th>
+          <th>理由</th>
+          <th>代表菌</th>
+        </tr>
+        <tr style="background:#E8F0FF">
+          <td class="key">グラム陽性菌</td>
+          <td style="text-align:center"><span class="highlight">青紫色</span></td>
+          <td>ペプチドグリカン層が<span class="key">厚い</span><br>→脱色されにくい</td>
+          <td>ブドウ球菌<br>レンサ球菌<br>破傷風菌</td>
+        </tr>
+        <tr style="background:#FFE8E8">
+          <td class="key">グラム陰性菌</td>
+          <td style="text-align:center"><span class="highlight">赤色</span></td>
+          <td>ペプチドグリカン層が<span class="key">薄い</span><br>→脱色される</td>
+          <td>大腸菌<br>緑膿菌<br>コレラ菌</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112D37</div>
+        <p>Gram染色で陽性に染める色素はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ヨウ素<br>
+          b フクシン<br>
+          c サフラニン<br>
+          d ヘマトキシリン<br>
+          e クリスタルバイオレット
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">クリスタルバイオレット</span>が一次染色でグラム陽性菌を青紫色に染める。ヨウ素は媒染剤、サフラニン・フクシンは対比染色（陰性菌を赤く染める）、ヘマトキシリンは組織染色用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B74</div>
+        <p>グラム染色で青紫色に染まるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Vibrio cholerae<br>
+          b Clostridium tetani<br>
+          c Helicobacter pylori<br>
+          d Staphylococcus aureus<br>
+          e Haemophilus influenzae
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】グラム陽性菌が青紫色に染まる。<span class="highlight">Clostridium tetani</span>（破傷風菌）と<span class="highlight">Staphylococcus aureus</span>（黄色ブドウ球菌）がグラム陽性。他はすべてグラム陰性菌。</p>
+      </div>
+
+      <h2>II. 薬剤感受性試験</h2>
+
+      <p>抗菌薬に対する細菌の感受性を測定する試験。</p>
+
+      <h3>感受性試験の種類</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>測定内容</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">MIC法</span><br><span class="note">（最小発育阻止濃度）</span></td>
+          <td>菌の<span class="key">発育を阻止</span>する<br>最小の薬剤濃度</td>
+          <td>静菌作用を評価</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">MBC法</span><br><span class="note">（最小殺菌濃度）</span></td>
+          <td>菌を<span class="key">殺菌</span>する<br>最小の薬剤濃度</td>
+          <td>殺菌作用を評価</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">ディスク法</span></td>
+          <td>阻止円の直径</td>
+          <td>簡便、定性的</td>
+        </tr>
+        <tr>
+          <td class="key">微量液体希釈法</td>
+          <td>MIC値</td>
+          <td>定量的、自動化可能</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">MICとMBCの関係</div>
+        <p>通常、<span class="highlight">MBC ≧ MIC</span>（殺菌には発育阻止より高濃度が必要）</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B58</div>
+        <p>薬剤感受性を測定する方法はどれか。2つ選べ。</p>
+        <div class="choices">
+          a MIC法<br>
+          b MBC法<br>
+          c ELISA法<br>
+          d Ouchterlony法<br>
+          e Western blot法
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">MIC法</span>と<span class="highlight">MBC法</span>が薬剤感受性試験。ELISA・Western blotは抗原抗体反応を利用した検出法、Ouchterlony法は沈降反応（免疫拡散法）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C82</div>
+        <p>抗菌薬感受性を測定する方法はどれか。2つ選べ。</p>
+        <div class="choices">
+          a ディスク法<br>
+          b Ouchterlony法<br>
+          c 微量液体希釈法<br>
+          d 酵素結合免疫測定〈ELISA〉法<br>
+          e Polymerase Chain Reaction〈PCR〉法
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】<span class="highlight">ディスク法</span>と<span class="highlight">微量液体希釈法</span>が抗菌薬感受性試験。PCR法は遺伝子増幅、ELISA法は抗原検出。</p>
+      </div>
+
+      <h2>III. 細菌検査法の比較</h2>
+
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th style="text-align:center">生菌</th>
+          <th style="text-align:center">死菌</th>
+          <th>特徴</th>
+        </tr>
+        <tr style="background:#E8F4FD">
+          <td class="key"><span class="highlight">培養法</span></td>
+          <td style="text-align:center">○</td>
+          <td style="text-align:center"><span class="caution">×</span></td>
+          <td>生菌のみ検出、感受性試験可能</td>
+        </tr>
+        <tr>
+          <td class="key">PCR法</td>
+          <td style="text-align:center">○</td>
+          <td style="text-align:center">○</td>
+          <td>DNA増幅、高感度、迅速</td>
+        </tr>
+        <tr>
+          <td class="key">ELISA法</td>
+          <td style="text-align:center">○</td>
+          <td style="text-align:center">○</td>
+          <td>抗原抗体反応を利用</td>
+        </tr>
+        <tr>
+          <td class="key">間接蛍光抗体法</td>
+          <td style="text-align:center">○</td>
+          <td style="text-align:center">○</td>
+          <td>抗体で菌を検出</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">106A60</div>
+        <p>プラークを用いた歯周病原細菌検査で生菌のみを検出することが可能なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 培養法<br>
+          b 間接蛍光抗体法<br>
+          c トリプシン活性測定法<br>
+          d 酵素結合免疫測定〈ELISA〉法<br>
+          e Polymerase Chain Reaction〈PCR〉法
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">培養法</span>は生きた細菌のみが増殖するため、生菌のみを検出できる。PCR法は死菌のDNAも増幅するため、生死を区別できない。</p>
+      </div>
+
+      <h2>IV. 特殊染色・同定試験</h2>
+
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>対象微生物</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">コアグラーゼ試験</span></td>
+          <td><span class="highlight">黄色ブドウ球菌</span>（血漿凝固）</td>
+        </tr>
+        <tr>
+          <td class="key">Ziehl-Neelsen染色</td>
+          <td>抗酸菌（結核菌など）</td>
+        </tr>
+        <tr>
+          <td class="key">ASO試験</td>
+          <td>A群レンサ球菌感染</td>
+        </tr>
+        <tr>
+          <td class="key">Weil-Felix反応</td>
+          <td>リケッチア感染</td>
+        </tr>
+        <tr>
+          <td class="key">Giemsa染色</td>
+          <td>マラリア原虫、スピロヘータ</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109A67</div>
+        <p>微生物と検査法の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 抗酸菌 ———— Giemsa染色<br>
+          b チフス菌 ———— Weil-Felix反応<br>
+          c ジフテリア菌 ———— ASO試験<br>
+          d 黄色ブドウ球菌 ———— コアグラーゼ試験<br>
+          e 梅毒トレポネーマ ———— Ziehl-Neelsen染色
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">黄色ブドウ球菌はコアグラーゼ試験</span>陽性（血漿を凝固させる）。抗酸菌はZiehl-Neelsen染色、Weil-Felix反応はリケッチア、ASO試験はA群レンサ球菌、梅毒はSTS・TPHA法。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

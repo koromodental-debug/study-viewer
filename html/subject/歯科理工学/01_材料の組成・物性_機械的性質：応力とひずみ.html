@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>機械的性質：応力とひずみ - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula { background: var(--bg-secondary); padding: 8px 16px; border-radius: 8px; font-family: monospace; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の組成・物性</span>
+    <h1>機械的性質：応力とひずみ</h1>
+    <div class="container">
+
+      <h2>I. 応力とひずみの定義</h2>
+      <h3>応力（Stress）</h3>
+      <p>単位面積あたりに加わる力</p>
+      <div class="formula">応力 = 荷重 ／ 断面積　（単位：MPa, N/mm<sup>2</sup>）</div>
+
+      <h3>ひずみ（Strain）</h3>
+      <p>元の長さに対する変形量の割合</p>
+      <div class="formula">ひずみ = 変形量（Δl）／ 元の長さ（l）　（無次元）</div>
+
+      <h2>II. 応力-ひずみ曲線</h2>
+      <h3>曲線上の各点</h3>
+      <table>
+        <tr>
+          <th>点</th>
+          <th>名称</th>
+          <th>定義</th>
+        </tr>
+        <tr>
+          <td class="key">P</td>
+          <td><span class="highlight">比例限</span></td>
+          <td>応力とひずみが<span class="key">直線関係</span>にある最大応力</td>
+        </tr>
+        <tr>
+          <td class="key">L</td>
+          <td><span class="highlight">弾性限</span></td>
+          <td>荷重除去で<span class="key">ひずみがゼロに復帰</span>する最大応力</td>
+        </tr>
+        <tr>
+          <td class="key">Y</td>
+          <td><span class="highlight">降伏点</span></td>
+          <td>急に変形が大きくなる目安の応力</td>
+        </tr>
+        <tr>
+          <td class="key">M</td>
+          <td><span class="highlight">最大強さ（引張強さ）</span></td>
+          <td>最大応力</td>
+        </tr>
+        <tr>
+          <td class="key">X</td>
+          <td>破断強さ</td>
+          <td>破断（破壊）時の応力</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">弾性変形と塑性変形</div>
+        <ul>
+          <li><span class="key">弾性変形</span>：荷重除去で元に戻る変形（弾性限以下）</li>
+          <li><span class="key">塑性変形</span>：荷重除去でも残る<span class="highlight">永久変形</span>（弾性限超過）</li>
+        </ul>
+        <p class="note">降伏点を超えると急激に塑性変形が進む</p>
+      </div>
+
+      <h2>III. 弾性係数（ヤング率）</h2>
+      <p><span class="highlight">弾性係数</span>は応力-ひずみ曲線の<span class="key">直線部分の傾き</span>であり、<span class="key">変形のしにくさ</span>を表す。</p>
+      <div class="formula">弾性係数（E）= 応力 ／ ひずみ　（単位：GPa）</div>
+
+      <h3>材料別の弾性係数</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>材料</th>
+          <th>弾性係数（GPa）</th>
+        </tr>
+        <tr>
+          <td rowspan="4">金属</td>
+          <td>コバルトクロム合金</td>
+          <td><span class="highlight">200〜220</span></td>
+        </tr>
+        <tr>
+          <td>純チタン（2種）</td>
+          <td>100〜110</td>
+        </tr>
+        <tr>
+          <td>タイプ4金合金</td>
+          <td>90〜100</td>
+        </tr>
+        <tr>
+          <td>金銀パラジウム合金</td>
+          <td>90〜100</td>
+        </tr>
+        <tr>
+          <td rowspan="3">セラミックス</td>
+          <td>ジルコニア</td>
+          <td><span class="highlight">200〜250</span></td>
+        </tr>
+        <tr>
+          <td>アルミナ</td>
+          <td>200〜220</td>
+        </tr>
+        <tr>
+          <td>陶材（長石質）</td>
+          <td>60〜100</td>
+        </tr>
+        <tr>
+          <td rowspan="2">有機材料</td>
+          <td>コンポジットレジン</td>
+          <td>5〜25</td>
+        </tr>
+        <tr>
+          <td>アクリルレジン</td>
+          <td><span class="highlight">2〜5</span></td>
+        </tr>
+        <tr>
+          <td rowspan="2">歯質</td>
+          <td>エナメル質</td>
+          <td>50〜80</td>
+        </tr>
+        <tr>
+          <td>象牙質</td>
+          <td>12〜20</td>
+        </tr>
+      </table>
+
+      <h2>IV. エネルギー</h2>
+      <h3>レジリエンスと靱性</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>定義</th>
+          <th>曲線上の領域</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">レジリエンス</span><br>（弾性エネルギー）</td>
+          <td><span class="key">塑性変形するまで</span>の貯蔵エネルギー</td>
+          <td>△OBP（弾性限までの面積）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">靱性</span><br>（タフネス）</td>
+          <td><span class="key">破断するまで</span>の貯蔵エネルギー（粘り強さ）</td>
+          <td>□OPXC（全体の面積）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">弾性係数とレジリエンスの関係</div>
+        <p><span class="highlight">弾性限が同じ</span>材料では、<span class="highlight">弾性係数が小さい</span>ほど<span class="highlight">レジリエンスが大きい</span></p>
+        <p class="note">弾性係数が小さい → 同じ応力で大きく変形 → 面積（エネルギー）が大きい</p>
+      </div>
+
+      <h2>V. 強さの種類</h2>
+      <h3>圧縮強さ・曲げ強さ</h3>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>圧縮強さ（MPa）</th>
+          <th>曲げ強さ（MPa）</th>
+        </tr>
+        <tr>
+          <td>ジルコニア</td>
+          <td><span class="highlight">2,000〜3,000</span></td>
+          <td><span class="highlight">1,000</span></td>
+        </tr>
+        <tr>
+          <td>陶材</td>
+          <td>200〜600</td>
+          <td>120〜150</td>
+        </tr>
+        <tr>
+          <td>エナメル質</td>
+          <td>384</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>象牙質</td>
+          <td>297</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>コンポジットレジン</td>
+          <td>200〜350</td>
+          <td>100〜180</td>
+        </tr>
+        <tr>
+          <td>アクリルレジン</td>
+          <td>70</td>
+          <td>70〜100</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112D27</div>
+        <p>ある歯科材料の引張試験における応力-ひずみ曲線を図に示す。<br>矢印で示す点の説明として正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 破断が起こる。<br>
+          b 変形が始まる。<br>
+          c 引張強さを示す。<br>
+          d 塑性変形範囲にある。<br>
+          e ヤング率の算出に用いる。
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】矢印は曲線の最高点（M点）を示している。M点は<span class="key">最大強さ（引張強さ）</span>を表す。また、M点は弾性限・降伏点を超えた位置にあるため<span class="key">塑性変形範囲</span>にある。ヤング率は直線部分（比例限以下）の傾きから算出する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C69</div>
+        <p>異なる金属線材料アとイの応力-ひずみ曲線を図に示す。<br>アよりイが大きいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 降伏点<br>
+          b 弾性限<br>
+          c 比例限<br>
+          d ヤング率<br>
+          e 弾性エネルギー
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】イはアより弾性係数（傾き）が小さく、弾性限までの面積（<span class="highlight">弾性エネルギー＝レジリエンス</span>）が大きい。降伏点、弾性限、比例限、ヤング率はアの方が大きいか同等である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A84</div>
+        <p>弾性限が同じ材料の機械的性質で、弾性係数が小さいほど大きくなるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 靱性<br>
+          b 耐力<br>
+          c 伸び<br>
+          d 比例限<br>
+          e 弾性エネルギー
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】弾性限が同じ場合、弾性係数が小さいほど同じ応力で大きく変形するため、弾性限までの面積（<span class="highlight">弾性エネルギー＝レジリエンス</span>）が大きくなる。靱性は破断までの全エネルギーであり、弾性限だけでは決まらない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A41</div>
+        <p>硬化熱処理によって弾性限が高くなるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ブラスワイヤー<br>
+          b ステンレス鋼ワイヤー<br>
+          c ニッケルチタン合金ワイヤー<br>
+          d コバルトクロム合金ワイヤー<br>
+          e チタンモリブデン合金ワイヤー
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="key">コバルトクロム合金</span>は硬化熱処理（時効硬化）により弾性限が向上する。ニッケルチタン合金は超弾性を示すが、熱処理による弾性限向上は期待できない。金銀パラジウム合金も硬化熱処理で弾性限が向上するが、選択肢にない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

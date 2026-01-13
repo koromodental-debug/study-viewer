@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>有機材料 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の組成・物性</span>
+    <h1>有機材料</h1>
+    <div class="container">
+
+      <h2>I. 材料の分類</h2>
+      <h3>歯科材料の3分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">有機材料</td>
+          <td>高分子材料（重合体）</td>
+          <td>アクリルレジン、ゴム質印象材</td>
+        </tr>
+        <tr>
+          <td class="key">無機材料</td>
+          <td>セラミック材料、金属材料</td>
+          <td>陶材、金合金、石膏</td>
+        </tr>
+        <tr>
+          <td class="key">複合材料</td>
+          <td>有機材料＋無機材料</td>
+          <td>コンポジットレジン、FRP</td>
+        </tr>
+      </table>
+
+      <h2>II. 有機材料の特徴</h2>
+      <h3>結合と物性</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>有機材料</th>
+          <th>比較</th>
+        </tr>
+        <tr>
+          <td>結合の種類</td>
+          <td><span class="highlight">ファンデルワールス力</span>、共有結合</td>
+          <td>結合力：小</td>
+        </tr>
+        <tr>
+          <td>機械的性質</td>
+          <td>低い（変形しやすい）</td>
+          <td>金属・セラミックより劣る</td>
+        </tr>
+        <tr>
+          <td>弾性係数</td>
+          <td><span class="highlight">小</span></td>
+          <td>アクリルレジン 2〜5 GPa</td>
+        </tr>
+        <tr>
+          <td>熱膨張係数</td>
+          <td><span class="highlight">大</span></td>
+          <td>アクリルレジン 81〜90 ×10<sup>-6</sup>/℃</td>
+        </tr>
+        <tr>
+          <td>熱伝導率</td>
+          <td>小</td>
+          <td>アクリルレジン 0.21 W/m・K</td>
+        </tr>
+        <tr>
+          <td>密度</td>
+          <td>小</td>
+          <td>アクリルレジン 1.2 g/cm<sup>3</sup></td>
+        </tr>
+      </table>
+
+      <h3>結合エネルギーの比較</h3>
+      <table>
+        <tr>
+          <th>結合の種類</th>
+          <th>エネルギー (kJ/mol)</th>
+        </tr>
+        <tr>
+          <td>イオン結合（一次結合）</td>
+          <td>600〜1,000</td>
+        </tr>
+        <tr>
+          <td>共有結合（一次結合）</td>
+          <td>150〜700</td>
+        </tr>
+        <tr>
+          <td>金属結合（一次結合）</td>
+          <td>110〜500</td>
+        </tr>
+        <tr>
+          <td>水素結合（二次結合）</td>
+          <td>8〜50</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ファンデルワールス力</span>（二次結合）</td>
+          <td><span class="highlight">2〜8</span></td>
+        </tr>
+      </table>
+      <p class="note">有機材料は二次結合（分子間力）で結合しているため、結合力が小さく変形しやすい</p>
+
+      <h2>III. 高分子の分類</h2>
+      <h3>天然高分子と合成高分子</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>歯科材料の例</th>
+        </tr>
+        <tr>
+          <td class="key">天然高分子</td>
+          <td>寒天、アルジネート、ロジン（モデリングコンパウンド）</td>
+        </tr>
+        <tr>
+          <td class="key">合成高分子</td>
+          <td>シリコーンゴム、アクリルレジン（PMMA）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">高分子を含む印象材</div>
+        <ul>
+          <li><span class="key">寒天</span>：天然高分子（多糖類・アガロース）</li>
+          <li><span class="key">アルジネート</span>：天然高分子（アルギン酸塩）</li>
+          <li><span class="key">シリコーンゴム</span>：合成高分子（ポリシロキサン）</li>
+          <li><span class="key">モデリングコンパウンド</span>：天然高分子（ロジンなど）</li>
+          <li><span class="caution">石膏は無機材料</span>（硫酸カルシウム）→ 高分子ではない</li>
+        </ul>
+      </div>
+
+      <h2>IV. 重合形式</h2>
+      <h3>3つの重合形式</h3>
+      <table>
+        <tr>
+          <th>形式</th>
+          <th>機序</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">付加重合</td>
+          <td><span class="highlight">C=C二重結合</span>に付加して単結合になる</td>
+          <td>PMMA（アクリルレジン）</td>
+        </tr>
+        <tr>
+          <td class="key">縮合重合</td>
+          <td>副産物（水・アルコール）を放出</td>
+          <td>縮合型シリコーンゴム</td>
+        </tr>
+        <tr>
+          <td class="key">重付加重合</td>
+          <td>官能基同士の付加反応</td>
+          <td>付加型シリコーンゴム</td>
+        </tr>
+      </table>
+
+      <h2>V. ラジカル重合</h2>
+      <h3>加熱重合レジンの重合反応</h3>
+      <p>MMAの重合は<span class="highlight">ラジカル重合</span>による付加重合反応である。</p>
+
+      <h3>重合の3段階</h3>
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">1. 開始反応</td>
+          <td>フリーラジカルがモノマーを活性化</td>
+        </tr>
+        <tr>
+          <td class="key">2. 成長反応</td>
+          <td>活性モノマーがモノマーを連鎖的に付加</td>
+        </tr>
+        <tr>
+          <td class="key">3. 停止反応</td>
+          <td>再結合反応などで反応を停止</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ラジカルが作用する官能基</div>
+        <ul>
+          <li><span class="highlight">ビニル基</span>（-CH=CH<sub>2</sub>）：C=C二重結合を持つ</li>
+          <li><span class="highlight">メタクリロイルオキシ基</span>（-O-CO-C(CH<sub>3</sub>)=CH<sub>2</sub>）：MMAの官能基</li>
+        </ul>
+        <p class="note">いずれも<span class="key">C=C二重結合</span>を持ち、ラジカルの付加反応の場となる</p>
+      </div>
+
+      <h2>VI. 分子量と物性の関係</h2>
+      <div class="point-box">
+        <div class="point-box-title">分子量が大きくなると</div>
+        <ul>
+          <li><span class="highlight">強度が向上</span>：分子鎖の絡み合いが増加</li>
+          <li><span class="highlight">ガラス転移温度（Tg）が上昇</span>：分子鎖の運動性が低下</li>
+          <li><span class="key">流動性が低下</span>：粘度が増加</li>
+          <li><span class="key">残留モノマー量が減少</span>：重合度が高い</li>
+        </ul>
+      </div>
+
+      <h3>加熱重合型 vs 常温重合型</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>加熱重合型</th>
+          <th>常温重合型</th>
+        </tr>
+        <tr>
+          <td>分子量</td>
+          <td><span class="highlight">大きい</span></td>
+          <td>小さい</td>
+        </tr>
+        <tr>
+          <td>強度</td>
+          <td>高い</td>
+          <td>劣る</td>
+        </tr>
+        <tr>
+          <td>残留モノマー</td>
+          <td><span class="highlight">少ない</span>（0.2〜0.5%）</td>
+          <td>多い（3〜5%）</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A126</div>
+        <p>ポリマーの分子量が大きくなると変化する性質で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 強度の向上<br>
+          b 流動性の増加<br>
+          c 接着力の増大<br>
+          d 残留モノマー量の増加<br>
+          e ガラス転移温度の上昇
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】分子量が大きくなると、分子鎖の絡み合いが増加するため<span class="key">強度が向上</span>する。また、分子鎖の運動性が低下するため<span class="key">ガラス転移温度（Tg）が上昇</span>する。流動性は低下し（粘度増加）、残留モノマー量は減少する（重合度が高い）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A125</div>
+        <p>高分子を含有する印象材はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 寒天<br>
+          b 石膏<br>
+          c アルジネート<br>
+          d シリコーンゴム<br>
+          e モデリングコンパウンド
+        </div>
+        <div class="answer">正解：a, c, d, e</div>
+        <p>【解説】<span class="key">寒天</span>（天然高分子・アガロース）、<span class="key">アルジネート</span>（天然高分子・アルギン酸塩）、<span class="key">シリコーンゴム</span>（合成高分子・ポリシロキサン）、<span class="key">モデリングコンパウンド</span>（天然高分子・ロジン含有）はいずれも高分子を含む。<span class="caution">石膏は硫酸カルシウム</span>の無機材料であり、高分子ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D64</div>
+        <p>重合開始時にラジカルが作用する基はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 水酸基<br>
+          b ビニル基<br>
+          c リン酸基<br>
+          d カルボキシ基<br>
+          e メタクリロイルオキシ基
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】ラジカル重合では、ラジカルが<span class="highlight">C=C二重結合</span>に作用して重合が開始される。<span class="key">ビニル基</span>（-CH=CH<sub>2</sub>）と<span class="key">メタクリロイルオキシ基</span>（-O-CO-C(CH<sub>3</sub>)=CH<sub>2</sub>）はいずれもC=C二重結合を持つ。水酸基、リン酸基、カルボキシ基にはC=C二重結合がない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

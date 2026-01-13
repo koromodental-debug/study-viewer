@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>微生物総論 - 微生物学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学 / 微生物総論</span>
+    <h1>微生物総論</h1>
+    <div class="container">
+
+      <h2>I. 原核生物と真核生物の構造</h2>
+
+      <p>微生物は<span class="key">原核生物</span>（細菌など）と<span class="key">真核生物</span>（真菌、原虫など）に大別される。原核生物は核膜を持たず、真核生物は核膜で囲まれた核を持つ。</p>
+
+      <h3>細胞小器官の比較</h3>
+      <table>
+        <tr>
+          <th>構造</th>
+          <th style="text-align:center">細菌<br>（原核）</th>
+          <th style="text-align:center">ヒト<br>（真核）</th>
+          <th>ポイント</th>
+        </tr>
+        <tr style="background:#E8F4FD">
+          <td class="key">リボソーム</td>
+          <td style="text-align:center"><span class="highlight">○</span><br>70S</td>
+          <td style="text-align:center"><span class="highlight">○</span><br>80S</td>
+          <td><span class="highlight">両方に存在</span>（国試頻出）</td>
+        </tr>
+        <tr style="background:#E8F4FD">
+          <td class="key">細胞膜</td>
+          <td style="text-align:center">○</td>
+          <td style="text-align:center">○</td>
+          <td>両方に存在</td>
+        </tr>
+        <tr>
+          <td class="key">細胞壁</td>
+          <td style="text-align:center">○</td>
+          <td style="text-align:center">×</td>
+          <td>ペプチドグリカンが主成分</td>
+        </tr>
+        <tr>
+          <td class="key">核膜</td>
+          <td style="text-align:center">×</td>
+          <td style="text-align:center">○</td>
+          <td>真核生物の定義</td>
+        </tr>
+        <tr>
+          <td class="key">ミトコンドリア</td>
+          <td style="text-align:center">×</td>
+          <td style="text-align:center">○</td>
+          <td>ATP産生</td>
+        </tr>
+        <tr>
+          <td class="key">ゴルジ装置</td>
+          <td style="text-align:center">×</td>
+          <td style="text-align:center">○</td>
+          <td>タンパク質の修飾・分泌</td>
+        </tr>
+        <tr>
+          <td class="key">リソソーム</td>
+          <td style="text-align:center">×</td>
+          <td style="text-align:center">○</td>
+          <td>細胞内消化</td>
+        </tr>
+        <tr>
+          <td class="key">小胞体</td>
+          <td style="text-align:center">×</td>
+          <td style="text-align:center">○</td>
+          <td>粗面・滑面</td>
+        </tr>
+        <tr>
+          <td class="key">鞭毛・線毛</td>
+          <td style="text-align:center">○</td>
+          <td style="text-align:center">×</td>
+          <td>運動・付着</td>
+        </tr>
+        <tr>
+          <td class="key">プラスミド</td>
+          <td style="text-align:center">○</td>
+          <td style="text-align:center">×</td>
+          <td>核外染色体（薬剤耐性）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">出題のポイント</div>
+        <p>「原核生物に存在するのはどれか」→ 選択肢の多くは真核生物のみの構造。<span class="highlight">リボソーム</span>は両方に存在するため正解になる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A92</div>
+        <p>原核生物に存在するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 核膜<br>
+          b ゴルジ装置<br>
+          c リソソーム<br>
+          d リボソーム<br>
+          e ミトコンドリア
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】原核生物（細菌）には核膜、ゴルジ装置、リソソーム、ミトコンドリアは存在しない。<span class="highlight">リボソーム</span>は原核生物にも真核生物にも存在する唯一の選択肢である（ただしサイズは70Sと80Sで異なる）。</p>
+      </div>
+
+      <h2>II. 細菌の分類（寄生形態による分類）</h2>
+
+      <h3>偏性細胞内寄生菌</h3>
+      <p><span class="key">生きた細胞に寄生しなければ生存できない</span>細菌。人工培地では培養できない。</p>
+
+      <table>
+        <tr>
+          <th>菌名</th>
+          <th>疾患・特徴</th>
+          <th>治療</th>
+        </tr>
+        <tr>
+          <td class="key">クラミジア<br><span class="note">Chlamydia trachomatis</span></td>
+          <td>性行為感染症（10〜20代女性に多い）<br>HIVなど他の性感染症リスクを高める</td>
+          <td>テトラサイクリン系<br>マクロライド系</td>
+        </tr>
+        <tr>
+          <td class="key">リケッチア</td>
+          <td>節足動物がベクター（運び屋）<br>3徴候：<span class="highlight">刺し口・発疹・発熱と頭痛</span></td>
+          <td>テトラサイクリン系<br>マクロライド系</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">注意</span>：テトラサイクリン系抗菌薬は7歳以下の小児には禁忌（歯の着色を生じるため）</p>
+
+      <h3>通性細胞内寄生菌</h3>
+      <p>細胞内でも細胞外でも増殖できる細菌。</p>
+      <ul>
+        <li>結核菌（<em>Mycobacterium tuberculosis</em>）</li>
+        <li>レジオネラ（<em>Legionella pneumophila</em>）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">116A57</div>
+        <p>偏性細胞内寄生細菌はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Tannerella forsythia<br>
+          b Chlamydia trachomatis<br>
+          c Streptococcus pyogenes<br>
+          d Fusobacterium nucleatum<br>
+          e Porphyromonas gingivalis
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">Chlamydia trachomatis</span>（クラミジア）は偏性細胞内寄生菌である。他の選択肢はすべて口腔内細菌や一般細菌であり、人工培地で培養可能。</p>
+      </div>
+
+      <h2>III. 感染症の基本事項</h2>
+
+      <h3>撲滅された感染症</h3>
+      <p><span class="highlight">痘瘡（天然痘）</span>は1980年にWHOが撲滅宣言を出した、<span class="key">地球上から撲滅された唯一の感染症</span>である。</p>
+
+      <h3>院内感染</h3>
+      <p><span class="key">MRSA</span>（メチシリン耐性黄色ブドウ球菌）は代表的な院内感染の原因菌である。</p>
+
+      <h3>日和見感染</h3>
+      <p>AIDS患者など免疫不全状態では、健常者では発症しない感染症（日和見感染）のリスクが上昇する。</p>
+      <ul>
+        <li><span class="key">結核</span>：AIDS患者でリスク上昇</li>
+        <li>ニューモシスチス肺炎</li>
+        <li>カンジダ症</li>
+      </ul>
+
+      <h3>感染経路の整理</h3>
+      <table>
+        <tr>
+          <th>感染経路</th>
+          <th>代表的疾患</th>
+        </tr>
+        <tr>
+          <td>蚊（ベクター）</td>
+          <td><span class="highlight">マラリア</span>、デング熱、日本脳炎</td>
+        </tr>
+        <tr>
+          <td>ダニ（ベクター）</td>
+          <td>ツツガムシ病、日本紅斑熱、ライム病</td>
+        </tr>
+        <tr>
+          <td>性行為</td>
+          <td>クラミジア、HIV、梅毒</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115A79</div>
+        <p>感染症について正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 痘瘡は地球上から撲滅された。<br>
+          b MRSAは院内感染の原因菌となる。<br>
+          c マラリアはダニによって媒介される。<br>
+          d AIDS患者では結核のリスクが上がる。<br>
+          e クラミジア感染症は原虫により発症する。
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ○：痘瘡は1980年に撲滅宣言</li>
+          <li>b ○：MRSAは院内感染の代表的原因菌</li>
+          <li>c ×：<span class="caution">マラリアは蚊が媒介</span>（ダニではない）</li>
+          <li>d ○：AIDS患者は結核などの日和見感染リスクが上昇</li>
+          <li>e ×：<span class="caution">クラミジアは細菌</span>（原虫ではない）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

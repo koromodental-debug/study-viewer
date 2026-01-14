@@ -131,10 +131,12 @@ const FlashcardModule = (function() {
         const topicData = DATA.find(d => d.id === topicId);
         if (!topicData) return null;
         const stats = getTopicStats(topicId);
+        const session = getSession(topicId);
         return {
           ...topicData,
           stats,
-          lastAccess: topicLastAccess[topicId]
+          lastAccess: topicLastAccess[topicId],
+          currentPosition: session ? session.index + 1 : null
         };
       })
       .filter(t => t !== null)
@@ -431,7 +433,7 @@ const FlashcardModule = (function() {
           ${inProgressTopics.map(topic => `
             <button class="continue-item" data-topic-id="${escapeHtml(topic.id)}">
               <span class="continue-item-title">${escapeHtml(topic.title)}</span>
-              <span class="continue-item-stats">学習済み ${topic.stats.memorized + topic.stats.again}</span>
+              <span class="continue-item-stats">${topic.currentPosition ? topic.currentPosition + '枚目から' : '学習済み ' + (topic.stats.memorized + topic.stats.again)}</span>
             </button>
           `).join('')}
         </div>

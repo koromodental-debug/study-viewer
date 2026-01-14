@@ -433,7 +433,7 @@ const FlashcardModule = (function() {
           ${inProgressTopics.map(topic => `
             <button class="continue-item" data-topic-id="${escapeHtml(topic.id)}">
               <span class="continue-item-title">${escapeHtml(topic.title)}</span>
-              <span class="continue-item-stats">${topic.currentPosition ? topic.currentPosition + '枚目から' : '学習済み ' + (topic.stats.memorized + topic.stats.again)}</span>
+              ${topic.currentPosition ? `<span class="continue-item-stats">${topic.currentPosition}枚目から</span>` : ''}
             </button>
           `).join('')}
         </div>

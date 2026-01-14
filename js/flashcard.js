@@ -8,6 +8,17 @@ const FlashcardModule = (function() {
   const SESSIONS_KEY = 'studyViewer_flashcardSessions';
   const STORAGE_VERSION = 1;
 
+  // 科目の表示順序（基礎系 → 臨床系）
+  const SUBJECT_ORDER = [
+    // 基礎系
+    '解剖', '組織', '生理', '生化',
+    '病理', '微生物・免疫', '薬理', '歯科理工',
+    '公衆衛生', '疫学', '口腔衛生',
+    // 臨床系
+    '保存修復', '歯周病', '口腔外科', '歯科放射線',
+    '全部床義歯', '部分床義歯', '高齢者歯科', '摂食嚥下'
+  ];
+
   // 状態
   const state = {
     currentTopicId: null,
@@ -99,6 +110,38 @@ const FlashcardModule = (function() {
     }
 
     return { memorized: totalMemorized, again: totalAgain, total: totalCards };
+  }
+
+  // 進捗のあるトピックを最終学習日時順で取得
+  function getInProgressTopics(limit = 5) {
+    const topicLastAccess = {};
+
+    // 各トピックの最終アクセス時刻を集計
+    for (const [key, value] of Object.entries(state.progress)) {
+      const topicId = key.split(':')[0];
+      const lastReview = value.lastReview || 0;
+      if (!topicLastAccess[topicId] || lastReview > topicLastAccess[topicId]) {
+        topicLastAccess[topicId] = lastReview;
+      }
+    }
+
+    // トピック情報と統計を取得
+    const topics = Object.keys(topicLastAccess)
+      .map(topicId => {
+        const topicData = DATA.find(d => d.id === topicId);
+        if (!topicData) return null;
+        const stats = getTopicStats(topicId);
+        return {
+          ...topicData,
+          stats,
+          lastAccess: topicLastAccess[topicId]
+        };
+      })
+      .filter(t => t !== null)
+      .sort((a, b) => b.lastAccess - a.lastAccess)
+      .slice(0, limit);
+
+    return topics;
   }
 
   function getOverallStats() {
@@ -280,7 +323,15 @@ const FlashcardModule = (function() {
 
   // === Ankiスタイル デッキ一覧画面 ===
   function renderDeckList() {
-    const subjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))];
+    const rawSubjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))];
+    // SUBJECT_ORDERの順序でソート（未定義の科目は末尾）
+    const subjects = rawSubjects.sort((a, b) => {
+      const indexA = SUBJECT_ORDER.indexOf(a);
+      const indexB = SUBJECT_ORDER.indexOf(b);
+      const orderA = indexA === -1 ? 999 : indexA;
+      const orderB = indexB === -1 ? 999 : indexB;
+      return orderA - orderB;
+    });
     const overall = getOverallStats();
     const recommendedCount = getRecommendedCount();
     const isSearchMode = state.searchQuery.length > 0;
@@ -294,7 +345,7 @@ const FlashcardModule = (function() {
 
     container.innerHTML = `
       <div class="deck-list">
-        ${isSearchMode ? renderSearchMode(searchResults) : renderDeckHome(overall, subjects)}
+        ${renderDeckHome(overall, subjects)}
       </div>
     `;
 
@@ -349,43 +400,48 @@ const FlashcardModule = (function() {
 
   // 通常のデッキホームをレンダリング
   function renderDeckHome(overall, subjects) {
-    // 時間目安を計算（1問約30秒）
-    const timeEstimate = Math.ceil(state.sessionSize * 0.5);
+    const totalLearned = overall.memorized + overall.again;
+    const inProgressTopics = getInProgressTopics(10);
 
     return `
-      <!-- 開始ボタン（カード風） -->
-      <div class="deck-start-card" id="deck-start-btn">
-        <span class="deck-start-label">開始</span>
-        <span class="deck-start-sub" id="deck-start-sub">${state.sessionSize}問 · 約${timeEstimate}分</span>
+      <!-- 学習の記録 -->
+      <div class="review-center">
+        <h2 class="review-center-title">学習の記録</h2>
+        <div class="review-center-cards three-cards">
+          <div class="review-card review-card-total">
+            <span class="review-card-count">${totalLearned}</span>
+            <span class="review-card-label">総数</span>
+          </div>
+          <button class="review-card review-card-again ${overall.again === 0 ? 'empty' : ''}" id="start-again-deck" ${overall.again === 0 ? 'disabled' : ''}>
+            <span class="review-card-count">${overall.again}</span>
+            <span class="review-card-label">もう一度 ›</span>
+          </button>
+          <button class="review-card review-card-memorized ${overall.memorized === 0 ? 'empty' : ''}" id="start-memorized-deck" ${overall.memorized === 0 ? 'disabled' : ''}>
+            <span class="review-card-count">${overall.memorized}</span>
+            <span class="review-card-label">覚えた ›</span>
+          </button>
+        </div>
       </div>
 
-      <!-- 設定（1行に集約） -->
-      <button class="deck-settings-line" id="deck-breakdown-link">
-        <span class="deck-settings-text">設定：${getModeLabel(state.currentMode)}／${state.sessionSize}問</span>
-        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-          <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
-        </svg>
-      </button>
+      ${inProgressTopics.length > 0 ? `
+      <!-- 続きから -->
+      <div class="continue-section">
+        <h3 class="continue-title">続きから</h3>
+        <div class="continue-list">
+          ${inProgressTopics.map(topic => `
+            <button class="continue-item" data-topic-id="${escapeHtml(topic.id)}">
+              <span class="continue-item-title">${escapeHtml(topic.title)}</span>
+              <span class="continue-item-stats">学習済み ${topic.stats.memorized + topic.stats.again}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+      ` : ''}
 
-      <!-- 科目一覧（折りたたみ＋検索） -->
-      <div class="deck-subjects-wrapper muted">
-        <button class="deck-subjects-toggle" id="deck-subjects-toggle">
-          <span>科目・デッキを探す</span>
-          <svg class="deck-subjects-arrow" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-            <path d="M7 10l5 5 5-5z"/>
-          </svg>
-        </button>
-        <div class="deck-subjects collapsed" id="deck-subjects">
-          <div class="deck-subjects-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="M21 21l-4.35-4.35"/>
-            </svg>
-            <input type="text" id="subjects-search-input" placeholder="科目・デッキを検索" />
-          </div>
-          <div class="deck-subjects-list" id="deck-subjects-list">
-            ${subjects.map(subject => renderSubjectRow(subject)).join('')}
-          </div>
+      <!-- 科目一覧 -->
+      <div class="deck-subjects-wrapper">
+        <div class="deck-subjects-list" id="deck-subjects-list">
+          ${subjects.map(subject => renderSubjectRow(subject)).join('')}
         </div>
       </div>
     `;
@@ -426,33 +482,15 @@ const FlashcardModule = (function() {
   function renderSubjectRow(subject) {
     const topics = DATA.filter(d => d.subject === subject && d.qaPath);
     const stats = getSubjectStats(subject);
-    const totalLearned = stats.memorized + stats.again;
-
-    // 未学習トピックをカウント（進捗が0のトピック）
-    const unlearnedTopics = topics.filter(topic => {
-      const topicStats = getTopicStats(topic.id);
-      return topicStats.memorized === 0 && topicStats.again === 0;
-    }).length;
-
-    // サブ情報を構築
-    let subInfo = `${topics.length}トピック`;
-    if (totalLearned > 0) {
-      subInfo += ` · ${totalLearned}問学習済`;
-    }
-    if (unlearnedTopics > 0 && totalLearned > 0) {
-      subInfo += ` · 未${unlearnedTopics}`;
-    }
 
     return `
       <div class="deck-subject" data-subject="${subject}">
         <div class="deck-subject-header">
           <div class="deck-subject-main">
             <span class="deck-subject-name">${subject}</span>
-            <span class="deck-subject-sub">${subInfo}</span>
           </div>
           <div class="deck-subject-right">
             ${stats.again > 0 ? `<span class="deck-subject-again">要復習 ${stats.again}</span>` : ''}
-            ${unlearnedTopics > 0 && stats.again === 0 ? `<span class="deck-subject-unlearned">未あり</span>` : ''}
             <span class="deck-subject-chevron">›</span>
           </div>
         </div>
@@ -609,6 +647,16 @@ const FlashcardModule = (function() {
       againBtn.addEventListener('click', () => startStatusDeck('again'));
     }
 
+    // 「続きから」アイテムクリック
+    const continueItems = container.querySelectorAll('.continue-item');
+    continueItems.forEach(item => {
+      item.addEventListener('click', async () => {
+        const topicId = item.dataset.topicId;
+        state.isReviewMode = false;
+        await loadTopic(topicId, state.shuffleEnabled);
+      });
+    });
+
     // 科目一覧の折りたたみ
     const subjectsToggle = document.getElementById('deck-subjects-toggle');
     const subjectsList = document.getElementById('deck-subjects');
@@ -660,25 +708,6 @@ const FlashcardModule = (function() {
             row.classList.remove('expanded');
           }
         });
-      });
-    }
-
-    // 開始ボタンのクリックでモードに応じて開始
-    const startBtn = document.getElementById('deck-start-btn');
-    if (startBtn) {
-      startBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const mode = state.currentMode || 'mix';
-
-        if (mode === 'mix') {
-          startRecommendedDeck();
-        } else if (mode === 'new') {
-          startNewOnlyDeck();
-        } else if (mode === 'memorized') {
-          startStatusDeck('memorized');
-        } else if (mode === 'again') {
-          startStatusDeck('again');
-        }
       });
     }
   }

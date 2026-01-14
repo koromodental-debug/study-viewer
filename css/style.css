@@ -4663,75 +4663,210 @@ body:not(.is-practice) #flashcard-content {
   margin: 24px 0 16px;
 }
 
-/* 開始カード */
-.deck-start-card {
+/* 復習センター */
+.review-center {
+  margin: 0 16px 24px;
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+}
+
+.review-center-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0 0 16px;
+}
+
+.review-center-cards {
+  display: flex;
+  gap: 12px;
+}
+
+.review-center-cards.three-cards {
+  gap: 8px;
+}
+
+.review-card {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 0 24px 16px;
-  padding: 32px 20px;
-  background: #007AFF;
-  border-radius: 16px;
+  padding: 20px 16px;
+  border-radius: 12px;
+  border: none;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
-.deck-start-card:active {
-  transform: scale(0.97);
+.review-card:active {
+  transform: scale(0.96);
 }
 
-.deck-start-label {
-  font-size: 28px;
+.review-card-total {
+  background: var(--surface-alt);
+  color: var(--text-color);
+  cursor: default;
+}
+
+.review-card-total:active {
+  transform: none;
+}
+
+.review-card-again {
+  background: #FFF3E0;
+  color: #E65100;
+}
+
+.review-card-memorized {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.review-card.empty {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.review-card.empty:active {
+  transform: none;
+}
+
+.review-card-count {
+  font-size: 32px;
   font-weight: 700;
-  color: #fff;
+  line-height: 1;
 }
 
-.deck-start-sub {
+.review-card-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+.review-center-empty {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.review-center-empty p {
+  margin: 0;
+  color: var(--secondary-label);
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.85);
-  margin-top: 6px;
 }
 
-/* 設定行（1行に集約） */
-.deck-settings-line {
+.review-center-hint {
+  margin-top: 8px !important;
+  font-size: 13px !important;
+  color: var(--tertiary-label) !important;
+}
+
+/* ダークモード */
+@media (prefers-color-scheme: dark) {
+  .review-card-again {
+    background: rgba(255, 152, 0, 0.15);
+    color: #FFB74D;
+  }
+
+  .review-card-memorized {
+    background: rgba(76, 175, 80, 0.15);
+    color: #81C784;
+  }
+}
+
+/* 続きからセクション */
+.continue-section {
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.continue-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 12px;
+  padding: 0 16px;
+}
+
+.continue-list {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 16px 4px 16px;
+}
+
+.continue-list::-webkit-scrollbar {
+  display: none;
+}
+
+.continue-item {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.continue-item:active {
+  transform: scale(0.97);
+  background: var(--border-subtle);
+}
+
+.continue-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.continue-item-stats {
+  font-size: 12px;
+  color: var(--secondary-label);
+  margin-top: 4px;
+}
+
+/* フラッシュカード検索FAB */
+.flashcard-search-fab {
+  position: fixed;
+  bottom: calc(var(--tabbar-height) + 16px);
+  right: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--system-blue);
+  color: white;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  margin: 16px auto 24px;
-  padding: 10px 16px;
-  background: transparent;
-  border: none;
-  font-size: 14px;
-  color: var(--secondary-label);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  transition: transform 0.15s, box-shadow 0.15s;
+  z-index: 100;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.deck-settings-line:hover {
-  opacity: 0.7;
+.flashcard-search-fab:active {
+  transform: scale(0.92);
 }
 
-.deck-settings-line svg {
-  opacity: 0.5;
-  flex-shrink: 0;
-}
-
-.deck-settings-text {
-  white-space: nowrap;
-}
-
-/* 科目一覧（薄く表示） */
-.deck-subjects-wrapper.muted {
-  opacity: 0.7;
-  margin-top: 8px;
-}
-
-.deck-subjects-wrapper.muted .deck-subjects-toggle {
-  font-size: 14px;
-  color: var(--tertiary-label);
+.flashcard-search-fab svg {
+  width: 24px;
+  height: 24px;
 }
 
 /* 問数ドロップダウン */

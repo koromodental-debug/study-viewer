@@ -223,6 +223,7 @@
     if (!elements.welcomeTopics || !elements.welcomeSearchInput) return;
 
     const historySection = document.getElementById('welcome-history-section');
+    const recommendSection = document.getElementById('welcome-recommend-section');
     const historyList = document.getElementById('welcome-history-list');
     const clearHistoryBtn = document.getElementById('clear-history-btn');
 
@@ -236,13 +237,15 @@
     elements.welcomeSearchInput.addEventListener('input', (e) => {
       const query = e.target.value.trim();
       if (query) {
-        // 検索中は履歴を隠してトピック一覧を表示
+        // 検索中は履歴・おすすめを隠してトピック一覧を表示
         if (historySection) historySection.style.display = 'none';
+        if (recommendSection) recommendSection.style.display = 'none';
         elements.welcomeTopics.style.display = '';
         renderWelcomeTopics(query);
       } else {
-        // 空の場合は履歴を表示、トピック一覧は非表示
+        // 空の場合は履歴・おすすめを表示、トピック一覧は非表示
         if (historySection) historySection.style.display = '';
+        if (recommendSection) recommendSection.style.display = '';
         elements.welcomeTopics.style.display = 'none';
         renderSearchHistory();
       }
@@ -627,7 +630,13 @@
     // タブ切り替え
     elements.tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        switchTab(tab.dataset.tab);
+        const targetTab = tab.dataset.tab;
+        // まとめタブを再度押したらウェルカム画面に戻る
+        if (targetTab === 'html' && state.currentTab === 'html') {
+          showWelcomeScreen();
+          return;
+        }
+        switchTab(targetTab);
       });
     });
 
@@ -3412,6 +3421,8 @@
       elements.flashcardContent.classList.toggle('active', tab === 'flashcard');
       if (tab === 'flashcard' && typeof FlashcardModule !== 'undefined') {
         FlashcardModule.show();
+        // 演習タブではFABを非表示
+        if (elements.toolFab) elements.toolFab.style.display = 'none';
       } else if (prevTab === 'flashcard' && typeof FlashcardModule !== 'undefined') {
         // 演習タブから離れる時にセッションを保存
         FlashcardModule.saveSession();
@@ -5195,8 +5206,17 @@
     // 検索入力をクリア
     if (elements.welcomeSearchInput) {
       elements.welcomeSearchInput.value = '';
-      renderWelcomeTopics('');
     }
+    // 検索結果を非表示、履歴・おすすめを表示
+    if (elements.welcomeTopics) {
+      elements.welcomeTopics.style.display = 'none';
+    }
+    const historySection = document.getElementById('welcome-history-section');
+    const recommendSection = document.getElementById('welcome-recommend-section');
+    if (historySection) historySection.style.display = '';
+    if (recommendSection) recommendSection.style.display = '';
+    // 検索履歴を更新
+    renderSearchHistory();
     // FABを非表示（検索画面では不要）
     if (elements.toolFab) {
       elements.toolFab.style.display = 'none';

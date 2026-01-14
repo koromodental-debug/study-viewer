@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>石膏系埋没材 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 埋没材</span>
+    <h1>石膏系埋没材</h1>
+    <div class="container">
+
+      <h2>埋没材とは</h2>
+      <p>埋没材は、ロストワックス法（鋳造）においてワックスパターンを包埋し、鋳型を形成する材料である。金属の<span class="key">鋳造収縮</span>（1.2〜2.5%）を埋没材の膨張で補償する役割をもつ。</p>
+
+      <h3>埋没材の構成</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>役割</th>
+          <th>材料</th>
+        </tr>
+        <tr>
+          <td><span class="key">耐火材</span></td>
+          <td>耐熱性＋膨張性</td>
+          <td>シリカ（石英、クリストバライト）</td>
+        </tr>
+        <tr>
+          <td><span class="key">結合材</span></td>
+          <td>成形性＋強さ</td>
+          <td>石膏、リン酸塩、酸化マグネシウム</td>
+        </tr>
+      </table>
+
+      <h2>シリカの種類と特性</h2>
+      <p>埋没材の<span class="highlight">加熱膨張に最も寄与するのはシリカ</span>（耐火材）である。シリカには石英とクリストバライトがあり、加熱により結晶構造がα型からβ型に変態して膨張する。</p>
+
+      <h3>石英とクリストバライトの比較</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>クリストバライト</th>
+          <th>石英</th>
+        </tr>
+        <tr>
+          <td>変態点</td>
+          <td><span class="key">200〜300℃</span></td>
+          <td>500〜600℃</td>
+        </tr>
+        <tr>
+          <td>最大加熱膨張量</td>
+          <td><span class="highlight">1.3〜1.5%</span></td>
+          <td>0.8〜1.1%</td>
+        </tr>
+        <tr>
+          <td>結晶構造</td>
+          <td>正方晶系→立方晶系</td>
+          <td>三方晶系→六方晶系</td>
+        </tr>
+      </table>
+      <p class="note">クリストバライトは低温で変態し、膨張量も大きい。</p>
+
+      <h2>石膏系埋没材の特徴</h2>
+      <ul>
+        <li><span class="key">結合材</span>：硬質石膏（α石膏）</li>
+        <li><span class="key">硬化時膨張</span>：0.2〜0.6%（主に石膏の膨張）</li>
+        <li><span class="key">加熱時膨張</span>：石英系0.8〜1.1%、クリストバライト系1.3〜1.5%</li>
+        <li><span class="key">圧縮強さ</span>：2〜5MPa（リン酸塩系より弱い）</li>
+        <li><span class="key">通気性</span>：良好（粒度が均一、混水比が高い）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">石膏系埋没材の温度制限</div>
+        <ul>
+          <li>鋳型温度：<span class="highlight">700℃以下</span></li>
+          <li>石膏は炭素が残存すると<span class="caution">700℃付近から分解</span>する</li>
+          <li>→ 融点の高い金属には使用できない</li>
+        </ul>
+      </div>
+
+      <h2>鋳造可能な金属【頻出】</h2>
+      <p>石膏系埋没材は鋳型温度が700℃以下に制限されるため、<span class="highlight">融点の低い金属のみ鋳造可能</span>である。</p>
+
+      <h3>歯科鋳造用合金の融点と使用可否</h3>
+      <table>
+        <tr>
+          <th>合金</th>
+          <th>融点</th>
+          <th>石膏系</th>
+        </tr>
+        <tr>
+          <td>タイプ3金合金</td>
+          <td>850〜880℃</td>
+          <td><span class="key">○</span></td>
+        </tr>
+        <tr>
+          <td>金銀パラジウム合金</td>
+          <td>890〜960℃</td>
+          <td><span class="key">○</span></td>
+        </tr>
+        <tr>
+          <td>陶材焼付用金合金</td>
+          <td>1,150〜1,250℃</td>
+          <td><span class="caution">×</span></td>
+        </tr>
+        <tr>
+          <td>コバルトクロム合金</td>
+          <td>1,200〜1,500℃</td>
+          <td><span class="caution">×</span></td>
+        </tr>
+        <tr>
+          <td>純チタン</td>
+          <td>1,600〜1,700℃</td>
+          <td><span class="caution">×</span></td>
+        </tr>
+      </table>
+      <p class="note">陶材焼付用金合金、コバルトクロム合金、純チタンは<span class="key">リン酸塩系埋没材</span>を使用する。</p>
+
+      <h2>リン酸塩系埋没材との比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>石膏系</th>
+          <th>リン酸塩系</th>
+        </tr>
+        <tr>
+          <td>結合材</td>
+          <td>硬質石膏</td>
+          <td>リン酸塩＋酸化マグネシウム</td>
+        </tr>
+        <tr>
+          <td>鋳型温度</td>
+          <td><span class="highlight">700℃以下</span></td>
+          <td>700〜1,000℃</td>
+        </tr>
+        <tr>
+          <td>耐熱性</td>
+          <td>700℃で分解</td>
+          <td>1,000℃以上でも安定</td>
+        </tr>
+        <tr>
+          <td>圧縮強さ</td>
+          <td>2〜5MPa</td>
+          <td>12〜25MPa</td>
+        </tr>
+        <tr>
+          <td>通気性</td>
+          <td>良好</td>
+          <td>低い</td>
+        </tr>
+        <tr>
+          <td>用途</td>
+          <td>金合金、金銀パラジウム合金</td>
+          <td>Co-Cr合金、陶材焼付用金合金</td>
+        </tr>
+      </table>
+
+      <h2>過去問演習</h2>
+
+      <div class="question-box">
+        <div class="q-number">106C111</div>
+        <p>石膏系埋没材を用いて鋳造できるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 純チタン<br>
+          b タイプ3金合金<br>
+          c 陶材焼付用金合金<br>
+          d 金銀パラジウム合金<br>
+          e コバルトクロム合金
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】石膏系埋没材は鋳型温度が700℃以下に制限される。タイプ3金合金（融点850〜880℃）と金銀パラジウム合金（融点890〜960℃）は鋳造可能。純チタン、陶材焼付用金合金、コバルトクロム合金は融点が高く、リン酸塩系埋没材を使用する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C87</div>
+        <p>ロストワックス法によりブリッジを製作することとした。鋳造に用いた埋没材の熱膨張曲線を図に示す。
+使用可能な金属はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116C87_1.png" alt="熱膨張曲線">
+        </div>
+        <div class="choices">
+          a 純チタン<br>
+          b 22K金合金<br>
+          c タイプ3金合金<br>
+          d 金銀パラジウム合金<br>
+          e コバルトクロム合金
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】図の熱膨張曲線から、200〜300℃付近で急激に膨張している。これはクリストバライトの変態点であり、石膏系埋没材（クリストバライト系）と判断できる。石膏系は700℃以下に制限されるため、タイプ3金合金と金銀パラジウム合金が使用可能。22K金合金は融点が約900℃で境界的だが、鋳造温度を考慮すると石膏系での鋳造は困難。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C78</div>
+        <p>クリストバライト系埋没材の加熱膨張に最も寄与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a α石膏<br>
+          b β石膏<br>
+          c シリカ<br>
+          d カーボン<br>
+          e マグネシア
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】埋没材の加熱膨張は<span class="key">耐火材（シリカ）</span>の結晶変態によるものである。クリストバライト（シリカの一種）は200〜300℃で変態し、1.3〜1.5%膨張する。石膏は結合材であり、加熱時には収縮する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

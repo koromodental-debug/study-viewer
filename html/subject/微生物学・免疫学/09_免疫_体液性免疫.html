@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>体液性免疫 - 微生物学・免疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学・免疫学 / 免疫</span>
+    <h1>体液性免疫</h1>
+    <div class="container">
+
+      <h2>体液性免疫とは</h2>
+      <p><span class="key">B細胞</span>が産生する<span class="key">抗体（免疫グロブリン）</span>による免疫応答。抗原と特異的に結合し、中和・オプソニン化・補体活性化などを行う。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">体液性免疫を構成する細胞</div>
+        <ul>
+          <li><span class="key">B細胞</span>：骨髄で産生、形質細胞に分化して抗体を産生</li>
+          <li><span class="key">好中球</span>：抗体のFcと結合する食細胞、感染初期に動員</li>
+          <li><span class="key">マクロファージ</span>：抗体のFcと結合、抗原提示能を有する</li>
+        </ul>
+      </div>
+
+      <h2>抗体（免疫グロブリン）の構造</h2>
+      <p>抗体は<span class="key">H鎖（重鎖）2本</span>と<span class="key">L鎖（軽鎖）2本</span>からなるY字型構造をとる。</p>
+
+      <h3>機能領域</h3>
+      <table>
+        <tr>
+          <th>領域</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">Fab領域</span></td>
+          <td><span class="highlight">抗原結合部位</span>（可変領域を含む）</td>
+        </tr>
+        <tr>
+          <td><span class="key">Fc領域</span></td>
+          <td>食細胞結合部位（定常領域）、補体活性化</td>
+        </tr>
+      </table>
+
+      <h3>酵素による切断</h3>
+      <ul>
+        <li><span class="key">パパイン</span>：ヒンジ部より上で切断 → Fab×2 + Fc</li>
+        <li><span class="key">ペプシン</span>：ヒンジ部より下で切断 → F(ab')₂ + Fc断片</li>
+      </ul>
+
+      <h2>免疫グロブリンの種類と特徴</h2>
+      <p>ヒトには<span class="key">IgG、IgM、IgA、IgE、IgD</span>の5つのクラスが存在する。</p>
+
+      <h3>各クラスの比較</h3>
+      <table>
+        <tr>
+          <th>クラス</th>
+          <th>構造</th>
+          <th>結合価</th>
+          <th>主な特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">IgG</span></td>
+          <td>単量体</td>
+          <td>2価</td>
+          <td><span class="highlight">血清中最多</span>、<span class="highlight">胎盤通過</span>、オプソニン活性</td>
+        </tr>
+        <tr>
+          <td><span class="key">IgM</span></td>
+          <td>五量体</td>
+          <td><span class="highlight">10価</span></td>
+          <td>感染初期に産生、中和作用が高い</td>
+        </tr>
+        <tr>
+          <td><span class="key">IgA</span></td>
+          <td>二量体</td>
+          <td><span class="highlight">4価</span></td>
+          <td>分泌型(sIgA)は粘膜免疫の中心</td>
+        </tr>
+        <tr>
+          <td><span class="key">IgE</span></td>
+          <td>単量体</td>
+          <td>2価</td>
+          <td>I型アレルギー、肥満細胞に結合</td>
+        </tr>
+        <tr>
+          <td><span class="key">IgD</span></td>
+          <td>単量体</td>
+          <td>2価</td>
+          <td>B細胞の成熟に関与</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">結合価の計算</div>
+        <ul>
+          <li>単量体（IgG, IgE, IgD）：<span class="highlight">2価</span>（Fab領域が2つ）</li>
+          <li>二量体（sIgA）：<span class="highlight">4価</span>（2×2）</li>
+          <li>五量体（IgM）：<span class="highlight">10価</span>（2×5）</li>
+        </ul>
+      </div>
+
+      <h2>IgGの特徴</h2>
+      <ul>
+        <li><span class="highlight">血清中に最も多く存在</span>（約75%）</li>
+        <li>二次免疫応答で多量に産生される</li>
+        <li>ウイルスや毒素の<span class="key">中和作用</span>を有する</li>
+        <li><span class="highlight">胎盤を通過</span>し、新生児期の感染防御を担う</li>
+        <li><span class="key">オプソニン活性</span>を有する</li>
+      </ul>
+      <p class="note">※出生時の血中IgGは母体由来。新生児自身がIgGを産生するのは生後数か月以降。</p>
+
+      <h2>IgAの特徴</h2>
+      <ul>
+        <li>血清型と<span class="key">分泌型（sIgA）</span>が存在</li>
+        <li>分泌型は<span class="key">二量体</span>（J鎖で連結）</li>
+        <li>唾液、鼻汁、肺、腸管など<span class="highlight">粘膜免疫の中心</span></li>
+        <li>IgA1とIgA2のサブクラスが存在</li>
+      </ul>
+      <p class="note">※口腔レンサ球菌などはIgAプロテアーゼを産生し、IgA1を分解して感染を成立させる。</p>
+
+      <h2>一次免疫応答と二次免疫応答</h2>
+      <h3>一次免疫応答</h3>
+      <ul>
+        <li>初めて抗原に曝露されたときの反応</li>
+        <li><span class="highlight">IgMが最初に産生</span>される</li>
+        <li>抗体産生までに時間がかかる</li>
+      </ul>
+
+      <h3>二次免疫応答</h3>
+      <ul>
+        <li>同じ抗原に再度曝露されたときの反応</li>
+        <li><span class="highlight">IgGが大量に産生</span>される</li>
+        <li>記憶B細胞により迅速かつ強力に反応</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A40</div>
+        <p>出生時のヒト血液中で最も多いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a IgA<br>
+          b IgD<br>
+          c IgE<br>
+          d IgG<br>
+          e IgM
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">IgGは唯一胎盤を通過できる</span>免疫グロブリンである。出生時の血中IgGは母体由来であり、新生児期の感染防御を担う。血清中に最も多いのもIgG（約75%）だが、この問題では「出生時」という点がポイント。胎盤通過性により母体からIgGが移行するため、出生時もIgGが最多となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A51</div>
+        <p>抗原決定基との結合部位が4価なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a IgG<br>
+          b sIgA<br>
+          c T細胞受容体〈TCR〉<br>
+          d MHCクラスⅠ分子<br>
+          e MHCクラスⅡ分子
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">sIgA（分泌型IgA）は二量体</span>であり、1分子あたり2つの抗原結合部位を持つため、2×2=<span class="highlight">4価</span>となる。IgGは単量体で2価、IgMは五量体で10価。TCRやMHC分子は抗体ではなく、抗原結合部位の「価」で表現しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

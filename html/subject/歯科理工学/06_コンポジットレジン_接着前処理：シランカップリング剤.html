@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>シランカップリング剤 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / コンポジットレジン</span>
+    <h1>シランカップリング剤</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>シランカップリング剤は<span class="highlight">シリカ（SiO₂）</span>に有効</li>
+          <li><span class="caution">ジルコニア（ZrO₂）・アルミナ（Al₂O₃）には無効</span> → MDPを使用</li>
+          <li>代表的なシランカップリング剤：<span class="key">γ-MPTS</span></li>
+        </ul>
+      </div>
+
+      <h2>シランカップリング剤とは</h2>
+      <p>シリカ（SiO₂）を含む材料とレジンを化学的に結合させる両親媒性の処理剤。</p>
+
+      <h3>γ-MPTS（代表的なシランカップリング剤）</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>正式名称</td>
+          <td>γ-メタクリロイルオキシプロピルトリメトキシシラン<br>(γ-methacryloyloxypropyl trimethoxysilane)</td>
+        </tr>
+        <tr>
+          <td>レジン側</td>
+          <td><span class="key">メタクリロイルオキシ基</span>（二重結合）→ レジンモノマーと重合</td>
+        </tr>
+        <tr>
+          <td>シリカ側</td>
+          <td><span class="key">メトキシ基</span> → 加水分解 → シラノール基（-Si-OH）</td>
+        </tr>
+        <tr>
+          <td>結合様式</td>
+          <td><span class="highlight">シロキサン結合</span>（Si-O-Si）でシリカ表面と結合</td>
+        </tr>
+      </table>
+
+      <h2>作用機序</h2>
+      <p>γ-MPTSは分子の両端に異なる官能基をもつ：</p>
+      <ul>
+        <li><span class="key">一端</span>：メタクリロイルオキシ基 → レジンの二重結合と重合</li>
+        <li><span class="key">他端</span>：メトキシ基 → 加水分解でシラノール基（-Si-OH）に変化</li>
+        <li>シラノール基がシリカ表面のシラノール基と<span class="highlight">シロキサン結合</span>（Si-O-Si）を形成</li>
+      </ul>
+      <p class="note">これにより、無機質（シリカ）と有機質（レジン）を橋渡しする。</p>
+
+      <h2>シランカップリング剤が有効な材料</h2>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>組成</th>
+          <th>シラン処理</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td>シリカ系セラミックス</td>
+          <td>SiO₂含有</td>
+          <td><span class="key">○ 有効</span></td>
+          <td>長石系陶材など</td>
+        </tr>
+        <tr>
+          <td>コンポジットレジン</td>
+          <td>シリカフィラー</td>
+          <td><span class="key">○ 有効</span></td>
+          <td>修復・補修時</td>
+        </tr>
+        <tr>
+          <td>ジルコニア</td>
+          <td>ZrO₂</td>
+          <td><span class="caution">× 無効</span></td>
+          <td>MDPを使用</td>
+        </tr>
+        <tr>
+          <td>アルミナ</td>
+          <td>Al₂O₃</td>
+          <td><span class="caution">× 無効</span></td>
+          <td>MDPを使用</td>
+        </tr>
+        <tr>
+          <td>金属</td>
+          <td>各種合金</td>
+          <td><span class="caution">× 無効</span></td>
+          <td>メタルプライマーを使用</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ジルコニア・アルミナへの対応</div>
+        <ul>
+          <li>シランカップリング剤（γ-MPTS）は<span class="caution">使用不可</span></li>
+          <li><span class="key">リン酸エステル系（MDP）</span>が有効</li>
+          <li><span class="key">トライボケミカル処理</span>：シリカコーティングされたアルミナ粉末でサンドブラスト → 表面をシリカに改質 → シラン処理可能に</li>
+        </ul>
+      </div>
+
+      <h2>コンポジットレジンにおける役割</h2>
+      <p>コンポジットレジンの製造工程でフィラー表面をγ-MPTSで処理する。</p>
+      <ul>
+        <li><span class="key">フィラー</span>（シリカ、ケイ酸塩ガラス）と<span class="key">マトリックスレジン</span>を化学結合</li>
+        <li>フィラーとレジンの一体化により機械的性質が向上</li>
+        <li>フィラー含有量を増やすことで強度・耐摩耗性が向上</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">105A92</div>
+        <p>シランカップリング処理が接着に有効なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a CaO<br>
+          b SiO₂<br>
+          c TiO₂<br>
+          d ZrO₂<br>
+          e Al₂O₃
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】シランカップリング剤（γ-MPTS）は<span class="highlight">シリカ（SiO₂）</span>表面のシラノール基とシロキサン結合を形成する。ジルコニア（ZrO₂）やアルミナ（Al₂O₃）にはシラノール基がないため、シラン処理は無効でMDPを使用する。CaO、TiO₂も同様にシラン処理は無効。</p>
+      </div>
+
+      <h2>接着前処理のまとめ（材料別）</h2>
+      <table>
+        <tr>
+          <th>被着体</th>
+          <th>接着性モノマー・処理剤</th>
+        </tr>
+        <tr>
+          <td>歯質（エナメル質・象牙質）</td>
+          <td>MDP、4-META、MAC-10など</td>
+        </tr>
+        <tr>
+          <td>シリカ系セラミックス・CR</td>
+          <td><span class="key">γ-MPTS</span>（シランカップリング剤）</td>
+        </tr>
+        <tr>
+          <td>ジルコニア・アルミナ</td>
+          <td><span class="key">MDP</span>（リン酸エステル系）</td>
+        </tr>
+        <tr>
+          <td>貴金属（Au, Ag, Pd）</td>
+          <td><span class="key">VBATDT, MTU-6</span>（イオウ系）</td>
+        </tr>
+        <tr>
+          <td>卑金属（Ti, Co-Cr）</td>
+          <td><span class="key">MDP, 4-META</span>（酸性モノマー）</td>
+        </tr>
+      </table>
+
+      <p class="note">覚え方：「シリカにはシラン、それ以外は各専用プライマー」</p>
+
+    </div>
+  </div>
+</body>
+</html>

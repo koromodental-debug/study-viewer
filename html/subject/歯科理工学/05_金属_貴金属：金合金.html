@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>貴金属：金合金 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 金属</span>
+    <h1>貴金属：金合金</h1>
+    <div class="container">
+
+      <h2>歯科鋳造用金合金とは</h2>
+      <p>歯科鋳造用金合金は、<span class="key">JIS T 6116:2012</span>により規格化されている。金を主成分とし、機械的性質によりタイプ1〜4に分類される。</p>
+
+      <h3>組成要件</h3>
+      <ul>
+        <li><span class="key">金含有量</span>：65%以上</li>
+        <li><span class="key">金＋白金族元素</span>の合計：75%以上</li>
+      </ul>
+      <p class="note">白金族元素：Pt（白金）、Pd（パラジウム）、Ir（イリジウム）など</p>
+
+      <h2>タイプ分類【頻出】</h2>
+      <p>タイプ1〜4は機械的性質（耐力・伸び）の違いにより分類される。<span class="highlight">タイプ番号が大きくなるほど硬くなり、伸びは小さくなる</span>。</p>
+
+      <h3>各タイプの機械的性質と用途</h3>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>耐力（MPa）</th>
+          <th>伸び（%）</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="key">タイプ1</span></td>
+          <td>80以上</td>
+          <td>18以上</td>
+          <td>単純窩洞インレー</td>
+        </tr>
+        <tr>
+          <td><span class="key">タイプ2</span></td>
+          <td>180以上</td>
+          <td>10以上</td>
+          <td>インレー、クラウン</td>
+        </tr>
+        <tr>
+          <td><span class="key">タイプ3</span></td>
+          <td>270以上</td>
+          <td>5以上</td>
+          <td>ブリッジ</td>
+        </tr>
+        <tr>
+          <td><span class="key">タイプ4</span></td>
+          <td>360以上</td>
+          <td>2以上</td>
+          <td>義歯床、クラスプ</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">タイプ番号と性質の関係</div>
+        <ul>
+          <li>タイプ番号↑ → <span class="highlight">金含有量↓</span>（添加元素が増える）</li>
+          <li>タイプ番号↑ → <span class="key">耐力・硬さ↑</span></li>
+          <li>タイプ番号↑ → <span class="key">伸び↓</span></li>
+          <li>タイプ番号↑ → <span class="key">融点↓</span>（添加元素の影響）</li>
+        </ul>
+      </div>
+
+      <h2>硬化熱処理</h2>
+      <p><span class="key">硬化熱処理</span>とは、合金を加熱後に急冷して硬さを増す処理である。金合金ではCu（銅）の析出硬化を利用する。</p>
+
+      <h3>タイプ別の硬化熱処理可否</h3>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>硬化熱処理</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td>タイプ1</td>
+          <td><span class="caution">不可能</span></td>
+          <td>金含有量が多く、添加元素が少ない</td>
+        </tr>
+        <tr>
+          <td>タイプ2</td>
+          <td><span class="caution">不可能</span></td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>タイプ3</td>
+          <td>可能なものもある</td>
+          <td>Cu等の添加元素がある程度含まれる</td>
+        </tr>
+        <tr>
+          <td>タイプ4</td>
+          <td><span class="highlight">可能</span></td>
+          <td>Cu等の添加元素が多く、析出硬化が起こる</td>
+        </tr>
+      </table>
+      <p class="note">硬化熱処理：700℃加熱→急冷（規則格子形成による硬化）</p>
+
+      <h2>金合金の添加元素</h2>
+      <table>
+        <tr>
+          <th>元素</th>
+          <th>役割</th>
+        </tr>
+        <tr>
+          <td><span class="key">Au（金）</span></td>
+          <td>主成分、耐食性、延性</td>
+        </tr>
+        <tr>
+          <td><span class="key">Pt（白金）</span></td>
+          <td>硬さ向上、融点上昇</td>
+        </tr>
+        <tr>
+          <td><span class="key">Pd（パラジウム）</span></td>
+          <td>硬さ向上、耐食性</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ag（銀）</span></td>
+          <td>融点低下、鋳造性向上</td>
+        </tr>
+        <tr>
+          <td><span class="key">Cu（銅）</span></td>
+          <td>硬さ向上、硬化熱処理に必要</td>
+        </tr>
+        <tr>
+          <td><span class="key">Zn（亜鉛）</span></td>
+          <td>脱酸剤、鋳造性向上</td>
+        </tr>
+      </table>
+
+      <h2>鋳造について</h2>
+      <ul>
+        <li><span class="key">融点</span>：タイプ1（920〜930℃）〜タイプ4（850〜880℃）</li>
+        <li><span class="key">使用する埋没材</span>：石膏系埋没材（700℃以下で使用可能）</li>
+        <li><span class="key">鋳造収縮</span>：約1.5%</li>
+      </ul>
+
+      <h2>過去問演習</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A56</div>
+        <p>鋳造用金合金について正しいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107A56_1.png" alt="表">
+        </div>
+        <div class="choices">
+          a タイプ1は硬化熱処理が可能である。<br>
+          b タイプ1はタイプ3よりも硬さが大きい。<br>
+          c タイプ2はタイプ3よりも耐力が大きい。<br>
+          d タイプ3はタイプ4よりも伸びが大きい。<br>
+          e タイプ1はタイプ4よりも金の含有量が多い。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】</p>
+        <ul>
+          <li><span class="caution">a ×</span>：タイプ1は硬化熱処理<span class="caution">不可能</span>。タイプ3・4で可能。</li>
+          <li><span class="caution">b ×</span>：タイプ1はタイプ3よりも硬さが<span class="caution">小さい</span>。タイプ番号↑で硬さ↑。</li>
+          <li><span class="caution">c ×</span>：タイプ2はタイプ3よりも耐力が<span class="caution">小さい</span>（180以上 vs 270以上）。</li>
+          <li><span class="key">d ○</span>：タイプ3はタイプ4よりも伸びが<span class="key">大きい</span>（5以上 vs 2以上）。</li>
+          <li><span class="key">e ○</span>：タイプ1はタイプ4よりも金含有量が<span class="key">多い</span>。タイプ番号↑で金含有量↓。</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

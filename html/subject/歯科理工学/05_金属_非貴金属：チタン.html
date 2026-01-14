@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>非貴金属：チタン - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 金属</span>
+    <h1>非貴金属：チタン</h1>
+    <div class="container">
+
+      <h2>チタンとは</h2>
+      <p>チタン（Ti）は、軽量で耐食性・生体親和性に優れた金属である。歯科では<span class="key">インプラント体</span>、<span class="key">義歯床</span>、<span class="key">クラウン・ブリッジ</span>などに使用される。</p>
+
+      <h3>基本的性質</h3>
+      <ul>
+        <li><span class="key">融点</span>：約1,700℃（非常に高い）</li>
+        <li><span class="key">比重</span>：4.5（金合金の約1/4）</li>
+        <li><span class="key">弾性係数</span>：約100 GPa</li>
+        <li><span class="key">熱伝導率</span>：低い（切削時に熱がこもる）</li>
+      </ul>
+
+      <h2>純チタンの種類【頻出】</h2>
+      <p>純チタンは<span class="highlight">O（酸素）、N（窒素）、Fe（鉄）</span>などの微量元素の含有量により1〜4種に分類される。</p>
+
+      <h3>純チタンに含まれる微量元素</h3>
+      <ul>
+        <li><span class="key">H（水素）</span></li>
+        <li><span class="highlight">O（酸素）</span>：含有量で種類が変わる</li>
+        <li><span class="highlight">N（窒素）</span>：含有量で種類が変わる</li>
+        <li><span class="key">Fe（鉄）</span></li>
+        <li><span class="key">C（炭素）</span></li>
+      </ul>
+
+      <h3>純チタン1〜4種の性質（JIS規格）</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>O（酸素）</th>
+          <th>N（窒素）</th>
+          <th>引張強さ</th>
+          <th>硬さ(HV)</th>
+        </tr>
+        <tr>
+          <td><span class="key">1種</span></td>
+          <td>&lt;0.15%</td>
+          <td>&lt;0.03%</td>
+          <td>270〜410 MPa</td>
+          <td>&gt;100</td>
+        </tr>
+        <tr>
+          <td><span class="key">2種</span></td>
+          <td>&lt;0.20%</td>
+          <td>&lt;0.03%</td>
+          <td>340〜510 MPa</td>
+          <td>&gt;110</td>
+        </tr>
+        <tr>
+          <td><span class="key">3種</span></td>
+          <td>&lt;0.30%</td>
+          <td>&lt;0.05%</td>
+          <td>480〜620 MPa</td>
+          <td>&gt;150</td>
+        </tr>
+        <tr>
+          <td><span class="key">4種</span></td>
+          <td>&lt;0.40%</td>
+          <td>&lt;0.05%</td>
+          <td>550〜750 MPa</td>
+          <td>&gt;180</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">種類番号と性質の関係</div>
+        <ul>
+          <li>種類番号↑ → <span class="key">不純物量↑</span>（O、N、Feが増加）</li>
+          <li>種類番号↑ → <span class="key">強度・硬さ↑</span></li>
+          <li>種類番号↑ → <span class="caution">伸び↓</span>（脆くなる）</li>
+        </ul>
+        <p class="note">1種が最も純度が高く軟らかい。4種は不純物が多く硬い。</p>
+      </div>
+
+      <h2>チタン合金</h2>
+      <table>
+        <tr>
+          <th>合金名</th>
+          <th>添加元素</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="key">Ti-6Al-4V</span></td>
+          <td>Al 6%、V 4%</td>
+          <td>インプラント、義歯床</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ti-6Al-7Nb</span></td>
+          <td>Al 6%、Nb 7%</td>
+          <td>インプラント（Vフリー）</td>
+        </tr>
+      </table>
+      <p class="note">Ti-6Al-7NbはV（バナジウム）を含まないため、生体安全性が高い。</p>
+
+      <h2>チタンの利点と欠点【頻出】</h2>
+
+      <h3>利点</h3>
+      <table>
+        <tr>
+          <th>利点</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">耐食性が良好</span></td>
+          <td>不動態化（表面に安定な酸化膜TiO₂を形成）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">生体親和性が高い</span></td>
+          <td>極低アレルギー性、オッセオインテグレーション</td>
+        </tr>
+        <tr>
+          <td><span class="key">比重が小さい</span></td>
+          <td>金合金の約1/4（軽い義歯床が作れる）</td>
+        </tr>
+      </table>
+
+      <h3>欠点</h3>
+      <table>
+        <tr>
+          <th>欠点</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="caution">鋳造が困難</span></td>
+          <td>融点が高い（約1,700℃）、反応性が高い</td>
+        </tr>
+        <tr>
+          <td><span class="caution">切削が困難</span></td>
+          <td>熱伝導率が低い（工具に熱がこもる）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">研磨が困難</span></td>
+          <td>硬い酸化膜が形成される</td>
+        </tr>
+      </table>
+
+      <h3>チタン鋳造の特殊性</h3>
+      <ul>
+        <li><span class="key">専用鋳造機</span>が必要（アーク溶融炉、高周波誘導加熱炉）</li>
+        <li><span class="key">専用埋没材</span>が必要（マグネシア系）</li>
+        <li>シリカ系埋没材はチタンと反応するため使用不可</li>
+      </ul>
+
+      <h2>金銀パラジウム合金との比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>純チタン</th>
+          <th>金銀パラジウム合金</th>
+        </tr>
+        <tr>
+          <td>耐食性</td>
+          <td><span class="key">優れる</span></td>
+          <td>やや劣る</td>
+        </tr>
+        <tr>
+          <td>生体親和性</td>
+          <td><span class="key">優れる</span></td>
+          <td>やや劣る</td>
+        </tr>
+        <tr>
+          <td>研磨性</td>
+          <td><span class="caution">困難</span></td>
+          <td>容易</td>
+        </tr>
+        <tr>
+          <td>切削性</td>
+          <td><span class="caution">困難</span></td>
+          <td>容易</td>
+        </tr>
+        <tr>
+          <td>鋳造性</td>
+          <td><span class="caution">困難</span></td>
+          <td>容易</td>
+        </tr>
+        <tr>
+          <td>比重</td>
+          <td>4.5（軽い）</td>
+          <td>約11（重い）</td>
+        </tr>
+      </table>
+
+      <h2>過去問演習</h2>
+
+      <div class="question-box">
+        <div class="q-number">111D35</div>
+        <p>純チタン1～4種に含まれる微量元素はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 塩　素<br>
+          b 酸　素<br>
+          c 窒　素<br>
+          d ケイ素<br>
+          e フッ素
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】純チタン1〜4種に含まれる微量元素は<span class="key">H（水素）、O（酸素）、N（窒素）、Fe（鉄）、C（炭素）</span>である。これらの不純物量により1〜4種に分類され、不純物が多いほど強度・硬さが増加する。塩素、ケイ素、フッ素は含まれない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A47</div>
+        <p>金銀パラジウム合金と比較して純チタンが優れているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 研磨性<br>
+          b 切削性<br>
+          c 耐食性<br>
+          d 鋳造性<br>
+          e 生体親和性
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】</p>
+        <ul>
+          <li><span class="caution">a ×</span>：研磨性は純チタンが<span class="caution">劣る</span>（硬い酸化膜が形成）</li>
+          <li><span class="caution">b ×</span>：切削性は純チタンが<span class="caution">劣る</span>（熱伝導率が低く熱がこもる）</li>
+          <li><span class="key">c ○</span>：耐食性は純チタンが<span class="key">優れる</span>（不動態化による）</li>
+          <li><span class="caution">d ×</span>：鋳造性は純チタンが<span class="caution">劣る</span>（融点が高く専用設備が必要）</li>
+          <li><span class="key">e ○</span>：生体親和性は純チタンが<span class="key">優れる</span>（極低アレルギー性）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

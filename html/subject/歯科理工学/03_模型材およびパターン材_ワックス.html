@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ワックス - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 模型材およびパターン材</span>
+    <h1>ワックス</h1>
+    <div class="container">
+
+      <h2>ワックスの種類と用途</h2>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>用途</th>
+          <th>主成分</th>
+        </tr>
+        <tr>
+          <td class="key">インレーワックス</td>
+          <td>インレー、クラウン、ブリッジのワックスパターン</td>
+          <td>パラフィン</td>
+        </tr>
+        <tr>
+          <td class="key">パラフィンワックス</td>
+          <td>義歯床の仮床、咬合堤、ろう義歯</td>
+          <td>パラフィン</td>
+        </tr>
+        <tr>
+          <td>シートワックス</td>
+          <td>鋳造床などのワックスパターン</td>
+          <td>パラフィン</td>
+        </tr>
+        <tr>
+          <td>レディキャスティングワックス</td>
+          <td>パラタルバー、リンガルバー、クラスプ</td>
+          <td>パラフィン</td>
+        </tr>
+        <tr>
+          <td class="key">ユーティリティワックス</td>
+          <td>トレー周縁延長、アンダーカット閉塞</td>
+          <td>蜜ろう</td>
+        </tr>
+        <tr>
+          <td class="key">スティッキーワックス</td>
+          <td>ろう付け時の仮着、破折義歯修理時の仮着</td>
+          <td>蜜ろう</td>
+        </tr>
+      </table>
+
+      <h2>ワックスの組成</h2>
+
+      <h3>主成分</h3>
+      <ul>
+        <li><span class="key">パラフィン</span>：彫刻・成形に適する（インレーワックスなど）</li>
+        <li><span class="key">蜜ろう</span>：付着性・粘りが強い（ユーティリティ、スティッキー）</li>
+      </ul>
+
+      <h3>添加成分</h3>
+      <p>粘りを与える成分：蜜ろう、カルナウバワックス、ダンマー</p>
+
+      <h2>ワックスの特徴</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">ワックスの基本特性</div>
+        <ul>
+          <li><span class="highlight">熱可塑性</span>を示す（加熱で軟化、冷却で硬化）</li>
+          <li><span class="highlight">熱膨張係数が大きい</span></li>
+          <li>金属のように融点が明確でなく、<span class="key">凝固温度に範囲がある</span></li>
+          <li>軟化温度：インレーワックスで約45〜60℃</li>
+        </ul>
+      </div>
+
+      <h2>フロー（加圧短縮率）</h2>
+
+      <p>加圧下での厚さの短縮率。ワックスパターン製作時には細部に行き渡るフローが必要だが、硬化後は<span class="key">フローが少ない</span>ことが望ましい。</p>
+
+      <h3>インレーワックスのフロー</h3>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>30℃</th>
+          <th>37℃</th>
+          <th>40℃</th>
+          <th>45℃</th>
+        </tr>
+        <tr>
+          <td class="key">直接法用（タイプI）</td>
+          <td>—</td>
+          <td>&lt;1%</td>
+          <td>&lt;20%</td>
+          <td>70〜90%</td>
+        </tr>
+        <tr>
+          <td class="key">間接法用（タイプII）</td>
+          <td>&lt;1%</td>
+          <td>—</td>
+          <td>&lt;50%</td>
+          <td>70〜90%</td>
+        </tr>
+      </table>
+
+      <h2>内部応力と応力解放</h2>
+
+      <h3>内部応力の発生原因</h3>
+      <ul>
+        <li>成形（盛り上げ、浸漬、圧接）時の圧接</li>
+        <li>熱収縮</li>
+        <li>彫刻時の圧力</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">応力解放とは</div>
+        <p>変形させたワックスを放置すると、蓄積された<span class="highlight">内部応力が解放</span>されて形状が変化する現象。</p>
+        <p>元の形状に戻ろうとする力が働く → ワックスパターンの変形の原因となる</p>
+      </div>
+
+      <h3>類似用語との違い</h3>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>意味</th>
+        </tr>
+        <tr>
+          <td class="key">応力解放</td>
+          <td>内部応力が解放されて形状が変化（放置で起こる）</td>
+        </tr>
+        <tr>
+          <td>応力緩和</td>
+          <td>一定ひずみ下で応力が時間とともに減少</td>
+        </tr>
+        <tr>
+          <td>フロー</td>
+          <td>加圧下での変形（加圧短縮率）</td>
+        </tr>
+        <tr>
+          <td>クリープ</td>
+          <td>一定応力下でひずみが時間とともに増加</td>
+        </tr>
+        <tr>
+          <td>弾性回復</td>
+          <td>除荷後に弾性変形分が瞬時に回復</td>
+        </tr>
+      </table>
+
+      <h2>取り扱い上の注意</h2>
+
+      <ul>
+        <li>熱膨張・熱収縮が著しいので<span class="caution">必要以上に加熱しない</span></li>
+        <li>熱伝導が悪いので時間をかけて全体に熱を行き渡らせる</li>
+        <li>揮発成分が失われるおそれがあるので<span class="caution">過熱を避ける</span></li>
+        <li>対策：適切な温度管理、模型上での保持による応力緩和</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">106C125</div>
+        <p>器具の写真（別冊No.19）を別に示す。<br>この器具で操作する材料で正しいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106C125_1.png" alt="器具の写真">
+        </div>
+        <div class="choices">
+          a 熱可塑性を示す。<br>
+          b 水の接触角が小さい。<br>
+          c 熱膨張係数が大きい。<br>
+          d キレート反応で硬化する。<br>
+          e 冷却でフローが大きくなる。
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】写真はワックス操作用の器具（ワックススパチュラなど）。ワックスは<span class="highlight">熱可塑性</span>を示し（加熱で軟化、冷却で硬化）、<span class="highlight">熱膨張係数が大きい</span>。水の接触角は大きい（疎水性）。フローは冷却で小さくなる。キレート反応はセメントなどで見られる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A31</div>
+        <p>棒状インレーワックスを温水中で円盤状金型の周囲に沿わせて変形させた写真（別冊 No.11A）とただちに取り出し室温で放置した写真（別冊 No.11B）を別に示す。<br>矢印で示す形状変化の機序はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A31_1.png" alt="変形前後の写真">
+        </div>
+        <div class="choices">
+          a フロー<br>
+          b 応力解放<br>
+          c 応力緩和<br>
+          d クリープ<br>
+          e 弾性回復
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】温水中で変形させたワックスを室温で放置すると、蓄積された<span class="highlight">内部応力が解放</span>されて元の形状に戻ろうとする。これが応力解放。フローは加圧下での変形、クリープは一定応力下での変形増加、弾性回復は除荷後の瞬時回復であり、放置による形状変化とは異なる。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li>ワックスは<span class="highlight">熱可塑性</span>、<span class="highlight">熱膨張係数大</span></li>
+          <li>変形後の放置による形状変化 ＝ <span class="highlight">応力解放</span></li>
+          <li>フロー・クリープ・弾性回復との違いを理解する</li>
+          <li>蜜ろう主成分：ユーティリティ、スティッキーワックス</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

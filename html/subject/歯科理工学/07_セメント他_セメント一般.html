@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>セメント一般 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / セメント他</span>
+    <h1>セメント一般</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>粉末が<span class="highlight">酸化亜鉛（ZnO）</span>：リン酸亜鉛、ポリカルボキシレート</li>
+          <li>液が<span class="highlight">ポリアクリル酸</span>：ポリカルボキシレート、GIC → 30分で中性化</li>
+          <li>リン酸亜鉛セメントは<span class="caution">歯髄刺激性あり</span>（24時間で中性化）</li>
+        </ul>
+      </div>
+
+      <h2>合着・接着用セメントの成分比較</h2>
+      <table>
+        <tr>
+          <th>セメント</th>
+          <th>粉末</th>
+          <th>液</th>
+          <th>硬化反応</th>
+        </tr>
+        <tr>
+          <td><span class="key">リン酸亜鉛</span></td>
+          <td>酸化亜鉛（ZnO）約90%<br>酸化マグネシウム 約10%</td>
+          <td>正リン酸（H₃PO₄）50〜60%</td>
+          <td>酸-塩基反応</td>
+        </tr>
+        <tr>
+          <td><span class="key">ポリカルボキシレート</span></td>
+          <td>酸化亜鉛（ZnO）</td>
+          <td>ポリアクリル酸</td>
+          <td>酸-塩基反応</td>
+        </tr>
+        <tr>
+          <td><span class="key">グラスアイオノマー</span></td>
+          <td>アルミノシリケートガラス<br>(SiO₂, Al₂O₃, CaF₂など)</td>
+          <td>ポリアクリル酸 45%<br>酒石酸 5%、水 50%</td>
+          <td>酸-塩基反応</td>
+        </tr>
+        <tr>
+          <td><span class="key">レジンセメント</span></td>
+          <td>フィラー（シリカなど）</td>
+          <td>レジンモノマー</td>
+          <td>重合反応</td>
+        </tr>
+      </table>
+
+      <h2>pH変化と歯髄刺激性</h2>
+      <h3>練和開始からのpH変化</h3>
+      <table>
+        <tr>
+          <th>セメント</th>
+          <th>直後</th>
+          <th>10分</th>
+          <th>30分</th>
+          <th>60分</th>
+          <th>中性化</th>
+        </tr>
+        <tr>
+          <td>リン酸亜鉛</td>
+          <td><span class="caution">pH 1.4〜2.5</span></td>
+          <td>3.7</td>
+          <td>4.1</td>
+          <td>4.3</td>
+          <td>24時間</td>
+        </tr>
+        <tr>
+          <td>ポリカルボキシレート</td>
+          <td>pH 3.0〜4.0</td>
+          <td>4.8</td>
+          <td><span class="highlight">5.8</span></td>
+          <td>5.9</td>
+          <td>約30分</td>
+        </tr>
+        <tr>
+          <td>グラスアイオノマー</td>
+          <td>酸性</td>
+          <td>-</td>
+          <td><span class="highlight">中性付近</span></td>
+          <td>-</td>
+          <td>約30分</td>
+        </tr>
+      </table>
+
+      <h3>歯髄刺激性の違い</h3>
+      <table>
+        <tr>
+          <th>セメント</th>
+          <th>歯髄刺激性</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td>リン酸亜鉛</td>
+          <td><span class="caution">あり</span></td>
+          <td>リン酸（低分子）が象牙細管に浸透</td>
+        </tr>
+        <tr>
+          <td>ポリカルボキシレート</td>
+          <td><span class="key">なし</span></td>
+          <td>ポリアクリル酸は高分子で浸透しにくい</td>
+        </tr>
+        <tr>
+          <td>グラスアイオノマー</td>
+          <td><span class="key">なし</span></td>
+          <td>ポリアクリル酸は高分子で浸透しにくい</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">セメントの系統関係</div>
+        <ul>
+          <li><span class="key">ポリカルボキシレート</span> = リン酸亜鉛の改良版（液：リン酸→ポリアクリル酸）</li>
+          <li><span class="key">グラスアイオノマー</span> = ポリカルボキシレートの改良版（粉：酸化亜鉛→アルミノシリケートガラス）</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">113C36</div>
+        <p>ポリアクリル酸を液の主成分とするのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a EBAセメント<br>
+          b リン酸亜鉛セメント<br>
+          c グラスアイオノマーセメント<br>
+          d 酸化亜鉛ユージノールセメント<br>
+          e ポリカルボキシレートセメント
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】<span class="highlight">ポリアクリル酸</span>を液とするのはグラスアイオノマーセメントとポリカルボキシレートセメント。リン酸亜鉛は正リン酸、EBAと酸化亜鉛ユージノールはユージノールを液とする。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C40</div>
+        <p>粉末の主成分が同じなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a レジンセメント<br>
+          b リン酸亜鉛セメント<br>
+          c リン酸カルシウムセメント<br>
+          d グラスアイオノマーセメント<br>
+          e ポリカルボキシレートセメント
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】リン酸亜鉛セメントとポリカルボキシレートセメントは、粉末の主成分が<span class="highlight">酸化亜鉛（ZnO）</span>で共通。GICはアルミノシリケートガラス、レジンセメントはフィラー、リン酸カルシウムセメントはリン酸カルシウムが粉末。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B89</div>
+        <p>練和開始から30分程度で酸性から中性に近づく合着用セメントはどれか。2つ選べ。</p>
+        <div class="choices">
+          a リン酸亜鉛セメント<br>
+          b MMA系レジンセメント<br>
+          c グラスアイオノマーセメント<br>
+          d コンポジット系レジンセメント<br>
+          e ポリカルボキシレートセメント
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】<span class="highlight">ポリアクリル酸系</span>のGICとポリカルボキシレートは30分程度で中性に近づく。リン酸亜鉛は24時間かかる。レジンセメントは酸-塩基反応ではなく重合反応で硬化するため該当しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C45</div>
+        <p>酸化亜鉛を含むのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 水硬性仮封材<br>
+          b バーニッシュ<br>
+          c テンポラリーストッピング<br>
+          d グラスアイオノマーセメント<br>
+          e メチルメタクリレート系常温重合型仮封材
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】水硬性仮封材（酸化亜鉛ユージノール系）とテンポラリーストッピング（ガッタパーチャ＋酸化亜鉛）は酸化亜鉛を含む。GICはアルミノシリケートガラスが粉末で酸化亜鉛を含まない。</p>
+      </div>
+
+      <h2>セメントの分類まとめ</h2>
+      <table>
+        <tr>
+          <th>分類基準</th>
+          <th>セメント</th>
+        </tr>
+        <tr>
+          <td>粉末：酸化亜鉛</td>
+          <td>リン酸亜鉛、ポリカルボキシレート、酸化亜鉛ユージノール</td>
+        </tr>
+        <tr>
+          <td>液：ポリアクリル酸</td>
+          <td>ポリカルボキシレート、グラスアイオノマー</td>
+        </tr>
+        <tr>
+          <td>30分で中性化</td>
+          <td>ポリカルボキシレート、グラスアイオノマー</td>
+        </tr>
+        <tr>
+          <td>歯髄刺激性あり</td>
+          <td>リン酸亜鉛</td>
+        </tr>
+        <tr>
+          <td>フッ素徐放性</td>
+          <td>グラスアイオノマー</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

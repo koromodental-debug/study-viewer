@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯質接着性モノマー - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / コンポジットレジン</span>
+    <h1>歯質接着性モノマー</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li><span class="highlight">親水性基＋疎水性基（二重結合）</span>の両親媒性構造</li>
+          <li>リン酸エステル系：<span class="key">MDP</span>、Phenyl-P → 無機成分（HAp）に結合</li>
+          <li>カルボン酸系：<span class="key">4-META</span>、4-MET、MAC-10 → 無機成分（HAp）に結合</li>
+          <li>HEMA：<span class="caution">接着性モノマーではない</span>（中性モノマー、コラーゲン膨潤用）</li>
+        </ul>
+      </div>
+
+      <h2>接着性モノマーの分類</h2>
+      <p>接着性モノマーは<span class="key">酸性モノマー</span>、<span class="key">機能性モノマー</span>とも呼ばれる。</p>
+
+      <h3>リン酸エステル系</h3>
+      <table>
+        <tr>
+          <th>モノマー</th>
+          <th>正式名称</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">MDP</span></td>
+          <td>10-メタクリロイルオキシデシルジハイドロゲンホスフェート</td>
+          <td>歯質・ジルコニア両方に有効</td>
+        </tr>
+        <tr>
+          <td><span class="key">Phenyl-P</span></td>
+          <td>2-メタクリロイルオキシエチルフェニルハイドロゲンホスフェート</td>
+          <td>歯質への接着</td>
+        </tr>
+      </table>
+
+      <h3>カルボン酸系</h3>
+      <table>
+        <tr>
+          <th>モノマー</th>
+          <th>正式名称</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">4-META</span></td>
+          <td>4-メタクリロイルオキシエチルトリメリット酸無水物</td>
+          <td>歯質への接着</td>
+        </tr>
+        <tr>
+          <td><span class="key">4-MET</span></td>
+          <td>4-メタクリロイルオキシエチルトリメリット酸</td>
+          <td>4-METAの加水分解物</td>
+        </tr>
+        <tr>
+          <td><span class="key">4-AET</span></td>
+          <td>4-アクリロイルオキシエチルトリメリット酸</td>
+          <td>象牙質接着に有効</td>
+        </tr>
+        <tr>
+          <td><span class="key">MAC-10</span></td>
+          <td>11-メタクリロイルオキシ-1,1-ウンデカンジカルボン酸</td>
+          <td>歯質への接着</td>
+        </tr>
+      </table>
+
+      <h2>構造的特徴</h2>
+      <p>歯質接着性モノマーに共通する構造：</p>
+      <ul>
+        <li><span class="highlight">親水性基</span>：リン酸基（-PO₄H₂）またはカルボキシル基（-COOH）→ 歯質のHApと化学結合</li>
+        <li><span class="highlight">疎水性基</span>：メタクリロイル基の二重結合（C=C）→ レジンと重合</li>
+      </ul>
+      <p class="note">両親媒性構造により、歯質とレジンの両方に結合できる。</p>
+
+      <h2>接着機構</h2>
+      <h3>エナメル質への接着</h3>
+      <ul>
+        <li>主成分：アパタイト（<span class="highlight">95%</span>）</li>
+        <li>前処理：<span class="key">37%リン酸</span>でエッチング</li>
+        <li>機械的嵌合：エナメル小柱間にレジンタグ形成</li>
+        <li>化学的結合：接着性モノマーがCa²⁺やOH⁻と結合</li>
+      </ul>
+
+      <h3>象牙質への接着</h3>
+      <ul>
+        <li>主成分：アパタイト＋<span class="key">コラーゲン（約18%）</span>＋水（約12%）</li>
+        <li>前処理：弱酸（10%クエン酸、酸性モノマー）でエッチング</li>
+        <li>スミヤー層の除去、象牙細管の開口</li>
+        <li><span class="key">HEMA</span>：コラーゲン線維を膨潤させ繊維間の空間を確保</li>
+        <li><span class="highlight">ハイブリッド層</span>（樹脂含浸層）の形成</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">HEMAの役割</div>
+        <ul>
+          <li>分子末端に<span class="highlight">水酸基（-OH）</span>をもつ</li>
+          <li><span class="caution">中性モノマー</span>であり、接着性モノマーではない</li>
+          <li>親水性でコラーゲン線維を膨潤させる</li>
+          <li>ボンディング剤の浸透を助ける</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">114C60</div>
+        <p>歯質の無機成分に接着するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a MDP<br>
+          b MMA<br>
+          c HEMA<br>
+          d 4-META<br>
+          e Bis-GMA
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】無機成分（HAp）に接着するのは接着性モノマー。MDPはリン酸エステル系、4-METAはカルボン酸系の接着性モノマー。MMAはベースモノマー、HEMAは中性モノマー、Bis-GMAはベースモノマーで、いずれも接着性モノマーではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D42</div>
+        <p>接着性モノマーの構造式を示す。歯質との接着部位はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D42.png" alt="MDPの構造式">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】図はMDPの構造式。ア（二重結合）・イ（メチル基）・ウ（カルボニル基）は重合に関与する部分、エは長鎖アルキル基。<span class="highlight">オのリン酸基</span>が歯質のHApと化学結合する接着部位である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C40</div>
+        <p>カルボン酸系接着性モノマーはどれか。2つ選べ。</p>
+        <div class="choices">
+          a MDP<br>
+          b HEMA<br>
+          c 4-MET<br>
+          d MAC-10<br>
+          e Phenyl-P
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】カルボン酸系は4-METとMAC-10。MDPとPhenyl-Pはリン酸エステル系。HEMAは中性モノマーで接着性モノマーではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A119</div>
+        <p>歯質接着性モノマーに共通するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Sを含む。<br>
+          b Siを含む。<br>
+          c 親水性基がある。<br>
+          d 二重結合がある。<br>
+          e −COOH基がある。
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】歯質接着性モノマーの共通構造は<span class="highlight">親水性基＋二重結合</span>。Sを含むのはイオウ系メタルプライマー、Siを含むのはシランカップリング剤。-COOH基はカルボン酸系のみで、リン酸系は-PO₄H₂をもつ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A113</div>
+        <p>歯質接着性モノマーはどれか。2つ選べ。</p>
+        <div class="choices">
+          a MDP<br>
+          b UDMA<br>
+          c MAC-10<br>
+          d Bis-GMA<br>
+          e DMAEMA
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】MDPはリン酸エステル系、MAC-10はカルボン酸系の接着性モノマー。UDMAとBis-GMAはベースモノマー、DMAEMAは重合促進剤（第3級アミン）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A83</div>
+        <p>象牙質との接着に有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a HEMA<br>
+          b UDMA<br>
+          c 4-AET<br>
+          d γ-MPTS<br>
+          e Bis-GMA
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】HEMAはコラーゲン膨潤により象牙質接着を補助。4-AETはカルボン酸系接着性モノマーで象牙質のHApに結合。γ-MPTSはシランカップリング剤でセラミックス用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A106</div>
+        <p>HEMAの分子末端にあるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 水酸基<br>
+          b リン酸基<br>
+          c アミノ基<br>
+          d プロピル基<br>
+          e シアネート基
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】HEMA（2-ヒドロキシエチルメタクリレート）は分子末端に<span class="highlight">水酸基（-OH）</span>をもつ。この水酸基により親水性を示し、コラーゲン線維の膨潤を促す。</p>
+      </div>
+
+      <h2>関連する接着材料との比較</h2>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>接着対象</th>
+          <th>接着性モノマー</th>
+        </tr>
+        <tr>
+          <td>歯質（HAp）</td>
+          <td>エナメル質・象牙質</td>
+          <td>MDP、4-META、MAC-10など</td>
+        </tr>
+        <tr>
+          <td>ジルコニア・アルミナ</td>
+          <td>非シリカ系セラミックス</td>
+          <td><span class="key">MDP</span>（シランは不可）</td>
+        </tr>
+        <tr>
+          <td>卑金属</td>
+          <td>Co-Cr、Ni-Cr合金など</td>
+          <td>カルボン酸系、リン酸エステル系</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>免疫担当細胞 - 微生物学・免疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学・免疫学 / 免疫</span>
+    <h1>免疫担当細胞</h1>
+    <div class="container">
+
+      <h2>免疫担当細胞の分類</h2>
+      <p>免疫担当細胞は<span class="key">自然免疫</span>に関わる細胞と<span class="key">獲得免疫</span>に関わる細胞に大別される。</p>
+
+      <h3>自然免疫と獲得免疫の違い</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>自然免疫</th>
+          <th>獲得免疫</th>
+        </tr>
+        <tr>
+          <td><span class="key">特異性</span></td>
+          <td>抗原非特異的</td>
+          <td>抗原特異的</td>
+        </tr>
+        <tr>
+          <td><span class="key">応答速度</span></td>
+          <td>迅速</td>
+          <td>遅い（初回）</td>
+        </tr>
+        <tr>
+          <td><span class="key">記憶</span></td>
+          <td>なし</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td><span class="key">主な細胞</span></td>
+          <td>好中球、マクロファージ、NK細胞</td>
+          <td>T細胞、B細胞</td>
+        </tr>
+      </table>
+
+      <h2>自然免疫の細胞</h2>
+
+      <h3>好中球</h3>
+      <ul>
+        <li><span class="key">食細胞</span>の1つ</li>
+        <li>感染の<span class="highlight">初期に動員</span>されるが、寿命が短い</li>
+        <li><span class="key">NETs</span>（好中球細胞外トラップ）による微生物捕獲</li>
+        <li>内在性の<span class="key">エラスターゼ</span>により貪食した微生物を分解</li>
+      </ul>
+
+      <h3>マクロファージ</h3>
+      <ul>
+        <li><span class="key">食細胞</span>の1つ、捕食能力が高い</li>
+        <li><span class="highlight">抗原提示能</span>を有する（MHCクラスII発現）</li>
+        <li>抗体のFcと結合する</li>
+      </ul>
+
+      <h3>NK細胞（ナチュラルキラー細胞）</h3>
+      <ul>
+        <li>ウイルス感染細胞を<span class="key">直接傷害</span>し排除</li>
+        <li><span class="highlight">抑制性レセプター</span>で自己のMHCクラスIを認識</li>
+        <li>自己細胞を誤って傷害しないための機構</li>
+        <li><span class="caution">遺伝子再構成は行わない</span>（自然免疫）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">NK細胞の抑制性レセプター</div>
+        <p>NK細胞は活性化レセプターと抑制性レセプターを持つ。正常細胞はMHCクラスIを発現しており、抑制性レセプターがこれを認識することで傷害を回避。ウイルス感染細胞や腫瘍細胞はMHCクラスIの発現が低下しているため、抑制シグナルが入らず傷害される。</p>
+      </div>
+
+      <h2>獲得免疫の細胞</h2>
+
+      <h3>T細胞</h3>
+      <p><span class="key">胸腺（Thymus）</span>で成熟するリンパ球。<span class="highlight">遺伝子再構成</span>によりTCR（T細胞受容体）の多様性を獲得。</p>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>表面マーカー</th>
+          <th>MHC拘束性</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">ヘルパーT細胞</span></td>
+          <td><span class="highlight">CD4</span></td>
+          <td>クラスII</td>
+          <td>サイトカイン産生、免疫応答の調節</td>
+        </tr>
+        <tr>
+          <td><span class="key">キラーT細胞（CTL）</span></td>
+          <td><span class="highlight">CD8</span></td>
+          <td>クラスI</td>
+          <td>感染細胞・腫瘍細胞の傷害</td>
+        </tr>
+      </table>
+
+      <h3>B細胞</h3>
+      <ul>
+        <li><span class="key">骨髄（Bone marrow）</span>で産生されるリンパ球</li>
+        <li><span class="highlight">遺伝子再構成</span>によりBCR（B細胞受容体）の多様性を獲得</li>
+        <li><span class="key">形質細胞</span>に分化し、抗体を産生</li>
+        <li><span class="highlight">抗原提示能</span>を有する（MHCクラスII発現）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">遺伝子再構成を行う細胞</div>
+        <ul>
+          <li><span class="highlight">B細胞とT細胞のみ</span>が遺伝子再構成を行う</li>
+          <li>NK細胞、樹状細胞、肥満細胞などは行わない</li>
+          <li>TCR・BCRの多様性を生み出す獲得免疫特有の機構</li>
+        </ul>
+      </div>
+
+      <h2>抗原提示細胞（APC）</h2>
+      <p><span class="key">MHCクラスII</span>を発現し、外来性抗原をヘルパーT細胞に提示する細胞。</p>
+
+      <h3>主な抗原提示細胞</h3>
+      <ul>
+        <li><span class="key">樹状細胞</span>：最も強力な抗原提示能</li>
+        <li><span class="key">マクロファージ</span>：食細胞かつ抗原提示細胞</li>
+        <li><span class="key">B細胞</span>：抗原提示能を有する</li>
+      </ul>
+      <p class="note">※好中球、好酸球、肥満細胞は抗原提示能を持たない</p>
+
+      <h3>MHCによる抗原提示</h3>
+      <table>
+        <tr>
+          <th>MHC分子</th>
+          <th>提示する抗原</th>
+          <th>発現細胞</th>
+          <th>認識する細胞</th>
+        </tr>
+        <tr>
+          <td><span class="key">クラスI</span></td>
+          <td>内因性抗原（ウイルス由来）</td>
+          <td>すべての有核細胞</td>
+          <td>CD8+ T細胞（CTL）</td>
+        </tr>
+        <tr>
+          <td><span class="key">クラスII</span></td>
+          <td>外因性抗原（細菌由来）</td>
+          <td>抗原提示細胞のみ</td>
+          <td>CD4+ T細胞（Th）</td>
+        </tr>
+      </table>
+
+      <h2>CTLによる感染細胞の傷害機構</h2>
+      <p>CTL（細胞傷害性T細胞）は<span class="key">MHCクラスI</span>に提示された抗原を<span class="key">TCR</span>で認識し、感染細胞を傷害する。</p>
+
+      <h3>傷害に関わる分子</h3>
+      <ul>
+        <li><span class="key">パーフォリン</span>：感染細胞膜に孔を形成</li>
+        <li><span class="key">グランザイム</span>：孔から侵入しアポトーシスを誘導</li>
+        <li><span class="key">Fasリガンド</span>：感染細胞のFasと結合しアポトーシス誘導</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112C21</div>
+        <p>外来性抗原を提示できる細胞はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 好酸球<br>
+          b 好中球<br>
+          c 樹状細胞<br>
+          d 肥満細胞<br>
+          e マクロファージ
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】外来性抗原を提示できるのは<span class="highlight">MHCクラスIIを発現する抗原提示細胞</span>である。樹状細胞とマクロファージが該当する。好酸球、好中球、肥満細胞は抗原提示能を持たない。B細胞も抗原提示細胞だが、選択肢にない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C99</div>
+        <p>遺伝子再構成で多様性を獲得するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a B細胞<br>
+          b T細胞<br>
+          c NK細胞<br>
+          d 樹状細胞<br>
+          e 肥満細胞
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">遺伝子再構成を行うのはB細胞とT細胞のみ</span>。これにより抗原受容体（TCR・BCR）の多様性が生み出される。NK細胞は自然免疫の細胞であり、遺伝子再構成は行わない。樹状細胞や肥満細胞も同様。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A54</div>
+        <p>自己の細胞や組織を誤って傷害しないために抑制性レセプターを有するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a B細胞<br>
+          b 好中球<br>
+          c NK細胞<br>
+          d 形質細胞<br>
+          e マクロファージ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">NK細胞は抑制性レセプター</span>を持ち、正常細胞のMHCクラスIを認識することで傷害を回避する。ウイルス感染細胞や腫瘍細胞はMHCクラスI発現が低下しているため、抑制シグナルが入らず傷害される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A21（図あり）</div>
+        <p>ある免疫担当細胞が腫瘍細胞を認識する機構の模式図を示す。アはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111A21_1.png" alt="模式図">
+        </div>
+        <div class="choices">
+          a 形質細胞<br>
+          b マクロファージ<br>
+          c ヘルパーT細胞<br>
+          d 細胞傷害性T細胞<br>
+          e ナチュラルキラー細胞
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】図では<span class="highlight">MHCクラスI + 抗原をTCRで認識</span>している。これは<span class="highlight">CTL（細胞傷害性T細胞、CD8陽性T細胞）</span>の特徴。NK細胞はTCRを持たず、MHC非拘束性に傷害する点で異なる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

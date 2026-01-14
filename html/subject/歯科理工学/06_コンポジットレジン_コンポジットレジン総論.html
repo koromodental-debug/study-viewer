@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>コンポジットレジン総論 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / コンポジットレジン</span>
+    <h1>コンポジットレジン総論</h1>
+    <div class="container">
+
+      <h2>コンポジットレジンとは</h2>
+      <p>コンポジットレジンは、<span class="key">マトリックスレジン</span>（有機成分）と<span class="key">フィラー</span>（無機成分）を複合した修復材料である。審美性に優れ、直接充填が可能なため、保存修復で広く使用される。</p>
+
+      <h2>光重合型コンポジットレジンの構成成分【頻出】</h2>
+      <p>光重合型コンポジットレジンは<span class="highlight">5つの成分</span>から構成される。</p>
+
+      <h3>5構成成分</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>役割</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">マトリックスレジン</span></td>
+          <td>基質（有機成分）</td>
+          <td>Bis-GMA、TEGDMA、UDMA</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">フィラー</span></td>
+          <td>強化材（無機成分）</td>
+          <td>シリカ、アルミナ、ジルコニア</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">光増感剤</span></td>
+          <td>光で励起→重合開始</td>
+          <td>カンファーキノン（473nm）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">重合禁止剤</span></td>
+          <td>保存中の重合防止</td>
+          <td>BHT、ハイドロキノン</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">色素</span></td>
+          <td>色調調整</td>
+          <td>各種顔料</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">光重合のしくみ</div>
+        <ul>
+          <li><span class="key">カンファーキノン</span>が可視光（約470nm）で励起</li>
+          <li>重合促進剤（第三級アミン）と反応</li>
+          <li>フリーラジカル発生 → モノマーが重合硬化</li>
+        </ul>
+      </div>
+
+      <h2>フィラーによる分類【頻出】</h2>
+      <p>フィラーの粒径・種類により、コンポジットレジンは分類される。</p>
+
+      <h3>フィラータイプの分類</h3>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>フィラー粒径</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">マクロフィラー型</span></td>
+          <td>1〜50μm</td>
+          <td>機械的強度↑、研磨性↓</td>
+        </tr>
+        <tr>
+          <td><span class="key">マイクロフィラー型</span></td>
+          <td>0.01〜0.04μm</td>
+          <td>研磨性↑、フィラー含有量↓</td>
+        </tr>
+        <tr>
+          <td><span class="key">ハイブリッド型</span></td>
+          <td>複数サイズ混合</td>
+          <td>フィラー含有量↑、強度↑</td>
+        </tr>
+        <tr>
+          <td><span class="key">ナノハイブリッド型</span></td>
+          <td>ナノフィラー含有</td>
+          <td>研磨性と強度を両立</td>
+        </tr>
+      </table>
+
+      <h2>マイクロフィラー型 vs ハイブリッド型【頻出】</h2>
+
+      <h3>なぜ差が生じるか</h3>
+      <ul>
+        <li><span class="key">ハイブリッド型</span>：複数サイズのフィラーを混合 → <span class="highlight">フィラー含有量が高い</span></li>
+        <li><span class="key">マイクロフィラー型</span>：超微粒子のみ → フィラー含有量が低い</li>
+      </ul>
+
+      <h3>物性の比較</h3>
+      <table>
+        <tr>
+          <th>物性</th>
+          <th>マイクロフィラー型</th>
+          <th>ハイブリッド型</th>
+        </tr>
+        <tr>
+          <td>フィラー含有量</td>
+          <td>低い</td>
+          <td><span class="key">高い</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">弾性係数</span></td>
+          <td>小さい</td>
+          <td><span class="highlight">大きい</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">引張強さ</span></td>
+          <td>弱い</td>
+          <td><span class="highlight">強い</span></td>
+        </tr>
+        <tr>
+          <td>吸水性</td>
+          <td><span class="caution">大きい</span></td>
+          <td>小さい</td>
+        </tr>
+        <tr>
+          <td>重合収縮率</td>
+          <td><span class="caution">大きい</span></td>
+          <td>小さい</td>
+        </tr>
+        <tr>
+          <td>熱膨張係数</td>
+          <td><span class="caution">大きい</span></td>
+          <td>小さい</td>
+        </tr>
+        <tr>
+          <td>研磨性</td>
+          <td>良好</td>
+          <td>やや劣る</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方：フィラーが多いと</div>
+        <ul>
+          <li>フィラー↑ → <span class="key">強度↑、弾性係数↑</span>（硬くて強い）</li>
+          <li>フィラー↑ → <span class="key">収縮↓、膨張↓、吸水↓</span>（レジン成分が少ない）</li>
+        </ul>
+      </div>
+
+      <h2>過去問演習</h2>
+
+      <div class="question-box">
+        <div class="q-number">112B37</div>
+        <p>光重合型コンポジットレジンに含まれるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 色　素<br>
+          b 光増感剤<br>
+          c フィラー<br>
+          d 重合禁止剤<br>
+          e マトリックスレジン
+        </div>
+        <div class="answer">正解：a, b, c, d, e</div>
+        <p>【解説】光重合型コンポジットレジンは以下の5成分から構成される。</p>
+        <ul>
+          <li><span class="key">a ○</span>：色素 → 色調調整のため含有</li>
+          <li><span class="key">b ○</span>：光増感剤 → カンファーキノン（光で励起し重合開始）</li>
+          <li><span class="key">c ○</span>：フィラー → 無機成分（シリカなど）で強度向上</li>
+          <li><span class="key">d ○</span>：重合禁止剤 → 保存中の重合を防止</li>
+          <li><span class="key">e ○</span>：マトリックスレジン → 有機成分（Bis-GMAなど）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C106</div>
+        <p>マイクロフィラー型と比べてハイブリッド型コンポジットレジンで大きくなるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 吸水性<br>
+          b 弾性係数<br>
+          c 引張強さ<br>
+          d 重合収縮率<br>
+          e 熱膨張係数
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】ハイブリッド型はフィラー含有量が高いため、以下の違いが生じる。</p>
+        <ul>
+          <li><span class="caution">a ×</span>：吸水性 → ハイブリッド型で<span class="caution">小さい</span>（レジン成分↓）</li>
+          <li><span class="key">b ○</span>：弾性係数 → ハイブリッド型で<span class="highlight">大きい</span>（フィラー↑）</li>
+          <li><span class="key">c ○</span>：引張強さ → ハイブリッド型で<span class="highlight">大きい</span>（フィラー↑）</li>
+          <li><span class="caution">d ×</span>：重合収縮率 → ハイブリッド型で<span class="caution">小さい</span>（レジン成分↓）</li>
+          <li><span class="caution">e ×</span>：熱膨張係数 → ハイブリッド型で<span class="caution">小さい</span>（無機成分↑）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

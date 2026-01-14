@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ジルコニアの接着 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / コンポジットレジン</span>
+    <h1>ジルコニアの接着</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>ジルコニア接着には<span class="highlight">MDP（リン酸エステル系）</span>が有効</li>
+          <li><span class="caution">シランカップリング剤（γ-MPTS）は無効</span>（シリカを含まないため）</li>
+          <li>1ステップセルフエッチングシステムにはMDPが含まれる</li>
+        </ul>
+      </div>
+
+      <h2>ジルコニアとは</h2>
+      <p>酸化ジルコニウム（ZrO₂）を主成分とする高密度半焼結体セラミックス。オールセラミックス修復に使用される。</p>
+
+      <h3>ジルコニアの特徴</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>ジルコニア</th>
+          <th>長石質陶材</th>
+        </tr>
+        <tr>
+          <td>主成分</td>
+          <td><span class="key">ZrO₂</span>（酸化ジルコニウム）</td>
+          <td>SiO₂（シリカ）含有</td>
+        </tr>
+        <tr>
+          <td>ビッカース硬さ</td>
+          <td>1,200 HV</td>
+          <td>400〜600 HV</td>
+        </tr>
+        <tr>
+          <td>曲げ強さ</td>
+          <td>900〜1,200 MPa</td>
+          <td>100 MPa以下</td>
+        </tr>
+        <tr>
+          <td>加工法</td>
+          <td>CAD/CAM（半焼結体切削後に焼結）</td>
+          <td>築盛・焼成</td>
+        </tr>
+      </table>
+
+      <h2>なぜシランが使えないか</h2>
+      <ul>
+        <li>ジルコニア（ZrO₂）は<span class="caution">シリカ（SiO₂）を含まない</span></li>
+        <li>シラノール基（-Si-OH）が存在しない</li>
+        <li>シロキサン結合（Si-O-Si）を形成できない</li>
+        <li>同様に<span class="key">アルミナ（Al₂O₃）</span>もシラン処理無効</li>
+      </ul>
+
+      <h2>ジルコニアの接着処理</h2>
+
+      <h3>有効な接着性モノマー</h3>
+      <table>
+        <tr>
+          <th>モノマー</th>
+          <th>分類</th>
+          <th>接着機構</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">MDP</span></td>
+          <td>リン酸エステル系</td>
+          <td>ZrO₂表面と化学結合</td>
+        </tr>
+        <tr>
+          <td><span class="key">Phenyl-P</span></td>
+          <td>リン酸エステル系</td>
+          <td>ZrO₂表面と化学結合</td>
+        </tr>
+      </table>
+
+      <h3>表面処理の手順</h3>
+      <ul>
+        <li><span class="key">サンドブラスト処理</span>：アルミナ粒子で表面粗造化（第一選択）</li>
+        <li><span class="key">MDPプライマー</span>：リン酸基がジルコニア表面と結合</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">トライボケミカル処理</div>
+        <ul>
+          <li>シリカコーティングされたアルミナ粉末でサンドブラスト</li>
+          <li>低い噴射圧（0.28 MPa）で処理</li>
+          <li>ジルコニア表面を<span class="key">シリカに改質</span></li>
+          <li>改質後はシランカップリング剤が使用可能に</li>
+        </ul>
+      </div>
+
+      <h2>1ステップセルフエッチングシステム</h2>
+      <p>近年の接着システムは、歯質とジルコニアの両方に対応できるよう設計されている。</p>
+      <ul>
+        <li><span class="key">MDP</span>：ジルコニア・歯質の無機成分に接着</li>
+        <li><span class="key">HEMA</span>：象牙質コラーゲンの膨潤（中性モノマー）</li>
+        <li>酸性モノマー：エッチング作用</li>
+      </ul>
+      <p class="note">MDPを含むことで、1本のボンディング材で歯質もジルコニアも接着可能。</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">116D28</div>
+        <p>1ステップセルフエッチングシステムの成分でジルコニア接着に関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a MDP<br>
+          b TBB<br>
+          c DMPT<br>
+          d HEMA<br>
+          e MTU-6
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">MDP（リン酸エステル系）</span>がジルコニア接着に関与する。TBBは重合開始剤（トリブチルボラン）、DMPTは重合促進剤（第3級アミン）、HEMAは中性モノマー（コラーゲン膨潤用）、MTU-6はイオウ系（貴金属用）で、いずれもジルコニア接着には関与しない。</p>
+      </div>
+
+      <h2>セラミックスの種類と接着処理まとめ</h2>
+      <table>
+        <tr>
+          <th>セラミックス</th>
+          <th>主成分</th>
+          <th>シラン</th>
+          <th>接着処理</th>
+        </tr>
+        <tr>
+          <td>長石系陶材</td>
+          <td>SiO₂含有</td>
+          <td>○</td>
+          <td>γ-MPTS</td>
+        </tr>
+        <tr>
+          <td>ニケイ酸リチウム</td>
+          <td>SiO₂含有</td>
+          <td>○</td>
+          <td>γ-MPTS</td>
+        </tr>
+        <tr>
+          <td><span class="key">ジルコニア</span></td>
+          <td>ZrO₂</td>
+          <td><span class="caution">×</span></td>
+          <td><span class="highlight">MDP</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">アルミナ</span></td>
+          <td>Al₂O₃</td>
+          <td><span class="caution">×</span></td>
+          <td><span class="highlight">MDP</span></td>
+        </tr>
+      </table>
+
+      <p class="note">覚え方：「シリカ系にはシラン、非シリカ系にはMDP」</p>
+
+    </div>
+  </div>
+</body>
+</html>

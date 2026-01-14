@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>グラスアイオノマーセメント - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / セメント他</span>
+    <h1>グラスアイオノマーセメント</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>架橋に関与するイオン：<span class="highlight">Ca²⁺</span>と<span class="highlight">Al³⁺</span></li>
+          <li>レジン添加型の液部：<span class="key">HEMA</span>＋ポリアクリル酸</li>
+          <li>レジン添加型の方が大きい：<span class="key">歯質接着性</span>、<span class="key">熱膨張係数</span></li>
+          <li>レジン添加型の方が小さい：感水性、フッ素徐放性</li>
+        </ul>
+      </div>
+
+      <h2>従来型GICの組成</h2>
+      <table>
+        <tr>
+          <th>粉末</th>
+          <th>液</th>
+        </tr>
+        <tr>
+          <td><span class="key">フルオロアルミノシリケートガラス</span><br>SiO₂, Al₂O₃, CaF₂, Na₃AlF₆, AlF₃, AlPO₄</td>
+          <td><span class="key">ポリアクリル酸</span> 45%<br>酒石酸 5%（硬化時間調整）<br>水 50%</td>
+        </tr>
+      </table>
+
+      <h2>従来型GICの硬化反応</h2>
+      <p>酸-塩基反応により硬化する。</p>
+      <h3>硬化の流れ</h3>
+      <ul>
+        <li>①粉末表層がポリアクリル酸に溶解</li>
+        <li>②<span class="highlight">Ca²⁺</span>、Na⁺が放出（初期硬化）</li>
+        <li>③<span class="highlight">Al³⁺</span>が放出（後期硬化）</li>
+        <li>④金属イオンがポリアクリル酸のカルボキシル基と架橋 → 硬化体</li>
+      </ul>
+      <p class="note">Ca²⁺とAl³⁺が架橋に関与。Na⁺は架橋には関与しない。</p>
+
+      <h2>従来型GICの性質</h2>
+      <table>
+        <tr>
+          <th>性質</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="caution">感水性</span></td>
+          <td>初期硬化時に水分接触で白濁・強度低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">フッ素徐放性</span></td>
+          <td>あり（リチャージ可能）→ 抗齲蝕作用</td>
+        </tr>
+        <tr>
+          <td>歯髄為害性</td>
+          <td>なし（ポリアクリル酸は高分子）</td>
+        </tr>
+        <tr>
+          <td>熱膨張係数</td>
+          <td>10〜13×10⁻⁶/℃（エナメル質に近似）</td>
+        </tr>
+        <tr>
+          <td>歯質接着性</td>
+          <td>あり（ポリアクリル酸がHApと結合）</td>
+        </tr>
+        <tr>
+          <td>硬化時間</td>
+          <td>初期硬化5分、以降も硬化反応継続</td>
+        </tr>
+      </table>
+
+      <h2>レジン添加型GIC</h2>
+      <p>従来型GICの改良版。レジン成分を添加し、光重合を併用する。</p>
+
+      <h3>レジン添加型の成分</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>役割</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">HEMA</span></td>
+          <td>レジンモノマー（光重合に関与）</td>
+        </tr>
+        <tr>
+          <td>ポリアクリル酸</td>
+          <td>従来型と同様（酸-塩基反応）</td>
+        </tr>
+        <tr>
+          <td>多官能モノマー</td>
+          <td>架橋形成</td>
+        </tr>
+        <tr>
+          <td>重合開始剤・促進剤</td>
+          <td>光重合の開始</td>
+        </tr>
+      </table>
+
+      <h3>従来型 vs レジン添加型の比較</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>従来型</th>
+          <th>レジン添加型</th>
+        </tr>
+        <tr>
+          <td>硬化反応</td>
+          <td>酸-塩基反応のみ</td>
+          <td>酸-塩基反応＋<span class="key">光重合反応</span></td>
+        </tr>
+        <tr>
+          <td>感水性</td>
+          <td><span class="caution">高い</span></td>
+          <td>低い（硬化時間短縮）</td>
+        </tr>
+        <tr>
+          <td>歯質接着性</td>
+          <td>あり</td>
+          <td><span class="highlight">より高い</span>（前処理剤使用時）</td>
+        </tr>
+        <tr>
+          <td>熱膨張係数</td>
+          <td>小さい</td>
+          <td><span class="highlight">大きい</span>（レジン成分による）</td>
+        </tr>
+        <tr>
+          <td>フッ素徐放性</td>
+          <td><span class="key">高い</span></td>
+          <td>低い（レジン成分で低下）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">レジン添加型の改良点</div>
+        <ul>
+          <li>光重合反応が先に完了 → <span class="key">初期硬化が速い</span></li>
+          <li>感水性の低減（硬化時間短縮により水分接触機会が減少）</li>
+          <li>前処理剤（ポリアクリル酸）使用で<span class="key">接着強さ向上</span></li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C99</div>
+        <p>従来型グラスアイオノマーセメントの架橋に関与するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a フッ化物イオン<br>
+          b カルシウムイオン<br>
+          c ナトリウムイオン<br>
+          d アルミニウムイオン<br>
+          e マグネシウムイオン
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】GICの架橋に関与するのは<span class="highlight">Ca²⁺</span>と<span class="highlight">Al³⁺</span>。これらがポリアクリル酸のカルボキシル基と結合して架橋を形成する。Na⁺は放出されるが架橋には関与しない。フッ化物イオンは徐放性に関与。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C83</div>
+        <p>レジン添加型グラスアイオノマーセメントの液部に含まれているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a EBA<br>
+          b MMA<br>
+          c リン酸<br>
+          d HEMA<br>
+          e ポリアクリル酸
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】レジン添加型GICの液部には<span class="highlight">HEMA</span>（レジンモノマー）と<span class="highlight">ポリアクリル酸</span>が含まれる。EBAは酸化亜鉛ユージノールセメント、MMAはアクリルレジン、リン酸はリン酸亜鉛セメントの成分。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A55</div>
+        <p>グラスアイオノマーセメントで、従来型と比較してレジン添加型の方が大きいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 感水性<br>
+          b 歯質接着性<br>
+          c 唾液溶解性<br>
+          d 熱膨張係数<br>
+          e フッ化物徐放性
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】レジン添加型の方が大きいのは<span class="highlight">歯質接着性</span>（前処理剤使用時）と<span class="highlight">熱膨張係数</span>（レジン成分による）。感水性とフッ素徐放性は従来型の方が大きい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A90</div>
+        <p>レジン添加型グラスアイオノマーセメントの特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 感水性を示さない。<br>
+          b 抗齲蝕作用が期待できる。<br>
+          c 硬化後はpH2〜3である。<br>
+          d 酸処理によって接着強さが向上する。<br>
+          e ポーセレンラミネートベニアの合着に用いる。
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】レジン添加型GICは<span class="highlight">抗齲蝕作用</span>（フッ素徐放性）があり、<span class="highlight">酸処理（前処理剤）で接着強さが向上</span>する。感水性は低減するが「示さない」わけではない。硬化後は中性に近づく。ラミネートベニアにはレジンセメントを使用。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

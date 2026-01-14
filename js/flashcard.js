@@ -6,6 +6,7 @@ const FlashcardModule = (function() {
   // 定数
   const STORAGE_KEY = 'studyViewer_flashcardProgress';
   const SESSIONS_KEY = 'studyViewer_flashcardSessions';
+  const REPORTS_KEY = 'studyViewer_cardReports';
   const STORAGE_VERSION = 1;
 
   // 科目の表示順序（基礎系 → 臨床系）
@@ -404,6 +405,7 @@ const FlashcardModule = (function() {
   function renderDeckHome(overall, subjects) {
     const totalLearned = overall.memorized + overall.again;
     const inProgressTopics = getInProgressTopics(10);
+    const reports = getReports();
 
     return `
       <!-- 学習の記録 -->
@@ -424,6 +426,22 @@ const FlashcardModule = (function() {
           </button>
         </div>
       </div>
+
+      ${reports.length > 0 ? `
+      <!-- 報告されたカード -->
+      <div class="reports-section">
+        <button class="reports-toggle" id="reports-toggle">
+          <span class="reports-toggle-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+              <line x1="4" y1="22" x2="4" y2="15"/>
+            </svg>
+          </span>
+          <span class="reports-toggle-text">報告済み ${reports.length}件</span>
+          <span class="reports-toggle-chevron">›</span>
+        </button>
+      </div>
+      ` : ''}
 
       ${inProgressTopics.length > 0 ? `
       <!-- 続きから -->
@@ -647,6 +665,12 @@ const FlashcardModule = (function() {
     const againBtn = document.getElementById('start-again-deck');
     if (againBtn) {
       againBtn.addEventListener('click', () => startStatusDeck('again'));
+    }
+
+    // 報告一覧ボタン
+    const reportsToggle = document.getElementById('reports-toggle');
+    if (reportsToggle) {
+      reportsToggle.addEventListener('click', () => openReportsOverlay());
     }
 
     // 「続きから」アイテムクリック
@@ -1145,6 +1169,12 @@ const FlashcardModule = (function() {
               <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
             </svg>
           </button>
+          <button class="flashcard-report-btn" id="flashcard-report-btn" aria-label="問題を報告">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+              <line x1="4" y1="22" x2="4" y2="15"/>
+            </svg>
+          </button>
         </div>
 
         <!-- メインステージ（カード中央配置） -->
@@ -1270,6 +1300,9 @@ const FlashcardModule = (function() {
 
     // シャッフルボタン
     document.getElementById('flashcard-shuffle-btn').addEventListener('click', toggleShuffle);
+
+    // 報告ボタン
+    document.getElementById('flashcard-report-btn').addEventListener('click', reportCurrentCard);
 
     // カードタップ
     const cardContainer = document.getElementById('flashcard-card-container');
@@ -1605,6 +1638,246 @@ const FlashcardModule = (function() {
       toast.classList.remove('show');
       setTimeout(() => toast.remove(), 300);
     }, duration);
+  }
+
+  // === カード報告機能（Google Forms送信） ===
+  const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfNxFF5NrMxgNdhFq24jGTd1pGBd5-dlAWQOb1eX1kqDqz4WA/formResponse';
+  const FORM_ENTRIES = {
+    subject: 'entry.164360725',
+    topic: 'entry.300876290',
+    section: 'entry.676904274',
+    question: 'entry.338182143',
+    answer: 'entry.1207584254'
+  };
+
+  function reportCurrentCard() {
+    const card = state.filteredCards[state.currentIndex];
+    if (!card) return;
+
+    const keyTopicId = card.topicId || state.currentTopicId;
+    const topicData = DATA.find(d => d.id === keyTopicId);
+
+    // 報告データを作成
+    const reportData = {
+      subject: topicData?.subject || '',
+      topic: card.topicTitle || topicData?.title || keyTopicId,
+      section: card.section || '',
+      question: card.question,
+      answer: card.answer
+    };
+
+    // ボタンにフィードバック（送信中）
+    const btn = document.getElementById('flashcard-report-btn');
+    if (btn) {
+      btn.classList.add('sending');
+    }
+
+    // Google Formsに送信
+    const formData = new FormData();
+    formData.append(FORM_ENTRIES.subject, reportData.subject);
+    formData.append(FORM_ENTRIES.topic, reportData.topic);
+    formData.append(FORM_ENTRIES.section, reportData.section);
+    formData.append(FORM_ENTRIES.question, reportData.question);
+    formData.append(FORM_ENTRIES.answer, reportData.answer);
+
+    fetch(GOOGLE_FORM_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    }).then(() => {
+      // 送信完了
+      if (btn) {
+        btn.classList.remove('sending');
+        btn.classList.add('reported');
+        setTimeout(() => btn.classList.remove('reported'), 1500);
+      }
+      showToast('報告しました', 1200);
+    }).catch(() => {
+      if (btn) {
+        btn.classList.remove('sending');
+      }
+      showToast('送信に失敗しました', 1500);
+    });
+  }
+
+  // 報告一覧を取得
+  function getReports() {
+    try {
+      const stored = localStorage.getItem(REPORTS_KEY);
+      if (stored) return JSON.parse(stored);
+    } catch (e) {}
+    return [];
+  }
+
+  // 報告を削除
+  function removeReport(reportId) {
+    let reports = getReports();
+    reports = reports.filter(r => r.id !== reportId);
+    localStorage.setItem(REPORTS_KEY, JSON.stringify(reports));
+    return reports;
+  }
+
+  // 全報告をクリア
+  function clearAllReports() {
+    localStorage.removeItem(REPORTS_KEY);
+  }
+
+  // 報告をテキストとしてエクスポート
+  function exportReportsAsText() {
+    const reports = getReports();
+    if (reports.length === 0) return '報告されたカードはありません';
+
+    const lines = ['# 報告されたカード一覧', ''];
+    for (const r of reports) {
+      lines.push(`## ${r.topicTitle} - ${r.section || '(セクションなし)'}`);
+      lines.push(`Q: ${r.question}`);
+      lines.push(`A: ${r.answer}`);
+      lines.push(`報告日時: ${new Date(r.reportedAt).toLocaleString('ja-JP')}`);
+      lines.push('');
+    }
+    return lines.join('\n');
+  }
+
+  // 報告一覧オーバーレイを開く
+  function openReportsOverlay() {
+    const reports = getReports();
+
+    // オーバーレイを作成
+    const overlay = document.createElement('div');
+    overlay.className = 'reports-overlay';
+    overlay.id = 'reports-overlay';
+    overlay.innerHTML = `
+      <div class="reports-modal">
+        <div class="reports-modal-header">
+          <h3>報告されたカード</h3>
+          <button class="reports-close-btn" id="reports-close-btn">✕</button>
+        </div>
+        <div class="reports-modal-body">
+          ${reports.length === 0 ? `
+            <div class="reports-empty">
+              報告されたカードはありません
+            </div>
+          ` : `
+            <div class="reports-list">
+              ${reports.map(r => `
+                <div class="reports-item" data-report-id="${escapeHtml(r.id)}">
+                  <div class="reports-item-header">
+                    <span class="reports-item-topic">${escapeHtml(r.topicTitle)}</span>
+                    <button class="reports-item-delete" data-id="${escapeHtml(r.id)}" title="削除">✕</button>
+                  </div>
+                  ${r.section ? `<span class="reports-item-section">${escapeHtml(r.section)}</span>` : ''}
+                  <div class="reports-item-qa">
+                    <div class="reports-item-q">Q: ${escapeHtml(r.question)}</div>
+                    <div class="reports-item-a">A: ${escapeHtml(r.answer)}</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `}
+        </div>
+        ${reports.length > 0 ? `
+        <div class="reports-modal-footer">
+          <button class="reports-copy-btn" id="reports-copy-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+            テキストをコピー
+          </button>
+          <button class="reports-clear-btn" id="reports-clear-btn">全て削除</button>
+        </div>
+        ` : ''}
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    // イベント設定
+    // 閉じるボタン
+    document.getElementById('reports-close-btn').addEventListener('click', closeReportsOverlay);
+
+    // 背景クリックで閉じる
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeReportsOverlay();
+    });
+
+    // コピーボタン
+    const copyBtn = document.getElementById('reports-copy-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        const text = exportReportsAsText();
+        try {
+          await navigator.clipboard.writeText(text);
+          copyBtn.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            コピーしました
+          `;
+          copyBtn.classList.add('copied');
+          setTimeout(() => {
+            copyBtn.innerHTML = `
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              テキストをコピー
+            `;
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        } catch (e) {
+          showToast('コピーに失敗しました', 1500);
+        }
+      });
+    }
+
+    // 全削除ボタン
+    const clearBtn = document.getElementById('reports-clear-btn');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (confirm('報告を全て削除しますか？')) {
+          clearAllReports();
+          closeReportsOverlay();
+          renderDeckList();
+        }
+      });
+    }
+
+    // 個別削除ボタン
+    overlay.querySelectorAll('.reports-item-delete').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const id = btn.dataset.id;
+        removeReport(id);
+        // UIを更新
+        const item = btn.closest('.reports-item');
+        if (item) {
+          item.style.animation = 'fadeOut 0.2s ease forwards';
+          setTimeout(() => {
+            item.remove();
+            // 残り0件なら閉じる
+            const remaining = overlay.querySelectorAll('.reports-item');
+            if (remaining.length === 0) {
+              closeReportsOverlay();
+              renderDeckList();
+            }
+          }, 200);
+        }
+      });
+    });
+
+    // フェードイン
+    requestAnimationFrame(() => {
+      overlay.classList.add('show');
+    });
+  }
+
+  // 報告一覧オーバーレイを閉じる
+  function closeReportsOverlay() {
+    const overlay = document.getElementById('reports-overlay');
+    if (overlay) {
+      overlay.classList.remove('show');
+      setTimeout(() => overlay.remove(), 200);
+    }
   }
 
   // === スナックバー表示制御 ===
@@ -2052,6 +2325,11 @@ const FlashcardModule = (function() {
     markMemorized,
     markAgain,
     goBack,
-    saveSession
+    saveSession,
+    // 報告機能
+    getReports,
+    removeReport,
+    clearAllReports,
+    exportReportsAsText
   };
 })();

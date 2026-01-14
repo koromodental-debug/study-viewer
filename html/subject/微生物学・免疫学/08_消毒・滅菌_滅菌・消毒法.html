@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>滅菌・消毒法 - 微生物学・免疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    td.center { text-align: center; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .ok { color: #34C759; font-weight: 600; }
+    .ng { color: #FF3B30; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学・免疫学 / 消毒・滅菌</span>
+    <h1>滅菌・消毒法</h1>
+    <div class="container">
+
+      <h2>消毒と滅菌の定義</h2>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>定義</th>
+        </tr>
+        <tr>
+          <td><span class="key">消毒</span></td>
+          <td>ヒトに有害な<span class="key">病原微生物</span>を除去・殺滅すること</td>
+        </tr>
+        <tr>
+          <td><span class="key">滅菌</span></td>
+          <td><span class="highlight">すべての微生物</span>を殺滅または完全に除去し、無菌状態を得ること</td>
+        </tr>
+      </table>
+
+      <h2>滅菌法</h2>
+
+      <h3>オートクレーブ（高圧蒸気滅菌）</h3>
+      <ul>
+        <li><span class="highlight">121℃・20分</span>の条件で高圧蒸気滅菌</li>
+        <li>すべての細菌、ウイルス、<span class="highlight">芽胞</span>を滅菌できる</li>
+        <li>芽胞の滅菌が温度・時間設定の基準</li>
+        <li><span class="key">経済性に優れる</span></li>
+        <li>適用：<span class="highlight">金属器具</span>（探針、ミラー、ピンセット等）</li>
+      </ul>
+
+      <h3>紫外線滅菌</h3>
+      <ul>
+        <li>波長<span class="key">260nm</span>の殺菌灯で滅菌</li>
+        <li><span class="caution">照射面のみ有効</span>（影の部分は滅菌されない）</li>
+      </ul>
+
+      <h3>放射線滅菌</h3>
+      <ul>
+        <li><span class="key">γ線</span>滅菌法</li>
+        <li>主に<span class="key">ディスポーザブル製品</span>で使用</li>
+      </ul>
+
+      <h3>その他の滅菌法</h3>
+      <ul>
+        <li><span class="key">乾熱滅菌</span>：160〜180℃・1〜2時間、ガラス器具など</li>
+        <li><span class="key">EOG滅菌</span>（エチレンオキサイドガス）：熱に弱いプラスチック製品</li>
+        <li><span class="key">濾過滅菌</span>：熱に弱い液体（培地など）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">滅菌法の選択</div>
+        <ul>
+          <li>金属器具 → <span class="highlight">オートクレーブ</span></li>
+          <li>ディスポ製品 → 放射線滅菌（γ線）</li>
+          <li>熱に弱いプラスチック → EOG滅菌</li>
+          <li>熱に弱い液体 → 濾過滅菌</li>
+        </ul>
+      </div>
+
+      <h2>消毒薬</h2>
+
+      <h3>グルタルアルデヒド（グルタラール）</h3>
+      <ul>
+        <li>すべての細菌、ウイルス、<span class="highlight">芽胞も死滅</span>できる</li>
+        <li><span class="caution">ヒトの皮膚粘膜には使用不可</span></li>
+        <li>換気下で<span class="key">金属器具の浸漬消毒</span>に使用</li>
+        <li>血液が付着している器具でも消毒可能</li>
+        <li>Spaulding分類：<span class="key">高水準消毒</span></li>
+      </ul>
+
+      <h3>ポビドンヨード</h3>
+      <ul>
+        <li>すべての細菌、ウイルス、芽胞を死滅できる</li>
+        <li>ヨードアレルギーがなければ<span class="highlight">皮膚粘膜にも使用可</span></li>
+        <li><span class="caution">褐色</span>のため着色を避けたい対象には不適</li>
+        <li>金属器具には使用不可（腐食）</li>
+      </ul>
+
+      <h3>消毒用エタノール</h3>
+      <ul>
+        <li><span class="caution">B型肝炎ウイルス、ノロウイルス、芽胞には無効</span></li>
+        <li>純水で<span class="key">70〜80%</span>に希釈して使用</li>
+        <li><span class="highlight">皮膚消毒</span>に使用可（粘膜は刺激あり）</li>
+        <li>金属器具にも使用可</li>
+        <li>Spaulding分類：中水準消毒</li>
+      </ul>
+
+      <h3>次亜塩素酸ナトリウム</h3>
+      <ul>
+        <li><span class="highlight">ノロウイルス</span>の除去に有効</li>
+        <li>歯科では<span class="key">印象体の消毒</span>に使用</li>
+        <li><span class="caution">金属腐食性</span>あり → 金属器具には不適</li>
+        <li><span class="caution">皮膚粘膜への侵襲性</span>あり → 手指には不適</li>
+      </ul>
+
+      <h3>消毒薬の比較表</h3>
+      <table>
+        <tr>
+          <th>消毒薬</th>
+          <th>手指・皮膚</th>
+          <th>金属器具</th>
+          <th>印象体</th>
+          <th>芽胞</th>
+          <th>HBV・ノロ</th>
+        </tr>
+        <tr>
+          <td><span class="key">グルタルアルデヒド</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">ポビドンヨード</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">消毒用エタノール</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ng">×</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">次亜塩素酸Na</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+        </tr>
+      </table>
+
+      <h2>Spauldingの消毒水準分類</h2>
+      <table>
+        <tr>
+          <th>水準</th>
+          <th>効果</th>
+          <th>方法・薬剤</th>
+        </tr>
+        <tr>
+          <td><span class="key">滅菌</span></td>
+          <td>すべての微生物を完全に排除</td>
+          <td>オートクレーブ、EOG滅菌</td>
+        </tr>
+        <tr>
+          <td><span class="key">高水準消毒</span></td>
+          <td>芽胞以外すべて死滅</td>
+          <td>グルタルアルデヒド</td>
+        </tr>
+        <tr>
+          <td><span class="key">中水準消毒</span></td>
+          <td>結核菌、栄養型細菌、多くのウイルス・真菌</td>
+          <td>次亜塩素酸Na、ポビドンヨード、消毒用エタノール</td>
+        </tr>
+        <tr>
+          <td><span class="key">低水準消毒</span></td>
+          <td>栄養型細菌、一部のウイルス・真菌</td>
+          <td>ベンザルコニウム、クロルヘキシジン</td>
+        </tr>
+      </table>
+
+      <h2>標準予防策（スタンダードプレコーション）</h2>
+      <ul>
+        <li>すべての体液、排泄物、粘膜、損傷皮膚を<span class="key">感染性物質</span>として扱う</li>
+        <li><span class="caution">汗は除く</span></li>
+        <li>手洗い、マスク、グローブ、ゴーグル、ガウン等で防御</li>
+        <li>院内感染対策委員会の設置は<span class="key">医療法</span>で規定</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115B67</div>
+        <p>滅菌・消毒法とその対象について正しい組合せはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 煮沸─────────義歯<br>
+          b オートクレーブ────探針<br>
+          c 消毒用エタノール───口腔粘膜<br>
+          d グルタールアルデヒド──根管<br>
+          e パラホルムアルデヒド──手指
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">オートクレーブは金属器具（探針など）の滅菌に最適</span>。a：煮沸は義歯を変形させる。c：消毒用エタノールは皮膚には使えるが、<span class="caution">粘膜には刺激が強い</span>。d：グルタールアルデヒドは<span class="caution">皮膚粘膜に使用不可</span>（根管には使わない）。e：パラホルムアルデヒドは手指消毒には使用しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

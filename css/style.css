@@ -6061,7 +6061,7 @@ body.is-practice .tab-content {
 
 /* フェーズ2: 飛び出し（カードが抜ける） */
 .flashcard-card.flying {
-  transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
+  transition: transform 400ms cubic-bezier(.2,.9,.2,1), opacity 380ms ease;
 }
 
 .flashcard-card.fly-right {

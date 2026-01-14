@@ -7,7 +7,16 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>ココシカ - 歯科国試対策</title>
-  <link rel="stylesheet" href="css/style.css?v=20260114h">
+  <script>
+    // CSSより先にテーマを適用（ちらつき防止）
+    (function() {
+      var theme = localStorage.getItem('studyViewer_theme');
+      if (theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=20260114i">
 </head>
 <body>
   <div class="app">

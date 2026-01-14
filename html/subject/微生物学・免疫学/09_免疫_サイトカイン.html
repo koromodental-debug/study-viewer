@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>サイトカイン - 微生物学・免疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学・免疫学 / 免疫</span>
+    <h1>サイトカイン</h1>
+    <div class="container">
+
+      <h2>サイトカインとは</h2>
+      <p><span class="key">サイトカイン</span>は、主にヘルパーT細胞などの免疫細胞が産生し、<span class="highlight">免疫系を調節するシグナル分子</span>（タンパク質）である。細胞間の情報伝達を担い、炎症反応や免疫応答を制御する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">サイトカインの主な作用</div>
+        <ul>
+          <li>免疫細胞の活性化・増殖・分化の誘導</li>
+          <li>炎症反応の促進または抑制</li>
+          <li>細胞の遊走（ケモカイン）</li>
+        </ul>
+      </div>
+
+      <h2>サイトカインの分類</h2>
+      <h3>Th1/Th2系による分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>サイトカイン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">Th1系</span></td>
+          <td>IL-2, IL-12, IFN-γ, TNF-α</td>
+          <td>細胞性免疫を促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">Th2系</span></td>
+          <td>IL-4, IL-5, IL-6, IL-10, IL-13</td>
+          <td>体液性免疫を促進</td>
+        </tr>
+      </table>
+
+      <h3>炎症性/抗炎症性による分類【頻出】</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>サイトカイン</th>
+          <th>ポイント</th>
+        </tr>
+        <tr>
+          <td><span class="key">炎症性</span></td>
+          <td><span class="highlight">IL-1β, IL-6, IL-8, IFN-γ, TNF-α</span></td>
+          <td>炎症反応を促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">抗炎症性</span></td>
+          <td><span class="highlight">IL-10</span></td>
+          <td>炎症反応を抑制</td>
+        </tr>
+      </table>
+      <p class="note">※ IL-8は<span class="key">ケモカイン</span>（食細胞を遊走させる走化性因子）ともいう</p>
+
+      <h2>主要なサイトカイン</h2>
+      <h3>インターロイキン（IL）</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>産生細胞</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">IL-1</span></td>
+          <td>マクロファージ</td>
+          <td>発熱、炎症促進、骨吸収促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">IL-2</span></td>
+          <td>Th1細胞</td>
+          <td>T細胞の増殖・活性化</td>
+        </tr>
+        <tr>
+          <td><span class="key">IL-6</span></td>
+          <td>マクロファージ、T細胞</td>
+          <td>急性期タンパク産生、B細胞分化</td>
+        </tr>
+        <tr>
+          <td><span class="key">IL-8</span></td>
+          <td>マクロファージ</td>
+          <td>好中球の遊走（ケモカイン）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">IL-10</span></td>
+          <td>Th2細胞、制御性T細胞</td>
+          <td><span class="caution">炎症を抑制</span>（抗炎症性）</td>
+        </tr>
+        <tr>
+          <td><span class="key">IL-17</span></td>
+          <td>Th17細胞</td>
+          <td>好中球の動員、炎症促進</td>
+        </tr>
+      </table>
+
+      <h3>その他の重要なサイトカイン</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">TNF-α</span></td>
+          <td>炎症促進、腫瘍壊死、骨吸収促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">IFN-γ</span></td>
+          <td>マクロファージ活性化、<span class="highlight">ウイルス複製阻害</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">TGF-β</span></td>
+          <td>組織修復、免疫抑制</td>
+        </tr>
+      </table>
+
+      <h2>歯周組織再生とサイトカイン</h2>
+      <p>歯周組織再生療法では、細胞増殖因子（成長因子）が使用される。</p>
+      <h3>歯周組織再生に関わる因子</h3>
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>正式名称</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">FGF-2</span></td>
+          <td>線維芽細胞増殖因子-2</td>
+          <td>血管新生、線維芽細胞増殖</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">PDGF</span></td>
+          <td>血小板由来増殖因子</td>
+          <td>細胞遊走、増殖促進</td>
+        </tr>
+      </table>
+      <p class="note">※ IL-6、PGE2、TNF-αは歯周組織再生誘導能を<span class="caution">持たない</span></p>
+
+      <h2>サイトカインと全身への影響</h2>
+      <p><span class="key">全身性炎症反応症候群（SIRS）</span>は、感染や外傷などにより過剰な炎症性サイトカインが放出されることで引き起こされる。</p>
+      <ul>
+        <li>発熱、頻脈、頻呼吸、白血球数異常</li>
+        <li>重症化すると敗血症、多臓器不全に進行</li>
+      </ul>
+
+      <h2>コルチゾールとサイトカイン</h2>
+      <p><span class="key">コルチゾール</span>（副腎皮質ホルモン）は<span class="highlight">炎症性サイトカインの産生を抑制</span>する。</p>
+      <ul>
+        <li>ストレス時に副腎皮質から分泌</li>
+        <li>NF-κBの活性化を抑制 → サイトカイン産生↓</li>
+        <li>抗炎症作用の機序の一つ</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">114A70</div>
+        <p>炎症を抑制するサイトカインはどれか。1つ選べ。</p>
+        <div class="choices">
+          a IL-1<br>
+          b IL-2<br>
+          c IL-10<br>
+          d IL-17<br>
+          e IFN-γ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">IL-10</span>は抗炎症性サイトカインで、炎症反応を抑制する。IL-1、IL-17、IFN-γは炎症性サイトカイン。IL-2はT細胞の増殖・活性化に関与。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117A5</div>
+        <p>炎症性サイトカインの産生を抑制するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a インスリン<br>
+          b ガストリン<br>
+          c チロキシン<br>
+          d エストロゲン<br>
+          e コルチゾール
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">コルチゾール</span>（副腎皮質ホルモン）は炎症性サイトカインの産生を抑制する。インスリンは血糖降下、ガストリンは胃酸分泌促進、チロキシンは代謝亢進、エストロゲンは女性ホルモン。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A73</div>
+        <p>全身性炎症反応症候群でみられる症候を引き起こすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 抗体<br>
+          b 補体<br>
+          c ケトン体<br>
+          d クレアチニン<br>
+          e サイトカイン
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">全身性炎症反応症候群（SIRS）</span>は、過剰な炎症性サイトカイン（IL-1、IL-6、TNF-αなど）の放出により引き起こされる。発熱、頻脈、頻呼吸などの症状を呈する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D49</div>
+        <p>歯周組織再生を目的として使用されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a FGF-2〈Fibroblast growth factor-2〉<br>
+          b IFN-γ〈Interferon-γ〉<br>
+          c IL-17〈Interleukin-17〉<br>
+          d M-CSF〈Macrophage colony-stimulating factor〉<br>
+          e TNF-α〈Tumor necrosis factor-α〉
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">FGF-2</span>（線維芽細胞増殖因子-2）は歯周組織再生療法に使用される（リグロス®）。IFN-γは抗ウイルス作用、IL-17とTNF-αは炎症性サイトカイン、M-CSFはマクロファージ分化誘導因子。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：サイトカインの頻出ポイント</div>
+        <ul>
+          <li><span class="key">抗炎症性サイトカイン</span> → IL-10</li>
+          <li><span class="key">炎症性サイトカイン産生抑制</span> → コルチゾール</li>
+          <li><span class="key">SIRS</span> → サイトカインが原因</li>
+          <li><span class="key">歯周組織再生</span> → FGF-2、PDGF</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

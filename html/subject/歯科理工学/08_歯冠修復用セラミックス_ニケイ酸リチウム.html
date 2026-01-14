@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ニケイ酸リチウム - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 歯冠修復用セラミックス</span>
+    <h1>ニケイ酸リチウム</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>成形法：<span class="highlight">切削（CAD/CAM）</span>と<span class="highlight">加熱・加圧</span></li>
+          <li><span class="caution">焼成や積層造形ではない</span></li>
+          <li>ガラスセラミックス（結晶化ガラス）に分類</li>
+          <li>シリカ含有 → シランカップリング剤が有効</li>
+        </ul>
+      </div>
+
+      <h2>ニケイ酸リチウムとは</h2>
+      <p><span class="key">ガラスセラミックス</span>（結晶化ガラス）の一種。ガラスの中に意図的にニケイ酸リチウム結晶を析出させ、強度の向上を図った材料。</p>
+      <ul>
+        <li>化学式：Li₂Si₂O₅（二ケイ酸リチウム）</li>
+        <li>商品名：e.max（イーマックス）など</li>
+        <li>シリカ（SiO₂）を含有</li>
+      </ul>
+
+      <h2>成形法</h2>
+      <table>
+        <tr>
+          <th>成形法</th>
+          <th>方法</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">切削（CAD/CAM）</span></td>
+          <td>ブロックをミリングマシンで切削</td>
+          <td>デジタル設計、精度が高い</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">加熱・加圧</span></td>
+          <td>インゴットを軟化させて加圧成形</td>
+          <td>射出成形、複雑な形状に対応</td>
+        </tr>
+      </table>
+
+      <h3>成形法でないもの</h3>
+      <ul>
+        <li><span class="caution">焼成</span>：陶材の築盛・焼成法（ニケイ酸リチウムには不適）</li>
+        <li><span class="caution">加熱重合</span>：アクリルレジンの重合法</li>
+        <li><span class="caution">積層造形</span>：3Dプリンター（金属やレジン用）</li>
+      </ul>
+
+      <h2>セラミックスの分類</h2>
+      <h3>成分による分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>材料</th>
+          <th>成形法</th>
+        </tr>
+        <tr>
+          <td><span class="key">ガラスセラミックス</span><br>（結晶化ガラス）</td>
+          <td>リューサイト強化型<br><span class="highlight">ニケイ酸リチウム</span></td>
+          <td>加熱・加圧<br>CAD/CAM</td>
+        </tr>
+        <tr>
+          <td>高密度半焼結体</td>
+          <td>ジルコニア<br>アルミナ</td>
+          <td>CAD/CAM後に焼結</td>
+        </tr>
+        <tr>
+          <td>長石質陶材</td>
+          <td>長石、石英</td>
+          <td>築盛・焼成</td>
+        </tr>
+      </table>
+
+      <h2>ニケイ酸リチウムの特徴</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>透明性</td>
+          <td>高い（審美性良好）</td>
+        </tr>
+        <tr>
+          <td>機械的強度</td>
+          <td>長石質陶材より高い、ジルコニアより低い</td>
+        </tr>
+        <tr>
+          <td>接着処理</td>
+          <td><span class="key">シランカップリング剤</span>（γ-MPTS）が有効</td>
+        </tr>
+        <tr>
+          <td>適応</td>
+          <td>インレー、クラウン、ラミネートベニア</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">接着処理との関連</div>
+        <ul>
+          <li>ニケイ酸リチウムは<span class="key">シリカ（SiO₂）を含有</span></li>
+          <li>シランカップリング剤（γ-MPTS）が有効</li>
+          <li>ジルコニア（ZrO₂）はシリカを含まない → MDPを使用</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">116D68</div>
+        <p>ニケイ酸リチウム製補綴装置の成形法はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 焼成<br>
+          b 切削<br>
+          c 加熱重合<br>
+          d 積層造形<br>
+          e 加熱・加圧
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】ニケイ酸リチウムの成形法は<span class="highlight">切削（CAD/CAM）</span>と<span class="highlight">加熱・加圧</span>。焼成は陶材の築盛法、加熱重合はアクリルレジン、積層造形は3Dプリンター技術であり、ニケイ酸リチウムには適用しない。</p>
+      </div>
+
+      <h2>セラミックス材料の比較</h2>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>透明性</th>
+          <th>強度</th>
+          <th>接着処理</th>
+          <th>成形法</th>
+        </tr>
+        <tr>
+          <td>長石質陶材</td>
+          <td>高い</td>
+          <td>低い</td>
+          <td>シラン</td>
+          <td>築盛・焼成</td>
+        </tr>
+        <tr>
+          <td><span class="key">ニケイ酸リチウム</span></td>
+          <td>高い</td>
+          <td>中程度</td>
+          <td>シラン</td>
+          <td>切削、加熱・加圧</td>
+        </tr>
+        <tr>
+          <td>ジルコニア</td>
+          <td>低い</td>
+          <td>高い</td>
+          <td>MDP</td>
+          <td>切削→焼結</td>
+        </tr>
+      </table>
+
+      <p class="note">覚え方：「ニケイ酸リチウムは切って押す」（切削＋加熱・加圧）</p>
+
+    </div>
+  </div>
+</body>
+</html>

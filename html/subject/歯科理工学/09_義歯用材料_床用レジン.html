@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>床用レジン - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 義歯用材料</span>
+    <h1>床用レジン</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>残留モノマー：<span class="highlight">常温重合型 > 加熱重合型</span></li>
+          <li>機械的性質・耐変色性：<span class="key">加熱重合型</span>が優れる</li>
+          <li>適合性・操作性：<span class="key">常温重合型</span>が優れる</li>
+          <li>ガラス転移点（PMMA）：<span class="highlight">100℃</span></li>
+        </ul>
+      </div>
+
+      <h2>アクリルレジンの組成</h2>
+      <h3>加熱重合型</h3>
+      <table>
+        <tr>
+          <th>液部</th>
+          <th>粉部</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="key">MMA</span>（主成分）<br>
+            <span class="key">ハイドロキノン</span>（重合禁止剤）<br>
+            <span class="key">EGDMA</span>（架橋剤）
+          </td>
+          <td>
+            <span class="key">PMMA</span>（主成分）<br>
+            <span class="key">過酸化ベンゾイル</span>（重合開始剤）<br>
+            着色剤（ベンガラ、酸化チタン）
+          </td>
+        </tr>
+      </table>
+
+      <h3>常温重合型</h3>
+      <table>
+        <tr>
+          <th>液部</th>
+          <th>粉部</th>
+        </tr>
+        <tr>
+          <td>
+            MMA（主成分）<br>
+            ハイドロキノン（重合禁止剤）<br>
+            EGDMA（架橋剤）<br>
+            <span class="highlight">第3級アミン</span>（重合促進剤）
+          </td>
+          <td>
+            PMMA（主成分）<br>
+            <span class="key">過酸化ベンゾイル</span>（重合開始剤）<br>
+            着色剤
+          </td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">各成分の役割</div>
+        <ul>
+          <li><span class="key">MMA</span>（メチルメタクリレート）：モノマー、沸点約100℃</li>
+          <li><span class="key">PMMA</span>（ポリメチルメタクリレート）：ポリマー</li>
+          <li><span class="key">ハイドロキノン</span>：保存中の重合を防止</li>
+          <li><span class="key">EGDMA</span>：架橋剤、網目状ポリマーを形成</li>
+          <li><span class="key">過酸化ベンゾイル（BPO）</span>：ラジカル発生</li>
+          <li><span class="key">第3級アミン</span>：BPOを常温で分解（レドックス反応）</li>
+        </ul>
+      </div>
+
+      <h2>重合開始機構</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>開始機構</th>
+          <th>関与成分</th>
+        </tr>
+        <tr>
+          <td><span class="key">加熱重合型</span></td>
+          <td>熱によるBPOの分解</td>
+          <td>過酸化ベンゾイル</td>
+        </tr>
+        <tr>
+          <td><span class="key">常温重合型</span></td>
+          <td><span class="highlight">レドックス反応</span></td>
+          <td>過酸化ベンゾイル + <span class="highlight">第3級アミン</span></td>
+        </tr>
+      </table>
+
+      <h2>加熱重合型 vs 常温重合型</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>加熱重合型</th>
+          <th>常温重合型</th>
+        </tr>
+        <tr>
+          <td>粉液比</td>
+          <td><span class="key">大きい</span>（2〜2.5）</td>
+          <td>小さい（1.5〜1.8）</td>
+        </tr>
+        <tr>
+          <td>PMMA粒子径</td>
+          <td>大きい（30〜80μm）</td>
+          <td>小さい（25〜50μm）</td>
+        </tr>
+        <tr>
+          <td>重合度</td>
+          <td><span class="key">高い</span></td>
+          <td>低い</td>
+        </tr>
+        <tr>
+          <td>残留モノマー</td>
+          <td><span class="key">少ない</span>（0.2〜0.5%）</td>
+          <td><span class="caution">多い</span>（3〜5%）</td>
+        </tr>
+        <tr>
+          <td>硬化時の寸法変化</td>
+          <td><span class="caution">大きい</span>（0.3〜0.5%）</td>
+          <td>小さい（0.2%）</td>
+        </tr>
+        <tr>
+          <td>適合性</td>
+          <td>やや不良</td>
+          <td><span class="key">良好</span></td>
+        </tr>
+        <tr>
+          <td>機械的性質</td>
+          <td><span class="key">良好</span></td>
+          <td>やや不良</td>
+        </tr>
+        <tr>
+          <td>操作性</td>
+          <td>複雑</td>
+          <td><span class="key">良好</span></td>
+        </tr>
+        <tr>
+          <td>耐変色性</td>
+          <td><span class="key">良好</span></td>
+          <td>劣る</td>
+        </tr>
+      </table>
+
+      <h2>PMMAの物性</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>値</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ガラス転移点</span></td>
+          <td><span class="highlight">100℃</span></td>
+        </tr>
+        <tr>
+          <td>吸水量</td>
+          <td>約2%</td>
+        </tr>
+        <tr>
+          <td>吸水膨張（線膨張率）</td>
+          <td>0.1〜0.2%</td>
+        </tr>
+        <tr>
+          <td>理論的体積収縮率</td>
+          <td>約7%</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">残留モノマーの影響</div>
+        <ul>
+          <li>生体刺激：炎症、アレルギー</li>
+          <li>機械的性質の低下</li>
+          <li>除去法：製作した義歯床を<span class="key">水中に保存</span>（モノマー溶出）</li>
+        </ul>
+      </div>
+
+      <h2>その他の床用材料</h2>
+      <h3>ポリカーボネート・ポリスルフォン</h3>
+      <ul>
+        <li>成形法：加熱/加圧/射出成形（<span class="caution">重合を伴わない</span>）</li>
+        <li>軟化したポリマーの冷却硬化</li>
+        <li><span class="key">耐衝撃性</span>に優れる</li>
+        <li>アクリルレジンより<span class="caution">研磨性が劣る</span></li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">103C71</div>
+        <p>残留モノマーが最も多いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ポリスルフォン<br>
+          b ポリカーボネート<br>
+          c ポリエーテルスルフォン<br>
+          d 加熱重合型アクリルレジン<br>
+          e 常温重合型アクリルレジン
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">常温重合型</span>は重合度が低く、残留モノマーが最も多い（3〜5%）。加熱重合型は0.2〜0.5%。ポリカーボネート等は重合を伴わない成形法のため残留モノマーは生じない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D64</div>
+        <p>ポリメチルメタクリレートのガラス転移点はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 37℃<br>
+          b 65℃<br>
+          c 100℃<br>
+          d 120℃<br>
+          e 220℃
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】PMMAのガラス転移点は<span class="highlight">100℃</span>。これはMMAの沸点とほぼ同じ温度。この温度以上で軟化する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B45</div>
+        <p>加熱重合レジンの液の成分に含まれるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a ハイドロキノン<br>
+          b 過酸化ベンゾイル<br>
+          c メチルメタクリレート<br>
+          d ポリメチルメタクリレート<br>
+          e エチレングリコールジメタクリレート
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】液部に含まれるのは<span class="highlight">MMA</span>（主成分）、<span class="highlight">ハイドロキノン</span>（重合禁止剤）、<span class="highlight">EGDMA</span>（架橋剤）。過酸化ベンゾイルとPMMAは粉部に含まれる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C121</div>
+        <p>義歯床用常温重合型アクリルレジンの重合開始に関与するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 第3級アミン<br>
+          b ハイドロキノン<br>
+          c 過酸化ベンゾイル<br>
+          d カンファーキノン<br>
+          e エチレングリコールジメタクリレート
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】常温重合型の重合開始は<span class="highlight">第3級アミン</span>と<span class="highlight">過酸化ベンゾイル</span>のレドックス反応による。カンファーキノンは光重合の光増感剤。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A45</div>
+        <p>常温重合レジンに比べて加熱重合レジンで大きいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 粉液比<br>
+          b 曲げ強さ<br>
+          c 残留モノマー量<br>
+          d 硬化時の寸法変化<br>
+          e 重合開始剤の添加量
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】加熱重合型で大きいのは<span class="highlight">粉液比</span>（2〜2.5）、<span class="highlight">曲げ強さ</span>（機械的性質良好）、<span class="highlight">硬化時の寸法変化</span>。残留モノマー量は常温重合型の方が多い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C55</div>
+        <p>義歯床用レジンの重合法で常温重合法が加熱重合法より優れているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 重合度<br>
+          b 操作性<br>
+          c 適合性<br>
+          d 耐変色性<br>
+          e 機械的性質
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】常温重合法が優れるのは<span class="highlight">操作性</span>（簡便）と<span class="highlight">適合性</span>（寸法変化が小さい）。重合度、耐変色性、機械的性質は加熱重合法が優れる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C39</div>
+        <p>ポリカーボネート義歯床に比べたアクリルレジン義歯床の長所はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 吸水性<br>
+          b 研磨性<br>
+          c 耐熱性<br>
+          d 耐衝撃性<br>
+          e 耐摩耗性
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】アクリルレジンはポリカーボネートより<span class="highlight">研磨性</span>に優れる（研磨しやすい）。耐衝撃性はポリカーボネートが優れる。吸水性があるのはアクリルレジンの短所。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B86</div>
+        <p>流し込みレジンによる義歯製作で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a リン酸塩系埋没材を使用する。<br>
+          b 加圧重合器で70℃に加温する。<br>
+          c 粉液比は加熱重合型より小さい。<br>
+          d フラスコヘの填入は餅状期に行う。<br>
+          e 混和にエチルアルコールを使用する。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】流し込みレジン（常温重合型）は<span class="highlight">粉液比が小さい</span>（1.5〜1.8）。流動性を高めるためにモノマー量が多い。加熱重合型は2〜2.5。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <table>
+        <tr>
+          <th>覚え方</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>加熱重合が優れる</td>
+          <td>機械的性質、耐変色性、残留モノマー少</td>
+        </tr>
+        <tr>
+          <td>常温重合が優れる</td>
+          <td>操作性、適合性</td>
+        </tr>
+        <tr>
+          <td>常温重合の特徴</td>
+          <td>第3級アミン添加、粉液比小さい</td>
+        </tr>
+      </table>
+
+      <p class="note">覚え方：「加熱は強いが縮む、常温は弱いがピッタリ」</p>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>床裏装材 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 義歯用材料</span>
+    <h1>床裏装材</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>アクリル系機能印象材：<span class="highlight">アルコール揮発</span>で硬化</li>
+          <li>アクリル系：接着性良好だが<span class="caution">耐久性に劣る</span></li>
+          <li>シリコーン系：耐久性良好だが<span class="caution">接着性・剥離</span>に問題</li>
+        </ul>
+      </div>
+
+      <h2>床裏装材とは</h2>
+      <p>義歯床の粘膜面に新たな材料を追加し、適合性を回復させる材料。</p>
+      <ul>
+        <li><span class="key">リベース</span>：床全体の裏装（床の置き換え）</li>
+        <li><span class="key">リライニング</span>：部分的な裏装（追加）</li>
+      </ul>
+
+      <h2>床裏装材の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">硬質裏装材</span></td>
+          <td>加熱重合型アクリル</td>
+          <td>強度高い、技工室で処理</td>
+        </tr>
+        <tr>
+          <td>常温重合型アクリル</td>
+          <td>チェアサイドで処理可能</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">軟質裏装材</span></td>
+          <td>アクリル系</td>
+          <td>接着性良好、劣化しやすい</td>
+        </tr>
+        <tr>
+          <td>シリコーン系</td>
+          <td>耐久性高い、剥離しやすい</td>
+        </tr>
+        <tr>
+          <td><span class="key">機能印象材</span></td>
+          <td>アクリル系</td>
+          <td>アルコール揮発で硬化</td>
+        </tr>
+      </table>
+
+      <h2>軟質裏装材の比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>アクリル系</th>
+          <th>シリコーン系</th>
+        </tr>
+        <tr>
+          <td>義歯床との接着</td>
+          <td><span class="key">良好</span></td>
+          <td><span class="caution">不良</span>（剥離しやすい）</td>
+        </tr>
+        <tr>
+          <td>耐久性</td>
+          <td><span class="caution">劣る</span>（劣化しやすい）</td>
+          <td><span class="key">良好</span></td>
+        </tr>
+        <tr>
+          <td>経時的物性変化</td>
+          <td>大きい（可塑剤溶出）</td>
+          <td><span class="key">小さい</span></td>
+        </tr>
+        <tr>
+          <td>吸水性</td>
+          <td>あり</td>
+          <td>ほとんどなし</td>
+        </tr>
+        <tr>
+          <td>追加修正</td>
+          <td><span class="key">可能</span></td>
+          <td>困難</td>
+        </tr>
+        <tr>
+          <td>汚れ付着</td>
+          <td>少ない</td>
+          <td><span class="caution">多孔質</span>でコロニー生成</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">軟質裏装材の適応症</div>
+        <ul>
+          <li>顎堤の<span class="key">著しい吸収</span>・骨鋭縁</li>
+          <li>粘膜下組織が<span class="key">菲薄</span>で弾性に乏しい</li>
+          <li>通常の硬質床では疼痛を回避できない症例</li>
+          <li>高齢者の難症例</li>
+        </ul>
+      </div>
+
+      <h2>アクリル系機能印象材</h2>
+      <p>粘膜の機能時の形態を記録するための材料。ティッシュコンディショナーとも呼ばれる。</p>
+
+      <h3>組成</h3>
+      <table>
+        <tr>
+          <th>粉末</th>
+          <th>液</th>
+        </tr>
+        <tr>
+          <td>
+            ポリエチルメタクリレート<br>
+            （PEMA）
+          </td>
+          <td>
+            <span class="key">芳香族エステル</span>（可塑剤）<br>
+            <span class="highlight">エチルアルコール</span>（溶剤）
+          </td>
+        </tr>
+      </table>
+
+      <h3>硬化機構</h3>
+      <ul>
+        <li>粉末と液を混和 → <span class="highlight">ゲル化</span></li>
+        <li><span class="highlight">アルコールの揮発</span>により硬化</li>
+        <li><span class="caution">重合反応は起こらない</span>（非重合）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">機能印象材の特徴</div>
+        <ul>
+          <li>液に重合開始剤を<span class="caution">含まない</span></li>
+          <li>ラジカル重合は<span class="caution">関係ない</span></li>
+          <li>粉末に芳香族エステルを<span class="caution">含まない</span>（液に含む）</li>
+          <li>経時的に可塑剤が溶出 → 硬化が進行</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">114B52</div>
+        <p>アクリル系機能印象材について正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 液に重合開始剤を含有する。<br>
+          b アルコールの揮発により硬化する。<br>
+          c 粉末に芳香族エステルを含有する。<br>
+          d 粉末と液との混和によりゲル化する。<br>
+          e ラジカル重合により硬化が促進する。
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】アクリル系機能印象材は<span class="highlight">アルコールの揮発</span>により硬化し、粉末と液との混和により<span class="highlight">ゲル化</span>する。重合反応は起こらないため、重合開始剤は含まない。芳香族エステル（可塑剤）は液に含まれる。</p>
+      </div>
+
+      <h2>床裏装材のまとめ</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>長所</th>
+          <th>短所</th>
+        </tr>
+        <tr>
+          <td>硬質（アクリル）</td>
+          <td>強度、耐久性</td>
+          <td>緩圧効果なし</td>
+        </tr>
+        <tr>
+          <td>軟質（アクリル系）</td>
+          <td>接着性、追加修正可</td>
+          <td>劣化、耐久性</td>
+        </tr>
+        <tr>
+          <td>軟質（シリコーン系）</td>
+          <td>耐久性、物性安定</td>
+          <td>接着性、剥離</td>
+        </tr>
+        <tr>
+          <td>機能印象材</td>
+          <td>粘膜調整</td>
+          <td>一時的使用</td>
+        </tr>
+      </table>
+
+      <p class="note">覚え方：「アクリル系は接着◎耐久×、シリコーン系は接着×耐久◎」</p>
+
+    </div>
+  </div>
+</body>
+</html>

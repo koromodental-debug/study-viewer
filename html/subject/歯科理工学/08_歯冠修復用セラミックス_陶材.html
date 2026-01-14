@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>陶材 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 歯冠修復用セラミックス</span>
+    <h1>陶材</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>主成分は<span class="highlight">長石</span>（透明性を与える）</li>
+          <li><span class="key">石英</span>：強度の向上</li>
+          <li><span class="key">リューサイト</span>：熱膨張係数の増加</li>
+          <li>熱膨張係数は合金より<span class="highlight">わずかに小さい</span></li>
+        </ul>
+      </div>
+
+      <h2>陶材の成分と役割</h2>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>化学式</th>
+          <th>役割</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">長石</span></td>
+          <td>K₂O・Al₂O₃・6SiO₂</td>
+          <td><span class="key">主成分</span>、透明性を与える</td>
+        </tr>
+        <tr>
+          <td><span class="key">石英</span></td>
+          <td>SiO₂</td>
+          <td>骨組、<span class="key">強度を増す</span>、透明性低下</td>
+        </tr>
+        <tr>
+          <td>陶土</td>
+          <td>Al₂O₃・2SiO₂・2H₂O</td>
+          <td>成形性をよくする、透明性低下</td>
+        </tr>
+        <tr>
+          <td>アルミナ</td>
+          <td>Al₂O₃</td>
+          <td>強度を増す、不透明、コア陶材用</td>
+        </tr>
+        <tr>
+          <td>フラックス</td>
+          <td>Na₂B₄O₇、Na₂CO₃など</td>
+          <td>焼成温度を下げる、熱膨張係数を上げる</td>
+        </tr>
+        <tr>
+          <td><span class="key">リューサイト</span></td>
+          <td>K₂O・Al₂O₃・4SiO₂</td>
+          <td><span class="key">熱膨張係数を増加</span>、透明性、機械的性質向上</td>
+        </tr>
+        <tr>
+          <td>着色材</td>
+          <td>金属酸化物</td>
+          <td>色調付与（酸化チタン、酸化コバルトなど）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">リューサイトとは</div>
+        <ul>
+          <li>長石を加熱して生成される結晶</li>
+          <li><span class="highlight">熱膨張係数が大きい</span></li>
+          <li>透明性を有する</li>
+          <li>陶材の機械的性質を向上させる</li>
+          <li>金属と陶材の熱膨張係数を近づけるために添加</li>
+        </ul>
+      </div>
+
+      <h2>金属焼付用陶材</h2>
+      <p>陶材焼付鋳造冠（メタルボンド）に使用される陶材。</p>
+
+      <h3>特徴</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>主成分</td>
+          <td><span class="highlight">長石</span></td>
+        </tr>
+        <tr>
+          <td>焼成温度</td>
+          <td>900〜1,000℃（<span class="key">低溶陶材</span>に分類）</td>
+        </tr>
+        <tr>
+          <td>熱膨張係数</td>
+          <td>合金より<span class="highlight">1×10⁻⁶/℃小さい</span>（わずかに小さい）</td>
+        </tr>
+        <tr>
+          <td>金属との結合</td>
+          <td>SnO₂, In₂O₃, Fe₂O₃が金属とのぬれを向上</td>
+        </tr>
+        <tr>
+          <td>焼成収縮</td>
+          <td>約40%（50%ではない）</td>
+        </tr>
+      </table>
+
+      <h3>陶材焼付鋳造冠の構造</h3>
+      <ul>
+        <li><span class="key">オペーク陶材</span>：金属色の遮蔽（不透明）</li>
+        <li><span class="key">デンティン陶材</span>：象牙質色の再現</li>
+        <li><span class="key">エナメル陶材</span>：透明感の付与</li>
+      </ul>
+
+      <h2>長石質陶材 vs ジルコニアの比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>長石質陶材</th>
+          <th>ジルコニア</th>
+        </tr>
+        <tr>
+          <td>色調</td>
+          <td><span class="highlight">優れる</span></td>
+          <td>劣る</td>
+        </tr>
+        <tr>
+          <td>透明性</td>
+          <td><span class="highlight">優れる</span></td>
+          <td>劣る</td>
+        </tr>
+        <tr>
+          <td>圧縮強さ</td>
+          <td>劣る</td>
+          <td><span class="key">優れる</span></td>
+        </tr>
+        <tr>
+          <td>曲げ強さ</td>
+          <td>劣る</td>
+          <td><span class="key">優れる</span></td>
+        </tr>
+        <tr>
+          <td>破壊靱性</td>
+          <td>劣る</td>
+          <td><span class="key">優れる</span></td>
+        </tr>
+      </table>
+      <p class="note">長石質陶材は審美性に優れ、ジルコニアは機械的強度に優れる。</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">116C36</div>
+        <p>金属焼付用陶材の成分と役割の組合せで正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 石英 ーーーーーー 強度の向上<br>
+          b 長石 ーーーーーー 透明度の向上<br>
+          c 陶土 ーーーーーー 金属色の遮蔽<br>
+          d フラックス ーーー 酸化膜の除去<br>
+          e リューサイト ーー 熱膨張の増加
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】<span class="highlight">石英→強度向上</span>、<span class="highlight">長石→透明度向上</span>、<span class="highlight">リューサイト→熱膨張増加</span>。陶土は成形性向上、フラックスは焼成温度を下げる。金属色の遮蔽はオペーク陶材の役割。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C73</div>
+        <p>金属焼付用陶材について正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 主成分は長石である。<br>
+          b 中温焼成陶材に分類される。<br>
+          c 焼成すると約50％収縮する。<br>
+          d ファンデルワールス力が焼付強さの主体である。<br>
+          e 熱膨張係数は陶材焼付用合金よりわずかに大きい。
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】金属焼付用陶材の主成分は<span class="highlight">長石</span>。低溶陶材に分類（中温ではない）。焼成収縮は約40%。焼付強さは化学結合と機械的嵌合が主体。熱膨張係数は合金より<span class="caution">わずかに小さい</span>（大きいではない）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A48</div>
+        <p>長石質陶材がジルコニアよりも優れているのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 色調<br>
+          b 透明性<br>
+          c 圧縮強さ<br>
+          d 破壊靱性<br>
+          e 曲げ強さ
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】長石質陶材がジルコニアより優れるのは<span class="highlight">色調</span>と<span class="highlight">透明性</span>（審美性）。圧縮強さ、破壊靱性、曲げ強さなどの機械的強度はジルコニアが優れる。</p>
+      </div>
+
+      <h2>陶材の分類（焼成温度による）</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>焼成温度</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td>高溶陶材</td>
+          <td>1,300℃以上</td>
+          <td>人工歯</td>
+        </tr>
+        <tr>
+          <td>中溶陶材</td>
+          <td>1,100〜1,300℃</td>
+          <td>ジャケット冠</td>
+        </tr>
+        <tr>
+          <td><span class="key">低溶陶材</span></td>
+          <td>900〜1,000℃</td>
+          <td><span class="key">金属焼付用陶材</span></td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

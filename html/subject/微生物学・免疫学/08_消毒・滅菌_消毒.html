@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>消毒 - 微生物学・免疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    td.center { text-align: center; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .ok { color: #34C759; font-weight: 600; }
+    .ng { color: #FF3B30; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学・免疫学 / 消毒・滅菌</span>
+    <h1>消毒</h1>
+    <div class="container">
+
+      <h2>消毒薬の選択ポイント</h2>
+      <p>消毒薬は対象（皮膚、器具、環境）と病原体（細菌、ウイルス、芽胞）によって使い分ける。特に<span class="highlight">ウイルスの種類</span>による効果の違いが頻出。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：ウイルスと消毒薬</div>
+        <ul>
+          <li><span class="key">ノロウイルス</span> → <span class="highlight">次亜塩素酸ナトリウム</span>（エタノール無効）</li>
+          <li><span class="key">HIV</span> → <span class="highlight">ポビドンヨード、消毒用エタノール</span></li>
+          <li><span class="key">HBV</span> → グルタルアルデヒド、次亜塩素酸Na（エタノール無効）</li>
+        </ul>
+      </div>
+
+      <h2>エンベロープとウイルスの消毒</h2>
+      <p>ウイルスの<span class="key">エンベロープ（脂質二重膜）</span>の有無が消毒薬の効果に影響する。</p>
+
+      <h3>エンベロープの有無と消毒用エタノールの効果</h3>
+      <table>
+        <tr>
+          <th>ウイルス</th>
+          <th>エンベロープ</th>
+          <th>消毒用エタノール</th>
+        </tr>
+        <tr>
+          <td><span class="key">HIV</span></td>
+          <td class="center">あり</td>
+          <td class="center"><span class="ok">○有効</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">インフルエンザ</span></td>
+          <td class="center">あり</td>
+          <td class="center"><span class="ok">○有効</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">HBV</span></td>
+          <td class="center">あり</td>
+          <td class="center"><span class="ng">×無効</span>（例外）</td>
+        </tr>
+        <tr>
+          <td><span class="key">ノロウイルス</span></td>
+          <td class="center">なし</td>
+          <td class="center"><span class="ng">×無効</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">ロタウイルス</span></td>
+          <td class="center">なし</td>
+          <td class="center"><span class="ng">×無効</span></td>
+        </tr>
+      </table>
+      <p class="note">※HBVはエンベロープを持つがエタノール抵抗性が高い</p>
+
+      <h2>主な消毒薬の特徴</h2>
+
+      <h3>消毒用エタノール</h3>
+      <ul>
+        <li><span class="key">70〜80%</span>に希釈して使用</li>
+        <li><span class="highlight">皮膚消毒</span>に使用可</li>
+        <li>金属器具にも使用可</li>
+        <li><span class="caution">HBV、ノロウイルス、芽胞には無効</span></li>
+        <li>Spaulding分類：中水準消毒</li>
+      </ul>
+
+      <h3>次亜塩素酸ナトリウム</h3>
+      <ul>
+        <li><span class="highlight">ノロウイルスに有効</span>（吐物消毒に最適）</li>
+        <li>HBVにも有効</li>
+        <li>歯科では<span class="key">印象体の消毒</span>に使用</li>
+        <li><span class="caution">金属腐食性</span>あり → 金属器具には不適</li>
+        <li><span class="caution">皮膚への侵襲性</span>あり → 手指には不適</li>
+      </ul>
+
+      <h3>ポビドンヨード</h3>
+      <ul>
+        <li>すべての細菌、ウイルス、芽胞を死滅できる</li>
+        <li><span class="highlight">HIVに有効</span></li>
+        <li>ヨードアレルギーがなければ<span class="key">皮膚粘膜にも使用可</span></li>
+        <li><span class="caution">褐色</span>のため着色を避けたい対象には不適</li>
+        <li>金属器具には使用不可（腐食）</li>
+      </ul>
+
+      <h3>グルタルアルデヒド（グルタラール）</h3>
+      <ul>
+        <li>すべての細菌、ウイルス、<span class="key">芽胞も死滅</span>できる</li>
+        <li><span class="caution">皮膚粘膜には使用不可</span></li>
+        <li>換気下で<span class="key">金属器具の浸漬消毒</span>に使用</li>
+        <li>Spaulding分類：高水準消毒</li>
+      </ul>
+
+      <h3>低水準消毒薬</h3>
+      <ul>
+        <li><span class="key">塩化ベンザルコニウム</span>：逆性石鹸、手指消毒</li>
+        <li><span class="key">ベンゼトニウム塩化物</span>：逆性石鹸</li>
+        <li><span class="key">クロルヘキシジン</span>：手指・皮膚消毒</li>
+        <li><span class="caution">ウイルス、芽胞には無効</span></li>
+      </ul>
+
+      <h2>消毒薬の比較表</h2>
+      <table>
+        <tr>
+          <th>消毒薬</th>
+          <th>手指</th>
+          <th>金属</th>
+          <th>芽胞</th>
+          <th>HBV・ノロ</th>
+          <th>HIV等</th>
+        </tr>
+        <tr>
+          <td><span class="key">グルタルアルデヒド</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">ポビドンヨード</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">消毒用エタノール</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ok">○</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">次亜塩素酸Na</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">塩化ベンザルコニウム</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ok">○</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ng">×</span></td>
+          <td class="center"><span class="ng">×</span></td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113C38</div>
+        <p>ノロウイルスに感染した患者が診療室の床に嘔吐した。吐物の消毒に適しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ホルマリン<br>
+          b グルタラール<br>
+          c 消毒用エタノール<br>
+          d 塩化ベンザルコニウム<br>
+          e 次亜塩素酸ナトリウム
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">ノロウイルスには次亜塩素酸ナトリウムが有効</span>。ノロウイルスはエンベロープを持たないため、消毒用エタノールでは不活化できない。塩化ベンザルコニウムは低水準消毒薬でウイルスには無効。グルタラールは有効だが、床の消毒には実用的でない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A52</div>
+        <p>ヒト免疫不全ウイルスに有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ポビドンヨード<br>
+          b 消毒用エタノール<br>
+          c ベンゼトニウム塩化物<br>
+          d ベンザルコニウム塩化物<br>
+          e クロルヘキシジングルコン酸塩液
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">HIVはエンベロープを持つウイルス</span>であり、ポビドンヨードや消毒用エタノールで不活化できる。c〜eは低水準消毒薬であり、ウイルスには無効。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B40（図あり）</div>
+        <p>消毒薬とその適用の有無を表に示す。ウはどれか。1つ選べ。ただし、ア〜オはa〜eのいずれかに該当する。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113B40_1.png" alt="消毒薬の適用表">
+        </div>
+        <div class="choices">
+          a グルタラール<br>
+          b ポビドンヨード<br>
+          c 消毒用エタノール<br>
+          d 塩化ベンザルコニウム<br>
+          e 次亜塩素酸ナトリウム
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】表の「ウ」は<span class="highlight">手指に○、金属に○、芽胞に×、HBV・ノロに×</span>の特徴を持つ。これは<span class="highlight">消毒用エタノール</span>の特徴。皮膚と金属器具には使えるが、芽胞やHBV・ノロウイルスには無効。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>感染症の伝播形式 - 微生物学・免疫学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">微生物学・免疫学 / 感染経路・様式</span>
+    <h1>感染症の伝播形式</h1>
+    <div class="container">
+
+      <h2>感染経路の分類</h2>
+      <p>感染経路は大きく<span class="key">水平感染</span>（個体間での伝播）と<span class="key">垂直感染</span>（母子感染）に分けられる。</p>
+
+      <h3>水平感染</h3>
+      <table>
+        <tr>
+          <th>感染経路</th>
+          <th>特徴</th>
+          <th>代表的な病原体</th>
+        </tr>
+        <tr>
+          <td><span class="key">接触感染</span></td>
+          <td>直接・間接的な接触で伝播</td>
+          <td>黄色ブドウ球菌、MRSA、単純ヘルペス</td>
+        </tr>
+        <tr>
+          <td><span class="key">飛沫感染</span></td>
+          <td>咳・くしゃみによる飛沫（5μm以上）</td>
+          <td>インフルエンザ、風疹、ムンプス</td>
+        </tr>
+        <tr>
+          <td><span class="key">空気感染</span></td>
+          <td>飛沫核（5μm未満）で長距離伝播</td>
+          <td><span class="highlight">結核菌、麻疹、水痘</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">経口感染</span></td>
+          <td>汚染された食品・水から感染</td>
+          <td>ノロウイルス、A型肝炎、コレラ菌</td>
+        </tr>
+        <tr>
+          <td><span class="key">媒介動物感染</span></td>
+          <td>蚊、ダニなどを介して感染</td>
+          <td>日本脳炎（蚊）、マラリア（蚊）</td>
+        </tr>
+        <tr>
+          <td><span class="key">血液感染</span></td>
+          <td>血液・体液を介して感染</td>
+          <td>HBV、HCV、HIV</td>
+        </tr>
+      </table>
+
+      <h3>垂直感染（母子感染）</h3>
+      <table>
+        <tr>
+          <th>感染時期</th>
+          <th>経路</th>
+          <th>代表的な病原体</th>
+        </tr>
+        <tr>
+          <td><span class="key">経胎盤感染</span></td>
+          <td>胎盤を通じて胎児に感染</td>
+          <td>風疹ウイルス、トキソプラズマ、梅毒</td>
+        </tr>
+        <tr>
+          <td><span class="key">産道感染</span></td>
+          <td>分娩時に産道で感染</td>
+          <td><span class="highlight">HBV</span>、HIV、単純ヘルペス</td>
+        </tr>
+        <tr>
+          <td><span class="key">母乳感染</span></td>
+          <td>授乳を通じて感染</td>
+          <td>HTLV-1、HIV</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">空気感染する3大疾患</div>
+        <ul>
+          <li><span class="highlight">結核</span>（結核菌）</li>
+          <li><span class="highlight">麻疹</span>（麻疹ウイルス）</li>
+          <li><span class="highlight">水痘</span>（水痘帯状疱疹ウイルス）</li>
+        </ul>
+        <p class="note">※飛沫核（5μm未満）が空中を長時間浮遊し、遠距離まで伝播する</p>
+      </div>
+
+      <h2>垂直感染と持続感染</h2>
+      <p><span class="key">HBV</span>は垂直感染（母子感染）によって<span class="highlight">持続感染（キャリア化）</span>を起こす代表的なウイルス。</p>
+
+      <h3>HBVの感染経路</h3>
+      <ul>
+        <li>①性行為</li>
+        <li>②注射針（針刺し事故、入れ墨、ピアス等）</li>
+        <li>③<span class="highlight">母子感染</span>（垂直感染）→ 持続感染・キャリア化</li>
+        <li>④輸血</li>
+      </ul>
+      <p class="note">※新生児期の感染は免疫寛容により排除されず、キャリア化しやすい</p>
+
+      <h2>日和見感染</h2>
+      <p><span class="key">日和見感染</span>とは、健常者では発症しないが、<span class="highlight">免疫機能が低下した状態</span>で発症する感染症。</p>
+
+      <h3>日和見感染を起こす主な病原体</h3>
+      <table>
+        <tr>
+          <th>病原体</th>
+          <th>疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">Candida albicans</span></td>
+          <td>口腔カンジダ症</td>
+        </tr>
+        <tr>
+          <td><span class="key">Pseudomonas aeruginosa</span>（緑膿菌）</td>
+          <td>緑膿菌感染症</td>
+        </tr>
+        <tr>
+          <td><span class="key">Pneumocystis jirovecii</span></td>
+          <td>ニューモシスチス肺炎</td>
+        </tr>
+        <tr>
+          <td><span class="key">Aspergillus</span></td>
+          <td>アスペルギルス症</td>
+        </tr>
+        <tr>
+          <td><span class="key">サイトメガロウイルス</span></td>
+          <td>CMV感染症</td>
+        </tr>
+      </table>
+
+      <h3>日和見感染のリスク因子</h3>
+      <ul>
+        <li>AIDS（HIV感染）</li>
+        <li>悪性腫瘍・化学療法</li>
+        <li>免疫抑制剤の使用</li>
+        <li>糖尿病</li>
+        <li>高齢者</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">日和見感染 vs 真性病原体</div>
+        <ul>
+          <li><span class="key">日和見病原体</span>：健常者では発症しない（Candida、緑膿菌等）</li>
+          <li><span class="key">真性病原体</span>：健常者でも発症する（結核菌、コレラ菌等）</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114D24</div>
+        <p>空気感染するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 結核菌<br>
+          b 麻疹ウイルス<br>
+          c 黄色ブドウ球菌<br>
+          d 日本脳炎ウイルス<br>
+          e Epstein-Barrウイルス
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">空気感染するのは結核菌、麻疹ウイルス、水痘ウイルス</span>の3つ。飛沫核（5μm未満）が空中を長時間浮遊し伝播する。黄色ブドウ球菌は接触感染、日本脳炎ウイルスは蚊媒介、EBウイルスは唾液を介した接触感染。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C116</div>
+        <p>垂直感染によって持続感染を起こすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ノロウイルス<br>
+          b ポリオウイルス<br>
+          c A型肝炎ウイルス<br>
+          d B型肝炎ウイルス<br>
+          e 日本脳炎ウイルス
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">HBVは母子感染（垂直感染）によって持続感染（キャリア化）</span>を起こす。新生児期の感染は免疫寛容により排除されにくい。ノロ・A型肝炎は経口感染、ポリオも経口感染、日本脳炎は蚊媒介であり、いずれも垂直感染による持続感染は起こさない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D54</div>
+        <p>日和見感染を起こすのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Vibrio cholerae<br>
+          b Candida albicans<br>
+          c Bacillus anthracis<br>
+          d Treponema pallidum<br>
+          e Pseudomonas aeruginosa
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】<span class="highlight">Candida albicansとPseudomonas aeruginosa（緑膿菌）</span>は日和見感染を起こす代表的な病原体。免疫低下時に発症する。コレラ菌（a）、炭疽菌（c）、梅毒トレポネーマ（d）は健常者でも発症する真性病原体。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

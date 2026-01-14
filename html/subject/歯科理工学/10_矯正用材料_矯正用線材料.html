@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>矯正用線材料 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 矯正用材料</span>
+    <h1>矯正用線材料</h1>
+    <div class="container">
+
+      <h2>矯正用線材料の種類と組成</h2>
+      <p>矯正治療に用いられる線材料は主に4種類あり、それぞれ組成と特性が異なる。</p>
+
+      <h3>組成（mass%）</h3>
+      <table>
+        <tr>
+          <th>線材</th>
+          <th>主成分</th>
+          <th>Ni含有</th>
+        </tr>
+        <tr>
+          <td><span class="key">ステンレス鋼（18-8）</span></td>
+          <td><span class="highlight">Fe 73</span>, Cr 18, <span class="caution">Ni 8</span></td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="key">コバルトクロム合金</span></td>
+          <td>Co 40, Cr 20, Fe 16, <span class="caution">Ni 15</span></td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="key">ニッケルチタン合金</span></td>
+          <td><span class="highlight">Ni 56</span>, <span class="highlight">Ti 44</span></td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="key">チタンモリブデン合金</span></td>
+          <td><span class="highlight">Ti 80</span>, Mo 10, Zr 6, Sn 4</td>
+          <td><span class="highlight">×</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Niアレルギー患者への対応</div>
+        <ul>
+          <li><span class="caution">ステンレス鋼、Co-Cr合金、Ni-Ti合金はNiを含む</span>→使用不可</li>
+          <li><span class="highlight">Ti-Mo合金（β型チタン）はNiを含まない</span>→使用可</li>
+          <li>ブラケット：セラミック、プラスチックは使用可</li>
+        </ul>
+      </div>
+
+      <h2>機械的性質</h2>
+
+      <h3>弾性係数（矯正力の大きさ）</h3>
+      <table>
+        <tr>
+          <th>弾性係数</th>
+          <th>線材</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">大</span></td>
+          <td>ステンレス鋼、Co-Cr合金</td>
+          <td>強い矯正力、細かい調整向き</td>
+        </tr>
+        <tr>
+          <td><span class="key">中</span></td>
+          <td>Ti-Mo合金</td>
+          <td>中程度の矯正力</td>
+        </tr>
+        <tr>
+          <td><span class="key">小</span></td>
+          <td><span class="highlight">Ni-Ti合金（超弾性）</span></td>
+          <td>持続的で小さい矯正力</td>
+        </tr>
+      </table>
+
+      <h3>加工性・硬化処理・ろう付け</h3>
+      <table>
+        <tr>
+          <th>線材</th>
+          <th>加工性</th>
+          <th>硬化処理</th>
+          <th>ろう付け</th>
+        </tr>
+        <tr>
+          <td>ステンレス鋼</td>
+          <td>◎</td>
+          <td>加工硬化</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td>Co-Cr合金</td>
+          <td>○</td>
+          <td>熱処理硬化</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td>Ti-Mo合金</td>
+          <td>◎</td>
+          <td>-</td>
+          <td><span class="caution">×</span></td>
+        </tr>
+        <tr>
+          <td>Ni-Ti合金（超弾性）</td>
+          <td><span class="caution">×</span></td>
+          <td>-</td>
+          <td><span class="caution">×</span></td>
+        </tr>
+      </table>
+
+      <h2>耐食性</h2>
+      <p>いずれの線材も<span class="key">不動態皮膜</span>により耐食性を獲得している。</p>
+      <table>
+        <tr>
+          <th>不動態皮膜</th>
+          <th>線材</th>
+        </tr>
+        <tr>
+          <td><span class="key">Cr₂O₃（酸化クロム）</span></td>
+          <td>ステンレス鋼、Co-Cr合金</td>
+        </tr>
+        <tr>
+          <td><span class="key">TiO₂（酸化チタン）</span></td>
+          <td>Ni-Ti合金、Ti-Mo合金</td>
+        </tr>
+      </table>
+
+      <h2>Ni-Ti合金の超弾性</h2>
+      <p><span class="key">ニッケルチタン合金（超弾性型）</span>は、応力を加えると結晶構造が変化し、除荷すると元に戻る特性をもつ。</p>
+      <ul>
+        <li><span class="key">応力誘起変態</span>：オーステナイト相→マルテンサイト相</li>
+        <li>荷重除去で<span class="key">逆変態</span>（母相へ復帰）</li>
+        <li><span class="highlight">持続的で小さい矯正力</span>を発揮</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C110</div>
+        <p>合金の組成を表に示す。<br>超弾性合金はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104C110_1.png" alt="組成表">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">超弾性合金はNi-Ti合金</span>である。組成表でNi約56%、Ti約44%の合金を探す。オがNi-Ti合金に該当する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A74</div>
+        <p>代表的な4種の矯正用線材（18-8ステンレス鋼線、コバルトクロム合金線、ニッケルチタン合金線、チタンモリブデン合金線：①〜④のいずれかに該当）の組成を表に示す。<br>アに該当するのはどれか。1つ選べ。<br>ただし、ア〜オはa〜eのいずれかに該当する。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115A74_1.png" alt="組成表">
+        </div>
+        <div class="choices">
+          a Co<br>
+          b Cr<br>
+          c Fe<br>
+          d Ni<br>
+          e Ti
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】4種の矯正用線材の組成を問う問題。表中の数値から各線材を同定し、空欄「ア」に該当する元素を答える。<span class="highlight">Ni-Ti合金はNi 56%、Ti 44%</span>で構成されるため、「ア」は<span class="highlight">Ni（ニッケル）</span>である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A90</div>
+        <p>ニッケルアレルギーのある矯正患者に使用することができるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a ステンレス鋼ワイヤー<br>
+          b セラミックブラケット<br>
+          c プラスチックブラケット<br>
+          d コバルトクロム合金ワイヤー<br>
+          e チタンモリブデン合金ワイヤー
+        </div>
+        <div class="answer">正解：b, c, e</div>
+        <p>【解説】<span class="caution">ステンレス鋼（Ni 8%）、Co-Cr合金（Ni 15%）はNiを含む</span>ため使用不可。<span class="highlight">Ti-Mo合金はNiを含まない</span>ため使用可。セラミック・プラスチックブラケットも金属を含まないため使用可。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -4832,56 +4832,10 @@
   // ===== 過去問カード折りたたみ機能 =====
 
   /**
-   * 過去問カードを折りたたみ可能にする
+   * 過去問カードのスタイル適用（折りたたみなし）
    */
   function initQuestionCards() {
-    if (!elements.htmlDisplay) return;
-
-    const questionBoxes = elements.htmlDisplay.querySelectorAll('.question-box:not(.question-card-processed)');
-
-    questionBoxes.forEach(box => {
-      // 処理済みマークを付ける
-      box.classList.add('question-card-processed');
-
-      // 情報を抽出
-      const qNumber = box.querySelector('.q-number')?.textContent || '';
-      const qText = box.querySelector('.q-text')?.textContent || '';
-      const answer = box.querySelector('.answer')?.textContent || '';
-
-      // プレビューテキスト（最初の30文字）
-      const preview = qText.length > 35 ? qText.substring(0, 35) + '…' : qText;
-
-      // ラッパーを作成
-      const wrapper = document.createElement('div');
-      wrapper.className = 'question-card-wrapper';
-      wrapper.innerHTML = `
-        <div class="question-card-header">
-          <div class="question-card-summary">
-            <div class="question-card-number">${escapeHtml(qNumber)}</div>
-            <div class="question-card-preview">${escapeHtml(preview)}</div>
-            <div class="question-card-answer">${escapeHtml(answer)}</div>
-          </div>
-          <button class="question-card-toggle">
-            <span>問題を見る</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </button>
-        </div>
-        <div class="question-card-content"></div>
-      `;
-
-      // 元のquestion-boxをコンテンツ領域に移動
-      const content = wrapper.querySelector('.question-card-content');
-      box.parentNode.insertBefore(wrapper, box);
-      content.appendChild(box);
-
-      // トグルイベント
-      const header = wrapper.querySelector('.question-card-header');
-      header.addEventListener('click', () => {
-        wrapper.classList.toggle('expanded');
-      });
-    });
+    // 折りたたみ機能は廃止 - question-boxをそのまま表示
   }
 
   /**

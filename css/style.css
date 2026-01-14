@@ -3618,8 +3618,8 @@ body {
   margin: 12px 0;
   border-radius: 12px;
   overflow: hidden;
-  background: #FFFBEB;
-  border: 1px solid rgba(246, 224, 94, 0.5);
+  background: #F5F5F5;
+  border: 1px solid rgba(156, 163, 175, 0.5);
   transition: box-shadow 0.2s ease;
 }
 
@@ -3638,7 +3638,7 @@ body {
 }
 
 .question-card-header:active {
-  background: rgba(246, 224, 94, 0.2);
+  background: rgba(156, 163, 175, 0.15);
 }
 
 .question-card-summary {
@@ -3649,13 +3649,13 @@ body {
 .question-card-number {
   font-size: 12px;
   font-weight: 700;
-  color: #744210;
+  color: #4A5568;
   margin-bottom: 2px;
 }
 
 .question-card-preview {
   font-size: 13px;
-  color: #5D4E37;
+  color: #6B7280;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3674,10 +3674,10 @@ body {
   align-items: center;
   gap: 4px;
   padding: 6px 10px;
-  background: rgba(116, 66, 16, 0.1);
+  background: rgba(74, 85, 104, 0.1);
   border: none;
   border-radius: 6px;
-  color: #744210;
+  color: #4A5568;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -3687,7 +3687,7 @@ body {
 }
 
 .question-card-toggle:active {
-  background: rgba(116, 66, 16, 0.2);
+  background: rgba(74, 85, 104, 0.2);
 }
 
 .question-card-toggle svg {
@@ -8916,5 +8916,37 @@ body.is-practice .tab-content {
   :root:not([data-theme="light"]) .search-match-highlight.current {
     background: #FFE082 !important;
     color: #1a1a1a !important;
+  }
+}
+
+/* スマホ用 検索バー調整 */
+@media (max-width: 480px) {
+  .floating-search-bar {
+    padding: 0 8px;
+    gap: 6px;
+  }
+  .floating-search-nav {
+    gap: 2px;
+    padding-left: 6px;
+  }
+  .floating-search-count {
+    font-size: 12px;
+    min-width: 36px;
+  }
+  .floating-search-nav-btn {
+    width: 28px;
+    height: 28px;
+  }
+  .floating-search-nav-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  .floating-search-close {
+    width: 28px;
+    height: 28px;
+  }
+  .floating-search-close svg {
+    width: 18px;
+    height: 18px;
   }
 }

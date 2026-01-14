@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>鋳造 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    ol { padding-left: 1.5em; margin: 8px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の取り扱い技術</span>
+    <h1>鋳造</h1>
+    <div class="container">
+
+      <h2>鋳造体の製作工程</h2>
+      <ol>
+        <li>窩洞（支台歯）形成</li>
+        <li>印象採得</li>
+        <li>模型製作</li>
+        <li><span class="key">ワックスパターン製作</span></li>
+        <li><span class="key">スプルー植立</span></li>
+        <li><span class="key">パターンの埋没</span>（埋没材、ライニング材）</li>
+        <li><span class="key">鋳型の加熱</span></li>
+        <li>金属の溶融・<span class="key">鋳造</span></li>
+        <li>鋳造体の取り出し</li>
+        <li>研磨、熱処理</li>
+      </ol>
+
+      <h2>鋳造収縮と補償</h2>
+      <p>金属は凝固時に収縮する。この<span class="key">鋳造収縮</span>を<span class="key">埋没材の膨張</span>で補償する。</p>
+
+      <h3>金属別の鋳造収縮</h3>
+      <table>
+        <tr>
+          <th>金属</th>
+          <th>鋳造収縮</th>
+        </tr>
+        <tr>
+          <td>銀合金</td>
+          <td>約1.2〜1.4%</td>
+        </tr>
+        <tr>
+          <td>金合金、金銀パラジウム合金</td>
+          <td>約1.5%</td>
+        </tr>
+        <tr>
+          <td>コバルトクロム合金</td>
+          <td>約2.3%</td>
+        </tr>
+      </table>
+      <p class="note">※融点が高いと鋳造収縮も大きい傾向</p>
+
+      <h3>鋳造収縮の補償方法</h3>
+      <ul>
+        <li><span class="highlight">埋没材の加熱膨張</span>（鋳型加熱）</li>
+        <li><span class="highlight">緩衝用ライナー（キャスティングライナー）</span>の使用</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">鋳造収縮の補償に有効なもの</div>
+        <ul>
+          <li><span class="highlight">埋没材の加熱</span>→加熱膨張の発現</li>
+          <li><span class="highlight">緩衝用ライナーの使用</span>→埋没材の膨張スペース確保</li>
+          <li><span class="caution">湯だまり・エアベント・フラックスは補償に関係しない</span></li>
+        </ul>
+      </div>
+
+      <h2>埋没操作</h2>
+
+      <h3>埋没の注意点</h3>
+      <table>
+        <tr>
+          <th>操作</th>
+          <th>目的・注意点</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">界面活性剤塗布</span></td>
+          <td>ワックスと埋没泥のぬれを良くする</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">キャスティングライナー</span></td>
+          <td>鋳造リング内面を裏装、埋没材の膨張スペース確保</td>
+        </tr>
+        <tr>
+          <td><span class="key">湯だまりの付与</span></td>
+          <td>溶湯の供給、引け巣防止</td>
+        </tr>
+        <tr>
+          <td><span class="key">ベント（エアベント）</span></td>
+          <td>鋳型内の空気・ガスの排出</td>
+        </tr>
+      </table>
+
+      <h3>スプルー植立の注意点</h3>
+      <ul>
+        <li>太さ、長さ、方向、数、位置を考慮</li>
+        <li><span class="caution">機能咬頭外斜面には植立しない</span>（咬合面は避ける）</li>
+        <li>ワックスパターンとリング底との距離は<span class="key">5〜7mm</span></li>
+      </ul>
+
+      <h2>鋳型加熱の目的</h2>
+      <ul>
+        <li>パターン（ワックス）の焼却</li>
+        <li><span class="highlight">埋没材の加熱膨張の発現</span></li>
+        <li>溶湯の冷却硬化防止（鋳造性の向上）</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107C89</div>
+        <p>鋳造収縮の補償に有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 埋没材の加熱<br>
+          b 湯だまりの付与<br>
+          c エアベントの付与<br>
+          d フラックスの使用<br>
+          e 緩衝用ライナーの使用
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】鋳造収縮の補償には<span class="highlight">埋没材の加熱</span>（加熱膨張の発現）と<span class="highlight">緩衝用ライナーの使用</span>（膨張スペースの確保）が有効。<span class="caution">湯だまりは引け巣防止、エアベントはガス排出、フラックスは酸化防止</span>が目的であり、鋳造収縮の補償とは関係ない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C92</div>
+        <p>埋没に関して正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a スプルーは機能咬頭外斜面に植立する。<br>
+          b 界面活性剤塗布によって埋没泥とのぬれを良くする。<br>
+          c 鋳造リング内面をキャスティングライナーで裏装する。<br>
+          d ワックスパターンとリング底との距離は2〜3mmとする。<br>
+          e 金銀パラジウム合金の鋳造にはリン酸塩系埋没材を使用する。
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】<span class="highlight">界面活性剤塗布</span>でワックスと埋没泥のぬれを良くする。<span class="highlight">キャスティングライナー</span>で鋳造リング内面を裏装し、埋没材の膨張スペースを確保する。<span class="caution">スプルーは機能咬頭外斜面には植立しない</span>。ワックスパターンとリング底との距離は<span class="caution">5〜7mm</span>（2〜3mmは近すぎ）。金銀パラジウム合金には<span class="caution">石膏系埋没材</span>を使用（リン酸塩系は高融点金属用）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -6076,8 +6076,9 @@ body.is-practice .tab-content {
 
 /* 次カード入場（ふわっと下から） */
 .flashcard-card.entering {
-  transform: translateY(12px) scale(0.97);
+  transform: translateY(16px) scale(0.96);
   opacity: 0;
+  transition: transform 400ms cubic-bezier(.16,1,.3,1), opacity 350ms ease;
 }
 
 /* Reduce Motion対応 */

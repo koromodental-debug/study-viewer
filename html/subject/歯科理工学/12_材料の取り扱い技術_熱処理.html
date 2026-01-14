@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>熱処理 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 材料の取り扱い技術</span>
+    <h1>熱処理</h1>
+    <div class="container">
+
+      <h2>熱処理とは</h2>
+      <p>金属の機械的性質を変化させるために行う加熱・冷却操作。歯科では主に金合金の<span class="key">軟化熱処理</span>と<span class="key">硬化熱処理</span>が行われる。</p>
+
+      <h2>熱処理の種類</h2>
+
+      <h3>軟化熱処理（溶体化処理）</h3>
+      <table>
+        <tr>
+          <th>操作</th>
+          <th>効果</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td><span class="key">700℃加熱→急冷</span>（水冷）</td>
+          <td>硬度低下</td>
+          <td>加工性の向上（研磨、調整前）</td>
+        </tr>
+      </table>
+      <p>高温で均一な固溶体を形成し、急冷によりその状態を保持する。</p>
+
+      <h3>硬化熱処理（時効硬化）</h3>
+      <table>
+        <tr>
+          <th>操作</th>
+          <th>効果</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td><span class="key">350〜450℃加熱→徐冷</span></td>
+          <td>硬度上昇</td>
+          <td>強度・耐摩耗性の向上（装着前）</td>
+        </tr>
+      </table>
+      <p>適切な温度で保持することで、規則格子（AuCu、AuCu₃）が形成され硬化する。</p>
+
+      <h2>硬化熱処理が可能な合金</h2>
+
+      <h3>硬化熱処理が可能</h3>
+      <table>
+        <tr>
+          <th>合金</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="key">タイプ3・4金合金</span></td>
+          <td>Cu含有量が多い（規則-不規則変態）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">金銀パラジウム合金</span></td>
+          <td>Cu含有量が多い（約20%）</td>
+        </tr>
+        <tr>
+          <td><span class="key">コバルトクロム合金</span></td>
+          <td>熱処理硬化が可能</td>
+        </tr>
+      </table>
+
+      <h3>硬化熱処理が不可能</h3>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="caution">純金</span></td>
+          <td>純金属（合金ではない）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">純チタン</span></td>
+          <td>純金属（合金ではない）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">タイプ1・2金合金</span></td>
+          <td>Cu含有量が少ない</td>
+        </tr>
+        <tr>
+          <td><span class="caution">ニッケルチタン合金</span></td>
+          <td>超弾性型は熱処理で性質変化しない</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>硬化熱処理が可能：<span class="highlight">金銀パラジウム合金</span>、タイプ3・4金合金</li>
+          <li><span class="caution">純金属（純金、純チタン）は硬化熱処理不可</span></li>
+          <li><span class="caution">タイプ1金合金はCu含有量が少なく硬化熱処理不可</span></li>
+          <li>硬化熱処理の条件：<span class="key">350〜450℃で加熱後、徐冷</span></li>
+        </ul>
+      </div>
+
+      <h2>金合金のタイプと熱処理</h2>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>用途</th>
+          <th>硬化熱処理</th>
+        </tr>
+        <tr>
+          <td>タイプ1</td>
+          <td>インレー（小窩裂溝）</td>
+          <td><span class="caution">×</span></td>
+        </tr>
+        <tr>
+          <td>タイプ2</td>
+          <td>インレー（咬合面）</td>
+          <td><span class="caution">×</span></td>
+        </tr>
+        <tr>
+          <td>タイプ3</td>
+          <td>クラウン、ブリッジ</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td>タイプ4</td>
+          <td>クラスプ、バー</td>
+          <td>○</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B125</div>
+        <p>硬化熱処理が可能なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 純金<br>
+          b 純チタン<br>
+          c タイプ1金合金<br>
+          d ニッケルチタン合金<br>
+          e 金銀パラジウム合金
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">金銀パラジウム合金</span>はCuを約20%含有しており、硬化熱処理（時効硬化）が可能である。<span class="caution">純金・純チタンは純金属</span>のため硬化熱処理不可。<span class="caution">タイプ1金合金はCu含有量が少なく</span>硬化熱処理不可。<span class="caution">ニッケルチタン合金（超弾性型）</span>は熱処理で性質変化しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

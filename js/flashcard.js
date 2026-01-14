@@ -139,7 +139,7 @@ const FlashcardModule = (function() {
           currentPosition: session ? session.index + 1 : null
         };
       })
-      .filter(t => t !== null)
+      .filter(t => t !== null && t.currentPosition !== null)
       .sort((a, b) => b.lastAccess - a.lastAccess)
       .slice(0, limit);
 

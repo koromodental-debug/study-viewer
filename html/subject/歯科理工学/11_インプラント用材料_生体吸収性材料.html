@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>生体吸収性材料 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / インプラント用材料</span>
+    <h1>生体吸収性材料</h1>
+    <div class="container">
+
+      <h2>生体吸収性材料とは</h2>
+      <p>生体内で分解・吸収され、最終的に消失する材料。骨補填材、縫合糸、骨接合プレートなどに使用される。</p>
+
+      <h2>生体吸収性材料の分類</h2>
+
+      <h3>骨伝導能を有する生体吸収性材料（リン酸カルシウム系）</h3>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>骨伝導能</th>
+          <th>生体吸収性</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">β-TCP</span></td>
+          <td>○</td>
+          <td>○</td>
+          <td>吸収後、骨に置換</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">炭酸アパタイト</span></td>
+          <td>○</td>
+          <td>○</td>
+          <td>吸収後、骨に置換</td>
+        </tr>
+        <tr>
+          <td><span class="key">OCP</span></td>
+          <td>○</td>
+          <td>○</td>
+          <td>吸収後、骨に置換</td>
+        </tr>
+        <tr>
+          <td>ハイドロキシアパタイト</td>
+          <td>○</td>
+          <td><span class="caution">×</span></td>
+          <td>ほぼ吸収しない</td>
+        </tr>
+      </table>
+
+      <h3>骨伝導能を持たない生体吸収性材料（高分子系）</h3>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>骨伝導能</th>
+          <th>生体吸収性</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="key">ポリ乳酸（PLA）</span></td>
+          <td><span class="caution">×</span></td>
+          <td>○</td>
+          <td>骨接合プレート、縫合糸</td>
+        </tr>
+        <tr>
+          <td><span class="key">ポリグリコール酸（PGA）</span></td>
+          <td><span class="caution">×</span></td>
+          <td>○</td>
+          <td>縫合糸</td>
+        </tr>
+        <tr>
+          <td><span class="key">PLGA</span></td>
+          <td><span class="caution">×</span></td>
+          <td>○</td>
+          <td>GTR/GBR膜</td>
+        </tr>
+        <tr>
+          <td><span class="key">酸化セルロース</span></td>
+          <td><span class="caution">×</span></td>
+          <td>○</td>
+          <td>止血材</td>
+        </tr>
+        <tr>
+          <td><span class="key">コラーゲン</span></td>
+          <td><span class="caution">×</span></td>
+          <td>○</td>
+          <td>GTR/GBR膜、縫合糸（腸線）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：骨伝導能＋生体吸収性</div>
+        <ul>
+          <li>両方持つのは<span class="highlight">β-TCP、炭酸アパタイト</span></li>
+          <li><span class="caution">ポリ乳酸・ポリグリコール酸は吸収性あるが骨伝導能なし</span></li>
+          <li><span class="caution">HApは骨伝導能あるが吸収性なし</span></li>
+          <li>アルミナ・ジルコニアは生体不活性で吸収性もなし</li>
+        </ul>
+      </div>
+
+      <h2>非吸収性材料との比較</h2>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>生体との反応</th>
+          <th>吸収性</th>
+        </tr>
+        <tr>
+          <td>チタン、アルミナ、ジルコニア</td>
+          <td>生体不活性</td>
+          <td>×</td>
+        </tr>
+        <tr>
+          <td>ハイドロキシアパタイト</td>
+          <td>生体活性</td>
+          <td>×</td>
+        </tr>
+        <tr>
+          <td>β-TCP、炭酸アパタイト</td>
+          <td>生体活性</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td>PTFE</td>
+          <td>生体許容性</td>
+          <td>×</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110C45</div>
+        <p>骨伝導性材料で生体吸収性に優れているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アルミナ<br>
+          b ポリ乳酸<br>
+          c ジルコニア<br>
+          d リン酸三カルシウム<br>
+          e ハイドロキシアパタイト
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】骨伝導性と生体吸収性を両方持つのは<span class="highlight">リン酸三カルシウム（TCP）</span>である。<span class="caution">ポリ乳酸は吸収性あるが骨伝導能なし</span>。<span class="caution">HApは骨伝導能あるが吸収性なし</span>。アルミナ・ジルコニアは生体不活性で吸収性もない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C47</div>
+        <p>骨伝導能を有する生体吸収性材料はどれか。2つ選べ。</p>
+        <div class="choices">
+          a β-TCP<br>
+          b ポリ-L-乳酸<br>
+          c 酸化セルロース<br>
+          d 炭酸アパタイト<br>
+          e ポリグリコール酸
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】骨伝導能と生体吸収性を両方有するのは<span class="highlight">β-TCP</span>と<span class="highlight">炭酸アパタイト</span>である。<span class="caution">ポリ-L-乳酸、酸化セルロース、ポリグリコール酸は生体吸収性はあるが骨伝導能を持たない</span>。これらは高分子材料であり、骨補填材ではなく縫合糸や止血材として使用される。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -6602,13 +6602,21 @@ body.is-practice .tab-content {
   }
 
   /* タブバー */
-  .floating-tabbar {
+  :root:not([data-theme="light"]) .floating-tabbar {
     background: rgba(28, 28, 30, 0.95);
     border-top-color: var(--border-color);
   }
 
+  :root:not([data-theme="light"]) .floating-tab {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  :root:not([data-theme="light"]) .floating-tab.active {
+    color: #0A84FF;
+  }
+
   /* 今日のおすすめ */
-  .deck-recommended {
+  :root:not([data-theme="light"]) .deck-recommended {
     background: var(--card-bg);
     border-color: var(--border-color);
   }

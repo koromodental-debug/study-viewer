@@ -3585,7 +3585,7 @@
   }
 
   /**
-   * カードを画像として保存
+   * カードを画像として保存（プレビュー表示→長押しで保存）
    */
   async function saveCardAsImage(element, filename) {
     if (typeof html2canvas === 'undefined') {
@@ -3594,10 +3594,10 @@
     }
 
     // ローディング表示
-    const overlay = document.createElement('div');
-    overlay.className = 'saving-overlay';
-    overlay.innerHTML = '<div class="saving-spinner">画像を生成中...</div>';
-    document.body.appendChild(overlay);
+    const loadingOverlay = document.createElement('div');
+    loadingOverlay.className = 'saving-overlay';
+    loadingOverlay.innerHTML = '<div class="saving-spinner">画像を生成中...</div>';
+    document.body.appendChild(loadingOverlay);
 
     // Q&Aの答えを一時的に表示（画像に含めるため）
     const hiddenAnswers = [];
@@ -3637,20 +3637,34 @@
 
       const dataUrl = canvas.toDataURL('image/png');
 
-      // iOS Safari対応: ライトボックスで画像を表示（長押しで保存可能）
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      if (isIOS) {
-        // 既存のライトボックスを使用（ポップアップブロック回避）
-        elements.lightboxImage.src = dataUrl;
-        elements.imageLightbox.classList.add('open', 'show-hint');
-        document.body.style.overflow = 'hidden';
-      } else {
-        // その他のブラウザ: ダウンロード
-        const link = document.createElement('a');
-        link.href = dataUrl;
-        link.download = filename + '.png';
-        link.click();
-      }
+      // プレビューオーバーレイを作成（長押しで保存）
+      const previewOverlay = document.createElement('div');
+      previewOverlay.className = 'image-preview-overlay';
+      previewOverlay.innerHTML = `
+        <div class="image-preview-container">
+          <div class="image-preview-header">
+            <span>長押しで写真に保存</span>
+            <button class="image-preview-close">✕</button>
+          </div>
+          <div class="image-preview-body">
+            <img src="${dataUrl}" alt="${filename}" />
+          </div>
+        </div>
+      `;
+      document.body.appendChild(previewOverlay);
+
+      // 閉じるボタン
+      previewOverlay.querySelector('.image-preview-close').addEventListener('click', () => {
+        previewOverlay.remove();
+      });
+
+      // オーバーレイ背景クリックで閉じる
+      previewOverlay.addEventListener('click', (e) => {
+        if (e.target === previewOverlay) {
+          previewOverlay.remove();
+        }
+      });
+
     } catch (err) {
       console.error('画像保存エラー:', err);
       alert('画像の生成に失敗しました');
@@ -3659,7 +3673,7 @@
       hiddenAnswers.forEach(answer => {
         answer.style.display = '';
       });
-      overlay.remove();
+      loadingOverlay.remove();
     }
   }
 

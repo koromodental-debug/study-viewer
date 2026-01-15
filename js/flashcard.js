@@ -1467,6 +1467,7 @@ const FlashcardModule = (function() {
   // カード検索画面をレンダリング
   async function renderCardSearchScreen(initialQuery = '') {
     state.cardSearch.expandedKeys = new Set();
+    state.cardSearch.showAll = false;  // 5件表示にリセット
     // クエリが渡された場合は保持、そうでなければクリア
     if (!initialQuery) {
       state.cardSearch.query = '';

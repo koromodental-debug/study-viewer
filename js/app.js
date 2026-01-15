@@ -1476,7 +1476,8 @@
     if (!item || !item.htmlPath) return;
 
     try {
-      const response = await fetch(item.htmlPath);
+      // 日本語ファイル名をURLエンコード
+      const response = await fetch(encodeURI(item.htmlPath));
       if (!response.ok) throw new Error('Failed to load');
       const html = await response.text();
 
@@ -1527,7 +1528,7 @@
     if (!item || !item.htmlPath) return;
 
     try {
-      const response = await fetch(item.htmlPath);
+      const response = await fetch(encodeURI(item.htmlPath));
       if (!response.ok) throw new Error('Failed to load');
       const html = await response.text();
 
@@ -1985,7 +1986,7 @@
     if (!item || !item.qaPath) return;
 
     try {
-      const response = await fetch(item.qaPath);
+      const response = await fetch(encodeURI(item.qaPath));
       if (!response.ok) throw new Error('Failed to load');
       const text = await response.text();
 
@@ -2034,7 +2035,7 @@
     if (!item || !item.qaPath) return;
 
     try {
-      const response = await fetch(item.qaPath);
+      const response = await fetch(encodeURI(item.qaPath));
       if (!response.ok) throw new Error('Failed to load');
       const text = await response.text();
 

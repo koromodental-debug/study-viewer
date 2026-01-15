@@ -20,7 +20,7 @@ const KakomonModule = (function() {
     }
 
     try {
-      const response = await fetch(`kakomon/${subject}.json`);
+      const response = await fetch(encodeURI(`kakomon/${subject}.json`));
       if (!response.ok) throw new Error('Failed to load');
       const data = await response.json();
       dataCache.set(subject, data);

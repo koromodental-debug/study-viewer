@@ -748,7 +748,7 @@ const FlashcardModule = (function() {
     state.currentTopic = topic;
 
     try {
-      const response = await fetch(topic.qaPath);
+      const response = await fetch(encodeURI(topic.qaPath));
       const text = await response.text();
       state.cards = parseQAToCards(text, topicId);
 
@@ -827,7 +827,7 @@ const FlashcardModule = (function() {
       if (!topic || !topic.qaPath) continue;
 
       try {
-        const response = await fetch(topic.qaPath);
+        const response = await fetch(encodeURI(topic.qaPath));
         const text = await response.text();
         const cards = parseQAToCards(text, topicId);
         topicCardsMap.set(topicId, { cards, topic });
@@ -957,7 +957,7 @@ const FlashcardModule = (function() {
       if (!topic || !topic.qaPath) continue;
 
       try {
-        const response = await fetch(topic.qaPath);
+        const response = await fetch(encodeURI(topic.qaPath));
         const text = await response.text();
         const cards = parseQAToCards(text, topicId);
         topicCardsMap.set(topicId, { cards, topic });
@@ -1041,7 +1041,7 @@ const FlashcardModule = (function() {
       if (!topic || !topic.qaPath) continue;
 
       try {
-        const response = await fetch(topic.qaPath);
+        const response = await fetch(encodeURI(topic.qaPath));
         const text = await response.text();
         const cards = parseQAToCards(text, topicId);
         topicCardsMap.set(topicId, { cards, topic });
@@ -2088,7 +2088,7 @@ const FlashcardModule = (function() {
     if (!summaryContent) return;
 
     try {
-      const response = await fetch(htmlPath);
+      const response = await fetch(encodeURI(htmlPath));
       const html = await response.text();
 
       const parser = new DOMParser();

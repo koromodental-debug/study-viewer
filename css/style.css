@@ -9382,7 +9382,8 @@ body.is-practice .tab-content {
   gap: 10px;
 }
 
-.card-search-more-btn {
+.card-search-more-btn,
+.card-search-show-more {
   display: block;
   width: 100%;
   padding: 14px;
@@ -9398,11 +9399,13 @@ body.is-practice .tab-content {
   transition: background 0.15s ease;
 }
 
-.card-search-more-btn:hover {
+.card-search-more-btn:hover,
+.card-search-show-more:hover {
   background: var(--surface);
 }
 
-.card-search-more-btn:active {
+.card-search-more-btn:active,
+.card-search-show-more:active {
   background: var(--border-subtle);
 }
 

@@ -53,7 +53,8 @@ const FlashcardModule = (function() {
       allCardsIndex: null,
       query: '',
       results: [],
-      expandedKeys: new Set()
+      expandedKeys: new Set(),
+      showAll: false  // 全件表示フラグ
     }
   };
 
@@ -1568,6 +1569,7 @@ const FlashcardModule = (function() {
         debounceTimer = setTimeout(() => {
           state.cardSearch.query = query;
           state.cardSearch.results = searchCards(query);
+          state.cardSearch.showAll = false;  // 新しい検索では5件表示に戻す
           renderCardSearchResults();
         }, 300);
       });
@@ -1636,7 +1638,13 @@ const FlashcardModule = (function() {
       }
     }
 
-    resultsEl.innerHTML = results.map(item => {
+    // 表示件数制限（デフォルト5件）
+    const DISPLAY_LIMIT = 5;
+    const displayResults = state.cardSearch.showAll ? results : results.slice(0, DISPLAY_LIMIT);
+    const hasMore = results.length > DISPLAY_LIMIT && !state.cardSearch.showAll;
+    const remainingCount = results.length - DISPLAY_LIMIT;
+
+    let html = displayResults.map(item => {
       const isExpanded = state.cardSearch.expandedKeys.has(item.searchKey);
 
       // まとめの場合
@@ -1668,6 +1676,13 @@ const FlashcardModule = (function() {
         </div>
       `;
     }).join('');
+
+    // 「他○件を表示」リンク
+    if (hasMore) {
+      html += `<button class="card-search-show-more" id="card-search-show-more">他${remainingCount}件を表示...</button>`;
+    }
+
+    resultsEl.innerHTML = html;
 
     // カードクリックで展開/折りたたみ
     resultsEl.querySelectorAll('.card-search-card').forEach(cardEl => {
@@ -1723,6 +1738,15 @@ const FlashcardModule = (function() {
         }
       });
     });
+
+    // 「他○件を表示」ボタンクリック
+    const showMoreBtn = document.getElementById('card-search-show-more');
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener('click', () => {
+        state.cardSearch.showAll = true;
+        renderCardSearchResults();
+      });
+    }
   }
 
   // === インライン検索結果をレンダリング ===

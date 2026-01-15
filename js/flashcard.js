@@ -2183,6 +2183,29 @@ const FlashcardModule = (function() {
     if (btn) {
       btn.classList.toggle('active', state.shuffleEnabled);
     }
+
+    // 学習中の場合、残りのカードを即時シャッフル/ソート
+    if (state.isActive && state.filteredCards.length > 0) {
+      const currentCard = state.filteredCards[state.currentIndex];
+      const remainingCards = state.filteredCards.slice(state.currentIndex + 1);
+
+      if (state.shuffleEnabled) {
+        // シャッフルON: 残りのカードをシャッフル
+        for (let i = remainingCards.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [remainingCards[i], remainingCards[j]] = [remainingCards[j], remainingCards[i]];
+        }
+      } else {
+        // シャッフルOFF: 残りのカードを元の順番（originalIndex順）にソート
+        remainingCards.sort((a, b) => a.originalIndex - b.originalIndex);
+      }
+
+      // 現在のカードまで + シャッフル/ソートした残り
+      state.filteredCards = [
+        ...state.filteredCards.slice(0, state.currentIndex + 1),
+        ...remainingCards
+      ];
+    }
   }
 
   // === 統計表示 ===

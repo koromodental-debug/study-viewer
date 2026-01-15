@@ -5666,6 +5666,10 @@
     });
   }
 
+  // グローバルAPIを公開（他モジュールから呼び出し用）
+  window.selectItem = selectItem;
+  window.switchTab = switchTab;
+
   // 起動
   document.addEventListener('DOMContentLoaded', init);
 })();

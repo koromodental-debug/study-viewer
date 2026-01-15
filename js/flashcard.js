@@ -46,7 +46,15 @@ const FlashcardModule = (function() {
     // 演習モード（mix, memorized, again, new）
     currentMode: 'mix',
     // おまかせの割合（newHeavy, balanced, reviewHeavy）
-    mixRatio: localStorage.getItem('flashcard-mix-ratio') || 'balanced'
+    mixRatio: localStorage.getItem('flashcard-mix-ratio') || 'balanced',
+    // カード検索
+    cardSearch: {
+      isIndexing: false,
+      allCardsIndex: null,
+      query: '',
+      results: [],
+      expandedKeys: new Set()
+    }
   };
 
   // DOM要素
@@ -141,11 +149,34 @@ const FlashcardModule = (function() {
           currentPosition: session ? session.index + 1 : null
         };
       })
-      .filter(t => t !== null && t.currentPosition !== null)
+      .filter(t => t !== null && t.currentPosition !== null);
+
+    // 検索結果デッキのセッションも追加
+    try {
+      const stored = localStorage.getItem(SESSIONS_KEY);
+      if (stored) {
+        const allSessions = JSON.parse(stored);
+        for (const [topicId, session] of Object.entries(allSessions)) {
+          if (topicId.startsWith('__search_') && session.index !== undefined) {
+            const query = topicId.replace('__search_', '');
+            topics.push({
+              id: topicId,
+              title: `検索:${query}`,
+              subject: '検索結果',
+              stats: { memorized: 0, again: 0 },
+              lastAccess: session.timestamp || 0,
+              currentPosition: session.index + 1,
+              isSearchDeck: true
+            });
+          }
+        }
+      }
+    } catch (e) {}
+
+    // ソートして制限
+    return topics
       .sort((a, b) => b.lastAccess - a.lastAccess)
       .slice(0, limit);
-
-    return topics;
   }
 
   function getOverallStats() {
@@ -428,6 +459,24 @@ const FlashcardModule = (function() {
         </div>
       </div>
 
+      <!-- カード検索 -->
+      <div class="card-search-entry">
+        <div class="card-search-inline">
+          <svg class="card-search-inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" class="card-search-inline-input" id="card-search-inline-input"
+                 placeholder="カード検索..." autocomplete="off">
+          <button class="card-search-inline-clear" id="card-search-inline-clear" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="card-search-inline-results" id="card-search-inline-results" style="display:none;"></div>
+      </div>
+
       ${reports.length > 0 ? `
       <!-- 報告されたカード -->
       <div class="reports-section">
@@ -674,13 +723,70 @@ const FlashcardModule = (function() {
       reportsToggle.addEventListener('click', () => openReportsOverlay());
     }
 
+    // カード検索（インライン）
+    const cardSearchInput = document.getElementById('card-search-inline-input');
+    const cardSearchClear = document.getElementById('card-search-inline-clear');
+    const cardSearchResults = document.getElementById('card-search-inline-results');
+    let cardSearchDebounce = null;
+
+    if (cardSearchInput) {
+      cardSearchInput.addEventListener('input', async function() {
+        const query = this.value;
+        if (cardSearchClear) {
+          cardSearchClear.style.display = query ? 'flex' : 'none';
+        }
+
+        clearTimeout(cardSearchDebounce);
+        cardSearchDebounce = setTimeout(async () => {
+          if (!query.trim()) {
+            if (cardSearchResults) cardSearchResults.style.display = 'none';
+            return;
+          }
+
+          // インデックスがなければ構築
+          if (!state.cardSearch.allCardsIndex) {
+            if (cardSearchResults) {
+              cardSearchResults.style.display = 'block';
+              cardSearchResults.innerHTML = '<div class="card-search-loading">読み込み中...</div>';
+            }
+            await loadAllCardsIndex();
+          }
+
+          // 検索実行
+          state.cardSearch.query = query;
+          state.cardSearch.results = searchCards(query);
+          renderInlineSearchResults();
+        }, 300);
+      });
+    }
+
+    if (cardSearchClear) {
+      cardSearchClear.addEventListener('click', () => {
+        if (cardSearchInput) {
+          cardSearchInput.value = '';
+          cardSearchInput.focus();
+        }
+        cardSearchClear.style.display = 'none';
+        state.cardSearch.query = '';
+        state.cardSearch.results = [];
+        state.cardSearch.expandedKeys = new Set();
+        if (cardSearchResults) cardSearchResults.style.display = 'none';
+      });
+    }
+
     // 「続きから」アイテムクリック
     const continueItems = container.querySelectorAll('.continue-item');
     continueItems.forEach(item => {
       item.addEventListener('click', async () => {
         const topicId = item.dataset.topicId;
         state.isReviewMode = false;
-        await loadTopic(topicId, state.shuffleEnabled);
+
+        // 検索結果デッキの場合
+        if (topicId.startsWith('__search_')) {
+          await resumeSearchDeck(topicId);
+        } else {
+          await loadTopic(topicId, state.shuffleEnabled);
+        }
       });
     });
 
@@ -877,6 +983,122 @@ const FlashcardModule = (function() {
     if (state.filteredCards.length > state.sessionSize) {
       state.filteredCards = state.filteredCards.slice(0, state.sessionSize);
     }
+
+    renderCard();
+  }
+
+  // === 検索結果デッキ ===
+  function startSearchResultsDeck() {
+    const results = state.cardSearch.results;
+    const query = state.cardSearch.query;
+
+    if (results.length === 0 || !query) {
+      return;
+    }
+
+    // まとめを除外してカードのみを対象にする
+    const cardResults = results.filter(item => item.type !== 'summary');
+    if (cardResults.length === 0) {
+      return;
+    }
+
+    // 検索結果のカードをfilteredCardsに設定
+    const filteredCards = cardResults.map(card => ({
+      ...card,
+      // topicId, originalIndex, topicTitle, subject は既にある
+      htmlPath: DATA.find(d => d.id === card.topicId)?.htmlPath || null
+    }));
+
+    // 検索結果デッキとして開始
+    state.currentTopicId = `__search_${query}`;
+    state.currentTopic = { title: `検索:${query}` };
+    state.cards = filteredCards;
+    state.filteredCards = [...filteredCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+
+    // セッション復元
+    const session = getSession(state.currentTopicId);
+    if (session && session.order && session.order.length === state.filteredCards.length) {
+      // 保存された順序で復元
+      const orderMap = new Map(state.filteredCards.map(c => [c.searchKey, c]));
+      const reordered = session.order.map(key => orderMap.get(key)).filter(Boolean);
+      if (reordered.length === state.filteredCards.length) {
+        state.filteredCards = reordered;
+      }
+      if (session.index !== undefined && session.index > 0) {
+        state.currentIndex = Math.min(session.index, state.filteredCards.length - 1);
+      }
+    } else if (state.shuffleEnabled) {
+      // 新規開始時のシャッフル
+      for (let i = state.filteredCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+      }
+    }
+
+    // 検索状態をクリア
+    state.cardSearch.query = '';
+    state.cardSearch.results = [];
+    state.cardSearch.expandedKeys = new Set();
+
+    renderCard();
+  }
+
+  // 検索結果デッキを再開
+  async function resumeSearchDeck(topicId) {
+    const query = topicId.replace('__search_', '');
+    const session = getSession(topicId);
+
+    if (!session || !session.order || session.order.length === 0) {
+      // セッションがない場合はデッキ一覧に戻る
+      renderDeckList();
+      return;
+    }
+
+    // カードインデックスがなければ構築
+    if (!state.cardSearch.allCardsIndex) {
+      container.innerHTML = `
+        <div class="card-search-screen">
+          <div class="card-search-loading">カードを読み込み中...</div>
+        </div>
+      `;
+      await loadAllCardsIndex();
+    }
+
+    // セッションの order（searchKeyの配列）からカードを復元
+    const allCards = state.cardSearch.allCardsIndex;
+    const cardMap = new Map(allCards.map(c => [c.searchKey, c]));
+
+    const filteredCards = session.order
+      .map(key => cardMap.get(key))
+      .filter(Boolean)
+      .map(card => ({
+        ...card,
+        htmlPath: DATA.find(d => d.id === card.topicId)?.htmlPath || null
+      }));
+
+    if (filteredCards.length === 0) {
+      renderDeckList();
+      return;
+    }
+
+    // デッキとして開始
+    state.currentTopicId = topicId;
+    state.currentTopic = { title: `検索:${query}` };
+    state.cards = filteredCards;
+    state.filteredCards = [...filteredCards];
+    state.currentIndex = session.index !== undefined ? Math.min(session.index, filteredCards.length - 1) : 0;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+
+    // 検索状態をクリア
+    state.cardSearch.query = '';
+    state.cardSearch.results = [];
+    state.cardSearch.expandedKeys = new Set();
 
     renderCard();
   }
@@ -1123,6 +1345,505 @@ const FlashcardModule = (function() {
     }
 
     return cards;
+  }
+
+  // === カード検索機能 ===
+
+  // 全カードのインデックスを構築
+  async function loadAllCardsIndex(progressCallback) {
+    if (state.cardSearch.allCardsIndex) {
+      return state.cardSearch.allCardsIndex;
+    }
+
+    state.cardSearch.isIndexing = true;
+    const allItems = [];
+    let loaded = 0;
+
+    // QAファイルがあるトピックからカードを読み込み
+    const topicsWithQA = DATA.filter(d => d.qaPath);
+    for (const topic of topicsWithQA) {
+      try {
+        const response = await fetch(encodeURI(topic.qaPath));
+        if (response.ok) {
+          const text = await response.text();
+          const cards = parseQAToCards(text, topic.id);
+          cards.forEach(card => {
+            allItems.push({
+              ...card,
+              type: 'card',
+              topicTitle: topic.title.replace(/^[ア-オ]_/, ''),
+              subject: topic.subject || 'その他',
+              searchKey: `${topic.id}:${card.originalIndex}`
+            });
+          });
+        }
+      } catch (e) {
+        console.log(`QAファイル読み込みエラー: ${topic.qaPath}`, e);
+      }
+      loaded++;
+      if (progressCallback) {
+        progressCallback(loaded, DATA.length);
+      }
+    }
+
+    // QAファイルがないトピック（まとめのみ）も追加
+    const topicsWithoutQA = DATA.filter(d => !d.qaPath && d.htmlPath && d.searchText);
+    for (const topic of topicsWithoutQA) {
+      allItems.push({
+        type: 'summary',
+        topicId: topic.id,
+        topicTitle: topic.title.replace(/^[ア-オ]_/, ''),
+        subject: topic.subject || 'その他',
+        searchText: topic.searchText,
+        htmlPath: topic.htmlPath,
+        searchKey: `summary:${topic.id}`
+      });
+      loaded++;
+      if (progressCallback) {
+        progressCallback(loaded, DATA.length);
+      }
+    }
+
+    state.cardSearch.allCardsIndex = allItems;
+    state.cardSearch.isIndexing = false;
+    return allItems;
+  }
+
+  // カード検索を実行
+  function searchCards(query) {
+    if (!state.cardSearch.allCardsIndex || !query.trim()) {
+      return [];
+    }
+
+    const normalizedQuery = query.toLowerCase().trim();
+    const terms = normalizedQuery.split(/\s+/).filter(t => t.length > 0);
+
+    const results = state.cardSearch.allCardsIndex.filter(item => {
+      // カードの場合は question と answer を検索
+      // まとめの場合は searchText を検索
+      const searchTarget = item.type === 'summary'
+        ? (item.searchText || '').toLowerCase()
+        : `${item.question} ${item.answer}`.toLowerCase();
+      return terms.every(term => searchTarget.includes(term));
+    });
+
+    return results.slice(0, 100);
+  }
+
+  // 検索結果のハイライト処理
+  function highlightText(text, query) {
+    if (!query.trim()) return escapeHtml(text);
+    const terms = query.toLowerCase().trim().split(/\s+/).filter(t => t.length > 0);
+    let result = escapeHtml(text);
+    terms.forEach(term => {
+      const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      result = result.replace(regex, '<mark class="card-search-highlight">$1</mark>');
+    });
+    return result;
+  }
+
+  // カード検索画面をレンダリング
+  async function renderCardSearchScreen(initialQuery = '') {
+    state.cardSearch.expandedKeys = new Set();
+    // クエリが渡された場合は保持、そうでなければクリア
+    if (!initialQuery) {
+      state.cardSearch.query = '';
+      state.cardSearch.results = [];
+    }
+
+    container.innerHTML = `
+      <div class="card-search-screen">
+        <div class="card-search-header">
+          <button class="card-search-back-btn" id="card-search-back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <h2 class="card-search-title">カード検索</h2>
+        </div>
+        <div class="card-search-input-wrapper">
+          <svg class="card-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" id="card-search-input" class="card-search-input"
+                 placeholder="質問・回答を検索..." autocomplete="off">
+          <button class="card-search-clear" id="card-search-clear" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="card-search-status" id="card-search-status"></div>
+        <div class="card-search-results" id="card-search-results"></div>
+      </div>
+    `;
+
+    // イベントバインド
+    bindCardSearchEvents();
+
+    // インデックスがなければ構築
+    if (!state.cardSearch.allCardsIndex) {
+      const statusEl = document.getElementById('card-search-status');
+      if (statusEl) {
+        statusEl.innerHTML = '<div class="card-search-loading">カードを読み込み中...</div>';
+      }
+      await loadAllCardsIndex((loaded, total) => {
+        if (statusEl) {
+          const percent = Math.round((loaded / total) * 100);
+          statusEl.innerHTML = `<div class="card-search-loading">カードを読み込み中... ${percent}%</div>`;
+        }
+      });
+      if (statusEl) {
+        statusEl.innerHTML = '';
+      }
+    }
+
+    // 入力欄にフォーカス
+    const input = document.getElementById('card-search-input');
+    const clearBtn = document.getElementById('card-search-clear');
+
+    // 初期クエリがある場合は設定して検索実行
+    if (initialQuery && input) {
+      input.value = initialQuery;
+      if (clearBtn) clearBtn.style.display = 'flex';
+      // 検索結果をレンダリング
+      renderCardSearchResults();
+    } else if (input) {
+      input.focus();
+    }
+  }
+
+  // カード検索画面のイベントバインド
+  function bindCardSearchEvents() {
+    const backBtn = document.getElementById('card-search-back');
+    const input = document.getElementById('card-search-input');
+    const clearBtn = document.getElementById('card-search-clear');
+    let debounceTimer = null;
+
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        state.cardSearch.query = '';
+        state.cardSearch.results = [];
+        state.cardSearch.expandedKeys = new Set();
+        renderDeckList();
+      });
+    }
+
+    if (input) {
+      input.addEventListener('input', function() {
+        const query = this.value;
+        if (clearBtn) {
+          clearBtn.style.display = query ? 'flex' : 'none';
+        }
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          state.cardSearch.query = query;
+          state.cardSearch.results = searchCards(query);
+          renderCardSearchResults();
+        }, 300);
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (input) {
+          input.value = '';
+          input.focus();
+        }
+        clearBtn.style.display = 'none';
+        state.cardSearch.query = '';
+        state.cardSearch.results = [];
+        renderCardSearchResults();
+      });
+    }
+  }
+
+  // 検索結果をレンダリング
+  function renderCardSearchResults() {
+    const resultsEl = document.getElementById('card-search-results');
+    const statusEl = document.getElementById('card-search-status');
+    if (!resultsEl) return;
+
+    const query = state.cardSearch.query;
+    const results = state.cardSearch.results;
+
+    if (!query.trim()) {
+      resultsEl.innerHTML = '<div class="card-search-hint">検索キーワードを入力してください</div>';
+      if (statusEl) statusEl.innerHTML = '';
+      return;
+    }
+
+    if (results.length === 0) {
+      resultsEl.innerHTML = `<div class="card-search-empty">「${escapeHtml(query)}」に一致する結果はありません</div>`;
+      if (statusEl) statusEl.innerHTML = '';
+      return;
+    }
+
+    // カードとまとめを分けてカウント
+    const cardResults = results.filter(r => r.type !== 'summary');
+    const summaryResults = results.filter(r => r.type === 'summary');
+
+    if (statusEl) {
+      let statusHtml = '<div class="card-search-status-row">';
+      statusHtml += `<div class="card-search-count">${results.length}件見つかりました`;
+      if (cardResults.length > 0 && summaryResults.length > 0) {
+        statusHtml += `（カード${cardResults.length}件 + まとめ${summaryResults.length}件）`;
+      }
+      statusHtml += `${results.length >= 100 ? '（上限100件）' : ''}</div>`;
+
+      // カードがある場合のみ演習ボタンを表示
+      if (cardResults.length > 0) {
+        statusHtml += `<button class="card-search-start-deck-btn" id="card-search-start-deck">${cardResults.length}件で演習</button>`;
+      }
+      statusHtml += '</div>';
+      statusEl.innerHTML = statusHtml;
+
+      // 演習開始ボタンのイベント
+      const startDeckBtn = document.getElementById('card-search-start-deck');
+      if (startDeckBtn) {
+        startDeckBtn.addEventListener('click', () => {
+          startSearchResultsDeck();
+        });
+      }
+    }
+
+    resultsEl.innerHTML = results.map(item => {
+      const isExpanded = state.cardSearch.expandedKeys.has(item.searchKey);
+
+      // まとめの場合
+      if (item.type === 'summary') {
+        return `
+          <div class="card-search-item" data-key="${escapeHtml(item.searchKey)}">
+            <div class="card-search-card">
+              <div class="card-search-question">${escapeHtml(item.topicTitle)}</div>
+            </div>
+            <div class="card-search-footer">
+              <div class="card-search-meta">${escapeHtml(item.subject)}</div>
+              <button class="card-search-summary-link" data-topic-id="${escapeHtml(item.topicId)}">まとめを見る</button>
+            </div>
+          </div>
+        `;
+      }
+
+      // カードの場合
+      return `
+        <div class="card-search-item ${isExpanded ? 'expanded' : ''}" data-key="${escapeHtml(item.searchKey)}">
+          <div class="card-search-card" data-key="${escapeHtml(item.searchKey)}">
+            <div class="card-search-question">Q: ${highlightText(item.question, query)}</div>
+            ${isExpanded ? `<div class="card-search-answer">A: ${highlightText(item.answer, query)}</div>` : ''}
+          </div>
+          <div class="card-search-footer">
+            <div class="card-search-meta">${escapeHtml(item.subject)} › ${escapeHtml(item.topicTitle)}</div>
+            <button class="card-search-deck-link" data-topic-id="${escapeHtml(item.topicId)}">演習</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // カードクリックで展開/折りたたみ
+    resultsEl.querySelectorAll('.card-search-card').forEach(cardEl => {
+      cardEl.addEventListener('click', (e) => {
+        const key = cardEl.dataset.key;
+        if (state.cardSearch.expandedKeys.has(key)) {
+          state.cardSearch.expandedKeys.delete(key);
+        } else {
+          state.cardSearch.expandedKeys.add(key);
+        }
+        renderCardSearchResults();
+      });
+    });
+
+    // 演習ボタンクリック（カード）
+    resultsEl.querySelectorAll('.card-search-deck-link').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+        state.cardSearch.query = '';
+        state.cardSearch.results = [];
+        state.cardSearch.expandedKeys = new Set();
+        state.isReviewMode = false;
+        await loadTopic(topicId, state.shuffleEnabled);
+      });
+    });
+
+    // まとめを見るボタンクリック
+    resultsEl.querySelectorAll('.card-search-summary-link').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+
+        // 検索状態をクリア
+        state.cardSearch.query = '';
+        state.cardSearch.results = [];
+        state.cardSearch.expandedKeys = new Set();
+        state.isActive = false;
+
+        // タブバーを表示に戻す
+        exitPracticeMode();
+
+        // まとめタブに切り替え
+        if (typeof window.switchTab === 'function') {
+          window.switchTab('html');
+        }
+
+        // selectItemでトピックを読み込み
+        if (typeof window.selectItem === 'function') {
+          window.selectItem(topicId);
+        }
+      });
+    });
+  }
+
+  // === インライン検索結果をレンダリング ===
+  function renderInlineSearchResults() {
+    const resultsEl = document.getElementById('card-search-inline-results');
+    if (!resultsEl) return;
+
+    const query = state.cardSearch.query;
+    const results = state.cardSearch.results;
+
+    if (!query.trim()) {
+      resultsEl.style.display = 'none';
+      return;
+    }
+
+    resultsEl.style.display = 'block';
+
+    if (results.length === 0) {
+      resultsEl.innerHTML = `<div class="card-search-empty">「${escapeHtml(query)}」に一致する結果はありません</div>`;
+      return;
+    }
+
+    // カードとまとめを分けてカウント
+    const cardResults = results.filter(r => r.type !== 'summary');
+    const summaryResults = results.filter(r => r.type === 'summary');
+
+    let html = '<div class="card-search-inline-status">';
+    html += `<span class="card-search-count">${results.length}件`;
+    if (cardResults.length > 0 && summaryResults.length > 0) {
+      html += `（カード${cardResults.length}件 + まとめ${summaryResults.length}件）`;
+    }
+    html += `${results.length >= 100 ? '（上限100件）' : ''}</span>`;
+
+    // カードがある場合のみ演習ボタンを表示
+    if (cardResults.length > 0) {
+      html += `<button class="card-search-start-deck-btn" id="inline-start-deck">${cardResults.length}件で演習</button>`;
+    }
+    html += '</div>';
+
+    html += '<div class="card-search-inline-list">';
+    html += results.slice(0, 10).map(item => {
+      const isExpanded = state.cardSearch.expandedKeys.has(item.searchKey);
+
+      // まとめの場合
+      if (item.type === 'summary') {
+        return `
+          <div class="card-search-item" data-key="${escapeHtml(item.searchKey)}">
+            <div class="card-search-card">
+              <div class="card-search-question">${escapeHtml(item.topicTitle)}</div>
+            </div>
+            <div class="card-search-footer">
+              <div class="card-search-meta">${escapeHtml(item.subject)}</div>
+              <button class="card-search-summary-link" data-topic-id="${escapeHtml(item.topicId)}">まとめを見る</button>
+            </div>
+          </div>
+        `;
+      }
+
+      // カードの場合
+      return `
+        <div class="card-search-item ${isExpanded ? 'expanded' : ''}" data-key="${escapeHtml(item.searchKey)}">
+          <div class="card-search-card" data-key="${escapeHtml(item.searchKey)}">
+            <div class="card-search-question">Q: ${highlightText(item.question, query)}</div>
+            ${isExpanded ? `<div class="card-search-answer">A: ${highlightText(item.answer, query)}</div>` : ''}
+          </div>
+          <div class="card-search-footer">
+            <div class="card-search-meta">${escapeHtml(item.subject)} › ${escapeHtml(item.topicTitle)}</div>
+            <button class="card-search-deck-link" data-topic-id="${escapeHtml(item.topicId)}">演習</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    if (results.length > 10) {
+      html += `<button class="card-search-more-btn" id="card-search-show-all">他${results.length - 10}件を表示...</button>`;
+    }
+    html += '</div>';
+
+    resultsEl.innerHTML = html;
+
+    // イベントバインド
+    bindInlineSearchEvents(resultsEl);
+
+    // 全件表示ボタン
+    const showAllBtn = document.getElementById('card-search-show-all');
+    if (showAllBtn) {
+      showAllBtn.addEventListener('click', () => {
+        renderCardSearchScreen(state.cardSearch.query);
+      });
+    }
+  }
+
+  // インライン検索結果のイベントバインド
+  function bindInlineSearchEvents(resultsEl) {
+    // 演習開始ボタン
+    const startDeckBtn = document.getElementById('inline-start-deck');
+    if (startDeckBtn) {
+      startDeckBtn.addEventListener('click', () => {
+        startSearchResultsDeck();
+      });
+    }
+
+    // カードクリックで展開/折りたたみ
+    resultsEl.querySelectorAll('.card-search-card').forEach(cardEl => {
+      cardEl.addEventListener('click', (e) => {
+        const key = cardEl.dataset.key;
+        if (!key) return;
+        if (state.cardSearch.expandedKeys.has(key)) {
+          state.cardSearch.expandedKeys.delete(key);
+        } else {
+          state.cardSearch.expandedKeys.add(key);
+        }
+        renderInlineSearchResults();
+      });
+    });
+
+    // 演習ボタンクリック
+    resultsEl.querySelectorAll('.card-search-deck-link').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+        state.cardSearch.query = '';
+        state.cardSearch.results = [];
+        state.cardSearch.expandedKeys = new Set();
+        state.isReviewMode = false;
+        await loadTopic(topicId, state.shuffleEnabled);
+      });
+    });
+
+    // まとめを見るボタンクリック
+    resultsEl.querySelectorAll('.card-search-summary-link').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+
+        state.cardSearch.query = '';
+        state.cardSearch.results = [];
+        state.cardSearch.expandedKeys = new Set();
+        state.isActive = false;
+
+        exitPracticeMode();
+
+        if (typeof window.switchTab === 'function') {
+          window.switchTab('html');
+        }
+
+        if (typeof window.selectItem === 'function') {
+          window.selectItem(topicId);
+        }
+      });
+    });
   }
 
   // === 演習モード制御（タブバー・フローティングボタンを隠す） ===
@@ -2159,11 +2880,25 @@ const FlashcardModule = (function() {
   function goBack() {
     // 現在位置とカード順序を保存（完了後は保存しない）
     if (state.currentTopicId && state.currentIndex > 0 && !state.completed) {
+      // 検索結果デッキの場合は searchKey を使用
+      const isSearchDeck = state.currentTopicId.startsWith('__search_');
       const saveData = {
         index: state.currentIndex,
-        order: state.filteredCards.map(c => c.originalIndex),
-        shuffled: state.shuffleEnabled
+        order: state.filteredCards.map(c => isSearchDeck ? c.searchKey : c.originalIndex),
+        shuffled: state.shuffleEnabled,
+        timestamp: Date.now()
       };
+
+      // SESSIONS_KEY に保存（getInProgressTopics で使用）
+      let allSessions = {};
+      try {
+        const stored = localStorage.getItem(SESSIONS_KEY);
+        if (stored) allSessions = JSON.parse(stored);
+      } catch (e) {}
+      allSessions[state.currentTopicId] = saveData;
+      localStorage.setItem(SESSIONS_KEY, JSON.stringify(allSessions));
+
+      // 旧形式にも保存（互換性のため）
       localStorage.setItem(`flashcard-session-${state.currentTopicId}`, JSON.stringify(saveData));
     }
 
@@ -2285,9 +3020,11 @@ const FlashcardModule = (function() {
   // === セッション保存（外部から呼び出し可能） ===
   function saveSession() {
     if (state.currentTopicId && state.isActive && state.currentIndex > 0 && !state.completed) {
+      // 検索結果デッキの場合は searchKey を使用
+      const isSearchDeck = state.currentTopicId.startsWith('__search_');
       const saveData = {
         index: state.currentIndex,
-        order: state.filteredCards.map(c => c.originalIndex),
+        order: state.filteredCards.map(c => isSearchDeck ? c.searchKey : c.originalIndex),
         shuffled: state.shuffleEnabled,
         timestamp: Date.now()
       };

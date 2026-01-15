@@ -269,6 +269,8 @@ const FirebaseSync = (function() {
 
       if (key === 'studyViewer_flashcardProgress') {
         return JSON.stringify(mergeFlashcardProgress(localData, cloudData));
+      } else if (key === 'studyViewer_flashcardSessions') {
+        return JSON.stringify(mergeFlashcardSessions(localData, cloudData));
       } else if (key === 'studyViewer_favorites') {
         return JSON.stringify(mergeFavorites(localData, cloudData));
       }
@@ -351,6 +353,33 @@ const FirebaseSync = (function() {
     }
 
     merged.version = Math.max(local.version || 1, cloud.version || 1);
+    return merged;
+  }
+
+  /**
+   * フラッシュカードセッションのマージ
+   */
+  function mergeFlashcardSessions(local, cloud) {
+    const merged = { ...cloud };
+
+    // ローカルのセッションを追加・更新（新しい方を優先）
+    for (const topicId in local) {
+      const localSession = local[topicId];
+      const cloudSession = merged[topicId];
+
+      if (!cloudSession) {
+        // クラウドにない → ローカルを採用
+        merged[topicId] = localSession;
+      } else {
+        // 両方にある → タイムスタンプが新しい方を採用
+        const localTime = localSession.timestamp || 0;
+        const cloudTime = cloudSession.timestamp || 0;
+        if (localTime > cloudTime) {
+          merged[topicId] = localSession;
+        }
+      }
+    }
+
     return merged;
   }
 

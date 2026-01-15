@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>切削・研削・研磨材 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 歯科用機械・器具</span>
+    <h1>切削・研削・研磨材</h1>
+    <div class="container">
+
+      <h2>切削・研削・研磨の定義</h2>
+      <table>
+        <tr>
+          <th>操作</th>
+          <th>使用するもの</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td><span class="key">切削</span></td>
+          <td>刃物（バー）</td>
+          <td>歯質・材料の除去</td>
+        </tr>
+        <tr>
+          <td><span class="key">研削</span></td>
+          <td>砥石（ポイント）</td>
+          <td>表面を平滑にする</td>
+        </tr>
+        <tr>
+          <td><span class="key">研磨</span></td>
+          <td>砥石または研磨材（粒子）</td>
+          <td>表面をさらに平滑にする</td>
+        </tr>
+      </table>
+
+      <h2>切削材（バー）の種類</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>素材</th>
+          <th>硬さ</th>
+          <th>対象</th>
+        </tr>
+        <tr>
+          <td><span class="key">スチールバー</span></td>
+          <td>超共析鋼（炭素鋼）</td>
+          <td>約800HV</td>
+          <td>象牙質、骨</td>
+        </tr>
+        <tr>
+          <td><span class="key">カーバイドバー</span></td>
+          <td><span class="highlight">炭化タングステン（WC）</span></td>
+          <td>1,700〜2,000HV</td>
+          <td>象牙質、骨、金属、レジン</td>
+        </tr>
+        <tr>
+          <td><span class="key">ダイヤモンドポイント</span></td>
+          <td><span class="highlight">ダイヤモンド（C）</span></td>
+          <td>7,000〜8,000HK</td>
+          <td>エナメル質、セラミックス</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">切削材の特徴</div>
+        <ul>
+          <li>スチールバー：<span class="caution">耐熱性が低い</span>、錆びやすい、カーバイドバーより切削効率が劣る</li>
+          <li>カーバイドバー：スチールバーより硬いが<span class="caution">脆い（靭性が小さい）</span></li>
+          <li>ダイヤモンドポイント：<span class="highlight">最も硬い</span>、セラミックス切削に最適</li>
+        </ul>
+      </div>
+
+      <h2>研削・研磨器具（砥石）の構造</h2>
+      <p>砥石（ポイント）= <span class="key">砥粒</span> + <span class="key">結合材</span> + <span class="key">空隙（気孔）</span></p>
+      <ul>
+        <li><span class="key">砥粒</span>：切れ刃として働く（炭化ケイ素、アルミナなど）</li>
+        <li><span class="key">結合材</span>：砥粒を固定する（ビトリファイド、シリコーンゴムなど）</li>
+        <li><span class="key">空隙（気孔）</span>：切り粉の排出、冷却効果</li>
+        <li><span class="key">自生作用</span>：砥粒が脱落して新しい砥粒が現れ、切れ味が回復する</li>
+      </ul>
+
+      <h2>研削・研磨器具の種類</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>砥粒</th>
+          <th>結合材</th>
+          <th>対象</th>
+        </tr>
+        <tr>
+          <td><span class="key">カーボランダムポイント</span></td>
+          <td><span class="highlight">炭化ケイ素（SiC）</span></td>
+          <td>ビトリファイド</td>
+          <td>金属、レジン、陶材の粗研磨</td>
+        </tr>
+        <tr>
+          <td><span class="key">シリコーンポイント</span></td>
+          <td>SiC、Al₂O₃</td>
+          <td>シリコーンゴム</td>
+          <td>金属、レジン、陶材</td>
+        </tr>
+        <tr>
+          <td><span class="key">ホワイトポイント</span></td>
+          <td><span class="highlight">アルミナ（Al₂O₃）</span></td>
+          <td>ビトリファイド</td>
+          <td>陶材、レジン、CR</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：ポイントの砥粒</div>
+        <ul>
+          <li><span class="highlight">カーボランダムポイント → 炭化ケイ素（SiC）</span></li>
+          <li><span class="highlight">ホワイトポイント → アルミナ（Al₂O₃）</span></li>
+          <li>結合材：ビトリファイド（ガラス質、長石を原料）</li>
+        </ul>
+      </div>
+
+      <h2>研磨材（仕上げ研磨）</h2>
+      <table>
+        <tr>
+          <th>研磨材</th>
+          <th>対象</th>
+          <th>注意点</th>
+        </tr>
+        <tr>
+          <td><span class="key">酸化鉄</span></td>
+          <td>金合金などの貴金属</td>
+          <td><span class="caution">Cr含有合金には不適</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">酸化クロム</span>（グリーンルージュ）</td>
+          <td>Cr含有合金に最適</td>
+          <td>貴金属にも使用可能</td>
+        </tr>
+        <tr>
+          <td><span class="key">酸化アルミニウム</span>（アルミナ）</td>
+          <td>コンポジットレジン</td>
+          <td>超微粒子</td>
+        </tr>
+        <tr>
+          <td><span class="key">ダイヤモンド</span></td>
+          <td>コンポジットレジン、セラミックス</td>
+          <td>最も硬い研磨材</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A26</div>
+        <p>ホワイトポイントに含まれる主な砥粒はどれか。1つ選べ。</p>
+        <div class="choices">
+          a アルミナ<br>
+          b 酸化クロム<br>
+          c 炭化ケイ素<br>
+          d ダイヤモンド<br>
+          e 炭化タングステン
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">ホワイトポイントの砥粒はアルミナ（Al₂O₃）</span>である。炭化ケイ素はカーボランダムポイント、ダイヤモンドはダイヤモンドポイント、炭化タングステンはカーバイドバーの素材。酸化クロムは研磨材（グリーンルージュ）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A48</div>
+        <p>オールセラミッククラウンの除去に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a スチールバー<br>
+          b ホワイトポイント<br>
+          c ダイヤモンドポイント<br>
+          d カーボランダムポイント<br>
+          e タングステンカーバイドバー
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">セラミックスの切削にはダイヤモンドポイントを使用</span>する。ダイヤモンドは最も硬い材料（7,000〜8,000HK）であり、硬いセラミックスの切削に適している。ホワイトポイントやカーボランダムポイントは研磨用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C79</div>
+        <p>コンポジットレジンに用いる研磨材はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 酸化鉄<br>
+          b 浮石末<br>
+          c アルミナ<br>
+          d 酸化クロム<br>
+          e ダイヤモンド
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】コンポジットレジンの研磨には<span class="highlight">アルミナ</span>と<span class="highlight">ダイヤモンド</span>を用いる。酸化鉄は貴金属用、酸化クロム（グリーンルージュ）はCr含有合金用。浮石末は義歯床の研磨に用いる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

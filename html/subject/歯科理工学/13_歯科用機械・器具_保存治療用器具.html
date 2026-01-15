@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>保存治療用器具 - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 歯科用機械・器具</span>
+    <h1>保存治療用器具</h1>
+    <div class="container">
+
+      <h2>根管形成用ファイルの材質</h2>
+      <table>
+        <tr>
+          <th>材質</th>
+          <th>組成</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">ステンレススチール（SS）</span></td>
+          <td>Fe-Cr-Ni（18-8ステンレス鋼）</td>
+          <td>弾性係数が大きい、加工性◎</td>
+        </tr>
+        <tr>
+          <td><span class="key">ニッケルチタン（NiTi）</span></td>
+          <td>Ni 56%、Ti 44%</td>
+          <td><span class="highlight">超弾性</span>、弾性係数が小さい</td>
+        </tr>
+      </table>
+
+      <h2>NiTi合金の特性</h2>
+
+      <h3>超弾性とは</h3>
+      <p>応力を加えるとマルテンサイト相への変態が起こり、大きく変形しても<span class="highlight">応力を除去すると元の形状に戻る</span>性質。</p>
+      <ul>
+        <li><span class="key">応力誘起変態</span>：応力によりマルテンサイト相が双晶変形</li>
+        <li>除荷時に母相（オーステナイト相）へ戻る</li>
+        <li><span class="highlight">持続的で小さい矯正力</span>を発揮</li>
+      </ul>
+
+      <h3>SS製ファイルとの比較</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>NiTi</th>
+          <th>SS</th>
+        </tr>
+        <tr>
+          <td>弾性係数</td>
+          <td><span class="highlight">小さい</span></td>
+          <td>大きい</td>
+        </tr>
+        <tr>
+          <td>超弾性</td>
+          <td><span class="highlight">あり</span></td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>彎曲根管への適応</td>
+          <td><span class="highlight">優れる</span></td>
+          <td>劣る</td>
+        </tr>
+        <tr>
+          <td>根尖孔の変位</td>
+          <td><span class="highlight">少ない</span></td>
+          <td>多い</td>
+        </tr>
+        <tr>
+          <td>切削効率</td>
+          <td><span class="highlight">高い</span></td>
+          <td>低い</td>
+        </tr>
+        <tr>
+          <td>加工性</td>
+          <td><span class="caution">×</span></td>
+          <td>◎</td>
+        </tr>
+        <tr>
+          <td>ろう付け</td>
+          <td><span class="caution">×</span></td>
+          <td>○</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：NiTiファイルの特徴</div>
+        <ul>
+          <li>根管用ファイルに使用される最大の理由 → <span class="highlight">超弾性</span></li>
+          <li>SS比較で<span class="highlight">弾性係数が小さい</span>（低い弾性係数）</li>
+          <li><span class="highlight">応力解放で復元しやすい</span></li>
+          <li><span class="highlight">刃部の伸びが生じにくい</span></li>
+          <li><span class="caution">プレカーブを付与しにくい</span>（超弾性で戻ってしまう）</li>
+        </ul>
+      </div>
+
+      <h2>NiTiロータリーファイルの破折防止</h2>
+      <ul>
+        <li><span class="highlight">ファイルの使用回数を制限する</span></li>
+        <li><span class="highlight">手用ファイルで誘導路形成を行う</span>（グライドパス）</li>
+        <li>クラウンダウン法を用いる</li>
+        <li><span class="caution">根尖方向に圧をかけすぎない</span></li>
+      </ul>
+
+      <h2>根管形成用ファイルのISO規格</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>規格</th>
+        </tr>
+        <tr>
+          <td>先端直径</td>
+          <td><span class="highlight">番号の1/100 mm</span>（例：40号→0.40mm）</td>
+        </tr>
+        <tr>
+          <td>テーパー</td>
+          <td>2%（K・Hファイル共通）</td>
+        </tr>
+        <tr>
+          <td>刃部の長さ</td>
+          <td>16mm</td>
+        </tr>
+        <tr>
+          <td>把柄部の色</td>
+          <td>番号ごとに規定（下表参照）</td>
+        </tr>
+      </table>
+
+      <h3>把柄部の色（ISO規格）</h3>
+      <table>
+        <tr>
+          <th>番号</th>
+          <th>色</th>
+        </tr>
+        <tr>
+          <td>15, 45, 90</td>
+          <td>白</td>
+        </tr>
+        <tr>
+          <td>20, 50, 100</td>
+          <td>黄</td>
+        </tr>
+        <tr>
+          <td>25, 55, 110</td>
+          <td>赤</td>
+        </tr>
+        <tr>
+          <td>30, 60, 120</td>
+          <td>青</td>
+        </tr>
+        <tr>
+          <td>35, 70, 140</td>
+          <td>緑</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">40, 80</span></td>
+          <td><span class="highlight">黒</span></td>
+        </tr>
+      </table>
+      <p class="note">※40号と80号は把柄部の色が同じ（黒）</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103C74</div>
+        <p>ニッケルチタン合金が根管用ファイルに使用される最大の理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 耐蝕性<br>
+          b 超弾性<br>
+          c 形状記憶性<br>
+          d 振動吸収性<br>
+          e 生体親和性
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】NiTi合金が根管用ファイルに使用される最大の理由は<span class="highlight">超弾性</span>である。超弾性により彎曲根管にも追従し、応力解放で元の形状に戻る。形状記憶性もあるが、根管形成では超弾性が重要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B73</div>
+        <p>ステンレススチール製ファイルとの比較でニッケルチタン製ファイルの特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 弾性係数が大きい。<br>
+          b 破断トルクが大きい。<br>
+          c 応力解放で復元しやすい。<br>
+          d 刃部の伸びが生じにくい。<br>
+          e プレカーブを付与しやすい。
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】NiTiファイルは<span class="highlight">応力解放で復元しやすい</span>（超弾性）、<span class="highlight">刃部の伸びが生じにくい</span>。<span class="caution">弾性係数はSSより小さい</span>。<span class="caution">プレカーブは付与しにくい</span>（超弾性で戻る）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C5</div>
+        <p>ステンレス鋼ワイヤーと比較したニッケルチタン合金ワイヤーの特性はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 大きな耐力<br>
+          b 強い矯正力<br>
+          c 低い耐食性<br>
+          d 低い弾性係数<br>
+          e 大きなレジリエンス
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】NiTi合金はSS鋼と比較して<span class="highlight">弾性係数が低い（小さい）</span>。これにより持続的で小さい矯正力を発揮する。耐食性はTiO₂の不動態皮膜により良好。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B87</div>
+        <p>根管形成用ファイルのISO規格について正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 刃部の長さは21mmである。<br>
+          b 40号と80号の把柄部の色は同じである。<br>
+          c KファイルとHファイルのテーパーは異なる。<br>
+          d ファイルの番号は10号から10ずつ大きくなる。<br>
+          e ファイルの番号の1/100倍が刃部先端の直径（mm）である。
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】<span class="highlight">40号と80号の把柄部の色は同じ（黒）</span>。<span class="highlight">番号の1/100が先端直径（mm）</span>（例：40号→0.40mm）。刃部の長さは<span class="caution">16mm</span>（21mmではない）。K・Hファイルのテーパーは同じ（2%）。番号は06, 08, 10, 15, 20...と不均一。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C67</div>
+        <p>Ni－Tiロータリーファイルの破折防止に有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ファイルの使用回数を制限する。<br>
+          b ステップバック形成法を用いる。<br>
+          c 使用前に刃部の延びを確認する。<br>
+          d 根尖方向に圧をかけながら用いる。<br>
+          e 手用ファイルで誘導路形成を行う。
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】NiTiロータリーファイルの破折防止には<span class="highlight">使用回数の制限</span>と<span class="highlight">手用ファイルによる誘導路形成（グライドパス）</span>が有効。<span class="caution">根尖方向に過度な圧をかけると破折リスクが高まる</span>。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

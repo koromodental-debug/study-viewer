@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯科用レーザー - 歯科理工学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科理工学 / 歯科用機械・器具</span>
+    <h1>歯科用レーザー</h1>
+    <div class="container">
+
+      <h2>レーザーとは</h2>
+      <p><span class="key">LASER</span> = Light Amplification by Stimulated Emission of Radiation</p>
+      <p><span class="key">誘導放出</span>を利用した光の増幅器または発振器</p>
+      <ul>
+        <li><span class="key">単波長</span>（単一の波長）</li>
+        <li><span class="key">指向性</span>が高い（拡散しない）</li>
+        <li><span class="key">コヒーレント</span>（位相が揃っている）</li>
+      </ul>
+
+      <h2>歯科用レーザーの種類</h2>
+      <table>
+        <tr>
+          <th>レーザー</th>
+          <th>波長</th>
+          <th>媒質</th>
+          <th>吸収特性</th>
+        </tr>
+        <tr>
+          <td><span class="key">Er:YAG</span></td>
+          <td><span class="highlight">2.94μm</span></td>
+          <td><span class="highlight">固体</span></td>
+          <td>表面吸収型</td>
+        </tr>
+        <tr>
+          <td><span class="key">CO₂（炭酸ガス）</span></td>
+          <td>10.6μm</td>
+          <td><span class="highlight">気体</span></td>
+          <td>表面吸収型</td>
+        </tr>
+        <tr>
+          <td><span class="key">Nd:YAG</span></td>
+          <td>1.06μm</td>
+          <td>固体</td>
+          <td>組織透過型</td>
+        </tr>
+        <tr>
+          <td><span class="key">半導体（GaAs）</span></td>
+          <td><span class="highlight">655nm</span></td>
+          <td>半導体</td>
+          <td>蛍光反射</td>
+        </tr>
+      </table>
+
+      <h2>レーザーの用途</h2>
+      <table>
+        <tr>
+          <th>レーザー</th>
+          <th>主な用途</th>
+        </tr>
+        <tr>
+          <td><span class="key">Er:YAG</span></td>
+          <td><span class="highlight">硬組織・軟組織の蒸散</span>、歯石除去、齲蝕除去</td>
+        </tr>
+        <tr>
+          <td><span class="key">CO₂</span></td>
+          <td><span class="highlight">軟組織の切開・止血・凝固・蒸散</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">Nd:YAG</span></td>
+          <td>生体組織の切開・止血・凝固（組織深部まで到達）</td>
+        </tr>
+        <tr>
+          <td><span class="key">半導体</span></td>
+          <td><span class="highlight">齲蝕の検査・診断</span>（レーザー齲蝕診断装置）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：Er:YAGレーザー</div>
+        <ul>
+          <li><span class="highlight">固体レーザー</span>（気体レーザーではない）</li>
+          <li><span class="highlight">単波長</span>（波長2.94μm）</li>
+          <li><span class="highlight">水への吸収率が最も高い</span> → 歯質を蒸散</li>
+          <li><span class="highlight">表面吸収型</span>（組織深部には到達しない）</li>
+          <li>硬組織（歯質）と軟組織の両方に使用可能</li>
+        </ul>
+      </div>
+
+      <h2>Er:YAGレーザーによる歯質切削の特徴</h2>
+      <p>回転切削器具（スチールバー）との比較：</p>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>Er:YAGレーザー</th>
+          <th>回転切削器具</th>
+        </tr>
+        <tr>
+          <td>振動</td>
+          <td><span class="highlight">小さい</span></td>
+          <td>大きい</td>
+        </tr>
+        <tr>
+          <td>疼痛</td>
+          <td><span class="highlight">少ない</span></td>
+          <td>多い</td>
+        </tr>
+        <tr>
+          <td>切削効率</td>
+          <td><span class="caution">低い</span></td>
+          <td>高い</td>
+        </tr>
+        <tr>
+          <td>スミヤー層</td>
+          <td><span class="highlight">形成量が少ない</span></td>
+          <td>形成される</td>
+        </tr>
+        <tr>
+          <td>窩洞の平坦化</td>
+          <td><span class="caution">困難</span></td>
+          <td>容易</td>
+        </tr>
+        <tr>
+          <td>注水</td>
+          <td>必要</td>
+          <td>必要</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">レーザー齲蝕診断装置</div>
+        <ul>
+          <li>使用するレーザー：<span class="highlight">半導体レーザー（GaAs）</span></li>
+          <li>波長：<span class="highlight">655nm</span>（赤色可視光）</li>
+          <li>原理：齲蝕部からの蛍光を検出</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106C91</div>
+        <p>Er：YAGレーザーの特徴で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 熱の影響が大きい。<br>
+          b 組織深部に到達する。<br>
+          c 固体レーザーである。<br>
+          d 波長は可視域にある。<br>
+          e 水への吸収率が高い。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】Er:YAGレーザーは<span class="highlight">固体レーザー</span>であり、<span class="highlight">水への吸収率が最も高い</span>。表面吸収型のため<span class="caution">組織深部には到達しない</span>。波長2.94μmは<span class="caution">赤外線域</span>（可視域は0.4〜0.7μm）。熱の影響は小さい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C37</div>
+        <p>Er：YAGレーザーで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 拡散性を示す。<br>
+          b 単波長である。<br>
+          c 水に非吸収である。<br>
+          d 発振媒体は液体である。<br>
+          e 焦点エネルギー密度が低い。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】レーザーは<span class="highlight">単波長</span>（単一の波長）である。<span class="caution">拡散性ではなく指向性が高い</span>。<span class="caution">水への吸収率は高い</span>。発振媒体は<span class="caution">固体</span>（液体ではない）。焦点エネルギー密度は高い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A24</div>
+        <p>Er：YAGレーザーで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯質を蒸散する。<br>
+          b 色素選択性がある。<br>
+          c 組織深達型である。<br>
+          d 炭化層を形成する。<br>
+          e 気体レーザーである。
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】Er:YAGレーザーは水への吸収率が高く、<span class="highlight">歯質を蒸散</span>する。<span class="caution">表面吸収型</span>であり組織深達型ではない。<span class="caution">固体レーザー</span>である（気体レーザーはCO₂）。炭化層は形成しにくい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A118</div>
+        <p>回転切削器具と比較してEr：YAGレーザーによる歯質切削の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 振動が小さい。<br>
+          b 切削音が大きい。<br>
+          c 切削効率が低い。<br>
+          d スミヤー層の形成量が多い。<br>
+          e 窩洞の平坦化が容易である。
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】Er:YAGレーザーは回転切削器具と比較して<span class="highlight">振動が小さい</span>、<span class="highlight">切削効率が低い</span>。<span class="caution">スミヤー層の形成量は少ない</span>。窩洞の平坦化は困難。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C115</div>
+        <p>CO2レーザーの用途で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 骨の開削<br>
+          b 粘膜の切開<br>
+          c 軟組織の蒸散<br>
+          d 埋伏歯の歯冠分割<br>
+          e チタンプレートの切断
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】CO₂レーザー（炭酸ガスレーザー）は<span class="highlight">軟組織の切開・蒸散</span>に使用する。<span class="caution">硬組織（骨、歯）の切削には不向き</span>。硬組織にはEr:YAGレーザーを使用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B16</div>
+        <p>レーザー齲蝕診断装置に使用されるレーザーの波長はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 455nm<br>
+          b 655nm<br>
+          c 1.064μm<br>
+          d 2.94μm<br>
+          e 10.6μm
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】レーザー齲蝕診断装置には<span class="highlight">半導体レーザー（波長655nm）</span>を使用する。齲蝕部からの蛍光を検出して診断する。2.94μmはEr:YAG、10.6μmはCO₂、1.064μmはNd:YAGの波長。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

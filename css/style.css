@@ -2745,7 +2745,7 @@ body {
 .topic-section-content .html-card-wrapper .save-image-btn {
   position: absolute;
   top: 0;
-  right: 32px;
+  right: 0;
 }
 
 /* Q&Aカード内の保存ボタン */
@@ -9064,10 +9064,20 @@ body.is-practice .tab-content {
   --yellow-bg: transparent !important;
 }
 
-/* ===== まとめコンテンツのダウンロード・お気に入りボタンを非表示 ===== */
-.html-display .save-image-btn,
+/* ===== まとめコンテンツのお気に入りボタンを非表示 ===== */
 .html-display .favorite-btn {
   display: none !important;
+}
+
+/* まとめコンテンツの画像保存ボタン */
+.html-display .save-image-btn {
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.html-display .save-image-btn:hover,
+.html-display .save-image-btn:active {
+  opacity: 0.8;
 }
 
 /* ===== フローティング検索バー（GoodNotes風） ===== */

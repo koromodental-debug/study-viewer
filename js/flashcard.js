@@ -1465,9 +1465,9 @@ const FlashcardModule = (function() {
   }
 
   // カード検索画面をレンダリング
-  async function renderCardSearchScreen(initialQuery = '') {
+  async function renderCardSearchScreen(initialQuery = '', showAllResults = false) {
     state.cardSearch.expandedKeys = new Set();
-    state.cardSearch.showAll = false;  // 5件表示にリセット
+    state.cardSearch.showAll = showAllResults;  // 全件表示フラグ
     // クエリが渡された場合は保持、そうでなければクリア
     if (!initialQuery) {
       state.cardSearch.query = '';
@@ -1836,7 +1836,7 @@ const FlashcardModule = (function() {
     const showAllBtn = document.getElementById('card-search-show-all');
     if (showAllBtn) {
       showAllBtn.addEventListener('click', () => {
-        renderCardSearchScreen(state.cardSearch.query);
+        renderCardSearchScreen(state.cardSearch.query, true);  // 全件表示
       });
     }
   }

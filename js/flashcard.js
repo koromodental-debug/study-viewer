@@ -1356,7 +1356,7 @@ const FlashcardModule = (function() {
 
   // === カード検索機能 ===
 
-  // 全カードのインデックスを構築
+  // 全カードのインデックスを構築（並列読み込み版）
   async function loadAllCardsIndex(progressCallback) {
     if (state.cardSearch.allCardsIndex) {
       return state.cardSearch.allCardsIndex;
@@ -1364,35 +1364,51 @@ const FlashcardModule = (function() {
 
     state.cardSearch.isIndexing = true;
     const allItems = [];
-    let loaded = 0;
 
     // QAファイルがあるトピックからカードを読み込み
     const topicsWithQA = DATA.filter(d => d.qaPath);
     const total = topicsWithQA.length;
+    let loaded = 0;
 
-    for (const topic of topicsWithQA) {
-      loaded++;
-      try {
-        const response = await fetch(encodeURI(topic.qaPath));
-        if (response.ok) {
-          const text = await response.text();
-          const cards = parseQAToCards(text, topic.id);
-          cards.forEach(card => {
-            allItems.push({
-              ...card,
-              type: 'card',
-              topicTitle: topic.title.replace(/^[ア-オ]_/, ''),
-              subject: topic.subject || 'その他',
-              searchKey: `${topic.id}:${card.originalIndex}`
-            });
-          });
-        }
-      } catch (e) {
-        // エラーは無視して続行
-      }
+    // 並列読み込み（10件ずつバッチ処理でUIをブロックしない）
+    const BATCH_SIZE = 10;
+    for (let i = 0; i < topicsWithQA.length; i += BATCH_SIZE) {
+      const batch = topicsWithQA.slice(i, i + BATCH_SIZE);
+
+      const results = await Promise.all(
+        batch.map(async (topic) => {
+          try {
+            const response = await fetch(encodeURI(topic.qaPath));
+            if (response.ok) {
+              const text = await response.text();
+              const cards = parseQAToCards(text, topic.id);
+              return cards.map(card => ({
+                ...card,
+                type: 'card',
+                topicTitle: topic.title.replace(/^[ア-オ]_/, ''),
+                subject: topic.subject || 'その他',
+                searchKey: `${topic.id}:${card.originalIndex}`
+              }));
+            }
+          } catch (e) {
+            // エラーは無視
+          }
+          return [];
+        })
+      );
+
+      // 結果を追加
+      results.forEach(cards => {
+        allItems.push(...cards);
+      });
+
+      loaded += batch.length;
       if (progressCallback) {
         progressCallback(loaded, total);
       }
+
+      // UIスレッドに制御を返す（フリーズ防止）
+      await new Promise(r => setTimeout(r, 0));
     }
 
     // QAファイルがないトピック（まとめのみ）も追加

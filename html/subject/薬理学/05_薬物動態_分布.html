@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>分布 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 14px 0;
+      text-align: center;
+      font-size: 14pt;
+    }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .calc-step { background: #fff; border-radius: 8px; padding: 12px; margin: 8px 0; font-size: 9pt; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬物動態</span>
+    <h1>分布</h1>
+    <div class="container">
+
+      <h2>分布とは</h2>
+      <p><span class="key">血管内へ移行した薬物が血管外の組織や細胞へ移行する過程</span>をいう。</p>
+
+      <h2>血中での存在様式（タンパク結合）</h2>
+      <p>血中の薬物は<span class="key">血漿タンパク質</span>と結合した状態で存在している。</p>
+      <ul>
+        <li><span class="key">アルブミン</span>（66 kDa）：酸性薬物と結合</li>
+        <li><span class="key">α<sub>1</sub>-酸性糖タンパク質</span>（44 kDa）：塩基性薬物と結合</li>
+      </ul>
+
+      <h3>遊離型と結合型の違い</h3>
+      <table>
+        <tr>
+          <th>遊離型薬物</th>
+          <th>結合型薬物</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">薬効を示す</span></td>
+          <td>薬効がない</td>
+        </tr>
+        <tr>
+          <td>血管外へ移行する</td>
+          <td>血管外へ移行しない</td>
+        </tr>
+        <tr>
+          <td>代謝される</td>
+          <td>代謝されない</td>
+        </tr>
+        <tr>
+          <td>排泄される</td>
+          <td>排泄されない</td>
+        </tr>
+      </table>
+      <p class="note">肝機能障害でアルブミンが減少 → 遊離型薬物が増加 → 薬効増強</p>
+
+      <h2>血液-組織関門</h2>
+      <p>血液中の成分が透過しにくい特別な構造をもった組織。</p>
+
+      <table>
+        <tr>
+          <th>関門の種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">血液脳関門</span></td>
+          <td>脳毛細血管内皮細胞の密着結合（タイトジャンクション）</td>
+        </tr>
+        <tr>
+          <td>血液脳脊髄液関門</td>
+          <td>脈絡叢上皮細胞</td>
+        </tr>
+        <tr>
+          <td>血液胎盤関門</td>
+          <td>胎盤の絨毛組織</td>
+        </tr>
+        <tr>
+          <td>血液精巣関門</td>
+          <td>セルトリ細胞間の密着結合</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">血液脳関門を通過できる薬物の特徴</div>
+        <ul>
+          <li><span class="highlight">脂溶性</span>が高い</li>
+          <li><span class="key">低分子量</span></li>
+          <li><span class="key">非イオン型</span></li>
+        </ul>
+      </div>
+
+      <h3>血液脳関門を通過する薬物・しない薬物</h3>
+      <table>
+        <tr>
+          <th>通過する</th>
+          <th>通過しない</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">プロポフォール</span>（脂溶性麻酔薬）</td>
+          <td>ドパミン（水溶性）</td>
+        </tr>
+        <tr>
+          <td>チオペンタール（脂溶性）</td>
+          <td>アセチルコリン（水溶性）</td>
+        </tr>
+        <tr>
+          <td>レボドパ（前駆体）</td>
+          <td>ノルアドレナリン（水溶性）</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>ネオスチグミン（第四級アンモニウム）</td>
+        </tr>
+      </table>
+      <p class="note">パーキンソン病治療：ドパミンは通過できないため、前駆体の<span class="key">レボドパ</span>を投与</p>
+
+      <h2>分布容積（Vd）</h2>
+      <p>薬物が溶解している理論上の容積。組織移行性の指標となる。</p>
+
+      <div class="formula-box">
+        <span class="highlight">Vd = 投与量（X）/ 血中濃度（C）</span>
+      </div>
+
+      <p><span class="key">Vdが大きい</span> → 組織への移行性が高い（脂溶性薬物など）<br>
+      <span class="key">Vdが小さい</span> → 血中にとどまりやすい（水溶性薬物、タンパク結合率が高い薬物）</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112A39</div>
+        <p>血液脳関門を通過するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アセチルコリン<br>
+          b ドパミン塩酸塩<br>
+          c プロポフォール<br>
+          d ノルアドレナリン<br>
+          e ネオスチグミンメチル硫酸塩
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】血液脳関門を通過するには<span class="highlight">脂溶性</span>が高いことが必要。<span class="highlight">プロポフォール</span>は脂溶性の静脈麻酔薬であり、速やかに血液脳関門を通過して中枢神経に作用する。他の選択肢は水溶性またはイオン性のため通過できない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A56</div>
+        <p>血管から組織への薬物移行を制限する生体構造の模式図を示す。<br>
+        この図が示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血液脳関門<br>
+          b 血液胸腺関門<br>
+          c 血液精巣関門<br>
+          d 血液胎盤関門<br>
+          e 血液脳脊髄液関門
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】図は脳毛細血管内皮細胞が<span class="key">タイトジャンクション（密着結合）</span>で連結している構造を示しており、<span class="highlight">血液脳関門</span>の特徴である。この構造により、水溶性物質や高分子の脳への移行が制限される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C90（計算問題）</div>
+        <p>ある薬物120mgを静脈内注射したところ、3時間後の血漿中薬物濃度は1.2μg/mLであった。<br>
+        この薬物の分布容積（L）を求めよ。<br>
+        ただし、この薬物の生物学的半減期は3時間で、分布は1コンパートメントモデルに従うものとする。</p>
+        <div class="answer">正解：50</div>
+        <div class="calc-step">
+          <p><span class="key">Step 1</span>：3時間後 = 半減期1回分 → 濃度は初期の1/2に低下</p>
+          <p><span class="key">Step 2</span>：初期濃度 = 1.2 × 2 = 2.4 μg/mL</p>
+          <p><span class="key">Step 3</span>：Vd = 投与量 / 初期濃度<br>
+          = 120 mg / 2.4 μg/mL<br>
+          = 120,000 μg / 2.4 μg/mL<br>
+          = <span class="highlight">50,000 mL = 50 L</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>薬物相互作用 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 併用と相互作用</span>
+    <h1>薬物相互作用</h1>
+    <div class="container">
+
+      <h2>薬物相互作用とは</h2>
+      <p>2種類以上の薬物を併用したとき、または薬物と食物・嗜好品を同時に摂取したときに、薬物の作用が<span class="key">増強</span>または<span class="key">減弱</span>する現象。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">相互作用の2つの分類</div>
+        <ul>
+          <li><span class="key">薬物動態学的相互作用</span>：吸収・分布・代謝・排泄の過程で起こる</li>
+          <li><span class="key">薬力学的相互作用</span>：受容体や作用部位での競合・協力</li>
+        </ul>
+      </div>
+
+      <h2>薬物動態学的相互作用</h2>
+
+      <h3>1. 吸収過程での相互作用</h3>
+      <table>
+        <tr><th>機序</th><th>例</th><th>結果</th></tr>
+        <tr>
+          <td><span class="highlight">消化管での吸収遅延・阻害</span></td>
+          <td>テトラサイクリン + 金属イオン（鉄剤・制酸薬）</td>
+          <td>キレート形成 → 吸収低下</td>
+        </tr>
+        <tr>
+          <td>消化管運動への影響</td>
+          <td>メトクロプラミド併用</td>
+          <td>胃排出促進 → 吸収速度変化</td>
+        </tr>
+        <tr>
+          <td>pH変化</td>
+          <td>制酸薬 + 弱酸性薬物</td>
+          <td>イオン化促進 → 吸収低下</td>
+        </tr>
+      </table>
+
+      <h3>2. 分布過程での相互作用</h3>
+      <table>
+        <tr><th>機序</th><th>例</th><th>結果</th></tr>
+        <tr>
+          <td>血漿タンパク結合の競合</td>
+          <td>NSAIDs + ワルファリン</td>
+          <td>遊離型ワルファリン増加 → 出血傾向</td>
+        </tr>
+        <tr>
+          <td>血漿タンパク結合の競合</td>
+          <td>NSAIDs + スルホニル尿素薬</td>
+          <td>遊離型SU薬増加 → 低血糖</td>
+        </tr>
+      </table>
+
+      <h3>3. 代謝過程での相互作用（CYP関連）</h3>
+      <p><span class="key">シトクロムP-450（CYP）</span>は肝臓での薬物代謝を担う酵素群。約50種類存在し、<span class="highlight">CYP3A4</span>が最も重要。</p>
+
+      <table>
+        <tr><th>機序</th><th>原因薬物・物質</th><th>結果</th></tr>
+        <tr>
+          <td><span class="highlight">CYP阻害</span></td>
+          <td>マクロライド系（エリスロマイシン）<br>アゾール系抗真菌薬（イトラコナゾール）<br>H<sub>2</sub>拮抗薬（シメチジン）<br>グレープフルーツジュース</td>
+          <td>併用薬の代謝↓ → <span class="caution">作用増強</span></td>
+        </tr>
+        <tr>
+          <td>CYP誘導</td>
+          <td>フェノバルビタール<br>リファンピシン<br>喫煙</td>
+          <td>併用薬の代謝↑ → 作用減弱</td>
+        </tr>
+      </table>
+
+      <h3>4. 排泄過程での相互作用</h3>
+      <table>
+        <tr><th>機序</th><th>例</th><th>結果</th></tr>
+        <tr>
+          <td>尿細管分泌の競合</td>
+          <td>ペニシリン + プロベネシド</td>
+          <td>ペニシリン排泄↓ → 作用増強</td>
+        </tr>
+        <tr>
+          <td>尿pH変化</td>
+          <td>重曹 + 弱酸性薬物</td>
+          <td>イオン化促進 → 排泄促進</td>
+        </tr>
+      </table>
+
+      <h2>薬力学的相互作用</h2>
+      <table>
+        <tr><th>種類</th><th>例</th></tr>
+        <tr>
+          <td>協力作用</td>
+          <td>バルビツール酸系 + ベンゾジアゼピン系 → 中枢抑制増強</td>
+        </tr>
+        <tr>
+          <td>拮抗作用</td>
+          <td>アドレナリン + α遮断薬 → 血圧低下（β作用が優位に）</td>
+        </tr>
+      </table>
+
+      <h2>食物・嗜好品との相互作用</h2>
+      <table>
+        <tr><th>食物・嗜好品</th><th>併用薬</th><th>機序・結果</th></tr>
+        <tr>
+          <td><span class="highlight">グレープフルーツジュース</span></td>
+          <td>Ca拮抗薬、ベンゾジアゼピン系</td>
+          <td>CYP3A4阻害 → 作用増強</td>
+        </tr>
+        <tr>
+          <td>緑黄色野菜・納豆</td>
+          <td>ワルファリン</td>
+          <td>ビタミンK含有 → 抗凝固作用減弱</td>
+        </tr>
+        <tr>
+          <td>牛乳</td>
+          <td>テトラサイクリン系、ニューキノロン系</td>
+          <td>キレート形成 → 吸収低下</td>
+        </tr>
+        <tr>
+          <td>アルコール</td>
+          <td>ベンゾジアゼピン系</td>
+          <td>中枢抑制の協力作用</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">104C130</div>
+        <p>薬物相互作用の原因はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 腸肝循環<br>
+          b CYP3A阻害<br>
+          c GABA受容体刺激<br>
+          d 消化管での吸収遅延<br>
+          e 唾液タンパクとの結合
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】薬物相互作用は、主に<span class="key">薬物動態学的相互作用</span>（吸収・分布・代謝・排泄）と<span class="key">薬力学的相互作用</span>（受容体での作用）に分類される。</p>
+        <ul>
+          <li><span class="key">b：CYP3A阻害</span> → 代謝過程での相互作用。CYP3A4を阻害すると併用薬の代謝が低下し、血中濃度が上昇して作用が増強する。</li>
+          <li><span class="key">d：消化管での吸収遅延</span> → 吸収過程での相互作用。金属イオンとのキレート形成などにより吸収が阻害される。</li>
+        </ul>
+        <p class="note">a：腸肝循環は薬物動態の過程であり、相互作用の「原因」ではない。c：GABA受容体刺激は薬理作用であり相互作用ではない。e：唾液タンパクとの結合は臨床的に重要な相互作用を起こさない。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>薬物相互作用の原因 = <span class="highlight">薬物動態</span>（吸収・分布・代謝・排泄）の変化</li>
+          <li><span class="highlight">CYP阻害</span>と<span class="highlight">吸収阻害</span>が代表的な機序</li>
+          <li>受容体への作用（GABA刺激など）は「薬理作用」であり「相互作用の原因」ではない</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

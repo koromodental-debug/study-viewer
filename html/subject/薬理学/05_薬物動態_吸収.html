@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>吸収 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬物動態</span>
+    <h1>吸収</h1>
+    <div class="container">
+
+      <h2>吸収とは</h2>
+      <p><span class="key">薬物の投与部位から血中への移行の過程</span>をいう。ほとんどの薬物は<span class="key">受動拡散</span>の原則によって生体膜を通過して吸収される。</p>
+
+      <h2>生体膜通過の様式</h2>
+
+      <h3>1. 受動拡散（最も重要）</h3>
+      <p>薬物が<span class="key">濃度勾配</span>にしたがって拡散することにより、生体膜を通過する現象。</p>
+
+      <table>
+        <tr>
+          <th>通過しやすい</th>
+          <th>通過しにくい</th>
+        </tr>
+        <tr>
+          <td>脂溶性</td>
+          <td>水溶性</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">非イオン型</span></td>
+          <td>イオン型</td>
+        </tr>
+        <tr>
+          <td>タンパク質遊離型</td>
+          <td>タンパク質結合型</td>
+        </tr>
+        <tr>
+          <td>低分子量</td>
+          <td>高分子量</td>
+        </tr>
+      </table>
+
+      <h3>2. 能動輸送</h3>
+      <p>薬物が<span class="key">ATP</span>を消費して、濃度勾配に無関係に生体膜を通過する現象。<span class="key">P糖タンパク質</span>などの薬物トランスポーターが関与。</p>
+
+      <h3>3. 膜輸送</h3>
+      <p>高分子薬物が<span class="key">エンドサイトーシス</span>や<span class="key">ファゴサイトーシス</span>で取り込まれ、開口分泌で放出される。</p>
+
+      <h2>pH分配仮説</h2>
+      <p>薬物のイオン化は溶液のpHに依存する（Henderson-Hasselbachの式）。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">酸性薬物と塩基性薬物</div>
+        <ul>
+          <li><span class="key">酸性薬物</span>：酸性環境（低pH）で<span class="highlight">非イオン型が増加</span> → 吸収されやすい</li>
+          <li><span class="key">塩基性薬物</span>：塩基性環境（高pH）で非イオン型が増加 → 吸収されやすい</li>
+        </ul>
+      </div>
+
+      <p><span class="caution">弱酸性薬物は胃（pH 1〜2）で非イオン型が最も多くなる</span>ため、胃で吸収されやすい。</p>
+
+      <h2>初回通過効果</h2>
+      <p><span class="key">経口投与</span>された薬物が、全身循環に移行する前に<span class="key">肝臓の代謝酵素</span>によって一部が分解されてしまう現象。</p>
+
+      <h3>初回通過効果を受ける・受けない投与経路</h3>
+      <table>
+        <tr>
+          <th>初回通過効果あり</th>
+          <th>初回通過効果なし</th>
+        </tr>
+        <tr>
+          <td>経口投与</td>
+          <td>舌下投与（ニトログリセリン錠）</td>
+        </tr>
+        <tr>
+          <td>直腸上部からの吸収</td>
+          <td>直腸下部からの吸収（坐剤）</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>静脈内投与</td>
+        </tr>
+      </table>
+
+      <h2>経口投与で吸収されない薬物</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td>第四級アンモニウム塩</td>
+          <td>d-ツボクラリン、スキサメトニウム、ネオスチグミン</td>
+        </tr>
+        <tr>
+          <td>ペプチド</td>
+          <td>インスリン、カルシトニン、オキシトシン</td>
+        </tr>
+        <tr>
+          <td>ムコ多糖</td>
+          <td>ヘパリン</td>
+        </tr>
+      </table>
+
+      <h3>初回通過効果で失活する薬物</h3>
+      <p>ニトログリセリン、ベンジルペニシリン、性ホルモン、リドカイン、カテコラミン</p>
+
+      <h2>プロドラッグ</h2>
+      <p><span class="key">プロドラッグ</span>とは、投与時は不活性で、<span class="highlight">体内で代謝されて活性型になる薬物</span>。消化管障害の軽減や吸収性向上を目的とする。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">代表的なプロドラッグ</div>
+        <ul>
+          <li><span class="highlight">ロキソプロフェン</span>（NSAIDs）</li>
+          <li>アセメタシン（NSAIDs）</li>
+          <li>スリンダク（NSAIDs）</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A91</div>
+        <p>経口投与で弱酸性薬物の非イオン体型が最も多くなる部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口腔<br>
+          b 食道<br>
+          c 胃<br>
+          d 回腸<br>
+          e 直腸
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】弱酸性薬物（HA ⇌ A⁻ + H⁺）は、酸性環境で平衡が左に傾き非イオン型（HA）が増加する。消化管で最も酸性度が高いのは<span class="highlight">胃（pH 1〜2）</span>であり、ここで非イオン型が最も多くなる。非イオン型は脂溶性が高く、生体膜を通過しやすい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A56</div>
+        <p>プロドラッグはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アンピシリン水和物<br>
+          b レボフロキサシン水和物<br>
+          c ジクロフェナクナトリウム<br>
+          d ペントバルビタールカルシウム<br>
+          e ロキソプロフェンナトリウム水和物
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">ロキソプロフェン</span>はプロドラッグであり、経口投与後に体内で活性代謝物（trans-OH体）に変換されてCOX阻害作用を発揮する。胃粘膜への直接刺激が少なく、消化管障害を軽減できる利点がある。他の選択肢はいずれも活性型のまま投与される薬物である。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>補充療法 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬物療法の目的と分類</span>
+    <h1>補充療法</h1>
+    <div class="container">
+
+      <h2>薬物療法の4分類</h2>
+      <p>薬物療法は目的によって以下の4つに分類される。</p>
+
+      <h3>薬物療法の分類と具体例</h3>
+      <table>
+        <tr>
+          <th>療法</th>
+          <th>目的</th>
+          <th>治療例</th>
+        </tr>
+        <tr>
+          <td class="key">原因療法</td>
+          <td>病気の原因を取り除く</td>
+          <td>アシクロビル→口唇ヘルペス<br>抗菌薬、抗ウイルス薬、抗腫瘍薬、解毒薬</td>
+        </tr>
+        <tr>
+          <td class="key">対症療法</td>
+          <td>不快症状を軽減して治癒を期待</td>
+          <td>ニフェジピン→本態性高血圧<br>解熱鎮痛薬、抗炎症薬</td>
+        </tr>
+        <tr>
+          <td class="key">補充療法</td>
+          <td>不足物質を補充する</td>
+          <td>インスリン→糖尿病<br>ビタミンB<sub>12</sub>→Hunter舌炎</td>
+        </tr>
+        <tr>
+          <td class="key">予防療法</td>
+          <td>病気の発生を予防する</td>
+          <td>インフルエンザワクチン<br>BCGワクチン、抗血栓薬</td>
+        </tr>
+      </table>
+
+      <h2>補充療法の詳細</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">補充療法の定義</div>
+        <p>生体の恒常性維持に必要な<span class="highlight">ホルモン、ビタミン、微量元素</span>が欠乏して発生する病気に対して、<span class="highlight">不足物質を補充</span>する治療法</p>
+      </div>
+
+      <h3>補充療法の代表例</h3>
+      <table>
+        <tr>
+          <th>疾患・症状</th>
+          <th>不足物質</th>
+          <th>補充する薬剤</th>
+        </tr>
+        <tr>
+          <td>糖尿病</td>
+          <td>インスリン</td>
+          <td>インスリン注射液</td>
+        </tr>
+        <tr>
+          <td>甲状腺機能低下症<br>（橋本病）</td>
+          <td>甲状腺ホルモン</td>
+          <td>甲状腺ホルモン製剤<br>（レボチロキシン）</td>
+        </tr>
+        <tr>
+          <td>味覚異常</td>
+          <td>亜鉛</td>
+          <td>亜鉛製剤</td>
+        </tr>
+        <tr>
+          <td>Hunter舌炎<br>（悪性貧血）</td>
+          <td>ビタミンB<sub>12</sub></td>
+          <td>ビタミンB<sub>12</sub>製剤</td>
+        </tr>
+        <tr>
+          <td>口内炎</td>
+          <td>ビタミンB群</td>
+          <td>ビタミンB製剤</td>
+        </tr>
+      </table>
+
+      <h2>各療法の判別ポイント</h2>
+      <div class="point-box">
+        <div class="point-box-title">療法を見分けるコツ</div>
+        <ul>
+          <li><span class="key">原因療法</span>：感染症に抗菌薬、腫瘍に抗がん剤など「原因を除去」</li>
+          <li><span class="key">対症療法</span>：痛みに鎮痛薬、発熱に解熱薬など「症状を和らげる」</li>
+          <li><span class="key">補充療法</span>：<span class="caution">足りないものを補う</span>（ホルモン・ビタミン・微量元素）</li>
+          <li><span class="key">予防療法</span>：ワクチンなど「病気になる前に防ぐ」</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103C84</div>
+        <p>口内炎の患者にビタミンB製剤を服用させた。<br>この療法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 原因療法<br>
+          b 対症療法<br>
+          c 補充療法<br>
+          d 予防療法<br>
+          e 再生療法
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】口内炎はビタミンB群（特にB<sub>2</sub>、B<sub>6</sub>）の欠乏が一因となる。不足しているビタミンを補うため、これは<span class="key">補充療法</span>に該当する。原因療法は感染症への抗菌薬投与など、対症療法は症状緩和（鎮痛薬など）、予防療法はワクチン接種などが該当する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

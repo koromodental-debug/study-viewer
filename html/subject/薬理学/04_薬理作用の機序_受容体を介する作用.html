@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>受容体を介する作用 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬理作用の機序</span>
+    <h1>受容体を介する作用</h1>
+    <div class="container">
+
+      <h2>受容体の4つのタイプ</h2>
+
+      <h3>受容体の分類と代表例</h3>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>特徴</th>
+          <th>代表例</th>
+        </tr>
+        <tr>
+          <td class="key">Gタンパク質共役型</td>
+          <td>セカンドメッセンジャー<br>（cAMP、IP3など）を介する</td>
+          <td>アドレナリン受容体<br>ムスカリン性Ach受容体<br><span class="highlight">オピオイド受容体</span><br>ヒスタミン受容体</td>
+        </tr>
+        <tr>
+          <td class="key">イオンチャネル内蔵型</td>
+          <td>イオンの透過性を<br>直接変化させる</td>
+          <td>ニコチン性Ach受容体<br>GABA<sub>A</sub>受容体<br>NMDA受容体</td>
+        </tr>
+        <tr>
+          <td class="key">酵素共役型</td>
+          <td>チロシンキナーゼ活性<br>を有する</td>
+          <td>インスリン受容体<br>サイトカイン受容体</td>
+        </tr>
+        <tr>
+          <td class="key">細胞質・核内型</td>
+          <td>転写反応を調節</td>
+          <td>ステロイドホルモン受容体<br>甲状腺ホルモン受容体</td>
+        </tr>
+      </table>
+
+      <h2>自律神経系の受容体</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">神経伝達物質と受容体</div>
+        <ul>
+          <li><span class="key">交感神経</span>（効果器）→ <span class="highlight">アドレナリン受容体</span>（α1, α2, β1, β2）</li>
+          <li><span class="key">副交感神経</span>（効果器）→ <span class="highlight">ムスカリン性</span>Ach受容体</li>
+          <li><span class="key">神経節・運動神経</span> → <span class="highlight">ニコチン性</span>Ach受容体（N<sub>N</sub>型、N<sub>M</sub>型）</li>
+        </ul>
+      </div>
+
+      <h2>代表的な薬物と受容体</h2>
+
+      <h3>アドレナリン受容体作用薬</h3>
+      <table>
+        <tr>
+          <th>受容体</th>
+          <th>作用</th>
+          <th>代表的薬物</th>
+        </tr>
+        <tr>
+          <td class="key">α1</td>
+          <td>血管収縮</td>
+          <td>フェニレフリン</td>
+        </tr>
+        <tr>
+          <td class="key">β1</td>
+          <td>心機能亢進</td>
+          <td>ドブタミン</td>
+        </tr>
+        <tr>
+          <td class="key">β2</td>
+          <td>気管支拡張</td>
+          <td><span class="highlight">サルブタモール</span></td>
+        </tr>
+      </table>
+
+      <h3>その他の重要な受容体と薬物</h3>
+      <table>
+        <tr>
+          <th>薬物</th>
+          <th>受容体</th>
+          <th>分類</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">モルヒネ</span></td>
+          <td><span class="highlight">オピオイド受容体</span>（μ, δ, κ）</td>
+          <td>麻薬性鎮痛薬</td>
+        </tr>
+        <tr>
+          <td>ジフェンヒドラミン</td>
+          <td><span class="key">H1受容体</span>遮断</td>
+          <td>抗ヒスタミン薬</td>
+        </tr>
+        <tr>
+          <td>ファモチジン</td>
+          <td>H2受容体遮断</td>
+          <td>胃酸分泌抑制薬</td>
+        </tr>
+        <tr>
+          <td>スキサメトニウム</td>
+          <td><span class="key">N<sub>M</sub>型ニコチン受容体</span></td>
+          <td>脱分極性筋弛緩薬</td>
+        </tr>
+        <tr>
+          <td>ジアゼパム</td>
+          <td>GABA<sub>A</sub>受容体</td>
+          <td>ベンゾジアゼピン系</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A41</div>
+        <p>薬物と受容体との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アドレナリン ─ GABA<br>
+          b サルブタモール硫酸塩 ─ β1<br>
+          c モルヒネ塩酸塩水和物 ─ オピオイド<br>
+          d ジフェンヒドラミン塩酸塩 ─ H2<br>
+          e スキサメトニウム塩化物水和物 ─ ムスカリン
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">モルヒネはオピオイド受容体</span>（μ、δ、κ）に作用する麻薬性鎮痛薬である。<br>
+        a：アドレナリンは<span class="caution">α/βアドレナリン受容体</span>に作用（GABAではない）<br>
+        b：サルブタモールは<span class="caution">β2刺激薬</span>（β1ではない）<br>
+        d：ジフェンヒドラミンは<span class="caution">H1遮断薬</span>（H2ではない）<br>
+        e：スキサメトニウムは<span class="caution">N<sub>M</sub>型ニコチン受容体</span>に作用（ムスカリンではない）</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

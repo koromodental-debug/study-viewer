@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>用量 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 80%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula { background: var(--bg-secondary); padding: 12px 16px; border-radius: 8px; text-align: center; margin: 10px 0; font-size: 11pt; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 用量</span>
+    <h1>用量</h1>
+    <div class="container">
+
+      <h2>用量-反応曲線</h2>
+      <p>薬物を投与したときの用量と生体反応の関係を示す曲線。</p>
+      <ul>
+        <li>横軸：薬用量（<span class="key">対数目盛</span>）</li>
+        <li>縦軸：反応発現率（%）</li>
+        <li>曲線は<span class="key">S字（シグモイド）状</span>のカーブを描く</li>
+      </ul>
+
+      <h2>薬用量を表す用語</h2>
+
+      <h3>用量の段階</h3>
+      <table>
+        <tr>
+          <th>領域</th>
+          <th>用語</th>
+          <th>意味</th>
+        </tr>
+        <tr>
+          <td rowspan="3" class="key">有効量</td>
+          <td>最小有効量</td>
+          <td>効果が現れ始める最小の用量</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ED50（50%有効量）</span></td>
+          <td>50%に薬効が発現する用量</td>
+        </tr>
+        <tr>
+          <td>最大有効量</td>
+          <td>中毒を起こさない最大の有効量</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">中毒量</td>
+          <td>最小中毒量</td>
+          <td>中毒が現れ始める用量</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">TD50（50%中毒量）</span></td>
+          <td>50%に中毒が発現する用量</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">致死量</td>
+          <td>最小致死量</td>
+          <td>死亡が現れ始める用量</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">LD50（50%致死量）</span></td>
+          <td>50%が死亡する用量</td>
+        </tr>
+      </table>
+
+      <h2>治療係数（安全域）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">治療係数の定義</div>
+        <p>薬物の<span class="highlight">安全性を評価</span>できる値</p>
+      </div>
+
+      <div class="formula">
+        治療係数 = <span class="key">LD50（またはTD50）</span> / <span class="key">ED50</span>
+      </div>
+
+      <h3>治療係数の解釈</h3>
+      <ul>
+        <li>値が<span class="highlight">大きいほど安全性が高い</span></li>
+        <li>値が<span class="caution">小さいほど安全性が低い</span>（有効量と中毒量が近い）</li>
+        <li>治療係数が小さい薬物 → <span class="key">TDM</span>（治療薬物モニタリング）の対象</li>
+      </ul>
+
+      <h2>グラフの読み取り方</h2>
+      <div class="point-box">
+        <div class="point-box-title">安全性の判断</div>
+        <ul>
+          <li>薬効曲線と副作用（中毒）曲線が<span class="caution">近い</span> → 安全性が<span class="caution">低い</span></li>
+          <li>薬効曲線と副作用（中毒）曲線が<span class="key">離れている</span> → 安全性が<span class="key">高い</span></li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108C129</div>
+        <p>医薬品AとBの動物投与における用量-反応曲線（別冊No.26）を別に示す。<br>
+        AとBのうち、安全性が低い医薬品の治療係数はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108C129.png" alt="用量-反応曲線">
+        </div>
+        <div class="choices">
+          a 0.01<br>
+          b 0.125<br>
+          c 2<br>
+          d 8<br>
+          e 20
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】医薬品Aは薬効曲線と副作用曲線が近く、<span class="caution">安全性が低い</span>。医薬品Aの治療係数を計算する。グラフより、ED50≒5、TD50≒40と読み取れる。<br>
+        治療係数 = TD50/ED50 = 40/5 = <span class="key">8</span></p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

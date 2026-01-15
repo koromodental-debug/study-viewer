@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>バイオアベイラビリティ - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 14px 0;
+      text-align: center;
+      font-size: 14pt;
+    }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .calc-step { background: #fff; border-radius: 8px; padding: 12px; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬物動態</span>
+    <h1>バイオアベイラビリティ</h1>
+    <div class="container">
+
+      <h2>バイオアベイラビリティとは</h2>
+      <p><span class="key">生物学的利用率</span>ともいう。投与された薬物が吸収されて<span class="highlight">全身循環に移行する割合</span>を表す。</p>
+      <p>吸収効率や<span class="key">初回通過効果</span>による影響を総合的に評価できる値である。</p>
+
+      <h2>計算式</h2>
+      <div class="formula-box">
+        <span class="highlight">F（%）= AUC<sub>経口</sub> / AUC<sub>静注</sub> × 100</span>
+      </div>
+      <p class="note">AUC（Area Under Curve）：血中濃度-時間曲線下面積<br>
+      静脈内投与（i.v.）では薬物が100%血中に入るため、基準となる。</p>
+
+      <h2>バイオアベイラビリティに影響する因子</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">バイオアベイラビリティを低下させる因子</div>
+        <ul>
+          <li><span class="key">初回通過効果</span>：肝臓での代謝により活性が失われる</li>
+          <li><span class="key">消化管での分解</span>：胃酸や消化酵素による分解</li>
+          <li><span class="key">吸収不良</span>：溶解性が低い、膜透過性が悪い</li>
+          <li><span class="key">P糖タンパク質</span>：吸収された薬物を消化管腔内へ排出</li>
+        </ul>
+      </div>
+
+      <h3>静脈内投与のバイオアベイラビリティ</h3>
+      <p>静脈内投与では薬物が直接血中に入るため、<span class="highlight">バイオアベイラビリティは100%</span>となる。これが計算の基準となる。</p>
+
+      <h2>関連する薬物動態パラメータ</h2>
+      <table>
+        <tr>
+          <th>パラメータ</th>
+          <th>定義</th>
+          <th>意義</th>
+        </tr>
+        <tr>
+          <td><span class="key">分布容積（Vd）</span></td>
+          <td>Vd = 投与量 / 血中濃度</td>
+          <td>薬物の組織移行性を表す</td>
+        </tr>
+        <tr>
+          <td><span class="key">半減期（t<sub>1/2</sub>）</span></td>
+          <td>血中濃度が半分になる時間</td>
+          <td>投与間隔の決定に利用</td>
+        </tr>
+        <tr>
+          <td><span class="key">クリアランス</span></td>
+          <td>単位時間に除去される薬物量</td>
+          <td>薬物の消失能を表す</td>
+        </tr>
+      </table>
+
+      <h2>計算問題の解き方</h2>
+      <div class="calc-step">
+        <p><span class="key">Step 1</span>：経口投与のAUCと静脈内投与のAUCを確認</p>
+        <p><span class="key">Step 2</span>：公式に代入（F = AUC<sub>p.o.</sub> / AUC<sub>i.v.</sub> × 100）</p>
+        <p><span class="key">Step 3</span>：計算して%で表す</p>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116C86</div>
+        <p>ある薬物60mgの血中濃度-時間曲線下面積〈AUC〉は、静脈内注射すると、12μg・h/mLであり、経口投与すると、6μg・h/mLであった。<br>
+        この薬物の分布が1コンパートメントモデルに従うとき、バイオアベイラビリティはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 18%<br>
+          b 30%<br>
+          c 50%<br>
+          d 72%<br>
+          e 200%
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】公式に代入する。<br>
+        F = AUC<sub>経口</sub> / AUC<sub>静注</sub> × 100<br>
+        F = <span class="highlight">6 / 12 × 100 = 50%</span><br>
+        経口投与では初回通過効果などにより、静脈内投与の半分しか全身循環に移行していないことがわかる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C130（計算問題）</div>
+        <p>初回通過効果を受ける薬物を経口投与した。投与時の条件を示す。<br>
+        この薬物のバイオアベイラビリティ（％）を求めよ。<br>
+        ただし、小数点以下の数値が得られた場合には、小数点以下第1位を四捨五入すること。</p>
+        <div class="answer">正解：48</div>
+        <p>【解説】問題で与えられた条件（AUC値）を公式に代入して計算する。初回通過効果を受ける薬物は肝臓で代謝されるため、バイオアベイラビリティが低下する。計算結果を四捨五入して<span class="highlight">48%</span>となる。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li>公式 <span class="highlight">F = AUC<sub>経口</sub> / AUC<sub>静注</sub> × 100</span> を確実に覚える</li>
+          <li>静脈内投与のAUCが分母（基準）になることを忘れない</li>
+          <li>初回通過効果が大きい薬物ほどバイオアベイラビリティは低い</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

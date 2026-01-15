@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>劇薬・毒薬・麻薬・向精神薬の管理 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .label-box { display: inline-block; padding: 4px 10px; border-radius: 4px; font-weight: 600; margin: 2px; }
+    .label-doku { background: #000; color: #fff; border: 2px solid #fff; outline: 2px solid #000; }
+    .label-geki { background: #fff; color: #d00; border: 2px solid #d00; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬物の管理</span>
+    <h1>劇薬・毒薬・麻薬・向精神薬の管理</h1>
+    <div class="container">
+
+      <h2>規制法による分類</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">どの法律で規制されているか？</div>
+        <ul>
+          <li><span class="highlight">医薬品医療機器等法（旧薬事法）</span>：毒薬・劇薬・普通薬</li>
+          <li><span class="key">麻薬及び向精神薬取締法</span>：麻薬・向精神薬</li>
+          <li><span class="key">覚せい剤取締法</span>：覚醒剤</li>
+          <li><span class="key">大麻取締法</span>：大麻</li>
+        </ul>
+      </div>
+
+      <h2>表示と保管方法</h2>
+
+      <h3>分類別の表示・保管規定</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>表示</th>
+          <th>保管</th>
+        </tr>
+        <tr>
+          <td class="key">毒薬</td>
+          <td><span class="label-box label-doku">毒</span><br>黒地に白枠、白字</td>
+          <td>他の医薬品と区別し<br><span class="highlight">鍵をかけて保管</span></td>
+        </tr>
+        <tr>
+          <td class="key">劇薬</td>
+          <td><span class="label-box label-geki">劇</span><br>白地に赤枠、赤字</td>
+          <td>他の医薬品と区別して保管<br><span class="caution">（鍵は不要）</span></td>
+        </tr>
+        <tr>
+          <td class="key">麻薬</td>
+          <td>Ⓜの記号を記載</td>
+          <td><span class="highlight">鍵をかけた堅固な設備</span><br>（重量金庫など）</td>
+        </tr>
+        <tr>
+          <td class="key">向精神薬</td>
+          <td>ⓟの記号を記載</td>
+          <td>鍵をかけた施設内で保管</td>
+        </tr>
+        <tr>
+          <td class="key">覚醒剤</td>
+          <td>―</td>
+          <td>堅固な設備の保管<br>（麻薬と同一設備に保管可能）</td>
+        </tr>
+      </table>
+
+      <h2>各分類の具体例</h2>
+
+      <h3>毒薬の例</h3>
+      <p>三酸化ヒ素、スキサメトニウム、マイトマイシンC、モルヒネ塩酸塩水和物（原末）</p>
+
+      <h3>劇薬の例</h3>
+      <p><span class="key">リドカイン注射液</span>、歯科用フェノール、ヨードチンキ、インドメタシン、モルヒネ注射液</p>
+
+      <h3>麻薬の例</h3>
+      <p>モルヒネ注射液、<span class="key">フェンタニル</span>注射液</p>
+
+      <h3>向精神薬の例</h3>
+      <p><span class="key">ジアゼパム</span>、トリアゾラム</p>
+
+      <h3>覚醒剤の例</h3>
+      <p>アンフェタミン、メタンフェタミン</p>
+
+      <div class="point-box">
+        <div class="point-box-title">注意：モルヒネの分類</div>
+        <ul>
+          <li><span class="key">原末（粉末）</span>→ 毒薬</li>
+          <li><span class="key">注射液</span>→ 劇薬 かつ 麻薬</li>
+        </ul>
+        <p class="note">同じ薬物でも剤形によって分類が異なる場合がある</p>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B118</div>
+        <p>薬事法で取り扱いを定めているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 麻薬<br>
+          b 大麻<br>
+          c 毒薬<br>
+          d 向精神薬<br>
+          e 覚せい剤
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】薬事法（現：医薬品医療機器等法）で規制されているのは<span class="key">毒薬・劇薬・普通薬</span>である。麻薬・向精神薬は「麻薬及び向精神薬取締法」、大麻は「大麻取締法」、覚せい剤は「覚せい剤取締法」でそれぞれ規制されている。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

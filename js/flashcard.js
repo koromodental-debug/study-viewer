@@ -1641,7 +1641,9 @@ const FlashcardModule = (function() {
 
     // 表示件数制限（デフォルト5件）
     const DISPLAY_LIMIT = 5;
+    console.log('showAll:', state.cardSearch.showAll, 'results:', results.length);
     const displayResults = state.cardSearch.showAll ? results : results.slice(0, DISPLAY_LIMIT);
+    console.log('displayResults:', displayResults.length);
     const hasMore = results.length > DISPLAY_LIMIT && !state.cardSearch.showAll;
     const remainingCount = results.length - DISPLAY_LIMIT;
 

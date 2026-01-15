@@ -674,9 +674,6 @@
     // スクロールでヘッダー表示/非表示（無効化：固定表示に変更）
     // setupScrollHideHeader();
 
-    // スワイプでタブ切り替え
-    setupSwipeTabSwitch();
-
     // Q&Aフローティングトグルボタンのスクロール表示/非表示
     setupQAFloatingToggleScroll();
 
@@ -703,88 +700,6 @@
         closeImageLightbox();
       });
     }
-  }
-
-  /**
-   * スワイプでタブを切り替える
-   */
-  function setupSwipeTabSwitch() {
-    const swipeThreshold = 80; // スワイプ判定の閾値（px）
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let isSwiping = false;
-
-    // メインコンテンツ全体でスワイプを検出
-    const mainContent = elements.mainContent;
-
-    mainContent.addEventListener('touchstart', function(e) {
-      if (e.touches && e.touches.length === 1) {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-        isSwiping = true;
-      }
-    }, { passive: true });
-
-    mainContent.addEventListener('touchend', function(e) {
-      if (!isSwiping || !e.changedTouches || e.changedTouches.length === 0) return;
-      isSwiping = false;
-
-      const touchEndX = e.changedTouches[0].clientX;
-      const touchEndY = e.changedTouches[0].clientY;
-      const diffX = touchEndX - touchStartX;
-      const diffY = touchEndY - touchStartY;
-
-      // 横方向の移動が縦より大きく、閾値を超えた場合（タブ切り替え）
-      const tabOrder = ['flashcard', 'html', 'kakomon'];
-      if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
-        const currentIndex = tabOrder.indexOf(state.currentTab);
-        if (diffX < 0 && currentIndex < tabOrder.length - 1) {
-          // 左スワイプ → 次のタブ
-          switchTab(tabOrder[currentIndex + 1]);
-        } else if (diffX > 0 && currentIndex > 0) {
-          // 右スワイプ → 前のタブ
-          switchTab(tabOrder[currentIndex - 1]);
-        }
-      }
-    }, { passive: true });
-
-    // iframe内のスワイプも検出
-    window.setupIframeSwipeHandler = function(iframe) {
-      try {
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-        iframeDoc.addEventListener('touchstart', function(e) {
-          if (e.touches && e.touches.length === 1) {
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
-            isSwiping = true;
-          }
-        }, { passive: true });
-
-        iframeDoc.addEventListener('touchend', function(e) {
-          if (!isSwiping || !e.changedTouches || e.changedTouches.length === 0) return;
-          isSwiping = false;
-
-          const touchEndX = e.changedTouches[0].clientX;
-          const touchEndY = e.changedTouches[0].clientY;
-          const diffX = touchEndX - touchStartX;
-          const diffY = touchEndY - touchStartY;
-
-          // タブ切り替え
-          const tabOrder = ['flashcard', 'html', 'kakomon'];
-          if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
-            const currentIndex = tabOrder.indexOf(state.currentTab);
-            if (diffX < 0 && currentIndex < tabOrder.length - 1) {
-              switchTab(tabOrder[currentIndex + 1]);
-            } else if (diffX > 0 && currentIndex > 0) {
-              switchTab(tabOrder[currentIndex - 1]);
-            }
-          }
-        }, { passive: true });
-      } catch (e) {
-        console.log('Could not setup iframe swipe handler:', e.message);
-      }
-    };
   }
 
   /**

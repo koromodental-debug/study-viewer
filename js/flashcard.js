@@ -32,6 +32,7 @@ const FlashcardModule = (function() {
     shuffleEnabled: localStorage.getItem('flashcard-shuffle') === 'true',
     sessionSize: parseInt(localStorage.getItem('flashcard-session-size')) || 5, // 5, 10, 20
     isActive: false,     // 演習中かどうか
+    completed: false,    // デッキ完了フラグ（完了後のセッション保存防止用）
     progress: {},        // { "topicId:index": { status, lastReview } }
     touchStartX: 0,
     touchStartY: 0,
@@ -789,6 +790,7 @@ const FlashcardModule = (function() {
       state.currentIndex = savedIndex;
       state.isFlipped = false;
       state.isActive = true;
+      state.completed = false;
 
       if (state.filteredCards.length === 0) {
         renderNoCardsMessage();
@@ -862,6 +864,7 @@ const FlashcardModule = (function() {
     state.currentIndex = 0;
     state.isFlipped = false;
     state.isActive = true;
+    state.completed = false;
 
     if (state.shuffleEnabled) {
       for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -989,6 +992,7 @@ const FlashcardModule = (function() {
     state.currentIndex = 0;
     state.isFlipped = false;
     state.isActive = true;
+    state.completed = false;
 
     // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -1072,6 +1076,7 @@ const FlashcardModule = (function() {
     state.currentIndex = 0;
     state.isFlipped = false;
     state.isActive = true;
+    state.completed = false;
 
     // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -2022,6 +2027,7 @@ const FlashcardModule = (function() {
   function renderCompletionScreen() {
     // 完了したのでセッションをクリア
     clearSession(state.currentTopicId);
+    state.completed = true;  // 完了フラグをセット
 
     const stats = getTopicStats(state.currentTopicId);
     const cardCount = state.filteredCards.length;
@@ -2151,8 +2157,8 @@ const FlashcardModule = (function() {
 
   // === 戻る ===
   function goBack() {
-    // 現在位置とカード順序を保存
-    if (state.currentTopicId && state.currentIndex > 0) {
+    // 現在位置とカード順序を保存（完了後は保存しない）
+    if (state.currentTopicId && state.currentIndex > 0 && !state.completed) {
       const saveData = {
         index: state.currentIndex,
         order: state.filteredCards.map(c => c.originalIndex),
@@ -2162,6 +2168,7 @@ const FlashcardModule = (function() {
     }
 
     state.isActive = false;
+    state.completed = false;  // 完了フラグをリセット
     state.currentTopicId = null;
     state.currentTopic = null;
     state.cards = [];
@@ -2263,6 +2270,7 @@ const FlashcardModule = (function() {
 
     // 演習モードに入る
     state.isActive = true;
+    state.completed = false;
     state.isReviewMode = false;
     state.currentIndex = 0;
 
@@ -2276,7 +2284,7 @@ const FlashcardModule = (function() {
 
   // === セッション保存（外部から呼び出し可能） ===
   function saveSession() {
-    if (state.currentTopicId && state.isActive && state.currentIndex > 0) {
+    if (state.currentTopicId && state.isActive && state.currentIndex > 0 && !state.completed) {
       const saveData = {
         index: state.currentIndex,
         order: state.filteredCards.map(c => c.originalIndex),

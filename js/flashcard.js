@@ -1472,6 +1472,10 @@ const FlashcardModule = (function() {
       state.cardSearch.results = [];
     }
 
+    // タブバーを隠す（検索結果エリアを広く取るため）
+    const tabbar = document.querySelector('.floating-tabbar');
+    if (tabbar) tabbar.classList.add('hidden');
+
     container.innerHTML = `
       <div class="card-search-screen">
         <div class="card-search-header">
@@ -1547,6 +1551,9 @@ const FlashcardModule = (function() {
         state.cardSearch.query = '';
         state.cardSearch.results = [];
         state.cardSearch.expandedKeys = new Set();
+        // タブバーを再表示
+        const tabbar = document.querySelector('.floating-tabbar');
+        if (tabbar) tabbar.classList.remove('hidden');
         renderDeckList();
       });
     }
@@ -1702,6 +1709,8 @@ const FlashcardModule = (function() {
 
         // タブバーを表示に戻す
         exitPracticeMode();
+        const tabbar = document.querySelector('.floating-tabbar');
+        if (tabbar) tabbar.classList.remove('hidden');
 
         // まとめタブに切り替え
         if (typeof window.switchTab === 'function') {
@@ -2933,6 +2942,9 @@ const FlashcardModule = (function() {
     state.isFlipped = false;
 
     exitPracticeMode(); // UI要素を再表示
+    // 検索画面からの遷移時にhiddenクラスも除去
+    const tabbar = document.querySelector('.floating-tabbar');
+    if (tabbar) tabbar.classList.remove('hidden');
     renderDeckList();
   }
 

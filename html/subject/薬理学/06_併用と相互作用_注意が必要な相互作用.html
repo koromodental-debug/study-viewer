@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>注意が必要な相互作用 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 併用と相互作用</span>
+    <h1>注意が必要な相互作用</h1>
+    <div class="container">
+
+      <h2>歯科臨床で注意すべき相互作用</h2>
+      <p>歯科治療では<span class="key">局所麻酔薬（アドレナリン含有）</span>と<span class="key">抗真菌薬</span>の処方機会が多く、これらの薬物相互作用を理解することが重要。</p>
+
+      <h2>アドレナリン（局所麻酔薬含有）の相互作用</h2>
+      <p>局所麻酔薬に添加されるアドレナリンは、α作用（血管収縮）とβ作用（心拍増加、血管拡張）を持つ。併用薬によって作用バランスが変化する。</p>
+
+      <h3>血圧低下を起こす組合せ</h3>
+      <table>
+        <tr><th>併用薬</th><th>代表的薬物</th><th>機序</th></tr>
+        <tr>
+          <td><span class="highlight">フェノチアジン系</span></td>
+          <td>クロルプロマジン</td>
+          <td rowspan="2"><span class="caution">α遮断作用</span>によりβ作用が優位に<br>→ 血管拡張 → <span class="caution">血圧低下</span><br>（アドレナリン反転）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ブチロフェノン系</span></td>
+          <td>ハロペリドール、ドロペリドール</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">アドレナリン反転とは</div>
+        <p>通常、アドレナリンはα作用（血管収縮）＞β作用で<span class="key">血圧上昇</span>を起こす。</p>
+        <p>しかし、α遮断薬存在下ではα作用が遮断され、<span class="key">β作用のみ</span>が発現。</p>
+        <p>β<sub>2</sub>作用による血管拡張が優位となり、<span class="caution">血圧低下</span>を起こす。</p>
+      </div>
+
+      <h3>血圧上昇を起こす組合せ</h3>
+      <table>
+        <tr><th>併用薬</th><th>代表的薬物</th><th>機序</th></tr>
+        <tr>
+          <td>三環系抗うつ薬</td>
+          <td>イミプラミン、アミトリプチリン</td>
+          <td>ノルアドレナリン再取り込み抑制<br>→ カテコラミン作用増強 → 血圧上昇</td>
+        </tr>
+        <tr>
+          <td>β遮断薬</td>
+          <td>プロプラノロール</td>
+          <td>β遮断によりα作用が相対的に増強<br>→ 血管収縮 → 血圧上昇</td>
+        </tr>
+      </table>
+
+      <h3>その他の相互作用</h3>
+      <table>
+        <tr><th>併用薬</th><th>症状</th><th>機序</th></tr>
+        <tr>
+          <td>インスリン、SU薬</td>
+          <td>血糖降下作用減弱</td>
+          <td>β<sub>2</sub>作用による肝グリコーゲン分解促進</td>
+        </tr>
+      </table>
+
+      <h2>CYP3A4阻害薬の相互作用</h2>
+      <p><span class="key">アゾール系抗真菌薬</span>（イトラコナゾール等）はCYP3A4を強力に阻害し、多くの薬物の代謝を低下させる。</p>
+
+      <h3>イトラコナゾールとの併用禁忌・注意</h3>
+      <table>
+        <tr><th>併用薬</th><th>症状</th><th>機序</th></tr>
+        <tr>
+          <td><span class="highlight">第Xa因子阻害薬</span><br>（リバーロキサバン等）</td>
+          <td><span class="caution">出血リスク↑</span></td>
+          <td>CYP3A4阻害により血中濃度上昇</td>
+        </tr>
+        <tr>
+          <td>ワルファリン</td>
+          <td>出血</td>
+          <td>CYP阻害により作用増強</td>
+        </tr>
+        <tr>
+          <td>ベンゾジアゼピン系<br>（トリアゾラム等）</td>
+          <td>過度の鎮静、健忘</td>
+          <td>CYP3A4阻害により血中濃度上昇</td>
+        </tr>
+        <tr>
+          <td>Ca拮抗薬</td>
+          <td>低血圧、浮腫</td>
+          <td>CYP3A4阻害により血中濃度上昇</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">歯科で処方する抗真菌薬</div>
+        <ul>
+          <li><span class="key">イトラコナゾール</span>：CYP3A4を強力に阻害 → 相互作用多い</li>
+          <li><span class="key">ミコナゾール</span>（ゲル）：局所投与でも吸収あり、ワルファリンと相互作用</li>
+          <li><span class="key">フルコナゾール</span>：CYP2C9阻害 → ワルファリンと相互作用</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">111B51</div>
+        <p>アドレナリン添加の局所麻酔薬はα<sub>1</sub>遮断作用をもつ抗精神病薬と併用禁忌である。併用によって起こり得るのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 徐　脈<br>
+          b 頻　脈<br>
+          c 血圧上昇<br>
+          d 血圧低下<br>
+          e 呼吸促迫
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】α<sub>1</sub>遮断作用をもつ抗精神病薬（フェノチアジン系、ブチロフェノン系）存在下では、アドレナリンのα作用が遮断され、<span class="key">β作用のみ</span>が発現する。β<sub>2</sub>作用による血管拡張が優位となり、<span class="highlight">血圧低下</span>（アドレナリン反転）を起こす。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D64</div>
+        <p>局所麻酔薬に添加されているアドレナリンとの相互作用で血圧低下を起こす危険性があるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a β遮断薬<br>
+          b 三環系抗うつ薬<br>
+          c フェノチアジン系薬物<br>
+          d ブチロフェノン系薬物<br>
+          e ベンゾジアゼピン系薬物
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】</p>
+        <ul>
+          <li><span class="key">c, d：正しい</span>。フェノチアジン系（クロルプロマジン）、ブチロフェノン系（ハロペリドール）は<span class="key">α遮断作用</span>を持つ。アドレナリン併用でβ作用が優位となり血圧低下を起こす。</li>
+        </ul>
+        <p class="note">a：β遮断薬はα作用が相対的に増強し血圧上昇。b：三環系抗うつ薬はカテコラミン作用増強で血圧上昇。e：ベンゾジアゼピン系はアドレナリンとの直接的相互作用なし。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B56</div>
+        <p>循環器内科から86歳の女性の口腔管理の依頼を受けた。診察の結果、口腔カンジダ症が疑われ、イトラコナゾールの処方を考えた。<br>併用禁忌の薬物はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ループ利尿薬<br>
+          b 第Xa因子阻害薬<br>
+          c アセトアミノフェン<br>
+          d ペニシリン系抗菌薬<br>
+          e アンジオテンシン変換酵素〈ACE〉阻害薬
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">イトラコナゾール</span>（アゾール系抗真菌薬）は<span class="key">CYP3A4を強力に阻害</span>する。<span class="highlight">第Xa因子阻害薬</span>（リバーロキサバン、アピキサバン等）はCYP3A4で代謝されるため、イトラコナゾール併用で血中濃度が上昇し、<span class="caution">出血リスクが増加</span>する。</p>
+        <p class="note">循環器疾患の高齢者では抗凝固薬を服用していることが多い。口腔カンジダ症の治療時は服用薬を必ず確認する。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>アドレナリン + <span class="highlight">α遮断薬</span>（フェノチアジン系、ブチロフェノン系）→ <span class="caution">血圧低下</span></li>
+          <li>アドレナリン + β遮断薬、三環系抗うつ薬 → 血圧上昇</li>
+          <li><span class="highlight">イトラコナゾール</span> + 第Xa因子阻害薬 → <span class="caution">出血リスク↑</span>（併用禁忌）</li>
+          <li>高齢者・循環器疾患患者への処方時は服用薬の確認が必須</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

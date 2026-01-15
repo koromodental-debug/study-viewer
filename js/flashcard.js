@@ -1357,78 +1357,40 @@ const FlashcardModule = (function() {
 
   // === カード検索機能 ===
 
-  // 全カードのインデックスを構築（並列読み込み版）
+  // 全カードのインデックスを読み込み（事前生成されたJSONから）
   async function loadAllCardsIndex(progressCallback) {
     if (state.cardSearch.allCardsIndex) {
       return state.cardSearch.allCardsIndex;
     }
 
     state.cardSearch.isIndexing = true;
-    const allItems = [];
 
-    // QAファイルがあるトピックからカードを読み込み
-    const topicsWithQA = DATA.filter(d => d.qaPath);
-    const total = topicsWithQA.length;
-    let loaded = 0;
-
-    // 並列読み込み（10件ずつバッチ処理でUIをブロックしない）
-    const BATCH_SIZE = 10;
-    for (let i = 0; i < topicsWithQA.length; i += BATCH_SIZE) {
-      const batch = topicsWithQA.slice(i, i + BATCH_SIZE);
-
-      const results = await Promise.all(
-        batch.map(async (topic) => {
-          try {
-            const response = await fetch(encodeURI(topic.qaPath));
-            if (response.ok) {
-              const text = await response.text();
-              const cards = parseQAToCards(text, topic.id);
-              return cards.map(card => ({
-                ...card,
-                type: 'card',
-                topicTitle: topic.title.replace(/^[ア-オ]_/, ''),
-                subject: topic.subject || 'その他',
-                searchKey: `${topic.id}:${card.originalIndex}`
-              }));
-            }
-          } catch (e) {
-            // エラーは無視
-          }
-          return [];
-        })
-      );
-
-      // 結果を追加
-      results.forEach(cards => {
-        allItems.push(...cards);
-      });
-
-      loaded += batch.length;
+    try {
       if (progressCallback) {
-        progressCallback(loaded, total);
+        progressCallback(0, 1);
       }
 
-      // UIスレッドに制御を返す（フリーズ防止）
-      await new Promise(r => setTimeout(r, 0));
-    }
+      // 事前生成されたインデックスJSONを読み込み
+      const response = await fetch('search-index.json');
+      if (!response.ok) {
+        throw new Error('search-index.json not found');
+      }
 
-    // QAファイルがないトピック（まとめのみ）も追加
-    const topicsWithoutQA = DATA.filter(d => !d.qaPath && d.htmlPath && d.searchText);
-    for (const topic of topicsWithoutQA) {
-      allItems.push({
-        type: 'summary',
-        topicId: topic.id,
-        topicTitle: topic.title.replace(/^[ア-オ]_/, ''),
-        subject: topic.subject || 'その他',
-        searchText: topic.searchText,
-        htmlPath: topic.htmlPath,
-        searchKey: `summary:${topic.id}`
-      });
-    }
+      const allItems = await response.json();
 
-    state.cardSearch.allCardsIndex = allItems;
-    state.cardSearch.isIndexing = false;
-    return allItems;
+      if (progressCallback) {
+        progressCallback(1, 1);
+      }
+
+      state.cardSearch.allCardsIndex = allItems;
+      state.cardSearch.isIndexing = false;
+      return allItems;
+
+    } catch (e) {
+      console.error('検索インデックスの読み込みに失敗:', e);
+      state.cardSearch.isIndexing = false;
+      return [];
+    }
   }
 
   // カード検索を実行

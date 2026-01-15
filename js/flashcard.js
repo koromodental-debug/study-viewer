@@ -1592,6 +1592,7 @@ const FlashcardModule = (function() {
 
   // 検索結果をレンダリング
   function renderCardSearchResults() {
+    console.log('★★★ renderCardSearchResults 呼び出し ★★★');
     const resultsEl = document.getElementById('card-search-results');
     const statusEl = document.getElementById('card-search-status');
     if (!resultsEl) return;
@@ -1754,6 +1755,7 @@ const FlashcardModule = (function() {
 
   // === インライン検索結果をレンダリング ===
   function renderInlineSearchResults() {
+    console.log('★★★ renderInlineSearchResults 呼び出し ★★★');
     const resultsEl = document.getElementById('card-search-inline-results');
     if (!resultsEl) return;
 

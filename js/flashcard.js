@@ -1592,7 +1592,6 @@ const FlashcardModule = (function() {
 
   // 検索結果をレンダリング
   function renderCardSearchResults() {
-    console.log('★★★ renderCardSearchResults 呼び出し ★★★');
     const resultsEl = document.getElementById('card-search-results');
     const statusEl = document.getElementById('card-search-status');
     if (!resultsEl) return;
@@ -1642,9 +1641,7 @@ const FlashcardModule = (function() {
 
     // 表示件数制限（デフォルト5件）
     const DISPLAY_LIMIT = 5;
-    console.log('showAll:', state.cardSearch.showAll, 'results:', results.length);
     const displayResults = state.cardSearch.showAll ? results : results.slice(0, DISPLAY_LIMIT);
-    console.log('displayResults:', displayResults.length);
     const hasMore = results.length > DISPLAY_LIMIT && !state.cardSearch.showAll;
     const remainingCount = results.length - DISPLAY_LIMIT;
 
@@ -1755,7 +1752,6 @@ const FlashcardModule = (function() {
 
   // === インライン検索結果をレンダリング ===
   function renderInlineSearchResults() {
-    console.log('★★★ renderInlineSearchResults 呼び出し ★★★');
     const resultsEl = document.getElementById('card-search-inline-results');
     if (!resultsEl) return;
 
@@ -1792,7 +1788,8 @@ const FlashcardModule = (function() {
     html += '</div>';
 
     html += '<div class="card-search-inline-list">';
-    html += results.slice(0, 10).map(item => {
+    const INLINE_LIMIT = 5;
+    html += results.slice(0, INLINE_LIMIT).map(item => {
       const isExpanded = state.cardSearch.expandedKeys.has(item.searchKey);
 
       // まとめの場合
@@ -1825,8 +1822,8 @@ const FlashcardModule = (function() {
       `;
     }).join('');
 
-    if (results.length > 10) {
-      html += `<button class="card-search-more-btn" id="card-search-show-all">他${results.length - 10}件を表示...</button>`;
+    if (results.length > INLINE_LIMIT) {
+      html += `<button class="card-search-more-btn" id="card-search-show-all">他${results.length - INLINE_LIMIT}件を表示...</button>`;
     }
     html += '</div>';
 

@@ -743,19 +743,26 @@ const FlashcardModule = (function() {
             return;
           }
 
-          // インデックスがなければ構築
-          if (!state.cardSearch.allCardsIndex) {
-            if (cardSearchResults) {
-              cardSearchResults.style.display = 'block';
-              cardSearchResults.innerHTML = '<div class="card-search-loading">読み込み中...</div>';
+          try {
+            // インデックスがなければ構築
+            if (!state.cardSearch.allCardsIndex) {
+              if (cardSearchResults) {
+                cardSearchResults.style.display = 'block';
+                cardSearchResults.innerHTML = '<div class="card-search-loading">読み込み中...</div>';
+              }
+              await loadAllCardsIndex();
             }
-            await loadAllCardsIndex();
-          }
 
-          // 検索実行
-          state.cardSearch.query = query;
-          state.cardSearch.results = searchCards(query);
-          renderInlineSearchResults();
+            // 検索実行
+            state.cardSearch.query = query;
+            state.cardSearch.results = searchCards(query);
+            renderInlineSearchResults();
+          } catch (e) {
+            console.error('検索エラー:', e);
+            if (cardSearchResults) {
+              cardSearchResults.innerHTML = '<div class="card-search-empty">読み込みエラーが発生しました</div>';
+            }
+          }
         }, 300);
       });
     }
@@ -1361,7 +1368,10 @@ const FlashcardModule = (function() {
 
     // QAファイルがあるトピックからカードを読み込み
     const topicsWithQA = DATA.filter(d => d.qaPath);
+    const total = topicsWithQA.length;
+
     for (const topic of topicsWithQA) {
+      loaded++;
       try {
         const response = await fetch(encodeURI(topic.qaPath));
         if (response.ok) {
@@ -1378,11 +1388,10 @@ const FlashcardModule = (function() {
           });
         }
       } catch (e) {
-        console.log(`QAファイル読み込みエラー: ${topic.qaPath}`, e);
+        // エラーは無視して続行
       }
-      loaded++;
       if (progressCallback) {
-        progressCallback(loaded, DATA.length);
+        progressCallback(loaded, total);
       }
     }
 
@@ -1398,10 +1407,6 @@ const FlashcardModule = (function() {
         htmlPath: topic.htmlPath,
         searchKey: `summary:${topic.id}`
       });
-      loaded++;
-      if (progressCallback) {
-        progressCallback(loaded, DATA.length);
-      }
     }
 
     state.cardSearch.allCardsIndex = allItems;

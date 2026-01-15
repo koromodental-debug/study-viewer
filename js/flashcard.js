@@ -2026,6 +2026,9 @@ const FlashcardModule = (function() {
     const stats = getTopicStats(state.currentTopicId);
     const cardCount = state.filteredCards.length;
 
+    // 特殊デッキ（おまかせ、覚えた、もう一度）の場合のみ「もうX枚やる」を表示
+    const isSpecialDeck = state.currentTopicId && state.currentTopicId.startsWith('__');
+
     container.innerHTML = `
       <div class="flashcard-completion">
         <div class="completion-check">
@@ -2050,8 +2053,8 @@ const FlashcardModule = (function() {
           </div>
         </div>
         <div class="completion-actions">
-          <button class="completion-btn primary" id="completion-continue-btn">もう${state.sessionSize}枚やる</button>
-          <button class="completion-btn secondary" id="completion-back-btn">デッキに戻る</button>
+          ${isSpecialDeck ? `<button class="completion-btn primary" id="completion-continue-btn">もう${state.sessionSize}枚やる</button>` : ''}
+          <button class="completion-btn ${isSpecialDeck ? 'secondary' : 'primary'}" id="completion-back-btn">デッキに戻る</button>
         </div>
       </div>
     `;
@@ -2063,10 +2066,14 @@ const FlashcardModule = (function() {
     }, 100);
 
     document.getElementById('completion-back-btn').addEventListener('click', goBack);
-    document.getElementById('completion-continue-btn').addEventListener('click', () => {
-      // 同じデッキでもう一度
-      startRecommendedDeck();
-    });
+
+    const continueBtn = document.getElementById('completion-continue-btn');
+    if (continueBtn) {
+      continueBtn.addEventListener('click', () => {
+        // 同じデッキでもう一度
+        startRecommendedDeck();
+      });
+    }
   }
 
   // === HTMLまとめ埋め込み ===

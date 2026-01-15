@@ -35,7 +35,7 @@ class SearchEngine {
       );
     });
 
-    // スコアリング（タイトルマッチを優先）
+    // スコアリング（タイトルマッチを優先、subjectをlegacyより優先）
     results.sort((a, b) => {
       const aTitle = (a.title || '').toLowerCase();
       const bTitle = (b.title || '').toLowerCase();
@@ -45,17 +45,61 @@ class SearchEngine {
 
       if (aInTitle && !bInTitle) return -1;
       if (!aInTitle && bInTitle) return 1;
+
+      // subjectをlegacyより優先
+      if (a.source === 'subject' && b.source === 'legacy') return -1;
+      if (a.source === 'legacy' && b.source === 'subject') return 1;
+
       return 0;
     });
+
+    // 重複除外（同じコアタイトルを持つエントリはsubjectを優先して1つだけ残す）
+    const deduped = this.deduplicateResults(results);
 
     // キャッシュに保存（最大100件）
     if (this.cache.size > 100) {
       const firstKey = this.cache.keys().next().value;
       this.cache.delete(firstKey);
     }
-    this.cache.set(normalizedQuery, results);
+    this.cache.set(normalizedQuery, deduped);
 
-    return results;
+    return deduped;
+  }
+
+  /**
+   * 検索結果から重複を除外
+   * 同じコアタイトルを持つエントリは最初の1つだけ残す（ソート済みなのでsubjectが優先される）
+   * @param {Array} results ソート済み検索結果
+   * @returns {Array} 重複除外済み結果
+   */
+  deduplicateResults(results) {
+    const seen = new Set();
+    return results.filter(item => {
+      // タイトルからコアキーワードを抽出（プレフィックス「ア_」「イ_」等を除去）
+      const coreTitle = this.extractCoreTitle(item.title || '');
+      if (seen.has(coreTitle)) {
+        return false;
+      }
+      seen.add(coreTitle);
+      return true;
+    });
+  }
+
+  /**
+   * タイトルからコアキーワードを抽出
+   * 例: "ア_新オレンジプラン" -> "新オレンジプラン"
+   * 例: "05_倫理と法規_新オレンジプラン" -> "新オレンジプラン"
+   * @param {string} title 元のタイトル
+   * @returns {string} コアタイトル
+   */
+  extractCoreTitle(title) {
+    // 先頭の「ア_」「イ_」等のカタカナ+アンダースコアを除去
+    let core = title.replace(/^[ア-ン]_/, '');
+    // 先頭の数字+アンダースコア部分を除去（例: "05_倫理と法規_"）
+    core = core.replace(/^\d+_[^_]+_/, '');
+    // さらに先頭の数字+アンダースコアを除去（例: "01_"）
+    core = core.replace(/^\d+_/, '');
+    return core.toLowerCase();
   }
 
   /**

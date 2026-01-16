@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>変色歯への対応 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / コンポジットレジン修復</span>
+    <h1>変色歯への対応</h1>
+    <div class="container">
+
+      <h2>変色歯の治療法</h2>
+      <p>変色歯の治療は変色の程度と原因に応じて選択する。</p>
+
+      <h3>ホワイトニングの分類</h3>
+      <table>
+        <tr><th>分類</th><th>内容</th></tr>
+        <tr>
+          <td class="key">広義のホワイトニング</td>
+          <td>クリーニング（PMTC）、漂白法、マニキュア、CR修復、ベニア修復など</td>
+        </tr>
+        <tr>
+          <td class="key">狭義のホワイトニング</td>
+          <td>漂白法（ブリーチング）のみ</td>
+        </tr>
+      </table>
+
+      <h2>漂白法（ブリーチング）</h2>
+
+      <h3>漂白法の分類</h3>
+      <table>
+        <tr><th>方法</th><th>処置部位</th><th>適応</th></tr>
+        <tr>
+          <td class="key">ウォーキングブリーチ</td>
+          <td>髄腔内から処置</td>
+          <td class="highlight">失活歯（無髄歯）のみ</td>
+        </tr>
+        <tr>
+          <td class="key">オフィスブリーチング</td>
+          <td>エナメル質表面から（診療室）</td>
+          <td>生活歯・失活歯</td>
+        </tr>
+        <tr>
+          <td class="key">ホームブリーチング</td>
+          <td>エナメル質表面から（家庭）</td>
+          <td>生活歯・失活歯</td>
+        </tr>
+      </table>
+
+      <h3>漂白剤の種類</h3>
+      <ul>
+        <li><span class="key">過酸化水素水</span>（H₂O₂）：30〜35%の高濃度で使用</li>
+        <li><span class="key">過ホウ酸ナトリウム</span>：ウォーキングブリーチに使用</li>
+        <li><span class="key">過酸化尿素</span>：ホームブリーチングに使用</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">漂白のメカニズム</div>
+        <ul>
+          <li>過酸化水素の分解 → ラジカル発生 → <span class="key">有機性着色物質を酸化・分解</span></li>
+          <li><span class="caution">金属などの無機性着色物質には無効</span></li>
+        </ul>
+      </div>
+
+      <h3>漂白法の予後</h3>
+      <ul>
+        <li>嗜好品の制限：術直後の喫煙、ワイン、コーヒーなどを避ける</li>
+        <li>象牙質知覚過敏が生じる可能性あり</li>
+        <li>経時的な色調の後戻り：定期検診が必要</li>
+      </ul>
+
+      <h2>ベニア修復（ラミネートベニア修復）</h2>
+      <p>歯面に薄板状（laminate）の修復物を貼り合わせる（veneer）修復法。</p>
+
+      <h3>ベニア修復の特徴</h3>
+      <table>
+        <tr><th>特徴</th><th>説明</th></tr>
+        <tr><td>歯質切削</td><td>不要か、きわめて少ない</td></tr>
+        <tr><td class="highlight">麻酔</td><td class="highlight">不要（形成はエナメル質内）</td></tr>
+        <tr><td>審美性</td><td>優れる</td></tr>
+        <tr><td class="highlight">アンテリアガイダンス</td><td class="highlight">影響しない（上顎歯の場合）</td></tr>
+        <tr><td>侵襲性</td><td>患者への侵襲が少ない</td></tr>
+      </table>
+
+      <h3>ベニア修復の適応症</h3>
+      <ul>
+        <li>中等度〜重度の変色歯（テトラサイクリン歯など）</li>
+        <li>形成不全歯（ターナー歯、エナメル質形成不全症、斑状歯）</li>
+        <li>発育異常（矮小歯、円錐歯）</li>
+        <li>正中離開、空隙歯列</li>
+        <li>切縁破折、4級窩洞</li>
+      </ul>
+
+      <h3>ベニア修復の種類</h3>
+      <table>
+        <tr><th>分類</th><th>方法</th><th>長所</th><th>短所</th></tr>
+        <tr>
+          <td rowspan="2" class="key">直接法</td>
+          <td>CR直接法</td>
+          <td>麻酔不要、即日修復可能、補修修復可能</td>
+          <td>術者による審美性の違い、経時的変色</td>
+        </tr>
+        <tr>
+          <td>既製レジンシェル法</td>
+          <td colspan="2">－</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="key">間接法</td>
+          <td>CRベニア法</td>
+          <td colspan="2">－</td>
+        </tr>
+        <tr>
+          <td>ポーセレンベニア法</td>
+          <td>優れた審美性、長期耐久性</td>
+          <td>技工操作必要、補修困難</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ベニア修復 vs 前装冠（クラウン）</div>
+        <ul>
+          <li>ベニア：<span class="highlight">無麻酔</span>で形成可能、<span class="highlight">アンテリアガイダンスに影響なし</span></li>
+          <li>前装冠：麻酔必要、歯質切削量が多い、咬合に影響</li>
+        </ul>
+      </div>
+
+      <h2>変色歯の治療選択</h2>
+
+      <h3>変色の程度による選択</h3>
+      <table>
+        <tr><th>変色の程度</th><th>推奨される治療法</th></tr>
+        <tr><td>軽度（外来性着色）</td><td>PMTC、クリーニング</td></tr>
+        <tr><td>軽度〜中等度</td><td>漂白法（ブリーチング）</td></tr>
+        <tr><td>中等度〜重度</td><td>ベニア修復、CR修復</td></tr>
+        <tr><td>重度・広範囲</td><td>クラウン修復</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">漂白後も残存する変色への対応</div>
+        <p>漂白法は有機性着色物質に有効だが、<span class="caution">無機性着色物質や深部の変色には無効</span>。</p>
+        <p>漂白で改善しない場合 → <span class="highlight">CR修復</span>またはベニア修復で対応</p>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105B23</div>
+        <p>24歳の女性。歯の着色を主訴として来院した。治療中の口腔内写真（別冊No.23）を別に示す。<br>前装冠と比較した本治療法の利点はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B23.png" alt="別冊No.23">
+        </div>
+        <div class="choices">
+          a 無麻酔下で支台歯形成できる。<br>
+          b ブラキシズム患者に適用できる。<br>
+          c アンテリアガイダンスに影響を与えない。<br>
+          d グラスアイオノマーセメントを使用できる。<br>
+          e 象牙質プライマー処理による接着が期待できる。
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】写真からラミネートベニア修復を行っていることがわかる。ベニア修復は<span class="key">形成がエナメル質内に限局</span>するため<span class="highlight">無麻酔で形成可能</span>。また上顎前歯では舌側面を切削しないため<span class="highlight">アンテリアガイダンスに影響しない</span>。ブラキシズム患者では脱離・破折のリスクがあり禁忌。接着はエナメル質への接着が主体で象牙質プライマーは関係しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D24</div>
+        <p>38歳の女性。歯の変色を主訴として来院した。生活歯漂白を行ったが、上顎両側中切歯に変色が残存した。初診時、術中および漂白処置後の口腔内写真（別冊No.24）を別に示す。<br>1┴1の矢印で示す変色に対する適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D24.png" alt="別冊No.24">
+        </div>
+        <div class="choices">
+          a PMTC<br>
+          b 漂白処置の継続<br>
+          c 陶材焼付金属冠修復<br>
+          d ウォーキングブリーチ<br>
+          e コンポジットレジン修復
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】生活歯漂白を行っても残存した限局性の変色である。漂白法は有機性着色物質には有効だが、<span class="caution">漂白で改善しない変色</span>は無機性物質や深部の変色と考えられる。このような場合は<span class="highlight">CR修復</span>で変色部を被覆するのが適切。PMTCは外来性着色に対する処置。ウォーキングブリーチは失活歯に対する処置であり生活歯には適応しない。陶材焼付金属冠は侵襲が大きすぎる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>修復操作 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / コンポジットレジン修復</span>
+    <h1>修復操作</h1>
+    <div class="container">
+
+      <h2>CR修復の臨床操作手順</h2>
+      <p>CR修復は以下の順序で行う。各ステップで適切な器材を選択することが重要である。</p>
+
+      <h3>基本手順</h3>
+      <table>
+        <tr><th>順序</th><th>操作</th><th>ポイント</th></tr>
+        <tr><td>1</td><td>歯面清掃・口腔内消毒</td><td>ブラシコーン、ラバーカップ</td></tr>
+        <tr><td>2</td><td>咬合検査</td><td>咬合紙で窩縁を咬合接触させない</td></tr>
+        <tr><td>3</td><td>シェードテイキング</td><td>ラバーダム装着前、濡らした状態で</td></tr>
+        <tr><td>4</td><td>術野の隔離（防湿）</td><td>ラバーダム法</td></tr>
+        <tr><td>5</td><td>歯間分離</td><td>隣接面修復時</td></tr>
+        <tr><td>6</td><td>歯肉排除</td><td>歯頸部修復時</td></tr>
+        <tr><td>7</td><td>窩洞形成</td><td>感染歯質の除去</td></tr>
+        <tr><td>8</td><td>隔壁の装着</td><td>窩洞形態に応じて選択</td></tr>
+        <tr><td>9</td><td>接着操作・填塞</td><td>積層法（レイヤリング）</td></tr>
+        <tr><td>10</td><td>光照射</td><td>歯質透過光も利用</td></tr>
+        <tr><td>11</td><td>咬合調整・形態修正・仕上げ研磨</td><td>24時間以上経過後</td></tr>
+      </table>
+
+      <h2>歯間分離法</h2>
+      <p>隣接する歯間を分離し、隣接面の検査・修復操作を容易にする方法。</p>
+
+      <h3>歯間分離法の目的</h3>
+      <ul>
+        <li>隣接面を的確に検査できるようにする</li>
+        <li>窩洞形成、填塞、仕上げ研磨を行いやすくする</li>
+        <li>隣接歯の接触の回復を容易にする</li>
+        <li>隔壁の使用やラバーダム法を行いやすくする</li>
+      </ul>
+
+      <h3>即時歯間分離法の器具</h3>
+      <table>
+        <tr><th>器具</th><th>適応</th></tr>
+        <tr><td class="key">ウェッジ</td><td>木製・透明プラスチック製。隣接面修復時に使用</td></tr>
+        <tr><td class="key">エリオットのセパレーター</td><td class="highlight">臼歯部用</td></tr>
+        <tr><td class="key">アイボリーのシンプルセパレーター</td><td class="highlight">前歯部用</td></tr>
+      </table>
+      <p class="note">プレウェッジ：窩洞形成前にウェッジを挿入する方法。歯間分離と歯間乳頭部保護が目的。</p>
+
+      <h2>歯肉排除法</h2>
+      <p>一時的に歯肉を排除する方法。<span class="highlight">歯頸部の修復</span>に必要。</p>
+
+      <h3>歯肉排除法の目的</h3>
+      <ul>
+        <li>歯肉縁下の歯面の検査を行いやすくする</li>
+        <li>歯肉縁下まで窩洞外形を拡大する</li>
+        <li>歯肉縁下窩洞を修復する</li>
+        <li>歯肉縁下窩洞の印象採得を行う</li>
+      </ul>
+
+      <h3>即時歯肉排除法</h3>
+      <table>
+        <tr><th>方法</th><th>器具・材料</th><th>適応</th></tr>
+        <tr><td>器具による排除</td><td class="highlight">ガムリトラクター</td><td>前歯5級窩洞、<span class="key">くさび状欠損</span></td></tr>
+        <tr><td>排除用綿糸</td><td>リトラクションコード</td><td>歯頸部全周の排除</td></tr>
+        <tr><td>外科的切除</td><td>高周波電気メス、レーザー</td><td>歯肉増殖時など</td></tr>
+      </table>
+      <p class="note">ガムリトラクター：金属製とプラスチック製がある。唇・頬側や舌側歯肉を排除。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">高周波電気メスの禁忌</div>
+        <p><span class="caution">ペースメーカー使用患者には禁忌</span></p>
+      </div>
+
+      <h2>隔壁法</h2>
+      <p>複雑窩洞を単純化し、修復操作を容易にする方法。</p>
+
+      <h3>隔壁の種類と適応</h3>
+      <table>
+        <tr><th>修復部位</th><th>隔壁の種類</th></tr>
+        <tr><td class="key">2級修復（隣接面）</td><td>メタルマトリックスバンド、トッフルマイヤー式リテーナー、ウェッジ、セクショナルマトリックス</td></tr>
+        <tr><td class="key">切縁隅角を含む修復</td><td>クラウンフォーム、セクショナルマトリックス</td></tr>
+        <tr><td class="highlight">唇・頬側面歯頸部修復</td><td class="highlight">サービカルマトリックス</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">サービカルマトリックスの特徴</div>
+        <ul>
+          <li>透明なため、<span class="key">装着したまま光照射が可能</span></li>
+          <li>5級窩洞やくさび状欠損のCR修復に使用</li>
+        </ul>
+      </div>
+
+      <h2>くさび状欠損のCR修復</h2>
+      <p>くさび状欠損は<span class="key">唇・頬側の歯頸部</span>に生じる欠損で、<span class="caution">隣接面ではない</span>ことがポイント。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">くさび状欠損修復に必要な器材</div>
+        <ul>
+          <li><span class="highlight">ガムリトラクター</span>：歯肉を排除して歯頸部を露出</li>
+          <li><span class="highlight">サービカルマトリックス</span>：歯頸部用の透明マトリックス</li>
+        </ul>
+      </div>
+
+      <h3>使用しない器材（隣接面修復用）</h3>
+      <ul>
+        <li><span class="caution">ウェッジ</span>：隣接面修復時の歯間分離用</li>
+        <li><span class="caution">エリオットのセパレーター</span>：臼歯部の歯間分離用</li>
+        <li><span class="caution">メタルマトリックスバンド</span>：2級修復（隣接面）用</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109D2</div>
+        <p>53歳の女性。右側の上下顎小臼歯部の知覚過敏を主訴として来院した。コンポジットレジン修復を行うこととした。初診時の口腔内写真（別冊No.2A）とエックス線写真（別冊No.2B）を別に示す。<br>修復に際し使用する器材はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109D2.png" alt="別冊No.2">
+        </div>
+        <div class="choices">
+          a ウェッジ<br>
+          b ガムリトラクター<br>
+          c サービカルマトリックス<br>
+          d エリオットのセパレーター<br>
+          e メタルマトリックスバンド
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】口腔内写真から小臼歯部頬側歯頸部に<span class="key">くさび状欠損</span>が認められる。くさび状欠損は隣接面ではなく唇・頬側面歯頸部の欠損であるため、<span class="highlight">ガムリトラクター</span>（歯肉排除）と<span class="highlight">サービカルマトリックス</span>（歯頸部用隔壁）を使用する。ウェッジ、エリオットのセパレーター、メタルマトリックスバンドはいずれも隣接面（2級）修復に用いる器材であり、本症例には適応しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

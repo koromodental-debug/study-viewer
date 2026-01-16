@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>変色歯の原因 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / コンポジットレジン修復</span>
+    <h1>変色歯の原因</h1>
+    <div class="container">
+
+      <h2>変色歯の分類</h2>
+      <p>変色歯は原因によって大きく2つに分類される。</p>
+
+      <h3>1. 歯の表面の変色（外来性着色）</h3>
+      <p>歯の表面に付着した物質による変色。研磨・清掃で除去可能。</p>
+      <ul>
+        <li>着色性飲食物（コーヒー、紅茶、赤ワインなど）</li>
+        <li>嗜好品（喫煙によるヤニ）</li>
+        <li>修復金属（アマルガムによる変色）</li>
+        <li><span class="key">フッ化ジアンミン銀</span>（サホライド）：黒色沈着</li>
+      </ul>
+
+      <h3>2. 歯質自体の着色</h3>
+      <p>歯質内部の変色。研磨では除去できない。</p>
+
+      <table>
+        <tr><th>分類</th><th>原因</th><th>特徴</th></tr>
+        <tr>
+          <td rowspan="4" class="key">外因性</td>
+          <td class="highlight">テトラサイクリン系抗菌薬</td>
+          <td>多数歯に対称性、黄褐色〜灰褐色の横縞</td>
+        </tr>
+        <tr>
+          <td class="highlight">フッ化物過剰摂取</td>
+          <td>多数歯に対称性、白斑〜褐色斑（斑状歯）</td>
+        </tr>
+        <tr>
+          <td>重金属</td>
+          <td>鉛、水銀など</td>
+        </tr>
+        <tr>
+          <td>齲蝕</td>
+          <td>初期は白斑、進行で褐色〜黒色</td>
+        </tr>
+        <tr>
+          <td rowspan="5" class="key">内因性</td>
+          <td>加齢</td>
+          <td>象牙質の変色が透過して見える</td>
+        </tr>
+        <tr>
+          <td>歯髄壊死・歯内療法後</td>
+          <td>灰色〜黒色、単独歯</td>
+        </tr>
+        <tr>
+          <td>ポルフィリン症</td>
+          <td>赤褐色</td>
+        </tr>
+        <tr>
+          <td>過ビリルビン血症・新生児黄疸</td>
+          <td>黄色〜緑色</td>
+        </tr>
+        <tr>
+          <td>新生児メレナ</td>
+          <td>青色〜緑色</td>
+        </tr>
+      </table>
+
+      <h2>エナメル質形成不全</h2>
+      <p>歯の発育期（形成期）に生じるエナメル質の異常。変色の原因となる。</p>
+
+      <h3>エナメル質形成不全の種類</h3>
+      <table>
+        <tr><th>種類</th><th>原因</th><th>臨床所見</th></tr>
+        <tr>
+          <td class="key">エナメル質減形成</td>
+          <td>基質形成量の減少</td>
+          <td>形態異常（凹凸、実質欠損）</td>
+        </tr>
+        <tr>
+          <td class="highlight">エナメル質石灰化不全</td>
+          <td>基質形成は正常、石灰化度が低い</td>
+          <td><span class="highlight">限局性の白濁や白斑</span></td>
+        </tr>
+      </table>
+
+      <h3>エナメル質形成不全の原因</h3>
+      <table>
+        <tr><th>原因</th><th>発現パターン</th><th>具体例</th></tr>
+        <tr>
+          <td class="key">局所的原因</td>
+          <td class="caution">非対称性（特定歯に限局）</td>
+          <td>外傷、乳歯根尖病巣（<span class="key">ターナー歯</span>）</td>
+        </tr>
+        <tr>
+          <td class="key">全身的原因</td>
+          <td>対称性（多数歯）</td>
+          <td>栄養障害、感染症、フッ化物、内分泌障害、遺伝</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">先天梅毒による歯の異常</div>
+        <ul>
+          <li><span class="key">ハッチンソン歯</span>：前歯部切縁の半月状欠損</li>
+          <li><span class="key">フルニエ歯</span>：小臼歯の形態異常</li>
+          <li><span class="key">ムーンの歯</span>：桑実状臼歯</li>
+        </ul>
+      </div>
+
+      <h2>変色歯の鑑別ポイント</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">変色の分布パターンで鑑別</div>
+        <ul>
+          <li><span class="highlight">特定歯に限局</span> → エナメル質形成不全（局所的原因）、歯髄壊死</li>
+          <li><span class="highlight">多数歯に対称性</span> → テトラサイクリン歯、フッ素症、全身的原因</li>
+        </ul>
+      </div>
+
+      <h3>主な変色歯の臨床的特徴</h3>
+      <table>
+        <tr><th>原因</th><th>分布</th><th>色調</th><th>その他の特徴</th></tr>
+        <tr>
+          <td class="key">エナメル質石灰化不全</td>
+          <td class="caution">限局性</td>
+          <td>白濁・白斑</td>
+          <td>局所的原因では非対称</td>
+        </tr>
+        <tr>
+          <td class="key">テトラサイクリン歯</td>
+          <td>多数歯・対称性</td>
+          <td>黄褐色〜灰褐色</td>
+          <td>横縞状、紫外線で蛍光</td>
+        </tr>
+        <tr>
+          <td class="key">歯のフッ素症（斑状歯）</td>
+          <td>多数歯・対称性</td>
+          <td>白斑〜褐色斑</td>
+          <td>飲料水中フッ素濃度1ppm以上</td>
+        </tr>
+        <tr>
+          <td class="key">初期齲蝕</td>
+          <td>限局性</td>
+          <td>白斑（ホワイトスポット）</td>
+          <td>歯垢付着部位に一致</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105B20</div>
+        <p>24歳の女性。上顎両側側切歯の変色を主訴として来院した。小学生のころから変色に気付いていたが放置していたという。初診時の口腔内写真（別冊No.20）を別に示す。<br>矢印で示す変色の原因はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B20.png" alt="別冊No.20">
+        </div>
+        <div class="choices">
+          a 口腔清掃の不良<br>
+          b 初期の齲蝕病変<br>
+          c フッ化物の過剰摂取<br>
+          d テトラサイクリンの服用<br>
+          e エナメル質の石灰化不全
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】上顎両側側切歯に<span class="key">限局した白濁</span>が認められる。小学生のころから気付いていたことから、歯の形成期に生じた異常と考えられる。<span class="caution">テトラサイクリン歯やフッ素症は多数歯に対称性に発現</span>するため否定される。口腔清掃不良や初期齲蝕は外来性・後天性であり、幼少期からの変色とは合わない。<span class="highlight">エナメル質石灰化不全</span>は基質形成は正常だが石灰化度が低く、限局性の白濁を呈する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

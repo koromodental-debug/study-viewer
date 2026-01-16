@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>人体の発育 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 05 人体の発生・成長・発達・加齢変化</span>
+    <h1>人体の発育</h1>
+    <div class="container">
+
+      <h2>身体発育の指標</h2>
+      <h3>成長速度</h3>
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">新生児期〜乳児期</span></td>
+          <td><span class="highlight">身長成長速度が最も速い</span>（第一発育急進期）</td>
+        </tr>
+        <tr>
+          <td><span class="key">幼児期〜学童期</span></td>
+          <td>成長速度は緩やか</td>
+        </tr>
+        <tr>
+          <td><span class="key">思春期</span></td>
+          <td>第二発育急進期（スパート）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109A32</div>
+        <p>出生後の身長成長速度が最も速い時期はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 新生児期<br>
+          b 乳児期<br>
+          c 幼児期<br>
+          d 学童期<br>
+          e 思春期
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">新生児期</span>が身長成長速度が最も速い。思春期にも急進期（第二発育急進期）があるが、新生児期の方が速い。</p>
+      </div>
+
+      <h3>頭身比の変化</h3>
+      <table>
+        <tr>
+          <th>年齢</th>
+          <th>頭部：身長</th>
+        </tr>
+        <tr>
+          <td><span class="key">0歳（新生児）</span></td>
+          <td><span class="highlight">1：4</span>（4頭身）</td>
+        </tr>
+        <tr>
+          <td><span class="key">2歳</span></td>
+          <td>1：5（5頭身）</td>
+        </tr>
+        <tr>
+          <td><span class="key">6歳</span></td>
+          <td>1：6（6頭身）</td>
+        </tr>
+        <tr>
+          <td><span class="key">成人</span></td>
+          <td>1：7〜8（7〜8頭身）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116D17</div>
+        <p>ヒトの頭部と身長の比が1：4なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 0歳<br>
+          b 2歳<br>
+          c 6歳<br>
+          d 12歳<br>
+          e 25歳
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">0歳（新生児）は4頭身</span>。成長とともに頭身比は増加し、成人で7〜8頭身となる。</p>
+      </div>
+
+      <h3>頭囲と胸囲</h3>
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>頭囲と胸囲の関係</th>
+        </tr>
+        <tr>
+          <td>出生時</td>
+          <td>頭囲 ＞ 胸囲</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">1歳</span></td>
+          <td><span class="highlight">頭囲 ＝ 胸囲</span></td>
+        </tr>
+        <tr>
+          <td>1歳以降</td>
+          <td>頭囲 ＜ 胸囲</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109C18</div>
+        <p>頭囲と胸囲が等しくなる時期はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 胎生28週<br>
+          b 出生時<br>
+          c 1歳<br>
+          d 2歳<br>
+          e 3歳
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】頭囲と胸囲が等しくなるのは<span class="highlight">1歳</span>。出生時は頭囲＞胸囲、1歳以降は胸囲＞頭囲。</p>
+      </div>
+
+      <h3>大泉門</h3>
+      <p><span class="key">大泉門</span>：前頭骨と頭頂骨の間の膜性結合部位。通常<span class="highlight">1歳半〜2歳</span>で閉鎖。</p>
+      <ul>
+        <li>早期閉鎖 → <span class="highlight">頭蓋変形</span>（小頭症）</li>
+        <li>閉鎖遅延 → 水頭症、くる病などを疑う</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">109A24</div>
+        <p>大泉門の早期閉鎖で起こるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 下顎後退<br>
+          b 耳介低位<br>
+          c 青色強膜<br>
+          d 頭蓋変形<br>
+          e 毛髪減少
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】大泉門の早期閉鎖は<span class="highlight">頭蓋変形</span>（小頭症）を起こす。青色強膜は骨形成不全症、耳介低位は染色体異常。</p>
+      </div>
+
+      <h2>発育の評価</h2>
+      <h3>体格指数</h3>
+      <table>
+        <tr>
+          <th>指数</th>
+          <th>計算式</th>
+          <th>適用年齢</th>
+        </tr>
+        <tr>
+          <td><span class="key">Kaup指数</span></td>
+          <td>体重(g)÷身長(cm)²×10</td>
+          <td><span class="highlight">乳幼児期</span>（3か月〜5歳）</td>
+        </tr>
+        <tr>
+          <td><span class="key">Rohrer指数</span></td>
+          <td>体重(kg)÷身長(cm)³×10⁷</td>
+          <td><span class="highlight">学童期以降</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">BMI</span></td>
+          <td>体重(kg)÷身長(m)²</td>
+          <td>成人</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115D1</div>
+        <p>発育状態の評価としてRohrer指数を用いる年齢はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1歳<br>
+          b 3歳<br>
+          c 5歳<br>
+          d 9歳<br>
+          e 16歳
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">Rohrer指数は学童期以降</span>に使用。乳幼児期はKaup指数を用いる。9歳は学童期なのでRohrer指数。</p>
+      </div>
+
+      <h2>乳児の発達</h2>
+      <h3>運動発達のマイルストーン</h3>
+      <table>
+        <tr>
+          <th>月齢</th>
+          <th>運動発達</th>
+          <th>その他</th>
+        </tr>
+        <tr>
+          <td><span class="key">2か月</span></td>
+          <td>追視</td>
+          <td>社会的微笑</td>
+        </tr>
+        <tr>
+          <td><span class="key">4か月</span></td>
+          <td><span class="highlight">首すわり（定頸）</span></td>
+          <td>−</td>
+        </tr>
+        <tr>
+          <td><span class="key">6か月</span></td>
+          <td>寝返り</td>
+          <td>喃語</td>
+        </tr>
+        <tr>
+          <td><span class="key">9か月</span></td>
+          <td>つかまり立ち</td>
+          <td>−</td>
+        </tr>
+        <tr>
+          <td><span class="key">1歳</span></td>
+          <td>伝い歩き、<span class="highlight">バイバイ</span></td>
+          <td>有意語（1語）</td>
+        </tr>
+        <tr>
+          <td><span class="key">1歳半</span></td>
+          <td>独歩</td>
+          <td>−</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112C14</div>
+        <p>改訂版デンバー式発達スクリーニング検査で、1歳0か月児の75〜90%ができるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 走る。<br>
+          b 2語文で話す。<br>
+          c バイバイをする。<br>
+          d 上着を自分で脱ぐ。<br>
+          e 1人で歯磨きをする。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】1歳児は<span class="highlight">バイバイ</span>ができる。走る・2語文・上着脱ぎ・一人歯磨きは1歳半〜2歳以降。</p>
+      </div>
+
+      <h3>構音機能の発達</h3>
+      <p>構音機能の完成：<span class="highlight">5歳</span>頃</p>
+
+      <div class="question-box">
+        <div class="q-number">111C18</div>
+        <p>定型発達児における構音機能の完成時期はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1歳<br>
+          b 3歳<br>
+          c 5歳<br>
+          d 9歳<br>
+          e 12歳
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】構音機能は<span class="highlight">5歳頃に完成</span>。これ以降も構音の誤りがある場合は機能性構音障害を疑う。</p>
+      </div>
+
+      <h2>離乳</h2>
+      <h3>離乳の進め方</h3>
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>月齢</th>
+          <th>食事内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">離乳初期</span></td>
+          <td>5〜6か月</td>
+          <td><span class="highlight">つぶし粥</span>、野菜ペースト</td>
+        </tr>
+        <tr>
+          <td><span class="key">離乳中期</span></td>
+          <td>7〜8か月</td>
+          <td>舌でつぶせる硬さ</td>
+        </tr>
+        <tr>
+          <td><span class="key">離乳後期</span></td>
+          <td>9〜11か月</td>
+          <td>歯ぐきでつぶせる硬さ、<span class="highlight">1日3回食</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">離乳完了期</span></td>
+          <td>12〜18か月</td>
+          <td>歯ぐきで噛める硬さ</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109A22</div>
+        <p>離乳開始時に与えるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a そば<br>
+          b 煮豆<br>
+          c 赤身魚<br>
+          d かまぼこ<br>
+          e つぶし粥
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】離乳開始時は<span class="highlight">つぶし粥</span>から。そばはアレルギー注意、煮豆・かまぼこは窒息リスク。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A8</div>
+        <p>離乳後期の幼児への食事指導で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1日3回食の定着<br>
+          b 濃い味付けへの馴化<br>
+          c 手づかみ食べの制限<br>
+          d 弾力の強い餅の摂取の推奨<br>
+          e 母乳から人工乳への切り替え
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】離乳後期は<span class="highlight">1日3回食の定着</span>。手づかみ食べは発達に重要。餅は窒息リスクで禁忌。</p>
+      </div>
+
+      <h2>乳児期と学童期の比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>乳児期</th>
+          <th>学童期</th>
+        </tr>
+        <tr>
+          <td><span class="key">呼吸数</span></td>
+          <td>多い（30〜40回/分）</td>
+          <td>少ない</td>
+        </tr>
+        <tr>
+          <td><span class="key">心拍数</span></td>
+          <td>多い（120〜140回/分）</td>
+          <td>少ない</td>
+        </tr>
+        <tr>
+          <td><span class="key">収縮期血圧</span></td>
+          <td><span class="highlight">低い</span>（80mmHg程度）</td>
+          <td>高い</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112B10</div>
+        <p>学童期に比べて乳児期で数値が小さいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 呼吸数<br>
+          b 心拍数<br>
+          c 白血球数<br>
+          d 収縮期血圧<br>
+          e リンパ球数
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】乳児期は<span class="highlight">収縮期血圧が低い</span>（80mmHg程度）。呼吸数・心拍数は乳児期の方が多い。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

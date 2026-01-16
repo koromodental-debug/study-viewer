@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>コンポジットインレー - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .step-box {
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .step-box .step-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+    .step-number {
+      display: inline-block;
+      background: var(--accent);
+      color: #FFF;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-size: 9pt;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / インレー修復</span>
+    <h1>コンポジットインレー</h1>
+    <div class="container">
+
+      <h2>I. コンポジットレジンインレーの特徴</h2>
+      <p>口腔外で製作したコンポジットレジン修復物を、レジンセメントで窩洞に装着する間接修復法。</p>
+
+      <h3>直接法との比較</h3>
+      <table>
+        <tr>
+          <th>利点</th>
+          <th>欠点</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>確実な仕上げ研磨ができる</li>
+              <li>適正な解剖学的形態を付与できる</li>
+              <li>接触点・隣接面形態の回復ができる</li>
+              <li>機械的性質・耐摩耗性が改善</li>
+              <li><span class="highlight">重合収縮は窩洞外で完了</span></li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>修復物が脆性となる</li>
+              <li>健全歯質の削除量が増える</li>
+              <li><span class="caution">セメント層が介在</span>し接着一体化に劣る</li>
+              <li>技工操作が必要</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">直接法との最大の違い</div>
+        <p>直接法ではレジンの重合収縮が窩洞内で起こり、接着界面にストレスがかかる。間接法では<span class="highlight">重合収縮は窩洞外で完了</span>するため、接着界面への悪影響がない。</p>
+      </div>
+
+      <h2>II. 種類と組成</h2>
+
+      <h3>重合方式による分類</h3>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>重合条件</th>
+        </tr>
+        <tr>
+          <td class="key">加圧加熱重合タイプ</td>
+          <td>6気圧、120℃、10分の加圧加熱重合</td>
+        </tr>
+        <tr>
+          <td class="key">光重合-光重合タイプ</td>
+          <td>光照射後、光照射用ファーネスで追加光重合</td>
+        </tr>
+        <tr>
+          <td class="key">光重合-加熱重合タイプ</td>
+          <td>光照射後、100〜120℃で10〜15分間加熱</td>
+        </tr>
+      </table>
+
+      <h3>組成</h3>
+      <ul>
+        <li><span class="key">マトリックスレジン</span>：Bis-GMA、UDMA、UTMA、TEGDMA（3G）</li>
+        <li><span class="key">フィラー</span>：無機フィラー82〜86wt%配合の<span class="highlight">ハイブリッド型</span>が主流</li>
+        <li><span class="key">重合開始剤</span>：カンファーキノン（光増感剤）</li>
+        <li><span class="key">重合促進剤</span>：第3級アミン（還元剤）</li>
+      </ul>
+
+      <h2>III. 適応症と窩洞の特徴</h2>
+
+      <h3>適応症</h3>
+      <ul>
+        <li>小臼歯、大臼歯の<span class="key">1級複雑窩洞</span>および<span class="key">2級窩洞</span>（MOD窩洞を含む）</li>
+        <li>直接法による修復が困難な症例</li>
+      </ul>
+
+      <h3>窩洞の特徴（メタルインレーとの比較）</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>コンポジットインレー</th>
+          <th>メタルインレー</th>
+        </tr>
+        <tr>
+          <td>窩洞外形</td>
+          <td>健全歯質の保存、<span class="key">予防拡大は最小限</span></td>
+          <td>予防拡大が必要</td>
+        </tr>
+        <tr>
+          <td>保持形態</td>
+          <td><span class="highlight">箱形の保持形態は不要</span></td>
+          <td>箱形・外開き形態</td>
+        </tr>
+        <tr>
+          <td>抵抗形態</td>
+          <td>咬頭隆線を保存、線角・点角を丸く</td>
+          <td>咬頭隆線を保存</td>
+        </tr>
+        <tr>
+          <td>便宜形態</td>
+          <td><span class="key">外開きを強め</span>とする</td>
+          <td>テーパー1/10〜4/10</td>
+        </tr>
+        <tr>
+          <td>窩縁形態</td>
+          <td><span class="highlight">窩縁斜面なし（ノンベベル）</span></td>
+          <td>窩縁斜面（ベベル）を付与</td>
+        </tr>
+      </table>
+
+      <h2>IV. 修復手順</h2>
+
+      <h3>1回目の来院（チェアサイド）</h3>
+      <ul>
+        <li>咬合関係の検査</li>
+        <li>窩洞形成</li>
+        <li>シェードテイキング</li>
+        <li><span class="key">レジンコーティング</span>（象牙質保護）</li>
+        <li>印象採得、咬合採得</li>
+        <li>仮封</li>
+      </ul>
+
+      <h3>技工操作</h3>
+      <ul>
+        <li>作業用模型の製作</li>
+        <li>コンポジットレジンの築盛、光重合</li>
+        <li><span class="key">二次重合（追加重合）</span></li>
+        <li>形態修正、仕上げ研磨</li>
+        <li>インレー体内面のサンドブラスト処理</li>
+        <li><span class="highlight">シランカップリング剤（γ-MPTS）</span>による内面の前処理</li>
+      </ul>
+
+      <h3>2回目の来院（装着）</h3>
+      <div class="step-box">
+        <p><span class="step-number">1</span><span class="key">仮封の除去、窩洞の清掃</span></p>
+        <p><span class="step-number">2</span><span class="key">インレー体の試適</span>（接触点の調整、研磨）</p>
+        <p><span class="step-number">3</span><span class="highlight">窩洞の防湿、歯面処理</span>（セメントシステムに応じた前処理）</p>
+        <p><span class="step-number">4</span><span class="highlight">レジンセメントの練和、インレー体の装着</span></p>
+        <p><span class="step-number">5</span><span class="key">余剰セメントの除去、光照射</span></p>
+        <p><span class="step-number">6</span><span class="key">咬合調整、最終研磨</span></p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">レジンコーティング法の利点</div>
+        <ul>
+          <li>辺縁封鎖性、窩壁適合性の向上</li>
+          <li>接着性レジンセメントの象牙質に対する接着性の向上</li>
+          <li>象牙質・歯髄複合体の保護（樹脂含浸層とコーティング層の形成）</li>
+          <li>副次的効果としてアンダーカットの排除（ブロックアウト）</li>
+        </ul>
+      </div>
+
+      <h2>V. 術後に起こりうるトラブル</h2>
+      <ul>
+        <li>術後の冷水痛や咬合痛</li>
+        <li>インレーの辺縁破折や体部破折</li>
+        <li>セメントおよびインレーの摩耗 → <span class="caution">セメントラインの溝（クレビス）</span>の形成</li>
+        <li>二次齲蝕</li>
+      </ul>
+
+      <h2>VI. 過去問で実力チェック</h2>
+
+      <h3>装着手順</h3>
+      <div class="question-box">
+        <div class="q-number">110B44</div>
+        <p>35歳の男性。下顎右側第一小臼歯の冷水痛を主訴として来院した。コンポジットレジンインレー修復を行うこととした。完成した修復物の写真（別冊No.40A）とその装着過程の写真（別冊No.40B）を別に示す。装着の手順で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110B44.png" alt="110B44">
+        </div>
+        <div class="choices">
+          a ア→イ→ウ<br>
+          b ア→ウ→イ<br>
+          c イ→ア→ウ<br>
+          d イ→ウ→ア<br>
+          e ウ→ア→イ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】装着手順は「<span class="highlight">ア：歯面処理</span>（エッチング・プライマー等）→ <span class="highlight">ウ：レジンセメント塗布・装着</span> → <span class="highlight">イ：光照射</span>」の順。歯面処理を行ってからセメントで装着し、最後に光照射で硬化させる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

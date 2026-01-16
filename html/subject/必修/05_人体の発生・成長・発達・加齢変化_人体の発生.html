@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>人体の発生 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 05 人体の発生・成長・発達・加齢変化</span>
+    <h1>人体の発生</h1>
+    <div class="container">
+
+      <h2>受精と初期発生</h2>
+      <h3>受精から着床まで</h3>
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>時期</th>
+          <th>場所・内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">受精</span></td>
+          <td>排卵後24時間以内</td>
+          <td><span class="highlight">卵管膨大部</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">卵割</span></td>
+          <td>受精後〜</td>
+          <td>細胞分裂（2細胞→4細胞→8細胞...）</td>
+        </tr>
+        <tr>
+          <td><span class="key">桑実胚</span></td>
+          <td>受精後3〜4日</td>
+          <td>16細胞期、子宮腔に到達</td>
+        </tr>
+        <tr>
+          <td><span class="key">胚盤胞</span></td>
+          <td>受精後5〜6日</td>
+          <td>内細胞塊と栄養膜に分化</td>
+        </tr>
+        <tr>
+          <td><span class="key">着床</span></td>
+          <td>受精後<span class="highlight">約1週間</span></td>
+          <td>子宮内膜への埋入</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111B2</div>
+        <p>受精の場はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 腟<br>
+          b 子宮<br>
+          c 卵巣<br>
+          d 子宮広間膜<br>
+          e 卵管膨大部
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】受精は<span class="highlight">卵管膨大部</span>で起こる。卵巣から排卵された卵子が卵管膨大部で精子と出会い受精する。</p>
+      </div>
+
+      <h2>胚葉の分化</h2>
+      <h3>三胚葉とその由来組織</h3>
+      <table>
+        <tr>
+          <th>胚葉</th>
+          <th>由来する組織・器官</th>
+        </tr>
+        <tr>
+          <td><span class="key">外胚葉</span></td>
+          <td><span class="highlight">表皮</span>、神経系（脳・脊髄）、感覚器、エナメル質、<span class="highlight">口腔粘膜上皮</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">中胚葉</span></td>
+          <td>真皮、骨、軟骨、筋肉、心臓、血管、<span class="highlight">象牙質</span>、歯髄、セメント質、歯根膜</td>
+        </tr>
+        <tr>
+          <td><span class="key">内胚葉</span></td>
+          <td>消化管上皮（<span class="highlight">腸上皮</span>）、呼吸器上皮、肝臓、膵臓、甲状腺</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">外胚葉由来の覚え方</div>
+        <ul>
+          <li><span class="key">表皮</span>（皮膚の表面）</li>
+          <li><span class="key">神経系</span>（脳、脊髄、末梢神経）</li>
+          <li><span class="key">感覚器</span>（眼、耳、鼻）</li>
+          <li><span class="key">エナメル質</span>（歯の最外層）</li>
+          <li><span class="caution">真皮は中胚葉由来（外胚葉ではない）</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C19</div>
+        <p>外胚葉由来はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 真皮<br>
+          b 内皮<br>
+          c 表皮<br>
+          d 腸上皮<br>
+          e 尿細管上皮
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">表皮は外胚葉由来</span>。真皮・内皮（血管内皮）は中胚葉由来、腸上皮は内胚葉由来、尿細管上皮は中胚葉由来。</p>
+      </div>
+
+      <h3>歯の組織と胚葉</h3>
+      <table>
+        <tr>
+          <th>組織</th>
+          <th>胚葉</th>
+          <th>由来</th>
+        </tr>
+        <tr>
+          <td><span class="key">エナメル質</span></td>
+          <td><span class="highlight">外胚葉</span></td>
+          <td>エナメル器（口腔上皮由来）</td>
+        </tr>
+        <tr>
+          <td><span class="key">象牙質</span></td>
+          <td>中胚葉（外胚葉性間葉）</td>
+          <td>歯乳頭</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯髄</span></td>
+          <td>中胚葉（外胚葉性間葉）</td>
+          <td>歯乳頭</td>
+        </tr>
+        <tr>
+          <td><span class="key">セメント質</span></td>
+          <td>中胚葉（外胚葉性間葉）</td>
+          <td>歯小嚢</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯根膜</span></td>
+          <td>中胚葉（外胚葉性間葉）</td>
+          <td>歯小嚢</td>
+        </tr>
+      </table>
+      <p class="note">エナメル質のみ外胚葉由来。他の歯の組織は中胚葉（外胚葉性間葉＝神経堤由来）。</p>
+
+    </div>
+  </div>
+</body>
+</html>

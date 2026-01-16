@@ -35,6 +35,7 @@ const FlashcardModule = (function() {
     isActive: false,     // 演習中かどうか
     completed: false,    // デッキ完了フラグ（完了後のセッション保存防止用）
     answeredInSession: 0, // セッション中の回答数（5問ごとのマイルストーン用）
+    combo: 0,            // 連続「覚えた」カウント（コンボシステム用）
     progress: {},        // { "topicId:index": { status, lastReview } }
     touchStartX: 0,
     touchStartY: 0,
@@ -1003,6 +1004,7 @@ const FlashcardModule = (function() {
       state.isActive = true;
       state.completed = false;
       state.answeredInSession = 0;
+    state.combo = 0;
 
       if (state.filteredCards.length === 0) {
         renderNoCardsMessage();
@@ -1078,6 +1080,7 @@ const FlashcardModule = (function() {
     state.isActive = true;
     state.completed = false;
     state.answeredInSession = 0;
+    state.combo = 0;
 
     // 常にシャッフル（覚えた順の固定出題を防ぐ）
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -1125,6 +1128,7 @@ const FlashcardModule = (function() {
     state.isActive = true;
     state.completed = false;
     state.answeredInSession = 0;
+    state.combo = 0;
 
     // セッション復元
     const session = getSession(state.currentTopicId);
@@ -1202,6 +1206,7 @@ const FlashcardModule = (function() {
     state.isActive = true;
     state.completed = false;
     state.answeredInSession = 0;
+    state.combo = 0;
 
     // 検索状態をクリア
     state.cardSearch.query = '';
@@ -1324,6 +1329,7 @@ const FlashcardModule = (function() {
     state.isActive = true;
     state.completed = false;
     state.answeredInSession = 0;
+    state.combo = 0;
 
     // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -1409,6 +1415,7 @@ const FlashcardModule = (function() {
     state.isActive = true;
     state.completed = false;
     state.answeredInSession = 0;
+    state.combo = 0;
 
     // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -2173,10 +2180,11 @@ const FlashcardModule = (function() {
     const cardContainer = document.getElementById('flashcard-card-container');
     cardContainer.addEventListener('click', flip);
 
-    // スワイプ
-    cardContainer.addEventListener('touchstart', onTouchStart, { passive: true });
-    cardContainer.addEventListener('touchmove', onTouchMove, { passive: true });
-    cardContainer.addEventListener('touchend', onTouchEnd, { passive: true });
+    // スワイプ（ステージ全体で判定 = カード + まとめエリア）
+    const stage = document.querySelector('.flashcard-stage');
+    stage.addEventListener('touchstart', onTouchStart, { passive: true });
+    stage.addEventListener('touchmove', onTouchMove, { passive: true });
+    stage.addEventListener('touchend', onTouchEnd, { passive: true });
 
     // 学習ボタン
     document.getElementById('flashcard-memorized-btn').addEventListener('click', markMemorized);
@@ -2794,6 +2802,8 @@ const FlashcardModule = (function() {
       flyCardOut('right', () => {
         next();
         bumpProgress();
+        state.combo++;
+        updateComboDisplay();
         showSnackbar('覚えたに分類');
       });
     } else {
@@ -2835,6 +2845,8 @@ const FlashcardModule = (function() {
       flyCardOut('left', () => {
         next();
         bumpProgress();
+        state.combo = Math.max(0, state.combo - 3);  // コンボ3減少
+        updateComboDisplay();
         showSnackbar('まもなく再出題');
       });
     } else {
@@ -2883,6 +2895,53 @@ const FlashcardModule = (function() {
       star.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
       document.body.appendChild(star);
       setTimeout(() => star.remove(), 700);
+    }
+  }
+
+  // === コンボ表示更新 ===
+  function updateComboDisplay() {
+    const progressBar = document.querySelector('.flashcard-progress-bar');
+    if (!progressBar) return;
+
+    // 既存クラスをリセット
+    progressBar.classList.remove('combo-lv1', 'combo-lv2', 'combo-lv3', 'combo-lv4');
+
+    if (state.combo >= 10) {
+      progressBar.classList.add('combo-lv4');
+      spawnComboStars(4);
+    } else if (state.combo >= 7) {
+      progressBar.classList.add('combo-lv3');
+      spawnComboStars(3);
+    } else if (state.combo >= 5) {
+      progressBar.classList.add('combo-lv2');
+      spawnComboStars(2);
+    } else if (state.combo >= 3) {
+      progressBar.classList.add('combo-lv1');
+    }
+  }
+
+  // === コンボ星エフェクト ===
+  function spawnComboStars(count) {
+    const progressBar = document.querySelector('.flashcard-progress-bar');
+    if (!progressBar) return;
+
+    const rect = progressBar.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const stars = ['⭐', '✨', '🌟'];
+
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement('span');
+      star.className = 'combo-star';
+      star.textContent = stars[Math.floor(Math.random() * stars.length)];
+      star.style.left = centerX + 'px';
+      star.style.top = centerY + 'px';
+      const angle = (Math.PI * 2 / count) * i + Math.random() * 0.3;
+      const distance = 30 + Math.random() * 20;
+      star.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+      star.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 500);
     }
   }
 
@@ -3232,6 +3291,7 @@ const FlashcardModule = (function() {
     state.isActive = true;
     state.completed = false;
     state.answeredInSession = 0;
+    state.combo = 0;
     state.isReviewMode = false;
     state.currentIndex = 0;
 

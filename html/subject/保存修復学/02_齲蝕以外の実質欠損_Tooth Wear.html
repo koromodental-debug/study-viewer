@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Tooth Wear - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / 齲蝕以外の実質欠損</span>
+    <h1>Tooth Wear（歯の損耗）</h1>
+    <div class="container">
+
+      <h2>Tooth Wearとは</h2>
+      <p><span class="highlight">齲蝕以外の要因</span>で歯の実質欠損を生じた疾患の総称。</p>
+
+      <h3>Tooth Wearに含まれるもの</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>原因</th>
+          <th>好発部位</th>
+        </tr>
+        <tr>
+          <td><span class="key">摩耗症</span></td>
+          <td>機械的外力（歯ブラシ等）</td>
+          <td>歯頸部（くさび状欠損）</td>
+        </tr>
+        <tr>
+          <td><span class="key">咬耗症</span></td>
+          <td>咬合接触の繰り返し</td>
+          <td>前歯切縁、臼歯咬合面</td>
+        </tr>
+        <tr>
+          <td><span class="key">アブフラクション</span></td>
+          <td>咬合力による応力集中</td>
+          <td>歯頸部</td>
+        </tr>
+        <tr>
+          <td><span class="key">酸蝕症</span></td>
+          <td>化学物質（酸）</td>
+          <td>酸と接触する部位</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Tooth Wearに含まれないもの</div>
+        <ul>
+          <li><span class="caution">齲蝕</span>（細菌による酸産生）</li>
+          <li><span class="caution">変色</span>（実質欠損ではない）</li>
+          <li><span class="caution">エナメル質形成不全</span>（発育異常）</li>
+        </ul>
+      </div>
+
+      <h2>酸蝕症（最頻出）</h2>
+      <p>化学物質によって歯の硬組織表面が脱灰されて生じる、広範な実質欠損。</p>
+
+      <h3>酸蝕症の原因</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>原因</th>
+          <th>好発部位</th>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">内因性</span></td>
+          <td><span class="highlight">胃食道逆流症</span></td>
+          <td rowspan="2">上顎前歯舌側面</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">反復性嘔吐</span>（摂食障害）</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">外因性</span></td>
+          <td>酸性食品・飲料（<span class="highlight">黒酢、炭酸飲料</span>、柑橘類）</td>
+          <td>口蓋側歯頸部</td>
+        </tr>
+        <tr>
+          <td>職業性（化学工場、メッキ工場）</td>
+          <td>前歯唇側</td>
+        </tr>
+      </table>
+
+      <h3>酸蝕症の治療</h3>
+      <ul>
+        <li><span class="key">食生活指導</span>（酸性食品の摂取制限）</li>
+        <li>原疾患の治療（胃食道逆流症、摂食障害）</li>
+        <li><span class="key">コンポジットレジン修復</span></li>
+        <li>広範囲の場合：歯冠修復、ベニア修復</li>
+      </ul>
+
+      <h2>咬耗症</h2>
+      <p>上下顎の<span class="key">咬合接触の繰り返し</span>によって生じる病的なすり減り。</p>
+
+      <h3>咬耗症の好発部位</h3>
+      <ul>
+        <li><span class="highlight">前歯切縁</span></li>
+        <li><span class="highlight">臼歯咬合面</span></li>
+        <li><span class="highlight">隣接面接触点</span></li>
+      </ul>
+      <p class="note">好発年齢：高齢者 ＞ 若年者、性差：男性 ＞ 女性</p>
+
+      <h2>摩耗症</h2>
+      <p>咬合以外の<span class="key">機械的外力</span>によって歯の表面が摩滅する病的なすり減り。</p>
+
+      <h3>摩耗症の分類</h3>
+      <ul>
+        <li><span class="key">習慣性摩耗</span>：歯ブラシの不正使用、パイプ常用者</li>
+        <li><span class="key">職業的摩耗</span>：ガラス職人、大工、靴工、美容師、管楽器奏者</li>
+        <li>義歯に関連した摩耗：クラスプによる支台歯の摩耗</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110A105</div>
+        <p>Tooth Wearに含まれるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 齲蝕<br>
+          b 酸蝕<br>
+          c 変色<br>
+          d 摩耗<br>
+          e エナメル質形成不全
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】Tooth Wearは齲蝕以外の要因による歯の実質欠損。</p>
+        <ul>
+          <li>a × 齲蝕は<span class="caution">細菌による酸産生</span>が原因</li>
+          <li>b ○ <span class="key">酸蝕</span>は化学物質による実質欠損</li>
+          <li>c × 変色は<span class="caution">実質欠損ではない</span></li>
+          <li>d ○ <span class="key">摩耗</span>は機械的外力による実質欠損</li>
+          <li>e × エナメル質形成不全は<span class="caution">発育異常</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A91</div>
+        <p>酸蝕症の原因はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 胃食道逆流症<br>
+          b フッ化物歯面塗布<br>
+          c 細菌による酸産生<br>
+          d 酸性食品の習慣的摂取<br>
+          e ビタミンAの過剰摂取
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ○ <span class="highlight">胃食道逆流症</span>は内因性の酸蝕原因</li>
+          <li>b × フッ化物は酸蝕の原因ではない</li>
+          <li>c × 細菌による酸産生は<span class="caution">齲蝕</span>の原因</li>
+          <li>d ○ <span class="highlight">酸性食品</span>は外因性の酸蝕原因</li>
+          <li>e × ビタミンA過剰は酸蝕と無関係</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D59</div>
+        <p>39歳の女性。上顎両側犬歯と第一小臼歯の冷水痛を主訴として来院した。拒食症の治療を受けている。自発痛はない。初診時の口腔内写真（別冊No.10）を別に示す。<br>考えられる原因はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D59.png" alt="別冊No.10">
+        </div>
+        <div class="choices">
+          a 齲蝕<br>
+          b 嘔吐<br>
+          c アブフラクション<br>
+          d エナメル質形成不全<br>
+          e フッ化物の過剰摂取
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">拒食症</span>の患者 → 反復性嘔吐による<span class="highlight">酸蝕症</span>を疑う。胃酸により上顎前歯舌側面が侵蝕される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105D19</div>
+        <p>54歳の男性。下顎臼歯部の一過性の冷水痛を主訴として来院した。数年前から気付いていたが放置していたという。初診時の口腔内写真（別冊No.19）を別に示す。<br>習慣的過剰摂取が疑われるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105D19.png" alt="別冊No.19">
+        </div>
+        <div class="choices">
+          a 牛乳<br>
+          b 緑茶<br>
+          c 黒酢<br>
+          d コーヒー<br>
+          e 炭酸飲料
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】酸蝕症の外因性原因として、<span class="highlight">黒酢</span>や<span class="highlight">炭酸飲料</span>などの酸性食品・飲料の習慣的摂取が挙げられる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D86</div>
+        <p>咬耗症〈attrition〉の生じやすい部位はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 前歯切端<br>
+          b 前歯歯頸部<br>
+          c 臼歯咬合面<br>
+          d 臼歯露出根面<br>
+          e 隣接面接触点部
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】咬耗症は<span class="key">咬合接触</span>で生じるため、接触する部位に好発。</p>
+        <ul>
+          <li>a ○ <span class="key">前歯切端</span>：切縁の咬合接触</li>
+          <li>b × 前歯歯頸部は<span class="caution">摩耗症</span>の好発部位</li>
+          <li>c ○ <span class="key">臼歯咬合面</span>：咬合接触</li>
+          <li>d × 臼歯露出根面は<span class="caution">根面齲蝕</span>の好発部位</li>
+          <li>e ○ <span class="key">隣接面接触点</span>：隣接歯との接触</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106D24</div>
+        <p>31歳の女性。臼歯部咬合面の舌感不良を主訴として来院した。2年前から気付いていたが、痛みがないため放置していたという。5年前から就寝前に黒酢を毎日摂取している。歯髄電気診に反応する。初診時の口腔内写真（別冊No.24）を別に示す。<br>適切な対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106D24.png" alt="別冊No.24">
+        </div>
+        <div class="choices">
+          a 咬合調整<br>
+          b 食事指導<br>
+          c 全部鋳造冠修復<br>
+          d セラミックインレー修復<br>
+          e コンポジットレジン修復
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】黒酢の習慣的摂取による酸蝕症。</p>
+        <ul>
+          <li>a × 咬合調整は咬耗症への対応</li>
+          <li>b ○ <span class="key">食事指導</span>で酸性食品の摂取を制限</li>
+          <li>c × 歯髄生活歯に全部鋳造冠は過剰</li>
+          <li>d × セラミックは酸蝕症には不適</li>
+          <li>e ○ <span class="key">CR修復</span>で審美的に修復</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

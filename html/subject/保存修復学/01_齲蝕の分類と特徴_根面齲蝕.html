@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>根面齲蝕 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / 齲蝕の分類と特徴</span>
+    <h1>根面齲蝕</h1>
+    <div class="container">
+
+      <h2>根面齲蝕とは</h2>
+      <p><span class="key">歯肉退縮</span>により露出した歯根面（セメント質・象牙質）に生じる齲蝕。<span class="highlight">高齢者に多い</span>のが特徴。</p>
+
+      <h3>エナメル質齲蝕との違い</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>根面齲蝕</th>
+          <th>エナメル質齲蝕</th>
+        </tr>
+        <tr>
+          <td>発生部位</td>
+          <td>セメント質・象牙質</td>
+          <td>エナメル質</td>
+        </tr>
+        <tr>
+          <td>好発年齢</td>
+          <td><span class="highlight">高齢者</span></td>
+          <td>全年齢</td>
+        </tr>
+        <tr>
+          <td>表層下脱灰</td>
+          <td><span class="caution">認めない</span></td>
+          <td>認める</td>
+        </tr>
+        <tr>
+          <td>齲蝕円錐</td>
+          <td><span class="caution">不明瞭</span></td>
+          <td>明瞭</td>
+        </tr>
+        <tr>
+          <td>進行形態</td>
+          <td>環状に拡大</td>
+          <td>円錐状に進行</td>
+        </tr>
+      </table>
+
+      <h2>発生要因</h2>
+      <ul>
+        <li><span class="key">歯肉退縮</span>による歯根面の露出</li>
+        <li><span class="key">唾液分泌量の減少</span>（加齢、薬剤性など）</li>
+        <li>口腔清掃不良</li>
+      </ul>
+
+      <h3>原因菌</h3>
+      <ul>
+        <li><em>Streptococcus mutans</em></li>
+        <li><em>Actinomyces viscosus</em></li>
+        <li><span class="highlight"><em>Lactobacillus</em></span>（国試で出題）</li>
+      </ul>
+
+      <h2>予防と治療</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">初期根面齲蝕への対応（頻出）</div>
+        <ul>
+          <li><span class="highlight">フッ化物塗布</span>（フッ化ナトリウムなど）が有効</li>
+          <li>再石灰化が期待できる</li>
+          <li>刷掃指導によるプラークコントロール</li>
+        </ul>
+      </div>
+
+      <h3>修復が必要な場合</h3>
+      <ul>
+        <li><span class="key">グラスアイオノマーセメント修復</span>が第一選択</li>
+        <li>フッ素徐放性があり、歯質接着性を持つ</li>
+        <li>コンポジットレジン修復も選択肢</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113D48</div>
+        <p>齲窩のない初期根面齲蝕への対応で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 暫間的間接覆髄<br>
+          b ポリアクリル酸塗布<br>
+          c レジンコーティング<br>
+          d フッ化ナトリウム塗布<br>
+          e コンポジットレジン修復
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】齲窩のない初期段階では、<span class="highlight">フッ化物塗布</span>による再石灰化促進が適切。修復処置は不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C119</div>
+        <p>根面齲蝕で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 疼痛が生じやすい。<br>
+          b 齲蝕円錐が明瞭である。<br>
+          c 小児期によくみられる。<br>
+          d Lactobacillusは原因菌の一つである。<br>
+          e 進行抑制にはフッ化物歯面塗布が有効である。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a × 象牙質が露出しているが、慢性経過で疼痛は生じにくい</li>
+          <li>b × 齲蝕円錐は<span class="caution">不明瞭</span>（環状に拡大）</li>
+          <li>c × <span class="caution">高齢者</span>に多い（歯肉退縮が前提）</li>
+          <li>d ○ <span class="key">Lactobacillus</span>は原因菌の一つ</li>
+          <li>e ○ <span class="highlight">フッ化物塗布</span>が有効</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B8</div>
+        <p>48歳の男性。上顎犬歯の着色を主訴として来院した。齲窩に探針を挿入できなかった。初診時の口腔内写真（別冊No.8）を別に示す。<br>この齲蝕病巣の特徴で正しいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106B8.png" alt="別冊No.8">
+        </div>
+        <div class="choices">
+          a 自浄域に生じる。<br>
+          b 歯肉退縮に伴う。<br>
+          c 表層下脱灰を認める。<br>
+          d 齲蝕円錐が明瞭である。<br>
+          e 再石灰化が期待できる。
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】歯頸部の着色で探針挿入不可 → 初期根面齲蝕</p>
+        <ul>
+          <li>a × 歯頸部は<span class="caution">停滞域</span></li>
+          <li>b ○ <span class="key">歯肉退縮</span>により歯根面が露出</li>
+          <li>c × 表層下脱灰は<span class="caution">エナメル質齲蝕</span>の特徴</li>
+          <li>d × 齲蝕円錐は不明瞭</li>
+          <li>e ○ 初期であれば<span class="key">再石灰化</span>が期待できる</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A97</div>
+        <p>65歳の男性。家族に前歯部の変色を指摘され来院した。初診時の口腔内写真（別冊No.11）を別に示す。<br>適切な対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105A97.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a 刷掃指導<br>
+          b 歯冠研磨<br>
+          c 歯肉切除術<br>
+          d グラスアイオノマーセメント修復<br>
+          e ダイレクトラミネートベニア修復
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】65歳・前歯部変色 → 根面齲蝕を疑う</p>
+        <ul>
+          <li>a ○ <span class="key">刷掃指導</span>でプラークコントロール</li>
+          <li>b × 歯冠研磨では齲蝕は治療できない</li>
+          <li>c × 歯肉切除は根面齲蝕の治療にならない</li>
+          <li>d ○ <span class="key">GI修復</span>はフッ素徐放性があり適応</li>
+          <li>e × ラミネートベニアは審美修復で齲蝕治療ではない</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

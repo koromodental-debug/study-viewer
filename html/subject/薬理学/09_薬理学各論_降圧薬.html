@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>降圧薬 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 80%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬理学各論</span>
+    <h1>降圧薬</h1>
+    <div class="container">
+
+      <h2>レニン-アンジオテンシン系（RAS）</h2>
+      <p>血圧調節の重要な経路であり、降圧薬の主要な標的となる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">レニン-アンジオテンシン系の流れ（国試頻出）</div>
+        <ul>
+          <li>腎臓（傍糸球体細胞）から<span class="key">レニン</span>分泌</li>
+          <li>レニンが<span class="key">アンジオテンシノーゲン</span>→<span class="key">アンジオテンシンⅠ</span>に変換</li>
+          <li><span class="highlight">ACE（アンジオテンシン変換酵素）</span>がアンジオテンシンⅠ→<span class="key">アンジオテンシンⅡ</span>に変換</li>
+          <li>アンジオテンシンⅡが<span class="key">AT1受容体</span>に結合</li>
+          <li>→ 血管収縮、アルドステロン分泌促進 → <span class="caution">血圧上昇</span></li>
+        </ul>
+      </div>
+
+      <h2>降圧薬の分類</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>代表的薬物</th>
+          <th>作用機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">Ca拮抗薬</span></td>
+          <td>ニフェジピン、アムロジピン、ベラパミル</td>
+          <td>血管平滑筋のCaチャネル阻害→血管拡張</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ACE阻害薬</span></td>
+          <td><span class="highlight">カプトプリル</span>、エナラプリル</td>
+          <td><span class="highlight">ACE阻害→AⅠ→AⅡ変換抑制</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">ARB</span></td>
+          <td>ロサルタン、バルサルタン、カンデサルタン</td>
+          <td>AⅡ受容体（AT1）阻害</td>
+        </tr>
+        <tr>
+          <td><span class="key">β遮断薬</span></td>
+          <td>プロプラノロール、アテノロール</td>
+          <td>β受容体阻害→心拍出量↓、レニン分泌↓</td>
+        </tr>
+        <tr>
+          <td><span class="key">α1遮断薬</span></td>
+          <td>プラゾシン、ドキサゾシン</td>
+          <td>α1受容体阻害→血管拡張</td>
+        </tr>
+        <tr>
+          <td><span class="key">利尿薬</span></td>
+          <td>フロセミド、ヒドロクロロチアジド</td>
+          <td>Na・水排泄促進→循環血液量↓</td>
+        </tr>
+      </table>
+
+      <h2>各薬物の詳細</h2>
+
+      <h3>ACE阻害薬</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>作用機序</td>
+          <td><span class="highlight">アンジオテンシン変換酵素（ACE）を阻害</span><br>アンジオテンシンⅠ→Ⅱへの変換を抑制</td>
+        </tr>
+        <tr>
+          <td>代表的薬物</td>
+          <td>カプトプリル、エナラプリル、リシノプリル</td>
+        </tr>
+        <tr>
+          <td>副作用</td>
+          <td><span class="caution">空咳</span>（ブラジキニン蓄積）、<span class="caution">味覚障害</span>、血管浮腫</td>
+        </tr>
+        <tr>
+          <td>禁忌</td>
+          <td>妊婦（催奇形性）</td>
+        </tr>
+      </table>
+
+      <h3>ARB（AⅡ受容体拮抗薬）</h3>
+      <ul>
+        <li>作用機序：アンジオテンシンⅡのAT1受容体への結合を阻害</li>
+        <li>ACE阻害薬と異なり<span class="key">空咳が少ない</span></li>
+        <li>代表的薬物：ロサルタン、バルサルタン、カンデサルタン</li>
+      </ul>
+
+      <h3>Ca拮抗薬</h3>
+      <ul>
+        <li>作用機序：血管平滑筋のL型Caチャネルを阻害→血管拡張</li>
+        <li>代表的薬物：ニフェジピン、アムロジピン、ベラパミル</li>
+        <li>副作用：<span class="caution">歯肉増殖症</span>、顔面紅潮、浮腫</li>
+      </ul>
+
+      <h3>β遮断薬</h3>
+      <ul>
+        <li>作用機序：心臓のβ1受容体阻害→心拍数・心拍出量↓</li>
+        <li>腎臓のβ1受容体阻害→レニン分泌↓</li>
+        <li>禁忌：<span class="caution">気管支喘息</span>（β2遮断による気管支収縮）</li>
+      </ul>
+
+      <h2>歯科で注意すべき副作用</h2>
+      <table>
+        <tr>
+          <th>副作用</th>
+          <th>原因薬物</th>
+        </tr>
+        <tr>
+          <td><span class="caution">歯肉増殖症</span></td>
+          <td>Ca拮抗薬（ニフェジピン、ベラパミル）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">味覚障害</span></td>
+          <td>ACE阻害薬（カプトプリル）</td>
+        </tr>
+        <tr>
+          <td>口腔乾燥症</td>
+          <td>利尿薬</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">111D37</div>
+        <p>血圧調節経路の模式図を示す。アの過程を抑制するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111D37_1.png" alt="血圧調節経路">
+        </div>
+        <div class="choices">
+          a β遮断薬<br>
+          b α1遮断薬<br>
+          c Ca拮抗薬<br>
+          d ACE阻害薬<br>
+          e AⅡ受容体拮抗薬
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】図の「ア」はACE（アンジオテンシン変換酵素）による<span class="highlight">アンジオテンシンⅠ→Ⅱへの変換</span>を示している。この過程を抑制するのは<span class="highlight">ACE阻害薬</span>である。</p>
+        <ul>
+          <li>β遮断薬：心臓β1受容体阻害、レニン分泌抑制</li>
+          <li>α1遮断薬：血管α1受容体阻害→血管拡張</li>
+          <li>Ca拮抗薬：血管平滑筋Caチャネル阻害→血管拡張</li>
+          <li><span class="highlight">ACE阻害薬：ACE阻害→AⅠ→AⅡ変換抑制</span></li>
+          <li>AⅡ受容体拮抗薬：AⅡのAT1受容体への結合を阻害</li>
+        </ul>
+      </div>
+
+      <h2>まとめ：降圧薬の作用点</h2>
+      <table>
+        <tr>
+          <th>薬物</th>
+          <th>作用点</th>
+        </tr>
+        <tr>
+          <td>β遮断薬</td>
+          <td>心臓（心拍出量↓）、腎臓（レニン分泌↓）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ACE阻害薬</span></td>
+          <td><span class="highlight">ACE（AⅠ→AⅡ変換）</span></td>
+        </tr>
+        <tr>
+          <td>ARB</td>
+          <td>AT1受容体（AⅡの作用部位）</td>
+        </tr>
+        <tr>
+          <td>Ca拮抗薬</td>
+          <td>血管平滑筋（Caチャネル）</td>
+        </tr>
+        <tr>
+          <td>α1遮断薬</td>
+          <td>血管平滑筋（α1受容体）</td>
+        </tr>
+        <tr>
+          <td>利尿薬</td>
+          <td>腎臓（Na・水排泄）</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

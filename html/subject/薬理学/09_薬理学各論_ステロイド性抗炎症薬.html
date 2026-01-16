@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ステロイド性抗炎症薬 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬理学各論</span>
+    <h1>ステロイド性抗炎症薬</h1>
+    <div class="container">
+
+      <h2>概要</h2>
+      <p>ステロイド性抗炎症薬は<span class="key">グルココルチコイド</span>（糖質コルチコイド）であり、副腎皮質から分泌されるホルモンまたはその合成誘導体である。NSAIDsより強力な抗炎症作用を持つ。</p>
+
+      <h2>代表的薬物</h2>
+      <table>
+        <tr>
+          <th>薬物名</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">ヒドロコルチゾン</span>（コルチゾール）</td>
+          <td>天然型、基準となる薬物</td>
+        </tr>
+        <tr>
+          <td><span class="key">プレドニゾロン</span></td>
+          <td>ヒドロコルチゾンの4倍の抗炎症作用</td>
+        </tr>
+        <tr>
+          <td><span class="key">デキサメタゾン</span></td>
+          <td>ヒドロコルチゾンの25倍の抗炎症作用、長時間作用型</td>
+        </tr>
+        <tr>
+          <td>ベタメタゾン</td>
+          <td>デキサメタゾンと同等の強さ</td>
+        </tr>
+      </table>
+
+      <h2>作用機序</h2>
+      <p>ステロイドは脂溶性のため細胞膜を通過し、<span class="key">細胞内受容体</span>に結合して核内へ移行する。DNA転写調節により様々なタンパク質の合成を誘導・抑制する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">NSAIDsとの作用点の違い</div>
+        <ul>
+          <li>ステロイド：<span class="highlight">リポコルチン誘導</span> → ホスホリパーゼA2阻害</li>
+          <li>→ アラキドン酸の遊離を抑制</li>
+          <li>→ <span class="highlight">PGsもLTsも産生抑制</span>（広範囲に炎症抑制）</li>
+          <li>NSAIDs：COXのみ阻害 → PGs産生抑制のみ</li>
+        </ul>
+      </div>
+
+      <h3>主な薬理作用</h3>
+      <ul>
+        <li><span class="key">抗炎症作用</span>：PGs・LTs産生抑制、白血球遊走抑制</li>
+        <li><span class="key">免疫抑制作用</span>：サイトカイン産生抑制、リンパ球減少</li>
+        <li>糖代謝作用：糖新生促進 → 血糖上昇</li>
+        <li>タンパク異化作用：筋萎縮、皮膚菲薄化</li>
+      </ul>
+
+      <h2>臨床適用</h2>
+      <table>
+        <tr>
+          <th>疾患カテゴリ</th>
+          <th>具体的疾患</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">膠原病</span></td>
+          <td><span class="highlight">関節リウマチ、全身性エリテマトーデス（SLE）</span></td>
+        </tr>
+        <tr>
+          <td>内分泌疾患</td>
+          <td>副腎機能不全（補充療法）</td>
+        </tr>
+        <tr>
+          <td>腎疾患</td>
+          <td>ネフローゼ症候群</td>
+        </tr>
+        <tr>
+          <td>呼吸器疾患</td>
+          <td>気管支喘息</td>
+        </tr>
+        <tr>
+          <td>皮膚疾患</td>
+          <td>各種皮膚炎、アトピー性皮膚炎</td>
+        </tr>
+        <tr>
+          <td>血液疾患</td>
+          <td>急性白血病、悪性リンパ腫</td>
+        </tr>
+        <tr>
+          <td>救急</td>
+          <td>急性循環不全（ショック）</td>
+        </tr>
+      </table>
+
+      <h2>副作用</h2>
+      <table>
+        <tr>
+          <th>系統</th>
+          <th>副作用</th>
+        </tr>
+        <tr>
+          <td>感染</td>
+          <td><span class="caution">易感染性</span>（免疫抑制による）</td>
+        </tr>
+        <tr>
+          <td>消化器</td>
+          <td>消化性潰瘍</td>
+        </tr>
+        <tr>
+          <td>代謝</td>
+          <td>糖尿病、脂質異常症</td>
+        </tr>
+        <tr>
+          <td>外見</td>
+          <td><span class="key">満月様顔貌</span>（ムーンフェイス）、中心性肥満</td>
+        </tr>
+        <tr>
+          <td>骨</td>
+          <td><span class="key">骨粗鬆症</span></td>
+        </tr>
+        <tr>
+          <td>精神</td>
+          <td>精神障害（うつ、躁状態）</td>
+        </tr>
+      </table>
+
+      <h2>離脱症候群（国試重要）</h2>
+      <div class="point-box">
+        <div class="point-box-title">ステロイド長期投与と副腎皮質機能不全</div>
+        <ul>
+          <li>長期投与 → <span class="highlight">視床下部-下垂体-副腎皮質系（HPA軸）が抑制</span></li>
+          <li>内因性コルチゾール分泌が低下</li>
+          <li>急激な中止 → <span class="caution">副腎皮質機能不全</span>（離脱症候群）</li>
+          <li>症状：倦怠感、食欲不振、低血圧、ショック</li>
+          <li>対策：<span class="highlight">漸減療法</span>（徐々に減量して中止）</li>
+        </ul>
+      </div>
+
+      <h2>禁忌</h2>
+      <ul>
+        <li>有効な抗菌薬のない感染症</li>
+        <li>血栓症</li>
+        <li>緑内障</li>
+        <li>高血圧症</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">113D56</div>
+        <p>治療薬の長期服用による副腎皮質機能不全を考慮すべきなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 末端肥大症<br>
+          b 関節リウマチ<br>
+          c Cushing症候群<br>
+          d 甲状腺機能亢進症<br>
+          e 全身性エリテマトーデス
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】<span class="highlight">関節リウマチ</span>と<span class="highlight">全身性エリテマトーデス（SLE）</span>は膠原病であり、治療に<span class="key">ステロイド</span>が使用される。ステロイドの長期投与はHPA軸を抑制し、急な中止で<span class="caution">副腎皮質機能不全</span>を起こすリスクがある。末端肥大症は成長ホルモン過剰、Cushing症候群はコルチゾール過剰、甲状腺機能亢進症は甲状腺ホルモン過剰であり、ステロイド長期投与の適応ではない。</p>
+      </div>
+
+      <h2>NSAIDsとステロイドの比較</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>NSAIDs</th>
+          <th>ステロイド</th>
+        </tr>
+        <tr>
+          <td>作用点</td>
+          <td>COX阻害</td>
+          <td>ホスホリパーゼA2阻害</td>
+        </tr>
+        <tr>
+          <td>抑制対象</td>
+          <td>PGsのみ</td>
+          <td>PGs + LTs</td>
+        </tr>
+        <tr>
+          <td>抗炎症作用</td>
+          <td>中等度</td>
+          <td>強力</td>
+        </tr>
+        <tr>
+          <td>免疫抑制</td>
+          <td>なし</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>長期使用</td>
+          <td>胃障害</td>
+          <td>副腎機能抑制</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

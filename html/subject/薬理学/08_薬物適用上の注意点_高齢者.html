@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>高齢者 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬物適用上の注意点</span>
+    <h1>高齢者</h1>
+    <div class="container">
+
+      <h2>高齢者の薬物動態の変化</h2>
+      <p>高齢者は加齢に伴って肝機能や腎機能が低下しており、薬物投与には細心の注意が必要。また、<span class="caution">年齢と代謝排泄能の低下は一律でなく個人差が大きい</span>。</p>
+
+      <h3>高齢者で増加するもの</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="key">体脂肪率</span></td>
+          <td>脂溶性薬物の分布容積が増加</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">生物学的半減期</span></td>
+          <td>薬物が体内に長く留まる → 蓄積しやすい</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">血中遊離型薬物量</span></td>
+          <td>アルブミン低下により作用増強</td>
+        </tr>
+        <tr>
+          <td><span class="caution">有害作用発現率</span></td>
+          <td>副作用が出やすい</td>
+        </tr>
+      </table>
+
+      <h3>高齢者で減少するもの</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">肝機能</span>（肝血流量↓）</td>
+          <td><span class="key">薬物代謝能</span>の低下</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">腎機能</span>（腎血流量↓）</td>
+          <td><span class="key">薬物排泄能</span>の低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">体内水分量</span></td>
+          <td>水溶性薬物の血中濃度が上昇</td>
+        </tr>
+        <tr>
+          <td><span class="key">血中アルブミン量</span></td>
+          <td>遊離型薬物が増加 → 作用増強</td>
+        </tr>
+        <tr>
+          <td><span class="key">全身クリアランス</span></td>
+          <td>薬物の消失が遅延</td>
+        </tr>
+      </table>
+
+      <h2>ポリファーマシー（多剤併用）</h2>
+      <p><span class="key">ポリファーマシー</span>とは、多くの薬剤が処方されている状態で、薬物有害事象のリスクが増加する。一般的に<span class="highlight">6種類以上</span>の薬剤併用で有害事象が増加。</p>
+
+      <h3>ポリファーマシーの要因</h3>
+      <ul>
+        <li><span class="highlight">併科受診</span>：複数の医療機関から処方</li>
+        <li><span class="highlight">多職種連携の欠如</span>：情報共有不足</li>
+        <li>処方カスケード：副作用に対してさらに薬を追加</li>
+      </ul>
+
+      <h3>ポリファーマシー患者への対応</h3>
+      <ul>
+        <li><span class="key">薬剤師に処方内容を相談</span>する</li>
+        <li>服薬の<span class="key">アドヒアランスを確認</span>する</li>
+        <li><span class="caution">勝手に休薬を指示してはいけない</span></li>
+      </ul>
+
+      <h2>服薬アドヒアランス</h2>
+      <p><span class="key">アドヒアランス</span>とは、患者が積極的に治療方針の決定に参加し、その決定に従って治療を受けること。</p>
+
+      <h3>高齢者でアドヒアランスが低下する要因</h3>
+      <ul>
+        <li><span class="highlight">摂食嚥下障害</span>：錠剤が飲み込めない</li>
+        <li><span class="highlight">認知機能低下</span>：飲み忘れ、重複服用</li>
+        <li><span class="highlight">ポリファーマシー</span>：薬が多すぎて管理困難</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">転倒リスクを高める薬物</div>
+        <ul>
+          <li><span class="highlight">利尿薬</span>：起立性低血圧、脱水</li>
+          <li><span class="highlight">抗不安薬</span>：ふらつき、筋弛緩作用</li>
+          <li>その他：降圧薬、睡眠薬、抗精神病薬など</li>
+        </ul>
+      </div>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">107C68</div>
+        <p>薬物動態のうち、高齢者で低下するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 薬物代謝能<br>
+          b 薬物排泄能<br>
+          c 血中遊離型薬物濃度<br>
+          d 水溶性薬物血中濃度<br>
+          e 脂溶性薬物分布容積
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】高齢者では<span class="highlight">肝機能低下</span>により<span class="key">薬物代謝能</span>が、<span class="highlight">腎機能低下</span>により<span class="key">薬物排泄能</span>が低下する。血中遊離型薬物濃度はアルブミン低下により<span class="caution">増加</span>。水溶性薬物血中濃度は体内水分量低下により<span class="caution">増加</span>。脂溶性薬物分布容積は体脂肪率増加により<span class="caution">増加</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A80</div>
+        <p>在宅療養におけるポリファーマシーの要因になるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 併科受診<br>
+          b 和漢薬への変更<br>
+          c 多職種連携の欠如<br>
+          d 服薬カレンダーの利用<br>
+          e 後発医薬品〈ジェネリック医薬品〉への変更
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】<span class="highlight">併科受診</span>は複数の医療機関から別々に薬が処方される原因。<span class="highlight">多職種連携の欠如</span>は情報共有不足により重複処方の原因となる。和漢薬への変更・後発医薬品への変更は薬の数を増やさない。服薬カレンダーはむしろ服薬管理に有効。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C49</div>
+        <p>服用により要介護高齢者の転倒リスクが高くなるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 利尿薬<br>
+          b 抗不安薬<br>
+          c 骨吸収抑制薬<br>
+          d 尿酸排泄促進薬<br>
+          e 直接トロンビン阻害薬
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">利尿薬</span>は脱水・電解質異常・起立性低血圧を起こし転倒リスクを高める。<span class="highlight">抗不安薬</span>（ベンゾジアゼピン系など）はふらつき・筋弛緩作用により転倒リスクを高める。骨吸収抑制薬は骨粗鬆症治療薬で転倒リスクとは無関係。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C63</div>
+        <p>高齢者において服薬アドヒアランスが低下する要因となるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 摂食嚥下障害<br>
+          b 認知機能低下<br>
+          c ポリファーマシー<br>
+          d 薬剤耐性菌の増加<br>
+          e 処方・調剤の一元管理
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】<span class="highlight">摂食嚥下障害</span>：錠剤が飲み込めない。<span class="highlight">認知機能低下</span>：飲み忘れ・重複服用。<span class="highlight">ポリファーマシー</span>：薬が多すぎて管理困難。薬剤耐性菌は細菌の問題でアドヒアランスとは無関係。処方・調剤の一元管理はむしろアドヒアランス向上に有効。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B53</div>
+        <p>在宅療養中の多剤併用〈ポリファーマシー〉患者に対する適切な対応はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 薬剤師に処方内容を相談する。<br>
+          b 主治医受診まで休薬を指示する。<br>
+          c 服薬のアドヒアランスを確認する。<br>
+          d 日々の体調で調節するよう指示する。<br>
+          e 訪問看護師に錠剤の粉砕を指示する。
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】<span class="key">薬剤師への相談</span>と<span class="key">アドヒアランスの確認</span>が適切。<span class="caution">勝手に休薬を指示してはいけない</span>（医師の判断が必要）。日々の体調で調節は危険。錠剤の粉砕は薬剤師の業務。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li>高齢者で<span class="highlight">低下</span>：薬物代謝能・排泄能（肝・腎機能↓）</li>
+          <li>高齢者で<span class="highlight">増加</span>：半減期・遊離型薬物・有害作用発現率</li>
+          <li>ポリファーマシーの要因：<span class="highlight">併科受診・多職種連携の欠如</span></li>
+          <li>転倒リスク：<span class="highlight">利尿薬・抗不安薬</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

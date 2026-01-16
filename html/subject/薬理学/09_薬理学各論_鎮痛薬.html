@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>鎮痛薬 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬理学各論</span>
+    <h1>鎮痛薬</h1>
+    <div class="container">
+
+      <h2>鎮痛薬の分類</h2>
+      <table>
+        <tr>
+          <th>大分類</th>
+          <th>小分類</th>
+          <th>代表的薬物</th>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="key">麻薬性鎮痛薬</span></td>
+          <td>オピオイド系鎮痛薬</td>
+          <td>モルヒネ、コデイン、フェンタニル、オキシコドン</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">麻薬拮抗性鎮痛薬</span></td>
+          <td><span class="highlight">ペンタゾシン</span>、ナロルフィン、ブトルファノール</td>
+        </tr>
+        <tr>
+          <td>麻薬拮抗薬</td>
+          <td>ナロキソン</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="key">解熱性鎮痛薬</span></td>
+          <td>酸性NSAIDs</td>
+          <td>アスピリン、ロキソプロフェン、ジクロフェナク</td>
+        </tr>
+        <tr>
+          <td>アニリン系</td>
+          <td><span class="key">アセトアミノフェン</span></td>
+        </tr>
+        <tr>
+          <td>ピリン系</td>
+          <td>スルピリン</td>
+        </tr>
+        <tr>
+          <td><span class="key">その他</span></td>
+          <td>神経障害性疼痛治療薬</td>
+          <td><span class="key">プレガバリン</span></td>
+        </tr>
+      </table>
+
+      <h2>麻薬性鎮痛薬（オピオイド系）</h2>
+
+      <h3>オピオイド系鎮痛薬</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>代表的薬物</td>
+          <td>モルヒネ、コデイン、ジヒドロコデイン、フェンタニル、レミフェンタニル、オキシコドン</td>
+        </tr>
+        <tr>
+          <td>作用機序</td>
+          <td><span class="key">オピオイド受容体（μ＞κ, δ）</span>に結合</td>
+        </tr>
+        <tr>
+          <td>特徴</td>
+          <td>鎮痛・鎮静作用、鎮咳作用、止瀉作用</td>
+        </tr>
+        <tr>
+          <td>臨床適用</td>
+          <td>がん性疼痛治療、全身麻酔の導入（レミフェンタニル）</td>
+        </tr>
+        <tr>
+          <td>副作用</td>
+          <td><span class="caution">呼吸抑制</span>、悪心・嘔吐、便秘</td>
+        </tr>
+        <tr>
+          <td>禁忌</td>
+          <td>重篤な呼吸抑制時、気管支喘息発作時</td>
+        </tr>
+        <tr>
+          <td>中毒</td>
+          <td>耐性（便秘は耐性が生じにくい）、依存症</td>
+        </tr>
+      </table>
+
+      <h3>麻薬拮抗性鎮痛薬（国試出題）</h3>
+      <div class="point-box">
+        <div class="point-box-title">ペンタゾシンの特徴</div>
+        <ul>
+          <li><span class="highlight">κ-オピオイド受容体</span>に結合 → 部分作用薬として作用</li>
+          <li>μ-オピオイド受容体作用薬との併用では<span class="key">部分拮抗薬</span>として作用</li>
+          <li>臨床適用：がん性疼痛治療</li>
+        </ul>
+      </div>
+
+      <h3>麻薬拮抗薬</h3>
+      <ul>
+        <li>代表的薬物：<span class="key">ナロキソン</span></li>
+        <li>作用機序：μ-オピオイド受容体に結合（<span class="key">完全拮抗薬</span>）</li>
+        <li>臨床適用：オピオイドによる急性中毒（<span class="caution">呼吸抑制</span>）の解毒</li>
+      </ul>
+
+      <h2>解熱性鎮痛薬（非オピオイド鎮痛薬）</h2>
+
+      <h3>アセトアミノフェン（アニリン系）</h3>
+      <div class="point-box">
+        <div class="point-box-title">アセトアミノフェンの特徴</div>
+        <ul>
+          <li>視床や大脳皮質における疼痛閾値を上昇（<span class="key">中枢性鎮痛作用</span>）</li>
+          <li>末梢のCOX阻害作用は<span class="caution">ほとんどない</span></li>
+          <li>NSAIDsのような抗炎症作用はないが、解熱・鎮痛作用は強い</li>
+          <li><span class="highlight">小児への適用が可能</span>（NSAIDsはReye症候群のリスク）</li>
+          <li>副作用：過剰投与で<span class="caution">肝障害</span>（解毒：アセチルシステイン）</li>
+        </ul>
+      </div>
+
+      <h3>神経障害性疼痛治療薬</h3>
+      <ul>
+        <li>代表的薬物：<span class="key">プレガバリン</span></li>
+        <li>作用機序：シナプス前終末のCa<sup>2+</sup>チャネルに結合し、神経伝達物質の遊離を抑制</li>
+        <li>臨床適用：帯状疱疹後神経痛、糖尿病性末梢神経障害</li>
+        <li>副作用：めまい、傾眠</li>
+      </ul>
+
+      <h2>WHOの3段階除痛ラダー（がん性疼痛治療）</h2>
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>使用薬物</th>
+        </tr>
+        <tr>
+          <td>第1段階</td>
+          <td>NSAIDsやアセトアミノフェン</td>
+        </tr>
+        <tr>
+          <td>第2段階</td>
+          <td>＋弱いオピオイド（コデイン、ジヒドロコデイン）</td>
+        </tr>
+        <tr>
+          <td>第3段階</td>
+          <td>強いオピオイド（モルヒネ、オキシコドン、フェンタニル）</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A24</div>
+        <p>鎮痛作用をもつ薬物とその分類の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a セレコキシブ ーーーーー COX-1選択的阻害薬<br>
+          b プレガバリン ーーーーー 麻薬性鎮痛薬<br>
+          c ペンタゾシン ーーーーー 麻薬拮抗性鎮痛薬<br>
+          d チアラミド塩酸塩 ーーー 酸性NSAIDs<br>
+          e アセトアミノフェン ーー 塩基性NSAIDs
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】各選択肢の正誤：</p>
+        <ul>
+          <li>a：セレコキシブは<span class="caution">COX-2</span>選択的阻害薬（×COX-1）</li>
+          <li>b：プレガバリンは<span class="key">神経障害性疼痛治療薬</span>（×麻薬性鎮痛薬）</li>
+          <li>c：<span class="highlight">ペンタゾシンは麻薬拮抗性鎮痛薬</span>（○正解）</li>
+          <li>d：チアラミドは<span class="caution">塩基性</span>NSAIDs（×酸性）</li>
+          <li>e：アセトアミノフェンは<span class="key">アニリン系鎮痛薬</span>（×塩基性NSAIDs）</li>
+        </ul>
+      </div>
+
+      <h2>まとめ：鎮痛薬の選択</h2>
+      <table>
+        <tr>
+          <th>状況</th>
+          <th>選択薬</th>
+        </tr>
+        <tr>
+          <td>一般的な疼痛（歯痛、術後痛）</td>
+          <td>NSAIDs、アセトアミノフェン</td>
+        </tr>
+        <tr>
+          <td>小児の発熱・疼痛</td>
+          <td><span class="highlight">アセトアミノフェン</span>（NSAIDsは原則禁忌）</td>
+        </tr>
+        <tr>
+          <td>胃潰瘍患者</td>
+          <td>アセトアミノフェン（NSAIDsは禁忌）</td>
+        </tr>
+        <tr>
+          <td>がん性疼痛</td>
+          <td>WHOラダーに従う（オピオイド）</td>
+        </tr>
+        <tr>
+          <td>神経障害性疼痛</td>
+          <td>プレガバリン</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

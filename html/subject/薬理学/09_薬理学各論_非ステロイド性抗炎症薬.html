@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>非ステロイド性抗炎症薬 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬理学各論</span>
+    <h1>非ステロイド性抗炎症薬（NSAIDs）</h1>
+    <div class="container">
+
+      <h2>NSAIDsの分類</h2>
+      <p>NSAIDsは<span class="key">酸性NSAIDs</span>と<span class="key">塩基性NSAIDs</span>に大別される。酸性NSAIDsはCOXを阻害してプロスタグランジン産生を抑制する。</p>
+
+      <h3>酸性NSAIDs</h3>
+      <table>
+        <tr>
+          <th>系統</th>
+          <th>代表的薬物</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>サリチル酸系</td>
+          <td><span class="highlight">アスピリン</span>、エテンザミド</td>
+          <td>COXを不可逆的に阻害</td>
+        </tr>
+        <tr>
+          <td>フェナム系</td>
+          <td>メフェナム酸</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>フェニル酢酸系</td>
+          <td><span class="key">ジクロフェナク</span>、フェルビナク</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>インドール酢酸系</td>
+          <td><span class="key">インドメタシン</span>、アセメタシン*、スリンダク*</td>
+          <td>*プロドラッグ</td>
+        </tr>
+        <tr>
+          <td>プロピオン酸系</td>
+          <td>イブプロフェン、<span class="highlight">ロキソプロフェン</span>*</td>
+          <td>*プロドラッグ</td>
+        </tr>
+        <tr>
+          <td>オキシカム系</td>
+          <td>ピロキシカム、メロキシカム</td>
+          <td></td>
+        </tr>
+      </table>
+
+      <h3>COX-2選択的阻害薬・塩基性NSAIDs</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>代表的薬物</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>コキシブ系（COX-2選択的）</td>
+          <td><span class="key">セレコキシブ</span></td>
+          <td>胃障害が少ない</td>
+        </tr>
+        <tr>
+          <td>塩基性NSAIDs</td>
+          <td>チアラミド、エモルファゾン</td>
+          <td>COX阻害作用なし、作用弱い</td>
+        </tr>
+      </table>
+
+      <h2>作用機序</h2>
+      <p>酸性NSAIDsは<span class="key">シクロオキシゲナーゼ（COX）</span>を阻害し、プロスタグランジン（PGs）産生を抑制することで、<span class="highlight">解熱・鎮痛・抗炎症作用</span>を発現する。</p>
+
+      <h3>COX-1とCOX-2の違い</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>COX-1</th>
+          <th>COX-2</th>
+        </tr>
+        <tr>
+          <td>分布</td>
+          <td>全身に常時分布</td>
+          <td>炎症部位に発現誘導</td>
+        </tr>
+        <tr>
+          <td>役割</td>
+          <td>生体の恒常性維持（胃酸分泌抑制、腎血流維持、止血）</td>
+          <td>炎症局所でPGs産生</td>
+        </tr>
+        <tr>
+          <td>阻害時の影響</td>
+          <td><span class="caution">胃障害、腎障害</span></td>
+          <td>抗炎症作用</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">アスピリンの特徴（国試頻出）</div>
+        <ul>
+          <li>COX-1を<span class="highlight">不可逆的にアセチル化</span>（他のNSAIDsは可逆的）</li>
+          <li>低用量で血小板凝集を抑制 → <span class="key">血栓症の再発予防</span>に使用</li>
+          <li>血小板は核がないため新しいCOXを合成できない → 効果が持続</li>
+        </ul>
+      </div>
+
+      <h2>アスピリン喘息（NSAIDs過敏喘息）</h2>
+      <p>アスピリンのCOX阻害によって、アラキドン酸の<span class="key">リポキシゲナーゼ（LOX）経路</span>へのシフトが起こる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">アスピリン喘息のメカニズム（国試頻出）</div>
+        <ul>
+          <li><span class="highlight">COX-1阻害</span> → アラキドン酸がLOX経路へシフト</li>
+          <li><span class="highlight">ロイコトリエン（LTC4・LTD4）産生増加</span></li>
+          <li>気管支収縮作用 → 喘息発作</li>
+          <li><span class="caution">アスピリン以外のNSAIDsでも起こる</span></li>
+        </ul>
+      </div>
+
+      <h2>臨床適用と副作用</h2>
+
+      <h3>適応</h3>
+      <ul>
+        <li>疼痛性疾患：術後痛、歯痛、頭痛、月経痛</li>
+        <li>発熱性疾患</li>
+        <li>関節リウマチ、変形性関節症</li>
+      </ul>
+
+      <h3>副作用・禁忌</h3>
+      <table>
+        <tr>
+          <th>副作用</th>
+          <th>禁忌</th>
+        </tr>
+        <tr>
+          <td>消化性潰瘍<br>腎障害<br>喘息発作<br>出血傾向</td>
+          <td>消化性潰瘍<br>妊婦（胎児の動脈管閉鎖）<br><span class="caution">アスピリン喘息</span><br>小児のウイルス性疾患（Reye症候群）</td>
+        </tr>
+      </table>
+
+      <h3>薬物相互作用</h3>
+      <table>
+        <tr>
+          <th>併用薬</th>
+          <th>影響</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td>ワルファリン</td>
+          <td><span class="caution">出血傾向増強</span></td>
+          <td>血漿タンパク結合の競合</td>
+        </tr>
+        <tr>
+          <td>ACE阻害薬・利尿薬</td>
+          <td>降圧作用減弱</td>
+          <td>腎でのPGs産生低下</td>
+        </tr>
+        <tr>
+          <td>ニューキノロン系抗菌薬</td>
+          <td><span class="caution">けいれん誘発</span></td>
+          <td>GABA受容体遮断作用増強</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">115A60</div>
+        <p>酸性NSAIDsで誘発される喘息発作に関与するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a COX-1阻害<br>
+          b 抗原抗体反応<br>
+          c オプソニン効果<br>
+          d 抗ヒスタミン作用<br>
+          e ロイコトリエンの増加
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】アスピリン喘息は<span class="highlight">COX-1阻害</span>によりアラキドン酸がLOX経路へシフトし、<span class="highlight">ロイコトリエン（LTC4・LTD4）が増加</span>することで気管支収縮が起こる。抗原抗体反応（I型アレルギー）ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A107</div>
+        <p>リン脂質の代謝経路の模式図を示す。酵素①を不可逆的にアセチル化するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109A107_1.png" alt="リン脂質代謝経路">
+        </div>
+        <div class="choices">
+          a アスピリン<br>
+          b インドメタシン<br>
+          c アセトアミノフェン<br>
+          d ジクロフェナクナトリウム<br>
+          e ロキソプロフェンナトリウム水和物
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">アスピリン</span>はCOXを<span class="highlight">不可逆的にアセチル化</span>する唯一のNSAIDsである。他のNSAIDs（インドメタシン、ジクロフェナク、ロキソプロフェン）は可逆的に阻害する。アセトアミノフェンは中枢性に作用し、末梢のCOX阻害作用は弱い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D63</div>
+        <p>アスピリンの作用の持続時間が延長するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肝硬変<br>
+          b 狭心症<br>
+          c 血友病<br>
+          d 脳血管型認知症<br>
+          e 慢性閉塞性肺疾患〈COPD〉
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">肝硬変</span>では肝機能低下によりアスピリンの代謝が遅延し、作用持続時間が延長する。血友病は凝固因子の欠乏であり、アスピリンの代謝には関与しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A53</div>
+        <p>医療行為と薬剤の組合せで禁忌となるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 小児への鎮痛薬投与－－－－－アセトアミノフェン<br>
+          b 高血圧症患者への局所麻酔薬注射－－－－－プロピトカイン塩酸塩（フェリプレシン含有）<br>
+          c 気管支喘息患者への局所麻酔薬注射－－－－－リドカイン塩酸塩（アドレナリン含有）<br>
+          d アスピリン喘息患者への鎮痛薬投与－－－－－ロキソプロフェンナトリウム水和物<br>
+          e 小児の集中治療における人工呼吸中の鎮静－－－－－プロポフォール
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】<span class="caution">アスピリン喘息患者にはロキソプロフェン（NSAIDs）は禁忌</span>である。アスピリン喘息はCOX-1阻害によるため、アスピリン以外のNSAIDsでも喘息発作を誘発する。小児へのプロポフォール長期投与はプロポフォール注入症候群のリスクがあり禁忌。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

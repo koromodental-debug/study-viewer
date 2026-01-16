@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抗菌薬 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬理学各論</span>
+    <h1>抗菌薬</h1>
+    <div class="container">
+
+      <h2>抗菌薬の作用点による分類</h2>
+      <table>
+        <tr>
+          <th>作用点</th>
+          <th>抗菌薬</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">細胞壁合成阻害</span></td>
+          <td><span class="highlight">β-ラクタム系</span>（ペニシリン系、セフェム系、カルバペネム系）<br>グリコペプチド系（バンコマイシン）</td>
+          <td>殺菌的</td>
+        </tr>
+        <tr>
+          <td><span class="key">タンパク質合成阻害</span></td>
+          <td>マクロライド系、テトラサイクリン系、<br>アミノグリコシド系、クリンダマイシン</td>
+          <td>静菌的<br>（アミノグリコシドは殺菌的）</td>
+        </tr>
+        <tr>
+          <td><span class="key">核酸合成阻害</span></td>
+          <td><span class="highlight">ニューキノロン系</span></td>
+          <td>殺菌的</td>
+        </tr>
+        <tr>
+          <td><span class="key">葉酸合成阻害</span></td>
+          <td>サルファ剤、ST合剤</td>
+          <td>静菌的</td>
+        </tr>
+      </table>
+
+      <h2>PK/PD理論（時間依存性 vs 濃度依存性）</h2>
+
+      <h3>時間依存性抗菌薬（%T>MIC）</h3>
+      <ul>
+        <li>MIC以上の血中濃度を<span class="highlight">長時間維持</span>すると効果的</li>
+        <li>投与法：<span class="key">投与回数を多く</span>（1日3回など）</li>
+        <li>代表薬：<span class="highlight">β-ラクタム系</span>、マクロライド系、テトラサイクリン系、グリコペプチド系</li>
+      </ul>
+
+      <h3>濃度依存性抗菌薬（Cmax>MIC）</h3>
+      <ul>
+        <li><span class="highlight">高い血中濃度</span>を達成すると効果的</li>
+        <li>投与法：<span class="key">1回投与量を多く</span>（投与間隔は広げてよい）</li>
+        <li>代表薬：<span class="highlight">ニューキノロン系、アミノグリコシド系</span></li>
+        <li>PAE（post-antibiotic effect）が強い</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">歯科領域での抗菌薬選択</div>
+        <ul>
+          <li><span class="highlight">第一選択薬：β-ラクタム系</span>（アモキシシリンなど）</li>
+          <li>ペニシリンアレルギー時：<span class="key">マクロライド系</span>または<span class="key">クリンダマイシン</span></li>
+          <li><span class="caution">セフェム系も交差アレルギーの可能性あり</span></li>
+        </ul>
+      </div>
+
+      <h2>各抗菌薬の特徴</h2>
+
+      <h3>ニューキノロン系</h3>
+      <ul>
+        <li>作用機序：DNAジャイレース阻害 → DNA合成阻害</li>
+        <li><span class="caution">妊婦・小児に禁忌</span>（関節異常）</li>
+        <li>Al・Mg含有制酸薬、鉄剤、牛乳で吸収低下</li>
+        <li><span class="caution">NSAIDsとの併用でけいれん誘発</span></li>
+      </ul>
+
+      <h3>アミノグリコシド系</h3>
+      <ul>
+        <li>消化管吸収されない → 注射投与</li>
+        <li>副作用：<span class="caution">腎障害、第VIII脳神経障害（難聴）</span></li>
+        <li>緑膿菌に有効</li>
+      </ul>
+
+      <h3>副作用：菌交代現象</h3>
+      <p>抗菌薬投与により常在菌叢が乱れ、<span class="key">Clostridioides difficile</span>が増殖 → <span class="highlight">偽膜性大腸炎</span>（下痢）</p>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">113B43</div>
+        <p>歯性感染症の第一選択薬はどれか。1つ選べ。</p>
+        <div class="choices">
+          a アモキシシリン水和物<br>
+          b ゲンタマイシン硫酸塩<br>
+          c テトラサイクリン塩酸塩<br>
+          d レボフロキサシン水和物<br>
+          e ファロペネムナトリウム水和物
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】歯科領域の感染症には<span class="highlight">β-ラクタム系抗菌薬</span>が第一選択。<span class="key">アモキシシリン</span>はペニシリン系で、口腔内嫌気性菌に有効。ゲンタマイシン（アミノグリコシド系）は緑膿菌用、レボフロキサシン（ニューキノロン系）は尿路・呼吸器感染症用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C42</div>
+        <p>濃度依存性抗菌薬はどれか。2つ選べ。</p>
+        <div class="choices">
+          a セフェム系<br>
+          b カルバペネム系<br>
+          c ニューキノロン系<br>
+          d グリコペプチド系<br>
+          e アミノグリコシド系
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】<span class="highlight">濃度依存性</span>抗菌薬は<span class="key">ニューキノロン系</span>と<span class="key">アミノグリコシド系</span>。1回投与量を多くし、高い血中濃度（Cmax>MIC）を達成することで効果を発揮。セフェム系、カルバペネム系、グリコペプチド系は<span class="caution">時間依存性</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C80</div>
+        <p>ニューキノロン系抗菌薬で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 時間依存性抗菌薬である。<br>
+          b 妊婦への投与は禁忌である。<br>
+          c 細菌の細胞壁合成を阻害する。<br>
+          d 細菌のタンパク質合成を阻害する。<br>
+          e 非ステロイド性抗炎症薬と併用する。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】ニューキノロン系は<span class="highlight">妊婦・小児に禁忌</span>（関節異常）。濃度依存性（×時間依存性）。核酸合成阻害（×細胞壁、×タンパク質）。<span class="caution">NSAIDsとの併用でけいれん誘発</span>（×併用する）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D51</div>
+        <p>人工弁置換術を受けた患者の抜歯に際し、経口抗菌薬を予防投与することとした。ペニシリンアレルギーの既往がある。適切なのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a クラリスロマイシン<br>
+          b アモキシシリン水和物<br>
+          c アジスロマイシン水和物<br>
+          d クリンダマイシン塩酸塩<br>
+          e セフカペン ピボキシル塩酸塩水和物
+        </div>
+        <div class="answer">正解：a, c, d</div>
+        <p>【解説】ペニシリンアレルギー患者には<span class="highlight">マクロライド系</span>（クラリスロマイシン、アジスロマイシン）または<span class="highlight">クリンダマイシン</span>を使用。アモキシシリン（ペニシリン系）は<span class="caution">禁忌</span>。セフカペン（セフェム系）も<span class="caution">交差アレルギーの可能性</span>があり避ける。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C86</div>
+        <p>セフェム系抗菌薬を投与した患者に菌交代現象でみられる症状はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 下痢<br>
+          b 頭痛<br>
+          c 発疹<br>
+          d 息切れ<br>
+          e 顔面浮腫
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="key">菌交代現象</span>は抗菌薬により常在菌叢が乱れ、<span class="key">C. difficile</span>が増殖して<span class="highlight">偽膜性大腸炎</span>を起こす。主症状は<span class="highlight">下痢</span>。発疹・顔面浮腫はアレルギー反応。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li>歯科の第一選択：<span class="highlight">β-ラクタム系</span>（アモキシシリン）</li>
+          <li>ペニシリンアレルギー：<span class="highlight">マクロライド系・クリンダマイシン</span></li>
+          <li>濃度依存性：<span class="highlight">ニューキノロン系・アミノグリコシド系</span></li>
+          <li>ニューキノロン系：<span class="caution">妊婦禁忌、NSAIDs併用でけいれん</span></li>
+          <li>菌交代現象：偽膜性大腸炎 → <span class="highlight">下痢</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

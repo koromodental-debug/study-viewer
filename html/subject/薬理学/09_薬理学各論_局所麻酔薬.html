@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>局所麻酔薬 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 80%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬理学各論</span>
+    <h1>局所麻酔薬</h1>
+    <div class="container">
+
+      <h2>局所麻酔薬の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>代表的薬物</th>
+          <th>代謝</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">エステル型</span></td>
+          <td>プロカイン、テトラカイン、コカイン</td>
+          <td>血漿コリンエステラーゼ</td>
+          <td><span class="caution">アレルギー多い</span>（PABA産生）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">アミド型</span></td>
+          <td><span class="highlight">リドカイン</span>、メピバカイン、プロピトカイン、ブピバカイン</td>
+          <td>肝臓</td>
+          <td>アレルギー少ない、歯科で多用</td>
+        </tr>
+      </table>
+
+      <h2>作用機序（国試頻出）</h2>
+      <p>局所麻酔薬は<span class="key">電位依存性Naチャネル</span>を阻害し、活動電位の発生を抑制して神経伝導を遮断する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">イオン型・非イオン型の役割</div>
+        <ul>
+          <li>局所麻酔薬は<span class="key">弱塩基性薬物</span>（pKa 7.5〜9.0）</li>
+          <li><span class="highlight">非イオン型（塩基型）</span>：脂溶性 → <span class="highlight">細胞膜を透過</span></li>
+          <li><span class="highlight">イオン型（酸型）</span>：細胞内でNaチャネルに結合 → <span class="highlight">内側から阻害</span></li>
+          <li>炎症部位（pH低下）では非イオン型が減少 → <span class="caution">効果減弱</span></li>
+        </ul>
+      </div>
+
+      <h3>作用機序の流れ</h3>
+      <table>
+        <tr>
+          <th>ステップ</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>局所麻酔薬を組織に投与</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><span class="highlight">非イオン型</span>が細胞膜を透過</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>細胞内で<span class="highlight">イオン型</span>に変化</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Naチャネルを<span class="key">内側から阻害</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Na<sup>+</sup>流入抑制 → 活動電位発生抑制</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>神経伝導遮断 → 麻酔効果</td>
+        </tr>
+      </table>
+
+      <h2>血管収縮薬の添加</h2>
+      <p>局所麻酔薬に血管収縮薬を添加することで、麻酔効果を高める。</p>
+
+      <table>
+        <tr>
+          <th>血管収縮薬</th>
+          <th>作用機序</th>
+          <th>効果</th>
+        </tr>
+        <tr>
+          <td><span class="key">アドレナリン</span></td>
+          <td>α1受容体刺激→血管収縮</td>
+          <td>吸収遅延、作用延長、出血減少、中毒防止</td>
+        </tr>
+        <tr>
+          <td><span class="key">フェリプレシン</span></td>
+          <td>V1受容体刺激→血管収縮</td>
+          <td>心臓への影響少ない、<span class="highlight">高血圧患者に使用可能</span></td>
+        </tr>
+      </table>
+
+      <h2>各薬物の特徴</h2>
+
+      <h3>リドカイン</h3>
+      <ul>
+        <li>最も汎用されるアミド型局所麻酔薬</li>
+        <li>表面麻酔、浸潤麻酔、伝達麻酔に使用</li>
+        <li>抗不整脈薬としても使用（クラスⅠb）</li>
+      </ul>
+
+      <h3>プロピトカイン（フェリプレシン含有）</h3>
+      <ul>
+        <li>高血圧患者、心疾患患者に使用</li>
+        <li>アドレナリン含有製剤より心臓への影響が少ない</li>
+      </ul>
+
+      <h2>副作用・中毒</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td>中枢神経系</td>
+          <td>興奮（多弁、不安）→ <span class="caution">けいれん</span> → 抑制</td>
+        </tr>
+        <tr>
+          <td>心血管系</td>
+          <td>血圧低下、徐脈、心停止</td>
+        </tr>
+        <tr>
+          <td>アレルギー</td>
+          <td>蕁麻疹、血管浮腫、アナフィラキシー（エステル型に多い）</td>
+        </tr>
+      </table>
+
+      <h2>薬物相互作用</h2>
+      <ul>
+        <li><span class="caution">抗うつ薬（三環系、SNRI）</span>：アドレナリンの作用増強 → 血圧上昇、頻脈</li>
+        <li>β遮断薬：アドレナリンのα作用が優位に → 血圧上昇</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">109C129</div>
+        <p>リドカイン塩酸塩（イオン型⇄非イオン型）の作用機序の模式図（別冊No.30）を別に示す。正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C129_1.png" alt="リドカインの作用機序">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】局所麻酔薬の作用機序：</p>
+        <ul>
+          <li><span class="highlight">非イオン型（塩基型）</span>：脂溶性が高く、<span class="highlight">細胞膜を透過</span>できる</li>
+          <li>細胞内に入ると、pHが低いため<span class="highlight">イオン型（酸型）</span>に変化</li>
+          <li>イオン型がNaチャネルの<span class="key">細胞内側</span>に結合して阻害</li>
+          <li>図の「ア」は非イオン型が膜を透過し、イオン型に変化してNaチャネルを内側から阻害する正しい経路を示している</li>
+        </ul>
+      </div>
+
+      <h2>まとめ</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>作用部位</td>
+          <td>電位依存性Naチャネル（内側から阻害）</td>
+        </tr>
+        <tr>
+          <td>膜透過</td>
+          <td>非イオン型（塩基型）が透過</td>
+        </tr>
+        <tr>
+          <td>チャネル阻害</td>
+          <td>イオン型（酸型）が結合</td>
+        </tr>
+        <tr>
+          <td>炎症部位</td>
+          <td>pH低下→非イオン型減少→効果減弱</td>
+        </tr>
+        <tr>
+          <td>歯科で多用</td>
+          <td>リドカイン（アドレナリン含有）</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>エナメル質齲蝕 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / 齲蝕の分類と特徴</span>
+    <h1>エナメル質齲蝕</h1>
+    <div class="container">
+
+      <h2>齲蝕発症のメカニズム</h2>
+      <p>齲蝕は多因子疾患であり、<span class="key">Keyesの3つの輪</span>（歯・細菌・基質）に<span class="key">時間</span>を加えた<span class="key">Newbrunの4つの輪</span>で説明される。</p>
+
+      <h3>発症の流れ</h3>
+      <ul>
+        <li>唾液由来の糖タンパクによりエナメル質表面に<span class="key">ペリクル</span>形成</li>
+        <li>齲蝕原因菌（<em>S. mutans</em>など）がバイオフィルム形成</li>
+        <li>糖質（主にスクロース）から乳酸などの酸を産生</li>
+        <li>pHが<span class="highlight">臨界pH（約5.7）</span>以下になると脱灰開始</li>
+      </ul>
+
+      <h2>初期エナメル質齲蝕</h2>
+      <p>初期エナメル質齲蝕は<span class="highlight">白斑</span>あるいは褐色の着色斑として認められる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">診査のポイント</div>
+        <ul>
+          <li><span class="highlight">乾燥状態での視診</span>が重要</li>
+          <li>探針の圧入は表層を破壊するため避ける</li>
+          <li>齲窩形成前の段階（C1未満）</li>
+        </ul>
+      </div>
+
+      <h2>表層下脱灰</h2>
+      <p>エナメル質齲蝕の初期段階では、<span class="key">表層下脱灰</span>（subsurface lesion）が特徴的に見られる。</p>
+
+      <h3>表層下脱灰の特徴</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>表層の状態</td>
+          <td><span class="highlight">表層10〜20μmは再石灰化により維持</span></td>
+        </tr>
+        <tr>
+          <td>病変部</td>
+          <td>表層下でミネラルが溶出（脱灰）</td>
+        </tr>
+        <tr>
+          <td>外観</td>
+          <td>不透明（白斑として視認）</td>
+        </tr>
+        <tr>
+          <td>齲窩</td>
+          <td><span class="caution">形成されていない</span></td>
+        </tr>
+        <tr>
+          <td>可逆性</td>
+          <td>適切な対応で治癒可能</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">なぜ表層は維持されるのか</div>
+        <p>唾液中のカルシウム・リン酸イオンにより、最表層は常に<span class="key">再石灰化</span>を受けている。一方、表層下は唾液の到達が困難なため脱灰が進行する。</p>
+      </div>
+
+      <h2>エナメル質齲蝕の進行</h2>
+      <ul>
+        <li>脱灰と再石灰化のバランスが脱灰に傾くと進行</li>
+        <li>脱灰が表層まで進むと肉眼的にも<span class="key">白濁</span></li>
+        <li>表面が粗糙となり、<span class="key">色素沈着</span>（褐色〜黒色）</li>
+        <li>小柱構造崩壊 → 実質欠損 → エナメル象牙境へ進行</li>
+      </ul>
+
+      <h2>齲蝕の分類（進行深さ）</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>状態</th>
+        </tr>
+        <tr>
+          <td>CO</td>
+          <td>要観察歯（カリエスオブザベーション）</td>
+        </tr>
+        <tr>
+          <td><span class="key">C1</span></td>
+          <td><span class="key">エナメル質齲蝕</span></td>
+        </tr>
+        <tr>
+          <td>C2</td>
+          <td>象牙質齲蝕（歯髄に達していない）</td>
+        </tr>
+        <tr>
+          <td>C3</td>
+          <td>歯髄へ波及した象牙質齲蝕</td>
+        </tr>
+        <tr>
+          <td>C4</td>
+          <td>歯冠崩壊状態</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115B75</div>
+        <p>エナメル質の表層下脱灰について正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 齲窩の形成がある。<br>
+          b 病変部は透明性が高い。<br>
+          c 酸産生菌の侵入によって生じる。<br>
+          d 表層10-20umは再石灰化している。<br>
+          e 病変部はエナメルタンパクが蓄積している。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】表層下脱灰では、唾液からのミネラル供給により<span class="highlight">表層10〜20μmは再石灰化で維持</span>されている。</p>
+        <ul>
+          <li>a × 齲窩は形成されていない（初期段階）</li>
+          <li>b × 病変部は<span class="caution">不透明</span>（ミネラル溶出により光散乱）</li>
+          <li>c × 菌の侵入ではなく、菌が産生した<span class="key">酸</span>による脱灰</li>
+          <li>e × タンパク蓄積ではなく、ミネラル（Ca・P）の溶出</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

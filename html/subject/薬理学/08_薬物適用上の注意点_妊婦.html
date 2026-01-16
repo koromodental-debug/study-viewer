@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>妊婦 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬物適用上の注意点</span>
+    <h1>妊婦</h1>
+    <div class="container">
+
+      <h2>妊娠時期と薬物の影響</h2>
+      <p>血液胎盤関門は存在するが精度は低く、多くの薬物は胎児へ移行する。</p>
+
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>特徴</th>
+          <th>注意点</th>
+        </tr>
+        <tr>
+          <td>妊娠初期<br>（〜3週末）</td>
+          <td>All or None</td>
+          <td>薬物の影響は比較的少ない</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">器官形成期</span><br>（4〜15週）</td>
+          <td><span class="caution">最も危険</span></td>
+          <td><span class="key">催奇形性</span>に最大の注意<br>全身投与は控える</td>
+        </tr>
+        <tr>
+          <td>妊娠中期〜分娩<br>（16週〜）</td>
+          <td>比較的安全</td>
+          <td><span class="key">胎児毒性</span>に注意</td>
+        </tr>
+      </table>
+
+      <h2>催奇形性のある薬物</h2>
+      <p><span class="key">器官形成期（妊娠4〜15週）</span>に特に注意が必要。</p>
+
+      <h3>代表的な催奇形性薬物</h3>
+      <ul>
+        <li><span class="highlight">サリドマイド</span>：アザラシ肢症</li>
+        <li><span class="highlight">フェニトイン</span>：口唇口蓋裂、心奇形</li>
+        <li><span class="key">メトトレキサート</span>：葉酸拮抗による奇形</li>
+        <li><span class="key">ワルファリン</span>：骨・軟骨異常</li>
+        <li><span class="key">ビタミンA（大量）</span>：中枢神経・心臓奇形</li>
+        <li><span class="key">カルバマゼピン</span>：神経管閉鎖障害</li>
+        <li><span class="key">テトラサイクリン系</span>：歯・骨形成不全</li>
+        <li><span class="key">ニューキノロン系</span>：関節異常</li>
+      </ul>
+
+      <h2>胎児毒性のある薬物</h2>
+      <p>妊娠後期に投与すると胎児に悪影響を及ぼす薬物。</p>
+
+      <table>
+        <tr>
+          <th>薬物</th>
+          <th>胎児毒性</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">酸性NSAIDs</span></td>
+          <td><span class="caution">動脈管閉鎖</span>、新生児高血圧症、分娩遅延</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">アミノグリコシド系</span></td>
+          <td>第VIII脳神経障害、<span class="caution">難聴</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">テトラサイクリン系</span></td>
+          <td><span class="caution">歯・骨形成不全</span>、歯牙着色</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">クロラムフェニコール</span></td>
+          <td><span class="caution">グレイ症候群</span>（新生児）</td>
+        </tr>
+      </table>
+
+      <h2>妊婦への抗菌薬投与</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">妊婦・小児に安全な抗菌薬</div>
+        <ul>
+          <li><span class="highlight">ペニシリン系</span>（アンピシリン、アモキシシリンなど）</li>
+          <li><span class="highlight">セフェム系</span>（セファレキシンなど）</li>
+          <li><span class="highlight">マクロライド系</span>（<span class="caution">クラリスロマイシンを除く</span>）</li>
+        </ul>
+        <p class="note">重篤な副作用が少ないため、これらから選択する</p>
+      </div>
+
+      <h3>妊婦に禁忌の抗菌薬</h3>
+      <table>
+        <tr>
+          <th>抗菌薬</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="caution">アミノグリコシド系</span><br>（カナマイシン、ストレプトマイシン）</td>
+          <td>内耳神経障害（胎児の難聴）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">テトラサイクリン系</span><br>（ミノサイクリン）</td>
+          <td>歯牙着色、骨形成不全<br>乳汁移行性あり → 授乳婦にも不向き</td>
+        </tr>
+        <tr>
+          <td><span class="caution">ニューキノロン系</span><br>（レボフロキサシン）</td>
+          <td>催奇形性（関節異常）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">クロラムフェニコール</span></td>
+          <td>グレイ症候群</td>
+        </tr>
+        <tr>
+          <td><span class="caution">サルファ剤・ST合剤</span></td>
+          <td>催奇形性</td>
+        </tr>
+      </table>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">103C75</div>
+        <p>妊婦に投与可能な抗菌薬はどれか。1つ選べ。</p>
+        <div class="choices">
+          a アンピシリン水和物<br>
+          b カナマイシン硫酸塩<br>
+          c ミノサイクリン塩酸塩<br>
+          d クロラムフェニコール<br>
+          e レボフロキサシン水和物
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">アンピシリン</span>は<span class="key">ペニシリン系</span>抗菌薬で、妊婦に安全に使用できる。カナマイシン（アミノグリコシド系）は<span class="caution">内耳神経障害</span>、ミノサイクリン（テトラサイクリン系）は<span class="caution">歯牙着色・骨形成不全</span>、クロラムフェニコールは<span class="caution">グレイ症候群</span>、レボフロキサシン（ニューキノロン系）は<span class="caution">催奇形性</span>があり禁忌。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li>妊婦に<span class="highlight">安全</span>：ペニシリン系・セフェム系・マクロライド系</li>
+          <li>妊婦に<span class="caution">禁忌</span>：アミノグリコシド系・テトラサイクリン系・ニューキノロン系・クロラムフェニコール</li>
+          <li><span class="highlight">器官形成期（4〜15週）</span>が最も危険 → 催奇形性</li>
+          <li>酸性NSAIDs → <span class="caution">動脈管閉鎖</span>（妊娠後期）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

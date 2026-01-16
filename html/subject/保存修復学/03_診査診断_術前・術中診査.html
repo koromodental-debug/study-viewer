@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>術前・術中診査 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / 診査診断</span>
+    <h1>術前・術中診査</h1>
+    <div class="container">
+
+      <h2>齲蝕部位と検査法</h2>
+      <table>
+        <tr>
+          <th>齲蝕部位</th>
+          <th>有効な検査法</th>
+        </tr>
+        <tr>
+          <td><span class="key">咬合面</span></td>
+          <td><span class="highlight">レーザー蛍光法</span>（感度最高）</td>
+        </tr>
+        <tr>
+          <td><span class="key">前歯隣接面</span></td>
+          <td><span class="highlight">透照診</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">臼歯隣接面</span></td>
+          <td><span class="highlight">咬翼法X線検査</span>、レーザー蛍光法</td>
+        </tr>
+        <tr>
+          <td><span class="key">二次齲蝕</span></td>
+          <td><span class="highlight">咬翼法X線検査</span></td>
+        </tr>
+      </table>
+
+      <h2>レーザー蛍光法（DIAGNOdent）</h2>
+      <p>齲蝕部の<span class="key">蛍光強度</span>を測定して齲蝕を検出する方法。</p>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>使用レーザー</td>
+          <td><span class="highlight">半導体レーザー</span>（655nm）</td>
+        </tr>
+        <tr>
+          <td>測定対象</td>
+          <td><span class="key">蛍光強度</span></td>
+        </tr>
+        <tr>
+          <td>特徴</td>
+          <td>咬合面齲蝕の検出で<span class="highlight">感度最高</span></td>
+        </tr>
+        <tr>
+          <td>適応</td>
+          <td>齲窩が形成されていない初期齲蝕</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">なぜ感度が高いのか</div>
+        <p>齲蝕部では細菌の代謝産物（ポルフィリン）が蓄積し、レーザー光照射により<span class="key">蛍光</span>を発する。この蛍光強度を数値化することで、肉眼では判別困難な初期齲蝕も検出可能。</p>
+      </div>
+
+      <h2>透照診</h2>
+      <p><span class="key">光照射器</span>（トランスイルミネーター）を用いて歯を透過照明し、齲蝕や亀裂を検出する方法。</p>
+
+      <h3>特徴</h3>
+      <ul>
+        <li><span class="highlight">前歯隣接面齲蝕</span>の検出に有効</li>
+        <li>エナメル質の亀裂検出にも使用</li>
+        <li>齲蝕部は光を透過しにくく暗く見える</li>
+      </ul>
+
+      <h2>咬翼法X線検査</h2>
+      <p>上下顎臼歯部の歯冠部を同時に撮影する方法。</p>
+
+      <h3>適応</h3>
+      <ul>
+        <li><span class="highlight">臼歯隣接面齲蝕</span>の検出</li>
+        <li><span class="highlight">二次齲蝕</span>の進行度判定</li>
+        <li>歯槽骨頂部の吸収評価</li>
+      </ul>
+
+      <h2>隣接面齲蝕の検査器具</h2>
+      <ul>
+        <li><span class="key">セパレーター</span>：歯間分離して視診</li>
+        <li><span class="key">デンタルフロス</span>：引っかかりで検出</li>
+        <li><span class="key">エキスプローラー</span>：触診</li>
+        <li><span class="key">コンタクトゲージ</span>：接触点の評価</li>
+      </ul>
+
+      <h2>患歯特定のための検査</h2>
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="key">温度診</span></td>
+          <td>歯髄の生死判定、患歯特定</td>
+        </tr>
+        <tr>
+          <td><span class="key">擦過診</span></td>
+          <td>知覚過敏部位の特定</td>
+        </tr>
+        <tr>
+          <td><span class="key">咬翼法X線</span></td>
+          <td>隣接面齲蝕の確認</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A72</div>
+        <p>齲窩が形成されていない咬合面齲蝕の検出法で感度が最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 視診<br>
+          b レーザー蛍光法<br>
+          c 視診と探針の使用<br>
+          d 視診と拡大鏡の使用<br>
+          e 視診と咬翼法エックス線写真の使用
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】齲窩形成前の初期咬合面齲蝕の検出には、<span class="highlight">レーザー蛍光法</span>（DIAGNOdent）が最も感度が高い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C74</div>
+        <p>齲蝕検査に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a CO2レーザー<br>
+          b 半導体レーザー<br>
+          c He-Neレーザー<br>
+          d Er:YAGレーザー<br>
+          e アルゴンレーザー
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】DIAGNOdentは<span class="highlight">半導体レーザー</span>（655nm）を使用。他のレーザーは切削や軟組織処置に用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C127</div>
+        <p>齲蝕部位と検査法との組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 前歯隣接面 ―― 透照診<br>
+          b 臼歯隣接面 ―― 歯髄電気診<br>
+          c 咬合面 ―――― 咬翼法エックス線検査<br>
+          d 咬合面 ―――― レーザー光による検査<br>
+          e 歯頸部 ―――― 咬合法エックス線検査
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ○ <span class="key">前歯隣接面</span>には<span class="highlight">透照診</span>が有効</li>
+          <li>b × 歯髄電気診は歯髄生死判定であり齲蝕検出ではない</li>
+          <li>c × 咬翼法は<span class="caution">隣接面</span>齲蝕の検出に有効</li>
+          <li>d ○ <span class="key">咬合面</span>には<span class="highlight">レーザー蛍光法</span>が有効</li>
+          <li>e × 咬合法は埋伏歯等の撮影法</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B35</div>
+        <p>大臼歯隣接面接触点下に発生した齲蝕の検出に有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 温度診<br>
+          b 麻酔診<br>
+          c 歯髄電気診<br>
+          d 咬翼法エックス線検査<br>
+          e レーザー蛍光強度測定
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】臼歯隣接面齲蝕の検出には：</p>
+        <ul>
+          <li>d ○ <span class="highlight">咬翼法X線検査</span>が有効</li>
+          <li>e ○ <span class="highlight">レーザー蛍光法</span>も有効</li>
+          <li>a, b, c × これらは歯髄診断や疼痛部位特定に用いる</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D84</div>
+        <p>Ⅱ級インレー歯頸側辺縁周囲に生じた二次齲蝕の進行度の判定に優れるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 透照診<br>
+          b QLF法<br>
+          c 咬合法エックス線撮影<br>
+          d 咬翼法エックス線撮影<br>
+          e レーザー蛍光強度測定
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">二次齲蝕の進行度判定</span>には<span class="highlight">咬翼法X線撮影</span>が優れる。修復物辺縁と歯質の境界部を明瞭に描出できる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

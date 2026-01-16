@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抗凝固薬 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬理学各論</span>
+    <h1>抗凝固薬（抗血栓薬）</h1>
+    <div class="container">
+
+      <h2>抗血栓薬の分類</h2>
+      <p>抗血栓薬は<span class="key">血小板凝集阻害薬</span>（抗血小板薬）と<span class="key">血液凝固阻止薬</span>（抗凝固薬）に大別される。</p>
+
+      <h2>血小板凝集阻害薬（抗血小板薬）</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>代表的薬物</th>
+          <th>作用機序</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ADP受容体拮抗薬</span></td>
+          <td><span class="highlight">チクロピジン</span>、クロピドグレル</td>
+          <td>ADP受容体（P2Y12）阻害</td>
+        </tr>
+        <tr>
+          <td><span class="key">COX阻害薬</span></td>
+          <td><span class="key">アスピリン</span></td>
+          <td>COX-1阻害→TXA2産生抑制</td>
+        </tr>
+        <tr>
+          <td>TXA2合成酵素阻害薬</td>
+          <td>オザグレルナトリウム</td>
+          <td>TXA2合成阻害</td>
+        </tr>
+        <tr>
+          <td>PGI2安定誘導体</td>
+          <td>ベラプロストナトリウム</td>
+          <td>血小板凝集抑制</td>
+        </tr>
+        <tr>
+          <td>PDE阻害薬</td>
+          <td>シロスタゾール、ジピリダモール</td>
+          <td>cAMP上昇→血小板凝集抑制</td>
+        </tr>
+      </table>
+
+      <h2>血液凝固阻止薬（抗凝固薬）</h2>
+
+      <h3>ヘパリン</h3>
+      <div class="point-box">
+        <div class="point-box-title">ヘパリンの作用機序</div>
+        <ul>
+          <li>代表的薬物：<span class="key">ヘパリンナトリウム</span>、ヘパリンカルシウム</li>
+          <li><span class="highlight">アンチトロンビンⅢ（ATⅢ）の作用を増強</span></li>
+          <li>ATⅢを介して<span class="highlight">第Xa因子</span>と<span class="key">トロンビン（第Ⅱa因子）</span>を阻害</li>
+          <li>注意：ATⅢが欠乏していると抗凝固作用を示さない</li>
+        </ul>
+      </div>
+
+      <h3>ワルファリン（経口抗凝固薬）</h3>
+      <div class="point-box">
+        <div class="point-box-title">ワルファリンの特徴（国試頻出）</div>
+        <ul>
+          <li>作用機序：<span class="highlight">ビタミンK活性化阻害</span></li>
+          <li>ビタミンK依存性凝固因子（<span class="key">Ⅱ, Ⅶ, Ⅸ, Ⅹ</span>）の生成を阻害</li>
+          <li>作用発現に<span class="caution">24〜48時間</span>必要</li>
+          <li>拮抗薬：ビタミンK</li>
+        </ul>
+      </div>
+
+      <table>
+        <tr>
+          <th>注意点</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>食事制限</td>
+          <td><span class="caution">ビタミンK含有食品（納豆、緑黄色野菜）禁忌</span></td>
+        </tr>
+        <tr>
+          <td>NSAIDsとの相互作用</td>
+          <td><span class="caution">出血傾向増強</span>（血漿タンパク結合の競合）</td>
+        </tr>
+        <tr>
+          <td>モニタリング</td>
+          <td>PT-INRで効果を確認</td>
+        </tr>
+      </table>
+
+      <h3>直接経口抗凝固薬（DOAC）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>代表的薬物</th>
+          <th>作用機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">直接的Xa因子阻害薬</span></td>
+          <td>リバーロキサバン、アピキサバン、エドキサバン</td>
+          <td>第Xa因子を直接阻害</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">直接的トロンビン阻害薬</span></td>
+          <td><span class="highlight">ダビガトラン</span></td>
+          <td><span class="highlight">第Ⅱa因子（トロンビン）を直接阻害</span></td>
+        </tr>
+      </table>
+
+      <h2>血栓溶解薬</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>代表的薬物</th>
+        </tr>
+        <tr>
+          <td>u-PA活性化因子</td>
+          <td>ウロキナーゼ</td>
+        </tr>
+        <tr>
+          <td>t-PA活性化因子</td>
+          <td>アルテプラーゼ、モンテプラーゼ</td>
+        </tr>
+      </table>
+      <p class="note">プラスミノーゲンをプラスミンに変換し、フィブリンを溶解する。</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">114B43</div>
+        <p>抗血栓薬と作用機序の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a アスピリン ーーーー 第Ⅱa因子阻害<br>
+          b ダビガトラン ーーーー 血小板凝集抑制<br>
+          c チクロピジン塩酸塩 ーーーー シクロオキシゲナーゼ阻害<br>
+          d ヘパリンナトリウム ーーーー 第Xa因子阻害<br>
+          e ワルファリンカリウム ーーーー ビタミンK活性化阻害
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】各選択肢の正誤：</p>
+        <ul>
+          <li>a：アスピリンは<span class="caution">COX阻害</span>→TXA2産生抑制（×第Ⅱa因子阻害）</li>
+          <li>b：ダビガトランは<span class="caution">直接的トロンビン（第Ⅱa因子）阻害</span>（×血小板凝集抑制）</li>
+          <li>c：チクロピジンは<span class="caution">ADP受容体阻害</span>（×COX阻害）</li>
+          <li>d：<span class="highlight">ヘパリンはATⅢを介して第Xa因子・第Ⅱa因子を阻害</span>（○）</li>
+          <li>e：<span class="highlight">ワルファリンはビタミンK活性化を阻害</span>（○）</li>
+        </ul>
+      </div>
+
+      <h2>まとめ：抗血栓薬の作用機序</h2>
+      <table>
+        <tr>
+          <th>薬物</th>
+          <th>作用機序</th>
+          <th>分類</th>
+        </tr>
+        <tr>
+          <td><span class="key">アスピリン</span></td>
+          <td>COX-1阻害→TXA2産生抑制</td>
+          <td>抗血小板薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">チクロピジン</span></td>
+          <td>ADP受容体（P2Y12）阻害</td>
+          <td>抗血小板薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">ヘパリン</span></td>
+          <td>ATⅢ増強→第Xa・Ⅱa因子阻害</td>
+          <td>抗凝固薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">ワルファリン</span></td>
+          <td>ビタミンK活性化阻害</td>
+          <td>抗凝固薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">ダビガトラン</span></td>
+          <td>直接的トロンビン（第Ⅱa因子）阻害</td>
+          <td>DOAC</td>
+        </tr>
+        <tr>
+          <td>リバーロキサバン等</td>
+          <td>直接的第Xa因子阻害</td>
+          <td>DOAC</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>副作用（全身） - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 副作用</span>
+    <h1>副作用（全身）</h1>
+    <div class="container">
+
+      <h2>全身に出現する主な副作用</h2>
+
+      <h3>神経系の副作用</h3>
+      <table>
+        <tr>
+          <th>副作用</th>
+          <th>原因薬物</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">第VIII脳神経障害・難聴</span></td>
+          <td><span class="key">アミノグリコシド系抗菌薬</span>（ストレプトマイシン、ゲンタマイシンなど）、<span class="key">シスプラチン</span>（白金製剤）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">末梢神経障害</span></td>
+          <td><span class="key">シスプラチン</span>、ビンクリスチン、パクリタキセル</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">錐体外路症状</span></td>
+          <td><span class="key">抗精神病薬</span>（ドパミンD2受容体遮断薬）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">錐体外路症状を起こす薬物</div>
+        <ul>
+          <li><span class="key">統合失調症治療薬</span>（抗精神病薬）：フェノチアジン系、ブチロフェノン系</li>
+          <li><span class="key">Parkinson病治療薬</span>の副作用としても出現</li>
+          <li>機序：ドパミンD2受容体の遮断 → 黒質線条体系の機能低下</li>
+        </ul>
+      </div>
+
+      <h3>オピオイド（モルヒネ）の副作用</h3>
+      <table>
+        <tr>
+          <th>副作用</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">呼吸抑制</span></td>
+          <td>延髄の呼吸中枢抑制、<span class="caution">禁忌：重篤な呼吸抑制時</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">悪心・嘔吐</span></td>
+          <td>CTZ（化学受容器引金帯）刺激</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">便秘</span></td>
+          <td>腸管運動抑制、<span class="caution">耐性が生じにくい</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">縮瞳</span></td>
+          <td>動眼神経核刺激</td>
+        </tr>
+        <tr>
+          <td><span class="key">依存性</span></td>
+          <td>身体的・精神的依存</td>
+        </tr>
+      </table>
+
+      <h3>その他の重要な全身副作用</h3>
+      <table>
+        <tr>
+          <th>副作用</th>
+          <th>原因薬物</th>
+        </tr>
+        <tr>
+          <td>薬物アレルギー</td>
+          <td>ペニシリン系、ストレプトマイシン、プロカイン</td>
+        </tr>
+        <tr>
+          <td>偽膜性大腸炎</td>
+          <td>抗菌薬全般（<em>C. difficile</em>増殖）</td>
+        </tr>
+        <tr>
+          <td>再生不良性貧血</td>
+          <td>クロラムフェニコール</td>
+        </tr>
+        <tr>
+          <td>悪性高熱症</td>
+          <td>イソフルラン、セボフルラン、スキサメトニウム</td>
+        </tr>
+        <tr>
+          <td>催奇形性</td>
+          <td>サリドマイド、フェニトイン、ステロイドホルモン</td>
+        </tr>
+        <tr>
+          <td>腎障害</td>
+          <td>シスプラチン、アミノグリコシド系</td>
+        </tr>
+      </table>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">115A53</div>
+        <p>治療薬により口腔・顎顔面に錐体外路症状が生じることがあるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 貧血<br>
+          b 狭心症<br>
+          c 糖尿病<br>
+          d 統合失調症<br>
+          e Parkinson病
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】<span class="key">錐体外路症状</span>は、<span class="highlight">抗精神病薬</span>（統合失調症治療薬）がドパミンD2受容体を遮断することで生じる。また、<span class="highlight">Parkinson病治療薬</span>の副作用としても出現する。口腔・顎顔面では、オーラルジスキネジア（口をもぐもぐさせる不随意運動）などがみられる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D34</div>
+        <p>感覚障害を生じるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a アシクロビル<br>
+          b シスプラチン<br>
+          c ミコナゾール<br>
+          d アモキシシリン水和物<br>
+          e ストレプトマイシン硫酸塩
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】<span class="highlight">シスプラチン</span>（白金製剤）は<span class="key">聴覚障害</span>（高音域から）と<span class="key">末梢神経障害</span>を起こす。<span class="highlight">ストレプトマイシン</span>（アミノグリコシド系）は<span class="key">第VIII脳神経障害</span>（聴覚・前庭障害）を起こす。どちらも「感覚障害」に該当する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A126</div>
+        <p>モルヒネ塩酸塩水和物の主な副作用はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 嘔吐<br>
+          b 覚醒<br>
+          c 散瞳<br>
+          d 便秘<br>
+          e 流涎
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】モルヒネの副作用は<span class="highlight">呼吸抑制、悪心・嘔吐、便秘、縮瞳</span>。覚醒ではなく<span class="caution">鎮静</span>、散瞳ではなく<span class="caution">縮瞳</span>、流涎ではなく<span class="caution">口渇</span>（抗コリン作用）。便秘は耐性が生じにくいため、長期投与でも持続する。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <ul>
+          <li><span class="highlight">感覚障害</span>：シスプラチン・アミノグリコシド系 → 聴覚障害</li>
+          <li><span class="highlight">錐体外路症状</span>：抗精神病薬（統合失調症）、抗パーキンソン病薬</li>
+          <li><span class="highlight">モルヒネ</span>：呼吸抑制・嘔吐・便秘・縮瞳（便秘は耐性なし）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

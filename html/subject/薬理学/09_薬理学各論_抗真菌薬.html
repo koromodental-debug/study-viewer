@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抗真菌薬 - 薬理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">薬理学 / 薬理学各論</span>
+    <h1>抗真菌薬</h1>
+    <div class="container">
+
+      <h2>真菌感染症の基礎</h2>
+      <p><span class="key">真菌</span>は細胞壁を有し、核膜のある真核生物（1〜10μm）である。細菌とは異なり、ヒト細胞に近い構造を持つため、選択毒性の確保が課題となる。</p>
+
+      <h3>歯科領域で重要な真菌感染症</h3>
+      <ul>
+        <li><span class="highlight">口腔カンジダ症</span>：最も頻度が高い口腔真菌感染症</li>
+        <li>白癬（皮膚糸状菌症）</li>
+        <li>肺アスペルギルス症</li>
+      </ul>
+
+      <h2>抗真菌薬の分類</h2>
+
+      <h3>細胞膜合成阻害薬（アゾール系）</h3>
+      <p>真菌細胞膜の主成分である<span class="key">エルゴステロール</span>の合成を阻害する。</p>
+
+      <table>
+        <tr>
+          <th>系統</th>
+          <th>代表的薬物</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td>イミダゾール系</td>
+          <td><span class="key">ミコナゾール</span>、クロトリマゾール</td>
+          <td>表在性真菌症、カンジダ</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">トリアゾール系</span></td>
+          <td><span class="highlight">イトラコナゾール、フルコナゾール</span></td>
+          <td>深在性真菌症、カンジダ</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">トリアゾール系のポイント</div>
+        <ul>
+          <li>イミダゾール系より抗真菌スペクトルが広い</li>
+          <li><span class="highlight">口腔カンジダ症</span>の治療に使用される</li>
+          <li>経口投与可能で全身性真菌症にも有効</li>
+        </ul>
+      </div>
+
+      <h3>その他の細胞膜合成阻害薬</h3>
+      <table>
+        <tr>
+          <th>系統</th>
+          <th>代表的薬物</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td>アリルアミン系</td>
+          <td>テルビナフィン</td>
+          <td>主に白癬</td>
+        </tr>
+        <tr>
+          <td>ベンジルアミン系</td>
+          <td>ブテナフィン</td>
+          <td>外用で主に白癬</td>
+        </tr>
+      </table>
+
+      <h3>細胞膜安定化阻害薬</h3>
+      <table>
+        <tr>
+          <th>系統</th>
+          <th>代表的薬物</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>ポリエンマクロライド系</td>
+          <td><span class="key">アムホテリシンB</span></td>
+          <td>深在性真菌症に有効、<span class="caution">腎障害あり</span></td>
+        </tr>
+      </table>
+
+      <h3>核酸合成阻害薬・細胞壁合成阻害薬</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>系統</th>
+          <th>代表的薬物</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>核酸合成阻害薬</td>
+          <td>フルオロピリミジン系</td>
+          <td>フルシトシン</td>
+          <td>腸管吸収良好</td>
+        </tr>
+        <tr>
+          <td>細胞壁合成阻害薬</td>
+          <td>キャンディン系</td>
+          <td>ミカファンギン</td>
+          <td>アスペルギルス、カンジダに有効</td>
+        </tr>
+      </table>
+
+      <h2>相互作用</h2>
+      <p>イミダゾール系、トリアゾール系は<span class="caution">薬物代謝酵素（CYP3A4, CYP2C9, CYP2C19）を阻害</span>する。そのため、これらの酵素で代謝される併用薬の血中濃度を上昇させ、作用を増強させる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">注意すべき相互作用</div>
+        <ul>
+          <li>ワルファリンの作用増強 → 出血リスク</li>
+          <li>Ca拮抗薬の作用増強</li>
+          <li>ベンゾジアゼピン系の作用増強</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A79</div>
+        <p>トリアゾール系薬剤の投与が有効と考えられる感染症はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 結核<br>
+          b マラリア<br>
+          c 口唇ヘルペス<br>
+          d 口腔カンジダ症<br>
+          e ヘルパンギーナ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】トリアゾール系（イトラコナゾール、フルコナゾール）は<span class="highlight">抗真菌薬</span>であり、<span class="highlight">カンジダ症</span>に有効である。結核は抗結核薬（イソニアジド等）、マラリアは抗マラリア薬、口唇ヘルペス・ヘルパンギーナはウイルス感染症で抗ウイルス薬（アシクロビル等）が適応となる。</p>
+      </div>
+
+      <h2>まとめ：各感染症と治療薬</h2>
+      <table>
+        <tr>
+          <th>感染症</th>
+          <th>病原体</th>
+          <th>治療薬</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">口腔カンジダ症</span></td>
+          <td>真菌（Candida）</td>
+          <td><span class="highlight">トリアゾール系</span>（イトラコナゾール等）</td>
+        </tr>
+        <tr>
+          <td>口唇ヘルペス</td>
+          <td>ウイルス（HSV）</td>
+          <td>アシクロビル、バラシクロビル</td>
+        </tr>
+        <tr>
+          <td>結核</td>
+          <td>細菌（結核菌）</td>
+          <td>イソニアジド、リファンピシン</td>
+        </tr>
+        <tr>
+          <td>マラリア</td>
+          <td>原虫（マラリア原虫）</td>
+          <td>抗マラリア薬</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

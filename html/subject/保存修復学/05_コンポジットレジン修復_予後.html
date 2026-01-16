@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>予後 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / コンポジットレジン修復</span>
+    <h1>CR修復の予後</h1>
+    <div class="container">
+
+      <h2>I. CR修復の予後不良の原因</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核：審美不良の原因</div>
+        <ul>
+          <li><span class="highlight">過剰填塞</span>：余剰レジンが経時的に着色・変色</li>
+          <li>コントラクションギャップは辺縁漏洩の原因（変色の主因ではない）</li>
+        </ul>
+      </div>
+
+      <h3>予後不良の原因と機序</h3>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>機序</th>
+          <th>臨床所見</th>
+        </tr>
+        <tr>
+          <td><span class="key">過剰填塞</span></td>
+          <td>余剰レジンが研磨不足のまま残存し、表面が粗造で着色しやすい</td>
+          <td><span class="highlight">辺縁部の変色・審美不良</span></td>
+        </tr>
+        <tr>
+          <td>コントラクションギャップ</td>
+          <td>重合収縮により窩壁との間に隙間が生じる</td>
+          <td>辺縁漏洩、術後疼痛、二次齲蝕</td>
+        </tr>
+        <tr>
+          <td>血液・唾液の混入</td>
+          <td>接着操作時の汚染により接着不良</td>
+          <td>脱離、辺縁漏洩</td>
+        </tr>
+        <tr>
+          <td>磨耗</td>
+          <td>咬合力による経時的摩耗</td>
+          <td>咬合面の平坦化</td>
+        </tr>
+        <tr>
+          <td>二次齲蝕</td>
+          <td>辺縁封鎖性の低下による細菌侵入</td>
+          <td>修復物周囲の齲蝕</td>
+        </tr>
+      </table>
+
+      <h2>II. 過剰填塞による変色</h2>
+
+      <p><span class="key">過剰填塞</span>とは、窩洞形態を超えて余分にレジンが充填された状態である。</p>
+
+      <h3>なぜ変色するのか</h3>
+      <ul>
+        <li>余剰レジンは研磨が不十分になりやすい</li>
+        <li>表面が粗造なため、色素が沈着しやすい</li>
+        <li>窩洞外のレジンは接着していないため、辺縁に隙間ができやすい</li>
+        <li>経年的に着色が進行し、<span class="highlight">審美不良</span>となる</li>
+      </ul>
+
+      <h3>鑑別ポイント</h3>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>特徴的所見</th>
+        </tr>
+        <tr>
+          <td><span class="key">過剰填塞</span></td>
+          <td>修復物辺縁に沿った変色、余剰レジンの存在</td>
+        </tr>
+        <tr>
+          <td>コントラクションギャップ</td>
+          <td>辺縁の白線（ホワイトライン）、術後疼痛</td>
+        </tr>
+        <tr>
+          <td>口腔清掃不良</td>
+          <td>プラーク付着、歯肉炎症</td>
+        </tr>
+        <tr>
+          <td>血液混入</td>
+          <td>修復直後からの変色、接着不良</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111B52</div>
+        <p>50歳の女性。上顎右側側切歯の審美不良を主訴として来院した。10年前に修復処置を受けたが、1年前から気になっていたという。特に症状はない。初診時のロ腔内写真（別冊No.4）を別に示す。<br>
+考えられる原因はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111B52_1.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a 磨　耗<br>
+          b 過剰填塞<br>
+          c 口腔清掃不良<br>
+          d 接着操作時の血液の混入<br>
+          e コントラクションギャップ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】10年経過後の審美不良で、症状はない。写真では修復物辺縁に沿って変色が認められる。これは<span class="key">過剰填塞</span>により余剰レジンが着色したもの。aの磨耗は咬合面に生じる。cの口腔清掃不良ならプラーク付着や歯肉炎症を伴う。dの血液混入は修復直後から変色する。eのコントラクションギャップは辺縁漏洩や術後疼痛の原因であり、経年的な変色の主因ではない。</p>
+      </div>
+
+      <h2>III. その他の術後トラブル</h2>
+
+      <h3>コントラクションギャップ</h3>
+      <p><span class="key">コントラクションギャップ</span>とは、レジンの重合収縮により修復物と窩壁の間に生じる隙間である。</p>
+      <ul>
+        <li>辺縁漏洩の原因となる</li>
+        <li>術後の冷水痛・咬合痛を引き起こす</li>
+        <li>二次齲蝕のリスクが高まる</li>
+      </ul>
+
+      <h3>予防法</h3>
+      <ul>
+        <li><span class="key">積層充填法</span>：少量ずつ充填し重合収縮を分散</li>
+        <li><span class="key">スロースタート重合</span>：緩やかに重合を開始</li>
+        <li><span class="key">フロアブルレジン</span>の活用：窩底部の適合性向上</li>
+      </ul>
+
+      <h3>インレー修復の術後トラブル</h3>
+      <ul>
+        <li>術後の冷水痛や咬合痛</li>
+        <li>インレーの辺縁破折や体部破折</li>
+        <li>セメントおよびインレーの摩耗 → <span class="key">クレビス</span>（セメントラインの溝）の形成</li>
+        <li>二次齲蝕</li>
+      </ul>
+
+      <p class="note">※CR修復の予後を良好に保つには、適切な充填量、確実な研磨、接着操作時の防湿が重要である。</p>
+
+    </div>
+  </div>
+</body>
+</html>

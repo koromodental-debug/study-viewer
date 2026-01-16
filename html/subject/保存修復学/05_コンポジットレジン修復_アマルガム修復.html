@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アマルガム修復 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / コンポジットレジン修復・インレー修復</span>
+    <h1>アマルガム修復</h1>
+    <div class="container">
+
+      <h2>I. 歯科用アマルガムの概要</h2>
+
+      <p><span class="key">歯科用アマルガム</span>は、銀・スズ・銅などの合金粉末と水銀を練和して作る金属修復材料である。かつては直接修復に広く使用されていたが、<span class="highlight">水俣条約（2013年）</span>により使用が段階的に縮小されている。</p>
+
+      <h3>アマルガムの特性</h3>
+      <table>
+        <tr>
+          <th>特性</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>歯髄刺激性</td>
+          <td><span class="key">刺激性なし</span></td>
+        </tr>
+        <tr>
+          <td>辺縁封鎖性</td>
+          <td>初期は不良だが、腐食生成物により経時的に向上</td>
+        </tr>
+        <tr>
+          <td>ガルバニー電流</td>
+          <td><span class="caution">異種金属との間でガルバニー疼痛が発生</span></td>
+        </tr>
+        <tr>
+          <td>着色</td>
+          <td>成分の浸透により周囲歯質が着色することがある</td>
+        </tr>
+      </table>
+
+      <h3>窩洞形態の特徴</h3>
+      <p>アマルガム修復では修復物の脆弱化を防ぐため、辺縁に厚みをもたせる<span class="key">リバースカーブ</span>（逆カーブ）を付与する。</p>
+
+      <h2>II. アマルガム修復物の取り扱い</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核：アマルガム修復物への対応</div>
+        <ul>
+          <li><span class="highlight">問題のない修復物は研磨で対応</span>（不必要な再修復を避ける）</li>
+          <li>除去が必要な場合は<span class="highlight">水銀対策</span>を徹底する</li>
+        </ul>
+      </div>
+
+      <h3>既存アマルガム修復物への対応</h3>
+      <p>長期経過したアマルガム修復物で表面の粗造感がある場合：</p>
+      <ul>
+        <li>齲蝕や修復物の破折がなければ → <span class="highlight">研磨で対応</span></li>
+        <li>歯髄に問題がなければ再修復は不要</li>
+        <li><span class="caution">安易な除去は水銀曝露のリスクを高める</span></li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">112D73</div>
+        <p>60歳の男性。上顎左側第一大臼歯の修復物表面の粗造感を主訴として来院した。 45 年前に齲蝕治療のため直接修復を受けたという。エックス線検査の結果、└6 に齲蝕や修復物の破折を認めなかった。歯髄電気診で生活反応を示した。初診時の口腔内写真（別冊No.20）を別に示す。<br>
+適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D73_1.png" alt="別冊No.20">
+        </div>
+        <div class="choices">
+          a 修復物の研磨<br>
+          b メタルインレー修復<br>
+          c レジンコーティング<br>
+          d コンポジットレジン修復<br>
+          e フッ化ジアンミン銀塗布
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】45年経過したアマルガム修復物だが、齲蝕・破折なし、歯髄も生活反応を示している。問題のないアマルガム修復物は<span class="key">研磨で表面性状を改善</span>すればよく、除去・再修復は不要。b〜dの再修復は過剰治療であり、eのフッ化ジアンミン銀は金属修復物には適応外。</p>
+      </div>
+
+      <h2>III. アマルガム除去時の水銀対策</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核：除去時の3つの対策</div>
+        <ul>
+          <li><span class="highlight">ラバーダム防湿</span>：患者の水銀曝露を防ぐ</li>
+          <li><span class="highlight">口腔外バキューム</span>：切削粉の飛散を防ぐ</li>
+          <li><span class="highlight">専用容器に保管</span>：廃棄物の適正処理</li>
+        </ul>
+      </div>
+
+      <h3>除去時の適切な対応</h3>
+      <table>
+        <tr>
+          <th>対応</th>
+          <th>適否</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td>ラバーダム防湿</td>
+          <td><span class="key">○</span></td>
+          <td>患者の口腔内への水銀・切削片の落下を防止</td>
+        </tr>
+        <tr>
+          <td>口腔外バキューム</td>
+          <td><span class="key">○</span></td>
+          <td>切削粉・水銀蒸気の飛散を防止</td>
+        </tr>
+        <tr>
+          <td>専用容器に保管</td>
+          <td><span class="key">○</span></td>
+          <td>水銀含有廃棄物として適正に処理</td>
+        </tr>
+        <tr>
+          <td>非注水下で行う</td>
+          <td><span class="caution">×</span></td>
+          <td>注水により切削熱・水銀蒸気発生を抑制</td>
+        </tr>
+        <tr>
+          <td>粉砕して除去</td>
+          <td><span class="caution">×</span></td>
+          <td>粉砕すると水銀蒸気・粉塵が増加</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113A70</div>
+        <p>58歳の男性。上顎右側第一小臼歯と第二小臼歯の一過性の冷水痛を主訴として来院した。30年前に直接修復を受けたが、1か月前から気になっているという。検査の結果、修復物を除去後、メタルインレー修復を行うこととした。初診時のロ腔内写真（別冊No.25A）とエックス線画像（別冊No.25B）を別に示す。<br>
+修復物除去時の対応で適切なのはどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A70_1.png" alt="別冊No.25A">
+          <img src="../../../images/113回_Web画像/113A70_2.png" alt="別冊No.25B">
+        </div>
+        <div class="choices">
+          a 非注水下で行う。<br>
+          b 粉砕して除去する。<br>
+          c ラバーダム防湿下で行う。<br>
+          d 口腔外バキュームを使用する。<br>
+          e 除去物を専用容器に保管する。
+        </div>
+        <div class="answer">正解：c, d, e</div>
+        <p>【解説】アマルガム除去時は水銀曝露対策が必須。<span class="key">ラバーダム防湿</span>で患者を保護し、<span class="key">口腔外バキューム</span>で飛散を防ぎ、除去物は<span class="key">専用容器で保管</span>して適正廃棄する。aの非注水は切削熱で水銀蒸気が発生するため不適切。bの粉砕も水銀蒸気・粉塵が増えるため不適切。</p>
+      </div>
+
+      <h2>IV. 水俣条約と歯科用アマルガム</h2>
+
+      <p><span class="key">水俣条約</span>（水銀に関する水俣条約、2013年採択）により、歯科用アマルガムの使用削減が国際的に求められている。</p>
+
+      <h3>条約で定められた措置</h3>
+      <ul>
+        <li>アマルガム使用の段階的削減</li>
+        <li>代替材料（コンポジットレジン等）の使用促進</li>
+        <li>水銀廃棄物の適正管理</li>
+      </ul>
+
+      <p class="note">※現在の国試では「アマルガムの新規使用」ではなく「既存アマルガムの取り扱い」が出題の中心となっている。</p>
+
+    </div>
+  </div>
+</body>
+</html>

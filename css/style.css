@@ -202,6 +202,14 @@ body {
   color: var(--text-color);
 }
 
+/* ヘッダーのプロフィール画像 */
+.header-user-photo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 /* テーマ切り替えボタン（後方互換） */
 .header-theme-btn {
   position: absolute;
@@ -8731,64 +8739,65 @@ body.is-practice .tab-content {
   margin-top: 16px;
 }
 
-.account-theme-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .account-theme-label {
   font-size: 15px;
   color: var(--text-color);
-}
-
-.account-theme-toggle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background: var(--surface-alt);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.account-theme-toggle:hover {
-  background: var(--hover-bg);
-}
-
-.account-theme-toggle svg {
-  width: 20px;
-  height: 20px;
-  color: var(--text-color);
-}
-
-.account-theme-toggle .theme-icon-dark {
-  display: none;
-}
-
-[data-theme="dark"] .account-theme-toggle .theme-icon-light {
-  display: none;
-}
-
-[data-theme="dark"] .account-theme-toggle .theme-icon-dark {
+  margin-bottom: 12px;
   display: block;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .account-theme-toggle .theme-icon-light {
-    display: none;
-  }
-  :root:not([data-theme="light"]) .account-theme-toggle .theme-icon-dark {
-    display: block;
-  }
+/* セグメントコントロール */
+.theme-segment-control {
+  display: flex;
+  background: var(--surface-alt);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 2px;
 }
 
-.theme-toggle-label {
-  font-size: 14px;
+.theme-segment-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
   font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-segment-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.theme-segment-btn:hover {
   color: var(--text-color);
+}
+
+.theme-segment-btn.active {
+  background: var(--surface-color);
+  color: var(--text-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .theme-segment-btn.active {
+  background: var(--surface-elevated);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-segment-btn.active {
+    background: var(--surface-elevated);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
 }
 
 /* ダークモード */

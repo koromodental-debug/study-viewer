@@ -534,59 +534,51 @@
    * テーマ切り替え
    */
   function initThemeToggle() {
-    const themeToggleSheet = document.getElementById('theme-toggle-sheet');
+    const themeSegment = document.getElementById('theme-segment');
 
     // 保存されたテーマを適用
-    const savedTheme = localStorage.getItem('studyViewer_theme');
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
+    const savedTheme = localStorage.getItem('studyViewer_theme') || 'auto';
+    applyTheme(savedTheme);
+
+    // セグメントのアクティブ状態を更新
+    updateThemeSegment(savedTheme);
+
+    // セグメントボタンのクリックイベント
+    if (themeSegment) {
+      themeSegment.addEventListener('click', (e) => {
+        const btn = e.target.closest('.theme-segment-btn');
+        if (!btn) return;
+
+        const theme = btn.dataset.theme;
+        applyTheme(theme);
+        localStorage.setItem('studyViewer_theme', theme);
+        updateThemeSegment(theme);
+      });
     }
 
-    // テーマラベルを更新
-    updateThemeLabel();
+    // システムテーマ変更時の監視（自動モード用）
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      const currentSetting = localStorage.getItem('studyViewer_theme') || 'auto';
+      if (currentSetting === 'auto') {
+        applyTheme('auto');
+      }
+    });
+  }
 
-    // アカウントシート内のテーマトグル
-    if (themeToggleSheet) {
-      themeToggleSheet.addEventListener('click', toggleTheme);
+  function applyTheme(theme) {
+    if (theme === 'auto') {
+      // 自動：システム設定に従う（data-themeを削除）
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
     }
   }
 
-  function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    let newTheme;
-    if (currentTheme === 'dark') {
-      newTheme = 'light';
-    } else if (currentTheme === 'light') {
-      newTheme = 'dark';
-    } else {
-      // 未設定の場合、システム設定と逆にする
-      newTheme = systemDark ? 'light' : 'dark';
-    }
-
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('studyViewer_theme', newTheme);
-    updateThemeLabel();
-  }
-
-  function updateThemeLabel() {
-    const label = document.querySelector('.theme-toggle-label');
-    if (!label) return;
-
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    let isDark;
-    if (currentTheme === 'dark') {
-      isDark = true;
-    } else if (currentTheme === 'light') {
-      isDark = false;
-    } else {
-      isDark = systemDark;
-    }
-
-    label.textContent = isDark ? 'ダーク' : 'ライト';
+  function updateThemeSegment(activeTheme) {
+    const buttons = document.querySelectorAll('.theme-segment-btn');
+    buttons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.theme === activeTheme);
+    });
   }
 
   /**

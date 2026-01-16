@@ -507,7 +507,6 @@ function initAccountUI() {
   const accountLoggedOut = document.getElementById('account-logged-out');
   const accountLoggedIn = document.getElementById('account-logged-in');
   const accountIconLoggedOut = document.querySelector('.account-icon-logged-out');
-  const accountIconLoggedIn = document.querySelector('.account-icon-logged-in');
 
   if (!accountOverlay) return;
 
@@ -526,13 +525,12 @@ function initAccountUI() {
   // UI状態を更新
   function updateUI(user) {
     const logoutSection = document.getElementById('account-logout-section');
+    const headerUserPhoto = document.getElementById('header-user-photo');
 
     if (user) {
       // ログイン済み
       accountLoggedOut.style.display = 'none';
       accountLoggedIn.style.display = 'flex';
-      accountIconLoggedOut.style.display = 'none';
-      accountIconLoggedIn.style.display = 'block';
       if (logoutSection) logoutSection.style.display = 'block';
 
       // ユーザー情報を表示
@@ -543,8 +541,17 @@ function initAccountUI() {
       if (user.photoURL) {
         userPhoto.src = user.photoURL;
         userPhoto.style.display = 'block';
+        // ヘッダーにもプロフィール画像を表示
+        if (headerUserPhoto) {
+          headerUserPhoto.src = user.photoURL;
+          headerUserPhoto.style.display = 'block';
+        }
+        if (accountIconLoggedOut) accountIconLoggedOut.style.display = 'none';
       } else {
         userPhoto.style.display = 'none';
+        // 画像がない場合はデフォルトアイコンを表示
+        if (headerUserPhoto) headerUserPhoto.style.display = 'none';
+        if (accountIconLoggedOut) accountIconLoggedOut.style.display = 'block';
       }
       userName.textContent = user.displayName || 'ユーザー';
       userEmail.textContent = user.email || '';
@@ -552,8 +559,8 @@ function initAccountUI() {
       // 未ログイン
       accountLoggedOut.style.display = 'flex';
       accountLoggedIn.style.display = 'none';
-      accountIconLoggedOut.style.display = 'block';
-      accountIconLoggedIn.style.display = 'none';
+      if (accountIconLoggedOut) accountIconLoggedOut.style.display = 'block';
+      if (headerUserPhoto) headerUserPhoto.style.display = 'none';
       if (logoutSection) logoutSection.style.display = 'none';
     }
   }

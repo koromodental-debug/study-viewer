@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>セラミックインレー - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .step-box {
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .step-number {
+      display: inline-block;
+      background: var(--accent);
+      color: #FFF;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-size: 9pt;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / インレー修復</span>
+    <h1>セラミックインレー</h1>
+    <div class="container">
+
+      <h2>I. セラミックインレーの特徴</h2>
+      <p>セラミックスを用いてインレーを製作し、窩洞に装着する修復方法。コンポジットレジンインレーと比較すると、<span class="key">化学的安定性</span>と<span class="key">耐摩耗性</span>の点で優れている。</p>
+
+      <h3>長所と短所</h3>
+      <table>
+        <tr>
+          <th>長所</th>
+          <th>短所</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li><span class="key">化学的安定性</span>がきわめて高い</li>
+              <li><span class="key">生体親和性</span>に優れる</li>
+              <li>天然歯の色調・光沢を再現（審美性）</li>
+              <li>硬度が高く、<span class="key">耐摩耗性</span>がある</li>
+              <li>表面が滑沢でプラークが付着しにくい</li>
+              <li>熱膨張率が歯質に近似</li>
+              <li>熱・電気の不良導体</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li><span class="caution">脆性材料</span>である</li>
+              <li>適合性はメタルインレーに及ばない</li>
+              <li>歯質削除量が多い</li>
+              <li>製作工程が煩雑</li>
+              <li>術者・製作者の技量に左右される</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <h2>II. 適応症と禁忌症</h2>
+      <table>
+        <tr>
+          <th>適応症</th>
+          <th>禁忌症</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>臼歯部1級窩洞</li>
+              <li>臼歯部2級窩洞</li>
+              <li>アンレー（強い咬合力が加わらない場合）</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li><span class="caution">強い咬合力が加わる部位</span></li>
+              <li><span class="caution">ブラキシズム</span>など口腔悪習癖がある場合</li>
+              <li>セラミックスの厚みが確保できない症例</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <h2>III. 窩洞の特徴</h2>
+      <p>基本的にコンポジットレジンインレー修復と同様の窩洞形態が要求される。</p>
+
+      <h3>メタルインレー窩洞との比較</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>セラミックインレー</th>
+          <th>メタルインレー</th>
+        </tr>
+        <tr>
+          <td>窩洞外形</td>
+          <td>予防拡大は最小限、対合接触部位を避ける</td>
+          <td>予防拡大が必要</td>
+        </tr>
+        <tr>
+          <td>保持形態</td>
+          <td><span class="highlight">箱形の保持形態は不要</span></td>
+          <td>箱形・外開き形態</td>
+        </tr>
+        <tr>
+          <td>便宜形態</td>
+          <td><span class="highlight">大きなテーパー角</span>（外開きを強め）</td>
+          <td>テーパー1/10〜4/10</td>
+        </tr>
+        <tr>
+          <td>抵抗形態</td>
+          <td><span class="highlight">線角・点角に丸み</span>をもたせる</td>
+          <td>凸隅角の曲面化</td>
+        </tr>
+        <tr>
+          <td>窩縁形態</td>
+          <td><span class="key">バットジョイント</span>、ショルダー</td>
+          <td>窩縁斜面（ベベル）を付与</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">セラミックインレー窩洞のポイント</div>
+        <ul>
+          <li><span class="highlight">線角部の曲面化</span>：応力集中を避けるため</li>
+          <li><span class="highlight">大きなテーパー角</span>：脆性材料のため着脱時の破折を防ぐ</li>
+          <li>保持溝・鳩尾形などの補助的保持形態は不要（接着性レジンセメントで接着）</li>
+        </ul>
+      </div>
+
+      <h2>IV. 製作法</h2>
+      <table>
+        <tr>
+          <th>製作法</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">築盛・焼成法</td>
+          <td>ポーセレン（陶材）を使用、色調再現性に優れる</td>
+        </tr>
+        <tr>
+          <td class="key">射出成形法</td>
+          <td>キャスタブルセラミックス使用、セラミング（結晶化処理）が必要</td>
+        </tr>
+        <tr>
+          <td class="key">加熱加圧成形法</td>
+          <td>専用セラミックスを使用、セラミング不要</td>
+        </tr>
+        <tr>
+          <td class="key">CAD/CAM法</td>
+          <td>コンピュータ支援設計・加工、<span class="highlight">即日修復も可能</span></td>
+        </tr>
+      </table>
+
+      <h2>V. 修復手順</h2>
+
+      <h3>1回目の来院</h3>
+      <div class="step-box">
+        <p><span class="step-number">1</span><span class="key">術前検査</span>：口腔悪習癖の有無、対合関係など</p>
+        <p><span class="step-number">2</span><span class="key">シェードテイキング</span>：短時間かつ同一照明条件で</p>
+        <p><span class="step-number">3</span><span class="key">除痛法</span>：歯質削除量が多いため局所麻酔</p>
+        <p><span class="step-number">4</span><span class="key">感染歯質除去</span>：齲蝕検知液を使用</p>
+        <p><span class="step-number">5</span><span class="key">裏層</span>：必要に応じて</p>
+        <p><span class="step-number">6</span><span class="key">窩洞形成</span></p>
+        <p><span class="step-number">7</span><span class="highlight">レジンコーティング</span>：象牙質面を接着性レジンで被覆</p>
+        <p><span class="step-number">8</span><span class="highlight">エタノール綿球で清拭</span>：未重合層の除去</p>
+        <p><span class="step-number">9</span><span class="key">印象採得</span></p>
+        <p><span class="step-number">10</span><span class="key">仮封</span>：<span class="caution">ユージノール含有材は避ける</span></p>
+      </div>
+
+      <h3>2回目の来院（装着）</h3>
+      <div class="step-box">
+        <p><span class="step-number">1</span><span class="key">ラバーダム装着</span></p>
+        <p><span class="step-number">2</span><span class="key">仮封除去、窩洞の清掃</span></p>
+        <p><span class="step-number">3</span><span class="key">インレー体の試適</span>、隣接面の調整</p>
+        <p><span class="step-number">4</span><span class="highlight">インレー内面のシランカップリング処理</span></p>
+        <p><span class="step-number">5</span><span class="key">歯面処理</span></p>
+        <p><span class="step-number">6</span><span class="highlight">接着性レジンセメントで接着</span></p>
+        <p><span class="step-number">7</span><span class="key">光照射</span></p>
+        <p><span class="step-number">8</span><span class="highlight">咬合調整</span>：<span class="caution">接着後に行う</span>（破折防止）</p>
+        <p><span class="step-number">9</span><span class="key">研磨</span></p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">レジンコーティング法の利点</div>
+        <ul>
+          <li>象牙質・歯髄複合体の保護</li>
+          <li>窩洞適合性の向上</li>
+          <li>接着性の向上</li>
+          <li>副次的効果：<span class="key">アンダーカットの除去</span>（ブロックアウト）</li>
+        </ul>
+      </div>
+
+      <h2>VI. 過去問で実力チェック</h2>
+
+      <h3>窩洞の特徴</h3>
+      <div class="question-box">
+        <div class="q-number">112C40</div>
+        <p>メタルインレー窩洞と比べたセラミックインレー窩洞の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 保持溝の付与<br>
+          b 線角部の曲面化<br>
+          c 大きなテーパー角<br>
+          d 明瞭なイスムスの付与<br>
+          e ラウンドベベルの形成
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】セラミックインレーは脆性材料のため、応力集中を避ける<span class="highlight">線角部の曲面化</span>と、着脱時の破折を防ぐ<span class="highlight">大きなテーパー角</span>が特徴。保持溝・イスムス・ベベルは不要（接着性セメントで保持）。</p>
+      </div>
+
+      <h3>装着手順</h3>
+      <div class="question-box">
+        <div class="q-number">106D52</div>
+        <p>37歳の女性。下顎右側臼歯部の一過性の冷水痛を主訴として来院した。セラミックインレー修復を行うこととした。完成したインレー体の写真（別冊No.50A）と装着時に使用する器具の写真（別冊No.50B）とを別に示す。器具の使用順序で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106D52.png" alt="106D52">
+        </div>
+        <div class="choices">
+          a ア→イ→ウ→エ<br>
+          b ア→エ→ウ→イ<br>
+          c イ→ア→ウ→エ<br>
+          d イ→エ→ア→ウ<br>
+          e ウ→イ→ア→エ
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】装着手順は「<span class="key">ウ：シランカップリング剤</span>（インレー内面処理）→ <span class="key">イ：歯面処理</span>（エッチング・プライマー等）→ <span class="key">ア：レジンセメント</span>（装着）→ <span class="key">エ：光照射</span>」の順。</p>
+      </div>
+
+      <h3>処置手順</h3>
+      <div class="question-box">
+        <div class="q-number">116A84</div>
+        <p>44歳の男性。下顎右側第二大臼歯の修復物の脱離を主訴として来院した。10日前に脱離したが、痛みがないためそのままにしていたという。口腔悪習癖はない。検査の結果、セラミックインレー修復を行うこととした。初診時の口腔内写真（別冊No.34A）とエックス線画像（別冊No.34B）を別に示す。ラバーダム装着後の処置を実施順に並べよ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A84.png" alt="116A84">
+        </div>
+        <div class="choices">
+          a 裏　層<br>
+          b 窩洞形成<br>
+          c 感染歯質除去<br>
+          d レジンコーティング<br>
+          e アルコール綿球による清拭
+        </div>
+        <div class="answer">正解：c→a→b→d→e</div>
+        <p>【解説】処置手順は「<span class="key">c：感染歯質除去</span> → <span class="key">a：裏層</span> → <span class="key">b：窩洞形成</span> → <span class="highlight">d：レジンコーティング</span> → <span class="highlight">e：アルコール綿球による清拭</span>」。レジンコーティング後は未重合層が残るため、アルコール綿球で清拭して除去する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -5544,9 +5544,18 @@
         const scrollTarget = currentSection.heading || currentSection.spans[0];
         if (scrollTarget) {
           setTimeout(() => {
-            scrollTarget.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center'
+            // フローティング検索バーとヘッダーを考慮して画面中央に表示
+            const headerHeight = 56 + 16;
+            const searchBarHeight = 60;
+            const containerRect = elements.htmlContent.getBoundingClientRect();
+            const targetRect = scrollTarget.getBoundingClientRect();
+            const viewportHeight = containerRect.height - searchBarHeight;
+            // 画面の上から1/3の位置に表示
+            const targetY = elements.htmlContent.scrollTop + targetRect.top - containerRect.top - headerHeight - (viewportHeight / 3);
+
+            elements.htmlContent.scrollTo({
+              top: Math.max(0, targetY),
+              behavior: 'smooth'
             });
           }, 150);
         }

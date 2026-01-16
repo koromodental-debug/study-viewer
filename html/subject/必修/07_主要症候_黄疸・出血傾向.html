@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>黄疸・出血傾向 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / Chapter 07 主要症候</span>
+    <h1>黄疸・出血傾向</h1>
+    <div class="container">
+
+      <h2>1. 黄疸</h2>
+      <p><span class="key">黄疸</span>は血中<span class="highlight">ビリルビン上昇</span>により皮膚・粘膜・眼球結膜が黄染する症候。</p>
+
+      <h3>黄疸の原因疾患</h3>
+      <table>
+        <tr><th>分類</th><th>原因</th></tr>
+        <tr><td>肝細胞性黄疸</td><td>肝炎、<span class="key">肝硬変</span>、肝癌</td></tr>
+        <tr><td>溶血性黄疸</td><td>溶血性貧血（間接ビリルビン↑）</td></tr>
+        <tr><td>閉塞性黄疸</td><td>胆道閉塞、胆石、膵頭部癌</td></tr>
+        <tr><td>体質性黄疸</td><td>Gilbert症候群</td></tr>
+      </table>
+
+      <h3>肝硬変でみられる所見</h3>
+      <ul>
+        <li><span class="highlight">アルブミン低下</span>（肝での合成低下）</li>
+        <li>総ビリルビン<span class="caution">上昇</span>（低下ではない）</li>
+        <li>プロトロンビン時間<span class="caution">延長</span>（短縮ではない）→ 出血傾向</li>
+        <li>血小板数<span class="caution">減少</span>（脾機能亢進）</li>
+      </ul>
+
+      <h3>肝機能検査項目</h3>
+      <ul>
+        <li><span class="highlight">γ-GTP</span>：アルコール性肝障害で特に上昇</li>
+        <li><span class="key">AST・ALT</span>：肝細胞障害で上昇</li>
+        <li><span class="key">総ビリルビン</span>：黄疸の指標</li>
+      </ul>
+      <p class="note">※UA（尿酸）は痛風、GFRは腎機能、HbA1cは糖尿病の指標</p>
+
+      <h2>2. 出血傾向</h2>
+      <p><span class="key">出血傾向</span>は止血機構の異常により出血しやすい状態。原因は<span class="highlight">3つに分類</span>される。</p>
+
+      <h3>出血傾向の原因（3分類）</h3>
+      <table>
+        <tr><th>分類</th><th>疾患・原因</th><th>検査</th></tr>
+        <tr>
+          <td>血管壁の異常</td>
+          <td>Osler病、壊血病（ビタミンC欠乏）</td>
+          <td>出血時間↑</td>
+        </tr>
+        <tr>
+          <td>血小板の異常</td>
+          <td><span class="key">急性白血病</span>、再生不良性貧血、ITP、放射線障害</td>
+          <td>出血時間↑<br>血小板数↓</td>
+        </tr>
+        <tr>
+          <td>凝固因子の異常</td>
+          <td><span class="key">血友病</span>、von Willebrand病、肝疾患、ビタミンK欠乏、DIC</td>
+          <td>PT↑、APTT↑</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">出血傾向を示す代表的疾患</div>
+        <ul>
+          <li><span class="highlight">急性白血病</span>：血小板減少による出血傾向 + 発熱 + 貧血</li>
+          <li><span class="key">血友病A</span>：第VIII因子欠損 → 関節内出血が特徴</li>
+          <li><span class="key">血友病B</span>：第IX因子欠損</li>
+          <li><span class="key">ITP</span>：特発性血小板減少性紫斑病</li>
+        </ul>
+      </div>
+      <p class="note">※心内膜炎、クレチン病、Basedow病、鉄欠乏性貧血は出血傾向を示さない</p>
+
+      <h2>3. 止血法</h2>
+
+      <h3>骨からの出血に対する止血法</h3>
+      <table>
+        <tr><th>分類</th><th>止血法</th><th>特徴</th></tr>
+        <tr>
+          <td>一時的止血</td>
+          <td><span class="highlight">栓塞法</span></td>
+          <td>骨蝋を詰めて出血点を閉塞</td>
+        </tr>
+        <tr>
+          <td>永久的止血</td>
+          <td><span class="highlight">挫滅法</span></td>
+          <td>骨面を挫滅して出血点を破壊</td>
+        </tr>
+      </table>
+      <p class="note">※緊縛法・結紮法は血管用、指圧法は一時的圧迫止血</p>
+
+      <h3>局所止血薬</h3>
+      <table>
+        <tr><th>薬剤</th><th>作用機序</th></tr>
+        <tr>
+          <td><span class="highlight">トロンビン</span></td>
+          <td>血液凝固系に<span class="key">直接作用</span>（フィブリノゲン→フィブリン）</td>
+        </tr>
+        <tr>
+          <td>酸化セルロース</td>
+          <td>物理的止血（吸収性）</td>
+        </tr>
+        <tr>
+          <td>ゼラチン・コラーゲン</td>
+          <td>物理的止血（吸収性）</td>
+        </tr>
+        <tr>
+          <td>アドレナリン</td>
+          <td>血管収縮（α作用）</td>
+        </tr>
+      </table>
+
+      <h2>4. 抗凝固薬と薬物相互作用</h2>
+
+      <h3>ワルファリンの作用増強薬</h3>
+      <p>ワルファリンは<span class="key">ビタミンK拮抗薬</span>で、肝での凝固因子合成を抑制する。</p>
+      <ul>
+        <li><span class="highlight">ミコナゾール</span>：CYP2C9阻害でワルファリン代謝を抑制</li>
+        <li>アスピリン：抗血小板作用で出血リスク増大</li>
+      </ul>
+      <p class="note"><span class="caution">リファンピシン・カルバマゼピン</span>はCYP誘導でワルファリン作用を<span class="caution">減弱</span></p>
+
+      <h3>血友病Aの治療</h3>
+      <p>血友病Aは<span class="key">第VIII因子欠損</span>による凝固異常。観血的処置時は<span class="highlight">第VIII因子製剤</span>を投与。</p>
+      <p class="note">※濃厚血小板は血小板減少症に使用</p>
+
+      <h3>透析後の出血傾向</h3>
+      <p>血液透析では回路内凝固防止に<span class="highlight">ヘパリン</span>を使用するため、透析直後は易出血傾向となる。</p>
+
+      <h2>5. 過去問</h2>
+
+      <h3>止血法（★★★）</h3>
+      <div class="question-box">
+        <div class="q-number">114A7</div>
+        <p>抜歯後の骨からの持続的な出血に対する適切な止血法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 緊縛法<br>
+          b 指圧法<br>
+          c 栓塞法<br>
+          d 括約縫合法<br>
+          e 血管結紮法
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】骨からの出血には<span class="key">栓塞法</span>（骨蝋）が適切。緊縛法・結紮法は血管用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A12</div>
+        <p>骨からの出血に対する永久的止血法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 緊縛法<br>
+          b 結紮法<br>
+          c 挫滅法<br>
+          d 指圧法<br>
+          e 括約縫合法
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】骨からの出血の<span class="key">永久的止血</span>は<span class="key">挫滅法</span>。栓塞法は一時的止血。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D16</div>
+        <p>血液凝固系に直接作用して局所の止血に用いられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ゼラチン<br>
+          b コラーゲン<br>
+          c トロンビン<br>
+          d アドレナリン<br>
+          e 酸化セルロース
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">トロンビン</span>は凝固カスケードの最終段階で直接作用。他は物理的止血または血管収縮。</p>
+      </div>
+
+      <h3>出血傾向をきたす疾患（★★★）</h3>
+      <div class="question-box">
+        <div class="q-number">117B6</div>
+        <p>出血傾向を示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心内膜炎<br>
+          b 急性白血病<br>
+          c クレチン病<br>
+          d Basedow病<br>
+          e 鉄欠乏性貧血
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">急性白血病</span>は骨髄での正常造血抑制により血小板減少→出血傾向。鉄欠乏性貧血は小球性低色素性貧血で出血傾向なし。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A19</div>
+        <p>血液透析直後の易出血傾向の原因となるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アンピシリン水和物<br>
+          b 副腎皮質ステロイド<br>
+          c ヘパリンナトリウム<br>
+          d シクロホスファミド水和物<br>
+          e ロキソプロフェンナトリウム水和物
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】透析回路の凝固防止に<span class="key">ヘパリン</span>を使用。透析直後はヘパリンが残存し出血傾向。</p>
+      </div>
+
+      <h3>抗凝固薬関連（★★）</h3>
+      <div class="question-box">
+        <div class="q-number">117D4</div>
+        <p>ワルファリンカリウムの薬理作用を増強するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アシクロビル<br>
+          b アザチオプリン<br>
+          c カルバマゼピン<br>
+          d リファンピシン<br>
+          e ミコナゾール硝酸塩
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">ミコナゾール</span>はCYP2C9を阻害しワルファリン代謝を抑制→作用増強。カルバマゼピン・リファンピシンはCYP誘導で作用<span class="caution">減弱</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A8</div>
+        <p>血友病A患者の観血的処置に際して投与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 濃厚血小板<br>
+          b 第Ⅷ因子製剤<br>
+          c 合成Xa阻害薬<br>
+          d ワルファリンカリウム<br>
+          e トロンビン直接阻害薬
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】血友病Aは<span class="key">第VIII因子欠損</span>。欠損因子の補充療法として<span class="key">第VIII因子製剤</span>を投与。</p>
+      </div>
+
+      <h3>肝機能・黄疸関連（★★）</h3>
+      <div class="question-box">
+        <div class="q-number">118A6</div>
+        <p>肝硬変でみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血小板数増加<br>
+          b 白血球数増加<br>
+          c アルブミン低下<br>
+          d 総ビリルビン低下<br>
+          e プロトロンビン時間短縮
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】肝硬変では肝機能低下により<span class="key">アルブミン合成低下</span>。ビリルビンは上昇、PTは延長、血小板は減少する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A11</div>
+        <p>肝機能検査項目はどれか。1つ選べ。</p>
+        <div class="choices">
+          a UA<br>
+          b BMI<br>
+          c GFR<br>
+          d HbA1C<br>
+          e γ−GTP
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">γ-GTP</span>は肝・胆道系酵素で肝機能の指標。UA=尿酸、GFR=腎機能、HbA1c=血糖コントロール。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

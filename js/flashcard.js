@@ -33,6 +33,7 @@ const FlashcardModule = (function() {
     sessionSize: parseInt(localStorage.getItem('flashcard-session-size')) || 5, // 5, 10, 20
     isActive: false,     // 演習中かどうか
     completed: false,    // デッキ完了フラグ（完了後のセッション保存防止用）
+    answeredInSession: 0, // セッション中の回答数（5問ごとのマイルストーン用）
     progress: {},        // { "topicId:index": { status, lastReview } }
     touchStartX: 0,
     touchStartY: 0,
@@ -905,6 +906,7 @@ const FlashcardModule = (function() {
       state.isFlipped = false;
       state.isActive = true;
       state.completed = false;
+      state.answeredInSession = 0;
 
       if (state.filteredCards.length === 0) {
         renderNoCardsMessage();
@@ -979,6 +981,7 @@ const FlashcardModule = (function() {
     state.isFlipped = false;
     state.isActive = true;
     state.completed = false;
+    state.answeredInSession = 0;
 
     if (state.shuffleEnabled) {
       for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -1026,6 +1029,7 @@ const FlashcardModule = (function() {
     state.isFlipped = false;
     state.isActive = true;
     state.completed = false;
+    state.answeredInSession = 0;
 
     // セッション復元
     const session = getSession(state.currentTopicId);
@@ -1102,6 +1106,7 @@ const FlashcardModule = (function() {
     state.isFlipped = false;
     state.isActive = true;
     state.completed = false;
+    state.answeredInSession = 0;
 
     // 検索状態をクリア
     state.cardSearch.query = '';
@@ -1223,6 +1228,7 @@ const FlashcardModule = (function() {
     state.isFlipped = false;
     state.isActive = true;
     state.completed = false;
+    state.answeredInSession = 0;
 
     // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -1307,6 +1313,7 @@ const FlashcardModule = (function() {
     state.isFlipped = false;
     state.isActive = true;
     state.completed = false;
+    state.answeredInSession = 0;
 
     // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -1909,6 +1916,9 @@ const FlashcardModule = (function() {
             <span class="flashcard-progress-text">${current} / ${total}${pendingAgain > 0 ? ` <span class="progress-pending">再${pendingAgain}</span>` : ''}</span>
           </div>
           <div class="flashcard-header-actions">
+            <button class="flashcard-size-btn" id="flashcard-size-btn" aria-label="問数変更">
+              ${state.sessionSize}問
+            </button>
             <button class="flashcard-shuffle-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn" aria-label="シャッフル">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
@@ -2043,6 +2053,9 @@ const FlashcardModule = (function() {
   function bindCardEvents() {
     // 戻るボタン
     document.getElementById('flashcard-back-btn').addEventListener('click', goBack);
+
+    // 問数変更ボタン
+    document.getElementById('flashcard-size-btn').addEventListener('click', cycleSessionSize);
 
     // シャッフルボタン
     document.getElementById('flashcard-shuffle-btn').addEventListener('click', toggleShuffle);
@@ -2726,11 +2739,44 @@ const FlashcardModule = (function() {
   // === 進捗ポンアニメーション ===
   function bumpProgress() {
     const progressText = document.querySelector('.flashcard-progress-text');
+    const progressFill = document.querySelector('.flashcard-progress-fill');
+    state.answeredInSession++;
+    const isMilestone = state.answeredInSession % 5 === 0;
+
     if (progressText) {
-      progressText.classList.remove('bump');
-      // 強制リフローでアニメーションリセット
+      progressText.classList.remove('bump', 'milestone-bump');
+      if (progressFill) progressFill.classList.remove('milestone');
       void progressText.offsetWidth;
-      progressText.classList.add('bump');
+
+      if (isMilestone) {
+        progressText.classList.add('milestone-bump');
+        if (progressFill) progressFill.classList.add('milestone');
+        spawnMilestoneStars(progressText);
+      } else {
+        progressText.classList.add('bump');
+      }
+    }
+  }
+
+  // === マイルストーン星エフェクト ===
+  function spawnMilestoneStars(anchor) {
+    const rect = anchor.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const stars = ['⭐', '✨', '🌟', '💫'];
+
+    for (let i = 0; i < 6; i++) {
+      const star = document.createElement('span');
+      star.className = 'milestone-star';
+      star.textContent = stars[Math.floor(Math.random() * stars.length)];
+      star.style.left = centerX + 'px';
+      star.style.top = centerY + 'px';
+      const angle = (Math.PI * 2 / 6) * i + Math.random() * 0.5;
+      const distance = 40 + Math.random() * 30;
+      star.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+      star.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 700);
     }
   }
 
@@ -2936,6 +2982,38 @@ const FlashcardModule = (function() {
     renderDeckList();
   }
 
+  // === 問数サイクル切り替え ===
+  function cycleSessionSize() {
+    const sizes = [5, 10, 20];
+    const currentIdx = sizes.indexOf(state.sessionSize);
+    const nextIdx = (currentIdx + 1) % sizes.length;
+    const newSize = sizes[nextIdx];
+    state.sessionSize = newSize;
+    localStorage.setItem('flashcard-session-size', newSize);
+
+    // 現在のセッションに即時反映
+    const currentTotal = state.filteredCards.length;
+
+    if (newSize < currentTotal) {
+      // 問数を減らす場合：現在位置以降を切り詰め
+      const keepCount = Math.max(newSize, state.currentIndex + 1);
+      state.filteredCards = state.filteredCards.slice(0, keepCount);
+    } else if (newSize > currentTotal && state.cards.length > currentTotal) {
+      // 問数を増やす場合：元のカードプールから追加
+      const currentKeys = new Set(state.filteredCards.map(c =>
+        `${c.topicId || state.currentTopicId}:${c.originalIndex}`
+      ));
+      const additionalCards = state.cards
+        .filter(c => !currentKeys.has(`${c.topicId || state.currentTopicId}:${c.originalIndex}`))
+        .slice(0, newSize - currentTotal);
+      state.filteredCards = [...state.filteredCards, ...additionalCards];
+    }
+
+    // 画面を再描画
+    renderCard();
+    showSnackbar(`${newSize}問に変更`);
+  }
+
   // === シャッフルトグル ===
   function toggleShuffle() {
     state.shuffleEnabled = !state.shuffleEnabled;
@@ -3027,6 +3105,7 @@ const FlashcardModule = (function() {
     // 演習モードに入る
     state.isActive = true;
     state.completed = false;
+    state.answeredInSession = 0;
     state.isReviewMode = false;
     state.currentIndex = 0;
 

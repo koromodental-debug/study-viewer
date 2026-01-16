@@ -5899,12 +5899,70 @@ body.is-practice .tab-content {
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
+/* 5問ごとのマイルストーンアニメーション */
+.flashcard-progress-text.milestone-bump {
+  animation: milestone-bump 600ms cubic-bezier(.2,.9,.2,1);
+}
+
+@keyframes milestone-bump {
+  0% { transform: translate(-50%, -50%) scale(1); color: inherit; }
+  30% { transform: translate(-50%, -50%) scale(1.6); color: #FFD700; }
+  60% { transform: translate(-50%, -50%) scale(1.4); color: #FF6B6B; }
+  100% { transform: translate(-50%, -50%) scale(1); color: inherit; }
+}
+
+.flashcard-progress-fill.milestone {
+  animation: rainbow-pulse 600ms ease-out;
+}
+
+@keyframes rainbow-pulse {
+  0% { background: linear-gradient(90deg, #FF6B6B, #FFD93D, #6BCB77, #4D96FF, #9B59B6); }
+  50% { background: linear-gradient(90deg, #FFD93D, #6BCB77, #4D96FF, #9B59B6, #FF6B6B); filter: brightness(1.3); }
+  100% { background: linear-gradient(90deg, #34C759, #30D158); }
+}
+
+/* マイルストーン星エフェクト */
+.milestone-star {
+  position: absolute;
+  font-size: 16px;
+  pointer-events: none;
+  z-index: 100;
+  animation: star-fly 700ms ease-out forwards;
+}
+
+@keyframes star-fly {
+  0% { opacity: 1; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+  50% { opacity: 1; transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(180deg); }
+  100% { opacity: 0; transform: translate(calc(var(--tx) * 1.5), calc(var(--ty) * 1.5)) scale(0.3) rotate(360deg); }
+}
+
 /* 再出題待ち表示 */
 .progress-pending {
   font-size: 10px;
   font-weight: 500;
   color: var(--system-orange);
   margin-left: 4px;
+}
+
+/* 問数変更ボタン */
+.flashcard-size-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: #007AFF;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.flashcard-size-btn:active {
+  opacity: 0.5;
 }
 
 .flashcard-shuffle-btn {

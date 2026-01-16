@@ -5591,6 +5591,16 @@ body:not(.is-practice) #flashcard-content {
   background: #e8e8e8;
 }
 
+.deck-topic.last-selected {
+  background: rgba(0, 122, 255, 0.12);
+  animation: highlight-fade 1.5s ease-out forwards;
+}
+
+@keyframes highlight-fade {
+  0% { background: rgba(0, 122, 255, 0.2); }
+  100% { background: transparent; }
+}
+
 .deck-topic-name {
   flex: 1;
   font-size: 15px;

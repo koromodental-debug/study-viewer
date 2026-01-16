@@ -58,7 +58,9 @@ const FlashcardModule = (function() {
       showAll: false  // 全件表示フラグ
     },
     // 科目アコーディオンの開閉状態
-    expandedSubjects: new Set(JSON.parse(localStorage.getItem('flashcard-expanded-subjects') || '[]'))
+    expandedSubjects: new Set(JSON.parse(localStorage.getItem('flashcard-expanded-subjects') || '[]')),
+    // 最後に選択したトピックID
+    lastSelectedTopicId: localStorage.getItem('flashcard-last-topic') || null
   };
 
   // DOM要素
@@ -390,6 +392,24 @@ const FlashcardModule = (function() {
 
     // イベントバインド
     bindDeckListEvents();
+
+    // 最後に選択したトピックにスクロール
+    scrollToLastSelectedTopic();
+  }
+
+  function scrollToLastSelectedTopic() {
+    if (!state.lastSelectedTopicId) return;
+
+    // 少し遅延させてDOM更新を待つ
+    requestAnimationFrame(() => {
+      const topicEl = container.querySelector(`.deck-topic[data-topic-id="${state.lastSelectedTopicId}"]`);
+      if (topicEl) {
+        topicEl.scrollIntoView({ block: 'center', behavior: 'instant' });
+        // 選択状態を視覚的にハイライト（一時的）
+        topicEl.classList.add('last-selected');
+        setTimeout(() => topicEl.classList.remove('last-selected'), 1500);
+      }
+    });
   }
 
   // 検索結果をレンダリング
@@ -705,6 +725,9 @@ const FlashcardModule = (function() {
       row.addEventListener('click', async (e) => {
         e.stopPropagation();
         const topicId = row.dataset.topicId;
+        // 選択したトピックを記憶
+        state.lastSelectedTopicId = topicId;
+        localStorage.setItem('flashcard-last-topic', topicId);
         state.isReviewMode = false;
         await loadTopic(topicId, state.shuffleEnabled);
       });

@@ -5262,8 +5262,11 @@
     const results = [];
     let totalMatches = 0;
 
-    // 全トピックのsearchTextを検索
+    // 全トピックのsearchTextを検索（htmlPathがあるもののみ）
     DATA.forEach((item, index) => {
+      // htmlPathがないエントリはスキップ（コンテンツがないため検索対象外）
+      if (!item.htmlPath) return;
+
       const searchText = (item.searchText || item.title || '').toLowerCase();
       let count = 0;
       let pos = 0;

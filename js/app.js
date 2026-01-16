@@ -3308,6 +3308,9 @@
     // 同じタブなら何もしない（初期化済みの場合のみ）
     if (prevTab === tab && scrollHistory.initialized) return;
 
+    // タブ切り替え時はフローティング検索バーを閉じる
+    hideFloatingSearch();
+
     // 履歴にpush（popstate以外かつ初期化済みの場合）
     if (!skipHistory && scrollHistory.initialized) {
       pushScrollState(tab);

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>隔壁法 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / コンポジットレジン修復</span>
+    <h1>隔壁法</h1>
+    <div class="container">
+
+      <h2>隔壁法とは</h2>
+      <p>複雑窩洞、特に<span class="key">隣接面を含む症例</span>（2級窩洞）に際し、窩洞の単純化をはかる方法。</p>
+      <p>基本的には<span class="key">リテーナー、マトリックス、ウェッジ</span>を用いる。</p>
+
+      <h2>隔壁の種類</h2>
+
+      <h3>トッフルマイヤー式マトリックスシステム</h3>
+      <ul>
+        <li><span class="key">マトリックスリテーナー</span>：バンドを固定</li>
+        <li><span class="key">マトリックスバンド</span>：周径全体を囲む金属バンド</li>
+        <li><span class="key">ウェッジ</span>：歯間分離・マトリックス固定</li>
+      </ul>
+      <p class="note">※主に臼歯部の2級窩洞に使用</p>
+
+      <h3>セクショナルマトリックスシステム</h3>
+      <ul>
+        <li><span class="key">リング状リテーナー</span>：マトリックスを固定、接触点回復</li>
+        <li><span class="key">セクショナルマトリックス</span>：隣接面のみをカバー</li>
+        <li><span class="key">ウェッジ</span>：歯間分離・マトリックス固定</li>
+      </ul>
+      <p class="note">※コンタクトの回復に優れる</p>
+
+      <h3>透明ストリップス</h3>
+      <ul>
+        <li><span class="key">前歯部</span>の隣接面（3級窩洞）に使用</li>
+        <li>光透過性があり、光重合に有利</li>
+      </ul>
+
+      <h2>各器具の目的</h2>
+
+      <table>
+        <tr>
+          <th>器具</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td><span class="key">マトリックス（隔壁）</span></td>
+          <td>窩洞の単純化、隣接面の外形付与</td>
+        </tr>
+        <tr>
+          <td><span class="key">ウェッジ</span></td>
+          <td>歯間分離、歯間乳頭保護、<span class="highlight">辺縁適合性の向上</span>、隔壁の厚み補償</td>
+        </tr>
+        <tr>
+          <td><span class="key">リング状リテーナー</span></td>
+          <td>セクショナルマトリックスの固定、<span class="highlight">接触点の確実な回復</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">金属マトリックス</span></td>
+          <td><span class="highlight">隣接歯保護</span>（窩洞形成時）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">処置の順序（2級CR修復）</div>
+        <ul>
+          <li>① 齲蝕除去・窩洞形成</li>
+          <li>② <span class="highlight">マトリックスの挿入</span>（104D37）</li>
+          <li>③ ウェッジの挿入</li>
+          <li>④ 歯面処理（接着操作）</li>
+          <li>⑤ コンポジットレジン填塞</li>
+          <li>⑥ 光照射</li>
+        </ul>
+      </div>
+
+      <h2>光導型ウェッジ（透明ウェッジ）</h2>
+      <ul>
+        <li>プラスチック製（透明）</li>
+        <li>歯間分離と同時に、ウェッジ三角面からの<span class="key">光放射</span>によって隣接面歯頸部のレジンを重合硬化できる</li>
+      </ul>
+
+      <h2>圧子</h2>
+      <ul>
+        <li>解剖学的形態を再現した<span class="key">透明材料</span></li>
+        <li>窩洞への緊密充填と周囲面との等高平坦化</li>
+        <li>歯頸部窩洞：<span class="key">サービカルマトリックス</span></li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">104D37</div>
+        <p>27歳の男性。上顎左側臼歯部の痛みを主訴として来院した。一過性の冷水痛を認める。└5にコンポジットレジン修復を行うこととした。初診時の口腔内写真（別冊No.37A）と罹患歯質除去後の口腔内写真（別冊No.37B）とを別に示す。
+次に行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D37_1.png" alt="別冊No.37">
+        </div>
+        <div class="choices">
+          a 歯間離開<br>
+          b 接着操作<br>
+          c 裂溝の形成<br>
+          d 隣接面の予防拡大<br>
+          e マトリックスの挿入
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】隣接面を含む窩洞（2級窩洞）では、罹患歯質除去後にまずマトリックスを挿入して窩洞を単純化する。接着操作はマトリックス挿入後に行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105D32</div>
+        <p>28歳の女性。上顎左側小臼歯の冷水痛を主訴として来院した。コンポジットレジン修復を行うこととした。初診時の口腔内写真（別冊No.32A）と齲蝕除去後の口腔内写真（別冊No.32B）とを別に示す。
+辺縁適合性を向上させるために使用するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105D32_1.png" alt="別冊No.32">
+        </div>
+        <div class="choices">
+          a ウッドウェッジ<br>
+          b ガムリトラクター<br>
+          c クラウンフォーム<br>
+          d サービカルマトリックス<br>
+          e アイボリーセパレーター
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】ウッドウェッジは歯間分離だけでなく、マトリックスを歯頸部窩縁に圧接することで辺縁適合性を向上させる。サービカルマトリックスは歯頸部窩洞用の圧子。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B4</div>
+        <p>36歳の女性。上顎左側臼歯の冷水痛を主訴として来院した。└5にコンポジットレジン修復を行うこととした。初診時の口腔内写真（別冊No.4A）、エックス線写真（別冊No.4B）及び齲蝕除去中の口腔内写真（別冊No.4C）を別に示す。
+矢印で示す器具の使用目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106B4_1.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a 隔　壁<br>
+          b 防　湿<br>
+          c 歯間離開<br>
+          d 歯肉排除<br>
+          e 隣接歯保護
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】窩洞形成中に隣接歯を切削から保護するために金属マトリックスを挿入している。この段階では隔壁としての機能ではなく、隣接歯保護が目的。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D75</div>
+        <p>46歳の男性。上顎左側第一小臼歯の冷水痛を主訴として来院した。2週前から症状を自覚するようになったという。他の症状は認められない。検査の結果、コンポジットレジン修復を行うこととした。初診時と齲窩の開拡後の口腔内写真（別冊No.24）を別に示す。
+処置に使用する器具はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D75_1.png" alt="別冊No.24">
+        </div>
+        <div class="choices">
+          a ウェッジ<br>
+          b ガムリトラクター<br>
+          c リング状リテーナー<br>
+          d アイボリーセパレーター<br>
+          e サービカルマトリックス
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】隣接面を含む窩洞（2級窩洞）のCR修復には、セクショナルマトリックスシステム（リング状リテーナー＋セクショナルマトリックス＋ウェッジ）を使用する。ガムリトラクターは歯肉排除、サービカルマトリックスは歯頸部窩洞用の圧子。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A77</div>
+        <p>2級コンポジットレジン修復に用いる器具にマトリックスを装着した写真（別冊No.9）を別に示す。
+適用される歯（FDI歯式）はどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110A77_1.png" alt="別冊No.9">
+        </div>
+        <div class="choices">
+          a 15<br>
+          b 25<br>
+          c 35<br>
+          d 45<br>
+          e 55
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】セクショナルマトリックスの形態から、右側の歯に適用されることがわかる。FDI歯式で15（上顎右側第二小臼歯）、35（下顎左側第二小臼歯）、55（上顎右側第二乳臼歯）が正解。25、45は左側なので不適。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

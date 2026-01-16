@@ -3,6 +3,7 @@
 html/subject/内のHTMLファイルをdata.jsに自動同期するスクリプト
 - 新しいHTMLファイルを自動追加
 - 既存エントリにhtmlPathを追加
+- HTMLからキーワードを抽出してsearchTextを自動生成
 - pre-commitフックから呼び出される
 """
 import os
@@ -14,8 +15,60 @@ BASE_DIR = os.path.dirname(SCRIPT_DIR)
 DATA_JS_PATH = os.path.join(BASE_DIR, "js/data.js")
 HTML_SUBJECT_DIR = os.path.join(BASE_DIR, "html/subject")
 
+
+def extract_search_text(html_full_path):
+    """HTMLファイルからキーワードを抽出してsearchText用の文字列を生成"""
+    try:
+        with open(html_full_path, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+    except Exception:
+        return ""
+
+    keywords = set()
+
+    def add_keyword(text):
+        """キーワードを追加（フィルタリング付き）"""
+        text = text.strip()
+        # 長さチェック（2-50文字）
+        if not text or len(text) < 2 or len(text) > 50:
+            return
+        # 数字のみは除外
+        if text.isdigit():
+            return
+        # JSONで問題になる文字を含むものは除外
+        if any(c in text for c in '{}[]"\'\\'):
+            return
+        # 改行を含むものは除外
+        if '\n' in text or '\r' in text:
+            return
+        keywords.add(text)
+
+    # h1, h2, h3タグのテキストを抽出（見出し）
+    for tag in ['h1', 'h2', 'h3']:
+        heading_pattern = rf'<{tag}[^>]*>([^<]+)</{tag}>'
+        for match in re.finditer(heading_pattern, html_content, re.IGNORECASE):
+            add_keyword(match.group(1))
+
+    # class="key"のテキストを抽出（重要キーワード）
+    key_pattern = r'<span[^>]*class="[^"]*key[^"]*"[^>]*>([^<]+)</span>'
+    for match in re.finditer(key_pattern, html_content, re.IGNORECASE):
+        add_keyword(match.group(1))
+
+    # class="highlight"のテキストを抽出
+    highlight_pattern = r'<span[^>]*class="[^"]*highlight[^"]*"[^>]*>([^<]+)</span>'
+    for match in re.finditer(highlight_pattern, html_content, re.IGNORECASE):
+        add_keyword(match.group(1))
+
+    # point-box-titleのテキストを抽出
+    point_pattern = r'<div[^>]*class="[^"]*point-box-title[^"]*"[^>]*>([^<]+)</div>'
+    for match in re.finditer(point_pattern, html_content, re.IGNORECASE):
+        add_keyword(match.group(1))
+
+    return ' '.join(sorted(keywords))
+
+
 def main():
-    with open(DATA_JS_PATH, 'r') as f:
+    with open(DATA_JS_PATH, 'r', encoding='utf-8') as f:
         content = f.read()
 
     # 既存のhtmlPathを収集
@@ -30,6 +83,12 @@ def main():
     changes_made = False
     new_entries = []
     updated_count = 0
+    search_text_updated = 0
+
+    # htmlPathからエントリ位置を収集（searchText更新用）
+    html_to_entry_pos = {}
+    for match in re.finditer(r'"htmlPath":\s*"([^"]+)"', content):
+        html_to_entry_pos[match.group(1)] = match.start()
 
     # html/subject/内のHTMLファイルをスキャン
     for subject_dir in sorted(os.listdir(HTML_SUBJECT_DIR)):
@@ -42,37 +101,68 @@ def main():
                 continue
 
             html_path = f"html/subject/{subject_dir}/{html_file}"
-            if html_path in existing_html_paths:
-                continue
+            html_full_path = os.path.join(BASE_DIR, html_path)
 
             # 対応するQAファイルパスを生成
             base_name = html_file.replace('.html', '')
             qa_path = f"qa/subject/{subject_dir}/{base_name}_QA.txt"
 
-            if qa_path in qa_to_entry:
-                # 既存エントリにhtmlPathを追加
-                # qaPathの直後にあるhtmlPath: nullを置換
-                pattern = re.escape(f'"qaPath": "{qa_path}"') + r',\s*"htmlPath":\s*null'
-                replacement = f'"qaPath": "{qa_path}",\n    "htmlPath": "{html_path}"'
-                new_content, count = re.subn(pattern, replacement, content)
-                if count > 0:
-                    content = new_content
-                    updated_count += 1
-                    changes_made = True
-            else:
-                # 新規エントリを作成
-                title = base_name.split('_', 1)[-1] if '_' in base_name else base_name
-                subject = subject_dir.replace('学', '')
+            if html_path not in existing_html_paths:
+                # 新規HTMLファイル
+                if qa_path in qa_to_entry:
+                    # 既存エントリにhtmlPathを追加
+                    pattern = re.escape(f'"qaPath": "{qa_path}"') + r',\s*"htmlPath":\s*null'
+                    replacement = f'"qaPath": "{qa_path}",\n    "htmlPath": "{html_path}"'
+                    new_content, count = re.subn(pattern, replacement, content)
+                    if count > 0:
+                        content = new_content
+                        updated_count += 1
+                        changes_made = True
+                else:
+                    # 新規エントリを作成
+                    title = base_name.split('_', 1)[-1] if '_' in base_name else base_name
+                    subject = subject_dir.replace('学', '')
+                    # HTMLからキーワードを抽出
+                    extracted_keywords = extract_search_text(html_full_path)
+                    search_text = f"{title} {extracted_keywords}".strip()
 
-                entry = f'''  {{
+                    entry = f'''  {{
     "id": "{title}",
     "title": "{title}",
     "qaPath": null,
     "htmlPath": "{html_path}",
     "subject": "{subject}",
-    "subjectCategory": "基礎"
+    "subjectCategory": "基礎",
+    "searchText": "{search_text}"
   }}'''
-                new_entries.append(entry)
+                    new_entries.append(entry)
+            else:
+                # 既存エントリのsearchTextを更新（空または短い場合）
+                if html_path in html_to_entry_pos:
+                    # エントリ全体を探す
+                    entry_start = html_to_entry_pos[html_path]
+                    # このエントリの開始位置（{）を見つける
+                    brace_start = content.rfind('{', 0, entry_start)
+                    # このエントリの終了位置（}）を見つける
+                    brace_end = content.find('}', entry_start)
+                    if brace_start != -1 and brace_end != -1:
+                        entry_text = content[brace_start:brace_end + 1]
+                        # 現在のsearchTextを取得
+                        search_match = re.search(r'"searchText":\s*"([^"]*)"', entry_text)
+                        if search_match:
+                            current_search_text = search_match.group(1)
+                            # searchTextが空または短い場合に更新
+                            if len(current_search_text) < 50:
+                                extracted_keywords = extract_search_text(html_full_path)
+                                if extracted_keywords:
+                                    title = base_name.split('_', 1)[-1] if '_' in base_name else base_name
+                                    new_search_text = f"{title} {extracted_keywords}".strip()
+                                    # searchTextを更新
+                                    old_search = f'"searchText": "{current_search_text}"'
+                                    new_search = f'"searchText": "{new_search_text}"'
+                                    content = content.replace(old_search, new_search, 1)
+                                    search_text_updated += 1
+                                    changes_made = True
 
     # 新規エントリを追加
     if new_entries:
@@ -89,7 +179,7 @@ def main():
         changes_made = True
 
     if changes_made:
-        with open(DATA_JS_PATH, 'w') as f:
+        with open(DATA_JS_PATH, 'w', encoding='utf-8') as f:
             f.write(content)
 
         if updated_count > 0:
@@ -102,6 +192,8 @@ def main():
                     print(f"  + {match.group(1)}")
             if len(new_entries) > 5:
                 print(f"  ... 他{len(new_entries)-5}件")
+        if search_text_updated > 0:
+            print(f"既存エントリ{search_text_updated}件のsearchTextを更新しました")
         return 2  # 変更あり
 
     return 0  # 変更なし

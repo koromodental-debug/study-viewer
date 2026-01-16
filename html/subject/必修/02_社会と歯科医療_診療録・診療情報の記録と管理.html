@@ -108,14 +108,15 @@
         <tr>
           <td><span class="key">A</span></td>
           <td>診断・評価</td>
-          <td>「鑑別診断」「必要と判断した」</td>
+          <td>「鑑別診断」「必要と<span class="highlight">判断</span>した」</td>
         </tr>
         <tr>
           <td><span class="key">P</span></td>
-          <td>これから行うこと</td>
+          <td>これから<span class="highlight">行う</span>こと</td>
           <td>「咬合調整を行う」「検査計画」</td>
         </tr>
       </table>
+      <p class="note"><span class="caution">「〜が認められた」「〜を認める」はO（客観的所見）</span></p>
 
       <div class="question-box">
         <div class="q-number">107C4</div>
@@ -128,7 +129,7 @@
           e 症状に対する検査計画
         </div>
         <div class="answer">正解：b</div>
-        <p>【解説】O＝Objective＝客観的情報＝他覚所見。</p>
+        <p>【解説】O＝Objective＝客観的情報＝他覚所見。自覚症状はS。</p>
       </div>
 
       <div class="question-box">
@@ -142,7 +143,7 @@
           e 治療方針
         </div>
         <div class="answer">正解：a</div>
-        <p>【解説】A＝Assessment＝評価＝鑑別診断。</p>
+        <p>【解説】A＝Assessment＝評価＝鑑別診断。検査所見はO、治療方針・計画はP。</p>
       </div>
 
       <div class="question-box">
@@ -156,7 +157,7 @@
           e これまで歯科治療を受けたことがある。
         </div>
         <div class="answer">正解：b</div>
-        <p>【解説】「視診で〜認められる」は医療者が観察した客観的情報＝O。a,d,eは患者の訴え＝S。</p>
+        <p>【解説】「視診で〜認められる」は医療者が観察した客観的情報＝O。a,d,eは患者の訴え＝S。cは治療計画＝P。</p>
       </div>
 
       <div class="question-box">
@@ -170,16 +171,30 @@
           e エックス線所見
         </div>
         <div class="answer">正解：c</div>
-        <p>【解説】「いつ脱離したか」は患者からの情報＝S。窩洞形態・X線所見は O。</p>
+        <p>【解説】「いつ脱離したか」は患者からの情報＝S。窩洞形態・X線所見はO。治療方針・再装着処置はP。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D6</div>
+        <p>75歳の女性。食事中に入れ歯が痛い（ア）ことを主訴として来院した。義歯の着脱時や安静時には痛みはない（イ）という。口腔内を診察したところ、咬合時の義歯床の沈下が認められた（ウ）。咬合の修正が必要と判断（エ）し、咬合調整を行う（オ）こととした。この診療記録をSOAPに準拠して作成する場合、「O」に該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ア・イは患者の訴え＝S。ウ「認められた」は客観的所見＝O。エ「判断した」は評価＝A。オ「行う」は計画＝P。</p>
       </div>
 
       <h2>DICOM</h2>
       <div class="point-box">
         <div class="point-box-title">DICOM（Digital Imaging and Communications in Medicine）</div>
         <p><span class="highlight">医用画像情報の標準規格</span></p>
-        <p>患者個人情報データ（<span class="highlight">性別</span>など）を含む</p>
+        <p>患者個人情報データ（<span class="highlight">性別</span>、氏名、生年月日など）を含む</p>
       </div>
-      <p class="note"><span class="caution">主訴、家族歴、既往歴、現病歴はDICOMに含まれない</span></p>
+      <p class="note"><span class="caution">主訴、家族歴、既往歴、現病歴はDICOMに含まれない</span>（これらは診療録に記載）</p>
 
       <div class="question-box">
         <div class="q-number">108A2</div>
@@ -192,7 +207,7 @@
           e DICOM
         </div>
         <div class="answer">正解：e</div>
-        <p>【解説】BMP, PNG, JPEG, TIFFは一般的な画像形式。DICOMは医用画像専用。</p>
+        <p>【解説】BMP, PNG, JPEG, TIFFは一般的な画像形式。DICOMは医用画像専用の規格で患者情報を含む。</p>
       </div>
 
       <div class="question-box">
@@ -206,6 +221,7 @@
           e 現病歴
         </div>
         <div class="answer">正解：b</div>
+        <p>【解説】DICOMには患者の基本情報（性別、氏名、生年月日等）が含まれる。主訴・家族歴・既往歴・現病歴は診療録の記載事項。</p>
       </div>
 
       <h2>診療記録の保存期間</h2>
@@ -218,7 +234,7 @@
         <tr>
           <td><span class="key">診療録</span></td>
           <td><span class="highlight">5年</span></td>
-          <td>歯科医師法</td>
+          <td><span class="highlight">歯科医師法</span></td>
         </tr>
         <tr>
           <td><span class="key">処方せん</span></td>
@@ -228,6 +244,11 @@
         <tr>
           <td>手術記録・検査所見記録</td>
           <td>2年</td>
+          <td><span class="highlight">医療法</span></td>
+        </tr>
+        <tr>
+          <td>エックス線写真</td>
+          <td>2年</td>
           <td>医療法</td>
         </tr>
         <tr>
@@ -235,12 +256,8 @@
           <td>2年</td>
           <td>歯科技工士法</td>
         </tr>
-        <tr>
-          <td>エックス線写真</td>
-          <td>2年</td>
-          <td>医療法</td>
-        </tr>
       </table>
+      <p class="note">覚え方：<span class="key">診療録5年が最長</span>、処方せん3年、その他2年</p>
 
       <div class="question-box">
         <div class="q-number">110A13</div>
@@ -267,11 +284,19 @@
           e 歯科技工指示書 ー 歯科医師法
         </div>
         <div class="answer">正解：c</div>
-        <p>【解説】処方箋・診療録は歯科医師法。手術記録・検査所見記録・X線写真は医療法。</p>
+        <p>【解説】処方箋・診療録は歯科医師法（aは正しいがbが間違い）。手術記録・検査所見記録・X線写真は医療法。歯科技工指示書は歯科技工士法。</p>
       </div>
 
       <h2>死亡診断書</h2>
-      <p>死亡診断書に<span class="caution">記載しない</span>もの：<span class="highlight">職業</span></p>
+      <div class="point-box">
+        <div class="point-box-title">死亡診断書の記載事項</div>
+        <ul>
+          <li>氏名、性別、生年月日</li>
+          <li>死亡したとき、死亡したところ</li>
+          <li>死亡の原因</li>
+        </ul>
+      </div>
+      <p class="note"><span class="caution">職業は死亡診断書に記載しない</span></p>
 
       <div class="question-box">
         <div class="q-number">108A22</div>
@@ -284,6 +309,7 @@
           e 死亡したところ
         </div>
         <div class="answer">正解：c</div>
+        <p>【解説】死亡診断書には氏名、性別、生年月日、死亡場所、死因等を記載。職業は記載しない。</p>
       </div>
 
     </div>

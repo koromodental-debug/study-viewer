@@ -51,19 +51,12 @@ def main():
 
             if qa_path in qa_to_entry:
                 # 既存エントリにhtmlPathを追加
-                # "htmlPath": null を "htmlPath": "html/subject/..." に置換
-                entry_pos = qa_to_entry[qa_path]
-                # このエントリの前にあるhtmlPath: nullを探す
-                entry_start = content.rfind('{', 0, entry_pos)
-                entry_end = content.find('}', entry_pos)
-                entry_text = content[entry_start:entry_end+1]
-
-                if '"htmlPath": null' in entry_text:
-                    new_entry_text = entry_text.replace(
-                        '"htmlPath": null',
-                        f'"htmlPath": "{html_path}"'
-                    )
-                    content = content[:entry_start] + new_entry_text + content[entry_end+1:]
+                # qaPathの直後にあるhtmlPath: nullを置換
+                pattern = re.escape(f'"qaPath": "{qa_path}"') + r',\s*"htmlPath":\s*null'
+                replacement = f'"qaPath": "{qa_path}",\n    "htmlPath": "{html_path}"'
+                new_content, count = re.subn(pattern, replacement, content)
+                if count > 0:
+                    content = new_content
                     updated_count += 1
                     changes_made = True
             else:

@@ -4232,7 +4232,7 @@ const DATA = [
     "id": "薬物適用上の注意点_妊婦",
     "title": "薬物適用上の注意点_妊婦",
     "qaPath": "qa/subject/薬理学/08_薬物適用上の注意点_妊婦_QA.txt",
-    "htmlPath": "html/subject/薬理学/08_薬物適用上の注意点_高齢者.html",
+    "htmlPath": "html/subject/薬理学/08_薬物適用上の注意点_妊婦.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4240,7 +4240,7 @@ const DATA = [
     "id": "薬物適用上の注意点_高齢者",
     "title": "薬物適用上の注意点_高齢者",
     "qaPath": "qa/subject/薬理学/08_薬物適用上の注意点_高齢者_QA.txt",
-    "htmlPath": "html/subject/薬理学/09_薬理学各論_ステロイド性抗炎症薬.html",
+    "htmlPath": "html/subject/薬理学/08_薬物適用上の注意点_高齢者.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4248,7 +4248,7 @@ const DATA = [
     "id": "薬理学各論_ステロイド性抗炎症薬",
     "title": "薬理学各論_ステロイド性抗炎症薬",
     "qaPath": "qa/subject/薬理学/09_薬理学各論_ステロイド性抗炎症薬_QA.txt",
-    "htmlPath": "html/subject/薬理学/09_薬理学各論_局所麻酔薬.html",
+    "htmlPath": "html/subject/薬理学/09_薬理学各論_ステロイド性抗炎症薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4256,7 +4256,7 @@ const DATA = [
     "id": "薬理学各論_局所麻酔薬",
     "title": "薬理学各論_局所麻酔薬",
     "qaPath": "qa/subject/薬理学/09_薬理学各論_局所麻酔薬_QA.txt",
-    "htmlPath": "html/subject/薬理学/09_薬理学各論_抗凝固薬.html",
+    "htmlPath": "html/subject/薬理学/09_薬理学各論_局所麻酔薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4264,7 +4264,7 @@ const DATA = [
     "id": "薬理学各論_抗凝固薬",
     "title": "薬理学各論_抗凝固薬",
     "qaPath": "qa/subject/薬理学/09_薬理学各論_抗凝固薬_QA.txt",
-    "htmlPath": "html/subject/薬理学/09_薬理学各論_抗悪性腫瘍薬.html",
+    "htmlPath": "html/subject/薬理学/09_薬理学各論_抗凝固薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4272,7 +4272,7 @@ const DATA = [
     "id": "薬理学各論_抗悪性腫瘍薬",
     "title": "薬理学各論_抗悪性腫瘍薬",
     "qaPath": "qa/subject/薬理学/09_薬理学各論_抗悪性腫瘍薬_QA.txt",
-    "htmlPath": "html/subject/薬理学/09_薬理学各論_抗真菌薬.html",
+    "htmlPath": "html/subject/薬理学/09_薬理学各論_抗悪性腫瘍薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4280,7 +4280,7 @@ const DATA = [
     "id": "薬理学各論_抗真菌薬",
     "title": "薬理学各論_抗真菌薬",
     "qaPath": "qa/subject/薬理学/09_薬理学各論_抗真菌薬_QA.txt",
-    "htmlPath": "html/subject/薬理学/09_薬理学各論_鎮痛薬.html",
+    "htmlPath": "html/subject/薬理学/09_薬理学各論_抗真菌薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4288,7 +4288,7 @@ const DATA = [
     "id": "薬理学各論_抗菌薬",
     "title": "薬理学各論_抗菌薬",
     "qaPath": "qa/subject/薬理学/09_薬理学各論_抗菌薬_QA.txt",
-    "htmlPath": "html/subject/薬理学/09_薬理学各論_降圧薬.html",
+    "htmlPath": "html/subject/薬理学/09_薬理学各論_抗菌薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4296,7 +4296,7 @@ const DATA = [
     "id": "薬理学各論_鎮痛薬",
     "title": "薬理学各論_鎮痛薬",
     "qaPath": "qa/subject/薬理学/09_薬理学各論_鎮痛薬_QA.txt",
-    "htmlPath": "html/subject/薬理学/09_薬理学各論_非ステロイド性抗炎症薬.html",
+    "htmlPath": "html/subject/薬理学/09_薬理学各論_鎮痛薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4514,6 +4514,14 @@ const DATA = [
     "qaPath": null,
     "htmlPath": "html/subject/保存修復学/05_コンポジットレジン修復_歯肉排除.html",
     "subject": "保存修復",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "医の倫理と歯科医師のプロフェッショナリズム_医の倫理",
+    "title": "医の倫理と歯科医師のプロフェッショナリズム_医の倫理",
+    "qaPath": null,
+    "htmlPath": "html/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_医の倫理.html",
+    "subject": "必修",
     "subjectCategory": "基礎"
   }
 ];

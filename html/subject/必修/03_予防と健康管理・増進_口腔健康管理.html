@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔健康管理 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 03 予防と健康管理・増進</span>
+    <h1>口腔健康管理</h1>
+    <div class="container">
+
+      <h2>口腔健康管理とは</h2>
+      <p>口腔健康管理は、口腔の健康を維持・増進するための包括的なケアであり、特に<span class="key">高齢者</span>や<span class="key">要介護者</span>において<span class="highlight">誤嚥性肺炎の予防</span>に重要な役割を果たす。</p>
+
+      <h3>口腔ケアの分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>内容</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td><span class="key">器質的口腔ケア</span></td>
+          <td>口腔清掃（歯磨き、粘膜清掃、舌清掃）</td>
+          <td>口腔内の<span class="highlight">細菌数を減少</span>させる</td>
+        </tr>
+        <tr>
+          <td><span class="key">機能的口腔ケア</span></td>
+          <td>嚥下・舌機能のリハビリテーション</td>
+          <td>嚥下機能の維持・改善</td>
+        </tr>
+      </table>
+
+      <h2>誤嚥性肺炎</h2>
+      <h3>誤嚥性肺炎の発生機序</h3>
+      <p><span class="key">誤嚥</span>（食物や唾液が気管に入る）に引き続いて発生する肺炎。口腔内細菌が気管・肺に到達することで発症する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">誤嚥性肺炎の予防</div>
+        <ul>
+          <li><span class="key">器質的口腔ケア</span>：口腔内細菌数を減少 → 誤嚥時の細菌量を最小限に</li>
+          <li><span class="key">機能的口腔ケア</span>：嚥下リハビリ → 誤嚥そのものを防止</li>
+          <li><span class="key">座位での経口摂取</span>：誤嚥防止＋免疫力向上</li>
+        </ul>
+      </div>
+
+      <h3>不顕性誤嚥</h3>
+      <p><span class="key">不顕性誤嚥</span>：むせや咳などの症状がなく、本人も気づかない誤嚥。睡眠中に唾液とともに口腔内細菌が気管に入ることで発生。</p>
+      <p class="note"><span class="caution">脳血管障害患者や高齢者に多い</span>。日中のむせがなくても誤嚥性肺炎を起こすことがある。</p>
+
+      <div class="question-box">
+        <div class="q-number">115A19</div>
+        <p>終末期の高齢者に対する口腔健康管理の目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咬合力の増大<br>
+          b 咬合高径の維持<br>
+          c 誤嚥性肺炎の予防<br>
+          d セルフケアの確立<br>
+          e 口腔自浄作用の向上
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】終末期の高齢者では、咬合力増大や咬合高径維持は現実的でない。セルフケアの確立も困難。<span class="highlight">誤嚥性肺炎の予防</span>が最も重要な目的となる。</p>
+      </div>
+
+      <h2>口腔ケア時の体位</h2>
+      <h3>誤嚥リスクを考慮した体位</h3>
+      <table>
+        <tr>
+          <th>体位</th>
+          <th>特徴</th>
+          <th>誤嚥リスク</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">頭部前傾座位</span></td>
+          <td>頭を前に傾けた座位</td>
+          <td><span class="highlight">最も安全</span>（喉頭蓋が気道を覆う）</td>
+        </tr>
+        <tr>
+          <td><span class="key">セミファウラー位</span></td>
+          <td>上半身を30〜45度挙上</td>
+          <td>比較的安全</td>
+        </tr>
+        <tr>
+          <td>頭部後傾座位</td>
+          <td>頭を後ろに傾けた座位</td>
+          <td><span class="caution">危険</span>（気道が開く）</td>
+        </tr>
+        <tr>
+          <td>仰臥位</td>
+          <td>あおむけ</td>
+          <td><span class="caution">危険</span>（重力で気道に流入）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">体位選択のポイント</div>
+        <ul>
+          <li>誤嚥リスクが高い患者 → <span class="highlight">頭部前傾座位</span>が最も安全</li>
+          <li>仰臥位よりも<span class="key">座位</span>の方が安全</li>
+          <li>頭部後傾は気道が開くため<span class="caution">禁忌</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A4</div>
+        <p>誤嚥性肺炎のリスクが高い車椅子生活患者に対する口腔清掃時の体位で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 右側臥位<br>
+          b 左側臥位<br>
+          c セミファウラー位<br>
+          d 頭部を後傾させた座位<br>
+          e 頭部を前傾させた座位
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】車椅子での口腔清掃では<span class="highlight">頭部を前傾させた座位</span>が最も安全。頭部後傾は気道が開き危険。側臥位は車椅子では困難。セミファウラー位より頭部前傾座位の方が誤嚥防止に優れる。</p>
+      </div>
+
+      <h2>要介護高齢者の口腔ケア</h2>
+      <h3>口腔ケアの原則</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>正しい方法</th>
+          <th>注意点</th>
+        </tr>
+        <tr>
+          <td>体位</td>
+          <td><span class="highlight">座位</span>で行う</td>
+          <td>仰臥位より誤嚥リスクが低い</td>
+        </tr>
+        <tr>
+          <td>義歯</td>
+          <td><span class="key">外して</span>行う</td>
+          <td>義歯下の粘膜も清掃</td>
+        </tr>
+        <tr>
+          <td>無歯顎</td>
+          <td><span class="key">必要</span></td>
+          <td>粘膜・舌の清掃が重要</td>
+        </tr>
+        <tr>
+          <td>口腔内の湿潤</td>
+          <td><span class="key">湿潤状態</span>で行う</td>
+          <td>乾燥は粘膜損傷の原因</td>
+        </tr>
+        <tr>
+          <td>舌清掃</td>
+          <td><span class="highlight">舌根から舌尖</span>へ</td>
+          <td>奥から手前に掻き出す</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107C15</div>
+        <p>要介護高齢者に対する口腔ケアで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 義歯を装着したまま行う。<br>
+          b 無歯顎患者には不要である。<br>
+          c 口腔内を乾燥させた状態で行う。<br>
+          d 舌清掃は舌尖から舌根に向けて行う。<br>
+          e 仰臥位に比べ座位で行う方が安全である。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">座位の方が誤嚥リスクが低く安全</span>。義歯は外して行う。無歯顎でも粘膜清掃は必要。口腔内は湿潤状態で行う。舌清掃は<span class="caution">舌根→舌尖</span>（奥から手前）が正しい。</p>
+      </div>
+
+      <h2>口腔ケアで予防できる疾患</h2>
+      <div class="point-box">
+        <div class="point-box-title">口腔ケアと感染症予防</div>
+        <ul>
+          <li><span class="highlight">誤嚥性肺炎</span>：口腔内細菌の減少により予防可能</li>
+          <li>B型肝炎：血液感染 → <span class="caution">口腔ケアでは予防不可</span></li>
+          <li>手足口病：ウイルス感染 → 口腔ケアでは予防不可</li>
+          <li>百日咳：飛沫感染 → 口腔ケアでは予防不可</li>
+          <li>流行性耳下腺炎：ウイルス感染 → 口腔ケアでは予防不可</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

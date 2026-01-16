@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>全身・口腔の構造と機能 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 04 人体の正常構造・機能</span>
+    <h1>全身・口腔の構造と機能</h1>
+    <div class="container">
+
+      <h2>細胞の構造</h2>
+      <h3>細胞小器官の機能</h3>
+      <table>
+        <tr>
+          <th>細胞小器官</th>
+          <th>構造</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">核</span></td>
+          <td>核膜（二重膜）で囲まれる</td>
+          <td>DNA複製、転写</td>
+        </tr>
+        <tr>
+          <td><span class="key">ミトコンドリア</span></td>
+          <td><span class="highlight">内外2層の二重膜</span>、膜間腔あり</td>
+          <td>ATP産生（クエン酸回路、電子伝達系）</td>
+        </tr>
+        <tr>
+          <td><span class="key">ゴルジ装置</span></td>
+          <td>扁平な膜の重なり</td>
+          <td><span class="highlight">糖鎖付加</span>、タンパク質の修飾・分泌</td>
+        </tr>
+        <tr>
+          <td><span class="key">粗面小胞体</span></td>
+          <td>リボソームが付着</td>
+          <td>分泌タンパク質の合成</td>
+        </tr>
+        <tr>
+          <td><span class="key">滑面小胞体</span></td>
+          <td>リボソームなし</td>
+          <td>脂質合成、Ca²⁺貯蔵（筋小胞体）</td>
+        </tr>
+        <tr>
+          <td><span class="key">リボソーム</span></td>
+          <td>RNAとタンパク質の複合体</td>
+          <td>タンパク質合成（翻訳）</td>
+        </tr>
+        <tr>
+          <td><span class="key">リソソーム</span></td>
+          <td>単膜、加水分解酵素を含む</td>
+          <td>細胞内消化</td>
+        </tr>
+        <tr>
+          <td><span class="key">オートファゴソーム</span></td>
+          <td>二重膜</td>
+          <td><span class="highlight">飢餓時の自己タンパク質分解</span></td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116A14</div>
+        <p>内外2層のリン脂質二重層で囲まれ、膜間腔を有するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ゴルジ装置<br>
+          b 粗面小胞体<br>
+          c リソソーム<br>
+          d リボソーム<br>
+          e ミトコンドリア
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">ミトコンドリア</span>は内外2層の二重膜を持ち、膜間腔がある。ゴルジ装置・小胞体・リソソームは単膜。リボソームは膜構造を持たない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C17</div>
+        <p>タンパク質の糖鎖付加が行われるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 核<br>
+          b 中心体<br>
+          c ゴルジ装置<br>
+          d リボソーム<br>
+          e ミトコンドリア
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">ゴルジ装置</span>でタンパク質の糖鎖付加（グリコシル化）が行われる。リボソームはタンパク質合成、ミトコンドリアはATP産生。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A13</div>
+        <p>栄養飢餓状態に陥ったとき、自己のタンパク質分解を行う細胞小器官はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 核<br>
+          b ゴルジ体<br>
+          c 中心小体<br>
+          d リボソーム<br>
+          e オートファゴソーム
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">オートファゴソーム</span>（オートファジー）は飢餓状態で自己のタンパク質を分解してアミノ酸を供給。リソソームは外来物質の分解。</p>
+      </div>
+
+      <h3>代謝の場所</h3>
+      <table>
+        <tr>
+          <th>代謝経路</th>
+          <th>場所</th>
+        </tr>
+        <tr>
+          <td><span class="key">解糖系</span></td>
+          <td><span class="highlight">細胞質基質</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">クエン酸回路</span></td>
+          <td>ミトコンドリア（マトリックス）</td>
+        </tr>
+        <tr>
+          <td><span class="key">電子伝達系</span></td>
+          <td>ミトコンドリア（内膜）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114B10</div>
+        <p>解糖系が働く部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ゴルジ装置<br>
+          b 細胞質基質<br>
+          c 粗面小胞体<br>
+          d リソソーム<br>
+          e ミトコンドリア
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">解糖系は細胞質基質</span>で行われる。クエン酸回路・電子伝達系はミトコンドリア。</p>
+      </div>
+
+      <h2>組織の構造</h2>
+      <h3>上皮組織の分類</h3>
+      <table>
+        <tr>
+          <th>上皮の種類</th>
+          <th>存在部位</th>
+        </tr>
+        <tr>
+          <td><span class="key">重層扁平上皮</span></td>
+          <td><span class="highlight">口腔粘膜</span>、食道、皮膚、腟、直腸下端</td>
+        </tr>
+        <tr>
+          <td><span class="key">単層円柱上皮</span></td>
+          <td>胃、小腸、大腸</td>
+        </tr>
+        <tr>
+          <td><span class="key">多列線毛上皮</span></td>
+          <td>気道（鼻腔、気管）、<span class="highlight">上顎洞</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">移行上皮</span></td>
+          <td>膀胱、尿管</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">口腔と同じ上皮を持つ部位</div>
+        <ul>
+          <li>口腔 = <span class="highlight">重層扁平上皮</span></li>
+          <li>同じ上皮：食道、皮膚、腟、<span class="key">直腸下端部</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A9</div>
+        <p>重層扁平上皮をもつのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 食道粘膜<br>
+          b 細気管支粘膜<br>
+          c 空腸粘膜<br>
+          d 卵管粘膜<br>
+          e 尿管粘膜
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">食道</span>は重層扁平上皮。気管支・卵管は線毛上皮、小腸（空腸）は単層円柱上皮、尿管は移行上皮。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B8</div>
+        <p>正常な上顎洞の粘膜上皮はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 移行上皮<br>
+          b 重層扁平上皮<br>
+          c 多列線毛上皮<br>
+          d 単層円柱上皮<br>
+          e 単層扁平上皮
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">上顎洞は多列線毛上皮</span>（呼吸上皮）。鼻腔・気管と同じ上皮。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D8</div>
+        <p>口腔と同じ種類の上皮をもつのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 胃噴門部<br>
+          b 胃幽門部<br>
+          c 十二指腸球部<br>
+          d 左結腸曲<br>
+          e 直腸下端部
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】口腔は重層扁平上皮。<span class="highlight">直腸下端部</span>（肛門に近い部分）も重層扁平上皮。胃・小腸・大腸は単層円柱上皮。</p>
+      </div>
+
+      <h2>筋組織</h2>
+      <h3>筋の分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>特徴</th>
+          <th>存在部位</th>
+        </tr>
+        <tr>
+          <td><span class="key">横紋筋（骨格筋）</span></td>
+          <td>横紋あり、随意筋、多核</td>
+          <td>四肢筋、咀嚼筋、<span class="highlight">横隔膜</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">心筋</span></td>
+          <td>横紋あり、不随意筋、介在板</td>
+          <td>心臓</td>
+        </tr>
+        <tr>
+          <td><span class="key">平滑筋</span></td>
+          <td>横紋なし、不随意筋、単核</td>
+          <td>消化管、血管、子宮</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116B5</div>
+        <p>横紋筋を構造に含むのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 胃<br>
+          b 気管<br>
+          c 子宮<br>
+          d 直腸<br>
+          e 横隔膜
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">横隔膜は横紋筋</span>（骨格筋）。胃・気管・子宮・直腸は平滑筋を含む。</p>
+      </div>
+
+      <h3>筋収縮のメカニズム</h3>
+      <p><span class="key">筋小胞体</span>（滑面小胞体）から<span class="highlight">Ca²⁺</span>が放出されることで筋収縮が起こる。</p>
+
+      <div class="question-box">
+        <div class="q-number">116A8</div>
+        <p>筋小胞体から放出されて筋収縮を起こすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Cl⁻<br>
+          b Na⁺<br>
+          c Ca²⁺<br>
+          d Mg²⁺<br>
+          e HCO₃⁻
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">Ca²⁺</span>が筋小胞体から放出されてトロポニンに結合し、筋収縮が起こる。</p>
+      </div>
+
+      <h2>結合組織</h2>
+      <h3>コラーゲン</h3>
+      <table>
+        <tr>
+          <th>型</th>
+          <th>存在部位</th>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅰ型コラーゲン</span></td>
+          <td><span class="highlight">骨</span>、皮膚、腱、象牙質</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅱ型コラーゲン</span></td>
+          <td>軟骨</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅲ型コラーゲン</span></td>
+          <td>血管、皮膚（細網線維）</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅳ型コラーゲン</span></td>
+          <td>基底膜</td>
+        </tr>
+      </table>
+      <p class="note">コラーゲンの三本鎖らせん構造は<span class="highlight">グリシン</span>が3残基ごとに存在することで安定する。</p>
+
+      <div class="question-box">
+        <div class="q-number">113D4</div>
+        <p>骨芽細胞が産生するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ムチン<br>
+          b ケラチン<br>
+          c アグリカン<br>
+          d アメロゲニン<br>
+          e Ⅰ型コラーゲン
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】骨芽細胞は<span class="highlight">Ⅰ型コラーゲン</span>を産生。アグリカンは軟骨、アメロゲニンはエナメル芽細胞、ケラチンは上皮細胞。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A5</div>
+        <p>コラーゲンの三本鎖らせん構造を安定させるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a リシン<br>
+          b アラニン<br>
+          c グリシン<br>
+          d プロリン<br>
+          e グルタミン
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">グリシン</span>は最小のアミノ酸で、コラーゲンの三本鎖らせん構造の中心に3残基ごとに位置し構造を安定させる。</p>
+      </div>
+
+      <h3>グリコサミノグリカン</h3>
+      <p><span class="key">グリコサミノグリカン</span>：アミノ糖とウロン酸の繰り返し構造を持つ多糖類。</p>
+      <ul>
+        <li><span class="highlight">コンドロイチン硫酸</span>：軟骨に多い</li>
+        <li><span class="key">ヒアルロン酸</span>：関節液、皮膚</li>
+        <li><span class="key">ヘパラン硫酸</span>：基底膜</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108C8</div>
+        <p>グリコサミノグリカンはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ヒストン<br>
+          b ラミニン<br>
+          c アラキドン酸<br>
+          d フィブロネクチン<br>
+          e コンドロイチン硫酸
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">コンドロイチン硫酸</span>はグリコサミノグリカン。ヒストンはDNA結合タンパク質、ラミニン・フィブロネクチンは細胞外基質タンパク質、アラキドン酸は脂肪酸。</p>
+      </div>
+
+      <h2>血液凝固と線溶</h2>
+      <h3>凝固と線溶のメカニズム</h3>
+      <table>
+        <tr>
+          <th>過程</th>
+          <th>物質</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td rowspan="3">凝固</td>
+          <td>プロトロンビン</td>
+          <td>→ トロンビンに活性化</td>
+        </tr>
+        <tr>
+          <td><span class="key">トロンビン</span></td>
+          <td>フィブリノゲン → フィブリン</td>
+        </tr>
+        <tr>
+          <td><span class="key">フィブリン</span></td>
+          <td>凝血塊を形成</td>
+        </tr>
+        <tr>
+          <td>線溶</td>
+          <td><span class="highlight">プラスミン</span></td>
+          <td>フィブリンを溶解</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108A4</div>
+        <p>フィブリンによる凝血塊を溶解するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a プラスミン<br>
+          b トロンビン<br>
+          c ビタミンK<br>
+          d プロトロンビン<br>
+          e フィブリノゲン
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">プラスミン</span>はフィブリンを分解する線溶系の酵素。トロンビンは凝固促進、ビタミンKは凝固因子の合成に必要。</p>
+      </div>
+
+      <h2>生化学</h2>
+      <h3>必須脂肪酸</h3>
+      <p><span class="key">必須脂肪酸</span>：体内で合成できず、食事から摂取が必要な脂肪酸。</p>
+      <ul>
+        <li><span class="highlight">リノール酸</span>（ω-6系）</li>
+        <li><span class="key">α-リノレン酸</span>（ω-3系）</li>
+        <li><span class="key">アラキドン酸</span>（ω-6系、条件付き必須）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">111D16</div>
+        <p>必須脂肪酸はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 乳酸<br>
+          b リノール酸<br>
+          c パントテン酸<br>
+          d ヒアルロン酸<br>
+          e アスパラギン酸
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">リノール酸</span>は必須脂肪酸。乳酸は解糖系産物、パントテン酸はビタミンB5、ヒアルロン酸は多糖類、アスパラギン酸はアミノ酸。</p>
+      </div>
+
+      <h3>ヒトの染色体</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>本数</th>
+        </tr>
+        <tr>
+          <td><span class="key">常染色体（相同染色体）</span></td>
+          <td><span class="highlight">44本</span>（22対）</td>
+        </tr>
+        <tr>
+          <td><span class="key">性染色体</span></td>
+          <td>2本（XX or XY）</td>
+        </tr>
+        <tr>
+          <td><span class="key">総染色体数</span></td>
+          <td>46本（23対）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112C15</div>
+        <p>ヒト体細胞の常〈相同〉染色体数はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 22本<br>
+          b 23本<br>
+          c 44本<br>
+          d 46本<br>
+          e 47本
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】常染色体は<span class="highlight">44本</span>（22対）。総染色体数は46本（常染色体44本＋性染色体2本）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

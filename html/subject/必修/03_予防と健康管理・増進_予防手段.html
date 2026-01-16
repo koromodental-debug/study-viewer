@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>予防手段 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 03 予防と健康管理・増進</span>
+    <h1>予防手段</h1>
+    <div class="container">
+
+      <h2>ブラッシング法</h2>
+      <h3>ブラッシング法の分類</h3>
+      <table>
+        <tr>
+          <th>ブラッシング法</th>
+          <th>特徴</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td><span class="key">バス法</span></td>
+          <td>毛先を歯肉溝に<span class="highlight">45度</span>で当て、小刻みに振動</td>
+          <td>歯周病患者、成人</td>
+        </tr>
+        <tr>
+          <td><span class="key">フォーンズ法</span></td>
+          <td><span class="highlight">円を描く</span>ように動かす</td>
+          <td><span class="highlight">小児</span>（5歳児に適切）</td>
+        </tr>
+        <tr>
+          <td><span class="key">スティルマン法</span></td>
+          <td><span class="highlight">毛の脇腹</span>を歯肉に当てて加圧振動</td>
+          <td>歯肉マッサージ</td>
+        </tr>
+        <tr>
+          <td><span class="key">スティルマン改良法</span></td>
+          <td>毛の脇腹＋<span class="highlight">ローリング</span>動作</td>
+          <td>歯肉マッサージ＋清掃</td>
+        </tr>
+        <tr>
+          <td><span class="key">チャーターズ法</span></td>
+          <td>毛先を<span class="highlight">歯冠側</span>に向けて45度</td>
+          <td>歯間部清掃、矯正患者</td>
+        </tr>
+        <tr>
+          <td><span class="key">ローリング法</span></td>
+          <td>歯肉から歯冠方向へ回転</td>
+          <td>一般的な清掃</td>
+        </tr>
+        <tr>
+          <td><span class="key">スクラッビング法</span></td>
+          <td>毛先を歯面に直角に当て、小刻みに横磨き</td>
+          <td>一般的な清掃</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">試験頻出ポイント</div>
+        <ul>
+          <li><span class="key">5歳児</span>の自己ブラッシング → <span class="highlight">フォーンズ法</span></li>
+          <li><span class="key">毛の脇腹</span>を使う → <span class="highlight">スティルマン法</span></li>
+          <li>ローリング動作を加える → <span class="highlight">スティルマン改良法</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D9</div>
+        <p>5歳児が自身で行うブラッシング方法として適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a バス法<br>
+          b フォーンズ法<br>
+          c ローリング法<br>
+          d スティルマン法<br>
+          e チャーターズ法
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】5歳児は手指の巧緻性が未発達なため、<span class="highlight">円を描くフォーンズ法</span>が適切。バス法は細かい振動が必要で難しい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A13</div>
+        <p>毛の脇腹を用いるブラッシング法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a バス法<br>
+          b 縦みがき法<br>
+          c フォーンズ法<br>
+          d スティルマン法<br>
+          e スクラッビング法
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">スティルマン法</span>は毛の脇腹を歯肉に当てて加圧振動する方法。バス法・スクラッビング法は毛先を使う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A31</div>
+        <p>歯ブラシの動かし方を図に示す。該当するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108A31_1.png" alt="歯ブラシの動き">
+        </div>
+        <div class="choices">
+          a バス法<br>
+          b ローリング法<br>
+          c チャーターズ法<br>
+          d スクラッビング法<br>
+          e スティルマン改良法
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】毛の脇腹を当てた後にローリング動作を加える方法が<span class="highlight">スティルマン改良法</span>。図では歯肉側から歯冠方向への回転運動が示されている。</p>
+      </div>
+
+      <h2>フッ化物による齲蝕予防</h2>
+      <h3>フッ化物応用法の種類と濃度</h3>
+      <table>
+        <tr>
+          <th>応用法</th>
+          <th>フッ化物濃度</th>
+          <th>対象</th>
+        </tr>
+        <tr>
+          <td><span class="key">フッ化物歯面塗布</span>（APF）</td>
+          <td><span class="highlight">9,000 ppm</span></td>
+          <td>歯科医院で実施</td>
+        </tr>
+        <tr>
+          <td><span class="key">フッ化物洗口</span></td>
+          <td>225〜900 ppm</td>
+          <td>4歳以上（うがい可能）</td>
+        </tr>
+        <tr>
+          <td><span class="key">フッ化物配合歯磨剤</span></td>
+          <td>500〜1,500 ppm</td>
+          <td>毎日の使用</td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">乳児にはフッ化物洗口・歯磨剤は適さない（誤飲のリスク）→ フッ化物歯面塗布が適切</span></p>
+
+      <div class="point-box">
+        <div class="point-box-title">フッ素の急性中毒</div>
+        <ul>
+          <li>見込み中毒量：<span class="highlight">5 mg/kg</span>以上</li>
+          <li>致死量：<span class="highlight">32〜64 mg/kg</span></li>
+          <li>救急処置：<span class="key">牛乳投与</span>、グルコン酸カルシウム投与</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A9</div>
+        <p>歯面塗布に用いられる酸性フッ素リン酸溶液のフッ化物濃度（ppm）はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 500<br>
+          b 1,000<br>
+          c 2,000<br>
+          d 5,000<br>
+          e 9,000
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】APF（酸性フッ素リン酸溶液）は<span class="highlight">9,000 ppm</span>。歯磨剤は500〜1,500 ppm、洗口は225〜900 ppm。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D11</div>
+        <p>乳児期の齲蝕予防法で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a フッ化物洗口<br>
+          b 歯間ブラシの使用<br>
+          c フッ化物の歯面塗布<br>
+          d デンタルフロスの使用<br>
+          e フッ化物配合歯磨剤の使用
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】乳児は<span class="caution">うがいができない</span>ため、洗口・歯磨剤は不適。<span class="highlight">フッ化物歯面塗布</span>が適切。歯間ブラシ・フロスは乳児には不要。</p>
+      </div>
+
+      <h3>フッ化物の予防段階</h3>
+      <table>
+        <tr>
+          <th>予防段階</th>
+          <th>フッ化物応用</th>
+        </tr>
+        <tr>
+          <td><span class="key">第一次予防</span></td>
+          <td>フッ化物歯面塗布、フッ化物洗口、フッ化物配合歯磨剤</td>
+        </tr>
+        <tr>
+          <td><span class="key">第二次予防</span></td>
+          <td><span class="highlight">フッ化ジアンミン銀</span>（初期齲蝕の進行抑制）</td>
+        </tr>
+      </table>
+      <p class="note">フッ化ジアンミン銀（サホライド）：齲蝕進行抑制剤。塗布後に黒変する。</p>
+
+      <h2>歯磨剤の成分</h2>
+      <h3>歯磨剤の薬用成分</h3>
+      <table>
+        <tr>
+          <th>目的</th>
+          <th>成分</th>
+        </tr>
+        <tr>
+          <td><span class="key">殺菌</span></td>
+          <td><span class="highlight">塩化ベンゼトニウム</span>、塩化セチルピリジニウム、トリクロサン</td>
+        </tr>
+        <tr>
+          <td><span class="key">齲蝕予防</span></td>
+          <td>フッ化ナトリウム、モノフルオロリン酸ナトリウム</td>
+        </tr>
+        <tr>
+          <td><span class="key">知覚過敏抑制</span></td>
+          <td>硝酸カリウム、乳酸アルミニウム</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯石沈着防止</span></td>
+          <td>ピロリン酸ナトリウム</td>
+        </tr>
+        <tr>
+          <td><span class="key">消炎</span></td>
+          <td>トラネキサム酸、グリチルリチン酸</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107C3</div>
+        <p>殺菌を目的に歯磨剤に配合されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a トラネキサム酸<br>
+          b ポビドンヨード<br>
+          c 乳酸アルミニウム<br>
+          d 塩化ベンゼトニウム<br>
+          e テトラサイクリン塩酸塩
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">塩化ベンゼトニウム</span>は殺菌成分。トラネキサム酸は消炎、乳酸アルミニウムは知覚過敏抑制。ポビドンヨード・テトラサイクリンは歯磨剤には配合しない。</p>
+      </div>
+
+      <h3>化学的プラークコントロール</h3>
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>作用機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">デキストラナーゼ</span></td>
+          <td>グルカン（不溶性多糖）を分解 → <span class="highlight">プラーク形成抑制</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">クロルヘキシジン</span></td>
+          <td>細菌の細胞膜障害 → 殺菌</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109C14</div>
+        <p>化学的プラークコントロールに用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a クロロフィル<br>
+          b 硝酸カリウム<br>
+          c 炭酸カルシウム<br>
+          d デキストラナーゼ<br>
+          e カルボキシメチルセルロース
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">デキストラナーゼ</span>はグルカンを分解してプラーク形成を抑制する酵素。クロロフィルは消臭、硝酸カリウムは知覚過敏抑制、炭酸カルシウムは研磨剤、CMCは粘結剤。</p>
+      </div>
+
+      <h2>齲蝕予防の費用対効果</h2>
+      <div class="point-box">
+        <div class="point-box-title">費用対効果の順位（高い順）</div>
+        <ul>
+          <li>1位：<span class="highlight">水道水フッ化物添加</span>（集団全体に効果、低コスト）</li>
+          <li>2位：<span class="key">フッ化物洗口</span>（学校等での集団応用）</li>
+          <li>3位：<span class="key">フッ化物歯面塗布</span>（個人応用、専門家が実施）</li>
+          <li>4位：<span class="key">シーラント</span>（個人応用、歯科医院で実施）</li>
+        </ul>
+      </div>
+      <p class="note">集団に広く適用できる方法ほど費用対効果が高い。</p>
+
+      <div class="question-box">
+        <div class="q-number">107C8</div>
+        <p>齲蝕予防において費用対効果の高い順で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 図a（水道水フッ化物添加 → フッ化物洗口 → 歯面塗布 → シーラント）<br>
+          b 図b（水道水フッ化物添加 → フッ化物洗口 → 歯面塗布 → シーラント）<br>
+          c 図c<br>
+          d 図d<br>
+          e 図e
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】費用対効果は<span class="highlight">水道水フッ化物添加 ＞ フッ化物洗口 ＞ フッ化物歯面塗布 ＞ シーラント</span>の順。集団への適用範囲が広いほど費用対効果が高い。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

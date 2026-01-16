@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>インレー窩洞形態 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / インレー修復</span>
+    <h1>インレー窩洞形態</h1>
+    <div class="container">
+
+      <h2>I. 窩洞外形の原則</h2>
+      <p>メタルインレー修復では、修復物の維持と歯質の保護を両立させるため、適切な窩洞形態を付与する必要がある。</p>
+
+      <h3>窩洞外形を規定する因子</h3>
+      <ul>
+        <li><span class="key">疾患の位置および範囲</span>：齲蝕円錐に基づき、象牙質側で拡大</li>
+        <li><span class="highlight">予防拡大</span>：辺縁性二次齲蝕を防止するため、不潔域まで健全歯質を削除</li>
+        <li><span class="highlight">咬頭隆線の保存</span>：最も強固な部分かつ自浄域にあるため、可能な限り保存</li>
+        <li><span class="key">円滑な曲線</span>：適合性向上、修復物辺縁の小破折を防ぐ</li>
+        <li><span class="key">審美性の配慮</span>：外観に触れない窩洞外形とする</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">GI修復との違い</div>
+        <p>GI修復では予防拡大は不要（接着性があるため）。メタルインレーは合着のため<span class="highlight">予防拡大が必要</span>。</p>
+      </div>
+
+      <h2>II. 保持形態と保持効力</h2>
+      <p>修復物が窩洞から脱落しないよう、窩洞に設定する形態を<span class="key">保持形態</span>という。</p>
+
+      <h3>保持効力の種類</h3>
+      <table>
+        <tr>
+          <th>効力</th>
+          <th>作用</th>
+          <th>関連する形態</th>
+        </tr>
+        <tr>
+          <td class="key">安定効力</td>
+          <td>転覆・滑落を防止</td>
+          <td>垂直な底面と平行な窩壁（箱形）</td>
+        </tr>
+        <tr>
+          <td class="key">把持効力</td>
+          <td>相対する2壁の摩擦で脱出を防止</td>
+          <td>相対する壁を可及的に平行</td>
+        </tr>
+        <tr>
+          <td class="highlight">拘止効力</td>
+          <td>開放側への脱出を防止（引っかかり）</td>
+          <td>内開き形態、鳩尾形、溝、穿下など</td>
+        </tr>
+        <tr>
+          <td class="key">嵌合効力</td>
+          <td>合着材の物理的因子</td>
+          <td>セメントによる保持</td>
+        </tr>
+        <tr>
+          <td class="key">接着効力</td>
+          <td>合着材の化学的因子</td>
+          <td>接着性セメントによる保持</td>
+        </tr>
+      </table>
+
+      <h3>基本的保持形態</h3>
+      <table>
+        <tr>
+          <th>形態</th>
+          <th>特徴</th>
+          <th>効力</th>
+        </tr>
+        <tr>
+          <td class="key">箱形</td>
+          <td>垂直な底面と平行な窩壁</td>
+          <td>安定効力、把持効力</td>
+        </tr>
+        <tr>
+          <td class="highlight">外開き形</td>
+          <td>側壁にテーパー（1/10〜4/10）を付与</td>
+          <td>安定効力、把持効力</td>
+        </tr>
+        <tr>
+          <td class="key">内開き形</td>
+          <td>開放角より内側が大きい</td>
+          <td>安定効力、把持効力、<span class="highlight">拘止効力</span></td>
+        </tr>
+      </table>
+      <p class="note">※メタルインレーの基本的保持形態は<span class="highlight">箱形</span>と<span class="highlight">外開き形</span></p>
+
+      <h3>補助的保持形態</h3>
+      <table>
+        <tr>
+          <th>形態</th>
+          <th>効果</th>
+        </tr>
+        <tr>
+          <td>階段</td>
+          <td>垂直脱出力への拘止</td>
+        </tr>
+        <tr>
+          <td class="caution">鳩尾形</td>
+          <td>側方脱出力への拘止（<span class="caution">アマルガム修復用</span>）</td>
+        </tr>
+        <tr>
+          <td>溝</td>
+          <td>側方脱出力への拘止</td>
+        </tr>
+        <tr>
+          <td>穿下（添窩）</td>
+          <td>側方・垂直脱出力への拘止</td>
+        </tr>
+        <tr>
+          <td>小窩</td>
+          <td>側方脱出力への拘止</td>
+        </tr>
+        <tr>
+          <td>ピン</td>
+          <td>側方・垂直脱出力への拘止</td>
+        </tr>
+      </table>
+
+      <h2>III. 便宜形態</h2>
+      <p>窩洞形成や修復操作を容易にするために付与する形態。</p>
+      <ul>
+        <li><span class="key">側壁の外開き</span>：テーパー1/10〜4/10程度（インレー体の着脱）</li>
+        <li><span class="key">咬合面側への窩洞開放</span>：抽出方向への開放</li>
+        <li><span class="highlight">凸隅角の整理（円滑化）</span>：模型鋭縁部の摩滅回避、気泡混入の回避</li>
+      </ul>
+
+      <h2>IV. 窩縁形態</h2>
+      <p>エナメル質窩縁の1/3幅に<span class="key">窩縁斜面（ベベル）</span>を付与する。窩縁隅角は<span class="key">135°</span>を基本とする。</p>
+      <p class="note">※GI修復ではバットジョイント（窩縁斜面なし）</p>
+
+      <h2>V. 2級窩洞の形成法</h2>
+      <p>2級窩洞は<span class="key">メタルインレー修復の最適応</span>である。隣接面の削除方法により2つのタイプに分類される。</p>
+
+      <h3>スライスタイプとボックスタイプ</h3>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>特徴</th>
+          <th>利点</th>
+        </tr>
+        <tr>
+          <td class="key">スライスタイプ</td>
+          <td>隣接面を斜めにスライス</td>
+          <td><span class="highlight">審美性</span>に優れる<br><span class="highlight">健全歯質の保存</span><br>短い歯間距離への対応</td>
+        </tr>
+        <tr>
+          <td class="key">ボックスタイプ</td>
+          <td>隣接面に箱型窩洞を形成</td>
+          <td>歯質削除量が少ない<br>金属露出が少ない<br>修復物の適合性</td>
+        </tr>
+      </table>
+
+      <h2>VI. 過去問で実力チェック</h2>
+
+      <h3>2級窩洞形成の基本</h3>
+      <div class="question-box">
+        <div class="q-number">113A83</div>
+        <p>2級メタルインレー修復の窩洞形成で正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 予防拡大<br>
+          b 咬頭隆線の保存<br>
+          c 凸隅角部の曲面化<br>
+          d バットジョイント<br>
+          e 遊離エナメル質の保存
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】メタルインレーでは<span class="highlight">予防拡大</span>が必要、<span class="key">咬頭隆線は保存</span>、<span class="key">凸隅角は曲面化</span>（便宜形態）。<span class="caution">バットジョイントはGI修復</span>の窩縁形態。遊離エナメル質は非接着性修復では除去する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B58</div>
+        <p>47歳の女性。上顎左側小臼歯部の口腔清掃時の違和感を主訴として来院した。検査の結果、└4にメタルインレー修復を行うこととした。患者は金属修復に同意しているが、目立たないようにと希望している。初診時の口腔内写真（別冊No.25A）とエックス線画像（別冊No.25B）を別に示す。窩洞形成で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115B58.png" alt="115B58">
+        </div>
+        <div class="choices">
+          a 鳩尾形を付与する。<br>
+          b 窩洞を頬側に開放する。<br>
+          c スライス式窩洞とする。<br>
+          d 凸隅角部を曲面にする。<br>
+          e 窩縁にラウンドベベルを付与する。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">凸隅角部を曲面にする</span>のは便宜形態として正しい。<span class="caution">鳩尾形はアマルガム修復</span>の補助的保持形態。スライス式は審美的だが、隣接面窩洞でない場合は適応外。</p>
+      </div>
+
+      <h3>保持形態</h3>
+      <div class="question-box">
+        <div class="q-number">116B36</div>
+        <p>2級メタルインレーの基本的保持形態はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 階　段<br>
+          b 小　窩<br>
+          c 箱　型<br>
+          d 鳩尾形<br>
+          e 外開き形態
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】基本的保持形態は<span class="highlight">箱形</span>と<span class="highlight">外開き形態</span>。階段・小窩は補助的保持形態。<span class="caution">鳩尾形はアマルガム修復</span>の補助的保持形態であり、メタルインレーでは用いない。</p>
+      </div>
+
+      <h3>スライス式窩洞</h3>
+      <div class="question-box">
+        <div class="q-number">116B58</div>
+        <p>メタルインレーの2級窩洞の模式図を示す。アの窩洞形態がイと比較して優れているのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116B58.png" alt="116B58">
+        </div>
+        <div class="choices">
+          a 審美性<br>
+          b 辺縁封鎖性<br>
+          c 健全歯質の保存<br>
+          d 修復物の適合性<br>
+          e 短い歯間距離への対応
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】ア（スライスタイプ）はイ（ボックスタイプ）と比較して、<span class="highlight">審美性</span>と<span class="highlight">健全歯質の保存</span>に優れる。辺縁封鎖性・適合性はボックスタイプが優れる。</p>
+      </div>
+
+      <h3>保持効力</h3>
+      <div class="question-box">
+        <div class="q-number">116D84</div>
+        <p>窩洞形態による修復物保持の模式図を示す。黒い矢印が示す形態の脱出力に対する効果で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D84.png" alt="116D84">
+        </div>
+        <div class="choices">
+          a 安定効力<br>
+          b 嵌合効力<br>
+          c 拘止効力<br>
+          d 接着効力<br>
+          e 把持効力
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】図は内開き形態（アンダーカット様の引っかかり）を示しており、開放側への脱出を防止する<span class="highlight">拘止効力</span>を発揮する。安定効力は転覆防止、把持効力は摩擦による脱出防止。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -5,6 +5,33 @@ class SearchEngine {
   constructor(data) {
     this.data = data;
     this.cache = new Map();
+    this.fulltextIndex = null;
+    this.fulltextLoaded = false;
+    this.fulltextLoading = false;
+
+    // 全文インデックスをバックグラウンドで読み込み
+    this.loadFulltextIndex();
+  }
+
+  /**
+   * 全文インデックスを読み込み
+   */
+  async loadFulltextIndex() {
+    if (this.fulltextLoading || this.fulltextLoaded) return;
+    this.fulltextLoading = true;
+
+    try {
+      const response = await fetch('fulltext-index.json');
+      if (response.ok) {
+        this.fulltextIndex = await response.json();
+        this.fulltextLoaded = true;
+        // キャッシュをクリア（全文検索結果が変わるため）
+        this.cache.clear();
+      }
+    } catch (e) {
+      console.warn('全文インデックスの読み込みに失敗:', e);
+    }
+    this.fulltextLoading = false;
   }
 
   /**
@@ -29,10 +56,19 @@ class SearchEngine {
       const searchText = (item.searchText || '').toLowerCase();
       const title = (item.title || '').toLowerCase();
 
-      // すべてのタームがマッチするか
-      return terms.every(term =>
+      // タイトルまたはsearchTextでマッチ
+      const matchesBasic = terms.every(term =>
         title.includes(term) || searchText.includes(term)
       );
+      if (matchesBasic) return true;
+
+      // 全文インデックスでマッチ（読み込み済みの場合）
+      if (this.fulltextIndex && item.htmlPath) {
+        const fulltext = (this.fulltextIndex[item.htmlPath] || '').toLowerCase();
+        return terms.every(term => fulltext.includes(term));
+      }
+
+      return false;
     });
 
     // スコアリング（タイトルマッチを優先、subjectをlegacyより優先）

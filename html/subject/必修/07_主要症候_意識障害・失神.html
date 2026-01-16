@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>意識障害・失神 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 07 主要症候</span>
+    <h1>意識障害・失神</h1>
+    <div class="container">
+
+      <h2>意識レベルの評価</h2>
+      <h3>Japan Coma Scale（JCS）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>レベル</th>
+          <th>状態</th>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="key">I：覚醒</span></td>
+          <td>I-1</td>
+          <td>だいたい意識清明だが今ひとつはっきりしない</td>
+        </tr>
+        <tr>
+          <td>I-2</td>
+          <td>見当識障害がある</td>
+        </tr>
+        <tr>
+          <td>I-3</td>
+          <td>名前、生年月日が言えない</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="key">II：刺激で覚醒</span></td>
+          <td>II-10</td>
+          <td>普通の呼びかけで開眼する</td>
+        </tr>
+        <tr>
+          <td>II-20</td>
+          <td>大きな声または体を揺さぶると開眼</td>
+        </tr>
+        <tr>
+          <td>II-30</td>
+          <td>痛み刺激を加えつつ呼びかけで開眼</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="key">III：刺激しても覚醒しない</span></td>
+          <td>III-100</td>
+          <td>痛み刺激に対し払いのける動作</td>
+        </tr>
+        <tr>
+          <td>III-200</td>
+          <td>痛み刺激で手足を動かす、顔をしかめる</td>
+        </tr>
+        <tr>
+          <td>III-300</td>
+          <td>痛み刺激に反応しない</td>
+        </tr>
+      </table>
+
+      <h3>Glasgow Coma Scale（GCS）</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>スコア</th>
+          <th>反応</th>
+        </tr>
+        <tr>
+          <td rowspan="4"><span class="key">開眼（E）</span></td>
+          <td>4</td>
+          <td>自発的に開眼</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>呼びかけで開眼</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>痛み刺激で開眼</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>開眼しない</td>
+        </tr>
+        <tr>
+          <td rowspan="5"><span class="key">言語（V）</span></td>
+          <td>5</td>
+          <td>見当識あり</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>混乱した会話</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>不適切な言葉</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>理解不明の声</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td rowspan="6"><span class="key">運動（M）</span></td>
+          <td>6</td>
+          <td>命令に従う</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>痛み部位を認識</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>逃避反応</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>異常屈曲</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>伸展反応</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>なし</td>
+        </tr>
+      </table>
+      <p class="note">GCS合計：3〜15点。8点以下は重症（挿管の目安）。</p>
+
+      <h2>BLSにおける意識確認</h2>
+      <div class="point-box">
+        <div class="point-box-title">BLSの手順</div>
+        <ul>
+          <li>1. 安全確認</li>
+          <li>2. <span class="highlight">意識の確認</span>（肩をたたき「大丈夫ですか」と呼びかけ）</li>
+          <li>3. 応援要請・119番・AED依頼</li>
+          <li>4. 呼吸確認（胸腹部の動き、10秒以内）</li>
+          <li>5. 胸骨圧迫（心停止の場合）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117B13</div>
+        <p>一次救命処置〈BLS〉において安全な環境で最初に確認するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血　圧<br>
+          b 呼　吸<br>
+          c 脈　拍<br>
+          d 対光反射<br>
+          e 意識レベル
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">BLSでは最初に意識レベルを確認</span>（肩をたたいて呼びかけ）。反応がなければ応援要請→呼吸確認→胸骨圧迫の順。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A7</div>
+        <p>AEDによる除細動実施後に直ちに行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 胸骨圧迫<br>
+          b 人工呼吸<br>
+          c 意識の確認<br>
+          d 頸動脈の触知<br>
+          e AEDの電源オフ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">AED除細動後は直ちに胸骨圧迫を再開</span>。脈拍や意識の確認は胸骨圧迫の中断を招くため、2分間のCPR後に確認する。</p>
+      </div>
+
+      <h2>意識消失時の対応</h2>
+      <div class="question-box">
+        <div class="q-number">112B12</div>
+        <p>意識を消失した患者に共通する呼吸不全の原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 胸郭の硬直<br>
+          b 上気道閉塞<br>
+          c 声門の閉鎖<br>
+          d 横隔膜の痙攣<br>
+          e 呼吸筋の麻痺
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">意識消失時は舌根沈下による上気道閉塞</span>が呼吸不全の最も一般的な原因。頭部後屈あご先挙上法で気道確保する。</p>
+      </div>
+
+      <h2>低血糖による意識障害</h2>
+      <h3>低血糖の症状</h3>
+      <table>
+        <tr>
+          <th>血糖値</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td>70mg/dL以下</td>
+          <td>交感神経症状（冷汗、動悸、振戦、空腹感）</td>
+        </tr>
+        <tr>
+          <td>50mg/dL以下</td>
+          <td>中枢神経症状（<span class="highlight">意識障害</span>、けいれん、昏睡）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112B36</div>
+        <p>糖尿病患者の歯科治療に際し、特に注意すべきなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 低血糖<br>
+          b 血圧低下<br>
+          c 出血傾向<br>
+          d 術後感染<br>
+          e 病態失認
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="highlight">糖尿病患者では低血糖と術後感染に注意</span>。低血糖はインスリン治療中の患者で食事摂取不良時に起こりやすい。易感染性も重要。</p>
+      </div>
+
+      <h2>失神の原因</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>原因</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">反射性（神経調節性）</span></td>
+          <td>血管迷走神経反射</td>
+          <td><span class="highlight">歯科で最多</span>、徐脈</td>
+        </tr>
+        <tr>
+          <td><span class="key">起立性低血圧</span></td>
+          <td>自律神経障害</td>
+          <td>立位で血圧低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">心原性</span></td>
+          <td>不整脈、心筋梗塞</td>
+          <td>前駆症状なし、突然発症</td>
+        </tr>
+        <tr>
+          <td><span class="key">代謝性</span></td>
+          <td>低血糖</td>
+          <td>発汗、動悸が先行</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ショック - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 07 主要症候</span>
+    <h1>ショック</h1>
+    <div class="container">
+
+      <h2>ショックの定義と分類</h2>
+      <h3>ショックの分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>原因</th>
+          <th>代表例</th>
+        </tr>
+        <tr>
+          <td><span class="key">循環血液量減少性</span></td>
+          <td>出血、脱水</td>
+          <td>外傷性ショック、熱傷</td>
+        </tr>
+        <tr>
+          <td><span class="key">心原性</span></td>
+          <td>心拍出量低下</td>
+          <td>心筋梗塞、心不全</td>
+        </tr>
+        <tr>
+          <td><span class="key">血液分布異常性</span></td>
+          <td>血管拡張</td>
+          <td><span class="highlight">アナフィラキシー</span>、敗血症</td>
+        </tr>
+        <tr>
+          <td><span class="key">閉塞性</span></td>
+          <td>血流閉塞</td>
+          <td>肺塞栓症、心タンポナーデ</td>
+        </tr>
+      </table>
+
+      <h3>ショックの5P</h3>
+      <p><span class="highlight">蒼白（Pallor）・虚脱（Prostration）・冷汗（Perspiration）・脈拍微弱（Pulselessness）・呼吸不全（Pulmonary insufficiency）</span></p>
+
+      <h2>血管迷走神経反射</h2>
+      <h3>特徴</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>頻度</td>
+          <td><span class="highlight">歯科治療中の偶発症で最も多い</span></td>
+        </tr>
+        <tr>
+          <td>誘因</td>
+          <td>疼痛、不安、恐怖、長時間の起立</td>
+        </tr>
+        <tr>
+          <td>機序</td>
+          <td>迷走神経緊張亢進→<span class="key">徐脈</span>・血管拡張→血圧低下</td>
+        </tr>
+        <tr>
+          <td>症状</td>
+          <td>気分不良、冷汗、顔面蒼白、悪心、意識消失</td>
+        </tr>
+        <tr>
+          <td>対処</td>
+          <td>水平位または<span class="key">下肢挙上（トレンデレンブルグ体位）</span>、安静</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115D7</div>
+        <p>歯科治療中に生じる全身的偶発症で最も頻度が高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 過換気症候群<br>
+          b 局所麻酔薬中毒<br>
+          c 血管迷走神経反射<br>
+          d メトヘモグロビン血症<br>
+          e アナフィラキシーショック
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">歯科治療中の偶発症は血管迷走神経反射が最多</span>。疼痛や恐怖が誘因となる。過換気症候群が次いで多い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B22</div>
+        <p>徐脈を呈するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 心室細動<br>
+          b 過換気症候群<br>
+          c 洞不全症候群<br>
+          d 血管迷走神経反射<br>
+          e 甲状腺機能亢進症
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="highlight">徐脈を呈するのは洞不全症候群と血管迷走神経反射</span>。心室細動は脈拍触知困難、過換気症候群・甲状腺機能亢進症は頻脈を呈する。</p>
+      </div>
+
+      <h2>アナフィラキシーショック</h2>
+      <h3>特徴と対応</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>機序</td>
+          <td><span class="key">I型アレルギー</span>（IgE介在性）</td>
+        </tr>
+        <tr>
+          <td>原因</td>
+          <td>薬剤（抗菌薬、局所麻酔薬）、食物、ラテックス</td>
+        </tr>
+        <tr>
+          <td>症状</td>
+          <td>蕁麻疹、呼吸困難、血圧低下、<span class="key">頻脈</span></td>
+        </tr>
+        <tr>
+          <td>第一選択薬</td>
+          <td><span class="highlight">アドレナリン0.3〜0.5mg筋注</span></td>
+        </tr>
+        <tr>
+          <td>投与部位</td>
+          <td><span class="highlight">大腿四頭筋（外側広筋）</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">血管迷走神経反射とアナフィラキシーの鑑別</div>
+        <ul>
+          <li><span class="key">血管迷走神経反射</span>：<span class="highlight">徐脈</span>、皮膚は冷たく湿潤</li>
+          <li><span class="key">アナフィラキシー</span>：<span class="highlight">頻脈</span>、蕁麻疹、呼吸困難</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D15</div>
+        <p>アナフィラキシーショックでアドレナリン自己注射製剤を筋肉内注射する部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 大胸筋<br>
+          b 胸鎖乳突筋<br>
+          c 橈側手根屈筋<br>
+          d 上腕二頭筋（長頭）<br>
+          e 大腿四頭筋（外側広筋）
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">アドレナリン自己注射（エピペン）は大腿四頭筋外側広筋に筋注</span>。筋肉量が多く、誤って血管内に入る危険が少ない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A4</div>
+        <p>アドレナリン自己注射薬を処方されている小児の既往はどれか。1つ選べ。</p>
+        <div class="choices">
+          a てんかん<br>
+          b 過換気症候群<br>
+          c アナフィラキシー<br>
+          d 血管迷走神経反射<br>
+          e 睡眠時無呼吸症候群
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">アドレナリン自己注射薬（エピペン）はアナフィラキシーの既往がある患者</span>に処方される。食物アレルギーによるアナフィラキシー歴のある小児が多い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B5</div>
+        <p>IV型アレルギー反応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 花粉症<br>
+          b 金属アレルギー<br>
+          c ペニシリンアレルギー<br>
+          d アナフィラキシーショック<br>
+          e 不適合輸血による凝血反応
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="caution">アナフィラキシーショックはI型アレルギー</span>（即時型、IgE介在性）。IV型は遅延型で金属アレルギーが代表例。花粉症もI型。不適合輸血はII型。</p>
+      </div>
+
+      <h2>その他のショック</h2>
+      <h3>敗血症性ショック</h3>
+      <p>感染による全身性炎症反応（SIRS）→血管拡張・毛細血管透過性亢進→<span class="key">ウォームショック</span>（皮膚温かい）→進行すると<span class="key">コールドショック</span></p>
+
+      <h3>心原性ショック</h3>
+      <p>心筋梗塞などによる心拍出量低下。<span class="caution">アドレナリン投与は慎重</span>（心負荷増大の危険）。</p>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>発熱・全身倦怠感 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 07 主要症候</span>
+    <h1>発熱・全身倦怠感</h1>
+    <div class="container">
+
+      <h2>発熱</h2>
+      <h3>発熱の定義と分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>体温</th>
+        </tr>
+        <tr>
+          <td>正常体温</td>
+          <td>36.0〜37.0℃</td>
+        </tr>
+        <tr>
+          <td><span class="key">微熱</span></td>
+          <td>37.0〜38.0℃</td>
+        </tr>
+        <tr>
+          <td><span class="key">中等度発熱</span></td>
+          <td>38.0〜39.0℃</td>
+        </tr>
+        <tr>
+          <td><span class="key">高熱</span></td>
+          <td>39.0℃以上</td>
+        </tr>
+      </table>
+
+      <h3>発熱のメカニズム</h3>
+      <p>感染・炎症 → <span class="key">IL-1、TNF-α</span>（発熱性サイトカイン）産生 → 視床下部の体温調節中枢に作用 → <span class="highlight">PGE2（プロスタグランジンE2）</span>産生 → 体温セットポイント上昇 → 発熱</p>
+
+      <div class="point-box">
+        <div class="point-box-title">解熱薬の作用機序</div>
+        <ul>
+          <li><span class="key">NSAIDs</span>：COX阻害 → PGE2合成抑制 → 解熱</li>
+          <li><span class="key">アセトアミノフェン</span>：中枢でのCOX阻害 → 解熱・鎮痛（抗炎症作用弱い）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A29</div>
+        <p>体温調節中枢に作用して発熱させるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ドパミン<br>
+          b アセチルコリン<br>
+          c アルドステロン<br>
+          d アンジオテンシンII<br>
+          e プロスタグランジンE2
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">PGE2が視床下部の体温調節中枢に作用して発熱</span>を引き起こす。NSAIDsはCOX阻害によりPGE2合成を抑制して解熱作用を示す。</p>
+      </div>
+
+      <h3>発熱を伴う疾患</h3>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>代表的疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">感染症</span></td>
+          <td>細菌感染（肺炎、蜂窩織炎）、ウイルス感染</td>
+        </tr>
+        <tr>
+          <td><span class="key">悪性腫瘍</span></td>
+          <td>白血病、悪性リンパ腫（腫瘍熱）</td>
+        </tr>
+        <tr>
+          <td><span class="key">自己免疫疾患</span></td>
+          <td>SLE、関節リウマチ、膠原病</td>
+        </tr>
+        <tr>
+          <td><span class="key">薬剤性</span></td>
+          <td>薬剤熱（抗菌薬など）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">118C16</div>
+        <p>発熱を伴うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 苺状舌<br>
+          b 溝状舌<br>
+          c 黒毛舌<br>
+          d 平滑舌<br>
+          e 地図状舌
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">苺状舌は猩紅熱（溶連菌感染症）で発熱を伴う</span>。川崎病でも見られる。溝状舌・黒毛舌・平滑舌・地図状舌は発熱を伴わない。</p>
+      </div>
+
+      <h2>全身倦怠感</h2>
+      <h3>全身倦怠感の原因</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>原因疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">感染症</span></td>
+          <td>肝炎、結核、HIV感染症</td>
+        </tr>
+        <tr>
+          <td><span class="key">内分泌疾患</span></td>
+          <td>甲状腺機能低下症、副腎不全、糖尿病</td>
+        </tr>
+        <tr>
+          <td><span class="key">悪性腫瘍</span></td>
+          <td>がん悪液質</td>
+        </tr>
+        <tr>
+          <td><span class="key">血液疾患</span></td>
+          <td>貧血、白血病</td>
+        </tr>
+        <tr>
+          <td><span class="key">精神疾患</span></td>
+          <td>うつ病、慢性疲労症候群</td>
+        </tr>
+      </table>
+
+      <h3>口腔疾患と発熱</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>発熱</th>
+          <th>その他の全身症状</th>
+        </tr>
+        <tr>
+          <td>急性化膿性歯髄炎</td>
+          <td><span class="caution">なし</span></td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>急性化膿性根尖性歯周炎</td>
+          <td>あり（進行時）</td>
+          <td>リンパ節腫脹</td>
+        </tr>
+        <tr>
+          <td>顎骨骨髄炎</td>
+          <td><span class="highlight">あり</span></td>
+          <td>白血球増多、CRP上昇</td>
+        </tr>
+        <tr>
+          <td>蜂窩織炎</td>
+          <td><span class="highlight">あり</span></td>
+          <td>全身倦怠感、悪寒</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111A7</div>
+        <p>急性化膿性歯髄炎でみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 体温の上昇<br>
+          b 内歯瘻の形成<br>
+          c 定位の良い疼痛<br>
+          d 温度刺激による疼痛<br>
+          e 所属リンパ節の圧痛
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">急性化膿性歯髄炎は温度刺激による疼痛</span>（特に温熱痛）が特徴。体温上昇・内歯瘻・リンパ節圧痛は根尖性歯周炎の症状。歯髄炎では定位が悪い（放散痛）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B11</div>
+        <p>急性化膿性歯髄炎と急性化膿性根尖性歯周炎に共通して認められるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口腔の瘻孔<br>
+          b 歯肉の腫脹<br>
+          c 全身の発熱<br>
+          d 歯の挺出感<br>
+          e リンパ節の腫脹
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">歯の挺出感は両者に共通</span>。<span class="caution">全身の発熱は歯髄炎では通常みられない</span>（根尖性歯周炎では進行時にみられる）。瘻孔・歯肉腫脹・リンパ節腫脹は根尖性歯周炎の症状。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

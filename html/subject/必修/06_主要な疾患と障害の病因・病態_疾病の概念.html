@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>疾病の概念 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 06 主要な疾患と障害の病因・病態</span>
+    <h1>疾病の概念</h1>
+    <div class="container">
+
+      <h2>炎症</h2>
+      <h3>炎症の5徴候</h3>
+      <p><span class="highlight">発赤・熱感・腫脹・疼痛・機能障害</span></p>
+
+      <h3>炎症の分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td rowspan="5"><span class="key">滲出性炎</span></td>
+          <td>漿液性炎</td>
+          <td>水疱形成（熱傷など）</td>
+        </tr>
+        <tr>
+          <td>カタル性炎</td>
+          <td>粘膜の炎症、鼻汁など</td>
+        </tr>
+        <tr>
+          <td>線維素性炎</td>
+          <td>偽膜形成</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">化膿性炎</span></td>
+          <td>膿瘍、蜂窩織炎、膿腫</td>
+        </tr>
+        <tr>
+          <td>出血性炎</td>
+          <td>血管壁の損傷</td>
+        </tr>
+        <tr>
+          <td><span class="key">増殖性炎</span></td>
+          <td>肉芽腫性炎</td>
+          <td>結核、ハンセン病、サルコイドーシス</td>
+        </tr>
+        <tr>
+          <td><span class="key">変質性炎</span></td>
+          <td>-</td>
+          <td>退行性変化が強い炎症</td>
+        </tr>
+      </table>
+
+      <h3>急性炎症と慢性炎症</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>急性炎症</th>
+          <th>慢性炎症</th>
+        </tr>
+        <tr>
+          <td>主な浸潤細胞</td>
+          <td><span class="key">好中球</span></td>
+          <td><span class="highlight">リンパ球・マクロファージ</span></td>
+        </tr>
+        <tr>
+          <td>血管透過性</td>
+          <td>亢進</td>
+          <td>軽度</td>
+        </tr>
+        <tr>
+          <td>組織変化</td>
+          <td>壊死、充血</td>
+          <td>線維化、肉芽形成</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109A18</div>
+        <p>急性炎症に比べて慢性炎症で顕著なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 組織の充血<br>
+          b 組織の壊死<br>
+          c 好中球の遊走<br>
+          d リンパ球の浸潤<br>
+          e 血管透過性の亢進
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">慢性炎症ではリンパ球浸潤</span>が顕著。急性炎症では好中球遊走、血管透過性亢進、組織の充血・壊死が特徴。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D6</div>
+        <p>炎症時に肥満細胞から放出されるケミカルメディエーターはどれか。1つ選べ。</p>
+        <div class="choices">
+          a IL-2<br>
+          b TNF-α<br>
+          c 活性酸素<br>
+          d ヒスタミン<br>
+          e ブラジキニン
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">肥満細胞→ヒスタミン</span>放出（I型アレルギーにも関与）。IL-2はT細胞、TNF-αはマクロファージ、活性酸素は好中球から放出。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117A5</div>
+        <p>炎症性サイトカインの産生を抑制するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a インスリン<br>
+          b ガストリン<br>
+          c チロキシン<br>
+          d エストロゲン<br>
+          e コルチゾール
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">コルチゾール（糖質コルチコイド）は抗炎症作用</span>を持ち、炎症性サイトカイン産生を抑制。ステロイド薬の作用機序。</p>
+      </div>
+
+      <h2>免疫グロブリン</h2>
+      <h3>免疫グロブリンの特徴</h3>
+      <table>
+        <tr>
+          <th>Ig</th>
+          <th>特徴</th>
+          <th>キーワード</th>
+        </tr>
+        <tr>
+          <td><span class="key">IgG</span></td>
+          <td>血清中<span class="highlight">最多</span>、オプソニン効果、胎盤通過</td>
+          <td>歯肉溝滲出液中最多</td>
+        </tr>
+        <tr>
+          <td><span class="key">IgA</span></td>
+          <td>分泌型、粘膜免疫</td>
+          <td>唾液中最多</td>
+        </tr>
+        <tr>
+          <td><span class="key">IgM</span></td>
+          <td><span class="highlight">初回感染で最初</span>、五量体</td>
+          <td>一次免疫応答</td>
+        </tr>
+        <tr>
+          <td><span class="key">IgE</span></td>
+          <td><span class="highlight">血清中最少</span>、I型アレルギー</td>
+          <td>肥満細胞に結合</td>
+        </tr>
+        <tr>
+          <td><span class="key">IgD</span></td>
+          <td>B細胞表面、機能不明</td>
+          <td>-</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">免疫グロブリンの覚え方</div>
+        <ul>
+          <li><span class="key">血清中濃度</span>：IgG ＞ IgA ＞ IgM ＞ IgD ＞ <span class="highlight">IgE（最少）</span></li>
+          <li><span class="key">オプソニン効果</span>：IgGと補体</li>
+          <li><span class="key">初回感染</span>：まずIgM → その後IgG</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A1</div>
+        <p>ウイルス感染症の初回感染で最初に誘導されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a IgA<br>
+          b IgD<br>
+          c IgE<br>
+          d IgG<br>
+          e IgM
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">初回感染（一次免疫応答）では最初にIgM</span>が産生される。その後、クラススイッチによりIgGが産生される（二次免疫応答）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117D18</div>
+        <p>健常成人で、血清中の濃度が最も低いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a IgA<br>
+          b IgD<br>
+          c IgE<br>
+          d IgG<br>
+          e IgM
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">血清中濃度はIgEが最も低い</span>。IgEはI型アレルギーに関与し、肥満細胞・好塩基球に結合する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A2</div>
+        <p>歯肉溝滲出液中の抗体で最も多いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a IgA<br>
+          b IgD<br>
+          c IgE<br>
+          d IgG<br>
+          e IgM
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">歯肉溝滲出液中はIgGが最多</span>（血清由来）。唾液中はIgA（分泌型）が最多。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A9</div>
+        <p>好中球の貪食活性を高めるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a IgA<br>
+          b IgD<br>
+          c IgE<br>
+          d IgG<br>
+          e IgM
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">IgGはオプソニン効果</span>（貪食促進作用）を持つ。補体（C3b）もオプソニン効果を示す。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B31</div>
+        <p>病原体に結合しオプソニン効果を示すのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a IgG<br>
+          b 補体<br>
+          c リゾチーム<br>
+          d ブラジキニン<br>
+          e トロンボキサン
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">オプソニン効果を示すのはIgGと補体</span>。リゾチームは細菌細胞壁を分解。ブラジキニンは血管拡張・疼痛。</p>
+      </div>
+
+      <h2>アレルギー（過敏症）</h2>
+      <h3>アレルギーの分類</h3>
+      <table>
+        <tr>
+          <th>型</th>
+          <th>名称</th>
+          <th>機序</th>
+          <th>代表的疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">I型</span></td>
+          <td>即時型（アナフィラキシー型）</td>
+          <td><span class="highlight">IgE</span>+肥満細胞</td>
+          <td>花粉症、気管支喘息、アナフィラキシーショック</td>
+        </tr>
+        <tr>
+          <td><span class="key">II型</span></td>
+          <td>細胞障害型</td>
+          <td>IgG/IgM+補体</td>
+          <td>不適合輸血、自己免疫性溶血性貧血</td>
+        </tr>
+        <tr>
+          <td><span class="key">III型</span></td>
+          <td>免疫複合体型</td>
+          <td>抗原抗体複合体</td>
+          <td>血清病、SLE、糸球体腎炎</td>
+        </tr>
+        <tr>
+          <td><span class="key">IV型</span></td>
+          <td><span class="highlight">遅延型</span></td>
+          <td>T細胞（細胞性免疫）</td>
+          <td><span class="highlight">金属アレルギー</span>、ツベルクリン反応、接触性皮膚炎</td>
+        </tr>
+      </table>
+      <p class="note">I〜III型は液性免疫（抗体）、IV型は細胞性免疫（T細胞）による。</p>
+
+      <div class="question-box">
+        <div class="q-number">114B5</div>
+        <p>IV型アレルギー反応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 花粉症<br>
+          b 金属アレルギー<br>
+          c ペニシリンアレルギー<br>
+          d アナフィラキシーショック<br>
+          e 不適合輸血による凝血反応
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">IV型（遅延型）は金属アレルギー</span>。T細胞による細胞性免疫。花粉症・アナフィラキシーはI型、ペニシリンはI型、不適合輸血はII型。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B10</div>
+        <p>Quincke浮腫の原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 外　傷<br>
+          b 貧　血<br>
+          c 動脈硬化<br>
+          d アレルギー<br>
+          e ウイルス感染
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">Quincke浮腫（血管性浮腫）はアレルギー</span>が原因。口唇、眼瞼、舌などに急性の浮腫が生じる。I型アレルギーまたは補体異常による。</p>
+      </div>
+
+      <h2>細胞死</h2>
+      <h3>壊死とアポトーシスの比較</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>壊死（ネクローシス）</th>
+          <th>アポトーシス</th>
+        </tr>
+        <tr>
+          <td>原因</td>
+          <td>虚血、毒素、感染など</td>
+          <td>プログラムされた死</td>
+        </tr>
+        <tr>
+          <td>炎症反応</td>
+          <td><span class="highlight">あり（惹起する）</span></td>
+          <td><span class="highlight">なし</span></td>
+        </tr>
+        <tr>
+          <td>DNA変化</td>
+          <td>不規則な断片化</td>
+          <td><span class="key">規則的な断片化</span>（DNAラダー）</td>
+        </tr>
+        <tr>
+          <td>制御因子</td>
+          <td>なし（受動的）</td>
+          <td><span class="key">カスパーゼ</span>（能動的）</td>
+        </tr>
+        <tr>
+          <td>細胞の変化</td>
+          <td>膨化、細胞膜破裂</td>
+          <td>縮小、アポトーシス小体</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114C16</div>
+        <p>壊死と比較したアポトーシスの特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 炎症の惹起<br>
+          b プログラムされた死<br>
+          c DNAの規則的断片化<br>
+          d カスパーゼによる制御<br>
+          e 細胞死受容体による誘導
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">炎症の惹起は壊死の特徴</span>（アポトーシスでは炎症なし）。b〜eはすべてアポトーシスの特徴。問題文は「壊死と比較したアポトーシスの特徴」ではなく「壊死の特徴」を問うている。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B5</div>
+        <p>正常細胞と比較したがん細胞の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 浸潤能の獲得<br>
+          b 増殖能の低下<br>
+          c 遺伝子異常の蓄積<br>
+          d アポトーシスの促進<br>
+          e テロメラーゼ活性の低下
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】がん細胞の特徴は<span class="highlight">浸潤能獲得と遺伝子異常蓄積</span>。増殖能は亢進、アポトーシスは抑制、テロメラーゼ活性は亢進（不死化）。</p>
+      </div>
+
+      <h2>腫瘍</h2>
+      <h3>良性腫瘍と悪性腫瘍</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>良性腫瘍</th>
+          <th>悪性腫瘍</th>
+        </tr>
+        <tr>
+          <td>発育速度</td>
+          <td>遅い</td>
+          <td>速い</td>
+        </tr>
+        <tr>
+          <td>発育様式</td>
+          <td>膨張性</td>
+          <td><span class="key">浸潤性</span></td>
+        </tr>
+        <tr>
+          <td>転移</td>
+          <td>なし</td>
+          <td><span class="highlight">あり</span></td>
+        </tr>
+        <tr>
+          <td>被膜</td>
+          <td>あり</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>異型性</td>
+          <td>軽度</td>
+          <td>高度</td>
+        </tr>
+        <tr>
+          <td>再発</td>
+          <td>まれ</td>
+          <td>多い</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114C8</div>
+        <p>我が国において口腔悪性腫瘍のうち扁平上皮癌の占める割合はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 約1%<br>
+          b 約10%<br>
+          c 約30%<br>
+          d 約60%<br>
+          e 約90%
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">口腔悪性腫瘍の約90%は扁平上皮癌</span>。口腔粘膜は重層扁平上皮で覆われているため。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B18</div>
+        <p>口腔領域への転移性腫瘍で最も頻度の高い部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 舌<br>
+          b 下顎骨<br>
+          c 顎下腺<br>
+          d 頬粘膜<br>
+          e 上顎骨
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">口腔への転移性腫瘍は下顎骨が最多</span>。原発巣は肺、乳腺、腎臓、前立腺などが多い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B12</div>
+        <p>上皮性腫瘍はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯牙腫<br>
+          b 歯原性粘液腫<br>
+          c セメント芽細胞腫<br>
+          d 腺腫様歯原性腫瘍<br>
+          e セメント質骨形成線維腫
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">腺腫様歯原性腫瘍は上皮性腫瘍</span>（エナメル上皮由来）。歯牙腫は混合性、歯原性粘液腫・セメント芽細胞腫・セメント質骨形成線維腫は間葉性腫瘍。</p>
+      </div>
+
+      <h2>循環障害</h2>
+      <h3>浮腫の原因</h3>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>機序</th>
+          <th>代表例</th>
+        </tr>
+        <tr>
+          <td><span class="key">膠質浸透圧低下</span></td>
+          <td><span class="highlight">アルブミン低下</span></td>
+          <td>肝硬変、ネフローゼ症候群、低栄養</td>
+        </tr>
+        <tr>
+          <td><span class="key">静水圧上昇</span></td>
+          <td>静脈還流障害</td>
+          <td>心不全、静脈血栓</td>
+        </tr>
+        <tr>
+          <td><span class="key">血管透過性亢進</span></td>
+          <td>炎症、アレルギー</td>
+          <td>蜂窩織炎、血管性浮腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">リンパ管閉塞</span></td>
+          <td>リンパ液還流障害</td>
+          <td>リンパ浮腫</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117B12</div>
+        <p>低値になると浮腫を引き起こすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血小板<br>
+          b 赤血球<br>
+          c アルブミン<br>
+          d クレアチニン<br>
+          e 免疫グロブリン
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">アルブミン低下→膠質浸透圧低下→浮腫</span>。血小板低下は出血傾向、赤血球低下は貧血、クレアチニン上昇は腎機能障害を示す。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B4</div>
+        <p>全身性浮腫の診察時に圧痕を確認する部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肋　間<br>
+          b 下腹部<br>
+          c 心窩部<br>
+          d 脛骨前面<br>
+          e 胸鎖乳突筋部
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">浮腫の圧痕は脛骨前面</span>で確認（骨が皮下にあり圧痕が残りやすい）。pitting edemaの評価に用いる。</p>
+      </div>
+
+      <h2>NK細胞とウイルス感染</h2>
+      <div class="question-box">
+        <div class="q-number">114D9</div>
+        <p>ウイルスに感染した上皮細胞を直接傷害するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 顆粒球<br>
+          b NK細胞<br>
+          c 樹状細胞<br>
+          d 肥満細胞<br>
+          e マクロファージ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">NK細胞（ナチュラルキラー細胞）はウイルス感染細胞を直接傷害</span>する。自然免疫を担い、MHC class Iの発現低下を認識して攻撃する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

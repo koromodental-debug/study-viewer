@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診療録・診療情報の記録と管理 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 02 社会と歯科医療</span>
+    <h1>診療録・診療情報の記録と管理</h1>
+    <div class="container">
+
+      <h2>SOAP形式（問題解決指向型診療録）</h2>
+      <div class="point-box">
+        <div class="point-box-title">SOAPの意味</div>
+        <ul>
+          <li><span class="key">S</span>（Subjective）：<span class="highlight">主観的情報</span>＝患者の訴え、自覚症状</li>
+          <li><span class="key">O</span>（Objective）：<span class="highlight">客観的情報</span>＝他覚所見、検査所見</li>
+          <li><span class="key">A</span>（Assessment）：<span class="highlight">評価</span>＝鑑別診断</li>
+          <li><span class="key">P</span>（Plan）：<span class="highlight">計画</span>＝治療方針、検査計画</li>
+        </ul>
+      </div>
+
+      <h3>SOAP分類のコツ</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>キーワード</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="key">S</span></td>
+          <td>患者が言ったこと</td>
+          <td>「痛い」「2日前から」「冷たいものがしみる」</td>
+        </tr>
+        <tr>
+          <td><span class="key">O</span></td>
+          <td>医療者が<span class="highlight">観察・測定</span>したこと</td>
+          <td>「視診で齲窩」「義歯床の沈下が認められた」「X線所見」</td>
+        </tr>
+        <tr>
+          <td><span class="key">A</span></td>
+          <td>診断・評価</td>
+          <td>「鑑別診断」「必要と判断した」</td>
+        </tr>
+        <tr>
+          <td><span class="key">P</span></td>
+          <td>これから行うこと</td>
+          <td>「咬合調整を行う」「検査計画」</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107C4</div>
+        <p>問題解決指向型診療録におけるSOAPの「O」にあたる事項はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 自覚症状<br>
+          b 他覚所見<br>
+          c 治療後の生活指導<br>
+          d 検査所見に対する評価<br>
+          e 症状に対する検査計画
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】O＝Objective＝客観的情報＝他覚所見。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B11</div>
+        <p>問題解決指向型診療録におけるSOAPの「A」にあたる事項はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 鑑別診断<br>
+          b 検査所見<br>
+          c 指導計画<br>
+          d 治療結果<br>
+          e 治療方針
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】A＝Assessment＝評価＝鑑別診断。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C20</div>
+        <p>上顎右側臼歯部の疼痛を主訴とする患者の診療録記載内容のうち、SOAPの「O」にあたるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 2日前に冷水痛があった。<br>
+          b 視診で齲窩が認められる。<br>
+          c コンポジットレジン修復をする。<br>
+          d 審美的な歯科治療を希望している。<br>
+          e これまで歯科治療を受けたことがある。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】「視診で〜認められる」は医療者が観察した客観的情報＝O。a,d,eは患者の訴え＝S。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A31</div>
+        <p>修復物の脱離を主訴とする患者に対し、診察と検査後に再装着処置を行った。この診療記録をSOAPに準拠して作成する場合、「S」に該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 窩洞形態<br>
+          b 治療方針<br>
+          c 脱離時期<br>
+          d 再装着処置<br>
+          e エックス線所見
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】「いつ脱離したか」は患者からの情報＝S。窩洞形態・X線所見は O。</p>
+      </div>
+
+      <h2>DICOM</h2>
+      <div class="point-box">
+        <div class="point-box-title">DICOM（Digital Imaging and Communications in Medicine）</div>
+        <p><span class="highlight">医用画像情報の標準規格</span></p>
+        <p>患者個人情報データ（<span class="highlight">性別</span>など）を含む</p>
+      </div>
+      <p class="note"><span class="caution">主訴、家族歴、既往歴、現病歴はDICOMに含まれない</span></p>
+
+      <div class="question-box">
+        <div class="q-number">108A2</div>
+        <p>患者個人情報データを含む医用画像情報の標準規格はどれか。1つ選べ。</p>
+        <div class="choices">
+          a BMP<br>
+          b PNG<br>
+          c JPEG<br>
+          d TIFF<br>
+          e DICOM
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】BMP, PNG, JPEG, TIFFは一般的な画像形式。DICOMは医用画像専用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B9</div>
+        <p>DICOMファイルの情報に含まれるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 主訴<br>
+          b 性別<br>
+          c 家族歴<br>
+          d 既往歴<br>
+          e 現病歴
+        </div>
+        <div class="answer">正解：b</div>
+      </div>
+
+      <h2>診療記録の保存期間</h2>
+      <table>
+        <tr>
+          <th>記録</th>
+          <th>保存期間</th>
+          <th>根拠法</th>
+        </tr>
+        <tr>
+          <td><span class="key">診療録</span></td>
+          <td><span class="highlight">5年</span></td>
+          <td>歯科医師法</td>
+        </tr>
+        <tr>
+          <td><span class="key">処方せん</span></td>
+          <td>3年</td>
+          <td>歯科医師法</td>
+        </tr>
+        <tr>
+          <td>手術記録・検査所見記録</td>
+          <td>2年</td>
+          <td>医療法</td>
+        </tr>
+        <tr>
+          <td>歯科技工指示書</td>
+          <td>2年</td>
+          <td>歯科技工士法</td>
+        </tr>
+        <tr>
+          <td>エックス線写真</td>
+          <td>2年</td>
+          <td>医療法</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">110A13</div>
+        <p>法律で義務付けられている保存期間が最も長いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 診療録<br>
+          b 処方せん<br>
+          c 検査所見記録<br>
+          d エックス線写真<br>
+          e 歯科技工指示書
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】診療録5年が最長。処方せん3年、その他2年。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C6</div>
+        <p>診療に関する記録とその保存について規定している法令の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 処方箋 ーーーーー 歯科医師法<br>
+          b 診療録 ーーーーー 医療法<br>
+          c 手術記録 ーーーー 医療法<br>
+          d 検査所見記録 ーー 歯科技工士法<br>
+          e 歯科技工指示書 ー 歯科医師法
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】処方箋・診療録は歯科医師法。手術記録・検査所見記録・X線写真は医療法。</p>
+      </div>
+
+      <h2>死亡診断書</h2>
+      <p>死亡診断書に<span class="caution">記載しない</span>もの：<span class="highlight">職業</span></p>
+
+      <div class="question-box">
+        <div class="q-number">108A22</div>
+        <p>死亡診断書に記載しないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 氏名<br>
+          b 性別<br>
+          c 職業<br>
+          d 生年月日<br>
+          e 死亡したところ
+        </div>
+        <div class="answer">正解：c</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

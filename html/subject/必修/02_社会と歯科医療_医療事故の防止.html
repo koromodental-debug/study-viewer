@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医療事故の防止 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 02 社会と歯科医療</span>
+    <h1>医療事故の防止</h1>
+    <div class="container">
+
+      <h2>インシデントとアクシデント</h2>
+      <h3>定義</h3>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="key">ヒヤリハット（インシデント）</span></td>
+          <td><span class="highlight">患者に傷害を与えなかった</span>事例</td>
+          <td>処置前に別の患者と気付いた</td>
+        </tr>
+        <tr>
+          <td><span class="key">アクシデント</span></td>
+          <td><span class="highlight">患者または医療者に傷害を与えた</span>事例</td>
+          <td>探針で自身の指を傷つけた</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116A4</div>
+        <p>アクシデントにあたる事例はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 治療中にミラーを床に落とした。<br>
+          b 治療中に探針で自身の指を傷つけた。<br>
+          c 治療の前に患者が異なることに気付いた。<br>
+          d 歯科ユニットを誤操作したため自動停止した。<br>
+          e レジン充填の手順を忘れたのでマニュアルを確認した。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】「傷つけた」＝傷害発生＝アクシデント。c,d,eは未然に防止＝ヒヤリハット。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C3</div>
+        <p>ヒヤリハットにあたる事例はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 乳歯用既製金属冠を誤飲させた。<br>
+          b フッ化ジアンミン銀を頻部に付着させた。<br>
+          c 患歯と異なる歯のエックス線撮影を行った。<br>
+          d クラウンループを試適したが適合しなかった。<br>
+          e 処置前に同姓同名の別の患者であることに気付いた。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】「気付いた」＝未然に防止＝ヒヤリハット。a,b,cは傷害発生＝アクシデント。</p>
+      </div>
+
+      <h2>ハインリッヒの法則</h2>
+      <div class="point-box">
+        <div class="point-box-title">ハインリッヒの法則（1:29:300）</div>
+        <p>1件の重大事故の背景には、29件の軽微な事故と<span class="highlight">300件のヒヤリハット</span>がある</p>
+        <p>→ インシデントレポートで<span class="highlight">医療事故を未然に防ぐ</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D18</div>
+        <p>インシデントレポートの作成に関係するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Anteの法則<br>
+          b Wolffの法則<br>
+          c Starlingの法則<br>
+          d Heinrichの法則<br>
+          e Bergonie-Tribondeauの法則
+        </div>
+        <div class="answer">正解：d</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D1</div>
+        <p>インシデントレポートで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医療事故の責任を追及する。<br>
+          b 報告者は医師と歯科医師に限る。<br>
+          c 医療事故調査制度で定める義務である。<br>
+          d 医療事故を未然に防ぐことを目的とする。<br>
+          e 患者に傷害がなければ報告しなくてよい。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】インシデントレポートは<span class="caution">責任追及が目的ではない</span>。全職種が報告可能。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A5</div>
+        <p>医療事故で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯科医師が死体検案書を交付する。<br>
+          b 医療過誤は患者の過失によって発生する。<br>
+          c 医療事故による死体は病死として扱われる。<br>
+          d 医療事故の予防対策はハインリッヒの法則に基づく。<br>
+          e ヒヤリハット事例の分析の主目的は病院経営の改善である。
+        </div>
+        <div class="answer">正解：d</div>
+      </div>
+
+      <h2>医療事故調査制度</h2>
+      <div class="point-box">
+        <div class="point-box-title">医療事故調査制度</div>
+        <p>目的：<span class="highlight">再発防止</span></p>
+        <p>報告先：<span class="highlight">医療事故調査・支援センター</span></p>
+      </div>
+      <p class="note"><span class="caution">警察、保健所、厚生労働省への報告ではない</span></p>
+
+      <div class="question-box">
+        <div class="q-number">116B12</div>
+        <p>医療事故調査制度の主たる目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医療監視<br>
+          b 行政処分<br>
+          c 再発防止<br>
+          d 情報収集<br>
+          e 民事責任
+        </div>
+        <div class="answer">正解：c</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A19</div>
+        <p>患者の「予期せぬ死亡」が発生した場合に、医療事故調査制度に基づいて医療機関が医療事故を報告する先はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 警察<br>
+          b 保健所<br>
+          c 厚生労働省<br>
+          d 医療事故調査等支援団体<br>
+          e 医療事故調査・支援センター
+        </div>
+        <div class="answer">正解：e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A16</div>
+        <p>医療事故防止対策で適切でないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 防護メガネ着用の推奨<br>
+          b 院内感染対策指針の策定<br>
+          c ヒヤリハット事象の収集<br>
+          d 医療機器安全管理責任者の配置<br>
+          e 事故を起こした個人の責任追及
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】医療事故防止は<span class="caution">個人の責任追及ではなくシステムの改善</span>が目的。</p>
+      </div>
+
+      <h2>Spaulding分類（消毒・滅菌）</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>接触部位</th>
+          <th>処理</th>
+          <th>器具例</th>
+        </tr>
+        <tr>
+          <td><span class="key">クリティカル</span></td>
+          <td>無菌組織</td>
+          <td><span class="highlight">滅菌</span></td>
+          <td>抜歯鉗子、リーマー、スケーラー</td>
+        </tr>
+        <tr>
+          <td><span class="key">セミクリティカル</span></td>
+          <td>粘膜・創傷皮膚</td>
+          <td><span class="highlight">高水準消毒</span></td>
+          <td>印象用トレー</td>
+        </tr>
+        <tr>
+          <td><span class="key">ノンクリティカル</span></td>
+          <td>健常皮膚</td>
+          <td>低〜中水準消毒</td>
+          <td>歯科用チェア</td>
+        </tr>
+      </table>
+
+      <h3>高水準消毒薬</h3>
+      <p><span class="highlight">グルタラール</span>（グルタルアルデヒド）</p>
+
+      <div class="question-box">
+        <div class="q-number">115A16</div>
+        <p>滅菌・消毒のSpaulding分類で高水準消毒に用いられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 高圧蒸気<br>
+          b グルタラール<br>
+          c 両性界面活性剤<br>
+          d エチレンオキサイドガス<br>
+          e ベンザルコニウム塩化物
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】高圧蒸気・EOGは滅菌。ベンザルコニウムは低水準消毒。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A20</div>
+        <p>院内感染リスクのSpaulding分類でセミクリティカルに該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 抜歯鉗子<br>
+          b リーマー<br>
+          c スケーラー<br>
+          d 印象用トレー<br>
+          e 歯科用チェア
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】印象用トレーは粘膜接触＝セミクリティカル。抜歯鉗子等は無菌組織＝クリティカル。</p>
+      </div>
+
+      <h2>放射線防護</h2>
+      <h3>ALARA</h3>
+      <p>As <span class="highlight">Low</span> As Reasonably Achievable（合理的に達成可能な限り低く）</p>
+
+      <div class="question-box">
+        <div class="q-number">111D13</div>
+        <p>ALARA is an acronym for "As （　　） As Reasonably Achievable", which is a safety principle based on the minimization of radiation.<br>（　　）に入るのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Low<br>
+          b Large<br>
+          c Level<br>
+          d Liable<br>
+          e Likely
+        </div>
+        <div class="answer">正解：a</div>
+      </div>
+
+      <h2>針刺し事故</h2>
+      <p>ワクチン接種で予防可能：<span class="highlight">B型肝炎ウイルス</span></p>
+      <p class="note"><span class="caution">C型肝炎ウイルス、HIVにはワクチンがない</span></p>
+
+      <div class="question-box">
+        <div class="q-number">108A8</div>
+        <p>針刺し事故による感染の予防にワクチン接種が有効なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ポリオウイルス<br>
+          b B型肝炎ウイルス<br>
+          c C型肝炎ウイルス<br>
+          d 単純ヘルペスウイルス<br>
+          e ヒトT細胞白血病ウイルス
+        </div>
+        <div class="answer">正解：b</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

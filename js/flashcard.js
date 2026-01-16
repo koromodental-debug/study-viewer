@@ -983,11 +983,10 @@ const FlashcardModule = (function() {
     state.completed = false;
     state.answeredInSession = 0;
 
-    if (state.shuffleEnabled) {
-      for (let i = state.filteredCards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
-      }
+    // 常にシャッフル（覚えた順の固定出題を防ぐ）
+    for (let i = state.filteredCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
     }
 
     // セッションサイズで制限
@@ -1884,6 +1883,15 @@ const FlashcardModule = (function() {
     if (tabbar) tabbar.classList.remove('exercise-hidden');
   }
 
+  // === 特殊デッキ判定（おまかせ、覚えた、もう一度など - 問数制限あり） ===
+  function isSpecialDeck() {
+    if (!state.currentTopicId) return false;
+    // 検索結果デッキは特殊デッキから除外（全問出題）
+    if (state.currentTopicId.startsWith('__search_')) return false;
+    // それ以外の__で始まるデッキは特殊デッキ
+    return state.currentTopicId.startsWith('__');
+  }
+
   // === カード表示 ===
   function renderCard() {
     enterPracticeMode(); // 演習中はUI要素を隠す
@@ -1901,6 +1909,8 @@ const FlashcardModule = (function() {
     const progressPercent = (current / total) * 100;
     // 再出題待ちカード数（_reinsertCountを持つカード）
     const pendingAgain = state.filteredCards.slice(state.currentIndex + 1).filter(c => c._reinsertCount).length;
+    // 特殊デッキかどうか
+    const showSizeBtn = isSpecialDeck();
 
     container.innerHTML = `
       <div class="flashcard-exercise ${state.isFlipped ? 'flipped' : ''}">
@@ -1914,14 +1924,14 @@ const FlashcardModule = (function() {
           <div class="flashcard-progress-bar">
             <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
             <span class="flashcard-progress-text">${current} / ${total}${pendingAgain > 0 ? ` <span class="progress-pending">再${pendingAgain}</span>` : ''}</span>
-            <button class="flashcard-size-btn" id="flashcard-size-btn" aria-label="問数変更">${state.sessionSize}</button>
+            ${showSizeBtn ? `<button class="flashcard-size-btn" id="flashcard-size-btn" aria-label="問数変更">${state.sessionSize}</button>` : ''}
           </div>
           <div class="flashcard-header-actions">
-            <button class="flashcard-shuffle-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn" aria-label="シャッフル">
+            ${!showSizeBtn ? `<button class="flashcard-shuffle-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn" aria-label="シャッフル">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
               </svg>
-            </button>
+            </button>` : ''}
             <button class="flashcard-report-btn" id="flashcard-report-btn" aria-label="問題を報告">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
@@ -2052,11 +2062,13 @@ const FlashcardModule = (function() {
     // 戻るボタン
     document.getElementById('flashcard-back-btn').addEventListener('click', goBack);
 
-    // 問数変更ボタン
-    document.getElementById('flashcard-size-btn').addEventListener('click', cycleSessionSize);
+    // 問数変更ボタン（特殊デッキのみ表示）
+    const sizeBtn = document.getElementById('flashcard-size-btn');
+    if (sizeBtn) sizeBtn.addEventListener('click', cycleSessionSize);
 
-    // シャッフルボタン
-    document.getElementById('flashcard-shuffle-btn').addEventListener('click', toggleShuffle);
+    // シャッフルボタン（通常デッキのみ表示）
+    const shuffleBtn = document.getElementById('flashcard-shuffle-btn');
+    if (shuffleBtn) shuffleBtn.addEventListener('click', toggleShuffle);
 
     // 報告ボタン
     document.getElementById('flashcard-report-btn').addEventListener('click', reportCurrentCard);
@@ -2816,7 +2828,7 @@ const FlashcardModule = (function() {
     const cardCount = state.filteredCards.length;
 
     // 特殊デッキ（おまかせ、覚えた、もう一度）の場合のみ「もうX枚やる」を表示
-    const isSpecialDeck = state.currentTopicId && state.currentTopicId.startsWith('__');
+    const specialDeck = isSpecialDeck();
 
     container.innerHTML = `
       <div class="flashcard-completion">
@@ -2842,8 +2854,8 @@ const FlashcardModule = (function() {
           </div>
         </div>
         <div class="completion-actions">
-          ${isSpecialDeck ? `<button class="completion-btn primary" id="completion-continue-btn">もう${state.sessionSize}枚やる</button>` : ''}
-          <button class="completion-btn ${isSpecialDeck ? 'secondary' : 'primary'}" id="completion-back-btn">デッキに戻る</button>
+          ${specialDeck ? `<button class="completion-btn primary" id="completion-continue-btn">もう${state.sessionSize}枚やる</button>` : ''}
+          <button class="completion-btn ${specialDeck ? 'secondary' : 'primary'}" id="completion-back-btn">デッキに戻る</button>
         </div>
       </div>
     `;

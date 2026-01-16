@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>チーム医療 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 02 社会と歯科医療</span>
+    <h1>チーム医療</h1>
+    <div class="container">
+
+      <h2>チーム医療の本質</h2>
+      <div class="point-box">
+        <div class="point-box-title">チーム医療の目的</div>
+        <p><span class="highlight">患者の多様なニーズへの対応</span></p>
+        <p><span class="highlight">職種間のシームレスな（切れ目のない）連携</span></p>
+      </div>
+
+      <h3>チーム医療の正しい姿</h3>
+      <table>
+        <tr>
+          <th>正しい</th>
+          <th>誤り</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">他職種の役割の把握</span></td>
+          <td>年功序列の尊重</td>
+        </tr>
+        <tr>
+          <td><span class="key">患者家族もチームの一員</span></td>
+          <td>職種間の上下関係の周知</td>
+        </tr>
+        <tr>
+          <td>共通の目標設定</td>
+          <td>職種間で競争意識を持つ</td>
+        </tr>
+        <tr>
+          <td>患者情報の共有</td>
+          <td>職種独自の略語の使用</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>それぞれの役割に干渉しない</td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">チーム医療の目的は「診療コストの削減」「医療の経済的効率化」「治療内容の簡素化」ではない</span></p>
+
+      <div class="question-box">
+        <div class="q-number">112C5</div>
+        <p>チーム医療の目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 仕事量の平均化<br>
+          b 先進医療の提供<br>
+          c 診療コストの削減<br>
+          d 診療プロセスの標準化<br>
+          e 患者の多様なニーズへの対応
+        </div>
+        <div class="answer">正解：e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A10</div>
+        <p>チーム医療で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 治療内容の簡素化<br>
+          b 先進医療機器の使用<br>
+          c 多数のクリニカルパスの使用<br>
+          d 同一人数にそろえた専門職種<br>
+          e 職種間のシームレスな（切れ目のない）連携
+        </div>
+        <div class="answer">正解：e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D11</div>
+        <p>チーム医療を円滑に推進するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 年功序列の尊重<br>
+          b 他職種の役割の把握<br>
+          c 職種独自の略語の使用<br>
+          d 職種間の上下関係の周知<br>
+          e 個々の構成員の目標の優先
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】チーム医療は職種間の対等な関係が重要。年功序列や上下関係は不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C31</div>
+        <p>チーム医療で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 専門用語を使用する。<br>
+          b 職種間で競争意識を持つ。<br>
+          c それぞれの役割に干渉しない。<br>
+          d 患者家族はチームの一員である。<br>
+          e 患者情報は他職種には秘密にする。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】患者・家族もチームの一員。情報は共有し、相互に連携する。</p>
+      </div>
+
+      <h2>口唇裂・口蓋裂のチーム医療</h2>
+      <div class="point-box">
+        <div class="point-box-title">口唇口蓋裂チームの特徴</div>
+        <ul>
+          <li><span class="highlight">成長に合わせた包括的治療</span>を行う</li>
+          <li>治療方針は<span class="key">チームで決定</span>（執刀医だけで決めない）</li>
+          <li>構成メンバーは医師・歯科医師以外も含む</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B1</div>
+        <p>口唇裂・口蓋裂のチーム医療で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 治療方針は執刀医が決定する。<br>
+          b 医療の経済的効率化を目的とする。<br>
+          c 成長に合わせた包括的治療を行う。<br>
+          d 各職種が独自に治療目標を設定する。<br>
+          e 構成メンバーは医師と歯科医師に限られる。
+        </div>
+        <div class="answer">正解：c</div>
+      </div>
+
+      <h2>NST（栄養支援チーム）</h2>
+      <div class="point-box">
+        <div class="point-box-title">NSTの特徴</div>
+        <ul>
+          <li><span class="highlight">原疾患の合併症予防</span>を目的に含む</li>
+          <li>診療科横断的に組織（診療科毎ではない）</li>
+          <li>参加者は医療従事者以外も含む</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D10</div>
+        <p>栄養支援チーム〈NST〉について正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 診療科毎に組織する。<br>
+          b 職種別に記録を作成する。<br>
+          c 管理栄養士を指示体制の長とする。<br>
+          d 原疾患の合併症予防を目的に含む。<br>
+          e 参加者は医療従事者に限定される。
+        </div>
+        <div class="answer">正解：d</div>
+      </div>
+
+      <h2>地域医療連携</h2>
+      <div class="point-box">
+        <div class="point-box-title">地域医療連携の目的</div>
+        <p><span class="highlight">切れ目のない医療の提供</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C17</div>
+        <p>地域医療連携の主たる目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医療事故の回避<br>
+          b 先進医療の普及<br>
+          c 病院の紹介率の上昇<br>
+          d 切れ目のない医療の提供<br>
+          e 医療機関の相互評価の推進
+        </div>
+        <div class="answer">正解：d</div>
+      </div>
+
+      <h2>かかりつけ歯科医</h2>
+      <div class="point-box">
+        <div class="point-box-title">かかりつけ歯科医の役割</div>
+        <p><span class="highlight">地域包括ケアシステムへの参画</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A12</div>
+        <p>かかりつけ歯科医が積極的にかかわるべきなのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 先進医療の実施<br>
+          b 夜間診療の実施<br>
+          c 紹介患者の受け入れ<br>
+          d 臨床研修歯科医の指導<br>
+          e 地域包括ケアシステムヘの参画
+        </div>
+        <div class="answer">正解：e</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

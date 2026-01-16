@@ -4539,5 +4539,117 @@ const DATA = [
     "htmlPath": "html/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係.html",
     "subject": "必修",
     "subjectCategory": "基礎"
+  },
+  {
+    "id": "医の倫理と歯科医師のプロフェッショナリズム_医の倫理",
+    "title": "医の倫理と歯科医師のプロフェッショナリズム_医の倫理",
+    "qaPath": "qa/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_医の倫理_QA.txt",
+    "htmlPath": null,
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係",
+    "title": "医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係",
+    "qaPath": "qa/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係_QA.txt",
+    "htmlPath": null,
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "社会と歯科医療_チーム医療",
+    "title": "社会と歯科医療_チーム医療",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_チーム医療_QA.txt",
+    "htmlPath": "html/subject/必修/02_社会と歯科医療_チーム医療.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "社会と歯科医療_保健・医療・福祉・介護の制度と医療経済",
+    "title": "社会と歯科医療_保健・医療・福祉・介護の制度と医療経済",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_保健・医療・福祉・介護の制度と医療経済_QA.txt",
+    "htmlPath": "html/subject/必修/02_社会と歯科医療_保健・医療・福祉・介護の制度と医療経済.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "社会と歯科医療_患者・障害者のもつ心理社会的問題と背景",
+    "title": "社会と歯科医療_患者・障害者のもつ心理社会的問題と背景",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_患者・障害者のもつ心理社会的問題と背景_QA.txt",
+    "htmlPath": "html/subject/必修/02_社会と歯科医療_患者・障害者のもつ心理社会的問題と背景.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "コンポジットレジン修復_歯面処理",
+    "title": "コンポジットレジン修復_歯面処理",
+    "qaPath": null,
+    "htmlPath": "html/subject/保存修復学/05_コンポジットレジン修復_歯面処理.html",
+    "subject": "保存修復",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "コンポジットレジン修復_研磨",
+    "title": "コンポジットレジン修復_研磨",
+    "qaPath": null,
+    "htmlPath": "html/subject/保存修復学/05_コンポジットレジン修復_研磨.html",
+    "subject": "保存修復",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "コンポジットレジン修復_窩洞形態",
+    "title": "コンポジットレジン修復_窩洞形態",
+    "qaPath": null,
+    "htmlPath": "html/subject/保存修復学/05_コンポジットレジン修復_窩洞形態.html",
+    "subject": "保存修復",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "社会と歯科医療_医療の質の確保",
+    "title": "社会と歯科医療_医療の質の確保",
+    "qaPath": null,
+    "htmlPath": "html/subject/必修/02_社会と歯科医療_医療の質の確保.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "社会と歯科医療_医療事故の防止",
+    "title": "社会と歯科医療_医療事故の防止",
+    "qaPath": null,
+    "htmlPath": "html/subject/必修/02_社会と歯科医療_医療事故の防止.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "社会と歯科医療_医療裁判",
+    "title": "社会と歯科医療_医療裁判",
+    "qaPath": null,
+    "htmlPath": "html/subject/必修/02_社会と歯科医療_医療裁判.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "社会と歯科医療_臨床試験・治験と倫理",
+    "title": "社会と歯科医療_臨床試験・治験と倫理",
+    "qaPath": null,
+    "htmlPath": "html/subject/必修/02_社会と歯科医療_臨床試験・治験と倫理.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "社会と歯科医療_診療録・診療情報の記録と管理",
+    "title": "社会と歯科医療_診療録・診療情報の記録と管理",
+    "qaPath": null,
+    "htmlPath": "html/subject/必修/02_社会と歯科医療_診療録・診療情報の記録と管理.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "社会と歯科医療_院内感染対策",
+    "title": "社会と歯科医療_院内感染対策",
+    "qaPath": null,
+    "htmlPath": "html/subject/必修/02_社会と歯科医療_院内感染対策.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
   }
 ];

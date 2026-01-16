@@ -1018,8 +1018,8 @@
         closeSearchSheet();
 
         if (type === 'html') {
-          // まとめタブに切り替えてトピックを読み込み
-          switchTab('html');
+          // まとめタブに切り替えてトピックを読み込み（スクロールはloadAndScrollToTopicで行うのでスキップ）
+          switchTab('html', false, true);
           await loadAndScrollToTopic(id);
         } else {
           // フラッシュカードタブに切り替えてデッキを開始
@@ -1180,8 +1180,8 @@
         // 検索クエリを保持（ページ内ハイライト用）
         state.highlightQuery = state.searchQuery;
 
-        // まとめタブに切り替えてから選択
-        switchTab('html');
+        // まとめタブに切り替えてから選択（スクロールはselectItem内で行うのでスキップ）
+        switchTab('html', false, true);
         selectItem(el.dataset.id);
         closeSearch();
       });
@@ -3300,8 +3300,9 @@
    * タブを切り替え
    * @param {string} tab - 切り替え先のタブ
    * @param {boolean} skipHistory - trueの場合、履歴にpushしない（popstate時）
+   * @param {boolean} skipScroll - trueの場合、自動スクロールをスキップ（検索ジャンプ時など）
    */
-  function switchTab(tab, skipHistory = false) {
+  function switchTab(tab, skipHistory = false, skipScroll = false) {
     const prevTab = state.currentTab;
 
     // 同じタブなら何もしない（初期化済みの場合のみ）
@@ -3362,29 +3363,32 @@
     }
 
     // 新しいタブにスクロール（トピックID優先、セクション名、最後にトップ）
-    // 非同期処理のためsetTimeoutではなくasync即時関数
-    (async () => {
-      let scrolled = false;
+    // skipScroll=true の場合はスキップ（検索からのジャンプ時など）
+    if (!skipScroll) {
+      // 非同期処理のためsetTimeoutではなくasync即時関数
+      (async () => {
+        let scrolled = false;
 
-      // まずトピックIDでスクロールを試みる（存在しなければ読み込む）
-      if (tab === 'html' && currentTopicId) {
-        scrolled = await scrollToHTMLTopic(currentTopicId);
-      }
-
-      // トピックが見つからなければセクション名で試みる
-      if (!scrolled && currentSection) {
-        if (tab === 'html') {
-          scrolled = scrollToHTMLSection(currentSection);
+        // まずトピックIDでスクロールを試みる（存在しなければ読み込む）
+        if (tab === 'html' && currentTopicId) {
+          scrolled = await scrollToHTMLTopic(currentTopicId);
         }
-      }
 
-      // それでも見つからなければトップにスクロール
-      if (!scrolled) {
-        if (tab === 'html') {
-          elements.htmlContent.scrollTop = 0;
+        // トピックが見つからなければセクション名で試みる
+        if (!scrolled && currentSection) {
+          if (tab === 'html') {
+            scrolled = scrollToHTMLSection(currentSection);
+          }
         }
-      }
-    })();
+
+        // それでも見つからなければトップにスクロール
+        if (!scrolled) {
+          if (tab === 'html') {
+            elements.htmlContent.scrollTop = 0;
+          }
+        }
+      })();
+    }
   }
 
   /**

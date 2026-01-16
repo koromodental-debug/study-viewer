@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯科医師と患者・家族との関係 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 01 医の倫理と歯科医師のプロフェッショナリズム</span>
+    <h1>歯科医師と患者・家族との関係</h1>
+    <div class="container">
+
+      <h2>インフォームドコンセント（IC）</h2>
+
+      <h3>ICの定義と目的</h3>
+      <div class="point-box">
+        <div class="point-box-title">ICの本質</div>
+        <p><span class="highlight">患者の自己決定権の行使</span>を目的とする</p>
+        <p>医師が一方的に決めた治療を承諾させることではない</p>
+      </div>
+
+      <h3>ICの要件</h3>
+      <table>
+        <tr>
+          <th>要件</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">説明内容</span></td>
+          <td>病状、治療法、代替療法、予後、リスク、<span class="caution">無治療の場合の予後</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">説明方法</span></td>
+          <td><span class="highlight">医学的根拠に基づいて平易に</span>説明（文書は必須ではない）</td>
+        </tr>
+        <tr>
+          <td><span class="key">同意の撤回</span></td>
+          <td><span class="highlight">いつでも撤回可能</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">法的根拠</span></td>
+          <td><span class="highlight">医療法</span>第1条の4第2項（歯科医師法ではない）</td>
+        </tr>
+      </table>
+
+      <h3>ICに含まれる内容・含まれない内容</h3>
+      <div class="point-box">
+        <div class="point-box-title">ICに含まれるもの</div>
+        <ul>
+          <li>代替療法</li>
+          <li>同意権者</li>
+          <li>自己決定権</li>
+          <li>セカンドオピニオン</li>
+        </ul>
+      </div>
+      <p><span class="caution">「医療訴訟での責任回避」は含まれない</span>（ICの目的は責任回避ではない）</p>
+
+      <div class="question-box">
+        <div class="q-number">115C2</div>
+        <p>インフォームド・コンセントで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯科医師法に定められている。<br>
+          b 説明文書による説明を必須とする。<br>
+          c 患者が同意した後の変更はできない。<br>
+          d 患者の自己決定権の行使を目的とする。<br>
+          e 歯科医師が決めた治療法に対する承諾である。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】ICは<span class="highlight">医療法</span>に規定（歯科医師法ではない）。同意はいつでも撤回可能。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A1</div>
+        <p>インフォームド・コンセントで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 一度同意をしたら撤回できない。<br>
+          b 医学的根拠に基づいて平易に説明する。<br>
+          c 出席者は説明医と患者本人に限定される。<br>
+          d 同意するか否かは出席者の合議で決定される。<br>
+          e そのままにした場合に予想される結果は説明しない。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】同意は撤回可能、家族も同席可、決定は患者本人、無治療の予後も説明必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D7</div>
+        <p>医療法で規定されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 療養方法の指導<br>
+          b 診断書交付の義務<br>
+          c 無診察治療の禁止<br>
+          d 臨床研修修了者の登録<br>
+          e インフォームド・コンセントの実施
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】a, b, c, dは歯科医師法。ICは医療法に規定されている。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A6</div>
+        <p>インフォームドコンセントの内容に含まれないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 代替療法<br>
+          b 同意権者<br>
+          c 自己決定権<br>
+          d セカンドオピニオン<br>
+          e 医療訴訟での責任回避
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】ICは責任回避の手段ではなく、患者の権利を守るためのもの。</p>
+      </div>
+
+      <h2>セカンドオピニオン</h2>
+      <div class="point-box">
+        <div class="point-box-title">セカンドオピニオンの目的</div>
+        <p><span class="highlight">治療に関する患者の意思決定を支援</span>すること</p>
+        <p>転院の推奨や医療事故防止が目的ではない</p>
+      </div>
+
+      <h3>セカンドオピニオンで行うこと・行わないこと</h3>
+      <table>
+        <tr>
+          <th>行うこと</th>
+          <th>行わないこと</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">治療方針の提示</span></td>
+          <td><span class="caution">検査の実施</span></td>
+        </tr>
+        <tr>
+          <td>情報提供・助言</td>
+          <td><span class="caution">治療の実施</span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><span class="caution">転医の推奨</span></td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115A2</div>
+        <p>セカンドオピニオンの目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 転院の推奨<br>
+          b 医療事故の防止<br>
+          c 医療訴訟の回避<br>
+          d 治療に関する患者の意思決定<br>
+          e 主治医による治療方針変更の根拠
+        </div>
+        <div class="answer">正解：d</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D13</div>
+        <p>セカンドオピニオンとしての対応で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 検査の実施<br>
+          b 転医の推奨<br>
+          c 治療の実施<br>
+          d 法廷での証言<br>
+          e 治療方針の提示
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】セカンドオピニオンは「意見を述べる」こと。検査・治療は主治医が行う。</p>
+      </div>
+
+      <h2>リスボン宣言と患者の権利</h2>
+      <p><span class="key">リスボン宣言</span>（1981年）：患者の権利に関する宣言</p>
+
+      <h3>リスボン宣言に含まれる患者の権利</h3>
+      <ul>
+        <li>良質の医療を受ける権利</li>
+        <li>選択の自由の権利</li>
+        <li><span class="highlight">自己決定の権利</span></li>
+        <li>情報に対する権利</li>
+        <li><span class="highlight">セカンドオピニオンを求める権利</span></li>
+        <li>守秘義務に対する権利</li>
+        <li><span class="highlight">健康教育を受ける権利</span></li>
+        <li>尊厳に対する権利</li>
+        <li>宗教的支援に対する権利</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">116B13</div>
+        <p>リスボン宣言で述べられているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 死の判定<br>
+          b 健康格差の縮小<br>
+          c 国民皆保険制度<br>
+          d 倫理審査委員会の設置<br>
+          e 患者が健康教育を受ける権利
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】死の判定はシドニー宣言、倫理審査委員会はヘルシンキ宣言。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C17</div>
+        <p>患者が医療機関で診断を受けた内容について、他の医療機関で確認する権利を持つことを明記しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a シドニー宣言<br>
+          b リスボン宣言<br>
+          c ジュネーブ宣言<br>
+          d ヘルシンキ宣言<br>
+          e ヒポクラテスの誓い
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】「他の医療機関で確認する権利」＝セカンドオピニオン＝リスボン宣言</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B6</div>
+        <p>リビングウィル作成の基になるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a リスボン宣言<br>
+          b ジュネーブ宣言<br>
+          c ヘルシンキ宣言<br>
+          d アルマ・アタ宣言<br>
+          e ニュルンベルグ綱領
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】リビングウィル（生前意思）は患者の自己決定権に基づく＝リスボン宣言</p>
+      </div>
+
+      <h2>パターナリズムの否定</h2>
+      <p><span class="key">パターナリズム</span>：医師が「患者のため」と称して一方的に治療方針を決定すること</p>
+      <p>→ 人権意識の高揚とともに<span class="highlight">否定</span>され、ICが重視されるようになった</p>
+
+      <div class="question-box">
+        <div class="q-number">113A11</div>
+        <p>医の倫理の変遷において、人権意識の高揚とともに否定されたのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a パターナリズム<br>
+          b セカンドオピニオン<br>
+          c プロフェッショナリズム<br>
+          d エンド・オブ・ライフケア<br>
+          e インフォームド・コンセント
+        </div>
+        <div class="answer">正解：a</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A29</div>
+        <p>医学研究における被験者の「自己決定権」で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医学の進歩が優先される。<br>
+          b シドニー宣言に含まれている。<br>
+          c 倫理委員会の決定が優先される。<br>
+          d 研究者側の責任回避の根拠となる。<br>
+          e 被験者の自律的な決定過程を尊重する。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】自己決定権は被験者・患者の自律を尊重するもの。医学の進歩や責任回避より優先。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

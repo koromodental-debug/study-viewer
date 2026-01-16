@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>院内感染対策 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 02 社会と歯科医療</span>
+    <h1>院内感染対策</h1>
+    <div class="container">
+
+      <h2>スタンダードプレコーション（標準予防策）</h2>
+      <div class="point-box">
+        <div class="point-box-title">スタンダードプレコーションとは</div>
+        <ul>
+          <li><span class="highlight">全ての患者</span>に適用（感染症の有無にかかわらず）</li>
+          <li><span class="highlight">米国CDC</span>が提唱</li>
+          <li>傷のある皮膚にも適用</li>
+        </ul>
+      </div>
+      <p class="note"><span class="caution">特定の病原体ごとの予防策ではない</span>（すべての患者に同じ対応）</p>
+
+      <h3>感染性物質として扱うもの・扱わないもの</h3>
+      <table>
+        <tr>
+          <th>感染性物質として扱う</th>
+          <th>感染性物質として扱わない</th>
+        </tr>
+        <tr>
+          <td>血液、体液、分泌物、排泄物</td>
+          <td><span class="highlight">汗</span></td>
+        </tr>
+        <tr>
+          <td>唾液、涙、喀痰、鼻汁</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>傷のある皮膚、粘膜</td>
+          <td></td>
+        </tr>
+      </table>
+
+      <h3>接触感染予防の基本</h3>
+      <p><span class="highlight">手洗いの実施</span>が基本</p>
+
+      <div class="question-box">
+        <div class="q-number">109C16</div>
+        <p>スタンダードプレコーションで誤っているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 全ての患者に適用される。<br>
+          b 米国CDCが提唱したものである。<br>
+          c 再使用する器具は洗浄・滅菌をする。<br>
+          d 傷のある皮膚を扱う際にも適用される。<br>
+          e 特定の病原体ごとに決められた予防策である。
+        </div>
+        <div class="answer">正解：e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A17</div>
+        <p>スタンダードプレコーションで感染性物質として扱わないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 汗<br>
+          b 涙<br>
+          c 喀痰<br>
+          d 唾液<br>
+          e 鼻汁
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】汗のみ感染性物質として扱わない。それ以外はすべて感染性物質。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C15</div>
+        <p>標準予防策〈standard precautions〉に基づく、接触による院内感染の予防で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 手洗いの実施<br>
+          b N95マスクの着用<br>
+          c 抗菌薬の予防投与<br>
+          d 個室での入院治療<br>
+          e 汗が付着した機器の清拭
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】手洗いが接触感染予防の基本。N95マスクは空気感染予防。</p>
+      </div>
+
+      <h2>MRSA（メチシリン耐性黄色ブドウ球菌）</h2>
+      <div class="point-box">
+        <div class="point-box-title">MRSAの基本</div>
+        <ul>
+          <li>菌種：<span class="highlight">黄色ブドウ球菌</span></li>
+          <li>有効な抗菌薬：<span class="highlight">バンコマイシン</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C2</div>
+        <p>MRSAの菌種はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 緑膿菌<br>
+          b 結核菌<br>
+          c 炭疽菌<br>
+          d 肺炎桿菌<br>
+          e 黄色ブドウ球菌
+        </div>
+        <div class="answer">正解：e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B12</div>
+        <p>メチシリン耐性黄色ブドウ球菌に対して有効なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a オフロキサシン<br>
+          b クラリスロマイシン<br>
+          c バンコマイシン塩酸塩<br>
+          d ミノサイクリン塩酸塩<br>
+          e ストレプトマイシン硫酸塩
+        </div>
+        <div class="answer">正解：c</div>
+      </div>
+
+      <h2>薬剤耐性（AMR）対策</h2>
+      <div class="point-box">
+        <div class="point-box-title">AMR対策</div>
+        <p><span class="highlight">抗微生物剤の適正使用</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A1</div>
+        <p>薬剤耐性〈AMR〉対策に該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 海外渡航の禁止<br>
+          b PCR検査の実施<br>
+          c 手指消毒薬の配布<br>
+          d 抗微生物剤の適正使用<br>
+          e 免疫グロブリンの投与
+        </div>
+        <div class="answer">正解：d</div>
+      </div>
+
+      <h2>感染制御チーム（ICT）・委員会</h2>
+      <h3>ICTの役割</h3>
+      <p><span class="highlight">抗菌薬使用状況の把握</span></p>
+      <p class="note"><span class="caution">器具の滅菌業務、廃棄物の廃棄はICTの役割ではない</span></p>
+
+      <h3>院内感染対策委員会</h3>
+      <p>開催を規定する法律：<span class="highlight">医療法</span></p>
+
+      <div class="question-box">
+        <div class="q-number">116A3</div>
+        <p>感染制御チーム〈ICT〉の役割はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 器具の滅菌業務<br>
+          b 抗菌薬使用状況の把握<br>
+          c 医薬品等安全情報の周知<br>
+          d 感染性医療廃棄物の廃棄<br>
+          e 地域住民へのワクチン接種
+        </div>
+        <div class="answer">正解：b</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B3</div>
+        <p>病院における院内感染対策のための委員会の開催を規定しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 医療法<br>
+          b 健康増進法<br>
+          c 廃棄物の処理及び清掃に関する法律<br>
+          d 感染症の予防及び感染症の患者に対する医療に関する法律<br>
+          e 医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律
+        </div>
+        <div class="answer">正解：a</div>
+      </div>
+
+      <h2>感染性廃棄物</h2>
+      <h3>バイオハザードマークの色</h3>
+      <table>
+        <tr>
+          <th>色</th>
+          <th>内容物</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="key">赤色</span></td>
+          <td>液状・泥状</td>
+          <td>血液等</td>
+        </tr>
+        <tr>
+          <td><span class="key">橙色</span></td>
+          <td>固形状</td>
+          <td>血液付着ガーゼ</td>
+        </tr>
+        <tr>
+          <td><span class="key">黄色</span></td>
+          <td><span class="highlight">鋭利なもの</span></td>
+          <td>注射針、メス刃、<span class="highlight">破折ファイル</span></td>
+        </tr>
+      </table>
+
+      <h3>感染性一般廃棄物</h3>
+      <p><span class="highlight">抜去歯</span>（血液付着、歯髄組織付着のため）</p>
+
+      <div class="question-box">
+        <div class="q-number">115C10</div>
+        <p>黄色のバイオハザードマークが貼付されている容器に廃棄すべきなのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 作業用模型<br>
+          b 印象採得後の印象材<br>
+          c 血液が付着したガーゼ<br>
+          d 根管治療時の破折ファイル<br>
+          e 使用済みラバーダムシート
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】黄色＝鋭利なもの。破折ファイルは鋭利。血液付着ガーゼは橙色（固形状）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A18</div>
+        <p>歯科診療後に感染性一般廃棄物となるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a メス刃<br>
+          b 抜去歯<br>
+          c 縫合針<br>
+          d ラバーダムシート<br>
+          e ディスポーザブルシリンジ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】抜去歯は感染性一般廃棄物。メス刃・縫合針・シリンジは産業廃棄物。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

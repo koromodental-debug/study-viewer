@@ -3979,5 +3979,341 @@ const DATA = [
     "subject": "部分床義歯",
     "subjectCategory": "臨床",
     "sortKey": "11_特殊な義歯_特殊な義歯.html"
+  },
+  {
+    "id": "咬合採得_咬合器_ゴシックアーチ",
+    "title": "咬合採得_咬合器_ゴシックアーチ",
+    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_ゴシックアーチ_QA.txt",
+    "htmlPath": null,
+    "subject": "全部床義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "咬合採得_咬合器_ニュートラルゾーン",
+    "title": "咬合採得_咬合器_ニュートラルゾーン",
+    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_ニュートラルゾーン_QA.txt",
+    "htmlPath": null,
+    "subject": "全部床義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "術後管理_術後のトラブル_リライン・リベース",
+    "title": "術後管理_術後のトラブル_リライン・リベース",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_リライン・リベース_QA.txt",
+    "htmlPath": null,
+    "subject": "全部床義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "術後管理_術後のトラブル_床下粘膜の異常",
+    "title": "術後管理_術後のトラブル_床下粘膜の異常",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_床下粘膜の異常_QA.txt",
+    "htmlPath": null,
+    "subject": "全部床義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "術後管理_術後のトラブル_床下粘膜の疼痛",
+    "title": "術後管理_術後のトラブル_床下粘膜の疼痛",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_床下粘膜の疼痛_QA.txt",
+    "htmlPath": null,
+    "subject": "全部床義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "術後管理_術後のトラブル_義歯の不具合",
+    "title": "術後管理_術後のトラブル_義歯の不具合",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_義歯の不具合_QA.txt",
+    "htmlPath": null,
+    "subject": "全部床義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "術後管理_術後のトラブル_義歯性口内炎",
+    "title": "術後管理_術後のトラブル_義歯性口内炎",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_義歯性口内炎_QA.txt",
+    "htmlPath": null,
+    "subject": "全部床義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "術後管理_術後のトラブル_術後管理",
+    "title": "術後管理_術後のトラブル_術後管理",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_術後管理_QA.txt",
+    "htmlPath": null,
+    "subject": "全部床義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "倫理と法規_クリニカルパス",
+    "title": "倫理と法規_クリニカルパス",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_クリニカルパス_QA.txt",
+    "htmlPath": null,
+    "subject": "公衆衛生",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "倫理と法規_メタボリックシンドローム",
+    "title": "倫理と法規_メタボリックシンドローム",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_メタボリックシンドローム_QA.txt",
+    "htmlPath": null,
+    "subject": "公衆衛生",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "倫理と法規_新オレンジプラン",
+    "title": "倫理と法規_新オレンジプラン",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_新オレンジプラン_QA.txt",
+    "htmlPath": null,
+    "subject": "公衆衛生",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "口腔環境と予防_ブラッシング法",
+    "title": "口腔環境と予防_ブラッシング法",
+    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_ブラッシング法_QA.txt",
+    "htmlPath": null,
+    "subject": "口腔衛生",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論、統計学_データの種類",
+    "title": "総論、統計学_データの種類",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_データの種類_QA.txt",
+    "htmlPath": null,
+    "subject": "疫",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論、統計学_リスク要因曝露の影響ーオッズ比",
+    "title": "総論、統計学_リスク要因曝露の影響ーオッズ比",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_リスク要因曝露の影響ーオッズ比_QA.txt",
+    "htmlPath": null,
+    "subject": "疫",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "疫学の指標_スクリーニング検査",
+    "title": "疫学の指標_スクリーニング検査",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_スクリーニング検査_QA.txt",
+    "htmlPath": null,
+    "subject": "疫",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物療法の目的と分類_補充療法",
+    "title": "薬物療法の目的と分類_補充療法",
+    "qaPath": "qa/subject/薬理学/01_薬物療法の目的と分類_補充療法_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物の管理_劇薬・毒薬・麻薬・向精神薬の管理",
+    "title": "薬物の管理_劇薬・毒薬・麻薬・向精神薬の管理",
+    "qaPath": "qa/subject/薬理学/02_薬物の管理_劇薬・毒薬・麻薬・向精神薬の管理_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物の管理_後発医薬品",
+    "title": "薬物の管理_後発医薬品",
+    "qaPath": "qa/subject/薬理学/02_薬物の管理_後発医薬品_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物の管理_臨床試験",
+    "title": "薬物の管理_臨床試験",
+    "qaPath": "qa/subject/薬理学/02_薬物の管理_臨床試験_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "用量_用量",
+    "title": "用量_用量",
+    "qaPath": "qa/subject/薬理学/03_用量_用量_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理作用の機序_受容体を介さない作用",
+    "title": "薬理作用の機序_受容体を介さない作用",
+    "qaPath": "qa/subject/薬理学/04_薬理作用の機序_受容体を介さない作用_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理作用の機序_受容体を介する作用",
+    "title": "薬理作用の機序_受容体を介する作用",
+    "qaPath": "qa/subject/薬理学/04_薬理作用の機序_受容体を介する作用_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物動態_バイオアベイラビリティ",
+    "title": "薬物動態_バイオアベイラビリティ",
+    "qaPath": "qa/subject/薬理学/05_薬物動態_バイオアベイラビリティ_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物動態_分布",
+    "title": "薬物動態_分布",
+    "qaPath": "qa/subject/薬理学/05_薬物動態_分布_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物動態_吸収",
+    "title": "薬物動態_吸収",
+    "qaPath": "qa/subject/薬理学/05_薬物動態_吸収_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物動態_排泄",
+    "title": "薬物動態_排泄",
+    "qaPath": "qa/subject/薬理学/05_薬物動態_排泄_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "併用と相互作用_拮抗作用",
+    "title": "併用と相互作用_拮抗作用",
+    "qaPath": "qa/subject/薬理学/06_併用と相互作用_拮抗作用_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "併用と相互作用_注意が必要な相互作用",
+    "title": "併用と相互作用_注意が必要な相互作用",
+    "qaPath": "qa/subject/薬理学/06_併用と相互作用_注意が必要な相互作用_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "併用と相互作用_薬物相互作用",
+    "title": "併用と相互作用_薬物相互作用",
+    "qaPath": "qa/subject/薬理学/06_併用と相互作用_薬物相互作用_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "副作用_副作用（全身）",
+    "title": "副作用_副作用（全身）",
+    "qaPath": "qa/subject/薬理学/07_副作用_副作用（全身）_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "副作用_副作用（口腔・顎顔面領域）",
+    "title": "副作用_副作用（口腔・顎顔面領域）",
+    "qaPath": "qa/subject/薬理学/07_副作用_副作用（口腔・顎顔面領域）_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物適用上の注意点_妊婦",
+    "title": "薬物適用上の注意点_妊婦",
+    "qaPath": "qa/subject/薬理学/08_薬物適用上の注意点_妊婦_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬物適用上の注意点_高齢者",
+    "title": "薬物適用上の注意点_高齢者",
+    "qaPath": "qa/subject/薬理学/08_薬物適用上の注意点_高齢者_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理学各論_ステロイド性抗炎症薬",
+    "title": "薬理学各論_ステロイド性抗炎症薬",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_ステロイド性抗炎症薬_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理学各論_局所麻酔薬",
+    "title": "薬理学各論_局所麻酔薬",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_局所麻酔薬_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理学各論_抗凝固薬",
+    "title": "薬理学各論_抗凝固薬",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗凝固薬_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理学各論_抗悪性腫瘍薬",
+    "title": "薬理学各論_抗悪性腫瘍薬",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗悪性腫瘍薬_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理学各論_抗真菌薬",
+    "title": "薬理学各論_抗真菌薬",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗真菌薬_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理学各論_抗菌薬",
+    "title": "薬理学各論_抗菌薬",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗菌薬_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理学各論_鎮痛薬",
+    "title": "薬理学各論_鎮痛薬",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_鎮痛薬_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理学各論_降圧薬",
+    "title": "薬理学各論_降圧薬",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_降圧薬_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "薬理学各論_非ステロイド性抗炎症薬",
+    "title": "薬理学各論_非ステロイド性抗炎症薬",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_非ステロイド性抗炎症薬_QA.txt",
+    "htmlPath": null,
+    "subject": "薬理",
+    "subjectCategory": "基礎"
   }
 ];

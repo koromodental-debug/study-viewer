@@ -3311,7 +3311,13 @@
     const prevTab = state.currentTab;
 
     // 同じタブなら何もしない（初期化済みの場合のみ）
-    if (prevTab === tab && scrollHistory.initialized) return;
+    // ただし演習タブは再クリックでリセット
+    if (prevTab === tab && scrollHistory.initialized) {
+      if (tab === 'flashcard' && typeof FlashcardModule !== 'undefined') {
+        FlashcardModule.resetDeckList();
+      }
+      return;
+    }
 
     // タブ切り替え時はフローティング検索バーを閉じる
     hideFloatingSearch();

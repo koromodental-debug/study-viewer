@@ -17,8 +17,9 @@ def main():
     with open(DATA_JS_PATH, 'r') as f:
         content = f.read()
 
-    # 既存のqaPathを収集
+    # 既存のqaPathとIDを収集
     existing_qa_paths = set(re.findall(r'"qaPath":\s*"([^"]+)"', content))
+    existing_ids = set(re.findall(r'"id":\s*"([^"]+)"', content))
 
     # qa/subject/内のQAファイルをスキャン
     new_entries = []
@@ -34,10 +35,18 @@ def main():
             qa_path = f"qa/subject/{subject_dir}/{qa_file}"
             if qa_path in existing_qa_paths:
                 continue
-            
+
             # タイトルを生成
             title = qa_file.replace('_QA.txt', '').split('_', 1)[-1] if '_' in qa_file else qa_file.replace('_QA.txt', '')
-            subject = subject_dir.replace('学', '')
+
+            # IDが既に存在する場合はスキップ
+            if title in existing_ids:
+                continue
+            # 「〇〇学」→「〇〇」に変換（ただし結果が1文字になる場合は変換しない）
+            if subject_dir.endswith('学') and len(subject_dir) > 2:
+                subject = subject_dir[:-1]
+            else:
+                subject = subject_dir
             
             # エントリを文字列として作成
             entry = f'''  {{

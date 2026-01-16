@@ -71,8 +71,9 @@ def main():
     with open(DATA_JS_PATH, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # 既存のhtmlPathを収集
+    # 既存のhtmlPathとIDを収集
     existing_html_paths = set(re.findall(r'"htmlPath":\s*"([^"]+)"', content))
+    existing_ids = set(re.findall(r'"id":\s*"([^"]+)"', content))
 
     # 既存のqaPathとそのエントリ位置を収集（htmlPathを追加するため）
     qa_to_entry = {}
@@ -115,7 +116,16 @@ def main():
                 else:
                     # 新規エントリを作成
                     title = base_name.split('_', 1)[-1] if '_' in base_name else base_name
-                    subject = subject_dir.replace('学', '')
+
+                    # IDが既に存在する場合はスキップ
+                    if title in existing_ids:
+                        continue
+
+                    # 「〇〇学」→「〇〇」に変換（ただし結果が1文字になる場合は変換しない）
+                    if subject_dir.endswith('学') and len(subject_dir) > 2:
+                        subject = subject_dir[:-1]
+                    else:
+                        subject = subject_dir
                     # HTMLからキーワードを抽出
                     extracted_keywords = extract_search_text(html_full_path)
                     search_text = f"{title} {extracted_keywords}".strip()

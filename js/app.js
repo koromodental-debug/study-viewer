@@ -3345,7 +3345,12 @@
     if (elements.flashcardContent) {
       elements.flashcardContent.classList.toggle('active', tab === 'flashcard');
       if (tab === 'flashcard' && typeof FlashcardModule !== 'undefined') {
-        FlashcardModule.show();
+        // 別のタブから演習タブに切り替えた時はリセット
+        if (prevTab && prevTab !== 'flashcard') {
+          FlashcardModule.resetDeckList();
+        } else {
+          FlashcardModule.show();
+        }
         // 演習タブではFABを非表示
         if (elements.toolFab) elements.toolFab.style.display = 'none';
       } else if (prevTab === 'flashcard' && typeof FlashcardModule !== 'undefined') {

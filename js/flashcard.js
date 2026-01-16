@@ -3141,6 +3141,26 @@ const FlashcardModule = (function() {
   }
 
   /**
+   * デッキ一覧をリセット（アコーディオン閉じる、トップにスクロール）
+   */
+  function resetDeckList() {
+    // アコーディオン状態をクリア
+    state.expandedSubjects.clear();
+    localStorage.removeItem('flashcard-expanded-subjects');
+    // 最後に選択したトピックもクリア
+    state.lastSelectedTopicId = null;
+    localStorage.removeItem('flashcard-last-topic');
+    // デッキ一覧を再描画
+    if (!state.isActive) {
+      renderDeckList();
+      // トップにスクロール
+      if (container) {
+        container.scrollTop = 0;
+      }
+    }
+  }
+
+  /**
    * 外部からデッキを指定して演習を開始
    */
   async function startDeck(topicId) {
@@ -3239,6 +3259,7 @@ const FlashcardModule = (function() {
     init,
     show,
     hide,
+    resetDeckList,
     loadTopic,
     startDeck,
     next,

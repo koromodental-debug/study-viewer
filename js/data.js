@@ -4304,7 +4304,7 @@ const DATA = [
     "id": "薬理学各論_降圧薬",
     "title": "薬理学各論_降圧薬",
     "qaPath": "qa/subject/薬理学/09_薬理学各論_降圧薬_QA.txt",
-    "htmlPath": null,
+    "htmlPath": "html/subject/薬理学/09_薬理学各論_降圧薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4312,7 +4312,7 @@ const DATA = [
     "id": "薬理学各論_非ステロイド性抗炎症薬",
     "title": "薬理学各論_非ステロイド性抗炎症薬",
     "qaPath": "qa/subject/薬理学/09_薬理学各論_非ステロイド性抗炎症薬_QA.txt",
-    "htmlPath": null,
+    "htmlPath": "html/subject/薬理学/09_薬理学各論_非ステロイド性抗炎症薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
   },
@@ -4521,6 +4521,22 @@ const DATA = [
     "title": "医の倫理と歯科医師のプロフェッショナリズム_医の倫理",
     "qaPath": null,
     "htmlPath": "html/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_医の倫理.html",
+    "subject": "必修",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "コンポジットレジン修復_歯間分離法",
+    "title": "コンポジットレジン修復_歯間分離法",
+    "qaPath": null,
+    "htmlPath": "html/subject/保存修復学/05_コンポジットレジン修復_歯間分離法.html",
+    "subject": "保存修復",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係",
+    "title": "医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係",
+    "qaPath": null,
+    "htmlPath": "html/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係.html",
     "subject": "必修",
     "subjectCategory": "基礎"
   }

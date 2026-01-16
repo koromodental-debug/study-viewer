@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔癌（舌癌・歯肉癌・上顎洞癌）</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --red: #D70015;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 0; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); break-after: avoid; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); break-after: avoid; }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; }
+    .highlight { font-weight: 600; }
+    .red { color: var(--red); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      break-inside: avoid;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+      break-inside: avoid;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .comparison-table th { text-align: center; }
+    .comparison-table td:first-child { font-weight: 600; background: var(--bg-secondary); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">各論III / 悪性腫瘍</span>
+    <h1>口腔癌（舌癌・歯肉癌・上顎洞癌）</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">国試の出題ポイント</div>
+        <ul>
+          <li><span class="highlight">舌癌T1N0M0への組織内照射</span>：局所制御率<span class="red">約90%</span>、機能温存可能</li>
+          <li><span class="highlight">画像検査の選択</span>：MRI・造影CTで進展範囲評価、PET-CTで転移検索</li>
+          <li><span class="highlight">放射線治療の副作用</span>：早期障害 vs 晩期障害の区別</li>
+          <li><span class="highlight">頸部郭清術</span>：リンパ節転移（N1以上）で適応</li>
+        </ul>
+      </div>
+
+      <h2>1. 舌癌</h2>
+
+      <h3>疫学・好発部位</h3>
+      <ul>
+        <li><span class="highlight">口腔癌で最も頻度が高い</span></li>
+        <li>好発年齢：<span class="highlight">50〜60代</span>、男女比 2〜3:1</li>
+        <li>好発部位：<span class="highlight">舌縁部</span>（とくに後方1/2）</li>
+      </ul>
+
+      <h3>症状</h3>
+      <ul>
+        <li>初期：無症状 → 進行すると<span class="highlight">接触痛、鈍痛</span>を自覚</li>
+        <li>さらに進行すると<span class="highlight">舌の運動障害</span></li>
+        <li>表面凹凸不整で周囲が堤防状に隆起した<span class="highlight">易出血性の潰瘍</span></li>
+        <li>潰瘍周囲の<span class="highlight">硬結</span></li>
+        <li>所属リンパ節（顎下リンパ節、頸部リンパ節）が腫脹することがある（リンパ節転移による）</li>
+      </ul>
+
+      <h3>画像所見</h3>
+      <ul>
+        <li>MRIで<span class="highlight">高信号</span>領域</li>
+        <li>造影CTで<span class="highlight">造影</span>像</li>
+        <li>PET-CTで<span class="highlight">18F-FDG（フルオロデオキシグルコース）の集積</span>像</li>
+        <li>腫瘍シンチグラフィ（67Ga-citrate）で腫瘍に集積像、骨シンチグラフィ（99mTc-MDP）で骨浸潤部に集積像</li>
+      </ul>
+
+      <h3>病理組織所見</h3>
+      <ul>
+        <li>組織学的には<span class="highlight">扁平上皮癌</span></li>
+        <li>強い細胞異型を呈する扁平上皮細胞が旺盛に増殖</li>
+        <li>基底膜は破綻し腫瘍細胞が上皮下へ浸潤（<span class="highlight">浸潤癌</span>）</li>
+        <li>高分化型では<span class="highlight">癌真珠形成</span></li>
+        <li><span class="red">低分化型は悪性度が高い</span></li>
+      </ul>
+
+      <h3>臨床検査所見</h3>
+      <ul>
+        <li>進行すると腫瘍マーカー検査で<span class="highlight">SCC抗原陽性</span></li>
+      </ul>
+
+      <h3>治療</h3>
+      <ul>
+        <li><span class="highlight">外科的療法（腫瘍切除術）を基本</span>とする</li>
+        <li>放射線療法や化学療法の併用を必要に応じて行う</li>
+        <li>手術前に放射線療法で病巣の縮小をはかることもある</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">舌癌の切除範囲（T分類別）</div>
+        <table>
+          <tr><th>T分類</th><th>腫瘍径</th><th>切除範囲</th></tr>
+          <tr><td>T1</td><td>≦2cm</td><td>舌部分切除</td></tr>
+          <tr><td>T2</td><td>2〜4cm</td><td>舌部分切除〜舌半側切除</td></tr>
+          <tr><td>T3</td><td>＞4cm</td><td>舌半側切除以上</td></tr>
+          <tr><td>T4</td><td>隣接組織浸潤</td><td>舌亜全摘〜全摘</td></tr>
+        </table>
+      </div>
+
+      <h3>DOI（浸潤の深さ）- UICC第8版 ★★★</h3>
+      <div class="point-box">
+        <div class="point-box-title">DOIによるT分類（2017年〜）</div>
+        <p><span class="highlight">DOI（Depth of Invasion）</span>＝隣接粘膜基底部を結んだ仮想線から腫瘍最深部までの垂直距離</p>
+        <table>
+          <tr><th>T分類</th><th>最大径</th><th>DOI</th></tr>
+          <tr><td><span class="highlight">T1</span></td><td>≦2cm</td><td><span class="red">≦5mm</span></td></tr>
+          <tr><td><span class="highlight">T2</span></td><td>≦2cmかつDOI＞5mm、または2〜4cm</td><td><span class="red">5mm超〜10mm</span></td></tr>
+          <tr><td><span class="highlight">T3</span></td><td>＞4cm、または≦4cmかつDOI＞10mm</td><td><span class="red">10mm超</span></td></tr>
+        </table>
+        <ul>
+          <li>舌癌では<span class="red">DOI 4〜5mm以上</span>で頸部リンパ節転移傾向が強まる</li>
+          <li>DOI測定は<span class="highlight">超音波検査（US）</span>が最も精度が高い</li>
+          <li><span class="red">小さい腫瘍でもDOIが深ければアップステージ</span>される</li>
+        </ul>
+      </div>
+
+      <h3>舌癌の組織内照射</h3>
+      <div class="point-box">
+        <div class="point-box-title">T1N0M0への組織内照射が選択される理由</div>
+        <ul>
+          <li><span class="highlight">局所制御率が高い</span>（<span class="red">約90%</span>）</li>
+          <li><span class="highlight">運動機能を温存できる</span>（摂食・構音機能維持）</li>
+          <li>密封小線源による低線量率組織内照射の適応</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B-46</div>
+        <p>舌癌T1N0M0に対する組織内照射法の局所治癒率はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 約30%　b 約45%　c 約60%　d 約75%　e 約90%
+        </div>
+        <div class="answer">正解：e（約90%）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C-85</div>
+        <p>舌癌T1N0M0に対して組織内照射が選択される理由はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 局所制御率が高い<br>
+          b 味覚が低下しない<br>
+          c 運動機能を温存できる<br>
+          d 粘膜炎を防ぐことができる<br>
+          e 頸部転移を防ぐことができる
+        </div>
+        <div class="answer">正解：a, c</div>
+      </div>
+
+      <h2>2. 頸部郭清術</h2>
+
+      <h3>目的</h3>
+      <p>舌癌や歯肉癌などの原発巣の治療は腫瘍切除術であるが、頸部リンパ節への転移がみられた場合には、原発巣に対する切除術に加え、<span class="highlight">転移したリンパ節を除去する目的</span>を追加する必要がある。これを頸部郭清術という。つまり悪性腫瘍において頸部リンパ節部に転移があれば、自動的に行うことになる術式である。</p>
+
+      <h3>郭清の種類</h3>
+      <table>
+        <tr><th>種類</th><th>切除する組織</th><th>特徴</th></tr>
+        <tr>
+          <td><span class="highlight">根治的頸部郭清術</span></td>
+          <td>I〜V群リンパ節＋胸鎖乳突筋＋内頸静脈＋副神経</td>
+          <td>頸部転移巣の根治を期待</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">保存的頸部郭清術</span></td>
+          <td>リンパ節のみ（胸鎖乳突筋・内頸静脈・副神経を保存）</td>
+          <td>機能温存を重視</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">予防的頸部郭清術</span></td>
+          <td>臨床的N0でも潜在性転移が疑われる場合</td>
+          <td>TNM分類でN0症例でも施行されることがある</td>
+        </tr>
+      </table>
+
+      <h3>TNM分類（T4の診断基準）</h3>
+      <div class="question-box">
+        <div class="q-number">107C-85</div>
+        <p>舌癌のTNM分類（UICC 2002）でT4とする診断根拠はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肺への転移<br>
+          b 舌下腺への進展<br>
+          c 横舌筋への進展<br>
+          d 垂直舌筋への進展<br>
+          e 顎下リンパ節への転移
+        </div>
+        <div class="answer">正解：b（舌下腺への進展）</div>
+        <p style="font-size: 8pt; color: var(--text-secondary); margin-top: 8px;">
+          T4は隣接組織（舌下腺、下顎骨、口底など）への浸潤。外舌筋への浸潤もT4。<br>
+          <span class="red">横舌筋・垂直舌筋は内舌筋であり、T4の基準にならない。</span>
+        </p>
+      </div>
+
+      <h2>3. 歯肉癌</h2>
+
+      <h3>疫学・好発部位</h3>
+      <ul>
+        <li><span class="highlight">舌癌に次いで頻度が高い</span></li>
+        <li>好発年齢：50〜60代</li>
+        <li>好発部位：<span class="highlight">上顎より下顎に多く、臼歯部に好発</span></li>
+      </ul>
+
+      <h3>症状</h3>
+      <ul>
+        <li><span class="highlight">歯肉出血</span>、隣接する歯の動揺、咬合痛</li>
+        <li>下顎の進行例で<span class="highlight">下唇の知覚鈍麻</span>（下歯槽神経、オトガイ神経付近への浸潤のため）</li>
+        <li>表面凹凸不整で周囲が堤防状に隆起した易出血性の潰瘍または<span class="highlight">肉芽腫様腫瘤</span></li>
+        <li>所属リンパ節（顎下リンパ節、頸部リンパ節）が腫脹することがある（リンパ節転移による）</li>
+      </ul>
+
+      <h3>画像所見</h3>
+      <ul>
+        <li><span class="highlight">境界不明瞭な骨破壊像</span>（エックス線透過像）</li>
+        <li>歯根周囲の骨が吸収し<span class="highlight">浮遊歯</span>となっている</li>
+        <li>軟組織や周囲組織への進展状況は舌癌の画像所見と同様</li>
+      </ul>
+
+      <h3>治療</h3>
+      <ul>
+        <li><span class="highlight">外科的療法を基本</span>とする</li>
+        <li>放射線療法を必要に応じて併用する</li>
+        <li>下顎歯肉癌：辺縁切除または区域切除</li>
+        <li>上顎歯肉癌：上顎骨部分切除〜半側切除</li>
+      </ul>
+
+      <h2>4. 上顎洞癌</h2>
+
+      <h3>疫学・好発部位</h3>
+      <ul>
+        <li>上顎癌では歯肉癌に次いで頻度が高い</li>
+        <li>好発年齢：50〜60代</li>
+        <li><span class="highlight">喫煙と関連</span>があるとされる</li>
+      </ul>
+
+      <h3>症状</h3>
+      <ul>
+        <li>初期は<span class="highlight">無症状</span></li>
+        <li>進行するにつれて鈍痛、<span class="highlight">鼻閉感、鼻出血、上顎臼歯の動揺</span>、局所の膨隆</li>
+      </ul>
+
+      <h3>画像所見</h3>
+      <ul>
+        <li>上顎洞のエックス線<span class="highlight">不透過性亢進</span></li>
+        <li>上顎洞側壁や周囲の<span class="highlight">骨破壊像</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">上顎洞炎との鑑別ポイント</div>
+        <p>上顎洞炎でも患側の上顎洞不透過性は亢進するが、<span class="red">上顎洞壁の破壊や頬骨下稜の消失は上顎洞癌の特徴</span>であり、鑑別点となる</p>
+      </div>
+
+      <h3>治療</h3>
+      <ul>
+        <li>腫瘍切除術（上顎骨切除術）</li>
+        <li>化学療法（選択的動脈注入）と放射線療法（外部照射あるいは腔内照射）を併用することが多い</li>
+        <li><span class="highlight">三者併用療法</span></li>
+      </ul>
+
+      <h2>5. 放射線治療の副作用</h2>
+
+      <table class="comparison-table">
+        <tr><th></th><th>早期障害</th><th>晩期障害</th></tr>
+        <tr>
+          <td>時期</td>
+          <td>治療中〜治療直後</td>
+          <td>治療後数ヶ月〜数年</td>
+        </tr>
+        <tr>
+          <td>症状</td>
+          <td><span class="highlight">口腔粘膜炎</span><br><span class="highlight">味覚障害</span><br>放射線宿酔</td>
+          <td><span class="highlight">下顎骨壊死</span><br><span class="highlight">口腔乾燥症</span><br>放射線誘発癌</td>
+        </tr>
+        <tr>
+          <td>機序</td>
+          <td>細胞分裂の活発な組織への直接障害</td>
+          <td>血管内皮障害による血流障害</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">105C-104</div>
+        <p>口腔癌の放射線治療による早期影響はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 粘膜炎<br>b 味覚障害<br>c 下顎骨壊死<br>d 口腔乾燥症<br>e 放射線誘発癌
+        </div>
+        <div class="answer">正解：a, b</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C-76</div>
+        <p>口腔癌放射線治療の晩期障害はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 口腔粘膜炎<br>b 耳下腺腫脹<br>c 下顎骨壊死<br>d 口腔乾燥症<br>e 放射線宿酔
+        </div>
+        <div class="answer">正解：c, d</div>
+      </div>
+
+      <h2>6. 口腔癌の予防</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A-50</div>
+        <p>口腔癌の一次予防はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 禁煙指導<br>b 減塩指導<br>c 口腔がん検診の実施<br>d えん下困難者用食品の推奨<br>e 過度な飲酒習慣の改善指導
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p style="font-size: 8pt; color: var(--text-secondary); margin-top: 8px;">
+          喫煙は口腔癌における最大の危険因子。過度な飲酒も危険因子。<br>
+          <span class="red">口腔がん検診は二次予防（早期発見）</span>であり、一次予防ではない。
+        </p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C-58</div>
+        <p>喫煙がリスクファクターと考えられているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 齲蝕<br>b 口底癌<br>c 地図状舌<br>d 慢性再発性アフタ<br>e インプラント周囲炎
+        </div>
+        <div class="answer">正解：b, e</div>
+      </div>
+
+      <h2>7. 画像検査の選択</h2>
+
+      <table>
+        <tr><th>検査</th><th>目的・特徴</th></tr>
+        <tr><td>MRI</td><td>軟組織の<span class="highlight">進展範囲評価</span>に有用</td></tr>
+        <tr><td>造影CT</td><td>軟組織・骨への進展範囲評価、リンパ節転移の評価</td></tr>
+        <tr><td>FDG-PET/CT</td><td><span class="highlight">遠隔転移の検索</span>、転移リンパ節の評価</td></tr>
+        <tr><td>超音波検査</td><td>頸部リンパ節の評価</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">105C-36</div>
+        <p>舌癌の進展範囲の評価に有用なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a MRI<br>b 咬合法<br>c 経静脈造影CT<br>d エックス線断層撮影<br>e 歯科用コーンビームCT
+        </div>
+        <div class="answer">正解：a, c</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

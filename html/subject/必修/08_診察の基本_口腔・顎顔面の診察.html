@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔・顎顔面の診察 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 08_診察の基本</span>
+    <h1>口腔・顎顔面の診察</h1>
+    <div class="container">
+
+      <h2>顔貌の診察</h2>
+
+      <h3>顔貌所見と原因</h3>
+      <table>
+        <tr>
+          <th>顔貌所見</th>
+          <th>原因</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">満月様顔貌（ムーンフェイス）</span></td>
+          <td><span class="highlight">副腎皮質ステロイド薬の長期服用</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">仮面様顔貌</span></td>
+          <td>Parkinson病</td>
+        </tr>
+        <tr>
+          <td><span class="key">蝶形紅斑</span></td>
+          <td>全身性エリテマトーデス（SLE）</td>
+        </tr>
+        <tr>
+          <td>毛細血管拡張</td>
+          <td>肝硬変</td>
+        </tr>
+        <tr>
+          <td>Hippocrates様顔貌</td>
+          <td>重篤な消耗性疾患（終末期）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115C5</div>
+        <p>顔貌所見と原因の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 蝶形紅斑 ── Parkinson病<br>
+          b 仮面様顔貌 ── 全身性エリテマトーデス<br>
+          c 満月様顔貌 ── 副腎皮質ステロイド薬長期服用<br>
+          d 毛細血管拡張 ── 腎不全<br>
+          e Hippocrates様顔貌 ── 慢性GVHD
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">満月様顔貌はステロイド長期服用</span>の副作用。蝶形紅斑はSLE、仮面様顔貌はParkinson病、毛細血管拡張は肝硬変が原因。</p>
+      </div>
+
+      <h2>触診所見</h2>
+
+      <h3>触診所見と疾患</h3>
+      <table>
+        <tr>
+          <th>触診所見</th>
+          <th>特徴</th>
+          <th>代表的疾患</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">波動</span></td>
+          <td>液体貯留を示唆</td>
+          <td><span class="highlight">膿瘍、嚢胞（ラヌーラ）</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">硬結</span></td>
+          <td>�ite組織の存在</td>
+          <td><span class="highlight">悪性腫瘍（舌癌）</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">捻髪音</span></td>
+          <td>雪を握るような音</td>
+          <td><span class="highlight">皮下気腫</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">圧縮性</span></td>
+          <td>圧迫で縮小、解除で復元</td>
+          <td><span class="key">血管腫</span></td>
+        </tr>
+        <tr>
+          <td>拍動性</td>
+          <td>脈拍に一致した拍動</td>
+          <td>動脈瘤</td>
+        </tr>
+        <tr>
+          <td>羊皮紙様感</td>
+          <td>薄い骨壁を触れる感覚</td>
+          <td>エナメル上皮腫、含歯性嚢胞</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">触診所見の覚え方</div>
+        <ul>
+          <li><span class="highlight">波動</span>＝液体 → 膿・嚢胞液</li>
+          <li><span class="highlight">硬結</span>＝硬い → 癌の浸潤</li>
+          <li><span class="highlight">捻髪音</span>＝空気 → 皮下気腫</li>
+          <li><span class="key">圧縮性</span>＝血液が移動 → 血管腫</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A6</div>
+        <p>触診所見と疾患の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 波　動 ── ラヌーラ<br>
+          b 圧縮性 ── 皮下気腫<br>
+          c 拍動性 ── 類皮嚢胞<br>
+          d 捻髪音 ── 血管腫<br>
+          e クリック ── 筋突起骨折
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">ラヌーラ（ガマ腫）は嚢胞</span>なので波動を触れる。圧縮性は血管腫、捻髪音は皮下気腫。クリックは顎関節症。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A16</div>
+        <p>触診所見と疾患との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 波　動 ── 多形腺腫<br>
+          b 硬　結 ── 舌　癌<br>
+          c 圧縮性 ── エナメル上皮腫<br>
+          d 捻髪音 ── ガマ腫<br>
+          e 羊皮紙様感 ── 皮下気腫
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">舌癌は硬結</span>を触れる（悪性腫瘍の特徴）。多形腺腫は弾性硬、エナメル上皮腫は羊皮紙様感、ガマ腫は波動、皮下気腫は捻髪音。</p>
+      </div>
+
+      <h3>圧痛点</h3>
+      <p><span class="key">Malgaigne圧痛点</span>は<span class="highlight">骨折</span>の診断に用いる。骨折線上を押すと限局性の圧痛を認める。</p>
+
+      <div class="question-box">
+        <div class="q-number">107A34</div>
+        <p>Malgaigne圧痛がみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 膿　瘍<br>
+          b 骨　折<br>
+          c 唾石症<br>
+          d 三叉神経痛<br>
+          e リンパ節炎
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">Malgaigne圧痛は骨折</span>の診断に用いる圧痛点。骨折線上を圧迫すると限局性の疼痛を生じる。</p>
+      </div>
+
+      <h2>顎関節の診察</h2>
+
+      <h3>顎関節クリック音</h3>
+      <div class="point-box">
+        <div class="point-box-title">クリック音のポイント</div>
+        <ul>
+          <li><span class="highlight">転位した関節円板が復位するとき</span>に発生</li>
+          <li>患者は「カクッ」「コキッ」と表現</li>
+          <li>検出方法：<span class="highlight">触診、聴診</span></li>
+          <li><span class="caution">注意</span>：音がなくても関節円板転位の可能性あり（非復位性）</li>
+        </ul>
+      </div>
+
+      <table>
+        <tr>
+          <th>関節雑音</th>
+          <th>特徴</th>
+          <th>病態</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">クリック</span></td>
+          <td>「カクッ」という単発音</td>
+          <td><span class="highlight">関節円板の復位性前方転位</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">クレピタス</span></td>
+          <td>「ザラザラ」という連続音</td>
+          <td>変形性顎関節症（関節面の変性）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115B11</div>
+        <p>顎関節症のクリック音について正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 関節円板の穿孔が原因である。<br>
+          b 患者は「ザラザラ」という言葉で表現する。<br>
+          c 音がしなければ関節円板の位置は正常である。<br>
+          d 転位した関節円板が復位するときに発生する。<br>
+          e 相反性クリックは関節結節を越えるときに発生する。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】クリック音は<span class="highlight">転位した関節円板が復位するとき</span>に発生。「ザラザラ」はクレピタス。音がなくても非復位性転位の可能性あり。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A15</div>
+        <p>顎関節雑音の発生に直接関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 関節包の拘縮<br>
+          b 外側靱帯の弛緩<br>
+          c 関節結節の平坦化<br>
+          d 外側翼突筋の過緊張<br>
+          e 関節円板の復位性前方転位
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】顎関節雑音（クリック）は<span class="highlight">関節円板の復位性前方転位</span>が原因。開口時に転位した円板が復位する際に音が発生。</p>
+      </div>
+
+      <h3>クリックの検出方法</h3>
+      <div class="question-box">
+        <div class="q-number">112A26</div>
+        <p>顎関節のクリックの検出に有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a CT<br>
+          b 触　診<br>
+          c 聴　診<br>
+          d 筋電図検査<br>
+          e 咬合音検査
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】クリックは<span class="highlight">触診と聴診</span>で検出。CTは骨の形態評価、筋電図は筋活動評価、咬合音検査は咬合接触の評価に用いる。</p>
+      </div>
+
+      <h3>顎関節のMRI</h3>
+      <div class="question-box">
+        <div class="q-number">118B3</div>
+        <p>エックス線画像で判明せず、MRIで判明する顎関節の症候はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 顎関節痛障害<br>
+          b 関節円板障害<br>
+          c 関節突起骨折<br>
+          d 変形性顎関節症<br>
+          e 進行性下顎頭吸収
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">関節円板は軟組織</span>のためX線では描出されない。MRIで関節円板の位置・形態を評価できる。骨折・変形性関節症・下顎頭吸収はX線でも評価可能。</p>
+      </div>
+
+      <h2>リンパ節の診察</h2>
+
+      <h3>頭頸部のリンパ節</h3>
+      <table>
+        <tr>
+          <th>リンパ節</th>
+          <th>位置</th>
+          <th>所属領域</th>
+        </tr>
+        <tr>
+          <td><span class="key">オトガイ下リンパ節</span></td>
+          <td>オトガイ部直下</td>
+          <td>下唇、舌尖、下顎前歯部</td>
+        </tr>
+        <tr>
+          <td><span class="key">顎下リンパ節</span></td>
+          <td>顎下三角内</td>
+          <td>口腔底、舌、顎下腺</td>
+        </tr>
+        <tr>
+          <td><span class="key">上内深頸リンパ節</span></td>
+          <td>胸鎖乳突筋深部上方</td>
+          <td>咽頭、口蓋扁桃</td>
+        </tr>
+        <tr>
+          <td>耳下腺リンパ節</td>
+          <td>耳下腺内・周囲</td>
+          <td>側頭部、耳介</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116B1</div>
+        <p>リンパ節腫脹の造影CT（別冊No.1）を別に示す。
+矢印で示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 頬リンパ節<br>
+          b 舌リンパ節<br>
+          c 顎下リンパ節<br>
+          d 上内深頸リンパ節<br>
+          e オトガイ下リンパ節
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】顎下三角内に位置するリンパ節は<span class="highlight">顎下リンパ節</span>。口腔底や舌からのリンパ流入を受ける。</p>
+      </div>
+
+      <h3>開口困難時の触診</h3>
+      <div class="question-box">
+        <div class="q-number">115D18</div>
+        <p>開口困難を主訴として来院した患者に対し、まず触診する部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 顎下部<br>
+          b 側頸部<br>
+          c 眼窩下部<br>
+          d 鼻翼基部<br>
+          e 耳珠前方部
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】開口困難の原因として顎関節を疑う。<span class="highlight">耳珠前方部</span>は顎関節の位置であり、まず触診すべき部位。顎下部は顎下腺・リンパ節の位置。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

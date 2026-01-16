@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯・歯周組織の診察 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 診察の基本</span>
+    <h1>歯・歯周組織の診察</h1>
+    <div class="container">
+
+      <h2>1. 歯・歯周組織の診察方法</h2>
+      <p>歯髄疾患や根尖部歯周組織疾患の診査・診断では、<span class="key">歯髄の生死</span>、<span class="key">打診痛の有無</span>、<span class="key">温度診の反応</span>の組み合わせで、おおよその診断が可能である。</p>
+
+      <h3>主な診察方法</h3>
+      <table>
+        <tr><th>診察法</th><th>目的・確認事項</th></tr>
+        <tr><td class="key">打診</td><td>歯根膜の病変、根尖性歯周炎の有無</td></tr>
+        <tr><td class="key">温度診</td><td>歯髄の生死・状態（冷温刺激への反応）</td></tr>
+        <tr><td class="key">触診</td><td>歯肉の腫脹、圧痛の有無</td></tr>
+        <tr><td class="key">動揺度検査</td><td>歯周組織の支持状態</td></tr>
+        <tr><td class="key">歯髄電気診</td><td>歯髄の生死判定</td></tr>
+        <tr><td class="key">インピーダンス測定</td><td>硬組織の欠損程度（露髄の有無）</td></tr>
+      </table>
+
+      <h2>2. 歯髄炎の症状・所見（2件出題）</h2>
+      <p>歯髄炎では炎症が歯髄腔内に限局するため、<span class="highlight">関連痛（拡散痛）</span>が特徴的である。痛みの局在が不明確となり、患歯の特定が困難なことがある。</p>
+
+      <h3>急性歯髄炎の種類と特徴</h3>
+      <table>
+        <tr><th>種類</th><th>特徴</th></tr>
+        <tr><td class="key">急性単純性歯髄炎</td><td><span class="highlight">関連痛</span>（拡散痛）、冷水痛、温熱痛</td></tr>
+        <tr><td class="key">急性化膿性歯髄炎</td><td>拍動性の激痛、温熱で増悪・冷水で緩和、<span class="highlight">挺出感</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">急性化膿性歯髄炎と急性化膿性根尖性歯周炎の共通所見</div>
+        <ul>
+          <li><span class="highlight">歯の挺出感</span>（歯根膜の炎症による）</li>
+          <li>瘻孔・歯肉腫脹・リンパ節腫脹は<span class="caution">根尖性歯周炎のみ</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C11</div>
+        <p>急性単純性歯髄炎にみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 膿　瘍<br>
+          b 関連痛<br>
+          c 歯肉腫脹<br>
+          d 瘻孔形成<br>
+          e 根尖部エックス線透過像
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】急性単純性歯髄炎では炎症が歯髄内に限局しているため、関連痛（拡散痛）が特徴。膿瘍・歯肉腫脹・瘻孔・根尖部透過像は根尖性歯周炎の所見。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B11</div>
+        <p>急性化膿性歯髄炎と急性化膿性根尖性歯周炎に共通して認められるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口腔の瘻孔<br>
+          b 歯肉の腫脹<br>
+          c 全身の発熱<br>
+          d 歯の挺出感<br>
+          e リンパ節の腫脹
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】挺出感は歯根膜の炎症・浮腫によって生じる。化膿性歯髄炎でも炎症が根尖部に波及し始めると挺出感が出現する。瘻孔・歯肉腫脹・リンパ節腫脹は根尖性歯周炎で認められる所見。</p>
+      </div>
+
+      <h2>3. 歯周病の診査（2件出題）</h2>
+      <p>歯周病の診査では、プロービング検査や動揺度検査が重要である。特に<span class="highlight">BOP（プロービング時の出血）</span>は歯周病の活動度を示す指標として重要。</p>
+
+      <h3>歯周病の主な検査項目</h3>
+      <table>
+        <tr><th>検査項目</th><th>評価内容</th></tr>
+        <tr><td class="key">プロービング深さ（PD）</td><td>歯周ポケットの深さ</td></tr>
+        <tr><td class="key">アタッチメントレベル（CAL）</td><td>付着の喪失量（CEJからの距離）</td></tr>
+        <tr><td class="key">BOP</td><td><span class="highlight">歯周病の活動度</span>（炎症の有無）</td></tr>
+        <tr><td class="key">動揺度</td><td>歯周組織の支持状態</td></tr>
+        <tr><td class="key">フレミタス</td><td>機能時（咬合時）の歯の動揺</td></tr>
+        <tr><td class="key">PCR</td><td>プラークコントロールの状態</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">フレミタスの検査方法</div>
+        <ul>
+          <li><span class="highlight">手指を歯面に当てて</span>、咬合・タッピング時の振動を触知</li>
+          <li>咬合性外傷の診断に有用</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C10</div>
+        <p>歯周病の活動度を示す検査項目はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯の動揺度<br>
+          b プロービング深さ<br>
+          c アタッチメントレベル<br>
+          d プロービング時の出血<br>
+          e プラークコントロールレコード
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】BOP（プロービング時の出血）は歯周ポケット内壁の炎症を反映し、歯周病の活動度を示す。動揺度やPD、CALは歯周組織の破壊程度を示すが、現在の炎症活動性は示さない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A8</div>
+        <p>歯周病の診察において手指を歯面に当てて確認するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咬　耗<br>
+          b 挺　出<br>
+          c 動揺度<br>
+          d 食片圧入<br>
+          e フレミタス
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】フレミタスは手指を歯の唇面に当て、咬合やタッピング時の振動を触知して確認する。動揺度検査はピンセットで歯を把持して行う。</p>
+      </div>
+
+      <h2>4. 象牙質知覚過敏症（1件出題）</h2>
+      <p><span class="key">象牙質知覚過敏症</span>は、エナメル質やセメント質の欠損により象牙細管が露出し、外来刺激に対して一過性の疼痛が生じる状態である。</p>
+
+      <h3>好発部位</h3>
+      <table>
+        <tr><th>好発部位</th><th>原因</th></tr>
+        <tr><td class="key">歯頸部</td><td>ブラッシングによる摩耗、楔状欠損</td></tr>
+        <tr><td class="key">露出根面</td><td>歯肉退縮によるセメント質の露出・喪失</td></tr>
+      </table>
+      <p class="note">※咬頭頂はエナメル質が厚く、小窩裂溝は齲蝕の好発部位だが知覚過敏の好発部位ではない</p>
+
+      <div class="question-box">
+        <div class="q-number">116A12</div>
+        <p>象牙質知覚過敏症の好発部位はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 咬頭頂<br>
+          b 歯頸部<br>
+          c 隣接面<br>
+          d 小窩裂溝<br>
+          e 露出根面
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】象牙質知覚過敏症は象牙細管の露出が原因。歯頸部は楔状欠損やブラッシングによる摩耗で、露出根面は歯肉退縮でセメント質が失われることで象牙質が露出しやすい。</p>
+      </div>
+
+      <h2>5. 小児の口腔所見と対応（1件出題）</h2>
+      <p>小児の口腔診察では、全身疾患を示唆する所見に注意が必要である。特に<span class="highlight">歯肉からの自然出血</span>は血液疾患を疑い、小児科への紹介が必要。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">小児科医への紹介が必要な口腔所見</div>
+        <ul>
+          <li><span class="highlight">歯肉からの自然出血</span>→白血病などの血液疾患を疑う</li>
+          <li>口腔粘膜の点状出血→血小板減少を疑う</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A3</div>
+        <p>2歳の男児において小児科医への受診を勧めるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 切歯結節<br>
+          b 切端咬合<br>
+          c 地図状舌<br>
+          d 歯肉からの自然出血<br>
+          e 第二乳臼歯の未萌出
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】歯肉からの自然出血は白血病などの血液疾患の口腔症状として重要。小児科医への紹介が必要。切歯結節・切端咬合・地図状舌は経過観察、第二乳臼歯未萌出は2歳では正常。</p>
+      </div>
+
+      <h2>まとめ：診察所見の鑑別</h2>
+      <table>
+        <tr><th>所見</th><th>疾患・状態</th></tr>
+        <tr><td>関連痛（拡散痛）</td><td>急性単純性歯髄炎</td></tr>
+        <tr><td>挺出感</td><td>急性化膿性歯髄炎、急性化膿性根尖性歯周炎</td></tr>
+        <tr><td>瘻孔・歯肉腫脹</td><td>根尖性歯周炎（歯髄炎では<span class="caution">なし</span>）</td></tr>
+        <tr><td>BOP</td><td>歯周病の活動度を示す</td></tr>
+        <tr><td>フレミタス</td><td>咬合性外傷（機能時の動揺）</td></tr>
+        <tr><td>歯肉の自然出血</td><td>血液疾患を疑う</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

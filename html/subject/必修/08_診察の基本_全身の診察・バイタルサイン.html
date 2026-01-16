@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>全身の診察・バイタルサイン - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 08_診察の基本</span>
+    <h1>全身の診察・バイタルサイン</h1>
+    <div class="container">
+
+      <h2>バイタルサインとは</h2>
+
+      <h3>バイタルサインの定義</h3>
+      <p><span class="key">バイタルサイン（生命徴候）</span>とは、生命維持に必要な基本的な生理機能を示す指標。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">バイタルサイン4項目</div>
+        <ul>
+          <li><span class="highlight">体温</span></li>
+          <li><span class="highlight">脈拍（心拍数）</span></li>
+          <li><span class="highlight">呼吸（呼吸数）</span></li>
+          <li><span class="highlight">血圧</span></li>
+        </ul>
+        <p class="note">※意識レベルを含めて5項目とする場合もある</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A12</div>
+        <p>バイタルサインはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 腫　脹<br>
+          b 体　温<br>
+          c 疼　痛<br>
+          d 肺活量<br>
+          e 心拍出量
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】バイタルサインは<span class="highlight">体温・脈拍・呼吸・血圧</span>の4項目。腫脹・疼痛は炎症の徴候、肺活量・心拍出量は検査値でありバイタルサインではない。</p>
+      </div>
+
+      <h2>バイタルサインの正常値</h2>
+
+      <h3>成人の正常値</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>正常値</th>
+        </tr>
+        <tr>
+          <td><span class="key">呼吸数</span></td>
+          <td><span class="highlight">14〜20回/分</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">脈拍</span></td>
+          <td><span class="highlight">60〜100回/分</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">血圧（収縮期）</span></td>
+          <td><span class="highlight">&lt;140 mmHg</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">血圧（拡張期）</span></td>
+          <td><span class="highlight">&lt;90 mmHg</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">体温</span></td>
+          <td><span class="highlight">36〜37℃</span></td>
+        </tr>
+      </table>
+
+      <h3>年齢による違い</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>乳児・小児</th>
+          <th>成人</th>
+          <th>高齢者</th>
+        </tr>
+        <tr>
+          <td><span class="key">呼吸数</span></td>
+          <td class="caution">高い（20〜30回/分）</td>
+          <td>14〜20回/分</td>
+          <td>やや低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">脈拍</span></td>
+          <td class="caution">高い（80〜120回/分）</td>
+          <td>60〜100回/分</td>
+          <td>変化少</td>
+        </tr>
+        <tr>
+          <td><span class="key">収縮期血圧</span></td>
+          <td class="highlight">低い</td>
+          <td>&lt;140 mmHg</td>
+          <td class="caution">上昇</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">年齢差の覚え方</div>
+        <ul>
+          <li><span class="key">小児</span>：体が小さい → 代謝が活発 → <span class="highlight">呼吸数・心拍数は高い</span></li>
+          <li><span class="key">小児</span>：血管抵抗が低い → <span class="highlight">血圧は低い</span></li>
+          <li><span class="key">高齢者</span>：動脈硬化 → <span class="highlight">収縮期血圧は上昇</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117B19</div>
+        <p>成人よりも小児で値が低いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血　圧<br>
+          b 体　温<br>
+          c 呼吸数<br>
+          d 心拍数<br>
+          e 基礎代謝量
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】小児は成人より<span class="highlight">血圧が低い</span>。呼吸数・心拍数は小児の方が高い。体温はほぼ同等。基礎代謝量は体重あたりでは小児が高いが、絶対値では低い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B10</div>
+        <p>学童期に比べて乳児期で数値が小さいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 呼吸数<br>
+          b 心拍数<br>
+          c 白血球数<br>
+          d 収縮期血圧<br>
+          e リンパ球数
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】乳児は学童より<span class="highlight">収縮期血圧が低い</span>。呼吸数・心拍数は乳児の方が高い。白血球数・リンパ球数も乳児の方が高い傾向。</p>
+      </div>
+
+      <h3>高齢者の循環特徴</h3>
+      <div class="question-box">
+        <div class="q-number">111B9</div>
+        <p>高齢者における循環の生理的特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 早朝の降圧<br>
+          b 脈圧の減少<br>
+          c 臓器血流の増加<br>
+          d 収縮期血圧の上昇<br>
+          e 圧受容器反射の亢進
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】高齢者は動脈硬化により<span class="highlight">収縮期血圧が上昇</span>する。脈圧は増大（収縮期↑、拡張期は変化少）。臓器血流は低下、圧受容器反射は低下。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A35</div>
+        <p>老化に伴って低下するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 食後血糖<br>
+          b 収縮期血圧<br>
+          c 末梢血管抵抗<br>
+          d 動脈圧受容器反射機能<br>
+          e 血清総コレステロール
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】老化により<span class="highlight">動脈圧受容器反射機能は低下</span>する（起立性低血圧の原因）。収縮期血圧・末梢血管抵抗・コレステロールは上昇傾向。</p>
+      </div>
+
+      <h2>血圧測定</h2>
+
+      <h3>血圧測定の方法</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>使用部位</th>
+          <th>測定できる血圧</th>
+        </tr>
+        <tr>
+          <td><span class="key">触診法</span></td>
+          <td><span class="highlight">橈骨動脈</span></td>
+          <td>収縮期血圧のみ</td>
+        </tr>
+        <tr>
+          <td><span class="key">聴診法</span></td>
+          <td>上腕動脈（コロトコフ音）</td>
+          <td><span class="highlight">収縮期・拡張期両方</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">血圧測定のポイント</div>
+        <ul>
+          <li>マンシェットは<span class="caution">きつく巻かない</span>（指1〜2本入る程度）</li>
+          <li>上腕は<span class="key">心臓の高さ</span>に保つ（肩の高さではない）</li>
+          <li>減圧は<span class="key">ゆっくり</span>行う（2〜3 mmHg/秒）</li>
+          <li><span class="highlight">触診法では拡張期血圧は測定できない</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A19</div>
+        <p>血圧測定で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 減圧は素早く行う。<br>
+          b 上腕は肩の高さに保つ。<br>
+          c 触診法は橈骨動脈を用いる。<br>
+          d マンシェットはきつく巻く。<br>
+          e 触診法では拡張期血圧が測定できる。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">触診法は橈骨動脈</span>を触知して収縮期血圧を測定する。aは「ゆっくり」、bは「心臓の高さ」、dは「ゆるめに」、eは「収縮期血圧のみ」が正しい。</p>
+      </div>
+
+      <h2>モニタリング機器</h2>
+
+      <h3>主なモニタリング機器</h3>
+      <table>
+        <tr>
+          <th>機器</th>
+          <th>測定項目</th>
+        </tr>
+        <tr>
+          <td><span class="key">パルスオキシメータ</span></td>
+          <td><span class="highlight">SpO2（経皮的酸素飽和度）</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">カプノメータ</span></td>
+          <td><span class="highlight">ETCO2（呼気終末二酸化炭素分圧）</span>→ 呼吸状態</td>
+        </tr>
+        <tr>
+          <td><span class="key">BISモニタ</span></td>
+          <td><span class="highlight">意識レベル（鎮静深度）</span></td>
+        </tr>
+        <tr>
+          <td>筋弛緩モニタ</td>
+          <td>筋弛緩の程度</td>
+        </tr>
+        <tr>
+          <td>心電図モニタ</td>
+          <td>心拍数、不整脈</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115B5</div>
+        <p>全身麻酔中の呼吸状態の評価に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血圧計<br>
+          b カプノメータ<br>
+          c 筋弛緩モニタ<br>
+          d 経食道心エコー<br>
+          e BIS〈Bispectral index〉モニタ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">カプノメータ</span>はETCO2（呼気終末CO2濃度）を測定し、呼吸状態を評価する。BISモニタは意識レベル、筋弛緩モニタは筋弛緩の程度を測定。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A17</div>
+        <p>全身麻酔中の写真（別冊No.2）を別に示す。
+額に貼付したセンサーでモニターするのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 体　温<br>
+          b 脳　圧<br>
+          c 筋弛緩<br>
+          d 意識レベル<br>
+          e 酸素飽和度
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】額に貼付するセンサーは<span class="highlight">BISモニタ</span>で、<span class="highlight">意識レベル（鎮静深度）</span>を測定する。酸素飽和度はパルスオキシメータ（指先）で測定。</p>
+      </div>
+
+      <h2>体温と炎症評価</h2>
+
+      <h3>体温測定の意義</h3>
+      <p>体温は<span class="key">炎症の指標</span>として重要。感染症治療における抗菌薬の効果判定に用いる。</p>
+
+      <div class="question-box">
+        <div class="q-number">105A17</div>
+        <p>急性智歯周囲炎の治療で抗菌薬の効果を評価できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 尿　量<br>
+          b 血　圧<br>
+          c 体　温<br>
+          d 体　重<br>
+          e 呼吸数
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】感染症では発熱が生じる。抗菌薬が有効であれば<span class="highlight">体温が下降</span>するため、効果判定に用いることができる。血圧・呼吸数は直接的な指標ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>エックス線撮影の原理・防護 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>エックス線撮影の原理・防護</h1>
+    <div class="container">
+
+      <h2>1. エックス線の発生原理</h2>
+
+      <h3>エックス線管（クーリッジ管）の構造</h3>
+      <p>エックス線は真空管内で高速電子をターゲットに衝突させることで発生する。</p>
+
+      <table>
+        <tr><th>部位</th><th>材質</th><th>機能</th></tr>
+        <tr><td><span class="key">陰極</span></td><td>タングステン（フィラメント）</td><td>加熱により熱電子を放出</td></tr>
+        <tr><td><span class="key">陽極</span></td><td>タングステン（ターゲット）</td><td>電子が衝突しX線発生</td></tr>
+      </table>
+
+      <p class="note">ターゲットは約20度傾斜して設置。管電圧は60〜70kV。</p>
+
+      <h3>焦点と実効焦点</h3>
+      <ul>
+        <li><span class="key">焦点</span>：電子がターゲットに当たる部分（X線の発生源）</li>
+        <li><span class="key">実効焦点</span>：利用するX線束の方向からみた焦点の大きさ</li>
+      </ul>
+
+      <h2>2. 放射線の種類</h2>
+
+      <h3>LET（線エネルギー付与）による分類</h3>
+      <p>LETは放射線が物質中を通過する際に単位長さあたりに付与するエネルギー量。</p>
+
+      <table>
+        <tr><th>分類</th><th>放射線の種類</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">高LET放射線</span></td><td>重粒子線、α線、中性子線</td><td>生物学的効果が大きい</td></tr>
+        <tr><td>低LET放射線</td><td>エックス線、γ線、電子線、β線</td><td>透過性が高い</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115A14</div>
+        <p>高LET〈線エネルギー付与〉放射線はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 電子線<br>
+          b ガンマ線<br>
+          c 重粒子線<br>
+          d ベータ線<br>
+          e エックス線
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】高LET放射線は<span class="key">重粒子線、α線、中性子線</span>。エックス線、γ線、電子線、β線は低LET放射線。高LET放射線は生物学的効果比（RBE）が大きい。</p>
+      </div>
+
+      <h2>3. 放射線防護</h2>
+
+      <h3>組織加重係数（ICRP 2007年勧告）</h3>
+      <p>臓器・組織の放射線感受性を表す係数。<span class="key">実効線量</span>の計算に用いる。</p>
+
+      <table>
+        <tr><th>組織加重係数</th><th>臓器・組織</th></tr>
+        <tr><td><span class="highlight">0.12（最大）</span></td><td>赤色骨髄、結腸、肺、胃、乳房、残りの組織</td></tr>
+        <tr><td>0.08</td><td>生殖腺</td></tr>
+        <tr><td>0.04</td><td>膀胱、食道、肝臓、甲状腺</td></tr>
+        <tr><td><span class="highlight">0.01（最小）</span></td><td>骨表面、脳、<span class="caution">唾液腺</span>、皮膚</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <ul>
+          <li>最大（0.12）：<span class="key">赤色骨髄</span>、結腸、肺、胃、乳房</li>
+          <li>最小（0.01）：<span class="key">唾液腺</span>、皮膚、脳、骨表面</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A6</div>
+        <p>組織加重〈荷重〉係数（国際放射線防護委員会〈ICRP〉2007年勧告）が最も大きいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 食　道<br>
+          b 皮　膚<br>
+          c 甲状腺<br>
+          d 唾液腺<br>
+          e 赤色骨髄
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】組織加重係数が最大（0.12）なのは赤色骨髄、結腸、肺、胃、乳房。食道・甲状腺は0.04、皮膚・唾液腺は0.01。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B16</div>
+        <p>組織加重〈荷重〉係数（国際放射線防護委員会2007年勧告）が最も小さいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肺<br>
+          b 乳　房<br>
+          c 生殖腺<br>
+          d 唾液腺<br>
+          e 赤色骨髄
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】組織加重係数が最小（0.01）なのは<span class="caution">唾液腺</span>、皮膚、脳、骨表面。肺・乳房・赤色骨髄は0.12、生殖腺は0.08。</p>
+      </div>
+
+      <h3>総ろ過</h3>
+      <p>患者への不要な被曝を減らすため、エックス線束から低エネルギー成分を除去する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">総ろ過の基準</div>
+        <ul>
+          <li>管電圧60〜70kV：<span class="highlight">1.5mmAl当量以上</span></li>
+          <li>管電圧70kV以上：2.5mmAl当量以上</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C32</div>
+        <p>管電圧60〜70kVの口内法エックス線撮影装置における総ろ過で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 0.3mmAl当量<br>
+          b 0.6mmAl当量<br>
+          c 0.9mmAl当量<br>
+          d 1.2mmAl当量<br>
+          e 1.5mmAl当量
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】管電圧60〜70kVでは総ろ過1.5mmAl当量以上が必要。ろ過により皮膚線量を低減できる。</p>
+      </div>
+
+      <h3>被曝低減の方法</h3>
+      <table>
+        <tr><th>方法</th><th>内容</th></tr>
+        <tr><td>照射野の限定</td><td>最小面に絞る（矩形絞り）</td></tr>
+        <tr><td>距離の確保</td><td>ロングコーン使用（焦点-被写体間距離↑）</td></tr>
+        <tr><td>ろ過の使用</td><td>低エネルギーX線の除去</td></tr>
+        <tr><td>防護用具</td><td>鉛エプロン、甲状腺カラー</td></tr>
+        <tr><td>高感度システム</td><td>デジタル撮影、高感度フィルム</td></tr>
+      </table>
+
+      <h2>4. 撮影法の基本</h2>
+
+      <h3>焦点・被写体間距離</h3>
+      <p>焦点から被写体までの距離。距離が長いほど拡大率が小さく、鮮鋭度が向上する。</p>
+
+      <table>
+        <tr><th>撮影法</th><th>焦点・被写体間距離</th></tr>
+        <tr><td>平行法</td><td>約30cm</td></tr>
+        <tr><td>二等分法</td><td>約20cm</td></tr>
+        <tr><td>パノラマ</td><td>約15cm</td></tr>
+        <tr><td><span class="highlight">頭部エックス線規格撮影</span></td><td><span class="highlight">150〜165cm（最長）</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107A10</div>
+        <p>焦点・被写体間距離が最も長いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a CT<br>
+          b 咬合法撮影<br>
+          c 平行法撮影<br>
+          d パノラマエックス線撮影<br>
+          e 頭部エックス線規格撮影
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】頭部エックス線規格撮影（セファロ）は焦点-被写体間距離が150〜165cmと最も長い。これにより拡大率を一定に保ち、規格性のある撮影が可能となる。</p>
+      </div>
+
+      <h2>5. デジタルエックス線検出器</h2>
+
+      <h3>検出器の種類</h3>
+      <table>
+        <tr><th>種類</th><th>特徴</th></tr>
+        <tr><td><span class="key">CCD</span></td><td>電荷結合素子、高解像度</td></tr>
+        <tr><td><span class="key">CMOS</span></td><td>相補型金属酸化膜半導体、低消費電力</td></tr>
+        <tr><td><span class="key">IP</span></td><td>イメージングプレート、輝尽性蛍光体使用</td></tr>
+        <tr><td><span class="key">FPD</span></td><td>フラットパネル検出器、CT等に使用</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：エックス線撮影の原理・防護</div>
+        <ul>
+          <li><span class="key">高LET放射線</span>：重粒子線、α線、中性子線</li>
+          <li><span class="key">組織加重係数最大</span>：赤色骨髄（0.12）</li>
+          <li><span class="key">組織加重係数最小</span>：唾液腺（0.01）</li>
+          <li><span class="key">総ろ過</span>：60〜70kVで1.5mmAl当量以上</li>
+          <li><span class="key">焦点・被写体間距離最長</span>：頭部エックス線規格撮影</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

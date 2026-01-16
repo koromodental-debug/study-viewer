@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔・顎顔面の検査 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>口腔・顎顔面の検査</h1>
+    <div class="container">
+
+      <h2>1. 齲蝕検査</h2>
+
+      <h3>レーザー蛍光強度測定（DIAGNOdent）</h3>
+      <p><span class="highlight">波長655nmの半導体レーザー</span>を用いて齲蝕を検出する。歯質の蛍光強度の変化を測定し、齲蝕の程度を数値化する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">特徴</div>
+        <ul>
+          <li><span class="key">小窩裂溝初期齲蝕</span>の検出に有効</li>
+          <li>象牙質齲蝕の<span class="key">客観的評価</span>が可能</li>
+          <li>非侵襲的で再現性が高い</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B16</div>
+        <p>レーザー齲蝕診断装置に使用されるレーザーの波長はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 455nm<br>
+          b 655nm<br>
+          c 1.064μm<br>
+          d 2.94μm<br>
+          e 10.6μm
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】DIAGNOdentは波長655nmの半導体レーザーを使用する。1.064μmはNd:YAGレーザー、2.94μmはEr:YAGレーザー、10.6μmはCO2レーザーの波長。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A3</div>
+        <p>象牙質齲蝕の客観的評価に有効なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 打　診<br>
+          b 温度診<br>
+          c 透照診<br>
+          d 歯髄電気診<br>
+          e レーザー蛍光強度測定
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】レーザー蛍光強度測定は齲蝕の程度を数値で客観的に評価できる。打診・温度診・歯髄電気診は歯髄の状態を評価する検査。透照診は隣接面齲蝕や亀裂の検出に有効。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D17</div>
+        <p>小窩裂溝初期齲蝕の検査に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 有鉤探針<br>
+          b 半導体レーザー<br>
+          c 加熱ストッピング<br>
+          d エチルクロライドスプレー<br>
+          e アシッドレッドプロピレングリコール液
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】小窩裂溝初期齲蝕には半導体レーザー（DIAGNOdent）が有効。<span class="caution">有鉤探針での探査は初期齲蝕を破壊する恐れがあるため推奨されない</span>。アシッドレッドは齲蝕象牙質の染色に用いる。</p>
+      </div>
+
+      <h3>ICDAS（International Caries Detection and Assessment System）</h3>
+      <p><span class="highlight">齲蝕の検出と活動性の評価</span>に基づく国際的な診断基準。視診により齲蝕をコード0〜6で分類する。</p>
+
+      <div class="question-box">
+        <div class="q-number">113B7</div>
+        <p>齲蝕の検出と活動性の評価に基づく診断基準はどれか。1つ選べ。</p>
+        <div class="choices">
+          a CFI<br>
+          b OHI<br>
+          c RCI<br>
+          d DMF<br>
+          e ICDAS
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】ICDASは齲蝕の検出と活動性評価の診断基準。CFIは地域フッ素症指数、OHIは口腔清掃状態指数、RCIは根面齲蝕指数、DMFは齲蝕経験指数。</p>
+      </div>
+
+      <h3>齲蝕検知液（アシッドレッド）</h3>
+      <p>1%アシッドレッドをプロピレングリコールに溶解した染色液。齲蝕象牙質を染色し、切削範囲の指標とする。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">染色される層</div>
+        <ul>
+          <li><span class="highlight">寡菌層（外層）</span>：濃染される → 除去すべき層</li>
+          <li>混濁層（内層）：淡染 → 保存可能</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C7</div>
+        <p>アシッドレッドに濃染される象牙質はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 寡菌層<br>
+          b 混濁層<br>
+          c 正常層<br>
+          d 透明層<br>
+          e 生活反応層
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】齲蝕象牙質の外層（寡菌層）は細菌感染があり再石灰化不能のため、アシッドレッドに濃染される。内層（混濁層）は淡染され、再石灰化可能なため保存する。</p>
+      </div>
+
+      <h2>2. 透照診</h2>
+      <p>光を歯に透過させて病変を検出する検査法。<span class="highlight">隣接面齲蝕</span>や<span class="highlight">亀裂</span>の検出に有効。</p>
+
+      <div class="question-box">
+        <div class="q-number">111A4</div>
+        <p>透照診で検出できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 隣接面齲蝕<br>
+          b 歯根外部吸収<br>
+          c 象牙質形成不全<br>
+          d 歯冠部歯髄の形態<br>
+          e 修復象牙質の形成
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】透照診は光の透過性の違いを利用して病変を検出する。隣接面齲蝕や亀裂は光の透過性が低下するため検出できる。歯根外部吸収や歯髄形態はエックス線検査で評価する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C30</div>
+        <p>歯の硬組織疾患と検査法との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 亀　裂 ―――――――― 透照診<br>
+          b 変　色 ―――――――― インピーダンス測定検査<br>
+          c 酸蝕症 ―――――――― レーザー蛍光強度測定<br>
+          d 象牙質知覚過敏症 ――― 切削診<br>
+          e アブフラクション ――― 麻酔診
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】亀裂は透照診で検出する。インピーダンス測定は齲蝕検査、レーザー蛍光強度測定も齲蝕検査に用いる。</p>
+      </div>
+
+      <h2>3. 歯髄電気診</h2>
+      <p>歯髄の生死を電気刺激で判定する検査。<span class="highlight">対照歯と比較</span>して診査することが重要。</p>
+
+      <div class="question-box">
+        <div class="q-number">110A16</div>
+        <p>歯の検査で対照歯と比較するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 麻酔診<br>
+          b 楔応力検査<br>
+          c 歯髄電気診<br>
+          d 動揺度検査<br>
+          e 歯周ポケット検査
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】歯髄電気診は個人差があるため、健全な対照歯と比較して反応閾値の違いを評価する必要がある。</p>
+      </div>
+
+      <h2>4. 咀嚼能力検査</h2>
+      <p>咀嚼機能を評価する検査。直接的・客観的な指標として<span class="highlight">グルコース溶出量</span>を用いる。</p>
+
+      <h3>検査法の種類</h3>
+      <table>
+        <tr><th>検査法</th><th>指標</th><th>特徴</th></tr>
+        <tr><td>グルコース含有グミ</td><td><span class="key">グルコース溶出量</span></td><td>直接的・客観的</td></tr>
+        <tr><td>咬合力検査</td><td>咬合力（N）</td><td>義歯の支持機能に影響</td></tr>
+        <tr><td>食品摂取票</td><td>主観的評価</td><td>間接的</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111C8</div>
+        <p>咀嚼能力評価において、直接的かつ客観的な指標として用いられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 下顎運動路<br>
+          b 食品摂取票<br>
+          c 唾液分泌量<br>
+          d 咀嚼筋筋電図<br>
+          e グルコース溶出量
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】グルコース含有グミを咀嚼し、溶出したグルコース量を測定する方法が直接的・客観的評価法。食品摂取票は主観的評価。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D13</div>
+        <p>義歯の支持機能に影響を受けるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 舌圧検査<br>
+          b 咬合力検査<br>
+          c 発語明瞭度検査<br>
+          d パラトグラム検査<br>
+          e ブローイング検査
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】咬合力検査は義歯の支持機能（顎堤の状態、適合など）の影響を受ける。舌圧検査は舌の筋力評価。</p>
+      </div>
+
+      <h2>5. 嚥下検査</h2>
+
+      <h3>嚥下スクリーニング検査</h3>
+      <table>
+        <tr><th>検査法</th><th>内容</th></tr>
+        <tr><td><span class="key">EAT-10</span></td><td>10項目の質問票によるスクリーニング</td></tr>
+        <tr><td>改訂水飲みテスト</td><td>冷水3mLを嚥下</td></tr>
+        <tr><td>反復唾液嚥下テスト（RSST）</td><td>30秒間の嚥下回数</td></tr>
+        <tr><td>フードテスト</td><td>プリンなどを用いた嚥下評価</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115B10</div>
+        <p>ある検査の質問項目を図に示す。<br>この検査はどれか。1つ選べ。</p>
+        <div class="choices">
+          a MMSE<br>
+          b HDS-R<br>
+          c GOHAI<br>
+          d EAT-10<br>
+          e フードテスト
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】EAT-10は嚥下障害のスクリーニング用質問票（10項目）。MMSEとHDS-Rは認知機能検査、GOHAIは口腔関連QOL評価。</p>
+      </div>
+
+      <h2>6. 味覚検査</h2>
+      <p><span class="key">濾紙ディスク法</span>：濾紙に試薬を染み込ませ、舌の味覚を評価する。</p>
+
+      <h3>試薬と味覚の対応</h3>
+      <table>
+        <tr><th>試薬</th><th>味覚</th></tr>
+        <tr><td>ショ糖</td><td>甘味</td></tr>
+        <tr><td>塩化ナトリウム</td><td>塩味</td></tr>
+        <tr><td>酒石酸</td><td>酸味</td></tr>
+        <tr><td><span class="highlight">塩酸キニーネ</span></td><td><span class="highlight">苦味</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112A5</div>
+        <p>濾紙ディスク法による味覚検査で塩酸キニーネを用いて評価するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 塩　味<br>
+          b 甘　味<br>
+          c 酸　味<br>
+          d 苦　味<br>
+          e うま味
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】塩酸キニーネは苦味の検査に用いる。キニーネはキナ皮から得られるアルカロイドで、強い苦味を持つ。</p>
+      </div>
+
+      <h2>7. 口臭検査</h2>
+
+      <h3>検査法の比較</h3>
+      <table>
+        <tr><th>検査法</th><th>特徴</th></tr>
+        <tr><td>官能検査</td><td>検査者が直接嗅ぐ、多様な臭気に対応可能</td></tr>
+        <tr><td><span class="key">ガスクロマトグラフィー</span></td><td><span class="highlight">再現性が高い</span>、VSC（揮発性硫黄化合物）を分離定量</td></tr>
+        <tr><td>半導体ガスセンサー</td><td>簡便、スクリーニング向き</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116A15</div>
+        <p>口臭検査で、官能検査と比較したガスクロマトグラフィー検査の特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 実施が簡便である。<br>
+          b 結果の再現性が高い。<br>
+          c 多様な有臭成分へ対応できる。<br>
+          d この検査結果単独で診断できる。<br>
+          e 患者の直前の飲食に左右されやすい。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】ガスクロマトグラフィーは機械的測定のため再現性が高い。官能検査は多様な有臭成分に対応できるが、検査者の主観が入る。</p>
+      </div>
+
+      <h2>8. インピーダンス測定検査</h2>
+      <p>歯の電気抵抗を測定し、齲蝕の深達度を評価する。</p>
+
+      <h3>測定値と判定</h3>
+      <table>
+        <tr><th>電気抵抗値</th><th>判定</th></tr>
+        <tr><td>15kΩ以下</td><td>齲蝕象牙質（要切削）</td></tr>
+        <tr><td>15.1〜250kΩ</td><td>象牙質齲蝕</td></tr>
+        <tr><td>251〜599kΩ</td><td>エナメル質齲蝕</td></tr>
+        <tr><td>600kΩ以上</td><td>健全</td></tr>
+      </table>
+
+      <h2>9. 歯周ポケット検査</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A29</div>
+        <p>垂直性歯根破折が疑われる下顎右側第一大臼歯のエックス線写真（別冊No.2）を別に示す。<br>診断に有用なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 温度診<br>
+          b 透照診<br>
+          c 咬合音検査<br>
+          d 楔応力検査<br>
+          e 歯周ポケット検査
+        </div>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109A29_1.png" alt="別冊No.2">
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】垂直性歯根破折では破折線に沿って深い歯周ポケットが形成される。限局した深いポケットの存在は歯根破折を示唆する重要な所見。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：検査法と適応</div>
+        <ul>
+          <li><span class="key">小窩裂溝初期齲蝕</span> → レーザー蛍光強度測定（655nm）</li>
+          <li><span class="key">隣接面齲蝕・亀裂</span> → 透照診</li>
+          <li><span class="key">齲蝕象牙質の範囲</span> → 齲蝕検知液（アシッドレッド）</li>
+          <li><span class="key">歯髄の生死</span> → 歯髄電気診（対照歯と比較）</li>
+          <li><span class="key">咀嚼能力</span> → グルコース溶出量</li>
+          <li><span class="key">嚥下スクリーニング</span> → EAT-10</li>
+          <li><span class="key">味覚（苦味）</span> → 塩酸キニーネ</li>
+          <li><span class="key">口臭（客観的）</span> → ガスクロマトグラフィー</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

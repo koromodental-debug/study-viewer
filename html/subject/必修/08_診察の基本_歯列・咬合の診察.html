@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯列・咬合の診察 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 診察の基本</span>
+    <h1>歯列・咬合の診察</h1>
+    <div class="container">
+
+      <h2>1. Eichnerの分類（4件出題）</h2>
+      <p><span class="key">Eichnerの分類</span>は、上下顎<span class="highlight">臼歯部の咬合支持域</span>の残存数で欠損歯列を分類する方法である。咬合支持域は小臼歯部と大臼歯部の左右<span class="highlight">4区画</span>で判定する。</p>
+
+      <h3>分類の定義</h3>
+      <table>
+        <tr><th>分類</th><th>定義</th><th>咬合支持域数</th></tr>
+        <tr><td class="key">A群</td><td>4か所すべての咬合支持域が存在</td><td>4</td></tr>
+        <tr><td class="key">B1</td><td>咬合支持域が3か所残存</td><td>3</td></tr>
+        <tr><td class="key">B2</td><td>咬合支持域が2か所残存</td><td>2</td></tr>
+        <tr><td class="key">B3</td><td>咬合支持域が1か所残存</td><td>1</td></tr>
+        <tr><td class="key">B4</td><td>咬合支持域なし（臼歯部に咬合接触あり）</td><td>0</td></tr>
+        <tr><td class="key">C群</td><td>臼歯部に咬合接触なし（C2は片顎無歯顎）</td><td>0</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Eichnerの分類でわかること</div>
+        <ul>
+          <li><span class="highlight">対合歯列との咬合接触の有無</span>（112B7で出題）</li>
+          <li><span class="caution">欠損歯数はわからない</span>（咬合支持の有無のみ判定）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B7</div>
+        <p>Eichner の分類でわかるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 挺出歯の存在<br>
+          b 前歯部の咬合支持能力<br>
+          c 欠損歯数と咬合支持の関係<br>
+          d 偏心運動時のガイドの様式<br>
+          e 対合歯列との咬合接触の有無
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】Eichnerの分類は臼歯部の咬合支持域の有無で分類するため、対合歯との咬合接触の有無がわかる。前歯部は評価対象外。欠損歯数自体は判定できない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C22</div>
+        <p>咬頭嵌合時および上下顎歯列の口腔内写真（別冊No.4）を別に示す。<br>Eichnerの分類に基づく咬合支持域の数はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C22_1.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a 0<br>
+          b 1<br>
+          c 2<br>
+          d 3<br>
+          e 4
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】口腔内写真から左右小臼歯部・大臼歯部の4区画のうち、咬合支持がある区画を数える。3か所あればB1となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A3</div>
+        <p>欠損歯列患者の口腔内写真（別冊No.1）を別に示す。<br>Eichnerの分類はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108A3_1.png" alt="別冊No.1">
+        </div>
+        <div class="choices">
+          a B1<br>
+          b B2<br>
+          c B3<br>
+          d B4<br>
+          e C1
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】臼歯部に咬合接触がまったくない場合はC群となる。写真で臼歯部の咬合支持域を確認し、接触がなければC1（両顎に歯が残存）またはC2（片顎無歯顎）に分類。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A16</div>
+        <p>歯列弓の模式図を示す。<br>Eichnerの分類でB2に分類されるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107A16_1.png" alt="歯列弓模式図">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】B2は咬合支持域が2か所残存している状態。模式図から左右の小臼歯部・大臼歯部のうち2区画で上下の咬合接触があるものを選ぶ。</p>
+      </div>
+
+      <h2>2. ターミナルプレーン（3件出題）</h2>
+      <p><span class="key">ターミナルプレーン</span>は、上下顎<span class="highlight">第二乳臼歯遠心面</span>の前後的位置関係を示す。乳歯列期（Hellmanの歯齢ⅡA期）に<span class="highlight">視診で確認</span>でき、将来の永久歯咬合を予測する指標となる。</p>
+
+      <h3>ターミナルプレーンとAngle分類の関係</h3>
+      <table>
+        <tr><th>ターミナルプレーン</th><th>第一大臼歯萌出後の咬合</th></tr>
+        <tr><td class="key">垂直型</td><td><span class="highlight">AngleⅠ級</span></td></tr>
+        <tr><td class="key">近心階段型</td><td>AngleⅠ級</td></tr>
+        <tr><td class="key">遠心階段型</td><td><span class="caution">AngleⅡ級</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">3歳児の口腔診察でわかること</div>
+        <ul>
+          <li><span class="highlight">ターミナルプレーンの型</span>（視診で確認可能）</li>
+          <li>リーウェイスペースは<span class="caution">乳歯列では確認不可</span>（混合歯列期で評価）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C19</div>
+        <p>ターミナルプレーンと第一大臼歯萌出完了後の咬合関係の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 垂直型 ーーーーーーー AngleⅠ級<br>
+          b 垂直型 ーーーーーーー AngleⅢ級<br>
+          c 近心階段型 ーーーーー AngleⅡ級<br>
+          d 遠心階段型 ーーーーー AngleⅠ級<br>
+          e 遠心階段型 ーーーーー AngleⅢ級
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】垂直型は上下顎第二乳臼歯遠心面が同一平面上にあり、第一大臼歯萌出後はAngleⅠ級となる。遠心階段型はAngleⅡ級になりやすい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C11</div>
+        <p>Hellmanの歯齢ⅡA期において視診で確認できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 顎間空隙<br>
+          b 歯槽基底弓長径<br>
+          c ターミナルプレーン<br>
+          d リーウェイスペース<br>
+          e 上下顎乳中切歯歯軸角
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ⅡA期は乳歯列完成期。ターミナルプレーンは第二乳臼歯遠心面の位置関係なので視診で確認可能。リーウェイスペースは混合歯列期、歯槽基底弓長径は模型計測が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A15</div>
+        <p>3歳の男児。定期検診のため来院した。口腔の診察でわかるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯列弓長径<br>
+          b 埋伏過剰歯<br>
+          c リーウェイスペース<br>
+          d 第一大臼歯の異所萌出<br>
+          e ターミナルプレーンの型
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】3歳は乳歯列期。口腔診察（視診）でターミナルプレーンの型は確認できる。埋伏過剰歯はX線検査、リーウェイスペースは混合歯列期、第一大臼歯はまだ萌出していない。</p>
+      </div>
+
+      <h2>3. 平行模型（2件出題）</h2>
+      <p><span class="key">平行模型</span>は<span class="highlight">咬合平面を基準</span>として製作する。歯列弓の形態や歯槽基底弓の計測に用いる。</p>
+
+      <h3>平行模型で計測できる項目</h3>
+      <table>
+        <tr><th>計測可能</th><th>計測不可（セファロ分析）</th></tr>
+        <tr><td>歯槽基底弓幅径・長径</td><td>FMIA</td></tr>
+        <tr><td>歯列弓幅径・長径</td><td>上顎突出度</td></tr>
+        <tr><td>歯冠近遠心幅径</td><td>咬合平面傾斜角</td></tr>
+        <tr><td>Arch length discrepancy</td><td>Total discrepancy</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108C17</div>
+        <p>平行模型の製作で基準とするのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口蓋平面<br>
+          b 咬合平面<br>
+          c 眼耳平面<br>
+          d 眼窩平面<br>
+          e 下顎下縁平面
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】平行模型は咬合平面を基準に製作する。眼耳平面（FH平面）やSN平面はセファロ分析の基準平面。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C15</div>
+        <p>平行模型の計測で得られるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a FMIA<br>
+          b 上顎突出度<br>
+          c 咬合平面傾斜角<br>
+          d 歯槽基底弓幅径<br>
+          e Total discrepancy
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】平行模型では歯列弓や歯槽基底弓の幅径・長径を計測できる。FMIA、上顎突出度、咬合平面傾斜角、Total discrepancyはセファロ分析が必要。</p>
+      </div>
+
+      <h2>4. Kennedyの分類（1件出題）</h2>
+      <p><span class="key">Kennedyの分類</span>は<span class="highlight">欠損様式</span>（欠損部位のパターン）を分類する方法である。</p>
+
+      <h3>Kennedyの分類</h3>
+      <table>
+        <tr><th>分類</th><th>欠損様式</th></tr>
+        <tr><td class="key">Ⅰ級</td><td>両側遊離端欠損</td></tr>
+        <tr><td class="key">Ⅱ級</td><td>片側遊離端欠損</td></tr>
+        <tr><td class="key">Ⅲ級</td><td>中間欠損（両側に歯が残存）</td></tr>
+        <tr><td class="key">Ⅳ級</td><td>前歯部のみの中間欠損（正中をまたぐ）</td></tr>
+      </table>
+      <p class="note">※類（修正数）：主たる欠損以外の欠損部位の数を示す。2類なら追加欠損が2か所。</p>
+
+      <div class="question-box">
+        <div class="q-number">116B17</div>
+        <p>下顎の残存歯の歯式を示す。<br>Kennedyの分類はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Ⅰ級2類<br>
+          b Ⅱ級1類<br>
+          c Ⅱ級2類<br>
+          d Ⅲ級2類<br>
+          e Ⅳ級
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】歯式から欠損部位を確認。片側遊離端欠損があればⅡ級、追加の欠損部位が2か所あれば2類となり、Ⅱ級2類と分類される。</p>
+      </div>
+
+      <h2>5. Overall ratio（1件出題）</h2>
+      <p><span class="key">Overall ratio（オーバーオールレシオ）</span>は、上下顎<span class="highlight">第一大臼歯までの12歯</span>の近遠心幅径の総和の比である。</p>
+      <p>計算式：Overall ratio = 下顎12歯の幅径総和 ÷ 上顎12歯の幅径総和 × 100</p>
+
+      <div class="point-box">
+        <div class="point-box-title">Overall ratioが大きくなる場合</div>
+        <ul>
+          <li><span class="highlight">上顎側切歯の矮小歯</span>（分母が小さくなる）</li>
+          <li>上顎歯の幅径が小さくなる異常</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C35</div>
+        <p>Overall ratioが大きくなるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 上顎前歯部の過剰歯<br>
+          b 上顎側切歯の矮小歯<br>
+          c 上顎犬歯の埋伏<br>
+          d 下顎前歯の癒合歯<br>
+          e 下顎第二小臼歯の先天欠如
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】Overall ratioは下顎/上顎の比なので、上顎側切歯が矮小歯で幅径が小さくなると分母が減少し、比が大きくなる。下顎の癒合歯や先天欠如は分子が小さくなり比は小さくなる。</p>
+      </div>
+
+      <h2>6. Angleの分類（補足）</h2>
+      <p><span class="key">Angleの分類</span>は、上顎第一大臼歯に対する下顎第一大臼歯の<span class="highlight">近遠心的位置関係</span>で咬合を分類する。</p>
+
+      <h3>Angleの分類</h3>
+      <table>
+        <tr><th>分類</th><th>特徴</th></tr>
+        <tr><td class="key">Ⅰ級</td><td>正常な近遠心関係。上顎6近心頬側咬頭が下顎6頬面溝と咬合</td></tr>
+        <tr><td class="key">Ⅱ級1類</td><td>下顎が遠心位。上顎前歯の突出あり、口呼吸と関連</td></tr>
+        <tr><td class="key">Ⅱ級2類</td><td>下顎が遠心位。上顎前歯の直立、鼻呼吸</td></tr>
+        <tr><td class="key">Ⅲ級</td><td>下顎が近心位（反対咬合傾向）</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

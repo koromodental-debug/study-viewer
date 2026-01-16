@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>病理学検査 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>病理学検査</h1>
+    <div class="container">
+
+      <h2>1. 病理学検査の種類</h2>
+
+      <table>
+        <tr><th>種類</th><th>内容</th><th>特徴</th></tr>
+        <tr><td><span class="key">細胞診</span></td><td>細胞を採取し異型性を調べる</td><td>低侵襲、スクリーニング</td></tr>
+        <tr><td><span class="key">生検</span></td><td>生きた組織を採取し組織学的検査</td><td>確定診断</td></tr>
+        <tr><td><span class="key">穿刺吸引細胞診</span></td><td>針で穿刺し細胞を吸引採取</td><td>軟組織腫瘍に有用</td></tr>
+      </table>
+
+      <h3>穿刺吸引細胞診の適応</h3>
+      <p><span class="highlight">軟組織腫瘍</span>（唾液腺腫瘍など）の診断に有用。硬組織腫瘍（歯牙腫、骨腫瘍）は細胞採取困難。</p>
+
+      <div class="question-box">
+        <div class="q-number">111B16</div>
+        <p>穿刺吸引細胞診で診断可能なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯牙腫<br>
+          b 腺様嚢胞癌<br>
+          c 骨形成線維腫<br>
+          d 線維性異形成症<br>
+          e セメント芽細胞腫
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">腺様嚢胞癌</span>は唾液腺の軟組織腫瘍であり、穿刺吸引細胞診で診断可能。歯牙腫、骨形成線維腫、線維性異形成症、セメント芽細胞腫は硬組織腫瘍のため細胞診は困難。</p>
+      </div>
+
+      <h2>2. 固定液</h2>
+
+      <h3>目的別の固定液</h3>
+      <table>
+        <tr><th>目的</th><th>固定液</th></tr>
+        <tr><td><span class="highlight">生検組織</span></td><td><span class="highlight">ホルムアルデヒド水溶液</span>（ホルマリン）</td></tr>
+        <tr><td><span class="highlight">細胞診（Papanicolaou染色）</span></td><td><span class="highlight">エタノール</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108C5</div>
+        <p>生検組織の固定液はどれか。1つ選べ。</p>
+        <div class="choices">
+          a キシレン<br>
+          b クエン酸水溶液<br>
+          c ジエチルエーテル<br>
+          d 塩化カルシウム水溶液<br>
+          e ホルムアルデヒド水溶液
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】生検組織は<span class="highlight">ホルムアルデヒド水溶液（ホルマリン）</span>で固定する。キシレンは脱水・透徹、ジエチルエーテルは脱脂に使用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C2</div>
+        <p>Papanicolaou染色の固定液はどれか。1つ選べ。</p>
+        <div class="choices">
+          a エチレン<br>
+          b キシレン<br>
+          c トルエン<br>
+          d エタノール<br>
+          e フェノール
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】Papanicolaou染色（細胞診）の固定液は<span class="highlight">エタノール</span>。採取した細胞を速やかにエタノールで湿固定する。</p>
+      </div>
+
+      <h2>3. 染色法</h2>
+
+      <h3>H-E染色（ヘマトキシリン・エオジン染色）</h3>
+      <p>最も一般的な病理組織染色。</p>
+      <table>
+        <tr><th>色素</th><th>染色される組織</th><th>色調</th></tr>
+        <tr><td><span class="key">ヘマトキシリン</span></td><td>好塩基性組織（核、石灰化物、軟骨）</td><td>青紫色</td></tr>
+        <tr><td><span class="key">エオジン</span></td><td>好酸性組織（細胞質、結合組織、赤血球）</td><td>赤〜ピンク色</td></tr>
+      </table>
+
+      <h3>特殊染色</h3>
+      <table>
+        <tr><th>染色法</th><th>対象</th></tr>
+        <tr><td><span class="key">PAS染色</span></td><td>多糖類（グリコーゲン）→ 赤紫色</td></tr>
+        <tr><td><span class="highlight">Grocott染色</span></td><td><span class="highlight">真菌</span></td></tr>
+        <tr><td><span class="key">Congo-Red染色</span></td><td>アミロイド → 赤橙色</td></tr>
+        <tr><td><span class="key">Ziehl-Neelsen染色</span></td><td>抗酸菌（結核菌など）</td></tr>
+        <tr><td><span class="key">SudanⅢ染色</span></td><td>脂肪</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111C12</div>
+        <p>真菌の染色に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a PAM染色<br>
+          b Grocott染色<br>
+          c SudanⅢ染色<br>
+          d Congo-Red染色<br>
+          e Gomori-Trichrome染色
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">Grocott染色</span>は真菌の染色に用いる銀染色法。PAM染色は腎糸球体基底膜、SudanⅢは脂肪、Congo-Redはアミロイドの染色に用いる。</p>
+      </div>
+
+      <h2>4. 上皮性異形成</h2>
+
+      <p>上皮性異形成は前癌病変として重要。<span class="key">細胞異型</span>と<span class="key">構造異型</span>の2つの観点から評価する。</p>
+
+      <h3>細胞異型と構造異型</h3>
+      <table>
+        <tr><th>分類</th><th>所見</th></tr>
+        <tr><td><span class="key">細胞異型</span></td><td>核の大小不同、濃染性核、異型核分裂、N/C比増大</td></tr>
+        <tr><td><span class="highlight">構造異型</span></td><td><span class="highlight">滴状の上皮釘脚形態</span>、基底細胞の極性消失、角化異常</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113D9</div>
+        <p>口腔粘膜の上皮性異形成の診断基準項目で構造異型はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 濃染性核<br>
+          b 異型核分裂<br>
+          c 核の大小不同<br>
+          d 細胞の形状不整<br>
+          e 滴状の上皮釘脚形態
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">滴状の上皮釘脚形態</span>は構造異型の所見。濃染性核、異型核分裂、核の大小不同、細胞の形状不整は細胞異型の所見。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：病理学検査</div>
+        <ul>
+          <li><span class="key">穿刺吸引細胞診</span>：軟組織腫瘍（腺様嚢胞癌等）に有用</li>
+          <li><span class="key">生検組織固定</span>：ホルムアルデヒド水溶液</li>
+          <li><span class="key">Papanicolaou染色固定</span>：エタノール</li>
+          <li><span class="key">Grocott染色</span>：真菌</li>
+          <li><span class="key">構造異型</span>：滴状の上皮釘脚形態</li>
+          <li><span class="key">細胞異型</span>：核の大小不同、異型核分裂など</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

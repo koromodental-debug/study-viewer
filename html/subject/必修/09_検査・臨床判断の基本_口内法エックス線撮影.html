@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口内法エックス線撮影 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>口内法エックス線撮影</h1>
+    <div class="container">
+
+      <h2>1. 装置の基本</h2>
+
+      <h3>口内法エックス線装置の規格</h3>
+      <table>
+        <tr><th>項目</th><th>数値</th></tr>
+        <tr><td><span class="highlight">管電圧</span></td><td><span class="highlight">60〜70kV</span></td></tr>
+        <tr><td><span class="highlight">管電流</span></td><td><span class="highlight">10mA</span></td></tr>
+        <tr><td>総ろ過</td><td>1.5mmAl当量以上</td></tr>
+        <tr><td>焦点皮膚間距離</td><td>20cm以上</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102A22</div>
+        <p>フイルムを用いた口内法エックス線撮影で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 管電圧を60～70kVにする。<br>
+          b エックス線グリッドを使用する。<br>
+          c 焦点皮膚間距離を15cm以下にする。<br>
+          d スクリーンタイプフイルムを使用する。<br>
+          e 照射筒の先端で照射野を直径6cm以上にする。
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】口内法では管電圧60〜70kVが適切。グリッドは散乱線除去用で口外法に使用。焦点皮膚間距離は20cm以上必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A10</div>
+        <p>口内法エックス線装置の管電流はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 10μA<br>
+          b 100μA<br>
+          c 1mA<br>
+          d 10mA<br>
+          e 100mA
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】口内法エックス線装置の管電流は<span class="key">10mA</span>程度。CT装置などは100mA以上を使用する。</p>
+      </div>
+
+      <h2>2. 撮影法の種類と特徴</h2>
+
+      <h3>各撮影法の比較</h3>
+      <table>
+        <tr><th>撮影法</th><th>特徴</th><th>適応</th></tr>
+        <tr><td><span class="key">二等分法</span></td><td>歯軸とフィルムのなす角を二等分する方向から照射</td><td>歯の実長を得る</td></tr>
+        <tr><td><span class="key">平行法</span></td><td>歯軸とフィルムを平行に配置</td><td>歪みの少ない正確な像</td></tr>
+        <tr><td><span class="highlight">咬翼法</span></td><td>上下歯を同時に撮影</td><td><span class="highlight">隣接面齲蝕</span>、歯槽頂の吸収</td></tr>
+        <tr><td><span class="key">咬合法</span></td><td>フィルムを咬合面で咬む</td><td>顎骨の状態、埋伏歯</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102A21</div>
+        <p>口内法エックス線撮影と得られる情報との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咬翼法 ―――――― 上下顎歯の隣接面齲蝕<br>
+          b 咬合法 ―――――― ひずみのない歯の形態<br>
+          c 平行法 ―――――― 下顎埋伏歯の頬舌的位置<br>
+          d 二等分法 ――――― 歯槽頂の頬舌的な吸収状態<br>
+          e 歯頸部投影法 ――― 根尖病変の状態
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="key">咬翼法</span>は上下顎歯の歯冠部を同時に撮影でき、<span class="highlight">隣接面齲蝕</span>の検出に最適。歯槽頂の吸収状態も評価できる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B35</div>
+        <p>大臼歯隣接面接触点下に発生した齲蝕の検出に有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 温度診<br>
+          b 麻酔診<br>
+          c 歯髄電気診<br>
+          d 咬翼法エックス線検査<br>
+          e レーザー蛍光強度測定
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】隣接面齲蝕には<span class="key">咬翼法</span>と<span class="key">レーザー蛍光強度測定</span>が有効。温度診・歯髄電気診は歯髄の状態を評価する検査。</p>
+      </div>
+
+      <h2>3. 被曝低減</h2>
+
+      <h3>画質を維持しながら被曝を低減する方法</h3>
+
+      <div class="point-box">
+        <div class="point-box-title">被曝低減の方法</div>
+        <ul>
+          <li><span class="highlight">矩形絞り</span>：画質に影響せず被曝低減（照射野の限定）</li>
+          <li><span class="key">ロングコーン</span>：半影を小さくする（画質向上＋被曝低減）</li>
+          <li><span class="key">高感度検出器</span>：照射時間短縮</li>
+          <li><span class="key">デジタル撮影</span>：低線量で撮影可能</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A30</div>
+        <p>口内法エックス線撮影で画質に影響せずに患者被曝を低減できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 管電圧を下げる。<br>
+          b 管電流を下げる。<br>
+          c 照射時間を短縮する。<br>
+          d フイルム撮影にする。<br>
+          e 矩形絞りを使用する。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">矩形絞り</span>は照射野をフィルムサイズに合わせて制限するため、画質に影響せず被曝を低減できる。管電圧・管電流・照射時間の変更は画質に影響する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A24</div>
+        <p>口内法エックス線撮影で使用すると半影が小さくなるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ろ過板<br>
+          b 全波整流回路<br>
+          c ロングコーン<br>
+          d 高感度フィルム<br>
+          e 固体半導体センサー
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">ロングコーン</span>は焦点-被写体間距離を長くすることで、半影（ぼけ）を小さくし鮮鋭度を向上させる。</p>
+      </div>
+
+      <h2>4. 画像の読影</h2>
+
+      <h3>解剖学的構造のX線像</h3>
+      <table>
+        <tr><th>構造</th><th>X線像</th></tr>
+        <tr><td><span class="highlight">歯槽硬線</span></td><td>不透過像（白）＝<span class="highlight">固有歯槽骨</span></td></tr>
+        <tr><td>歯根膜腔</td><td>透過像（黒線）</td></tr>
+        <tr><td><span class="key">前鼻棘</span></td><td>不透過像（白）</td></tr>
+        <tr><td>切歯孔・上顎洞・鼻腔</td><td>透過像（黒）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107C14</div>
+        <p>エックス線写真で歯槽硬線として観察できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯根膜腔<br>
+          b 支持歯槽骨<br>
+          c 固有歯槽骨<br>
+          d トームスの顆粒層<br>
+          e マラッセの上皮遺残
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">歯槽硬線</span>は<span class="highlight">固有歯槽骨</span>（歯槽壁）がX線で白く見えるもの。歯根膜腔は黒い線として見える。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A9</div>
+        <p>口内法エックス線写真で不透過像を示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 鼻　腔<br>
+          b 切歯孔<br>
+          c 上顎洞<br>
+          d 前鼻棘<br>
+          e 正中口蓋縫合
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="key">前鼻棘</span>は骨組織のため不透過像（白）を示す。鼻腔・切歯孔・上顎洞・正中口蓋縫合は空洞や軟組織のため透過像（黒）。</p>
+      </div>
+
+      <h3>画像の歪み・アーチファクト</h3>
+      <table>
+        <tr><th>現象</th><th>原因</th></tr>
+        <tr><td><span class="key">重積</span></td><td>複数の構造が重なって白く強調</td></tr>
+        <tr><td><span class="key">半影</span></td><td>焦点サイズ・距離による像のぼけ</td></tr>
+        <tr><td><span class="key">ひずみ</span></td><td>被写体とフィルムの角度による変形</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113D19</div>
+        <p>口内法エックス線画像（別冊No.2）を別に示す。<br>矢印で示す領域が白く強調される理由はどれか。</p>
+        <div class="choices">
+          a 散　乱<br>
+          b 重　積<br>
+          c 半　影<br>
+          d 反　射<br>
+          e ひずみ
+        </div>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D19_1.png" alt="別冊No.2">
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">重積</span>は複数の構造が重なることで、X線の吸収が増加し白く強調される現象。</p>
+      </div>
+
+      <h2>5. 撮影補助具・角度</h2>
+
+      <div class="question-box">
+        <div class="q-number">117C2</div>
+        <p>口内法エックス線撮影の補助具の写真（別冊No.1）を別に示す。<br>使用目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 線量の調整<br>
+          b 頭部の固定<br>
+          c 検出器の保持<br>
+          d 散乱線の除去<br>
+          e 画像コントラストの向上
+        </div>
+        <div class="question-images">
+          <img src="../../../images/117回_Web画像/117C2_1.png" alt="別冊No.1">
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】インジケーター（フィルムホルダー）は<span class="key">検出器の保持</span>と照射方向の決定に使用する。平行法撮影で多用される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118D8</div>
+        <p>口内法エックス線画像（別冊No.2A、B）を別に示す。<br>AとBで変更したのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 照射時間<br>
+          b 検出器の種類<br>
+          c コーンの垂直的投影角度<br>
+          d コーンの水平的投影角度<br>
+          e 床面に対する患者の咬合平面の角度
+        </div>
+        <div class="question-images">
+          <img src="../../../images/118回_Web画像/118D8_1.png" alt="別冊No.2">
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="key">水平的投影角度</span>の変更により、隣接面の重なり具合が変化する。偏心投影法として隣接面齲蝕の検出に応用される。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：口内法エックス線撮影</div>
+        <ul>
+          <li><span class="key">管電圧</span>：60〜70kV、<span class="key">管電流</span>：10mA</li>
+          <li><span class="key">咬翼法</span>：隣接面齲蝕の検出に最適</li>
+          <li><span class="key">矩形絞り</span>：画質に影響せず被曝低減</li>
+          <li><span class="key">ロングコーン</span>：半影を小さくする</li>
+          <li><span class="key">歯槽硬線</span> = 固有歯槽骨</li>
+          <li><span class="key">前鼻棘</span>：不透過像（白）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

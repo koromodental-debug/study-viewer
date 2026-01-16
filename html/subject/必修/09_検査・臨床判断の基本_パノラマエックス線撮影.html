@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>パノラマエックス線撮影 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>パノラマエックス線撮影</h1>
+    <div class="container">
+
+      <h2>1. 撮影原理と特徴</h2>
+
+      <h3>パノラマエックス線撮影の原理</h3>
+      <ul>
+        <li><span class="key">線束</span>：スリット状（細い帯状）</li>
+        <li><span class="key">撮影方式</span>：断層撮影の原理を応用</li>
+        <li>X線管とフィルムが患者の周囲を回転</li>
+      </ul>
+
+      <h3>特徴</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>断層幅</td><td><span class="highlight">前歯部 ＜ 臼歯部</span></td></tr>
+        <tr><td>長所</td><td>広い領域を総覧的に評価可能</td></tr>
+        <tr><td>短所</td><td>細かい観察は不向き、拡大率が一定でない</td></tr>
+        <tr><td>観察範囲</td><td>上下顎歯列、顎関節、上顎洞など</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112B28</div>
+        <p>撮影時に照射されるエックス線束の模式図（別冊No.3）を別に示す。<br>パノラマエックス線撮影はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B28_1.png" alt="別冊No.3">
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】パノラマはスリット状（細い帯状）のX線束を用いる。扇状に広がるのはCT、円錐状はコーンビームCT。</p>
+      </div>
+
+      <h2>2. パノラマで評価できるもの・できないもの</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">評価できるもの</div>
+        <ul>
+          <li>歯・歯列の全体像</li>
+          <li><span class="highlight">第一大臼歯の異所萌出</span></li>
+          <li>埋伏歯の有無</li>
+          <li>顎骨の病変（嚢胞、腫瘍など）</li>
+          <li>上顎洞の状態</li>
+        </ul>
+      </div>
+
+      <h3>パノラマでは評価できないもの</h3>
+      <table>
+        <tr><th>評価項目</th><th>適切な検査法</th></tr>
+        <tr><td><span class="caution">関節円板</span></td><td><span class="highlight">MRI</span></td></tr>
+        <tr><td><span class="caution">埋伏歯の頬舌的位置</span></td><td>CT、歯科用コーンビームCT</td></tr>
+        <tr><td>デンタルコンペンセーション</td><td>側面頭部エックス線規格写真（セファロ）</td></tr>
+        <tr><td>機能性不正咬合</td><td>下顎運動検査</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111C9</div>
+        <p>5歳の男児においてパノラマエックス線画像で評価できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 骨年齢<br>
+          b 乳犬歯の咬合関係<br>
+          c 関節円板の前方転位<br>
+          d 第一大臼歯の異所萌出<br>
+          e 埋伏過剰歯の唇舌的位置
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】パノラマで<span class="highlight">第一大臼歯の異所萌出</span>は評価可能。骨年齢は手根骨、関節円板はMRI、唇舌的位置はCTで評価する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B14</div>
+        <p>顎関節関節円板の中央狭窄部を評価できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a MRI<br>
+          b PET<br>
+          c 造影CT<br>
+          d 歯科用コーンビームCT<br>
+          e パノラマエックス線撮影
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">関節円板</span>は軟組織のため、<span class="highlight">MRI</span>でのみ評価可能。パノラマやCTでは骨組織しか描出されない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117D12</div>
+        <p>デンタルコンペンセーションを評価するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咬合法エックス線画像<br>
+          b パノラマエックス線画像<br>
+          c 前歯部口内法エックス線画像<br>
+          d 臼歯部口内法エックス線画像<br>
+          e 側面頭部エックス線規格写真
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】デンタルコンペンセーション（歯の代償性傾斜）は<span class="key">側面頭部エックス線規格写真（セファロ）</span>で評価する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D17</div>
+        <p>機能性不正咬合の評価に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口腔模型<br>
+          b 嚥下機能検査<br>
+          c 下顎運動検査<br>
+          d セットアップモデル<br>
+          e パノラマエックス線撮影
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】機能性不正咬合は下顎位の偏位による見かけ上の不正咬合。<span class="key">下顎運動検査</span>で機能時の下顎位を評価する。</p>
+      </div>
+
+      <h2>3. 被曝と放射線の影響</h2>
+
+      <h3>蛍光増感紙の使用目的</h3>
+      <p>蛍光増感紙はX線を可視光に変換し、フィルムの感度を高める。これにより<span class="highlight">被曝線量を低減</span>できる。</p>
+
+      <div class="question-box">
+        <div class="q-number">103A7</div>
+        <p>パノラマエックス線検査で蛍光増感紙を用いる理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 解像力の向上<br>
+          b 散乱線の減少<br>
+          c 障害陰影の防止<br>
+          d 被曝線量の低減<br>
+          e 被写体コントラストの上昇
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】蛍光増感紙はX線を可視光に変換してフィルムを感光させる。少ないX線量で撮影でき、<span class="highlight">被曝線量を低減</span>できる。<span class="caution">解像力は低下する</span>。</p>
+      </div>
+
+      <h3>放射線の影響</h3>
+      <table>
+        <tr><th>分類</th><th>特徴</th><th>例</th></tr>
+        <tr><td><span class="key">確定的影響</span></td><td>しきい値あり</td><td>白内障、皮膚紅斑、不妊、胎児奇形</td></tr>
+        <tr><td><span class="highlight">確率的影響</span></td><td><span class="highlight">しきい値なし</span></td><td><span class="highlight">悪性腫瘍</span>、遺伝的影響</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102A23</div>
+        <p>パノラマエックス線撮影で生じる可能性がある放射線の影響はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 不　妊<br>
+          b 白内障<br>
+          c 悪性腫瘍<br>
+          d 胎児の奇形<br>
+          e 皮膚の紅斑
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】パノラマの被曝線量は低いため、確定的影響（不妊、白内障、胎児奇形、皮膚紅斑）は生じない。<span class="highlight">確率的影響</span>である<span class="highlight">悪性腫瘍</span>はしきい値がなく、低線量でも発生の可能性がある。</p>
+      </div>
+
+      <h2>4. 感染対策</h2>
+
+      <div class="question-box">
+        <div class="q-number">113B33</div>
+        <p>画像検査を実施する際に医療従事者の感染リスクが最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 造影CT<br>
+          b 単純MRI<br>
+          c 超音波検査<br>
+          d 嚥下造影検査<br>
+          e パノラマエックス線撮影
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="key">造影CT</span>は造影剤の静脈注射を行うため、針刺し事故による感染リスクが最も高い。パノラマは非侵襲的で感染リスクは低い。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：パノラマエックス線撮影</div>
+        <ul>
+          <li><span class="key">線束</span>：スリット状</li>
+          <li><span class="key">断層幅</span>：前歯部 ＜ 臼歯部</li>
+          <li><span class="key">評価可能</span>：歯列全体、異所萌出、埋伏歯の有無</li>
+          <li><span class="key">評価不可</span>：関節円板（→MRI）、頬舌的位置（→CT）</li>
+          <li><span class="key">蛍光増感紙</span>：被曝線量の低減</li>
+          <li><span class="key">確率的影響</span>：悪性腫瘍（しきい値なし）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

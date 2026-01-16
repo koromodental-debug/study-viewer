@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>生化学検査 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>生化学検査</h1>
+    <div class="container">
+
+      <h2>1. 肝機能検査（3件出題）</h2>
+      <p><span class="key">肝機能検査</span>は肝細胞障害・胆汁うっ滞・肝合成能を評価する。</p>
+
+      <h3>肝機能検査項目と意義</h3>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>意義</th></tr>
+        <tr><td class="key">AST（GOT）</td><td>8〜40 U/L</td><td>肝細胞障害（心筋・骨格筋にも存在）</td></tr>
+        <tr><td class="key">ALT（GPT）</td><td>8〜40 U/L</td><td>肝細胞障害（<span class="highlight">肝特異性が高い</span>）</td></tr>
+        <tr><td class="key">γ-GTP</td><td>男：80以下、女：30以下</td><td>胆道系酵素、アルコール性肝障害</td></tr>
+        <tr><td class="key">ALP</td><td>100〜350 U/L</td><td>胆汁うっ滞、骨疾患</td></tr>
+        <tr><td class="key">アルブミン</td><td>3.8〜5.3 g/dL</td><td>肝合成能（<span class="highlight">低下で肝硬変</span>）</td></tr>
+        <tr><td class="key">ビリルビン</td><td>0.2〜1.2 mg/dL</td><td><span class="highlight">肝障害で上昇</span>（黄疸の原因）</td></tr>
+        <tr><td class="key">コリンエステラーゼ</td><td>200〜500 U/L</td><td>肝合成能（低下で肝硬変）</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">肝障害時の変化</div>
+        <ul>
+          <li><span class="highlight">上昇</span>：AST、ALT、ビリルビン、γ-GTP</li>
+          <li><span class="highlight">低下</span>：アルブミン、コリンエステラーゼ、フィブリノゲン</li>
+          <li>肝硬変では<span class="caution">PT延長</span>（凝固因子合成低下）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A13</div>
+        <p>肝実質障害時に血液中で増加するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アルブミン<br>
+          b ビリルビン<br>
+          c フィブリノゲン<br>
+          d アンチトロンビン<br>
+          e コリンエステラーゼ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】肝障害ではビリルビンの代謝・排泄が障害され血中濃度が上昇する。アルブミン・フィブリノゲン・アンチトロンビン・コリンエステラーゼは肝臓で合成されるため、肝障害では低下する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C14</div>
+        <p>肝硬変症で低下する検査項目はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ALT<br>
+          b 白血球数<br>
+          c アルブミン<br>
+          d クレアチニン<br>
+          e プロトロンビン時間
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】肝硬変ではアルブミン合成低下により血清アルブミンが低下。また脾腫による脾機能亢進で白血球・血小板が低下する。ALTは肝硬変では必ずしも高値とは限らない（慢性化で低下）。PT時間は延長（凝固因子低下）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A18</div>
+        <p>病態とそれを評価する血液検査項目の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肝障害 ーーーー 尿酸<br>
+          b 膵疾患 ーーーー アミラーゼ<br>
+          c 腎障害 ーーーー AST<br>
+          d 低栄養 ーーーー CRP<br>
+          e 炎症反応 ーーーー クレアチニン
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】アミラーゼは膵臓・唾液腺から分泌される酵素で、膵炎で著明に上昇。肝障害=AST/ALT、腎障害=クレアチニン/BUN、低栄養=アルブミン、炎症反応=CRPが正しい組合せ。</p>
+      </div>
+
+      <h2>2. 腎機能検査・電解質（2件出題）</h2>
+      <p><span class="key">腎機能検査</span>は糸球体濾過機能を評価する。</p>
+
+      <h3>腎機能検査項目</h3>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>意義</th></tr>
+        <tr><td class="key">BUN（尿素窒素）</td><td>8〜20 mg/dL</td><td>腎機能低下で上昇（脱水でも上昇）</td></tr>
+        <tr><td class="key">クレアチニン</td><td>男：0.6〜1.1、女：0.4〜0.8 mg/dL</td><td><span class="highlight">腎特異性が高い</span></td></tr>
+        <tr><td class="key">eGFR</td><td>90以上 mL/min/1.73m²</td><td>推算糸球体濾過量</td></tr>
+      </table>
+
+      <h3>電解質の基準値</h3>
+      <table>
+        <tr><th>電解質</th><th>基準値</th><th>腎不全での変化</th></tr>
+        <tr><td class="key">Na（ナトリウム）</td><td>135〜145 mEq/L</td><td>様々</td></tr>
+        <tr><td class="key">K（カリウム）</td><td><span class="highlight">3.5〜5.0 mEq/L</span></td><td><span class="highlight">上昇</span>（排泄低下）</td></tr>
+        <tr><td class="key">Cl（クロール）</td><td>98〜108 mEq/L</td><td>様々</td></tr>
+        <tr><td class="key">Ca（カルシウム）</td><td>8.5〜10.5 mg/dL</td><td>低下</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">腎機能低下時の変化</div>
+        <ul>
+          <li><span class="highlight">高カリウム血症</span>：腎からのK排泄低下</li>
+          <li>代謝性アシドーシス：酸の排泄低下</li>
+          <li>貧血：エリスロポエチン産生低下</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C17</div>
+        <p>血漿中のカリウム濃度（mEq/L）はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1<br>
+          b 4<br>
+          c 10<br>
+          d 100<br>
+          e 140
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】血漿K濃度は3.5〜5.0 mEq/Lで、約4 mEq/Lが正常。Naは約140 mEq/Lなので、eは誤り。Kの基準値は覚えておく必要がある。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A12</div>
+        <p>腎機能低下に伴う変化はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血小板数の減少<br>
+          b Dダイマー値の上昇<br>
+          c 血清カリウム値の上昇<br>
+          d ヘモグロビン量の増加<br>
+          e プロトロンビン時間の延長
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】腎機能低下では腎からのK排泄が低下し高カリウム血症となる。Hbは腎性貧血で低下（増加ではない）。PT延長は肝障害。Dダイマーは血栓症。</p>
+      </div>
+
+      <h2>3. 糖代謝検査（1件出題）</h2>
+      <p><span class="key">糖代謝検査</span>は糖尿病の診断・管理に用いる。</p>
+
+      <h3>糖代謝検査項目</h3>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>反映期間</th></tr>
+        <tr><td class="key">空腹時血糖（FBS）</td><td>80〜110 mg/dL</td><td>検査時点</td></tr>
+        <tr><td class="key">HbA1c</td><td><span class="highlight">4.6〜6.5%</span>（NGSP値）</td><td><span class="highlight">過去1〜2か月</span></td></tr>
+        <tr><td class="key">グリコアルブミン</td><td>11〜16%</td><td><span class="highlight">過去2週間</span></td></tr>
+        <tr><td class="key">75g OGTT</td><td>2時間値 140未満</td><td>耐糖能評価</td></tr>
+      </table>
+      <p class="note">※糖尿病診断基準：空腹時血糖126以上、HbA1c 6.5%以上など</p>
+
+      <div class="question-box">
+        <div class="q-number">113A18</div>
+        <p>1回の検査で過去1か月間の血糖値を推定するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 尿糖<br>
+          b HbA1c<br>
+          c 空腹時血糖<br>
+          d 尿ケトン体<br>
+          e ブドウ糖負荷試験
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】HbA1cは赤血球中のヘモグロビンに糖が結合したもので、赤血球寿命（約120日）の半分にあたる過去1〜2か月の平均血糖を反映。空腹時血糖は検査時点の値のみ。</p>
+      </div>
+
+      <h2>4. 脂質検査（1件出題）</h2>
+      <p><span class="key">脂質検査</span>は動脈硬化のリスク評価に用いる。</p>
+
+      <h3>脂質検査項目と動脈硬化リスク</h3>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>動脈硬化との関係</th></tr>
+        <tr><td class="key">総コレステロール</td><td>130〜220 mg/dL</td><td>高値でリスク上昇</td></tr>
+        <tr><td class="key">LDLコレステロール</td><td>70〜139 mg/dL</td><td><span class="caution">高値でリスク上昇</span>（悪玉）</td></tr>
+        <tr><td class="key">HDLコレステロール</td><td>40〜90 mg/dL</td><td><span class="highlight">低値でリスク上昇</span>（善玉）</td></tr>
+        <tr><td class="key">中性脂肪（TG）</td><td>50〜150 mg/dL</td><td>高値でリスク上昇</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">LDLとHDLの覚え方</div>
+        <ul>
+          <li>LDL = <span class="caution">Low（良くない）</span>：血管壁にコレステロール沈着</li>
+          <li>HDL = <span class="highlight">High（良い）</span>：コレステロールを肝臓に戻す</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D8</div>
+        <p>低値になると粥状動脈硬化のリスクが高くなるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ALT<br>
+          b BUN<br>
+          c 総コレステロール<br>
+          d LDLコレステロール<br>
+          e HDLコレステロール
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】HDL（善玉）コレステロールは低値で動脈硬化リスク上昇。LDL（悪玉）は高値でリスク上昇。ALT、BUNは動脈硬化の直接的指標ではない。</p>
+      </div>
+
+      <h2>5. 心筋マーカー（1件出題）</h2>
+      <p><span class="key">心筋マーカー</span>は心筋梗塞の診断に用いる。</p>
+
+      <h3>心筋梗塞のマーカー</h3>
+      <table>
+        <tr><th>マーカー</th><th>上昇開始</th><th>特徴</th></tr>
+        <tr><td class="key">CK（クレアチンキナーゼ）</td><td>4〜8時間</td><td><span class="highlight">心筋・骨格筋に存在</span></td></tr>
+        <tr><td class="key">CK-MB</td><td>4〜8時間</td><td>心筋特異性が高い</td></tr>
+        <tr><td class="key">トロポニンT/I</td><td>4〜8時間</td><td>心筋特異性が最も高い</td></tr>
+        <tr><td class="key">ミオグロビン</td><td>2〜4時間</td><td>最も早期に上昇</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116A1</div>
+        <p>心筋梗塞のマーカーはどれか。1つ選べ。</p>
+        <div class="choices">
+          a CK<br>
+          b PT<br>
+          c ALP<br>
+          d ALT<br>
+          e HbA1c
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】CK（クレアチンキナーゼ）は心筋・骨格筋に含まれ、心筋梗塞で上昇する。PT=凝固検査、ALP=肝胆道系・骨、ALT=肝臓、HbA1c=糖代謝の指標。</p>
+      </div>
+
+      <h2>6. 尿酸（1件出題）</h2>
+      <p><span class="key">尿酸</span>はプリン体の最終代謝産物である。</p>
+
+      <h3>尿酸と関連疾患</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td class="key">基準値</td><td>男：3.0〜7.0、女：2.5〜6.0 mg/dL</td></tr>
+        <tr><td class="key">高尿酸血症</td><td>7.0 mg/dL以上</td></tr>
+        <tr><td class="key">関連疾患</td><td><span class="highlight">痛風</span>、尿路結石</td></tr>
+        <tr><td class="key">原因</td><td>プリン体過剰摂取、腎排泄低下</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113D8</div>
+        <p>プリン体の代謝産物はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 乳酸<br>
+          b 尿酸<br>
+          c リン酸<br>
+          d ビリルビン<br>
+          e サイログロブリン
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】プリン体（核酸の構成成分）は代謝されて尿酸となる。乳酸=嫌気性解糖の産物、ビリルビン=ヘモグロビンの代謝産物、サイログロブリン=甲状腺ホルモンの前駆体。</p>
+      </div>
+
+      <h2>7. 血液ガス分析（1件出題）</h2>
+      <p><span class="key">血液ガス分析</span>は酸塩基平衡と呼吸機能を評価する。</p>
+
+      <h3>血液ガス分析の基準値</h3>
+      <table>
+        <tr><th>項目</th><th>基準値</th><th>意義</th></tr>
+        <tr><td class="key">pH</td><td><span class="highlight">7.35〜7.45</span></td><td>酸塩基平衡</td></tr>
+        <tr><td class="key">PaCO₂</td><td>35〜45 mmHg</td><td>呼吸性因子</td></tr>
+        <tr><td class="key">HCO₃⁻</td><td>22〜26 mEq/L</td><td>代謝性因子</td></tr>
+        <tr><td class="key">PaO₂</td><td>80〜100 mmHg</td><td>酸素化能</td></tr>
+      </table>
+
+      <h3>酸塩基平衡異常の分類</h3>
+      <table>
+        <tr><th>病態</th><th>pH</th><th>原因</th><th>例</th></tr>
+        <tr><td class="key">呼吸性アシドーシス</td><td>低下</td><td>PaCO₂上昇</td><td>呼吸不全、COPD</td></tr>
+        <tr><td class="key">呼吸性アルカローシス</td><td>上昇</td><td>PaCO₂低下</td><td>過換気症候群</td></tr>
+        <tr><td class="key">代謝性アシドーシス</td><td>低下</td><td>HCO₃⁻低下</td><td>腎不全、糖尿病性ケトアシドーシス</td></tr>
+        <tr><td class="key">代謝性アルカローシス</td><td>上昇</td><td>HCO₃⁻上昇</td><td>嘔吐、利尿薬</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">110C29</div>
+        <p>アシドーシスの判定に有効なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 赤沈<br>
+          b 血球検査<br>
+          c 血小板機能検査<br>
+          d 免疫血清学検査<br>
+          e 血液ガス分析検査
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】アシドーシス（酸血症）はpH低下であり、血液ガス分析でpH、PaCO₂、HCO₃⁻を測定して判定する。赤沈は炎症、血球検査は貧血・感染、血小板機能検査は止血、免疫血清学検査は自己免疫疾患の検査。</p>
+      </div>
+
+      <h2>8. その他の生化学検査</h2>
+
+      <h3>炎症マーカー</h3>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>特徴</th></tr>
+        <tr><td class="key">CRP</td><td>0.3 mg/dL以下</td><td>急性炎症で上昇（最も鋭敏）</td></tr>
+        <tr><td class="key">赤沈（ESR）</td><td>男：10以下、女：15以下 mm/h</td><td>慢性炎症でも上昇</td></tr>
+      </table>
+
+      <h3>膵酵素</h3>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>上昇する疾患</th></tr>
+        <tr><td class="key">アミラーゼ</td><td>40〜130 U/L</td><td><span class="highlight">急性膵炎</span>、耳下腺炎</td></tr>
+        <tr><td class="key">リパーゼ</td><td>7〜60 U/L</td><td>急性膵炎（膵特異性が高い）</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

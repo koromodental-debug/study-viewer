@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>検査の意義と目標 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>検査の意義と目標</h1>
+    <div class="container">
+
+      <h2>1. 臨床検査に求められる性質</h2>
+      <p>臨床検査は診断・治療方針決定のために行われ、以下の性質が求められる。</p>
+
+      <h3>検査に求められる4つの性質</h3>
+      <table>
+        <tr><th>性質</th><th>内容</th></tr>
+        <tr><td class="key">妥当性</td><td>病者や患者の主観によらず、<span class="highlight">客観的に評価</span>できること</td></tr>
+        <tr><td class="key">信頼性</td><td>試薬や方法を同一にして<span class="highlight">再現性</span>を確保すること</td></tr>
+        <tr><td class="key">安全性</td><td>検査により新たな病変が発生しないこと</td></tr>
+        <tr><td class="key">収益性</td><td>医療経営を圧迫しない適切なコスト（<span class="caution">営利目的ではない</span>）</td></tr>
+      </table>
+
+      <h2>2. スクリーニング検査の指標</h2>
+      <p><span class="key">スクリーニング検査</span>は、疾患の可能性がある人を集団から見つけ出すための検査である。確定診断ではなく、精密検査が必要な人を選別する目的で行う。</p>
+
+      <h3>スクリーニング検査の評価指標</h3>
+      <table>
+        <tr><th>指標</th><th>定義</th><th>意味</th></tr>
+        <tr><td class="key">敏感度（感度）</td><td>疾患ありの人を陽性と判定する割合</td><td>高いほど見落としが少ない</td></tr>
+        <tr><td class="key">特異度</td><td>疾患なしの人を陰性と判定する割合</td><td>高いほど誤診が少ない</td></tr>
+        <tr><td class="key">偽陰性率</td><td>疾患ありを陰性と誤判定する割合</td><td><span class="highlight">低いほど望ましい</span></td></tr>
+        <tr><td class="key">偽陽性率</td><td>疾患なしを陽性と誤判定する割合</td><td>低いほど望ましい</td></tr>
+        <tr><td class="key">陽性反応適中度</td><td>陽性者のうち本当に疾患ありの割合</td><td>有病率に影響される</td></tr>
+        <tr><td class="key">陰性反応適中度</td><td>陰性者のうち本当に疾患なしの割合</td><td>有病率に影響される</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">スクリーニング検査で重要なこと</div>
+        <ul>
+          <li>スクリーニングの目的 = 疾患を見落とさないこと</li>
+          <li><span class="highlight">偽陰性率は低いほど望ましい</span>（見落とし防止）</li>
+          <li>偽陰性率 = 1 − 敏感度</li>
+          <li>敏感度が高い = 偽陰性率が低い</li>
+        </ul>
+      </div>
+
+      <h3>2×2分割表での理解</h3>
+      <table>
+        <tr><th></th><th>疾患あり</th><th>疾患なし</th></tr>
+        <tr><td class="key">検査陽性</td><td>真陽性（TP）</td><td>偽陽性（FP）</td></tr>
+        <tr><td class="key">検査陰性</td><td><span class="caution">偽陰性（FN）</span></td><td>真陰性（TN）</td></tr>
+      </table>
+      <p class="note">敏感度 = TP/(TP+FN)、特異度 = TN/(TN+FP)、偽陰性率 = FN/(TP+FN)</p>
+
+      <div class="question-box">
+        <div class="q-number">111A20</div>
+        <p>スクリーニング検査で低率が望ましいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 特異度<br>
+          b 敏感度<br>
+          c 偽陰性率<br>
+          d 陰性反応適中度<br>
+          e 陽性反応適中度
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】スクリーニング検査は疾患を見落とさないことが重要。偽陰性は「疾患があるのに陰性（見落とし）」なので、偽陰性率は低いほど望ましい。敏感度・特異度・適中度は高いほど良い。</p>
+      </div>
+
+      <h2>3. 検査値の変動要因</h2>
+      <p>検査結果を解釈する際は、様々な変動要因を考慮する必要がある。</p>
+
+      <h3>主な変動要因</h3>
+      <table>
+        <tr><th>要因</th><th>例</th></tr>
+        <tr><td class="key">生理的要因</td><td>男女差、年齢（小児・高齢者）</td></tr>
+        <tr><td class="key">生活習慣</td><td>食事、運動、飲酒、喫煙</td></tr>
+        <tr><td class="key">測定環境</td><td>採血時の体位、駆血時間</td></tr>
+        <tr><td class="key">生理的変動</td><td>日内変動、季節変動、性周期</td></tr>
+      </table>
+
+      <h2>4. 基準値の考え方</h2>
+      <p><span class="key">基準値</span>は健常者の検査値から設定され、一般的に<span class="highlight">平均値 ± 2S.D.（2標準偏差）</span>の範囲で定められる。</p>
+      <p class="note">※基準値を外れても必ずしも異常とは限らず、基準値内でも異常のこともある。臨床症状と合わせて判断する。</p>
+
+    </div>
+  </div>
+</body>
+</html>

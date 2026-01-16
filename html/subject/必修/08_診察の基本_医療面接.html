@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医療面接 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 08_診察の基本</span>
+    <h1>医療面接</h1>
+    <div class="container">
+
+      <h2>医療面接の基本</h2>
+
+      <h3>医療面接の3大目的</h3>
+      <ul>
+        <li><span class="key">医療情報の収集・共有</span></li>
+        <li><span class="key">信頼関係の構築</span>（ラポール形成）</li>
+        <li><span class="key">患者への指導・動機付け・治療への参加</span></li>
+      </ul>
+
+      <h3>質問法</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">開かれた質問</span></td>
+          <td>患者が自由に答えられる質問</td>
+          <td>「どのような痛みでしたか」</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">閉じられた質問</span></td>
+          <td>「はい」「いいえ」で答える質問</td>
+          <td>「噛んだ時に痛みを感じましたか」</td>
+        </tr>
+        <tr>
+          <td>繰り返しの質問</td>
+          <td>確認や発した意味をもう一度問う</td>
+          <td>「〜ということですね？」</td>
+        </tr>
+        <tr>
+          <td class="caution">誘導型の質問</td>
+          <td>患者を誘導する質問（避けるべき）</td>
+          <td>「痛いですよね？」</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">開かれた質問 vs 閉じられた質問の見分け方</div>
+        <ul>
+          <li>「〜ですか？」で<span class="highlight">Yes/Noで答えられる</span>→ 閉じられた質問</li>
+          <li>「どのように」「いつ」「なぜ」→ 開かれた質問</li>
+          <li><span class="caution">注意</span>：「いつ頃ですか」は<span class="key">開かれた質問</span>（時期を自由に答える）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A18</div>
+        <p>現病歴の聴取において閉ざされた質問はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 「どのような痛みでしたか」<br>
+          b 「痛みに気付いたのはいつ頃ですか」<br>
+          c 「ものを噛んだ時に痛みを感じましたか」<br>
+          d 「痛みには喫煙が関係していると思いますか」<br>
+          e 「痛み止めでアレルギーが出たことはありますか」
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】cは「感じましたか」→Yes/Noで答えられる閉じられた質問。a「どのような」、b「いつ頃」は自由に答える開かれた質問。d, eも「思いますか」「ありますか」だが、dは意見を求め、eは既往歴の確認で開かれた要素がある。</p>
+      </div>
+
+      <h3>面接者の態度</h3>
+      <table>
+        <tr>
+          <th>態度</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">支持的態度</span></td>
+          <td>「そうですね」と相手の意見を支持する</td>
+        </tr>
+        <tr>
+          <td><span class="key">非批判的態度</span></td>
+          <td>患者を批判しない</td>
+        </tr>
+        <tr>
+          <td><span class="key">共感的態度</span></td>
+          <td>患者の気持ちに寄り添う</td>
+        </tr>
+        <tr>
+          <td>解釈的態度</td>
+          <td>患者の発言を解釈して返す</td>
+        </tr>
+      </table>
+
+      <h3>傾聴・共感・受容</h3>
+      <div class="point-box">
+        <div class="point-box-title">傾聴に必要な要素</div>
+        <ul>
+          <li><span class="highlight">相づち</span>：「うんうん」「なるほど」</li>
+          <li><span class="key">うなずき</span>：非言語的な肯定</li>
+          <li><span class="key">アイコンタクト</span>：適度に目を合わせる</li>
+          <li><span class="caution">避けるべき</span>：誘導、多弁、簡略化</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A20</div>
+        <p>医療面接で傾聴に必要なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 多　弁<br>
+          b 誘　導<br>
+          c 相づち<br>
+          d 簡略化<br>
+          e オウム返し
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】傾聴とは患者の話をしっかり聴くこと。<span class="highlight">相づち</span>は「聴いていますよ」という意思表示。多弁・誘導は傾聴の妨げ。オウム返しは技法の一つだが「必要」とまでは言えない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A6</div>
+        <p>医療面接で共感的態度を示す発言はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 「それは大変でしたね」<br>
+          b 「それぐらいの痛みは普通です」<br>
+          c 「痛いから口が開かないんですね」<br>
+          d 「痛みを受け入れることが重要です」<br>
+          e 「もっとひどい症状の方もおられます」
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">「それは大変でしたね」</span>は患者の苦しみに寄り添う共感的態度。b, eは患者の訴えを軽視、cは解釈、dは指導であり共感ではない。</p>
+      </div>
+
+      <h3>非言語的コミュニケーション</h3>
+      <table>
+        <tr>
+          <th>好ましい</th>
+          <th>好ましくない</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>うなずき</li>
+              <li>適度なアイコンタクト</li>
+              <li>患者の方を向く</li>
+              <li>前傾姿勢</li>
+              <li>肯定的な表情・適度な笑顔</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li class="caution">腕組み</li>
+              <li class="caution">時計を見る</li>
+              <li class="caution">視線をそらす</li>
+              <li>無表情・否定的な表情</li>
+              <li>過度なボディタッチ</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <h3>小児の医療面接</h3>
+      <div class="point-box">
+        <div class="point-box-title">小児の医療面接のポイント</div>
+        <ul>
+          <li><span class="highlight">保護者の協力を得る</span>（最重要）</li>
+          <li>来院動機は<span class="key">保護者</span>に尋ねる（小児には尋ねない）</li>
+          <li>専門用語を避ける</li>
+          <li>マスクを外して表情を見せる</li>
+          <li>開放的すぎない落ち着いた場所で行う</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A10</div>
+        <p>小児の医療面接で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a マスクを着用する。<br>
+          b 開放的な場所で行う。<br>
+          c 保護者の協力を得る。<br>
+          d 来院動機は小児に尋ねる。<br>
+          e 保護者には専門用語を用いる。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】小児の医療面接では<span class="highlight">保護者の協力</span>が不可欠。aマスクは表情が見えず不安を与える、b開放的すぎると落ち着かない、d来院動機は保護者に聞く、e専門用語は避ける。</p>
+      </div>
+
+      <h2>聴取事項</h2>
+
+      <h3>医療面接で聴取する項目</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">主訴</span></td>
+          <td>患者が来院した最も重要と感じる訴え</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">現病歴</span></td>
+          <td>主訴についての<span class="key">経過</span>を経時的に記載</td>
+        </tr>
+        <tr>
+          <td><span class="key">既往歴</span></td>
+          <td>出生から来院までの健康状態・過去の病気</td>
+        </tr>
+        <tr>
+          <td><span class="key">家族歴</span></td>
+          <td>血縁者の罹患した疾患や死因（遺伝性疾患の予測に重要）</td>
+        </tr>
+        <tr>
+          <td>生活歴・社会歴</td>
+          <td>生活習慣、職業、経済状況など</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">現病歴と既往歴の違い</div>
+        <ul>
+          <li><span class="highlight">現病歴</span>：主訴についての<span class="key">経過</span>（いつから、どのように変化したか）</li>
+          <li><span class="key">既往歴</span>：出生から来院までの<span class="key">健康状態</span>全般</li>
+          <li><span class="caution">注意</span>：「受診動機」は主訴、「経過」は現病歴</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A34</div>
+        <p>現病歴で記載するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 主訴についての経過<br>
+          b これから受ける治療内容<br>
+          c 受診する動機となった症状<br>
+          d 出生から来院までの健康状態<br>
+          e 血縁関係のある者の罹患した疾患や死因
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】現病歴は<span class="highlight">主訴についての経過</span>。cは主訴、dは既往歴、eは家族歴の説明。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A2</div>
+        <p>混合歯列期の反対咬合を主訴とする患児の医療面接を行っている。
+保護者の発言で現病歴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 「祖母も似た歯並びです」<br>
+          b 「仕上げ磨きをしています」<br>
+          c 「前歯のでこぼこが気になります」<br>
+          d 「アトピー性皮膚炎で通院しています」<br>
+          e 「前歯が生え代わったころから気になっています」
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】現病歴は主訴（反対咬合）についての<span class="highlight">経過</span>。eは「いつから気になったか」という経過。aは家族歴、bは生活習慣、cは主訴、dは既往歴。</p>
+      </div>
+
+      <h3>家族歴が重要な場合</h3>
+      <p><span class="key">遺伝性疾患</span>が原因の場合、家族歴の聴取が特に重要となる。</p>
+      <ul>
+        <li>骨格性下顎前突症 → 成長パターンの予測</li>
+        <li>骨形成不全症、象牙質形成不全症</li>
+        <li>血友病</li>
+        <li>エナメル質形成不全症</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">104A6</div>
+        <p>混合歯列期の骨格性下顎前突症患者の保護者に医療面接を行った。
+思春期後期の下顎の成長パターンを予測するのに最も参考となるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 主　訴<br>
+          b 社会歴<br>
+          c 既往歴<br>
+          d 家族歴<br>
+          e 生活歴
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】骨格性下顎前突症は<span class="key">遺伝的要因</span>が大きい。<span class="highlight">家族歴</span>を聴取することで、両親・祖父母の顎の成長パターンから予測できる。</p>
+      </div>
+
+      <h3>解釈モデル</h3>
+      <p><span class="key">解釈モデル</span>とは、患者自身が症状の原因をどう解釈しているかを把握すること。</p>
+
+      <div class="question-box">
+        <div class="q-number">118C5</div>
+        <p>医療面接における患者の回答で、解釈モデルの理解に役立つのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 「痛い歯を避けて歯みがきをしています」<br>
+          b 「熱い食べ物を口にすると痛みが強くなります」<br>
+          c 「1週前から徐々に痛みが強くなってきました」<br>
+          d 「多忙で治療を中断したため痛くなったと思います」<br>
+          e 「これまでに歯の治療で気分が悪くなったことはありません」
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】解釈モデルは<span class="highlight">患者自身の原因解釈</span>。dは「治療中断が原因だと思う」という患者の解釈。aは対処行動、bは誘発因子、cは経過、eは既往歴。</p>
+      </div>
+
+      <h2>SOAP形式</h2>
+
+      <h3>問題解決指向型診療録（POMR）</h3>
+      <p><span class="key">SOAP形式</span>は問題解決指向型診療録の記載方法。</p>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">S（Subjective）</span></td>
+          <td>主観的情報（患者の訴え）</td>
+          <td>主訴、現病歴、<span class="key">脱離時期</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">O（Objective）</span></td>
+          <td>客観的情報（検査所見）</td>
+          <td>X線所見、<span class="key">生体監視モニタ情報</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">A（Assessment）</span></td>
+          <td>評価・判断</td>
+          <td><span class="key">鑑別診断</span>、診断名</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">P（Plan）</span></td>
+          <td>計画</td>
+          <td>治療方針、指導計画</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">SとOの見分け方</div>
+        <ul>
+          <li><span class="highlight">S（主観）</span>：患者が言ったこと、感じたこと</li>
+          <li><span class="highlight">O（客観）</span>：検査・測定で得られたデータ</li>
+          <li><span class="caution">注意</span>：「いつ脱離したか」は患者の訴え → <span class="key">S</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A31</div>
+        <p>修復物の脱離を主訴とする患者に対し、診察と検査後に再装着処置を行った。
+この診療記録をSOAPに準拠して作成する場合、「S」に該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 窩洞形態<br>
+          b 治療方針<br>
+          c 脱離時期<br>
+          d 再装着処置<br>
+          e エックス線所見
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】S（主観的情報）は<span class="highlight">患者の訴え</span>。<span class="key">脱離時期</span>は患者から聴取する情報。aは検査所見（O）、bは計画（P）、dは処置内容（P）、eは客観的情報（O）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117D13</div>
+        <p>問題解決指向型診療録作成に用いられるSOAPの「O」に該当するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 主　訴<br>
+          b 感染源の推定<br>
+          c 処方する薬剤<br>
+          d 予定手術術式<br>
+          e 生体監視モニタ情報
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】O（客観的情報）は<span class="highlight">検査・測定データ</span>。<span class="key">生体監視モニタ情報</span>（血圧、脈拍、SpO2など）は客観的データ。aは主観（S）、b推定はA、c, dは計画（P）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B11</div>
+        <p>問題解決指向型診療録におけるSOAPの「A」にあたる事項はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 鑑別診断<br>
+          b 検査所見<br>
+          c 指導計画<br>
+          d 治療結果<br>
+          e 治療方針
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】A（Assessment）は<span class="highlight">評価・判断</span>。<span class="key">鑑別診断</span>は医師の判断・評価。bは客観（O）、c, eは計画（P）、dは経過記録。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

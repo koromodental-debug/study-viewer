@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>前癌病変・腫瘍類似疾患</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --red: #D70015;
+      --orange: #FF9500;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 0; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); break-after: avoid; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); break-after: avoid; }
+    h4 { font-size: 9pt; font-weight: 600; margin: 10px 0 6px 0; color: var(--text-primary); break-after: avoid; }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; }
+    .highlight { font-weight: 600; }
+    .red { color: var(--red); font-weight: 600; }
+    .orange { color: var(--orange); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      break-inside: avoid;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+      break-inside: avoid;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .comparison-table th { text-align: center; }
+    .comparison-table td:first-child { font-weight: 600; background: var(--bg-secondary); }
+    .warning-box {
+      background: #FFF3E0;
+      border-left: 4px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 12px 16px;
+      margin: 14px 0;
+      break-inside: avoid;
+    }
+    .warning-box-title { font-weight: 600; color: var(--orange); margin-bottom: 6px; font-size: 9pt; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">各論III / 腫瘍および腫瘍類似疾患</span>
+    <h1>前癌病変・腫瘍類似疾患</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">国試の出題ポイント</div>
+        <ul>
+          <li><span class="red">線維性異形成症が最頻出</span>（16問/102回以降）：若年女性、すりガラス状X線像</li>
+          <li><span class="highlight">骨性異形成症</span>：中年女性、下顎前歯部、<span class="red">生活歯</span>の根尖部</li>
+          <li><span class="highlight">前癌病変の癌化率</span>：紅板症50% ＞ 白板症4-18%</li>
+          <li><span class="highlight">妊娠性エプーリス</span>：分娩後まで<span class="red">経過観察</span></li>
+        </ul>
+      </div>
+
+      <h2>1. 前癌病変</h2>
+
+      <p><span class="highlight">前癌病変（precancerous lesion）</span>とは、癌の発生リスクが正常組織より高い形態学的に変化した組織をいう。組織学的特徴は<span class="highlight">扁平上皮性異形成</span>（squamous epithelial dysplasia）である。</p>
+
+      <h3>A. 白板症 leukoplakia</h3>
+      <ul>
+        <li>癌化率：<span class="red">4〜18%</span></li>
+        <li>男性に多い（女性の約2倍）</li>
+        <li><span class="highlight">癌化リスクが高い</span>：舌、紅斑混在型、多中心性、上皮性異形成が高度</li>
+        <li><span class="highlight">癌化リスクが低い</span>：歯肉、白斑型、単発性</li>
+      </ul>
+
+      <h3>B. 紅板症 erythroplakia</h3>
+      <ul>
+        <li>紅色肥厚症とも呼ばれる</li>
+        <li>鮮紅色ビロード状の限局性紅斑</li>
+        <li>癌化率：<span class="red">50%</span>（口腔粘膜病変で<span class="red">最も高い</span>）</li>
+        <li>上皮性異形成は高度で、早期浸潤癌や上皮内癌を伴うことが多い</li>
+      </ul>
+
+      <table class="comparison-table">
+        <tr><th>項目</th><th>白板症</th><th>紅板症</th></tr>
+        <tr><td>外観</td><td>白色病変</td><td>鮮紅色ビロード状</td></tr>
+        <tr><td>癌化率</td><td>4〜18%</td><td class="red">50%</td></tr>
+        <tr><td>異形成</td><td>軽度〜高度</td><td>高度</td></tr>
+      </table>
+
+      <h3>C. 口蓋角化症</h3>
+      <ul>
+        <li>リバーススモーキング（タバコの燃えている先を口に入れて吸う）の習慣によって生じる</li>
+        <li>インドやラテンアメリカの国にみられる</li>
+        <li>口蓋粘膜の隆起した白斑で発赤、潰瘍、色素沈着を伴う</li>
+      </ul>
+
+      <h2>2. 前癌状態</h2>
+
+      <p><span class="highlight">前癌状態（precancerous condition）</span>とは、癌発生のリスクを有意に増大させる全身的状態をいう。</p>
+
+      <h3>A. 口腔扁平苔癬</h3>
+      <ul>
+        <li>両側性に頬粘膜に好発</li>
+        <li><span class="highlight">Wickham線条</span>：白色の線状・網状病変</li>
+        <li>びらん型は疼痛を伴う</li>
+        <li>口腔乾燥症に併発することがある</li>
+        <li>治療：副腎皮質ステロイド軟膏の塗布</li>
+      </ul>
+
+      <h3>B. 鉄欠乏性嚥下障害（Plummer-Vinson症候群）</h3>
+      <ul>
+        <li>鉄欠乏性貧血による口腔から上部消化管の粘膜萎縮</li>
+        <li>嚥下障害、舌乳頭萎縮が生じる</li>
+      </ul>
+
+      <h3>C. その他の前癌状態</h3>
+      <ul>
+        <li>口腔粘膜下線維症</li>
+        <li>梅毒</li>
+        <li>円板性エリテマトーデス</li>
+        <li>色素性乾皮症</li>
+        <li>表皮水疱症</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">106A49</div>
+        <p>右側舌縁の写真と切除標本のH-E染色病理組織像を別に示す。診断名はどれか。</p>
+        <div class="choices">a) 白板症　b) 乳頭腫　c) リンパ管腫　d) 扁平上皮癌　e) 口腔扁平苔癬</div>
+        <div class="answer">正解：B（乳頭腫）</div>
+      </div>
+
+      <h2>3. 腫瘍類似疾患</h2>
+
+      <p><span class="highlight">腫瘍類似疾患</span>とは、腫瘤を形成し外見上腫瘍を思わせるが、組織像は腫瘍ではなく、反応性に細胞増殖や組織増生がみられるものをいう。</p>
+
+      <h3>A. エプーリス epulis</h3>
+      <p>歯肉に発生する限局性腫瘤の総称（慣用的な臨床診断名）。多くは炎症に伴う反応性組織増生。</p>
+
+      <table>
+        <tr><th>種類</th><th>特徴</th></tr>
+        <tr><td>肉芽腫性エプーリス</td><td>最も高頻度、炎症性細胞浸潤と毛細血管に富む</td></tr>
+        <tr><td>線維性エプーリス</td><td>肉芽腫性が陳旧化し線維組織に置換</td></tr>
+        <tr><td>血管腫性エプーリス</td><td>拡張した毛細血管の増生、易出血性</td></tr>
+        <tr><td>骨形成性エプーリス</td><td>線維組織中に骨形成を認める</td></tr>
+        <tr><td>巨細胞性エプーリス</td><td>多核巨細胞を含む、欧米人に多い</td></tr>
+        <tr><td class="red">妊娠性エプーリス</td><td>妊娠・思春期の女性、<span class="red">分娩後に自然消退</span></td></tr>
+        <tr><td>先天性エプーリス</td><td>新生児の歯槽突起部、顆粒細胞腫様組織像</td></tr>
+      </table>
+
+      <div class="warning-box">
+        <div class="warning-box-title">国試頻出：妊娠性エプーリス</div>
+        <p>妊娠38週の女性の上顎歯肉腫瘤 → 適切な対応は<span class="red">「経過観察」</span>（107A124）<br>理由：分娩後に自然消退することが多いため</p>
+      </div>
+
+      <h3>B. 義歯性線維腫 denture fibroma</h3>
+      <ul>
+        <li>不適合義歯の慢性的な機械的刺激による反応性増殖</li>
+        <li>義歯床縁に沿って分葉状、有茎性の腫瘤</li>
+        <li>真の腫瘍ではない（線維症 denture fibrosis）</li>
+        <li>治療：義歯の調整・新製後、外科的に切除</li>
+      </ul>
+
+      <h3>C. 骨増生・外骨症</h3>
+      <p>成熟した骨の反応性増殖・発育異常。真の腫瘍ではない。</p>
+
+      <table>
+        <tr><th>種類</th><th>発生部位</th><th>特徴</th></tr>
+        <tr><td>口蓋隆起 palatal torus</td><td>硬口蓋正中</td><td>丘状の膨隆、骨様硬</td></tr>
+        <tr><td>下顎隆起 mandibular torus</td><td>下顎小臼歯部舌側</td><td>両側性に発生することが多い</td></tr>
+      </table>
+      <ul>
+        <li>通常は無症状だが、義歯装着の障害となることがある</li>
+        <li>治療：症状がなければ経過観察、義歯装着障害時は骨削除</li>
+      </ul>
+
+      <h2>4. 骨性異形成症 ★★</h2>
+
+      <p>顎骨内の歯根尖部に、骨・セメント質に類似した線維組織を含む線維性組織が生じる疾患。</p>
+
+      <h3>好発</h3>
+      <ul>
+        <li>中年女性（40〜60代）</li>
+        <li><span class="highlight">下顎前歯部</span>に好発</li>
+        <li><span class="red">隣接歯は生活歯</span>（重要な鑑別点）</li>
+      </ul>
+
+      <h3>X線所見の経時的変化</h3>
+      <table>
+        <tr><th>時期</th><th>X線像</th></tr>
+        <tr><td>初期</td><td>境界明瞭な透過像</td></tr>
+        <tr><td>中期</td><td>透過像内に不透過像（混合像）</td></tr>
+        <tr><td>後期</td><td>不透過像（石灰化像）</td></tr>
+      </table>
+      <p>※根尖と不透過像の間には透過帯が存在</p>
+
+      <h3>分類</h3>
+      <ul>
+        <li><span class="highlight">根尖性骨性異形成症</span>：下顎前歯部の根尖に数歯にわたって発生</li>
+        <li><span class="highlight">限局性骨性異形成症</span>：臼歯部の根尖に限局性に発生</li>
+        <li><span class="highlight">開花状骨性異形成症</span>：上下顎の左右に多発</li>
+      </ul>
+
+      <h3>治療</h3>
+      <ul>
+        <li>通常は治療の必要はなく<span class="highlight">経過観察</span></li>
+        <li>義歯装着の障害となる場合は削除または減量</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">104D12</div>
+        <p>13歳の女子。下顎左側部の精査を希望して来院。他院でX線透過性病変を指摘。下顎左側犬歯から大臼歯は生活歯。</p>
+        <div class="choices">a) 神経鞘腫　b) 骨性異形成症　c) 静止性骨空洞　d) 単純性骨嚢胞　e) 石灰化上皮性歯原性腫瘍</div>
+        <div class="answer">正解：D（単純性骨嚢胞）※生活歯の根尖部だが年齢・性別から鑑別</div>
+      </div>
+
+      <h2>5. 線維性異形成症 ★★★最頻出</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">線維性異形成症のポイント（16問出題）</div>
+        <ul>
+          <li>好発：<span class="red">10〜20代の若年者</span>、女性に多い</li>
+          <li>X線：<span class="red">すりガラス状不透過像</span>（ground glass appearance）</li>
+          <li>骨質：通常の骨より軟らかい（シャーベット状）</li>
+          <li>成長終了とともに病変の増大も停止</li>
+        </ul>
+      </div>
+
+      <h3>概要</h3>
+      <ul>
+        <li>骨組織が線維性結合組織に置換され、無秩序に増大する疾患</li>
+        <li>顎骨では<span class="highlight">上顎骨</span>に好発</li>
+        <li>上顎：臼歯部・上顎結節から頬骨突起にかけて好発</li>
+        <li>下顎：犬歯部から骨体部に好発</li>
+      </ul>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>顎骨が片側性に漫性に増大</li>
+        <li>顔面の変形（非対称）をきたす</li>
+        <li><span class="highlight">10歳代〜思春期</span>に明らかになることが多い</li>
+        <li>一般的に成長が終わると病変の増大も停止</li>
+        <li><span class="highlight">骨様硬</span>の膨隆、<span class="highlight">無痛性</span></li>
+      </ul>
+
+      <h3>画像所見</h3>
+      <ul>
+        <li>X線・CT：<span class="red">すりガラス状不透過像</span>（ground glass appearance）が特徴的</li>
+        <li>境界不明瞭で周囲骨と連続</li>
+      </ul>
+
+      <h3>病理組織所見</h3>
+      <ul>
+        <li>骨様ないしセメント質様の硬組織を伴う線維性結合組織</li>
+        <li>病変の成熟段階により硬組織の割合が異なる</li>
+      </ul>
+
+      <h3>治療</h3>
+      <ul>
+        <li>症状がなければ<span class="highlight">経過観察</span></li>
+        <li>審美障害・機能障害時は<span class="highlight">骨削除</span>（形態修正）</li>
+        <li>成長終了前の手術は再発の可能性あり</li>
+      </ul>
+
+      <h3>McCune-Albright症候群</h3>
+      <ul>
+        <li><span class="highlight">多骨性線維性異形成症</span></li>
+        <li>皮膚の<span class="highlight">カフェオレ斑</span>（褐色色素斑）</li>
+        <li><span class="highlight">内分泌異常</span>（女性性早熟など）</li>
+        <li>原因：Gsタンパク（αサブユニット）の点突然変異</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">107D17</div>
+        <p>25歳の女性。下顎左側の変形を主訴。10年以上前から徐々に下顎が腫脹。変形以外に特に自覚症状なし。</p>
+        <div class="choices">a) 外骨症　b) 骨肉腫　c) エナメル上皮腫　d) 線維性異形成症　e) 慢性下顎骨骨髄炎</div>
+        <div class="answer">正解：D（線維性異形成症）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B15</div>
+        <p>13歳の女子。下顎左側部の腫脹を主訴。3年前に気付き徐々に増大。腫脹部は骨様硬で圧痛なし。</p>
+        <div class="choices">a) Paget骨病　b) 大理石骨病　c) Gardner症候群　d) von Recklinghausen病　e) McCune-Albright症候群</div>
+        <div class="answer">正解：E（McCune-Albright症候群）※多骨性線維性異形成症</div>
+      </div>
+
+      <h2>6. その他の腫瘍類似疾患</h2>
+
+      <h3>A. サルコイドーシス sarcoidosis</h3>
+      <ul>
+        <li>多臓器に非乾酪性類上皮細胞肉芽腫を形成する原因不明の疾患</li>
+        <li>20歳代に好発</li>
+        <li>両側の縦隔リンパ節腫脹、両眼のブドウ膜炎、皮膚の結節性紅斑</li>
+        <li><span class="highlight">Heerfordt症候群</span>：耳下腺腫脹＋ブドウ膜炎＋顔面神経麻痺＋発熱</li>
+        <li>検査：ACE（アンギオテンシン変換酵素）高値、リゾチーム高値、Kveim反応陽性</li>
+        <li>病理：類上皮細胞からなる肉芽腫、Langhans巨細胞を伴う</li>
+      </ul>
+
+      <h3>B. Langerhans細胞組織球症</h3>
+      <p>以前は組織球症X（histiocytosis X）と呼ばれた。表皮のLangerhans細胞と同様のBirbeck顆粒を持つ細胞の増殖。10歳以下の乳幼児に多く、男性に多い。</p>
+
+      <table>
+        <tr><th>疾患名</th><th>特徴</th></tr>
+        <tr><td>好酸球肉芽腫</td><td>骨に単発性または多発性に発生、境界明瞭な打ち抜き像</td></tr>
+        <tr><td>Hand-Schüller-Christian病</td><td>骨破壊＋尿崩症＋眼球突出（3主徴）</td></tr>
+        <tr><td>Letterer-Siwe病</td><td>乳幼児、全身に急速に発症、予後不良</td></tr>
+      </table>
+
+      <h2>7. 鑑別のまとめ</h2>
+
+      <table class="comparison-table">
+        <tr><th>疾患</th><th>好発</th><th>部位</th><th>X線像</th></tr>
+        <tr><td>線維性異形成症</td><td>若年女性</td><td>上顎骨</td><td>すりガラス状</td></tr>
+        <tr><td>骨性異形成症</td><td>中年女性</td><td>下顎前歯部</td><td>透過→不透過</td></tr>
+        <tr><td>骨形成線維腫</td><td>20〜40代</td><td>下顎臼歯部</td><td>境界明瞭</td></tr>
+        <tr><td>外骨症</td><td>成人</td><td>口蓋・下顎舌側</td><td>骨様不透過</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>基本手技（視診・触診・打診・聴診） - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 08_診察の基本</span>
+    <h1>基本手技（視診・触診・打診・聴診）</h1>
+    <div class="container">
+
+      <h2>基本手技の概要</h2>
+      <p>診察の基本となる4つの手技。それぞれ何がわかるかを理解することが重要。</p>
+
+      <h3>4つの基本手技</h3>
+      <table>
+        <tr>
+          <th>手技</th>
+          <th>方法</th>
+          <th>わかること</th>
+        </tr>
+        <tr>
+          <td><span class="key">視診</span></td>
+          <td>観察による診察</td>
+          <td>結膜蒼白、呼吸状態、口唇色、硬・軟組織の異常</td>
+        </tr>
+        <tr>
+          <td><span class="key">触診</span></td>
+          <td>手や器具で触れる</td>
+          <td>リンパ節腫大、顎関節、膿瘍、舌の硬結</td>
+        </tr>
+        <tr>
+          <td><span class="key">打診</span></td>
+          <td>歯や組織を叩く</td>
+          <td>打診音、歯根膜の状態</td>
+        </tr>
+        <tr>
+          <td><span class="key">聴診</span></td>
+          <td>聴診器で聴く</td>
+          <td>血圧測定、心音、呼吸音</td>
+        </tr>
+      </table>
+
+      <h2>視診</h2>
+      <p>最も基本的な診察法。患者を観察することで多くの情報が得られる。</p>
+
+      <h3>視診でわかること</h3>
+      <ul>
+        <li><span class="key">意識状態</span>：表情、開眼の有無</li>
+        <li><span class="key">貧血</span>：眼瞼結膜の蒼白</li>
+        <li><span class="key">黄疸</span>：眼球結膜の黄染</li>
+        <li><span class="key">チアノーゼ</span>：口唇、爪床の青紫色</li>
+        <li><span class="key">呼吸状態</span>：胸郭の動き、呼吸数</li>
+        <li><span class="key">顔貌</span>：対称性、腫脹、発赤</li>
+      </ul>
+
+      <h2>触診</h2>
+      <p>手指や器具を用いて、組織の性状や病変を確認する診察法。</p>
+
+      <h3>触診所見と疾患</h3>
+      <table>
+        <tr>
+          <th>触診所見</th>
+          <th>特徴</th>
+          <th>代表的疾患</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">波動</span></td>
+          <td>液体貯留を示す</td>
+          <td><span class="key">ラヌーラ</span>、膿瘍、囊胞</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">硬結</span></td>
+          <td>�ite固い腫瘤</td>
+          <td><span class="key">舌癌</span>、悪性腫瘍</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">圧縮性</span></td>
+          <td>押すと縮小、離すと復元</td>
+          <td><span class="key">血管腫</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">捻髪音</span></td>
+          <td>雪を握るような音</td>
+          <td><span class="key">皮下気腫</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">羊皮紙様感</span></td>
+          <td>薄い骨がペコペコする</td>
+          <td>骨囊胞、エナメル上皮腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">拍動性</span></td>
+          <td>脈拍と同期した拍動</td>
+          <td>動脈瘤、動静脈奇形</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">触診所見の覚え方</div>
+        <ul>
+          <li><span class="highlight">波動</span>＝液体（囊胞・膿瘍）</li>
+          <li><span class="highlight">硬結</span>＝癌</li>
+          <li><span class="highlight">圧縮性</span>＝血管腫（血液が移動）</li>
+          <li><span class="highlight">捻髪音</span>＝皮下気腫（空気が移動）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A6</div>
+        <p>触診所見と疾患の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 波　動 ーーーー ラヌーラ<br>
+          b 圧縮性 ーーーー 皮下気腫<br>
+          c 拍動性 ーーーー 類皮囊胞<br>
+          d 捻髪音 ーーーー 血管腫<br>
+          e クリック ーーー 筋突起骨折
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">波動</span>は液体貯留を示し、<span class="key">ラヌーラ</span>（ガマ腫）でみられる。圧縮性は血管腫、捻髪音は皮下気腫、クリックは顎関節症。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A16</div>
+        <p>触診所見と疾患との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 波　動 ――――― 多形腺腫<br>
+          b 硬　結 ――――― 舌　癌<br>
+          c 圧縮性 ――――― エナメル上皮腫<br>
+          d 捻髪音 ――――― ガマ腫<br>
+          e 羊皮紙様感 ――― 皮下気腫
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">硬結</span>は<span class="key">舌癌</span>など悪性腫瘍の特徴。波動は囊胞（ガマ腫など）、圧縮性は血管腫、捻髪音は皮下気腫、羊皮紙様感は骨囊胞。</p>
+      </div>
+
+      <h3>触診の部位と目的</h3>
+      <table>
+        <tr>
+          <th>主訴・目的</th>
+          <th>触診部位</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="key">開口困難</span></td>
+          <td><span class="highlight">耳珠前方部</span></td>
+          <td>顎関節の触診</td>
+        </tr>
+        <tr>
+          <td><span class="key">全身性浮腫</span></td>
+          <td><span class="highlight">脛骨前面</span></td>
+          <td>圧痕（pitting edema）の確認</td>
+        </tr>
+        <tr>
+          <td><span class="key">咀嚼筋の評価</span></td>
+          <td>内側翼突筋など</td>
+          <td>筋の圧痛、硬結の確認</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115D18</div>
+        <p>開口困難を主訴として来院した患者に対し、まず触診する部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 顎下部<br>
+          b 側頸部<br>
+          c 眼窩下部<br>
+          d 鼻翼基部<br>
+          e 耳珠前方部
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】開口困難では<span class="highlight">顎関節</span>の問題を疑い、まず<span class="key">耳珠前方部</span>（顎関節部）を触診する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B4</div>
+        <p>全身性浮腫の診察時に圧痕を確認する部位はどれか。1 つ選べ。</p>
+        <div class="choices">
+          a 肋　間<br>
+          b 下腹部<br>
+          c 心窩部<br>
+          d 脛骨前面<br>
+          e 胸鎖乳突筋部
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】浮腫の圧痕（pitting edema）は皮下組織が薄い<span class="highlight">脛骨前面</span>で確認する。指で押して凹みが残れば浮腫陽性。</p>
+      </div>
+
+      <h3>捻髪音（皮下気腫）</h3>
+      <p><span class="key">捻髪音</span>：皮下に空気が入り込んだ状態（皮下気腫）で、触診時に雪を握るような音がする。</p>
+
+      <div class="question-box">
+        <div class="q-number">111B13（図あり）</div>
+        <p>CT （別冊No.1）を別に示す。捻髪音がみられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111B13_1.png" alt="別冊No.1">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】CTで皮下に空気（黒く抜ける）がみられる部位が<span class="key">皮下気腫</span>であり、<span class="highlight">捻髪音</span>が触知される。</p>
+      </div>
+
+      <h2>打診</h2>
+      <p>歯や組織を叩いて、その音や反応から状態を評価する診察法。</p>
+
+      <h3>歯の打診音</h3>
+      <table>
+        <tr>
+          <th>打診音</th>
+          <th>状態</th>
+          <th>代表的疾患</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">高い音（金属音）</span></td>
+          <td>歯根膜腔の消失</td>
+          <td><span class="key">骨性癒着（アンキローシス）</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">濁音（ゴンゴン）</span></td>
+          <td>歯根膜の炎症</td>
+          <td>急性根尖性歯周炎</td>
+        </tr>
+        <tr>
+          <td><span class="key">清音（カンカン）</span></td>
+          <td>正常な歯根膜</td>
+          <td>健全歯</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">打診音のポイント</div>
+        <ul>
+          <li><span class="highlight">金属音（高い音）</span>＝骨性癒着（歯根膜がない）</li>
+          <li><span class="key">濁音</span>＝歯根膜炎（歯根膜の腫脹）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A7</div>
+        <p>打診音が高くなるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 骨性癒着<br>
+          b 内部吸収<br>
+          c セメント質肥大<br>
+          d 垂直性歯根破折<br>
+          e 慢性化膿性根尖性歯周炎
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">骨性癒着</span>（アンキローシス）では歯根膜腔が消失し、歯と骨が直接結合するため、打診音が<span class="key">高く（金属音）</span>なる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117B5</div>
+        <p>再植歯のアンキローシスでみられる特徴的な所見はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 打診での金属音<br>
+          b 歯の動揺度の増加<br>
+          c くさび状欠損の進行<br>
+          d 歯髄電気診の閾値低下<br>
+          e 歯肉退縮による根面露出
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="key">アンキローシス</span>（骨性癒着）では歯根膜がなく骨と直接癒合するため、<span class="highlight">打診で金属音</span>がする。動揺は減少（癒着）し、増加ではない。</p>
+      </div>
+
+      <h2>聴診</h2>
+      <p>聴診器を用いて体内の音を聴取する診察法。血圧測定にも使用。</p>
+
+      <h3>血圧測定</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>測定部位</th>
+          <th>測定できる血圧</th>
+        </tr>
+        <tr>
+          <td><span class="key">聴診法</span></td>
+          <td>上腕動脈（肘窩）</td>
+          <td>収縮期・拡張期血圧</td>
+        </tr>
+        <tr>
+          <td><span class="key">触診法</span></td>
+          <td><span class="highlight">橈骨動脈</span></td>
+          <td>収縮期血圧のみ</td>
+        </tr>
+      </table>
+
+      <h3>血圧測定の注意点</h3>
+      <ul>
+        <li>上腕は<span class="key">心臓の高さ</span>に保つ（肩の高さではない）</li>
+        <li>マンシェットは<span class="caution">きつく巻かない</span></li>
+        <li>減圧は<span class="key">ゆっくり</span>行う（2〜3mmHg/秒）</li>
+        <li>触診法では<span class="caution">拡張期血圧は測定できない</span></li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108A19</div>
+        <p>血圧測定で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 減圧は素早く行う。<br>
+          b 上腕は肩の高さに保つ。<br>
+          c 触診法は橈骨動脈を用いる。<br>
+          d マンシェットはきつく巻く。<br>
+          e 触診法では拡張期血圧が測定できる。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">触診法では橈骨動脈</span>の拍動を触知する。減圧はゆっくり、上腕は心臓の高さ、マンシェットはきつく巻かない、触診法では収縮期血圧のみ測定可能。</p>
+      </div>
+
+      <h2>その他の触診器具</h2>
+
+      <h3>隣接面齲蝕の触診</h3>
+      <div class="question-box">
+        <div class="q-number">114C7</div>
+        <p>歯間隣接面の初期齲蝕の触診に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a デンタルフロス<br>
+          b コンタクトゲージ<br>
+          c トランスイルミネーター<br>
+          d Tofflemire型リテーナー<br>
+          e スプーンエキスカベーター
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】隣接面齲蝕の初期段階では<span class="highlight">デンタルフロス</span>を用いて、引っかかりや毛羽立ちで表面の粗造を確認する。トランスイルミネーターは透照診。</p>
+      </div>
+
+      <h2>まとめ：基本手技と所見</h2>
+      <table>
+        <tr>
+          <th>手技</th>
+          <th>重要な所見</th>
+          <th>代表的疾患</th>
+        </tr>
+        <tr>
+          <td>触診</td>
+          <td>波動</td>
+          <td>ラヌーラ、膿瘍</td>
+        </tr>
+        <tr>
+          <td>触診</td>
+          <td>硬結</td>
+          <td>舌癌</td>
+        </tr>
+        <tr>
+          <td>触診</td>
+          <td>捻髪音</td>
+          <td>皮下気腫</td>
+        </tr>
+        <tr>
+          <td>触診</td>
+          <td>圧縮性</td>
+          <td>血管腫</td>
+        </tr>
+        <tr>
+          <td>打診</td>
+          <td>金属音</td>
+          <td>骨性癒着</td>
+        </tr>
+        <tr>
+          <td>聴診</td>
+          <td>血圧測定</td>
+          <td>触診法＝橈骨動脈</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

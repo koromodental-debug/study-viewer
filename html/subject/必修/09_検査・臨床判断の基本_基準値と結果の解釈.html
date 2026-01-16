@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>基準値と結果の解釈 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>基準値と結果の解釈</h1>
+    <div class="container">
+
+      <h2>1. 基準範囲の定義（2件出題）</h2>
+      <p><span class="key">基準範囲</span>は健常者集団の検査値から設定され、<span class="highlight">平均値 ± 2S.D.（2標準偏差）</span>の範囲で定められる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">基準範囲のポイント</div>
+        <ul>
+          <li>基準範囲内に含まれる個体 = <span class="highlight">95%</span></li>
+          <li>基準範囲外となる個体 = 約5%（両側で各2.5%ずつ）</li>
+          <li>正規分布に従う検査値で適用される</li>
+        </ul>
+      </div>
+
+      <h3>正規分布と基準範囲</h3>
+      <table>
+        <tr><th>範囲</th><th>含まれる割合</th></tr>
+        <tr><td>平均値 ± 1S.D.</td><td>約68%</td></tr>
+        <tr><td class="key">平均値 ± 2S.D.</td><td><span class="highlight">約95%</span>（基準範囲）</td></tr>
+        <tr><td>平均値 ± 3S.D.</td><td>約99.7%</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115C1</div>
+        <p>正規分布に従う検査値において、基準範囲に含まれる個体が全体に占める割合はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 5%<br>
+          b 50%<br>
+          c 95%<br>
+          d 97.5%<br>
+          e 100%
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】基準範囲は平均値±2S.D.で設定され、正規分布に従う検査値では約95%の個体がこの範囲に含まれる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A5</div>
+        <p>臨床検査値の基準範囲内に含まれる基準個体の割合はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 5％<br>
+          b 25％<br>
+          c 50％<br>
+          d 75％<br>
+          e 95％
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】基準範囲は平均値±2S.D.で定義され、95%の基準個体が含まれる。5%は基準範囲外となる割合。</p>
+      </div>
+
+      <h2>2. 標準値と標準範囲の組合せ（1件出題）</h2>
+      <p>セファロ分析などで用いる標準値と標準範囲の組合せは以下の通り。</p>
+
+      <h3>正しい組合せ</h3>
+      <table>
+        <tr><th>項目</th><th>定義</th></tr>
+        <tr><td class="key">標準値</td><td><span class="highlight">平均値</span></td></tr>
+        <tr><td class="key">標準範囲</td><td><span class="highlight">標準偏差</span>（S.D.）</td></tr>
+      </table>
+      <p class="note">※中央値やパーセンタイル値は標準値・標準範囲として用いない</p>
+
+      <div class="question-box">
+        <div class="q-number">112D10</div>
+        <p>セファロ分析における標準値と標準範囲の組合せで正しいのはどれか。1つ選べ</p>
+        <div class="choices">
+          a 中央値 ーーーー 標準誤差<br>
+          b 中央値 ーーーー 標準偏差<br>
+          c 中央値 ーーーー 25パーセンタイル値<br>
+          d 平均値 ーーーー 標準偏差<br>
+          e 平均値 ーーーー 25パーセンタイル値
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】セファロ分析の標準値は平均値、標準範囲は標準偏差で表す。標準誤差は平均値の信頼性を示す指標であり、標準範囲には用いない。</p>
+      </div>
+
+      <h2>3. 検査値の変動要因</h2>
+      <p>検査結果を解釈する際は、様々な変動要因を考慮する必要がある。</p>
+
+      <h3>主な変動要因</h3>
+      <table>
+        <tr><th>要因</th><th>例</th></tr>
+        <tr><td class="key">生理的要因</td><td>男女差、年齢（小児・高齢者）</td></tr>
+        <tr><td class="key">生活習慣</td><td>食事、運動、飲酒、喫煙</td></tr>
+        <tr><td class="key">測定環境</td><td>採血時の体位、駆血時間</td></tr>
+        <tr><td class="key">生理的変動</td><td>日内変動、季節変動、性周期</td></tr>
+      </table>
+
+      <h2>4. 代表的な基準値（参考）</h2>
+
+      <h3>血液検査の基準値（成人男性）</h3>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th></tr>
+        <tr><td>赤血球数（RBC）</td><td>450万〜570万/μL</td></tr>
+        <tr><td>白血球数（WBC）</td><td>4,000〜9,000/μL</td></tr>
+        <tr><td>血小板数（Plt）</td><td>12万〜40万/μL</td></tr>
+        <tr><td>ヘモグロビン（Hb）</td><td>12.5〜18.0 g/dL</td></tr>
+        <tr><td>ヘマトクリット（Ht）</td><td>30〜50%</td></tr>
+      </table>
+
+      <h3>肥満の指標</h3>
+      <table>
+        <tr><th>BMI</th><th>判定</th></tr>
+        <tr><td>18.0〜24.9</td><td>正常</td></tr>
+        <tr><td>25.0〜29.9</td><td>肥満度1</td></tr>
+        <tr><td>30.0〜34.9</td><td>肥満度2</td></tr>
+        <tr><td>35.0以上</td><td>肥満度3以上</td></tr>
+      </table>
+      <p class="note">※BMI = 体重(kg) / 身長(m)²</p>
+
+      <div class="point-box">
+        <div class="point-box-title">体脂肪率による肥満判定</div>
+        <ul>
+          <li>男性：<span class="highlight">25%以上</span>で肥満傾向</li>
+          <li>女性：<span class="highlight">30%以上</span>で肥満傾向</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

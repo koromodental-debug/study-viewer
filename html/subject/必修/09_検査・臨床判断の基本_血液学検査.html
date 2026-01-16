@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>血液学検査 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>血液学検査</h1>
+    <div class="container">
+
+      <h2>1. 血球検査（3件出題）</h2>
+      <p>血球検査では赤血球数、白血球数、血小板数などを測定する。<span class="highlight">ヘマトクリット（Ht）</span>は基準値に性差がある代表的な項目。</p>
+
+      <h3>血球検査の基準値</h3>
+      <table>
+        <tr><th>検査項目</th><th>男性</th><th>女性</th></tr>
+        <tr><td>赤血球数（RBC）</td><td>500〜570万/μL</td><td>380〜500万/μL</td></tr>
+        <tr><td>ヘモグロビン（Hb）</td><td>14〜18 g/dL</td><td>12〜16 g/dL</td></tr>
+        <tr><td class="key">ヘマトクリット（Ht）</td><td><span class="highlight">39〜52%</span></td><td><span class="highlight">34〜44%</span></td></tr>
+        <tr><td>白血球数（WBC）</td><td colspan="2">4,000〜9,000/μL</td></tr>
+        <tr><td>血小板数（Plt）</td><td colspan="2">12〜40万/μL</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ヘマトクリット（Ht）とは</div>
+        <ul>
+          <li>血液を遠心分離した際の<span class="highlight">血球成分の割合</span></li>
+          <li>基準値に<span class="highlight">性差あり</span>（男性＞女性）</li>
+          <li>貧血で低下、赤血球増多症で上昇</li>
+        </ul>
+      </div>
+
+      <h3>白血球分画の基準値</h3>
+      <table>
+        <tr><th>細胞</th><th>割合</th><th>増加する病態</th></tr>
+        <tr><td class="key">分葉核好中球</td><td>45〜60%</td><td><span class="highlight">急性細菌感染</span></td></tr>
+        <tr><td>桿状核好中球</td><td>3〜5%</td><td>急性感染初期（左方移動）</td></tr>
+        <tr><td>好酸球</td><td>0〜5%</td><td>アレルギー、寄生虫感染</td></tr>
+        <tr><td>好塩基球</td><td>0〜1%</td><td>慢性骨髄性白血病</td></tr>
+        <tr><td>単球</td><td>3〜7%</td><td>慢性感染、結核</td></tr>
+        <tr><td>リンパ球</td><td>20〜40%</td><td>ウイルス感染</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116D19</div>
+        <p>成人における基準値に性差があるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血小板<br>
+          b 白血球<br>
+          c 白血球分画<br>
+          d ヘマトクリット〈Ht〉<br>
+          e プロトロンビン時間〈PT〉
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】ヘマトクリットは男性39〜52%、女性34〜44%と性差がある。血小板・白血球・白血球分画・PTには性差はない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C9</div>
+        <p>採取した血液を遠心分離した際、全容量に占める血球成分の割合を示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Hb<br>
+          b Ht<br>
+          c MCV<br>
+          d MCH<br>
+          e 赤沈
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】Ht（ヘマトクリット）は血液中の血球成分の容積割合。Hbはヘモグロビン濃度、MCVは平均赤血球容積、MCHは平均赤血球ヘモグロビン量、赤沈は赤血球沈降速度。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C16</div>
+        <p>末梢血白血球における分葉核好中球の割合が増加するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口腔扁平苔癬<br>
+          b Sjogren症候群<br>
+          c 急性顎骨骨髄炎<br>
+          d 口腔カンジダ症<br>
+          e 疱疹性歯肉口内炎
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】急性顎骨骨髄炎は急性細菌感染であり、分葉核好中球が増加する。扁平苔癬・Sjogren症候群は自己免疫疾患、カンジダ症は真菌感染、疱疹性歯肉口内炎はウイルス感染。</p>
+      </div>
+
+      <h2>2. 血液型検査（2件出題）</h2>
+      <p><span class="key">ABO式血液型</span>は<span class="highlight">赤血球</span>表面の糖鎖抗原で分類され、検査には<span class="highlight">凝集反応</span>を用いる。</p>
+
+      <h3>ABO式血液型</h3>
+      <table>
+        <tr><th>血液型</th><th>抗原（赤血球）</th><th>抗体（血漿）</th></tr>
+        <tr><td class="key">A型</td><td>A抗原</td><td>抗B抗体</td></tr>
+        <tr><td class="key">B型</td><td>B抗原</td><td>抗A抗体</td></tr>
+        <tr><td class="key">AB型</td><td>A・B抗原</td><td>なし</td></tr>
+        <tr><td class="key">O型</td><td>なし</td><td>抗A・抗B抗体</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107A8</div>
+        <p>ABO式血液型を決定する抗原が存在するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血小板<br>
+          b 赤血球<br>
+          c 好中球<br>
+          d 好酸球<br>
+          e リンパ球
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】ABO式血液型を決定する糖鎖抗原は赤血球表面に存在する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A14</div>
+        <p>ABO式血液型検査に用いられる反応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 凝集反応<br>
+          b 中和反応<br>
+          c 沈降反応<br>
+          d 溶解反応<br>
+          e 補体結合反応
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】血液型検査は抗原抗体反応による凝集反応を利用する。赤血球と抗血清を混合し、凝集の有無で判定。</p>
+      </div>
+
+      <h2>3. 凝固系検査（1件出題）</h2>
+      <p>凝固系検査は出血傾向の評価や抗凝固薬のモニタリングに用いる。</p>
+
+      <h3>主な凝固系検査</h3>
+      <table>
+        <tr><th>検査</th><th>評価する系</th><th>臨床的意義</th></tr>
+        <tr><td class="key">PT（プロトロンビン時間）</td><td>外因系</td><td><span class="highlight">ワルファリン</span>のモニタリング</td></tr>
+        <tr><td class="key">APTT（活性化部分トロンボプラスチン時間）</td><td>内因系</td><td>ヘパリンのモニタリング、血友病</td></tr>
+        <tr><td class="key">出血時間</td><td>血小板機能</td><td>血小板減少、von Willebrand病</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109C11</div>
+        <p>ワルファリンカリウム服用量によって値が変化するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Hb<br>
+          b AST<br>
+          c PT-INR<br>
+          d 血小板数<br>
+          e 白血球数
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ワルファリンはビタミンK依存性凝固因子を阻害し、PT-INRを延長させる。PT-INRでモニタリングを行う。</p>
+      </div>
+
+      <h2>4. 採血法・検体検査（3件出題）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">検体検査とは</div>
+        <ul>
+          <li>血液・尿・組織など<span class="highlight">採取した検体</span>を調べる検査</li>
+          <li>心電図・超音波・シンチグラフィは<span class="caution">生体検査</span>（検体検査ではない）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C15</div>
+        <p>検体検査はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 尿検査<br>
+          b 心電図検査<br>
+          c 超音波検査<br>
+          d パッチテスト<br>
+          e 唾液腺シンチグラフィ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】尿検査は採取した検体を調べる検体検査。心電図・超音波・シンチグラフィは生体検査。パッチテストはアレルギー検査。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A9</div>
+        <p>静脈血採取法で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 採血時には駆血帯を外す。<br>
+          b 手袋の装着は不要である。<br>
+          c 穿刺は消毒用アルコールが乾いてから行う。<br>
+          d 血液の逆流が少ない場合は陰圧を強くかけて引く。<br>
+          e 血管が出にくいときは穿刺部位を心臓より高くする。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】穿刺は消毒用アルコールが乾いてから行う（感染予防・溶血防止）。採血時は駆血帯をしたまま、手袋は必須、陰圧をかけすぎると溶血、血管が出にくい時は心臓より低くする。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A33</div>
+        <p>検体検査法と目的との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 比色法－－－－－－－－－－－－－－－－－溶液体積の測定<br>
+          b ノーザンブロット法－－－－－－－－－－－抗原タンパク質の定量<br>
+          c ウエスタンブロット法－－－－－－－－－－RNAの検出<br>
+          d in situハイブリダイゼーション法－－－－アミノ酸配列の決定<br>
+          e Polymerase Chain Reaction〈PCR〉法－－－DNAの増幅
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】PCR法はDNAの増幅に用いる。ノーザンブロット法はRNA検出、ウエスタンブロット法はタンパク質検出、比色法は濃度測定。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

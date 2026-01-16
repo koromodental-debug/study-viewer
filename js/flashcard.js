@@ -56,7 +56,9 @@ const FlashcardModule = (function() {
       results: [],
       expandedKeys: new Set(),
       showAll: false  // 全件表示フラグ
-    }
+    },
+    // 科目アコーディオンの開閉状態
+    expandedSubjects: new Set(JSON.parse(localStorage.getItem('flashcard-expanded-subjects') || '[]'))
   };
 
   // DOM要素
@@ -554,9 +556,10 @@ const FlashcardModule = (function() {
   function renderSubjectRow(subject) {
     const topics = DATA.filter(d => d.subject === subject && d.qaPath);
     const stats = getSubjectStats(subject);
+    const isOpen = state.expandedSubjects.has(subject);
 
     return `
-      <div class="deck-subject" data-subject="${subject}">
+      <div class="deck-subject${isOpen ? ' open' : ''}" data-subject="${subject}">
         <div class="deck-subject-header">
           <div class="deck-subject-main">
             <span class="deck-subject-name">${subject}</span>
@@ -683,7 +686,16 @@ const FlashcardModule = (function() {
     subjectHeaders.forEach(header => {
       header.addEventListener('click', (e) => {
         const subjectEl = header.closest('.deck-subject');
+        const subject = subjectEl.dataset.subject;
         subjectEl.classList.toggle('open');
+
+        // 状態を保存
+        if (subjectEl.classList.contains('open')) {
+          state.expandedSubjects.add(subject);
+        } else {
+          state.expandedSubjects.delete(subject);
+        }
+        localStorage.setItem('flashcard-expanded-subjects', JSON.stringify([...state.expandedSubjects]));
       });
     });
 

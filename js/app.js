@@ -3290,7 +3290,20 @@
     }
 
     if (section) {
-      section.scrollIntoView({ behavior: 'auto', block: 'start' });
+      // ヘッダーの高さを考慮して上部付近に表示
+      const headerHeight = 56 + 16;
+      const containerRect = elements.htmlContent.getBoundingClientRect();
+      const sectionRect = section.getBoundingClientRect();
+      const targetY = elements.htmlContent.scrollTop + sectionRect.top - containerRect.top - headerHeight;
+
+      elements.htmlContent.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: 'smooth'
+      });
+
+      // ハイライトアニメーション
+      section.classList.add('topic-highlight');
+      setTimeout(() => section.classList.remove('topic-highlight'), 1500);
       return true;
     }
     return false;

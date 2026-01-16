@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔・顎顔面の成長・発育 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 05 人体の発生・成長・発達・加齢変化</span>
+    <h1>口腔・顎顔面の成長・発育</h1>
+    <div class="container">
+
+      <h2>鰓弓と顎顔面の発生</h2>
+      <h3>鰓弓由来の構造</h3>
+      <table>
+        <tr>
+          <th>鰓弓</th>
+          <th>骨</th>
+          <th>筋</th>
+          <th>神経</th>
+        </tr>
+        <tr>
+          <td><span class="key">第一鰓弓</span></td>
+          <td><span class="highlight">下顎骨</span>、上顎骨、ツチ骨、キヌタ骨</td>
+          <td><span class="highlight">咀嚼筋</span>（側頭筋、咬筋、翼突筋）、顎舌骨筋</td>
+          <td>三叉神経（V）</td>
+        </tr>
+        <tr>
+          <td><span class="key">第二鰓弓</span></td>
+          <td>アブミ骨、茎状突起、舌骨（上部）</td>
+          <td>表情筋、アブミ骨筋、茎突舌骨筋</td>
+          <td>顔面神経（VII）</td>
+        </tr>
+        <tr>
+          <td><span class="key">第三鰓弓</span></td>
+          <td>舌骨（下部）</td>
+          <td>茎突咽頭筋</td>
+          <td>舌咽神経（IX）</td>
+        </tr>
+        <tr>
+          <td><span class="key">第四鰓弓</span></td>
+          <td>喉頭軟骨</td>
+          <td>咽頭・喉頭筋</td>
+          <td>迷走神経（X）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112D12</div>
+        <p>胎芽において下顎骨を形成するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 前頭隆起<br>
+          b 第一鰓弓<br>
+          c 第二鰓弓<br>
+          d 第三鰓弓<br>
+          e 第四鰓弓
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">下顎骨は第一鰓弓由来</span>。第二鰓弓からはアブミ骨・茎状突起。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A30</div>
+        <p>第一鰓弓由来の筋はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口輪筋<br>
+          b 側頭筋<br>
+          c 舌骨舌筋<br>
+          d 茎突咽頭筋<br>
+          e 口蓋帆挙筋
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">側頭筋（咀嚼筋）は第一鰓弓由来</span>。口輪筋は第二鰓弓（表情筋）、茎突咽頭筋は第三鰓弓由来。</p>
+      </div>
+
+      <h3>口蓋の発生</h3>
+      <p>口蓋の正中癒合：<span class="highlight">胎生10週頃</span></p>
+      <p class="note">一次口蓋（前方）と二次口蓋（後方）が癒合。癒合不全 → 口蓋裂</p>
+
+      <div class="question-box">
+        <div class="q-number">115C7</div>
+        <p>口蓋の正中が癒合する時期はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 胎生2週ころ<br>
+          b 胎生4週ころ<br>
+          c 胎生10週ころ<br>
+          d 胎生15週ころ<br>
+          e 胎生25週ころ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】口蓋の正中癒合は<span class="highlight">胎生10週頃</span>。胎生4週は顔面突起の形成期。</p>
+      </div>
+
+      <h2>頭蓋の成長</h2>
+      <h3>顔面頭蓋と脳頭蓋</h3>
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>顔面頭蓋：脳頭蓋</th>
+        </tr>
+        <tr>
+          <td><span class="key">新生児</span></td>
+          <td><span class="highlight">1：8</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">成人</span></td>
+          <td>1：2〜2.5</td>
+        </tr>
+      </table>
+      <p class="note">成長に伴い顔面頭蓋の比率が増加（顔が大きくなる）</p>
+
+      <div class="question-box">
+        <div class="q-number">113B10</div>
+        <p>新生児の顔面頭蓋と脳頭蓋の容積比はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1：2<br>
+          b 1：4<br>
+          c 1：6<br>
+          d 1：8<br>
+          e 1：10
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】新生児の顔面頭蓋と脳頭蓋の比は<span class="highlight">1：8</span>。成長とともに顔面頭蓋の割合が増加し、成人では1：2〜2.5。</p>
+      </div>
+
+      <h3>骨の成長様式</h3>
+      <table>
+        <tr>
+          <th>成長様式</th>
+          <th>特徴</th>
+          <th>該当する骨</th>
+        </tr>
+        <tr>
+          <td><span class="key">軟骨性成長</span></td>
+          <td>軟骨が骨に置換される</td>
+          <td><span class="highlight">下顎骨</span>（下顎頭軟骨）、頭蓋底</td>
+        </tr>
+        <tr>
+          <td><span class="key">縫合性成長</span></td>
+          <td>縫合部での骨添加</td>
+          <td>上顎骨、頭蓋冠</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨膜性成長</span></td>
+          <td>骨表面での添加・吸収</td>
+          <td>全ての骨</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113D2</div>
+        <p>軟骨性成長がみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 下顎骨<br>
+          b 口蓋骨<br>
+          c 上顎骨<br>
+          d 前頭骨<br>
+          e 頭頂骨
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">下顎骨</span>は下顎頭軟骨での軟骨性成長がある。上顎骨は縫合性成長、前頭骨・頭頂骨は頭蓋冠で縫合性成長。</p>
+      </div>
+
+      <h2>上顎・下顎の成長</h2>
+      <h3>鼻上顎複合体の成長</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>変化</th>
+        </tr>
+        <tr>
+          <td><span class="key">前頭上顎縫合</span></td>
+          <td>骨添加 → <span class="highlight">前下方への成長</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">上顎結節後面</span></td>
+          <td>骨添加 → 後方への成長</td>
+        </tr>
+        <tr>
+          <td><span class="key">口蓋突起鼻腔面</span></td>
+          <td><span class="highlight">骨吸収</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">鼻腔底</span></td>
+          <td><span class="highlight">骨吸収</span> → 下方への成長</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114B14</div>
+        <p>生後、鼻上顎複合体の前下方への成長に関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 切歯縫合<br>
+          b 上顎間縫合<br>
+          c 鼻骨間縫合<br>
+          d 正中口蓋縫合<br>
+          e 前頭上顎縫合
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">前頭上顎縫合</span>での骨添加により、鼻上顎複合体は前下方へ成長する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C11 / 107A24</div>
+        <p>上顎で成長に伴って骨吸収するのはどれか。</p>
+        <div class="answer">正解：鼻腔底、口蓋突起の鼻腔面</div>
+        <p>【解説】<span class="highlight">鼻腔底</span>と<span class="highlight">口蓋突起の鼻腔面</span>は骨吸収。上顎結節後面・縫合部は骨添加。</p>
+      </div>
+
+      <h3>下顎骨の成長</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>変化</th>
+        </tr>
+        <tr>
+          <td><span class="key">オトガイ部</span></td>
+          <td><span class="highlight">骨添加</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎枝後縁</span></td>
+          <td>骨添加</td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎枝前縁</span></td>
+          <td>骨吸収</td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎頭</span></td>
+          <td>軟骨性成長</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113A8</div>
+        <p>成長期の下顎骨で骨添加がみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a オトガイ部<br>
+          b 下顎枝前縁<br>
+          c 筋突起外面<br>
+          d 前歯歯槽部外面<br>
+          e 下顎枝基底部内面
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">オトガイ部</span>は骨添加。下顎枝前縁は骨吸収（下顎骨が後方へ移動するように見える）。</p>
+      </div>
+
+      <h2>歯の発生と萌出</h2>
+      <h3>歯胚形成の開始時期</h3>
+      <table>
+        <tr>
+          <th>歯種</th>
+          <th>歯胚形成開始</th>
+        </tr>
+        <tr>
+          <td><span class="key">乳歯</span></td>
+          <td>胎生6〜8週</td>
+        </tr>
+        <tr>
+          <td><span class="key">第一大臼歯</span></td>
+          <td>胎生4か月</td>
+        </tr>
+        <tr>
+          <td><span class="key">第一小臼歯</span></td>
+          <td><span class="highlight">出生時</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">第二大臼歯</span></td>
+          <td>生後1年</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107A27</div>
+        <p>出生時に歯胚形成が開始されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 中切歯<br>
+          b 乳中切歯<br>
+          c 第一小臼歯<br>
+          d 第一大臼歯<br>
+          e 第一乳臼歯
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">第一小臼歯</span>は出生時に歯胚形成開始。乳歯は胎生期、第一大臼歯は胎生4か月から。</p>
+      </div>
+
+      <h3>下顎永久歯の萌出順序</h3>
+      <p>日本人で最も多い萌出順序：<span class="highlight">1→6→2→3→4→5→7</span></p>
+      <p class="note">第一大臼歯（6）は中切歯（1）の次に萌出することが多い</p>
+
+      <div class="question-box">
+        <div class="q-number">107C26</div>
+        <p>日本人の下顎永久歯の萌出順序で最も多いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1→2→3→6→4→5→7<br>
+          b 1→2→6→3→4→5→7<br>
+          c 1→6→2→3→4→5→7<br>
+          d 6→1→2→4→5→3→7<br>
+          e 6→1→2→3→4→7→5
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】日本人は<span class="highlight">1→6→2→3→4→5→7</span>が最多。中切歯の次に第一大臼歯が萌出。</p>
+      </div>
+
+      <h3>エナメル芽細胞</h3>
+      <p><span class="key">Tomes突起</span>：エナメル芽細胞の特徴的構造。エナメル質の形成に関与。</p>
+
+      <div class="question-box">
+        <div class="q-number">108C28</div>
+        <p>Tomes突起をもつのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 骨芽細胞<br>
+          b 線維芽細胞<br>
+          c 象牙芽細胞<br>
+          d エナメル芽細胞<br>
+          e セメント芽細胞
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">Tomes突起はエナメル芽細胞</span>の特徴。象牙芽細胞はTomes線維（象牙芽細胞突起）を持つ。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

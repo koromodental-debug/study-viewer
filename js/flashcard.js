@@ -1914,11 +1914,9 @@ const FlashcardModule = (function() {
           <div class="flashcard-progress-bar">
             <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
             <span class="flashcard-progress-text">${current} / ${total}${pendingAgain > 0 ? ` <span class="progress-pending">再${pendingAgain}</span>` : ''}</span>
+            <button class="flashcard-size-btn" id="flashcard-size-btn" aria-label="問数変更">${state.sessionSize}</button>
           </div>
           <div class="flashcard-header-actions">
-            <button class="flashcard-size-btn" id="flashcard-size-btn" aria-label="問数変更">
-              ${state.sessionSize}問
-            </button>
             <button class="flashcard-shuffle-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn" aria-label="シャッフル">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>

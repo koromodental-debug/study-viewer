@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>全身的疾患に関連する口腔症候 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 07_主要症候</span>
+    <h1>全身的疾患に関連する口腔症候</h1>
+    <div class="container">
+
+      <h2>貧血と口腔症候</h2>
+      <p>貧血は<span class="key">赤血球・ヘモグロビン・ヘマトクリット</span>の減少した状態。特に<span class="highlight">ヘモグロビン（Hb）の減少</span>が最も重要視される。</p>
+
+      <h3>貧血の分類と口腔所見</h3>
+      <table>
+        <tr>
+          <th>貧血の種類</th>
+          <th>MCV</th>
+          <th>原因</th>
+          <th>口腔所見</th>
+        </tr>
+        <tr>
+          <td><span class="key">鉄欠乏性貧血</span></td>
+          <td>小球性低色素性<br>（MCV↓、MCHC↓）</td>
+          <td>鉄の喪失・摂取不足・吸収不良</td>
+          <td><span class="highlight">舌乳頭萎縮（粘膜萎縮）</span>、口角炎、嚥下障害</td>
+        </tr>
+        <tr>
+          <td><span class="key">巨赤芽球性貧血</span></td>
+          <td>大球性正色素性<br>（MCV↑）</td>
+          <td>ビタミンB12欠乏、葉酸欠乏</td>
+          <td><span class="highlight">Hunter舌炎</span>（平滑舌＋発赤＋灼熱感）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">鉄欠乏 vs B12欠乏の舌の違い</div>
+        <ul>
+          <li><span class="key">鉄欠乏</span>：舌乳頭萎縮（平滑舌）、<span class="caution">灼熱感なし</span></li>
+          <li><span class="key">B12欠乏</span>：Hunter舌炎 = 平滑舌 ＋ <span class="highlight">発赤・灼熱感</span></li>
+        </ul>
+      </div>
+
+      <h3>Plummer-Vinson症候群</h3>
+      <p><span class="key">鉄欠乏性貧血</span>に以下を合併したもの：</p>
+      <ul>
+        <li>舌乳頭萎縮（平滑舌）</li>
+        <li>舌炎、口角炎、口内炎</li>
+        <li>味覚障害</li>
+        <li><span class="highlight">嚥下障害</span>（食道のweb形成）</li>
+        <li>スプーン状爪（匙状爪）</li>
+      </ul>
+
+      <h3>胃全摘後の貧血</h3>
+      <p>胃全摘出術後は以下の理由で巨赤芽球性貧血が生じる：</p>
+      <ul>
+        <li><span class="highlight">内因子の欠乏</span>：胃壁細胞が産生する内因子がなくなる</li>
+        <li><span class="highlight">ビタミンB12の吸収不全</span>：内因子と結合できず回腸で吸収されない</li>
+      </ul>
+      <p class="note">※鉄欠乏も併発することがある（胃酸による鉄の還元・吸収低下）</p>
+
+      <div class="question-box">
+        <div class="q-number">113A10</div>
+        <p>大球性正色素性貧血を示し、舌に発赤、灼熱感および舌乳頭の萎縮がみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 地図状舌<br>
+          b Hunter舌炎<br>
+          c 正中菱形舌炎<br>
+          d Peutz-Jeghers症候群<br>
+          e Plummer-Vinson症候群
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】大球性正色素性貧血（MCV↑）＋発赤・灼熱感・舌乳頭萎縮 → <span class="key">Hunter舌炎</span>（ビタミンB12欠乏）。Plummer-Vinson症候群は<span class="caution">小球性低色素性貧血</span>（鉄欠乏）で灼熱感を伴わない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117D20</div>
+        <p>鉄欠乏性貧血でみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 巨　舌<br>
+          b 偽　膜<br>
+          c 溝　舌<br>
+          d 粘膜萎縮<br>
+          e 粘膜下出血
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】鉄欠乏性貧血では<span class="key">舌乳頭萎縮（粘膜萎縮）</span>がみられる。巨舌は甲状腺機能低下症、偽膜は感染症、溝舌は先天性、粘膜下出血は出血傾向。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B10（図あり）</div>
+        <p>55歳の女性。舌の灼熱感を主訴として来院した。3年前に胃全摘出術を受け、6か月前から自覚しているという。初診時の舌の写真（別冊No. 10）を別に示す。血液検査の結果を表に示す。考えられる原因はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 鉄の摂取不足<br>
+          b 内因子の欠乏<br>
+          c 葉酸の吸収不全<br>
+          d ビタミンB12の吸収不全<br>
+          e プロスタグランジンの合成阻害
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】胃全摘後の灼熱感を伴う舌症状 → <span class="key">Hunter舌炎</span>を疑う。胃壁細胞から<span class="highlight">内因子</span>が分泌されなくなり、<span class="highlight">ビタミンB12の吸収不全</span>が起こる。</p>
+      </div>
+
+      <h2>出血傾向を示す疾患</h2>
+
+      <h3>出血傾向の原因</h3>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>代表疾患</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>血小板減少</td>
+          <td>白血病、ITP、DIC</td>
+          <td>点状出血、紫斑</td>
+        </tr>
+        <tr>
+          <td>凝固因子異常</td>
+          <td>血友病、肝硬変</td>
+          <td>関節内出血（血友病）</td>
+        </tr>
+        <tr>
+          <td>血管壁異常</td>
+          <td>壊血病（ビタミンC欠乏）</td>
+          <td>歯肉出血</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117B6</div>
+        <p>出血傾向を示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心内膜炎<br>
+          b 急性白血病<br>
+          c クレチン病<br>
+          d Basedow病<br>
+          e 鉄欠乏性貧血
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">急性白血病</span>では骨髄での正常造血が抑制され、血小板減少による<span class="highlight">出血傾向</span>を示す。心内膜炎は感染症、クレチン病は甲状腺機能低下、Basedow病は甲状腺機能亢進、鉄欠乏性貧血は出血傾向なし。</p>
+      </div>
+
+      <h2>チアノーゼ</h2>
+      <p><span class="key">チアノーゼ</span>：還元ヘモグロビンが<span class="highlight">5g/dL以上</span>に増加し、皮膚・粘膜が<span class="key">青紫色</span>を呈する状態。</p>
+
+      <h3>中枢性 vs 末梢性チアノーゼ</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>原因疾患</th>
+          <th>特徴</th>
+          <th>出現部位</th>
+        </tr>
+        <tr>
+          <td><span class="key">中枢性</span></td>
+          <td>呼吸器疾患、先天性心疾患、メトヘモグロビン血症</td>
+          <td><span class="highlight">末梢は温かい</span>、酸素投与で改善、ばち指</td>
+          <td>口唇、粘膜、全身</td>
+        </tr>
+        <tr>
+          <td><span class="key">末梢性</span></td>
+          <td>ショック、心拍出量低下、寒冷</td>
+          <td><span class="caution">末梢は冷たい</span>、酸素投与で改善しない</td>
+          <td>四肢末端、耳朶、鼻尖</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">チアノーゼの鑑別ポイント</div>
+        <ul>
+          <li>中枢性：SaO2↓、<span class="highlight">温かい＋酸素で改善</span></li>
+          <li>末梢性：SaO2正常、<span class="caution">冷たい＋酸素で改善しない</span></li>
+        </ul>
+      </div>
+
+      <h3>先天性心疾患とチアノーゼ</h3>
+      <p>チアノーゼを伴う先天性心疾患（右→左シャント）では<span class="highlight">太鼓ばち指</span>がみられる。</p>
+      <p class="note">※太鼓ばち指：指先の爪周囲組織の肥厚により指先が太鼓のばちのように膨らむ</p>
+
+      <div class="question-box">
+        <div class="q-number">116D1</div>
+        <p>チアノーゼがみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血友病<br>
+          b 糖尿病<br>
+          c 白血病<br>
+          d ネフローゼ症候群<br>
+          e メトヘモグロビン血症
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">メトヘモグロビン血症</span>では、ヘモグロビンの鉄が酸化され酸素運搬能が低下し、<span class="highlight">中枢性チアノーゼ</span>を呈する。血友病は出血傾向、糖尿病は代謝異常、白血病は造血器腫瘍、ネフローゼは浮腫。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B2</div>
+        <p>チアノーゼを先天性心疾患児にみられる身体的所見はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 合　指<br>
+          b 多　指<br>
+          c 太鼓ばち指<br>
+          d スプーン状爪<br>
+          e 手掌の角化異常
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】チアノーゼを伴う先天性心疾患では慢性的な低酸素状態により<span class="highlight">太鼓ばち指（ばち状指）</span>がみられる。スプーン状爪は<span class="caution">鉄欠乏性貧血</span>の所見。</p>
+      </div>
+
+      <h2>肝硬変と口腔症候</h2>
+      <p><span class="key">肝硬変</span>：慢性肝疾患の終末像。肝機能低下により様々な症状が出現。</p>
+
+      <h3>肝硬変の症状と口腔との関連</h3>
+      <table>
+        <tr>
+          <th>症状</th>
+          <th>機序</th>
+          <th>歯科との関連</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">出血傾向</span></td>
+          <td>凝固因子産生↓（PT延長）</td>
+          <td>観血処置時の止血困難</td>
+        </tr>
+        <tr>
+          <td>黄疸</td>
+          <td>ビリルビン代謝障害</td>
+          <td>口腔粘膜の黄染</td>
+        </tr>
+        <tr>
+          <td>浮腫・腹水</td>
+          <td><span class="key">アルブミン低下</span></td>
+          <td>薬物の血中濃度変化</td>
+        </tr>
+        <tr>
+          <td>手掌紅斑・くも状血管腫</td>
+          <td>エストロゲン代謝障害</td>
+          <td>-</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">118A6</div>
+        <p>肝硬変でみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血小板数増加<br>
+          b 白血球数増加<br>
+          c アルブミン低下<br>
+          d 総ビリルビン低下<br>
+          e プロトロンビン時間短縮
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】肝硬変では肝でのタンパク合成能が低下し、<span class="highlight">アルブミン低下</span>がみられる。また凝固因子産生低下により<span class="caution">PT延長</span>（短縮ではない）、脾機能亢進により<span class="caution">血小板数減少</span>、ビリルビン代謝障害により<span class="caution">総ビリルビン上昇</span>。</p>
+      </div>
+
+      <h2>糖尿病と口腔症候</h2>
+      <p><span class="key">糖尿病</span>：インスリンの絶対的または相対的不足による代謝障害。</p>
+
+      <h3>糖尿病の口腔との関連</h3>
+      <ul>
+        <li><span class="highlight">歯周病の悪化</span>：糖尿病の「第6の合併症」</li>
+        <li><span class="key">易感染性</span>：好中球機能低下、創傷治癒遅延</li>
+        <li>口腔乾燥：高血糖による浸透圧利尿</li>
+        <li>口腔カンジダ症：免疫力低下</li>
+      </ul>
+
+      <h3>糖尿病と代謝性アシドーシス</h3>
+      <p>糖尿病で血糖コントロール不良の場合、脂肪分解亢進により<span class="highlight">ケトン体</span>が蓄積し、<span class="key">代謝性アシドーシス</span>（糖尿病性ケトアシドーシス）を引き起こす。</p>
+
+      <div class="question-box">
+        <div class="q-number">112B36</div>
+        <p>糖尿病患者の歯科治療に際し、特に注意すべきなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 低血糖<br>
+          b 血圧低下<br>
+          c 出血傾向<br>
+          d 術後感染<br>
+          e 病態失認
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】糖尿病患者では、食事制限下での治療による<span class="highlight">低血糖</span>と、易感染性による<span class="highlight">術後感染</span>に特に注意が必要。出血傾向は糖尿病の特徴ではない（凝固系は正常）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C1</div>
+        <p>代謝性アシドーシスの原因となるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 嘔　吐<br>
+          b 過呼吸<br>
+          c 糖尿病<br>
+          d 気道閉塞<br>
+          e アルドステロンの過剰分泌
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">糖尿病</span>ではケトン体蓄積により<span class="highlight">代謝性アシドーシス</span>が生じる。嘔吐は胃酸喪失で代謝性アルカローシス、過呼吸はCO2排出で呼吸性アルカローシス、気道閉塞はCO2貯留で呼吸性アシドーシス。</p>
+      </div>
+
+      <h2>神経疾患と口腔症候</h2>
+
+      <h3>Parkinson病</h3>
+      <p><span class="key">Parkinson病</span>：中脳黒質の細胞変性によりドパミン産生が低下し、錐体外路系神経変性疾患。</p>
+
+      <h3>Parkinson病の口腔領域症状</h3>
+      <ul>
+        <li><span class="highlight">流涎</span>：嚥下機能低下による唾液の流出</li>
+        <li><span class="highlight">口腔ジスキネジア</span>：口が不随意に動く</li>
+        <li>開口保持困難：同じ姿勢を保てない</li>
+        <li>舌振戦・口唇振戦</li>
+        <li><span class="key">仮面様顔貌</span>：表情筋の運動低下</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108B34（図あり）</div>
+        <p>73歳の女性。食事がとれないことを主訴として来院した。表情に乏しく、小刻みに歩行し入室した。診察室入室時の姿勢の写真（別冊No.34）を別に示す。本疾患でみられる口腔症状はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108B34_1.png" alt="別冊No.34">
+        </div>
+        <div class="choices">
+          a 流　涎<br>
+          b 口呼吸<br>
+          c 溝状舌<br>
+          d 口腔自傷<br>
+          e 口腔ジスキネジア
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】表情乏しい＋小刻み歩行＋前傾姿勢 → <span class="key">Parkinson病</span>。口腔症状として<span class="highlight">流涎</span>（嚥下機能低下）と<span class="highlight">口腔ジスキネジア</span>（不随意運動）がみられる。</p>
+      </div>
+
+      <h2>免疫不全と口腔症候</h2>
+
+      <h3>AIDS（後天性免疫不全症候群）</h3>
+      <p>HIVによるCD4陽性T細胞の破壊により免疫不全状態となり、日和見感染症を発症。</p>
+
+      <h3>AIDS関連口腔病変</h3>
+      <ul>
+        <li><span class="highlight">口腔カンジダ症</span>：最も高頻度</li>
+        <li>毛状白板症：EBウイルスによる舌側縁の白色病変</li>
+        <li>カポジ肉腫：口蓋に好発する紫紅色腫瘤</li>
+        <li>壊死性潰瘍性歯肉炎/歯周炎</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">105A23</div>
+        <p>AIDS患者に高頻度にみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 類天疱瘡<br>
+          b 歯肉増殖症<br>
+          c 口腔扁平苔癬<br>
+          d 口腔カンジダ症<br>
+          e 慢性再発性アフタ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】AIDS患者では細胞性免疫低下により<span class="highlight">口腔カンジダ症</span>が高頻度にみられる。類天疱瘡は自己免疫性水疱症、歯肉増殖症は薬物性、扁平苔癬は自己免疫関連。</p>
+      </div>
+
+      <h2>顔貌所見と全身疾患</h2>
+
+      <h3>特徴的な顔貌と疾患の対応</h3>
+      <table>
+        <tr>
+          <th>顔貌所見</th>
+          <th>疾患・原因</th>
+        </tr>
+        <tr>
+          <td><span class="key">仮面様顔貌</span></td>
+          <td>Parkinson病（表情筋運動↓）</td>
+        </tr>
+        <tr>
+          <td><span class="key">満月様顔貌</span></td>
+          <td><span class="highlight">副腎皮質ステロイド薬長期服用</span>、Cushing症候群</td>
+        </tr>
+        <tr>
+          <td><span class="key">蝶形紅斑</span></td>
+          <td>全身性エリテマトーデス（SLE）</td>
+        </tr>
+        <tr>
+          <td>Hippocrates様顔貌</td>
+          <td>重症疾患の末期（眼窩陥凹、頬部陥凹）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115C5</div>
+        <p>顔貌所見と原因の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 蝶形紅斑 ーーーーーーーー Parkinson病<br>
+          b 仮面様顔貌 ーーーーーーーー 全身性エリテマトーデス<br>
+          c 満月様顔貌 ーーーーーーーー 副腎皮質ステロイド薬長期服用<br>
+          d 毛細血管拡張 ーーーーーーー 腎不全<br>
+          e Hippocrates様顔貌 ーーーー 慢性GVHD
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">満月様顔貌</span>は副腎皮質ステロイド薬長期服用やCushing症候群でみられる。蝶形紅斑はSLE、仮面様顔貌はParkinson病が正しい組み合わせ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118D18</div>
+        <p>症候と全身疾患の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 多　尿 ーーーーー 脂質異常症<br>
+          b 浮　腫 ーーーーー ネフローゼ症候群<br>
+          c 平滑舌 ーーーーー 慢性骨髄性白血病<br>
+          d 関節内出血 ーーー 血小板減少性紫斑病<br>
+          e チアノーゼ ーーー 巨赤芽球性貧血
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">ネフローゼ症候群</span>では大量のタンパク尿によりアルブミンが低下し、<span class="highlight">浮腫</span>が生じる。多尿は糖尿病、平滑舌は貧血（鉄欠乏/B12欠乏）、関節内出血は<span class="caution">血友病</span>（凝固因子異常）、チアノーゼは呼吸器・循環器疾患。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

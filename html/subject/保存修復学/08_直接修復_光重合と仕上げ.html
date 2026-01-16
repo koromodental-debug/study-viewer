@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>光重合と仕上げ - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / 直接修復</span>
+    <h1>光重合と仕上げ</h1>
+    <div class="container">
+
+      <h2>光重合方式の原理</h2>
+      <p>コンポジットレジンの光重合は、可視光線（青色光）を利用してラジカル重合反応を起こす。</p>
+
+      <h3>光重合の構成要素</h3>
+      <table>
+        <tr><th>成分</th><th>役割</th><th>物質名</th></tr>
+        <tr><td class="key">光増感剤</td><td>重合開始剤</td><td class="highlight">カンファーキノン</td></tr>
+        <tr><td class="key">還元剤</td><td>重合促進剤</td><td>第3級アミン（ジメチルアミノエチルメタクリレート）</td></tr>
+        <tr><td class="key">光源</td><td>ラジカル発生</td><td>可視光線（青色光、<span class="highlight">470nm付近</span>がピーク）</td></tr>
+      </table>
+
+      <h3>重合反応機序</h3>
+      <p>カンファーキノンが470nm付近の可視光を吸収 → 励起 → フリーラジカル発生 → 重合開始 → レジンモノマー高分子化 → 重合・硬化</p>
+
+      <h2>コントラクションギャップ</h2>
+      <p>窩洞に充填されたCRは重合時に収縮し、<span class="key">重合収縮力＞接着力</span>の条件になると、歯質/レジン間に隙間が生じる。これをコントラクションギャップという。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">光重合型CRの特徴</div>
+        <p><span class="caution">光重合型CRは化学重合型CRよりコントラクションギャップを生じやすい</span></p>
+      </div>
+
+      <h3>C値（C-factor）</h3>
+      <p>重合収縮応力は<span class="key">C値（C-factor）</span>によって大きな影響を受ける。</p>
+      <p><span class="highlight">C値 = 接着面積 / 非接着面積</span>（c-value: configuration value）</p>
+
+      <table>
+        <tr><th>窩洞</th><th>C値</th><th>重合収縮応力の影響</th></tr>
+        <tr><td>1級窩洞（咬合面）</td><td class="caution">大（5.0）</td><td>受けやすい</td></tr>
+        <tr><td>5級窩洞（歯頸部）</td><td class="caution">大（5.0）</td><td>受けやすい</td></tr>
+        <tr><td>2級窩洞</td><td>中</td><td>中程度</td></tr>
+        <tr><td>4級窩洞（切縁）</td><td>小（0.2）</td><td>受けにくい</td></tr>
+      </table>
+      <p class="note">C値が大きい＝接着面積が大きい＝レジンが広い面積の窩壁と接着している → 収縮時の応力が大きくなる</p>
+
+      <h2>重合収縮応力の緩和法</h2>
+
+      <h3>コントラクションギャップの予防法</h3>
+      <ul>
+        <li><span class="highlight">分割積層充填（レイヤリング）</span>：1回の充填量を少なくして段階的に重合</li>
+        <li><span class="key">フロアブルCR</span>（低粘性レジン）の併用：初層に使用</li>
+        <li><span class="caution">修復当日の研磨回避</span>：24時間以上経過後に研磨</li>
+        <li><span class="highlight">歯質透過光による重合</span>：窩壁側から光照射</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">光照射の方向と重合収縮</div>
+        <ul>
+          <li>重合収縮は<span class="highlight">光照射される方向に向かって収縮</span>する</li>
+          <li>3級窩洞：<span class="key">唇側壁または舌側壁を介して</span>光照射</li>
+          <li>歯質透過光で窩洞内レジンを重合 → 窩壁面のギャップ発生を抑制</li>
+        </ul>
+      </div>
+
+      <h2>ホワイトマージン</h2>
+      <p>コントラクションギャップにより窩縁部に生じる白濁した辺縁漏洩。審美不良や二次齲蝕の原因となる。</p>
+
+      <h3>ホワイトマージンの予防</h3>
+      <ul>
+        <li><span class="highlight">ベベル付与</span>：窩縁にエナメル質のベベルを付与し、接着面積を増大</li>
+        <li><span class="highlight">分割積層填塞</span>：重合収縮応力を緩和</li>
+      </ul>
+
+      <h3>ホワイトマージンへの対応（発生後）</h3>
+      <p><span class="key">レジンインプレグネーションテクニック</span>：エッチング操作を経て、ボンディングレジンを浸透硬化させて封鎖する</p>
+      <p class="note">レジンインプレグネーションはエナメル質の微小亀裂やコントラクションギャップの封鎖にも有効</p>
+
+      <h2>CR修復後の仕上げ</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">重要：研磨のタイミング</div>
+        <ul>
+          <li><span class="key">当日</span>：咬合調整のみにとどめる</li>
+          <li><span class="highlight">次回来院時（24時間以上経過後）</span>：形態修正・仕上げ研磨</li>
+        </ul>
+      </div>
+
+      <h3>次回来院時に研磨を行う理由</h3>
+      <ul>
+        <li>当日は重合反応が<span class="caution">完全に終了していない</span></li>
+        <li>重合収縮応力が接着界面に作用している</li>
+        <li><span class="highlight">吸水作用</span>による重合収縮応力の緩和を期待する</li>
+      </ul>
+
+      <h3>当日：咬合調整</h3>
+      <p>窩縁から大幅に溢出したレジンの除去と咬合調整にとどめる。</p>
+      <ul>
+        <li>ダイヤモンドポイント</li>
+        <li>ホワイトポイント</li>
+        <li>カーバイドバー</li>
+        <li>レジンナイフ</li>
+      </ul>
+
+      <h3>次回来院時：形態修正</h3>
+      <p><span class="key">注水下</span>で行い、摩擦熱の発生を防止する。</p>
+      <ul>
+        <li><span class="key">超微粒子ダイヤモンドポイント</span></li>
+        <li>ホワイトポイント</li>
+      </ul>
+
+      <h3>次回来院時：仕上げ研磨</h3>
+      <table>
+        <tr><th>器具</th><th>用途</th></tr>
+        <tr><td><span class="key">研磨用ディスク</span></td><td>唇側面・頬側面の研磨</td></tr>
+        <tr><td><span class="key">シリコーンポイント</span></td><td>咬合面・舌側面の研磨</td></tr>
+        <tr><td><span class="key">研磨用ストリップス</span></td><td>隣接面の研磨</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">仕上げ研磨のポイント</div>
+        <ul>
+          <li><span class="highlight">目の粗いもの → 細かいもの</span>へ順次行う</li>
+          <li>窩縁に対して<span class="key">直角</span>に操作する</li>
+          <li>回転方向は<span class="highlight">修復物側 → 歯質側</span></li>
+        </ul>
+      </div>
+
+      <h2>CR修復の予後</h2>
+
+      <h3>予後不良の原因と機序</h3>
+      <table>
+        <tr><th>原因</th><th>機序</th><th>臨床所見</th></tr>
+        <tr><td><span class="key">過剰填塞</span></td><td>余剰レジンが研磨不足のまま残存し、表面が粗造で着色しやすい</td><td><span class="highlight">辺縁部の変色・審美不良</span></td></tr>
+        <tr><td>コントラクションギャップ</td><td>重合収縮により窩壁との間に隙間が生じる</td><td>辺縁漏洩、術後疼痛、二次齲蝕</td></tr>
+        <tr><td>血液・唾液の混入</td><td>接着操作時の汚染により接着不良</td><td>脱離、辺縁漏洩</td></tr>
+        <tr><td>磨耗</td><td>咬合力による経時的摩耗</td><td>咬合面の平坦化</td></tr>
+        <tr><td>二次齲蝕</td><td>辺縁封鎖性の低下による細菌侵入</td><td>修復物周囲の齲蝕</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核：審美不良の原因鑑別</div>
+        <ul>
+          <li><span class="highlight">過剰填塞</span>：余剰レジンが経時的に着色・変色</li>
+          <li>コントラクションギャップは辺縁漏洩の原因（変色の主因ではない）</li>
+          <li>血液混入は<span class="caution">修復直後から</span>変色する</li>
+        </ul>
+      </div>
+
+      <h3>術後管理</h3>
+      <ul>
+        <li>術後数日以内：歯髄の状態、咬合状態、色調の調和を確認</li>
+        <li>6か月または1年ごとの定期検診：辺縁適合性、二次齲蝕、摩耗状態、修復物や歯質の破折の有無</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103B32</div>
+        <p>25歳の男性。上顎左側犬歯の一過性の冷水痛を主訴として来院した。コンポジットレジン修復を行うこととした。初診時の口腔内写真（別冊No.30A）と窩洞形成後の口腔内写真（別冊No.30B）とを別に示す。<br>コンポジットレジンの重合収縮応力を緩和するために有効なのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103B32.png" alt="別冊No.30">
+        </div>
+        <div class="choices">
+          a 分割積層充填<br>
+          b ベベルの付与<br>
+          c 舌側面からの圧接<br>
+          d 唇側からの光照射<br>
+          e ポリエステル製ストリップスの使用
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】写真から3級窩洞（隣接面）であることがわかる。<span class="key">分割積層充填</span>は1回の重合量を減らし収縮応力を緩和する。<span class="key">唇側からの光照射</span>は歯質透過光によりレジンを窩壁方向に収縮させ、コントラクションギャップを防止する。ベベル付与は接着面積増大のためで収縮応力緩和ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D46</div>
+        <p>コンポジットレジン修復でホワイトマージン発生の予防に有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 即日研磨<br>
+          b ベベル付与<br>
+          c 分割積層填塞<br>
+          d セレクティブエッチング<br>
+          e レジンインプレグネーション
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】ホワイトマージンはコントラクションギャップによる辺縁漏洩。<span class="key">ベベル付与</span>は接着面積を増大させ辺縁封鎖性を向上。<span class="key">分割積層填塞</span>は重合収縮応力を緩和。<span class="caution">即日研磨は禁忌</span>（重合反応が完了していない）。レジンインプレグネーションは発生後の対応法で予防ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C23</div>
+        <p>59歳の男性。下顎右側第一大臼歯の冷水痛を主訴として来院した。歯髄電気診に生活反応を示した。初診時の口腔内写真（別冊No.3A）、窩洞形成終了後の口腔内写真（別冊No.3B）、接着処理を行った後の修復操作中の口腔内写真（別冊No.3C）及び修復操作後の口腔内写真（別冊No.3D）を別に示す。<br>この充填法で得られる効果はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116C23_1.png" alt="別冊No.3A-B">
+          <img src="../../../images/116回_Web画像/116C23_2.png" alt="別冊No.3C-D">
+        </div>
+        <div class="choices">
+          a 研磨性の向上<br>
+          b 透明性の向上<br>
+          c 象牙質の即時封鎖<br>
+          d 遊離エナメル質の保護<br>
+          e コントラクションギャップの防止
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】写真から分割積層充填を行っていることがわかる。分割積層充填は1回の充填量を少なくして段階的に重合することで、重合収縮応力を緩和し<span class="key">コントラクションギャップの防止</span>に有効である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109B9</div>
+        <p>30歳の女性。両側の下顎中切歯の審美不良を主訴として来院した。1┬1は15年前に修復処置を受けたという。修復物を除去してコンポジットレジン修復を行うこととした。初診時と光照射後の口腔内写真（別冊No.9A）と器具の写真（別冊No.9B）を別に示す。
+当日、次に行う処置で用いるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109B9_1.png" alt="別冊No.9">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】CR修復の当日に行うのは咬合調整のみ。写真の器具から、咬合調整に用いるのはダイヤモンドポイントや咬合紙などである。仕上げ研磨用の研磨用ディスクやシリコーンポイントは次回来院時（24時間以上経過後）に使用する。当日は重合反応が完全に終了しておらず、吸水作用による重合収縮応力の緩和を期待して研磨は延期する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B52</div>
+        <p>50歳の女性。上顎右側側切歯の審美不良を主訴として来院した。10年前に修復処置を受けたが、1年前から気になっていたという。特に症状はない。初診時のロ腔内写真（別冊No.4）を別に示す。<br>
+考えられる原因はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111B52_1.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a 磨　耗<br>
+          b 過剰填塞<br>
+          c 口腔清掃不良<br>
+          d 接着操作時の血液の混入<br>
+          e コントラクションギャップ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】10年経過後の審美不良で、症状はない。写真では修復物辺縁に沿って変色が認められる。これは<span class="key">過剰填塞</span>により余剰レジンが着色したもの。aの磨耗は咬合面に生じる。cの口腔清掃不良ならプラーク付着や歯肉炎症を伴う。dの血液混入は修復直後から変色する。eのコントラクションギャップは辺縁漏洩や術後疼痛の原因であり、経年的な変色の主因ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

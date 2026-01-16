@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CR修復手技 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / 直接修復</span>
+    <h1>CR修復手技</h1>
+    <div class="container">
+
+      <h2>CR修復の基本手順</h2>
+      <div class="point-box">
+        <div class="point-box-title">直接CR修復の手順</div>
+        <ol>
+          <li><span class="key">窩洞形成・感染歯質除去</span></li>
+          <li><span class="key">隔壁装着</span>（2級窩洞：ウェッジ→マトリックス→リテーナー）</li>
+          <li><span class="key">歯面処理</span>（エッチング→プライミング→ボンディング）</li>
+          <li><span class="key">CR充填</span>（積層充填）</li>
+          <li><span class="key">光照射</span></li>
+          <li><span class="key">形態修正・研磨</span>（24時間以上経過後）</li>
+        </ol>
+      </div>
+
+      <h2>齲蝕象牙質の除去</h2>
+      <table>
+        <tr><th>層</th><th>別名</th><th>細菌</th><th>再石灰化</th><th>齲蝕検知液</th><th>対応</th></tr>
+        <tr><td><span class="key">感染層（外層）</span></td><td>第一層</td><td>あり</td><td><span class="caution">不能</span></td><td><span class="highlight">濃染</span></td><td><span class="highlight">除去</span></td></tr>
+        <tr><td><span class="key">無菌層（内層）</span></td><td>第二層</td><td>なし</td><td><span class="highlight">可能</span></td><td>淡染</td><td><span class="highlight">保存</span></td></tr>
+      </table>
+
+      <h3>齲蝕検知液の使用法</h3>
+      <ul>
+        <li>滴下 → <span class="highlight">10秒間静置</span> → 水洗 → 乾燥 → 判別</li>
+        <li>濃染部を除去後、<span class="highlight">再び染色</span>して繰り返す</li>
+        <li><span class="key">ポリプロピレングリコール</span>液：不染状態まで除去</li>
+        <li><span class="key">プロピレングリコール</span>液：濃いピンクは保存（淡染部まで削除しない）</li>
+      </ul>
+
+      <h2>CR修復の窩洞形態</h2>
+      <div class="point-box">
+        <div class="point-box-title">CR修復で不要になる形態</div>
+        <ul>
+          <li><span class="highlight">予防拡大</span>：不要（M.I.の概念）</li>
+          <li><span class="highlight">保持形態</span>：不要（接着で保持）</li>
+        </ul>
+        <p class="note">※抵抗形態、便宜形態、窩縁形態は必要</p>
+      </div>
+
+      <h3>ベベルの種類と適応</h3>
+      <table>
+        <tr><th>種類</th><th>適応</th></tr>
+        <tr><td><span class="key">ストレートベベル</span></td><td>前歯部唇・舌側面、4級修復</td></tr>
+        <tr><td><span class="key">ノンベベル</span></td><td><span class="highlight">臼歯部咬合面</span>（咬合力負荷部）</td></tr>
+        <tr><td><span class="key">ラウンドベベル</span></td><td>臼歯部咬合面、前歯部</td></tr>
+      </table>
+
+      <h3>ベベル付与の目的</h3>
+      <ul>
+        <li><span class="highlight">接着面積の増大</span></li>
+        <li><span class="highlight">窩縁部亀裂（ホワイトマージン）の防止</span></li>
+        <li><span class="highlight">色調適合性の向上</span></li>
+      </ul>
+      <p class="note">※拘止効力の付与、重合収縮の補償は<span class="caution">目的ではない</span></p>
+
+      <h2>Cファクター（C値）</h2>
+      <p><span class="key">Cファクター = 接着面積 / 非接着面積</span></p>
+      <table>
+        <tr><th>窩洞形態</th><th>接着面積/非接着面積</th><th>C値</th></tr>
+        <tr><td>1面接着（開放窩洞）</td><td>1/5</td><td>0.2</td></tr>
+        <tr><td>3面接着</td><td>3/3</td><td>1.0</td></tr>
+        <tr><td><span class="highlight">5面接着（箱型窩洞）</span></td><td>5/1</td><td><span class="highlight">5.0</span></td></tr>
+      </table>
+      <p class="note">C値が大きい → コントラクションギャップが生じやすい → <span class="key">分割積層充填</span>で予防</p>
+
+      <h2>隔壁法</h2>
+      <table>
+        <tr><th>修復部位</th><th>隔壁の種類</th></tr>
+        <tr><td><span class="key">2級修復（隣接面）</span></td><td>メタルマトリックスバンド、トッフルマイヤー式リテーナー、ウェッジ</td></tr>
+        <tr><td><span class="highlight">唇・頬側面歯頸部修復</span></td><td><span class="highlight">サービカルマトリックス</span>（透明で光照射可能）</td></tr>
+        <tr><td>切縁隅角を含む修復</td><td>クラウンフォーム</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">くさび状欠損のCR修復に必要な器材</div>
+        <ul>
+          <li><span class="highlight">ガムリトラクター</span>：歯肉排除で歯頸部を露出</li>
+          <li><span class="highlight">サービカルマトリックス</span>：歯頸部用の透明マトリックス</li>
+        </ul>
+        <p class="note">※くさび状欠損は<span class="caution">隣接面ではない</span>ため、ウェッジ・セパレーターは使用しない</p>
+      </div>
+
+      <h2>補修修復の手順</h2>
+      <ol>
+        <li><span class="key">ウェッジ挿入</span></li>
+        <li><span class="key">マトリックス装着</span></li>
+        <li><span class="key">リテーナー装着</span></li>
+        <li><span class="highlight">シランカップリング剤塗布</span>（既存CRフィラーへの接着）</li>
+        <li><span class="key">ボンディング材塗布</span></li>
+        <li>CR充填・光照射</li>
+      </ol>
+
+      <h2>複数歯修復の順序</h2>
+      <ol>
+        <li><span class="key">全ての歯の感染歯質を先に除去</span></li>
+        <li><span class="key">1歯ずつCR修復を完成</span>させる</li>
+        <li>隣接歯完成後に次の歯の隔壁を装着</li>
+      </ol>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103D45</div>
+        <p>齲蝕検知液で染色し、濃染部の歯質を除去中。次に行うのはどれか。</p>
+        <div class="choices">
+          a 接着操作を行う<br>b ベベルを付与する<br>c 再び齲蝕検知液で染色する<br>d 水酸化カルシウム剤を貼付する<br>e ラウンドバーでさらに除去する
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】齲蝕検知液で濃染部を除去した後は、<span class="highlight">再び染色</span>して残存する感染象牙質の有無を確認。「染色→除去」を繰り返す。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C118</div>
+        <p>メタルインレーと比較してCR修復で不要になるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 予防拡大<br>b 保持形態<br>c 抵抗形態<br>d 便宜形態<br>e 窩縁形態
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】CR修復は接着を基本とするため、<span class="highlight">予防拡大</span>（M.I.の概念で不要）と<span class="highlight">保持形態</span>（アンダーカット等不要）は不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A87</div>
+        <p>上顎前歯唇側面のCR修復窩洞にベベルを付与する目的はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 拘止効力の付与<br>b 重合収縮の補償<br>c 接着面積の増大<br>d 窩縁部亀裂の防止<br>e 色調適合性の向上
+        </div>
+        <div class="answer">正解：c, d, e</div>
+        <p>【解説】ベベル付与の目的は、<span class="highlight">接着面積の増大、窩縁部亀裂の防止、色調適合性の向上</span>。拘止効力はメタルインレーの概念。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A102</div>
+        <p>Cファクターが最も大きい窩洞はどれか。</p>
+        <div class="answer">正解：5面接着の箱型窩洞（C値5.0）</div>
+        <p>【解説】Cファクター＝接着面積/非接着面積。5面接着（1面のみ開放）の窩洞がC値最大。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109D2</div>
+        <p>小臼歯部頬側歯頸部のくさび状欠損のCR修復。使用する器材はどれか。2つ選べ。</p>
+        <div class="choices">
+          a ウェッジ<br>b ガムリトラクター<br>c サービカルマトリックス<br>d エリオットのセパレーター<br>e メタルマトリックスバンド
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】くさび状欠損は<span class="key">隣接面ではなく頬側歯頸部</span>の欠損。<span class="highlight">ガムリトラクター</span>（歯肉排除）と<span class="highlight">サービカルマトリックス</span>（歯頸部用隔壁）を使用。ウェッジ、セパレーターは隣接面用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D67</div>
+        <p>既存CR修復物の補修修復（2級窩洞）で4番目に行う処理はどれか。</p>
+        <div class="choices">
+          a ウェッジ挿入<br>b マトリックス装着<br>c ボンディング材塗布<br>d リング状リテーナー装着<br>e シランカップリング剤塗布
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】補修修復の手順：①ウェッジ→②マトリックス→③リテーナー→④<span class="highlight">シランカップリング剤</span>→⑤ボンディング。シランカップリング剤は既存CRのフィラーと新しいCRを結合させる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A90</div>
+        <p>54┐の複数歯CR修復。治療過程の正しい順序は？</p>
+        <div class="answer">正解：5┐感染歯質除去→4┐感染歯質除去→4┐CR修復→5┐隔壁装着→5┐CR修復</div>
+        <p>【解説】複数歯修復は<span class="key">まず全て感染歯質除去</span>、次に<span class="key">1歯ずつ完成</span>。隣接歯を完成させてから次の歯の隔壁を装着。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

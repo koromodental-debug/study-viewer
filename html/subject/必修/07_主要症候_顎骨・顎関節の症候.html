@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顎骨・顎関節の症候 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 主要症候</span>
+    <h1>顎骨・顎関節の症候</h1>
+    <div class="container">
+
+      <h2>1. 顎関節症の病態分類</h2>
+      <p>顎関節症は病態により5型に分類される。<span class="highlight">Ⅲ型（円板障害）</span>が最頻出。</p>
+
+      <h3>顎関節症の病態分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>病態</th>
+          <th>主な症状</th>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅰ型</span></td>
+          <td>咀嚼筋痛障害</td>
+          <td>咀嚼筋の圧痛、開口時痛</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅱ型</span></td>
+          <td>顎関節痛障害</td>
+          <td>関節部の疼痛</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅲa型</span></td>
+          <td><span class="highlight">復位性円板障害</span></td>
+          <td>クリック音あり</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅲb型</span></td>
+          <td><span class="highlight">非復位性円板障害</span></td>
+          <td>開口制限、クリック消失</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ⅳ型</span></td>
+          <td>変形性顎関節症</td>
+          <td>クレピタス（捻髪音）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Ⅲa型 → Ⅲb型への移行パターン</div>
+        <ul>
+          <li>Ⅲa型：関節雑音（クリック）あり</li>
+          <li>Ⅲb型：<span class="highlight">雑音が消失</span>し、<span class="highlight">開口制限</span>が出現</li>
+          <li>「クリックが消えて口が開かなくなった」→ Ⅲb型を疑う</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D15</div>
+        <p>関節雑音の既往のある患者が、今朝起床時に突然口が開かなくなったことを主訴として来院した。診察と検査の結果を表に示す。顎関節症の病態分類で疑われるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Ⅰ型<br>
+          b Ⅱ型<br>
+          c Ⅲa型<br>
+          d Ⅲb型<br>
+          e Ⅳ型
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】関節雑音の既往（Ⅲa型）→ 突然の開口障害 → 非復位性円板障害（Ⅲb型）への移行を示す典型例。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109B6</div>
+        <p>42歳の女性。顔面部の開口時痛を主訴として来院した。3か月前から頰部に疼痛を認めるという。最大開口量は42mmであり、開口時の顕著な下顎偏位は発現しないものの、咬筋の圧痛が認められた。疼痛を認める部位を指した写真（別冊No.6A）と左側顎関節のMRI（別冊No.6B）を別に示す。適切な治療法はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 筋のストレッチ<br>
+          b ヒアルロン酸の投与<br>
+          c 副腎皮質ステロイド薬の投与<br>
+          d パンピングマニピュレーションの実施<br>
+          e スタビライゼーションスプリントの使用
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】咬筋の圧痛、開口量正常 → Ⅰ型（咀嚼筋痛障害）。治療は筋のストレッチとスプリント療法。</p>
+      </div>
+
+      <h2>2. 関節円板の転位</h2>
+      <p><span class="highlight">復位性</span>と<span class="highlight">非復位性</span>の違いを理解する。MRIで評価。</p>
+
+      <h3>関節円板転位の分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>円板の動き</th>
+          <th>症状</th>
+          <th>MRI所見</th>
+        </tr>
+        <tr>
+          <td><span class="key">復位性前方転位</span></td>
+          <td>開口時に復位する</td>
+          <td><span class="highlight">クリック音</span></td>
+          <td>閉口時：前方、開口時：正常位</td>
+        </tr>
+        <tr>
+          <td><span class="key">非復位性前方転位</span></td>
+          <td>開口しても復位しない</td>
+          <td><span class="highlight">開口制限</span>、クリック消失</td>
+          <td>閉口時・開口時とも前方</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">クリック音の発生機序</div>
+        <ul>
+          <li>前方転位した関節円板が<span class="highlight">復位するとき</span>に発生</li>
+          <li><span class="caution">穿孔が原因ではない</span></li>
+          <li>相反性クリック：開口時と閉口時の両方で発生</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B11</div>
+        <p>顎関節症のクリック音について正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 関節円板の穿孔が原因である。<br>
+          b 患者は「ザラザラ」という言葉で表現する。<br>
+          c 音がしなければ関節円板の位置は正常である。<br>
+          d 転位した関節円板が復位するときに発生する。<br>
+          e 相反性クリックは関節結節を越えるときに発生する。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】クリックは転位した円板が復位するときに発生する。「ザラザラ」はクレピタス（Ⅳ型）の表現。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A15</div>
+        <p>顎関節雑音の発生に直接関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 関節包の拘縮<br>
+          b 外側靱帯の弛緩<br>
+          c 関節結節の平坦化<br>
+          d 外側翼突筋の過緊張<br>
+          e 関節円板の復位性前方転位
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】関節雑音（クリック）は復位性前方転位した円板が復位する際に発生する。</p>
+      </div>
+
+      <h2>3. 検査法</h2>
+      <p><span class="highlight">関節円板はMRI</span>で評価する。エックス線では骨の評価のみ。</p>
+
+      <h3>顎関節の検査法と評価対象</h3>
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>評価対象</th>
+        </tr>
+        <tr>
+          <td><span class="key">MRI</span></td>
+          <td><span class="highlight">関節円板</span>、滑液貯留、骨髄変化</td>
+        </tr>
+        <tr>
+          <td><span class="key">エックス線・CT</span></td>
+          <td>骨折、骨の変形、下顎頭吸収</td>
+        </tr>
+        <tr>
+          <td><span class="key">触診・聴診</span></td>
+          <td><span class="highlight">クリック</span>の検出</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">118B3</div>
+        <p>エックス線画像で判明せず、MRIで判明する顎関節の症候はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 顎関節痛障害<br>
+          b 関節円板障害<br>
+          c 関節突起骨折<br>
+          d 変形性顎関節症<br>
+          e 進行性下顎頭吸収
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】関節円板は軟組織なのでエックス線では見えない。MRIで評価する。骨折や骨の変形はエックス線で判明。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A26</div>
+        <p>顎関節のクリックの検出に有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a CT<br>
+          b 触診<br>
+          c 聴診<br>
+          d 筋電図検査<br>
+          e 咬合音検査
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】クリックは音と振動なので、触診と聴診で検出する。CTは骨の評価、筋電図は筋活動の評価。</p>
+      </div>
+
+      <h2>4. 開口障害と閉口障害</h2>
+      <p><span class="highlight">開口障害</span>と<span class="highlight">閉口障害</span>の原因を区別する。</p>
+
+      <h3>開口障害 vs 閉口障害</h3>
+      <table>
+        <tr>
+          <th>症状</th>
+          <th>原因</th>
+        </tr>
+        <tr>
+          <td><span class="key">開口障害</span></td>
+          <td>非復位性円板障害、炎症（蜂窩織炎）、顎関節強直症、破傷風</td>
+        </tr>
+        <tr>
+          <td><span class="key">閉口障害</span></td>
+          <td><span class="highlight">顎関節前方脱臼</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">閉口障害の鑑別</div>
+        <ul>
+          <li><span class="key">顎関節前方脱臼</span>：下顎頭が関節結節を越えて前方に逸脱</li>
+          <li>破傷風・放線菌症：<span class="caution">開口障害</span>を起こす（閉口障害ではない）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118D9</div>
+        <p>閉口障害の原因となるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 破傷風<br>
+          b てんかん<br>
+          c 放線菌症<br>
+          d 顎関節前方脱臼<br>
+          e 滑膜性骨軟骨腫症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】顎関節前方脱臼は閉口障害の原因。破傷風・放線菌症は開口障害を起こす。</p>
+      </div>
+
+      <h2>5. 解剖：外側翼突筋</h2>
+      <p><span class="highlight">外側翼突筋</span>は関節円板に停止する唯一の咀嚼筋。</p>
+
+      <div class="question-box">
+        <div class="q-number">108A30</div>
+        <p>顎関節関節円板に停止するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咬筋<br>
+          b 側頭筋<br>
+          c 顎二腹筋<br>
+          d 外側翼突筋<br>
+          e 内側翼突筋
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】外側翼突筋上頭は関節円板に停止する。下頭は下顎頭の翼突筋窩に停止。円板を前方に牽引する作用がある。</p>
+      </div>
+
+      <h2>6. 顎骨壊死（MRONJ）</h2>
+      <p>薬剤性顎骨壊死は<span class="highlight">ビスホスホネート</span>や<span class="highlight">デノスマブ</span>で生じる。</p>
+
+      <h3>顎骨壊死の原因</h3>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>薬剤・状況</th>
+        </tr>
+        <tr>
+          <td><span class="key">薬剤性（MRONJ）</span></td>
+          <td>ビスホスホネート、デノスマブ（抗RANKL抗体）</td>
+        </tr>
+        <tr>
+          <td><span class="key">放射線性</span></td>
+          <td>頭頸部への放射線治療後</td>
+        </tr>
+        <tr>
+          <td><span class="key">がん薬物療法</span></td>
+          <td>シスプラチンなどの抗がん剤</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112A34</div>
+        <p>がんの薬物療法によって口腔に発生する有害事象はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 顎骨壊死<br>
+          b 味覚障害<br>
+          c 口腔粘膜炎<br>
+          d 慢性GVHD<br>
+          e 線維性異形成症
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】がん薬物療法の口腔有害事象：顎骨壊死、味覚障害、口腔粘膜炎。GVHDは移植後、線維性異形成症は発育性疾患。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：顎骨・顎関節の症候の出題ポイント</div>
+        <ul>
+          <li><span class="key">Ⅲa型</span>（復位性）→<span class="key">Ⅲb型</span>（非復位性）：クリック消失＋開口制限</li>
+          <li><span class="key">クリック</span>は円板が<span class="highlight">復位するとき</span>に発生</li>
+          <li><span class="key">関節円板</span>の評価は<span class="highlight">MRI</span>（エックス線では見えない）</li>
+          <li><span class="key">閉口障害</span>＝顎関節前方脱臼</li>
+          <li><span class="key">外側翼突筋</span>が関節円板に停止</li>
+          <li><span class="key">MRONJ</span>：ビスホスホネート、デノスマブによる顎骨壊死</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

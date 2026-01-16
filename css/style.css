@@ -5587,6 +5587,35 @@ body:not(.is-practice) #flashcard-content {
   border-bottom: none;
 }
 
+/* 必修の大項目グループ */
+.deck-hisshu-group {
+  margin-bottom: 8px;
+}
+
+.deck-hisshu-group:last-child {
+  margin-bottom: 0;
+}
+
+.deck-hisshu-header {
+  padding: 10px 16px 6px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #8e8e93;
+  letter-spacing: 0.02em;
+}
+
+.deck-hisshu-group .deck-topic {
+  padding-left: 24px;
+}
+
+.deck-hisshu-group .deck-topic:last-child {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.deck-hisshu-group:last-child .deck-topic:last-child {
+  border-bottom: none;
+}
+
 .deck-topic:active {
   background: #e8e8e8;
 }
@@ -7117,6 +7146,14 @@ body.is-practice .tab-content {
   border-bottom-color: var(--border-color);
 }
 
+[data-theme="dark"] .deck-hisshu-header {
+  color: #98989d;
+}
+
+[data-theme="dark"] .deck-hisshu-group .deck-topic:last-child {
+  border-bottom-color: var(--border-color);
+}
+
 [data-theme="dark"] .deck-topic:active {
   background: rgba(255, 255, 255, 0.08);
 }
@@ -7627,6 +7664,14 @@ body.is-practice .tab-content {
   }
 
   :root:not([data-theme="light"]) .deck-topic {
+    border-bottom-color: var(--border-color);
+  }
+
+  :root:not([data-theme="light"]) .deck-hisshu-header {
+    color: #98989d;
+  }
+
+  :root:not([data-theme="light"]) .deck-hisshu-group .deck-topic:last-child {
     border-bottom-color: var(--border-color);
   }
 

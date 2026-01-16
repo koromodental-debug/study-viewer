@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>薬物に関連する口腔症候 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 07_主要症候</span>
+    <h1>薬物に関連する口腔症候</h1>
+    <div class="container">
+
+      <h2>口腔乾燥を生じる薬物</h2>
+      <p>唾液分泌は<span class="key">副交感神経</span>（アセチルコリン）により促進される。この経路を阻害する薬物で口腔乾燥が生じる。</p>
+
+      <h3>口腔乾燥を引き起こす薬物</h3>
+      <table>
+        <tr>
+          <th>薬物分類</th>
+          <th>代表薬</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">抗コリン薬</span></td>
+          <td>アトロピン硫酸塩</td>
+          <td>ムスカリン受容体拮抗 → 唾液分泌↓</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">抗ヒスタミン薬</span></td>
+          <td>ジフェンヒドラミン</td>
+          <td>抗コリン作用も有する</td>
+        </tr>
+        <tr>
+          <td><span class="key">三環系抗うつ薬</span></td>
+          <td>アミトリプチリン</td>
+          <td>抗コリン作用</td>
+        </tr>
+        <tr>
+          <td><span class="key">利尿薬</span></td>
+          <td>フロセミド</td>
+          <td>体液量減少</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">唾液分泌に関わる薬物</div>
+        <ul>
+          <li><span class="highlight">分泌減少</span>：アトロピン（ムスカリン受容体<span class="caution">拮抗</span>薬）</li>
+          <li><span class="highlight">分泌増加</span>：ピロカルピン、セビメリン（ムスカリン受容体<span class="key">作動</span>薬）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117A4</div>
+        <p>口腔乾燥を生じるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ピロカルピン塩酸塩<br>
+          b アセチルコリン塩化物<br>
+          c ネオスチグミン臭化物<br>
+          d セビメリン塩酸塩水和物<br>
+          e ジフェンヒドラミン塩酸塩
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">ジフェンヒドラミン</span>は抗ヒスタミン薬で、抗コリン作用により<span class="key">口腔乾燥</span>を引き起こす。ピロカルピン・セビメリンはムスカリン受容体作動薬で唾液分泌を<span class="caution">促進</span>する。ネオスチグミンはコリンエステラーゼ阻害薬で間接的にACh作用を増強。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B14</div>
+        <p>74歳の女性。上顎義歯の脱落を主訴として来院した。数年前から気管支喘息の治療で抗コリン薬を常用しているという。咀嚼時に疼痛はない。初診時の口腔内写真（別冊No.14）を別に示す。原因として疑われるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口蓋隆起の存在<br>
+          b 唾液分泌量の減少<br>
+          c 横口蓋ヒダの消失<br>
+          d 義歯性口内炎の存在<br>
+          e 右側臼歯部顎堤のアンダーカット
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">抗コリン薬</span>の常用により<span class="highlight">唾液分泌量が減少</span>し、義歯の維持力（唾液の界面張力による吸着）が低下して脱落しやすくなる。</p>
+      </div>
+
+      <h2>薬物性歯肉増殖</h2>
+      <p>特定の薬物の長期服用により歯肉が線維性に増殖する。<span class="highlight">プラークが存在すると増悪</span>する。</p>
+
+      <h3>歯肉増殖を引き起こす3大薬物</h3>
+      <table>
+        <tr>
+          <th>薬物分類</th>
+          <th>代表薬</th>
+          <th>使用目的</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">抗てんかん薬</span></td>
+          <td>フェニトイン</td>
+          <td>てんかん発作予防</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">免疫抑制薬</span></td>
+          <td>シクロスポリン</td>
+          <td>臓器移植後の拒絶反応抑制</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Ca拮抗薬</span></td>
+          <td>ニフェジピン、ニカルジピン</td>
+          <td>高血圧治療</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">歯肉増殖を起こさない薬物</div>
+        <ul>
+          <li>インスリン（糖尿病治療）</li>
+          <li>カルバマゼピン（抗てんかん薬だが歯肉増殖なし）</li>
+          <li>ビスホスホネート製剤（顎骨壊死は起こすが歯肉増殖ではない）</li>
+        </ul>
+      </div>
+
+      <h2>抗がん剤による口腔有害事象</h2>
+      <p>がんの薬物療法（化学療法）では、細胞分裂の盛んな口腔粘膜が障害を受けやすい。</p>
+
+      <h3>がん薬物療法の口腔有害事象</h3>
+      <table>
+        <tr>
+          <th>有害事象</th>
+          <th>機序</th>
+          <th>代表的な原因薬</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">口腔粘膜炎</span></td>
+          <td>粘膜上皮の細胞分裂阻害</td>
+          <td>シスプラチン、テガフール、メトトレキサート</td>
+        </tr>
+        <tr>
+          <td><span class="key">味覚障害</span></td>
+          <td>味蕾細胞の障害、亜鉛欠乏</td>
+          <td>多くの抗がん剤</td>
+        </tr>
+        <tr>
+          <td><span class="key">顎骨壊死</span></td>
+          <td>骨代謝抑制（併用BP製剤による）</td>
+          <td>骨転移治療時</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112A34</div>
+        <p>がんの薬物療法によって口腔に発生する有害事象はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 顎骨壊死<br>
+          b 味覚障害<br>
+          c 口腔粘膜炎<br>
+          d 慢性GVHD<br>
+          e 線維性異形成症
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】がん薬物療法の口腔有害事象は<span class="highlight">顎骨壊死・味覚障害・口腔粘膜炎</span>の3つ。慢性GVHDは<span class="caution">骨髄移植後</span>に生じる（薬物療法ではない）。線維性異形成症は骨の発生異常で薬物とは無関係。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A17</div>
+        <p>口腔粘膜炎の原因となるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a シメチジン<br>
+          b テガフール<br>
+          c デキサメタゾン<br>
+          d アセトアミノフェン<br>
+          e モルヒネ塩酸塩水和物
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">テガフール</span>は代謝拮抗薬（抗がん剤）で、口腔粘膜炎を引き起こす。シメチジンはH2ブロッカー、デキサメタゾンはステロイド、アセトアミノフェンは解熱鎮痛薬、モルヒネは麻薬性鎮痛薬。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118A9</div>
+        <p>シスプラチンで生じやすいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口　渇<br>
+          b 顎骨壊死<br>
+          c 歯肉肥大<br>
+          d 血管性浮腫<br>
+          e 口腔粘膜炎
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">シスプラチン</span>は白金製剤（抗がん剤）で、<span class="highlight">口腔粘膜炎</span>を生じやすい。顎骨壊死はビスホスホネート製剤、歯肉肥大はCa拮抗薬・フェニトイン・シクロスポリン。</p>
+      </div>
+
+      <h2>副腎皮質ステロイド薬の副作用</h2>
+      <p>ステロイド薬は強力な抗炎症・免疫抑制作用を持つが、長期使用で多彩な副作用が生じる。</p>
+
+      <h3>ステロイド薬の主な副作用</h3>
+      <table>
+        <tr>
+          <th>副作用</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">易感染性</span></td>
+          <td>免疫抑制作用</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨粗鬆症</span></td>
+          <td>骨形成抑制、Ca吸収低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">消化性潰瘍</span></td>
+          <td>粘膜防御因子の低下</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">満月様顔貌</span></td>
+          <td>脂肪の再分布（Cushing症候群様）</td>
+        </tr>
+        <tr>
+          <td><span class="key">高血糖</span></td>
+          <td>糖新生促進、インスリン抵抗性</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ステロイド薬の副作用でないもの</div>
+        <ul>
+          <li><span class="caution">低血糖</span>：ステロイドは血糖を<span class="highlight">上昇</span>させる（低下ではない）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A21</div>
+        <p>副腎皮質ステロイド薬の副作用でないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 低血糖<br>
+          b 易感染性<br>
+          c 骨粗鬆症<br>
+          d 消化性潰瘍<br>
+          e 満月様顔貌
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】ステロイドは糖新生を促進し<span class="highlight">高血糖</span>を引き起こす。<span class="caution">低血糖は副作用ではない</span>。易感染性、骨粗鬆症、消化性潰瘍、満月様顔貌はいずれもステロイドの代表的副作用。</p>
+      </div>
+
+      <h2>骨吸収抑制薬関連顎骨壊死（ARONJ）</h2>
+      <p><span class="key">ARONJ</span>（Anti-resorptive agents-related OsteoNecrosis of the Jaw）：骨吸収抑制薬使用患者における顎骨壊死。</p>
+
+      <h3>原因となる薬物</h3>
+      <table>
+        <tr>
+          <th>薬物分類</th>
+          <th>代表薬</th>
+          <th>使用目的</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ビスホスホネート製剤</span></td>
+          <td>アレンドロン酸、リセドロン酸、ゾレドロン酸</td>
+          <td>骨粗鬆症、骨転移</td>
+        </tr>
+        <tr>
+          <td><span class="key">RANKL抗体製剤</span></td>
+          <td>デノスマブ</td>
+          <td>骨粗鬆症、骨転移</td>
+        </tr>
+      </table>
+
+      <h3>ARONJのリスク因子</h3>
+      <ul>
+        <li><span class="key">抜歯</span>などの侵襲的歯科処置</li>
+        <li>注射製剤（経口より高リスク）</li>
+        <li>長期投与</li>
+        <li>がん患者（高用量使用）</li>
+      </ul>
+
+      <p class="note">※発生頻度は0.1%程度と低いが、発症すると難治性。休薬期間（3ヶ月）の有効性に明確なエビデンスはない。</p>
+
+      <h2>味覚障害</h2>
+
+      <h3>味覚障害の原因</h3>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="key">神経障害</span></td>
+          <td>鼓索神経損傷（舌前2/3の味覚）</td>
+        </tr>
+        <tr>
+          <td><span class="key">薬物性</span></td>
+          <td>抗がん剤、降圧薬、抗菌薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">亜鉛欠乏</span></td>
+          <td>味蕾細胞のターンオーバー障害</td>
+        </tr>
+        <tr>
+          <td><span class="key">全身疾患</span></td>
+          <td>糖尿病、腎不全、肝障害</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117A13</div>
+        <p>神経と障害時に生じる病態の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 眼窩下神経 ーーー 眼　振<br>
+          b 舌神経 ーーーーー 流　涎<br>
+          c 鼓索神経 ーーーー 味覚障害<br>
+          d 前庭神経 ーーーー 難　聴<br>
+          e 下喉頭神経 ーーー 開鼻声
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">鼓索神経</span>は舌前2/3の味覚を支配（顔面神経の枝）。損傷で<span class="key">味覚障害</span>が生じる。眼窩下神経は知覚神経、舌神経は舌前2/3の知覚、前庭神経は平衡感覚、下喉頭神経は声帯運動。</p>
+      </div>
+
+      <h2>薬物相互作用</h2>
+
+      <h3>アドレナリンとの相互作用</h3>
+      <table>
+        <tr>
+          <th>併用薬</th>
+          <th>相互作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">三環系抗うつ薬</span></td>
+          <td>アドレナリン作用増強 → <span class="highlight">血圧上昇</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">非選択性β遮断薬</span></td>
+          <td>α作用のみ発現 → <span class="highlight">血圧上昇</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">α1遮断薬</span></td>
+          <td>α作用抑制、β作用のみ → <span class="caution">血圧低下</span></td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108A32</div>
+        <p>アドレナリンの併用によって血圧低下が生じるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a NSAIDs<br>
+          b α1遮断薬<br>
+          c MAO阻害薬<br>
+          d 三環系抗うつ薬<br>
+          e 非選択性β遮断薬
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="key">α1遮断薬</span>併用時はアドレナリンのα作用（血管収縮）が抑制され、β作用（血管拡張）のみが発現するため<span class="highlight">血圧低下</span>（アドレナリン反転）が生じる。三環系抗うつ薬・非選択性β遮断薬・MAO阻害薬との併用では血圧上昇。</p>
+      </div>
+
+      <h2>まとめ：薬物と口腔症候の対応</h2>
+      <table>
+        <tr>
+          <th>口腔症候</th>
+          <th>原因薬物</th>
+        </tr>
+        <tr>
+          <td><span class="key">口腔乾燥</span></td>
+          <td>抗コリン薬、抗ヒスタミン薬、三環系抗うつ薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯肉増殖</span></td>
+          <td>フェニトイン、シクロスポリン、Ca拮抗薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">口腔粘膜炎</span></td>
+          <td>抗がん剤（シスプラチン、テガフールなど）</td>
+        </tr>
+        <tr>
+          <td><span class="key">顎骨壊死</span></td>
+          <td>ビスホスホネート製剤、デノスマブ</td>
+        </tr>
+        <tr>
+          <td><span class="key">味覚障害</span></td>
+          <td>抗がん剤、降圧薬、抗菌薬</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

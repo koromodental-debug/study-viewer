@@ -9,8 +9,9 @@ const FlashcardModule = (function() {
   const REPORTS_KEY = 'studyViewer_cardReports';
   const STORAGE_VERSION = 1;
 
-  // 科目の表示順序（基礎系 → 臨床系）
+  // 科目の表示順序（必修 → 基礎系 → 臨床系）
   const SUBJECT_ORDER = [
+    '必修',
     // 基礎系
     '解剖', '組織', '生理', '生化',
     '病理', '微生物・免疫', '薬理', '歯科理工',
@@ -578,6 +579,19 @@ const FlashcardModule = (function() {
     const stats = getSubjectStats(subject);
     const isOpen = state.expandedSubjects.has(subject);
 
+    // html/subject/配下の科目は大項目でグルーピング
+    let topicsHtml = '';
+    const hasSubjectPath = topics.some(t =>
+      (t.htmlPath && t.htmlPath.includes('html/subject/')) ||
+      (t.qaPath && t.qaPath.includes('qa/subject/'))
+    );
+
+    if (hasSubjectPath) {
+      topicsHtml = renderGroupedTopics(topics);
+    } else {
+      topicsHtml = topics.map(topic => renderTopicRow(topic)).join('');
+    }
+
     return `
       <div class="deck-subject${isOpen ? ' open' : ''}" data-subject="${subject}">
         <div class="deck-subject-header">
@@ -590,13 +604,51 @@ const FlashcardModule = (function() {
           </div>
         </div>
         <div class="deck-topics">
-          ${topics.map(topic => renderTopicRow(topic)).join('')}
+          ${topicsHtml}
         </div>
       </div>
     `;
   }
 
-  function renderTopicRow(topic) {
+  // 大項目でグルーピングしたトピック一覧をレンダリング
+  function renderGroupedTopics(topics) {
+    const groups = new Map();
+
+    topics.forEach(topic => {
+      const path = topic.qaPath || topic.htmlPath || '';
+      // パターン: subject/科目名/01_大項目名_小項目名.html
+      const match = path.match(/subject\/[^/]+\/(\d{2})_([^_]+)/);
+      if (match) {
+        const groupKey = match[1]; // 01, 02, etc.
+        const groupName = match[2]; // 大項目名
+        if (!groups.has(groupKey)) {
+          groups.set(groupKey, { name: groupName, topics: [] });
+        }
+        groups.get(groupKey).topics.push(topic);
+      } else {
+        // 番号プレフィックスがない場合は「その他」に
+        if (!groups.has('99')) {
+          groups.set('99', { name: 'その他', topics: [] });
+        }
+        groups.get('99').topics.push(topic);
+      }
+    });
+
+    // 番号順にソート
+    const sortedKeys = [...groups.keys()].sort((a, b) => a.localeCompare(b));
+
+    return sortedKeys.map(key => {
+      const group = groups.get(key);
+      return `
+        <div class="deck-hisshu-group">
+          <div class="deck-hisshu-header">${key} ${group.name}</div>
+          ${group.topics.map(topic => renderTopicRow(topic, group.name)).join('')}
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderTopicRow(topic, groupName = null) {
     const stats = getTopicStats(topic.id);
     const total = stats.memorized + stats.again;
 
@@ -611,9 +663,18 @@ const FlashcardModule = (function() {
       statsHtml = `<span class="deck-stat memorized">✓ ${stats.memorized}</span>`;
     }
 
+    // グループ名が指定されている場合、タイトルから「グループ名_」を除去
+    let displayTitle = topic.title;
+    if (groupName) {
+      const prefix = groupName + '_';
+      if (displayTitle.startsWith(prefix)) {
+        displayTitle = displayTitle.slice(prefix.length);
+      }
+    }
+
     return `
       <div class="deck-topic" data-topic-id="${topic.id}">
-        <span class="deck-topic-name">${topic.title}</span>
+        <span class="deck-topic-name">${displayTitle}</span>
         <div class="deck-topic-stats">
           ${statsHtml}
         </div>

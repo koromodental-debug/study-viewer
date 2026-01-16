@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>齲蝕の分類と診断 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / 齲蝕学</span>
+    <h1>齲蝕の分類と診断</h1>
+    <div class="container">
+
+      <h2>齲蝕発症のメカニズム</h2>
+      <p>齲蝕は多因子疾患であり、<span class="key">Keyesの3つの輪</span>（歯・細菌・基質）に<span class="key">時間</span>を加えた<span class="key">Newbrunの4つの輪</span>で説明される。</p>
+      <ul>
+        <li>唾液由来の糖タンパクによりエナメル質表面に<span class="key">ペリクル</span>形成</li>
+        <li>齲蝕原因菌（<em>S. mutans</em>など）がバイオフィルム形成</li>
+        <li>糖質（主にスクロース）から乳酸などの酸を産生</li>
+        <li>pHが<span class="highlight">臨界pH（約5.7）</span>以下になると脱灰開始</li>
+      </ul>
+
+      <h2>エナメル質齲蝕と表層下脱灰</h2>
+      <p>初期エナメル質齲蝕は<span class="highlight">白斑</span>あるいは褐色の着色斑として認められる。<span class="highlight">乾燥状態での視診</span>が重要で、探針の圧入は表層を破壊するため避ける。</p>
+
+      <h3>表層下脱灰の特徴</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>表層の状態</td><td><span class="highlight">表層10〜20μmは再石灰化により維持</span></td></tr>
+        <tr><td>病変部</td><td>表層下でミネラルが溶出（脱灰）</td></tr>
+        <tr><td>外観</td><td>不透明（白斑として視認）</td></tr>
+        <tr><td>齲窩</td><td><span class="caution">形成されていない</span></td></tr>
+        <tr><td>可逆性</td><td>適切な対応で治癒可能</td></tr>
+      </table>
+
+      <h2>根面齲蝕</h2>
+      <p><span class="key">歯肉退縮</span>により露出した歯根面（セメント質・象牙質）に生じる齲蝕。<span class="highlight">高齢者に多い</span>。</p>
+
+      <h3>エナメル質齲蝕との違い</h3>
+      <table>
+        <tr><th>項目</th><th>根面齲蝕</th><th>エナメル質齲蝕</th></tr>
+        <tr><td>好発年齢</td><td><span class="highlight">高齢者</span></td><td>全年齢</td></tr>
+        <tr><td>表層下脱灰</td><td><span class="caution">認めない</span></td><td>認める</td></tr>
+        <tr><td>齲蝕円錐</td><td><span class="caution">不明瞭</span></td><td>明瞭</td></tr>
+        <tr><td>進行形態</td><td>環状に拡大</td><td>円錐状に進行</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">初期根面齲蝕への対応</div>
+        <ul>
+          <li><span class="highlight">フッ化物塗布</span>が有効（再石灰化）</li>
+          <li>修復が必要な場合は<span class="key">グラスアイオノマーセメント</span>が第一選択</li>
+        </ul>
+      </div>
+
+      <h2>象牙質齲蝕の層構造</h2>
+      <table>
+        <tr><th>層</th><th>特徴</th><th>細菌</th></tr>
+        <tr><td><span class="key">多菌層</span></td><td>細菌が多数侵入</td><td><span class="highlight">感染</span></td></tr>
+        <tr><td><span class="key">寡菌層</span></td><td>細菌が少数</td><td>感染</td></tr>
+        <tr><td><span class="key">先駆菌層</span></td><td>細菌侵入の先端</td><td>感染</td></tr>
+        <tr><td>混濁層</td><td>脱灰による混濁</td><td>無菌</td></tr>
+        <tr><td>透明層</td><td>象牙細管の石灰化</td><td>無菌</td></tr>
+        <tr><td>修復象牙質</td><td>第三象牙質</td><td>無菌</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">表層→深部の順序（頻出）</div>
+        <p><span class="highlight">細菌侵入 → 着色 → 軟化</span>（「菌・色・軟」で覚える）</p>
+      </div>
+
+      <h2>急性齲蝕と慢性齲蝕</h2>
+      <table>
+        <tr><th>項目</th><th>急性齲蝕</th><th>慢性齲蝕</th></tr>
+        <tr><td>好発年齢</td><td><span class="highlight">若年者</span></td><td><span class="highlight">高齢者</span></td></tr>
+        <tr><td>進行形態</td><td><span class="key">穿通性</span></td><td><span class="key">穿下性</span></td></tr>
+        <tr><td>軟化象牙質の色</td><td>淡黄色</td><td><span class="highlight">黒褐色</span></td></tr>
+        <tr><td>軟化象牙質の硬さ</td><td>軟性（チーズ様）</td><td>硬性（なめし皮様）</td></tr>
+        <tr><td>修復象牙質</td><td>少量</td><td>多量</td></tr>
+        <tr><td>感染歯質除去時</td><td>露髄しにくい</td><td><span class="caution">露髄しやすい</span></td></tr>
+      </table>
+
+      <h2>齲蝕検知液</h2>
+      <table>
+        <tr><th>染色</th><th>組織</th><th>対応</th></tr>
+        <tr><td><span class="caution">濃い赤</span></td><td>感染層（外層）：非可逆性変性</td><td><span class="key">削除する</span></td></tr>
+        <tr><td><span class="highlight">薄いピンク</span></td><td>無菌層（内層）：可逆性変性</td><td><span class="key">保存する</span></td></tr>
+      </table>
+      <p class="note">薄いピンク染色部は<span class="highlight">再石灰化が可能</span>。</p>
+
+      <h2>齲蝕の診断：ICDAS</h2>
+      <p><span class="key">ICDAS</span>（International Caries Detection and Assessment System）は<span class="highlight">歯面乾燥後に肉眼で</span>初期脱灰病変を鑑別。<span class="caution">鋭利な探針は使用しない</span>。</p>
+
+      <h3>ICDASコード（2桁目：齲蝕の程度）</h3>
+      <table>
+        <tr><th>コード</th><th>齲蝕の程度</th></tr>
+        <tr><td>0</td><td>健全</td></tr>
+        <tr><td class="highlight">1</td><td>歯面<span class="highlight">乾燥後</span>に認められるエナメル質の色調変化</td></tr>
+        <tr><td>2</td><td>歯面<span class="key">乾燥前</span>に認められるエナメル質の色調変化</td></tr>
+        <tr><td>3</td><td>エナメル質に限局した齲窩</td></tr>
+        <tr><td>4</td><td>象牙質の色調変化がエナメル質を透けて検出（齲窩なし）</td></tr>
+        <tr><td class="highlight">5</td><td><span class="highlight">象牙質が確認できる</span>明瞭な齲窩（歯冠の1/2未満）</td></tr>
+        <tr><td>6</td><td>象牙質が確認できる明瞭な齲窩（歯冠の1/2以上）</td></tr>
+      </table>
+
+      <h3>その他の検査法</h3>
+      <ul>
+        <li><span class="key">視診</span>：乾燥状態での観察が基本</li>
+        <li><span class="key">咬翼法</span>：隣接面齲蝕の検出に有効</li>
+        <li><span class="key">インピーダンス測定</span>：電気抵抗値（250kΩ以下で象牙質齲蝕、15kΩ以下で露髄）</li>
+        <li><span class="key">ダイアグノデント</span>：赤色レーザー蛍光法</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115B75</div>
+        <p>エナメル質の表層下脱灰について正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 齲窩の形成がある。<br>
+          b 病変部は透明性が高い。<br>
+          c 酸産生菌の侵入によって生じる。<br>
+          d 表層10-20umは再石灰化している。<br>
+          e 病変部はエナメルタンパクが蓄積している。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】表層下脱灰では<span class="highlight">表層10〜20μmは再石灰化で維持</span>。病変部は<span class="caution">不透明</span>（光散乱）。齲窩は形成されていない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D48</div>
+        <p>齲窩のない初期根面齲蝕への対応で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 暫間的間接覆髄<br>
+          b ポリアクリル酸塗布<br>
+          c レジンコーティング<br>
+          d フッ化ナトリウム塗布<br>
+          e コンポジットレジン修復
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】齲窩がない初期段階では<span class="highlight">フッ化物塗布</span>による再石灰化促進が適切。修復処置は不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A129</div>
+        <p>象牙質齲蝕病巣の表層から深部への特徴で正しい組合せはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 軟化 ―― 細菌侵入 ― 着色<br>
+          b 軟化 ―― 着色 ―― 細菌侵入<br>
+          c 着色 ―― 細菌侵入 ― 軟化<br>
+          d 着色 ―― 軟化 ―― 細菌侵入<br>
+          e 細菌侵入 ― 軟化 ―― 着色<br>
+          f 細菌侵入 ― 着色 ―― 軟化
+        </div>
+        <div class="answer">正解：f</div>
+        <p>【解説】表層から<span class="highlight">細菌侵入 → 着色 → 軟化</span>の順。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C43</div>
+        <p>ICDASについて正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a WHOの齲蝕診査基準である。<br>
+          b 鋭利な探針で齲蝕の深さを測定する。<br>
+          c 唾液検査により齲蝕活動性を評価する。<br>
+          d レーザー光照射で齲蝕の進行状態を測定する。<br>
+          e 歯面乾燥後に肉眼で初期脱灰病変を鑑別する。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】ICDASは<span class="highlight">歯面乾燥後に肉眼で</span>初期脱灰病変を鑑別。<span class="caution">探針は使用しない</span>。レーザー光照射はダイアグノデント。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B40</div>
+        <p>ICDASコードで、肉眼では実質欠損を認めないが、歯面乾燥後にエナメル質の白濁化を認めるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a コード 0<br>
+          b コード 1<br>
+          c コード 2<br>
+          d コード 3<br>
+          e コード 4
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">「乾燥後に」認められる</span>エナメル質の色調変化は<span class="highlight">コード1</span>。コード2は「乾燥前でも」認められる場合。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C120</div>
+        <p>齲蝕検知液で薄いピンクに染色される象牙質の特徴で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 細菌に感染している。<br>
+          b 再石灰化が可能である。<br>
+          c 刺激による痛みを生じる。<br>
+          d 象牙細管が開口している。<br>
+          e レジンとの接着が良好である。
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】薄いピンク染色部は<span class="key">無菌層</span>で可逆性変性。<span class="caution">感染していない</span>。<span class="highlight">再石灰化が可能</span>。生活歯質なので刺激で痛みあり。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

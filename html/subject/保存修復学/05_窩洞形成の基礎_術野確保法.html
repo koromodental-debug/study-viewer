@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>術野確保法 - 保存修復学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">保存修復学 / 窩洞形成の基礎</span>
+    <h1>術野確保法</h1>
+    <div class="container">
+
+      <h2>歯間分離法</h2>
+      <p>隣接面の診査や修復操作のために、隣り合う歯を一時的に離開させる方法。</p>
+
+      <h3>歯間分離の原理</h3>
+      <table>
+        <tr><th>原理</th><th>器具</th></tr>
+        <tr><td rowspan="4"><span class="key">楔入</span></td><td>アイボリーのセパレーター（前歯部用）</td></tr>
+        <tr><td>エリオットのセパレーター（臼歯部用）</td></tr>
+        <tr><td>弾性ゴム、ウッドウェッジ</td></tr>
+        <tr><td></td></tr>
+        <tr><td><span class="highlight">牽引</span></td><td><span class="highlight">フェリアーのセパレーター</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">牽引の原理（頻出）</div>
+        <p><span class="highlight">フェリアーのセパレーター</span>のみが牽引の原理。他はすべて楔入の原理。</p>
+      </div>
+
+      <h2>ウェッジの使用目的</h2>
+      <table>
+        <tr><th>目的</th><th>タイミング</th></tr>
+        <tr><td><span class="highlight">歯間乳頭の保護</span></td><td>齲蝕除去前（プレウェッジ）</td></tr>
+        <tr><td><span class="key">隣在歯の保護</span></td><td>窩洞形成時</td></tr>
+        <tr><td><span class="key">マトリックスの固定</span></td><td>填塞時</td></tr>
+        <tr><td><span class="highlight">辺縁適合性の向上</span></td><td>填塞時</td></tr>
+        <tr><td>接触点回復のための分離</td><td>填塞時</td></tr>
+      </table>
+
+      <h2>歯肉排除法</h2>
+      <p>歯肉縁下窩洞の修復や印象採得のために、一時的に歯肉を排除する方法。</p>
+
+      <h3>即時歯肉排除法</h3>
+      <table>
+        <tr><th>方法</th><th>器具・特徴</th></tr>
+        <tr><td><span class="highlight">排除用綿糸</span></td><td>リトラクションコード、<span class="highlight">塩化アルミニウム</span>等の薬剤で収斂効果</td></tr>
+        <tr><td><span class="key">ガムリトラクター</span></td><td>5級窩洞・くさび状欠損に使用</td></tr>
+        <tr><td>外科的切除</td><td>高周波電気メス、レーザー</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">歯肉排除の目的（頻出）</div>
+        <ul>
+          <li><span class="highlight">窩縁の明示</span></li>
+          <li><span class="highlight">歯肉損傷の防止</span></li>
+        </ul>
+        <p class="note"><span class="caution">高周波電気メスはペースメーカー患者に禁忌</span></p>
+      </div>
+
+      <h2>隔壁法</h2>
+      <p>複雑窩洞を単純化し、修復操作を容易にする方法。<span class="key">リテーナー、マトリックス、ウェッジ</span>を用いる。</p>
+
+      <h3>隔壁の種類</h3>
+      <table>
+        <tr><th>器具</th><th>適応</th></tr>
+        <tr><td><span class="key">トッフルマイヤー式リテーナー</span></td><td>臼歯部2級窩洞</td></tr>
+        <tr><td><span class="highlight">セクショナルマトリックス＋リング状リテーナー</span></td><td>小臼歯・乳歯の2級窩洞</td></tr>
+        <tr><td>透明ストリップス</td><td>前歯部3級窩洞</td></tr>
+        <tr><td><span class="key">サービカルマトリックス</span></td><td>歯頸部（5級）窩洞</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">器具の使用タイミング</div>
+        <table>
+          <tr><th>タイミング</th><th>器具</th></tr>
+          <tr><td class="highlight">窩洞形成時</td><td>ガムリトラクター、圧排コード、ウェッジ</td></tr>
+          <tr><td>填塞時</td><td>マトリックス、サービカルマトリックス、リング状リテーナー</td></tr>
+        </table>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A85</div>
+        <p>歯間分離で牽引の原理を利用するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 弾性ゴム<br>b ウッドウェッジ<br>c エリオットのセパレーター<br>d フェリアーのセパレーター<br>e アイボリーのセパレーター
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">フェリアー</span>のみが<span class="highlight">牽引</span>の原理。他はすべて楔入の原理。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B20</div>
+        <p>齲蝕除去中の口腔内写真を示す。矢印で示す器具（ウェッジ）の使用目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯の固定<br>b 隔壁の設置<br>c 術野の明視<br>d 接触点の回復<br>e 歯間乳頭の保護
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】齲蝕除去中なので<span class="highlight">歯間乳頭の保護</span>が主目的。接触点の回復は充填時の目的。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D69</div>
+        <p>下顎小臼歯頬側歯頸部の齲蝕。窩洞形成時に使用するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 圧排コード<br>b ガムリトラクター<br>c サービカルマトリックス<br>d Tofflemire型リテーナー<br>e Ivoryのシンプルセパレーター
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】歯頸部修復の<span class="key">窩洞形成時</span>には<span class="highlight">圧排コード</span>と<span class="highlight">ガムリトラクター</span>で歯肉排除。サービカルマトリックスは填塞時に使用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105D32</div>
+        <p>コンポジットレジン修復で辺縁適合性を向上させるために使用するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ウッドウェッジ<br>b ガムリトラクター<br>c クラウンフォーム<br>d サービカルマトリックス<br>e アイボリーセパレーター
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">ウッドウェッジ</span>はマトリックスを歯面に密着させ、<span class="highlight">辺縁適合性を向上</span>させる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D75</div>
+        <p>小臼歯の2級窩洞のCR修復。処置に使用する器具はどれか。2つ選べ。</p>
+        <div class="choices">
+          a ウェッジ<br>b ガムリトラクター<br>c リング状リテーナー<br>d アイボリーセパレーター<br>e サービカルマトリックス
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】小臼歯2級窩洞には<span class="highlight">ウェッジ</span>と<span class="highlight">リング状リテーナー</span>（セクショナルマトリックスと併用）を使用。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

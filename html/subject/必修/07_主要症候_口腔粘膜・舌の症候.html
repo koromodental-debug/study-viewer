@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔粘膜・舌の症候 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 主要症候</span>
+    <h1>口腔粘膜・舌の症候</h1>
+    <div class="container">
+
+      <h2>1. 舌の外観変化</h2>
+      <p>舌の外観変化は全身疾患の反映であることが多い。<span class="highlight">発熱の有無</span>と<span class="highlight">舌乳頭の変化</span>（延長 or 萎縮）がポイント。</p>
+
+      <h3>舌の外観変化と原因疾患</h3>
+      <table>
+        <tr>
+          <th>舌の所見</th>
+          <th>舌乳頭の変化</th>
+          <th>原因・関連疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">苺状舌</span></td>
+          <td>茸状乳頭の腫大</td>
+          <td><span class="highlight">川崎病、猩紅熱</span>（発熱を伴う）</td>
+        </tr>
+        <tr>
+          <td><span class="key">黒毛舌</span></td>
+          <td><span class="highlight">糸状乳頭の延長</span></td>
+          <td>抗菌薬長期投与、口腔清掃不良</td>
+        </tr>
+        <tr>
+          <td><span class="key">平滑舌</span></td>
+          <td><span class="highlight">舌乳頭の萎縮</span></td>
+          <td>Hunter舌炎、Plummer-Vinson症候群</td>
+        </tr>
+        <tr>
+          <td><span class="key">地図状舌</span></td>
+          <td>糸状乳頭の部分的消失</td>
+          <td>原因不明（良性、経過観察）</td>
+        </tr>
+        <tr>
+          <td><span class="key">溝状舌</span></td>
+          <td>―</td>
+          <td>先天性、Melkersson-Rosenthal症候群</td>
+        </tr>
+        <tr>
+          <td><span class="key">巨舌</span></td>
+          <td>―</td>
+          <td>血管腫、リンパ管腫、Down症候群</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">発熱を伴う舌の所見</div>
+        <ul>
+          <li><span class="key">苺状舌</span>：川崎病、猩紅熱</li>
+          <li><span class="caution">地図状舌・溝状舌・黒毛舌は発熱を伴わない</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118C16</div>
+        <p>発熱を伴うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 苺状舌<br>
+          b 溝状舌<br>
+          c 黒毛舌<br>
+          d 平滑舌<br>
+          e 地図状舌
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】苺状舌は川崎病や猩紅熱でみられ、発熱を伴う。他の選択肢は発熱との関連がない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C4</div>
+        <p>糸状乳頭の延長がみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 苺状舌<br>
+          b 溝状舌<br>
+          c 黒毛舌<br>
+          d 平滑舌<br>
+          e 地図状舌
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】黒毛舌は糸状乳頭が異常に延長し、黒褐色を呈する。抗菌薬の長期使用などが原因。平滑舌は逆に舌乳頭が萎縮する。</p>
+      </div>
+
+      <h2>2. 貧血と舌の症候</h2>
+      <p>貧血の種類により舌の症状が異なる。<span class="highlight">ビタミンB12欠乏</span>と<span class="highlight">鉄欠乏</span>を区別する。</p>
+
+      <h3>貧血と舌症状の対応</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>原因</th>
+          <th>貧血の分類</th>
+          <th>舌の症状</th>
+        </tr>
+        <tr>
+          <td><span class="key">Hunter舌炎</span></td>
+          <td>ビタミンB12欠乏</td>
+          <td><span class="highlight">大球性正色素性</span></td>
+          <td>平滑舌、発赤、灼熱感</td>
+        </tr>
+        <tr>
+          <td><span class="key">Plummer-Vinson症候群</span></td>
+          <td>鉄欠乏</td>
+          <td>小球性低色素性</td>
+          <td>平滑舌、舌炎、嚥下障害</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Hunter舌炎 vs Plummer-Vinson症候群</div>
+        <ul>
+          <li><span class="key">Hunter舌炎</span>：悪性貧血（ビタミンB12欠乏）、<span class="highlight">大球性</span>貧血</li>
+          <li><span class="key">Plummer-Vinson</span>：鉄欠乏性貧血、<span class="highlight">小球性</span>貧血、嚥下障害を伴う</li>
+          <li>両者とも<span class="key">舌乳頭萎縮</span>（平滑舌）を呈する</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A10</div>
+        <p>大球性正色素性貧血を示し、舌に発赤、灼熱感および舌乳頭の萎縮がみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 地図状舌<br>
+          b Hunter舌炎<br>
+          c 正中菱形舌炎<br>
+          d Peutz-Jeghers症候群<br>
+          e Plummer-Vinson症候群
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】大球性貧血＋舌乳頭萎縮＋灼熱感はHunter舌炎（ビタミンB12欠乏による悪性貧血）。Plummer-Vinsonは鉄欠乏で小球性貧血。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B10</div>
+        <p>55歳の女性。舌の灼熱感を主訴として来院した。3年前に胃全摘出術を受け、6か月前から自覚しているという。初診時の舌の写真（別冊No.10）を別に示す。血液検査の結果を表に示す。考えられる原因はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 鉄の摂取不足<br>
+          b 内因子の欠乏<br>
+          c 葉酸の吸収不全<br>
+          d ビタミンB12の吸収不全<br>
+          e プロスタグランジンの合成阻害
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】胃全摘後は内因子が産生されず、ビタミンB12の吸収障害が生じる。内因子はビタミンB12と結合して回腸末端で吸収される。</p>
+      </div>
+
+      <h2>3. 前癌病変と前癌状態</h2>
+      <p><span class="highlight">前癌病変</span>と<span class="highlight">前癌状態</span>の区別が頻出。</p>
+
+      <h3>前癌病変 vs 前癌状態</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>定義</th>
+          <th>代表的疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">前癌病変</span></td>
+          <td>病変自体が癌化しうる</td>
+          <td><span class="highlight">白板症、紅板症</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">前癌状態</span></td>
+          <td>癌の発生リスクが高い状態</td>
+          <td><span class="highlight">口腔扁平苔癬</span>、鉄欠乏性貧血</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">癌化率の高い順</div>
+        <ul>
+          <li><span class="highlight">紅板症</span>：癌化率最高（約50%）</li>
+          <li><span class="key">白板症</span>：癌化率3〜5%</li>
+          <li><span class="key">口腔扁平苔癬</span>：癌化率1%程度（前癌状態）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A14</div>
+        <p>前癌状態はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 紅板症<br>
+          b 地図状舌<br>
+          c 口腔扁平苔癬<br>
+          d 多形滲出性紅斑<br>
+          e 慢性再発性アフタ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】口腔扁平苔癬は前癌状態。紅板症・白板症は前癌病変（病変自体が癌化）。扁平苔癬は病変ではなく「状態」として癌リスクが高い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D4</div>
+        <p>毛状〈毛様〉白板症の原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a EBウイルス<br>
+          b 麻疹ウイルス<br>
+          c 単純ヘルペスウイルス<br>
+          d インフルエンザウイルス<br>
+          e ヒトパピローマウイルス
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】毛状白板症はEBウイルス感染による。AIDS患者の舌側縁に好発し、白色の毛羽立った病変を呈する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A23</div>
+        <p>口腔扁平苔癬にみられる好酸性の小体はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Asteroid小体<br>
+          b Civatte小体<br>
+          c Lewy小体<br>
+          d Russell小体<br>
+          e Verocay小体
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】Civatte小体は口腔扁平苔癬の病理所見。基底細胞のアポトーシスにより生じる好酸性小体。</p>
+      </div>
+
+      <h2>4. 水疱性疾患の鑑別</h2>
+      <p>水疱の位置（<span class="highlight">上皮内</span> vs <span class="highlight">上皮下</span>）で鑑別する。</p>
+
+      <h3>水疱性疾患の比較</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>水疱の位置</th>
+          <th>Nikolsky現象</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">天疱瘡</span></td>
+          <td><span class="highlight">上皮内</span>水疱</td>
+          <td>陽性</td>
+          <td>棘融解、Tzanck細胞</td>
+        </tr>
+        <tr>
+          <td><span class="key">類天疱瘡</span></td>
+          <td><span class="highlight">上皮下</span>水疱</td>
+          <td>陰性</td>
+          <td>緊満性水疱、高齢者に多い</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">水疱性疾患の覚え方</div>
+        <ul>
+          <li>天疱瘡：「天」井に近い＝<span class="highlight">上皮内</span>（表層寄り）</li>
+          <li>類天疱瘡：「類」＝下＝<span class="highlight">上皮下</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117D3</div>
+        <p>水疱を主徴とするのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 紅板症<br>
+          b 類天疱瘡<br>
+          c 口腔カンジダ症<br>
+          d 肉芽腫性口唇炎<br>
+          e 壊死性潰瘍性歯肉炎
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】水疱を主徴とするのは類天疱瘡。紅板症は紅色病変、カンジダ症は白苔、壊死性潰瘍性歯肉炎は潰瘍を呈する。</p>
+      </div>
+
+      <h2>5. 口腔カンジダ症</h2>
+      <p>日和見感染の代表。<span class="highlight">AIDS</span>や<span class="highlight">義歯装着者</span>に好発。</p>
+
+      <h3>口腔カンジダ症のポイント</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>原因菌</td>
+          <td>Candida albicans</td>
+        </tr>
+        <tr>
+          <td>好発条件</td>
+          <td>AIDS、糖尿病、抗菌薬長期投与、義歯装着</td>
+        </tr>
+        <tr>
+          <td>急性型の所見</td>
+          <td>白苔（拭い取れる）</td>
+        </tr>
+        <tr>
+          <td>慢性化の所見</td>
+          <td><span class="highlight">粘膜肥厚</span></td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116D14</div>
+        <p>慢性化した口腔カンジダ症に関連してみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 硬結<br>
+          b 水疱<br>
+          c アフタ<br>
+          d 知覚鈍麻<br>
+          e 粘膜肥厚
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】慢性化した口腔カンジダ症では粘膜肥厚（肥厚性カンジダ症）がみられる。急性型は白苔を呈する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A23</div>
+        <p>AIDS患者に高頻度にみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 類天疱瘡<br>
+          b 歯肉増殖症<br>
+          c 口腔扁平苔癬<br>
+          d 口腔カンジダ症<br>
+          e 慢性再発性アフタ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】AIDS患者は免疫低下により口腔カンジダ症を高頻度に発症する。毛状白板症もAIDS関連病変。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B11</div>
+        <p>全部床義歯の清掃不良によって生じるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 扁平苔癬<br>
+          b 褥瘡性潰瘍<br>
+          c フラビーガム<br>
+          d 義歯性口内炎<br>
+          e 義歯性線維症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】義歯性口内炎は義歯の清掃不良によるカンジダ感染が主因。義歯床下粘膜の発赤を呈する。</p>
+      </div>
+
+      <h2>6. その他の舌の所見</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B3</div>
+        <p>巨舌を呈するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血管腫<br>
+          b 地図状舌<br>
+          c Riga-Fede病<br>
+          d 正中菱形舌炎<br>
+          e 口腔カンジダ症
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】巨舌の原因として血管腫、リンパ管腫、Down症候群、甲状腺機能低下症などがある。地図状舌やRiga-Fede病は巨舌とならない。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：口腔粘膜・舌の症候の出題ポイント</div>
+        <ul>
+          <li><span class="key">苺状舌</span>は発熱を伴う（川崎病、猩紅熱）</li>
+          <li><span class="key">黒毛舌</span>＝糸状乳頭の延長、<span class="key">平滑舌</span>＝舌乳頭の萎縮</li>
+          <li><span class="key">Hunter舌炎</span>：ビタミンB12欠乏、大球性貧血</li>
+          <li><span class="key">前癌病変</span>（白板症・紅板症）vs <span class="key">前癌状態</span>（扁平苔癬）</li>
+          <li><span class="key">天疱瘡</span>＝上皮内水疱、<span class="key">類天疱瘡</span>＝上皮下水疱</li>
+          <li><span class="key">口腔カンジダ症</span>：AIDS関連、慢性化で粘膜肥厚</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

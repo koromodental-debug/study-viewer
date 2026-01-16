@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唾液腺・リンパ節の症候 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 主要症候</span>
+    <h1>唾液腺・リンパ節の症候</h1>
+    <div class="container">
+
+      <h2>1. 唾液腺疾患の鑑別</h2>
+      <p>唾液腺腫大の性状（<span class="highlight">硬さ</span>）と原因疾患を結びつける。</p>
+
+      <h3>唾液腺腫大を呈する疾患</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>腫大の性状</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">Küttner腫瘍</span></td>
+          <td><span class="highlight">硬く腫大</span></td>
+          <td>慢性硬化性唾液腺炎、顎下腺に好発</td>
+        </tr>
+        <tr>
+          <td><span class="key">Mikulicz病</span></td>
+          <td>両側性腫大</td>
+          <td><span class="highlight">IgG4関連疾患</span>、形質細胞浸潤</td>
+        </tr>
+        <tr>
+          <td><span class="key">Sjögren症候群</span></td>
+          <td>両側性腫大</td>
+          <td>自己免疫疾患、<span class="highlight">女性に多い</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">Warthin腫瘍</span></td>
+          <td>軟らかい</td>
+          <td>耳下腺、<span class="highlight">男性・喫煙者</span>に多い</td>
+        </tr>
+        <tr>
+          <td><span class="key">流行性耳下腺炎</span></td>
+          <td>有痛性腫大</td>
+          <td>ムンプスウイルス、小児に好発</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">118D14</div>
+        <p>顎下腺が硬く腫大するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Frey症候群<br>
+          b Küttner腫瘍<br>
+          c Warthin腫瘍<br>
+          d Sjögren症候群<br>
+          e Heerfordt症候群
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】Küttner腫瘍は慢性硬化性唾液腺炎で、顎下腺が「硬く」腫大するのが特徴。IgG4関連疾患の一つ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B29</div>
+        <p>IgG4関連疾患はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 粘液嚢胞<br>
+          b Mikulicz病<br>
+          c Sjögren症候群<br>
+          d アミロイドーシス<br>
+          e 壊死性唾液腺化生
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】Mikulicz病はIgG4関連疾患。病理所見で形質細胞浸潤がみられる。Sjögren症候群は自己免疫疾患（IgG4関連ではない）。</p>
+      </div>
+
+      <h2>2. Sjögren症候群</h2>
+      <p>唾液腺・涙腺の慢性炎症による乾燥症状を呈する<span class="highlight">自己免疫疾患</span>。</p>
+
+      <h3>Sjögren症候群のポイント</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>好発</td>
+          <td><span class="highlight">30〜50歳代の女性</span></td>
+        </tr>
+        <tr>
+          <td>症状</td>
+          <td>口腔乾燥（ドライマウス）、乾燥性角結膜炎（ドライアイ）、耳下腺腫脹</td>
+        </tr>
+        <tr>
+          <td>唾液腺造影</td>
+          <td>apple tree appearance</td>
+        </tr>
+        <tr>
+          <td>検査</td>
+          <td><span class="highlight">Schirmer試験</span>（涙液）、<span class="highlight">Saxon試験</span>（唾液）</td>
+        </tr>
+        <tr>
+          <td>抗体</td>
+          <td>抗SS-A抗体、抗SS-B抗体陽性</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Sjögren症候群の診断検査</div>
+        <ul>
+          <li><span class="key">Schirmer試験</span>：涙液分泌量（5mm以下で異常）</li>
+          <li><span class="key">Saxon試験</span>：唾液分泌量（ガーゼを2分間咀嚼）</li>
+          <li><span class="key">ローズベンガル試験</span>：角膜上皮障害の評価</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A28</div>
+        <p>Sjögren症候群の診断に用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Saxonテスト<br>
+          b 顎下腺の生検<br>
+          c 交差適合試験<br>
+          d Schirmer試験<br>
+          e リンパ球表面抗原検査
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】Saxonテストは唾液分泌量、Schirmer試験は涙液分泌量を評価する。生検は口唇腺（顎下腺ではない）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B8</div>
+        <p>男性に多くみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 痛風<br>
+          b Basedow病<br>
+          c 関節リウマチ<br>
+          d Sjögren症候群<br>
+          e 全身性エリテマトーデス
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】痛風は男性に多い。Sjögren症候群、SLE、関節リウマチ、Basedow病は女性に多い自己免疫疾患。</p>
+      </div>
+
+      <h2>3. 口腔乾燥</h2>
+      <p>口腔乾燥の原因は<span class="highlight">薬剤性</span>と<span class="highlight">疾患</span>に分けて考える。</p>
+
+      <h3>口腔乾燥の原因</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>原因</th>
+        </tr>
+        <tr>
+          <td><span class="key">薬剤性</span></td>
+          <td><span class="highlight">抗コリン薬</span>、<span class="highlight">抗ヒスタミン薬</span>、向精神薬、利尿薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">疾患</span></td>
+          <td>Sjögren症候群、糖尿病、放射線治療後</td>
+        </tr>
+        <tr>
+          <td><span class="key">生理的</span></td>
+          <td>加齢、<span class="highlight">睡眠時</span>（唾液分泌ほぼ停止）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117A4</div>
+        <p>口腔乾燥を生じるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ピロカルピン塩酸塩<br>
+          b アセチルコリン塩化物<br>
+          c ネオスチグミン臭化物<br>
+          d セビメリン塩酸塩水和物<br>
+          e ジフェンヒドラミン塩酸塩
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】ジフェンヒドラミンは抗ヒスタミン薬で抗コリン作用があり口腔乾燥を生じる。他は唾液分泌促進薬。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B15</div>
+        <p>耳下腺からの唾液分泌がほぼ停止するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 安静<br>
+          b 運動<br>
+          c 食事<br>
+          d 睡眠<br>
+          e 発声
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】睡眠時は副交感神経活動が低下し、唾液分泌がほぼ停止する。これが起床時の口臭の原因となる。</p>
+      </div>
+
+      <h2>4. 触診所見と疾患</h2>
+      <p>触診所見から疾患を推定する問題が頻出。</p>
+
+      <h3>触診所見と疾患の対応</h3>
+      <table>
+        <tr>
+          <th>触診所見</th>
+          <th>疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">波動</span></td>
+          <td><span class="highlight">ラヌーラ（ガマ腫）</span>、膿瘍</td>
+        </tr>
+        <tr>
+          <td><span class="key">硬結</span></td>
+          <td><span class="highlight">舌癌</span>、悪性腫瘍</td>
+        </tr>
+        <tr>
+          <td><span class="key">圧縮性</span></td>
+          <td>皮下気腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">捻髪音</span></td>
+          <td>皮下気腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">羊皮紙様感</span></td>
+          <td>骨嚢胞（骨の菲薄化）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112A6</div>
+        <p>触診所見と疾患の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 波動 ーーーー ラヌーラ<br>
+          b 圧縮性 ーーーー 皮下気腫<br>
+          c 拍動性 ーーーー 類皮嚢胞<br>
+          d 捻髪音 ーーーー 血管腫<br>
+          e クリック ーーー 筋突起骨折
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】ラヌーラは嚢胞性病変で波動を触れる。皮下気腫は捻髪音と圧縮性。血管腫は圧縮性。</p>
+      </div>
+
+      <h2>5. 唾石症</h2>
+      <p>唾石は<span class="highlight">顎下腺</span>に好発し、<span class="highlight">疝痛</span>を生じる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">唾石症のポイント</div>
+        <ul>
+          <li>好発部位：<span class="highlight">顎下腺（80〜90%）</span></li>
+          <li>症状：食事時の<span class="highlight">疝痛</span>（唾仙痛）、唾液腺腫脹</li>
+          <li>導管変化：<span class="highlight">扁平上皮化生</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A16</div>
+        <p>疝痛の原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ガマ腫<br>
+          b 唾石症<br>
+          c Küttner腫瘍<br>
+          d Sjögren症候群<br>
+          e 流行性耳下腺炎
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】疝痛（唾仙痛）は唾石による導管閉塞で唾液がうっ滞し、食事時に生じる激痛。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C15</div>
+        <p>唾石に接する導管でみられる変化はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 軟骨化生<br>
+          b 粘液化生<br>
+          c 扁平上皮化生<br>
+          d アポクリン化生<br>
+          e オンコサイト化生
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】唾石による機械的刺激で導管上皮に扁平上皮化生が生じる。</p>
+      </div>
+
+      <h2>6. リンパ節</h2>
+      <p>口腔癌の<span class="highlight">所属リンパ節</span>の評価は重要。</p>
+
+      <h3>口腔領域のリンパ節</h3>
+      <table>
+        <tr>
+          <th>リンパ節</th>
+          <th>主な流入領域</th>
+        </tr>
+        <tr>
+          <td><span class="key">オトガイ下リンパ節</span></td>
+          <td>下唇、舌尖部、下顎前歯部歯肉</td>
+        </tr>
+        <tr>
+          <td><span class="key">顎下リンパ節</span></td>
+          <td>口腔の大部分、舌の前2/3</td>
+        </tr>
+        <tr>
+          <td><span class="key">上内深頸リンパ節</span></td>
+          <td>舌根部</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107B28</div>
+        <p>60歳の男性。左側舌縁の腫瘤を主訴として来院した。3か月前から症状がみられ、腫瘤は増大しているという。腫瘤には硬結を触れ、同側の顎下部に母指頭大のリンパ節腫大がみられる。初診時の口腔内写真（別冊No.28）を別に示す。顎下リンパ節について正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 造影CT<br>
+          b 超音波検査<br>
+          c 骨シンチグラフィ<br>
+          d 歯科用コーンビームCT<br>
+          e パノラマエックス線撮影
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】リンパ節転移の評価には造影CTと超音波検査が有用。骨シンチは骨転移、CBCTやパノラマは骨の評価。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：唾液腺・リンパ節の症候の出題ポイント</div>
+        <ul>
+          <li><span class="key">Küttner腫瘍</span>：顎下腺が「硬く」腫大</li>
+          <li><span class="key">Mikulicz病</span>：IgG4関連疾患</li>
+          <li><span class="key">Sjögren症候群</span>：女性に多い、Schirmer試験・Saxon試験</li>
+          <li><span class="key">口腔乾燥</span>：抗コリン薬、睡眠時</li>
+          <li><span class="key">波動</span>＝ラヌーラ、<span class="key">硬結</span>＝舌癌</li>
+          <li><span class="key">唾石症</span>：疝痛、顎下腺に好発、扁平上皮化生</li>
+          <li><span class="key">リンパ節評価</span>：造影CT、超音波検査</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

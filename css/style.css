@@ -9919,3 +9919,196 @@ body.is-practice .tab-content {
 .card-search-start-deck-btn:active {
   opacity: 0.8;
 }
+
+/* ===== デッキインポートモーダル ===== */
+.import-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: none;
+}
+
+.import-overlay.active {
+  display: block;
+}
+
+.import-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.import-overlay.active .import-backdrop {
+  opacity: 1;
+}
+
+.import-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: var(--bg-color);
+  border-radius: 16px;
+  width: calc(100% - 40px);
+  max-width: 400px;
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.3s ease;
+}
+
+.import-overlay.active .import-modal {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.import-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.import-modal-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.import-close-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.import-close-btn svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-color);
+}
+
+.import-modal-body {
+  padding: 20px;
+}
+
+.import-description {
+  color: var(--secondary-label);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.import-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.import-code-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.import-code-input::placeholder {
+  text-transform: none;
+  color: var(--secondary-label);
+}
+
+.import-code-input:focus {
+  outline: none;
+  border-color: var(--system-blue);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+}
+
+.import-submit-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--system-blue);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.import-submit-btn:hover {
+  opacity: 0.9;
+}
+
+.import-submit-btn:active {
+  opacity: 0.8;
+}
+
+.import-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.import-status {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  display: none;
+}
+
+.import-status.show {
+  display: block;
+}
+
+.import-status.success {
+  background: rgba(52, 199, 89, 0.12);
+  color: #34c759;
+}
+
+.import-status.error {
+  background: rgba(255, 59, 48, 0.12);
+  color: #ff3b30;
+}
+
+.import-status.loading {
+  background: rgba(0, 122, 255, 0.12);
+  color: #007aff;
+}
+
+/* インポートボタンのスタイル */
+.account-import-btn {
+  background: var(--system-blue);
+  color: #fff !important;
+  margin-bottom: 8px;
+}
+
+.account-import-btn:hover {
+  opacity: 0.9;
+  background: var(--system-blue);
+}
+
+.account-import-btn svg {
+  color: #fff !important;
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .import-close-btn,
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .import-close-btn {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}

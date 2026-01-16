@@ -130,6 +130,13 @@
               </svg>
               <span>手動で同期</span>
             </button>
+            <!-- デッキインポート -->
+            <button id="import-deck-btn" class="account-action-btn account-import-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+              </svg>
+              <span>デッキをインポート</span>
+            </button>
             <!-- アカウント切り替え -->
             <button id="switch-account-btn" class="account-switch-btn">
               <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
@@ -171,6 +178,33 @@
               </svg>
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- デッキインポートモーダル -->
+    <div id="import-overlay" class="import-overlay">
+      <div class="import-backdrop"></div>
+      <div class="import-modal">
+        <div class="import-modal-header">
+          <h2>デッキをインポート</h2>
+          <button id="import-close" class="import-close-btn" aria-label="閉じる">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="import-modal-body">
+          <p class="import-description">アクセスコードを入力してデッキをインポートします。</p>
+          <div class="import-input-group">
+            <input type="text" id="import-code-input" class="import-code-input"
+                   placeholder="アクセスコード（例: YAKURI-PREMIUM-ABCD）"
+                   autocomplete="off" spellcheck="false">
+            <button id="import-submit-btn" class="import-submit-btn">
+              <span>インポート</span>
+            </button>
+          </div>
+          <div id="import-status" class="import-status"></div>
         </div>
       </div>
     </div>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Setup - テストデータ作成</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f5f7;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #1d1d1f;
+    }
+    .subtitle {
+      color: #86868b;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: #1d1d1f;
+    }
+    .status {
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    .status.info { background: #e3f2fd; color: #1976d2; }
+    .status.success { background: #e8f5e9; color: #388e3c; }
+    .status.error { background: #ffebee; color: #d32f2f; }
+    .status.warning { background: #fff3e0; color: #f57c00; }
+    button {
+      width: 100%;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-bottom: 12px;
+    }
+    button:hover { opacity: 0.9; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-primary { background: #007aff; color: #fff; }
+    .btn-secondary { background: #e5e5ea; color: #1d1d1f; }
+    .btn-danger { background: #ff3b30; color: #fff; }
+    .code-display {
+      background: #f5f5f7;
+      padding: 16px;
+      border-radius: 10px;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 18px;
+      text-align: center;
+      letter-spacing: 2px;
+      margin: 16px 0;
+      user-select: all;
+    }
+    .log {
+      background: #1d1d1f;
+      color: #34c759;
+      padding: 16px;
+      border-radius: 10px;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 12px;
+      max-height: 200px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      margin-top: 16px;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: #f5f5f7;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+    .user-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .user-info .name { font-weight: 600; }
+    .user-info .email { font-size: 13px; color: #86868b; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Setup</h1>
+    <p class="subtitle">Firestoreにテストデータを作成します</p>
+
+    <!-- 認証状態 -->
+    <div class="card">
+      <h2>1. 認証</h2>
+      <div id="auth-status" class="status info">読み込み中...</div>
+      <div id="user-info" style="display:none;"></div>
+      <button id="login-btn" class="btn-primary" style="display:none;">Googleでログイン</button>
+      <button id="logout-btn" class="btn-secondary" style="display:none;">ログアウト</button>
+    </div>
+
+    <!-- テストデッキ作成 -->
+    <div class="card">
+      <h2>2. テストデッキを作成</h2>
+      <p style="color:#86868b; font-size:14px; margin-bottom:16px;">
+        Firestoreに薬理学のテストデッキを作成します。
+      </p>
+      <button id="create-deck-btn" class="btn-primary" disabled>テストデッキを作成</button>
+      <div id="deck-status"></div>
+    </div>
+
+    <!-- アクセスコード作成 -->
+    <div class="card">
+      <h2>3. アクセスコードを作成</h2>
+      <p style="color:#86868b; font-size:14px; margin-bottom:16px;">
+        デッキをインポートするためのアクセスコードを生成します。
+      </p>
+      <button id="create-code-btn" class="btn-primary" disabled>アクセスコードを生成</button>
+      <div id="code-display" style="display:none;">
+        <p style="margin-top:16px; font-size:14px; color:#86868b;">このコードをコピーしてインポートに使用:</p>
+        <div class="code-display" id="generated-code"></div>
+      </div>
+      <div id="code-status"></div>
+    </div>
+
+    <!-- ログ -->
+    <div class="card">
+      <h2>ログ</h2>
+      <div class="log" id="log"></div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Firebase設定
+    const firebaseConfig = {
+      apiKey: "AIzaSyBm_B8YC7OtjFWf867KdQ1ndJSAozWWvlI",
+      authDomain: "kokoshika-f24eb.firebaseapp.com",
+      projectId: "kokoshika-f24eb",
+      storageBucket: "kokoshika-f24eb.firebasestorage.app",
+      messagingSenderId: "210684714683",
+      appId: "1:210684714683:web:ab3ac5bd409d313427139e"
+    };
+
+    // 初期化
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // DOM要素
+    const authStatus = document.getElementById('auth-status');
+    const userInfo = document.getElementById('user-info');
+    const loginBtn = document.getElementById('login-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    const createDeckBtn = document.getElementById('create-deck-btn');
+    const createCodeBtn = document.getElementById('create-code-btn');
+    const deckStatus = document.getElementById('deck-status');
+    const codeStatus = document.getElementById('code-status');
+    const codeDisplay = document.getElementById('code-display');
+    const generatedCode = document.getElementById('generated-code');
+    const logEl = document.getElementById('log');
+
+    // ログ出力
+    function log(message) {
+      const time = new Date().toLocaleTimeString();
+      logEl.textContent += `[${time}] ${message}\n`;
+      logEl.scrollTop = logEl.scrollHeight;
+      console.log(message);
+    }
+
+    // ステータス表示
+    function showStatus(el, message, type) {
+      el.innerHTML = `<div class="status ${type}">${message}</div>`;
+    }
+
+    // 認証状態の監視
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        authStatus.className = 'status success';
+        authStatus.textContent = 'ログイン済み';
+        userInfo.innerHTML = `
+          <div class="user-info">
+            <img src="${user.photoURL || ''}" alt="">
+            <div>
+              <div class="name">${user.displayName || 'ユーザー'}</div>
+              <div class="email">${user.email}</div>
+            </div>
+          </div>
+        `;
+        userInfo.style.display = 'block';
+        loginBtn.style.display = 'none';
+        logoutBtn.style.display = 'block';
+        createDeckBtn.disabled = false;
+        createCodeBtn.disabled = false;
+        log(`ログイン成功: ${user.email}`);
+      } else {
+        authStatus.className = 'status warning';
+        authStatus.textContent = 'ログインが必要です';
+        userInfo.style.display = 'none';
+        loginBtn.style.display = 'block';
+        logoutBtn.style.display = 'none';
+        createDeckBtn.disabled = true;
+        createCodeBtn.disabled = true;
+        log('未ログイン状態');
+      }
+    });
+
+    // ログイン
+    loginBtn.addEventListener('click', async () => {
+      try {
+        loginBtn.disabled = true;
+        loginBtn.textContent = 'ログイン中...';
+        const provider = new firebase.auth.GoogleAuthProvider();
+        await auth.signInWithPopup(provider);
+      } catch (error) {
+        log(`ログインエラー: ${error.message}`);
+        showStatus(authStatus.parentElement, error.message, 'error');
+      } finally {
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Googleでログイン';
+      }
+    });
+
+    // ログアウト
+    logoutBtn.addEventListener('click', async () => {
+      await auth.signOut();
+      log('ログアウトしました');
+    });
+
+    // テストデッキを作成
+    createDeckBtn.addEventListener('click', async () => {
+      try {
+        createDeckBtn.disabled = true;
+        createDeckBtn.textContent = '作成中...';
+        log('テストデッキを作成中...');
+
+        const deckData = {
+          title: '薬理学プレミアム',
+          description: '薬理学の完全版デッキ（テスト用）',
+          cardCount: 45,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          topics: [
+            {
+              id: 'local_anesthetics',
+              title: '局所麻酔薬',
+              qaPath: 'qa/局所麻酔薬_QA.txt'
+            },
+            {
+              id: 'anticoagulants',
+              title: '抗凝固薬と抗血小板薬',
+              qaPath: 'qa/抗凝固薬と抗血小板薬の使い分け_QA.txt'
+            },
+            {
+              id: 'hemostatics',
+              title: '止血薬・抗血栓薬',
+              qaPath: 'qa/止血薬_抗血栓薬_QA.txt'
+            }
+          ]
+        };
+
+        await db.collection('decks').doc('yakuri_premium').set(deckData);
+        log('デッキ "yakuri_premium" を作成しました');
+        showStatus(deckStatus, 'テストデッキを作成しました', 'success');
+      } catch (error) {
+        log(`エラー: ${error.message}`);
+        showStatus(deckStatus, `エラー: ${error.message}`, 'error');
+      } finally {
+        createDeckBtn.disabled = false;
+        createDeckBtn.textContent = 'テストデッキを作成';
+      }
+    });
+
+    // アクセスコードを生成
+    createCodeBtn.addEventListener('click', async () => {
+      try {
+        createCodeBtn.disabled = true;
+        createCodeBtn.textContent = '生成中...';
+        log('アクセスコードを生成中...');
+
+        // ランダムコード生成
+        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        let randomPart = '';
+        for (let i = 0; i < 8; i++) {
+          randomPart += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        const code = `YAKURI-${randomPart}`;
+
+        const codeData = {
+          code: code,
+          deckId: 'yakuri_premium',
+          usedBy: null,
+          usedAt: null,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        };
+
+        // コードをドキュメントIDとして保存（検索を高速化）
+        await db.collection('accessCodes').doc(code).set(codeData);
+
+        log(`アクセスコード "${code}" を作成しました`);
+        generatedCode.textContent = code;
+        codeDisplay.style.display = 'block';
+        showStatus(codeStatus, 'アクセスコードを生成しました', 'success');
+      } catch (error) {
+        log(`エラー: ${error.message}`);
+        showStatus(codeStatus, `エラー: ${error.message}`, 'error');
+      } finally {
+        createCodeBtn.disabled = false;
+        createCodeBtn.textContent = 'アクセスコードを生成';
+      }
+    });
+
+    log('Admin Setup 初期化完了');
+  </script>
+</body>
+</html>

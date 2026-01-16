@@ -284,43 +284,39 @@ const FirebaseSync = (function() {
 
   /**
    * フラッシュカード進捗のマージ
+   * データ形式: { version: 1, cards: { "topicId:index": { status, lastReview } } }
    */
   function mergeFlashcardProgress(local, cloud) {
-    const merged = { ...cloud };
+    const merged = {
+      version: Math.max(local.version || 1, cloud.version || 1),
+      cards: {}
+    };
 
-    // ローカルのデータを追加・更新
-    if (local.topics && cloud.topics) {
-      merged.topics = { ...cloud.topics };
+    const localCards = local.cards || {};
+    const cloudCards = cloud.cards || {};
 
-      for (const topicId in local.topics) {
-        if (!merged.topics[topicId]) {
-          merged.topics[topicId] = local.topics[topicId];
-        } else {
-          // 各カードの状態をマージ（より進んでいる方を採用）
-          const localTopic = local.topics[topicId];
-          const cloudTopic = merged.topics[topicId];
+    // 全てのキーを収集
+    const allKeys = new Set([...Object.keys(localCards), ...Object.keys(cloudCards)]);
 
-          if (localTopic.cards && cloudTopic.cards) {
-            for (const cardId in localTopic.cards) {
-              if (!cloudTopic.cards[cardId]) {
-                cloudTopic.cards[cardId] = localTopic.cards[cardId];
-              } else {
-                // 正解回数が多い方を採用
-                const localCard = localTopic.cards[cardId];
-                const cloudCard = cloudTopic.cards[cardId];
-                if ((localCard.correctCount || 0) > (cloudCard.correctCount || 0)) {
-                  cloudTopic.cards[cardId] = localCard;
-                }
-              }
-            }
-          }
-        }
+    for (const key of allKeys) {
+      const localCard = localCards[key];
+      const cloudCard = cloudCards[key];
+
+      if (localCard && !cloudCard) {
+        // ローカルにのみ存在
+        merged.cards[key] = localCard;
+      } else if (!localCard && cloudCard) {
+        // クラウドにのみ存在
+        merged.cards[key] = cloudCard;
+      } else if (localCard && cloudCard) {
+        // 両方に存在 → より新しい方（lastReview が大きい方）を採用
+        const localTime = localCard.lastReview || 0;
+        const cloudTime = cloudCard.lastReview || 0;
+        merged.cards[key] = localTime >= cloudTime ? localCard : cloudCard;
       }
-    } else if (local.topics) {
-      merged.topics = local.topics;
     }
 
-    merged.version = Math.max(local.version || 1, cloud.version || 1);
+    console.log(`[FirebaseSync] 進捗マージ: ローカル${Object.keys(localCards).length}件, クラウド${Object.keys(cloudCards).length}件 → マージ後${Object.keys(merged.cards).length}件`);
     return merged;
   }
 
@@ -473,6 +469,160 @@ const FirebaseSync = (function() {
     });
   }
 
+  // === デッキインポート機能 ===
+
+  /**
+   * アクセスコードでデッキをインポート
+   * @param {string} code - アクセスコード
+   * @returns {Promise<{success: boolean, deck?: object, error?: string}>}
+   */
+  async function importDeckWithCode(code) {
+    if (!isLoggedIn()) {
+      return { success: false, error: 'ログインが必要です' };
+    }
+
+    if (!db) {
+      return { success: false, error: 'データベース未接続' };
+    }
+
+    const normalizedCode = code.trim().toUpperCase();
+
+    try {
+      // 1. アクセスコードを検索
+      const codesRef = db.collection('accessCodes');
+      const snapshot = await codesRef.where('code', '==', normalizedCode).get();
+
+      if (snapshot.empty) {
+        return { success: false, error: '無効なアクセスコードです' };
+      }
+
+      const codeDoc = snapshot.docs[0];
+      const codeData = codeDoc.data();
+
+      // 2. 使用済みチェック
+      if (codeData.usedBy) {
+        if (codeData.usedBy === currentUser.uid) {
+          return { success: false, error: 'このコードは既に使用済みです' };
+        } else {
+          return { success: false, error: 'このコードは既に他のユーザーに使用されています' };
+        }
+      }
+
+      // 3. デッキデータを取得
+      const deckRef = db.collection('decks').doc(codeData.deckId);
+      const deckDoc = await deckRef.get();
+
+      if (!deckDoc.exists) {
+        return { success: false, error: 'デッキが見つかりません' };
+      }
+
+      const deckData = { id: deckDoc.id, ...deckDoc.data() };
+
+      // 4. コードを使用済みに更新
+      await codeDoc.ref.update({
+        usedBy: currentUser.uid,
+        usedAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      // 5. ユーザーの購入済みデッキリストに追加
+      const userRef = db.collection('users').doc(currentUser.uid);
+      await userRef.set({
+        purchasedDecks: firebase.firestore.FieldValue.arrayUnion(codeData.deckId)
+      }, { merge: true });
+
+      // 6. ローカルにキャッシュ
+      saveImportedDeckToLocal(deckData);
+
+      console.log('[FirebaseSync] デッキインポート成功:', deckData.title);
+      return { success: true, deck: deckData };
+
+    } catch (error) {
+      console.error('[FirebaseSync] デッキインポートエラー:', error);
+      return { success: false, error: 'インポート中にエラーが発生しました' };
+    }
+  }
+
+  /**
+   * インポート済みデッキをローカルに保存
+   */
+  function saveImportedDeckToLocal(deck) {
+    const IMPORTED_DECKS_KEY = 'studyViewer_importedDecks';
+    let importedDecks = [];
+
+    try {
+      const stored = localStorage.getItem(IMPORTED_DECKS_KEY);
+      if (stored) {
+        importedDecks = JSON.parse(stored);
+      }
+    } catch (e) {
+      console.error('ローカルデッキ読み込みエラー:', e);
+    }
+
+    // 既存のデッキを更新または追加
+    const existingIndex = importedDecks.findIndex(d => d.id === deck.id);
+    if (existingIndex >= 0) {
+      importedDecks[existingIndex] = deck;
+    } else {
+      importedDecks.push(deck);
+    }
+
+    localStorage.setItem(IMPORTED_DECKS_KEY, JSON.stringify(importedDecks));
+  }
+
+  /**
+   * ローカルのインポート済みデッキを取得
+   */
+  function getImportedDecks() {
+    const IMPORTED_DECKS_KEY = 'studyViewer_importedDecks';
+    try {
+      const stored = localStorage.getItem(IMPORTED_DECKS_KEY);
+      if (stored) {
+        return JSON.parse(stored);
+      }
+    } catch (e) {
+      console.error('ローカルデッキ読み込みエラー:', e);
+    }
+    return [];
+  }
+
+  /**
+   * ユーザーの購入済みデッキをクラウドから同期
+   */
+  async function syncPurchasedDecks() {
+    if (!isLoggedIn() || !db) return [];
+
+    try {
+      const userRef = db.collection('users').doc(currentUser.uid);
+      const userDoc = await userRef.get();
+
+      if (!userDoc.exists) return [];
+
+      const userData = userDoc.data();
+      const purchasedDeckIds = userData.purchasedDecks || [];
+
+      if (purchasedDeckIds.length === 0) return [];
+
+      // 各デッキのデータを取得
+      const decks = [];
+      for (const deckId of purchasedDeckIds) {
+        const deckDoc = await db.collection('decks').doc(deckId).get();
+        if (deckDoc.exists) {
+          decks.push({ id: deckDoc.id, ...deckDoc.data() });
+        }
+      }
+
+      // ローカルにキャッシュ
+      decks.forEach(deck => saveImportedDeckToLocal(deck));
+
+      console.log('[FirebaseSync] 購入済みデッキ同期完了:', decks.length);
+      return decks;
+
+    } catch (error) {
+      console.error('[FirebaseSync] 購入済みデッキ同期エラー:', error);
+      return getImportedDecks(); // エラー時はローカルキャッシュを返す
+    }
+  }
+
   // 公開API
   return {
     init,
@@ -483,7 +633,11 @@ const FirebaseSync = (function() {
     sync,
     onAuthStateChanged,
     getCurrentUser,
-    isLoggedIn
+    isLoggedIn,
+    // デッキインポート
+    importDeckWithCode,
+    getImportedDecks,
+    syncPurchasedDecks
   };
 })();
 
@@ -614,6 +768,95 @@ function initAccountUI() {
     } finally {
       switchAccountBtn.disabled = false;
       switchAccountBtn.querySelector('span').textContent = 'アカウントを切り替え';
+    }
+  });
+
+  // === デッキインポートモーダル ===
+  const importDeckBtn = document.getElementById('import-deck-btn');
+  const importOverlay = document.getElementById('import-overlay');
+  const importBackdrop = importOverlay?.querySelector('.import-backdrop');
+  const importClose = document.getElementById('import-close');
+  const importCodeInput = document.getElementById('import-code-input');
+  const importSubmitBtn = document.getElementById('import-submit-btn');
+  const importStatus = document.getElementById('import-status');
+
+  function openImportModal() {
+    if (importOverlay) {
+      importOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      importCodeInput?.focus();
+    }
+  }
+
+  function closeImportModal() {
+    if (importOverlay) {
+      importOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      // リセット
+      if (importCodeInput) importCodeInput.value = '';
+      if (importStatus) {
+        importStatus.className = 'import-status';
+        importStatus.textContent = '';
+      }
+    }
+  }
+
+  function showImportStatus(message, type) {
+    if (importStatus) {
+      importStatus.textContent = message;
+      importStatus.className = `import-status show ${type}`;
+    }
+  }
+
+  // インポートボタン
+  importDeckBtn?.addEventListener('click', () => {
+    closeAccountSheet();
+    setTimeout(openImportModal, 300);
+  });
+
+  // モーダルを閉じる
+  importBackdrop?.addEventListener('click', closeImportModal);
+  importClose?.addEventListener('click', closeImportModal);
+
+  // インポート実行
+  async function executeImport() {
+    const code = importCodeInput?.value?.trim()?.toUpperCase();
+    if (!code) {
+      showImportStatus('アクセスコードを入力してください', 'error');
+      return;
+    }
+
+    try {
+      importSubmitBtn.disabled = true;
+      importSubmitBtn.querySelector('span').textContent = 'インポート中...';
+      showImportStatus('デッキを取得しています...', 'loading');
+
+      const result = await FirebaseSync.importDeckWithCode(code);
+
+      if (result.success) {
+        showImportStatus(`「${result.deck.title}」をインポートしました！`, 'success');
+        // 成功したらインポートデッキ更新イベントを発火
+        window.dispatchEvent(new CustomEvent('deckImported', { detail: result.deck }));
+        // 2秒後にモーダルを閉じる
+        setTimeout(closeImportModal, 2000);
+      } else {
+        showImportStatus(result.error, 'error');
+      }
+    } catch (error) {
+      console.error('インポートエラー:', error);
+      showImportStatus('インポートに失敗しました。もう一度お試しください。', 'error');
+    } finally {
+      importSubmitBtn.disabled = false;
+      importSubmitBtn.querySelector('span').textContent = 'インポート';
+    }
+  }
+
+  importSubmitBtn?.addEventListener('click', executeImport);
+
+  // Enterキーでもインポート
+  importCodeInput?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      executeImport();
     }
   });
 

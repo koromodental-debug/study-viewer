@@ -9,8 +9,9 @@ const FlashcardModule = (function() {
   const REPORTS_KEY = 'studyViewer_cardReports';
   const STORAGE_VERSION = 1;
 
-  // 科目の表示順序（必修 → 基礎系 → 臨床系）
+  // 科目の表示順序（インポート済み → 必修 → 基礎系 → 臨床系）
   const SUBJECT_ORDER = [
+    'インポート済み',
     '必修',
     // 基礎系
     '解剖', '組織', '生理', '生化',
@@ -73,8 +74,69 @@ const FlashcardModule = (function() {
     container = document.getElementById('flashcard-content');
     if (!container) return;
 
+    // インポート済みデッキを読み込んでDATAに追加
+    loadImportedDecks();
+
     loadProgress();
     renderDeckList();
+
+    // デッキインポートイベントをリッスン
+    window.addEventListener('deckImported', (e) => {
+      addImportedDeckToData(e.detail);
+      renderDeckList();
+    });
+
+    // Firebase同期完了後にデータを再読み込み
+    window.addEventListener('firebaseSyncComplete', () => {
+      console.log('[FlashcardModule] Firebase同期完了 - 進捗データを再読み込み');
+      loadProgress();
+      // 演習中でなければ画面を更新
+      if (!state.isActive) {
+        renderDeckList();
+      }
+    });
+  }
+
+  // インポート済みデッキをDATAに追加
+  function loadImportedDecks() {
+    // FirebaseSyncが利用可能な場合のみ
+    if (typeof FirebaseSync === 'undefined') return;
+
+    const importedDecks = FirebaseSync.getImportedDecks();
+    if (!importedDecks || importedDecks.length === 0) return;
+
+    for (const deck of importedDecks) {
+      addImportedDeckToData(deck);
+    }
+  }
+
+  // 単一のインポートデッキをDATAに追加
+  function addImportedDeckToData(deck) {
+    if (!deck || !deck.topics) return;
+
+    // 既存のトピックを削除（重複防止）
+    const existingIds = deck.topics.map(t => `imported_${deck.id}_${t.id}`);
+    for (let i = DATA.length - 1; i >= 0; i--) {
+      if (existingIds.includes(DATA[i].id)) {
+        DATA.splice(i, 1);
+      }
+    }
+
+    // トピックをDATAに追加
+    for (const topic of deck.topics) {
+      DATA.push({
+        id: `imported_${deck.id}_${topic.id}`,
+        title: topic.title,
+        category: `インポート/${deck.title}`,
+        htmlPath: null,
+        qaPath: topic.qaPath,
+        searchText: `${deck.title} ${topic.title}`,
+        source: 'imported',
+        subject: 'インポート済み',
+        subjectCategory: deck.title,
+        importedDeckId: deck.id
+      });
+    }
   }
 
   // === localStorage管理 ===

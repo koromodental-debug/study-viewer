@@ -271,6 +271,12 @@ const FlashcardModule = (function() {
       again += stats.again;
     }
 
+    // 特別デッキ（kokoshika_hisshu）の進捗も含める
+    const kokoshikaStats = getTopicStats('kokoshika_hisshu');
+    memorized += kokoshikaStats.memorized;
+    again += kokoshikaStats.again;
+    totalCards += kokoshikaStats.memorized + kokoshikaStats.again;
+
     return { total: totalCards, memorized, again };
   }
 

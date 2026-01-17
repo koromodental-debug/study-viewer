@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抜歯の基本 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>抜歯の基本</h1>
+    <div class="container">
+
+      <h2>抜歯の適応症</h2>
+      <ul>
+        <li>高度の齲蝕で<span class="key">歯冠修復が不可能</span>な歯</li>
+        <li>歯内治療や歯根尖切除術によっても<span class="key">保存不可能</span>な歯</li>
+        <li><span class="key">歯根吸収</span>が著明で動揺の著しい歯</li>
+        <li>高度の<span class="key">歯周疾患</span>で動揺の著しい歯</li>
+        <li>歯冠および歯根破折で保存が困難な歯</li>
+        <li>隣在歯や歯周組織に障害を及ぼしている歯</li>
+        <li><span class="key">矯正治療</span>のために抜歯が必要な歯</li>
+        <li>晩期残存乳歯、萌出遅延歯など</li>
+      </ul>
+
+      <h2>抜歯の禁忌症</h2>
+      <p>現在では<span class="highlight">ほとんどが相対的禁忌</span>に分類される。</p>
+
+      <h3>全身的禁忌</h3>
+      <ul>
+        <li><span class="key">虚血性心疾患</span>：心筋梗塞後6ヶ月以内は延期</li>
+        <li><span class="key">抗凝固療法中</span>：<span class="caution">中断せず継続下で抜歯</span>（局所止血で対応）</li>
+        <li><span class="key">人工弁置換患者</span>：感染性心内膜炎予防のため<span class="highlight">抗菌薬を術前投与</span></li>
+        <li><span class="key">糖尿病</span>：血糖コントロール不良時は延期</li>
+        <li><span class="key">妊娠</span>：安定期（5〜7ヶ月）に行う</li>
+      </ul>
+
+      <h3>局所的禁忌</h3>
+      <ul>
+        <li><span class="key">急性炎症</span>のある時期の歯（炎症の拡大リスク）</li>
+        <li><span class="key">悪性腫瘍</span>に植立している歯</li>
+        <li><span class="key">放射線治療</span>後（骨壊死リスク）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">106A35</div>
+        <p>人工心臓弁置換術を受けた患者の抜歯で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 全身麻酔下で行う。<br>
+          b NSAIDsは減量する。<br>
+          c 抗血栓療法を中断する。<br>
+          d 抗菌薬を術前投与する。<br>
+          e アドレナリン添加局所麻酔薬は用いない。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】人工弁置換患者は<span class="highlight">感染性心内膜炎</span>のハイリスク群である。抜歯などの観血的処置前には<span class="key">抗菌薬の予防投与</span>（アモキシシリン等）が必要。抗血栓療法は<span class="caution">中断しない</span>（血栓塞栓症リスク＞出血リスク）。</p>
+      </div>
+
+      <h2>抜歯時の体位</h2>
+
+      <h3>術者の体位</h3>
+      <ul>
+        <li><span class="key">座位</span>が基本</li>
+        <li>両足をやや開いて安定させる</li>
+        <li>立位でも可能</li>
+      </ul>
+
+      <h3>患者の体位と術者の位置</h3>
+      <table>
+        <tr>
+          <th>抜歯部位</th>
+          <th>術者の位置</th>
+          <th>咬合平面</th>
+        </tr>
+        <tr>
+          <td><span class="key">上顎</span></td>
+          <td>患者の<span class="highlight">右側前方</span>（8〜9時）または<span class="highlight">12時</span></td>
+          <td>床面と<span class="highlight">水平</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎</span></td>
+          <td>患者の<span class="highlight">右側前方〜後側方</span></td>
+          <td>床面と<span class="highlight">約45°</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ポイント：12時位置での上顎前歯抜歯</div>
+        <ul>
+          <li>術者は患者の<span class="key">頭側</span>に位置</li>
+          <li>鉗子は<span class="highlight">順手</span>で把持</li>
+          <li>左手で歯槽部を固定・保護</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A26</div>
+        <p>歯根が1/2吸収された上顎右側乳中切歯を抜去することとした。術者が座位にて12時の位置で抜歯する際の手技の写真（別冊No.3）を別に示す。<br>適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110A26_1.png" alt="別冊No.3">
+        </div>
+        <div class="choices">
+          a ア　　b イ　　c ウ　　d エ　　e オ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】12時位置での上顎前歯抜歯では、<span class="key">順手</span>で鉗子を把持し、左手で歯槽部を固定する。エが適切な手技。</p>
+      </div>
+
+      <h2>抜歯器具</h2>
+
+      <h3>抜歯鉗子</h3>
+      <p>構造：<span class="key">嘴部</span>・<span class="key">関節部</span>・<span class="key">把柄部</span></p>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>上顎前歯用</td>
+          <td>嘴部と把柄部が直線上</td>
+        </tr>
+        <tr>
+          <td>下顎前歯用</td>
+          <td>嘴部が把柄部に対して直角に屈曲</td>
+        </tr>
+        <tr>
+          <td>上顎大臼歯用</td>
+          <td>左右で形態が異なる（頬側根分岐部に対応）</td>
+        </tr>
+        <tr>
+          <td>下顎大臼歯用</td>
+          <td>嘴部に突起あり（根分岐部に挿入）</td>
+        </tr>
+      </table>
+
+      <h3>把持法</h3>
+      <ul>
+        <li><span class="key">順手</span>：主に<span class="highlight">上顎</span>で使用</li>
+        <li><span class="key">逆手</span>：主に<span class="highlight">下顎</span>で使用（把柄部の後端に拇指を置く）</li>
+      </ul>
+
+      <h3>挺子（エレベーター、ヘーベル）</h3>
+      <p>構造：<span class="key">嘴部</span>・<span class="key">支柱部</span>・<span class="key">把柄部</span></p>
+      <p>作用：</p>
+      <ul>
+        <li><span class="key">楔作用</span>：歯根膜腔に挿入して歯槽を拡大</li>
+        <li><span class="key">輪軸作用</span>：嘴部を回転させて歯周靭帯を断裂</li>
+        <li><span class="key">梃杆作用</span>：隣在歯を支点として歯を挺出</li>
+      </ul>
+
+      <h2>抜歯時の偶発症と対応</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">抜歯時に歯が落下したら</div>
+        <p>水平位で歯が口腔内に落下 → <span class="highlight">まず顔を横に向かせる</span>（誤嚥・誤飲防止）</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117A18</div>
+        <p>水平位での抜歯時に歯が口腔内に落下した。<br>まず行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 閉口させる。<br>
+          b 患者を起こす。<br>
+          c うがいをさせる。<br>
+          d 顔を横に向かせる。<br>
+          e 誰かを呼びに行く。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】水平位で歯が落下した場合、<span class="caution">誤嚥・誤飲</span>のリスクがある。<span class="highlight">まず顔を横に向かせて</span>気道への落下を防ぐ。閉口させると飲み込むリスクがあり、患者を起こす前に顔を横に向けることが優先。</p>
+      </div>
+
+      <h3>主な偶発症</h3>
+      <table>
+        <tr>
+          <th>偶発症</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td><span class="key">隣在歯の損傷・脱臼</span></td>
+          <td>整復・固定（2週間程度）</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯根の破折</span></td>
+          <td>残根の除去（困難なら経過観察も）</td>
+        </tr>
+        <tr>
+          <td><span class="key">上顎洞への歯根迷入</span></td>
+          <td>抜歯窩からの摘出または上顎洞根治術</td>
+        </tr>
+        <tr>
+          <td><span class="key">口底への歯根迷入</span></td>
+          <td>口腔外からのアプローチで摘出</td>
+        </tr>
+        <tr>
+          <td><span class="key">顎関節脱臼</span></td>
+          <td>整復（Hippocrates法）</td>
+        </tr>
+        <tr>
+          <td><span class="key">神経損傷</span></td>
+          <td>下歯槽神経・オトガイ神経・舌神経の損傷に注意</td>
+        </tr>
+        <tr>
+          <td><span class="key">気腫</span></td>
+          <td>エアタービン使用時に注意、経過観察</td>
+        </tr>
+        <tr>
+          <td><span class="key">異常出血</span></td>
+          <td>局所止血（圧迫、縫合、止血剤）</td>
+        </tr>
+      </table>
+
+      <h2>抜歯後の管理</h2>
+      <ul>
+        <li><span class="key">止血確認</span>：ガーゼを噛ませて帰宅させる</li>
+        <li><span class="key">抜歯後疼痛</span>：術後感染予防のため抗菌薬を投与することがある</li>
+        <li><span class="key">抜糸</span>：1週間程度で抜糸</li>
+        <li><span class="key">創傷治癒</span>：
+          <ul>
+            <li>直後〜1日：血餅形成</li>
+            <li>1〜3日：フィブリンで閉鎖</li>
+            <li>3日〜1週：肉芽組織形成</li>
+            <li>1〜2週：上皮による閉鎖</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="note">
+        参照：標準口腔外科学 第4版 p.449-462
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

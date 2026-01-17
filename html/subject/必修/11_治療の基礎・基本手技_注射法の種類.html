@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>注射法の種類 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>注射法の種類</h1>
+    <div class="container">
+
+      <h2>1. 注射法の分類と特徴</h2>
+
+      <h3>注射法の種類と吸収速度</h3>
+      <table>
+        <tr><th>注射法</th><th>吸収速度</th><th>主な用途</th></tr>
+        <tr><td>皮内注射</td><td>遅い</td><td>アレルギー検査、ツベルクリン反応</td></tr>
+        <tr><td>皮下注射</td><td>やや遅い</td><td>インスリン、ワクチン</td></tr>
+        <tr><td>筋肉内注射</td><td>中程度</td><td>アナフィラキシー時のアドレナリン</td></tr>
+        <tr><td><span class="highlight">静脈内注射</span></td><td><span class="highlight">最も速い</span></td><td>救急薬、輸液、心停止時のアドレナリン</td></tr>
+        <tr><td>骨髄内注射</td><td>静脈内と同等</td><td>静脈確保困難時の代替</td></tr>
+      </table>
+
+      <p class="note">吸収速度の順：<span class="key">静脈内 ＞ 筋肉内 ＞ 皮下 ＞ 皮内</span></p>
+
+      <h3>各注射法の詳細</h3>
+
+      <p><span class="key">皮内注射</span>：真皮内に少量（0.1mL程度）を注射。注射部位に膨疹を形成。</p>
+
+      <p><span class="key">皮下注射</span>：皮下組織に注射。比較的緩徐に吸収される。</p>
+
+      <p><span class="key">筋肉内注射</span>：筋肉組織に注射。皮下より血流が豊富なため吸収が速い。<span class="highlight">アナフィラキシー時のアドレナリン</span>は筋肉内投与。</p>
+
+      <p><span class="key">静脈内注射</span>：血管内に直接投与。<span class="highlight">最も効果発現が速い</span>。<span class="highlight">心停止時のアドレナリン</span>は静脈内投与。</p>
+
+      <p><span class="key">骨髄内注射</span>：骨髄腔内に投与。静脈確保が困難な場合（小児、ショック時など）の代替経路。</p>
+
+      <h2>2. 救急時の投与経路</h2>
+
+      <h3>心停止時</h3>
+      <p>心停止時のアドレナリン投与経路は<span class="highlight">静脈内（IV）または骨髄内（IO）</span>。</p>
+      <ul>
+        <li>アドレナリン 1mg を3〜5分ごとに投与</li>
+        <li>静脈確保ができない場合は<span class="key">骨髄輸液</span>を行う</li>
+        <li><span class="caution">皮下・筋肉内では効果発現が遅すぎる</span></li>
+      </ul>
+
+      <h3>アナフィラキシー時</h3>
+      <p>アナフィラキシー時のアドレナリン投与経路は<span class="highlight">筋肉内（大腿外側）</span>。</p>
+      <ul>
+        <li>アドレナリン 0.3〜0.5mg（成人）を大腿外側に筋注</li>
+        <li>静脈内投与は心室細動のリスクがあり、<span class="caution">原則として行わない</span></li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">116C17</div>
+        <p>心停止患者へのアドレナリンの投与経路で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 皮下<br>
+          b 皮内<br>
+          c 筋肉内<br>
+          d 静脈内<br>
+          e 動脈内
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">心停止時</span>のアドレナリンは<span class="highlight">静脈内投与</span>が適切。静脈内投与は効果発現が最も速く、心停止のような緊急時に必要。皮下・皮内・筋肉内では吸収が遅すぎる。動脈内投与は通常行わない。</p>
+      </div>
+
+      <h2>3. 歯科で用いる注射剤</h2>
+
+      <h3>局所麻酔薬の剤形</h3>
+      <table>
+        <tr><th>剤形</th><th>特徴</th></tr>
+        <tr><td><span class="key">カートリッジ</span></td><td>歯科で最も多く使用、専用注射器が必要</td></tr>
+        <tr><td>バイアル・ポリアンプ</td><td>数回相当量を密封、シリンジで吸引</td></tr>
+        <tr><td>アンプル</td><td>1回分相当量を密封</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：注射法の種類</div>
+        <ul>
+          <li><span class="key">吸収速度</span>：静脈内 ＞ 筋肉内 ＞ 皮下 ＞ 皮内</li>
+          <li><span class="key">心停止時のアドレナリン</span>：静脈内（または骨髄内）</li>
+          <li><span class="key">アナフィラキシー時のアドレナリン</span>：筋肉内（大腿外側）</li>
+          <li><span class="key">静脈確保困難時</span>：骨髄内投与</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

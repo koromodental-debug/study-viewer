@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>気道確保・酸素療法 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 初期救急</span>
+    <h1>気道確保・酸素療法</h1>
+    <div class="container">
+
+      <h2>1. 意識消失と上気道閉塞</h2>
+
+      <h3>意識消失患者の呼吸不全</h3>
+      <p>意識を消失した患者に共通する呼吸不全の原因は<span class="highlight">上気道閉塞</span>である。主に<span class="key">舌根沈下</span>による。</p>
+
+      <table>
+        <tr><th>状態</th><th>原因</th><th>対応</th></tr>
+        <tr><td><span class="highlight">意識消失</span></td><td><span class="highlight">舌根沈下による上気道閉塞</span></td><td>気道確保</td></tr>
+        <tr><td>昏睡</td><td>舌根沈下</td><td><span class="highlight">直ちに気道確保</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112B12</div>
+        <p>意識を消失した患者に共通する呼吸不全の原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 胸郭の硬直<br>
+          b 上気道閉塞<br>
+          c 声門の閉鎖<br>
+          d 横隔膜の痙攣<br>
+          e 呼吸筋の麻痺
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】意識消失により筋緊張が低下し、<span class="highlight">舌根が沈下して上気道閉塞</span>を起こす。これが呼吸不全の最も一般的な原因である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D5</div>
+        <p>昏睡に陥った患者において直ちに対応すべきなのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 頻　脈<br>
+          b 頻呼吸<br>
+          c 血圧上昇<br>
+          d 上気道閉塞<br>
+          e 不随意運動
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】昏睡患者では<span class="highlight">上気道閉塞に直ちに対応</span>する必要がある。気道確保が最優先。頻脈や血圧上昇は経過観察可能。</p>
+      </div>
+
+      <h2>2. 気道確保の方法</h2>
+
+      <h3>一次救命処置での気道確保</h3>
+      <p>舌根沈下に対して<span class="highlight">最初に行う処置</span>は用手的気道確保である。</p>
+
+      <table>
+        <tr><th>方法</th><th>手技</th><th>分類</th></tr>
+        <tr><td><span class="highlight">頭部後屈顎先挙上法</span></td><td>頭部を後屈させ、オトガイを挙上</td><td><span class="highlight">一次救命処置</span></td></tr>
+        <tr><td><span class="key">下顎挙上法</span></td><td>下顎角を前上方に挙上</td><td>一次救命処置</td></tr>
+        <tr><td>経口エアウェイ</td><td>口腔内に器具を挿入</td><td>一次救命処置</td></tr>
+        <tr><td><span class="caution">気管挿管</span></td><td>気管内にチューブを挿入</td><td><span class="caution">二次救命処置</span></td></tr>
+        <tr><td><span class="caution">輪状甲状靱帯穿刺</span></td><td>輪状甲状膜を穿刺</td><td><span class="caution">二次救命処置</span></td></tr>
+      </table>
+
+      <h3>頭部後屈顎先挙上法の原理</h3>
+      <p>頭部を後屈させて下顎骨を前上方へ引き上げると、下顎についた<span class="key">舌が持ち上がり</span>、舌と口腔壁の間隔が広がって気道が確保される。</p>
+
+      <h2>3. 人工呼吸</h2>
+
+      <h3>人工呼吸の方法</h3>
+      <table>
+        <tr><th>方法</th><th>特徴</th><th>分類</th></tr>
+        <tr><td>口対口人工呼吸</td><td>器具なしで可能</td><td>一次救命処置</td></tr>
+        <tr><td><span class="key">バッグバルブマスク</span></td><td>感染リスク低減</td><td>一次救命処置</td></tr>
+        <tr><td>バッグバルブマスク＋酸素</td><td>高濃度酸素投与可能</td><td>二次救命処置</td></tr>
+      </table>
+
+      <h2>4. 酸素療法</h2>
+
+      <h3>酸素投与デバイス</h3>
+      <table>
+        <tr><th>デバイス</th><th>酸素濃度</th><th>特徴</th></tr>
+        <tr><td>鼻カニューラ</td><td>24〜40%</td><td>低流量、会話・食事可能</td></tr>
+        <tr><td>フェイスマスク</td><td>40〜60%</td><td>中流量</td></tr>
+        <tr><td>リザーバー付きマスク</td><td>60〜90%</td><td>高濃度酸素投与</td></tr>
+      </table>
+
+      <h3>注意が必要な患者</h3>
+      <p><span class="caution">COPD患者</span>では高濃度酸素投与によりCO₂ナルコーシスを起こす可能性があるため、低濃度から開始する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：気道確保・酸素療法</div>
+        <ul>
+          <li><span class="key">意識消失患者の呼吸不全</span>：舌根沈下による上気道閉塞</li>
+          <li><span class="key">昏睡患者で最優先</span>：上気道閉塞への対応（気道確保）</li>
+          <li><span class="key">最初に行う気道確保</span>：頭部後屈顎先挙上法（オトガイ挙上）</li>
+          <li><span class="key">一次救命処置</span>：用手的気道確保、バッグバルブマスク</li>
+          <li><span class="key">二次救命処置</span>：気管挿管、輪状甲状靱帯穿刺</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

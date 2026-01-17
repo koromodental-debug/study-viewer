@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>保健活動の進め方 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 地域における保健対策</span>
+    <h1>保健活動の進め方</h1>
+    <div class="container">
+
+      <h2>保健活動の手順（PDCAサイクル）</h2>
+      <p>地域保健活動はPDCAサイクルに基づいて進める。</p>
+
+      <h3>基本的な流れ</h3>
+      <p><span class="highlight">調査 → 分析 → 計画 → 実施 → 評価</span></p>
+
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>PDCA</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>調査・分析</td>
+          <td>Plan</td>
+          <td>現状の調査分析、調査結果を踏まえた計画立案</td>
+        </tr>
+        <tr>
+          <td>実施</td>
+          <td>Do</td>
+          <td>計画に沿って実行</td>
+        </tr>
+        <tr>
+          <td>評価</td>
+          <td>Check</td>
+          <td>成果を評価</td>
+        </tr>
+        <tr>
+          <td>改善</td>
+          <td>Action</td>
+          <td>評価に基づき改善し、次のサイクルへ</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">試験で問われるポイント</div>
+        <ul>
+          <li>最初は<span class="highlight">「調査」</span>から始まる（「計画」や「分析」からではない）</li>
+          <li>分析は調査の後、計画の前に行う</li>
+          <li>評価は最後（実施の後）</li>
+        </ul>
+      </div>
+
+      <h2>評価の種類（ドナベディアンモデル）</h2>
+      <p>保健事業の評価は3つの観点から行う。</p>
+
+      <table>
+        <tr>
+          <th>評価の種類</th>
+          <th>評価対象</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="key">ストラクチャー</span><br>（構造）評価</td>
+          <td>施設・人員・設備</td>
+          <td>事業に要した総経費<br>保健指導の単位時間</td>
+        </tr>
+        <tr>
+          <td><span class="key">プロセス</span><br>（過程）評価</td>
+          <td>活動の実施状況</td>
+          <td>事業の参加者数<br>予防活動の実施回数</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">アウトカム</span><br>（結果）評価</td>
+          <td>結果・成果</td>
+          <td>事業前後の受診率の変化<br>疾病の罹患率の変化</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">アウトカム評価の見分け方</div>
+        <ul>
+          <li>「事業前後の変化」「改善率」など<span class="highlight">結果を測定</span>するもの</li>
+          <li>参加者数や経費は<span class="caution">アウトカムではない</span>（それぞれプロセス、ストラクチャー）</li>
+        </ul>
+      </div>
+
+      <h2>ヘルスプロモーション関連用語</h2>
+
+      <h3>ヘルスリテラシー</h3>
+      <p><span class="highlight">健康情報を探し出し、理解して、適切な健康行動につなげる能力</span></p>
+      <p class="note">※「リテラシー」＝読み書き能力の意味から派生</p>
+
+      <h3>エンパワメント</h3>
+      <p>個人や集団がもっている<span class="key">能力を引き出し</span>、組織・社会などに影響を与えるようになること</p>
+
+      <h3>その他の重要用語</h3>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>意味</th>
+        </tr>
+        <tr>
+          <td>ヘルスプロモーション</td>
+          <td>健康とその決定要因をコントロールし改善できるようにするプロセス</td>
+        </tr>
+        <tr>
+          <td>ハイリスクアプローチ</td>
+          <td>疾患リスクの高い者に対する介入</td>
+        </tr>
+        <tr>
+          <td>ポピュレーションアプローチ</td>
+          <td>一般集団全体に対する介入</td>
+        </tr>
+        <tr>
+          <td>クリティカル・シンキング</td>
+          <td>批判的思考（情報を鵜呑みにせず分析的に考える）</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B93</div>
+        <p>地域保健活動の手順で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 分析→調査→計画→評価→実施<br>
+          b 計画→調査→評価→実施→分析<br>
+          c 調査→計画→分析→実施→評価<br>
+          d 分析→計画→実施→調査→評価<br>
+          e 調査→分析→計画→実施→評価
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】PDCAサイクルに基づく流れ。まず現状を「調査」し、データを「分析」、その結果をもとに「計画」を立て、「実施」し、最後に「評価」する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A51</div>
+        <p>ある地域で実施された歯周病予防事業の効果を評価することとした。アウトカム評価はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 事業の参加者数<br>
+          b 事業に要した総経費<br>
+          c 予防活動の実施回数<br>
+          d 事業前後の歯科受診率の変化<br>
+          e 保健指導に要した1人あたりの単位時間
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】アウトカム評価は「結果・成果」の評価。事業前後の変化を測定するdが該当。aとcはプロセス評価、bとeはストラクチャー評価。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C27</div>
+        <p>健康情報を探し出し、理解して、適切な健康行動につなげる能力はどれか。1つ選べ。</p>
+        <div class="choices">
+          a アウトカム<br>
+          b エンパワメント<br>
+          c ヘルスリテラシー<br>
+          d ハイリスクアプローチ<br>
+          e クリティカル・シンキング
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ヘルスリテラシーは健康情報を「探し出し」「理解し」「活用する」能力。エンパワメントは能力を引き出すこと、ハイリスクアプローチはリスクの高い者への介入。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

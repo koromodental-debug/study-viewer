@@ -10024,3 +10024,82 @@ body.is-practice .tab-content {
     background: rgba(255, 255, 255, 0.1);
   }
 }
+
+/* ココシカバナー */
+.kokoshika-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  margin: 8px 12px 16px 12px;
+  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kokoshika-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.kokoshika-banner:active {
+  transform: translateY(0);
+}
+
+.kokoshika-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kokoshika-banner-icon {
+  font-size: 28px;
+}
+
+.kokoshika-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kokoshika-banner-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.kokoshika-banner-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.kokoshika-banner-stats {
+  display: flex;
+  align-items: center;
+}
+
+.kokoshika-banner-stats .deck-stat-new,
+.kokoshika-banner-stats .deck-stat {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.kokoshika-banner-stats .deck-stat.again {
+  background: rgba(255, 255, 255, 0.95);
+  color: #FF6B35;
+}
+
+.kokoshika-banner-stats .deck-stat.memorized {
+  background: rgba(255, 255, 255, 0.95);
+  color: #34C759;
+}
+
+/* ダークモード */
+[data-theme="dark"] .kokoshika-banner {
+  background: linear-gradient(135deg, #E55A2B 0%, #D4820F 100%);
+}

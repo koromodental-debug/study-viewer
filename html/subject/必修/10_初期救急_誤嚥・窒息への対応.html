@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>誤嚥・窒息への対応 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 初期救急</span>
+    <h1>誤嚥・窒息への対応</h1>
+    <div class="container">
+
+      <h2>1. 窒息の認識</h2>
+
+      <h3>窒息の徴候</h3>
+      <p>気道異物による窒息では、患者は<span class="highlight">チョークサイン</span>（頸部に手をあてる仕草）を示す。</p>
+
+      <table>
+        <tr><th>程度</th><th>症状</th><th>対応</th></tr>
+        <tr><td>軽度（部分閉塞）</td><td>咳ができる、声が出る</td><td>咳を促す</td></tr>
+        <tr><td><span class="highlight">重度（完全閉塞）</span></td><td>咳ができない、声が出ない、チアノーゼ</td><td><span class="highlight">異物除去法</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111B15（参照）</div>
+        <p>歯科治療時に患者が苦悶を呈した。その際の患者の写真（別冊No.2）を別に示す。考えられる病態はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心停止<br>
+          b 脳梗塞<br>
+          c 気道閉塞<br>
+          d 血圧上昇<br>
+          e 狭心症発作
+        </div>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111B15_1.png" alt="別冊No.2">
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】苦悶様表情と<span class="highlight">頸部に手をあてる仕草（チョークサイン）</span>は気道閉塞の典型的徴候。</p>
+      </div>
+
+      <h2>2. 異物除去法</h2>
+
+      <h3>意識がある場合の異物除去</h3>
+      <table>
+        <tr><th>方法</th><th>手技</th><th>適応</th></tr>
+        <tr><td><span class="highlight">背部叩打法</span></td><td>肩甲骨の間を手掌基部で強く叩く</td><td>全年齢</td></tr>
+        <tr><td><span class="highlight">腹部突き上げ法</span><br>（ハイムリック法）</td><td>後ろから腹部を抱え、臍より上・剣状突起より下を突き上げる</td><td>成人・小児</td></tr>
+        <tr><td><span class="key">胸部突き上げ法</span></td><td>後ろから胸部を抱え、胸骨を突き上げる</td><td><span class="caution">妊婦・肥満者</span></td></tr>
+      </table>
+
+      <h3>腹部突き上げ法の禁忌</h3>
+      <p><span class="caution">妊婦</span>と<span class="caution">高度肥満者</span>には腹部突き上げ法は行わない。<span class="key">胸部突き上げ法</span>を用いる。</p>
+
+      <h3>乳児の異物除去</h3>
+      <p>乳児（1歳未満）には<span class="caution">腹部突き上げ法は行わない</span>。<span class="key">背部叩打法</span>と<span class="key">胸部突き上げ法</span>を交互に行う。</p>
+
+      <h2>3. 意識がない場合の対応</h2>
+
+      <h3>反応がなくなった場合</h3>
+      <p>異物除去を試みている間に患者が反応しなくなった場合は、<span class="highlight">直ちに心肺蘇生（CPR）を開始</span>する。</p>
+
+      <table>
+        <tr><th>状態</th><th>対応</th></tr>
+        <tr><td>意識あり</td><td>背部叩打法、腹部突き上げ法</td></tr>
+        <tr><td><span class="highlight">意識なし</span></td><td><span class="highlight">心肺蘇生（胸骨圧迫から開始）</span></td></tr>
+      </table>
+
+      <p class="note">胸骨圧迫により胸腔内圧が上昇し、異物が排出されることがある。</p>
+
+      <h2>4. 歯科治療中の誤嚥・誤飲</h2>
+
+      <h3>誤嚥と誤飲の違い</h3>
+      <table>
+        <tr><th>種類</th><th>経路</th><th>症状</th><th>対応</th></tr>
+        <tr><td><span class="highlight">誤嚥</span></td><td>気道</td><td>咳、呼吸困難、チアノーゼ</td><td>異物除去、気管支鏡</td></tr>
+        <tr><td><span class="key">誤飲</span></td><td>消化管</td><td>無症状のことが多い</td><td>経過観察、内視鏡</td></tr>
+      </table>
+
+      <h3>歯科治療中に起こりやすい状況</h3>
+      <ul>
+        <li>小器具（クラスプ、インレーなど）の落下</li>
+        <li>仰臥位での治療中</li>
+        <li>ラバーダム未使用時</li>
+      </ul>
+
+      <h3>予防策</h3>
+      <ul>
+        <li><span class="key">ラバーダム防湿</span>の使用</li>
+        <li>小器具へのデンタルフロス装着</li>
+        <li>ガーゼによる咽頭保護</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：誤嚥・窒息への対応</div>
+        <ul>
+          <li><span class="key">チョークサイン</span>：頸部に手をあてる仕草 → 気道閉塞</li>
+          <li><span class="key">背部叩打法</span>：肩甲骨の間を叩く（全年齢）</li>
+          <li><span class="key">腹部突き上げ法</span>：臍上部を突き上げる</li>
+          <li><span class="key">胸部突き上げ法</span>：妊婦・肥満者・乳児に使用</li>
+          <li><span class="key">意識消失時</span>：直ちにCPR開始</li>
+          <li><span class="key">誤嚥予防</span>：ラバーダム防湿</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

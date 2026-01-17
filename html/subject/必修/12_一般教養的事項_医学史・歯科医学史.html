@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>医学史・歯科医学史 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 一般教養的事項</span>
+    <h1>医学史・歯科医学史</h1>
+    <div class="container">
+
+      <h2>医の倫理に関する宣言</h2>
+
+      <h3>宣言の歴史的変遷</h3>
+      <table>
+        <tr>
+          <th>年代</th>
+          <th>宣言</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>1947年</td>
+          <td><span class="highlight">ニュルンベルク綱領</span></td>
+          <td>人体実験の倫理（ナチス戦犯裁判を契機）</td>
+        </tr>
+        <tr>
+          <td>1948年</td>
+          <td><span class="highlight">ジュネーブ宣言</span></td>
+          <td>医師の宣誓（ヒポクラテスの誓いの現代版）</td>
+        </tr>
+        <tr>
+          <td>1964年</td>
+          <td><span class="key">ヘルシンキ宣言</span></td>
+          <td>人を対象とする医学研究の倫理</td>
+        </tr>
+        <tr>
+          <td>1968年</td>
+          <td><span class="key">シドニー宣言</span></td>
+          <td>死の判定に関する宣言</td>
+        </tr>
+        <tr>
+          <td>1978年</td>
+          <td><span class="key">アルマ・アタ宣言</span></td>
+          <td>プライマリヘルスケア（PHC）の推進</td>
+        </tr>
+        <tr>
+          <td>1981年</td>
+          <td><span class="highlight">リスボン宣言</span></td>
+          <td><span class="highlight">患者の権利</span>に関する宣言</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方のポイント</div>
+        <ul>
+          <li>ニュルンベルク（1947）→ ジュネーブ（1948）→ ヘルシンキ（1964）→ リスボン（1981）</li>
+          <li><span class="key">ジュネーブ宣言</span>：「患者の健康（health）を第一に」</li>
+          <li><span class="key">リスボン宣言</span>：「患者の権利」（健康教育を受ける権利など）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B114</div>
+        <p>医の倫理に関する宣言等の歴史的変遷の流れを図に示す。（　　　　）はどれか。1つ選べ。</p>
+        <div class="choices">
+          a オタワ憲章<br>
+          b シドニー宣言<br>
+          c 患者の権利章典<br>
+          d アルマ・アタ宣言<br>
+          e ニュールンベルグ綱領
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">ニュルンベルク綱領（1947年）</span>が最初。ナチス・ドイツの人体実験への反省から策定された。</p>
+      </div>
+
+      <h3>ジュネーブ宣言</h3>
+      <p><span class="highlight">ヒポクラテスの誓いの現代版</span>として、医師が医療専門職として宣誓する内容</p>
+      <ul>
+        <li>"The <span class="highlight">health</span> of my patient will be my first consideration"</li>
+        <li>患者の健康を第一に考える</li>
+        <li>人類への奉仕を宣言</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">114B8</div>
+        <p>医療専門職として患者の健康を第一に考え、人類への奉仕を宣言するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a シドニー宣言<br>
+          b リスボン宜言<br>
+          c ジュネーブ宣言<br>
+          d ヘルシンキ宣言<br>
+          e アルマ・アタ宣言
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">ジュネーブ宣言</span>は医師の宣誓文。「患者の健康を第一に」「人類への奉仕」を宣言する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C1</div>
+        <p>以下はジュネーブ宣言の一部である。<br>
+        At the time of being admitted as a member of the medical profession:<br>
+        The（　　）of my patient will be my first consideration.<br>
+        （　　　）に入るのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a activity<br>
+          b body<br>
+          c health<br>
+          d information<br>
+          e mind
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】「患者の<span class="highlight">健康（health）</span>を私の第一の関心事とする」がジュネーブ宣言の核心。</p>
+      </div>
+
+      <h3>リスボン宣言</h3>
+      <p><span class="highlight">患者の権利</span>に関する宣言（1981年、世界医師会）</p>
+      <ul>
+        <li>良質の医療を受ける権利</li>
+        <li>選択の自由の権利</li>
+        <li>自己決定の権利</li>
+        <li><span class="highlight">健康教育を受ける権利</span></li>
+        <li>尊厳に対する権利</li>
+        <li>宗教的支援を受ける権利</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">116B13</div>
+        <p>リスボン宣言で述べられているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 死の判定<br>
+          b 健康格差の縮小<br>
+          c 国民皆保険制度<br>
+          d 倫理審査委員会の設置<br>
+          e 患者が健康教育を受ける権利
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">リスボン宣言は「患者の権利」</span>に関する宣言。死の判定はシドニー宣言、倫理審査委員会はヘルシンキ宣言。</p>
+      </div>
+
+      <h2>歯科医師法</h2>
+
+      <h3>歯科医師法の目的</h3>
+      <p>「歯科医師は、歯科医療及び保健指導を掌ることによって、<span class="highlight">公衆衛生</span>の向上及び増進に寄与し、もって国民の健康な生活を確保するものとする」（第1条）</p>
+
+      <div class="question-box">
+        <div class="q-number">103C14</div>
+        <p>歯科医師法の目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯科医師の所得保証<br>
+          b 公的医療保険制度の維持<br>
+          c 先端歯科医療技術の開発<br>
+          d 国民の健康な生活の確保<br>
+          e 歯科医療の専門分野の確立
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】歯科医師法の目的は<span class="highlight">「国民の健康な生活の確保」</span>。公衆衛生の向上・増進を通じて達成する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A16</div>
+        <p>下記の文は歯科医師法第1条である。（　　） に入るのはどれか。1つ選べ。<br>
+        「歯科医師は、歯科医療及び保健指導を掌ることによって、 （　　）の向上及び増進に寄与し、もって国民の健康な生活を確保するものとする」</p>
+        <div class="choices">
+          a 地域保健<br>
+          b 歯科保健<br>
+          c 口腔衛生<br>
+          d 公衆衛生<br>
+          e 社会福祉
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】歯科医師法第1条には<span class="highlight">「公衆衛生」</span>の向上・増進と規定。「歯科保健」や「口腔衛生」ではない点に注意。</p>
+      </div>
+
+      <h3>歯科医師法に規定されている内容</h3>
+      <table>
+        <tr>
+          <th>規定内容</th>
+          <th>詳細</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">診断書の交付</span></td>
+          <td>患者の求めに応じて交付</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">処方せんの作成</span></td>
+          <td>患者に薬剤を投与する場合</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">無診察治療の禁止</span></td>
+          <td>診察なしでの治療を禁止</td>
+        </tr>
+        <tr>
+          <td><span class="key">療養方法等の指導</span></td>
+          <td>療養上の指導義務</td>
+        </tr>
+        <tr>
+          <td><span class="key">臨床研修修了者の登録</span></td>
+          <td>臨床研修の義務化</td>
+        </tr>
+        <tr>
+          <td><span class="key">虚偽診断書作成の禁止</span></td>
+          <td>虚偽の診断書を作成してはならない</td>
+        </tr>
+        <tr>
+          <td><span class="key">死亡診断書の作成</span></td>
+          <td>自ら診療した患者が死亡した場合</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">歯科医師法に規定されて「いない」もの</div>
+        <ul>
+          <li><span class="caution">守秘義務</span>（秘密保持）→ 刑法第134条</li>
+          <li><span class="caution">異状死体の届出</span> → 医師法第21条（医師のみ）</li>
+          <li><span class="caution">死体検案書の作成</span> → 医師法（医師のみ）</li>
+          <li><span class="caution">診療録の開示</span> → 個人情報保護法</li>
+          <li><span class="caution">診療所開設の届出</span> → 医療法</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D5</div>
+        <p>歯科医師法に規定されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 診断書の交付<br>
+          b 診療録の開示<br>
+          c 異状死体の届出<br>
+          d 診療所開設届の提出<br>
+          e 医療事故報告書の作成
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">診断書の交付は歯科医師法に規定</span>。異状死体の届出は医師法、診療所開設届は医療法。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C19</div>
+        <p>歯科医師法に規定されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 患者の秘密保持<br>
+          b 死体検案書の作成<br>
+          c 無診察治療の禁止<br>
+          d 異状死体の届出義務<br>
+          e 診療所開設の届出義務
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">無診察治療の禁止は歯科医師法に規定</span>。秘密保持は刑法、死体検案書・異状死体の届出は医師法。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A34</div>
+        <p>歯科医師法により作成が規定されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 照射録<br>
+          b 処方せん<br>
+          c 死体検案書<br>
+          d 医療事故報告書<br>
+          e 歯科技工指示書
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">処方せんの作成は歯科医師法に規定</span>。照射録は診療放射線技師法、歯科技工指示書は歯科技工士法。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C71</div>
+        <p>歯科医師法に規定されているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 療養方法等の指導<br>
+          b 臨床研修修了者の登録<br>
+          c 虚偽診断書作成の禁止<br>
+          d 入院診療計画書の交付<br>
+          e 歯科医療に関する広告の制限
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">療養方法等の指導</span>と<span class="highlight">臨床研修修了者の登録</span>は歯科医師法に規定。広告の制限は医療法。虚偽診断書作成の禁止も歯科医師法だが、この問題では2つ選ぶ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C32</div>
+        <p>歯科医師法の規定に基づき歯科医師が交付できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 死産証書<br>
+          b 出生証明書<br>
+          c 死亡確認書<br>
+          d 死亡診断書<br>
+          e 死体検案書
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】歯科医師は自ら診療した患者が死亡した場合、<span class="highlight">死亡診断書</span>を交付できる。死体検案書は<span class="caution">医師のみ</span>が作成可能。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

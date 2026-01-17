@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>治療の基本 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>治療の基本</h1>
+    <div class="container">
+
+      <h2>1. 薬物療法の種類</h2>
+
+      <h3>治療法の分類</h3>
+      <table>
+        <tr><th>種類</th><th>内容</th><th>例</th></tr>
+        <tr><td><span class="highlight">原因療法</span></td><td>疾患の原因を取り除く</td><td><span class="highlight">抗菌薬</span></td></tr>
+        <tr><td><span class="key">対症療法</span></td><td>疾患の症状を抑える</td><td>解熱鎮痛薬</td></tr>
+        <tr><td><span class="key">予防療法</span></td><td>疾病の予防を目的とする</td><td>予防投薬</td></tr>
+        <tr><td><span class="key">補充療法</span></td><td>不足しているものを補充</td><td>ビタミン欠乏症への投与</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108C15</div>
+        <p>急性歯性感染症に対して抗菌薬を投与した。この医療行為はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 原因療法<br>
+          b 再生療法<br>
+          c 緩和療法<br>
+          d 補充療法<br>
+          e 予防療法
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】感染症に対する<span class="highlight">抗菌薬投与は原因療法</span>。細菌という原因を取り除く治療である。</p>
+      </div>
+
+      <h2>2. 歯性感染症の抗菌薬</h2>
+
+      <h3>第一選択薬</h3>
+      <p>急性化膿性根尖性歯周炎などの歯性感染症に対する経口抗菌薬の第一選択は<span class="highlight">アモキシシリン水和物</span>である。</p>
+
+      <table>
+        <tr><th>薬剤</th><th>分類</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">アモキシシリン</span></td><td>ペニシリン系</td><td><span class="highlight">第一選択</span>、細胞壁合成阻害</td></tr>
+        <tr><td>セフェム系</td><td>β-ラクタム系</td><td>ペニシリンアレルギー時の代替</td></tr>
+        <tr><td>マクロライド系</td><td>−</td><td>タンパク質合成阻害</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115B19</div>
+        <p>急性化膿性根尖性歯周炎に対する第一選択経口抗菌薬はどれか。1つ選べ。</p>
+        <div class="choices">
+          a オフロキサシン<br>
+          b クラリスロマイシン<br>
+          c アモキシシリン水和物<br>
+          d アジスロマイシン水和物<br>
+          e セフカペン ピボキシル塩酸塩水和物
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】歯性感染症の第一選択は<span class="highlight">アモキシシリン水和物</span>（ペニシリン系）。オフロキサシンはニューキノロン系、クラリスロマイシン・アジスロマイシンはマクロライド系。</p>
+      </div>
+
+      <h2>3. 局所薬物配送システム（LDDS）</h2>
+
+      <h3>LDDSとは</h3>
+      <p><span class="key">LDDS（Local Drug Delivery System）</span>は、歯周ポケット内に抗菌薬を直接投与するシステム。</p>
+
+      <h3>使用される抗菌薬</h3>
+      <table>
+        <tr><th>薬剤</th><th>分類</th><th>作用機序</th></tr>
+        <tr><td><span class="key">ミノサイクリン</span></td><td>テトラサイクリン系</td><td><span class="highlight">タンパク質合成阻害</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112C13</div>
+        <p>歯周ポケットへの局所薬物配送システム（LDDS）に用いる抗菌薬の作用機序はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 細胞膜傷害<br>
+          b 核酸合成阻害<br>
+          c 葉酸合成阻害<br>
+          d 細胞壁合成阻害<br>
+          e タンパク質合成阻害
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】LDDSに使用される<span class="key">ミノサイクリン</span>（テトラサイクリン系）は<span class="highlight">タンパク質合成阻害</span>作用を持つ。<span class="caution">細胞壁合成阻害はペニシリン系</span>。</p>
+      </div>
+
+      <h2>4. 抗菌薬の作用機序</h2>
+
+      <h3>主な作用機序と薬剤</h3>
+      <table>
+        <tr><th>作用機序</th><th>薬剤</th></tr>
+        <tr><td><span class="key">細胞壁合成阻害</span></td><td>ペニシリン系、セフェム系</td></tr>
+        <tr><td><span class="highlight">タンパク質合成阻害</span></td><td>テトラサイクリン系、マクロライド系、アミノグリコシド系</td></tr>
+        <tr><td>核酸合成阻害</td><td>ニューキノロン系</td></tr>
+        <tr><td>葉酸合成阻害</td><td>サルファ剤</td></tr>
+        <tr><td>細胞膜傷害</td><td>ポリミキシン系</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：治療の基本</div>
+        <ul>
+          <li><span class="key">原因療法</span>：原因を取り除く（抗菌薬投与）</li>
+          <li><span class="key">対症療法</span>：症状を抑える（解熱鎮痛薬）</li>
+          <li><span class="key">歯性感染症の第一選択</span>：アモキシシリン（ペニシリン系）</li>
+          <li><span class="key">LDDS</span>：ミノサイクリン（タンパク質合成阻害）</li>
+          <li><span class="key">ペニシリン系</span>：細胞壁合成阻害</li>
+          <li><span class="key">テトラサイクリン系</span>：タンパク質合成阻害</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

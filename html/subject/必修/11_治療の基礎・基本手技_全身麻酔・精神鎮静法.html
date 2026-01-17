@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>全身麻酔・精神鎮静法 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>全身麻酔・精神鎮静法</h1>
+    <div class="container">
+
+      <h2>1. 精神鎮静法と全身麻酔法の比較</h2>
+
+      <h3>精神鎮静法と全身麻酔法の相違</h3>
+      <table>
+        <tr><th>項目</th><th>精神鎮静法</th><th>全身麻酔法</th></tr>
+        <tr><td><span class="key">意識</span></td><td>保たれる</td><td>消失</td></tr>
+        <tr><td>患者の協力</td><td>あり</td><td>なし</td></tr>
+        <tr><td>防御反応</td><td>あり</td><td>なし</td></tr>
+        <tr><td>鎮痛効果</td><td>なし</td><td>あり</td></tr>
+        <tr><td>術前処置</td><td>不要</td><td>必要</td></tr>
+        <tr><td>回復</td><td>すみやか</td><td>遅い</td></tr>
+      </table>
+
+      <h2>2. 精神鎮静法</h2>
+
+      <h3>笑気吸入鎮静法</h3>
+      <p>亜酸化窒素（笑気）と酸素の混合ガスを吸入させる方法。</p>
+      <ul>
+        <li>笑気濃度：通常30%以下</li>
+        <li>意識は保たれ、鎮静・鎮痛効果あり</li>
+      </ul>
+
+      <h3>笑気吸入鎮静法の禁忌</h3>
+      <ul>
+        <li><span class="caution">妊娠初期</span>（3か月以内）</li>
+        <li><span class="caution">中耳炎・気胸</span>など体内に閉鎖腔をもつ患者</li>
+        <li>重度の知的障害（鼻マスク装着困難）</li>
+        <li>鼻閉塞（鼻呼吸不可）</li>
+      </ul>
+
+      <h3>静脈内鎮静法</h3>
+      <p>静脈内に鎮静薬を投与して鎮静状態を得る方法。</p>
+
+      <h3>静脈内鎮静法で用いる薬剤</h3>
+      <table>
+        <tr><th>薬剤</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">ミダゾラム</span></td><td>ベンゾジアゼピン系、健忘作用あり</td></tr>
+        <tr><td><span class="highlight">プロポフォール</span></td><td>作用発現・回復が速い</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114B36</div>
+        <p>知的障害を伴う成人の静脈内鎮静法で用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ミダゾラム<br>
+          b フェニトイン<br>
+          c プレガバリン<br>
+          d プロポフォール<br>
+          e アミトリプチリン塩酸塩
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】静脈内鎮静法に用いるのは<span class="highlight">ミダゾラム</span>と<span class="highlight">プロポフォール</span>。フェニトインは抗てんかん薬、プレガバリンは神経障害性疼痛治療薬、アミトリプチリンは抗うつ薬。</p>
+      </div>
+
+      <h3>ミダゾラムの禁忌</h3>
+      <ul>
+        <li><span class="highlight">急性狭隅角緑内障</span>（眼圧上昇作用）</li>
+        <li>重症筋無力症</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">114D5</div>
+        <p>ミダゾラムによる静脈内鎮静法の禁忌はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 不安神経症<br>
+          b 過換気症候群<br>
+          c 滲出性中耳炎<br>
+          d 本態性高血圧症<br>
+          e 急性狭隅角緑内障
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】ミダゾラムは<span class="highlight">急性狭隅角緑内障</span>に禁忌。眼圧上昇作用があるため。不安神経症・過換気症候群はむしろ適応。</p>
+      </div>
+
+      <h2>3. 全身麻酔</h2>
+
+      <h3>術前絶飲食時間</h3>
+      <table>
+        <tr><th>内容</th><th>絶飲食時間</th></tr>
+        <tr><td><span class="highlight">清澄水</span></td><td><span class="highlight">2時間</span></td></tr>
+        <tr><td>母乳</td><td>4時間</td></tr>
+        <tr><td>固形物・牛乳</td><td>6時間</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">118A28</div>
+        <p>成人の待機的全身麻酔下手術において、水（清澄水）の術前絶飲時間で推奨されているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 30分<br>
+          b 2時間<br>
+          c 6時間<br>
+          d 12時間<br>
+          e 24時間
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】清澄水の術前絶飲時間は<span class="highlight">2時間</span>。固形物は6時間。</p>
+      </div>
+
+      <h3>日帰り全身麻酔の禁忌</h3>
+      <ul>
+        <li><span class="highlight">開口障害</span>を有する患者（気道確保困難）</li>
+        <li><span class="highlight">緊急手術</span>を要する患者</li>
+        <li>ASA PS III以上の患者</li>
+        <li>付き添いのいない患者</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">117D46</div>
+        <p>日帰り全身麻酔の禁忌はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 開口障害を有する患者<br>
+          b 緊急手術を要する患者<br>
+          c 不随意運動の著しい患者<br>
+          d 異常絞扼反射を有する患者<br>
+          e 局所麻酔薬アレルギーを有する患者
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">開口障害</span>は気道確保困難のリスク、<span class="highlight">緊急手術</span>は術前評価不十分のため日帰り全身麻酔は禁忌。不随意運動・異常絞扼反射はむしろ全身麻酔の適応。</p>
+      </div>
+
+      <h3>全身麻酔中のモニタリング</h3>
+      <table>
+        <tr><th>モニター</th><th>測定項目</th></tr>
+        <tr><td><span class="highlight">カプノメータ</span></td><td><span class="highlight">呼気終末CO₂濃度（呼吸状態）</span></td></tr>
+        <tr><td>パルスオキシメータ</td><td>経皮的酸素飽和度（SpO₂）</td></tr>
+        <tr><td>BISモニタ</td><td>麻酔深度</td></tr>
+        <tr><td>筋弛緩モニタ</td><td>筋弛緩の程度</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115B5</div>
+        <p>全身麻酔中の呼吸状態の評価に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血圧計<br>
+          b カプノメータ<br>
+          c 筋弛緩モニタ<br>
+          d 経食道心エコー<br>
+          e BIS〈Bispectral index〉モニタ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">カプノメータ</span>は呼気終末CO₂濃度を測定し、<span class="highlight">呼吸状態</span>を評価する。BISモニタは麻酔深度、筋弛緩モニタは筋弛緩の程度を評価。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：全身麻酔・精神鎮静法</div>
+        <ul>
+          <li><span class="key">静脈内鎮静法の薬剤</span>：ミダゾラム、プロポフォール</li>
+          <li><span class="key">ミダゾラムの禁忌</span>：急性狭隅角緑内障</li>
+          <li><span class="key">笑気吸入鎮静法の禁忌</span>：妊娠初期、中耳炎・気胸</li>
+          <li><span class="key">清澄水の絶飲時間</span>：2時間</li>
+          <li><span class="key">日帰り全身麻酔の禁忌</span>：開口障害、緊急手術</li>
+          <li><span class="key">呼吸状態のモニター</span>：カプノメータ</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

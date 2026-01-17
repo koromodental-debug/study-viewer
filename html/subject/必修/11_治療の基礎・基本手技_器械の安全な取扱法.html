@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>器械の安全な取扱法 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>器械の安全な取扱法</h1>
+    <div class="container">
+
+      <h2>1. スケーラーのシャープニング</h2>
+
+      <h3>グレーシー型キュレットのシャープニング</h3>
+      <p>シャープニングでは、<span class="key">フェース（刃面）</span>と<span class="key">砥石</span>の角度が重要。</p>
+
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>フェースと砥石の角度</td><td><span class="highlight">100〜110°</span></td></tr>
+        <tr><td>砥石の動かし方</td><td>上下または円を描くように</td></tr>
+        <tr><td>確認方法</td><td>プラスチックテストスティック</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108C21</div>
+        <p>シャープニング中のグレーシー型キュレットと砥石の模式図（別冊No.4）を別に示す。フェースと砥石の角度で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108C21_1.png" alt="別冊No.4">
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】グレーシー型キュレットのシャープニングでは、フェースと砥石の角度を<span class="highlight">100〜110°</span>に保つ。</p>
+      </div>
+
+      <h2>2. 回転切削器具の取扱い</h2>
+
+      <h3>エアタービンハンドピース</h3>
+      <table>
+        <tr><th>項目</th><th>注意点</th></tr>
+        <tr><td>回転数</td><td>約30〜50万rpm</td></tr>
+        <tr><td>注水</td><td>必須（発熱防止）</td></tr>
+        <tr><td>逆回転</td><td>不可</td></tr>
+        <tr><td>バーの装着</td><td>確実に固定</td></tr>
+      </table>
+
+      <h3>マイクロモーター</h3>
+      <table>
+        <tr><th>項目</th><th>注意点</th></tr>
+        <tr><td>回転数</td><td>約1,000〜40,000rpm</td></tr>
+        <tr><td>用途</td><td>形成、研磨</td></tr>
+        <tr><td>正逆回転</td><td>可能</td></tr>
+      </table>
+
+      <h2>3. 鋭利器材の取扱い</h2>
+
+      <h3>針刺し事故防止</h3>
+      <ul>
+        <li>使用後の注射針は<span class="key">リキャップしない</span></li>
+        <li>針専用廃棄容器に直接廃棄</li>
+        <li>リキャップが必要な場合は<span class="key">片手操作</span></li>
+      </ul>
+
+      <h3>メスの取扱い</h3>
+      <ul>
+        <li>刃部を自分に向けない</li>
+        <li>受け渡しは<span class="key">ニュートラルゾーン</span>を使用</li>
+        <li>使用後は刃を外して廃棄</li>
+      </ul>
+
+      <h2>4. 超音波スケーラーの取扱い</h2>
+
+      <h3>使用上の注意</h3>
+      <table>
+        <tr><th>項目</th><th>注意点</th></tr>
+        <tr><td>注水</td><td>必須（発熱防止）</td></tr>
+        <tr><td>チップの角度</td><td>歯面に対して15°以下</td></tr>
+        <tr><td>側方圧</td><td>軽い力で使用</td></tr>
+        <tr><td><span class="caution">禁忌</span></td><td>ペースメーカー装着者</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：器械の安全な取扱法</div>
+        <ul>
+          <li><span class="key">グレーシー型キュレット</span>：フェースと砥石の角度100〜110°</li>
+          <li><span class="key">針刺し防止</span>：リキャップしない、片手操作</li>
+          <li><span class="key">回転器具</span>：注水必須、バーの確実な固定</li>
+          <li><span class="key">超音波スケーラー</span>：ペースメーカー禁忌</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

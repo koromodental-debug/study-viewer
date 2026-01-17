@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔機能のリハビリテーション - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>口腔機能のリハビリテーション</h1>
+    <div class="container">
+
+      <h2>リハビリテーションの基本</h2>
+
+      <h3>リハビリテーションの原則</h3>
+      <ul>
+        <li><span class="highlight">発症早期からの開始</span>が効果的</li>
+        <li>三次予防に該当（機能障害の軽減・社会復帰）</li>
+        <li>到達目標は<span class="key">患者と医療者が共同で設定</span></li>
+        <li>自立の見込みに関わらず、すべての患者が対象</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">111B8</div>
+        <p>リハビリテーションで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 一次予防に該当する。<br>
+          b 疾病の治癒を主目的とする。<br>
+          c 医療者が到達目標を設定する。<br>
+          d 自立が期待できる患者を優先する。<br>
+          e 発症早期からの開始が効果的である。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】リハビリテーションは<span class="highlight">発症早期から開始</span>することで効果が高まる（廃用症候群の予防）。三次予防に該当し、目標は患者と医療者の共同設定。</p>
+      </div>
+
+      <h2>摂食嚥下の5期モデル</h2>
+
+      <table>
+        <tr>
+          <th>期</th>
+          <th>名称</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">第1期</span></td>
+          <td><span class="highlight">先行期（認知期）</span></td>
+          <td>食物の認知、<span class="key">認知機能</span>が関与</td>
+        </tr>
+        <tr>
+          <td>第2期</td>
+          <td>準備期（咀嚼期）</td>
+          <td>咀嚼、食塊形成</td>
+        </tr>
+        <tr>
+          <td>第3期</td>
+          <td>口腔期</td>
+          <td>食塊の咽頭への移送</td>
+        </tr>
+        <tr>
+          <td>第4期</td>
+          <td>咽頭期</td>
+          <td>嚥下反射、喉頭挙上</td>
+        </tr>
+        <tr>
+          <td>第5期</td>
+          <td>食道期</td>
+          <td>食道蠕動運動</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112A7</div>
+        <p>摂食嚥下の5期モデルで、認知機能の低下により主に障害される期はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 第1期<br>
+          b 第2期<br>
+          c 第3期<br>
+          d 第4期<br>
+          e 第5期
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">第1期（先行期・認知期）</span>は食物を認知し、食べ方を判断する段階。認知症などで認知機能が低下すると、この期が障害される。</p>
+      </div>
+
+      <h2>摂食嚥下障害へのアプローチ</h2>
+
+      <h3>アプローチの分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>内容</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">治療的アプローチ</span></td>
+          <td>機能そのものを改善</td>
+          <td><span class="highlight">間接訓練</span>、直接訓練</td>
+        </tr>
+        <tr>
+          <td><span class="key">代償的アプローチ</span></td>
+          <td>機能低下を補う</td>
+          <td>姿勢調整、食形態の変更</td>
+        </tr>
+        <tr>
+          <td><span class="key">環境改善</span></td>
+          <td>食事環境を整える</td>
+          <td>自助具、デイサービス導入</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">間接訓練と直接訓練</div>
+        <ul>
+          <li><span class="highlight">間接訓練</span>：食物を使わない訓練（舌抵抗訓練、頭部挙上訓練など）</li>
+          <li><span class="key">直接訓練</span>：実際に食物を用いる訓練</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D14</div>
+        <p>摂食嚥下障害に対する治療的アプローチはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 栄養指導<br>
+          b 間接訓練<br>
+          c 姿勢調整<br>
+          d 食形態の変更<br>
+          e デイサービスの導入
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">間接訓練</span>は治療的アプローチ（機能そのものを改善）。姿勢調整・食形態変更は代償的アプローチ。デイサービスは環境改善。</p>
+      </div>
+
+      <h2>機能低下と訓練法</h2>
+
+      <table>
+        <tr>
+          <th>機能低下</th>
+          <th>訓練法</th>
+        </tr>
+        <tr>
+          <td><span class="key">舌筋力低下</span></td>
+          <td><span class="highlight">舌抵抗訓練</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">喉頭挙上能低下</span></td>
+          <td><span class="highlight">頭部挙上訓練</span>（Shaker訓練）</td>
+        </tr>
+        <tr>
+          <td>開口量減少</td>
+          <td>開口訓練（舌圧子など）</td>
+        </tr>
+        <tr>
+          <td>口腔感覚低下</td>
+          <td>アイスマッサージ</td>
+        </tr>
+        <tr>
+          <td>食道入口部開大不全</td>
+          <td>バルーン拡張法</td>
+        </tr>
+        <tr>
+          <td>声門閉鎖不全</td>
+          <td>息こらえ嚥下、声門閉鎖訓練</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111B26</div>
+        <p>摂食嚥下障害に伴う機能低下と訓練の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 開口量減少 ーーー アイスマッサージ<br>
+          b 舌筋力低下 ーーー 舌抵抗訓練<br>
+          c 食塊移送能低下 ーーー 息こらえ嚥下<br>
+          d 喉頭挙上能低下 ーーー 頭部挙上訓練<br>
+          e 声門閉鎖機能不全 ーーー バルーン拡張法
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】<span class="highlight">舌筋力低下→舌抵抗訓練</span>、<span class="highlight">喉頭挙上能低下→頭部挙上訓練</span>が正しい。アイスマッサージは口腔感覚低下に対応。バルーン拡張法は食道入口部開大不全に使用。</p>
+      </div>
+
+      <h2>摂食嚥下障害の合併症</h2>
+
+      <h3>起こりやすい問題</h3>
+      <ul>
+        <li><span class="highlight">脱水</span>・<span class="highlight">低栄養</span>（摂取量不足）</li>
+        <li><span class="key">誤嚥性肺炎</span>（誤嚥による感染）</li>
+        <li><span class="key">窒息</span>（気道閉塞）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">107A23</div>
+        <p>摂食・嚥下障害で起こりやすいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 脱　水<br>
+          b 息切れ<br>
+          c めまい<br>
+          d けいれん<br>
+          e 血圧上昇
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】摂食嚥下障害では十分な水分・栄養が摂取できず、<span class="highlight">脱水</span>や低栄養を起こしやすい。また誤嚥性肺炎のリスクも高い。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯科材料・機器 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>歯科材料・機器</h1>
+    <div class="container">
+
+      <h2>機械的性質</h2>
+
+      <h3>材料の強度に関する性質</h3>
+      <table>
+        <tr>
+          <th>性質</th>
+          <th>定義</th>
+        </tr>
+        <tr>
+          <td><span class="key">剛性</span></td>
+          <td>変形しにくさ（弾性係数で評価）</td>
+        </tr>
+        <tr>
+          <td><span class="key">靱性</span></td>
+          <td>破壊に要するエネルギー（粘り強さ）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">脆性</span></td>
+          <td>塑性変形せず破壊に至る性質（セラミックス）</td>
+        </tr>
+        <tr>
+          <td><span class="key">弾性</span></td>
+          <td>外力を除くと元に戻る性質</td>
+        </tr>
+        <tr>
+          <td><span class="key">展性・延性</span></td>
+          <td>薄く広がる・伸びる性質（金が最大）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115A5</div>
+        <p>外力により塑性変形を起こさず破壊に至る性質はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 剛性<br>
+          b 靱性<br>
+          c 脆性<br>
+          d 弾性<br>
+          e 展性
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">脆性</span>は塑性変形せず破壊に至る性質。セラミックスは脆性が高い。靱性は逆に「粘り強さ」を示す。</p>
+      </div>
+
+      <h2>熱的性質</h2>
+
+      <h3>熱膨張係数</h3>
+      <p>エナメル質の熱膨張係数：<span class="highlight">約11.4×10⁻⁶/℃</span></p>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>熱膨張係数（×10⁻⁶/℃）</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">陶材</span></td>
+          <td><span class="highlight">7〜8</span>（エナメル質より小さい）</td>
+        </tr>
+        <tr>
+          <td>コンポジットレジン</td>
+          <td>約25〜35</td>
+        </tr>
+        <tr>
+          <td>PMMA</td>
+          <td>約80</td>
+        </tr>
+        <tr>
+          <td>インレーワックス</td>
+          <td>約350（最大）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116B14</div>
+        <p>エナメル質より熱膨張係数が小さいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 陶材<br>
+          b インレーワックス<br>
+          c 陶材焼付用金合金<br>
+          d コンポジットレジン<br>
+          e ポリメチルメタクリレート
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">陶材の熱膨張係数は約7〜8</span>でエナメル質（約11.4）より小さい。ワックスは約350で最大。</p>
+      </div>
+
+      <h3>熱伝導率</h3>
+      <p>象牙質の熱伝導率：<span class="highlight">約0.6 W/(m・K)</span></p>
+      <table>
+        <tr>
+          <th>材料</th>
+          <th>熱伝導率（W/(m・K)）</th>
+        </tr>
+        <tr>
+          <td>金合金</td>
+          <td>約300（高い）</td>
+        </tr>
+        <tr>
+          <td>Co-Cr合金</td>
+          <td>約15</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">グラスアイオノマーセメント</span></td>
+          <td><span class="highlight">約0.6</span>（象牙質と同程度）</td>
+        </tr>
+        <tr>
+          <td>PMMA</td>
+          <td>約0.2（低い）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113B17</div>
+        <p>熱伝導率が象牙質と同程度なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 金合金<br>
+          b アルミナ陶材<br>
+          c コバルトクロム合金<br>
+          d ポリメチルメタクリレート<br>
+          e 従来型グラスアイオノマーセメント
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">GICの熱伝導率は象牙質と同程度</span>（約0.6）。金属は熱伝導率が高く、レジンは低い。</p>
+      </div>
+
+      <h2>化学的性質</h2>
+
+      <h3>イオン化傾向</h3>
+      <p>イオン化傾向の大きい金属ほど<span class="key">腐食しやすい</span></p>
+      <p>歯科用金属のイオン化傾向：<span class="highlight">Ti ＞ Cu ＞ Ag ＞ Au ≒ Pt</span></p>
+
+      <div class="question-box">
+        <div class="q-number">114A2</div>
+        <p>歯科用合金を構成する金属元素で、イオン化傾向が最も大きいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Ag<br>
+          b Au<br>
+          c Cu<br>
+          d Pt<br>
+          e Ti
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】歯科用金属の中では<span class="highlight">Ti（チタン）のイオン化傾向が最も大きい</span>。ただしチタンは不動態を形成するため耐食性は高い。</p>
+      </div>
+
+      <h3>貴金属と卑金属</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>金属</th>
+        </tr>
+        <tr>
+          <td><span class="key">貴金属</span></td>
+          <td>Au, Pt, Pd, Ir, Ru, Rh, Os, Ag</td>
+        </tr>
+        <tr>
+          <td><span class="key">卑金属</span></td>
+          <td>Ti, Cr, Co, Ni, Cu, Mg など</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112A15</div>
+        <p>貴金属はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Mg<br>
+          b Ti<br>
+          c Cr<br>
+          d Co<br>
+          e Pd
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">Pd（パラジウム）は貴金属</span>。金銀パラジウム合金に含まれる。Ti, Cr, Coは卑金属。</p>
+      </div>
+
+      <h3>チタンの不動態</h3>
+      <p>チタンは表面に<span class="highlight">TiO₂（酸化チタン）</span>の不動態皮膜を形成し、優れた耐食性を示す</p>
+
+      <div class="question-box">
+        <div class="q-number">109C29</div>
+        <p>チタンの不動態はどれか。1つ選べ。</p>
+        <div class="choices">
+          a TiC<br>
+          b TiN<br>
+          c TiF4<br>
+          d TiO2<br>
+          e TiCl4
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】チタンの不動態は<span class="highlight">TiO₂（酸化チタン）</span>。TiNは窒化チタンでコーティング材。</p>
+      </div>
+
+      <h2>表面特性</h2>
+
+      <h3>ぬれ性</h3>
+      <p><span class="highlight">接触角</span>で評価する</p>
+      <ul>
+        <li>接触角 小 → ぬれやすい（親水性）</li>
+        <li>接触角 大 → ぬれにくい（疎水性）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">113D6</div>
+        <p>材料表面の水の接触角で評価するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 耐食性<br>
+          b ぬれ性<br>
+          c フロー<br>
+          d 溶解性<br>
+          e 表面粗さ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">接触角はぬれ性</span>の指標。フローは流動性、表面粗さは粗さ計で測定。</p>
+      </div>
+
+      <h3>被着面の前処理</h3>
+      <table>
+        <tr>
+          <th>被着面</th>
+          <th>前処理</th>
+        </tr>
+        <tr>
+          <td>エナメル質</td>
+          <td>リン酸エッチング</td>
+        </tr>
+        <tr>
+          <td>象牙質</td>
+          <td>プライマー塗布</td>
+        </tr>
+        <tr>
+          <td>陶材</td>
+          <td>シランカップリング剤</td>
+        </tr>
+        <tr>
+          <td>金属</td>
+          <td>金属接着性プライマー</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ジルコニア</span></td>
+          <td><span class="highlight">サンドブラスト処理</span></td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107A19</div>
+        <p>被着面の前処理に関する組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 陶材－－－－－－スズ電析処理<br>
+          b 金属－－－－－－プラズマ溶射処理<br>
+          c 象牙質－－－－－－シランカップリング剤塗布<br>
+          d ジルコニア－－－－サンドブラスト処理<br>
+          e エナメル質－－－－イオウ含有モノマー塗布
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">ジルコニアはサンドブラスト処理</span>で接着する。シランカップリング剤は陶材用（ジルコニアには無効）。</p>
+      </div>
+
+      <h2>切削・研削・研磨材</h2>
+
+      <h3>研削材の硬さ</h3>
+      <p>硬い順：<span class="highlight">ダイヤモンド ＞ カーボランダム ＞ タングステンカーバイド ＞ アルミナ ＞ スチール</span></p>
+
+      <div class="question-box">
+        <div class="q-number">116A20</div>
+        <p>切削・研削工具の材質で硬さが最も小さいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アルミナ<br>
+          b スチール<br>
+          c ダイヤモンド<br>
+          d カーボランダム<br>
+          e タングステンカーバイド
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">スチール（鋼）が最も軟らかい</span>。ダイヤモンドが最硬。カーボランダム（SiC）はエナメル質削除に使用。</p>
+      </div>
+
+      <h3>研磨材の種類</h3>
+      <table>
+        <tr>
+          <th>研磨材</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td>浮石末（軽石）</td>
+          <td>粗研磨（床義歯）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">酸化クロム</span></td>
+          <td><span class="highlight">金属の仕上げ研磨</span>（緑色）</td>
+        </tr>
+        <tr>
+          <td>酸化鉄（紅粉）</td>
+          <td>金属の艶出し</td>
+        </tr>
+        <tr>
+          <td>ダイヤモンドペースト</td>
+          <td>硬質材料の研磨</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111D3</div>
+        <p>金属の仕上げ研磨に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 浮石末<br>
+          b 酸化亜鉛<br>
+          c 酸化クロム<br>
+          d ダイヤモンドペースト<br>
+          e ジルコニウムシリケート
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">酸化クロムは金属の仕上げ研磨</span>に使用（緑色の研磨剤）。浮石末は粗研磨用。</p>
+      </div>
+
+      <h2>材料各論</h2>
+
+      <h3>石膏の結晶</h3>
+      <p>硬化した石膏の結晶形状：<span class="highlight">針状</span></p>
+
+      <div class="question-box">
+        <div class="q-number">110C30</div>
+        <p>硬化した普通石膏の結晶形状はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 球状<br>
+          b 針状<br>
+          c 扇状<br>
+          d 板状<br>
+          e 樹枝状
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】石膏が硬化すると<span class="highlight">針状結晶</span>が絡み合って強度を発揮する。普通石膏は針状結晶が長く、硬石膏は短い。</p>
+      </div>
+
+      <h3>印象材の永久ひずみ</h3>
+      <p>永久ひずみ：<span class="highlight">アルジネート ＞ シリコーンゴム</span></p>
+
+      <div class="question-box">
+        <div class="q-number">108C10</div>
+        <p>永久ひずみが最も大きい弾性印象材はどれか。1つ選べ。</p>
+        <div class="choices">
+          a アルジネート<br>
+          b ポリエーテルゴム<br>
+          c 酸化亜鉛ユージノール<br>
+          d 縮合型シリコーンゴム<br>
+          e 付加型シリコーンゴム
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">アルジネートは永久ひずみが大きい</span>。付加型シリコーンが最も小さく精密。酸化亜鉛ユージノールは<span class="caution">弾性印象材ではない</span>。</p>
+      </div>
+
+      <h3>矯正用ワイヤー</h3>
+      <p>NiTi合金ワイヤーの特性（ステンレス鋼と比較）</p>
+      <ul>
+        <li><span class="highlight">弾性係数が低い</span>（形状記憶効果）</li>
+        <li>レジリエンス（弾性エネルギー）が大きい</li>
+        <li>超弾性を示す</li>
+        <li>矯正力が<span class="key">持続的かつ弱い</span></li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">111C5</div>
+        <p>ステンレス鋼ワイヤーと比較したニッケルチタン合金ワイヤーの特性はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 大きな耐力<br>
+          b 強い矯正力<br>
+          c 低い耐食性<br>
+          d 低い弾性係数<br>
+          e 大きなレジリエンス
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】NiTiワイヤーは<span class="highlight">弾性係数が低い</span>ため、たわんでも元に戻る力が持続する。レジリエンスも大きいが、この問題では「d」が正解。</p>
+      </div>
+
+      <h3>水酸化カルシウム製剤</h3>
+      <p>覆髄に使用する水酸化カルシウム製剤のpH：<span class="highlight">約12（強アルカリ性）</span></p>
+
+      <div class="question-box">
+        <div class="q-number">112B17</div>
+        <p>覆髄に用いる水酸化カルシウム製剤のpH値に最も近いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 2<br>
+          b 5<br>
+          c 7<br>
+          d 9<br>
+          e 12
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】水酸化カルシウムは<span class="highlight">pH約12の強アルカリ性</span>。この高pHが殺菌作用と硬組織誘導作用をもたらす。</p>
+      </div>
+
+      <h3>根管充填材</h3>
+      <p>ガッタパーチャポイントのX線造影性は<span class="highlight">重金属塩</span>の添加による</p>
+
+      <div class="question-box">
+        <div class="q-number">107A4</div>
+        <p>ガッタパーチャポイントにエックス線造影性を与える目的で添加されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a レジン<br>
+          b ロジン<br>
+          c 重金属塩<br>
+          d 酸化亜鉛<br>
+          e ワックス
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">重金属塩（硫酸バリウムなど）</span>がX線造影性を付与する。酸化亜鉛は練和用粉末。ロジン・ワックスは可塑剤。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

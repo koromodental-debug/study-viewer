@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>地域保健法 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 地域における保健対策</span>
+    <h1>地域保健法</h1>
+    <div class="container">
+
+      <h2>地域保健法とは</h2>
+      <p>地域保健対策の推進に関する基本指針を定める法律。<span class="key">保健所</span>および<span class="key">市町村保健センター</span>の設置・運営を規定している。</p>
+
+      <h2>保健所</h2>
+      <p>広域的・専門的な保健サービスを提供する機関。<span class="key">対物サービス</span>が中心。</p>
+
+      <h3>設置主体</h3>
+      <table>
+        <tr>
+          <th>自治体</th>
+          <th>設置</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td><span class="key">都道府県</span></td>
+          <td><span class="highlight">義務</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="key">特別区</span></td>
+          <td><span class="highlight">義務</span></td>
+          <td>東京23区</td>
+        </tr>
+        <tr>
+          <td><span class="key">政令指定都市</span></td>
+          <td>可能</td>
+          <td>人口50万人以上</td>
+        </tr>
+        <tr>
+          <td><span class="key">中核市</span></td>
+          <td>可能</td>
+          <td>人口20万人以上</td>
+        </tr>
+        <tr>
+          <td class="caution">町村</td>
+          <td class="caution">不可</td>
+          <td></td>
+        </tr>
+      </table>
+
+      <h3>保健所長の資格</h3>
+      <p><span class="highlight">医師</span>（一定の条件を満たせば歯科医師も可）</p>
+
+      <h3>保健所の主な業務</h3>
+      <ul>
+        <li>人口動態統計その他の統計</li>
+        <li>栄養の改善・<span class="key">食品衛生</span></li>
+        <li>住宅、水道、廃棄物処理等の<span class="key">環境衛生</span></li>
+        <li><span class="key">医事・薬事</span></li>
+        <li>母性・乳幼児・老人の保健</li>
+        <li>歯科保健</li>
+        <li><span class="highlight">精神保健</span></li>
+        <li>難病等の保健</li>
+        <li><span class="key">感染症予防</span>（エイズ、結核等）</li>
+        <li>衛生上の試験・検査</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">保健所の業務の覚え方</div>
+        <ul>
+          <li>「広域的・専門的」な業務</li>
+          <li>統計、食品衛生、環境衛生、感染症など<span class="key">対物サービス</span>が中心</li>
+          <li><span class="highlight">精神保健</span>は保健所が担当（市町村保健センターではない）</li>
+        </ul>
+      </div>
+
+      <h2>市町村保健センター</h2>
+      <p>住民に身近な保健サービスを提供する施設。<span class="key">対人サービス</span>が中心。</p>
+
+      <h3>設置と資格</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>設置</td>
+          <td>市町村の<span class="highlight">努力義務</span>（任意設置）</td>
+        </tr>
+        <tr>
+          <td>センター長</td>
+          <td><span class="highlight">資格規定なし</span>（医師でなくてよい）</td>
+        </tr>
+      </table>
+
+      <h3>市町村保健センターの業務</h3>
+      <ul>
+        <li><span class="highlight">健康相談</span></li>
+        <li><span class="highlight">保健指導</span></li>
+        <li><span class="highlight">健康診査</span></li>
+      </ul>
+      <p>具体例：</p>
+      <ul>
+        <li>老人保健：特定健康診査、特定保健指導、歯周疾患検診、がん検診</li>
+        <li>母子保健：1歳6か月児健診、3歳児健診</li>
+        <li>予防接種、栄養指導</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">市町村保健センターの業務でないもの</div>
+        <ul>
+          <li><span class="caution">在宅医療</span> → 医療機関の業務</li>
+          <li><span class="caution">介護給付</span> → 介護保険の業務</li>
+        </ul>
+      </div>
+
+      <h2>保健所と市町村保健センターの比較</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>保健所</th>
+          <th>市町村保健センター</th>
+        </tr>
+        <tr>
+          <td>設置</td>
+          <td>都道府県・特別区に義務</td>
+          <td>市町村に努力義務</td>
+        </tr>
+        <tr>
+          <td>長の資格</td>
+          <td>医師</td>
+          <td>規定なし</td>
+        </tr>
+        <tr>
+          <td>サービス</td>
+          <td>対物サービス</td>
+          <td>対人サービス</td>
+        </tr>
+        <tr>
+          <td>業務の特徴</td>
+          <td>広域的・専門的</td>
+          <td>住民に身近</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107C45</div>
+        <p>地域精神保健活動を推進する主たる施設はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 保健所<br>
+          b 介護老人保健施設<br>
+          c 介護老人福祉施設<br>
+          d 市町村保健センター<br>
+          e 地域包括支援センター
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】精神保健は保健所の業務。市町村保健センターは対人サービス（健診、保健指導等）が中心で、精神保健活動の主たる施設ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C124</div>
+        <p>地域保健法で定められている市町村保健センターの業務はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 健康診査<br>
+          b 保健指導<br>
+          c 在宅医療<br>
+          d 健康相談<br>
+          e 介護給付
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】市町村保健センターの業務は健康相談、保健指導、健康診査。在宅医療は医療機関、介護給付は介護保険制度の業務であり、市町村保健センターの業務ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A84</div>
+        <p>保健所を設置する自治体はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 町村<br>
+          b 中核市<br>
+          c 特別区<br>
+          d 都道府県<br>
+          e 政令指定都市
+        </div>
+        <div class="answer">正解：b, c, d, e</div>
+        <p>【解説】都道府県と特別区は設置義務、政令指定都市と中核市は設置可能。町村は保健所を設置できない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

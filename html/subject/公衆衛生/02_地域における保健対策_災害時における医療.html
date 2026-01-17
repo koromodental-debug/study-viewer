@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>災害時における医療 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .tag-black { background: #1D1D1F; color: white; padding: 2px 8px; border-radius: 4px; }
+    .tag-red { background: #E53935; color: white; padding: 2px 8px; border-radius: 4px; }
+    .tag-yellow { background: #FDD835; color: #1D1D1F; padding: 2px 8px; border-radius: 4px; }
+    .tag-green { background: #43A047; color: white; padding: 2px 8px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 地域における保健対策</span>
+    <h1>災害時における医療</h1>
+    <div class="container">
+
+      <h2>災害時医療の体制</h2>
+
+      <h3>災害拠点病院</h3>
+      <p><span class="key">都道府県</span>が指定する災害時の医療拠点。</p>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>設置数</th>
+        </tr>
+        <tr>
+          <td><span class="key">基幹災害医療センター</span></td>
+          <td>都道府県に1か所</td>
+        </tr>
+        <tr>
+          <td><span class="key">地域災害医療センター</span></td>
+          <td>二次医療圏に1か所</td>
+        </tr>
+      </table>
+
+      <h3>災害拠点病院の機能</h3>
+      <ul>
+        <li>救命医療を行うための高度診療機能</li>
+        <li>被災地からの重症傷病者の受入れ機能</li>
+        <li>傷病者の広域後方搬送への対応機能</li>
+        <li>医療救護班の派遣機能</li>
+        <li>地域医療機関への応急用医療資機材の貸出し機能</li>
+      </ul>
+
+      <h3>災害医療チーム</h3>
+      <table>
+        <tr>
+          <th>チーム</th>
+          <th>活動時期</th>
+          <th>役割</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">DMAT</span></td>
+          <td>発災後おおむね<span class="key">48時間</span></td>
+          <td>負傷者の初期医療</td>
+        </tr>
+        <tr>
+          <td>医療救護班</td>
+          <td>DMATの活動後</td>
+          <td>継続的な医療提供</td>
+        </tr>
+      </table>
+      <p class="note">※DMAT = Disaster Medical Assistance Team（災害派遣医療チーム）</p>
+
+      <h2>トリアージ</h2>
+      <p><span class="highlight">傷病者の選別</span>を行い、搬送先と治療の優先度を決定すること。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">トリアージの目的</div>
+        <ul>
+          <li>限られた医療資源で<span class="highlight">最大多数の救命</span>を行う</li>
+          <li>重症度・緊急度に応じた<span class="key">傷病者の選別</span></li>
+        </ul>
+      </div>
+
+      <p><span class="caution">トリアージの目的でないもの</span>：検視、身元確認、交通網の整備、安全な水の確保</p>
+
+      <h2>トリアージタッグ</h2>
+      <p>トリアージの際に用いる負傷者の<span class="key">重傷度の識別票</span>。</p>
+
+      <h3>タッグの色分け（重要）</h3>
+      <table>
+        <tr>
+          <th>区分</th>
+          <th>色</th>
+          <th>状態</th>
+          <th>治療優先度</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td><span class="tag-black">黒</span></td>
+          <td><span class="highlight">死亡・救命不可能</span></td>
+          <td>治療対象外</td>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td><span class="tag-red">赤</span></td>
+          <td>重症（生命の危険）</td>
+          <td>最優先治療</td>
+        </tr>
+        <tr>
+          <td>II</td>
+          <td><span class="tag-yellow">黄</span></td>
+          <td>中等症</td>
+          <td>準緊急治療</td>
+        </tr>
+        <tr>
+          <td>III</td>
+          <td><span class="tag-green">緑</span></td>
+          <td>軽症</td>
+          <td>待機的治療</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">色の覚え方</div>
+        <ul>
+          <li><span class="tag-black">黒</span> = 死亡（喪服の色）</li>
+          <li><span class="tag-red">赤</span> = 最優先（赤信号＝止まれ＝すぐ対応）</li>
+          <li><span class="tag-yellow">黄</span> = 準緊急（黄信号＝注意）</li>
+          <li><span class="tag-green">緑</span> = 待機（青信号＝進め＝自分で動ける）</li>
+        </ul>
+      </div>
+
+      <h3>タッグの装着部位</h3>
+      <p>身体の損傷状態に応じて以下の順で付ける：</p>
+      <p><span class="key">右手首 → 左手首 → 右足首 → 左足首 → 首</span></p>
+
+      <h3>START変法</h3>
+      <p>トリアージの方法の一つ。歩行、呼吸、循環、意識の順に評価し、タッグの色を決定する。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106A85</div>
+        <p>災害時におけるトリアージの目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 検視<br>
+          b 身元確認<br>
+          c 傷病者の選別<br>
+          d 交通網の整備<br>
+          e 安全な水の確保
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】トリアージは「傷病者の選別」を行い、限られた医療資源で最大多数の救命を目指すもの。検視や身元確認は警察の業務、交通網の整備や水の確保は行政の業務であり、トリアージの目的ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A27</div>
+        <p>START変法によるトリアージを実施することとした。死亡あるいは救命が不可能な者に適用するタッグはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 赤<br>
+          b 黄<br>
+          c 黒<br>
+          d 緑<br>
+          e 装着しない
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】死亡・救命不可能は黒タッグ（区分0）。赤は最優先治療（I）、黄は準緊急（II）、緑は待機（III）。死亡者にもタッグは装着する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

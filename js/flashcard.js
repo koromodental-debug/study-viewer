@@ -655,6 +655,34 @@ const FlashcardModule = (function() {
       topicsHtml = topics.map(topic => renderTopicRow(topic)).join('');
     }
 
+    // 必修科目の場合、ココシカバナーを先頭に追加
+    let kokoshikaBanner = '';
+    if (subject === '必修') {
+      const kokoshikaStats = getTopicStats('kokoshika_hisshu');
+      const kokoshikaTotal = kokoshikaStats.memorized + kokoshikaStats.again;
+      let kokoshikaStatsHtml = '';
+      if (kokoshikaTotal === 0) {
+        kokoshikaStatsHtml = '<span class="deck-stat-new">451問</span>';
+      } else if (kokoshikaStats.again > 0) {
+        kokoshikaStatsHtml = `<span class="deck-stat again">要復習 ${kokoshikaStats.again}</span>`;
+      } else {
+        kokoshikaStatsHtml = `<span class="deck-stat memorized">✓ ${kokoshikaStats.memorized}</span>`;
+      }
+      kokoshikaBanner = `
+        <div class="kokoshika-banner" data-topic-id="kokoshika_hisshu">
+          <div class="kokoshika-banner-content">
+            <div class="kokoshika-banner-text">
+              <div class="kokoshika-banner-title">必修ココシカ</div>
+              <div class="kokoshika-banner-desc">★★★超頻出のみ451問</div>
+            </div>
+          </div>
+          <div class="kokoshika-banner-stats">
+            ${kokoshikaStatsHtml}
+          </div>
+        </div>
+      `;
+    }
+
     return `
       <div class="deck-subject${isOpen ? ' open' : ''}" data-subject="${subject}">
         <div class="deck-subject-header">
@@ -667,6 +695,7 @@ const FlashcardModule = (function() {
           </div>
         </div>
         <div class="deck-topics">
+          ${kokoshikaBanner}
           ${topicsHtml}
         </div>
       </div>
@@ -857,6 +886,19 @@ const FlashcardModule = (function() {
       });
     });
 
+    // ココシカバナークリック（学習開始）
+    const kokoshikaBanners = container.querySelectorAll('.kokoshika-banner');
+    kokoshikaBanners.forEach(banner => {
+      banner.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const topicId = banner.dataset.topicId;
+        state.lastSelectedTopicId = topicId;
+        localStorage.setItem('flashcard-last-topic', topicId);
+        state.isReviewMode = false;
+        await loadTopic(topicId, state.shuffleEnabled);
+      });
+    });
+
     // 設定ボタン（内訳シートを開く）
     const breakdownLink = document.getElementById('deck-breakdown-link');
     if (breakdownLink) {
@@ -1015,6 +1057,26 @@ const FlashcardModule = (function() {
 
   // === トピック読み込み ===
   async function loadTopic(topicId, shuffle = false) {
+    // ココシカ（特別デッキ）の場合
+    if (topicId === 'kokoshika_hisshu') {
+      state.currentTopicId = topicId;
+      state.currentTopic = {
+        id: 'kokoshika_hisshu',
+        title: '必修ココシカ',
+        subject: '必修',
+        qaPath: 'deck/必修ココシカ.txt'
+      };
+      try {
+        const response = await fetch('deck/必修ココシカ.txt');
+        const text = await response.text();
+        return loadTopicFromText(text, topicId, shuffle);
+      } catch (e) {
+        console.log('ココシカ読み込みエラー:', e);
+        container.innerHTML = `<div class="flashcard-error">ココシカの読み込みに失敗しました</div>`;
+        return;
+      }
+    }
+
     const topic = DATA.find(d => d.id === topicId);
     if (!topic || !topic.qaPath) return;
 
@@ -1024,58 +1086,63 @@ const FlashcardModule = (function() {
     try {
       const response = await fetch(encodeURI(topic.qaPath));
       const text = await response.text();
-      state.cards = parseQAToCards(text, topicId);
-
-      // 復習モードの場合、「もう一度」のカードのみフィルタ
-      if (state.isReviewMode) {
-        state.filteredCards = state.cards.filter((card, idx) => {
-          const key = `${topicId}:${idx}`;
-          return state.progress[key] && state.progress[key].status === 'again';
-        });
-      } else {
-        state.filteredCards = [...state.cards];
-      }
-
-      // 保存されたセッションを復元
-      let savedIndex = 0;
-      const session = getSession(topicId);
-
-      if (session) {
-        // 保存された順序でカードを並べ替え（可能な場合）
-        if (session.order && session.order.length === state.filteredCards.length) {
-          const orderMap = new Map(state.filteredCards.map(c => [c.originalIndex, c]));
-          const reordered = session.order.map(idx => orderMap.get(idx)).filter(Boolean);
-          if (reordered.length === state.filteredCards.length) {
-            state.filteredCards = reordered;
-          }
-        }
-        // インデックスは常に復元を試みる
-        if (session.index !== undefined && session.index > 0) {
-          savedIndex = Math.min(session.index, state.filteredCards.length - 1);
-        }
-      } else if (state.shuffleEnabled && state.filteredCards.length > 0) {
-        // 新規シャッフル（保存セッションがない場合のみ）
-        for (let i = state.filteredCards.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
-        }
-      }
-
-      state.currentIndex = savedIndex;
-      state.isFlipped = false;
-      state.isActive = true;
-      state.completed = false;
-      state.answeredInSession = 0;
-    state.combo = 0;
-
-      if (state.filteredCards.length === 0) {
-        renderNoCardsMessage();
-      } else {
-        renderCard();
-      }
+      loadTopicFromText(text, topicId, shuffle);
     } catch (e) {
       console.log('Q&A読み込みエラー:', e);
       container.innerHTML = `<div class="flashcard-error">Q&Aの読み込みに失敗しました</div>`;
+    }
+  }
+
+  // テキストからトピックを読み込む共通処理
+  function loadTopicFromText(text, topicId, shuffle = false) {
+    state.cards = parseQAToCards(text, topicId);
+
+    // 復習モードの場合、「もう一度」のカードのみフィルタ
+    if (state.isReviewMode) {
+      state.filteredCards = state.cards.filter((card, idx) => {
+        const key = `${topicId}:${idx}`;
+        return state.progress[key] && state.progress[key].status === 'again';
+      });
+    } else {
+      state.filteredCards = [...state.cards];
+    }
+
+    // 保存されたセッションを復元
+    let savedIndex = 0;
+    const session = getSession(topicId);
+
+    if (session) {
+      // 保存された順序でカードを並べ替え（可能な場合）
+      if (session.order && session.order.length === state.filteredCards.length) {
+        const orderMap = new Map(state.filteredCards.map(c => [c.originalIndex, c]));
+        const reordered = session.order.map(idx => orderMap.get(idx)).filter(Boolean);
+        if (reordered.length === state.filteredCards.length) {
+          state.filteredCards = reordered;
+        }
+      }
+      // インデックスは常に復元を試みる
+      if (session.index !== undefined && session.index > 0) {
+        savedIndex = Math.min(session.index, state.filteredCards.length - 1);
+      }
+    } else if (state.shuffleEnabled && state.filteredCards.length > 0) {
+      // 新規シャッフル（保存セッションがない場合のみ）
+      for (let i = state.filteredCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+      }
+    }
+
+    state.currentIndex = savedIndex;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+    state.answeredInSession = 0;
+    state.combo = 0;
+
+    if (state.filteredCards.length === 0) {
+      renderNoCardsMessage();
+    } else {
+      renderCard();
     }
   }
 

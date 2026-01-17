@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アナフィラキシーへの対応 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 初期救急</span>
+    <h1>アナフィラキシーへの対応</h1>
+    <div class="container">
+
+      <h2>1. アナフィラキシーとは</h2>
+
+      <h3>定義</h3>
+      <p><span class="key">アナフィラキシー</span>は、アレルゲンへの曝露により急速に発症する全身性のアレルギー反応（<span class="key">Ⅰ型アレルギー</span>）。生命を脅かす可能性がある。</p>
+
+      <h3>原因</h3>
+      <ul>
+        <li>薬剤（抗菌薬、NSAIDs、局所麻酔薬など）</li>
+        <li>食物（そば、ピーナッツ、卵など）</li>
+        <li>ラテックス</li>
+        <li>ハチ毒</li>
+      </ul>
+
+      <h2>2. アナフィラキシーの症状</h2>
+
+      <h3>主な症状</h3>
+      <table>
+        <tr><th>系統</th><th>症状</th></tr>
+        <tr><td>皮膚・粘膜</td><td>蕁麻疹、紅潮、血管性浮腫、口唇腫脹</td></tr>
+        <tr><td>呼吸器</td><td>喉頭浮腫、気管支攣縮、呼吸困難</td></tr>
+        <tr><td><span class="highlight">循環器</span></td><td><span class="highlight">血圧低下</span>、頻脈</td></tr>
+        <tr><td>消化器</td><td>嘔吐、腹痛、下痢</td></tr>
+      </table>
+
+      <h3>アナフィラキシーショックの機序</h3>
+      <p>血圧低下の原因は<span class="highlight">血管拡張</span>と<span class="highlight">血管透過性亢進</span>による。</p>
+
+      <h2>3. アナフィラキシーへの対応</h2>
+
+      <h3>対応の流れ</h3>
+      <table>
+        <tr><th>順序</th><th>対応</th><th>詳細</th></tr>
+        <tr><td>①</td><td>原因物質の除去</td><td>投与中の薬剤を中止</td></tr>
+        <tr><td>②</td><td>応援要請</td><td>119番通報</td></tr>
+        <tr><td>③</td><td><span class="highlight">アドレナリン投与</span></td><td><span class="highlight">第一選択薬</span></td></tr>
+        <tr><td>④</td><td>体位管理</td><td>仰臥位、下肢挙上</td></tr>
+        <tr><td>⑤</td><td>酸素投与</td><td>高流量酸素</td></tr>
+        <tr><td>⑥</td><td>静脈路確保・輸液</td><td>循環血液量の維持</td></tr>
+      </table>
+
+      <h2>4. アドレナリン投与</h2>
+
+      <h3>アドレナリンの投与方法</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td><span class="highlight">投与経路</span></td><td><span class="highlight">筋肉内注射（IM）</span></td></tr>
+        <tr><td><span class="highlight">投与部位</span></td><td><span class="highlight">大腿四頭筋（外側広筋）</span></td></tr>
+        <tr><td>成人用量</td><td>0.3〜0.5mg</td></tr>
+        <tr><td>小児用量</td><td>0.01mg/kg</td></tr>
+      </table>
+
+      <p class="note"><span class="caution">皮下注射や静脈内注射は第一選択ではない</span>。筋肉内注射が最も速やかに効果を発揮する。</p>
+
+      <h3>アドレナリン自己注射薬（エピペン®）</h3>
+      <p>アナフィラキシーの既往がある患者には<span class="key">アドレナリン自己注射薬（エピペン®）</span>が処方される。</p>
+
+      <div class="question-box">
+        <div class="q-number">115D15（参照）</div>
+        <p>アナフィラキシーショックでアドレナリン自己注射製剤を筋肉内注射する部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 大胸筋<br>
+          b 胸鎖乳突筋<br>
+          c 橈側手根屈筋<br>
+          d 上腕二頭筋（長頭）<br>
+          e 大腿四頭筋（外側広筋）
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】アドレナリン自己注射は<span class="highlight">大腿四頭筋（外側広筋）</span>に筋注する。大きな筋肉で吸収が速い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A4（参照）</div>
+        <p>アドレナリン自己注射薬を処方されている小児の既往はどれか。1つ選べ。</p>
+        <div class="choices">
+          a てんかん<br>
+          b 過換気症候群<br>
+          c アナフィラキシー<br>
+          d 血管迷走神経反射<br>
+          e 睡眠時無呼吸症候群
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】アドレナリン自己注射薬（エピペン®）は<span class="highlight">アナフィラキシー</span>の既往がある患者に処方される。</p>
+      </div>
+
+      <h2>5. アドレナリンの作用</h2>
+
+      <h3>アナフィラキシーに対する効果</h3>
+      <table>
+        <tr><th>受容体</th><th>作用</th><th>効果</th></tr>
+        <tr><td>α₁受容体</td><td>血管収縮</td><td>血圧上昇、浮腫軽減</td></tr>
+        <tr><td>β₁受容体</td><td>心収縮力増強</td><td>心拍出量増加</td></tr>
+        <tr><td>β₂受容体</td><td>気管支拡張</td><td>呼吸困難の改善</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：アナフィラキシーへの対応</div>
+        <ul>
+          <li><span class="key">第一選択薬</span>：アドレナリン</li>
+          <li><span class="key">投与経路</span>：筋肉内注射（IM）</li>
+          <li><span class="key">投与部位</span>：大腿四頭筋（外側広筋）</li>
+          <li><span class="key">血圧低下の機序</span>：血管拡張＋血管透過性亢進</li>
+          <li><span class="key">エピペン®</span>：アナフィラキシー既往患者に処方</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

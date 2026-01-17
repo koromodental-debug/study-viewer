@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>AED - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 初期救急</span>
+    <h1>AED</h1>
+    <div class="container">
+
+      <h2>1. AEDとは</h2>
+
+      <h3>AED（自動体外式除細動器）</h3>
+      <p><span class="key">AED</span>は心臓の異常なリズムを電気ショックで正常に戻す装置。<span class="highlight">一次救命処置に含まれ、一般人でも使用可能</span>。</p>
+
+      <h2>2. 除細動の適応</h2>
+
+      <h3>AEDが有効な不整脈</h3>
+      <p>AEDによる除細動が有効なのは、<span class="highlight">心室細動（VF）</span>と<span class="highlight">無脈性心室頻拍（pulseless VT）</span>の2つ。</p>
+
+      <table>
+        <tr><th>不整脈</th><th>除細動</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">心室細動（VF）</span></td><td><span class="highlight">適応あり</span></td><td>心室が細かく震え、血液を送れない</td></tr>
+        <tr><td><span class="highlight">無脈性心室頻拍</span></td><td><span class="highlight">適応あり</span></td><td>心室が速く収縮、脈を触知できない</td></tr>
+        <tr><td>心静止（Asystole）</td><td><span class="caution">適応なし</span></td><td>心臓の電気活動なし</td></tr>
+        <tr><td>無脈性電気活動（PEA）</td><td><span class="caution">適応なし</span></td><td>電気活動あるが心拍出なし</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115B15</div>
+        <p>電気的除細動の適応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心静止<br>
+          b 上室性期外収縮<br>
+          c 無脈性心室頻拍<br>
+          d 無脈性電気活動<br>
+          e 完全房室ブロック
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">無脈性心室頻拍（pulseless VT）</span>は除細動の適応。心室細動も適応。<span class="caution">心静止・無脈性電気活動は除細動の適応ではない</span>（電気ショックをかけても効果がない）。</p>
+      </div>
+
+      <h2>3. AED使用の流れ</h2>
+
+      <h3>AED使用手順</h3>
+      <table>
+        <tr><th>順序</th><th>内容</th><th>注意点</th></tr>
+        <tr><td>①</td><td>AEDの電源を入れる</td><td>蓋を開けると自動で電源が入る機種もある</td></tr>
+        <tr><td>②</td><td>電極パッドを貼る</td><td>右鎖骨下と左側胸部</td></tr>
+        <tr><td>③</td><td>心電図解析</td><td><span class="highlight">患者に触れない</span></td></tr>
+        <tr><td>④</td><td>除細動実施</td><td><span class="highlight">患者に触れない</span></td></tr>
+        <tr><td>⑤</td><td>除細動後</td><td><span class="highlight">直ちに胸骨圧迫</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111B20</div>
+        <p>昏倒した患者にAEDを装着した。除細動を行う指示が出た後にまず行うべきなのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 呼吸を確認する。<br>
+          b 頸動脈を触知する。<br>
+          c 人工呼吸を続ける。<br>
+          d 患者に触れないようにする。<br>
+          e 経口エアウェイを挿入する。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】除細動実施前は<span class="highlight">患者に触れないようにする</span>。感電を防ぐため、周囲の人も離れる。</p>
+      </div>
+
+      <h2>4. 除細動後の対応</h2>
+
+      <h3>除細動後は直ちに胸骨圧迫</h3>
+      <p>除細動を行った後は、<span class="highlight">直ちに胸骨圧迫を再開</span>する。脈や呼吸の確認をせずに胸骨圧迫を開始する。</p>
+
+      <div class="question-box">
+        <div class="q-number">110A7</div>
+        <p>AEDによる除細動実施後に直ちに行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 胸骨圧迫<br>
+          b 人工呼吸<br>
+          c 意識の確認<br>
+          d 頸動脈の触知<br>
+          e AEDの電源オフ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】除細動後は<span class="highlight">直ちに胸骨圧迫を再開</span>する。意識や脈の確認は行わず、すぐに胸骨圧迫を開始することが重要。</p>
+      </div>
+
+      <h2>5. 「ショックは不要です」の場合</h2>
+
+      <h3>ショック不要時の対応</h3>
+      <p>AEDが「ショックは不要です」とアナウンスした場合も、<span class="highlight">直ちに胸骨圧迫を開始（継続）</span>する。</p>
+
+      <p class="note">「ショック不要」は「蘇生不要」ではない。心静止やPEAでも心肺蘇生は必要。</p>
+
+      <div class="question-box">
+        <div class="q-number">107A17</div>
+        <p>心肺停止に陥った患者にAEDを装着したところ「ショックは不要です」というアナウンスが流れた。次に行うべき対応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 脈の確認<br>
+          b 人工呼吸<br>
+          c 胸骨圧迫<br>
+          d 意識の確認<br>
+          e 救急隊への連絡
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】「ショック不要」でも<span class="highlight">直ちに胸骨圧迫を行う</span>。心静止や無脈性電気活動の可能性があり、心肺蘇生の継続が必要。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：AED</div>
+        <ul>
+          <li><span class="key">除細動の適応</span>：心室細動（VF）、無脈性心室頻拍（pulseless VT）</li>
+          <li><span class="key">適応なし</span>：心静止、無脈性電気活動（PEA）</li>
+          <li><span class="key">除細動実施前</span>：患者に触れない</li>
+          <li><span class="key">除細動後</span>：直ちに胸骨圧迫を再開</li>
+          <li><span class="key">「ショック不要」時</span>：直ちに胸骨圧迫</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

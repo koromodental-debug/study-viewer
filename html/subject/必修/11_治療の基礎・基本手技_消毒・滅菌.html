@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>消毒・滅菌 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>消毒・滅菌</h1>
+    <div class="container">
+
+      <h2>1. 消毒薬の種類と効果</h2>
+
+      <h3>消毒薬の微生物への効果</h3>
+      <table>
+        <tr><th>消毒薬</th><th>芽胞</th><th>結核菌</th><th>HBV</th><th>皮膚適用</th></tr>
+        <tr><td><span class="highlight">グルタラール</span></td><td><span class="highlight">○</span></td><td><span class="highlight">○</span></td><td>○</td><td><span class="caution">×</span></td></tr>
+        <tr><td><span class="highlight">ポビドンヨード</span></td><td>×</td><td><span class="highlight">○</span></td><td>○</td><td><span class="highlight">○</span></td></tr>
+        <tr><td><span class="highlight">次亜塩素酸Na</span></td><td>×</td><td>○</td><td><span class="highlight">○</span></td><td><span class="caution">×</span></td></tr>
+        <tr><td>エタノール</td><td>×</td><td>×</td><td>△</td><td>○</td></tr>
+        <tr><td>クロルヘキシジン</td><td>×</td><td>×</td><td>×</td><td>○</td></tr>
+        <tr><td><span class="key">逆性石けん</span></td><td>×</td><td>×</td><td>×</td><td>○</td></tr>
+      </table>
+
+      <p class="note"><span class="key">逆性石けん</span>：ベンザルコニウム塩化物、ベンゼトニウム塩化物</p>
+
+      <div class="question-box">
+        <div class="q-number">114B13</div>
+        <p>芽胞形成性細菌と結核菌の両方に有効なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a グルタラール<br>
+          b 消毒用エタノール<br>
+          c 消毒用フェノール<br>
+          d クレゾール石けん液<br>
+          e クロルヘキシジングルコン酸塩液
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">グルタラール</span>は芽胞と結核菌の両方に有効な高水準消毒薬。ただし<span class="caution">皮膚には使用不可</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D15</div>
+        <p>結核菌に有効で、皮膚に適用できる消毒薬はどれか。1つ選べ。</p>
+        <div class="choices">
+          a グルタラール<br>
+          b ポビドンヨード<br>
+          c 塩化ベンゼトニウム<br>
+          d 塩化ベンザルコニウム<br>
+          e グルコン酸クロルヘキシジン
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">ポビドンヨード</span>は結核菌に有効で皮膚にも使用可能。グルタラールは皮膚不可、逆性石けん・クロルヘキシジンは結核菌に無効。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C16</div>
+        <p>B型肝炎ウイルスの感染予防に有効な消毒薬はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ポビドンヨード<br>
+          b 消毒用エタノール<br>
+          c 塩化ベンザルコニウム<br>
+          d 次亜塩素酸ナトリウム<br>
+          e グルコン酸クロルヘキシジン
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">次亜塩素酸ナトリウム</span>はHBVに有効。<span class="caution">クロルヘキシジン、逆性石けんはHBVに無効</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B1</div>
+        <p>手指の消毒に使用できる逆性石けんはどれか。1つ選べ。</p>
+        <div class="choices">
+          a クレゾール<br>
+          b グルタラール<br>
+          c ホルムアルデヒド<br>
+          d 次亜塩素酸ナトリウム<br>
+          e ベンザルコニウム塩化物
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">逆性石けん</span>は<span class="highlight">ベンザルコニウム塩化物</span>。手指消毒に使用可能。グルタラール・次亜塩素酸は皮膚に使用不可。</p>
+      </div>
+
+      <h2>2. 滅菌法</h2>
+
+      <h3>滅菌法の種類と特徴</h3>
+      <table>
+        <tr><th>滅菌法</th><th>条件</th><th>適するもの</th></tr>
+        <tr><td><span class="highlight">高圧蒸気滅菌</span></td><td>115〜134℃</td><td>金属器具、布、ゴム</td></tr>
+        <tr><td>乾熱滅菌</td><td>160〜180℃</td><td>ガラス、金属</td></tr>
+        <tr><td>ガス滅菌（EOG）</td><td>35〜70℃</td><td>熱に耐えられない器具</td></tr>
+        <tr><td><span class="caution">濾過滅菌</span></td><td>−</td><td>液体（<span class="caution">ウイルス不可</span>）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116A5</div>
+        <p>治療にあたり高圧蒸気滅菌が必要なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 咬合床<br>
+          b スケーラー<br>
+          c ハンドピース<br>
+          d フェイスシールド<br>
+          e ガッタパーチャポイント
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】<span class="highlight">スケーラー</span>と<span class="highlight">ハンドピース</span>は口腔内で使用し血液に接触するため高圧蒸気滅菌が必要。ガッタパーチャポイントは熱で変形するため不可。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C9</div>
+        <p>ウイルスを殺滅できないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ガス滅菌<br>
+          b 乾熱滅菌<br>
+          c 濾過滅菌<br>
+          d 高圧蒸気滅菌<br>
+          e ガンマ線による滅菌
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="caution">濾過滅菌</span>はフィルターで微生物を除去するが、<span class="caution">ウイルスは小さすぎて通過してしまう</span>ため殺滅できない。</p>
+      </div>
+
+      <h2>3. 院内感染対策</h2>
+
+      <div class="question-box">
+        <div class="q-number">110C24</div>
+        <p>院内感染対策で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 外因感染は対象としない。<br>
+          b 病院スタッフは対象外である。<br>
+          c 消毒・滅菌は対策の一つである。<br>
+          d 抗菌薬の使用方法とは無関係である。<br>
+          e 一般社会環境と同様の対策をとることが望ましい。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】院内感染対策には<span class="highlight">消毒・滅菌</span>が含まれる。病院スタッフも対象、抗菌薬の適正使用も重要。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：消毒・滅菌</div>
+        <ul>
+          <li><span class="key">芽胞＋結核菌に有効</span>：グルタラール（皮膚不可）</li>
+          <li><span class="key">結核菌＋皮膚可</span>：ポビドンヨード</li>
+          <li><span class="key">HBVに有効</span>：次亜塩素酸ナトリウム、グルタラール</li>
+          <li><span class="key">逆性石けん</span>：ベンザルコニウム塩化物（手指消毒可）</li>
+          <li><span class="key">濾過滅菌</span>：ウイルス殺滅不可</li>
+          <li><span class="key">高圧蒸気滅菌</span>：スケーラー、ハンドピース</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

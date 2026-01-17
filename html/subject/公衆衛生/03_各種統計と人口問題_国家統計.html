@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>国家統計 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 各種統計と人口問題</span>
+    <h1>国家統計</h1>
+    <div class="container">
+
+      <h2>公的統計の分類</h2>
+      <p>国の行政機関、地方公共団体などが作成する統計を<span class="key">公的統計</span>という。基本となる事項は<span class="key">統計法</span>によって定められている。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">基幹統計と一般統計</div>
+        <ul>
+          <li><span class="highlight">基幹統計</span>：国勢統計、国民経済計算、その他<span class="key">総務大臣が指定</span>する特に重要な統計</li>
+          <li><span class="highlight">一般統計</span>：基幹統計以外の公的統計</li>
+        </ul>
+      </div>
+
+      <h2>主な統計調査の分類</h2>
+
+      <h3>基幹統計（総務大臣が指定）</h3>
+      <table>
+        <tr><th>調査名</th><th>周期</th><th>備考</th><th>実施</th></tr>
+        <tr><td class="key">国勢調査</td><td>5年（大規模10年）</td><td>全数調査</td><td>内閣府統計局</td></tr>
+        <tr><td class="key">人口動態統計</td><td>毎月</td><td>全数調査、戸籍法も関与</td><td>厚生労働省</td></tr>
+        <tr><td class="key">患者調査</td><td>3年</td><td>標本調査</td><td>厚生労働省</td></tr>
+        <tr><td class="key">医療施設調査</td><td>動態：毎月／静態：3年</td><td>標本調査</td><td>厚生労働省</td></tr>
+        <tr><td class="key">国民生活基礎調査</td><td>毎年（大規模3年）</td><td>標本調査</td><td>厚生労働省</td></tr>
+        <tr><td class="key">学校保健統計調査</td><td>毎年</td><td>標本調査</td><td>文部科学省</td></tr>
+      </table>
+
+      <h3>一般統計（基幹統計以外）</h3>
+      <table>
+        <tr><th>調査名</th><th>周期</th><th>備考</th><th>実施</th></tr>
+        <tr><td class="key">国民健康・栄養調査</td><td>毎年</td><td>標本調査、健康増進法も関与</td><td>厚生労働省</td></tr>
+        <tr><td class="key">医師・歯科医師・薬剤師調査</td><td class="highlight">2年</td><td class="highlight">全数調査</td><td>厚生労働省</td></tr>
+        <tr><td class="key">歯科疾患実態調査</td><td>5年</td><td>標本調査</td><td>厚生労働省</td></tr>
+        <tr><td class="key">受療行動調査</td><td>3年</td><td>標本調査</td><td>厚生労働省</td></tr>
+      </table>
+
+      <h2>医師・歯科医師・薬剤師調査</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>根拠法：<span class="highlight">医師法・歯科医師法・薬剤師法</span>（<span class="caution">医療法ではない</span>）</li>
+          <li>周期：<span class="highlight">2年ごと</span>（<span class="caution">毎年ではない</span>）</li>
+          <li>対象：<span class="highlight">医療に従事していない者も含む</span>（全数調査）</li>
+          <li>届出先：<span class="key">保健所</span>経由で厚生労働省（<span class="caution">市町村ではない</span>）</li>
+          <li>調査事項：従事先の住所、業務の種別、登録年・性・年齢など</li>
+        </ul>
+      </div>
+
+      <p class="note">※看護師、歯科衛生士、歯科技工士の人数は「衛生行政報告例（就業医療関係者）の概況」で把握</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105A73</div>
+        <p>一般統計調査はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 患者調査<br>
+          b 国勢調査<br>
+          c 学校保健統計調査<br>
+          d 国民健康・栄養調査<br>
+          e 医師・歯科医師・薬剤師調査
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】基幹統計は「総務大臣が指定する特に重要な統計」。患者調査(a)、国勢調査(b)、学校保健統計調査(c)は基幹統計。国民健康・栄養調査(d)と医師・歯科医師・薬剤師調査(e)は一般統計。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A122</div>
+        <p>医師・歯科医師・薬剤師調査で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 医療法に基づく。<br>
+          b 毎年実施される。<br>
+          c 従事先の住所は調査事項である。<br>
+          d 届出票は住所地の市町村が取りまとめる。<br>
+          e 医療に従事していない歯科医師も対象とする。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】医師・歯科医師・薬剤師調査は医師法等に基づき(a×)、2年ごとに実施(b×)。届出票は保健所が取りまとめる(d×)。従事先住所は調査事項(c○)、非従事者も対象の全数調査(e○)。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

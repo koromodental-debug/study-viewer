@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>救急患者の診察・トリアージ - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 初期救急</span>
+    <h1>救急患者の診察・トリアージ</h1>
+    <div class="container">
+
+      <h2>1. 歯科治療中の全身的偶発症</h2>
+
+      <h3>偶発症の頻度</h3>
+      <p>歯科治療中に生じる全身的偶発症で<span class="highlight">最も頻度が高いのは血管迷走神経反射</span>である。</p>
+
+      <table>
+        <tr><th>偶発症</th><th>頻度</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">血管迷走神経反射</span></td><td><span class="highlight">最多</span></td><td>徐脈、血圧低下</td></tr>
+        <tr><td>過換気症候群</td><td>比較的多い</td><td>若年女性に多い</td></tr>
+        <tr><td>アナフィラキシー</td><td>稀だが重篤</td><td>アドレナリン投与</td></tr>
+        <tr><td>局所麻酔薬中毒</td><td>稀</td><td>痙攣、意識障害</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115D7</div>
+        <p>歯科治療中に生じる全身的偶発症で最も頻度が高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 過換気症候群<br>
+          b 局所麻酔薬中毒<br>
+          c 血管迷走神経反射<br>
+          d メトヘモグロビン血症<br>
+          e アナフィラキシーショック
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">血管迷走神経反射</span>は歯科治療中の偶発症で最も頻度が高い。不安・緊張・疼痛などが誘因となる。</p>
+      </div>
+
+      <h2>2. 血管迷走神経反射</h2>
+
+      <h3>循環動態の変化</h3>
+      <p>血管迷走神経反射では、<span class="key">迷走神経</span>の過緊張により以下の変化が起こる。</p>
+
+      <table>
+        <tr><th>項目</th><th>変化</th><th>機序</th></tr>
+        <tr><td><span class="highlight">心拍数</span></td><td><span class="highlight">徐脈（低下）</span></td><td>迷走神経↑ → 心臓抑制</td></tr>
+        <tr><td>血圧</td><td>低下</td><td>末梢血管拡張</td></tr>
+        <tr><td>末梢血管抵抗</td><td><span class="caution">低下</span></td><td>血管拡張</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111C10</div>
+        <p>血管迷走神経反射における循環動態で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 徐　脈<br>
+          b 不整脈<br>
+          c 1回拍出量の減少<br>
+          d 循現血液量の減少<br>
+          e 末梢血管抵抗の増加
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】血管迷走神経反射では迷走神経の過緊張により<span class="highlight">徐脈</span>となる。末梢血管抵抗は<span class="caution">増加ではなく低下</span>する。</p>
+      </div>
+
+      <h2>3. 過換気症候群</h2>
+
+      <h3>病態生理</h3>
+      <p>過換気により<span class="highlight">CO₂が過剰に排出</span>され、<span class="key">呼吸性アルカローシス</span>となる。</p>
+
+      <table>
+        <tr><th>項目</th><th>変化</th></tr>
+        <tr><td><span class="highlight">動脈血CO₂分圧（PaCO₂）</span></td><td><span class="highlight">低下</span></td></tr>
+        <tr><td><span class="highlight">動脈血pH</span></td><td><span class="highlight">上昇</span>（アルカローシス）</td></tr>
+        <tr><td>血清イオン化Ca²⁺</td><td><span class="caution">低下</span>（テタニー症状の原因）</td></tr>
+      </table>
+
+      <h3>臨床的特徴</h3>
+      <ul>
+        <li><span class="key">若年女性</span>に多い</li>
+        <li>手指の<span class="key">痙攣・硬直</span>（テタニー）</li>
+        <li>口周囲・四肢末端のしびれ</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">113D5</div>
+        <p>過換気症候群で低下するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血　圧<br>
+          b 心拍数<br>
+          c 動脈血pH<br>
+          d 動脈血酸素飽和度<br>
+          e 動脈血二酸化炭素分圧
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】過換気により<span class="highlight">CO₂が過剰に排出され、動脈血CO₂分圧（PaCO₂）は低下</span>する。pHは上昇する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C26</div>
+        <p>過換気症候群で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 男性に多い。<br>
+          b 手指が弛緩する。<br>
+          c 心拍数が低下する。<br>
+          d 動脈血pHが上昇する。<br>
+          e 血清イオン化カルシウム濃度が上昇する。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】過換気によりCO₂↓→<span class="highlight">呼吸性アルカローシス</span>となり<span class="highlight">pHは上昇</span>する。<span class="caution">女性に多く、手指は硬直（弛緩ではない）、イオン化Ca²⁺は低下</span>する。</p>
+      </div>
+
+      <h2>4. 心停止と不整脈</h2>
+
+      <h3>心停止に含まれる病態</h3>
+      <p><span class="key">心停止</span>とは、心臓のポンプ機能が停止した状態であり、以下の4つが含まれる。</p>
+
+      <table>
+        <tr><th>病態</th><th>心電図所見</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">心室細動（VF）</span></td><td>不規則な細かい波形</td><td><span class="highlight">除細動の適応</span></td></tr>
+        <tr><td><span class="highlight">無脈性心室頻拍（pulseless VT）</span></td><td>規則的な幅広いQRS</td><td><span class="highlight">除細動の適応</span></td></tr>
+        <tr><td>心静止（Asystole）</td><td>平坦</td><td>除細動の適応なし</td></tr>
+        <tr><td>無脈性電気活動（PEA）</td><td>電気活動あり</td><td>除細動の適応なし</td></tr>
+      </table>
+
+      <p class="note"><span class="caution">心房細動は心停止に含まれない</span>（心房の問題で心室は動いている）</p>
+
+      <div class="question-box">
+        <div class="q-number">116A19</div>
+        <p>心停止に含まれるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心房細動<br>
+          b 洞不全症候群<br>
+          c QT延長症候群<br>
+          d 無脈性心室頻拍<br>
+          e 完全房室ブロック
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">無脈性心室頻拍（pulseless VT）</span>は心停止に含まれ、除細動の適応となる。<span class="caution">心房細動は心房の異常であり心停止には含まれない</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C31</div>
+        <p>心電図上の所見で直ちに処置を要するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心室細動<br>
+          b 心房細動<br>
+          c 洞性徐脈<br>
+          d 房室ブロック<br>
+          e 上室性期外収縮
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">心室細動（VF）</span>は心停止であり、<span class="highlight">直ちに除細動が必要</span>。心房細動は緊急性は低い。</p>
+      </div>
+
+      <h2>5. アナフィラキシー</h2>
+
+      <h3>アドレナリン自己注射</h3>
+      <p>アナフィラキシーの第一選択薬は<span class="highlight">アドレナリン</span>である。</p>
+
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>投与経路</td><td><span class="highlight">筋肉内注射（IM）</span></td></tr>
+        <tr><td>投与部位</td><td><span class="highlight">大腿四頭筋（外側広筋）</span></td></tr>
+        <tr><td>理由</td><td>大きな筋肉で吸収が速い</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115D15</div>
+        <p>アナフィラキシーショックでアドレナリン自己注射製剤を筋肉内注射する部位はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 大胸筋<br>
+          b 胸鎖乳突筋<br>
+          c 橈側手根屈筋<br>
+          d 上腕二頭筋（長頭）<br>
+          e 大腿四頭筋（外側広筋）
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】アドレナリン自己注射は<span class="highlight">大腿四頭筋（外側広筋）</span>に筋注する。大きな筋肉で吸収が速い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A4</div>
+        <p>アドレナリン自己注射薬を処方されている小児の既往はどれか。1つ選べ。</p>
+        <div class="choices">
+          a てんかん<br>
+          b 過換気症候群<br>
+          c アナフィラキシー<br>
+          d 血管迷走神経反射<br>
+          e 睡眠時無呼吸症候群
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】アドレナリン自己注射薬（エピペン®）は<span class="highlight">アナフィラキシー</span>の既往がある患者に処方される。</p>
+      </div>
+
+      <h2>6. 意識レベル評価と気道閉塞</h2>
+
+      <h3>Japan Coma Scale（JCS）</h3>
+      <p><span class="key">JCS</span>は<span class="highlight">意識レベル</span>を評価するスケールである。</p>
+
+      <table>
+        <tr><th>レベル</th><th>内容</th></tr>
+        <tr><td>Ⅰ（1桁）</td><td>刺激しなくても覚醒している</td></tr>
+        <tr><td>Ⅱ（2桁）</td><td>刺激すると覚醒する</td></tr>
+        <tr><td>Ⅲ（3桁）</td><td>刺激しても覚醒しない</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111C1</div>
+        <p>Japan Coma Scaleで評価するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 構音機能<br>
+          b 認知機能<br>
+          c 意識レベル<br>
+          d 身体活動性<br>
+          e 短期記憶能力
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">JCS（Japan Coma Scale）</span>は<span class="highlight">意識レベル</span>を評価するスケール。認知機能の評価にはMMSEなどを用いる。</p>
+      </div>
+
+      <h3>気道閉塞の徴候</h3>
+      <p>気道閉塞では、患者は<span class="key">苦悶様表情</span>を呈し、<span class="key">頸部に手をあてる仕草</span>（チョークサイン）を示す。</p>
+
+      <div class="question-box">
+        <div class="q-number">111B15</div>
+        <p>歯科治療時に患者が苦悶を呈した。その際の患者の写真（別冊No.2）を別に示す。考えられる病態はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心停止<br>
+          b 脳梗塞<br>
+          c 気道閉塞<br>
+          d 血圧上昇<br>
+          e 狭心症発作
+        </div>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111B15_1.png" alt="別冊No.2">
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】苦悶様表情と頸部に手をあてる仕草（チョークサイン）は<span class="highlight">気道閉塞</span>の典型的徴候。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：救急患者の診察・トリアージ</div>
+        <ul>
+          <li><span class="key">最多の偶発症</span>：血管迷走神経反射（徐脈が特徴）</li>
+          <li><span class="key">過換気症候群</span>：CO₂↓、pH↑（呼吸性アルカローシス）</li>
+          <li><span class="key">心停止</span>：VF、pulseless VT、心静止、PEA（心房細動は含まない）</li>
+          <li><span class="key">アドレナリン注射部位</span>：大腿四頭筋（外側広筋）</li>
+          <li><span class="key">JCS</span>：意識レベルの評価</li>
+          <li><span class="key">気道閉塞</span>：チョークサイン</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

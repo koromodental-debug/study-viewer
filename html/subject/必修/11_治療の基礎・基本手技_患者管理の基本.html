@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>患者管理の基本 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>患者管理の基本</h1>
+    <div class="container">
+
+      <h2>循環器疾患</h2>
+
+      <h3>低用量アスピリン</h3>
+      <p>狭心症・心筋梗塞の既往がある患者が服用。<span class="highlight">血小板凝集抑制作用</span>による血栓予防が目的。</p>
+
+      <div class="question-box">
+        <div class="q-number">112C7</div>
+        <p>狭心症の既往のある患者が低用量（100mg、1日1回）で服用するアスピリンの主作用はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 解熱作用<br>
+          b 鎮痛作用<br>
+          c 抗炎症作用<br>
+          d 抗リウマチ作用<br>
+          e 血小板凝集抑制作用
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】低用量アスピリン（100mg程度）は<span class="highlight">血小板凝集抑制作用</span>により血栓形成を予防。抜歯時は原則<span class="caution">継続</span>（休薬リスク＞出血リスク）。</p>
+      </div>
+
+      <h3>左心不全と右心不全</h3>
+      <table>
+        <tr>
+          <th>左心不全</th>
+          <th>右心不全</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">呼吸困難</span>（肺うっ血）</td>
+          <td>下腿浮腫（体静脈うっ血）</td>
+        </tr>
+        <tr>
+          <td>起坐呼吸</td>
+          <td>頸静脈怒張</td>
+        </tr>
+        <tr>
+          <td>肺水腫</td>
+          <td>肝腫大</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111B18</div>
+        <p>左心不全の特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 多　尿<br>
+          b 肝腫大<br>
+          c 下腿浮腫<br>
+          d 呼吸困難<br>
+          e 頸静脈怒張
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】左心不全では肺うっ血により<span class="highlight">呼吸困難</span>が生じる。肝腫大・下腿浮腫・頸静脈怒張は右心不全の症状。</p>
+      </div>
+
+      <h3>感染性心内膜炎</h3>
+      <p>起炎菌で最も多いのは<span class="highlight">Streptococcus属</span>（レンサ球菌）。人工弁患者は抜歯前に抗菌薬予防投与。</p>
+
+      <div class="question-box">
+        <div class="q-number">108C14</div>
+        <p>感染性心内膜炎の起炎菌の中で最も多いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Fusobacterium属<br>
+          b Mycobacterium属<br>
+          c Porphyromonas属<br>
+          d Streptococcus属<br>
+          e Treponema属
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】感染性心内膜炎の起炎菌で最も多いのは<span class="highlight">Streptococcus属</span>（特にS. viridans群）。口腔常在菌であり、抜歯時の菌血症が原因となりうる。</p>
+      </div>
+
+      <h2>呼吸器疾患</h2>
+
+      <h3>1秒率（FEV1%）</h3>
+      <p><span class="key">閉塞性換気障害</span>で<span class="highlight">低下</span>する（気道閉塞により呼出困難）。</p>
+      <ul>
+        <li><span class="highlight">閉塞性</span>：気管支喘息、COPD → 1秒率<span class="highlight">低下</span></li>
+        <li><span class="key">拘束性</span>：肺線維症 → 肺活量低下、1秒率は正常〜上昇</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">113D15</div>
+        <p>1秒率〈FEV1%〉が低下するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肝硬変<br>
+          b 狭心症<br>
+          c 心筋梗塞<br>
+          d 肺線維症<br>
+          e 気管支喘息
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">気管支喘息</span>は閉塞性換気障害で1秒率が低下。肺線維症は拘束性で肺活量が低下。</p>
+      </div>
+
+      <h3>気管支喘息発作の治療</h3>
+      <p><span class="highlight">β2刺激薬（サルブタモール）</span>を吸入。気管支拡張作用。</p>
+
+      <div class="question-box">
+        <div class="q-number">112D13</div>
+        <p>気管支喘息発作の治療に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アスピリン<br>
+          b ニカルジピン塩酸塩<br>
+          c サルブタモール硫酸塩<br>
+          d フェニレフリン塩酸塩<br>
+          e アトロピン硫酸塩水和物
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">サルブタモール</span>はβ2刺激薬で気管支拡張作用。喘息発作の第一選択薬。<span class="caution">アスピリンは喘息を誘発</span>することがあり禁忌。</p>
+      </div>
+
+      <h3>在宅酸素療法患者</h3>
+      <p>酸素使用中は<span class="caution">火気厳禁</span>。アルコールトーチなど引火の危険がある器具は使用禁止。</p>
+
+      <div class="question-box">
+        <div class="q-number">109C23</div>
+        <p>在宅酸素療法患者の治療に際して使用に注意すべき機器はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 根管長測定器<br>
+          b エアータービン<br>
+          c マイクロモータ<br>
+          d アルコールトーチ<br>
+          e 超音波スケーラー
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">アルコールトーチ</span>は火気であり、在宅酸素療法中の患者では引火・爆発の危険がある。酸素投与を中止してから使用するか、別の器具を選択。</p>
+      </div>
+
+      <h2>てんかん発作への対応</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">てんかん発作時の対応</div>
+        <ul>
+          <li>まず<span class="highlight">口腔内の器具を取り出す</span>（誤嚥・損傷防止）</li>
+          <li>発作中は<span class="caution">無理に抑制しない</span></li>
+          <li>気道確保、回復体位</li>
+          <li>発作後の意識回復を確認</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C8</div>
+        <p>齲蝕治療中に患者がてんかん発作を起こした。<br>直ちに行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心肺蘇生を開始する。<br>
+          b ボバース体位をとる。<br>
+          c アドレナリンを投与する。<br>
+          d 口腔内の器具を取り出す。<br>
+          e トレンデレンブルグ体位に変換する。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】てんかん発作時はまず<span class="highlight">口腔内の器具を取り出す</span>。誤嚥や口腔内損傷を防ぐ。心肺蘇生は心停止時、アドレナリンはアナフィラキシー時。</p>
+      </div>
+
+      <h2>アレルギー</h2>
+
+      <table>
+        <tr>
+          <th>型</th>
+          <th>機序</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">Ⅰ型</span>（即時型）</td>
+          <td>IgE抗体</td>
+          <td><span class="highlight">ラテックス</span>アレルギー、花粉症、アナフィラキシー</td>
+        </tr>
+        <tr>
+          <td>Ⅱ型</td>
+          <td>IgG/IgM抗体</td>
+          <td>不適合輸血</td>
+        </tr>
+        <tr>
+          <td>Ⅲ型</td>
+          <td>免疫複合体</td>
+          <td>SLE、関節リウマチ</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Ⅳ型</span>（遅延型）</td>
+          <td>T細胞</td>
+          <td><span class="highlight">金属</span>アレルギー、ツベルクリン反応</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111B7</div>
+        <p>Ⅰ型アレルギーの原因となるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a シリカ<br>
+          b チタン<br>
+          c ニッケル<br>
+          d ラテックス<br>
+          e アルジネート
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">ラテックス</span>（天然ゴム）はⅠ型アレルギーの原因。IgE抗体を介した即時型反応。ニッケルはⅣ型（金属アレルギー）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B5</div>
+        <p>IV型アレルギー反応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 花粉症<br>
+          b 金属アレルギー<br>
+          c ペニシリンアレルギー<br>
+          d アナフィラキシーショック<br>
+          e 不適合輸血による凝血反応
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">金属アレルギー</span>はⅣ型（遅延型）。T細胞を介した反応で、接触から24〜48時間後に症状出現。花粉症・アナフィラキシーはⅠ型。</p>
+      </div>
+
+      <h2>周術期口腔機能管理</h2>
+
+      <div class="question-box">
+        <div class="q-number">112B13</div>
+        <p>急性期治療における周術期口腔機能管理の目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 手術侵襲の軽減<br>
+          b 咀嚼能力の向上<br>
+          c フレイルの予防<br>
+          d 術後合併症の予防<br>
+          e 認知機能低下の予防
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】周術期口腔機能管理の主目的は<span class="highlight">術後合併症（誤嚥性肺炎など）の予防</span>。口腔内清掃・感染源除去を行う。</p>
+      </div>
+
+      <h2>高齢者の評価</h2>
+
+      <h3>ADLとIADL</h3>
+      <table>
+        <tr>
+          <th>ADL（基本的日常生活動作）</th>
+          <th>IADL（手段的日常生活動作）</th>
+        </tr>
+        <tr>
+          <td>食事、入浴、整容、排泄、移動</td>
+          <td><span class="highlight">買物</span>、調理、洗濯、金銭管理、服薬管理</td>
+        </tr>
+        <tr>
+          <td>生活の基本動作</td>
+          <td>社会生活に必要な動作</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109A19</div>
+        <p>手段的日常生活動作〈IADL〉の評価項目に含まれるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 買　物<br>
+          b 食　事<br>
+          c 整　容<br>
+          d 入　浴<br>
+          e 排　泄
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">買物</span>はIADL。食事・整容・入浴・排泄は基本的ADL。IADLは社会生活に必要な複雑な動作。</p>
+      </div>
+
+      <h3>障害高齢者の日常生活自立度（寝たきり度）</h3>
+      <table>
+        <tr>
+          <th>ランク</th>
+          <th>状態</th>
+        </tr>
+        <tr>
+          <td>J（自立）</td>
+          <td>外出可能</td>
+        </tr>
+        <tr>
+          <td>A（準寝たきり）</td>
+          <td>屋内生活は自立、外出に介助が必要</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">B（寝たきり）</span></td>
+          <td>屋内生活に介助が必要、ベッド上主体だが車椅子移乗可</td>
+        </tr>
+        <tr>
+          <td>C（寝たきり）</td>
+          <td>1日中ベッド上、自力で寝返りできない</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116C4</div>
+        <p>障害高齢者の日常生活自立度（寝たきり度）の判定基準において、「屋内での生活は何らかの介助を要し、日中もベッド上での生活が主体であるが、車椅子に移乗し、食事、排泄はベッドから離れて行う」とされるランクはどれか。1つ選べ。</p>
+        <div class="choices">
+          a J2<br>
+          b A1<br>
+          c A2<br>
+          d B1<br>
+          e C1
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】設問の状態は<span class="highlight">ランクB1</span>。ベッド上主体だが車椅子移乗可能で、食事・排泄は離床。B2はより介助が必要、Cは終日ベッド上。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

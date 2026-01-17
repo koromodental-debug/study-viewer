@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>人口統計 - 公衆衛生</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula { background: var(--bg-secondary); padding: 8px 12px; border-radius: 8px; font-family: monospace; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">公衆衛生 / 各種統計と人口問題</span>
+    <h1>人口統計</h1>
+    <div class="container">
+
+      <h2>人口統計の分類</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>調査</th>
+          <th>頻度</th>
+          <th>調査項目</th>
+        </tr>
+        <tr>
+          <td><span class="key">人口静態統計</span></td>
+          <td>国勢調査（総務省）</td>
+          <td><span class="highlight">5年に一度</span></td>
+          <td>性別、年齢、職業、世帯、住居</td>
+        </tr>
+        <tr>
+          <td><span class="key">人口動態統計</span></td>
+          <td>人口動態調査（厚労省）</td>
+          <td><span class="highlight">毎年</span></td>
+          <td>出生、死亡、死産、結婚・離婚</td>
+        </tr>
+      </table>
+
+      <h2>人口ピラミッドの型</h2>
+      <table>
+        <tr>
+          <th>型</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>富士山型（ピラミッド型）</td>
+          <td>多産・多死、発展途上国</td>
+        </tr>
+        <tr>
+          <td>釣り鐘型（ベル型）</td>
+          <td>人口安定</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">つぼ型</span></td>
+          <td><span class="highlight">人口減少、日本</span>（低出生）</td>
+        </tr>
+        <tr>
+          <td>星型</td>
+          <td>都市型（生産年齢人口流入）</td>
+        </tr>
+        <tr>
+          <td>ひょうたん型</td>
+          <td>農村型（生産年齢人口流出）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">人口ピラミッドの年代を見分けるコツ</div>
+        <ul>
+          <li><span class="key">団塊の世代</span>（1947〜1949年生まれ）の位置に注目</li>
+          <li><span class="key">団塊ジュニア</span>（1971〜1974年生まれ）の位置に注目</li>
+        </ul>
+      </div>
+
+      <h2>人口静態統計の指標</h2>
+      <p>年少人口：0〜14歳、生産年齢人口：15〜64歳、老年人口：65歳以上</p>
+
+      <h3>「割合」と「指数」の違い</h3>
+      <ul>
+        <li><span class="key">割合</span>：分母が<span class="highlight">総人口</span></li>
+        <li><span class="key">指数</span>：分母が<span class="highlight">生産年齢人口</span></li>
+        <li><span class="caution">例外</span>：老年化指数は分母が年少人口</li>
+      </ul>
+
+      <h3>主な指標と計算式</h3>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>計算式</th>
+          <th>傾向</th>
+        </tr>
+        <tr>
+          <td>年少人口割合</td>
+          <td>年少人口 ÷ 総人口 × 100</td>
+          <td class="caution">減少</td>
+        </tr>
+        <tr>
+          <td>生産年齢人口割合</td>
+          <td>生産年齢人口 ÷ 総人口 × 100</td>
+          <td class="caution">減少</td>
+        </tr>
+        <tr>
+          <td>老年人口割合（高齢化率）</td>
+          <td>老年人口 ÷ 総人口 × 100</td>
+          <td>増加</td>
+        </tr>
+        <tr>
+          <td>年少人口指数</td>
+          <td>年少人口 ÷ 生産年齢人口 × 100</td>
+          <td class="caution">減少</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">老年化指数</span></td>
+          <td><span class="highlight">老年人口 ÷ 年少人口</span> × 100</td>
+          <td>急激に増加</td>
+        </tr>
+      </table>
+
+      <h3>高齢化の分類</h3>
+      <ul>
+        <li>高齢化社会：7〜14%</li>
+        <li>高齢社会：14〜21%</li>
+        <li><span class="highlight">超高齢社会</span>：<span class="highlight">21%以上</span>（日本は超高齢社会）</li>
+      </ul>
+
+      <h2>合計特殊出生率</h2>
+      <p>1人の女性が生涯に産む子どもの数の推定値。</p>
+      <ul>
+        <li>現在約<span class="highlight">1.3〜1.4</span></li>
+        <li>人口置換水準（人口が維持される値）：<span class="key">2.07</span></li>
+        <li>2.07を下回ると人口減少</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">合計特殊出生率から予測できるもの</div>
+        <p><span class="highlight">総人口</span>の増減を予測できる（104A111）</p>
+      </div>
+
+      <h2>死因統計</h2>
+
+      <h3>死因の順位（2017年）</h3>
+      <table>
+        <tr>
+          <th>順位</th>
+          <th>死因</th>
+        </tr>
+        <tr>
+          <td>1位</td>
+          <td><span class="highlight">悪性新生物</span></td>
+        </tr>
+        <tr>
+          <td>2位</td>
+          <td><span class="key">心疾患</span>（高血圧を除く）</td>
+        </tr>
+        <tr>
+          <td>3位</td>
+          <td><span class="key">脳血管疾患</span></td>
+        </tr>
+        <tr>
+          <td>4位</td>
+          <td>老衰</td>
+        </tr>
+        <tr>
+          <td>5位</td>
+          <td>肺炎</td>
+        </tr>
+      </table>
+
+      <h3>年齢調整死亡率の特徴</h3>
+      <ul>
+        <li><span class="key">脳血管疾患</span>：1970年以降<span class="highlight">大きく減少</span></li>
+        <li>悪性新生物：横ばい</li>
+        <li>心疾患：横ばい</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A83</div>
+        <p>人口構成の年次推移で2000〜2010年まで経年的に低下しているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 老年化指数<br>
+          b 老年人口割合<br>
+          c 年少人口指数<br>
+          d 従属人口指数<br>
+          e 生産年齢人口割合
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】少子高齢化により、年少人口指数と生産年齢人口割合は減少。老年化指数と老年人口割合は増加。従属人口指数は老年人口増加により増加傾向。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A111</div>
+        <p>合計特殊出生率から増減を予測できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 総人口<br>
+          b 老年人口<br>
+          c 定常人口<br>
+          d 労働力人口<br>
+          e 再生産年齢人口
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】合計特殊出生率は将来の総人口を予測するための指標。2.07を下回ると人口減少が予測される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C61</div>
+        <p>我が国の合計特殊出生率（平成21年）はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 0.67<br>
+          b 1.37<br>
+          c 2.07<br>
+          d 2.77<br>
+          e 3.27
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】日本の合計特殊出生率は約1.3〜1.4。2.07は人口置換水準であり、これを下回っているため人口減少が進行している。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

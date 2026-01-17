@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>局所麻酔法 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>局所麻酔法</h1>
+    <div class="container">
+
+      <h2>1. 局所麻酔法の分類</h2>
+
+      <h3>局所麻酔法の種類</h3>
+      <table>
+        <tr><th>分類</th><th>方法</th><th>適応</th></tr>
+        <tr><td><span class="key">表面麻酔法</span></td><td>粘膜表面に塗布・噴霧</td><td>刺入部位の除痛、粘膜切開</td></tr>
+        <tr><td><span class="key">浸潤麻酔法</span></td><td>組織内に薬液を注入</td><td>歯科治療で最も多用</td></tr>
+        <tr><td><span class="key">伝達麻酔法</span></td><td>神経幹周囲に薬液を注入</td><td>広範囲の麻酔が必要な場合</td></tr>
+      </table>
+
+      <h2>2. 表面麻酔法</h2>
+
+      <h3>表面麻酔の方法</h3>
+      <table>
+        <tr><th>方法</th><th>内容</th></tr>
+        <tr><td>塗布麻酔法</td><td>軟膏、ゼリー、液体を粘膜に塗布</td></tr>
+        <tr><td>噴霧麻酔法</td><td>噴霧器で気管・喉頭に噴霧</td></tr>
+        <tr><td>テープ剤貼付</td><td>リドカイン含有テープを貼付</td></tr>
+      </table>
+
+      <h3>表面麻酔に用いる薬剤</h3>
+      <table>
+        <tr><th>薬剤</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">リドカイン</span></td><td>最も汎用、ゼリー・スプレーなど</td></tr>
+        <tr><td><span class="highlight">ベンゾカイン（アミノ安息香酸エチル）</span></td><td>表面麻酔専用、エステル型</td></tr>
+        <tr><td>テトラカイン</td><td>表面麻酔に使用可能</td></tr>
+      </table>
+
+      <p class="note"><span class="caution">プロカイン、メピバカイン、ブピバカインは表面麻酔には使用しない</span>（粘膜透過性が低い）</p>
+
+      <div class="question-box">
+        <div class="q-number">118D13</div>
+        <p>表面麻酔に用いられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a プロカイン塩酸塩<br>
+          b リドカイン塩酸塩<br>
+          c メピバカイン塩酸塩<br>
+          d ブピバカイン塩酸塩水和物<br>
+          e アミノ安息香酸エチル〈ベンゾカイン〉
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】表面麻酔に使用できるのは<span class="highlight">リドカイン</span>と<span class="highlight">ベンゾカイン</span>。プロカイン・メピバカイン・ブピバカインは粘膜透過性が低く表面麻酔には不向き。</p>
+      </div>
+
+      <h2>3. 浸潤麻酔法</h2>
+
+      <h3>浸潤麻酔の種類</h3>
+      <table>
+        <tr><th>種類</th><th>注入部位</th><th>用途</th></tr>
+        <tr><td>粘膜下注射法</td><td>粘膜下組織</td><td>軟組織の麻酔</td></tr>
+        <tr><td>傍骨膜注射法</td><td>骨膜外表面近く</td><td>歯石除去、外科処置</td></tr>
+        <tr><td>骨膜下注射法</td><td>骨膜と骨の間</td><td>抜歯、インプラント</td></tr>
+        <tr><td>骨内注射法</td><td>骨小孔から骨内</td><td>補助的麻酔</td></tr>
+      </table>
+
+      <h3>小児への浸潤麻酔の注意点</h3>
+      <ul>
+        <li><span class="highlight">表面麻酔薬を併用</span>する（刺入時の疼痛軽減）</li>
+        <li>細い針（30〜33G）を使用</li>
+        <li>薬液の注入はゆっくり行う</li>
+        <li>電動注射器の使用も有効</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">106C28</div>
+        <p>小児への浸潤麻酔法で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 22Gの針を用いる。<br>
+          b 表面麻酔薬を併用する。<br>
+          c 骨膜下に薬液を注入する。<br>
+          d 薬液の注入時間を短くする。<br>
+          e 血管収縮薬添加局所麻酔薬は用いない。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】小児への浸潤麻酔では<span class="highlight">表面麻酔薬を併用</span>して刺入時の痛みを軽減する。針は細いもの（30〜33G）を使用（22Gは太すぎる）。注入はゆっくり行う。</p>
+      </div>
+
+      <h2>4. 伝達麻酔法（神経ブロック）</h2>
+
+      <h3>伝達麻酔の特徴</h3>
+      <ul>
+        <li>神経幹周囲に局所麻酔薬を注射</li>
+        <li>少量の麻酔薬で広範囲の麻酔効果</li>
+        <li>浸潤麻酔より効果持続時間が長い</li>
+      </ul>
+
+      <h3>下顎孔伝達麻酔</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>麻酔される神経</td><td>下歯槽神経、舌神経</td></tr>
+        <tr><td><span class="highlight">刺入部位</span></td><td><span class="highlight">翼突下顎縫線の中央</span>、大臼歯咬合面より約1cm上方</td></tr>
+        <tr><td>奏効範囲</td><td>同側の下顎臼歯・小臼歯・前歯、下唇、オトガイ部、舌前2/3</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">104D1</div>
+        <p>25歳の男性。埋伏した下顎右側第三大臼歯を抜去するために伝達麻酔を行うこととした。開口時の口腔内写真（別冊No.1）を別に示す。注射針の刺入部位で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D1_1.png" alt="別冊No.1">
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】下顎孔伝達麻酔の刺入部位は<span class="highlight">翼突下顎縫線の中央</span>付近。大臼歯咬合面より約1cm上方で、下顎孔に向けて刺入する。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：局所麻酔法</div>
+        <ul>
+          <li><span class="key">表面麻酔</span>：リドカイン、ベンゾカイン（プロカイン等は不可）</li>
+          <li><span class="key">小児への浸潤麻酔</span>：表面麻酔薬を併用、細い針を使用</li>
+          <li><span class="key">下顎孔伝達麻酔</span>：翼突下顎縫線中央から刺入</li>
+          <li><span class="key">伝達麻酔の奏効範囲</span>：下顎同側の歯・下唇・舌前2/3</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

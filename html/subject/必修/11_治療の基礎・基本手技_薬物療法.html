@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>薬物療法 - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 治療の基礎・基本手技</span>
+    <h1>薬物療法</h1>
+    <div class="container">
+
+      <h2>薬物動態の基礎</h2>
+
+      <h3>薬物代謝</h3>
+      <p>薬物代謝の主な臓器は<span class="key">肝臓</span>で、<span class="highlight">シトクロムP-450</span>（CYP）が中心的役割を果たす。</p>
+      <ul>
+        <li><span class="key">シトクロムP-450</span>：肝臓の<span class="highlight">ミクロソーム分画（滑面小胞体）</span>に存在</li>
+        <li>第Ⅰ相反応（酸化・還元・加水分解）を触媒</li>
+        <li>薬物相互作用の原因となる（誘導・阻害）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108A29</div>
+        <p>肝臓のミクロソーム分画にあり、薬物の代謝に関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アルブミン<br>
+          b グロブリン<br>
+          c P-糖タンパク質<br>
+          d シトクロムP-450<br>
+          e α1-酸性糖タンパク質
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">シトクロムP-450</span>は肝臓のミクロソーム分画に存在し、薬物代謝（酸化反応）に関与。アルブミン・α1-酸性糖タンパク質は血漿タンパク質（薬物結合）。P-糖タンパク質は薬物排出トランスポーター。</p>
+      </div>
+
+      <h3>バイオアベイラビリティ（生体利用率）</h3>
+      <p>投与された薬物が全身循環に到達する割合。</p>
+
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>バイオアベイラビリティへの影響</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">初回通過効果の低下</span></td>
+          <td><span class="highlight">増加</span>（肝臓での代謝を回避）</td>
+        </tr>
+        <tr>
+          <td>消化管からの吸収率低下</td>
+          <td>減少</td>
+        </tr>
+        <tr>
+          <td>シトクロムP-450の増加</td>
+          <td>減少（代謝促進）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">初回通過効果</div>
+        <p>経口投与された薬物が全身循環に入る前に<span class="key">肝臓で代謝</span>されること。<br>初回通過効果が<span class="caution">低下</span>すると、より多くの薬物が全身循環に到達 → バイオアベイラビリティ<span class="highlight">増加</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C12</div>
+        <p>バイオアベイラビリティ〈生体利用率〉を増加させるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 分布容積の増加<br>
+          b 糸球体濾過量の増加<br>
+          c 初回通過効果の低下<br>
+          d シトクロムP-450の増加<br>
+          e 消化管からの吸収率の低下
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">初回通過効果の低下</span>により肝臓での代謝が減少し、バイオアベイラビリティが増加する。CYP増加は代謝促進で減少。</p>
+      </div>
+
+      <h3>治療薬物モニタリング（TDM）</h3>
+      <p>血中薬物濃度を測定し、投与量を調整する方法。</p>
+      <ul>
+        <li>目的：<span class="highlight">副作用の回避</span>、有効血中濃度の維持</li>
+        <li>対象：<span class="key">安全域が狭い薬物</span>（ジギタリス、抗てんかん薬、免疫抑制薬など）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">111D17</div>
+        <p>患者に治療薬物モニタリング〈TDM〉を行う目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 副作用の回避<br>
+          b 無効量の決定<br>
+          c 薬力学的性質の検討<br>
+          d 安全域の広い薬物の同定<br>
+          e 尿中代謝物の濃度の把握
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】TDMは<span class="highlight">副作用の回避</span>と有効性の確保が目的。安全域の<span class="caution">狭い</span>薬物（広いではない）で必要性が高い。</p>
+      </div>
+
+      <h2>NSAIDs（非ステロイド性抗炎症薬）</h2>
+
+      <h3>作用機序</h3>
+      <p>NSAIDsは<span class="highlight">シクロオキシゲナーゼ（COX）</span>を阻害し、プロスタグランジン（PG）合成を抑制する。</p>
+
+      <table>
+        <tr>
+          <th>酵素</th>
+          <th>産生物質</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">シクロオキシゲナーゼ（COX）</span></td>
+          <td>プロスタグランジン（PG）</td>
+          <td>発痛増強、発熱、炎症</td>
+        </tr>
+        <tr>
+          <td>リポキシゲナーゼ</td>
+          <td>ロイコトリエン（LT）</td>
+          <td>気管支収縮、炎症</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108A18</div>
+        <p>酸性非ステロイド性抗炎症薬が阻害するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a リポキシゲナーゼ<br>
+          b ホスホリパーゼC<br>
+          c アデニル酸シクラーゼ<br>
+          d シクロオキシゲナーゼ<br>
+          e プロテインキナーゼA
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】NSAIDsは<span class="highlight">シクロオキシゲナーゼ（COX）</span>を阻害し、PG合成を抑制する。リポキシゲナーゼ阻害はロイコトリエン産生抑制。</p>
+      </div>
+
+      <h3>NSAIDsの作用部位</h3>
+      <p>NSAIDsは<span class="highlight">末梢（炎症部位）</span>で作用し、発痛物質（PG）の産生を抑制する。</p>
+
+      <div class="question-box">
+        <div class="q-number">111C6</div>
+        <p>歯髄炎の痛みの上行性伝導路の一部を図に示す。<br>非ステロイド性抗炎症薬が作用するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111C6_1.png" alt="痛みの伝導路">
+        </div>
+        <div class="choices">
+          a ア　　b イ　　c ウ　　d エ　　e オ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】NSAIDsは<span class="highlight">末梢（炎症部位＝ア）</span>でCOXを阻害しPG産生を抑制する。中枢（脊髄・脳）には作用しない。オピオイドは中枢に作用。</p>
+      </div>
+
+      <h2>受容体と作用</h2>
+
+      <h3>アドレナリン受容体</h3>
+      <table>
+        <tr>
+          <th>受容体</th>
+          <th>主な作用</th>
+          <th>分布</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">α1受容体</span></td>
+          <td><span class="highlight">血管平滑筋収縮</span>（血圧上昇）</td>
+          <td>血管平滑筋</td>
+        </tr>
+        <tr>
+          <td><span class="key">α2受容体</span></td>
+          <td>ノルアドレナリン放出抑制</td>
+          <td>シナプス前膜</td>
+        </tr>
+        <tr>
+          <td><span class="key">β1受容体</span></td>
+          <td>心収縮力↑、心拍数↑</td>
+          <td>心臓</td>
+        </tr>
+        <tr>
+          <td><span class="key">β2受容体</span></td>
+          <td>血管拡張、気管支拡張</td>
+          <td>血管、気管支</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">110C23</div>
+        <p>血管平滑筋の収縮に関わるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a D1ドパミン受容体<br>
+          b μオピオイド受容体<br>
+          c M2ムスカリン受容体<br>
+          d α1アドレナリン受容体<br>
+          e β2アドレナリン受容体
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">α1アドレナリン受容体</span>の刺激で血管平滑筋が収縮し血圧が上昇する。β2受容体は血管<span class="caution">拡張</span>。</p>
+      </div>
+
+      <h3>シナプス後膜の受容体</h3>
+      <table>
+        <tr>
+          <th>受容体</th>
+          <th>リガンド</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">GABA<sub>A</sub>受容体</span></td>
+          <td>GABA</td>
+          <td><span class="highlight">抑制性</span>（Cl<sup>-</sup>チャネル開口）</td>
+        </tr>
+        <tr>
+          <td><span class="key">NMDA受容体</span></td>
+          <td>グルタミン酸</td>
+          <td>興奮性（Ca<sup>2+</sup>流入）</td>
+        </tr>
+        <tr>
+          <td>ACh受容体（ニコチン型）</td>
+          <td>アセチルコリン</td>
+          <td>興奮性</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109C7</div>
+        <p>シナプスの模式図を示す。<br>シナプス後膜にある受容体はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C7_1.png" alt="シナプスの模式図">
+        </div>
+        <div class="choices">
+          a IP3受容体<br>
+          b ACh受容体<br>
+          c NMDA受容体<br>
+          d TRPV1受容体<br>
+          e GABA<sub>A</sub>受容体
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】図のシナプス後膜には<span class="highlight">GABA<sub>A</sub>受容体</span>（抑制性、Cl<sup>-</sup>チャネル型）がある。IP3受容体は小胞体膜上、TRPV1は侵害受容器。</p>
+      </div>
+
+      <h2>副腎皮質ステロイドの副作用</h2>
+      <p>※詳細は「薬物に関連する口腔症候」を参照</p>
+
+      <div class="point-box">
+        <div class="point-box-title">ステロイド副作用の覚え方</div>
+        <ul>
+          <li><span class="key">高</span>血糖、<span class="key">高</span>血圧 → 「高」がつく</li>
+          <li><span class="key">易</span>感染性、<span class="key">骨</span>粗鬆症 → 免疫抑制・骨代謝異常</li>
+          <li><span class="key">満月様顔貌</span>（ムーンフェイス） → 脂肪再分布</li>
+          <li><span class="caution">低血糖は副作用でない</span>（ステロイドは血糖を上げる）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C5</div>
+        <p>顔貌所見と原因の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 蝶形紅斑 ーーーーーーーー Parkinson 病<br>
+          b 仮面様顔貌 ーーーーーーーー 全身性エリテマトーデス<br>
+          c 満月様顔貌 ーーーーーーーー 副腎皮質ステロイド薬長期服用<br>
+          d 毛細血管拡張 ーーーーーーー 腎不全<br>
+          e Hippocrates 様顔貌 ーーーー 慢性GVHD
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">満月様顔貌</span>は副腎皮質ステロイド薬の長期服用による。蝶形紅斑はSLE、仮面様顔貌はParkinson病。</p>
+      </div>
+
+      <p class="note">※アドレナリンとの相互作用、口腔粘膜炎の原因薬物については「薬物に関連する口腔症候」を参照</p>
+
+    </div>
+  </div>
+</body>
+</html>

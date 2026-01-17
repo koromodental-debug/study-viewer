@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>一次救命処置（BLS） - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 初期救急</span>
+    <h1>一次救命処置（BLS）</h1>
+    <div class="container">
+
+      <h2>1. 一次救命処置と二次救命処置</h2>
+
+      <h3>定義と違い</h3>
+      <p><span class="key">一次救命処置（BLS）</span>は、特殊な器具や薬剤を用いずに行う救命処置。<span class="highlight">一般人が行っても罪に問われない</span>。</p>
+
+      <table>
+        <tr><th>項目</th><th>一次救命処置</th><th>二次救命処置</th></tr>
+        <tr><td>意識の確認</td><td>声をかける、肩を叩く</td><td>救急チームの発動</td></tr>
+        <tr><td>応援要請</td><td>大声、AEDの手配</td><td>人手の確保</td></tr>
+        <tr><td>呼吸の確認</td><td><span class="highlight">10秒以内</span>に行う</td><td>−</td></tr>
+        <tr><td>循環への処置</td><td>胸骨圧迫</td><td>電気的除細動</td></tr>
+        <tr><td>人工呼吸</td><td>バッグバルブマスク</td><td>気管挿管、酸素投与</td></tr>
+      </table>
+
+      <p class="note"><span class="key">市販のAED</span>による除細動は一次救命処置に含まれる。</p>
+
+      <h2>2. BLSの手順</h2>
+
+      <h3>成人のBLSアルゴリズム</h3>
+      <table>
+        <tr><th>順序</th><th>内容</th><th>ポイント</th></tr>
+        <tr><td>①</td><td><span class="highlight">周囲の安全確認</span></td><td><span class="highlight">最初に行う</span></td></tr>
+        <tr><td>②</td><td>反応の確認</td><td>肩を叩き、声をかける</td></tr>
+        <tr><td>③</td><td>応援要請・AED依頼</td><td>119番通報</td></tr>
+        <tr><td>④</td><td>呼吸の確認</td><td>10秒以内</td></tr>
+        <tr><td>⑤</td><td>胸骨圧迫</td><td>強く、速く、絶え間なく</td></tr>
+        <tr><td>⑥</td><td>人工呼吸</td><td>省略可能</td></tr>
+        <tr><td>⑦</td><td>AED装着・解析</td><td>−</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116B15</div>
+        <p>一次救命処置〈BLS〉で最初に行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 応援要請<br>
+          b 胸骨圧迫<br>
+          c 人工呼吸<br>
+          d 心停止の判断<br>
+          e 周囲の安全確認
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】BLSで<span class="highlight">最初に行うのは周囲の安全確認</span>。救助者自身の安全を確保してから患者に近づく。</p>
+      </div>
+
+      <h2>3. 胸骨圧迫と人工呼吸</h2>
+
+      <h3>胸骨圧迫のポイント</h3>
+      <table>
+        <tr><th>項目</th><th>成人</th></tr>
+        <tr><td>圧迫部位</td><td>胸骨の<span class="caution">下半分</span></td></tr>
+        <tr><td>圧迫の深さ</td><td>約5cm（6cmを超えない）</td></tr>
+        <tr><td>圧迫のテンポ</td><td>100〜120回/分</td></tr>
+        <tr><td><span class="highlight">胸骨圧迫：人工呼吸</span></td><td><span class="highlight">30：2</span></td></tr>
+      </table>
+
+      <h3>人工呼吸の省略</h3>
+      <p>訓練を受けていない救助者や、人工呼吸に抵抗がある場合は、<span class="highlight">人工呼吸を省略して胸骨圧迫のみ</span>を行ってよい。</p>
+
+      <div class="question-box">
+        <div class="q-number">116C7</div>
+        <p>成人に対する一次救命処置〈BLS〉において、胸骨圧迫と人工呼吸の回数比で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 5：2<br>
+          b 10：2<br>
+          c 15：2<br>
+          d 30：2<br>
+          e 60：2
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】成人のBLSでは<span class="highlight">胸骨圧迫30回に対し人工呼吸2回</span>（30：2）で行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D17</div>
+        <p>成人の一次救命処置で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 気管挿管を行う。<br>
+          b 酸素を投与する。<br>
+          c 胸骨の上半分を圧迫する。<br>
+          d 呼吸の確認を10秒以上かけて行う。<br>
+          e 胸骨圧迫と人工呼吸を30対2で行う。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">30：2</span>が正しい。<span class="caution">気管挿管・酸素投与は二次救命処置</span>。胸骨は<span class="caution">下半分</span>を圧迫。呼吸確認は<span class="caution">10秒以内</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A20</div>
+        <p>成人の一次救命処置で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 気管挿管を行う。<br>
+          b 静脈路確保を行う。<br>
+          c アドレナリンを投与する。<br>
+          d 死戦期呼吸は経過観察する。<br>
+          e 人工呼吸を省くことができる。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">人工呼吸は省略可能</span>で、胸骨圧迫のみでもよい。<span class="caution">気管挿管・静脈路確保・薬剤投与は二次救命処置</span>。死戦期呼吸は心停止と判断し直ちに胸骨圧迫を開始する。</p>
+      </div>
+
+      <h2>4. 一次救命処置に含まれるもの・含まれないもの</h2>
+
+      <h3>一次救命処置に含まれるもの</h3>
+      <ul>
+        <li>周囲の安全確認</li>
+        <li>反応・呼吸の確認</li>
+        <li>応援要請（119番通報）</li>
+        <li>胸骨圧迫</li>
+        <li>人工呼吸（バッグバルブマスク）</li>
+        <li><span class="key">AEDによる除細動</span></li>
+      </ul>
+
+      <h3>二次救命処置に含まれるもの</h3>
+      <ul>
+        <li><span class="caution">気管挿管</span></li>
+        <li><span class="caution">静脈路確保</span></li>
+        <li><span class="caution">薬剤投与（アドレナリンなど）</span></li>
+        <li><span class="caution">酸素投与</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：一次救命処置（BLS）</div>
+        <ul>
+          <li><span class="key">最初に行う</span>：周囲の安全確認</li>
+          <li><span class="key">呼吸の確認</span>：10秒以内</li>
+          <li><span class="key">胸骨圧迫：人工呼吸</span>＝30：2</li>
+          <li><span class="key">胸骨圧迫部位</span>：胸骨の下半分</li>
+          <li><span class="key">人工呼吸</span>：省略可能</li>
+          <li><span class="key">AED</span>：一次救命処置に含まれる</li>
+          <li><span class="key">二次救命処置</span>：気管挿管、静脈路確保、薬剤投与</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

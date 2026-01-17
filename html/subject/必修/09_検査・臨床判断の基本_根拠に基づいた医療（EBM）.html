@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>根拠に基づいた医療（EBM） - 必修</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">必修 / 検査・臨床判断の基本</span>
+    <h1>根拠に基づいた医療（EBM）</h1>
+    <div class="container">
+
+      <h2>1. EBMとは</h2>
+
+      <p><span class="key">EBM（Evidence-Based Medicine）</span>は「根拠に基づく医療」と訳され、客観的なデータや文献によって裏付けられた医療のこと。科学的な裏付けがあることで、患者にとって信頼のできる医療となる。</p>
+
+      <h3>EBMの5ステップ</h3>
+      <table>
+        <tr><th>Step</th><th>内容</th></tr>
+        <tr><td>Step 1</td><td><span class="highlight">問題の定式化</span>（患者の問題を明確化）</td></tr>
+        <tr><td>Step 2</td><td><span class="key">文献情報の収集</span>（情報検索）</td></tr>
+        <tr><td>Step 3</td><td><span class="key">文献の批判的吟味</span>（エビデンス評価）</td></tr>
+        <tr><td>Step 4</td><td><span class="key">患者への適用</span></td></tr>
+        <tr><td>Step 5</td><td><span class="key">事後評価</span>（自己評価）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113A5</div>
+        <p>EBMを実践する際のステップを以下に示す。<br>
+        ア　事後評価<br>
+        イ　患者への適用<br>
+        ウ　文献情報の収集<br>
+        エ　文献の批判的吟味<br>
+        オ　患者の問題の定式化<br>
+        手順で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ウ→イ→エ→オ→ア<br>
+          b ウ→エ→オ→イ→ア<br>
+          c ウ→オ→エ→イ→ア<br>
+          d オ→ウ→イ→エ→ア<br>
+          e オ→ウ→エ→イ→ア
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】EBMの手順は<span class="highlight">問題の定式化（オ）→文献収集（ウ）→批判的吟味（エ）→患者への適用（イ）→事後評価（ア）</span>の順。まず問題を明確化することから始める。</p>
+      </div>
+
+      <h2>2. エビデンスレベル</h2>
+
+      <h3>研究デザインとエビデンスレベル（高い順）</h3>
+      <table>
+        <tr><th>レベル</th><th>研究デザイン</th></tr>
+        <tr><td><span class="highlight">最高</span></td><td><span class="highlight">メタアナリシス・システマティックレビュー</span></td></tr>
+        <tr><td>高</td><td><span class="key">ランダム化比較試験（RCT）</span></td></tr>
+        <tr><td>中</td><td>非ランダム化比較試験</td></tr>
+        <tr><td>中</td><td>コホート研究</td></tr>
+        <tr><td>低</td><td>症例対照研究</td></tr>
+        <tr><td>低</td><td>横断的研究</td></tr>
+        <tr><td><span class="caution">最低</span></td><td>症例報告・専門家の意見</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">研究デザインの分類</div>
+        <ul>
+          <li><span class="key">介入研究</span>：ランダム化比較試験（RCT）</li>
+          <li><span class="key">観察研究</span>：コホート研究、症例対照研究、横断的研究</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C24</div>
+        <p>エビデンスレベルが最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 症例報告<br>
+          b 横断的研究<br>
+          c コホート研究<br>
+          d メタアナリシス<br>
+          e 非ランダム化比較試験
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">メタアナリシス</span>は複数の研究を統合して分析するため、エビデンスレベルが最も高い。症例報告は最も低い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D8</div>
+        <p>複数の研究データを統合して分析し、総合的に結論を導き出すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 症例報告<br>
+          b コホート研究<br>
+          c メタアナリシス<br>
+          d ランダム化比較試験<br>
+          e エキスパートオピニオン
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">メタアナリシス</span>は複数の研究データを統計学的に統合し、総合的な結論を導く手法。システマティックレビューと組み合わせて用いられる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D2</div>
+        <p>介入研究はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 症例報告<br>
+          b 症例対照研究<br>
+          c 生態学的研究<br>
+          d 前向きコホート研究<br>
+          e ランダム化比較試験
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">ランダム化比較試験（RCT）</span>は研究者が介入を行う介入研究。コホート研究や症例対照研究は観察研究。</p>
+      </div>
+
+      <h2>3. 診療ガイドライン</h2>
+
+      <p><span class="key">診療ガイドライン</span>は、<span class="highlight">学術知見の系統的評価</span>に基づいて作成される。</p>
+
+      <div class="question-box">
+        <div class="q-number">111D11</div>
+        <p>診療ガイドラインで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 患者には非公開としている。<br>
+          b 権威者の経験が重視される。<br>
+          c 歯科医療機関ごとに定める。<br>
+          d 学術知見の系統的評価に基づく。<br>
+          e ガイドラインと異なる診療は違法となる。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】診療ガイドラインは<span class="highlight">学術知見の系統的評価</span>に基づく。権威者の経験ではなくエビデンスを重視。患者にも公開され、法的拘束力はない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B14</div>
+        <p>診療ガイドラインの作成にあたっては、診療上重要度の高い医療行為に関するエビデンスの（　　）とその総体評価、益と害のバランスなどを考慮する必要がある。<br>（　　）に入るのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a オッズ比<br>
+          b スコープ<br>
+          c ランダム化<br>
+          d スクリーニング<br>
+          e システマティックレビュー
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】診療ガイドライン作成には<span class="key">システマティックレビュー</span>（系統的レビュー）によるエビデンスの収集・評価が必要。</p>
+      </div>
+
+      <h2>4. 疫学指標</h2>
+
+      <h3>相対危険度とオッズ比</h3>
+      <table>
+        <tr><th>指標</th><th>計算式</th><th>用途</th></tr>
+        <tr><td><span class="highlight">相対危険度</span></td><td>曝露群の罹患率 / 非曝露群の罹患率</td><td>コホート研究</td></tr>
+        <tr><td><span class="key">オッズ比</span></td><td>（a×d）/（b×c）</td><td>症例対照研究</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114B16</div>
+        <p>ある疾病のリスク要因をコホート研究により調査した結果を表に示す。<br>
+        P／(P+Q)<br>
+        ーーーーー に該当するのはどれか。1つ選べ。<br>
+        R／(R+S)</p>
+        <div class="choices">
+          a 尤度比<br>
+          b 有病率<br>
+          c オッズ比<br>
+          d 寄与危険度<br>
+          e 相対危険度
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">相対危険度</span>＝曝露群の罹患率/非曝露群の罹患率。コホート研究で算出される。</p>
+      </div>
+
+      <h2>5. 因果関係の判断基準</h2>
+
+      <h3>Hillの基準</h3>
+      <table>
+        <tr><th>基準</th><th>内容</th></tr>
+        <tr><td><span class="highlight">一致性</span></td><td>複数の研究で同様の結果</td></tr>
+        <tr><td>強固性</td><td>関連の強さ（相対危険度が高い）</td></tr>
+        <tr><td>時間性</td><td>原因が結果より先行</td></tr>
+        <tr><td>整合性</td><td>既知の知見と矛盾しない</td></tr>
+        <tr><td>特異性</td><td>特定の曝露と特定の疾病の関連</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115C16</div>
+        <p>乳歯齲蝕と受動喫煙の関係を検討した複数の疫学研究で、同様の関連する結果が認められた。<br>該当する因果関係の判断基準はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 関連の一致性<br>
+          b 関連の強固性<br>
+          c 関連の時間性<br>
+          d 関連の整合性<br>
+          e 関連の特異性
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">複数の研究で同様の結果</span>が認められることは<span class="highlight">関連の一致性</span>に該当する。</p>
+      </div>
+
+      <h2>6. 齲蝕予防のエビデンス</h2>
+
+      <div class="question-box">
+        <div class="q-number">110C28</div>
+        <p>齲蝕予防の効果でエビデンスレベルが最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a フッ化物の応用<br>
+          b 定期的な歯科検診<br>
+          c 水流圧洗浄器の使用<br>
+          d デンタルフロスの使用<br>
+          e 甘味食品摂取量のコントロール
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">フッ化物の応用</span>は多くのRCTやメタアナリシスで齲蝕予防効果が実証されており、エビデンスレベルが最も高い。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：EBM</div>
+        <ul>
+          <li><span class="key">EBMの手順</span>：問題の定式化→文献収集→批判的吟味→患者への適用→事後評価</li>
+          <li><span class="key">エビデンス最高</span>：メタアナリシス・システマティックレビュー</li>
+          <li><span class="key">介入研究</span>：ランダム化比較試験（RCT）</li>
+          <li><span class="key">診療ガイドライン</span>：学術知見の系統的評価に基づく</li>
+          <li><span class="key">相対危険度</span>：コホート研究で算出</li>
+          <li><span class="key">一致性</span>：複数の研究で同様の結果</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

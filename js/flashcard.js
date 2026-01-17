@@ -2962,23 +2962,9 @@ const FlashcardModule = (function() {
 
   // === コンボ表示更新 ===
   function updateComboDisplay() {
-    const progressBar = document.querySelector('.flashcard-progress-bar');
-    if (!progressBar) return;
-
-    // 既存クラスをリセット
-    progressBar.classList.remove('combo-lv1', 'combo-lv2', 'combo-lv3', 'combo-lv4');
-
-    if (state.combo >= 10) {
-      progressBar.classList.add('combo-lv4');
-      spawnComboStars(4);
-    } else if (state.combo >= 7) {
-      progressBar.classList.add('combo-lv3');
-      spawnComboStars(3);
-    } else if (state.combo >= 5) {
-      progressBar.classList.add('combo-lv2');
-      spawnComboStars(2);
-    } else if (state.combo >= 3) {
-      progressBar.classList.add('combo-lv1');
+    if (state.combo >= 1) {
+      const starCount = Math.min(state.combo, 10);
+      spawnComboStars(starCount);
     }
   }
 

@@ -147,21 +147,30 @@ const FlashcardModule = (function() {
         const data = JSON.parse(saved);
         if (data.version === STORAGE_VERSION) {
           state.progress = data.cards || {};
+          const cardCount = Object.keys(state.progress).length;
+          console.log(`[loadProgress] 読み込み完了: ${cardCount}件`);
+        } else {
+          console.log(`[loadProgress] バージョン不一致: ${data.version} !== ${STORAGE_VERSION}`);
         }
+      } else {
+        console.log('[loadProgress] 保存データなし');
       }
     } catch (e) {
-      console.log('フラッシュカード進捗の読み込みエラー:', e);
+      console.error('[loadProgress] 読み込みエラー:', e);
     }
   }
 
   function saveProgress() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      const data = {
         version: STORAGE_VERSION,
         cards: state.progress
-      }));
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      const cardCount = Object.keys(state.progress).length;
+      console.log(`[saveProgress] 保存完了: ${cardCount}件`);
     } catch (e) {
-      console.log('フラッシュカード進捗の保存エラー:', e);
+      console.error('[saveProgress] 保存エラー:', e);
     }
   }
 
@@ -1566,27 +1575,46 @@ const FlashcardModule = (function() {
     const lines = text.split('\n');
     let currentSection = '';
     let currentQ = null;
+    let currentSource = null;
+    let currentSourceSection = null;
     let index = 0;
+
+    // ココシカデッキの場合、科目名を特定
+    let subjectName = null;
+    if (topicId === 'kokoshika_hisshu') {
+      subjectName = '必修';
+    }
 
     for (const line of lines) {
       const trimmed = line.trim();
 
       if (trimmed.startsWith('## ')) {
         currentSection = trimmed.slice(3);
+      } else if (trimmed.startsWith('@source: ')) {
+        currentSource = trimmed.slice(9);
+      } else if (trimmed.startsWith('@section: ')) {
+        currentSourceSection = trimmed.slice(10);
       } else if (trimmed.startsWith('Q: ') || trimmed.startsWith('Q:')) {
         currentQ = trimmed.replace(/^Q:\s*/, '');
       } else if ((trimmed.startsWith('A: ') || trimmed.startsWith('A:')) && currentQ) {
         const answer = trimmed.replace(/^A:\s*/, '');
-        cards.push({
+        const card = {
           index: index,
           originalIndex: index,
-          section: currentSection,
+          section: currentSourceSection || currentSection,
           question: currentQ,
           answer: answer,
           topicId: topicId
-        });
+        };
+        // @sourceがある場合、HTMLパスを設定
+        if (currentSource && subjectName) {
+          card.htmlPath = `html/subject/${subjectName}/${currentSource}.html`;
+        }
+        cards.push(card);
         index++;
         currentQ = null;
+        currentSource = null;
+        currentSourceSection = null;
       }
     }
 

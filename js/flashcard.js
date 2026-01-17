@@ -662,7 +662,7 @@ const FlashcardModule = (function() {
       const kokoshikaTotal = kokoshikaStats.memorized + kokoshikaStats.again;
       let kokoshikaStatsHtml = '';
       if (kokoshikaTotal === 0) {
-        kokoshikaStatsHtml = '<span class="deck-stat-new">451問</span>';
+        kokoshikaStatsHtml = '<span class="deck-stat-new">424問</span>';
       } else if (kokoshikaStats.again > 0) {
         kokoshikaStatsHtml = `<span class="deck-stat again">要復習 ${kokoshikaStats.again}</span>`;
       } else {
@@ -673,7 +673,7 @@ const FlashcardModule = (function() {
           <div class="kokoshika-banner-content">
             <div class="kokoshika-banner-text">
               <div class="kokoshika-banner-title">必修ココシカ</div>
-              <div class="kokoshika-banner-desc">★★★超頻出のみ451問</div>
+              <div class="kokoshika-banner-desc">★★★超頻出のみ424問</div>
             </div>
           </div>
           <div class="kokoshika-banner-stats">

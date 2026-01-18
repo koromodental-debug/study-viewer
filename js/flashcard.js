@@ -259,24 +259,19 @@ const FlashcardModule = (function() {
   }
 
   function getOverallStats() {
-    const subjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))];
-    let totalCards = 0;
+    // progressから直接カウント（全てのtopicIdを含む）
     let memorized = 0;
     let again = 0;
 
-    for (const subject of subjects) {
-      const stats = getSubjectStats(subject);
-      totalCards += stats.total;
-      memorized += stats.memorized;
-      again += stats.again;
+    for (const value of Object.values(state.progress)) {
+      if (value.status === 'memorized') {
+        memorized++;
+      } else if (value.status === 'again') {
+        again++;
+      }
     }
 
-    // 特別デッキ（kokoshika_hisshu）の進捗も含める
-    const kokoshikaStats = getTopicStats('kokoshika_hisshu');
-    memorized += kokoshikaStats.memorized;
-    again += kokoshikaStats.again;
-    totalCards += kokoshikaStats.memorized + kokoshikaStats.again;
-
+    const totalCards = memorized + again;
     return { total: totalCards, memorized, again };
   }
 
@@ -541,6 +536,7 @@ const FlashcardModule = (function() {
     const totalLearned = overall.memorized + overall.again;
     const inProgressTopics = getInProgressTopics(10);
     const reports = getReports();
+    const favoritesCount = FavoritesManager.getByType('qa').length;
 
     return `
       <!-- 学習の記録 -->
@@ -560,6 +556,10 @@ const FlashcardModule = (function() {
             <span class="review-card-label">覚えた ›</span>
           </button>
         </div>
+        <button class="favorite-deck-btn ${favoritesCount === 0 ? 'empty' : ''}" id="start-favorite-deck" ${favoritesCount === 0 ? 'disabled' : ''}>
+          <span class="favorite-deck-icon">★</span>
+          <span class="favorite-deck-label">お気に入り ${favoritesCount}件 ›</span>
+        </button>
       </div>
 
       <!-- カード検索 -->
@@ -935,6 +935,12 @@ const FlashcardModule = (function() {
       againBtn.addEventListener('click', () => startStatusDeck('again'));
     }
 
+    // 「お気に入り」ボタン
+    const favoriteBtn = document.getElementById('start-favorite-deck');
+    if (favoriteBtn) {
+      favoriteBtn.addEventListener('click', () => startFavoriteDeck());
+    }
+
     // 報告一覧ボタン
     const reportsToggle = document.getElementById('reports-toggle');
     if (reportsToggle) {
@@ -1163,6 +1169,7 @@ const FlashcardModule = (function() {
 
   // === ステータスデッキ（覚えた/もう一度のみ） ===
   async function startStatusDeck(status) {
+    console.log('[startStatusDeck] 開始:', status);
     // 指定ステータスのカード参照を収集
     const cardRefs = [];
     for (const [key, value] of Object.entries(state.progress)) {
@@ -1172,22 +1179,66 @@ const FlashcardModule = (function() {
       }
     }
 
+    console.log('[startStatusDeck] cardRefs:', cardRefs.length, JSON.stringify(cardRefs));
     if (cardRefs.length === 0) {
+      console.log('[startStatusDeck] カードなし - 終了');
       return;
     }
 
     // 必要なトピックのQAファイルを取得
     const uniqueTopicIds = [...new Set(cardRefs.map(r => r.topicId))];
+    console.log('[startStatusDeck] uniqueTopicIds:', uniqueTopicIds.slice(0, 5));
     const topicCardsMap = new Map();
 
     for (const topicId of uniqueTopicIds) {
-      const topic = DATA.find(d => d.id === topicId);
-      if (!topic || !topic.qaPath) continue;
+      let topic, qaPath;
+
+      // ココシカ（特別デッキ）の場合
+      if (topicId === 'kokoshika_hisshu') {
+        topic = { id: 'kokoshika_hisshu', title: '必修ココシカ', subject: '必修' };
+        qaPath = 'deck/必修ココシカ.txt';
+      } else {
+        // 完全一致 → 部分一致 → title一致の順で検索
+        topic = DATA.find(d => d.id === topicId);
+        if (!topic) {
+          // 古い形式のtopicIdに対応：部分一致で検索
+          topic = DATA.find(d => d.id.includes(topicId) || d.id.endsWith('_' + topicId.toLowerCase()));
+        }
+        if (!topic) {
+          // titleで検索
+          topic = DATA.find(d => d.title === topicId || topicId.includes(d.title));
+        }
+        qaPath = topic?.qaPath;
+      }
+
+      // qaPathがない場合、JSONファイルを推測
+      if (!qaPath && topic && topic.category) {
+        const parts = topic.category.split('/');
+        const subject = parts[0];
+        const idParts = topic.id.split('_');
+        const fileName = idParts.slice(1).join('_');
+        qaPath = `qa/subject/${subject}/${fileName}.json`;
+      }
+
+      console.log('[startStatusDeck] topicId:', topicId, 'found:', !!topic, 'qaPath:', qaPath);
+      if (!topic || !qaPath) continue;
 
       try {
-        const response = await fetch(encodeURI(topic.qaPath));
-        const text = await response.text();
-        const cards = parseQAToCards(text, topicId);
+        const response = await fetch(encodeURI(qaPath));
+        if (!response.ok) continue;
+
+        const contentType = response.headers.get('content-type');
+        let cards;
+
+        if (qaPath.endsWith('.json') || (contentType && contentType.includes('json'))) {
+          const jsonData = await response.json();
+          cards = parseJSONToCards(jsonData, topicId);
+        } else {
+          const text = await response.text();
+          cards = parseQAToCards(text, topicId);
+        }
+
+        console.log('[startStatusDeck] topicId:', topicId, 'loaded cards:', cards.length);
         topicCardsMap.set(topicId, { cards, topic });
       } catch (e) {
         console.log(`QA読み込みエラー (${topicId}):`, e);
@@ -1196,21 +1247,44 @@ const FlashcardModule = (function() {
 
     // フィルタ済みカード配列を構築
     const filteredCards = [];
+    const addedKeys = new Set(); // 重複防止
+    const invalidKeys = []; // 見つからなかったカード
     for (const ref of cardRefs) {
+      // 重複チェック
+      if (addedKeys.has(ref.key)) {
+        continue;
+      }
       const topicData = topicCardsMap.get(ref.topicId);
       if (topicData) {
         const card = topicData.cards.find(c => c.originalIndex === ref.cardIndex);
         if (card) {
+          addedKeys.add(ref.key);
           filteredCards.push({
             ...card,
             topicTitle: topicData.topic.title,
-            htmlPath: topicData.topic.htmlPath
+            htmlPath: topicData.topic.htmlPath,
+            progressKey: ref.key
           });
+        } else {
+          invalidKeys.push(ref.key);
         }
+      } else {
+        invalidKeys.push(ref.key);
       }
     }
 
+    // 見つからなかったカードをprogressから削除（データクリーンアップ）
+    if (invalidKeys.length > 0) {
+      console.log('[startStatusDeck] 無効なカードを削除:', invalidKeys.length);
+      for (const key of invalidKeys) {
+        delete state.progress[key];
+      }
+      saveProgress();
+    }
+
+    console.log('[startStatusDeck] filteredCards:', filteredCards.length);
     if (filteredCards.length === 0) {
+      console.log('[startStatusDeck] フィルタ後カードなし - 終了');
       return;
     }
 
@@ -1227,6 +1301,94 @@ const FlashcardModule = (function() {
     state.combo = 0;
 
     // 常にシャッフル（覚えた順の固定出題を防ぐ）
+    for (let i = state.filteredCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+    }
+
+    // セッションサイズで制限
+    if (state.filteredCards.length > state.sessionSize) {
+      state.filteredCards = state.filteredCards.slice(0, state.sessionSize);
+    }
+
+    console.log('[startStatusDeck] renderCard呼び出し前, cards:', state.filteredCards.length);
+    renderCard();
+  }
+
+  // === お気に入りデッキ ===
+  async function startFavoriteDeck() {
+    console.log('[startFavoriteDeck] 開始');
+    const allFavorites = FavoritesManager.getAll();
+    console.log('[startFavoriteDeck] 全お気に入り:', allFavorites);
+    const favorites = allFavorites.filter(f => f.type === 'qa');
+    console.log('[startFavoriteDeck] QAお気に入り:', favorites);
+    if (favorites.length === 0) return;
+
+    // 必要なトピックのQAファイルを取得
+    const uniqueTopicIds = [...new Set(favorites.map(f => f.topicId))];
+    console.log('[startFavoriteDeck] uniqueTopicIds:', uniqueTopicIds);
+    const topicCardsMap = new Map();
+
+    for (const topicId of uniqueTopicIds) {
+      let topic, qaPath;
+
+      // ココシカ（特別デッキ）の場合
+      if (topicId === 'kokoshika_hisshu') {
+        topic = { id: 'kokoshika_hisshu', title: '必修ココシカ', subject: '必修' };
+        qaPath = 'deck/必修ココシカ.txt';
+      } else {
+        // 完全一致 → 部分一致の順で検索
+        topic = DATA.find(d => d.id === topicId);
+        if (!topic) {
+          topic = DATA.find(d => d.id.includes(topicId) || d.id.endsWith('_' + topicId.toLowerCase()));
+        }
+        qaPath = topic?.qaPath;
+      }
+
+      console.log('[startFavoriteDeck] topicId:', topicId, 'found:', !!topic);
+      if (!topic || !qaPath) continue;
+
+      try {
+        const response = await fetch(encodeURI(qaPath));
+        const text = await response.text();
+        const cards = parseQAToCards(text, topicId);
+        topicCardsMap.set(topicId, { cards, topic });
+      } catch (e) {
+        console.log(`QA読み込みエラー (${topicId}):`, e);
+      }
+    }
+
+    // お気に入りカード配列を構築
+    const filteredCards = [];
+    for (const fav of favorites) {
+      const topicData = topicCardsMap.get(fav.topicId);
+      if (topicData) {
+        const card = topicData.cards.find(c => c.originalIndex === parseInt(fav.cardIndex));
+        if (card) {
+          filteredCards.push({
+            ...card,
+            topicTitle: topicData.topic.title,
+            htmlPath: topicData.topic.htmlPath
+          });
+        }
+      }
+    }
+
+    if (filteredCards.length === 0) return;
+
+    // お気に入りデッキとして開始
+    state.currentTopicId = '__favorites';
+    state.currentTopic = { title: 'お気に入り' };
+    state.cards = filteredCards;
+    state.filteredCards = [...filteredCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+    state.answeredInSession = 0;
+    state.combo = 0;
+
+    // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
@@ -1621,6 +1783,28 @@ const FlashcardModule = (function() {
         currentQ = null;
         currentSource = null;
         currentSourceSection = null;
+      }
+    }
+
+    return cards;
+  }
+
+  // JSONフォーマットのQAをパース
+  function parseJSONToCards(jsonData, topicId) {
+    const cards = [];
+    let index = 0;
+
+    for (const section of jsonData.sections || []) {
+      for (const qa of section.qa || []) {
+        cards.push({
+          index: index,
+          originalIndex: index,
+          section: section.section,
+          question: qa.question,
+          answer: qa.answer,
+          topicId: topicId
+        });
+        index++;
       }
     }
 
@@ -2177,6 +2361,8 @@ const FlashcardModule = (function() {
     const pendingAgain = state.filteredCards.slice(state.currentIndex + 1).filter(c => c._reinsertCount).length;
     // 特殊デッキかどうか
     const showSizeBtn = isSpecialDeck();
+    // お気に入り状態
+    const isFavorite = FavoritesManager.isFavoriteByParams('qa', keyTopicId, card.originalIndex);
 
     container.innerHTML = `
       <div class="flashcard-exercise ${state.isFlipped ? 'flipped' : ''}">
@@ -2187,21 +2373,17 @@ const FlashcardModule = (function() {
               <path d="M19 12H5M12 19l-7-7 7-7"/>
             </svg>
           </button>
+          <button class="flashcard-text-btn" id="flashcard-report-btn">報告</button>
           <div class="flashcard-progress-bar">
             <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
             <span class="flashcard-progress-text">${current} / ${total}${pendingAgain > 0 ? ` <span class="progress-pending">再${pendingAgain}</span>` : ''}</span>
             ${showSizeBtn ? `<button class="flashcard-size-btn" id="flashcard-size-btn" aria-label="問数変更">${state.sessionSize}</button>` : ''}
           </div>
           <div class="flashcard-header-actions">
-            ${!showSizeBtn ? `<button class="flashcard-shuffle-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn" aria-label="シャッフル">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
-              </svg>
-            </button>` : ''}
-            <button class="flashcard-report-btn" id="flashcard-report-btn" aria-label="問題を報告">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
-                <line x1="4" y1="22" x2="4" y2="15"/>
+            ${(!showSizeBtn || state.currentTopicId === '__favorites') ? `<button class="flashcard-text-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn">シャッフル</button>` : ''}
+            <button class="flashcard-favorite-btn ${isFavorite ? 'active' : ''}" id="flashcard-favorite-btn" aria-label="お気に入り" title="お気に入り">
+              <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
             </button>
           </div>
@@ -2338,6 +2520,9 @@ const FlashcardModule = (function() {
 
     // 報告ボタン
     document.getElementById('flashcard-report-btn').addEventListener('click', reportCurrentCard);
+
+    // お気に入りボタン
+    document.getElementById('flashcard-favorite-btn').addEventListener('click', toggleFavoriteCurrentCard);
 
     // カードタップ
     const cardContainer = document.getElementById('flashcard-card-container');
@@ -2736,6 +2921,37 @@ const FlashcardModule = (function() {
     });
   }
 
+  // お気に入りをトグル
+  function toggleFavoriteCurrentCard() {
+    const card = state.filteredCards[state.currentIndex];
+    if (!card) return;
+
+    const keyTopicId = card.topicId || state.currentTopicId;
+    const topicData = DATA.find(d => d.id === keyTopicId);
+
+    const content = {
+      question: card.question,
+      answer: card.answer,
+      section: card.section || '',
+      topicTitle: card.topicTitle || topicData?.title || keyTopicId,
+      subject: topicData?.subject || ''
+    };
+
+    const isNowFavorite = FavoritesManager.toggle('qa', keyTopicId, card.originalIndex, content);
+
+    // ボタンの状態を更新
+    const btn = document.getElementById('flashcard-favorite-btn');
+    if (btn) {
+      btn.classList.toggle('active', isNowFavorite);
+      const svg = btn.querySelector('svg');
+      if (svg) {
+        svg.setAttribute('fill', isNowFavorite ? 'currentColor' : 'none');
+      }
+    }
+
+    showToast(isNowFavorite ? 'お気に入りに追加' : 'お気に入りから削除', 1000);
+  }
+
   // 報告一覧を取得
   function getReports() {
     try {
@@ -2989,18 +3205,12 @@ const FlashcardModule = (function() {
     };
     saveProgress();
 
-    // 再出題ロジック：このカードを後で再度出題（最大2回まで）
+    // 再出題ロジック：このカードを最後に再度出題（最大2回まで）
     const reinsertCount = card._reinsertCount || 0;
     if (reinsertCount < 2) {
       const reinsertCard = { ...card, _reinsertCount: reinsertCount + 1 };
-      // 残りカード数に応じて挿入位置を決定
-      const remaining = state.filteredCards.length - state.currentIndex - 1;
-      const insertOffset = Math.min(4, Math.max(2, Math.floor(remaining / 2)));
-      const insertPosition = Math.min(
-        state.currentIndex + insertOffset,
-        state.filteredCards.length
-      );
-      state.filteredCards.splice(insertPosition, 0, reinsertCard);
+      // 最後に挿入（ユーザーフィードバック：早すぎる→最後に出てほしい）
+      state.filteredCards.push(reinsertCard);
     }
 
     // 次のカードへ自動移動（飛びアニメーション付き）
@@ -3010,7 +3220,7 @@ const FlashcardModule = (function() {
         bumpProgress();
         state.combo = Math.max(0, state.combo - 3);  // コンボ3減少
         updateComboDisplay();
-        showSnackbar('まもなく再出題');
+        showSnackbar('最後に再出題');
       });
     } else {
       renderCompletionScreen();

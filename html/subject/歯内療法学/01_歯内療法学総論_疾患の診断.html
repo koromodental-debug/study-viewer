@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>疾患の診断 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .flow-box {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯内療法学総論</span>
+    <h1>疾患の診断</h1>
+    <div class="container">
+
+      <h2>診断の3つのポイント</h2>
+      <table>
+        <tr>
+          <th>診断項目</th>
+          <th>検査法</th>
+          <th>判定内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">①歯髄の生死</span></td>
+          <td><span class="highlight">歯髄電気診</span>、温度診</td>
+          <td>生活歯髄か失活歯髄か</td>
+        </tr>
+        <tr>
+          <td><span class="key">②急性症状の有無</span></td>
+          <td>問診、温度診</td>
+          <td>自発痛、誘発痛の持続</td>
+        </tr>
+        <tr>
+          <td><span class="key">③露髄の有無</span></td>
+          <td>視診、触診、X線、インピーダンス測定</td>
+          <td>歯髄への細菌感染</td>
+        </tr>
+      </table>
+
+      <h3>急性症状の判定基準</h3>
+      <ul>
+        <li><span class="highlight">24時間以内に自発痛</span> → 急性症状あり</li>
+        <li>温度診で誘発痛が<span class="highlight">1分以上持続</span> → 急性症状あり</li>
+      </ul>
+
+      <h2>診断フローチャート</h2>
+
+      <div class="flow-box">
+        <p><span class="key">Step 1：歯髄の生死</span>（歯髄電気診）</p>
+        <p>　├─<span class="key">生活</span> → Step 2へ</p>
+        <p>　└─<span class="key">失活</span> → Step 4へ</p>
+        <br>
+        <p><span class="key">Step 2：急性症状の有無</span>（問診・温度診）</p>
+        <p>　├─<span class="key">なし</span> → Step 3へ</p>
+        <p>　└─<span class="key">あり</span> → 露髄なし：<span class="highlight">急性単純性歯髄炎</span></p>
+        <p>　　　　　　　　露髄あり：<span class="highlight">急性化膿性歯髄炎</span></p>
+        <br>
+        <p><span class="key">Step 3：露髄の有無</span>（視診・触診）</p>
+        <p>　├─<span class="key">なし</span> → 歯髄充血、臨床的健康歯髄</p>
+        <p>　└─<span class="key">あり</span> → <span class="highlight">慢性潰瘍性・増殖性歯髄炎</span></p>
+        <br>
+        <p><span class="key">Step 4：X線透過像の有無</span>（失活歯髄の場合）</p>
+        <p>　├─<span class="key">なし</span> → 歯髄壊死・歯髄壊疽</p>
+        <p>　├─<span class="key">あり</span> → <span class="highlight">慢性根尖性歯周炎</span></p>
+        <p>　└─<span class="key">急性症状あり</span> → <span class="caution">急性根尖性歯周炎</span></p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">症例問題のアプローチ</div>
+        <ul>
+          <li>腫脹・排膿・瘻孔 → <span class="key">根尖性歯周炎</span>を疑う</li>
+          <li>咬合痛・打診痛 → 炎症が<span class="key">歯根膜に波及</span></li>
+          <li>まず<span class="highlight">歯髄電気診</span>で生死を判定</li>
+          <li><span class="highlight">X線検査</span>で根尖部病変を確認</li>
+        </ul>
+      </div>
+
+      <h2>検査法の選択</h2>
+      <table>
+        <tr>
+          <th>主訴・所見</th>
+          <th>必要な検査</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td>腫脹・排膿</td>
+          <td><span class="key">歯髄電気診</span>＋<span class="key">X線</span></td>
+          <td>歯髄の生死、根尖病変の確認</td>
+        </tr>
+        <tr>
+          <td>自発痛・咬合痛</td>
+          <td><span class="key">歯髄電気診</span></td>
+          <td>歯髄炎か根尖性歯周炎かの鑑別</td>
+        </tr>
+        <tr>
+          <td>冷水痛</td>
+          <td><span class="key">温度診</span></td>
+          <td>歯髄の炎症程度の評価</td>
+        </tr>
+        <tr>
+          <td>患歯不明の激痛</td>
+          <td><span class="key">麻酔診</span></td>
+          <td>患歯の特定</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105B43</div>
+        <p>21歳の男性。上顎左側中切歯唇側歯槽粘膜部の腫脹と排膿とを主訴として来院した。10年前、上顎両側中切歯と側切歯の治療を受けたという。冷温刺激による誘発痛と自発痛とを認めない。初診時の口腔内写真（別冊No.43）を別に示す。行うべき検査はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 透照診<br>
+          b 麻酔診<br>
+          c 歯髄電気診<br>
+          d エックス線検査<br>
+          e インピーダンス測定検査
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】腫脹・排膿があり根尖性歯周炎が疑われる。<span class="key">歯髄電気診</span>で歯髄の生死を確認し、<span class="key">X線検査</span>で根尖部透過像（根尖病変）の有無を確認する。麻酔診は患歯特定が困難な場合に用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B87</div>
+        <p>72歳の男性。下顎右側側切歯の痛みを主訴として来院した。1週前から咬合痛を自覚し、昨日から自発痛があるという。初診時の口腔内写真（別冊No.34A）とエックス線画像（別冊No.34B）を別に示す。次に行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 切削診<br>
+          b 透照診<br>
+          c 麻酔診<br>
+          d 歯髄電気診<br>
+          e レーザー蛍光強度測定
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】咬合痛と自発痛があり、歯髄炎または根尖性歯周炎が疑われる。まず<span class="key">歯髄電気診</span>で歯髄の生死を判定し、鑑別診断を行う。切削診は最終手段、麻酔診は患歯特定困難な場合に用いる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # 常在微生物 Q&A
 
-## 部位別常在菌の一覧
+## 常在菌の基本
 
 Q: 常在微生物（常在菌叢）とは？
 A: 健常者の体表面や体腔に定着している微生物群
@@ -8,84 +8,27 @@ A: 健常者の体表面や体腔に定着している微生物群
 Q: 常在菌が病原菌の定着を防ぐ機構は？
 A: 定着阻止（競合的に栄養・定着部位を奪う）
 
-Q: 口腔（歯面）の主要常在菌は？
-A: S. sanguinis、S. gordonii（初期定着菌）
-
-Q: 歯面と舌背、S. salivariusが多いのは？
-A: 舌背
-
-Q: 母乳栄養児と成人、Bifidobacterium属が優勢なのは？
-A: 母乳栄養児（母乳中のオリゴ糖が増殖を促進）
-
 ---
 
-## 口腔内レンサ球菌の分類
-
-Q: Salivarius群の代表菌種は？
-A: S. salivarius
-
-Q: Salivarius群の定着部位は？
-A: 舌背・唾液
-
-Q: Mitis群の代表菌種は？
-A: S. sanguinis、S. gordonii、S. oralis
-
-Q: Mitis群の定着部位は？
-A: 歯面（初期定着）
-
-Q: Mutans群の代表菌種は？
-A: S. mutans、S. sobrinus
-
-Q: Mutans群の特徴は？
-A: 歯面に定着、齲蝕原性
-
-Q: Anginosus群の代表菌種は？
-A: S. intermedius、S. anginosus
-
-Q: Anginosus群の定着部位は？
-A: 歯肉溝（膿瘍形成と関連）
-
-Q: 唾液中に最も多いレンサ球菌は？
-A: S. salivarius
-
----
-
-[116C83] ★★★
-Q: ヒトの舌背を主たる定着部位とするレンサ球菌は？
-A: Streptococcus salivarius
-
-[他の選択肢との違い]
-- Streptococcus mutans: 歯面に定着、齲蝕原性菌
-- Streptococcus pyogenes: 咽頭の病原菌（化膿レンサ球菌）
-- Streptococcus sanguinis: 歯面の初期定着菌
-- Streptococcus salivarius: 舌背の乳頭に定着、唾液中に最多 ← 正解
-- Streptococcus intermedius: 歯肉溝に定着
-
-[ポイント]
-舌背＝S. salivarius（Salivarius群）。歯面＝S. mutans、S. sanguinis。
-
----
-
-## 皮膚常在ブドウ球菌
+## 部位別常在菌の対比
 
 Q: 皮膚の主要常在菌は？
-A: 表皮ブドウ球菌（S. epidermidis）
+A: Staphylococcus属（表皮ブドウ球菌など）
 
-Q: 表皮ブドウ球菌はコアグラーゼ陽性か陰性か？
-A: 陰性
+Q: 口腔（歯面）の主要常在菌は？
+A: Streptococcus属（S. sanguinis、S. gordonii）
 
-Q: 表皮ブドウ球菌は日和見感染を起こすか？
-A: 起こすことがある（免疫低下時）
+Q: 膣の主要常在菌は？
+A: Lactobacillus属（デーデルライン桿菌）
 
-Q: 黄色ブドウ球菌の常在部位は？
-A: 鼻腔
+Q: 腸管の主要常在菌は？
+A: Bacteroides属、Bifidobacterium属
 
-Q: 黄色ブドウ球菌はコアグラーゼ陽性か陰性か？
-A: 陽性
-   [混同注意] 表皮ブドウ球菌はコアグラーゼ陰性
+Q: 皮膚と口腔、Staphylococcusが多いのは？
+A: 皮膚
 
-Q: 黄色ブドウ球菌と表皮ブドウ球菌、病原性が高いのは？
-A: 黄色ブドウ球菌
+Q: 口腔と膣、Lactobacillusが多いのは？
+A: 膣
 
 ---
 
@@ -97,11 +40,81 @@ A: Staphylococcus属
 - Clostridium属: 腸管に常在
 - Enterococcus属: 腸管に常在
 - Lactobacillus属: 膣・腸管に常在
-- Staphylococcus属: 皮膚の主要常在菌（表皮ブドウ球菌など） ← 正解
+- Staphylococcus属: 皮膚の主要常在菌 ← 正解
 - Bifidobacterium属: 腸管に常在
 
 [ポイント]
-皮膚＝Staphylococcus属。膣＝Lactobacillus属。腸管＝Bacteroides属、Bifidobacterium属。
+皮膚＝Staphylococcus。膣＝Lactobacillus。腸管＝Bacteroides、Bifidobacterium。
+
+---
+
+## 口腔内レンサ球菌の分類（定着部位別）
+
+Q: Salivarius群の代表菌種と定着部位は？
+A: S. salivarius、舌背・唾液
+
+Q: Mitis群の代表菌種と定着部位は？
+A: S. sanguinis、S. gordonii、S. oralis、歯面（初期定着）
+
+Q: Mutans群の代表菌種と特徴は？
+A: S. mutans、S. sobrinus、歯面に定着・齲蝕原性
+
+Q: Anginosus群の代表菌種と定着部位は？
+A: S. intermedius、S. anginosus、歯肉溝（膿瘍形成と関連）
+
+Q: 唾液中に最も多いレンサ球菌は？
+A: S. salivarius
+
+Q: 舌背と歯面、S. salivariusが多いのは？
+A: 舌背
+
+Q: 舌背と歯面、S. mutansが多いのは？
+A: 歯面
+
+Q: 歯面の初期定着菌は？
+A: S. sanguinis、S. gordonii（Mitis群）
+
+---
+
+[116C83] ★★★
+Q: ヒトの舌背を主たる定着部位とするレンサ球菌は？
+A: Streptococcus salivarius
+
+[他の選択肢との違い]
+- Streptococcus mutans: 歯面に定着、齲蝕原性菌
+- Streptococcus pyogenes: 咽頭の病原菌（化膿レンサ球菌）
+- Streptococcus sanguinis: 歯面の初期定着菌
+- Streptococcus salivarius: 舌背に定着、唾液中に最多 ← 正解
+- Streptococcus intermedius: 歯肉溝に定着
+
+[ポイント]
+舌背＝S. salivarius（Salivarius群）。歯面＝S. mutans、S. sanguinis。
+
+---
+
+## 黄色ブドウ球菌と表皮ブドウ球菌の対比
+
+Q: 皮膚に常在するブドウ球菌は？
+A: 表皮ブドウ球菌（S. epidermidis）
+
+Q: 鼻腔に常在するブドウ球菌は？
+A: 黄色ブドウ球菌（S. aureus）
+
+Q: 表皮ブドウ球菌はコアグラーゼ陽性か陰性か？
+A: 陰性
+
+Q: 黄色ブドウ球菌はコアグラーゼ陽性か陰性か？
+A: 陽性
+   [混同注意] 表皮ブドウ球菌はコアグラーゼ陰性
+
+Q: 黄色ブドウ球菌と表皮ブドウ球菌、コアグラーゼ陽性は？
+A: 黄色ブドウ球菌
+
+Q: 黄色ブドウ球菌と表皮ブドウ球菌、病原性が高いのは？
+A: 黄色ブドウ球菌
+
+Q: 表皮ブドウ球菌は日和見感染を起こすか？
+A: 起こすことがある（免疫低下時）
 
 ---
 
@@ -111,10 +124,13 @@ Q: デーデルライン桿菌とは？
 A: 膣に常在するLactobacillus属の菌
 
 Q: デーデルライン桿菌の役割は？
-A: 乳酸を産生して膣内を酸性に保ち、病原菌の増殖を抑制する
+A: 乳酸を産生して膣内を酸性に保ち、病原菌の増殖を抑制
 
 Q: 膣内のpHは？
 A: pH 4〜5（酸性）
+
+Q: 膣内が酸性に保たれる理由は？
+A: デーデルライン桿菌（Lactobacillus属）が乳酸を産生するため
 
 ---
 
@@ -134,13 +150,25 @@ A: 膣
 
 ---
 
-## 腸内細菌叢
+## 腸内細菌叢（母乳栄養児 vs 成人）
 
-Q: 母乳栄養児と人工栄養児、腸内細菌叢が単純なのは？
+Q: 母乳栄養児の腸内で優勢な細菌は？
+A: Bifidobacterium属（ビフィズス菌）
+
+Q: 成人の腸内で優勢な細菌は？
+A: Bacteroides属（嫌気性菌）
+
+Q: 母乳栄養児と成人、腸内細菌叢が単純なのは？
 A: 母乳栄養児（Bifidobacterium属が優勢）
+
+Q: 母乳栄養児でBifidobacteriumが優勢になる理由は？
+A: 母乳中のオリゴ糖がBifidobacteriumの増殖を促進するため
 
 Q: 成人の腸内で優勢なのは好気性菌か嫌気性菌か？
 A: 嫌気性菌（Bacteroides属など）
+
+Q: 母乳栄養児と人工栄養児、腸内細菌叢が単純なのは？
+A: 母乳栄養児
 
 ---
 
@@ -156,4 +184,4 @@ A: Bifidobacterium属
 - Bifidobacterium属: 母乳栄養児で最優勢 ← 正解
 
 [ポイント]
-母乳栄養児＝Bifidobacterium属（ビフィズス菌）が優勢。母乳中のオリゴ糖が増殖を促進。
+母乳栄養児＝Bifidobacterium属。成人＝Bacteroides属。母乳中のオリゴ糖がビフィズス菌の増殖を促進。

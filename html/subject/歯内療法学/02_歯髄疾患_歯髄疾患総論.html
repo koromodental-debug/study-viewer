@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯髄疾患総論 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯髄疾患</span>
+    <h1>歯髄疾患総論</h1>
+    <div class="container">
+
+      <h2>歯髄疾患の臨床的分類</h2>
+
+      <h3>分類の全体像</h3>
+      <table>
+        <tr>
+          <th>大分類</th>
+          <th>疾患名</th>
+        </tr>
+        <tr>
+          <td><span class="key">歯髄充血</span></td>
+          <td>歯髄充血（pulp hyperemia）</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="key">歯髄炎</span></td>
+          <td>急性歯髄炎（単純性/化膿性/壊疽性）</td>
+        </tr>
+        <tr>
+          <td>慢性歯髄炎（閉鎖性/潰瘍性/増殖性）</td>
+        </tr>
+        <tr>
+          <td>上行性歯髄炎、特発性歯髄炎</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯髄の変性</span></td>
+          <td>石灰変性、内部吸収</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯髄壊死・壊疽</span></td>
+          <td>歯髄壊死、歯髄壊疽</td>
+        </tr>
+      </table>
+
+      <h2>感染性と非感染性の区別</h2>
+      <p>歯髄疾患は<span class="key">細菌感染の有無</span>によって感染性と非感染性に分類される。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">試験頻出：感染性/非感染性の区別</div>
+        <ul>
+          <li><span class="highlight">非感染性</span>：急性単純性歯髄炎、歯髄壊死</li>
+          <li><span class="key">感染性</span>：急性化膿性歯髄炎、慢性潰瘍性歯髄炎、歯髄壊疽</li>
+        </ul>
+      </div>
+
+      <h3>各疾患の感染状態</h3>
+      <table>
+        <tr>
+          <th>疾患名</th>
+          <th>感染</th>
+          <th>理由・特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">急性単純性歯髄炎</span></td>
+          <td><span class="highlight">非感染</span></td>
+          <td>細菌感染前の初期炎症。リンパ球主体の軽度浸潤</td>
+        </tr>
+        <tr>
+          <td>急性化膿性歯髄炎</td>
+          <td>感染</td>
+          <td>好中球浸潤・膿瘍形成。細菌感染あり</td>
+        </tr>
+        <tr>
+          <td>急性壊疽性歯髄炎</td>
+          <td>感染</td>
+          <td>化膿性歯髄炎＋腐敗菌の混合感染</td>
+        </tr>
+        <tr>
+          <td>慢性潰瘍性歯髄炎</td>
+          <td>感染</td>
+          <td>歯髄が露出し、細菌感染を伴う</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">歯髄壊死</span></td>
+          <td><span class="highlight">非感染</span></td>
+          <td>無菌的な歯髄の死（外傷など）</td>
+        </tr>
+        <tr>
+          <td>歯髄壊疽</td>
+          <td>感染</td>
+          <td>壊死＋腐敗菌感染。<span class="caution">腐敗臭あり</span></td>
+        </tr>
+      </table>
+
+      <h3>壊死と壊疽の違い</h3>
+      <ul>
+        <li><span class="key">歯髄壊死（necrosis）</span>：歯髄組織の死。<span class="highlight">無菌的</span>に起こりうる</li>
+        <li><span class="key">歯髄壊疽（gangrene）</span>：壊死した歯髄に<span class="caution">腐敗菌が感染</span>し、腐敗を起こしたもの</li>
+      </ul>
+
+      <h2>歯髄疾患の原因</h2>
+
+      <h3>原因の分類</h3>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td><span class="key">細菌的</span></td>
+          <td>齲蝕、外傷による露髄、歯周病からの逆行性感染</td>
+        </tr>
+        <tr>
+          <td><span class="key">物理的</span></td>
+          <td>機械的（外傷、咬耗）、温度的（形成時の摩擦熱）、電気的、気圧変化</td>
+        </tr>
+        <tr>
+          <td><span class="key">化学的</span></td>
+          <td>修復材、消毒剤、失活剤による刺激</td>
+        </tr>
+        <tr>
+          <td><span class="key">その他</span></td>
+          <td>特発性、石灰化、歯髄結石</td>
+        </tr>
+      </table>
+
+      <h2>歯髄炎の病態</h2>
+
+      <h3>急性単純性歯髄炎 vs 急性化膿性歯髄炎</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>急性単純性（漿液性）</th>
+          <th>急性化膿性</th>
+        </tr>
+        <tr>
+          <td>感染</td>
+          <td><span class="highlight">なし</span></td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>浸潤細胞</td>
+          <td>リンパ球主体</td>
+          <td>好中球主体</td>
+        </tr>
+        <tr>
+          <td>膿瘍</td>
+          <td>なし</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>疼痛</td>
+          <td>一過性（数秒〜1分）</td>
+          <td>持続性（1分以上）</td>
+        </tr>
+        <tr>
+          <td>自発痛</td>
+          <td>なし</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>可逆性</td>
+          <td>可逆性</td>
+          <td>不可逆性</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A52</div>
+        <p>非感染性歯髄疾患はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 急性単純性歯髄炎<br>
+          b 急性化膿性歯髄炎<br>
+          c 慢性潰瘍性歯髄炎<br>
+          d 歯髄壊死<br>
+          e 歯髄壊疽
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="highlight">急性単純性歯髄炎</span>は細菌感染前の初期炎症であり、<span class="highlight">歯髄壊死</span>は無菌的な歯髄の死である。いずれも<span class="highlight">非感染性</span>。化膿性歯髄炎は好中球浸潤と膿瘍形成を伴い感染性。潰瘍性歯髄炎は露髄を伴い感染性。壊疽は壊死＋腐敗菌感染で感染性。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <ul>
+          <li>「単純」＝シンプル＝まだ細菌が入っていない初期段階</li>
+          <li>「化膿」「潰瘍」＝膿や潰瘍＝細菌感染あり</li>
+          <li>「壊死」＝死んだだけ＝無菌的</li>
+          <li>「壊疽」＝腐った＝腐敗菌感染あり</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

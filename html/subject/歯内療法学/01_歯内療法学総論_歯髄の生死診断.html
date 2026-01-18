@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯髄の生死診断 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯内療法学総論</span>
+    <h1>歯髄の生死診断</h1>
+    <div class="container">
+
+      <h2>歯髄電気診</h2>
+      <p>歯の表面に電気刺激を加え、<span class="highlight">知覚神経の反応</span>を検査する方法。歯髄の生活力そのものを測定しているわけではない。</p>
+
+      <h3>閾値に影響する因子</h3>
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>閾値への影響</th>
+        </tr>
+        <tr>
+          <td colspan="2" style="background:#f0f0f0; font-weight:600;">全身的因子</td>
+        </tr>
+        <tr>
+          <td>神経質・歯科恐怖症</td>
+          <td>閾値<span class="key">低下</span></td>
+        </tr>
+        <tr>
+          <td>精神安定剤・鎮痛薬服用</td>
+          <td>閾値<span class="key">上昇</span></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="background:#f0f0f0; font-weight:600;">局所的因子</td>
+        </tr>
+        <tr>
+          <td>歯種</td>
+          <td><span class="highlight">大臼歯＞小臼歯＞犬歯＞切歯</span></td>
+        </tr>
+        <tr>
+          <td>根未完成歯</td>
+          <td>閾値<span class="key">上昇</span></td>
+        </tr>
+        <tr>
+          <td>修復象牙質・第二象牙質</td>
+          <td>閾値<span class="key">上昇</span></td>
+        </tr>
+      </table>
+
+      <h3>歯髄の病態と閾値</h3>
+      <table>
+        <tr>
+          <th>病態</th>
+          <th>閾値</th>
+        </tr>
+        <tr>
+          <td>歯髄充血</td>
+          <td>低下</td>
+        </tr>
+        <tr>
+          <td>急性単純性歯髄炎</td>
+          <td>さらに低下</td>
+        </tr>
+        <tr>
+          <td>化膿性歯髄炎（組織破壊進行）</td>
+          <td>上昇</td>
+        </tr>
+        <tr>
+          <td>歯髄壊死</td>
+          <td><span class="caution">反応なし</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">電気診で歯髄の生死が判別できる理由</div>
+        <ul>
+          <li>歯髄神経の閾値は<span class="highlight">歯根膜神経より低い</span></li>
+          <li>歯髄神経の失活は歯髄組織全体の<span class="highlight">失活の末期</span>に生じる</li>
+        </ul>
+        <p class="note">→ 歯髄神経が反応しなければ、歯髄全体が壊死していると判断できる</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">健常歯を対照とする必要がある検査</div>
+        <ul>
+          <li><span class="highlight">歯髄電気診</span>：閾値に個人差があるため</li>
+          <li><span class="highlight">打診</span>：反応の程度を比較するため</li>
+        </ul>
+        <p class="note">※動揺度検査・インピーダンス測定検査は対照歯不要</p>
+      </div>
+
+      <h2>その他の歯髄診断法</h2>
+      <table>
+        <tr>
+          <th>診断法</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">温度診</span></td>
+          <td>冷刺激・温熱刺激に対する反応を検査</td>
+        </tr>
+        <tr>
+          <td><span class="key">透照診</span></td>
+          <td>光を透過させ歯髄の色調を観察（生活歯髄：ピンク色）</td>
+        </tr>
+        <tr>
+          <td><span class="key">切削診</span></td>
+          <td>電気診・温度診で判定困難な場合の最終手段</td>
+        </tr>
+        <tr>
+          <td><span class="key">麻酔診</span></td>
+          <td>急性歯髄炎で患歯特定困難な場合に使用</td>
+        </tr>
+      </table>
+
+      <h2>待機的診断法</h2>
+      <p>歯髄が保存可能か判断に迷う場合、刺激因子を除去して経過観察し、歯髄の保存可否を判定する方法。</p>
+
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>内容・適応</th>
+        </tr>
+        <tr>
+          <td><span class="key">歯髄鎮静法</span><br>（歯髄鎮痛消炎療法）</td>
+          <td>刺激因子除去→鎮痛消炎薬貼付→経過観察<br>症状消失で可逆性歯髄炎と判断</td>
+        </tr>
+        <tr>
+          <td><span class="key">暫間的間接覆髄法</span></td>
+          <td>深い齲窩で露髄が疑われる場合<br>軟化象牙質を一部残して覆髄→経過観察</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104A64</div>
+        <p>健常歯を対照とする必要があるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 打診<br>
+          b 麻酔診<br>
+          c 動揺度検査<br>
+          d 歯髄電気診<br>
+          e インピーダンス測定検査
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="key">打診</span>と<span class="key">歯髄電気診</span>は反応に個人差があるため、健常歯と比較して判定する。麻酔診は患歯特定のため、動揺度検査とインピーダンス測定検査は絶対値で評価するため対照歯は不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A123</div>
+        <p>電気診で歯髄の生死が判別できる理由はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 電気抵抗値は象牙質よりも歯髄の方が高い。<br>
+          b 疼痛閾値は歯髄の神経の方が歯肉の神経よりも高い。<br>
+          c 疼痛閾値は歯髄の神経の方が歯根膜の神経よりも低い。<br>
+          d 疼痛閾値は歯髄の神経の方が歯槽骨の神経よりも高い。<br>
+          e 歯髄の神経の失活は歯髄組織全体の失活の末期に生じる。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】歯髄神経は歯根膜神経より<span class="key">閾値が低い</span>ため、先に反応する。また、歯髄神経は血管より抵抗力が強く、<span class="key">失活は末期</span>に生じるため、神経が反応しなければ歯髄全体の壊死を示す。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A94</div>
+        <p>歯髄疾患の待機的診断法として用いることができるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯髄鎮静法<br>
+          b 失活断髄法<br>
+          c 生活断髄法<br>
+          d 直接抜髄法<br>
+          e 暫間的間接覆髄法
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="key">歯髄鎮静法</span>は刺激因子除去後の経過観察で可逆性を判定する。<span class="key">暫間的間接覆髄法</span>は深い齲窩で露髄が疑われる場合に用いる。断髄法や抜髄法は歯髄を除去するため待機的診断には使えない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

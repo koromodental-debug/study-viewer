@@ -101,7 +101,7 @@ SUBJECT_NORMALIZE = {
 }
 
 # 除外する科目（表示しない）
-SUBJECT_EXCLUDE = {'必修'}
+SUBJECT_EXCLUDE = set()  # 必修も含める
 
 
 def normalize_subject(subject):

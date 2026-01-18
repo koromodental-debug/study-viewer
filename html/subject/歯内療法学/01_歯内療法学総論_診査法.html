@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診査法 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯内療法学総論</span>
+    <h1>診査法</h1>
+    <div class="container">
+
+      <h2>歯内療法における診査法一覧</h2>
+
+      <table>
+        <tr>
+          <th>診査法</th>
+          <th>診査対象</th>
+          <th>特徴・ポイント</th>
+        </tr>
+        <tr>
+          <td><span class="key">問診</span></td>
+          <td>患者情報</td>
+          <td>診査の<span class="highlight">最初</span>に行う</td>
+        </tr>
+        <tr>
+          <td><span class="key">視診</span></td>
+          <td>硬組織・軟組織</td>
+          <td>変色：褐色→歯髄死、赤色→内部吸収</td>
+        </tr>
+        <tr>
+          <td><span class="key">触診</span></td>
+          <td>リンパ節・軟組織</td>
+          <td>波動は<span class="key">切開排膿</span>の判断に重要</td>
+        </tr>
+        <tr>
+          <td><span class="key">打診</span></td>
+          <td>歯根膜</td>
+          <td>炎症が歯根膜に波及すると陽性</td>
+        </tr>
+        <tr>
+          <td><span class="key">動揺度検査</span></td>
+          <td>歯周組織</td>
+          <td>歯髄炎自体では動揺度は増さない</td>
+        </tr>
+        <tr>
+          <td><span class="key">温度診</span></td>
+          <td>歯髄</td>
+          <td>歯髄の生死・炎症状態を診査</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯髄電気診</span></td>
+          <td>歯髄神経</td>
+          <td>歯髄の生死判定に<span class="highlight">最も信頼性が高い</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">透照診</span></td>
+          <td>歯髄</td>
+          <td>生活歯髄：ピンク色、失活歯：暗色</td>
+        </tr>
+        <tr>
+          <td><span class="key">麻酔診</span></td>
+          <td>患歯特定</td>
+          <td>急性歯髄炎で<span class="key">定位困難</span>な場合に使用</td>
+        </tr>
+        <tr>
+          <td><span class="key">切削診</span></td>
+          <td>歯髄</td>
+          <td>他の診査で判定困難な場合の最終手段</td>
+        </tr>
+        <tr>
+          <td><span class="key">インピーダンス測定</span></td>
+          <td>齲窩・窩洞</td>
+          <td>露髄の有無を客観的に診査</td>
+        </tr>
+      </table>
+
+      <h2>各診査法の詳細</h2>
+
+      <h3>視診のポイント</h3>
+      <ul>
+        <li>齲蝕、咬耗、磨耗、破折や亀裂の有無</li>
+        <li>歯の変色：<span class="key">褐色で透明度低下</span>→歯髄死、<span class="key">赤色</span>→内部吸収</li>
+        <li>軟組織の異常：発赤、腫脹、排膿、<span class="caution">瘻孔</span>の有無</li>
+      </ul>
+
+      <h3>打診のポイント</h3>
+      <ul>
+        <li>歯髄炎の初期〜中期：打診痛（−）</li>
+        <li>歯髄炎の<span class="highlight">末期</span>：炎症が歯根膜に波及→打診痛（+）</li>
+        <li>根尖性歯周炎：打診痛（+）</li>
+      </ul>
+
+      <h3>麻酔診の適応</h3>
+      <ul>
+        <li>急性歯髄炎では<span class="key">痛みの定位が悪い</span></li>
+        <li>上顎か下顎かも判断できないことがある</li>
+        <li>麻酔が奏効した範囲内に患歯が含まれると推定</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">急性歯髄炎 vs 急性根尖性歯周炎の鑑別</div>
+        <table style="margin:8px 0;">
+          <tr>
+            <th>診査法</th>
+            <th>急性歯髄炎</th>
+            <th>急性根尖性歯周炎</th>
+          </tr>
+          <tr>
+            <td><span class="highlight">温度診</span></td>
+            <td>反応あり（過敏）</td>
+            <td><span class="caution">反応なし</span></td>
+          </tr>
+          <tr>
+            <td><span class="highlight">歯髄電気診</span></td>
+            <td>反応あり</td>
+            <td><span class="caution">反応なし</span></td>
+          </tr>
+          <tr>
+            <td>自発痛</td>
+            <td>あり</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>打診痛</td>
+            <td>末期にあり</td>
+            <td>あり</td>
+          </tr>
+        </table>
+        <p class="note">→ 温度診・歯髄電気診は歯髄の生死を判定するため鑑別に有効</p>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A55</div>
+        <p>急性歯髄炎と急性根尖性歯周炎を鑑別できるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 温度診<br>
+          b 麻酔診<br>
+          c 歯髄電気診<br>
+          d 自発痛の有無<br>
+          e 打診痛の有無
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】急性歯髄炎では歯髄が生活しているため<span class="key">温度診</span>や<span class="key">歯髄電気診</span>に反応するが、急性根尖性歯周炎では歯髄壊死後の状態であり反応しない。自発痛と打診痛は両疾患で認められるため鑑別には不向き。麻酔診は患歯特定のための検査であり、疾患の鑑別には用いない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

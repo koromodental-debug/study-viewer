@@ -267,3 +267,6 @@ const FavoritesManager = (function() {
     removeListener
   };
 })();
+
+// 自動初期化
+FavoritesManager.init();

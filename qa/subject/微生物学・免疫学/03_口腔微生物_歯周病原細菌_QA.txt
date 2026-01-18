@@ -1,25 +1,79 @@
 # 歯周病原細菌 Q&A
 
-## 歯周病原細菌の特徴一覧
-
-Q: P. gingivalisはグラム陽性か陰性か？
-A: グラム陰性（桿菌）
-
-Q: T. denticolaの形態は？
-A: らせん状（スピロヘータ）
-
-Q: 歯周病原細菌で通性嫌気性菌は？
-A: A. actinomycetemcomitans
-   [混同注意] 他の歯周病原細菌は偏性嫌気性
+## Red Complex（重度歯周炎関連3菌種）
 
 Q: Red Complex（レッドコンプレックス）とは？
 A: 重度歯周炎と関連が深い3菌種：P. gingivalis、T. denticola、T. forsythia
 
+Q: P. gingivalisはグラム陽性か陰性か？
+A: グラム陰性桿菌
+
+Q: T. denticolaの形態は？
+A: らせん状（スピロヘータ）
+
+Q: T. forsythiaはグラム陽性か陰性か？
+A: グラム陰性桿菌
+
+Q: Red complexの3菌種に共通する特徴は？
+A: グラム陰性、偏性嫌気性
+
+---
+
+## 偏性嫌気性 vs 通性嫌気性
+
+Q: 歯周病原細菌で通性嫌気性菌は？
+A: A. actinomycetemcomitans
+   [混同注意] 他の歯周病原細菌（P. gingivalis、T. denticola等）は偏性嫌気性
+
+Q: P. gingivalisは偏性嫌気性か通性嫌気性か？
+A: 偏性嫌気性
+
+Q: A.a.は偏性嫌気性か通性嫌気性か？
+A: 通性嫌気性
+
+Q: P. gingivalisとA.a.、好気培養で生育するのは？
+A: A.a.（通性嫌気性のため）
+
+---
+
+[107A97] ★★★
+Q: A. actinomycetemcomitansは好気培養で生育するか？
+A: 生育する（通性嫌気性のため）
+
+[他の選択肢との違い]
+- A. israelii: グラム陽性菌
+- A.a.: 通性嫌気性・グラム陰性桿菌 ← 正解
+- F. nucleatum: 偏性嫌気性（好気培養で生育不可）
+- P. gingivalis: 偏性嫌気性（好気培養で生育不可）
+- S. sanguinis: グラム陽性球菌
+
+[ポイント]
+好気培養で生育＝通性嫌気性＝A.a.。グラム染色で赤色＝グラム陰性。
+
+---
+
+## 黒色色素産生菌
+
+Q: P. gingivalisは黒色色素産生菌か？
+A: 黒色色素産生菌（血液寒天培地上で黒色コロニーを形成）
+
+Q: P. intermediaは黒色色素産生菌か？
+A: 黒色色素産生菌
+
+Q: T. denticolaは黒色色素産生菌か？
+A: 黒色色素産生菌ではない
+
+Q: T. forsythiaは黒色色素産生菌か？
+A: 黒色色素産生菌ではない
+
+Q: 黒色色素産生菌の代表は？
+A: Porphyromonas属（P. gingivalis）、Prevotella属の一部（P. intermedia）
+
 ---
 
 [113A44] ★★★
-Q: P. gingivalisは黒色色素産生菌か？
-A: 黒色色素産生菌（血液寒天培地上で黒色コロニーを形成）
+Q: 黒色色素産生菌は？
+A: P. gingivalis、P. intermedia
 
 [他の選択肢との違い]
 - T. forsythia: 黒色色素を産生しない
@@ -29,11 +83,11 @@ A: 黒色色素産生菌（血液寒天培地上で黒色コロニーを形成�
 - P. gingivalis: 黒色色素産生菌 ← 正解
 
 [ポイント]
-Porphyromonas属とPrevotella属の一部が黒色色素産生菌。血液寒天培地上で黒色コロニーを形成する。
+Porphyromonas属とPrevotella属の一部が黒色色素産生菌。血液寒天培地上で黒色コロニー。
 
 ---
 
-## 菌種と病原因子の対応
+## 菌種と病原因子の対応表
 
 Q: ジンジパインはどの菌が産生する？
 A: P. gingivalis
@@ -41,17 +95,45 @@ A: P. gingivalis
 Q: ジンジパインの作用は？
 A: タンパク分解酵素として組織破壊、免疫回避に関与
 
-Q: A.a.が侵襲性歯周炎の原因となる理由は？
-A: ロイコトキシンにより好中球を傷害し、宿主防御を回避するため
+Q: ロイコトキシンはどの菌が産生する？
+A: A. actinomycetemcomitans
 
 Q: ロイコトキシンの作用は？
 A: 好中球・単球を傷害する白血球傷害毒素
 
-Q: T. denticolaの病原因子は？
-A: デンティリジン（タンパク分解酵素）
+Q: デンティリジン（デンティリシン）はどの菌が産生する？
+A: T. denticola
+
+Q: デンティリジンの作用は？
+A: タンパク分解酵素
+
+Q: 酪酸はどの菌が産生する？
+A: P. gingivalis
 
 Q: グラム陰性菌に共通する病原因子は？
 A: LPS（内毒素）：炎症誘発、骨吸収を引き起こす
+
+Q: P. gingivalisとT. denticola、ジンジパインを産生するのは？
+A: P. gingivalis
+
+Q: P. gingivalisとA.a.、ロイコトキシンを産生するのは？
+A: A.a.
+
+---
+
+[111B38] ★★★
+Q: 菌種と病原因子の正しい組合せは？
+A: A.a.―ロイコトキシン、P. gingivalis―ジンジパイン・酪酸、T. denticola―デンティリジン
+
+[他の選択肢との違い]
+- A.a. ― ロイコトキシン: ○ ← 正解
+- P. gingivalis ― 酪酸: ○ ← 正解
+- P. intermedia ― デンティリジン: × デンティリジンはT. denticola
+- T. forsythia ― ジンジパイン: × ジンジパインはP. gingivalis
+- T. denticola ― 莢膜: × デンティリジンが正しい
+
+[ポイント]
+A.a.＝ロイコトキシン、P. gingivalis＝ジンジパイン＋酪酸、T. denticola＝デンティリジン
 
 ---
 
@@ -71,25 +153,6 @@ A: タンパク質
 
 ---
 
-[111B38] ★★★
-Q: A.a.の病原因子は？
-A: ロイコトキシン
-
-Q: P. gingivalisの病原因子は？（ジンジパイン以外）
-A: 酪酸
-
-[他の選択肢との違い]
-- A.a. ― ロイコトキシン: ○ ← 正解
-- P. gingivalis ― 酪酸: ○ ← 正解
-- P. intermedia ― デンティリジン: × デンティリジンはT. denticola
-- T. forsythia ― ジンジパイン: × ジンジパインはP. gingivalis
-- T. denticola ― 莢膜: × デンティリジンが正しい
-
-[ポイント]
-病原因子の対応：A.a.＝ロイコトキシン、P. gingivalis＝ジンジパイン＋酪酸、T. denticola＝デンティリジン
-
----
-
 [109A110] ★★★
 Q: S. aureusの病原因子は？
 A: エンテロトキシン（食中毒の原因）
@@ -106,9 +169,44 @@ A: エンテロトキシン（食中毒の原因）
 
 ---
 
-[112D61] ★★★
+## A.a.と侵襲性歯周炎
+
+Q: A.a.が侵襲性歯周炎の原因となる理由は？
+A: ロイコトキシンにより好中球を傷害し、宿主防御を回避するため
+
+Q: 侵襲性歯周炎と関連が深い歯周病原細菌は？
+A: A. actinomycetemcomitans
+
+---
+
+## 運動性の有無
+
 Q: T. denticolaは運動性があるか？
 A: ある（軸糸による）
+
+Q: C. rectusは運動性があるか？
+A: ある（鞭毛による）
+
+Q: T. forsythiaは運動性があるか？
+A: なし
+
+Q: F. nucleatumは運動性があるか？
+A: なし
+
+Q: T. denticolaとC. rectus、軸糸による運動は？
+A: T. denticola
+
+Q: T. denticolaとC. rectus、鞭毛による運動は？
+A: C. rectus
+
+Q: 運動性がある歯周病原細菌は？
+A: T. denticola（軸糸）、C. rectus（鞭毛）
+
+---
+
+[112D61] ★★★
+Q: T. denticolaの特徴は？
+A: らせん状、運動性あり（軸糸）、デンティリジン産生、偏性嫌気性、グラム陰性
 
 [他の選択肢との違い]
 - 紡錘状: × らせん状が正しい（紡錘状はF. nucleatum）
@@ -118,13 +216,13 @@ A: ある（軸糸による）
 - デンティリジンの産生: ○ ← 正解
 
 [ポイント]
-T. denticola＝らせん状スピロヘータ、運動性あり、デンティリジン産生
+T. denticola＝らせん状スピロヘータ、運動性あり（軸糸）、デンティリジン産生、偏性嫌気性
 
 ---
 
 [109C48] ★★★
-Q: C. rectusは運動性があるか？
-A: ある（鞭毛による）
+Q: 運動性がある歯周病原細菌は？
+A: T. denticola（軸糸）、C. rectus（鞭毛）
 
 [他の選択肢との違い]
 - T. forsythia: 運動性なし
@@ -134,20 +232,20 @@ A: ある（鞭毛による）
 - F. nucleatum: 運動性なし
 
 [ポイント]
-運動性あり＝T. denticola（軸糸）、C. rectus（鞭毛）
+運動性あり＝T. denticola（軸糸）、C. rectus（鞭毛）。F. nucleatum・T. forsythiaは運動性なし。
 
 ---
 
-[107A97] ★★★
-Q: A. actinomycetemcomitansは好気培養で生育するか？
-A: 生育する（通性嫌気性のため）
+## F. nucleatumの特徴
 
-[他の選択肢との違い]
-- A. israelii: グラム陽性菌
-- A.a.: 通性嫌気性・グラム陰性桿菌 ← 正解
-- F. nucleatum: 偏性嫌気性（好気培養で生育不可）
-- P. gingivalis: 偏性嫌気性（好気培養で生育不可）
-- S. sanguinis: グラム陽性球菌
+Q: F. nucleatumの形態は？
+A: 紡錘状（両端が細い）
 
-[ポイント]
-好気培養で生育＝通性嫌気性＝A.a.。グラム染色で赤色＝グラム陰性。
+Q: F. nucleatumの役割は？
+A: 架橋菌として他の細菌の凝集に介在
+
+Q: T. denticolaとF. nucleatum、らせん状は？
+A: T. denticola
+
+Q: T. denticolaとF. nucleatum、紡錘状は？
+A: F. nucleatum

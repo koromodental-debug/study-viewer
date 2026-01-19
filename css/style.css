@@ -4696,6 +4696,242 @@ body:not(.is-practice) #flashcard-content {
   gap: 8px;
 }
 
+.review-center-cards.four-cards {
+  gap: 6px;
+}
+
+.review-total-badge {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-left: 8px;
+}
+
+.review-help-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  color: #666;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  line-height: 22px;
+  padding: 0;
+}
+
+.review-help-btn:active {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  .review-help-btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: #aaa;
+  }
+  .review-help-btn:active {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* 設定ボタン（歯車アイコン） */
+.review-settings-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  color: #666;
+  cursor: pointer;
+  margin-left: 6px;
+  vertical-align: middle;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-settings-btn:active {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.review-settings-btn.cram-active {
+  background: #007AFF;
+  color: white;
+}
+
+.review-settings-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .review-settings-btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: #aaa;
+  }
+  .review-settings-btn:active {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .review-settings-btn.cram-active {
+    background: #007AFF;
+    color: white;
+  }
+}
+
+/* ステータス説明モーダル */
+.status-help-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.status-help-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 360px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .status-help-modal {
+    background: #1c1c1e;
+  }
+}
+
+.status-help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.status-help-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.status-help-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.status-help-body {
+  padding: 20px;
+}
+
+.status-help-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.status-help-badge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: center;
+}
+
+.status-help-badge.again {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.status-help-badge.learning {
+  background: #FFF8E1;
+  color: #F57F17;
+}
+
+.status-help-badge.mastered {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.status-help-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.status-help-flow {
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--surface-alt);
+  border-radius: 12px;
+}
+
+.status-help-flow-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.status-help-flow-steps {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.status-help-flow-steps .arrow {
+  color: var(--text-secondary);
+  margin: 0 4px;
+}
+
+.status-help-flow-steps .highlight {
+  color: #2E7D32;
+  font-weight: 600;
+}
+
+.status-help-note {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+}
+
+/* ダークモードのステータス説明 */
+@media (prefers-color-scheme: dark) {
+  .status-help-badge.again {
+    background: rgba(244, 67, 54, 0.15);
+    color: #EF9A9A;
+  }
+  .status-help-badge.learning {
+    background: rgba(255, 193, 7, 0.15);
+    color: #FFD54F;
+  }
+  .status-help-badge.mastered {
+    background: rgba(76, 175, 80, 0.15);
+    color: #81C784;
+  }
+  .status-help-flow-steps .highlight {
+    color: #81C784;
+  }
+}
+
 .review-card {
   flex: 1;
   display: flex;
@@ -4724,8 +4960,18 @@ body:not(.is-practice) #flashcard-content {
 }
 
 .review-card-again {
-  background: #FFF3E0;
-  color: #E65100;
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.review-card-learning {
+  background: #FFF8E1;
+  color: #F57F17;
+}
+
+.review-card-mastered {
+  background: #E8F5E9;
+  color: #2E7D32;
 }
 
 .review-card-memorized {
@@ -4781,7 +5027,7 @@ body:not(.is-practice) #flashcard-content {
   width: 100%;
   margin-top: 12px;
   padding: 10px 16px;
-  background: rgba(255, 214, 10, 0.12);
+  background: rgba(59, 130, 246, 0.1);
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -4789,7 +5035,7 @@ body:not(.is-practice) #flashcard-content {
 }
 
 .favorite-deck-btn:hover {
-  background: rgba(255, 214, 10, 0.2);
+  background: rgba(59, 130, 246, 0.18);
 }
 
 .favorite-deck-btn:active {
@@ -4803,38 +5049,55 @@ body:not(.is-practice) #flashcard-content {
 
 .favorite-deck-icon {
   font-size: 16px;
-  color: #FFD60A;
+  color: #3B82F6;
 }
 
 .favorite-deck-label {
   font-size: 14px;
   font-weight: 500;
-  color: #B8860B;
+  color: #2563EB;
 }
 
 /* ダークモード */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .favorite-deck-btn {
-    background: rgba(255, 214, 10, 0.15);
+    background: rgba(59, 130, 246, 0.15);
   }
   :root:not([data-theme="light"]) .favorite-deck-label {
-    color: #FFD60A;
+    color: #60A5FA;
+  }
+  :root:not([data-theme="light"]) .favorite-deck-icon {
+    color: #60A5FA;
   }
 }
 
 [data-theme="dark"] .favorite-deck-btn {
-  background: rgba(255, 214, 10, 0.15);
+  background: rgba(59, 130, 246, 0.15);
 }
 
 [data-theme="dark"] .favorite-deck-label {
-  color: #FFD60A;
+  color: #60A5FA;
+}
+
+[data-theme="dark"] .favorite-deck-icon {
+  color: #60A5FA;
 }
 
 /* ダークモード */
 @media (prefers-color-scheme: dark) {
   .review-card-again {
-    background: rgba(255, 152, 0, 0.15);
-    color: #FFB74D;
+    background: rgba(244, 67, 54, 0.15);
+    color: #EF9A9A;
+  }
+
+  .review-card-learning {
+    background: rgba(255, 193, 7, 0.15);
+    color: #FFD54F;
+  }
+
+  .review-card-mastered {
+    background: rgba(76, 175, 80, 0.15);
+    color: #81C784;
   }
 
   .review-card-memorized {
@@ -9194,11 +9457,166 @@ body.is-practice .tab-content {
   color: #007AFF;
 }
 
+/* 復習間隔セクション */
+.breakdown-section-desc {
+  font-size: 12px;
+  color: var(--tertiary-label);
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
+.breakdown-interval-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.breakdown-interval-btn {
+  flex: 1;
+  padding: 12px 8px;
+  background: var(--surface-alt);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.breakdown-interval-btn:hover {
+  background: var(--hover-bg);
+}
+
+.breakdown-interval-btn.active {
+  background: rgba(0, 122, 255, 0.1);
+  border-color: #007AFF;
+  color: #007AFF;
+}
+
 .breakdown-note {
   margin-top: 16px;
   font-size: 13px;
   color: var(--secondary-label);
   line-height: 1.5;
+}
+
+/* 直前期モードトグル */
+.cram-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--surface-alt);
+  border-radius: 10px;
+}
+
+.cram-mode-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.cram-mode-desc {
+  font-size: 12px;
+  color: var(--tertiary-label);
+}
+
+/* トグルスイッチ */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--separator);
+  transition: 0.3s;
+  border-radius: 28px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: #007AFF;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(18px);
+}
+
+/* 「もう一度」再出題ボタン */
+.again-delay-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.again-delay-btn {
+  flex: 1;
+  padding: 10px 12px;
+  background: var(--surface-alt);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.again-delay-btn:hover {
+  background: var(--hover-bg);
+}
+
+.again-delay-btn.active {
+  background: rgba(0, 122, 255, 0.1);
+  border-color: #007AFF;
+  color: #007AFF;
+}
+
+/* 再出題モードの図解 */
+.again-mode-example {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: var(--surface-alt);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--secondary-label);
+  font-family: -apple-system, BlinkMacSystemFont, monospace;
+  line-height: 1.6;
+}
+
+.again-mode-example .x {
+  color: #007AFF;
+  font-weight: 700;
 }
 
 /* ダークモード */

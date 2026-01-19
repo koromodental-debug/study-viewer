@@ -32,6 +32,11 @@ const FlashcardModule = (function() {
     isFlipped: false,
     isReviewMode: false,
     shuffleEnabled: localStorage.getItem('flashcard-shuffle') === 'true',
+    cramMode: localStorage.getItem('flashcard-cram-mode') === 'true', // 直前期モード（間隔反復OFF）
+    againDelay: localStorage.getItem('flashcard-again-delay') || '1day', // 'immediate' or '1day'
+    againMode: localStorage.getItem('flashcard-again-mode') || 'reinsert', // 'reinsert'(すぐ再挿入) or 'afterRound'(一周後)
+    againCards: [], // 一周後モード用: 「もう一度」カードを貯める
+    currentRound: 1, // 現在の周回数
     sessionSize: parseInt(localStorage.getItem('flashcard-session-size')) || 5, // 5, 10, 20
     isActive: false,     // 演習中かどうか
     completed: false,    // デッキ完了フラグ（完了後のセッション保存防止用）
@@ -176,29 +181,56 @@ const FlashcardModule = (function() {
 
   // === 統計計算 ===
   function getTopicStats(topicId) {
-    // トピックに関連する進捗を集計
+    // トピックに関連する進捗を集計（3分類: again/learning/mastered）
     const keys = Object.keys(state.progress).filter(k => k.startsWith(topicId + ':'));
-    const memorized = keys.filter(k => state.progress[k].status === 'memorized').length;
-    const again = keys.filter(k => state.progress[k].status === 'again').length;
-    return { memorized, again };
+    const now = Date.now();
+    const MASTERY_THRESHOLD = 14; // 14日以上の間隔で「習得済」
+
+    let again = 0;     // 要復習（期限切れ）
+    let learning = 0;  // 定着中（interval < 14日）
+    let mastered = 0;  // 習得済（interval >= 14日）
+
+    for (const k of keys) {
+      const p = state.progress[k];
+      // 直前期モードでは全てのカードを「要復習」に
+      const isDue = state.cramMode ? true : (p.nextReview && p.nextReview <= now);
+      const interval = p.interval || 0;
+
+      if (p.status === 'again' && (!p.nextReview || isDue)) {
+        again++;
+      } else if (p.status === 'memorized') {
+        if (isDue) {
+          again++;
+        } else if (interval >= MASTERY_THRESHOLD) {
+          mastered++;
+        } else {
+          learning++;
+        }
+      }
+    }
+
+    // 後方互換性のためmemorizedも返す（learning + mastered）
+    return { again, learning, mastered, memorized: learning + mastered };
   }
 
   function getSubjectStats(subject) {
     // 科目配下の全トピックの統計を集計
     const topics = DATA.filter(d => d.subject === subject && d.qaPath);
-    let totalMemorized = 0;
     let totalAgain = 0;
-    let totalCards = 0;
+    let totalLearning = 0;
+    let totalMastered = 0;
 
     for (const topic of topics) {
       const stats = getTopicStats(topic.id);
-      totalMemorized += stats.memorized;
       totalAgain += stats.again;
-      // 推定カード数（進捗がある分だけカウント）
-      totalCards += stats.memorized + stats.again;
+      totalLearning += stats.learning;
+      totalMastered += stats.mastered;
     }
 
-    return { memorized: totalMemorized, again: totalAgain, total: totalCards };
+    const totalMemorized = totalLearning + totalMastered;
+    const totalCards = totalAgain + totalMemorized;
+
+    return { again: totalAgain, learning: totalLearning, mastered: totalMastered, memorized: totalMemorized, total: totalCards };
   }
 
   // 進捗のあるトピックを最終学習日時順で取得
@@ -259,20 +291,35 @@ const FlashcardModule = (function() {
   }
 
   function getOverallStats() {
-    // progressから直接カウント（全てのtopicIdを含む）
-    let memorized = 0;
+    // progressから直接カウント（全てのtopicIdを含む、3分類）
+    const now = Date.now();
+    const MASTERY_THRESHOLD = 14;
+
     let again = 0;
+    let learning = 0;
+    let mastered = 0;
 
     for (const value of Object.values(state.progress)) {
-      if (value.status === 'memorized') {
-        memorized++;
-      } else if (value.status === 'again') {
+      // 直前期モードでは全てのカードを「要復習」に
+      const isDue = state.cramMode ? true : (value.nextReview && value.nextReview <= now);
+      const interval = value.interval || 0;
+
+      if (value.status === 'again' && (!value.nextReview || isDue)) {
         again++;
+      } else if (value.status === 'memorized') {
+        if (isDue) {
+          again++;
+        } else if (interval >= MASTERY_THRESHOLD) {
+          mastered++;
+        } else {
+          learning++;
+        }
       }
     }
 
+    const memorized = learning + mastered;
     const totalCards = memorized + again;
-    return { total: totalCards, memorized, again };
+    return { total: totalCards, memorized, again, learning, mastered };
   }
 
   // 今日のおすすめカード数を計算
@@ -351,7 +398,23 @@ const FlashcardModule = (function() {
       </div>
     `;
 
-    body.innerHTML = `${modeSection}${sizeSection}`;
+    // 適応的間隔の説明セクション + 直前期モードトグル
+    const intervalSection = `
+      <div class="breakdown-section">
+        <div class="breakdown-section-title">復習間隔</div>
+        <div class="breakdown-section-desc">カードごとに自動調整されます（1日→3日→7日→14日→30日...）</div>
+        <div class="cram-mode-toggle">
+          <label class="toggle-switch">
+            <input type="checkbox" id="cram-mode-checkbox" ${state.cramMode ? 'checked' : ''}>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="cram-mode-label">直前期モード</span>
+          <span class="cram-mode-desc">（間隔を無視して全カード復習可能）</span>
+        </div>
+      </div>
+    `;
+
+    body.innerHTML = `${modeSection}${sizeSection}${intervalSection}`;
 
     // シートを開く
     overlay.classList.add('active');
@@ -413,6 +476,15 @@ const FlashcardModule = (function() {
       });
     });
 
+    // 直前期モードトグルのイベント
+    const cramCheckbox = document.getElementById('cram-mode-checkbox');
+    if (cramCheckbox) {
+      cramCheckbox.addEventListener('change', () => {
+        state.cramMode = cramCheckbox.checked;
+        localStorage.setItem('flashcard-cram-mode', state.cramMode);
+      });
+    }
+
     // 閉じるボタン
     const closeBtn = document.getElementById('breakdown-close');
     if (closeBtn) {
@@ -434,6 +506,115 @@ const FlashcardModule = (function() {
     }
     // トップ画面を再描画
     renderDeckList();
+  }
+
+  // 設定シートを開く（ホーム画面から）
+  function openSettingsSheet() {
+    const overlay = document.getElementById('breakdown-overlay');
+    const body = document.getElementById('breakdown-sheet-body');
+    if (!overlay || !body) return;
+
+    // 設定を表示
+    body.innerHTML = `
+      <div class="breakdown-section">
+        <div class="breakdown-section-title">復習間隔</div>
+        <div class="breakdown-section-desc">カードごとに自動調整されます（1日→3日→7日→14日→30日...）</div>
+        <div class="cram-mode-toggle">
+          <label class="toggle-switch">
+            <input type="checkbox" id="cram-mode-checkbox" ${state.cramMode ? 'checked' : ''}>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="cram-mode-label">直前期モード</span>
+          <span class="cram-mode-desc">（間隔を無視して全カード復習可能）</span>
+        </div>
+      </div>
+      <div class="breakdown-section">
+        <div class="breakdown-section-title">セッション内の再出題</div>
+        <div class="again-delay-buttons">
+          <button class="again-delay-btn ${state.againMode === 'reinsert' ? 'active' : ''}" data-mode="reinsert">
+            すぐ混ぜる
+          </button>
+          <button class="again-delay-btn ${state.againMode === 'afterRound' ? 'active' : ''}" data-mode="afterRound">
+            2周目にまとめる
+          </button>
+        </div>
+        <div class="again-mode-example">
+          ${state.againMode === 'reinsert'
+            ? '1→2→<span class="x">もう一度</span>→4→5→<span class="x">再出題</span>→終了'
+            : '1周目: 1→2→<span class="x">もう一度</span>→4→5<br>2周目: <span class="x">もう一度</span>のカードだけ'}
+        </div>
+      </div>
+      <div class="breakdown-section">
+        <div class="breakdown-section-title">次回セッションの出題</div>
+        <div class="again-delay-buttons">
+          <button class="again-delay-btn ${state.againDelay === 'immediate' ? 'active' : ''}" data-delay="immediate">
+            すぐ出る
+          </button>
+          <button class="again-delay-btn ${state.againDelay === '1day' ? 'active' : ''}" data-delay="1day">
+            1日後に出る
+          </button>
+        </div>
+        <div class="breakdown-section-desc" style="margin-top: 8px;">→ アプリを閉じて次に開いた時、要復習に出るタイミング</div>
+      </div>
+    `;
+
+    // シートを開く
+    overlay.classList.add('active');
+
+    // 直前期モードトグルのイベント
+    const cramCheckbox = document.getElementById('cram-mode-checkbox');
+    if (cramCheckbox) {
+      cramCheckbox.addEventListener('change', () => {
+        state.cramMode = cramCheckbox.checked;
+        localStorage.setItem('flashcard-cram-mode', state.cramMode);
+      });
+    }
+
+    // 「もう一度」タイミングボタンのイベント（モード選択）
+    body.querySelectorAll('.again-delay-btn[data-mode]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+        state.againMode = mode;
+        localStorage.setItem('flashcard-again-mode', mode);
+
+        // ボタンのアクティブ状態を更新（同じグループ内のみ）
+        btn.parentElement.querySelectorAll('.again-delay-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // 説明テキストを更新
+        const descEl = btn.parentElement.nextElementSibling;
+        if (descEl) {
+          descEl.innerHTML = mode === 'reinsert'
+            ? '1→2→<span class="x">もう一度</span>→4→5→<span class="x">再出題</span>→終了'
+            : '1周目: 1→2→<span class="x">もう一度</span>→4→5<br>2周目: <span class="x">もう一度</span>のカードだけ';
+        }
+      });
+    });
+
+    // 「もう一度」復習期限ボタンのイベント（delay選択）
+    body.querySelectorAll('.again-delay-btn[data-delay]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const delay = btn.dataset.delay;
+        state.againDelay = delay;
+        localStorage.setItem('flashcard-again-delay', delay);
+
+        // ボタンのアクティブ状態を更新（同じグループ内のみ）
+        btn.parentElement.querySelectorAll('.again-delay-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // 閉じるボタン
+    const closeBtn = document.getElementById('breakdown-close');
+    if (closeBtn) {
+      closeBtn.onclick = () => closeBreakdownSheet();
+    }
+
+    // 背景クリックで閉じる
+    const backdrop = overlay.querySelector('.breakdown-backdrop');
+    if (backdrop) {
+      backdrop.onclick = () => closeBreakdownSheet();
+    }
   }
 
   // === Ankiスタイル デッキ一覧画面 ===
@@ -541,19 +722,28 @@ const FlashcardModule = (function() {
     return `
       <!-- 学習の記録 -->
       <div class="review-center">
-        <h2 class="review-center-title">学習の記録</h2>
-        <div class="review-center-cards three-cards">
-          <div class="review-card review-card-total">
-            <span class="review-card-count">${totalLearned}</span>
-            <span class="review-card-label">総数</span>
-          </div>
+        <h2 class="review-center-title">
+          学習の記録 <span class="review-total-badge">${totalLearned}件</span>
+          <button class="review-help-btn" id="review-help-btn" aria-label="説明">?</button>
+          <button class="review-settings-btn ${state.cramMode ? 'cram-active' : ''}" id="review-settings-btn" aria-label="設定">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </button>
+        </h2>
+        <div class="review-center-cards four-cards">
           <button class="review-card review-card-again ${overall.again === 0 ? 'empty' : ''}" id="start-again-deck" ${overall.again === 0 ? 'disabled' : ''}>
             <span class="review-card-count">${overall.again}</span>
-            <span class="review-card-label">もう一度 ›</span>
+            <span class="review-card-label">要復習 ›</span>
           </button>
-          <button class="review-card review-card-memorized ${overall.memorized === 0 ? 'empty' : ''}" id="start-memorized-deck" ${overall.memorized === 0 ? 'disabled' : ''}>
-            <span class="review-card-count">${overall.memorized}</span>
-            <span class="review-card-label">覚えた ›</span>
+          <button class="review-card review-card-learning ${overall.learning === 0 ? 'empty' : ''}" id="start-learning-deck" ${overall.learning === 0 ? 'disabled' : ''}>
+            <span class="review-card-count">${overall.learning}</span>
+            <span class="review-card-label">定着中 ›</span>
+          </button>
+          <button class="review-card review-card-mastered ${overall.mastered === 0 ? 'empty' : ''}" id="start-mastered-deck" ${overall.mastered === 0 ? 'disabled' : ''}>
+            <span class="review-card-count">${overall.mastered}</span>
+            <span class="review-card-label">習得済 ›</span>
           </button>
         </div>
         <button class="favorite-deck-btn ${favoritesCount === 0 ? 'empty' : ''}" id="start-favorite-deck" ${favoritesCount === 0 ? 'disabled' : ''}>
@@ -722,12 +912,28 @@ const FlashcardModule = (function() {
     const groups = new Map();
 
     topics.forEach(topic => {
+      let groupKey = null;
+      let groupName = null;
+
+      // 1. まずpathからグループを抽出（従来の方式）
       const path = topic.qaPath || topic.htmlPath || '';
-      // パターン: subject/科目名/01_大項目名_小項目名.html
-      const match = path.match(/subject\/[^/]+\/(\d{2})_([^_]+)/);
-      if (match) {
-        const groupKey = match[1]; // 01, 02, etc.
-        const groupName = match[2]; // 大項目名
+      const pathMatch = path.match(/subject\/[^/]+\/(\d{2})_([^_]+)/);
+      if (pathMatch) {
+        groupKey = pathMatch[1];
+        groupName = pathMatch[2];
+      }
+
+      // 2. pathでマッチしなければcategoryから抽出
+      if (!groupKey && topic.category) {
+        // categoryの形式: "科目名/01_大項目名"
+        const categoryMatch = topic.category.match(/[^/]+\/(\d{2})_([^_]+)/);
+        if (categoryMatch) {
+          groupKey = categoryMatch[1];
+          groupName = categoryMatch[2];
+        }
+      }
+
+      if (groupKey && groupName) {
         if (!groups.has(groupKey)) {
           groups.set(groupKey, { name: groupName, topics: [] });
         }
@@ -923,22 +1129,40 @@ const FlashcardModule = (function() {
       });
     }
 
-    // 「確認」ボタン
-    const memorizedBtn = document.getElementById('start-memorized-deck');
-    if (memorizedBtn) {
-      memorizedBtn.addEventListener('click', () => startStatusDeck('memorized'));
-    }
-
-    // 「復習」ボタン
+    // 「要復習」ボタン
     const againBtn = document.getElementById('start-again-deck');
     if (againBtn) {
       againBtn.addEventListener('click', () => startStatusDeck('again'));
+    }
+
+    // 「定着中」ボタン
+    const learningBtn = document.getElementById('start-learning-deck');
+    if (learningBtn) {
+      learningBtn.addEventListener('click', () => startStatusDeck('learning'));
+    }
+
+    // 「習得済」ボタン
+    const masteredBtn = document.getElementById('start-mastered-deck');
+    if (masteredBtn) {
+      masteredBtn.addEventListener('click', () => startStatusDeck('mastered'));
     }
 
     // 「お気に入り」ボタン
     const favoriteBtn = document.getElementById('start-favorite-deck');
     if (favoriteBtn) {
       favoriteBtn.addEventListener('click', () => startFavoriteDeck());
+    }
+
+    // 「？」説明ボタン
+    const helpBtn = document.getElementById('review-help-btn');
+    if (helpBtn) {
+      helpBtn.addEventListener('click', () => showStatusHelpModal());
+    }
+
+    // 設定ボタン（歯車アイコン）
+    const settingsBtn = document.getElementById('review-settings-btn');
+    if (settingsBtn) {
+      settingsBtn.addEventListener('click', () => openSettingsSheet());
     }
 
     // 報告一覧ボタン
@@ -1159,6 +1383,8 @@ const FlashcardModule = (function() {
     state.completed = false;
     state.answeredInSession = 0;
     state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
 
     if (state.filteredCards.length === 0) {
       renderNoCardsMessage();
@@ -1167,15 +1393,48 @@ const FlashcardModule = (function() {
     }
   }
 
-  // === ステータスデッキ（覚えた/もう一度のみ） ===
+  // === ステータスデッキ（要復習/定着中/習得済） ===
   async function startStatusDeck(status) {
     console.log('[startStatusDeck] 開始:', status);
     // 指定ステータスのカード参照を収集
     const cardRefs = [];
+    const now = Date.now();
+    const MASTERY_THRESHOLD = 14;
+
     for (const [key, value] of Object.entries(state.progress)) {
-      if (value.status === status) {
-        const [topicId, cardIndex] = key.split(':');
-        cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
+      // 直前期モードでは全てのカードを「要復習」に
+      const isDue = state.cramMode ? true : (value.nextReview && value.nextReview <= now);
+      const interval = value.interval || 0;
+
+      if (status === 'again') {
+        // 「要復習」デッキ: againステータス + 期限切れのmemorized
+        if (value.status === 'again') {
+          if (!value.nextReview || isDue) {
+            const [topicId, cardIndex] = key.split(':');
+            cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
+          }
+        } else if (value.status === 'memorized' && isDue) {
+          const [topicId, cardIndex] = key.split(':');
+          cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
+        }
+      } else if (status === 'learning') {
+        // 「定着中」デッキ: memorizedでinterval < 14日
+        if (value.status === 'memorized' && !isDue && interval < MASTERY_THRESHOLD) {
+          const [topicId, cardIndex] = key.split(':');
+          cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
+        }
+      } else if (status === 'mastered') {
+        // 「習得済」デッキ: memorizedでinterval >= 14日
+        if (value.status === 'memorized' && !isDue && interval >= MASTERY_THRESHOLD) {
+          const [topicId, cardIndex] = key.split(':');
+          cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
+        }
+      } else if (status === 'memorized') {
+        // 後方互換: 「覚えた」デッキ（learning + mastered）
+        if (value.status === 'memorized' && !isDue) {
+          const [topicId, cardIndex] = key.split(':');
+          cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
+        }
       }
     }
 
@@ -1238,7 +1497,6 @@ const FlashcardModule = (function() {
           cards = parseQAToCards(text, topicId);
         }
 
-        console.log('[startStatusDeck] topicId:', topicId, 'loaded cards:', cards.length);
         topicCardsMap.set(topicId, { cards, topic });
       } catch (e) {
         console.log(`QA読み込みエラー (${topicId}):`, e);
@@ -1275,16 +1533,13 @@ const FlashcardModule = (function() {
 
     // 見つからなかったカードをprogressから削除（データクリーンアップ）
     if (invalidKeys.length > 0) {
-      console.log('[startStatusDeck] 無効なカードを削除:', invalidKeys.length);
       for (const key of invalidKeys) {
         delete state.progress[key];
       }
       saveProgress();
     }
 
-    console.log('[startStatusDeck] filteredCards:', filteredCards.length);
     if (filteredCards.length === 0) {
-      console.log('[startStatusDeck] フィルタ後カードなし - 終了');
       return;
     }
 
@@ -1299,6 +1554,8 @@ const FlashcardModule = (function() {
     state.completed = false;
     state.answeredInSession = 0;
     state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
 
     // 常にシャッフル（覚えた順の固定出題を防ぐ）
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -1311,22 +1568,17 @@ const FlashcardModule = (function() {
       state.filteredCards = state.filteredCards.slice(0, state.sessionSize);
     }
 
-    console.log('[startStatusDeck] renderCard呼び出し前, cards:', state.filteredCards.length);
     renderCard();
   }
 
   // === お気に入りデッキ ===
   async function startFavoriteDeck() {
-    console.log('[startFavoriteDeck] 開始');
     const allFavorites = FavoritesManager.getAll();
-    console.log('[startFavoriteDeck] 全お気に入り:', allFavorites);
     const favorites = allFavorites.filter(f => f.type === 'qa');
-    console.log('[startFavoriteDeck] QAお気に入り:', favorites);
     if (favorites.length === 0) return;
 
     // 必要なトピックのQAファイルを取得
     const uniqueTopicIds = [...new Set(favorites.map(f => f.topicId))];
-    console.log('[startFavoriteDeck] uniqueTopicIds:', uniqueTopicIds);
     const topicCardsMap = new Map();
 
     for (const topicId of uniqueTopicIds) {
@@ -1345,7 +1597,6 @@ const FlashcardModule = (function() {
         qaPath = topic?.qaPath;
       }
 
-      console.log('[startFavoriteDeck] topicId:', topicId, 'found:', !!topic);
       if (!topic || !qaPath) continue;
 
       try {
@@ -1387,6 +1638,8 @@ const FlashcardModule = (function() {
     state.completed = false;
     state.answeredInSession = 0;
     state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
 
     // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -1435,6 +1688,8 @@ const FlashcardModule = (function() {
     state.completed = false;
     state.answeredInSession = 0;
     state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
 
     // セッション復元
     const session = getSession(state.currentTopicId);
@@ -1513,6 +1768,8 @@ const FlashcardModule = (function() {
     state.completed = false;
     state.answeredInSession = 0;
     state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
 
     // 検索状態をクリア
     state.cardSearch.query = '';
@@ -1636,6 +1893,8 @@ const FlashcardModule = (function() {
     state.completed = false;
     state.answeredInSession = 0;
     state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
 
     // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -1722,6 +1981,8 @@ const FlashcardModule = (function() {
     state.completed = false;
     state.answeredInSession = 0;
     state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
 
     // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
@@ -2990,6 +3251,65 @@ const FlashcardModule = (function() {
     return lines.join('\n');
   }
 
+  // ステータス説明モーダルを表示
+  function showStatusHelpModal() {
+    const overlay = document.createElement('div');
+    overlay.className = 'status-help-overlay';
+    overlay.id = 'status-help-overlay';
+    overlay.innerHTML = `
+      <div class="status-help-modal">
+        <div class="status-help-header">
+          <h3>学習ステータスについて</h3>
+          <button class="status-help-close" id="status-help-close">✕</button>
+        </div>
+        <div class="status-help-body">
+          <div class="status-help-item">
+            <div class="status-help-badge again">要復習</div>
+            <div class="status-help-desc">
+              「もう一度」を押したカード、または復習期限を過ぎたカード。
+            </div>
+          </div>
+          <div class="status-help-item">
+            <div class="status-help-badge learning">定着中</div>
+            <div class="status-help-desc">
+              「覚えた」を押したカード。まだ忘れやすい状態です。
+            </div>
+          </div>
+          <div class="status-help-item">
+            <div class="status-help-badge mastered">習得済</div>
+            <div class="status-help-desc">
+              「覚えた」を4回以上続けて押したカード。十分に定着しています。
+            </div>
+          </div>
+          <div class="status-help-flow">
+            <div class="status-help-flow-title">「覚えた」を押し続けると...</div>
+            <div class="status-help-flow-steps">
+              <span>1日後</span><span class="arrow">→</span>
+              <span>3日後</span><span class="arrow">→</span>
+              <span>7日後</span><span class="arrow">→</span>
+              <span class="highlight">14日後で習得済に</span>
+            </div>
+            <div class="status-help-note">※「もう一度」を押すと最初からやり直し</div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    // 閉じるボタン
+    document.getElementById('status-help-close').addEventListener('click', () => {
+      overlay.remove();
+    });
+
+    // 背景クリックで閉じる
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.remove();
+      }
+    });
+  }
+
   // 報告一覧オーバーレイを開く
   function openReportsOverlay() {
     const reports = getReports();
@@ -3160,6 +3480,30 @@ const FlashcardModule = (function() {
     }
   }
 
+  // === 適応的間隔システム ===
+  // 間隔スケジュール（日数）: 1, 3, 7, 14, 30, 60, 90...
+  const INTERVAL_SCHEDULE = [1, 3, 7, 14, 30, 60, 90];
+  const DAY_MS = 24 * 60 * 60 * 1000;
+
+  function getNextInterval(currentInterval) {
+    const idx = INTERVAL_SCHEDULE.indexOf(currentInterval);
+    if (idx === -1) {
+      // 現在の間隔がスケジュールにない場合、最も近い次の間隔を探す
+      for (let i = 0; i < INTERVAL_SCHEDULE.length; i++) {
+        if (INTERVAL_SCHEDULE[i] > currentInterval) {
+          return INTERVAL_SCHEDULE[i];
+        }
+      }
+      // 90日を超えている場合は1.5倍（最大180日）
+      return Math.min(180, Math.round(currentInterval * 1.5));
+    }
+    if (idx < INTERVAL_SCHEDULE.length - 1) {
+      return INTERVAL_SCHEDULE[idx + 1];
+    }
+    // 最大間隔に達している場合は1.5倍（最大180日）
+    return Math.min(180, Math.round(currentInterval * 1.5));
+  }
+
   // === 学習記録 ===
   function markMemorized() {
     const card = state.filteredCards[state.currentIndex];
@@ -3170,9 +3514,20 @@ const FlashcardModule = (function() {
 
     const keyTopicId = card.topicId || state.currentTopicId;
     const key = `${keyTopicId}:${card.originalIndex}`;
+    const now = Date.now();
+    const prev = state.progress[key] || {};
+
+    // 適応的間隔の計算
+    const currentInterval = prev.interval || 0;
+    const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+    const successCount = (prev.successCount || 0) + 1;
+
     state.progress[key] = {
       status: 'memorized',
-      lastReview: Date.now()
+      lastReview: now,
+      nextReview: now + newInterval * DAY_MS,
+      interval: newInterval,
+      successCount: successCount
     };
     saveProgress();
 
@@ -3186,7 +3541,12 @@ const FlashcardModule = (function() {
         showSnackbar('覚えたに分類');
       });
     } else {
-      renderCompletionScreen();
+      // 一周終了時: againCardsがあれば次の周へ
+      if (state.againMode === 'afterRound' && state.againCards.length > 0) {
+        startNextRound();
+      } else {
+        renderCompletionScreen();
+      }
     }
   }
 
@@ -3199,32 +3559,69 @@ const FlashcardModule = (function() {
 
     const keyTopicId = card.topicId || state.currentTopicId;
     const key = `${keyTopicId}:${card.originalIndex}`;
+    const now = Date.now();
+
+    // 間隔をリセット（設定に応じて即時 or 1日後）
+    const nextReviewDelay = state.againDelay === 'immediate' ? 0 : DAY_MS;
     state.progress[key] = {
       status: 'again',
-      lastReview: Date.now()
+      lastReview: now,
+      nextReview: now + nextReviewDelay,
+      interval: state.againDelay === 'immediate' ? 0 : 1,
+      successCount: 0
     };
     saveProgress();
 
-    // 再出題ロジック：このカードを最後に再度出題（最大2回まで）
-    const reinsertCount = card._reinsertCount || 0;
-    if (reinsertCount < 2) {
-      const reinsertCard = { ...card, _reinsertCount: reinsertCount + 1 };
-      // 最後に挿入（ユーザーフィードバック：早すぎる→最後に出てほしい）
-      state.filteredCards.push(reinsertCard);
+    // 再出題ロジック：モードに応じて分岐
+    if (state.againMode === 'afterRound') {
+      // 一周後モード: againCardsに貯める
+      state.againCards.push({ ...card, _reinsertCount: 0 });
+    } else {
+      // すぐ再挿入モード: 最後に再度出題（最大2回まで）
+      const reinsertCount = card._reinsertCount || 0;
+      if (reinsertCount < 2) {
+        const reinsertCard = { ...card, _reinsertCount: reinsertCount + 1 };
+        state.filteredCards.push(reinsertCard);
+      }
     }
 
     // 次のカードへ自動移動（飛びアニメーション付き）
-    if (state.currentIndex < state.filteredCards.length - 1) {
+    const isLastCard = state.currentIndex >= state.filteredCards.length - 1;
+
+    if (!isLastCard) {
       flyCardOut('left', () => {
         next();
         bumpProgress();
         state.combo = Math.max(0, state.combo - 3);  // コンボ3減少
         updateComboDisplay();
-        showSnackbar('最後に再出題');
+        showSnackbar(state.againMode === 'afterRound' ? '一周後に再出題' : '最後に再出題');
       });
     } else {
-      renderCompletionScreen();
+      // 一周終了時
+      if (state.againMode === 'afterRound' && state.againCards.length > 0) {
+        // 次の周へ
+        startNextRound();
+      } else {
+        renderCompletionScreen();
+      }
     }
+  }
+
+  // 次の周を開始（一周後モード用）
+  function startNextRound() {
+    state.currentRound++;
+    state.filteredCards = [...state.againCards];
+    state.againCards = [];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+
+    // シャッフル
+    if (state.shuffleEnabled) {
+      shuffleArray(state.filteredCards);
+    }
+
+    showSnackbar(`${state.currentRound}周目開始（${state.filteredCards.length}枚）`);
+    renderCard();
   }
 
   // === 進捗ポンアニメーション ===
@@ -3651,6 +4048,8 @@ const FlashcardModule = (function() {
     state.completed = false;
     state.answeredInSession = 0;
     state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
     state.isReviewMode = false;
     state.currentIndex = 0;
 

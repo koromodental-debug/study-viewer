@@ -960,26 +960,45 @@ function initAccountUI() {
     try {
       showImportStatus('インポート中...', 'loading');
 
-      // JSONをパース（コードブロックがあれば除去、全角文字を修正）
+      // JSONをパース（AIの出力ミスを自動修正）
       let cleanText = text;
-      // ```json ... ``` 形式を除去
-      cleanText = cleanText.replace(/^```json?\s*/i, '').replace(/\s*```$/i, '');
-      // 前後の空白を除去
-      cleanText = cleanText.trim();
 
-      // AIが出力しがちな全角文字を半角に修正
+      // 1. コードブロックを除去 ```json ... ```
+      cleanText = cleanText.replace(/^```json?\s*/i, '').replace(/\s*```$/i, '');
+
+      // 2. 前後の説明文を除去してJSONのみ抽出
+      const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        cleanText = jsonMatch[0];
+      }
+
+      // 3. 全角文字を半角に修正
       cleanText = cleanText
-        .replace(/「/g, '"')  // 全角鉤括弧開き→ダブルクォート
-        .replace(/」/g, '"')  // 全角鉤括弧閉じ→ダブルクォート
-        .replace(/"/g, '"')  // 全角ダブルクォート開き
-        .replace(/"/g, '"')  // 全角ダブルクォート閉じ
-        .replace(/'/g, "'")  // 全角シングルクォート開き
-        .replace(/'/g, "'")  // 全角シングルクォート閉じ
-        .replace(/：/g, ':')  // 全角コロン
-        .replace(/［/g, '[')  // 全角角括弧開き
-        .replace(/］/g, ']')  // 全角角括弧閉じ
-        .replace(/｛/g, '{')  // 全角波括弧開き
-        .replace(/｝/g, '}'); // 全角波括弧閉じ
+        .replace(/「/g, '"')
+        .replace(/」/g, '"')
+        .replace(/"/g, '"')
+        .replace(/"/g, '"')
+        .replace(/'/g, "'")
+        .replace(/'/g, "'")
+        .replace(/：/g, ':')
+        .replace(/［/g, '[')
+        .replace(/］/g, ']')
+        .replace(/｛/g, '{')
+        .replace(/｝/g, '}')
+        .replace(/，/g, ',');
+
+      // 4. 末尾カンマを除去 (,] や ,} を修正)
+      cleanText = cleanText.replace(/,\s*]/g, ']').replace(/,\s*}/g, '}');
+
+      // 5. コメントを除去 (// comment や /* comment */)
+      cleanText = cleanText.replace(/\/\/[^\n]*/g, '').replace(/\/\*[\s\S]*?\*\//g, '');
+
+      // 6. 文字列外のシングルクォートをダブルクォートに変換
+      // （文字列内のシングルクォートは維持）
+      cleanText = cleanText.replace(/'([^']*)'(?=\s*[:,\]\}])/g, '"$1"');
+
+      // 7. 制御文字を除去（タブ・改行は維持）
+      cleanText = cleanText.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
 
       const jsonData = JSON.parse(cleanText);
 

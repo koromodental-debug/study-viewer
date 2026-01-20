@@ -16,7 +16,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=20260120c">
+  <link rel="stylesheet" href="css/style.css?v=20260120d">
 </head>
 <body>
   <div class="app">
@@ -195,31 +195,57 @@
           </button>
         </div>
         <div class="import-modal-body">
-          <!-- ローカルファイルインポート -->
-          <div class="import-section import-local-section">
-            <p class="import-description">JSONファイルからデッキをインポートします。</p>
-            <input type="file" id="import-file-input" accept=".json" style="display:none;">
-            <button id="import-file-btn" class="import-file-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+          <!-- JSON貼り付けインポート -->
+          <div class="import-section import-paste-section">
+            <p class="import-description">AIが生成したJSONを貼り付けてインポート</p>
+            <textarea id="import-paste-input" class="import-paste-input"
+                      placeholder="ここにJSONを貼り付け..." rows="6"></textarea>
+            <button id="import-paste-btn" class="import-paste-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/>
               </svg>
-              <span>ファイルを選択</span>
+              <span>貼り付けてインポート</span>
             </button>
           </div>
           <!-- 区切り線 -->
           <div class="import-divider">
-            <span>または</span>
+            <span>その他</span>
+          </div>
+          <!-- ローカルファイルインポート -->
+          <div class="import-section import-local-section import-collapsed">
+            <button class="import-section-toggle" data-target="file-section">
+              <span>ファイルから読み込む</span>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M7 10l5 5 5-5z"/>
+              </svg>
+            </button>
+            <div id="file-section" class="import-section-content" style="display:none;">
+              <input type="file" id="import-file-input" accept=".json" style="display:none;">
+              <button id="import-file-btn" class="import-file-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span>ファイルを選択</span>
+              </button>
+            </div>
           </div>
           <!-- アクセスコード入力 -->
-          <div class="import-section">
-            <p class="import-description">アクセスコードを入力してデッキをインポートします。</p>
-            <div class="import-input-group">
-              <input type="text" id="import-code-input" class="import-code-input"
-                     placeholder="アクセスコード（例: YAKURI-PREMIUM-ABCD）"
-                     autocomplete="off" spellcheck="false">
-              <button id="import-submit-btn" class="import-submit-btn">
-                <span>インポート</span>
-              </button>
+          <div class="import-section import-collapsed">
+            <button class="import-section-toggle" data-target="code-section">
+              <span>アクセスコードで読み込む</span>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M7 10l5 5 5-5z"/>
+              </svg>
+            </button>
+            <div id="code-section" class="import-section-content" style="display:none;">
+              <div class="import-input-group">
+                <input type="text" id="import-code-input" class="import-code-input"
+                       placeholder="アクセスコード（例: YAKURI-PREMIUM-ABCD）"
+                       autocomplete="off" spellcheck="false">
+                <button id="import-submit-btn" class="import-submit-btn">
+                  <span>インポート</span>
+                </button>
+              </div>
             </div>
           </div>
           <div id="import-status" class="import-status"></div>
@@ -349,6 +375,39 @@
     </div>
 
 
+    <!-- グラフプレビューモーダル -->
+    <div id="graph-preview-overlay" class="graph-preview-overlay">
+      <div class="graph-preview-backdrop"></div>
+      <div class="graph-preview-sheet">
+        <div class="graph-preview-header">
+          <span class="graph-preview-subject" id="graph-preview-subject"></span>
+          <h3 class="graph-preview-title" id="graph-preview-title"></h3>
+          <button id="graph-preview-close" class="graph-preview-close" aria-label="閉じる">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="graph-preview-body" id="graph-preview-body">
+          <!-- プレビュー内容がここに表示される -->
+        </div>
+        <div class="graph-preview-footer">
+          <button id="graph-preview-open" class="graph-preview-open-btn">
+            <span>このトピックを開く</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+        <div class="graph-preview-related" id="graph-preview-related">
+          <span class="graph-preview-related-label">関連トピック</span>
+          <div class="graph-preview-related-list" id="graph-preview-related-list">
+            <!-- 関連トピックがここに表示される -->
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- 読書モードメニュー -->
     <div id="reading-mode-overlay" class="reading-mode-overlay">
       <div class="reading-mode-sheet">
@@ -447,6 +506,47 @@
                   <path d="M21 21l-4.35-4.35"/>
                 </svg>
                 <input type="text" id="welcome-search-input" class="welcome-search-input" placeholder="トピック・キーワードを検索">
+              </div>
+            </div>
+
+            <!-- ビュー切り替え -->
+            <div class="view-toggle-container" id="view-toggle-container">
+              <button class="view-toggle-btn active" id="view-list-btn" data-view="list">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                </svg>
+                <span>リスト</span>
+              </button>
+              <button class="view-toggle-btn" id="view-graph-btn" data-view="graph">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm-5-3c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm3-5V3.5L16.5 9H13z"/>
+                </svg>
+                <span>関連図</span>
+              </button>
+            </div>
+
+            <!-- グラフビュー（非表示で初期化） -->
+            <div id="graph-view-container" class="graph-view-container" style="display:none;">
+              <div id="graph-canvas" class="graph-canvas"></div>
+              <div class="graph-controls">
+                <button id="graph-zoom-in" class="graph-control-btn" aria-label="拡大">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                  </svg>
+                </button>
+                <button id="graph-zoom-out" class="graph-control-btn" aria-label="縮小">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M19 13H5v-2h14v2z"/>
+                  </svg>
+                </button>
+                <button id="graph-fit" class="graph-control-btn" aria-label="全体表示">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3h-6zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3v6zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6h6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6v-6z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="graph-legend" id="graph-legend">
+                <!-- 凡例はJSで動的に生成 -->
               </div>
             </div>
 
@@ -560,17 +660,21 @@
 
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
+  <!-- Cytoscape.js（グラフビュー用） -->
+  <script src="https://unpkg.com/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
+
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="js/firebase-sync.js?v=20260120c"></script>
+  <script src="js/firebase-sync.js?v=20260120d"></script>
 
-  <script src="js/data.js?v=20260120c"></script>
-  <script src="js/search.js?v=20260120c"></script>
-  <script src="js/favorites.js?v=20260120c"></script>
-  <script src="js/kakomon.js?v=20260120c"></script>
-  <script src="js/flashcard.js?v=20260120c"></script>
-  <script src="js/app.js?v=20260120c"></script>
+  <script src="js/data.js?v=20260120d"></script>
+  <script src="js/search.js?v=20260120d"></script>
+  <script src="js/favorites.js?v=20260120d"></script>
+  <script src="js/kakomon.js?v=20260120d"></script>
+  <script src="js/flashcard.js?v=20260120d"></script>
+  <script src="js/graph.js?v=20260120d"></script>
+  <script src="js/app.js?v=20260120d"></script>
 </body>
 </html>

@@ -905,6 +905,107 @@ function initAccountUI() {
     }
   });
 
+  // === セクショントグル ===
+  document.querySelectorAll('.import-section-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const targetEl = document.getElementById(targetId);
+      const arrow = btn.querySelector('svg');
+      if (targetEl) {
+        const isOpen = targetEl.style.display !== 'none';
+        targetEl.style.display = isOpen ? 'none' : 'block';
+        if (arrow) {
+          arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+        }
+      }
+    });
+  });
+
+  // === JSON貼り付けインポート ===
+  const importPasteInput = document.getElementById('import-paste-input');
+  const importPasteBtn = document.getElementById('import-paste-btn');
+
+  importPasteBtn?.addEventListener('click', async () => {
+    const text = importPasteInput?.value?.trim();
+    if (!text) {
+      showImportStatus('JSONを貼り付けてください', 'error');
+      return;
+    }
+
+    try {
+      showImportStatus('インポート中...', 'loading');
+
+      // JSONをパース（コードブロックがあれば除去）
+      let cleanText = text;
+      // ```json ... ``` 形式を除去
+      cleanText = cleanText.replace(/^```json?\s*/i, '').replace(/\s*```$/i, '');
+      // 前後の空白を除去
+      cleanText = cleanText.trim();
+
+      const jsonData = JSON.parse(cleanText);
+
+      // JSONの検証
+      if (!jsonData.sections || !Array.isArray(jsonData.sections)) {
+        throw new Error('無効なJSON形式です。sectionsが見つかりません。');
+      }
+
+      // デッキタイトルを取得
+      const title = jsonData.metadata?.title || '貼り付けデッキ';
+      const category = jsonData.metadata?.category || 'インポート';
+
+      // カード数をカウント
+      let cardCount = 0;
+      for (const section of jsonData.sections) {
+        cardCount += (section.qa || []).length;
+      }
+
+      if (cardCount === 0) {
+        throw new Error('カードが見つかりません。');
+      }
+
+      // ユニークなIDを生成
+      const deckId = `paste_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+      // デッキデータを構築
+      const deck = {
+        id: deckId,
+        title: title,
+        category: category,
+        cardCount: cardCount,
+        jsonData: jsonData,
+        importedAt: Date.now(),
+        isLocal: true
+      };
+
+      // ローカルストレージに保存
+      saveImportedDeckToLocal(deck);
+
+      // Firebaseに同期（ログイン中の場合）
+      if (FirebaseSync.isLoggedIn()) {
+        FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
+      }
+
+      showImportStatus(`「${title}」をインポートしました！（${cardCount}問）`, 'success');
+
+      // イベントを発火してUIを更新
+      window.dispatchEvent(new CustomEvent('deckImported', { detail: deck }));
+
+      // テキストエリアをクリア
+      if (importPasteInput) importPasteInput.value = '';
+
+      // 2秒後にモーダルを閉じる
+      setTimeout(closeImportModal, 2000);
+
+    } catch (error) {
+      console.error('JSON貼り付けインポートエラー:', error);
+      if (error instanceof SyntaxError) {
+        showImportStatus('JSONの形式が正しくありません。', 'error');
+      } else {
+        showImportStatus(error.message || 'インポートに失敗しました。', 'error');
+      }
+    }
+  });
+
   // === ローカルファイルインポート ===
   const importFileBtn = document.getElementById('import-file-btn');
   const importFileInput = document.getElementById('import-file-input');

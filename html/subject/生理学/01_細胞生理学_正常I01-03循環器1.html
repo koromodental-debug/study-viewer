@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>静止膜電位と脱分極 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 細胞生理学</span>
+    <h1>静止膜電位と脱分極</h1>
+    <div class="container">
+
+      <h2>静止膜電位の形成</h2>
+      <p><span class="key">静止膜電位</span>とは、静止期において細胞膜内外に生じる電位差のこと。細胞内が負、細胞外が正に帯電している。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">静止膜電位の形成メカニズム</div>
+        <ul>
+          <li><span class="key">Na<sup>+</sup>-K<sup>+</sup>ポンプ</span>がK<sup>+</sup>を細胞内へ、Na<sup>+</sup>を細胞外へ能動輸送</li>
+          <li><span class="key">K<sup>+</sup>リークチャネル</span>を通じてK<sup>+</sup>が濃度勾配に従い細胞外へ流出</li>
+          <li>細胞内の陽電荷が減少 → 細胞内が負に帯電</li>
+          <li>濃度勾配と電気的勾配が均衡した状態 = 静止膜電位</li>
+        </ul>
+      </div>
+
+      <h3>イオン濃度と膜電位</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>細胞内</th>
+          <th>細胞外</th>
+        </tr>
+        <tr>
+          <td>K<sup>+</sup>濃度</td>
+          <td><span class="highlight">150 mM</span>（高い）</td>
+          <td>5 mM（低い）</td>
+        </tr>
+        <tr>
+          <td>Na<sup>+</sup>濃度</td>
+          <td>低い</td>
+          <td>高い</td>
+        </tr>
+      </table>
+
+      <h3>静止膜電位の大きさ</h3>
+      <table>
+        <tr>
+          <th>細胞の種類</th>
+          <th>静止膜電位</th>
+        </tr>
+        <tr>
+          <td>神経細胞</td>
+          <td>-70 〜 -40 mV</td>
+        </tr>
+        <tr>
+          <td>骨格筋細胞・心筋細胞</td>
+          <td>-90 〜 -80 mV</td>
+        </tr>
+      </table>
+
+      <h2>高カリウム血症と脱分極</h2>
+      <p><span class="caution">細胞外K<sup>+</sup>濃度が上昇</span>すると、細胞内外のK<sup>+</sup>濃度差が小さくなる。</p>
+      <ul>
+        <li>K<sup>+</sup>の細胞外への流出が減少</li>
+        <li>細胞内が負に帯電しにくくなる</li>
+        <li>静止膜電位が浅くなり、<span class="highlight">脱分極を起こしやすくなる</span></li>
+      </ul>
+
+      <h3>高カリウム血症の原因</h3>
+      <ul>
+        <li><span class="key">細胞内→細胞外へのK<sup>+</sup>移動</span>：アシドーシス、重度の火傷、消化管出血、カリウム製剤投与</li>
+        <li><span class="key">腎臓からの排泄障害</span>：アルドステロン欠乏</li>
+      </ul>
+
+      <h2>活動電位の発生</h2>
+      <p>細胞が刺激されると、膜電位が一過性に+35mV程度まで上昇する。これを<span class="key">活動電位</span>（インパルス）という。</p>
+
+      <h3>活動電位の発生機序</h3>
+      <table>
+        <tr>
+          <th>相</th>
+          <th>イベント</th>
+        </tr>
+        <tr>
+          <td>① 静止</td>
+          <td>閾値以下の刺激では電位は元に戻る</td>
+        </tr>
+        <tr>
+          <td>② 上昇相（脱分極）</td>
+          <td>閾値を超える → 電位依存性Na<sup>+</sup>チャネル開口 → Na<sup>+</sup>流入 → 電位上昇</td>
+        </tr>
+        <tr>
+          <td>③ 下降相（再分極）</td>
+          <td>Na<sup>+</sup>チャネル不活性化、K<sup>+</sup>チャネル開口 → K<sup>+</sup>流出 → 電位低下</td>
+        </tr>
+        <tr>
+          <td>④ 後過分極</td>
+          <td>K<sup>+</sup>チャネルがすぐには閉じず、静止膜電位より過分極</td>
+        </tr>
+        <tr>
+          <td>⑤ 回復</td>
+          <td>Na<sup>+</sup>-K<sup>+</sup>ポンプにより元の静止膜電位に戻る</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">110A88</div>
+        <p>細胞外液中に増加すると神経細胞の著明な脱分極を起こすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a K<sup>+</sup><br>
+          b Na<sup>+</sup><br>
+          c Fe<sup>2+</sup><br>
+          d Mg<sup>2+</sup><br>
+          e Zn<sup>2+</sup>
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】細胞外K<sup>+</sup>濃度が上昇すると、細胞内外のK<sup>+</sup>濃度差が小さくなり、K<sup>+</sup>の流出が減少する。その結果、細胞内が負に帯電しにくくなり、脱分極を起こしやすくなる。Na<sup>+</sup>は活動電位発生時に細胞内に流入するが、細胞外濃度上昇が直接脱分極を引き起こすわけではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

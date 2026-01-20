@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "頭蓋を構成する骨",
+    "category": "解剖学",
+    "chapter": "03_頭頸部の骨"
+  },
+  "sections": [
+    {
+      "section": "咽頭結節と咽頭縫線",
+      "qa": [
+        {
+          "question": "咽頭結節があるのはどれか。1つ選べ。",
+          "answer": "E",
+          "choices": {
+            "a": "環椎",
+            "b": "軸椎",
+            "c": "舌骨",
+            "d": "口蓋骨",
+            "e": "後頭骨"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "112B38"
+        }
+      ]
+    }
+  ]
+}

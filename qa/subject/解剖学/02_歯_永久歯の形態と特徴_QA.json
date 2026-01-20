@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "title": "永久歯の形態と特徴",
+    "category": "解剖学",
+    "chapter": "02_歯"
+  },
+  "sections": [
+    {
+      "section": "結節・隆線の位置一覧",
+      "qa": [
+        {
+          "question": "歯の唇頬側面に見られるのはどれか。2つ選べ。",
+          "answer": "C, E",
+          "choices": {
+            "a": "斜切痕",
+            "b": "介在結節",
+            "c": "臼歯結節",
+            "d": "Carabelli 結節",
+            "e": "プロトスタイリッド"
+          },
+          "correctAnswer": "C, E",
+          "numChoices": 2,
+          "code": "115A32"
+        },
+        {
+          "question": "咬合面の近心半にみられるのはどれか。2つ選べ。",
+          "answer": "A, E",
+          "choices": {
+            "a": "介在結節",
+            "b": "臼歯結節",
+            "c": "Carabelli結節",
+            "d": "プロトスタイリッド",
+            "e": "遠心トリゴニード隆線"
+          },
+          "correctAnswer": "A, E",
+          "numChoices": 2,
+          "code": "111C28"
+        }
+      ]
+    },
+    {
+      "section": "臼歯結節",
+      "qa": []
+    },
+    {
+      "section": "プロトスタイリッド（原錐茎状突起）",
+      "qa": []
+    },
+    {
+      "section": "Carabelli結節（カラベリー結節）",
+      "qa": []
+    },
+    {
+      "section": "斜切痕（舌面歯頸溝）",
+      "qa": []
+    },
+    {
+      "section": "介在結節",
+      "qa": []
+    },
+    {
+      "section": "遠心トリゴニード隆線",
+      "qa": []
+    }
+  ]
+}

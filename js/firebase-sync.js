@@ -28,7 +28,8 @@ const FirebaseSync = (function() {
     'studyViewer_flashcardProgress',
     'studyViewer_flashcardSessions',
     'studyViewer_favorites',
-    'studyViewer_searchHistory'
+    'studyViewer_searchHistory',
+    'studyViewer_importedDecks'
   ];
 
   // 設定キー（デバイスごとに保持、同期しない）
@@ -273,6 +274,8 @@ const FirebaseSync = (function() {
         return JSON.stringify(mergeFlashcardSessions(localData, cloudData));
       } else if (key === 'studyViewer_favorites') {
         return JSON.stringify(mergeFavorites(localData, cloudData));
+      } else if (key === 'studyViewer_importedDecks') {
+        return JSON.stringify(mergeImportedDecks(localData, cloudData));
       }
     } catch (e) {
       console.error('[FirebaseSync] マージエラー:', e);
@@ -376,6 +379,48 @@ const FirebaseSync = (function() {
       }
     }
 
+    return merged;
+  }
+
+  /**
+   * インポート済みデッキのマージ
+   * データ形式: [{ id, title, category, cardCount, jsonData, importedAt, isLocal }]
+   */
+  function mergeImportedDecks(local, cloud) {
+    // 両方が配列であることを確認
+    const localDecks = Array.isArray(local) ? local : [];
+    const cloudDecks = Array.isArray(cloud) ? cloud : [];
+
+    // IDでマップを作成
+    const deckMap = new Map();
+
+    // クラウドのデッキを先に追加
+    for (const deck of cloudDecks) {
+      if (deck.id) {
+        deckMap.set(deck.id, deck);
+      }
+    }
+
+    // ローカルのデッキをマージ（より新しい方を優先）
+    for (const deck of localDecks) {
+      if (!deck.id) continue;
+
+      const existing = deckMap.get(deck.id);
+      if (!existing) {
+        // クラウドにない → ローカルを追加
+        deckMap.set(deck.id, deck);
+      } else {
+        // 両方にある → より新しい方を採用
+        const localTime = deck.importedAt || 0;
+        const cloudTime = existing.importedAt || 0;
+        if (localTime > cloudTime) {
+          deckMap.set(deck.id, deck);
+        }
+      }
+    }
+
+    const merged = Array.from(deckMap.values());
+    console.log(`[FirebaseSync] デッキマージ: ローカル${localDecks.length}件, クラウド${cloudDecks.length}件 → マージ後${merged.length}件`);
     return merged;
   }
 
@@ -913,6 +958,11 @@ function initAccountUI() {
 
       // ローカルストレージに保存
       saveImportedDeckToLocal(deck);
+
+      // Firebaseに同期（ログイン中の場合）
+      if (FirebaseSync.isLoggedIn()) {
+        FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
+      }
 
       showImportStatus(`「${title}」をインポートしました！（${cardCount}問）`, 'success');
 

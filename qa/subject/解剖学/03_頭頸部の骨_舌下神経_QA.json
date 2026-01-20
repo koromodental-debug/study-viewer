@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "title": "舌下神経",
+    "category": "解剖学",
+    "chapter": "03_頭頸部の骨"
+  },
+  "sections": [
+    {
+      "section": "外舌筋",
+      "qa": [
+        {
+          "question": "舌下神経管が存在するのはどれか。1つ選べ。",
+          "answer": "D",
+          "choices": {
+            "a": "下顎骨",
+            "b": "蝶形骨",
+            "c": "側頭骨",
+            "d": "後頭骨",
+            "e": "第一頸椎"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "114D40"
+        }
+      ]
+    },
+    {
+      "section": "内舌筋（固有舌筋）",
+      "qa": []
+    }
+  ]
+}

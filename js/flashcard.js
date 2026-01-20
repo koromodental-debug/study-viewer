@@ -98,6 +98,8 @@ const FlashcardModule = (function() {
     window.addEventListener('firebaseSyncComplete', () => {
       console.log('[FlashcardModule] Firebase同期完了 - 進捗データを再読み込み');
       loadProgress();
+      // インポートデッキも再読み込み（他デバイスからの同期を反映）
+      loadImportedDecks();
       // 演習中でなければ画面を更新
       if (!state.isActive) {
         renderDeckList();
@@ -208,6 +210,11 @@ const FlashcardModule = (function() {
       delete state.progress[key];
     }
     saveProgress();
+
+    // 4. Firebaseに同期（ログイン中の場合）
+    if (typeof FirebaseSync !== 'undefined' && FirebaseSync.isLoggedIn()) {
+      FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
+    }
 
     console.log(`[deleteImportedDeck] 削除完了: ${deckId}`);
   }

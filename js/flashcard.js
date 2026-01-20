@@ -68,7 +68,10 @@ const FlashcardModule = (function() {
     // 科目アコーディオンの開閉状態
     expandedSubjects: new Set(JSON.parse(localStorage.getItem('flashcard-expanded-subjects') || '[]')),
     // 最後に選択したトピックID
-    lastSelectedTopicId: localStorage.getItem('flashcard-last-topic') || null
+    lastSelectedTopicId: localStorage.getItem('flashcard-last-topic') || null,
+    // 選択問題用
+    selectedChoices: new Set(),  // 選択中の選択肢
+    choiceAnswered: false        // 解答済みフラグ
   };
 
   // DOM要素
@@ -881,8 +884,20 @@ const FlashcardModule = (function() {
               <div class="kokoshika-banner-desc">★★★超頻出のみ424問</div>
             </div>
           </div>
-          <div class="kokoshika-banner-stats">
-            ${kokoshikaStatsHtml}
+          <div class="kokoshika-banner-right">
+            <div class="kokoshika-banner-stats">
+              ${kokoshikaStatsHtml}
+            </div>
+            <button class="kokoshika-list-btn" data-topic-id="kokoshika_hisshu" title="カード一覧">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+            </button>
           </div>
         </div>
       `;
@@ -988,8 +1003,18 @@ const FlashcardModule = (function() {
     return `
       <div class="deck-topic" data-topic-id="${topic.id}">
         <span class="deck-topic-name">${displayTitle}</span>
-        <div class="deck-topic-stats">
+        <div class="deck-topic-right">
           ${statsHtml}
+          <button class="deck-list-btn" data-topic-id="${topic.id}" title="カード一覧">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6"></line>
+              <line x1="8" y1="12" x2="21" y2="12"></line>
+              <line x1="8" y1="18" x2="21" y2="18"></line>
+              <line x1="3" y1="6" x2="3.01" y2="6"></line>
+              <line x1="3" y1="12" x2="3.01" y2="12"></line>
+              <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </div>
     `;
@@ -1097,6 +1122,8 @@ const FlashcardModule = (function() {
     const topicRows = container.querySelectorAll('.deck-topic');
     topicRows.forEach(row => {
       row.addEventListener('click', async (e) => {
+        // 一覧ボタンがクリックされた場合はスキップ
+        if (e.target.closest('.deck-list-btn')) return;
         e.stopPropagation();
         const topicId = row.dataset.topicId;
         // 選択したトピックを記憶
@@ -1107,16 +1134,38 @@ const FlashcardModule = (function() {
       });
     });
 
+    // 一覧ボタンクリック（カード一覧表示）
+    const listBtns = container.querySelectorAll('.deck-list-btn');
+    listBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+        await renderDeckCardList(topicId);
+      });
+    });
+
     // ココシカバナークリック（学習開始）
     const kokoshikaBanners = container.querySelectorAll('.kokoshika-banner');
     kokoshikaBanners.forEach(banner => {
       banner.addEventListener('click', async (e) => {
+        // 一覧ボタンがクリックされた場合はスキップ
+        if (e.target.closest('.kokoshika-list-btn')) return;
         e.stopPropagation();
         const topicId = banner.dataset.topicId;
         state.lastSelectedTopicId = topicId;
         localStorage.setItem('flashcard-last-topic', topicId);
         state.isReviewMode = false;
         await loadTopic(topicId, state.shuffleEnabled);
+      });
+    });
+
+    // ココシカ一覧ボタンクリック
+    const kokoshikaListBtns = container.querySelectorAll('.kokoshika-list-btn');
+    kokoshikaListBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+        await renderDeckCardList(topicId);
       });
     });
 
@@ -2006,6 +2055,7 @@ const FlashcardModule = (function() {
     let currentQ = null;
     let currentSource = null;
     let currentSourceSection = null;
+    let currentChoices = {};  // 選択肢を保存
     let index = 0;
 
     // ココシカデッキの場合、科目名を特定
@@ -2025,6 +2075,12 @@ const FlashcardModule = (function() {
         currentSourceSection = trimmed.slice(10);
       } else if (trimmed.startsWith('Q: ') || trimmed.startsWith('Q:')) {
         currentQ = trimmed.replace(/^Q:\s*/, '');
+        currentChoices = {};  // 新しい質問が始まったら選択肢をリセット
+      } else if (/^[a-e]:\s/.test(trimmed)) {
+        // 選択肢を解析（a: xxx, b: xxx 形式）
+        const choiceKey = trimmed.charAt(0);
+        const choiceValue = trimmed.slice(2).trim();
+        currentChoices[choiceKey] = choiceValue;
       } else if ((trimmed.startsWith('A: ') || trimmed.startsWith('A:')) && currentQ) {
         const answer = trimmed.replace(/^A:\s*/, '');
         const card = {
@@ -2035,6 +2091,25 @@ const FlashcardModule = (function() {
           answer: answer,
           topicId: topicId
         };
+
+        // 選択肢がある場合、選択問題として設定
+        if (Object.keys(currentChoices).length > 0) {
+          // 正解キーを特定（answerと一致する選択肢を探す）
+          let correctKey = '';
+          for (const [key, value] of Object.entries(currentChoices)) {
+            if (value === answer || answer.includes(value) || value.includes(answer)) {
+              correctKey = key.toUpperCase();
+              // 正解の選択肢に○マークを追加
+              currentChoices[key] = value + '：○';
+              break;
+            }
+          }
+          card.choices = { ...currentChoices };
+          card.isChoiceCard = true;
+          card.correctAnswer = correctKey;
+          card.numChoices = 1;  // デフォルトは1つ選択
+        }
+
         // @sourceがある場合、HTMLパスを設定
         if (currentSource && subjectName) {
           card.htmlPath = `html/subject/${subjectName}/${currentSource}.html`;
@@ -2044,10 +2119,198 @@ const FlashcardModule = (function() {
         currentQ = null;
         currentSource = null;
         currentSourceSection = null;
+        currentChoices = {};
       }
     }
 
     return cards;
+  }
+
+  // === デッキ内カード一覧を表示 ===
+  async function renderDeckCardList(topicId) {
+    let topic;
+    let qaPath;
+
+    // ココシカ（特別デッキ）の場合
+    if (topicId === 'kokoshika_hisshu') {
+      topic = { id: 'kokoshika_hisshu', title: '必修ココシカ', subject: '必修' };
+      qaPath = 'deck/必修ココシカ.txt';
+    } else {
+      topic = DATA.find(d => d.id === topicId);
+      if (!topic || !topic.qaPath) {
+        container.innerHTML = `<div class="flashcard-error">トピックが見つかりません</div>`;
+        return;
+      }
+      qaPath = topic.qaPath;
+    }
+
+    // QAファイルを読み込み
+    let cards = [];
+    try {
+      const response = await fetch(encodeURI(qaPath));
+      const text = await response.text();
+      cards = parseQAToCards(text, topicId);
+    } catch (e) {
+      console.log('Q&A読み込みエラー:', e);
+      container.innerHTML = `<div class="flashcard-error">Q&Aの読み込みに失敗しました</div>`;
+      return;
+    }
+
+    // ヘッダー
+    const headerHtml = `
+      <div class="deck-card-list-header">
+        <button class="deck-card-list-back" id="deck-card-list-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="deck-card-list-title">
+          <span class="deck-card-list-topic">${escapeHtml(topic.title)}</span>
+          <span class="deck-card-list-count">${cards.length}枚</span>
+        </div>
+        <button class="deck-card-list-start" id="deck-card-list-start">演習</button>
+      </div>
+    `;
+
+    // カード一覧（検索結果と同じ形式）
+    let cardsHtml = cards.map((card, idx) => {
+      const key = `${topicId}:${idx}`;
+      const cardProgress = state.progress[key];
+      const cardStatus = cardProgress ? cardProgress.status : 'new';
+      const isFavorite = cardProgress && cardProgress.favorite;
+      const isExpanded = state.deckCardListExpandedKeys && state.deckCardListExpandedKeys.has(key);
+
+      return `
+        <div class="card-search-item ${isExpanded ? 'expanded' : ''}" data-key="${escapeHtml(key)}">
+          <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
+            <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
+            ${isExpanded ? `<div class="card-search-answer">A: ${escapeHtml(card.answer)}</div>` : ''}
+          </div>
+          <div class="card-search-footer">
+            <div class="card-search-meta">${card.section ? escapeHtml(card.section) : ''}</div>
+            <div class="card-search-actions">
+              <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(key)}" title="お気に入り">
+                <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </button>
+              <button class="card-search-action-btn again ${cardStatus === 'again' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="again">もう一度</button>
+              <button class="card-search-action-btn memorized ${cardStatus === 'memorized' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="memorized">覚えた</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = `
+      <div class="deck-card-list-view">
+        ${headerHtml}
+        <div class="deck-card-list-content">
+          ${cardsHtml}
+        </div>
+      </div>
+    `;
+
+    // タブバーを非表示
+    const tabbar = document.querySelector('.floating-tabbar');
+    if (tabbar) tabbar.classList.add('hidden');
+
+    // 展開状態を初期化
+    if (!state.deckCardListExpandedKeys) {
+      state.deckCardListExpandedKeys = new Set();
+    }
+
+    // イベントバインド
+    bindDeckCardListEvents(topicId);
+  }
+
+  // デッキカード一覧のイベントバインド
+  function bindDeckCardListEvents(topicId) {
+    // 戻るボタン
+    const backBtn = document.getElementById('deck-card-list-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        state.deckCardListExpandedKeys = new Set();
+        // タブバーを再表示
+        const tabbar = document.querySelector('.floating-tabbar');
+        if (tabbar) tabbar.classList.remove('hidden');
+        renderDeckList();
+      });
+    }
+
+    // 演習開始ボタン
+    const startBtn = document.getElementById('deck-card-list-start');
+    if (startBtn) {
+      startBtn.addEventListener('click', async () => {
+        state.deckCardListExpandedKeys = new Set();
+        state.lastSelectedTopicId = topicId;
+        localStorage.setItem('flashcard-last-topic', topicId);
+        state.isReviewMode = false;
+        await loadTopic(topicId, state.shuffleEnabled);
+      });
+    }
+
+    // カードクリックで展開/折りたたみ
+    const cardEls = container.querySelectorAll('.deck-card-list-card');
+    cardEls.forEach(cardEl => {
+      cardEl.addEventListener('click', () => {
+        const key = cardEl.dataset.key;
+        if (state.deckCardListExpandedKeys.has(key)) {
+          state.deckCardListExpandedKeys.delete(key);
+        } else {
+          state.deckCardListExpandedKeys.add(key);
+        }
+        renderDeckCardList(topicId);
+      });
+    });
+
+    // 覚えた/もう一度ボタン
+    const actionBtns = container.querySelectorAll('.deck-card-list-view .card-search-action-btn');
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+        const action = btn.dataset.action;
+
+        const existing = state.progress[key] || {};
+        state.progress[key] = {
+          ...existing,
+          status: action,
+          lastReview: Date.now()
+        };
+        saveProgress();
+
+        // UIを更新
+        const parent = btn.closest('.card-search-actions');
+        if (parent) {
+          parent.querySelectorAll('.card-search-action-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      });
+    });
+
+    // お気に入りボタン
+    const favBtns = container.querySelectorAll('.deck-card-list-view .card-search-favorite-btn');
+    favBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+
+        const existing = state.progress[key] || {};
+        const newFavorite = !existing.favorite;
+        state.progress[key] = {
+          ...existing,
+          favorite: newFavorite
+        };
+        saveProgress();
+
+        btn.classList.toggle('active', newFavorite);
+        const svg = btn.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('fill', newFavorite ? 'currentColor' : 'none');
+        }
+      });
+    });
   }
 
   // JSONフォーマットのQAをパース
@@ -2057,13 +2320,29 @@ const FlashcardModule = (function() {
 
     for (const section of jsonData.sections || []) {
       for (const qa of section.qa || []) {
+        const hasChoices = qa.choices && Object.keys(qa.choices).length > 0;
+
+        // 選択肢から正解キーを抽出（「○」を含む選択肢）
+        let correctAnswerKey = '';
+        if (hasChoices) {
+          const correctKeys = Object.entries(qa.choices)
+            .filter(([key, value]) => value && value.includes('○'))
+            .map(([key]) => key);
+          correctAnswerKey = correctKeys.join('').toUpperCase();
+        }
+
         cards.push({
           index: index,
           originalIndex: index,
           section: section.section,
           question: qa.question,
           answer: qa.answer,
-          topicId: topicId
+          topicId: topicId,
+          // 選択問題用フィールド
+          isChoiceCard: hasChoices,
+          choices: hasChoices ? qa.choices : null,
+          correctAnswer: correctAnswerKey || qa.answer || '',
+          numChoices: qa.numChoices || 1
         });
         index++;
       }
@@ -2343,6 +2622,9 @@ const FlashcardModule = (function() {
       }
 
       // カードの場合
+      const cardProgress = state.progress[item.searchKey];
+      const cardStatus = cardProgress ? cardProgress.status : 'new';
+      const isFavorite = cardProgress && cardProgress.favorite;
       return `
         <div class="card-search-item ${isExpanded ? 'expanded' : ''}" data-key="${escapeHtml(item.searchKey)}">
           <div class="card-search-card" data-key="${escapeHtml(item.searchKey)}">
@@ -2351,7 +2633,15 @@ const FlashcardModule = (function() {
           </div>
           <div class="card-search-footer">
             <div class="card-search-meta">${escapeHtml(item.subject)} › ${escapeHtml(item.topicTitle)}</div>
-            <button class="card-search-deck-link" data-topic-id="${escapeHtml(item.topicId)}">演習</button>
+            <div class="card-search-actions">
+              <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(item.searchKey)}" title="お気に入り">
+                <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </button>
+              <button class="card-search-action-btn again ${cardStatus === 'again' ? 'active' : ''}" data-key="${escapeHtml(item.searchKey)}" data-action="again">もう一度</button>
+              <button class="card-search-action-btn memorized ${cardStatus === 'memorized' ? 'active' : ''}" data-key="${escapeHtml(item.searchKey)}" data-action="memorized">覚えた</button>
+            </div>
           </div>
         </div>
       `;
@@ -2377,16 +2667,52 @@ const FlashcardModule = (function() {
       });
     });
 
-    // 演習ボタンクリック（カード）
-    resultsEl.querySelectorAll('.card-search-deck-link').forEach(btn => {
-      btn.addEventListener('click', async (e) => {
+    // 覚えた/もう一度ボタンクリック（カード）
+    resultsEl.querySelectorAll('.card-search-action-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const topicId = btn.dataset.topicId;
-        state.cardSearch.query = '';
-        state.cardSearch.results = [];
-        state.cardSearch.expandedKeys = new Set();
-        state.isReviewMode = false;
-        await loadTopic(topicId, state.shuffleEnabled);
+        const key = btn.dataset.key;
+        const action = btn.dataset.action;
+
+        // 進捗を更新（既存のfavorite状態を保持）
+        const existing = state.progress[key] || {};
+        state.progress[key] = {
+          ...existing,
+          status: action,
+          lastReview: Date.now()
+        };
+        saveProgress();
+
+        // UIを更新（ボタンのactive状態を切り替え）
+        const parent = btn.closest('.card-search-actions');
+        if (parent) {
+          parent.querySelectorAll('.card-search-action-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      });
+    });
+
+    // お気に入りボタンクリック
+    resultsEl.querySelectorAll('.card-search-favorite-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+
+        // 進捗を更新（favorite状態をトグル）
+        const existing = state.progress[key] || {};
+        const newFavorite = !existing.favorite;
+        state.progress[key] = {
+          ...existing,
+          favorite: newFavorite
+        };
+        saveProgress();
+
+        // UIを更新
+        btn.classList.toggle('active', newFavorite);
+        const svg = btn.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('fill', newFavorite ? 'currentColor' : 'none');
+        }
       });
     });
 
@@ -2487,6 +2813,9 @@ const FlashcardModule = (function() {
       }
 
       // カードの場合
+      const cardProgress = state.progress[item.searchKey];
+      const cardStatus = cardProgress ? cardProgress.status : 'new';
+      const isFavorite = cardProgress && cardProgress.favorite;
       return `
         <div class="card-search-item ${isExpanded ? 'expanded' : ''}" data-key="${escapeHtml(item.searchKey)}">
           <div class="card-search-card" data-key="${escapeHtml(item.searchKey)}">
@@ -2495,7 +2824,15 @@ const FlashcardModule = (function() {
           </div>
           <div class="card-search-footer">
             <div class="card-search-meta">${escapeHtml(item.subject)} › ${escapeHtml(item.topicTitle)}</div>
-            <button class="card-search-deck-link" data-topic-id="${escapeHtml(item.topicId)}">演習</button>
+            <div class="card-search-actions">
+              <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(item.searchKey)}" title="お気に入り">
+                <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </button>
+              <button class="card-search-action-btn again ${cardStatus === 'again' ? 'active' : ''}" data-key="${escapeHtml(item.searchKey)}" data-action="again">もう一度</button>
+              <button class="card-search-action-btn memorized ${cardStatus === 'memorized' ? 'active' : ''}" data-key="${escapeHtml(item.searchKey)}" data-action="memorized">覚えた</button>
+            </div>
           </div>
         </div>
       `;
@@ -2544,16 +2881,52 @@ const FlashcardModule = (function() {
       });
     });
 
-    // 演習ボタンクリック
-    resultsEl.querySelectorAll('.card-search-deck-link').forEach(btn => {
-      btn.addEventListener('click', async (e) => {
+    // 覚えた/もう一度ボタンクリック
+    resultsEl.querySelectorAll('.card-search-action-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const topicId = btn.dataset.topicId;
-        state.cardSearch.query = '';
-        state.cardSearch.results = [];
-        state.cardSearch.expandedKeys = new Set();
-        state.isReviewMode = false;
-        await loadTopic(topicId, state.shuffleEnabled);
+        const key = btn.dataset.key;
+        const action = btn.dataset.action;
+
+        // 進捗を更新（既存のfavorite状態を保持）
+        const existing = state.progress[key] || {};
+        state.progress[key] = {
+          ...existing,
+          status: action,
+          lastReview: Date.now()
+        };
+        saveProgress();
+
+        // UIを更新（ボタンのactive状態を切り替え）
+        const parent = btn.closest('.card-search-actions');
+        if (parent) {
+          parent.querySelectorAll('.card-search-action-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      });
+    });
+
+    // お気に入りボタンクリック
+    resultsEl.querySelectorAll('.card-search-favorite-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+
+        // 進捗を更新（favorite状態をトグル）
+        const existing = state.progress[key] || {};
+        const newFavorite = !existing.favorite;
+        state.progress[key] = {
+          ...existing,
+          favorite: newFavorite
+        };
+        saveProgress();
+
+        // UIを更新
+        btn.classList.toggle('active', newFavorite);
+        const svg = btn.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('fill', newFavorite ? 'currentColor' : 'none');
+        }
       });
     });
 
@@ -2601,6 +2974,133 @@ const FlashcardModule = (function() {
     if (state.currentTopicId.startsWith('__search_')) return false;
     // それ以外の__で始まるデッキは特殊デッキ
     return state.currentTopicId.startsWith('__');
+  }
+
+  // === 選択問題用UI ===
+  function renderChoicesUI(card) {
+    const choices = card.choices || {};
+    const validChoices = Object.entries(choices)
+      .filter(([key, value]) => value && value.trim() !== '');
+
+    if (validChoices.length === 0) return '';
+
+    return `
+      <div class="flashcard-choices" data-num="${card.numChoices || 1}">
+        ${validChoices.map(([key, value]) => `
+          <button class="flashcard-choice-btn" data-choice="${key}">
+            <span class="choice-label">${key.toUpperCase()}</span>
+            <span class="choice-text">${escapeHtml(value)}</span>
+          </button>
+        `).join('')}
+      </div>
+      <button class="flashcard-submit-btn" id="flashcard-submit-btn" disabled>
+        解答
+      </button>
+    `;
+  }
+
+  // 選択肢タップ時の処理
+  function onChoiceSelect(e) {
+    if (state.choiceAnswered) return;
+
+    const btn = e.currentTarget;
+    const choiceKey = btn.dataset.choice;
+    const card = state.filteredCards[state.currentIndex];
+    const numChoices = card.numChoices || 1;
+
+    // 選択状態の切り替え
+    if (state.selectedChoices.has(choiceKey)) {
+      state.selectedChoices.delete(choiceKey);
+      btn.classList.remove('selected');
+    } else {
+      // 単一選択の場合は他を解除
+      if (numChoices === 1) {
+        document.querySelectorAll('.flashcard-choice-btn').forEach(b => {
+          b.classList.remove('selected');
+        });
+        state.selectedChoices.clear();
+      }
+      state.selectedChoices.add(choiceKey);
+      btn.classList.add('selected');
+    }
+
+    // 解答ボタンの有効/無効
+    const submitBtn = document.getElementById('flashcard-submit-btn');
+    if (submitBtn) {
+      submitBtn.disabled = state.selectedChoices.size !== numChoices;
+    }
+  }
+
+  // 解答ボタン押下時の判定処理
+  function onSubmitAnswer() {
+    if (state.choiceAnswered) return;
+
+    const card = state.filteredCards[state.currentIndex];
+    const correctAnswer = (card.correctAnswer || '').toUpperCase();
+
+    // 判定
+    const selectedKeys = Array.from(state.selectedChoices)
+      .map(k => k.toUpperCase())
+      .sort()
+      .join('');
+    const sortedCorrect = correctAnswer.split('').sort().join('');
+    const isCorrect = selectedKeys === sortedCorrect;
+
+    // 状態を更新
+    state.choiceAnswered = true;
+
+    // UIにフィードバック表示
+    showChoiceFeedback(correctAnswer, isCorrect);
+
+    // カードをめくる（解説表示）
+    flipToAnswer();
+  }
+
+  // 正解/不正解のUI表示
+  function showChoiceFeedback(correctAnswer, isCorrect) {
+    // 全選択肢を無効化し、正解/不正解を表示
+    document.querySelectorAll('.flashcard-choice-btn').forEach(btn => {
+      btn.disabled = true;
+      const key = btn.dataset.choice.toUpperCase();
+
+      if (correctAnswer.includes(key)) {
+        btn.classList.add('correct');
+      } else if (btn.classList.contains('selected')) {
+        btn.classList.add('incorrect');
+      }
+    });
+
+    // 解答ボタンを非表示
+    const submitBtn = document.getElementById('flashcard-submit-btn');
+    if (submitBtn) {
+      submitBtn.style.display = 'none';
+    }
+
+    // 結果フィードバック表示
+    const feedback = document.createElement('div');
+    feedback.className = `flashcard-result-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+    feedback.textContent = isCorrect ? '正解!' : '不正解';
+
+    const choicesDiv = document.querySelector('.flashcard-choices');
+    if (choicesDiv) {
+      choicesDiv.after(feedback);
+    }
+  }
+
+  // 選択問題用：解答後にカードをめくる（トグルではなく強制的にめくる）
+  function flipToAnswer() {
+    state.isFlipped = true;
+    const exercise = document.querySelector('.flashcard-exercise');
+    const card = document.getElementById('flashcard-card');
+    const actionBar = document.querySelector('.flashcard-action-bar');
+    const summary = document.getElementById('flashcard-summary');
+
+    if (exercise) exercise.classList.add('flipped');
+    if (card) card.classList.add('flipped');
+    if (actionBar) actionBar.classList.add('show');
+    if (summary && summary.classList.contains('has-content')) {
+      summary.classList.add('show');
+    }
   }
 
   // === カード表示 ===
@@ -2658,10 +3158,12 @@ const FlashcardModule = (function() {
                 <div class="flashcard-question">
                   ${card.question}
                 </div>
-                <!-- タップヒント（カード内、表面のみ） -->
+                ${card.isChoiceCard ? renderChoicesUI(card) : `
+                <!-- タップヒント（カード内、表面のみ、通常カードのみ） -->
                 <div class="flashcard-tap-hint ${state.isFlipped ? 'hide' : ''}" id="tap-hint">
                   タップで答え
                 </div>
+                `}
                 <div class="flashcard-answer">
                   ${card.answer}
                 </div>
@@ -2785,9 +3287,26 @@ const FlashcardModule = (function() {
     // お気に入りボタン
     document.getElementById('flashcard-favorite-btn').addEventListener('click', toggleFavoriteCurrentCard);
 
-    // カードタップ
-    const cardContainer = document.getElementById('flashcard-card-container');
-    cardContainer.addEventListener('click', flip);
+    // 現在のカードを取得
+    const currentCard = state.filteredCards[state.currentIndex];
+
+    // 選択問題の場合
+    if (currentCard && currentCard.isChoiceCard) {
+      // 選択肢クリックイベント
+      document.querySelectorAll('.flashcard-choice-btn').forEach(btn => {
+        btn.addEventListener('click', onChoiceSelect);
+      });
+
+      // 解答ボタンイベント
+      const submitBtn = document.getElementById('flashcard-submit-btn');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', onSubmitAnswer);
+      }
+    } else {
+      // 通常カード：タップでめくる
+      const cardContainer = document.getElementById('flashcard-card-container');
+      cardContainer.addEventListener('click', flip);
+    }
 
     // スワイプ（ステージ全体で判定 = カード + まとめエリア）
     const stage = document.querySelector('.flashcard-stage');
@@ -3046,6 +3565,9 @@ const FlashcardModule = (function() {
     if (state.currentIndex < state.filteredCards.length - 1) {
       state.currentIndex++;
       state.isFlipped = false;
+      // 選択問題用状態をリセット
+      state.selectedChoices.clear();
+      state.choiceAnswered = false;
       renderCard();
     }
   }
@@ -3054,6 +3576,9 @@ const FlashcardModule = (function() {
     if (state.currentIndex > 0) {
       state.currentIndex--;
       state.isFlipped = false;
+      // 選択問題用状態をリセット
+      state.selectedChoices.clear();
+      state.choiceAnswered = false;
       renderCard();
     }
   }

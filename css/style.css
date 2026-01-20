@@ -4661,6 +4661,41 @@ body:not(.is-practice) #flashcard-content {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+[data-theme="dark"] .deck-list-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="dark"] .deck-list-btn:hover,
+[data-theme="dark"] .deck-list-btn:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .deck-card-list-view {
+  background: var(--background);
+}
+
+[data-theme="dark"] .deck-card-list-header {
+  background: var(--surface);
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .deck-card-list-back {
+  color: #0A84FF;
+}
+
+[data-theme="dark"] .deck-card-list-back:active {
+  background: rgba(10, 132, 255, 0.15);
+}
+
+[data-theme="dark"] .deck-card-list-topic {
+  color: var(--label);
+}
+
+[data-theme="dark"] .deck-card-list-start {
+  background: #0A84FF;
+}
+
 /* ===== 旧スタイル（互換性維持） ===== */
 
 .deck-section-title {
@@ -5902,6 +5937,7 @@ body:not(.is-practice) #flashcard-content {
   border-bottom: 1px solid #f0f0f0;
   cursor: pointer;
   transition: background 0.15s ease;
+  overflow: hidden;
 }
 
 .deck-topic:last-child {
@@ -5952,9 +5988,14 @@ body:not(.is-practice) #flashcard-content {
 }
 
 .deck-topic-name {
-  flex: 1;
+  flex: 1 1 0;
+  width: 0;
   font-size: 15px;
   color: var(--text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 12px;
 }
 
 /* 統計バッジ */
@@ -5992,6 +6033,129 @@ body:not(.is-practice) #flashcard-content {
   font-size: 11px;
   color: #8E8E93;
   font-weight: 500;
+}
+
+/* トピック行の右側（統計＋一覧ボタン） */
+.deck-topic-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* 一覧ボタン */
+.deck-list-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: var(--surface-alt, #f5f5f7);
+  color: var(--secondary-label, #8e8e93);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.deck-list-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.deck-list-btn:hover {
+  background: var(--border-color, #e5e5ea);
+}
+
+.deck-list-btn:active {
+  transform: scale(0.92);
+  background: var(--border-color, #e5e5ea);
+}
+
+/* === デッキカード一覧画面 === */
+.deck-card-list-view {
+  min-height: 100vh;
+  background: var(--background, #f2f2f7);
+}
+
+.deck-card-list-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--surface, #fff);
+  border-bottom: 1px solid var(--border-subtle, #e5e5ea);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.deck-card-list-back {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--system-blue, #007aff);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.deck-card-list-back svg {
+  width: 24px;
+  height: 24px;
+}
+
+.deck-card-list-back:active {
+  background: rgba(0, 122, 255, 0.1);
+}
+
+.deck-card-list-title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.deck-card-list-topic {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--label, #000);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deck-card-list-count {
+  font-size: 12px;
+  color: var(--secondary-label, #8e8e93);
+}
+
+.deck-card-list-start {
+  padding: 8px 16px;
+  background: var(--system-blue, #007aff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.deck-card-list-start:active {
+  opacity: 0.8;
+}
+
+.deck-card-list-content {
+  padding: 16px;
 }
 
 /* デッキオプション */
@@ -10239,6 +10403,80 @@ body.is-practice .tab-content {
   opacity: 0.9;
 }
 
+/* 検索結果のアクションボタン（覚えた/もう一度/お気に入り） */
+.card-search-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* お気に入りボタン */
+.card-search-favorite-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--tertiary-label);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.card-search-favorite-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.card-search-favorite-btn:active {
+  transform: scale(0.9);
+}
+
+.card-search-favorite-btn.active {
+  color: var(--system-yellow);
+}
+
+.card-search-action-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--surface);
+  color: var(--secondary-label);
+  transition: all 0.15s ease;
+}
+
+.card-search-action-btn.again {
+  border-color: var(--system-orange);
+  color: var(--system-orange);
+}
+
+.card-search-action-btn.again.active {
+  background: var(--system-orange);
+  color: #fff;
+}
+
+.card-search-action-btn.memorized {
+  border-color: var(--system-green);
+  color: var(--system-green);
+}
+
+.card-search-action-btn.memorized.active {
+  background: var(--system-green);
+  color: #fff;
+}
+
+.card-search-action-btn:active {
+  transform: scale(0.95);
+}
+
 /* ハイライト */
 .card-search-highlight {
   background: rgba(255, 204, 0, 0.4);
@@ -10570,7 +10808,276 @@ body.is-practice .tab-content {
   color: #34C759;
 }
 
+.kokoshika-banner-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kokoshika-list-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.kokoshika-list-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.kokoshika-list-btn:active {
+  transform: scale(0.92);
+  background: rgba(255, 255, 255, 0.3);
+}
+
 /* ダークモード */
 [data-theme="dark"] .kokoshika-banner {
   background: linear-gradient(135deg, #E55A2B 0%, #D4820F 100%);
+}
+
+/* =========================================
+   選択問題用スタイル（フラッシュカード内）
+   ========================================= */
+
+/* 選択肢コンテナ */
+.flashcard-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+  width: 100%;
+}
+
+/* 選択肢ボタン */
+.flashcard-choice-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface-alt, #f5f5f7);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md, 12px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-color, #2c2c2c);
+}
+
+.flashcard-choice-btn:hover:not(:disabled) {
+  background: #e8f4ff;
+  border-color: #007AFF;
+}
+
+.flashcard-choice-btn.selected {
+  background: #e8f4ff;
+  border-color: #007AFF;
+}
+
+.flashcard-choice-btn.correct {
+  background: #d4edda !important;
+  border-color: #28a745 !important;
+}
+
+.flashcard-choice-btn.incorrect {
+  background: #f8d7da !important;
+  border-color: #dc3545 !important;
+}
+
+.flashcard-choice-btn:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+/* 選択肢ラベル（A, B, C等） */
+.flashcard-choice-btn .choice-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  background: var(--border-color, #e8e8e8);
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-color, #2c2c2c);
+  flex-shrink: 0;
+}
+
+.flashcard-choice-btn.selected .choice-label {
+  background: #007AFF;
+  color: #fff;
+}
+
+.flashcard-choice-btn.correct .choice-label {
+  background: #28a745;
+  color: #fff;
+}
+
+.flashcard-choice-btn.incorrect .choice-label {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* 選択肢テキスト */
+.flashcard-choice-btn .choice-text {
+  flex: 1;
+  padding-top: 3px;
+}
+
+/* 解答ボタン */
+.flashcard-submit-btn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px 24px;
+  background: #007AFF;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md, 12px);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flashcard-submit-btn:hover:not(:disabled) {
+  background: #0066CC;
+}
+
+.flashcard-submit-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* 結果フィードバック */
+.flashcard-result-feedback {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: var(--radius-md, 12px);
+}
+
+.flashcard-result-feedback.correct {
+  background: #d4edda;
+  color: #155724;
+}
+
+.flashcard-result-feedback.incorrect {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .flashcard-choice-btn {
+  background: var(--surface-alt, #1c1c1e);
+  color: var(--text-color, #f5f5f7);
+}
+
+[data-theme="dark"] .flashcard-choice-btn:hover:not(:disabled) {
+  background: #1a3a5c;
+  border-color: #0A84FF;
+}
+
+[data-theme="dark"] .flashcard-choice-btn.selected {
+  background: #1a3a5c;
+  border-color: #0A84FF;
+}
+
+[data-theme="dark"] .flashcard-choice-btn .choice-label {
+  background: var(--border-color, #38383a);
+  color: var(--text-color, #f5f5f7);
+}
+
+[data-theme="dark"] .flashcard-choice-btn.selected .choice-label {
+  background: #0A84FF;
+  color: #fff;
+}
+
+[data-theme="dark"] .flashcard-submit-btn {
+  background: #0A84FF;
+}
+
+[data-theme="dark"] .flashcard-submit-btn:hover:not(:disabled) {
+  background: #0077E6;
+}
+
+[data-theme="dark"] .flashcard-submit-btn:disabled {
+  background: #3a3a3c;
+  color: #8e8e93;
+}
+
+[data-theme="dark"] .flashcard-result-feedback.correct {
+  background: #1e4620;
+  color: #7dce82;
+}
+
+[data-theme="dark"] .flashcard-result-feedback.incorrect {
+  background: #5a1a1a;
+  color: #f5a5a5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .flashcard-choice-btn {
+    background: var(--surface-alt, #1c1c1e);
+    color: var(--text-color, #f5f5f7);
+  }
+
+  :root:not([data-theme="light"]) .flashcard-choice-btn:hover:not(:disabled) {
+    background: #1a3a5c;
+    border-color: #0A84FF;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-choice-btn.selected {
+    background: #1a3a5c;
+    border-color: #0A84FF;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-choice-btn .choice-label {
+    background: var(--border-color, #38383a);
+    color: var(--text-color, #f5f5f7);
+  }
+
+  :root:not([data-theme="light"]) .flashcard-choice-btn.selected .choice-label {
+    background: #0A84FF;
+    color: #fff;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-submit-btn {
+    background: #0A84FF;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-submit-btn:hover:not(:disabled) {
+    background: #0077E6;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-submit-btn:disabled {
+    background: #3a3a3c;
+    color: #8e8e93;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-result-feedback.correct {
+    background: #1e4620;
+    color: #7dce82;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-result-feedback.incorrect {
+    background: #5a1a1a;
+    color: #f5a5a5;
+  }
 }

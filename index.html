@@ -195,6 +195,16 @@
           </button>
         </div>
         <div class="import-modal-body">
+          <!-- プロンプトコピー -->
+          <div class="import-prompt-copy">
+            <button id="copy-prompt-btn" class="copy-prompt-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+              </svg>
+              <span>AI用プロンプトをコピー</span>
+            </button>
+            <span id="copy-prompt-status" class="copy-prompt-status"></span>
+          </div>
           <!-- JSON貼り付けインポート -->
           <div class="import-section import-paste-section">
             <p class="import-description">AIが生成したJSONを貼り付けてインポート</p>

@@ -10773,6 +10773,55 @@ body.is-practice .tab-content {
   color: #007aff;
 }
 
+/* プロンプトコピー */
+.import-prompt-copy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.copy-prompt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-prompt-btn:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--system-blue);
+}
+
+.copy-prompt-btn:active {
+  transform: scale(0.98);
+}
+
+.copy-prompt-btn svg {
+  color: var(--secondary-label);
+}
+
+.copy-prompt-status {
+  font-size: 13px;
+  color: var(--system-green);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.copy-prompt-status.show {
+  opacity: 1;
+}
+
 /* JSON貼り付けインポート */
 .import-paste-section {
   margin-bottom: 16px;

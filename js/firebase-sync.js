@@ -905,6 +905,31 @@ function initAccountUI() {
     }
   });
 
+  // === プロンプトコピー ===
+  const IMPORT_PROMPT = `この画像からフラッシュカード用Q&Aを作成。JSONのみ出力。
+
+{"metadata":{"title":"タイトル","category":"カテゴリ"},"sections":[{"section":"セクション名","qa":[{"question":"質問","answer":"回答"}]}]}
+
+ルール: 1問1答、答えは簡潔に、内容でsection分類`;
+
+  const copyPromptBtn = document.getElementById('copy-prompt-btn');
+  const copyPromptStatus = document.getElementById('copy-prompt-status');
+
+  copyPromptBtn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(IMPORT_PROMPT);
+      if (copyPromptStatus) {
+        copyPromptStatus.textContent = 'コピーしました';
+        copyPromptStatus.classList.add('show');
+        setTimeout(() => {
+          copyPromptStatus.classList.remove('show');
+        }, 2000);
+      }
+    } catch (e) {
+      console.error('コピーエラー:', e);
+    }
+  });
+
   // === セクショントグル ===
   document.querySelectorAll('.import-section-toggle').forEach(btn => {
     btn.addEventListener('click', () => {

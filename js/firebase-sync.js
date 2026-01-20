@@ -976,10 +976,15 @@ function initAccountUI() {
       cleanText = cleanText
         .replace(/「/g, '"')
         .replace(/」/g, '"')
-        .replace(/"/g, '"')
-        .replace(/"/g, '"')
-        .replace(/'/g, "'")
-        .replace(/'/g, "'")
+        .replace(/"/g, '"')  // U+201C
+        .replace(/"/g, '"')  // U+201D
+        .replace(/＂/g, '"') // U+FF02 全角ダブルクォート
+        .replace(/″/g, '"')  // U+2033 ダブルプライム
+        .replace(/〝/g, '"') // U+301D
+        .replace(/〞/g, '"') // U+301E
+        .replace(/'/g, "'")  // U+2018
+        .replace(/'/g, "'")  // U+2019
+        .replace(/＇/g, "'") // U+FF07 全角シングルクォート
         .replace(/：/g, ':')
         .replace(/［/g, '[')
         .replace(/］/g, ']')
@@ -999,6 +1004,10 @@ function initAccountUI() {
 
       // 7. 制御文字を除去（タブ・改行は維持）
       cleanText = cleanText.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
+
+      // デバッグ: パース前のテキストをログ出力
+      console.log('[JSON Import] クリーン後のテキスト:', cleanText.substring(0, 100));
+      console.log('[JSON Import] 最初の10文字のcharCode:', [...cleanText.substring(0, 10)].map(c => c.charCodeAt(0).toString(16)));
 
       const jsonData = JSON.parse(cleanText);
 

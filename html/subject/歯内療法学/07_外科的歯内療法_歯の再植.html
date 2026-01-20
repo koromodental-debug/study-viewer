@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯の再植 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 外科的歯内療法</span>
+    <h1>歯の再植</h1>
+    <div class="container">
+
+      <h2>歯の再植法の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>内容</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td><span class="key">脱臼歯の再植</span></td>
+          <td>外傷で脱臼した歯を再植</td>
+          <td>完全脱臼</td>
+        </tr>
+        <tr>
+          <td><span class="key">意図的再植法</span></td>
+          <td>意図的に抜歯→処置→再植</td>
+          <td>通常の歯内治療・外科的歯内治療が困難な症例</td>
+        </tr>
+      </table>
+
+      <h2>脱臼歯の再植</h2>
+      <h3>最重要ポイント</h3>
+      <ul>
+        <li><span class="highlight">歯根膜の保護が最重要</span></li>
+        <li>口腔外での処置時間を<span class="key">できるだけ短縮</span></li>
+        <li>再植を優先し、歯内治療は後で行う</li>
+      </ul>
+
+      <h3>脱臼歯の保存方法</h3>
+      <ul>
+        <li><span class="key">生理食塩液</span></li>
+        <li><span class="key">牛乳</span></li>
+        <li><span class="key">Hanks液</span>（歯の保存液）</li>
+        <li>湿潤させた綿花やティッシュペーパー</li>
+        <li>口腔内（口腔前庭）での保存</li>
+      </ul>
+      <p class="note">※ 乾燥を防ぐことが重要。水道水での流水洗浄は可。</p>
+
+      <h2>再植後の合併症</h2>
+      <div class="point-box">
+        <div class="point-box-title">歯根完成永久歯の再植後に生じやすい合併症（頻出）</div>
+        <ul>
+          <li><span class="highlight">骨性癒着（アンキローシス）</span></li>
+          <li><span class="highlight">歯冠の変色</span>（歯髄壊死による）</li>
+        </ul>
+      </div>
+
+      <h3>生じにくいもの</h3>
+      <ul>
+        <li><span class="caution">内部吸収</span>：生活歯髄で起こる</li>
+        <li><span class="caution">歯髄腔狭窄</span>：歯根完成歯では歯髄が壊死するため起こらない</li>
+        <li><span class="caution">象牙質粒</span>：生活歯髄で形成される</li>
+      </ul>
+
+      <h2>骨性癒着（アンキローシス）</h2>
+      <h3>発生機序</h3>
+      <p>歯根膜の損傷 → 骨置換性吸収 → 歯根と歯槽骨が直接癒着</p>
+
+      <h3>骨性癒着の症状・所見</h3>
+      <table>
+        <tr>
+          <th>検査</th>
+          <th>所見</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">動揺度検査</span></td>
+          <td><span class="highlight">生理的動揺の喪失</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">打診</span></td>
+          <td><span class="highlight">金属音</span>（高く澄んだ音）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">エックス線検査</span></td>
+          <td><span class="highlight">歯根膜腔の消失</span></td>
+        </tr>
+      </table>
+
+      <h3>骨性癒着の診断に有用でないもの</h3>
+      <ul>
+        <li><span class="caution">歯髄電気診</span>：歯髄の生死を診るもの</li>
+        <li><span class="caution">プロービング</span>：歯周ポケットを診るもの</li>
+        <li><span class="caution">歯の色調</span>：歯髄壊死の所見</li>
+      </ul>
+
+      <h2>再植後の固定</h2>
+      <ul>
+        <li>レジンやワイヤーで<span class="key">暫間固定</span>を行う</li>
+        <li><span class="caution">強固な固定は行わない</span>（骨置換性吸収のおそれ）</li>
+      </ul>
+
+      <h2>意図的再植法</h2>
+      <h3>適応</h3>
+      <ul>
+        <li>根管を経由した歯内治療が困難</li>
+        <li>歯根尖切除法などの外科的歯内治療も適応できない</li>
+      </ul>
+
+      <h3>術式のポイント</h3>
+      <ul>
+        <li>歯根膜組織を傷つけないように抜歯</li>
+        <li>生理食塩液や歯の保存液につけながら処置</li>
+        <li>感染源の除去、逆根管充填などを行う</li>
+        <li>再植後、暫間固定</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104A53</div>
+        <p>脱落した歯根完成永久歯を再植した後に生じやすいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 内部吸収<br>
+          b 象牙質粒<br>
+          c 骨性癒着<br>
+          d 歯冠の変色<br>
+          e 歯髄腔狭窄
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】歯根完成永久歯の再植後に生じやすいのは骨性癒着と歯冠の変色である。内部吸収・象牙質粒・歯髄腔狭窄は生活歯髄で起こる変化であり、歯根完成歯の再植では歯髄が壊死するため生じない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102C11</div>
+        <p>46歳の男性。上顎右側中切歯の変色を主訴として来院した。5年前に顔面を強打し脱落した歯の再植を受けたという。初診時の口腔内写真（別冊No.10A）とエックス線写真（別冊No.10B）とを別に示す。<br>みられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102C11_1.png" alt="別冊No.10A">
+          <img src="../../../images/102回_Web画像/102C11_2.png" alt="別冊No.10B">
+        </div>
+        <div class="choices">
+          a 打診時の濁音<br>
+          b 咬合痛の発現<br>
+          c 根尖部の圧痛<br>
+          d 温熱による疼痛<br>
+          e 生理的動揺の喪失
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】再植後5年で歯冠の変色とエックス線写真上の歯根膜腔消失がみられる症例。骨性癒着（アンキローシス）を示唆する所見として、生理的動揺の喪失がみられる。骨性癒着では打診時に金属音（濁音ではない）が聴取される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C22</div>
+        <p>歯の再植後の骨性癒着の診断に有用なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 打診<br>
+          b 歯髄電気診<br>
+          c プロービング<br>
+          d エックス線検査<br>
+          e 歯の色調の確認
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】骨性癒着の診断には打診（金属音の聴取）とエックス線検査（歯根膜腔の消失）が有用である。歯髄電気診は歯髄の生死診断、プロービングは歯周ポケット検査であり骨性癒着の診断には不適。歯の色調は歯髄壊死の所見であり骨性癒着とは直接関係ない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

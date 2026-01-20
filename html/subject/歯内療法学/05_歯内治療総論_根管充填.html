@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>根管充填 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯内治療総論</span>
+    <h1>根管充填</h1>
+    <div class="container">
+
+      <h2>根管充填の目的と意義</h2>
+      <p><span class="key">根管充填</span>（root canal obturation）は、根管の拡大・形成と消毒によって無菌的になった根管を、生体に無害な物質で<span class="highlight">緊密に封鎖</span>することを目的とする。細菌や有害物質の侵入・貯留を防止し、根尖歯周組織の健康維持・病変の回復を図る。</p>
+
+      <h3>根管充填の時期の判定</h3>
+      <ul>
+        <li>感染源が根管から除去されている</li>
+        <li>痛みや不快症状がない</li>
+        <li>根管から排膿・出血がない</li>
+        <li>滲出液がない（あっても少量）</li>
+        <li>瘻孔のあった歯では閉鎖している</li>
+        <li>根尖相当部歯肉に発赤・腫脹・圧痛がない</li>
+      </ul>
+
+      <h2>根管充填材</h2>
+      <h3>ガッタパーチャポイント</h3>
+      <p>最も広く使用される半固形充填材。圧接により変形する可塑性を有する。</p>
+      <table>
+        <tr>
+          <th>組成</th>
+          <th>割合</th>
+        </tr>
+        <tr>
+          <td>ガッタパーチャ</td>
+          <td>19〜22%</td>
+        </tr>
+        <tr>
+          <td><span class="key">酸化亜鉛</span></td>
+          <td><span class="highlight">59〜79%</span>（最多）</td>
+        </tr>
+        <tr>
+          <td>重金属塩（造影剤）</td>
+          <td>1〜17%</td>
+        </tr>
+        <tr>
+          <td>ワックス、レジン</td>
+          <td>1〜4%</td>
+        </tr>
+      </table>
+
+      <h3>根管充填材の所要性質</h3>
+      <ul>
+        <li>組織親和性がある</li>
+        <li>化学的・物理的に安定</li>
+        <li><span class="key">非吸収性</span>である</li>
+        <li>根管壁に接着する</li>
+        <li>X線不透過性がある</li>
+        <li><span class="highlight">骨性瘢痕治癒促進作用</span>がある</li>
+      </ul>
+
+      <h2>根管充填法の種類</h2>
+      <table>
+        <tr>
+          <th>充填法</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>単一ポイント法</td>
+          <td>シンプルだが緊密封鎖は困難。<span class="caution">近年は推奨されない</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">側方加圧充填法</span></td>
+          <td>スプレッダーで圧接→アクセサリーポイント挿入を繰り返す。<span class="key">広く行われる</span></td>
+        </tr>
+        <tr>
+          <td>垂直加圧充填法</td>
+          <td>軟化したGPを垂直方向にプラガーで加圧</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">側方加圧充填法のポイント（出題実績あり）</div>
+        <ul>
+          <li><span class="key">スプレッダー</span>でマスターポイントを圧接</li>
+          <li>生じた空隙に<span class="key">アクセサリーポイント</span>を挿入</li>
+          <li>目的：<span class="highlight">根管充填の緊密度向上</span>、<span class="highlight">側方圧負荷</span></li>
+        </ul>
+      </div>
+
+      <h2>即時根管充填法</h2>
+      <p>局所麻酔下で抜髄後、ただちに根管充填を行う方法。適応症は限定される。</p>
+
+      <h3>適応症</h3>
+      <ul>
+        <li>外傷や窩洞形成時に露髄した<span class="key">新鮮健康歯髄</span></li>
+        <li>補綴的理由による健康歯髄の<span class="key">便宜抜髄</span></li>
+        <li>歯冠部に限局した一部性の歯髄炎</li>
+        <li>根管処置が容易な解剖学的形態歯</li>
+      </ul>
+
+      <table>
+        <tr>
+          <th>長所</th>
+          <th>短所</th>
+        </tr>
+        <tr>
+          <td>治療回数の短縮</td>
+          <td>出血への対処困難</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">根管の汚染・感染防止</span></td>
+          <td>残髄時の処置困難</td>
+        </tr>
+        <tr>
+          <td>根管消毒薬の刺激なし</td>
+          <td>炎症による不快症状</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">麻酔下で充填時の疼痛なし</span></td>
+          <td>過剰充填が起こりやすい</td>
+        </tr>
+      </table>
+
+      <h2>根管充填後の治癒</h2>
+      <div class="point-box">
+        <div class="point-box-title">骨性瘢痕治癒</div>
+        <p>抜髄歯・感染根管治療歯ともに、根管充填後の根尖歯周組織は<span class="highlight">骨性瘢痕治癒</span>により治癒する。線維性結合組織による瘢痕が形成される。</p>
+      </div>
+
+      <h2>過去問</h2>
+
+      <h3>即時根管充填法</h3>
+      <div class="question-box">
+        <div class="q-number">114B84</div>
+        <p>麻酔抜髄において即時根管充塡法によって低減できるリスクはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 残髄<br>
+          b 根管の汚染<br>
+          c レッジ形成<br>
+          d 根管充填材の溢出<br>
+          e 根管充填時の疼痛
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】即時根管充填法の長所から考える。仮封期間がないため<span class="key">根管の汚染</span>を防止できる。また麻酔下で充填するため<span class="key">充填時の疼痛</span>がない。残髄やレッジ形成、充填材の溢出は即時充填法の長所とは関係ない。</p>
+      </div>
+
+      <h3>側方加圧充填法</h3>
+      <div class="question-box">
+        <div class="q-number">102D24</div>
+        <p>38歳の男性。下顎左側第二大臼歯の治療中の写真（別冊No.21A）と用いた器具の写真（別冊No.21B）とを別に示す。<br>この操作の目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102D24_1.png" alt="別冊No.21A">
+          <img src="../../../images/102回_Web画像/102D24_2.png" alt="別冊No.21B">
+        </div>
+        <div class="choices">
+          a 根管湾曲度の確認<br>
+          b 過剰根管充塡の防止<br>
+          c 余剰根管充塡材の除去<br>
+          d 根管充塡の緊密度向上<br>
+          e 根管充填材への側方圧負荷
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】写真Bは<span class="key">スプレッダー</span>である。側方加圧充填法において、スプレッダーでマスターポイントを圧接する目的は、<span class="key">根管充填の緊密度向上</span>と<span class="key">側方圧負荷</span>によりアクセサリーポイントを挿入する空隙を作ることである。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A25</div>
+        <p>根管模型に表面を黒色に塗ったガッタパーチャポイントを用いて側方加圧根管充填を行った。充填後の写真（別冊No.5A）と矢印の位置で切断した断面の拡大写真（別冊No.5B）を別に示す。アクセサリーポイントはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A25_1.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】側方加圧充填では、<span class="key">マスターポイント</span>が中心に位置し、その周囲に<span class="key">アクセサリーポイント</span>が配置される。黒色に塗った表面が外側に見えているもの（イ）がアクセサリーポイントである。</p>
+      </div>
+
+      <h3>骨性瘢痕治癒</h3>
+      <div class="question-box">
+        <div class="q-number">109A75</div>
+        <p>骨性瘢痕治癒が生じるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 間接覆髄<br>
+          b 直接覆髄<br>
+          c 生活断髄<br>
+          d 直接抜髄<br>
+          e 感染根管治療
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】<span class="key">骨性瘢痕治癒</span>は根管充填後の治癒形態である。<span class="key">直接抜髄</span>と<span class="key">感染根管治療</span>は根管充填を行うため、骨性瘢痕治癒が生じる。覆髄や断髄は歯髄を保存する処置であり、根管充填は行わない。</p>
+      </div>
+
+      <h3>X線読影</h3>
+      <div class="question-box">
+        <div class="q-number">105B46</div>
+        <p>58歳の男性。上顎右側第一小臼歯の痛みを主訴として来院した。根管充塡前にマスターポイント試適を行うこととし、ポイントを作業長に合わせ折り曲げた。初診時のエックス線写真（別冊No.46A）、ポイントを先端から挿入したエックス線写真（別冊No.46B）およびポイントを折り曲げた位置から挿入したエックス線写真（別冊No.46C）を別に示す。<br>考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B46_1.png" alt="別冊No.46">
+        </div>
+        <div class="choices">
+          a 穿孔<br>
+          b 根管の癒合<br>
+          c イスムスの存在<br>
+          d 作業長設定の誤り<br>
+          e 根尖部の拡大不足
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】先端から挿入すると頬側根管方向へ、折り曲げた位置から挿入すると口蓋側根管方向へポイントが進んでいる。これは<span class="key">根管の癒合</span>（根管が途中で合流）を示唆する所見である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D54</div>
+        <p>37歳の男性。上顎左側第一大臼歯の咬合時の疼痛を主訴として来院した。補綴装置の適合に問題はない。垂直打診に反応を示した。プロービング深さは全周3mm以下であった。初診時のエックス線画像（別冊No.10）を別に示す。<br>疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D54_1.png" alt="別冊No.10">
+        </div>
+        <div class="choices">
+          a 根管穿孔<br>
+          b 歯根破折<br>
+          c 歯根の外部吸収<br>
+          d 未処置根管の残存<br>
+          e 歯冠漏洩〈コロナルリーケージ〉
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】根管治療済みの歯で咬合時疼痛・垂直打診痛がある。X線で根管充填が不十分な根管（<span class="key">未処置根管</span>）が残存していると考えられる。上顎大臼歯ではMB2（近心頬側第二根管）の見落としに注意。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

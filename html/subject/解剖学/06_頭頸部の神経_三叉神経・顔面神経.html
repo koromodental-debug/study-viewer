@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>三叉神経・顔面神経 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 頭頸部の神経</span>
+    <h1>三叉神経・顔面神経</h1>
+    <div class="container">
+
+      <h2>脳神経核と支配筋</h2>
+      <p>頭頸部の筋は脳幹にある<span class="key">脳神経核</span>から運動神経支配を受ける。</p>
+
+      <table>
+        <tr>
+          <th>神経核</th>
+          <th>位置</th>
+          <th>脳神経</th>
+          <th>支配する筋</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">三叉神経運動核</span></td>
+          <td>橋</td>
+          <td>V（下顎神経）</td>
+          <td><span class="highlight">咀嚼筋</span>、顎舌骨筋、顎二腹筋前腹、鼓膜張筋</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">顔面神経核</span></td>
+          <td>橋</td>
+          <td>VII</td>
+          <td><span class="highlight">表情筋</span>（広頸筋含む）、アブミ骨筋、顎二腹筋後腹、茎突舌骨筋</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">疑核</span></td>
+          <td>延髄</td>
+          <td>IX, X, XI</td>
+          <td>軟口蓋筋、<span class="highlight">咽頭収縮筋</span>、喉頭筋</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">舌下神経核</span></td>
+          <td>延髄</td>
+          <td>XII</td>
+          <td><span class="highlight">舌筋</span>（内舌筋＋外舌筋）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">混同しやすいポイント</div>
+        <ul>
+          <li><span class="key">顎二腹筋</span>：前腹は<span class="highlight">三叉神経</span>、後腹は<span class="highlight">顔面神経</span></li>
+          <li><span class="key">鼓膜張筋</span>は三叉神経、<span class="key">アブミ骨筋</span>は顔面神経</li>
+          <li><span class="key">頬筋</span>は表情筋なので<span class="highlight">顔面神経</span>支配（<span class="caution">咀嚼筋ではない</span>）</li>
+        </ul>
+      </div>
+
+      <h2>三叉神経運動核の支配筋</h2>
+      <ul>
+        <li><span class="key">咀嚼筋4筋</span>：咬筋、側頭筋、内側翼突筋、外側翼突筋</li>
+        <li><span class="key">顎舌骨筋</span>：口腔底を形成</li>
+        <li><span class="key">顎二腹筋前腹</span>：開口に関与</li>
+        <li><span class="key">鼓膜張筋</span>：鼓膜を緊張させる</li>
+      </ul>
+
+      <h2>顔面神経核の支配筋</h2>
+      <ul>
+        <li><span class="key">表情筋</span>：頬筋、口輪筋、眼輪筋、前頭筋など</li>
+        <li><span class="highlight">広頸筋</span>：頸部の表情筋</li>
+        <li><span class="key">アブミ骨筋</span>：音量調節（麻痺で聴覚過敏）</li>
+        <li><span class="key">顎二腹筋後腹</span>：舌骨を挙上</li>
+        <li><span class="key">茎突舌骨筋</span>：舌骨を挙上</li>
+      </ul>
+
+      <h2>疑核の支配筋</h2>
+      <p>疑核は<span class="key">舌咽神経（IX）</span>、<span class="key">迷走神経（X）</span>、<span class="key">副神経（XI）</span>の運動核。</p>
+      <ul>
+        <li><span class="key">軟口蓋の筋</span>：口蓋帆挙筋、口蓋帆張筋など</li>
+        <li><span class="key">咽頭収縮筋</span>：上・中・下咽頭収縮筋</li>
+        <li><span class="key">喉頭の筋</span>：声帯の運動</li>
+        <li><span class="key">茎突咽頭筋</span>：舌咽神経支配</li>
+      </ul>
+
+      <p class="note">例外：<span class="caution">口蓋帆張筋</span>は三叉神経（V3）支配</p>
+
+      <h2>舌下神経核の支配筋</h2>
+      <ul>
+        <li><span class="key">内舌筋</span>（4筋）：上縦舌筋、下縦舌筋、横舌筋、垂直舌筋</li>
+        <li><span class="key">外舌筋</span>（3筋）：オトガイ舌筋、茎突舌筋、舌骨舌筋</li>
+      </ul>
+      <p class="note">例外：<span class="caution">口蓋舌筋</span>は迷走神経（咽頭神経叢）支配</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115C76</div>
+        <p>運動ニューロンが存在する神経核と支配する筋の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 疑　核 ーーーーーー 頬　筋<br>
+          b 滑車神経核 ーーーー 上咽頭収縮筋<br>
+          c 顔面神経核 ーーーー 広頸筋<br>
+          d 舌下神経核 ーーーー アブミ骨筋<br>
+          e 三叉神経運動核 ーー 外側翼突筋
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】<span class="highlight">顔面神経核</span>は表情筋（<span class="highlight">広頸筋</span>含む）を支配。<span class="highlight">三叉神経運動核</span>は咀嚼筋（<span class="highlight">外側翼突筋</span>含む）を支配。頬筋は表情筋なので<span class="caution">顔面神経核</span>支配（疑核ではない）。上咽頭収縮筋は<span class="caution">疑核</span>支配（滑車神経核は上斜筋を支配）。アブミ骨筋は<span class="caution">顔面神経核</span>支配。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

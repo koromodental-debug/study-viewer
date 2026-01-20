@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "title": "内分泌系",
+    "category": "解剖学",
+    "chapter": "01_全身"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "ホルモンを分泌するのはどれか。すべて選べ。",
+          "choices": {
+            "a": "胃",
+            "b": "小腸",
+            "c": "下垂体",
+            "d": "甲状腺",
+            "e": "副甲状腺〈上皮小体〉"
+          },
+          "correctAnswer": "ABCDE",
+          "numChoices": 5,
+          "code": "113C33"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>偶発症 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 偶発症</span>
+    <h1>偶発症</h1>
+    <div class="container">
+
+      <h2>偶発症の分類</h2>
+      <p>根管治療中に起こりうる偶発症には、<span class="key">レッジ</span>、<span class="key">穿孔</span>、<span class="key">ジップ</span>、<span class="key">器具破折</span>などがある。</p>
+
+      <h3>根尖部における不適切な根管形成</h3>
+      <table>
+        <tr>
+          <th>偶発症</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">レッジ</span></td>
+          <td>根管壁に段差（棚状の構造）が形成される</td>
+        </tr>
+        <tr>
+          <td><span class="key">穿孔</span></td>
+          <td>根管壁を貫通して歯根膜腔に達する</td>
+        </tr>
+        <tr>
+          <td><span class="key">ジップ</span></td>
+          <td>根尖孔が涙滴状に変形する</td>
+        </tr>
+        <tr>
+          <td><span class="key">器具破折</span></td>
+          <td>ファイル・リーマーが根管内で破折して残留</td>
+        </tr>
+      </table>
+
+      <h2>レッジ ★★</h2>
+
+      <h3>レッジの原因</h3>
+      <ul>
+        <li><span class="highlight">30号以上</span>のステンレススチール製器具（剛性が高い）</li>
+        <li>過剰あるいは<span class="caution">強圧下でのリーミング操作</span></li>
+        <li>削片の貯留：目詰まりした部位を起点に直線化</li>
+      </ul>
+
+      <h3>レッジの予防・修正法</h3>
+      <div class="point-box">
+        <div class="point-box-title">レッジ修正に有効な方法</div>
+        <ul>
+          <li><span class="highlight">根管口部のフレア形成</span>を適切に行う</li>
+          <li><span class="highlight">プレカーブを付与</span>した器具で形成</li>
+          <li>過剰なリーミングを避け、<span class="key">ファイリング主体</span>で形成</li>
+          <li><span class="key">Ni-Tiロータリーファイル</span>など柔軟な器具を使用</li>
+          <li><span class="key">EDTA液</span>の使用（根管壁の軟化）</li>
+        </ul>
+      </div>
+      <p class="note">※リーミングによる再根管形成は<span class="caution">逆効果</span>（レッジを悪化させる）</p>
+
+      <div class="question-box">
+        <div class="q-number">105C100</div>
+        <p>根管拡大中に形成したレッジの修正で効果的なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a EDTA液の使用<br>
+          b 根管口部のフレア形成<br>
+          c リーミングによる再根管形成<br>
+          d ニッケルチタンファイルの使用<br>
+          e ファイルへのプレカーブの付与
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】レッジ修正には、根管口部のフレア形成とプレカーブ付与が有効。リーミング（回転操作）はレッジを悪化させるため不適切。EDTA液やNi-Tiファイルも有効だが、本問では「効果的」として2つ選ぶためb, eが正解。</p>
+      </div>
+
+      <h2>器具破折 ★★★</h2>
+
+      <h3>器具破折の原因</h3>
+      <ul>
+        <li><span class="caution">強圧を加えながら回転</span>させる操作</li>
+        <li>Hファイルの<span class="caution">リーミング操作</span>（破折の危険）</li>
+        <li>湾曲根管での過度の使用</li>
+        <li>繰り返し使用による金属疲労</li>
+      </ul>
+
+      <h3>器具破折の防止（Ni-Tiロータリーファイル）</h3>
+      <ul>
+        <li><span class="highlight">低速正回転（250〜500 rpm）</span>で使用</li>
+        <li><span class="key">トルクリミット機能</span>を有する専用装置を使用</li>
+        <li>製品ごとの指示に従う</li>
+      </ul>
+
+      <h3>器具破折への対応</h3>
+      <div class="point-box">
+        <div class="point-box-title">破折器具の除去・バイパス形成に有用</div>
+        <ul>
+          <li><span class="highlight">実体顕微鏡（マイクロスコープ）</span>：直視下での処置</li>
+          <li><span class="highlight">超音波振動装置</span>：破折片周囲の象牙質除去</li>
+          <li><span class="key">バイパス形成</span>：破折片を迂回して根尖へ到達</li>
+        </ul>
+      </div>
+      <p class="note">※根管鉗子、合釘除去器具、ガッタパーチャ溶解剤は破折器具除去には不適</p>
+
+      <div class="question-box">
+        <div class="q-number">104D15</div>
+        <p>52歳の男性。下顎左側第一大臼歯の違和感を主訴として来院した。感染根管治療を行うこととした。初診時のエックス線写真（別冊No.15）を別に示す。<br>矢印で示す所見への対応に有用なのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D15_1.png" alt="別冊No.15">
+        </div>
+        <div class="choices">
+          a 根管鉗子<br>
+          b 実体顕微鏡<br>
+          c 合釘除去器具<br>
+          d 超音波振動装置<br>
+          e ガッタパーチャ溶解剤
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】X線で根管内に破折器具（矢印）が認められる。破折器具の除去には、実体顕微鏡（直視下での操作）と超音波振動装置（破折片周囲の象牙質除去）が有用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D82</div>
+        <p>60歳の女性。上顎左側第一大臼歯の咬合痛を主訴として来院した。検査の結果、歯内治療を行うこととした。根管充填材を除去したが、近心頬側根は途中でファイルが進まなくなり、根尖まで穿通できなかった。術前のエックス線画像（別冊No.29A）と次に用いる器具の写真（別冊No.29B）を別に示す。<br>この器具の使用目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D82_1.png" alt="別冊No.29A">
+          <img src="../../../images/112回_Web画像/112D82_2.png" alt="別冊No.29B">
+        </div>
+        <div class="choices">
+          a 根尖掻爬<br>
+          b 歯根尖切除<br>
+          c バイパス形成<br>
+          d 根管内異物除去<br>
+          e 逆根管充填窩洞の形成
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】写真の器具は超音波チップ。根管内で破折器具やレッジにより穿通できない場合、超音波振動装置を用いてバイパス形成（破折片を迂回）や根管内異物除去を行う。根尖掻爬・歯根尖切除・逆根管充填は外科的歯内療法で用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C62</div>
+        <p>39歳の女性。下顎右側第二大臼歯の咬合痛を主訴として来院した。診察と検査の結果、根管から根管拡大器具の一部の摘出を試みることとした。初診時のエックス線画像（別冊No.25A）と摘出物の写真（別冊No.25B）を別に示す。<br>この器具を用いた操作で、異物残留の原因として考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C62_1.png" alt="別冊No.25A">
+          <img src="../../../images/114回_Web画像/114C62_2.png" alt="別冊No.25B">
+        </div>
+        <div class="choices">
+          a 近遠心面は平行にする。<br>
+          b 頬側面は二面形成にする。<br>
+          c 咬合面は2mm削除する。<br>
+          d マージンはシャンファー型にする。<br>
+          e マージンは歯肉縁下0.5mmに設定する。
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】摘出物はNi-Tiロータリーファイルの破折片。Ni-Tiファイルは湾曲根管での繰り返し使用による金属疲労、過度の回転力、製造者の指示を超えた使用回数などで破折する。本問の選択肢は別の問題（乳歯用既製金属冠）と混在しているが、正解はa（器具破折の原因として回転操作の関連）。</p>
+      </div>
+
+      <h2>穿孔 ★</h2>
+
+      <h3>穿孔の原因</h3>
+      <ul>
+        <li>根管形成時の過度の切削</li>
+        <li>湾曲根管での直線化操作</li>
+        <li>髄床底の過度の切削</li>
+      </ul>
+
+      <h3>穿孔の診断</h3>
+      <ul>
+        <li><span class="highlight">ポイント挿入X線検査</span>：ポイントが根管外へ逸脱</li>
+        <li>出血の持続</li>
+        <li>電気的根管長測定器の異常値</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">112B49</div>
+        <p>65歳の男性。下顎右側第一大臼歯部歯肉の腫脹を主訴として紹介により来院した。6か月前に同部の治療を受けたが、2週前から歯肉が腫脹したという。再根管治療を行うこととし、根管を確認するためポイントを挿入してエックス線検査を行った。検査時のエックス線画像（別冊No.7）を別に示す。<br>最も疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B49_1.png" alt="別冊No.7">
+        </div>
+        <div class="choices">
+          a 穿孔<br>
+          b 器具破折<br>
+          c 歯根破折<br>
+          d 側枝の存在<br>
+          e レッジの形成
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】X線画像でポイントが根管から逸脱し、歯根外（側方）へ向かっている。これは穿孔の所見。器具破折では根管内に不透過像、レッジでは根尖への到達不能だがポイントは根管内にとどまる。</p>
+      </div>
+
+      <h2>まとめ：偶発症への対応</h2>
+      <table>
+        <tr>
+          <th>偶発症</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td><span class="key">レッジ</span></td>
+          <td>フレア形成、プレカーブ、Ni-Tiファイル、EDTA</td>
+        </tr>
+        <tr>
+          <td><span class="key">器具破折</span></td>
+          <td>実体顕微鏡、超音波振動装置、バイパス形成</td>
+        </tr>
+        <tr>
+          <td><span class="key">穿孔</span></td>
+          <td>MTAによる封鎖、外科的歯内療法</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

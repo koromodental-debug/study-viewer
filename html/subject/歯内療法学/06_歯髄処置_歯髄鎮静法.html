@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯髄鎮静法 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯髄処置</span>
+    <h1>歯髄鎮静法（歯髄鎮痛消炎療法）</h1>
+    <div class="container">
+
+      <h2>歯髄保存療法の分類</h2>
+      <table>
+        <tr>
+          <th>療法</th>
+          <th>目的</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td><span class="key">歯髄鎮痛消炎療法</span></td>
+          <td>歯髄の鎮痛消炎、感覚正常化</td>
+          <td>歯髄充血、可逆性歯髄炎</td>
+        </tr>
+        <tr>
+          <td><span class="key">覆髄法</span></td>
+          <td>歯髄保護、修復象牙質形成促進</td>
+          <td>健康歯髄〜可逆性歯髄炎</td>
+        </tr>
+      </table>
+
+      <h2>歯髄鎮痛消炎療法の目的</h2>
+      <ul>
+        <li>刺激原因を排除して歯髄を<span class="key">安静</span>に保つ</li>
+        <li>薬剤の適用により歯髄の<span class="key">鎮痛消炎</span>をはかる</li>
+        <li>亢進した歯髄感覚を正常に戻す</li>
+        <li><span class="highlight">歯髄を健康な状態で保存</span>する</li>
+      </ul>
+
+      <h2>適応症</h2>
+      <div class="point-box">
+        <div class="point-box-title">歯髄鎮痛消炎療法の適応</div>
+        <ul>
+          <li><span class="key">歯髄充血</span></li>
+          <li><span class="highlight">急性症状のある可逆性歯髄炎</span>（限局性、間欠性の自発痛）</li>
+        </ul>
+      </div>
+
+      <h2>禁忌症</h2>
+      <ul>
+        <li><span class="caution">不可逆性歯髄炎</span>（急性化膿性歯髄炎など）</li>
+      </ul>
+      <p class="note">※ 不可逆性歯髄炎には歯髄保存を前提とした歯髄鎮痛消炎療法は適用しない</p>
+
+      <h2>使用薬剤</h2>
+      <h3>歯髄鎮静・鎮痛薬</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>薬剤例</th>
+        </tr>
+        <tr>
+          <td>フェノール製剤</td>
+          <td>液状フェノール、フェノール・カンフル、フェノール・チモール</td>
+        </tr>
+        <tr>
+          <td>フェノール誘導体</td>
+          <td>グアヤコール、パラクロロフェノール・グアヤコール</td>
+        </tr>
+        <tr>
+          <td>植物性揮発油類</td>
+          <td><span class="highlight">ユージノール</span>、チョウジ油</td>
+        </tr>
+      </table>
+
+      <h3>酸化亜鉛ユージノールセメント</h3>
+      <ul>
+        <li>ユージノールと酸化亜鉛を練和して使用</li>
+        <li><span class="highlight">仮封と鎮痛消炎処置を同時に行える</span></li>
+        <li>硬化後も未反応のユージノールが薬効を示す</li>
+      </ul>
+
+      <h2>術式</h2>
+      <table>
+        <tr>
+          <th>順序</th>
+          <th>操作</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>必要に応じて局所麻酔</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>ラバーダム装着と術野の消毒</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>齲窩の開拡と軟化象牙質の除去</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>窩洞の清掃と乾燥（過度の乾燥は避ける）</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><span class="highlight">歯髄鎮静薬の貼付と仮封</span>（または酸化亜鉛ユージノールセメント填塞）</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>経過観察と修復処置</td>
+        </tr>
+      </table>
+
+      <h2>予後</h2>
+      <ul>
+        <li>経過良好 → 最終修復処置へ</li>
+        <li>軽快しない → <span class="caution">歯髄除去療法（抜髄）へ移行</span></li>
+      </ul>
+
+      <h2>可逆性歯髄炎の臨床的特徴</h2>
+      <ul>
+        <li><span class="highlight">間欠性の自発痛</span>（持続性ではない）</li>
+        <li>限局性の炎症</li>
+        <li>刺激除去により症状が消退する可能性がある</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103D29</div>
+        <p>47歳の男性。下顎左側第二小臼歯の疼痛を主訴として来院した。他院を受診したが、その後も間歇性の自発痛が続いているという。初診時の口腔内写真（別冊No.29A）、エックス線写真（別冊No.29B）及び処置時の口腔内写真（別冊No.29C）を別に示す。<br>次に行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103D29_1.png" alt="別冊No.29A">
+          <img src="../../../images/103回_Web画像/103D29_2.png" alt="別冊No.29B">
+          <img src="../../../images/103回_Web画像/103D29_3.png" alt="別冊No.29C">
+        </div>
+        <div class="choices">
+          a 髄室開拡<br>
+          b コンポジットレジン修復<br>
+          c グラスアイオノマーセメント修復<br>
+          d テンポラリーストッピングによる仮封<br>
+          e 酸化亜鉛ユージノールセメントの填塞
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】間欠性の自発痛は可逆性歯髄炎を示唆する。可逆性歯髄炎には歯髄鎮痛消炎療法が適応となる。酸化亜鉛ユージノールセメントはユージノールの鎮静作用により、仮封と鎮痛消炎を同時に行える。髄室開拡（抜髄）は不可逆性歯髄炎の適応であり、この症例では歯髄保存を試みるべきである。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

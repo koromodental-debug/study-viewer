@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯冠破折 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯の外傷</span>
+    <h1>歯冠破折</h1>
+    <div class="container">
+
+      <h2>歯冠破折の分類</h2>
+
+      <h3>Andreasenの分類（歯の亀裂と破折）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">エナメル質の亀裂</span></td>
+          <td>不完全破折、着色がみられることがある</td>
+        </tr>
+        <tr>
+          <td><span class="key">エナメル質の破折</span></td>
+          <td>エナメル質に限局した欠損</td>
+        </tr>
+        <tr>
+          <td><span class="key">エナメル質-象牙質破折（非露髄）</span></td>
+          <td>象牙質に達するが歯髄は露出しない</td>
+        </tr>
+        <tr>
+          <td><span class="key">エナメル質-象牙質破折（露髄）</span></td>
+          <td>歯髄が露出、疼痛・出血を伴う</td>
+        </tr>
+      </table>
+
+      <h2>治療方針決定の考慮因子 ★★★</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">露髄を伴う歯冠破折で考慮すべき因子</div>
+        <ul>
+          <li><span class="highlight">経過時間</span>（受傷からの時間）</li>
+          <li><span class="highlight">露髄面の大きさ</span>（2mm未満 or 以上）</li>
+          <li>患者の<span class="key">年齢</span>（若年者 vs 高齢者）</li>
+          <li>受傷時の状態（汚染の有無）</li>
+        </ul>
+      </div>
+      <p class="note">※歯種、歯冠の変色、露髄部からの出血量は治療方針決定に直接関与しない</p>
+
+      <div class="question-box">
+        <div class="q-number">102A32</div>
+        <p>打撲によって健全歯の歯冠が破折し露髄した。<br>歯髄に対する治療方針決定で考慮するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯種<br>
+          b 経過時間<br>
+          c 歯冠の変色<br>
+          d 露髄部の大きさ<br>
+          e 露髄部からの出血量
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】露髄を伴う外傷歯の治療方針は、経過時間と露髄面の大きさで決定する。経過時間が短く露髄面が小さければ直接覆髄、大きければ生活断髄を選択。歯種や変色は方針決定に直接関与しない。</p>
+      </div>
+
+      <h2>露髄を伴う歯冠破折の処置</h2>
+
+      <h3>露髄面の大きさによる選択</h3>
+      <table>
+        <tr>
+          <th>露髄面</th>
+          <th>処置</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">2mm未満（小さい）</span></td>
+          <td><span class="key">直接覆髄</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">2mm以上（大きい）</span></td>
+          <td><span class="key">生活歯髄切断（断髄）</span></td>
+        </tr>
+      </table>
+
+      <h3>患者の年齢による修正</h3>
+      <table>
+        <tr>
+          <th>患者</th>
+          <th>処置の選択</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="key">若年者・歯根未完成歯</span></td>
+          <td>生活断髄 → アペキソゲネーシス</td>
+          <td>歯根の完成を期待</td>
+        </tr>
+        <tr>
+          <td><span class="key">高齢者</span></td>
+          <td><span class="caution">抜髄</span></td>
+          <td>歯髄の退行性変化あり</td>
+        </tr>
+        <tr>
+          <td>歯頸部付近の破折</td>
+          <td><span class="caution">抜髄</span></td>
+          <td>ポストコアが必要</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115C53</div>
+        <p>17歳の男子。転倒による上顎前歯の歯冠破折を主訴として来院した。受傷後直ちに受診したという。1┘と└1には自発痛はなく、共に歯髄電気診で生活反応を示した。初診時の口腔内写真（別冊No.17A）とエックス線画像（別冊No.17B）を別に示す。歯周組織検査結果の一部を表に示す。<br>1┘と└1に行う処置の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C53_1.png" alt="別冊No.17A">
+          <img src="../../../images/115回_Web画像/115C53_2.png" alt="別冊No.17B">
+        </div>
+        <div class="choices">
+          　　　　1┘　　　　　　　　└1<br>
+          a 直接覆髄　　　　コンポジットレジン修復<br>
+          b 生活歯髄切断　　暫間的間接覆髄<br>
+          c 生活歯髄切断　　コンポジットレジン修復<br>
+          d 麻酔抜髄　　　　コンポジットレジン修復<br>
+          e 麻酔抜髄　　　　レジン前装冠装着
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】17歳の若年者。1┘は露髄を伴う破折で露髄面が大きいため生活歯髄切断を選択。└1は非露髄の破折なのでコンポジットレジン修復で対応。若年者なので歯髄保存を優先する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B16</div>
+        <p>15歳の男子。上顎前歯の歯冠破折を主訴として来院した。1時間前に受傷し、口での呼吸で強い痛みがあるという。1⏌の動揺は生理的範囲内である。初診時の口腔内写真（別冊No.16A）とエックス線写真（別冊No.16B）とを別に示す。<br>適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B16_1.png" alt="別冊No.16A">
+          <img src="../../../images/105回_Web画像/105B16_2.png" alt="別冊No.16B">
+        </div>
+        <div class="choices">
+          a 抜髄<br>
+          b 直接覆髄法<br>
+          c 感染根管治療<br>
+          d アペキソゲネーシス<br>
+          e アペキシフィケーション
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】15歳だが、X線所見で歯根は完成している。露髄面が大きく、写真から歯冠の大部分が喪失していることがわかる。歯冠修復のためポストコアが必要となり、抜髄が適応となる。アペキソゲネーシスは歯根未完成歯の生活歯髄切断後に期待する治療法。</p>
+      </div>
+
+      <h2>歯の亀裂（クラック）の診断 ★</h2>
+
+      <h3>臨床症状</h3>
+      <ul>
+        <li>咀嚼時の<span class="key">一過性の鋭い痛み</span></li>
+        <li><span class="key">一過性の冷水痛</span></li>
+        <li>特定部位で噛むと痛い（割箸テスト）</li>
+      </ul>
+
+      <h3>確定診断に有効な検査</h3>
+      <div class="point-box">
+        <div class="point-box-title">歯の亀裂の診断法</div>
+        <ul>
+          <li><span class="highlight">染色液</span>：亀裂部に浸透して可視化</li>
+          <li><span class="highlight">実体顕微鏡（マイクロスコープ）</span>：微細な亀裂を直視</li>
+          <li><span class="key">透照診</span>：透過光の屈折で亀裂を確認</li>
+        </ul>
+      </div>
+      <p class="note">※咬合紙、研究用模型、咬合法X線では亀裂の確定診断は困難</p>
+
+      <div class="question-box">
+        <div class="q-number">103B2</div>
+        <p>53歳の女性。上顎左側第一大臼歯の違和感を主訴として来院した。1か月ほど前から咀嚼時に時々鋭い痛みを感じていたという。一過性の冷水痛があり、歯髄電気診に反応する。頰側内斜面で割箸を噛ませると痛みを訴える。初診時の口腔内写真（別冊No.2A）、エックス線写真（別冊No.2B）及びアマルガム除去後の口腔内写真（別冊No.2C）を別に示す。<br>確定診断に有効なのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103B2_1.png" alt="別冊No.2A">
+          <img src="../../../images/103回_Web画像/103B2_2.png" alt="別冊No.2B">
+        </div>
+        <div class="choices">
+          a 咬合紙<br>
+          b 染色液<br>
+          c 研究用模型<br>
+          d 実体顕微鏡<br>
+          e 咬合法エックス線検査
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】咀嚼時の鋭い痛み、一過性の冷水痛、割箸テスト陽性は歯の亀裂（クラック）を示唆する。亀裂の確定診断には染色液（亀裂部への浸透）と実体顕微鏡（微細な亀裂の直視）が有効。咬合紙や模型では亀裂は検出できない。</p>
+      </div>
+
+      <h2>まとめ：歯冠破折の処置選択</h2>
+      <table>
+        <tr>
+          <th>状態</th>
+          <th>処置</th>
+        </tr>
+        <tr>
+          <td>非露髄</td>
+          <td>コンポジットレジン修復</td>
+        </tr>
+        <tr>
+          <td>露髄・小さい（＜2mm）</td>
+          <td>直接覆髄</td>
+        </tr>
+        <tr>
+          <td>露髄・大きい（≧2mm）・若年者</td>
+          <td>生活歯髄切断</td>
+        </tr>
+        <tr>
+          <td>露髄・高齢者/歯頸部破折</td>
+          <td>抜髄</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

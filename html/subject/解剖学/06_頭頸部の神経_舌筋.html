@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>舌筋 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 頭頸部の神経</span>
+    <h1>舌筋</h1>
+    <div class="container">
+
+      <h2>舌筋の概要</h2>
+      <p>舌内部はほとんど筋で構成される。<span class="key">内舌筋</span>（4筋）が舌の形を変え、<span class="key">外舌筋</span>（3筋）が舌の位置を移動させる。</p>
+      <p>舌筋は発生学的には<span class="key">体節由来</span>（鰓弓由来ではない）であり、すべて<span class="highlight">舌下神経</span>の支配を受ける。</p>
+
+      <h2>内舌筋（4筋）</h2>
+      <p>舌の外形を自在に変える筋群。</p>
+
+      <table>
+        <tr>
+          <th>筋名</th>
+          <th>走行・位置</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">上縦舌筋</span></td>
+          <td>舌の上下を縦に走行</td>
+          <td>舌背を短縮</td>
+        </tr>
+        <tr>
+          <td><span class="key">下縦舌筋</span></td>
+          <td>オトガイ舌筋と舌骨舌筋の間を縦走</td>
+          <td>舌背を短縮</td>
+        </tr>
+        <tr>
+          <td><span class="key">横舌筋</span></td>
+          <td>舌中隔→側方の舌縁</td>
+          <td>舌の幅を短縮</td>
+        </tr>
+        <tr>
+          <td><span class="key">垂直舌筋</span></td>
+          <td>舌の下部→舌背</td>
+          <td>舌背を平坦にする</td>
+        </tr>
+      </table>
+
+      <h2>外舌筋（3筋）</h2>
+      <p>舌の位置を大きく移動させ、発声・咀嚼・嚥下の機能を担う。</p>
+
+      <table>
+        <tr>
+          <th>筋名</th>
+          <th>起始</th>
+          <th>停止</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">オトガイ舌筋</span></td>
+          <td>オトガイ棘</td>
+          <td>舌背</td>
+          <td>舌を<span class="key">前方に突出</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">茎突舌筋</span></td>
+          <td>茎状突起（側頭骨）</td>
+          <td>舌尖付近</td>
+          <td>舌を<span class="key">後上方</span>に引く</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">舌骨舌筋</span></td>
+          <td>舌骨体・小角・大角</td>
+          <td>舌背</td>
+          <td>舌を<span class="key">後下方</span>に引く</td>
+        </tr>
+      </table>
+
+      <h2>舌筋の神経支配</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">神経支配のポイント</div>
+        <ul>
+          <li>内舌筋（4筋）＋外舌筋（3筋）＝ すべて<span class="highlight">舌下神経</span>支配</li>
+          <li><span class="caution">口蓋舌筋</span>：「〜舌筋」だが<span class="caution">咽頭神経叢</span>支配（例外）</li>
+        </ul>
+      </div>
+
+      <h3>選択肢で出る「〜舌筋」「〜舌骨筋」の神経支配</h3>
+      <table>
+        <tr>
+          <th>筋名</th>
+          <th>神経支配</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td>オトガイ舌筋</td>
+          <td><span class="highlight">舌下神経</span></td>
+          <td>外舌筋</td>
+        </tr>
+        <tr>
+          <td>茎突舌筋</td>
+          <td><span class="highlight">舌下神経</span></td>
+          <td>外舌筋</td>
+        </tr>
+        <tr>
+          <td>舌骨舌筋</td>
+          <td><span class="highlight">舌下神経</span></td>
+          <td>外舌筋</td>
+        </tr>
+        <tr>
+          <td><span class="caution">口蓋舌筋</span></td>
+          <td><span class="caution">咽頭神経叢</span></td>
+          <td>軟口蓋の筋（迷走神経＋舌咽神経）</td>
+        </tr>
+        <tr>
+          <td>顎舌骨筋</td>
+          <td>三叉神経（V3）</td>
+          <td>舌骨上筋</td>
+        </tr>
+        <tr>
+          <td>茎突舌骨筋</td>
+          <td>顔面神経</td>
+          <td>舌骨上筋</td>
+        </tr>
+      </table>
+
+      <h2>舌の構造</h2>
+      <ul>
+        <li><span class="key">舌中隔</span>：舌の中心を左右に分ける</li>
+        <li><span class="key">舌腱膜</span>：舌粘膜下に存在</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112A33</div>
+        <p>舌下神経に支配されるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 顎舌骨筋<br>
+          b 口蓋舌筋<br>
+          c 舌骨舌筋<br>
+          d 茎突舌骨筋<br>
+          e オトガイ舌筋
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】<span class="highlight">舌骨舌筋</span>と<span class="highlight">オトガイ舌筋</span>は外舌筋であり、舌下神経支配。顎舌骨筋は<span class="caution">三叉神経</span>（V3）支配、<span class="caution">口蓋舌筋</span>は咽頭神経叢（迷走神経）支配、茎突舌骨筋は<span class="caution">顔面神経</span>支配。「〜舌筋」でも口蓋舌筋は例外であることに注意。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

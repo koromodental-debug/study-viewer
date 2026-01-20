@@ -29,15 +29,20 @@ def main():
             continue
         
         for qa_file in sorted(os.listdir(subject_path)):
-            if not qa_file.endswith('_QA.txt'):
+            # .txt と .json の両方をサポート
+            if qa_file.endswith('_QA.txt'):
+                suffix = '_QA.txt'
+            elif qa_file.endswith('_QA.json'):
+                suffix = '_QA.json'
+            else:
                 continue
-            
+
             qa_path = f"qa/subject/{subject_dir}/{qa_file}"
             if qa_path in existing_qa_paths:
                 continue
 
             # タイトルを生成
-            title = qa_file.replace('_QA.txt', '').split('_', 1)[-1] if '_' in qa_file else qa_file.replace('_QA.txt', '')
+            title = qa_file.replace(suffix, '').split('_', 1)[-1] if '_' in qa_file else qa_file.replace(suffix, '')
 
             # IDが既に存在する場合はスキップ
             if title in existing_ids:

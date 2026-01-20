@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯髄切断法 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯髄処置</span>
+    <h1>歯髄切断法（断髄法）</h1>
+    <div class="container">
+
+      <h2>生活断髄法の目的</h2>
+      <ul>
+        <li><span class="key">冠部歯髄</span>を根管口部で切断除去</li>
+        <li>切断創面に<span class="highlight">デンチンブリッジ</span>の形成を促す</li>
+        <li><span class="key">根部歯髄を健康な状態で保存</span></li>
+        <li>根未完成歯では<span class="highlight">アペキソゲネーシス</span>（歯根の完成）を期待</li>
+      </ul>
+      <p class="note">※ <span class="caution">アペキシフィケーションではない</span>（アペキシフィケーションは歯髄壊死歯に対する処置）</p>
+
+      <h2>適応症</h2>
+      <ul>
+        <li><span class="highlight">根未完成歯</span>（特に若年者）</li>
+        <li>臨床的健康歯髄で直接覆髄法が困難な症例
+          <ul>
+            <li>軟化象牙質除去中の露髄</li>
+            <li>露髄面の汚染・露髄面が大きい</li>
+          </ul>
+        </li>
+        <li>可逆性歯髄炎で歯髄保存療法が奏功しなかった症例</li>
+        <li>初期の慢性潰瘍性・慢性増殖性歯髄炎</li>
+      </ul>
+
+      <h2>禁忌症</h2>
+      <ul>
+        <li><span class="caution">根部歯髄が健康でない症例</span>（炎症・感染・変性がある場合）</li>
+        <li>歯冠修復の際、根管保持を必要とする症例</li>
+      </ul>
+
+      <h2>使用薬剤</h2>
+      <p><span class="highlight">水酸化カルシウム製剤</span>が最も一般的（永久歯の生活断髄薬として）</p>
+
+      <h2>術式のポイント</h2>
+      <div class="point-box">
+        <div class="point-box-title">試験頻出の術式ポイント</div>
+        <ul>
+          <li><span class="highlight">露髄前に感染歯質（軟化象牙質）を完全に除去</span></li>
+          <li><span class="highlight">根管口より少し大きめのラウンドバー</span>で歯髄を切断</li>
+          <li><span class="highlight">水酸化カルシウム製剤を無圧下で貼付</span></li>
+        </ul>
+      </div>
+
+      <h3>術式の流れ</h3>
+      <table>
+        <tr>
+          <th>順序</th>
+          <th>操作</th>
+          <th>ポイント</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>局所麻酔</td>
+          <td>確実に奏功させる</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>齲窩開拡・軟化象牙質除去</td>
+          <td class="caution">露髄前に完全除去</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>ラバーダム装着・消毒</td>
+          <td>次亜塩素酸Na+過酸化水素水で交互洗浄</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>髄室開拡</td>
+          <td>細いフィッシャーバーで天蓋除去</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>冠部歯髄の切断</td>
+          <td>根管口より大きめのラウンドバー使用</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>ケミカルサージェリー</td>
+          <td>次亜塩素酸Naで創面を整理</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>水酸化Ca貼付</td>
+          <td class="highlight">無圧下で1mm以上の厚さに</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>裏層・仮封</td>
+          <td>酸化亜鉛ユージノール+グラスアイオノマー</td>
+        </tr>
+      </table>
+
+      <p class="note">※ <span class="caution">エアーで水分を十分に除去してはいけない</span>（乾燥させすぎない）</p>
+      <p class="note">※ <span class="caution">無注水で齲窩開拡してはいけない</span>（注水下で行う）</p>
+
+      <h2>治癒機転</h2>
+      <ul>
+        <li>水酸化カルシウムの<span class="key">強アルカリ性（pH12.4）</span>により接触部の歯髄は壊死</li>
+        <li>術後2週前後：象牙芽細胞様細胞が配列</li>
+        <li>術後<span class="highlight">6〜8週後</span>：<span class="highlight">デンチンブリッジ</span>が形成され治癒完了</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115C25</div>
+        <p>生活歯髄切断法の術式で適切なのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 無注水で齲窩の開拡を行う。<br>
+          b 露髄前に感染歯質を除去する。<br>
+          c 根管口より大きめのバーで歯髄を切断する。<br>
+          d エアーで歯髄切断面の水分を十分に除去する。<br>
+          e 歯髄切断面には水酸化カルシウム製剤を無圧下で貼付する。
+        </div>
+        <div class="answer">正解：b, c, e</div>
+        <p>【解説】b：感染歯質は露髄前に完全除去する。c：根管口より大きめのラウンドバーで切断（小さいと歯髄がバーに巻きつく）。e：水酸化カルシウムは無圧下で貼付。a：齲窩開拡は注水下で行う。d：切断面を過度に乾燥させてはいけない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A48</div>
+        <p>水酸化カルシウム法による断髄で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 幼若永久歯に用いる。<br>
+          b 断髄面は凝固壊死する。<br>
+          c 1回法と2回法とがある。<br>
+          d デンチンブリッジが形成される。<br>
+          e アペキシフィケーションである。
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】a：根未完成歯（幼若永久歯）が主な適応。d：水酸化カルシウムの強アルカリ性により6〜8週後にデンチンブリッジが形成される。b：水酸化カルシウムでは凝固壊死ではなく液化壊死。e：断髄法はアペキソゲネーシス（生活歯髄を保存し歯根完成を促す）であり、アペキシフィケーション（壊死歯髄に対する処置）ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

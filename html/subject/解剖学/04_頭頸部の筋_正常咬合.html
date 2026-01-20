@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>正常咬合 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 頭頸部の筋</span>
+    <h1>正常咬合</h1>
+    <div class="container">
+
+      <h2>バクシネーターメカニズム（頬筋機能機構）</h2>
+      <p><span class="key">Brodie</span>（1952）が提唱した概念。歯列は<span class="highlight">内側からの舌の力</span>と<span class="highlight">外側からの頬筋・口輪筋の力</span>のバランスで保持される。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">歯列に作用する筋の力</div>
+        <ul>
+          <li><span class="key">内側から</span>：舌（舌筋）→ 歯を外側へ押す</li>
+          <li><span class="key">外側から</span>：頬筋・口輪筋 → 歯を内側へ押す</li>
+          <li>両者のバランスがとれた位置に歯列が形成・維持される</li>
+        </ul>
+      </div>
+
+      <h2>外側から歯列に作用する筋</h2>
+
+      <h3>頬筋</h3>
+      <ul>
+        <li>頬部の<span class="key">最深層</span>に存在する表情筋</li>
+        <li>起始：上顎臼歯部歯槽隆起、<span class="key">翼突下顎縫線</span>、下顎骨頬筋稜</li>
+        <li>停止：口角（口輪筋と合流）</li>
+        <li>支配神経：<span class="key">顔面神経</span></li>
+        <li>作用：頬を歯列に押し付ける、食塊を歯列上に保持</li>
+      </ul>
+
+      <h3>口輪筋</h3>
+      <ul>
+        <li>口裂の周囲を<span class="key">輪状に取り巻く</span>表情筋</li>
+        <li>深層部分は<span class="key">頬筋と連続</span></li>
+        <li>支配神経：<span class="key">顔面神経</span></li>
+        <li>作用：口裂の閉鎖、口唇を歯列に押し付ける</li>
+      </ul>
+
+      <p class="note">頬筋と口輪筋は咀嚼・嚥下時に頬粘膜から口唇粘膜に緊張を与え、<span class="key">食塊を歯列上に保持</span>する</p>
+
+      <h2>内側から歯列に作用する筋</h2>
+
+      <h3>舌筋</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>筋名</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td rowspan="4"><span class="key">内舌筋</span><br>（4筋）</td>
+          <td>上縦舌筋</td>
+          <td rowspan="4">舌の外形を変える</td>
+        </tr>
+        <tr>
+          <td>下縦舌筋</td>
+        </tr>
+        <tr>
+          <td>横舌筋</td>
+        </tr>
+        <tr>
+          <td>垂直舌筋</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="key">外舌筋</span><br>（3筋）</td>
+          <td>オトガイ舌筋</td>
+          <td rowspan="3">舌の位置を移動</td>
+        </tr>
+        <tr>
+          <td>茎突舌筋</td>
+        </tr>
+        <tr>
+          <td>舌骨舌筋</td>
+        </tr>
+      </table>
+
+      <p class="note">舌筋はすべて<span class="highlight">舌下神経（XII）</span>支配</p>
+
+      <h2>筋のバランスと不正咬合</h2>
+      <ul>
+        <li><span class="caution">口輪筋の力が弱い</span> → 歯が前方に傾斜 → 開咬</li>
+        <li><span class="caution">口輪筋の力が強すぎる</span> → 前歯が内側に傾斜 → 過蓋咬合</li>
+        <li><span class="caution">舌突出癖・低位舌</span> → 舌の力のバランス異常 → 歯列不正</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107C104</div>
+        <p>舌の機能力に対抗して、外側から歯列に機能力を及ぼすのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 頰　筋<br>
+          b 咬　筋<br>
+          c 口輪筋<br>
+          d 内側翼突筋<br>
+          e 外側翼突筋
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】<span class="highlight">バクシネーターメカニズム</span>の問題。歯列は内側からの<span class="key">舌</span>の力と、外側からの<span class="highlight">頬筋</span>・<span class="highlight">口輪筋</span>の力のバランスで保持される。咬筋・内側翼突筋・外側翼突筋は咀嚼筋であり、歯列への直接的な機能力は及ぼさない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

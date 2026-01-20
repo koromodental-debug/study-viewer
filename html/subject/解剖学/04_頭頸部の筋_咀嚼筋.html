@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>咀嚼筋 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 頭頸部の筋</span>
+    <h1>咀嚼筋</h1>
+    <div class="container">
+
+      <h2>咀嚼筋の概要</h2>
+      <p>咀嚼筋は<span class="key">4筋</span>（咬筋・側頭筋・内側翼突筋・外側翼突筋）からなり、全て<span class="highlight">下顎神経（V3）</span>支配。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">起始・停止の混同に注意</div>
+        <ul>
+          <li><span class="key">咬筋</span>：起始が頬骨弓（<span class="caution">停止ではない</span>）</li>
+          <li><span class="key">内側翼突筋</span>：起始が翼突窩（<span class="caution">停止ではない</span>）</li>
+          <li><span class="key">外側翼突筋</span>：停止が翼突筋窩・関節円板</li>
+        </ul>
+      </div>
+
+      <h2>咀嚼筋4筋の起始・停止</h2>
+      <table>
+        <tr>
+          <th>筋名</th>
+          <th>起始</th>
+          <th>停止</th>
+          <th>支配神経</th>
+        </tr>
+        <tr>
+          <td><span class="key">咬筋</span></td>
+          <td>頬骨弓下縁・内面</td>
+          <td><span class="highlight">咬筋粗面</span>（下顎枝外面）</td>
+          <td>咬筋神経</td>
+        </tr>
+        <tr>
+          <td><span class="key">側頭筋</span></td>
+          <td>側頭窩（上・下側頭線）</td>
+          <td><span class="highlight">筋突起</span></td>
+          <td>深側頭神経</td>
+        </tr>
+        <tr>
+          <td><span class="key">内側翼突筋</span></td>
+          <td>翼突窩</td>
+          <td><span class="highlight">翼突筋粗面</span>（下顎枝内面）</td>
+          <td>内側翼突筋神経</td>
+        </tr>
+        <tr>
+          <td><span class="key">外側翼突筋</span></td>
+          <td>上頭：大翼側頭下面<br>下頭：翼状突起外側板</td>
+          <td><span class="highlight">翼突筋窩</span>・関節円板</td>
+          <td>外側翼突筋神経</td>
+        </tr>
+      </table>
+
+      <h2>咀嚼筋の作用</h2>
+      <table>
+        <tr>
+          <th>筋名</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">咬筋</span></td>
+          <td><span class="key">閉口</span>（下顎を上方へ）</td>
+        </tr>
+        <tr>
+          <td><span class="key">側頭筋</span></td>
+          <td><span class="key">閉口</span>、後部筋束は下顎を後方へ</td>
+        </tr>
+        <tr>
+          <td><span class="key">内側翼突筋</span></td>
+          <td><span class="key">閉口</span>（咬筋と下顎枝を内外で挟む）</td>
+        </tr>
+        <tr>
+          <td><span class="key">外側翼突筋</span></td>
+          <td><span class="caution">開口</span>、前方・側方運動</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">外側翼突筋</span>は咀嚼筋で唯一の<span class="caution">開口筋</span>（両側同時収縮で下顎を前方へ）</p>
+
+      <h2>関連する隙</h2>
+
+      <h3>咬筋下隙</h3>
+      <p>咬筋と下顎枝の間の隙。咬筋の自在な動きを可能にする。</p>
+
+      <h3>側頭下隙</h3>
+      <p>外側翼突筋の外側部で側頭筋との間。顎動・静脈、翼突筋静脈叢などが存在。</p>
+
+      <h3>翼突下顎隙</h3>
+      <p>内側翼突筋と下顎枝の間。下歯槽神経、舌神経、鼓索神経、下歯槽動・静脈、蝶下顎靱帯、翼突筋静脈叢などが存在。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109C122</div>
+        <p>筋と停止部位の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 咬　筋 ――――――― 頰骨弓<br>
+          b 側頭筋 ――――――― 筋突起<br>
+          c 顎舌骨筋 ―――――― 乳突切痕<br>
+          d 外側翼突筋 ――――― 翼突筋窩<br>
+          e 内側翼突筋 ――――― 翼突窩
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】<span class="key">側頭筋</span>の停止は<span class="highlight">筋突起</span>、<span class="key">外側翼突筋</span>の停止は<span class="highlight">翼突筋窩</span>（・関節円板）で正しい。咬筋の頬骨弓は<span class="caution">起始</span>（停止は咬筋粗面）、内側翼突筋の翼突窩は<span class="caution">起始</span>（停止は翼突筋粗面）。顎舌骨筋の停止は舌骨体・顎舌骨筋縫線（乳突切痕は顎二腹筋後腹の起始）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

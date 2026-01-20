@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "title": "造血系・リンパ系",
+    "category": "解剖学",
+    "chapter": "01_全身"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "リンパ性器官はどれか。2つ選べ。",
+          "choices": {
+            "a": "腎臓",
+            "b": "膵臓",
+            "c": "脾臓",
+            "d": "扁桃",
+            "e": "下垂体"
+          },
+          "correctAnswer": "CD",
+          "numChoices": 2,
+          "code": "110A95"
+        }
+      ]
+    }
+  ]
+}

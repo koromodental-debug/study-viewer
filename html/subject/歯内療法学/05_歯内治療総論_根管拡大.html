@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>根管拡大 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯内治療総論</span>
+    <h1>根管拡大</h1>
+    <div class="container">
+
+      <h2>根管形成の意義</h2>
+      <p><span class="key">根管形成</span>（root canal preparation）は根管処置の中核をなす操作で、2つの大きな意義がある。</p>
+      <ul>
+        <li><span class="highlight">Cleaning</span>：機械的清掃による細菌感染の排除・予防</li>
+        <li><span class="highlight">Shaping</span>：根管洗浄や根管充填のための形態付与</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">機械的拡大が重要視される理由（出題実績）</div>
+        <ul>
+          <li><span class="highlight">薬剤の到達性が高まる</span></li>
+          <li><span class="highlight">根管形態を改善できる</span></li>
+          <li><span class="highlight">細菌の栄養源が除去できる</span></li>
+        </ul>
+        <p class="note">※「根管を無菌化できる」は誤り（機械的清掃のみでは不十分）</p>
+      </div>
+
+      <h2>手用根管切削器具</h2>
+      <table>
+        <tr>
+          <th>器具</th>
+          <th>断面</th>
+          <th>適した操作</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">Kファイル</span></td>
+          <td>正方形</td>
+          <td>ファイリング・リーミング両方</td>
+          <td>適応が広い</td>
+        </tr>
+        <tr>
+          <td><span class="key">Hファイル</span></td>
+          <td>刃を有する円錐</td>
+          <td><span class="highlight">ファイリングのみ</span></td>
+          <td>切削効率高、<span class="caution">リーミング不可</span>（破折リスク）</td>
+        </tr>
+        <tr>
+          <td>リーマー</td>
+          <td>正三角形</td>
+          <td>リーミング</td>
+          <td>ピッチが広い、使用頻度↓</td>
+        </tr>
+      </table>
+
+      <h3>操作法</h3>
+      <table>
+        <tr>
+          <th>操作法</th>
+          <th>動作</th>
+          <th>適した器具</th>
+        </tr>
+        <tr>
+          <td><span class="key">ファイリング</span></td>
+          <td>牽引操作（上下動）</td>
+          <td>Hファイル、Kファイル</td>
+        </tr>
+        <tr>
+          <td><span class="key">リーミング</span></td>
+          <td>回転操作（90〜180°回転→引き抜く）</td>
+          <td>リーマー</td>
+        </tr>
+        <tr>
+          <td>ウォッチワインディング</td>
+          <td>小刻みな正逆回転（30〜60°）</td>
+          <td>Kファイル</td>
+        </tr>
+        <tr>
+          <td>バランストフォース法</td>
+          <td>正回転→反時計方向に圧をかけ回転</td>
+          <td>Kファイル</td>
+        </tr>
+      </table>
+
+      <h2>Ni-Tiロータリーファイル</h2>
+      <p>ニッケルチタン合金（Ni約55%、Ti約45%）製。<span class="key">超弾性</span>と<span class="key">形状記憶効果</span>を有する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">Ni-Tiファイルの優位性（出題実績）</div>
+        <ul>
+          <li><span class="highlight">切削効率が高い</span>（エンジン駆動）</li>
+          <li><span class="highlight">根尖孔の変位が少ない</span>（彎曲根管への追従性）</li>
+        </ul>
+      </div>
+
+      <h3>Ni-Tiファイルの破折防止（頻出）</h3>
+      <ul>
+        <li><span class="highlight">使用回数を制限する</span></li>
+        <li><span class="highlight">手用ファイルで誘導路形成を行う</span>（15〜20号が挿入可能になるまで）</li>
+        <li>トルクリミット機能を有する専用装置を使用</li>
+        <li>低速正回転（250〜500rpm）で使用</li>
+        <li>使用前に刃部の延び・ねじれを確認</li>
+      </ul>
+
+      <h3>クラウンダウン法</h3>
+      <p>Ni-Tiロータリーファイルの<span class="key">標準的術式</span>。根管上部から根尖部に向かって段階的に形成を進める。</p>
+      <ul>
+        <li><span class="highlight">根尖孔形態の保存</span></li>
+        <li><span class="highlight">器具破折リスクの減少</span></li>
+        <li>根尖部の直線化リスク減少</li>
+        <li>洗浄液が根尖部に到達しやすい</li>
+      </ul>
+
+      <h2>彎曲根管への対処</h2>
+      <div class="point-box">
+        <div class="point-box-title">プレカーブ付与（頻出）</div>
+        <p>彎曲根管や穿通困難な根管では、<span class="highlight">Kファイルへのプレカーブ付与</span>が有効。器具先端をあらかじめ曲げた状態で使用する。</p>
+      </div>
+
+      <h2>その他の重要事項</h2>
+      <h3>アピカルシート（アピカルストップ）</h3>
+      <p>根尖狭窄部に付与されるステップ状の形態。目的は<span class="highlight">マスターポイントの逸出防止</span>。</p>
+
+      <h3>再帰ファイリング（recapitulation）</h3>
+      <p>器具サイズを大きくするごとにMAF（マスターアピカルファイル）を繰り返し挿入し、削片を遊離させる操作。<span class="highlight">根尖部の目詰まり防止</span>に有効。</p>
+
+      <h2>過去問</h2>
+
+      <h3>Ni-Tiロータリーファイル</h3>
+      <div class="question-box">
+        <div class="q-number">104A95</div>
+        <p>ニッケルチタンロータリーファイルがステンレススチール製手用ファイルよりも優れているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 切削効率が高い。<br>
+          b 根尖孔の変位が少ない。<br>
+          c スミヤー層が形成されない。<br>
+          d レッジの修正が容易である。<br>
+          e イスムスの拡大が容易である。
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】Ni-Tiファイルはエンジン駆動で<span class="key">切削効率が高い</span>。また超弾性により彎曲根管に追従するため<span class="key">根尖孔の変位が少ない</span>。スミヤー層は切削により必ず形成される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C67</div>
+        <p>Ni－Tiロータリーファイルの破折防止に有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ファイルの使用回数を制限する。<br>
+          b ステップバック形成法を用いる。<br>
+          c 使用前に刃部の延びを確認する。<br>
+          d 根尖方向への強圧下での器具操作<br>
+          e 手用ファイルで誘導路形成を行う。
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】Ni-Tiファイルは予兆なく破折するため、<span class="key">使用回数の制限</span>が重要。また<span class="key">誘導路形成</span>（手用Kファイルで15〜20号が入るまで）を行うことで破折リスクを減少させる。強圧は禁忌。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A86</div>
+        <p>Ni-Tiロータリーファイルを用いた根管形成において、クラウンダウン法を用いる理由はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 切削効率の向上<br>
+          b 操作時間の短縮<br>
+          c 根尖孔形態の保存<br>
+          d 器具破折リスクの減少<br>
+          e 歯根破折リスクの減少
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】クラウンダウン法はNi-Tiファイルの標準術式。根管上部から形成を進めることで、<span class="key">根尖孔形態の保存</span>と<span class="key">器具破折リスクの減少</span>が得られる。</p>
+      </div>
+
+      <h3>彎曲根管・プレカーブ</h3>
+      <div class="question-box">
+        <div class="q-number">109B31</div>
+        <p>68歳の女性。下顎右側第三大臼歯の修復物脱離を主訴として来院した。感染根管治療を開始し根管充塡材を除去したが、近心根管を穿通させることができない。初診時のエックス線写真（別冊No.9）を別に示す。<br>穿通のために行う処置で適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109B31_1.png" alt="別冊No.9">
+        </div>
+        <div class="choices">
+          a 根管口の漏斗状拡大<br>
+          b 超音波装置による根管洗浄<br>
+          c Kファイルへのプレカーブ付与<br>
+          d アクセス窩洞近心側の便宜拡大<br>
+          e Ni-Tiロータリーファイルの使用
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】穿通困難な彎曲根管には<span class="key">Kファイルへのプレカーブ付与</span>が有効。器具先端を彎曲に合わせて曲げることで穿通しやすくなる。Ni-Tiファイルは誘導路形成後に使用する。</p>
+      </div>
+
+      <h3>機械的拡大の意義</h3>
+      <div class="question-box">
+        <div class="q-number">103A101</div>
+        <p>感染根管治療で機械的拡大が重要視される理由はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 根管を無菌化できる。<br>
+          b 薬剤の到達性が高まる。<br>
+          c 消毒よりも簡便である。<br>
+          d 根管形態を改善できる。<br>
+          e 細菌の栄養源が除去できる。
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】機械的拡大により<span class="key">薬剤の到達性向上</span>、<span class="key">根管形態の改善</span>、<span class="key">細菌の栄養源（壊死組織等）の除去</span>が可能。ただし機械的清掃のみでは無菌化は困難であり、薬液による洗浄を併用する必要がある。</p>
+      </div>
+
+      <h3>その他</h3>
+      <div class="question-box">
+        <div class="q-number">107A58</div>
+        <p>アピカルシートの目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 側枝の封鎖<br>
+          b 歯根破折の防止<br>
+          c マスターポイントの保持<br>
+          d コロナルリーケージの防止<br>
+          e マスターポイントの逸出防止
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">アピカルシート</span>（アピカルストップ）は根尖狭窄部に付与されるステップ状形態で、根管充填材を受け止め<span class="key">マスターポイントの逸出を防止</span>する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C75</div>
+        <p>根管拡大時の切削片による根尖部の目詰まりを防止する方法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a プレカーブ法<br>
+          b クラウンダウン法<br>
+          c ステップバック法<br>
+          d 再帰ファイリング法<br>
+          e バランストフォース法
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="key">再帰ファイリング法</span>（recapitulation）は、器具サイズを大きくするごとにMAFを繰り返し挿入して削片を遊離させる操作。これにより根尖部の目詰まりを防止できる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>開口反射 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 頭頸部の神経</span>
+    <h1>開口反射</h1>
+    <div class="container">
+
+      <h2>下顎反射の概要</h2>
+      <p>下顎反射は顎運動を調節する反射群。咀嚼筋の収縮制御は<span class="highlight">三叉神経運動核</span>（橋）の支配である。</p>
+
+      <h3>下顎反射の種類</h3>
+      <table>
+        <tr>
+          <th>反射</th>
+          <th>役割</th>
+          <th>現れる運動</th>
+        </tr>
+        <tr>
+          <td><span class="key">下顎張反射</span></td>
+          <td>顎位を一定に保つ</td>
+          <td>閉口筋の緊張増加</td>
+        </tr>
+        <tr>
+          <td><span class="key">脱負荷反射</span></td>
+          <td>噛み砕いた瞬間に脱力し口腔内損傷を防ぐ</td>
+          <td>閉口運動の停止</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">開口反射</span></td>
+          <td>侵害刺激から口腔を防御</td>
+          <td><span class="highlight">開口筋収縮＋閉口筋弛緩</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">歯根膜咬筋反射</span></td>
+          <td>咬合力・咀嚼力の調節</td>
+          <td>閉口筋の収縮力増強</td>
+        </tr>
+      </table>
+
+      <h2>開口反射の反射弓</h2>
+      <p>口腔内・周辺に<span class="key">侵害刺激</span>が加わったときに、有害な刺激から逃れ、口腔を防御する反射。</p>
+
+      <h3>誘発刺激</h3>
+      <ul>
+        <li>三叉神経（V2・V3）支配領域（特に口腔周辺）への<span class="highlight">侵害刺激</span>、強い機械刺激</li>
+      </ul>
+
+      <h3>反射弓の構成</h3>
+      <table>
+        <tr>
+          <th>要素</th>
+          <th>構造</th>
+        </tr>
+        <tr>
+          <td><span class="key">受容器</span></td>
+          <td>侵害受容器（自由神経終末）</td>
+        </tr>
+        <tr>
+          <td><span class="key">求心路</span></td>
+          <td>Aδ線維 → 三叉神経節 → <span class="highlight">三叉神経脊髄路核</span>（尾側亜核）</td>
+        </tr>
+        <tr>
+          <td><span class="key">中枢</span></td>
+          <td>介在ニューロン → <span class="highlight">三叉神経運動核</span>（橋）</td>
+        </tr>
+        <tr>
+          <td><span class="key">遠心路</span></td>
+          <td>三叉神経（V3）</td>
+        </tr>
+        <tr>
+          <td><span class="key">効果器</span></td>
+          <td>開口筋（収縮）＋閉口筋（弛緩）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">開口反射のポイント</div>
+        <ul>
+          <li><span class="highlight">多シナプス反射</span>（介在ニューロンを含む）</li>
+          <li>痛覚情報 → 三叉神経脊髄路核（<span class="key">尾側亜核</span>）に入力</li>
+          <li>開口筋を<span class="key">興奮</span>、閉口筋を<span class="key">抑制</span>（相反性支配）</li>
+        </ul>
+      </div>
+
+      <h2>三叉神経感覚核と反射</h2>
+      <table>
+        <tr>
+          <th>感覚</th>
+          <th>入力する核</th>
+          <th>関与する反射</th>
+        </tr>
+        <tr>
+          <td>触・圧覚</td>
+          <td>三叉神経主知覚核、脊髄路核（吻側亜核・中位亜核）</td>
+          <td>持続性歯根膜咬筋反射</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">痛覚</span></td>
+          <td>三叉神経脊髄路核（<span class="highlight">尾側亜核</span>）</td>
+          <td><span class="highlight">開口反射</span></td>
+        </tr>
+        <tr>
+          <td>温度覚</td>
+          <td>三叉神経脊髄路核（尾側亜核）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td>固有感覚</td>
+          <td>三叉神経中脳路核</td>
+          <td>下顎張反射、一過性歯根膜咬筋反射</td>
+        </tr>
+      </table>
+
+      <h2>神経核の局在</h2>
+      <table>
+        <tr>
+          <th>神経核</th>
+          <th>位置</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">三叉神経運動核</span></td>
+          <td><span class="highlight">橋</span></td>
+          <td>咀嚼筋（閉口筋・開口筋）の運動支配</td>
+        </tr>
+        <tr>
+          <td>三叉神経主知覚核</td>
+          <td>橋</td>
+          <td>触・圧覚</td>
+        </tr>
+        <tr>
+          <td>三叉神経脊髄路核</td>
+          <td>延髄〜頸髄</td>
+          <td>痛覚・温度覚</td>
+        </tr>
+        <tr>
+          <td>三叉神経中脳路核</td>
+          <td>中脳</td>
+          <td>固有感覚（筋紡錘・歯根膜）</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116D62</div>
+        <p>咬筋運動ニューロンの細胞体が存在するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 橋<br>
+          b 延　髄<br>
+          c 間　脳<br>
+          d 小　脳<br>
+          e 中　脳
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】咬筋は咀嚼筋であり、<span class="highlight">三叉神経</span>（V3）支配。三叉神経運動核は<span class="highlight">橋</span>に存在する。延髄には舌下神経核・疑核、中脳には動眼神経核・滑車神経核が存在する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

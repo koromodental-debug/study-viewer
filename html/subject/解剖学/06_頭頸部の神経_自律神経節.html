@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>自律神経節 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 頭頸部の神経</span>
+    <h1>自律神経節</h1>
+    <div class="container">
+
+      <h2>自律神経の概要</h2>
+      <p>自律神経は<span class="key">交感神経</span>と<span class="key">副交感神経</span>からなり、内臓機能を調節する。頭頸部には4つの<span class="key">副交感神経節</span>が存在する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">副交感神経と交感神経の違い</div>
+        <ul>
+          <li><span class="key">副交感神経</span>：アセチルコリン → <span class="highlight">漿液性</span>唾液（水分多い）</li>
+          <li><span class="key">交感神経</span>：ノルアドレナリン → <span class="highlight">粘性</span>唾液（少量）</li>
+        </ul>
+      </div>
+
+      <h2>頭頸部の4つの副交感神経節</h2>
+
+      <table>
+        <tr>
+          <th>神経節</th>
+          <th>存在部位</th>
+          <th>所属する三叉神経</th>
+          <th>節前線維（脳神経）</th>
+          <th>支配する効果器</th>
+        </tr>
+        <tr>
+          <td><span class="key">毛様体神経節</span></td>
+          <td>眼窩内</td>
+          <td>眼神経（V1）</td>
+          <td><span class="key">動眼神経</span>（III）</td>
+          <td>毛様体筋、瞳孔括約筋</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">翼口蓋神経節</span></td>
+          <td>翼口蓋窩</td>
+          <td>上顎神経（V2）</td>
+          <td><span class="highlight">顔面神経</span>（VII）<br>大錐体神経</td>
+          <td>涙腺、口蓋腺、鼻腺</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">顎下神経節</span></td>
+          <td>舌下隙<br>（舌神経に付属）</td>
+          <td>下顎神経（V3）</td>
+          <td><span class="highlight">顔面神経</span>（VII）<br>鼓索神経</td>
+          <td>顎下腺、舌下腺</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">耳神経節</span></td>
+          <td>卵円孔下方</td>
+          <td>下顎神経（V3）</td>
+          <td><span class="highlight">舌咽神経</span>（IX）<br>小錐体神経</td>
+          <td>耳下腺</td>
+        </tr>
+      </table>
+
+      <h2>副交感神経の起始核</h2>
+      <table>
+        <tr>
+          <th>起始核</th>
+          <th>位置</th>
+          <th>脳神経</th>
+          <th>神経節</th>
+        </tr>
+        <tr>
+          <td><span class="key">動眼神経副核</span><br>（Edinger-Westphal核）</td>
+          <td>中脳</td>
+          <td>動眼神経（III）</td>
+          <td>毛様体神経節</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">上唾液核</span></td>
+          <td>橋</td>
+          <td>顔面神経（VII）</td>
+          <td>翼口蓋神経節、顎下神経節</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">下唾液核</span></td>
+          <td>延髄</td>
+          <td>舌咽神経（IX）</td>
+          <td>耳神経節</td>
+        </tr>
+        <tr>
+          <td><span class="key">迷走神経背側核</span></td>
+          <td>延髄</td>
+          <td>迷走神経（X）</td>
+          <td>内臓壁内神経節</td>
+        </tr>
+      </table>
+
+      <h2>交感神経節</h2>
+
+      <h3>頸部の交感神経節</h3>
+      <ul>
+        <li><span class="highlight">上頸神経節</span>：最大の頸部交感神経節、頭頸部への交感神経の中継点</li>
+        <li><span class="key">中頸神経節</span>：第6頸椎付近</li>
+        <li><span class="key">下頸神経節</span>：第7頸椎付近</li>
+        <li><span class="key">星状神経節</span>：下頸神経節と第1胸神経節が融合</li>
+      </ul>
+
+      <p class="note">交感神経の節前線維は<span class="caution">胸髄・上部腰髄</span>から出る（頭頸部にも胸髄から）</p>
+
+      <h2>副交感神経節と感覚神経節の違い</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">混同しやすい神経節</div>
+        <ul>
+          <li><span class="key">副交感神経節</span>：毛様体神経節、翼口蓋神経節、顎下神経節、耳神経節</li>
+          <li><span class="caution">感覚神経節</span>：三叉神経節、膝神経節（顔面神経）、らせん神経節（内耳神経）</li>
+          <li><span class="caution">交感神経節</span>：上頸神経節、星状神経節</li>
+        </ul>
+      </div>
+
+      <h2>覚え方のポイント</h2>
+      <ul>
+        <li>顔面神経（VII）→ 翼口蓋神経節 ＋ 顎下神経節（<span class="key">2つ</span>）</li>
+        <li>舌咽神経（IX）→ 耳神経節（<span class="key">1つ</span>）</li>
+        <li>唾液腺の支配：耳下腺は<span class="highlight">舌咽神経</span>、顎下腺・舌下腺は<span class="highlight">顔面神経</span></li>
+      </ul>
+
+    </div>
+  </div>
+</body>
+</html>

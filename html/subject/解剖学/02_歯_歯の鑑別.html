@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯の鑑別 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 歯</span>
+    <h1>歯の鑑別</h1>
+    <div class="container">
+
+      <h2>ミュールライターの三歯徴</h2>
+      <p>歯の<span class="key">左右を鑑別</span>するための3つの形態的特徴。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">三歯徴の覚え方</div>
+        <ul>
+          <li><span class="key">隅角徴</span>：近心隅角は<span class="highlight">鋭</span>、遠心隅角は<span class="highlight">鈍</span></li>
+          <li><span class="key">彎曲徴</span>：頬側面の<span class="highlight">近心の彎曲が大きい</span></li>
+          <li><span class="key">歯根徴</span>：歯根は<span class="highlight">遠心方向に傾く</span></li>
+        </ul>
+      </div>
+
+      <h3>三歯徴の詳細</h3>
+      <table>
+        <tr>
+          <th>徴候</th>
+          <th>内容</th>
+          <th>明瞭な歯種</th>
+        </tr>
+        <tr>
+          <td><span class="key">隅角徴</span></td>
+          <td>近心隅角は鋭く突出、遠心隅角は鈍い</td>
+          <td>側切歯、犬歯、大臼歯</td>
+        </tr>
+        <tr>
+          <td><span class="key">彎曲徴</span></td>
+          <td>頬側面と隣接面の移行部の彎曲が近心＞遠心</td>
+          <td>犬歯、大臼歯</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯根徴</span></td>
+          <td>歯根の長軸が遠心に傾斜（根尖1/3が遠心へ屈曲）</td>
+          <td>全歯種</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">例外：上顎第一小臼歯</span>は彎曲徴が逆（遠心の彎曲が近心より大きい）</p>
+
+      <h2>上顎大臼歯の鑑別（頻出）</h2>
+      <p>上顎第一大臼歯と第二大臼歯の違いは頻出テーマ。</p>
+
+      <h3>上顎第一大臼歯 vs 第二大臼歯</h3>
+      <table>
+        <tr>
+          <th>特徴</th>
+          <th>上顎第一大臼歯</th>
+          <th>上顎第二大臼歯</th>
+        </tr>
+        <tr>
+          <td>咬頭数</td>
+          <td><span class="key">5咬頭</span>（五咬頭性）</td>
+          <td><span class="key">4咬頭</span>が多い</td>
+        </tr>
+        <tr>
+          <td>遠心舌側咬頭</td>
+          <td>発達（第5咬頭）</td>
+          <td><span class="caution">退化・消失</span></td>
+        </tr>
+        <tr>
+          <td>カラベリー結節</td>
+          <td><span class="key">好発</span></td>
+          <td>まれ</td>
+        </tr>
+        <tr>
+          <td>歯根離開</td>
+          <td><span class="key">大きい</span></td>
+          <td>小さい</td>
+        </tr>
+        <tr>
+          <td>三歯徴</td>
+          <td>やや不明瞭</td>
+          <td><span class="highlight">明瞭</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">なぜ第二大臼歯で三歯徴が明瞭か</div>
+        <ul>
+          <li>第一大臼歯は遠心舌側咬頭が発達 → 形態がより<span class="key">対称的</span></li>
+          <li>第二大臼歯は遠心舌側咬頭が退化 → 近心・遠心の<span class="key">非対称性が明瞭</span></li>
+        </ul>
+      </div>
+
+      <h2>関連する形態異常・特徴</h2>
+
+      <h3>カラベリー結節</h3>
+      <ul>
+        <li>上顎大臼歯の<span class="key">近心舌側面</span>に出現する過剰結節</li>
+        <li>好発：<span class="highlight">上顎第二乳臼歯、上顎第一大臼歯</span></li>
+        <li>第5咬頭とも呼ばれる</li>
+        <li>裂溝部は齲蝕好発部位</li>
+      </ul>
+
+      <h3>ドリオピテクスパターン（Y-5型）</h3>
+      <ul>
+        <li><span class="key">下顎第一大臼歯</span>の咬合面溝パターン</li>
+        <li>5咬頭で、溝がY字型を呈する</li>
+        <li>霊長類に共通する原始的パターン</li>
+      </ul>
+
+      <h3>隅角徴をもたない歯</h3>
+      <p><span class="caution">上顎第一小臼歯</span>（近心隅角が遠心隅角より丸みがある）、<span class="caution">下顎中切歯</span>（左右対称）は隅角徴が不明瞭または逆。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109C120</div>
+        <p>上顎第一大臼歯に比べ上顎第二大臼歯で明瞭なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 五咬頭性<br>
+          b 歯根離開<br>
+          c 遠心舌側咬頭<br>
+          d ドリオピテクスパターン<br>
+          e ミュールライターの三歯徴
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】上顎第二大臼歯は遠心舌側咬頭が退化し、近心・遠心の非対称性が明瞭になるため、<span class="key">ミュールライターの三歯徴が明瞭</span>に現れる。五咬頭性・歯根離開・遠心舌側咬頭は第一大臼歯の特徴。ドリオピテクスパターンは<span class="caution">下顎大臼歯</span>の特徴。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

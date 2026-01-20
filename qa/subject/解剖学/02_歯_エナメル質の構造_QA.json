@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "title": "エナメル質の構造",
+    "category": "解剖学",
+    "chapter": "02_歯"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "新産線がみられるのはどれか。すべて選べ。",
+          "choices": {
+            "a": "乳中切歯",
+            "b": "第二乳臼歯",
+            "c": "第一小臼歯",
+            "d": "第一大臼歯",
+            "e": "第二大臼歯"
+          },
+          "correctAnswer": "ABD",
+          "numChoices": 3,
+          "code": "102B50"
+        }
+      ]
+    }
+  ]
+}

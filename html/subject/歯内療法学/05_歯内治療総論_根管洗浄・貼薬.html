@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>根管洗浄・貼薬 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯内治療総論</span>
+    <h1>根管洗浄・貼薬</h1>
+    <div class="container">
+
+      <h2>根管の化学的清掃（根管洗浄）</h2>
+      <p>機械的清掃では到達困難な部位（側枝、イスムス、フィンなど）や、スミヤー層に残留する感染源を除去するために、洗浄液の化学的作用を応用する。</p>
+
+      <h3>根管洗浄剤の種類</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>作用</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">次亜塩素酸ナトリウム（NaClO）</span></td>
+          <td><span class="key">殺菌作用</span>＋<span class="key">有機質溶解作用</span></td>
+          <td>2.5〜10%、最も頻用。<span class="caution">軟組織刺激性</span>あり</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">EDTA</span></td>
+          <td><span class="key">無機質溶解</span>（キレート作用で脱灰）</td>
+          <td><span class="key">スミヤー層除去</span>、抗菌作用なし</td>
+        </tr>
+        <tr>
+          <td>過酸化水素水（H₂O₂）</td>
+          <td>発泡による物理的清掃</td>
+          <td>NaClOとの混合で効果減弱→単独使用推奨</td>
+        </tr>
+        <tr>
+          <td>EDTA含有ペースト</td>
+          <td>脱灰（弱い）＋潤滑</td>
+          <td>RC-Prep等、根管形成の補助剤</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">NaClOとEDTAの使い分け</div>
+        <ul>
+          <li><span class="key">NaClO</span>：有機質（壊死組織、細菌など）の溶解・殺菌</li>
+          <li><span class="key">EDTA</span>：無機質（スミヤー層）の溶解・除去</li>
+          <li>交互洗浄：NaClO → EDTA（1分）→ NaClO で中和</li>
+        </ul>
+      </div>
+
+      <h3>超音波洗浄</h3>
+      <p>超音波振動装置に装着したファイルやチップを洗浄液で満たした根管に挿入し、振動を発振して洗浄する方法。</p>
+      <ul>
+        <li><span class="key">キャビテーション</span>（気泡の発生と消滅）による衝撃波で洗浄効果向上</li>
+        <li><span class="highlight">イスムス</span>など機械的操作が及びにくい部位の汚物除去に有効</li>
+        <li><span class="highlight">スミヤー層の除去</span>効果</li>
+        <li>根管壁にチップを接触させない状態で使用</li>
+      </ul>
+
+      <h2>根管の消毒（根管貼薬）</h2>
+      <p>機械的・化学的清掃が不十分な根管に対し、持続的な殺菌作用を期待して根管消毒薬（根管貼薬剤）を使用する。</p>
+
+      <h3>根管消毒薬の所要性質</h3>
+      <ul>
+        <li>殺菌作用を有する</li>
+        <li>歯周組織に対して為害性がない</li>
+        <li>歯根象牙質に浸透性を有する</li>
+        <li>持続的消毒作用を有する</li>
+        <li>歯質を変色させない</li>
+      </ul>
+
+      <h3>根管貼薬剤の種類</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>特徴</th>
+          <th>現状</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">水酸化カルシウム</span></td>
+          <td>強アルカリ性（<span class="key">pH12.4</span>）、緩徐な殺菌</td>
+          <td><span class="key">現在の主流</span></td>
+        </tr>
+        <tr>
+          <td>フェノール製剤</td>
+          <td>殺菌・鎮痛作用</td>
+          <td>組織傷害性→使用減少</td>
+        </tr>
+        <tr>
+          <td>ホルムアルデヒド製剤</td>
+          <td>強い殺菌作用</td>
+          <td><span class="caution">発癌性・遺伝毒性</span>→使用危惧</td>
+        </tr>
+        <tr>
+          <td>ヨウ素製剤</td>
+          <td>組織浸透性良好（1,000μm）</td>
+          <td>感染象牙質の消毒に有効</td>
+        </tr>
+      </table>
+
+      <h2>仮封処置</h2>
+      <p>次回来院までの期間、歯髄の保護や無菌状態を保つために窩洞や開拡部を一時的に封鎖する処置。</p>
+
+      <h3>仮封の目的</h3>
+      <ul>
+        <li>外来刺激からの根管内汚染防止</li>
+        <li>歯髄保護</li>
+        <li>食片圧入の防止</li>
+        <li>歯質の保護</li>
+      </ul>
+
+      <h3>仮封材の種類と特性</h3>
+      <table>
+        <tr>
+          <th>仮封材</th>
+          <th>封鎖性</th>
+          <th>除去</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">酸化亜鉛ユージノールセメント</span></td>
+          <td>◎良好</td>
+          <td><span class="highlight">◎容易</span>（加熱軟化）</td>
+          <td>レジン重合阻害に注意</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">水硬性仮封材</span></td>
+          <td>◎良好</td>
+          <td>△やや困難</td>
+          <td>水で硬化するパテ状</td>
+        </tr>
+        <tr>
+          <td>テンポラリーストッピング</td>
+          <td>△劣る</td>
+          <td>◎容易</td>
+          <td>熱可塑性、二重仮封の内層用</td>
+        </tr>
+        <tr>
+          <td>グラスアイオノマーセメント</td>
+          <td>◎良好</td>
+          <td>×困難</td>
+          <td>タービン等で除去</td>
+        </tr>
+        <tr>
+          <td>軟質レジン系仮封材</td>
+          <td>△劣る</td>
+          <td>◎容易</td>
+          <td>根管治療には不向き</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">封鎖性良好＋除去容易な仮封材（出題実績）</div>
+        <ul>
+          <li><span class="highlight">酸化亜鉛ユージノールセメント</span></li>
+          <li><span class="highlight">水硬性仮封材</span></li>
+        </ul>
+      </div>
+
+      <h3>二重仮封法</h3>
+      <p>内層に着脱容易な<span class="key">テンポラリーストッピング</span>、外層に封鎖性の良い<span class="key">酸化亜鉛ユージノールセメント</span>や<span class="key">水硬性仮封材</span>を用いる方法。緊密な仮封が可能。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112A31</div>
+        <p>根管治療に用いる器具の写真（別冊No.3）を別に示す。<br>使用目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112A31_1.png" alt="別冊No.3">
+        </div>
+        <div class="choices">
+          a 側枝の拡大<br>
+          b 彎曲根管の拡大<br>
+          c 根管壁のスミヤー層の除去<br>
+          d 根管イスムスへの洗浄液到達<br>
+          e 根尖孔外バイオフィルムの除去
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】写真は<span class="key">超音波洗浄用チップ</span>である。超音波振動により<span class="key">スミヤー層の除去</span>が促進され、また<span class="key">イスムス</span>など機械的操作が及びにくい部位への洗浄液到達が可能となる。側枝や彎曲根管の拡大、根尖孔外バイオフィルム除去は超音波洗浄の目的ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A48</div>
+        <p>封鎖性が良好で手用器具での除去が容易な仮封材はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 水硬性セメント<br>
+          b テンポラリーストッピング<br>
+          c グラスアイオノマーセメント<br>
+          d 酸化亜鉛ユージノールセメント<br>
+          e ポリカルボキシレートセメント
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="key">封鎖性良好</span>かつ<span class="key">除去容易</span>な仮封材は<span class="key">水硬性セメント</span>と<span class="key">酸化亜鉛ユージノールセメント</span>。テンポラリーストッピングは除去容易だが封鎖性に劣る。グラスアイオノマーセメントは封鎖性良好だが除去困難（タービン等が必要）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

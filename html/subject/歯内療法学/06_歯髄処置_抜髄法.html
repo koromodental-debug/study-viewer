@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抜髄法 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯髄処置</span>
+    <h1>抜髄法</h1>
+    <div class="container">
+
+      <h2>抜髄法の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>別名</th>
+          <th>除痛方法</th>
+          <th>現在の使用</th>
+        </tr>
+        <tr>
+          <td><span class="key">直接抜髄法</span></td>
+          <td>麻酔抜髄法、注射抜髄法</td>
+          <td>局所麻酔薬</td>
+          <td>標準的方法</td>
+        </tr>
+        <tr>
+          <td><span class="key">間接抜髄法</span></td>
+          <td>失活抜髄法、除活抜髄法</td>
+          <td>歯髄失活薬</td>
+          <td class="caution">近年ほとんど行われない</td>
+        </tr>
+      </table>
+
+      <h2>抜髄の目的</h2>
+      <div class="point-box">
+        <div class="point-box-title">抜髄を行う3つの目的</div>
+        <ul>
+          <li><span class="highlight">疼痛の緩解</span>：歯髄炎による痛みを除去</li>
+          <li><span class="highlight">根尖性歯周炎の防止</span>：炎症の根尖歯周組織への拡延を防止</li>
+          <li><span class="highlight">内部吸収の停止</span>：歯髄組織を除去し吸収を止める</li>
+        </ul>
+      </div>
+      <p class="note">※ <span class="caution">瘻孔の閉鎖</span>は抜髄の目的ではない（瘻孔は根尖性歯周炎の症状→感染根管治療の対象）</p>
+      <p class="note">※ <span class="caution">歯根破折の防止</span>も抜髄の目的ではない（抜髄では防止できない）</p>
+
+      <h2>抜髄の適応症</h2>
+      <h3>歯髄疾患による適応</h3>
+      <ul>
+        <li><span class="key">すべての歯髄炎</span>（不可逆性歯髄炎）
+          <ul>
+            <li>急性全部性単純性歯髄炎</li>
+            <li>急性全部性化膿性歯髄炎</li>
+            <li>慢性潰瘍性歯髄炎</li>
+            <li>上行性歯髄炎</li>
+          </ul>
+        </li>
+        <li><span class="key">内部吸収</span></li>
+        <li>変性歯髄（保存不可能なもの）</li>
+        <li>露髄（歯髄保存療法の適応でないもの）</li>
+      </ul>
+
+      <h3>その他の適応</h3>
+      <ul>
+        <li><span class="key">補綴的要求</span>：支台歯形成時など</li>
+        <li><span class="key">外科的要求</span>：口腔外科手術の前処置</li>
+      </ul>
+
+      <h2>抜髄の禁忌症</h2>
+      <ul>
+        <li>局所麻酔薬の禁忌症例</li>
+        <li><span class="highlight">根未完成歯</span>（アペキソゲネーシスの適応）</li>
+        <li>歯根の著しい弯曲など解剖学的理由で困難な歯</li>
+        <li>受療者の事情で適用困難な歯</li>
+        <li>抜髄よりも抜去が好ましい歯</li>
+      </ul>
+
+      <h2>間接抜髄法</h2>
+      <p>歯髄失活薬（亜ヒ酸製剤など）を用いて除痛する方法。</p>
+      <ul>
+        <li>術中・術後の出血が直接抜髄法より少ない</li>
+        <li class="caution">近年ほとんど行われない</li>
+      </ul>
+      <p><span class="key">行われなくなった理由：</span></p>
+      <ul>
+        <li>除活の不確実性</li>
+        <li>歯髄失活薬の生体為害性</li>
+      </ul>
+
+      <h2>抜髄の予後</h2>
+      <ul>
+        <li>成功率：<span class="highlight">90%以上</span></li>
+        <li>経過観察：少なくとも<span class="key">1年以上</span>、望ましくは<span class="key">4年間</span></li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A58</div>
+        <p>抜髄を行う理由で正しいのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 疼痛の緩解<br>
+          b 瘻孔の閉鎖<br>
+          c 内部吸収の停止<br>
+          d 歯根破折の防止<br>
+          e 根尖性歯周炎の防止
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】抜髄の目的は①疼痛の緩解、②内部吸収の停止、③根尖性歯周炎の防止の3つ。瘻孔は根尖性歯周炎の症状であり、抜髄ではなく感染根管治療の対象。歯根破折は抜髄では防止できない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C70</div>
+        <p>抜髄の適応症はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 内部吸収<br>
+          b 上行性歯髄炎<br>
+          c 慢性潰瘍性歯髄炎<br>
+          d 急性全部性単純性歯髄炎<br>
+          e 急性全部性化膿性歯髄炎
+        </div>
+        <div class="answer">正解：a, b, c, d, e</div>
+        <p>【解説】すべて抜髄の適応症である。内部吸収は歯髄を除去することで吸収を停止させる。上行性歯髄炎・慢性潰瘍性歯髄炎・急性全部性歯髄炎（単純性・化膿性とも）はいずれも不可逆性歯髄炎であり、歯髄保存療法の適応外となる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

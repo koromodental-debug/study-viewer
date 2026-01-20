@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>髄室開拡 - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯内治療総論</span>
+    <h1>髄室開拡</h1>
+    <div class="container">
+
+      <h2>髄室開拡とは</h2>
+      <p><span class="key">髄室開拡</span>（髄腔開拡）は、歯冠側髄腔を開放して根管に器具を到達させるための経路を確保する操作。<span class="key">アクセス窩洞形成</span>（access cavity preparation）ともよばれる。根管処置の第一歩であり、この段階での不備は以後のすべての器具操作に影響する。</p>
+
+      <h2>髄室開拡の要件</h2>
+      <h3>1. 天蓋（髄室蓋）の十分な除去</h3>
+      <ul>
+        <li>残存すると根管口の上部に「ひさし」状に張り出し、<span class="caution">器具の挿入や操作が妨げられる</span></li>
+        <li>天蓋直下の歯髄組織の除去も不完全となる</li>
+      </ul>
+
+      <h3>2. すべての根管口を窩洞に含める</h3>
+      <ul>
+        <li>咬合面から観察してすべての根管口が窩洞内に見える程度に拡大</li>
+        <li>上顎大臼歯の<span class="highlight">MB2</span>（近心頬側第二根管）の見落としに注意</li>
+      </ul>
+
+      <h3>3. 直線的な挿入経路の確保</h3>
+      <ul>
+        <li>窩洞側壁から根管上部まで移行的かつ直線的に形成</li>
+        <li>確保できた場合、咬合面観で<span class="key">根管口が窩洞の最も外側に配置</span></li>
+      </ul>
+
+      <h2>髄室開拡の術式</h2>
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>操作</th>
+          <th>使用器具</th>
+        </tr>
+        <tr>
+          <td>① 窩洞の概成</td>
+          <td>歯冠外形の中央部から切削開始</td>
+          <td>ダイヤモンドポイント</td>
+        </tr>
+        <tr>
+          <td>② 歯髄腔への穿孔</td>
+          <td>歯髄腔の広い部位を目標に穿孔</td>
+          <td>ダイヤモンドポイント</td>
+        </tr>
+        <tr>
+          <td>③ <span class="highlight">天蓋の確認</span></td>
+          <td>残存天蓋を確認</td>
+          <td><span class="highlight">有鉤探針</span></td>
+        </tr>
+        <tr>
+          <td>④ <span class="highlight">天蓋の除去</span></td>
+          <td>掻き上げ操作で除去</td>
+          <td>スチールラウンドバー</td>
+        </tr>
+        <tr>
+          <td>⑤ 根管口の探索</td>
+          <td>髄床底の線状構造を指標</td>
+          <td>探針、ファイル</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">術式のポイント（出題実績）</div>
+        <ul>
+          <li>穿孔後、次に行うのは<span class="highlight">天蓋の除去</span></li>
+          <li>天蓋の確認には<span class="highlight">有鉤探針</span>を使用</li>
+          <li>天蓋除去には<span class="key">スチールラウンドバー</span>の掻き上げ操作</li>
+        </ul>
+      </div>
+
+      <h2>髄室開拡時の留意点</h2>
+      <table>
+        <tr>
+          <th>留意点</th>
+          <th>対策</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">髄床底の損傷（穿孔）</span></td>
+          <td>天蓋と髄床底の<span class="key">色調の違い</span>を指標（髄床底は暗い色調）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">髄角部歯髄の残存</span></td>
+          <td>天蓋除去時に髄角部も確実に除去</td>
+        </tr>
+        <tr>
+          <td>根管口の見落とし</td>
+          <td>髄床底の<span class="key">黒い線状構造</span>を指標に探索</td>
+        </tr>
+        <tr>
+          <td>切削方向の誤認</td>
+          <td>傾斜歯・挺転歯は植立方向を十分確認</td>
+        </tr>
+      </table>
+
+      <h2>根管口の同定</h2>
+      <p>髄床底には<span class="key">根管口をつなぐ黒い線状構造</span>がしばしば観察され、根管口探索の指標となる。</p>
+
+      <h3>上顎大臼歯のMB2（近心頬側第二根管）</h3>
+      <ul>
+        <li>MB（近心頬側根管口）とP（口蓋根管口）を結ぶ線上、MBのやや口蓋側に位置</li>
+        <li>見落としやすく、<span class="caution">再根管治療の原因</span>となることがある</li>
+        <li>マイクロスコープやCBCTが根管口同定に有用</li>
+      </ul>
+
+      <h2>根管上部のフレアー形成</h2>
+      <p><span class="key">フレアー形成</span>（coronal flaring）は、根管口明示・根管口の漏斗状拡大ともよばれ、根管上部（1/2〜1/3程度）にやや強めの外開き形態を付与する操作。</p>
+      <ul>
+        <li><span class="key">ゲーツグリッデンドリル</span>：長円形の短い刃部、先端には刃がない</li>
+        <li>直線的な挿入経路の確保に有効</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <h3>髄室開拡の手順</h3>
+      <div class="question-box">
+        <div class="q-number">110D5</div>
+        <p>67歳の男性。下顎右側第一大臼歯の激痛を主訴として来院した。疼痛は1週前から続いているという。抜髄を行うこととした。術中の口腔内写真（別冊No.5）を別に示す。<br>次に行う処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110D5_1.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a 止血<br>
+          b 天蓋の除去<br>
+          c 根管長の測定<br>
+          d 根管の拡大・形成<br>
+          e 髄床底穿孔部の閉鎖
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】写真では歯髄腔への穿孔が完了した状態である。次に行うのは<span class="key">天蓋の除去</span>。根管長測定や根管拡大・形成は、天蓋を除去して根管口を明示した後に行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D81</div>
+        <p>35歳の女性。下顎右側第二大臼歯の咀嚼時痛を主訴として来院した。慢性潰瘍性歯髄炎と診断し、抜髄を行うこととした。初診時のエックス線画像（別冊No.27A）と術中の口腔内写真（別冊No.27B）を別に示す。<br>次に用いるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111D81_1.png" alt="別冊No.27">
+        </div>
+        <div class="choices">
+          a 有鉤探針<br>
+          b Hファイル<br>
+          c クレンザー<br>
+          d ゲーツグリデンドリル<br>
+          e スプーンエキスカベーター
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】写真では歯髄腔への穿孔後、天蓋除去前の状態である。残存する天蓋の確認には<span class="key">有鉤探針</span>が有用。天蓋の有無を確認した後、スチールラウンドバー等で除去する。</p>
+      </div>
+
+      <h3>髄室開拡時の留意点</h3>
+      <div class="question-box">
+        <div class="q-number">114C45</div>
+        <p>80歳の男性。上顎左側第一大臼歯の痛みを主訴として来院した。2週前から冷水痛があり、昨日から拍動性の自発痛を自覚しているという。打診痛を認める。診断をした結果、抜髄処置を行うこととした。初診時のエックス線画像（別冊No.14A）と処置中のある操作時のマイクロスコープ写真（別冊No.14B）を別に示す。<br>続いて行う操作で留意するのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C45_1.png" alt="別冊No.14">
+        </div>
+        <div class="choices">
+          a 歯髄の感染<br>
+          b 髄床底の損傷<br>
+          c 歯髄結石の残存<br>
+          d 髄角部歯髄の残存<br>
+          e 歯冠部感染歯質の残存
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】髄室開拡（天蓋除去）の操作では、<span class="key">髄床底の損傷</span>（穿孔）と<span class="key">髄角部歯髄の残存</span>に留意する必要がある。髄床底は天蓋より暗い色調を示すため、色調の違いを指標に選択的に天蓋を切削する。</p>
+      </div>
+
+      <h3>根管口の同定</h3>
+      <div class="question-box">
+        <div class="q-number">115D27</div>
+        <p>根尖病変を有した上顎左側第一大臼歯の初診時のエックス線画像（別冊No.4A）、歯科用コーンビームCT（別冊No.4B）及び金属ポスト除去後のマイクロスコープ写真（別冊No.4C）を別に示す。<br>未処置の根管口の位置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D27_1.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】上顎大臼歯の<span class="key">MB2</span>（近心頬側第二根管）の位置を問う問題。MB2はMB（近心頬側根管口）とP（口蓋根管口）を結ぶ線上、MBのやや口蓋側に位置する。見落としやすく、再根管治療の原因となることがある。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A68</div>
+        <p>62歳の女性。上顎右側第二大臼歯の咬合痛を主訴として来院した。6か月前に治療を受けていたが、途中で放置していたところ、2日前から自覚するようになったという。診断をした結果、感染根管治療を行うこととした。初診時のエックス線画像（別冊No.24A）と治療中の口腔内写真（別冊No.24B）を別に示す。<br>根管口を明示するのに切削すべき部位はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115A68_1.png" alt="別冊No.24">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】根管口を明示するために、根管口上部の象牙質段起部（棚状の突出部）を選択的に削除する必要がある。直線的な挿入経路を確保するために、根管口の歯冠側にある障害物を除去する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

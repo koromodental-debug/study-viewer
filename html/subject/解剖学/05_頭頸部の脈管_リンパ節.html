@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>リンパ節 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 頭頸部の脈管</span>
+    <h1>リンパ節</h1>
+    <div class="container">
+
+      <h2>リンパ系の概要</h2>
+      <p>リンパ管にはリンパが流れ、その途中に位置する免疫器官の1つである<span class="key">リンパ節</span>で、組織内に侵入してきた非自己異物を食作用によって処理している。</p>
+      <p>感染や癌の拡大を知るうえで、リンパの経路を理解することは重要である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">リンパの流れ</div>
+        <ul>
+          <li>オトガイ下リンパ節 → <span class="key">顎下リンパ節</span> → <span class="key">深頸リンパ節</span></li>
+          <li>深頸リンパ節 → <span class="key">胸管</span> → 左静脈角（左鎖骨下静脈と内頸静脈の合流部）</li>
+        </ul>
+      </div>
+
+      <h2>頭頸部の主なリンパ節</h2>
+
+      <table>
+        <tr>
+          <th>リンパ節</th>
+          <th>存在部位</th>
+          <th>流入領域</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">オトガイ下リンパ節</span></td>
+          <td>オトガイ下隙<br>（オトガイ下三角）</td>
+          <td>下顎前歯、下唇、舌尖</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">顎下リンパ節</span></td>
+          <td>顎下隙<br>（顎下三角）</td>
+          <td>下顎前歯・第三大臼歯部を<span class="caution">除く</span>歯と周囲組織、上唇、頬部、舌体部、硬口蓋前方部</td>
+        </tr>
+        <tr>
+          <td><span class="key">上深頸リンパ節</span></td>
+          <td>胸鎖乳突筋内側<br>（肩甲舌骨筋より上）</td>
+          <td>顎下リンパ節からのリンパ、鼻腔後部、硬口蓋後部、軟口蓋、舌根、第三大臼歯部付近</td>
+        </tr>
+        <tr>
+          <td><span class="key">下深頸リンパ節</span></td>
+          <td>頸動脈鞘付近<br>（肩甲舌骨筋より下）</td>
+          <td>上深頸リンパ節からのリンパ</td>
+        </tr>
+      </table>
+
+      <h3>その他の頭頸部リンパ節</h3>
+      <ul>
+        <li><span class="key">耳下腺リンパ節</span>：耳下腺隙に存在</li>
+        <li><span class="key">後頭リンパ節</span>：後頭部からのリンパ</li>
+        <li><span class="key">耳介後リンパ節</span>：耳介後部からのリンパ</li>
+        <li><span class="key">浅頸リンパ節</span>：外頸静脈に沿って存在</li>
+      </ul>
+
+      <h2>所属リンパ節の覚え方</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">歯・歯周組織の所属リンパ節</div>
+        <ul>
+          <li><span class="highlight">下顎前歯</span> → オトガイ下リンパ節 → 顎下リンパ節</li>
+          <li><span class="highlight">上顎・下顎（前歯・第三大臼歯部以外）</span> → 顎下リンパ節</li>
+          <li><span class="highlight">第三大臼歯部付近</span> → <span class="caution">直接</span>上深頸リンパ節</li>
+        </ul>
+      </div>
+
+      <h2>ワルダイエルの咽頭輪</h2>
+      <p>扁桃は<span class="key">リンパ小節の集合体</span>で、粘膜下に免疫器官として存在する。咽頭には4つの扁桃が存在し、鼻腔・口腔の後方の空間を取り囲むように配置されていることから<span class="highlight">ワルダイエルの咽頭輪</span>とよばれる。</p>
+
+      <table>
+        <tr>
+          <th>扁桃</th>
+          <th>位置</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">咽頭扁桃</span></td>
+          <td>上咽頭の上壁〜後壁</td>
+          <td><span class="highlight">アデノイド</span>ともいう。5〜6歳頃最大</td>
+        </tr>
+        <tr>
+          <td><span class="key">耳管扁桃</span></td>
+          <td>耳管咽頭口周囲</td>
+          <td>耳管開口部を囲む</td>
+        </tr>
+        <tr>
+          <td><span class="key">口蓋扁桃</span></td>
+          <td>口蓋舌弓と口蓋咽頭弓の間<br>（扁桃窩）</td>
+          <td>最も大きい扁桃</td>
+        </tr>
+        <tr>
+          <td><span class="key">舌扁桃</span></td>
+          <td>舌根部</td>
+          <td>分界溝より後方</td>
+        </tr>
+      </table>
+
+      <h2>胸管</h2>
+      <p>下半身と左上半身のリンパを集めるリンパ系の主管。第2腰椎付近の<span class="key">乳び槽</span>から始まり、脊柱の前方を上行し、<span class="key">左静脈角</span>（左鎖骨下静脈と内頸静脈の合流部）で静脈内に入る。</p>
+
+    </div>
+  </div>
+</body>
+</html>

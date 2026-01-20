@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>喉頭 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 口腔と咽喉頭</span>
+    <h1>喉頭</h1>
+    <div class="container">
+
+      <h2>喉頭の概要</h2>
+      <p>喉頭は気道の一部で、<span class="key">第4〜6頸椎</span>の高さに位置する。発声・呼吸・嚥下時の気道保護に関与する。</p>
+
+      <h2>喉頭軟骨</h2>
+      <p>喉頭は複数の軟骨で構成される。</p>
+
+      <table>
+        <tr>
+          <th>軟骨</th>
+          <th>特徴</th>
+          <th>軟骨の種類</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">甲状軟骨</span></td>
+          <td>喉頭で<span class="key">最大</span>の軟骨、のど仏を形成</td>
+          <td>硝子軟骨</td>
+        </tr>
+        <tr>
+          <td><span class="key">輪状軟骨</span></td>
+          <td>甲状軟骨の下にある<span class="key">環状</span>の軟骨</td>
+          <td>硝子軟骨</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">披裂軟骨</span></td>
+          <td>輪状軟骨の上に乗る<span class="key">一対</span>の軟骨</td>
+          <td>硝子軟骨</td>
+        </tr>
+        <tr>
+          <td><span class="key">喉頭蓋軟骨</span></td>
+          <td>喉頭口を覆う、嚥下時に気道を保護</td>
+          <td>弾性軟骨</td>
+        </tr>
+      </table>
+
+      <h2>声帯靱帯</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">声帯靱帯の付着部位</div>
+        <ul>
+          <li><span class="key">前方</span>：<span class="highlight">甲状軟骨</span>（甲状軟骨角の内面）</li>
+          <li><span class="key">後方</span>：<span class="highlight">披裂軟骨</span>（声帯突起）</li>
+        </ul>
+      </div>
+
+      <p>声帯靱帯は<span class="key">声帯ヒダ</span>の中にあり、その振動により発声する。</p>
+
+      <h2>喉頭の関節</h2>
+      <table>
+        <tr>
+          <th>関節</th>
+          <th>構成</th>
+        </tr>
+        <tr>
+          <td><span class="key">輪状甲状関節</span></td>
+          <td>輪状軟骨と甲状軟骨</td>
+        </tr>
+        <tr>
+          <td><span class="key">輪状披裂関節</span></td>
+          <td>輪状軟骨と披裂軟骨</td>
+        </tr>
+      </table>
+
+      <h2>喉頭筋の神経支配</h2>
+      <p>喉頭筋はすべて<span class="highlight">迷走神経</span>支配。</p>
+
+      <table>
+        <tr>
+          <th>筋</th>
+          <th>支配神経</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">輪状甲状筋</span></td>
+          <td><span class="highlight">上喉頭神経</span>（外枝）</td>
+          <td>声帯を緊張（声を高くする）</td>
+        </tr>
+        <tr>
+          <td>その他の喉頭筋</td>
+          <td><span class="highlight">反回神経</span>（下喉頭神経）</td>
+          <td>声帯の開閉</td>
+        </tr>
+      </table>
+
+      <p class="note">反回神経麻痺 → 声帯麻痺 → <span class="caution">嗄声</span>（させい）</p>
+
+      <h2>舌骨との関係</h2>
+      <ul>
+        <li><span class="key">舌骨</span>は喉頭軟骨<span class="caution">ではない</span></li>
+        <li>舌骨は喉頭の上方に位置し、甲状舌骨膜で甲状軟骨と連結</li>
+        <li>声帯靱帯は舌骨には付着しない</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115B63</div>
+        <p>声帯靱帯が付着するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌　骨<br>
+          b 甲状軟骨<br>
+          c 披裂軟骨<br>
+          d 輪状軟骨<br>
+          e 喉頭蓋軟骨
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】声帯靱帯は<span class="highlight">甲状軟骨</span>（前方）から<span class="highlight">披裂軟骨</span>（後方）に張る。舌骨は喉頭軟骨ではなく、声帯靱帯は付着しない。輪状軟骨・喉頭蓋軟骨にも声帯靱帯は付着しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

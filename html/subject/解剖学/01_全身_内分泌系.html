@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>内分泌系 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 全身</span>
+    <h1>内分泌系</h1>
+    <div class="container">
+
+      <h2>内分泌系とは</h2>
+      <p><span class="key">内分泌腺</span>はホルモンを産生し、導管を持たずに直接血中に分泌する。ホルモンは血流に乗って標的器官に作用し、体の恒常性を維持する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">出題のポイント</div>
+        <p><span class="highlight">消化管（胃・小腸）もホルモンを分泌する</span>ことを知っているかが問われる。典型的な内分泌腺だけでなく、消化管ホルモンの存在を押さえておくこと。</p>
+      </div>
+
+      <h2>典型的な内分泌腺</h2>
+
+      <h3>下垂体</h3>
+      <p>脳下垂体は「内分泌系の司令塔」と呼ばれ、多くのホルモンを分泌する。</p>
+      <ul>
+        <li><span class="key">前葉</span>：成長ホルモン（GH）、甲状腺刺激ホルモン（TSH）、副腎皮質刺激ホルモン（ACTH）など</li>
+        <li><span class="key">後葉</span>：抗利尿ホルモン（ADH）、オキシトシン</li>
+      </ul>
+
+      <h3>甲状腺</h3>
+      <p>喉頭の前下方、気管の前面に位置する。</p>
+      <ul>
+        <li><span class="key">甲状腺ホルモン</span>（T3、T4）：基礎代謝の亢進</li>
+        <li><span class="key">カルシトニン</span>：血中Ca濃度の低下</li>
+      </ul>
+
+      <h3>副甲状腺（上皮小体）</h3>
+      <p>甲状腺の後面に4個存在する。</p>
+      <ul>
+        <li><span class="key">パラトルモン（PTH）</span>：血中Ca濃度の上昇</li>
+      </ul>
+      <p class="note">カルシトニンとパラトルモンは拮抗的に作用し、血中Ca濃度を調節する。</p>
+
+      <h2>消化管ホルモン</h2>
+      <p><span class="caution">消化管も内分泌器官である</span>。消化管ホルモンはすべてペプチドホルモンである。</p>
+
+      <h3>胃から分泌されるホルモン</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>分泌細胞</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">ガストリン</span></td>
+          <td>G細胞（幽門前庭部）</td>
+          <td>胃酸分泌促進、胃運動促進</td>
+        </tr>
+      </table>
+
+      <h3>小腸（十二指腸）から分泌されるホルモン</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>分泌刺激</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">セクレチン</span></td>
+          <td>酸性の胃内容物</td>
+          <td>膵液（重炭酸イオン）分泌促進、胃酸分泌抑制</td>
+        </tr>
+        <tr>
+          <td><span class="key">コレシストキニン（CCK）</span></td>
+          <td>脂肪・タンパク質</td>
+          <td>胆嚢収縮、膵酵素分泌促進</td>
+        </tr>
+        <tr>
+          <td>GIP</td>
+          <td>糖・脂肪</td>
+          <td>インスリン分泌促進</td>
+        </tr>
+      </table>
+
+      <h2>膵臓の内分泌</h2>
+      <p>膵臓は外分泌腺（消化酵素）と内分泌腺（ホルモン）の両方の機能を持つ。</p>
+
+      <h3>ランゲルハンス島</h3>
+      <p>膵臓内に約100万個存在する内分泌細胞の集団。</p>
+      <table>
+        <tr>
+          <th>細胞</th>
+          <th>ホルモン</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td>α細胞</td>
+          <td><span class="key">グルカゴン</span></td>
+          <td>血糖値上昇（グリコーゲン分解促進）</td>
+        </tr>
+        <tr>
+          <td>β細胞</td>
+          <td><span class="key">インスリン</span></td>
+          <td>血糖値低下（細胞へのブドウ糖取り込み促進）</td>
+        </tr>
+        <tr>
+          <td>δ細胞</td>
+          <td>ソマトスタチン</td>
+          <td>インスリン・グルカゴン分泌抑制</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113C33</div>
+        <p>ホルモンを分泌するのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 胃<br>
+          b 小腸<br>
+          c 下垂体<br>
+          d 甲状腺<br>
+          e 副甲状腺〈上皮小体〉
+        </div>
+        <div class="answer">正解：a, b, c, d, e</div>
+        <p>【解説】すべてホルモンを分泌する。c〜eは典型的な内分泌腺であり迷わない。本問のポイントは<span class="highlight">胃と小腸も消化管ホルモンを分泌する</span>ことを知っているかどうか。胃からはガストリン、小腸からはセクレチン・コレシストキニンなどが分泌される。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

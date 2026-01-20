@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>マイクロスコープ - 歯内療法学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯内療法学 / 歯内治療総論</span>
+    <h1>マイクロスコープ</h1>
+    <div class="container">
+
+      <h2>マイクロスコープとは</h2>
+      <p><span class="key">手術用顕微鏡（マイクロスコープ）</span>は、歯内治療において肉眼では確認困難な構造を可視化するための双眼実体顕微鏡である。マイクロスコープを用いた歯内治療は<span class="key">マイクロエンドドンティックス</span>と呼ばれる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">マイクロスコープの3要素</div>
+        <ul>
+          <li><span class="highlight">拡大</span>：対物レンズによる強拡大像</li>
+          <li><span class="highlight">照明</span>：強力な落斜照明で根管深部まで照らす</li>
+          <li><span class="highlight">記録</span>：ビームスプリッターでカメラに分岐（静止画・動画）</li>
+        </ul>
+      </div>
+
+      <h2>処置倍率の目安</h2>
+      <table>
+        <tr>
+          <th>処置内容</th>
+          <th>倍率</th>
+        </tr>
+        <tr>
+          <td>髄室の観察（開拡窩洞〜髄室）</td>
+          <td><span class="key">5〜10倍</span></td>
+        </tr>
+        <tr>
+          <td>根管口〜根管上部</td>
+          <td><span class="key">10〜15倍</span></td>
+        </tr>
+        <tr>
+          <td>根管内深部での作業</td>
+          <td><span class="key">15〜20倍</span></td>
+        </tr>
+        <tr>
+          <td>歯根尖切除手術（切断端の観察）</td>
+          <td><span class="key">15〜20倍</span></td>
+        </tr>
+      </table>
+
+      <h2>適応</h2>
+      <p>マイクロスコープは以下の処置で有効である。</p>
+      <table>
+        <tr>
+          <th>適応</th>
+          <th>ポイント</th>
+        </tr>
+        <tr>
+          <td>① 髄室開拡</td>
+          <td>軟化象牙質の境界を明視野で確認</td>
+        </tr>
+        <tr>
+          <td>② 根管口の探索</td>
+          <td>石灰化のパターンを確認</td>
+        </tr>
+        <tr>
+          <td>③ MB2など確認困難な根管系の探索</td>
+          <td>上顎大臼歯の近心頬側第二根管</td>
+        </tr>
+        <tr>
+          <td>④ <span class="highlight">根管壁の亀裂・破折線の確認</span></td>
+          <td>歯根破折の診断 ★出題実績</td>
+        </tr>
+        <tr>
+          <td>⑤ 石灰化物の除去</td>
+          <td>狭窄根管への対応</td>
+        </tr>
+        <tr>
+          <td>⑥ 根管内異物除去</td>
+          <td>破折器具の摘出</td>
+        </tr>
+        <tr>
+          <td>⑦ <span class="highlight">穿孔部封鎖処置</span></td>
+          <td>穿孔部の位置確認 ★出題実績</td>
+        </tr>
+        <tr>
+          <td>⑧ 外科的歯内治療</td>
+          <td>歯根尖切除手術（マイクロサージェリー）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">出題のポイント</div>
+        <ul>
+          <li>マイクロスコープで確認が有効：<span class="highlight">穿孔部の位置</span>、<span class="highlight">歯根破折の有無</span></li>
+          <li><span class="caution">細菌の侵入度は確認できない</span>（顕微鏡では見えない）</li>
+          <li><span class="caution">フェネストレーション</span>は根管内からは確認困難</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106C106</div>
+        <p>歯内治療で実体顕微鏡による確認が有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 細菌の侵入度<br>
+          b 穿孔部の位置<br>
+          c 歯根破折の有無<br>
+          d 破折ファイルの長さ<br>
+          e フェネストレーションの有無
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】マイクロスコープで直接視認できるものが正解となる。<span class="key">穿孔部の位置</span>と<span class="key">歯根破折の有無</span>は根管壁を直接観察して確認可能。細菌は光学顕微鏡でも見えず、破折ファイルの「長さ」は根管内に埋まっているため全体を見ることは困難。フェネストレーションは根の外側の問題であり、根管内からは確認できない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A53</div>
+        <p>上顎左側第二小臼歯の感染根管治療時に行ったある処置前後のマイクロスコープ写真（別冊No.19）を別に示す。<br>この処置の目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A53_1.png" alt="別冊No.19">
+        </div>
+        <div class="choices">
+          a 感染歯質の除去<br>
+          b 根管穿孔の防止<br>
+          c 歯根破折の防止<br>
+          d 根管洗浄効果の向上<br>
+          e 根管拡大器具の破折防止
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】写真では処置前後で根管壁の着色部分（感染歯質）が除去されている様子が確認できる。マイクロスコープ下では<span class="key">軟化象牙質の境界</span>を明視野で確認しながら、必要最小限の切削で<span class="key">感染歯質の除去</span>が可能となる。これはminimal intervention（MI）の概念に基づく処置である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D58</div>
+        <p>75歳の男性。上顎右側第二大臼歯の抜髄治療中のマイクロスコープ写真（別冊No.16）を別に示す。<br>次に行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114D58_1.png" alt="別冊No.16">
+        </div>
+        <div class="choices">
+          a 齲蝕除去<br>
+          b 根管拡大<br>
+          c 髄室開拡<br>
+          d 根管口明示<br>
+          e 根管長測定
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】写真では髄室底は見えているが、根管口がまだ十分に露出していない状態である。この段階で次に行うべきは<span class="key">髄室開拡</span>であり、髄室の天蓋を十分に除去して根管口を探索しやすい状態にする。根管拡大や根管長測定は根管口が明示された後に行う処置である。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

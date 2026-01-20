@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>三叉神経 - 解剖学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">解剖学 / 頭頸部の神経</span>
+    <h1>三叉神経</h1>
+    <div class="container">
+
+      <h2>三叉神経の概要</h2>
+      <p>三叉神経（V）は3枝に分かれ、頭頸部の知覚と咀嚼筋の運動を支配する。</p>
+
+      <table>
+        <tr>
+          <th>枝</th>
+          <th>通過孔</th>
+          <th>性質</th>
+          <th>主な分布</th>
+        </tr>
+        <tr>
+          <td><span class="key">V1 眼神経</span></td>
+          <td>上眼窩裂</td>
+          <td>感覚のみ</td>
+          <td>眼窩、前頭部</td>
+        </tr>
+        <tr>
+          <td><span class="key">V2 上顎神経</span></td>
+          <td><span class="highlight">正円孔</span></td>
+          <td>感覚のみ</td>
+          <td>上顎、口蓋、鼻腔</td>
+        </tr>
+        <tr>
+          <td><span class="key">V3 下顎神経</span></td>
+          <td><span class="highlight">卵円孔</span></td>
+          <td><span class="caution">混合神経</span></td>
+          <td>下顎、舌前2/3、咀嚼筋</td>
+        </tr>
+      </table>
+
+      <h2>上顎神経（V2）</h2>
+      <p><span class="key">正円孔</span>から翼口蓋窩に出て、<span class="key">眼窩下神経</span>と名を変え眼窩下孔から顔面へ。</p>
+
+      <h3>上顎神経の主な枝</h3>
+      <ul>
+        <li><span class="key">後上歯槽枝</span>：歯槽孔から → 上顎大臼歯</li>
+        <li><span class="key">中上歯槽枝</span>：上顎小臼歯</li>
+        <li><span class="key">前上歯槽枝</span>：上顎前歯</li>
+        <li><span class="highlight">大口蓋神経</span>：大口蓋孔から → <span class="key">硬口蓋</span>の知覚</li>
+        <li><span class="highlight">小口蓋神経</span>：小口蓋孔から → <span class="key">軟口蓋</span>の知覚</li>
+        <li><span class="key">鼻口蓋神経</span>：切歯窩から → 硬口蓋前方部</li>
+      </ul>
+
+      <h3>翼口蓋神経節</h3>
+      <p>V2に所属する<span class="key">副交感神経節</span>。<span class="key">翼口蓋窩</span>に存在。</p>
+      <ul>
+        <li>顔面神経の大錐体神経（副交感神経）を受け入れる</li>
+        <li>涙腺、口蓋腺の分泌を支配</li>
+      </ul>
+
+      <h2>下顎神経（V3）</h2>
+      <p><span class="key">卵円孔</span>から出る<span class="caution">混合神経</span>（感覚＋運動）。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">下顎神経の運動枝（咀嚼筋支配）</div>
+        <ul>
+          <li><span class="key">咬筋神経</span>：咬筋</li>
+          <li><span class="key">深側頭神経</span>：側頭筋</li>
+          <li><span class="key">内側翼突筋神経</span>：内側翼突筋</li>
+          <li><span class="key">外側翼突筋神経</span>：外側翼突筋</li>
+          <li><span class="key">顎舌骨筋神経</span>：顎舌骨筋、顎二腹筋前腹</li>
+        </ul>
+      </div>
+
+      <h3>下顎神経の感覚枝</h3>
+      <p><span class="highlight">翼突下顎隙</span>で<span class="highlight">舌神経</span>と<span class="highlight">下歯槽神経</span>に分岐。</p>
+
+      <table>
+        <tr>
+          <th>神経</th>
+          <th>経路</th>
+          <th>支配領域</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">下歯槽神経</span></td>
+          <td>下顎孔 → 下顎管 → オトガイ孔</td>
+          <td>下顎の歯、下唇（オトガイ神経）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">舌神経</span></td>
+          <td>翼突下顎隙 → 舌下隙 → 舌</td>
+          <td><span class="highlight">舌前2/3の触覚</span>、舌下部粘膜</td>
+        </tr>
+        <tr>
+          <td><span class="key">頬神経</span></td>
+          <td>頬粘膜</td>
+          <td>頬粘膜、下顎臼歯部頬側歯肉</td>
+        </tr>
+        <tr>
+          <td><span class="key">耳介側頭神経</span></td>
+          <td>外耳道方向へ</td>
+          <td>外耳道、耳介前部、耳下腺</td>
+        </tr>
+      </table>
+
+      <h3>顎下神経節</h3>
+      <p>V3に所属する<span class="key">副交感神経節</span>。舌神経に付属。</p>
+      <ul>
+        <li>顔面神経の鼓索神経（副交感神経）を受け入れる</li>
+        <li><span class="key">舌下腺</span>・<span class="key">顎下腺</span>の分泌を支配</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110A81</div>
+        <p>軟口蓋粘膜の知覚を司るのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 後上歯槽枝<br>
+          b 小口蓋神経<br>
+          c 深錐体神経<br>
+          d 大口蓋神経<br>
+          e 鼻口蓋神経
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">小口蓋神経</span>は小口蓋孔から出て主に<span class="highlight">軟口蓋</span>の知覚を司る。大口蓋神経は硬口蓋、後上歯槽枝は上顎大臼歯、鼻口蓋神経は硬口蓋前方部。深錐体神経は交感神経。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C112</div>
+        <p>内頭蓋底の写真（別冊No.13）を別に示す。矢印で示す孔を通過する神経が支配するのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105C112_1.png" alt="別冊No.13">
+        </div>
+        <div class="choices">
+          a 涙の分泌<br>
+          b 唾液の分泌<br>
+          c 咀嚼筋の運動<br>
+          d 舌体部の味覚<br>
+          e 舌体部の触覚
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】矢印は<span class="highlight">卵円孔</span>を示す。卵円孔を通過するのは<span class="highlight">下顎神経（V3）</span>。V3は<span class="key">咀嚼筋の運動</span>と<span class="key">舌体部（舌前2/3）の触覚</span>を支配。味覚は鼓索神経（顔面神経）、涙の分泌は翼口蓋神経節経由。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A49</div>
+        <p>翼突下顎隙を通るのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌神経<br>
+          b 顔面動脈<br>
+          c 耳下腺管<br>
+          d 下歯槽神経<br>
+          e 下顎後静脈
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="highlight">翼突下顎隙</span>（内側翼突筋と下顎枝の間）を通るのは<span class="highlight">舌神経</span>と<span class="highlight">下歯槽神経</span>。顔面動脈は顎下隙、耳下腺管は頬筋を貫通、下顎後静脈は耳下腺内。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A104</div>
+        <p>頭蓋骨側面の写真（別冊No.10）を別に示す。矢印で示す部位に存在するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104A104_1.png" alt="別冊No.10">
+        </div>
+        <div class="choices">
+          a 耳神経節<br>
+          b 膝神経節<br>
+          c 上頸神経節<br>
+          d 星状神経節<br>
+          e 翼口蓋神経節
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】矢印は<span class="highlight">翼口蓋窩</span>を示す。翼口蓋窩には上顎神経（V2）に所属する<span class="highlight">翼口蓋神経節</span>が存在。耳神経節は下顎神経（V3）所属で卵円孔付近、膝神経節は顔面神経管内。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

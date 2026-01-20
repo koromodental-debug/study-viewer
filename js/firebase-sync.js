@@ -972,25 +972,25 @@ function initAccountUI() {
         cleanText = jsonMatch[0];
       }
 
-      // 3. 全角文字を半角に修正
+      // 3. 全角文字を半角に修正（Unicodeエスケープで確実に変換）
       cleanText = cleanText
-        .replace(/「/g, '"')
-        .replace(/」/g, '"')
-        .replace(/"/g, '"')  // U+201C
-        .replace(/"/g, '"')  // U+201D
-        .replace(/＂/g, '"') // U+FF02 全角ダブルクォート
-        .replace(/″/g, '"')  // U+2033 ダブルプライム
-        .replace(/〝/g, '"') // U+301D
-        .replace(/〞/g, '"') // U+301E
-        .replace(/'/g, "'")  // U+2018
-        .replace(/'/g, "'")  // U+2019
-        .replace(/＇/g, "'") // U+FF07 全角シングルクォート
-        .replace(/：/g, ':')
-        .replace(/［/g, '[')
-        .replace(/］/g, ']')
-        .replace(/｛/g, '{')
-        .replace(/｝/g, '}')
-        .replace(/，/g, ',');
+        .replace(/\u300c/g, '"')  // 「
+        .replace(/\u300d/g, '"')  // 」
+        .replace(/\u201c/g, '"')  // " LEFT DOUBLE QUOTATION MARK
+        .replace(/\u201d/g, '"')  // " RIGHT DOUBLE QUOTATION MARK
+        .replace(/\uff02/g, '"')  // ＂ FULLWIDTH QUOTATION MARK
+        .replace(/\u2033/g, '"')  // ″ DOUBLE PRIME
+        .replace(/\u301d/g, '"')  // 〝
+        .replace(/\u301e/g, '"')  // 〞
+        .replace(/\u2018/g, "'")  // ' LEFT SINGLE QUOTATION MARK
+        .replace(/\u2019/g, "'")  // ' RIGHT SINGLE QUOTATION MARK
+        .replace(/\uff07/g, "'")  // ＇ FULLWIDTH APOSTROPHE
+        .replace(/\uff1a/g, ':')  // ：
+        .replace(/\uff3b/g, '[')  // ［
+        .replace(/\uff3d/g, ']')  // ］
+        .replace(/\uff5b/g, '{')  // ｛
+        .replace(/\uff5d/g, '}')  // ｝
+        .replace(/\uff0c/g, ','); // ，
 
       // 4. 末尾カンマを除去 (,] や ,} を修正)
       cleanText = cleanText.replace(/,\s*]/g, ']').replace(/,\s*}/g, '}');

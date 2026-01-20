@@ -16,7 +16,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=20260117c">
+  <link rel="stylesheet" href="css/style.css?v=20260120b">
 </head>
 <body>
   <div class="app">
@@ -195,14 +195,32 @@
           </button>
         </div>
         <div class="import-modal-body">
-          <p class="import-description">アクセスコードを入力してデッキをインポートします。</p>
-          <div class="import-input-group">
-            <input type="text" id="import-code-input" class="import-code-input"
-                   placeholder="アクセスコード（例: YAKURI-PREMIUM-ABCD）"
-                   autocomplete="off" spellcheck="false">
-            <button id="import-submit-btn" class="import-submit-btn">
-              <span>インポート</span>
+          <!-- ローカルファイルインポート -->
+          <div class="import-section import-local-section">
+            <p class="import-description">JSONファイルからデッキをインポートします。</p>
+            <input type="file" id="import-file-input" accept=".json" style="display:none;">
+            <button id="import-file-btn" class="import-file-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+              </svg>
+              <span>ファイルを選択</span>
             </button>
+          </div>
+          <!-- 区切り線 -->
+          <div class="import-divider">
+            <span>または</span>
+          </div>
+          <!-- アクセスコード入力 -->
+          <div class="import-section">
+            <p class="import-description">アクセスコードを入力してデッキをインポートします。</p>
+            <div class="import-input-group">
+              <input type="text" id="import-code-input" class="import-code-input"
+                     placeholder="アクセスコード（例: YAKURI-PREMIUM-ABCD）"
+                     autocomplete="off" spellcheck="false">
+              <button id="import-submit-btn" class="import-submit-btn">
+                <span>インポート</span>
+              </button>
+            </div>
           </div>
           <div id="import-status" class="import-status"></div>
         </div>
@@ -546,13 +564,13 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="js/firebase-sync.js?v=20260117c"></script>
+  <script src="js/firebase-sync.js?v=20260120b"></script>
 
-  <script src="js/data.js?v=20260117c"></script>
-  <script src="js/search.js?v=20260117c"></script>
-  <script src="js/favorites.js?v=20260117c"></script>
-  <script src="js/kakomon.js?v=20260117c"></script>
-  <script src="js/flashcard.js?v=20260117c"></script>
-  <script src="js/app.js?v=20260117c"></script>
+  <script src="js/data.js?v=20260120b"></script>
+  <script src="js/search.js?v=20260120b"></script>
+  <script src="js/favorites.js?v=20260120b"></script>
+  <script src="js/kakomon.js?v=20260120b"></script>
+  <script src="js/flashcard.js?v=20260120b"></script>
+  <script src="js/app.js?v=20260120b"></script>
 </body>
 </html>

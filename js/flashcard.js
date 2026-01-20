@@ -120,7 +120,40 @@ const FlashcardModule = (function() {
 
   // 単一のインポートデッキをDATAに追加
   function addImportedDeckToData(deck) {
-    if (!deck || !deck.topics) return;
+    if (!deck) return;
+
+    // ローカルインポート（JSONデータを直接持つ）の場合
+    if (deck.isLocal && deck.jsonData) {
+      // deck.idは既に'local_'で始まっているのでそのまま使う
+      const topicId = deck.id;
+
+      // 既存を削除（重複防止）
+      for (let i = DATA.length - 1; i >= 0; i--) {
+        if (DATA[i].id === topicId) {
+          DATA.splice(i, 1);
+        }
+      }
+
+      // ローカルJSONデッキをDATAに追加
+      DATA.push({
+        id: topicId,
+        title: deck.title,
+        category: `インポート/${deck.category || 'ローカル'}`,
+        htmlPath: null,
+        qaPath: null, // qaPathはないがjsonDataを持つ
+        localJsonData: deck.jsonData, // JSONデータを直接保持
+        searchText: `${deck.title} ${deck.category || ''}`,
+        source: 'local_imported',
+        subject: 'インポート済み',
+        subjectCategory: deck.category || 'ローカル',
+        importedDeckId: deck.id,
+        cardCount: deck.cardCount
+      });
+      return;
+    }
+
+    // Firebase経由のインポート（topicsを持つ）の場合
+    if (!deck.topics) return;
 
     // 既存のトピックを削除（重複防止）
     const existingIds = deck.topics.map(t => `imported_${deck.id}_${t.id}`);
@@ -145,6 +178,38 @@ const FlashcardModule = (function() {
         importedDeckId: deck.id
       });
     }
+  }
+
+  // インポートデッキを削除
+  function deleteImportedDeck(deckId, topicId) {
+    // 1. localStorageから削除
+    const IMPORTED_DECKS_KEY = 'studyViewer_importedDecks';
+    try {
+      const stored = localStorage.getItem(IMPORTED_DECKS_KEY);
+      if (stored) {
+        let importedDecks = JSON.parse(stored);
+        importedDecks = importedDecks.filter(d => d.id !== deckId);
+        localStorage.setItem(IMPORTED_DECKS_KEY, JSON.stringify(importedDecks));
+      }
+    } catch (e) {
+      console.error('インポートデッキ削除エラー:', e);
+    }
+
+    // 2. DATA配列から削除
+    for (let i = DATA.length - 1; i >= 0; i--) {
+      if (DATA[i].id === topicId || DATA[i].importedDeckId === deckId) {
+        DATA.splice(i, 1);
+      }
+    }
+
+    // 3. 進捗データから関連エントリを削除
+    const keysToDelete = Object.keys(state.progress).filter(k => k.startsWith(topicId + ':'));
+    for (const key of keysToDelete) {
+      delete state.progress[key];
+    }
+    saveProgress();
+
+    console.log(`[deleteImportedDeck] 削除完了: ${deckId}`);
   }
 
   // === localStorage管理 ===
@@ -218,7 +283,7 @@ const FlashcardModule = (function() {
 
   function getSubjectStats(subject) {
     // 科目配下の全トピックの統計を集計
-    const topics = DATA.filter(d => d.subject === subject && d.qaPath);
+    const topics = DATA.filter(d => d.subject === subject && (d.qaPath || d.localJsonData));
     let totalAgain = 0;
     let totalLearning = 0;
     let totalMastered = 0;
@@ -846,7 +911,7 @@ const FlashcardModule = (function() {
   }
 
   function renderSubjectRow(subject) {
-    const topics = DATA.filter(d => d.subject === subject && d.qaPath);
+    const topics = DATA.filter(d => d.subject === subject && (d.qaPath || d.localJsonData));
     const stats = getSubjectStats(subject);
     const isOpen = state.expandedSubjects.has(subject);
 
@@ -1000,6 +1065,17 @@ const FlashcardModule = (function() {
       }
     }
 
+    // インポート済みデッキには削除ボタンを表示
+    const isImported = topic.source === 'local_imported';
+    const deleteBtn = isImported ? `
+      <button class="deck-delete-btn" data-topic-id="${topic.id}" data-deck-id="${topic.importedDeckId || ''}" title="削除">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        </svg>
+      </button>
+    ` : '';
+
     return `
       <div class="deck-topic" data-topic-id="${topic.id}">
         <span class="deck-topic-name">${displayTitle}</span>
@@ -1015,6 +1091,7 @@ const FlashcardModule = (function() {
               <line x1="3" y1="18" x2="3.01" y2="18"></line>
             </svg>
           </button>
+          ${deleteBtn}
         </div>
       </div>
     `;
@@ -1166,6 +1243,23 @@ const FlashcardModule = (function() {
         e.stopPropagation();
         const topicId = btn.dataset.topicId;
         await renderDeckCardList(topicId);
+      });
+    });
+
+    // インポートデッキ削除ボタンクリック
+    const deleteBtns = container.querySelectorAll('.deck-delete-btn');
+    deleteBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+        const deckId = btn.dataset.deckId;
+        const topic = DATA.find(d => d.id === topicId);
+        const title = topic?.title || 'このデッキ';
+
+        if (confirm(`「${title}」を削除しますか？\n\n学習進捗も削除されます。`)) {
+          deleteImportedDeck(deckId, topicId);
+          renderDeckList();
+        }
       });
     });
 
@@ -1372,10 +1466,25 @@ const FlashcardModule = (function() {
     }
 
     const topic = DATA.find(d => d.id === topicId);
-    if (!topic || !topic.qaPath) return;
+    if (!topic) return;
 
     state.currentTopicId = topicId;
     state.currentTopic = topic;
+
+    // ローカルインポート（JSONデータを直接持つ）の場合
+    if (topic.localJsonData) {
+      try {
+        const cards = parseJSONToCards(topic.localJsonData, topicId);
+        loadTopicFromCards(cards, topicId, shuffle);
+      } catch (e) {
+        console.log('ローカルJSON読み込みエラー:', e);
+        container.innerHTML = `<div class="flashcard-error">デッキの読み込みに失敗しました</div>`;
+      }
+      return;
+    }
+
+    // 通常のqaPathを持つトピック
+    if (!topic.qaPath) return;
 
     try {
       const response = await fetch(encodeURI(topic.qaPath));
@@ -1384,6 +1493,58 @@ const FlashcardModule = (function() {
     } catch (e) {
       console.log('Q&A読み込みエラー:', e);
       container.innerHTML = `<div class="flashcard-error">Q&Aの読み込みに失敗しました</div>`;
+    }
+  }
+
+  // カード配列から直接ロード（ローカルJSON用）
+  function loadTopicFromCards(cards, topicId, shuffle = false) {
+    state.cards = cards;
+
+    // 復習モードの場合、「もう一度」のカードのみフィルタ
+    if (state.isReviewMode) {
+      state.filteredCards = state.cards.filter((card, idx) => {
+        const key = `${topicId}:${idx}`;
+        return state.progress[key] && state.progress[key].status === 'again';
+      });
+    } else {
+      state.filteredCards = [...state.cards];
+    }
+
+    // 保存されたセッションを復元
+    let savedIndex = 0;
+    const session = getSession(topicId);
+
+    if (session) {
+      if (session.order && session.order.length === state.filteredCards.length) {
+        const orderMap = new Map(state.filteredCards.map(c => [c.originalIndex, c]));
+        const reordered = session.order.map(idx => orderMap.get(idx)).filter(Boolean);
+        if (reordered.length === state.filteredCards.length) {
+          state.filteredCards = reordered;
+        }
+      }
+      if (session.index !== undefined && session.index > 0) {
+        savedIndex = Math.min(session.index, state.filteredCards.length - 1);
+      }
+    } else if (state.shuffleEnabled && state.filteredCards.length > 0) {
+      for (let i = state.filteredCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+      }
+    }
+
+    state.currentIndex = savedIndex;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+    state.answeredInSession = 0;
+    state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
+
+    if (state.filteredCards.length === 0) {
+      renderNoCardsMessage();
+    } else {
+      renderCard();
     }
   }
 
@@ -1857,7 +2018,7 @@ const FlashcardModule = (function() {
     }
 
     // 2. 新規（未学習）カードを収集
-    const topicsWithQa = DATA.filter(d => d.qaPath);
+    const topicsWithQa = DATA.filter(d => d.qaPath || d.localJsonData);
     for (const topic of topicsWithQa) {
       if (cardRefs.filter(r => r.type === 'new').length >= newTarget) break;
 
@@ -1965,7 +2126,7 @@ const FlashcardModule = (function() {
     const cardRefs = [];
 
     // 各トピックから未学習カードのみを収集
-    const topicsWithQa = DATA.filter(d => d.qaPath);
+    const topicsWithQa = DATA.filter(d => d.qaPath || d.localJsonData);
     for (const topic of topicsWithQa) {
       if (cardRefs.length >= targetCount) break;
 
@@ -2137,7 +2298,7 @@ const FlashcardModule = (function() {
       qaPath = 'deck/必修ココシカ.txt';
     } else {
       topic = DATA.find(d => d.id === topicId);
-      if (!topic || !topic.qaPath) {
+      if (!topic || (!topic.qaPath && !topic.localJsonData)) {
         container.innerHTML = `<div class="flashcard-error">トピックが見つかりません</div>`;
         return;
       }
@@ -2147,9 +2308,14 @@ const FlashcardModule = (function() {
     // QAファイルを読み込み
     let cards = [];
     try {
-      const response = await fetch(encodeURI(qaPath));
-      const text = await response.text();
-      cards = parseQAToCards(text, topicId);
+      // ローカルインポートの場合
+      if (topic.localJsonData) {
+        cards = parseJSONToCards(topic.localJsonData, topicId);
+      } else {
+        const response = await fetch(encodeURI(qaPath));
+        const text = await response.text();
+        cards = parseQAToCards(text, topicId);
+      }
     } catch (e) {
       console.log('Q&A読み込みエラー:', e);
       container.innerHTML = `<div class="flashcard-error">Q&Aの読み込みに失敗しました</div>`;
@@ -2180,11 +2346,24 @@ const FlashcardModule = (function() {
       const isFavorite = cardProgress && cardProgress.favorite;
       const isExpanded = state.deckCardListExpandedKeys && state.deckCardListExpandedKeys.has(key);
 
+      // htmlPathを決定（カード単位 or トピック単位）
+      const cardHtmlPath = card.htmlPath || (topic && topic.htmlPath);
+
       return `
         <div class="card-search-item ${isExpanded ? 'expanded' : ''}" data-key="${escapeHtml(key)}">
           <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
             <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
-            ${isExpanded ? `<div class="card-search-answer">A: ${escapeHtml(card.answer)}</div>` : ''}
+            ${isExpanded ? `
+              <div class="card-search-answer">A: ${escapeHtml(card.answer)}</div>
+              ${cardHtmlPath ? `
+                <button class="deck-card-summary-btn"
+                        data-topic-id="${escapeHtml(topicId)}"
+                        data-html-path="${escapeHtml(cardHtmlPath)}"
+                        data-section="${card.section ? escapeHtml(card.section) : ''}">
+                  まとめを見る
+                </button>
+              ` : ''}
+            ` : ''}
           </div>
           <div class="card-search-footer">
             <div class="card-search-meta">${card.section ? escapeHtml(card.section) : ''}</div>
@@ -2308,6 +2487,31 @@ const FlashcardModule = (function() {
         const svg = btn.querySelector('svg');
         if (svg) {
           svg.setAttribute('fill', newFavorite ? 'currentColor' : 'none');
+        }
+      });
+    });
+
+    // まとめを見るボタン
+    const summaryBtns = container.querySelectorAll('.deck-card-summary-btn');
+    summaryBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const btnTopicId = btn.dataset.topicId;
+
+        state.deckCardListExpandedKeys = new Set();
+
+        // タブバーを再表示
+        const tabbar = document.querySelector('.floating-tabbar');
+        if (tabbar) tabbar.classList.remove('hidden');
+
+        // まとめタブに切り替え
+        if (typeof window.switchTab === 'function') {
+          window.switchTab('html');
+        }
+
+        // トピックを読み込み
+        if (typeof window.selectItem === 'function') {
+          window.selectItem(btnTopicId);
         }
       });
     });

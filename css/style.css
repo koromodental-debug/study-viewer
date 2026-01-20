@@ -4671,6 +4671,16 @@ body:not(.is-practice) #flashcard-content {
   background: rgba(255, 255, 255, 0.12);
 }
 
+[data-theme="dark"] .deck-delete-btn {
+  background: rgba(255, 69, 58, 0.15);
+  color: #ff453a;
+}
+
+[data-theme="dark"] .deck-delete-btn:hover,
+[data-theme="dark"] .deck-delete-btn:active {
+  background: rgba(255, 69, 58, 0.25);
+}
+
 [data-theme="dark"] .deck-card-list-view {
   background: var(--background);
 }
@@ -6074,6 +6084,38 @@ body:not(.is-practice) #flashcard-content {
   background: var(--border-color, #e5e5ea);
 }
 
+/* 削除ボタン */
+.deck-delete-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 59, 48, 0.1);
+  color: #ff3b30;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: 4px;
+}
+
+.deck-delete-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.deck-delete-btn:hover {
+  background: rgba(255, 59, 48, 0.2);
+}
+
+.deck-delete-btn:active {
+  transform: scale(0.92);
+  background: rgba(255, 59, 48, 0.25);
+}
+
 /* === デッキカード一覧画面 === */
 .deck-card-list-view {
   min-height: 100vh;
@@ -6156,6 +6198,27 @@ body:not(.is-practice) #flashcard-content {
 
 .deck-card-list-content {
   padding: 16px;
+}
+
+/* デッキカード一覧：まとめを見るボタン */
+.deck-card-summary-btn {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  background: var(--system-blue);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.deck-card-summary-btn:active {
+  opacity: 0.8;
 }
 
 /* デッキオプション */
@@ -10708,6 +10771,65 @@ body.is-practice .tab-content {
 .import-status.loading {
   background: rgba(0, 122, 255, 0.12);
   color: #007aff;
+}
+
+/* ローカルファイルインポート */
+.import-section {
+  margin-bottom: 16px;
+}
+
+.import-local-section {
+  text-align: center;
+}
+
+.import-file-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--bg-secondary);
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.import-file-btn:hover {
+  border-color: var(--system-blue);
+  background: rgba(0, 122, 255, 0.05);
+}
+
+.import-file-btn:active {
+  transform: scale(0.98);
+}
+
+.import-file-btn svg {
+  color: var(--secondary-label);
+}
+
+.import-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: var(--secondary-label);
+  font-size: 13px;
+}
+
+.import-divider::before,
+.import-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.import-divider span {
+  padding: 0 12px;
 }
 
 /* インポートボタンのスタイル */

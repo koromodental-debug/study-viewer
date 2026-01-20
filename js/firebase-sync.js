@@ -860,6 +860,102 @@ function initAccountUI() {
     }
   });
 
+  // === ローカルファイルインポート ===
+  const importFileBtn = document.getElementById('import-file-btn');
+  const importFileInput = document.getElementById('import-file-input');
+
+  importFileBtn?.addEventListener('click', () => {
+    importFileInput?.click();
+  });
+
+  importFileInput?.addEventListener('change', async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    try {
+      showImportStatus('ファイルを読み込み中...', 'loading');
+
+      const text = await file.text();
+      const jsonData = JSON.parse(text);
+
+      // JSONの検証
+      if (!jsonData.sections || !Array.isArray(jsonData.sections)) {
+        throw new Error('無効なJSON形式です。sectionsが見つかりません。');
+      }
+
+      // デッキタイトルを取得（メタデータから or ファイル名から）
+      const title = jsonData.metadata?.title || file.name.replace('.json', '').replace(/_QA$/, '');
+      const category = jsonData.metadata?.category || 'インポート';
+
+      // カード数をカウント
+      let cardCount = 0;
+      for (const section of jsonData.sections) {
+        cardCount += (section.qa || []).length;
+      }
+
+      if (cardCount === 0) {
+        throw new Error('カードが見つかりません。');
+      }
+
+      // ユニークなIDを生成
+      const deckId = `local_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+      // デッキデータを構築
+      const deck = {
+        id: deckId,
+        title: title,
+        category: category,
+        cardCount: cardCount,
+        jsonData: jsonData,
+        importedAt: Date.now(),
+        isLocal: true
+      };
+
+      // ローカルストレージに保存
+      saveImportedDeckToLocal(deck);
+
+      showImportStatus(`「${title}」をインポートしました！（${cardCount}問）`, 'success');
+
+      // イベントを発火してUIを更新
+      window.dispatchEvent(new CustomEvent('deckImported', { detail: deck }));
+
+      // 2秒後にモーダルを閉じる
+      setTimeout(closeImportModal, 2000);
+
+    } catch (error) {
+      console.error('ローカルインポートエラー:', error);
+      showImportStatus(error.message || 'ファイルの読み込みに失敗しました。', 'error');
+    } finally {
+      // ファイル選択をリセット
+      if (importFileInput) importFileInput.value = '';
+    }
+  });
+
+  // ローカルデッキをlocalStorageに保存（FirebaseSyncと同じ関数を再利用）
+  function saveImportedDeckToLocal(deck) {
+    const IMPORTED_DECKS_KEY = 'studyViewer_importedDecks';
+    let importedDecks = [];
+
+    try {
+      const stored = localStorage.getItem(IMPORTED_DECKS_KEY);
+      if (stored) {
+        importedDecks = JSON.parse(stored);
+      }
+    } catch (e) {
+      console.error('ローカルデッキ読み込みエラー:', e);
+    }
+
+    // 既存のデッキを更新または追加
+    const existingIndex = importedDecks.findIndex(d => d.id === deck.id);
+    if (existingIndex >= 0) {
+      importedDecks[existingIndex] = deck;
+    } else {
+      importedDecks.push(deck);
+    }
+
+    localStorage.setItem(IMPORTED_DECKS_KEY, JSON.stringify(importedDecks));
+  }
+
   // 相対時間を取得
   function getRelativeTime(timestamp) {
     const now = Date.now();

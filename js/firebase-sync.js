@@ -960,12 +960,26 @@ function initAccountUI() {
     try {
       showImportStatus('インポート中...', 'loading');
 
-      // JSONをパース（コードブロックがあれば除去）
+      // JSONをパース（コードブロックがあれば除去、全角文字を修正）
       let cleanText = text;
       // ```json ... ``` 形式を除去
       cleanText = cleanText.replace(/^```json?\s*/i, '').replace(/\s*```$/i, '');
       // 前後の空白を除去
       cleanText = cleanText.trim();
+
+      // AIが出力しがちな全角文字を半角に修正
+      cleanText = cleanText
+        .replace(/「/g, '"')  // 全角鉤括弧開き→ダブルクォート
+        .replace(/」/g, '"')  // 全角鉤括弧閉じ→ダブルクォート
+        .replace(/"/g, '"')  // 全角ダブルクォート開き
+        .replace(/"/g, '"')  // 全角ダブルクォート閉じ
+        .replace(/'/g, "'")  // 全角シングルクォート開き
+        .replace(/'/g, "'")  // 全角シングルクォート閉じ
+        .replace(/：/g, ':')  // 全角コロン
+        .replace(/［/g, '[')  // 全角角括弧開き
+        .replace(/］/g, ']')  // 全角角括弧閉じ
+        .replace(/｛/g, '{')  // 全角波括弧開き
+        .replace(/｝/g, '}'); // 全角波括弧閉じ
 
       const jsonData = JSON.parse(cleanText);
 

@@ -1981,12 +1981,21 @@ const FlashcardModule = (function() {
         qaPath = topic?.qaPath;
       }
 
-      if (!topic || !qaPath) continue;
+      if (!topic) continue;
 
       try {
-        const response = await fetch(encodeURI(qaPath));
-        const text = await response.text();
-        const cards = parseQAToCards(text, topicId);
+        let cards;
+        // インポートデッキ（localJsonData）の場合
+        if (topic.localJsonData) {
+          cards = parseJSONToCards(topic.localJsonData, topicId);
+        } else if (qaPath) {
+          // 組み込みデッキ（.txtベース）の場合
+          const response = await fetch(encodeURI(qaPath));
+          const text = await response.text();
+          cards = parseQAToCards(text, topicId);
+        } else {
+          continue;
+        }
         topicCardsMap.set(topicId, { cards, topic });
       } catch (e) {
         console.log(`QA読み込みエラー (${topicId}):`, e);

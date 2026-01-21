@@ -2225,7 +2225,9 @@ const FlashcardModule = (function() {
 
   // カード参照からカードデータを取得
   async function fetchCardsFromRefs(cardRefs) {
-    const uniqueTopicIds = [...new Set(cardRefs.map(r => r.topicId))];
+    // 不正なエントリをフィルタリング
+    const validRefs = cardRefs.filter(r => r && r.topicId);
+    const uniqueTopicIds = [...new Set(validRefs.map(r => r.topicId))];
     const topicCardsMap = new Map();
 
     for (const topicId of uniqueTopicIds) {
@@ -2281,7 +2283,7 @@ const FlashcardModule = (function() {
     const addedKeys = new Set();
     const invalidKeys = [];
 
-    for (const ref of cardRefs) {
+    for (const ref of validRefs) {
       if (addedKeys.has(ref.key)) continue;
       const topicData = topicCardsMap.get(ref.topicId);
       if (topicData) {

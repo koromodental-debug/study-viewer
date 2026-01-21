@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>嚥下 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 嚥下</span>
+    <h1>嚥下</h1>
+    <div class="container">
+
+      <h2>I. 嚥下の概要</h2>
+
+      <p>嚥下とは、口腔内に摂取された食物（固体・液体）、または唾液などの分泌物を咽頭、食道を経て、胃まで移送する反射性の運動のことである。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">嚥下中枢</div>
+        <ul>
+          <li><span class="highlight">延髄</span>（孤束核付近、疑核など）に存在</li>
+          <li>咽頭期からは不随意運動（反射）となる</li>
+        </ul>
+      </div>
+
+      <h3>嚥下回数</h3>
+      <ul>
+        <li>飲食中：180回/時</li>
+        <li>安静時：24回/時</li>
+        <li>就眠中：5回/時（睡眠中も嚥下は行われている）</li>
+      </ul>
+
+      <h2>II. 摂食嚥下の5期</h2>
+
+      <table>
+        <tr>
+          <th>期</th>
+          <th>別名</th>
+          <th>内容</th>
+          <th>随意性</th>
+        </tr>
+        <tr>
+          <td><span class="key">認知期</span></td>
+          <td>先行期</td>
+          <td>感覚情報を経験、記憶、環境などと照合して摂食の可否判断</td>
+          <td>随意</td>
+        </tr>
+        <tr>
+          <td><span class="key">咀嚼期</span></td>
+          <td>準備期</td>
+          <td>食物の粉砕、食塊の形成</td>
+          <td>随意</td>
+        </tr>
+        <tr>
+          <td><span class="key">口腔期</span></td>
+          <td>嚥下第一期</td>
+          <td>食塊を口腔から咽頭へ移送</td>
+          <td>随意</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">咽頭期</span></td>
+          <td>嚥下第二期</td>
+          <td>食塊を飲み込む（咽頭通過→食道へ）</td>
+          <td><span class="caution">不随意（反射）</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">食道期</span></td>
+          <td>嚥下第三期</td>
+          <td>食塊が食道を通過して胃に達する</td>
+          <td>不随意</td>
+        </tr>
+      </table>
+
+      <p class="note">※咽頭期からは完全な反射となり、一度開始されると自分の意志で中断できない</p>
+
+      <h2>III. 嚥下時の気道防御機構【重要】</h2>
+
+      <p>咽頭部では気道と消化経路が交差するため、気道への食物の進入を阻止する必要がある。</p>
+
+      <table>
+        <tr>
+          <th>機構</th>
+          <th>関与する筋</th>
+          <th>役割</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">鼻咽腔閉鎖</span></td>
+          <td><span class="highlight">口蓋帆挙筋</span>（軟口蓋の挙上）</td>
+          <td>鼻腔への逆流防止</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">声門閉鎖</span></td>
+          <td>声帯筋、外側輪状披裂筋など</td>
+          <td>気管への進入防止</td>
+        </tr>
+        <tr>
+          <td>喉頭口閉鎖</td>
+          <td>喉頭蓋の反転下降</td>
+          <td>気管入口を覆う</td>
+        </tr>
+        <tr>
+          <td>嚥下時無呼吸</td>
+          <td>－</td>
+          <td>呼吸による誤嚥防止</td>
+        </tr>
+        <tr>
+          <td>梨状陥凹</td>
+          <td>－</td>
+          <td>食塊が喉頭口周囲を流れる構造</td>
+        </tr>
+      </table>
+
+      <h2>IV. 嚥下に関わる筋と運動</h2>
+
+      <table>
+        <tr>
+          <th>運動</th>
+          <th>関与する筋</th>
+          <th>神経支配</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">舌骨挙上</span></td>
+          <td><span class="highlight">顎舌骨筋</span>、顎二腹筋前腹、茎突舌骨筋</td>
+          <td>三叉神経、顔面神経</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">喉頭挙上</span></td>
+          <td>甲状舌骨筋（舌骨下筋群）</td>
+          <td>頸神経ワナ</td>
+        </tr>
+        <tr>
+          <td>舌骨下降</td>
+          <td>胸骨舌骨筋、肩甲舌骨筋</td>
+          <td>頸神経ワナ</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">鼻咽腔閉鎖</span></td>
+          <td><span class="highlight">口蓋帆挙筋</span></td>
+          <td>迷走神経（咽頭神経叢）</td>
+        </tr>
+        <tr>
+          <td>食道入口部開大</td>
+          <td>輪状咽頭筋の弛緩 + 喉頭挙上</td>
+          <td>迷走神経</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">食道入口部開大のメカニズム</div>
+        <ul>
+          <li><span class="key">輪状咽頭筋</span>（咽頭下部）の弛緩</li>
+          <li>＋ <span class="key">喉頭の前上方移動</span>（甲状舌骨筋の収縮）</li>
+          <li>→ 食道入口部が開大し、食塊が食道に流入</li>
+        </ul>
+      </div>
+
+      <h2>V. 各期の詳細</h2>
+
+      <h3>口腔期の過程</h3>
+      <ol>
+        <li>食塊の保持：舌をスプーン状にして食塊を保持</li>
+        <li>舌口蓋閉鎖：口蓋垂の下垂と舌後方の挙上</li>
+        <li>舌の狭窄運動：食塊を後方へ移送</li>
+        <li>舌口蓋閉鎖の開放</li>
+        <li>軟口蓋の挙上開始（口蓋帆挙筋）</li>
+      </ol>
+
+      <h3>咽頭期の過程</h3>
+      <ol>
+        <li>舌根部の前方移動（食塊が入るスペースをつくる）</li>
+        <li>鼻咽腔閉鎖完成（軟口蓋の挙上＋上咽頭後壁の前方突出）</li>
+        <li>中咽頭部に食塊が蓄積</li>
+        <li>誘発刺激：食塊先端が口蓋垂下端を通過して咽頭粘膜に接触 → 中枢性に<span class="key">嚥下反射</span>が誘発</li>
+        <li>食塊の下方への推進力（舌根部の後下方移動、咽頭の蠕動様運動）</li>
+        <li>喉頭の挙上（舌骨下筋群の収縮）→ 食道入口部開大</li>
+        <li>喉頭蓋の下降反転（喉頭口閉鎖）＋ 声門閉鎖 ＋ 嚥下時無呼吸 → 気道防御</li>
+        <li>輪状咽頭筋の弛緩 ＋ 喉頭の前上方移動 → 食道入口部開大 → 食塊の食道流入</li>
+      </ol>
+
+      <h3>食道期の過程</h3>
+      <ol>
+        <li>食道入口部：輪状咽頭筋の弛緩により開大</li>
+        <li>食道内に食塊が入る</li>
+        <li>蠕動により胃まで移送（移送時間：約10秒）</li>
+      </ol>
+
+      <h2>VI. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A127</div>
+        <p>嚥下中枢があるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 間脳<br>
+          b 中脳<br>
+          c 小脳<br>
+          d 延髄<br>
+          e 脊髄
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">嚥下中枢は延髄</span>（孤束核付近、疑核など）に存在する。咽頭期以降の嚥下は反射であり、延髄の嚥下中枢により制御される。</p>
+        <ul>
+          <li>a × 間脳：視床、視床下部など（自律神経、内分泌の中枢）</li>
+          <li>b × 中脳：姿勢反射、対光反射の中枢</li>
+          <li>c × 小脳：運動の協調、平衡機能</li>
+          <li>d ○ <span class="highlight">延髄</span>：嚥下、嘔吐、呼吸、循環の中枢</li>
+          <li>e × 脊髄：脊髄反射の中枢</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D72</div>
+        <p>嚥下時の運動と、収縮がその運動に関わる筋の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 喉頭挙上 ーーーーー 胸骨舌骨筋<br>
+          b 声門閉鎖 ーーーーー オトガイ舌筋<br>
+          c 舌骨挙上 ーーーーー 顎舌骨筋<br>
+          d 鼻咽腔閉鎖 ーーーー 口蓋帆挙筋<br>
+          e 食道入口部開大 ーー 胸鎖乳突筋
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】嚥下時の運動と関与する筋の組合せを問う問題。</p>
+        <ul>
+          <li>a × 喉頭挙上は<span class="caution">甲状舌骨筋</span>などによる。胸骨舌骨筋は舌骨を<span class="caution">下降</span>させる筋</li>
+          <li>b × 声門閉鎖は声帯筋、外側輪状披裂筋などによる。オトガイ舌筋は舌の運動に関与</li>
+          <li>c ○ <span class="highlight">舌骨挙上 — 顎舌骨筋</span>（口腔底の筋、舌骨上筋群）</li>
+          <li>d ○ <span class="highlight">鼻咽腔閉鎖 — 口蓋帆挙筋</span>（軟口蓋を挙上）</li>
+          <li>e × 食道入口部開大は輪状咽頭筋の弛緩と喉頭挙上による。胸鎖乳突筋は頭部の運動に関与</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

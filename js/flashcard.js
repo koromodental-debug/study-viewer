@@ -4983,31 +4983,82 @@ const FlashcardModule = (function() {
     }
   }
 
-  // セクション抽出関数
+  // 文字列を正規化（マッチング用）
+  function normalizeForMatch(str) {
+    if (!str) return '';
+    return str
+      .toLowerCase()
+      .replace(/[\s　・、。（）()「」『』【】\-_]/g, '') // 空白・記号を除去
+      .replace(/[０-９]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xFEE0)) // 全角数字→半角
+      .replace(/[Ａ-Ｚａ-ｚ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xFEE0)); // 全角英字→半角
+  }
+
+  // セクション抽出関数（柔軟なマッチング）
   function extractSection(doc, sectionName) {
+    if (!sectionName) return null;
+
     const h3Elements = doc.querySelectorAll('h3');
+    const normalizedSection = normalizeForMatch(sectionName);
+
+    // キーワードを抽出（2文字以上の単語）
+    const keywords = sectionName
+      .split(/[\s　・、。（）()「」『』【】\-_]+/)
+      .filter(k => k.length >= 2);
+
+    let bestMatch = null;
+    let bestScore = 0;
 
     for (const h3 of h3Elements) {
       // h3のテキスト部分のみ取得（spanタグ等を除外）
       const h3Text = h3.childNodes[0]?.textContent?.trim() || h3.textContent.trim();
+      const normalizedH3 = normalizeForMatch(h3Text);
 
-      if (h3Text.includes(sectionName) || sectionName.includes(h3Text)) {
-        // このh3から次のh3までの内容を収集（過去問は除外）
-        const content = [h3.outerHTML];
-        let sibling = h3.nextElementSibling;
+      // スコア計算
+      let score = 0;
 
-        while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
-          // 過去問セクション・question-boxは除外
-          if (sibling.classList?.contains('question-box')) {
-            sibling = sibling.nextElementSibling;
-            continue;
-          }
-          content.push(sibling.outerHTML);
-          sibling = sibling.nextElementSibling;
-        }
-
-        return content.join('');
+      // 完全一致（正規化後）
+      if (normalizedH3 === normalizedSection) {
+        score = 100;
       }
+      // 部分一致
+      else if (normalizedH3.includes(normalizedSection) || normalizedSection.includes(normalizedH3)) {
+        score = 80;
+      }
+      // キーワードマッチ
+      else {
+        const matchedKeywords = keywords.filter(k =>
+          normalizedH3.includes(normalizeForMatch(k))
+        );
+        if (matchedKeywords.length > 0) {
+          score = (matchedKeywords.length / keywords.length) * 60;
+        }
+      }
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = h3;
+      }
+
+      // 完全一致なら即座に採用
+      if (score === 100) break;
+    }
+
+    // スコアが30以上ならマッチとみなす
+    if (bestMatch && bestScore >= 30) {
+      const content = [bestMatch.outerHTML];
+      let sibling = bestMatch.nextElementSibling;
+
+      while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+        // 過去問セクション・question-boxは除外
+        if (sibling.classList?.contains('question-box')) {
+          sibling = sibling.nextElementSibling;
+          continue;
+        }
+        content.push(sibling.outerHTML);
+        sibling = sibling.nextElementSibling;
+      }
+
+      return content.join('');
     }
 
     return null; // 見つからない場合

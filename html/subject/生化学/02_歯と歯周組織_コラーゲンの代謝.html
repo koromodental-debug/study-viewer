@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>コラーゲンの代謝 - 生化学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生化学 / 歯と歯周組織</span>
+    <h1>コラーゲンの代謝</h1>
+    <div class="container">
+
+      <h2>I. コラーゲン代謝の概要</h2>
+      <p>コラーゲンは体内で常に合成と分解（代謝回転）を繰り返している。特に歯周組織では代謝回転が活発であり、歯周病ではコラーゲン分解が亢進する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">コラーゲン代謝の流れ</div>
+        <p>合成 → 成熟（架橋形成） → 分解 → 再合成</p>
+        <ul>
+          <li><span class="key">合成</span>：線維芽細胞などでプロコラーゲンとして合成</li>
+          <li><span class="key">成熟</span>：リシルオキシダーゼによる架橋結合形成</li>
+          <li><span class="key">分解</span>：MMP（マトリックスメタロプロテアーゼ）による分解</li>
+        </ul>
+      </div>
+
+      <h2>II. コラーゲンの分解</h2>
+
+      <h3>コラーゲン分解酵素（MMP）</h3>
+      <p><span class="key">MMP（マトリックスメタロプロテアーゼ）</span>は、細胞外マトリックスの構成成分を分解する酵素群である。活性中心に亜鉛イオン（Zn²⁺）を含む。</p>
+
+      <h3>MMPの種類と基質</h3>
+      <table>
+        <tr><th>MMP</th><th>別名</th><th>基質</th></tr>
+        <tr><td>MMP-1, 8, 13</td><td class="key">コラゲナーゼ</td><td>三本鎖コラーゲン（天然型）</td></tr>
+        <tr><td class="highlight">MMP-2, 9</td><td class="highlight">ゼラチナーゼ</td><td>変性コラーゲン（ゼラチン）、IV型コラーゲン</td></tr>
+        <tr><td>MMP-3, 10</td><td>ストロメライシン</td><td>プロテオグリカン、ラミニンなど</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">コラーゲン分解の2段階</div>
+        <ul>
+          <li><span class="key">第1段階</span>：コラゲナーゼが三本鎖ヘリックス構造を特異的に切断</li>
+          <li><span class="key">第2段階</span>：<span class="highlight">ゼラチナーゼ</span>が変性したコラーゲン（ゼラチン）をさらに分解</li>
+        </ul>
+      </div>
+
+      <h2>III. コラーゲンの変性（ゼラチン化）</h2>
+      <p>コラーゲン線維を加熱すると、<span class="highlight">55〜60℃以上</span>でコラーゲン分子の三本鎖ヘリックス構造が壊れ、<span class="key">ゼラチン</span>とよばれる不規則なランダムコイル状の構造に変化（変性）する。</p>
+      <p>ゼラチンは、タンパク質分解酵素（<span class="highlight">ゼラチナーゼ</span>）により、さらに低分子化される。</p>
+
+      <h3>コラーゲンとゼラチンの違い</h3>
+      <table>
+        <tr><th>項目</th><th>コラーゲン</th><th>ゼラチン</th></tr>
+        <tr><td>構造</td><td>三本鎖ヘリックス</td><td>ランダムコイル</td></tr>
+        <tr><td>安定性</td><td>安定</td><td>不安定</td></tr>
+        <tr><td>分解酵素</td><td>コラゲナーゼ</td><td>ゼラチナーゼ</td></tr>
+      </table>
+
+      <h2>IV. コラーゲン分解産物</h2>
+      <p>コラーゲンが分解されると、コラーゲン特有のアミノ酸である<span class="key">ヒドロキシプロリン</span>が遊離する。尿中ヒドロキシプロリン量は、コラーゲン代謝（特に骨吸収）の指標となる。</p>
+
+      <h3>コラーゲン特有のアミノ酸</h3>
+      <table>
+        <tr><th>アミノ酸</th><th>特徴</th></tr>
+        <tr><td class="key">ヒドロキシプロリン</td><td>プロリンの水酸化により生成、コラーゲンの安定性に寄与</td></tr>
+        <tr><td class="key">ヒドロキシリシン</td><td>リシンの水酸化により生成、糖鎖結合部位</td></tr>
+      </table>
+      <p class="note">水酸化にはビタミンC（アスコルビン酸）が必要。欠乏すると壊血病（コラーゲン合成障害）を発症。</p>
+
+      <h2>V. 歯周病とコラーゲン代謝</h2>
+      <p>歯周病では、細菌由来のLPS（リポ多糖）によりマクロファージが活性化され、<span class="key">MMP</span>や炎症性サイトカイン（IL-1、IL-6、TNF）を産生する。これにより歯周組織のコラーゲンが分解され、組織破壊が進行する。</p>
+
+      <h3>歯周病における組織破壊のメカニズム</h3>
+      <ul>
+        <li>LPS → マクロファージ活性化</li>
+        <li>→ MMP産生 → <span class="caution">コラーゲン分解</span></li>
+        <li>→ サイトカイン産生 → 破骨細胞活性化 → 歯槽骨吸収</li>
+      </ul>
+
+      <h2>VI. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106A125</div>
+        <p>コラーゲンの分解に関わる酵素はどれか。1つ選べ。</p>
+        <div class="choices">
+          a アミラーゼ<br>
+          b カタラーゼ<br>
+          c ゼラチナーゼ<br>
+          d エステラーゼ<br>
+          e グルコシダーゼ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ゼラチナーゼ（MMP-2, MMP-9）は変性したコラーゲン（ゼラチン）を分解する酵素である。MMPファミリーに属し、コラーゲンの代謝に重要な役割を果たす。</p>
+        <ul>
+          <li>a × アミラーゼ：デンプンを分解</li>
+          <li>b × カタラーゼ：過酸化水素を分解</li>
+          <li>c ○ ゼラチナーゼ：変性コラーゲン（ゼラチン）を分解</li>
+          <li>d × エステラーゼ：エステル結合を加水分解</li>
+          <li>e × グルコシダーゼ：グルコシド結合を加水分解</li>
+        </ul>
+      </div>
+
+      <h2>VII. まとめ</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">覚えるべきポイント</div>
+        <ul>
+          <li><span class="highlight">ゼラチナーゼ</span>＝コラーゲン分解酵素（MMP-2, 9）</li>
+          <li>コラゲナーゼ：三本鎖コラーゲンを切断</li>
+          <li>ゼラチナーゼ：変性コラーゲン（ゼラチン）を分解</li>
+          <li>コラーゲン変性温度：55〜60℃以上</li>
+          <li>分解産物：ヒドロキシプロリン</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

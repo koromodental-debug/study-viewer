@@ -5204,6 +5204,15 @@ body:not(.is-practice) #flashcard-content {
   transform: scale(0.98);
 }
 
+/* 今日の10問 完了状態 */
+.daily-ten-card.completed {
+  background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
+}
+
+.daily-ten-card.completed .daily-ten-desc {
+  margin-bottom: 0;
+}
+
 /* デッキジャンプボタン */
 .goto-deck-btn {
   width: 28px;

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ホルモンの様式と受容体 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 内分泌</span>
+    <h1>ホルモンの様式と受容体</h1>
+    <div class="container">
+
+      <h2>I. 分泌の様式</h2>
+
+      <p>分泌とは、細胞が細胞外へ化学物質を放出することをいう。</p>
+
+      <table>
+        <tr>
+          <th>様式</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="key">外分泌</span></td>
+          <td>外環境に化学物質（汗や涙など）を分泌すること。消化管腔内は外環境なので、<span class="highlight">消化液分泌は外分泌</span></td>
+          <td>唾液、胃液、汗、涙</td>
+        </tr>
+        <tr>
+          <td><span class="key">内分泌</span></td>
+          <td><span class="highlight">血中</span>に化学物質を分泌し、血流によって遠隔の組織・器官に運ばれて少量で特異的作用を発揮</td>
+          <td>インスリン、甲状腺ホルモン</td>
+        </tr>
+        <tr>
+          <td><span class="key">傍分泌</span></td>
+          <td>化学物質を<span class="highlight">組織液中</span>に分泌し、拡散によって近傍の細胞に作用</td>
+          <td>ヒスタミン、プロスタグランジン</td>
+        </tr>
+        <tr>
+          <td><span class="key">自己分泌</span></td>
+          <td>化学物質が分泌した<span class="highlight">細胞自身</span>に作用する（血中ではない）</td>
+          <td>サイトカイン、成長因子</td>
+        </tr>
+        <tr>
+          <td><span class="key">神経分泌</span></td>
+          <td><span class="highlight">神経細胞</span>がホルモンを血中に分泌</td>
+          <td>バソプレシン（ADH）、オキシトシン</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">内分泌の定義に注意</div>
+        <ul>
+          <li>化学物質を体内へ分泌することが内分泌ではない</li>
+          <li><span class="highlight">血中に分泌すること</span>が内分泌</li>
+          <li>たとえ同じ化学物質であっても組織液中に分泌された場合は、傍分泌または自己分泌となる</li>
+        </ul>
+      </div>
+
+      <h2>II. ホルモンの化学的分類</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>特徴</th>
+          <th>例</th>
+          <th>受容体</th>
+        </tr>
+        <tr>
+          <td><span class="key">ペプチド型</span></td>
+          <td>ペプチド、（糖）タンパク質がホルモンとして作用。ホルモン遺伝子が存在。<span class="highlight">大部分のホルモン</span>がこれ</td>
+          <td>インスリン、成長ホルモン、バソプレシン</td>
+          <td>細胞膜受容体</td>
+        </tr>
+        <tr>
+          <td><span class="key">ステロイド型</span></td>
+          <td>コレステロールを原料として酵素反応によって合成。<span class="highlight">脂溶性</span>（疎水性）であり、細胞膜を透過</td>
+          <td>副腎皮質ホルモン、性ホルモン、活性型ビタミンD₃</td>
+          <td><span class="highlight">細胞内受容体</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">アミン型</span></td>
+          <td>アミノ酸（チロシン）を原料として酵素反応によって合成</td>
+          <td>アドレナリン、ノルアドレナリン、甲状腺ホルモン（T₃, T₄）</td>
+          <td>細胞膜受容体（カテコールアミン）、<span class="highlight">細胞内受容体</span>（甲状腺ホルモン）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">国試出題のホルモン分類</div>
+        <ul>
+          <li><span class="key">ステロイド型</span>：副腎皮質と性腺から分泌されるホルモン、活性型ビタミンD₃</li>
+          <li><span class="key">アミン型</span>：副腎髄質（アドレナリン、ノルアドレナリン）と甲状腺（T₃, T₄）から分泌されるホルモン</li>
+          <li>上記以外は、<span class="highlight">すべてペプチド型</span>となる</li>
+        </ul>
+      </div>
+
+      <h2>III. ホルモン受容体</h2>
+
+      <p>ホルモンは標的細胞がもつ特異的な受容体を介して作用する。</p>
+
+      <h3>1. 細胞膜受容体</h3>
+      <p>水溶性ホルモン（ペプチド型、カテコールアミン）が結合。細胞膜を透過できないため、細胞表面の受容体に結合し、細胞内にシグナルを伝達する。</p>
+
+      <table>
+        <tr>
+          <th>受容体の種類</th>
+          <th>機構</th>
+          <th>代表的なホルモン</th>
+        </tr>
+        <tr>
+          <td><span class="key">Gタンパク質共役型受容体</span></td>
+          <td>受容体にホルモンが結合 → Gタンパク質活性化 → セカンドメッセンジャー（cAMP、IP₃など）産生 → 細胞内応答</td>
+          <td>カテコールアミン、多くのペプチド型ホルモン</td>
+        </tr>
+        <tr>
+          <td><span class="key">酵素共役型（酵素内蔵型・酵素結合型）受容体</span></td>
+          <td>受容体自体が酵素活性（チロシンキナーゼなど）をもつ</td>
+          <td><span class="highlight">インスリン</span>、成長ホルモン</td>
+        </tr>
+        <tr>
+          <td><span class="key">イオンチャネル内蔵型受容体</span></td>
+          <td>受容体自体がイオンチャネルを形成</td>
+          <td>（神経伝達物質が主：ニコチン受容体など）</td>
+        </tr>
+      </table>
+
+      <h3>2. 細胞内受容体</h3>
+      <p>脂溶性ホルモン（ステロイド型、甲状腺ホルモン）が結合。細胞膜を透過し、細胞質または核内の受容体に結合。ホルモン-受容体複合体がDNAに結合し、転写を調節する。</p>
+
+      <table>
+        <tr>
+          <th>代表的なホルモン</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">甲状腺ホルモン</span>、<span class="highlight">副腎皮質ホルモン</span>（糖質コルチコイド、電解質コルチコイド）、<span class="highlight">性ホルモン</span>、<span class="highlight">活性型ビタミンD₃</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">細胞内受容体を使うホルモン（覚え方）</div>
+        <ul>
+          <li><span class="key">ステロイド型ホルモン</span>すべて：副腎皮質ホルモン（コルチゾール、アルドステロン）、性ホルモン（エストロゲン、テストステロン等）、活性型ビタミンD₃</li>
+          <li><span class="key">甲状腺ホルモン</span>（T₃, T₄）：アミン型だが例外的に細胞内受容体</li>
+          <li><span class="caution">カテコールアミン（アドレナリン、ノルアドレナリン）はアミン型だが細胞膜受容体</span></li>
+        </ul>
+      </div>
+
+      <h2>IV. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C68</div>
+        <p>カルシトニンが骨に作用する様式はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 傍分泌<br>
+          b 内分泌<br>
+          c 自己分泌<br>
+          d 接触分泌<br>
+          e 神経分泌
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】カルシトニンは甲状腺の傍濾胞細胞（C細胞）から<span class="highlight">血中に分泌</span>され、血流によって骨に運ばれて作用する。これは<span class="key">内分泌</span>の定義そのものである。傍分泌は組織液中への分泌、神経分泌は神経細胞からの分泌。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C102</div>
+        <p>神経分泌されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a インスリン<br>
+          b エストロゲン<br>
+          c カルシトニン<br>
+          d GH〈成長ホルモン〉<br>
+          e ADH〈バソプレシン〉
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="key">神経分泌</span>とは、神経細胞がホルモンを血中に分泌すること。<span class="highlight">ADH（バソプレシン）</span>とオキシトシンは視床下部の神経細胞で産生され、軸索を通って下垂体後葉から血中に分泌される。他の選択肢はすべて内分泌腺からの分泌（通常の内分泌）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B30</div>
+        <p>アルドステロンの作用点はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 細胞内受容体<br>
+          b 酵素共役型受容体<br>
+          c Gタンパク質共役型受容体<br>
+          d 電位依存性イオンチャネル<br>
+          e イオンチャネル内蔵型受容体
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">アルドステロン</span>は副腎皮質から分泌される<span class="key">ステロイドホルモン</span>（電解質コルチコイド）である。ステロイドホルモンは脂溶性のため細胞膜を透過し、<span class="highlight">細胞内受容体</span>に結合して作用する。酵素共役型受容体はインスリンなど、Gタンパク質共役型受容体はカテコールアミンやペプチドホルモンが使用する。</p>
+      </div>
+
+      <h2>V. ホルモン分泌の調節</h2>
+
+      <h3>階層支配と負のフィードバック機構</h3>
+      <ul>
+        <li>分泌の促進：<span class="key">視床下部</span> → <span class="key">下垂体前葉</span> → <span class="key">末梢内分泌腺</span>による上位ホルモン調節（階層支配）</li>
+        <li>末梢ホルモンによる上位ホルモンのフィードバック抑制（<span class="key">負のフィードバック</span>）</li>
+      </ul>
+
+      <h3>その他の調節機構</h3>
+      <ul>
+        <li><span class="key">神経系による調節</span>：環境要因の視床下部神経活動への影響、自律神経調節（副腎髄質、膵臓、消化管など）</li>
+        <li><span class="key">血中物質の濃度変化</span>：血糖値（膵臓の内分泌）、血中Ca²⁺濃度（甲状腺、上皮小体）</li>
+        <li><span class="key">機械的刺激・化学物質による刺激</span>：消化管ホルモン、オキシトシン（授乳や分娩時の刺激）</li>
+        <li><span class="key">周期的なリズム</span>：概日リズム（コルチゾルなど）、月単位のリズム（女性の性周期）</li>
+      </ul>
+
+      <p class="note">※参照：パーフェクトマスター生理学・口腔生理学 p.52〜55</p>
+
+    </div>
+  </div>
+</body>
+</html>

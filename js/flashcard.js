@@ -940,16 +940,20 @@ const FlashcardModule = (function() {
     const reports = getReports();
     const favoritesCount = getValidFavoritesCount();
 
+    const dailyTenCompleted = isDailyTenCompleted();
+
     return `
       <!-- 今日の10問 -->
       <div class="daily-ten-section">
-        <div class="daily-ten-card" id="daily-ten-card">
-          <div class="daily-ten-title">今日の10問</div>
-          <div class="daily-ten-desc">全デッキからランダムに出題</div>
+        <div class="daily-ten-card ${dailyTenCompleted ? 'completed' : ''}" id="daily-ten-card">
+          <div class="daily-ten-title">${dailyTenCompleted ? 'お疲れ様でした' : '今日の10問'}</div>
+          <div class="daily-ten-desc">${dailyTenCompleted ? '今日の10問は完了しました' : '全デッキからランダムに出題'}</div>
+          ${dailyTenCompleted ? '' : `
           <div class="daily-ten-actions">
             <button class="daily-ten-start-btn" id="daily-ten-start">演習を始める</button>
             <button class="daily-ten-list-btn" id="daily-ten-list">一覧を見る</button>
           </div>
+          `}
         </div>
       </div>
 
@@ -1818,6 +1822,19 @@ const FlashcardModule = (function() {
     return hash;
   }
 
+  // 今日の10問が完了済みかチェック
+  function isDailyTenCompleted() {
+    const completedDate = localStorage.getItem('flashcard-daily-ten-completed');
+    const today = new Date().toDateString();
+    return completedDate === today;
+  }
+
+  // 今日の10問を完了としてマーク
+  function markDailyTenCompleted() {
+    const today = new Date().toDateString();
+    localStorage.setItem('flashcard-daily-ten-completed', today);
+  }
+
   // シード付き乱数生成
   function seededRandom(seed) {
     const x = Math.sin(seed) * 10000;
@@ -2127,13 +2144,17 @@ const FlashcardModule = (function() {
   async function startDailyTenDeck() {
     console.log('[startDailyTenDeck] 開始');
     const cardRefs = collectDailyTenCardRefs();
+    console.log('[startDailyTenDeck] cardRefs:', cardRefs.length);
 
     if (cardRefs.length === 0) {
+      showToast('学習済みのカードがありません', 2000);
       return;
     }
 
     const filteredCards = await fetchCardsFromRefs(cardRefs);
+    console.log('[startDailyTenDeck] filteredCards:', filteredCards.length);
     if (filteredCards.length === 0) {
+      showToast('カードの読み込みに失敗しました', 2000);
       return;
     }
 
@@ -5906,6 +5927,11 @@ const FlashcardModule = (function() {
     // 完了したのでセッションをクリア
     clearSession(state.currentTopicId);
     state.completed = true;  // 完了フラグをセット
+
+    // 今日の10問を完了としてマーク
+    if (state.currentTopicId === '__daily_ten') {
+      markDailyTenCompleted();
+    }
 
     const stats = getTopicStats(state.currentTopicId);
     const cardCount = state.filteredCards.length;

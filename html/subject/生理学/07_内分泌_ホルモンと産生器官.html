@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ホルモンと産生器官 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 内分泌</span>
+    <h1>ホルモンと産生器官</h1>
+    <div class="container">
+
+      <h2>I. 視床下部ホルモン（放出ホルモン・抑制ホルモン）</h2>
+
+      <p>視床下部から分泌され、下垂体前葉ホルモンの分泌を調節する。</p>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>標的器官</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">副腎皮質刺激ホルモン放出ホルモン（CRH）</span></td>
+          <td>下垂体前葉</td>
+          <td>ACTHの分泌促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">甲状腺刺激ホルモン放出ホルモン（TRH）</span></td>
+          <td>下垂体前葉</td>
+          <td>TSHの分泌促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">成長ホルモン放出ホルモン（GHRH）</span></td>
+          <td>下垂体前葉</td>
+          <td>成長ホルモンの分泌促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">成長ホルモン抑制ホルモン（GHIH）</span>（ソマトスタチン）</td>
+          <td>下垂体前葉</td>
+          <td>成長ホルモンの分泌抑制</td>
+        </tr>
+        <tr>
+          <td><span class="key">性腺刺激ホルモン放出ホルモン（GnRH）</span></td>
+          <td>下垂体前葉</td>
+          <td>FSHとLHの分泌促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">プロラクチン放出ホルモン（PRH）</span></td>
+          <td>下垂体前葉</td>
+          <td>プロラクチンの分泌促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">プロラクチン抑制ホルモン（PIH）</span>（ドパミン）</td>
+          <td>下垂体前葉</td>
+          <td>プロラクチンの分泌抑制</td>
+        </tr>
+      </table>
+
+      <h2>II. 下垂体前葉ホルモン</h2>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>標的器官</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">副腎皮質刺激ホルモン（ACTH）</span></td>
+          <td>副腎皮質</td>
+          <td>副腎皮質ホルモンの分泌促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">甲状腺刺激ホルモン（TSH）</span></td>
+          <td>甲状腺</td>
+          <td>甲状腺ホルモン（T₃, T₄）の分泌促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">成長ホルモン（GH）</span></td>
+          <td>骨、軟骨、筋、肝臓など</td>
+          <td>成長促進、IGF-1の分泌促進、血糖値上昇（糖新生促進）</td>
+        </tr>
+        <tr>
+          <td><span class="key">卵胞刺激ホルモン（FSH）</span></td>
+          <td>卵巣 / 精巣</td>
+          <td>卵胞発育促進、エストロゲン合成促進（女性）/ 精子形成促進（男性）</td>
+        </tr>
+        <tr>
+          <td><span class="key">黄体形成ホルモン（LH）</span></td>
+          <td>卵巣 / 精巣</td>
+          <td>排卵誘発、黄体形成（女性）/ アンドロゲン合成促進（男性）</td>
+        </tr>
+        <tr>
+          <td><span class="key">プロラクチン</span>（乳腺刺激ホルモン）</td>
+          <td>乳腺</td>
+          <td>乳汁産生促進</td>
+        </tr>
+      </table>
+
+      <h2>III. 下垂体後葉ホルモン</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">下垂体後葉ホルモンの特徴</div>
+        <ul>
+          <li>下垂体後葉ホルモンは<span class="highlight">視床下部で産生</span>される（神経分泌）</li>
+          <li>視床下部の神経細胞で合成 → 軸索を通って下垂体後葉へ輸送 → 血中に分泌</li>
+          <li><span class="caution">下垂体後葉自体はホルモンを産生しない</span>（貯蔵・分泌のみ）</li>
+        </ul>
+      </div>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>産生部位</th>
+          <th>標的器官</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">バソプレシン（ADH）</span></td>
+          <td><span class="highlight">視床下部</span></td>
+          <td>腎臓・尿細管</td>
+          <td>遠位尿細管・集合管で水の再吸収促進（尿量減少）、血管収縮</td>
+        </tr>
+        <tr>
+          <td><span class="key">オキシトシン</span></td>
+          <td><span class="highlight">視床下部</span></td>
+          <td>乳腺 / 子宮平滑筋</td>
+          <td>射乳反射 / 子宮の平滑筋収縮（分娩促進）</td>
+        </tr>
+      </table>
+
+      <h2>IV. その他の主要なホルモンと産生器官</h2>
+
+      <h3>松果体</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">メラトニン</span></td>
+          <td>概日リズムの形成、睡眠誘導</td>
+        </tr>
+      </table>
+
+      <h3>甲状腺</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>分泌細胞</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">サイロキシン（T₄）</span><br><span class="key">トリヨードサイロニン（T₃）</span></td>
+          <td>濾胞細胞</td>
+          <td>基礎代謝の亢進、体温上昇、発生・分化・成長</td>
+        </tr>
+        <tr>
+          <td><span class="key">カルシトニン</span></td>
+          <td>傍濾胞細胞（C細胞）</td>
+          <td>骨吸収抑制（→骨形成優位に）、腎臓でのCa²⁺再吸収抑制 → <span class="highlight">血中Ca²⁺濃度低下</span></td>
+        </tr>
+      </table>
+
+      <h3>副甲状腺（上皮小体）</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">パラトルモン（PTH）</span></td>
+          <td>骨吸収促進、腎臓でのCa²⁺再吸収促進、ビタミンD活性化促進 → <span class="highlight">血中Ca²⁺濃度上昇</span></td>
+        </tr>
+      </table>
+
+      <h3>副腎</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="key">副腎皮質</span></td>
+          <td><span class="key">糖質コルチコイド</span>（コルチゾールなど）</td>
+          <td>血糖上昇、抗炎症作用、抗ストレス作用</td>
+        </tr>
+        <tr>
+          <td><span class="key">電解質コルチコイド</span>（アルドステロン）</td>
+          <td>電解質の代謝調節（遠位尿細管・集合管でNa⁺の再吸収促進）</td>
+        </tr>
+        <tr>
+          <td><span class="key">副腎アンドロゲン</span></td>
+          <td>タンパク質合成促進など男性ホルモン作用</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">副腎髄質</span></td>
+          <td><span class="key">アドレナリン</span></td>
+          <td>心機能亢進（心拍数・収縮力）、血糖上昇（グリコーゲン分解促進）、代謝亢進、気管支拡張など</td>
+        </tr>
+        <tr>
+          <td><span class="key">ノルアドレナリン</span></td>
+          <td>血管収縮（血圧上昇）など。血管への作用が強く現れる</td>
+        </tr>
+      </table>
+
+      <h3>膵臓（膵島：ランゲルハンス島）</h3>
+      <table>
+        <tr>
+          <th>細胞</th>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td>A細胞（α細胞）</td>
+          <td><span class="key">グルカゴン</span></td>
+          <td>グリコーゲン分解促進、糖新生促進など → <span class="highlight">血糖上昇</span>、脂肪分解促進</td>
+        </tr>
+        <tr>
+          <td>B細胞（β細胞）</td>
+          <td><span class="key">インスリン</span></td>
+          <td>グリコーゲン合成促進、細胞のグルコース取り込み促進、糖新生抑制 → <span class="highlight">血糖低下</span>、タンパク質・脂肪の合成促進</td>
+        </tr>
+        <tr>
+          <td>D細胞（δ細胞）</td>
+          <td><span class="key">ソマトスタチン</span></td>
+          <td>インスリンおよびグルカゴンの分泌抑制</td>
+        </tr>
+      </table>
+
+      <h3>腎臓</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">レニン</span></td>
+          <td>タンパク質分解酵素活性をもち、血中でアンジオテンシンIを産生 → 体液量・血圧の調節系</td>
+        </tr>
+        <tr>
+          <td><span class="key">エリスロポエチン</span></td>
+          <td>赤血球産生の促進（骨髄に作用）</td>
+        </tr>
+        <tr>
+          <td><span class="key">活性型ビタミンD₃</span></td>
+          <td>腸管でのCa²⁺吸収を促進 → 血中Ca²⁺濃度上昇</td>
+        </tr>
+      </table>
+
+      <h2>V. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">112C42</div>
+        <p>臓器と産生するホルモンの組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 膵　臓 ーーー バソプレシン〈ADH〉<br>
+          b 副　腎 ーーー コルチゾール<br>
+          c 下垂体 ーーー 成長ホルモン〈GH〉<br>
+          d 甲状腺 ーーー プロゲステロン<br>
+          e 松果体 ーーー サイログロブリン
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a：バソプレシン（ADH）は<span class="caution">視床下部</span>で産生され、下垂体後葉から分泌。膵臓ではない。</li>
+          <li>b：<span class="highlight">コルチゾール</span>は<span class="highlight">副腎皮質</span>から分泌される糖質コルチコイド。正しい。</li>
+          <li>c：<span class="highlight">成長ホルモン（GH）</span>は<span class="highlight">下垂体前葉</span>から分泌。正しい。</li>
+          <li>d：プロゲステロンは<span class="caution">卵巣（黄体）</span>から分泌される性ホルモン。甲状腺ではない。</li>
+          <li>e：サイログロブリンは<span class="caution">甲状腺</span>で産生されるタンパク質。松果体からはメラトニンが分泌される。</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A37</div>
+        <p>バゾプレッシンを産生する細胞が存在するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 海　馬<br>
+          b 扁桃体<br>
+          c 視床下部<br>
+          d 大脳基底核<br>
+          e 脳幹網様体
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">バソプレシン（ADH）</span>は<span class="highlight">視床下部</span>の神経細胞で産生される。産生されたバソプレシンは軸索を通って下垂体後葉に輸送され、そこから血中に分泌される（神経分泌）。下垂体後葉はホルモンの貯蔵・分泌を行うが、産生はしない点に注意。</p>
+      </div>
+
+      <p class="note">※参照：パーフェクトマスター生理学・口腔生理学 p.55〜57</p>
+
+    </div>
+  </div>
+</body>
+</html>

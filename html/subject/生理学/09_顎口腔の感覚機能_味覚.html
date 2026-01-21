@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>味覚 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 顎口腔の感覚機能</span>
+    <h1>味覚</h1>
+    <div class="container">
+
+      <h2>I. 味覚の特徴</h2>
+
+      <h3>適刺激</h3>
+      <p><span class="key">水溶性化学物質</span>（唾液に溶解することで味覚が発現する）</p>
+
+      <h3>五基本味</h3>
+      <table>
+        <tr>
+          <th>味質</th>
+          <th>刺激物質</th>
+          <th>意義</th>
+          <th>受容体</th>
+        </tr>
+        <tr>
+          <td><span class="key">甘味</span></td>
+          <td>ショ糖、ブドウ糖、アミノ酸など</td>
+          <td>エネルギー源の摂取情報（嗜好性）</td>
+          <td rowspan="3"><span class="highlight">Gタンパク質共役型受容体</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">うま味</span></td>
+          <td>グルタミン酸Na、イノシン酸Na、グアニル酸Na</td>
+          <td>タンパク質・核酸の摂取情報（嗜好性）</td>
+        </tr>
+        <tr>
+          <td><span class="key">苦味</span></td>
+          <td>アルカロイド、カフェインなど</td>
+          <td>毒物の忌避情報（嫌悪性）</td>
+        </tr>
+        <tr>
+          <td><span class="key">塩味</span></td>
+          <td>NaCl（Na⁺）</td>
+          <td>ミネラルの摂取情報（嗜好性）</td>
+          <td rowspan="2"><span class="highlight">イオンチャネル型受容体</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">酸味</span></td>
+          <td>H⁺（塩酸、クエン酸、乳酸など）</td>
+          <td>腐敗物の忌避情報（嫌悪性）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">うま味物質の覚え方</div>
+        <ul>
+          <li><span class="highlight">グルタミン酸Na</span>（コンブだし）：アミノ酸</li>
+          <li><span class="highlight">イノシン酸Na</span>（鰹節だし）：核酸</li>
+          <li>グアニル酸Na（シイタケだし）：核酸</li>
+        </ul>
+      </div>
+
+      <h3>辛味は味覚ではない</h3>
+      <p>辛味、渋味、金属味、えぐ味などは味覚以外の感覚も統合した<span class="key">複合感覚</span>であり、味質に含めない。</p>
+      <p>辛味は<span class="highlight">三叉神経</span>で伝えられる。</p>
+
+      <h3>認知閾値</h3>
+      <p><span class="highlight">苦味 ＜ 酸味 ＜ 塩味 ＜ 甘味</span>（苦味が最も閾値が低い＝敏感）</p>
+
+      <h2>II. 味覚受容器</h2>
+
+      <h3>味蕾の存在部位</h3>
+      <table>
+        <tr>
+          <th>舌乳頭</th>
+          <th>分布</th>
+          <th>味蕾</th>
+        </tr>
+        <tr>
+          <td>糸状乳頭</td>
+          <td>舌背全面</td>
+          <td><span class="caution">存在しない</span></td>
+        </tr>
+        <tr>
+          <td>茸状乳頭</td>
+          <td>舌前方2/3、舌縁部、舌尖部</td>
+          <td>舌の味蕾の30%</td>
+        </tr>
+        <tr>
+          <td>葉状乳頭</td>
+          <td>大臼歯部付近の舌縁部</td>
+          <td>舌の味蕾の30%</td>
+        </tr>
+        <tr>
+          <td>有郭乳頭</td>
+          <td>舌分界溝に10〜20個</td>
+          <td>舌の味蕾の<span class="key">40%</span></td>
+        </tr>
+      </table>
+
+      <p class="note">※舌以外（軟口蓋、口蓋垂、咽頭、喉頭）にも約2,500個の味蕾が存在</p>
+
+      <h3>味細胞</h3>
+      <ul>
+        <li>味蕾中に50〜100個の味細胞が含まれる</li>
+        <li>味細胞の寿命は<span class="highlight">約10日</span>で、変性−再生のサイクルを繰り返す</li>
+      </ul>
+
+      <h2>III. 味覚受容機構</h2>
+
+      <h3>Gタンパク質共役型受容体（甘味・うま味・苦味）</h3>
+      <table>
+        <tr>
+          <th>味質</th>
+          <th>受容体</th>
+        </tr>
+        <tr>
+          <td>甘味</td>
+          <td>T1R2 + T1R3（ヘテロ二量体）</td>
+        </tr>
+        <tr>
+          <td>うま味</td>
+          <td>T1R1 + T1R3（ヘテロ二量体）</td>
+        </tr>
+        <tr>
+          <td>苦味</td>
+          <td>T2Rs（TAS2Rファミリー）</td>
+        </tr>
+      </table>
+
+      <p>受容機構：味物質の結合 → Gタンパク質活性化 → 細胞内二次メッセンジャー系の賦活化 → 脱分極 → 活動電位発生 → 味神経へ情報伝達</p>
+
+      <h3>イオンチャネル型受容体（酸味・塩味）</h3>
+      <ul>
+        <li><span class="key">塩味</span>：Na⁺流入による脱分極 → 活動電位発生</li>
+        <li><span class="key">酸味</span>：H⁺刺激での陽イオン流入またはH⁺流入による細胞内pH低下 → 脱分極</li>
+      </ul>
+
+      <h2>IV. 味覚の神経支配と伝導路【重要】</h2>
+
+      <table>
+        <tr>
+          <th>味蕾の分布</th>
+          <th>味神経</th>
+          <th>脳神経</th>
+          <th>神経節</th>
+        </tr>
+        <tr>
+          <td>口蓋</td>
+          <td>浅在性大錐体神経</td>
+          <td rowspan="2">(VII) 顔面神経</td>
+          <td rowspan="2">膝神経節</td>
+        </tr>
+        <tr>
+          <td>茸状乳頭、葉状乳頭（舌前2/3）</td>
+          <td><span class="highlight">鼓索神経</span></td>
+        </tr>
+        <tr>
+          <td>葉状乳頭（舌後1/3）、有郭乳頭</td>
+          <td colspan="2">(IX) <span class="highlight">舌咽神経</span></td>
+          <td>下神経節（錐体神経節）</td>
+        </tr>
+        <tr>
+          <td>舌根・咽頭・喉頭蓋</td>
+          <td>上喉頭神経</td>
+          <td>(X) 迷走神経</td>
+          <td>下神経節（節神経節）</td>
+        </tr>
+      </table>
+
+      <h3>味覚伝導路</h3>
+      <p>延髄・<span class="highlight">孤束核</span> → 視床・<span class="highlight">後内側腹側核（VPM）</span> → 大脳皮質一次味覚野（島皮質・前頭弁蓋部）</p>
+
+      <h2>V. 味覚障害</h2>
+
+      <h3>味覚障害の症状</h3>
+      <table>
+        <tr>
+          <th>症状</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>味覚減退・味覚消失</td>
+          <td>味の感じ方が鈍い、または全く感じない</td>
+        </tr>
+        <tr>
+          <td>異味症</td>
+          <td>全く異なる味がする（甘いはずのものが苦いなど）</td>
+        </tr>
+        <tr>
+          <td>自発性異常味覚</td>
+          <td>口腔中に何もないのに苦味など味を感じる</td>
+        </tr>
+        <tr>
+          <td>解離性味覚障害</td>
+          <td>ある特定の味質だけ感じなくなる</td>
+        </tr>
+        <tr>
+          <td>悪味症</td>
+          <td>何を食べてもいやな味を感じる</td>
+        </tr>
+      </table>
+
+      <h3>味覚障害の主な原因</h3>
+      <ul>
+        <li>薬剤性味覚障害：高齢者に多い（多剤服用の影響）</li>
+        <li><span class="highlight">亜鉛欠乏</span>：若年者に多い（ジャンクフードの影響）</li>
+        <li>風味障害：嗅覚異常の影響</li>
+        <li>全身疾患：糖尿病、肝障害、腎障害など</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">亜鉛欠乏と味覚障害</div>
+        <ul>
+          <li>亜鉛は<span class="key">細胞分裂</span>に必要</li>
+          <li>味細胞は寿命が約10日と短く、常に再生を繰り返している</li>
+          <li>亜鉛欠乏 → 味細胞の再生障害 → 味覚障害</li>
+        </ul>
+      </div>
+
+      <h2>VI. 味覚検査法</h2>
+
+      <h3>濾紙ディスク法</h3>
+      <ul>
+        <li>濾紙ディスクに味溶液を浸み込ませ、舌の特定部位に置く</li>
+        <li><span class="key">検知閾値</span>と<span class="key">認知閾値</span>を測定</li>
+        <li>神経支配領域ごとに検査可能（<span class="highlight">鼓索神経、舌咽神経</span>支配領域）</li>
+        <li>味質の錯誤、左右差も検出可能</li>
+      </ul>
+
+      <h3>全口腔法</h3>
+      <ul>
+        <li>味溶液で口をすすいで味を判定</li>
+        <li><span class="key">味覚閾値</span>、<span class="key">PTC味盲</span>の検査が可能</li>
+        <li>神経支配領域ごとの検査は不可</li>
+      </ul>
+
+      <h2>VII. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">111A36</div>
+        <p>味覚で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 酸味は塩味より閾値が高い。<br>
+          b うま味は孤束核で認知される。<br>
+          c 辛味は三叉神経で伝えられる。<br>
+          d 苦味はイオンチャネル型受容体を介する。<br>
+          e 甘味はGタンパク質共役型受容体を介する。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a × 閾値は苦味＜酸味＜塩味＜甘味。<span class="caution">酸味の方が閾値が低い</span></li>
+          <li>b × 孤束核は味覚の中継核であり、<span class="caution">認知は大脳皮質味覚野</span>で行われる</li>
+          <li>c ○ <span class="highlight">辛味は三叉神経</span>で伝えられる（味覚ではなく複合感覚）</li>
+          <li>d × 苦味は<span class="caution">Gタンパク質共役型受容体</span>を介する</li>
+          <li>e ○ <span class="highlight">甘味はGタンパク質共役型受容体</span>を介する</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A70</div>
+        <p>うま味を呈する物質はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 炭酸ナトリウム<br>
+          b リン酸ナトリウム<br>
+          c クエン酸ナトリウム<br>
+          d イノシン酸ナトリウム<br>
+          e グルタミン酸ナトリウム
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】うま味物質を選ぶ問題。</p>
+        <ul>
+          <li>d ○ <span class="highlight">イノシン酸Na</span>：鰹節だしの成分（核酸）</li>
+          <li>e ○ <span class="highlight">グルタミン酸Na</span>：コンブだしの成分（アミノ酸）</li>
+          <li>a、b、c × これらはうま味物質ではない</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A56</div>
+        <p>味覚の伝導路に含まれるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 赤核<br>
+          b 孤束核<br>
+          c 迷走神経背側核<br>
+          d 三叉神経主感覚核<br>
+          e 視床後内側腹側核〈VPM〉
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】味覚の伝導路を問う問題。</p>
+        <ul>
+          <li>b ○ <span class="highlight">孤束核</span>：延髄にある味覚の中継核</li>
+          <li>e ○ <span class="highlight">視床後内側腹側核（VPM）</span>：視床にある味覚の中継核</li>
+          <li>a × 赤核：運動系の核</li>
+          <li>c × 迷走神経背側核：迷走神経の副交感神経核</li>
+          <li>d × 三叉神経主感覚核：触・圧覚の中継核</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C123</div>
+        <p>欠乏によって味覚障害をきたすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 鉄<br>
+          b 銅<br>
+          c 亜鉛<br>
+          d フッ素<br>
+          e マグネシウム
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">亜鉛</span>は細胞分裂に必要な微量元素である。味細胞は寿命が約10日と短く、常に再生を繰り返しているため、亜鉛欠乏により味細胞の再生が障害され、味覚障害が生じる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

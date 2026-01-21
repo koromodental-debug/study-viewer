@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>軟骨 - 生化学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生化学 / 軟骨・骨</span>
+    <h1>軟骨</h1>
+    <div class="container">
+
+      <h2>I. 軟骨組織の特徴</h2>
+      <p>軟骨は支持組織の一つで、骨に比べて弾力性に富み、石灰化度が低い。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">軟骨の特徴</div>
+        <ul>
+          <li><span class="highlight">血管・神経が存在しない</span></li>
+          <li>石灰化度が低い（無機質 約3%）</li>
+          <li>軟骨細胞が軟骨基質内に埋め込まれている</li>
+        </ul>
+      </div>
+
+      <h3>軟骨の組成</h3>
+      <table>
+        <tr><th>成分</th><th>割合</th><th>詳細</th></tr>
+        <tr><td>水分</td><td>約70%</td><td>プロテオグリカンと結合</td></tr>
+        <tr><td>有機質</td><td>約27%</td><td>II型コラーゲン、X型コラーゲン、アグリカン</td></tr>
+        <tr><td>無機質</td><td>約3%</td><td>石灰化度が低い</td></tr>
+      </table>
+
+      <h3>軟骨と骨の比較</h3>
+      <table>
+        <tr><th>項目</th><th>軟骨</th><th>骨</th></tr>
+        <tr><td>コラーゲン</td><td class="highlight">II型、X型</td><td>I型</td></tr>
+        <tr><td>プロテオグリカン</td><td>アグリカン（多い）</td><td>デコリン（少ない）</td></tr>
+        <tr><td>無機質</td><td>約3%</td><td>約70%</td></tr>
+        <tr><td>血管・神経</td><td class="caution">なし</td><td>あり</td></tr>
+      </table>
+
+      <h2>II. 軟骨組織の分類</h2>
+
+      <h3>軟骨の種類</h3>
+      <table>
+        <tr><th>種類</th><th>特徴</th><th>存在部位</th></tr>
+        <tr><td class="key">硝子（ガラス）軟骨</td><td>II型コラーゲン、プロテオグリカン</td><td>鼻軟骨、気管軟骨、関節軟骨、<span class="highlight">成長板</span></td></tr>
+        <tr><td class="key">線維軟骨</td><td><span class="caution">I型コラーゲン</span>を多量に含む</td><td>椎間円板、恥骨結合</td></tr>
+        <tr><td class="key">弾性軟骨</td><td>弾性線維を多量に含む</td><td>耳介、喉頭蓋</td></tr>
+      </table>
+      <p class="note">線維軟骨はI型コラーゲンを含むため、骨に近い性質を持つ。</p>
+
+      <h2>III. 軟骨内骨化</h2>
+
+      <p><span class="key">軟骨内骨化</span>は、まず硝子軟骨が形成され、次いで血管の侵入とともに軟骨基質が吸収されて骨に置換される骨化様式である。</p>
+
+      <h3>骨化様式の比較</h3>
+      <table>
+        <tr><th>骨化様式</th><th>特徴</th><th>形成される骨</th></tr>
+        <tr><td class="key">膜内骨化</td><td>間葉系細胞が直接骨芽細胞に分化</td><td>頭蓋冠、顔面骨、鎖骨</td></tr>
+        <tr><td class="key">軟骨内骨化</td><td>硝子軟骨を経て骨に置換</td><td>四肢骨、椎骨、頭蓋底</td></tr>
+      </table>
+
+      <h2>IV. 軟骨細胞の分化とPTHrP</h2>
+
+      <h3>軟骨細胞の分化過程</h3>
+      <p>静止軟骨細胞 → 増殖軟骨細胞 → <span class="key">肥大軟骨細胞</span> → 石灰化・骨置換</p>
+
+      <h3>各段階で発現するタンパク質</h3>
+      <table>
+        <tr><th>分化段階</th><th>発現タンパク質</th></tr>
+        <tr><td>全段階</td><td>II型コラーゲン、アグリカン</td></tr>
+        <tr><td>増殖軟骨細胞〜</td><td>アルカリホスファターゼ</td></tr>
+        <tr><td class="highlight">肥大軟骨細胞のみ</td><td><span class="highlight">X型コラーゲン</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">PTHrPの役割</div>
+        <ul>
+          <li><span class="highlight">PTHrP</span>（副甲状腺ホルモン関連タンパク質）</li>
+          <li>軟骨細胞の<span class="key">増殖を促進</span></li>
+          <li>肥大化への分化を<span class="key">抑制</span></li>
+          <li>成長板での軟骨内骨化の速度を調節</li>
+        </ul>
+      </div>
+
+      <h3>PTHrP-Ihhフィードバックループ</h3>
+      <ul>
+        <li><span class="key">Ihh</span>（Indian hedgehog）：肥大軟骨細胞から分泌</li>
+        <li>IhhがPTHrPの発現を誘導</li>
+        <li>PTHrPが軟骨細胞の肥大化を抑制</li>
+        <li>→ 成長板の長さを一定に保つ負のフィードバック</li>
+      </ul>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113D43</div>
+        <p>軟骨内骨化において軟骨細胞の増殖と分化を調節するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a APC<br>
+          b BRCA1<br>
+          c p53<br>
+          d PTHrP<br>
+          e RANKL
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】PTHrP（副甲状腺ホルモン関連タンパク質）は、成長板において軟骨細胞の増殖を促進し、肥大化への分化を抑制することで、軟骨内骨化の速度を調節する。</p>
+        <ul>
+          <li>a × APC：大腸癌の癌抑制遺伝子（Wntシグナル抑制）</li>
+          <li>b × BRCA1：乳癌の癌抑制遺伝子（DNA修復）</li>
+          <li>c × p53：癌抑制遺伝子（アポトーシス誘導）</li>
+          <li>d ○ PTHrP：軟骨細胞の増殖と分化を調節</li>
+          <li>e × RANKL：破骨細胞の分化誘導因子</li>
+        </ul>
+      </div>
+
+      <h2>VI. まとめ</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">覚えるべきポイント</div>
+        <ul>
+          <li>軟骨には<span class="highlight">血管・神経がない</span></li>
+          <li>軟骨のコラーゲン：<span class="highlight">II型</span>（X型は肥大軟骨のみ）</li>
+          <li>硝子軟骨 → 軟骨内骨化の原型</li>
+          <li><span class="highlight">PTHrP</span>：軟骨細胞の増殖促進・肥大化抑制</li>
+          <li>線維軟骨は<span class="caution">I型コラーゲン</span>を含む（例外）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

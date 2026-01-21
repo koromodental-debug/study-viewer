@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ストレス反応 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .flow-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .flow-box .arrow { color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 内分泌</span>
+    <h1>ストレス反応</h1>
+    <div class="container">
+
+      <h2>I. ストレスとは</h2>
+
+      <p><span class="key">ストレス</span>とは、外部からの刺激（ストレッサー）に対する生体の非特異的な反応のこと。ストレッサーには物理的（寒冷、外傷）、化学的（毒物）、生物学的（感染）、心理的（不安、恐怖）なものがある。</p>
+
+      <h2>II. ストレス反応の2つの経路</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">ストレス反応を担う2つの系</div>
+        <ul>
+          <li><span class="key">交感神経-副腎髄質系</span>（SAM系）：即時反応（秒〜分単位）</li>
+          <li><span class="key">視床下部-下垂体-副腎皮質系</span>（HPA軸）：持続的反応（分〜時間単位）</li>
+        </ul>
+      </div>
+
+      <h3>1. 交感神経-副腎髄質系（SAM系）</h3>
+
+      <div class="flow-box">
+        ストレス <span class="arrow">→</span> 視床下部 <span class="arrow">→</span> <span class="key">交感神経興奮</span> <span class="arrow">→</span> 副腎髄質 <span class="arrow">→</span> <span class="highlight">アドレナリン・ノルアドレナリン分泌</span>
+      </div>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">アドレナリン</span></td>
+          <td>心拍数増加、心収縮力増加、気管支拡張、血糖上昇（グリコーゲン分解）、代謝亢進</td>
+        </tr>
+        <tr>
+          <td><span class="key">ノルアドレナリン</span></td>
+          <td>血管収縮 → 血圧上昇</td>
+        </tr>
+      </table>
+
+      <p>この反応は「<span class="key">闘争か逃走か（fight or flight）</span>」反応とも呼ばれ、危機的状況に即座に対応するための準備状態を作り出す。</p>
+
+      <h3>2. 視床下部-下垂体-副腎皮質系（HPA軸）</h3>
+
+      <div class="flow-box">
+        ストレス <span class="arrow">→</span> 視床下部 <span class="arrow">→</span> <span class="key">CRH</span>（副腎皮質刺激ホルモン放出ホルモン）<span class="arrow">→</span> 下垂体前葉 <span class="arrow">→</span> <span class="key">ACTH</span> <span class="arrow">→</span> 副腎皮質 <span class="arrow">→</span> <span class="highlight">コルチゾール分泌</span>
+      </div>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">コルチゾール</span></td>
+          <td>血糖上昇（糖新生促進）、タンパク質異化促進、脂肪分解促進、<span class="highlight">抗炎症作用</span>、<span class="caution">免疫抑制</span></td>
+        </tr>
+      </table>
+
+      <h2>III. ストレス時のホルモン変動</h2>
+
+      <h3>分泌が増加するホルモン</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>分泌部位</th>
+          <th>ストレス反応での役割</th>
+        </tr>
+        <tr>
+          <td><span class="key">アドレナリン</span></td>
+          <td>副腎髄質</td>
+          <td>即時のエネルギー動員、循環・呼吸機能亢進</td>
+        </tr>
+        <tr>
+          <td><span class="key">ノルアドレナリン</span></td>
+          <td>副腎髄質、交感神経終末</td>
+          <td>血管収縮、血圧上昇</td>
+        </tr>
+        <tr>
+          <td><span class="key">コルチゾール</span></td>
+          <td>副腎皮質</td>
+          <td>持続的なエネルギー供給、抗炎症作用</td>
+        </tr>
+        <tr>
+          <td><span class="key">グルカゴン</span></td>
+          <td>膵臓α細胞</td>
+          <td>血糖上昇（グリコーゲン分解、糖新生）</td>
+        </tr>
+        <tr>
+          <td><span class="key">アルドステロン</span></td>
+          <td>副腎皮質</td>
+          <td>Na⁺再吸収促進 → 体液量・血圧維持</td>
+        </tr>
+        <tr>
+          <td><span class="key">バソプレシン（ADH）</span></td>
+          <td>視床下部→下垂体後葉</td>
+          <td>水再吸収促進 → 体液量維持、血管収縮</td>
+        </tr>
+        <tr>
+          <td><span class="key">レニン</span></td>
+          <td>腎臓</td>
+          <td>アンジオテンシン-アルドステロン系活性化</td>
+        </tr>
+      </table>
+
+      <h3>分泌が低下するホルモン</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="key">性ホルモン</span>（エストロゲン、アンドロゲン）</td>
+          <td>生殖機能は「安静時に行われる機能」として抑制される</td>
+        </tr>
+        <tr>
+          <td><span class="key">インスリン</span></td>
+          <td>血糖上昇を維持するため、インスリン分泌は抑制される</td>
+        </tr>
+        <tr>
+          <td><span class="key">成長ホルモン</span>（長期ストレス時）</td>
+          <td>成長・修復よりも即時のエネルギー動員が優先</td>
+        </tr>
+      </table>
+
+      <h2>IV. ストレス反応の結果</h2>
+
+      <table>
+        <tr>
+          <th>変化</th>
+          <th>機序</th>
+          <th>意義</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">血糖上昇（高血糖）</span></td>
+          <td>グルカゴン↑、コルチゾール↑、アドレナリン↑、インスリン↓</td>
+          <td>エネルギー供給の確保</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">血圧上昇（高血圧）</span></td>
+          <td>ノルアドレナリン（血管収縮）、アルドステロン（体液量↑）</td>
+          <td>重要臓器への血流確保</td>
+        </tr>
+        <tr>
+          <td>心拍数増加</td>
+          <td>アドレナリン（β₁受容体）</td>
+          <td>心拍出量増加</td>
+        </tr>
+        <tr>
+          <td>体液量増加</td>
+          <td>アルドステロン、バソプレシン</td>
+          <td>循環血液量の維持</td>
+        </tr>
+        <tr>
+          <td><span class="caution">免疫力低下</span></td>
+          <td>コルチゾール（免疫抑制作用）</td>
+          <td>過剰な炎症反応の抑制（副作用として感染しやすくなる）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">消化性潰瘍</span></td>
+          <td>胃酸分泌亢進、胃粘液分泌低下</td>
+          <td>消化管血流の減少による粘膜防御機能低下</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ストレス時に抑制される機能</div>
+        <ul>
+          <li><span class="key">消化と吸収</span>：消化管への血流減少</li>
+          <li><span class="key">生殖機能</span>：性ホルモン分泌低下</li>
+          <li><span class="key">排泄</span>：腎血流の一時的減少</li>
+          <li><span class="key">免疫機能</span>：コルチゾールによる抑制</li>
+        </ul>
+        <p>→ 安静時に行われている機能は抑制され、身体の活動性が高まる</p>
+      </div>
+
+      <h2>V. 汎適応症候群（セリエのストレス学説）</h2>
+
+      <p>ハンス・セリエは、ストレスに対する生体反応を3つの段階に分類した。</p>
+
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>特徴</th>
+          <th>持続時間</th>
+        </tr>
+        <tr>
+          <td><span class="key">警告反応期</span></td>
+          <td>ショック相（抵抗力低下）→ 反ショック相（抵抗力回復・上昇）</td>
+          <td>数時間〜1日</td>
+        </tr>
+        <tr>
+          <td><span class="key">抵抗期</span></td>
+          <td>ストレスに適応し、抵抗力が高まった状態。HPA軸の持続的活性化</td>
+          <td>数日〜数週間</td>
+        </tr>
+        <tr>
+          <td><span class="key">疲憊期</span></td>
+          <td>長期ストレスにより適応能力が枯渇。副腎皮質の機能低下、免疫低下</td>
+          <td>−</td>
+        </tr>
+      </table>
+
+      <h2>VI. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">110C109</div>
+        <p>急性ストレス反応で血中濃度が上昇するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a アドレナリン<br>
+          b オキシトシン<br>
+          c コルチゾール<br>
+          d 黄体形成ホルモン<br>
+          e 卵胞刺激ホルモン
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】急性ストレス時には2つの経路が活性化される。</p>
+        <ul>
+          <li>①<span class="key">交感神経-副腎髄質系</span>：<span class="highlight">アドレナリン</span>分泌↑</li>
+          <li>②<span class="key">視床下部-下垂体-副腎皮質系</span>（HPA軸）：<span class="highlight">コルチゾール</span>分泌↑</li>
+        </ul>
+        <p>オキシトシンは射乳反射や分娩に関与。黄体形成ホルモン（LH）と卵胞刺激ホルモン（FSH）は性腺刺激ホルモンで、ストレス時には<span class="caution">むしろ分泌が抑制</span>される。</p>
+      </div>
+
+      <h2>VII. 歯科との関連</h2>
+
+      <h3>歯科治療とストレス</h3>
+      <ul>
+        <li>歯科治療は患者にとって心理的ストレス（不安、恐怖）となりやすい</li>
+        <li>ストレス反応により血圧上昇、心拍数増加が起こる</li>
+        <li>高血圧患者や心疾患患者では注意が必要</li>
+      </ul>
+
+      <h3>局所麻酔薬とアドレナリン</h3>
+      <ul>
+        <li>局所麻酔薬に添加されるアドレナリンは、ストレス反応と同様の作用を示す</li>
+        <li>内因性のアドレナリン分泌と合わせて作用が増強される可能性</li>
+      </ul>
+
+      <h3>慢性ストレスと口腔</h3>
+      <ul>
+        <li>コルチゾールによる免疫抑制 → 歯周病の悪化、口腔カンジダ症</li>
+        <li>ブラキシズム（歯ぎしり）との関連</li>
+        <li>唾液分泌低下（交感神経優位）→ 口腔乾燥</li>
+      </ul>
+
+      <p class="note">※参照：パーフェクトマスター生理学・口腔生理学 p.61</p>
+
+    </div>
+  </div>
+</body>
+</html>

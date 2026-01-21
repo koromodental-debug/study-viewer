@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唾液の構成成分とその機能 - 生化学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生化学 / 唾液・唾液腺</span>
+    <h1>唾液の構成成分とその機能</h1>
+    <div class="container">
+
+      <h2>I. 唾液の基本情報</h2>
+      <p>唾液は大唾液腺（舌下腺、顎下腺、耳下腺）と小唾液腺（口唇腺、頬腺、舌腺、口蓋腺など）から分泌される外分泌液である。</p>
+
+      <h3>唾液の性状</h3>
+      <table>
+        <tr><th>項目</th><th>数値</th></tr>
+        <tr><td>分泌量</td><td>0.5〜1.5 L/日</td></tr>
+        <tr><td>pH</td><td>6.8前後（中性）</td></tr>
+        <tr><td>組成</td><td>水 99.5%、固形物 0.5%</td></tr>
+      </table>
+
+      <h3>唾液腺ごとの特徴</h3>
+      <table>
+        <tr><th>唾液腺</th><th>安静時の割合</th><th>特徴的な成分</th></tr>
+        <tr><td>顎下腺</td><td>約65%</td><td>ムチン含有</td></tr>
+        <tr><td>耳下腺</td><td>約25%</td><td>高プロリンタンパク質含有</td></tr>
+        <tr><td>舌下腺・小唾液腺</td><td>約10%</td><td>ムチン含有</td></tr>
+      </table>
+
+      <h2>II. 無機成分の作用</h2>
+
+      <h3>緩衝作用</h3>
+      <p><span class="highlight">炭酸-重炭酸緩衝系（HCO₃⁻）</span>が主として唾液のpHを上昇させ、中性に保つ。その他、<span class="key">リン酸緩衝系</span>（H₂PO₄⁻とHPO₄²⁻）も関与する。</p>
+      <p class="note">臨界pH: pH 5.5（これ以下で脱灰が進行）</p>
+
+      <div class="question-box">
+        <div class="q-number">102A55</div>
+        <p>唾液の主要な緩衝系はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 酢酸塩<br>
+          b 酒石酸塩<br>
+          c ホウ酸塩<br>
+          d 重炭酸塩<br>
+          e クエン酸塩
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】唾液の主要な緩衝系は炭酸-重炭酸緩衝系（HCO₃⁻）である。唾液中のCO₂が水と反応してH₂CO₃となり、これがHCO₃⁻とH⁺に解離することで、pHの変動を抑制する。</p>
+      </div>
+
+      <h3>再石灰化作用</h3>
+      <p>唾液中の<span class="key">フッ素イオン</span>、<span class="key">カルシウムイオン</span>、<span class="key">リン酸イオン</span>は、アパタイトの脱灰防止や歯質の再石灰化に関与する。</p>
+
+      <h3>抗菌作用（チオシアン酸イオン）</h3>
+      <p>チオシアン酸イオン（SCN⁻）は唾液ペルオキシダーゼの作用を受け、ヒポチオシアン酸イオン（OSCN⁻）となり、細菌の菌体タンパク質のジスルフィド結合を形成させることにより、抗菌作用を果たす。</p>
+
+      <h2>III. 有機成分の作用</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：唾液タンパク質と機能の対応</div>
+        <ul>
+          <li><span class="highlight">ラクトフェリン</span>：Fe³⁺に結合 → 細菌の増殖抑制</li>
+          <li><span class="highlight">リゾチーム</span>：ペプチドグリカン分解 → 細菌細胞壁を破壊</li>
+          <li><span class="highlight">ヒスタチン</span>：抗カンジダ（抗真菌）作用</li>
+          <li><span class="highlight">シスタチン</span>：システインプロテアーゼ阻害</li>
+          <li><span class="key">ムチン</span>：粘性付与、潤滑作用</li>
+        </ul>
+      </div>
+
+      <h3>抗菌作用を持つ成分</h3>
+      <table>
+        <tr><th>成分</th><th>抗菌メカニズム</th></tr>
+        <tr><td class="key">ラクトフェリン</td><td>細菌の生育に必要な<span class="highlight">Fe³⁺に結合</span>し、細菌の増殖を抑制</td></tr>
+        <tr><td class="key">リゾチーム</td><td>細菌の細胞壁を構成する<span class="highlight">ペプチドグリカンを分解</span></td></tr>
+        <tr><td class="key">ヒスタチン</td><td><span class="highlight">抗カンジダ（抗真菌）作用</span>を有する</td></tr>
+        <tr><td class="key">分泌型IgA</td><td>唾液中で二量体となり、抗菌作用を発揮</td></tr>
+        <tr><td class="key">ムチン</td><td>糖鎖末端のシアル酸が細菌と結合し凝集させる</td></tr>
+        <tr><td class="key">唾液ペルオキシダーゼ</td><td>SCN⁻ → OSCN⁻ として抗菌作用</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">104C118</div>
+        <p>鉄イオンを奪うことで抗菌性を示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ヒスタチン<br>
+          b リゾチーム<br>
+          c ディフェンシン<br>
+          d ラクトフェリン<br>
+          e インターフェロン
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】ラクトフェリンは細菌の生育に必要なFe³⁺に強く結合することで、細菌から鉄を奪い、増殖を抑制する。ヒスタチンは抗真菌作用、リゾチームはペプチドグリカン分解が主な作用である。</p>
+      </div>
+
+      <h3>酵素阻害作用</h3>
+      <p><span class="key">シスタチン</span>は、歯周組織を破壊するタンパク質分解酵素である<span class="highlight">システインプロテアーゼの作用を阻害</span>し、口腔粘膜を保護する。</p>
+
+      <div class="question-box">
+        <div class="q-number">105C54</div>
+        <p>蛋白分解酵素阻害活性を持つのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ムチン<br>
+          b シスタチン<br>
+          c リゾチーム<br>
+          d ラクトフェリン<br>
+          e ペルオキシダーゼ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】シスタチンはシステインプロテアーゼ（タンパク質分解酵素）の阻害活性を持つ。ムチンは粘性付与、リゾチームはペプチドグリカン分解、ラクトフェリンは鉄イオン結合、ペルオキシダーゼは抗菌作用である。</p>
+      </div>
+
+      <h3>潤滑作用</h3>
+      <p><span class="highlight">ムチン</span>は唾液に<span class="key">粘稠性と潤滑性</span>を付与し、咀嚼・嚥下・発声を容易にする。糖鎖の一部にはABO式血液型の抗原決定基と同じ糖鎖が発現されており、唾液による血液型判定が可能である。</p>
+
+      <div class="question-box">
+        <div class="q-number">102A34</div>
+        <p>唾液に粘性を与えるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ムチン<br>
+          b アルブミン<br>
+          c アミラーゼ<br>
+          d グルコース<br>
+          e リゾチーム
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】ムチンは糖タンパク質であり、唾液に粘稠性と潤滑性を与える。舌下腺、顎下腺、小唾液腺から分泌される唾液に多く含まれる。</p>
+      </div>
+
+      <h3>その他の機能</h3>
+      <table>
+        <tr><th>成分</th><th>機能</th></tr>
+        <tr><td class="key">アミラーゼ</td><td>デンプン・グリコーゲン → マルトース（加水分解）</td></tr>
+        <tr><td class="key">スタテリン</td><td>再石灰化促進、ペリクル形成</td></tr>
+        <tr><td class="key">上皮成長因子（EGF）</td><td>細胞増殖促進、創傷治癒</td></tr>
+        <tr><td class="key">高プロリンタンパク質</td><td>潤滑作用、細菌凝集作用</td></tr>
+      </table>
+
+      <h2>IV. 総合問題</h2>
+
+      <div class="question-box">
+        <div class="q-number">115A28</div>
+        <p>唾液の成分とその機能の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ムチン 　　　　　　酸の中和作用<br>
+          b シスタチン 　　　　再石灰化作用<br>
+          c ヒスタチン 　　　　抗真菌作用<br>
+          d リゾチーム 　　　　ペプチドグリカンの分解<br>
+          e ラクトフェリン 　　システインプロテアーゼの阻害
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a × ムチンは<span class="caution">粘性付与・潤滑作用</span>であり、酸の中和作用ではない</li>
+          <li>b × シスタチンは<span class="caution">システインプロテアーゼ阻害</span>であり、再石灰化作用はスタテリン</li>
+          <li>c ○ ヒスタチンは抗カンジダ（抗真菌）作用を有する</li>
+          <li>d ○ リゾチームは細菌細胞壁のペプチドグリカンを分解する</li>
+          <li>e × ラクトフェリンは<span class="caution">鉄イオン結合による抗菌作用</span>、システインプロテアーゼ阻害はシスタチン</li>
+        </ul>
+      </div>
+
+      <h2>V. まとめ：唾液の有機成分と役割</h2>
+      <table>
+        <tr><th>有機成分</th><th>抗菌</th><th>潤滑</th><th>消化</th><th>粘膜保護</th><th>創傷治癒</th><th>再石灰化</th></tr>
+        <tr><td>分泌型IgA</td><td>○</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>ヒスタチン</td><td>○</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>ラクトフェリン</td><td>○</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>リゾチーム</td><td>○</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>ムチン</td><td>○</td><td>○</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>高プロリンタンパク質</td><td>○</td><td>○</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>ペルオキシダーゼ</td><td>○</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>アミラーゼ</td><td></td><td></td><td>○</td><td></td><td></td><td></td></tr>
+        <tr><td>シスタチン</td><td></td><td></td><td></td><td>○</td><td></td><td></td></tr>
+        <tr><td>上皮成長因子（EGF）</td><td></td><td></td><td></td><td></td><td>○</td><td></td></tr>
+        <tr><td>スタテリン</td><td></td><td></td><td></td><td></td><td></td><td>○</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

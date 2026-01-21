@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>非コラーゲンタンパク - 生化学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生化学 / 歯と歯周組織</span>
+    <h1>非コラーゲンタンパク</h1>
+    <div class="container">
+
+      <h2>I. 骨の組成と非コラーゲン性タンパク質</h2>
+      <p>骨の組成は無機質70%、有機質20%、水分10%である。有機質のうち90%はI型コラーゲン、残り10%が<span class="key">非コラーゲン性タンパク質</span>とプロテオグリカンである。</p>
+
+      <h3>骨の非コラーゲン性タンパク質（含有量順）</h3>
+      <table>
+        <tr><th>タンパク質</th><th>特徴</th></tr>
+        <tr><td class="key">オステオネクチン</td><td>骨で最も多い非コラーゲン性タンパク質</td></tr>
+        <tr><td>血清タンパク質</td><td>血清由来</td></tr>
+        <tr><td class="key">オステオカルシン</td><td>Glaタンパク質、骨代謝マーカー</td></tr>
+        <tr><td class="key">骨シアロタンパク質</td><td>シアル酸を含む糖タンパク質</td></tr>
+        <tr><td class="key">オステオポンチン</td><td>RGD配列あり</td></tr>
+        <tr><td>DMP-1</td><td>RGD配列あり、リン酸化タンパク質</td></tr>
+      </table>
+
+      <h2>II. Glaタンパク質（ビタミンK依存性）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">Glaタンパク質の特徴</div>
+        <ul>
+          <li><span class="highlight">γ-カルボキシグルタミン酸（Gla）</span>残基を含む</li>
+          <li>Glaの生成には<span class="highlight">ビタミンK</span>が必須</li>
+          <li>Gla残基が<span class="key">Ca²⁺と結合</span>する</li>
+        </ul>
+      </div>
+
+      <h3>Glaタンパク質の種類</h3>
+      <table>
+        <tr><th>タンパク質</th><th>存在部位</th><th>機能</th></tr>
+        <tr><td class="highlight">オステオカルシン</td><td>骨（象牙質に少量）</td><td>骨形成マーカー</td></tr>
+        <tr><td class="highlight">プロトロンビン</td><td>血液</td><td>血液凝固因子</td></tr>
+        <tr><td>マトリックスGlaタンパク質（MGP）</td><td>硬組織以外に広く存在</td><td>石灰化抑制</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">106C119</div>
+        <p>ビタミンK依存的にCa2＋結合能を獲得するタンパク質はどれか。2つ選べ。</p>
+        <div class="choices">
+          a ホスホホリン<br>
+          b カルモジュリン<br>
+          c プロトロンビン<br>
+          d オステオカルシン<br>
+          e シアロプロテイン
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】ビタミンK依存的にγ-カルボキシグルタミン酸（Gla）残基を形成し、Ca²⁺結合能を獲得するのがGlaタンパク質である。オステオカルシン（骨）とプロトロンビン（血液凝固）が該当する。</p>
+      </div>
+
+      <h2>III. RGD配列を持つタンパク質</h2>
+
+      <p><span class="key">RGD配列</span>（Arg-Gly-Asp）は細胞接着に関わる配列で、細胞表面の<span class="highlight">インテグリン</span>と結合する。</p>
+
+      <h3>RGD配列を持つタンパク質</h3>
+      <table>
+        <tr><th>タンパク質</th><th>存在部位</th></tr>
+        <tr><td class="highlight">オステオポンチン</td><td>骨、象牙質</td></tr>
+        <tr><td class="highlight">フィブロネクチン</td><td>細胞外マトリックス</td></tr>
+        <tr><td>DMP-1（象牙質マトリックスタンパク質1）</td><td>象牙質、骨</td></tr>
+        <tr><td>ホスホホリン（象牙質リンタンパク質）</td><td>象牙質</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111B45</div>
+        <p>インテグリンと結合するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ケラチン<br>
+          b エナメリン<br>
+          c アメロゲニン<br>
+          d オステオポンチン<br>
+          e フィブロネクチン
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】インテグリンはRGD配列を認識して結合する細胞表面受容体である。オステオポンチンとフィブロネクチンはRGD配列を持つため、インテグリンと結合する。ケラチン、エナメリン、アメロゲニンはRGD配列を持たない。</p>
+      </div>
+
+      <h2>IV. プロテオグリカン</h2>
+
+      <p><span class="key">プロテオグリカン</span>はコアタンパク質にグリコサミノグリカン（GAG）鎖が結合した複合糖質である。</p>
+
+      <h3>プロテオグリカンの種類</h3>
+      <table>
+        <tr><th>種類</th><th>特徴</th><th>存在部位</th></tr>
+        <tr><td class="highlight">アグリカン</td><td>大型、コンドロイチン硫酸・ケラタン硫酸</td><td><span class="highlight">軟骨</span></td></tr>
+        <tr><td class="highlight">パールカン</td><td>ヘパラン硫酸、球状領域（真珠様）</td><td><span class="highlight">基底膜</span></td></tr>
+        <tr><td>デコリン</td><td>小型、GAG鎖1本</td><td>骨、皮膚</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102B27</div>
+        <p>細胞外マトリックス分子で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ヒアルロン酸は高度に硫酸化されている。<br>
+          b グリコサミノグリカンは分枝状糖鎖である。<br>
+          c アグリカンは軟骨プロテオグリカンである。<br>
+          d パールカンは基底膜プロテオグリカンである。<br>
+          e デコリンはグリコサミノグリカン鎖を2本もつ。
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a × ヒアルロン酸は<span class="caution">硫酸化されていない</span>（唯一のGAG）</li>
+          <li>b × グリコサミノグリカンは<span class="caution">直鎖状</span>（二糖の繰り返し）</li>
+          <li>c ○ アグリカンは軟骨に特徴的な大型プロテオグリカン</li>
+          <li>d ○ パールカンは基底膜プロテオグリカン</li>
+          <li>e × デコリンはGAG鎖を<span class="caution">1本</span>もつ小型プロテオグリカン</li>
+        </ul>
+      </div>
+
+      <h2>V. 細胞間結合タンパク質</h2>
+
+      <p><span class="key">コネクソン</span>は<span class="key">ギャップ結合</span>を構成するタンパク質で、隣接する細胞間で低分子を通過させる。</p>
+
+      <div class="question-box">
+        <div class="q-number">114D34</div>
+        <p>隣接する骨細胞間で低分子を通過させるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アクチン<br>
+          b ラミニン<br>
+          c コネクソン<br>
+          d フィブリン<br>
+          e インテグリン
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】コネクソンはギャップ結合を構成し、隣接する細胞間で低分子（イオン、代謝産物など）を通過させる。骨細胞は骨小腔内に存在し、突起を介してギャップ結合で連結している。</p>
+      </div>
+
+      <h2>VI. まとめ</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li><span class="highlight">Glaタンパク質</span>（ビタミンK依存性）：オステオカルシン、プロトロンビン</li>
+          <li><span class="highlight">RGD配列</span>（インテグリン結合）：オステオポンチン、フィブロネクチン</li>
+          <li><span class="highlight">アグリカン</span>：軟骨プロテオグリカン</li>
+          <li><span class="highlight">パールカン</span>：基底膜プロテオグリカン</li>
+          <li><span class="highlight">コネクソン</span>：ギャップ結合、低分子通過</li>
+        </ul>
+      </div>
+
+      <h3>ひっかけポイント</h3>
+      <table>
+        <tr><th>誤り</th><th>正しい内容</th></tr>
+        <tr><td>ヒアルロン酸は硫酸化されている</td><td class="caution">硫酸化されていない</td></tr>
+        <tr><td>GAGは分枝状</td><td class="caution">直鎖状（二糖の繰り返し）</td></tr>
+        <tr><td>デコリンはGAG鎖2本</td><td class="caution">1本のみ（小型）</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

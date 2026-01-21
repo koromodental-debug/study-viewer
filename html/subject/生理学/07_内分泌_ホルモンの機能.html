@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ホルモンの機能 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 内分泌</span>
+    <h1>ホルモンの機能</h1>
+    <div class="container">
+
+      <h2>I. 血糖調節に関わるホルモン</h2>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>血糖への作用</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">インスリン</span></td>
+          <td><span class="highlight">血糖低下</span>（唯一）</td>
+          <td>グリコーゲン合成促進、細胞のグルコース取り込み促進、糖新生抑制</td>
+        </tr>
+        <tr>
+          <td><span class="key">グルカゴン</span></td>
+          <td>血糖上昇</td>
+          <td>グリコーゲン分解促進、糖新生促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">アドレナリン</span></td>
+          <td>血糖上昇</td>
+          <td>グリコーゲン分解促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">コルチゾール</span></td>
+          <td>血糖上昇</td>
+          <td>糖新生促進、タンパク質異化促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">成長ホルモン</span></td>
+          <td>血糖上昇</td>
+          <td>糖新生促進（抗インスリン作用）</td>
+        </tr>
+        <tr>
+          <td><span class="key">甲状腺ホルモン</span></td>
+          <td>血糖上昇</td>
+          <td>腸管からの糖吸収促進</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">血糖を下げるホルモンはインスリンのみ</div>
+        <p>血糖を上昇させるホルモンは多数あるが、<span class="highlight">血糖を低下させるホルモンはインスリンのみ</span>である。このため、インスリン分泌不全や作用不足では糖尿病となる。</p>
+      </div>
+
+      <h2>II. 電解質・体液調節に関わるホルモン</h2>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+          <th>結果</th>
+        </tr>
+        <tr>
+          <td><span class="key">アルドステロン</span></td>
+          <td>遠位尿細管・集合管でNa⁺再吸収促進（K⁺排泄促進）</td>
+          <td><span class="highlight">細胞外液量増加</span>、血圧上昇</td>
+        </tr>
+        <tr>
+          <td><span class="key">バソプレシン（ADH）</span></td>
+          <td>集合管で水の再吸収促進</td>
+          <td>尿量減少、体液浸透圧低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">心房性Na利尿ペプチド（ANP）</span></td>
+          <td>Na⁺再吸収抑制、糸球体濾過量増加</td>
+          <td>細胞外液量減少、血圧低下</td>
+        </tr>
+      </table>
+
+      <h2>III. カルシウム代謝に関わるホルモン</h2>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>血中Ca²⁺への作用</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">パラトルモン（PTH）</span></td>
+          <td><span class="highlight">Ca²⁺上昇</span></td>
+          <td>骨吸収促進、腎でのCa²⁺再吸収促進、ビタミンD活性化</td>
+        </tr>
+        <tr>
+          <td><span class="key">カルシトニン</span></td>
+          <td>Ca²⁺低下</td>
+          <td>骨吸収抑制、腎でのCa²⁺再吸収抑制</td>
+        </tr>
+        <tr>
+          <td><span class="key">活性型ビタミンD₃</span></td>
+          <td>Ca²⁺上昇</td>
+          <td>腸管でのCa²⁺吸収促進</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">PTH欠乏と低カルシウム血症</div>
+        <p><span class="key">副甲状腺ホルモン（PTH）</span>が欠乏すると、骨からのCa²⁺動員と腎でのCa²⁺再吸収が低下し、<span class="highlight">低カルシウム血症</span>をきたす。テタニー（筋痙攣）などの症状が現れる。</p>
+      </div>
+
+      <h2>IV. 代謝・成長に関わるホルモン</h2>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">甲状腺ホルモン（T₃, T₄）</span></td>
+          <td><span class="highlight">基礎代謝率上昇</span>、体温上昇、成長促進、中枢神経系の発達</td>
+        </tr>
+        <tr>
+          <td><span class="key">成長ホルモン（GH）</span></td>
+          <td>骨・軟骨の成長促進、IGF-1分泌促進、タンパク質合成促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">コルチゾール</span></td>
+          <td>抗炎症作用、<span class="caution">プロスタグランジン合成抑制</span>、タンパク質異化促進</td>
+        </tr>
+      </table>
+
+      <h2>V. 性ホルモンと生殖機能</h2>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">エストロゲン</span></td>
+          <td>女性二次性徴の促進、脂肪合成・代謝促進、卵胞の発育、乳腺の発育</td>
+        </tr>
+        <tr>
+          <td><span class="key">プロゲステロン</span></td>
+          <td>月経周期、妊娠の準備と維持、<span class="highlight">基礎体温上昇</span>、乳腺の発育</td>
+        </tr>
+        <tr>
+          <td><span class="key">テストステロン</span></td>
+          <td>男性二次性徴の促進、タンパク質合成促進、精子形成促進、筋の発達</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">排卵後の基礎体温上昇</div>
+        <p>排卵後、卵巣の黄体から<span class="key">プロゲステロン</span>が分泌される。プロゲステロンは視床下部の体温調節中枢に作用し、<span class="highlight">基礎体温を約0.3〜0.5℃上昇</span>させる。この体温上昇は黄体期（排卵後〜月経まで）続く。</p>
+      </div>
+
+      <h2>VI. その他の重要なホルモン機能</h2>
+
+      <h3>エリスロポエチン（腎臓）</h3>
+      <ul>
+        <li>骨髄に作用し、<span class="highlight">赤血球産生を促進</span></li>
+        <li>低酸素状態で分泌が亢進</li>
+        <li>腎不全では分泌低下 → 腎性貧血</li>
+      </ul>
+
+      <h3>メラトニン（松果体）</h3>
+      <ul>
+        <li><span class="highlight">概日リズム（サーカディアンリズム）</span>の形成</li>
+        <li>夜間に分泌が増加、光によって分泌抑制</li>
+        <li>睡眠誘導作用</li>
+      </ul>
+
+      <h3>消化管ホルモン</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>分泌部位</th>
+          <th>主な作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">ガストリン</span></td>
+          <td>胃（G細胞）</td>
+          <td><span class="highlight">胃酸分泌促進</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">セクレチン</span></td>
+          <td>十二指腸</td>
+          <td>HCO₃⁻に富む膵液分泌促進（胃液の中和）、胃酸分泌抑制</td>
+        </tr>
+        <tr>
+          <td><span class="key">コレシストキニン（CCK）</span></td>
+          <td>十二指腸</td>
+          <td>胆嚢収縮、膵臓からの消化酵素分泌促進</td>
+        </tr>
+      </table>
+
+      <h2>VII. ストレス反応に関わるホルモン</h2>
+
+      <p>急性ストレス時には、交感神経-副腎髄質系と視床下部-下垂体-副腎皮質系が活性化される。</p>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>分泌部位</th>
+          <th>ストレス反応での役割</th>
+        </tr>
+        <tr>
+          <td><span class="key">アドレナリン</span></td>
+          <td>副腎髄質</td>
+          <td>心拍数増加、血糖上昇、気管支拡張（闘争・逃走反応）</td>
+        </tr>
+        <tr>
+          <td><span class="key">コルチゾール</span></td>
+          <td>副腎皮質</td>
+          <td>血糖上昇、抗炎症作用、免疫抑制（長期的ストレス適応）</td>
+        </tr>
+      </table>
+
+      <h2>VIII. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">105C47</div>
+        <p>ホルモンと作用との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ガストリン ーーー 胃酸分泌抑制<br>
+          b インスリン ーーー グリコーゲン合成抑制<br>
+          c サイロキシン ーーー 基礎代謝率低下<br>
+          d コルチゾール ーーー プロスタグランジン合成促進<br>
+          e アルドステロン ーーー 細胞外液量増加
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a：ガストリンは胃酸分泌<span class="caution">促進</span>。抑制ではない。</li>
+          <li>b：インスリンはグリコーゲン合成<span class="caution">促進</span>。抑制ではない。</li>
+          <li>c：サイロキシン（甲状腺ホルモン）は基礎代謝率<span class="caution">上昇</span>。低下ではない。</li>
+          <li>d：コルチゾールはプロスタグランジン合成<span class="caution">抑制</span>（抗炎症作用）。促進ではない。</li>
+          <li>e：<span class="highlight">アルドステロン</span>はNa⁺再吸収促進により<span class="highlight">細胞外液量増加</span>。正しい。</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A30</div>
+        <p>排卵後に基礎体温を上昇させるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a グルカゴン<br>
+          b バソプレシン<br>
+          c パラソルモン<br>
+          d アルドステロン<br>
+          e プロゲステロン
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】排卵後、黄体から<span class="highlight">プロゲステロン</span>が分泌され、視床下部の体温調節中枢に作用して基礎体温を上昇させる。基礎体温の二相性（低温相→高温相）は排卵の指標となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C40</div>
+        <p>欠乏すると低カルシウム血症をきたすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a インスリン<br>
+          b エストロゲン<br>
+          c カルシトニン<br>
+          d アルドステロン<br>
+          e 副甲状腺ホルモン
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">副甲状腺ホルモン（PTH）</span>は血中Ca²⁺濃度を上昇させる。PTHが欠乏すると骨吸収と腎でのCa²⁺再吸収が低下し、低カルシウム血症となる。カルシトニンは逆にCa²⁺を低下させるので、欠乏しても低Ca血症にはならない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B25</div>
+        <p>赤血球数の増加を促すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ガストリン<br>
+          b メラトニン<br>
+          c ソマトスタチン<br>
+          d テストステロン<br>
+          e エリスロポエチン
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">エリスロポエチン</span>は腎臓から分泌され、骨髄に作用して赤血球産生を促進する。低酸素状態で分泌が亢進する。テストステロンも赤血球産生促進作用があるが、主作用ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D43</div>
+        <p>ある物質の血中濃度の概日リズムを図に示す。この物質はどれか。1つ選べ。</p>
+        <div class="choices">
+          a インスリン<br>
+          b グルカゴン<br>
+          c ヒスタミン<br>
+          d メラトニン<br>
+          e コルチゾール
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">メラトニン</span>は松果体から分泌され、概日リズム（サーカディアンリズム）の形成に関与する。夜間に分泌が増加し、日中は低下する明確な日内変動を示す。コルチゾールも概日リズムを示すが、早朝に高く夜間に低いパターン。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C109</div>
+        <p>急性ストレス反応で血中濃度が上昇するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a アドレナリン<br>
+          b オキシトシン<br>
+          c コルチゾール<br>
+          d 黄体形成ホルモン<br>
+          e 卵胞刺激ホルモン
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】急性ストレス時には、①交感神経-副腎髄質系が活性化され<span class="highlight">アドレナリン</span>が分泌、②視床下部-下垂体-副腎皮質系（HPA軸）が活性化され<span class="highlight">コルチゾール</span>が分泌される。これらが「闘争か逃走か」反応を引き起こす。</p>
+      </div>
+
+      <p class="note">※参照：パーフェクトマスター生理学・口腔生理学 p.55〜57</p>
+
+    </div>
+  </div>
+</body>
+</html>

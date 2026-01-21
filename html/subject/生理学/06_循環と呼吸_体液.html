@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>体液 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .flow-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .flow-box .arrow { color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 循環と呼吸</span>
+    <h1>体液</h1>
+    <div class="container">
+
+      <h2>I. 体液の区分と組成</h2>
+
+      <h3>体液量</h3>
+      <ul>
+        <li>成人男性で<span class="highlight">体重の60%</span>（女性は脂肪が多いため55%）</li>
+      </ul>
+
+      <h3>加齢による体液量の変化</h3>
+      <table>
+        <tr>
+          <th>年齢</th>
+          <th>体液量（体重比）</th>
+        </tr>
+        <tr>
+          <td>新生児</td>
+          <td><span class="highlight">75〜80%</span></td>
+        </tr>
+        <tr>
+          <td>乳児</td>
+          <td>70%</td>
+        </tr>
+        <tr>
+          <td>成人</td>
+          <td>60%（男性）、55%（女性）</td>
+        </tr>
+        <tr>
+          <td>高齢者</td>
+          <td><span class="highlight">50〜55%</span></td>
+        </tr>
+      </table>
+
+      <h3>体液の区分と割合</h3>
+      <table>
+        <tr>
+          <th>区分</th>
+          <th>体重比</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td><span class="key">細胞内液</span></td>
+          <td><span class="highlight">40%</span>（全体液量の2/3）</td>
+          <td>細胞内に存在</td>
+        </tr>
+        <tr>
+          <td><span class="key">細胞外液</span></td>
+          <td><span class="highlight">20%</span>（全体液量の1/3）</td>
+          <td>細胞外に存在</td>
+        </tr>
+        <tr>
+          <td>　├ 間質液</td>
+          <td>15%（細胞外液の3/4）</td>
+          <td>細胞間を満たす</td>
+        </tr>
+        <tr>
+          <td>　└ 血漿</td>
+          <td>5%（細胞外液の1/4）</td>
+          <td>血管内の液体成分</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">電解質組成の特徴</div>
+        <ul>
+          <li><span class="key">細胞外液</span>：<span class="highlight">Na⁺</span>が主な陽イオン（約140 mEq/L）、Cl⁻が主な陰イオン</li>
+          <li><span class="key">細胞内液</span>：<span class="highlight">K⁺</span>が主な陽イオン（約140 mEq/L）、リン酸・タンパク質が主な陰イオン</li>
+          <li>血漿と間質液の違い：血漿には<span class="key">タンパク質</span>が多い（毛細血管壁を通過しにくい）</li>
+        </ul>
+      </div>
+
+      <h2>II. 血液</h2>
+
+      <h3>血液量と成分</h3>
+      <ul>
+        <li>全血液量：<span class="highlight">体重の8%</span>（6〜9%）、比重1.05〜1.07</li>
+        <li><span class="key">血球</span>（細胞成分）：血液の45%
+          <ul>
+            <li>赤血球（血球の90%以上）、白血球、血小板</li>
+          </ul>
+        </li>
+        <li><span class="key">血漿</span>（液性成分）：血液の55%</li>
+      </ul>
+
+      <h3>血液の機能</h3>
+      <table>
+        <tr>
+          <th>機能</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>運搬</td>
+          <td>ガス（O₂、CO₂）、栄養素、ホルモン、代謝産物、熱</td>
+        </tr>
+        <tr>
+          <td>放熱</td>
+          <td>皮膚表在部の血管から放熱</td>
+        </tr>
+        <tr>
+          <td>酸塩基平衡</td>
+          <td>緩衝作用（H⁺+HCO₃⁻ ⇄ H₂CO₃ ⇄ H₂O+CO₂）<br>pHは<span class="highlight">7.35〜7.45</span>に維持。H⁺は腎臓、CO₂は肺で排泄（開かれた緩衝系）</td>
+        </tr>
+        <tr>
+          <td>体液量の維持</td>
+          <td>膠質浸透圧による水分保持</td>
+        </tr>
+        <tr>
+          <td>免疫機能</td>
+          <td>白血球、抗体（液性成分）</td>
+        </tr>
+        <tr>
+          <td>止血と線溶</td>
+          <td>血小板、血液凝固因子、プラスミン</td>
+        </tr>
+      </table>
+
+      <h3>赤血球</h3>
+      <ul>
+        <li>ヒト赤血球は<span class="highlight">無核</span>（分化の途上で脱核）で<span class="caution">ミトコンドリアをもたない</span></li>
+        <li>ヘモグロビン量：<span class="highlight">16 g/dL（男性）、14 g/dL（女性）</span></li>
+        <li>ヘマトクリット値：45%（男性）、42%（女性）</li>
+        <li>寿命：<span class="highlight">約120日</span>。肝臓または脾臓でマクロファージにより破壊</li>
+      </ul>
+
+      <h3>赤血球の産生と破壊</h3>
+      <table>
+        <tr>
+          <th>過程</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>産生</td>
+          <td>骨髄の多能性幹細胞 → 赤芽球 → 赤血球<br>促進ホルモン：<span class="key">エリスロポエチン</span>（O₂不足時に腎臓から分泌）<br>必要な物質：<span class="key">葉酸、ビタミンB₁₂</span>（不足すると貧血）</td>
+        </tr>
+        <tr>
+          <td>破壊</td>
+          <td>ヘモグロビン → ヘム + グロビン<br>ヘム → 鉄 + <span class="key">ビリルビン</span><br>鉄は肝臓に貯蔵、ビリルビンは胆汁に含有されて腸管に分泌（便色）</td>
+        </tr>
+      </table>
+
+      <h3>血漿</h3>
+      <ul>
+        <li>血液から細胞成分を除いた液体成分</li>
+        <li>組成は間質液とほぼ等しいが、<span class="key">タンパク質</span>が比較的多い</li>
+        <li>主な血漿タンパク質：フィブリノゲン、アルブミン、γグロブリン</li>
+      </ul>
+
+      <h2>III. 止血（血液凝固）と線溶</h2>
+
+      <h3>一次止血（血小板凝集）</h3>
+      <table>
+        <tr>
+          <th>過程</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>血小板の産生</td>
+          <td>骨髄中の巨核球から細胞質がちぎれて生じる。直径2〜3μm、血液1μLあたり15〜35万個</td>
+        </tr>
+        <tr>
+          <td>一次止血の開始</td>
+          <td>血管損傷 → 血管壁のコラーゲン露出 → 血中の<span class="key">von Willebrand因子</span>がコラーゲンに結合 → 血小板も結合</td>
+        </tr>
+        <tr>
+          <td>血小板の活性化</td>
+          <td>損傷部に結合した血小板は活性化され、ADPや<span class="key">トロンボキサンA₂</span>を放出 → 他の血小板も活性化・凝集（血小板血栓）</td>
+        </tr>
+        <tr>
+          <td>血流阻害</td>
+          <td>凝集した血小板 → セロトニン分泌 → 血管収縮（血流阻害）→ 白色血栓</td>
+        </tr>
+      </table>
+
+      <h3>二次止血（血液凝固）</h3>
+      <p>血小板の凝集が起こると同時に<span class="key">血液凝固反応</span>が始まる。血漿中のさまざまな血液凝固因子が連続的に活性化される増幅反応（<span class="key">カスケード反応</span>）として進行。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">凝固経路</div>
+        <ul>
+          <li><span class="key">内因系凝固</span>：血管の内部損傷などで、露出したコラーゲンとの接触により開始</li>
+          <li><span class="key">外因系凝固</span>：組織損傷によって放出された組織因子と第VII因子との接触により開始</li>
+          <li><span class="key">共通系凝固</span>：内因系・外因系ともに第X因子の活性化以降は共通した反応経路</li>
+        </ul>
+      </div>
+
+      <p>最終的に血漿中の可溶性タンパク質・<span class="key">フィブリノゲン</span>が線維状の<span class="key">フィブリン</span>（線維素）となり、血液の凝固塊が形成される（二次止血・赤色血栓）。</p>
+
+      <h3>血液凝固因子</h3>
+      <ul>
+        <li>活性化されるとプロテアーゼ活性を示し、次の因子を順次活性化していく</li>
+        <li><span class="caution">III、IV、VIII因子以外はすべて肝臓で合成</span>される</li>
+        <li>II、VII、IX、X因子の合成は<span class="key">ビタミンK</span>に依存する</li>
+        <li><span class="key">ワルファリン</span>はビタミンKの代謝を阻害することで抗凝固作用を示す</li>
+      </ul>
+
+      <h3>線溶</h3>
+      <ul>
+        <li>フィブリン血栓が形成されると、<span class="key">フィブリン溶解反応</span>（線維素溶解：線溶）も活性化される</li>
+        <li>フィブリン線維の生成後、<span class="key">プラスミン</span>によるフィブリン血栓の溶解が始まる</li>
+        <li>過度の血流障害や血管閉塞を起こさないよう作用する</li>
+      </ul>
+
+      <div class="flow-box">
+        内皮細胞 <span class="arrow">→</span> 組織プラスミノゲンアクチベータ（活性化）<span class="arrow">→</span> プラスミノゲン <span class="arrow">→</span> <span class="key">プラスミン</span> <span class="arrow">→</span> フィブリン（分解）<span class="arrow">→</span> フィブリン分解産物
+      </div>
+
+      <h2>IV. 血液型</h2>
+
+      <h3>ABO式血液型</h3>
+      <table>
+        <tr>
+          <th>血液型</th>
+          <th>赤血球（抗原）</th>
+          <th>血清（抗体）</th>
+        </tr>
+        <tr>
+          <td>A型</td>
+          <td>A型抗原</td>
+          <td>抗B抗体</td>
+        </tr>
+        <tr>
+          <td>B型</td>
+          <td>B型抗原</td>
+          <td>抗A抗体</td>
+        </tr>
+        <tr>
+          <td>AB型</td>
+          <td>A型抗原、B型抗原</td>
+          <td>抗体なし</td>
+        </tr>
+        <tr>
+          <td>O型</td>
+          <td>抗原なし</td>
+          <td>抗A抗体、抗B抗体</td>
+        </tr>
+      </table>
+      <p class="note">※輸血時に血液型を合わせないと凝集が起こり、不適合となる</p>
+
+      <h3>Rh式血液型</h3>
+      <ul>
+        <li>ヒト赤血球上に存在するアカゲザルとの共通抗原の存在の有無による血液型</li>
+        <li>Rh抗原をもつ場合を<span class="key">Rh（+）</span>、もたない場合を<span class="key">Rh（−）</span>とする</li>
+      </ul>
+
+      <h2>V. 腎臓による体液量と浸透圧の調節</h2>
+
+      <p><span class="key">容量調節系</span>と<span class="key">浸透圧調節系</span>は、お互いに協調して体液量と浸透圧の調節を行っている。</p>
+
+      <h3>容量調節系（体液量の調節）</h3>
+
+      <div class="point-box">
+        <div class="point-box-title">体液量低下での調節系</div>
+        <p><span class="key">レニン-アンジオテンシン-アルドステロン系</span></p>
+        <ul>
+          <li>レニンの分泌は、尿細管中のNa（Cl）流量の低下や交感神経活動によっても促進される</li>
+          <li>傍糸球体装置よりレニン分泌 → アンジオテンシノゲン → アンジオテンシンI → <span class="key">アンジオテンシンII</span>（ACEによる変換、血管内皮細胞膜表面に多い）</li>
+          <li>アンジオテンシンII → 血管収縮、<span class="key">アルドステロン</span>分泌促進（副腎皮質）</li>
+          <li>アルドステロン → 遠位尿細管・集合管でNa⁺再吸収促進 → 水も一緒に再吸収 → <span class="highlight">体液量増加</span></li>
+        </ul>
+      </div>
+
+      <h3>体液量増加での調節系</h3>
+      <ul>
+        <li><span class="key">心房性Na利尿ペプチド（ANP）</span>：Na⁺再吸収を抑制する（アルドステロン作用を抑制）</li>
+        <li>また、糸球体血管を拡張し、糸球体濾過量を増加させる</li>
+        <li>→ Na⁺利尿促進 → 浸透圧が増加するが体液量が低下する → <span class="highlight">体液量・血圧の回復</span></li>
+      </ul>
+
+      <h3>浸透圧調節系</h3>
+      <ul>
+        <li><span class="key">バソプレシン（抗利尿ホルモン：ADH）</span>：水の再吸収を促進する</li>
+        <li>視床下部で産生、下垂体後葉から分泌</li>
+        <li>遠位尿細管・集合管に作用 → 水の再吸収促進 → <span class="highlight">体液浸透圧の低下</span></li>
+        <li>また、血管収縮作用もある → 血圧の回復</li>
+      </ul>
+
+      <h3>遠位尿細管・集合管に作用するホルモン</h3>
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">バソプレシン（ADH）</span></td>
+          <td>水の再吸収を促進</td>
+        </tr>
+        <tr>
+          <td><span class="key">アルドステロン</span></td>
+          <td>Na⁺の再吸収を促進（Na⁺再吸収による間質浸透圧の上昇で水も一緒に再吸収）</td>
+        </tr>
+        <tr>
+          <td><span class="key">心房性Na利尿ペプチド（ANP）</span></td>
+          <td>Na⁺再吸収を抑制（アルドステロン作用を抑制）</td>
+        </tr>
+        <tr>
+          <td><span class="key">パラトルモン（PTH）</span></td>
+          <td>Ca²⁺の再吸収を促進</td>
+        </tr>
+      </table>
+
+      <p class="note">※本ページは教科書（パーフェクトマスター生理学・口腔生理学 p.19〜24, p.41〜47）に基づいて作成。102回以降の直接関連過去問なし。</p>
+
+    </div>
+  </div>
+</body>
+</html>

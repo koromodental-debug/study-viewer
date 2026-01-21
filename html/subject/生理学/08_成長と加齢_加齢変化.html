@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>加齢変化 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 成長と加齢</span>
+    <h1>加齢変化</h1>
+    <div class="container">
+
+      <h2>I. 加齢変化の概要</h2>
+
+      <p>加齢に伴い、各臓器・器官の予備能力（ホメオスタシスを維持する能力）が低下する。これは生理的な変化であり、病的状態とは区別される。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">加齢変化の基本原則</div>
+        <ul>
+          <li>多くの生理機能は<span class="highlight">低下</span>する</li>
+          <li>予備能力の低下により、ストレスに対する適応力が減少</li>
+          <li>個人差が大きい（暦年齢と生理的年齢は異なる）</li>
+        </ul>
+      </div>
+
+      <h2>II. 循環器系の加齢変化</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>変化</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="key">血管伸展性</span></td>
+          <td><span class="highlight">低下</span>（動脈硬化）</td>
+          <td>血管壁のコラーゲン増加、エラスチン減少</td>
+        </tr>
+        <tr>
+          <td><span class="key">収縮期血圧</span></td>
+          <td><span class="highlight">上昇</span></td>
+          <td>血管伸展性低下による</td>
+        </tr>
+        <tr>
+          <td><span class="key">脈圧</span></td>
+          <td><span class="highlight">増大</span></td>
+          <td>収縮期血圧↑、拡張期血圧は変化少ない</td>
+        </tr>
+        <tr>
+          <td><span class="key">圧受容体反射機能</span></td>
+          <td><span class="highlight">低下</span></td>
+          <td>起立性低血圧のリスク増加</td>
+        </tr>
+        <tr>
+          <td><span class="key">最大心拍数</span></td>
+          <td>低下</td>
+          <td>運動時の心拍出量増加が制限される</td>
+        </tr>
+        <tr>
+          <td><span class="key">心拍出量</span></td>
+          <td>低下</td>
+          <td>安静時は代償されるが、運動時に顕著</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">脳血流量の自動調節能</div>
+        <ul>
+          <li>正常：血圧が変動しても脳血流量は一定に保たれる（自動調節）</li>
+          <li>高齢者：自動調節能の範囲が<span class="highlight">右方移動</span>（高血圧側にシフト）</li>
+          <li>→ 血圧低下時に脳血流が維持できなくなりやすい（めまい、失神のリスク）</li>
+        </ul>
+      </div>
+
+      <h2>III. 呼吸器系の加齢変化</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>変化</th>
+          <th>機序・臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="key">肺弾性収縮力</span></td>
+          <td>低下</td>
+          <td>肺胞壁のエラスチン減少</td>
+        </tr>
+        <tr>
+          <td><span class="key">胸郭コンプライアンス</span></td>
+          <td>低下</td>
+          <td>肋軟骨の石灰化、呼吸筋力低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">機能的残気量</span></td>
+          <td><span class="highlight">増加</span></td>
+          <td>肺弾性収縮力低下による（肺が膨らみやすくなる）</td>
+        </tr>
+        <tr>
+          <td><span class="key">肺活量</span></td>
+          <td>低下</td>
+          <td>胸郭コンプライアンス低下による</td>
+        </tr>
+        <tr>
+          <td><span class="key">A-aDO₂</span>（肺胞気-動脈血酸素分圧較差）</td>
+          <td><span class="highlight">増大</span></td>
+          <td>換気血流比不均等の増大、ガス交換効率低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">動脈血酸素分圧（PaO₂）</span></td>
+          <td>低下</td>
+          <td>A-aDO₂増大による</td>
+        </tr>
+      </table>
+
+      <h2>IV. 腎機能の加齢変化</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>変化</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="key">腎血流量</span></td>
+          <td><span class="highlight">低下</span></td>
+          <td>腎動脈硬化、糸球体数減少</td>
+        </tr>
+        <tr>
+          <td><span class="key">糸球体濾過率（GFR）</span></td>
+          <td><span class="highlight">低下</span></td>
+          <td>40歳以降、年間約1%ずつ低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">クレアチニンクリアランス</span></td>
+          <td><span class="highlight">低下</span></td>
+          <td>GFRの指標。薬物排泄能も低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">尿濃縮能</span></td>
+          <td>低下</td>
+          <td>脱水になりやすい</td>
+        </tr>
+        <tr>
+          <td><span class="key">Na保持能</span></td>
+          <td>低下</td>
+          <td>低ナトリウム血症のリスク</td>
+        </tr>
+      </table>
+
+      <h2>V. 代謝・内分泌系の加齢変化</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>変化</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="key">耐糖能</span></td>
+          <td><span class="highlight">低下</span></td>
+          <td>インスリン感受性低下、糖尿病リスク増加</td>
+        </tr>
+        <tr>
+          <td><span class="key">基礎代謝率</span></td>
+          <td>低下</td>
+          <td>筋肉量減少、甲状腺機能低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">血清アルブミン濃度</span></td>
+          <td><span class="highlight">低下</span></td>
+          <td>肝臓でのタンパク合成能低下、栄養状態低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨密度</span></td>
+          <td><span class="highlight">低下</span></td>
+          <td>骨粗鬆症、骨折リスク増加（特に女性で顕著）</td>
+        </tr>
+      </table>
+
+      <h2>VI. 筋・骨格系の加齢変化</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>変化</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="key">骨格筋量</span></td>
+          <td><span class="highlight">減少</span>（サルコペニア）</td>
+          <td>筋力低下、転倒リスク増加</td>
+        </tr>
+        <tr>
+          <td><span class="key">筋力</span></td>
+          <td>低下</td>
+          <td>特に速筋線維（TypeII）の萎縮が顕著</td>
+        </tr>
+        <tr>
+          <td><span class="key">関節可動域</span></td>
+          <td>減少</td>
+          <td>関節軟骨の変性、靭帯の弾性低下</td>
+        </tr>
+      </table>
+
+      <h2>VII. 神経系の加齢変化</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>変化</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td><span class="key">脳重量</span></td>
+          <td>減少</td>
+          <td>神経細胞数の減少</td>
+        </tr>
+        <tr>
+          <td><span class="key">神経伝導速度</span></td>
+          <td>低下</td>
+          <td>反応時間の延長</td>
+        </tr>
+        <tr>
+          <td><span class="key">睡眠</span></td>
+          <td>REM睡眠<span class="highlight">減少</span>、中途覚醒増加</td>
+          <td>睡眠の質の低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">体温調節能</span></td>
+          <td>低下</td>
+          <td>熱中症、低体温症のリスク増加</td>
+        </tr>
+      </table>
+
+      <h2>VIII. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">106A66</div>
+        <p>高齢者で低下するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 脈　圧<br>
+          b 耐糖能<br>
+          c 糸球体濾過率<br>
+          d 機能的残気量<br>
+          e 肺胞気−動脈血酸素分圧較差〈A-aDO₂〉
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a：脈圧は<span class="caution">増大</span>する（収縮期血圧↑、血管伸展性↓による）</li>
+          <li>b：<span class="highlight">耐糖能は低下</span>する（インスリン感受性低下）。正しい</li>
+          <li>c：<span class="highlight">糸球体濾過率は低下</span>する（腎機能低下）。正しい</li>
+          <li>d：機能的残気量は<span class="caution">増加</span>する（肺弾性収縮力低下による）</li>
+          <li>e：A-aDO₂は<span class="caution">増大</span>する（ガス交換効率低下による）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C69</div>
+        <p>高齢者の生理的変化で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 機能的残気量が減少する。<br>
+          b 圧受容体反射機能が亢進する。<br>
+          c 血清アルブミン濃度が減少する。<br>
+          d クレアチニンクリアランスが上昇する。<br>
+          e 脳血流量の自動調節能が右方移動する。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a：機能的残気量は<span class="caution">増加</span>する</li>
+          <li>b：圧受容体反射機能は<span class="caution">低下</span>する（起立性低血圧のリスク）</li>
+          <li>c：<span class="highlight">血清アルブミン濃度は減少</span>する。正しい</li>
+          <li>d：クレアチニンクリアランスは<span class="caution">低下</span>する</li>
+          <li>e：<span class="highlight">脳血流量の自動調節能は右方移動</span>する（高血圧側にシフト）。正しい</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C115</div>
+        <p>老化による変化で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 骨密度の増大<br>
+          b 骨格筋量の減少<br>
+          c 収縮期血圧の低下<br>
+          d 血管伸展性の低下<br>
+          e REM睡眠時間の増加
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a：骨密度は<span class="caution">低下</span>する（骨粗鬆症）</li>
+          <li>b：<span class="highlight">骨格筋量は減少</span>する（サルコペニア）。正しい</li>
+          <li>c：収縮期血圧は<span class="caution">上昇</span>する</li>
+          <li>d：<span class="highlight">血管伸展性は低下</span>する（動脈硬化）。正しい</li>
+          <li>e：REM睡眠時間は<span class="caution">減少</span>する</li>
+        </ul>
+      </div>
+
+      <h2>IX. 口腔の加齢変化</h2>
+
+      <table>
+        <tr>
+          <th>組織・機能</th>
+          <th>変化</th>
+        </tr>
+        <tr>
+          <td><span class="key">唾液分泌</span></td>
+          <td>減少（口腔乾燥症のリスク）</td>
+        </tr>
+        <tr>
+          <td><span class="key">味覚</span></td>
+          <td>閾値上昇（味を感じにくくなる）</td>
+        </tr>
+        <tr>
+          <td><span class="key">咀嚼筋力</span></td>
+          <td>低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">嚥下機能</span></td>
+          <td>低下（誤嚥リスク増加）</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯髄</span></td>
+          <td>萎縮、石灰化（歯髄腔狭窄）</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯根膜</span></td>
+          <td>線維化、幅の減少</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯槽骨</span></td>
+          <td>吸収傾向</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

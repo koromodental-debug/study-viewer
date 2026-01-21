@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>循環 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .flow-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .flow-box .arrow { color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 循環と呼吸</span>
+    <h1>循環</h1>
+    <div class="container">
+
+      <h2>I. 心臓</h2>
+
+      <h3>心筋の種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>構成</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">特殊心筋</span></td>
+          <td>洞房結節、房室結節、His束、プルキンエ線維</td>
+          <td>刺激伝導系（ペースメーカー）</td>
+        </tr>
+        <tr>
+          <td><span class="key">固有心筋</span></td>
+          <td>心房筋、心室筋</td>
+          <td>ポンプ機能（収縮）</td>
+        </tr>
+      </table>
+
+      <h3>心筋の活動電位の特性</h3>
+      <ul>
+        <li>活動電位の発生に<span class="highlight">Ca²⁺流入</span>が関わる（筋小胞体からのCa²⁺放出=Ca²⁺誘発性Ca²⁺放出）</li>
+        <li>Ca²⁺流入中は高い膜電位が維持される → <span class="key">プラトー相</span></li>
+      </ul>
+
+      <h3>刺激伝導系</h3>
+      <div class="flow-box">
+        <span class="key">洞房結節</span>（ペースメーカー）
+        <span class="arrow">→</span> 心房筋
+        <span class="arrow">→</span> <span class="key">房室結節</span>
+        <span class="arrow">→</span> <span class="key">His束</span>
+        <span class="arrow">→</span> 左脚・右脚
+        <span class="arrow">→</span> <span class="key">プルキンエ線維</span>
+        <span class="arrow">→</span> 心室筋
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">洞房結節の活動電位（ペースメーカー電位）</div>
+        <ul>
+          <li>一定の静止膜電位レベルをとらない</li>
+          <li>電位が<span class="highlight">−60mV</span>まで下がると、自発的に緩徐な上昇相に移行（緩徐脱分極＝歩調取り電位）</li>
+          <li>この自発的興奮がペースメーカーとして働く</li>
+        </ul>
+      </div>
+
+      <h3>心房筋・心室筋・プルキンエ線維の活動電位</h3>
+      <p>洞房・房室結節と異なり、立ち上がりの速い上昇相（Na⁺流入）の後、一定レベルで電位が部位により<span class="highlight">数10〜100ミリ秒</span>維持される（プラトー相：Ca²⁺流入による）</p>
+
+      <h3>心電図</h3>
+      <p>心臓の電気的興奮を体表面から記録する。通常は<span class="key">12誘導</span>を記録。</p>
+
+      <table>
+        <tr>
+          <th>誘導</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>双極肢誘導</td>
+          <td>I誘導（左手−右手）、II誘導（左足−右手）、III誘導（左足−左手）</td>
+        </tr>
+        <tr>
+          <td>単極子誘導</td>
+          <td>aVR（右手）、aVL（左手）、aVF（左足）</td>
+        </tr>
+        <tr>
+          <td>単極胸部誘導</td>
+          <td>V1〜V6（V1,V2:右室、V3,V4:心室中隔、V5,V6:左室）</td>
+        </tr>
+      </table>
+
+      <h3>心電図各波と心興奮の対応</h3>
+      <table>
+        <tr>
+          <th>波形</th>
+          <th>意味</th>
+        </tr>
+        <tr>
+          <td><span class="key">P波</span></td>
+          <td>心房が興奮している期間。振幅と波幅（継続時間）をみる</td>
+        </tr>
+        <tr>
+          <td><span class="key">QRS群</span></td>
+          <td>心室筋が興奮を始めてから、心室全体に興奮が広がっていく過程</td>
+        </tr>
+        <tr>
+          <td><span class="key">T波</span></td>
+          <td>心室筋が再分極していく過程。心室に異常があると逆転することも</td>
+        </tr>
+        <tr>
+          <td><span class="key">PQ間隔</span>（PR間隔）</td>
+          <td>房室間の興奮伝導時間。Q波がみられない誘導ではPR間隔</td>
+        </tr>
+        <tr>
+          <td><span class="key">ST部分</span></td>
+          <td>心室全体が興奮している期間。<span class="caution">虚血性心疾患ではこの部分に変化が現れる</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">QT間隔</span></td>
+          <td>心室全体の興奮の始まりから再分極終了までに対応する（心室興奮時間）</td>
+        </tr>
+        <tr>
+          <td><span class="key">PP間隔</span>（RR間隔）</td>
+          <td>心周期に対応する。心拍数（回/分）= 60 ÷ RR（PP）時間</td>
+        </tr>
+      </table>
+
+      <h3>心臓の機能</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>数値</th>
+        </tr>
+        <tr>
+          <td>安静時心拍数</td>
+          <td><span class="highlight">60〜70（男性）、65〜75（女性）</span>。新生児が最も高く加齢により低下</td>
+        </tr>
+        <tr>
+          <td>頻脈</td>
+          <td>安静時心拍数 &gt; 100</td>
+        </tr>
+        <tr>
+          <td>徐脈</td>
+          <td>安静時心拍数 &lt; 60</td>
+        </tr>
+        <tr>
+          <td>1回拍出量</td>
+          <td><span class="highlight">60〜80 mL</span>（1回の心拍動で心室から拍出される血液量）</td>
+        </tr>
+        <tr>
+          <td>心拍出量</td>
+          <td><span class="highlight">4.5〜5.5 L/分</span> = 1回拍出量 × 心拍数</td>
+        </tr>
+      </table>
+
+      <h3>心拍数の増減</h3>
+      <table>
+        <tr>
+          <th>要因</th>
+          <th>心拍数増加</th>
+          <th>心拍数減少</th>
+        </tr>
+        <tr>
+          <td>圧受容器反射</td>
+          <td>高圧受容器興奮の減弱、低圧受容器興奮の増加</td>
+          <td>高圧受容器興奮の増加</td>
+        </tr>
+        <tr>
+          <td>自律神経活動</td>
+          <td><span class="key">交感神経</span>の興奮（陽性変時作用）</td>
+          <td><span class="key">副交感神経</span>の興奮（陰性変時作用）</td>
+        </tr>
+        <tr>
+          <td>呼吸（幼児で特に）</td>
+          <td>吸息</td>
+          <td>呼息</td>
+        </tr>
+        <tr>
+          <td>疼痛</td>
+          <td>体幹部への強い疼痛</td>
+          <td>三叉神経支配領域の痛覚</td>
+        </tr>
+        <tr>
+          <td>ホルモン</td>
+          <td>アドレナリン、甲状腺ホルモン</td>
+          <td>ノルアドレナリン</td>
+        </tr>
+        <tr>
+          <td>身体活動・状態</td>
+          <td>運動時、発熱時</td>
+          <td>安静時</td>
+        </tr>
+        <tr>
+          <td>体位変化</td>
+          <td>起立時</td>
+          <td>立位から仰臥位への体位変化</td>
+        </tr>
+      </table>
+
+      <h2>II. 血液循環</h2>
+
+      <h3>血液循環路</h3>
+      <table>
+        <tr>
+          <th>循環</th>
+          <th>経路</th>
+        </tr>
+        <tr>
+          <td><span class="key">体循環</span>（大循環）</td>
+          <td>左心室 → 大動脈 → （組織）→ 毛細血管 → 上・下大静脈 → 右心房</td>
+        </tr>
+        <tr>
+          <td><span class="key">肺循環</span>（小循環）</td>
+          <td>右心室 → 肺動脈 → （肺）→ 毛細血管 → 肺静脈 → 左心房</td>
+        </tr>
+        <tr>
+          <td><span class="key">門脈系</span></td>
+          <td>毛細血管網の間に存在。肝門脈（消化管と肝臓）、下垂体門脈（視床下部と下垂体前葉間）</td>
+        </tr>
+      </table>
+
+      <h3>動脈血と静脈血</h3>
+      <p>肺を境として、血液はO₂を受け取りCO₂を排出するため、血液の性質が変わる。</p>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+          <th>流れる血管</th>
+        </tr>
+        <tr>
+          <td><span class="key">動脈血</span></td>
+          <td>O₂に富む（PO₂が高い）</td>
+          <td>体循環の<span class="highlight">動脈系</span>と<span class="highlight">肺静脈</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">静脈血</span></td>
+          <td>O₂が少なくCO₂が多い（PCO₂が高く、PO₂が低い）</td>
+          <td>体循環の<span class="highlight">静脈系</span>と<span class="highlight">肺動脈</span></td>
+        </tr>
+      </table>
+      <p class="note">※ <span class="caution">肺静脈には動脈血、肺動脈には静脈血が流れる</span>（混同注意）</p>
+
+      <h3>血管の種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>内径</th>
+          <th>壁厚</th>
+          <th>特徴</th>
+          <th>別名</th>
+        </tr>
+        <tr>
+          <td>大動脈</td>
+          <td>12 mm</td>
+          <td>2 mm</td>
+          <td>弾性線維、コラーゲン線維が豊富</td>
+          <td><span class="key">弾性血管</span></td>
+        </tr>
+        <tr>
+          <td>動脈</td>
+          <td>2 mm</td>
+          <td>1 mm</td>
+          <td>弾性線維は徐々に減少、平滑筋組織が多い</td>
+          <td>−</td>
+        </tr>
+        <tr>
+          <td>細動脈</td>
+          <td>15μm（平均）〜20μm</td>
+          <td>−</td>
+          <td>急に細くなる。平滑筋が多い（定義上は300μm径以下の動脈）</td>
+          <td><span class="key">抵抗血管</span></td>
+        </tr>
+        <tr>
+          <td>毛細血管</td>
+          <td>3μm</td>
+          <td>1μm</td>
+          <td>血管壁はほぼ内皮細胞のみから構成</td>
+          <td><span class="key">交換血管</span></td>
+        </tr>
+        <tr>
+          <td>細静脈</td>
+          <td>10μm</td>
+          <td>2μm</td>
+          <td>構成は毛細血管と同様だが、内皮細胞間の結合は堅固</td>
+          <td>−</td>
+        </tr>
+        <tr>
+          <td>静脈</td>
+          <td>2.5 mm</td>
+          <td>0.5 mm</td>
+          <td rowspan="2">コラーゲン線維、弾性線維、平滑筋よりなるが、動脈・大動脈に比べいずれも少なく血管壁は薄い</td>
+          <td rowspan="2"><span class="key">容量血管</span></td>
+        </tr>
+        <tr>
+          <td>大静脈</td>
+          <td>15 mm</td>
+          <td>1.5 mm</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">血管の機能的分類</div>
+        <ul>
+          <li><span class="key">弾性血管</span>（大動脈）：心収縮期に血液を貯留・膨張し、心拡張期に弾性により血液を末梢へ送り出す</li>
+          <li><span class="key">抵抗血管</span>（細動脈）：末梢血管抵抗のほとんどを担う。毛細血管への血流量調節</li>
+          <li><span class="key">交換血管</span>（毛細血管）：末梢組織液間と物質交換を行う</li>
+          <li><span class="key">容量血管</span>（静脈系）：動脈に比べ弾性が低い。血液を貯留する（全循環血液量の<span class="highlight">75%</span>程度は静脈系に存在）</li>
+        </ul>
+      </div>
+
+      <h3>血流の配分</h3>
+      <p>各臓器・器官・組織への血流量は一定ではなく、血液の需要の多寡により調節される。</p>
+      <table>
+        <tr>
+          <th>臓器</th>
+          <th>安静時</th>
+          <th>運動時</th>
+        </tr>
+        <tr>
+          <td>骨格筋</td>
+          <td>15%程度</td>
+          <td><span class="highlight">最大80%</span>の血流が集まる</td>
+        </tr>
+        <tr>
+          <td>肝臓</td>
+          <td><span class="highlight">最も血流量が多い</span></td>
+          <td>血流量の比率が著しく減少</td>
+        </tr>
+        <tr>
+          <td>腎臓</td>
+          <td><span class="highlight">単位重量あたりの血流量が最も多い</span></td>
+          <td>血流量の比率が著しく減少</td>
+        </tr>
+      </table>
+
+      <h2>III. 循環調節</h2>
+
+      <h3>循環器系の調節機構</h3>
+      <ul>
+        <li><span class="key">神経性調節</span>：自律神経系による調節（心収縮機能の調節、血管収縮状態の調節＝末梢血管抵抗の調節）</li>
+        <li><span class="key">液性調節</span>：ホルモンによる調節</li>
+        <li><span class="key">腎機能による体液量の調節</span>：血液量の調節</li>
+        <li><span class="key">局所調節機構</span>（局所因子）：全身の血圧には影響しないが、局所の血液供給量調節に重要</li>
+      </ul>
+
+      <h3>血管を収縮または拡張する要因</h3>
+      <table>
+        <tr>
+          <th>要因</th>
+          <th>収縮因子（血圧上昇）</th>
+          <th>拡張因子（血圧低下）</th>
+        </tr>
+        <tr>
+          <td>局所因子</td>
+          <td>局所温度の低下、自己調節（ずり応力など）<br>血小板由来：セロトニン<br>血管内皮細胞由来：エンドセリン、トロンボキサンA₂</td>
+          <td>代謝によるもの：PCO₂の増加、PO₂の減少、乳酸の増加、局所pHの低下、K⁺、アデノシン、局所温度の上昇<br>損傷・炎症などによるもの：サブスタンスP、ブラジキニン、ATP、ヒスタミン<br>血管内皮細胞由来：<span class="highlight">NO（一酸化窒素）</span></td>
+        </tr>
+        <tr>
+          <td>液性調節（ホルモン）</td>
+          <td>アドレナリン、ノルアドレナリン、アンジオテンシンII、バソプレシン（ADH）</td>
+          <td>心房性Na⁺利尿ペプチド（ANP）</td>
+        </tr>
+        <tr>
+          <td>神経活動</td>
+          <td>交感神経活動の亢進</td>
+          <td>交感神経活動の減弱</td>
+        </tr>
+      </table>
+
+      <h3>血圧の神経性調節</h3>
+      <table>
+        <tr>
+          <th>受容器</th>
+          <th>求心神経経路</th>
+          <th>中枢</th>
+          <th>遠心路</th>
+        </tr>
+        <tr>
+          <td>頸動脈洞（圧受容器）</td>
+          <td>舌咽神経</td>
+          <td rowspan="4"><span class="key">延髄（心臓血管中枢）</span><br>延髄孤束核<br>→吻側・尾側延髄腹外側部（交感神経経路）</td>
+          <td rowspan="4">迷走神経（副交感神経）<br>心臓促進神経（交感神経）<br>血管運動神経（交感神経）<br>副腎髄質（カテコールアミン分泌）</td>
+        </tr>
+        <tr>
+          <td>大動脈弓（圧受容器）</td>
+          <td>迷走神経</td>
+        </tr>
+        <tr>
+          <td>大動脈小体（化学受容器）</td>
+          <td>迷走神経</td>
+        </tr>
+        <tr>
+          <td>頸動脈小体（化学受容器）</td>
+          <td>舌咽神経</td>
+        </tr>
+        <tr>
+          <td>心肺部圧受容器（低圧受容器）</td>
+          <td>迷走神経</td>
+          <td>→疑核・迷走神経背側核（副交感神経経路）</td>
+          <td>下垂体後葉（バソプレシン）<br>腎臓（レニン-アンジオテンシン-アルドステロン系）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">圧受容器反射（動脈圧反射）</div>
+        <p><span class="key">血圧上昇時</span>：圧受容器の興奮（大動脈弓・頸動脈洞）→ 心臓血管中枢 →<br>
+        ①心臓迷走神経の興奮 → 血圧低下（心拍数の減少）<br>
+        ②心臓・血管・副腎髄質支配の交感神経の抑制 → 心拍数の減少・血管拡張・カテコールアミン分泌低下 → 血圧低下</p>
+        <p><span class="key">血圧低下時</span>：上記と逆の反応が生じ血圧上昇をもたらす</p>
+      </div>
+
+      <h3>心肺部圧受容器反射</h3>
+      <p>血液量の減少 → 低圧受容器の興奮減弱 → 心臓血管中枢</p>
+      <ul>
+        <li>①腎臓支配の交感神経興奮 → <span class="key">レニン-アンジオテンシン-アルドステロン系</span>の賦活化</li>
+        <li>②視床下部（室傍核・視索上核）の興奮 → <span class="key">バソプレシン</span>分泌の亢進 → 腎臓でのNa⁺および水の再吸収量増加 → 循環血液量の増加</li>
+      </ul>
+
+      <h3>化学受容器反射（大動脈小体と頸動脈小体）</h3>
+      <p>血中のPaCO₂（上昇）およびPaO₂（低下）を感知 → 化学受容器の興奮 → 情報は呼吸中枢と心臓血管中枢の両者に送られる</p>
+      <ul>
+        <li>①呼吸器応答：呼吸数と1回換気量の増加</li>
+        <li>②循環器応答：心機能の変化 = 心拍数と1回拍出量の増加</li>
+      </ul>
+
+      <p class="note">※本ページは教科書（パーフェクトマスター生理学・口腔生理学 p.25〜33）に基づいて作成。102回以降の直接関連過去問なし。</p>
+
+    </div>
+  </div>
+</body>
+</html>

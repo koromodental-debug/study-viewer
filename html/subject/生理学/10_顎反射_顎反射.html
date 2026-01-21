@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顎反射 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 顎反射</span>
+    <h1>顎反射</h1>
+    <div class="container">
+
+      <h2>I. 三叉神経感覚核群</h2>
+
+      <table>
+        <tr>
+          <th>感覚</th>
+          <th>一次ニューロン</th>
+          <th>入力先</th>
+          <th>関与する反射</th>
+        </tr>
+        <tr>
+          <td>触・圧覚</td>
+          <td>三叉神経節</td>
+          <td>三叉神経主感覚核、三叉神経脊髄路核（吻側・中位亜核）</td>
+          <td>持続性歯根膜咬筋反射</td>
+        </tr>
+        <tr>
+          <td>痛覚</td>
+          <td>三叉神経節</td>
+          <td>三叉神経脊髄路核（尾側亜核）</td>
+          <td><span class="key">開口反射</span></td>
+        </tr>
+        <tr>
+          <td>温度覚</td>
+          <td>三叉神経節</td>
+          <td>三叉神経脊髄路核（尾側亜核）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><span class="key">固有感覚</span></td>
+          <td><span class="highlight">三叉神経中脳路核</span></td>
+          <td>三叉神経運動核</td>
+          <td><span class="key">下顎張反射</span>、一過性歯根膜咬筋反射</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">三叉神経中脳路核の特徴</div>
+        <ul>
+          <li>歯根膜と<span class="highlight">咀嚼筋筋紡錘</span>からの固有感覚を伝える</li>
+          <li>一次ニューロンの細胞体が<span class="caution">脳幹内にある</span>（例外的）</li>
+          <li>下顎張反射、一過性歯根膜咬筋反射に関与</li>
+        </ul>
+      </div>
+
+      <h2>II. 下顎反射の種類と役割</h2>
+
+      <table>
+        <tr>
+          <th>反射</th>
+          <th>役割</th>
+          <th>現れる運動</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">下顎張反射</span></td>
+          <td>顎位を常に一定に保つ。下顎が下がった場合、顎を挙上させて閉口</td>
+          <td>閉口筋の緊張増加<br>開口した場合は閉口運動</td>
+        </tr>
+        <tr>
+          <td><span class="key">脱負荷反射</span></td>
+          <td>硬いものを噛み砕いた瞬間に脱力して、上下歯の衝突・口腔内損傷を避ける</td>
+          <td>強い閉口運動中に閉口運動を停止</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">開口反射</span></td>
+          <td>口腔内・周辺に侵害刺激が加わったときに、有害な刺激から逃れ、口腔を防御</td>
+          <td>開口筋収縮 + 閉口筋弛緩<br>→ 開口運動</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯根膜咬筋反射</span></td>
+          <td>咬合・咀嚼時に咬合力・咀嚼力を調節。食物の固さに応じた咀嚼の調節</td>
+          <td>閉口筋の収縮力増強<br>閉口運動の強度増大</td>
+        </tr>
+      </table>
+
+      <h2>III. 下顎反射の反射弓【重要】</h2>
+
+      <h3>1. 下顎張反射（伸張反射）</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>誘発刺激</td>
+          <td>下顎を開口させる方向に働く力（閉口筋の受動的伸張）</td>
+        </tr>
+        <tr>
+          <td>受容器</td>
+          <td><span class="highlight">筋紡錘</span>（閉口筋内）</td>
+        </tr>
+        <tr>
+          <td>求心路</td>
+          <td><span class="highlight">Ia群線維</span></td>
+        </tr>
+        <tr>
+          <td>中枢</td>
+          <td><span class="highlight">三叉神経中脳路核</span></td>
+        </tr>
+        <tr>
+          <td>遠心路</td>
+          <td>Aα線維（α運動ニューロン）</td>
+        </tr>
+        <tr>
+          <td>効果器</td>
+          <td>閉口筋（収縮）</td>
+        </tr>
+        <tr>
+          <td>シナプス数</td>
+          <td><span class="highlight">単シナプス反射</span></td>
+        </tr>
+      </table>
+
+      <p class="note">※膝蓋腱反射と同じ反射機構（伸張反射）</p>
+
+      <h3>2. 開口反射</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>誘発刺激</td>
+          <td>三叉神経支配領域（特に口腔周辺）への<span class="key">侵害刺激</span>、強い機械刺激</td>
+        </tr>
+        <tr>
+          <td>受容器</td>
+          <td>侵害受容器（自由神経終末）</td>
+        </tr>
+        <tr>
+          <td>求心路</td>
+          <td>主に<span class="key">Aδ線維</span></td>
+        </tr>
+        <tr>
+          <td>中枢</td>
+          <td>三叉神経節 → <span class="key">三叉神経脊髄路核</span></td>
+        </tr>
+        <tr>
+          <td>遠心路</td>
+          <td>興奮性介在ニューロン → α運動ニューロン → 開口筋（収縮）<br>抑制性介在ニューロン → 三叉神経上核 → 閉口筋（弛緩）</td>
+        </tr>
+        <tr>
+          <td>シナプス数</td>
+          <td><span class="highlight">多シナプス反射</span></td>
+        </tr>
+      </table>
+
+      <h3>3. 一過性歯根膜咬筋反射</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>誘発刺激</td>
+          <td>歯を叩くなど<span class="key">一過性</span>の歯への刺激</td>
+        </tr>
+        <tr>
+          <td>受容器</td>
+          <td>歯根膜機械受容器（固有受容器）</td>
+        </tr>
+        <tr>
+          <td>中枢</td>
+          <td><span class="highlight">三叉神経中脳路核</span></td>
+        </tr>
+        <tr>
+          <td>シナプス数</td>
+          <td><span class="highlight">単シナプス反射</span></td>
+        </tr>
+      </table>
+
+      <h3>4. 持続性歯根膜咬筋反射</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>誘発刺激</td>
+          <td>歯への<span class="key">持続性</span>の触圧刺激</td>
+        </tr>
+        <tr>
+          <td>受容器</td>
+          <td>歯根膜機械受容器</td>
+        </tr>
+        <tr>
+          <td>求心路</td>
+          <td>Aβ線維</td>
+        </tr>
+        <tr>
+          <td>中枢</td>
+          <td>三叉神経節 → <span class="key">三叉神経主感覚核</span></td>
+        </tr>
+        <tr>
+          <td>シナプス数</td>
+          <td><span class="highlight">多シナプス反射</span></td>
+        </tr>
+      </table>
+
+      <h2>IV. 反射の比較まとめ</h2>
+
+      <table>
+        <tr>
+          <th>反射</th>
+          <th>受容器</th>
+          <th>中枢</th>
+          <th>シナプス</th>
+        </tr>
+        <tr>
+          <td><span class="key">下顎張反射</span></td>
+          <td>筋紡錘</td>
+          <td>三叉神経中脳路核</td>
+          <td>単シナプス</td>
+        </tr>
+        <tr>
+          <td>脱負荷反射</td>
+          <td>筋紡錘</td>
+          <td>三叉神経中脳路核</td>
+          <td>単シナプス</td>
+        </tr>
+        <tr>
+          <td><span class="key">開口反射</span></td>
+          <td>侵害受容器</td>
+          <td>三叉神経脊髄路核</td>
+          <td>多シナプス</td>
+        </tr>
+        <tr>
+          <td>一過性歯根膜咬筋反射</td>
+          <td>歯根膜（固有受容器）</td>
+          <td>三叉神経中脳路核</td>
+          <td>単シナプス</td>
+        </tr>
+        <tr>
+          <td>持続性歯根膜咬筋反射</td>
+          <td>歯根膜</td>
+          <td>三叉神経主感覚核</td>
+          <td>多シナプス</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">単シナプス反射 vs 多シナプス反射</div>
+        <ul>
+          <li><span class="highlight">単シナプス反射</span>：介在ニューロンを介さない。反応が速い（伸張反射など）</li>
+          <li><span class="highlight">多シナプス反射</span>：介在ニューロンを介する。複雑な調節が可能</li>
+          <li>三叉神経中脳路核経由の反射は<span class="key">単シナプス反射</span></li>
+        </ul>
+      </div>
+
+      <h2>V. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">110C74</div>
+        <p>骨格筋、筋紡錘およびその神経支配の模式図を示す。<br>
+        アとイのニューロン活動によって生じるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 開口反射<br>
+          b 屈曲反射<br>
+          c 下顎張反射<br>
+          d 膝蓋腱反射<br>
+          e 折りたたみナイフ反射
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】問題文の「ア」はIa群線維（筋紡錘からの求心性線維）、「イ」はα運動ニューロン（遠心性線維）を示している。</p>
+        <ul>
+          <li>これは<span class="highlight">伸張反射</span>（単シナプス反射）の回路である</li>
+          <li>c ○ <span class="highlight">下顎張反射</span>：咀嚼筋筋紡錘 → Ia群線維 → 三叉神経中脳路核 → α運動ニューロン → 閉口筋</li>
+          <li>d ○ <span class="highlight">膝蓋腱反射</span>：大腿四頭筋筋紡錘 → Ia群線維 → 脊髄 → α運動ニューロン → 大腿四頭筋</li>
+          <li>a × 開口反射：侵害受容器（自由神経終末）からの多シナプス反射</li>
+          <li>b × 屈曲反射：侵害刺激による多シナプス反射</li>
+          <li>e × 折りたたみナイフ反射：腱紡錘（Golgi腱器官）からのIb抑制</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

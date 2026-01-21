@@ -5336,9 +5336,11 @@ const FlashcardModule = (function() {
       FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
     }
 
+    // topicIdを保存してからモーダルを閉じる（closeCardEditModalでeditStateがクリアされるため）
+    const topicId = editState.cardTopicId;
     closeCardEditModal();
-    saveDeckCardListScrollPos(editState.cardTopicId);
-    renderDeckCardList(editState.cardTopicId);
+    saveDeckCardListScrollPos(topicId);
+    renderDeckCardList(topicId);
     showToast('カードを更新しました');
   }
 

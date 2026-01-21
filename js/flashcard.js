@@ -2550,11 +2550,12 @@ const FlashcardModule = (function() {
       const key = `${topicId}:${idx}`;
       const cardProgress = state.progress[key];
       const cardStatus = cardProgress ? cardProgress.status : 'new';
-      const isFavorite = cardProgress && cardProgress.favorite;
       const isExpanded = state.deckCardListExpandedKeys && state.deckCardListExpandedKeys.has(key);
 
       // 元のインデックス（カスタマイズ用）
       const originalIndex = card.originalIndex !== undefined ? card.originalIndex : idx;
+      // お気に入り状態（FavoritesManagerを使用）
+      const isFavorite = FavoritesManager.isFavoriteByParams('qa', topicId, originalIndex);
 
       // htmlPathを決定（カード単位 or トピック単位）
       const cardHtmlPath = card.htmlPath || (topic && topic.htmlPath);
@@ -2587,7 +2588,7 @@ const FlashcardModule = (function() {
             <div class="card-search-meta">${card.section ? escapeHtml(card.section) : ''}</div>
             <div class="card-search-actions">
               ${moreMenuBtn}
-              <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(key)}" title="お気に入り">
+              <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(key)}" data-topic-id="${escapeHtml(topicId)}" data-original-index="${originalIndex}" data-question="${escapeHtml(card.question)}" data-answer="${escapeHtml(card.answer)}" data-section="${card.section ? escapeHtml(card.section) : ''}" title="お気に入り">
                 <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                 </svg>
@@ -2715,26 +2716,29 @@ const FlashcardModule = (function() {
       });
     });
 
-    // お気に入りボタン
+    // お気に入りボタン（FavoritesManagerを使用）
     const favBtns = container.querySelectorAll('.deck-card-list-view .card-search-favorite-btn');
     favBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const key = btn.dataset.key;
-
-        const existing = state.progress[key] || {};
-        const newFavorite = !existing.favorite;
-        state.progress[key] = {
-          ...existing,
-          favorite: newFavorite
+        const favTopicId = btn.dataset.topicId;
+        const originalIndex = parseInt(btn.dataset.originalIndex);
+        const content = {
+          question: btn.dataset.question,
+          answer: btn.dataset.answer,
+          section: btn.dataset.section || '',
+          topicTitle: topic?.title || favTopicId,
+          subject: topic?.subject || ''
         };
-        saveProgress();
+
+        const newFavorite = FavoritesManager.toggle('qa', favTopicId, originalIndex, content);
 
         btn.classList.toggle('active', newFavorite);
         const svg = btn.querySelector('svg');
         if (svg) {
           svg.setAttribute('fill', newFavorite ? 'currentColor' : 'none');
         }
+        showToast(newFavorite ? 'お気に入りに追加' : 'お気に入りから削除', 1000);
       });
     });
 

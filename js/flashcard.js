@@ -72,7 +72,11 @@ const FlashcardModule = (function() {
     lastSelectedTopicId: localStorage.getItem('flashcard-last-topic') || null,
     // 選択問題用
     selectedChoices: new Set(),  // 選択中の選択肢
-    choiceAnswered: false        // 解答済みフラグ
+    choiceAnswered: false,       // 解答済みフラグ
+    // カード一覧のスクロール位置（topicId -> scrollTop）
+    deckCardListScrollPos: {},
+    // デッキ一覧のスクロール位置
+    deckListScrollPos: 0
   };
 
   // DOM要素
@@ -822,21 +826,27 @@ const FlashcardModule = (function() {
     // イベントバインド
     bindDeckListEvents();
 
-    // 最後に選択したトピックにスクロール
-    scrollToLastSelectedTopic();
+    // スクロール位置を復元（演習から戻った場合はハイライト付き、一覧から戻った場合は位置のみ）
+    restoreDeckListScroll();
   }
 
-  function scrollToLastSelectedTopic() {
-    if (!state.lastSelectedTopicId) return;
-
-    // 少し遅延させてDOM更新を待つ
+  function restoreDeckListScroll() {
     requestAnimationFrame(() => {
-      const topicEl = container.querySelector(`.deck-topic[data-topic-id="${state.lastSelectedTopicId}"]`);
-      if (topicEl) {
-        topicEl.scrollIntoView({ block: 'center', behavior: 'instant' });
-        // 選択状態を視覚的にハイライト（一時的）
-        topicEl.classList.add('last-selected');
-        setTimeout(() => topicEl.classList.remove('last-selected'), 1500);
+      // 演習から戻った場合：トピックにスクロールしてハイライト
+      if (state.lastSelectedTopicId) {
+        const topicEl = container.querySelector(`.deck-topic[data-topic-id="${state.lastSelectedTopicId}"]`);
+        if (topicEl) {
+          topicEl.scrollIntoView({ block: 'center', behavior: 'instant' });
+          topicEl.classList.add('last-selected');
+          setTimeout(() => topicEl.classList.remove('last-selected'), 1500);
+        }
+        // ハイライト後にクリア
+        state.lastSelectedTopicId = null;
+        localStorage.removeItem('flashcard-last-topic');
+      }
+      // カード一覧から戻った場合：保存した位置に復元
+      else if (state.deckListScrollPos > 0) {
+        container.scrollTop = state.deckListScrollPos;
       }
     });
   }
@@ -1353,6 +1363,8 @@ const FlashcardModule = (function() {
     listBtns.forEach(btn => {
       btn.addEventListener('click', async (e) => {
         e.stopPropagation();
+        // デッキ一覧のスクロール位置を保存
+        state.deckListScrollPos = container.scrollTop;
         const topicId = btn.dataset.topicId;
         await renderDeckCardList(topicId);
       });
@@ -1378,6 +1390,8 @@ const FlashcardModule = (function() {
     kokoshikaListBtns.forEach(btn => {
       btn.addEventListener('click', async (e) => {
         e.stopPropagation();
+        // デッキ一覧のスクロール位置を保存
+        state.deckListScrollPos = container.scrollTop;
         const topicId = btn.dataset.topicId;
         await renderDeckCardList(topicId);
       });
@@ -2649,6 +2663,18 @@ const FlashcardModule = (function() {
 
     // イベントバインド
     bindDeckCardListEvents(topicId);
+
+    // スクロール位置を復元
+    if (state.deckCardListScrollPos[topicId] !== undefined) {
+      requestAnimationFrame(() => {
+        container.scrollTop = state.deckCardListScrollPos[topicId];
+      });
+    }
+  }
+
+  // カード一覧のスクロール位置を保存
+  function saveDeckCardListScrollPos(topicId) {
+    state.deckCardListScrollPos[topicId] = container.scrollTop;
   }
 
   // デッキカード一覧のイベントバインド
@@ -2657,6 +2683,8 @@ const FlashcardModule = (function() {
     const backBtn = document.getElementById('deck-card-list-back');
     if (backBtn) {
       backBtn.addEventListener('click', () => {
+        // スクロール位置を保存してから戻る
+        saveDeckCardListScrollPos(topicId);
         state.deckCardListExpandedKeys = new Set();
         // タブバーを再表示
         const tabbar = document.querySelector('.floating-tabbar');
@@ -2669,6 +2697,8 @@ const FlashcardModule = (function() {
     const startBtn = document.getElementById('deck-card-list-start');
     if (startBtn) {
       startBtn.addEventListener('click', async () => {
+        // スクロール位置を保存してから演習開始
+        saveDeckCardListScrollPos(topicId);
         state.deckCardListExpandedKeys = new Set();
         state.lastSelectedTopicId = topicId;
         localStorage.setItem('flashcard-last-topic', topicId);
@@ -2687,6 +2717,7 @@ const FlashcardModule = (function() {
         } else {
           state.deckCardListExpandedKeys.add(key);
         }
+        saveDeckCardListScrollPos(topicId);
         renderDeckCardList(topicId);
       });
     });
@@ -2774,6 +2805,7 @@ const FlashcardModule = (function() {
           () => {
             if (resetTopicCustomization(topicId)) {
               showToast('編集をリセットしました');
+              saveDeckCardListScrollPos(topicId);
               renderDeckCardList(topicId);
             }
           }
@@ -5304,6 +5336,7 @@ const FlashcardModule = (function() {
     }
 
     closeCardEditModal();
+    saveDeckCardListScrollPos(editState.cardTopicId);
     renderDeckCardList(editState.cardTopicId);
     showToast('カードを更新しました');
   }
@@ -5378,6 +5411,7 @@ const FlashcardModule = (function() {
 
     const savedTopicId = editState.cardTopicId;
     closeCardEditModal();
+    saveDeckCardListScrollPos(savedTopicId);
     renderDeckCardList(savedTopicId);
     showToast('カードを更新しました');
   }
@@ -5424,6 +5458,7 @@ const FlashcardModule = (function() {
         }
 
         saveTopicCustomization(topicId, customization);
+        saveDeckCardListScrollPos(topicId);
         renderDeckCardList(topicId);
         showToast('カードを削除しました');
       }
@@ -5523,6 +5558,7 @@ const FlashcardModule = (function() {
           FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
         }
 
+        saveDeckCardListScrollPos(topicId);
         renderDeckCardList(topicId);
         showToast('カードを削除しました');
       },

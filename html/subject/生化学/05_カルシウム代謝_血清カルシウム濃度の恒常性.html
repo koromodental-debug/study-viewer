@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>血清カルシウム濃度の恒常性 - 生化学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生化学 / カルシウム代謝</span>
+    <h1>血清カルシウム濃度の恒常性</h1>
+    <div class="container">
+
+      <h2>I. 血清カルシウム濃度の恒常性</h2>
+      <p>血清カルシウム濃度は<span class="highlight">約10 mg/dL</span>に維持されている。</p>
+
+      <h3>カルシウム代謝調節器官</h3>
+      <table>
+        <tr><th>器官</th><th>役割</th></tr>
+        <tr><td class="key">十二指腸</td><td>取り込み口（カルシウム吸収）</td></tr>
+        <tr><td class="key">骨</td><td>貯蔵庫（骨形成・骨吸収）</td></tr>
+        <tr><td class="key">腎臓</td><td>排泄口（尿中排泄・再吸収）</td></tr>
+      </table>
+
+      <h3>カルシウム調節ホルモンの標的器官</h3>
+      <table>
+        <tr><th>ホルモン</th><th>十二指腸</th><th>骨</th><th>腎臓</th></tr>
+        <tr><td class="key">活性型ビタミンD</td><td>●</td><td>●</td><td>●</td></tr>
+        <tr><td class="key">PTH（副甲状腺ホルモン）</td><td></td><td>●</td><td>●</td></tr>
+        <tr><td class="key">カルシトニン</td><td></td><td>●</td><td></td></tr>
+      </table>
+
+      <h2>II. カルシトニン</h2>
+      <p>32個のアミノ酸からなるペプチドホルモン。<span class="highlight">血清Ca²⁺を低下</span>させる<span class="caution">唯一</span>のホルモンである。</p>
+
+      <h3>カルシトニンの特徴</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>分泌部位</td><td><span class="highlight">甲状腺C細胞</span>（傍濾胞細胞）</td></tr>
+        <tr><td>分泌刺激</td><td>血清Ca²⁺上昇</td></tr>
+        <tr><td>標的細胞</td><td><span class="highlight">破骨細胞</span>（直接作用）</td></tr>
+        <tr><td>作用</td><td>骨吸収抑制 → 血清Ca²⁺<span class="caution">低下</span></td></tr>
+      </table>
+
+      <h2>III. 副甲状腺ホルモン（PTH）</h2>
+      <p>84個のアミノ酸からなるペプチドホルモン。<span class="highlight">血清Ca²⁺を上昇</span>させる。</p>
+
+      <h3>PTHの特徴</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>別名</td><td>上皮小体ホルモン</td></tr>
+        <tr><td>分泌部位</td><td><span class="highlight">副甲状腺</span>（甲状腺背面に4個）</td></tr>
+        <tr><td>分泌刺激</td><td>血清Ca²⁺低下</td></tr>
+        <tr><td>標的器官</td><td>骨、腎臓</td></tr>
+      </table>
+
+      <h3>PTHの腎臓での作用</h3>
+      <div class="point-box">
+        <div class="point-box-title">PTHの腎臓での3つの作用</div>
+        <ul>
+          <li><span class="highlight">ビタミンDの活性化促進</span>（1α-水酸化酵素活性化）</li>
+          <li><span class="key">Ca²⁺再吸収促進</span> → 血清Ca²⁺上昇</li>
+          <li><span class="key">リン酸再吸収抑制</span> → 血中リン濃度低下</li>
+        </ul>
+      </div>
+
+      <h3>PTHの骨での作用</h3>
+      <ul>
+        <li><span class="key">骨芽細胞</span>を介してRANKL発現誘導 → 破骨細胞活性化 → 骨吸収促進</li>
+        <li>骨芽細胞に直接作用 → 骨形成促進</li>
+      </ul>
+      <p class="note">PTHは破骨細胞に直接作用しない（骨芽細胞を介する）</p>
+
+      <h2>IV. 活性型ビタミンD</h2>
+
+      <h3>活性型ビタミンDの生成経路</h3>
+      <table>
+        <tr><th>段階</th><th>物質</th><th>場所/酵素</th></tr>
+        <tr><td>1</td><td>プロビタミンD（7-デヒドロコレステロール）</td><td>皮膚で紫外線照射</td></tr>
+        <tr><td>↓</td><td></td><td></td></tr>
+        <tr><td>2</td><td>ビタミンD₃</td><td>食事からも摂取可能</td></tr>
+        <tr><td>↓</td><td></td><td><span class="highlight">肝臓</span>（25-水酸化酵素）</td></tr>
+        <tr><td>3</td><td>25(OH)D₃</td><td></td></tr>
+        <tr><td>↓</td><td></td><td><span class="highlight">腎臓</span>（1α-水酸化酵素）</td></tr>
+        <tr><td>4</td><td class="highlight">1α,25(OH)₂D₃（活性型）</td><td></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">活性型ビタミンD生成に関与する2つの酵素</div>
+        <ul>
+          <li><span class="highlight">25-水酸化酵素</span>：<span class="highlight">肝臓</span></li>
+          <li><span class="highlight">1α-水酸化酵素</span>：<span class="highlight">腎臓</span>（PTHにより活性化）</li>
+        </ul>
+      </div>
+
+      <h3>活性型ビタミンDの作用</h3>
+      <table>
+        <tr><th>標的器官</th><th>作用</th></tr>
+        <tr><td>小腸（十二指腸）</td><td>カルシウム吸収促進</td></tr>
+        <tr><td>骨</td><td>骨芽細胞を介して骨吸収促進、骨基質形成促進</td></tr>
+        <tr><td>副甲状腺</td><td>PTH分泌抑制（フィードバック）</td></tr>
+      </table>
+
+      <h2>V. 3つの調節因子の比較</h2>
+
+      <table>
+        <tr><th>項目</th><th>カルシトニン</th><th>PTH</th><th>活性型ビタミンD</th></tr>
+        <tr><td>分泌部位</td><td class="highlight">甲状腺C細胞</td><td class="highlight">副甲状腺</td><td>腎臓で活性化</td></tr>
+        <tr><td>血清Ca²⁺への作用</td><td class="caution">低下</td><td class="highlight">上昇</td><td class="highlight">上昇</td></tr>
+        <tr><td>骨への作用</td><td>骨吸収抑制</td><td>骨吸収促進</td><td>骨吸収促進</td></tr>
+        <tr><td>破骨細胞への作用</td><td class="highlight">直接作用</td><td class="caution">間接（骨芽細胞経由）</td><td class="caution">間接（骨芽細胞経由）</td></tr>
+      </table>
+
+      <h2>VI. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B85</div>
+        <p>血中Ca²⁺を減少させるホルモンを分泌するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 甲状腺<br>
+          b 副腎皮質<br>
+          c 副腎髄質<br>
+          d 副甲状腺<br>
+          e 下垂体後葉
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】甲状腺C細胞から分泌されるカルシトニンは、血中Ca²⁺を<span class="highlight">減少</span>させる唯一のホルモンである。</p>
+        <ul>
+          <li>a ○ 甲状腺：<span class="highlight">カルシトニン</span>（C細胞）→ 血中Ca²⁺減少</li>
+          <li>b × 副腎皮質：コルチゾール、アルドステロン</li>
+          <li>c × 副腎髄質：アドレナリン、ノルアドレナリン</li>
+          <li>d × 副甲状腺：PTH → 血中Ca²⁺<span class="caution">上昇</span></li>
+          <li>e × 下垂体後葉：バソプレシン、オキシトシン</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A50</div>
+        <p>副甲状腺ホルモンの作用はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 抗利尿<br>
+          b 血糖降下<br>
+          c 子宮収縮<br>
+          d 血清Ca値上昇<br>
+          e エネルギー代謝促進
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】PTH（副甲状腺ホルモン）は骨と腎臓に作用し、血清Ca²⁺を上昇させる。</p>
+        <ul>
+          <li>a × 抗利尿：バソプレシン（ADH）</li>
+          <li>b × 血糖降下：インスリン</li>
+          <li>c × 子宮収縮：オキシトシン</li>
+          <li>d ○ 血清Ca値上昇：<span class="highlight">PTH</span></li>
+          <li>e × エネルギー代謝促進：甲状腺ホルモン（サイロキシン）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A38</div>
+        <p>活性型ビタミンD₃の生成に関与するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 骨<br>
+          b 肝臓<br>
+          c 腎臓<br>
+          d 唾液腺<br>
+          e 副腎皮質
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】活性型ビタミンD₃は<span class="highlight">肝臓</span>（25-水酸化）と<span class="highlight">腎臓</span>（1α-水酸化）の2段階で生成される。</p>
+        <ul>
+          <li>a × 骨：活性型ビタミンDの標的器官（生成には関与しない）</li>
+          <li>b ○ 肝臓：<span class="highlight">25-水酸化酵素</span></li>
+          <li>c ○ 腎臓：<span class="highlight">1α-水酸化酵素</span></li>
+          <li>d × 唾液腺：関与しない</li>
+          <li>e × 副腎皮質：コルチゾール、アルドステロン産生</li>
+        </ul>
+      </div>
+
+      <h2>VII. まとめ</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">覚えるべきポイント</div>
+        <ul>
+          <li>血清Ca²⁺<span class="caution">低下</span>：<span class="highlight">カルシトニン</span>（甲状腺C細胞）のみ</li>
+          <li>血清Ca²⁺<span class="highlight">上昇</span>：PTH、活性型ビタミンD</li>
+          <li>破骨細胞に<span class="highlight">直接作用</span>：カルシトニン、RANKL</li>
+          <li>活性型ビタミンD生成：<span class="highlight">肝臓</span>（25-水酸化）→<span class="highlight">腎臓</span>（1α-水酸化）</li>
+        </ul>
+      </div>
+
+      <h3>ひっかけポイント</h3>
+      <table>
+        <tr><th>誤り</th><th>正しい内容</th></tr>
+        <tr><td>PTHは破骨細胞に直接作用</td><td class="caution">骨芽細胞を介して作用</td></tr>
+        <tr><td>PTHは血清Caを低下</td><td class="caution">血清Caを上昇</td></tr>
+        <tr><td>活性型ビタミンDは骨で生成</td><td class="caution">肝臓と腎臓で生成</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

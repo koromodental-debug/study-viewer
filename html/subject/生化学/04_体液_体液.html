@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>体液 - 生化学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生化学 / 体液</span>
+    <h1>体液</h1>
+    <div class="container">
+
+      <h2>I. 体液の区分と組成</h2>
+
+      <h3>体液量</h3>
+      <ul>
+        <li>成人男性：体重の<span class="highlight">60%</span>（女性は脂肪が多く55%）</li>
+        <li>新生児：75〜80%、乳児：70%、高齢者：50〜55%</li>
+      </ul>
+
+      <h3>体液の区分</h3>
+      <table>
+        <tr><th>区分</th><th>体重比</th><th>割合</th></tr>
+        <tr><td class="key">細胞内液</td><td><span class="highlight">40%</span></td><td>全体液量の2/3</td></tr>
+        <tr><td class="key">細胞外液</td><td><span class="highlight">20%</span></td><td>全体液量の1/3</td></tr>
+        <tr><td>　├ 間質液</td><td>15%</td><td>細胞外液の3/4</td></tr>
+        <tr><td>　└ 血漿</td><td>5%</td><td>細胞外液の1/4</td></tr>
+      </table>
+
+      <h3>電解質組成の特徴</h3>
+      <table>
+        <tr><th>区分</th><th>主な陽イオン</th><th>主な陰イオン</th></tr>
+        <tr><td class="key">細胞外液</td><td><span class="highlight">Na⁺</span>（約140 mEq/L）</td><td>Cl⁻、HCO₃⁻</td></tr>
+        <tr><td class="key">細胞内液</td><td><span class="highlight">K⁺</span>（約140 mEq/L）</td><td>リン酸、タンパク質</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <ul>
+          <li>細胞<span class="highlight">外</span>液 = <span class="highlight">Na</span>⁺（ナトリウムは「外」向き）</li>
+          <li>細胞<span class="highlight">内</span>液 = <span class="highlight">K</span>⁺（カリウムは「内」向き）</li>
+        </ul>
+      </div>
+
+      <h2>II. 血液の成分</h2>
+
+      <h3>血液の組成</h3>
+      <table>
+        <tr><th>成分</th><th>割合</th><th>内容</th></tr>
+        <tr><td class="key">血球（細胞成分）</td><td>約45%</td><td>赤血球（90%以上）、白血球、血小板</td></tr>
+        <tr><td class="key">血漿（液性成分）</td><td>約55%</td><td>水、タンパク質、電解質など</td></tr>
+      </table>
+
+      <h3>血漿タンパク質</h3>
+      <p>血漿タンパク質は電気泳動で分離でき、陽極側から<span class="key">アルブミン</span>、α₁-グロブリン、α₂-グロブリン、β-グロブリン、<span class="key">γ-グロブリン</span>の順に泳動される。</p>
+
+      <table>
+        <tr><th>タンパク質</th><th>特徴</th><th>機能</th></tr>
+        <tr><td class="highlight">アルブミン</td><td>最も多い、最も速く泳動</td><td>膠質浸透圧維持、物質運搬</td></tr>
+        <tr><td>γ-グロブリン</td><td>最も遅く泳動</td><td>免疫グロブリン（抗体）</td></tr>
+        <tr><td>フィブリノゲン</td><td>血漿に含まれる</td><td>血液凝固（フィブリンの前駆体）</td></tr>
+      </table>
+      <p class="note">血清 = 血漿 − フィブリノゲン（凝固因子を除いたもの）</p>
+
+      <h2>III. レニン-アンジオテンシン-アルドステロン系</h2>
+
+      <p>体液量・血圧が低下すると、腎臓からレニンが分泌され、血圧を上昇させる。</p>
+
+      <h3>レニン-アンジオテンシン系の流れ</h3>
+      <table>
+        <tr><th>段階</th><th>物質</th><th>酵素/産生部位</th></tr>
+        <tr><td>1</td><td class="key">アンジオテンシノゲン</td><td>肝臓で産生</td></tr>
+        <tr><td>↓</td><td></td><td><span class="highlight">レニン</span>（腎臓・傍糸球体細胞）</td></tr>
+        <tr><td>2</td><td class="key">アンジオテンシンI</td><td></td></tr>
+        <tr><td>↓</td><td></td><td>ACE（アンジオテンシン変換酵素、肺に多い）</td></tr>
+        <tr><td>3</td><td class="key">アンジオテンシンII</td><td>血管収縮、アルドステロン分泌促進</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">アンジオテンシンIIの作用</div>
+        <ul>
+          <li><span class="key">血管収縮</span> → 血圧上昇</li>
+          <li><span class="key">アルドステロン分泌促進</span> → Na⁺再吸収 → 体液量増加</li>
+          <li><span class="key">バソプレシン分泌促進</span> → 水再吸収 → 体液量増加</li>
+        </ul>
+      </div>
+
+      <h2>IV. 体液調節に関わるホルモン</h2>
+
+      <h3>主なホルモンと作用</h3>
+      <table>
+        <tr><th>ホルモン</th><th>産生部位</th><th>作用</th></tr>
+        <tr><td class="highlight">バソプレシン（ADH）</td><td>視床下部→下垂体後葉</td><td>水の再吸収促進 → 尿量減少</td></tr>
+        <tr><td class="highlight">アルドステロン</td><td>副腎皮質</td><td>Na⁺再吸収促進 → 体液量増加</td></tr>
+        <tr><td class="highlight">ANP（心房性Na利尿ペプチド）</td><td>心房</td><td>Na⁺排泄促進 → 体液量減少</td></tr>
+      </table>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114B47</div>
+        <p>アンジオテンシノゲンに作用してアンジオテンシンIを産生するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a レニン<br>
+          b オキシトシン<br>
+          c コルチゾール<br>
+          d サイロキシン<br>
+          e コレシストキニン
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】レニンは腎臓の傍糸球体細胞から分泌され、肝臓で産生されたアンジオテンシノゲンをアンジオテンシンIに変換する。</p>
+        <ul>
+          <li>a ○ レニン：アンジオテンシノゲン → アンジオテンシンI</li>
+          <li>b × オキシトシン：子宮収縮、射乳反射</li>
+          <li>c × コルチゾール：副腎皮質ホルモン、糖新生促進</li>
+          <li>d × サイロキシン：甲状腺ホルモン、代謝亢進</li>
+          <li>e × コレシストキニン：胆嚢収縮、膵酵素分泌促進</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C92</div>
+        <p>血漿のタンパク分画を検査した際の電気泳動像と濃度パターン（別冊No.7）を別に示す。矢印で示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アミラーゼ<br>
+          b アルブミン<br>
+          c コラーゲン<br>
+          d ヘモグロビン<br>
+          e γ-グロブリン
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】血漿タンパク質の電気泳動で、最も陽極側（＋側）に泳動され、最も量が多いのがアルブミンである。図では最も高いピークを示す。</p>
+        <ul>
+          <li>a × アミラーゼ：消化酵素（唾液・膵液）</li>
+          <li>b ○ アルブミン：血漿タンパク質で<span class="highlight">最多</span>、電気泳動で<span class="highlight">最も速く</span>泳動</li>
+          <li>c × コラーゲン：結合組織のタンパク質（血漿中にはない）</li>
+          <li>d × ヘモグロビン：赤血球内のタンパク質（血漿中にはない）</li>
+          <li>e × γ-グロブリン：免疫グロブリン、最も遅く泳動</li>
+        </ul>
+      </div>
+
+      <h2>VI. まとめ</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">覚えるべきポイント</div>
+        <ul>
+          <li>体液量：体重の<span class="highlight">60%</span>（細胞内液40%、細胞外液20%）</li>
+          <li>細胞外液は<span class="highlight">Na⁺</span>、細胞内液は<span class="highlight">K⁺</span>が主</li>
+          <li>血漿タンパク質で最多は<span class="highlight">アルブミン</span></li>
+          <li><span class="highlight">レニン</span>：アンジオテンシノゲン → アンジオテンシンI</li>
+          <li>ACE：アンジオテンシンI → II（<span class="caution">肺</span>に多い）</li>
+        </ul>
+      </div>
+
+      <h3>ひっかけポイント</h3>
+      <table>
+        <tr><th>誤り</th><th>正しい内容</th></tr>
+        <tr><td>細胞内液はNa⁺が主</td><td class="caution">細胞内液はK⁺が主</td></tr>
+        <tr><td>γ-グロブリンが最も速く泳動</td><td class="caution">アルブミンが最も速く泳動</td></tr>
+        <tr><td>ACEは腎臓に多い</td><td class="caution">ACEは肺に多い</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

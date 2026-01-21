@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "静止膜電位と活動電位",
+    "category": "生理学",
+    "chapter": "01_細胞生理学"
+  },
+  "sections": [
+    {
+      "section": "高カリウム血症と脱分極",
+      "qa": [
+        {
+          "question": "細胞外液中に増加すると神経細胞の著明な脱分極を起こすのはどれか。1つ選べ。",
+          "answer": "K⁺",
+          "choices": {
+            "a": "K⁺",
+            "b": "Na⁺",
+            "c": "Fe²⁺",
+            "d": "Mg²⁺",
+            "e": "Zn²⁺"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "110A88"
+        }
+      ]
+    }
+  ]
+}

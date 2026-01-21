@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>発声・構音 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 発声と構音</span>
+    <h1>発声・構音</h1>
+    <div class="container">
+
+      <h2>I. 音声生成に関与する器官</h2>
+
+      <h3>発声器官（原音の生成）</h3>
+      <ul>
+        <li>音源の原動力：<span class="highlight">肺（呼気）</span></li>
+        <li>原音の形成：<span class="highlight">喉頭（声帯・声門）</span></li>
+        <li>呼気圧で声門を振動させ音源とする</li>
+      </ul>
+
+      <h3>構音器官</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>器官</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">可動性構音器官</span></td>
+          <td>下顎、<span class="highlight">舌</span>、<span class="highlight">軟口蓋</span>、口唇</td>
+          <td>子音の生成、母音の調整</td>
+        </tr>
+        <tr>
+          <td><span class="key">非可動性構音器官</span></td>
+          <td>歯、歯槽部、硬口蓋、咽頭壁</td>
+          <td>構音の基準点</td>
+        </tr>
+        <tr>
+          <td>共鳴管（声道）</td>
+          <td>口腔、咽頭腔、鼻腔（副鼻腔）</td>
+          <td>母音の音色を決定</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">有声音と無声音</div>
+        <ul>
+          <li><span class="highlight">有声音</span>：声帯振動を伴う音（母音、濁音など）</li>
+          <li><span class="key">無声音</span>：声帯振動を伴わない音（清音の子音など）</li>
+        </ul>
+      </div>
+
+      <h2>II. 喉頭・声帯の構造と喉頭筋・神経支配</h2>
+
+      <table>
+        <tr>
+          <th>喉頭筋</th>
+          <th>支配神経</th>
+          <th>機能</th>
+          <th>障害</th>
+        </tr>
+        <tr>
+          <td>甲状披裂筋</td>
+          <td>下喉頭神経</td>
+          <td>声帯閉鎖</td>
+          <td>嗄声</td>
+        </tr>
+        <tr>
+          <td>披裂筋</td>
+          <td>下喉頭神経</td>
+          <td>声帯閉鎖</td>
+          <td>嗄声</td>
+        </tr>
+        <tr>
+          <td>外側輪状披裂筋</td>
+          <td>下喉頭神経</td>
+          <td>声帯閉鎖</td>
+          <td>嗄声</td>
+        </tr>
+        <tr>
+          <td>後輪状披裂筋</td>
+          <td>下喉頭神経</td>
+          <td><span class="key">声門開大</span></td>
+          <td><span class="caution">呼吸困難</span></td>
+        </tr>
+        <tr>
+          <td>声帯筋</td>
+          <td>下喉頭神経</td>
+          <td>声帯緊張、声の高さ調節</td>
+          <td>無声</td>
+        </tr>
+        <tr>
+          <td>輪状甲状筋</td>
+          <td><span class="caution">上喉頭神経</span></td>
+          <td>声帯緊張、声の高さ調節</td>
+          <td>無声</td>
+        </tr>
+      </table>
+
+      <p class="note">※輪状甲状筋のみ上喉頭神経支配、他は全て下喉頭神経（反回神経）支配</p>
+
+      <h2>III. 音声の性状</h2>
+
+      <table>
+        <tr>
+          <th>性状</th>
+          <th>決定因子</th>
+        </tr>
+        <tr>
+          <td><span class="key">音声の調子</span>（音の高低）</td>
+          <td>声帯の<span class="highlight">振動数</span>（声帯の長さ、厚さ、緊張度）</td>
+        </tr>
+        <tr>
+          <td><span class="key">音声の強弱</span>（音の大きさ）</td>
+          <td>声帯の振動の<span class="key">振幅</span>（呼気圧の強弱によって調整）</td>
+        </tr>
+        <tr>
+          <td><span class="key">音声の音色</span></td>
+          <td>声帯の構造（形態や大きさ）</td>
+        </tr>
+      </table>
+
+      <h2>IV. 母音の構音</h2>
+
+      <p><span class="key">母音</span>：喉頭原音が、声道でほとんど妨げられることなく共鳴してつくられる音</p>
+
+      <div class="point-box">
+        <div class="point-box-title">有声母音の生成に必須な要素</div>
+        <ul>
+          <li><span class="highlight">呼気流</span>（発声の原動力）</li>
+          <li><span class="highlight">声帯振動</span>（原音の生成）</li>
+        </ul>
+      </div>
+
+      <h3>日本語の基本5母音</h3>
+      <p>「ア」「イ」「ウ」「エ」「オ」</p>
+
+      <h3>母音の区別（母音三角形）</h3>
+      <table>
+        <tr>
+          <th>母音</th>
+          <th>口唇の形</th>
+          <th>舌挙上の高さ</th>
+          <th>舌の前後位置</th>
+        </tr>
+        <tr>
+          <td>ア</td>
+          <td>開く</td>
+          <td>低い（開母音）</td>
+          <td>中舌</td>
+        </tr>
+        <tr>
+          <td>イ</td>
+          <td>横に開く</td>
+          <td>高い（閉母音）</td>
+          <td>前舌</td>
+        </tr>
+        <tr>
+          <td>ウ</td>
+          <td>丸める</td>
+          <td>高い（閉母音）</td>
+          <td>後舌</td>
+        </tr>
+        <tr>
+          <td>エ</td>
+          <td>横に開く</td>
+          <td>中間（半閉母音）</td>
+          <td>前舌</td>
+        </tr>
+        <tr>
+          <td>オ</td>
+          <td>丸める</td>
+          <td>中間（半閉母音）</td>
+          <td>後舌</td>
+        </tr>
+      </table>
+
+      <h2>V. 子音の構音</h2>
+
+      <p><span class="key">子音</span>：呼気流が声道を通過するときに、いずれかの部位で完全あるいは部分的にかつ瞬間的に閉鎖することによって生じる雑音</p>
+
+      <h3>構音様式による分類</h3>
+      <table>
+        <tr>
+          <th>構音様式</th>
+          <th>特徴</th>
+          <th>日本語の例</th>
+        </tr>
+        <tr>
+          <td><span class="key">破裂音</span>（閉鎖音）</td>
+          <td>鼻腔・口腔の通気を完全閉鎖→一気に開放</td>
+          <td>パ行・バ行・タ行・ダ行・カ行・ガ行</td>
+        </tr>
+        <tr>
+          <td><span class="key">破擦音</span></td>
+          <td>閉鎖後、狭い隙間を通る摩擦で発声</td>
+          <td>「ツ」「ヅ」</td>
+        </tr>
+        <tr>
+          <td><span class="key">摩擦音</span></td>
+          <td>声道内に狭い隙間をつくり、気流が通る際に発生</td>
+          <td>サ行・ザ行・ハ行</td>
+        </tr>
+        <tr>
+          <td><span class="key">鼻音</span></td>
+          <td>口腔からの通気を閉鎖し、鼻腔から出す</td>
+          <td>マ行・ナ行</td>
+        </tr>
+        <tr>
+          <td><span class="key">流音</span></td>
+          <td>舌先を口蓋部に近づけ、両側から気流を通す</td>
+          <td>ラ行</td>
+        </tr>
+      </table>
+
+      <h3>構音部位による分類</h3>
+      <table>
+        <tr>
+          <th>構音部位</th>
+          <th>特徴</th>
+          <th>日本語の例</th>
+        </tr>
+        <tr>
+          <td><span class="key">両唇音</span></td>
+          <td>上下両唇を接触させて構音</td>
+          <td>パ行・バ行・マ行・「ワ」</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯音</span></td>
+          <td>上下歯を接触させて構音</td>
+          <td>サ行・ザ行・「ツ」・「ヅ」</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯茎音</span></td>
+          <td>舌先部を上の歯茎と接触させて構音</td>
+          <td>「タ」・「ダ」・ナ行</td>
+        </tr>
+        <tr>
+          <td><span class="key">口蓋音</span></td>
+          <td>硬口蓋音、軟口蓋音（「カ」「ガ」）</td>
+          <td>カ行・ガ行</td>
+        </tr>
+      </table>
+
+      <h2>VI. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">108C90</div>
+        <p>有声の日本語母音の生成に必須なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 呼気流<br>
+          b 口唇閉鎖<br>
+          c 舌骨挙上<br>
+          d 声帯振動<br>
+          e 舌と口蓋の接触
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="highlight">有声母音</span>の生成に必須な要素を問う問題。</p>
+        <ul>
+          <li>a ○ <span class="highlight">呼気流</span>：発声の原動力として必須</li>
+          <li>d ○ <span class="highlight">声帯振動</span>：有声音の生成に必須（声帯振動がないと無声音）</li>
+          <li>b × 口唇閉鎖：母音は口を開いて発声するため<span class="caution">不要</span></li>
+          <li>c × 舌骨挙上：嚥下時の動きであり母音生成に必須ではない</li>
+          <li>e × 舌と口蓋の接触：子音の構音に必要だが、母音は声道を<span class="caution">妨げず</span>共鳴させる</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C102</div>
+        <p>構音に関係するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌<br>
+          b 声帯<br>
+          c 気管<br>
+          d 喉頭蓋<br>
+          e 軟口蓋
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="key">構音器官</span>を問う問題。構音とは、喉頭で発生した原音を声道で加工して言語音をつくること。</p>
+        <ul>
+          <li>a ○ <span class="highlight">舌</span>：可動性構音器官として母音・子音の形成に重要</li>
+          <li>e ○ <span class="highlight">軟口蓋</span>：可動性構音器官として鼻咽腔の開閉、口蓋音の形成に関与</li>
+          <li>b × 声帯：<span class="caution">発声器官</span>（原音の生成）であり、構音器官ではない</li>
+          <li>c × 気管：呼気の通路であり、構音には関係しない</li>
+          <li>d × 喉頭蓋：嚥下時の気道閉鎖に関与するが、構音には関係しない</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

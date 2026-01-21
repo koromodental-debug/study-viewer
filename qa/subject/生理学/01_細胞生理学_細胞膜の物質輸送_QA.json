@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "細胞膜の物質輸送",
+    "category": "生理学",
+    "chapter": "01_細胞生理学"
+  },
+  "sections": [
+    {
+      "section": "細胞内外のイオン濃度",
+      "qa": [
+        {
+          "question": "静止膜電位の時に心筋細胞内で最も濃度が高いのはどれか。1つ選べ。",
+          "answer": "K⁺",
+          "choices": {
+            "a": "K⁺",
+            "b": "Cl⁻",
+            "c": "Na⁺",
+            "d": "Ca²⁺",
+            "e": "Mg²⁺"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "115A46"
+        }
+      ]
+    }
+  ]
+}

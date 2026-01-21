@@ -255,6 +255,18 @@ const FirebaseSync = (function() {
 
     if (needsPush) {
       await pushToCloud();
+      // プッシュ後、最新データを再取得してローカルを更新
+      const userDocRef = db.collection('users').doc(currentUser.uid);
+      const latestDoc = await userDocRef.get();
+      if (latestDoc.exists) {
+        const latestData = latestDoc.data();
+        for (const key of SYNC_KEYS) {
+          if (latestData[key]) {
+            localStorage.setItem(key, latestData[key]);
+          }
+        }
+        console.log('[FirebaseSync] プッシュ後に最新データを反映');
+      }
     }
 
     // UIを更新するためにイベントを発火

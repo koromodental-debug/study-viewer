@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "神経線維の分類",
+    "category": "生理学",
+    "chapter": "01_細胞生理学"
+  },
+  "sections": [
+    {
+      "section": "有髄線維（A線維・B線維）",
+      "qa": [
+        {
+          "question": "顎二腹筋の収縮を直接起こす神経線維はどれか。1つ選べ。",
+          "answer": "Aα線維",
+          "choices": {
+            "a": "Aα線維",
+            "b": "Aγ線維",
+            "c": "Aδ線維",
+            "d": "B線維",
+            "e": "C線維"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "107C123"
+        }
+      ]
+    }
+  ]
+}

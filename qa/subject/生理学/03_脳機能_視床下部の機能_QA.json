@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "title": "視床下部の機能",
+    "category": "生理学",
+    "chapter": "03_脳機能"
+  },
+  "sections": [
+    {
+      "section": "視床下部の機能",
+      "qa": [
+        {
+          "question": "体温調節中枢が存在するのはどれか。1つ選べ。",
+          "answer": "視床下部",
+          "choices": {
+            "a": "小脳",
+            "b": "延髄",
+            "c": "松果体",
+            "d": "視床下部",
+            "e": "Broca領域"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "108A43"
+        }
+      ]
+    },
+    {
+      "section": "大脳皮質の言語野",
+      "qa": [
+        {
+          "question": "言語に関与するのはどれか。2つ選べ。",
+          "answer": "Broca領域、Wernicke領域",
+          "choices": {
+            "a": "海馬",
+            "b": "扁桃体",
+            "c": "Broca領域",
+            "d": "大脳基底核",
+            "e": "Wernicke領域"
+          },
+          "correctAnswer": "C,E",
+          "numChoices": 2,
+          "code": "102A50"
+        }
+      ]
+    },
+    {
+      "section": "脳波と睡眠",
+      "qa": [
+        {
+          "question": "睡眠で正しいのはどれか。2つ選べ。",
+          "answer": "唾液分泌量が減少する、睡眠の深さで脳波が変化する",
+          "choices": {
+            "a": "唾液分泌量が減少する。",
+            "b": "睡眠の深さで脳波が変化する。",
+            "c": "老化に伴って深い睡眠が増加する。",
+            "d": "REM睡眠では眼球運動が減少する。",
+            "e": "新生児は10歳児よりもREM睡眠の割合が少ない。"
+          },
+          "correctAnswer": "A,B",
+          "numChoices": 2,
+          "code": "106C54"
+        }
+      ]
+    }
+  ]
+}

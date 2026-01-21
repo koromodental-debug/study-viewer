@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唾液分泌 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 唾液</span>
+    <h1>唾液分泌</h1>
+    <div class="container">
+
+      <h2>I. 唾液腺と唾液</h2>
+
+      <h3>唾液腺の種類</h3>
+      <p>大唾液腺（耳下腺、舌下腺、顎下腺）と小唾液腺からなる。</p>
+
+      <h3>唾液の種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>別名</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">安静時唾液</span></td>
+          <td>固有唾液、非刺激唾液</td>
+          <td>無刺激（安静時）に常に少量分泌されている唾液</td>
+        </tr>
+        <tr>
+          <td><span class="key">反射唾液</span></td>
+          <td>刺激唾液</td>
+          <td>刺激によって分泌される唾液</td>
+        </tr>
+      </table>
+
+      <h3>唾液分泌量</h3>
+      <ul>
+        <li>成人の1日あたりの総唾液分泌量：<span class="highlight">1.0〜1.5L</span></li>
+        <li>安静時唾液：20mL/時、<span class="key">低Na⁺、高K⁺</span></li>
+      </ul>
+
+      <h3>唾液分泌量に影響する要因</h3>
+      <table>
+        <tr>
+          <th>要因</th>
+          <th>影響</th>
+        </tr>
+        <tr>
+          <td>性差</td>
+          <td>男性のほうが女性より分泌量が多い</td>
+        </tr>
+        <tr>
+          <td>体温・体液量の上昇</td>
+          <td>分泌量が増加</td>
+        </tr>
+        <tr>
+          <td><span class="caution">体液浸透圧の増加</span></td>
+          <td><span class="caution">分泌量が減少</span></td>
+        </tr>
+        <tr>
+          <td>季節変動</td>
+          <td>夏よりも冬のほうが分泌量が多い（夏は体液量が減少）</td>
+        </tr>
+        <tr>
+          <td>概日リズム</td>
+          <td>起床直前が最低→午前中上昇→午後3時頃最大値</td>
+        </tr>
+        <tr>
+          <td>夜間</td>
+          <td>ほぼ停止（0にはならず、微量の分泌あり）</td>
+        </tr>
+      </table>
+
+      <h2>II. 唾液の作用</h2>
+
+      <table>
+        <tr>
+          <th>作用</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>消化作用</td>
+          <td>唾液アミラーゼによるデンプンの消化</td>
+        </tr>
+        <tr>
+          <td>咀嚼補助作用</td>
+          <td>食塊形成を容易にする</td>
+        </tr>
+        <tr>
+          <td>円滑（潤滑）作用</td>
+          <td>嚥下を円滑にする</td>
+        </tr>
+        <tr>
+          <td>保護作用</td>
+          <td>ペリクル形成</td>
+        </tr>
+        <tr>
+          <td>溶解作用</td>
+          <td>溶媒作用・味覚発現作用</td>
+        </tr>
+        <tr>
+          <td>洗浄作用</td>
+          <td>口腔内の清掃</td>
+        </tr>
+        <tr>
+          <td>殺菌・抗菌作用</td>
+          <td>リゾチーム、IgAなど</td>
+        </tr>
+        <tr>
+          <td>緩衝作用</td>
+          <td>HCO₃⁻による</td>
+        </tr>
+        <tr>
+          <td>再石灰化作用</td>
+          <td>Ca²⁺、リン酸イオンによる</td>
+        </tr>
+      </table>
+
+      <h2>III. 唾液腺の構造と唾液分泌機構</h2>
+
+      <h3>腺細胞の種類</h3>
+      <table>
+        <tr>
+          <th>細胞</th>
+          <th>形態</th>
+          <th>分泌物</th>
+        </tr>
+        <tr>
+          <td><span class="key">漿液細胞</span></td>
+          <td>円形の核、小さな分泌顆粒</td>
+          <td>アミラーゼなど</td>
+        </tr>
+        <tr>
+          <td><span class="key">粘液細胞</span></td>
+          <td>扁平な核（基底側に偏り）、大きな分泌顆粒</td>
+          <td>ムチンなど</td>
+        </tr>
+      </table>
+
+      <h3>唾液分泌の流れ</h3>
+      <ol>
+        <li><span class="key">腺房部</span>：原唾液の分泌（Na⁺、Cl⁻、水）</li>
+        <li><span class="key">導管部</span>：イオンの再吸収と分泌</li>
+      </ol>
+
+      <div class="point-box">
+        <div class="point-box-title">導管部でのイオン再吸収機構【重要】</div>
+        <ul>
+          <li>① <span class="highlight">Na⁺-K⁺ポンプ</span>により、導管細胞内のNa⁺濃度が管腔内の原唾液より低くなる</li>
+          <li>② Na⁺チャネルからNa⁺が細胞内に流入</li>
+          <li>③ 電気的中性を保つため、Cl⁻も受動的に細胞内に流入</li>
+          <li>④ 細胞内でCO₂から炭酸脱水酵素によりH⁺とHCO₃⁻が生成</li>
+          <li>⑤ Cl⁻との交換輸送により<span class="key">HCO₃⁻が分泌</span></li>
+          <li>⑥ H⁺との交換輸送により<span class="key">K⁺が分泌</span></li>
+        </ul>
+        <p>→ <span class="highlight">駆動力はNa⁺-K⁺ポンプ</span></p>
+      </div>
+
+      <h3>分泌速度とイオン組成の関係</h3>
+      <table>
+        <tr>
+          <th>イオン</th>
+          <th>分泌速度上昇時</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td>Na⁺、Cl⁻、HCO₃⁻、Ca²⁺</td>
+          <td>濃度が<span class="key">上昇</span></td>
+          <td>Na⁺：再吸収が追いつかない<br>HCO₃⁻：導管細胞の代謝活発化</td>
+        </tr>
+        <tr>
+          <td>K⁺、Mg²⁺、H⁺、無機リン</td>
+          <td>濃度が<span class="key">低下</span></td>
+          <td>K⁺：分泌が追いつかない</td>
+        </tr>
+      </table>
+
+      <h2>IV. 唾液分泌の制御機構</h2>
+
+      <h3>唾液分泌の神経支配</h3>
+      <table>
+        <tr>
+          <th>神経</th>
+          <th>神経核</th>
+          <th>節前神経</th>
+          <th>自律神経節</th>
+          <th>支配唾液腺</th>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="highlight">副交感神経</span></td>
+          <td>上唾液核</td>
+          <td>顔面神経・鼓索神経</td>
+          <td>顎下神経節</td>
+          <td>舌下腺・顎下腺</td>
+        </tr>
+        <tr>
+          <td>下唾液核</td>
+          <td>舌咽神経</td>
+          <td>耳介側頭神経</td>
+          <td>耳下腺</td>
+        </tr>
+        <tr>
+          <td><span class="key">交感神経</span></td>
+          <td>胸髄</td>
+          <td>胸神経</td>
+          <td>上頸神経節</td>
+          <td>舌下腺・顎下腺・耳下腺</td>
+        </tr>
+      </table>
+
+      <h3>唾液分泌を促進する刺激</h3>
+      <table>
+        <tr>
+          <th>刺激の種類</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td>無条件刺激</td>
+          <td>味覚刺激（味覚唾液反射）、咀嚼・嚥下時の口腔粘膜刺激、温度刺激、摂食中枢の興奮</td>
+        </tr>
+        <tr>
+          <td>条件刺激</td>
+          <td>視覚、聴覚、嗅覚の刺激などによる条件付け（パブロフの犬）</td>
+        </tr>
+        <tr>
+          <td>その他</td>
+          <td><span class="highlight">嘔吐</span>（嘔吐前に唾液分泌が亢進）</td>
+        </tr>
+      </table>
+
+      <h3>副交感神経と交感神経の作用比較</h3>
+      <table>
+        <tr>
+          <th>神経</th>
+          <th>分泌量</th>
+          <th>唾液の性状</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">副交感神経</span></td>
+          <td><span class="key">多い</span></td>
+          <td>漿液性（さらさら）</td>
+        </tr>
+        <tr>
+          <td>交感神経</td>
+          <td>少ない</td>
+          <td>粘液性（粘稠）</td>
+        </tr>
+      </table>
+
+      <h2>V. 過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A62</div>
+        <p>唾液腺導管部におけるイオン再吸収機構の駆動力はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 水チャネル<br>
+          b Na⁺-K⁺ポンプ<br>
+          c プロトンポンプ<br>
+          d 電位依存性Na⁺チャネル<br>
+          e Na⁺-Ca²⁺トランスポーター
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】唾液腺導管部でのイオン再吸収の<span class="highlight">駆動力はNa⁺-K⁺ポンプ</span>である。Na⁺-K⁺ポンプにより細胞内のNa⁺濃度が低下し、Na⁺濃度勾配が形成される。この濃度勾配を利用してNa⁺が細胞内に流入し、それに伴いCl⁻も再吸収される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A50</div>
+        <p>唾液分泌を促進するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 嘔吐<br>
+          b 血漿浸透圧の上昇<br>
+          c 副交感神経の興奮<br>
+          d 舌癌の放射線治療<br>
+          e Sjögren症候群の罹患
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】唾液分泌を促進・抑制する要因を問う問題。</p>
+        <ul>
+          <li>a ○ <span class="highlight">嘔吐</span>：嘔吐前に唾液分泌が亢進する（胃酸による食道・口腔の損傷を防ぐ）</li>
+          <li>b × 血漿浸透圧の上昇は唾液分泌を<span class="caution">抑制</span>する（体液保持のため）</li>
+          <li>c ○ <span class="highlight">副交感神経の興奮</span>：唾液分泌を促進（漿液性唾液）</li>
+          <li>d × 放射線治療は唾液腺を障害し、唾液分泌を<span class="caution">抑制</span>する</li>
+          <li>e × Sjögren症候群は自己免疫疾患で、唾液腺が障害され唾液分泌が<span class="caution">低下</span>する</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

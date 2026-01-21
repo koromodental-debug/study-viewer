@@ -936,7 +936,7 @@ const FlashcardModule = (function() {
     const totalLearned = overall.memorized + overall.again;
     const inProgressTopics = getInProgressTopics(10);
     const reports = getReports();
-    const favoritesCount = FavoritesManager.getByType('qa').length;
+    const favoritesCount = getValidFavoritesCount();
 
     return `
       <!-- 学習の記録 -->
@@ -1956,7 +1956,49 @@ const FlashcardModule = (function() {
   }
 
   // === お気に入りデッキ ===
+
+  // 有効なお気に入り数を取得（存在するトピックのみカウント）
+  function getValidFavoritesCount() {
+    const favorites = FavoritesManager.getByType('qa');
+    let validCount = 0;
+    for (const fav of favorites) {
+      // トピックが存在するかチェック
+      let topic = DATA.find(d => d.id === fav.topicId);
+      if (!topic && fav.topicId === 'kokoshika_hisshu') {
+        topic = { id: 'kokoshika_hisshu' };
+      }
+      if (topic) {
+        validCount++;
+      }
+    }
+    return validCount;
+  }
+
+  // 孤立したお気に入りをクリーンアップ
+  function cleanupOrphanedFavorites() {
+    const favorites = FavoritesManager.getByType('qa');
+    let removedCount = 0;
+    for (const fav of favorites) {
+      let topic = DATA.find(d => d.id === fav.topicId);
+      if (!topic && fav.topicId === 'kokoshika_hisshu') {
+        topic = { id: 'kokoshika_hisshu' };
+      }
+      if (!topic) {
+        FavoritesManager.remove(fav.id);
+        removedCount++;
+        console.log('[Favorites] 孤立したお気に入りを削除:', fav.topicId);
+      }
+    }
+    return removedCount;
+  }
+
   async function startFavoriteDeck() {
+    // 孤立したお気に入りをクリーンアップ
+    const removedCount = cleanupOrphanedFavorites();
+    if (removedCount > 0) {
+      console.log('[Favorites] クリーンアップ完了:', removedCount, '件削除');
+    }
+
     const allFavorites = FavoritesManager.getAll();
     const favorites = allFavorites.filter(f => f.type === 'qa');
     if (favorites.length === 0) return;
@@ -2004,26 +2046,17 @@ const FlashcardModule = (function() {
 
     // お気に入りカード配列を構築
     const filteredCards = [];
-    console.log('[Favorites] 読み込み開始:', favorites.length, '件');
     for (const fav of favorites) {
-      console.log('[Favorites] 処理中:', fav.topicId, 'cardIndex:', fav.cardIndex);
       const topicData = topicCardsMap.get(fav.topicId);
-      if (!topicData) {
-        console.log('[Favorites] トピック未発見:', fav.topicId);
-        continue;
-      }
+      if (!topicData) continue;
       const card = topicData.cards.find(c => c.originalIndex === parseInt(fav.cardIndex));
-      if (!card) {
-        console.log('[Favorites] カード未発見:', fav.topicId, 'cardIndex:', fav.cardIndex, 'cards:', topicData.cards.map(c => c.originalIndex));
-        continue;
-      }
+      if (!card) continue;
       filteredCards.push({
         ...card,
         topicTitle: topicData.topic.title,
         htmlPath: topicData.topic.htmlPath
       });
     }
-    console.log('[Favorites] 解決済み:', filteredCards.length, '件');
 
     if (filteredCards.length === 0) return;
 

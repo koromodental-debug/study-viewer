@@ -4706,6 +4706,15 @@ body:not(.is-practice) #flashcard-content {
   background: #0A84FF;
 }
 
+[data-theme="dark"] .deck-card-list-reset {
+  background: rgba(118, 118, 128, 0.24);
+  color: #FF9F0A;
+}
+
+[data-theme="dark"] .deck-card-list-reset:active {
+  background: rgba(255, 159, 10, 0.3);
+}
+
 /* ===== 旧スタイル（互換性維持） ===== */
 
 .deck-section-title {
@@ -6194,6 +6203,39 @@ body:not(.is-practice) #flashcard-content {
 
 .deck-card-list-start:active {
   opacity: 0.8;
+}
+
+/* デッキカード一覧ヘッダーのアクション領域 */
+.deck-card-list-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* リセットボタン */
+.deck-card-list-reset {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(118, 118, 128, 0.12);
+  color: var(--system-orange, #ff9500);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.deck-card-list-reset svg {
+  width: 18px;
+  height: 18px;
+}
+
+.deck-card-list-reset:active {
+  background: rgba(255, 149, 0, 0.2);
 }
 
 .deck-card-list-content {
@@ -11789,5 +11831,690 @@ body.is-practice .tab-content {
   .view-toggle-btn {
     padding: 8px 16px;
     font-size: 13px;
+  }
+}
+
+/* ===========================================
+   デッキ編集ボトムシート
+   =========================================== */
+
+.deck-edit-overlay,
+.card-edit-overlay,
+.deck-manage-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.deck-edit-overlay.show,
+.card-edit-overlay.show,
+.deck-manage-overlay.show {
+  display: flex;
+}
+
+.deck-edit-backdrop,
+.card-edit-backdrop,
+.deck-manage-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  animation: fade-in 0.2s ease;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.deck-edit-sheet,
+.card-edit-sheet,
+.deck-manage-sheet {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 85vh;
+  background: var(--card-bg);
+  border-radius: 16px 16px 0 0;
+  animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.deck-edit-sheet,
+.card-edit-sheet {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.deck-edit-header,
+.card-edit-header,
+.deck-manage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.deck-edit-title,
+.card-edit-title,
+.deck-manage-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.deck-edit-cancel-btn,
+.card-edit-cancel-btn,
+.deck-manage-cancel-btn {
+  background: none;
+  border: none;
+  color: var(--system-blue);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.deck-edit-save-btn,
+.card-edit-save-btn {
+  background: none;
+  border: none;
+  color: var(--system-blue);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.deck-edit-body,
+.card-edit-body {
+  padding: 20px 16px;
+  overflow-y: auto;
+}
+
+.deck-edit-field,
+.card-edit-field {
+  margin-bottom: 20px;
+}
+
+.deck-edit-field:last-child,
+.card-edit-field:last-child {
+  margin-bottom: 0;
+}
+
+.deck-edit-label,
+.card-edit-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-label);
+  margin-bottom: 8px;
+}
+
+.deck-edit-input,
+.card-edit-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 16px;
+  color: var(--text-color);
+  background: var(--surface-alt);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.deck-edit-input:focus,
+.card-edit-textarea:focus {
+  border-color: var(--system-blue);
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.15);
+}
+
+.card-edit-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+/* 選択肢編集 */
+.card-edit-choices-section {
+  margin-top: 20px;
+}
+
+.card-edit-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-edit-choice-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-edit-choice-key {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-alt);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary-label);
+  flex-shrink: 0;
+}
+
+.card-edit-choice-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--text-color);
+  background: var(--surface-alt);
+  outline: none;
+}
+
+.card-edit-choice-input:focus {
+  border-color: var(--system-blue);
+}
+
+/* デッキ管理モード */
+.deck-manage-selected-count {
+  font-size: 14px;
+  color: var(--secondary-label);
+}
+
+.deck-manage-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 16px;
+  max-height: 50vh;
+}
+
+.deck-manage-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--surface-alt);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.deck-manage-item:active {
+  background: var(--border-color);
+}
+
+.deck-manage-item.selected {
+  background: rgba(10, 132, 255, 0.1);
+  border: 2px solid var(--system-blue);
+}
+
+.deck-manage-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.deck-manage-item.selected .deck-manage-checkbox {
+  background: var(--system-blue);
+  border-color: var(--system-blue);
+}
+
+.deck-manage-checkbox svg {
+  width: 14px;
+  height: 14px;
+  color: white;
+  display: none;
+}
+
+.deck-manage-item.selected .deck-manage-checkbox svg {
+  display: block;
+}
+
+.deck-manage-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.deck-manage-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deck-manage-meta {
+  font-size: 13px;
+  color: var(--secondary-label);
+  margin-top: 2px;
+}
+
+.deck-manage-actions {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 20px));
+  border-top: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+.deck-manage-action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.deck-manage-action-btn.merge {
+  background: var(--system-blue);
+  color: white;
+}
+
+.deck-manage-action-btn.merge:disabled {
+  background: var(--surface-alt);
+  color: var(--tertiary-label);
+  cursor: not-allowed;
+}
+
+.deck-manage-action-btn.delete {
+  background: rgba(255, 59, 48, 0.1);
+  color: #FF3B30;
+}
+
+.deck-manage-action-btn.delete:disabled {
+  background: var(--surface-alt);
+  color: var(--tertiary-label);
+  cursor: not-allowed;
+}
+
+/* デッキ合体ダイアログ */
+.deck-merge-dialog,
+.confirm-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.deck-merge-dialog.show,
+.confirm-dialog.show {
+  display: flex;
+}
+
+.deck-merge-backdrop,
+.confirm-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fade-in 0.2s ease;
+}
+
+.deck-merge-content,
+.confirm-content {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  animation: scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.deck-merge-title,
+.confirm-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.deck-merge-desc,
+.confirm-message {
+  font-size: 14px;
+  color: var(--secondary-label);
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.deck-merge-field {
+  margin-bottom: 20px;
+}
+
+.deck-merge-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--secondary-label);
+  margin-bottom: 6px;
+}
+
+.deck-merge-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  color: var(--text-color);
+  background: var(--surface-alt);
+  outline: none;
+}
+
+.deck-merge-input:focus {
+  border-color: var(--system-blue);
+}
+
+.deck-merge-actions,
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.deck-merge-cancel-btn,
+.confirm-cancel-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--surface-alt);
+  color: var(--text-color);
+}
+
+.deck-merge-confirm-btn,
+.confirm-ok-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--system-blue);
+  color: white;
+}
+
+.confirm-ok-btn.danger {
+  background: #FF3B30;
+}
+
+/* カード一覧の編集・削除ボタン */
+.card-list-edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.card-list-edit-btn,
+.card-list-delete-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.card-list-edit-btn {
+  background: var(--surface-alt);
+  color: var(--system-blue);
+}
+
+.card-list-edit-btn:active {
+  background: var(--border-color);
+}
+
+.card-list-delete-btn {
+  background: rgba(255, 59, 48, 0.1);
+  color: #FF3B30;
+}
+
+.card-list-delete-btn:active {
+  background: rgba(255, 59, 48, 0.2);
+}
+
+.card-list-edit-btn svg,
+.card-list-delete-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* デッキ一覧の編集・管理ボタン */
+.deck-edit-btn,
+.deck-manage-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--secondary-label);
+  transition: all 0.15s;
+}
+
+.deck-edit-btn:active,
+.deck-manage-toggle-btn:active {
+  background: var(--surface-alt);
+}
+
+.deck-edit-btn svg,
+.deck-manage-toggle-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* インポート済みセクションヘッダー */
+.deck-subject-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+/* === ⋮メニュー（インポート済みデッキ用） === */
+.deck-more-menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.deck-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--secondary-label);
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.deck-more-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.deck-more-btn:hover {
+  background: var(--surface-alt, #f5f5f7);
+}
+
+.deck-more-btn:active {
+  background: var(--surface-alt, #f5f5f7);
+  transform: scale(0.92);
+}
+
+.deck-more-dropdown {
+  position: fixed;
+  min-width: 140px;
+  background: var(--surface, #fff);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.deck-more-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.deck-more-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  color: var(--label, #1c1c1e);
+  cursor: pointer;
+  transition: background 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.deck-more-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.deck-more-item:hover {
+  background: var(--surface-alt, #f5f5f7);
+}
+
+.deck-more-item:active {
+  background: var(--border-color, #e5e5ea);
+}
+
+.deck-more-item.deck-more-delete {
+  color: #ff3b30;
+}
+
+.deck-more-item.deck-more-delete svg {
+  stroke: #ff3b30;
+}
+
+/* ダークモード */
+[data-theme="dark"] .deck-more-dropdown {
+  background: var(--surface, #1c1c1e);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .deck-more-item:hover {
+  background: var(--surface-alt, #2c2c2e);
+}
+
+[data-theme="dark"] .deck-more-item:active {
+  background: var(--border-color, #38383a);
+}
+
+[data-theme="dark"] .deck-more-item.deck-more-delete {
+  color: #ff453a;
+}
+
+[data-theme="dark"] .deck-more-item.deck-more-delete svg {
+  stroke: #ff453a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .deck-more-dropdown {
+    background: var(--surface, #1c1c1e);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  :root:not([data-theme="light"]) .deck-more-item:hover {
+    background: var(--surface-alt, #2c2c2e);
+  }
+
+  :root:not([data-theme="light"]) .deck-more-item:active {
+    background: var(--border-color, #38383a);
+  }
+
+  :root:not([data-theme="light"]) .deck-more-item.deck-more-delete {
+    color: #ff453a;
+  }
+
+  :root:not([data-theme="light"]) .deck-more-item.deck-more-delete svg {
+    stroke: #ff453a;
   }
 }

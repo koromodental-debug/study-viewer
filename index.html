@@ -16,7 +16,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=20260120d">
+  <link rel="stylesheet" href="css/style.css?v=20260121a">
 </head>
 <body>
   <div class="app">
@@ -638,6 +638,116 @@
 
   </div>
 
+  <!-- デッキ編集ボトムシート -->
+  <div id="deck-edit-overlay" class="deck-edit-overlay">
+    <div class="deck-edit-backdrop"></div>
+    <div class="deck-edit-sheet">
+      <div class="deck-edit-header">
+        <button id="deck-edit-cancel" class="deck-edit-cancel-btn">キャンセル</button>
+        <span class="deck-edit-title">デッキを編集</span>
+        <button id="deck-edit-save" class="deck-edit-save-btn">保存</button>
+      </div>
+      <div class="deck-edit-body">
+        <div class="deck-edit-field">
+          <label class="deck-edit-label">デッキ名</label>
+          <input type="text" id="deck-edit-name" class="deck-edit-input" placeholder="デッキ名を入力">
+        </div>
+        <div class="deck-edit-field">
+          <label class="deck-edit-label">カテゴリ</label>
+          <input type="text" id="deck-edit-category" class="deck-edit-input" placeholder="カテゴリを入力">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- カード編集ボトムシート -->
+  <div id="card-edit-overlay" class="card-edit-overlay">
+    <div class="card-edit-backdrop"></div>
+    <div class="card-edit-sheet">
+      <div class="card-edit-header">
+        <button id="card-edit-cancel" class="card-edit-cancel-btn">キャンセル</button>
+        <span class="card-edit-title">カードを編集</span>
+        <button id="card-edit-save" class="card-edit-save-btn">保存</button>
+      </div>
+      <div class="card-edit-body">
+        <div class="card-edit-field">
+          <label class="card-edit-label">問い</label>
+          <textarea id="card-edit-question" class="card-edit-textarea" rows="4" placeholder="問いを入力"></textarea>
+        </div>
+        <div class="card-edit-field">
+          <label class="card-edit-label">答え</label>
+          <textarea id="card-edit-answer" class="card-edit-textarea" rows="4" placeholder="答えを入力"></textarea>
+        </div>
+        <div id="card-edit-choices-section" class="card-edit-choices-section" style="display:none;">
+          <label class="card-edit-label">選択肢</label>
+          <div id="card-edit-choices" class="card-edit-choices">
+            <!-- JSで動的に生成 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- デッキ管理ボトムシート（合体・削除） -->
+  <div id="deck-manage-overlay" class="deck-manage-overlay">
+    <div class="deck-manage-backdrop"></div>
+    <div class="deck-manage-sheet">
+      <div class="deck-manage-header">
+        <button id="deck-manage-cancel" class="deck-manage-cancel-btn">キャンセル</button>
+        <span class="deck-manage-title">デッキを管理</span>
+        <span class="deck-manage-selected-count" id="deck-manage-count">0件選択</span>
+      </div>
+      <div class="deck-manage-body" id="deck-manage-list">
+        <!-- JSで動的に生成 -->
+      </div>
+      <div class="deck-manage-actions">
+        <button id="deck-manage-merge" class="deck-manage-action-btn merge" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <path d="M8 12h8M12 8v8"/>
+          </svg>
+          <span>合体</span>
+        </button>
+        <button id="deck-manage-delete" class="deck-manage-action-btn delete" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          <span>削除</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- デッキ合体ダイアログ -->
+  <div id="deck-merge-dialog" class="deck-merge-dialog">
+    <div class="deck-merge-backdrop"></div>
+    <div class="deck-merge-content">
+      <h3 class="deck-merge-title">デッキを合体</h3>
+      <p class="deck-merge-desc">選択した<span id="deck-merge-count">0</span>個のデッキを合体します。<br>元のデッキは削除されます。</p>
+      <div class="deck-merge-field">
+        <label class="deck-merge-label">新しいデッキ名</label>
+        <input type="text" id="deck-merge-name" class="deck-merge-input" placeholder="新しいデッキ名">
+      </div>
+      <div class="deck-merge-actions">
+        <button id="deck-merge-cancel" class="deck-merge-cancel-btn">キャンセル</button>
+        <button id="deck-merge-confirm" class="deck-merge-confirm-btn">合体する</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 確認ダイアログ -->
+  <div id="confirm-dialog" class="confirm-dialog">
+    <div class="confirm-backdrop"></div>
+    <div class="confirm-content">
+      <h3 class="confirm-title" id="confirm-title">確認</h3>
+      <p class="confirm-message" id="confirm-message"></p>
+      <div class="confirm-actions">
+        <button id="confirm-cancel" class="confirm-cancel-btn">キャンセル</button>
+        <button id="confirm-ok" class="confirm-ok-btn">OK</button>
+      </div>
+    </div>
+  </div>
+
   <!-- 検索シート（モーダル） -->
   <div id="search-sheet" class="search-sheet">
     <div class="search-sheet-backdrop"></div>
@@ -677,14 +787,14 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="js/firebase-sync.js?v=20260120d"></script>
+  <script src="js/firebase-sync.js?v=20260121a"></script>
 
-  <script src="js/data.js?v=20260120d"></script>
-  <script src="js/search.js?v=20260120d"></script>
-  <script src="js/favorites.js?v=20260120d"></script>
-  <script src="js/kakomon.js?v=20260120d"></script>
-  <script src="js/flashcard.js?v=20260120d"></script>
-  <script src="js/graph.js?v=20260120d"></script>
-  <script src="js/app.js?v=20260120d"></script>
+  <script src="js/data.js?v=20260121a"></script>
+  <script src="js/search.js?v=20260121a"></script>
+  <script src="js/favorites.js?v=20260121a"></script>
+  <script src="js/kakomon.js?v=20260121a"></script>
+  <script src="js/flashcard.js?v=20260121a"></script>
+  <script src="js/graph.js?v=20260121a"></script>
+  <script src="js/app.js?v=20260121a"></script>
 </body>
 </html>

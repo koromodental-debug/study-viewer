@@ -7,6 +7,7 @@ const FlashcardModule = (function() {
   const STORAGE_KEY = 'studyViewer_flashcardProgress';
   const SESSIONS_KEY = 'studyViewer_flashcardSessions';
   const REPORTS_KEY = 'studyViewer_cardReports';
+  const DECK_CUSTOMIZATIONS_KEY = 'studyViewer_deckCustomizations';
   const STORAGE_VERSION = 1;
 
   // 科目の表示順序（インポート済み → 必修 → 基礎系 → 臨床系）
@@ -76,6 +77,15 @@ const FlashcardModule = (function() {
 
   // DOM要素
   let container = null;
+
+  // ⋮メニューを閉じるヘルパー関数
+  function closeDeckMoreMenus(e) {
+    // メニューボタンやドロップダウン内のクリックは除外
+    if (e?.target?.closest('.deck-more-menu-wrapper')) return;
+    document.querySelectorAll('.deck-more-dropdown.active').forEach(d => {
+      d.classList.remove('active');
+    });
+  }
 
   // === 初期化 ===
   function init() {
@@ -217,6 +227,95 @@ const FlashcardModule = (function() {
     }
 
     console.log(`[deleteImportedDeck] 削除完了: ${deckId}`);
+  }
+
+  // === デッキカスタマイズ管理 ===
+  // データ形式: { "topicId": { "edited": { "3": { "q": "...", "a": "..." } }, "deleted": [5, 12] } }
+
+  function loadDeckCustomizations() {
+    try {
+      const saved = localStorage.getItem(DECK_CUSTOMIZATIONS_KEY);
+      if (saved) {
+        return JSON.parse(saved);
+      }
+    } catch (e) {
+      console.error('[loadDeckCustomizations] 読み込みエラー:', e);
+    }
+    return {};
+  }
+
+  function saveDeckCustomizations(customizations) {
+    try {
+      localStorage.setItem(DECK_CUSTOMIZATIONS_KEY, JSON.stringify(customizations));
+      console.log('[saveDeckCustomizations] 保存完了');
+      // Firebase同期
+      if (typeof FirebaseSync !== 'undefined' && FirebaseSync.isLoggedIn()) {
+        FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
+      }
+    } catch (e) {
+      console.error('[saveDeckCustomizations] 保存エラー:', e);
+    }
+  }
+
+  function getTopicCustomization(topicId) {
+    const customizations = loadDeckCustomizations();
+    return customizations[topicId] || { edited: {}, deleted: [] };
+  }
+
+  function saveTopicCustomization(topicId, customization) {
+    const customizations = loadDeckCustomizations();
+    customizations[topicId] = customization;
+    saveDeckCustomizations(customizations);
+  }
+
+  function resetTopicCustomization(topicId) {
+    const customizations = loadDeckCustomizations();
+    if (customizations[topicId]) {
+      delete customizations[topicId];
+      saveDeckCustomizations(customizations);
+      console.log(`[resetTopicCustomization] リセット完了: ${topicId}`);
+      return true;
+    }
+    return false;
+  }
+
+  // カスタマイズを適用してカードを返す
+  function applyCustomizations(cards, topicId) {
+    const customization = getTopicCustomization(topicId);
+    const { edited, deleted } = customization;
+
+    // 削除されたカードを除外
+    let filteredCards = cards.filter((card, idx) => {
+      return !deleted.includes(idx);
+    });
+
+    // 編集されたカードを上書き
+    filteredCards = filteredCards.map((card, newIdx) => {
+      // 元のインデックスを探す（削除によりインデックスがずれている場合を考慮）
+      const originalIndex = card.originalIndex !== undefined ? card.originalIndex : card.index;
+      if (edited[originalIndex]) {
+        return {
+          ...card,
+          question: edited[originalIndex].q || card.question,
+          answer: edited[originalIndex].a || card.answer
+        };
+      }
+      return card;
+    });
+
+    // インデックスを再割り当て
+    filteredCards.forEach((card, idx) => {
+      card.index = idx;
+    });
+
+    return filteredCards;
+  }
+
+  // トピックにカスタマイズがあるかどうか
+  function hasTopicCustomization(topicId) {
+    const customization = getTopicCustomization(topicId);
+    return Object.keys(customization.edited || {}).length > 0 ||
+           (customization.deleted || []).length > 0;
   }
 
   // === localStorage管理 ===
@@ -975,6 +1074,17 @@ const FlashcardModule = (function() {
       `;
     }
 
+    // インポート済みセクションには管理ボタンを表示
+    const manageBtn = subject === 'インポート済み' ? `
+      <button class="deck-manage-toggle-btn" id="deck-manage-toggle" title="デッキを管理">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="1"></circle>
+          <circle cx="12" cy="5" r="1"></circle>
+          <circle cx="12" cy="19" r="1"></circle>
+        </svg>
+      </button>
+    ` : '';
+
     return `
       <div class="deck-subject${isOpen ? ' open' : ''}" data-subject="${subject}">
         <div class="deck-subject-header">
@@ -983,6 +1093,7 @@ const FlashcardModule = (function() {
           </div>
           <div class="deck-subject-right">
             ${stats.again > 0 ? `<span class="deck-subject-again">要復習 ${stats.again}</span>` : ''}
+            ${manageBtn}
             <span class="deck-subject-chevron">›</span>
           </div>
         </div>
@@ -1072,15 +1183,34 @@ const FlashcardModule = (function() {
       }
     }
 
-    // インポート済みデッキには削除ボタンを表示
+    // インポート済みデッキには⋮メニューを表示
     const isImported = topic.source === 'local_imported';
-    const deleteBtn = isImported ? `
-      <button class="deck-delete-btn" data-topic-id="${topic.id}" data-deck-id="${topic.importedDeckId || ''}" title="削除">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="3 6 5 6 21 6"></polyline>
-          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-        </svg>
-      </button>
+    const moreBtn = isImported ? `
+      <div class="deck-more-menu-wrapper">
+        <button class="deck-more-btn" data-topic-id="${topic.id}" data-deck-id="${topic.importedDeckId || ''}" title="メニュー">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="5" r="2"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+            <circle cx="12" cy="19" r="2"></circle>
+          </svg>
+        </button>
+        <div class="deck-more-dropdown" data-topic-id="${topic.id}" data-deck-id="${topic.importedDeckId || ''}">
+          <button class="deck-more-item deck-more-edit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+            <span>編集</span>
+          </button>
+          <button class="deck-more-item deck-more-delete">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+            <span>削除</span>
+          </button>
+        </div>
+      </div>
     ` : '';
 
     return `
@@ -1098,7 +1228,7 @@ const FlashcardModule = (function() {
               <line x1="3" y1="18" x2="3.01" y2="18"></line>
             </svg>
           </button>
-          ${deleteBtn}
+          ${moreBtn}
         </div>
       </div>
     `;
@@ -1206,8 +1336,8 @@ const FlashcardModule = (function() {
     const topicRows = container.querySelectorAll('.deck-topic');
     topicRows.forEach(row => {
       row.addEventListener('click', async (e) => {
-        // 一覧ボタンがクリックされた場合はスキップ
-        if (e.target.closest('.deck-list-btn')) return;
+        // ボタンがクリックされた場合はスキップ
+        if (e.target.closest('.deck-list-btn') || e.target.closest('.deck-edit-btn') || e.target.closest('.deck-delete-btn')) return;
         e.stopPropagation();
         const topicId = row.dataset.topicId;
         // 選択したトピックを記憶
@@ -1253,22 +1383,82 @@ const FlashcardModule = (function() {
       });
     });
 
-    // インポートデッキ削除ボタンクリック
-    const deleteBtns = container.querySelectorAll('.deck-delete-btn');
-    deleteBtns.forEach(btn => {
-      btn.addEventListener('click', async (e) => {
+    // インポートデッキ ⋮メニューボタンクリック
+    const moreBtns = container.querySelectorAll('.deck-more-btn');
+    moreBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const topicId = btn.dataset.topicId;
-        const deckId = btn.dataset.deckId;
+        const wrapper = btn.closest('.deck-more-menu-wrapper');
+        const dropdown = wrapper?.querySelector('.deck-more-dropdown');
+        if (!dropdown) return;
+
+        // 他のメニューを閉じる
+        document.querySelectorAll('.deck-more-dropdown.active').forEach(d => {
+          if (d !== dropdown) d.classList.remove('active');
+        });
+
+        // ボタンの位置を取得してドロップダウンを配置
+        const rect = btn.getBoundingClientRect();
+        dropdown.style.position = 'fixed';
+        dropdown.style.top = (rect.bottom + 4) + 'px';
+        dropdown.style.right = (window.innerWidth - rect.right) + 'px';
+        dropdown.style.left = 'auto';
+        dropdown.style.bottom = 'auto';
+
+        // このメニューをトグル
+        dropdown.classList.toggle('active');
+      });
+    });
+
+    // ⋮メニュー内の編集ボタンクリック
+    const moreEditBtns = container.querySelectorAll('.deck-more-edit');
+    moreEditBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dropdown = btn.closest('.deck-more-dropdown');
+        const topicId = dropdown?.dataset.topicId;
+        dropdown?.classList.remove('active');
+        if (topicId) openDeckEditModal(topicId);
+      });
+    });
+
+    // ⋮メニュー内の削除ボタンクリック
+    const moreDeleteBtns = container.querySelectorAll('.deck-more-delete');
+    moreDeleteBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dropdown = btn.closest('.deck-more-dropdown');
+        const topicId = dropdown?.dataset.topicId;
+        const deckId = dropdown?.dataset.deckId;
+        dropdown?.classList.remove('active');
+
         const topic = DATA.find(d => d.id === topicId);
         const title = topic?.title || 'このデッキ';
 
-        if (confirm(`「${title}」を削除しますか？\n\n学習進捗も削除されます。`)) {
-          deleteImportedDeck(deckId, topicId);
-          renderDeckList();
-        }
+        showConfirmDialog(
+          'デッキを削除',
+          `「${title}」を削除しますか？\n\n学習進捗も削除されます。`,
+          () => {
+            deleteImportedDeck(deckId, topicId);
+            renderDeckList();
+          },
+          true
+        );
       });
     });
+
+    // メニュー外クリックで閉じる
+    document.addEventListener('click', closeDeckMoreMenus);
+    document.addEventListener('touchstart', closeDeckMoreMenus);
+
+    // デッキ管理ボタンクリック
+    const manageBtn = document.getElementById('deck-manage-toggle');
+    if (manageBtn) {
+      manageBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openDeckManageModal();
+      });
+    }
 
     // 設定ボタン（内訳シートを開く）
     const breakdownLink = document.getElementById('deck-breakdown-link');
@@ -1557,7 +1747,10 @@ const FlashcardModule = (function() {
 
   // テキストからトピックを読み込む共通処理
   function loadTopicFromText(text, topicId, shuffle = false) {
-    state.cards = parseQAToCards(text, topicId);
+    let cards = parseQAToCards(text, topicId);
+    // 組み込みデッキの場合、カスタマイズを適用
+    cards = applyCustomizations(cards, topicId);
+    state.cards = cards;
 
     // 復習モードの場合、「もう一度」のカードのみフィルタ
     if (state.isReviewMode) {
@@ -2314,6 +2507,7 @@ const FlashcardModule = (function() {
 
     // QAファイルを読み込み
     let cards = [];
+    let isBuiltInDeck = false; // 組み込みデッキ（.txtベース）かどうか
     try {
       // ローカルインポートの場合
       if (topic.localJsonData) {
@@ -2322,12 +2516,18 @@ const FlashcardModule = (function() {
         const response = await fetch(encodeURI(qaPath));
         const text = await response.text();
         cards = parseQAToCards(text, topicId);
+        isBuiltInDeck = true;
+        // 組み込みデッキの場合、カスタマイズを適用
+        cards = applyCustomizations(cards, topicId);
       }
     } catch (e) {
       console.log('Q&A読み込みエラー:', e);
       container.innerHTML = `<div class="flashcard-error">Q&Aの読み込みに失敗しました</div>`;
       return;
     }
+
+    // カスタマイズがあるかどうか
+    const hasCustomization = hasTopicCustomization(topicId);
 
     // ヘッダー
     const headerHtml = `
@@ -2339,11 +2539,28 @@ const FlashcardModule = (function() {
         </button>
         <div class="deck-card-list-title">
           <span class="deck-card-list-topic">${escapeHtml(topic.title)}</span>
-          <span class="deck-card-list-count">${cards.length}枚</span>
+          <span class="deck-card-list-count">${cards.length}枚${hasCustomization ? ' (編集済)' : ''}</span>
         </div>
-        <button class="deck-card-list-start" id="deck-card-list-start">演習</button>
+        <div class="deck-card-list-actions">
+          ${hasCustomization ? `
+            <button class="deck-card-list-reset" id="deck-card-list-reset" title="編集をリセット">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                <path d="M21 3v5h-5"></path>
+                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                <path d="M3 21v-5h5"></path>
+              </svg>
+            </button>
+          ` : ''}
+          <button class="deck-card-list-start" id="deck-card-list-start">演習</button>
+        </div>
       </div>
     `;
+
+    // インポート済みデッキかどうか（編集・削除ボタン表示用）
+    const isImportedDeck = topic.source === 'local_imported';
+    // 編集可能なデッキかどうか（インポート済み または 組み込みデッキ）
+    const isEditable = isImportedDeck || isBuiltInDeck;
 
     // カード一覧（検索結果と同じ形式）
     let cardsHtml = cards.map((card, idx) => {
@@ -2353,11 +2570,34 @@ const FlashcardModule = (function() {
       const isFavorite = cardProgress && cardProgress.favorite;
       const isExpanded = state.deckCardListExpandedKeys && state.deckCardListExpandedKeys.has(key);
 
+      // 元のインデックス（カスタマイズ用）
+      const originalIndex = card.originalIndex !== undefined ? card.originalIndex : idx;
+
       // htmlPathを決定（カード単位 or トピック単位）
       const cardHtmlPath = card.htmlPath || (topic && topic.htmlPath);
 
+      // 編集・削除ボタン（編集可能なデッキ、展開時のみ）
+      const editDeleteBtns = (isEditable && isExpanded) ? `
+        <div class="card-list-edit-actions">
+          <button class="card-list-edit-btn" data-card-index="${idx}" data-original-index="${originalIndex}" title="編集">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+            <span>編集</span>
+          </button>
+          <button class="card-list-delete-btn" data-card-index="${idx}" data-original-index="${originalIndex}" title="削除">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+            <span>削除</span>
+          </button>
+        </div>
+      ` : '';
+
       return `
-        <div class="card-search-item ${isExpanded ? 'expanded' : ''}" data-key="${escapeHtml(key)}">
+        <div class="card-search-item ${isExpanded ? 'expanded' : ''}" data-key="${escapeHtml(key)}" data-card-index="${idx}">
           <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
             <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
             ${isExpanded ? `
@@ -2370,6 +2610,7 @@ const FlashcardModule = (function() {
                   まとめを見る
                 </button>
               ` : ''}
+              ${editDeleteBtns}
             ` : ''}
           </div>
           <div class="card-search-footer">
@@ -2520,6 +2761,94 @@ const FlashcardModule = (function() {
         if (typeof window.selectItem === 'function') {
           window.selectItem(btnTopicId);
         }
+      });
+    });
+
+    // リセットボタン（カスタマイズリセット）
+    const resetBtn = document.getElementById('deck-card-list-reset');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        showConfirmDialog(
+          '編集をリセット',
+          'このデッキへの編集・削除をすべて元に戻しますか？',
+          () => {
+            if (resetTopicCustomization(topicId)) {
+              showToast('編集をリセットしました');
+              renderDeckCardList(topicId);
+            }
+          }
+        );
+      });
+    }
+
+    // カード編集ボタン（インポートデッキ・組み込みデッキ両対応）
+    const cardEditBtns = container.querySelectorAll('.card-list-edit-btn');
+    cardEditBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const cardIndex = parseInt(btn.dataset.cardIndex);
+        const originalIndex = parseInt(btn.dataset.originalIndex);
+        const topic = DATA.find(d => d.id === topicId);
+
+        // インポート済みデッキの場合
+        if (topic && topic.localJsonData) {
+          let card = null;
+          let count = 0;
+          for (const section of topic.localJsonData.sections || []) {
+            for (const qa of section.qa || []) {
+              if (count === cardIndex) {
+                card = {
+                  question: qa.question,
+                  answer: qa.answer,
+                  isChoiceCard: qa.choices && Object.keys(qa.choices).length > 0,
+                  choices: qa.choices
+                };
+                break;
+              }
+              count++;
+            }
+            if (card) break;
+          }
+          if (card) {
+            openCardEditModal(topicId, cardIndex, card);
+          }
+          return;
+        }
+
+        // 組み込みデッキの場合：表示中のカードから情報を取得
+        const cardItem = btn.closest('.card-search-item');
+        if (cardItem) {
+          const questionEl = cardItem.querySelector('.card-search-question');
+          const answerEl = cardItem.querySelector('.card-search-answer');
+          const card = {
+            question: questionEl ? questionEl.textContent.replace(/^Q:\s*/, '') : '',
+            answer: answerEl ? answerEl.textContent.replace(/^A:\s*/, '') : '',
+            isChoiceCard: false,
+            choices: null
+          };
+          // 組み込みデッキ用の編集モーダルを開く（originalIndexを使用）
+          openBuiltInCardEditModal(topicId, originalIndex, card);
+        }
+      });
+    });
+
+    // カード削除ボタン（インポートデッキ・組み込みデッキ両対応）
+    const cardDeleteBtns = container.querySelectorAll('.card-list-delete-btn');
+    cardDeleteBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const cardIndex = parseInt(btn.dataset.cardIndex);
+        const originalIndex = parseInt(btn.dataset.originalIndex);
+        const topic = DATA.find(d => d.id === topicId);
+
+        // インポート済みデッキの場合
+        if (topic && topic.localJsonData) {
+          deleteCard(topicId, cardIndex);
+          return;
+        }
+
+        // 組み込みデッキの場合：差分削除
+        deleteBuiltInCard(topicId, originalIndex);
       });
     });
   }
@@ -4739,6 +5068,752 @@ const FlashcardModule = (function() {
         </div>
       </div>
     `;
+  }
+
+  // ===========================================
+  // デッキ編集機能
+  // ===========================================
+
+  // 編集中のデッキ/カード情報
+  const editState = {
+    deckId: null,
+    cardKey: null,
+    cardTopicId: null,
+    cardIndex: null,
+    selectedDecks: new Set(),
+    isBuiltInDeck: false // 組み込みデッキ編集フラグ
+  };
+
+  // デッキ編集モーダルを開く
+  function openDeckEditModal(topicId) {
+    const topic = DATA.find(d => d.id === topicId);
+    if (!topic || topic.source !== 'local_imported') {
+      showToast('このデッキは編集できません');
+      return;
+    }
+
+    editState.deckId = topicId;
+
+    const overlay = document.getElementById('deck-edit-overlay');
+    const nameInput = document.getElementById('deck-edit-name');
+    const categoryInput = document.getElementById('deck-edit-category');
+
+    if (overlay && nameInput && categoryInput) {
+      nameInput.value = topic.title || '';
+      // カテゴリからプレフィックスを除去
+      const category = (topic.subjectCategory || topic.category || '').replace(/^インポート\//, '');
+      categoryInput.value = category;
+      overlay.classList.add('show');
+      nameInput.focus();
+    }
+
+    // イベントバインド
+    bindDeckEditEvents();
+  }
+
+  // デッキ編集モーダルを閉じる
+  function closeDeckEditModal() {
+    const overlay = document.getElementById('deck-edit-overlay');
+    if (overlay) overlay.classList.remove('show');
+    editState.deckId = null;
+  }
+
+  // デッキ編集を保存
+  function saveDeckEdit() {
+    if (!editState.deckId) return;
+
+    const nameInput = document.getElementById('deck-edit-name');
+    const categoryInput = document.getElementById('deck-edit-category');
+
+    const newName = nameInput?.value.trim();
+    const newCategory = categoryInput?.value.trim() || 'ローカル';
+
+    if (!newName) {
+      showToast('デッキ名を入力してください');
+      return;
+    }
+
+    // DATAを更新
+    const topic = DATA.find(d => d.id === editState.deckId);
+    if (topic) {
+      topic.title = newName;
+      topic.category = `インポート/${newCategory}`;
+      topic.subjectCategory = newCategory;
+    }
+
+    // localStorageを更新
+    const IMPORTED_DECKS_KEY = 'studyViewer_importedDecks';
+    try {
+      const stored = localStorage.getItem(IMPORTED_DECKS_KEY);
+      if (stored) {
+        let importedDecks = JSON.parse(stored);
+        const deck = importedDecks.find(d => d.id === editState.deckId);
+        if (deck) {
+          deck.title = newName;
+          deck.category = newCategory;
+          localStorage.setItem(IMPORTED_DECKS_KEY, JSON.stringify(importedDecks));
+        }
+      }
+    } catch (e) {
+      console.error('デッキ編集エラー:', e);
+    }
+
+    // Firebase同期
+    if (typeof FirebaseSync !== 'undefined' && FirebaseSync.isLoggedIn()) {
+      FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
+    }
+
+    closeDeckEditModal();
+    renderDeckList();
+    showToast('デッキを更新しました');
+  }
+
+  // デッキ編集イベントをバインド
+  function bindDeckEditEvents() {
+    const overlay = document.getElementById('deck-edit-overlay');
+    const backdrop = overlay?.querySelector('.deck-edit-backdrop');
+    const cancelBtn = document.getElementById('deck-edit-cancel');
+    const saveBtn = document.getElementById('deck-edit-save');
+
+    backdrop?.addEventListener('click', closeDeckEditModal);
+    cancelBtn?.addEventListener('click', closeDeckEditModal);
+    saveBtn?.addEventListener('click', saveDeckEdit);
+  }
+
+  // ===========================================
+  // カード編集機能
+  // ===========================================
+
+  // カード編集モーダルを開く
+  function openCardEditModal(topicId, cardIndex, card) {
+    // インポート済みデッキのカードのみ編集可能
+    const topic = DATA.find(d => d.id === topicId);
+    if (!topic || topic.source !== 'local_imported') {
+      showToast('このカードは編集できません');
+      return;
+    }
+
+    editState.cardTopicId = topicId;
+    editState.cardIndex = cardIndex;
+
+    const overlay = document.getElementById('card-edit-overlay');
+    const questionInput = document.getElementById('card-edit-question');
+    const answerInput = document.getElementById('card-edit-answer');
+    const choicesSection = document.getElementById('card-edit-choices-section');
+    const choicesContainer = document.getElementById('card-edit-choices');
+
+    if (overlay && questionInput && answerInput) {
+      questionInput.value = card.question || '';
+      answerInput.value = card.answer || '';
+
+      // 選択肢がある場合
+      if (card.isChoiceCard && card.choices) {
+        choicesSection.style.display = 'block';
+        choicesContainer.innerHTML = Object.entries(card.choices).map(([key, value]) => `
+          <div class="card-edit-choice-item">
+            <span class="card-edit-choice-key">${key.toUpperCase()}</span>
+            <input type="text" class="card-edit-choice-input" data-choice-key="${key}" value="${escapeHtml(value || '')}">
+          </div>
+        `).join('');
+      } else {
+        choicesSection.style.display = 'none';
+        choicesContainer.innerHTML = '';
+      }
+
+      overlay.classList.add('show');
+      questionInput.focus();
+    }
+
+    // イベントバインド
+    bindCardEditEvents();
+  }
+
+  // カード編集モーダルを閉じる
+  function closeCardEditModal() {
+    const overlay = document.getElementById('card-edit-overlay');
+    if (overlay) overlay.classList.remove('show');
+    editState.cardTopicId = null;
+    editState.cardIndex = null;
+    editState.isBuiltInDeck = false;
+  }
+
+  // カード編集を保存
+  function saveCardEdit() {
+    if (editState.cardTopicId === null || editState.cardIndex === null) return;
+
+    const topic = DATA.find(d => d.id === editState.cardTopicId);
+    if (!topic || !topic.localJsonData) {
+      showToast('保存できませんでした');
+      return;
+    }
+
+    const questionInput = document.getElementById('card-edit-question');
+    const answerInput = document.getElementById('card-edit-answer');
+
+    const newQuestion = questionInput?.value.trim();
+    const newAnswer = answerInput?.value.trim();
+
+    if (!newQuestion) {
+      showToast('問いを入力してください');
+      return;
+    }
+
+    // localJsonDataを更新
+    let cardCount = 0;
+    for (const section of topic.localJsonData.sections || []) {
+      for (const qa of section.qa || []) {
+        if (cardCount === editState.cardIndex) {
+          qa.question = newQuestion;
+          qa.answer = newAnswer;
+
+          // 選択肢を更新
+          const choiceInputs = document.querySelectorAll('.card-edit-choice-input');
+          if (choiceInputs.length > 0) {
+            choiceInputs.forEach(input => {
+              const key = input.dataset.choiceKey;
+              if (qa.choices && key) {
+                qa.choices[key] = input.value.trim();
+              }
+            });
+          }
+          break;
+        }
+        cardCount++;
+      }
+    }
+
+    // localStorageを更新
+    const IMPORTED_DECKS_KEY = 'studyViewer_importedDecks';
+    try {
+      const stored = localStorage.getItem(IMPORTED_DECKS_KEY);
+      if (stored) {
+        let importedDecks = JSON.parse(stored);
+        const deck = importedDecks.find(d => d.id === editState.cardTopicId);
+        if (deck) {
+          deck.jsonData = topic.localJsonData;
+          localStorage.setItem(IMPORTED_DECKS_KEY, JSON.stringify(importedDecks));
+        }
+      }
+    } catch (e) {
+      console.error('カード編集保存エラー:', e);
+    }
+
+    // Firebase同期
+    if (typeof FirebaseSync !== 'undefined' && FirebaseSync.isLoggedIn()) {
+      FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
+    }
+
+    closeCardEditModal();
+    renderDeckCardList(editState.cardTopicId);
+    showToast('カードを更新しました');
+  }
+
+  // カード編集イベントをバインド
+  function bindCardEditEvents() {
+    const overlay = document.getElementById('card-edit-overlay');
+    const backdrop = overlay?.querySelector('.card-edit-backdrop');
+    const cancelBtn = document.getElementById('card-edit-cancel');
+    const saveBtn = document.getElementById('card-edit-save');
+
+    backdrop?.addEventListener('click', closeCardEditModal);
+    cancelBtn?.addEventListener('click', closeCardEditModal);
+    saveBtn?.addEventListener('click', saveCardEdit);
+  }
+
+  // ===========================================
+  // 組み込みデッキカード編集機能（差分保存）
+  // ===========================================
+
+  // 組み込みデッキ用の編集モーダルを開く
+  function openBuiltInCardEditModal(topicId, originalIndex, card) {
+    editState.cardTopicId = topicId;
+    editState.cardIndex = originalIndex; // 元のインデックスを保存
+    editState.isBuiltInDeck = true; // 組み込みデッキフラグ
+
+    const overlay = document.getElementById('card-edit-overlay');
+    const questionInput = document.getElementById('card-edit-question');
+    const answerInput = document.getElementById('card-edit-answer');
+    const choicesSection = document.getElementById('card-edit-choices-section');
+    const choicesContainer = document.getElementById('card-edit-choices');
+
+    if (overlay && questionInput && answerInput) {
+      questionInput.value = card.question || '';
+      answerInput.value = card.answer || '';
+
+      // 組み込みデッキでは選択肢編集は非対応
+      if (choicesSection) choicesSection.style.display = 'none';
+      if (choicesContainer) choicesContainer.innerHTML = '';
+
+      overlay.classList.add('show');
+      questionInput.focus();
+    }
+
+    // イベントバインド（組み込みデッキ用）
+    bindBuiltInCardEditEvents();
+  }
+
+  // 組み込みデッキ用の保存処理
+  function saveBuiltInCardEdit() {
+    if (editState.cardTopicId === null || editState.cardIndex === null) return;
+
+    const questionInput = document.getElementById('card-edit-question');
+    const answerInput = document.getElementById('card-edit-answer');
+
+    const newQuestion = questionInput?.value.trim();
+    const newAnswer = answerInput?.value.trim();
+
+    if (!newQuestion) {
+      showToast('問いを入力してください');
+      return;
+    }
+
+    // カスタマイズを保存（差分として）
+    const customization = getTopicCustomization(editState.cardTopicId);
+    if (!customization.edited) customization.edited = {};
+    customization.edited[editState.cardIndex] = {
+      q: newQuestion,
+      a: newAnswer
+    };
+    saveTopicCustomization(editState.cardTopicId, customization);
+
+    const savedTopicId = editState.cardTopicId;
+    closeCardEditModal();
+    renderDeckCardList(savedTopicId);
+    showToast('カードを更新しました');
+  }
+
+  // 組み込みデッキ用のイベントバインド
+  function bindBuiltInCardEditEvents() {
+    const overlay = document.getElementById('card-edit-overlay');
+    const backdrop = overlay?.querySelector('.card-edit-backdrop');
+    const cancelBtn = document.getElementById('card-edit-cancel');
+    const saveBtn = document.getElementById('card-edit-save');
+
+    // 既存のリスナーを削除してから追加
+    const newSaveBtn = saveBtn.cloneNode(true);
+    saveBtn.parentNode.replaceChild(newSaveBtn, saveBtn);
+
+    backdrop?.addEventListener('click', closeCardEditModal);
+    cancelBtn?.addEventListener('click', closeCardEditModal);
+    newSaveBtn?.addEventListener('click', saveBuiltInCardEdit);
+  }
+
+  // ===========================================
+  // 組み込みデッキカード削除機能（差分保存）
+  // ===========================================
+
+  // 組み込みデッキのカードを削除（差分として記録）
+  function deleteBuiltInCard(topicId, originalIndex) {
+    showConfirmDialog(
+      'カードを削除',
+      'このカードを削除しますか？「編集をリセット」で元に戻せます。',
+      () => {
+        // カスタマイズを保存（削除インデックスを追加）
+        const customization = getTopicCustomization(topicId);
+        if (!customization.deleted) customization.deleted = [];
+
+        // 既に削除済みでなければ追加
+        if (!customization.deleted.includes(originalIndex)) {
+          customization.deleted.push(originalIndex);
+          customization.deleted.sort((a, b) => a - b);
+        }
+
+        // 編集データがある場合は削除
+        if (customization.edited && customization.edited[originalIndex]) {
+          delete customization.edited[originalIndex];
+        }
+
+        saveTopicCustomization(topicId, customization);
+        renderDeckCardList(topicId);
+        showToast('カードを削除しました');
+      }
+    );
+  }
+
+  // ===========================================
+  // カード削除機能（インポート済みデッキ用）
+  // ===========================================
+
+  // カードを削除
+  function deleteCard(topicId, cardIndex) {
+    const topic = DATA.find(d => d.id === topicId);
+    if (!topic || topic.source !== 'local_imported') {
+      showToast('このカードは削除できません');
+      return;
+    }
+
+    showConfirmDialog(
+      'カードを削除',
+      'このカードを削除しますか？この操作は取り消せません。',
+      () => {
+        // localJsonDataから削除
+        let cardCount = 0;
+        let deleted = false;
+        for (const section of topic.localJsonData.sections || []) {
+          for (let i = 0; i < (section.qa || []).length; i++) {
+            if (cardCount === cardIndex) {
+              section.qa.splice(i, 1);
+              deleted = true;
+              break;
+            }
+            cardCount++;
+          }
+          if (deleted) break;
+        }
+
+        // 空のセクションを削除
+        topic.localJsonData.sections = topic.localJsonData.sections.filter(s => s.qa && s.qa.length > 0);
+
+        // カード数を更新
+        let totalCards = 0;
+        for (const section of topic.localJsonData.sections || []) {
+          totalCards += (section.qa || []).length;
+        }
+        topic.cardCount = totalCards;
+
+        // localStorageを更新
+        const IMPORTED_DECKS_KEY = 'studyViewer_importedDecks';
+        try {
+          const stored = localStorage.getItem(IMPORTED_DECKS_KEY);
+          if (stored) {
+            let importedDecks = JSON.parse(stored);
+            const deck = importedDecks.find(d => d.id === topicId);
+            if (deck) {
+              deck.jsonData = topic.localJsonData;
+              deck.cardCount = totalCards;
+              localStorage.setItem(IMPORTED_DECKS_KEY, JSON.stringify(importedDecks));
+            }
+          }
+        } catch (e) {
+          console.error('カード削除保存エラー:', e);
+        }
+
+        // 進捗データから関連エントリを削除し、インデックスを再計算
+        const keysToUpdate = Object.keys(state.progress)
+          .filter(k => k.startsWith(topicId + ':'))
+          .sort((a, b) => {
+            const idxA = parseInt(a.split(':')[1]);
+            const idxB = parseInt(b.split(':')[1]);
+            return idxA - idxB;
+          });
+
+        const newProgress = {};
+        for (const key of keysToUpdate) {
+          const idx = parseInt(key.split(':')[1]);
+          if (idx < cardIndex) {
+            newProgress[key] = state.progress[key];
+          } else if (idx > cardIndex) {
+            // インデックスを1つ減らす
+            newProgress[`${topicId}:${idx - 1}`] = state.progress[key];
+          }
+          // idx === cardIndex は削除
+        }
+
+        // 古いキーを削除
+        for (const key of keysToUpdate) {
+          delete state.progress[key];
+        }
+
+        // 新しいキーを追加
+        Object.assign(state.progress, newProgress);
+        saveProgress();
+
+        // Firebase同期
+        if (typeof FirebaseSync !== 'undefined' && FirebaseSync.isLoggedIn()) {
+          FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
+        }
+
+        renderDeckCardList(topicId);
+        showToast('カードを削除しました');
+      },
+      true // danger
+    );
+  }
+
+  // ===========================================
+  // デッキ管理機能（合体・一括削除）
+  // ===========================================
+
+  // デッキ管理モーダルを開く
+  function openDeckManageModal() {
+    const importedDecks = DATA.filter(d => d.source === 'local_imported');
+
+    if (importedDecks.length === 0) {
+      showToast('管理できるデッキがありません');
+      return;
+    }
+
+    editState.selectedDecks = new Set();
+
+    const overlay = document.getElementById('deck-manage-overlay');
+    const listContainer = document.getElementById('deck-manage-list');
+
+    if (overlay && listContainer) {
+      listContainer.innerHTML = importedDecks.map(deck => `
+        <div class="deck-manage-item" data-deck-id="${deck.id}">
+          <div class="deck-manage-checkbox">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="deck-manage-info">
+            <div class="deck-manage-name">${escapeHtml(deck.title)}</div>
+            <div class="deck-manage-meta">${deck.cardCount || 0}枚 · ${deck.subjectCategory || 'ローカル'}</div>
+          </div>
+        </div>
+      `).join('');
+
+      overlay.classList.add('show');
+    }
+
+    bindDeckManageEvents();
+    updateDeckManageUI();
+  }
+
+  // デッキ管理モーダルを閉じる
+  function closeDeckManageModal() {
+    const overlay = document.getElementById('deck-manage-overlay');
+    if (overlay) overlay.classList.remove('show');
+    editState.selectedDecks.clear();
+  }
+
+  // デッキ管理のUIを更新
+  function updateDeckManageUI() {
+    const countEl = document.getElementById('deck-manage-count');
+    const mergeBtn = document.getElementById('deck-manage-merge');
+    const deleteBtn = document.getElementById('deck-manage-delete');
+
+    const count = editState.selectedDecks.size;
+    if (countEl) countEl.textContent = `${count}件選択`;
+    if (mergeBtn) mergeBtn.disabled = count < 2;
+    if (deleteBtn) deleteBtn.disabled = count === 0;
+
+    // 選択状態を反映
+    const items = document.querySelectorAll('.deck-manage-item');
+    items.forEach(item => {
+      const deckId = item.dataset.deckId;
+      item.classList.toggle('selected', editState.selectedDecks.has(deckId));
+    });
+  }
+
+  // デッキ管理イベントをバインド
+  function bindDeckManageEvents() {
+    const overlay = document.getElementById('deck-manage-overlay');
+    const backdrop = overlay?.querySelector('.deck-manage-backdrop');
+    const cancelBtn = document.getElementById('deck-manage-cancel');
+    const mergeBtn = document.getElementById('deck-manage-merge');
+    const deleteBtn = document.getElementById('deck-manage-delete');
+
+    backdrop?.addEventListener('click', closeDeckManageModal);
+    cancelBtn?.addEventListener('click', closeDeckManageModal);
+
+    // 各デッキアイテムのクリック
+    const items = document.querySelectorAll('.deck-manage-item');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const deckId = item.dataset.deckId;
+        if (editState.selectedDecks.has(deckId)) {
+          editState.selectedDecks.delete(deckId);
+        } else {
+          editState.selectedDecks.add(deckId);
+        }
+        updateDeckManageUI();
+      });
+    });
+
+    // 合体ボタン
+    mergeBtn?.addEventListener('click', openMergeDialog);
+
+    // 削除ボタン
+    deleteBtn?.addEventListener('click', () => {
+      const count = editState.selectedDecks.size;
+      showConfirmDialog(
+        'デッキを削除',
+        `選択した${count}個のデッキを削除しますか？この操作は取り消せません。`,
+        () => {
+          for (const deckId of editState.selectedDecks) {
+            deleteImportedDeck(deckId, deckId);
+          }
+          closeDeckManageModal();
+          renderDeckList();
+          showToast(`${count}個のデッキを削除しました`);
+        },
+        true
+      );
+    });
+  }
+
+  // ===========================================
+  // デッキ合体機能
+  // ===========================================
+
+  // 合体ダイアログを開く
+  function openMergeDialog() {
+    const dialog = document.getElementById('deck-merge-dialog');
+    const countEl = document.getElementById('deck-merge-count');
+    const nameInput = document.getElementById('deck-merge-name');
+
+    if (dialog && countEl && nameInput) {
+      countEl.textContent = editState.selectedDecks.size;
+      nameInput.value = '';
+      dialog.classList.add('show');
+      nameInput.focus();
+    }
+
+    bindMergeDialogEvents();
+  }
+
+  // 合体ダイアログを閉じる
+  function closeMergeDialog() {
+    const dialog = document.getElementById('deck-merge-dialog');
+    if (dialog) dialog.classList.remove('show');
+  }
+
+  // 合体を実行
+  function executeMerge() {
+    const nameInput = document.getElementById('deck-merge-name');
+    const newName = nameInput?.value.trim();
+
+    if (!newName) {
+      showToast('新しいデッキ名を入力してください');
+      return;
+    }
+
+    // 選択されたデッキの全カードを収集
+    const allCards = [];
+    for (const deckId of editState.selectedDecks) {
+      const topic = DATA.find(d => d.id === deckId);
+      if (topic && topic.localJsonData) {
+        for (const section of topic.localJsonData.sections || []) {
+          for (const qa of section.qa || []) {
+            allCards.push({
+              ...qa,
+              section: section.section || topic.title
+            });
+          }
+        }
+      }
+    }
+
+    if (allCards.length === 0) {
+      showToast('合体するカードがありません');
+      return;
+    }
+
+    // 新しいデッキを作成
+    const newDeckId = `local_${Date.now()}`;
+    const newJsonData = {
+      deckTitle: newName,
+      sections: [{
+        section: newName,
+        qa: allCards
+      }]
+    };
+
+    const newDeck = {
+      id: newDeckId,
+      title: newName,
+      category: '統合',
+      isLocal: true,
+      jsonData: newJsonData,
+      cardCount: allCards.length,
+      importedAt: Date.now()
+    };
+
+    // localStorageに保存
+    const IMPORTED_DECKS_KEY = 'studyViewer_importedDecks';
+    try {
+      const stored = localStorage.getItem(IMPORTED_DECKS_KEY);
+      let importedDecks = stored ? JSON.parse(stored) : [];
+
+      // 元のデッキを削除
+      importedDecks = importedDecks.filter(d => !editState.selectedDecks.has(d.id));
+
+      // 新しいデッキを追加
+      importedDecks.push(newDeck);
+      localStorage.setItem(IMPORTED_DECKS_KEY, JSON.stringify(importedDecks));
+    } catch (e) {
+      console.error('デッキ合体保存エラー:', e);
+      showToast('合体に失敗しました');
+      return;
+    }
+
+    // DATA配列を更新（元のデッキを削除）
+    for (const deckId of editState.selectedDecks) {
+      for (let i = DATA.length - 1; i >= 0; i--) {
+        if (DATA[i].id === deckId) {
+          DATA.splice(i, 1);
+        }
+      }
+    }
+
+    // 新しいデッキをDATAに追加
+    addImportedDeckToData(newDeck);
+
+    // Firebase同期
+    if (typeof FirebaseSync !== 'undefined' && FirebaseSync.isLoggedIn()) {
+      FirebaseSync.sync().catch(e => console.error('同期エラー:', e));
+    }
+
+    closeMergeDialog();
+    closeDeckManageModal();
+    renderDeckList();
+    showToast(`${editState.selectedDecks.size}個のデッキを合体しました`);
+  }
+
+  // 合体ダイアログイベントをバインド
+  function bindMergeDialogEvents() {
+    const dialog = document.getElementById('deck-merge-dialog');
+    const backdrop = dialog?.querySelector('.deck-merge-backdrop');
+    const cancelBtn = document.getElementById('deck-merge-cancel');
+    const confirmBtn = document.getElementById('deck-merge-confirm');
+
+    backdrop?.addEventListener('click', closeMergeDialog);
+    cancelBtn?.addEventListener('click', closeMergeDialog);
+    confirmBtn?.addEventListener('click', executeMerge);
+  }
+
+  // ===========================================
+  // 確認ダイアログ
+  // ===========================================
+
+  let confirmCallback = null;
+
+  function showConfirmDialog(title, message, callback, isDanger = false) {
+    const dialog = document.getElementById('confirm-dialog');
+    const titleEl = document.getElementById('confirm-title');
+    const messageEl = document.getElementById('confirm-message');
+    const okBtn = document.getElementById('confirm-ok');
+
+    if (dialog && titleEl && messageEl && okBtn) {
+      titleEl.textContent = title;
+      messageEl.textContent = message;
+      okBtn.classList.toggle('danger', isDanger);
+      confirmCallback = callback;
+      dialog.classList.add('show');
+    }
+
+    bindConfirmDialogEvents();
+  }
+
+  function closeConfirmDialog() {
+    const dialog = document.getElementById('confirm-dialog');
+    if (dialog) dialog.classList.remove('show');
+    confirmCallback = null;
+  }
+
+  function bindConfirmDialogEvents() {
+    const dialog = document.getElementById('confirm-dialog');
+    const backdrop = dialog?.querySelector('.confirm-backdrop');
+    const cancelBtn = document.getElementById('confirm-cancel');
+    const okBtn = document.getElementById('confirm-ok');
+
+    backdrop?.addEventListener('click', closeConfirmDialog);
+    cancelBtn?.addEventListener('click', closeConfirmDialog);
+    okBtn?.addEventListener('click', () => {
+      if (confirmCallback) confirmCallback();
+      closeConfirmDialog();
+    });
   }
 
   // === 公開関数 ===

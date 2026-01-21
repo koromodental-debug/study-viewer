@@ -29,7 +29,8 @@ const FirebaseSync = (function() {
     'studyViewer_flashcardSessions',
     'studyViewer_favorites',
     'studyViewer_searchHistory',
-    'studyViewer_importedDecks'
+    'studyViewer_importedDecks',
+    'studyViewer_deckCustomizations'
   ];
 
   // 設定キー（デバイスごとに保持、同期しない）
@@ -276,6 +277,8 @@ const FirebaseSync = (function() {
         return JSON.stringify(mergeFavorites(localData, cloudData));
       } else if (key === 'studyViewer_importedDecks') {
         return JSON.stringify(mergeImportedDecks(localData, cloudData));
+      } else if (key === 'studyViewer_deckCustomizations') {
+        return JSON.stringify(mergeDeckCustomizations(localData, cloudData));
       }
     } catch (e) {
       console.error('[FirebaseSync] マージエラー:', e);
@@ -421,6 +424,53 @@ const FirebaseSync = (function() {
 
     const merged = Array.from(deckMap.values());
     console.log(`[FirebaseSync] デッキマージ: ローカル${localDecks.length}件, クラウド${cloudDecks.length}件 → マージ後${merged.length}件`);
+    return merged;
+  }
+
+  /**
+   * デッキカスタマイズのマージ
+   * データ形式: { "topicId": { "edited": { "index": { "q": "...", "a": "..." } }, "deleted": [index...] } }
+   */
+  function mergeDeckCustomizations(local, cloud) {
+    const localData = local || {};
+    const cloudData = cloud || {};
+
+    // 全てのトピックIDを収集
+    const allTopicIds = new Set([...Object.keys(localData), ...Object.keys(cloudData)]);
+    const merged = {};
+
+    for (const topicId of allTopicIds) {
+      const localCustom = localData[topicId];
+      const cloudCustom = cloudData[topicId];
+
+      if (localCustom && !cloudCustom) {
+        // ローカルにのみ存在
+        merged[topicId] = localCustom;
+      } else if (!localCustom && cloudCustom) {
+        // クラウドにのみ存在
+        merged[topicId] = cloudCustom;
+      } else if (localCustom && cloudCustom) {
+        // 両方に存在 → 各要素をマージ
+        const mergedEdited = { ...cloudCustom.edited };
+        for (const idx in localCustom.edited || {}) {
+          if (!mergedEdited[idx]) {
+            mergedEdited[idx] = localCustom.edited[idx];
+          }
+        }
+
+        const mergedDeleted = [...new Set([
+          ...(cloudCustom.deleted || []),
+          ...(localCustom.deleted || [])
+        ])].sort((a, b) => a - b);
+
+        merged[topicId] = {
+          edited: mergedEdited,
+          deleted: mergedDeleted
+        };
+      }
+    }
+
+    console.log(`[FirebaseSync] カスタマイズマージ: ローカル${Object.keys(localData).length}件, クラウド${Object.keys(cloudData).length}件 → マージ後${Object.keys(merged).length}件`);
     return merged;
   }
 

@@ -2669,12 +2669,14 @@ const FlashcardModule = (function() {
     // イベントバインド
     bindDeckCardListEvents(topicId);
 
-    // スクロール位置を復元
-    if (state.deckCardListScrollPos[topicId] !== undefined) {
-      requestAnimationFrame(() => {
+    // スクロール位置を復元（保存されていない場合は先頭にスクロール）
+    requestAnimationFrame(() => {
+      if (state.deckCardListScrollPos[topicId] !== undefined) {
         container.scrollTop = state.deckCardListScrollPos[topicId];
-      });
-    }
+      } else {
+        container.scrollTop = 0;
+      }
+    });
   }
 
   // カード一覧のスクロール位置を保存

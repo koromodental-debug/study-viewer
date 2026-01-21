@@ -2004,19 +2004,26 @@ const FlashcardModule = (function() {
 
     // お気に入りカード配列を構築
     const filteredCards = [];
+    console.log('[Favorites] 読み込み開始:', favorites.length, '件');
     for (const fav of favorites) {
+      console.log('[Favorites] 処理中:', fav.topicId, 'cardIndex:', fav.cardIndex);
       const topicData = topicCardsMap.get(fav.topicId);
-      if (topicData) {
-        const card = topicData.cards.find(c => c.originalIndex === parseInt(fav.cardIndex));
-        if (card) {
-          filteredCards.push({
-            ...card,
-            topicTitle: topicData.topic.title,
-            htmlPath: topicData.topic.htmlPath
-          });
-        }
+      if (!topicData) {
+        console.log('[Favorites] トピック未発見:', fav.topicId);
+        continue;
       }
+      const card = topicData.cards.find(c => c.originalIndex === parseInt(fav.cardIndex));
+      if (!card) {
+        console.log('[Favorites] カード未発見:', fav.topicId, 'cardIndex:', fav.cardIndex, 'cards:', topicData.cards.map(c => c.originalIndex));
+        continue;
+      }
+      filteredCards.push({
+        ...card,
+        topicTitle: topicData.topic.title,
+        htmlPath: topicData.topic.htmlPath
+      });
     }
+    console.log('[Favorites] 解決済み:', filteredCards.length, '件');
 
     if (filteredCards.length === 0) return;
 

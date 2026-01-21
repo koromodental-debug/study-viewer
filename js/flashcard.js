@@ -1443,28 +1443,28 @@ const FlashcardModule = (function() {
       });
     }
 
-    // 「要復習」ボタン
+    // 「要復習」ボタン → 一覧表示
     const againBtn = document.getElementById('start-again-deck');
     if (againBtn) {
-      againBtn.addEventListener('click', () => startStatusDeck('again'));
+      againBtn.addEventListener('click', () => renderStatusDeckCardList('again'));
     }
 
-    // 「定着中」ボタン
+    // 「定着中」ボタン → 一覧表示
     const learningBtn = document.getElementById('start-learning-deck');
     if (learningBtn) {
-      learningBtn.addEventListener('click', () => startStatusDeck('learning'));
+      learningBtn.addEventListener('click', () => renderStatusDeckCardList('learning'));
     }
 
-    // 「習得済」ボタン
+    // 「習得済」ボタン → 一覧表示
     const masteredBtn = document.getElementById('start-mastered-deck');
     if (masteredBtn) {
-      masteredBtn.addEventListener('click', () => startStatusDeck('mastered'));
+      masteredBtn.addEventListener('click', () => renderStatusDeckCardList('mastered'));
     }
 
-    // 「お気に入り」ボタン
+    // 「お気に入り」ボタン → 一覧表示
     const favoriteBtn = document.getElementById('start-favorite-deck');
     if (favoriteBtn) {
-      favoriteBtn.addEventListener('click', () => startFavoriteDeck());
+      favoriteBtn.addEventListener('click', () => renderFavoriteDeckCardList());
     }
 
     // 「？」説明ボタン
@@ -1778,20 +1778,18 @@ const FlashcardModule = (function() {
   }
 
   // === ステータスデッキ（要復習/定着中/習得済） ===
-  async function startStatusDeck(status) {
-    console.log('[startStatusDeck] 開始:', status);
-    // 指定ステータスのカード参照を収集
+
+  // ステータスに応じたカード参照を収集
+  function collectStatusCardRefs(status) {
     const cardRefs = [];
     const now = Date.now();
     const MASTERY_THRESHOLD = 14;
 
     for (const [key, value] of Object.entries(state.progress)) {
-      // 直前期モードでは全てのカードを「要復習」に
       const isDue = state.cramMode ? true : (value.nextReview && value.nextReview <= now);
       const interval = value.interval || 0;
 
       if (status === 'again') {
-        // 「要復習」デッキ: againステータス + 期限切れのmemorized
         if (value.status === 'again') {
           if (!value.nextReview || isDue) {
             const [topicId, cardIndex] = key.split(':');
@@ -1802,59 +1800,47 @@ const FlashcardModule = (function() {
           cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
         }
       } else if (status === 'learning') {
-        // 「定着中」デッキ: memorizedでinterval < 14日
         if (value.status === 'memorized' && !isDue && interval < MASTERY_THRESHOLD) {
           const [topicId, cardIndex] = key.split(':');
           cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
         }
       } else if (status === 'mastered') {
-        // 「習得済」デッキ: memorizedでinterval >= 14日
         if (value.status === 'memorized' && !isDue && interval >= MASTERY_THRESHOLD) {
           const [topicId, cardIndex] = key.split(':');
           cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
         }
       } else if (status === 'memorized') {
-        // 後方互換: 「覚えた」デッキ（learning + mastered）
         if (value.status === 'memorized' && !isDue) {
           const [topicId, cardIndex] = key.split(':');
           cardRefs.push({ topicId, cardIndex: parseInt(cardIndex), key });
         }
       }
     }
+    return cardRefs;
+  }
 
-    console.log('[startStatusDeck] cardRefs:', cardRefs.length, JSON.stringify(cardRefs));
-    if (cardRefs.length === 0) {
-      console.log('[startStatusDeck] カードなし - 終了');
-      return;
-    }
-
-    // 必要なトピックのQAファイルを取得
+  // カード参照からカードデータを取得
+  async function fetchCardsFromRefs(cardRefs) {
     const uniqueTopicIds = [...new Set(cardRefs.map(r => r.topicId))];
-    console.log('[startStatusDeck] uniqueTopicIds:', uniqueTopicIds.slice(0, 5));
     const topicCardsMap = new Map();
 
     for (const topicId of uniqueTopicIds) {
       let topic, qaPath;
 
-      // ココシカ（特別デッキ）の場合
       if (topicId === 'kokoshika_hisshu') {
         topic = { id: 'kokoshika_hisshu', title: '必修ココシカ', subject: '必修' };
         qaPath = 'deck/必修ココシカ.txt';
       } else {
-        // 完全一致 → 部分一致 → title一致の順で検索
         topic = DATA.find(d => d.id === topicId);
         if (!topic) {
-          // 古い形式のtopicIdに対応：部分一致で検索
           topic = DATA.find(d => d.id.includes(topicId) || d.id.endsWith('_' + topicId.toLowerCase()));
         }
         if (!topic) {
-          // titleで検索
           topic = DATA.find(d => d.title === topicId || topicId.includes(d.title));
         }
         qaPath = topic?.qaPath;
       }
 
-      // qaPathがない場合、JSONファイルを推測
       if (!qaPath && topic && topic.category) {
         const parts = topic.category.split('/');
         const subject = parts[0];
@@ -1863,7 +1849,6 @@ const FlashcardModule = (function() {
         qaPath = `qa/subject/${subject}/${fileName}.json`;
       }
 
-      console.log('[startStatusDeck] topicId:', topicId, 'found:', !!topic, 'qaPath:', qaPath);
       if (!topic || !qaPath) continue;
 
       try {
@@ -1889,13 +1874,11 @@ const FlashcardModule = (function() {
 
     // フィルタ済みカード配列を構築
     const filteredCards = [];
-    const addedKeys = new Set(); // 重複防止
-    const invalidKeys = []; // 見つからなかったカード
+    const addedKeys = new Set();
+    const invalidKeys = [];
+
     for (const ref of cardRefs) {
-      // 重複チェック
-      if (addedKeys.has(ref.key)) {
-        continue;
-      }
+      if (addedKeys.has(ref.key)) continue;
       const topicData = topicCardsMap.get(ref.topicId);
       if (topicData) {
         const card = topicData.cards.find(c => c.originalIndex === ref.cardIndex);
@@ -1903,6 +1886,7 @@ const FlashcardModule = (function() {
           addedKeys.add(ref.key);
           filteredCards.push({
             ...card,
+            topicId: ref.topicId,
             topicTitle: topicData.topic.title,
             htmlPath: topicData.topic.htmlPath,
             progressKey: ref.key
@@ -1915,7 +1899,7 @@ const FlashcardModule = (function() {
       }
     }
 
-    // 見つからなかったカードをprogressから削除（データクリーンアップ）
+    // 見つからなかったカードをprogressから削除
     if (invalidKeys.length > 0) {
       for (const key of invalidKeys) {
         delete state.progress[key];
@@ -1923,6 +1907,19 @@ const FlashcardModule = (function() {
       saveProgress();
     }
 
+    return filteredCards;
+  }
+
+  async function startStatusDeck(status) {
+    console.log('[startStatusDeck] 開始:', status);
+    const cardRefs = collectStatusCardRefs(status);
+    console.log('[startStatusDeck] cardRefs:', cardRefs.length);
+
+    if (cardRefs.length === 0) {
+      return;
+    }
+
+    const filteredCards = await fetchCardsFromRefs(cardRefs);
     if (filteredCards.length === 0) {
       return;
     }
@@ -1941,7 +1938,7 @@ const FlashcardModule = (function() {
     state.againCards = [];
     state.currentRound = 1;
 
-    // 常にシャッフル（覚えた順の固定出題を防ぐ）
+    // シャッフル
     for (let i = state.filteredCards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
@@ -1953,6 +1950,245 @@ const FlashcardModule = (function() {
     }
 
     renderCard();
+  }
+
+  // ステータスデッキの一覧表示
+  async function renderStatusDeckCardList(status) {
+    console.log('[renderStatusDeckCardList] 開始:', status);
+    const cardRefs = collectStatusCardRefs(status);
+
+    if (cardRefs.length === 0) {
+      return;
+    }
+
+    const filteredCards = await fetchCardsFromRefs(cardRefs);
+    if (filteredCards.length === 0) {
+      return;
+    }
+
+    const statusNames = {
+      again: '要復習',
+      learning: '定着中',
+      mastered: '習得済'
+    };
+    const title = statusNames[status] || status;
+
+    // ヘッダー
+    const headerHtml = `
+      <div class="deck-card-list-header">
+        <button class="deck-card-list-back" id="deck-card-list-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="deck-card-list-title">
+          <span class="deck-card-list-topic">${title}</span>
+          <span class="deck-card-list-count">${filteredCards.length}枚</span>
+        </div>
+        <div class="deck-card-list-actions">
+          <button class="deck-card-list-start" id="deck-card-list-start">演習</button>
+        </div>
+      </div>
+    `;
+
+    // カード一覧
+    const cardsHtml = filteredCards.map((card, idx) => {
+      const key = card.progressKey;
+      const cardProgress = state.progress[key];
+      const cardStatus = cardProgress ? cardProgress.status : 'new';
+      const isFavorite = FavoritesManager.isFavoriteByParams('qa', card.topicId, card.originalIndex);
+
+      return `
+        <div class="card-search-item" data-key="${escapeHtml(key)}" data-card-index="${idx}">
+          <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
+            <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
+          </div>
+          <div class="card-search-footer">
+            <div class="card-search-meta">${card.topicTitle || ''}</div>
+            <div class="card-search-actions">
+              <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(key)}" data-topic-id="${escapeHtml(card.topicId)}" data-original-index="${card.originalIndex}" data-question="${escapeHtml(card.question)}" data-answer="${escapeHtml(card.answer)}" data-section="${card.section ? escapeHtml(card.section) : ''}" title="お気に入り">
+                <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </button>
+              <button class="card-search-action-btn again ${cardStatus === 'again' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="again">もう一度</button>
+              <button class="card-search-action-btn memorized ${cardStatus === 'memorized' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="memorized">覚えた</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = `
+      <div class="deck-card-list-view" data-status="${status}">
+        ${headerHtml}
+        <div class="deck-card-list-content">
+          ${cardsHtml}
+        </div>
+      </div>
+    `;
+
+    // タブバーを非表示
+    const tabbar = document.querySelector('.floating-tabbar');
+    if (tabbar) tabbar.classList.add('hidden');
+
+    // イベントバインド
+    bindStatusDeckCardListEvents(status, filteredCards);
+
+    // スクロール位置を復元
+    const scrollKey = `status:${status}`;
+    if (state.deckCardListScrollPos[scrollKey] !== undefined) {
+      container.scrollTop = state.deckCardListScrollPos[scrollKey];
+    }
+  }
+
+  // ステータスデッキのスクロール位置保存
+  function saveStatusDeckScrollPos(status) {
+    const scrollKey = `status:${status}`;
+    state.deckCardListScrollPos[scrollKey] = container.scrollTop;
+  }
+
+  // ステータスデッキ一覧のイベントバインド
+  function bindStatusDeckCardListEvents(status, filteredCards) {
+    // 戻るボタン
+    const backBtn = document.getElementById('deck-card-list-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        // スクロール位置を保存
+        saveStatusDeckScrollPos(status);
+        const tabbar = document.querySelector('.floating-tabbar');
+        if (tabbar) tabbar.classList.remove('hidden');
+        renderDeckList();
+        // ホーム画面のスクロール位置をトップにリセット
+        window.scrollTo(0, 0);
+        container.scrollTop = 0;
+      });
+    }
+
+    // スワイプで戻る
+    const listView = container.querySelector('.deck-card-list-view');
+    if (listView) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let isSwiping = false;
+
+      container.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        if (touch.clientX <= 40) {
+          touchStartX = touch.clientX;
+          touchStartY = touch.clientY;
+          isSwiping = true;
+        }
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        if (!isSwiping) return;
+        isSwiping = false;
+        const touch = e.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = Math.abs(touch.clientY - touchStartY);
+        if (deltaX > 80 && deltaY < 100) {
+          // スクロール位置を保存
+          saveStatusDeckScrollPos(status);
+          const tabbar = document.querySelector('.floating-tabbar');
+          if (tabbar) tabbar.classList.remove('hidden');
+          renderDeckList();
+          // ホーム画面のスクロール位置をトップにリセット
+          window.scrollTo(0, 0);
+          container.scrollTop = 0;
+        }
+      }, { passive: true });
+    }
+
+    // 演習開始ボタン
+    const startBtn = document.getElementById('deck-card-list-start');
+    if (startBtn) {
+      startBtn.addEventListener('click', () => {
+        // スクロール位置を保存してから演習開始
+        saveStatusDeckScrollPos(status);
+        startStatusDeck(status);
+      });
+    }
+
+    // カードクリックで展開
+    const cardItems = container.querySelectorAll('.card-search-item');
+    cardItems.forEach((item, idx) => {
+      const card = filteredCards[idx];
+      if (!card) return;
+
+      item.addEventListener('click', (e) => {
+        // ボタンクリックは除外
+        if (e.target.closest('.card-search-action-btn') || e.target.closest('.card-search-favorite-btn')) {
+          return;
+        }
+
+        const isExpanded = item.classList.contains('expanded');
+        // 他の展開を閉じる
+        cardItems.forEach(other => {
+          if (other !== item && other.classList.contains('expanded')) {
+            other.classList.remove('expanded');
+            const answerEl = other.querySelector('.card-search-answer');
+            if (answerEl) answerEl.remove();
+          }
+        });
+
+        if (!isExpanded) {
+          item.classList.add('expanded');
+          const cardEl = item.querySelector('.card-search-card');
+          if (cardEl) {
+            const answerHtml = `<div class="card-search-answer">A: ${escapeHtml(card.answer)}</div>`;
+            cardEl.insertAdjacentHTML('beforeend', answerHtml);
+          }
+        } else {
+          item.classList.remove('expanded');
+          const answerEl = item.querySelector('.card-search-answer');
+          if (answerEl) answerEl.remove();
+        }
+      });
+    });
+
+    // お気に入りボタン
+    const favBtns = container.querySelectorAll('.card-search-favorite-btn');
+    favBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+        const originalIndex = parseInt(btn.dataset.originalIndex);
+        const question = btn.dataset.question;
+        const answer = btn.dataset.answer;
+        const section = btn.dataset.section;
+
+        const content = { question, answer, section };
+        const isFav = FavoritesManager.toggle('qa', topicId, originalIndex, content);
+        btn.classList.toggle('active', isFav);
+        const svg = btn.querySelector('svg');
+        if (svg) svg.setAttribute('fill', isFav ? 'currentColor' : 'none');
+      });
+    });
+
+    // ステータスボタン（もう一度/覚えた）
+    const actionBtns = container.querySelectorAll('.card-search-action-btn');
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+        const action = btn.dataset.action;
+
+        if (!state.progress[key]) {
+          state.progress[key] = {};
+        }
+        state.progress[key].status = action;
+        state.progress[key].lastReviewed = Date.now();
+        saveProgress();
+
+        // ボタンの見た目を更新
+        const item = btn.closest('.card-search-item');
+        const againBtn = item.querySelector('.card-search-action-btn.again');
+        const memorizedBtn = item.querySelector('.card-search-action-btn.memorized');
+        againBtn.classList.toggle('active', action === 'again');
+        memorizedBtn.classList.toggle('active', action === 'memorized');
+      });
+    });
   }
 
   // === お気に入りデッキ ===
@@ -1990,6 +2226,298 @@ const FlashcardModule = (function() {
       }
     }
     return removedCount;
+  }
+
+  // お気に入りデッキの一覧表示
+  async function renderFavoriteDeckCardList() {
+    // 孤立したお気に入りをクリーンアップ
+    cleanupOrphanedFavorites();
+
+    const allFavorites = FavoritesManager.getAll();
+    const favorites = allFavorites.filter(f => f.type === 'qa');
+    if (favorites.length === 0) return;
+
+    // 必要なトピックのQAファイルを取得
+    const uniqueTopicIds = [...new Set(favorites.map(f => f.topicId))];
+    const topicCardsMap = new Map();
+
+    for (const topicId of uniqueTopicIds) {
+      let topic, qaPath;
+
+      if (topicId === 'kokoshika_hisshu') {
+        topic = { id: 'kokoshika_hisshu', title: '必修ココシカ', subject: '必修' };
+        qaPath = 'deck/必修ココシカ.txt';
+      } else {
+        topic = DATA.find(d => d.id === topicId);
+        if (!topic) {
+          topic = DATA.find(d => d.id.includes(topicId) || d.id.endsWith('_' + topicId.toLowerCase()));
+        }
+        qaPath = topic?.qaPath;
+      }
+
+      if (!topic) continue;
+
+      try {
+        let cards;
+        if (topic.localJsonData) {
+          cards = parseJSONToCards(topic.localJsonData, topicId);
+        } else if (qaPath) {
+          const response = await fetch(encodeURI(qaPath));
+          const text = await response.text();
+          cards = parseQAToCards(text, topicId);
+        } else {
+          continue;
+        }
+        topicCardsMap.set(topicId, { cards, topic });
+      } catch (e) {
+        console.log(`QA読み込みエラー (${topicId}):`, e);
+      }
+    }
+
+    // お気に入りカード配列を構築
+    const filteredCards = [];
+    for (const fav of favorites) {
+      const topicData = topicCardsMap.get(fav.topicId);
+      if (!topicData) continue;
+      const card = topicData.cards.find(c => c.originalIndex === parseInt(fav.cardIndex));
+      if (!card) continue;
+      filteredCards.push({
+        ...card,
+        topicId: fav.topicId,
+        topicTitle: topicData.topic.title,
+        htmlPath: topicData.topic.htmlPath,
+        progressKey: `${fav.topicId}:${fav.cardIndex}`
+      });
+    }
+
+    if (filteredCards.length === 0) return;
+
+    // ヘッダー
+    const headerHtml = `
+      <div class="deck-card-list-header">
+        <button class="deck-card-list-back" id="deck-card-list-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="deck-card-list-title">
+          <span class="deck-card-list-topic">お気に入り</span>
+          <span class="deck-card-list-count">${filteredCards.length}枚</span>
+        </div>
+        <div class="deck-card-list-actions">
+          <button class="deck-card-list-start" id="deck-card-list-start">演習</button>
+        </div>
+      </div>
+    `;
+
+    // カード一覧
+    const cardsHtml = filteredCards.map((card, idx) => {
+      const key = card.progressKey;
+      const cardProgress = state.progress[key];
+      const cardStatus = cardProgress ? cardProgress.status : 'new';
+
+      return `
+        <div class="card-search-item" data-key="${escapeHtml(key)}" data-card-index="${idx}">
+          <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
+            <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
+          </div>
+          <div class="card-search-footer">
+            <div class="card-search-meta">${card.topicTitle || ''}</div>
+            <div class="card-search-actions">
+              <button class="card-search-favorite-btn active" data-key="${escapeHtml(key)}" data-topic-id="${escapeHtml(card.topicId)}" data-original-index="${card.originalIndex}" data-question="${escapeHtml(card.question)}" data-answer="${escapeHtml(card.answer)}" data-section="${card.section ? escapeHtml(card.section) : ''}" title="お気に入り解除">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </button>
+              <button class="card-search-action-btn again ${cardStatus === 'again' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="again">もう一度</button>
+              <button class="card-search-action-btn memorized ${cardStatus === 'memorized' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="memorized">覚えた</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = `
+      <div class="deck-card-list-view" data-status="favorite">
+        ${headerHtml}
+        <div class="deck-card-list-content">
+          ${cardsHtml}
+        </div>
+      </div>
+    `;
+
+    // タブバーを非表示
+    const tabbar = document.querySelector('.floating-tabbar');
+    if (tabbar) tabbar.classList.add('hidden');
+
+    // イベントバインド
+    bindFavoriteDeckCardListEvents(filteredCards);
+
+    // スクロール位置を復元
+    const scrollKey = 'favorite';
+    if (state.deckCardListScrollPos[scrollKey] !== undefined) {
+      container.scrollTop = state.deckCardListScrollPos[scrollKey];
+    }
+  }
+
+  // お気に入りデッキのスクロール位置保存
+  function saveFavoriteDeckScrollPos() {
+    state.deckCardListScrollPos['favorite'] = container.scrollTop;
+  }
+
+  // お気に入りデッキ一覧のイベントバインド
+  function bindFavoriteDeckCardListEvents(filteredCards) {
+    // 戻るボタン
+    const backBtn = document.getElementById('deck-card-list-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        // スクロール位置を保存
+        saveFavoriteDeckScrollPos();
+        const tabbar = document.querySelector('.floating-tabbar');
+        if (tabbar) tabbar.classList.remove('hidden');
+        renderDeckList();
+        // ホーム画面のスクロール位置をトップにリセット
+        window.scrollTo(0, 0);
+        container.scrollTop = 0;
+      });
+    }
+
+    // スワイプで戻る
+    const listView = container.querySelector('.deck-card-list-view');
+    if (listView) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let isSwiping = false;
+
+      container.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        if (touch.clientX <= 40) {
+          touchStartX = touch.clientX;
+          touchStartY = touch.clientY;
+          isSwiping = true;
+        }
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        if (!isSwiping) return;
+        isSwiping = false;
+        const touch = e.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = Math.abs(touch.clientY - touchStartY);
+        if (deltaX > 80 && deltaY < 100) {
+          // スクロール位置を保存
+          saveFavoriteDeckScrollPos();
+          const tabbar = document.querySelector('.floating-tabbar');
+          if (tabbar) tabbar.classList.remove('hidden');
+          renderDeckList();
+          // ホーム画面のスクロール位置をトップにリセット
+          window.scrollTo(0, 0);
+          container.scrollTop = 0;
+        }
+      }, { passive: true });
+    }
+
+    // 演習開始ボタン
+    const startBtn = document.getElementById('deck-card-list-start');
+    if (startBtn) {
+      startBtn.addEventListener('click', () => {
+        // スクロール位置を保存してから演習開始
+        saveFavoriteDeckScrollPos();
+        startFavoriteDeck();
+      });
+    }
+
+    // カードクリックで展開
+    const cardItems = container.querySelectorAll('.card-search-item');
+    cardItems.forEach((item, idx) => {
+      const card = filteredCards[idx];
+      if (!card) return;
+
+      item.addEventListener('click', (e) => {
+        if (e.target.closest('.card-search-action-btn') || e.target.closest('.card-search-favorite-btn')) {
+          return;
+        }
+
+        const isExpanded = item.classList.contains('expanded');
+        cardItems.forEach(other => {
+          if (other !== item && other.classList.contains('expanded')) {
+            other.classList.remove('expanded');
+            const answerEl = other.querySelector('.card-search-answer');
+            if (answerEl) answerEl.remove();
+          }
+        });
+
+        if (!isExpanded) {
+          item.classList.add('expanded');
+          const cardEl = item.querySelector('.card-search-card');
+          if (cardEl) {
+            const answerHtml = `<div class="card-search-answer">A: ${escapeHtml(card.answer)}</div>`;
+            cardEl.insertAdjacentHTML('beforeend', answerHtml);
+          }
+        } else {
+          item.classList.remove('expanded');
+          const answerEl = item.querySelector('.card-search-answer');
+          if (answerEl) answerEl.remove();
+        }
+      });
+    });
+
+    // お気に入りボタン（削除してアニメーション）
+    const favBtns = container.querySelectorAll('.card-search-favorite-btn');
+    favBtns.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+        const originalIndex = parseInt(btn.dataset.originalIndex);
+
+        // お気に入りから削除
+        FavoritesManager.toggle('qa', topicId, originalIndex, null);
+
+        // カードを画面から削除（アニメーション）
+        const cardItem = btn.closest('.card-search-item');
+        if (cardItem) {
+          cardItem.style.transition = 'opacity 0.3s, transform 0.3s';
+          cardItem.style.opacity = '0';
+          cardItem.style.transform = 'translateX(-100%)';
+          setTimeout(() => {
+            cardItem.remove();
+            // カウント更新
+            const countEl = container.querySelector('.deck-card-list-count');
+            const remaining = container.querySelectorAll('.card-search-item').length;
+            if (countEl) countEl.textContent = `${remaining}枚`;
+            // 全て削除されたら戻る
+            if (remaining === 0) {
+              const tabbar = document.querySelector('.floating-tabbar');
+              if (tabbar) tabbar.classList.remove('hidden');
+              renderDeckList();
+            }
+          }, 300);
+        }
+      });
+    });
+
+    // ステータスボタン（もう一度/覚えた）
+    const actionBtns = container.querySelectorAll('.card-search-action-btn');
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+        const action = btn.dataset.action;
+
+        if (!state.progress[key]) {
+          state.progress[key] = {};
+        }
+        state.progress[key].status = action;
+        state.progress[key].lastReviewed = Date.now();
+        saveProgress();
+
+        const item = btn.closest('.card-search-item');
+        const againBtn = item.querySelector('.card-search-action-btn.again');
+        const memorizedBtn = item.querySelector('.card-search-action-btn.memorized');
+        againBtn.classList.toggle('active', action === 'again');
+        memorizedBtn.classList.toggle('active', action === 'memorized');
+      });
+    });
   }
 
   async function startFavoriteDeck() {
@@ -2700,6 +3228,50 @@ const FlashcardModule = (function() {
         if (tabbar) tabbar.classList.remove('hidden');
         renderDeckList();
       });
+    }
+
+    // スワイプで戻るジェスチャー
+    const container = document.getElementById('deck-card-list-container');
+    if (container) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let isSwiping = false;
+
+      container.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        // 画面左端40px以内からのタッチのみ対象
+        if (touch.clientX <= 40) {
+          touchStartX = touch.clientX;
+          touchStartY = touch.clientY;
+          isSwiping = true;
+        }
+      }, { passive: true });
+
+      container.addEventListener('touchmove', (e) => {
+        if (!isSwiping) return;
+        // スワイプ中の処理（必要に応じてビジュアルフィードバック追加可能）
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        if (!isSwiping) return;
+        isSwiping = false;
+
+        const touch = e.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = Math.abs(touch.clientY - touchStartY);
+
+        // 右に80px以上スワイプ、かつ縦方向の移動が少ない場合
+        if (deltaX > 80 && deltaY < 100) {
+          // 戻る処理を実行
+          saveDeckCardListScrollPos(topicId);
+          state.deckCardListExpandedKeys = new Set();
+          state.deckCardListSummaryKeys = new Set();
+          state.deckCardListSummaryContent = {};
+          const tabbar = document.querySelector('.floating-tabbar');
+          if (tabbar) tabbar.classList.remove('hidden');
+          renderDeckList();
+        }
+      }, { passive: true });
     }
 
     // 演習開始ボタン

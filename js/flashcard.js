@@ -3891,24 +3891,35 @@ const FlashcardModule = (function() {
     content.style.overflow = 'visible';
     content.style.maxHeight = 'none';
 
-    // 全要素の色を直接インラインスタイルで黒に変更（元のスタイルを保存）
+    // 全要素をライトモードスタイルに変更（元のスタイルを保存）
     const elements = content.querySelectorAll('*');
     const originalStyles = [];
     elements.forEach((el, i) => {
       originalStyles[i] = {
         color: el.style.color,
         webkitTextFillColor: el.style.webkitTextFillColor,
-        backgroundColor: el.style.backgroundColor
+        backgroundColor: el.style.backgroundColor,
+        borderColor: el.style.borderColor
       };
+      // テキスト色を黒に
       el.style.color = '#1c1c1e';
       el.style.webkitTextFillColor = '#1c1c1e';
-      if (el.tagName === 'TH') {
+      // 背景色を適切に設定
+      const tagName = el.tagName.toUpperCase();
+      if (tagName === 'TH') {
         el.style.backgroundColor = '#f2f2f7';
-      } else if (el.tagName === 'TD') {
+      } else if (tagName === 'TD' || tagName === 'TR' || tagName === 'TABLE') {
         el.style.backgroundColor = '#ffffff';
+      } else if (tagName === 'MARK' || el.classList.contains('highlight') || el.classList.contains('keyword-highlight')) {
+        el.style.backgroundColor = 'rgba(255, 204, 0, 0.4)';
+      } else {
+        el.style.backgroundColor = 'transparent';
       }
+      // ボーダー色
+      el.style.borderColor = '#c6c6c8';
     });
     content.style.backgroundColor = '#ffffff';
+    content.style.color = '#1c1c1e';
 
     try {
       const canvas = await html2canvas(content, {
@@ -3953,8 +3964,10 @@ const FlashcardModule = (function() {
         el.style.color = originalStyles[i].color;
         el.style.webkitTextFillColor = originalStyles[i].webkitTextFillColor;
         el.style.backgroundColor = originalStyles[i].backgroundColor;
+        el.style.borderColor = originalStyles[i].borderColor;
       });
       content.style.backgroundColor = '';
+      content.style.color = '';
       content.style.overflow = originalOverflow;
       content.style.maxHeight = originalMaxHeight;
     }

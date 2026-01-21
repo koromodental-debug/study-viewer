@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "顔面神経麻痺",
+    "category": "解剖学",
+    "chapter": "06_頭頸部の神経"
+  },
+  "sections": [
+    {
+      "section": "主な症状",
+      "qa": [
+        {
+          "question": "損傷すると味覚障害をきたすのはどれか。2つ選べ。",
+          "answer": "A, B",
+          "choices": {
+            "a": "鼓索神経",
+            "b": "舌咽神経",
+            "c": "舌下神経",
+            "d": "下歯槽神経",
+            "e": "眼窩下神経"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "105A100"
+        }
+      ]
+    }
+  ]
+}

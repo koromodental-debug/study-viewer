@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唾液腺の自律神経支配 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 自律神経</span>
+    <h1>唾液腺の自律神経支配</h1>
+    <div class="container">
+
+      <h2>副交感神経の起始</h2>
+      <p>副交感神経の節前ニューロンの細胞体は以下に存在する：</p>
+      <ul>
+        <li><span class="key">脳幹</span>：中脳・橋・<span class="highlight">延髄</span></li>
+        <li><span class="key">脊髄</span>：仙髄S2〜4</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">唾液腺を支配する副交感神経</div>
+        <ul>
+          <li>節前ニューロンの細胞体：<span class="highlight">延髄</span>（橋にも一部）</li>
+          <li>顔面神経（VII）と舌咽神経（IX）が関与</li>
+        </ul>
+      </div>
+
+      <h2>唾液腺の副交感神経支配</h2>
+      <table>
+        <tr>
+          <th>唾液腺</th>
+          <th>脳神経</th>
+          <th>神経節</th>
+        </tr>
+        <tr>
+          <td><span class="key">耳下腺</span></td>
+          <td>舌咽神経（IX）</td>
+          <td>耳神経節</td>
+        </tr>
+        <tr>
+          <td><span class="key">顎下腺</span></td>
+          <td>顔面神経（VII）</td>
+          <td>顎下神経節</td>
+        </tr>
+        <tr>
+          <td><span class="key">舌下腺</span></td>
+          <td>顔面神経（VII）</td>
+          <td>顎下神経節</td>
+        </tr>
+      </table>
+
+      <h3>副交感神経経路の詳細</h3>
+      <p><span class="key">耳下腺</span>：延髄（下唾液核）→ 舌咽神経 → 耳神経節 → 耳下腺</p>
+      <p><span class="key">顎下腺・舌下腺</span>：橋（上唾液核）→ 顔面神経 → 顎下神経節 → 顎下腺・舌下腺</p>
+
+      <h2>唾液腺の交感神経支配</h2>
+      <ul>
+        <li>節前ニューロン：胸髄（T1〜3）</li>
+        <li>神経節：上頸神経節</li>
+        <li>伝達物質：ノルアドレナリン</li>
+        <li>作用：粘稠な唾液の分泌促進</li>
+      </ul>
+
+      <h2>唾液腺支配の特徴</h2>
+      <ul>
+        <li><span class="caution">協調支配</span>：交感・副交感神経ともに唾液分泌を促進（拮抗支配の例外）</li>
+        <li>副交感神経：漿液性（サラサラ）の唾液を多量に分泌</li>
+        <li>交感神経：粘液性（粘稠）の唾液を少量分泌</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107C42</div>
+        <p>唾液腺を支配する副交感神経の節前ニューロンの細胞体が存在するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 中脳<br>
+          b 小脳<br>
+          c 延髄<br>
+          d 胸髄<br>
+          e 腰髄
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】唾液腺を支配する副交感神経は、顔面神経（VII：上唾液核、橋）と舌咽神経（IX：下唾液核、延髄）である。節前ニューロンの細胞体は延髄（および橋）に存在する。胸髄・腰髄は交感神経の起始部位。小脳は運動調節に関与し、自律神経の起始部位ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

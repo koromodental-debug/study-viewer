@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>呼吸筋 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 06_循環と呼吸</span>
+    <h1>呼吸筋</h1>
+    <div class="container">
+
+      <h2>1. 呼吸運動の基本</h2>
+      <p><span class="caution">肺自体は収縮能力を持たない</span>。呼吸筋の収縮によって胸郭内の容積を変化させ、胸腔内圧を陰圧・陽圧にすることで呼吸が行われる。</p>
+
+      <h3>呼吸の種類</h3>
+      <ul>
+        <li><span class="key">腹式呼吸</span>：横隔膜の収縮が主</li>
+        <li><span class="key">胸式呼吸</span>：外肋間筋の働きが主</li>
+      </ul>
+
+      <h2>2. 呼吸筋の分類</h2>
+
+      <h3>吸気筋（吸息筋）</h3>
+      <table>
+        <tr><th>筋</th><th>作用</th><th>備考</th></tr>
+        <tr>
+          <td class="highlight">横隔膜</td>
+          <td>胸郭の垂直方向の距離を増大</td>
+          <td class="highlight">最も主要な吸気筋</td>
+        </tr>
+        <tr>
+          <td class="key">外肋間筋</td>
+          <td>肋骨を挙上、前方移動</td>
+          <td>胸郭の横径・前後径を拡大</td>
+        </tr>
+        <tr>
+          <td>斜角筋</td>
+          <td>第1・第2肋骨を挙上</td>
+          <td>補助吸気筋</td>
+        </tr>
+        <tr>
+          <td>胸鎖乳突筋</td>
+          <td>胸骨を挙上</td>
+          <td>補助吸気筋</td>
+        </tr>
+      </table>
+
+      <h3>呼気筋（呼息筋）</h3>
+      <table>
+        <tr><th>筋</th><th>作用</th><th>備考</th></tr>
+        <tr>
+          <td class="key">内肋間筋</td>
+          <td>肋骨を引き下げる</td>
+          <td>外肋間筋と反対の働き</td>
+        </tr>
+        <tr>
+          <td class="key">腹筋群</td>
+          <td>腹圧を高め胸郭を圧迫</td>
+          <td>腹直筋、腹横筋、外腹斜筋、内腹斜筋</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">吸気筋と呼気筋の覚え方</div>
+        <ul>
+          <li><span class="highlight">吸気筋</span>：横隔膜、<span class="highlight">外</span>肋間筋（外から吸う）</li>
+          <li><span class="key">呼気筋</span>：<span class="key">内</span>肋間筋、腹筋群（内から押し出す）</li>
+        </ul>
+      </div>
+
+      <h2>3. 呼吸運動の過程</h2>
+
+      <h3>吸気（能動的）</h3>
+      <ol>
+        <li>横隔膜・外肋間筋が<span class="key">収縮</span></li>
+        <li>胸郭容積が<span class="key">増大</span></li>
+        <li>胸腔内圧が低下（<span class="highlight">陰圧</span>）</li>
+        <li>肺が受動的に拡張</li>
+        <li>肺胞内に空気が流入</li>
+      </ol>
+
+      <h3>呼気</h3>
+      <p><span class="key">安静時呼気</span>：呼吸筋が<span class="highlight">弛緩</span>し、胸郭・肺の<span class="highlight">弾性収縮</span>により受動的に行われる</p>
+      <p><span class="key">努力性呼気</span>：内肋間筋・腹筋群が<span class="key">収縮</span>して能動的に行われる</p>
+
+      <div class="point-box">
+        <div class="point-box-title">安静時呼気のポイント</div>
+        <p><span class="caution">安静時の呼気では呼気筋は使わない</span>。胸郭と肺の弾性による受動的な収縮で行われる。</p>
+      </div>
+
+      <h2>4. 呼吸数</h2>
+      <table>
+        <tr><th>対象</th><th>呼吸数</th></tr>
+        <tr><td>成人健常者</td><td class="highlight">12〜18回/分</td></tr>
+        <tr><td>新生児</td><td>40〜60回/分</td></tr>
+        <tr><td>徐呼吸</td><td>12回/分未満</td></tr>
+        <tr><td>頻呼吸</td><td>24回/分以上</td></tr>
+      </table>
+      <p class="note">※加齢とともに呼吸数は減少する</p>
+
+      <h2>5. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A113</div>
+        <p>吸息筋はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 横隔膜<br>
+          b 腹直筋<br>
+          c 腹横筋<br>
+          d 内肋間筋<br>
+          e 外腹斜筋
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ○：<span class="highlight">横隔膜は最も主要な吸気筋</span></li>
+          <li>b ×：腹直筋は<span class="caution">呼気筋</span>（腹筋群）</li>
+          <li>c ×：腹横筋は<span class="caution">呼気筋</span>（腹筋群）</li>
+          <li>d ×：内肋間筋は<span class="caution">呼気筋</span></li>
+          <li>e ×：外腹斜筋は<span class="caution">呼気筋</span>（腹筋群）</li>
+        </ul>
+        <p class="note">※吸気筋は横隔膜と外肋間筋。「外」がつくのは吸気筋。「内」や「腹」がつくのは呼気筋。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

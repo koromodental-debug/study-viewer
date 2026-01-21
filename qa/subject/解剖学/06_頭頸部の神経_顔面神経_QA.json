@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "title": "顔面神経",
+    "category": "解剖学",
+    "chapter": "06_頭頸部の神経"
+  },
+  "sections": [
+    {
+      "section": "走行",
+      "qa": []
+    },
+    {
+      "section": "顔面神経管内での分枝",
+      "qa": []
+    },
+    {
+      "section": "茎乳突孔を出た後の分枝",
+      "qa": [
+        {
+          "question": "オトガイ筋を支配する顔面神経の枝はどれか。1つ選べ。",
+          "answer": "E",
+          "choices": {
+            "a": "頸　枝",
+            "b": "後頭枝",
+            "c": "頬骨枝",
+            "d": "側頭枝",
+            "e": "下顎縁枝"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "104C88"
+        },
+        {
+          "question": "顔面神経に支配されるのはどれか。2つ選べ。",
+          "answer": "B, E",
+          "choices": {
+            "a": "咬　筋",
+            "b": "頰　筋",
+            "c": "外側翼突筋",
+            "d": "顎二腹筋前腹",
+            "e": "顎二腹筋後腹"
+          },
+          "correctAnswer": "B, E",
+          "numChoices": 2,
+          "code": "108C84"
+        }
+      ]
+    }
+  ]
+}

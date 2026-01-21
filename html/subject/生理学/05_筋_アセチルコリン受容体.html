@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アセチルコリン受容体 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 05_筋</span>
+    <h1>アセチルコリン受容体</h1>
+    <div class="container">
+
+      <h2>1. ACh受容体の種類</h2>
+
+      <h3>2種類のACh受容体</h3>
+      <table>
+        <tr><th>受容体</th><th>種類</th><th>作用機序</th><th>阻害薬</th></tr>
+        <tr>
+          <td class="highlight">ニコチン性（N）</td>
+          <td class="highlight">イオンチャネル型</td>
+          <td>Na<sup>+</sup>流入→脱分極</td>
+          <td>クラーレ</td>
+        </tr>
+        <tr>
+          <td class="key">ムスカリン性（M）</td>
+          <td class="key">Gタンパク質共役型</td>
+          <td>細胞内シグナル伝達</td>
+          <td>アトロピン</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">受容体の種類を覚えるコツ</div>
+        <ul>
+          <li><span class="highlight">ニコチン性</span>：速い応答が必要な場所（神経筋接合部、神経節）</li>
+          <li><span class="key">ムスカリン性</span>：ゆっくりした応答でよい場所（内臓、分泌腺）</li>
+        </ul>
+      </div>
+
+      <h2>2. ACh受容体の分布</h2>
+
+      <h3>神経系とACh受容体</h3>
+      <table>
+        <tr><th>神経系</th><th>シナプス部位</th><th>受容体</th></tr>
+        <tr>
+          <td class="key">体性運動神経</td>
+          <td class="highlight">神経筋接合部（骨格筋）</td>
+          <td class="highlight">ニコチン性（NM）</td>
+        </tr>
+        <tr>
+          <td class="key">自律神経節</td>
+          <td>節前線維→節後ニューロン</td>
+          <td class="highlight">ニコチン性（NN）</td>
+        </tr>
+        <tr>
+          <td class="key">副腎髄質</td>
+          <td>交感神経節前線維→副腎髄質</td>
+          <td class="highlight">ニコチン性（NN）</td>
+        </tr>
+        <tr>
+          <td class="key">副交感神経効果器</td>
+          <td>節後線維→標的細胞</td>
+          <td class="key">ムスカリン性</td>
+        </tr>
+        <tr>
+          <td class="caution">汗腺（例外）</td>
+          <td>交感神経節後線維→汗腺</td>
+          <td class="caution">ムスカリン性</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">神経筋接合部のポイント</div>
+        <ul>
+          <li>骨格筋の運動終板には<span class="highlight">ニコチン性ACh受容体</span>が存在</li>
+          <li><span class="caution">ムスカリン性ではない</span>（ひっかけ注意）</li>
+          <li>ニコチン性受容体は<span class="key">イオンチャネル型</span>→速い応答が可能</li>
+        </ul>
+      </div>
+
+      <h2>3. ニコチン性受容体のサブタイプ</h2>
+      <table>
+        <tr><th>サブタイプ</th><th>分布</th><th>機能</th></tr>
+        <tr>
+          <td class="highlight">NM型</td>
+          <td>神経筋接合部（骨格筋）</td>
+          <td>骨格筋の収縮</td>
+        </tr>
+        <tr>
+          <td class="key">NN型</td>
+          <td>自律神経節、副腎髄質</td>
+          <td>節後ニューロンの興奮、カテコールアミン分泌</td>
+        </tr>
+      </table>
+
+      <h2>4. 神経伝達物質と受容体のまとめ</h2>
+
+      <h3>コリン作動性 vs アドレナリン作動性</h3>
+      <table>
+        <tr><th>神経</th><th>伝達物質</th><th>受容体</th></tr>
+        <tr>
+          <td>運動神経→骨格筋</td>
+          <td>ACh</td>
+          <td>ニコチン性</td>
+        </tr>
+        <tr>
+          <td>自律神経節前線維</td>
+          <td>ACh</td>
+          <td>ニコチン性</td>
+        </tr>
+        <tr>
+          <td>副交感神経節後線維</td>
+          <td>ACh</td>
+          <td>ムスカリン性</td>
+        </tr>
+        <tr>
+          <td>交感神経節後線維</td>
+          <td class="key">ノルアドレナリン</td>
+          <td>アドレナリン受容体</td>
+        </tr>
+        <tr>
+          <td class="caution">交感神経→汗腺（例外）</td>
+          <td class="caution">ACh</td>
+          <td class="caution">ムスカリン性</td>
+        </tr>
+      </table>
+
+      <h2>5. 臨床関連</h2>
+
+      <h3>筋弛緩薬</h3>
+      <ul>
+        <li><span class="key">非脱分極性筋弛緩薬</span>（クラーレ、ロクロニウム）：ニコチン性受容体を競合的に阻害</li>
+        <li><span class="key">脱分極性筋弛緩薬</span>（スキサメトニウム）：持続的脱分極による不応期</li>
+      </ul>
+
+      <h3>重症筋無力症</h3>
+      <ul>
+        <li>神経筋接合部のニコチン性ACh受容体に対する<span class="key">自己抗体</span>が原因</li>
+        <li>治療：コリンエステラーゼ阻害薬（ACh濃度↑）</li>
+      </ul>
+
+      <h2>6. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B78</div>
+        <p>神経筋接合部シナプス下膜のアセチルコリンに対する受容体はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ドパミン受容体<br>
+          b ニコチン性受容体<br>
+          c ヒスタミン受容体<br>
+          d ムスカリン性受容体<br>
+          e アドレナリン受容体
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ×：ドパミン受容体は中枢神経系に多い</li>
+          <li>b ○：神経筋接合部のACh受容体は<span class="highlight">ニコチン性受容体（NM型）</span></li>
+          <li>c ×：ヒスタミン受容体はアレルギー反応などに関与</li>
+          <li>d ×：ムスカリン性受容体は<span class="caution">副交感神経効果器</span>に分布</li>
+          <li>e ×：アドレナリン受容体は交感神経節後線維の効果器に分布</li>
+        </ul>
+        <p class="note">※ニコチン性受容体はイオンチャネル型で、Na<sup>+</sup>流入により速やかに脱分極を起こす</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

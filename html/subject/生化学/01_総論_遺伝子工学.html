@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>遺伝子工学 - 生化学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生化学 / 総論</span>
+    <h1>遺伝子工学</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">Check Point</div>
+        <ul>
+          <li>制限酵素とリガーゼによるDNAの切り貼りについて理解する</li>
+          <li>PCR法によるDNA断片の増幅方法について説明できる</li>
+          <li>PCR法に必要な材料を覚える</li>
+        </ul>
+      </div>
+
+      <h2>I. 制限酵素</h2>
+      <ul>
+        <li>細菌がウイルス感染から自身を防御するために持つ酵素</li>
+        <li>DNA上の<span class="highlight">特定の塩基配列（4〜8塩基）</span>を認識して切断</li>
+        <li>数百種類の制限酵素が存在</li>
+      </ul>
+
+      <h3>代表的な制限酵素</h3>
+      <table>
+        <tr>
+          <th>酵素名</th>
+          <th>認識配列</th>
+          <th>切断末端</th>
+        </tr>
+        <tr>
+          <td><span class="key">EcoRI</span></td>
+          <td>5'-G▼AATTC-3'</td>
+          <td>付着末端（sticky end）</td>
+        </tr>
+        <tr>
+          <td><span class="key">AluI</span></td>
+          <td>5'-AG▼CT-3'</td>
+          <td>平滑末端（blunt end）</td>
+        </tr>
+      </table>
+
+      <h3>遺伝子組換え</h3>
+      <ul>
+        <li><span class="key">制限酵素</span>でDNAを切断</li>
+        <li><span class="key">DNAリガーゼ</span>でDNA断片同士を連結</li>
+        <li>これにより新しいDNA断片の作製（遺伝子組換え）が可能</li>
+      </ul>
+
+      <h2>II. PCR法（ポリメラーゼ連鎖反応法）</h2>
+      <p>目的とするDNA断片を<span class="highlight">短時間に大量に増幅</span>する技術</p>
+      <p>20回のサイクルで約<span class="key">100万倍</span>に増幅可能（約40分）</p>
+
+      <h3>PCR法に必要な材料</h3>
+      <div class="point-box">
+        <div class="point-box-title">PCR法の4つの必須材料</div>
+        <ul>
+          <li><span class="highlight">耐熱性DNAポリメラーゼ</span>（Taqポリメラーゼ）</li>
+          <li><span class="highlight">デオキシヌクレオチド</span>（dNTPs：dATP, dTTP, dGTP, dCTP）</li>
+          <li><span class="highlight">プライマー</span>（2種類：増幅領域の両端に結合）</li>
+          <li><span class="highlight">鋳型DNA</span>（テンプレート）</li>
+        </ul>
+      </div>
+
+      <p class="caution">DNAリガーゼはPCRには不要（遺伝子組換えで使用）</p>
+
+      <h3>PCRの3ステップ</h3>
+      <table>
+        <tr>
+          <th>ステップ</th>
+          <th>温度</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">1. 変性</span></td>
+          <td><span class="highlight">95℃</span>（約20秒）</td>
+          <td>加熱により二本鎖DNAの水素結合を切断し解離</td>
+        </tr>
+        <tr>
+          <td><span class="key">2. アニーリング</span></td>
+          <td><span class="highlight">55℃</span>（約30秒）</td>
+          <td>一本鎖DNAにプライマーを結合</td>
+        </tr>
+        <tr>
+          <td><span class="key">3. 伸長</span></td>
+          <td><span class="highlight">72℃</span>（約50秒）</td>
+          <td>耐熱性DNAポリメラーゼによるDNA合成</td>
+        </tr>
+      </table>
+      <p>このサイクルを20〜40回繰り返すことでDNAが指数関数的に増幅</p>
+
+      <h3>なぜ耐熱性DNAポリメラーゼが必要か</h3>
+      <ul>
+        <li>PCRでは95℃の高温処理を繰り返す</li>
+        <li>通常の酵素は高温で失活する</li>
+        <li><span class="key">Taqポリメラーゼ</span>は好熱菌（Thermus aquaticus）由来で高温でも活性を維持</li>
+      </ul>
+
+      <h2>III. その他の遺伝子工学技術</h2>
+
+      <h3>クローニング</h3>
+      <ul>
+        <li>目的の遺伝子を<span class="key">ベクター</span>（プラスミド等）に組み込む</li>
+        <li>制限酵素で切断 → DNAリガーゼで連結</li>
+        <li>大腸菌などの宿主細胞で増殖させる</li>
+      </ul>
+
+      <h3>電気泳動</h3>
+      <ul>
+        <li>DNA断片を<span class="key">大きさ</span>で分離する技術</li>
+        <li>DNAは負に帯電 → 陽極（+）に向かって移動</li>
+        <li>小さい断片ほど速く移動</li>
+      </ul>
+
+      <h3>サザンブロット法</h3>
+      <ul>
+        <li>電気泳動で分離したDNAをメンブレンに転写</li>
+        <li>標識プローブで目的のDNA断片を検出</li>
+      </ul>
+
+      <h2>関連過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">100A51（参考：100回以前）</div>
+        <p>Polymerase Chain Reaction（PCR）に不要なのはどれか。</p>
+        <div class="choices">
+          a DNAリガーゼ<br>
+          b DNAプライマー<br>
+          c DNAテンプレート<br>
+          d デオキシヌクレオチド<br>
+          e 耐熱性DNAポリメラーゼ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】PCR法に必要なのは、①耐熱性DNAポリメラーゼ、②デオキシヌクレオチド（dNTPs）、③プライマー、④鋳型DNA（テンプレート）の4つ。<span class="highlight">DNAリガーゼ</span>はDNA断片同士を連結する酵素で、遺伝子組換え（クローニング）には必要だが、<span class="caution">PCR反応自体には不要</span>。</p>
+      </div>
+
+      <p class="note">参考：パーフェクトマスター口腔生化学 Chapter 6（p.39-44）</p>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "喉頭",
+    "category": "解剖学",
+    "chapter": "07_口腔と咽喉頭"
+  },
+  "sections": [
+    {
+      "section": "声帯靱帯",
+      "qa": [
+        {
+          "question": "声帯靱帯が付着するのはどれか。2つ選べ。",
+          "answer": "B, C",
+          "choices": {
+            "a": "舌　骨",
+            "b": "甲状軟骨",
+            "c": "披裂軟骨",
+            "d": "輪状軟骨",
+            "e": "喉頭蓋軟骨"
+          },
+          "correctAnswer": "B, C",
+          "numChoices": 2,
+          "code": "115B63"
+        }
+      ]
+    }
+  ]
+}

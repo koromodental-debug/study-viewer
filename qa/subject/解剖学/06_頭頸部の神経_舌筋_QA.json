@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "舌筋",
+    "category": "解剖学",
+    "chapter": "06_頭頸部の神経"
+  },
+  "sections": [
+    {
+      "section": "選択肢で出る「〜舌筋」「〜舌骨筋」の神経支配",
+      "qa": [
+        {
+          "question": "舌下神経に支配されるのはどれか。2つ選べ。",
+          "answer": "C, E",
+          "choices": {
+            "a": "顎舌骨筋",
+            "b": "口蓋舌筋",
+            "c": "舌骨舌筋",
+            "d": "茎突舌骨筋",
+            "e": "オトガイ舌筋"
+          },
+          "correctAnswer": "C, E",
+          "numChoices": 2,
+          "code": "112A33"
+        }
+      ]
+    }
+  ]
+}

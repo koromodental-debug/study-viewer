@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>嘔吐の機序 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 脳機能</span>
+    <h1>嘔吐の機序</h1>
+    <div class="container">
+
+      <h2>嘔吐に関わる中枢</h2>
+
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">嘔吐中枢</span></td>
+          <td>延髄に存在。嘔吐運動を統合・発動</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">化学受容器引金帯（CTZ）</span></td>
+          <td>延髄の<span class="highlight">最後野</span>に存在。血中の催吐性物質を感知</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">最後野（area postrema）の特徴</div>
+        <ul>
+          <li>第四脳室底部に位置</li>
+          <li><span class="highlight">血液脳関門がない</span></li>
+          <li>血中の薬物・毒素・代謝産物を直接感知できる</li>
+          <li>化学受容器引金帯（CTZ）が存在</li>
+        </ul>
+      </div>
+
+      <h2>嘔吐を誘発する刺激</h2>
+
+      <h3>化学的刺激（CTZ経由）</h3>
+      <ul>
+        <li>抗がん剤、オピオイド、ジギタリスなどの薬物</li>
+        <li>尿毒症、ケトアシドーシスなどの代謝異常</li>
+        <li>細菌毒素</li>
+      </ul>
+
+      <h3>末梢からの刺激（求心性神経経由）</h3>
+      <ul>
+        <li>消化管の機械的刺激・化学的刺激</li>
+        <li>咽頭後壁への刺激（催吐反射）</li>
+        <li>内耳前庭からの刺激（乗り物酔い）</li>
+      </ul>
+
+      <h3>中枢からの刺激</h3>
+      <ul>
+        <li>大脳皮質からの刺激（不快な臭い・映像、精神的ストレス）</li>
+        <li>頭蓋内圧亢進</li>
+      </ul>
+
+      <h2>嘔吐の機序</h2>
+      <p>嘔吐は以下の一連の反射運動からなる：</p>
+      <ul>
+        <li>深吸気の後、声門閉鎖</li>
+        <li>横隔膜・腹筋の収縮による腹腔内圧上昇</li>
+        <li>下部食道括約筋の弛緩</li>
+        <li>胃内容物の逆流・排出</li>
+      </ul>
+
+      <h2>延髄の他の中枢</h2>
+      <table>
+        <tr>
+          <th>中枢</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td>心臓血管中枢</td>
+          <td>心拍数・血圧の調節</td>
+        </tr>
+        <tr>
+          <td>呼吸中枢</td>
+          <td>呼吸リズムの発生</td>
+        </tr>
+        <tr>
+          <td>唾液分泌中枢</td>
+          <td>唾液分泌の調節</td>
+        </tr>
+        <tr>
+          <td>嚥下中枢</td>
+          <td>嚥下運動の統合</td>
+        </tr>
+        <tr>
+          <td>咀嚼パターン発生器</td>
+          <td>咀嚼運動のリズム形成</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A60</div>
+        <p>嘔吐の化学受容器があるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 海馬<br>
+          b 小脳<br>
+          c 最後野<br>
+          d 大脳皮質<br>
+          e 脊髄後角
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】嘔吐の化学受容器引金帯（CTZ）は延髄の最後野に存在する。最後野は血液脳関門がないため、血中の催吐性物質（薬物、毒素など）を直接感知して嘔吐中枢に信号を送る。海馬は記憶、小脳は運動調節、脊髄後角は感覚情報の中継に関与。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

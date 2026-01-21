@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "歯・歯周組織の発生",
+    "category": "解剖学",
+    "chapter": "09_発生"
+  },
+  "sections": [
+    {
+      "section": "唇溝堤の形成",
+      "qa": [
+        {
+          "question": "口腔前庭になるのはどれか。",
+          "answer": "B",
+          "choices": {
+            "a": "鰓溝",
+            "b": "唇溝堤",
+            "c": "分界溝",
+            "d": "原始線条",
+            "e": "口咽頭膜"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "110A96"
+        }
+      ]
+    }
+  ]
+}

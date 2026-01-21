@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "title": "開口反射",
+    "category": "解剖学",
+    "chapter": "06_頭頸部の神経"
+  },
+  "sections": [
+    {
+      "section": "下顎反射の種類",
+      "qa": []
+    },
+    {
+      "section": "誘発刺激",
+      "qa": []
+    },
+    {
+      "section": "反射弓の構成",
+      "qa": [
+        {
+          "question": "咬筋運動ニューロンの細胞体が存在するのはどれか。1つ選べ。",
+          "answer": "A",
+          "choices": {
+            "a": "橋",
+            "b": "延　髄",
+            "c": "間　脳",
+            "d": "小　脳",
+            "e": "中　脳"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "116D62"
+        }
+      ]
+    }
+  ]
+}

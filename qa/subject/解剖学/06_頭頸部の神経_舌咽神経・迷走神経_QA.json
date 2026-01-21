@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "title": "舌咽神経・迷走神経",
+    "category": "解剖学",
+    "chapter": "06_頭頸部の神経"
+  },
+  "sections": [
+    {
+      "section": "運動神経",
+      "qa": []
+    },
+    {
+      "section": "感覚神経",
+      "qa": [
+        {
+          "question": "舌咽神経によって支配されるのはどれか。2つ選べ。",
+          "answer": "C, D",
+          "choices": {
+            "a": "声　帯",
+            "b": "舌下腺",
+            "c": "頸動脈小体",
+            "d": "茎突咽頭筋",
+            "e": "口蓋帆張筋"
+          },
+          "correctAnswer": "C, D",
+          "numChoices": 2,
+          "code": "109A46"
+        }
+      ]
+    },
+    {
+      "section": "副交感神経",
+      "qa": []
+    }
+  ]
+}

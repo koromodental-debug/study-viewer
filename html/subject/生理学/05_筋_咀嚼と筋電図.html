@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>咀嚼と筋電図 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 05_筋</span>
+    <h1>咀嚼と筋電図</h1>
+    <div class="container">
+
+      <h2>1. 咀嚼とは</h2>
+      <p>口腔内に摂取した食物を<span class="key">噛み砕き</span>、唾液と混合して<span class="key">食塊</span>として嚥下に至るまでの過程。</p>
+      <ul>
+        <li>下顎、舌、口唇、頬が秩序だって行われる<span class="highlight">協調運動</span></li>
+        <li><span class="highlight">半自動運動</span>：意識しなくても継続可能</li>
+      </ul>
+
+      <h3>咀嚼周期</h3>
+      <p><span class="key">開口相</span>→<span class="key">閉口相</span>→<span class="key">咬合相</span>を周期的に繰り返す</p>
+      <p>周期：<span class="highlight">0.5〜1.2秒</span></p>
+
+      <h2>2. 咀嚼のパターン形成機構</h2>
+
+      <h3>中枢性パターン発生器（CPG）</h3>
+      <ul>
+        <li><span class="key">脳幹・網様体</span>に存在</li>
+        <li>咀嚼のリズミカルなパターンを形成</li>
+        <li>大脳皮質からの命令で稼働開始（<span class="caution">自発性はない</span>）</li>
+        <li>末梢感覚受容器からの<span class="key">フィードバック調節</span>を受ける</li>
+      </ul>
+
+      <h3>閉口筋と開口筋の活動</h3>
+      <ul>
+        <li>閉口筋運動ニューロン：促進（脱分極）と抑制（過分極）を交互に繰り返す</li>
+        <li>開口筋運動ニューロン：閉口筋の抑制時に促進される</li>
+        <li><span class="key">相反性支配</span>により開閉口リズムが形成</li>
+      </ul>
+
+      <h2>3. 咀嚼筋と表面筋電図</h2>
+
+      <h3>表面電極で記録できる筋</h3>
+      <table>
+        <tr><th>筋</th><th>作用</th><th>位置</th><th>表面電極</th></tr>
+        <tr>
+          <td class="key">咬筋</td>
+          <td>閉口</td>
+          <td>頬の外側（触知可）</td>
+          <td class="highlight">○</td>
+        </tr>
+        <tr>
+          <td class="key">側頭筋</td>
+          <td>閉口</td>
+          <td>側頭部（触知可）</td>
+          <td class="highlight">○</td>
+        </tr>
+        <tr>
+          <td class="key">顎二腹筋</td>
+          <td>開口</td>
+          <td>顎の下（触知可）</td>
+          <td class="highlight">○</td>
+        </tr>
+        <tr>
+          <td class="key">外側翼突筋</td>
+          <td>開口・側方運動</td>
+          <td class="caution">深部（触知不可）</td>
+          <td class="caution">×</td>
+        </tr>
+        <tr>
+          <td class="key">内側翼突筋</td>
+          <td>閉口</td>
+          <td class="caution">深部（触知不可）</td>
+          <td class="caution">×</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">表面筋電図のポイント</div>
+        <ul>
+          <li><span class="highlight">体表から触知できる筋</span>のみ記録可能</li>
+          <li>翼突筋（外側・内側）は<span class="caution">深部にあるため記録不可</span></li>
+          <li>翼突筋の筋電図を記録するには<span class="key">針電極</span>が必要</li>
+        </ul>
+      </div>
+
+      <h2>4. 筋電図（EMG）の原理</h2>
+
+      <h3>筋電図とは</h3>
+      <p>筋収縮時に発生する<span class="highlight">筋線維の活動電位</span>を記録したもの。</p>
+
+      <h3>筋電図の波形を形成するもの</h3>
+      <table>
+        <tr><th>項目</th><th>筋電図との関係</th></tr>
+        <tr>
+          <td class="highlight">筋線維の活動電位</td>
+          <td class="highlight">筋電図の波形を形成する ○</td>
+        </tr>
+        <tr>
+          <td>終板電位</td>
+          <td>局所電位であり筋電図には直接反映されない ×</td>
+        </tr>
+        <tr>
+          <td>運動ニューロンの活動電位</td>
+          <td>神経の電気活動であり筋電図ではない ×</td>
+        </tr>
+        <tr>
+          <td>神経伝達物質の結合</td>
+          <td>化学的過程であり電気活動ではない ×</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">筋電図と活動電位の区別</div>
+        <ul>
+          <li><span class="key">筋電図（EMG）</span>：筋線維の活動電位</li>
+          <li><span class="key">神経伝導検査</span>：神経の活動電位</li>
+          <li><span class="key">終板電位</span>：局所電位（閾値に達すると活動電位発生）</li>
+        </ul>
+      </div>
+
+      <h2>5. 咀嚼筋の神経支配</h2>
+      <table>
+        <tr><th>筋</th><th>神経支配</th></tr>
+        <tr><td>咬筋・側頭筋・内側翼突筋・外側翼突筋</td><td class="key">三叉神経（下顎神経）</td></tr>
+        <tr><td>顎二腹筋前腹</td><td class="key">三叉神経（下顎神経）</td></tr>
+        <tr><td>顎二腹筋後腹</td><td class="key">顔面神経</td></tr>
+      </table>
+      <p class="note">※閉口時の筋の収縮順序：内側翼突筋→側頭筋→咬筋</p>
+
+      <h2>6. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C46</div>
+        <p>咀嚼時の咬筋筋電図を図に示す。この波形を形成するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 筋線維の活動電位<br>
+          b 神経筋接合部の終板電位<br>
+          c 運動ニューロンの活動電位<br>
+          d 神経伝達物質と受容体との結合<br>
+          e シナプス小胞からの神経伝達物質放出
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ○：筋電図は<span class="highlight">筋線維の活動電位</span>を記録したもの</li>
+          <li>b ×：終板電位は局所電位であり、筋電図の波形を直接形成しない</li>
+          <li>c ×：運動ニューロンの活動電位は神経の電気活動</li>
+          <li>d ×：化学的過程であり電気活動ではない</li>
+          <li>e ×：化学的過程であり電気活動ではない</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B74</div>
+        <p>皮膚に貼付した表面電極で筋電図を記録できるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 咬筋<br>
+          b 側頭筋<br>
+          c 顎二腹筋<br>
+          d 外側翼突筋<br>
+          e 内側翼突筋
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ○：咬筋は頬の外側から触知可能</li>
+          <li>b ○：側頭筋は側頭部から触知可能</li>
+          <li>c ○：顎二腹筋は顎の下から触知可能</li>
+          <li>d ×：外側翼突筋は<span class="caution">深部にあり触知不可</span></li>
+          <li>e ×：内側翼突筋は<span class="caution">深部にあり触知不可</span></li>
+        </ul>
+        <p class="note">※翼突筋の筋電図記録には針電極が必要</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

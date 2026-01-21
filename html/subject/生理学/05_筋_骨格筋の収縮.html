@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>骨格筋の収縮と神経筋接合部 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 05_筋</span>
+    <h1>骨格筋の収縮と神経筋接合部</h1>
+    <div class="container">
+
+      <h2>1. 興奮収縮連関</h2>
+      <p>運動神経の興奮が骨格筋の収縮に至るまでの過程を<span class="key">興奮収縮連関</span>という。</p>
+
+      <h3>興奮収縮連関の流れ</h3>
+      <ol>
+        <li>運動ニューロンの興奮が<span class="key">神経筋接合部</span>に到達</li>
+        <li>神経終末から<span class="key">アセチルコリン（ACh）</span>が放出</li>
+        <li>AChが終板膜上の<span class="key">ニコチン性ACh受容体</span>に結合</li>
+        <li>Na<sup>+</sup>流入により<span class="key">終板電位</span>が発生</li>
+        <li>閾値を超えると筋鞘に<span class="key">活動電位</span>が発生・伝播</li>
+        <li>活動電位が<span class="key">T管（横行小管）</span>に伝導</li>
+        <li>T管膜上のDHP受容体が<span class="key">筋小胞体</span>のリアノジン受容体を活性化</li>
+        <li><span class="highlight">筋小胞体からCa<sup>2+</sup>が放出</span>され、細胞内Ca<sup>2+</sup>濃度上昇</li>
+      </ol>
+
+      <div class="point-box">
+        <div class="point-box-title">試験のポイント</div>
+        <p><span class="caution">Ca<sup>2+</sup>は「筋小胞体」から放出される（T管からではない）</span></p>
+        <p>T管は活動電位を細胞内部に伝える役割。Ca<sup>2+</sup>を貯蔵・放出するのは筋小胞体。</p>
+      </div>
+
+      <h2>2. 滑り説（筋収縮のメカニズム）</h2>
+      <p>筋収縮は<span class="caution">アクチン自体が収縮するのではなく</span>、ミオシンがアクチンを手繰り寄せることで起こる。</p>
+
+      <h3>収縮の分子機構</h3>
+      <ol>
+        <li>弛緩時：<span class="key">トロポミオシン</span>がアクチン上のミオシン結合部位を覆っている</li>
+        <li>Ca<sup>2+</sup>が<span class="key">トロポニン</span>に結合</li>
+        <li>トロポミオシンが移動し、ミオシン結合部位が露出</li>
+        <li>ミオシン頭部がATPを加水分解し、高エネルギー状態に</li>
+        <li>ミオシン頭部がアクチンに結合</li>
+        <li>ADP+Pi遊離により<span class="highlight">ミオシンがアクチンを手繰り寄せる</span></li>
+      </ol>
+
+      <h3>筋節の変化</h3>
+      <table>
+        <tr><th>部位</th><th>構成</th><th>収縮時</th></tr>
+        <tr><td class="key">A帯（暗帯）</td><td>ミオシン線維が存在</td><td>長さ不変</td></tr>
+        <tr><td class="key">I帯（明帯）</td><td>アクチン線維のみ</td><td>短縮する</td></tr>
+        <tr><td class="key">H帯</td><td>ミオシンのみの部分</td><td>短縮する</td></tr>
+      </table>
+
+      <h2>3. 神経筋接合部とACh</h2>
+
+      <h3>アセチルコリンの代謝</h3>
+      <ul>
+        <li><span class="key">合成酵素</span>：コリンアセチルトランスフェラーゼ（コリン＋アセチルCoA→ACh）</li>
+        <li><span class="highlight">分解酵素</span>：<span class="highlight">コリンエステラーゼ</span>（ACh→コリン＋酢酸）</li>
+      </ul>
+      <p class="note">※コリンエステラーゼはシナプス間隙に存在し、AChを速やかに分解して伝達を終了させる</p>
+
+      <div class="point-box">
+        <div class="point-box-title">関連する酵素の区別</div>
+        <ul>
+          <li><span class="key">コリンエステラーゼ</span>：ACh<span class="highlight">分解</span></li>
+          <li><span class="key">コリンアセチルトランスフェラーゼ</span>：ACh<span class="caution">合成</span>（分解ではない）</li>
+          <li><span class="key">モノアミンオキシダーゼ</span>：ノルアドレナリンなどモノアミン系の分解</li>
+        </ul>
+      </div>
+
+      <h2>4. 骨格筋収縮の特徴</h2>
+
+      <h3>筋収縮に伴う現象</h3>
+      <ul>
+        <li><span class="highlight">熱産生</span>：ATP分解により熱が発生（体温維持に寄与）</li>
+        <li><span class="highlight">筋疲労</span>：短時間に収縮を繰り返すと収縮力が低下</li>
+      </ul>
+
+      <h3>筋収縮の型</h3>
+      <table>
+        <tr><th>収縮型</th><th>特徴</th></tr>
+        <tr><td class="key">単収縮</td><td>1回の刺激による一過性の収縮</td></tr>
+        <tr><td class="key">収縮の加重</td><td>刺激頻度が増し、収縮が加算される</td></tr>
+        <tr><td class="key">強縮</td><td>加重により持続性の張力発揮（完全強縮・不完全強縮）</td></tr>
+      </table>
+
+      <h2>5. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105A86</div>
+        <p>骨格筋の収縮で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a アクチンの収縮によって起きる。<br>
+          b 筋小胞体に活動電位が発生する。<br>
+          c 筋収縮に伴って熱が産生される。<br>
+          d 横行小管系〈T管系〉からCa<sup>2+</sup>が放出される。<br>
+          e 短時間に収縮を繰り返すと収縮力が低下する。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ×：アクチン自体は収縮しない。ミオシンがアクチンを手繰り寄せる（滑り説）</li>
+          <li>b ×：活動電位が発生するのは筋鞘（筋細胞膜）。筋小胞体はCa<sup>2+</sup>を貯蔵・放出</li>
+          <li>c ○：ATP分解により熱が産生される</li>
+          <li>d ×：Ca<sup>2+</sup>は<span class="caution">筋小胞体</span>から放出される（T管からではない）</li>
+          <li>e ○：筋疲労により収縮力が低下する</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B49</div>
+        <p>運動神経終末から分泌される神経伝達物質を分解するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a コリンエステラーゼ<br>
+          b アデニル酸シクラーゼ<br>
+          c シクロオキシゲナーゼ<br>
+          d モノアミンオキシダーゼ<br>
+          e コリンアセチルトランスフェラーゼ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】</p>
+        <ul>
+          <li>a ○：コリンエステラーゼはアセチルコリンをコリンと酢酸に分解</li>
+          <li>b ×：ATPからcAMPを生成する酵素</li>
+          <li>c ×：アラキドン酸からプロスタグランジンを合成</li>
+          <li>d ×：ノルアドレナリンなどモノアミン系神経伝達物質を分解</li>
+          <li>e ×：アセチルコリンを<span class="caution">合成</span>する酵素（分解ではない）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

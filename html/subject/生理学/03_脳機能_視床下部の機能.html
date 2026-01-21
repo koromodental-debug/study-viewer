@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>脳の高次機能（視床下部・言語野・睡眠） - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 脳機能</span>
+    <h1>脳の高次機能</h1>
+    <div class="container">
+
+      <h2>視床下部の機能</h2>
+      <p><span class="key">視床下部</span>は本能行動や内部環境の維持（ホメオスタシス）、<span class="highlight">自律機能の最高位中枢</span>。</p>
+
+      <table>
+        <tr>
+          <th>中枢</th>
+          <th>機能・調節対象</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">体温調節中枢</span></td>
+          <td>体温の維持</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">摂食中枢・満腹中枢</span></td>
+          <td>エネルギー平衡・摂食行動の調節</td>
+        </tr>
+        <tr>
+          <td>飲水中枢</td>
+          <td>水分量・体液量の調節</td>
+        </tr>
+        <tr>
+          <td>生殖中枢</td>
+          <td>性行動の調節</td>
+        </tr>
+        <tr>
+          <td>内分泌の最高次中枢</td>
+          <td>甲状腺・副腎皮質・性腺・成長ホルモン</td>
+        </tr>
+        <tr>
+          <td>自律神経系の最高次中枢</td>
+          <td>交感神経と副交感神経の統合</td>
+        </tr>
+      </table>
+
+      <h2>大脳皮質の言語野</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">言語に関与する2つの領域</div>
+        <ul>
+          <li><span class="highlight">Broca領域（運動性言語中枢）</span>：前頭葉、言語の産出（話す）</li>
+          <li><span class="highlight">Wernicke領域（感覚性言語中枢）</span>：側頭葉、言語の理解（聞く）</li>
+        </ul>
+      </div>
+
+      <h3>言語障害</h3>
+      <ul>
+        <li><span class="key">Broca失語</span>：言葉は理解できるが、話せない（運動性失語）</li>
+        <li><span class="key">Wernicke失語</span>：流暢に話すが、言葉の理解ができない（感覚性失語）</li>
+      </ul>
+
+      <h2>脳波と睡眠</h2>
+
+      <h3>脳波の種類</h3>
+      <table>
+        <tr>
+          <th>脳波</th>
+          <th>周波数</th>
+          <th>出現</th>
+        </tr>
+        <tr>
+          <td>α波</td>
+          <td>8〜13 Hz</td>
+          <td>覚醒時（閉眼・安静）</td>
+        </tr>
+        <tr>
+          <td>β波</td>
+          <td>13 Hz以上</td>
+          <td>覚醒時（注意集中）</td>
+        </tr>
+        <tr>
+          <td>θ波</td>
+          <td>4〜8 Hz</td>
+          <td>浅睡眠（まどろみ）</td>
+        </tr>
+        <tr>
+          <td>δ波</td>
+          <td>3 Hz以下</td>
+          <td>深睡眠</td>
+        </tr>
+      </table>
+
+      <h3>睡眠の特徴</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>ノンレム睡眠</th>
+          <th>レム睡眠</th>
+        </tr>
+        <tr>
+          <td>脳波</td>
+          <td>高電圧徐波</td>
+          <td>低電圧速波</td>
+        </tr>
+        <tr>
+          <td>眼球運動</td>
+          <td>なし</td>
+          <td><span class="key">急速眼球運動</span></td>
+        </tr>
+        <tr>
+          <td>筋緊張</td>
+          <td>低下するが残存</td>
+          <td>ほぼ消失</td>
+        </tr>
+        <tr>
+          <td>夢</td>
+          <td>単純なイメージ</td>
+          <td>複雑・奇妙な夢</td>
+        </tr>
+      </table>
+
+      <ul>
+        <li>睡眠中は<span class="highlight">唾液分泌量が減少</span>する</li>
+        <li><span class="highlight">睡眠の深さで脳波が変化</span>する</li>
+        <li>加齢に伴い深い睡眠は<span class="caution">減少</span>する</li>
+        <li>新生児はREM睡眠の割合が<span class="key">多い</span></li>
+      </ul>
+
+      <h2>概日リズムとメラトニン</h2>
+      <ul>
+        <li><span class="key">メラトニン</span>：松果体から分泌、概日リズムを調節</li>
+        <li>夜間に分泌が増加し、睡眠を促進</li>
+        <li>光刺激で分泌が抑制される</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A43</div>
+        <p>体温調節中枢が存在するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 小脳<br>
+          b 延髄<br>
+          c 松果体<br>
+          d 視床下部<br>
+          e Broca領域
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】視床下部は体温調節中枢のほか、摂食中枢、満腹中枢、飲水中枢、内分泌・自律神経系の最高次中枢を持つ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A50</div>
+        <p>言語に関与するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 海馬<br>
+          b 扁桃体<br>
+          c Broca領域<br>
+          d 大脳基底核<br>
+          e Wernicke領域
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】Broca領域は言語の産出（話す）、Wernicke領域は言語の理解（聞く）に関与。海馬は記憶、扁桃体は情動に関与。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C54</div>
+        <p>睡眠で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 唾液分泌量が減少する。<br>
+          b 睡眠の深さで脳波が変化する。<br>
+          c 老化に伴って深い睡眠が増加する。<br>
+          d REM睡眠では眼球運動が減少する。<br>
+          e 新生児は10歳児よりもREM睡眠の割合が少ない。
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】睡眠中は副交感神経優位だが唾液分泌は減少。睡眠深度で脳波は変化（浅いとθ波、深いとδ波）。加齢で深い睡眠は減少。REM睡眠では急速眼球運動あり。新生児はREM睡眠の割合が多い。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細胞膜の物質輸送 - 生理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生理学 / 細胞生理学</span>
+    <h1>細胞膜の物質輸送</h1>
+    <div class="container">
+
+      <h2>細胞内外のイオン濃度</h2>
+      <p>細胞内と細胞外ではイオン濃度が大きく異なる。この濃度差が静止膜電位や活動電位の発生に重要。</p>
+
+      <table>
+        <tr>
+          <th>イオン</th>
+          <th>細胞内</th>
+          <th>細胞外</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">K<sup>+</sup></span></td>
+          <td><span class="highlight">150 mM（高い）</span></td>
+          <td>5 mM（低い）</td>
+        </tr>
+        <tr>
+          <td>Na<sup>+</sup></td>
+          <td>12 mM（低い）</td>
+          <td>145 mM（高い）</td>
+        </tr>
+        <tr>
+          <td>Cl<sup>−</sup></td>
+          <td>4 mM（低い）</td>
+          <td>120 mM（高い）</td>
+        </tr>
+        <tr>
+          <td>Ca<sup>2+</sup></td>
+          <td>0.0001 mM（低い）</td>
+          <td>1.8 mM（高い）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <ul>
+          <li><span class="highlight">細胞内で最も多いイオン = K<sup>+</sup></span></li>
+          <li>細胞外で最も多いイオン = Na<sup>+</sup></li>
+          <li>Na<sup>+</sup>-K<sup>+</sup>ポンプがこの濃度差を維持</li>
+        </ul>
+      </div>
+
+      <h2>細胞膜の選択的透過性</h2>
+      <p>細胞膜（脂質二重膜）は限られた分子のみを透過させる。</p>
+      <ul>
+        <li><span class="key">透過しやすい</span>：O<sub>2</sub>、CO<sub>2</sub>、N<sub>2</sub>、ステロイドホルモン（脂溶性）</li>
+        <li><span class="key">透過しにくい</span>：イオン（Na<sup>+</sup>、K<sup>+</sup>、Ca<sup>2+</sup>、Cl<sup>−</sup>など）、グルコース</li>
+      </ul>
+
+      <h2>物質輸送の分類</h2>
+
+      <h3>受動輸送（ATPなし・濃度勾配に従う）</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="key">単純拡散</span></td>
+          <td>脂質二重膜を直接通過</td>
+          <td>O<sub>2</sub>、CO<sub>2</sub>、ステロイドホルモン</td>
+        </tr>
+        <tr>
+          <td><span class="key">チャネル輸送</span></td>
+          <td>イオンチャネルを通過</td>
+          <td>Na<sup>+</sup>、K<sup>+</sup>、Ca<sup>2+</sup>、Cl<sup>−</sup>、水</td>
+        </tr>
+        <tr>
+          <td><span class="key">促通拡散</span></td>
+          <td>輸送体（キャリア）を介して通過</td>
+          <td>グルコース</td>
+        </tr>
+      </table>
+
+      <h3>能動輸送（ATP必要・濃度勾配に逆らう）</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="key">一次性能動輸送</span></td>
+          <td>ATPを直接使用（ポンプ）</td>
+          <td><span class="highlight">Na<sup>+</sup>-K<sup>+</sup>ポンプ</span>、Ca<sup>2+</sup>ポンプ</td>
+        </tr>
+        <tr>
+          <td><span class="key">二次性能動輸送</span></td>
+          <td>一次性能動輸送で生じた濃度勾配を利用</td>
+          <td>Na<sup>+</sup>/グルコース共輸送</td>
+        </tr>
+      </table>
+
+      <h2>Na<sup>+</sup>-K<sup>+</sup>ポンプ（Na<sup>+</sup>-K<sup>+</sup>-ATPase）</h2>
+      <ul>
+        <li>1回のATP消費で<span class="key">Na<sup>+</sup>を3個</span>細胞外へ、<span class="key">K<sup>+</sup>を2個</span>細胞内へ輸送</li>
+        <li>細胞内外のイオン濃度差を維持</li>
+        <li>静止膜電位の形成に寄与</li>
+      </ul>
+
+      <h2>過去問</h2>
+      <div class="question-box">
+        <div class="q-number">115A46</div>
+        <p>静止膜電位の時に心筋細胞内で最も濃度が高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a K<sup>+</sup><br>
+          b Cl<sup>−</sup><br>
+          c Na<sup>+</sup><br>
+          d Ca<sup>2+</sup><br>
+          e Mg<sup>2+</sup>
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】心筋細胞を含む全ての細胞において、細胞内で最も濃度が高いイオンはK<sup>+</sup>である（約150 mM）。Na<sup>+</sup>、Cl<sup>−</sup>、Ca<sup>2+</sup>は細胞外に多い。この濃度差はNa<sup>+</sup>-K<sup>+</sup>ポンプにより維持されている。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

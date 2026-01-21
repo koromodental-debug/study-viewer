@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細胞 - 生化学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生化学 / 総論</span>
+    <h1>細胞の構造・機能・細胞死</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">Check Point</div>
+        <ul>
+          <li>細胞の核と細胞小器官の機能について理解する</li>
+          <li>細胞骨格タンパク質の種類とその役割を理解する</li>
+          <li>細胞間結合の種類とその存在意義を説明できる</li>
+          <li>細胞周期の各ステップとその制御機構について理解する</li>
+          <li>アポトーシス、ネクローシス、オートファジーの違いを説明できる</li>
+        </ul>
+      </div>
+
+      <h2>I. 核</h2>
+      <ul>
+        <li>細胞の体積の約<span class="key">10%</span>を占める<span class="key">二重膜構造</span></li>
+        <li>核の内部は<span class="key">核膜孔</span>によって細胞質と直接交通</li>
+        <li>核はすべての細胞に存在するが、<span class="caution">赤血球では核がない</span>（脱核現象で二次的に失われる）</li>
+      </ul>
+
+      <h2>II. 細胞小器官</h2>
+
+      <h3>A. 小胞体</h3>
+      <ul>
+        <li><span class="key">粗面小胞体</span>：リボソームが付着、タンパク質合成の場</li>
+        <li><span class="key">滑面小胞体</span>：リボソームなし、脂質合成の場</li>
+        <li>副腎皮質細胞（ステロイド系ホルモン合成）では滑面小胞体が発達</li>
+        <li>横紋筋細胞の粗面小胞体は<span class="key">筋小胞体</span>と呼ばれ、Ca²⁺をプール</li>
+      </ul>
+
+      <h3>B. ゴルジ体</h3>
+      <ul>
+        <li>1つの細胞に1〜数百個存在</li>
+        <li>4〜6枚の扁平な嚢が積み重なった構造</li>
+        <li>リボソームで合成されたタンパク質を受け取り、<span class="highlight">糖の修飾（糖鎖付加）</span>を行う</li>
+      </ul>
+
+      <h3>C. 分泌小胞とリソソーム</h3>
+      <ul>
+        <li><span class="key">分泌小胞</span>：ホルモン、成長因子、消化酵素などをパッケージング → <span class="key">エキソサイトーシス</span>で細胞外へ分泌</li>
+        <li><span class="key">リソソーム</span>：加水分解酵素をパッケージング → 細胞が取り込んだ異物を消化</li>
+        <li>細胞外物質は<span class="key">エンドサイトーシス</span>または貪食でリソソームへ</li>
+      </ul>
+
+      <h3>D. ミトコンドリア</h3>
+      <ul>
+        <li>内膜に<span class="key">電子伝達系</span>が存在し、<span class="highlight">ATP産生</span>を行う</li>
+        <li>独自のDNAを有する（元来独立した生物であったため）</li>
+      </ul>
+
+      <h2>III. 細胞骨格</h2>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>構成タンパク質</th>
+          <th>機能・特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">アクチンフィラメント</span></td>
+          <td>アクチン</td>
+          <td>細胞膜の裏打ち、偽足、微絨毛の基本構造</td>
+        </tr>
+        <tr>
+          <td><span class="key">微小管</span></td>
+          <td>チューブリン</td>
+          <td>紡錘糸、軸索輸送（キネシン・ダイニン）、線毛・鞭毛</td>
+        </tr>
+        <tr>
+          <td><span class="key">中間径フィラメント</span></td>
+          <td>ケラチン、ビメンチン等</td>
+          <td>核の位置決め、デスモゾーム・ヘミデスモゾームの構成</td>
+        </tr>
+      </table>
+
+      <h2>IV. 細胞接着</h2>
+
+      <table>
+        <tr>
+          <th>結合様式</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">密着結合（タイト結合）</span></td>
+          <td>細胞膜を帯状に密着して結びつける</td>
+        </tr>
+        <tr>
+          <td><span class="key">接着帯（アドヘレンス結合）</span></td>
+          <td>上皮細胞間を帯状に近接させる</td>
+        </tr>
+        <tr>
+          <td><span class="key">接着斑（デスモゾーム）</span></td>
+          <td>細胞を強固に結合させる斑状の結合</td>
+        </tr>
+        <tr>
+          <td><span class="key">ギャップ結合（細隙結合）</span></td>
+          <td>イオンや低分子を通過させるトンネル状チャネル</td>
+        </tr>
+        <tr>
+          <td><span class="key">半接着斑（ヘミデスモゾーム）</span></td>
+          <td>上皮細胞と基底膜の細胞外マトリックスを結合</td>
+        </tr>
+      </table>
+
+      <h3>接着分子</h3>
+      <ul>
+        <li><span class="key">カドヘリン</span>：アドヘレンス結合・デスモゾームの構成要素、<span class="highlight">Ca²⁺依存性</span></li>
+        <li><span class="key">インテグリン</span>：ヘミデスモゾームに関与、αβサブユニット構成、<span class="key">RGD配列</span>を認識</li>
+      </ul>
+
+      <h2>V. 細胞周期</h2>
+
+      <h3>分裂間期と分裂期</h3>
+      <ul>
+        <li><span class="key">G₁期</span>：細胞が生育しサイズが増大（DNA合成準備期）</li>
+        <li><span class="key">S期</span>：DNA複製期</li>
+        <li><span class="key">G₂期</span>：DNA合成が完全かチェックする時期</li>
+        <li><span class="key">M期（分裂期）</span>：紡錘糸形成、染色体分配、細胞質分裂</li>
+        <li><span class="key">G₀期</span>：S期に入らず細胞周期が停止する静止状態</li>
+      </ul>
+
+      <h3>細胞周期の調節</h3>
+      <ul>
+        <li><span class="key">サイクリン依存性キナーゼ（CDK）</span>とサイクリンの複合体がタンパク質をリン酸化 → 細胞周期が回転</li>
+        <li><span class="key">p53</span>（がん抑制遺伝子）：DNA損傷時にS期への進行を阻止</li>
+        <li>各種<span class="key">成長因子</span>により細胞周期が促進</li>
+      </ul>
+
+      <h3>成長因子</h3>
+      <table>
+        <tr>
+          <th>略称</th>
+          <th>名称</th>
+        </tr>
+        <tr><td>PDGF</td><td>血小板由来成長因子</td></tr>
+        <tr><td>EGF</td><td>上皮細胞成長因子</td></tr>
+        <tr><td>FGF</td><td>線維芽細胞成長因子</td></tr>
+        <tr><td>IGF</td><td>インスリン様成長因子</td></tr>
+        <tr><td>TGF-β</td><td>トランスフォーミング成長因子</td></tr>
+        <tr><td>NGF</td><td>神経成長因子</td></tr>
+      </table>
+
+      <h2>VI. 細胞死</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>アポトーシス</th>
+          <th>ネクローシス</th>
+        </tr>
+        <tr>
+          <td><span class="key">発生様式</span></td>
+          <td>組織中で<span class="highlight">散発的</span></td>
+          <td>組織中で<span class="caution">広範</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">性質</span></td>
+          <td>プログラムされた細胞死</td>
+          <td>外的要因による受動的死</td>
+        </tr>
+        <tr>
+          <td><span class="key">クロマチン</span></td>
+          <td>凝集</td>
+          <td>ランダムな分解</td>
+        </tr>
+        <tr>
+          <td><span class="key">細胞体積</span></td>
+          <td>減少</td>
+          <td>膨化</td>
+        </tr>
+        <tr>
+          <td><span class="key">結果</span></td>
+          <td>アポトーシス小体 → マクロファージが貪食</td>
+          <td>細胞崩壊 → <span class="caution">炎症惹起</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">関与因子</span></td>
+          <td>Fas、TNF受容体、カスパーゼ</td>
+          <td>−</td>
+        </tr>
+      </table>
+
+      <h3>オートファジー（自食）</h3>
+      <ul>
+        <li>古くなった不要な細胞質の分子や細胞小器官を消化する<span class="highlight">自食現象</span></li>
+        <li><span class="key">リソソーム系</span>と<span class="key">ユビキチン-プロテアソーム系</span>が関与</li>
+        <li>栄養飢餓時には自食により細胞生存に必要な分子を供給</li>
+        <li>大隅良典博士が2016年ノーベル生理学・医学賞を受賞</li>
+      </ul>
+
+      <h2>関連過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">101B127（参考：101回以前）</div>
+        <p>タンパク質に糖鎖を付加する細胞内小器官はどれか。</p>
+        <div class="choices">
+          a 分泌小胞<br>
+          b ゴルジ体<br>
+          c リボソーム<br>
+          d リソソーム<br>
+          e ミトコンドリア
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】タンパク質への糖鎖付加（グリコシル化）は<span class="highlight">ゴルジ体</span>で行われる翻訳後修飾反応である。リボソームはタンパク質合成、リソソームは加水分解、ミトコンドリアはATP産生、分泌小胞は細胞外への輸送を担う。</p>
+      </div>
+
+      <p class="note">参考：パーフェクトマスター口腔生化学 Chapter 3（p.13-20）</p>
+
+    </div>
+  </div>
+</body>
+</html>

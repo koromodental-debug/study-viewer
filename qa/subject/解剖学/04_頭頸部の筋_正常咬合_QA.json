@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "title": "正常咬合",
+    "category": "解剖学",
+    "chapter": "04_頭頸部の筋"
+  },
+  "sections": [
+    {
+      "section": "頬筋",
+      "qa": [
+        {
+          "question": "舌の機能力に対抗して、外側から歯列に機能力を及ぼすのはどれか。2つ選べ。",
+          "answer": "A, C",
+          "choices": {
+            "a": "頰筋",
+            "b": "咬筋",
+            "c": "口輪筋",
+            "d": "内側翼突筋",
+            "e": "外側翼突筋"
+          },
+          "correctAnswer": "A, C",
+          "numChoices": 2,
+          "code": "107C104"
+        }
+      ]
+    },
+    {
+      "section": "口輪筋",
+      "qa": []
+    },
+    {
+      "section": "舌筋",
+      "qa": []
+    }
+  ]
+}

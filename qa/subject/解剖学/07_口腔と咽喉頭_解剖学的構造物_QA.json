@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "解剖学的構造物",
+    "category": "解剖学",
+    "chapter": "07_口腔と咽喉頭"
+  },
+  "sections": [
+    {
+      "section": "翼突下顎縫線",
+      "qa": [
+        {
+          "question": "口腔内写真（別冊No.00）を別に示す。翼突下顎縫線に相当する部位はどれか。1つ選べ。",
+          "answer": "E",
+          "choices": {
+            "a": "ア",
+            "b": "イ",
+            "c": "ウ",
+            "d": "エ",
+            "e": "オ"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "107A129"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>エナメル質の成分 - 生化学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">生化学 / 歯と歯周組織</span>
+    <h1>エナメル質の成分</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">Check Point</div>
+        <ul>
+          <li>エナメル質の組成（無機質・有機質・水分）を覚える</li>
+          <li>エナメルタンパク質の種類と特徴を理解する</li>
+          <li>幼若エナメル質と成熟エナメル質の違いを説明できる</li>
+        </ul>
+      </div>
+
+      <h2>I. エナメル質の組成</h2>
+
+      <table>
+        <tr>
+          <th>成分</th>
+          <th>割合</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">無機質</span></td>
+          <td><span class="highlight">95%</span></td>
+          <td>ヒドロキシアパタイト（人体で最も高い石灰化度）</td>
+        </tr>
+        <tr>
+          <td><span class="key">有機質</span></td>
+          <td>1%</td>
+          <td>エナメルタンパク質（アメロゲニン、エナメリン等）</td>
+        </tr>
+        <tr>
+          <td><span class="key">水分</span></td>
+          <td>4%</td>
+          <td>−</td>
+        </tr>
+      </table>
+
+      <h3>エナメル質の特徴</h3>
+      <ul>
+        <li><span class="key">外胚葉</span>由来（エナメル芽細胞が形成）</li>
+        <li><span class="highlight">人体で最も硬い組織</span></li>
+        <li>結晶が巨大（象牙質・骨の約10倍の長さ、1,000倍の容積）</li>
+        <li><span class="caution">コラーゲンは存在しない</span>（象牙質・骨と異なる）</li>
+      </ul>
+
+      <h2>II. エナメルタンパク質</h2>
+
+      <p>エナメル質に固有のタンパク質（3種類）：</p>
+
+      <table>
+        <tr>
+          <th>タンパク質</th>
+          <th>特徴</th>
+          <th>成熟後</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">アメロゲニン</span></td>
+          <td>幼若エナメル質の主成分、結晶間隙に存在、<span class="highlight">石灰化を制御</span></td>
+          <td><span class="caution">分解・消失</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">エナメリン</span></td>
+          <td>アパタイト結晶表面に強く結合、結晶を皮膜のように取り囲む</td>
+          <td><span class="key">残存</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">アメロブラスチン</span><br>（シースリン）</td>
+          <td>エナメル質形成に関与</td>
+          <td>分解</td>
+        </tr>
+      </table>
+
+      <h3>幼若エナメル質 vs 成熟エナメル質</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>幼若エナメル質</th>
+          <th>成熟エナメル質</th>
+        </tr>
+        <tr>
+          <td><span class="key">石灰化度</span></td>
+          <td>70%</td>
+          <td><span class="highlight">95%</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">アメロゲニン</span></td>
+          <td>結晶間隙に存在</td>
+          <td>分解・消失</td>
+        </tr>
+        <tr>
+          <td><span class="key">エナメリン</span></td>
+          <td>結晶表面に結合</td>
+          <td>残存</td>
+        </tr>
+      </table>
+
+      <h2>III. 他の硬組織との比較</h2>
+
+      <table>
+        <tr>
+          <th>組織</th>
+          <th>無機質</th>
+          <th>有機質</th>
+          <th>水分</th>
+          <th>主な有機成分</th>
+        </tr>
+        <tr>
+          <td><span class="key">エナメル質</span></td>
+          <td><span class="highlight">95%</span></td>
+          <td>1%</td>
+          <td>4%</td>
+          <td>アメロゲニン、エナメリン</td>
+        </tr>
+        <tr>
+          <td><span class="key">象牙質</span></td>
+          <td>70%</td>
+          <td>20%</td>
+          <td>10%</td>
+          <td>I型コラーゲン、ホスホホリン</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨</span></td>
+          <td>70%</td>
+          <td>20%</td>
+          <td>10%</td>
+          <td>I型コラーゲン、オステオカルシン</td>
+        </tr>
+        <tr>
+          <td><span class="key">軟骨</span></td>
+          <td>3%</td>
+          <td>27%</td>
+          <td>70%</td>
+          <td>II型・X型コラーゲン</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <ul>
+          <li>エナメル質：<span class="highlight">95%</span>が無機質、<span class="caution">コラーゲンなし</span></li>
+          <li>象牙質・骨：<span class="key">70%</span>が無機質、I型コラーゲンが主体</li>
+          <li>軟骨：<span class="key">3%</span>が無機質（ほぼ石灰化していない）</li>
+        </ul>
+      </div>
+
+      <h2>関連過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B64</div>
+        <p>エナメルタンパク質で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a エナメリンは分解されない。<br>
+          b I型コラーゲンが主成分である。<br>
+          c アメロゲニンはエナメル質の石灰化に関わる。<br>
+          d エナメリンはアメロゲニンの低分子化に関わる。<br>
+          e ホスホホリンは形成期エナメル芽細胞から分泌される。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">アメロゲニン</span>は幼若エナメル質の主成分で、エナメル質の石灰化を制御する。a：エナメリンは成熟後も残存するが、アメロゲニンは分解される。b：エナメル質に<span class="caution">I型コラーゲンは存在しない</span>（象牙質の主成分）。d：エナメリンはアメロゲニンの低分子化には関与しない。e：ホスホホリンは<span class="caution">象牙芽細胞</span>から分泌される象牙質固有のタンパク質。</p>
+      </div>
+
+      <p class="note">参考：パーフェクトマスター口腔生化学 Chapter 8, 11（p.58-59, 79）</p>
+
+    </div>
+  </div>
+</body>
+</html>

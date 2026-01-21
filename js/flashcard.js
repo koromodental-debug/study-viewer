@@ -82,12 +82,47 @@ const FlashcardModule = (function() {
   // DOM要素
   let container = null;
 
-  // ⋮メニューを閉じるヘルパー関数
-  function closeDeckMoreMenus(e) {
-    // メニューボタンやドロップダウン内のクリックは除外
-    if (e?.target?.closest('.deck-more-menu-wrapper')) return;
-    document.querySelectorAll('.deck-more-dropdown.active').forEach(d => {
-      d.classList.remove('active');
+  // デッキ操作アクションシート
+  function showDeckActionSheet(topicId, deckId) {
+    const existing = document.querySelector('.card-action-sheet-overlay');
+    if (existing) existing.remove();
+
+    const topic = DATA.find(d => d.id === topicId);
+    const title = topic?.title || 'このデッキ';
+
+    const overlay = document.createElement('div');
+    overlay.className = 'card-action-sheet-overlay';
+    overlay.innerHTML = `
+      <div class="card-action-sheet">
+        <button class="card-action-sheet-item edit">編集</button>
+        <button class="card-action-sheet-item delete">削除</button>
+        <button class="card-action-sheet-item cancel">キャンセル</button>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay || e.target.classList.contains('cancel')) {
+        overlay.remove();
+      }
+    });
+
+    overlay.querySelector('.edit').addEventListener('click', () => {
+      overlay.remove();
+      openDeckEditModal(topicId);
+    });
+
+    overlay.querySelector('.delete').addEventListener('click', () => {
+      overlay.remove();
+      showConfirmDialog(
+        'デッキを削除',
+        `「${title}」を削除しますか？\n\n学習進捗も削除されます。`,
+        () => {
+          deleteImportedDeck(deckId, topicId);
+          renderDeckList();
+        },
+        true
+      );
     });
   }
 
@@ -1196,31 +1231,13 @@ const FlashcardModule = (function() {
     // インポート済みデッキには⋮メニューを表示
     const isImported = topic.source === 'local_imported';
     const moreBtn = isImported ? `
-      <div class="deck-more-menu-wrapper">
-        <button class="deck-more-btn" data-topic-id="${topic.id}" data-deck-id="${topic.importedDeckId || ''}" title="メニュー">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="5" r="2"></circle>
-            <circle cx="12" cy="12" r="2"></circle>
-            <circle cx="12" cy="19" r="2"></circle>
-          </svg>
-        </button>
-        <div class="deck-more-dropdown" data-topic-id="${topic.id}" data-deck-id="${topic.importedDeckId || ''}">
-          <button class="deck-more-item deck-more-edit">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-            </svg>
-            <span>編集</span>
-          </button>
-          <button class="deck-more-item deck-more-delete">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="3 6 5 6 21 6"></polyline>
-              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-            </svg>
-            <span>削除</span>
-          </button>
-        </div>
-      </div>
+      <button class="deck-more-btn" data-topic-id="${topic.id}" data-deck-id="${topic.importedDeckId || ''}" title="メニュー">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="5" r="2"></circle>
+          <circle cx="12" cy="12" r="2"></circle>
+          <circle cx="12" cy="19" r="2"></circle>
+        </svg>
+      </button>
     ` : '';
 
     return `
@@ -1397,73 +1414,16 @@ const FlashcardModule = (function() {
       });
     });
 
-    // インポートデッキ ⋮メニューボタンクリック
+    // インポートデッキ ⋮メニューボタン → アクションシート表示
     const moreBtns = container.querySelectorAll('.deck-more-btn');
     moreBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const wrapper = btn.closest('.deck-more-menu-wrapper');
-        const dropdown = wrapper?.querySelector('.deck-more-dropdown');
-        if (!dropdown) return;
-
-        // 他のメニューを閉じる
-        document.querySelectorAll('.deck-more-dropdown.active').forEach(d => {
-          if (d !== dropdown) d.classList.remove('active');
-        });
-
-        // ボタンの位置を取得してドロップダウンを配置
-        const rect = btn.getBoundingClientRect();
-        dropdown.style.position = 'fixed';
-        dropdown.style.top = (rect.bottom + 4) + 'px';
-        dropdown.style.right = (window.innerWidth - rect.right) + 'px';
-        dropdown.style.left = 'auto';
-        dropdown.style.bottom = 'auto';
-
-        // このメニューをトグル
-        dropdown.classList.toggle('active');
+        const topicId = btn.dataset.topicId;
+        const deckId = btn.dataset.deckId;
+        showDeckActionSheet(topicId, deckId);
       });
     });
-
-    // ⋮メニュー内の編集ボタンクリック
-    const moreEditBtns = container.querySelectorAll('.deck-more-edit');
-    moreEditBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const dropdown = btn.closest('.deck-more-dropdown');
-        const topicId = dropdown?.dataset.topicId;
-        dropdown?.classList.remove('active');
-        if (topicId) openDeckEditModal(topicId);
-      });
-    });
-
-    // ⋮メニュー内の削除ボタンクリック
-    const moreDeleteBtns = container.querySelectorAll('.deck-more-delete');
-    moreDeleteBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const dropdown = btn.closest('.deck-more-dropdown');
-        const topicId = dropdown?.dataset.topicId;
-        const deckId = dropdown?.dataset.deckId;
-        dropdown?.classList.remove('active');
-
-        const topic = DATA.find(d => d.id === topicId);
-        const title = topic?.title || 'このデッキ';
-
-        showConfirmDialog(
-          'デッキを削除',
-          `「${title}」を削除しますか？\n\n学習進捗も削除されます。`,
-          () => {
-            deleteImportedDeck(deckId, topicId);
-            renderDeckList();
-          },
-          true
-        );
-      });
-    });
-
-    // メニュー外クリックで閉じる
-    document.addEventListener('click', closeDeckMoreMenus);
-    document.addEventListener('touchstart', closeDeckMoreMenus);
 
     // デッキ管理ボタンクリック
     const manageBtn = document.getElementById('deck-manage-toggle');
@@ -2590,24 +2550,15 @@ const FlashcardModule = (function() {
       // htmlPathを決定（カード単位 or トピック単位）
       const cardHtmlPath = card.htmlPath || (topic && topic.htmlPath);
 
-      // 編集・削除ボタン（編集可能なデッキ、展開時のみ）
-      const editDeleteBtns = (isEditable && isExpanded) ? `
-        <div class="card-list-edit-actions">
-          <button class="card-list-edit-btn" data-card-index="${idx}" data-original-index="${originalIndex}" title="編集">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-            </svg>
-            <span>編集</span>
-          </button>
-          <button class="card-list-delete-btn" data-card-index="${idx}" data-original-index="${originalIndex}" title="削除">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="3 6 5 6 21 6"></polyline>
-              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-            </svg>
-            <span>削除</span>
-          </button>
-        </div>
+      // 編集メニューボタン（編集可能なデッキのみ）
+      const moreMenuBtn = isEditable ? `
+        <button class="card-more-menu-btn" data-card-index="${idx}" data-original-index="${originalIndex}" title="メニュー">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="5" r="2"/>
+            <circle cx="12" cy="12" r="2"/>
+            <circle cx="12" cy="19" r="2"/>
+          </svg>
+        </button>
       ` : '';
 
       return `
@@ -2615,21 +2566,14 @@ const FlashcardModule = (function() {
           <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
             <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
             ${isExpanded ? `
-              <div class="card-search-answer">A: ${escapeHtml(card.answer)}</div>
-              ${cardHtmlPath ? `
-                <button class="deck-card-summary-btn"
-                        data-topic-id="${escapeHtml(topicId)}"
-                        data-html-path="${escapeHtml(cardHtmlPath)}"
-                        data-section="${card.section ? escapeHtml(card.section) : ''}">
-                  まとめを見る
-                </button>
-              ` : ''}
-              ${editDeleteBtns}
+              <div class="card-search-answer">A: ${escapeHtml(card.answer)}${cardHtmlPath ? `<span class="inline-summary-toggle" data-html-path="${escapeHtml(cardHtmlPath)}" data-section="${card.section ? escapeHtml(card.section) : ''}"> ></span>` : ''}</div>
+              ${cardHtmlPath ? `<div class="inline-summary-content collapsed"></div>` : ''}
             ` : ''}
           </div>
           <div class="card-search-footer">
             <div class="card-search-meta">${card.section ? escapeHtml(card.section) : ''}</div>
             <div class="card-search-actions">
+              ${moreMenuBtn}
               <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(key)}" title="お気に入り">
                 <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -2770,28 +2714,30 @@ const FlashcardModule = (function() {
       });
     });
 
-    // まとめを見るボタン
-    const summaryBtns = container.querySelectorAll('.deck-card-summary-btn');
-    summaryBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    // インラインまとめトグル（「>」クリック）
+    const inlineSummaryToggles = container.querySelectorAll('.inline-summary-toggle');
+    inlineSummaryToggles.forEach(toggle => {
+      toggle.addEventListener('click', async (e) => {
         e.stopPropagation();
-        const btnTopicId = btn.dataset.topicId;
+        const card = toggle.closest('.card-search-card');
+        const content = card.querySelector('.inline-summary-content');
+        if (!content) return;
 
-        state.deckCardListExpandedKeys = new Set();
+        const isCollapsed = content.classList.contains('collapsed');
 
-        // タブバーを再表示
-        const tabbar = document.querySelector('.floating-tabbar');
-        if (tabbar) tabbar.classList.remove('hidden');
-
-        // まとめタブに切り替え
-        if (typeof window.switchTab === 'function') {
-          window.switchTab('html');
+        if (isCollapsed) {
+          // 展開時: まだ読み込んでいなければHTMLを取得
+          if (!content.innerHTML.trim()) {
+            const htmlPath = toggle.dataset.htmlPath;
+            const sectionName = toggle.dataset.section;
+            await loadDeckCardSummary(content, htmlPath, sectionName);
+          }
+          toggle.textContent = ' ∨';
+        } else {
+          toggle.textContent = ' >';
         }
 
-        // トピックを読み込み
-        if (typeof window.selectItem === 'function') {
-          window.selectItem(btnTopicId);
-        }
+        content.classList.toggle('collapsed');
       });
     });
 
@@ -2813,75 +2759,95 @@ const FlashcardModule = (function() {
       });
     }
 
-    // カード編集ボタン（インポートデッキ・組み込みデッキ両対応）
-    const cardEditBtns = container.querySelectorAll('.card-list-edit-btn');
-    cardEditBtns.forEach(btn => {
-      btn.addEventListener('click', async (e) => {
-        e.stopPropagation();
-        const cardIndex = parseInt(btn.dataset.cardIndex);
-        const originalIndex = parseInt(btn.dataset.originalIndex);
-        const topic = DATA.find(d => d.id === topicId);
-
-        // インポート済みデッキの場合
-        if (topic && topic.localJsonData) {
-          let card = null;
-          let count = 0;
-          for (const section of topic.localJsonData.sections || []) {
-            for (const qa of section.qa || []) {
-              if (count === cardIndex) {
-                card = {
-                  question: qa.question,
-                  answer: qa.answer,
-                  isChoiceCard: qa.choices && Object.keys(qa.choices).length > 0,
-                  choices: qa.choices
-                };
-                break;
-              }
-              count++;
-            }
-            if (card) break;
-          }
-          if (card) {
-            openCardEditModal(topicId, cardIndex, card);
-          }
-          return;
-        }
-
-        // 組み込みデッキの場合：表示中のカードから情報を取得
-        const cardItem = btn.closest('.card-search-item');
-        if (cardItem) {
-          const questionEl = cardItem.querySelector('.card-search-question');
-          const answerEl = cardItem.querySelector('.card-search-answer');
-          const card = {
-            question: questionEl ? questionEl.textContent.replace(/^Q:\s*/, '') : '',
-            answer: answerEl ? answerEl.textContent.replace(/^A:\s*/, '') : '',
-            isChoiceCard: false,
-            choices: null
-          };
-          // 組み込みデッキ用の編集モーダルを開く（originalIndexを使用）
-          openBuiltInCardEditModal(topicId, originalIndex, card);
-        }
-      });
-    });
-
-    // カード削除ボタン（インポートデッキ・組み込みデッキ両対応）
-    const cardDeleteBtns = container.querySelectorAll('.card-list-delete-btn');
-    cardDeleteBtns.forEach(btn => {
+    // カードメニューボタン（⋮）→ アクションシート表示
+    const moreMenuBtns = container.querySelectorAll('.card-more-menu-btn');
+    moreMenuBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const cardIndex = parseInt(btn.dataset.cardIndex);
         const originalIndex = parseInt(btn.dataset.originalIndex);
-        const topic = DATA.find(d => d.id === topicId);
+        const cardItem = btn.closest('.card-search-item');
 
-        // インポート済みデッキの場合
-        if (topic && topic.localJsonData) {
-          deleteCard(topicId, cardIndex);
-          return;
-        }
-
-        // 組み込みデッキの場合：差分削除
-        deleteBuiltInCard(topicId, originalIndex);
+        showCardActionSheet(topicId, cardIndex, originalIndex, cardItem);
       });
+    });
+  }
+
+  // カード操作アクションシート
+  function showCardActionSheet(topicId, cardIndex, originalIndex, cardItem) {
+    // 既存のアクションシートを削除
+    const existing = document.querySelector('.card-action-sheet-overlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'card-action-sheet-overlay';
+    overlay.innerHTML = `
+      <div class="card-action-sheet">
+        <button class="card-action-sheet-item edit">編集</button>
+        <button class="card-action-sheet-item delete">削除</button>
+        <button class="card-action-sheet-item cancel">キャンセル</button>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    // オーバーレイクリックで閉じる
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay || e.target.classList.contains('cancel')) {
+        overlay.remove();
+      }
+    });
+
+    // 編集
+    overlay.querySelector('.edit').addEventListener('click', async () => {
+      overlay.remove();
+      const topic = DATA.find(d => d.id === topicId);
+
+      if (topic && topic.localJsonData) {
+        let card = null;
+        let count = 0;
+        for (const section of topic.localJsonData.sections || []) {
+          for (const qa of section.qa || []) {
+            if (count === cardIndex) {
+              card = {
+                question: qa.question,
+                answer: qa.answer,
+                isChoiceCard: qa.choices && Object.keys(qa.choices).length > 0,
+                choices: qa.choices
+              };
+              break;
+            }
+            count++;
+          }
+          if (card) break;
+        }
+        if (card) openCardEditModal(topicId, cardIndex, card);
+        return;
+      }
+
+      // 組み込みデッキ
+      if (cardItem) {
+        const questionEl = cardItem.querySelector('.card-search-question');
+        const answerEl = cardItem.querySelector('.card-search-answer');
+        const card = {
+          question: questionEl ? questionEl.textContent.replace(/^Q:\s*/, '') : '',
+          answer: answerEl ? answerEl.textContent.replace(/^A:\s*/, '').replace(/ [>∨]$/, '') : '',
+          isChoiceCard: false,
+          choices: null
+        };
+        openBuiltInCardEditModal(topicId, originalIndex, card);
+      }
+    });
+
+    // 削除
+    overlay.querySelector('.delete').addEventListener('click', () => {
+      overlay.remove();
+      const topic = DATA.find(d => d.id === topicId);
+
+      if (topic && topic.localJsonData) {
+        deleteCard(topicId, cardIndex);
+      } else {
+        deleteBuiltInCard(topicId, originalIndex);
+      }
     });
   }
 
@@ -4956,6 +4922,33 @@ const FlashcardModule = (function() {
     }
 
     return null; // 見つからない場合
+  }
+
+  // カード一覧用まとめ読み込み
+  async function loadDeckCardSummary(contentEl, htmlPath, sectionName) {
+    try {
+      contentEl.innerHTML = '<p style="color: var(--secondary-label); font-style: italic;">読み込み中...</p>';
+      const response = await fetch(encodeURI(htmlPath));
+      if (!response.ok) {
+        throw new Error('Failed to fetch');
+      }
+      const html = await response.text();
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      if (sectionName) {
+        const sectionContent = extractSection(doc, sectionName);
+        if (sectionContent) {
+          contentEl.innerHTML = sectionContent;
+          return;
+        }
+      }
+
+      contentEl.innerHTML = doc.body ? doc.body.innerHTML : html;
+    } catch (e) {
+      contentEl.innerHTML = '<p style="color: var(--destructive-red, #ff3b30);">まとめの読み込みに失敗しました</p>';
+    }
   }
 
   // === 戻る ===

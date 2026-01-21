@@ -6242,25 +6242,81 @@ body:not(.is-practice) #flashcard-content {
   padding: 16px;
 }
 
-/* デッキカード一覧：まとめを見るボタン */
-.deck-card-summary-btn {
-  display: block;
-  width: 100%;
-  margin-top: 12px;
-  padding: 10px;
-  background: var(--system-blue);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
+/* カード一覧内のインラインまとめトグル */
+.inline-summary-toggle {
+  color: var(--system-blue);
   cursor: pointer;
-  text-align: center;
+  font-weight: 500;
   -webkit-tap-highlight-color: transparent;
 }
 
-.deck-card-summary-btn:active {
-  opacity: 0.8;
+.inline-summary-content {
+  margin-top: 12px;
+  background: var(--bg-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.inline-summary-content.collapsed {
+  display: none;
+}
+
+.inline-summary-content h1,
+.inline-summary-content h2,
+.inline-summary-content h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 8px 0 4px 0;
+}
+
+.inline-summary-content h1:first-child,
+.inline-summary-content h2:first-child,
+.inline-summary-content h3:first-child {
+  margin-top: 0;
+}
+
+/* マーカー・ハイライトを無効化 */
+.inline-summary-content mark,
+.inline-summary-content .highlight,
+.inline-summary-content .keyword-highlight {
+  background: none !important;
+  color: inherit !important;
+}
+
+.inline-summary-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.inline-summary-content th,
+.inline-summary-content td {
+  padding: 4px 6px;
+  border: 1px solid var(--separator-color);
+  text-align: left;
+}
+
+.inline-summary-content th {
+  background: var(--surface-alt);
+  font-weight: 600;
+}
+
+.inline-summary-content ul,
+.inline-summary-content ol {
+  margin: 4px 0;
+  padding-left: 18px;
+}
+
+.inline-summary-content li {
+  margin: 2px 0;
+}
+
+.inline-summary-content p {
+  margin: 4px 0;
 }
 
 /* デッキオプション */
@@ -10546,40 +10602,120 @@ body.is-practice .tab-content {
   color: var(--system-yellow);
 }
 
+/* カードメニューボタン（⋮） */
+.card-more-menu-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--tertiary-label);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-more-menu-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.card-more-menu-btn:active {
+  background: var(--surface-alt);
+}
+
+/* カードアクションシート */
+.card-action-sheet-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 8px;
+}
+
+.card-action-sheet {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.card-action-sheet-item {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: none;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--system-blue);
+  border-top: 1px solid var(--separator-color);
+}
+
+.card-action-sheet-item:first-child {
+  border-top: none;
+}
+
+.card-action-sheet-item:active {
+  background: var(--surface-alt);
+}
+
+.card-action-sheet-item.delete {
+  color: var(--destructive-red);
+}
+
+.card-action-sheet-item.cancel {
+  font-weight: 600;
+  margin-top: 8px;
+  border-radius: 12px;
+  border-top: none;
+}
+
 .card-search-action-btn {
-  padding: 6px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
-  font-size: 12px;
-  font-weight: 500;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  font-size: 0;
   cursor: pointer;
   background: var(--surface);
-  color: var(--secondary-label);
   transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card-search-action-btn.again {
   border-color: var(--system-orange);
-  color: var(--system-orange);
 }
 
 .card-search-action-btn.again.active {
   background: var(--system-orange);
-  color: #fff;
+  border-color: var(--system-orange);
 }
 
 .card-search-action-btn.memorized {
   border-color: var(--system-green);
-  color: var(--system-green);
 }
 
 .card-search-action-btn.memorized.active {
   background: var(--system-green);
-  color: #fff;
+  border-color: var(--system-green);
 }
 
 .card-search-action-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
 
 /* ハイライト */

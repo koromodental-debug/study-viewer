@@ -5137,6 +5137,139 @@ body:not(.is-practice) #flashcard-content {
   color: #60A5FA;
 }
 
+/* 今日の10問セクション */
+.daily-ten-section {
+  margin: 0 16px 16px;
+}
+
+.daily-ten-card {
+  background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+  border-radius: 16px;
+  padding: 20px;
+  color: white;
+}
+
+.daily-ten-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.daily-ten-desc {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+
+.daily-ten-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.daily-ten-start-btn,
+.daily-ten-list-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.daily-ten-start-btn {
+  background: white;
+  color: #1D4ED8;
+}
+
+.daily-ten-start-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.daily-ten-start-btn:active {
+  transform: scale(0.98);
+}
+
+.daily-ten-list-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.daily-ten-list-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.daily-ten-list-btn:active {
+  transform: scale(0.98);
+}
+
+/* デッキジャンプボタン */
+.goto-deck-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fill-tertiary);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+.goto-deck-btn svg {
+  width: 14px;
+  height: 14px;
+  color: var(--secondary-label);
+}
+
+.goto-deck-btn:hover {
+  background: var(--fill-secondary);
+}
+
+.goto-deck-btn:active {
+  transform: scale(0.95);
+}
+
+/* 演習モードのデッキピルボタン */
+.flashcard-deck-pill-wrap {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.flashcard-deck-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(59, 130, 246, 0.12);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3B82F6;
+}
+
+.flashcard-deck-pill svg {
+  width: 14px;
+  height: 14px;
+  color: #3B82F6;
+}
+
+.flashcard-deck-pill:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.flashcard-deck-pill:active {
+  transform: scale(0.97);
+  background: rgba(59, 130, 246, 0.25);
+}
+
 /* ダークモード */
 @media (prefers-color-scheme: dark) {
   .review-card-again {
@@ -5994,6 +6127,17 @@ body:not(.is-practice) #flashcard-content {
 
 .deck-topic:active {
   background: #e8e8e8;
+}
+
+/* 今日の10問からのジャンプ時のハイライト */
+.deck-topic.highlighted {
+  background: rgba(59, 130, 246, 0.15);
+  animation: deck-highlight-pulse 0.6s ease-in-out 2;
+}
+
+@keyframes deck-highlight-pulse {
+  0%, 100% { background: rgba(59, 130, 246, 0.15); }
+  50% { background: rgba(59, 130, 246, 0.3); }
 }
 
 .deck-topic.last-selected {

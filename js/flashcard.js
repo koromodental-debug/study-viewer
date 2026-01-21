@@ -76,7 +76,9 @@ const FlashcardModule = (function() {
     // カード一覧のスクロール位置（topicId -> scrollTop）
     deckCardListScrollPos: {},
     // デッキ一覧のスクロール位置
-    deckListScrollPos: 0
+    deckListScrollPos: 0,
+    // ハイライトするトピックID（今日の10問からのジャンプ用）
+    highlightTopicId: null
   };
 
   // DOM要素
@@ -939,6 +941,18 @@ const FlashcardModule = (function() {
     const favoritesCount = getValidFavoritesCount();
 
     return `
+      <!-- 今日の10問 -->
+      <div class="daily-ten-section">
+        <div class="daily-ten-card" id="daily-ten-card">
+          <div class="daily-ten-title">今日の10問</div>
+          <div class="daily-ten-desc">全デッキからランダムに出題</div>
+          <div class="daily-ten-actions">
+            <button class="daily-ten-start-btn" id="daily-ten-start">演習を始める</button>
+            <button class="daily-ten-list-btn" id="daily-ten-list">一覧を見る</button>
+          </div>
+        </div>
+      </div>
+
       <!-- 学習の記録 -->
       <div class="review-center">
         <h2 class="review-center-title">
@@ -1240,8 +1254,10 @@ const FlashcardModule = (function() {
       </button>
     ` : '';
 
+    const isHighlighted = state.highlightTopicId === topic.id;
+
     return `
-      <div class="deck-topic" data-topic-id="${topic.id}">
+      <div class="deck-topic${isHighlighted ? ' highlighted' : ''}" data-topic-id="${topic.id}">
         <span class="deck-topic-name">${displayTitle}</span>
         <div class="deck-topic-right">
           ${statsHtml}
@@ -1465,6 +1481,18 @@ const FlashcardModule = (function() {
     const favoriteBtn = document.getElementById('start-favorite-deck');
     if (favoriteBtn) {
       favoriteBtn.addEventListener('click', () => renderFavoriteDeckCardList());
+    }
+
+    // 「今日の10問」演習開始ボタン
+    const dailyTenStartBtn = document.getElementById('daily-ten-start');
+    if (dailyTenStartBtn) {
+      dailyTenStartBtn.addEventListener('click', () => startDailyTenDeck());
+    }
+
+    // 「今日の10問」一覧ボタン
+    const dailyTenListBtn = document.getElementById('daily-ten-list');
+    if (dailyTenListBtn) {
+      dailyTenListBtn.addEventListener('click', () => renderDailyTenCardList());
     }
 
     // 「？」説明ボタン
@@ -1775,6 +1803,361 @@ const FlashcardModule = (function() {
     } else {
       renderCard();
     }
+  }
+
+  // === 今日の10問 ===
+
+  // 日付ベースのランダムシード生成
+  function getDailyRandomSeed() {
+    const today = new Date().toDateString();
+    let hash = 0;
+    for (let i = 0; i < today.length; i++) {
+      hash = ((hash << 5) - hash) + today.charCodeAt(i);
+      hash = hash & hash;
+    }
+    return hash;
+  }
+
+  // シード付き乱数生成
+  function seededRandom(seed) {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+  }
+
+  // 今日の10問のカード参照を収集
+  function collectDailyTenCardRefs() {
+    const seed = getDailyRandomSeed();
+    const allCardRefs = [];
+
+    // 学習済みカードを収集
+    for (const [key, value] of Object.entries(state.progress)) {
+      const parts = key.split(':');
+      if (parts.length >= 2) {
+        const topicId = parts[0];
+        const cardIndex = parseInt(parts[1]);
+        if (!isNaN(cardIndex)) {
+          allCardRefs.push({ topicId, cardIndex, key });
+        }
+      }
+    }
+
+    // シード付きシャッフル（Fisher-Yates with seeded random）
+    let currentSeed = seed;
+    for (let i = allCardRefs.length - 1; i > 0; i--) {
+      currentSeed = (currentSeed * 9301 + 49297) % 233280;
+      const j = Math.floor((currentSeed / 233280) * (i + 1));
+      [allCardRefs[i], allCardRefs[j]] = [allCardRefs[j], allCardRefs[i]];
+    }
+
+    // 最初の10問を返す
+    return allCardRefs.slice(0, 10);
+  }
+
+  // 今日の10問のカード一覧表示
+  async function renderDailyTenCardList() {
+    console.log('[renderDailyTenCardList] 開始');
+    const cardRefs = collectDailyTenCardRefs();
+
+    if (cardRefs.length === 0) {
+      return;
+    }
+
+    const filteredCards = await fetchCardsFromRefs(cardRefs);
+    if (filteredCards.length === 0) {
+      return;
+    }
+
+    const title = '今日の10問';
+
+    // ヘッダー
+    const headerHtml = `
+      <div class="deck-card-list-header">
+        <button class="deck-card-list-back" id="deck-card-list-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="deck-card-list-title">
+          <span class="deck-card-list-topic">${title}</span>
+          <span class="deck-card-list-count">${filteredCards.length}枚</span>
+        </div>
+        <div class="deck-card-list-actions">
+          <button class="deck-card-list-start" id="deck-card-list-start">演習</button>
+        </div>
+      </div>
+    `;
+
+    // カード一覧
+    const cardsHtml = filteredCards.map((card, idx) => {
+      const key = card.progressKey;
+      const cardProgress = state.progress[key];
+      const cardStatus = cardProgress ? cardProgress.status : 'new';
+      const isFavorite = FavoritesManager.isFavoriteByParams('qa', card.topicId, card.originalIndex);
+
+      return `
+        <div class="card-search-item" data-key="${escapeHtml(key)}" data-card-index="${idx}">
+          <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
+            <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
+          </div>
+          <div class="card-search-footer">
+            <div class="card-search-meta">
+              ${card.topicTitle || ''}
+              <button class="goto-deck-btn" data-topic-id="${escapeHtml(card.topicId)}" title="デッキを見る">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="card-search-actions">
+              <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(key)}" data-topic-id="${escapeHtml(card.topicId)}" data-original-index="${card.originalIndex}" data-question="${escapeHtml(card.question)}" data-answer="${escapeHtml(card.answer)}" data-section="${card.section ? escapeHtml(card.section) : ''}" title="お気に入り">
+                <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </button>
+              <button class="card-search-action-btn again ${cardStatus === 'again' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="again">もう一度</button>
+              <button class="card-search-action-btn memorized ${cardStatus === 'memorized' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="memorized">覚えた</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = `
+      <div class="deck-card-list-view" data-status="daily_ten">
+        ${headerHtml}
+        <div class="deck-card-list-content">
+          ${cardsHtml}
+        </div>
+      </div>
+    `;
+
+    // タブバーを非表示
+    const tabbar = document.querySelector('.floating-tabbar');
+    if (tabbar) tabbar.classList.add('hidden');
+
+    // イベントバインド
+    bindDailyTenCardListEvents(filteredCards);
+  }
+
+  // 今日の10問一覧のイベントバインド
+  function bindDailyTenCardListEvents(filteredCards) {
+    // 戻るボタン
+    const backBtn = document.getElementById('deck-card-list-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        const tabbar = document.querySelector('.floating-tabbar');
+        if (tabbar) tabbar.classList.remove('hidden');
+        renderDeckList();
+        window.scrollTo(0, 0);
+        container.scrollTop = 0;
+      });
+    }
+
+    // スワイプで戻る
+    const listView = container.querySelector('.deck-card-list-view');
+    if (listView) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let isSwiping = false;
+
+      container.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        if (touch.clientX <= 40) {
+          touchStartX = touch.clientX;
+          touchStartY = touch.clientY;
+          isSwiping = true;
+        }
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        if (!isSwiping) return;
+        isSwiping = false;
+        const touch = e.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = Math.abs(touch.clientY - touchStartY);
+        if (deltaX > 80 && deltaY < 100) {
+          const tabbar = document.querySelector('.floating-tabbar');
+          if (tabbar) tabbar.classList.remove('hidden');
+          renderDeckList();
+          window.scrollTo(0, 0);
+          container.scrollTop = 0;
+        }
+      }, { passive: true });
+    }
+
+    // 演習開始ボタン
+    const startBtn = document.getElementById('deck-card-list-start');
+    if (startBtn) {
+      startBtn.addEventListener('click', () => {
+        startDailyTenDeck();
+      });
+    }
+
+    // デッキジャンプボタン
+    const gotoDeckBtns = container.querySelectorAll('.goto-deck-btn');
+    gotoDeckBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+
+        // トピックを検索して科目を取得
+        let topic = DATA.find(d => d.id === topicId);
+        if (!topic) {
+          topic = DATA.find(d => d.id.includes(topicId) || d.id.endsWith('_' + topicId.toLowerCase()));
+        }
+        if (!topic) {
+          topic = DATA.find(d => d.title === topicId || topicId.includes(d.title));
+        }
+
+        if (topic) {
+          // ハイライト対象を設定
+          state.highlightTopicId = topic.id;
+          // 科目を展開
+          if (topic.subject) {
+            state.expandedSubjects.add(topic.subject);
+            localStorage.setItem('flashcard-expanded-subjects', JSON.stringify([...state.expandedSubjects]));
+          }
+        }
+
+        // タブバーを表示
+        const tabbar = document.querySelector('.floating-tabbar');
+        if (tabbar) tabbar.classList.remove('hidden');
+
+        // デッキ一覧に戻る
+        renderDeckList();
+
+        // 少し待ってからスクロールしてハイライトをクリア
+        setTimeout(() => {
+          const highlightedTopic = container.querySelector('.deck-topic.highlighted');
+          if (highlightedTopic) {
+            highlightedTopic.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          // 3秒後にハイライトを消す
+          setTimeout(() => {
+            state.highlightTopicId = null;
+            if (highlightedTopic) {
+              highlightedTopic.classList.remove('highlighted');
+            }
+          }, 3000);
+        }, 100);
+      });
+    });
+
+    // カードクリックで展開
+    const cardItems = container.querySelectorAll('.card-search-item');
+    cardItems.forEach((item, idx) => {
+      const card = filteredCards[idx];
+      if (!card) return;
+
+      item.addEventListener('click', (e) => {
+        if (e.target.closest('.card-search-action-btn') || e.target.closest('.card-search-favorite-btn') || e.target.closest('.goto-deck-btn')) {
+          return;
+        }
+
+        const isExpanded = item.classList.contains('expanded');
+        cardItems.forEach(other => {
+          if (other !== item && other.classList.contains('expanded')) {
+            other.classList.remove('expanded');
+            const answerEl = other.querySelector('.card-search-answer');
+            if (answerEl) answerEl.remove();
+          }
+        });
+
+        if (!isExpanded) {
+          item.classList.add('expanded');
+          const cardEl = item.querySelector('.card-search-card');
+          if (cardEl) {
+            const answerHtml = `<div class="card-search-answer">A: ${escapeHtml(card.answer)}</div>`;
+            cardEl.insertAdjacentHTML('beforeend', answerHtml);
+          }
+        } else {
+          item.classList.remove('expanded');
+          const answerEl = item.querySelector('.card-search-answer');
+          if (answerEl) answerEl.remove();
+        }
+      });
+    });
+
+    // お気に入りボタン
+    const favBtns = container.querySelectorAll('.card-search-favorite-btn');
+    favBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+        const originalIndex = parseInt(btn.dataset.originalIndex);
+        const question = btn.dataset.question;
+        const answer = btn.dataset.answer;
+        const section = btn.dataset.section;
+
+        const content = { question, answer, section };
+        const isFav = FavoritesManager.toggle('qa', topicId, originalIndex, content);
+        btn.classList.toggle('active', isFav);
+        const svg = btn.querySelector('svg');
+        if (svg) svg.setAttribute('fill', isFav ? 'currentColor' : 'none');
+      });
+    });
+
+    // ステータスボタン
+    const actionBtns = container.querySelectorAll('.card-search-action-btn');
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+        const action = btn.dataset.action;
+
+        if (!state.progress[key]) {
+          state.progress[key] = {};
+        }
+        state.progress[key].status = action;
+        state.progress[key].lastReviewed = Date.now();
+        saveProgress();
+
+        const item = btn.closest('.card-search-item');
+        const againBtn = item.querySelector('.card-search-action-btn.again');
+        const memorizedBtn = item.querySelector('.card-search-action-btn.memorized');
+        againBtn.classList.toggle('active', action === 'again');
+        memorizedBtn.classList.toggle('active', action === 'memorized');
+      });
+    });
+  }
+
+  // 今日の10問の演習開始
+  async function startDailyTenDeck() {
+    console.log('[startDailyTenDeck] 開始');
+    const cardRefs = collectDailyTenCardRefs();
+
+    if (cardRefs.length === 0) {
+      return;
+    }
+
+    const filteredCards = await fetchCardsFromRefs(cardRefs);
+    if (filteredCards.length === 0) {
+      return;
+    }
+
+    // 今日の10問デッキとして開始
+    state.currentTopicId = '__daily_ten';
+    state.currentTopic = { title: '今日の10問' };
+    state.cards = filteredCards;
+    state.filteredCards = [...filteredCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+    state.answeredInSession = 0;
+    state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
+
+    // シャッフル
+    for (let i = state.filteredCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+    }
+
+    renderCard();
   }
 
   // === ステータスデッキ（要復習/定着中/習得済） ===
@@ -3048,7 +3431,14 @@ const FlashcardModule = (function() {
       topic = { id: 'kokoshika_hisshu', title: '必修ココシカ', subject: '必修' };
       qaPath = 'deck/必修ココシカ.txt';
     } else {
+      // 複数の方法でトピックを検索
       topic = DATA.find(d => d.id === topicId);
+      if (!topic) {
+        topic = DATA.find(d => d.id.includes(topicId) || d.id.endsWith('_' + topicId.toLowerCase()));
+      }
+      if (!topic) {
+        topic = DATA.find(d => d.title === topicId || topicId.includes(d.title));
+      }
       if (!topic || (!topic.qaPath && !topic.localJsonData)) {
         container.innerHTML = `<div class="flashcard-error">トピックが見つかりません</div>`;
         return;
@@ -3231,13 +3621,13 @@ const FlashcardModule = (function() {
     }
 
     // スワイプで戻るジェスチャー
-    const container = document.getElementById('deck-card-list-container');
-    if (container) {
+    const swipeContainer = document.querySelector('.deck-card-list-view');
+    if (swipeContainer) {
       let touchStartX = 0;
       let touchStartY = 0;
       let isSwiping = false;
 
-      container.addEventListener('touchstart', (e) => {
+      swipeContainer.addEventListener('touchstart', (e) => {
         const touch = e.touches[0];
         // 画面左端40px以内からのタッチのみ対象
         if (touch.clientX <= 40) {
@@ -3247,12 +3637,12 @@ const FlashcardModule = (function() {
         }
       }, { passive: true });
 
-      container.addEventListener('touchmove', (e) => {
+      swipeContainer.addEventListener('touchmove', (e) => {
         if (!isSwiping) return;
         // スワイプ中の処理（必要に応じてビジュアルフィードバック追加可能）
       }, { passive: true });
 
-      container.addEventListener('touchend', (e) => {
+      swipeContainer.addEventListener('touchend', (e) => {
         if (!isSwiping) return;
         isSwiping = false;
 
@@ -3291,7 +3681,7 @@ const FlashcardModule = (function() {
     }
 
     // カードクリックで展開/折りたたみ
-    const cardEls = container.querySelectorAll('.deck-card-list-card');
+    const cardEls = document.querySelectorAll('.deck-card-list-view .deck-card-list-card');
     cardEls.forEach(cardEl => {
       cardEl.addEventListener('click', () => {
         const key = cardEl.dataset.key;
@@ -3306,7 +3696,7 @@ const FlashcardModule = (function() {
     });
 
     // 覚えた/もう一度ボタン
-    const actionBtns = container.querySelectorAll('.deck-card-list-view .card-search-action-btn');
+    const actionBtns = document.querySelectorAll('.deck-card-list-view .card-search-action-btn');
     actionBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -3331,7 +3721,7 @@ const FlashcardModule = (function() {
     });
 
     // お気に入りボタン（FavoritesManagerを使用）
-    const favBtns = container.querySelectorAll('.deck-card-list-view .card-search-favorite-btn');
+    const favBtns = document.querySelectorAll('.deck-card-list-view .card-search-favorite-btn');
     favBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -3357,7 +3747,7 @@ const FlashcardModule = (function() {
     });
 
     // インラインまとめトグル（「>」クリック）
-    const inlineSummaryToggles = container.querySelectorAll('.inline-summary-toggle');
+    const inlineSummaryToggles = document.querySelectorAll('.deck-card-list-view .inline-summary-toggle');
     inlineSummaryToggles.forEach(toggle => {
       toggle.addEventListener('click', async (e) => {
         e.stopPropagation();
@@ -3413,7 +3803,7 @@ const FlashcardModule = (function() {
     }
 
     // カードメニューボタン（⋮）→ アクションシート表示
-    const moreMenuBtns = container.querySelectorAll('.card-more-menu-btn');
+    const moreMenuBtns = document.querySelectorAll('.deck-card-list-view .card-more-menu-btn');
     moreMenuBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -4163,6 +4553,8 @@ const FlashcardModule = (function() {
     if (!state.currentTopicId) return false;
     // 検索結果デッキは特殊デッキから除外（全問出題）
     if (state.currentTopicId.startsWith('__search_')) return false;
+    // 今日の10問は問数固定なので除外
+    if (state.currentTopicId === '__daily_ten') return false;
     // それ以外の__で始まるデッキは特殊デッキ
     return state.currentTopicId.startsWith('__');
   }
@@ -4358,6 +4750,18 @@ const FlashcardModule = (function() {
                 <div class="flashcard-answer">
                   ${card.answer}
                 </div>
+                ${card.topicTitle ? `
+                <div class="flashcard-deck-pill-wrap">
+                  <button class="flashcard-deck-pill" data-topic-id="${card.topicId}">
+                    ${card.topicTitle}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </button>
+                </div>
+                ` : ''}
               </div>
               <div class="swipe-overlay swipe-left" id="swipe-overlay-left">
                 <span>もう一度</span>
@@ -4477,6 +4881,50 @@ const FlashcardModule = (function() {
 
     // お気に入りボタン
     document.getElementById('flashcard-favorite-btn').addEventListener('click', toggleFavoriteCurrentCard);
+
+    // デッキジャンプボタン（特殊デッキ用）
+    const gotoDeckBtn = document.querySelector('.flashcard-deck-pill');
+    if (gotoDeckBtn) {
+      gotoDeckBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const topicId = gotoDeckBtn.dataset.topicId;
+
+        // トピックを検索
+        let topic = DATA.find(d => d.id === topicId);
+        if (!topic) {
+          topic = DATA.find(d => d.id.includes(topicId) || d.id.endsWith('_' + topicId.toLowerCase()));
+        }
+        if (!topic) {
+          topic = DATA.find(d => d.title === topicId || topicId.includes(d.title));
+        }
+
+        if (topic) {
+          state.highlightTopicId = topic.id;
+          if (topic.subject) {
+            state.expandedSubjects.add(topic.subject);
+            localStorage.setItem('flashcard-expanded-subjects', JSON.stringify([...state.expandedSubjects]));
+          }
+        }
+
+        // 演習を終了してデッキ一覧に戻る
+        state.isActive = false;
+        exitPracticeMode();
+        renderDeckList();
+
+        setTimeout(() => {
+          const highlightedTopic = container.querySelector('.deck-topic.highlighted');
+          if (highlightedTopic) {
+            highlightedTopic.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          setTimeout(() => {
+            state.highlightTopicId = null;
+            if (highlightedTopic) {
+              highlightedTopic.classList.remove('highlighted');
+            }
+          }, 3000);
+        }, 100);
+      });
+    }
 
     // 現在のカードを取得
     const currentCard = state.filteredCards[state.currentIndex];

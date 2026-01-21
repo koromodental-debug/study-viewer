@@ -2561,13 +2561,17 @@ const FlashcardModule = (function() {
         </button>
       ` : '';
 
+      // インラインまとめの展開状態を確認
+      const isSummaryExpanded = state.deckCardListSummaryKeys && state.deckCardListSummaryKeys.has(key);
+      const summaryContent = state.deckCardListSummaryContent && state.deckCardListSummaryContent[key] || '';
+
       return `
         <div class="card-search-item ${isExpanded ? 'expanded' : ''}" data-key="${escapeHtml(key)}" data-card-index="${idx}">
           <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
             <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
             ${isExpanded ? `
-              <div class="card-search-answer">A: ${escapeHtml(card.answer)}${cardHtmlPath ? `<span class="inline-summary-toggle" data-html-path="${escapeHtml(cardHtmlPath)}" data-section="${card.section ? escapeHtml(card.section) : ''}"> ></span>` : ''}</div>
-              ${cardHtmlPath ? `<div class="inline-summary-content collapsed"></div>` : ''}
+              <div class="card-search-answer">A: ${escapeHtml(card.answer)}${cardHtmlPath ? `<span class="inline-summary-toggle" data-html-path="${escapeHtml(cardHtmlPath)}" data-section="${card.section ? escapeHtml(card.section) : ''}"> ${isSummaryExpanded ? '∨' : '>'}</span>` : ''}</div>
+              ${cardHtmlPath ? `<div class="inline-summary-content ${isSummaryExpanded ? '' : 'collapsed'}">${summaryContent}</div>` : ''}
             ` : ''}
           </div>
           <div class="card-search-footer">
@@ -2604,6 +2608,13 @@ const FlashcardModule = (function() {
     if (!state.deckCardListExpandedKeys) {
       state.deckCardListExpandedKeys = new Set();
     }
+    // インラインまとめの展開状態とコンテンツを初期化
+    if (!state.deckCardListSummaryKeys) {
+      state.deckCardListSummaryKeys = new Set();
+    }
+    if (!state.deckCardListSummaryContent) {
+      state.deckCardListSummaryContent = {};
+    }
 
     // イベントバインド
     bindDeckCardListEvents(topicId);
@@ -2630,6 +2641,8 @@ const FlashcardModule = (function() {
         // スクロール位置を保存してから戻る
         saveDeckCardListScrollPos(topicId);
         state.deckCardListExpandedKeys = new Set();
+        state.deckCardListSummaryKeys = new Set();
+        state.deckCardListSummaryContent = {};
         // タブバーを再表示
         const tabbar = document.querySelector('.floating-tabbar');
         if (tabbar) tabbar.classList.remove('hidden');
@@ -2644,6 +2657,8 @@ const FlashcardModule = (function() {
         // スクロール位置を保存してから演習開始
         saveDeckCardListScrollPos(topicId);
         state.deckCardListExpandedKeys = new Set();
+        state.deckCardListSummaryKeys = new Set();
+        state.deckCardListSummaryContent = {};
         state.lastSelectedTopicId = topicId;
         localStorage.setItem('flashcard-last-topic', topicId);
         state.isReviewMode = false;
@@ -2719,10 +2734,12 @@ const FlashcardModule = (function() {
     inlineSummaryToggles.forEach(toggle => {
       toggle.addEventListener('click', async (e) => {
         e.stopPropagation();
+        const cardItem = toggle.closest('.card-search-item');
         const card = toggle.closest('.card-search-card');
         const content = card.querySelector('.inline-summary-content');
         if (!content) return;
 
+        const key = cardItem?.dataset.key;
         const isCollapsed = content.classList.contains('collapsed');
 
         if (isCollapsed) {
@@ -2733,8 +2750,17 @@ const FlashcardModule = (function() {
             await loadDeckCardSummary(content, htmlPath, sectionName);
           }
           toggle.textContent = ' ∨';
+          // 状態を保存
+          if (key) {
+            state.deckCardListSummaryKeys.add(key);
+            state.deckCardListSummaryContent[key] = content.innerHTML;
+          }
         } else {
           toggle.textContent = ' >';
+          // 状態を削除
+          if (key) {
+            state.deckCardListSummaryKeys.delete(key);
+          }
         }
 
         content.classList.toggle('collapsed');

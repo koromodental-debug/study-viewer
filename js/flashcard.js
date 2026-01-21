@@ -4997,7 +4997,6 @@ const FlashcardModule = (function() {
   function extractSection(doc, sectionName) {
     if (!sectionName) return null;
 
-    const h3Elements = doc.querySelectorAll('h3');
     const normalizedSection = normalizeForMatch(sectionName);
 
     // キーワードを抽出（2文字以上の単語）
@@ -5005,50 +5004,68 @@ const FlashcardModule = (function() {
       .split(/[\s　・、。（）()「」『』【】\-_]+/)
       .filter(k => k.length >= 2);
 
-    let bestMatch = null;
-    let bestScore = 0;
-
-    for (const h3 of h3Elements) {
-      // h3のテキスト部分のみ取得（spanタグ等を除外）
-      const h3Text = h3.childNodes[0]?.textContent?.trim() || h3.textContent.trim();
-      const normalizedH3 = normalizeForMatch(h3Text);
-
-      // スコア計算
-      let score = 0;
+    // 見出し要素のスコアを計算する関数
+    function calcScore(headingText) {
+      const normalizedHeading = normalizeForMatch(headingText);
 
       // 完全一致（正規化後）
-      if (normalizedH3 === normalizedSection) {
-        score = 100;
+      if (normalizedHeading === normalizedSection) {
+        return 100;
       }
       // 部分一致
-      else if (normalizedH3.includes(normalizedSection) || normalizedSection.includes(normalizedH3)) {
-        score = 80;
+      if (normalizedHeading.includes(normalizedSection) || normalizedSection.includes(normalizedHeading)) {
+        return 80;
       }
       // キーワードマッチ
-      else {
-        const matchedKeywords = keywords.filter(k =>
-          normalizedH3.includes(normalizeForMatch(k))
-        );
-        if (matchedKeywords.length > 0) {
-          score = (matchedKeywords.length / keywords.length) * 60;
-        }
+      const matchedKeywords = keywords.filter(k =>
+        normalizedHeading.includes(normalizeForMatch(k))
+      );
+      if (matchedKeywords.length > 0) {
+        return (matchedKeywords.length / keywords.length) * 60;
       }
+      return 0;
+    }
+
+    // まずh3で検索
+    const h3Elements = doc.querySelectorAll('h3');
+    let bestMatch = null;
+    let bestScore = 0;
+    let matchLevel = 'h3';
+
+    for (const h3 of h3Elements) {
+      const h3Text = h3.childNodes[0]?.textContent?.trim() || h3.textContent.trim();
+      const score = calcScore(h3Text);
 
       if (score > bestScore) {
         bestScore = score;
         bestMatch = h3;
       }
-
-      // 完全一致なら即座に採用
       if (score === 100) break;
+    }
+
+    // h3でマッチしない場合、h2でも検索
+    if (bestScore < 30) {
+      const h2Elements = doc.querySelectorAll('h2');
+      for (const h2 of h2Elements) {
+        const h2Text = h2.childNodes[0]?.textContent?.trim() || h2.textContent.trim();
+        const score = calcScore(h2Text);
+
+        if (score > bestScore) {
+          bestScore = score;
+          bestMatch = h2;
+          matchLevel = 'h2';
+        }
+        if (score === 100) break;
+      }
     }
 
     // スコアが30以上ならマッチとみなす
     if (bestMatch && bestScore >= 30) {
       const content = [bestMatch.outerHTML];
       let sibling = bestMatch.nextElementSibling;
+      const stopTags = matchLevel === 'h2' ? ['H2'] : ['H3', 'H2'];
 
-      while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+      while (sibling && !stopTags.includes(sibling.tagName)) {
         // 過去問セクション・question-boxは除外
         if (sibling.classList?.contains('question-box')) {
           sibling = sibling.nextElementSibling;

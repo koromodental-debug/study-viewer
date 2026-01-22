@@ -598,15 +598,15 @@ body {
   text-align: center;
 }
 
-/* ===== ウェルカム画面（ピンタレスト風トピック一覧） ===== */
+/* ===== ウェルカム画面（全画面グラフ） ===== */
 .welcome-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px 0 0;
+  padding: 0;
   min-height: 100%;
   background: var(--bg-color);
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 /* 検索エリア（スティッキーで上部固定） */
@@ -831,7 +831,7 @@ body {
 .welcome-topics {
   width: 100%;
   max-width: 100%;
-  display: grid !important;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   padding: 0 16px 120px;
@@ -13064,35 +13064,73 @@ body.is-practice .tab-content {
   max-width: calc(100% - 32px);
 }
 
-/* グラフツールバー */
-.graph-toolbar {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 12px 16px;
-  background: var(--card-bg);
-  border-bottom: 1px solid var(--border-subtle);
+/* 全画面グラフ */
+.graph-container.graph-fullscreen {
+  position: fixed;
+  top: 56px; /* ヘッダーの下 */
+  left: 0;
+  right: 0;
+  bottom: 70px; /* タブバーの上 */
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+  z-index: 5;
 }
 
-.graph-search {
-  width: 100%;
-  padding: 10px 14px;
-  background: var(--surface-alt);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  font-size: 15px;
+/* ピル型検索バー */
+.graph-search-pill {
+  position: absolute;
+  bottom: 100px; /* 詳細パネルの上 */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--card-bg);
+  border: none !important;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  min-width: 280px;
+  max-width: calc(100% - 40px);
+  z-index: 15;
+}
+
+.graph-search-pill * {
+  border: none !important;
+}
+
+.graph-search-pill-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--secondary-label);
+  flex-shrink: 0;
+}
+
+.graph-search-pill-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
   color: var(--text-color);
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.graph-search:focus {
-  border-color: var(--system-blue);
-  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.15);
-}
-
-.graph-search::placeholder {
+.graph-search-pill-input::placeholder {
   color: var(--secondary-label);
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .graph-search-pill {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .graph-search-pill {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
 }
 
 /* フィルタチップ */
@@ -13218,23 +13256,25 @@ body.is-practice .tab-content {
 /* 詳細パネル（ボトムシート風） */
 .graph-detail-panel {
   position: absolute;
-  bottom: 0;
+  bottom: 80px; /* タブバーの上に表示 */
   left: 0;
   right: 0;
   background: var(--card-bg);
-  border-top: 1px solid var(--border-subtle);
+  border: none;
   border-radius: 16px 16px 0 0;
   padding: 0;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
   z-index: 10;
 }
 
 .graph-detail-panel.visible {
   max-height: 280px;
   padding: 16px;
+  border-top: 1px solid var(--border-subtle);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .graph-detail-handle {

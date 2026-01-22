@@ -267,12 +267,18 @@ const KakomonModule = (function() {
         </div>
 
         <div class="kakomon-choices">
-          ${validChoices.map(([key, value]) => `
+          ${validChoices.map(([key, value]) => {
+            // 選択肢テキストから正解マーク（○、：○など）を除去して表示
+            const cleanText = value
+              .replace(/[：:]\s*○/g, '')
+              .replace(/○/g, '')
+              .trim();
+            return `
             <button class="kakomon-choice" data-choice="${key}">
               <span class="choice-label">${key}</span>
-              <span class="choice-text">${escapeHtml(value)}</span>
+              <span class="choice-text">${escapeHtml(cleanText)}</span>
             </button>
-          `).join('')}
+          `}).join('')}
         </div>
 
         <button class="kakomon-submit" disabled>解答</button>

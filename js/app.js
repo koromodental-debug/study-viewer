@@ -42,7 +42,8 @@
     floatingSearchSections: [],             // セクション単位の結果
     floatingSearchCurrentSectionIdx: 0,     // 現在のグローバルセクションインデックス
     floatingSearchTotalSections: 0,         // 総セクション数
-    pendingFloatingSearch: null             // トピック切り替え後に継続する検索 {query, matchIndex}
+    pendingFloatingSearch: null,            // トピック切り替え後に継続する検索 {query, matchIndex}
+    isSearchScrolling: false                // 検索結果へのスクロール中フラグ（無限スクロールを一時停止）
   };
 
   // DOM要素
@@ -214,12 +215,6 @@
 
     // スクロール履歴管理の初期化
     initScrollHistory();
-
-    // ウェルカム画面のトピック検索を初期化
-    initWelcomeSearch();
-
-    // グラフビュー切り替えの初期化
-    initViewToggle();
   }
 
   /**
@@ -1893,8 +1888,13 @@
     // 最初のハイライトにスクロール
     const firstHighlight = container.querySelector('.search-highlight');
     if (firstHighlight) {
+      state.isSearchScrolling = true;
       setTimeout(() => {
         firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // スクロール完了後にフラグをリセット
+        setTimeout(() => {
+          state.isSearchScrolling = false;
+        }, 500);
       }, 50);
     }
   }
@@ -1914,7 +1914,8 @@
    * 無限スクロールのハンドラ
    */
   function handleInfiniteScroll() {
-    if (state.isLoadingMore) return;
+    // 追加読み込み中または検索スクロール中はスキップ
+    if (state.isLoadingMore || state.isSearchScrolling) return;
 
     const container = elements.htmlContent;
     const scrollTop = container.scrollTop;
@@ -3505,13 +3506,12 @@
 
     // 目次・読書モード機能の切り替え
     if (tab === 'html') {
-      // まとめタブに切り替えたら目次・読書モード・過去問カード・画像遅延読み込みを初期化
-      setTimeout(() => {
-        initTOC();
-        initReadingMode();
-        initQuestionCards();
-        initLazyImages();
-      }, 100);
+      // まとめタブに切り替えたら常にグラフ（ウェルカム画面）を表示
+      showWelcomeScreen();
+      // グラフを初期化
+      if (typeof GraphModule !== 'undefined') {
+        GraphModule.initGraph();
+      }
     } else if (prevTab === 'html') {
       // まとめタブから離れたらクリーンアップ
       cleanupTOC();
@@ -3519,30 +3519,20 @@
       cleanupLazyImages();
     }
 
-    // 新しいタブにスクロール（トピックID優先、セクション名、最後にトップ）
-    // skipScroll=true の場合はスキップ（検索からのジャンプ時など）
-    if (!skipScroll) {
+    // htmlタブ以外の場合のみスクロール処理（htmlタブは常にウェルカム画面を表示）
+    if (!skipScroll && tab !== 'html') {
       // 非同期処理のためsetTimeoutではなくasync即時関数
       (async () => {
         let scrolled = false;
 
         // まずトピックIDでスクロールを試みる（存在しなければ読み込む）
-        if (tab === 'html' && currentTopicId) {
+        if (currentTopicId) {
           scrolled = await scrollToHTMLTopic(currentTopicId);
         }
 
         // トピックが見つからなければセクション名で試みる
         if (!scrolled && currentSection) {
-          if (tab === 'html') {
-            scrolled = scrollToHTMLSection(currentSection);
-          }
-        }
-
-        // それでも見つからなければトップにスクロール
-        if (!scrolled) {
-          if (tab === 'html') {
-            elements.htmlContent.scrollTop = 0;
-          }
+          scrolled = scrollToHTMLSection(currentSection);
         }
       })();
     }
@@ -5695,6 +5685,8 @@
         // 見出しまたは最初のマッチにスクロール
         const scrollTarget = currentSection.heading || currentSection.spans[0];
         if (scrollTarget) {
+          // 検索スクロール中フラグを設定（無限スクロールを一時停止）
+          state.isSearchScrolling = true;
           setTimeout(() => {
             // フローティング検索バーとヘッダーを考慮して画面中央に表示
             const headerHeight = 56 + 16;
@@ -5709,6 +5701,10 @@
               top: Math.max(0, targetY),
               behavior: 'smooth'
             });
+            // スクロール完了後にフラグをリセット
+            setTimeout(() => {
+              state.isSearchScrolling = false;
+            }, 500);
           }, 150);
         }
       }

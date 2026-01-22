@@ -38,7 +38,7 @@ const FlashcardModule = (function() {
     againMode: localStorage.getItem('flashcard-again-mode') || 'reinsert', // 'reinsert'(すぐ再挿入) or 'afterRound'(一周後)
     againCards: [], // 一周後モード用: 「もう一度」カードを貯める
     currentRound: 1, // 現在の周回数
-    sessionSize: parseInt(localStorage.getItem('flashcard-session-size')) || 5, // 5, 10, 20
+    sessionSize: parseInt(localStorage.getItem('flashcard-session-size')) || 10, // 10, 20, 全問
     isActive: false,     // 演習中かどうか
     completed: false,    // デッキ完了フラグ（完了後のセッション保存防止用）
     answeredInSession: 0, // セッション中の回答数（5問ごとのマイルストーン用）
@@ -543,10 +543,17 @@ const FlashcardModule = (function() {
     return state.sessionSize;
   }
 
+  // セッションサイズのラベルを取得（9999以上は「全問」）
+  function getSessionSizeLabel(size = state.sessionSize) {
+    return size >= 9999 ? '全問' : `${size}問`;
+  }
+
   // 開始ボタンのサブテキストを生成（1行目：問数と時間）
   function buildStartSub(overall, mode) {
-    const timeEstimate = Math.ceil(state.sessionSize * 0.5);
-    return `${state.sessionSize}問 · 約${timeEstimate}分`;
+    const isAll = state.sessionSize >= 9999;
+    const effectiveSize = isAll ? overall.total : state.sessionSize;
+    const timeEstimate = Math.ceil(effectiveSize * 0.5);
+    return `${getSessionSizeLabel()} · 約${timeEstimate}分`;
   }
 
   // 内訳テキストを生成（シート内表示用）
@@ -591,7 +598,7 @@ const FlashcardModule = (function() {
           </div>
           <button class="breakdown-mode-btn ${currentMode === 'new' ? 'active' : ''}" data-mode="new">
             <span class="breakdown-mode-label">新規のみ</span>
-            <span class="breakdown-mode-desc">${sessionSize}問</span>
+            <span class="breakdown-mode-desc">${getSessionSizeLabel(sessionSize)}</span>
           </button>
           <button class="breakdown-mode-btn ${currentMode === 'memorized' ? 'active' : ''}" data-mode="memorized">
             <span class="breakdown-mode-label">覚えたのみ</span>
@@ -601,14 +608,15 @@ const FlashcardModule = (function() {
       </div>
     `;
 
-    // 問数選択ボタン
+    // 問数選択ボタン（9999以上は「全問」）
+    const isAllSelected = sessionSize >= 9999;
     const sizeSection = `
       <div class="breakdown-section">
         <div class="breakdown-section-title">問数</div>
         <div class="breakdown-size-buttons">
-          <button class="breakdown-size-btn ${sessionSize === 5 ? 'active' : ''}" data-size="5">5問</button>
           <button class="breakdown-size-btn ${sessionSize === 10 ? 'active' : ''}" data-size="10">10問</button>
           <button class="breakdown-size-btn ${sessionSize === 20 ? 'active' : ''}" data-size="20">20問</button>
+          <button class="breakdown-size-btn ${isAllSelected ? 'active' : ''}" data-size="9999">全問</button>
         </div>
       </div>
     `;
@@ -1367,6 +1375,7 @@ const FlashcardModule = (function() {
       header.addEventListener('click', (e) => {
         const subjectEl = header.closest('.deck-subject');
         const subject = subjectEl.dataset.subject;
+
         subjectEl.classList.toggle('open');
 
         // 状態を保存
@@ -3933,6 +3942,15 @@ const FlashcardModule = (function() {
           correctAnswerKey = correctKeys.join('').toUpperCase();
         }
 
+        // 問題文から「（○つ）」を抽出してnumChoicesを決定
+        let numChoices = qa.numChoices || 1;
+        if (!qa.numChoices && qa.question) {
+          const match = qa.question.match(/[（(](\d+)つ[）)]/);
+          if (match) {
+            numChoices = parseInt(match[1], 10);
+          }
+        }
+
         cards.push({
           index: index,
           originalIndex: index,
@@ -3944,7 +3962,7 @@ const FlashcardModule = (function() {
           isChoiceCard: hasChoices,
           choices: hasChoices ? qa.choices : null,
           correctAnswer: correctAnswerKey || qa.answer || '',
-          numChoices: qa.numChoices || 1
+          numChoices: numChoices
         });
         index++;
       }
@@ -4588,12 +4606,20 @@ const FlashcardModule = (function() {
 
     if (validChoices.length === 0) return '';
 
+    // 選択肢テキストから正解マーク（○、：○など）を除去して表示
+    const cleanChoiceText = (text) => {
+      return text
+        .replace(/[：:]\s*○/g, '')  // ：○ や : ○ を除去
+        .replace(/○/g, '')          // 残った○を除去
+        .trim();
+    };
+
     return `
       <div class="flashcard-choices" data-num="${card.numChoices || 1}">
         ${validChoices.map(([key, value]) => `
           <button class="flashcard-choice-btn" data-choice="${key}">
             <span class="choice-label">${key.toUpperCase()}</span>
-            <span class="choice-text">${escapeHtml(value)}</span>
+            <span class="choice-text">${escapeHtml(cleanChoiceText(value))}</span>
           </button>
         `).join('')}
       </div>
@@ -4742,7 +4768,7 @@ const FlashcardModule = (function() {
           <div class="flashcard-progress-bar">
             <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
             <span class="flashcard-progress-text">${current} / ${total}${pendingAgain > 0 ? ` <span class="progress-pending">再${pendingAgain}</span>` : ''}</span>
-            ${showSizeBtn ? `<button class="flashcard-size-btn" id="flashcard-size-btn" aria-label="問数変更">${state.sessionSize}</button>` : ''}
+            ${showSizeBtn ? `<button class="flashcard-size-btn" id="flashcard-size-btn" aria-label="問数変更">${state.sessionSize >= 9999 ? '全' : state.sessionSize}</button>` : ''}
           </div>
           <div class="flashcard-header-actions">
             ${(!showSizeBtn || state.currentTopicId === '__favorites') ? `<button class="flashcard-text-btn ${state.shuffleEnabled ? 'active' : ''}" id="flashcard-shuffle-btn">シャッフル</button>` : ''}
@@ -5204,6 +5230,10 @@ const FlashcardModule = (function() {
 
   // === カード操作 ===
   function flip() {
+    // スナックバーを非表示にする
+    hideSnackbar();
+    state.undoState = null;
+
     state.isFlipped = !state.isFlipped;
     const exercise = document.querySelector('.flashcard-exercise');
     const card = document.getElementById('flashcard-card');
@@ -5656,13 +5686,9 @@ const FlashcardModule = (function() {
       // 既存タイマーをクリア
       if (state.undoTimer) {
         clearTimeout(state.undoTimer);
+        state.undoTimer = null;
       }
-
-      // 2秒後に自動非表示（控えめに）
-      state.undoTimer = setTimeout(() => {
-        hideSnackbar();
-        state.undoState = null;
-      }, 2000);
+      // 自動非表示なし（次の操作まで表示し続ける）
     }
   }
 
@@ -5963,7 +5989,7 @@ const FlashcardModule = (function() {
           </div>
         </div>
         <div class="completion-actions">
-          ${specialDeck ? `<button class="completion-btn primary" id="completion-continue-btn">もう${state.sessionSize}枚やる</button>` : ''}
+          ${specialDeck ? `<button class="completion-btn primary" id="completion-continue-btn">もう${state.sessionSize >= 9999 ? '全問' : state.sessionSize + '枚'}やる</button>` : ''}
           <button class="completion-btn ${specialDeck ? 'secondary' : 'primary'}" id="completion-back-btn">デッキに戻る</button>
         </div>
       </div>
@@ -6198,34 +6224,39 @@ const FlashcardModule = (function() {
 
   // === 問数サイクル切り替え ===
   function cycleSessionSize() {
-    const sizes = [5, 10, 20];
-    const currentIdx = sizes.indexOf(state.sessionSize);
+    // 10→20→全問 のサイクル（全問はInfinityで表現）
+    const sizes = [10, 20, Infinity];
+    const currentIdx = sizes.findIndex(s =>
+      s === Infinity ? state.sessionSize >= 9999 : s === state.sessionSize
+    );
     const nextIdx = (currentIdx + 1) % sizes.length;
     const newSize = sizes[nextIdx];
-    state.sessionSize = newSize;
-    localStorage.setItem('flashcard-session-size', newSize);
+    state.sessionSize = newSize === Infinity ? 9999 : newSize;
+    localStorage.setItem('flashcard-session-size', state.sessionSize);
 
     // 現在のセッションに即時反映
     const currentTotal = state.filteredCards.length;
+    const effectiveSize = newSize === Infinity ? state.cards.length : newSize;
 
-    if (newSize < currentTotal) {
+    if (effectiveSize < currentTotal) {
       // 問数を減らす場合：現在位置以降を切り詰め
-      const keepCount = Math.max(newSize, state.currentIndex + 1);
+      const keepCount = Math.max(effectiveSize, state.currentIndex + 1);
       state.filteredCards = state.filteredCards.slice(0, keepCount);
-    } else if (newSize > currentTotal && state.cards.length > currentTotal) {
+    } else if (effectiveSize > currentTotal && state.cards.length > currentTotal) {
       // 問数を増やす場合：元のカードプールから追加
       const currentKeys = new Set(state.filteredCards.map(c =>
         `${c.topicId || state.currentTopicId}:${c.originalIndex}`
       ));
       const additionalCards = state.cards
         .filter(c => !currentKeys.has(`${c.topicId || state.currentTopicId}:${c.originalIndex}`))
-        .slice(0, newSize - currentTotal);
+        .slice(0, effectiveSize - currentTotal);
       state.filteredCards = [...state.filteredCards, ...additionalCards];
     }
 
     // 画面を再描画
     renderCard();
-    showSnackbar(`${newSize}問に変更`);
+    const sizeLabel = newSize === Infinity ? '全問' : `${newSize}問`;
+    showSnackbar(`${sizeLabel}に変更`);
   }
 
   // === シャッフルトグル ===

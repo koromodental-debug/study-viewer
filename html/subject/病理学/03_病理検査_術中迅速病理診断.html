@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>術中迅速病理診断 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .caution-box {
+      background: #FFF3E0;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .caution-box-title { font-weight: 600; color: var(--caution); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 病理検査</span>
+    <h1>術中迅速病理診断</h1>
+    <div class="container">
+
+      <h2>I. 概要</h2>
+
+      <h3>定義と目的</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>手術中に組織を採取し、<span class="highlight">20〜30分</span>で病理診断を行う</td>
+        </tr>
+        <tr>
+          <td class="key">主な目的</td>
+          <td><span class="highlight">切除断端の検索</span>（腫瘍の残存確認）</td>
+        </tr>
+        <tr>
+          <td class="key">その他の目的</td>
+          <td>リンパ節転移の有無確認、腫瘍の良悪性判定</td>
+        </tr>
+        <tr>
+          <td class="key">標本作製法</td>
+          <td><span class="highlight">凍結切片法</span>（パラフィン包埋を省略）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">術中迅速診断の流れ</div>
+        <p>組織採取 → <span class="highlight">急速凍結</span>（ドライアイス等）→ 凍結切片作製 → 染色 → 診断</p>
+        <p class="note">※ 通常の組織診（固定→脱水→包埋→薄切）を省略して迅速化</p>
+      </div>
+
+      <h2>II. 適応と禁忌</h2>
+
+      <h3>適応となる組織・疾患</h3>
+      <table>
+        <tr>
+          <th>適応</th>
+          <th>具体例</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td class="key">軟組織</td>
+          <td><span class="highlight">扁平上皮癌</span>、<span class="highlight">Warthin腫瘍</span></td>
+          <td>凍結切片が作製可能</td>
+        </tr>
+        <tr>
+          <td class="key">リンパ節</td>
+          <td>転移の有無確認</td>
+          <td>術式決定に重要</td>
+        </tr>
+        <tr>
+          <td class="key">切除断端</td>
+          <td>腫瘍の残存確認</td>
+          <td>追加切除の判断</td>
+        </tr>
+      </table>
+
+      <div class="caution-box">
+        <div class="caution-box-title">適応外（禁忌）</div>
+        <ul>
+          <li><span class="caution">硬組織（骨・歯）</span>：凍結切片が作製できない</li>
+          <li><span class="key">骨腫</span>、<span class="key">骨形成線維腫</span>、<span class="key">慢性化膿性骨髄炎</span>など</li>
+          <li>脱灰処理が必要な組織は迅速診断に不向き</li>
+        </ul>
+      </div>
+
+      <h2>III. 通常の組織診との比較</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>術中迅速診断</th>
+          <th>通常の組織診</th>
+        </tr>
+        <tr>
+          <td class="key">所要時間</td>
+          <td><span class="highlight">20〜30分</span></td>
+          <td>数日〜1週間</td>
+        </tr>
+        <tr>
+          <td class="key">固定法</td>
+          <td>凍結固定</td>
+          <td>ホルマリン固定</td>
+        </tr>
+        <tr>
+          <td class="key">包埋</td>
+          <td>なし（凍結のまま）</td>
+          <td>パラフィン包埋</td>
+        </tr>
+        <tr>
+          <td class="key">診断精度</td>
+          <td>やや劣る</td>
+          <td>高い（確定診断）</td>
+        </tr>
+        <tr>
+          <td class="key">硬組織</td>
+          <td class="caution">不可</td>
+          <td>可能（脱灰後）</td>
+        </tr>
+      </table>
+
+      <h2>IV. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109C123</div>
+        <p>術中迅速病理診断の目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 切除断端の検索<br>
+          b 上皮異形成の分類<br>
+          c 顎骨内浸潤の深達度<br>
+          d 感染ウイルスの同定<br>
+          e 自己免疫疾患の確定診断
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】術中迅速診断の主目的は<span class="highlight">切除断端の検索</span>（腫瘍の取り残しがないか確認）。上皮異形成の詳細分類や確定診断は通常の組織診で行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A76</div>
+        <p>術中迅速病理診断が可能なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 骨腫<br>
+          b 扁平上皮癌<br>
+          c Warthin腫瘍<br>
+          d 骨形成線維腫<br>
+          e 慢性化膿性骨髄炎
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】術中迅速診断は<span class="highlight">軟組織のみ</span>適応。<span class="key">扁平上皮癌</span>（軟組織）と<span class="key">Warthin腫瘍</span>（唾液腺）は可能。a, d, eは骨病変で<span class="caution">凍結切片が作製できない</span>ため不可。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">出題のポイント</div>
+        <ul>
+          <li>目的 = <span class="highlight">切除断端の検索</span></li>
+          <li>適応 = <span class="highlight">軟組織のみ</span>（扁平上皮癌、Warthin腫瘍など）</li>
+          <li>禁忌 = <span class="caution">硬組織</span>（骨腫、骨形成線維腫など）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

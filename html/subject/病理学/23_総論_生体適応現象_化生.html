@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>生体適応現象：化生 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 総論</span>
+    <h1>生体適応現象：化生</h1>
+    <div class="container">
+
+      <h2>I. 化生の定義</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>すでに形成を終えた細胞が、<span class="highlight">他の種類の細胞に変化</span>すること</td>
+        </tr>
+        <tr>
+          <td class="key">位置づけ</td>
+          <td><span class="highlight">再生</span>の一様式と考えられている</td>
+        </tr>
+        <tr>
+          <td class="key">発生部位</td>
+          <td>上皮細胞間、または間葉系細胞間で生じる</td>
+        </tr>
+        <tr>
+          <td class="key">原因</td>
+          <td>慢性炎症刺激、機械的刺激、環境変化など</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">化生のポイント</div>
+        <ul>
+          <li>化生は<span class="highlight">可逆的</span>な変化（刺激が除去されれば元に戻りうる）</li>
+          <li>上皮細胞は上皮細胞に、間葉系細胞は間葉系細胞に変化（系統は超えない）</li>
+          <li>持続的な刺激に対する<span class="highlight">適応現象</span></li>
+        </ul>
+      </div>
+
+      <h2>II. 化生の種類</h2>
+
+      <h3>上皮性化生</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>変化</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">扁平上皮化生</span></td>
+          <td>円柱上皮・腺上皮 → 扁平上皮</td>
+          <td><span class="highlight">唾石に接する導管</span>、気管支、子宮頸部</td>
+        </tr>
+        <tr>
+          <td class="key">腸上皮化生</td>
+          <td>胃腺上皮 → 小腸上皮</td>
+          <td>慢性胃炎（前癌病変）</td>
+        </tr>
+        <tr>
+          <td class="key">アポクリン化生</td>
+          <td>腺上皮 → アポクリン汗腺様</td>
+          <td>乳腺</td>
+        </tr>
+        <tr>
+          <td class="key">オンコサイト化生</td>
+          <td>腺上皮 → 好酸性顆粒状細胞質</td>
+          <td>唾液腺（加齢変化）</td>
+        </tr>
+      </table>
+
+      <h3>間葉系細胞化生</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>変化</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">骨化生</td>
+          <td>線維芽細胞 → 骨芽細胞</td>
+          <td>骨化性筋炎</td>
+        </tr>
+        <tr>
+          <td class="key">軟骨化生</td>
+          <td>線維芽細胞 → 軟骨細胞</td>
+          <td>多形腺腫</td>
+        </tr>
+        <tr>
+          <td class="key">脂肪化生</td>
+          <td>線維芽細胞 → 脂肪細胞</td>
+          <td>－</td>
+        </tr>
+      </table>
+
+      <h2>III. 口腔領域での化生</h2>
+
+      <table>
+        <tr>
+          <th>部位・疾患</th>
+          <th>化生の種類</th>
+          <th>原因</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">唾石に接する導管</span></td>
+          <td><span class="highlight">扁平上皮化生</span></td>
+          <td>機械的刺激（唾石による慢性刺激）</td>
+        </tr>
+        <tr>
+          <td class="key">唾液腺（加齢）</td>
+          <td>オンコサイト化生</td>
+          <td>加齢変化</td>
+        </tr>
+        <tr>
+          <td class="key">多形腺腫</td>
+          <td>軟骨化生、骨化生</td>
+          <td>腫瘍内での分化</td>
+        </tr>
+      </table>
+
+      <h2>IV. 生体適応現象の比較</h2>
+
+      <table>
+        <tr>
+          <th>現象</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">萎縮</td>
+          <td>細胞・組織の縮小</td>
+          <td>廃用性萎縮、老人性萎縮</td>
+        </tr>
+        <tr>
+          <td class="key">肥大</td>
+          <td>細胞の容積増大 → 臓器の増大</td>
+          <td>心肥大、骨格筋肥大</td>
+        </tr>
+        <tr>
+          <td class="key">過形成（増生）</td>
+          <td>細胞数の増加 → 臓器の増大</td>
+          <td>歯肉増殖症、セメント質過形成</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">化生</span></td>
+          <td>細胞の種類が変化</td>
+          <td>扁平上皮化生、腸上皮化生</td>
+        </tr>
+      </table>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116C15</div>
+        <p>唾石に接する導管でみられる変化はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 軟骨化生<br>
+          b 粘液化生<br>
+          c 扁平上皮化生<br>
+          d アポクリン化生<br>
+          e オンコサイト化生
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】唾石による慢性的な機械的刺激により、導管上皮に<span class="highlight">扁平上皮化生</span>が生じる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A101</div>
+        <p>矢印で示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 骨化生<br>
+          b 軟骨化生<br>
+          c 腸上皮化生<br>
+          d 扁平上皮化生<br>
+          e アポクリン化生
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】画像問題。円柱上皮が扁平上皮に置き換わっている所見 → <span class="highlight">扁平上皮化生</span>。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

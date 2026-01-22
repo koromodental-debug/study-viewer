@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>内分泌系・消化管の構造 - 組織学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">組織学 / 01_総論</span>
+    <h1>内分泌系・消化管の構造</h1>
+    <div class="container">
+
+      <h2>1. 内分泌系</h2>
+      <p>ホルモンを血中に分泌する器官。導管をもたない（外分泌腺との違い）。</p>
+
+      <h3>主な内分泌器官とホルモン</h3>
+      <table>
+        <tr><th>器官</th><th>ホルモン</th><th>作用</th></tr>
+        <tr><td><span class="key">下垂体前葉</span></td><td>GH（成長ホルモン）、TSH、ACTH、FSH、LH、プロラクチン</td><td>成長促進、他腺刺激</td></tr>
+        <tr><td><span class="key">下垂体後葉</span></td><td>ADH（バソプレシン）、オキシトシン</td><td>水分再吸収、子宮収縮</td></tr>
+        <tr><td><span class="highlight">甲状腺</span></td><td>T3、T4、<span class="highlight">カルシトニン</span></td><td>代謝促進、血中Ca↓</td></tr>
+        <tr><td><span class="key">副甲状腺</span></td><td>PTH（副甲状腺ホルモン）</td><td>血中Ca↑</td></tr>
+        <tr><td><span class="key">副腎皮質</span></td><td>コルチゾール、アルドステロン</td><td>糖代謝、Na再吸収</td></tr>
+        <tr><td><span class="key">副腎髄質</span></td><td>アドレナリン、ノルアドレナリン</td><td>交感神経作用</td></tr>
+        <tr><td><span class="key">膵臓ランゲルハンス島</span></td><td>インスリン（β細胞）、グルカゴン（α細胞）</td><td>血糖調節</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">甲状腺の組織学的特徴</div>
+        <ul>
+          <li><span class="key">濾胞細胞</span>：T3、T4を産生（コロイドを貯蔵）</li>
+          <li><span class="highlight">傍濾胞細胞（C細胞）</span>：カルシトニンを産生</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C127（図あり）</div>
+        <p>内分泌器官の組織像（別冊No.20）を別に示す。この器官が産生するホルモンはどれか。1つ選べ。</p>
+        <div class="choices">
+          a インスリン<br>
+          b ガストリン<br>
+          c カルシトニン<br>
+          d GH〈成長ホルモン〉<br>
+          e PTH〈副甲状腺ホルモン〉
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】組織像は<span class="highlight">甲状腺</span>を示している。甲状腺は濾胞構造が特徴的で、<span class="highlight">カルシトニン</span>は傍濾胞細胞（C細胞）から産生される。インスリンは膵臓、ガストリンは胃、GHは下垂体前葉、PTHは副甲状腺から産生。</p>
+      </div>
+
+      <h2>2. 消化管の基本構造</h2>
+      <p>消化管壁は内腔側から、粘膜・粘膜下組織・筋層・漿膜（外膜）の4層構造をとる。</p>
+
+      <h3>消化管壁の層構造</h3>
+      <table>
+        <tr><th>層</th><th>構成</th></tr>
+        <tr><td><span class="key">粘膜</span></td><td>粘膜上皮 + 粘膜固有層 + <span class="highlight">粘膜筋板</span></td></tr>
+        <tr><td><span class="key">粘膜下組織</span></td><td>疎性結合組織、血管、神経叢</td></tr>
+        <tr><td><span class="key">筋層</span></td><td>内輪筋 + 外縦筋（平滑筋）</td></tr>
+        <tr><td><span class="key">漿膜/外膜</span></td><td>結合組織（腹腔内は漿膜、後腹膜は外膜）</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">粘膜筋板とは</div>
+        <p>粘膜の最深部にある薄い<span class="key">平滑筋層</span>。粘膜のひだ形成や運動に関与。<span class="caution">口腔には粘膜筋板がない</span>。</p>
+      </div>
+
+      <h3>粘膜筋板の有無</h3>
+      <table>
+        <tr><th>部位</th><th>粘膜筋板</th><th>備考</th></tr>
+        <tr><td><span class="caution">口腔</span></td><td><span class="caution">なし</span></td><td>粘膜固有層が直接骨膜や筋に接する</td></tr>
+        <tr><td><span class="key">食道</span></td><td>あり</td><td>上部1/3は横紋筋</td></tr>
+        <tr><td><span class="key">胃</span></td><td>あり</td><td>3層の筋層（内斜・中輪・外縦）</td></tr>
+        <tr><td><span class="key">小腸</span></td><td>あり</td><td>絨毛・微絨毛あり</td></tr>
+        <tr><td><span class="key">大腸</span></td><td>あり</td><td>結腸ヒモ（縦走筋が集まる）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113B21</div>
+        <p>粘膜筋板を欠くのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口腔<br>
+          b 食道<br>
+          c 胃<br>
+          d 小腸<br>
+          e 大腸
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">口腔粘膜には粘膜筋板がない</span>。口腔粘膜は粘膜上皮と粘膜固有層のみで構成され、直接骨膜や筋組織に接する。食道以下の消化管には粘膜筋板が存在する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>免疫異常：自己免疫疾患 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 総論</span>
+    <h1>免疫異常：自己免疫疾患</h1>
+    <div class="container">
+
+      <h2>I. 自己免疫疾患の概要</h2>
+
+      <h3>定義と特徴</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>自己の組織に対する免疫反応により組織障害を起こす疾患</td>
+        </tr>
+        <tr>
+          <td class="key">好発</td>
+          <td><span class="highlight">女性に多い</span>（SLE、Sjögren症候群、関節リウマチ等）</td>
+        </tr>
+        <tr>
+          <td class="key">検査</td>
+          <td>自己抗体（抗核抗体、抗SS-A/B抗体など）</td>
+        </tr>
+      </table>
+
+      <h2>II. アレルギーの分類と自己免疫疾患</h2>
+
+      <table>
+        <tr>
+          <th>型</th>
+          <th>機序</th>
+          <th>代表疾患</th>
+        </tr>
+        <tr>
+          <td class="key">I型（即時型）</td>
+          <td>IgE、肥満細胞</td>
+          <td>アナフィラキシー、気管支喘息</td>
+        </tr>
+        <tr>
+          <td class="key">II型（細胞傷害型）</td>
+          <td>IgG/IgM、補体</td>
+          <td>自己免疫性溶血性貧血、天疱瘡</td>
+        </tr>
+        <tr>
+          <td class="key">III型（免疫複合体型）</td>
+          <td>免疫複合体沈着</td>
+          <td><span class="highlight">SLE</span>、関節リウマチ</td>
+        </tr>
+        <tr>
+          <td class="key">IV型（遅延型）</td>
+          <td>T細胞</td>
+          <td>接触性皮膚炎、ツベルクリン反応</td>
+        </tr>
+      </table>
+
+      <h2>III. 主な自己免疫疾患</h2>
+
+      <h3>全身性エリテマトーデス（SLE）</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発</td>
+          <td>若年女性（20〜40歳）</td>
+        </tr>
+        <tr>
+          <td class="key">特徴的所見</td>
+          <td><span class="highlight">蝶形紅斑</span>（顔面）</td>
+        </tr>
+        <tr>
+          <td class="key">自己抗体</td>
+          <td>抗核抗体、抗dsDNA抗体</td>
+        </tr>
+        <tr>
+          <td class="key">アレルギー型</td>
+          <td><span class="highlight">III型</span>（免疫複合体型）</td>
+        </tr>
+      </table>
+
+      <h3>関節リウマチ</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発</td>
+          <td>中年女性</td>
+        </tr>
+        <tr>
+          <td class="key">症状</td>
+          <td><span class="highlight">朝のこわばり</span>、関節腫脹</td>
+        </tr>
+        <tr>
+          <td class="key">所見</td>
+          <td><span class="highlight">皮下結節</span>（リウマトイド結節）</td>
+        </tr>
+        <tr>
+          <td class="key">顎関節</td>
+          <td>リウマチ性顎関節炎（両側性）</td>
+        </tr>
+      </table>
+
+      <h2>IV. 水疱性疾患</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>尋常性天疱瘡</th>
+          <th>類天疱瘡</th>
+        </tr>
+        <tr>
+          <td class="key">水疱の位置</td>
+          <td><span class="highlight">表皮内</span>（棘細胞層）</td>
+          <td><span class="highlight">表皮下</span>（基底膜部）</td>
+        </tr>
+        <tr>
+          <td class="key">標的</td>
+          <td>デスモグレイン（細胞間接着）</td>
+          <td>ヘミデスモソーム（基底膜）</td>
+        </tr>
+        <tr>
+          <td class="key">Nikolsky現象</td>
+          <td><span class="highlight">陽性</span></td>
+          <td>陰性〜弱陽性</td>
+        </tr>
+        <tr>
+          <td class="key">病理所見</td>
+          <td><span class="highlight">棘融解</span></td>
+          <td>表皮下水疱</td>
+        </tr>
+        <tr>
+          <td class="key">好発年齢</td>
+          <td>中年</td>
+          <td><span class="highlight">高齢者</span></td>
+        </tr>
+        <tr>
+          <td class="key">口腔症状</td>
+          <td>初発症状として多い</td>
+          <td>歯肉に好発</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">天疱瘡と類天疱瘡の覚え方</div>
+        <ul>
+          <li><span class="key">天疱瘡</span>：「天」→ 上（表皮内）、棘融解、Nikolsky<span class="highlight">陽性</span></li>
+          <li><span class="key">類天疱瘡</span>：「類」→ 下（表皮下）、高齢者、水疱を<span class="highlight">主徴</span></li>
+        </ul>
+      </div>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116B30</div>
+        <p>Ⅲ型アレルギーはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 気管支喘息<br>
+          b 接触性皮膚炎<br>
+          c アナフィラキシー<br>
+          d 自己免疫性溶血性貧血<br>
+          e 全身性エリテマトーデス
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">SLE = III型アレルギー</span>（免疫複合体型）。気管支喘息・アナフィラキシー = I型、接触性皮膚炎 = IV型、溶血性貧血 = II型。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B76</div>
+        <p>関節リウマチでみられるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ばち指<br>
+          b 色素沈着<br>
+          c 手掌紅斑<br>
+          d 皮下結節<br>
+          e 朝のこわばり
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】関節リウマチ：<span class="highlight">皮下結節</span>（リウマトイド結節）、<span class="highlight">朝のこわばり</span>が特徴的。手掌紅斑は肝硬変。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A46</div>
+        <p>疾患と口腔粘膜症状の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 手足口病 ーーー 地図状舌<br>
+          b 慢性GVHD ーーー 扁平苔癬様病変<br>
+          c 尋常性天疱瘡 ーーー Nikolsky現象<br>
+          d Peutz-Jeghers症候群 ーーー 平滑舌<br>
+          e Plummer-Vinson症候群 ーーー 再発性アフタ
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】<span class="highlight">尋常性天疱瘡 = Nikolsky現象陽性</span>。慢性GVHDでは扁平苔癬様病変がみられる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117D3</div>
+        <p>水疱を主徴とするのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 紅板症<br>
+          b 類天疱瘡<br>
+          c 口腔カンジダ症<br>
+          d 肉芽腫性口唇炎<br>
+          e 壊死性潰瘍性歯肉炎
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">類天疱瘡</span>は水疱を主徴とする。高齢者に多く、表皮下水疱を形成。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

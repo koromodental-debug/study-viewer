@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>組織診 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    ol { padding-left: 1.5em; margin: 8px 0; }
+    ol li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .flow-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .flow-item {
+      display: inline-block;
+      padding: 4px 10px;
+      margin: 2px;
+      background: white;
+      border-radius: 6px;
+      font-size: 9pt;
+    }
+    .flow-arrow { color: var(--accent); font-weight: bold; margin: 0 4px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 病理検査</span>
+    <h1>組織診</h1>
+    <div class="container">
+
+      <h2>I. 組織診の手順</h2>
+
+      <div class="flow-box">
+        <span class="flow-item">1. 組織採取</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">2. <span class="highlight">固定</span></span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">3. 脱灰*</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">4. 切り出し</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">5. 脱水</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">6. 包埋</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">7. <span class="highlight">薄切</span></span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">8. HE染色</span>
+        <p class="note">* 脱灰は硬組織（骨・歯）を含む場合のみ</p>
+      </div>
+
+      <h3>各手順の詳細</h3>
+      <table>
+        <tr>
+          <th>手順</th>
+          <th>目的・方法</th>
+          <th>使用薬剤</th>
+        </tr>
+        <tr>
+          <td class="key">固定</td>
+          <td>組織の自己融解を防止、構造を安定化</td>
+          <td><span class="highlight">10〜20%ホルマリン</span></td>
+        </tr>
+        <tr>
+          <td class="key">脱灰</td>
+          <td>硬組織（骨・歯）のCaを除去</td>
+          <td>ギ酸、塩酸、<span class="highlight">EDTA</span></td>
+        </tr>
+        <tr>
+          <td class="key">脱水</td>
+          <td>組織中の水分を除去</td>
+          <td>エタノール系列</td>
+        </tr>
+        <tr>
+          <td class="key">包埋</td>
+          <td>薄切可能な硬さにする</td>
+          <td><span class="highlight">パラフィン</span></td>
+        </tr>
+        <tr>
+          <td class="key">薄切</td>
+          <td>顕微鏡観察できる厚さに切る</td>
+          <td>厚さ：<span class="highlight">約4μm</span></td>
+        </tr>
+        <tr>
+          <td class="key">染色</td>
+          <td>組織構造を可視化</td>
+          <td><span class="highlight">HE染色</span>（標準）</td>
+        </tr>
+      </table>
+
+      <h2>II. HE染色</h2>
+
+      <h3>ヘマトキシリン・エオジン染色</h3>
+      <table>
+        <tr>
+          <th>染色液</th>
+          <th>性質</th>
+          <th>染まる構造</th>
+          <th>色</th>
+        </tr>
+        <tr>
+          <td class="key">ヘマトキシリン</td>
+          <td>塩基性色素</td>
+          <td>核（DNA/RNA）、軟骨基質</td>
+          <td><span class="highlight">青紫色</span></td>
+        </tr>
+        <tr>
+          <td class="key">エオジン</td>
+          <td>酸性色素</td>
+          <td>細胞質、膠原線維、赤血球</td>
+          <td><span class="highlight">赤〜ピンク色</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">HE染色の覚え方</div>
+        <ul>
+          <li><span class="key">H</span>ematoxylin = 核 = <span class="highlight">青紫</span>（Hは「濃い」→ 核）</li>
+          <li><span class="key">E</span>osin = 細胞質 = <span class="highlight">ピンク</span>（Eは「淡い」→ 細胞質）</li>
+        </ul>
+      </div>
+
+      <h2>III. 生検の種類</h2>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>方法</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">切除生検</td>
+          <td>病変全体を切除</td>
+          <td>小さな病変向け、診断と治療を兼ねる</td>
+        </tr>
+        <tr>
+          <td class="key">切開生検<br>（部分生検）</td>
+          <td>病変の一部を切除</td>
+          <td><span class="highlight">確定診断</span>に最適、大きな病変向け</td>
+        </tr>
+        <tr>
+          <td class="key">パンチ生検</td>
+          <td>円筒形に採取</td>
+          <td>皮膚・粘膜病変向け</td>
+        </tr>
+        <tr>
+          <td class="key">針生検</td>
+          <td>太い針で採取</td>
+          <td>深部病変向け</td>
+        </tr>
+        <tr>
+          <td class="key">口唇腺生検</td>
+          <td>下口唇小唾液腺を採取</td>
+          <td><span class="highlight">Sjogren症候群</span>の診断</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Sjogren症候群の口唇腺生検</div>
+        <ul>
+          <li>診断基準：<span class="highlight">4mm<sup>2</sup>あたり50個以上</span>の単核球（リンパ球）浸潤</li>
+          <li>1 focus = 50個以上の単核球集簇</li>
+          <li>focus score ≧1 で陽性</li>
+        </ul>
+      </div>
+
+      <h2>IV. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108C5</div>
+        <p>生検組織の固定液はどれか。1つ選べ。</p>
+        <div class="choices">
+          a キシレン<br>
+          b クエン酸水溶液<br>
+          c ジエチルエーテル<br>
+          d 塩化カルシウム水溶液<br>
+          e ホルムアルデヒド水溶液
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">生検組織の固定液 = ホルムアルデヒド（ホルマリン）</span>。キシレン = 透徹・脱パラフィン、ジエチルエーテル = 麻酔薬（歴史的）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A114</div>
+        <p>Sjogren症候群における口唇腺生検での単核球浸潤の診断指標はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 赤血球<br>
+          b 好中球<br>
+          c 好酸球<br>
+          d 好塩基球<br>
+          e リンパ球
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】Sjogren症候群では<span class="highlight">リンパ球（単核球）</span>の浸潤が特徴。4mm<sup>2</sup>あたり50個以上で陽性。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C2</div>
+        <p>Papanicolaou染色の固定液はどれか。1つ選べ。</p>
+        <div class="choices">
+          a エチレン<br>
+          b キシレン<br>
+          c トルエン<br>
+          d エタノール<br>
+          e フェノール
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">Papanicolaou染色（細胞診）= 95%エタノールで湿固定</span>。組織診のホルマリン固定と区別すること。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

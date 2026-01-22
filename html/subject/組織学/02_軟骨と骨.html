@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>軟骨と骨 - 組織学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">組織学 / 02_軟骨と骨</span>
+    <h1>軟骨と骨</h1>
+    <div class="container">
+
+      <h2>1. 軟骨組織</h2>
+      <p>軟骨基質内には<span class="caution">血管・神経が存在しない</span>。栄養は拡散により供給される。</p>
+
+      <h3>軟骨組織の分類</h3>
+      <table>
+        <tr><th>種類</th><th>主成分</th><th>特徴</th><th>存在部位</th></tr>
+        <tr><td><span class="key">硝子軟骨</span></td><td>II型コラーゲン、プロテオグリカン</td><td>最も広く分布</td><td>鼻軟骨、気管軟骨、肋軟骨、関節軟骨、成長板</td></tr>
+        <tr><td><span class="key">線維軟骨</span></td><td>I型コラーゲン</td><td>密性結合組織に類似</td><td><span class="highlight">椎間円板</span>、恥骨結合、関節円板</td></tr>
+        <tr><td><span class="highlight">弾性軟骨</span></td><td>弾性線維</td><td>弾力性に富む</td><td><span class="highlight">耳介、喉頭蓋</span>、外耳道</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">弾性軟骨の特徴</div>
+        <p>弾性線維を多量に含み、変形させても<span class="highlight">元に戻る部位</span>に存在する。耳介や喉頭蓋など。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C73</div>
+        <p>弾性軟骨をもつのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 耳介<br>
+          b 肋骨<br>
+          c 下顎頭<br>
+          d 喉頭蓋<br>
+          e 椎間円板
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="highlight">弾性軟骨は耳介と喉頭蓋</span>に存在。肋骨に付着する肋軟骨は硝子軟骨、下顎頭軟骨は線維軟骨（最表層は線維芽細胞）、椎間円板は線維軟骨。</p>
+      </div>
+
+      <h3>下顎頭軟骨の特徴</h3>
+      <p>下顎頭軟骨は<span class="key">線維軟骨</span>であり、関節軟骨（硝子軟骨）とは異なる。</p>
+      <ul>
+        <li>最表層：<span class="highlight">線維芽細胞</span>（関節軟骨と異なる点）</li>
+        <li>増殖層：未分化間葉細胞</li>
+        <li>軟骨細胞層：軟骨細胞が存在</li>
+        <li>石灰化層：石灰化した軟骨基質</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">106C39</div>
+        <p>下顎頭軟骨の最表層を構成するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 軟骨細胞<br>
+          b 骨芽細胞<br>
+          c 線維芽細胞<br>
+          d 滑膜A型細胞<br>
+          e 滑膜B型細胞
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】下顎頭軟骨の最表層は<span class="highlight">線維芽細胞</span>で構成される。これは関節軟骨（硝子軟骨）との違いであり、下顎頭軟骨が線維軟骨である特徴。</p>
+      </div>
+
+      <h2>2. 骨組織</h2>
+
+      <h3>骨基質の組成</h3>
+      <table>
+        <tr><th>成分</th><th>割合</th><th>内容</th></tr>
+        <tr><td><span class="key">無機成分</span></td><td>約70%</td><td>ハイドロキシアパタイト Ca₁₀(PO₄)₆(OH)₂</td></tr>
+        <tr><td><span class="key">有機成分</span></td><td>約20%</td><td>I型コラーゲン（90%）、オステオカルシン、オステオポンチン</td></tr>
+        <tr><td><span class="key">水分</span></td><td>約10%</td><td>－</td></tr>
+      </table>
+
+      <h3>骨の細胞</h3>
+      <table>
+        <tr><th>細胞</th><th>機能</th><th>由来</th></tr>
+        <tr><td><span class="key">骨芽細胞</span></td><td>骨形成（骨基質の産生）</td><td>間葉系幹細胞</td></tr>
+        <tr><td><span class="key">骨細胞</span></td><td>骨基質に埋まり骨を維持</td><td>骨芽細胞が変化</td></tr>
+        <tr><td><span class="highlight">破骨細胞</span></td><td>骨吸収</td><td><span class="caution">造血幹細胞（単球系）</span></td></tr>
+      </table>
+
+      <h2>3. 骨の成長様式</h2>
+
+      <h3>膜内骨化と軟骨内骨化</h3>
+      <table>
+        <tr><th>様式</th><th>メカニズム</th><th>代表的な骨</th></tr>
+        <tr><td><span class="key">膜内骨化</span></td><td>結合組織（膜）内で直接骨形成</td><td>頭頂骨、前頭骨、鼻骨、頬骨、上顎骨、<span class="highlight">下顎骨体部</span></td></tr>
+        <tr><td><span class="key">軟骨内骨化</span></td><td>軟骨が骨に置換される</td><td>四肢骨、椎骨、蝶形骨、<span class="highlight">下顎頭</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">両者を併せもつ骨</div>
+        <ul>
+          <li><span class="highlight">下顎骨</span>：体部は膜内骨化、下顎頭・筋突起は軟骨内骨化</li>
+          <li><span class="highlight">蝶形骨</span>：大翼は膜内骨化、体部は軟骨内骨化</li>
+          <li><span class="key">鎖骨</span>：両端は軟骨内骨化、中央は膜内骨化</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A101</div>
+        <p>軟骨内骨化と膜内骨化の両者によって成長するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 鼻骨<br>
+          b 頬骨<br>
+          c 下顎骨<br>
+          d 頭頂骨<br>
+          e 蝶形骨
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】<span class="highlight">下顎骨</span>は体部が膜内骨化、下顎頭・筋突起が軟骨内骨化。<span class="highlight">蝶形骨</span>は大翼が膜内骨化、体部が軟骨内骨化。鼻骨・頬骨・頭頂骨は膜内骨化のみ。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

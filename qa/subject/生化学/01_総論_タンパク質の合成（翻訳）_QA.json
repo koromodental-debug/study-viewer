@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "title": "タンパク質の合成（翻訳）",
+    "category": "生化学",
+    "chapter": "01_総論"
+  },
+  "sections": [
+    {
+      "section": "主要なコドン表（抜粋）",
+      "qa": [
+        {
+          "question": "mRNAのトリプレットコドン表を示す。3′─CCU─5′をアンチコドンにもつtRNAが運搬するアミノ酸はどれか。",
+          "answer": "B",
+          "choices": {
+            "a": "リシン",
+            "b": "グリシン",
+            "c": "プロリン",
+            "d": "ヒスチジン",
+            "e": "イソロイシン"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "99A6",
+          "note": "参考：99回以前"
+        }
+      ]
+    }
+  ]
+}

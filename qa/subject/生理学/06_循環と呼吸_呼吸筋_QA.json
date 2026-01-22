@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "呼吸筋",
+    "category": "生理学",
+    "chapter": "06_循環と呼吸"
+  },
+  "sections": [
+    {
+      "section": "吸気筋（吸息筋）",
+      "qa": [
+        {
+          "question": "吸息筋はどれか。1つ選べ。",
+          "answer": "横隔膜",
+          "choices": {
+            "a": "横隔膜",
+            "b": "腹直筋",
+            "c": "腹横筋",
+            "d": "内肋間筋",
+            "e": "外腹斜筋"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "107A113"
+        }
+      ]
+    }
+  ]
+}

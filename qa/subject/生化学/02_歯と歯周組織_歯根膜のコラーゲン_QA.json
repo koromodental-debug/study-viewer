@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "歯根膜のコラーゲン",
+    "category": "生化学",
+    "chapter": "02_歯と歯周組織"
+  },
+  "sections": [
+    {
+      "section": "II. 歯根膜のコラーゲン",
+      "qa": [
+        {
+          "question": "歯根膜に豊富に存在するコラーゲンはどれか。2つ選べ。",
+          "answer": "A, C",
+          "choices": {
+            "a": "Ⅰ型",
+            "b": "Ⅱ型",
+            "c": "Ⅲ型",
+            "d": "Ⅳ型",
+            "e": "X型"
+          },
+          "correctAnswer": "A, C",
+          "numChoices": 2,
+          "code": "102B72"
+        }
+      ]
+    }
+  ]
+}

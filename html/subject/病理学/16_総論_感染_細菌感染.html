@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>感染：細菌感染 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 総論</span>
+    <h1>感染：細菌感染</h1>
+    <div class="container">
+
+      <h2>I. 細菌の分類</h2>
+
+      <h3>グラム染色による分類</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>グラム陽性菌</th>
+          <th>グラム陰性菌</th>
+        </tr>
+        <tr>
+          <td class="key">染色</td>
+          <td><span class="highlight">紫色</span></td>
+          <td><span class="highlight">赤色</span></td>
+        </tr>
+        <tr>
+          <td class="key">細胞壁</td>
+          <td>ペプチドグリカン<span class="highlight">厚い</span></td>
+          <td>ペプチドグリカン薄い</td>
+        </tr>
+        <tr>
+          <td class="key">特有構造</td>
+          <td>リポタイコ酸</td>
+          <td><span class="highlight">外膜</span>（リポ多糖＝LPS）</td>
+        </tr>
+        <tr>
+          <td class="key">毒素</td>
+          <td>外毒素</td>
+          <td><span class="highlight">内毒素</span>（LPS）</td>
+        </tr>
+      </table>
+
+      <h3>酸素要求性による分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>特徴</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">好気性菌</td>
+          <td>酸素がないと増殖できない</td>
+          <td>結核菌</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">通性嫌気性菌</span></td>
+          <td>酸素の有無に関わらず増殖</td>
+          <td>ブドウ球菌、レンサ球菌</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">偏性嫌気性菌</span></td>
+          <td>酸素があると死滅</td>
+          <td>Porphyromonas、Fusobacterium</td>
+        </tr>
+      </table>
+
+      <h2>II. 細菌の構造と病原因子</h2>
+
+      <table>
+        <tr>
+          <th>構造</th>
+          <th>機能・特徴</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">莢膜</span></td>
+          <td><span class="highlight">好中球による貪食に抵抗性</span></td>
+        </tr>
+        <tr>
+          <td class="key">鞭毛</td>
+          <td>運動性</td>
+        </tr>
+        <tr>
+          <td class="key">線毛（pili）</td>
+          <td>付着・接合</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">芽胞</span></td>
+          <td>耐熱性、休眠状態（炭疽菌、破傷風菌）</td>
+        </tr>
+      </table>
+
+      <h2>III. 内毒素と外毒素</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>内毒素（エンドトキシン）</th>
+          <th>外毒素（エキソトキシン）</th>
+        </tr>
+        <tr>
+          <td class="key">本体</td>
+          <td><span class="highlight">LPS</span>（リポ多糖）</td>
+          <td>タンパク質</td>
+        </tr>
+        <tr>
+          <td class="key">産生菌</td>
+          <td><span class="highlight">グラム陰性菌</span></td>
+          <td>主にグラム陽性菌</td>
+        </tr>
+        <tr>
+          <td class="key">放出</td>
+          <td>菌体崩壊時</td>
+          <td>生菌から分泌</td>
+        </tr>
+        <tr>
+          <td class="key">熱安定性</td>
+          <td><span class="highlight">熱に強い</span></td>
+          <td>熱に弱い</td>
+        </tr>
+        <tr>
+          <td class="key">作用</td>
+          <td><span class="highlight">補体活性化</span>、発熱、ショック</td>
+          <td>特異的作用（神経毒など）</td>
+        </tr>
+        <tr>
+          <td class="key">無毒化</td>
+          <td>困難</td>
+          <td>ホルマリンで可能（トキソイド）</td>
+        </tr>
+      </table>
+
+      <h2>IV. 口腔細菌と感染</h2>
+
+      <h3>デンタルプラークの細菌構成</h3>
+      <table>
+        <tr>
+          <th>プラーク</th>
+          <th>主な細菌</th>
+        </tr>
+        <tr>
+          <td class="key">初期プラーク</td>
+          <td><span class="highlight">グラム陽性球菌</span>（Streptococcus）</td>
+        </tr>
+        <tr>
+          <td class="key">成熟プラーク</td>
+          <td>グラム陰性菌↑、<span class="highlight">嫌気性菌</span>↑</td>
+        </tr>
+        <tr>
+          <td class="key">歯肉縁上</td>
+          <td><span class="highlight">通性嫌気性グラム陽性球菌</span>が最多</td>
+        </tr>
+        <tr>
+          <td class="key">歯肉縁下</td>
+          <td><span class="highlight">偏性嫌気性グラム陰性桿菌</span>↑</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">プラーク成熟と細菌変化</div>
+        <ul>
+          <li>初期：グラム<span class="highlight">陽性</span>菌、<span class="highlight">球菌</span>、<span class="highlight">好気性〜通性</span></li>
+          <li>成熟：グラム<span class="highlight">陰性</span>菌↑、<span class="highlight">桿菌</span>↑、<span class="highlight">嫌気性</span>↑</li>
+          <li>深層：酸化還元電位↓、嫌気性菌↑</li>
+        </ul>
+      </div>
+
+      <h2>V. 日和見感染</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>免疫能低下時に常在菌や弱毒菌が感染を起こす</td>
+        </tr>
+        <tr>
+          <td class="key">原因菌</td>
+          <td><span class="highlight">Candida albicans</span>、<span class="highlight">緑膿菌</span>、MRSA</td>
+        </tr>
+        <tr>
+          <td class="key">宿主要因</td>
+          <td>高齢、低栄養、免疫抑制薬、糖尿病、AIDS</td>
+        </tr>
+      </table>
+
+      <h2>VI. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112A11</div>
+        <p>グラム陰性菌に特有の構造はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 外膜<br>
+          b 芽胞<br>
+          c 莢膜<br>
+          d リポタイコ酸<br>
+          e ペプチドグリカン
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">外膜</span>はグラム陰性菌に特有。外膜にはLPS（内毒素）が存在。リポタイコ酸はグラム陽性菌に特有。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A12</div>
+        <p>歯肉縁上プラークを構成する細菌で最も多いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 通性嫌気性グラム陰性桿菌<br>
+          b 通性嫌気性グラム陽性球菌<br>
+          c 偏性嫌気性グラム陰性桿菌<br>
+          d 偏性嫌気性グラム陽性桿菌<br>
+          e 偏性嫌気性グラム陽性球菌
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】歯肉縁上プラークは<span class="highlight">通性嫌気性グラム陽性球菌</span>（Streptococcus）が最多。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117B10</div>
+        <p>好中球による貪食に抵抗性を示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 莢膜<br>
+          b 鞭毛<br>
+          c 核様体<br>
+          d 内毒素<br>
+          e リボソーム
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">莢膜</span>は多糖体でできた被膜で、好中球の貪食から菌を保護する。肺炎球菌の病原性に重要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A72</div>
+        <p>内毒素で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 熱に弱い<br>
+          b 補体を活性化する<br>
+          c 生きた細菌が放出する<br>
+          d 宿主の受容体に作用する<br>
+          e ホルマリンで無毒化される
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】内毒素（LPS）：<span class="highlight">補体を活性化</span>、<span class="highlight">TLR4受容体に作用</span>。熱に強い、菌体崩壊時に放出、ホルマリンでは無毒化困難。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

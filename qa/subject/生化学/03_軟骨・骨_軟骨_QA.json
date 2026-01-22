@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "軟骨",
+    "category": "生化学",
+    "chapter": "03_軟骨・骨"
+  },
+  "sections": [
+    {
+      "section": "IV. 軟骨細胞の分化とPTHrP",
+      "qa": [
+        {
+          "question": "軟骨内骨化において軟骨細胞の増殖と分化を調節するのはどれか。1つ選べ。",
+          "answer": "D",
+          "choices": {
+            "a": "APC",
+            "b": "BRCA1",
+            "c": "p53",
+            "d": "PTHrP",
+            "e": "RANKL"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "113D43"
+        }
+      ]
+    }
+  ]
+}

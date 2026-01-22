@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>腫瘍総論：癌遺伝子と癌抑制遺伝子 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 総論</span>
+    <h1>腫瘍総論：癌遺伝子と癌抑制遺伝子</h1>
+    <div class="container">
+
+      <h2>I. 発癌のメカニズム（多段階説）</h2>
+
+      <p>腫瘍は<span class="highlight">遺伝子異常の蓄積</span>によって生じる</p>
+
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">①イニシエーション</td>
+          <td>発癌物質（initiator）がDNAに<span class="highlight">突然変異</span>を誘発</td>
+        </tr>
+        <tr>
+          <td class="key">②プロモーション</td>
+          <td>発癌促進因子（promoter）により増殖が促進 → 前癌病変</td>
+        </tr>
+        <tr>
+          <td class="key">③プログレッション</td>
+          <td>癌細胞の増殖・悪性化が進行 → <span class="highlight">浸潤・転移</span></td>
+        </tr>
+      </table>
+
+      <h2>II. 癌遺伝子（オンコジーン）</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>細胞の変異・増殖を促進し、<span class="highlight">癌化に導く</span>遺伝子群</td>
+        </tr>
+        <tr>
+          <td class="key">由来</td>
+          <td><span class="highlight">プロトオンコジーン</span>（正常細胞の増殖関連遺伝子）の変異</td>
+        </tr>
+        <tr>
+          <td class="key">異常の種類</td>
+          <td><span class="highlight">遺伝子増幅</span>、点突然変異、転座</td>
+        </tr>
+        <tr>
+          <td class="key">作用</td>
+          <td><span class="highlight">機能獲得型</span>（gain of function）</td>
+        </tr>
+      </table>
+
+      <h3>主な癌遺伝子（頻出）</h3>
+      <table>
+        <tr>
+          <th>遺伝子</th>
+          <th>機能</th>
+          <th>関連腫瘍</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">ras</span>（H-ras, K-ras）</td>
+          <td>シグナル伝達</td>
+          <td>多くの癌</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">myc</span>（c-myc）</td>
+          <td>転写因子</td>
+          <td>バーキットリンパ腫</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">erb-B</span></td>
+          <td>増殖因子受容体</td>
+          <td>乳癌など</td>
+        </tr>
+        <tr>
+          <td class="key">src</td>
+          <td>チロシンキナーゼ</td>
+          <td>肉腫</td>
+        </tr>
+        <tr>
+          <td class="key">bcl-2</td>
+          <td>アポトーシス抑制</td>
+          <td>リンパ腫</td>
+        </tr>
+      </table>
+
+      <h2>III. 癌抑制遺伝子</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>癌形質の発現を<span class="highlight">抑える</span>働きをする遺伝子群</td>
+        </tr>
+        <tr>
+          <td class="key">異常の影響</td>
+          <td>両アレルの<span class="highlight">不活性化</span>で癌抑制機能が失われる</td>
+        </tr>
+        <tr>
+          <td class="key">作用</td>
+          <td><span class="highlight">機能喪失型</span>（loss of function）</td>
+        </tr>
+      </table>
+
+      <h3>主な癌抑制遺伝子（頻出）</h3>
+      <table>
+        <tr>
+          <th>遺伝子</th>
+          <th>機能</th>
+          <th>関連疾患</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">Rb</span></td>
+          <td>細胞周期制御</td>
+          <td><span class="highlight">網膜芽細胞腫</span></td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">p53</span></td>
+          <td>DNA損傷応答、アポトーシス誘導</td>
+          <td>Li-Fraumeni症候群、多くの癌</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">APC</span></td>
+          <td>Wntシグナル制御</td>
+          <td><span class="highlight">家族性大腸ポリポージス</span></td>
+        </tr>
+        <tr>
+          <td class="key">WT1</td>
+          <td>転写因子</td>
+          <td><span class="highlight">ウィルムス腫瘍</span></td>
+        </tr>
+        <tr>
+          <td class="key">NF1</td>
+          <td>Rasシグナル制御</td>
+          <td>神経線維腫症1型</td>
+        </tr>
+        <tr>
+          <td class="key">p16</td>
+          <td>細胞周期制御</td>
+          <td>多くの癌</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">癌遺伝子 vs 癌抑制遺伝子の覚え方</div>
+        <ul>
+          <li><span class="key">癌遺伝子</span>：<span class="highlight">ras, myc, erb-B, src</span>（3文字が多い）</li>
+          <li><span class="key">癌抑制遺伝子</span>：<span class="highlight">Rb, p53, APC, WT1, NF1</span>（大文字＋数字が多い）</li>
+          <li><span class="caution">p16, p53は癌「抑制」遺伝子</span>（pがついても癌遺伝子ではない）</li>
+        </ul>
+      </div>
+
+      <h2>IV. ウイルス発癌</h2>
+
+      <h3>DNAウイルス</h3>
+      <table>
+        <tr>
+          <th>ウイルス</th>
+          <th>関連腫瘍</th>
+        </tr>
+        <tr>
+          <td class="key">HPV（ヒトパピローマウイルス）</td>
+          <td><span class="highlight">子宮頸癌</span>、口腔癌</td>
+        </tr>
+        <tr>
+          <td class="key">EBV（EBウイルス）</td>
+          <td><span class="highlight">バーキットリンパ腫</span>、鼻咽頭癌</td>
+        </tr>
+        <tr>
+          <td class="key">HBV（B型肝炎ウイルス）</td>
+          <td>肝細胞癌</td>
+        </tr>
+        <tr>
+          <td class="key">HHV-8</td>
+          <td>カポジ肉腫</td>
+        </tr>
+      </table>
+
+      <h3>RNAウイルス</h3>
+      <table>
+        <tr>
+          <th>ウイルス</th>
+          <th>関連腫瘍</th>
+        </tr>
+        <tr>
+          <td class="key">HTLV-1</td>
+          <td><span class="highlight">成人T細胞白血病</span></td>
+        </tr>
+        <tr>
+          <td class="key">HCV（C型肝炎ウイルス）</td>
+          <td>肝細胞癌</td>
+        </tr>
+      </table>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A37</div>
+        <p>癌遺伝子はどれか。2つ選べ。</p>
+        <div class="choices">
+          a Rb<br>
+          b p16<br>
+          c p53<br>
+          d c-myc<br>
+          e H-ras
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】<span class="highlight">c-myc</span>と<span class="highlight">H-ras</span>は癌遺伝子。Rb、p16、p53は癌抑制遺伝子。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A110</div>
+        <p>遺伝子増幅が発癌に関わるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a APC<br>
+          b erb-B<br>
+          c p16<br>
+          d p53<br>
+          e Rb
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">erb-B</span>は癌遺伝子であり、<span class="highlight">遺伝子増幅</span>により発癌に関わる。APC、p16、p53、Rbは癌抑制遺伝子であり、機能喪失（不活性化）で発癌に関わる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C18</div>
+        <p>鎖骨頭蓋骨異形成症の原因遺伝子はどれか。1つ選べ。</p>
+        <div class="choices">
+          a APC<br>
+          b EGFR<br>
+          c NF1<br>
+          d p53<br>
+          e RUNX2
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】鎖骨頭蓋骨異形成症は<span class="highlight">RUNX2</span>遺伝子の異常。APCは家族性大腸ポリポージス、NF1は神経線維腫症、p53は多くの癌に関連。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

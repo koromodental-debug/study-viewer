@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "コラーゲンの代謝",
+    "category": "生化学",
+    "chapter": "02_歯と歯周組織"
+  },
+  "sections": [
+    {
+      "section": "MMPの種類と基質",
+      "qa": [
+        {
+          "question": "コラーゲンの分解に関わる酵素はどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "アミラーゼ",
+            "b": "カタラーゼ",
+            "c": "ゼラチナーゼ",
+            "d": "エステラーゼ",
+            "e": "グルコシダーゼ"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "106A125"
+        }
+      ]
+    }
+  ]
+}

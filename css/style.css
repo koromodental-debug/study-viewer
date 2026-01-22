@@ -600,12 +600,10 @@ body {
 
 /* ===== ウェルカム画面（全画面グラフ） ===== */
 .welcome-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
   padding: 0;
-  min-height: 100%;
-  background: var(--bg-color);
   overflow: hidden;
 }
 
@@ -13134,17 +13132,17 @@ body.is-practice .tab-content {
 
 /* 全画面グラフ */
 .graph-container.graph-fullscreen {
-  position: fixed;
-  top: 56px; /* ヘッダーの下 */
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 70px; /* タブバーの上 */
+  bottom: 0;
   width: 100%;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0;
   border-radius: 0;
-  z-index: 5;
+  z-index: 1;
 }
 
 /* ピル型検索バー */
@@ -13336,6 +13334,11 @@ body.is-practice .tab-content {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   z-index: 100;
   pointer-events: none;
+}
+
+/* ツールチップ内の色付き○を非表示 */
+.tooltip-dot {
+  display: none;
 }
 
 .graph-tooltip.visible {

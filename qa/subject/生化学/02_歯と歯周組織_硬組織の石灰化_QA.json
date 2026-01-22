@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "title": "硬組織の石灰化",
+    "category": "生化学",
+    "chapter": "02_歯と歯周組織"
+  },
+  "sections": [
+    {
+      "section": "促進因子",
+      "qa": [
+        {
+          "question": "骨の石灰化に関与するのはどれか。2つ選べ。",
+          "answer": "B, E",
+          "choices": {
+            "a": "RANKL",
+            "b": "基質小胞",
+            "c": "エナメリン",
+            "d": "酸性ホスファターゼ",
+            "e": "アルカリホスファターゼ"
+          },
+          "correctAnswer": "B, E",
+          "numChoices": 2,
+          "code": "104A84"
+        }
+      ]
+    },
+    {
+      "section": "抑制因子",
+      "qa": [
+        {
+          "question": "石灰化を抑制するのはどれか。1つ選べ。",
+          "answer": "A",
+          "choices": {
+            "a": "ピロリン酸",
+            "b": "I型コラーゲン",
+            "c": "ホスホリパーゼ",
+            "d": "ホスファチジルセリン",
+            "e": "アルカリホスファターゼ"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "112A24"
+        }
+      ]
+    },
+    {
+      "section": "基質小胞を形成する細胞",
+      "qa": [
+        {
+          "question": "基質小胞を形成するのはどれか。2つ選べ。",
+          "answer": "B, D",
+          "choices": {
+            "a": "骨細胞",
+            "b": "骨芽細胞",
+            "c": "破骨細胞",
+            "d": "象牙芽細胞",
+            "e": "エナメル芽細胞"
+          },
+          "correctAnswer": "B, D",
+          "numChoices": 2,
+          "code": "113A36"
+        }
+      ]
+    }
+  ]
+}

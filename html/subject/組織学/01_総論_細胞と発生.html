@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細胞と発生 - 組織学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">組織学 / 01_総論</span>
+    <h1>細胞と発生</h1>
+    <div class="container">
+
+      <h2>1. 細胞分裂</h2>
+
+      <h3>体細胞分裂と減数分裂</h3>
+      <table>
+        <tr><th>種類</th><th>染色体数</th><th>分裂回数</th><th>場所</th></tr>
+        <tr><td><span class="key">体細胞分裂</span></td><td>2n → 2n（変化なし）</td><td>1回</td><td>全身の体細胞</td></tr>
+        <tr><td><span class="highlight">減数分裂</span></td><td>2n → n（半減）</td><td>2回</td><td>生殖細胞（精巣・卵巣）</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">減数分裂が起こる細胞</div>
+        <ul>
+          <li><span class="key">精母細胞</span> → 精娘細胞（第一減数分裂）→ 精子細胞（第二減数分裂）</li>
+          <li><span class="key">卵母細胞</span> → 卵娘細胞 → 卵子</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A63</div>
+        <p>減数分裂がみられる分化過程はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 赤芽球から赤血球<br>
+          b 精母細胞から精娘細胞<br>
+          c 前骨芽細胞から骨芽細胞<br>
+          d 歯乳頭細胞から象牙芽細胞<br>
+          e 内エナメル上皮細胞からエナメル芽細胞
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">減数分裂は生殖細胞の形成時のみ</span>に起こる。精母細胞→精娘細胞は第一減数分裂。他の選択肢はすべて体細胞分裂による分化。</p>
+      </div>
+
+      <h2>2. 幹細胞</h2>
+      <p>自己複製能と多分化能をもつ未分化な細胞。</p>
+
+      <h3>幹細胞の種類</h3>
+      <table>
+        <tr><th>種類</th><th>分化能</th><th>由来</th></tr>
+        <tr><td><span class="highlight">ES細胞</span>（胚性幹細胞）</td><td>多能性（全ての細胞に分化可能）</td><td>内細胞塊</td></tr>
+        <tr><td><span class="key">iPS細胞</span>（人工多能性幹細胞）</td><td>多能性</td><td>体細胞に遺伝子導入</td></tr>
+        <tr><td><span class="key">成体幹細胞</span></td><td>限定的（組織特異的）</td><td>各組織</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ES細胞の由来</div>
+        <p>胚盤胞の<span class="highlight">内細胞塊</span>から作製される。内細胞塊は将来胎児になる部分。<span class="caution">栄養膜は胎盤になる部分</span>であり、ES細胞の由来ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C81</div>
+        <p>胚性幹細胞〈ES細胞〉を作製できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 栄養膜<br>
+          b 神経管<br>
+          c 体細胞<br>
+          d 原始結節<br>
+          e 内細胞塊
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】ES細胞は胚盤胞の<span class="highlight">内細胞塊</span>から作製される。栄養膜は胎盤に分化する部分。体細胞から作製するのはiPS細胞。</p>
+      </div>
+
+      <h3>間葉系幹細胞</h3>
+      <p>中胚葉由来の成体幹細胞で、結合組織系の細胞に分化する。</p>
+
+      <table>
+        <tr><th>分化する細胞</th><th>形成する組織</th></tr>
+        <tr><td><span class="key">骨芽細胞</span></td><td>骨組織</td></tr>
+        <tr><td><span class="key">軟骨細胞</span></td><td>軟骨組織</td></tr>
+        <tr><td><span class="key">脂肪細胞</span></td><td>脂肪組織</td></tr>
+        <tr><td><span class="key">骨格筋細胞</span></td><td>骨格筋</td></tr>
+        <tr><td><span class="key">線維芽細胞</span></td><td>結合組織</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114A75</div>
+        <p>間葉系幹細胞から分化するのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 骨芽細胞<br>
+          b 脂肪細胞<br>
+          c 軟骨細胞<br>
+          d 破骨細胞<br>
+          e 骨格筋細胞
+        </div>
+        <div class="answer">正解：a, b, c, e</div>
+        <p>【解説】間葉系幹細胞は骨芽細胞、脂肪細胞、軟骨細胞、骨格筋細胞に分化する。<span class="caution">破骨細胞は造血幹細胞（単球・マクロファージ系）由来</span>であり、間葉系幹細胞からは分化しない。</p>
+      </div>
+
+      <h2>3. 三胚葉の分化</h2>
+      <p>受精卵は卵割を経て胚盤胞となり、原腸形成により三胚葉（外胚葉・中胚葉・内胚葉）に分化する。</p>
+
+      <h3>外胚葉由来の組織</h3>
+      <ul>
+        <li><span class="key">神経管</span>：脳、脊髄</li>
+        <li><span class="key">神経堤</span>：知覚神経、交感神経、シュワン細胞、色素細胞、副腎髄質</li>
+        <li><span class="key">頭部外胚葉性間葉</span>：頭蓋骨、鰓弓軟骨、<span class="highlight">象牙質・歯髄、歯周組織</span></li>
+        <li><span class="key">体表外胚葉</span>：<span class="highlight">エナメル質</span>、表皮、口腔粘膜、水晶体</li>
+      </ul>
+
+      <h3>中胚葉由来の組織</h3>
+      <ul>
+        <li><span class="key">沿軸中胚葉（体節）</span>：真皮、骨格筋、椎骨</li>
+        <li><span class="key">中間中胚葉</span>：泌尿生殖器</li>
+        <li><span class="key">側板中胚葉</span>：体壁、血管、消化管の結合組織・平滑筋</li>
+      </ul>
+
+      <h3>内胚葉由来の組織</h3>
+      <ul>
+        <li><span class="key">原腸</span>：消化管粘膜、肝臓、膵臓、呼吸器</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">歯の発生における胚葉由来</div>
+        <ul>
+          <li><span class="highlight">エナメル質</span>：外胚葉（体表外胚葉）</li>
+          <li><span class="highlight">象牙質・歯髄・歯周組織</span>：外胚葉（神経堤→頭部外胚葉性間葉）</li>
+        </ul>
+        <p><span class="caution">歯の組織はすべて外胚葉由来</span>（中胚葉・内胚葉由来ではない）</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

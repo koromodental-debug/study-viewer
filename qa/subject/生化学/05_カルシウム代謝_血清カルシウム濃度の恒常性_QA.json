@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "title": "血清カルシウム濃度の恒常性",
+    "category": "生化学",
+    "chapter": "05_カルシウム代謝"
+  },
+  "sections": [
+    {
+      "section": "カルシトニンの特徴",
+      "qa": [
+        {
+          "question": "血中Ca2+を減少させるホルモンを分泌するのはどれか。1つ選べ。",
+          "answer": "A",
+          "choices": {
+            "a": "甲状腺",
+            "b": "副腎皮質",
+            "c": "副腎髄質",
+            "d": "副甲状腺",
+            "e": "下垂体後葉"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "102B85"
+        }
+      ]
+    },
+    {
+      "section": "PTHの特徴",
+      "qa": [
+        {
+          "question": "副甲状腺ホルモンの作用はどれか。1つ選べ。",
+          "answer": "D",
+          "choices": {
+            "a": "抗利尿",
+            "b": "血糖降下",
+            "c": "子宮収縮",
+            "d": "血清Ca値上昇",
+            "e": "エネルギー代謝促進"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "105A50"
+        }
+      ]
+    },
+    {
+      "section": "活性型ビタミンDの生成経路",
+      "qa": [
+        {
+          "question": "活性型ビタミンD3の生成に関与するのはどれか。2つ選べ。",
+          "answer": "B, C",
+          "choices": {
+            "a": "骨",
+            "b": "肝臓",
+            "c": "腎臓",
+            "d": "唾液腺",
+            "e": "副腎皮質"
+          },
+          "correctAnswer": "B, C",
+          "numChoices": 2,
+          "code": "105A38"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>増殖と修復：再生 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 総論</span>
+    <h1>増殖と修復：再生</h1>
+    <div class="container">
+
+      <h2>I. 進行性病変の概要</h2>
+
+      <h3>定義と特徴</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>病的侵襲（刺激）に対する生体の<span class="highlight">反応性の増殖性変化</span></td>
+        </tr>
+        <tr>
+          <td class="key">腫瘍との違い</td>
+          <td>自律的増殖をしない。<span class="highlight">刺激因子が消失すれば進行は停止</span></td>
+        </tr>
+        <tr>
+          <td class="key">含まれる病変</td>
+          <td>①肥大、②化生、③再生、④肉芽組織</td>
+        </tr>
+      </table>
+
+      <h2>II. 細胞の再生能による分類</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>再生力</th>
+          <th>具体例</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">永久細胞</span></td>
+          <td><span class="caution">再生力なし</span></td>
+          <td><span class="highlight">心筋細胞</span>、中枢神経細胞</td>
+        </tr>
+        <tr>
+          <td class="key">安定細胞</td>
+          <td>再生力が弱い</td>
+          <td>肝臓・腎臓・膵臓の実質細胞、<span class="highlight">線維芽細胞</span>、平滑筋細胞、骨芽細胞、血管内皮細胞</td>
+        </tr>
+        <tr>
+          <td class="key">不安定細胞</td>
+          <td><span class="highlight">再生力が強い</span></td>
+          <td>扁平上皮基底細胞、骨髄細胞</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">再生能の覚え方</div>
+        <ul>
+          <li><span class="key">永久細胞</span>：「永久に再生しない」→ <span class="highlight">心筋</span>、神経</li>
+          <li><span class="key">安定細胞</span>：普段は分裂しないが、刺激があれば増殖可能</li>
+          <li><span class="key">不安定細胞</span>：常に分裂している → 上皮、骨髄</li>
+          <li>再生力の原則：<span class="highlight">分化度の低い細胞ほど再生力が強い</span></li>
+        </ul>
+      </div>
+
+      <h2>III. 再生の分類</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">完全再生</td>
+          <td>欠損部を<span class="highlight">元の組織で補充</span>・修復</td>
+        </tr>
+        <tr>
+          <td class="key">不完全再生</td>
+          <td>欠損が大きい、または再生力がない場合 → <span class="highlight">瘢痕組織</span>で置換</td>
+        </tr>
+      </table>
+
+      <h2>IV. 肉芽組織</h2>
+
+      <h3>定義と構成</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td><span class="highlight">毛細血管に富む幼若な結合組織</span>。修復反応として形成</td>
+        </tr>
+        <tr>
+          <td class="key">構成細胞</td>
+          <td><span class="highlight">線維芽細胞</span>（最多）、毛細血管内皮細胞、炎症細胞</td>
+        </tr>
+        <tr>
+          <td class="key">基質</td>
+          <td>コラーゲン線維が主</td>
+        </tr>
+        <tr>
+          <td class="key">転帰</td>
+          <td>役割を終えると消失、または<span class="highlight">瘢痕組織</span>に置換</td>
+        </tr>
+      </table>
+
+      <h3>良い肉芽と悪い肉芽</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>良い肉芽</th>
+          <th>悪い肉芽</th>
+        </tr>
+        <tr>
+          <td class="key">炎症細胞</td>
+          <td><span class="highlight">少ない</span></td>
+          <td>多い（好中球）</td>
+        </tr>
+        <tr>
+          <td class="key">血流量</td>
+          <td><span class="highlight">豊富</span></td>
+          <td>少ない</td>
+        </tr>
+        <tr>
+          <td class="key">色</td>
+          <td><span class="highlight">鮮紅色</span></td>
+          <td>灰白色</td>
+        </tr>
+        <tr>
+          <td class="key">滲出液</td>
+          <td>少ない</td>
+          <td>多い（感染を伴う）</td>
+        </tr>
+      </table>
+
+      <h2>V. 創傷治癒</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>一次治癒（一次創傷治癒）</th>
+          <th>二次治癒</th>
+        </tr>
+        <tr>
+          <td class="key">創の状態</td>
+          <td>直線状、組織欠損<span class="highlight">少ない</span></td>
+          <td>組織欠損大、創面の接触なし</td>
+        </tr>
+        <tr>
+          <td class="key">感染</td>
+          <td><span class="highlight">なし</span></td>
+          <td>あり得る</td>
+        </tr>
+        <tr>
+          <td class="key">肉芽形成</td>
+          <td><span class="highlight">ほとんどない</span></td>
+          <td>多い</td>
+        </tr>
+        <tr>
+          <td class="key">瘢痕</td>
+          <td><span class="highlight">形成しない</span></td>
+          <td>形成する</td>
+        </tr>
+        <tr>
+          <td class="key">治癒期間</td>
+          <td>短い</td>
+          <td>長い</td>
+        </tr>
+        <tr>
+          <td class="key">歯科での例</td>
+          <td><span class="highlight">新付着術</span>、<span class="highlight">フラップ手術</span></td>
+          <td>抜歯窩治癒</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">創傷治癒に影響する要因</div>
+        <ul>
+          <li><span class="key">全身性</span>：高齢、全身状態の低下、<span class="highlight">糖尿病</span></li>
+          <li><span class="key">局所性</span>：血液供給不良、感染、異物残存</li>
+        </ul>
+      </div>
+
+      <h2>VI. 骨折の治癒過程</h2>
+
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">1. 凝血塊形成</td>
+          <td>出血による血腫形成</td>
+        </tr>
+        <tr>
+          <td class="key">2. 肉芽組織形成</td>
+          <td>毛細血管・線維芽細胞の増殖</td>
+        </tr>
+        <tr>
+          <td class="key">3. 仮骨形成</td>
+          <td>軟骨性仮骨 → 骨性仮骨</td>
+        </tr>
+        <tr>
+          <td class="key">4. 骨再構成</td>
+          <td>リモデリングにより正常骨に</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="caution">異常</span></td>
+          <td><span class="highlight">偽関節形成</span>（治癒過程の異常）</td>
+        </tr>
+      </table>
+
+      <h2>VII. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A18</div>
+        <p>永久細胞はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肝細胞<br>
+          b 骨芽細胞<br>
+          c 心筋細胞<br>
+          d 線維芽細胞<br>
+          e 血管内皮細胞
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">永久細胞 = 心筋細胞、中枢神経細胞</span>。再生力がない。肝細胞・骨芽細胞・線維芽細胞・血管内皮細胞は安定細胞。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A111</div>
+        <p>肉芽組織を構成するのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 脂肪細胞<br>
+          b 軟骨細胞<br>
+          c 毛細血管<br>
+          d リンパ球<br>
+          e 線維芽細胞
+        </div>
+        <div class="answer">正解：c, d, e</div>
+        <p>【解説】肉芽組織の構成：<span class="highlight">線維芽細胞</span>（最多）、<span class="highlight">毛細血管</span>内皮細胞、炎症細胞（<span class="highlight">リンパ球</span>、マクロファージ等）。脂肪細胞・軟骨細胞は含まれない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C25</div>
+        <p>一次創傷治癒を目的とするのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a GTR法<br>
+          b 新付着術<br>
+          c 歯肉切除術<br>
+          d フラップ手術<br>
+          e 歯肉弁根尖側移動術
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】<span class="highlight">新付着術</span>・<span class="highlight">フラップ手術</span>は創面を密着させ、一次治癒を目的とする。歯肉切除術は二次治癒。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A2</div>
+        <p>顎骨骨折の治癒過程での異常はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 凝血塊形成<br>
+          b 肉芽組織形成<br>
+          c 仮骨形成<br>
+          d 偽関節形成<br>
+          e 骨再構成
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】正常な骨折治癒過程は凝血塊→肉芽組織→仮骨→骨再構成。<span class="highlight">偽関節形成</span>は治癒過程の異常（骨癒合不全）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

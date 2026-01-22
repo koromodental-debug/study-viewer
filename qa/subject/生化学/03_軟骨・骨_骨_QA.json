@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "title": "骨",
+    "category": "生化学",
+    "chapter": "03_軟骨・骨"
+  },
+  "sections": [
+    {
+      "section": "破骨細胞の分化に関わる因子",
+      "qa": [
+        {
+          "question": "破骨細胞に直接作用して活性を促進するのはどれか。1つ選べ。",
+          "answer": "A",
+          "choices": {
+            "a": "RANKL",
+            "b": "カルシトニン",
+            "c": "活性型ビタミンD",
+            "d": "PTH〈副甲状腺ホルモン〉",
+            "e": "TSH〈甲状腺刺激ホルモン〉"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "110C58"
+        }
+      ]
+    },
+    {
+      "section": "破骨細胞の特異形質",
+      "qa": [
+        {
+          "question": "破骨細胞が産生するのはどれか。3つ選べ。",
+          "answer": "A, B, E",
+          "choices": {
+            "a": "カテプシンK",
+            "b": "炭酸脱水酵素Ⅱ型",
+            "c": "コリンエステラーゼ",
+            "d": "アルカリホスファターゼ",
+            "e": "酒石酸抵抗性酸ホスファターゼ"
+          },
+          "correctAnswer": "A, B, E",
+          "numChoices": 3,
+          "code": "113C43"
+        }
+      ]
+    }
+  ]
+}

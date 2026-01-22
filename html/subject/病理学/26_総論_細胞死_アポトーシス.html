@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細胞死：アポトーシス - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 総論</span>
+    <h1>細胞死：アポトーシス</h1>
+    <div class="container">
+
+      <h2>I. 細胞死の分類</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>ネクローシス（壊死）</th>
+          <th>アポトーシス</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>傷害されて生じる<span class="highlight">病的な</span>細胞死</td>
+          <td><span class="highlight">プログラムされた</span>細胞死</td>
+        </tr>
+        <tr>
+          <td class="key">原因</td>
+          <td>虚血、物理的・化学的傷害</td>
+          <td>生理的シグナル、DNA損傷</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">炎症</span></td>
+          <td><span class="highlight">誘発される</span></td>
+          <td><span class="highlight">誘発されない</span></td>
+        </tr>
+        <tr>
+          <td class="key">細胞内容物</td>
+          <td>漏出する</td>
+          <td>漏出しない</td>
+        </tr>
+        <tr>
+          <td class="key">形態変化</td>
+          <td>細胞膨化、崩壊</td>
+          <td>細胞縮小、<span class="highlight">断片化</span></td>
+        </tr>
+        <tr>
+          <td class="key">処理</td>
+          <td>好中球・マクロファージ</td>
+          <td><span class="highlight">マクロファージ</span>による貪食</td>
+        </tr>
+      </table>
+
+      <h2>II. アポトーシスの特徴</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td><span class="highlight">プログラムされた細胞死</span>（生理的・能動的な死）</td>
+        </tr>
+        <tr>
+          <td class="key">制御機構</td>
+          <td><span class="highlight">カスパーゼ</span>による制御</td>
+        </tr>
+        <tr>
+          <td class="key">DNA変化</td>
+          <td><span class="highlight">規則的な断片化</span>（DNAラダー）</td>
+        </tr>
+        <tr>
+          <td class="key">誘導経路</td>
+          <td><span class="highlight">細胞死受容体</span>による誘導（Fasなど）</td>
+        </tr>
+        <tr>
+          <td class="key">クロマチン</td>
+          <td>クロマチンの凝縮・断片化</td>
+        </tr>
+        <tr>
+          <td class="key">最終段階</td>
+          <td><span class="highlight">アポトーシス小体</span>の形成 → マクロファージが貪食</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">アポトーシスの生理的役割</div>
+        <ul>
+          <li><span class="key">発生過程</span>：口蓋の形成、指間の形成</li>
+          <li><span class="key">免疫系</span>：自己反応性T細胞の除去</li>
+          <li><span class="key">組織恒常性</span>：古い細胞の除去</li>
+          <li><span class="key">がん抑制</span>：DNA損傷細胞の除去（p53による誘導）</li>
+        </ul>
+      </div>
+
+      <h2>III. ネクローシス（壊死）の種類</h2>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>機序</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">凝固壊死</span></td>
+          <td>血行障害により凝固・不溶化</td>
+          <td><span class="highlight">心筋梗塞</span>、乾酪壊死（結核）</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">液化壊死</span></td>
+          <td>タンパク分解酵素で軟化融解</td>
+          <td><span class="highlight">脳梗塞</span>、膿瘍</td>
+        </tr>
+        <tr>
+          <td class="key">壊疽</td>
+          <td>壊死+腐敗菌感染 or 乾燥</td>
+          <td>歯髄壊疽、ガス壊疽</td>
+        </tr>
+      </table>
+
+      <h3>壊疽の分類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">乾性壊疽</td>
+          <td>水分蒸発で乾燥</td>
+          <td>ミイラ化</td>
+        </tr>
+        <tr>
+          <td class="key">湿性壊疽</td>
+          <td>嫌気性腐敗菌の感染、腐敗臭</td>
+          <td><span class="highlight">歯髄壊疽</span></td>
+        </tr>
+        <tr>
+          <td class="key">ガス壊疽</td>
+          <td>ガス産生菌の感染</td>
+          <td>クロストリジウム感染</td>
+        </tr>
+      </table>
+
+      <h2>IV. がん細胞とアポトーシス</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>正常細胞</th>
+          <th>がん細胞</th>
+        </tr>
+        <tr>
+          <td class="key">アポトーシス</td>
+          <td>正常に起こる</td>
+          <td><span class="highlight">抑制</span>されている</td>
+        </tr>
+        <tr>
+          <td class="key">増殖能</td>
+          <td>制御されている</td>
+          <td><span class="highlight">亢進</span></td>
+        </tr>
+        <tr>
+          <td class="key">テロメラーゼ</td>
+          <td>活性低い</td>
+          <td>活性<span class="highlight">亢進</span></td>
+        </tr>
+        <tr>
+          <td class="key">浸潤能</td>
+          <td>なし</td>
+          <td><span class="highlight">獲得</span></td>
+        </tr>
+      </table>
+
+      <h2>V. 放射線とアポトーシス</h2>
+
+      <h3>放射線の生物学的影響の順序</h3>
+      <p>①<span class="highlight">DNAの損傷</span>（最も早期）→ ②カスパーゼの活性化 → ③クロマチンの断片化 → ④アポトーシス → ⑤ネクローシス</p>
+
+      <h2>VI. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114C20</div>
+        <p>ネクローシスの特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 炎症の惹起<br>
+          b プログラムされた死<br>
+          c DNAの規則的断片化<br>
+          d カスパーゼによる制御<br>
+          e 細胞死受容体による誘導
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】ネクローシスでは<span class="highlight">炎症が誘発される</span>。b〜eはすべてアポトーシスの特徴。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D7</div>
+        <p>放射線の生物学的影響の過程で最も早期に起こるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a DNAの損傷<br>
+          b アポトーシス<br>
+          c ネクローシス<br>
+          d カスパーゼの活性化<br>
+          e クロマチンの断片化
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】放射線の影響は<span class="highlight">DNAの損傷</span>が最初。その後、カスパーゼ活性化 → クロマチン断片化 → アポトーシス → ネクローシスの順に進行。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B5</div>
+        <p>正常細胞と比較したがん細胞の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 浸潤能の獲得<br>
+          b 増殖能の低下<br>
+          c 遺伝子異常の蓄積<br>
+          d アポトーシスの促進<br>
+          e テロメラーゼ活性の低下
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】がん細胞は<span class="highlight">浸潤能の獲得</span>と<span class="highlight">遺伝子異常の蓄積</span>が特徴。アポトーシスは<span class="caution">抑制</span>（促進ではない）、テロメラーゼ活性は<span class="caution">亢進</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D22</div>
+        <p>放射線の細胞致死効果における修飾因子はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 酸　素<br>
+          b DNA損傷<br>
+          c アポトーシス<br>
+          d 細胞分裂周期<br>
+          e 生物学的効果比
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】放射線感受性の修飾因子：<span class="highlight">酸素</span>（酸素効果）、<span class="highlight">細胞分裂周期</span>（M期・G2期で感受性高い）、<span class="highlight">生物学的効果比</span>。DNA損傷とアポトーシスは結果であり修飾因子ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唾液腺の構造 - 組織学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">組織学 / 05_唾液腺</span>
+    <h1>唾液腺の構造</h1>
+    <div class="container">
+
+      <h2>1. 唾液腺の基本構造</h2>
+      <p>唾液腺は<span class="highlight">腺房</span>（唾液産生）と<span class="highlight">導管</span>（唾液輸送）から構成される。</p>
+
+      <h3>腺房の種類</h3>
+      <table>
+        <tr><th>種類</th><th>分泌物</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">漿液細胞</span></td><td>漿液（サラサラ）</td><td>アミラーゼなどの酵素を含む</td></tr>
+        <tr><td><span class="highlight">粘液細胞</span></td><td>粘液（ネバネバ）</td><td>ムチンを含む</td></tr>
+        <tr><td><span class="key">漿液半月</span></td><td>漿液</td><td>粘液腺房の端に漿液細胞が半月状に付着</td></tr>
+      </table>
+
+      <h3>腺房の神経支配</h3>
+      <ul>
+        <li><span class="key">交感神経</span>：<span class="highlight">粘液</span>細胞の分泌を促進</li>
+        <li><span class="key">副交感神経</span>：<span class="highlight">漿液</span>細胞の分泌を促進</li>
+      </ul>
+
+      <h3>導管系</h3>
+      <ul>
+        <li><span class="key">介在部</span>：腺房から続く細い導管</li>
+        <li><span class="highlight">線条部</span>：電解質の再吸収（Na⁺, Cl⁻）と分泌（K⁺, HCO₃⁻）</li>
+        <li><span class="key">排出管</span>：口腔へ開口</li>
+      </ul>
+
+      <h2>2. 大唾液腺</h2>
+
+      <table>
+        <tr><th>項目</th><th>耳下腺</th><th>顎下腺</th><th>舌下腺</th></tr>
+        <tr><td><span class="key">性状</span></td><td><span class="highlight">純漿液腺</span></td><td>混合腺（漿液＞粘液）</td><td>混合腺（粘液＞漿液）</td></tr>
+        <tr><td><span class="key">分泌量</span></td><td>約25%</td><td><span class="highlight">約60〜70%</span></td><td>約5%</td></tr>
+        <tr><td><span class="key">開口部</span></td><td>耳下腺乳頭<br>（上顎第二大臼歯部頬粘膜）</td><td>舌下小丘</td><td>舌下小丘（大）<br>舌下ヒダ（小）</td></tr>
+        <tr><td><span class="key">導管</span></td><td>Stensen管</td><td>Wharton管</td><td>Barthlin管（大）<br>Rivinus管（小）</td></tr>
+        <tr><td><span class="key">組織像</span></td><td><span class="highlight">脂肪細胞が多い</span></td><td>漿液半月あり</td><td>漿液半月あり</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">大唾液腺の副交感神経支配</div>
+        <ul>
+          <li><span class="highlight">耳下腺</span>：下唾液核 → 舌咽神経 → 耳神経節 → 耳下腺</li>
+          <li><span class="highlight">顎下腺・舌下腺</span>：上唾液核 → 顔面神経（鼓索神経）→ 顎下神経節 → 顎下腺・舌下腺</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A52</div>
+        <p>安静時の唾液分泌量が最も多い唾液腺はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 耳下腺<br>
+          b 顎下腺<br>
+          c 舌下腺<br>
+          d 口唇腺<br>
+          e 口蓋腺
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】安静時の唾液分泌量は<span class="highlight">顎下腺が60〜70%</span>で最も多い。刺激時は耳下腺の分泌量が増加する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A47</div>
+        <p>純漿液腺はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 耳下腺<br>
+          b 顎下腺<br>
+          c 舌下腺<br>
+          d 口蓋腺<br>
+          e Ebner腺
+        </div>
+        <div class="answer">正解：a, e（両方正解）</div>
+        <p>【解説】<span class="highlight">耳下腺</span>と<span class="highlight">Ebner腺</span>は純漿液腺。顎下腺・舌下腺は混合腺、口蓋腺は粘液優位の混合腺。</p>
+      </div>
+
+      <h2>3. 小唾液腺</h2>
+
+      <table>
+        <tr><th>唾液腺</th><th>部位</th><th>性状</th><th>特徴</th></tr>
+        <tr><td><span class="key">口唇腺</span></td><td>口唇粘膜</td><td>混合腺</td><td>−</td></tr>
+        <tr><td><span class="key">頬腺</span></td><td>頬粘膜</td><td>混合腺</td><td>−</td></tr>
+        <tr><td><span class="key">口蓋腺</span></td><td>口蓋粘膜</td><td>粘液優位の混合腺</td><td>口蓋小窩に開口</td></tr>
+        <tr><td><span class="key">前舌腺</span></td><td>舌尖部の舌下面</td><td>混合腺</td><td>Blandin-Nuhn腺</td></tr>
+        <tr><td><span class="highlight">Ebner腺</span></td><td>有郭乳頭・葉状乳頭下部</td><td><span class="highlight">純漿液腺</span></td><td>味蕾の洗浄</td></tr>
+        <tr><td><span class="key">後舌腺</span></td><td>舌扁桃下</td><td>混合腺</td><td>−</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Ebner腺の重要性</div>
+        <p>有郭乳頭と葉状乳頭下部にある<span class="highlight">純漿液腺</span>。味蕾周囲を洗浄し、味物質を溶解して味覚感受に寄与する。</p>
+      </div>
+
+      <h2>4. 唾液の作用</h2>
+
+      <h3>食物摂取に関連する作用</h3>
+      <ul>
+        <li><span class="highlight">消化作用</span>：アミラーゼ（デンプン→マルトース）</li>
+        <li><span class="key">咀嚼の補助</span>：食塊形成</li>
+        <li><span class="key">嚥下の補助</span>：潤滑作用</li>
+        <li><span class="key">味覚の補助</span>：味物質の溶解</li>
+      </ul>
+
+      <h3>口腔内環境の維持</h3>
+      <ul>
+        <li><span class="key">洗浄作用</span>：自浄作用</li>
+        <li><span class="highlight">抗菌作用</span>：IgA、リゾチーム、ペルオキシダーゼ、ラクトフェリンなど</li>
+        <li><span class="highlight">緩衝作用</span>：重炭酸系（HCO₃⁻）</li>
+        <li><span class="highlight">再石灰化作用</span>：Ca²⁺、リン酸イオンの供給</li>
+      </ul>
+
+      <h3>その他</h3>
+      <ul>
+        <li><span class="key">発音の補助</span>：口腔内の湿潤</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">112B45</div>
+        <p>唾液の緩衝作用に関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a IgA<br>
+          b リゾチーム<br>
+          c アミラーゼ<br>
+          d 重炭酸イオン<br>
+          e ペルオキシダーゼ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】唾液の緩衝作用は主に<span class="highlight">重炭酸イオン（HCO₃⁻）</span>による。IgA、リゾチーム、ペルオキシダーゼは抗菌作用、アミラーゼは消化作用に関与。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C62</div>
+        <p>唾液腺の線条部導管で行われるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 水の分泌<br>
+          b Na⁺の再吸収<br>
+          c K⁺の再吸収<br>
+          d Cl⁻の分泌<br>
+          e HCO₃⁻の分泌
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】線条部導管では<span class="highlight">Na⁺とCl⁻を再吸収</span>し、<span class="highlight">K⁺とHCO₃⁻を分泌</span>する。このため唾液は血漿より低張となり、緩衝作用を持つ。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

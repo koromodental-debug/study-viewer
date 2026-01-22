@@ -16,7 +16,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=20260121c">
+  <link rel="stylesheet" href="css/style.css?v=20260123a">
 </head>
 <body>
   <div class="app">
@@ -385,39 +385,6 @@
     </div>
 
 
-    <!-- グラフプレビューモーダル -->
-    <div id="graph-preview-overlay" class="graph-preview-overlay">
-      <div class="graph-preview-backdrop"></div>
-      <div class="graph-preview-sheet">
-        <div class="graph-preview-header">
-          <span class="graph-preview-subject" id="graph-preview-subject"></span>
-          <h3 class="graph-preview-title" id="graph-preview-title"></h3>
-          <button id="graph-preview-close" class="graph-preview-close" aria-label="閉じる">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 6L6 18M6 6l12 12"/>
-            </svg>
-          </button>
-        </div>
-        <div class="graph-preview-body" id="graph-preview-body">
-          <!-- プレビュー内容がここに表示される -->
-        </div>
-        <div class="graph-preview-footer">
-          <button id="graph-preview-open" class="graph-preview-open-btn">
-            <span>このトピックを開く</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <path d="M9 18l6-6-6-6"/>
-            </svg>
-          </button>
-        </div>
-        <div class="graph-preview-related" id="graph-preview-related">
-          <span class="graph-preview-related-label">関連トピック</span>
-          <div class="graph-preview-related-list" id="graph-preview-related-list">
-            <!-- 関連トピックがここに表示される -->
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- 読書モードメニュー -->
     <div id="reading-mode-overlay" class="reading-mode-overlay">
       <div class="reading-mode-sheet">
@@ -508,82 +475,37 @@
       <div class="content-area">
         <div class="tab-content" id="html-content">
           <div class="welcome-screen" id="welcome-screen">
-            <!-- 検索エリア（中央配置） -->
-            <div class="welcome-search-area">
-              <div class="welcome-search-wrapper">
-                <svg class="welcome-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <!-- グラフコンテナ（全画面） -->
+            <div id="graph-container" class="graph-container graph-fullscreen">
+              <div id="graph-viewport" class="graph-viewport">
+                <svg id="graph-svg"></svg>
+              </div>
+              <!-- 下部ピル型検索バー -->
+              <div class="graph-search-pill">
+                <svg class="graph-search-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="11" cy="11" r="8"/>
                   <path d="M21 21l-4.35-4.35"/>
                 </svg>
-                <input type="text" id="welcome-search-input" class="welcome-search-input" placeholder="トピック・キーワードを検索">
+                <input type="text" id="graph-search" class="graph-search-pill-input" placeholder="トピックを検索">
               </div>
-            </div>
-
-            <!-- ビュー切り替え -->
-            <div class="view-toggle-container" id="view-toggle-container">
-              <button class="view-toggle-btn active" id="view-list-btn" data-view="list">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                  <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
-                </svg>
-                <span>リスト</span>
-              </button>
-              <button class="view-toggle-btn" id="view-graph-btn" data-view="graph">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                  <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm-5-3c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm3-5V3.5L16.5 9H13z"/>
-                </svg>
-                <span>関連図</span>
-              </button>
-            </div>
-
-            <!-- グラフビュー（非表示で初期化） -->
-            <div id="graph-view-container" class="graph-view-container" style="display:none;">
-              <div id="graph-canvas" class="graph-canvas"></div>
-              <div class="graph-controls">
-                <button id="graph-zoom-in" class="graph-control-btn" aria-label="拡大">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                  </svg>
-                </button>
-                <button id="graph-zoom-out" class="graph-control-btn" aria-label="縮小">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path d="M19 13H5v-2h14v2z"/>
-                  </svg>
-                </button>
-                <button id="graph-fit" class="graph-control-btn" aria-label="全体表示">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3h-6zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3v6zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6h6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6v-6z"/>
-                  </svg>
-                </button>
+              <div id="graph-tooltip" class="graph-tooltip"></div>
+              <!-- トピックプレビューポップアップ -->
+              <div id="topic-popup-overlay" class="topic-popup-overlay">
+                <div class="topic-popup-backdrop"></div>
+                <div class="topic-popup">
+                  <div class="topic-popup-header">
+                    <h3 class="topic-popup-title"></h3>
+                    <button class="topic-popup-close" id="topic-popup-close">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="topic-popup-body" id="topic-popup-body">
+                    <div class="topic-popup-loading">読み込み中...</div>
+                  </div>
+                </div>
               </div>
-              <div class="graph-legend" id="graph-legend">
-                <!-- 凡例はJSで動的に生成 -->
-              </div>
-            </div>
-
-            <!-- 最近の検索 -->
-            <div class="welcome-history-section" id="welcome-history-section">
-              <div class="welcome-section-header">
-                <span class="welcome-section-title">最近の検索</span>
-                <button id="clear-history-btn" class="clear-history-btn">履歴を消去</button>
-              </div>
-              <div class="welcome-history-list" id="welcome-history-list">
-                <!-- JSで動的に生成 -->
-              </div>
-            </div>
-
-            <!-- おすすめキーワード -->
-            <div class="welcome-recommend-section" id="welcome-recommend-section">
-              <div class="welcome-section-header">
-                <span class="welcome-section-title">おすすめキーワード</span>
-              </div>
-              <div class="welcome-keyword-chips" id="welcome-keyword-chips">
-                <!-- JSで動的に生成 -->
-              </div>
-            </div>
-
-            <!-- 検索結果（検索時のみ表示） -->
-            <div class="welcome-topics" id="welcome-topics" style="display:none;">
-              <!-- JSで動的に生成 -->
             </div>
           </div>
           <div id="html-display" class="html-display" style="display:none;"></div>
@@ -779,22 +701,28 @@
   </div>
 
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
-  <!-- Cytoscape.js（グラフビュー用） -->
-  <script src="https://unpkg.com/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="js/firebase-sync.js?v=20260121c"></script>
+  <script src="js/firebase-sync.js?v=20260123a"></script>
 
-  <script src="js/data.js?v=20260121c"></script>
-  <script src="js/search.js?v=20260121c"></script>
-  <script src="js/favorites.js?v=20260121c"></script>
-  <script src="js/kakomon.js?v=20260121c"></script>
-  <script src="js/flashcard.js?v=20260121c"></script>
-  <script src="js/graph.js?v=20260121c"></script>
-  <script src="js/app.js?v=20260121c"></script>
+  <script src="js/data.js?v=20260123a"></script>
+  <script src="js/search.js?v=20260123a"></script>
+  <script src="js/favorites.js?v=20260123a"></script>
+  <script src="js/kakomon.js?v=20260123a"></script>
+  <script src="js/flashcard.js?v=20260123a"></script>
+  <script src="js/graph.js?v=20260123a"></script>
+  <script src="js/app.js?v=20260123a"></script>
+  <script>
+    // グラフを自動初期化
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof GraphModule !== 'undefined') {
+        GraphModule.initGraph();
+      }
+    });
+  </script>
 </body>
 </html>

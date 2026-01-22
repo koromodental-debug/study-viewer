@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "発声・構音",
+    "category": "生理学",
+    "chapter": "13_発声と構音"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "有声の日本語母音の生成に必須なのはどれか。2つ選べ。",
+          "answer": "呼気流、声帯振動",
+          "choices": {
+            "a": "呼気流",
+            "b": "口唇閉鎖",
+            "c": "舌骨挙上",
+            "d": "声帯振動",
+            "e": "舌と口蓋の接触"
+          },
+          "correctAnswer": "A,D",
+          "numChoices": 2,
+          "code": "108C90"
+        },
+        {
+          "question": "構音に関係するのはどれか。2つ選べ。",
+          "answer": "舌、軟口蓋",
+          "choices": {
+            "a": "舌",
+            "b": "声帯",
+            "c": "気管",
+            "d": "喉頭蓋",
+            "e": "軟口蓋"
+          },
+          "correctAnswer": "A,E",
+          "numChoices": 2,
+          "code": "103C102"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "title": "細胞",
+    "category": "生化学",
+    "chapter": "01_総論"
+  },
+  "sections": [
+    {
+      "section": "B. ゴルジ体",
+      "qa": [
+        {
+          "question": "タンパク質に糖鎖を付加する細胞内小器官はどれか。",
+          "answer": "B",
+          "choices": {
+            "a": "分泌小胞",
+            "b": "ゴルジ体",
+            "c": "リボソーム",
+            "d": "リソソーム",
+            "e": "ミトコンドリア"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "101B127",
+          "note": "参考：101回以前"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>非上皮性悪性腫瘍 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 腫瘍</span>
+    <h1>非上皮性悪性腫瘍</h1>
+    <div class="container">
+
+      <h2>I. 概要</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>上皮以外の組織（間葉組織）から発生する悪性腫瘍</td>
+        </tr>
+        <tr>
+          <td class="key">命名法</td>
+          <td><span class="highlight">〜肉腫（sarcoma）</span>が多い<br><span class="caution">例外</span>：悪性黒色腫、悪性リンパ腫、白血病など</td>
+        </tr>
+        <tr>
+          <td class="key">特徴</td>
+          <td>口腔では扁平上皮癌と比べて<span class="highlight">まれ</span></td>
+        </tr>
+      </table>
+
+      <h2>II. 骨・軟骨由来の悪性腫瘍</h2>
+
+      <h3>1) 骨肉腫</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発年齢</td>
+          <td><span class="highlight">40歳以降</span>に好発<br>他部位の骨肉腫より年齢が高い</td>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td>上顎より<span class="highlight">下顎</span>に多い</td>
+        </tr>
+        <tr>
+          <td class="key">X線所見</td>
+          <td><span class="highlight">旭日状（sunburst）</span>パターン<br>骨膜反応による放射状骨形成</td>
+        </tr>
+        <tr>
+          <td class="key">病理所見</td>
+          <td>強い異型性を示す<span class="highlight">骨芽細胞様細胞</span>のびまん性増殖<br>不規則な形状の<span class="highlight">異型骨（類骨）</span>形成<br>石灰化部はヘマトキシリンで<span class="highlight">濃染</span></td>
+        </tr>
+      </table>
+
+      <h3>2) 軟骨肉腫</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">由来</td>
+          <td>軟骨細胞由来の悪性腫瘍</td>
+        </tr>
+        <tr>
+          <td class="key">病理所見</td>
+          <td>異型性を示す軟骨細胞の増殖<br>軟骨基質の産生</td>
+        </tr>
+      </table>
+
+      <h2>III. 色素細胞由来の悪性腫瘍</h2>
+
+      <h3>悪性黒色腫（メラノーマ）</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">由来</td>
+          <td><span class="highlight">メラノサイト</span>（色素細胞）</td>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td><span class="highlight">口蓋</span>、<span class="highlight">上顎歯肉</span></td>
+        </tr>
+        <tr>
+          <td class="key">臨床所見</td>
+          <td><span class="highlight">黒色</span>の病変<br>潰瘍形成や出血を伴う</td>
+        </tr>
+        <tr>
+          <td class="key">転移</td>
+          <td><span class="highlight">血行性転移</span>しやすい<br><span class="caution">予後不良</span></td>
+        </tr>
+        <tr>
+          <td class="key">病理所見</td>
+          <td>異型性の強い多角形の細胞がびまん性に浸潤増殖<br><span class="highlight">メラニン色素</span>を有する（黒褐色）<br>まれに色素を産生しないタイプ（<span class="highlight">無色素性黒色腫</span>）</td>
+        </tr>
+        <tr>
+          <td class="key">MRI所見</td>
+          <td>T1強調：<span class="highlight">高信号</span><br>T2強調：<span class="highlight">低信号</span></td>
+        </tr>
+      </table>
+
+      <h2>IV. 血管由来の悪性腫瘍</h2>
+
+      <h3>カポジ肉腫</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">原因</td>
+          <td><span class="highlight">HHV-8</span>（ヒトヘルペスウイルス8）</td>
+        </tr>
+        <tr>
+          <td class="key">好発</td>
+          <td><span class="highlight">HIV患者</span>（免疫不全状態）</td>
+        </tr>
+        <tr>
+          <td class="key">特徴</td>
+          <td>血管系の肉腫<br>口腔にも病変を形成</td>
+        </tr>
+      </table>
+
+      <h2>V. 血液・造血系の悪性腫瘍</h2>
+
+      <h3>1) 悪性リンパ腫</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">非ホジキンリンパ腫</span></td>
+          <td>口腔で<span class="highlight">最も多い</span>タイプ<br>B細胞系：バーキットリンパ腫（小児の顎骨内に多い）<br>　　　　　<span class="highlight">びまん性大細胞型B細胞リンパ腫</span>（口腔で最多）<br>T/NK細胞系</td>
+        </tr>
+        <tr>
+          <td class="key">ホジキンリンパ腫</td>
+          <td>非ホジキンリンパ腫より少ない<br><span class="highlight">Reed-Sternberg細胞</span>（2核の巨細胞）が出現</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td><span class="highlight">Waldeyer輪</span>（口蓋扁桃、咽頭扁桃など）</td>
+        </tr>
+        <tr>
+          <td class="key">治療</td>
+          <td>化学療法、放射線療法、造血幹細胞移植</td>
+        </tr>
+      </table>
+
+      <h3>2) 多発性骨髄腫</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発</td>
+          <td><span class="highlight">40歳以上の男性</span>に多い<br><span class="highlight">下顎骨内</span>に発生しやすい</td>
+        </tr>
+        <tr>
+          <td class="key">進展</td>
+          <td>形質細胞腫から<span class="highlight">多発性骨髄腫</span>に進展</td>
+        </tr>
+        <tr>
+          <td class="key">検査所見</td>
+          <td><span class="highlight">Mタンパク質</span>（単クローン性免疫グロブリン）の出現<br>尿中に<span class="highlight">Bence Jonesタンパク質</span>が出現</td>
+        </tr>
+        <tr>
+          <td class="key">病理所見</td>
+          <td>異型形質細胞のびまん性増殖<br>アミロイドーシスを認めることがある</td>
+        </tr>
+      </table>
+
+      <h3>3) 白血病</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">急性骨髄性白血病</td>
+          <td>骨髄への分化を認めるが、幼若な細胞が主体<br>正常造血細胞が減少→出血、易感染性、貧血</td>
+        </tr>
+        <tr>
+          <td class="key">慢性骨髄性白血病</td>
+          <td>さまざまな成熟段階の白血病細胞が出現<br><span class="highlight">フィラデルフィア染色体</span>の転座により発生</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">非上皮性悪性腫瘍の命名法</div>
+        <ul>
+          <li><span class="highlight">〜肉腫</span>：骨肉腫、軟骨肉腫、カポジ肉腫など</li>
+          <li><span class="caution">例外</span>：悪性黒色腫、悪性リンパ腫（〜腫でも悪性）</li>
+          <li>白血病：造血系の悪性腫瘍</li>
+        </ul>
+      </div>
+
+      <h2>VI. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114D72</div>
+        <p>下顎骨の腫脹を主訴に来院。X線写真で旭日状のパターンを認める。診断名はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 骨肉腫<br>
+          b 扁平上皮癌<br>
+          c エナメル上皮腫<br>
+          d 線維性異形成症<br>
+          e 中心性巨細胞肉芽腫
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">旭日状（sunburst）パターン</span>は骨肉腫の特徴的なX線所見。骨膜反応による放射状骨形成を反映。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C65</div>
+        <p>エックス線写真所見と疾患名との組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 旭日状 ─ 骨肉腫<br>
+          b 綿花状 ─ 角化嚢胞性歯原性腫瘍<br>
+          c 蜂巣状 ─ 慢性骨髄炎<br>
+          d 石けん泡状 ─ 骨腫<br>
+          e テニスラケット状 ─ 歯原性粘液腫
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="highlight">旭日状</span>は骨肉腫、<span class="highlight">テニスラケット状</span>は歯原性粘液腫の特徴的所見。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C50</div>
+        <p>Waldeyer輪に好発するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血管腫<br>
+          b リンパ管腫<br>
+          c 横紋筋肉腫<br>
+          d 悪性黒色腫<br>
+          e 悪性リンパ腫
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">悪性リンパ腫</span>はWaldeyer輪（口蓋扁桃、咽頭扁桃など）に好発する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B25</div>
+        <p>頸部リンパ節腫脹を主訴に来院。生検の結果、診断名はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 結核<br>
+          b 神経鞘腫<br>
+          c 放線菌症<br>
+          d 悪性リンパ腫<br>
+          e IgG4関連疾患
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】頸部リンパ節の腫脹で、病理所見でリンパ球の異常増殖を認める場合は<span class="highlight">悪性リンパ腫</span>を考える。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C67</div>
+        <p>悪性リンパ腫に対して行われるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 化学療法<br>
+          b 頸部郭清術<br>
+          c 放射線療法<br>
+          d 高気圧酸素療法<br>
+          e 造血幹細胞移植
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】悪性リンパ腫の治療は<span class="highlight">化学療法</span>、<span class="highlight">放射線療法</span>、<span class="highlight">造血幹細胞移植</span>。頸部郭清術は固形癌の治療法。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

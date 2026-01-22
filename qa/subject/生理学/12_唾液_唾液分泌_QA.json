@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "唾液分泌",
+    "category": "生理学",
+    "chapter": "12_唾液"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "唾液腺導管部におけるイオン再吸収機構の駆動力はどれか。1つ選べ。",
+          "answer": "Na⁺-K⁺ポンプ",
+          "choices": {
+            "a": "水チャネル",
+            "b": "Na⁺-K⁺ポンプ",
+            "c": "プロトンポンプ",
+            "d": "電位依存性Na⁺チャネル",
+            "e": "Na⁺-Ca²⁺トランスポーター"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "109A62"
+        },
+        {
+          "question": "唾液分泌を促進するのはどれか。2つ選べ。",
+          "answer": "嘔吐、副交感神経の興奮",
+          "choices": {
+            "a": "嘔吐",
+            "b": "血漿浸透圧の上昇",
+            "c": "副交感神経の興奮",
+            "d": "舌癌の放射線治療",
+            "e": "Sjögren症候群の罹患"
+          },
+          "correctAnswer": "A,C",
+          "numChoices": 2,
+          "code": "106A50"
+        }
+      ]
+    }
+  ]
+}

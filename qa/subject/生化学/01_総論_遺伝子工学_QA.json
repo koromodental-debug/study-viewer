@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "title": "遺伝子工学",
+    "category": "生化学",
+    "chapter": "01_総論"
+  },
+  "sections": [
+    {
+      "section": "PCR法に必要な材料",
+      "qa": [
+        {
+          "question": "PCR法に不要なものはどれか。",
+          "answer": "A",
+          "choices": {
+            "a": "DNAリガーゼ",
+            "b": "DNAプライマー",
+            "c": "DNAテンプレート",
+            "d": "デオキシヌクレオチド",
+            "e": "耐熱性DNAポリメラーゼ"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "100A51",
+          "note": "参考：100回以前"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>生体適応現象：増生 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 総論</span>
+    <h1>生体適応現象：増生（過形成）</h1>
+    <div class="container">
+
+      <h2>I. 増生（過形成）の定義</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td><span class="highlight">細胞数の増加</span>による臓器・組織の増大</td>
+        </tr>
+        <tr>
+          <td class="key">別名</td>
+          <td>過形成（hyperplasia）= 増生</td>
+        </tr>
+        <tr>
+          <td class="key">位置づけ</td>
+          <td>生体<span class="highlight">適応現象</span>の一つ</td>
+        </tr>
+        <tr>
+          <td class="key">特徴</td>
+          <td>刺激除去で元に戻りうる（可逆的）</td>
+        </tr>
+      </table>
+
+      <h2>II. 肥大 vs 増生（過形成）</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>肥大</th>
+          <th>増生（過形成）</th>
+        </tr>
+        <tr>
+          <td class="key">変化</td>
+          <td>細胞の<span class="highlight">容積増大</span></td>
+          <td>細胞<span class="highlight">数の増加</span></td>
+        </tr>
+        <tr>
+          <td class="key">臓器の変化</td>
+          <td>臓器が大きくなる</td>
+          <td>臓器が大きくなる</td>
+        </tr>
+        <tr>
+          <td class="key">例</td>
+          <td>心肥大、骨格筋肥大</td>
+          <td>歯肉増殖症、セメント質過形成</td>
+        </tr>
+        <tr>
+          <td class="key">適応</td>
+          <td>分裂能の低い細胞</td>
+          <td>分裂能の高い細胞</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">肥大と増生の使い分け</div>
+        <ul>
+          <li><span class="key">心筋・骨格筋</span>：分裂能が低い → <span class="highlight">肥大</span>で対応</li>
+          <li><span class="key">上皮・結合組織</span>：分裂能が高い → <span class="highlight">増生</span>で対応</li>
+          <li>両者が<span class="key">同時に起こる</span>こともある（例：妊娠子宮）</li>
+        </ul>
+      </div>
+
+      <h2>III. 口腔領域での増生（過形成）</h2>
+
+      <h3>歯肉増殖症</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>原因</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">薬物性歯肉増殖症</span></td>
+          <td><span class="highlight">ニフェジピン</span>（Ca拮抗薬）<br><span class="highlight">フェニトイン</span>（抗てんかん薬）<br><span class="highlight">シクロスポリン</span>（免疫抑制薬）</td>
+          <td>歯肉線維の増加</td>
+        </tr>
+        <tr>
+          <td class="key">遺伝性歯肉線維腫症</td>
+          <td>遺伝性</td>
+          <td>全顎的な歯肉の線維性増殖</td>
+        </tr>
+        <tr>
+          <td class="key">炎症性歯肉増殖</td>
+          <td>慢性炎症</td>
+          <td>プラークコントロールで改善</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">薬物性歯肉増殖を起こす3つの薬（頻出）</div>
+        <ul>
+          <li><span class="highlight">ニフェジピン</span>（Ca拮抗薬・降圧薬）</li>
+          <li><span class="highlight">フェニトイン</span>（抗てんかん薬）</li>
+          <li><span class="highlight">シクロスポリン</span>（免疫抑制薬）</li>
+        </ul>
+        <p class="note">※いずれも<span class="highlight">歯肉線維の増加</span>が病理組織学的特徴</p>
+      </div>
+
+      <h3>その他の過形成</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>特徴</th>
+          <th>原因</th>
+        </tr>
+        <tr>
+          <td class="key">セメント質過形成</td>
+          <td>セメント質の過剰形成</td>
+          <td>慢性刺激、根尖性歯周炎</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">乳頭状過形成</span></td>
+          <td>粘膜の乳頭状増殖</td>
+          <td><span class="highlight">義歯床縁の過長</span></td>
+        </tr>
+        <tr>
+          <td class="key">義歯性線維腫</td>
+          <td>線維性の腫瘤</td>
+          <td>義歯床縁の慢性刺激</td>
+        </tr>
+        <tr>
+          <td class="key">咀嚼筋腱・腱膜過形成症</td>
+          <td>開口制限、下顎角部肥大</td>
+          <td>咀嚼筋の過形成</td>
+        </tr>
+      </table>
+
+      <h2>IV. 生体適応現象の比較</h2>
+
+      <table>
+        <tr>
+          <th>現象</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">萎縮</td>
+          <td>細胞・組織の縮小</td>
+          <td>廃用性萎縮、老人性萎縮</td>
+        </tr>
+        <tr>
+          <td class="key">肥大</td>
+          <td>細胞の<span class="highlight">容積増大</span></td>
+          <td>心肥大、骨格筋肥大</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">増生（過形成）</span></td>
+          <td>細胞<span class="highlight">数の増加</span></td>
+          <td>歯肉増殖症、セメント質過形成</td>
+        </tr>
+        <tr>
+          <td class="key">化生</td>
+          <td>細胞の種類が変化</td>
+          <td>扁平上皮化生、腸上皮化生</td>
+        </tr>
+      </table>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115D36</div>
+        <p>長期間の服用によって歯肉増殖が生じる薬物はどれか。3つ選べ。</p>
+        <div class="choices">
+          a ニフェジピン<br>
+          b フェニトイン<br>
+          c シクロスポリン<br>
+          d シロスタゾール<br>
+          e スルホニル尿素薬
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】薬物性歯肉増殖を起こす3大薬物：<span class="highlight">ニフェジピン</span>（Ca拮抗薬）、<span class="highlight">フェニトイン</span>（抗てんかん薬）、<span class="highlight">シクロスポリン</span>（免疫抑制薬）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C14</div>
+        <p>義歯床縁の過長が原因で生じるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 褥瘡性潰瘍<br>
+          b 口腔扁平苔癬<br>
+          c 再発性アフタ<br>
+          d 乳頭状過形成<br>
+          e フラビーガム
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】義歯床縁の過長による持続的刺激は<span class="highlight">褥瘡性潰瘍</span>を生じる。乳頭状過形成は義歯床下粘膜に生じる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D83</div>
+        <p>咀嚼筋腱・腱膜過形成症の特徴的な所見はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 開口制限<br>
+          b クリック<br>
+          c 下顎の偏位<br>
+          d 下顎角部の肥大<br>
+          e 顎関節部の圧痛
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】咀嚼筋腱・腱膜過形成症では<span class="highlight">開口制限</span>と<span class="highlight">下顎角部の肥大</span>が特徴的。咬筋の過形成により下顎角部が膨隆する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C125</div>
+        <p>薬物性歯肉増殖症の歯周組織にみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯槽骨の増生<br>
+          b 歯肉膿瘍の形成<br>
+          c 歯肉線維の増加<br>
+          d セメント質の肥厚<br>
+          e 上皮性付着の歯冠側移動
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】薬物性歯肉増殖症では<span class="highlight">歯肉線維の増加</span>が病理組織学的特徴。線維芽細胞の増殖とコラーゲン線維の増生がみられる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C90</div>
+        <p>プラークコントロールが症状の改善に有効でないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 妊娠関連歯肉炎<br>
+          b 糖尿病関連歯肉炎<br>
+          c 萌出期関連歯肉炎<br>
+          d アレルギー性歯肉炎<br>
+          e フェニトイン歯肉増殖症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】アレルギー性歯肉炎はプラークが原因ではなく、アレルゲンへの反応が原因。フェニトイン歯肉増殖症はプラークコントロールで増殖を抑制できる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

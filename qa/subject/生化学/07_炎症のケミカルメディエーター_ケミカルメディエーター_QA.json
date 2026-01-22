@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "title": "ケミカルメディエーター",
+    "category": "生化学",
+    "chapter": "07_炎症のケミカルメディエーター"
+  },
+  "sections": [
+    {
+      "section": "5つの分類",
+      "qa": [
+        {
+          "question": "細胞膜由来の起炎性物質はどれか。2つ選べ。",
+          "answer": "D, E",
+          "choices": {
+            "a": "ヒスタミン",
+            "b": "カリクレイン",
+            "c": "ブラジキニン",
+            "d": "ロイコトリエン",
+            "e": "プロスタグランジン"
+          },
+          "correctAnswer": "D, E",
+          "numChoices": 2,
+          "code": "107C57"
+        }
+      ]
+    },
+    {
+      "section": "各物質の作用",
+      "qa": [
+        {
+          "question": "発痛作用を持つのはどれか。1つ選べ。",
+          "answer": "D",
+          "choices": {
+            "a": "GABA",
+            "b": "グリシン",
+            "c": "コルチゾール",
+            "d": "ブラジキニン",
+            "e": "エンケファリン"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "112A25"
+        }
+      ]
+    }
+  ]
+}

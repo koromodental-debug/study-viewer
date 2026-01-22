@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>細胞診 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 病理検査</span>
+    <h1>細胞診</h1>
+    <div class="container">
+
+      <h2>I. 組織診と細胞診の比較</h2>
+
+      <h3>組織診と細胞診の違い</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>組織診</th>
+          <th>細胞診</th>
+        </tr>
+        <tr>
+          <td class="key">用途</td>
+          <td><span class="highlight">確定診断</span></td>
+          <td>スクリーニング（場合により確定診断）</td>
+        </tr>
+        <tr>
+          <td class="key">侵襲性</td>
+          <td>ある</td>
+          <td><span class="highlight">ない（少ない）</span></td>
+        </tr>
+        <tr>
+          <td class="key">手技</td>
+          <td>経験が必要</td>
+          <td><span class="highlight">簡便</span></td>
+        </tr>
+        <tr>
+          <td class="key">組織構造</td>
+          <td>保持される</td>
+          <td class="caution">保持されない</td>
+        </tr>
+        <tr>
+          <td class="key">情報量</td>
+          <td>多い</td>
+          <td>少ない</td>
+        </tr>
+        <tr>
+          <td class="key">標本作製時間</td>
+          <td>長い</td>
+          <td><span class="highlight">短い</span></td>
+        </tr>
+        <tr>
+          <td class="key">一般染色</td>
+          <td>HE染色</td>
+          <td>Papanicolaou染色</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">細胞診の利点（組織診との比較）</div>
+        <ul>
+          <li>検体採取に伴う<span class="highlight">侵襲が少ない</span></li>
+          <li>標本作製に要する<span class="highlight">時間が短い</span></li>
+        </ul>
+      </div>
+
+      <h2>II. 細胞診の手順</h2>
+
+      <h3>基本手順</h3>
+      <p>① 細胞の採取 → ② 固定 → ③ 染色</p>
+
+      <h3>固定法と染色法の対応</h3>
+      <table>
+        <tr>
+          <th>固定法</th>
+          <th>固定液</th>
+          <th>染色法</th>
+        </tr>
+        <tr>
+          <td class="key">湿固定</td>
+          <td>95%エタノール</td>
+          <td><span class="highlight">Papanicolaou染色</span></td>
+        </tr>
+        <tr>
+          <td class="key">乾燥固定</td>
+          <td>冷風ドライヤー、メタノール</td>
+          <td><span class="highlight">May-Giemsa染色</span></td>
+        </tr>
+      </table>
+      <p class="note">※ 2枚作製する場合は両方の染色を行う</p>
+
+      <h2>III. 特殊染色</h2>
+
+      <h3>主要な特殊染色と対象</h3>
+      <table>
+        <tr>
+          <th>染色法</th>
+          <th>検出物</th>
+          <th>対象疾患</th>
+        </tr>
+        <tr>
+          <td class="key">May-Giemsa染色</td>
+          <td>血球（細胞診）</td>
+          <td><span class="highlight">血液塗抹標本</span>、悪性リンパ腫、白血病</td>
+        </tr>
+        <tr>
+          <td class="key">Papanicolaou染色</td>
+          <td>細胞（細胞診）</td>
+          <td>細胞診全般、角化細胞（オレンジ色）</td>
+        </tr>
+        <tr>
+          <td class="key">Grocott染色</td>
+          <td>真菌</td>
+          <td><span class="highlight">カンジダ症</span></td>
+        </tr>
+        <tr>
+          <td class="key">PAS染色</td>
+          <td>粘液多糖、真菌</td>
+          <td>カンジダ症、腺房細胞</td>
+        </tr>
+        <tr>
+          <td class="key">Ziehl-Neelsen染色</td>
+          <td>抗酸菌</td>
+          <td>結核</td>
+        </tr>
+        <tr>
+          <td class="key">HE染色</td>
+          <td>一般組織</td>
+          <td>組織診の標準染色</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">染色法の覚え方</div>
+        <ul>
+          <li><span class="key">Grocott</span> = 真菌（カンジダ）→ <span class="highlight">G</span>rocott = 菌（<span class="highlight">G</span>erms）</li>
+          <li><span class="key">May-Giemsa</span> = 血球 → 血液塗抹標本の標準</li>
+          <li><span class="key">Papanicolaou</span> = 細胞診 → <span class="highlight">Pap</span>スメア</li>
+        </ul>
+      </div>
+
+      <h2>IV. 口腔細胞診の判定基準</h2>
+
+      <h3>口腔細胞診報告様式ガイドライン（2015年）</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>略称</th>
+          <th>意味</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td class="key">NILM</td>
+          <td>陰性</td>
+          <td>悪性所見なし</td>
+          <td>経過観察</td>
+        </tr>
+        <tr>
+          <td class="key">OLSIL</td>
+          <td>軽度異形成</td>
+          <td>Oral Low-grade Squamous Intraepithelial Lesion</td>
+          <td>経過観察・再検</td>
+        </tr>
+        <tr>
+          <td class="key">OHSIL</td>
+          <td>高度異形成</td>
+          <td>Oral High-grade Squamous Intraepithelial Lesion</td>
+          <td><span class="highlight">組織診へ</span></td>
+        </tr>
+        <tr>
+          <td class="key">SCC</td>
+          <td>癌</td>
+          <td>Squamous Cell Carcinoma</td>
+          <td><span class="highlight">組織診へ</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">従来のClass分類との対応</div>
+        <ul>
+          <li><span class="key">Class I, II</span> → NILM（陰性）</li>
+          <li><span class="key">Class III</span> → OLSIL / OHSIL（異形成）</li>
+          <li><span class="key">Class IV, V</span> → SCC（癌疑い・癌）</li>
+        </ul>
+        <p class="note">※ 112A32は採点除外問題だが、ガイドライン分類の知識は重要</p>
+      </div>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105C76</div>
+        <p>通常の病理組織検査に比べた細胞診の利点はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 確定診断に適する。<br>
+          b 検体からの情報量が多い。<br>
+          c 組織構築を把握しやすい。<br>
+          d 検体採取に伴う侵襲が少ない。<br>
+          e 標本作製に要する時間が短い。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】細胞診の利点は「侵襲が少ない」「時間が短い」。a〜cは組織診の利点。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C114</div>
+        <p>血液塗抹標本の染色法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Sudan III染色<br>
+          b Congo-Red染色<br>
+          c May-Giemsa染色<br>
+          d Ziehl-Neelsen染色<br>
+          e hematoxylin eosin染色
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">血液塗抹標本 = May-Giemsa染色</span>。Sudan III = 脂肪、Congo-Red = アミロイド、Ziehl-Neelsen = 抗酸菌（結核）、HE = 組織診の標準。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A123（図あり）</div>
+        <p>病理検査の顕微鏡写真（別冊No.00）を別に示す。染色法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107A123_1.png" alt="107A123">
+        </div>
+        <div class="choices">
+          a PAS<br>
+          b Gram<br>
+          c Grocott<br>
+          d May-Giemsa<br>
+          e Papanicolaou
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】Papanicolaou染色は細胞診の標準染色。角化細胞がオレンジ色に染まるのが特徴。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B36（図あり）</div>
+        <p>Papanicolaou 染色の細胞像（別冊No.4）を別に示す。矢印で示すものはGrocott染色に陽性を呈する。考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113B36_1.png" alt="113B36">
+        </div>
+        <div class="choices">
+          a Candida albicans<br>
+          b Treponema pallidum<br>
+          c Staphylococcus aureus<br>
+          d Mycoplasma pneumoniae<br>
+          e Mycobacterium tuberculosis
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">Grocott染色陽性 = 真菌</span>。選択肢の中で真菌は<span class="key">Candida albicans</span>のみ。Treponema = スピロヘータ、Staphylococcus = 細菌、Mycoplasma = 細菌、Mycobacterium = 抗酸菌。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

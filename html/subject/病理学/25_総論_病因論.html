@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>病因論 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 総論</span>
+    <h1>病因論</h1>
+    <div class="container">
+
+      <h2>I. 病因の定義</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">病因</td>
+          <td><span class="highlight">病気の原因</span>のこと</td>
+        </tr>
+        <tr>
+          <td class="key">分類</td>
+          <td><span class="highlight">内因</span>と<span class="highlight">外因</span>に大別</td>
+        </tr>
+      </table>
+
+      <h2>II. 内因</h2>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">内因</span></td>
+          <td>個体の<span class="highlight">内部</span>にある病気の原因<br>（本体は<span class="highlight">遺伝子</span>）</td>
+          <td>遺伝性疾患、染色体異常</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">素因</span></td>
+          <td>病気にかかりやすい<span class="highlight">素質</span></td>
+          <td>－</td>
+        </tr>
+      </table>
+
+      <h3>素因の種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">一般的素因</td>
+          <td>ヒトに共通して認める素質</td>
+          <td>年齢、性別、人種、臓器</td>
+        </tr>
+        <tr>
+          <td class="key">体質</td>
+          <td>個人の特性</td>
+          <td>アレルギー、内分泌異常</td>
+        </tr>
+      </table>
+
+      <h2>III. 外因</h2>
+
+      <p>生体に傷害を与える<span class="highlight">外的な原因</span>（環境要因）</p>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">栄養障害</td>
+          <td>ビタミン欠乏症（壊血病など）</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">物理的因子</span></td>
+          <td>放射線、機械的刺激、温熱</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">化学的因子</span></td>
+          <td>薬物、化学物質</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">生物学的因子</span></td>
+          <td>細菌、ウイルス</td>
+        </tr>
+        <tr>
+          <td class="key">ストレス</td>
+          <td>心理的・社会的ストレス</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">内因 vs 外因の整理</div>
+        <ul>
+          <li><span class="key">内因</span>：遺伝子（ゲノム）、素因、体質、内分泌異常、免疫応答異常</li>
+          <li><span class="key">外因</span>：環境（物理的、化学的、生物学的、栄養）</li>
+          <li>多くの疾患は<span class="highlight">内因と外因の相互作用</span>で発症</li>
+        </ul>
+      </div>
+
+      <h2>IV. 感染様式による分類</h2>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">外因感染</td>
+          <td>体外から病原体が侵入</td>
+          <td>結核、破傷風</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">内因感染</span></td>
+          <td>体内の<span class="highlight">常在菌</span>が原因</td>
+          <td><span class="highlight">カンジダ症</span></td>
+        </tr>
+        <tr>
+          <td class="key">日和見感染</td>
+          <td>免疫低下時に発症</td>
+          <td>AIDS関連感染症</td>
+        </tr>
+      </table>
+
+      <h2>V. 歯の変色と病因</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>原因</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">内因性変色</span></td>
+          <td>歯の内部からの変色</td>
+          <td><span class="highlight">ビリルビン</span>、<span class="highlight">ポルフィリン</span>、歯髄壊死、加齢</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">外因性変色</span></td>
+          <td>歯の外部からの変色</td>
+          <td><span class="highlight">齲蝕</span>、着色（茶渋等）</td>
+        </tr>
+      </table>
+
+      <h2>VI. 出血性素因</h2>
+
+      <p>出血しやすい体質・病態のこと</p>
+
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>疾患例</th>
+        </tr>
+        <tr>
+          <td class="key">ビタミンC欠乏</td>
+          <td><span class="highlight">壊血病</span></td>
+        </tr>
+        <tr>
+          <td class="key">凝固因子産生低下</td>
+          <td><span class="highlight">肝硬変</span></td>
+        </tr>
+        <tr>
+          <td class="key">血小板減少</td>
+          <td><span class="highlight">特発性血小板減少性紫斑病（ITP）</span></td>
+        </tr>
+        <tr>
+          <td class="key">凝固異常</td>
+          <td><span class="highlight">播種性血管内凝固症候群（DIC）</span></td>
+        </tr>
+      </table>
+
+      <h2>VII. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106C31</div>
+        <p>齲蝕の病因論について化学細菌説を唱えた歯科医師はどれか。1つ選べ。</p>
+        <div class="choices">
+          a G.V.Black<br>
+          b P.H.Keyes<br>
+          c J.K.Clarke<br>
+          d F.J.Orland<br>
+          e W.D.Miller
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">W.D.Miller</span>が化学細菌説を提唱。口腔内細菌が糖を分解して酸を産生し、歯を脱灰するという説。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A78</div>
+        <p>正しい組合せはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 院内感染 ─── 破傷風<br>
+          b 内因感染 ─── カンジダ症<br>
+          c 飛沫感染 ─── AIDS<br>
+          d 病巣感染 ─── 虫垂炎<br>
+          e 垂直感染 ─── 口唇ヘルペス
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">内因感染</span>は体内の常在菌が原因。<span class="highlight">カンジダ</span>は口腔内常在菌であり、免疫低下時に内因感染として発症する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C9</div>
+        <p>外因性の歯の変色はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 加　齢<br>
+          b 齲　蝕<br>
+          c 歯髄壊死<br>
+          d ポルフィリン症<br>
+          e エナメル質形成不全症
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">齲蝕</span>は外部からの細菌感染による外因性変色。加齢、歯髄壊死、ポルフィリン症は内因性。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A81</div>
+        <p>歯の内因性変色の原因となるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a メラニン<br>
+          b アマルガム<br>
+          c ビリルビン<br>
+          d ポルフィリン<br>
+          e ポリフェノール
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="highlight">ビリルビン</span>（黄疸）、<span class="highlight">ポルフィリン</span>（ポルフィリン症）は内因性変色の原因。アマルガム、ポリフェノールは外因性。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D83</div>
+        <p>出血性素因はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 壊血病<br>
+          b 肝硬変<br>
+          c 腎盂腎炎<br>
+          d 播種性血管内凝固症候群〈DIC〉<br>
+          e 特発性血小板減少性紫斑病〈ITP〉
+        </div>
+        <div class="answer">正解：a, b, d, e</div>
+        <p>【解説】出血性素因：<span class="highlight">壊血病</span>（ビタミンC欠乏）、<span class="highlight">肝硬変</span>（凝固因子↓）、<span class="highlight">DIC</span>、<span class="highlight">ITP</span>（血小板↓）。腎盂腎炎は感染症であり出血性素因ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

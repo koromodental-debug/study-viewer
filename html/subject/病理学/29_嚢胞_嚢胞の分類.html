@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>嚢胞の分類 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 嚢胞</span>
+    <h1>嚢胞の分類</h1>
+    <div class="container">
+
+      <h2>I. 嚢胞の定義と基本分類</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>生体内に形成された<span class="highlight">病的空洞</span>の総称で、<span class="highlight">嚢胞壁</span>と<span class="highlight">嚢胞腔</span>から構成される</td>
+        </tr>
+        <tr>
+          <td class="key">特徴</td>
+          <td>顎骨は他の骨と比較して<span class="highlight">嚢胞性疾患が多い</span></td>
+        </tr>
+      </table>
+
+      <h3>基本分類</h3>
+      <table>
+        <tr>
+          <th>分類軸</th>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key" rowspan="2">上皮の有無</td>
+          <td><span class="highlight">真性嚢胞</span></td>
+          <td>嚢胞壁上皮が<span class="highlight">ある</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">偽嚢胞</span></td>
+          <td>嚢胞壁上皮が<span class="highlight">ない</span></td>
+        </tr>
+        <tr>
+          <td class="key" rowspan="2">原因</td>
+          <td><span class="highlight">発育性嚢胞</span></td>
+          <td>炎症<span class="highlight">以外</span>の原因で生じる</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">炎症性嚢胞</span></td>
+          <td>炎症が原因（歯根嚢胞）</td>
+        </tr>
+        <tr>
+          <td class="key" rowspan="2">由来</td>
+          <td><span class="highlight">歯原性嚢胞</span></td>
+          <td>歯胚に由来する嚢胞</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">非歯原性嚢胞</span></td>
+          <td>歯胚に由来しない嚢胞</td>
+        </tr>
+        <tr>
+          <td class="key" rowspan="2">発生部位</td>
+          <td>顎骨内嚢胞</td>
+          <td>顎骨の中に発生</td>
+        </tr>
+        <tr>
+          <td>軟組織嚢胞</td>
+          <td>軟組織に発生</td>
+        </tr>
+      </table>
+
+      <h2>II. 歯原性嚢胞</h2>
+
+      <p>歯胚の遺残組織に由来する発育性あるいは炎症性嚢胞</p>
+
+      <h3>顎骨内に発生する歯原性発育嚢胞</h3>
+      <table>
+        <tr>
+          <th>嚢胞</th>
+          <th>特徴</th>
+          <th>病理所見</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">含歯性嚢胞</span><br>（濾胞性歯嚢胞）</td>
+          <td>埋伏した下顎智歯部、上顎犬歯部に好発<br><span class="highlight">歯冠を含む</span>嚢胞</td>
+          <td><span class="highlight">非角化</span>重層扁平上皮</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">歯原性角化嚢胞</span></td>
+          <td><span class="highlight">再発傾向</span>が強い<br>内容物は<span class="highlight">オカラ状</span>（角質）<br>多発例は基底母斑症候群</td>
+          <td>薄い<span class="highlight">錯角化</span>重層扁平上皮<br>基底層の<span class="highlight">柵状配列</span><br><span class="highlight">娘嚢胞</span>（再発の原因）</td>
+        </tr>
+        <tr>
+          <td class="key">側方性歯周嚢胞</td>
+          <td>歯根側面に発生<br>当該歯は<span class="highlight">生活歯</span></td>
+          <td>非角化重層扁平上皮</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">石灰化歯原性嚢胞</span></td>
+          <td>前歯部に好発<br>10〜20歳代と50〜60歳代<br>歯牙腫を合併</td>
+          <td>エナメル髄様構造<br><span class="highlight">幻影細胞</span>（異所性石灰化）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">幻影細胞とは</div>
+        <p>嚢胞壁上皮細胞の<span class="highlight">扁平上皮化生</span>により形成される。石灰化歯原性嚢胞に特徴的な所見。</p>
+      </div>
+
+      <h3>歯原性炎症性嚢胞</h3>
+      <table>
+        <tr>
+          <th>嚢胞</th>
+          <th>特徴</th>
+          <th>病理所見</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">歯根嚢胞</span></td>
+          <td><span class="highlight">最も多い</span>顎骨嚢胞<br>失活歯の根尖部に発生<br>慢性根尖性歯周炎から発生</td>
+          <td><span class="highlight">3層構造</span>：<br>①裏層上皮<br>②炎症性肉芽組織<br>③線維性結合組織</td>
+        </tr>
+      </table>
+
+      <h2>III. 非歯原性嚢胞</h2>
+
+      <p>歯胚の遺残組織に<span class="highlight">由来しない</span>嚢胞</p>
+
+      <h3>発生由来のまとめ</h3>
+      <table>
+        <tr>
+          <th>嚢胞</th>
+          <th>発生由来</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">鼻口蓋管嚢胞</span></td>
+          <td><span class="highlight">鼻口蓋管</span>の遺残組織</td>
+        </tr>
+        <tr>
+          <td class="key">術後性上顎嚢胞</td>
+          <td>残留上顎洞粘膜</td>
+        </tr>
+        <tr>
+          <td class="key">鼻歯槽嚢胞</td>
+          <td>鼻涙管原器</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">甲状舌管嚢胞</span></td>
+          <td><span class="highlight">甲状舌管</span>の遺残</td>
+        </tr>
+        <tr>
+          <td class="key">鰓嚢胞</td>
+          <td>鰓原性器官</td>
+        </tr>
+        <tr>
+          <td class="key">類皮嚢胞・類表皮嚢胞</td>
+          <td>胎生期外胚葉組織</td>
+        </tr>
+      </table>
+
+      <h3>顎骨内に発生する非歯原性嚢胞</h3>
+      <table>
+        <tr>
+          <th>嚢胞</th>
+          <th>特徴</th>
+          <th>病理所見</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">鼻口蓋管嚢胞</span><br>（切歯管嚢胞）</td>
+          <td>上顎正中口蓋部に好発<br>X線で<span class="highlight">ハート形</span>透過像</td>
+          <td><span class="highlight">線毛円柱上皮</span>or立方上皮<br>粘液細胞を含む</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">術後性上顎嚢胞</span></td>
+          <td>上顎洞炎の根治術後<br>数年〜数十年後に発症</td>
+          <td>線毛円柱上皮<br>慢性炎症性細胞浸潤</td>
+        </tr>
+        <tr>
+          <td class="key">単純性骨嚢胞<br>（外傷性骨嚢胞）</td>
+          <td>10歳代の下顎に多い<br>外傷が原因と推察<br><span class="caution">偽嚢胞</span></td>
+          <td>上皮の被覆を欠く<br>炎症性変化なし</td>
+        </tr>
+        <tr>
+          <td class="key">脈瘤性骨嚢胞</td>
+          <td>新鮮血液で満たされる<br><span class="caution">偽嚢胞</span></td>
+          <td>上皮の被覆を欠く</td>
+        </tr>
+      </table>
+
+      <h3>軟組織に発生する非歯原性嚢胞</h3>
+      <table>
+        <tr>
+          <th>嚢胞</th>
+          <th>特徴</th>
+          <th>病理所見</th>
+        </tr>
+        <tr>
+          <td class="key">鼻歯槽嚢胞</td>
+          <td>鼻翼基部に膨隆</td>
+          <td>多列円柱上皮</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">甲状舌管嚢胞</span><br>（正中頸嚢胞）</td>
+          <td>舌骨下部の<span class="highlight">正中頸部</span>に多い<br>10歳以下に好発</td>
+          <td>非角化重層扁平上皮or線毛円柱上皮<br>上皮下に<span class="highlight">甲状腺濾胞</span></td>
+        </tr>
+        <tr>
+          <td class="key">鰓嚢胞<br>（側頸嚢胞）</td>
+          <td>胸鎖乳突筋前縁、下顎角下方部に好発</td>
+          <td>非角化重層扁平上皮<br><span class="highlight">リンパ性組織</span></td>
+        </tr>
+        <tr>
+          <td class="key">類皮嚢胞・類表皮嚢胞</td>
+          <td>口底（舌下型）、オトガイ下部<br>内容物はオカラ状</td>
+          <td>角化重層扁平上皮<br>類皮嚢胞：皮膚付属器<span class="highlight">あり</span><br>類表皮嚢胞：皮膚付属器<span class="highlight">なし</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">偽嚢胞の覚え方</div>
+        <ul>
+          <li><span class="key">単純性骨嚢胞</span>と<span class="key">脈瘤性骨嚢胞</span>は<span class="highlight">偽嚢胞</span></li>
+          <li>上皮の被覆がない → 真性嚢胞ではない</li>
+        </ul>
+      </div>
+
+      <h2>IV. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">118A8</div>
+        <p>甲状舌管嚢胞の発生原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 遺　残<br>
+          b 異常癒合<br>
+          c 過剰発育<br>
+          d 発育抑制<br>
+          e 癒合不全
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】甲状舌管嚢胞は<span class="highlight">甲状舌管の遺残</span>により発生する。甲状舌管は胎生期に甲状腺が下降する際の通路。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B2</div>
+        <p>顎骨内に発生した嚢胞のH-E染色病理組織像を示す。診断名はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯根嚢胞<br>
+          b 含歯性嚢胞<br>
+          c 歯原性角化嚢胞<br>
+          d 側方性歯周嚢胞<br>
+          e 石灰化歯原性嚢胞
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">歯原性角化嚢胞</span>は薄い錯角化重層扁平上皮、基底層の柵状配列が特徴的。再発傾向が強い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A43</div>
+        <p>下顎臼歯部の顎骨内に発生した嚢胞の模式図を示す。含歯性嚢胞はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ア（歯根嚢胞の位置）<br>
+          b イ（歯冠を含む位置）<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">含歯性嚢胞</span>は歯冠形成後の歯胚が嚢胞化するため、<span class="highlight">歯冠を含む</span>嚢胞である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C59</div>
+        <p>下顎臼歯部のX線透過像を示す。診断名はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 含歯性嚢胞<br>
+          b エナメル上皮腫<br>
+          c 歯原性角化嚢胞<br>
+          d 腺性歯原性嚢胞<br>
+          e 動脈瘤様骨嚢胞
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】埋伏歯の歯冠を取り囲む透過像は<span class="highlight">含歯性嚢胞</span>の典型的所見。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C76</div>
+        <p>正中頸部の腫瘤。矢印で示す疾患で考えられるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 鰓嚢胞<br>
+          b ラヌーラ<br>
+          c 類表皮嚢胞<br>
+          d 甲状舌管嚢胞<br>
+          e Blandin-Nuhn嚢胞
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】正中頸部の腫瘤は<span class="highlight">甲状舌管嚢胞</span>と<span class="highlight">類表皮嚢胞</span>が鑑別となる。鰓嚢胞は側頸部（胸鎖乳突筋前縁）に好発。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

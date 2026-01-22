@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>嚢胞の構造 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 嚢胞</span>
+    <h1>嚢胞の構造</h1>
+    <div class="container">
+
+      <h2>I. 嚢胞壁の基本構造</h2>
+
+      <table>
+        <tr>
+          <th>構成要素</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">嚢胞壁</span></td>
+          <td>嚢胞の外壁を構成する組織</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">嚢胞腔</span></td>
+          <td>嚢胞の内腔（空洞部分）</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">裏層上皮</span></td>
+          <td>嚢胞腔を覆う上皮層（真性嚢胞に存在）</td>
+        </tr>
+      </table>
+
+      <h2>II. 発育性嚢胞 vs 炎症性嚢胞の構造</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>発育性嚢胞</th>
+          <th>炎症性嚢胞</th>
+        </tr>
+        <tr>
+          <td class="key">構造</td>
+          <td><span class="highlight">2層構造</span></td>
+          <td><span class="highlight">3層構造</span></td>
+        </tr>
+        <tr>
+          <td class="key">第1層</td>
+          <td>裏層上皮</td>
+          <td>裏層上皮</td>
+        </tr>
+        <tr>
+          <td class="key">第2層</td>
+          <td>線維性結合組織</td>
+          <td><span class="highlight">炎症性肉芽組織</span></td>
+        </tr>
+        <tr>
+          <td class="key">第3層</td>
+          <td>－</td>
+          <td>線維性結合組織</td>
+        </tr>
+        <tr>
+          <td class="key">例</td>
+          <td>含歯性嚢胞、歯原性角化嚢胞</td>
+          <td><span class="highlight">歯根嚢胞</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">2層構造 vs 3層構造の覚え方</div>
+        <ul>
+          <li><span class="key">発育性嚢胞</span>：炎症がないので<span class="highlight">2層</span>（上皮＋線維性結合組織）</li>
+          <li><span class="key">炎症性嚢胞</span>：炎症があるので<span class="highlight">3層</span>（上皮＋<span class="caution">肉芽組織</span>＋線維性結合組織）</li>
+        </ul>
+      </div>
+
+      <h2>III. 歯根嚢胞の構造（頻出）</h2>
+
+      <table>
+        <tr>
+          <th>層</th>
+          <th>構成</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">第1層</td>
+          <td><span class="highlight">裏層上皮</span></td>
+          <td><span class="highlight">非角化性重層扁平上皮</span><br>起源：<span class="highlight">マラッセの上皮遺残</span></td>
+        </tr>
+        <tr>
+          <td class="key">第2層</td>
+          <td><span class="highlight">炎症性肉芽組織</span></td>
+          <td>リンパ球、形質細胞を主体とする<br>炎症性細胞浸潤</td>
+        </tr>
+        <tr>
+          <td class="key">第3層</td>
+          <td><span class="highlight">線維性結合組織</span></td>
+          <td>外壁を構成</td>
+        </tr>
+      </table>
+
+      <h3>歯根嚢胞の特徴的所見</h3>
+      <table>
+        <tr>
+          <th>所見</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">コレステリン結晶</span></td>
+          <td>針状の形態を示す結晶<br>嚢胞内容物に認められる</td>
+        </tr>
+        <tr>
+          <td class="key">コレステリン裂隙</td>
+          <td>コレステリン結晶の溶解後に残る裂隙</td>
+        </tr>
+        <tr>
+          <td class="key">上皮層の起源</td>
+          <td><span class="highlight">マラッセの上皮遺残</span>が増殖</td>
+        </tr>
+        <tr>
+          <td class="key">感染根管治療で治癒しにくい理由</td>
+          <td><span class="highlight">上皮層の存在</span></td>
+        </tr>
+      </table>
+
+      <h2>IV. 各嚢胞の裏層上皮</h2>
+
+      <h3>歯原性嚢胞</h3>
+      <table>
+        <tr>
+          <th>嚢胞</th>
+          <th>裏層上皮</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">歯根嚢胞</td>
+          <td><span class="highlight">非角化</span>重層扁平上皮</td>
+          <td>3層構造、マラッセの上皮遺残由来</td>
+        </tr>
+        <tr>
+          <td class="key">含歯性嚢胞</td>
+          <td><span class="highlight">非角化</span>重層扁平上皮</td>
+          <td>2層構造</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">歯原性角化嚢胞</span></td>
+          <td>薄い<span class="highlight">錯角化</span>重層扁平上皮</td>
+          <td>基底層の<span class="highlight">柵状配列</span><br>娘嚢胞（再発の原因）</td>
+        </tr>
+        <tr>
+          <td class="key">側方性歯周嚢胞</td>
+          <td>非角化重層扁平上皮</td>
+          <td>当該歯は生活歯</td>
+        </tr>
+        <tr>
+          <td class="key">石灰化歯原性嚢胞</td>
+          <td>エナメル髄様構造</td>
+          <td><span class="highlight">幻影細胞</span>（異所性石灰化）</td>
+        </tr>
+      </table>
+
+      <h3>非歯原性嚢胞</h3>
+      <table>
+        <tr>
+          <th>嚢胞</th>
+          <th>裏層上皮</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">鼻口蓋管嚢胞</td>
+          <td><span class="highlight">線毛円柱上皮</span>or立方上皮</td>
+          <td>粘液細胞を含む</td>
+        </tr>
+        <tr>
+          <td class="key">術後性上顎嚢胞</td>
+          <td>線毛円柱上皮</td>
+          <td>慢性炎症性細胞浸潤</td>
+        </tr>
+        <tr>
+          <td class="key">鼻歯槽嚢胞</td>
+          <td>多列円柱上皮</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td class="key">甲状舌管嚢胞</td>
+          <td>非角化重層扁平上皮or線毛円柱上皮</td>
+          <td>上皮下に<span class="highlight">甲状腺濾胞</span></td>
+        </tr>
+        <tr>
+          <td class="key">鰓嚢胞</td>
+          <td>非角化重層扁平上皮</td>
+          <td>上皮下に<span class="highlight">リンパ性組織</span></td>
+        </tr>
+        <tr>
+          <td class="key">類皮嚢胞・類表皮嚢胞</td>
+          <td><span class="highlight">角化</span>重層扁平上皮</td>
+          <td>類皮：皮膚付属器あり<br>類表皮：皮膚付属器なし</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">裏層上皮の覚え方</div>
+        <ul>
+          <li><span class="key">角化</span>：歯原性角化嚢胞（錯角化）、類皮/類表皮嚢胞（正角化）</li>
+          <li><span class="key">線毛円柱上皮</span>：鼻口蓋管嚢胞、術後性上顎嚢胞、甲状舌管嚢胞（呼吸器由来を示唆）</li>
+          <li><span class="key">非角化重層扁平上皮</span>：その他多くの嚢胞</li>
+        </ul>
+      </div>
+
+      <h2>V. 偽嚢胞の構造</h2>
+
+      <table>
+        <tr>
+          <th>嚢胞</th>
+          <th>構造</th>
+          <th>内容物</th>
+        </tr>
+        <tr>
+          <td class="key">単純性骨嚢胞</td>
+          <td>上皮の被覆を<span class="caution">欠く</span><br>非薄で細胞成分の乏しい線維性結合組織</td>
+          <td>空虚 or 漿液</td>
+        </tr>
+        <tr>
+          <td class="key">脈瘤性骨嚢胞</td>
+          <td>上皮の被覆を<span class="caution">欠く</span></td>
+          <td><span class="highlight">新鮮血液</span></td>
+        </tr>
+      </table>
+
+      <h2>VI. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C122</div>
+        <p>歯根嚢胞が感染根管治療で治癒しにくい理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 膿瘍の存在<br>
+          b 内容液の存在<br>
+          c 硬化骨の存在<br>
+          d 上皮層の存在<br>
+          e 肉芽組織の存在
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】歯根嚢胞の<span class="highlight">上皮層</span>（裏層上皮）は感染根管治療では除去できないため、治癒しにくい。摘出術が必要となることがある。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A98</div>
+        <p>歯原性角化嚢胞の病理組織像を示す。この疾患の再発に関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 娘嚢胞<br>
+          b 肉芽組織<br>
+          c 石灰化物<br>
+          d 幻影細胞<br>
+          e 硝子変性
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】歯原性角化嚢胞の<span class="highlight">娘嚢胞</span>は上皮下の線維性結合組織内に存在し、嚢胞摘出後も残存して<span class="highlight">再発の原因</span>となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B23</div>
+        <p>接合上皮〈付着上皮〉をつくるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 筋上皮細胞<br>
+          b Merkel細胞<br>
+          c Langerhans細胞<br>
+          d 退縮エナメル上皮<br>
+          e Malassezの上皮遺残
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】接合上皮は<span class="highlight">退縮エナメル上皮</span>由来。<span class="highlight">マラッセの上皮遺残</span>は歯根嚢胞の裏層上皮の起源となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A111</div>
+        <p>肉芽組織を構成するのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 脂肪細胞<br>
+          b 軟骨細胞<br>
+          c 毛細血管<br>
+          d リンパ球<br>
+          e 線維芽細胞
+        </div>
+        <div class="answer">正解：c, d, e</div>
+        <p>【解説】肉芽組織は<span class="highlight">毛細血管</span>、<span class="highlight">リンパ球</span>、<span class="highlight">線維芽細胞</span>から構成される。歯根嚢胞の第2層（炎症性肉芽組織）の構成成分でもある。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

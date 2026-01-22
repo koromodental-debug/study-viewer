@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "サイトカイン",
+    "category": "生化学",
+    "chapter": "07_炎症のケミカルメディエーター"
+  },
+  "sections": [
+    {
+      "section": "炎症性サイトカインと抗炎症性サイトカイン",
+      "qa": [
+        {
+          "question": "炎症を抑制するサイトカインはどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "IL-1",
+            "b": "IL-2",
+            "c": "IL-10",
+            "d": "IL-17",
+            "e": "IFN-γ"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "114A70"
+        }
+      ]
+    }
+  ]
+}

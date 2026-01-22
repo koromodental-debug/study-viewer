@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>基本組織 - 組織学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">組織学 / 01_総論</span>
+    <h1>基本組織</h1>
+    <div class="container">
+
+      <h2>1. 上皮組織</h2>
+      <p>体表面や体腔・管腔の内面を覆う組織。基底膜の上に位置し、<span class="key">血管を含まない</span>。</p>
+
+      <h3>上皮組織の分類</h3>
+      <table>
+        <tr><th>分類</th><th>特徴</th><th>存在部位</th></tr>
+        <tr><td><span class="key">単層扁平上皮</span></td><td>扁平な細胞が1層</td><td>血管・リンパ管内面、胸膜腔、腹膜腔</td></tr>
+        <tr><td><span class="key">単層立方上皮</span></td><td>立方状の細胞が1層</td><td>腎臓の尿細管</td></tr>
+        <tr><td><span class="key">単層円柱上皮</span></td><td>円柱状の細胞が1層</td><td>消化管（胃、小腸）</td></tr>
+        <tr><td><span class="key">多列線毛上皮</span></td><td>線毛をもつ、核の高さが異なる</td><td>気道（鼻腔、気管）</td></tr>
+        <tr><td><span class="highlight">重層扁平上皮</span></td><td>数層の細胞、表層は扁平</td><td>皮膚、口腔、食道</td></tr>
+        <tr><td><span class="key">移行上皮</span></td><td>伸展により形態が変化</td><td>泌尿器系（尿管、膀胱）</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">重層扁平上皮の層構造（表層→深層）</div>
+        <ul>
+          <li><span class="key">角質層</span>：角化した細胞（皮膚のみ）</li>
+          <li><span class="key">顆粒層</span>：ケラトヒアリン顆粒を含む</li>
+          <li><span class="highlight">有棘層</span>：デスモゾームが豊富</li>
+          <li><span class="key">基底層</span>：幹細胞が存在、細胞分裂が活発</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A73</div>
+        <p>重層扁平上皮で覆われているのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 口腔<br>
+          b 食道<br>
+          c 小腸<br>
+          d 膀胱<br>
+          e 皮膚
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】小腸は単層円柱上皮、膀胱は移行上皮で覆われる。口腔・食道・皮膚は機械的刺激を受けるため重層扁平上皮。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C67</div>
+        <p>メラニンを産生する細胞がみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 単層立方上皮<br>
+          b 単層円柱上皮<br>
+          c 重層扁平上皮<br>
+          d 重層円柱上皮<br>
+          e 多列線毛上皮
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】メラノサイトは重層扁平上皮の基底層に存在し、メラニンを産生して紫外線から保護する。</p>
+      </div>
+
+      <h3>細胞間接着装置</h3>
+      <table>
+        <tr><th>種類</th><th>機能</th><th>裏打ち構造</th></tr>
+        <tr><td><span class="key">タイト結合（密着帯）</span></td><td>バリア機能、物質の透過を防ぐ</td><td>－</td></tr>
+        <tr><td><span class="key">アドヘレンス結合（接着帯）</span></td><td>細胞同士を接着</td><td>アクチンフィラメント</td></tr>
+        <tr><td><span class="highlight">デスモゾーム（接着斑）</span></td><td>細胞同士を強固に接着</td><td>中間径フィラメント</td></tr>
+        <tr><td><span class="key">ギャップ結合</span></td><td>細胞間の情報伝達（イオン・低分子）</td><td>－</td></tr>
+        <tr><td><span class="key">ヘミデスモゾーム</span></td><td>細胞と基底膜を接着</td><td>中間径フィラメント</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">105C96（図あり）</div>
+        <p>重層扁平上皮のH-E染色組織像（別冊No.11）を別に示す。矢印で示す部位にある細胞間接着装置はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 接着帯〈中間結合〉<br>
+          b 密着帯〈タイト結合〉<br>
+          c 細隙結合〈ネキサス〉<br>
+          d 接着斑〈デスモゾーム〉<br>
+          e 半接着斑〈ヘミデスモゾーム〉
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】有棘層の細胞間には<span class="highlight">デスモゾーム</span>が豊富に存在する。棘状の構造（細胞間橋）として観察される。</p>
+      </div>
+
+      <h2>2. 結合組織（支持組織）</h2>
+      <p>細胞と細胞外基質（線維成分＋基質）からなる組織。</p>
+
+      <h3>結合組織の細胞</h3>
+      <ul>
+        <li><span class="highlight">線維芽細胞</span>：コラーゲン線維や基質を産生</li>
+        <li><span class="key">マクロファージ</span>：貪食作用</li>
+        <li><span class="key">肥満細胞</span>：ヒスタミンを放出（アレルギー反応）</li>
+        <li><span class="key">形質細胞</span>：抗体を産生</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">105C63</div>
+        <p>腱組織を構成する主な細胞はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 骨細胞<br>
+          b 軟骨細胞<br>
+          c 骨芽細胞<br>
+          d 骨格筋細胞<br>
+          e 線維芽細胞
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】腱は<span class="key">密性結合組織</span>であり、<span class="highlight">線維芽細胞</span>が密なコラーゲン線維を産生している。</p>
+      </div>
+
+      <h2>3. 筋組織</h2>
+      <p>収縮能をもつ組織。横紋筋と平滑筋に分類される。</p>
+
+      <h3>筋組織の分類</h3>
+      <table>
+        <tr><th>種類</th><th>横紋</th><th>随意性</th><th>核の位置</th><th>存在部位</th></tr>
+        <tr><td><span class="key">骨格筋</span></td><td>あり</td><td>随意筋</td><td>細胞辺縁（多核）</td><td>四肢、体幹の筋</td></tr>
+        <tr><td><span class="key">心筋</span></td><td>あり</td><td>不随意筋</td><td>細胞中央（1〜2核）</td><td>心臓</td></tr>
+        <tr><td><span class="key">平滑筋</span></td><td>なし</td><td>不随意筋</td><td>細胞中央（単核）</td><td>内臓、血管壁</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">骨格筋の白筋と赤筋</div>
+        <ul>
+          <li><span class="key">白筋</span>：急速な収縮（瞬発力）、ミトコンドリア少ない、疲労しやすい</li>
+          <li><span class="key">赤筋</span>：緩徐な収縮（持久力）、ミトコンドリア多い、<span class="highlight">ミオグロビン</span>を含む</li>
+        </ul>
+      </div>
+
+      <h2>4. 神経組織</h2>
+      <p>神経細胞（ニューロン）と支持細胞（グリア細胞）からなる。</p>
+
+      <h3>神経細胞の構造</h3>
+      <ul>
+        <li><span class="key">神経細胞体</span>：核とニッスル小体（粗面小胞体）を含む</li>
+        <li><span class="key">樹状突起</span>：情報を受け取る</li>
+        <li><span class="key">軸索</span>：情報を伝える</li>
+      </ul>
+
+      <h3>髄鞘を形成する細胞</h3>
+      <table>
+        <tr><th>部位</th><th>髄鞘形成細胞</th></tr>
+        <tr><td><span class="key">末梢神経系</span></td><td><span class="highlight">シュワン細胞</span></td></tr>
+        <tr><td><span class="key">中枢神経系</span></td><td><span class="highlight">オリゴデンドロサイト</span>（希突起膠細胞）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115B34</div>
+        <p>末梢神経の髄鞘を形成する細胞はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ゴルジ細胞<br>
+          b シュワン細胞<br>
+          c ミクログリア<br>
+          d アストロサイト<br>
+          e オリゴデンドロサイト
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">シュワン細胞</span>は末梢神経系で髄鞘を形成する。<span class="caution">オリゴデンドロサイトは中枢神経系</span>で髄鞘を形成する。ミクログリアは貪食作用、アストロサイトは血液脳関門に関与。</p>
+      </div>
+
+      <h3>グリア細胞（神経膠細胞）</h3>
+      <table>
+        <tr><th>細胞</th><th>機能</th></tr>
+        <tr><td><span class="key">アストロサイト</span>（星状膠細胞）</td><td>血液脳関門の形成、神経細胞への栄養供給</td></tr>
+        <tr><td><span class="key">オリゴデンドロサイト</span></td><td>中枢神経系での髄鞘形成</td></tr>
+        <tr><td><span class="key">ミクログリア</span>（小膠細胞）</td><td>貪食作用（脳のマクロファージ）</td></tr>
+        <tr><td><span class="key">シュワン細胞</span></td><td>末梢神経系での髄鞘形成</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114B66</div>
+        <p>嗅上皮が存在するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 嗅球<br>
+          b 下鼻道<br>
+          c 上咽頭<br>
+          d 蝶形骨洞<br>
+          e 鼻腔上部
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】嗅上皮は<span class="key">鼻腔上部</span>に存在する特殊な上皮で、嗅細胞（双極神経細胞）を含む。嗅球は大脳に属する。</p>
+      </div>
+
+      <h3>細胞のターンオーバー</h3>
+      <p>細胞が新しい細胞に置き換わる周期。上皮細胞や血球は比較的短く、神経細胞や心筋細胞は<span class="caution">ほとんど分裂しない</span>（永久細胞）。</p>
+
+      <div class="question-box">
+        <div class="q-number">108A62</div>
+        <p>ターンオーバーが最も短いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 赤血球<br>
+          b 味細胞<br>
+          c 視細胞<br>
+          d 骨細胞<br>
+          e 心筋細胞
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">味細胞のターンオーバーは約10日</span>と非常に短い。赤血球は約120日、視細胞・骨細胞は長期、心筋細胞は永久細胞でほとんど分裂しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

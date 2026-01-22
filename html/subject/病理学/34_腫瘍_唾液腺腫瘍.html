@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唾液腺腫瘍 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 腫瘍</span>
+    <h1>唾液腺腫瘍</h1>
+    <div class="container">
+
+      <h2>I. 唾液腺腫瘍の概要</h2>
+
+      <h3>部位別発生頻度</h3>
+      <table>
+        <tr>
+          <th>唾液腺</th>
+          <th>発生頻度</th>
+          <th>悪性の割合</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">耳下腺</span></td>
+          <td><span class="highlight">約60〜70%</span>（最多）</td>
+          <td>約20%</td>
+        </tr>
+        <tr>
+          <td class="key">小唾液腺（口蓋腺）</td>
+          <td>約20%</td>
+          <td>約50%</td>
+        </tr>
+        <tr>
+          <td class="key">顎下腺</td>
+          <td>約10%</td>
+          <td>約40%</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">舌下腺</span></td>
+          <td>非常にまれ</td>
+          <td><span class="highlight">約90%</span>（最も高い）</td>
+        </tr>
+      </table>
+
+      <h3>良性・悪性の頻度</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>良性腫瘍で最多</th>
+          <th>悪性腫瘍で最多</th>
+        </tr>
+        <tr>
+          <td class="key">全唾液腺腫瘍</td>
+          <td><span class="highlight">多形腺腫</span></td>
+          <td><span class="highlight">粘表皮癌</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">唾液腺腫瘍の細胞構成</div>
+        <ul>
+          <li><span class="key">腫瘍性腺上皮細胞</span>：腺房細胞と導管上皮細胞の性状をもつ</li>
+          <li><span class="key">腫瘍性筋上皮細胞</span>：筋上皮細胞の性状をもち、腺上皮細胞の外周を取り囲む</li>
+          <li><span class="highlight">二相性（2層性）</span>：腺上皮細胞と筋上皮細胞の両方を含む腫瘍</li>
+        </ul>
+      </div>
+
+      <h2>II. 良性唾液腺腫瘍</h2>
+
+      <h3>1) 多形腺腫</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td><span class="highlight">耳下腺</span>、<span class="highlight">口蓋腺</span>（軟口蓋に近い部位）</td>
+        </tr>
+        <tr>
+          <td class="key">経過</td>
+          <td><span class="highlight">年単位</span>で膨張性に発育</td>
+        </tr>
+        <tr>
+          <td class="key">癌化</td>
+          <td>長い経過後（<span class="highlight">10年以上</span>）良性成分の一部が癌化<br>→ <span class="highlight">多形腺腫由来癌</span></td>
+        </tr>
+        <tr>
+          <td class="key">再発</td>
+          <td>耳下腺例では<span class="highlight">再発</span>することが多い</td>
+        </tr>
+        <tr>
+          <td class="key">頻度</td>
+          <td>唾液腺で<span class="highlight">最も発現頻度の高い良性腫瘍</span></td>
+        </tr>
+        <tr>
+          <td class="key">構成</td>
+          <td><span class="highlight">二相性</span>（腫瘍性腺上皮＋腫瘍性筋上皮）</td>
+        </tr>
+        <tr>
+          <td class="key">免疫染色</td>
+          <td>腫瘍性筋上皮細胞：<span class="highlight">S100タンパク陽性</span></td>
+        </tr>
+      </table>
+
+      <h3>2) Warthin腫瘍</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発年齢・性別</td>
+          <td><span class="highlight">50歳以降</span>の<span class="highlight">男性</span></td>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td><span class="highlight">耳下腺</span>（片側性または両側性）</td>
+        </tr>
+        <tr>
+          <td class="key">予後</td>
+          <td>再発はまれで<span class="highlight">予後良好</span></td>
+        </tr>
+        <tr>
+          <td class="key">病理所見</td>
+          <td>腫瘍実質：好酸性の円柱上皮と立方上皮による<span class="highlight">2層構造</span><br>腫瘍間質：<span class="highlight">リンパ濾胞</span>を伴う</td>
+        </tr>
+        <tr>
+          <td class="key">起源</td>
+          <td>耳下腺リンパ節内に迷入した導管上皮の腫瘍性増殖（<span class="highlight">過誤腫</span>といわれている）</td>
+        </tr>
+      </table>
+
+      <h2>III. 悪性唾液腺腫瘍</h2>
+
+      <h3>1) 腺様嚢胞癌</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td><span class="highlight">顎下腺</span>、<span class="highlight">口蓋腺</span></td>
+        </tr>
+        <tr>
+          <td class="key">発育</td>
+          <td>緩慢な発育 → 5年生存率はよいが<span class="caution">10年生存率は非常に悪い</span></td>
+        </tr>
+        <tr>
+          <td class="key">特徴</td>
+          <td><span class="highlight">神経親和性</span>：神経への腫瘍浸潤による疼痛<br>血行性に<span class="highlight">肺</span>への転移が多い</td>
+        </tr>
+        <tr>
+          <td class="key">構成</td>
+          <td><span class="highlight">二相性</span>（腺上皮細胞＋腫瘍性筋上皮細胞）</td>
+        </tr>
+      </table>
+
+      <h3>腺様嚢胞癌の組織型と予後</h3>
+      <table>
+        <tr>
+          <th>組織型</th>
+          <th>特徴</th>
+          <th>予後</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">篩状型</span></td>
+          <td>主に偽腺管で、真の腺管もある<br><span class="caution">最も出題頻度が高い</span></td>
+          <td>中間</td>
+        </tr>
+        <tr>
+          <td class="key">管状型</td>
+          <td>主に真の腺管で、偽腺管は少ない</td>
+          <td><span class="highlight">良好</span></td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">充実型</span></td>
+          <td>真の腺管が少ない</td>
+          <td><span class="caution">最も不良</span></td>
+        </tr>
+      </table>
+
+      <h3>2) 粘表皮癌</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td><span class="highlight">耳下腺</span>（まれに<span class="highlight">顎骨中心性</span>）</td>
+        </tr>
+        <tr>
+          <td class="key">好発年齢</td>
+          <td>中年期だけでなく<span class="highlight">若い世代</span>にも発生</td>
+        </tr>
+        <tr>
+          <td class="key">構成細胞</td>
+          <td><span class="highlight">粘液産生細胞</span>・中間細胞・扁平上皮様細胞</td>
+        </tr>
+        <tr>
+          <td class="key">悪性度</td>
+          <td>構成細胞の種類により<span class="highlight">低悪性</span>（予後良好）と<span class="highlight">高悪性</span>（予後不良）に分類</td>
+        </tr>
+        <tr>
+          <td class="key">低悪性</td>
+          <td>粘液産生細胞が多い、嚢胞形成</td>
+        </tr>
+        <tr>
+          <td class="key">高悪性</td>
+          <td>中間細胞と扁平上皮様細胞が多い（角化はしない）、異型性が強い</td>
+        </tr>
+      </table>
+
+      <h3>3) 腺房細胞癌</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td><span class="highlight">耳下腺</span></td>
+        </tr>
+        <tr>
+          <td class="key">悪性度</td>
+          <td><span class="highlight">低悪性度</span></td>
+        </tr>
+        <tr>
+          <td class="key">好発年齢</td>
+          <td>中年期だけでなく若い世代にも発生</td>
+        </tr>
+      </table>
+
+      <h2>IV. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115A12</div>
+        <p>多形腺腫の発生頻度が最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 舌<br>
+          b 口　蓋<br>
+          c 口　底<br>
+          d 歯　肉<br>
+          e 頬粘膜
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】多形腺腫は<span class="highlight">口蓋腺</span>（小唾液腺）に好発。耳下腺に次いで多い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117A48</div>
+        <p>リンパ組織を伴うのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 鰓嚢胞<br>
+          b 歯肉嚢胞<br>
+          c Warthin腫瘍<br>
+          d 歯原性線維腫<br>
+          e 鼻口蓋管嚢胞
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】<span class="highlight">Warthin腫瘍</span>は腫瘍間質にリンパ濾胞を伴う。<span class="highlight">鰓嚢胞</span>も上皮下にリンパ性組織を伴う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D34</div>
+        <p>腺上皮細胞と腫瘍性筋上皮細胞からなる悪性唾液腺腫瘍はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 多形腺腫<br>
+          b 粘表皮癌<br>
+          c 腺房細胞癌<br>
+          d 腺様嚢胞癌<br>
+          e Warthin腫瘍
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">腺様嚢胞癌</span>は腺上皮細胞と腫瘍性筋上皮細胞からなる<span class="highlight">二相性</span>の悪性腫瘍。多形腺腫も二相性だが良性腫瘍。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B32</div>
+        <p>多形腺腫の二相性分化を示す細胞で、S100タンパクが陽性なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 粘液細胞<br>
+          b 線維芽細胞<br>
+          c 腺上皮細胞<br>
+          d 血管内皮細胞<br>
+          e 腫瘍性筋上皮細胞
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】多形腺腫の<span class="highlight">腫瘍性筋上皮細胞</span>はS100タンパク陽性を示す。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

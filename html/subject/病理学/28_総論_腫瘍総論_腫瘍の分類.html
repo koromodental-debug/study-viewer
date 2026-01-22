@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>腫瘍総論：腫瘍の分類 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 総論</span>
+    <h1>腫瘍総論：腫瘍の分類</h1>
+    <div class="container">
+
+      <h2>I. 腫瘍の定義と特徴</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>細胞が生物学的性状を変化させ、<span class="highlight">自律的で過剰な増殖</span>をきたした細胞集団</td>
+        </tr>
+        <tr>
+          <td class="key">自律性</td>
+          <td>無秩序・無限に増殖</td>
+        </tr>
+        <tr>
+          <td class="key">非可逆性</td>
+          <td>元の状態に戻らない</td>
+        </tr>
+        <tr>
+          <td class="key">脱分化性</td>
+          <td>本来の機能・形態から逸脱</td>
+        </tr>
+      </table>
+
+      <h2>II. 腫瘍の命名法</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>命名</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td class="key">良性腫瘍</td>
+          <td>○○<span class="highlight">腫</span>（-oma）</td>
+          <td>乳頭腫、多形腺腫、線維腫</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">悪性上皮性腫瘍</span></td>
+          <td><span class="highlight">癌腫</span>（carcinoma）</td>
+          <td>扁平上皮癌、腺癌</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">悪性非上皮性腫瘍</span></td>
+          <td><span class="highlight">肉腫</span>（sarcoma）</td>
+          <td>骨肉腫、線維肉腫</td>
+        </tr>
+        <tr>
+          <td class="key">悪性腫瘍の総称</td>
+          <td>がん（cancer）</td>
+          <td>癌腫＋肉腫</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">命名法の例外（-omaでも悪性）</div>
+        <ul>
+          <li><span class="highlight">悪性リンパ腫</span>（malignant lymphoma）</li>
+          <li><span class="highlight">悪性黒色腫</span>（melanoma）</li>
+          <li>これらは「-oma」だが<span class="caution">悪性腫瘍</span></li>
+        </ul>
+      </div>
+
+      <h2>III. 良性腫瘍 vs 悪性腫瘍</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>良性腫瘍</th>
+          <th>悪性腫瘍</th>
+        </tr>
+        <tr>
+          <td class="key">増殖速度</td>
+          <td>緩徐</td>
+          <td><span class="highlight">急速</span></td>
+        </tr>
+        <tr>
+          <td class="key">増殖様式</td>
+          <td><span class="highlight">膨張性</span>（圧排性）</td>
+          <td><span class="highlight">浸潤性</span></td>
+        </tr>
+        <tr>
+          <td class="key">被膜</td>
+          <td><span class="highlight">あり</span></td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td class="key">転移</td>
+          <td>なし</td>
+          <td><span class="highlight">あり</span></td>
+        </tr>
+        <tr>
+          <td class="key">再発</td>
+          <td>少ない</td>
+          <td>多い</td>
+        </tr>
+        <tr>
+          <td class="key">異型性</td>
+          <td>軽度</td>
+          <td><span class="highlight">高度</span></td>
+        </tr>
+        <tr>
+          <td class="key">分化度</td>
+          <td>高分化</td>
+          <td>低分化〜未分化</td>
+        </tr>
+        <tr>
+          <td class="key">予後</td>
+          <td>良好</td>
+          <td>不良</td>
+        </tr>
+      </table>
+
+      <h2>IV. 上皮性腫瘍 vs 非上皮性腫瘍</h2>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>上皮性腫瘍</th>
+          <th>非上皮性腫瘍</th>
+        </tr>
+        <tr>
+          <td class="key">由来</td>
+          <td>被覆上皮、腺上皮</td>
+          <td>筋、結合組織、神経</td>
+        </tr>
+        <tr>
+          <td class="key">実質と間質</td>
+          <td><span class="highlight">明瞭に区別</span></td>
+          <td>不明瞭</td>
+        </tr>
+        <tr>
+          <td class="key">胞巣</td>
+          <td><span class="highlight">つくる</span>（癌胞巣）</td>
+          <td>つくらない</td>
+        </tr>
+        <tr>
+          <td class="key">良性</td>
+          <td>乳頭腫、腺腫</td>
+          <td>線維腫、脂肪腫</td>
+        </tr>
+        <tr>
+          <td class="key">悪性</td>
+          <td><span class="highlight">癌腫</span></td>
+          <td><span class="highlight">肉腫</span></td>
+        </tr>
+      </table>
+
+      <h2>V. 口腔悪性腫瘍</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">最多</td>
+          <td><span class="highlight">扁平上皮癌</span>（約90%）</td>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td>舌（舌縁）、歯肉、口底</td>
+        </tr>
+      </table>
+
+      <h3>唾液腺における良性/悪性の割合</h3>
+      <table>
+        <tr>
+          <th>唾液腺</th>
+          <th>悪性腫瘍の割合</th>
+        </tr>
+        <tr>
+          <td class="key">耳下腺</td>
+          <td>約20%</td>
+        </tr>
+        <tr>
+          <td class="key">顎下腺</td>
+          <td>約40%</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">舌下腺</span></td>
+          <td><span class="highlight">約90%</span>（最も高い）</td>
+        </tr>
+        <tr>
+          <td class="key">小唾液腺</td>
+          <td>約50%</td>
+        </tr>
+      </table>
+
+      <h2>VI. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114C8</div>
+        <p>我が国において口腔悪性腫瘍のうち扁平上皮癌の占める割合はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 約1%<br>
+          b 約10%<br>
+          c 約30%<br>
+          d 約60%<br>
+          e 約90%
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】口腔悪性腫瘍の<span class="highlight">約90%</span>が扁平上皮癌。口腔粘膜は重層扁平上皮で覆われているため。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C11</div>
+        <p>良性腫瘍に比べて悪性腫瘍が生じる割合が最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 顎下腺<br>
+          b 口蓋腺<br>
+          c 口唇腺<br>
+          d 耳下腺<br>
+          e 舌下腺
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">舌下腺</span>は唾液腺腫瘍の約90%が悪性。小さい唾液腺ほど悪性の割合が高い傾向。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B12</div>
+        <p>上皮性腫瘍はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯牙腫<br>
+          b 歯原性粘液腫<br>
+          c セメント芽細胞腫<br>
+          d 腺腫様歯原性腫瘍<br>
+          e セメント質骨形成線維腫
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">腺腫様歯原性腫瘍</span>は歯原性上皮由来の上皮性腫瘍。歯原性粘液腫、セメント芽細胞腫は間葉性腫瘍。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A17</div>
+        <p>病態の進展が最も速いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 癌　腫<br>
+          b 肉　腫<br>
+          c 良性腫瘍<br>
+          d 急性化膿性炎<br>
+          e Ⅰ型アレルギー反応
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">Ⅰ型アレルギー</span>は即時型で数分〜数十分で発症。肉腫は癌腫より進展が速いが、アレルギー反応よりは遅い。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

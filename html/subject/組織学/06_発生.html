@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔・顔面領域の発生 - 組織学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">組織学 / 06_発生</span>
+    <h1>口腔・顔面領域の発生</h1>
+    <div class="container">
+
+      <h2>1. 鰓弓（咽頭弓）</h2>
+      <p>胎生4週に頭下部の腹側に生じる左右6対の弓状の隆起。各鰓弓は<span class="highlight">脳神経と対応</span>関係がある。</p>
+
+      <table>
+        <tr><th>鰓弓</th><th>支配神経</th><th>由来する筋</th><th>由来する骨格</th></tr>
+        <tr><td><span class="highlight">第一鰓弓</span><br>（顎弓）</td><td><span class="highlight">三叉神経</span><br>（V）</td><td>咀嚼筋（咬筋、側頭筋、内側・外側翼突筋）、顎舌骨筋、顎二腹筋前腹</td><td>上顎骨、下顎骨、頬骨、ツチ骨、キヌタ骨</td></tr>
+        <tr><td><span class="highlight">第二鰓弓</span><br>（舌骨弓）</td><td><span class="highlight">顔面神経</span><br>（VII）</td><td>表情筋、顎二腹筋後腹、茎突舌骨筋、アブミ骨筋</td><td>舌骨（小角、体の上部）、アブミ骨、茎状突起</td></tr>
+        <tr><td><span class="key">第三鰓弓</span></td><td>舌咽神経<br>（IX）</td><td>茎突咽頭筋</td><td>舌骨（大角、体の下部）</td></tr>
+        <tr><td><span class="key">第四〜六鰓弓</span></td><td>迷走神経<br>（X）</td><td>咽頭・喉頭の筋</td><td>喉頭軟骨</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">第一鰓弓の軟骨（Meckel軟骨）</div>
+        <ul>
+          <li>下顎骨体部は<span class="highlight">メッケル軟骨の外側に膜内骨化</span>により形成（胎生6週頃）</li>
+          <li><span class="caution">メッケル軟骨は吸収され、下顎骨の形成に直接関与しない</span></li>
+          <li>メッケル軟骨の後端は<span class="highlight">ツチ骨とキヌタ骨</span>になる</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A62</div>
+        <p>第一鰓弓由来の筋はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 咬筋<br>
+          b 頬筋<br>
+          c 側頭筋<br>
+          d 口輪筋<br>
+          e 茎突舌骨筋
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】<span class="highlight">第一鰓弓（顎弓）</span>由来の筋は咀嚼筋（<span class="highlight">咬筋、側頭筋</span>、内側・外側翼突筋）など。頬筋、口輪筋は表情筋で<span class="highlight">第二鰓弓</span>由来。茎突舌骨筋も第二鰓弓由来。</p>
+      </div>
+
+      <h2>2. 顔面の発生</h2>
+      <p>顔面は<span class="highlight">前頭鼻突起、内側鼻突起、外側鼻突起、上顎突起、下顎突起</span>により形成される。</p>
+
+      <h3>各突起から形成されるもの</h3>
+      <table>
+        <tr><th>突起</th><th>由来</th><th>形成されるもの</th></tr>
+        <tr><td><span class="key">前頭鼻突起</span></td><td>−</td><td>前頭部、鼻根部</td></tr>
+        <tr><td><span class="highlight">内側鼻突起</span></td><td>前頭鼻突起</td><td><span class="highlight">人中</span>、鼻背、鼻尖</td></tr>
+        <tr><td><span class="key">外側鼻突起</span></td><td>前頭鼻突起</td><td>鼻翼</td></tr>
+        <tr><td><span class="highlight">上顎突起</span></td><td>第一鰓弓</td><td>頬、<span class="highlight">上唇の側方部</span></td></tr>
+        <tr><td><span class="key">下顎突起</span></td><td>第一鰓弓</td><td>下唇、オトガイ部</td></tr>
+      </table>
+
+      <h3>顔面裂（形成異常）</h3>
+      <table>
+        <tr><th>癒合不全の部位</th><th>病名</th></tr>
+        <tr><td><span class="highlight">上顎突起と内側鼻突起</span></td><td><span class="highlight">片側口唇裂</span></td></tr>
+        <tr><td>上顎突起と外側鼻突起</td><td>斜顔裂</td></tr>
+        <tr><td>左右の内側鼻突起</td><td>正中上顎口唇裂</td></tr>
+        <tr><td>左右の下顎突起</td><td>正中下顎裂</td></tr>
+        <tr><td>上顎突起と下顎突起</td><td>横顔裂</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113C58</div>
+        <p>片側性口唇裂の原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 上顎突起と下顎突起の癒合不全<br>
+          b 上顎突起と内側鼻突起の癒合不全<br>
+          c 上顎突起と外側鼻突起の癒合不全<br>
+          d 左右の内側鼻突起の癒合不全<br>
+          e 左右の下顎突起の癒合不全
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】片側性口唇裂は<span class="highlight">上顎突起と内側鼻突起の癒合不全</span>により生じる。左右の内側鼻突起の癒合不全は正中上顎口唇裂の原因。</p>
+      </div>
+
+      <h2>3. 口蓋の発生</h2>
+
+      <h3>一次口蓋と二次口蓋</h3>
+      <table>
+        <tr><th>構造</th><th>由来</th><th>形成されるもの</th></tr>
+        <tr><td><span class="highlight">一次口蓋</span></td><td>内側鼻突起（球状突起）</td><td><span class="highlight">上顎前歯4本</span>の歯槽部</td></tr>
+        <tr><td><span class="highlight">二次口蓋</span></td><td>上顎突起（口蓋突起）</td><td>硬口蓋・軟口蓋の大部分</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">口蓋裂の発生</div>
+        <ul>
+          <li><span class="highlight">顎裂</span>：球状突起と口蓋突起（歯槽骨の部分）の癒合不全</li>
+          <li><span class="key">口蓋裂</span>：左右の口蓋突起の癒合不全</li>
+          <li>口唇裂・口蓋裂は<span class="highlight">切歯孔</span>を境に分類される</li>
+        </ul>
+      </div>
+
+      <h2>4. 舌の発生</h2>
+
+      <table>
+        <tr><th>部位</th><th>鰓弓由来</th><th>知覚神経</th><th>味覚神経</th></tr>
+        <tr><td><span class="highlight">舌体（前2/3）</span></td><td>第一鰓弓</td><td><span class="highlight">三叉神経</span></td><td>顔面神経（鼓索神経）</td></tr>
+        <tr><td><span class="key">舌根（後1/3）</span></td><td>第二〜四鰓弓</td><td>舌咽神経、迷走神経</td><td>舌咽神経</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">舌の味覚神経支配</div>
+        <ul>
+          <li>舌前2/3：<span class="highlight">顔面神経（鼓索神経）</span></li>
+          <li>舌後1/3：<span class="highlight">舌咽神経</span></li>
+          <li><span class="caution">例外</span>：有郭乳頭・葉状乳頭の味蕾は<span class="highlight">舌咽神経</span>支配</li>
+        </ul>
+      </div>
+
+      <h2>5. 甲状腺の発生</h2>
+      <ul>
+        <li><span class="highlight">舌盲孔</span>の上皮が下降して形成される</li>
+        <li><span class="highlight">甲状舌管</span>：下降経路に上皮が残存したもの（甲状舌管嚢胞の原因）</li>
+      </ul>
+
+      <h2>6. 唾液腺の発生</h2>
+      <p>開口部に相当する上皮が陥入して形成される。</p>
+
+      <table>
+        <tr><th>唾液腺</th><th>胚葉由来</th></tr>
+        <tr><td><span class="highlight">耳下腺</span></td><td><span class="highlight">外胚葉</span></td></tr>
+        <tr><td><span class="key">顎下腺</span></td><td>内胚葉</td></tr>
+        <tr><td><span class="key">舌下腺</span></td><td>内胚葉</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112A55</div>
+        <p>外胚葉由来の唾液腺はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 耳下腺<br>
+          b 顎下腺<br>
+          c 舌下腺<br>
+          d 口唇腺<br>
+          e 口蓋腺
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">耳下腺</span>は外胚葉由来。顎下腺と舌下腺は内胚葉由来。口咽頭膜より前方に開口部がある耳下腺は外胚葉由来となる。</p>
+      </div>
+
+      <h2>7. 歯の発生（まとめ）</h2>
+
+      <h3>歯胚の由来</h3>
+      <table>
+        <tr><th>由来</th><th>構造</th><th>形成組織</th></tr>
+        <tr><td><span class="highlight">外胚葉（上皮）</span></td><td>歯堤→エナメル器</td><td>エナメル質</td></tr>
+        <tr><td rowspan="2"><span class="highlight">神経堤由来間葉</span></td><td>歯乳頭</td><td>象牙質、歯髄</td></tr>
+        <tr><td>歯小嚢</td><td>セメント質、歯根膜、固有歯槽骨</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">110B48</div>
+        <p>神経堤由来の組織はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯髄<br>
+          b 歯根膜<br>
+          c エナメル質<br>
+          d 付着上皮<br>
+          e 歯肉上皮
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">歯髄</span>は歯乳頭由来、<span class="highlight">歯根膜</span>は歯小嚢由来で、ともに神経堤由来間葉から発生。エナメル質は外胚葉由来、付着上皮・歯肉上皮も外胚葉由来。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

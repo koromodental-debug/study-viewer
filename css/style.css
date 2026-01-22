@@ -598,25 +598,29 @@ body {
   text-align: center;
 }
 
-/* ===== ウェルカム画面 ===== */
+/* ===== ウェルカム画面（ピンタレスト風トピック一覧） ===== */
 .welcome-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 24px;
+  padding: 16px 0 0;
   min-height: 100%;
   background: var(--bg-color);
   overflow-y: auto;
 }
 
-/* Google風: 検索エリアを上部中央に配置 */
+/* 検索エリア（スティッキーで上部固定） */
 .welcome-search-area {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-top: 60px;
-  margin-bottom: 32px;
+  padding: 8px 16px 16px;
+  margin-bottom: 8px;
+  position: sticky;
+  top: 0;
+  background: var(--bg-color);
+  z-index: 10;
 }
 
 .welcome-header {
@@ -643,15 +647,18 @@ body {
 .welcome-search-wrapper {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   margin-bottom: 0;
 }
 
-/* 検索履歴セクション */
+/* 検索履歴セクション - ピンタレスト風UIでは非表示 */
 .welcome-history-section {
-  width: 100%;
-  max-width: 400px;
-  margin-top: 24px;
+  display: none !important;
+}
+
+/* おすすめセクション - ピンタレスト風UIでは非表示 */
+.welcome-recommend-section {
+  display: none !important;
 }
 
 .welcome-section-header {
@@ -820,43 +827,55 @@ body {
   pointer-events: none;
 }
 
-/* トピック一覧 */
+/* トピック一覧（2列カードグリッド - ピンタレスト風） */
 .welcome-topics {
   width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-height: calc(100vh - 220px);
-  overflow-y: auto;
-  padding-bottom: 32px;
+  max-width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0 16px 120px;
+}
+
+/* 1列に戻す（狭い画面） */
+@media (max-width: 400px) {
+  .welcome-topics {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }
 
 .welcome-topic-item {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
   background: var(--card-bg);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
+  border-radius: 14px;
+  border-left: 4px solid var(--topic-accent-color, var(--system-blue));
   cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+  min-height: 90px;
 }
 
 .welcome-topic-item:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
   background: var(--surface-alt);
 }
 
+.welcome-topic-item:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 .welcome-topic-subject {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  color: var(--system-blue);
-  background: rgba(10, 132, 255, 0.1);
-  padding: 4px 8px;
+  color: var(--topic-accent-color, var(--system-blue));
+  background: var(--topic-accent-bg, rgba(10, 132, 255, 0.1));
+  padding: 3px 8px;
   border-radius: 6px;
-  flex-shrink: 0;
+  align-self: flex-start;
 }
 
 .welcome-topic-content {
@@ -868,19 +887,34 @@ body {
 }
 
 .welcome-topic-title {
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--text-color);
-  white-space: nowrap;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.welcome-topic-keywords {
+  font-size: 11px;
+  color: var(--secondary-label);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .welcome-topic-snippet {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--secondary-label);
-  white-space: nowrap;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .welcome-topic-snippet mark {
@@ -896,9 +930,7 @@ body {
 }
 
 .welcome-topic-arrow {
-  color: var(--tertiary-label);
-  font-size: 16px;
-  flex-shrink: 0;
+  display: none; /* カードでは矢印を非表示 */
 }
 
 /* 検索結果なし */
@@ -11596,6 +11628,33 @@ body.is-practice .tab-content {
   color: #fff;
 }
 
+[data-theme="dark"] .flashcard-choice-btn.correct {
+  background: rgba(52, 199, 89, 0.2) !important;
+  border-color: #30D158 !important;
+  color: #7dce82 !important;
+}
+
+[data-theme="dark"] .flashcard-choice-btn.incorrect {
+  background: rgba(255, 69, 58, 0.2) !important;
+  border-color: #FF453A !important;
+  color: #f5a5a5 !important;
+}
+
+[data-theme="dark"] .flashcard-choice-btn.correct .choice-label {
+  background: #30D158;
+  color: #fff;
+}
+
+[data-theme="dark"] .flashcard-choice-btn.incorrect .choice-label {
+  background: #FF453A;
+  color: #fff;
+}
+
+[data-theme="dark"] .flashcard-choice-btn.correct .choice-text,
+[data-theme="dark"] .flashcard-choice-btn.incorrect .choice-text {
+  color: inherit;
+}
+
 [data-theme="dark"] .flashcard-submit-btn {
   background: #0A84FF;
 }
@@ -11643,6 +11702,33 @@ body.is-practice .tab-content {
   :root:not([data-theme="light"]) .flashcard-choice-btn.selected .choice-label {
     background: #0A84FF;
     color: #fff;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-choice-btn.correct {
+    background: rgba(52, 199, 89, 0.2) !important;
+    border-color: #30D158 !important;
+    color: #7dce82 !important;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-choice-btn.incorrect {
+    background: rgba(255, 69, 58, 0.2) !important;
+    border-color: #FF453A !important;
+    color: #f5a5a5 !important;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-choice-btn.correct .choice-label {
+    background: #30D158;
+    color: #fff;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-choice-btn.incorrect .choice-label {
+    background: #FF453A;
+    color: #fff;
+  }
+
+  :root:not([data-theme="light"]) .flashcard-choice-btn.correct .choice-text,
+  :root:not([data-theme="light"]) .flashcard-choice-btn.incorrect .choice-text {
+    color: inherit;
   }
 
   :root:not([data-theme="light"]) .flashcard-submit-btn {
@@ -12805,5 +12891,508 @@ body.is-practice .tab-content {
 
   :root:not([data-theme="light"]) .deck-more-item.deck-more-delete svg {
     stroke: #ff453a;
+  }
+}
+
+/* ===== 関連トピックセクション ===== */
+.related-topics-section {
+  margin-top: 40px;
+  padding: 24px 20px;
+  background: var(--surface-alt);
+  border-radius: 16px;
+}
+
+.related-topics-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.related-topics-header svg {
+  width: 20px;
+  height: 20px;
+  color: var(--secondary-label);
+}
+
+.related-topics-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.related-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 400px) {
+  .related-topics-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.related-topic-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  border-left: 3px solid var(--topic-accent-color, var(--system-blue));
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+.related-topic-card:active {
+  transform: scale(0.97);
+  background: var(--surface-alt);
+}
+
+.related-topic-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.related-topic-subject {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--topic-accent-color, var(--system-blue));
+  background: var(--topic-accent-bg, rgba(10, 132, 255, 0.1));
+  padding: 2px 6px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.related-topic-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-color);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.related-topics-empty {
+  text-align: center;
+  padding: 20px;
+  color: var(--secondary-label);
+  font-size: 13px;
+}
+
+/* ダークモード */
+[data-theme="dark"] .related-topics-section {
+  background: var(--surface-alt);
+}
+
+[data-theme="dark"] .related-topic-card {
+  background: var(--card-bg);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .related-topic-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .related-topics-section {
+    background: var(--surface-alt);
+  }
+
+  :root:not([data-theme="light"]) .related-topic-card {
+    background: var(--card-bg);
+    border-color: var(--border-subtle);
+  }
+
+  :root:not([data-theme="light"]) .related-topic-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ===== ネットワークグラフビュー ===== */
+
+/* ビュー切り替えトグル */
+.welcome-view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 16px;
+  background: var(--surface-alt);
+  border-radius: 10px;
+  padding: 3px;
+  width: fit-content;
+}
+
+.view-toggle-btn {
+  padding: 8px 20px;
+  border: none;
+  background: transparent;
+  color: var(--secondary-label);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.view-toggle-btn.active {
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.view-toggle-btn:not(.active):hover {
+  color: var(--text-color);
+}
+
+/* グラフコンテナ */
+.graph-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 200px);
+  min-height: 400px;
+  background: var(--bg-color);
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 16px;
+  max-width: calc(100% - 32px);
+}
+
+/* グラフツールバー */
+.graph-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.graph-search {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.graph-search:focus {
+  border-color: var(--system-blue);
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.15);
+}
+
+.graph-search::placeholder {
+  color: var(--secondary-label);
+}
+
+/* フィルタチップ */
+.graph-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.graph-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  font-size: 12px;
+  color: var(--secondary-label);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.graph-filter-chip:hover {
+  border-color: var(--system-blue);
+}
+
+.graph-filter-chip.active {
+  background: var(--system-blue);
+  border-color: var(--system-blue);
+  color: #fff;
+}
+
+.graph-filter-chip .chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* グラフビューポート */
+.graph-viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-color);
+  touch-action: none;
+}
+
+#graph-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* グラフエッジ */
+.graph-edge {
+  stroke: var(--border-subtle);
+  stroke-width: 1.5;
+  stroke-opacity: 0.6;
+  fill: none;
+  pointer-events: none;
+}
+
+.graph-edge.highlighted {
+  stroke: var(--system-blue);
+  stroke-width: 2.5;
+  stroke-opacity: 1;
+}
+
+.graph-edge.dimmed {
+  stroke-opacity: 0.15;
+}
+
+/* グラフノード */
+.graph-node {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.graph-node circle {
+  stroke: var(--card-bg);
+  stroke-width: 2;
+  transition: all 0.15s ease;
+}
+
+.graph-node:hover circle {
+  stroke-width: 3;
+  filter: brightness(1.1);
+}
+
+.graph-node.selected circle {
+  stroke: var(--system-blue);
+  stroke-width: 4;
+  filter: drop-shadow(0 0 8px rgba(10, 132, 255, 0.5));
+}
+
+.graph-node.dimmed {
+  opacity: 0.25;
+}
+
+.graph-node.dimmed circle {
+  filter: grayscale(0.5);
+}
+
+/* ノードラベル */
+.graph-node-label {
+  font-size: 11px;
+  font-weight: 500;
+  fill: var(--text-color);
+  text-anchor: middle;
+  pointer-events: none;
+  user-select: none;
+}
+
+.graph-node.dimmed .graph-node-label {
+  opacity: 0.3;
+}
+
+/* 詳細パネル（ボトムシート風） */
+.graph-detail-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-subtle);
+  border-radius: 16px 16px 0 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.graph-detail-panel.visible {
+  max-height: 280px;
+  padding: 16px;
+}
+
+.graph-detail-handle {
+  width: 36px;
+  height: 4px;
+  background: var(--tertiary-label);
+  border-radius: 2px;
+  margin: 0 auto 12px;
+  opacity: 0.5;
+}
+
+.graph-detail-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.graph-detail-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.graph-detail-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.graph-detail-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.graph-detail-subject {
+  font-size: 13px;
+  color: var(--secondary-label);
+  margin: 0;
+}
+
+.graph-detail-close {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--surface-alt);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--secondary-label);
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.graph-detail-close:hover {
+  background: var(--tertiary-fill);
+}
+
+.graph-detail-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.graph-detail-connections {
+  font-size: 13px;
+  color: var(--secondary-label);
+  margin-bottom: 16px;
+}
+
+.graph-detail-connections strong {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.graph-detail-action {
+  width: 100%;
+  padding: 14px;
+  background: var(--system-blue);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.graph-detail-action:hover {
+  background: #0066d6;
+}
+
+.graph-detail-action:active {
+  transform: scale(0.98);
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .view-toggle-btn.active {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .graph-container {
+  background: var(--bg-color);
+}
+
+[data-theme="dark"] .graph-detail-panel {
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 自動ダークモード */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .view-toggle-btn.active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  :root:not([data-theme="light"]) .graph-container {
+    background: var(--bg-color);
+  }
+
+  :root:not([data-theme="light"]) .graph-detail-panel {
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+  .graph-container {
+    height: calc(100vh - 180px);
+    margin: 0 12px;
+    max-width: calc(100% - 24px);
+    border-radius: 12px;
+  }
+
+  .graph-toolbar {
+    padding: 10px 12px;
+  }
+
+  .graph-search {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .graph-filter-chip {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .graph-detail-panel.visible {
+    max-height: 260px;
+    padding: 14px;
+  }
+
+  .graph-detail-title {
+    font-size: 16px;
   }
 }

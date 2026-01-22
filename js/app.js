@@ -75,6 +75,9 @@
     welcomeCardMenu: document.getElementById('welcome-card-menu'),
     welcomeSearchInput: document.getElementById('welcome-search-input'),
     welcomeTopics: document.getElementById('welcome-topics'),
+    // グラフビュー
+    welcomeViewToggle: document.getElementById('welcome-view-toggle'),
+    graphContainer: document.getElementById('graph-container'),
     // 過去問
     kakomonContent: document.getElementById('kakomon-content'),
     // フラッシュカード
@@ -214,41 +217,34 @@
 
     // ウェルカム画面のトピック検索を初期化
     initWelcomeSearch();
+
+    // グラフビュー切り替えの初期化
+    initViewToggle();
   }
 
   /**
    * ウェルカム画面のトピック検索を初期化
    */
   function initWelcomeSearch() {
-    if (!elements.welcomeTopics || !elements.welcomeSearchInput) return;
+    if (!elements.welcomeTopics || !elements.welcomeSearchInput) {
+      return;
+    }
 
     const historySection = document.getElementById('welcome-history-section');
     const recommendSection = document.getElementById('welcome-recommend-section');
-    const historyList = document.getElementById('welcome-history-list');
-    const clearHistoryBtn = document.getElementById('clear-history-btn');
 
-    // 検索履歴を表示
-    renderSearchHistory();
+    // 履歴・おすすめセクションを非表示（ピンタレスト風に全トピックを最初から表示）
+    if (historySection) historySection.style.display = 'none';
+    if (recommendSection) recommendSection.style.display = 'none';
 
-    // 初期表示：履歴を表示、トピック一覧は非表示
-    elements.welcomeTopics.style.display = 'none';
+    // 初期表示：全トピックを2列カードで表示
+    renderWelcomeTopics('');
 
-    // 検索入力イベント
+    // 検索入力イベント（絞り込み）
     elements.welcomeSearchInput.addEventListener('input', (e) => {
       const query = e.target.value.trim();
-      if (query) {
-        // 検索中は履歴・おすすめを隠してトピック一覧を表示
-        if (historySection) historySection.style.display = 'none';
-        if (recommendSection) recommendSection.style.display = 'none';
-        elements.welcomeTopics.style.display = '';
-        renderWelcomeTopics(query);
-      } else {
-        // 空の場合は履歴・おすすめを表示、トピック一覧は非表示
-        if (historySection) historySection.style.display = '';
-        if (recommendSection) recommendSection.style.display = '';
-        elements.welcomeTopics.style.display = 'none';
-        renderSearchHistory();
-      }
+      // 検索クエリで絞り込み（空の場合は全件表示）
+      renderWelcomeTopics(query);
     });
 
     // トピッククリックイベント
@@ -438,7 +434,7 @@
   }
 
   /**
-   * ウェルカム画面のトピック一覧をレンダリング
+   * ウェルカム画面のトピック一覧をレンダリング（2列カード表示）
    */
   function renderWelcomeTopics(filter) {
     if (!elements.welcomeTopics) return;
@@ -456,19 +452,23 @@
       });
     }
 
-    // 最大50件に制限
-    const limitedTopics = topics.slice(0, 50);
+    // 最大200件に制限（スクロールで閲覧可能）
+    const limitedTopics = topics.slice(0, 200);
 
     if (limitedTopics.length === 0) {
       elements.welcomeTopics.innerHTML = `<div class="welcome-no-results">「${escapeHtml(filter)}」に一致するトピックがありません</div>`;
       return;
     }
 
-    // HTML生成
+    // HTML生成（2列カードグリッド）
     const html = limitedTopics.map(topic => {
       const title = topic.title || topic.id;
       const displayTitle = filterLower ? highlightWelcomeSearch(title, filter) : escapeHtml(title);
       const subject = topic.subject || '';
+
+      // 科目色を取得
+      const color = getTopicSubjectColor(subject);
+      const bgColor = hexToRgba(color, 0.1);
 
       // タイトルにマッチしない場合、本文からスニペットを取得
       let snippet = '';
@@ -480,19 +480,65 @@
         }
       }
 
+      // キーワードプレビュー（スニペットがない場合に表示）
+      let keywords = '';
+      if (!snippet && topic.searchText) {
+        // searchTextから最初の50文字程度をキーワードとして抽出
+        keywords = (topic.searchText || '').substring(0, 50).trim();
+        if (topic.searchText.length > 50) keywords += '...';
+      }
+
       return `
-        <div class="welcome-topic-item" data-topic-id="${escapeHtml(topic.id)}">
+        <div class="welcome-topic-item" data-topic-id="${escapeHtml(topic.id)}"
+             style="--topic-accent-color: ${color}; --topic-accent-bg: ${bgColor};">
           <span class="welcome-topic-subject">${escapeHtml(subject)}</span>
           <div class="welcome-topic-content">
             <span class="welcome-topic-title">${displayTitle}</span>
             ${snippet ? `<span class="welcome-topic-snippet">${snippet}</span>` : ''}
+            ${!snippet && keywords ? `<span class="welcome-topic-keywords">${escapeHtml(keywords)}</span>` : ''}
           </div>
-          <span class="welcome-topic-arrow">›</span>
         </div>
       `;
     }).join('');
 
     elements.welcomeTopics.innerHTML = html;
+  }
+
+  /**
+   * 科目から色を取得
+   */
+  function getTopicSubjectColor(subject) {
+    const subjectColors = {
+      '解剖学': '#FF6B6B',
+      '生理学': '#4ECDC4',
+      '生化学': '#45B7D1',
+      '病理学': '#96CEB4',
+      '薬理学': '#FFEAA7',
+      '微生物学': '#DDA0DD',
+      '口腔解剖学': '#FF8C69',
+      '口腔生理学': '#20B2AA',
+      '口腔生化学': '#87CEEB',
+      '口腔病理学': '#98D8C8',
+      '歯科薬理学': '#FFD700',
+      '歯科理工学': '#C0C0C0',
+      '保存修復学': '#B8860B',
+      '歯内療法学': '#CD853F',
+      '歯周病学': '#228B22',
+      '冠橋義歯学': '#4169E1',
+      '有床義歯学': '#6A5ACD',
+      '口腔外科学': '#DC143C',
+      '歯科矯正学': '#FF69B4',
+      '小児歯科学': '#FFB6C1',
+      '高齢者歯科学': '#8B4513',
+      '障害者歯科学': '#9370DB',
+      '歯科放射線学': '#708090',
+      '歯科麻酔学': '#2F4F4F',
+      '公衆衛生': '#32CD32',
+      '社会歯科学': '#3CB371',
+      '医療倫理': '#778899',
+      '医療法規': '#696969'
+    };
+    return subjectColors[subject] || '#0A84FF';
   }
 
   /**
@@ -792,6 +838,16 @@
     // ウェルカム画面を表示
     if (elements.welcomeScreen) {
       elements.welcomeScreen.classList.remove('hidden');
+      elements.welcomeScreen.style.display = '';
+    }
+
+    // 検索欄をクリア
+    if (elements.welcomeSearchInput) {
+      elements.welcomeSearchInput.value = '';
+    }
+    // 全トピックを表示
+    if (elements.welcomeTopics) {
+      renderWelcomeTopics('');
     }
 
     // HTMLタブに切り替え
@@ -1594,7 +1650,89 @@
       });
     });
 
+    // 関連トピックセクションを追加（非同期）
+    addRelatedTopicsSection(section, item.id);
+
     return section;
+  }
+
+  /**
+   * 関連トピックセクションを追加
+   */
+  async function addRelatedTopicsSection(section, topicId) {
+    // GraphModuleから関連トピックを取得
+    if (typeof GraphModule === 'undefined' || !GraphModule.getRelatedTopics) {
+      return;
+    }
+
+    const relatedTopics = await GraphModule.getRelatedTopics(topicId);
+    if (!relatedTopics || relatedTopics.length === 0) {
+      return;
+    }
+
+    // 関連トピックセクションを作成
+    const relatedSection = document.createElement('div');
+    relatedSection.className = 'related-topics-section';
+
+    const headerHtml = `
+      <div class="related-topics-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <h3 class="related-topics-title">関連トピック</h3>
+      </div>
+    `;
+
+    // 関連トピックカードを生成
+    const cardsHtml = relatedTopics.slice(0, 6).map(topic => {
+      const color = topic.color || GraphModule.getSubjectColor(topic.subject) || '#A0A0A0';
+      const bgColor = hexToRgba(color, 0.1);
+      return `
+        <div class="related-topic-card" data-topic-id="${escapeHtml(topic.id)}"
+             style="--topic-accent-color: ${color}; --topic-accent-bg: ${bgColor};">
+          <span class="related-topic-subject">${escapeHtml(topic.subject || '')}</span>
+          <span class="related-topic-name">${escapeHtml(topic.label || topic.id)}</span>
+        </div>
+      `;
+    }).join('');
+
+    relatedSection.innerHTML = headerHtml + `<div class="related-topics-grid">${cardsHtml}</div>`;
+
+    // 関連トピックカードのクリックイベント
+    relatedSection.querySelectorAll('.related-topic-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const relatedId = card.dataset.topicId;
+        if (relatedId) {
+          selectItem(relatedId);
+          // ページトップにスクロール
+          elements.htmlContent.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // コンテンツの後に追加
+    const contentEl = section.querySelector('.topic-section-content');
+    if (contentEl) {
+      contentEl.appendChild(relatedSection);
+    }
+  }
+
+  /**
+   * 16進数カラーをRGBAに変換
+   */
+  function hexToRgba(hex, alpha) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    if (result) {
+      const r = parseInt(result[1], 16);
+      const g = parseInt(result[2], 16);
+      const b = parseInt(result[3], 16);
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+    return `rgba(0, 0, 0, ${alpha})`;
   }
 
   /**
@@ -4880,11 +5018,19 @@
         // タブを復元
         switchTab(e.state.tab, true); // skipHistory=trueで再度pushしない
 
-        // スクロール位置を復元
-        if (e.state.scrollPositions) {
-          setTimeout(() => {
-            restoreScrollPositions(e.state.scrollPositions);
-          }, 150);
+        // スクロール位置を復元（コンテンツ読み込み中はスキップ）
+        if (e.state.scrollPositions && !state.isLoadingMore) {
+          // requestIdleCallbackで安全なタイミングで復元
+          const restoreScroll = () => {
+            if (!state.isLoadingMore) {
+              restoreScrollPositions(e.state.scrollPositions);
+            }
+          };
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(restoreScroll, { timeout: 300 });
+          } else {
+            setTimeout(restoreScroll, 200);
+          }
         }
       }
     });

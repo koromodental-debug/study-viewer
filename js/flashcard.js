@@ -3417,8 +3417,6 @@ const FlashcardModule = (function() {
           for (const [key, value] of Object.entries(currentChoices)) {
             if (value === answer || answer.includes(value) || value.includes(answer)) {
               correctKey = key.toUpperCase();
-              // 正解の選択肢に○マークを追加
-              currentChoices[key] = value + '：○';
               break;
             }
           }

@@ -28,15 +28,34 @@ const FavoritesManager = (function() {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const data = JSON.parse(stored);
-        if (data.version === STORAGE_VERSION) {
-          favorites = data.items || [];
+        // バージョンに関係なくデータを読み込む（後方互換性を維持）
+        if (data.items && Array.isArray(data.items)) {
+          favorites = data.items;
+        } else if (Array.isArray(data)) {
+          // 古い形式（配列のみ）の場合
+          favorites = data;
         } else {
-          // バージョン違いの場合はマイグレーション（今は単純にリセット）
           favorites = [];
+        }
+        // バージョンが古い場合は新しい形式で保存し直す
+        if (data.version !== STORAGE_VERSION) {
+          console.log('[Favorites] バージョンアップ:', data.version, '->', STORAGE_VERSION);
+          save();
         }
       }
     } catch (e) {
       console.error('[Favorites] 読み込みエラー:', e);
+      // エラー時もできるだけデータを救出
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          // JSONパースに失敗した場合、バックアップとして保存
+          localStorage.setItem(STORAGE_KEY + '_backup', stored);
+          console.log('[Favorites] バックアップを作成しました');
+        }
+      } catch (backupError) {
+        console.error('[Favorites] バックアップ作成エラー:', backupError);
+      }
       favorites = [];
     }
   }
@@ -48,11 +67,18 @@ const FavoritesManager = (function() {
     try {
       const data = {
         version: STORAGE_VERSION,
-        items: favorites
+        items: favorites,
+        lastSaved: new Date().toISOString()
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      return true;
     } catch (e) {
       console.error('[Favorites] 保存エラー:', e);
+      // クォータ超過の可能性がある場合、ユーザーに通知
+      if (e.name === 'QuotaExceededError' || e.code === 22) {
+        alert('ストレージ容量が不足しています。\n古いお気に入りを削除してください。');
+      }
+      return false;
     }
   }
 

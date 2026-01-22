@@ -221,7 +221,7 @@ const GraphModule = (function() {
         subject: n.data.subject,
         color: finalColor,
         connections: connections,
-        radius: Math.max(8, Math.min(25, 8 + connections * 1.5))
+        radius: Math.max(6, Math.min(30, 6 + Math.pow(connections, 1.3)))
       };
     });
 
@@ -231,12 +231,29 @@ const GraphModule = (function() {
       target: e.data.target
     }));
 
+    // 科目ごとの中心座標を計算（クラスタリング用）
+    const subjects = [...new Set(nodes.map(n => n.subject).filter(Boolean))];
+    const subjectCenters = {};
+    const cols = Math.ceil(Math.sqrt(subjects.length));
+    subjects.forEach((subject, i) => {
+      const row = Math.floor(i / cols);
+      const col = i % cols;
+      subjectCenters[subject] = {
+        x: (col + 0.5) * (width / cols),
+        y: (row + 0.5) * (height / Math.ceil(subjects.length / cols))
+      };
+    });
+
     // Force Simulationを設定
     simulation = d3.forceSimulation(nodes)
       .force('link', d3.forceLink(edges).id(d => d.id).distance(80).strength(0.5))
       .force('charge', d3.forceManyBody().strength(-200).distanceMax(300))
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius(d => d.radius + 5));
+      .force('collision', d3.forceCollide().radius(d => d.radius + 5))
+      // 科目別クラスタリング
+      .force('x', d3.forceX(d => subjectCenters[d.subject]?.x || width / 2).strength(0.1))
+      .force('y', d3.forceY(d => subjectCenters[d.subject]?.y || height / 2).strength(0.1))
+      .alphaTarget(0.02);  // 常に微妙に動き続ける
 
     // エッジを描画
     const edgeElements = edgesGroup.selectAll('line')
@@ -261,11 +278,32 @@ const GraphModule = (function() {
       .attr('r', d => d.radius)
       .attr('fill', d => d.color);
 
-    // ノードのラベル
+    // ノードのラベル（大きいノードは常に表示、小さいノードは非表示）
+    const HUB_RADIUS_THRESHOLD = 15; // この半径以上はラベル常時表示
     nodeElements.append('text')
       .attr('class', 'graph-node-label')
       .attr('dy', d => d.radius + 14)
+      .attr('opacity', d => d.radius >= HUB_RADIUS_THRESHOLD ? 1 : 0)
       .text(d => truncateLabel(d.label, 8));
+
+    // ホバー/タッチでラベル表示（小さいノードのみ）
+    nodeElements
+      .on('mouseenter', function(event, d) {
+        if (d.radius < HUB_RADIUS_THRESHOLD) {
+          d3.select(this).select('text').transition().duration(150).attr('opacity', 1);
+        }
+      })
+      .on('mouseleave', function(event, d) {
+        if (d.radius < HUB_RADIUS_THRESHOLD && !searchQuery) {
+          d3.select(this).select('text').transition().duration(150).attr('opacity', 0);
+        }
+      })
+      .on('touchstart', function(event, d) {
+        // タッチ開始でラベル表示（小さいノードのみ）
+        if (d.radius < HUB_RADIUS_THRESHOLD) {
+          d3.select(this).select('text').attr('opacity', 1);
+        }
+      });
 
     // ノードタップ/クリックイベント（シングル→ツールチップ、ダブル→トピック開く）
     let lastTapTime = 0;
@@ -351,10 +389,10 @@ const GraphModule = (function() {
 
     svg.call(zoomBehavior);
 
-    // 初期ズームレベルを設定（見やすい拡大率）
-    const initialScale = 1.3;
+    // 初期ズームレベルを設定（全体が見えるようにズームアウト）
+    const initialScale = 0.5;
     svg.call(zoomBehavior.transform, d3.zoomIdentity
-      .translate(width * -0.3, height * -0.3)
+      .translate(width * 0.25, height * 0.25)
       .scale(initialScale));
   }
 
@@ -395,16 +433,45 @@ const GraphModule = (function() {
 
     selectedNodeId = nodeId;
     const neighbors = adjacencyMap.get(nodeId) || new Set();
+    const selectedNode = simulation.nodes().find(n => n.id === nodeId);
 
-    // ノードのハイライト
+    // ノードのハイライト + ラベル表示
     nodesGroup.selectAll('.graph-node')
       .classed('selected', d => d.id === nodeId)
-      .classed('dimmed', d => d.id !== nodeId && !neighbors.has(d.id));
+      .classed('dimmed', d => d.id !== nodeId && !neighbors.has(d.id))
+      .each(function(d) {
+        // 選択ノードと隣接ノードはラベル表示
+        const isRelated = d.id === nodeId || neighbors.has(d.id);
+        d3.select(this).select('text').attr('opacity', isRelated ? 1 : 0);
+      });
 
     // エッジのハイライト
     edgesGroup.selectAll('.graph-edge')
       .classed('highlighted', d => d.source.id === nodeId || d.target.id === nodeId)
       .classed('dimmed', d => d.source.id !== nodeId && d.target.id !== nodeId);
+
+    // 関連ノードを放射状に広げる
+    if (selectedNode) {
+      const EXPAND_RADIUS = 120; // 広げる半径
+      const neighborArray = Array.from(neighbors);
+      const angleStep = (2 * Math.PI) / neighborArray.length;
+
+      // 選択ノードを固定
+      selectedNode.fx = selectedNode.x;
+      selectedNode.fy = selectedNode.y;
+
+      // 関連ノードを放射状に配置
+      simulation.nodes().forEach(node => {
+        const neighborIndex = neighborArray.indexOf(node.id);
+        if (neighborIndex !== -1) {
+          const angle = neighborIndex * angleStep - Math.PI / 2;
+          node.fx = selectedNode.x + Math.cos(angle) * EXPAND_RADIUS;
+          node.fy = selectedNode.y + Math.sin(angle) * EXPAND_RADIUS;
+        }
+      });
+
+      simulation.alpha(0.3).restart();
+    }
 
     // ツールチップを表示
     showTooltip(nodeId);
@@ -417,11 +484,29 @@ const GraphModule = (function() {
    * ノードの選択を解除
    */
   function deselectNode() {
+    const HUB_THRESHOLD = 15;
+
+    // 固定を解除
+    if (selectedNodeId) {
+      const neighbors = adjacencyMap.get(selectedNodeId) || new Set();
+      simulation.nodes().forEach(node => {
+        if (node.id === selectedNodeId || neighbors.has(node.id)) {
+          node.fx = null;
+          node.fy = null;
+        }
+      });
+      simulation.alpha(0.3).restart();
+    }
+
     selectedNodeId = null;
 
     nodesGroup.selectAll('.graph-node')
       .classed('selected', false)
-      .classed('dimmed', false);
+      .classed('dimmed', false)
+      .each(function(d) {
+        // 大きいノードは表示維持、小さいノードは非表示に戻す
+        d3.select(this).select('text').attr('opacity', d.radius >= HUB_THRESHOLD ? 1 : 0);
+      });
 
     edgesGroup.selectAll('.graph-edge')
       .classed('highlighted', false)
@@ -554,6 +639,9 @@ const GraphModule = (function() {
     const nodeData = graphData.nodes.find(n => n.data.id === topicId);
     if (!nodeData) return;
 
+    // オーバーレイをbody直下に移動（position: fixedを確実に機能させる）
+    document.body.appendChild(overlay);
+
     // タイトルを設定
     titleEl.textContent = nodeData.data.label;
 
@@ -595,15 +683,18 @@ const GraphModule = (function() {
       bodyEl.innerHTML = '<p>このトピックのコンテンツはまだありません</p>';
     }
 
-    // タブバーを非表示
+    // タブバーとヘッダーを非表示
     const tabbar = document.querySelector('.floating-tabbar');
+    const header = document.querySelector('.header');
     if (tabbar) tabbar.style.display = 'none';
+    if (header) header.style.display = 'none';
 
     // イベントハンドラを設定
     const closePopup = () => {
       overlay.classList.remove('visible');
-      // タブバーを再表示
+      // タブバーとヘッダーを再表示
       if (tabbar) tabbar.style.display = '';
+      if (header) header.style.display = '';
     };
 
     backdrop.onclick = closePopup;
@@ -752,6 +843,16 @@ const GraphModule = (function() {
         }
 
         node.style('display', visible ? null : 'none');
+
+        // ラベル表示の更新（大きいノードは常に表示）
+        const HUB_THRESHOLD = 15;
+        if (searchQuery) {
+          // 検索中はヒットしたノードのラベルを表示
+          node.select('text').attr('opacity', visible ? 1 : 0);
+        } else {
+          // 検索解除時：大きいノードは表示維持、小さいノードは非表示
+          node.select('text').attr('opacity', d.radius >= HUB_THRESHOLD ? 1 : 0);
+        }
 
         // 検索でヒットした最初のノードを記録
         if (visible && searchQuery && !firstMatchedNodeId) {

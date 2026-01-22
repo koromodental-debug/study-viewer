@@ -1164,6 +1164,16 @@ const FlashcardModule = (function() {
           </div>
           <div class="deck-subject-right">
             ${stats.again > 0 ? `<span class="deck-subject-again">要復習 ${stats.again}</span>` : ''}
+            <button class="subject-list-btn" data-subject="${subject}" title="カード一覧">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+            </button>
             ${manageBtn}
             <span class="deck-subject-chevron">›</span>
           </div>
@@ -1221,9 +1231,23 @@ const FlashcardModule = (function() {
 
     return sortedKeys.map(key => {
       const group = groups.get(key);
+      // 大項目に属するトピックIDをJSON形式で保存
+      const topicIds = group.topics.map(t => t.id);
       return `
         <div class="deck-hisshu-group">
-          <div class="deck-hisshu-header">${key} ${group.name}</div>
+          <div class="deck-hisshu-header">
+            <span class="hisshu-header-name">${key} ${group.name}</span>
+            <button class="group-list-btn" data-topic-ids='${JSON.stringify(topicIds)}' data-group-name="${group.name}" title="カード一覧">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+            </button>
+          </div>
           ${group.topics.map(topic => renderTopicRow(topic, group.name)).join('')}
         </div>
       `;
@@ -1373,6 +1397,9 @@ const FlashcardModule = (function() {
     const subjectHeaders = container.querySelectorAll('.deck-subject-header');
     subjectHeaders.forEach(header => {
       header.addEventListener('click', (e) => {
+        // 一覧ボタンや管理ボタンがクリックされた場合はスキップ
+        if (e.target.closest('.subject-list-btn') || e.target.closest('.deck-manage-toggle-btn')) return;
+
         const subjectEl = header.closest('.deck-subject');
         const subject = subjectEl.dataset.subject;
 
@@ -1653,6 +1680,29 @@ const FlashcardModule = (function() {
         });
       });
     }
+
+    // 科目一覧ボタンクリック
+    const subjectListBtns = container.querySelectorAll('.subject-list-btn');
+    subjectListBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        state.deckListScrollPos = container.scrollTop;
+        const subject = btn.dataset.subject;
+        await renderSubjectCardList(subject);
+      });
+    });
+
+    // 大項目一覧ボタンクリック
+    const groupListBtns = container.querySelectorAll('.group-list-btn');
+    groupListBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        state.deckListScrollPos = container.scrollTop;
+        const topicIds = JSON.parse(btn.dataset.topicIds);
+        const groupName = btn.dataset.groupName;
+        await renderGroupCardList(topicIds, groupName);
+      });
+    });
   }
 
   // === トピック読み込み ===
@@ -2132,12 +2182,31 @@ const FlashcardModule = (function() {
         e.stopPropagation();
         const key = btn.dataset.key;
         const action = btn.dataset.action;
+        const now = Date.now();
 
-        if (!state.progress[key]) {
-          state.progress[key] = {};
+        const existing = state.progress[key] || {};
+        const currentInterval = existing.interval || 0;
+
+        if (action === 'memorized') {
+          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          state.progress[key] = {
+            status: 'memorized',
+            lastReview: now,
+            nextReview: now + newInterval * DAY_MS,
+            interval: newInterval,
+            successCount: (existing.successCount || 0) + 1
+          };
+        } else {
+          // again
+          const nextReviewDelay = state.againDelay === 'immediate' ? 0 : DAY_MS;
+          state.progress[key] = {
+            status: 'again',
+            lastReview: now,
+            nextReview: now + nextReviewDelay,
+            interval: state.againDelay === 'immediate' ? 0 : 1,
+            successCount: 0
+          };
         }
-        state.progress[key].status = action;
-        state.progress[key].lastReviewed = Date.now();
         saveProgress();
 
         const item = btn.closest('.card-search-item');
@@ -2256,6 +2325,17 @@ const FlashcardModule = (function() {
         qaPath = topic?.qaPath;
       }
 
+      // ローカルインポート（localJsonData）の場合
+      if (topic && topic.localJsonData) {
+        try {
+          const cards = parseJSONToCards(topic.localJsonData, topicId);
+          topicCardsMap.set(topicId, { cards, topic });
+        } catch (e) {
+          console.log(`ローカルJSON読み込みエラー (${topicId}):`, e);
+        }
+        continue;
+      }
+
       if (!qaPath && topic && topic.category) {
         const parts = topic.category.split('/');
         const subject = parts[0];
@@ -2364,6 +2444,580 @@ const FlashcardModule = (function() {
       state.filteredCards = state.filteredCards.slice(0, state.sessionSize);
     }
 
+    renderCard();
+  }
+
+  // === 科目・大項目シャッフル演習 ===
+
+  // 科目全体のシャッフル演習
+  async function startSubjectDeck(subject) {
+    console.log('[startSubjectDeck] 開始:', subject);
+
+    // 対象トピックを取得
+    const topics = DATA.filter(d => d.subject === subject);
+    if (topics.length === 0) {
+      showToast('対象のトピックがありません', 2000);
+      return;
+    }
+
+    // カード参照を収集
+    const cardRefs = [];
+    topics.forEach(topic => {
+      const stats = getTopicStats(topic.id);
+      const total = stats.memorized + stats.again + (stats.new || 0);
+      // 進捗がある場合はその数だけ参照を作成、なければカード数を推定（後でfetch時に実際のデータを取得）
+      for (let i = 0; i < Math.max(total, 1); i++) {
+        cardRefs.push({ topicId: topic.id, cardIndex: i, estimated: total === 0 });
+      }
+    });
+
+    // 全カードを読み込み
+    const allCards = await fetchAllCardsFromTopics(topics);
+    if (allCards.length === 0) {
+      showToast('カードの読み込みに失敗しました', 2000);
+      return;
+    }
+
+    // 科目デッキとして開始
+    state.currentTopicId = '__subject_' + subject;
+    state.currentTopic = { title: subject + '（全体）' };
+    state.cards = allCards;
+    state.filteredCards = [...allCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+    state.answeredInSession = 0;
+    state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
+
+    // シャッフル（Fisher-Yates）
+    for (let i = state.filteredCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+    }
+
+    console.log('[startSubjectDeck] カード数:', state.filteredCards.length);
+    renderCard();
+  }
+
+  // 大項目（グループ）のシャッフル演習
+  async function startGroupDeck(topicIds, groupName) {
+    console.log('[startGroupDeck] 開始:', groupName, topicIds);
+
+    // 対象トピックを取得
+    const topics = topicIds.map(id => DATA.find(d => d.id === id)).filter(Boolean);
+    if (topics.length === 0) {
+      showToast('対象のトピックがありません', 2000);
+      return;
+    }
+
+    // 全カードを読み込み
+    const allCards = await fetchAllCardsFromTopics(topics);
+    if (allCards.length === 0) {
+      showToast('カードの読み込みに失敗しました', 2000);
+      return;
+    }
+
+    // グループデッキとして開始
+    state.currentTopicId = '__group_' + groupName;
+    state.currentTopic = { title: groupName };
+    state.cards = allCards;
+    state.filteredCards = [...allCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+    state.answeredInSession = 0;
+    state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
+
+    // シャッフル（Fisher-Yates）
+    for (let i = state.filteredCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+    }
+
+    console.log('[startGroupDeck] カード数:', state.filteredCards.length);
+    renderCard();
+  }
+
+  // 複数トピックから全カードを取得
+  async function fetchAllCardsFromTopics(topics) {
+    const allCards = [];
+
+    for (const topic of topics) {
+      try {
+        let cards;
+
+        // ローカルインポート（JSONデータを直接持つ）の場合
+        if (topic.localJsonData) {
+          cards = parseJSONToCards(topic.localJsonData, topic.id);
+        } else {
+          // 通常のトピック
+          let qaPath = topic.qaPath;
+
+          // qaPathがない場合はcategoryから推定
+          if (!qaPath && topic.category) {
+            const parts = topic.category.split('/');
+            const subject = parts[0];
+            const idParts = topic.id.split('_');
+            const fileName = idParts.slice(1).join('_');
+            qaPath = `qa/subject/${subject}/${fileName}.json`;
+          }
+
+          if (!qaPath) continue;
+
+          const response = await fetch(encodeURI(qaPath));
+          if (!response.ok) continue;
+
+          const contentType = response.headers.get('content-type');
+
+          if (qaPath.endsWith('.json') || (contentType && contentType.includes('json'))) {
+            const jsonData = await response.json();
+            cards = parseJSONToCards(jsonData, topic.id);
+          } else {
+            const text = await response.text();
+            cards = parseQAToCards(text, topic.id);
+          }
+        }
+
+        // 各カードにtopicIdとoriginalIndexを付与
+        cards.forEach((card, idx) => {
+          card.topicId = topic.id;
+          card.originalIndex = idx;
+          card.progressKey = `${topic.id}:${idx}`;
+          card.topicTitle = topic.title;
+        });
+
+        allCards.push(...cards);
+      } catch (e) {
+        console.log(`QA読み込みエラー (${topic.id}):`, e);
+      }
+    }
+
+    return allCards;
+  }
+
+  // === 科目・大項目カード一覧表示 ===
+
+  // 科目のカード一覧表示
+  async function renderSubjectCardList(subject) {
+    console.log('[renderSubjectCardList] 開始:', subject);
+
+    // 対象トピックを取得
+    const topics = DATA.filter(d => d.subject === subject);
+    if (topics.length === 0) {
+      showToast('対象のトピックがありません', 2000);
+      return;
+    }
+
+    // 全カードを読み込み
+    const allCards = await fetchAllCardsFromTopics(topics);
+    if (allCards.length === 0) {
+      showToast('カードの読み込みに失敗しました', 2000);
+      return;
+    }
+
+    // 一時保存（演習開始時に使用）
+    state.tempSubjectCards = allCards;
+    state.tempSubjectName = subject;
+
+    // ヘッダー
+    const headerHtml = `
+      <div class="deck-card-list-header">
+        <button class="deck-card-list-back" id="deck-card-list-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="deck-card-list-title">
+          <span class="deck-card-list-topic">${subject}</span>
+          <span class="deck-card-list-count">${allCards.length}枚</span>
+        </div>
+        <div class="deck-card-list-actions">
+          <button class="deck-card-list-start" id="deck-card-list-start">演習</button>
+        </div>
+      </div>
+    `;
+
+    // カード一覧
+    const cardsHtml = allCards.map((card, idx) => {
+      const key = card.progressKey;
+      const cardProgress = state.progress[key];
+      const cardStatus = cardProgress ? cardProgress.status : 'new';
+      const isFavorite = FavoritesManager.isFavoriteByParams('qa', card.topicId, card.originalIndex);
+
+      return `
+        <div class="card-search-item" data-key="${escapeHtml(key)}" data-card-index="${idx}">
+          <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
+            <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
+          </div>
+          <div class="card-search-footer">
+            <div class="card-search-meta">${card.topicTitle || ''}</div>
+            <div class="card-search-actions">
+              <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(key)}" data-topic-id="${escapeHtml(card.topicId)}" data-original-index="${card.originalIndex}" data-question="${escapeHtml(card.question)}" data-answer="${escapeHtml(card.answer)}" data-section="${card.section ? escapeHtml(card.section) : ''}" title="お気に入り">
+                <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </button>
+              <button class="card-search-action-btn again ${cardStatus === 'again' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="again">もう一度</button>
+              <button class="card-search-action-btn memorized ${cardStatus === 'memorized' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="memorized">覚えた</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = `
+      <div class="deck-card-list-view" data-subject="${subject}">
+        ${headerHtml}
+        <div class="deck-card-list-content">
+          ${cardsHtml}
+        </div>
+      </div>
+    `;
+
+    // タブバーを非表示
+    const tabbar = document.querySelector('.floating-tabbar');
+    if (tabbar) tabbar.classList.add('hidden');
+
+    // イベントバインド
+    bindSubjectCardListEvents(subject, allCards);
+  }
+
+  // 科目カード一覧のイベントバインド
+  function bindSubjectCardListEvents(subject, allCards) {
+    // 戻るボタン
+    const backBtn = document.getElementById('deck-card-list-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        renderDeckList();
+        setTimeout(() => {
+          container.scrollTop = state.deckListScrollPos || 0;
+        }, 50);
+      });
+    }
+
+    // 演習開始ボタン
+    const startBtn = document.getElementById('deck-card-list-start');
+    if (startBtn) {
+      startBtn.addEventListener('click', () => {
+        startSubjectDeckFromCards(allCards, subject);
+      });
+    }
+
+    // カード行クリック（プレビュー）
+    const cardItems = container.querySelectorAll('.card-search-item');
+    cardItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        if (e.target.closest('.card-search-action-btn') || e.target.closest('.card-search-favorite-btn')) return;
+        const idx = parseInt(item.dataset.cardIndex);
+        showCardPreview(allCards[idx]);
+      });
+    });
+
+    // 覚えた/もう一度ボタン
+    const actionBtns = container.querySelectorAll('.card-search-action-btn');
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+        const action = btn.dataset.action;
+        const now = Date.now();
+
+        const existing = state.progress[key] || {};
+        const currentInterval = existing.interval || 0;
+
+        if (action === 'memorized') {
+          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          state.progress[key] = {
+            status: 'memorized',
+            lastReview: now,
+            nextReview: now + newInterval * DAY_MS,
+            interval: newInterval,
+            successCount: (existing.successCount || 0) + 1
+          };
+        } else {
+          // again
+          const nextReviewDelay = state.againDelay === 'immediate' ? 0 : DAY_MS;
+          state.progress[key] = {
+            status: 'again',
+            lastReview: now,
+            nextReview: now + nextReviewDelay,
+            interval: state.againDelay === 'immediate' ? 0 : 1,
+            successCount: 0
+          };
+        }
+        saveProgress();
+
+        // UIを更新
+        const parent = btn.closest('.card-search-actions');
+        if (parent) {
+          parent.querySelectorAll('.card-search-action-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      });
+    });
+
+    // お気に入りボタン
+    const favBtns = container.querySelectorAll('.card-search-favorite-btn');
+    favBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const favTopicId = btn.dataset.topicId;
+        const originalIndex = parseInt(btn.dataset.originalIndex);
+        const content = {
+          question: btn.dataset.question,
+          answer: btn.dataset.answer,
+          section: btn.dataset.section || ''
+        };
+
+        const newFavorite = FavoritesManager.toggle('qa', favTopicId, originalIndex, content);
+
+        btn.classList.toggle('active', newFavorite);
+        const svg = btn.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('fill', newFavorite ? 'currentColor' : 'none');
+        }
+        showToast(newFavorite ? 'お気に入りに追加' : 'お気に入りから削除', 1000);
+      });
+    });
+  }
+
+  // 大項目のカード一覧表示
+  async function renderGroupCardList(topicIds, groupName) {
+    console.log('[renderGroupCardList] 開始:', groupName, topicIds);
+
+    // 対象トピックを取得
+    const topics = topicIds.map(id => DATA.find(d => d.id === id)).filter(Boolean);
+    if (topics.length === 0) {
+      showToast('対象のトピックがありません', 2000);
+      return;
+    }
+
+    // 全カードを読み込み
+    const allCards = await fetchAllCardsFromTopics(topics);
+    if (allCards.length === 0) {
+      showToast('カードの読み込みに失敗しました', 2000);
+      return;
+    }
+
+    // 一時保存（演習開始時に使用）
+    state.tempGroupCards = allCards;
+    state.tempGroupName = groupName;
+
+    // ヘッダー
+    const headerHtml = `
+      <div class="deck-card-list-header">
+        <button class="deck-card-list-back" id="deck-card-list-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="deck-card-list-title">
+          <span class="deck-card-list-topic">${groupName}</span>
+          <span class="deck-card-list-count">${allCards.length}枚</span>
+        </div>
+        <div class="deck-card-list-actions">
+          <button class="deck-card-list-start" id="deck-card-list-start">演習</button>
+        </div>
+      </div>
+    `;
+
+    // カード一覧
+    const cardsHtml = allCards.map((card, idx) => {
+      const key = card.progressKey;
+      const cardProgress = state.progress[key];
+      const cardStatus = cardProgress ? cardProgress.status : 'new';
+      const isFavorite = FavoritesManager.isFavoriteByParams('qa', card.topicId, card.originalIndex);
+
+      return `
+        <div class="card-search-item" data-key="${escapeHtml(key)}" data-card-index="${idx}">
+          <div class="card-search-card deck-card-list-card" data-key="${escapeHtml(key)}">
+            <div class="card-search-question">Q: ${escapeHtml(card.question)}</div>
+          </div>
+          <div class="card-search-footer">
+            <div class="card-search-meta">${card.topicTitle || ''}</div>
+            <div class="card-search-actions">
+              <button class="card-search-favorite-btn ${isFavorite ? 'active' : ''}" data-key="${escapeHtml(key)}" data-topic-id="${escapeHtml(card.topicId)}" data-original-index="${card.originalIndex}" data-question="${escapeHtml(card.question)}" data-answer="${escapeHtml(card.answer)}" data-section="${card.section ? escapeHtml(card.section) : ''}" title="お気に入り">
+                <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </button>
+              <button class="card-search-action-btn again ${cardStatus === 'again' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="again">もう一度</button>
+              <button class="card-search-action-btn memorized ${cardStatus === 'memorized' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="memorized">覚えた</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = `
+      <div class="deck-card-list-view" data-group="${groupName}">
+        ${headerHtml}
+        <div class="deck-card-list-content">
+          ${cardsHtml}
+        </div>
+      </div>
+    `;
+
+    // タブバーを非表示
+    const tabbar = document.querySelector('.floating-tabbar');
+    if (tabbar) tabbar.classList.add('hidden');
+
+    // イベントバインド
+    bindGroupCardListEvents(groupName, allCards);
+  }
+
+  // 大項目カード一覧のイベントバインド
+  function bindGroupCardListEvents(groupName, allCards) {
+    // 戻るボタン
+    const backBtn = document.getElementById('deck-card-list-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        renderDeckList();
+        setTimeout(() => {
+          container.scrollTop = state.deckListScrollPos || 0;
+        }, 50);
+      });
+    }
+
+    // 演習開始ボタン
+    const startBtn = document.getElementById('deck-card-list-start');
+    if (startBtn) {
+      startBtn.addEventListener('click', () => {
+        startGroupDeckFromCards(allCards, groupName);
+      });
+    }
+
+    // カード行クリック（プレビュー）
+    const cardItems = container.querySelectorAll('.card-search-item');
+    cardItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        if (e.target.closest('.card-search-action-btn') || e.target.closest('.card-search-favorite-btn')) return;
+        const idx = parseInt(item.dataset.cardIndex);
+        showCardPreview(allCards[idx]);
+      });
+    });
+
+    // 覚えた/もう一度ボタン
+    const actionBtns = container.querySelectorAll('.card-search-action-btn');
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+        const action = btn.dataset.action;
+        const now = Date.now();
+
+        const existing = state.progress[key] || {};
+        const currentInterval = existing.interval || 0;
+
+        if (action === 'memorized') {
+          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          state.progress[key] = {
+            status: 'memorized',
+            lastReview: now,
+            nextReview: now + newInterval * DAY_MS,
+            interval: newInterval,
+            successCount: (existing.successCount || 0) + 1
+          };
+        } else {
+          // again
+          const nextReviewDelay = state.againDelay === 'immediate' ? 0 : DAY_MS;
+          state.progress[key] = {
+            status: 'again',
+            lastReview: now,
+            nextReview: now + nextReviewDelay,
+            interval: state.againDelay === 'immediate' ? 0 : 1,
+            successCount: 0
+          };
+        }
+        saveProgress();
+
+        // UIを更新
+        const parent = btn.closest('.card-search-actions');
+        if (parent) {
+          parent.querySelectorAll('.card-search-action-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      });
+    });
+
+    // お気に入りボタン
+    const favBtns = container.querySelectorAll('.card-search-favorite-btn');
+    favBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const favTopicId = btn.dataset.topicId;
+        const originalIndex = parseInt(btn.dataset.originalIndex);
+        const content = {
+          question: btn.dataset.question,
+          answer: btn.dataset.answer,
+          section: btn.dataset.section || ''
+        };
+
+        const newFavorite = FavoritesManager.toggle('qa', favTopicId, originalIndex, content);
+
+        btn.classList.toggle('active', newFavorite);
+        const svg = btn.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('fill', newFavorite ? 'currentColor' : 'none');
+        }
+        showToast(newFavorite ? 'お気に入りに追加' : 'お気に入りから削除', 1000);
+      });
+    });
+  }
+
+  // カードデータから科目デッキを開始
+  function startSubjectDeckFromCards(allCards, subject) {
+    state.currentTopicId = '__subject_' + subject;
+    state.currentTopic = { title: subject + '（全体）' };
+    state.cards = allCards;
+    state.filteredCards = [...allCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+    state.answeredInSession = 0;
+    state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
+
+    // シャッフル（Fisher-Yates）
+    for (let i = state.filteredCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+    }
+
+    console.log('[startSubjectDeckFromCards] カード数:', state.filteredCards.length);
+    renderCard();
+  }
+
+  // カードデータから大項目デッキを開始
+  function startGroupDeckFromCards(allCards, groupName) {
+    state.currentTopicId = '__group_' + groupName;
+    state.currentTopic = { title: groupName };
+    state.cards = allCards;
+    state.filteredCards = [...allCards];
+    state.currentIndex = 0;
+    state.isFlipped = false;
+    state.isActive = true;
+    state.completed = false;
+    state.answeredInSession = 0;
+    state.combo = 0;
+    state.againCards = [];
+    state.currentRound = 1;
+
+    // シャッフル（Fisher-Yates）
+    for (let i = state.filteredCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
+    }
+
+    console.log('[startGroupDeckFromCards] カード数:', state.filteredCards.length);
     renderCard();
   }
 
@@ -2588,12 +3242,31 @@ const FlashcardModule = (function() {
         e.stopPropagation();
         const key = btn.dataset.key;
         const action = btn.dataset.action;
+        const now = Date.now();
 
-        if (!state.progress[key]) {
-          state.progress[key] = {};
+        const existing = state.progress[key] || {};
+        const currentInterval = existing.interval || 0;
+
+        if (action === 'memorized') {
+          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          state.progress[key] = {
+            status: 'memorized',
+            lastReview: now,
+            nextReview: now + newInterval * DAY_MS,
+            interval: newInterval,
+            successCount: (existing.successCount || 0) + 1
+          };
+        } else {
+          // again
+          const nextReviewDelay = state.againDelay === 'immediate' ? 0 : DAY_MS;
+          state.progress[key] = {
+            status: 'again',
+            lastReview: now,
+            nextReview: now + nextReviewDelay,
+            interval: state.againDelay === 'immediate' ? 0 : 1,
+            successCount: 0
+          };
         }
-        state.progress[key].status = action;
-        state.progress[key].lastReviewed = Date.now();
         saveProgress();
 
         // ボタンの見た目を更新
@@ -2918,12 +3591,31 @@ const FlashcardModule = (function() {
         e.stopPropagation();
         const key = btn.dataset.key;
         const action = btn.dataset.action;
+        const now = Date.now();
 
-        if (!state.progress[key]) {
-          state.progress[key] = {};
+        const existing = state.progress[key] || {};
+        const currentInterval = existing.interval || 0;
+
+        if (action === 'memorized') {
+          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          state.progress[key] = {
+            status: 'memorized',
+            lastReview: now,
+            nextReview: now + newInterval * DAY_MS,
+            interval: newInterval,
+            successCount: (existing.successCount || 0) + 1
+          };
+        } else {
+          // again
+          const nextReviewDelay = state.againDelay === 'immediate' ? 0 : DAY_MS;
+          state.progress[key] = {
+            status: 'again',
+            lastReview: now,
+            nextReview: now + nextReviewDelay,
+            interval: state.againDelay === 'immediate' ? 0 : 1,
+            successCount: 0
+          };
         }
-        state.progress[key].status = action;
-        state.progress[key].lastReviewed = Date.now();
         saveProgress();
 
         const item = btn.closest('.card-search-item');

@@ -6111,6 +6111,65 @@ body:not(.is-practice) #flashcard-content {
   border-radius: 10px;
 }
 
+/* 科目一覧ボタン */
+.subject-list-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--surface-alt);
+  border-radius: 10px;
+  color: var(--secondary-label);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.subject-list-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.subject-list-btn:hover {
+  background: var(--surface-hover);
+}
+
+.subject-list-btn:active {
+  background: var(--surface-active);
+  transform: scale(0.95);
+}
+
+/* 大項目一覧ボタン */
+.group-list-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--surface-alt);
+  border-radius: 8px;
+  color: var(--secondary-label);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-left: auto;
+}
+
+.group-list-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.group-list-btn:hover {
+  background: var(--surface-hover);
+}
+
+.group-list-btn:active {
+  background: var(--surface-active);
+  transform: scale(0.95);
+}
+
 /* トピック一覧（アコーディオン） */
 .deck-topics {
   display: none;
@@ -6147,11 +6206,18 @@ body:not(.is-practice) #flashcard-content {
 }
 
 .deck-hisshu-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 16px 6px 24px;
   font-size: 12px;
   font-weight: 600;
   color: #8e8e93;
   letter-spacing: 0.02em;
+}
+
+.hisshu-header-name {
+  flex: 1;
 }
 
 .deck-hisshu-group .deck-topic {
@@ -13084,7 +13150,7 @@ body.is-practice .tab-content {
 /* ピル型検索バー */
 .graph-search-pill {
   position: absolute;
-  bottom: 100px; /* 詳細パネルの上 */
+  bottom: 80px; /* フローティングタブバーの上 */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -13194,20 +13260,21 @@ body.is-practice .tab-content {
 /* グラフエッジ */
 .graph-edge {
   stroke: var(--border-subtle);
-  stroke-width: 1.5;
-  stroke-opacity: 0.6;
+  stroke-width: 1;
+  stroke-opacity: 0.08;
   fill: none;
   pointer-events: none;
+  transition: stroke-opacity 0.2s ease;
 }
 
 .graph-edge.highlighted {
   stroke: var(--system-blue);
-  stroke-width: 2.5;
-  stroke-opacity: 1;
+  stroke-width: 2;
+  stroke-opacity: 0.8;
 }
 
 .graph-edge.dimmed {
-  stroke-opacity: 0.15;
+  stroke-opacity: 0.03;
 }
 
 /* グラフノード */
@@ -13234,11 +13301,11 @@ body.is-practice .tab-content {
 }
 
 .graph-node.dimmed {
-  opacity: 0.25;
+  opacity: 0.15;
 }
 
 .graph-node.dimmed circle {
-  filter: grayscale(0.5);
+  filter: grayscale(0.7);
 }
 
 /* ノードラベル */
@@ -13255,76 +13322,167 @@ body.is-practice .tab-content {
   opacity: 0.3;
 }
 
-/* 詳細パネル（ボトムシート風） */
-.graph-detail-panel {
+/* ノード横ミニツールチップ */
+.graph-tooltip {
   position: absolute;
-  bottom: 80px; /* タブバーの上に表示 */
-  left: 0;
-  right: 0;
   background: var(--card-bg);
-  border: none;
-  border-radius: 16px 16px 0 0;
-  padding: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  box-shadow: none;
-  z-index: 10;
+  border-radius: 12px;
+  padding: 10px 12px;
+  max-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  pointer-events: none;
 }
 
-.graph-detail-panel.visible {
-  max-height: 280px;
-  padding: 16px;
-  border-top: 1px solid var(--border-subtle);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+.graph-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
-.graph-detail-handle {
-  width: 36px;
-  height: 4px;
-  background: var(--tertiary-label);
-  border-radius: 2px;
-  margin: 0 auto 12px;
-  opacity: 0.5;
+/* 吹き出しの三角形（左向き = ノードの右側に表示時） */
+.graph-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-right-color: var(--card-bg);
+  border-left: none;
 }
 
-.graph-detail-header {
+/* 右向きの三角形（ノードの左側に表示時） */
+.graph-tooltip.tooltip-left::before {
+  left: auto;
+  right: -8px;
+  border-right: none;
+  border-left: 8px solid var(--card-bg);
+}
+
+.tooltip-content {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 12px;
+  align-items: center;
+  gap: 8px;
 }
 
-.graph-detail-color {
-  width: 12px;
-  height: 12px;
+.tooltip-dot {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   flex-shrink: 0;
-  margin-top: 4px;
 }
 
-.graph-detail-info {
-  flex: 1;
+.tooltip-text {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
 }
 
-.graph-detail-title {
+.tooltip-text strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tooltip-text span {
+  font-size: 11px;
+  color: var(--secondary-label);
+  margin-top: 2px;
+}
+
+.tooltip-hint {
+  font-size: 10px;
+  color: var(--tertiary-label);
+  margin-top: 6px;
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 6px;
+}
+
+/* トピックプレビューポップアップ */
+.topic-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.topic-popup-overlay.visible {
+  display: flex;
+}
+
+.topic-popup-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.topic-popup {
+  position: relative;
+  width: 94%;
+  max-width: 540px;
+  max-height: 90vh;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: popupIn 0.2s ease;
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.topic-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.topic-popup-title {
   font-size: 17px;
   font-weight: 600;
   color: var(--text-color);
-  margin: 0 0 4px 0;
-  line-height: 1.3;
-}
-
-.graph-detail-subject {
-  font-size: 13px;
-  color: var(--secondary-label);
   margin: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.graph-detail-close {
-  width: 28px;
-  height: 28px;
+.topic-popup-close {
+  width: 32px;
+  height: 32px;
   border: none;
   background: var(--surface-alt);
   border-radius: 50%;
@@ -13334,49 +13492,54 @@ body.is-practice .tab-content {
   cursor: pointer;
   color: var(--secondary-label);
   flex-shrink: 0;
-  transition: background 0.15s;
+  margin-left: 12px;
 }
 
-.graph-detail-close:hover {
-  background: var(--tertiary-fill);
+.topic-popup-close svg {
+  width: 16px;
+  height: 16px;
 }
 
-.graph-detail-close svg {
-  width: 14px;
-  height: 14px;
-}
-
-.graph-detail-connections {
-  font-size: 13px;
-  color: var(--secondary-label);
-  margin-bottom: 16px;
-}
-
-.graph-detail-connections strong {
+.topic-popup-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--text-color);
+  -webkit-overflow-scrolling: touch;
+}
+
+.topic-popup-body h1,
+.topic-popup-body h2,
+.topic-popup-body h3 {
+  font-size: 15px;
   font-weight: 600;
+  margin: 16px 0 8px 0;
 }
 
-.graph-detail-action {
-  width: 100%;
-  padding: 14px;
-  background: var(--system-blue);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
+.topic-popup-body h1:first-child,
+.topic-popup-body h2:first-child,
+.topic-popup-body h3:first-child {
+  margin-top: 0;
 }
 
-.graph-detail-action:hover {
-  background: #0066d6;
+.topic-popup-body p {
+  margin: 0 0 12px 0;
 }
 
-.graph-detail-action:active {
-  transform: scale(0.98);
+.topic-popup-body ul,
+.topic-popup-body ol {
+  margin: 0 0 12px 0;
+  padding-left: 20px;
 }
+
+.topic-popup-loading {
+  text-align: center;
+  color: var(--secondary-label);
+  padding: 40px 0;
+}
+
 
 /* ダークモード対応 */
 [data-theme="dark"] .view-toggle-btn.active {
@@ -13387,8 +13550,8 @@ body.is-practice .tab-content {
   background: var(--bg-color);
 }
 
-[data-theme="dark"] .graph-detail-panel {
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+[data-theme="dark"] .graph-tooltip {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 /* 自動ダークモード */
@@ -13401,8 +13564,8 @@ body.is-practice .tab-content {
     background: var(--bg-color);
   }
 
-  :root:not([data-theme="light"]) .graph-detail-panel {
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  :root:not([data-theme="light"]) .graph-tooltip {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -13429,12 +13592,12 @@ body.is-practice .tab-content {
     font-size: 11px;
   }
 
-  .graph-detail-panel.visible {
-    max-height: 260px;
-    padding: 14px;
+  .graph-tooltip {
+    max-width: 180px;
+    padding: 8px 10px;
   }
 
-  .graph-detail-title {
-    font-size: 16px;
+  .tooltip-text strong {
+    font-size: 13px;
   }
 }

@@ -5686,9 +5686,13 @@ const FlashcardModule = (function() {
       // 既存タイマーをクリア
       if (state.undoTimer) {
         clearTimeout(state.undoTimer);
-        state.undoTimer = null;
       }
-      // 自動非表示なし（次の操作まで表示し続ける）
+
+      // 10秒後に自動非表示
+      state.undoTimer = setTimeout(() => {
+        hideSnackbar();
+        state.undoState = null;
+      }, 10000);
     }
   }
 

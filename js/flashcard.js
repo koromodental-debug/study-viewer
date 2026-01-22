@@ -5688,11 +5688,11 @@ const FlashcardModule = (function() {
         clearTimeout(state.undoTimer);
       }
 
-      // 10秒後に自動非表示
+      // 8秒後に自動非表示
       state.undoTimer = setTimeout(() => {
         hideSnackbar();
         state.undoState = null;
-      }, 10000);
+      }, 8000);
     }
   }
 

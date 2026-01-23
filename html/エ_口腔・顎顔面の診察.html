@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔・顎顔面の診察</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>エ. 口腔・顎顔面の診察</h1>
+    <div class="subtitle">必修9 診察の基本</div>
+    <div class="container">
+
+      <h3>口腔・顎顔面の診察項目</h3>
+      <table>
+        <tr><th>診査項目</th><th>行うこと</th></tr>
+        <tr><td><span class="red">顔貌の視診</span></td><td>腫脹、変形、顔貌（非対称、目や耳の位置など）、皮膚の色調</td></tr>
+        <tr><td><span class="highlight">口唇粘膜</span></td><td>「ぴらん、潰（口唇萎など）」、水疱（ウイルス感染など）</td></tr>
+        <tr><td><span class="highlight">開口量</span></td><td>リンパ節の触診、開口量の計測</td></tr>
+      </table>
+
+      <h3>歯列・咬合状態の診察</h3>
+      <ul>
+        <li><span class="red">咬合接触の診査</span>：ワックス、咬合紙を咬ませ早期接触位の確認</li>
+        <li><span class="highlight">タッピング時</span>の咬合音を聴診</li>
+        <li><span class="highlight">タッピング時の歯の動揺</span>（咽頭視診から）</li>
+      </ul>
+
+      <h3>第一大臼歯の咬合（Angleの分類）</h3>
+      <table>
+        <tr><th>分類</th><th>特徴</th></tr>
+        <tr><td><span class="red">Ⅰ級</span></td><td>上顎第一大臼歯の近心頬側咬頭は下の<span class="red">頬面溝</span>と咬合する</td></tr>
+        <tr><td><span class="highlight">Ⅱ級</span></td><td>下顎が後方位（上顎前突傾向）</td></tr>
+        <tr><td><span class="highlight">Ⅲ級</span></td><td>下顎が前方位（下顎前突傾向）</td></tr>
+      </table>
+
+      <h3>基準平面</h3>
+      <table>
+        <tr><th>平面</th><th>定義</th></tr>
+        <tr><td><span class="red">Camper（カンペル）平面</span></td><td><span class="red">鼻翼下縁</span>と<span class="red">耳珠上縁</span></td></tr>
+        <tr><td><span class="red">フランクフルト平面</span>（眼耳平面）</td><td><span class="red">耳珠上縁</span>（Po）と<span class="red">眼窩下縁最下点</span>（Or）</td></tr>
+        <tr><td><span class="highlight">下顎下縁平面</span></td><td>Meを含む10座標系の口蓋面のうちの接線 1〜7</td></tr>
+        <tr><td><span class="highlight">咬合平面</span></td><td>左右の顎堤を含むフランクフルト平面に垂直な平面</td></tr>
+      </table>
+
+      <h3>リンパ節の触診</h3>
+      <table>
+        <tr><th>所見</th><th>意味</th></tr>
+        <tr><td><span class="red">腫大</span></td><td>炎症、腫瘍などの存在</td></tr>
+        <tr><td><span class="highlight">圧痛</span></td><td>急性炎症の可能性</td></tr>
+        <tr><td><span class="highlight">硬度</span></td><td>弾性軟（正常）、ゴム様硬（リンパ腫）、石様硬（癌転移）</td></tr>
+        <tr><td><span class="highlight">可動性</span></td><td>可動性低下は癌転移の可能性</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116B-18</div>
+        <p>Camper平面を構成するのはどれか。2つ選べ。</p>
+        <p>a: 鼻翼下縁　b: 眼窩下縁　c: 耳珠上縁　d: 外眼角　e: 口角</p>
+        <div class="answer">正解: a, c（Camper平面＝鼻翼下縁と耳珠上縁を結ぶ平面）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">Angle Ⅰ級</span>＝上顎第一大臼歯近心頬側咬頭が下顎の頬面溝と咬合</li>
+          <li><span class="red">Camper平面</span>＝鼻翼下縁＋耳珠上縁</li>
+          <li><span class="red">フランクフルト平面</span>＝耳珠上縁（Po）＋眼窩下縁最下点（Or）</li>
+          <li><span class="red">リンパ節触診</span>＝腫大、圧痛、硬度、可動性を確認</li>
+          <li>石様硬＝癌転移、ゴム様硬＝リンパ腫</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

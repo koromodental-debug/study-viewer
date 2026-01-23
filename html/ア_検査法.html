@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>検査法</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>ア. 検査法</h1>
+    <div class="subtitle">必修10 検査・臨床判断の基本</div>
+    <div class="container">
+
+      <h3>歯髄電気診</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td><span class="red">目的</span></td><td><span class="red">歯髄の生死判定</span>に用いる検査法</td></tr>
+        <tr><td><span class="highlight">方法</span></td><td><span class="red">反対側同名健常歯</span>を対照歯として測定し比較する</td></tr>
+        <tr><td><span class="highlight">併用</span></td><td>一般的に<span class="red">温度診</span>が併用される</td></tr>
+      </table>
+
+      <h3>温度診</h3>
+      <table>
+        <tr><th>反応</th><th>判定</th></tr>
+        <tr><td><span class="highlight">正常</span></td><td>温度刺激による痛みは刺激物の除去後<span class="red">ただちに</span>、または数秒後に消失する</td></tr>
+        <tr><td><span class="red">異常</span></td><td>痛みは<span class="red">しばらく持続</span>する</td></tr>
+      </table>
+
+      <h3>インピーダンス測定検査</h3>
+      <ul>
+        <li>歯質に通電し<span class="red">齲蝕の進行状態</span>を診断する検査</li>
+        <li>電気抵抗値による齲蝕深度の判定が可能</li>
+      </ul>
+
+      <h3>パラトグラム検査</h3>
+      <ul>
+        <li><span class="red">構音時の舌と口蓋の接触パターン</span>を評価</li>
+        <li>評価できる音：<span class="red">/k/、/t/</span>などの舌口蓋音</li>
+        <li>評価できない音：/b/、/m/、/p/などの唇音</li>
+      </ul>
+
+      <h3>一次救命処置（BLS）の手順</h3>
+      <table>
+        <tr><th>順序</th><th>確認項目</th></tr>
+        <tr><td>1</td><td><span class="red">意識レベル</span>の確認（最初に確認）</td></tr>
+        <tr><td>2</td><td>応援要請・AED手配</td></tr>
+        <tr><td>3</td><td>呼吸の確認</td></tr>
+        <tr><td>4</td><td>胸骨圧迫</td></tr>
+        <tr><td>5</td><td>人工呼吸</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117A-14【データベース】</div>
+        <p>パラトグラム検査により評価できるのはどれか。2つ選べ。</p>
+        <p>a: /b/　b: /k/　c: /m/　d: /p/　e: /t/</p>
+        <div class="answer">正解: b, e（/k/、/t/は舌口蓋音であり、パラトグラムで評価可能）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117B-13【データベース】</div>
+        <p>一次救命処置〈BLS〉において安全な環境で最初に確認するのはどれか。1つ選べ。</p>
+        <p>a: 血圧　b: 呼吸　c: 脈拍　d: 対光反射　e: 意識レベル</p>
+        <div class="answer">正解: e（BLSでは最初に意識レベルを確認する）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">歯髄電気診</span>＝歯髄の生死判定、反対側同名健常歯を対照</li>
+          <li><span class="red">温度診</span>＝正常は痛み即座消失、異常は持続</li>
+          <li><span class="red">パラトグラム</span>＝/k/、/t/など舌口蓋音を評価</li>
+          <li><span class="red">BLS</span>＝最初に意識レベル確認</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

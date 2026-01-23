@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>栄養管理法 国試分析</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F0F5FA;
+      --border-blue: #B8CCE4;
+      --border-blue-medium: #8FAFD4;
+      --bg-secondary: #F5F5F7;
+      --border-light: #E8E8ED;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "游ゴシック", sans-serif;
+      font-size: 9pt;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: white;
+    }
+
+    @media print {
+      @page { size: A4 landscape; margin: 12mm; }
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+
+    .container {
+      max-width: 297mm;
+      margin: 0 auto;
+      padding: 15mm;
+      column-count: 2;
+      column-gap: 8mm;
+    }
+
+    h1 {
+      font-size: 34pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin-bottom: 8mm;
+      padding-bottom: 3mm;
+      border-bottom: 1px solid var(--border-light);
+      column-span: all;
+    }
+
+    h2 {
+      font-size: 14pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin-top: 6mm;
+      margin-bottom: 3mm;
+      padding-bottom: 2mm;
+      border-bottom: 1px solid var(--border-light);
+      break-after: avoid;
+    }
+
+    h2 .num { color: var(--accent); }
+
+    h3 {
+      font-size: 10pt;
+      font-weight: normal;
+      color: var(--text-primary);
+      margin-top: 4mm;
+      margin-bottom: 2mm;
+      break-after: avoid;
+    }
+
+    h3::before { content: "■ "; color: var(--accent); }
+
+    p { margin-bottom: 2mm; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 4mm;
+      font-size: 8pt;
+      break-inside: avoid;
+    }
+
+    th {
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      font-weight: bold;
+      text-align: left;
+      padding: 2mm 3mm;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    td {
+      padding: 2mm 3mm;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: top;
+    }
+
+    .highlight { color: var(--accent); font-weight: bold; }
+    .secondary { color: var(--text-secondary); }
+
+    .important-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue);
+      border-bottom: 2px solid var(--border-blue);
+      padding: 3mm 4mm;
+      margin: 4mm 0;
+      break-inside: avoid;
+    }
+
+    .important-box h4 {
+      font-size: 9pt;
+      font-weight: bold;
+      color: var(--text-primary);
+      margin-bottom: 2mm;
+    }
+
+    .important-box ul { margin: 0; padding-left: 5mm; }
+    .important-box li { margin-bottom: 1mm; }
+    .important-box .hint { font-size: 7pt; color: var(--text-secondary); margin-top: 2mm; }
+
+    .note-box {
+      border-left: 3px solid var(--border-blue-medium);
+      padding: 2mm 0 2mm 4mm;
+      margin: 3mm 0;
+    }
+
+    .note-box h4 { font-size: 8pt; font-weight: bold; color: var(--text-secondary); margin-bottom: 1mm; }
+    .note-box p { font-size: 7pt; color: var(--text-secondary); margin: 0; }
+
+    ul { padding-left: 5mm; margin-bottom: 2mm; }
+    li { margin-bottom: 1mm; }
+
+    .source { font-size: 7pt; color: var(--text-secondary); margin-top: 1mm; }
+
+    .exam-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 7pt;
+      padding: 0.5mm 2mm;
+      border-radius: 2mm;
+      margin-left: 2mm;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>栄養管理法</h1>
+
+    <h2><span class="num">1.</span> 過去問分析（102回〜118回）</h2>
+
+    <table>
+      <tr>
+        <th>テーマ</th>
+        <th>出題数</th>
+        <th>重要度</th>
+      </tr>
+      <tr>
+        <td class="highlight">嚥下障害</td>
+        <td class="highlight">36問</td>
+        <td>★★★</td>
+      </tr>
+      <tr>
+        <td class="highlight">誤嚥性肺炎</td>
+        <td class="highlight">15問</td>
+        <td>★★★</td>
+      </tr>
+      <tr>
+        <td>消化管</td>
+        <td>7問</td>
+        <td>★★</td>
+      </tr>
+      <tr>
+        <td>経口摂取</td>
+        <td>6問</td>
+        <td>★★</td>
+      </tr>
+      <tr>
+        <td>胃瘻</td>
+        <td>3問</td>
+        <td>★★</td>
+      </tr>
+      <tr>
+        <td>静脈栄養</td>
+        <td>2問</td>
+        <td>★</td>
+      </tr>
+    </table>
+
+    <div class="note-box">
+      <h4>出題傾向</h4>
+      <p>「経腸vs静脈」の知識問題より、<strong>臨床シナリオ</strong>での誤嚥予防・栄養管理の判断が頻出</p>
+    </div>
+
+    <h2><span class="num">2.</span> 経腸栄養 vs 静脈栄養</h2>
+
+    <table>
+      <tr>
+        <th>項目</th>
+        <th>経腸栄養（EN）</th>
+        <th>静脈栄養（PN）</th>
+      </tr>
+      <tr>
+        <td class="highlight">大前提</td>
+        <td class="highlight">消化管が機能している</td>
+        <td>消化管が使えない</td>
+      </tr>
+      <tr>
+        <td>メリット</td>
+        <td><span class="highlight">腸管免疫（GALT）維持</span><br>生理的・感染リスク低・安価</td>
+        <td>消化管を休ませられる<br>確実なカロリー投与</td>
+      </tr>
+      <tr>
+        <td>デメリット</td>
+        <td>誤嚥リスク・下痢</td>
+        <td class="highlight">感染リスク高・腸管萎縮・高コスト</td>
+      </tr>
+      <tr>
+        <td>種類</td>
+        <td>経鼻胃管・胃瘻・腸瘻</td>
+        <td>PPN（末梢）・TPN（中心）</td>
+      </tr>
+    </table>
+
+    <div class="important-box">
+      <h4>108C79 出題ポイント</h4>
+      <ul>
+        <li>経静脈栄養より<span class="highlight">経口摂取</span>が優れている点 → <strong>腸管免疫の維持</strong></li>
+      </ul>
+      <p class="hint">経腸栄養は腸管粘膜を刺激し、GALT（腸管関連リンパ組織）を活性化</p>
+    </div>
+
+    <h2><span class="num">3.</span> 経腸栄養の適応と禁忌 <span class="exam-tag">113A25</span></h2>
+
+    <h3>適応（経腸栄養が可能）</h3>
+    <table>
+      <tr>
+        <th>状態</th>
+        <th>理由</th>
+      </tr>
+      <tr>
+        <td class="highlight">糖尿病</td>
+        <td>消化管機能は正常。<span class="highlight">インクレチン分泌</span>を促し血糖コントロール良好</td>
+      </tr>
+      <tr>
+        <td class="highlight">脳梗塞後の意識障害</td>
+        <td>嚥下困難でも<span class="highlight">消化管自体は正常</span>。経口摂取ができないだけ</td>
+      </tr>
+    </table>
+
+    <h3>禁忌（経腸栄養が不可）</h3>
+    <table>
+      <tr>
+        <th>状態</th>
+        <th>理由</th>
+      </tr>
+      <tr>
+        <td class="highlight">腸閉塞</td>
+        <td>腸管が物理的に閉塞 → 栄養剤が通過できない</td>
+      </tr>
+      <tr>
+        <td class="highlight">難治性下痢</td>
+        <td>腸管の吸収機能が障害 → 栄養を吸収できない</td>
+      </tr>
+      <tr>
+        <td class="highlight">下部消化管出血</td>
+        <td>出血中の消化管は安静が必要</td>
+      </tr>
+    </table>
+
+    <div class="note-box">
+      <h4>判断基準</h4>
+      <p>消化管が「安全に使用できる」かどうか。物理的閉塞・吸収障害・出血があれば禁忌。</p>
+    </div>
+
+    <h2><span class="num">4.</span> 経腸栄養の比較</h2>
+
+    <table>
+      <tr>
+        <th>項目</th>
+        <th>経鼻胃管</th>
+        <th>胃瘻（PEG）</th>
+      </tr>
+      <tr>
+        <td class="highlight">使用期間</td>
+        <td class="highlight">4〜6週間</td>
+        <td class="highlight">長期使用可能</td>
+      </tr>
+      <tr>
+        <td>手術</td>
+        <td>不要</td>
+        <td>必要（内視鏡下）</td>
+      </tr>
+      <tr>
+        <td>不快感</td>
+        <td class="secondary">強い（咽頭通過）</td>
+        <td>少ない</td>
+      </tr>
+      <tr>
+        <td class="highlight">嚥下への影響</td>
+        <td class="highlight">阻害する</td>
+        <td>影響少ない</td>
+      </tr>
+      <tr>
+        <td>誤嚥リスク</td>
+        <td>あり</td>
+        <td>あり（胃食道逆流）</td>
+      </tr>
+      <tr>
+        <td>自己抜去</td>
+        <td>起こりやすい</td>
+        <td>起こりにくい</td>
+      </tr>
+    </table>
+
+    <h2><span class="num">5.</span> 静脈栄養の比較</h2>
+
+    <table>
+      <tr>
+        <th>項目</th>
+        <th>PPN（末梢静脈）</th>
+        <th>TPN（中心静脈）</th>
+      </tr>
+      <tr>
+        <td class="highlight">使用期間</td>
+        <td class="highlight">2週間程度</td>
+        <td class="highlight">長期使用可能</td>
+      </tr>
+      <tr>
+        <td>投与カロリー</td>
+        <td class="secondary">低い（〜1000kcal）</td>
+        <td class="highlight">高い（完全栄養可）</td>
+      </tr>
+      <tr>
+        <td>手技</td>
+        <td>簡便</td>
+        <td>カテーテル挿入必要</td>
+      </tr>
+      <tr>
+        <td class="highlight">感染リスク</td>
+        <td>低い</td>
+        <td class="highlight">高い（CRBSI）</td>
+      </tr>
+      <tr>
+        <td>静脈炎</td>
+        <td class="secondary">起こりやすい</td>
+        <td>起こりにくい</td>
+      </tr>
+      <tr>
+        <td>位置づけ</td>
+        <td>補助的・一時的</td>
+        <td>主たる栄養法</td>
+      </tr>
+    </table>
+
+    <div class="note-box">
+      <h4>PPN vs TPN</h4>
+      <p>PPNは浸透圧の制限により高カロリー投与不可。2週間以内の短期・補助的使用に限る。</p>
+    </div>
+
+    <h2><span class="num">6.</span> 誤嚥性肺炎の予防 <span class="exam-tag">超頻出！</span></h2>
+
+    <div class="important-box">
+      <h4>経管栄養の管理（必須知識）</h4>
+      <ul>
+        <li>体位：<span class="highlight">半座位30〜45°</span>（誤嚥予防）</li>
+        <li>口腔ケア：<span class="highlight">必須</span>（誤嚥性肺炎予防）</li>
+        <li><span class="highlight">胃瘻でも誤嚥あり</span>（胃食道逆流）</li>
+      </ul>
+    </div>
+
+    <h3>口腔ケアの重要性</h3>
+    <ul>
+      <li><span class="highlight">肺炎球菌・黄色ブドウ球菌</span>：高齢者の誤嚥性肺炎の主な原因菌</li>
+      <li><span class="highlight">PMTC</span>：誤嚥性肺炎の予防に有効</li>
+      <li>経管栄養中も口腔内細菌は増殖する → 口腔ケア必須</li>
+    </ul>
+
+    <h3>誤嚥のリスク因子</h3>
+    <ul>
+      <li>嚥下障害（脳血管障害後など）</li>
+      <li>意識障害</li>
+      <li>経鼻胃管の長期留置（嚥下を阻害）</li>
+      <li>仰臥位での経管栄養</li>
+    </ul>
+
+    <h2><span class="num">7.</span> クイックリファレンス</h2>
+
+    <table>
+      <tr>
+        <th>項目</th>
+        <th>経鼻胃管</th>
+        <th>胃瘻</th>
+        <th>PPN</th>
+        <th>TPN</th>
+      </tr>
+      <tr>
+        <td>経路</td>
+        <td>経腸</td>
+        <td>経腸</td>
+        <td>末梢静脈</td>
+        <td>中心静脈</td>
+      </tr>
+      <tr>
+        <td class="highlight">期間</td>
+        <td class="highlight">4-6週</td>
+        <td class="highlight">長期</td>
+        <td class="highlight">2週</td>
+        <td class="highlight">長期</td>
+      </tr>
+      <tr>
+        <td>手術</td>
+        <td>不要</td>
+        <td>必要</td>
+        <td>不要</td>
+        <td>必要</td>
+      </tr>
+      <tr>
+        <td>腸管免疫</td>
+        <td class="highlight">維持</td>
+        <td class="highlight">維持</td>
+        <td class="secondary">低下</td>
+        <td class="secondary">低下</td>
+      </tr>
+      <tr>
+        <td>感染</td>
+        <td>低</td>
+        <td>低</td>
+        <td>低</td>
+        <td class="highlight">高</td>
+      </tr>
+    </table>
+
+    <h2><span class="num">8.</span> 口頭試問 頻出ポイント</h2>
+
+    <div class="important-box">
+      <h4>チェックリスト</h4>
+      <ul>
+        <li><span class="highlight">経鼻胃管</span>：4-6週、不快感強い、嚥下阻害</li>
+        <li><span class="highlight">胃瘻</span>：長期OK、手術必要、誤嚥リスクあり</li>
+        <li><span class="highlight">PPN</span>：2週、補助的、高カロリー不可</li>
+        <li><span class="highlight">TPN</span>：長期、感染リスク高い（CRBSI）</li>
+        <li><span class="highlight">糖尿病・意識障害</span>：消化管正常→経腸栄養○</li>
+        <li><span class="highlight">腸閉塞・下痢・出血</span>：消化管使用不可→経腸栄養×</li>
+        <li><span class="highlight">誤嚥予防</span>：半座位30-45°、口腔ケア必須</li>
+      </ul>
+      <p class="hint">消化管が使えるか → 経腸/静脈を判断、期間 → 短期/長期を選択</p>
+    </div>
+
+  </div>
+</body>
+</html>

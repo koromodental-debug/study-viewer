@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>隙と通過する脈管・神経</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+      --green-bg: #F0FFF4;
+      --green-border: #68D391;
+      --red-bg: #FFF5F5;
+      --red-border: #FC8181;
+      --purple-bg: #FAF5FF;
+      --purple-border: #B794F4;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 22pt; font-weight: bold; margin-bottom: 12px; color: var(--accent); }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; text-align: center; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 8px 12px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .summary-box {
+      background: var(--green-bg);
+      border-left: 4px solid var(--green-border);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .summary-box-title { font-weight: bold; color: #276749; margin-bottom: 6px; }
+    .warning-box {
+      background: var(--red-bg);
+      border-left: 4px solid var(--red-border);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .warning-box-title { font-weight: bold; color: #C53030; margin-bottom: 6px; }
+    .purple-box {
+      background: var(--purple-bg);
+      border-left: 4px solid var(--purple-border);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .purple-box-title { font-weight: bold; color: #6B46C1; margin-bottom: 6px; }
+    .small { font-size: 8pt; color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>隙と通過する脈管・神経</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">この単元のポイント</div>
+        <ul>
+          <li><span class="highlight">翼口蓋窩</span>と<span class="highlight">側頭下窩</span>の交通・通過構造物は頻出</li>
+          <li>組織隙の<span class="highlight">炎症波及経路</span>（特に下顎歯性感染）を理解する</li>
+          <li><span class="highlight">孔と通過する神経</span>の組み合わせを確実に覚える</li>
+        </ul>
+      </div>
+
+      <h2>1. 翼口蓋窩（よくこうがいか）</h2>
+
+      <h3>構成・位置</h3>
+      <p>上顎洞の後方、蝶形骨翼状突起・上顎骨・口蓋骨で囲まれた<span class="highlight">逆三角錐形</span>の空間</p>
+
+      <h3>交通と通過構造物</h3>
+      <table>
+        <tr>
+          <th>交通先</th>
+          <th>通路</th>
+          <th class="red">通過する構造物</th>
+        </tr>
+        <tr>
+          <td>頭蓋腔（中頭蓋窩）</td>
+          <td><span class="highlight">正円孔</span></td>
+          <td><span class="red">上顎神経（V2）</span></td>
+        </tr>
+        <tr>
+          <td>鼻腔</td>
+          <td><span class="highlight">蝶口蓋孔</span></td>
+          <td>後鼻枝、<span class="red">蝶口蓋動脈</span>（顎動脈の枝）</td>
+        </tr>
+        <tr>
+          <td>眼窩</td>
+          <td><span class="highlight">下眼窩裂</span></td>
+          <td>眼窩下神経・動脈</td>
+        </tr>
+        <tr>
+          <td>口腔</td>
+          <td><span class="highlight">大・小口蓋管</span></td>
+          <td>大・小口蓋神経、下行口蓋動脈</td>
+        </tr>
+        <tr>
+          <td>側頭下窩</td>
+          <td><span class="highlight">翼突上顎裂</span></td>
+          <td>顎動脈（第3部）</td>
+        </tr>
+        <tr>
+          <td>頭蓋底（破裂孔付近）</td>
+          <td><span class="highlight">翼突管</span></td>
+          <td>翼突管神経（大錐体神経＋深錐体神経）、翼突管動脈</td>
+        </tr>
+        <tr>
+          <td>上咽頭</td>
+          <td><span class="highlight">咽頭管（口蓋鞘管）</span></td>
+          <td>咽頭枝（神経・動脈）</td>
+        </tr>
+      </table>
+
+      <p class="small">※翼突管は「咽頭へ」ではなく頭蓋底（破裂孔付近）へ通じる。上咽頭への交通は咽頭管（口蓋鞘管）。</p>
+
+      <div class="summary-box">
+        <div class="summary-box-title">翼口蓋窩の内容物</div>
+        <ul>
+          <li><span class="highlight">翼口蓋神経節</span>（副交感神経節）</li>
+          <li><span class="highlight">上顎神経</span>（三叉神経第2枝）</li>
+          <li><span class="highlight">顎動脈</span>（第3部＝翼口蓋部）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A22（必修）</div>
+        <p>翼口蓋窩が<span class="red">蝶口蓋孔</span>で交通するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 眼窩<br>
+          b: 口腔<br>
+          c: <span class="red">鼻腔</span><br>
+          d: 側頭下窩<br>
+          e: 中頭蓋窩
+        </div>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117B33</div>
+        <p>上顎の歯を栄養する動脈が通過するのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a: <span class="red">歯槽孔</span>（後上歯槽動脈）<br>
+          b: 正円孔<br>
+          c: <span class="red">下眼窩裂</span>（眼窩下動脈→前上歯槽動脈）<br>
+          d: 蝶口蓋孔<br>
+          e: <span class="red">翼口蓋窩</span>（顎動脈）
+        </div>
+        <div class="answer">正解: a, c, e</div>
+      </div>
+
+      <h2>2. 側頭下窩（そくとうかか）</h2>
+
+      <h3>構成・位置</h3>
+      <p>蝶形骨大翼の側頭下面の下方、頬骨弓の内側に位置する空間</p>
+
+      <h3>内容物</h3>
+      <ul>
+        <li><span class="highlight">外側翼突筋・内側翼突筋</span></li>
+        <li><span class="highlight">顎動脈</span>（第1部＝下顎部、第2部＝翼突筋部）</li>
+        <li><span class="highlight">翼突筋静脈叢</span></li>
+        <li><span class="highlight">下顎神経（V3）</span>とその枝</li>
+      </ul>
+
+      <h3>交通</h3>
+      <table>
+        <tr>
+          <th>交通先</th>
+          <th>通路</th>
+          <th>通過する構造物</th>
+        </tr>
+        <tr>
+          <td>頭蓋腔（中頭蓋窩）</td>
+          <td><span class="highlight">卵円孔</span></td>
+          <td><span class="red">下顎神経（V3）</span></td>
+        </tr>
+        <tr>
+          <td>頭蓋腔（中頭蓋窩）</td>
+          <td><span class="highlight">棘孔</span></td>
+          <td><span class="red">中硬膜動脈</span></td>
+        </tr>
+        <tr>
+          <td>翼口蓋窩</td>
+          <td>翼突上顎裂</td>
+          <td>顎動脈</td>
+        </tr>
+        <tr>
+          <td>側頭窩</td>
+          <td>（上方に連続）</td>
+          <td>側頭筋</td>
+        </tr>
+      </table>
+
+      <h2>3. 口腔周囲の組織隙</h2>
+
+      <h3>翼突下顎隙（よくとつかがくげき）</h3>
+      <table>
+        <tr>
+          <th>境界</th>
+          <td>内側：内側翼突筋　外側：下顎枝内面</td>
+        </tr>
+        <tr>
+          <th class="red">通過構造物</th>
+          <td><span class="red">舌神経</span>、<span class="red">下歯槽神経</span>・動静脈</td>
+        </tr>
+        <tr>
+          <th>臨床的意義</th>
+          <td>下顎孔伝達麻酔の注射部位、下顎智歯周囲炎からの炎症波及</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107A49</div>
+        <p><span class="red">翼突下顎隙</span>を通るのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: <span class="red">舌神経</span><br>
+          b: 顔面動脈<br>
+          c: 耳下腺管<br>
+          d: <span class="red">下歯槽神経</span><br>
+          e: 下顎後静脈
+        </div>
+        <div class="answer">正解: a, d</div>
+        <p class="small" style="margin-top:6px;">【解説】翼突下顎隙には下顎孔に向かう下歯槽神経・動静脈と、その前方を走る舌神経が通過する。顔面動脈は顎下隙、耳下腺管・下顎後静脈は耳下腺部を通る。</p>
+      </div>
+
+      <h3>舌下隙（ぜっかげき）</h3>
+      <table>
+        <tr>
+          <th>境界</th>
+          <td>上方：口底粘膜　下方：顎舌骨筋</td>
+        </tr>
+        <tr>
+          <th>内容物</th>
+          <td>舌下腺、Wharton管（顎下腺管）、舌神経、舌下動静脈</td>
+        </tr>
+        <tr>
+          <th>感染源</th>
+          <td>下顎小臼歯〜大臼歯部の歯性感染</td>
+        </tr>
+      </table>
+
+      <h3>顎下隙（がっかげき）</h3>
+      <table>
+        <tr>
+          <th>境界</th>
+          <td>上方：顎舌骨筋　下方：広頸筋　外側：下顎骨下縁</td>
+        </tr>
+        <tr>
+          <th>内容物</th>
+          <td>顎下腺、顎下リンパ節、顔面動静脈</td>
+        </tr>
+        <tr>
+          <th>交通</th>
+          <td>舌下隙、翼突下顎隙と交通（炎症が波及しやすい）</td>
+        </tr>
+      </table>
+
+      <h3>オトガイ下隙</h3>
+      <table>
+        <tr>
+          <th>境界</th>
+          <td>左右の顎二腹筋前腹の間、舌骨上方</td>
+        </tr>
+        <tr>
+          <th>感染源</th>
+          <td><span class="highlight">下顎前歯部</span>の歯性感染</td>
+        </tr>
+      </table>
+
+      <h2>4. 炎症の波及経路</h2>
+
+      <div class="warning-box">
+        <div class="warning-box-title">歯性感染の波及パターン（頻出！）</div>
+        <table>
+          <tr>
+            <th>感染源</th>
+            <th>波及する隙</th>
+            <th>備考</th>
+          </tr>
+          <tr>
+            <td><span class="highlight">下顎前歯部</span></td>
+            <td><span class="red">舌下隙</span>、<span class="red">オトガイ下隙</span></td>
+            <td>根尖が顎舌骨筋付着より上→舌下隙</td>
+          </tr>
+          <tr>
+            <td>下顎小臼歯部</td>
+            <td>舌下隙（主）、顎下隙</td>
+            <td>根尖位置による</td>
+          </tr>
+          <tr>
+            <td>下顎大臼歯部</td>
+            <td><span class="highlight">顎下隙</span>（主）、舌下隙</td>
+            <td>根尖が顎舌骨筋付着より下→顎下隙</td>
+          </tr>
+          <tr>
+            <td>下顎智歯部</td>
+            <td>翼突下顎隙 → <span class="red">咽頭側隙</span>（重篤化！）</td>
+            <td>開口障害・嚥下障害</td>
+          </tr>
+          <tr>
+            <td>上顎臼歯部</td>
+            <td>頬隙、側頭下窩、翼口蓋窩</td>
+            <td>頬側or口蓋側で異なる</td>
+          </tr>
+        </table>
+        <p class="small" style="margin-top:6px;">※波及先は<span class="highlight">歯根尖が顎舌骨筋付着線より上か下か</span>で決まる。下顎大臼歯は付着線より下に根尖があるため顎下隙に波及しやすい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A93</div>
+        <p><span class="red">下顎前歯部</span>の化膿性炎症が波及しやすいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: <span class="red">舌下隙</span><br>
+          b: 顎下隙<br>
+          c: 翼突下顎隙<br>
+          d: <span class="red">オトガイ下隙</span><br>
+          e: 側咽頭隙
+        </div>
+        <div class="answer">正解: a, d</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C117</div>
+        <p>炎症が波及した場合に<span class="red">重篤な嚥下障害</span>を伴うのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 顎下隙<br>
+          b: 側頭下窩<br>
+          c: 翼口蓋窩<br>
+          d: <span class="red">咽頭周囲隙</span><br>
+          e: <span class="red">翼突下顎隙</span>
+        </div>
+        <div class="answer">正解: d, e</div>
+        <p class="small" style="margin-top:6px;">【解説】咽頭周囲隙（咽頭側隙）・翼突下顎隙の炎症は開口障害・嚥下障害を起こす。舌下隙・顎下隙・オトガイ下隙に広範に波及すると<span class="highlight">Ludwig angina（口底蜂窩織炎）</span>に進展し得る。</p>
+      </div>
+
+      <div class="purple-box">
+        <div class="purple-box-title">Ludwig angina（口底蜂窩織炎）</div>
+        <ul>
+          <li><span class="highlight">舌下隙・顎下隙・オトガイ下隙</span>の連続性を主戦場とする広範な蜂窩織炎</li>
+          <li>両側性に急速進展し、舌の挙上・気道狭窄をきたす</li>
+          <li>下顎大臼歯部（特に第2・第3大臼歯）の歯性感染が主な原因</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117A68</div>
+        <p>下顎智歯抜去後、7日経過後に開口障害が出現した患者。膿瘍の部位はどれか。</p>
+        <div class="choices">
+          a: 顎下隙<br>
+          b: 舌下隙<br>
+          c: <span class="red">咽頭側隙</span><br>
+          d: 咬筋下隙<br>
+          e: 翼突下顎隙
+        </div>
+        <div class="answer">正解: c</div>
+        <p class="small" style="margin-top:6px;">【解説】智歯抜去後の感染が翼突下顎隙を経て咽頭側隙に波及。開口障害に加え嚥下障害を伴う重篤な状態。</p>
+      </div>
+
+      <h2>5. 頭蓋の孔と通過する神経</h2>
+
+      <table>
+        <tr>
+          <th>孔</th>
+          <th>存在する骨</th>
+          <th class="red">通過する神経・脈管</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">正円孔</span></td>
+          <td><span class="highlight">蝶形骨</span></td>
+          <td><span class="red">上顎神経（V2）</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">卵円孔</span></td>
+          <td>蝶形骨</td>
+          <td><span class="red">下顎神経（V3）</span>、小錐体神経、副硬膜動脈</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">棘孔</span></td>
+          <td>蝶形骨</td>
+          <td><span class="red">中硬膜動脈</span>、硬膜枝（V3の枝）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">切歯孔</span></td>
+          <td>上顎骨</td>
+          <td><span class="red">鼻口蓋神経</span>、鼻口蓋動脈（大口蓋動脈との吻合）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">眼窩下孔</span></td>
+          <td><span class="highlight">上顎骨</span></td>
+          <td>眼窩下神経（V2の枝）、眼窩下動脈</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">オトガイ孔</span></td>
+          <td>下顎骨</td>
+          <td>オトガイ神経（V3の枝）、オトガイ動脈</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">茎乳突孔</span></td>
+          <td>側頭骨</td>
+          <td><span class="red">顔面神経（VII）</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">下顎孔</span></td>
+          <td>下顎骨</td>
+          <td>下歯槽神経・動静脈</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">110A34（必修）</div>
+        <p><span class="red">正円孔</span>があるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 口蓋骨<br>
+          b: 後頭骨<br>
+          c: 上顎骨<br>
+          d: 側頭骨<br>
+          e: <span class="red">蝶形骨</span>
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C73</div>
+        <p>骨の孔と通過する神経の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 歯槽孔 ― 下歯槽神経<br>
+          b: <span class="red">切歯孔 ― 鼻口蓋神経</span><br>
+          c: <span class="red">卵円孔 ― 下顎神経</span><br>
+          d: 眼窩下孔 ― 眼神経<br>
+          e: 茎乳突孔 ― 鼓索神経
+        </div>
+        <div class="answer">正解: b, c</div>
+        <p class="small" style="margin-top:6px;">【解説】歯槽孔→後上歯槽神経、眼窩下孔→眼窩下神経（V2）、茎乳突孔→顔面神経（鼓索神経は顔面神経の枝だが通過孔は異なる）</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試対策まとめ</div>
+        <table>
+          <tr>
+            <th>頻出テーマ</th>
+            <th>覚えるべきポイント</th>
+          </tr>
+          <tr>
+            <td>翼口蓋窩の交通</td>
+            <td>蝶口蓋孔→鼻腔、正円孔→頭蓋腔、下眼窩裂→眼窩</td>
+          </tr>
+          <tr>
+            <td>翼突下顎隙の内容物</td>
+            <td><span class="red">舌神経</span>、<span class="red">下歯槽神経</span></td>
+          </tr>
+          <tr>
+            <td>下顎前歯部の炎症波及</td>
+            <td>舌下隙、オトガイ下隙</td>
+          </tr>
+          <tr>
+            <td>重篤な嚥下障害</td>
+            <td>咽頭側隙、翼突下顎隙への炎症波及</td>
+          </tr>
+          <tr>
+            <td>正円孔の位置</td>
+            <td>蝶形骨（上顎神経が通過）</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

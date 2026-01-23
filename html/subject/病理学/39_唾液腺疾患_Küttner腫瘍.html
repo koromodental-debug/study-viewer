@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Küttner腫瘍 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 唾液腺疾患</span>
+    <h1>Küttner腫瘍</h1>
+    <div class="container">
+
+      <h2>I. 概要</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">別名</td>
+          <td><span class="highlight">慢性硬化性唾液腺炎</span><br>（キュットナー腫瘍）</td>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>唾液腺の<span class="highlight">慢性炎症性疾患</span><br>腫瘍ではなく<span class="caution">炎症性病変</span></td>
+        </tr>
+        <tr>
+          <td class="key">関連疾患</td>
+          <td><span class="highlight">IgG4関連疾患</span>の一型と考えられている</td>
+        </tr>
+      </table>
+
+      <h2>II. 臨床所見</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td><span class="highlight">顎下腺</span>（片側性が多い）</td>
+        </tr>
+        <tr>
+          <td class="key">好発</td>
+          <td><span class="highlight">男性</span>に多い</td>
+        </tr>
+        <tr>
+          <td class="key">症状</td>
+          <td>顎下腺の<span class="highlight">無痛性腫脹</span><br>腺が<span class="highlight">硬く腫大</span>する</td>
+        </tr>
+        <tr>
+          <td class="key">触診</td>
+          <td>硬い腫瘤として触知<br>腫瘍との鑑別が必要</td>
+        </tr>
+      </table>
+
+      <h2>III. 病理所見</h2>
+
+      <table>
+        <tr>
+          <th>所見</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">腺房の消失</td>
+          <td>腺房細胞の萎縮・消失</td>
+        </tr>
+        <tr>
+          <td class="key">導管の拡張</td>
+          <td>導管の拡張がみられる</td>
+        </tr>
+        <tr>
+          <td class="key">炎症細胞浸潤</td>
+          <td><span class="highlight">リンパ球</span>、<span class="highlight">形質細胞</span>の浸潤</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">線維組織の増生</span></td>
+          <td>小葉間の結合組織の著明な<span class="highlight">線維化</span><br>→「硬化性」の原因</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">IgG4関連疾患との関連</div>
+        <ul>
+          <li>血清<span class="highlight">IgG4</span>が高値を示すことがある</li>
+          <li>形質細胞は免疫組織化学染色で<span class="highlight">IgG4陽性</span></li>
+          <li>自己免疫性膵炎、硬化性胆管炎などと同じ疾患群</li>
+        </ul>
+      </div>
+
+      <h2>IV. 鑑別疾患</h2>
+
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>鑑別点</th>
+        </tr>
+        <tr>
+          <td class="key">唾液腺腫瘍</td>
+          <td>Küttner腫瘍は炎症性病変<br>病理検査で鑑別</td>
+        </tr>
+        <tr>
+          <td class="key">唾石症</td>
+          <td>唾石症は<span class="highlight">疝痛</span>（食事時の痛み）を伴う<br>Küttner腫瘍は無痛性</td>
+        </tr>
+        <tr>
+          <td class="key">Sjögren症候群</td>
+          <td>Sjögren症候群は両側性で口腔乾燥を伴う<br>女性に多い</td>
+        </tr>
+      </table>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">118D14</div>
+        <p>顎下腺が硬く腫大するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Frey症候群<br>
+          b Küttner腫瘍<br>
+          c Warthin腫瘍<br>
+          d Sjögren症候群<br>
+          e Heerfordt症候群
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">Küttner腫瘍</span>（慢性硬化性唾液腺炎）は顎下腺が硬く腫大する。線維化により硬化する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A54</div>
+        <p>Küttner腫瘍でみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 腺房の増生<br>
+          b 肉芽腫の形成<br>
+          c 好中球の浸潤<br>
+          d 線維組織の増生<br>
+          e 核内封入体の出現
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】Küttner腫瘍では<span class="highlight">線維組織の増生</span>（線維化）が特徴的。これが「硬化性」の原因となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A16</div>
+        <p>疝痛の原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ガマ腫<br>
+          b 唾石症<br>
+          c Küttner腫瘍<br>
+          d Sjögren症候群<br>
+          e 流行性耳下腺炎
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">唾石症</span>は食事時に唾液分泌が増加すると導管が閉塞し疝痛（唾仙痛）を生じる。Küttner腫瘍は無痛性。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

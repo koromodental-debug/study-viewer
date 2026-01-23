@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>生活習慣指導</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 24pt; font-weight: bold; margin-bottom: 16px; }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; }
+    h2 .num { color: var(--accent); }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 8px 12px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .syllabus-section {
+      background: #EDF2F7;
+      padding: 6px 10px;
+      margin: 10px 0 6px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>生活習慣指導</h1>
+    <div class="container">
+
+      <div class="syllabus-section">出題基準: 各論III 5. 顎・口腔領域の疾患の疫学と予防 - イ. 生活習慣指導</div>
+
+      <!-- 禁煙支援・指導 -->
+      <h2><span class="num">1.</span> 禁煙支援・指導</h2>
+
+      <h3>喫煙の口腔への影響</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>影響</th>
+        </tr>
+        <tr>
+          <td>歯</td>
+          <td>口臭、齲蝕、<span class="highlight">歯の着色</span></td>
+        </tr>
+        <tr>
+          <td>歯周組織</td>
+          <td><span class="red">歯周病</span>、歯肉メラニン色素沈着、歯槽骨吸収促進</td>
+        </tr>
+        <tr>
+          <td>口蓋粘膜</td>
+          <td><span class="highlight">ニコチン性口内炎</span>、白板症</td>
+        </tr>
+        <tr>
+          <td>舌</td>
+          <td>舌癌、黒毛舌、白板症、<span class="red">味覚・嗅覚の減退</span></td>
+        </tr>
+        <tr>
+          <td>歯科治療</td>
+          <td>インプラント失敗率上昇、<span class="red">歯周治療の効果低下</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">WHOの簡易的禁煙支援 5A's</div>
+        <table>
+          <tr>
+            <th>ステップ</th>
+            <th>内容</th>
+          </tr>
+          <tr>
+            <td><span class="highlight">Ask</span>（質問）</td>
+            <td>「喫煙していますか？」と尋ねる</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">Advice</span>（助言）</td>
+            <td>明確で、強く、個別的な内容で禁煙を勧める</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">Assess</span>（評価）</td>
+            <td>禁煙準備ができているか？ → 動機づけ支援の判断根拠</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">Assist</span>（支援）</td>
+            <td>禁煙外来紹介など具体的支援</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">Arrange</span>（調整）</td>
+            <td>フォローアップの手配</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">禁煙準備ができていない者への支援 5R's</div>
+        <ul>
+          <li><span class="highlight">Relevance</span>（関連）：喫煙と本人の健康問題との関連を示す</li>
+          <li><span class="highlight">Risks</span>（リスク）：喫煙継続のリスクを説明</li>
+          <li><span class="highlight">Rewards</span>（褒美）：禁煙のメリットを伝える</li>
+          <li><span class="highlight">Roadblocks</span>（障壁）：禁煙の障壁を特定し対処法を検討</li>
+          <li><span class="highlight">Repetition</span>（反復）：繰り返し禁煙を勧める</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B64</div>
+        <p>WHOの簡易的禁煙支援を構成する5つの"A"で、動機付け支援を行うか否かを決める根拠となるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: Ask<br>
+          b: Advice<br>
+          c: Assess<br>
+          d: Assist<br>
+          e: Arrange
+        </div>
+        <div class="answer">正解: c（Assess＝禁煙準備ができているか評価）</div>
+      </div>
+
+      <!-- 口臭予防 -->
+      <h2><span class="num">2.</span> 口臭予防</h2>
+
+      <h3>口臭の原因物質（VSC：揮発性硫黄化合物）</h3>
+      <ul>
+        <li><span class="highlight">硫化水素（H₂S）</span>：舌苔由来が主</li>
+        <li><span class="highlight">メチルメルカプタン</span>：歯周病由来が主</li>
+        <li><span class="highlight">ジメチルサルファイド</span>：全身疾患由来</li>
+      </ul>
+
+      <h3>口臭検査法</h3>
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">官能検査</span></td>
+          <td>検査者の嗅覚で判定、スコア0〜5、<span class="red">スコア2以上で真性口臭症</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ガスクロマトグラフィ</span></td>
+          <td>VSCを定量測定、ゴールドスタンダード、原因の特定に有用</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">半導体ガスセンサー</span></td>
+          <td>小型・軽量、VSCの質的評価は不可</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">口臭の分類と対応</div>
+        <table>
+          <tr>
+            <th>分類</th>
+            <th>原因</th>
+            <th>対応</th>
+          </tr>
+          <tr>
+            <td>生理的口臭</td>
+            <td>起床時、空腹時、緊張時</td>
+            <td>口腔清掃指導（舌清掃含む）</td>
+          </tr>
+          <tr>
+            <td>病的口臭（口腔由来）</td>
+            <td>歯周病、舌苔、齲蝕</td>
+            <td>原因疾患の治療</td>
+          </tr>
+          <tr>
+            <td>病的口臭（全身由来）</td>
+            <td>糖尿病、肝疾患、腎疾患</td>
+            <td>医科への紹介</td>
+          </tr>
+          <tr>
+            <td><span class="red">仮性口臭症</span></td>
+            <td>実際には口臭なし</td>
+            <td>検査結果の説明、カウンセリング</td>
+          </tr>
+          <tr>
+            <td><span class="red">口臭恐怖症</span></td>
+            <td>説明しても納得しない</td>
+            <td>心療内科・精神科への紹介</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118C38</div>
+        <p>口臭恐怖症患者の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 検査結果の説明に納得しない<br>
+          b: 口臭を自覚していない<br>
+          c: 他人の行動を口臭と結びつける<br>
+          d: 官能検査でスコア2以上である<br>
+          e: VSC濃度が高い
+        </div>
+        <div class="answer">正解: a, c</div>
+      </div>
+
+      <!-- TCH・ブラキシズム -->
+      <h2><span class="num">3.</span> 顎関節疾患の予防（TCH・ブラキシズム）</h2>
+
+      <h3>TCH（Tooth Contacting Habit：歯列接触癖）</h3>
+      <ul>
+        <li>定義：日中の無意識の<span class="highlight">上下歯の持続的接触</span></li>
+        <li>正常：上下歯は安静時に<span class="red">2〜3mm離開</span>している</li>
+        <li>関連疾患：顎関節症、咬筋・側頭筋の疲労、歯の咬耗</li>
+      </ul>
+
+      <h3>ブラキシズム</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">グラインディング</span></td>
+          <td>歯ぎしり、上下歯を擦り合わせる</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">クレンチング</span></td>
+          <td>くいしばり、上下歯を強く噛みしめる</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">タッピング</span></td>
+          <td>カチカチと歯を打ち鳴らす</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">TCH・ブラキシズムへの指導</div>
+        <ul>
+          <li><span class="highlight">認知行動療法</span>：気づきを促す（付箋を貼るなど）</li>
+          <li><span class="highlight">スプリント療法</span>：夜間のオクルーザルスプリント装着</li>
+          <li>ストレスマネジメント</li>
+          <li>筋マッサージ</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118D63</div>
+        <p>Tooth wearの原因はどれか。3つ選べ。</p>
+        <div class="choices">
+          a: 齲蝕<br>
+          b: 酸蝕症<br>
+          c: 歯の咬耗<br>
+          d: 歯の摩耗<br>
+          e: アブフラクション
+        </div>
+        <div class="answer">正解: b, d, e（Tooth wear = 非齲蝕性歯質欠損）</div>
+      </div>
+
+      <!-- マウスガード -->
+      <h2><span class="num">4.</span> 損傷の予防（マウスガード）</h2>
+
+      <h3>マウスガードの種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">カスタムメイドタイプ</span></td>
+          <td>歯科医院で印象採得、<span class="red">適合性・保持力が最も優れる</span></td>
+        </tr>
+        <tr>
+          <td>マウスフォームドタイプ</td>
+          <td>熱で軟化させ自分で適合させる、市販品</td>
+        </tr>
+        <tr>
+          <td>ストックタイプ</td>
+          <td>既製品、適合性が低い</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">マウスガードの製作</div>
+        <ul>
+          <li>材料：<span class="highlight">EVA（エチレン酢酸ビニル共重合体）</span>が主流</li>
+          <li>厚さ：<span class="red">3〜4mm</span>が推奨</li>
+          <li>範囲：上顎全歯列（第二大臼歯まで）を被覆</li>
+          <li>咬合：<span class="highlight">中心咬合位で均等接触</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118D56</div>
+        <p>口腔外傷の予防のためのマウスガードで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: カスタムメイドタイプが推奨される<br>
+          b: 厚さは1mm程度が適切である<br>
+          c: 中心咬合位で均等に接触させる<br>
+          d: 下顎に装着する<br>
+          e: 第一大臼歯までを被覆する
+        </div>
+        <div class="answer">正解: a, c</div>
+      </div>
+
+      <!-- 食事・栄養指導 -->
+      <h2><span class="num">5.</span> 食事・栄養指導（う蝕予防）</h2>
+
+      <h3>う蝕と食事の関係</h3>
+      <ul>
+        <li>う蝕原性が高い糖：<span class="red">スクロース（ショ糖）</span> ＞ ブドウ糖 ＞ 果糖</li>
+        <li><span class="highlight">間食回数</span>の増加 → う蝕リスク上昇</li>
+        <li>摂取様式：だらだら食べ ＞ 一度に食べる</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">う蝕予防のための食事指導</div>
+        <ul>
+          <li>間食は<span class="highlight">時間と回数を決める</span>（だらだら食べを避ける）</li>
+          <li>甘味飲料の摂取を控える</li>
+          <li>代用甘味料（キシリトール等）の活用</li>
+          <li>食後の口腔清掃の習慣化</li>
+          <li>よく噛んで食べる（唾液分泌促進）</li>
+        </ul>
+      </div>
+
+      <!-- 行動変容 -->
+      <h2><span class="num">6.</span> 行動変容と患者指導</h2>
+
+      <h3>行動変容ステージモデル（Prochaska）</h3>
+      <table>
+        <tr>
+          <th>ステージ</th>
+          <th>特徴</th>
+          <th>支援方法</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">無関心期</span></td>
+          <td>6ヶ月以内に行動変容の意思なし</td>
+          <td>情報提供、意識の高揚</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">関心期</span></td>
+          <td>6ヶ月以内に行動変容を考えている</td>
+          <td>メリットの強調、動機づけ</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">準備期</span></td>
+          <td>1ヶ月以内に行動変容の予定あり</td>
+          <td>具体的な計画立案</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">実行期</span></td>
+          <td>行動変容して6ヶ月未満</td>
+          <td>強化、セルフモニタリング</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">維持期</span></td>
+          <td>行動変容して6ヶ月以上</td>
+          <td>再発防止、継続支援</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115D13</div>
+        <p>特定保健指導のアウトカムとして重要なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 知識の獲得<br>
+          b: 行動変容<br>
+          c: 受診率の向上<br>
+          d: 情報提供<br>
+          e: 動機づけ
+        </div>
+        <div class="answer">正解: b</div>
+      </div>
+
+      <!-- 生活習慣病 -->
+      <h2><span class="num">7.</span> 生活習慣病・メタボリックシンドローム</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">メタボリックシンドロームの診断基準</div>
+        <p><span class="red">必須項目：内臓脂肪蓄積（ウエスト周囲径）</span></p>
+        <ul>
+          <li>男性：<span class="highlight">85cm以上</span></li>
+          <li>女性：<span class="highlight">90cm以上</span></li>
+        </ul>
+        <p>＋ 以下の2項目以上：</p>
+        <ul>
+          <li>高トリグリセリド血症（≧150mg/dL）または低HDLコレステロール血症（＜40mg/dL）</li>
+          <li>収縮期血圧≧130mmHg または 拡張期血圧≧85mmHg</li>
+          <li>空腹時血糖≧110mg/dL</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117A9</div>
+        <p>高齢者の医療の確保に関する法律によって規定されている「特定健康診査・特定保健指導」で対策されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 感染症<br>
+          b: フレイル<br>
+          c: 悪性腫瘍<br>
+          d: 精神疾患<br>
+          e: メタボリックシンドローム
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <!-- プラークコントロール -->
+      <h2><span class="num">8.</span> プラークコントロールと動機づけ</h2>
+
+      <h3>プラークコントロールの分類</h3>
+      <table>
+        <tr>
+          <th>分類基準</th>
+          <th>種類</th>
+        </tr>
+        <tr>
+          <td>誰が行うか</td>
+          <td><span class="highlight">セルフケア</span>、プロフェッショナルケア、コミュニティケア</td>
+        </tr>
+        <tr>
+          <td>方法</td>
+          <td><span class="highlight">機械的</span>（歯ブラシ等）、<span class="highlight">化学的</span>（洗口剤等）</td>
+        </tr>
+        <tr>
+          <td>部位</td>
+          <td>歯肉縁上、歯肉縁下、口腔粘膜、義歯</td>
+        </tr>
+      </table>
+
+      <h3>動機づけの方法</h3>
+      <ul>
+        <li><span class="highlight">染め出し</span>：プラークを可視化して気づきを促す</li>
+        <li>マイクロスコープでの観察</li>
+        <li>DVD・視覚教材の活用</li>
+        <li>成功体験の積み重ね</li>
+      </ul>
+
+      <!-- まとめ -->
+      <div class="point-box">
+        <div class="point-box-title">生活習慣指導のまとめ</div>
+        <ul>
+          <li>禁煙支援：<span class="highlight">5A's</span>（Ask, Advice, Assess, Assist, Arrange）</li>
+          <li>口臭検査：官能検査<span class="red">スコア2以上</span>で真性口臭症</li>
+          <li>TCH：日中の上下歯接触癖、正常は<span class="red">2〜3mm離開</span></li>
+          <li>マウスガード：<span class="highlight">カスタムメイドタイプ</span>、厚さ3〜4mm推奨</li>
+          <li>う蝕予防：<span class="highlight">間食回数</span>の管理が重要</li>
+          <li>行動変容：<span class="highlight">ステージに応じた支援</span>が重要</li>
+          <li>メタボ診断：<span class="red">ウエスト周囲径</span>が必須項目</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

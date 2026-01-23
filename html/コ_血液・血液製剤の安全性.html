@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>血液・血液製剤の安全性</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>コ. 血液・血液製剤の安全性</h1>
+    <div class="subtitle">必修2 社会と歯科医療</div>
+    <div class="container">
+
+      <h3>血液製剤の種類と保存</h3>
+      <p><span class="red">有効期限と保存法</span>をセットで覚えておくこと。</p>
+      <table>
+        <tr><th>製剤</th><th>具体例</th><th>保存期間</th><th>保存温度</th></tr>
+        <tr><td><span class="highlight">全血製剤</span></td><td>ヒト全血液</td><td>21日間</td><td><span class="red">4〜6℃</span></td></tr>
+        <tr><td><span class="red">赤血球製剤</span></td><td>濃厚赤血球MAP</td><td>21日間</td><td><span class="red">4〜6℃</span></td></tr>
+        <tr><td><span class="red">血小板製剤</span></td><td>濃厚血小板</td><td><span class="red">4日間</span></td><td><span class="red">20〜24℃</span>（振盪）</td></tr>
+        <tr><td><span class="highlight">新鮮凍結血漿</span></td><td>FFP</td><td>1年間</td><td><span class="red">-20℃以下</span></td></tr>
+      </table>
+
+      <h3>保存温度のポイント</h3>
+      <ul>
+        <li><span class="red">赤血球製剤</span>：<span class="red">4〜6℃</span>（冷蔵）</li>
+        <li><span class="red">血小板製剤</span>：<span class="red">20〜24℃</span>（室温、振盪保存）※冷蔵不可</li>
+        <li><span class="red">新鮮凍結血漿</span>：<span class="red">-20℃以下</span>（凍結）</li>
+      </ul>
+
+      <h3>輸血の副作用</h3>
+      <table>
+        <tr><th>種類</th><th>原因・症状</th></tr>
+        <tr><td><span class="red">溶血性輸血反応</span></td><td>ABO不適合、発熱・悪寒・血圧低下</td></tr>
+        <tr><td><span class="highlight">アレルギー反応</span></td><td>蕁麻疹、アナフィラキシー</td></tr>
+        <tr><td><span class="highlight">GVHD</span></td><td>移植片対宿主病、放射線照射で予防</td></tr>
+        <tr><td>感染症</td><td>肝炎ウイルス、HIV等</td></tr>
+      </table>
+
+      <h3>輸血前検査</h3>
+      <ul>
+        <li><span class="red">ABO血液型</span>検査</li>
+        <li><span class="red">Rh血液型</span>検査</li>
+        <li><span class="red">交差適合試験</span>（クロスマッチ）</li>
+        <li>不規則抗体スクリーニング</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">117A-15</div>
+        <p>赤血球製剤の保存温度で正しいのはどれか。1つ選べ。</p>
+        <p>a: -20℃　b: 5℃　c: 15℃　d: 35℃　e: 45℃</p>
+        <div class="answer">正解: b（赤血球製剤は4〜6℃で保存）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B-8</div>
+        <p>血小板製剤の保存で正しいのはどれか。1つ選べ。</p>
+        <p>a: 凍結保存　b: 4℃で保存　c: 室温で振盪保存　d: 1年間保存可能　e: 静置保存</p>
+        <div class="answer">正解: c（血小板は20〜24℃で振盪保存）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">赤血球製剤</span>＝4〜6℃（冷蔵）、21日間</li>
+          <li><span class="red">血小板製剤</span>＝20〜24℃（室温・振盪）、4日間</li>
+          <li><span class="red">新鮮凍結血漿</span>＝-20℃以下（凍結）、1年間</li>
+          <li>輸血前検査＝ABO型、Rh型、交差適合試験</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

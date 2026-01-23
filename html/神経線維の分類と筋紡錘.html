@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>神経線維の分類と筋紡錘</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue: #CBD5E0;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FAF8F5;
+      --yellow-border: #E8E4DE;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 16px; }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; }
+    h2 .num { color: var(--accent); }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    tr:last-child td { border-bottom: none; }
+    .highlight { font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .summary-box {
+      background: var(--bg-blue-light);
+      border-radius: 12px;
+      padding: 12px 16px; margin: 12px 0; break-inside: avoid;
+    }
+    .summary-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .syllabus-section {
+      background: #EDF2F7;
+      padding: 6px 10px;
+      margin: 10px 0 6px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: bold;
+    }
+    .two-col { display: flex; gap: 15px; }
+    .two-col > div { flex: 1; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>神経線維の分類と筋紡錘</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">出題のポイント</div>
+        <ul>
+          <li><span class="highlight">Aα線維</span>（運動神経）が<span class="red">伝導速度最速</span></li>
+          <li><span class="highlight">Aγ線維</span>が<span class="highlight">錘内筋</span>を収縮させる（筋紡錘の感度調節）</li>
+          <li><span class="highlight">Ia群線維</span>は筋紡錘からの求心性線維（伸張反射）</li>
+          <li><span class="highlight">Aδ線維</span>は象牙質擦過刺激による痛みを伝える</li>
+        </ul>
+      </div>
+
+      <h2><span class="num">1.</span> 神経線維の分類（Erlanger-Gasser分類）</h2>
+      <p>軸索の<span class="highlight">伝導速度と直径</span>は比例するので、軸索は太さによって群に分類される。</p>
+
+      <table>
+        <tr>
+          <th>髄鞘</th>
+          <th>型</th>
+          <th>機能</th>
+          <th>線維径(μm)</th>
+          <th>伝導速度(m/秒)</th>
+        </tr>
+        <tr>
+          <td rowspan="5">有髄</td>
+          <td><span class="highlight">Aα</span></td>
+          <td>固有受容感覚、<span class="red">体性運動</span></td>
+          <td>12〜20</td>
+          <td><span class="red">70〜120（最速）</span></td>
+        </tr>
+        <tr>
+          <td>Aβ</td>
+          <td>触覚、圧覚</td>
+          <td>5〜12</td>
+          <td>30〜70</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Aγ</span></td>
+          <td><span class="highlight">筋紡錘への運動神経</span></td>
+          <td>3〜6</td>
+          <td>15〜30</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Aδ</span></td>
+          <td>痛覚、温度覚、触覚</td>
+          <td>2〜5</td>
+          <td>12〜30</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>交感神経節前線維</td>
+          <td>&lt;3</td>
+          <td>3〜15</td>
+        </tr>
+        <tr>
+          <td>無髄</td>
+          <td>C</td>
+          <td>痛覚、温度覚、交感神経節後線維</td>
+          <td>0.3〜1.3</td>
+          <td>0.5〜2.3</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">2.</span> 求心性線維の分類（Lloyd-Hunt分類）</h2>
+      <p>感覚神経にのみ適用され、<span class="highlight">受容器との対応</span>にも注目した分類。</p>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>受容器の種類</th>
+          <th>対応する文字式分類</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">Ia</span></td>
+          <td><span class="highlight">筋紡錘</span>（環らせん形終末）</td>
+          <td>Aα</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Ib</span></td>
+          <td><span class="highlight">ゴルジ腱器官</span></td>
+          <td>Aα</td>
+        </tr>
+        <tr>
+          <td>II</td>
+          <td>筋紡錘（散形終末）、触・圧受容器</td>
+          <td>Aβ</td>
+        </tr>
+        <tr>
+          <td>III</td>
+          <td>痛覚・温度覚受容器</td>
+          <td>Aδ</td>
+        </tr>
+        <tr>
+          <td>IV</td>
+          <td>痛覚・温度覚受容器</td>
+          <td>C</td>
+        </tr>
+      </table>
+
+      <h2><span class="num">3.</span> 運動ニューロン</h2>
+
+      <h3>α運動ニューロン</h3>
+      <ul>
+        <li>細胞体が<span class="highlight">大きく</span>、<span class="highlight">太い軸索（Aα線維）</span>をもつ</li>
+        <li><span class="highlight">錘外筋（骨格筋）</span>の収縮を制御</li>
+        <li>脊髄<span class="highlight">前角</span>に存在</li>
+      </ul>
+
+      <h3>γ運動ニューロン</h3>
+      <ul>
+        <li>細胞体が<span class="highlight">小さく</span>、<span class="highlight">細い軸索（Aγ線維）</span>をもつ</li>
+        <li><span class="highlight">錘内筋</span>の収縮を制御 → <span class="highlight">筋紡錘の感度調節</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">α-γ連関</div>
+        <p>随意運動時、錘外筋の収縮（α運動ニューロン）と同期して錘内筋も収縮（γ運動ニューロン）→ 筋紡錘の感度を常に一定に保つ</p>
+      </div>
+
+      <h2><span class="num">4.</span> 筋紡錘と腱紡錘</h2>
+
+      <h3>筋紡錘</h3>
+      <ul>
+        <li><span class="highlight">錘内筋線維</span>とよばれる特殊な筋線維</li>
+        <li>筋の<span class="highlight">伸張</span>に応答（筋の伸張速度や筋長情報を中枢に伝える）</li>
+        <li>求心性線維：<span class="highlight">Ia群線維</span>（一次終末）、II群線維（二次終末）</li>
+        <li>遠心性線維：<span class="highlight">Aγ線維</span>（γ運動ニューロン）</li>
+        <li><span class="red">神経性調節で感度が変わる</span>唯一の受容器</li>
+      </ul>
+
+      <h3>腱紡錘（ゴルジ腱器官）</h3>
+      <ul>
+        <li>筋と腱の<span class="highlight">移行部</span>に存在</li>
+        <li>筋の<span class="highlight">張力</span>を感知</li>
+        <li>求心性線維：<span class="highlight">Ib群線維</span></li>
+        <li>強い張力→筋収縮を抑制（<span class="highlight">自原抑制</span>）</li>
+      </ul>
+
+      <h2><span class="num">5.</span> 脊髄反射</h2>
+
+      <h3>伸張反射（膝蓋腱反射など）</h3>
+      <table>
+        <tr><th>構成要素</th><th>内容</th></tr>
+        <tr><td>①感覚受容器</td><td><span class="highlight">筋紡錘</span></td></tr>
+        <tr><td>②求心路</td><td><span class="highlight">Ia群線維</span></td></tr>
+        <tr><td>③反射中枢</td><td>脊髄（<span class="highlight">単シナプス反射</span>）</td></tr>
+        <tr><td>④遠心路</td><td>α運動神経</td></tr>
+        <tr><td>⑤効果器</td><td>伸筋（主動筋）</td></tr>
+      </table>
+      <p>※下顎張反射も伸張反射の一種</p>
+
+      <h3>屈曲反射</h3>
+      <table>
+        <tr><th>構成要素</th><th>内容</th></tr>
+        <tr><td>①感覚受容器</td><td>自由神経終末（侵害刺激）</td></tr>
+        <tr><td>②求心路</td><td><span class="highlight">Aδ線維</span></td></tr>
+        <tr><td>③反射中枢</td><td>脊髄（<span class="highlight">多シナプス反射</span>）</td></tr>
+        <tr><td>④遠心路</td><td>α運動神経</td></tr>
+        <tr><td>⑤効果器</td><td>屈筋（主動筋）</td></tr>
+      </table>
+
+      <h2><span class="num">6.</span> 咀嚼筋の筋紡錘</h2>
+      <ul>
+        <li><span class="highlight">閉口筋（咬筋、側頭筋、内側翼突筋）</span>には筋紡錘が<span class="highlight">多い</span></li>
+        <li><span class="red">顎二腹筋</span>（開口筋）には筋紡錘が<span class="red">少ない</span></li>
+        <li>求心性ニューロンの細胞体は<span class="highlight">脊髄神経節</span>（後根神経節）に存在</li>
+      </ul>
+
+      <h2><span class="num">7.</span> 歯髄の神経線維</h2>
+      <ul>
+        <li><span class="highlight">Aδ線維</span>：象牙質擦過刺激による<span class="highlight">鋭い痛み</span>（一次痛）</li>
+        <li><span class="highlight">C線維</span>：<span class="highlight">鈍い痛み</span>（二次痛）、潜時が長い</li>
+        <li>感覚神経終末は<span class="highlight">自由神経終末</span></li>
+      </ul>
+
+      <h2><span class="num">8.</span> 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A-19（必修）</div>
+        <p>筋紡錘中の錘内筋を収縮させるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: Aα線維<br>
+          b: Aγ線維<br>
+          c: Aδ線維<br>
+          d: B線維<br>
+          e: C線維
+        </div>
+        <div class="answer">正解: b</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D-2（必修）</div>
+        <p>伝導速度が最も速いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 舌の温覚を伝える感覚神経線維<br>
+          b: 歯髄の痛覚を伝える感覚神経線維<br>
+          c: 顎下腺を支配する交感神経節前線維<br>
+          d: 顎二腹筋を収縮させる運動神経線維<br>
+          e: 耳下腺を支配する副交感神経節後線維
+        </div>
+        <div class="answer">正解: d（運動神経線維＝Aα線維が最速）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D-19（必修）</div>
+        <p>大腿四頭筋に存在する筋紡錘からの求心性ニューロンの細胞体があるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 脊髄前角<br>
+          b: 脊髄側角<br>
+          c: 脊髄後角<br>
+          d: 交感神経幹<br>
+          e: 脊髄神経節
+        </div>
+        <div class="answer">正解: e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118C-12（必修）</div>
+        <p>咀嚼力を発揮するために必要な感覚刺激を受容するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 象牙芽細胞<br>
+          b: 閉口筋の筋紡錘<br>
+          c: 閉口筋のGolgi腱器官<br>
+          d: 口腔粘膜の自由神経終末<br>
+          e: 歯根膜のRuffini神経終末
+        </div>
+        <div class="answer">正解: b, e</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118C-20（必修）</div>
+        <p>象牙質への擦過刺激による痛みの発現に関与する神経線維はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: Aα<br>
+          b: Aβ<br>
+          c: Aδ<br>
+          d: B<br>
+          e: C
+        </div>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118B-69</div>
+        <p>神経性調節によって適刺激に対する受容器の感度が変わるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 筋紡錘<br>
+          b: Krause小体<br>
+          c: Pacinian小体<br>
+          d: Meissner小体<br>
+          e: Ruffini神経終末
+        </div>
+        <div class="answer">正解: a（γ運動ニューロンによる感度調節）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C-74</div>
+        <p>骨格筋、筋紡錘およびその神経支配の模式図を示す。アとイのニューロン活動によって生じるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 開口反射<br>
+          b: 屈曲反射<br>
+          c: 下顎張反射<br>
+          d: 膝蓋腱反射<br>
+          e: 折りたたみナイフ反射
+        </div>
+        <div class="answer">正解: c, d（伸張反射）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C-100</div>
+        <p>ヒトの筋で筋紡錘が少ないのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 咬筋<br>
+          b: 側頭筋<br>
+          c: 顎二腹筋<br>
+          d: 内側翼突筋<br>
+          e: オトガイ舌筋
+        </div>
+        <div class="answer">正解: c（顎二腹筋＝開口筋）</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-box-title">まとめ：覚えるべきポイント</div>
+        <ul>
+          <li><span class="highlight">Aα線維</span> = 運動神経 = <span class="red">伝導速度最速</span></li>
+          <li><span class="highlight">Aγ線維</span> = 錘内筋を収縮 = 筋紡錘の感度調節</li>
+          <li><span class="highlight">Ia群線維</span> = 筋紡錘からの求心性線維 = 伸張反射の求心路</li>
+          <li><span class="highlight">Ib群線維</span> = ゴルジ腱器官からの求心性線維 = 自原抑制</li>
+          <li><span class="highlight">Aδ線維</span> = 象牙質擦過刺激の痛み = 一次痛</li>
+          <li>筋紡錘が少ない筋 = <span class="red">顎二腹筋</span>（開口筋）</li>
+          <li>求心性ニューロンの細胞体 = <span class="highlight">脊髄神経節</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診察のあり方</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>ア. 診察のあり方</h1>
+    <div class="subtitle">必修9 診察の基本</div>
+    <div class="container">
+
+      <h3>診察の基本</h3>
+      <ul>
+        <li>患者の安全、<span class="red">プライバシー</span>が保全されるような診療環境をつくる</li>
+        <li>患者のプライバシー、羞恥心、苦痛への配慮をする</li>
+        <li>挨拶、自己紹介、患者の確認を心がける</li>
+        <li>診察をする旨を告げ、診察の区切りで患者への説明をする</li>
+        <li>説明時は適宜患者に向き合うなどの配慮をし、何にどのようにわかりやすく説明する</li>
+      </ul>
+
+      <h3>基本手技</h3>
+      <table>
+        <tr><th>手技</th><th>可能な手法</th><th>特有の診査</th><th>得られる診査でわかること</th></tr>
+        <tr><td><span class="red">視診</span></td><td>肉眼で観察（直接）と間接観察</td><td>開口診査</td><td>形態の異常（対称性）、皮膚、中心結節</td></tr>
+        <tr><td><span class="red">触診</span></td><td>手や器具をひいて直接リンパ節</td><td>リンパ節</td><td>硬度（弾性軟、ゴム様硬、石様硬）圧痛の有無</td></tr>
+        <tr><td><span class="highlight">打診</span></td><td>打診器を用いる方法</td><td>打診音による評価</td><td>濁音と鼓音の違い</td></tr>
+        <tr><td><span class="highlight">聴診</span></td><td>患者の体内に生じる音を聴く方法</td><td>立位で</td><td>呼吸音、心音（聴診器より）、浮遊、異音</td></tr>
+      </table>
+
+      <h3>患者の取り違え防止</h3>
+      <ul>
+        <li>医療機関の規模によらず、同姓同名の患者が存在する場合がある</li>
+        <li>外来での確認は患者の取り違えの原因となる、電話応対や容器などの呼び出しなどは<span class="red">フルネーム</span>で確認することが基本である</li>
+        <li>誤認の要因は同姓、入力ミスなどであり、リスクマネージメントのうえで段階を重ね確認</li>
+        <li>患者1人ひとりに治療方針を適切に説明してあげること、治療法や治療費等の遵守</li>
+      </ul>
+
+      <h3>医療面接の流れ</h3>
+      <ul>
+        <li>まずは挨拶、患者の名前の確認、自己紹介をし、次に患者がどういう理由で来院したかを聞く</li>
+        <li>患者の取り違えをなくすために医療面接の前にあらかじめ患者の<span class="red">名前をフルネーム</span>で確認することが重要である</li>
+      </ul>
+
+      <h3>歯科医師が守るべきプライバシー</h3>
+      <table>
+        <tr><th>法令</th><th>内容</th></tr>
+        <tr><td><span class="highlight">民法</span></td><td>患者への説明義務についての法的根拠などが記載される</td></tr>
+        <tr><td><span class="highlight">刑法</span></td><td>業務上知り得た秘密を他人に漏らしてはならない（<span class="red">守秘義務</span>）</td></tr>
+        <tr><td><span class="highlight">医療法</span></td><td>患者の<span class="red">秘密保持</span>が記載されている</td></tr>
+        <tr><td><span class="highlight">歯科医師法</span></td><td>歯科医師法では患者の秘密保持が記載されている</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117A-18</div>
+        <p>患者の取り違えを起こしやすいのはどれか。1つ選べ。</p>
+        <p>a: 院での患者確認　b: 関接視野の遵守　c: 治療方針説明の遵守　d: 患者請願時の診療録の携行　e: 患者との閉ざされた対話環境</p>
+        <div class="answer">正解: a（患者確認はフルネームで確認することが基本である）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">患者確認</span>＝フルネームで確認が基本</li>
+          <li><span class="red">視診</span>＝肉眼観察、形態の異常確認</li>
+          <li><span class="red">触診</span>＝リンパ節、硬度（弾性軟・ゴム様硬・石様硬）</li>
+          <li><span class="red">守秘義務</span>＝刑法に規定、業務上知り得た秘密を漏らさない</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

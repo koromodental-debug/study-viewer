@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔・顎顔面領域の疾患</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>イ. 口腔・顎顔面領域の疾患</h1>
+    <div class="subtitle">必修6 主要な疾患と障害の病因・病態</div>
+    <div class="container">
+
+      <h3>急性齲蝕と慢性齲蝕</h3>
+      <table>
+        <tr><th></th><th>急性齲蝕</th><th>慢性齲蝕</th></tr>
+        <tr><td>進行</td><td><span class="red">速い</span></td><td>遅い</td></tr>
+        <tr><td>色調</td><td><span class="highlight">淡い</span></td><td><span class="highlight">黒褐色</span></td></tr>
+        <tr><td>硬さ</td><td>軟らかい</td><td>硬い</td></tr>
+        <tr><td>好発年齢</td><td><span class="red">若年者</span></td><td>成人・高齢者</td></tr>
+      </table>
+
+      <h3>歯種と出現しやすい位置異常</h3>
+      <table>
+        <tr><th>歯種</th><th>位置異常</th></tr>
+        <tr><td><span class="red">上顎側切歯</span></td><td><span class="red">口蓋側転位</span></td></tr>
+        <tr><td><span class="highlight">下顎側切歯</span></td><td>舌側転位</td></tr>
+        <tr><td><span class="highlight">上顎犬歯</span></td><td>唇側・口蓋側</td></tr>
+        <tr><td>下顎第三大臼歯</td><td>近心傾斜、埋伏</td></tr>
+        <tr><td>上顎第一大臼歯</td><td>近心転位</td></tr>
+      </table>
+
+      <h3>顎骨の歯原性嚢胞</h3>
+      <table>
+        <tr><th>嚢胞</th><th>X線像</th><th>特徴</th></tr>
+        <tr><td><span class="red">歯根嚢胞</span></td><td>根尖透過像</td><td><span class="red">最多</span>、失活歯</td></tr>
+        <tr><td><span class="red">含歯性嚢胞</span></td><td>歯冠を含む</td><td>埋伏歯に関連</td></tr>
+        <tr><td><span class="highlight">角化嚢胞性歯原性腫瘍</span></td><td>透過像</td><td>再発しやすい</td></tr>
+        <tr><td><span class="highlight">石灰化歯原性嚢胞</span></td><td>透過像＋石灰化</td><td>Ghost cell</td></tr>
+      </table>
+
+      <h3>顎骨の非歯原性嚢胞</h3>
+      <table>
+        <tr><th>嚢胞</th><th>特徴</th></tr>
+        <tr><td><span class="red">鼻口蓋管嚢胞</span></td><td><span class="red">上顎正中</span>、ハート型透過像</td></tr>
+        <tr><td><span class="highlight">鼻歯槽嚢胞</span></td><td>軟組織内、鼻翼基部</td></tr>
+        <tr><td><span class="highlight">単純性骨嚢胞</span></td><td>外傷性、血液成分なし</td></tr>
+        <tr><td><span class="highlight">静止性骨空洞</span></td><td>下顎角部、唾液腺陥入</td></tr>
+      </table>
+
+      <h3>軟組織の嚢胞</h3>
+      <table>
+        <tr><th>嚢胞</th><th>特徴</th></tr>
+        <tr><td><span class="red">粘液嚢胞</span></td><td>下唇、小唾液腺由来</td></tr>
+        <tr><td><span class="red">ガマ腫</span></td><td>口底、舌下腺由来</td></tr>
+        <tr><td><span class="highlight">類皮嚢胞</span></td><td>皮膚付属器を含む</td></tr>
+      </table>
+
+      <h3>歯原性良性腫瘍</h3>
+      <table>
+        <tr><th>腫瘍</th><th>X線像</th><th>特徴</th></tr>
+        <tr><td><span class="red">エナメル上皮腫</span></td><td>多房性or単房性</td><td><span class="red">最多</span>、再発あり</td></tr>
+        <tr><td><span class="highlight">歯牙腫</span></td><td>不透過像</td><td>複雑性・集合性</td></tr>
+        <tr><td><span class="highlight">セメント質腫</span></td><td>不透過像</td><td>下顎前歯部</td></tr>
+      </table>
+
+      <h3>非歯原性良性腫瘍</h3>
+      <table>
+        <tr><th>腫瘍</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">線維腫</span></td><td>有茎性、頬粘膜</td></tr>
+        <tr><td><span class="red">血管腫</span></td><td>圧迫で退色、小児多い</td></tr>
+        <tr><td><span class="highlight">リンパ管腫</span></td><td>舌、軟組織</td></tr>
+        <tr><td><span class="highlight">骨腫</span></td><td>下顎骨、硬性腫瘤</td></tr>
+      </table>
+
+      <h3>非歯原性悪性腫瘍</h3>
+      <table>
+        <tr><th>腫瘍</th><th>特徴</th></tr>
+        <tr><td><span class="red">扁平上皮癌</span></td><td><span class="red">口腔癌で最多</span>、舌癌</td></tr>
+        <tr><td><span class="highlight">悪性リンパ腫</span></td><td>無痛性腫脹、<span class="red">Waldeyerリング</span></td></tr>
+        <tr><td><span class="highlight">悪性黒色腫</span></td><td>上顎歯肉・口蓋、予後不良</td></tr>
+      </table>
+
+      <h3>顎関節異常における下顎の偏位</h3>
+      <ul>
+        <li><span class="red">下顎頭大</span>→<span class="red">健側へ偏位</span></li>
+        <li><span class="highlight">片側骨関節強直</span>→<span class="highlight">患側へ偏位</span></li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">117B-10</div>
+        <p>口腔で最も発生頻度が高い悪性腫瘍はどれか。1つ選べ。</p>
+        <p>a: 腺癌　b: 骨肉腫　c: 悪性黒色腫　d: 扁平上皮癌　e: 悪性リンパ腫</p>
+        <div class="answer">正解: d（扁平上皮癌は口腔癌の約90%）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A-12</div>
+        <p>歯根嚢胞について正しいのはどれか。1つ選べ。</p>
+        <p>a: 生活歯に発生　b: X線で歯冠を含む　c: 顎骨嚢胞で最多　d: 角化が著明　e: 再発しやすい</p>
+        <div class="answer">正解: c（歯根嚢胞は顎骨嚢胞で最多、失活歯に発生）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">急性齲蝕</span>＝進行速い、淡い色、若年者</li>
+          <li><span class="red">上顎側切歯</span>＝口蓋側転位が多い</li>
+          <li><span class="red">歯根嚢胞</span>＝顎骨嚢胞で最多、失活歯</li>
+          <li><span class="red">鼻口蓋管嚢胞</span>＝上顎正中、ハート型透過像</li>
+          <li><span class="red">エナメル上皮腫</span>＝歯原性腫瘍で最多</li>
+          <li><span class="red">扁平上皮癌</span>＝口腔癌で最多（約90%）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>破骨細胞</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 24pt; font-weight: bold; margin-bottom: 16px; }
+    h2 { font-size: 12pt; font-weight: bold; margin: 14px 0 8px 0; break-after: avoid; }
+    h2 .num { color: var(--accent); }
+    h3 { font-size: 10pt; font-weight: bold; margin: 10px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 8.5pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 8px 12px; margin: 10px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; font-size: 9.5pt; margin-bottom: 4px; }
+    .question-box .choices { margin: 6px 0; line-height: 1.6; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    .syllabus-section {
+      background: #EDF2F7;
+      padding: 6px 10px;
+      margin: 10px 0 6px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>破骨細胞</h1>
+    <div class="container">
+
+      <div class="syllabus-section">出題基準: 総論II 1. 細胞・組織・器官の構造と機能 - イ-c. 骨</div>
+
+      <!-- 破骨細胞の由来と特徴 -->
+      <h2><span class="num">1.</span> 破骨細胞の由来と特徴</h2>
+
+      <h3>由来</h3>
+      <ul>
+        <li><span class="red">マクロファージ系の造血細胞</span>に由来する</li>
+        <li>破骨細胞への分化に伴い、マクロファージの<span class="highlight">貪食能が消失</span>し、骨吸収能を獲得</li>
+        <li>骨組織にのみ存在し、高度に石灰化した骨組織を破壊・吸収する</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">破骨細胞の特異形質（よくでる）</div>
+        <table>
+          <tr>
+            <th>特徴</th>
+            <th>説明</th>
+          </tr>
+          <tr>
+            <td><span class="highlight">多核巨細胞</span></td>
+            <td>単核の前駆細胞が融合して形成</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">TRAP</span></td>
+            <td>酒石酸抵抗性酸ホスファターゼ（破骨細胞のマーカー）</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">カルシトニン受容体</span></td>
+            <td>カルシトニンが結合→骨吸収抑制</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">RANK</span></td>
+            <td>RANKLの受容体、破骨細胞分化に必須</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">M-CSF受容体</span></td>
+            <td>マクロファージ刺激因子の受容体</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">炭酸脱水酵素II型</span></td>
+            <td>H⁺産生に関与</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">液胞型プロトンポンプ</span></td>
+            <td>H⁺-ATPase、H⁺を排出</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">カテプシンK</span></td>
+            <td>コラーゲン分解酵素</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117C10</div>
+        <p>RANKを発現するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 骨芽細胞<br>
+          b: 骨細胞<br>
+          c: 破骨細胞<br>
+          d: 軟骨細胞<br>
+          e: 線維芽細胞
+        </div>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <!-- 破骨細胞の構造 -->
+      <h2><span class="num">2.</span> 破骨細胞の構造</h2>
+
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>特徴・機能</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">明帯</span></td>
+          <td>骨基質との接着部位、<span class="red">インテグリンαvβ3</span>が局在、オステオポンチンを介して接着</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">波状縁</span></td>
+          <td><span class="red">骨吸収を行う部位</span>、ヒダ状構造、H⁺を分泌</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">血管側細胞膜</span></td>
+          <td>M-CSF受容体、RANK、カルシトニン受容体が発現</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ハウシップ窩</span></td>
+          <td>破骨細胞による骨吸収でできた<span class="red">くぼみ</span></td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114A48</div>
+        <p>破骨細胞の波状縁に存在するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: インテグリン<br>
+          b: アルカリホスファターゼ<br>
+          c: プロトンポンプ<br>
+          d: カルシトニン受容体<br>
+          e: クロライドチャネル
+        </div>
+        <div class="answer">正解: c, e</div>
+      </div>
+
+      <!-- 骨吸収メカニズム -->
+      <h2><span class="num">3.</span> 骨吸収メカニズム</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">骨吸収の流れ</div>
+        <ol>
+          <li><span class="highlight">炭酸脱水酵素II型</span>によりH⁺（プロトン）を産生</li>
+          <li><span class="highlight">液胞型プロトンポンプ（H⁺-ATPase）</span>でH⁺を波状縁から排出</li>
+          <li><span class="highlight">クロライドチャネル</span>からCl⁻を排出 → HClを分泌</li>
+          <li>波状縁下が<span class="red">pH 3〜4の酸性環境</span>になる</li>
+          <li><span class="highlight">ハイドロキシアパタイト</span>が溶解（無機成分の分解）</li>
+          <li><span class="highlight">カテプシンK・MMP-9</span>がコラーゲンを分解（有機成分の分解）</li>
+        </ol>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A56</div>
+        <p>破骨細胞における骨吸収機構で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a: 波状縁からプロトンを分泌する<br>
+          b: 明帯でコラーゲンを分解する<br>
+          c: カテプシンKがハイドロキシアパタイトを溶解する<br>
+          d: 炭酸脱水酵素がプロトンの産生に関与する<br>
+          e: アルカリホスファターゼが骨基質を分解する
+        </div>
+        <div class="answer">正解: a, d</div>
+      </div>
+
+      <!-- RANK/RANKL/OPG系 -->
+      <h2><span class="num">4.</span> RANK/RANKL/OPG系</h2>
+
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>産生細胞</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">RANKL</span></td>
+          <td><span class="red">骨芽細胞</span>（細胞膜上に発現）</td>
+          <td>破骨細胞の分化・活性化を<span class="red">促進</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">RANK</span></td>
+          <td><span class="red">破骨細胞</span>（前駆細胞含む）</td>
+          <td>RANKLの受容体</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">OPG</span></td>
+          <td><span class="red">骨芽細胞</span>（分泌）</td>
+          <td>RANKLのデコイ受容体、破骨細胞分化を<span class="red">抑制</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">M-CSF</span></td>
+          <td>骨芽細胞</td>
+          <td>破骨細胞の分化・生存に必須</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">RANKL発現を誘導する因子</div>
+        <ul>
+          <li><span class="highlight">活性型ビタミンD</span></li>
+          <li><span class="highlight">副甲状腺ホルモン（PTH）</span></li>
+          <li>炎症性サイトカイン（IL-1、TNF）</li>
+          <li>プロスタグランジンE₂（PGE₂）</li>
+          <li>リポ多糖（LPS）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B35</div>
+        <p>骨芽細胞が産生し、破骨細胞の分化を抑制するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: M-CSF<br>
+          b: RANK<br>
+          c: RANKL<br>
+          d: OPG<br>
+          e: カテプシンK
+        </div>
+        <div class="answer">正解: d</div>
+      </div>
+
+      <!-- 骨芽細胞との比較 -->
+      <h2><span class="num">5.</span> 骨芽細胞との比較</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>破骨細胞</th>
+          <th>骨芽細胞</th>
+        </tr>
+        <tr>
+          <td>由来</td>
+          <td><span class="red">造血細胞（単球・マクロファージ系）</span></td>
+          <td><span class="red">間葉系細胞</span></td>
+        </tr>
+        <tr>
+          <td>核</td>
+          <td>多核</td>
+          <td>単核</td>
+        </tr>
+        <tr>
+          <td>機能</td>
+          <td>骨吸収</td>
+          <td>骨形成</td>
+        </tr>
+        <tr>
+          <td>特異的酵素</td>
+          <td><span class="highlight">TRAP</span>（酸性ホスファターゼ）</td>
+          <td><span class="highlight">ALP</span>（アルカリホスファターゼ）</td>
+        </tr>
+        <tr>
+          <td>産生物質</td>
+          <td>カテプシンK、MMP-9</td>
+          <td>I型コラーゲン、オステオカルシン、RANKL、OPG、M-CSF</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114D20</div>
+        <p>骨芽細胞の分化を促進する分子はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: Runx2<br>
+          b: RANK<br>
+          c: TRAP<br>
+          d: カテプシンK<br>
+          e: カルシトニン
+        </div>
+        <div class="answer">正解: a（Runx2は骨芽細胞分化のマスター転写因子）</div>
+      </div>
+
+      <!-- ホルモンによる調節 -->
+      <h2><span class="num">6.</span> ホルモンによる骨代謝調節</h2>
+
+      <table>
+        <tr>
+          <th>ホルモン</th>
+          <th>骨吸収</th>
+          <th>血清Ca</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">PTH</span><br>（副甲状腺ホルモン）</td>
+          <td><span class="red">促進</span></td>
+          <td>↑</td>
+          <td>骨芽細胞のRANKL発現↑</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">カルシトニン</span></td>
+          <td><span class="red">抑制</span></td>
+          <td>↓</td>
+          <td>破骨細胞に直接作用、波状縁消失</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">活性型ビタミンD</span></td>
+          <td>促進</td>
+          <td>↑</td>
+          <td>RANKL発現↑、腸管Ca吸収↑</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">エストロゲン</span></td>
+          <td><span class="red">抑制</span></td>
+          <td>→</td>
+          <td>OPG産生↑、RANKL発現↓</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115C48</div>
+        <p>カルシトニンの作用で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a: 骨形成を促進する<br>
+          b: 骨吸収を促進する<br>
+          c: 血清カルシウム値を上昇させる<br>
+          d: 破骨細胞に直接作用する<br>
+          e: 腸管からのカルシウム吸収を促進する
+        </div>
+        <div class="answer">正解: d</div>
+      </div>
+
+      <!-- 骨リモデリング -->
+      <h2><span class="num">7.</span> 骨リモデリング</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">骨リモデリングサイクル</div>
+        <table>
+          <tr>
+            <th>相</th>
+            <th>内容</th>
+          </tr>
+          <tr>
+            <td><span class="highlight">静止相</span></td>
+            <td>骨表面は休止骨芽細胞に覆われている</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">活性化相</span></td>
+            <td>骨芽細胞がRANKLを発現、破骨細胞前駆細胞が分化</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">吸収相</span></td>
+            <td>破骨細胞が骨を吸収</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">逆転相</span></td>
+            <td>マクロファージが古い骨組織を除去</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">形成相</span></td>
+            <td>骨芽細胞が吸収窩に侵入し、新たな骨を形成</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- 薬剤関連 -->
+      <h2><span class="num">8.</span> 骨吸収抑制薬</h2>
+
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>作用機序</th>
+          <th>注意点</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ビスホスホネート</span></td>
+          <td>破骨細胞のアポトーシス誘導、骨吸収抑制</td>
+          <td><span class="red">顎骨壊死（BRONJ/MRONJ）</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">デノスマブ</span></td>
+          <td>RANKLに対するモノクローナル抗体、RANKL阻害</td>
+          <td>顎骨壊死のリスク</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">テリパラチド</span></td>
+          <td>PTH製剤、間欠投与で骨形成促進</td>
+          <td>骨粗鬆症治療薬</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">118C37</div>
+        <p>骨粗鬆症治療薬テリパラチドの標的分子はどれか。1つ選べ。</p>
+        <div class="choices">
+          a: RANK<br>
+          b: RANKL<br>
+          c: PTH受容体<br>
+          d: カルシトニン受容体<br>
+          e: ビタミンD受容体
+        </div>
+        <div class="answer">正解: c</div>
+      </div>
+
+      <!-- まとめ -->
+      <div class="point-box">
+        <div class="point-box-title">破骨細胞のまとめ</div>
+        <ul>
+          <li>由来：<span class="red">マクロファージ系造血細胞</span>（骨芽細胞は間葉系）</li>
+          <li>特徴：<span class="highlight">多核巨細胞、TRAP陽性</span></li>
+          <li>構造：明帯（接着）、<span class="highlight">波状縁（骨吸収）</span>、ハウシップ窩</li>
+          <li>骨吸収：炭酸脱水酵素II型→H⁺→<span class="red">pH 3〜4</span>→HA溶解→カテプシンK</li>
+          <li>RANKL：骨芽細胞が発現、破骨細胞分化<span class="red">促進</span></li>
+          <li>OPG：骨芽細胞が産生、破骨細胞分化<span class="red">抑制</span></li>
+          <li>カルシトニン：破骨細胞に直接作用、骨吸収<span class="red">抑制</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

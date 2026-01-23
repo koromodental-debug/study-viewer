@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>基準値と結果の解釈</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>ウ. 基準値と結果の解釈</h1>
+    <div class="subtitle">必修10 検査・臨床判断の基本</div>
+    <div class="container">
+
+      <h3>基準範囲の概念</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td><span class="red">基準範囲</span></td><td>健常者の<span class="red">95%</span>を含む範囲（平均±2S.D.）</td></tr>
+        <tr><td><span class="highlight">なぜ95%か</span></td><td>正規分布で±2標準偏差の範囲が約95%を占めるため</td></tr>
+        <tr><td><span class="highlight">異常値</span></td><td>基準範囲外（上位2.5%または下位2.5%）→ 必ずしも病的とは限らない</td></tr>
+      </table>
+
+      <h3>検査値の変動要因</h3>
+      <ul>
+        <li><span class="red">性差</span>：赤血球系（RBC, Hb, Ht）は男性が高値</li>
+        <li><span class="red">年齢差</span>：小児・高齢者で異なる項目あり</li>
+        <li><span class="highlight">生理的変動</span>：日内変動（コルチゾール等）、季節変動、性周期</li>
+        <li><span class="highlight">生活習慣</span>：食事（血糖）、運動、喫煙、飲酒の影響</li>
+        <li><span class="highlight">測定環境</span>：採血条件、検体の取り扱い</li>
+      </ul>
+
+      <h3>血球検査の基準値（性差あり・なし）</h3>
+      <table>
+        <tr><th>検査項目</th><th>男性</th><th>女性</th><th>性差</th></tr>
+        <tr><td><span class="red">赤血球数（RBC）</span></td><td>430〜570万/μL</td><td>380〜500万/μL</td><td><span class="red">あり</span></td></tr>
+        <tr><td><span class="red">ヘモグロビン（Hb）</span></td><td>13.5〜17.5 g/dL</td><td>11.5〜15.0 g/dL</td><td><span class="red">あり</span></td></tr>
+        <tr><td><span class="red">ヘマトクリット（Ht）</span></td><td>39〜52%</td><td>34〜44%</td><td><span class="red">あり</span></td></tr>
+        <tr><td>白血球数（WBC）</td><td colspan="2">4,000〜9,000/μL</td><td>なし</td></tr>
+        <tr><td>血小板数</td><td colspan="2">13万〜40万/μL</td><td>なし</td></tr>
+        <tr><td>プロトロンビン時間（PT）</td><td colspan="2">10〜13秒</td><td>なし</td></tr>
+      </table>
+      <p>※ 赤血球系に性差がある理由：男性ホルモン（テストステロン）が造血を促進</p>
+
+      <h3>生化学検査の基準値と異常の意味</h3>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>高値で疑う病態</th></tr>
+        <tr><td><span class="red">総タンパク（TP）</span></td><td>6.5〜8.2 g/dL</td><td>低値→<span class="red">低栄養</span>、肝硬変</td></tr>
+        <tr><td><span class="red">アルブミン（Alb）</span></td><td>3.8〜5.3 g/dL</td><td>低値→<span class="red">低栄養</span>、肝障害</td></tr>
+        <tr><td>空腹時血糖（FBS）</td><td>70〜110 mg/dL</td><td>高値→糖尿病</td></tr>
+        <tr><td>HbA1c</td><td>4.6〜6.2%</td><td>高値→糖尿病（過去1〜2か月の血糖反映）</td></tr>
+        <tr><td><span class="highlight">AST・ALT</span></td><td>8〜40 U/L</td><td>高値→肝障害</td></tr>
+        <tr><td><span class="highlight">BUN</span></td><td>8〜20 mg/dL</td><td>高値→腎障害</td></tr>
+        <tr><td><span class="highlight">クレアチニン</span></td><td>0.6〜1.2 mg/dL</td><td>高値→腎障害</td></tr>
+        <tr><td><span class="highlight">アミラーゼ</span></td><td>40〜130 U/L</td><td>高値→膵炎、唾液腺疾患</td></tr>
+        <tr><td><span class="highlight">CRP</span></td><td>0.3 mg/dL以下</td><td>高値→炎症反応</td></tr>
+      </table>
+
+      <h3>病態と検査項目の対応（まとめ）</h3>
+      <table>
+        <tr><th>評価したい病態</th><th>検査項目</th></tr>
+        <tr><td><span class="red">栄養状態</span></td><td><span class="red">総タンパク（TP）、アルブミン（Alb）</span></td></tr>
+        <tr><td><span class="highlight">肝障害</span></td><td>AST、ALT、γ-GTP、ビリルビン</td></tr>
+        <tr><td><span class="highlight">腎障害</span></td><td>BUN、クレアチニン</td></tr>
+        <tr><td><span class="highlight">膵疾患</span></td><td>アミラーゼ、リパーゼ</td></tr>
+        <tr><td><span class="highlight">炎症反応</span></td><td>CRP、赤沈、白血球</td></tr>
+        <tr><td><span class="highlight">糖尿病</span></td><td>空腹時血糖、HbA1c</td></tr>
+        <tr><td><span class="highlight">貧血</span></td><td>RBC、Hb、Ht、MCV</td></tr>
+      </table>
+
+      <h3>止血機能検査と疾患</h3>
+      <table>
+        <tr><th>疾患</th><th>出血時間</th><th>PT</th><th>APTT</th></tr>
+        <tr><td><span class="highlight">血友病</span></td><td>正常</td><td>正常</td><td><span class="red">延長</span></td></tr>
+        <tr><td><span class="highlight">von Willebrand病</span></td><td>延長</td><td>正常</td><td>延長</td></tr>
+        <tr><td><span class="highlight">ITP</span></td><td>延長</td><td>正常</td><td>正常</td></tr>
+        <tr><td><span class="highlight">DIC</span></td><td>延長</td><td>延長</td><td>延長</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115C-1</div>
+        <p>正規分布に従う検査値において、基準範囲に含まれる個体が全体に占める割合はどれか。1つ選べ。</p>
+        <p>a: 5%　b: 50%　c: 95%　d: 97.5%　e: 100%</p>
+        <div class="answer">正解: c（基準範囲は±2S.D.で健常者の95%を含む）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D-19</div>
+        <p>成人における基準値に性差があるのはどれか。1つ選べ。</p>
+        <p>a: 血小板　b: 白血球　c: 白血球分画　d: ヘマトクリット〈Ht〉　e: プロトロンビン時間〈PT〉</p>
+        <div class="answer">正解: d（赤血球系は男性ホルモンの影響で男性が高値、性差あり）</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A-25</div>
+        <p>栄養状態を評価する生化学検査項目はどれか。1つ選べ。</p>
+        <p>a: 尿素窒素　b: アミラーゼ　c: ビリルビン　d: 総タンパク　e: γ-グロブリン</p>
+        <div class="answer">正解: d（総タンパク・アルブミンは栄養状態の指標）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ</div>
+        <ul>
+          <li><span class="red">基準範囲</span>＝健常者の<span class="red">95%</span>を含む（±2S.D.）</li>
+          <li><span class="red">性差あり</span>＝赤血球系（RBC, Hb, Ht）→ 男性ホルモンの影響</li>
+          <li><span class="red">性差なし</span>＝血小板、白血球、白血球分画、PT</li>
+          <li><span class="red">栄養状態</span>＝総タンパク、アルブミン</li>
+          <li><span class="red">肝障害</span>＝AST・ALT、<span class="red">腎障害</span>＝BUN・Cr、<span class="red">膵疾患</span>＝アミラーゼ</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

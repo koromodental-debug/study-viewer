@@ -8294,5 +8294,80 @@ const DATA = [
     "subject": "病理",
     "subjectCategory": "基礎",
     "searchText": "口腔粘膜疾患_口腔潜在的悪性疾患 AIDS患者 EBウイルス I. 概念と分類 II. 口腔潜在的悪性疾患の種類 III. 白板症 IV. 紅板症 N/C比の上昇 V. 上皮性異形成 VI. 過去問 ビロード状 ヨード染色 上皮性異形成 口腔潜在的悪性疾患 喫煙 慢性カンジダ症 扁平苔癬 極性の乱れ 歯の鋭縁の削合 毛状白板症 癌化率の比較 白板症 白色病変 禁煙指導 紅板症 鮮紅色"
+  },
+  {
+    "id": "病理検査_細胞診",
+    "title": "病理検査_細胞診",
+    "qaPath": "qa/subject/病理学/01_病理検査_細胞診_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "病理検査_組織診",
+    "title": "病理検査_組織診",
+    "qaPath": "qa/subject/病理学/02_病理検査_組織診_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "病理検査_術中迅速病理診断",
+    "title": "病理検査_術中迅速病理診断",
+    "qaPath": "qa/subject/病理学/03_病理検査_術中迅速病理診断_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_代謝異常_変性",
+    "title": "総論_代謝異常_変性",
+    "qaPath": "qa/subject/病理学/04_総論_代謝異常_変性_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_代謝異常_尿酸代謝異常",
+    "title": "総論_代謝異常_尿酸代謝異常",
+    "qaPath": "qa/subject/病理学/05_総論_代謝異常_尿酸代謝異常_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_代謝異常_水電解質代謝異常",
+    "title": "総論_代謝異常_水電解質代謝異常",
+    "qaPath": "qa/subject/病理学/06_総論_代謝異常_水電解質代謝異常_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "唾液腺疾患_Küttner腫瘍",
+    "title": "唾液腺疾患_Küttner腫瘍",
+    "qaPath": null,
+    "htmlPath": "html/subject/病理学/39_唾液腺疾患_Küttner腫瘍.html",
+    "subject": "病理",
+    "subjectCategory": "基礎",
+    "searchText": "唾液腺疾患_Küttner腫瘍 I. 概要 II. 臨床所見 III. 病理所見 IV. 鑑別疾患 IgG4 IgG4関連疾患 IgG4関連疾患との関連 IgG4陽性 Küttner腫瘍 V. 過去問 リンパ球 唾石症 形質細胞 慢性炎症性疾患 慢性硬化性唾液腺炎 無痛性腫脹 男性 疝痛 硬く腫大 線維化 線維組織の増生 顎下腺"
+  },
+  {
+    "id": "唾液腺疾患_Sjögren症候群",
+    "title": "唾液腺疾患_Sjögren症候群",
+    "qaPath": null,
+    "htmlPath": "html/subject/病理学/40_唾液腺疾患_Sjögren症候群.html",
+    "subject": "病理",
+    "subjectCategory": "基礎",
+    "searchText": "唾液腺疾患_Sjögren症候群 50個以上のリンパ球浸潤 I. 概要 II. 分類 III. 検査所見 IV. 病理所見 IgG4関連疾患 Mikulicz病/症候群との違い Saxonテスト Sjögren症候群 V. 口腔症状 VI. 過去問 ガム試験 リンパ球 中年女性 乾性角膜炎 原発性 口唇腺生検 口腔乾燥症 唾液分泌機能検査 外分泌腺 抗SS-A抗体 抗SS-B抗体 抗SS-B抗体検査 機能低下 点状陰影 画像検査 痛風 糖尿病 続発性 耳下腺の腫脹 自己免疫疾患 血液検査"
+  },
+  {
+    "id": "全身疾患_骨粗鬆症と合併症",
+    "title": "全身疾患_骨粗鬆症と合併症",
+    "qaPath": null,
+    "htmlPath": "html/subject/病理学/41_全身疾患_骨粗鬆症と合併症.html",
+    "subject": "病理",
+    "subjectCategory": "基礎",
+    "searchText": "全身疾患_骨粗鬆症と合併症 Cushing病 I. 骨粗鬆症の概要 II. 骨粗鬆症の治療薬 III. 薬剤関連顎骨壊死（MRONJ） IV. 副腎皮質ステロイド誘発性骨粗鬆症 V. 過去問 エストロゲン デノスマブ ビスホスホネート ビスホスホネート製剤 副甲状腺ホルモン受容体 十分な消炎 抗RANKL抗体製剤 抜歯 抜歯時の対応 抜歯窩の閉鎖 破骨細胞 術前の消炎 骨吸収抑制薬の適応疾患 骨粗鬆症 骨粗鬆症と合併症 骨転移 骨鋭縁の除去 骨露出 骨髄脂肪細胞 高齢女性"
   }
 ];

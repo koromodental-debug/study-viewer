@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>画像検査</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent: #2C5282;
+      --bg-blue-light: #F7FAFC;
+      --border-blue-dark: #4A5568;
+      --bg-gray: #F7F7F7;
+      --border-light: #E2E8F0;
+      --yellow-bg: #FFFBEB;
+      --yellow-border: #F6E05E;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .page { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 25px; }
+    }
+    h1 { font-size: 20pt; font-weight: bold; margin-bottom: 10px; }
+    .subtitle { font-size: 10pt; color: var(--text-secondary); margin-bottom: 16px; }
+    h3 { font-size: 10pt; font-weight: bold; margin: 12px 0 6px 0; break-after: avoid; }
+    h3::before { content: "■ "; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-gray); font-weight: bold; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .red { color: #C53030; font-weight: bold; }
+    ul { padding-left: 1.5em; margin: 6px 0; }
+    li { margin: 3px 0; }
+    .point-box {
+      background: var(--bg-blue-light);
+      border-top: 2px solid var(--border-blue-dark);
+      border-bottom: 2px solid var(--border-blue-dark);
+      padding: 10px 14px; margin: 12px 0; break-inside: avoid;
+    }
+    .point-box-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; }
+    .question-box {
+      background: var(--yellow-bg);
+      border-left: 4px solid var(--yellow-border);
+      padding: 10px 12px; margin: 10px 0; break-inside: avoid; font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: bold; color: #744210; margin-bottom: 4px; }
+    .question-box .answer { color: var(--accent); font-weight: bold; margin-top: 6px; }
+    p { margin: 6px 0; }
+    .pattern-tag {
+      display: inline-block;
+      background: #EDF2F7;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      color: var(--accent);
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>カ. 画像検査</h1>
+    <div class="subtitle">必修10 検査・臨床判断の基本</div>
+    <div class="container">
+
+      <!-- ========== a. 放射線の性質と作用 ========== -->
+      <h3>a. 放射線の性質と作用 <span class="pattern-tag">出題3件</span></h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td><span class="red">エックス線の発見者</span></td><td><span class="red">レントゲン</span>（1895年）</td></tr>
+        <tr><td><span class="highlight">電離放射線</span></td><td>電磁放射線（X線、γ線）、粒子放射線（α線、β線）</td></tr>
+        <tr><td><span class="highlight">生物学的影響</span></td><td>電離→化学反応→細胞障害→組織障害</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">103A-22</div>
+        <p>エックス線を発見したのは誰か。1つ選べ。</p>
+        <p>a: Curie　b: Röntgen　c: Becquerel　d: Thomson　e: Rutherford</p>
+        <div class="answer">正解: b（レントゲンが1895年に発見）</div>
+      </div>
+
+      <!-- ========== b. 撮影装置・器材 ========== -->
+      <h3>b. エックス線撮影装置・検出器・撮影補助器材 <span class="pattern-tag">出題3件</span></h3>
+      <table>
+        <tr><th>項目</th><th>数値・内容</th></tr>
+        <tr><td><span class="red">歯科用X線装置の管電圧</span></td><td><span class="red">60〜70kV</span></td></tr>
+        <tr><td><span class="highlight">管電流</span></td><td>約10mA（口内法）</td></tr>
+        <tr><td><span class="red">蛍光増感紙の目的</span></td><td><span class="red">被曝線量の低減</span></td></tr>
+        <tr><td><span class="highlight">グリッドの目的</span></td><td>散乱線の除去</td></tr>
+        <tr><td><span class="highlight">IP（イメージングプレート）</span></td><td>デジタル撮影の検出器</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">103A-7</div>
+        <p>パノラマエックス線検査で蛍光増感紙を用いる理由はどれか。1つ選べ。</p>
+        <p>a: 散乱線の除去　b: 鮮鋭度の向上　c: 被曝線量の低減　d: 障害陰影の消滅　e: 被写体コントラストの向上</p>
+        <div class="answer">正解: c（蛍光増感紙はX線を可視光に変換し、少ない線量で撮影可能）</div>
+      </div>
+
+      <!-- ========== c. 放射線の防護・管理 ========== -->
+      <h3>c. 放射線の防護・管理 <span class="pattern-tag">出題7件</span></h3>
+      <table>
+        <tr><th>原則</th><th>内容</th></tr>
+        <tr><td><span class="red">正当化</span></td><td>検査による<span class="red">利益がリスクを上回る</span>こと</td></tr>
+        <tr><td><span class="highlight">最適化</span></td><td>合理的に達成可能な限り低く（ALARA）</td></tr>
+        <tr><td><span class="highlight">線量限度</span></td><td>職業被曝・公衆被曝の上限</td></tr>
+      </table>
+
+      <table>
+        <tr><th>組織加重係数（ICRP 2007）</th><th>係数</th></tr>
+        <tr><td><span class="red">生殖腺、骨髄、結腸、肺、胃、乳房</span></td><td><span class="red">0.12（最大）</span></td></tr>
+        <tr><td><span class="highlight">甲状腺、食道、膀胱、肝臓</span></td><td>0.04</td></tr>
+        <tr><td><span class="highlight">皮膚、骨表面</span></td><td>0.01</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">103A-17</div>
+        <p>患者の放射線防護における「行為の正当化」はどれか。1つ選べ。</p>
+        <p>a: 鉛エプロンの装着　b: 高感度フィルムの使用　c: 照射野の限定　d: 検査の必要性の判断　e: 撮影条件の適正化</p>
+        <div class="answer">正解: d（正当化＝検査の必要性を判断し、利益がリスクを上回るか確認）</div>
+      </div>
+
+      <!-- ========== d. エックス線撮影 ========== -->
+      <h3>d. エックス線撮影 <span class="pattern-tag">口内法11件/パノラマ3件/セファロ18件</span></h3>
+
+      <p><span class="highlight">【口内法撮影】</span></p>
+      <table>
+        <tr><th>撮影法</th><th>特徴・適応</th></tr>
+        <tr><td><span class="red">二等分法</span></td><td>歯軸とフィルムの二等分線に垂直照射</td></tr>
+        <tr><td><span class="highlight">平行法</span></td><td>歯軸とフィルムを平行、歪みが少ない</td></tr>
+        <tr><td><span class="highlight">咬翼法</span></td><td><span class="red">隣接面齲蝕</span>の検出に有用</td></tr>
+        <tr><td><span class="highlight">咬合法</span></td><td>唾石、埋伏歯の位置確認</td></tr>
+      </table>
+
+      <p><span class="highlight">【パノラマ撮影】</span></p>
+      <ul>
+        <li>回転断層撮影（スリット方式）</li>
+        <li>顎骨全体の概観、埋伏歯、顎関節の評価</li>
+        <li>拡大率：約1.3倍（実物より大きく写る）</li>
+      </ul>
+
+      <p><span class="highlight">【頭部エックス線規格撮影（セファロ）】</span></p>
+      <table>
+        <tr><th>撮影法</th><th>評価内容</th></tr>
+        <tr><td><span class="red">側方セファロ</span></td><td><span class="red">上下顎の前後的関係</span>、口唇突出度、アデノイド</td></tr>
+        <tr><td><span class="highlight">正面セファロ</span></td><td>顔面の<span class="red">対称性</span>、咬合平面の<span class="red">水平的傾斜</span></td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102A-21</div>
+        <p>口内法エックス線撮影と得られる情報との組合せで正しいのはどれか。1つ選べ。</p>
+        <p>a: 二等分法－歯冠歯根比　b: 平行法－歯根長　c: 咬翼法－隣接面齲蝕　d: 咬合法－歯根吸収　e: 偏心投影－根管数</p>
+        <div class="answer">正解: c（咬翼法は隣接面齲蝕の検出に最適）</div>
+      </div>
+
+      <!-- ========== e. CT ========== -->
+      <h3>e. CT <span class="pattern-tag">出題30件</span></h3>
+      <table>
+        <tr><th>種類</th><th>特徴</th></tr>
+        <tr><td><span class="red">歯科用コーンビームCT</span></td><td>歯・顎骨の3D評価、<span class="red">被曝量が少ない</span></td></tr>
+        <tr><td><span class="highlight">医科用CT</span></td><td>軟組織の評価も可能、被曝量多い</td></tr>
+        <tr><td><span class="red">造影CT</span></td><td>血管・腫瘍の評価、<span class="red">禁忌：ヨードアレルギー</span></td></tr>
+      </table>
+
+      <h3>MRI <span class="pattern-tag">出題14件</span></h3>
+      <table>
+        <tr><th>強調像</th><th>水</th><th>脂肪</th><th>用途</th></tr>
+        <tr><td><span class="red">T1強調像</span></td><td><span class="red">低信号（黒）</span></td><td>高信号（白）</td><td>解剖学的構造</td></tr>
+        <tr><td><span class="red">T2強調像</span></td><td><span class="red">高信号（白）</span></td><td>高信号（白）</td><td>病変の検出</td></tr>
+      </table>
+      <p><span class="red">MRIの禁忌</span>：心臓ペースメーカー、人工内耳、磁性体インプラント</p>
+
+      <div class="question-box">
+        <div class="q-number">造影CT関連</div>
+        <p>造影CTが禁忌となるのはどれか。1つ選べ。</p>
+        <p>a: 卵アレルギー　b: 大豆アレルギー　c: ラテックスアレルギー　d: ヨードアレルギー　e: パラジウムアレルギー</p>
+        <div class="answer">正解: d（ヨード造影剤を使用するため、ヨードアレルギーは禁忌）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ（頻出順）</div>
+        <ul>
+          <li><span class="red">CT・CBCT（30件）</span>＝歯科用CBCTは被曝少、造影CTはヨードアレルギー禁忌</li>
+          <li><span class="red">セファロ（18件）</span>＝側方は前後的関係、正面は対称性・水平的傾斜</li>
+          <li><span class="red">MRI（14件）</span>＝T1で水は黒、T2で水は白、ペースメーカー禁忌</li>
+          <li><span class="red">口内法（11件）</span>＝咬翼法は隣接面齲蝕の検出</li>
+          <li><span class="highlight">放射線防護（7件）</span>＝正当化＝検査の必要性判断</li>
+          <li><span class="highlight">蛍光増感紙</span>＝被曝線量の低減、グリッド＝散乱線除去</li>
+          <li><span class="highlight">管電圧</span>＝60〜70kV</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

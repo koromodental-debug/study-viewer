@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>骨粗鬆症と合併症 - 病理学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">病理学 / 全身疾患</span>
+    <h1>骨粗鬆症と合併症</h1>
+    <div class="container">
+
+      <h2>I. 骨粗鬆症の概要</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">定義</td>
+          <td>骨量の減少と骨組織の微細構造異常により<br>骨強度が低下し骨折リスクが増加する疾患</td>
+        </tr>
+        <tr>
+          <td class="key">好発</td>
+          <td><span class="highlight">高齢女性</span>に多い</td>
+        </tr>
+        <tr>
+          <td class="key">原因</td>
+          <td>閉経後の<span class="highlight">エストロゲン</span>低下が主因<br>エストロゲンは破骨細胞の活性を抑制</td>
+        </tr>
+        <tr>
+          <td class="key">病理所見</td>
+          <td><span class="highlight">破骨細胞</span>の増加<br><span class="highlight">骨髄脂肪細胞</span>の増加</td>
+        </tr>
+      </table>
+
+      <h2>II. 骨粗鬆症の治療薬</h2>
+
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>作用機序</th>
+          <th>顎骨壊死リスク</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">ビスホスホネート</span></td>
+          <td>破骨細胞の活性抑制<br>骨吸収抑制</td>
+          <td><span class="caution">あり</span></td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">デノスマブ</span><br>（抗RANKL抗体）</td>
+          <td>RANKLに結合し<br>破骨細胞の分化・活性化を抑制</td>
+          <td><span class="caution">あり</span></td>
+        </tr>
+        <tr>
+          <td class="key">テリパラチド</td>
+          <td><span class="highlight">副甲状腺ホルモン受容体</span>作動<br>骨形成促進</td>
+          <td>低い</td>
+        </tr>
+        <tr>
+          <td class="key">ビタミンD製剤</td>
+          <td>カルシウム吸収促進</td>
+          <td>なし</td>
+        </tr>
+      </table>
+
+      <h2>III. 薬剤関連顎骨壊死（MRONJ）</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">原因薬剤</td>
+          <td><span class="highlight">ビスホスホネート製剤</span><br><span class="highlight">デノスマブ</span>（抗RANKL抗体）</td>
+        </tr>
+        <tr>
+          <td class="key">発症契機</td>
+          <td><span class="highlight">抜歯</span>などの侵襲的歯科処置後<br>自然発症もあり</td>
+        </tr>
+        <tr>
+          <td class="key">症状</td>
+          <td>顎骨の<span class="highlight">骨露出</span>、疼痛、腫脹<br>瘻孔形成、排膿</td>
+        </tr>
+        <tr>
+          <td class="key">好発部位</td>
+          <td>下顎に多い</td>
+        </tr>
+      </table>
+
+      <h3>抜歯時の対応</h3>
+      <table>
+        <tr>
+          <th>対応</th>
+          <th>詳細</th>
+        </tr>
+        <tr>
+          <td class="key">術前</td>
+          <td><span class="highlight">十分な消炎</span>（感染コントロール）</td>
+        </tr>
+        <tr>
+          <td class="key">術中</td>
+          <td>抜歯窩の<span class="highlight">骨鋭縁の除去</span><br>愛護的な操作</td>
+        </tr>
+        <tr>
+          <td class="key">術後</td>
+          <td>周囲軟組織による<span class="highlight">抜歯窩の閉鎖</span></td>
+        </tr>
+        <tr>
+          <td class="key">休薬</td>
+          <td>原則として<span class="caution">休薬は推奨されない</span><br>（骨折リスク増加のため）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">骨吸収抑制薬の適応疾患</div>
+        <ul>
+          <li><span class="highlight">骨粗鬆症</span></li>
+          <li>悪性腫瘍の<span class="highlight">骨転移</span></li>
+          <li>多発性骨髄腫</li>
+          <li>関節リウマチによる骨破壊</li>
+        </ul>
+      </div>
+
+      <h2>IV. 副腎皮質ステロイド誘発性骨粗鬆症</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">原因</td>
+          <td>副腎皮質ステロイドの長期投与</td>
+        </tr>
+        <tr>
+          <td class="key">機序</td>
+          <td>骨芽細胞の機能低下<br>腸管からのCa吸収低下</td>
+        </tr>
+        <tr>
+          <td class="key">関連疾患</td>
+          <td><span class="highlight">Cushing病</span>（コルチゾール過剰）</td>
+        </tr>
+      </table>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115B4</div>
+        <p>骨粗鬆症が高齢女性に起きやすいことに関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ガストリン<br>
+          b メラトニン<br>
+          c エストロゲン<br>
+          d バソプレシン<br>
+          e テストステロン
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】閉経後の<span class="highlight">エストロゲン</span>低下が骨粗鬆症の主因。エストロゲンは破骨細胞活性を抑制。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C104</div>
+        <p>骨粗鬆症で増加するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 軟骨細胞<br>
+          b 破骨細胞<br>
+          c 血液幹細胞<br>
+          d 間葉系幹細胞<br>
+          e 骨髄脂肪細胞
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】骨粗鬆症では<span class="highlight">破骨細胞</span>と<span class="highlight">骨髄脂肪細胞</span>が増加する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">118C37</div>
+        <p>骨粗鬆症治療薬テリパラチドの標的分子はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ビタミンD受容体<br>
+          b エストロゲン受容体<br>
+          c カルシトニン受容体<br>
+          d 副甲状腺ホルモン受容体<br>
+          e RANK
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】テリパラチドは<span class="highlight">副甲状腺ホルモン受容体</span>に作用し骨形成を促進する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C49</div>
+        <p>薬剤関連顎骨壊死の発症に関連すると考えられるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a オピオイド<br>
+          b カルシウム拮抗薬<br>
+          c 抗RANKL抗体製剤<br>
+          d ビスホスホネート製剤<br>
+          e 副甲状腺ホルモン製剤
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="highlight">抗RANKL抗体製剤</span>（デノスマブ）と<span class="highlight">ビスホスホネート製剤</span>は顎骨壊死の原因となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A70</div>
+        <p>ビスホスホネート服用中の骨粗鬆症患者。抜歯に際して行うべきなのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 術前の十分な消炎<br>
+          b 抜歯窩の骨鋭縁の除去<br>
+          c 副腎皮質ステロイド薬の投与<br>
+          d 周囲軟組織による抜歯窩の閉鎖<br>
+          e ビスホスホネート製剤の6か月間の休薬
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】<span class="highlight">術前の消炎</span>、<span class="highlight">骨鋭縁の除去</span>、<span class="highlight">抜歯窩の閉鎖</span>が重要。休薬は推奨されない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

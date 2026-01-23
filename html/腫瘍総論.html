@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>腫瘍総論</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --red: #D70015;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 0; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); break-after: avoid; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); break-after: avoid; }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; }
+    .highlight { font-weight: 600; }
+    .red { color: var(--red); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      break-inside: avoid;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+      break-inside: avoid;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .comparison-table th { text-align: center; }
+    .comparison-table td:first-child { font-weight: 600; background: var(--bg-secondary); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">総論 / 腫瘍</span>
+    <h1>腫瘍総論</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">国試の出題ポイント</div>
+        <ul>
+          <li><span class="highlight">良性腫瘍と悪性腫瘍の鑑別</span>：発育速度、転移、被膜、核分裂像など</li>
+          <li><span class="highlight">TNM分類</span>：T（原発腫瘍）、N（所属リンパ節）、M（遠隔転移）の評価</li>
+          <li><span class="highlight">病期分類（Stage）</span>：I〜IV期とTNMの対応</li>
+          <li><span class="highlight">前癌病変</span>：白板症、紅板症の癌化率の違い</li>
+          <li><span class="highlight">発癌機序</span>：多段階発癌説（イニシエーション→プロモーション→プログレッション）</li>
+        </ul>
+      </div>
+
+      <h2>1. 腫瘍の概念</h2>
+
+      <h3>腫瘍の定義</h3>
+      <p>腫瘍（tumor, neoplasm）とは、<span class="highlight">細胞を構成する細胞が何らかの原因によって自律的に分裂・増殖し、異常で過剰に増大した新生物</span>と定義されている。臨床的には腫瘍（tumor）や潰瘍（ulcer）を形成する。</p>
+
+      <h3>良性腫瘍と悪性腫瘍</h3>
+      <table class="comparison-table">
+        <tr>
+          <th>臨床所見</th>
+          <th>良性腫瘍</th>
+          <th>悪性腫瘍</th>
+        </tr>
+        <tr>
+          <td>発育速度</td>
+          <td>緩徐</td>
+          <td><span class="red">急速</span></td>
+        </tr>
+        <tr>
+          <td>発育形成</td>
+          <td>境界明瞭で膨張性（周囲性）<br>圧迫性発育</td>
+          <td><span class="red">境界不明瞭で浸潤性</span><br>破壊性発育</td>
+        </tr>
+        <tr>
+          <td>転移</td>
+          <td>なし</td>
+          <td><span class="red">しばしばあり</span></td>
+        </tr>
+        <tr>
+          <td>再発傾向</td>
+          <td>ほとんどない</td>
+          <td>しばしばある</td>
+        </tr>
+        <tr>
+          <td>表面色調</td>
+          <td>腫瘍組織固有のもの</td>
+          <td><span class="red">潰瘍や壊死のため汚色、変色</span></td>
+        </tr>
+        <tr>
+          <td>潰瘍形成</td>
+          <td>ほとんどない</td>
+          <td>しばしばあり</td>
+        </tr>
+        <tr>
+          <td>神経血管系への影響</td>
+          <td>ほとんどない</td>
+          <td><span class="red">浸潤・破壊</span></td>
+        </tr>
+        <tr>
+          <td>放射線感受性</td>
+          <td>比較的低い</td>
+          <td>比較的高い</td>
+        </tr>
+      </table>
+
+      <table class="comparison-table">
+        <tr>
+          <th>組織所見</th>
+          <th>良性腫瘍</th>
+          <th>悪性腫瘍</th>
+        </tr>
+        <tr>
+          <td>細胞異型性</td>
+          <td>軽度<br>クロマチン少なく淡染ぎみ</td>
+          <td><span class="red">高度</span><br>クロマチン多く、濃染する</td>
+        </tr>
+        <tr>
+          <td>核の細胞質比</td>
+          <td>ほぼ正常か小さい</td>
+          <td><span class="red">大きい（核が大きい）</span></td>
+        </tr>
+        <tr>
+          <td>核小体</td>
+          <td>明瞭でない</td>
+          <td>明瞭</td>
+        </tr>
+        <tr>
+          <td>核分裂像</td>
+          <td>少ない</td>
+          <td><span class="red">多い</span></td>
+        </tr>
+        <tr>
+          <td>分化度</td>
+          <td>高分化</td>
+          <td>高分化〜低分化まで様々</td>
+        </tr>
+        <tr>
+          <td>細胞配列の規則性</td>
+          <td>比較的規則</td>
+          <td>不整</td>
+        </tr>
+        <tr>
+          <td>被膜の有無</td>
+          <td><span class="highlight">あり</span>あるいは不完全</td>
+          <td><span class="red">なし</span></td>
+        </tr>
+      </table>
+
+      <h2>2. 悪性腫瘍の疫学</h2>
+
+      <h3>日本における口腔癌</h3>
+      <ul>
+        <li>口腔癌の発生頻度は全癌の<span class="highlight">約1%</span>で、発生年齢は<span class="highlight">中高年層に多く、性別では男性に多い</span></li>
+        <li>口腔の発生頻度（Muirらの報告）：<span class="highlight">舌</span>が最多（約60%）、次いで<span class="highlight">下顎歯肉</span>（11.7%）、口底（9.7%）、頬粘膜（9.3%）、上顎歯肉（6.0%）</li>
+        <li>口腔癌の<span class="red">90%以上が扁平上皮癌</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">口腔癌の発生部位別頻度</div>
+        <table>
+          <tr><th>部位</th><th>頻度</th></tr>
+          <tr><td><span class="highlight">舌</span></td><td><span class="red">約60%</span>（最多）</td></tr>
+          <tr><td>下顎歯肉</td><td>約11.7%</td></tr>
+          <tr><td>口底</td><td>約9.7%</td></tr>
+          <tr><td>頬粘膜</td><td>約9.3%</td></tr>
+          <tr><td>上顎歯肉</td><td>約6.0%</td></tr>
+        </table>
+      </div>
+
+      <h2>3. 腫瘍の分類</h2>
+
+      <h3>病理組織学的分類</h3>
+      <p>腫瘍の発生組織の由来により分類される。WHO（World Health Organization、世界保健機関）の分類が多く用いられている。</p>
+
+      <table>
+        <tr><th>由来組織</th><th>良性腫瘍</th><th>悪性腫瘍</th></tr>
+        <tr>
+          <td><span class="highlight">上皮性腫瘍</span></td>
+          <td>乳頭腫、腺腫</td>
+          <td><span class="red">癌腫（carcinoma）</span><br>扁平上皮癌、腺癌など</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">非上皮性腫瘍</span></td>
+          <td>線維腫、脂肪腫、血管腫、骨腫など</td>
+          <td><span class="red">肉腫（sarcoma）</span><br>線維肉腫、骨肉腫など</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">歯原性腫瘍</span></td>
+          <td>エナメル上皮腫、歯牙腫など</td>
+          <td>悪性エナメル上皮腫など</td>
+        </tr>
+      </table>
+
+      <h3>臨床分類（TNM分類）</h3>
+      <p>TNM分類は、<span class="highlight">国際対癌連合（UICC）</span>によって制定された悪性腫瘍進展度の国際的な指標である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">TNM分類の基本原則</div>
+        <ul>
+          <li><span class="highlight">T</span>（primary <span class="highlight">T</span>umor）：<span class="red">原発腫瘍の大きさ</span></li>
+          <li><span class="highlight">N</span>（regional lymph <span class="highlight">N</span>ode）：<span class="red">所属リンパ節転移の有無と大きさ</span></li>
+          <li><span class="highlight">M</span>（distant <span class="highlight">M</span>etastasis）：<span class="red">遠隔転移の有無</span></li>
+        </ul>
+      </div>
+
+      <h3>口腔癌のT分類（UICC第8版・2017年）</h3>
+      <p>第8版より<span class="red">DOI（Depth of Invasion：浸潤の深さ）</span>が評価項目に追加された。</p>
+      <table>
+        <tr><th>分類</th><th>最大径</th><th>DOI（深達度）</th></tr>
+        <tr><td><span class="highlight">T1</span></td><td><span class="red">≦2cm</span></td><td><span class="red">≦5mm</span></td></tr>
+        <tr><td><span class="highlight">T2</span></td><td>≦2cmかつDOI＞5mm、または2〜4cmかつDOI≦10mm</td><td><span class="red">5mm超〜10mm</span></td></tr>
+        <tr><td><span class="highlight">T3</span></td><td>＞4cmかつDOI≦10mm、または≦4cmかつDOI＞10mm</td><td><span class="red">10mm超</span></td></tr>
+        <tr><td><span class="highlight">T4a</span></td><td colspan="2">皮質骨、外舌筋（オトガイ舌筋、舌骨舌筋、口蓋舌筋、茎突舌筋）、上顎洞、顔面皮膚に浸潤</td></tr>
+        <tr><td>T4b</td><td colspan="2">咀嚼筋間隙、翼状突起、頭蓋底に浸潤、または内頸動脈を全周性に取り囲む</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">DOI（浸潤の深さ）のポイント ★★★</div>
+        <ul>
+          <li><span class="highlight">DOI</span>＝隣接粘膜基底部を結んだ仮想線から腫瘍最深部までの垂直距離</li>
+          <li>舌癌では<span class="red">4〜5mm以上</span>で頸部リンパ節転移傾向が強まる</li>
+          <li>DOI測定：<span class="highlight">超音波検査（US）</span>が最も精度が高い、次いでMRI</li>
+          <li>第8版では<span class="red">小さい腫瘍でもDOIが深ければアップステージ</span>される</li>
+        </ul>
+      </div>
+
+      <h3>N分類（所属リンパ節）- UICC第8版</h3>
+      <p>第8版より<span class="red">節外浸潤（ENE: Extranodal Extension）</span>の有無が評価項目に追加された。</p>
+      <table>
+        <tr><th>分類</th><th>定義</th></tr>
+        <tr><td>NX</td><td>所属リンパ節転移の評価が不可能</td></tr>
+        <tr><td><span class="highlight">N0</span></td><td><span class="red">所属リンパ節転移なし</span></td></tr>
+        <tr><td><span class="highlight">N1</span></td><td>同側の単発性リンパ節転移で最大径が<span class="red">3cm以下</span>、<span class="highlight">ENE(−)</span></td></tr>
+        <tr><td>N2a</td><td>同側単発、3cm超〜6cm以下、ENE(−)、または3cm以下でENE(+)</td></tr>
+        <tr><td>N2b</td><td>同側の多発性リンパ節転移で最大径が6cm以下、ENE(−)</td></tr>
+        <tr><td>N2c</td><td>両側あるいは対側の所属リンパ節転移で最大径が6cm以下、ENE(−)</td></tr>
+        <tr><td><span class="highlight">N3a</span></td><td>最大径が<span class="red">6cmを超える</span>リンパ節転移、ENE(−)</td></tr>
+        <tr><td><span class="highlight">N3b</span></td><td>単発または多発で<span class="red">ENE(+)</span></td></tr>
+      </table>
+      <p style="font-size: 9pt; color: var(--text-secondary);">※ENE（節外浸潤）＝転移リンパ節から周囲組織への浸潤</p>
+
+      <h3>M分類（遠隔転移）</h3>
+      <table>
+        <tr><th>分類</th><th>定義</th></tr>
+        <tr><td><span class="highlight">M0</span></td><td><span class="red">遠隔転移なし</span></td></tr>
+        <tr><td><span class="highlight">M1</span></td><td><span class="red">遠隔転移あり</span></td></tr>
+      </table>
+
+      <h3>病期分類（Stage分類）</h3>
+      <div class="point-box">
+        <div class="point-box-title">口腔癌の病期分類</div>
+        <table>
+          <tr><th>病期</th><th>T</th><th>N</th><th>M</th></tr>
+          <tr><td><span class="highlight">I期</span></td><td>T1</td><td>N0</td><td>M0</td></tr>
+          <tr><td><span class="highlight">II期</span></td><td>T2</td><td>N0</td><td>M0</td></tr>
+          <tr><td><span class="highlight">III期</span></td><td>T1, 2, 3</td><td>N1</td><td>M0</td></tr>
+          <tr><td></td><td>T3</td><td>N0</td><td>M0</td></tr>
+          <tr><td><span class="highlight">IVA期</span></td><td>T4a</td><td>N0, N1, N2</td><td>M0</td></tr>
+          <tr><td></td><td>T1, 2, 3</td><td>N2</td><td>M0</td></tr>
+          <tr><td><span class="highlight">IVB期</span></td><td>T4b</td><td>Nに関係なく</td><td>M0</td></tr>
+          <tr><td></td><td>Tに関係なく</td><td>N3</td><td>M0</td></tr>
+          <tr><td><span class="highlight">IVC期</span></td><td>Tに関係なく</td><td>Nに関係なく</td><td><span class="red">M1</span></td></tr>
+        </table>
+      </div>
+
+      <h2>4. 発癌（病因）</h2>
+
+      <h3>発癌因子</h3>
+      <ul>
+        <li><span class="highlight">発癌物質</span>：環境因子（食品、医薬品、農業など）</li>
+        <li><span class="highlight">細菌・ウイルス</span>：Helicobacter pylori（胃癌）、EBウイルス（上咽頭癌、Burkittリンパ腫）、<span class="red">ヒトパピローマウイルス（HPV）</span>（子宮頸癌、口腔癌）、HIV（Kaposi肉腫）</li>
+        <li><span class="highlight">遺伝などによる体質</span>：癌抑制遺伝子（p53遺伝子など）の異常</li>
+        <li><span class="highlight">免疫機能の低下</span>：AIDS患者などで癌発生率が高い</li>
+      </ul>
+
+      <h3>口腔領域の発癌危険因子</h3>
+      <ul>
+        <li><span class="highlight">喫煙</span>：Brinkman index（1日喫煙本数×喫煙年数）で評価</li>
+        <li><span class="highlight">飲酒</span>：Sake index（日本酒換算）</li>
+        <li><span class="highlight">ビンロウジ（betel nut chewing）</span>：東南アジアで口腔癌発生率が約30%と高い</li>
+      </ul>
+
+      <h3>発癌機序（多段階発癌説）</h3>
+      <div class="point-box">
+        <div class="point-box-title">多段階発癌の3段階</div>
+        <ul>
+          <li><span class="highlight">イニシエーション（initiation）</span>：癌遺伝子の活性化や初発段階</li>
+          <li><span class="highlight">プロモーション（promotion）</span>：促進段階</li>
+          <li><span class="highlight">プログレッション（progression）</span>：進行段階で発癌、増殖、さらに転移が起こる</li>
+        </ul>
+      </div>
+
+      <h2>5. 前癌病変と前癌状態</h2>
+
+      <h3>前癌病変（precancerous lesion）</h3>
+      <p>前癌病変とは、<span class="highlight">正常組織より癌が発生しやすい状態に形態学的に変化した組織</span>のことである。WHO（1997）では「口腔前癌病変に類似した良性の病変」と分類している。</p>
+
+      <table>
+        <tr><th>前癌病変</th><th>癌化率</th><th>特徴</th></tr>
+        <tr>
+          <td><span class="highlight">白板症（leukoplakia）</span></td>
+          <td><span class="red">4〜18%</span></td>
+          <td>角化異常による白色病変。男性に多い。舌縁部、歯肉、口蓋に好発</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">紅板症（erythroplakia）</span></td>
+          <td><span class="red">約50%</span>（最も高い）</td>
+          <td>鮮紅色ビロード状の病変。上皮性異形成が高度</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">白板症の臨床型と癌化率</div>
+        <ul>
+          <li><span class="highlight">均一型</span>（homogeneous）：癌化率が<span class="highlight">低い</span></li>
+          <li><span class="highlight">紅斑混在型</span>（非均一型）：癌化率が<span class="red">高い</span>（紅斑部には高度の上皮性異形成）</li>
+          <li>組織所見では<span class="highlight">扁平上皮性異形成（squamous epithelial dysplasia）</span>が挙げられる</li>
+        </ul>
+      </div>
+
+      <h3>前癌状態（precancerous condition）</h3>
+      <p>前癌状態とは、<span class="highlight">癌発生のリスクを有意に増大させるにかかわりを持つ全身的状態</span>のことである。</p>
+      <ul>
+        <li><span class="highlight">扁平苔癬（lichen planus）</span></li>
+        <li><span class="highlight">口蓋角化症（palatal keratosis associated with reverse smoking）</span>：リバーススモーキング</li>
+        <li><span class="highlight">梅毒</span>：第二期梅毒でみられる白斑や舌乳頭萎縮の部位に癌が発生</li>
+        <li><span class="highlight">円板状エリテマトーデス</span></li>
+        <li><span class="highlight">鉄欠乏性嚥下障害（Plummer-Vinson症候群）</span></li>
+        <li><span class="highlight">口腔粘膜下線維症</span></li>
+      </ul>
+
+      <h2>6. 病態（症状）</h2>
+
+      <h3>良性腫瘍の症状</h3>
+      <ul>
+        <li><span class="highlight">膨張性増殖</span>が基本形で、通常無痛性</li>
+        <li>腫瘍の増殖により周囲組織への影響として、歯の<span class="highlight">変位や動揺</span>を生じることがある</li>
+        <li>骨内の良性腫瘍は大きくなると<span class="highlight">無痛性</span>の骨の膨隆をきたし、表面硬結となり、咬合不全、歯の欠如などにより波動を触れることがある</li>
+      </ul>
+
+      <h3>悪性腫瘍の症状</h3>
+      <ul>
+        <li><span class="highlight">浸潤性増殖</span>が基本形</li>
+        <li>腫瘍組織は<span class="red">周囲組織を破壊</span>しながら増大するため、<span class="highlight">疼痛</span>、<span class="highlight">出血</span>、<span class="highlight">潰瘍形成</span>を伴う</li>
+        <li>周囲への浸潤により<span class="highlight">易出血性の潰瘍</span>、周囲に<span class="highlight">堤防状隆起</span>を伴うようになる</li>
+        <li>舌への浸潤では<span class="highlight">舌の運動障害</span>を生じる</li>
+        <li>神経浸潤により<span class="highlight">知覚異常・麻痺</span>（オトガイ神経麻痺など）を生じる</li>
+      </ul>
+
+      <h2>7. 転移</h2>
+
+      <h3>転移の種類</h3>
+      <table>
+        <tr><th>転移経路</th><th>特徴</th><th>好発部位</th></tr>
+        <tr>
+          <td><span class="highlight">リンパ行性転移</span></td>
+          <td>最も頻度が高い。扁平上皮癌で多い</td>
+          <td><span class="red">頸部リンパ節</span>（口腔癌で最多）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">血行性転移</span></td>
+          <td>肉腫で多い</td>
+          <td><span class="red">肺</span>（口腔癌で最多）、肝臓、骨など</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">播種</span></td>
+          <td>体腔内に散布される形式</td>
+          <td>腹膜、胸膜など</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">転移のポイント</div>
+        <ul>
+          <li>口腔癌の転移は<span class="highlight">リンパ行性転移が多く</span>、<span class="red">頸部リンパ節</span>に転移しやすい</li>
+          <li>血行性転移では<span class="red">肺</span>への転移が最も多い</li>
+          <li>舌癌のリンパ節転移は<span class="highlight">顎下リンパ節、上内深頸リンパ節</span>に好発</li>
+        </ul>
+      </div>
+
+      <h2>8. 診断と治療方針</h2>
+
+      <h3>腫瘍の診断法</h3>
+      <ul>
+        <li><span class="highlight">臨床診断</span>：視診、触診、画像検査</li>
+        <li><span class="highlight">病理組織学的診断</span>：生検（確定診断に必須）</li>
+        <li><span class="highlight">細胞診</span>：簡便だが確定診断にはならない</li>
+        <li><span class="highlight">腫瘍マーカー</span>：SCC抗原（扁平上皮癌）、CEA、CA19-9など</li>
+      </ul>
+
+      <h3>画像検査</h3>
+      <ul>
+        <li><span class="highlight">CT</span>：骨破壊の評価、頸部リンパ節転移の検索</li>
+        <li><span class="highlight">MRI</span>：軟組織への浸潤範囲の評価</li>
+        <li><span class="highlight">PET-CT</span>：遠隔転移、再発の検索（FDGの集積）</li>
+        <li><span class="highlight">超音波検査</span>：頸部リンパ節の評価</li>
+      </ul>
+
+      <h3>治療方針の決定</h3>
+      <p>腫瘍の病態と進展度に応じた治療計画を作成する。患者および家族に十分なインフォームドコンセントを行った上で治療が開始される。</p>
+      <ul>
+        <li><span class="highlight">良性腫瘍</span>：外科的摘出（被膜を含めた完全摘出）</li>
+        <li><span class="highlight">悪性腫瘍</span>：外科的療法、放射線療法、化学療法の集学的治療</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">悪性腫瘍の治療選択</div>
+        <ul>
+          <li><span class="highlight">早期癌（Stage I, II）</span>：手術単独または放射線治療単独で根治可能</li>
+          <li><span class="highlight">進行癌（Stage III, IV）</span>：手術＋放射線＋化学療法の<span class="red">集学的治療</span></li>
+          <li>N1以上では<span class="highlight">頸部郭清術</span>を併施</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

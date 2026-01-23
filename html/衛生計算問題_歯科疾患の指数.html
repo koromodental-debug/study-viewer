@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>衛生計算問題 - 歯科疾患の指数</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --red: #D70015;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 0; max-width: none; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 16px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); break-after: avoid; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+    h3 { font-size: 11pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); break-after: avoid; }
+    h4 { font-size: 10pt; font-weight: 600; margin: 10px 0 6px 0; color: var(--text-primary); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; break-inside: avoid; }
+    th, td { padding: 8px 10px; text-align: left; border: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .red { color: var(--red); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      break-inside: avoid;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula-box {
+      background: #FFF9E6;
+      border: 1px solid #E6D78A;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      font-family: "Times New Roman", serif;
+      font-size: 11pt;
+      break-inside: avoid;
+    }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 9pt;
+      break-inside: avoid;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 8px 0; line-height: 1.7; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .calc-example {
+      background: #F0FDF4;
+      border: 1px solid #86EFAC;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      break-inside: avoid;
+    }
+    .calc-example-title { font-weight: 600; color: #166534; margin-bottom: 6px; }
+    .syllabus-section {
+      background: var(--accent-light);
+      padding: 6px 12px;
+      margin: 16px 0 10px 0;
+      border-left: 3px solid var(--accent);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">総論I / 疫学と調査</span>
+    <h1>衛生計算問題 - 歯科疾患の指数</h1>
+    <div class="container">
+
+      <div class="syllabus-section">イ. 歯科疾患の指数と分類</div>
+      <p>小項目: a. う蝕, b. 口腔清掃状態, c. 歯周疾患, d. 口腔機能, e. 不正咬合, f. 口臭, g. 口腔乾燥</p>
+
+      <!-- ==================== DMF指数 ==================== -->
+      <h2>1. DMF指数（う蝕経験指数）★★★★★</h2>
+
+      <h3>DMFの定義</h3>
+      <table>
+        <tr><th>記号</th><th>意味</th><th>内容</th></tr>
+        <tr><td><span class="key">D</span></td><td>Decayed</td><td>未処置の齲蝕歯</td></tr>
+        <tr><td><span class="key">M</span></td><td>Missing</td><td>齲蝕を原因とする喪失歯</td></tr>
+        <tr><td><span class="key">F</span></td><td>Filled</td><td>処置済みの齲蝕歯（充填・補綴）</td></tr>
+      </table>
+      <p class="red">※ Mは齲蝕による喪失のみ。外傷や矯正治療による喪失は含まない</p>
+      <p class="red">※ 処置済みでも二次齲蝕があればDに含める</p>
+
+      <h3>DMFに関連する指標</h3>
+      <table>
+        <tr><th>指標</th><th>計算式</th><th>用途</th></tr>
+        <tr><td><span class="key">DMF歯率</span></td><td>DMFのいずれか1歯でも持つ者の数 / 被験者数 × 100（%）</td><td>有病率</td></tr>
+        <tr><td><span class="key">DMF歯率</span></td><td>DMF歯の合計 / 被験歯数 × 100（%）</td><td>歯単位</td></tr>
+        <tr><td><span class="key">D(M・F)歯率</span></td><td>D(M・F)歯の合計 / 被験歯数 × 100（%）</td><td>各成分</td></tr>
+        <tr><td><span class="highlight">DMFT指数</span></td><td>被験者のDMF歯の合計 / 被験者数</td><td><span class="red">最頻出</span></td></tr>
+        <tr><td><span class="key">DMFS指数</span></td><td>被験者のDMF歯面の合計 / 被験者数</td><td>歯面単位</td></tr>
+      </table>
+
+      <div class="formula-box">
+        <strong>DMFT指数 = Σ(各被験者のD+M+F歯数) / 被験者数</strong>
+      </div>
+
+      <h3>乳歯用：dmf / def</h3>
+      <table>
+        <tr><th>記号</th><th>意味</th><th>備考</th></tr>
+        <tr><td>d</td><td>未処置の齲蝕乳歯（DのD）</td><td>-</td></tr>
+        <tr><td>m</td><td>齲蝕を原因とする喪失乳歯（Mに相当）</td><td>-</td></tr>
+        <tr><td>f</td><td>処置済みの齲蝕乳歯（Fに相当）</td><td>-</td></tr>
+        <tr><td class="red">e</td><td><span class="red">抜去を必要とする齲蝕乳歯</span></td><td>def指数で使用</td></tr>
+      </table>
+      <p><span class="red">5歳未満</span>の小児では永久歯列の dmf を用いて齲蝕経験を評価。乳歯は自然脱落するため、<span class="red">5歳以上</span>の小児においてはmの代わりに抜去必要歯（e）をカウントする<span class="key">def</span>が用いられる。</p>
+
+      <div class="calc-example">
+        <div class="calc-example-title">【計算例】105D52</div>
+        <p>3歳6か月の男児。乳歯20本中、d歯=2、f歯=1</p>
+        <p><strong>dmf歯率 = (2+0+1) / 20 × 100 = 15%</strong></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D89</div>
+        <p>小学校6年生に歯の検査を行った結果の一部を表に示す。この集団のDMFT指数を求めよ。</p>
+        <div class="answer">正解：2.4</div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B52</div>
+        <p>中学生100名に学校歯科健康診断を行った。永久歯の齲蝕経験歯数別人数分布を表に示す。この集団のDMFT指数を求めよ。</p>
+        <div class="answer">正解：0.8（DMF歯合計80÷100人）</div>
+      </div>
+
+      <h3>う蝕抑制率の計算</h3>
+      <div class="formula-box">
+        <strong>う蝕抑制率(%) = (対照群DMFT - 実験群DMFT) / 対照群DMFT × 100</strong>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D53</div>
+        <p>フッ化物洗口法を実施しているA小学校と実施していないB小学校における1年時と6年時の1人平均DMF歯数を図に示す。フッ化物洗口法による齲蝕抑制率を求めよ。</p>
+        <div class="answer">正解：43%</div>
+      </div>
+
+      <!-- ==================== CFI ==================== -->
+      <h2>2. CFI（地域フッ素症指数）★★★</h2>
+
+      <h3>CFIとは</h3>
+      <p><span class="key">Community Fluorosis Index</span>（Dean, 1942）：地域における歯のフッ素症の発生程度を評価する指標</p>
+
+      <h3>Dean分類（診査基準）</h3>
+      <table>
+        <tr><th>点数</th><th>分類</th><th>診査基準</th></tr>
+        <tr><td>0</td><td>normal（正常）</td><td>正常の形態、透明度</td></tr>
+        <tr><td>0.5</td><td>questionable（疑問）</td><td>点在するわずかな白斑</td></tr>
+        <tr><td>1</td><td>very mild（ごく軽度）</td><td>白濁部が歯面の<span class="key">1/4以下</span></td></tr>
+        <tr><td>2</td><td>mild（軽度）</td><td>白濁部が歯面の<span class="key">1/2以下</span></td></tr>
+        <tr><td>3</td><td>moderate（中等度）</td><td>全歯面の白濁および小窩、<span class="key">着色</span>を認める</td></tr>
+        <tr><td>4</td><td>severe（重度）</td><td><span class="red">形成不全</span>を伴う。着色も著しい</td></tr>
+      </table>
+
+      <div class="formula-box">
+        <strong>CFI = 個人の点数の合計 / 被験者数</strong><br>
+        ※各個人の最も症状の強い2歯で判定
+      </div>
+
+      <h3>CFIの判定基準</h3>
+      <table>
+        <tr><th>CFI値</th><th>判定</th></tr>
+        <tr><td class="key">0.4以下</td><td>公衆衛生上問題なし</td></tr>
+        <tr><td>0.4〜0.6</td><td><span class="red">境界域</span></td></tr>
+        <tr><td class="key">0.6以上</td><td><span class="red">流行地</span>（飲料水中のフッ化物量を減らす必要性あり）</td></tr>
+      </table>
+
+      <div class="calc-example">
+        <div class="calc-example-title">【計算例】112A29</div>
+        <p>24歳の男性。CFI検査結果：normal=6本、questionable=2本、very mild=0本</p>
+        <p>個人の点数 = 6×0 + 2×0.5 + 0×1 = 1.0</p>
+        <p>この被験者のCFI値 = <strong>1.0</strong>（個人単位なので被験者数で割らない）</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C90</div>
+        <p>ある地域住民100名を対象として歯のフッ素症の調査を実施した結果を表に示す。この地域のCFIを求めよ。</p>
+        <div class="answer">正解：採点除外（計算例として重要）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">CFI vs 歯のフッ素症</div>
+        <ul>
+          <li>歯のフッ素症は<span class="key">永久歯の形成期</span>（出生〜8歳頃）にフッ化物を過剰摂取すると生じる</li>
+          <li>乳歯には<span class="red">生じにくい</span>（母体のバリア機能）</li>
+          <li>左右<span class="key">対称性</span>に出現</li>
+          <li>切縁・咬頭から始まる（<span class="red">歯頸部からではない</span>）</li>
+        </ul>
+      </div>
+
+      <!-- ==================== OHI / OHI-S ==================== -->
+      <h2>3. OHI / OHI-S（口腔清掃状態指数）★★★</h2>
+
+      <h3>OHI（Oral Hygiene Index）</h3>
+      <p>Greene & Vermillion（1960）：<span class="key">プラーク（debris）</span>と<span class="key">歯石（calculus）</span>の付着状態を数量化</p>
+
+      <div class="formula-box">
+        <strong>OHI = DI + CI</strong><br>
+        DI = プラーク点数の合計 / 被験ブロック数（通常6）<br>
+        CI = 歯石点数の合計 / 被験ブロック数（通常6）
+      </div>
+
+      <h3>診査部位（6ブロック）</h3>
+      <table>
+        <tr><th>部位</th><th>診査歯</th><th>診査面</th></tr>
+        <tr><td>上顎右側臼歯部</td><td>7-4</td><td>頬側</td></tr>
+        <tr><td>上顎前歯部</td><td>3-3</td><td>唇側</td></tr>
+        <tr><td>上顎左側臼歯部</td><td>4-7</td><td>頬側</td></tr>
+        <tr><td>下顎右側臼歯部</td><td>7-4</td><td>舌側</td></tr>
+        <tr><td>下顎前歯部</td><td>3-3</td><td>舌側</td></tr>
+        <tr><td>下顎左側臼歯部</td><td>4-7</td><td>舌側</td></tr>
+      </table>
+
+      <h3>DI（Debris Index）評価基準</h3>
+      <table>
+        <tr><th>点数</th><th>診査基準</th></tr>
+        <tr><td>0</td><td>プラークおよび外因性付着物を認めない</td></tr>
+        <tr><td>1</td><td>歯面の<span class="key">1/3以内</span>のプラーク付着、または外因性付着物あり</td></tr>
+        <tr><td>2</td><td>歯面の<span class="key">1/3〜2/3</span>のプラーク付着</td></tr>
+        <tr><td>3</td><td>歯面の<span class="key">2/3以上</span>のプラーク付着</td></tr>
+      </table>
+
+      <h3>CI（Calculus Index）評価基準</h3>
+      <table>
+        <tr><th>点数</th><th>診査基準</th></tr>
+        <tr><td>0</td><td>歯石の付着を認めない</td></tr>
+        <tr><td>1</td><td>歯面の<span class="key">1/3以内</span>の歯肉縁上歯石付着、または歯肉縁下歯石の点状付着</td></tr>
+        <tr><td>2</td><td>歯面の<span class="key">1/3〜2/3</span>の歯肉縁上歯石付着、または歯肉縁下歯石の帯状付着</td></tr>
+        <tr><td>3</td><td>歯面の<span class="key">2/3以上</span>の歯肉縁上歯石付着、または歯肉縁下帯状歯石付着</td></tr>
+      </table>
+
+      <h3>OHI-S（Simplified OHI）</h3>
+      <p>OHIを簡略化し、<span class="key">特定の6歯</span>のみを診査対象とする</p>
+      <table>
+        <tr><th>診査歯</th><th>診査面</th></tr>
+        <tr><td><span class="key">16, 11, 26</span>（上顎）</td><td>頬側・唇側</td></tr>
+        <tr><td><span class="key">36, 31, 46</span>（下顎）</td><td>舌側</td></tr>
+      </table>
+
+      <div class="formula-box">
+        <strong>OHI-S = DI-S + CI-S</strong><br>
+        DI-S = プラーク点数の合計 / 被験歯数（通常6）　最大3点<br>
+        CI-S = 歯石点数の合計 / 被験歯数（通常6）　最大3点<br>
+        <span class="red">OHI-Sの最大値 = 6点</span>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A108</div>
+        <p>OHI記録の一部を表に示す。OHI-Sの値はどれか。</p>
+        <div class="choices">a 1.0　b 1.5　c 2.0　d 2.5　e 3.0</div>
+        <div class="answer">正解：d（DI-S + CI-Sの計算）</div>
+      </div>
+
+      <!-- ==================== PCR ==================== -->
+      <h2>4. PCR（プラーク除去率）★★</h2>
+
+      <h3>O'LearyのPCR</h3>
+      <p><span class="key">Plaque Control Record</span>（O'Leary, 1972）：すべての歯の歯頸部のプラークを歯面別に評価</p>
+
+      <h3>診査方法</h3>
+      <ul>
+        <li>すべての現在歯を対象</li>
+        <li>歯垢染色剤でプラークを染め出す</li>
+        <li>各歯面を<span class="key">近心面、遠心面、頬（唇）側面、舌（口蓋）側面</span>の<span class="key">4歯面</span>に分ける</li>
+        <li>付着があればプラークチャートに記入</li>
+      </ul>
+
+      <div class="formula-box">
+        <strong>PCR(%) = プラークの検出された歯面数 / 被験歯面数 × 100</strong><br>
+        最大値 = <span class="red">100%</span>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">PCRの特色</div>
+        <ul>
+          <li>歯垢染色剤でプラークを染める必要がある</li>
+          <li>おもに<span class="key">臨床の場</span>で口腔清掃指導に用いられる</li>
+          <li>口腔清掃状況を数値化することができ、<span class="key">口腔衛生指導</span>での有用性が高い</li>
+          <li><span class="red">20%以下</span>が良好なプラークコントロールの目安</li>
+        </ul>
+      </div>
+
+      <div class="calc-example">
+        <div class="calc-example-title">【計算例】114A89</div>
+        <p>5歳の男児。現在歯20本（乳歯列）、染色後プラーク検出歯面40面</p>
+        <p>被験歯面数 = 20本 × 4面 = 80面</p>
+        <p><strong>PCR = 40 / 80 × 100 = 50%</strong></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">117D59</div>
+        <p>O'LearyのPCRについて正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 咬合面を含む<br>
+          b 歯肉縁を対象とする<br>
+          c 4歯面を評価する<br>
+          d 清掃状態を評価する<br>
+          e 歯垢染色剤を用いる
+        </div>
+        <div class="answer">正解：c, e</div>
+      </div>
+
+      <!-- ==================== CPI ==================== -->
+      <h2>5. CPI（地域歯周疾患指数）★★★</h2>
+
+      <h3>CPIとは</h3>
+      <p><span class="key">Community Periodontal Index</span>（WHO, 1997, 2013改定）：専用のプローブを用いて歯肉出血と歯周ポケットの状態により歯周病を評価する指標</p>
+
+      <h3>診査部位</h3>
+      <p>上下顎を6つのブロックに分け、各ブロックの代表歯についてCPIプローブを用いて診査</p>
+      <table>
+        <tr><th>ブロック</th><th>代表歯</th></tr>
+        <tr><td>上顎右側</td><td>17, 16</td></tr>
+        <tr><td>上顎前歯</td><td>11</td></tr>
+        <tr><td>上顎左側</td><td>26, 27</td></tr>
+        <tr><td>下顎右側</td><td>46, 47</td></tr>
+        <tr><td>下顎前歯</td><td>31</td></tr>
+        <tr><td>下顎左側</td><td>36, 37</td></tr>
+      </table>
+
+      <h3>CPI評価基準（〜2013年）</h3>
+      <table>
+        <tr><th>コード</th><th>診査基準</th></tr>
+        <tr><td>0</td><td>所見なし</td></tr>
+        <tr><td>1</td><td>プロービングによる歯肉出血あり</td></tr>
+        <tr><td>2</td><td>歯肉縁上または縁下に歯石を検出</td></tr>
+        <tr><td>3</td><td><span class="key">4〜5mm</span>の歯周ポケットを有する</td></tr>
+        <tr><td>4</td><td><span class="key">6mm以上</span>の歯周ポケットを有する</td></tr>
+      </table>
+
+      <h3>CPI 2013年改定版の診査項目</h3>
+      <table>
+        <tr><th>項目</th><th>評価</th></tr>
+        <tr><td><span class="key">歯肉出血スコア</span></td><td>0: 出血なし / 1: 出血あり</td></tr>
+        <tr><td><span class="key">歯周ポケットスコア</span></td><td>0: 3mm以下 / 1: 4〜5mm / 2: 6mm以上</td></tr>
+      </table>
+      <p class="red">※2013年改定版では歯石の診査は含まれない</p>
+
+      <div class="question-box">
+        <div class="q-number">118D26</div>
+        <p>CPI（WHO、2013年）の診査項目はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯の動揺<br>
+          b 歯石の沈着<br>
+          c 歯肉の腫脹<br>
+          d 歯肉の出血<br>
+          e 歯周ポケット
+        </div>
+        <div class="answer">正解：d, e</div>
+      </div>
+
+      <!-- ==================== その他の指数 ==================== -->
+      <h2>6. その他の口腔清掃指数</h2>
+
+      <h3>PHP（Patient Hygiene Performance）</h3>
+      <p>Podshadley & Haley（1968）：ブラッシングの清掃効果を評価。プラークの付着部位をより詳細に診査。</p>
+      <table>
+        <tr><th>診査歯</th><th>診査面</th></tr>
+        <tr><td>16, 11, 26</td><td>頬側・唇側</td></tr>
+        <tr><td>36, 31, 46</td><td>舌側</td></tr>
+      </table>
+      <p>各歯を<span class="key">5区分</span>し、染まった部位に1点を与える。最大5点/歯。</p>
+      <div class="formula-box">
+        <strong>PHP = 各歯の点数の合計 / 被験歯数（通常6）</strong><br>
+        最大値 = 5点
+      </div>
+
+      <h3>PlI（Plaque Index）</h3>
+      <p>Silness & Löe（1964）：歯肉縁に蓄積したプラークの評価に重点。歯肉炎の局所因子としてのプラークの評価指標。</p>
+      <table>
+        <tr><th>点数</th><th>診査基準</th></tr>
+        <tr><td>0</td><td>プラークの付着を認めない</td></tr>
+        <tr><td>1</td><td>歯肉縁に探針で確認できる程度のプラークの付着を認める</td></tr>
+        <tr><td>2</td><td>歯肉縁に肉眼で確認できる程度のプラークの付着を認める</td></tr>
+        <tr><td>3</td><td>歯肉縁に多量（厚さ1〜2mm程度）のプラークの付着を認める</td></tr>
+      </table>
+      <p>診査部位はGIと共通で、各歯の<span class="key">4歯面</span>を評価。</p>
+
+      <!-- ==================== 発育評価指数 ==================== -->
+      <h2>7. 発育評価の指数★★</h2>
+
+      <h3>Kaup指数（乳幼児用）</h3>
+      <div class="formula-box">
+        <strong>Kaup指数 = 体重(g) / 身長(cm)² × 10</strong><br>
+        または　<strong>体重(kg) / 身長(m)² </strong>（= BMIと同じ計算式）
+      </div>
+      <p>対象：<span class="key">乳幼児〜学童期前</span>（生後3ヶ月〜5歳程度）</p>
+
+      <h4>年齢別の正常値</h4>
+      <table>
+        <tr><th>年齢</th><th>やせ</th><th>正常</th><th>肥満</th></tr>
+        <tr><td>乳児（3ヶ月〜）</td><td>16未満</td><td><span class="key">16〜18</span></td><td>18以上</td></tr>
+        <tr><td>満1歳</td><td>15.5未満</td><td><span class="key">15.5〜17.5</span></td><td>17.5以上</td></tr>
+        <tr><td>1歳6ヶ月〜2歳</td><td>15未満</td><td><span class="key">15〜17</span></td><td>17以上</td></tr>
+        <tr><td>満3〜5歳</td><td>14.5未満</td><td><span class="key">14.5〜16.5</span></td><td>16.5以上</td></tr>
+      </table>
+      <p class="red">※年齢により正常値が異なる点に注意。一般的には<span class="key">15〜19</span>が目安</p>
+
+      <div class="question-box">
+        <div class="q-number">116C90</div>
+        <p>身長60cm、体重6,120gの6か月の男児のKaup指数を求めよ。</p>
+        <p>Kaup指数 = 6120 / 60² × 10 = 6120 / 3600 × 10 = <strong>17</strong></p>
+        <div class="answer">正解：17</div>
+      </div>
+
+      <h3>Rohrer指数（学童用）</h3>
+      <div class="formula-box">
+        <strong>Rohrer指数 = 体重(kg) / 身長(cm)³ × 10⁷</strong><br>
+        または　<strong>体重(g) / 身長(cm)³ × 10</strong>
+      </div>
+      <table>
+        <tr><th>判定</th><th>Rohrer指数</th></tr>
+        <tr><td>やせすぎ</td><td>100未満</td></tr>
+        <tr><td>やせぎみ</td><td>100〜115</td></tr>
+        <tr><td>正常</td><td><span class="key">115〜145</span></td></tr>
+        <tr><td>太りぎみ</td><td>145〜160</td></tr>
+        <tr><td>太りすぎ</td><td>160以上</td></tr>
+      </table>
+      <p>対象：<span class="key">学童期</span>（小学生〜中学生）</p>
+
+      <div class="question-box">
+        <div class="q-number">117A12</div>
+        <p>Rohrer指数が130である8歳の男児の発育状態はどれか。</p>
+        <div class="choices">a やせすぎ　b やせぎみ　c 正常　d 太りぎみ　e 太りすぎ</div>
+        <div class="answer">正解：c（115〜145が正常）</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">Kaup vs Rohrer</div>
+        <ul>
+          <li><span class="key">Kaup指数</span>：身長の<span class="red">2乗</span>で割る → <span class="key">乳幼児</span>用</li>
+          <li><span class="key">Rohrer指数</span>：身長の<span class="red">3乗</span>で割る → <span class="key">学童</span>用</li>
+          <li>BMI = Kaupと同じ計算式だが、<span class="key">成人</span>用</li>
+        </ul>
+      </div>
+
+      <!-- ==================== 疫学指標 ==================== -->
+      <h2>8. 疫学指標（相対危険度・オッズ比）★★★★</h2>
+
+      <h3>相対危険度（RR: Relative Risk）</h3>
+      <p><span class="key">コホート研究</span>で使用。曝露群と非曝露群の罹患率の比。</p>
+      <div class="formula-box">
+        <strong>相対危険度 = 曝露群の罹患率 / 非曝露群の罹患率</strong>
+      </div>
+
+      <h3>寄与危険度（AR: Attributable Risk）</h3>
+      <div class="formula-box">
+        <strong>寄与危険度 = 曝露群の罹患率 − 非曝露群の罹患率</strong>
+      </div>
+
+      <h3>オッズ比（OR: Odds Ratio）</h3>
+      <p><span class="key">症例対照研究</span>で使用。稀な疾患では相対危険度の近似値となる。</p>
+      <table>
+        <tr><th></th><th>疾患あり</th><th>疾患なし</th></tr>
+        <tr><td>曝露あり</td><td>a</td><td>b</td></tr>
+        <tr><td>曝露なし</td><td>c</td><td>d</td></tr>
+      </table>
+      <div class="formula-box">
+        <strong>オッズ比 = (a × d) / (b × c)</strong>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C87</div>
+        <p>30歳時点でのCPI診査で所見を認めなかった200人を対象に前向きコホート調査を実施した。20年後の再診査の結果を表に示す。4mm以上の歯周ポケット保有者の喫煙の相対危険度はどれか。</p>
+        <div class="answer">正解：c（表から計算）</div>
+      </div>
+
+      <!-- ==================== 人口統計指数 ==================== -->
+      <h2>9. 人口統計指数★★</h2>
+
+      <h3>老年化指数</h3>
+      <div class="formula-box">
+        <strong>老年化指数(%) = 老年人口（65歳以上） / 年少人口（0〜14歳） × 100</strong>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A87</div>
+        <p>ある国の人口構成を表に示す。老年化指数（％）はどれか。</p>
+        <div class="answer">正解：e（表から65歳以上/0-14歳×100を計算）</div>
+      </div>
+
+      <h3>その他の人口統計指標</h3>
+      <table>
+        <tr><th>指標</th><th>計算式</th></tr>
+        <tr><td>老年人口割合</td><td>65歳以上人口 / 総人口 × 100</td></tr>
+        <tr><td>年少人口割合</td><td>0〜14歳人口 / 総人口 × 100</td></tr>
+        <tr><td>従属人口指数</td><td>(年少人口+老年人口) / 生産年齢人口 × 100</td></tr>
+        <tr><td>平均寿命</td><td>0歳における平均余命</td></tr>
+        <tr><td>平均余命</td><td>X歳における生存者がX歳以降に生存する年数の平均値</td></tr>
+      </table>
+
+      <!-- ==================== Brinkman指数 ==================== -->
+      <h2>10. Brinkman指数（喫煙指数）★</h2>
+
+      <div class="formula-box">
+        <strong>Brinkman指数 = 1日の喫煙本数 × 喫煙年数</strong>
+      </div>
+      <table>
+        <tr><th>判定</th><th>Brinkman指数</th></tr>
+        <tr><td>軽度喫煙</td><td>200未満</td></tr>
+        <tr><td>中等度喫煙</td><td>200〜399</td></tr>
+        <tr><td>重度喫煙</td><td><span class="red">400以上</span>（肺癌リスク上昇）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">117A81</div>
+        <p>55歳の男性。Brinkman指数は600で、歯科受診をきっかけに禁煙を希望している。</p>
+        <p>→ 1日20本×30年 = 600 と推定できる。重度喫煙に該当。</p>
+      </div>
+
+      <!-- ==================== まとめ ==================== -->
+      <h2>計算問題のポイントまとめ</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出計算問題チェックリスト</div>
+        <ol>
+          <li><span class="key">DMFT指数</span>：DMF歯合計 ÷ 被験者数</li>
+          <li><span class="key">dmf歯率</span>：dmf歯数 ÷ 現在歯数 × 100</li>
+          <li><span class="key">う蝕抑制率</span>：(対照群−実験群) ÷ 対照群 × 100</li>
+          <li><span class="key">CFI</span>：個人点数合計 ÷ 被験者数（Dean分類使用）</li>
+          <li><span class="key">OHI-S</span>：DI-S + CI-S（最大6点）</li>
+          <li><span class="key">PCR</span>：プラーク検出歯面 ÷ 被験歯面 × 100</li>
+          <li><span class="key">Kaup指数</span>：体重(g) ÷ 身長(cm)² × 10</li>
+          <li><span class="key">Rohrer指数</span>：体重(kg) ÷ 身長(cm)³ × 10⁷</li>
+          <li><span class="key">相対危険度</span>：曝露群罹患率 ÷ 非曝露群罹患率</li>
+          <li><span class="key">オッズ比</span>：ad ÷ bc</li>
+          <li><span class="key">老年化指数</span>：65歳以上 ÷ 0-14歳 × 100</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

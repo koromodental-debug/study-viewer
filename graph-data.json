@@ -6379,6 +6379,915 @@
         "color": "#6A5ACD",
         "keywordCount": 256
       }
+    },
+    {
+      "data": {
+        "id": "総論_腫瘍総論",
+        "label": "総論_腫瘍総論",
+        "subject": "口腔外科",
+        "color": "#DC143C",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "総論_診断・病期分類",
+        "label": "総論_診断・病期分類",
+        "subject": "口腔外科",
+        "color": "#DC143C",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "口腔癌_前癌病変・腫瘍類似疾患",
+        "label": "口腔癌_前癌病変・腫瘍類似疾患",
+        "subject": "口腔外科",
+        "color": "#DC143C",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "口腔癌_口腔癌",
+        "label": "口腔癌_口腔癌",
+        "subject": "口腔外科",
+        "color": "#DC143C",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "顎骨腫瘍_顎骨腫瘍",
+        "label": "顎骨腫瘍_顎骨腫瘍",
+        "subject": "口腔外科",
+        "color": "#DC143C",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "その他_その他悪性腫瘍",
+        "label": "その他_その他悪性腫瘍",
+        "subject": "口腔外科",
+        "color": "#DC143C",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "治療・管理_治療法",
+        "label": "治療・管理_治療法",
+        "subject": "口腔外科",
+        "color": "#DC143C",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "治療・管理_癌患者管理・緩和医療",
+        "label": "治療・管理_癌患者管理・緩和医療",
+        "subject": "口腔外科",
+        "color": "#DC143C",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "治療の基礎・基本手技_歯・歯周組織に対する基本的処置",
+        "label": "治療の基礎・基本手技_歯・歯周組織に対する基本的処置",
+        "subject": "必修",
+        "color": "#FF8C00",
+        "keywordCount": 5
+      }
+    },
+    {
+      "data": {
+        "id": "総論_タンパク質の合成（翻訳）",
+        "label": "総論_タンパク質の合成（翻訳）",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "総論_細胞",
+        "label": "総論_細胞",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "総論_遺伝子工学",
+        "label": "総論_遺伝子工学",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_エナメル質の成分",
+        "label": "歯と歯周組織_エナメル質の成分",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_コラーゲンの代謝",
+        "label": "歯と歯周組織_コラーゲンの代謝",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_コラーゲンの生合成",
+        "label": "歯と歯周組織_コラーゲンの生合成",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_歯根膜のコラーゲン",
+        "label": "歯と歯周組織_歯根膜のコラーゲン",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_硬組織の石灰化",
+        "label": "歯と歯周組織_硬組織の石灰化",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_象牙質の成分",
+        "label": "歯と歯周組織_象牙質の成分",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_非コラーゲンタンパク",
+        "label": "歯と歯周組織_非コラーゲンタンパク",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "軟骨・骨_軟骨",
+        "label": "軟骨・骨_軟骨",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "軟骨・骨_骨",
+        "label": "軟骨・骨_骨",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "体液_体液",
+        "label": "体液_体液",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "カルシウム代謝_血清カルシウム濃度の恒常性",
+        "label": "カルシウム代謝_血清カルシウム濃度の恒常性",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 5
+      }
+    },
+    {
+      "data": {
+        "id": "唾液・唾液腺_唾液の構成成分とその機能",
+        "label": "唾液・唾液腺_唾液の構成成分とその機能",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "炎症のケミカルメディエーター_ケミカルメディエーター",
+        "label": "炎症のケミカルメディエーター_ケミカルメディエーター",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "炎症のケミカルメディエーター_サイトカイン",
+        "label": "炎症のケミカルメディエーター_サイトカイン",
+        "subject": "生化",
+        "color": "#45B7D1",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "細胞生理学_シナプス伝達",
+        "label": "細胞生理学_シナプス伝達",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "細胞生理学_神経線維の分類",
+        "label": "細胞生理学_神経線維の分類",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "細胞生理学_細胞膜の物質輸送",
+        "label": "細胞生理学_細胞膜の物質輸送",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "細胞生理学_静止膜電位と活動電位",
+        "label": "細胞生理学_静止膜電位と活動電位",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "感覚機能_触覚・痛覚・嗅覚",
+        "label": "感覚機能_触覚・痛覚・嗅覚",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "脳機能_嘔吐の機序",
+        "label": "脳機能_嘔吐の機序",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "脳機能_視床下部の機能",
+        "label": "脳機能_視床下部の機能",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "自律神経_唾液腺の自律神経支配",
+        "label": "自律神経_唾液腺の自律神経支配",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "自律神経_自律神経の神経伝達",
+        "label": "自律神経_自律神経の神経伝達",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "筋_アセチルコリン受容体",
+        "label": "筋_アセチルコリン受容体",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "筋_咀嚼と筋電図",
+        "label": "筋_咀嚼と筋電図",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "筋_開口反射と歯根膜感覚",
+        "label": "筋_開口反射と歯根膜感覚",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "筋_骨格筋の収縮",
+        "label": "筋_骨格筋の収縮",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "循環と呼吸_体液",
+        "label": "循環と呼吸_体液",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "循環と呼吸_呼吸筋",
+        "label": "循環と呼吸_呼吸筋",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "循環と呼吸_循環",
+        "label": "循環と呼吸_循環",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "内分泌_カルシウム代謝",
+        "label": "内分泌_カルシウム代謝",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "内分泌_ストレス反応",
+        "label": "内分泌_ストレス反応",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "内分泌_ホルモンと産生器官",
+        "label": "内分泌_ホルモンと産生器官",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "内分泌_ホルモンの様式と受容体",
+        "label": "内分泌_ホルモンの様式と受容体",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "内分泌_ホルモンの機能",
+        "label": "内分泌_ホルモンの機能",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "成長と加齢_加齢変化",
+        "label": "成長と加齢_加齢変化",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "成長と加齢_新生児の生理",
+        "label": "成長と加齢_新生児の生理",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "顎口腔の感覚機能_味覚",
+        "label": "顎口腔の感覚機能_味覚",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "顎口腔の感覚機能_歯根膜の感覚",
+        "label": "顎口腔の感覚機能_歯根膜の感覚",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "顎口腔の感覚機能_歯髄の感覚",
+        "label": "顎口腔の感覚機能_歯髄の感覚",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "顎反射_顎反射",
+        "label": "顎反射_顎反射",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "嚥下_嚥下",
+        "label": "嚥下_嚥下",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "唾液_唾液分泌",
+        "label": "唾液_唾液分泌",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "発声と構音_発声・構音",
+        "label": "発声と構音_発声・構音",
+        "subject": "生理",
+        "color": "#4ECDC4",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "総論",
+        "label": "総論",
+        "subject": "組織",
+        "color": "#A0A0A0",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "全身_内分泌系",
+        "label": "全身_内分泌系",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "全身_造血系・リンパ系",
+        "label": "全身_造血系・リンパ系",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯_エナメル質の構造",
+        "label": "歯_エナメル質の構造",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "歯_上顎・下顎の形態異常",
+        "label": "歯_上顎・下顎の形態異常",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯_乳歯の形態と特徴",
+        "label": "歯_乳歯の形態と特徴",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯_乳歯・発育段階の歯の異常",
+        "label": "歯_乳歯・発育段階の歯の異常",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "歯_歯の鑑別",
+        "label": "歯_歯の鑑別",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "歯_永久歯の形態と特徴",
+        "label": "歯_永久歯の形態と特徴",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_上顎骨",
+        "label": "頭頸部の骨_上顎骨",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_側頭骨・蝶形骨",
+        "label": "頭頸部の骨_側頭骨・蝶形骨",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_舌下神経",
+        "label": "頭頸部の骨_舌下神経",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_頭蓋を構成する骨",
+        "label": "頭頸部の骨_頭蓋を構成する骨",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_頭蓋底の構造物",
+        "label": "頭頸部の骨_頭蓋底の構造物",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_頸部の筋",
+        "label": "頭頸部の骨_頸部の筋",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の筋_咀嚼筋",
+        "label": "頭頸部の筋_咀嚼筋",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の筋_咽頭・喉頭の筋",
+        "label": "頭頸部の筋_咽頭・喉頭の筋",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の筋_正常咬合",
+        "label": "頭頸部の筋_正常咬合",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の脈管_リンパ節",
+        "label": "頭頸部の脈管_リンパ節",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の脈管_頭頸部の血管",
+        "label": "頭頸部の脈管_頭頸部の血管",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_三叉神経",
+        "label": "頭頸部の神経_三叉神経",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_三叉神経・顔面神経",
+        "label": "頭頸部の神経_三叉神経・顔面神経",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_唾液腺の解剖",
+        "label": "頭頸部の神経_唾液腺の解剖",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_自律神経節",
+        "label": "頭頸部の神経_自律神経節",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_舌咽神経・迷走神経",
+        "label": "頭頸部の神経_舌咽神経・迷走神経",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 4
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_舌筋",
+        "label": "頭頸部の神経_舌筋",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_開口反射",
+        "label": "頭頸部の神経_開口反射",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_顔面神経",
+        "label": "頭頸部の神経_顔面神経",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_顔面神経麻痺",
+        "label": "頭頸部の神経_顔面神経麻痺",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "口腔と咽喉頭_喉頭",
+        "label": "口腔と咽喉頭_喉頭",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "口腔と咽喉頭_解剖学的構造物",
+        "label": "口腔と咽喉頭_解剖学的構造物",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "発生_歯・歯周組織の発生",
+        "label": "発生_歯・歯周組織の発生",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "発生_顎・顔面の発生",
+        "label": "発生_顎・顔面の発生",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "加齢変化_歯の喪失",
+        "label": "加齢変化_歯の喪失",
+        "subject": "解剖",
+        "color": "#FF6B6B",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "口腔粘膜疾患_口腔扁平苔癬",
+        "label": "口腔粘膜疾患_口腔扁平苔癬",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 41
+      }
+    },
+    {
+      "data": {
+        "id": "口腔粘膜疾患_口腔潜在的悪性疾患",
+        "label": "口腔粘膜疾患_口腔潜在的悪性疾患",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 30
+      }
+    },
+    {
+      "data": {
+        "id": "病理検査_細胞診",
+        "label": "病理検査_細胞診",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "病理検査_組織診",
+        "label": "病理検査_組織診",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "病理検査_術中迅速病理診断",
+        "label": "病理検査_術中迅速病理診断",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "総論_代謝異常_変性",
+        "label": "総論_代謝異常_変性",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "総論_代謝異常_尿酸代謝異常",
+        "label": "総論_代謝異常_尿酸代謝異常",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "総論_代謝異常_水電解質代謝異常",
+        "label": "総論_代謝異常_水電解質代謝異常",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "唾液腺疾患_Küttner腫瘍",
+        "label": "唾液腺疾患_Küttner腫瘍",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 27
+      }
+    },
+    {
+      "data": {
+        "id": "唾液腺疾患_Sjögren症候群",
+        "label": "唾液腺疾患_Sjögren症候群",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 41
+      }
+    },
+    {
+      "data": {
+        "id": "全身疾患_骨粗鬆症と合併症",
+        "label": "全身疾患_骨粗鬆症と合併症",
+        "subject": "病理",
+        "color": "#A0A0A0",
+        "keywordCount": 39
+      }
     }
   ],
   "edges": [
@@ -7849,6 +8758,16 @@
         "target": "口腔外科学_癌患者管理・緩和医療",
         "weight": 1,
         "commonCount": 215,
+        "commonTitleCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "癌患者管理・緩和医療-治療・管理_癌患者管理・緩和医療",
+        "source": "癌患者管理・緩和医療",
+        "target": "治療・管理_癌患者管理・緩和医療",
+        "weight": 0.0786046511627907,
+        "commonCount": 4,
         "commonTitleCount": 2
       }
     },
@@ -12824,12 +13743,12 @@
     },
     {
       "data": {
-        "id": "生化学_01_総論_タンパク質の合成（翻訳）-生化学_02_歯と歯周組織_象牙質の成分",
+        "id": "生化学_01_総論_タンパク質の合成（翻訳）-総論_タンパク質の合成（翻訳）",
         "source": "生化学_01_総論_タンパク質の合成（翻訳）",
-        "target": "生化学_02_歯と歯周組織_象牙質の成分",
-        "weight": 0.12980392156862744,
-        "commonCount": 28,
-        "commonTitleCount": 0
+        "target": "総論_タンパク質の合成（翻訳）",
+        "weight": 0.13298850574712645,
+        "commonCount": 4,
+        "commonTitleCount": 3
       }
     },
     {
@@ -12919,16 +13838,6 @@
         "target": "生化学_03_軟骨・骨_軟骨",
         "weight": 0.16795918367346938,
         "commonCount": 29,
-        "commonTitleCount": 0
-      }
-    },
-    {
-      "data": {
-        "id": "生化学_02_歯と歯周組織_エナメル質の成分-生化学_06_唾液・唾液腺_唾液の構成成分とその機能",
-        "source": "生化学_02_歯と歯周組織_エナメル質の成分",
-        "target": "生化学_06_唾液・唾液腺_唾液の構成成分とその機能",
-        "weight": 0.12305343511450383,
-        "commonCount": 27,
         "commonTitleCount": 0
       }
     },
@@ -13164,12 +14073,32 @@
     },
     {
       "data": {
+        "id": "生化学_05_カルシウム代謝_血清カルシウム濃度の恒常性-カルシウム代謝_血清カルシウム濃度の恒常性",
+        "source": "生化学_05_カルシウム代謝_血清カルシウム濃度の恒常性",
+        "target": "カルシウム代謝_血清カルシウム濃度の恒常性",
+        "weight": 0.1757142857142857,
+        "commonCount": 5,
+        "commonTitleCount": 4
+      }
+    },
+    {
+      "data": {
         "id": "生化学_06_唾液・唾液腺_唾液の構成成分とその機能-組織学_05_唾液腺",
         "source": "生化学_06_唾液・唾液腺_唾液の構成成分とその機能",
         "target": "組織学_05_唾液腺",
         "weight": 0.16455696202531644,
         "commonCount": 52,
         "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "生化学_06_唾液・唾液腺_唾液の構成成分とその機能-唾液・唾液腺_唾液の構成成分とその機能",
+        "source": "生化学_06_唾液・唾液腺_唾液の構成成分とその機能",
+        "target": "唾液・唾液腺_唾液の構成成分とその機能",
+        "weight": 0.12990049751243782,
+        "commonCount": 4,
+        "commonTitleCount": 3
       }
     },
     {
@@ -13300,6 +14229,16 @@
         "weight": 0.14734082397003745,
         "commonCount": 34,
         "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "生理学_02_感覚機能_触覚・痛覚・嗅覚-感覚機能_触覚・痛覚・嗅覚",
+        "source": "生理学_02_感覚機能_触覚・痛覚・嗅覚",
+        "target": "感覚機能_触覚・痛覚・嗅覚",
+        "weight": 0.13631578947368422,
+        "commonCount": 4,
+        "commonTitleCount": 3
       }
     },
     {
@@ -13664,6 +14603,16 @@
     },
     {
       "data": {
+        "id": "生理学_07_内分泌_ホルモンの様式と受容体-内分泌_ホルモンの様式と受容体",
+        "source": "生理学_07_内分泌_ホルモンの様式と受容体",
+        "target": "内分泌_ホルモンの様式と受容体",
+        "weight": 0.1322222222222222,
+        "commonCount": 4,
+        "commonTitleCount": 3
+      }
+    },
+    {
+      "data": {
         "id": "生理学_07_内分泌_ホルモンの機能-解剖学_01_全身_内分泌系",
         "source": "生理学_07_内分泌_ホルモンの機能",
         "target": "解剖学_01_全身_内分泌系",
@@ -13690,6 +14639,16 @@
         "weight": 0.1388082901554404,
         "commonCount": 42,
         "commonTitleCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "生理学_08_成長と加齢_新生児の生理-成長と加齢_新生児の生理",
+        "source": "生理学_08_成長と加齢_新生児の生理",
+        "target": "成長と加齢_新生児の生理",
+        "weight": 0.09970443349753694,
+        "commonCount": 4,
+        "commonTitleCount": 2
       }
     },
     {
@@ -13740,6 +14699,36 @@
         "weight": 0.18773946360153257,
         "commonCount": 49,
         "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "生理学_09_顎口腔の感覚機能_歯根膜の感覚-顎口腔の感覚機能_歯根膜の感覚",
+        "source": "生理学_09_顎口腔の感覚機能_歯根膜の感覚",
+        "target": "顎口腔の感覚機能_歯根膜の感覚",
+        "weight": 0.10139037433155079,
+        "commonCount": 4,
+        "commonTitleCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "生理学_09_顎口腔の感覚機能_歯根膜の感覚-顎口腔の感覚機能_歯髄の感覚",
+        "source": "生理学_09_顎口腔の感覚機能_歯根膜の感覚",
+        "target": "顎口腔の感覚機能_歯髄の感覚",
+        "weight": 0.0713903743315508,
+        "commonCount": 4,
+        "commonTitleCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "生理学_09_顎口腔の感覚機能_歯髄の感覚-顎口腔の感覚機能_歯髄の感覚",
+        "source": "生理学_09_顎口腔の感覚機能_歯髄の感覚",
+        "target": "顎口腔の感覚機能_歯髄の感覚",
+        "weight": 0.10684563758389262,
+        "commonCount": 4,
+        "commonTitleCount": 2
       }
     },
     {
@@ -14539,6 +15528,26 @@
         "target": "口腔外科学_唾液腺腫瘍_腫瘍類似疾患",
         "weight": 0.35323383084577115,
         "commonCount": 71,
+        "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "病理学_10_総論_免疫異常_igg4関連疾患-唾液腺疾患_Küttner腫瘍",
+        "source": "病理学_10_総論_免疫異常_igg4関連疾患",
+        "target": "唾液腺疾患_Küttner腫瘍",
+        "weight": 0.15934426229508195,
+        "commonCount": 17,
+        "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "病理学_10_総論_免疫異常_igg4関連疾患-唾液腺疾患_Sjögren症候群",
+        "source": "病理学_10_総論_免疫異常_igg4関連疾患",
+        "target": "唾液腺疾患_Sjögren症候群",
+        "weight": 0.12869565217391304,
+        "commonCount": 15,
         "commonTitleCount": 0
       }
     },
@@ -16144,6 +17153,16 @@
     },
     {
       "data": {
+        "id": "解剖学_06_頭頸部の神経_三叉神経・顔面神経-頭頸部の神経_三叉神経・顔面神経",
+        "source": "解剖学_06_頭頸部の神経_三叉神経・顔面神経",
+        "target": "頭頸部の神経_三叉神経・顔面神経",
+        "weight": 0.11508771929824561,
+        "commonCount": 4,
+        "commonTitleCount": 2
+      }
+    },
+    {
+      "data": {
         "id": "解剖学_06_頭頸部の神経_唾液腺の解剖-解剖学_06_頭頸部の神経_自律神経節",
         "source": "解剖学_06_頭頸部の神経_唾液腺の解剖",
         "target": "解剖学_06_頭頸部の神経_自律神経節",
@@ -16184,6 +17203,16 @@
     },
     {
       "data": {
+        "id": "解剖学_06_頭頸部の神経_唾液腺の解剖-頭頸部の神経_唾液腺の解剖",
+        "source": "解剖学_06_頭頸部の神経_唾液腺の解剖",
+        "target": "頭頸部の神経_唾液腺の解剖",
+        "weight": 0.10941176470588235,
+        "commonCount": 4,
+        "commonTitleCount": 2
+      }
+    },
+    {
+      "data": {
         "id": "解剖学_06_頭頸部の神経_舌咽神経・迷走神経-解剖学_06_頭頸部の神経_舌筋",
         "source": "解剖学_06_頭頸部の神経_舌咽神経・迷走神経",
         "target": "解剖学_06_頭頸部の神経_舌筋",
@@ -16210,6 +17239,16 @@
         "weight": 0.18265060240963854,
         "commonCount": 27,
         "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "解剖学_06_頭頸部の神経_舌咽神経・迷走神経-頭頸部の神経_舌咽神経・迷走神経",
+        "source": "解剖学_06_頭頸部の神経_舌咽神経・迷走神経",
+        "target": "頭頸部の神経_舌咽神経・迷走神経",
+        "weight": 0.11669724770642202,
+        "commonCount": 4,
+        "commonTitleCount": 2
       }
     },
     {
@@ -17144,6 +18183,16 @@
     },
     {
       "data": {
+        "id": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_歯内療法編-治療の基礎・基本手技_歯・歯周組織に対する基本的処置",
+        "source": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_歯内療法編",
+        "target": "治療の基礎・基本手技_歯・歯周組織に対する基本的処置",
+        "weight": 0.13,
+        "commonCount": 5,
+        "commonTitleCount": 2
+      }
+    },
+    {
+      "data": {
         "id": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_歯周治療編-必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_矯正編",
         "source": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_歯周治療編",
         "target": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_矯正編",
@@ -17164,11 +18213,31 @@
     },
     {
       "data": {
+        "id": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_歯周治療編-治療の基礎・基本手技_歯・歯周組織に対する基本的処置",
+        "source": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_歯周治療編",
+        "target": "治療の基礎・基本手技_歯・歯周組織に対する基本的処置",
+        "weight": 0.12347826086956522,
+        "commonCount": 5,
+        "commonTitleCount": 2
+      }
+    },
+    {
+      "data": {
         "id": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_矯正編-必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_補綴編",
         "source": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_矯正編",
         "target": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_補綴編",
         "weight": 0.14923076923076922,
         "commonCount": 16,
+        "commonTitleCount": 2
+      }
+    },
+    {
+      "data": {
+        "id": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_矯正編-治療の基礎・基本手技_歯・歯周組織に対する基本的処置",
+        "source": "必修_11_治療の基礎・基本手技_歯・歯周組織に対する基本的処置_矯正編",
+        "target": "治療の基礎・基本手技_歯・歯周組織に対する基本的処置",
+        "weight": 0.10976190476190475,
+        "commonCount": 5,
         "commonTitleCount": 2
       }
     },
@@ -18264,6 +19333,16 @@
     },
     {
       "data": {
+        "id": "口腔外科学_癌患者管理・緩和医療-治療・管理_癌患者管理・緩和医療",
+        "source": "口腔外科学_癌患者管理・緩和医療",
+        "target": "治療・管理_癌患者管理・緩和医療",
+        "weight": 0.0986046511627907,
+        "commonCount": 4,
+        "commonTitleCount": 2
+      }
+    },
+    {
+      "data": {
         "id": "口腔外科学_腫瘍総論-口腔外科学_診断・病期分類",
         "source": "口腔外科学_腫瘍総論",
         "target": "口腔外科学_診断・病期分類",
@@ -19144,6 +20223,116 @@
     },
     {
       "data": {
+        "id": "顎口腔の感覚機能_歯根膜の感覚-顎口腔の感覚機能_歯髄の感覚",
+        "source": "顎口腔の感覚機能_歯根膜の感覚",
+        "target": "顎口腔の感覚機能_歯髄の感覚",
+        "weight": 0.73,
+        "commonCount": 3,
+        "commonTitleCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_三叉神経-頭頸部の神経_三叉神経・顔面神経",
+        "source": "頭頸部の神経_三叉神経",
+        "target": "頭頸部の神経_三叉神経・顔面神経",
+        "weight": 0.88,
+        "commonCount": 3,
+        "commonTitleCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_三叉神経・顔面神経-頭頸部の神経_顔面神経",
+        "source": "頭頸部の神経_三叉神経・顔面神経",
+        "target": "頭頸部の神経_顔面神経",
+        "weight": 0.88,
+        "commonCount": 3,
+        "commonTitleCount": 3
+      }
+    },
+    {
+      "data": {
+        "id": "口腔粘膜疾患_口腔扁平苔癬-口腔粘膜疾患_口腔潜在的悪性疾患",
+        "source": "口腔粘膜疾患_口腔扁平苔癬",
+        "target": "口腔粘膜疾患_口腔潜在的悪性疾患",
+        "weight": 0.19698412698412698,
+        "commonCount": 8,
+        "commonTitleCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "口腔粘膜疾患_口腔扁平苔癬-唾液腺疾患_Küttner腫瘍",
+        "source": "口腔粘膜疾患_口腔扁平苔癬",
+        "target": "唾液腺疾患_Küttner腫瘍",
+        "weight": 0.15475409836065573,
+        "commonCount": 7,
+        "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "口腔粘膜疾患_口腔扁平苔癬-唾液腺疾患_Sjögren症候群",
+        "source": "口腔粘膜疾患_口腔扁平苔癬",
+        "target": "唾液腺疾患_Sjögren症候群",
+        "weight": 0.10493506493506494,
+        "commonCount": 5,
+        "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "口腔粘膜疾患_口腔扁平苔癬-全身疾患_骨粗鬆症と合併症",
+        "source": "口腔粘膜疾患_口腔扁平苔癬",
+        "target": "全身疾患_骨粗鬆症と合併症",
+        "weight": 0.10666666666666666,
+        "commonCount": 5,
+        "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "口腔粘膜疾患_口腔潜在的悪性疾患-唾液腺疾患_Sjögren症候群",
+        "source": "口腔粘膜疾患_口腔潜在的悪性疾患",
+        "target": "唾液腺疾患_Sjögren症候群",
+        "weight": 0.08411764705882353,
+        "commonCount": 3,
+        "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "唾液腺疾患_Küttner腫瘍-唾液腺疾患_Sjögren症候群",
+        "source": "唾液腺疾患_Küttner腫瘍",
+        "target": "唾液腺疾患_Sjögren症候群",
+        "weight": 0.22254237288135595,
+        "commonCount": 9,
+        "commonTitleCount": 1
+      }
+    },
+    {
+      "data": {
+        "id": "唾液腺疾患_Küttner腫瘍-全身疾患_骨粗鬆症と合併症",
+        "source": "唾液腺疾患_Küttner腫瘍",
+        "target": "全身疾患_骨粗鬆症と合併症",
+        "weight": 0.08761904761904762,
+        "commonCount": 3,
+        "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
+        "id": "唾液腺疾患_Sjögren症候群-全身疾患_骨粗鬆症と合併症",
+        "source": "唾液腺疾患_Sjögren症候群",
+        "target": "全身疾患_骨粗鬆症と合併症",
+        "weight": 0.07896103896103895,
+        "commonCount": 3,
+        "commonTitleCount": 0
+      }
+    },
+    {
+      "data": {
         "id": "アクチバトール_機能的矯正装置-解剖学_04_頭頸部の筋_正常咬合",
         "source": "アクチバトール_機能的矯正装置",
         "target": "解剖学_04_頭頸部の筋_正常咬合",
@@ -19151,13 +20340,613 @@
         "commonCount": 22,
         "fallback": true
       }
+    },
+    {
+      "data": {
+        "id": "総論_腫瘍総論-総論_診断・病期分類",
+        "source": "総論_腫瘍総論",
+        "target": "総論_診断・病期分類",
+        "weight": 0.3,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "口腔癌_前癌病変・腫瘍類似疾患-口腔癌_口腔癌",
+        "source": "口腔癌_前癌病変・腫瘍類似疾患",
+        "target": "口腔癌_口腔癌",
+        "weight": 0.3833333333333333,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "顎骨腫瘍_顎骨腫瘍-口腔外科学_顎骨腫瘍",
+        "source": "顎骨腫瘍_顎骨腫瘍",
+        "target": "口腔外科学_顎骨腫瘍",
+        "weight": 0.05444444444444445,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "その他_その他悪性腫瘍-口腔外科学_その他悪性腫瘍",
+        "source": "その他_その他悪性腫瘍",
+        "target": "口腔外科学_その他悪性腫瘍",
+        "weight": 0.05540540540540541,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "治療・管理_治療法-治療・管理_癌患者管理・緩和医療",
+        "source": "治療・管理_治療法",
+        "target": "治療・管理_癌患者管理・緩和医療",
+        "weight": 0.45,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "総論_細胞-総論_遺伝子工学",
+        "source": "総論_細胞",
+        "target": "総論_遺伝子工学",
+        "weight": 0.3833333333333333,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_エナメル質の成分-歯と歯周組織_象牙質の成分",
+        "source": "歯と歯周組織_エナメル質の成分",
+        "target": "歯と歯周組織_象牙質の成分",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_コラーゲンの代謝-歯と歯周組織_コラーゲンの生合成",
+        "source": "歯と歯周組織_コラーゲンの代謝",
+        "target": "歯と歯周組織_コラーゲンの生合成",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_歯根膜のコラーゲン-歯と歯周組織_コラーゲンの代謝",
+        "source": "歯と歯周組織_歯根膜のコラーゲン",
+        "target": "歯と歯周組織_コラーゲンの代謝",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_硬組織の石灰化-歯と歯周組織_非コラーゲンタンパク",
+        "source": "歯と歯周組織_硬組織の石灰化",
+        "target": "歯と歯周組織_非コラーゲンタンパク",
+        "weight": 0.3,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯と歯周組織_非コラーゲンタンパク-歯と歯周組織_エナメル質の成分",
+        "source": "歯と歯周組織_非コラーゲンタンパク",
+        "target": "歯と歯周組織_エナメル質の成分",
+        "weight": 0.3,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "軟骨・骨_軟骨-軟骨・骨_骨",
+        "source": "軟骨・骨_軟骨",
+        "target": "軟骨・骨_骨",
+        "weight": 1,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "体液_体液-全身・口腔の構造と機能",
+        "source": "体液_体液",
+        "target": "全身・口腔の構造と機能",
+        "weight": 0.05680272108843538,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "炎症のケミカルメディエーター_ケミカルメディエーター-炎症のケミカルメディエーター_サイトカイン",
+        "source": "炎症のケミカルメディエーター_ケミカルメディエーター",
+        "target": "炎症のケミカルメディエーター_サイトカイン",
+        "weight": 0.7166666666666667,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "細胞生理学_シナプス伝達-細胞生理学_神経線維の分類",
+        "source": "細胞生理学_シナプス伝達",
+        "target": "細胞生理学_神経線維の分類",
+        "weight": 0.25,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "細胞生理学_細胞膜の物質輸送-細胞生理学_シナプス伝達",
+        "source": "細胞生理学_細胞膜の物質輸送",
+        "target": "細胞生理学_シナプス伝達",
+        "weight": 0.25,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "細胞生理学_静止膜電位と活動電位-細胞生理学_シナプス伝達",
+        "source": "細胞生理学_静止膜電位と活動電位",
+        "target": "細胞生理学_シナプス伝達",
+        "weight": 0.25,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "脳機能_嘔吐の機序-脳機能_視床下部の機能",
+        "source": "脳機能_嘔吐の機序",
+        "target": "脳機能_視床下部の機能",
+        "weight": 0.25,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "自律神経_唾液腺の自律神経支配-自律神経_自律神経の神経伝達",
+        "source": "自律神経_唾液腺の自律神経支配",
+        "target": "自律神経_自律神経の神経伝達",
+        "weight": 0.3,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "筋_アセチルコリン受容体-内分泌_ホルモンの様式と受容体",
+        "source": "筋_アセチルコリン受容体",
+        "target": "内分泌_ホルモンの様式と受容体",
+        "weight": 0.25,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "筋_咀嚼と筋電図-生理学_05_筋_咀嚼と筋電図",
+        "source": "筋_咀嚼と筋電図",
+        "target": "生理学_05_筋_咀嚼と筋電図",
+        "weight": 0.06408450704225352,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "筋_開口反射と歯根膜感覚-生理学_05_筋_開口反射と歯根膜感覚",
+        "source": "筋_開口反射と歯根膜感覚",
+        "target": "生理学_05_筋_開口反射と歯根膜感覚",
+        "weight": 0.0636986301369863,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "筋_骨格筋の収縮-生理学_01_細胞生理学_神経線維の分類",
+        "source": "筋_骨格筋の収縮",
+        "target": "生理学_01_細胞生理学_神経線維の分類",
+        "weight": 0.07439024390243903,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "循環と呼吸_体液-循環と呼吸_循環",
+        "source": "循環と呼吸_体液",
+        "target": "循環と呼吸_循環",
+        "weight": 0.7166666666666667,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "循環と呼吸_呼吸筋-循環と呼吸_循環",
+        "source": "循環と呼吸_呼吸筋",
+        "target": "循環と呼吸_循環",
+        "weight": 0.7166666666666667,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "内分泌_カルシウム代謝-内分泌_ストレス反応",
+        "source": "内分泌_カルシウム代謝",
+        "target": "内分泌_ストレス反応",
+        "weight": 0.25,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "内分泌_ホルモンと産生器官-内分泌_ホルモンの機能",
+        "source": "内分泌_ホルモンと産生器官",
+        "target": "内分泌_ホルモンの機能",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "成長と加齢_加齢変化-成長と加齢_新生児の生理",
+        "source": "成長と加齢_加齢変化",
+        "target": "成長と加齢_新生児の生理",
+        "weight": 0.45,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "顎口腔の感覚機能_味覚-顎口腔の感覚機能_歯根膜の感覚",
+        "source": "顎口腔の感覚機能_味覚",
+        "target": "顎口腔の感覚機能_歯根膜の感覚",
+        "weight": 0.45,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "顎反射_顎反射-生理学_10_顎反射_顎反射",
+        "source": "顎反射_顎反射",
+        "target": "生理学_10_顎反射_顎反射",
+        "weight": 0.05694444444444445,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "嚥下_嚥下-生理学_05_筋_咀嚼と筋電図",
+        "source": "嚥下_嚥下",
+        "target": "生理学_05_筋_咀嚼と筋電図",
+        "weight": 0.05704225352112676,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "唾液_唾液分泌-生理学_04_自律神経_唾液腺の自律神経支配",
+        "source": "唾液_唾液分泌",
+        "target": "生理学_04_自律神経_唾液腺の自律神経支配",
+        "weight": 0.07409638554216869,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "発声と構音_発声・構音-生理学_13_発声と構音_発声・構音",
+        "source": "発声と構音_発声・構音",
+        "target": "生理学_13_発声と構音_発声・構音",
+        "weight": 0.06142857142857143,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "総論-組織学_01_総論_その他",
+        "source": "総論",
+        "target": "組織学_01_総論_その他",
+        "weight": 0.0590909090909091,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "全身_内分泌系-全身_造血系・リンパ系",
+        "source": "全身_内分泌系",
+        "target": "全身_造血系・リンパ系",
+        "weight": 0.3,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯_エナメル質の構造-解剖学_02_歯_エナメル質の構造",
+        "source": "歯_エナメル質の構造",
+        "target": "解剖学_02_歯_エナメル質の構造",
+        "weight": 0.07531645569620253,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯_上顎・下顎の形態異常-解剖学_02_歯_乳歯の形態と特徴",
+        "source": "歯_上顎・下顎の形態異常",
+        "target": "解剖学_02_歯_乳歯の形態と特徴",
+        "weight": 0.07564102564102565,
+        "commonCount": 3,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯_乳歯の形態と特徴-歯_永久歯の形態と特徴",
+        "source": "歯_乳歯の形態と特徴",
+        "target": "歯_永久歯の形態と特徴",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯_乳歯・発育段階の歯の異常-歯_乳歯の形態と特徴",
+        "source": "歯_乳歯・発育段階の歯の異常",
+        "target": "歯_乳歯の形態と特徴",
+        "weight": 0.25,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "歯_歯の鑑別-画像検査と読影",
+        "source": "歯_歯の鑑別",
+        "target": "画像検査と読影",
+        "weight": 0.061111111111111116,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_上顎骨-頭頸部の骨_舌下神経",
+        "source": "頭頸部の骨_上顎骨",
+        "target": "頭頸部の骨_舌下神経",
+        "weight": 0.3833333333333333,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_側頭骨・蝶形骨-頭頸部の骨_上顎骨",
+        "source": "頭頸部の骨_側頭骨・蝶形骨",
+        "target": "頭頸部の骨_上顎骨",
+        "weight": 0.3,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_頭蓋を構成する骨-頭頸部の骨_上顎骨",
+        "source": "頭頸部の骨_頭蓋を構成する骨",
+        "target": "頭頸部の骨_上顎骨",
+        "weight": 0.3,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_頭蓋底の構造物-頭頸部の骨_上顎骨",
+        "source": "頭頸部の骨_頭蓋底の構造物",
+        "target": "頭頸部の骨_上顎骨",
+        "weight": 0.3,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の骨_頸部の筋-頭頸部の骨_上顎骨",
+        "source": "頭頸部の骨_頸部の筋",
+        "target": "頭頸部の骨_上顎骨",
+        "weight": 0.3833333333333333,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の筋_咀嚼筋-頭頸部の骨_上顎骨",
+        "source": "頭頸部の筋_咀嚼筋",
+        "target": "頭頸部の骨_上顎骨",
+        "weight": 0.3833333333333333,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の筋_咽頭・喉頭の筋-頭頸部の骨_上顎骨",
+        "source": "頭頸部の筋_咽頭・喉頭の筋",
+        "target": "頭頸部の骨_上顎骨",
+        "weight": 0.3,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の筋_正常咬合-頭頸部の骨_上顎骨",
+        "source": "頭頸部の筋_正常咬合",
+        "target": "頭頸部の骨_上顎骨",
+        "weight": 0.3833333333333333,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の脈管_リンパ節-頭頸部の脈管_頭頸部の血管",
+        "source": "頭頸部の脈管_リンパ節",
+        "target": "頭頸部の脈管_頭頸部の血管",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_自律神経節-頭頸部の神経_三叉神経",
+        "source": "頭頸部の神経_自律神経節",
+        "target": "頭頸部の神経_三叉神経",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_舌筋-頭頸部の神経_三叉神経",
+        "source": "頭頸部の神経_舌筋",
+        "target": "頭頸部の神経_三叉神経",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_開口反射-頭頸部の神経_三叉神経",
+        "source": "頭頸部の神経_開口反射",
+        "target": "頭頸部の神経_三叉神経",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "頭頸部の神経_顔面神経麻痺-頭頸部の神経_三叉神経",
+        "source": "頭頸部の神経_顔面神経麻痺",
+        "target": "頭頸部の神経_三叉神経",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "口腔と咽喉頭_喉頭-口腔と咽喉頭_解剖学的構造物",
+        "source": "口腔と咽喉頭_喉頭",
+        "target": "口腔と咽喉頭_解剖学的構造物",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "発生_歯・歯周組織の発生-発生_顎・顔面の発生",
+        "source": "発生_歯・歯周組織の発生",
+        "target": "発生_顎・顔面の発生",
+        "weight": 0.3833333333333333,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "加齢変化_歯の喪失-解剖学_10_加齢変化_歯の喪失",
+        "source": "加齢変化_歯の喪失",
+        "target": "解剖学_10_加齢変化_歯の喪失",
+        "weight": 0.06652892561983471,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "病理検査_細胞診-病理検査_組織診",
+        "source": "病理検査_細胞診",
+        "target": "病理検査_組織診",
+        "weight": 0.3833333333333333,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "病理検査_術中迅速病理診断-病理検査_細胞診",
+        "source": "病理検査_術中迅速病理診断",
+        "target": "病理検査_細胞診",
+        "weight": 0.3833333333333333,
+        "commonCount": 1,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "総論_代謝異常_変性-総論_代謝異常_尿酸代謝異常",
+        "source": "総論_代謝異常_変性",
+        "target": "総論_代謝異常_尿酸代謝異常",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
+    },
+    {
+      "data": {
+        "id": "総論_代謝異常_水電解質代謝異常-総論_代謝異常_変性",
+        "source": "総論_代謝異常_水電解質代謝異常",
+        "target": "総論_代謝異常_変性",
+        "weight": 0.55,
+        "commonCount": 2,
+        "fallback": true
+      }
     }
   ],
   "metadata": {
-    "generatedAt": "2026-01-22T22:26:19.433Z",
-    "topicCount": 638,
-    "edgeCount": 1277,
-    "originalEdgeCount": 5779,
+    "generatedAt": "2026-01-23T07:53:29.082Z",
+    "topicCount": 739,
+    "edgeCount": 1365,
+    "originalEdgeCount": 5879,
     "maxEdgesPerNode": 3,
     "similarityThreshold": 0.1,
     "minCommonKeywords": 4

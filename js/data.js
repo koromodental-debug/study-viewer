@@ -8369,5 +8369,245 @@ const DATA = [
     "subject": "病理",
     "subjectCategory": "基礎",
     "searchText": "全身疾患_骨粗鬆症と合併症 Cushing病 I. 骨粗鬆症の概要 II. 骨粗鬆症の治療薬 III. 薬剤関連顎骨壊死（MRONJ） IV. 副腎皮質ステロイド誘発性骨粗鬆症 V. 過去問 エストロゲン デノスマブ ビスホスホネート ビスホスホネート製剤 副甲状腺ホルモン受容体 十分な消炎 抗RANKL抗体製剤 抜歯 抜歯時の対応 抜歯窩の閉鎖 破骨細胞 術前の消炎 骨吸収抑制薬の適応疾患 骨粗鬆症 骨粗鬆症と合併症 骨転移 骨鋭縁の除去 骨露出 骨髄脂肪細胞 高齢女性"
+  },
+  {
+    "id": "総論_先天異常_催奇形性",
+    "title": "総論_先天異常_催奇形性",
+    "qaPath": "qa/subject/病理学/07_総論_先天異常_催奇形性_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_先天異常_遺伝子病",
+    "title": "総論_先天異常_遺伝子病",
+    "qaPath": "qa/subject/病理学/08_総論_先天異常_遺伝子病_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_先天異常_染色体異常",
+    "title": "総論_先天異常_染色体異常",
+    "qaPath": "qa/subject/病理学/09_総論_先天異常_染色体異常_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_免疫異常_IgG4関連疾患",
+    "title": "総論_免疫異常_IgG4関連疾患",
+    "qaPath": "qa/subject/病理学/10_総論_免疫異常_IgG4関連疾患_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_免疫異常_自己免疫疾患",
+    "title": "総論_免疫異常_自己免疫疾患",
+    "qaPath": "qa/subject/病理学/11_総論_免疫異常_自己免疫疾患_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_増殖と修復_再生",
+    "title": "総論_増殖と修復_再生",
+    "qaPath": "qa/subject/病理学/12_総論_増殖と修復_再生_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_循環障害_出血の種類",
+    "title": "総論_循環障害_出血の種類",
+    "qaPath": "qa/subject/病理学/13_総論_循環障害_出血の種類_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_循環障害_塞栓症",
+    "title": "総論_循環障害_塞栓症",
+    "qaPath": "qa/subject/病理学/14_総論_循環障害_塞栓症_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_循環障害_浮腫",
+    "title": "総論_循環障害_浮腫",
+    "qaPath": "qa/subject/病理学/15_総論_循環障害_浮腫_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_感染_細菌感染",
+    "title": "総論_感染_細菌感染",
+    "qaPath": "qa/subject/病理学/16_総論_感染_細菌感染_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_炎症_化膿性炎",
+    "title": "総論_炎症_化膿性炎",
+    "qaPath": "qa/subject/病理学/17_総論_炎症_化膿性炎_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_炎症_急性炎症の特徴",
+    "title": "総論_炎症_急性炎症の特徴",
+    "qaPath": "qa/subject/病理学/18_総論_炎症_急性炎症の特徴_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_炎症_滲出性炎",
+    "title": "総論_炎症_滲出性炎",
+    "qaPath": "qa/subject/病理学/19_総論_炎症_滲出性炎_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_炎症_炎症の分類",
+    "title": "総論_炎症_炎症の分類",
+    "qaPath": "qa/subject/病理学/20_総論_炎症_炎症の分類_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_炎症_炎症の症候",
+    "title": "総論_炎症_炎症の症候",
+    "qaPath": "qa/subject/病理学/21_総論_炎症_炎症の症候_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_炎症_肉芽腫性炎",
+    "title": "総論_炎症_肉芽腫性炎",
+    "qaPath": "qa/subject/病理学/22_総論_炎症_肉芽腫性炎_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_生体適応現象_化生",
+    "title": "総論_生体適応現象_化生",
+    "qaPath": "qa/subject/病理学/23_総論_生体適応現象_化生_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_生体適応現象_増生",
+    "title": "総論_生体適応現象_増生",
+    "qaPath": "qa/subject/病理学/24_総論_生体適応現象_増生_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_病因論",
+    "title": "総論_病因論",
+    "qaPath": "qa/subject/病理学/25_総論_病因論_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_細胞死_アポトーシス",
+    "title": "総論_細胞死_アポトーシス",
+    "qaPath": "qa/subject/病理学/26_総論_細胞死_アポトーシス_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_腫瘍総論_癌遺伝子と癌抑制遺伝子",
+    "title": "総論_腫瘍総論_癌遺伝子と癌抑制遺伝子",
+    "qaPath": "qa/subject/病理学/27_総論_腫瘍総論_癌遺伝子と癌抑制遺伝子_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "総論_腫瘍総論_腫瘍の分類",
+    "title": "総論_腫瘍総論_腫瘍の分類",
+    "qaPath": "qa/subject/病理学/28_総論_腫瘍総論_腫瘍の分類_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "嚢胞_嚢胞の分類",
+    "title": "嚢胞_嚢胞の分類",
+    "qaPath": "qa/subject/病理学/29_嚢胞_嚢胞の分類_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "嚢胞_嚢胞の構造",
+    "title": "嚢胞_嚢胞の構造",
+    "qaPath": "qa/subject/病理学/30_嚢胞_嚢胞の構造_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "嚢胞_嚢胞の発生する組織",
+    "title": "嚢胞_嚢胞の発生する組織",
+    "qaPath": "qa/subject/病理学/31_嚢胞_嚢胞の発生する組織_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍_口腔粘膜の悪性腫瘍",
+    "title": "腫瘍_口腔粘膜の悪性腫瘍",
+    "qaPath": "qa/subject/病理学/32_腫瘍_口腔粘膜の悪性腫瘍_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍_口腔粘膜の良性腫瘍",
+    "title": "腫瘍_口腔粘膜の良性腫瘍",
+    "qaPath": "qa/subject/病理学/33_腫瘍_口腔粘膜の良性腫瘍_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍_唾液腺腫瘍",
+    "title": "腫瘍_唾液腺腫瘍",
+    "qaPath": "qa/subject/病理学/34_腫瘍_唾液腺腫瘍_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍_歯原性腫瘍",
+    "title": "腫瘍_歯原性腫瘍",
+    "qaPath": "qa/subject/病理学/35_腫瘍_歯原性腫瘍_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍_非上皮性悪性腫瘍",
+    "title": "腫瘍_非上皮性悪性腫瘍",
+    "qaPath": "qa/subject/病理学/36_腫瘍_非上皮性悪性腫瘍_QA.txt",
+    "htmlPath": null,
+    "subject": "病理",
+    "subjectCategory": "基礎"
   }
 ];

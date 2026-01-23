@@ -12,7 +12,7 @@
   --bg-color: #ffffff;
   --border-color: #e8e8e8;
   --text-color: #2c2c2c;
-  --text-muted: #888888;
+  --text-muted: #666666;
   --header-height: 60px;
   --header-offset: 0px;
   --tabs-height: 61px;
@@ -177,8 +177,8 @@ body {
 .header-icon-btn {
   background: rgba(0,0,0,0.05);
   border: none;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -727,8 +727,8 @@ body {
 }
 
 .history-delete {
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: none;
   color: var(--tertiary-label);
@@ -2128,8 +2128,8 @@ body {
 }
 
 .close-note-btn {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border: none;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 50%;
@@ -3966,9 +3966,12 @@ body:not(.is-practice) #flashcard-content {
   justify-content: center;
   width: 20px;
   height: 20px;
-  padding: 0;
+  padding: 12px;
+  margin: -12px;
+  box-sizing: content-box;
   border: none;
   background: var(--secondary-label);
+  background-clip: content-box;
   border-radius: 50%;
   cursor: pointer;
   flex-shrink: 0;
@@ -13449,6 +13452,19 @@ body.is-practice .tab-content {
 
 .graph-node.dimmed .graph-node-label {
   opacity: 0.3;
+}
+
+/* バウンスアニメーション（stroke-width使用） */
+@keyframes node-pulse {
+  0% { stroke-width: 4; }
+  35% { stroke-width: 20; }
+  100% { stroke-width: 4; }
+}
+
+@keyframes node-pulse-small {
+  0% { stroke-width: 2; }
+  35% { stroke-width: 14; }
+  100% { stroke-width: 2; }
 }
 
 /* ノード横ミニツールチップ */

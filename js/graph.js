@@ -477,6 +477,33 @@ const GraphModule = (function() {
       simulation.alpha(0.3).restart();
     }
 
+    // 選択ノードのバウンスアニメーション（リフロー強制）
+    nodesGroup.selectAll('.graph-node')
+      .filter(d => d.id === nodeId)
+      .each(function() {
+        const node = this;
+        const circle = node.querySelector('circle');
+        // アニメーションをリセットしてリトリガー
+        circle.style.animation = 'none';
+        circle.offsetHeight; // リフロー強制
+        circle.style.animation = 'node-pulse 0.4s ease-out';
+        setTimeout(() => { circle.style.animation = ''; }, 450);
+      });
+
+    // 隣接ノードのバウンスアニメーション（遅延付き）
+    nodesGroup.selectAll('.graph-node')
+      .filter(d => neighbors.has(d.id))
+      .each(function(d, i) {
+        const node = this;
+        const circle = node.querySelector('circle');
+        setTimeout(() => {
+          circle.style.animation = 'none';
+          circle.offsetHeight; // リフロー強制
+          circle.style.animation = 'node-pulse-small 0.4s ease-out';
+          setTimeout(() => { circle.style.animation = ''; }, 450);
+        }, i * 50);
+      });
+
     // ツールチップを表示
     showTooltip(nodeId);
 
@@ -940,8 +967,31 @@ const GraphModule = (function() {
     if (!searchInput) return;
 
     let debounceTimer = null;
+    let isComposing = false; // IME変換中フラグ
+
+    // IME変換開始
+    searchInput.addEventListener('compositionstart', () => {
+      isComposing = true;
+    });
+
+    // IME変換終了
+    searchInput.addEventListener('compositionend', (e) => {
+      isComposing = false;
+      // 変換確定後に検索を実行
+      searchQuery = e.target.value.toLowerCase().trim();
+      applyFilters(false);
+      clearTimeout(debounceTimer);
+      if (searchQuery) {
+        debounceTimer = setTimeout(() => {
+          applyFilters(true);
+        }, 300);
+      }
+    });
 
     searchInput.addEventListener('input', (e) => {
+      // IME変換中はスキップ
+      if (isComposing) return;
+
       searchQuery = e.target.value.toLowerCase().trim();
       applyFilters(false); // 即時フィルタリング（中央移動なし）
 
@@ -999,8 +1049,9 @@ const GraphModule = (function() {
           visible = false;
         }
 
-        // 非マッチノードを薄く表示（完全に消さない）
-        node.style('opacity', visible ? 1 : 0.08);
+        // 非マッチノードをグレーアウト表示（完全に消さない）
+        node.style('opacity', visible ? 1 : 0.15);
+        node.select('circle').attr('fill', visible ? d.color : '#e0e0e0');
         node.style('pointer-events', visible ? 'auto' : 'none');
 
         // ラベル表示の更新（大きいノードは常に表示）

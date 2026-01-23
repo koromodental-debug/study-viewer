@@ -21,6 +21,10 @@ const GraphModule = (function() {
   let searchQuery = '';
   let isGraphInitialized = false;
 
+  // 検索結果ナビゲーション用状態
+  let currentSearchResults = [];  // 検索結果のノードリスト
+  let currentSearchResultIndex = 0; // 現在表示中のインデックス
+
   // 科目別カラーマップ（実際のデータに合わせた名称）
   const subjectColors = {
     // 基礎系
@@ -316,8 +320,8 @@ const GraphModule = (function() {
       const isDoubleTap = (currentTime - lastTapTime < 300) && (lastTapNodeId === d.id);
 
       if (isDoubleTap) {
-        // ダブルタップ→トピックを開く
-        openTopic(d.id);
+        // ダブルタップ→トピックを開く（検索キーワードを渡してハイライト表示）
+        openTopic(d.id, searchQuery);
         lastTapTime = 0;
         lastTapNodeId = null;
       } else {
@@ -541,10 +545,10 @@ const GraphModule = (function() {
     updateTooltipPosition(nodeId);
     tooltip.classList.add('visible');
 
-    // ツールチップをタップでポップアップを表示
+    // ツールチップをタップでポップアップを表示（検索キーワードを渡してハイライト表示）
     tooltip.onclick = (e) => {
       e.stopPropagation();
-      showTopicPopup(nodeId);
+      showTopicPopup(nodeId, searchQuery);
     };
   }
 
@@ -612,10 +616,16 @@ const GraphModule = (function() {
 
   /**
    * トピックを開く
+   * @param {string} topicId - トピックID
+   * @param {string} highlightQuery - ハイライト表示する検索キーワード（オプション）
    */
-  function openTopic(topicId) {
+  function openTopic(topicId, highlightQuery = '') {
     // app.jsのselectItemを呼び出す
     if (typeof window.selectItem === 'function') {
+      // グラフ検索のキーワードをapp.jsのstateに渡す
+      if (highlightQuery && window.app?.state) {
+        window.app.state.highlightQuery = highlightQuery;
+      }
       window.selectItem(topicId);
     } else {
       console.warn('selectItem function not available');
@@ -624,8 +634,10 @@ const GraphModule = (function() {
 
   /**
    * トピックプレビューポップアップを表示
+   * @param {string} topicId - トピックID
+   * @param {string} highlightQuery - ハイライト表示する検索キーワード（オプション）
    */
-  async function showTopicPopup(topicId) {
+  async function showTopicPopup(topicId, highlightQuery = '') {
     const overlay = document.getElementById('topic-popup-overlay');
     const titleEl = overlay.querySelector('.topic-popup-title');
     const bodyEl = document.getElementById('topic-popup-body');
@@ -638,6 +650,12 @@ const GraphModule = (function() {
     // ノードデータを取得
     const nodeData = graphData.nodes.find(n => n.data.id === topicId);
     if (!nodeData) return;
+
+    // 検索結果内のインデックスを計算
+    const resultIndex = currentSearchResults.findIndex(n => n.id === topicId);
+    if (resultIndex !== -1) {
+      currentSearchResultIndex = resultIndex;
+    }
 
     // オーバーレイをbody直下に移動（position: fixedを確実に機能させる）
     document.body.appendChild(overlay);
@@ -673,6 +691,11 @@ const GraphModule = (function() {
           const h1 = tempDiv.querySelector('h1');
           if (h1) h1.remove();
           bodyEl.innerHTML = tempDiv.innerHTML || '<p>コンテンツがありません</p>';
+
+          // ハイライト表示（検索キーワードがある場合）
+          if (highlightQuery) {
+            highlightInPopup(bodyEl, highlightQuery);
+          }
         } else {
           bodyEl.innerHTML = '<p>コンテンツを読み込めませんでした</p>';
         }
@@ -683,22 +706,155 @@ const GraphModule = (function() {
       bodyEl.innerHTML = '<p>このトピックのコンテンツはまだありません</p>';
     }
 
-    // タブバーとヘッダーを非表示
+    // 検索結果ナビゲーションバーを更新
+    updateSearchResultNav();
+
+    // タブバー、ヘッダー、検索窓、検索結果を非表示
     const tabbar = document.querySelector('.floating-tabbar');
     const header = document.querySelector('.header');
+    const searchInput = document.querySelector('.graph-search-pill');
+    const searchResults = document.getElementById('graph-search-results');
     if (tabbar) tabbar.style.display = 'none';
     if (header) header.style.display = 'none';
+    if (searchInput) searchInput.style.display = 'none';
+    if (searchResults) searchResults.style.display = 'none';
 
     // イベントハンドラを設定
     const closePopup = () => {
       overlay.classList.remove('visible');
-      // タブバーとヘッダーを再表示
+      // タブバー、ヘッダー、検索窓を再表示
       if (tabbar) tabbar.style.display = '';
       if (header) header.style.display = '';
+      if (searchInput) searchInput.style.display = '';
+      // 検索結果は検索クエリがある場合のみ再表示
+      if (searchResults && searchQuery) searchResults.style.display = 'block';
+      // ナビゲーションバーを非表示
+      const nav = document.getElementById('topic-popup-nav');
+      if (nav) nav.style.display = 'none';
     };
 
     backdrop.onclick = closePopup;
     closeBtn.onclick = closePopup;
+
+    // ナビゲーションボタンのイベント設定（検索結果トピック間の移動）
+    const prevBtn = document.getElementById('popup-nav-prev');
+    const nextBtn = document.getElementById('popup-nav-next');
+
+    if (prevBtn) {
+      prevBtn.onclick = () => {
+        if (currentSearchResults.length > 1) {
+          const newIndex = (currentSearchResultIndex - 1 + currentSearchResults.length) % currentSearchResults.length;
+          const newTopicId = currentSearchResults[newIndex].id;
+          showTopicPopup(newTopicId, highlightQuery);
+        }
+      };
+    }
+
+    if (nextBtn) {
+      nextBtn.onclick = () => {
+        if (currentSearchResults.length > 1) {
+          const newIndex = (currentSearchResultIndex + 1) % currentSearchResults.length;
+          const newTopicId = currentSearchResults[newIndex].id;
+          showTopicPopup(newTopicId, highlightQuery);
+        }
+      };
+    }
+
+    // 「開く」ボタンでトピックを開く（検索キーワードを渡してハイライト表示）
+    if (openBtn) {
+      openBtn.onclick = () => {
+        closePopup();
+        openTopic(topicId, highlightQuery);
+      };
+    }
+  }
+
+  /**
+   * 検索結果ナビゲーションバーを更新
+   */
+  function updateSearchResultNav() {
+    const nav = document.getElementById('topic-popup-nav');
+    const counter = document.getElementById('popup-nav-counter');
+
+    if (!nav || !counter) return;
+
+    // 検索結果が2件以上ある場合のみナビゲーションを表示
+    if (currentSearchResults.length > 1) {
+      nav.style.display = 'flex';
+      counter.textContent = `${currentSearchResultIndex + 1}/${currentSearchResults.length}`;
+    } else {
+      nav.style.display = 'none';
+    }
+  }
+
+  /**
+   * ポップアップ内のテキストをハイライト表示
+   * @param {HTMLElement} container - 検索対象のコンテナ
+   * @param {string} query - 検索キーワード
+   */
+  function highlightInPopup(container, query) {
+    if (!query || !container) return;
+
+    const lowerQuery = query.toLowerCase();
+    let firstMatch = null;
+
+    // テキストノードを走査してハイライト
+    const walker = document.createTreeWalker(
+      container,
+      NodeFilter.SHOW_TEXT,
+      null,
+      false
+    );
+
+    const nodesToProcess = [];
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (node.textContent.toLowerCase().includes(lowerQuery)) {
+        nodesToProcess.push(node);
+      }
+    }
+
+    nodesToProcess.forEach(textNode => {
+      const text = textNode.textContent;
+      const lowerText = text.toLowerCase();
+
+      // 全てのマッチを処理
+      const fragment = document.createDocumentFragment();
+      let lastIndex = 0;
+      let index;
+
+      while ((index = lowerText.indexOf(lowerQuery, lastIndex)) !== -1) {
+        // マッチ前のテキスト
+        if (index > lastIndex) {
+          fragment.appendChild(document.createTextNode(text.substring(lastIndex, index)));
+        }
+
+        // マッチ部分をハイライト
+        const span = document.createElement('span');
+        span.className = 'popup-highlight';
+        span.style.cssText = 'background-color: #ffeb3b; padding: 1px 2px; border-radius: 2px;';
+        span.textContent = text.substring(index, index + query.length);
+        fragment.appendChild(span);
+
+        if (!firstMatch) firstMatch = span;
+
+        lastIndex = index + query.length;
+      }
+
+      // 残りのテキスト
+      if (lastIndex < text.length) {
+        fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
+      }
+
+      textNode.parentNode.replaceChild(fragment, textNode);
+    });
+
+    // 最初のマッチにスクロール
+    if (firstMatch) {
+      setTimeout(() => {
+        firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
   }
 
   /**
@@ -826,6 +982,7 @@ const GraphModule = (function() {
     if (!nodesGroup || !edgesGroup) return;
 
     let firstMatchedNodeId = null;
+    const matchedNodes = []; // 検索結果リスト用
 
     nodesGroup.selectAll('.graph-node')
       .each(function(d) {
@@ -842,7 +999,9 @@ const GraphModule = (function() {
           visible = false;
         }
 
-        node.style('display', visible ? null : 'none');
+        // 非マッチノードを薄く表示（完全に消さない）
+        node.style('opacity', visible ? 1 : 0.08);
+        node.style('pointer-events', visible ? 'auto' : 'none');
 
         // ラベル表示の更新（大きいノードは常に表示）
         const HUB_THRESHOLD = 15;
@@ -858,14 +1017,22 @@ const GraphModule = (function() {
         if (visible && searchQuery && !firstMatchedNodeId) {
           firstMatchedNodeId = d.id;
         }
+
+        // 検索結果リスト用にマッチしたノードを収集
+        if (visible && searchQuery) {
+          matchedNodes.push({
+            id: d.id,
+            label: d.label,
+            subject: d.subject,
+            color: d.color
+          });
+        }
       });
 
     // エッジの表示を更新
     edgesGroup.selectAll('.graph-edge')
       .each(function(d) {
         const edge = d3.select(this);
-        const sourceNode = nodesGroup.select(`[data-id="${d.source.id}"]`);
-        const targetNode = nodesGroup.select(`[data-id="${d.target.id}"]`);
 
         // 両端のノードが表示されている場合のみエッジを表示
         let sourceVisible = true;
@@ -887,13 +1054,105 @@ const GraphModule = (function() {
           targetVisible = false;
         }
 
-        edge.style('display', (sourceVisible && targetVisible) ? null : 'none');
+        // 非マッチエッジを薄く表示
+        edge.style('opacity', (sourceVisible && targetVisible) ? 1 : 0.05);
       });
+
+    // 検索結果リストを更新
+    updateSearchResultsList(matchedNodes);
 
     // ヒットしたノードを画面中央に移動
     if (shouldCenter && firstMatchedNodeId) {
       centerOnNode(firstMatchedNodeId);
     }
+  }
+
+  /**
+   * 検索結果リストを更新
+   */
+  function updateSearchResultsList(matchedNodes) {
+    const resultsContainer = document.getElementById('graph-search-results');
+    if (!resultsContainer) return;
+
+    // 検索結果をモジュールスコープに保存
+    currentSearchResults = matchedNodes;
+    currentSearchResultIndex = 0;
+
+    const searchInput = document.querySelector('.graph-search-pill');
+
+    // 検索クエリがない、または結果がない場合は非表示
+    if (!searchQuery || matchedNodes.length === 0) {
+      currentSearchResults = [];
+      resultsContainer.style.display = 'none';
+      resultsContainer.innerHTML = '';
+      // 検索窓を再表示
+      if (searchInput) searchInput.style.display = '';
+      return;
+    }
+
+    // 検索窓を非表示にして、検索結果リストを表示
+    if (searchInput) searchInput.style.display = 'none';
+
+    // 結果リストを生成（ヘッダーに検索クエリと展開/閉じるボタン）
+    resultsContainer.style.display = 'block';
+    resultsContainer.classList.add('expanded'); // デフォルトで展開
+    resultsContainer.innerHTML = `
+      <div class="search-results-header" id="search-results-header">
+        <span class="search-results-toggle">▼</span>
+        <span class="search-results-query">"${searchQuery}" ${matchedNodes.length}件</span>
+        <button class="search-results-close" id="search-results-close">×</button>
+      </div>
+      <div class="search-results-list">
+        ${matchedNodes.slice(0, 20).map(node => `
+          <button class="search-result-item" data-id="${node.id}">
+            <span class="search-result-dot" style="background: ${node.color}"></span>
+            <span class="search-result-label">${truncateLabel(node.label, 20)}</span>
+            <span class="search-result-subject">${node.subject || ''}</span>
+          </button>
+        `).join('')}
+        ${matchedNodes.length > 20 ? `<div class="search-results-more">他 ${matchedNodes.length - 20} 件</div>` : ''}
+      </div>
+    `;
+
+    // ヘッダークリックで展開/折りたたみ
+    const header = document.getElementById('search-results-header');
+    if (header) {
+      header.addEventListener('click', (e) => {
+        if (e.target.closest('.search-results-close')) return; // 閉じるボタンは除外
+        resultsContainer.classList.toggle('expanded');
+      });
+    }
+
+    // 閉じるボタンのイベント
+    const closeBtn = document.getElementById('search-results-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // 検索をクリア
+        searchQuery = '';
+        currentSearchResults = [];
+        resultsContainer.style.display = 'none';
+        resultsContainer.innerHTML = '';
+        // 検索窓を再表示してクリア
+        if (searchInput) {
+          searchInput.style.display = '';
+          const input = searchInput.querySelector('input');
+          if (input) input.value = '';
+        }
+        // グラフのハイライトをリセット
+        filterAndHighlightNodes();
+      });
+    }
+
+    // 結果アイテムのクリックイベント
+    resultsContainer.querySelectorAll('.search-result-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const nodeId = item.dataset.id;
+        centerOnNode(nodeId);
+        selectNode(nodeId);
+      });
+    });
   }
 
   /**

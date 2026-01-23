@@ -13199,6 +13199,137 @@ body.is-practice .tab-content {
   }
 }
 
+/* 検索結果リスト */
+.graph-search-results {
+  display: none;
+  position: absolute;
+  bottom: 70px; /* タブバーのすぐ上 */
+  left: 16px;
+  right: 16px;
+  max-height: 220px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 16;
+}
+
+.search-results-header {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.search-results-toggle {
+  font-size: 12px;
+  color: var(--secondary-label);
+  transition: transform 0.2s;
+}
+
+.graph-search-results.expanded .search-results-toggle {
+  transform: rotate(180deg);
+}
+
+.search-results-count {
+  font-size: 12px;
+  color: var(--secondary-label);
+  font-weight: 500;
+}
+
+.search-results-query {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 500;
+  flex: 1;
+}
+
+.search-results-close {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  color: var(--secondary-label);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-results-list {
+  max-height: 160px;
+  overflow-y: auto;
+  display: none;  /* デフォルトは非表示、ヘッダータップで展開 */
+}
+
+.graph-search-results.expanded .search-results-list {
+  display: block;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-result-item:hover,
+.search-result-item:active {
+  background: var(--surface-alt);
+}
+
+.search-result-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.search-result-label {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-result-subject {
+  font-size: 11px;
+  color: var(--tertiary-label);
+  flex-shrink: 0;
+}
+
+.search-results-more {
+  padding: 8px 14px;
+  font-size: 12px;
+  color: var(--secondary-label);
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .graph-search-results {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .graph-search-results {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
 /* フィルタチップ */
 .graph-filters {
   display: flex;
@@ -13548,6 +13679,52 @@ body.is-practice .tab-content {
   padding: 40px 0;
 }
 
+/* ポップアップ内ハイライトナビゲーション */
+.topic-popup-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-top: 1px solid var(--border-color);
+  background: var(--grouped-bg);
+}
+
+.popup-nav-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.popup-nav-btn:hover {
+  background: var(--accent-color-hover, #0056b3);
+}
+
+.popup-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.popup-nav-counter {
+  font-size: 14px;
+  color: var(--secondary-label);
+  min-width: 50px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.popup-highlight.current {
+  background-color: #ff9800 !important;
+}
 
 /* ダークモード対応 */
 [data-theme="dark"] .view-toggle-btn.active {

@@ -488,6 +488,8 @@
                 </svg>
                 <input type="text" id="graph-search" class="graph-search-pill-input" placeholder="トピックを検索">
               </div>
+              <!-- 検索結果リスト -->
+              <div id="graph-search-results" class="graph-search-results"></div>
               <div id="graph-tooltip" class="graph-tooltip"></div>
               <!-- トピックプレビューポップアップ -->
               <div id="topic-popup-overlay" class="topic-popup-overlay">
@@ -503,6 +505,12 @@
                   </div>
                   <div class="topic-popup-body" id="topic-popup-body">
                     <div class="topic-popup-loading">読み込み中...</div>
+                  </div>
+                  <!-- ハイライトナビゲーションバー -->
+                  <div class="topic-popup-nav" id="topic-popup-nav" style="display: none;">
+                    <button class="popup-nav-btn" id="popup-nav-prev">&lt;</button>
+                    <span class="popup-nav-counter" id="popup-nav-counter">1/1</span>
+                    <button class="popup-nav-btn" id="popup-nav-next">&gt;</button>
                   </div>
                 </div>
               </div>

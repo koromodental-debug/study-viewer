@@ -84,6 +84,33 @@ const FlashcardModule = (function() {
   // DOM要素
   let container = null;
 
+  // 重複トピック除外（.txtと.jsonの両方がある場合、.jsonを優先）
+  function deduplicateTopics(topics) {
+    const seen = new Map(); // basePath -> topic
+    for (const topic of topics) {
+      const qaPath = topic.qaPath || '';
+      // ベースパスを取得（_QA.txt や _QA.json を除去）
+      const basePath = qaPath.replace(/_QA\.(txt|json)$/, '');
+      if (!basePath) {
+        // qaPathがない場合はそのまま追加
+        seen.set(topic.id, topic);
+        continue;
+      }
+      const existing = seen.get(basePath);
+      if (!existing) {
+        seen.set(basePath, topic);
+      } else {
+        // 既存がある場合、.jsonを優先
+        const existingIsJson = (existing.qaPath || '').endsWith('.json');
+        const currentIsJson = qaPath.endsWith('.json');
+        if (currentIsJson && !existingIsJson) {
+          seen.set(basePath, topic);
+        }
+      }
+    }
+    return Array.from(seen.values());
+  }
+
   // デッキ操作アクションシート
   function showDeckActionSheet(topicId, deckId) {
     const existing = document.querySelector('.card-action-sheet-overlay');
@@ -1088,7 +1115,9 @@ const FlashcardModule = (function() {
   }
 
   function renderSubjectRow(subject) {
-    const topics = DATA.filter(d => d.subject === subject && (d.qaPath || d.localJsonData));
+    const allTopics = DATA.filter(d => d.subject === subject && (d.qaPath || d.localJsonData));
+    // 重複除外: .txtと.jsonの両方がある場合、.jsonを優先
+    const topics = deduplicateTopics(allTopics);
     const stats = getSubjectStats(subject);
     const isOpen = state.expandedSubjects.has(subject);
 
@@ -1193,28 +1222,36 @@ const FlashcardModule = (function() {
     topics.forEach(topic => {
       let groupKey = null;
       let groupName = null;
+      let sortOrder = '99'; // ソート用の番号
 
       // 1. まずpathからグループを抽出（従来の方式）
       const path = topic.qaPath || topic.htmlPath || '';
       const pathMatch = path.match(/subject\/[^/]+\/(\d{2})_([^_]+)/);
       if (pathMatch) {
-        groupKey = pathMatch[1];
+        sortOrder = pathMatch[1];
         groupName = pathMatch[2];
       }
 
       // 2. pathでマッチしなければcategoryから抽出
-      if (!groupKey && topic.category) {
+      if (!groupName && topic.category) {
         // categoryの形式: "科目名/01_大項目名"
         const categoryMatch = topic.category.match(/[^/]+\/(\d{2})_([^_]+)/);
         if (categoryMatch) {
-          groupKey = categoryMatch[1];
+          sortOrder = categoryMatch[1];
           groupName = categoryMatch[2];
         }
       }
 
-      if (groupKey && groupName) {
+      // groupNameでグループ化（同じ「総論」は1つにまとめる）
+      if (groupName) {
+        groupKey = groupName;
         if (!groups.has(groupKey)) {
-          groups.set(groupKey, { name: groupName, topics: [] });
+          groups.set(groupKey, { name: groupName, sortOrder: sortOrder, topics: [] });
+        } else {
+          // 既存グループのsortOrderより小さければ更新（最小番号を保持）
+          if (sortOrder < groups.get(groupKey).sortOrder) {
+            groups.get(groupKey).sortOrder = sortOrder;
+          }
         }
         groups.get(groupKey).topics.push(topic);
       } else {
@@ -1226,8 +1263,12 @@ const FlashcardModule = (function() {
       }
     });
 
-    // 番号順にソート
-    const sortedKeys = [...groups.keys()].sort((a, b) => a.localeCompare(b));
+    // sortOrder順にソート
+    const sortedKeys = [...groups.keys()].sort((a, b) => {
+      const orderA = groups.get(a).sortOrder || '99';
+      const orderB = groups.get(b).sortOrder || '99';
+      return orderA.localeCompare(orderB);
+    });
 
     return sortedKeys.map(key => {
       const group = groups.get(key);
@@ -1236,7 +1277,7 @@ const FlashcardModule = (function() {
       return `
         <div class="deck-hisshu-group">
           <div class="deck-hisshu-header">
-            <span class="hisshu-header-name">${key} ${group.name}</span>
+            <span class="hisshu-header-name">${group.name}</span>
             <button class="group-list-btn" data-topic-ids='${JSON.stringify(topicIds)}' data-group-name="${group.name}" title="カード一覧">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="8" y1="6" x2="21" y2="6"></line>
@@ -2308,6 +2349,8 @@ const FlashcardModule = (function() {
     const uniqueTopicIds = [...new Set(validRefs.map(r => r.topicId))];
     const topicCardsMap = new Map();
 
+    // 各トピックの情報を準備
+    const fetchTasks = [];
     for (const topicId of uniqueTopicIds) {
       let topic, qaPath;
 
@@ -2346,9 +2389,15 @@ const FlashcardModule = (function() {
 
       if (!topic || !qaPath) continue;
 
+      // fetchタスクを配列に追加（並列実行用）
+      fetchTasks.push({ topicId, topic, qaPath });
+    }
+
+    // 全トピックを並列でfetch
+    await Promise.all(fetchTasks.map(async ({ topicId, topic, qaPath }) => {
       try {
         const response = await fetch(encodeURI(qaPath));
-        if (!response.ok) continue;
+        if (!response.ok) return;
 
         const contentType = response.headers.get('content-type');
         let cards;
@@ -2365,7 +2414,7 @@ const FlashcardModule = (function() {
       } catch (e) {
         console.log(`QA読み込みエラー (${topicId}):`, e);
       }
-    }
+    }))
 
     // フィルタ済みカード配列を構築
     const filteredCards = [];
@@ -3030,16 +3079,21 @@ const FlashcardModule = (function() {
       return;
     }
 
+    // ローディング表示（即座にフィードバック）
+    const statusNames = { again: '要復習', learning: '定着中', mastered: '習得済' };
+    container.innerHTML = `
+      <div class="loading-view" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 50vh; gap: 16px;">
+        <div class="loading-spinner" style="width: 32px; height: 32px; border: 3px solid var(--border-color); border-top-color: var(--system-blue); border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+        <div style="color: var(--text-muted); font-size: 14px;">${statusNames[status] || status}を読み込み中...</div>
+      </div>
+      <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+    `;
+
     const filteredCards = await fetchCardsFromRefs(cardRefs);
     if (filteredCards.length === 0) {
       return;
     }
 
-    const statusNames = {
-      again: '要復習',
-      learning: '定着中',
-      mastered: '習得済'
-    };
     const title = statusNames[status] || status;
 
     // ヘッダー

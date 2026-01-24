@@ -13802,3 +13802,590 @@ body.is-practice .tab-content {
     font-size: 13px;
   }
 }
+
+/* ===== 過去問ナビゲーションUI ===== */
+
+/* ナビゲーション画面 */
+.kakomon-nav-screen {
+  padding: 16px;
+  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+}
+
+/* セグメントコントロール */
+.kakomon-segment-control {
+  display: flex;
+  background: var(--border-color);
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 20px;
+}
+
+.segment-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.segment-btn.active {
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 年度リスト */
+.kakomon-year-list,
+.kakomon-subject-list,
+.kakomon-session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kakomon-year-item,
+.kakomon-subject-item,
+.kakomon-session-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--card-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.kakomon-year-item:hover,
+.kakomon-subject-item:hover,
+.kakomon-session-item:hover {
+  background: var(--border-color);
+}
+
+.year-number,
+.subject-name,
+.session-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.year-arrow,
+.subject-arrow,
+.session-arrow {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+}
+
+/* セッション選択画面 */
+.kakomon-session-screen {
+  padding: 0;
+}
+
+.kakomon-session-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 16px 0 20px;
+}
+
+/* 戻るボタン */
+.kakomon-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  color: #007AFF;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.kakomon-back-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* 問題一覧画面 */
+.kakomon-questions-screen {
+  padding: 16px;
+  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+}
+
+.kakomon-questions-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: -16px -16px 16px -16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.kakomon-questions-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.kakomon-questions-count {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.kakomon-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ローディング */
+.kakomon-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 16px;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-color);
+  border-top-color: #007AFF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.kakomon-loading p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* エラー表示 */
+.kakomon-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* ===== 会話解説UI ===== */
+
+.kakomon-explanation {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.show-explanation-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #f0f7ff;
+  border: 1px solid #007AFF;
+  border-radius: var(--radius-md);
+  color: #007AFF;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.show-explanation-btn:hover:not(:disabled) {
+  background: #e0efff;
+}
+
+.show-explanation-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 会話メッセージ */
+.conversation-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.chat-bubble {
+  display: flex;
+  gap: 10px;
+  max-width: 90%;
+}
+
+.chat-bubble.teacher {
+  align-self: flex-start;
+}
+
+.chat-bubble.student {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chat-avatar {
+  font-size: 28px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-content {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.chat-bubble.teacher .chat-content {
+  background: #e8f4ff;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble.student .chat-content {
+  background: #f0f0f0;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-speaker {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.chat-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+/* ポイント */
+.key-points {
+  margin-top: 20px;
+  padding: 16px;
+  background: #fffbe6;
+  border-radius: var(--radius-md);
+  border-left: 4px solid #faad14;
+}
+
+.key-points-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #d48806;
+  margin-bottom: 8px;
+}
+
+.key-points-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.key-points-list li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+/* 関連トピック */
+.related-topics {
+  margin-top: 16px;
+}
+
+.related-topics-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.related-topics-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topic-tag {
+  padding: 6px 12px;
+  background: var(--border-color);
+  border-radius: 16px;
+  font-size: 13px;
+  color: var(--text-color);
+}
+
+/* 解説なし */
+.no-explanation {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* 解説内の表スタイル */
+.explanation-table-container {
+  margin: 16px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--accent, #007AFF);
+  font-size: 14px;
+}
+
+.explanation-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: var(--surface-color, #fff);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.explanation-table th {
+  background: var(--bg-secondary, #F2F2F7);
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color, #E5E5EA);
+}
+
+.explanation-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-color, #E5E5EA);
+  color: var(--text-color);
+}
+
+.explanation-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 関連ノードリンク（グラフビュー遷移） */
+.related-node-link {
+  margin: 16px 0;
+}
+
+.related-node-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(0, 122, 255, 0.08) 0%, rgba(0, 122, 255, 0.04) 100%);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+}
+
+.related-node-btn:hover {
+  background: linear-gradient(135deg, rgba(0, 122, 255, 0.15) 0%, rgba(0, 122, 255, 0.08) 100%);
+  border-color: rgba(0, 122, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.related-node-btn:active {
+  transform: scale(0.98);
+}
+
+.related-node-icon {
+  font-size: 18px;
+}
+
+.related-node-text {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #007AFF;
+  text-align: left;
+}
+
+.related-node-arrow {
+  font-size: 16px;
+  color: #007AFF;
+  opacity: 0.6;
+}
+
+/* ===== ダークモード対応 ===== */
+
+[data-theme="dark"] .segment-btn.active {
+  background: #3A3A3C;
+}
+
+[data-theme="dark"] .kakomon-year-item,
+[data-theme="dark"] .kakomon-subject-item,
+[data-theme="dark"] .kakomon-session-item {
+  background: #2C2C2E;
+}
+
+[data-theme="dark"] .kakomon-year-item:hover,
+[data-theme="dark"] .kakomon-subject-item:hover,
+[data-theme="dark"] .kakomon-session-item:hover {
+  background: #3A3A3C;
+}
+
+[data-theme="dark"] .show-explanation-btn {
+  background: rgba(10, 132, 255, 0.15);
+  border-color: #0A84FF;
+  color: #0A84FF;
+}
+
+[data-theme="dark"] .show-explanation-btn:hover:not(:disabled) {
+  background: rgba(10, 132, 255, 0.25);
+}
+
+[data-theme="dark"] .chat-bubble.teacher .chat-content {
+  background: rgba(10, 132, 255, 0.2);
+}
+
+[data-theme="dark"] .chat-bubble.student .chat-content {
+  background: #3A3A3C;
+}
+
+[data-theme="dark"] .key-points {
+  background: rgba(250, 173, 20, 0.15);
+  border-left-color: #faad14;
+}
+
+[data-theme="dark"] .key-points-title {
+  color: #faad14;
+}
+
+[data-theme="dark"] .topic-tag {
+  background: #3A3A3C;
+}
+
+[data-theme="dark"] .table-title {
+  color: #0A84FF;
+}
+
+[data-theme="dark"] .explanation-table {
+  background: #2C2C2E;
+}
+
+[data-theme="dark"] .explanation-table th {
+  background: #3A3A3C;
+}
+
+[data-theme="dark"] .explanation-table th,
+[data-theme="dark"] .explanation-table td {
+  border-color: #48484A;
+}
+
+[data-theme="dark"] .related-node-btn {
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.15) 0%, rgba(10, 132, 255, 0.08) 100%);
+  border-color: rgba(10, 132, 255, 0.3);
+}
+
+[data-theme="dark"] .related-node-text,
+[data-theme="dark"] .related-node-arrow {
+  color: #0A84FF;
+}
+
+/* システムダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .segment-btn.active {
+    background: #3A3A3C;
+  }
+
+  :root:not([data-theme="light"]) .kakomon-year-item,
+  :root:not([data-theme="light"]) .kakomon-subject-item,
+  :root:not([data-theme="light"]) .kakomon-session-item {
+    background: #2C2C2E;
+  }
+
+  :root:not([data-theme="light"]) .kakomon-year-item:hover,
+  :root:not([data-theme="light"]) .kakomon-subject-item:hover,
+  :root:not([data-theme="light"]) .kakomon-session-item:hover {
+    background: #3A3A3C;
+  }
+
+  :root:not([data-theme="light"]) .show-explanation-btn {
+    background: rgba(10, 132, 255, 0.15);
+    border-color: #0A84FF;
+    color: #0A84FF;
+  }
+
+  :root:not([data-theme="light"]) .chat-bubble.teacher .chat-content {
+    background: rgba(10, 132, 255, 0.2);
+  }
+
+  :root:not([data-theme="light"]) .chat-bubble.student .chat-content {
+    background: #3A3A3C;
+  }
+
+  :root:not([data-theme="light"]) .key-points {
+    background: rgba(250, 173, 20, 0.15);
+    border-left-color: #faad14;
+  }
+
+  :root:not([data-theme="light"]) .key-points-title {
+    color: #faad14;
+  }
+
+  :root:not([data-theme="light"]) .topic-tag {
+    background: #3A3A3C;
+  }
+
+  :root:not([data-theme="light"]) .table-title {
+    color: #0A84FF;
+  }
+
+  :root:not([data-theme="light"]) .explanation-table {
+    background: #2C2C2E;
+  }
+
+  :root:not([data-theme="light"]) .explanation-table th {
+    background: #3A3A3C;
+  }
+
+  :root:not([data-theme="light"]) .explanation-table th,
+  :root:not([data-theme="light"]) .explanation-table td {
+    border-color: #48484A;
+  }
+
+  :root:not([data-theme="light"]) .related-node-btn {
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.15) 0%, rgba(10, 132, 255, 0.08) 100%);
+    border-color: rgba(10, 132, 255, 0.3);
+  }
+
+  :root:not([data-theme="light"]) .related-node-text,
+  :root:not([data-theme="light"]) .related-node-arrow {
+    color: #0A84FF;
+  }
+}

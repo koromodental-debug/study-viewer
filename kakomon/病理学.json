@@ -38,7 +38,7 @@
       "answer": "E",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "107A123_1.png",
+      "imageFiles": "107A123.png",
       "chapter": "01_病理検査",
       "theme": "細胞診",
       "keyword": "異常06-04病理組織染色"
@@ -59,7 +59,7 @@
       "answer": "A",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "113B36_1.png",
+      "imageFiles": "113B36.png",
       "chapter": "01_病理検査",
       "theme": "細胞診",
       "keyword": "異常06-04病理組織染色"
@@ -227,7 +227,7 @@
       "answer": "BD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "110C128_1.png",
+      "imageFiles": "110C128.png",
       "chapter": "02_総論",
       "theme": "病因論",
       "keyword": "公衆衛生01-01疾病発症の要因論（病因論）"
@@ -437,7 +437,7 @@
       "answer": "D",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "108A101_1.png",
+      "imageFiles": "108A101.png",
       "chapter": "02_総論",
       "theme": "生体適応現象：化生",
       "keyword": "全部床01-04軟組織異常"
@@ -458,7 +458,7 @@
       "answer": "C",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "115C72_1.png",
+      "imageFiles": "115C72.png",
       "chapter": "02_総論",
       "theme": "代謝異常：変性",
       "keyword": "口外09-01唾液腺良性腫瘍"
@@ -605,7 +605,7 @@
       "answer": "D",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "114A28_1.png",
+      "imageFiles": "114A28.png",
       "chapter": "02_総論",
       "theme": "炎症：滲出性炎",
       "keyword": "異常07-01びらん・潰瘍・熱傷・凍傷"
@@ -983,7 +983,7 @@
       "answer": "E",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "108A85_1.png",
+      "imageFiles": "108A85.png",
       "chapter": "03_嚢胞",
       "theme": "嚢胞の発生する組織",
       "keyword": "口外05-10粘液嚢胞（ガマ腫・粘液瘤・Blandin-Nuhn嚢胞）"
@@ -1004,7 +1004,7 @@
       "answer": "B",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "106A49_1.png",
+      "imageFiles": "106A49.png",
       "chapter": "04_腫瘍",
       "theme": "口腔粘膜の良性腫瘍",
       "keyword": "口外06-10乳頭腫"
@@ -1025,7 +1025,7 @@
       "answer": "E",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "115D66_1.png",
+      "imageFiles": "115D66.png",
       "chapter": "04_腫瘍",
       "theme": "口腔粘膜の良性腫瘍",
       "keyword": "口外06-11血管腫・リンパ管腫"
@@ -1067,7 +1067,7 @@
       "answer": "E",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "113A37_1.png",
+      "imageFiles": "113A37.png",
       "chapter": "04_腫瘍",
       "theme": "口腔粘膜の悪性腫瘍",
       "keyword": "口外06-18扁平上皮癌"
@@ -1235,7 +1235,7 @@
       "answer": "CE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "116A22_1.png",
+      "imageFiles": "116A22.png",
       "chapter": "04_腫瘍",
       "theme": "唾液腺腫瘍",
       "keyword": "口外09-01唾液腺良性腫瘍"
@@ -1277,7 +1277,7 @@
       "answer": "D",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "109C66_1.png",
+      "imageFiles": "109C66.png",
       "chapter": "04_腫瘍",
       "theme": "唾液腺腫瘍",
       "keyword": "口外09-02唾液腺悪性腫瘍"
@@ -1445,7 +1445,7 @@
       "answer": "B",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "110C61_1.png",
+      "imageFiles": "110C61.png",
       "chapter": "06_唾液腺疾患",
       "theme": "Sjögren症候群",
       "keyword": "口外09-06口腔乾燥症・Sjögren症候群"

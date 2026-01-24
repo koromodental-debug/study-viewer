@@ -71,6 +71,17 @@
       font-weight: 500;
     }
     .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    /* 対話形式解説 */
+    .dialogue { margin: 16px 0; font-size: 9pt; }
+    .dialogue-turn { display: flex; margin: 8px 0; gap: 8px; }
+    .dialogue-turn.teacher { }
+    .dialogue-turn.student { }
+    .speaker { font-weight: 600; min-width: 3em; flex-shrink: 0; }
+    .speaker.teacher-label { color: var(--accent); }
+    .speaker.student-label { color: #6B7280; }
+    .speech { flex: 1; }
+    .speech p { margin: 4px 0; }
+    .dialogue table { margin: 8px 0; }
   </style>
 </head>
 <body>
@@ -286,7 +297,58 @@
           e HbA1c
         </div>
         <div class="answer">正解：a</div>
-        <p>【解説】CK（クレアチンキナーゼ）は心筋・骨格筋に含まれ、心筋梗塞で上昇する。PT=凝固検査、ALP=肝胆道系・骨、ALT=肝臓、HbA1c=糖代謝の指標。</p>
+        <div class="dialogue">
+          <div class="dialogue-turn teacher">
+            <span class="speaker teacher-label">先生</span>
+            <div class="speech">
+              <p>この問題は「心筋梗塞で何が上がるか」を聞いているね。心筋梗塞では心筋が壊れるから、心筋の中に含まれている酵素が血中に漏れ出てくる。これを「逸脱酵素」と言うよ。</p>
+            </div>
+          </div>
+          <div class="dialogue-turn student">
+            <span class="speaker student-label">生徒</span>
+            <div class="speech">
+              <p>えっ、ALPは骨にも関係あるから、心臓にも関係あるのかと思いました...</p>
+            </div>
+          </div>
+          <div class="dialogue-turn teacher">
+            <span class="speaker teacher-label">先生</span>
+            <div class="speech">
+              <p>いい疑問だね。ALPは確かに骨や肝胆道系で上がるけど、「骨→心臓」という関連はないんだ。心筋梗塞で上がるのは<span class="highlight">心筋の中に含まれている酵素</span>。ALPは心筋には含まれていないよ。</p>
+            </div>
+          </div>
+          <div class="dialogue-turn student">
+            <span class="speaker student-label">生徒</span>
+            <div class="speech">
+              <p>じゃあHbA1cは？糖尿病は心臓病のリスク因子だから、心筋梗塞と関係あるのかと...</p>
+            </div>
+          </div>
+          <div class="dialogue-turn teacher">
+            <span class="speaker teacher-label">先生</span>
+            <div class="speech">
+              <p>確かに糖尿病は心筋梗塞のリスク因子だけど、HbA1cは「過去1〜2か月の血糖値の平均」を見ているだけ。心筋梗塞が起きても<span class="highlight">HbA1cは変化しない</span>よ。「心筋が壊れた結果、上がるもの」と「リスク因子」は別物だね。</p>
+            </div>
+          </div>
+          <div class="dialogue-turn student">
+            <span class="speaker student-label">生徒</span>
+            <div class="speech">
+              <p>なるほど！心筋の中に入っている酵素が漏れ出るから、CKが正解なんですね。</p>
+            </div>
+          </div>
+          <div class="dialogue-turn teacher">
+            <span class="speaker teacher-label">先生</span>
+            <div class="speech">
+              <p>そう！選択肢を整理すると：</p>
+              <table>
+                <tr><th>選択肢</th><th>何の指標</th><th>心筋との関係</th></tr>
+                <tr><td class="key">a CK</td><td>筋肉（心筋・骨格筋）</td><td><span class="highlight">✅ 心筋梗塞で上昇</span></td></tr>
+                <tr><td>b PT</td><td>凝固系</td><td>❌ 関係なし</td></tr>
+                <tr><td>c ALP</td><td>肝胆道系・骨</td><td>❌ 関係なし</td></tr>
+                <tr><td>d ALT</td><td>肝臓</td><td>❌ 関係なし</td></tr>
+                <tr><td>e HbA1c</td><td>糖代謝</td><td>❌ リスク因子だが直接マーカーではない</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
 
       <h2>6. 尿酸（1件出題）</h2>

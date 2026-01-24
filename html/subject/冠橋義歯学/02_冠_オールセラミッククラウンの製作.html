@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>オールセラミッククラウンの製作 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">冠橋義歯学 / 冠</span>
+    <h1>オールセラミッククラウンの製作</h1>
+    <div class="container">
+
+      <h2>I. 製作法の分類</h2>
+
+      <p>オールセラミッククラウンの製作法は、使用する材料と加工方法により分類される。現在では<span class="highlight">CAD/CAMによる機械切削</span>が主流となっている。</p>
+
+      <h3>3つの製作システム</h3>
+      <table>
+        <tr>
+          <th>製作法</th>
+          <th>代表的システム</th>
+          <th>材料</th>
+        </tr>
+        <tr>
+          <td class="key">耐火模型</td>
+          <td>In-Ceram（販売停止）</td>
+          <td>アルミナ</td>
+        </tr>
+        <tr>
+          <td class="key">ロストワックス<br>（プレス成型）</td>
+          <td>IPS e.max Press</td>
+          <td>二ケイ酸リチウム</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">機械切削<br>（CAD/CAM）</span></td>
+          <td>Cerec, Lava, Katana,<br>Procera など</td>
+          <td><span class="highlight">ジルコニア</span>、<br>アルミナ、リューサイト</td>
+        </tr>
+      </table>
+
+      <h2>II. CAD/CAMシステム【試験頻出】</h2>
+
+      <h3>2つのタイプ</h3>
+      <table>
+        <tr>
+          <th>タイプ</th>
+          <th>特徴</th>
+          <th>代表例</th>
+        </tr>
+        <tr>
+          <td class="key">クラウン型</td>
+          <td>セラミックブロックを切削して<br>クラウン・インレーを製作</td>
+          <td>Cerec AC, Aadva, E4D</td>
+        </tr>
+        <tr>
+          <td class="key">コーピング型</td>
+          <td>高強度コーピング（フレーム）<br>製作専用</td>
+          <td>Procera, Lava, Katana</td>
+        </tr>
+      </table>
+
+      <h2>III. ジルコニアの加工法【試験頻出】</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">ジルコニアはCAD/CAM限定</div>
+        <ul>
+          <li><span class="highlight">完全焼結したジルコニアは硬くて切削困難</span></li>
+          <li>そのため<span class="highlight">半焼結体</span>の状態で切削する</li>
+          <li>鋳造では加工できない → <span class="highlight">CAD/CAMに限定</span></li>
+        </ul>
+      </div>
+
+      <h3>ジルコニアの製作手順</h3>
+      <table>
+        <tr>
+          <th>ステップ</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="key">1. 計測</td>
+          <td>支台歯模型を光学印象またはレーザーで三次元形状計測</td>
+        </tr>
+        <tr>
+          <td class="key">2. CAD設計</td>
+          <td>コンピュータ上でコーピングのデザインを設計<br>（<span class="highlight">収縮補正</span>を含む）</td>
+        </tr>
+        <tr>
+          <td class="key">3. CAM切削</td>
+          <td><span class="highlight">半焼結のジルコニアブロック</span>を切削</td>
+        </tr>
+        <tr>
+          <td class="key">4. 焼結</td>
+          <td><span class="highlight">1,300℃以上</span>の高温で完全焼結<br>→ <span class="caution">20%以上収縮</span></td>
+        </tr>
+        <tr>
+          <td class="key">5. 築盛</td>
+          <td>歯冠色陶材を築盛して完成<br>（フルジルコニアの場合は不要）</td>
+        </tr>
+      </table>
+
+      <p class="note">※ 焼結時の収縮量は金属の鋳造収縮量（約1〜2%）より大きい。CADで収縮を見越した設計が必要。</p>
+
+      <h2>IV. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108C125</div>
+        <p>加工法がCAD/CAMに限定される歯科用修復材料はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Ti合金<br>
+          b ポーセレン<br>
+          c ジルコニア<br>
+          d Co-Cr合金<br>
+          e コンポジットレジン
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">ジルコニア</span>は完全焼結すると硬くて切削困難なため、<span class="highlight">半焼結体をCAD/CAMで切削</span>してから焼結する。鋳造では加工できない。Ti合金・Co-Cr合金は鋳造・CAD/CAM両方可能。ポーセレンは築盛焼成。コンポジットレジンは光重合。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C48</div>
+        <p>半焼結体を焼結して製作した補綴装置のフレームワークの写真（別冊No.6）を別に示す。このフレームワークについて正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 延性材料である。<br>
+          b エックス線透過性である。<br>
+          c 吸水性はレジンより大きい。<br>
+          d CAD/CAMによって製作される。<br>
+          e 焼結時の収縮量は金属の鋳造収縮量より大きい。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】ジルコニアフレームワークの問題。<span class="highlight">CAD/CAMで製作</span>され、<span class="highlight">焼結時の収縮量は20%以上</span>で金属の鋳造収縮（約1〜2%）より大きい。ジルコニアは<span class="caution">脆性材料</span>（延性ではない）、<span class="caution">エックス線不透過性</span>、<span class="caution">吸水性はない</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B3</div>
+        <p>35歳の女性。上顎左側中切歯の変色を主訴として来院した。CAD/CAMを応用したオールセラミッククラウンで治療することとした。治療過程の口腔内写真（別冊No.3A、B、C）を別に示す。写真BとCの間に行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯型のトリミング<br>
+          b ポーセレンの築盛<br>
+          c リテンションビーズの付与<br>
+          d 作業模型の三次元形状計測<br>
+          e コーピングのディギャッシング
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】CAD/CAMで製作したコーピング（写真B）の上に<span class="highlight">ポーセレン（歯冠色陶材）を築盛</span>して完成させる（写真C）。三次元形状計測はコーピング製作前の工程。リテンションビーズ・ディギャッシングは陶材焼付金属冠の工程。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

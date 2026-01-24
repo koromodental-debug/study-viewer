@@ -1507,8 +1507,8 @@
       }
       // 最初のトピックを読み込み
       loadKakomonTopic(item, true);
-      // 無限スクロールのセットアップ
-      setupKakomonInfiniteScroll();
+      // 無限スクロールは廃止（年度別/科目別ナビゲーションに移行）
+      // setupKakomonInfiniteScroll();
     }
   }
 
@@ -2632,7 +2632,7 @@
       if (imageList.length > 0 && examNum) {
         imagesHtml = `
           <div class="kakomon-images">
-            ${imageList.map(file => `<img src="images/${examNum}回_Web画像/${file}" alt="${file}">`).join('')}
+            ${imageList.map(file => `<img src="/images/${examNum}回_Web画像/${file}" alt="${file}">`).join('')}
           </div>
         `;
       }
@@ -2645,7 +2645,7 @@
       const examNum = question.examNum || question.code.match(/^\d+/)?.[0];
       const imageList = question.imageFiles.split(',').map(f => f.trim()).filter(f => f);
       if (imageList.length > 0 && examNum) {
-        const paths = imageList.map(file => `images/${examNum}回_Web画像/${file}`);
+        const paths = imageList.map(file => `/images/${examNum}回_Web画像/${file}`);
         imagePathsJson = JSON.stringify(paths);
       }
     }
@@ -2839,6 +2839,14 @@
    * 過去問無限スクロールのハンドラ
    */
   function handleKakomonInfiniteScroll() {
+    // 新しいナビゲーションモード（年度別/科目別）の場合はスキップ
+    // kakomon-nav-screen が存在する場合も新モード
+    const navScreen = document.querySelector('.kakomon-nav-screen');
+    const questionsHeader = document.querySelector('.kakomon-questions-header');
+    if (navScreen || questionsHeader) {
+      return;
+    }
+
     if (state.isLoadingMoreKakomon) return;
 
     const container = elements.kakomonContent;
@@ -3486,6 +3494,15 @@
     elements.htmlContent.classList.toggle('active', tab === 'html');
     if (elements.kakomonContent) {
       elements.kakomonContent.classList.toggle('active', tab === 'kakomon');
+      // 過去問タブに切り替えた時にナビゲーション画面を初期化
+      if (tab === 'kakomon' && typeof KakomonModule !== 'undefined' && KakomonModule.initKakomonTab) {
+        KakomonModule.initKakomonTab({
+          kakomonContent: elements.kakomonContent,
+          kakomonDisplay: document.getElementById('kakomon-display'),
+          kakomonPlaceholder: document.getElementById('kakomon-placeholder'),
+          kakomonToolbar: document.getElementById('kakomon-toolbar')
+        });
+      }
     }
     if (elements.flashcardContent) {
       elements.flashcardContent.classList.toggle('active', tab === 'flashcard');

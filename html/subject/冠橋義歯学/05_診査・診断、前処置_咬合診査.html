@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>咬合診査 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">冠橋義歯学 / 診査・診断、前処置</span>
+    <h1>咬合診査</h1>
+    <div class="container">
+
+      <h2>I. 咬合接触検査【試験頻出】</h2>
+
+      <p>術前の咬合接触状態を正確に把握することが重要である。</p>
+
+      <table>
+        <tr>
+          <th>検査方法</th>
+          <th>使用材料・器具</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">ワックス法</td>
+          <td>咬合検査用ワックス</td>
+          <td>穿孔部位を咬合接触部位として観察</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">咬合紙法</span></td>
+          <td>咬合紙（約30μm）</td>
+          <td>色素の付着・剥離で接触部位を判断</td>
+        </tr>
+        <tr>
+          <td class="key">シリコーンゴム法</td>
+          <td>シリコーン検査材</td>
+          <td>光の透過状態から緊密度を観察</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">感圧フィルム</span></td>
+          <td>T-スキャン等</td>
+          <td>接触位置・接触力・接触時間を記録</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">引き抜き試験</span></td>
+          <td>ストリップス（シムストック）</td>
+          <td>咬合接触の強さを検査</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">引き抜き試験のポイント</div>
+        <ul>
+          <li><span class="highlight">ストリップス</span>（シムストック）を咬ませて引き抜く</li>
+          <li>抵抗なく引き抜ける → <span class="caution">咬合接触がない</span></li>
+          <li>抵抗があって引き抜けない → 咬合接触あり</li>
+          <li><span class="highlight">咬合紙</span>も引き抜くことで評価可能</li>
+        </ul>
+      </div>
+
+      <h2>II. 検査で評価できる項目</h2>
+
+      <table>
+        <tr>
+          <th>評価項目</th>
+          <th>検査方法</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="highlight">咬合接触面積</span></td>
+          <td>感圧フィルム、シリコーン・チェックバイト法</td>
+        </tr>
+        <tr>
+          <td class="key">咬合接触位置</td>
+          <td>咬合紙、感圧フィルム</td>
+        </tr>
+        <tr>
+          <td class="key">咬合接触力</td>
+          <td>感圧フィルム（T-スキャン）</td>
+        </tr>
+        <tr>
+          <td class="key">早期接触・咬頭干渉</td>
+          <td>咬合紙、感圧フィルム</td>
+        </tr>
+      </table>
+
+      <h2>III. 咬合検査に用いない器具</h2>
+
+      <table>
+        <tr>
+          <th>器具</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td class="key"><span class="caution">バイトゲージ</span></td>
+          <td>咬合高径の測定（咬合接触検査ではない）</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="caution">パラトグラム</span></td>
+          <td>口蓋と舌の接触を記録（構音機能検査）</td>
+        </tr>
+        <tr>
+          <td class="key"><span class="caution">パントグラフ</span></td>
+          <td>顎運動の記録</td>
+        </tr>
+      </table>
+
+      <h2>IV. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105C125</div>
+        <p>天然歯の咬合接触検査に用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a バイトゲージ<br>
+          b パラトグラム<br>
+          c ストリップス<br>
+          d パントグラフ<br>
+          e 感圧フィルム
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】咬合接触検査には<span class="highlight">ストリップス</span>（引き抜き試験）と<span class="highlight">感圧フィルム</span>（T-スキャン等）を用いる。<span class="caution">バイトゲージ</span>は咬合高径の測定。<span class="caution">パラトグラム</span>は構音機能検査。<span class="caution">パントグラフ</span>は顎運動の記録に用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A47</div>
+        <p>咬合検査に用いる器具と材料の写真（別冊No.6）を別に示す。引き抜くことで咬合接触を評価できるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】引き抜き試験に用いるのは<span class="highlight">咬合紙</span>と<span class="highlight">ストリップス（シムストック）</span>。咬ませて引き抜くことで、抵抗の有無により咬合接触を評価できる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C68</div>
+        <p>75歳の女性。咬み合わせの不安定と咀嚼困難を主訴として来院した。3か月前に他院で上顎右側のブリッジを装着し、その後、家族の転勤に伴い引っ越したという。診察の結果、⑦6⑤4③」のブリッジを製作することとした。初診時と新製したブリッジ装着時の咬頭嵌合位の口腔内写真（別冊No.23A）と、ある検査の写真（別冊No.23B）を別に示す。この検査で改善が確認できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 開口量<br>
+          b 咬合干渉<br>
+          c 咀嚼能力<br>
+          d 最大咬合力<br>
+          e 咬合接触面積
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】写真からシリコーン・チェックバイト法または感圧フィルムによる検査と判断。この検査で評価できるのは<span class="highlight">咬合接触面積</span>。ブリッジ装着により咬合接触面積の改善が確認できる。開口量は開口検査、咀嚼能力は咀嚼機能検査、最大咬合力は咬合力計で測定する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

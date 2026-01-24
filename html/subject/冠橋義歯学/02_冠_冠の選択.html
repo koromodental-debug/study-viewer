@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>冠の選択 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">冠橋義歯学 / 冠</span>
+    <h1>冠の選択</h1>
+    <div class="container">
+
+      <h2>I. クラウンの分類</h2>
+
+      <h3>全部被覆冠</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>材料</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">全部金属冠</td>
+          <td>金合金、金銀パラジウム合金、純チタン</td>
+          <td>強度が高い、臼歯部向き</td>
+        </tr>
+        <tr>
+          <td class="key">陶材焼付冠</td>
+          <td>金属＋陶材</td>
+          <td>審美性と強度を両立</td>
+        </tr>
+        <tr>
+          <td class="key">レジン前装冠</td>
+          <td>金属＋硬質レジン</td>
+          <td>保険適用、製作容易</td>
+        </tr>
+        <tr>
+          <td class="key">オールセラミッククラウン</td>
+          <td>セラミックスのみ</td>
+          <td><span class="highlight">最も審美性に優れる</span></td>
+        </tr>
+      </table>
+
+      <h3>部分被覆冠</h3>
+      <ul>
+        <li>3/4クラウン、4/5クラウン</li>
+        <li>ピンレッジ</li>
+        <li>ラミネートベニア</li>
+        <li>アンレー</li>
+      </ul>
+
+      <h2>II. 選択基準【試験頻出】</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">要求される条件による選択</div>
+        <ul>
+          <li><span class="highlight">審美性重視（前歯）</span> → オールセラミック、陶材焼付冠、ラミネートベニア</li>
+          <li><span class="key">強度重視（臼歯）</span> → 全部金属冠、陶材焼付冠</li>
+          <li><span class="key">歯質保存</span> → ラミネートベニア、部分被覆冠</li>
+          <li><span class="key">金属アレルギー</span> → オールセラミック、純チタン</li>
+        </ul>
+      </div>
+
+      <h3>部位による選択</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>重視される要件</th>
+          <th>適切なクラウン</th>
+        </tr>
+        <tr>
+          <td class="key">前歯部</td>
+          <td><span class="highlight">審美性</span></td>
+          <td>オールセラミック、陶材焼付冠、ラミネートベニア</td>
+        </tr>
+        <tr>
+          <td class="key">小臼歯部</td>
+          <td>審美性＋強度</td>
+          <td>陶材焼付冠、オールセラミック</td>
+        </tr>
+        <tr>
+          <td class="key">大臼歯部</td>
+          <td><span class="key">強度</span></td>
+          <td>全部金属冠、陶材焼付冠</td>
+        </tr>
+      </table>
+
+      <h2>III. 前歯部審美修復の選択</h2>
+
+      <h3>症例による選択</h3>
+      <table>
+        <tr>
+          <th>症例</th>
+          <th>適切な選択</th>
+        </tr>
+        <tr>
+          <td class="key">変色歯</td>
+          <td><span class="highlight">ラミネートベニア</span>、オールセラミッククラウン</td>
+        </tr>
+        <tr>
+          <td class="key">形態異常歯<br>（矮小歯など）</td>
+          <td><span class="highlight">ラミネートベニア</span>、オールセラミッククラウン</td>
+        </tr>
+        <tr>
+          <td class="key">歯冠崩壊が大きい</td>
+          <td><span class="highlight">オールセラミッククラウン</span>、陶材焼付冠</td>
+        </tr>
+        <tr>
+          <td class="key">歯質保存を優先</td>
+          <td><span class="highlight">ラミネートベニア</span></td>
+        </tr>
+        <tr>
+          <td class="key">ブラキシズムあり</td>
+          <td>陶材焼付冠（<span class="caution">ラミネートベニアは禁忌</span>）</td>
+        </tr>
+      </table>
+
+      <h2>IV. 各クラウンの適応症まとめ</h2>
+
+      <table>
+        <tr>
+          <th>クラウン</th>
+          <th>主な適応</th>
+          <th>注意点</th>
+        </tr>
+        <tr>
+          <td class="key">全部金属冠</td>
+          <td>臼歯部、ブリッジ支台、動揺歯固定</td>
+          <td>審美性に劣る</td>
+        </tr>
+        <tr>
+          <td class="key">陶材焼付冠</td>
+          <td>前歯・臼歯、単独冠・ブリッジ</td>
+          <td>製作コスト高い</td>
+        </tr>
+        <tr>
+          <td class="key">オールセラミック</td>
+          <td>審美性要求部位、金属アレルギー</td>
+          <td><span class="caution">衝撃に弱い</span></td>
+        </tr>
+        <tr>
+          <td class="key">ラミネートベニア</td>
+          <td>変色歯、形態異常歯</td>
+          <td><span class="caution">ブラキシズム禁忌</span></td>
+        </tr>
+      </table>
+
+      <h2>V. 過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113D49</div>
+        <p>28歳の女性。上顎右側中切歯の審美不良を主訴として来院した。3年前、1」に補綴装置を装着したが昨日の夕食中に欠けたという。冷温痛は認めない。初診時の口腔内写真（別冊No.7）を別に示す。適切な処置はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯の漂白<br>
+          b 3/4クラウンの装着<br>
+          c ラミネートベニアの装着<br>
+          d オールセラミッククラウンの装着<br>
+          e グラスアイオノマーセメント修復
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】前歯部の審美不良に対しては<span class="highlight">ラミネートベニア</span>または<span class="highlight">オールセラミッククラウン</span>が適切。形態異常歯（矮小歯）には両者とも適応となる。歯の漂白は補綴装置の色調改善には無効。3/4クラウンは隣接面に金属が露出し審美性に劣る。グラスアイオノマーセメント修復は審美的な歯冠形態の回復には不十分。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

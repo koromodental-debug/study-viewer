@@ -185,7 +185,7 @@
       "answer": "AE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "111D72_1.png",
+      "imageFiles": "111D72.png",
       "chapter": "01_歯内療法学総論",
       "theme": "歯内療法における診査・診断",
       "keyword": "X線診査"
@@ -206,7 +206,7 @@
       "answer": "CD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "110B15_1.png",
+      "imageFiles": "110B15.png",
       "chapter": "01_歯内療法学総論",
       "theme": "歯内療法における診査・診断",
       "keyword": "X線診査"
@@ -248,7 +248,7 @@
       "answer": "CD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "105B43_1.png",
+      "imageFiles": "105B43.png",
       "chapter": "01_歯内療法学総論",
       "theme": "歯内療法における診査・診断",
       "keyword": "疾患の診断"
@@ -269,7 +269,7 @@
       "answer": "D",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "114B87_1.png",
+      "imageFiles": "114B87.png",
       "chapter": "01_歯内療法学総論",
       "theme": "歯内療法における診査・診断",
       "keyword": "疾患の診断"
@@ -290,7 +290,7 @@
       "answer": "C",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "115A22_1.png",
+      "imageFiles": "115A22.png",
       "chapter": "01_歯内療法学総論",
       "theme": "歯内療法における診査・診断",
       "keyword": "診査・診断"
@@ -374,7 +374,7 @@
       "answer": "C",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "113C82_1.png",
+      "imageFiles": "113C82.png",
       "chapter": "02_歯髄疾患",
       "theme": "歯髄炎",
       "keyword": "歯髄炎"
@@ -395,7 +395,7 @@
       "answer": "C",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "110B1_1.png",
+      "imageFiles": "110B1.png",
       "chapter": "02_歯髄疾患",
       "theme": "歯髄炎",
       "keyword": "歯髄炎"
@@ -458,7 +458,7 @@
       "answer": "AC",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "106D2_1.png",
+      "imageFiles": "106D2.png",
       "chapter": "02_歯髄疾患",
       "theme": "象牙質知覚過敏症",
       "keyword": "象牙質知覚過敏症"
@@ -500,7 +500,7 @@
       "answer": "A",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "114A57_1.png",
+      "imageFiles": "114A57.png",
       "chapter": "02_歯髄疾患",
       "theme": "歯・歯根の病的吸収",
       "keyword": "歯根吸収"
@@ -521,7 +521,7 @@
       "answer": "BCE",
       "numChoices": 3,
       "hasImage": true,
-      "imageFiles": "116B47_1.png",
+      "imageFiles": "116B47.png",
       "chapter": "03_根尖性歯周疾患",
       "theme": "根尖性歯周炎総論",
       "keyword": "根尖性歯周炎総論"
@@ -542,7 +542,7 @@
       "answer": "CE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "102C24_1.png",
+      "imageFiles": "102C24.png",
       "chapter": "03_根尖性歯周疾患",
       "theme": "根尖性歯周炎総論",
       "keyword": "根尖性歯周炎総論"
@@ -563,7 +563,7 @@
       "answer": "C",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "102D52_1.png",
+      "imageFiles": "102D52.png",
       "chapter": "03_根尖性歯周疾患",
       "theme": "根尖性歯周炎総論",
       "keyword": "根尖性歯周炎総論"
@@ -584,7 +584,7 @@
       "answer": "C",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "107B7_1.png",
+      "imageFiles": "107B7.png",
       "chapter": "03_根尖性歯周疾患",
       "theme": "急性根尖性歯周炎",
       "keyword": "急性根尖性歯周炎"
@@ -626,7 +626,7 @@
       "answer": "DE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "102C6_1.png",
+      "imageFiles": "102C6.png",
       "chapter": "03_根尖性歯周疾患",
       "theme": "慢性根尖性歯周炎",
       "keyword": "慢性根尖性歯周炎"
@@ -647,7 +647,7 @@
       "answer": "D",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "112C80_1.png",
+      "imageFiles": "112C80.png",
       "chapter": "04_歯内歯周疾患",
       "theme": "歯内－歯周疾患",
       "keyword": "歯内歯周疾患"
@@ -731,7 +731,7 @@
       "answer": "CE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "104B43_1.png",
+      "imageFiles": "104B43.png",
       "chapter": "05_歯内治療総論",
       "theme": "ラバーダム防湿・隔壁",
       "keyword": "ラバーダム防湿"
@@ -773,7 +773,7 @@
       "answer": "A",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "114A53_1.png",
+      "imageFiles": "114A53.png",
       "chapter": "05_歯内治療総論",
       "theme": "マイクロスコープ",
       "keyword": "マイクロスコープ"
@@ -794,7 +794,7 @@
       "answer": "C",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "114D58_1.png",
+      "imageFiles": "114D58.png",
       "chapter": "05_歯内治療総論",
       "theme": "マイクロスコープ",
       "keyword": "マイクロスコープ"
@@ -815,7 +815,7 @@
       "answer": "B",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "110D5_1.png",
+      "imageFiles": "110D5.png",
       "chapter": "05_歯内治療総論",
       "theme": "髄室開拡",
       "keyword": "髄室開拡"
@@ -836,7 +836,7 @@
       "answer": "A",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "111D81_1.png",
+      "imageFiles": "111D81.png",
       "chapter": "05_歯内治療総論",
       "theme": "髄室開拡",
       "keyword": "髄室開拡"
@@ -878,7 +878,7 @@
       "answer": "AD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "115A68_1.png",
+      "imageFiles": "115A68.png",
       "chapter": "05_歯内治療総論",
       "theme": "髄室開拡",
       "keyword": "髄室開拡"
@@ -899,7 +899,7 @@
       "answer": "BD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "114C45_1.png",
+      "imageFiles": "114C45.png",
       "chapter": "05_歯内治療総論",
       "theme": "髄室開拡",
       "keyword": "髄室開拡"
@@ -920,7 +920,7 @@
       "answer": "B",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "108C46_1.png",
+      "imageFiles": "108C46.png",
       "chapter": "05_歯内治療総論",
       "theme": "根管拡大・感染根管治療",
       "keyword": "根管拡大"
@@ -941,7 +941,7 @@
       "answer": "ACD",
       "numChoices": 3,
       "hasImage": true,
-      "imageFiles": "116D58_1.png",
+      "imageFiles": "116D58.png",
       "chapter": "05_歯内治療総論",
       "theme": "根管拡大・感染根管治療",
       "keyword": "根管拡大"
@@ -1130,7 +1130,7 @@
       "answer": "BC",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "108D23_1.png",
+      "imageFiles": "108D23.png",
       "chapter": "05_歯内治療総論",
       "theme": "根管拡大・感染根管治療",
       "keyword": "根管拡大"
@@ -1151,7 +1151,7 @@
       "answer": "C",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "109B31_1.png",
+      "imageFiles": "109B31.png",
       "chapter": "05_歯内治療総論",
       "theme": "根管拡大・感染根管治療",
       "keyword": "根管拡大"
@@ -1172,7 +1172,7 @@
       "answer": "CD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "112A31_1.png",
+      "imageFiles": "112A31.png",
       "chapter": "05_歯内治療総論",
       "theme": "洗浄・貼薬・仮封",
       "keyword": "根管洗浄・貼薬"
@@ -1235,7 +1235,7 @@
       "answer": "B",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "114A25_1.png",
+      "imageFiles": "114A25.png",
       "chapter": "05_歯内治療総論",
       "theme": "根管充填",
       "keyword": "根管充填"
@@ -1277,7 +1277,7 @@
       "answer": "DE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "102D24_1.png",
+      "imageFiles": "102D24.png",
       "chapter": "05_歯内治療総論",
       "theme": "根管充填",
       "keyword": "根管充填"
@@ -1298,7 +1298,7 @@
       "answer": "D",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "113D54_1.png",
+      "imageFiles": "113D54.png",
       "chapter": "05_歯内治療総論",
       "theme": "根管充填",
       "keyword": "根管充填"
@@ -1319,7 +1319,7 @@
       "answer": "AE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "106B11_1.png",
+      "imageFiles": "106B11.png",
       "chapter": "05_歯内治療総論",
       "theme": "根管充填",
       "keyword": "根管充填"
@@ -1340,7 +1340,7 @@
       "answer": "B",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "105B46_1.png",
+      "imageFiles": "105B46.png",
       "chapter": "05_歯内治療総論",
       "theme": "根管充填",
       "keyword": "根管充填"
@@ -1529,7 +1529,7 @@
       "answer": "E",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "112C53_1.png",
+      "imageFiles": "112C53.png",
       "chapter": "06_歯髄処置",
       "theme": "覆髄法",
       "keyword": "覆髄法"
@@ -1550,7 +1550,7 @@
       "answer": "CE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "103B16_1.png",
+      "imageFiles": "103B16.png",
       "chapter": "06_歯髄処置",
       "theme": "覆髄法",
       "keyword": "覆髄法"
@@ -1718,7 +1718,7 @@
       "answer": "E",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "112B80_1.png",
+      "imageFiles": "112B80.png",
       "chapter": "07_外科的歯内療法",
       "theme": "歯根尖切除術",
       "keyword": "歯根尖切除術"
@@ -1739,7 +1739,7 @@
       "answer": "CD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "113B87_1.png",
+      "imageFiles": "113B87.png",
       "chapter": "07_外科的歯内療法",
       "theme": "歯根尖切除術",
       "keyword": "歯根尖切除術"
@@ -1760,7 +1760,7 @@
       "answer": "CE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "115C38_1.png",
+      "imageFiles": "115C38.png",
       "chapter": "07_外科的歯内療法",
       "theme": "歯根尖切除術",
       "keyword": "歯根尖切除術"
@@ -1781,7 +1781,7 @@
       "answer": "BC",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "106D40_1.png",
+      "imageFiles": "106D40.png",
       "chapter": "07_外科的歯内療法",
       "theme": "歯根尖切除術",
       "keyword": "歯根尖切除術"
@@ -1802,7 +1802,7 @@
       "answer": "D",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "108D5_1.png",
+      "imageFiles": "108D5.png",
       "chapter": "07_外科的歯内療法",
       "theme": "歯根尖切除術",
       "keyword": "歯根尖切除術"
@@ -1844,7 +1844,7 @@
       "answer": "B",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "116A76_1.png",
+      "imageFiles": "116A76.png",
       "chapter": "07_外科的歯内療法",
       "theme": "歯根尖切除術",
       "keyword": "歯根尖切除術"
@@ -1886,7 +1886,7 @@
       "answer": "CDE",
       "numChoices": 3,
       "hasImage": true,
-      "imageFiles": "115B80_1.png",
+      "imageFiles": "115B80.png",
       "chapter": "07_外科的歯内療法",
       "theme": "歯根尖切除術",
       "keyword": "歯根尖切除術"
@@ -1928,7 +1928,7 @@
       "answer": "E",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "102C11_1.png",
+      "imageFiles": "102C11.png",
       "chapter": "07_外科的歯内療法",
       "theme": "歯の再植",
       "keyword": "歯の再植"
@@ -1991,7 +1991,7 @@
       "answer": "A",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "112B49_1.png",
+      "imageFiles": "112B49.png",
       "chapter": "08_偶発症",
       "theme": "歯内療法における偶発症",
       "keyword": "偶発症"
@@ -2012,7 +2012,7 @@
       "answer": "A",
       "numChoices": 3,
       "hasImage": true,
-      "imageFiles": "114C62_1.png",
+      "imageFiles": "114C62.png",
       "chapter": "08_偶発症",
       "theme": "歯内療法における偶発症",
       "keyword": "偶発症"
@@ -2033,7 +2033,7 @@
       "answer": "BD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "104D15_1.png",
+      "imageFiles": "104D15.png",
       "chapter": "08_偶発症",
       "theme": "歯内療法における偶発症",
       "keyword": "偶発症"
@@ -2054,7 +2054,7 @@
       "answer": "CD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "112D82_1.png",
+      "imageFiles": "112D82.png",
       "chapter": "08_偶発症",
       "theme": "歯内療法における偶発症",
       "keyword": "偶発症"
@@ -2096,7 +2096,7 @@
       "answer": "BD",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "103B2_1.png",
+      "imageFiles": "103B2.png",
       "chapter": "09_歯の外傷",
       "theme": "歯冠破折",
       "keyword": "歯冠破折"
@@ -2159,7 +2159,7 @@
       "answer": "C",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "113C50_1.png",
+      "imageFiles": "113C50.png",
       "chapter": "09_歯の外傷",
       "theme": "歯根破折",
       "keyword": "歯根破折"
@@ -2180,7 +2180,7 @@
       "answer": "A",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "103B6_1.png",
+      "imageFiles": "103B6.png",
       "chapter": "09_歯の外傷",
       "theme": "歯根破折",
       "keyword": "歯根破折"
@@ -2201,7 +2201,7 @@
       "answer": "A",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "114D26_1.png",
+      "imageFiles": "114D26.png",
       "chapter": "09_歯の外傷",
       "theme": "歯根破折",
       "keyword": "歯根破折"
@@ -2264,7 +2264,7 @@
       "answer": "A",
       "numChoices": 1,
       "hasImage": true,
-      "imageFiles": "116B33_1.png",
+      "imageFiles": "116B33.png",
       "chapter": "10_変色歯への対応",
       "theme": "漂白総論",
       "keyword": "漂白総論"
@@ -2306,7 +2306,7 @@
       "answer": "CE",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "111D66_1.png",
+      "imageFiles": "111D66.png",
       "chapter": "10_変色歯への対応",
       "theme": "漂白総論",
       "keyword": "漂白総論"
@@ -2348,7 +2348,7 @@
       "answer": "BC",
       "numChoices": 2,
       "hasImage": true,
-      "imageFiles": "103B25_1.png",
+      "imageFiles": "103B25.png",
       "chapter": "10_変色歯への対応",
       "theme": "失活歯の漂白",
       "keyword": "失活歯の漂白"

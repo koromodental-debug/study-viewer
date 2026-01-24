@@ -589,7 +589,7 @@ const KakomonModule = (function() {
       if (imageList.length > 0 && examNum) {
         imagesHtml = `
           <div class="kakomon-images">
-            ${imageList.map(file => `<img src="${encodeURI(`/images/${examNum}回_Web画像/${file}`)}" alt="${file}">`).join('')}
+            ${imageList.map(file => `<img src="${encodeURI(`images/${examNum}回_Web画像/${file}`)}" alt="${file}">`).join('')}
           </div>
         `;
       }
@@ -602,7 +602,7 @@ const KakomonModule = (function() {
       const examNum = question.examNum || code.match(/^\d+/)?.[0];
       const imageList = question.imageFiles.split(',').map(f => f.trim()).filter(f => f);
       if (imageList.length > 0 && examNum) {
-        const paths = imageList.map(file => encodeURI(`/images/${examNum}回_Web画像/${file}`));
+        const paths = imageList.map(file => encodeURI(`images/${examNum}回_Web画像/${file}`));
         imagePathsJson = JSON.stringify(paths);
       }
     }
@@ -809,8 +809,8 @@ const KakomonModule = (function() {
 
     // 問題ごとにランダムな生徒アイコンを選択（1, 2, 3のいずれか）
     const studentIconNum = Math.floor(Math.random() * 3) + 1;
-    const teacherIcon = '/images/icons/teacher.jpg';
-    const studentIcon = `/images/icons/student${studentIconNum}.png`;
+    const teacherIcon = 'images/icons/teacher.jpg';
+    const studentIcon = `images/icons/student${studentIconNum}.png`;
 
     let html = '<div class="conversation-messages">';
 

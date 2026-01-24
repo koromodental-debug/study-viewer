@@ -613,19 +613,6 @@ const KakomonModule = (function() {
       <div class="kakomon-card" data-index="${index}" data-answer="${escapeHtml(question.answer)}" data-num="${numChoices}" data-answered="false" data-code="${escapeHtml(code)}" data-text="${escapeHtml(questionText)}" data-choices='${choicesJson.replace(/'/g, "&#39;")}' data-images='${imagePathsJson}'>
         <div class="kakomon-header">
           <span class="kakomon-code">${escapeHtml(code)}</span>
-          <span class="kakomon-index">${index + 1} / ${total}</span>
-          <button class="favorite-btn" aria-label="お気に入り">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-            </svg>
-          </button>
-          <button class="save-image-btn" aria-label="画像保存">
-            <svg viewBox="0 0 24 24" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-          </button>
         </div>
 
         <div class="kakomon-question">

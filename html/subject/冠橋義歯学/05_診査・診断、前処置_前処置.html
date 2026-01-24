@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>前処置 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+      --success: #34C759;
+      --warning: #FF9500;
+      --danger: #FF3B30;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+    .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; }
+    .card {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card h2 { font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+    .card h3 { font-size: 17px; font-weight: 600; margin: 24px 0 12px 0; }
+    .card h4 { font-size: 15px; font-weight: 600; margin: 16px 0 8px 0; color: var(--text-secondary); }
+    .point-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .point-box h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+    .point-box ul { margin-left: 20px; }
+    .point-box li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    .highlight { background: #FFF9C4; padding: 2px 4px; border-radius: 4px; }
+    .warning-box {
+      background: #FFF8E6;
+      border-left: 4px solid var(--warning);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .info-box {
+      background: #F0F7FF;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .exam-box {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .exam-box .question { font-weight: 600; margin-bottom: 12px; }
+    .exam-box .options { margin: 12px 0 12px 20px; }
+    .exam-box .answer {
+      background: #E8F5E9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .exam-box .answer-label { font-weight: 600; color: var(--success); }
+    .ref-section {
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding-top: 16px;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .category-card {
+      background: var(--bg-secondary);
+      padding: 16px;
+      border-radius: 12px;
+    }
+    .category-card h5 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    .category-card ul { font-size: 13px; margin-left: 16px; }
+    .category-card li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">TOP</a> &gt; <a href="index.html">冠橋義歯学</a> &gt; 前処置
+    </div>
+
+    <h1>前処置</h1>
+    <p class="subtitle">Chapter 05: 診査・診断、前処置｜頻出度 ★★★★</p>
+
+    <!-- 国試の急所 -->
+    <div class="point-box">
+      <h2>国試の急所</h2>
+      <ul>
+        <li><strong>歯冠長延長術の目的</strong>：①付着歯肉幅の確保 ②帯環効果（フェルール）の付与 ③支台築造の維持力向上</li>
+        <li><strong>帯環効果</strong>：歯肉縁上に1mm以上の歯質を確保→クラウンの脱離・歯根破折を防止</li>
+        <li><strong>抜歯後の顎堤変化</strong>：ポンティック基底面形態、インプラント可否に影響</li>
+        <li><strong>連結冠の前処置</strong>：清掃性向上のための形態修正</li>
+        <li><strong>挺出歯の処置</strong>：咬合平面の回復（歯冠長延長術 or 抜髄+歯冠形成）</li>
+      </ul>
+    </div>
+
+    <!-- 前処置の種類 -->
+    <div class="card">
+      <h2>前処置の種類</h2>
+
+      <div class="category-grid">
+        <div class="category-card">
+          <h5>A. 予防的処置</h5>
+          <ul>
+            <li>プラークコントロール</li>
+            <li>ブラッシング指導</li>
+            <li>PMTC</li>
+          </ul>
+        </div>
+        <div class="category-card">
+          <h5>B. 外科的処置</h5>
+          <ul>
+            <li>抜歯</li>
+            <li>歯根尖切除術</li>
+            <li>ヘミセクション・トライセクション</li>
+            <li>歯根分離</li>
+            <li>小帯切除術</li>
+            <li>顎堤形成術</li>
+            <li><span class="highlight">歯冠長延長術</span></li>
+          </ul>
+        </div>
+        <div class="category-card">
+          <h5>C. 保存的処置</h5>
+          <ul>
+            <li>歯内療法（感染根管治療）</li>
+            <li>歯周治療</li>
+            <li>齲蝕治療</li>
+          </ul>
+        </div>
+        <div class="category-card">
+          <h5>D. 矯正的処置</h5>
+          <ul>
+            <li>整直（アップライティング）</li>
+            <li>正中離開の修正</li>
+            <li>ルートエクストルージョン</li>
+            <li>MTM（小矯正）</li>
+          </ul>
+        </div>
+        <div class="category-card">
+          <h5>E. 補綴的処置</h5>
+          <ul>
+            <li>術前の咬合調整</li>
+            <li>補綴装置の除去</li>
+            <li>暫間補綴装置の装着</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 歯冠長延長術 -->
+    <div class="card">
+      <h2>歯冠長延長術（Crown Lengthening）</h2>
+
+      <p>歯肉切除・骨切除により臨床的歯冠長を延長し、補綴処置に必要な歯質量を確保する術式。</p>
+
+      <h3>目的（★頻出）</h3>
+      <table>
+        <tr><th>目的</th><th>詳細</th></tr>
+        <tr><td class="highlight">付着歯肉幅の確保</td><td>生物学的幅径を侵害しないマージン設定のため</td></tr>
+        <tr><td class="highlight">帯環効果（フェルール）の付与</td><td>歯肉縁上に1mm以上の健全歯質を確保</td></tr>
+        <tr><td>支台築造体の維持力確保</td><td>根管ポスト長の確保、築造体の脱離防止</td></tr>
+        <tr><td>歯頸線の連続性確保</td><td>審美領域での歯肉ラインの調和</td></tr>
+      </table>
+
+      <div class="info-box">
+        <strong>帯環効果（フェルール効果）とは</strong><br>
+        支台築造後、歯肉縁上に残存する健全歯質にクラウンのマージンを適切に設定することで得られる効果。<br>
+        <strong>必要条件</strong>：歯肉縁上に<span class="highlight">1mm以上</span>の厚さの歯質を全周に確保
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【103B38】44歳男性。下顎右側第二小臼歯のクラウン脱落。再歯冠補綴前にある前処置を行った。この前処置の目的はどれか。2つ選べ。</div>
+        <div class="options">
+          a. 歯冠歯根比の改善<br>
+          b. 対合歯挺出の防止<br>
+          c. 付着歯肉幅の確保<br>
+          d. 支台歯への帯環効果の付与<br>
+          e. 支台築造体の根管ポスト長の確保
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：C, D</span><br>
+          歯冠長延長術の主目的は、①付着歯肉幅の確保（生物学的幅径の維持）、②帯環効果の付与（クラウンの脱離・歯根破折防止）。
+        </div>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【113D80】55歳男性。下顎右側第一大臼歯欠損。7┐の前処置後にブリッジ製作。7┐への歯冠長延長術の目的はどれか。2つ選べ。</div>
+        <div class="options">
+          a. 帯環効果の獲得<br>
+          b. 歯冠歯根比の改善<br>
+          c. 欠損部顎堤の形態改善<br>
+          d. 咬合圧負担能力の向上<br>
+          e. 支台歯形成時の露髄防止
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：D, E</span><br>
+          挺出した対合歯（7┐）への歯冠長延長術は、①咬合平面の回復による咬合圧負担能力の向上、②歯質削除量の確保による支台歯形成時の露髄防止が目的。
+        </div>
+      </div>
+    </div>
+
+    <!-- 抜歯後の顎堤変化 -->
+    <div class="card">
+      <h2>抜歯後の顎堤形態変化</h2>
+
+      <p>抜歯後の顎堤は経時的に吸収し、形態が変化する。この変化はブリッジやインプラント治療の計画に重要な影響を与える。</p>
+
+      <h3>顎堤変化が影響を及ぼす項目</h3>
+      <table>
+        <tr><th>影響を受ける項目</th><th>理由</th></tr>
+        <tr><td class="highlight">ポンティック基底面形態</td><td>顎堤形態に合わせた設計が必要</td></tr>
+        <tr><td class="highlight">インプラント治療の可否</td><td>骨量・骨質の評価に影響</td></tr>
+        <tr><td>審美性</td><td>歯肉退縮により審美障害が生じる可能性</td></tr>
+      </table>
+
+      <div class="warning-box">
+        <strong>影響を受けない項目</strong><br>
+        ・咬合様式（顎堤形態とは無関係）<br>
+        ・印象用材料の選択（顎堤形態とは無関係）<br>
+        ・補綴装置の色調（顎堤形態とは無関係）
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【115A54】固定性補綴治療において、抜歯後の顎堤形態の変化が影響を及ぼすのはどれか。2つ選べ。</div>
+        <div class="options">
+          a. 咬合様式<br>
+          b. 印象用材料<br>
+          c. 補綴装置の色調<br>
+          d. インプラント治療の可否<br>
+          e. ポンティックの基底面形態
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：D, E</span><br>
+          顎堤形態の変化は、ポンティック基底面形態の選択とインプラント埋入の可否判断に直接影響する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 連結冠の清掃性 -->
+    <div class="card">
+      <h2>連結冠の清掃性向上</h2>
+
+      <p>連結冠や連結固定では、歯間部の清掃性を確保することが長期的な予後に重要。</p>
+
+      <h3>清掃性向上のための前処置</h3>
+      <ul style="margin-left: 24px; margin-top: 8px;">
+        <li>連結部の形態修正（鼓形空隙の確保）</li>
+        <li>歯間ブラシが通過できる空隙の設計</li>
+        <li>ポンティック基底面の自浄性確保</li>
+      </ul>
+
+      <div class="exam-box">
+        <div class="question">【109B27】63歳女性。口臭を主訴。下顎臼歯部の連結冠に嫌な臭いを感じる。連結冠の再製作を行う前処置として適切なのはどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：B（清掃性の向上）</span><br>
+          連結冠の口臭の原因は歯間部のプラーク停滞。再製作時には清掃性を考慮した連結部形態（鼓形空隙の確保）に修正する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 接着ブリッジの前処置 -->
+    <div class="card">
+      <h2>接着ブリッジの前処置</h2>
+
+      <h3>歯頸線の連続性確保</h3>
+      <p>前歯部の接着ブリッジでは、審美性のために隣在歯との歯頸線を揃える必要がある。</p>
+
+      <div class="exam-box">
+        <div class="question">【108B29】46歳女性。上顎右側中切歯欠損。接着ブリッジ装着前にある前処置を行った。この前処置の目的はどれか。2つ選べ。</div>
+        <div class="options">
+          a. 骨植の改善<br>
+          b. 歯質切削量の減少<br>
+          c. 歯頸線の連続性確保<br>
+          d. メタルフレームの強度増加<br>
+          e. ポンティック基底面の清掃性向上
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：C, E</span><br>
+          接着ブリッジの前処置として歯肉形成を行い、①審美性のための歯頸線の連続性確保、②ポンティック基底面の清掃性向上を図る。
+        </div>
+      </div>
+    </div>
+
+    <!-- 補綴装置脱離後の前処置 -->
+    <div class="card">
+      <h2>補綴装置脱離後の前処置</h2>
+
+      <h3>脱離した補綴装置の再治療</h3>
+      <table>
+        <tr><th>状態</th><th>必要な前処置</th></tr>
+        <tr><td>根尖病変あり</td><td><span class="highlight">感染根管治療</span></td></tr>
+        <tr><td>二次齲蝕あり</td><td>齲蝕除去、支台築造</td></tr>
+        <tr><td>審美回復が急務</td><td><span class="highlight">暫間補綴装置</span>の装着</td></tr>
+        <tr><td>歯根破折の疑い</td><td>抜歯の検討</td></tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【106D39】33歳女性。下顎右側第二小臼歯の補綴装置脱離。X線写真で根尖部に透過像。まず行うべき処置はどれか。2つ選べ。</div>
+        <div class="options">
+          a. 支台築造<br>
+          b. 暫間補綴<br>
+          c. 歯冠延長<br>
+          d. 支台歯形成<br>
+          e. 感染根管治療
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：B, E</span><br>
+          根尖病変がある場合は感染根管治療が必要。また、審美・機能回復のために暫間補綴装置を装着して経過観察する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 矯正的前処置 -->
+    <div class="card">
+      <h2>矯正的前処置</h2>
+
+      <h3>整直（アップライティング）</h3>
+      <p>欠損放置による隣在歯の傾斜を矯正し、ブリッジ支台歯として適切な歯軸を確保する。</p>
+
+      <h3>ルートエクストルージョン（歯根挺出）</h3>
+      <p>歯冠崩壊が著しく、歯肉縁下にのみ残存歯質がある場合に、矯正力で歯根を挺出させて支台歯として利用する。</p>
+
+      <div class="info-box">
+        <strong>ルートエクストルージョンの利点</strong><br>
+        ・帯環効果に必要な歯質を確保できる<br>
+        ・歯冠長延長術と比較して歯冠歯根比が悪化しない
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【105B28】34歳男性。上顎左側第一大臼歯喪失。ブリッジ治療を行う。7┘の傾斜と5┘の挺出が認められる。まず行う前処置はどれか。2つ選べ。</div>
+        <div class="options">
+          a. 抜歯<br>
+          b. 抜髄<br>
+          c. 矯正治療<br>
+          d. 顎堤形成<br>
+          e. 咬合調整
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：B, C</span><br>
+          傾斜歯の整直には矯正治療が必要。挺出歯は咬合平面の回復のために抜髄後に歯冠形成を行う（歯冠長延長術でも可）。
+        </div>
+      </div>
+    </div>
+
+    <!-- 予後不良歯への対応 -->
+    <div class="card">
+      <h2>予後不良歯への対応</h2>
+
+      <h3>歯根破折が疑われる場合</h3>
+      <p>垂直性の歯根破折は保存困難なことが多く、抜歯後にブリッジまたはインプラントによる補綴が必要となる。</p>
+
+      <div class="exam-box">
+        <div class="question">【116C72】52歳男性。上顎左側第一小臼歯のクラウン脱離。垂直打診に反応あり。X線写真で歯根破折が疑われる。適切な治療計画はどれか。</div>
+        <div class="options">
+          a. 挺出 → └4オールセラミッククラウン<br>
+          b. 挺出 → └4コンポジットレジンクラウン<br>
+          c. 抜歯 → └③4⑤レジン前装冠ブリッジ<br>
+          d. 抜歯 → └③4⑤オールセラミックブリッジ<br>
+          e. 歯冠長延長 → └4オールセラミッククラウン
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：D</span><br>
+          歯根破折は保存困難であり抜歯が必要。その後、審美性と強度を考慮してオールセラミックブリッジで補綴する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 全身疾患を有する患者への対応 -->
+    <div class="card">
+      <h2>全身疾患を有する患者への対応</h2>
+
+      <h3>出血傾向のある患者</h3>
+      <p>肝硬変など出血傾向のある患者では、外科的侵襲を伴う処置を避け、保存的な対応を優先する。</p>
+
+      <div class="exam-box">
+        <div class="question">【110B30】63歳男性。プロビジョナルブリッジの破折・脱離を繰り返す。肝硬変による出血傾向あり。適切な処置はどれか。</div>
+        <div class="options">
+          a. 根面被覆型暫間部分床義歯の装着<br>
+          b. 残存歯を連結固定したブリッジの装着<br>
+          c. 保存の難しい残存歯の抜去と即時義歯の装着<br>
+          d. 補強線を埋入したプロビジョナルブリッジの再仮着<br>
+          e. 合着用セメントを用いたプロビジョナルブリッジの装着
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：A</span><br>
+          出血傾向のある患者では抜歯等の外科処置は避ける。根面被覆型暫間部分床義歯は非侵襲的で、支台歯の保護と機能回復が可能。
+        </div>
+      </div>
+    </div>
+
+    <!-- 出典 -->
+    <div class="ref-section">
+      <strong>参考文献</strong><br>
+      ・クラウンブリッジ補綴学 第5版（医歯薬出版）p.104-110, p.127<br>
+      ・第103回〜116回 歯科医師国家試験
+    </div>
+
+  </div>
+</body>
+</html>

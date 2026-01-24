@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診断・治療計画 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+      --success: #34C759;
+      --warning: #FF9500;
+      --danger: #FF3B30;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    .card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 24px 0 12px 0;
+      color: var(--text-primary);
+    }
+    .card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 16px 0 8px 0;
+      color: var(--text-secondary);
+    }
+    .point-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .point-box h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+    .point-box ul { margin-left: 20px; }
+    .point-box li { margin-bottom: 8px; }
+    .keyword-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin: 2px 4px 2px 0;
+    }
+    .flow-box {
+      background: #F0F7FF;
+      border-left: 4px solid var(--accent);
+      padding: 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .flow-box h4 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+    }
+    .step-list li {
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 12px;
+    }
+    .step-list li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: var(--bg-secondary);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .warning-box {
+      background: #FFF8E6;
+      border-left: 4px solid var(--warning);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .danger-box {
+      background: #FFF0F0;
+      border-left: 4px solid var(--danger);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .exam-box {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .exam-box .question {
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .exam-box .options { margin: 12px 0 12px 20px; }
+    .exam-box .answer {
+      background: #E8F5E9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .exam-box .answer-label {
+      font-weight: 600;
+      color: var(--success);
+    }
+    .ref-section {
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding-top: 16px;
+    }
+    .highlight { background: #FFF9C4; padding: 2px 4px; border-radius: 4px; }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .comparison-card {
+      background: var(--bg-secondary);
+      padding: 16px;
+      border-radius: 12px;
+    }
+    .comparison-card h5 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .comparison-card ul {
+      font-size: 13px;
+      margin-left: 16px;
+    }
+    .pros { border-left: 3px solid var(--success); }
+    .cons { border-left: 3px solid var(--danger); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">TOP</a> &gt; <a href="index.html">冠橋義歯学</a> &gt; 診断・治療計画
+    </div>
+
+    <h1>診断・治療計画</h1>
+    <p class="subtitle">Chapter 05: 診査・診断、前処置｜頻出度 ★★★</p>
+
+    <!-- 国試の急所 -->
+    <div class="point-box">
+      <h2>国試の急所</h2>
+      <ul>
+        <li><strong>治療順序</strong>：応急処置→抜歯→歯周基本治療→齲蝕・歯内療法→プロビ→矯正→歯周外科→補綴→術後管理</li>
+        <li><strong>成長期患者</strong>：顎骨の成長が完了するまでインプラント・ブリッジは原則禁忌→可撤性義歯で対応</li>
+        <li><strong>インフォームドコンセント</strong>：予後不良の可能性（抜歯など）も含めて説明し、患者の同意を得る</li>
+        <li><strong>即日対応</strong>：審美的要求→コンポジットレジン修復は当日可能</li>
+      </ul>
+    </div>
+
+    <!-- 治療計画の立案 -->
+    <div class="card">
+      <h2>治療計画の立案（POMR）</h2>
+      <p>POMR（Problem Oriented Medical Record）に基づき、プロブレムリストから治療計画を立案する。</p>
+
+      <div class="flow-box">
+        <h4>標準的な治療順序</h4>
+        <ol class="step-list">
+          <li><strong>応急処置</strong>：主訴に対する処置（暫間固定、軽度の咬合調整など）</li>
+          <li><strong>要抜去歯の抜歯</strong></li>
+          <li><strong>歯周基本治療</strong>：スケーリング・ルートプレーニング</li>
+          <li><strong>齲蝕治療・歯内療法</strong></li>
+          <li><strong>プロビジョナルレストレーション</strong>：歯列と下顎位の安定化、顎機能障害への対応</li>
+          <li><strong>矯正治療</strong>（必要時）</li>
+          <li><strong>歯周治療</strong>：再評価後、必要に応じて歯周外科治療</li>
+          <li><strong>補綴歯科治療</strong>：クラウン・ブリッジ装着</li>
+          <li><strong>術後管理</strong>：定期検診、メインテナンス</li>
+        </ol>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【110D1】47歳女性。6┐の再支台築造とクラウンの再製作、7┐のCR修復を行う。治療の進め方で正しい順序はどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：A（ア）</span><br>
+          7┐のCR修復を先に行い、その後6┐の支台築造とクラウン製作を行う。隣在歯の処置を先に完了させることで、支台歯形成・印象採得時の参照点が安定する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 治療計画を左右する因子 -->
+    <div class="card">
+      <h2>治療計画を左右する因子</h2>
+
+      <h3>A. 局所的因子</h3>
+      <table>
+        <tr><th>因子</th><th>考慮すべき点</th></tr>
+        <tr><td>支台歯の状態</td><td>歯質量、歯髄の状態、歯根長、歯周組織の健康</td></tr>
+        <tr><td>咬合状態</td><td>咬合接触の安定性、咬合力の大きさ</td></tr>
+        <tr><td>欠損の範囲</td><td>欠損数、欠損部位による補綴方法の選択</td></tr>
+        <tr><td>口腔衛生状態</td><td>プラークコントロールの良否</td></tr>
+      </table>
+
+      <h3>B. 全身的因子</h3>
+      <table>
+        <tr><th>因子</th><th>配慮事項</th></tr>
+        <tr><td>有病者・高齢者</td><td>出血傾向、感染リスク、通院困難</td></tr>
+        <tr><td>金属アレルギー</td><td>非金属材料の選択（ジルコニア、レジンなど）</td></tr>
+        <tr><td>顎関節症</td><td>咬合の安定化を優先</td></tr>
+      </table>
+
+      <h3>C. 社会・心理的因子</h3>
+      <table>
+        <tr><th>因子</th><th>配慮事項</th></tr>
+        <tr><td>職業・役職</td><td>審美性の重要度、構音への影響</td></tr>
+        <tr><td>受療条件</td><td>通院期間、費用、治療期間の制約</td></tr>
+        <tr><td>患者の希望</td><td>十分な説明と同意（IC）の取得</td></tr>
+      </table>
+    </div>
+
+    <!-- 成長期患者への対応 -->
+    <div class="card">
+      <h2>成長期患者への対応</h2>
+
+      <div class="danger-box">
+        <strong>重要：顎骨成長完了前の固定性補綴は原則禁忌</strong><br>
+        インプラントやブリッジは顎骨の成長に追従できないため、成長期患者には可撤性義歯で対応する。
+      </div>
+
+      <h3>年齢による補綴方法の選択</h3>
+      <table>
+        <tr><th>年齢</th><th>顎骨成長</th><th>推奨される補綴方法</th></tr>
+        <tr><td>〜18歳頃</td><td>成長途中</td><td class="highlight">可撤性義歯（部分床義歯）</td></tr>
+        <tr><td>18歳以降</td><td>ほぼ完了</td><td>インプラント、ブリッジも検討可能</td></tr>
+      </table>
+
+      <h3>可撤性義歯を選択する理由</h3>
+      <div class="comparison-grid">
+        <div class="comparison-card pros">
+          <h5>可撤性義歯の利点</h5>
+          <ul>
+            <li>顎骨成長に対応可能</li>
+            <li>健全歯を削らない</li>
+            <li>将来の治療変更が容易</li>
+            <li>修理・調整が簡便</li>
+          </ul>
+        </div>
+        <div class="comparison-card cons">
+          <h5>固定性補綴の問題点</h5>
+          <ul>
+            <li>インプラント：骨成長に追従不可</li>
+            <li>ブリッジ：健全歯の切削</li>
+            <li>将来の再治療が複雑化</li>
+            <li>審美的問題が生じる可能性</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【107D7】16歳男子。上顎両側中切歯欠損部の治療を希望。半年前に交通事故で当該歯を失った。適切な処置はどれか。</div>
+        <div class="options">
+          a. 1⊥1へのインプラント<br>
+          b. 2⊥2を支台歯とした固定性ブリッジ<br>
+          c. 32⊥2を支台歯とした固定性ブリッジ<br>
+          d. 32⊥23を支台歯とした固定性ブリッジ<br>
+          e. 5⊥5にワイヤークラスプを用いた部分床義歯
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：E</span><br>
+          16歳は顎骨の成長途中であり、インプラントやブリッジは不適切。可撤性の部分床義歯で対応し、成長完了後に最終補綴を検討する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 補綴装置の選択 -->
+    <div class="card">
+      <h2>補綴装置の選択基準</h2>
+
+      <h3>即日対応が可能な処置</h3>
+      <div class="warning-box">
+        患者が「本日中の改善」を希望する場合：<br>
+        <strong>コンポジットレジン修復</strong>が第一選択（直接法で即日完了）<br>
+        陶材焼付冠、ジルコニアクラウン等は間接法のため即日対応不可
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【115B37】32歳女性。上顎前歯部の空隙による審美不良を主訴。転居予定があり、本日中の審美的改善を希望。適切な処置はどれか。</div>
+        <div class="options">
+          a. 陶材焼付冠の装着<br>
+          b. レジンコーティング<br>
+          c. 硬質レジン前装冠の装着<br>
+          d. コンポジットレジン修復<br>
+          e. ジルコニアクラウンの装着
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：D</span><br>
+          即日対応可能なのはコンポジットレジン修復（直接法）のみ。間接法の補綴装置は技工操作が必要で当日完了不可。
+        </div>
+      </div>
+
+      <h3>審美領域のブリッジ支台装置</h3>
+      <table>
+        <tr><th>支台装置</th><th>特徴</th><th>適応</th></tr>
+        <tr><td>ジルコニアクラウン</td><td>審美性◎、強度○</td><td>臼歯部〜前歯部</td></tr>
+        <tr><td>接着ブリッジ</td><td>歯質削除量少、審美性○</td><td>1歯欠損、咬合力小</td></tr>
+        <tr><td>プロキシマルハーフクラウン</td><td>隣接面のみ被覆</td><td>審美領域の支台</td></tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【115B62】48歳女性。上顎右側大臼歯欠損。審美性に配慮したブリッジ治療を希望。適切な支台装置はどれか。2つ選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：B, E（ジルコニアクラウン、接着ブリッジD字型リテーナー）</span><br>
+          審美領域では金属露出を避けたジルコニアクラウンや、歯質削除量の少ない接着ブリッジが適応となる。
+        </div>
+      </div>
+    </div>
+
+    <!-- インフォームドコンセント -->
+    <div class="card">
+      <h2>インフォームドコンセント</h2>
+
+      <h3>患者への説明義務</h3>
+      <p>治療計画の立案にあたっては、<span class="highlight">予後不良の可能性も含めて十分に説明</span>し、患者の同意を得る必要がある。</p>
+
+      <h4>説明すべき内容</h4>
+      <ul style="margin-left: 24px; margin-top: 8px;">
+        <li>診断結果と現在の状態</li>
+        <li>治療方法の選択肢とそれぞれのメリット・デメリット</li>
+        <li>治療期間と費用の目安</li>
+        <li><strong>予後不良の可能性（抜歯の可能性など）</strong></li>
+        <li>治療しない場合のリスク</li>
+      </ul>
+
+      <div class="exam-box">
+        <div class="question">【105B32】32歳女性。上顎左側中切歯根尖部の腫れを主訴。8年前にブリッジ治療。2か月前に転倒で顔面強打後から腫れを自覚。適切な説明はどれか。</div>
+        <div class="options">
+          a. 「抜歯になる可能性があります」<br>
+          b. 「ブリッジを修理して元に戻しましょう」<br>
+          c. 「腫れがおさまるまでこのまま様子を見ましょう」<br>
+          d. 「お口の中で咬み合わせを調整すれば大丈夫です」<br>
+          e. 「インプラントを入れると今日から噛めるようになります」
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：A</span><br>
+          外傷後の根尖病変は歯根破折の可能性があり、抜歯が必要となる可能性を説明する。予後不良の可能性を含めた説明がインフォームドコンセントの基本。
+        </div>
+      </div>
+    </div>
+
+    <!-- クラウンブリッジの失敗原因 -->
+    <div class="card">
+      <h2>クラウンブリッジの失敗原因</h2>
+
+      <table>
+        <tr><th>分類</th><th>具体的な原因</th></tr>
+        <tr>
+          <td><strong>生物学的問題</strong></td>
+          <td>二次齲蝕、歯周病、歯の動揺、歯髄炎、根尖性歯周炎、知覚過敏</td>
+        </tr>
+        <tr>
+          <td><strong>審美的問題</strong></td>
+          <td>マージン部の露出、修復材料の変色・磨耗</td>
+        </tr>
+        <tr>
+          <td><strong>力学的・材料学的問題</strong></td>
+          <td>陶材やレジンの破折・破損、歯冠・歯根の破折、脱離・脱落、連結部の破損</td>
+        </tr>
+      </table>
+
+      <p style="margin-top: 16px;">これらの失敗原因を予防するため、治療計画段階で<strong>リスク評価</strong>を行い、適切な補綴設計と材料選択を行う。</p>
+    </div>
+
+    <!-- 出典 -->
+    <div class="ref-section">
+      <strong>参考文献</strong><br>
+      ・クラウンブリッジ補綴学 第5版（医歯薬出版）p.47-60<br>
+      ・第105回・107回・110回・115回 歯科医師国家試験
+    </div>
+
+  </div>
+</body>
+</html>

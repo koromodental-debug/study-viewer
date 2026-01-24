@@ -103,14 +103,17 @@ const FirebaseSync = (function() {
 
     if (user) {
       console.log('[FirebaseSync] ログイン:', user.email);
-      // ログイン時：クラウドからデータを取得して同期
-      await pullFromCloud();
+      // リスナーに先に通知（UIを即座に更新）
+      authStateListeners.forEach(listener => listener(user));
+      // 同期はバックグラウンドで実行（エラーでもブロックしない）
+      pullFromCloud().catch(err => {
+        console.warn('[FirebaseSync] バックグラウンド同期エラー（無視）:', err.message);
+      });
     } else {
       console.log('[FirebaseSync] ログアウト状態');
+      // リスナーに通知
+      authStateListeners.forEach(listener => listener(user));
     }
-
-    // リスナーに通知
-    authStateListeners.forEach(listener => listener(user));
   }
 
   /**
@@ -185,13 +188,28 @@ const FirebaseSync = (function() {
         }
       });
 
-      // Firestoreに保存
-      await userDocRef.set(syncData, { merge: true });
+      // Firestoreに保存（5秒タイムアウト）
+      await withTimeout(userDocRef.set(syncData, { merge: true }), 5000, 'Firestore書き込みタイムアウト');
       console.log('[FirebaseSync] クラウドにプッシュ完了');
     } catch (error) {
       console.error('[FirebaseSync] プッシュエラー:', error);
+      // オフラインエラーは警告として扱う（投げない）
+      if (error.message?.includes('offline') || error.message?.includes('タイムアウト')) {
+        console.warn('[FirebaseSync] オフラインまたはタイムアウト - 後で再試行');
+        return;
+      }
       throw error;
     }
+  }
+
+  /**
+   * タイムアウト付きPromise
+   */
+  function withTimeout(promise, ms, errorMsg = 'タイムアウト') {
+    return Promise.race([
+      promise,
+      new Promise((_, reject) => setTimeout(() => reject(new Error(errorMsg)), ms))
+    ]);
   }
 
   /**
@@ -205,7 +223,8 @@ const FirebaseSync = (function() {
 
     try {
       const userDocRef = db.collection('users').doc(currentUser.uid);
-      const doc = await userDocRef.get();
+      // 5秒でタイムアウト
+      const doc = await withTimeout(userDocRef.get(), 5000, 'Firestore接続タイムアウト');
 
       if (doc.exists) {
         const cloudData = doc.data();
@@ -220,6 +239,11 @@ const FirebaseSync = (function() {
       }
     } catch (error) {
       console.error('[FirebaseSync] プルエラー:', error);
+      // オフラインエラーは警告として扱う（投げない）
+      if (error.message?.includes('offline') || error.message?.includes('タイムアウト')) {
+        console.warn('[FirebaseSync] オフラインまたはタイムアウト - ローカルデータを使用');
+        return;
+      }
       throw error;
     }
   }
@@ -1057,6 +1081,11 @@ function initAccountUI() {
       // 4. 末尾カンマを除去 (,] や ,} を修正)
       cleanText = cleanText.replace(/,\s*]/g, ']').replace(/,\s*}/g, '}');
 
+      // 4.5. 文字列値内のエスケープされていないダブルクォートを「」に変換
+      // パターン: の"xxx"で or の"xxx"を などを検出して変換
+      // 日本語文字の後の"と、"の後の日本語文字で閉じるパターン
+      cleanText = cleanText.replace(/([\u3000-\u9fff])"([^"]{1,20})"([\u3000-\u9fff])/g, '$1「$2」$3');
+
       // 5. コメントを除去 (// comment や /* comment */)
       cleanText = cleanText.replace(/\/\/[^\n]*/g, '').replace(/\/\*[\s\S]*?\*\//g, '');
 
@@ -1068,10 +1097,23 @@ function initAccountUI() {
       cleanText = cleanText.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
 
       // デバッグ: パース前のテキストをログ出力
-      console.log('[JSON Import] クリーン後のテキスト:', cleanText.substring(0, 100));
-      console.log('[JSON Import] 最初の10文字のcharCode:', [...cleanText.substring(0, 10)].map(c => c.charCodeAt(0).toString(16)));
+      console.log('[JSON Import] クリーン後のテキスト:', cleanText.substring(0, 200));
 
-      const jsonData = JSON.parse(cleanText);
+      let jsonData;
+      try {
+        jsonData = JSON.parse(cleanText);
+      } catch (parseError) {
+        // エラー位置周辺のテキストを表示
+        const match = parseError.message.match(/position (\d+)/);
+        if (match) {
+          const pos = parseInt(match[1]);
+          const start = Math.max(0, pos - 50);
+          const end = Math.min(cleanText.length, pos + 50);
+          console.error('[JSON Import] エラー位置周辺:', cleanText.substring(start, end));
+          console.error('[JSON Import] エラー位置の文字:', cleanText[pos], '(charCode:', cleanText.charCodeAt(pos)?.toString(16), ')');
+        }
+        throw parseError;
+      }
 
       // JSONの検証
       if (!jsonData.sections || !Array.isArray(jsonData.sections)) {

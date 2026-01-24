@@ -797,6 +797,11 @@ const KakomonModule = (function() {
         }
 
         btn.style.display = 'none';
+
+        // 解説を画面中央にスクロール
+        setTimeout(() => {
+          container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
       });
     }
   }

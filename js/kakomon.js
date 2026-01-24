@@ -364,6 +364,11 @@ const KakomonModule = (function() {
    * questions.jsonのフォーマットをkakomon形式に変換
    */
   function convertQuestionFormat(q) {
+    // 画像パスからファイル名だけを抽出
+    let imageFiles = '';
+    if (q.images && q.images.length > 0) {
+      imageFiles = q.images.map(path => path.split('/').pop()).join(',');
+    }
     return {
       code: q.id,
       examNum: q.year,
@@ -374,7 +379,7 @@ const KakomonModule = (function() {
       answer: q.answer,
       numChoices: q.choiceCount || 1,
       hasImage: q.hasFigure,
-      imageFiles: q.images ? q.images.join(',') : ''
+      imageFiles: imageFiles
     };
   }
 

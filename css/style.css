@@ -14336,8 +14336,8 @@ body.is-practice .tab-content {
   }
 
   :root:not([data-theme="light"]) .kakomon-submit:disabled {
-    background: #3A3A3C;
-    color: #8E8E93;
+    background: #48484A !important;
+    color: #AEAEB2 !important;
   }
 
   :root:not([data-theme="light"]) .show-explanation-btn {

@@ -798,9 +798,12 @@ const KakomonModule = (function() {
 
         btn.style.display = 'none';
 
-        // 解説を画面中央にスクロール
+        // 正解表示と解説の冒頭が見えるようスクロール
         setTimeout(() => {
-          container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const resultDiv = card.querySelector('.kakomon-result');
+          if (resultDiv) {
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }, 100);
       });
     }

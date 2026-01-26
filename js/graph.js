@@ -1006,6 +1006,14 @@ const GraphModule = (function() {
         }, 300);
       }
     });
+
+    // リセットボタンのイベントリスナー
+    const resetBtn = document.getElementById('graph-reset-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        resetGraph();
+      });
+    }
   }
 
   /**
@@ -1210,6 +1218,37 @@ const GraphModule = (function() {
   }
 
   /**
+   * グラフをリセット（ノードを中央に戻してアニメーション再開）
+   */
+  function resetGraph() {
+    if (!simulation || !nodesGroup) return;
+
+    const container = document.getElementById('graph-viewport');
+    if (!container) return;
+
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    // すべてのノードを中央付近にリセット
+    nodesGroup.selectAll('g').each(function(d) {
+      d.x = width / 2 + (Math.random() - 0.5) * 100;
+      d.y = height / 2 + (Math.random() - 0.5) * 100;
+      d.vx = 0;
+      d.vy = 0;
+      d.fx = null;
+      d.fy = null;
+    });
+
+    // 選択状態をクリア
+    deselectNode();
+
+    // シミュレーションを強くリスタート
+    simulation.alpha(1).restart();
+
+    console.log('Graph reset');
+  }
+
+  /**
    * グラフを破棄
    */
   function destroyGraph() {
@@ -1267,6 +1306,7 @@ const GraphModule = (function() {
     // 新しいグラフ機能
     initGraph,
     destroyGraph,
+    resetGraph,
     selectNode,
     deselectNode,
     centerOnNode

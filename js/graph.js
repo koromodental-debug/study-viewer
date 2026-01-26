@@ -176,7 +176,10 @@ const GraphModule = (function() {
    * グラフを初期化・描画
    */
   async function initGraph() {
-    if (isGraphInitialized) return;
+    // 既に初期化されている場合は、一度破棄してから再初期化
+    if (isGraphInitialized) {
+      destroyGraph();
+    }
 
     // D3.jsが読み込まれているか確認
     if (typeof d3 === 'undefined') {

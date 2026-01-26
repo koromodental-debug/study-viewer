@@ -1996,39 +1996,77 @@ const FlashcardModule = (function() {
     return x - Math.floor(x);
   }
 
-  // 今日の10問のカード参照を収集
-  function collectDailyTenCardRefs() {
+  // 今日の10問のカード参照を収集（全デッキからランダムに10トピック×1問）
+  async function collectDailyTenCardRefs() {
     const seed = getDailyRandomSeed();
-    const allCardRefs = [];
 
-    // 学習済みカードを収集
-    for (const [key, value] of Object.entries(state.progress)) {
-      const parts = key.split(':');
-      if (parts.length >= 2) {
-        const topicId = parts[0];
-        const cardIndex = parseInt(parts[1]);
-        if (!isNaN(cardIndex)) {
-          allCardRefs.push({ topicId, cardIndex, key });
-        }
-      }
+    // qaPathがあるトピックを収集
+    const topicsWithQA = DATA.filter(item => item.qaPath);
+
+    if (topicsWithQA.length === 0) {
+      return [];
     }
 
     // シード付きシャッフル（Fisher-Yates with seeded random）
+    const shuffledTopics = [...topicsWithQA];
     let currentSeed = seed;
-    for (let i = allCardRefs.length - 1; i > 0; i--) {
+    for (let i = shuffledTopics.length - 1; i > 0; i--) {
       currentSeed = (currentSeed * 9301 + 49297) % 233280;
       const j = Math.floor((currentSeed / 233280) * (i + 1));
-      [allCardRefs[i], allCardRefs[j]] = [allCardRefs[j], allCardRefs[i]];
+      [shuffledTopics[i], shuffledTopics[j]] = [shuffledTopics[j], shuffledTopics[i]];
     }
 
-    // 最初の10問を返す
-    return allCardRefs.slice(0, 10);
+    // 最初の10トピックを選択
+    const selectedTopics = shuffledTopics.slice(0, 10);
+
+    // 各トピックからランダムに1問選択（並列で読み込み）
+    const cardRefs = await Promise.all(selectedTopics.map(async (topic, idx) => {
+      try {
+        const response = await fetch(topic.qaPath);
+        if (!response.ok) return null;
+        const qaData = await response.json();
+
+        // 全セクションのQAを収集
+        const allQA = [];
+        for (const section of qaData.sections || []) {
+          for (let i = 0; i < (section.qa || []).length; i++) {
+            allQA.push({ sectionIndex: qaData.sections.indexOf(section), qaIndex: i });
+          }
+        }
+
+        if (allQA.length === 0) return null;
+
+        // シード付きでランダムに1問選択（トピックごとに異なるシードを使用）
+        const topicSeed = seed + idx * 12345;
+        const randomIndex = Math.abs(topicSeed) % allQA.length;
+        const selected = allQA[randomIndex];
+
+        // cardIndexを計算（全セクション通しの番号）
+        let cardIndex = 0;
+        for (let s = 0; s < selected.sectionIndex; s++) {
+          cardIndex += (qaData.sections[s].qa || []).length;
+        }
+        cardIndex += selected.qaIndex;
+
+        return {
+          topicId: topic.id,
+          cardIndex: cardIndex,
+          key: `${topic.id}:${cardIndex}`
+        };
+      } catch (e) {
+        console.warn(`[collectDailyTenCardRefs] ${topic.id}の読み込みに失敗:`, e);
+        return null;
+      }
+    }));
+
+    // nullを除外
+    return cardRefs.filter(ref => ref !== null);
   }
 
   // 今日の10問のカード一覧表示
   async function renderDailyTenCardList() {
     console.log('[renderDailyTenCardList] 開始');
-    const cardRefs = collectDailyTenCardRefs();
+    const cardRefs = await collectDailyTenCardRefs();
 
     if (cardRefs.length === 0) {
       return;
@@ -2317,11 +2355,11 @@ const FlashcardModule = (function() {
   // 今日の10問の演習開始
   async function startDailyTenDeck() {
     console.log('[startDailyTenDeck] 開始');
-    const cardRefs = collectDailyTenCardRefs();
+    const cardRefs = await collectDailyTenCardRefs();
     console.log('[startDailyTenDeck] cardRefs:', cardRefs.length);
 
     if (cardRefs.length === 0) {
-      showToast('学習済みのカードがありません', 2000);
+      showToast('カードの読み込みに失敗しました', 2000);
       return;
     }
 

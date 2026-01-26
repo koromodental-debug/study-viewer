@@ -6174,6 +6174,35 @@ body:not(.is-practice) #flashcard-content {
   gap: 8px;
 }
 
+/* カテゴリヘッダー */
+.deck-category-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px 6px;
+  margin-top: 20px;
+}
+
+.deck-category-header:first-child {
+  margin-top: 4px;
+}
+
+.deck-category-header::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+.deck-category-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.3px;
+}
+
 /* 科目行 */
 .deck-subject {
   background: var(--bg-color);
@@ -8182,6 +8211,10 @@ body.is-practice .tab-content {
   background: var(--card-bg);
 }
 
+[data-theme="dark"] .deck-category-name {
+  color: #aaa;
+}
+
 [data-theme="dark"] .deck-subject-header:active {
   background: rgba(255, 255, 255, 0.08);
 }
@@ -8718,6 +8751,10 @@ body.is-practice .tab-content {
 
   :root:not([data-theme="light"]) .deck-subject {
     background: var(--card-bg);
+  }
+
+  :root:not([data-theme="light"]) .deck-category-name {
+    color: #aaa;
   }
 
   :root:not([data-theme="light"]) .deck-subject-header:active {

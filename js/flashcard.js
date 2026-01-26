@@ -10,18 +10,55 @@ const FlashcardModule = (function() {
   const DECK_CUSTOMIZATIONS_KEY = 'studyViewer_deckCustomizations';
   const STORAGE_VERSION = 1;
 
-  // 科目の表示順序（インポート済み → 必修 → 基礎系 → 臨床系）
+  // 科目の表示順序（インポート済み → 必修 → 基礎系 → 保存系 → 補綴系 → その他臨床系 → 社会歯科系）
   const SUBJECT_ORDER = [
     'インポート済み',
     '必修',
     // 基礎系
     '解剖', '組織', '生理', '生化',
     '病理', '微生物・免疫', '薬理', '歯科理工',
-    '公衆衛生', '疫学', '口腔衛生',
-    // 臨床系
-    '保存修復', '歯周病', '口腔外科', '歯科放射線',
-    '全部床義歯', '部分床義歯', '高齢者歯科', '摂食嚥下'
+    // 保存系
+    '保存修復', '歯内療法学', '歯周病',
+    // 補綴系
+    '全部床義歯', '部分床義歯', '冠橋義歯', 'インプラント',
+    // その他臨床系
+    '口腔外科', '歯科放射線', '高齢者歯科', '摂食嚥下',
+    // 社会歯科系
+    '公衆衛生', '疫学', '口腔衛生'
   ];
+
+  // 科目カテゴリ定義（色分け用）
+  const SUBJECT_CATEGORIES = {
+    'インポート済み': { category: 'インポート', color: '#8E8E93' },  // グレー
+    '必修': { category: '必修', color: '#FF9500' },      // オレンジ
+    // 基礎系
+    '解剖': { category: '基礎系', color: '#007AFF' },    // 青
+    '組織': { category: '基礎系', color: '#007AFF' },
+    '生理': { category: '基礎系', color: '#007AFF' },
+    '生化': { category: '基礎系', color: '#007AFF' },
+    '病理': { category: '基礎系', color: '#007AFF' },
+    '微生物・免疫': { category: '基礎系', color: '#007AFF' },
+    '薬理': { category: '基礎系', color: '#007AFF' },
+    '歯科理工': { category: '基礎系', color: '#007AFF' },
+    // 保存系
+    '保存修復': { category: '保存系', color: '#34C759' },  // 緑
+    '歯内療法学': { category: '保存系', color: '#34C759' },
+    '歯周病': { category: '保存系', color: '#34C759' },
+    // 補綴系
+    '全部床義歯': { category: '補綴系', color: '#AF52DE' }, // 紫
+    '部分床義歯': { category: '補綴系', color: '#AF52DE' },
+    '冠橋義歯': { category: '補綴系', color: '#AF52DE' },
+    'インプラント': { category: '補綴系', color: '#AF52DE' },
+    // 外科系
+    '口腔外科': { category: '外科系', color: '#FF3B30' },  // 赤
+    '歯科放射線': { category: '外科系', color: '#FF3B30' },
+    '高齢者歯科': { category: '外科系', color: '#FF3B30' },
+    '摂食嚥下': { category: '外科系', color: '#FF3B30' },
+    // 社会歯科系
+    '公衆衛生': { category: '社会歯科系', color: '#5AC8FA' }, // 水色
+    '疫学': { category: '社会歯科系', color: '#5AC8FA' },
+    '口腔衛生': { category: '社会歯科系', color: '#5AC8FA' }
+  };
 
   // 状態
   const state = {
@@ -1076,10 +1113,26 @@ const FlashcardModule = (function() {
       <!-- 科目一覧 -->
       <div class="deck-subjects-wrapper">
         <div class="deck-subjects-list" id="deck-subjects-list">
-          ${subjects.map(subject => renderSubjectRow(subject)).join('')}
+          ${renderSubjectsWithCategories(subjects)}
         </div>
       </div>
     `;
+  }
+
+  // 科目リストをカテゴリヘッダー付きでレンダリング
+  function renderSubjectsWithCategories(subjects) {
+    let lastCategory = null;
+    return subjects.map(subject => {
+      const info = SUBJECT_CATEGORIES[subject] || { category: 'その他', color: '#8E8E93' };
+      let header = '';
+      if (info.category !== lastCategory) {
+        header = `<div class="deck-category-header" style="color: ${info.color}">
+          <span class="deck-category-name">${info.category}</span>
+        </div>`;
+        lastCategory = info.category;
+      }
+      return header + renderSubjectRow(subject, info.color);
+    }).join('');
   }
 
   // 検索モードの表示
@@ -1114,7 +1167,9 @@ const FlashcardModule = (function() {
     return div.innerHTML;
   }
 
-  function renderSubjectRow(subject) {
+  function renderSubjectRow(subject, categoryColor) {
+    // カテゴリ色が渡されない場合はSUBJECT_CATEGORIESから取得
+    const catColor = categoryColor || (SUBJECT_CATEGORIES[subject] || { color: '#8E8E93' }).color;
     const allTopics = DATA.filter(d => d.subject === subject && (d.qaPath || d.localJsonData));
     // 重複除外: .txtと.jsonの両方がある場合、.jsonを優先
     const topics = deduplicateTopics(allTopics);

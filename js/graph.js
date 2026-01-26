@@ -1261,6 +1261,13 @@ const GraphModule = (function() {
       simulation.stop();
       simulation = null;
     }
+
+    // ズームをリセット
+    if (svg && zoomBehavior) {
+      svg.call(zoomBehavior.transform, d3.zoomIdentity);
+    }
+    zoomBehavior = null;
+
     if (svg) {
       svg.selectAll('*').remove();
     }

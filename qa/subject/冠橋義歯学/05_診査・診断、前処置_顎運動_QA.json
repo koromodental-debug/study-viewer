@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "title": "顎運動",
+    "category": "冠橋義歯学",
+    "chapter": "05_診査・診断、前処置"
+  },
+  "sections": [
+    {
+      "section": "Posseltの図形",
+      "qa": [
+        {
+          "question": "顎関節の模式図（A）とPosseltの図形（B）を示す。Aの状態に対応するのはBのどれか。1つ選べ。",
+          "choices": {
+            "a": "ア",
+            "b": "イ",
+            "c": "ウ",
+            "d": "エ",
+            "e": "オ"
+          },
+          "answer": "E",
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "116A68"
+        }
+      ]
+    },
+    {
+      "section": "Bonwill三角とBalkwill角",
+      "qa": [
+        {
+          "question": "Bonwill三角と関連するのはどれか。1つ選べ。",
+          "choices": {
+            "a": "切歯路角",
+            "b": "Fischer角",
+            "c": "Bennett角",
+            "d": "Balkwill角",
+            "e": "矢状顆路傾斜角"
+          },
+          "answer": "D",
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "114C58"
+        }
+      ]
+    },
+    {
+      "section": "審美的基準",
+      "qa": [
+        {
+          "question": "前歯部ブリッジの形態不良を主訴に来院した50歳の女性の、初診時の口元の写真（別冊No.29A）、診察中に治療の参考となる補助線を記入した写真（別冊No.29B）及び治療後の口腔内写真（別冊No.29C）を別に示す。治療の参考としたのはどれか。2つ選べ。",
+          "choices": {
+            "a": "瞳孔線",
+            "b": "顔面正中",
+            "c": "Spee彎曲",
+            "d": "Balkwill角",
+            "e": "Bonwill三角"
+          },
+          "answer": "A, B",
+          "correctAnswer": "AB",
+          "numChoices": 2,
+          "code": "116B72"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>支台築造 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+      --success: #34C759;
+      --warning: #FF9500;
+      --danger: #FF3B30;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+    .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; }
+    .card {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card h2 { font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+    .card h3 { font-size: 17px; font-weight: 600; margin: 24px 0 12px 0; }
+    .point-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .point-box h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+    .point-box ul { margin-left: 20px; }
+    .point-box li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    .highlight { background: #FFF9C4; padding: 2px 4px; border-radius: 4px; }
+    .info-box {
+      background: #F0F7FF;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .warning-box {
+      background: #FFF8E6;
+      border-left: 4px solid var(--warning);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .danger-box {
+      background: #FFF0F0;
+      border-left: 4px solid var(--danger);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .exam-box {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .exam-box .question { font-weight: 600; margin-bottom: 12px; }
+    .exam-box .options { margin: 12px 0 12px 20px; }
+    .exam-box .answer {
+      background: #E8F5E9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .exam-box .answer-label { font-weight: 600; color: var(--success); }
+    .ref-section {
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding-top: 16px;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .comparison-card {
+      background: var(--bg-secondary);
+      padding: 16px;
+      border-radius: 12px;
+    }
+    .comparison-card h5 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .comparison-card ul { font-size: 13px; margin-left: 16px; }
+    .comparison-card li { margin-bottom: 4px; }
+    .pros { border-left: 3px solid var(--success); }
+    .cons { border-left: 3px solid var(--danger); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">TOP</a> &gt; <a href="index.html">冠橋義歯学</a> &gt; 支台築造
+    </div>
+
+    <h1>支台築造</h1>
+    <p class="subtitle">Chapter 06: 支台歯形成｜頻出度 ★★★★</p>
+
+    <!-- 国試の急所 -->
+    <div class="point-box">
+      <h2>国試の急所</h2>
+      <ul>
+        <li><strong>歯根破折防止</strong>：①ファイバーポストを使用 ②ポストを細く・短くしない（適切な長さ）</li>
+        <li><strong>ファイバーポスト</strong>：弾性係数が象牙質に近い→応力集中を防ぎ歯根破折リスク低減</li>
+        <li><strong>ポスト長</strong>：歯冠長と同等以上、または歯根長の2/3以上</li>
+        <li><strong>直接法の利点</strong>：その日のうちに築造完了、アンダーカット許容可能</li>
+        <li><strong>ファイバーポストの表面処理</strong>：リン酸処理→シラン処理→接着</li>
+      </ul>
+    </div>
+
+    <!-- 支台築造の種類 -->
+    <div class="card">
+      <h2>支台築造の種類</h2>
+
+      <table>
+        <tr><th>種類</th><th>材料</th><th>特徴</th></tr>
+        <tr>
+          <td><strong>セメント築造</strong></td>
+          <td>リン酸亜鉛セメント、グラスアイオノマーセメント</td>
+          <td>歯冠部歯質の崩壊が少ない場合に適応</td>
+        </tr>
+        <tr>
+          <td><strong>レジン築造</strong></td>
+          <td>コンポジットレジン（＋既製ポスト）</td>
+          <td>直接法・間接法あり、生活歯・失活歯両方に使用可</td>
+        </tr>
+        <tr>
+          <td><strong>鋳造体築造</strong><br>（メタルコア）</td>
+          <td>金銀パラジウム合金など</td>
+          <td>間接法、高い強度、歯根破折リスクあり</td>
+        </tr>
+      </table>
+
+      <h3>支台築造の選択基準</h3>
+      <table>
+        <tr><th>残存歯質</th><th>推奨される築造法</th></tr>
+        <tr><td>歯冠部歯質が十分残存</td><td>セメント築造、レジン築造（ポストなし）</td></tr>
+        <tr><td>歯冠部歯質が少ない</td><td>レジン築造＋ファイバーポスト、鋳造体築造</td></tr>
+        <tr><td>歯肉縁下まで崩壊</td><td>歯冠長延長術後に築造</td></tr>
+      </table>
+    </div>
+
+    <!-- ポストの種類 -->
+    <div class="card">
+      <h2>既製ポストの種類</h2>
+
+      <h3>金属ポスト vs ファイバーポスト</h3>
+      <table>
+        <tr><th>項目</th><th>金属ポスト</th><th>ファイバーポスト</th></tr>
+        <tr><td>材料</td><td>ステンレス鋼、チタン合金、純チタン</td><td>クオーツファイバー、グラスファイバー</td></tr>
+        <tr><td>弾性係数</td><td>象牙質より高い</td><td class="highlight">象牙質に近い</td></tr>
+        <tr><td>歯根破折リスク</td><td>高い（応力集中）</td><td class="highlight">低い</td></tr>
+        <tr><td>審美性</td><td>金属色が透過する可能性</td><td>良好（オールセラミックに適合）</td></tr>
+        <tr><td>再治療</td><td>除去が困難</td><td>除去が比較的容易</td></tr>
+      </table>
+
+      <div class="info-box">
+        <strong>ファイバーポストが歯根破折を防ぐ理由</strong><br>
+        ファイバーポストの弾性係数は象牙質に近いため、咬合力が加わった際に歯根への応力集中が起きにくい。金属ポストは弾性係数が高く、ポスト先端に応力が集中して歯根破折を起こしやすい。
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【102A30】支台築造で歯根破折の防止に有効なのはどれか。2つ選べ。</div>
+        <div class="options">
+          a. ポストを太くする<br>
+          b. メタルコアを用いる<br>
+          c. ポストを長くする<br>
+          d. ファイバーポストを用いる<br>
+          e. ポスト周囲のセメント層を薄くする
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：C, D</span><br>
+          ファイバーポストは象牙質に近い弾性係数で応力集中を防ぐ。ポストを長くすることで維持力が増し、応力分散効果も得られる。
+        </div>
+      </div>
+    </div>
+
+    <!-- 直接法と間接法 -->
+    <div class="card">
+      <h2>レジン支台築造の直接法と間接法</h2>
+
+      <div class="comparison-grid">
+        <div class="comparison-card pros">
+          <h5>直接法の利点</h5>
+          <ul>
+            <li>その日のうちに築造完了</li>
+            <li>来院回数が少ない</li>
+            <li>アンダーカットを許容できる</li>
+            <li>歯質削除量が少ない</li>
+            <li>重合収縮が小さい</li>
+          </ul>
+        </div>
+        <div class="comparison-card pros">
+          <h5>間接法の利点</h5>
+          <ul>
+            <li>1回のチェアタイムを短縮</li>
+            <li>来院回数が1回増える</li>
+            <li>適正な支台歯形態を付与しやすい</li>
+            <li>築造体の重合が確実</li>
+            <li>技工室でレジンコアを製作</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【115A69】65歳男性。上顎右側第二小臼歯のクラウン脱離。根管治療後にクラウン補綴を行う。支台築造の方法は？</div>
+        <div class="answer">
+          <span class="answer-label">正解：B（間接法）</span><br>
+          残存歯質量や根管形態によって直接法・間接法を選択する。複雑な根管形態や残存歯質が少ない場合は間接法が適する。
+        </div>
+      </div>
+    </div>
+
+    <!-- ポストの設計原則 -->
+    <div class="card">
+      <h2>ポストの設計原則</h2>
+
+      <h3>ポスト長の基準</h3>
+      <table>
+        <tr><th>基準</th><th>推奨値</th></tr>
+        <tr><td>歯冠長との関係</td><td class="highlight">歯冠長と同等以上</td></tr>
+        <tr><td>歯根長との関係</td><td class="highlight">歯根長の2/3以上</td></tr>
+        <tr><td>根尖部の残存根管充填材</td><td>最低4mm以上残す</td></tr>
+      </table>
+
+      <h3>ポスト径の基準</h3>
+      <ul style="margin-left: 24px; margin-top: 8px;">
+        <li>根管径の1/3以下が目安</li>
+        <li>太すぎると歯根壁が薄くなり破折リスク上昇</li>
+        <li>細すぎると維持力不足</li>
+      </ul>
+
+      <div class="warning-box">
+        <strong>歯根破折を起こしやすい条件</strong><br>
+        ・金属ポストの使用（弾性係数が高い）<br>
+        ・ポストが太すぎる（残存歯質が薄い）<br>
+        ・ポストが短すぎる（応力集中）<br>
+        ・帯環効果がない（フェルール不足）
+      </div>
+    </div>
+
+    <!-- ファイバーポストの表面処理 -->
+    <div class="card">
+      <h2>ファイバーポストの表面処理</h2>
+
+      <h3>処理手順（★頻出）</h3>
+      <ol style="margin-left: 24px; margin-top: 8px;">
+        <li><strong>リン酸処理</strong>：表面の汚れ除去、微細な凹凸形成</li>
+        <li><strong>シラン処理</strong>：ガラス繊維とレジンの化学的結合を促進</li>
+        <li><strong>接着</strong>：支台築造用コンポジットレジンで合着</li>
+      </ol>
+
+      <div class="exam-box">
+        <div class="question">【111D63】直接法による支台築造。ポスト切断後、診療室で最初に行うポスト表面処理はどれか。</div>
+        <div class="options">
+          a. スズ電析<br>
+          b. リン酸処理<br>
+          c. サンドブラスト処理<br>
+          d. 金属接着性プライマー処理<br>
+          e. セルフエッチングプライマー処理
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：B</span><br>
+          ファイバーポストの表面処理は、まずリン酸処理で表面を清掃し、次にシラン処理を行う。スズ電析や金属接着性プライマーは金属ポスト用。
+        </div>
+      </div>
+    </div>
+
+    <!-- レジンコアの注意点 -->
+    <div class="card">
+      <h2>レジンコアの注意点</h2>
+
+      <h3>生活歯へのレジンコア</h3>
+      <div class="info-box">
+        <strong>生活歯でもレジンコアは使用可能</strong><br>
+        ただし、残存歯質が歯肉縁下に及ぶ場合は使用を控える。
+      </div>
+
+      <h3>防湿の重要性</h3>
+      <p>レジン築造では接着操作が重要であり、確実な防湿が必要。</p>
+
+      <div class="exam-box">
+        <div class="question">【107B15】24歳女性。下顎右側第二小臼歯の歯冠崩壊。レジンコアとオールセラミッククラウンで修復。正しいのはどれか。2つ選べ。</div>
+        <div class="options">
+          a. ラバーダム防湿を行う<br>
+          b. 根管壁をシラン処理する<br>
+          c. ファイバーポストを用いる<br>
+          d. 根管内にMMAレジンセメントを塡塞する<br>
+          e. セルフエッチングプライマーで処理後に築造する
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：A, C</span><br>
+          レジン築造では確実な防湿（ラバーダム）が重要。オールセラミッククラウンにはファイバーポストが審美的に適合。
+        </div>
+      </div>
+    </div>
+
+    <!-- 印象採得 -->
+    <div class="card">
+      <h2>支台築造の印象採得</h2>
+
+      <h3>ポスト部の印象材料</h3>
+      <table>
+        <tr><th>材料</th><th>用途</th></tr>
+        <tr><td class="highlight">寒天印象材</td><td>根管内の精密印象</td></tr>
+        <tr><td class="highlight">シリコーンゴム印象材</td><td>根管内の精密印象</td></tr>
+        <tr><td>アルジネート印象材</td><td>対合印象（ポスト部には不適）</td></tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【102B76】支台歯ポスト部の印象採得に用いるのはどれか。2つ選べ。</div>
+        <div class="options">
+          a. レンツロ<br>
+          b. アルジネート<br>
+          c. 寒天<br>
+          d. モデリングコンパウンド<br>
+          e. ポリサルファイドラバー
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：A, C</span><br>
+          レンツロ（らせん状の器具）を用いて根管内にシリコーンや寒天印象材を送り込み、精密な印象を採得する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 出典 -->
+    <div class="ref-section">
+      <strong>参考文献</strong><br>
+      ・クラウンブリッジ補綴学 第5版（医歯薬出版）p.124-130<br>
+      ・第102回〜115回 歯科医師国家試験
+    </div>
+
+  </div>
+</body>
+</html>

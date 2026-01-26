@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>術後管理と修理 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+      --success: #34C759;
+      --warning: #FF9500;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+    .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 { font-size: 34px; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; }
+    .card {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card h2 { font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+    .card h3 { font-size: 17px; font-weight: 600; margin: 24px 0 12px 0; }
+    .point-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .point-box h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+    .point-box ul { margin-left: 20px; }
+    .point-box li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    .highlight { background: #FFF9C4; padding: 2px 4px; border-radius: 4px; }
+    .info-box {
+      background: #F0F7FF;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .warning-box {
+      background: #FFF8E6;
+      border-left: 4px solid var(--warning);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .exam-box {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .exam-box .question { font-weight: 600; margin-bottom: 12px; }
+    .exam-box .answer {
+      background: #E8F5E9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .exam-box .answer-label { font-weight: 600; color: var(--success); }
+    .ref-section {
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">TOP</a> &gt; <a href="index.html">冠橋義歯学</a> &gt; 術後管理と修理
+    </div>
+
+    <h1>術後管理と修理・除去</h1>
+    <p class="subtitle">Chapter 11: 術後管理｜頻出度 ★★★</p>
+
+    <!-- 国試の急所 -->
+    <div class="point-box">
+      <h2>国試の急所</h2>
+      <ul>
+        <li><strong>リコール時の診査</strong>：咬耗、動揺度、マージン適合、片側脱離</li>
+        <li><strong>ブリッジの清掃指導</strong>：歯間ブラシ、スーパーフロスの使用</li>
+        <li><strong>前装部修理</strong>：金属にVBATDT、レジンにγ-MPTS（シラン）</li>
+        <li><strong>クラウン除去</strong>：クラウンリムーバー、超音波スケーラー</li>
+        <li><strong>コア除去</strong>：ピーソーリーマー、超音波チップ</li>
+      </ul>
+    </div>
+
+    <!-- リコール時の診査 -->
+    <div class="card">
+      <h2>リコール時の診査</h2>
+
+      <p>補綴装置装着後は定期的なリコールで、装置と支台歯の状態を確認する。</p>
+
+      <h3>診査項目</h3>
+      <table>
+        <tr><th>診査項目</th><th>確認内容</th><th>問題点</th></tr>
+        <tr>
+          <td class="highlight"><strong>咬耗</strong></td>
+          <td>咬合面の摩耗状態</td>
+          <td>負担過重の兆候</td>
+        </tr>
+        <tr>
+          <td class="highlight"><strong>動揺度</strong></td>
+          <td>支台歯の動揺</td>
+          <td>負担過重、歯周病の進行</td>
+        </tr>
+        <tr>
+          <td><strong>マージン適合</strong></td>
+          <td>辺縁部の適合状態</td>
+          <td>二次う蝕のリスク</td>
+        </tr>
+        <tr>
+          <td class="highlight"><strong>片側脱離</strong></td>
+          <td>ブリッジの片方のみ脱離</td>
+          <td>支台歯う蝕のリスク大</td>
+        </tr>
+        <tr>
+          <td><strong>隣接接触</strong></td>
+          <td>接触点の状態</td>
+          <td>食片圧入のリスク</td>
+        </tr>
+        <tr>
+          <td><strong>偏心位咬合</strong></td>
+          <td>側方運動時の接触</td>
+          <td>干渉による負担過重</td>
+        </tr>
+      </table>
+
+      <div class="warning-box">
+        <strong>負担過重を示す所見</strong><br>
+        ・<span class="highlight">咬耗</span>：咬合面の著しい摩耗<br>
+        ・<span class="highlight">動揺度の増加</span>：支台歯の動揺が増加<br>
+        ※プラーク沈着やレジン前装部の着色は負担過重の直接的指標ではない
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【107A85】リコール時にクラウンの負担過重を診査する項目はどれか。2つ選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：A（咬耗）、B（動揺度）</span><br>
+          咬耗と動揺度は負担過重の指標。マージン適合やプラーク沈着は負担過重とは直接関係しない。
+        </div>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【109A106】合着後3年経過した下顎臼歯部固定性ブリッジに対する定期検査で評価すべき項目はどれか。すべて選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：A, B, C, D</span><br>
+          支台歯の動揺度、隣接面の接触強さ、偏心位での咬合接触、支台装置の片側脱離を評価。欠損部粘膜の被圧変位性は固定性ブリッジでは評価対象外。
+        </div>
+      </div>
+    </div>
+
+    <!-- 術後管理・清掃指導 -->
+    <div class="card">
+      <h2>術後管理・清掃指導</h2>
+
+      <h3>ブリッジの清掃指導</h3>
+      <div class="info-box">
+        <strong>ブリッジの清掃に使用する器具</strong><br>
+        ・<span class="highlight">歯間ブラシ</span>：ポンティック基底面と歯肉の間<br>
+        ・<span class="highlight">スーパーフロス</span>：連結部周囲の清掃<br>
+        ・通常の歯ブラシとの併用が重要<br>
+        ※「洗口のみ」「歯ブラシのみ」「定期的に外して清掃」はNG
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【116C43】今後、ブリッジの管理に適切な指導内容はどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：C（これまでと同じ清掃を継続してください）</span><br>
+          ブリッジ装着後も補助的清掃器具（歯間ブラシ等）を使用した清掃を継続する。固定性ブリッジは外して清掃できない。
+        </div>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【114C39】適切な対応はどれか。（ポンティック基底面の汚れの写真）</div>
+        <div class="answer">
+          <span class="answer-label">正解：C（補助的清掃器具の使用法を指導する）</span><br>
+          ポンティック基底面の汚れは清掃不良が原因。歯間ブラシやスーパーフロスの使用法を指導する。
+        </div>
+      </div>
+
+      <h3>術後のトラブル対応</h3>
+      <div class="exam-box">
+        <div class="question">【115A77】早期接触が最も疑われる咬頭斜面はどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：C</span><br>
+          術後の咬合痛は早期接触が原因のことが多い。咬合紙の印記から早期接触部位を特定する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 補綴装置の修理 -->
+    <div class="card">
+      <h2>補綴装置の修理</h2>
+
+      <h3>前装部の修理（★頻出）</h3>
+      <div class="warning-box">
+        <strong>前装部脱離の修理に使用するプライマー</strong><br>
+        ・<span class="highlight">金属面</span>：VBATDT（含硫黄系メタルプライマー）<br>
+        ・<span class="highlight">レジン面</span>：γ-MPTS（シランカップリング剤）<br><br>
+        <strong>覚え方</strong><br>
+        金属には「VBA」、レジンには「シラン（γ-MPTS）」
+      </div>
+
+      <table>
+        <tr><th>プライマー</th><th>対象</th><th>成分</th></tr>
+        <tr>
+          <td class="highlight"><strong>VBATDT</strong></td>
+          <td>金属（貴金属合金）</td>
+          <td>含硫黄系モノマー</td>
+        </tr>
+        <tr>
+          <td class="highlight"><strong>γ-MPTS</strong></td>
+          <td>レジン、陶材</td>
+          <td>シランカップリング剤</td>
+        </tr>
+        <tr>
+          <td><strong>4-META</strong></td>
+          <td>象牙質、エナメル質</td>
+          <td>接着性モノマー</td>
+        </tr>
+        <tr>
+          <td><strong>MDP</strong></td>
+          <td>金属、ジルコニア</td>
+          <td>リン酸エステル系</td>
+        </tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【113A88】前装部修理において、金属面とレジン面にそれぞれ使用するプライマーの組み合わせで正しいのはどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：D（γ-MPTS ── VBATDT）</span><br>
+          設問の順序に注意。レジン面にγ-MPTS、金属面にVBATDTを使用する。
+        </div>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【114D62】上顎右側前歯部ブリッジ前装部の脱離による審美不良。修理に際して処置に必要なのはどれか。2つ選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：γ-MPTS、VBATDT</span><br>
+          前装部の修理には金属面用のVBATDTとレジン面用のγ-MPTSが必要。
+        </div>
+      </div>
+
+      <h3>咬合調整による修理</h3>
+      <div class="exam-box">
+        <div class="question">【116A25】咬合調整を行うのはどれか。（咬合紙印記の写真）</div>
+        <div class="answer">
+          <span class="answer-label">正解：E（図オ）</span><br>
+          咬合紙の印記から早期接触部位を特定し、適切な咬頭斜面を削合する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 補綴装置の除去 -->
+    <div class="card">
+      <h2>補綴装置の除去</h2>
+
+      <h3>クラウン・ブリッジの除去</h3>
+      <table>
+        <tr><th>器具</th><th>用途</th><th>特徴</th></tr>
+        <tr>
+          <td class="highlight"><strong>クラウンリムーバー</strong></td>
+          <td>クラウンの撤去</td>
+          <td>辺縁部に引っ掛けて衝撃で除去</td>
+        </tr>
+        <tr>
+          <td class="highlight"><strong>超音波スケーラー</strong></td>
+          <td>セメント層の破壊</td>
+          <td>振動でセメントを破壊</td>
+        </tr>
+        <tr>
+          <td><strong>クラウンカッター</strong></td>
+          <td>クラウンの切断除去</td>
+          <td>再使用しない場合</td>
+        </tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【112C71】19Aと19Bの間に使用した器具はどれか。2つ選べ。（クラウン除去の写真）</div>
+        <div class="answer">
+          <span class="answer-label">正解：A, C（クラウンリムーバー、超音波スケーラー）</span><br>
+          クラウン除去には超音波スケーラーでセメント層を破壊し、クラウンリムーバーで撤去する。
+        </div>
+      </div>
+
+      <h3>支台築造（コア）の除去</h3>
+      <div class="info-box">
+        <strong>コア除去に使用する器具</strong><br>
+        ・<span class="highlight">ピーソーリーマー</span>：根管内のポストを削除<br>
+        ・<span class="highlight">超音波チップ</span>：セメントを破壊して除去<br>
+        ・トレフィンバー：ポスト周囲を削除
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【107B43】コア撤去に適した器具はどれか。2つ選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：C, E（ピーソーリーマー、超音波チップ）</span><br>
+          支台築造の除去にはピーソーリーマーと超音波チップを使用する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 出典 -->
+    <div class="ref-section">
+      <strong>参考文献</strong><br>
+      ・クラウンブリッジ補綴学 第5版（医歯薬出版）p.246-258<br>
+      ・第107回〜116回 歯科医師国家試験
+    </div>
+
+  </div>
+</body>
+</html>

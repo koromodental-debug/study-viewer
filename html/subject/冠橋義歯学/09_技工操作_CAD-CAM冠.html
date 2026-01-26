@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CAD/CAM冠の製作 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+      --success: #34C759;
+      --warning: #FF9500;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+    .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 { font-size: 34px; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; }
+    .card {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card h2 { font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+    .card h3 { font-size: 17px; font-weight: 600; margin: 24px 0 12px 0; }
+    .point-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .point-box h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+    .point-box ul { margin-left: 20px; }
+    .point-box li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    .highlight { background: #FFF9C4; padding: 2px 4px; border-radius: 4px; }
+    .info-box {
+      background: #F0F7FF;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .warning-box {
+      background: #FFF8E6;
+      border-left: 4px solid var(--warning);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .exam-box {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .exam-box .question { font-weight: 600; margin-bottom: 12px; }
+    .exam-box .answer {
+      background: #E8F5E9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .exam-box .answer-label { font-weight: 600; color: var(--success); }
+    .ref-section {
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">TOP</a> &gt; <a href="index.html">冠橋義歯学</a> &gt; CAD/CAM冠の製作
+    </div>
+
+    <h1>CAD/CAM冠の製作</h1>
+    <p class="subtitle">Chapter 09: 技工操作｜頻出度 ★★★</p>
+
+    <!-- 国試の急所 -->
+    <div class="point-box">
+      <h2>国試の急所</h2>
+      <ul>
+        <li><strong>CAD</strong>：Computer Aided Design（コンピュータ支援設計）</li>
+        <li><strong>CAM</strong>：Computer Aided Manufacturing（コンピュータ支援製造）</li>
+        <li><strong>切削加工</strong>：ミリングマシンでブロックを削り出し</li>
+        <li><strong>積層造形</strong>：3Dプリンター、粉末焼結式積層法など</li>
+        <li><strong>支台歯形成の注意</strong>：アンダーカットを避ける、ディープシャンファー</li>
+      </ul>
+    </div>
+
+    <!-- CAD/CAMシステム -->
+    <div class="card">
+      <h2>CAD/CAMシステムの概要</h2>
+
+      <h3>製作の流れ</h3>
+      <ol style="margin-left: 24px; margin-top: 8px;">
+        <li>支台歯形成（アンダーカットを避ける）</li>
+        <li><span class="highlight">データ取得</span>（口腔内スキャンまたは模型スキャン）</li>
+        <li><span class="highlight">CADソフトウェアによる設計</span></li>
+        <li><span class="highlight">CAMによる加工</span>（切削または積層）</li>
+        <li>仕上げ・調整</li>
+        <li>装着</li>
+      </ol>
+
+      <h3>加工方法</h3>
+      <table>
+        <tr><th>方法</th><th>内容</th><th>材料</th></tr>
+        <tr>
+          <td class="highlight"><strong>切削加工<br>（ミリング）</strong></td>
+          <td>ブロックを削り出して製作</td>
+          <td>ジルコニア、レジン、ハイブリッドレジン</td>
+        </tr>
+        <tr>
+          <td><strong>積層造形<br>（3Dプリント）</strong></td>
+          <td>材料を積層して製作</td>
+          <td>金属（粉末焼結）、レジン（光造形）</td>
+        </tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【112D50】CAD/CAMを応用したクラウン製作に用いる2種類の装置の写真を示す。これらの装置の役割は？</div>
+        <div class="answer">
+          <span class="answer-label">正解：スキャナー（データ取得）とミリングマシン（切削加工）</span><br>
+          スキャナーで支台歯のデータを取得し、CADで設計後、ミリングマシンでブロックを切削してクラウンを製作する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 使用材料 -->
+    <div class="card">
+      <h2>CAD/CAM冠に使用する材料</h2>
+
+      <table>
+        <tr><th>材料</th><th>特徴</th><th>適応</th></tr>
+        <tr>
+          <td><strong>ジルコニア</strong></td>
+          <td>高強度（曲げ強度1,000MPa以上）<br>審美性良好</td>
+          <td>臼歯部〜前歯部<br>ロングスパンブリッジも可</td>
+        </tr>
+        <tr>
+          <td><strong>ハイブリッドレジン</strong></td>
+          <td>適度な弾性、歯質に近い硬さ</td>
+          <td>小臼歯部（保険適用）</td>
+        </tr>
+        <tr>
+          <td><strong>コンポジットレジン</strong></td>
+          <td>保険適用のCAD/CAM冠</td>
+          <td>小臼歯〜第一大臼歯</td>
+        </tr>
+      </table>
+
+      <div class="info-box">
+        <strong>ジルコニアの加工</strong><br>
+        ・半焼結状態（チョーク状）のブロックを切削<br>
+        ・切削後に完全焼結（焼成）して強度を上げる<br>
+        ・焼結時に約20%収縮するため、CADで拡大設計
+      </div>
+    </div>
+
+    <!-- 支台歯形成の注意点 -->
+    <div class="card">
+      <h2>CAD/CAM冠の支台歯形成</h2>
+
+      <div class="warning-box">
+        <strong>支台歯形成時の注意点</strong><br>
+        ・<span class="highlight">アンダーカットを避ける</span>（スキャナーで読み取れない）<br>
+        ・<span class="highlight">ディープシャンファーまたはショルダー</span>形態<br>
+        ・明確なフィニッシュライン<br>
+        ・隅角部は曲面で仕上げる（ラウンデッドショルダー）<br>
+        ・クラウンの厚みが均一になるよう形成
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【111A90】下顎右側第二小臼歯の歯冠破折。最終補綴装置としてCAD/CAM冠を装着。正しいのはどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：アンダーカットを避けた支台歯形成</span><br>
+          CAD/CAM冠ではスキャナーでデータを取得するため、アンダーカットがあると正確に読み取れない。
+        </div>
+      </div>
+    </div>
+
+    <!-- 装着 -->
+    <div class="card">
+      <h2>CAD/CAM冠の装着</h2>
+
+      <h3>材料別の装着方法</h3>
+      <table>
+        <tr><th>材料</th><th>前処理</th><th>装着材</th></tr>
+        <tr>
+          <td>ジルコニア</td>
+          <td>サンドブラスト、専用プライマー</td>
+          <td>接着性レジンセメント</td>
+        </tr>
+        <tr>
+          <td>レジン系</td>
+          <td>サンドブラスト、シラン処理</td>
+          <td>接着性レジンセメント</td>
+        </tr>
+      </table>
+
+      <div class="info-box">
+        <strong>ジルコニアの接着</strong><br>
+        ジルコニアはシリカを含まないため、通常のシラン処理では接着できない。<br>
+        <span class="highlight">ジルコニア専用プライマー</span>（リン酸エステル系など）を使用する。
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【115D62】上顎右側第一小臼歯にCAD/CAM冠を装着。適切な装着方法はどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：接着性レジンセメントによる装着</span><br>
+          CAD/CAM冠は接着性レジンセメントで装着する。従来型セメント（リン酸亜鉛など）では十分な維持が得られない。
+        </div>
+      </div>
+    </div>
+
+    <!-- 出典 -->
+    <div class="ref-section">
+      <strong>参考文献</strong><br>
+      ・クラウンブリッジ補綴学 第5版（医歯薬出版）p.213-217<br>
+      ・第111回〜115回 歯科医師国家試験
+    </div>
+
+  </div>
+</body>
+</html>

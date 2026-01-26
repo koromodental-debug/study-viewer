@@ -5,6 +5,7 @@ const KakomonModule = (function() {
   // キャッシュ
   const dataCache = new Map();
   const explanationCache = new Map();
+  const imageExplanationCache = new Map();
   let questionsData = null;
 
   // 状態
@@ -61,6 +62,46 @@ const KakomonModule = (function() {
       return null;
     }
   }
+
+  /**
+   * 画像解説データを読み込み
+   */
+  async function loadImageExplanations(year) {
+    if (imageExplanationCache.has(year)) {
+      return imageExplanationCache.get(year);
+    }
+
+    try {
+      const response = await fetch(`kakomon/image-explanations/${year}.json`);
+      if (!response.ok) return null;
+      const data = await response.json();
+      imageExplanationCache.set(year, data);
+      return data;
+    } catch (e) {
+      console.log(`${year}回の画像解説データなし`);
+      return null;
+    }
+  }
+
+  /**
+   * 画像種類の日本語名
+   */
+  const IMAGE_TYPE_LABELS = {
+    intraoral: '口腔内写真',
+    extraoral: '顔面写真',
+    xray_panorama: 'パノラマX線',
+    xray_dental: 'デンタルX線',
+    xray_ct: 'CT画像',
+    xray_mri: 'MRI画像',
+    xray_cephalometric: 'セファロX線',
+    model: '模型写真',
+    surgical: '術中写真',
+    histology: '組織像',
+    device: '器具・材料',
+    diagram: '模式図',
+    choice_images: '選択肢画像',
+    other: 'その他'
+  };
 
   /**
    * 科目の過去問データを読み込み
@@ -588,13 +629,19 @@ const KakomonModule = (function() {
       .filter(([key, value]) => value && value.trim() !== '');
 
     let imagesHtml = '';
-    if (question.hasImage && question.imageFiles) {
+    const hasImage = question.hasImage && question.imageFiles;
+    if (hasImage) {
       const examNum = question.examNum || code.match(/^\d+/)?.[0];
       const imageList = question.imageFiles.split(',').map(f => f.trim()).filter(f => f);
       if (imageList.length > 0 && examNum) {
         imagesHtml = `
           <div class="kakomon-images">
-            ${imageList.map(file => `<img src="${encodeURI(`images/${examNum}回_Web画像/${file}`)}" alt="${file}">`).join('')}
+            ${imageList.map((file, idx) => `
+              <div class="kakomon-image-wrapper" data-image-index="${idx}">
+                <img src="${encodeURI(`images/${examNum}回_Web画像/${file}`)}" alt="${file}">
+                <svg class="image-annotations" style="display:none;"></svg>
+              </div>
+            `).join('')}
           </div>
         `;
       }
@@ -653,6 +700,7 @@ const KakomonModule = (function() {
 
         <div class="kakomon-explanation" style="display:none;">
           <button class="show-explanation-btn">解説を見る</button>
+          <div class="image-explanation-container" style="display:none;"></div>
           <div class="conversation-container"></div>
         </div>
       </div>
@@ -765,6 +813,7 @@ const KakomonModule = (function() {
   function bindExplanationBtn(card) {
     const btn = card.querySelector('.show-explanation-btn');
     const container = card.querySelector('.conversation-container');
+    const imageContainer = card.querySelector('.image-explanation-container');
 
     if (btn && container) {
       btn.addEventListener('click', async () => {
@@ -774,13 +823,26 @@ const KakomonModule = (function() {
         const code = card.dataset.code;
         const year = parseInt(code.match(/^\d+/)?.[0]) || 0;
 
+        // 画像解説を読み込み
+        const imageExplanations = await loadImageExplanations(year);
+        const imageExplanation = imageExplanations?.[code];
+
+        if (imageExplanation && imageContainer) {
+          imageContainer.innerHTML = renderImageExplanation(imageExplanation);
+          imageContainer.style.display = 'block';
+          // アノテーションを画像に適用
+          applyAnnotations(card, imageExplanation.annotations);
+          bindAnnotationToggle(card);
+        }
+
+        // 会話解説を読み込み
         const explanations = await loadExplanations(year);
         const explanation = explanations?.[code];
 
         if (explanation && explanation.conversation) {
           container.innerHTML = renderConversation(explanation);
           animateConversation(container);
-        } else {
+        } else if (!imageExplanation) {
           container.innerHTML = `
             <div class="no-explanation">
               <p>この問題の解説は準備中です</p>
@@ -791,6 +853,160 @@ const KakomonModule = (function() {
         btn.style.display = 'none';
       });
     }
+  }
+
+  /**
+   * 画像解説をレンダリング
+   */
+  function renderImageExplanation(imgExp) {
+    const typeLabel = IMAGE_TYPE_LABELS[imgExp.imageType] || imgExp.imageType;
+
+    let html = `
+      <div class="image-explanation">
+        <div class="image-exp-header">
+          <span class="image-type-badge">${escapeHtml(typeLabel)}</span>
+          <button class="annotation-toggle-btn active" title="アノテーション表示切替">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v4M12 16h.01"/>
+            </svg>
+          </button>
+        </div>
+    `;
+
+    // 所見
+    if (imgExp.findings && imgExp.findings.length > 0) {
+      html += `
+        <div class="image-findings">
+          <div class="findings-title">画像所見</div>
+          <ul class="findings-list">
+            ${imgExp.findings.map(f => `
+              <li>
+                <span class="finding-location">${escapeHtml(f.location)}</span>
+                <span class="finding-observation">${escapeHtml(f.observation)}</span>
+                ${f.significance ? `<span class="finding-significance">${escapeHtml(f.significance)}</span>` : ''}
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    // 読影ガイド
+    if (imgExp.readingGuide && imgExp.readingGuide.length > 0) {
+      html += `
+        <div class="reading-guide">
+          <div class="guide-title">読影の手順</div>
+          <ol class="guide-steps">
+            ${imgExp.readingGuide.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
+          </ol>
+        </div>
+      `;
+    }
+
+    // キーポイント
+    if (imgExp.keyFeatures && imgExp.keyFeatures.length > 0) {
+      html += `
+        <div class="image-key-features">
+          <div class="features-title">注目ポイント</div>
+          <div class="features-tags">
+            ${imgExp.keyFeatures.map(f => `<span class="feature-tag">${escapeHtml(f)}</span>`).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    html += '</div>';
+    return html;
+  }
+
+  /**
+   * SVGアノテーションを画像に適用
+   */
+  function applyAnnotations(card, annotations) {
+    if (!annotations || annotations.length === 0) return;
+
+    const imageWrappers = card.querySelectorAll('.kakomon-image-wrapper');
+    if (imageWrappers.length === 0) return;
+
+    // 画像ごとにアノテーションをグループ化
+    const annotationsByImage = {};
+    annotations.forEach(ann => {
+      const imgIdx = ann.imageIndex || 0;
+      if (!annotationsByImage[imgIdx]) {
+        annotationsByImage[imgIdx] = [];
+      }
+      annotationsByImage[imgIdx].push(ann);
+    });
+
+    // 各画像にアノテーションを適用
+    Object.keys(annotationsByImage).forEach(imgIdxStr => {
+      const imgIdx = parseInt(imgIdxStr);
+      const wrapper = imageWrappers[imgIdx];
+      if (!wrapper) return;
+
+      const svg = wrapper.querySelector('.image-annotations');
+      if (!svg) return;
+
+      svg.style.display = 'block';
+
+      let svgContent = '';
+      annotationsByImage[imgIdx].forEach((ann, idx) => {
+        const x = ann.position.x;
+        const y = ann.position.y;
+        const color = ann.color || '#FF6B6B';
+        const label = ann.label || '';
+        const uniqueId = `${imgIdx}-${idx}`;
+
+        if (ann.type === 'arrow') {
+          svgContent += `
+            <g class="annotation-group" data-index="${uniqueId}">
+              <line x1="${x}%" y1="${y - 8}%" x2="${x}%" y2="${y}%"
+                    stroke="${color}" stroke-width="2" marker-end="url(#arrowhead-${uniqueId})"/>
+              <defs>
+                <marker id="arrowhead-${uniqueId}" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                  <polygon points="0 0, 10 3.5, 0 7" fill="${color}"/>
+                </marker>
+              </defs>
+              <text x="${x}%" y="${y - 10}%" fill="${color}" font-size="11" text-anchor="middle" class="annotation-label">${escapeHtml(label)}</text>
+            </g>
+          `;
+        } else if (ann.type === 'circle') {
+          svgContent += `
+            <g class="annotation-group" data-index="${uniqueId}">
+              <circle cx="${x}%" cy="${y}%" r="15" stroke="${color}" stroke-width="2" fill="none"/>
+              <text x="${x}%" y="${y + 8}%" fill="${color}" font-size="11" text-anchor="middle" class="annotation-label">${escapeHtml(label)}</text>
+            </g>
+          `;
+        } else if (ann.type === 'line') {
+          svgContent += `
+            <g class="annotation-group" data-index="${uniqueId}">
+              <line x1="${x - 5}%" y1="${y}%" x2="${x + 5}%" y2="${y}%" stroke="${color}" stroke-width="2"/>
+              <text x="${x}%" y="${y - 3}%" fill="${color}" font-size="11" text-anchor="middle" class="annotation-label">${escapeHtml(label)}</text>
+            </g>
+          `;
+        }
+      });
+
+      svg.innerHTML = svgContent;
+    });
+  }
+
+  /**
+   * アノテーション表示切替をバインド
+   */
+  function bindAnnotationToggle(card) {
+    const toggleBtn = card.querySelector('.annotation-toggle-btn');
+    if (!toggleBtn) return;
+
+    toggleBtn.addEventListener('click', () => {
+      const svgs = card.querySelectorAll('.image-annotations');
+      const isActive = toggleBtn.classList.toggle('active');
+
+      svgs.forEach(svg => {
+        svg.style.display = isActive ? 'block' : 'none';
+      });
+    });
   }
 
   /**

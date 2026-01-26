@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>印象採得 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+      --success: #34C759;
+      --warning: #FF9500;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+    .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; }
+    .card {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card h2 { font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+    .card h3 { font-size: 17px; font-weight: 600; margin: 24px 0 12px 0; }
+    .point-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .point-box h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+    .point-box ul { margin-left: 20px; }
+    .point-box li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    .highlight { background: #FFF9C4; padding: 2px 4px; border-radius: 4px; }
+    .info-box {
+      background: #F0F7FF;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .warning-box {
+      background: #FFF8E6;
+      border-left: 4px solid var(--warning);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .exam-box {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .exam-box .question { font-weight: 600; margin-bottom: 12px; }
+    .exam-box .answer {
+      background: #E8F5E9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .exam-box .answer-label { font-weight: 600; color: var(--success); }
+    .ref-section {
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding-top: 16px;
+    }
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+    .step-list li {
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 12px;
+    }
+    .step-list li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">TOP</a> &gt; <a href="index.html">冠橋義歯学</a> &gt; 印象採得
+    </div>
+
+    <h1>印象採得</h1>
+    <p class="subtitle">Chapter 08: 印象および咬合採得｜頻出度 ★★★★</p>
+
+    <!-- 国試の急所 -->
+    <div class="point-box">
+      <h2>国試の急所</h2>
+      <ul>
+        <li><strong>歯肉圧排の順序</strong>：圧排糸挿入→印象採得直前に除去→精密印象</li>
+        <li><strong>二重圧排法</strong>：細い糸を先に挿入→太い糸を後から挿入→太い糸のみ除去</li>
+        <li><strong>連合印象法</strong>：概形印象（パテ）＋精密印象（ライトボディ）の2段階</li>
+        <li><strong>個歯トレー</strong>：フィニッシュラインの明確化、隣在歯のアンダーカット軽減</li>
+        <li><strong>光学印象</strong>：嘔吐反射軽減、アンダーカット部の印象可能、印象材不要</li>
+      </ul>
+    </div>
+
+    <!-- 歯肉圧排 -->
+    <div class="card">
+      <h2>歯肉圧排</h2>
+
+      <p>フィニッシュラインが歯肉縁下に設定されている場合、印象採得前に歯肉を排除してフィニッシュラインを明確にする操作。</p>
+
+      <h3>歯肉圧排の方法</h3>
+      <table>
+        <tr><th>方法</th><th>内容</th><th>特徴</th></tr>
+        <tr>
+          <td><strong>機械的圧排法</strong></td>
+          <td>圧排コード、ストッピング、バンドなど</td>
+          <td>物理的に歯肉を排除</td>
+        </tr>
+        <tr>
+          <td><strong>機械的・化学的圧排法</strong></td>
+          <td>圧排コード＋収斂剤</td>
+          <td>止血効果も期待できる</td>
+        </tr>
+        <tr>
+          <td><strong>外科的圧排法</strong></td>
+          <td>電気メス、高周波電気メス</td>
+          <td>歯肉増殖時、最終手段</td>
+        </tr>
+      </table>
+
+      <h3>圧排コードに用いる薬剤</h3>
+      <ul style="margin-left: 24px; margin-top: 8px;">
+        <li><span class="highlight">塩化アルミニウム</span>：最も一般的、収斂・止血作用</li>
+        <li><span class="highlight">塩化第二鉄</span>：強い止血作用、歯肉変色の可能性</li>
+        <li>ミョウバン：収斂作用</li>
+        <li>エピネフリン：血管収縮作用（心疾患患者には注意）</li>
+      </ul>
+
+      <h3>一重圧排法と二重圧排法</h3>
+      <table>
+        <tr><th>方法</th><th>手順</th><th>適応</th></tr>
+        <tr>
+          <td><strong>一重圧排法</strong></td>
+          <td>1本の圧排コードを挿入→除去後に印象</td>
+          <td>歯肉溝が浅い場合</td>
+        </tr>
+        <tr>
+          <td class="highlight"><strong>二重圧排法</strong></td>
+          <td>細い糸→太い糸の順で挿入→<strong>太い糸のみ除去</strong>して印象</td>
+          <td>歯肉溝が深い場合、出血がある場合</td>
+        </tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【112B89】上顎左側第一大臼歯を全部金属冠で治療。支台歯形成後、精密印象採得までの手順を示せ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：B→A→D→E→C</span><br>
+          B: 圧排コード挿入 → A: トレー試適 → D: 接着材塗布 → E: 圧排コード除去 → C: 印象採得<br>
+          圧排コードは印象採得直前に除去する。
+        </div>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【102A60】一重歯肉圧排法で正しいのはどれか。2つ選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：B, C（またはB, D）</span><br>
+          一重圧排法では、1本の圧排コードを歯肉溝に挿入し、印象採得直前に除去する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 印象法の種類 -->
+    <div class="card">
+      <h2>印象法の種類</h2>
+
+      <table>
+        <tr><th>印象法</th><th>内容</th><th>特徴</th></tr>
+        <tr>
+          <td><strong>単一印象法</strong></td>
+          <td>1種類の印象材で採得</td>
+          <td>操作が簡便</td>
+        </tr>
+        <tr>
+          <td class="highlight"><strong>連合印象法</strong></td>
+          <td>概形印象（パテ）＋精密印象（ライトボディ）</td>
+          <td>精度が高い、2回のステップ</td>
+        </tr>
+        <tr>
+          <td><strong>二重同時印象法<br>（ダブルミックス）</strong></td>
+          <td>2種類の印象材を同時に使用</td>
+          <td>操作は難しいが精度良好</td>
+        </tr>
+        <tr>
+          <td><strong>個歯トレー印象法</strong></td>
+          <td>支台歯専用のトレーを製作</td>
+          <td>フィニッシュラインの明確化</td>
+        </tr>
+        <tr>
+          <td><strong>咬合印象法</strong></td>
+          <td>咬合させた状態で印象採得</td>
+          <td>咬合関係も同時に記録</td>
+        </tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【107A59】クラウン印象採得時の写真を示す。この印象法の特徴はどれか。2つ選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：A, E</span><br>
+          個歯トレー印象法の特徴：①フィニッシュラインを明確に印象できる、②隣在歯のアンダーカットの影響を軽減できる。
+        </div>
+      </div>
+    </div>
+
+    <!-- 個歯トレー -->
+    <div class="card">
+      <h2>個歯トレー印象法</h2>
+
+      <p>支台歯の印象に支台歯用の個歯トレーを使用し、その上から歯列印象を行う方法。</p>
+
+      <h3>個歯トレーの役割</h3>
+      <ul style="margin-left: 24px; margin-top: 8px;">
+        <li><span class="highlight">フィニッシュラインの明確化</span></li>
+        <li><span class="highlight">隣接歯のアンダーカット軽減</span></li>
+        <li>印象材の均一な厚さの確保</li>
+        <li>歯肉縁下の精密印象が可能</li>
+      </ul>
+
+      <div class="info-box">
+        <strong>個歯トレーの構成</strong><br>
+        ・内面：接着材を塗布（印象材の維持）<br>
+        ・外面：接着材を塗布（歯列印象との一体化）<br>
+        ・辺縁部：フィニッシュラインより1mm程度離す
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【114D82】クラウン製作過程で印象採得に用いた構造体の写真を示す。矢印で示す部位の役割はどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：C（印象材の均一な厚さの確保）</span><br>
+          個歯トレーの矢印部位（スペーサー）は、印象材の厚さを均一に確保する役割がある。
+        </div>
+      </div>
+    </div>
+
+    <!-- 光学印象 -->
+    <div class="card">
+      <h2>光学印象（口腔内スキャナー）</h2>
+
+      <p>口腔内スキャナーを用いて支台歯や歯列をデジタルデータとして記録する方法。CAD/CAMシステムと組み合わせて使用。</p>
+
+      <h3>光学印象の特徴</h3>
+      <table>
+        <tr><th>利点</th><th>欠点・注意点</th></tr>
+        <tr>
+          <td>
+            ・印象材が不要<br>
+            ・<span class="highlight">嘔吐反射の軽減</span><br>
+            ・<span class="highlight">アンダーカット部の印象が可能</span><br>
+            ・データの保存・共有が容易<br>
+            ・模型製作が不要（または3Dプリント）
+          </td>
+          <td>
+            ・機器が高価<br>
+            ・習熟が必要<br>
+            ・出血や唾液で精度低下<br>
+            ・深い歯肉縁下は困難
+          </td>
+        </tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【113C58】口腔内スキャナーを用いた光学印象法の特徴はどれか。2つ選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：C, D</span><br>
+          C: 嘔吐反射を誘発しにくい、D: アンダーカット部の印象が可能。従来の印象法と比較した利点。
+        </div>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【115B36】下顎第一大臼歯に部分被覆冠を装着。口腔内スキャナー使用後に行った治療過程は？</div>
+        <div class="answer">
+          <span class="answer-label">正解：B（バーチャル咬合器での咬合調整）</span><br>
+          光学印象後、スキャンデータをCADソフトウェア上でバーチャル咬合器に装着し、咬合関係を確認する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 出典 -->
+    <div class="ref-section">
+      <strong>参考文献</strong><br>
+      ・クラウンブリッジ補綴学 第5版（医歯薬出版）p.137-144<br>
+      ・第102回〜115回 歯科医師国家試験
+    </div>
+
+  </div>
+</body>
+</html>

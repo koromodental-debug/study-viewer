@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>プロビジョナルレストレーション - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+      --success: #34C759;
+      --warning: #FF9500;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+    .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; }
+    .card {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card h2 { font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+    .card h3 { font-size: 17px; font-weight: 600; margin: 24px 0 12px 0; }
+    .point-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .point-box h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+    .point-box ul { margin-left: 20px; }
+    .point-box li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    .highlight { background: #FFF9C4; padding: 2px 4px; border-radius: 4px; }
+    .info-box {
+      background: #F0F7FF;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .exam-box {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .exam-box .question { font-weight: 600; margin-bottom: 12px; }
+    .exam-box .options { margin: 12px 0 12px 20px; }
+    .exam-box .answer {
+      background: #E8F5E9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .exam-box .answer-label { font-weight: 600; color: var(--success); }
+    .ref-section {
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding-top: 16px;
+    }
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .purpose-item {
+      background: var(--bg-secondary);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .purpose-item strong { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">TOP</a> &gt; <a href="index.html">冠橋義歯学</a> &gt; プロビジョナルレストレーション
+    </div>
+
+    <h1>プロビジョナルレストレーション</h1>
+    <p class="subtitle">Chapter 07: 暫間被覆冠｜頻出度 ★★★</p>
+
+    <!-- 国試の急所 -->
+    <div class="point-box">
+      <h2>国試の急所</h2>
+      <ul>
+        <li><strong>目的</strong>：歯髄保護、審美性確保、歯周組織保護、歯列保全、咬合採得の指標</li>
+        <li><strong>エマージェンスプロファイル</strong>：プロビで歯肉形態を整え、最終補綴に反映</li>
+        <li><strong>直接法</strong>：既製クラウン応用法、術前印象応用法、餅状レジン圧接法</li>
+        <li><strong>間接法</strong>：レジン筆積み法、術前印象応用法（技工室で製作）</li>
+        <li><strong>仮着材</strong>：ユージノール系は即時重合レジンの重合阻害→非ユージノール系を使用</li>
+      </ul>
+    </div>
+
+    <!-- 臨床的意義（目的） -->
+    <div class="card">
+      <h2>プロビジョナルレストレーションの目的</h2>
+
+      <p>クラウンやブリッジが完成するまでの間、顎口腔系の形態と機能を維持・回復するとともに、診断や治療の補助的手段としても利用する暫間的補綴装置。</p>
+
+      <div class="purpose-grid">
+        <div class="purpose-item"><strong>1. 外来刺激からの保護</strong><br>歯髄への刺激による知覚過敏や萎縮を防止</div>
+        <div class="purpose-item"><strong>2. 歯質破損の防止</strong><br>咬合力や外力から残存歯質を保護</div>
+        <div class="purpose-item"><strong>3. 支台歯の汚染防止</strong><br>プラークや食物残渣による汚染を防止</div>
+        <div class="purpose-item"><strong>4. 口腔機能の回復</strong><br>咀嚼および構音機能を回復</div>
+        <div class="purpose-item"><strong>5. 審美性の確保</strong><br>治療期間中の審美性を維持</div>
+        <div class="purpose-item"><strong>6. 歯周組織の保護</strong><br>適切な歯冠形態でプラークコントロールを容易に</div>
+        <div class="purpose-item"><strong>7. 歯列の保全</strong><br>支台歯・隣接歯・対合歯の移動を防止</div>
+        <div class="purpose-item"><strong>8. 歯肉圧排</strong><br>辺縁歯肉の増殖や倒れ込みを防止</div>
+        <div class="purpose-item"><strong>9. 最終補綴の設計指針</strong><br>歯冠形態、ガイドの角度、連結範囲などを決定</div>
+        <div class="purpose-item"><strong>10. 咬合採得の指標</strong><br>咬合支持喪失ケースでの指標</div>
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【107C66】支台歯形成後の症例。プロビジョナルレストレーションの目的はどれか。2つ選べ。</div>
+        <div class="options">
+          a. 咬合の安定<br>
+          b. 歯髄の保護<br>
+          c. 対合歯の挺出防止<br>
+          d. 支台歯の平行性の確保<br>
+          e. 印象採得時のアンダーカット軽減
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：A, D</span><br>
+          プロビジョナルレストレーションの主目的は、咬合の安定維持と歯列の保全。支台歯の平行性確保は支台歯形成時の目標であり、プロビの目的ではない。
+        </div>
+      </div>
+    </div>
+
+    <!-- 種類 -->
+    <div class="card">
+      <h2>プロビジョナルレストレーションの種類</h2>
+
+      <table>
+        <tr><th>種類</th><th>材料</th><th>特徴</th></tr>
+        <tr>
+          <td><strong>既製クラウン</strong></td>
+          <td>ポリカーボネートクラウン<br>シェルクラウン</td>
+          <td>天然歯に近い外観、マージン調整が必要</td>
+        </tr>
+        <tr>
+          <td><strong>即時重合レジン</strong></td>
+          <td>アクリルレジン<br>Bis-GMA系レジン</td>
+          <td>自由な形態付与が可能、直接法・間接法</td>
+        </tr>
+        <tr>
+          <td><strong>光重合レジン</strong></td>
+          <td>光重合コンポジットレジン</td>
+          <td>重合時の発熱が少ない、操作時間を調整可能</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 製作方法 -->
+    <div class="card">
+      <h2>製作方法</h2>
+
+      <h3>A. 直接法（チェアサイド）</h3>
+      <table>
+        <tr><th>方法</th><th>手順</th><th>適応</th></tr>
+        <tr>
+          <td><strong>既製クラウン応用法</strong></td>
+          <td>ポリカーボネートクラウンを選択→マージン調整→即時重合レジンで内面適合</td>
+          <td>単冠、前歯部</td>
+        </tr>
+        <tr>
+          <td><strong>餅状レジン圧接法</strong></td>
+          <td>餅状の即時重合レジンを支台歯へ圧接→硬化前に着脱を数回</td>
+          <td>ブリッジ、支台歯数が少ない場合</td>
+        </tr>
+        <tr>
+          <td class="highlight"><strong>術前印象応用法</strong></td>
+          <td>支台歯形成前に印象採得→形成後に印象材内にレジンを流し込み圧接</td>
+          <td>現状の歯冠形態を再現したい場合</td>
+        </tr>
+      </table>
+
+      <h3>B. 間接法（技工室）</h3>
+      <table>
+        <tr><th>方法</th><th>手順</th><th>適応</th></tr>
+        <tr>
+          <td><strong>レジン筆積み法</strong></td>
+          <td>作業用模型上で即時重合レジンを筆積み→歯冠形態を整える</td>
+          <td>複数歯、精密な形態が必要な場合</td>
+        </tr>
+        <tr>
+          <td><strong>術前印象応用法</strong></td>
+          <td>術前の印象からワックスパターン製作→シリコーン印象→レジン流し込み</td>
+          <td>ブリッジ、複雑な症例</td>
+        </tr>
+      </table>
+
+      <div class="info-box">
+        <strong>直接法 vs 間接法</strong><br>
+        ・<strong>直接法</strong>：チェアタイムは長いが、来院回数は少ない<br>
+        ・<strong>間接法</strong>：チェアタイムは短いが、技工時間が必要で来院回数が増える
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【112A84】50歳女性。上顎右側中切歯の審美不良を主訴。20年前に硬質レジン前装冠を装着。オールセラミッククラウンで修復。プロビジョナルクラウンの製作法は？</div>
+        <div class="answer">
+          <span class="answer-label">正解：B（術前印象応用法）</span><br>
+          既存の補綴装置の形態を参考にしながら、術前に印象を採得し、支台歯形成後にその印象を利用してプロビを製作する。
+        </div>
+      </div>
+    </div>
+
+    <!-- プロビの利用 -->
+    <div class="card">
+      <h2>プロビジョナルレストレーションの利用</h2>
+
+      <h3>エマージェンスプロファイルの調整</h3>
+      <p>プロビジョナルレストレーションを用いて歯肉形態を整え、その形態を最終補綴装置に反映させる。</p>
+
+      <div class="info-box">
+        <strong>調整の流れ</strong><br>
+        1. プロビ装着後、歯肉の状態を観察<br>
+        2. 必要に応じてプロビの形態を修正<br>
+        3. 歯肉形態が安定したらプロビの形態を印象採得<br>
+        4. その情報を最終補綴装置の製作に活用
+      </div>
+
+      <div class="exam-box">
+        <div class="question">【109B28】45歳女性。上顎前歯の審美不良を主訴。上顎前歯部固定性補綴装置を製作。プロビジョナルレストレーションを利用して行うのはどれか。2つ選べ。</div>
+        <div class="options">
+          a. エマージェンスプロファイルの調整<br>
+          b. ガイドの調整<br>
+          c. 支台歯の平行性の確認<br>
+          d. フィニッシュラインの位置決定<br>
+          e. 最終補綴装置の色調選択
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：A, B</span><br>
+          プロビを利用して、①エマージェンスプロファイル（歯肉からの立ち上がり）の調整、②咬合ガイド（前方・側方運動時の誘導）の調整を行い、最終補綴に反映させる。
+        </div>
+      </div>
+    </div>
+
+    <!-- 仮着材 -->
+    <div class="card">
+      <h2>仮着材の選択</h2>
+
+      <table>
+        <tr><th>種類</th><th>特徴</th><th>注意点</th></tr>
+        <tr>
+          <td><strong>ユージノール系</strong></td>
+          <td>鎮静作用あり、歯髄保護に優れる</td>
+          <td class="highlight">即時重合レジンの重合を阻害→レジンコアには不適</td>
+        </tr>
+        <tr>
+          <td><strong>非ユージノール系</strong></td>
+          <td>重合阻害なし</td>
+          <td>レジン支台築造後に使用可能</td>
+        </tr>
+        <tr>
+          <td><strong>レジン系仮着材</strong></td>
+          <td>接着力がやや強い</td>
+          <td>長期使用時に除去が困難になることがある</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 出典 -->
+    <div class="ref-section">
+      <strong>参考文献</strong><br>
+      ・クラウンブリッジ補綴学 第5版（医歯薬出版）p.145-148<br>
+      ・第107回・109回・112回 歯科医師国家試験
+    </div>
+
+  </div>
+</body>
+</html>

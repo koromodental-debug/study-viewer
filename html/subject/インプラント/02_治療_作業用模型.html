@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>作業用模型 - インプラント</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">インプラント / 治療</span>
+    <h1>作業用模型</h1>
+    <div class="container">
+
+      <h2>インプラント作業用模型の特徴</h2>
+      <p>インプラント作業用模型は、通常の補綴用模型とは異なり、以下の特徴を持つ。</p>
+      <ul>
+        <li><span class="key">インプラントアナログ</span>を使用してインプラント体の三次元的位置を再現</li>
+        <li><span class="highlight">ガム用シリコーンゴム</span>で周囲軟組織の形態を再現（ガム模型）</li>
+        <li>超硬質石膏を使用</li>
+      </ul>
+
+      <h2>ガム模型（シリコーンゴム製人工歯肉）</h2>
+      <p>インプラント周囲の軟組織形態を<span class="key">シリコーンゴム</span>で再現した模型。弾性があるため、アバットメントや上部構造の着脱が容易。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">ガム模型の目的（頻出）</div>
+        <ul>
+          <li><span class="highlight">カントゥア（外形）の調整</span></li>
+          <li><span class="highlight">清掃性の確認</span></li>
+          <li><span class="key">エマージェンスプロファイル</span>の調整・確認</li>
+          <li>アバットメントフィニッシュラインと歯肉縁上の位置関係確認（セメント固定式）</li>
+        </ul>
+      </div>
+
+      <h2>ガム模型の製作手順</h2>
+      <ol>
+        <li>印象用コーピングと<span class="key">インプラントアナログ</span>の連結</li>
+        <li><span class="highlight">ガム用シリコーンゴム注入</span>（周囲軟組織の形態再現）</li>
+        <li>ガム用シリコーンゴムの形態修正（脱着を容易にする）</li>
+        <li><span class="key">超硬質石膏</span>の注入</li>
+        <li>模型のトリミング</li>
+        <li>咬合器に装着</li>
+      </ol>
+
+      <h2>ガム模型の利点</h2>
+      <ul>
+        <li>軟組織が<span class="key">弾性体</span>で再現されるため、アバットメントや上部構造の着脱が容易</li>
+        <li>カントゥア（歯冠外形）と周囲軟組織との関係を確認可能</li>
+        <li>清掃性（デンタルフロスの通過など）の確認が可能</li>
+        <li>エマージェンスプロファイルの適切さを評価可能</li>
+      </ul>
+
+      <h2>作業用模型で確認する項目</h2>
+      <table>
+        <tr>
+          <th>確認項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">カントゥア</span></td>
+          <td>上部構造の外形、歯冠形態の適切さ</td>
+        </tr>
+        <tr>
+          <td><span class="key">清掃性</span></td>
+          <td>歯間ブラシ、フロスの通過、自浄性</td>
+        </tr>
+        <tr>
+          <td><span class="key">エマージェンスプロファイル</span></td>
+          <td>歯頸部から歯冠部への立ち上がり形態</td>
+        </tr>
+        <tr>
+          <td>マージン位置</td>
+          <td>アバットメントフィニッシュラインと歯肉縁の関係</td>
+        </tr>
+        <tr>
+          <td>咬合関係</td>
+          <td>咬合器上での対合歯との関係</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">106C51</div>
+        <p>インプラント上部構造の製作を行っている。作業用模型の写真（別冊No.6）を別に示す。<br>
+        矢印で示す材料を用いる目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106C51.png" alt="別冊No.6">
+        </div>
+        <div class="choices">
+          a 清掃性の確認<br>
+          b 粘膜厚径の再現<br>
+          c カントゥアの調整<br>
+          d 前装陶材の色調確認<br>
+          e アクセスホールの位置修正
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】矢印で示されているのは<span class="key">ガム用シリコーンゴム</span>（ピンク色の人工歯肉）である。ガム模型の目的は<span class="highlight">清掃性の確認</span>と<span class="highlight">カントゥア（外形）の調整</span>である。粘膜厚径の再現は目的ではなく、粘膜形態を再現することで上部構造の形態を確認する。前装陶材の色調確認は模型では不可能。アクセスホールの位置修正はガム模型とは関係ない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

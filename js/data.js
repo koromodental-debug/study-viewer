@@ -8825,5 +8825,389 @@ const DATA = [
     "subject": "冠橋義歯",
     "subjectCategory": "基礎",
     "searchText": "診査・診断、前処置_診断・治療計画 A. 局所的因子 B. 全身的因子 C. 社会・心理的因子 インフォームドコンセント クラウンブリッジの失敗原因 予後不良の可能性も含めて十分に説明 即日対応が可能な処置 可撤性義歯を選択する理由 国試の急所 審美領域のブリッジ支台装置 年齢による補綴方法の選択 患者への説明義務 成長期患者への対応 治療計画の立案（POMR） 治療計画を左右する因子 補綴装置の選択基準 診断・治療計画"
+  },
+  {
+    "id": "インプラントの構成と要件_インプラント治療の適応",
+    "title": "インプラントの構成と要件_インプラント治療の適応",
+    "qaPath": "qa/subject/インプラント/01_インプラントの構成と要件_インプラント治療の適応_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "インプラントの構成と要件_インプラント治療の適応",
+    "title": "インプラントの構成と要件_インプラント治療の適応",
+    "qaPath": "qa/subject/インプラント/01_インプラントの構成と要件_インプラント治療の適応_QA.txt",
+    "htmlPath": "html/subject/インプラント/01_インプラントの構成と要件_インプラント治療の適応.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_アバットメント",
+    "title": "治療_アバットメント",
+    "qaPath": "qa/subject/インプラント/02_治療_アバットメント_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_アバットメント",
+    "title": "治療_アバットメント",
+    "qaPath": "qa/subject/インプラント/02_治療_アバットメント_QA.txt",
+    "htmlPath": "html/subject/インプラント/02_治療_アバットメント.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_インプラントオーバーデンチャー",
+    "title": "治療_インプラントオーバーデンチャー",
+    "qaPath": "qa/subject/インプラント/02_治療_インプラントオーバーデンチャー_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_インプラントオーバーデンチャー",
+    "title": "治療_インプラントオーバーデンチャー",
+    "qaPath": "qa/subject/インプラント/02_治療_インプラントオーバーデンチャー_QA.txt",
+    "htmlPath": "html/subject/インプラント/02_治療_インプラントオーバーデンチャー.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_上部構造",
+    "title": "治療_上部構造",
+    "qaPath": "qa/subject/インプラント/02_治療_上部構造_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_上部構造",
+    "title": "治療_上部構造",
+    "qaPath": "qa/subject/インプラント/02_治療_上部構造_QA.txt",
+    "htmlPath": "html/subject/インプラント/02_治療_上部構造.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_作業用模型",
+    "title": "治療_作業用模型",
+    "qaPath": "qa/subject/インプラント/02_治療_作業用模型_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_作業用模型",
+    "title": "治療_作業用模型",
+    "qaPath": "qa/subject/インプラント/02_治療_作業用模型_QA.txt",
+    "htmlPath": "html/subject/インプラント/02_治療_作業用模型.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_印象採得",
+    "title": "治療_印象採得",
+    "qaPath": "qa/subject/インプラント/02_治療_印象採得_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_印象採得",
+    "title": "治療_印象採得",
+    "qaPath": "qa/subject/インプラント/02_治療_印象採得_QA.txt",
+    "htmlPath": "html/subject/インプラント/02_治療_印象採得.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_埋入手術",
+    "title": "治療_埋入手術",
+    "qaPath": "qa/subject/インプラント/02_治療_埋入手術_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_埋入手術",
+    "title": "治療_埋入手術",
+    "qaPath": "qa/subject/インプラント/02_治療_埋入手術_QA.txt",
+    "htmlPath": "html/subject/インプラント/02_治療_埋入手術.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_暫間補綴装置",
+    "title": "治療_暫間補綴装置",
+    "qaPath": "qa/subject/インプラント/02_治療_暫間補綴装置_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_暫間補綴装置",
+    "title": "治療_暫間補綴装置",
+    "qaPath": "qa/subject/インプラント/02_治療_暫間補綴装置_QA.txt",
+    "htmlPath": "html/subject/インプラント/02_治療_暫間補綴装置.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_術前診断",
+    "title": "治療_術前診断",
+    "qaPath": "qa/subject/インプラント/02_治療_術前診断_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_術前診断",
+    "title": "治療_術前診断",
+    "qaPath": "qa/subject/インプラント/02_治療_術前診断_QA.txt",
+    "htmlPath": "html/subject/インプラント/02_治療_術前診断.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_骨造成術",
+    "title": "治療_骨造成術",
+    "qaPath": "qa/subject/インプラント/02_治療_骨造成術_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "治療_骨造成術",
+    "title": "治療_骨造成術",
+    "qaPath": "qa/subject/インプラント/02_治療_骨造成術_QA.txt",
+    "htmlPath": "html/subject/インプラント/02_治療_骨造成術.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "メインテナンス_インプラントの成功基準",
+    "title": "メインテナンス_インプラントの成功基準",
+    "qaPath": "qa/subject/インプラント/03_メインテナンス_インプラントの成功基準_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "メインテナンス_インプラントの成功基準",
+    "title": "メインテナンス_インプラントの成功基準",
+    "qaPath": "qa/subject/インプラント/03_メインテナンス_インプラントの成功基準_QA.txt",
+    "htmlPath": "html/subject/インプラント/03_メインテナンス_インプラントの成功基準.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "メインテナンス_メインテナンス",
+    "title": "メインテナンス_メインテナンス",
+    "qaPath": "qa/subject/インプラント/03_メインテナンス_メインテナンス_QA.json",
+    "htmlPath": null,
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "メインテナンス_メインテナンス",
+    "title": "メインテナンス_メインテナンス",
+    "qaPath": "qa/subject/インプラント/03_メインテナンス_メインテナンス_QA.txt",
+    "htmlPath": "html/subject/インプラント/03_メインテナンス_メインテナンス.html",
+    "subject": "インプラント",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "支台歯形成_支台歯形成",
+    "title": "支台歯形成_支台歯形成",
+    "qaPath": "qa/subject/冠橋義歯学/06_支台歯形成_支台歯形成_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "支台歯形成_支台歯形成",
+    "title": "支台歯形成_支台歯形成",
+    "qaPath": "qa/subject/冠橋義歯学/06_支台歯形成_支台歯形成_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/06_支台歯形成_支台歯形成.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "支台歯形成_支台築造",
+    "title": "支台歯形成_支台築造",
+    "qaPath": "qa/subject/冠橋義歯学/06_支台歯形成_支台築造_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "支台歯形成_支台築造",
+    "title": "支台歯形成_支台築造",
+    "qaPath": "qa/subject/冠橋義歯学/06_支台歯形成_支台築造_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/06_支台歯形成_支台築造.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "支台歯形成_色調選択",
+    "title": "支台歯形成_色調選択",
+    "qaPath": "qa/subject/冠橋義歯学/06_支台歯形成_色調選択_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "支台歯形成_色調選択",
+    "title": "支台歯形成_色調選択",
+    "qaPath": "qa/subject/冠橋義歯学/06_支台歯形成_色調選択_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/06_支台歯形成_色調選択.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "暫間被覆冠_プロビジョナルレストレーション",
+    "title": "暫間被覆冠_プロビジョナルレストレーション",
+    "qaPath": "qa/subject/冠橋義歯学/07_暫間被覆冠_プロビジョナルレストレーション_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "暫間被覆冠_プロビジョナルレストレーション",
+    "title": "暫間被覆冠_プロビジョナルレストレーション",
+    "qaPath": "qa/subject/冠橋義歯学/07_暫間被覆冠_プロビジョナルレストレーション_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/07_暫間被覆冠_プロビジョナルレストレーション.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "印象および咬合採得_印象採得",
+    "title": "印象および咬合採得_印象採得",
+    "qaPath": "qa/subject/冠橋義歯学/08_印象および咬合採得_印象採得_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "印象および咬合採得_印象採得",
+    "title": "印象および咬合採得_印象採得",
+    "qaPath": "qa/subject/冠橋義歯学/08_印象および咬合採得_印象採得_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/08_印象および咬合採得_印象採得.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "印象および咬合採得_咬合採得",
+    "title": "印象および咬合採得_咬合採得",
+    "qaPath": "qa/subject/冠橋義歯学/08_印象および咬合採得_咬合採得_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "印象および咬合採得_咬合採得",
+    "title": "印象および咬合採得_咬合採得",
+    "qaPath": "qa/subject/冠橋義歯学/08_印象および咬合採得_咬合採得_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/08_印象および咬合採得_咬合採得.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "技工操作_CAD-CAM冠",
+    "title": "技工操作_CAD-CAM冠",
+    "qaPath": "qa/subject/冠橋義歯学/09_技工操作_CAD-CAM冠_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "技工操作_CAD-CAM冠",
+    "title": "技工操作_CAD-CAM冠",
+    "qaPath": "qa/subject/冠橋義歯学/09_技工操作_CAD-CAM冠_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/09_技工操作_CAD-CAM冠.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "技工操作_ろう付けと前装冠",
+    "title": "技工操作_ろう付けと前装冠",
+    "qaPath": "qa/subject/冠橋義歯学/09_技工操作_ろう付けと前装冠_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "技工操作_ろう付けと前装冠",
+    "title": "技工操作_ろう付けと前装冠",
+    "qaPath": "qa/subject/冠橋義歯学/09_技工操作_ろう付けと前装冠_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/09_技工操作_ろう付けと前装冠.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "技工操作_技工操作の基本",
+    "title": "技工操作_技工操作の基本",
+    "qaPath": "qa/subject/冠橋義歯学/09_技工操作_技工操作の基本_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "技工操作_技工操作の基本",
+    "title": "技工操作_技工操作の基本",
+    "qaPath": "qa/subject/冠橋義歯学/09_技工操作_技工操作の基本_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/09_技工操作_技工操作の基本.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "試適・装着_表面処理と装着",
+    "title": "試適・装着_表面処理と装着",
+    "qaPath": "qa/subject/冠橋義歯学/10_試適・装着_表面処理と装着_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "試適・装着_表面処理と装着",
+    "title": "試適・装着_表面処理と装着",
+    "qaPath": "qa/subject/冠橋義歯学/10_試適・装着_表面処理と装着_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/10_試適・装着_表面処理と装着.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "試適・装着_試適と咬合調整",
+    "title": "試適・装着_試適と咬合調整",
+    "qaPath": "qa/subject/冠橋義歯学/10_試適・装着_試適と咬合調整_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "試適・装着_試適と咬合調整",
+    "title": "試適・装着_試適と咬合調整",
+    "qaPath": "qa/subject/冠橋義歯学/10_試適・装着_試適と咬合調整_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/10_試適・装着_試適と咬合調整.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "術後管理_術後管理と修理",
+    "title": "術後管理_術後管理と修理",
+    "qaPath": "qa/subject/冠橋義歯学/11_術後管理_術後管理と修理_QA.json",
+    "htmlPath": null,
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "術後管理_術後管理と修理",
+    "title": "術後管理_術後管理と修理",
+    "qaPath": "qa/subject/冠橋義歯学/11_術後管理_術後管理と修理_QA.txt",
+    "htmlPath": "html/subject/冠橋義歯学/11_術後管理_術後管理と修理.html",
+    "subject": "冠橋義歯",
+    "subjectCategory": "基礎"
   }
 ];

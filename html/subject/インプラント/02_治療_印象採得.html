@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>印象採得 - インプラント</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">インプラント / 治療</span>
+    <h1>印象採得</h1>
+    <div class="container">
+
+      <h2>印象採得の目的</h2>
+      <ul>
+        <li>インプラント体またはアバットメントの<span class="highlight">三次元的な位置</span>を作業用模型上に再現</li>
+        <li><span class="key">周囲軟組織の形態</span>を再現</li>
+      </ul>
+
+      <h2>印象採得に使用する器材</h2>
+      <table>
+        <tr>
+          <th>器材</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">印象用コーピング</span></td>
+          <td>インプラント体に装着して印象採得</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">インプラントアナログ</span></td>
+          <td>模型製作時に使用（プラットフォーム形態を再現）</td>
+        </tr>
+        <tr>
+          <td><span class="key">ガイドピン</span></td>
+          <td>オープントレー法でコーピングを固定</td>
+        </tr>
+        <tr>
+          <td><span class="key">オープントレー</span></td>
+          <td>開口部のある個人トレー</td>
+        </tr>
+        <tr>
+          <td>シリコーンゴム</td>
+          <td>周囲軟組織形態の再現</td>
+        </tr>
+      </table>
+
+      <h2>印象採得法の比較（頻出）</h2>
+
+      <h3>クローズドトレー法 vs オープントレー法</h3>
+      <table>
+        <tr>
+          <th>比較項目</th>
+          <th>クローズドトレー法</th>
+          <th>オープントレー法</th>
+        </tr>
+        <tr>
+          <td>印象術式</td>
+          <td><span class="key">単純</span></td>
+          <td>複雑</td>
+        </tr>
+        <tr>
+          <td>印象精度</td>
+          <td>劣る</td>
+          <td><span class="highlight">優れる</span></td>
+        </tr>
+        <tr>
+          <td>印象材の寸法安定性</td>
+          <td>劣る</td>
+          <td><span class="highlight">優れる</span></td>
+        </tr>
+        <tr>
+          <td>インプラント体の傾斜</td>
+          <td><span class="caution">許容しにくい</span></td>
+          <td><span class="highlight">許容しやすい</span></td>
+        </tr>
+        <tr>
+          <td>臼歯部・開口障害への対応</td>
+          <td><span class="key">可能</span></td>
+          <td>困難</td>
+        </tr>
+        <tr>
+          <td>トレーの特徴</td>
+          <td>通常トレー</td>
+          <td><span class="key">開口部あり</span></td>
+        </tr>
+        <tr>
+          <td>印象用コーピング</td>
+          <td>口腔内に残る</td>
+          <td>印象内に取り込まれる</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">オープントレー法が有利な点</div>
+        <ul>
+          <li><span class="highlight">印象材の寸法安定性</span>が良い（コーピングを印象から外さない）</li>
+          <li><span class="highlight">インプラント体の傾斜に対する許容</span>が大きい</li>
+        </ul>
+      </div>
+
+      <h2>オープントレー法の手順</h2>
+      <ol>
+        <li><span class="key">印象用コーピング</span>をインプラント体に装着</li>
+        <li><span class="key">ガイドピン</span>（固定用スクリュー）で固定</li>
+        <li><span class="key">オープントレー</span>（開口部あり）で印象採得</li>
+        <li>ガイドピンを緩めてトレー撤去（コーピングは印象内に残る）</li>
+        <li><span class="highlight">インプラントアナログを連結</span></li>
+        <li>石膏注入→作業用模型完成</li>
+      </ol>
+
+      <p class="note">※オープントレーの開口部は、ガイドピンにアクセスして印象用コーピングを操作するため</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">116C75</div>
+        <p>インプラントの印象採得において、オープントレー法がクローズドトレー法に比べて有利なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 術式の簡便さ<br>
+          b 印象材の寸法安定性<br>
+          c 開口量が少ない場合への適用<br>
+          d 印象用コーピングの装着しやすさ<br>
+          e インプラント体の傾斜に対する許容
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】オープントレー法では印象用コーピングが印象内に取り込まれるため、<span class="highlight">印象材の寸法安定性</span>が良い。また、<span class="highlight">インプラント体の傾斜に対する許容</span>が大きい。術式の簡便さ、開口量が少ない場合への適用はクローズドトレー法が有利。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D26</div>
+        <p>59歳の女性。右側での咀嚼困難を主訴として来院した。診察の結果、下顎右側にインプラント義歯による補綴装置を製作することとした。76┐相当部にインプラントを植立後、上部構造製作のための精密印象採得を行うこととした。印象採得前の口腔内写真（別冊No.3）を別に示す。<br>
+        準備する器材はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D26.png" alt="別冊No.3">
+        </div>
+        <div class="choices">
+          a 個歯トレー<br>
+          b 歯肉圧排糸<br>
+          c オープントレー<br>
+          d 印象用コーピング<br>
+          e カバースクリュー
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】インプラントの印象採得には<span class="highlight">オープントレー</span>（開口部のある個人トレー）と<span class="highlight">印象用コーピング</span>が必要。歯肉圧排糸は天然歯の印象採得時に使用。カバースクリューは埋入手術後の治癒期間に使用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C107</div>
+        <p>インプラント補綴装置製作のために印象採得を行うこととした。口腔内写真（別冊No.15A）と個人トレーの写真（別冊No.15B）とを別に示す。<br>
+        矢印の構造を付与する目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107C107.png" alt="別冊No.15">
+        </div>
+        <div class="choices">
+          a 印象材の注入<br>
+          b 印象材の剥離防止<br>
+          c 印象用パーツの操作<br>
+          d アバットメントの挿入<br>
+          e インプラント部の無圧印象
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】オープントレーの開口部（穴）は、<span class="highlight">印象用パーツ（ガイドピン）の操作</span>のために設けられている。印象採得後にガイドピンを緩めることで、印象用コーピングを印象内に残したままトレーを撤去できる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B32</div>
+        <p>インプラント上部構造製作のための印象採得を行った後、口腔内から撤去した印象体について、次に行う処置はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 石膏注入<br>
+          b ボクシング<br>
+          c ガム材の注入<br>
+          d 印象用コーピングの撤去<br>
+          e インプラントアナログの連結
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】オープントレー法で印象採得後、まず<span class="highlight">インプラントアナログを連結</span>する。アナログはインプラント体のプラットフォーム形態を再現しており、これを連結してから石膏注入を行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109B5</div>
+        <p>60歳の男性。上顎臼歯の欠損による咀嚼不全を主訴として来院した。インプラント補綴治療を行うこととした。オープントレー法による印象採得時の口腔内写真と技工操作の写真（別冊No.5）を別に示す。<br>
+        術式の進行順で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109B5.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a ア→エ→オ→イ→ウ<br>
+          b ア→エ→オ→ウ→イ<br>
+          c ア→オ→イ→ウ→エ<br>
+          d ア→オ→エ→イ→ウ<br>
+          e ア→オ→エ→ウ→イ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】オープントレー法の手順：ア（印象用コーピング装着）→エ（印象採得）→オ（トレー撤去、コーピングは印象内）→イ（<span class="highlight">アナログ連結</span>）→ウ（石膏注入）の順に進める。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

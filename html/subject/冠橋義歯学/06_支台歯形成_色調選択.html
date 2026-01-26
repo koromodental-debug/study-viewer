@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>色調選択 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+      --success: #34C759;
+      --warning: #FF9500;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+    .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; }
+    .card {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card h2 { font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+    .card h3 { font-size: 17px; font-weight: 600; margin: 24px 0 12px 0; }
+    .point-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .point-box h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+    .point-box ul { margin-left: 20px; }
+    .point-box li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    .highlight { background: #FFF9C4; padding: 2px 4px; border-radius: 4px; }
+    .info-box {
+      background: #F0F7FF;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .warning-box {
+      background: #FFF8E6;
+      border-left: 4px solid var(--warning);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .exam-box {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .exam-box .question { font-weight: 600; margin-bottom: 12px; }
+    .exam-box .options { margin: 12px 0 12px 20px; }
+    .exam-box .answer {
+      background: #E8F5E9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .exam-box .answer-label { font-weight: 600; color: var(--success); }
+    .ref-section {
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding-top: 16px;
+    }
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+    .step-list li {
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 12px;
+    }
+    .step-list li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">TOP</a> &gt; <a href="index.html">冠橋義歯学</a> &gt; 色調選択
+    </div>
+
+    <h1>色調選択（シェードテイキング）</h1>
+    <p class="subtitle">Chapter 06: 支台歯形成｜頻出度 ★★</p>
+
+    <!-- 国試の急所 -->
+    <div class="point-box">
+      <h2>国試の急所</h2>
+      <ul>
+        <li><strong>光源</strong>：自然光に近い色温度（5,000〜6,500K）を確保する</li>
+        <li><strong>選択順序</strong>：明度→彩度→色相の順に選択</li>
+        <li><strong>比較時間</strong>：短時間で行う（乾燥により色調が変化するため）</li>
+        <li><strong>観察距離</strong>：腕を伸ばした程度の距離から確認</li>
+        <li><strong>記録</strong>：選択したシェードタブと天然歯を並べて写真撮影</li>
+      </ul>
+    </div>
+
+    <!-- 色調選択の条件 -->
+    <div class="card">
+      <h2>色調選択の環境条件</h2>
+
+      <h3>光源の条件（★重要）</h3>
+      <table>
+        <tr><th>条件</th><th>理由</th></tr>
+        <tr>
+          <td class="highlight">自然光に近い色温度<br>（5,000〜6,500K）</td>
+          <td>色の見え方が安定し、正確な色調判定が可能</td>
+        </tr>
+        <tr>
+          <td>均一な照明</td>
+          <td>影や色ムラによる誤判定を防止</td>
+        </tr>
+        <tr>
+          <td>適度な照度</td>
+          <td>明るすぎると彩度が低く見え、暗いと明度判定が困難</td>
+        </tr>
+      </table>
+
+      <div class="warning-box">
+        <strong>避けるべき条件</strong><br>
+        ・無影灯の光（手術用で色温度が不適切）<br>
+        ・蛍光灯のみの照明（演色性が低い）<br>
+        ・直射日光（色温度が変動する）<br>
+        ・周囲に原色の物がある環境（色の干渉）
+      </div>
+    </div>
+
+    <!-- 色調選択の手順 -->
+    <div class="card">
+      <h2>色調選択の手順</h2>
+
+      <ol class="step-list">
+        <li><strong>患者の希望を確認</strong>：極端に白い色を希望する患者もいる</li>
+        <li><strong>明度（Value）を基準に選択</strong>：最も重要な要素</li>
+        <li><strong>彩度（Chroma）を確認</strong>：色の鮮やかさ</li>
+        <li><strong>色相（Hue）を確認</strong>：色味（黄色系、オレンジ系など）</li>
+        <li><strong>歯冠の各部位を確認</strong>：中央部→切縁部→歯頸部の順</li>
+        <li><strong>複数のタブを選び写真撮影</strong>：選択したもの＋明るいもの＋暗いものの3本</li>
+      </ol>
+
+      <div class="info-box">
+        <strong>比較のポイント</strong><br>
+        ・天然歯とシェードタブの切縁を<span class="highlight">1mm程度の間隔</span>をあけて同一平面上に配置<br>
+        ・<span class="highlight">腕を伸ばした程度の距離</span>から観察<br>
+        ・できるだけ<span class="highlight">短時間</span>で比較（乾燥による色調変化を防ぐ）
+      </div>
+    </div>
+
+    <!-- 色の三属性 -->
+    <div class="card">
+      <h2>色の三属性</h2>
+
+      <table>
+        <tr><th>属性</th><th>説明</th><th>シェード選択での重要度</th></tr>
+        <tr>
+          <td><strong>明度（Value）</strong></td>
+          <td>色の明るさ・暗さ</td>
+          <td class="highlight">最も重要（最初に選択）</td>
+        </tr>
+        <tr>
+          <td><strong>彩度（Chroma）</strong></td>
+          <td>色の鮮やかさ</td>
+          <td>2番目に選択</td>
+        </tr>
+        <tr>
+          <td><strong>色相（Hue）</strong></td>
+          <td>色味の違い（赤み、黄みなど）</td>
+          <td>最後に選択</td>
+        </tr>
+      </table>
+
+      <p style="margin-top: 16px;">明度の不一致は彩度や色相の不一致よりも目立ちやすいため、明度を最優先で合わせる。</p>
+    </div>
+
+    <!-- 測色機器 -->
+    <div class="card">
+      <h2>色調選択の方法</h2>
+
+      <h3>1. 視感比色法</h3>
+      <p>シェードガイド（色見本）を用いて肉眼で比較する方法。術者の経験や主観的な要素が含まれる。</p>
+
+      <h3>2. 測色機器による方法</h3>
+      <table>
+        <tr><th>機器</th><th>特徴</th></tr>
+        <tr>
+          <td>ShadeEye NCC</td>
+          <td>分光測色計、デジタルで色調を数値化</td>
+        </tr>
+        <tr>
+          <td>Crystaleye Spectrophotometer</td>
+          <td>画像データをパソコン上で解析、データ通信可能</td>
+        </tr>
+        <tr>
+          <td>歯科用デジタルカメラ</td>
+          <td>画像として記録、技工士との情報共有に有用</td>
+        </tr>
+      </table>
+
+      <div class="info-box">
+        測色機器を使用すると、視感比色法に比べて客観的な色調評価が可能となり、経験の浅い術者でも比較的安定した結果が得られる。
+      </div>
+    </div>
+
+    <!-- 過去問 -->
+    <div class="card">
+      <h2>過去問演習</h2>
+
+      <div class="exam-box">
+        <div class="question">【103B43】34歳男性。下顎右側第一小臼歯に陶材焼付鋳造冠を製作。支台歯形成後の色調選択を行う。この操作を行うにあたり適切なのはどれか。2つ選べ。</div>
+        <div class="options">
+          a. 無影灯の光で明度を保つ<br>
+          b. 自然光に近い色温度を確保する<br>
+          c. 周囲の原色を利用して対比効果を得る<br>
+          d. 歯面を湿潤状態に保ちながら行う<br>
+          e. シェードガイドと歯面を1m以上離して観察する
+        </div>
+        <div class="answer">
+          <span class="answer-label">正解：B, E</span><br>
+          <strong>B：正解</strong>　自然光に近い色温度（5,000〜6,500K）で正確な色調判定が可能。<br>
+          <strong>E：正解</strong>　腕を伸ばした程度の距離（約1m）から観察することで全体的な印象を把握できる。<br>
+          <strong>a：誤り</strong>　無影灯は手術用で色温度が色調選択に不適切。<br>
+          <strong>c：誤り</strong>　原色は色の干渉を起こすため避ける。<br>
+          <strong>d：誤り</strong>　短時間で行うが、湿潤状態維持は必須条件ではない。
+        </div>
+      </div>
+    </div>
+
+    <!-- 出典 -->
+    <div class="ref-section">
+      <strong>参考文献</strong><br>
+      ・クラウンブリッジ補綴学 第5版（医歯薬出版）p.165-168<br>
+      ・第103回 歯科医師国家試験
+    </div>
+
+  </div>
+</body>
+</html>

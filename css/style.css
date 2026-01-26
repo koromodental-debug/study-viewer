@@ -1569,6 +1569,165 @@ body {
   background: #f5f5f7;
 }
 
+/* 画像ラッパー（アノテーション用） */
+.kakomon-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.kakomon-image-wrapper .image-annotations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.kakomon-image-wrapper .annotation-label {
+  font-weight: 600;
+  text-shadow: 0 0 3px rgba(255,255,255,0.9), 0 0 6px rgba(255,255,255,0.7);
+}
+
+/* 画像解説 */
+.image-explanation {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8f4ff 100%);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.image-exp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.image-type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: #007AFF;
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.annotation-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.annotation-toggle-btn:hover {
+  background: #e8e8e8;
+}
+
+.annotation-toggle-btn.active {
+  background: #007AFF;
+  color: white;
+}
+
+.annotation-toggle-btn.active svg {
+  stroke: white;
+}
+
+/* 画像所見 */
+.image-findings {
+  margin-bottom: 16px;
+}
+
+.findings-title,
+.guide-title,
+.features-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.findings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.findings-list li {
+  padding: 10px 12px;
+  background: var(--bg-color);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.finding-location {
+  display: block;
+  font-size: 12px;
+  color: #007AFF;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.finding-observation {
+  display: block;
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.finding-significance {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* 読影ガイド */
+.reading-guide {
+  margin-bottom: 16px;
+}
+
+.guide-steps {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.guide-steps li {
+  font-size: 13px;
+  color: var(--text-color);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* キーポイント */
+.image-key-features {
+  margin-bottom: 0;
+}
+
+.features-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feature-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #FF9F0A;
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+}
+
 .kakomon-instruction {
   font-size: 13px;
   color: var(--text-muted);
@@ -8152,6 +8311,23 @@ body.is-practice .tab-content {
   background: #2C2C2E;
 }
 
+/* ダークモード：画像解説 */
+[data-theme="dark"] .image-explanation {
+  background: linear-gradient(135deg, #1C1C1E 0%, rgba(10, 132, 255, 0.1) 100%);
+}
+
+[data-theme="dark"] .findings-list li {
+  background: #2C2C2E;
+}
+
+[data-theme="dark"] .annotation-toggle-btn {
+  background: #3A3A3C;
+}
+
+[data-theme="dark"] .annotation-toggle-btn:hover {
+  background: #48484A;
+}
+
 [data-theme="dark"] .kakomon-choice {
   background: #2C2C2E;
   border-color: transparent;
@@ -14096,7 +14272,6 @@ body.is-practice .tab-content {
   padding: 16px;
   background: #fffbe6;
   border-radius: var(--radius-md);
-  border-left: 4px solid #faad14;
 }
 
 .key-points-title {
@@ -14279,7 +14454,6 @@ body.is-practice .tab-content {
 
 [data-theme="dark"] .key-points {
   background: rgba(250, 173, 20, 0.15);
-  border-left-color: #faad14;
 }
 
 [data-theme="dark"] .key-points-title {
@@ -14356,7 +14530,6 @@ body.is-practice .tab-content {
 
   :root:not([data-theme="light"]) .key-points {
     background: rgba(250, 173, 20, 0.15);
-    border-left-color: #faad14;
   }
 
   :root:not([data-theme="light"]) .key-points-title {

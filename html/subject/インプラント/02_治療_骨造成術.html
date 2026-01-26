@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>骨造成術 - インプラント</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">インプラント / 治療</span>
+    <h1>骨造成術</h1>
+    <div class="container">
+
+      <h2>骨造成術の概要</h2>
+      <p>インプラント埋入に必要な骨量が不足している場合、骨造成術により骨量を増加させる。造成方向により適応術式が異なる。</p>
+
+      <h3>骨造成術の種類と適応</h3>
+      <table>
+        <tr>
+          <th>術式</th>
+          <th>造成方向</th>
+          <th>主な適応部位</th>
+        </tr>
+        <tr>
+          <td><span class="key">自家骨移植</span></td>
+          <td>水平 > 垂直</td>
+          <td>前歯部、小臼歯部</td>
+        </tr>
+        <tr>
+          <td><span class="key">GBR法</span></td>
+          <td><span class="highlight">水平 >>> 垂直</span></td>
+          <td>全顎</td>
+        </tr>
+        <tr>
+          <td><span class="key">上顎洞底挙上術</span></td>
+          <td><span class="highlight">垂直</span></td>
+          <td>上顎臼歯部</td>
+        </tr>
+        <tr>
+          <td>スプリットクレスト</td>
+          <td>水平</td>
+          <td>前歯部、小臼歯部</td>
+        </tr>
+        <tr>
+          <td>骨延長術</td>
+          <td>垂直</td>
+          <td>下顎前歯部</td>
+        </tr>
+      </table>
+
+      <h2>骨補填材の種類</h2>
+
+      <h3>由来による分類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>骨伝導能</th>
+          <th>骨誘導能</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">自家骨</span></td>
+          <td>○</td>
+          <td>○</td>
+          <td>第一選択、免疫反応なし、採取量に限界</td>
+        </tr>
+        <tr>
+          <td>他家骨（DFDBA）</td>
+          <td>○</td>
+          <td>○</td>
+          <td><span class="caution">日本では未認可</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">異種骨</span>（Bio-Oss等）</td>
+          <td>○</td>
+          <td>×</td>
+          <td>ウシ骨を脱タンパク処理</td>
+        </tr>
+        <tr>
+          <td><span class="key">人工骨</span>（HA、β-TCP）</td>
+          <td>○</td>
+          <td>×</td>
+          <td>吸収性が異なる</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">骨伝導能と骨誘導能</div>
+        <ul>
+          <li><span class="key">骨伝導能</span>：既存骨に連続して新生骨を形成（材料が足場となる）</li>
+          <li><span class="key">骨誘導能</span>：骨のない場所でも間葉系細胞を骨芽細胞に分化させて骨形成を誘導</li>
+        </ul>
+      </div>
+
+      <h2>骨再生誘導法（GBR）</h2>
+      <p><span class="key">Guided Bone Regeneration</span>の略。骨欠損部に骨補填材を填塞し、バリアメンブレンで被覆する方法。</p>
+
+      <h3>原理</h3>
+      <ul>
+        <li>骨欠損部に<span class="key">骨補填材</span>（自家骨、人工骨）を填塞</li>
+        <li><span class="highlight">バリアメンブレン</span>（遮蔽膜）で軟組織からの線維芽細胞侵入を遮断</li>
+        <li>骨芽細胞が先に欠損部を占拠→骨再生</li>
+      </ul>
+
+      <h3>バリアメンブレンの種類</h3>
+      <ul>
+        <li><span class="key">非吸収性</span>：チタンメッシュ、e-PTFE（除去手術が必要）</li>
+        <li><span class="key">吸収性</span>：コラーゲン膜、PLLA-PGA（除去不要）</li>
+      </ul>
+
+      <h2>上顎洞底挙上術（サイナスリフト）</h2>
+      <p>上顎臼歯部で上顎洞が歯槽頂に近接し、インプラント埋入に必要な<span class="highlight">垂直的骨量が不足</span>している場合に行う。</p>
+
+      <h3>2つのアプローチ</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>側方アプローチ</th>
+          <th>歯槽頂アプローチ</th>
+        </tr>
+        <tr>
+          <td>外科的侵襲</td>
+          <td>大きい</td>
+          <td><span class="key">小さい</span></td>
+        </tr>
+        <tr>
+          <td>必要な既存骨</td>
+          <td>制限なし</td>
+          <td><span class="caution">4〜5mm以上</span></td>
+        </tr>
+        <tr>
+          <td>可能な挙上量</td>
+          <td><span class="highlight">制限なし</span></td>
+          <td>3〜5mm程度</td>
+        </tr>
+        <tr>
+          <td>インプラント埋入</td>
+          <td>同時または待時</td>
+          <td>同時埋入</td>
+        </tr>
+        <tr>
+          <td>上顎洞内視認</td>
+          <td>直視可能</td>
+          <td>直視不可</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">上顎洞底挙上術のリスクファクター</div>
+        <ul>
+          <li>鼻疾患（副鼻腔炎、アレルギー性鼻炎、花粉症）</li>
+          <li>喫煙</li>
+          <li>上顎洞粘膜の肥厚</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">114C66</div>
+        <p>40歳の女性。よく噛めないことを主訴として来院した。診察と検査、上顎右側臼歯欠損部にインプラント義歯による治療を行うこととし、インプラント埋入前にある処置を行った。初診時と処置後のエックス線画像（別冊No.27）を別に示す。<br>
+        この処置の目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C66.png" alt="別冊No.27">
+        </div>
+        <div class="choices">
+          a 咬合高径の確保<br>
+          b 治療期間の短縮<br>
+          c 既存骨の骨質改善<br>
+          d 骨結合の早期獲得<br>
+          e 垂直的骨量の増加
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】エックス線画像から、処置前に比べて処置後に上顎洞底部が挙上されていることが読み取れる。これは<span class="highlight">上顎洞底挙上術（サイナスリフト）</span>であり、目的は<span class="highlight">垂直的骨量の増加</span>である。上顎臼歯部では上顎洞が歯槽頂に近接しているため、インプラント埋入に必要な骨の高さを確保するために行われる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A35（採点除外）</div>
+        <p>上顎洞底挙上術に用いる骨移植材料で挙上した高さが維持できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 自家骨<br>
+          b β-TCP<br>
+          c ウシ脱灰焼成骨<br>
+          d ハイドロキシアパタイト<br>
+          e リン酸オクタカルシウム
+        </div>
+        <div class="answer">正解：採点除外</div>
+        <p>【解説】本問は採点除外となった。骨補填材の特性として、<span class="key">自家骨</span>は骨誘導能・骨伝導能ともに優れるが<span class="caution">吸収されやすい</span>。<span class="key">HA（ハイドロキシアパタイト）</span>は吸収されにくく形態維持に優れる。<span class="key">β-TCP</span>は生体内で吸収され骨に置換される。異種骨（Bio-Oss等）は吸収が遅く長期的な足場として機能する。材料の選択は症例により異なる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

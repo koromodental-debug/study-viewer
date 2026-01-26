@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>技工操作の基本 - 冠橋義歯学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+      --success: #34C759;
+      --warning: #FF9500;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+    .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 { font-size: 34px; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; }
+    .card {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card h2 { font-size: 22px; font-weight: 600; margin-bottom: 20px; }
+    .card h3 { font-size: 17px; font-weight: 600; margin: 24px 0 12px 0; }
+    .point-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .point-box h2 { color: white; font-size: 18px; margin-bottom: 12px; }
+    .point-box ul { margin-left: 20px; }
+    .point-box li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: var(--bg-secondary); font-weight: 600; }
+    .highlight { background: #FFF9C4; padding: 2px 4px; border-radius: 4px; }
+    .info-box {
+      background: #F0F7FF;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+    .exam-box {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .exam-box .question { font-weight: 600; margin-bottom: 12px; }
+    .exam-box .answer {
+      background: #E8F5E9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .exam-box .answer-label { font-weight: 600; color: var(--success); }
+    .ref-section {
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">TOP</a> &gt; <a href="index.html">冠橋義歯学</a> &gt; 技工操作の基本
+    </div>
+
+    <h1>技工操作の基本</h1>
+    <p class="subtitle">Chapter 09: 技工操作｜頻出度 ★★★</p>
+
+    <!-- 国試の急所 -->
+    <div class="point-box">
+      <h2>国試の急所</h2>
+      <ul>
+        <li><strong>作業用模型</strong>：可撤式ダイ、ダウエルピン、歯型分割により個々の支台歯を取り外し可能</li>
+        <li><strong>ワックスパターン形成</strong>：盛り上げ法、浸漬法、圧接法の3種類</li>
+        <li><strong>隣接面接触点</strong>：近遠心的に1/3、上下的に切縁側1/3〜1/4に位置</li>
+        <li><strong>鋳造後の酸処理</strong>：酸化膜や埋没材の除去が目的</li>
+        <li><strong>顎路調節</strong>：チェックバイトを用いて矢状顆路傾斜角を調節</li>
+      </ul>
+    </div>
+
+    <!-- 作業用模型 -->
+    <div class="card">
+      <h2>作業用模型</h2>
+
+      <p>精密印象から製作した石膏模型で、クラウンやブリッジの製作に使用する。</p>
+
+      <h3>作業用模型の種類</h3>
+      <table>
+        <tr><th>種類</th><th>特徴</th><th>用途</th></tr>
+        <tr>
+          <td class="highlight"><strong>可撤式ダイ</strong></td>
+          <td>支台歯を個々に取り外し可能</td>
+          <td>単冠、ブリッジ</td>
+        </tr>
+        <tr>
+          <td><strong>トレーダイ</strong></td>
+          <td>支台歯とその周囲を切り出し</td>
+          <td>個歯トレー印象時</td>
+        </tr>
+        <tr>
+          <td><strong>固定式模型</strong></td>
+          <td>歯型を分割しない</td>
+          <td>咬合関係の確認</td>
+        </tr>
+      </table>
+
+      <h3>可撤式ダイの構成要素</h3>
+      <ul style="margin-left: 24px; margin-top: 8px;">
+        <li><span class="highlight">ダウエルピン</span>：支台歯の模型を基底部に固定・着脱するための金属ピン</li>
+        <li>分割溝：歯型を分割するための切り込み</li>
+        <li>基底部：模型の土台となる部分</li>
+      </ul>
+
+      <div class="exam-box">
+        <div class="question">【114C24】ブリッジ製作用の作業用模型の写真を示す。この模型について正しいのはどれか。2つ選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：（ダウエルピン使用、可撤式ダイ関連）</span><br>
+          可撤式ダイ模型では、ダウエルピンにより支台歯を個々に取り外して形成面やマージンを確認できる。
+        </div>
+      </div>
+    </div>
+
+    <!-- 蠟型形成 -->
+    <div class="card">
+      <h2>蠟型形成（ワックスパターン形成）</h2>
+
+      <h3>ワックスパターン形成法の種類</h3>
+      <table>
+        <tr><th>方法</th><th>手順</th><th>特徴</th></tr>
+        <tr>
+          <td class="highlight"><strong>盛り上げ法</strong></td>
+          <td>溶融ワックスを少量ずつ歯型上に盛り上げ</td>
+          <td>最も普及、硬化収縮を抑えやすい</td>
+        </tr>
+        <tr>
+          <td><strong>浸漬法<br>（ディッピング法）</strong></td>
+          <td>溶解ワックスに歯型を浸漬</td>
+          <td>操作は簡単だが溶融温度と室温の差が大きい</td>
+        </tr>
+        <tr>
+          <td><strong>圧接法</strong></td>
+          <td>軟化ワックスを歯型に圧接</td>
+          <td>収縮変形が最も小さい（0〜0.2%）</td>
+        </tr>
+      </table>
+
+      <div class="info-box">
+        <strong>インレーワックスの要件</strong><br>
+        ・加熱により均一に軟化され、十分な可塑性を有する<br>
+        ・ワックスパターン形成時に脆くならず、十分な強度と彫刻性を有する<br>
+        ・温度による膨張が少ない<br>
+        ・焼却時に灰や残渣を残さない
+      </div>
+
+      <h3>FGPテクニック</h3>
+      <p>機能的に生成された咬合面形態を再現する方法。対合歯の機能運動路を記録し、それに基づいて咬合面を形成する。</p>
+
+      <div class="exam-box">
+        <div class="question">【112C61】FGPテクニックについて正しいのはどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：機能運動を利用した咬合面形成法</span><br>
+          FGP（Functionally Generated Path）は、対合歯の機能運動路を記録し、それを基に咬合面形態を形成する技法。
+        </div>
+      </div>
+    </div>
+
+    <!-- 隣接面接触点 -->
+    <div class="card">
+      <h2>隣接面接触点の位置</h2>
+
+      <table>
+        <tr><th>方向</th><th>前歯</th><th>臼歯</th></tr>
+        <tr>
+          <td><strong>近遠心的位置</strong></td>
+          <td colspan="2">頬側の1/3に位置</td>
+        </tr>
+        <tr>
+          <td><strong>上下的位置</strong></td>
+          <td>切縁側1/3〜1/4</td>
+          <td>咬合面側1/3〜1/4</td>
+        </tr>
+      </table>
+
+      <h3>隣接面接触の強さ</h3>
+      <p>接触点部は近遠心的に<span class="highlight">0.05〜0.1mm</span>くらい大きめに作る。ワックスパターンは鋳造収縮で接触点が緩くなるため。</p>
+    </div>
+
+    <!-- 鋳造後処理 -->
+    <div class="card">
+      <h2>鋳造後処理</h2>
+
+      <h3>酸処理の目的</h3>
+      <div class="info-box">
+        <strong>鋳造後の酸処理の目的</strong><br>
+        ・<span class="highlight">酸化膜の除去</span><br>
+        ・<span class="highlight">埋没材の除去</span><br>
+        ※研磨や適合調整のために表面を清浄化する
+      </div>
+
+      <h3>使用する酸</h3>
+      <table>
+        <tr><th>合金</th><th>使用する酸</th></tr>
+        <tr><td>金合金</td><td>約50%塩酸溶液</td></tr>
+        <tr><td>金銀パラジウム合金</td><td>約20%硫酸溶液</td></tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【104A109】金属冠を鋳造後に酸処理する目的はどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：A（酸化膜と埋没材の除去）</span><br>
+          酸処理は鋳造体表面の酸化膜や微細な埋没材を除去するために行う。
+        </div>
+      </div>
+    </div>
+
+    <!-- 顎路調節 -->
+    <div class="card">
+      <h2>顎路調節</h2>
+
+      <p>半調節性咬合器の顆路を患者個人の顎運動に近づけるための調節。</p>
+
+      <h3>チェックバイト法</h3>
+      <table>
+        <tr><th>採得位置</th><th>調節項目</th></tr>
+        <tr><td>前方位チェックバイト</td><td class="highlight">矢状顆路傾斜角</td></tr>
+        <tr><td>側方位チェックバイト</td><td>側方顆路角、Bennett角</td></tr>
+      </table>
+
+      <div class="exam-box">
+        <div class="question">【116B63】固定性ブリッジの咬合器上での調整。矢状顆路傾斜角を調節するために用いるのはどれか。</div>
+        <div class="answer">
+          <span class="answer-label">正解：前方位チェックバイト</span><br>
+          前方位のチェックバイトで矢状顆路傾斜角を、側方位のチェックバイトで側方顆路角とBennett角を調節する。
+        </div>
+      </div>
+    </div>
+
+    <!-- 技工指示 -->
+    <div class="card">
+      <h2>技工指示書</h2>
+
+      <h3>記載が必要な項目</h3>
+      <ul style="margin-left: 24px; margin-top: 8px;">
+        <li>患者氏名（イニシャル可）</li>
+        <li>補綴装置の種類</li>
+        <li><span class="highlight">使用材料・合金の種類</span></li>
+        <li><span class="highlight">シェード（色調）</span></li>
+        <li>設計指示</li>
+        <li>納期</li>
+      </ul>
+
+      <div class="exam-box">
+        <div class="question">【112B58】レジン前装冠の製作にあたり、模型の提供とともに技工指示書に記載が必要なのはどれか。2つ選べ。</div>
+        <div class="answer">
+          <span class="answer-label">正解：使用材料、シェード</span><br>
+          レジン前装冠では、使用する金属の種類と前装部の色調（シェード）の指示が必要。
+        </div>
+      </div>
+    </div>
+
+    <!-- 出典 -->
+    <div class="ref-section">
+      <strong>参考文献</strong><br>
+      ・クラウンブリッジ補綴学 第5版（医歯薬出版）p.189-209<br>
+      ・第104回〜116回 歯科医師国家試験
+    </div>
+
+  </div>
+</body>
+</html>

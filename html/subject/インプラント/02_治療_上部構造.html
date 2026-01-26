@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>上部構造 - インプラント</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">インプラント / 治療</span>
+    <h1>上部構造</h1>
+    <div class="container">
+
+      <h2>上部構造の固定様式（頻出）</h2>
+
+      <h3>スクリュー固定式 vs セメント固定式</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>スクリュー固定式</th>
+          <th>セメント固定式</th>
+        </tr>
+        <tr>
+          <td>撤去の自由度</td>
+          <td><span class="highlight">容易</span></td>
+          <td>困難</td>
+        </tr>
+        <tr>
+          <td>メインテナンス</td>
+          <td><span class="highlight">容易</span></td>
+          <td>困難</td>
+        </tr>
+        <tr>
+          <td>審美性</td>
+          <td>アクセスホール露出</td>
+          <td><span class="highlight">良好</span></td>
+        </tr>
+        <tr>
+          <td>技工操作</td>
+          <td>複雑</td>
+          <td>容易</td>
+        </tr>
+        <tr>
+          <td>固定様式特有の合併症</td>
+          <td>スクリューの緩み・破折</td>
+          <td><span class="caution">セメントの残留→周囲炎</span></td>
+        </tr>
+        <tr>
+          <td>咬合面形態</td>
+          <td>アクセスホールで制限あり</td>
+          <td>制限なし</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">スクリュー固定式の利点</div>
+        <ul>
+          <li><span class="highlight">セメントの取り残しがない</span></li>
+          <li><span class="highlight">術者によるメインテナンスが容易</span></li>
+          <li>上部構造のトラブル対応、修理・改造が容易</li>
+        </ul>
+      </div>
+
+      <h2>アクセスホール</h2>
+      <p>スクリュー固定式の上部構造には、スクリューを締結するための穴（アクセスホール）がある。</p>
+      <ul>
+        <li><span class="key">臼歯部</span>：咬合面に設定</li>
+        <li><span class="key">前歯部</span>：審美的配慮から<span class="highlight">舌側</span>に設定</li>
+        <li>咬合面の<span class="key">30〜40%</span>を占める</li>
+      </ul>
+
+      <h2>セメント固定式の注意点</h2>
+      <ul>
+        <li><span class="highlight">セメント迷入の防止</span>が重要（<span class="key">PTFEテープ</span>でアバットメント周囲を保護）</li>
+        <li><span class="key">仮着用セメント</span>を使用（撤去の可能性を考慮）</li>
+        <li>余剰セメントの徹底除去（<span class="caution">インプラント周囲炎の原因</span>）</li>
+        <li><span class="key">側方運動時の咬合接触を避ける</span>よう調整</li>
+      </ul>
+
+      <h2>上部構造装着の手順（スクリュー固定式）</h2>
+      <ol>
+        <li><span class="key">隣接接触関係の調整</span></li>
+        <li><span class="key">アバットメントスクリューの締結</span></li>
+        <li><span class="key">咬合接触調整</span></li>
+        <li><span class="key">封鎖材</span>（軟らかい材料）の挿入</li>
+        <li><span class="key">コンポジットレジン</span>の充填</li>
+      </ol>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A97</div>
+        <p>下顎右側大臼歯部に装着されたインプラント上部構造の写真（別冊No.16）を別に示す。<br>
+        アの装着法がイより優れるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108A97.png" alt="別冊No.16">
+        </div>
+        <div class="choices">
+          a 審美性が良い。<br>
+          b 自浄性が良い。<br>
+          c 手術回数が少ない。<br>
+          d セメントの取り残しがない。<br>
+          e 術者によるメインテナンスが容易である。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】アは<span class="key">スクリュー固定式</span>（アクセスホールが見える）、イは<span class="key">セメント固定式</span>。スクリュー固定式の利点は<span class="highlight">セメントの取り残しがない</span>こと、<span class="highlight">術者によるメインテナンスが容易</span>であること。審美性はセメント固定式の方が優れる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D81</div>
+        <p>48歳の女性。上顎前歯部の審美不良を主訴として来院した。診察の結果、固定性インプラント義歯による治療を行うこととした。上部構造を装着する前（別冊No.31A、B）と装着後の口腔内写真（別冊No.31C）を別に示す。<br>
+        矢印の処置の目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D81.png" alt="別冊No.31">
+        </div>
+        <div class="choices">
+          a 適合調整<br>
+          b 接着力の強化<br>
+          c 平行性の確保<br>
+          d アバットメントの強化<br>
+          e 装着セメント迷入の防止
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】矢印で示されているのは<span class="key">PTFEテープ</span>（白いテープ）である。セメント固定式の上部構造装着時に、<span class="highlight">装着セメントがインプラント周囲に迷入するのを防止</span>するためにアバットメント周囲に巻く。セメントの残留はインプラント周囲炎の原因となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D51</div>
+        <p>インプラント治療におけるアバットメント装着時とクラウン試適時の口腔内写真（別冊No.4）を別に示す。<br>
+        クラウン装着時に考慮すべきなのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111D51.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a クラウン装着には仮着用セメントを用いる。<br>
+          b クラウン内部をセメントで満たして装着する。<br>
+          c 側方運動時の咬合接触を避けるように調整する。<br>
+          d 余剰セメントの除去は見える範囲内にとどめる。<br>
+          e 隣接面接触関係は100µm程度離開するように調整する。
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】セメント固定式のインプラント上部構造では、<span class="highlight">仮着用セメント</span>を用いる（撤去の可能性を考慮）。また、インプラントは歯根膜がないため<span class="highlight">側方運動時の咬合接触を避ける</span>よう調整する。セメントで満たすと余剰セメントが増え、除去は見える範囲だけでなく徹底的に行う必要がある。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B89</div>
+        <p>61歳の女性。右側での咀嚼困難を主訴として来院した。診察の結果、6┐相当部にインプラントによる補綴処置を行うこととした。上部構造試適時の口腔内写真（別冊No.40A）と装着終了時の口腔内写真（別冊No.40B）を別に示す。<br>
+        この間の処置過程を実施の順番に並べよ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115B89.png" alt="別冊No.40">
+        </div>
+        <div class="choices">
+          a 咬合接触調整<br>
+          b 隣接接触関係の調整<br>
+          c 軟らかい封鎖材の挿入<br>
+          d コンポジットレジンの充填<br>
+          e アバットメントスクリューの締結
+        </div>
+        <div class="answer">正解：b→a→e→c→d</div>
+        <p>【解説】スクリュー固定式の上部構造装着手順：<span class="key">隣接接触関係の調整</span>→<span class="key">咬合接触調整</span>→<span class="key">アバットメントスクリューの締結</span>→<span class="key">封鎖材の挿入</span>→<span class="key">コンポジットレジンの充填</span>。スクリュー締結後にアクセスホールを封鎖する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

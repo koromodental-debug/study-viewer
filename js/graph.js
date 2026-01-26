@@ -225,7 +225,10 @@ const GraphModule = (function() {
         subject: n.data.subject,
         color: finalColor,
         connections: connections,
-        radius: Math.max(6, Math.min(30, 6 + Math.pow(connections, 1.3)))
+        radius: Math.max(6, Math.min(30, 6 + Math.pow(connections, 1.3))),
+        // 初期位置を中央付近にランダム配置（アニメーション開始位置）
+        x: width / 2 + (Math.random() - 0.5) * 100,
+        y: height / 2 + (Math.random() - 0.5) * 100
       };
     });
 

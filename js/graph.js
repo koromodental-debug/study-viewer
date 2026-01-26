@@ -254,16 +254,18 @@ const GraphModule = (function() {
       };
     });
 
-    // Force Simulationを設定
+    // Force Simulationを設定（ゆったりしたアニメーション）
     simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(edges).id(d => d.id).distance(80).strength(0.5))
-      .force('charge', d3.forceManyBody().strength(-200).distanceMax(300))
+      .force('link', d3.forceLink(edges).id(d => d.id).distance(80).strength(0.3))
+      .force('charge', d3.forceManyBody().strength(-150).distanceMax(300))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .force('collision', d3.forceCollide().radius(d => d.radius + 5))
       // 科目別クラスタリング
-      .force('x', d3.forceX(d => subjectCenters[d.subject]?.x || width / 2).strength(0.1))
-      .force('y', d3.forceY(d => subjectCenters[d.subject]?.y || height / 2).strength(0.1))
-      .alphaTarget(0.02);  // 常に微妙に動き続ける
+      .force('x', d3.forceX(d => subjectCenters[d.subject]?.x || width / 2).strength(0.08))
+      .force('y', d3.forceY(d => subjectCenters[d.subject]?.y || height / 2).strength(0.08))
+      .alphaDecay(0.01)      // アニメーションをゆっくりに（デフォルト: 0.0228）
+      .velocityDecay(0.5)    // 動きを滑らかに（デフォルト: 0.4）
+      .alphaTarget(0.02);    // 常に微妙に動き続ける
 
     // エッジを描画
     const edgeElements = edgesGroup.selectAll('line')

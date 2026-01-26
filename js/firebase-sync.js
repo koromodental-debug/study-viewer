@@ -188,8 +188,8 @@ const FirebaseSync = (function() {
         }
       });
 
-      // Firestoreに保存（5秒タイムアウト）
-      await withTimeout(userDocRef.set(syncData, { merge: true }), 5000, 'Firestore書き込みタイムアウト');
+      // Firestoreに保存（10秒タイムアウト）
+      await withTimeout(userDocRef.set(syncData, { merge: true }), 10000, 'Firestore書き込みタイムアウト');
       console.log('[FirebaseSync] クラウドにプッシュ完了');
     } catch (error) {
       console.error('[FirebaseSync] プッシュエラー:', error);
@@ -223,8 +223,8 @@ const FirebaseSync = (function() {
 
     try {
       const userDocRef = db.collection('users').doc(currentUser.uid);
-      // 5秒でタイムアウト
-      const doc = await withTimeout(userDocRef.get(), 5000, 'Firestore接続タイムアウト');
+      // 10秒でタイムアウト
+      const doc = await withTimeout(userDocRef.get(), 10000, 'Firestore接続タイムアウト');
 
       if (doc.exists) {
         const cloudData = doc.data();
@@ -795,6 +795,17 @@ function initAccountUI() {
 
   if (!accountOverlay) return;
 
+  // キャッシュされた画像を即座に表示（認証完了を待たずに）
+  const cachedPhotoURL = localStorage.getItem('cachedUserPhotoURL');
+  if (cachedPhotoURL) {
+    const headerUserPhoto = document.getElementById('header-user-photo');
+    if (headerUserPhoto) {
+      headerUserPhoto.src = cachedPhotoURL;
+      headerUserPhoto.style.display = 'block';
+    }
+    if (accountIconLoggedOut) accountIconLoggedOut.style.display = 'none';
+  }
+
   // アカウントシートを開く
   function openAccountSheet() {
     accountOverlay.classList.add('active');
@@ -824,6 +835,8 @@ function initAccountUI() {
       const userEmail = document.getElementById('account-user-email');
 
       if (user.photoURL) {
+        // 画像URLをキャッシュに保存（次回起動時に即表示用）
+        localStorage.setItem('cachedUserPhotoURL', user.photoURL);
         userPhoto.src = user.photoURL;
         userPhoto.style.display = 'block';
         // ヘッダーにもプロフィール画像を表示
@@ -841,7 +854,8 @@ function initAccountUI() {
       userName.textContent = user.displayName || 'ユーザー';
       userEmail.textContent = user.email || '';
     } else {
-      // 未ログイン
+      // 未ログイン - キャッシュもクリア
+      localStorage.removeItem('cachedUserPhotoURL');
       accountLoggedOut.style.display = 'flex';
       accountLoggedIn.style.display = 'none';
       if (accountIconLoggedOut) accountIconLoggedOut.style.display = 'block';

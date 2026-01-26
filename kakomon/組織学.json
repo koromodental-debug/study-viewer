@@ -405,13 +405,16 @@
       "examNum": 111,
       "section": "D",
       "questionNum": 87,
-      "text": "歯の組織像（縦断研磨切片、カルボールフクシン染色）（別冊No.33）を別に示す。\n矢印で示す構造はどれか。1つ選べ 。\nf　Sharpey線維\ng　Tomesの顆粒層\nh　von Korffの線維",
+      "text": "歯の組織像（縦断研磨切片、カルボールフクシン染色）（別冊No.33）を別に示す。\n矢印で示す構造はどれか。1つ選べ。",
       "choices": {
         "a": "Andresen線条",
         "b": "Nasmyth膜",
         "c": "Owen外形線",
         "d": "Retzius線条",
-        "e": "Schreger線条"
+        "e": "Schreger線条",
+        "f": "Sharpey線維",
+        "g": "Tomesの顆粒層",
+        "h": "von Korffの線維"
       },
       "answer": "D",
       "numChoices": 1,

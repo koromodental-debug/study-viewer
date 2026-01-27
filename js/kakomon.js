@@ -12,10 +12,14 @@ const KakomonModule = (function() {
   const state = {
     currentQuestions: [],
     currentItem: null,
-    viewMode: 'select', // 'select' | 'year' | 'subject' | 'questions'
+    viewMode: 'select', // 'select' | 'year' | 'subject' | 'questions' | 'search'
+    currentSegment: 'year', // 'year' | 'subject' | 'search' - 現在のセグメント
     selectedYear: null,
     selectedSession: null,
-    selectedSubject: null
+    selectedSubject: null,
+    searchQuery: '',
+    searchResults: [],
+    searchDebounceTimer: null
   };
 
   // 定数
@@ -23,8 +27,48 @@ const KakomonModule = (function() {
   const SESSIONS = ['A', 'B', 'C', 'D'];
   const SUBJECTS = [
     '解剖学', '組織学', '生理学', '生化学', '病理学', '薬理学',
-    '歯周病学', '歯内療法学', '保存修復学', '全部床義歯学', '部分床義歯学', '必修'
+    '微生物学・免疫学', '歯科理工学', '歯科放射線学',
+    '歯周病学', '歯内療法学', '保存修復学', '冠橋義歯学',
+    '全部床義歯学', '部分床義歯学', 'インプラント',
+    '口腔外科学', '高齢者歯科学', '摂食嚥下',
+    '公衆衛生', '口腔衛生', '疫学',
+    '必修'
   ];
+
+  // フラッシュカード科目名 → 過去問科目名のマッピング
+  const SUBJECT_MAPPING = {
+    '解剖': '解剖学',
+    '組織': '組織学',
+    '生理': '生理学',
+    '生化': '生化学',
+    '病理': '病理学',
+    '薬理': '薬理学',
+    '微生物・免疫': '微生物学・免疫学',
+    '歯科理工': '歯科理工学',
+    '歯科放射線': '歯科放射線学',
+    '歯周病': '歯周病学',
+    '歯内療法学': '歯内療法学',
+    '保存修復': '保存修復学',
+    '冠橋義歯': '冠橋義歯学',
+    '全部床義歯': '全部床義歯学',
+    '部分床義歯': '部分床義歯学',
+    'インプラント': 'インプラント',
+    '口腔外科': '口腔外科学',
+    '高齢者歯科': '高齢者歯科学',
+    '摂食嚥下': '摂食嚥下',
+    '公衆衛生': '公衆衛生',
+    '口腔衛生': '口腔衛生',
+    '疫学': '疫学',
+    '必修': '必修'
+  };
+
+  // 逆マッピング（過去問科目名 → フラッシュカード科目名）
+  const REVERSE_SUBJECT_MAPPING = Object.fromEntries(
+    Object.entries(SUBJECT_MAPPING).map(([k, v]) => [v, k])
+  );
+
+  // セグメント定義
+  const SEGMENTS = ['year', 'subject', 'search'];
 
   /**
    * questions.jsonを読み込み
@@ -111,16 +155,79 @@ const KakomonModule = (function() {
       return dataCache.get(subject);
     }
 
+    // まずkakomon/フォルダのJSONを試す
     try {
       const response = await fetch(encodeURI(`kakomon/${subject}.json`));
-      if (!response.ok) throw new Error('Failed to load');
-      const data = await response.json();
-      dataCache.set(subject, data);
-      return data;
+      if (response.ok) {
+        const data = await response.json();
+        dataCache.set(subject, data);
+        return data;
+      }
     } catch (e) {
-      console.log('過去問データ読み込みエラー:', e);
-      return null;
+      // 無視して次の方法を試す
     }
+
+    // JSONファイルがない場合、data.jsとquestions.jsonから生成
+    try {
+      const data = await loadSubjectFromFlashcardData(subject);
+      if (data && data.questions && data.questions.length > 0) {
+        dataCache.set(subject, data);
+        return data;
+      }
+    } catch (e) {
+      console.log('フォールバック読み込みエラー:', e);
+    }
+
+    return null;
+  }
+
+  /**
+   * フラッシュカードのdata.jsから科目の過去問を抽出
+   */
+  async function loadSubjectFromFlashcardData(subject) {
+    // questions.jsonを読み込み
+    const questionsData = await loadQuestionsData();
+    if (!questionsData || !questionsData.questions) return null;
+
+    // DATAがグローバルに存在するか確認
+    if (typeof DATA === 'undefined') return null;
+
+    // フラッシュカード科目名を取得
+    const flashcardSubject = REVERSE_SUBJECT_MAPPING[subject] || subject;
+
+    // この科目のトピックをフィルタリング
+    const subjectTopics = DATA.filter(topic => topic.subject === flashcardSubject);
+    if (subjectTopics.length === 0) return null;
+
+    // searchTextから過去問番号を抽出
+    const questionCodes = new Set();
+    const codePattern = /(\d{3}[ABCDabcd]-?\d{1,2})/g;
+
+    subjectTopics.forEach(topic => {
+      const searchText = topic.searchText || '';
+      let match;
+      while ((match = codePattern.exec(searchText)) !== null) {
+        // 形式を正規化: 117A-15 → 117A15
+        const code = match[1].replace('-', '').toUpperCase();
+        questionCodes.add(code);
+      }
+    });
+
+    if (questionCodes.size === 0) return null;
+
+    // questions.jsonから該当する問題を取得
+    const questions = questionsData.questions.filter(q => {
+      return questionCodes.has(q.id);
+    }).map(q => convertQuestionFormat(q));
+
+    // 年度でソート（新しい順）
+    questions.sort((a, b) => {
+      const yearA = a.examNum || parseInt(a.code);
+      const yearB = b.examNum || parseInt(b.code);
+      return yearB - yearA;
+    });
+
+    return { subject, questions };
   }
 
   /**
@@ -164,6 +271,7 @@ const KakomonModule = (function() {
           <div class="kakomon-segment-control">
             <button class="segment-btn active" data-mode="year">年度別</button>
             <button class="segment-btn" data-mode="subject">科目別</button>
+            <button class="segment-btn" data-mode="search">検索</button>
           </div>
           <div class="kakomon-nav-content" id="kakomon-nav-content">
             ${renderYearList()}
@@ -239,6 +347,271 @@ const KakomonModule = (function() {
   }
 
   /**
+   * 検索画面をレンダリング
+   */
+  function renderSearchScreen() {
+    return `
+      <div class="kakomon-search-screen">
+        <div class="kakomon-search-bar">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" class="kakomon-search-input" placeholder="問題番号・キーワードで検索" value="${escapeHtml(state.searchQuery)}">
+          <button class="search-clear-btn" style="display: ${state.searchQuery ? 'flex' : 'none'}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="kakomon-search-hints" style="display: ${state.searchQuery ? 'none' : 'block'}">
+          <div class="search-hints-title">検索のヒント</div>
+          <ul class="search-hints-list">
+            <li><code>118A45</code> - 特定の問題を検索</li>
+            <li><code>118A</code> - 118回A問題を一覧</li>
+            <li><code>歯周病</code> - キーワードで検索</li>
+          </ul>
+        </div>
+        <div class="kakomon-search-results"></div>
+      </div>
+    `;
+  }
+
+  /**
+   * 検索イベントをバインド
+   */
+  function bindSearchEvents(elements) {
+    const display = elements.kakomonDisplay;
+    const input = display.querySelector('.kakomon-search-input');
+    const clearBtn = display.querySelector('.search-clear-btn');
+    const hintsDiv = display.querySelector('.kakomon-search-hints');
+    const resultsDiv = display.querySelector('.kakomon-search-results');
+
+    if (!input) return;
+
+    // フォーカス
+    input.focus();
+
+    // 入力イベント（デバウンス付き）
+    input.addEventListener('input', () => {
+      const query = input.value.trim();
+      state.searchQuery = query;
+
+      // クリアボタンの表示制御
+      clearBtn.style.display = query ? 'flex' : 'none';
+      hintsDiv.style.display = query ? 'none' : 'block';
+
+      // デバウンス
+      if (state.searchDebounceTimer) {
+        clearTimeout(state.searchDebounceTimer);
+      }
+
+      if (!query) {
+        resultsDiv.innerHTML = '';
+        return;
+      }
+
+      state.searchDebounceTimer = setTimeout(async () => {
+        await performSearch(query, resultsDiv, elements);
+      }, 300);
+    });
+
+    // クリアボタン
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        state.searchQuery = '';
+        clearBtn.style.display = 'none';
+        hintsDiv.style.display = 'block';
+        resultsDiv.innerHTML = '';
+        input.focus();
+      });
+    }
+
+    // Enterキーで即時検索
+    input.addEventListener('keypress', async (e) => {
+      if (e.key === 'Enter') {
+        const query = input.value.trim();
+        if (query) {
+          if (state.searchDebounceTimer) {
+            clearTimeout(state.searchDebounceTimer);
+          }
+          await performSearch(query, resultsDiv, elements);
+        }
+      }
+    });
+  }
+
+  /**
+   * 問題番号パターンを解析
+   * @returns { type: 'exact' | 'session' | 'year', year: number, session?: string, number?: number } | null
+   */
+  function parseQuestionCode(query) {
+    // 完全一致: 118A45, 118a45
+    const exactMatch = query.match(/^(\d{3})([ABCDabcd])(\d{1,2})$/);
+    if (exactMatch) {
+      return {
+        type: 'exact',
+        year: parseInt(exactMatch[1]),
+        session: exactMatch[2].toUpperCase(),
+        number: parseInt(exactMatch[3])
+      };
+    }
+
+    // セッション: 118A, 118a
+    const sessionMatch = query.match(/^(\d{3})([ABCDabcd])$/);
+    if (sessionMatch) {
+      return {
+        type: 'session',
+        year: parseInt(sessionMatch[1]),
+        session: sessionMatch[2].toUpperCase()
+      };
+    }
+
+    // 年度のみ: 118
+    const yearMatch = query.match(/^(\d{3})$/);
+    if (yearMatch) {
+      return {
+        type: 'year',
+        year: parseInt(yearMatch[1])
+      };
+    }
+
+    return null;
+  }
+
+  /**
+   * 検索を実行
+   */
+  async function performSearch(query, resultsDiv, elements) {
+    resultsDiv.innerHTML = `
+      <div class="kakomon-loading">
+        <div class="loading-spinner"></div>
+        <p>検索中...</p>
+      </div>
+    `;
+
+    const data = await loadQuestionsData();
+    if (!data || !data.questions) {
+      resultsDiv.innerHTML = '<div class="kakomon-search-empty">データを読み込めませんでした</div>';
+      return;
+    }
+
+    let results = [];
+
+    // 問題番号パターンを解析
+    const codePattern = parseQuestionCode(query);
+
+    if (codePattern) {
+      // 問題番号による検索
+      results = searchByCode(data.questions, codePattern);
+    } else {
+      // キーワード検索
+      results = searchByKeywordFull(data.questions, query);
+    }
+
+    // 最大50件
+    const limitedResults = results.slice(0, 50);
+
+    if (limitedResults.length === 0) {
+      resultsDiv.innerHTML = `
+        <div class="kakomon-search-empty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <p>「${escapeHtml(query)}」に一致する問題が見つかりませんでした</p>
+        </div>
+      `;
+      return;
+    }
+
+    // 結果表示
+    state.searchResults = limitedResults;
+    state.currentQuestions = limitedResults.map(q => convertQuestionFormat(q));
+    state.currentItem = { subject: '検索結果', searchQuery: query };
+
+    let html = `<div class="kakomon-search-count">${results.length > 50 ? '50+' : results.length}件の結果</div>`;
+    html += '<div class="kakomon-search-results-list">';
+
+    state.currentQuestions.forEach((question, index) => {
+      html += renderQuizCard(question, index, state.currentQuestions.length);
+    });
+
+    html += '</div>';
+
+    if (state.currentQuestions.length >= 3) {
+      html += renderQuickNav(state.currentQuestions.length);
+    }
+
+    resultsDiv.innerHTML = html;
+
+    // イベントをバインド
+    bindAllQuizEvents(elements);
+    bindQuickNavEvents(elements);
+  }
+
+  /**
+   * 問題番号で検索
+   */
+  function searchByCode(questions, pattern) {
+    return questions.filter(q => {
+      if (pattern.type === 'exact') {
+        return q.year === pattern.year &&
+               q.session === pattern.session &&
+               q.number === pattern.number;
+      } else if (pattern.type === 'session') {
+        return q.year === pattern.year &&
+               q.session === pattern.session;
+      } else if (pattern.type === 'year') {
+        return q.year === pattern.year;
+      }
+      return false;
+    }).sort((a, b) => {
+      // セッション順 → 問題番号順
+      if (a.session !== b.session) {
+        return a.session.localeCompare(b.session);
+      }
+      return a.number - b.number;
+    });
+  }
+
+  /**
+   * キーワードで検索（問題文、選択肢、キーワードフィールド）
+   */
+  function searchByKeywordFull(questions, keyword) {
+    const normalizedKeyword = keyword.toLowerCase();
+
+    return questions.filter(q => {
+      // 問題文
+      if (q.questionText && q.questionText.toLowerCase().includes(normalizedKeyword)) {
+        return true;
+      }
+
+      // 選択肢
+      if (q.choices) {
+        for (const choice of Object.values(q.choices)) {
+          if (choice && choice.toLowerCase().includes(normalizedKeyword)) {
+            return true;
+          }
+        }
+      }
+
+      // キーワードフィールド（科目別JSONにある場合）
+      if (q.keyword && q.keyword.toLowerCase().includes(normalizedKeyword)) {
+        return true;
+      }
+
+      return false;
+    }).sort((a, b) => {
+      // 新しい年度順
+      if (a.year !== b.year) return b.year - a.year;
+      if (a.session !== b.session) return a.session.localeCompare(b.session);
+      return a.number - b.number;
+    });
+  }
+
+  /**
    * ナビゲーションイベントをバインド
    */
   function bindNavEvents(elements) {
@@ -252,13 +625,17 @@ const KakomonModule = (function() {
 
         const mode = btn.dataset.mode;
         const navContent = display.querySelector('#kakomon-nav-content');
+        state.currentSegment = mode; // セグメントを記憶
 
         if (mode === 'year') {
           navContent.innerHTML = renderYearList();
           bindYearEvents(elements);
-        } else {
+        } else if (mode === 'subject') {
           navContent.innerHTML = renderSubjectList();
           bindSubjectEvents(elements);
+        } else if (mode === 'search') {
+          navContent.innerHTML = renderSearchScreen();
+          bindSearchEvents(elements);
         }
       });
     });
@@ -476,8 +853,52 @@ const KakomonModule = (function() {
 
     if (backBtn) {
       backBtn.addEventListener('click', () => {
-        initKakomonTab(elements);
+        // 現在のセグメントに応じた画面に戻る
+        returnToSegment(elements, state.currentSegment);
       });
+    }
+  }
+
+  /**
+   * 指定されたセグメントの画面に戻る
+   */
+  function returnToSegment(elements, segment) {
+    state.viewMode = 'select';
+    state.selectedYear = null;
+    state.selectedSession = null;
+    state.selectedSubject = null;
+
+    if (elements.kakomonPlaceholder) {
+      elements.kakomonPlaceholder.style.display = 'none';
+    }
+
+    if (elements.kakomonDisplay) {
+      elements.kakomonDisplay.style.display = 'block';
+      elements.kakomonDisplay.innerHTML = `
+        <div class="kakomon-nav-screen">
+          <div class="kakomon-segment-control">
+            <button class="segment-btn ${segment === 'year' ? 'active' : ''}" data-mode="year">年度別</button>
+            <button class="segment-btn ${segment === 'subject' ? 'active' : ''}" data-mode="subject">科目別</button>
+            <button class="segment-btn ${segment === 'search' ? 'active' : ''}" data-mode="search">検索</button>
+          </div>
+          <div class="kakomon-nav-content" id="kakomon-nav-content">
+            ${segment === 'year' ? renderYearList() :
+              segment === 'subject' ? renderSubjectList() :
+              renderSearchScreen()}
+          </div>
+        </div>
+      `;
+
+      bindNavEvents(elements);
+
+      // セグメントに応じたイベントをバインド
+      if (segment === 'year') {
+        bindYearEvents(elements);
+      } else if (segment === 'subject') {
+        bindSubjectEvents(elements);
+      } else if (segment === 'search') {
+        bindSearchEvents(elements);
+      }
     }
   }
 
@@ -716,12 +1137,258 @@ const KakomonModule = (function() {
   }
 
   /**
+   * 画像モーダルを表示
+   */
+  function showImageModal(imageSrc, allImages, currentIndex) {
+    // 既存のモーダルがあれば削除
+    const existingModal = document.getElementById('kakomon-image-modal');
+    if (existingModal) {
+      existingModal.remove();
+    }
+
+    let modalIndex = currentIndex;
+
+    const modal = document.createElement('div');
+    modal.id = 'kakomon-image-modal';
+    modal.className = 'kakomon-image-modal';
+    modal.innerHTML = `
+      <div class="image-modal-backdrop"></div>
+      <div class="image-modal-content">
+        <button class="image-modal-close" aria-label="閉じる">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+        ${allImages.length > 1 ? `
+          <button class="image-modal-nav prev" aria-label="前へ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="image-modal-nav next" aria-label="次へ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        ` : ''}
+        <div class="image-modal-img-wrapper">
+          <img src="${imageSrc}" alt="拡大画像" class="image-modal-img">
+        </div>
+        ${allImages.length > 1 ? `
+          <div class="image-modal-counter">${currentIndex + 1} / ${allImages.length}</div>
+        ` : ''}
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // アニメーション用
+    requestAnimationFrame(() => {
+      modal.classList.add('active');
+    });
+
+    const img = modal.querySelector('.image-modal-img');
+    const counter = modal.querySelector('.image-modal-counter');
+
+    // 画像切り替え関数
+    function updateImage(newIndex) {
+      if (newIndex < 0) newIndex = allImages.length - 1;
+      if (newIndex >= allImages.length) newIndex = 0;
+      modalIndex = newIndex;
+      img.src = allImages[modalIndex];
+      if (counter) {
+        counter.textContent = `${modalIndex + 1} / ${allImages.length}`;
+      }
+    }
+
+    // 閉じる
+    const closeModal = () => {
+      modal.classList.remove('active');
+      setTimeout(() => modal.remove(), 200);
+    };
+
+    // 背景クリックで閉じる（画像やボタン以外をクリックした場合）
+    modal.querySelector('.image-modal-content').addEventListener('click', (e) => {
+      // クリックされた要素が画像やボタンでなければ閉じる
+      if (e.target.closest('.image-modal-img-wrapper') ||
+          e.target.closest('.image-modal-close') ||
+          e.target.closest('.image-modal-nav') ||
+          e.target.closest('.image-modal-counter')) {
+        return;
+      }
+      closeModal();
+    });
+    modal.querySelector('.image-modal-close').addEventListener('click', closeModal);
+
+    // ナビゲーション
+    const prevBtn = modal.querySelector('.image-modal-nav.prev');
+    const nextBtn = modal.querySelector('.image-modal-nav.next');
+    if (prevBtn) prevBtn.addEventListener('click', () => updateImage(modalIndex - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => updateImage(modalIndex + 1));
+
+    // キーボード操作
+    const handleKeydown = (e) => {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft' && allImages.length > 1) updateImage(modalIndex - 1);
+      if (e.key === 'ArrowRight' && allImages.length > 1) updateImage(modalIndex + 1);
+    };
+    document.addEventListener('keydown', handleKeydown);
+
+    // モーダルが閉じられたらイベントリスナーを削除
+    const observer = new MutationObserver(() => {
+      if (!document.getElementById('kakomon-image-modal')) {
+        document.removeEventListener('keydown', handleKeydown);
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.body, { childList: true });
+
+    // ピンチズーム・パン・スワイプ対応
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
+    let initialDistance = 0;
+    let initialScale = 1;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let lastTap = 0;
+    let isPinching = false;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let initialTranslateX = 0;
+    let initialTranslateY = 0;
+
+    const imgWrapper = modal.querySelector('.image-modal-img-wrapper');
+
+    function applyTransform() {
+      img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    }
+
+    function resetTransform() {
+      scale = 1;
+      translateX = 0;
+      translateY = 0;
+      img.style.transition = 'transform 0.2s ease';
+      applyTransform();
+      setTimeout(() => { img.style.transition = ''; }, 200);
+    }
+
+    function getDistance(touches) {
+      const dx = touches[0].clientX - touches[1].clientX;
+      const dy = touches[0].clientY - touches[1].clientY;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    // ダブルタップでズーム
+    imgWrapper.addEventListener('click', (e) => {
+      const now = Date.now();
+      if (now - lastTap < 300) {
+        // ダブルタップ
+        if (scale > 1) {
+          resetTransform();
+        } else {
+          scale = 2.5;
+          img.style.transition = 'transform 0.2s ease';
+          applyTransform();
+          setTimeout(() => { img.style.transition = ''; }, 200);
+        }
+      }
+      lastTap = now;
+    });
+
+    imgWrapper.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 2) {
+        // ピンチ開始
+        isPinching = true;
+        initialDistance = getDistance(e.touches);
+        initialScale = scale;
+      } else if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        if (scale > 1) {
+          // ドラッグ開始
+          isDragging = true;
+          dragStartX = e.touches[0].clientX;
+          dragStartY = e.touches[0].clientY;
+          initialTranslateX = translateX;
+          initialTranslateY = translateY;
+        }
+      }
+    }, { passive: true });
+
+    imgWrapper.addEventListener('touchmove', (e) => {
+      if (isPinching && e.touches.length === 2) {
+        // ピンチズーム中
+        const currentDistance = getDistance(e.touches);
+        const newScale = initialScale * (currentDistance / initialDistance);
+        scale = Math.min(Math.max(newScale, 0.5), 5); // 0.5〜5倍
+        applyTransform();
+      } else if (isDragging && e.touches.length === 1 && scale > 1) {
+        // パン中
+        const dx = e.touches[0].clientX - dragStartX;
+        const dy = e.touches[0].clientY - dragStartY;
+        translateX = initialTranslateX + dx;
+        translateY = initialTranslateY + dy;
+        applyTransform();
+      }
+    }, { passive: true });
+
+    imgWrapper.addEventListener('touchend', (e) => {
+      if (isPinching) {
+        isPinching = false;
+        if (scale < 1) {
+          resetTransform();
+        }
+      } else if (isDragging) {
+        isDragging = false;
+      } else if (e.changedTouches.length === 1 && scale === 1 && allImages.length > 1) {
+        // スワイプで画像切り替え（等倍時のみ）
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const diffX = touchStartX - touchEndX;
+        const diffY = Math.abs(touchStartY - touchEndY);
+        if (Math.abs(diffX) > 50 && diffY < 100) {
+          if (diffX > 0) updateImage(modalIndex + 1);
+          else updateImage(modalIndex - 1);
+        }
+      }
+    }, { passive: true });
+
+    // 画像切り替え時にズームリセット
+    const originalUpdateImage = updateImage;
+    updateImage = function(newIndex) {
+      resetTransform();
+      originalUpdateImage(newIndex);
+    };
+  }
+
+  /**
    * 全カードにイベントをバインド
    */
   function bindAllQuizEvents(elements) {
     const display = elements.kakomonDisplay;
 
     bindKakomonFavoriteButtons(display);
+
+    // 画像クリックイベントをバインド
+    display.querySelectorAll('.kakomon-card').forEach(card => {
+      const imageWrappers = card.querySelectorAll('.kakomon-image-wrapper');
+      if (imageWrappers.length > 0) {
+        const images = Array.from(imageWrappers).map(wrapper => {
+          const img = wrapper.querySelector('img');
+          return img ? img.src : null;
+        }).filter(src => src);
+
+        imageWrappers.forEach((wrapper, index) => {
+          wrapper.style.cursor = 'zoom-in';
+          wrapper.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImageModal(images[index], images, index);
+          });
+        });
+      }
+    });
 
     display.querySelectorAll('.kakomon-card').forEach(card => {
       const numChoices = parseInt(card.dataset.num) || 1;

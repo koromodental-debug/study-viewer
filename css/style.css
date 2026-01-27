@@ -2077,41 +2077,6 @@ body {
   display: none;
 }
 
-/* ===== 統合ツールボタン（右下） ===== */
-.tool-fab {
-  position: fixed;
-  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
-  right: 16px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--card-bg);
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 100;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-[data-theme="dark"] .tool-fab {
-  background: #2c2c2e;
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-}
-
-.tool-fab:active {
-  transform: scale(0.92);
-}
-
-.tool-fab svg {
-  width: 24px;
-  height: 24px;
-}
-
 /* ===== ツールシート ===== */
 .tool-sheet-overlay {
   position: fixed;
@@ -14239,6 +14204,305 @@ body.is-practice .tab-content {
   min-height: 200px;
   color: var(--text-muted);
   font-size: 15px;
+}
+
+/* ===== 検索UI ===== */
+
+.kakomon-search-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.kakomon-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kakomon-search-bar:focus-within {
+  border-color: #007AFF;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.kakomon-search-bar .search-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.kakomon-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.kakomon-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: var(--border-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-clear-btn svg {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+}
+
+.search-clear-btn:hover {
+  background: var(--text-muted);
+}
+
+.search-clear-btn:hover svg {
+  color: var(--card-bg);
+}
+
+/* 検索ヒント */
+.kakomon-search-hints {
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.search-hints-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.search-hints-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-hints-list li {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.search-hints-list code {
+  display: inline-block;
+  padding: 2px 6px;
+  background: var(--border-color);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  color: #007AFF;
+  margin-right: 4px;
+}
+
+/* 検索結果 */
+.kakomon-search-count {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 8px 0;
+}
+
+.kakomon-search-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kakomon-search-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 200px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.kakomon-search-empty svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+.kakomon-search-empty p {
+  font-size: 15px;
+  max-width: 280px;
+}
+
+/* ===== 画像モーダル ===== */
+
+.kakomon-image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.kakomon-image-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.image-modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top, 16px));
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.image-modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.image-modal-close svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.image-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.image-modal-nav:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.image-modal-nav svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.image-modal-nav.prev {
+  left: 16px;
+}
+
+.image-modal-nav.next {
+  right: 16px;
+}
+
+.image-modal-img-wrapper {
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal-img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  transform-origin: center center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.image-modal-counter {
+  position: absolute;
+  bottom: max(20px, env(safe-area-inset-bottom, 20px));
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 画像にホバー効果 */
+.kakomon-image-wrapper {
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+.kakomon-image-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.kakomon-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  transition: background 0.15s ease;
+  pointer-events: none;
+}
+
+.kakomon-image-wrapper:hover::after {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /* ===== 会話解説UI ===== */

@@ -2022,15 +2022,50 @@ const FlashcardModule = (function() {
     // 各トピックからランダムに1問選択（並列で読み込み）
     const cardRefs = await Promise.all(selectedTopics.map(async (topic, idx) => {
       try {
-        const response = await fetch(topic.qaPath);
-        if (!response.ok) return null;
-        const qaData = await response.json();
+        // .jsonの場合は.txtを優先（一問一答がある可能性が高い）
+        let qaPath = topic.qaPath;
+        if (qaPath.endsWith('.json')) {
+          const txtPath = qaPath.replace('.json', '.txt');
+          try {
+            const txtResponse = await fetch(txtPath);
+            if (txtResponse.ok) {
+              qaPath = txtPath;
+            }
+          } catch (e) {
+            // .txtがなければ.jsonを使う
+          }
+        }
 
-        // 全セクションのQAを収集
-        const allQA = [];
-        for (const section of qaData.sections || []) {
-          for (let i = 0; i < (section.qa || []).length; i++) {
-            allQA.push({ sectionIndex: qaData.sections.indexOf(section), qaIndex: i });
+        const response = await fetch(qaPath);
+        if (!response.ok) return null;
+
+        let allQA = [];
+        let qaData;
+
+        if (qaPath.endsWith('.json')) {
+          // JSONの場合
+          qaData = await response.json();
+          let cardIdx = 0;
+          for (const section of qaData.sections || []) {
+            for (let i = 0; i < (section.qa || []).length; i++) {
+              const qa = section.qa[i];
+              // 選択問題（choices付き）は除外、一問一答のみ
+              if (!qa.choices) {
+                allQA.push({ cardIndex: cardIdx });
+              }
+              cardIdx++;
+            }
+          }
+        } else {
+          // テキストの場合（一問一答形式）
+          const text = await response.text();
+          const lines = text.split('\n');
+          let cardIdx = 0;
+          for (const line of lines) {
+            if (line.startsWith('Q:') || line.startsWith('Q：')) {
+              allQA.push({ cardIndex: cardIdx });
+              cardIdx++;
+            }
           }
         }
 
@@ -2041,17 +2076,10 @@ const FlashcardModule = (function() {
         const randomIndex = Math.abs(topicSeed) % allQA.length;
         const selected = allQA[randomIndex];
 
-        // cardIndexを計算（全セクション通しの番号）
-        let cardIndex = 0;
-        for (let s = 0; s < selected.sectionIndex; s++) {
-          cardIndex += (qaData.sections[s].qa || []).length;
-        }
-        cardIndex += selected.qaIndex;
-
         return {
           topicId: topic.id,
-          cardIndex: cardIndex,
-          key: `${topic.id}:${cardIndex}`
+          cardIndex: selected.cardIndex,
+          key: `${topic.id}:${selected.cardIndex}`
         };
       } catch (e) {
         console.warn(`[collectDailyTenCardRefs] ${topic.id}の読み込みに失敗:`, e);

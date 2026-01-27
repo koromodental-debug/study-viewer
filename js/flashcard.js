@@ -60,6 +60,28 @@ const FlashcardModule = (function() {
     '口腔衛生': { category: '社会歯科系', color: '#5AC8FA' }
   };
 
+  // コラボレーター（報告ボタンが表示されるユーザー）
+  const COLLABORATORS = [
+    'koromo.dental@gmail.com',
+    // 友人のメールアドレスを追加
+  ];
+
+  // コラボレーターかどうかをチェック
+  function isCollaborator() {
+    if (typeof FirebaseSync === 'undefined') {
+      console.log('[Collaborator] FirebaseSync未定義');
+      return false;
+    }
+    const user = FirebaseSync.getCurrentUser();
+    console.log('[Collaborator] user:', user);
+    console.log('[Collaborator] email:', user?.email);
+    console.log('[Collaborator] COLLABORATORS:', COLLABORATORS);
+    if (!user || !user.email) return false;
+    const result = COLLABORATORS.includes(user.email);
+    console.log('[Collaborator] result:', result);
+    return result;
+  }
+
   // 状態
   const state = {
     currentTopicId: null,
@@ -115,7 +137,11 @@ const FlashcardModule = (function() {
     // デッキ一覧のスクロール位置
     deckListScrollPos: 0,
     // ハイライトするトピックID（今日の10問からのジャンプ用）
-    highlightTopicId: null
+    highlightTopicId: null,
+    // スクロール方向検知用
+    lastScrollTop: 0,
+    // ピルボタンの表示状態（スクロール制御用）
+    pillVisible: false
   };
 
   // DOM要素
@@ -220,6 +246,17 @@ const FlashcardModule = (function() {
         renderDeckList();
       }
     });
+
+    // アコーディオン全閉じピルボタンのクリックイベント
+    const closeAccordionPill = document.getElementById('close-accordion-pill');
+    if (closeAccordionPill) {
+      closeAccordionPill.addEventListener('click', () => {
+        resetDeckList();
+      });
+    }
+
+    // デッキ一覧のスクロールイベント（ピルボタン表示制御用）
+    container.addEventListener('scroll', handleDeckListScroll, { passive: true });
   }
 
   // インポート済みデッキをDATAに追加
@@ -937,6 +974,12 @@ const FlashcardModule = (function() {
 
     // スクロール位置を復元（演習から戻った場合はハイライト付き、一覧から戻った場合は位置のみ）
     restoreDeckListScroll();
+
+    // アコーディオンピルの表示状態を更新（アコーディオンが開いていれば表示可能に）
+    if (state.expandedSubjects.size > 0) {
+      state.pillVisible = true;
+    }
+    updateAccordionPillVisibility();
   }
 
   function restoreDeckListScroll() {
@@ -1329,8 +1372,13 @@ const FlashcardModule = (function() {
       const group = groups.get(key);
       // 大項目に属するトピックIDをJSON形式で保存
       const topicIds = group.topics.map(t => t.id);
+
+      // 短いグループ名（1〜2文字）はヘッダーを表示しない
+      const showHeader = group.name.length > 2;
+
       return `
         <div class="deck-hisshu-group">
+          ${showHeader ? `
           <div class="deck-hisshu-header">
             <span class="hisshu-header-name">${group.name}</span>
             <button class="group-list-btn" data-topic-ids='${JSON.stringify(topicIds)}' data-group-name="${group.name}" title="カード一覧">
@@ -1344,7 +1392,8 @@ const FlashcardModule = (function() {
               </svg>
             </button>
           </div>
-          ${group.topics.map(topic => renderTopicRow(topic, group.name)).join('')}
+          ` : ''}
+          ${group.topics.map(topic => renderTopicRow(topic, showHeader ? group.name : null)).join('')}
         </div>
       `;
     }).join('');
@@ -1504,10 +1553,19 @@ const FlashcardModule = (function() {
         // 状態を保存
         if (subjectEl.classList.contains('open')) {
           state.expandedSubjects.add(subject);
+          // アコーディオンを開いた時はピルを表示
+          state.pillVisible = true;
         } else {
           state.expandedSubjects.delete(subject);
+          // 全て閉じたらピルを非表示
+          if (state.expandedSubjects.size === 0) {
+            state.pillVisible = false;
+          }
         }
         localStorage.setItem('flashcard-expanded-subjects', JSON.stringify([...state.expandedSubjects]));
+
+        // ピルボタンの表示を更新
+        updateAccordionPillVisibility();
       });
     });
 
@@ -2514,24 +2572,61 @@ const FlashcardModule = (function() {
       fetchTasks.push({ topicId, topic, qaPath });
     }
 
-    // 全トピックを並列でfetch
+    // 全トピックを並列でfetch（.txtと.jsonの両方を試してマージ）
     await Promise.all(fetchTasks.map(async ({ topicId, topic, qaPath }) => {
       try {
+        let allCards = [];
+
+        // メインのqaPathを読み込み
         const response = await fetch(encodeURI(qaPath));
-        if (!response.ok) return;
-
-        const contentType = response.headers.get('content-type');
-        let cards;
-
-        if (qaPath.endsWith('.json') || (contentType && contentType.includes('json'))) {
-          const jsonData = await response.json();
-          cards = parseJSONToCards(jsonData, topicId);
-        } else {
-          const text = await response.text();
-          cards = parseQAToCards(text, topicId);
+        if (response.ok) {
+          const contentType = response.headers.get('content-type');
+          if (qaPath.endsWith('.json') || (contentType && contentType.includes('json'))) {
+            const jsonData = await response.json();
+            allCards = parseJSONToCards(jsonData, topicId);
+          } else {
+            const text = await response.text();
+            allCards = parseQAToCards(text, topicId);
+          }
         }
 
-        topicCardsMap.set(topicId, { cards, topic });
+        // 対応する別形式のファイルも試す（.txt↔.json）
+        let altPath = null;
+        if (qaPath.endsWith('.txt')) {
+          altPath = qaPath.replace('.txt', '.json');
+        } else if (qaPath.endsWith('.json')) {
+          altPath = qaPath.replace('.json', '.txt');
+        }
+
+        if (altPath) {
+          try {
+            const altResponse = await fetch(encodeURI(altPath));
+            if (altResponse.ok) {
+              let altCards = [];
+              if (altPath.endsWith('.json')) {
+                const jsonData = await altResponse.json();
+                altCards = parseJSONToCards(jsonData, topicId);
+              } else {
+                const text = await altResponse.text();
+                altCards = parseQAToCards(text, topicId);
+              }
+              // カードをマージ（重複は後で除外される）
+              // 一問一答のインデックスを維持するため、altCardsのインデックスをずらす
+              const baseIndex = allCards.length;
+              altCards = altCards.map((card, i) => ({
+                ...card,
+                originalIndex: baseIndex + i
+              }));
+              allCards = [...allCards, ...altCards];
+            }
+          } catch (e) {
+            // 別形式ファイルがなくてもエラーにしない
+          }
+        }
+
+        if (allCards.length > 0) {
+          topicCardsMap.set(topicId, { cards: allCards, topic });
+        }
       } catch (e) {
         console.log(`QA読み込みエラー (${topicId}):`, e);
       }
@@ -4450,6 +4545,7 @@ const FlashcardModule = (function() {
               </button>
               <button class="card-search-action-btn again ${cardStatus === 'again' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="again">もう一度</button>
               <button class="card-search-action-btn memorized ${cardStatus === 'memorized' ? 'active' : ''}" data-key="${escapeHtml(key)}" data-action="memorized">覚えた</button>
+              ${isCollaborator() ? `<button class="card-search-action-btn report" data-key="${escapeHtml(key)}" data-topic-id="${escapeHtml(topicId)}" data-question="${escapeHtml(card.question)}" data-answer="${escapeHtml(card.answer)}" data-section="${card.section ? escapeHtml(card.section) : ''}" data-action="report">報告</button>` : ''}
             </div>
           </div>
         </div>
@@ -4600,6 +4696,12 @@ const FlashcardModule = (function() {
         const key = btn.dataset.key;
         const action = btn.dataset.action;
 
+        // 報告ボタンの場合
+        if (action === 'report') {
+          reportCardFromList(btn);
+          return;
+        }
+
         const existing = state.progress[key] || {};
         state.progress[key] = {
           ...existing,
@@ -4611,7 +4713,7 @@ const FlashcardModule = (function() {
         // UIを更新
         const parent = btn.closest('.card-search-actions');
         if (parent) {
-          parent.querySelectorAll('.card-search-action-btn').forEach(b => b.classList.remove('active'));
+          parent.querySelectorAll('.card-search-action-btn:not(.report)').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
         }
       });
@@ -5631,7 +5733,6 @@ const FlashcardModule = (function() {
               <path d="M19 12H5M12 19l-7-7 7-7"/>
             </svg>
           </button>
-          <button class="flashcard-text-btn" id="flashcard-report-btn">報告</button>
           <div class="flashcard-progress-bar">
             <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
             <span class="flashcard-progress-text">${current} / ${total}${pendingAgain > 0 ? ` <span class="progress-pending">再${pendingAgain}</span>` : ''}</span>
@@ -5713,6 +5814,9 @@ const FlashcardModule = (function() {
           <button class="flashcard-btn again" id="flashcard-again-btn">
             もう一度
           </button>
+          ${isCollaborator() ? `<button class="flashcard-btn report" id="flashcard-report-btn">
+            報告
+          </button>` : ''}
           <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
             覚えた
           </button>
@@ -5790,8 +5894,11 @@ const FlashcardModule = (function() {
     const shuffleBtn = document.getElementById('flashcard-shuffle-btn');
     if (shuffleBtn) shuffleBtn.addEventListener('click', toggleShuffle);
 
-    // 報告ボタン
-    document.getElementById('flashcard-report-btn').addEventListener('click', reportCurrentCard);
+    // 報告ボタン（コラボレーターのみ表示）
+    const reportBtn = document.getElementById('flashcard-report-btn');
+    if (reportBtn) {
+      reportBtn.addEventListener('click', reportCurrentCard);
+    }
 
     // お気に入りボタン
     document.getElementById('flashcard-favorite-btn').addEventListener('click', toggleFavoriteCurrentCard);
@@ -6215,11 +6322,11 @@ const FlashcardModule = (function() {
   // === カード報告機能（Google Forms送信） ===
   const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfNxFF5NrMxgNdhFq24jGTd1pGBd5-dlAWQOb1eX1kqDqz4WA/formResponse';
   const FORM_ENTRIES = {
-    subject: 'entry.164360725',
-    topic: 'entry.300876290',
-    section: 'entry.676904274',
-    question: 'entry.338182143',
-    answer: 'entry.1207584254'
+    subject: 'entry.164360725',      // 科目
+    topic: 'entry.300876290',        // トピック
+    section: 'entry.676904274',      // セクション
+    question: 'entry.338182143',     // 質問
+    answer: 'entry.1207584254'       // 回答
   };
 
   function reportCurrentCard() {
@@ -6268,6 +6375,46 @@ const FlashcardModule = (function() {
       if (btn) {
         btn.classList.remove('sending');
       }
+      showToast('送信に失敗しました', 1500);
+    });
+  }
+
+  // カード一覧から報告（ボタンのdata属性を使用）
+  function reportCardFromList(btn) {
+    const topicId = btn.dataset.topicId;
+    const topicData = DATA.find(d => d.id === topicId);
+
+    // 報告データを作成
+    const reportData = {
+      subject: topicData?.subject || '',
+      topic: topicData?.title || topicId,
+      section: btn.dataset.section || '',
+      question: btn.dataset.question,
+      answer: btn.dataset.answer
+    };
+
+    // ボタンにフィードバック（送信中）
+    btn.classList.add('sending');
+
+    // Google Formsに送信
+    const formData = new FormData();
+    formData.append(FORM_ENTRIES.subject, reportData.subject);
+    formData.append(FORM_ENTRIES.topic, reportData.topic);
+    formData.append(FORM_ENTRIES.section, reportData.section);
+    formData.append(FORM_ENTRIES.question, reportData.question);
+    formData.append(FORM_ENTRIES.answer, reportData.answer);
+
+    fetch(GOOGLE_FORM_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    }).then(() => {
+      btn.classList.remove('sending');
+      btn.classList.add('reported');
+      setTimeout(() => btn.classList.remove('reported'), 1500);
+      showToast('報告しました', 1200);
+    }).catch(() => {
+      btn.classList.remove('sending');
       showToast('送信に失敗しました', 1500);
     });
   }
@@ -7970,6 +8117,9 @@ const FlashcardModule = (function() {
     // アコーディオン状態をクリア
     state.expandedSubjects.clear();
     localStorage.removeItem('flashcard-expanded-subjects');
+    // ピルボタンを非表示に
+    state.pillVisible = false;
+    updateAccordionPillVisibility();
     // 最後に選択したトピックもクリア
     state.lastSelectedTopicId = null;
     localStorage.removeItem('flashcard-last-topic');
@@ -7981,6 +8131,57 @@ const FlashcardModule = (function() {
         container.scrollTop = 0;
       }
     }
+  }
+
+  /**
+   * アコーディオン全閉じピルボタンの表示状態を更新
+   * @param {boolean} forceHide - 強制的に非表示にする場合true
+   */
+  function updateAccordionPillVisibility(forceHide = false) {
+    const pill = document.getElementById('close-accordion-pill');
+    if (!pill) return;
+
+    // 演習中またはアコーディオンが開いていない場合は非表示
+    if (state.isActive || state.expandedSubjects.size === 0 || forceHide) {
+      pill.classList.remove('visible');
+      state.pillVisible = false;
+      return;
+    }
+
+    // スクロール制御による表示状態を適用
+    if (state.pillVisible) {
+      pill.classList.add('visible');
+    } else {
+      pill.classList.remove('visible');
+    }
+  }
+
+  /**
+   * スクロール方向に応じてピルボタンの表示/非表示を制御
+   */
+  function handleDeckListScroll() {
+    if (!container || state.isActive) return;
+
+    const currentScrollTop = container.scrollTop;
+    const scrollDelta = currentScrollTop - state.lastScrollTop;
+
+    // スクロール量が小さい場合は無視（チラつき防止）
+    if (Math.abs(scrollDelta) < 5) return;
+
+    // 下にスクロール（親指を上に動かす）→ 非表示
+    // 上にスクロール（親指を下に動かす）→ 表示
+    if (scrollDelta > 0) {
+      // 下にスクロール中 → 非表示
+      state.pillVisible = false;
+    } else {
+      // 上にスクロール中 → アコーディオンが開いていれば表示
+      if (state.expandedSubjects.size > 0) {
+        state.pillVisible = true;
+      }
+    }
+
+    state.lastScrollTop = currentScrollTop;
+    updateAccordionPillVisibility();
   }
 
   /**

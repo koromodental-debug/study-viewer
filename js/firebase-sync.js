@@ -584,11 +584,12 @@ const FirebaseSync = (function() {
       }
     });
 
-    // 定期同期（5分ごと）
+    // 定期同期（5分ごと）- 双方向同期
     setInterval(async () => {
       if (isLoggedIn()) {
-        await pushToCloud();
-        console.log('[FirebaseSync] 定期同期完了');
+        await pullFromCloud();  // まずプルして最新を取得
+        await pushToCloud();    // その後プッシュ
+        console.log('[FirebaseSync] 定期同期完了（双方向）');
       }
     }, 5 * 60 * 1000);
 

@@ -4571,6 +4571,9 @@ const FlashcardModule = (function() {
     const tabbar = document.querySelector('.floating-tabbar');
     if (tabbar) tabbar.classList.add('hidden');
 
+    // アコーディオン全閉じピルを非表示
+    updateAccordionPillVisibility(true);
+
     // 展開状態を初期化
     if (!state.deckCardListExpandedKeys) {
       state.deckCardListExpandedKeys = new Set();

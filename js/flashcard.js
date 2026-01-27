@@ -2234,6 +2234,9 @@ const FlashcardModule = (function() {
     const tabbar = document.querySelector('.floating-tabbar');
     if (tabbar) tabbar.classList.add('hidden');
 
+    // アコーディオン全閉じピルを非表示
+    updateAccordionPillVisibility(true);
+
     // イベントバインド
     bindDailyTenCardListEvents(filteredCards);
   }
@@ -2950,6 +2953,9 @@ const FlashcardModule = (function() {
     const tabbar = document.querySelector('.floating-tabbar');
     if (tabbar) tabbar.classList.add('hidden');
 
+    // アコーディオン全閉じピルを非表示
+    updateAccordionPillVisibility(true);
+
     // イベントバインド
     bindSubjectCardListEvents(subject, allCards);
   }
@@ -3133,6 +3139,9 @@ const FlashcardModule = (function() {
     // タブバーを非表示
     const tabbar = document.querySelector('.floating-tabbar');
     if (tabbar) tabbar.classList.add('hidden');
+
+    // アコーディオン全閉じピルを非表示
+    updateAccordionPillVisibility(true);
 
     // イベントバインド
     bindGroupCardListEvents(groupName, allCards);
@@ -3371,6 +3380,9 @@ const FlashcardModule = (function() {
     // タブバーを非表示
     const tabbar = document.querySelector('.floating-tabbar');
     if (tabbar) tabbar.classList.add('hidden');
+
+    // アコーディオン全閉じピルを非表示
+    updateAccordionPillVisibility(true);
 
     // イベントバインド
     bindStatusDeckCardListEvents(status, filteredCards);
@@ -3708,6 +3720,9 @@ const FlashcardModule = (function() {
     // タブバーを非表示
     const tabbar = document.querySelector('.floating-tabbar');
     if (tabbar) tabbar.classList.add('hidden');
+
+    // アコーディオン全閉じピルを非表示
+    updateAccordionPillVisibility(true);
 
     // イベントバインド
     bindFavoriteDeckCardListEvents(filteredCards);

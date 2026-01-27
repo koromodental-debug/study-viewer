@@ -4863,6 +4863,15 @@ body:not(.is-practice) #flashcard-content {
   background: #0A84FF;
 }
 
+[data-theme="dark"] .deck-card-list-toggle-all {
+  border-color: #0A84FF;
+  color: #0A84FF;
+}
+
+[data-theme="dark"] .deck-card-list-toggle-all:active {
+  background: rgba(10, 132, 255, 0.2);
+}
+
 [data-theme="dark"] .deck-card-list-reset {
   background: rgba(118, 118, 128, 0.24);
   color: #FF9F0A;
@@ -6616,6 +6625,22 @@ body:not(.is-practice) #flashcard-content {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+}
+
+/* すべて開く/閉じるボタン */
+.deck-card-list-toggle-all {
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid var(--system-blue, #007aff);
+  color: var(--system-blue, #007aff);
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.deck-card-list-toggle-all:active {
+  background: rgba(0, 122, 255, 0.1);
 }
 
 /* リセットボタン */

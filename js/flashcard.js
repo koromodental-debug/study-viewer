@@ -4463,6 +4463,10 @@ const FlashcardModule = (function() {
     // カスタマイズがあるかどうか
     const hasCustomization = hasTopicCustomization(topicId);
 
+    // 全カード展開済みかどうか
+    const allExpanded = cards.length > 0 &&
+      cards.every((_, idx) => state.deckCardListExpandedKeys && state.deckCardListExpandedKeys.has(`${topicId}:${idx}`));
+
     // ヘッダー
     const headerHtml = `
       <div class="deck-card-list-header">
@@ -4476,6 +4480,7 @@ const FlashcardModule = (function() {
           <span class="deck-card-list-count">${cards.length}枚${hasCustomization ? ' (編集済)' : ''}</span>
         </div>
         <div class="deck-card-list-actions">
+          <button class="deck-card-list-toggle-all" id="deck-card-list-toggle-all" data-card-count="${cards.length}">${allExpanded ? 'すべて閉じる' : 'すべて開く'}</button>
           ${hasCustomization ? `
             <button class="deck-card-list-reset" id="deck-card-list-reset" title="編集をリセット">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -4656,6 +4661,36 @@ const FlashcardModule = (function() {
           renderDeckList();
         }
       }, { passive: true });
+    }
+
+    // すべて開く/閉じるボタン
+    const toggleAllBtn = document.getElementById('deck-card-list-toggle-all');
+    if (toggleAllBtn) {
+      toggleAllBtn.addEventListener('click', () => {
+        const cardCount = parseInt(toggleAllBtn.dataset.cardCount, 10) || 0;
+        // 全カード展開済みかどうか判定
+        let currentAllExpanded = cardCount > 0;
+        for (let i = 0; i < cardCount; i++) {
+          if (!state.deckCardListExpandedKeys || !state.deckCardListExpandedKeys.has(`${topicId}:${i}`)) {
+            currentAllExpanded = false;
+            break;
+          }
+        }
+        if (currentAllExpanded) {
+          // すべて閉じる
+          state.deckCardListExpandedKeys.clear();
+        } else {
+          // すべて開く
+          if (!state.deckCardListExpandedKeys) {
+            state.deckCardListExpandedKeys = new Set();
+          }
+          for (let i = 0; i < cardCount; i++) {
+            state.deckCardListExpandedKeys.add(`${topicId}:${i}`);
+          }
+        }
+        saveDeckCardListScrollPos(topicId);
+        renderDeckCardList(topicId);
+      });
     }
 
     // 演習開始ボタン

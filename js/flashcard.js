@@ -63,7 +63,7 @@ const FlashcardModule = (function() {
   // コラボレーター（報告ボタンが表示されるユーザー）
   const COLLABORATORS = [
     'koromo.dental@gmail.com',
-    // 友人のメールアドレスを追加
+    'den.sata.mo@gmail.com',
   ];
 
   // コラボレーターかどうかをチェック

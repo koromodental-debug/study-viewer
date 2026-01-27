@@ -633,6 +633,14 @@
    * イベントバインド
    */
   function bindEvents() {
+    // リロードボタン（PWA用）
+    const reloadBtn = document.getElementById('reload-btn');
+    if (reloadBtn) {
+      reloadBtn.addEventListener('click', () => {
+        location.reload();
+      });
+    }
+
     // 検索ボタン（ヘッダー）→ 検索シートを開く
     if (elements.searchBtn) {
       elements.searchBtn.addEventListener('click', openSearchSheet);

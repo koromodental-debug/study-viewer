@@ -2,7 +2,7 @@ const DATA = [
   {
     "id": "全身_内分泌系",
     "title": "全身_内分泌系",
-    "qaPath": "qa/subject/解剖学/01_全身_内分泌系_QA.json",
+    "qaPath": "qa/subject/解剖学/01_全身_内分泌系_QA.txt",
     "htmlPath": "html/subject/解剖学/01_全身_内分泌系.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -10,7 +10,7 @@ const DATA = [
   {
     "id": "全身_造血系・リンパ系",
     "title": "全身_造血系・リンパ系",
-    "qaPath": "qa/subject/解剖学/01_全身_造血系・リンパ系_QA.json",
+    "qaPath": "qa/subject/解剖学/01_全身_造血系・リンパ系_QA.txt",
     "htmlPath": "html/subject/解剖学/01_全身_造血系・リンパ系.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -40,7 +40,7 @@ const DATA = [
   {
     "id": "加齢変化_歯の喪失",
     "title": "加齢変化_歯の喪失",
-    "qaPath": "qa/subject/解剖学/10_加齢変化_歯の喪失_QA.json",
+    "qaPath": "qa/subject/解剖学/10_加齢変化_歯の喪失_QA.txt",
     "htmlPath": "html/subject/解剖学/10_加齢変化_歯の喪失.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -59,7 +59,7 @@ const DATA = [
   {
     "id": "口腔と咽喉頭_喉頭",
     "title": "口腔と咽喉頭_喉頭",
-    "qaPath": "qa/subject/解剖学/07_口腔と咽喉頭_喉頭_QA.json",
+    "qaPath": "qa/subject/解剖学/07_口腔と咽喉頭_喉頭_QA.txt",
     "htmlPath": "html/subject/解剖学/07_口腔と咽喉頭_喉頭.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -67,7 +67,7 @@ const DATA = [
   {
     "id": "口腔と咽喉頭_解剖学的構造物",
     "title": "口腔と咽喉頭_解剖学的構造物",
-    "qaPath": "qa/subject/解剖学/07_口腔と咽喉頭_解剖学的構造物_QA.json",
+    "qaPath": "qa/subject/解剖学/07_口腔と咽喉頭_解剖学的構造物_QA.txt",
     "htmlPath": "html/subject/解剖学/07_口腔と咽喉頭_解剖学的構造物.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -152,7 +152,7 @@ const DATA = [
   {
     "id": "歯_エナメル質の構造",
     "title": "歯_エナメル質の構造",
-    "qaPath": "qa/subject/解剖学/02_歯_エナメル質の構造_QA.json",
+    "qaPath": "qa/subject/解剖学/02_歯_エナメル質の構造_QA.txt",
     "htmlPath": "html/subject/解剖学/02_歯_エナメル質の構造.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -160,7 +160,7 @@ const DATA = [
   {
     "id": "歯_上顎・下顎の形態異常",
     "title": "歯_上顎・下顎の形態異常",
-    "qaPath": "qa/subject/解剖学/02_歯_上顎・下顎の形態異常_QA.json",
+    "qaPath": "qa/subject/解剖学/02_歯_上顎・下顎の形態異常_QA.txt",
     "htmlPath": "html/subject/解剖学/02_歯_上顎・下顎の形態異常.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -168,7 +168,7 @@ const DATA = [
   {
     "id": "歯_乳歯の形態と特徴",
     "title": "歯_乳歯の形態と特徴",
-    "qaPath": "qa/subject/解剖学/02_歯_乳歯の形態と特徴_QA.json",
+    "qaPath": "qa/subject/解剖学/02_歯_乳歯の形態と特徴_QA.txt",
     "htmlPath": "html/subject/解剖学/02_歯_乳歯の形態と特徴.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -176,7 +176,7 @@ const DATA = [
   {
     "id": "歯_乳歯・発育段階の歯の異常",
     "title": "歯_乳歯・発育段階の歯の異常",
-    "qaPath": "qa/subject/解剖学/02_歯_乳歯・発育段階の歯の異常_QA.json",
+    "qaPath": "qa/subject/解剖学/02_歯_乳歯・発育段階の歯の異常_QA.txt",
     "htmlPath": "html/subject/解剖学/02_歯_乳歯・発育段階の歯の異常.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -184,7 +184,7 @@ const DATA = [
   {
     "id": "歯_歯の鑑別",
     "title": "歯_歯の鑑別",
-    "qaPath": "qa/subject/解剖学/02_歯_歯の鑑別_QA.json",
+    "qaPath": "qa/subject/解剖学/02_歯_歯の鑑別_QA.txt",
     "htmlPath": "html/subject/解剖学/02_歯_歯の鑑別.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -192,7 +192,7 @@ const DATA = [
   {
     "id": "歯_永久歯の形態と特徴",
     "title": "歯_永久歯の形態と特徴",
-    "qaPath": "qa/subject/解剖学/02_歯_永久歯の形態と特徴_QA.json",
+    "qaPath": "qa/subject/解剖学/02_歯_永久歯の形態と特徴_QA.txt",
     "htmlPath": "html/subject/解剖学/02_歯_永久歯の形態と特徴.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -255,7 +255,7 @@ const DATA = [
   {
     "id": "発生_歯・歯周組織の発生",
     "title": "発生_歯・歯周組織の発生",
-    "qaPath": "qa/subject/解剖学/09_発生_歯・歯周組織の発生_QA.json",
+    "qaPath": "qa/subject/解剖学/09_発生_歯・歯周組織の発生_QA.txt",
     "htmlPath": "html/subject/解剖学/09_発生_歯・歯周組織の発生.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -263,7 +263,7 @@ const DATA = [
   {
     "id": "発生_顎・顔面の発生",
     "title": "発生_顎・顔面の発生",
-    "qaPath": "qa/subject/解剖学/09_発生_顎・顔面の発生_QA.json",
+    "qaPath": "qa/subject/解剖学/09_発生_顎・顔面の発生_QA.txt",
     "htmlPath": "html/subject/解剖学/09_発生_顎・顔面の発生.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -722,7 +722,7 @@ const DATA = [
   {
     "id": "頭頸部の神経_三叉神経",
     "title": "頭頸部の神経_三叉神経",
-    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_三叉神経_QA.json",
+    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_三叉神経_QA.txt",
     "htmlPath": "html/subject/解剖学/06_頭頸部の神経_三叉神経.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -730,7 +730,7 @@ const DATA = [
   {
     "id": "頭頸部の神経_三叉神経・顔面神経",
     "title": "頭頸部の神経_三叉神経・顔面神経",
-    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_三叉神経・顔面神経_QA.json",
+    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_三叉神経・顔面神経_QA.txt",
     "htmlPath": "html/subject/解剖学/06_頭頸部の神経_三叉神経・顔面神経.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -738,7 +738,7 @@ const DATA = [
   {
     "id": "頭頸部の神経_唾液腺の解剖",
     "title": "頭頸部の神経_唾液腺の解剖",
-    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_唾液腺の解剖_QA.json",
+    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_唾液腺の解剖_QA.txt",
     "htmlPath": "html/subject/解剖学/06_頭頸部の神経_唾液腺の解剖.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -746,7 +746,7 @@ const DATA = [
   {
     "id": "頭頸部の神経_自律神経節",
     "title": "頭頸部の神経_自律神経節",
-    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_自律神経節_QA.json",
+    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_自律神経節_QA.txt",
     "htmlPath": "html/subject/解剖学/06_頭頸部の神経_自律神経節.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -754,7 +754,7 @@ const DATA = [
   {
     "id": "頭頸部の神経_舌咽神経・迷走神経",
     "title": "頭頸部の神経_舌咽神経・迷走神経",
-    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_舌咽神経・迷走神経_QA.json",
+    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_舌咽神経・迷走神経_QA.txt",
     "htmlPath": "html/subject/解剖学/06_頭頸部の神経_舌咽神経・迷走神経.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -762,7 +762,7 @@ const DATA = [
   {
     "id": "頭頸部の神経_舌筋",
     "title": "頭頸部の神経_舌筋",
-    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_舌筋_QA.json",
+    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_舌筋_QA.txt",
     "htmlPath": "html/subject/解剖学/06_頭頸部の神経_舌筋.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -770,7 +770,7 @@ const DATA = [
   {
     "id": "頭頸部の神経_開口反射",
     "title": "頭頸部の神経_開口反射",
-    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_開口反射_QA.json",
+    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_開口反射_QA.txt",
     "htmlPath": "html/subject/解剖学/06_頭頸部の神経_開口反射.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -778,7 +778,7 @@ const DATA = [
   {
     "id": "頭頸部の神経_顔面神経",
     "title": "頭頸部の神経_顔面神経",
-    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_顔面神経_QA.json",
+    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_顔面神経_QA.txt",
     "htmlPath": "html/subject/解剖学/06_頭頸部の神経_顔面神経.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -786,7 +786,7 @@ const DATA = [
   {
     "id": "頭頸部の神経_顔面神経麻痺",
     "title": "頭頸部の神経_顔面神経麻痺",
-    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_顔面神経麻痺_QA.json",
+    "qaPath": "qa/subject/解剖学/06_頭頸部の神経_顔面神経麻痺_QA.txt",
     "htmlPath": "html/subject/解剖学/06_頭頸部の神経_顔面神経麻痺.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -794,7 +794,7 @@ const DATA = [
   {
     "id": "頭頸部の筋_咀嚼筋",
     "title": "頭頸部の筋_咀嚼筋",
-    "qaPath": "qa/subject/解剖学/04_頭頸部の筋_咀嚼筋_QA.json",
+    "qaPath": "qa/subject/解剖学/04_頭頸部の筋_咀嚼筋_QA.txt",
     "htmlPath": "html/subject/解剖学/04_頭頸部の筋_咀嚼筋.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -802,7 +802,7 @@ const DATA = [
   {
     "id": "頭頸部の筋_咽頭・喉頭の筋",
     "title": "頭頸部の筋_咽頭・喉頭の筋",
-    "qaPath": "qa/subject/解剖学/04_頭頸部の筋_咽頭・喉頭の筋_QA.json",
+    "qaPath": "qa/subject/解剖学/04_頭頸部の筋_咽頭・喉頭の筋_QA.txt",
     "htmlPath": "html/subject/解剖学/04_頭頸部の筋_咽頭・喉頭の筋.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -810,7 +810,7 @@ const DATA = [
   {
     "id": "頭頸部の筋_正常咬合",
     "title": "頭頸部の筋_正常咬合",
-    "qaPath": "qa/subject/解剖学/04_頭頸部の筋_正常咬合_QA.json",
+    "qaPath": "qa/subject/解剖学/04_頭頸部の筋_正常咬合_QA.txt",
     "htmlPath": "html/subject/解剖学/04_頭頸部の筋_正常咬合.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -818,7 +818,7 @@ const DATA = [
   {
     "id": "頭頸部の脈管_リンパ節",
     "title": "頭頸部の脈管_リンパ節",
-    "qaPath": "qa/subject/解剖学/05_頭頸部の脈管_リンパ節_QA.json",
+    "qaPath": "qa/subject/解剖学/05_頭頸部の脈管_リンパ節_QA.txt",
     "htmlPath": "html/subject/解剖学/05_頭頸部の脈管_リンパ節.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -826,7 +826,7 @@ const DATA = [
   {
     "id": "頭頸部の脈管_頭頸部の血管",
     "title": "頭頸部の脈管_頭頸部の血管",
-    "qaPath": "qa/subject/解剖学/05_頭頸部の脈管_頭頸部の血管_QA.json",
+    "qaPath": "qa/subject/解剖学/05_頭頸部の脈管_頭頸部の血管_QA.txt",
     "htmlPath": "html/subject/解剖学/05_頭頸部の脈管_頭頸部の血管.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -834,7 +834,7 @@ const DATA = [
   {
     "id": "頭頸部の骨_上顎骨",
     "title": "頭頸部の骨_上顎骨",
-    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_上顎骨_QA.json",
+    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_上顎骨_QA.txt",
     "htmlPath": "html/subject/解剖学/03_頭頸部の骨_上顎骨.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -842,7 +842,7 @@ const DATA = [
   {
     "id": "頭頸部の骨_側頭骨・蝶形骨",
     "title": "頭頸部の骨_側頭骨・蝶形骨",
-    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_側頭骨・蝶形骨_QA.json",
+    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_側頭骨・蝶形骨_QA.txt",
     "htmlPath": "html/subject/解剖学/03_頭頸部の骨_側頭骨・蝶形骨.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -850,7 +850,7 @@ const DATA = [
   {
     "id": "頭頸部の骨_舌下神経",
     "title": "頭頸部の骨_舌下神経",
-    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_舌下神経_QA.json",
+    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_舌下神経_QA.txt",
     "htmlPath": "html/subject/解剖学/03_頭頸部の骨_舌下神経.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -858,7 +858,7 @@ const DATA = [
   {
     "id": "頭頸部の骨_頭蓋を構成する骨",
     "title": "頭頸部の骨_頭蓋を構成する骨",
-    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_頭蓋を構成する骨_QA.json",
+    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_頭蓋を構成する骨_QA.txt",
     "htmlPath": "html/subject/解剖学/03_頭頸部の骨_頭蓋を構成する骨.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -866,7 +866,7 @@ const DATA = [
   {
     "id": "頭頸部の骨_頭蓋底の構造物",
     "title": "頭頸部の骨_頭蓋底の構造物",
-    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_頭蓋底の構造物_QA.json",
+    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_頭蓋底の構造物_QA.txt",
     "htmlPath": "html/subject/解剖学/03_頭頸部の骨_頭蓋底の構造物.html",
     "subject": "解剖",
     "subjectCategory": "基礎"
@@ -874,7 +874,7 @@ const DATA = [
   {
     "id": "頭頸部の骨_頸部の筋",
     "title": "頭頸部の骨_頸部の筋",
-    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_頸部の筋_QA.json",
+    "qaPath": "qa/subject/解剖学/03_頭頸部の骨_頸部の筋_QA.txt",
     "htmlPath": "html/subject/解剖学/03_頭頸部の骨_頸部の筋.html",
     "subject": "解剖",
     "subjectCategory": "基礎"

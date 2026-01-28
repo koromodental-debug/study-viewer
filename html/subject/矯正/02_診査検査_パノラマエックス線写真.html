@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>パノラマエックス線写真 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 診査検査</span>
+    <h1>パノラマエックス線写真</h1>
+    <div class="container">
+
+      <h2>パノラマX線写真の特徴</h2>
+      <ul>
+        <li><span class="key">断層撮影</span>の原理を応用</li>
+        <li>上下顎歯列、歯槽骨、顎骨の状態を<span class="highlight">全体的に観察</span></li>
+        <li><span class="key">埋伏歯の見落としが少ない</span></li>
+        <li>1枚で広範囲を撮影可能</li>
+      </ul>
+
+      <h2>パノラマX線で評価できるもの</h2>
+      <table>
+        <tr><th>評価項目</th><th>内容</th></tr>
+        <tr>
+          <td><span class="highlight">歯根の平行性</span></td>
+          <td>隣接歯根の傾斜度（矯正治療終了時の評価）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">歯根吸収の有無</span></td>
+          <td>矯正治療による歯根吸収の評価</td>
+        </tr>
+        <tr>
+          <td><span class="key">永久歯の萌出方向</span></td>
+          <td>萌出経路の異常、埋伏の可能性</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯数の異常</span></td>
+          <td>先天欠如、過剰歯の有無</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯胚の発育状態</span></td>
+          <td>後継永久歯の有無、発育段階</td>
+        </tr>
+        <tr>
+          <td>上顎洞・鼻腔</td>
+          <td>形態の概観</td>
+        </tr>
+        <tr>
+          <td>下顎頭の形態</td>
+          <td>顎関節の概観</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">治療終了時のパノラマX線評価（頻出）</div>
+        <ul>
+          <li><span class="highlight">歯根の平行性</span> → 隣接歯根が平行かどうか</li>
+          <li><span class="highlight">歯根吸収の有無</span> → 矯正力による歯根吸収</li>
+        </ul>
+      </div>
+
+      <h2>パノラマX線で評価できないもの</h2>
+      <table>
+        <tr><th>項目</th><th>評価に適した検査</th></tr>
+        <tr>
+          <td><span class="caution">咬合の緊密度</span></td>
+          <td>口腔内診査、模型診査</td>
+        </tr>
+        <tr>
+          <td><span class="caution">二態咬合の有無</span></td>
+          <td>口腔内診査（中心位誘導）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">咬合平面の傾斜度</span></td>
+          <td>セファロX線（側面頭部X線規格写真）</td>
+        </tr>
+        <tr>
+          <td>顔面の対称性</td>
+          <td>顔面写真、正面セファロ</td>
+        </tr>
+        <tr>
+          <td>側貌の評価</td>
+          <td>側面セファロ</td>
+        </tr>
+      </table>
+
+      <h2>パノラマX線の注意点</h2>
+      <ul>
+        <li><span class="caution">前歯部</span>は後方組織との重なりで判別が困難</li>
+        <li>前歯部の詳細は<span class="key">デンタルX線</span>を併用</li>
+        <li>拡大率は部位により異なる（正確な計測には不向き）</li>
+      </ul>
+
+      <h2>矯正治療で用いるX線検査の比較</h2>
+      <table>
+        <tr><th>X線検査</th><th>主な評価項目</th></tr>
+        <tr>
+          <td><span class="key">パノラマX線</span></td>
+          <td>歯・歯根の全体像、歯数異常、埋伏歯</td>
+        </tr>
+        <tr>
+          <td><span class="key">セファロX線</span>（側面）</td>
+          <td>骨格パターン、咬合平面、軟組織側貌</td>
+        </tr>
+        <tr>
+          <td><span class="key">セファロX線</span>（正面）</td>
+          <td>顔面の対称性、正中のズレ</td>
+        </tr>
+        <tr>
+          <td><span class="key">手根骨X線</span></td>
+          <td>骨年齢、成長予測</td>
+        </tr>
+        <tr>
+          <td><span class="key">デンタルX線</span></td>
+          <td>個々の歯根の詳細、歯槽骨の状態</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C40</div>
+        <p>マルチブラケット装置による治療終了時に撮影するパノラマエックス線写真で評価するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯根の平行性<br>
+          b 咬合の緊密度<br>
+          c 二態咬合の有無<br>
+          d 歯根吸収の有無<br>
+          e 咬合平面の傾斜度
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】パノラマX線で評価できるのは<span class="highlight">歯根の平行性</span>（a）と<span class="highlight">歯根吸収の有無</span>（d）。矯正治療終了時には、歯根が適切に平行化されているか、また治療による歯根吸収がないかを確認する。<br>
+        咬合の緊密度（b）は模型や口腔内で評価。二態咬合（c）は口腔内診査で評価。咬合平面の傾斜度（e）はセファロX線で評価する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

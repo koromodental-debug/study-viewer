@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>機能的検査 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 診査検査</span>
+    <h1>機能的検査</h1>
+    <div class="container">
+
+      <h2>機能的不正咬合とは</h2>
+      <p><span class="key">早期接触</span>により下顎が偏位して咬合する状態。中心咬合位と習慣性咬合位が異なり、<span class="key">二態咬合</span>を呈する。</p>
+
+      <h3>機能的不正咬合の例</h3>
+      <ul>
+        <li><span class="key">機能性下顎前突</span>：早期接触により下顎が前方に誘導</li>
+        <li><span class="key">機能性交叉咬合</span>：早期接触により下顎が側方に誘導</li>
+      </ul>
+
+      <h2>下顎位の種類</h2>
+      <table>
+        <tr><th>下顎位</th><th>定義</th></tr>
+        <tr>
+          <td><span class="key">中心位</span></td>
+          <td>下顎頭が関節窩内で上前方に位置する状態</td>
+        </tr>
+        <tr>
+          <td><span class="key">咬頭嵌合位</span></td>
+          <td>上下顎歯列が最大面積で接触した状態</td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎安静位</span></td>
+          <td>安静時の下顎位（筋緊張のバランス）</td>
+        </tr>
+      </table>
+
+      <h2>機能的検査の方法</h2>
+      <table>
+        <tr><th>検査法</th><th>目的・方法</th></tr>
+        <tr>
+          <td><span class="highlight">下顎運動路の検査</span></td>
+          <td>開閉口経路の観察、機能的偏位の検出</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ファンクショナルワックスバイト法</span></td>
+          <td>早期接触の位置把握、下顎偏位の機能分析</td>
+        </tr>
+        <tr>
+          <td><span class="key">セファロの重ね合わせ</span></td>
+          <td>咬頭嵌合位と下顎安静位で撮影し、下顎閉鎖経路を分析</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">早期接触を調べる検査（頻出）</div>
+        <ul>
+          <li><span class="highlight">下顎運動路の検査</span>：閉口時の経路の偏位を観察</li>
+          <li><span class="highlight">ファンクショナルワックスバイト法</span>：求心性刺激を遮断して早期接触を検出</li>
+        </ul>
+      </div>
+
+      <h2>下顎閉鎖経路（Path of closure）</h2>
+      <p>下顎安静位から咬頭嵌合位への閉口経路</p>
+      <ul>
+        <li><span class="key">正常</span>：直線的な経路</li>
+        <li><span class="highlight">機能的不正咬合</span>：早期接触で偏位した経路</li>
+      </ul>
+      <p class="note">セファロを2枚重ね合わせて分析することで、機能的偏位の有無を評価できる</p>
+
+      <h2>混合歯列期の反対咬合</h2>
+      <p>混合歯列期前期の前歯部反対咬合の診察で最も重要なのは<span class="highlight">早期接触の有無</span></p>
+      <table>
+        <tr><th>タイプ</th><th>早期接触</th><th>対応</th></tr>
+        <tr>
+          <td><span class="key">機能性</span></td>
+          <td>あり</td>
+          <td>早期接触の除去で改善可能</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨格性</span></td>
+          <td>なし</td>
+          <td>成長コントロールや外科的矯正が必要</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102C15</div>
+        <p>8歳の男児。前歯部の咬み合わせの異常を主訴として来院した。初診時の口腔内写真（別冊No.14A）と検査中の写真（別冊No.14B）とを別に示す。<br>検査で評価するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../kokushi-app-v2/dist/images/102回_Web画像/102C15.png" alt="口腔内写真と検査中の写真">
+        </div>
+        <div class="choices">
+          a 咬合圧<br>
+          b 安静空隙量<br>
+          c 口呼吸の有無<br>
+          d 咬合接触面積<br>
+          e 下顎の機能的偏位の有無
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】写真は下顎を後方に誘導して中心位を確認している様子。前歯部反対咬合の症例で、<span class="highlight">下顎の機能的偏位の有無</span>を評価している。機能性か骨格性かの鑑別に重要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C128</div>
+        <p>歯の早期接触を調べるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 平行模型の計測<br>
+          b 安静空隙量の測定<br>
+          c 下顎運動路の検査<br>
+          d セファログラムによるTweed分析<br>
+          e ファンクショナルワックスバイト法
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】早期接触を調べる検査は<span class="highlight">下顎運動路の検査</span>（c）と<span class="highlight">ファンクショナルワックスバイト法</span>（e）。平行模型の計測（a）は歯列弓の評価、安静空隙量（b）は下顎安静位の評価、Tweed分析（d）は歯軸傾斜の評価。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C36</div>
+        <p>混合歯列期前期の前歯部反対咬合の診察で最も重要なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯の形態異常<br>
+          b 上唇小帯の付着<br>
+          c 咽頭扁桃の肥大<br>
+          d 早期接触の有無<br>
+          e 乳臼歯の動揺度
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】混合歯列期前期の反対咬合では、<span class="highlight">早期接触の有無</span>（d）を確認することが最も重要。早期接触があれば機能性、なければ骨格性の可能性が高く、治療方針が異なる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A51</div>
+        <p>正常咬合者の下顎切歯点の矢状面運動路（別冊No.8）を別に示す。<br>機能的不正咬合の診断に用いる経路はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../kokushi-app-v2/dist/images/108回_Web画像/108A51.png" alt="下顎運動路">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】機能的不正咬合の診断には<span class="highlight">閉口経路（path of closure）</span>を用いる。図の「ウ」は下顎安静位から咬頭嵌合位への閉口経路を示している。この経路が偏位していれば機能的不正咬合が疑われる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

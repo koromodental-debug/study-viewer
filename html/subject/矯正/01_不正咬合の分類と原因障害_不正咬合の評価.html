@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>不正咬合の評価 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 不正咬合の分類と原因障害</span>
+    <h1>不正咬合の評価</h1>
+    <div class="container">
+
+      <h2>不正咬合を評価する指標</h2>
+      <p>不正咬合の評価には、<span class="key">PAR Index</span>と<span class="key">DAI</span>の2つの指標が重要である。これらは矯正治療の必要性や治療効果を客観的に評価するために用いられる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">試験で問われる指標の区別</div>
+        <ul>
+          <li><span class="highlight">PAR Index・DAI</span> → 不正咬合の評価</li>
+          <li>CFI → う蝕（Caries）の評価</li>
+          <li>PDI → 歯周病（Periodontal Disease）の評価</li>
+          <li>PHP → プラーク（Plaque）の評価</li>
+        </ul>
+      </div>
+
+      <h2>PAR Index</h2>
+      <p><span class="key">PAR Index（Peer Assessment Rating）</span>は、1987年にイギリスの矯正科医グループ（British Orthodontic Standards Working Party）によって開発された指標である。</p>
+
+      <h3>目的</h3>
+      <p><span class="highlight">矯正治療の効果を評価</span>するための指標。治療前後の模型を比較し、スコアの減少によって治療効果を判定する。</p>
+
+      <h3>評価方法</h3>
+      <ul>
+        <li><span class="highlight">0が最良</span>、スコアが高いほど不調和が大きい</li>
+        <li>治療前後のスコアを比較して治療効果を判定</li>
+      </ul>
+
+      <h3>評価項目</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>コンタクトポイント</td><td>上下顎前歯部・側方歯群</td></tr>
+        <tr><td>臼歯関係</td><td>左右側の前後的関係</td></tr>
+        <tr><td>オーバージェット</td><td>水平被蓋</td></tr>
+        <tr><td>オーバーバイト</td><td>垂直被蓋</td></tr>
+        <tr><td>正中線</td><td>上下正中のずれ</td></tr>
+      </table>
+
+      <h2>DAI</h2>
+      <p><span class="key">DAI（Dental Aesthetic Index）</span>は、WHOが採用した国際的な指標である。</p>
+
+      <h3>目的</h3>
+      <p><span class="highlight">不正咬合の重症度を数値化</span>する指標。疫学調査や矯正治療の優先順位決定に用いられる。</p>
+
+      <h3>評価項目（10項目）</h3>
+      <p>欠損歯、叢生、空隙、正中離開、オーバージェット、反対咬合、開咬など</p>
+
+      <h3>重症度分類</h3>
+      <table>
+        <tr><th>スコア</th><th>判定</th></tr>
+        <tr><td>25以下</td><td>治療不要またはわずか</td></tr>
+        <tr><td>26〜30</td><td>選択的治療</td></tr>
+        <tr><td>31〜35</td><td>治療推奨</td></tr>
+        <tr><td class="highlight">36以上</td><td class="highlight">治療必須</td></tr>
+      </table>
+
+      <h2>PAR IndexとDAIの比較</h2>
+      <table>
+        <tr><th>項目</th><th>PAR Index</th><th>DAI</th></tr>
+        <tr><td>開発</td><td>1987年・イギリス</td><td>WHO採用</td></tr>
+        <tr><td>主な目的</td><td>治療効果の評価</td><td>重症度の数値化</td></tr>
+        <tr><td>使用場面</td><td>治療前後の比較</td><td>疫学調査・スクリーニング</td></tr>
+        <tr><td>スコア</td><td>0が最良</td><td>25以下が治療不要</td></tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114D52</div>
+        <p>不正咬合を評価する指標はどれか。2つ選べ。</p>
+        <div class="choices">
+          a CFI<br>
+          b PDI<br>
+          c DAI<br>
+          d PHP<br>
+          e PAR Index
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】<span class="key">DAI</span>（Dental Aesthetic Index）と<span class="key">PAR Index</span>（Peer Assessment Rating）が不正咬合の評価指標である。CFIはう蝕関連、PDIは歯周病関連、PHPはプラーク関連の指標であり、<span class="caution">不正咬合の評価には用いない</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B33</div>
+        <p>PAR Indexを用いて行うのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 顔面非対称の評価<br>
+          b 審美感覚の数値化<br>
+          c 矯正歯科治療の成果の判定<br>
+          d 不正咬合の重症度の数値化<br>
+          e 上下顎骨の近遠心的関係の評価
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】PAR Indexは<span class="highlight">矯正治療の成果の判定</span>（治療前後のスコア比較）と<span class="highlight">不正咬合の重症度の数値化</span>に用いられる。顔面非対称や上下顎骨の関係は頭部エックス線規格写真で評価する。審美感覚の数値化は主観的評価であり、PAR Indexの目的ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

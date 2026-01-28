@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アンテリアレイシオ - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula-box {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 10pt;
+    }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 不正咬合の分類と原因障害</span>
+    <h1>アンテリアレイシオ</h1>
+    <div class="container">
+
+      <h2>アンテリアレイシオとは</h2>
+      <p>上下顎<span class="key">6前歯</span>（犬歯〜犬歯）の歯冠近遠心幅径の比率。<span class="key">Bolton分析</span>の一部として用いられる。</p>
+
+      <h3>計算式</h3>
+      <div class="formula-box">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下顎6前歯の歯冠幅径の総和<br>
+        Anterior ratio = ─────────────────────── × 100 (%)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上顎6前歯の歯冠幅径の総和
+      </div>
+      <p><span class="highlight">日本人標準値 = 78.09 ± 2.19 (%)</span></p>
+      <p class="note">※Bolton原法の標準値は77.2%</p>
+
+      <div class="point-box">
+        <div class="point-box-title">ratioが変化する原理</div>
+        <ul>
+          <li>分子は<span class="highlight">下顎</span>、分母は<span class="highlight">上顎</span></li>
+          <li><span class="key">大きくなる</span>：上顎前歯が小さくなる or 下顎前歯が大きくなる</li>
+          <li><span class="key">小さくなる</span>：下顎前歯が小さくなる or 上顎前歯が大きくなる</li>
+        </ul>
+      </div>
+
+      <h2>頻出パターン：ratioが変動する条件</h2>
+
+      <h3>ratioが大きくなる場合</h3>
+      <table>
+        <tr><th>原因</th><th>機序</th></tr>
+        <tr>
+          <td><span class="highlight">上顎中切歯の矮小</span></td>
+          <td>分母（上顎）が減少</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">上顎側切歯の先天欠如</span></td>
+          <td>分母（上顎）が減少</td>
+        </tr>
+        <tr>
+          <td>下顎前歯部の過剰歯</td>
+          <td>分子（下顎）が増加</td>
+        </tr>
+      </table>
+
+      <h3>ratioが小さくなる場合</h3>
+      <table>
+        <tr><th>原因</th><th>機序</th></tr>
+        <tr>
+          <td><span class="highlight">下顎の癒合歯</span></td>
+          <td>分子（下顎）が減少（歯数減少）</td>
+        </tr>
+        <tr>
+          <td>下顎の矮小歯</td>
+          <td>分子（下顎）が減少</td>
+        </tr>
+        <tr>
+          <td>上顎の巨大歯・過剰歯</td>
+          <td>分母（上顎）が増加</td>
+        </tr>
+      </table>
+
+      <p class="note"><span class="caution">注意</span>：上顎第一小臼歯の先天欠如は<span class="caution">Anterior ratioには影響しない</span>（前歯部ではないため）。Overall ratioには影響する。</p>
+
+      <h2>計算問題の解き方</h2>
+      <p>表から歯冠幅径を読み取り、以下の手順で計算する：</p>
+      <ol>
+        <li>下顎6前歯（3-3）の幅径を合計</li>
+        <li>上顎6前歯（3-3）の幅径を合計</li>
+        <li>下顎 ÷ 上顎 × 100 を計算</li>
+        <li>小数点以下第2位を四捨五入</li>
+      </ol>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102D47</div>
+        <p>11歳の女児。歯並びが悪いことを主訴として来院した。初診時の口腔内写真（別冊No.42A）とエックス線写真（別冊No.42B）とを別に示す。模型分析の結果、アンテリアレイシオが標準値よりも小さい。<br>原因はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../kokushi-app-v2/dist/images/102回_Web画像/102D47_1.png" alt="口腔内写真">
+          <img src="../../../kokushi-app-v2/dist/images/102回_Web画像/102D47_2.png" alt="エックス線写真">
+        </div>
+        <div class="choices">
+          a 上顎の過剰歯<br>
+          b 上顎の巨大歯<br>
+          c 下顎の癒合歯<br>
+          d 下顎の矮小歯<br>
+          e 下顎の埋伏歯
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】アンテリアレイシオが<span class="highlight">小さい</span>＝分子（下顎）が小さい or 分母（上顎）が大きい。選択肢の中で「分子を減らす」のは<span class="highlight">下顎の癒合歯</span>（c）と下顎の矮小歯（d）。癒合歯は2本の歯が癒合して1本になるため歯数自体が減り、幅径の総和が減少する。埋伏歯は萌出していないだけで計測には含めないため影響しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C104</div>
+        <p>Anterior ratioが大きくなるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 上顎中切歯の矮小<br>
+          b 上顎側切歯の先天欠如<br>
+          c 上顎第一小臼歯の先天欠如<br>
+          d 下顎前歯部の過剰歯<br>
+          e 下顎犬歯の先天欠如
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】Anterior ratioが<span class="highlight">大きくなる</span>＝分子（下顎）が増加 or 分母（上顎）が減少。<br>
+        a：<span class="highlight">上顎中切歯の矮小</span>→分母減少→ratio増加 ○<br>
+        b：<span class="highlight">上顎側切歯の先天欠如</span>→分母減少→ratio増加 ○<br>
+        c：上顎第一小臼歯は<span class="caution">前歯部ではない</span>→Anterior ratioに影響なし ×<br>
+        d：下顎前歯部の過剰歯→分子増加→ratio増加だが、<span class="caution">選択肢は2つ</span>で優先度はa, bが高い<br>
+        e：下顎犬歯の先天欠如→分子減少→ratio<span class="caution">減少</span> ×</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A89（計算問題）</div>
+        <p>左右側の平均歯冠幅径を表に示す。<br>アンテリアレイシオを求めよ。ただし、小数点以下の数値が得られた場合には、小数点以下第2位を四捨五入すること。<br>それぞれ、該当する0〜9の数字を回答する事。</p>
+        <div class="question-images">
+          <img src="../../../kokushi-app-v2/dist/images/111回_Web画像/111A89.png" alt="歯冠幅径の表">
+        </div>
+        <div class="answer">正解：80.0</div>
+        <p>【解説】表から読み取った値で計算（例）：<br>
+        下顎6前歯の総和 ÷ 上顎6前歯の総和 × 100<br>
+        = 80.0（%）<br>
+        標準値78.09%よりやや大きいが、正常範囲内。</p>
+      </div>
+
+      <h2>臨床的対応</h2>
+      <table>
+        <tr><th>ratioの状態</th><th>対応</th></tr>
+        <tr>
+          <td>大きい（上顎歯が相対的に小さい）</td>
+          <td>・上顎歯冠の形態修整（大きく）<br>・下顎歯冠のスライスカット</td>
+        </tr>
+        <tr>
+          <td>小さい（下顎歯が相対的に小さい）</td>
+          <td>・下顎歯冠の形態修整（大きく）<br>・上顎歯冠のスライスカット</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

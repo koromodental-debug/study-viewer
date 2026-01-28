@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>トゥースサイズレイシオ - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula-box {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 10pt;
+    }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 不正咬合の分類と原因障害</span>
+    <h1>トゥースサイズレイシオ</h1>
+    <div class="container">
+
+      <h2>トゥースサイズレイシオとは</h2>
+      <p><span class="key">上下顎歯冠近遠心幅径の調和</span>を判定するための指標。<span class="key">Bolton分析</span>とも呼ばれる。良好な咬合関係を得るために重要な指標である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">計算式の覚え方</div>
+        <ul>
+          <li>分子は常に<span class="highlight">下顎</span></li>
+          <li>分母は常に<span class="highlight">上顎</span></li>
+          <li>下顎の歯が減る → ratioが<span class="highlight">小さくなる</span></li>
+          <li>上顎の歯が減る → ratioが<span class="highlight">大きくなる</span></li>
+        </ul>
+      </div>
+
+      <h2>Overall ratio（オーバーオールレイシオ）</h2>
+      <p>上下顎<span class="key">12歯</span>（第一大臼歯〜第一大臼歯）の歯冠幅径比</p>
+      <div class="formula-box">
+        下顎12歯の歯冠幅径の総和<br>
+        ─────────────────────── × 100 (%)<br>
+        上顎12歯の歯冠幅径の総和
+      </div>
+      <p><span class="highlight">日本人標準値 = 91.37 ± 2.10 (%)</span></p>
+
+      <h2>Anterior ratio（アンテリアレイシオ）</h2>
+      <p>上下顎<span class="key">6前歯</span>（犬歯〜犬歯）の歯冠幅径比</p>
+      <div class="formula-box">
+        下顎6前歯の歯冠幅径の総和<br>
+        ─────────────────────── × 100 (%)<br>
+        上顎6前歯の歯冠幅径の総和
+      </div>
+      <p><span class="highlight">日本人標準値 = 78.09 ± 2.19 (%)</span></p>
+
+      <h2>ratioの変化と原因</h2>
+      <table>
+        <tr><th>変化</th><th>原因</th><th>臨床的対応</th></tr>
+        <tr>
+          <td><span class="key">小さい</span></td>
+          <td>下顎歯が小さい<br>上顎歯が大きい<br><span class="caution">下顎歯の欠如</span></td>
+          <td>下顎歯冠の形態修整（大きく）<br>上顎歯冠のスライスカット（小さく）</td>
+        </tr>
+        <tr>
+          <td><span class="key">大きい</span></td>
+          <td>下顎歯が大きい<br>上顎歯が小さい<br><span class="caution">上顎歯の欠如・矮小</span></td>
+          <td>上顎歯冠の形態修整（大きく）<br>下顎歯冠のスライスカット（小さく）</td>
+        </tr>
+      </table>
+
+      <h2>歯の欠如とratioの変化</h2>
+      <table>
+        <tr><th>欠如歯</th><th>Overall ratio</th><th>Anterior ratio</th></tr>
+        <tr>
+          <td><span class="key">下顎側切歯</span>欠如</td>
+          <td><span class="highlight">小さくなる</span></td>
+          <td><span class="highlight">小さくなる</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">上顎側切歯</span>欠如・矮小</td>
+          <td><span class="highlight">大きくなる</span></td>
+          <td><span class="highlight">大きくなる</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎第二小臼歯</span>欠如</td>
+          <td><span class="highlight">小さくなる</span></td>
+          <td>変化なし</td>
+        </tr>
+      </table>
+
+      <h2>関連する計測項目</h2>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>available arch length</td><td>利用可能な歯列弓周長</td></tr>
+        <tr><td>required arch length</td><td>歯を排列するのに必要な歯列弓周長</td></tr>
+        <tr><td>arch length discrepancy</td><td>available − required（叢生度）</td></tr>
+        <tr><td>basal arch width</td><td>基底部歯列弓幅径（歯の欠如では変化しない）</td></tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A65</div>
+        <p>下顎側切歯の先天欠如を伴う患者で小さい値を示すのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a basal arch width<br>
+          b overbite<br>
+          c overjet<br>
+          d required arch length<br>
+          e tooth size ratio
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】下顎側切歯の欠如により、<span class="highlight">required arch length</span>（必要な歯列弓周長）は減少する。<span class="highlight">tooth size ratio</span>は分子（下顎）が減少するため小さくなる。basal arch widthは歯の欠如とは無関係。overbite、overjetは歯の欠如だけでは変化しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "totalQuestions": 2628,
+    "totalQuestions": 2629,
     "totalImages": 3475,
     "questionsWithExplanation": 121,
-    "lastUpdated": "2026-01-28 07:11:50"
+    "lastUpdated": "2026-01-28 07:50:16"
   },
   "questions": {
     "102A102": {
@@ -44581,6 +44581,23 @@
       "hasExplanation": true,
       "sourcePages": [
         "補綴２_ページ_484"
+      ]
+    },
+    "104A53": {
+      "images": [
+        {
+          "filename": "104A53.png",
+          "imageType": "ティッシュストップ・メタルタッチ",
+          "explanation": "103A53と同様。部分床義歯のフレームワークにおけるティッシュストップとメタルタッチに関する問題。ティッシュストップは義歯の沈下を防止し、メタルタッチはフレームワークと人工歯の接触部位を示す。",
+          "findings": "フレームワークの各部名称",
+          "keyFeatures": "ティッシュストップ：沈下防止、メタルタッチ：人工歯との接触"
+        }
+      ],
+      "回次": 104,
+      "imageCount": 1,
+      "hasExplanation": true,
+      "sourcePages": [
+        "補綴２_ページ_445"
       ]
     }
   }

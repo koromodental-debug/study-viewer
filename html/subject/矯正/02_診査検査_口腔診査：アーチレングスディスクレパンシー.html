@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アーチレングスディスクレパンシー - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula-box {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 10pt;
+    }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 70%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 診査検査</span>
+    <h1>アーチレングスディスクレパンシー</h1>
+    <div class="container">
+
+      <h2>定義と計算式</h2>
+      <div class="formula-box">
+        <span class="key">Arch length discrepancy（ALD）</span><br>
+        = Available arch length − Required arch length
+      </div>
+
+      <table>
+        <tr><th>値</th><th>意味</th><th>臨床的状態</th></tr>
+        <tr>
+          <td><span class="highlight">負（マイナス）</span></td>
+          <td>スペース不足</td>
+          <td><span class="key">叢生</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">正（プラス）</span></td>
+          <td>スペース過剰</td>
+          <td><span class="key">空隙歯列</span></td>
+        </tr>
+      </table>
+
+      <h2>負のALDの改善方法（頻出）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">Available arch lengthを増加させる方法</div>
+        <ul>
+          <li><span class="highlight">第一大臼歯の遠心移動</span></li>
+          <li><span class="highlight">永久切歯の唇側移動</span></li>
+          <li><span class="highlight">歯列弓の側方拡大</span></li>
+        </ul>
+      </div>
+
+      <h3>その他の改善方法</h3>
+      <ul>
+        <li><span class="highlight">連続抜去法</span>：乳歯・永久歯を計画的に抜去してスペース確保</li>
+        <li><span class="key">便宜抜歯</span>：小臼歯抜去でスペース確保</li>
+        <li><span class="key">ストリッピング</span>：隣接面削合でスペース確保</li>
+      </ul>
+
+      <h3>効果がないもの（ひっかけ注意）</h3>
+      <table>
+        <tr><th>選択肢</th><th>理由</th></tr>
+        <tr>
+          <td><span class="caution">乳切歯の早期抜去</span></td>
+          <td>リーウェイスペースに影響しない</td>
+        </tr>
+        <tr>
+          <td><span class="caution">歯槽基底弓の側方拡大</span></td>
+          <td>歯槽基底は矯正力では変化しにくい<br>（<span class="key">歯列弓</span>の拡大は有効）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">正中離開の閉鎖</span></td>
+          <td>スペースを消費する（逆効果）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">永久切歯の舌側移動</span></td>
+          <td>Availableが減少する（逆効果）</td>
+        </tr>
+      </table>
+
+      <h2>連続抜去法</h2>
+      <p>歯と顎骨の大きさに著しい不調和がある場合に、乳歯および永久歯を連続的に抜去する方法</p>
+
+      <h3>抜歯の順序</h3>
+      <table>
+        <tr><th>段階</th><th>時期</th><th>抜去歯</th></tr>
+        <tr>
+          <td>第1段階</td>
+          <td>永久側切歯萌出時</td>
+          <td><span class="key">乳犬歯</span></td>
+        </tr>
+        <tr>
+          <td>第2段階</td>
+          <td>正常脱落の6-12ヵ月前</td>
+          <td><span class="key">第一乳臼歯</span></td>
+        </tr>
+        <tr>
+          <td>第3段階</td>
+          <td>永久犬歯萌出前</td>
+          <td><span class="key">第一小臼歯</span></td>
+        </tr>
+      </table>
+
+      <h2>リーウェイスペース</h2>
+      <p>乳犬歯＋乳臼歯の歯冠幅径総和と、永久犬歯＋小臼歯の歯冠幅径総和の差</p>
+      <table>
+        <tr><th>部位</th><th>スペース量</th></tr>
+        <tr>
+          <td>上顎</td>
+          <td>約<span class="key">1mm</span></td>
+        </tr>
+        <tr>
+          <td>下顎</td>
+          <td>約<span class="highlight">3mm</span></td>
+        </tr>
+      </table>
+      <p class="note">下顎のほうが大きい（約2mmの差）→ 第一大臼歯の近心移動に利用される</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108C42</div>
+        <p>模型計測の結果を表に示す。<br>下顎のavailable arch lengthは62.0mmである。<br>Arch length discrepancyはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ＋26.0mm<br>
+          b ＋10.0mm<br>
+          c ＋4.0mm<br>
+          d −4.0mm<br>
+          e −26.0mm
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】ALD = Available − Required。表からRequired arch length（歯冠幅径の総和）を計算し、Available（62.0mm）から引く。答えが<span class="highlight">−4.0mm</span>なので、4mmの叢生があることを示す。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A54</div>
+        <p>負のアーチレングスディスクレパンシーの改善につながるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 連続抜去<br>
+          b 乳切歯の早期抜去<br>
+          c 永久切歯の舌側移動<br>
+          d 乳犬歯の隣接面削除<br>
+          e 第一大臼歯の遠心移動
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】負のALD＝叢生の改善には、スペース確保が必要。<br>
+        a：<span class="highlight">連続抜去</span>→スペース確保 ○<br>
+        b：乳切歯の早期抜去→リーウェイスペースに影響しない ×<br>
+        c：永久切歯の舌側移動→Available<span class="caution">減少</span> ×<br>
+        d：乳犬歯の隣接面削除→わずかなスペースのみ ×<br>
+        e：<span class="highlight">第一大臼歯の遠心移動</span>→Available増加 ○</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A70</div>
+        <p>負のarch length discrepancyの改善に有効なのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 連続抜去<br>
+          b 正中離開の閉鎖<br>
+          c 永久切歯の唇側移動<br>
+          d 歯槽基底弓の側方拡大<br>
+          e 正中埋伏過剰歯の抜去
+        </div>
+        <div class="answer">正解：a, c, d</div>
+        <p>【解説】<br>
+        a：<span class="highlight">連続抜去</span>→スペース確保 ○<br>
+        b：正中離開の閉鎖→スペース<span class="caution">消費</span>（逆効果）×<br>
+        c：<span class="highlight">永久切歯の唇側移動</span>→Available増加 ○<br>
+        d：<span class="highlight">歯列弓の側方拡大</span>→Available増加 ○（※歯槽基底弓ではなく歯列弓）<br>
+        e：正中埋伏過剰歯の抜去→ALDに直接影響しない ×</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D90</div>
+        <p>8歳の女児。下顎前歯部の歯並びの精査を希望して来院した。下顎永久4切歯の歯冠幅径の総和から下顎永久側方歯群の歯冠幅径の総和を23.6mmと予測した。研究用模型（別冊No.36）を別に示す。<br>下顎の萌出余地の予測値を求めよ。</p>
+        <div class="question-images">
+          <img src="../../../kokushi-app-v2/dist/images/112回_Web画像/112D90.png" alt="研究用模型">
+        </div>
+        <div class="answer">正解：3.4mm</div>
+        <p>【解説】萌出余地 = 乳歯の歯冠幅径 − 予測される永久歯の歯冠幅径。模型から乳歯（乳犬歯＋乳臼歯）の歯冠幅径を計測し、予測値23.6mmを引く。リーウェイスペースの概念を用いた計算問題。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

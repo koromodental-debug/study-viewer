@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Angleの分類法 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 80%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 不正咬合の分類と原因障害</span>
+    <h1>Angleの分類法</h1>
+    <div class="container">
+
+      <h2>Angleの分類法とは</h2>
+      <p>1899年にAngle, E. H.が発表した不正咬合の分類法で、上下顎<span class="highlight">第一大臼歯の咬合関係</span>を基礎とする。</p>
+
+      <h3>正常咬合の基準</h3>
+      <ul>
+        <li>上顎第一大臼歯の<span class="key">近心頬側咬頭</span>の三角隆線が下顎第一大臼歯の<span class="key">頬面溝</span>に接触</li>
+        <li>上顎第一大臼歯の近心舌側咬頭が下顎第一大臼歯の中央窩に咬合</li>
+      </ul>
+
+      <h2>Angleの分類</h2>
+      <table>
+        <tr><th>分類</th><th>臼歯関係</th><th>特徴</th></tr>
+        <tr><td><span class="key">I級</span></td><td>正常な近遠心的関係</td><td>叢生、上下顎前突など</td></tr>
+        <tr><td><span class="key">II級</span></td><td>下顎が<span class="highlight">遠心</span>に咬合</td><td>上顎前突傾向</td></tr>
+        <tr><td><span class="key">III級</span></td><td>下顎が<span class="highlight">近心</span>に咬合</td><td>下顎前突（反対咬合）</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">II級1類 vs II級2類（最頻出）</div>
+        <ul>
+          <li><span class="key">II級1類</span>：上顎前歯<span class="highlight">唇側傾斜</span>、口呼吸、口唇閉鎖不全</li>
+          <li><span class="key">II級2類</span>：上顎前歯<span class="highlight">舌側傾斜</span>、<span class="highlight">過蓋咬合</span>、鼻呼吸</li>
+        </ul>
+      </div>
+
+      <h2>II級1類とII級2類の比較</h2>
+      <table>
+        <tr><th>項目</th><th>II級1類</th><th>II級2類</th></tr>
+        <tr><td>上顎前歯傾斜</td><td><span class="key">唇側傾斜</span>（前突）</td><td><span class="highlight">舌側傾斜</span>（後退）</td></tr>
+        <tr><td>オーバージェット</td><td><span class="key">大きい</span></td><td><span class="highlight">小さい</span></td></tr>
+        <tr><td>オーバーバイト</td><td>正常〜小</td><td><span class="highlight">大きい（過蓋咬合）</span></td></tr>
+        <tr><td>Interincisal angle</td><td>小さい</td><td><span class="highlight">大きい</span></td></tr>
+        <tr><td>呼吸様式</td><td><span class="caution">口呼吸</span></td><td>鼻呼吸（正常）</td></tr>
+        <tr><td>口唇閉鎖</td><td><span class="caution">困難</span></td><td>正常</td></tr>
+      </table>
+
+      <h3>Interincisal angleとは</h3>
+      <p>上顎中切歯と下顎中切歯の歯軸がなす角度。II級2類では上顎前歯が舌側傾斜しているため、この角度が<span class="key">大きく</span>なる。</p>
+
+      <h2>側貌のタイプ</h2>
+      <table>
+        <tr><th>タイプ</th><th>特徴</th><th>対応するAngle分類</th></tr>
+        <tr><td><span class="key">コンベックス（凸型）</span></td><td>中顔面が前方に突出</td><td>II級（上顎前突）</td></tr>
+        <tr><td>ストレート（直線型）</td><td>横顔が直線的</td><td>I級</td></tr>
+        <tr><td><span class="key">コンケイブ（凹型）</span></td><td>中顔面が陥凹</td><td>III級（下顎前突）</td></tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A124</div>
+        <p>AngleⅡ級2類の所見で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 過蓋咬合<br>
+          b 口唇閉鎖不全<br>
+          c コンケイブタイプの側貌<br>
+          d 上顎中切歯の舌側傾斜
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】II級2類の特徴は<span class="highlight">過蓋咬合</span>と<span class="highlight">上顎中切歯の舌側傾斜</span>である。口唇閉鎖不全は<span class="caution">II級1類</span>の特徴。コンケイブタイプは<span class="caution">III級</span>の特徴。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C109</div>
+        <p>AngleのⅡ級1類と比較したAngleのⅡ級2類の不正咬合の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 呼吸様式が口呼吸である。<br>
+          b オーバーバイトが小さい。<br>
+          c Interincisal angleが大きい。<br>
+          d オーバージェットが小さい。<br>
+          e FH平面に対する上顎中切歯歯軸傾斜角が大きい。
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】II級2類はII級1類と比較して、<span class="highlight">Interincisal angleが大きい</span>（上顎前歯が舌側傾斜）、<span class="highlight">オーバージェットが小さい</span>。口呼吸はII級1類。オーバーバイトはII級2類の方が<span class="caution">大きい</span>（過蓋咬合）。上顎中切歯歯軸傾斜角が大きいのはII級1類（唇側傾斜）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C51（図あり）</div>
+        <p>咬頭嵌合位の口腔内写真（別冊No.6）を別に示す。Angle II級2類不正咬合はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111C51_1.png" alt="咬頭嵌合位の口腔内写真">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】II級2類の特徴である<span class="highlight">過蓋咬合</span>（深い咬み合わせ）と<span class="highlight">上顎前歯の舌側傾斜</span>を示す写真を選ぶ。アは下顎前歯がほとんど見えないほど深く咬み込んでおり、上顎前歯も舌側に傾斜している。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

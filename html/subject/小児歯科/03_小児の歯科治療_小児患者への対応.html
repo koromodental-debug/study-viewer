@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>小児患者への対応 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 小児の歯科治療</span>
+    <h1>小児患者への対応</h1>
+    <div class="container">
+
+      <h2>年齢による対応の原則</h2>
+      <p><span class="highlight">3歳</span>が重要な境界線。母子分離・行動変容法の適応開始時期となる。</p>
+
+      <table>
+        <tr>
+          <th>年齢</th>
+          <th>対応の原則</th>
+        </tr>
+        <tr>
+          <td>〜2歳</td>
+          <td>定期的観察、母親同室が一般的</td>
+        </tr>
+        <tr>
+          <td>2〜3歳</td>
+          <td>応急処置、身体抑制法（やむを得ない場合）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">3歳〜</span></td>
+          <td><span class="highlight">母子分離可能、行動変容法の適応開始</span></td>
+        </tr>
+        <tr>
+          <td>6歳〜</td>
+          <td>精神鎮静法（笑気吸入鎮静法など）の適応</td>
+        </tr>
+      </table>
+
+      <h2>行動療法の分類</h2>
+      <p>行動は大別して2種類あり、それぞれに対応する技法がある。</p>
+
+      <h3>不安軽減法（レスポンデント行動への対応）</h3>
+      <table>
+        <tr>
+          <th>技法</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">Tell-Show-Do法（TSD法）</span></td>
+          <td>弱い刺激から強い刺激へ段階的に体験させる。<span class="highlight">3歳未満でも応用可能</span>、<span class="highlight">発達障害児にも有効</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">系統的脱感作法</span></td>
+          <td>弱い刺激から強い刺激へと段階を経て体験させ、恐怖や不安を解消</td>
+        </tr>
+        <tr>
+          <td><span class="key">モデリング法</span></td>
+          <td>望ましい行動を観察・模倣させる。<span class="highlight">治療開始前が有効</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">カウント法</span></td>
+          <td>「10数えたら終わり」など時間の見通しを示す。<span class="highlight">視覚障害児に有効</span></td>
+        </tr>
+        <tr>
+          <td>フラッディング法</td>
+          <td>一度に強い刺激を与える。<span class="caution">2歳児・発達障害児には不適</span></td>
+        </tr>
+      </table>
+
+      <h3>行動形成法（オペラント行動への対応）</h3>
+      <table>
+        <tr>
+          <th>技法</th>
+          <th>内容</th>
+          <th>強化</th>
+        </tr>
+        <tr>
+          <td><span class="key">トークンエコノミー法</span></td>
+          <td>シール、ワッペンなどの報酬を与える</td>
+          <td>正の強化</td>
+        </tr>
+        <tr>
+          <td><span class="key">シェイピング法</span></td>
+          <td><span class="highlight">複雑な行動を実行可能な方法から学習させ少しずつ強化</span></td>
+          <td>正の強化</td>
+        </tr>
+        <tr>
+          <td><span class="key">レスポンスコスト法</span></td>
+          <td>与えた報酬を取り上げる（<span class="highlight">強化因子を取り除く</span>）</td>
+          <td>負の強化</td>
+        </tr>
+        <tr>
+          <td><span class="key">タイムアウト法</span></td>
+          <td>望ましくない行動時に一定時間別の場所に隔離</td>
+          <td>負の強化</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">強化因子の分類</div>
+        <ul>
+          <li><span class="key">正の強化因子</span>：シール、玩具、ほめ言葉、ほほえみなど</li>
+          <li><span class="key">負の強化因子</span>：身体の拘束、叱る、無視するなど</li>
+        </ul>
+      </div>
+
+      <h2>抑制的対応法</h2>
+      <h3>ハンドオーバーマウス法（HOM法）</h3>
+      <ul>
+        <li>興奮して泣き騒ぐ小児の口を術者の手で塞ぎ、注意を向けさせる</li>
+        <li>適応年齢：<span class="key">3歳以上</span></li>
+        <li class="caution">発達障害児・知的障害児には不適</li>
+      </ul>
+
+      <h3>身体抑制法（体動抑制）</h3>
+      <ul>
+        <li>抑制具（レストレーナー、マジックベルト）の使用</li>
+        <li><span class="highlight">やむを得ない場合のみ</span>使用</li>
+        <li>治療に慣れてきたら<span class="highlight">中止することが望ましい</span></li>
+        <li>使用時は<span class="key">パルスオキシメーター</span>でモニタリング（気道閉塞の早期発見）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">体動抑制の適用条件（5つすべて重要）</div>
+        <ul>
+          <li>一時的な使用にとどめる</li>
+          <li>治療ごとに適用の可否を評価する</li>
+          <li>本人または代諾者の同意を取得する</li>
+          <li>痛みを伴う処置を強行してはならない</li>
+          <li>代替手段がない場合の使用に限定する</li>
+        </ul>
+      </div>
+
+      <h2>障害児への行動調整法</h2>
+      <table>
+        <tr>
+          <th>障害の種類</th>
+          <th>適切な対応法</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="key">視覚障害</span></td>
+          <td><span class="highlight">カウント法</span></td>
+          <td>聴覚で時間の見通しを示せる</td>
+        </tr>
+        <tr>
+          <td>自閉スペクトラム症</td>
+          <td>視覚支援（絵カード）、TEACCH</td>
+          <td>視覚優位、見通しの提示が重要</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="caution">※フラッディング法・HOM法・タイムアウト法は障害児には使用不可</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114A63</div>
+        <p>定型発達児において、行動変容法により適応行動が期待できるようになる時期はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 生後 6か月ころ<br>
+          b 1歳 6か月ころ<br>
+          c 3歳ころ<br>
+          d 5歳ころ<br>
+          e 7歳ころ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】行動変容法が効果を発揮するには一定の発達レベル（レディネス）が必要。<span class="highlight">3〜4歳以上</span>で母子分離が可能となり、行動変容法の適応となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A130</div>
+        <p>複雑な行動を実行可能な方法から学習させ少しずつ強化する行動形成法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a シェイピング法<br>
+          b タイムアウト法<br>
+          c レスポンスコスト法<br>
+          d トークンエコノミー法<br>
+          e ハンドオーバーマウス法
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">シェイピング法</span>は目標行動を細かいステップに分け、達成可能な段階から少しずつ強化していく方法。タイムアウト法・レスポンスコスト法は負の強化、トークンエコノミー法は報酬を与える正の強化。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A23</div>
+        <p>小児の歯科治療時の行動変容法で、強化因子を取り除くのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a カウント法<br>
+          b TEACCH法<br>
+          c Tell-Show-Do法<br>
+          d レスポンスコスト法<br>
+          e トークンエコノミー法
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">レスポンスコスト法</span>は一度与えた報酬（シールなど）を取り上げることで望ましい行動を強化する方法（負の強化）。トークンエコノミー法は報酬を与える（正の強化）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D40</div>
+        <p>Tell-Show-Do 法で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 1歳児に適用できる。<br>
+          b ビデオ映像を用いる。<br>
+          c 発達障害児に有効である。<br>
+          d タイムアウト法を併用する。<br>
+          e わかりやすい言葉で説明する。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】TSD法は<span class="highlight">発達障害児にも有効</span>で、<span class="highlight">わかりやすい言葉で説明</span>することが重要。1歳児には言語理解が未発達のため適用困難。ビデオ映像を用いるのはモデリング法。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A63</div>
+        <p>歯科的対応法で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a フラッディング法は2歳児に適用される。<br>
+          b タイムアウト法は抑制的対応法の1つである。<br>
+          c モデリング法は治療開始前の小児に有効である。<br>
+          d ハンドオーバーマウス法は発達障害児に有効である。<br>
+          e トークンエコノミー法は系統的脱感作法の1つである。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">モデリング法は治療開始前</span>に他児の治療を見学させることで有効。フラッディング法は2歳児には不適。タイムアウト法は行動形成法。HOM法は発達障害児には不適。トークンエコノミー法はオペラント条件づけ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C115</div>
+        <p>4歳児の歯科治療で適切な対応はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 治療は午後に行う。<br>
+          b ほめ言葉を多用する。<br>
+          c Tell-Show-Do 法を行う。<br>
+          d 治療時は母子分離を行う。<br>
+          e 身体抑制器具を常用する。
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】4歳児には<span class="highlight">ほめ言葉（正の強化因子）</span>と<span class="highlight">TSD法</span>が有効。低年齢児の治療は<span class="caution">午前中</span>が好ましい。母子分離は3歳以上で可能だが必須ではない。身体抑制器具は<span class="caution">常用してはならない</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D30</div>
+        <p>障害児の歯科治療における行動調整法と障害の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a カウント法 ーーーーーーーーー 視覚障害<br>
+          b フラッディング法 ーーーーーー 自閉スペクトラム症<br>
+          c トークンエコノミー法 ーーーー コミュニケーション障害<br>
+          d ボイスコントロール法 ーーーー 聴覚障害<br>
+          e ハンドオーバーマウス法 ーーー 知的障害
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">カウント法は視覚障害児に有効</span>（聴覚で時間の見通しを示せる）。フラッディング法・HOM法は障害児には使用不可。ボイスコントロール法は聴覚障害児には使用不可。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B87</div>
+        <p>行動調整法を用いた歯科治療中の写真（別冊No.39）を別に示す。本装置の適用で適切なのはどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115B87_1.png" alt="別冊No.39">
+        </div>
+        <div class="choices">
+          a 一時的な使用にとどめる。<br>
+          b 治療ごとに適用の可否を評価する。<br>
+          c 本人または代諾者の同意を取得する。<br>
+          d 痛みを伴う処置を強行してはならない。<br>
+          e 代替手段がない場合の使用に限定する。
+        </div>
+        <div class="answer">正解：a, b, c, d, e</div>
+        <p>【解説】写真は体動抑制器具（レストレーナー）。<span class="highlight">すべての選択肢が適切</span>。体動抑制は倫理的配慮が必要で、やむを得ない場合のみ一時的に使用し、同意取得と適用評価を毎回行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C84</div>
+        <p>10歳の男児。上顎左側第一乳臼歯の動揺と食欲不振を主訴として来院した。知的障害があり歯科治療に不協力である。保護者の同意後に体動抑制下で└Dを抜歯することとした。処置中の写真（別冊No.32）を別に示す。左足の親指に装着したモニタで早期発見できるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112C84_1.png" alt="別冊No.32">
+        </div>
+        <div class="choices">
+          a 誤　飲<br>
+          b 発　熱<br>
+          c 過換気<br>
+          d 意識消失<br>
+          e 気道閉塞
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】写真のモニタは<span class="highlight">パルスオキシメーター</span>（SpO2モニター）。動脈血酸素飽和度を測定し、<span class="highlight">気道閉塞による低酸素血症を早期発見</span>できる。体動抑制下では気道閉塞のリスクがあるため必須。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

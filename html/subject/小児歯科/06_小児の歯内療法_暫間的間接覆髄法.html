@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>暫間的間接覆髄法 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 小児の歯内療法</span>
+    <h1>暫間的間接覆髄法</h1>
+    <div class="container">
+
+      <h2>概要</h2>
+      <p><span class="key">暫間的間接覆髄法</span>（IPC法：Indirect Pulp Capping、GCRP法）は、深在性齲蝕において齲蝕象牙質を一部残して覆髄し、一定期間後に再度開拡して残存齲蝕を除去する方法。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">主な目的（頻出）</div>
+        <ul>
+          <li><span class="highlight">修復象牙質（第二象牙質）の形成</span></li>
+          <li><span class="highlight">齲蝕象牙質の再石灰化</span></li>
+        </ul>
+      </div>
+
+      <h2>適応（頻出）</h2>
+      <ul>
+        <li><span class="highlight">幼若永久歯</span>（歯髄の生活力が旺盛）</li>
+        <li><span class="highlight">齲窩と歯髄が近接</span>している深在性齲蝕</li>
+        <li>臨床症状がない（自発痛なし）</li>
+        <li><span class="key">歯髄の生活反応が高い</span></li>
+      </ul>
+
+      <h3>適応の判断基準</h3>
+      <table>
+        <tr>
+          <th>検査</th>
+          <th>IPC法適応</th>
+        </tr>
+        <tr>
+          <td>自発痛</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>冷水痛</td>
+          <td>一過性（軽度）</td>
+        </tr>
+        <tr>
+          <td>電気診（インピーダンス）</td>
+          <td><span class="key">18.0±2.0kΩ以上</span>（閉鎖性）</td>
+        </tr>
+        <tr>
+          <td>X線所見</td>
+          <td>齲蝕と歯髄が近接</td>
+        </tr>
+      </table>
+
+      <h2>術式（IPC法）</h2>
+
+      <h3>初回治療</h3>
+      <ol>
+        <li>局所麻酔・ラバーダム防湿</li>
+        <li>窩洞開拡：露髄の危険がある部分の軟化象牙質は<span class="highlight">一層残存</span>させる</li>
+        <li>窩洞の洗浄</li>
+        <li>覆髄材貼付：<span class="key">水酸化カルシウム糊剤</span>または酸化亜鉛ユージノールセメント</li>
+        <li>暫間充填：<span class="key">GIセメント</span>など（緊密に封鎖）</li>
+        <li>X線撮影</li>
+      </ol>
+
+      <h3>2回目治療（2〜3か月後）</h3>
+      <ol>
+        <li>X線撮影：<span class="highlight">修復象牙質の形成</span>を確認</li>
+        <li>ラバーダム防湿</li>
+        <li>残存齲蝕象牙質の除去：直下に<span class="key">第二象牙質形成</span>を確認</li>
+        <li>最終修復（CR、インレーなど）</li>
+      </ol>
+
+      <h2>不適応の目的（ひっかけ注意）</h2>
+      <table>
+        <tr>
+          <th>選択肢</th>
+          <th>正誤</th>
+        </tr>
+        <tr>
+          <td class="caution">露髄部の閉鎖</td>
+          <td>×（露髄させない方法）</td>
+        </tr>
+        <tr>
+          <td class="caution">歯髄の乾性壊死</td>
+          <td>×（生活歯髄保存が目的）</td>
+        </tr>
+        <tr>
+          <td class="caution">髄床底穿孔部の閉鎖</td>
+          <td>×（穿孔修復は別の処置）</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A56</div>
+        <p>暫間的間接覆髄法の主な目的はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 露髄部の閉鎖<br>
+          b 歯髄の乾性壊死<br>
+          c 修復象牙質の形成<br>
+          d 髄床底穿孔部の閉鎖<br>
+          e 齲蝕象牙質の再石灰化
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】暫間的間接覆髄法の目的は<span class="highlight">修復象牙質（第二象牙質）の形成</span>と<span class="highlight">齲蝕象牙質の再石灰化</span>。露髄させずに生活歯髄を保存する方法なので、露髄部の閉鎖は目的ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108B21</div>
+        <p>8歳の女児。下顎右側第一大臼歯の齲蝕を主訴として来院した。一時的に冷たいものにしみる感じはあったが他に自覚症状はなかったという。電気抵抗値は17 kΩであった。初診時の口腔内写真（別冊No.21A）、エックス線写真（別冊No.21B）及び充塡物除去後の口腔内写真（別冊No.21C）を別に示す。治療として暫間的間接覆髄法を選択した。その根拠で正しいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108B21_1.png" alt="口腔内写真・X線写真">
+        </div>
+        <div class="choices">
+          a 幼若永久歯である。<br>
+          b 歯髄感染が軽度である。<br>
+          c 歯髄の生活反応が低い。<br>
+          d 齲窩と歯髄が近接している。<br>
+          e 深在性齲蝕が広い範囲にみられる。
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】8歳の下顎第一大臼歯は<span class="highlight">幼若永久歯</span>であり、歯髄の生活力が旺盛。X線で<span class="highlight">齲窩と歯髄が近接</span>しているが、自覚症状は一過性の冷水痛のみで、電気抵抗値17kΩは閉鎖性を示す。生活反応が低いのではなく高いからこそIPC法が適応となる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

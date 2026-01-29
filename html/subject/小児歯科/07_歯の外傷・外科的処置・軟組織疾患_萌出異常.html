@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>萌出異常 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 歯の外傷・外科的処置・軟組織疾患</span>
+    <h1>萌出異常</h1>
+    <div class="container">
+
+      <h2>正中離開の診査（頻出）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">正中離開の原因特定に有効な検査</div>
+        <ul>
+          <li><span class="highlight">Blanch test</span>：上唇小帯付着位置異常の診断</li>
+          <li><span class="highlight">口内法エックス線検査</span>：過剰歯の有無を確認</li>
+        </ul>
+      </div>
+
+      <h3>Blanch test</h3>
+      <ul>
+        <li>口唇を上方に牽引し、白くなった部分（貧血帯）まで小帯が付着していれば異常</li>
+        <li>上唇小帯の高位付着は正中離開の原因となる</li>
+        <li>対応：多くは増齢で改善→<span class="key">経過観察</span>、肥厚が著しい場合は上唇小帯切除</li>
+      </ul>
+
+      <h2>萌出性腐骨（頻出）</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>定義</td>
+          <td>大臼歯萌出時に<span class="highlight">吸収されずに残った歯槽骨</span>の一部</td>
+        </tr>
+        <tr>
+          <td>好発部位</td>
+          <td><span class="highlight">第一大臼歯（6歳臼歯）</span>に多い</td>
+        </tr>
+        <tr>
+          <td>症状</td>
+          <td>歯みがき時の出血、違和感、軽い咬合痛</td>
+        </tr>
+        <tr>
+          <td>対応</td>
+          <td>違和感があれば<span class="key">除去</span>する</td>
+        </tr>
+      </table>
+
+      <p class="note">萌出性腐骨は病的なものではなく、生理的現象として生じる</p>
+
+      <h2>萌出遅延・萌出障害の対応</h2>
+
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td>過剰歯による障害</td>
+          <td><span class="highlight">過剰歯の抜歯</span></td>
+        </tr>
+        <tr>
+          <td>歯肉の被覆</td>
+          <td><span class="highlight">開窓</span></td>
+        </tr>
+        <tr>
+          <td>埋伏・位置異常</td>
+          <td><span class="highlight">開窓牽引</span></td>
+        </tr>
+        <tr>
+          <td>先行乳歯の晩期残存</td>
+          <td>乳歯の抜歯（＋保隙装置）</td>
+        </tr>
+      </table>
+
+      <h2>上顎犬歯の萌出障害</h2>
+      <ul>
+        <li>放置すると<span class="highlight">埋伏</span>や<span class="highlight">晩期残存</span>が生じる</li>
+        <li>X線で犬歯の萌出方向を確認し、早期対応が必要</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107B19</div>
+        <p>7歳の女児。正中離開を主訴として来院した。初診時の口腔内写真（別冊No.19）を別に示す。まず行うべきことはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107B19.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a Blanch test<br>
+          b 歯列模型分析<br>
+          c 歯周ポケット検査<br>
+          d 口内法エックス線検査<br>
+          e 歯科用コーンビームCT
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】正中離開の原因特定には<span class="highlight">Blanch test</span>（上唇小帯の異常）と<span class="highlight">口内法エックス線検査</span>（過剰歯の有無）が有効。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D85</div>
+        <p>7歳の男児。上の前歯に隙間があることを主訴として来院した。初診時の口腔内写真（別冊No.33）を別に示す。原因の特定に有効なのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D85.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a 歯髄電気診<br>
+          b 超音波検査<br>
+          c Blanch test<br>
+          d 口内法エックス線撮影<br>
+          e レーザー蛍光強度測定
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】107B19と同様のパターン。正中離開の原因特定には<span class="highlight">Blanch test</span>と<span class="highlight">口内法エックス線撮影</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A39</div>
+        <p>6歳の女児。奥歯の中央付近に硬い物があり、歯みがき時に出血しやすいことを主訴として来院した。初診時の口腔内写真（別冊No.3）を別に示す。矢印で示した硬固物で考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108A39.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a 食　物<br>
+          b 象牙質<br>
+          c 歯槽骨<br>
+          d エナメル質<br>
+          e セメント質
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】6歳で第一大臼歯萌出時に見られる硬固物は<span class="highlight">萌出性腐骨（歯槽骨）</span>。大臼歯萌出時に吸収されずに残った歯槽骨の一部である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D50</div>
+        <p>6歳の男児。噛む時に軽い痛みがあることを主訴として来院した。下顎右側の奥歯に硬いものがあるという。矢印で硬固物を示した初診時の口腔内写真（別冊No.14A）と摘出した硬固物の病理組織像（別冊No.14B）を別に示す。考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114D50.png" alt="口腔内写真・病理組織像">
+        </div>
+        <div class="choices">
+          a 腐　骨<br>
+          b 象牙質<br>
+          c 食物残渣<br>
+          d エナメル質<br>
+          e セメント質
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】萌出性腐骨。病理組織像で骨組織が確認できる。「腐骨」という表現は壊死した骨を指すが、萌出性腐骨も同様に<span class="highlight">吸収されずに残った歯槽骨</span>である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107D3</div>
+        <p>10歳の男児。上顎右側乳犬歯部の交換の異常を近医で指摘され来院した。初診時のエックス線写真（別冊No.3）を別に示す。放置すると生じると考えられるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107D3.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 上顎右側犬歯の埋伏<br>
+          b 上顎右側乳犬歯の骨性癒着<br>
+          c 上顎右側乳犬歯の晩期残存<br>
+          d 上顎右側犬歯の低位唇側転位<br>
+          e 上顎右側第一小臼歯の近心傾斜
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】上顎犬歯の萌出障害を放置すると<span class="highlight">埋伏</span>と先行乳歯の<span class="highlight">晩期残存</span>が生じる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108B32</div>
+        <p>8歳の男児。下顎右側第一大臼歯が生えてこないことを主訴として来院した。学校の歯科健診で指摘されたという。初診時の口腔内写真（別冊No.32A）とエックス線写真（別冊No.32B）を別に示す。適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108B32_1.png" alt="口腔内写真">
+          <img src="../../../images/108回_Web画像/108B32_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 下顎右側第二乳臼歯の形態修正<br>
+          b 下顎右側第二乳臼歯の抜去<br>
+          c 下顎右側第一大臼歯の開窓牽引<br>
+          d 下顎右側第一大臼歯の再植<br>
+          e 下顎右側第一大臼歯の抜去
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】第一大臼歯の萌出障害に対しては<span class="highlight">開窓牽引</span>を行う。歯肉の被覆と位置異常があるため、開窓して矯正的に牽引する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D14</div>
+        <p>8歳の女児。上顎右側中切歯の萌出遅延を主訴として来院した。初診時のエックス線写真（別冊No.14）を別に示す。上顎右側中切歯に対する対応で適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D14.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 経過観察<br>
+          b 義歯装着<br>
+          c 開　窓<br>
+          d 再　植<br>
+          e 抜　歯
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】X線で中切歯の位置は正常だが歯肉に被覆されている場合は<span class="highlight">開窓</span>を行い萌出を促す。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D86</div>
+        <p>3歳の女児。上顎左側乳中切歯部の精査を希望して来院した。初診時の口腔内写真（別冊No.33A）とエックス線画像（別冊No.33B）を別に示す。適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D86_1.png" alt="口腔内写真">
+          <img src="../../../images/112回_Web画像/112D86_2.png" alt="X線画像">
+        </div>
+        <div class="choices">
+          a 経過観察<br>
+          b └Aの開窓牽引<br>
+          c └Aの再植<br>
+          d └Aの抜歯後、保隙装置装着<br>
+          e └Aの抜歯後、└1の牽引
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】乳歯の萌出異常で後継永久歯への影響が懸念される場合は<span class="highlight">乳歯抜歯＋保隙装置</span>が適切。3歳では永久歯の萌出はまだ先なので保隙が必要。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

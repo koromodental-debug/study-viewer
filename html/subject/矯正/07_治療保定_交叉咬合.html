@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>交叉咬合 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 治療・保定</span>
+    <h1>交叉咬合</h1>
+    <div class="container">
+
+      <h2>交叉咬合とは</h2>
+      <p><span class="key">交叉咬合</span>（crossbite）は、上下顎臼歯の頬舌的な咬合関係が正常と逆転している状態。正常では上顎臼歯が下顎臼歯の頬側に位置するが、交叉咬合では下顎臼歯が上顎臼歯の頬側に位置する。</p>
+
+      <h3>原因</h3>
+      <ul>
+        <li><span class="highlight">吸指癖</span>：上顎歯列弓の狭窄を引き起こす</li>
+        <li><span class="highlight">口呼吸</span>：舌位の低下により上顎歯列弓が狭窄</li>
+        <li>上顎の劣成長</li>
+        <li>乳歯の早期喪失による咬合干渉</li>
+      </ul>
+
+      <h2>交叉咬合の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>特徴</th>
+          <th>治療のポイント</th>
+        </tr>
+        <tr>
+          <td class="key">機能性交叉咬合</td>
+          <td>咬合干渉により下顎が側方に偏位<br>→ 開口時には正中が一致</td>
+          <td>咬合干渉の除去、上顎拡大</td>
+        </tr>
+        <tr>
+          <td class="key">歯槽性交叉咬合</td>
+          <td>歯・歯槽骨レベルの異常<br>上顎臼歯の舌側傾斜</td>
+          <td>クワドヘリックス、緩徐拡大装置</td>
+        </tr>
+        <tr>
+          <td class="key">骨格性交叉咬合</td>
+          <td>上顎骨の幅径不足<br>正中口蓋縫合の拡大が必要</td>
+          <td>急速拡大装置</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">片側性交叉咬合の重要性【頻出】</div>
+        <ul>
+          <li><span class="caution">早期治療が必要</span>：放置すると下顎骨が非対称に成長</li>
+          <li>下顎の偏位 → 顔面非対称の原因となる</li>
+          <li>乳歯列期・混合歯列期での治療が望ましい</li>
+        </ul>
+      </div>
+
+      <h2>治療装置の選択【頻出】</h2>
+      <table>
+        <tr>
+          <th>装置</th>
+          <th>拡大様式</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td class="highlight">緩徐拡大装置</td>
+          <td>歯槽性拡大</td>
+          <td>乳歯列期〜混合歯列期の機能性・歯槽性交叉咬合</td>
+        </tr>
+        <tr>
+          <td class="key">クワドヘリックス</td>
+          <td>歯槽性拡大</td>
+          <td>混合歯列期〜永久歯列期の歯槽性交叉咬合</td>
+        </tr>
+        <tr>
+          <td class="highlight">急速拡大装置</td>
+          <td>骨格性拡大（正中口蓋縫合離開）</td>
+          <td>混合歯列期〜思春期の骨格性交叉咬合</td>
+        </tr>
+      </table>
+
+      <h3>装置選択の判断基準</h3>
+      <ul>
+        <li><span class="key">骨格的問題なし</span> → クワドヘリックス、緩徐拡大装置</li>
+        <li><span class="key">骨格的問題あり</span>（上顎骨幅径不足）→ 急速拡大装置</li>
+        <li><span class="key">混合歯列期</span>でより強力な拡大が必要 → 急速拡大装置</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116B31</div>
+        <p>臼歯部交叉咬合の原因となるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 吸指癖<br>
+          b 口呼吸<br>
+          c 咬爪癖<br>
+          d 弄唇癖<br>
+          e 舌突出癖
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="key">吸指癖</span>は指を吸う際の口腔内陰圧により上顎歯列弓が狭窄する。<span class="key">口呼吸</span>は舌が低位となり、上顎への舌圧が減少して上顎歯列弓が狭窄する。いずれも臼歯部交叉咬合の原因となる。咬爪癖・弄唇癖は前歯部への影響、舌突出癖は開咬の原因。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B38</div>
+        <p>10歳の女児。奥歯で食物を噛みにくいことを主訴として来院した。初診時の顔面写真（別冊No.38A）と咬頭嵌合位の口腔内写真（別冊No.38B）とを別に示す。側面セファログラム分析では骨格的な問題はない。模型分析の結果を図に示す。
+混合歯列期に使用する矯正装置で適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B38_1.png" alt="別冊No.38">
+        </div>
+        <div class="choices">
+          a 咬合斜面板<br>
+          b Fränkel装置<br>
+          c 急速拡大装置<br>
+          d リップバンパー<br>
+          e トランスパラタルアーチ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】臼歯部交叉咬合で「骨格的な問題はない」とあるが、混合歯列期で上顎の側方拡大が必要な場合は<span class="key">急速拡大装置</span>が第一選択となる。正中口蓋縫合が閉鎖する前であれば骨格的拡大が可能。咬合斜面板は下顎前突用、Fränkel装置は下顎前突・上顎前突用、リップバンパーは下顎叢生用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110D18</div>
+        <p>4歳の男児。臼歯部交叉咬合を認めたため治療を行うこととした。矯正装置装着時の口腔内写真（別冊No.18）を別に示す。
+保護者に説明しておくべきなのはどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110D18_1.png" alt="別冊No.18">
+        </div>
+        <div class="choices">
+          a 構音への影響<br>
+          b 矯正力付与の方法<br>
+          c 口蓋正中部の疼痛<br>
+          d 乳中切歯の正中離開<br>
+          e 第一乳臼歯の口蓋側移動
+        </div>
+        <div class="answer">正解：a, b, c, d</div>
+        <p>【解説】写真から<span class="key">急速拡大装置</span>が装着されている。保護者への説明事項として、a 口蓋部に装置があるため<span class="key">構音への影響</span>あり、b <span class="key">拡大ネジを回す方法</span>の指導が必要、c 正中口蓋縫合の離開による<span class="key">口蓋正中部の疼痛</span>、d 縫合離開による<span class="key">乳中切歯の正中離開</span>が起こりうる。eは誤り（臼歯の口蓋側ではなく頬側への移動）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104B11</div>
+        <p>5歳の女児。下顎の偏位を主訴として来院した。上下顎乳中切歯の歯軸傾斜に異常を認めない。口腔内写真（別冊No.11A）、顔面写真（別冊No.11B）及び正面セファログラム（別冊No.11C）を別に示す。セファロ分析の結果の一部を図に示す。
+最初に用いる矯正装置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104B11_1.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a 咬合斜面板<br>
+          b 緩徐拡大装置<br>
+          c タングクリブ<br>
+          d チンキャップ<br>
+          e 上顎前方牽引装置
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】下顎の偏位と片側性交叉咬合を認める症例。5歳の乳歯列期であり、<span class="key">緩徐拡大装置</span>（床型拡大装置）で上顎歯列弓を拡大し、機能性の下顎偏位を改善する。咬合斜面板は下顎前突用、タングクリブは舌突出癖用、チンキャップ・上顎前方牽引装置は骨格性下顎前突用。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターンの整理</div>
+        <ul>
+          <li><span class="key">交叉咬合の原因</span> → 吸指癖、口呼吸（上顎狭窄）</li>
+          <li><span class="key">骨格的問題なし + 混合歯列期</span> → 急速拡大装置</li>
+          <li><span class="key">乳歯列期の機能性交叉咬合</span> → 緩徐拡大装置</li>
+          <li><span class="key">急速拡大装置使用時の説明</span> → 構音影響、拡大方法、口蓋疼痛、正中離開</li>
+          <li><span class="key">片側性交叉咬合</span> → 早期治療（下顎の非対称成長予防）</li>
+        </ul>
+      </div>
+
+      <p class="note">参照：06_矯正装置_拡大装置.html</p>
+
+    </div>
+  </div>
+</body>
+</html>

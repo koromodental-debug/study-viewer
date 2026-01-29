@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抜歯 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .formula-box {
+      background: #FFF8E7;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-family: "SF Mono", "Monaco", monospace;
+    }
+    .formula-box-title { font-weight: 600; color: #996600; margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .calc-step { background: #f0f0f0; padding: 8px 12px; border-radius: 6px; margin: 6px 0; font-family: "SF Mono", monospace; font-size: 9pt; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 治療総論</span>
+    <h1>抜歯</h1>
+    <div class="container">
+
+      <h2>矯正治療における抜歯の目的</h2>
+      <ul>
+        <li><span class="key">叢生の改善</span>：歯の排列スペースの確保</li>
+        <li><span class="key">前歯の後退</span>：口唇の突出感の改善</li>
+        <li><span class="key">咬合関係の改善</span>：AngleⅡ級・Ⅲ級の是正</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">計算問題の頻出公式</div>
+        <ul>
+          <li><span class="key">FMIA</span> = 180° − FMA − IMPA</li>
+          <li><span class="key">Headplate correction</span> = (57° − FMIA) × 2 ÷ 25 mm</li>
+          <li><span class="key">Total discrepancy</span> = ALD + Spee補正 + Headplate correction</li>
+          <li>抜歯適応：Total discrepancy ≦ <span class="highlight">−4mm</span></li>
+        </ul>
+      </div>
+
+      <h2>1. Tweedの三角【計算の基礎】</h2>
+
+      <table>
+        <tr><th>角度</th><th>定義</th><th>基準値（日本人）</th></tr>
+        <tr>
+          <td class="key">FMA</td>
+          <td>FH平面と下顎下縁平面のなす角</td>
+          <td>25°</td>
+        </tr>
+        <tr>
+          <td class="key">FMIA</td>
+          <td>FH平面と下顎中切歯歯軸のなす角</td>
+          <td class="highlight">57°</td>
+        </tr>
+        <tr>
+          <td class="key">IMPA</td>
+          <td>下顎下縁平面と下顎中切歯歯軸のなす角</td>
+          <td>90°</td>
+        </tr>
+      </table>
+
+      <div class="formula-box">
+        <div class="formula-box-title">Tweedの三角の公式</div>
+        <p><span class="highlight">FMA + FMIA + IMPA = 180°</span></p>
+        <p>∴ FMIA = 180° − FMA − IMPA</p>
+      </div>
+
+      <h2>2. Total Discrepancyの計算【頻出】</h2>
+
+      <table>
+        <tr><th>要素</th><th>計算式</th></tr>
+        <tr>
+          <td class="key">Arch length discrepancy (ALD)</td>
+          <td>Available arch length − Required arch length</td>
+        </tr>
+        <tr>
+          <td class="key">Spee彎曲の補正</td>
+          <td>Spee彎曲の深さ × (−1)</td>
+        </tr>
+        <tr>
+          <td class="key">Headplate correction</td>
+          <td>(57° − 実測FMIA) × 2 ÷ 25</td>
+        </tr>
+      </table>
+
+      <div class="formula-box">
+        <div class="formula-box-title">Total Discrepancyの公式</div>
+        <p><span class="highlight">TD = ALD + Spee補正 + Headplate correction</span></p>
+        <p>下顎中切歯を<span class="key">25°舌側傾斜させるのに1mm</span>のスペースが必要</p>
+      </div>
+
+      <h2>3. 抜歯部位の選択【頻出】</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">基本原則</div>
+        <ul>
+          <li><span class="highlight">第一小臼歯（4番）</span>が最も多く選択される</li>
+          <li>犬歯に近い位置で抜歯 → 前歯の後退に有利</li>
+          <li>大臼歯に近い位置で抜歯 → 臼歯関係の改善に有利</li>
+        </ul>
+      </div>
+
+      <h3>症例別の抜歯パターン</h3>
+      <table>
+        <tr>
+          <th>症例</th>
+          <th>抜歯部位</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td class="highlight">上顎前突<br>（AngleⅡ級1類）</td>
+          <td>上顎4｜4<br>下顎5｜5</td>
+          <td>上顎前歯を大きく後退<br>下顎は臼歯関係改善</td>
+        </tr>
+        <tr>
+          <td class="key">上下顎前突</td>
+          <td>4｜4<br>4｜4</td>
+          <td>上下とも前歯を後退</td>
+        </tr>
+        <tr>
+          <td class="key">叢生のみ<br>（AngleⅠ級）</td>
+          <td>4｜4<br>4｜4</td>
+          <td>スペース確保</td>
+        </tr>
+        <tr>
+          <td class="key">下顎前突<br>（AngleⅢ級）</td>
+          <td>上顎：非抜歯<br>下顎4｜4</td>
+          <td>下顎前歯のみ後退</td>
+        </tr>
+      </table>
+
+      <h3>第一小臼歯 vs 第二小臼歯</h3>
+      <table>
+        <tr>
+          <th>抜歯部位</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td class="highlight">第一小臼歯（4番）</td>
+          <td>前歯の大きな後退が必要<br>犬歯に近いため前歯移動に有利</td>
+        </tr>
+        <tr>
+          <td class="key">第二小臼歯（5番）</td>
+          <td>臼歯関係の改善が主目的<br>大臼歯の近心移動が必要な場合</td>
+        </tr>
+      </table>
+
+      <h2>4. 抜歯と固定の関係</h2>
+
+      <table>
+        <tr>
+          <th>固定</th>
+          <th>空隙閉鎖の様式</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td class="highlight">最大固定</td>
+          <td>大臼歯は移動させず<br>前歯のみ後退</td>
+          <td>上顎前突で<br>前歯を大きく後退</td>
+        </tr>
+        <tr>
+          <td class="key">中等度固定</td>
+          <td>前歯と臼歯が<br>均等に移動</td>
+          <td>叢生の改善</td>
+        </tr>
+        <tr>
+          <td class="key">最小固定</td>
+          <td>臼歯が近心移動<br>前歯はあまり動かない</td>
+          <td>Ⅱ級関係の改善</td>
+        </tr>
+      </table>
+
+      <h2>5. 非抜歯治療</h2>
+
+      <h3>非抜歯治療の条件</h3>
+      <ul>
+        <li><span class="key">ALDが小さい</span>（−3mm程度まで）</li>
+        <li>側方拡大や唇側移動で対応可能</li>
+        <li>口唇の突出感がない</li>
+        <li>骨格的に大きな問題がない</li>
+      </ul>
+
+      <h3>非抜歯治療後の変化</h3>
+      <p>歯列弓の拡大や前歯の唇側移動により、以下の値が<span class="key">小さくなる</span>。</p>
+      <ul>
+        <li><span class="key">FMIA</span>（下顎中切歯がFH平面に対して唇側傾斜）</li>
+        <li><span class="key">interincisal angle</span>（上下切歯間角度が減少）</li>
+      </ul>
+
+      <h2>過去問：知識問題</h2>
+
+      <div class="question-box">
+        <div class="q-number">112D60</div>
+        <p>Total discrepancy の算出に用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 下顎角<br>
+          b 歯列弓幅径<br>
+          c 永久歯歯冠幅径<br>
+          d 上顎中切歯歯軸角<br>
+          e Speeの彎曲の深さ
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】Total discrepancyは①ALD（<span class="key">永久歯歯冠幅径</span>から算出）、②<span class="key">Spee彎曲の深さ</span>、③Headplate correctionから算出する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C129</div>
+        <p>Tweed分析で用いるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a SN平面<br>
+          b FH平面<br>
+          c 下顎後縁平面<br>
+          d 下顎下縁平面<br>
+          e 下顎中切歯歯軸
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】Tweed分析（Tweedの三角）は<span class="key">FH平面</span>、<span class="key">下顎下縁平面</span>、<span class="key">下顎中切歯歯軸</span>の3つで構成される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C54</div>
+        <p>14歳の女子。がたがたの歯並びを主訴として来院した。第一大臼歯の咬合関係はAngleⅠ級である。検査の結果、マルチブラケット装置による矯正歯科治療を行うこととした。抜歯部位で適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 上顎両側第一小臼歯<br>
+          b 上下顎両側第一小臼歯<br>
+          c 上下顎両側第二小臼歯<br>
+          d 上顎両側第一小臼歯、下顎両側第二小臼歯<br>
+          e 上顎両側第二小臼歯、下顎両側第一小臼歯
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】AngleⅠ級の叢生症例では、<span class="key">上下顎両側第一小臼歯</span>の抜歯が基本。咬合関係が良好なので同じ部位を抜歯。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A48</div>
+        <p>22歳の女性。前歯部の叢生を主訴として来院した。Arch length discrepancyは−3mmである。非抜歯の治療を行うこととした。治療後に小さくなることが予測されるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a SNA角<br>
+          b SNB角<br>
+          c 顔面角<br>
+          d FMIA<br>
+          e interincisal angle
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】非抜歯治療では前歯を唇側移動させるため、<span class="key">FMIA</span>と<span class="key">interincisal angle</span>が小さくなる。骨格の指標は変化しない。</p>
+      </div>
+
+      <h2>過去問：計算問題</h2>
+
+      <div class="question-box">
+        <div class="q-number">113A89</div>
+        <p>FMIAが49.5度の場合のヘッドプレートコレクションの値を求めよ。ただし、FMIAの基準値は57度とする。</p>
+        <div class="answer">正解：0.6 mm（回答：60）</div>
+        <div class="calc-step">
+          角度差 = 57° − 49.5° = 7.5°<br>
+          Headplate correction = 7.5 × 2 ÷ 25 = <span class="highlight">0.6 mm</span>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B89</div>
+        <p>IMPA 99°、FMA 29°、Available 65.5mm、Required 70.0mm<br>Total discrepancyを求めよ。FMIAの基準値は57°とする。</p>
+        <div class="answer">正解：−8.5 mm（回答：85）</div>
+        <div class="calc-step">
+          ① FMIA = 180° − 29° − 99° = 52°<br>
+          ② ALD = 65.5 − 70.0 = −4.5 mm<br>
+          ③ 角度差 = 57° − 52° = 5°<br>
+          ④ Headplate correction = 5 × 2 ÷ 25 = −0.4 mm<br>
+          ⑤ TD = −4.5 + 0 + (−4.0) = <span class="highlight">−8.5 mm</span>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B90</div>
+        <p>FMA 33.0°、IMPA 95.0°、Required 68.0mm、Available 69.0mm、Spee 0.0mm<br>Total discrepancyを算出せよ。FMIAの基準値は57.0°とする。</p>
+        <div class="answer">正解：−3.0 mm（回答：30）</div>
+        <div class="calc-step">
+          ① FMIA = 180° − 33° − 95° = 52°<br>
+          ② ALD = 69.0 − 68.0 = +1.0 mm<br>
+          ③ Headplate correction = (57° − 52°) × 2 ÷ 25 = −4.0 mm<br>
+          ④ TD = +1.0 + 0 + (−4.0) = <span class="highlight">−3.0 mm</span>
+        </div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターンの整理</div>
+        <ul>
+          <li><span class="key">基本の抜歯部位</span> → 第一小臼歯（4番）</li>
+          <li><span class="key">AngleⅠ級叢生</span> → 上下両側4番</li>
+          <li><span class="key">上顎前突（Ⅱ級1類）</span> → 上顎4、下顎5</li>
+          <li><span class="key">非抜歯治療後</span> → FMIA↓、interincisal angle↓</li>
+          <li><span class="key">Tweed分析</span> → FH平面、下顎下縁平面、下顎中切歯歯軸</li>
+          <li><span class="key">抜歯適応</span> → TD ≦ −4mm</li>
+        </ul>
+      </div>
+
+      <p class="note">参考：歯科矯正学（相馬）（Tweedの三角、Total discrepancy）</p>
+
+    </div>
+  </div>
+</body>
+</html>

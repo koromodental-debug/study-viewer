@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯の発育 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 頭蓋骨・歯・歯列の発育</span>
+    <h1>歯の発育</h1>
+    <div class="container">
+
+      <h2>歯の発生</h2>
+      <table>
+        <tr>
+          <th>由来</th>
+          <th>組織</th>
+          <th>形成物</th>
+        </tr>
+        <tr>
+          <td>外胚葉</td>
+          <td>口腔上皮 → エナメル器</td>
+          <td>エナメル質</td>
+        </tr>
+        <tr>
+          <td rowspan="2">中胚葉（間葉）</td>
+          <td>歯乳頭</td>
+          <td>象牙質、歯髄</td>
+        </tr>
+        <tr>
+          <td>歯小嚢</td>
+          <td>セメント質、歯根膜、歯槽骨</td>
+        </tr>
+      </table>
+
+      <h2>乳歯の発育段階（Schour & Massler）</h2>
+      <table>
+        <tr>
+          <th>歯種</th>
+          <th>歯胚形成</th>
+          <th>石灰化開始</th>
+          <th>歯冠完成</th>
+          <th>歯根完成</th>
+          <th>歯根吸収開始</th>
+        </tr>
+        <tr>
+          <td>A（乳中切歯）</td>
+          <td>胎生7週</td>
+          <td>胎生4〜4.5月</td>
+          <td>1.5〜2.5月</td>
+          <td>1.5年</td>
+          <td>4年</td>
+        </tr>
+        <tr>
+          <td>B（乳側切歯）</td>
+          <td>胎生7週</td>
+          <td>胎生4.5月</td>
+          <td>2.5〜3月</td>
+          <td>1.5〜2年</td>
+          <td><span class="highlight">5年</span></td>
+        </tr>
+        <tr>
+          <td>C（乳犬歯）</td>
+          <td>胎生7.5週</td>
+          <td>胎生5月</td>
+          <td>9月</td>
+          <td>3.25年</td>
+          <td><span class="highlight">7年</span></td>
+        </tr>
+        <tr>
+          <td>D（第一乳臼歯）</td>
+          <td>胎生8週</td>
+          <td>胎生5月</td>
+          <td>5.5〜6月</td>
+          <td>2.5年</td>
+          <td>8年</td>
+        </tr>
+        <tr>
+          <td>E（第二乳臼歯）</td>
+          <td>胎生10週</td>
+          <td>胎生6月</td>
+          <td><span class="highlight">10〜11月</span></td>
+          <td><span class="highlight">3年</span></td>
+          <td>8年</td>
+        </tr>
+      </table>
+      <p class="note">乳歯歯胚形成開始は胎生7週、石灰化開始は胎生4〜6か月</p>
+
+      <h2>永久歯の発育段階</h2>
+      <table>
+        <tr>
+          <th>歯種</th>
+          <th>石灰化開始</th>
+          <th>歯冠完成</th>
+          <th>歯根完成</th>
+        </tr>
+        <tr>
+          <td>1（中切歯）</td>
+          <td>3〜4月</td>
+          <td>4〜5歳</td>
+          <td>9〜10年</td>
+        </tr>
+        <tr>
+          <td>2（側切歯）</td>
+          <td>10〜12月</td>
+          <td>4〜5歳</td>
+          <td>10〜11年</td>
+        </tr>
+        <tr>
+          <td>3（犬歯）</td>
+          <td>4〜5月</td>
+          <td>6〜7歳</td>
+          <td>12〜15年</td>
+        </tr>
+        <tr>
+          <td>4（第一小臼歯）</td>
+          <td>1.5〜2歳</td>
+          <td>5〜6歳</td>
+          <td>12〜13年</td>
+        </tr>
+        <tr>
+          <td>5（第二小臼歯）</td>
+          <td>2〜2.5歳</td>
+          <td>6〜7歳</td>
+          <td>12〜14年</td>
+        </tr>
+        <tr>
+          <td>6（第一大臼歯）</td>
+          <td><span class="highlight">出生時</span></td>
+          <td>2.5〜3歳</td>
+          <td>9〜10年</td>
+        </tr>
+        <tr>
+          <td>7（第二大臼歯）</td>
+          <td>2.5〜3歳</td>
+          <td>7〜8歳</td>
+          <td>14〜16年</td>
+        </tr>
+        <tr>
+          <td>8（第三大臼歯）</td>
+          <td>7〜10歳</td>
+          <td>12〜16歳</td>
+          <td>18〜25年</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>乳歯歯冠完成が最も遅い：<span class="highlight">E（10〜11か月）</span></li>
+          <li>乳歯歯根完成が最も遅い：<span class="highlight">E（3年）</span></li>
+          <li>出生時の歯の発育状態：永久歯では<span class="highlight">6の石灰化</span>が開始</li>
+          <li>第一小臼歯の石灰化開始：<span class="highlight">1.5〜2歳</span>（4歳ではない）</li>
+        </ul>
+      </div>
+
+      <h2>乳歯の歯根吸収</h2>
+      <h3>歯根吸収開始時期</h3>
+      <table>
+        <tr>
+          <th>歯種</th>
+          <th>歯根吸収開始</th>
+          <th>後継永久歯萌出</th>
+        </tr>
+        <tr>
+          <td>乳中切歯（A）</td>
+          <td>4年</td>
+          <td>6〜7歳</td>
+        </tr>
+        <tr>
+          <td>乳側切歯（B）</td>
+          <td><span class="highlight">5年（5〜6歳）</span></td>
+          <td>7〜8歳</td>
+        </tr>
+        <tr>
+          <td>乳犬歯（C）</td>
+          <td><span class="highlight">7年（7〜8歳）</span></td>
+          <td>9〜12歳</td>
+        </tr>
+        <tr>
+          <td>第一乳臼歯（D）</td>
+          <td>8年</td>
+          <td>9〜11歳</td>
+        </tr>
+        <tr>
+          <td>第二乳臼歯（E）</td>
+          <td>8年</td>
+          <td>10〜12歳</td>
+        </tr>
+      </table>
+
+      <h3>歯根吸収の機序</h3>
+      <ul>
+        <li>多核巨細胞である<span class="key">破歯細胞</span>がHowship窩を形成しながら象牙質・セメント質を吸収</li>
+        <li>吸収は継続的に進行せず、<span class="key">活動期と休止期</span>がある</li>
+        <li><span class="caution">後継永久歯が存在しなくても歯根吸収は起こる</span></li>
+      </ul>
+
+      <h3>歯根吸収開始部位</h3>
+      <ul>
+        <li>下顎乳前歯：舌側面の歯根中央部〜根尖部</li>
+        <li>乳臼歯：根分岐部の根尖寄りの内側面から</li>
+      </ul>
+
+      <h2>小児の歯周組織の特徴</h2>
+      <table>
+        <tr>
+          <th>組織</th>
+          <th>小児の特徴</th>
+        </tr>
+        <tr>
+          <td>歯肉</td>
+          <td>辺縁歯肉が<span class="key">厚い</span>、重層扁平上皮が<span class="key">薄い</span></td>
+        </tr>
+        <tr>
+          <td>歯肉溝</td>
+          <td><span class="key">浅い</span></td>
+        </tr>
+        <tr>
+          <td>歯根膜</td>
+          <td>線維の量が<span class="key">少ない</span>、血管・細胞成分が多い</td>
+        </tr>
+        <tr>
+          <td>セメント質</td>
+          <td><span class="highlight">石灰化度が低い</span></td>
+        </tr>
+        <tr>
+          <td>歯槽骨</td>
+          <td>骨髄腔が大きい、緻密骨が薄い</td>
+        </tr>
+      </table>
+
+      <h2>発育障害と発生時期</h2>
+      <div class="point-box">
+        <div class="point-box-title">Hutchinson歯と同時期の発育障害</div>
+        <p><span class="key">Hutchinson歯</span>：先天性梅毒による上顎中切歯の形成異常（切縁に半月状切痕）</p>
+        <p>上顎中切歯の石灰化開始は<span class="highlight">出生後3〜4か月</span>。この時期に石灰化が進む歯に同様の障害が生じうる。</p>
+        <ul>
+          <li><span class="highlight">歯内歯</span>：上顎側切歯に多い</li>
+          <li><span class="highlight">矮小歯</span>：上顎側切歯に多い（円錐歯、栓状歯）</li>
+        </ul>
+        <p class="note"><span class="caution">低位歯・斑状歯・埋伏歯は発生時期が異なる</span></p>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112A22</div>
+        <p>歯種と標準的な歯根吸収開始期の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 乳中切歯 ーーーーー 2〜3歳<br>
+          b 乳側切歯 ーーーーー 5〜6歳<br>
+          c 乳犬歯 ーーーーーー 7〜8歳<br>
+          d 第一乳臼歯 ーーーー 9〜10歳<br>
+          e 第二乳臼歯 ーーーー 10〜11歳
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】<span class="highlight">乳側切歯は5〜6歳（5年）</span>、<span class="highlight">乳犬歯は7〜8歳（7年）</span>から歯根吸収開始。乳中切歯は4年、第一・第二乳臼歯は8年から開始。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A75</div>
+        <p>ヒトの歯の発育時期で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 乳中切歯の歯冠完成：1歳<br>
+          b 乳側切歯の歯根吸収開始：5歳<br>
+          c 第二乳臼歯の歯根完成：2歳<br>
+          d 第一小臼歯の石灰化開始：4歳<br>
+          e 第一大臼歯の歯根完成：12歳
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">乳側切歯の歯根吸収開始は5歳（5年）</span>で正しい。乳中切歯の歯冠完成は1.5〜2.5月、第二乳臼歯の歯根完成は3年、第一小臼歯の石灰化開始は1.5〜2歳、第一大臼歯の歯根完成は9〜10年。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A47</div>
+        <p>成人と比較した小児の歯周組織の特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯肉溝が深い。<br>
+          b 辺縁歯肉が薄い。<br>
+          c 重層扁平上皮が厚い。<br>
+          d 歯根膜線維の量が多い。<br>
+          e セメント質の石灰化度が低い。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】小児の歯周組織は<span class="highlight">セメント質の石灰化度が低い</span>。歯肉溝は浅い、辺縁歯肉は厚い、重層扁平上皮は薄い、歯根膜線維の量は少ない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A48</div>
+        <p>歯の発育障害においてHutchinson歯と同じ時期に生じるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯内歯<br>
+          b 低位歯<br>
+          c 斑状歯<br>
+          d 埋伏歯<br>
+          e 矮小歯
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】Hutchinson歯は上顎中切歯の形態異常で、石灰化時期（出生後3〜4か月）に障害を受ける。同時期に石灰化が進む上顎側切歯に多い<span class="highlight">歯内歯</span>と<span class="highlight">矮小歯</span>が正解。低位歯は萌出後、斑状歯はフッ素の過剰摂取、埋伏歯は萌出障害。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

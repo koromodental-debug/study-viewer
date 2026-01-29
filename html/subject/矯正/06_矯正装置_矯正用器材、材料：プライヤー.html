@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>プライヤー - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 矯正装置</span>
+    <h1>プライヤー</h1>
+    <div class="container">
+
+      <h2>プライヤーの分類</h2>
+      <p>矯正用プライヤーは用途によって分類される。国試では<span class="highlight">写真を見て用途を答える問題</span>が頻出である。</p>
+
+      <table>
+        <tr>
+          <th>用途</th>
+          <th>代表的なプライヤー</th>
+        </tr>
+        <tr>
+          <td><span class="key">線屈曲</span></td>
+          <td>Tweedのアーチベンディング、ループフォーミング、ヤング、バードビーク、ビーソー、三嘴、ライトワイヤー</td>
+        </tr>
+        <tr>
+          <td><span class="key">結紮</span></td>
+          <td>ホウ（Howe）、リガチャータイイング、ユーティリティ</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯間分離</span></td>
+          <td>セパレーティングエラスティック</td>
+        </tr>
+        <tr>
+          <td><span class="key">バンド調整</span></td>
+          <td>バンドコンタリング</td>
+        </tr>
+        <tr>
+          <td><span class="key">バンド撤去</span></td>
+          <td>バンドリムービング</td>
+        </tr>
+      </table>
+
+      <h2>線屈曲用プライヤー</h2>
+      <p>アーチワイヤーや主線の屈曲に用いる。先端の形状（平面と丸の組み合わせ）が特徴的である。</p>
+
+      <h3>Tweedのアーチベンディングプライヤー</h3>
+      <p><span class="highlight">トルク付与</span>、オフセット、フックの屈曲に用いる。先端は丸と平面の組み合わせ。角ワイヤーの屈曲に適している。</p>
+
+      <h3>Tweedのループフォーミングプライヤー</h3>
+      <p><span class="key">ループの形成</span>に用いる。先端は半円形と丸の組み合わせ。</p>
+
+      <h3>その他の線屈曲用プライヤー</h3>
+      <table>
+        <tr>
+          <th>プライヤー</th>
+          <th>特徴・用途</th>
+        </tr>
+        <tr>
+          <td>ヤングのプライヤー</td>
+          <td>主線・補助弾線の屈曲（太い部分で主線、細い部分で補助弾線）</td>
+        </tr>
+        <tr>
+          <td>バードビークプライヤー</td>
+          <td>細い線（アーチワイヤー）の屈曲</td>
+        </tr>
+        <tr>
+          <td>ビーソーのプライヤー</td>
+          <td>主線の屈曲（<span class="caution">補助弾線には不適</span>）</td>
+        </tr>
+        <tr>
+          <td>三嘴プライヤー</td>
+          <td>主線の屈曲、クワドヘリックスの活性化</td>
+        </tr>
+        <tr>
+          <td>ライトワイヤープライヤー</td>
+          <td>細い線の屈曲</td>
+        </tr>
+      </table>
+
+      <h2>結紮用プライヤー</h2>
+      <p>アーチワイヤーをブラケットに結紮する際に用いる。</p>
+
+      <table>
+        <tr>
+          <th>プライヤー</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="key">ホウ（Howe）のプライヤー</span></td>
+          <td>結紮、アーチワイヤーの着脱</td>
+        </tr>
+        <tr>
+          <td><span class="key">リガチャータイイングプライヤー</span></td>
+          <td>結紮線を締める</td>
+        </tr>
+        <tr>
+          <td>ユーティリティプライヤー</td>
+          <td>結紮、アーチワイヤーの着脱</td>
+        </tr>
+      </table>
+
+      <h2>歯間分離用プライヤー</h2>
+      <h3>セパレーティングエラスティックプライヤー</h3>
+      <p><span class="key">ゴムの小リング</span>を歯間に挿入し、歯間分離を行う。ゴムを2〜3日装着すると歯間が分離し、バンドが装着しやすくなる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">間違いやすいプライヤー</div>
+        <ul>
+          <li><span class="caution">セパレーティングエラスティックプライヤー</span> vs <span class="caution">リガチャータイイングプライヤー</span>：先端の形が似ている</li>
+          <li>バンドリムービングプライヤー vs レジンリムーバー</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115C26</div>
+        <p>矯正歯科治療で用いる器具の写真（別冊No.3）を別に示す。<br>トルク付与を目的とする角ワイヤーの屈曲に用いるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C26_1.png" alt="別冊No.3">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】トルク付与を目的とする角ワイヤーの屈曲には<span class="highlight">Tweedのアーチベンディングプライヤー</span>を用いる。先端が丸と平面の組み合わせで、角ワイヤーにトルクを付与できる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D44</div>
+        <p>矯正歯科治療中の口腔内写真（別冊No.5）を別に示す。<br>アーチワイヤーの屈曲に用いるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D44_1.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a Howeのプライヤー<br>
+          b Youngのプライヤー<br>
+          c ユーティリティープライヤー<br>
+          d Tweedのアーチベンディングプライヤー<br>
+          e Tweed のループフォーミングプライヤー
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】アーチワイヤーの屈曲には<span class="key">Tweedのアーチベンディングプライヤー</span>と<span class="key">ループフォーミングプライヤー</span>を用いる。Howeのプライヤーとユーティリティープライヤーは結紮用、Youngのプライヤーは主線・補助弾線の屈曲用である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C76</div>
+        <p>矯正装置装着前の口腔内写真（別冊No.33A）と歯科治療で用いる器具の写真（別冊No.33B）を別に示す。<br>矢印で示すものを歯間に挿入する際に用いるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C76_1.png" alt="別冊No.33A">
+          <img src="../../../images/114回_Web画像/114C76_2.png" alt="別冊No.33B">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】歯間分離用のゴムリングを歯間に挿入するには<span class="highlight">セパレーティングエラスティックプライヤー</span>を用いる。バンド装着前に歯間を分離するために使用する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B41</div>
+        <p>矯正用器具の写真（別冊No.5）を別に示す。<br>アーチワイヤーをブラケットに結紮するのに用いるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113B41_1.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】アーチワイヤーをブラケットに結紮するには<span class="key">結紮用プライヤー</span>（ホウのプライヤー、リガチャータイイングプライヤー、ユーティリティプライヤーなど）を用いる。写真から結紮用の器具を選ぶ。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

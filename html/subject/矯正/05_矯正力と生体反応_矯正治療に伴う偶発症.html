@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>矯正治療に伴う偶発症 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 矯正力と生体反応</span>
+    <h1>矯正治療に伴う偶発症</h1>
+    <div class="container">
+
+      <h2>偶発症の分類</h2>
+      <p>矯正治療を行う際には、以下のようなリスクを伴う。治療前に十分な診査を行い、医原性障害の防止に努める。</p>
+
+      <table>
+        <tr>
+          <th>偶発症</th>
+          <th>概要</th>
+        </tr>
+        <tr>
+          <td class="key">歯根吸収</td>
+          <td>最も問題となる偶発症。上下前歯に起こりやすい</td>
+        </tr>
+        <tr>
+          <td class="key">齲蝕・歯肉炎</td>
+          <td>装置装着により自浄作用が低下し発生しやすい</td>
+        </tr>
+        <tr>
+          <td class="key">歯肉退縮</td>
+          <td>歯槽頂の吸収により歯肉レベルが下がる。成人の叢生に多い</td>
+        </tr>
+        <tr>
+          <td class="key">硬・軟組織への傷害</td>
+          <td>ワイヤー、ブラケット等による歯・粘膜の損傷</td>
+        </tr>
+        <tr>
+          <td class="key">咬合痛</td>
+          <td>処置後数時間〜3-4日で発現、7日程度で消失</td>
+        </tr>
+        <tr>
+          <td class="key">顎関節症</td>
+          <td>雑音、疼痛、開口障害。一過性のことも多い</td>
+        </tr>
+        <tr>
+          <td class="key">金属アレルギー</td>
+          <td>Ni、Co、Crイオンの溶出による</td>
+        </tr>
+        <tr>
+          <td class="key">後戻り</td>
+          <td>保定装置の装着が必要</td>
+        </tr>
+      </table>
+
+      <h2>歯根吸収【頻出】</h2>
+      <p>矯正治療に伴う偶発症として<span class="highlight">最もよく問題となる</span>のが歯根吸収である。歯の移動に伴って多かれ少なかれ歯根尖部の変化は生じる。</p>
+
+      <h3>歯根吸収のリスクファクター</h3>
+      <div class="point-box">
+        <div class="point-box-title">国試で問われるリスクファクター</div>
+        <ul>
+          <li><span class="highlight">過大な矯正力</span>（2回出題）</li>
+          <li><span class="highlight">ジグリング</span>（多方向への揺さぶり）</li>
+          <li><span class="highlight">歯の圧下</span>（特に注意が必要）</li>
+          <li><span class="key">歯根形態の異常</span>（先細り、弯曲、短根歯）</li>
+        </ul>
+      </div>
+
+      <h3>その他のリスクファクター</h3>
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>説明</th>
+        </tr>
+        <tr>
+          <td>高年齢（成人）</td>
+          <td>成人は幼年期・青少年期より吸収の程度が強い</td>
+        </tr>
+        <tr>
+          <td>外傷の既往</td>
+          <td>既往歯では吸収リスクが高まる</td>
+        </tr>
+        <tr>
+          <td>大きな移動量</td>
+          <td>移動量が大きいほどリスク増加</td>
+        </tr>
+        <tr>
+          <td>口腔習癖</td>
+          <td>舌突出癖、吸指癖、咬舌癖</td>
+        </tr>
+        <tr>
+          <td>矯正治療の既往</td>
+          <td>再治療では吸収リスクが高まる</td>
+        </tr>
+        <tr>
+          <td>吸収しやすい体質</td>
+          <td>個人差がある</td>
+        </tr>
+      </table>
+
+      <h3>歯根吸収の予防と対策</h3>
+      <table>
+        <tr>
+          <th colspan="2">予防</th>
+        </tr>
+        <tr>
+          <td>治療前</td>
+          <td>X線検査で歯根の長さ・形態を確認</td>
+        </tr>
+        <tr>
+          <td>治療中</td>
+          <td>定期的にX線検査を行う</td>
+        </tr>
+        <tr>
+          <td>矯正力</td>
+          <td><span class="key">弱い力</span>を用いる</td>
+        </tr>
+        <tr>
+          <td>圧下</td>
+          <td><span class="caution">特に歯根吸収を起こしやすいので注意</span></td>
+        </tr>
+        <tr>
+          <th colspan="2">発生時の対策</th>
+        </tr>
+        <tr>
+          <td>原因追求</td>
+          <td>既往歴の再確認、ジグリングの確認と除去</td>
+        </tr>
+        <tr>
+          <td>矯正力</td>
+          <td>より減弱させる</td>
+        </tr>
+        <tr>
+          <td>治療計画</td>
+          <td>治療目標の変更、短期間で動的治療を終える</td>
+        </tr>
+      </table>
+
+      <h3>リスクファクターでないもの</h3>
+      <p>以下は歯根吸収のリスクファクターには含まれない：</p>
+      <ul>
+        <li><span class="caution">齲蝕</span> → 歯根吸収とは無関係</li>
+        <li><span class="caution">歯肉炎・歯肉退縮</span> → 別の偶発症</li>
+        <li><span class="caution">バンドの緩み</span> → 齲蝕のリスクファクター</li>
+        <li><span class="caution">口腔衛生状態の不良</span> → 齲蝕・歯肉炎のリスクファクター</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A67</div>
+        <p>矯正治療中の歯根吸収のリスクファクターはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 齲　蝕<br>
+          b 歯肉炎<br>
+          c 歯肉退縮<br>
+          d 過大な矯正力<br>
+          e 歯根形態の異常
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】歯根吸収のリスクファクターは<span class="key">過大な矯正力</span>と<span class="key">歯根形態の異常</span>（先細り、弯曲、短根歯）。齲蝕、歯肉炎、歯肉退縮は矯正治療の偶発症ではあるが、歯根吸収とは別の病態である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C23</div>
+        <p>矯正歯科治療における歯根吸収のリスクファクターはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 歯の圧下<br>
+          b ジグリング<br>
+          c 過大な矯正力<br>
+          d バンドの緩み<br>
+          e 口腔衛生状態の不良
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】<span class="key">歯の圧下</span>は特に歯根吸収を起こしやすい移動様式である。<span class="key">ジグリング</span>（多方向への揺さぶり）と<span class="key">過大な矯正力</span>も主要なリスクファクター。バンドの緩みは齲蝕のリスク、口腔衛生不良は齲蝕・歯肉炎のリスクであり、歯根吸収とは関係がない。</p>
+      </div>
+
+      <p class="note">参考：新しい歯科矯正学 p.200-202、歯科矯正学（相馬）p.343-345</p>
+
+    </div>
+  </div>
+</body>
+</html>

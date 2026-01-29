@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>矯正用線材・弾性材料 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 矯正装置</span>
+    <h1>矯正用線材・弾性材料</h1>
+    <div class="container">
+
+      <h2>弾性材料の分類</h2>
+      <p>矯正治療で用いる弾性材料は、<span class="key">金属系</span>（ワイヤー、コイルスプリング）と<span class="key">高分子系</span>（エラスティック、トゥースポジショナー）に分類される。</p>
+
+      <h2>線材料の基礎</h2>
+      <p>矯正歯科治療における歯の移動の第一要因は<span class="key">矯正力</span>。適切な大きさの矯正力を加えるために、<span class="key">線材料の特性</span>を正しく理解する必要がある。</p>
+
+      <h3>応力-ひずみ曲線</h3>
+      <ul>
+        <li><span class="key">応力</span>：単位面積あたりの力の強さ（荷重/断面積）</li>
+        <li><span class="key">ひずみ</span>：変形の度合い（伸び/もとの長さ）</li>
+        <li><span class="key">弾性</span>：変形をもとに戻そうとする性質</li>
+        <li><span class="key">弾性限</span>：これを越えると永久変形が起こる</li>
+        <li><span class="highlight">弾性エネルギー（レジリエンス）</span>：線材の復元力を表す</li>
+      </ul>
+
+      <h2>矯正用線材料の種類【最重要】</h2>
+
+      <h3>発揮される力の大きさ</h3>
+      <p class="highlight">18-8ステンレス鋼線 ＞ Co-Cr線 ＞ Ni-Ti線</p>
+      <p class="note">※Ni-Ti線は最も弱い力を発揮する</p>
+
+      <table>
+        <tr>
+          <th>線材</th>
+          <th>特徴</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td class="key">ステンレス鋼線<br>（18-8ステンレス）</td>
+          <td>・高い弾性係数<br>・<span class="key">強い力</span>を発揮<br>・加工性良好</td>
+          <td>アーチワイヤー<br>（仕上げ段階）</td>
+        </tr>
+        <tr>
+          <td class="key">コバルトクロム線<br>（Co-Cr）</td>
+          <td>・高い弾性係数<br>・耐腐食性良好</td>
+          <td>アーチワイヤー</td>
+        </tr>
+        <tr>
+          <td class="highlight">ニッケルチタン線<br>（Ni-Ti）</td>
+          <td>・<span class="highlight">超弾性</span><br>・<span class="key">弱く持続的な力</span><br>・大きなたわみ量</td>
+          <td>アーチワイヤー<br>（<span class="key">レベリング段階</span>）</td>
+        </tr>
+        <tr>
+          <td class="key">ニッケルクロム線<br>（Ni-Cr）</td>
+          <td>・加工性良好</td>
+          <td>舌側弧線装置の主線<br>クラスプ、唇側線</td>
+        </tr>
+        <tr>
+          <td class="key">チタンモリブデン線<br>（TMA）</td>
+          <td>・中間的な特性<br>・加工性良好</td>
+          <td>アーチワイヤー</td>
+        </tr>
+      </table>
+
+      <h2>ニッケルチタン線の特徴【頻出】</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">ニッケルチタン線（Ni-Ti）の特性</div>
+        <ul>
+          <li><span class="highlight">超弾性</span>：大きなたわみを加えても発揮される力が一定</li>
+          <li><span class="highlight">形状記憶</span>：加熱によりもとの形状に戻る</li>
+          <li><span class="key">弱く持続的な力</span>を発揮</li>
+          <li><span class="key">レベリング</span>（歯列の配列）に最適</li>
+          <li>力の減衰が<span class="key">緩やか</span></li>
+          <li>永久変形を起こしにくい</li>
+          <li>除荷すると元に戻る</li>
+        </ul>
+      </div>
+
+      <h2>ワイヤーの断面形状【重要】</h2>
+
+      <table>
+        <tr>
+          <th>断面形状</th>
+          <th>特徴</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td class="key">ラウンドワイヤー<br>（丸型）</td>
+          <td>歯の<span class="key">傾斜移動</span>のみ<br>トルク付与<span class="caution">不可</span></td>
+          <td>治療初期<br>（レベリング）</td>
+        </tr>
+        <tr>
+          <td class="highlight">レクタンギュラーワイヤー<br>（角型）</td>
+          <td><span class="highlight">トルク付与可能</span><br>歯根のコントロール</td>
+          <td>治療後期<br>（仕上げ）</td>
+        </tr>
+      </table>
+
+      <h2>治療段階とワイヤー選択【頻出】</h2>
+
+      <table>
+        <tr>
+          <th>治療段階</th>
+          <th>材質</th>
+          <th>断面形状</th>
+        </tr>
+        <tr>
+          <td>レベリング<br>（治療初期）</td>
+          <td><span class="highlight">ニッケルチタン合金</span></td>
+          <td><span class="key">ラウンドワイヤー</span></td>
+        </tr>
+        <tr>
+          <td>空隙閉鎖・歯の移動<br>（治療中期）</td>
+          <td>ステンレス鋼</td>
+          <td>ラウンド→角型</td>
+        </tr>
+        <tr>
+          <td>トルク付与・仕上げ<br>（治療後期）</td>
+          <td><span class="highlight">ステンレス鋼</span></td>
+          <td><span class="highlight">レクタンギュラーワイヤー</span></td>
+        </tr>
+      </table>
+
+      <h2>矯正力を弱くする方法【頻出】</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">矯正力を弱くする工夫</div>
+        <ul>
+          <li><span class="highlight">ループを付与</span>：ワイヤーの長さを増大</li>
+          <li><span class="highlight">ニッケルチタン合金ワイヤー</span>を使用</li>
+          <li><span class="key">細いワイヤー</span>（小さい断面積）を使用</li>
+          <li><span class="key">弾性係数の小さいワイヤー</span>を使用</li>
+          <li><span class="key">ブラケット間距離を大きく</span>する</li>
+        </ul>
+      </div>
+
+      <h3>矯正力の大きさに影響する因子</h3>
+      <ul>
+        <li>力の大きさ ∝ ワイヤー直径の<span class="key">4乗</span>に比例</li>
+        <li>力の大きさ ∝ ワイヤー長さの<span class="key">3乗</span>に反比例</li>
+      </ul>
+
+      <h2>コイルスプリング</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="key">オープンコイルスプリング</span></td>
+          <td>空隙を<span class="highlight">離開</span>（広げる）</td>
+        </tr>
+        <tr>
+          <td><span class="key">クローズドコイルスプリング</span></td>
+          <td>空隙を<span class="highlight">閉鎖</span>（閉じる）</td>
+        </tr>
+      </table>
+
+      <h2>エラスティック（ゴム材料）</h2>
+      <p>素材は<span class="key">ラテックス（天然ゴム）</span>や<span class="key">熱硬化性ポリウレタンゴム</span>である。</p>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>用途</th>
+          <th>交換頻度</th>
+        </tr>
+        <tr>
+          <td>結紮用ゴム</td>
+          <td>ワイヤーとブラケットを連結</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td>リングタイプ（口腔内用）</td>
+          <td>顎内ゴム、顎間ゴム、歯間分離</td>
+          <td><span class="caution">1〜2日</span></td>
+        </tr>
+        <tr>
+          <td>リングタイプ（口腔外用）</td>
+          <td>顎外固定装置</td>
+          <td>1週間に1回</td>
+        </tr>
+        <tr>
+          <td><span class="key">チェーンタイプ</span></td>
+          <td>歯間空隙の閉鎖</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><span class="key">スレッドタイプ</span></td>
+          <td>ゴムの糸</td>
+          <td>－</td>
+        </tr>
+      </table>
+
+      <h2>高分子弾性材料</h2>
+      <h3>トゥースポジショナー</h3>
+      <p><span class="highlight">弾性高分子材料（シリコーンゴム）</span>で作られた保定装置。金属を使用しないため、金属アレルギー患者にも使用可能である。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105A122</div>
+        <p>マルチブラケット装置による治療の目的と矯正用材料・装置との組合せで適切なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 歯列のレベリング ── ニッケルチタン合金丸型ワイヤー<br>
+          b 犬歯の遠心移動 ── 垂直ゴム<br>
+          c 上顎切歯の口蓋側移動 ── Ⅲ級ゴム<br>
+          d 下顎臼歯の近心移動 ── トランスパラタルアーチ<br>
+          e 前歯へのトルク付与 ── ステンレス鋼角型ワイヤー
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="key">歯列のレベリング</span>には<span class="key">ニッケルチタン合金丸型ワイヤー</span>（超弾性で弱く持続的な力）。<span class="key">トルク付与</span>には<span class="key">ステンレス鋼角型ワイヤー</span>（レクタンギュラーワイヤー）。これが最も典型的な出題パターン。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A60</div>
+        <p>マルチブラケット装置を用いて矯正治療を行うこととした。矯正力を弱くする方法はどれか。2つ選べ。</p>
+        <div class="choices">
+          a ワイヤーにループを付与する。<br>
+          b ブラケット間距離を小さくする。<br>
+          c 断面積の大きいワイヤーを用いる。<br>
+          d 弾性係数の大きいワイヤーを用いる。<br>
+          e ニッケルチタン合金ワイヤーを用いる。
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】矯正力を弱くするには<span class="key">ループを付与</span>してワイヤー長を増大させる、<span class="key">ニッケルチタン合金ワイヤー</span>（超弾性で弱い力を発揮）を使用する。ブラケット間距離を<span class="caution">小さく</span>すると力は<span class="caution">強く</span>なる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C31</div>
+        <p>エッジワイズ法による切歯の舌側移動時に歯体移動を計画した。用いるアーチワイヤーの材質と線型の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ステンレス鋼 ーーー ラウンドワイヤー<br>
+          b ステンレス鋼 ーーー レクタンギュラーワイヤー<br>
+          c ニッケルチタン合金 ーー ラウンドワイヤー<br>
+          d ニッケルチタン合金 ーー レクタンギュラーワイヤー<br>
+          e チタンモリブデン合金 ーー レクタンギュラーワイヤー
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】<span class="key">歯体移動</span>には歯根のコントロール（トルク）が必要なため<span class="key">レクタンギュラーワイヤー</span>が必須。<span class="key">ステンレス鋼</span>と<span class="key">チタンモリブデン合金</span>のレクタンギュラーワイヤーが適切。ラウンドワイヤーでは傾斜移動しかできない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C122</div>
+        <p>矯正治療中の口腔内写真（別冊No.20）を別に示す。この段階で用いるアーチワイヤーに必要な特性はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110C122_1.png" alt="別冊No.20">
+        </div>
+        <div class="choices">
+          a 低い弾性限<br>
+          b 大きなたわみ<br>
+          c 高い弾性係数<br>
+          d 高い摩擦係数<br>
+          e 良好な超弾性
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】写真は仕上げ段階（歯列が整っている状態）。この段階では<span class="highlight">高い弾性係数</span>を持つステンレス鋼角型ワイヤーを用いてトルクを付与する。レベリング段階（初期）では超弾性のNi-Tiワイヤーを用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D23</div>
+        <p>マルチブラケット装置を用いた矯正治療でアーチワイヤーとともに使用するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 補助弾線<br>
+          b ボールクラスプ<br>
+          c Coffinスプリング<br>
+          d コイルスプリング<br>
+          e スレッドタイプのエラスティック
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】マルチブラケット装置で使用する弾性材料は<span class="key">コイルスプリング</span>と<span class="key">エラスティック</span>（スレッドタイプ等）である。補助弾線・Coffinスプリングは床矯正装置、ボールクラスプは床装置の維持装置である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B53</div>
+        <p>保定装置で高分子弾性材料を用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アクチバトール<br>
+          b 犬歯間保定装置<br>
+          c トゥースポジショナー<br>
+          d Beggタイプリテーナー<br>
+          e Hawleyタイプリテーナー
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">トゥースポジショナー</span>は弾性高分子材料（シリコーンゴム）で作られる。他の選択肢は金属ワイヤーやレジンを使用する装置である。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターンの整理</div>
+        <ul>
+          <li><span class="key">レベリング</span> → NiTi合金 + ラウンドワイヤー</li>
+          <li><span class="key">トルク付与・歯体移動</span> → ステンレス鋼 + レクタンギュラーワイヤー</li>
+          <li><span class="key">矯正力を弱くする</span> → ループ付与、NiTi使用、細いワイヤー</li>
+          <li><span class="key">超弾性</span> → ニッケルチタン合金の特徴</li>
+          <li><span class="key">高分子弾性材料</span> → トゥースポジショナー</li>
+        </ul>
+      </div>
+
+      <p class="note">参考：歯科矯正学（相馬）p.193-195（矯正用材料の特性、線材料）</p>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>矯正力と生体反応 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .flow-box {
+      background: linear-gradient(135deg, #fff3e0 0%, #F5F5F7 100%);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      text-align: center;
+    }
+    .flow-item { display: inline-block; padding: 6px 12px; background: white; border-radius: 8px; margin: 4px; }
+    .flow-arrow { color: var(--caution); font-weight: bold; margin: 0 4px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 矯正力と生体反応</span>
+    <h1>矯正力と生体反応</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：傾斜移動時の歯根膜変化</div>
+        <ul>
+          <li><span class="key">牽引側</span>：歯根膜線維の<span class="highlight">伸展</span>、骨添加、類セメント質形成</li>
+          <li><span class="key">圧迫側</span>：充血帯→貧血帯→<span class="highlight">硝子様変性</span>→穿下性骨吸収</li>
+          <li>傾斜移動では<span class="caution">歯冠側と根尖側で圧迫・牽引が逆</span>になる</li>
+        </ul>
+      </div>
+
+      <h2>1. 圧迫側と牽引側の基本</h2>
+
+      <p>矯正力が歯に加わると、歯根膜には<span class="key">圧迫側</span>と<span class="key">牽引側</span>という力学的環境が異なる二つの領域が形成される。</p>
+
+      <table>
+        <tr><th>領域</th><th>歯根膜の状態</th><th>骨の変化</th></tr>
+        <tr>
+          <td class="key">圧迫側</td>
+          <td>歯根膜が圧縮される</td>
+          <td class="highlight">骨吸収</td>
+        </tr>
+        <tr>
+          <td class="key">牽引側</td>
+          <td>歯根膜線維が伸展される</td>
+          <td class="highlight">骨添加（形成）</td>
+        </tr>
+      </table>
+
+      <h2>2. 圧迫側での反応</h2>
+
+      <h3>圧迫側の反応過程</h3>
+      <div class="flow-box">
+        <span class="flow-item">血管圧迫</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item key">充血帯</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item key">貧血帯</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item highlight">硝子様変性</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item caution">穿下性骨吸収</span>
+      </div>
+
+      <table>
+        <tr><th>段階</th><th>状態</th><th>骨吸収の機転</th></tr>
+        <tr>
+          <td class="key">充血帯</td>
+          <td>軽度の血管圧迫、血流障害軽度<br>破骨細胞・マクロファージ出現</td>
+          <td class="highlight">直接性吸収</td>
+        </tr>
+        <tr>
+          <td class="key">貧血帯</td>
+          <td>血管完全圧迫、血流停止<br>組織壊死・細胞死</td>
+          <td rowspan="2" class="highlight">穿下性吸収<br>（間接性吸収）</td>
+        </tr>
+        <tr>
+          <td class="key">硝子様変性</td>
+          <td>歯根膜線維・細胞外基質の変性<br>透明な硝子様の外観</td>
+        </tr>
+      </table>
+
+      <h3>骨吸収の2つの機転</h3>
+      <table>
+        <tr><th>種類</th><th>英語</th><th>特徴</th></tr>
+        <tr>
+          <td class="key">直接性吸収</td>
+          <td>Direct resorption</td>
+          <td>充血帯で破骨細胞が歯槽骨表層を<span class="highlight">直接吸収</span><br>生理的な歯の移動でも認められる</td>
+        </tr>
+        <tr>
+          <td class="key">穿下性吸収</td>
+          <td>Undermining resorption</td>
+          <td>貧血帯・硝子様変性部で<span class="highlight">骨髄腔側から間接的に吸収</span><br>過度な矯正力で生じる</td>
+        </tr>
+      </table>
+
+      <h2>3. 牽引側での反応</h2>
+
+      <h3>牽引側で起こる変化</h3>
+      <ul>
+        <li><span class="highlight">歯根膜線維の伸展</span></li>
+        <li>血流の亢進</li>
+        <li>線維芽細胞・骨芽細胞・セメント芽細胞の活性化</li>
+        <li><span class="key">骨形成</span>：類骨 → 束状骨 → 層板骨</li>
+        <li><span class="key">類セメント質の形成</span></li>
+        <li>歯根膜線維の再配列</li>
+      </ul>
+
+      <h2>4. 傾斜移動時の歯根膜変化【頻出】</h2>
+
+      <p>傾斜移動では、歯冠側と根尖側で<span class="caution">圧迫・牽引が逆</span>になる。</p>
+
+      <h3>例：歯を近心に傾斜移動させた場合</h3>
+      <table>
+        <tr><th>部位</th><th>近心側</th><th>遠心側</th></tr>
+        <tr>
+          <td class="key">歯冠側</td>
+          <td class="caution">圧迫側</td>
+          <td>牽引側</td>
+        </tr>
+        <tr>
+          <td class="key">根尖側</td>
+          <td class="highlight">牽引側</td>
+          <td class="caution">圧迫側</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">104C112</div>
+        <p>リンガルアーチを用いて歯を近心傾斜移動させた場合に、根尖部近心側歯根膜にみられる変化はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 充血帯<br>
+          b 貧血帯<br>
+          c 硝子変性<br>
+          d 破骨細胞の増加<br>
+          e 歯根膜線維の伸展
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】近心傾斜移動では、歯冠部近心側が圧迫側、<span class="key">根尖部近心側が牽引側</span>となる。牽引側では<span class="highlight">歯根膜線維の伸展</span>が起こる。充血帯・貧血帯・硝子様変性・破骨細胞増加は圧迫側の反応。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A67</div>
+        <p>矯正歯科治療中の口腔内写真（別冊No.23）を別に示す。<br>上顎側切歯の根尖部遠心側歯根膜に生じるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115A67_1.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a 血流障害<br>
+          b 硝子様変性<br>
+          c 穿下性骨吸収<br>
+          d 歯根膜線維の伸展<br>
+          e 類セメント質の形成
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】写真から上顎側切歯が舌側（口蓋側）に傾斜移動していることがわかる。この場合、根尖部遠心側は<span class="key">牽引側</span>となる。牽引側では<span class="highlight">歯根膜線維の伸展</span>と<span class="highlight">類セメント質の形成</span>が起こる。血流障害・硝子様変性・穿下性骨吸収は圧迫側の反応。</p>
+      </div>
+
+      <h2>5. 関与する細胞</h2>
+
+      <table>
+        <tr><th>細胞</th><th>役割</th></tr>
+        <tr>
+          <td class="key">破骨細胞</td>
+          <td>圧迫側で骨吸収を担当</td>
+        </tr>
+        <tr>
+          <td class="key">骨芽細胞</td>
+          <td>牽引側で骨形成を担当</td>
+        </tr>
+        <tr>
+          <td class="key">セメント芽細胞</td>
+          <td>牽引側でセメント質形成を担当</td>
+        </tr>
+        <tr>
+          <td class="key">線維芽細胞</td>
+          <td>歯根膜線維の形成・再配列</td>
+        </tr>
+        <tr>
+          <td class="key">マクロファージ</td>
+          <td>変性組織の吸収</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：問題の解き方</div>
+        <ul>
+          <li>① 歯の移動方向を確認（近心/遠心/舌側など）</li>
+          <li>② 傾斜移動なら歯冠側と根尖側で圧迫・牽引が逆</li>
+          <li>③ 問われている部位が<span class="key">牽引側</span>か<span class="key">圧迫側</span>か判断</li>
+          <li>④ 牽引側→<span class="highlight">線維伸展・骨添加・類セメント質</span></li>
+          <li>⑤ 圧迫側→<span class="caution">充血帯・貧血帯・硝子様変性・穿下性吸収</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

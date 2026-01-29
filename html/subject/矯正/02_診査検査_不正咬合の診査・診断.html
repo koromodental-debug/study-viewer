@@ -59,7 +59,7 @@
     .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
     .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
     .question-images { margin: 12px 0; }
-    .question-images img { max-width: 70%; margin: 5px; border-radius: 8px; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
     .category-tag {
       display: inline-block;
       background: var(--bg-secondary);
@@ -99,37 +99,27 @@
         <span class="key">治療計画立案</span>
       </div>
 
-      <h2>顔貌分析</h2>
-      <h3>正貌からの評価</h3>
-      <ul>
-        <li>顔の<span class="key">左右対称性</span></li>
-        <li>正中線の偏位</li>
-        <li>上顎前歯部歯肉の露出（Gummy smile）</li>
-      </ul>
+      <div class="point-box">
+        <div class="point-box-title">頻出パターン</div>
+        <ul>
+          <li><span class="key">セファロ分析・骨格性評価</span>：ANB角による骨格性Ⅱ級/Ⅲ級の判定</li>
+          <li><span class="key">顔貌・側貌の評価</span>：E-line、オトガイ緊張、側貌型（convex/concave）</li>
+          <li><span class="key">エックス線所見</span>：先天欠如、埋伏歯、晩期残存の判読</li>
+          <li><span class="key">模型分析</span>：ディスクレパンシー、トゥースサイズレイシオ</li>
+        </ul>
+      </div>
 
-      <h3>側貌からの評価</h3>
-      <p><span class="key">側貌型</span>の判定と<span class="key">口唇突出度</span>の評価が重要</p>
+      <h2>1. 顔貌・側貌の評価</h2>
 
+      <h3>側貌型の分類</h3>
       <table>
-        <tr><th>側貌型</th><th>特徴</th><th>関連する不正咬合</th></tr>
-        <tr>
-          <td><span class="key">Convex</span>（凸顔型）</td>
-          <td>中顔面が前方に突出</td>
-          <td>上顎前突</td>
-        </tr>
-        <tr>
-          <td><span class="key">Straight</span>（直顔型）</td>
-          <td>調和のとれた側貌</td>
-          <td>正常</td>
-        </tr>
-        <tr>
-          <td><span class="key">Concave</span>（凹顔型）</td>
-          <td>下顎が前方に突出</td>
-          <td>下顎前突</td>
-        </tr>
+        <tr><th>分類</th><th>特徴</th><th>関連する不正咬合</th></tr>
+        <tr><td class="key">Convex（凸顔型）</td><td>上顎が前方に突出</td><td>上顎前突、骨格性Ⅱ級</td></tr>
+        <tr><td class="key">Straight（直顔型）</td><td>上下顎のバランスが良好</td><td>正常咬合</td></tr>
+        <tr><td class="key">Concave（凹顔型）</td><td>下顎が前方に突出</td><td>下顎前突、骨格性Ⅲ級</td></tr>
       </table>
 
-      <h2>側貌分析の指標</h2>
+      <h3>側貌分析の指標</h3>
       <table>
         <tr><th>指標</th><th>定義</th><th>評価内容</th></tr>
         <tr>
@@ -154,14 +144,68 @@
         </tr>
       </table>
 
-      <div class="point-box">
-        <div class="point-box-title">E-lineの評価</div>
-        <ul>
-          <li>E-lineより<span class="key">前方</span>にある → <span class="highlight">プラス（＋）</span></li>
-          <li>E-lineより<span class="key">後方</span>にある → <span class="highlight">マイナス（−）</span></li>
-          <li>日本人は欧米人に比べ口唇がやや前方にある傾向</li>
-        </ul>
-      </div>
+      <h3>オトガイ部の緊張</h3>
+      <p><span class="highlight">上顎前突</span>で口唇閉鎖時にオトガイ筋の緊張（梅干し様のしわ）がみられる。口唇閉鎖不全を代償するために生じる。</p>
+
+      <h2>2. セファロ分析・骨格性評価</h2>
+
+      <h3>主な計測点</h3>
+      <table>
+        <tr><th>計測点</th><th>定義</th></tr>
+        <tr><td class="key">N（Nasion）</td><td>鼻前頭縫合部の最前点</td></tr>
+        <tr><td class="key">S（Sella）</td><td>トルコ鞍の幾何学的中心点</td></tr>
+        <tr><td class="key">A点</td><td>上顎歯槽基底部の最深点</td></tr>
+        <tr><td class="key">B点</td><td>下顎歯槽基底部の最深点</td></tr>
+        <tr><td class="key">Pog（Pogonion）</td><td>オトガイ隆起の最突出点</td></tr>
+        <tr><td class="key">Gn（Gnathion）</td><td>顔面平面と下顎下縁平面の交点</td></tr>
+      </table>
+
+      <h3>骨格性分類（ANB角）</h3>
+      <p><span class="highlight">ANB角 = SNA角 − SNB角</span>で上下顎の前後的位置関係を判定する。</p>
+      <table>
+        <tr><th>分類</th><th>ANB角</th><th>特徴</th></tr>
+        <tr><td class="key">骨格性Ⅰ級</td><td>2〜4°</td><td>上下顎の位置関係が正常</td></tr>
+        <tr><td class="key">骨格性Ⅱ級</td><td>4°より大</td><td>上顎前突傾向</td></tr>
+        <tr><td class="key">骨格性Ⅲ級</td><td>2°より小（負）</td><td>下顎前突傾向</td></tr>
+      </table>
+
+      <h3>垂直的顔面パターン</h3>
+      <table>
+        <tr><th>分類</th><th>下顎下縁平面角</th><th>特徴</th></tr>
+        <tr><td class="key">ハイアングル</td><td>大きい</td><td>長顔型、開咬傾向、Y軸角大</td></tr>
+        <tr><td class="key">ローアングル</td><td>小さい</td><td>短顔型、過蓋咬合傾向</td></tr>
+      </table>
+
+      <h2>3. エックス線所見（歯の異常）</h2>
+
+      <h3>先天欠如の好発部位</h3>
+      <table>
+        <tr><th>順位</th><th>歯種</th></tr>
+        <tr><td>1位</td><td class="highlight">下顎第二小臼歯</td></tr>
+        <tr><td>2位</td><td class="highlight">上顎側切歯</td></tr>
+        <tr><td>3位</td><td>上顎第二小臼歯</td></tr>
+      </table>
+      <p class="note">※唇顎口蓋裂患者では裂隙側の上顎側切歯の先天欠如が多い</p>
+
+      <h3>晩期残存</h3>
+      <p>後継永久歯の<span class="key">先天欠如</span>や<span class="key">埋伏</span>により乳歯が脱落せず残存した状態。パノラマエックス線写真で後継永久歯の有無を確認する。</p>
+
+      <h3>アデノイド肥大</h3>
+      <p>咽頭扁桃の肥大により<span class="highlight">口呼吸</span>を引き起こす。セファログラムの側面像で咽頭気道の狭窄として確認できる。</p>
+      <ul>
+        <li>アデノイド顔貌：開口、口唇閉鎖不全</li>
+        <li>関連する不正咬合：上顎歯列弓の狭窄、開咬、上顎前突</li>
+      </ul>
+
+      <h2>4. 模型分析</h2>
+
+      <h3>トゥースサイズレイシオ</h3>
+      <table>
+        <tr><th>指標</th><th>計算式</th><th>基準値</th></tr>
+        <tr><td class="key">アンテリアレイシオ</td><td>下顎前歯幅径総和 / 上顎前歯幅径総和 × 100</td><td class="highlight">77.2%</td></tr>
+        <tr><td class="key">オーバーオールレイシオ</td><td>下顎歯列幅径総和 / 上顎歯列幅径総和 × 100</td><td class="highlight">91.3%</td></tr>
+      </table>
+      <p class="note">※上顎側切歯が矮小歯の場合、アンテリアレイシオは大きくなる（空隙の原因）</p>
 
       <h2>過去問</h2>
 
@@ -176,25 +220,104 @@
           e オトガイの前後的位置
         </div>
         <div class="answer">正解：d</div>
-        <p>【解説】E-line（Esthetic line）は<span class="highlight">鼻尖とオトガイ</span>を結ぶ線で、この線に対する<span class="highlight">上下口唇の突出度</span>を評価する。鼻の高さ、顔の対称性は正貌から評価。上顎突出度やオトガイの位置はセファロ分析で評価する。</p>
+        <p>【解説】E-lineは鼻尖とオトガイ部を結ぶ線で、この線に対する<span class="key">上下口唇の突出度</span>を評価する。</p>
       </div>
 
       <div class="question-box">
-        <div class="q-number">105A128</div>
-        <p>不正咬合の診断過程を図に示す。<br>（　　　）の過程で行われるのはどれか。2つ選べ。</p>
-        <div class="question-images">
-          <img src="../../../kokushi-app-v2/dist/images/105回_Web画像/105A128.png" alt="診断過程の図">
-        </div>
+        <div class="q-number">109B1</div>
+        <p>10歳の女児。歯並びが悪いことを主訴として来院した。初診時の顔面写真と口腔模型の写真を別に示す。正しい所見はどれか。2つ選べ。</p>
         <div class="choices">
-          a 成長予測<br>
-          b 印象採得<br>
-          c 現病歴の聴取<br>
-          d 治療計画の立案<br>
-          e 頭部エックス線規格撮影
+          a 翼状捻転<br>
+          b オトガイ部の緊張<br>
+          c Hellmanの歯齢ⅢB期<br>
+          d コンケイブタイプの側貌<br>
+          e 遠心階段型のターミナルプレーン
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】上顎前突症例。口唇閉鎖時の<span class="key">オトガイ部の緊張</span>と、上顎中切歯の<span class="key">翼状捻転</span>が認められる。側貌はconvex（凸顔型）である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B31</div>
+        <p>19歳の女性。食物がうまく噛めないことを主訴として来院した。開口障害を認める。セファロ分析の結果を図に示す。正しい所見はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 上気道の狭窄<br>
+          b 上顎骨の過成長<br>
+          c 下顎骨の劣成長<br>
+          d 下顎中切歯の舌側傾斜<br>
+          e コンケイブタイプの側貌
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】開咬を伴う骨格性Ⅱ級症例。セファロ分析でSNB角の減少（<span class="key">下顎骨の劣成長</span>）と<span class="key">上気道の狭窄</span>が認められる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D24</div>
+        <p>前歯の歯並びが悪いことを主訴として来院した18歳の男子。初診時の口腔内写真とエックス線画像を別に示す。正しい所見はどれか。2つ選べ。</p>
+        <div class="choices">
+          a ５４┘先天欠如<br>
+          b └４５先天欠如<br>
+          c ┌DE晩期残存<br>
+          d ┌４５先天欠如<br>
+          e BA┐晩期残存
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】パノラマで右側下顎54と左側上顎45の<span class="key">先天欠如</span>が認められる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C47</div>
+        <p>12歳の男児。前歯の歯並びが悪いことを主訴として来院した。認められるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 過剰歯<br>
+          b 埋伏歯<br>
+          c 癒合歯<br>
+          d 癒着歯<br>
+          e 矮小歯
         </div>
         <div class="answer">正解：b, e</div>
-        <p>【解説】図の（　）部分は「検査・資料採得」の段階。この段階では<span class="highlight">印象採得</span>（b）や<span class="highlight">頭部エックス線規格撮影</span>（e）などの資料採得を行う。現病歴の聴取（c）は診察の段階、成長予測（a）は症例分析の段階、治療計画の立案（d）は診断後の段階で行う。</p>
+        <p>【解説】上顎側切歯の<span class="key">矮小歯</span>と、パノラマで上顎犬歯の<span class="key">埋伏</span>が認められる。上顎側切歯の矮小歯は上顎犬歯の埋伏の原因となりうる。</p>
       </div>
+
+      <div class="question-box">
+        <div class="q-number">107D21</div>
+        <p>14歳の女子。上顎前歯部の空隙を主訴として来院した。大きな値を示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a オーバーバイト<br>
+          b 上顎の犬歯間幅径<br>
+          c アンテリアレイシオ<br>
+          d 上顎のrequired arch length<br>
+          e 下顎のavailable arch length
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】上顎側切歯の<span class="key">矮小歯</span>により上顎前歯幅径総和が小さくなるため、<span class="key">アンテリアレイシオ</span>（下顎/上顎）が大きくなり、上顎前歯部に空隙が生じる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102C38</div>
+        <p>12歳の女児。叢生を主訴として来院した。著しい口呼吸を認めた。正しい所見はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 大きいオーバージェット<br>
+          b 小さいオーバーバイト<br>
+          c AngleⅠ級の大臼歯関係<br>
+          d 下顎の鞍状歯列弓<br>
+          e アデノイド肥大
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】口呼吸を伴う開咬症例。セファロで<span class="key">アデノイド肥大</span>による咽頭気道の狭窄が認められる。開咬のため<span class="key">オーバーバイトは小さい</span>（負の値）。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：診査のポイント</div>
+        <ul>
+          <li><span class="key">顔貌</span>：側貌型、E-line、オトガイ緊張の有無</li>
+          <li><span class="key">セファロ</span>：ANB角（骨格性分類）、下顎下縁平面角（垂直的パターン）</li>
+          <li><span class="key">パノラマ</span>：先天欠如、埋伏歯、晩期残存</li>
+          <li><span class="key">模型</span>：トゥースサイズレイシオ、ディスクレパンシー</li>
+        </ul>
+      </div>
+
+      <p class="note">参考：歯科矯正学（相馬）（セファロ分析、顔貌分析）</p>
 
     </div>
   </div>

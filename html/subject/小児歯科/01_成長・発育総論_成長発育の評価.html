@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>成長発育の評価 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 成長・発育総論</span>
+    <h1>成長発育の評価</h1>
+    <div class="container">
+
+      <h2>年齢の分類</h2>
+      <h3>暦齢と生理的年齢</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>定義</th>
+          <th>評価指標</th>
+        </tr>
+        <tr>
+          <td><span class="key">暦齢</span></td>
+          <td>出生からの時間経過</td>
+          <td>生年月日から計算</td>
+        </tr>
+        <tr>
+          <td><span class="key">生理的年齢</span></td>
+          <td>身体の生物学的成熟度</td>
+          <td>骨年齢、歯齢、第二次性徴</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">生理的年齢の評価指標</div>
+        <ul>
+          <li><span class="highlight">骨年齢</span>：手根骨のX線写真で評価</li>
+          <li><span class="highlight">歯齢</span>：Hellmanの歯齢、Nollaの石灰化年齢</li>
+          <li><span class="highlight">第二次性徴の発現年齢</span></li>
+        </ul>
+        <p class="note"><span class="caution">精神年齢・暦年齢は生理的年齢に含まれない</span></p>
+      </div>
+
+      <h2>骨年齢の評価</h2>
+      <h3>手根骨の化骨</h3>
+      <p>左手のX線写真で手根骨の形態的成熟度を評価する。</p>
+      <table>
+        <tr>
+          <th>年齢</th>
+          <th>化骨数</th>
+          <th>出現する骨</th>
+        </tr>
+        <tr>
+          <td>1歳</td>
+          <td>2</td>
+          <td>有頭骨、有鉤骨</td>
+        </tr>
+        <tr>
+          <td>2〜3歳</td>
+          <td>3</td>
+          <td>＋橈骨下端</td>
+        </tr>
+        <tr>
+          <td>4歳</td>
+          <td>4</td>
+          <td>＋三角骨</td>
+        </tr>
+        <tr>
+          <td>5歳</td>
+          <td>5</td>
+          <td>＋月状骨</td>
+        </tr>
+        <tr>
+          <td>6歳</td>
+          <td>6</td>
+          <td>＋大多角骨</td>
+        </tr>
+        <tr>
+          <td>7歳</td>
+          <td>7</td>
+          <td>＋小多角骨</td>
+        </tr>
+        <tr>
+          <td>8歳</td>
+          <td>8</td>
+          <td>＋舟状骨</td>
+        </tr>
+        <tr>
+          <td>9〜11歳</td>
+          <td>9</td>
+          <td>＋尺骨下端</td>
+        </tr>
+        <tr>
+          <td>12歳</td>
+          <td>10</td>
+          <td>＋豆状骨</td>
+        </tr>
+      </table>
+
+      <h3>母指尺側種子骨と成長スパート</h3>
+      <div class="point-box">
+        <div class="point-box-title">種子骨出現のタイミング</div>
+        <ul>
+          <li><span class="highlight">母指尺側種子骨は思春期性成長のピークより約1年早く出現</span></li>
+          <li>女子：10〜11歳頃、男子：12〜13歳頃</li>
+          <li>矯正歯科で治療タイミングの判断に使用</li>
+        </ul>
+      </div>
+
+      <h2>発育指数</h2>
+      <h3>Kaup指数（カウプ指数）</h3>
+      <p><span class="key">対象</span>：乳幼児（生後3か月〜5歳）</p>
+      <p><span class="key">計算式</span>：<span class="highlight">体重(g) ÷ 身長(cm)² × 10</span></p>
+      <p><span class="key">正常値</span>：15〜19（年齢により変動）</p>
+
+      <h3>ローレル指数</h3>
+      <p><span class="key">対象</span>：学童期以降</p>
+      <p><span class="key">計算式</span>：体重(g) ÷ 身長(cm)³ × 10⁴</p>
+
+      <h3>BMI（Body Mass Index）</h3>
+      <p><span class="key">対象</span>：主に成人</p>
+      <p><span class="key">計算式</span>：体重(kg) ÷ 身長(m)²</p>
+
+      <h2>体重・身長の発育</h2>
+      <h3>体重の変化</h3>
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>体重</th>
+          <th>出生時比</th>
+        </tr>
+        <tr>
+          <td>出生時</td>
+          <td>約3,000g</td>
+          <td>1倍</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">3か月</span></td>
+          <td>6〜7kg</td>
+          <td><span class="highlight">2倍</span></td>
+        </tr>
+        <tr>
+          <td>1年</td>
+          <td>約9kg</td>
+          <td>3倍</td>
+        </tr>
+        <tr>
+          <td>3年</td>
+          <td>約15kg</td>
+          <td>4倍強</td>
+        </tr>
+      </table>
+
+      <h3>身長の変化</h3>
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>身長</th>
+          <th>出生時比</th>
+        </tr>
+        <tr>
+          <td>出生時</td>
+          <td>約50cm</td>
+          <td>1倍</td>
+        </tr>
+        <tr>
+          <td>1年</td>
+          <td>約75cm</td>
+          <td>1.5倍</td>
+        </tr>
+        <tr>
+          <td>4年</td>
+          <td>約100cm</td>
+          <td>2倍</td>
+        </tr>
+      </table>
+
+      <h3>エネルギー必要量</h3>
+      <p><span class="highlight">低年齢ほど体重あたりのエネルギー必要量は高い</span></p>
+      <p>1歳児の1日の総エネルギー必要量：<span class="highlight">約1,000kcal</span></p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115B40</div>
+        <p>生理的年齢の評価に用いるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 歯　齢<br>
+          b 骨年齢<br>
+          c 暦年齢<br>
+          d 精神年齢<br>
+          e 第二次性徴の発現年齢
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】生理的年齢は身体の生物学的成熟度を表す。<span class="key">骨年齢</span>（手根骨X線）、<span class="key">歯齢</span>（Hellmanの歯齢など）、<span class="key">第二次性徴の発現年齢</span>が指標となる。<span class="caution">暦年齢は出生からの時間経過であり生理的年齢ではない</span>。精神年齢は知能指数（IQ）の算出に用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A118</div>
+        <p>身長の成長速度曲線を図に示す。<br>母指の尺側に種子骨が出現する時期はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107A118_1.png" alt="成長速度曲線">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】母指尺側種子骨は<span class="highlight">思春期性成長のピーク（PHV: Peak Height Velocity）より約1年早く出現</span>する。成長速度曲線で「ウ」は成長スパート開始〜ピーク直前の時期にあたる。種子骨出現は成長スパートの開始を示す重要な指標。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C23</div>
+        <p>体重が出生時の約2倍になる時期はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 生後1か月<br>
+          b 生後3か月<br>
+          c 生後6か月<br>
+          d 生後9か月<br>
+          e 生後12か月
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】出生時体重は約3,000g。<span class="highlight">生後3か月で約2倍（6〜7kg）</span>、1年で約3倍（9kg）になる。乳児期前半は体重増加が著しい時期である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C22</div>
+        <p>［　　　］に入る組合せで正しいのはどれか。1つ選べ。<br>小児における体重1kgあたりのエネルギー必要量は低年齢ほど［　①　］。1日の総必要量は1歳ころで［　②　］kcalである。</p>
+        <div class="choices">
+          a 低　い ーー 500<br>
+          b 低　い ーー 1,000<br>
+          c 高　い ーー 500<br>
+          d 高　い ーー 1,000<br>
+          e 高　い ーー 2,000
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】成長期の小児は基礎代謝が高く、組織合成のためのエネルギーも必要なため、<span class="highlight">低年齢ほど体重あたりのエネルギー必要量は高い</span>。1歳児の1日総エネルギー必要量は<span class="highlight">約1,000kcal</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C90</div>
+        <p>身長60cm、体重6,120gの6か月の男児のKaup指数を求めよ。ただし、小数点以下第1位の数字が得られた場合は四捨五入すること。</p>
+        <div class="choices">
+          a 【計算問題】数値を入力
+        </div>
+        <div class="answer">正解：17</div>
+        <p>【解説】Kaup指数 = 体重(g) ÷ 身長(cm)² × 10<br>
+        = 6,120 ÷ (60 × 60) × 10<br>
+        = 6,120 ÷ 3,600 × 10<br>
+        = 1.7 × 10 = <span class="highlight">17</span><br>
+        6か月児の正常値は16〜18なので、この児は正常範囲内。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

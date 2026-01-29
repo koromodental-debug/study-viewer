@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診査・診断 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 小児の歯科治療</span>
+    <h1>診査・診断</h1>
+    <div class="container">
+
+      <h2>小児歯科の画像診断（頻出）</h2>
+      <p>口腔内写真とエックス線画像から所見を読み取る問題が多い。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">画像診断の頻出所見</div>
+        <ul>
+          <li><span class="highlight">過剰歯</span>：上顎前歯部に多い、正中離開の原因</li>
+          <li><span class="highlight">先天欠如歯</span>：下顎第二小臼歯、側切歯に多い</li>
+          <li><span class="key">埋伏歯</span>：X線で歯胚の位置確認</li>
+          <li><span class="key">癒合歯</span>：歯数減少の原因</li>
+          <li><span class="key">内部吸収</span>：歯の変色（ピンク色）の原因</li>
+        </ul>
+      </div>
+
+      <h2>過剰歯</h2>
+      <h3>特徴</h3>
+      <ul>
+        <li><span class="highlight">上顎正中部</span>に好発（正中過剰歯）</li>
+        <li>正中離開、隣在歯の萌出遅延・位置異常の原因</li>
+        <li>口蓋側に萌出することがある</li>
+      </ul>
+
+      <h3>対応</h3>
+      <table>
+        <tr>
+          <th>状態</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td>永久歯の萌出を妨げている</td>
+          <td><span class="highlight">抜去</span></td>
+        </tr>
+        <tr>
+          <td>口蓋に萌出している</td>
+          <td>抜去</td>
+        </tr>
+        <tr>
+          <td>埋伏で影響なし</td>
+          <td>経過観察</td>
+        </tr>
+      </table>
+
+      <h2>先天欠如歯</h2>
+      <h3>好発部位</h3>
+      <ul>
+        <li><span class="key">下顎第二小臼歯</span>（最多）</li>
+        <li><span class="key">上顎側切歯</span></li>
+        <li>下顎側切歯</li>
+      </ul>
+      <p>先天欠如があると乳歯が晩期残存する。</p>
+
+      <h2>空隙歯列の原因</h2>
+      <table>
+        <tr>
+          <th>原因</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="key">埋伏歯</span></td>
+          <td>正常位置に萌出せず空隙が残る</td>
+        </tr>
+        <tr>
+          <td><span class="key">矮小歯</span></td>
+          <td>歯冠が小さく空隙が生じる</td>
+        </tr>
+        <tr>
+          <td><span class="key">先天欠如歯</span></td>
+          <td>歯の数が不足</td>
+        </tr>
+        <tr>
+          <td>癒合歯</td>
+          <td>2歯が1歯分となり空隙発生</td>
+        </tr>
+        <tr>
+          <td>過剰歯</td>
+          <td>正中離開の原因となることがある</td>
+        </tr>
+      </table>
+
+      <h2>歯の変色の診断</h2>
+      <table>
+        <tr>
+          <th>変色の色調</th>
+          <th>原因</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ピンク〜赤色</span></td>
+          <td><span class="highlight">内部吸収</span>（歯髄腔が透見）</td>
+        </tr>
+        <tr>
+          <td>灰色〜黒色</td>
+          <td>歯髄壊死（外傷後など）</td>
+        </tr>
+        <tr>
+          <td>黄褐色</td>
+          <td>テトラサイクリン歯、エナメル質形成不全</td>
+        </tr>
+        <tr>
+          <td>白斑</td>
+          <td>初期齲蝕、フッ素症</td>
+        </tr>
+      </table>
+
+      <h2>追加検査の選択</h2>
+      <table>
+        <tr>
+          <th>目的</th>
+          <th>検査</th>
+        </tr>
+        <tr>
+          <td>埋伏歯・過剰歯の三次元的位置確認</td>
+          <td><span class="highlight">歯科用コーンビームCT</span></td>
+        </tr>
+        <tr>
+          <td>歯髄の生死判定</td>
+          <td>歯髄電気診（幼若歯は反応不安定）</td>
+        </tr>
+        <tr>
+          <td>根尖病変の評価</td>
+          <td>デンタルX線、パノラマX線</td>
+        </tr>
+      </table>
+
+      <h2>過去問（代表例）</h2>
+
+      <div class="question-box">
+        <div class="q-number">107B39</div>
+        <p>6歳の男児。口蓋部の違和感を主訴として母親と来院した。2週前から気付いていたが、疼痛がないため放置していたという。初診時の口腔内写真（別冊No.39A）とエックス線写真（別冊No.39B）を別に示す。診断とその対応との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107B39_1.png" alt="口腔内写真">
+          <img src="../../../images/107回_Web画像/107B39_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 過剰歯————経過観察<br>
+          b 過剰歯————咬合調整<br>
+          c 過剰歯————抜　去<br>
+          d 切歯結節———経過観察<br>
+          e 切歯結節———咬合調整
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】口蓋に萌出した<span class="highlight">過剰歯</span>であり、<span class="highlight">抜去</span>が適応。X線で正中過剰歯が確認でき、すでに萌出しているため経過観察ではなく抜去を行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A73</div>
+        <p>5歳の男児。下顎左側乳犬歯の変色を主訴として来院した。6か月前に気付いたが、そのままにしていたという。初診時の口腔内写真（別冊No.19A）とエックス線画像（別冊No.19B）を別に示す。原因として考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112A73_1.png" alt="口腔内写真">
+          <img src="../../../images/112回_Web画像/112A73_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 歯内歯<br>
+          b 歯髄充血<br>
+          c 内部吸収<br>
+          d 外来性色素沈着<br>
+          e 象牙質形成不全症
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】歯冠部の<span class="highlight">ピンク色の変色</span>は<span class="highlight">内部吸収</span>を示唆。X線で歯髄腔の拡大（内部吸収像）が確認できる。歯髄充血は一過性で6か月も持続しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D63</div>
+        <p>11歳の男児。歯と歯の間に隙間があるのが気になり来院した。初診時の口腔内写真（別冊No.17A）とエックス線画像（別冊No.17B）を別に示す。空隙歯列の原因はどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D63_1.png" alt="口腔内写真">
+          <img src="../../../images/113回_Web画像/113D63_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 過剰歯<br>
+          b 埋伏歯<br>
+          c 癒合歯<br>
+          d 矮小歯<br>
+          e 先天欠如歯
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】空隙歯列の原因として<span class="highlight">埋伏歯</span>（正常位置に萌出しない）、<span class="highlight">矮小歯</span>（歯冠が小さい）、<span class="highlight">先天欠如歯</span>（歯数不足）が挙げられる。過剰歯は正中離開の原因にはなるが、空隙歯列全般の原因としては選択されない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D74</div>
+        <p>5歳の女児。上顎前歯の形態異常を近医で指摘され来院した。2か月前に上顎左側乳中切歯が脱落し後継歯が萌出してきたという。初診時の口腔内写真（別冊No.25A）とエックス線画像（別冊No.25B）を別に示す。治療方針の決定に有用なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D74_1.png" alt="口腔内写真">
+          <img src="../../../images/113回_Web画像/113D74_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a MRI<br>
+          b 咬合力検査<br>
+          c 歯髄電気診<br>
+          d 歯周ポケット検査<br>
+          e 歯科用コーンビームCT
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】形態異常のある歯の詳細な位置・形態を確認するには<span class="highlight">歯科用コーンビームCT</span>が有用。三次元的な評価が可能で、埋伏歯や過剰歯の位置関係、歯根の形態などを正確に把握できる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A45</div>
+        <p>12歳の女児。口腔内の精査を希望して来院した。学校健康診断で生え代わりの異常の可能性を指摘されたという。自覚症状はない。初診時の口腔内写真（別冊No.13A）とエックス線画像（別冊No.13B）を別に示す。正しい所見はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115A45_1.png" alt="口腔内写真">
+          <img src="../../../images/115回_Web画像/115A45_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a C」の晩期残存<br>
+          b └3の歯胚位置異常<br>
+          c 5」の先天欠如<br>
+          d 「2の先天欠如<br>
+          e 5┐の先天欠如
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】X線画像から<span class="highlight">└3（下顎左側犬歯）の歯胚位置異常</span>と<span class="highlight">5」（上顎右側第二小臼歯）の先天欠如</span>が確認できる。先天欠如があると後継永久歯がないため乳歯が残存する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

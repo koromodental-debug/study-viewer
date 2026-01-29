@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>固定 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 治療総論</span>
+    <h1>固定</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：加強固定の装置</div>
+        <ul>
+          <li><span class="key">上顎</span>：ヘッドギア、Nanceのホールディングアーチ、トランスパラタルアーチ（TPA）</li>
+          <li><span class="key">下顎</span>：リンガルアーチ、リップバンパー、歯科矯正用アンカースクリュー</li>
+          <li><span class="key">顎間</span>：顎間ゴム（Ⅱ級・Ⅲ級ゴム）</li>
+        </ul>
+      </div>
+
+      <h2>1. 固定の定義</h2>
+      <p><span class="key">固定</span>とは、矯正力に対する<span class="highlight">抵抗</span>を意味する概念である。</p>
+      <ul>
+        <li><span class="key">固定源</span>：抵抗源となる対象（通常は臼歯）</li>
+        <li><span class="key">被移動歯</span>：矯正力によって移動する目的となる歯</li>
+      </ul>
+      <p class="note">※ 作用・反作用の法則により、固定源にも反作用が生じる</p>
+
+      <h2>2. 抵抗の性質による分類</h2>
+
+      <table>
+        <tr><th>分類</th><th>英語</th><th>特徴</th><th>固定の強さ</th></tr>
+        <tr>
+          <td class="key">単純固定</td>
+          <td>Simple</td>
+          <td>固定源が<span class="highlight">傾斜移動</span>で抵抗</td>
+          <td>弱い</td>
+        </tr>
+        <tr>
+          <td class="key">不動固定</td>
+          <td>Stationary</td>
+          <td>固定源が<span class="highlight">歯体移動</span>で抵抗</td>
+          <td>強い</td>
+        </tr>
+        <tr>
+          <td class="key">相反固定</td>
+          <td>Reciprocal</td>
+          <td>被移動歯と固定源が<span class="highlight">相互に移動</span></td>
+          <td>−</td>
+        </tr>
+        <tr>
+          <td class="key">加強固定</td>
+          <td>Reinforced</td>
+          <td>装置追加・歯数増加で<span class="highlight">固定を強化</span></td>
+          <td>最強</td>
+        </tr>
+        <tr>
+          <td class="key">準備固定</td>
+          <td>Preparatory</td>
+          <td>固定源を<span class="highlight">先に整直・排列</span>してから移動開始</td>
+          <td>強い</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">110A93</div>
+        <p>上顎前突の治療手順（ア→イ）の模式図（別冊No.14）を別に示す。<br>この方法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110A93_1.png" alt="治療手順模式図">
+        </div>
+        <div class="choices">
+          a 顎内固定<br>
+          b 準備固定<br>
+          c 相反固定<br>
+          d 単純固定<br>
+          e 不動固定
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】まず臼歯部（固定源）を整直・排列（ア）し、その後に前歯を後退（イ）させている。固定源を先に準備してから被移動歯を移動する方法は<span class="key">準備固定</span>である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B56</div>
+        <p>矯正治療中の口腔内写真（別冊No.11）を別に示す。<br>相反固定によって歯を移動できるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B56_1.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】<span class="key">相反固定</span>は被移動歯と固定源が相互に移動する関係。写真では正中離開の閉鎖（イ：左右中切歯）や、空隙閉鎖（エ：隣接歯同士）が相反固定による移動である。</p>
+      </div>
+
+      <h2>3. 固定源の部位による分類</h2>
+
+      <table>
+        <tr><th>分類</th><th>固定源の位置</th><th>装置例</th></tr>
+        <tr>
+          <td class="key">顎内固定</td>
+          <td>同一顎内</td>
+          <td>舌側弧線装置、TPA、Nanceのホールディングアーチ</td>
+        </tr>
+        <tr>
+          <td class="key">顎間固定</td>
+          <td>対顎</td>
+          <td>Ⅱ級ゴム、Ⅲ級ゴム、垂直ゴム、交叉ゴム</td>
+        </tr>
+        <tr>
+          <td class="key">顎外固定</td>
+          <td>頭部・頸部</td>
+          <td>ヘッドギア、チンキャップ、上顎前方牽引装置</td>
+        </tr>
+      </table>
+
+      <h2>4. 加強固定の装置【頻出】</h2>
+
+      <h3>上顎の加強固定</h3>
+      <table>
+        <tr><th>装置</th><th>分類</th><th>作用</th></tr>
+        <tr>
+          <td class="highlight">ヘッドギア</td>
+          <td>顎外固定</td>
+          <td>上顎大臼歯の近心移動防止、上顎骨成長抑制</td>
+        </tr>
+        <tr>
+          <td class="highlight">Nanceのホールディングアーチ</td>
+          <td>顎内固定</td>
+          <td>口蓋粘膜を固定源とし大臼歯の近心移動防止</td>
+        </tr>
+        <tr>
+          <td class="highlight">トランスパラタルアーチ（TPA）</td>
+          <td>顎内固定</td>
+          <td>左右大臼歯を連結し固定を強化</td>
+        </tr>
+        <tr>
+          <td class="key">上顎前方牽引装置</td>
+          <td>顎外固定</td>
+          <td>上顎骨の成長促進（反対咬合の治療）</td>
+        </tr>
+      </table>
+
+      <h3>下顎の加強固定</h3>
+      <table>
+        <tr><th>装置</th><th>分類</th><th>作用</th></tr>
+        <tr>
+          <td class="highlight">リンガルアーチ</td>
+          <td>顎内固定</td>
+          <td>下顎大臼歯の固定、前歯の唇側移動</td>
+        </tr>
+        <tr>
+          <td class="highlight">リップバンパー</td>
+          <td>顎内固定</td>
+          <td>口唇圧を排除し大臼歯の近心移動防止</td>
+        </tr>
+        <tr>
+          <td class="highlight">歯科矯正用アンカースクリュー</td>
+          <td>骨性固定</td>
+          <td>絶対的固定源（反作用なし）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">105C122</div>
+        <p>加強固定に使用される装置はどれか。2つ選べ。</p>
+        <div class="choices">
+          a ヘッドギア<br>
+          b 咬合斜面板<br>
+          c チンキャップ<br>
+          d トゥースポジショナー<br>
+          e Nanceのホールディングアーチ
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="key">ヘッドギア</span>（顎外固定）と<span class="key">Nanceのホールディングアーチ</span>（顎内固定）が加強固定装置。チンキャップは顎整形装置、咬合斜面板・トゥースポジショナーは機能的矯正装置・保定装置。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A61</div>
+        <p>マルチブラケット装置を用いた矯正歯科治療で下顎の加強固定に用いるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a Ⅱ級ゴム<br>
+          b チンキャップ<br>
+          c リップバンパー<br>
+          d リンガルアーチ<br>
+          e 歯科矯正用アンカースクリュー
+        </div>
+        <div class="answer">正解：c, d, e</div>
+        <p>【解説】下顎の加強固定には<span class="key">リップバンパー</span>、<span class="key">リンガルアーチ</span>、<span class="key">アンカースクリュー</span>を使用する。Ⅱ級ゴムは上顎前突の改善（下顎前歯を前方移動）、チンキャップは下顎骨の成長抑制が目的。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C71</div>
+        <p>加強固定のためにエッジワイズ装置と併用するのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 顎間ゴム<br>
+          b バイオネーター<br>
+          c 上顎前方牽引装置<br>
+          d ハイプルヘッドギア<br>
+          e トランスパラタルアーチ
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】エッジワイズ装置と併用する加強固定装置は<span class="key">顎間ゴム</span>（顎間固定）、<span class="key">ハイプルヘッドギア</span>（顎外固定）、<span class="key">TPA</span>（顎内固定）。バイオネーターは機能的矯正装置、上顎前方牽引装置は通常混合歯列期に単独使用。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：加強固定装置の覚え方</div>
+        <ul>
+          <li><span class="key">上顎</span>：<span class="highlight">ヘッドギア</span>、<span class="highlight">Nance</span>、<span class="highlight">TPA</span></li>
+          <li><span class="key">下顎</span>：<span class="highlight">リンガルアーチ</span>、<span class="highlight">リップバンパー</span>、<span class="highlight">アンカースクリュー</span></li>
+          <li><span class="caution">注意</span>：チンキャップ・上顎前方牽引装置は顎整形装置（加強固定ではない）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

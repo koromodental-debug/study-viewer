@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>開咬 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 治療・保定</span>
+    <h1>開咬</h1>
+    <div class="container">
+
+      <h2>開咬とは</h2>
+      <p><span class="highlight">開咬</span>（open bite）は、上下顎の歯が垂直的に離開し、咬合接触がない状態。前歯部に生じることが多い（前歯部開咬）。</p>
+
+      <h3>原因</h3>
+      <ul>
+        <li><span class="highlight">舌突出癖（弄舌癖）</span>：最も多い原因</li>
+        <li><span class="key">吸指癖</span>：上顎前歯の唇側傾斜＋開咬</li>
+        <li>口呼吸：舌位低下による開咬</li>
+        <li>骨格性要因：下顎の時計回り回転</li>
+      </ul>
+
+      <h2>開咬の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>特徴</th>
+          <th>治療</th>
+        </tr>
+        <tr>
+          <td class="key">歯槽性開咬</td>
+          <td>習癖による前歯の挺出不全<br>骨格に問題なし</td>
+          <td>タングクリブ、MFT、垂直ゴム</td>
+        </tr>
+        <tr>
+          <td class="key">骨格性開咬</td>
+          <td>下顎の後下方回転<br>FMA・Y軸角が大きい</td>
+          <td>チンキャップ、外科的矯正</td>
+        </tr>
+      </table>
+
+      <h2>セファロ分析による評価【頻出】</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">骨格性開咬のセファロ所見</div>
+        <ul>
+          <li><span class="highlight">FMA（下顎下縁平面角）</span>：増大↑（ハイアングル）</li>
+          <li><span class="highlight">Y軸角</span>：増大↑</li>
+          <li><span class="key">下顎角</span>：開大↑</li>
+          <li><span class="key">後顔面高/前顔面高比</span>：減少↓</li>
+        </ul>
+      </div>
+
+      <h3>開咬 vs 過蓋咬合の比較</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>開咬</th>
+          <th>過蓋咬合</th>
+        </tr>
+        <tr>
+          <td>FMA</td>
+          <td><span class="highlight">大きい↑</span>（ハイアングル）</td>
+          <td><span class="key">小さい↓</span>（ローアングル）</td>
+        </tr>
+        <tr>
+          <td>Y軸角</td>
+          <td>大きい↑</td>
+          <td>小さい↓</td>
+        </tr>
+        <tr>
+          <td>下顎の回転</td>
+          <td>後下方（時計回り）</td>
+          <td>前上方（反時計回り）</td>
+        </tr>
+        <tr>
+          <td>顔貌</td>
+          <td>ロングフェイス（長顔型）</td>
+          <td>ショートフェイス（短顔型）</td>
+        </tr>
+      </table>
+
+      <h3>ANB角とFMAの組み合わせ【重要】</h3>
+      <table>
+        <tr>
+          <th>ANB角</th>
+          <th>FMA</th>
+          <th>診断</th>
+        </tr>
+        <tr>
+          <td>大きい（+）</td>
+          <td>大きい</td>
+          <td>骨格性Ⅱ級 + 骨格性開咬</td>
+        </tr>
+        <tr>
+          <td>大きい（+）</td>
+          <td>小さい</td>
+          <td>骨格性Ⅱ級 + 骨格性過蓋咬合</td>
+        </tr>
+        <tr>
+          <td>小さい（−）</td>
+          <td>大きい</td>
+          <td>骨格性Ⅲ級 + 骨格性開咬</td>
+        </tr>
+        <tr>
+          <td class="highlight">小さい（−）</td>
+          <td class="highlight">小さい</td>
+          <td class="highlight">骨格性Ⅲ級 + 骨格性過蓋咬合</td>
+        </tr>
+      </table>
+
+      <h2>治療法</h2>
+
+      <h3>歯槽性開咬の治療</h3>
+      <ul>
+        <li><span class="highlight">タングクリブ</span>：舌突出癖の除去</li>
+        <li><span class="key">MFT（筋機能療法）</span>：舌位・嚥下パターンの改善</li>
+        <li><span class="key">垂直ゴム</span>：マルチブラケット治療時の前歯挺出</li>
+      </ul>
+
+      <h3>骨格性開咬の治療</h3>
+      <ul>
+        <li><span class="highlight">チンキャップ</span>：下顎の成長抑制（成長期）</li>
+        <li><span class="key">ハイプルヘッドギア</span>：上顎の垂直的成長抑制</li>
+        <li><span class="key">外科的矯正治療</span>：成人の重度骨格性開咬</li>
+      </ul>
+
+      <h3>抑制矯正としての開咬治療</h3>
+      <p>混合歯列期の開咬に対する<span class="key">筋機能療法（MFT）</span>は<span class="highlight">抑制矯正</span>に分類される。不正咬合の原因を除去し、悪化を防ぐ治療。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A96</div>
+        <p>骨格性開咬を示す患者の垂直的な問題点の評価のために用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 頭蓋底角<br>
+          b 下顎骨体長<br>
+          c 上顎骨体長<br>
+          d 前頭蓋底長<br>
+          e 下顎下縁平面角
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】骨格性開咬の垂直的評価には<span class="highlight">下顎下縁平面角（FMA）</span>を用いる。開咬ではFMAが大きくなる（ハイアングル）。頭蓋底角・下顎骨体長・前頭蓋底長は前後的な評価に用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A105</div>
+        <p>下顎後退を伴う骨格性開咬で大きい値を示すのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Y軸角<br>
+          b 顔面角<br>
+          c SNP角<br>
+          d A-B平面角<br>
+          e 下顎下縁平面角
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】骨格性開咬では<span class="highlight">Y軸角</span>と<span class="highlight">下顎下縁平面角（FMA）</span>が大きくなる。下顎後退を伴う場合、顔面角・SNP角は小さくなる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C128</div>
+        <p>ANB角とFMAがともに標準範囲より小さい患者の診断の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 骨格性Ⅰ級 ― 骨格性開咬<br>
+          b 骨格性Ⅰ級 ― 骨格性過蓋咬合<br>
+          c 骨格性Ⅱ級 ― 骨格性開咬<br>
+          d 骨格性Ⅱ級 ― 骨格性過蓋咬合<br>
+          e 骨格性Ⅲ級 ― 骨格性開咬<br>
+          f 骨格性Ⅲ級 ― 骨格性過蓋咬合
+        </div>
+        <div class="answer">正解：f</div>
+        <p>【解説】<span class="key">ANB角が小さい</span>→下顎が前方位→<span class="key">骨格性Ⅲ級</span>。<span class="key">FMAが小さい</span>→下顎が前上方回転→<span class="key">骨格性過蓋咬合</span>。開咬ではFMAは大きくなる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C45</div>
+        <p>小児の口腔習癖とその影響との組合せで正しいのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 舌突出癖 ― 開咬<br>
+          b 咬爪癖 ― 鋏状咬合<br>
+          c 口呼吸 ― 反対咬合<br>
+          d 歯ぎしり ― 咬合性外傷<br>
+          e 吸指癖 ― 上顎歯列弓狭窄
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】<span class="highlight">舌突出癖→開咬</span>、歯ぎしり→咬合性外傷、吸指癖→上顎歯列弓狭窄は正しい。咬爪癖は前歯の摩耗や叢生の原因（鋏状咬合ではない）。口呼吸は上顎狭窄・交叉咬合の原因（反対咬合ではない）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D29</div>
+        <p>抑制矯正はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 乳歯の早期脱落に対する保隙装置の装着<br>
+          b 歯齢IIC期の開咬に対する筋機能療法の適用<br>
+          c 顎間関係の不調和に対する外科的矯正治療の適用<br>
+          d 永久歯列期の抜歯を伴うマルチブラケット装置の装着<br>
+          e 歯齢ⅢA期の反対咬合に対するリンガルアーチの装着
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】<span class="key">抑制矯正</span>は不正咬合の原因を除去し悪化を防ぐ治療。<span class="key">開咬に対する筋機能療法</span>（舌突出癖の除去）、<span class="key">反対咬合に対するリンガルアーチ</span>（被蓋改善）が該当。保隙は予防矯正、外科的矯正・マルチブラケットは本格矯正。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターンの整理</div>
+        <ul>
+          <li><span class="key">骨格性開咬の評価</span> → FMA（下顎下縁平面角）、Y軸角</li>
+          <li><span class="key">開咬の原因</span> → 舌突出癖が最多</li>
+          <li><span class="key">ANB小＋FMA小</span> → 骨格性Ⅲ級＋過蓋咬合</li>
+          <li><span class="key">歯槽性開咬の治療</span> → タングクリブ、MFT、垂直ゴム</li>
+          <li><span class="key">抑制矯正</span> → 開咬に対する筋機能療法</li>
+        </ul>
+      </div>
+
+      <p class="note">参照：06_矯正装置_タングクリブ.html、06_矯正装置_顎間ゴムによる変化.html</p>
+
+    </div>
+  </div>
+</body>
+</html>

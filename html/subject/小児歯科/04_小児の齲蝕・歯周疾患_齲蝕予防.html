@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>齲蝕予防 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 小児の齲蝕・歯周疾患</span>
+    <h1>齲蝕予防</h1>
+    <div class="container">
+
+      <h2>齲蝕原因菌の母子感染</h2>
+      <p>ミュータンスレンサ球菌は主に母親（養育者）から感染する。</p>
+      <ul>
+        <li><span class="highlight">感染の窓</span>：生後<span class="highlight">19〜31か月</span>が最も感染しやすい</li>
+        <li>予防：<span class="highlight">保護者の齲蝕原因菌を減らす</span>ことが有効</li>
+      </ul>
+
+      <h2>年齢別口腔清掃指導（頻出）</h2>
+
+      <table>
+        <tr>
+          <th>年齢</th>
+          <th>指導対象</th>
+          <th>部位・方法</th>
+          <th>ポイント</th>
+        </tr>
+        <tr>
+          <td>0〜1歳</td>
+          <td>保護者</td>
+          <td>乳前歯部</td>
+          <td><span class="key">ガーゼ</span>で前歯部を拭き、徐々に歯ブラシに慣れさせる</td>
+        </tr>
+        <tr>
+          <td>1〜2歳</td>
+          <td>保護者</td>
+          <td>上顎前歯部</td>
+          <td><span class="highlight">寝かせ磨き</span>、歯磨きが楽しいことを教える</td>
+        </tr>
+        <tr>
+          <td>2〜3歳</td>
+          <td>保護者</td>
+          <td>乳臼歯咬合面</td>
+          <td>寝かせ磨き、<span class="caution">転倒に注意</span>（歯ブラシを持たせる場合）</td>
+        </tr>
+        <tr>
+          <td>4〜5歳</td>
+          <td>保護者＋小児</td>
+          <td>乳臼歯隣接面</td>
+          <td>小児がブラッシング、保護者が仕上げ磨き、<span class="highlight">フロス</span>使用</td>
+        </tr>
+        <tr>
+          <td>6〜7歳</td>
+          <td>保護者＋小児</td>
+          <td><span class="highlight">第一大臼歯咬合面</span></td>
+          <td>第一大臼歯萌出完了まで保護者が点検磨き、<span class="key">一歯磨き</span></td>
+        </tr>
+        <tr>
+          <td>8〜9歳</td>
+          <td>小児（保護者に説明）</td>
+          <td>第一大臼歯隣接面、歯頸部</td>
+          <td>自分でしっかり磨く習慣をつける</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">小児に適した刷掃法</div>
+        <ul>
+          <li><span class="highlight">スクラッビング法</span>：歯面に直角にあて水平往復運動</li>
+          <li><span class="key">フォーンズ法</span>（描円法）：円を描くように動かす</li>
+        </ul>
+        <p class="note">スティルマン法は成人向け（歯肉マッサージ目的）</p>
+      </div>
+
+      <h2>フッ化物応用法</h2>
+
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>濃度</th>
+          <th>適応年齢</th>
+          <th>頻度</th>
+        </tr>
+        <tr>
+          <td><span class="key">フッ化物歯面塗布</span></td>
+          <td>2% NaF（9,000 ppmF）</td>
+          <td>乳歯萌出直後〜</td>
+          <td>年2〜4回</td>
+        </tr>
+        <tr>
+          <td><span class="key">フッ化物洗口</span></td>
+          <td>0.05〜0.2% NaF</td>
+          <td><span class="highlight">4歳頃〜</span>（ブクブクうがいができる）</td>
+          <td>毎日〜週1回</td>
+        </tr>
+        <tr>
+          <td><span class="key">フッ化物配合歯磨剤</span></td>
+          <td>1,000 ppmF以下</td>
+          <td>全年齢</td>
+          <td>毎日</td>
+        </tr>
+      </table>
+
+      <h3>歯磨剤の使用量</h3>
+      <ul>
+        <li>2歳未満：<span class="key">米粒大</span></li>
+        <li>2〜6歳：<span class="key">グリーンピース大</span></li>
+      </ul>
+      <p class="note"><span class="caution">フッ化物洗口は1歳4か月児には不適</span>（ブクブクうがいができない）</p>
+
+      <h2>初期齲蝕への対応</h2>
+      <table>
+        <tr>
+          <th>所見</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td>白斑・白濁（実質欠損なし）</td>
+          <td><span class="highlight">フッ化ナトリウム塗布</span>、フッ化物洗口指導、ブラッシング指導</td>
+        </tr>
+        <tr>
+          <td>小窩裂溝の深い溝</td>
+          <td><span class="highlight">予防填塞（シーラント）</span></td>
+        </tr>
+        <tr>
+          <td>歯内歯などの形態異常</td>
+          <td>予防填塞</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A77</div>
+        <p>幼児への齲蝕原因菌の定着を抑制するのに適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 離乳を早く終了する。<br>
+          b 子ども一人で間食をとる。<br>
+          c 保護者の齲蝕原因菌を減らす。<br>
+          d 消毒薬で子どもに口をゆすがせる。<br>
+          e 保護者がマスクをつけて仕上げ磨きを行う。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ミュータンスレンサ球菌は主に母親から感染するため、<span class="highlight">保護者の齲蝕原因菌を減らす</span>ことが幼児への感染予防に有効。感染の窓は生後19〜31か月。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C50</div>
+        <p>小児の口腔清掃指導に関する組合せで適切なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 0〜1歳：保護者：デンタルフロスの使用<br>
+          b 2〜3歳：保護者：ガーゼ磨き<br>
+          c 4〜5歳：保護者、本人：スクラビング法<br>
+          d 6〜7歳：保護者、本人：第一大臼歯の一歯磨き<br>
+          e 8〜9歳：本人：スティルマン法
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】4〜5歳では保護者と本人で<span class="highlight">スクラッビング法</span>が適切。6〜7歳では萌出中の<span class="highlight">第一大臼歯の一歯磨き</span>が重要。0〜1歳はガーゼ（フロスは不適）、2〜3歳は歯ブラシ（ガーゼは0〜1歳）、スティルマン法は成人向け。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A61</div>
+        <p>2歳児の保護者への口腔清掃指導で正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 歯間ブラシを使用する。<br>
+          b スクラッビング法で行う。<br>
+          c 仕上げは寝かせ磨きで行う。<br>
+          d 子どもが使う歯ブラシで仕上げを行う。<br>
+          e 子どもが歯ブラシを持っている時は転倒に注意する。
+        </div>
+        <div class="answer">正解：b, c, e</div>
+        <p>【解説】2歳児には<span class="highlight">スクラッビング法</span>、<span class="highlight">寝かせ磨き</span>が適切。歯ブラシを持たせる場合は<span class="highlight">転倒に注意</span>。歯間ブラシは成人向け（小児はフロス）。仕上げ用の歯ブラシは子ども用とは別に用意する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C54</div>
+        <p>1歳4か月の幼児。人工乳を摂取している。齲蝕予防指導として適切なのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 離乳の完了<br>
+          b 歯磨き習慣<br>
+          c フッ化物洗口<br>
+          d 規則的食生活<br>
+          e 糖アルコールの推奨
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】1歳4か月児には<span class="highlight">離乳の完了</span>、<span class="highlight">歯磨き習慣</span>、<span class="highlight">規則的食生活</span>が適切。<span class="caution">フッ化物洗口は4歳頃から</span>（ブクブクうがいができる年齢）。糖アルコール（キシリトール等）の推奨は齲蝕予防の主たる指導ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B84</div>
+        <p>11歳の女児。下顎左側第一大臼歯の近心面の白濁を主訴として来院した。昨日、下顎左側第二乳臼歯が脱落した際に気付いたという。白濁部に実質欠損は認めない。初診時の口腔内写真（別冊No.32）を別に示す。適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B84_1.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a 歯面研磨<br>
+          b 予防填塞<br>
+          c フッ化ナトリウム塗布<br>
+          d コンポジットレジン修復<br>
+          e フッ化ジアンミン銀塗布
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】白濁で実質欠損がない初期齲蝕には<span class="highlight">フッ化ナトリウム塗布</span>で再石灰化を促進。予防填塞は小窩裂溝が対象。CR修復は実質欠損がある場合。フッ化ジアンミン銀は着色するため前歯には不適。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A71</div>
+        <p>10歳の女児。上顎右側側切歯の凹みが気になり来院した。自発痛と冷温痛はみられない。歯髄電気診で正常反応を示した。検査の結果、ある処置を行うこととした。初診時の口腔内写真（別冊No.17A）、エックス線画像（別冊No.17B）及びラバーダム装着時の口腔内写真（別冊No.17C）を別に示す。適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112A71_1.png" alt="口腔内写真">
+          <img src="../../../images/112回_Web画像/112A71_2.png" alt="X線画像">
+        </div>
+        <div class="choices">
+          a 予防填塞<br>
+          b 直接覆髄<br>
+          c 生活歯髄切断<br>
+          d 抜　髄<br>
+          e 感染根管治療
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】歯内歯（盲孔）で症状がなく歯髄電気診正常であれば<span class="highlight">予防填塞</span>が適応。盲孔は齲蝕リスクが高いため、シーラントで封鎖する。歯髄処置は必要ない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

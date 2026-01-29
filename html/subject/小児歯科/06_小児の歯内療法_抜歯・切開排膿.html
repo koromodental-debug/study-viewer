@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抜歯・切開排膿 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 小児の歯内療法</span>
+    <h1>抜歯・切開排膿</h1>
+    <div class="container">
+
+      <h2>乳歯の抜歯適応（頻出）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">抜歯の判断基準</div>
+        <ul>
+          <li><span class="highlight">歯槽骨の吸収範囲が広い</span>（最重要）</li>
+          <li>歯根吸収が1/3以上</li>
+          <li>後継永久歯歯胚への影響が大きい</li>
+          <li>感染根管治療が困難または無効</li>
+        </ul>
+      </div>
+
+      <h3>乳歯の抜歯基準</h3>
+      <table>
+        <tr>
+          <th>歯根吸収</th>
+          <th>歯槽骨吸収</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td>1/3未満</td>
+          <td>なし〜軽度</td>
+          <td>感染根管治療</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">1/3以上</span></td>
+          <td>−</td>
+          <td><span class="highlight">抜歯</span></td>
+        </tr>
+        <tr>
+          <td>−</td>
+          <td><span class="highlight">広範囲</span></td>
+          <td><span class="highlight">抜歯</span></td>
+        </tr>
+      </table>
+
+      <p class="note">後継永久歯歯胚に近接した病変は抜歯の適応となる</p>
+
+      <h2>切開排膿の適応</h2>
+      <ul>
+        <li><span class="highlight">歯肉膿瘍・歯槽膿瘍</span>で波動を触れる場合</li>
+        <li>急性症状（腫脹・疼痛）が強い場合</li>
+        <li>排膿により消炎を図る</li>
+      </ul>
+
+      <h3>切開排膿と抜歯の選択</h3>
+      <table>
+        <tr>
+          <th>状況</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td>膿瘍形成（波動あり）+ 保存可能</td>
+          <td><span class="highlight">切開排膿</span> → 消炎後に根管治療</td>
+        </tr>
+        <tr>
+          <td>膿瘍形成 + 保存不可能</td>
+          <td>切開排膿 → 消炎後に抜歯</td>
+        </tr>
+        <tr>
+          <td>歯槽骨吸収が広範囲</td>
+          <td><span class="highlight">抜歯</span></td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104D31</div>
+        <p>3歳の女児。下顎右側乳臼歯部の歯肉腫脹を主訴として来院した。3か月前からD┐の齲蝕に気付いていたが放置していたという。咬合痛がある。D┐を抜歯することとした。初診時の口腔内写真（別冊No.31A）とエックス線写真（別冊No.31B）とを別に示す。治療方針の根拠はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D31_1.png" alt="口腔内写真">
+          <img src="../../../images/104回_Web画像/104D31_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 歯根の破折<br>
+          b 歯冠の崩壊度<br>
+          c 歯根吸収の程度<br>
+          d 歯肉膿瘍の大きさ<br>
+          e 歯槽骨の吸収範囲
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】乳歯の抜歯判断で最も重要なのは<span class="highlight">歯槽骨の吸収範囲</span>。X線で広範囲の歯槽骨吸収が認められる場合、感染根管治療では対応できず抜歯適応となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109B42</div>
+        <p>5歳の男児。上顎右側乳中切歯の歯肉腫脹を主訴として来院した。3日前から腫脹し咬合時に痛みがあるという。初診時の口腔内写真（別冊No.42A）とエックス線写真（別冊No.42B）を別に示す。適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109B42_1.png" alt="口腔内写真">
+          <img src="../../../images/109回_Web画像/109B42_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 抜　歯<br>
+          b 切　開<br>
+          c 麻酔抜髄<br>
+          d 直接覆髄<br>
+          e 副腎皮質ステロイド軟膏塗布
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】歯肉の腫脹（膿瘍形成）がある場合はまず<span class="highlight">切開排膿</span>により消炎を図る。急性症状が治まってから根管治療または抜歯を検討する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A48</div>
+        <p>8歳の女児。下顎左側乳臼歯部歯肉の腫脹を主訴として来院した。「Eは1年前に治療を受けたという。軽度の動揺があるが、自発痛と打診痛はない。初診時の口腔内写真（別冊No.9A）とエックス線画像（別冊No.9B）を別に示す。「Eに対する適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A48_1.png" alt="口腔内写真">
+          <img src="../../../images/113回_Web画像/113A48_2.png" alt="X線画像">
+        </div>
+        <div class="choices">
+          a 経過観察<br>
+          b 生活歯髄切断<br>
+          c 抜　髄<br>
+          d 感染根管治療<br>
+          e 抜　歯
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】X線で歯槽骨吸収が認められ、後継永久歯（第二小臼歯）への影響が懸念される。歯根治療歴があり再発しているため<span class="highlight">抜歯</span>が適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D68</div>
+        <p>9歳の男児。下顎右側臼歯部歯肉の腫脹を主訴として来院した。1年前に他院で治療を受け、その後問題はなかったが、3日前に気付いたという。ED┐の動揺度は0度で、自発痛はないが軽度の打診痛がある。D┐は歯髄電気診で生活反応を示さなかった。初診時の口腔内写真（別冊No.21A）とエックス線画像（別冊No.21B）を別に示す。E┐とD┐への対応の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D68_1.png" alt="口腔内写真">
+          <img src="../../../images/115回_Web画像/115D68_2.png" alt="X線画像">
+        </div>
+        <div class="choices">
+          a 経過観察 −−−−−−− 感染根管治療<br>
+          b 感染根管治療 −−−− 感染根管治療<br>
+          c 感染根管治療 −−−− 抜　歯<br>
+          d 抜　歯 −−−−−−− 感染根管治療<br>
+          e 抜　歯 −−−−−−− 抜　歯
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】X線でE┐・D┐ともに広範囲の歯槽骨吸収が認められ、後継永久歯への影響が大きい。両歯とも<span class="highlight">抜歯</span>が適切。感染根管治療では対応できない状態。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>予測模型上で製作する装置 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 矯正装置</span>
+    <h1>予測模型上で製作する装置</h1>
+    <div class="container">
+
+      <h2>予測模型（セットアップモデル）</h2>
+      <p><span class="highlight">予測模型</span>（セットアップモデル）は、矯正治療後の歯列を予測して作製する模型。歯を1本ずつ切り離して理想的な位置に排列し直す。</p>
+
+      <h3>予測模型の用途</h3>
+      <ul>
+        <li><span class="key">固定の強さの判定</span>：抜歯空隙の閉鎖に必要な固定の程度を評価</li>
+        <li><span class="key">治療計画の立案</span>：治療後の歯列・咬合を視覚化</li>
+        <li><span class="key">トゥースポジショナーの製作</span>：理想的歯列位置での装置製作</li>
+        <li><span class="key">外科的矯正治療の計画</span>：手術後の咬合を予測</li>
+      </ul>
+
+      <h2>トゥースポジショナー【最重要】</h2>
+      <p><span class="highlight">トゥースポジショナー</span>（Tooth Positioner、ダイナミックポジショナー）は、<span class="key">予測模型上で製作</span>する可撤式の保定装置。動的治療終了後の微調整と保定を兼ねる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">トゥースポジショナーの特徴【頻出】</div>
+        <ul>
+          <li><span class="highlight">高分子弾性材料</span>（シリコーンゴム）で製作</li>
+          <li><span class="highlight">予測模型</span>（セットアップモデル）上で製作</li>
+          <li><span class="key">金属を使用しない</span> → 金属アレルギーに安全</li>
+          <li><span class="key">バンド装着不要</span>（可撤式）</li>
+          <li><span class="key">構成咬合の採得不要</span></li>
+          <li>動的治療終了後の<span class="key">微調整＋保定</span>が目的</li>
+        </ul>
+      </div>
+
+      <h3>作用機序</h3>
+      <p>予測模型上で製作されたトゥースポジショナーを口腔内に装着すると、現在の歯列と予測歯列との差により弾性力が発生し、歯を理想的な位置へ誘導する。</p>
+
+      <h3>使用法</h3>
+      <ul>
+        <li>マルチブラケット装置撤去後に使用</li>
+        <li>咬むことによって歯および歯列の安定をはかる</li>
+        <li>日中の使用は困難なため、主に就寝時に装着</li>
+      </ul>
+
+      <h2>トゥースポジショナー vs 他の装置</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>トゥースポジショナー</th>
+          <th>アクチバトール等</th>
+        </tr>
+        <tr>
+          <td>製作に必要な模型</td>
+          <td><span class="highlight">予測模型</span></td>
+          <td>現在の歯列模型</td>
+        </tr>
+        <tr>
+          <td>構成咬合の採得</td>
+          <td><span class="caution">不要</span></td>
+          <td>必要</td>
+        </tr>
+        <tr>
+          <td>材料</td>
+          <td><span class="key">シリコーンゴム</span>（高分子弾性材料）</td>
+          <td>レジン＋金属線</td>
+        </tr>
+        <tr>
+          <td>金属アレルギー</td>
+          <td><span class="key">心配不要</span></td>
+          <td>注意が必要</td>
+        </tr>
+        <tr>
+          <td>バンド装着</td>
+          <td>不要</td>
+          <td>不要</td>
+        </tr>
+        <tr>
+          <td>使用時期</td>
+          <td>動的治療<span class="key">終了後</span></td>
+          <td>動的治療<span class="key">中</span></td>
+        </tr>
+      </table>
+
+      <h2>保定装置の分類</h2>
+
+      <h3>可撤式保定装置</h3>
+      <table>
+        <tr>
+          <th>装置</th>
+          <th>特徴</th>
+          <th>材料</th>
+        </tr>
+        <tr>
+          <td class="highlight">トゥースポジショナー</td>
+          <td>予測模型上で製作、微調整＋保定</td>
+          <td><span class="key">シリコーンゴム</span></td>
+        </tr>
+        <tr>
+          <td class="key">Hawleyタイプリテーナー</td>
+          <td>唇側線＋レジン床、最も汎用性が高い</td>
+          <td>レジン＋金属線</td>
+        </tr>
+        <tr>
+          <td class="key">Beggタイプリテーナー</td>
+          <td>前歯部の保定に適する</td>
+          <td>レジン＋金属線</td>
+        </tr>
+        <tr>
+          <td class="key">ラップアラウンドリテーナー</td>
+          <td>歯列全体を包み込む</td>
+          <td>レジン＋金属線</td>
+        </tr>
+      </table>
+
+      <h3>固定式保定装置</h3>
+      <ul>
+        <li><span class="key">犬歯間保定装置</span>：下顎前歯部の保定、ワイヤーで犬歯間を連結</li>
+        <li><span class="key">ボンデッドリテーナー</span>：歯面に直接ワイヤーを接着</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114C36</div>
+        <p>矯正装置製作のための模型の写真を示す。製作するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Fränkel装置<br>
+          b バイオネーター<br>
+          c リップバンパー<br>
+          d Hawleyタイプリテーナー<br>
+          e ダイナミックポジショナー〈トゥースポジショナー〉
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】歯を1本ずつ切り離して理想的位置に排列した<span class="key">予測模型</span>（セットアップモデル）から製作するのは<span class="key">トゥースポジショナー</span>。他の装置は現在の歯列模型から製作。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B53</div>
+        <p>保定装置で高分子弾性材料を用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a アクチバトール<br>
+          b 犬歯間保定装置<br>
+          c トゥースポジショナー<br>
+          d Beggタイプリテーナー<br>
+          e Hawleyタイプリテーナー
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">トゥースポジショナー</span>は<span class="key">シリコーンゴム</span>（高分子弾性材料）で製作される。他の保定装置はレジンと金属線で製作。アクチバトールは保定装置ではなく機能的矯正装置。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A102</div>
+        <p>金属アレルギーを有する患者に使用する際に注意を要するのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a ヘッドギア<br>
+          b リップバンパー<br>
+          c トゥースポジショナー<br>
+          d Hawleyタイプリテーナー<br>
+          e Nanceのホールディングアーチ
+        </div>
+        <div class="answer">正解：a, b, d, e</div>
+        <p>【解説】金属を使用する装置は金属アレルギーに注意が必要。<span class="caution">トゥースポジショナー</span>は<span class="key">シリコーンゴム製</span>で金属を使用しないため、金属アレルギー患者にも安全。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A46</div>
+        <p>上顎の小臼歯抜去によるマルチブラケット治療を計画した。片側の歯を排列した診断用予測模型の写真を示す。矢印の空隙から判定するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 固定の強さ<br>
+          b 矯正力の大きさ<br>
+          c 矯正力の作用様式<br>
+          d 動的治療期間<br>
+          e 保定期間
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】予測模型で片側だけ歯を排列し、抜歯空隙の配分を確認することで<span class="key">固定の強さ</span>を判定できる。空隙が前方に多く残れば強い固定が必要、後方に多く残れば弱い固定でよい。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターンの整理</div>
+        <ul>
+          <li><span class="key">予測模型で製作</span> → トゥースポジショナー</li>
+          <li><span class="key">高分子弾性材料</span> → トゥースポジショナー（シリコーンゴム）</li>
+          <li><span class="key">金属アレルギーに安全</span> → トゥースポジショナー</li>
+          <li><span class="key">構成咬合の採得</span> → トゥースポジショナーは不要</li>
+          <li><span class="key">予測模型の用途</span> → 固定の強さの判定、治療計画</li>
+        </ul>
+      </div>
+
+      <p class="note">参考：歯科矯正学（相馬）p.306（トゥースポジショナー）</p>
+
+    </div>
+  </div>
+</body>
+</html>

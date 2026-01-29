@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Fränkel装置 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 矯正装置</span>
+    <h1>Fränkel装置</h1>
+    <div class="container">
+
+      <h2>装置の概要</h2>
+      <p><span class="highlight">Fränkel装置</span>（Fränkel's Functional Regulator、FR装置）は、Fränkel, R.（1966）により考案された<span class="key">機能的矯正装置</span>。口腔周囲筋の<span class="key">異常な筋圧を排除</span>することで、歯列や顎骨の自然な発育を促進する。</p>
+
+      <h3>他の機能的矯正装置との違い</h3>
+      <table>
+        <tr>
+          <th>装置</th>
+          <th>作用原理</th>
+        </tr>
+        <tr>
+          <td>アクチバトール、バイオネーター</td>
+          <td>構成咬合位で<span class="key">筋の力を利用</span></td>
+        </tr>
+        <tr>
+          <td class="highlight">Fränkel装置</td>
+          <td><span class="key">異常な筋圧を排除</span>（シールドで遮断）</td>
+        </tr>
+      </table>
+
+      <h2>装置の構造</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">Fränkel装置の構成要素</div>
+        <ul>
+          <li><span class="highlight">バッカルシールド</span>：頬粘膜からの圧力を排除 → <span class="key">歯列の側方拡大</span></li>
+          <li><span class="highlight">ラビアルパッド</span>：口唇からの圧力を排除</li>
+          <li><span class="key">リンガルシールド</span>：下顎を構成咬合位で安定</li>
+          <li><span class="key">ラビアルボウ</span>：前歯部の保持</li>
+          <li><span class="key">コネクティングワイヤー</span>：各部を連結</li>
+        </ul>
+      </div>
+
+      <h3>シールドの作用</h3>
+      <table>
+        <tr>
+          <th>シールドの位置</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td>歯槽粘膜から<span class="key">離れている</span></td>
+          <td>筋圧を排除 → <span class="key">歯列・歯槽部の発育促進</span></td>
+        </tr>
+        <tr>
+          <td>歯槽粘膜に<span class="key">密着</span></td>
+          <td>歯列・歯槽部の側方発育を<span class="caution">抑制</span></td>
+        </tr>
+      </table>
+
+      <h2>装置の種類と適応症【重要】</h2>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>適応症</th>
+        </tr>
+        <tr>
+          <td class="key">FR I</td>
+          <td>Angle I級、Angle II級1類</td>
+        </tr>
+        <tr>
+          <td class="key">FR II</td>
+          <td>Angle II級1類、2類</td>
+        </tr>
+        <tr>
+          <td class="key">FR III</td>
+          <td><span class="highlight">Angle III級</span>（下顎前突）</td>
+        </tr>
+        <tr>
+          <td class="key">FR IV</td>
+          <td><span class="highlight">開咬</span></td>
+        </tr>
+      </table>
+
+      <h2>Fränkel装置の特徴【頻出】</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">Fränkel装置のポイント</div>
+        <ul>
+          <li><span class="highlight">軟骨性成長の促進</span>が可能（下顎頭軟骨の成長）</li>
+          <li><span class="highlight">歯列の側方拡大</span>が可能（頬粘膜圧の排除）</li>
+          <li><span class="key">構成咬合の採得が必要</span></li>
+          <li><span class="key">下顎骨劣成長の改善</span>に使用（上顎前突・II級症例）</li>
+          <li>可撤式装置で、成長期に使用</li>
+        </ul>
+      </div>
+
+      <h2>機能的矯正装置の比較</h2>
+      <table>
+        <tr>
+          <th>装置</th>
+          <th>構成咬合</th>
+          <th>主な適応</th>
+        </tr>
+        <tr>
+          <td class="key">アクチバトール</td>
+          <td>必要</td>
+          <td>上顎前突（II級）、機能性下顎前突</td>
+        </tr>
+        <tr>
+          <td class="key">バイオネーター</td>
+          <td>必要</td>
+          <td>上顎前突（II級）、下顎成長促進</td>
+        </tr>
+        <tr>
+          <td class="highlight">Fränkel装置</td>
+          <td>必要</td>
+          <td>I〜III級、開咬（種類により異なる）</td>
+        </tr>
+        <tr>
+          <td class="key">咬合斜面板</td>
+          <td>不要</td>
+          <td>下顎の前方誘導</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115D41</div>
+        <p>混合歯列期における下顎骨劣成長の改善に用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 咬合挙上板<br>
+          b Fränkel装置<br>
+          c バイオネーター<br>
+          d リップバンパー<br>
+          e スライディングプレート
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】下顎骨劣成長（上顎前突・II級症例）の改善には<span class="key">機能的矯正装置</span>で下顎の成長を促進する。<span class="key">Fränkel装置</span>と<span class="key">バイオネーター</span>が該当。咬合挙上板は過蓋咬合、リップバンパーは口唇圧排除が目的。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C63</div>
+        <p>製作にあたり構成咬合の採得が必要なのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 咬合挙上板<br>
+          b 咬合斜面板<br>
+          c Fränkel装置<br>
+          d バイオネーター<br>
+          e トゥースポジショナー
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="key">機能的矯正装置</span>（Fränkel装置、バイオネーター、アクチバトール）は<span class="key">構成咬合の採得が必要</span>。下顎を目的の位置に誘導した状態で咬合採得を行う。咬合挙上板・咬合斜面板は構成咬合不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A94</div>
+        <p>軟骨性成長の促進と歯列の側方拡大とができるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ヘッドギア<br>
+          b チンキャップ<br>
+          c Fränkel装置<br>
+          d 急速拡大装置<br>
+          e クワドヘリックス
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">Fränkel装置</span>は唇側シールド・頬側シールドで口唇・頬粘膜からの圧力を排除する。これにより<span class="key">軟骨性成長の促進</span>（下顎頭軟骨）と<span class="key">歯列の側方拡大</span>（頬粘膜圧の排除）の両方が可能。他の選択肢は両方の効果を持たない。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターンの整理</div>
+        <ul>
+          <li><span class="key">構成咬合の採得</span>：Fränkel装置は必要（機能的矯正装置）</li>
+          <li><span class="key">下顎骨劣成長の改善</span>：Fränkel装置、バイオネーター</li>
+          <li><span class="key">軟骨性成長＋側方拡大</span>：Fränkel装置（両方可能な装置）</li>
+          <li><span class="key">装置の種類</span>：FRI〜FRIV（適応症が異なる）</li>
+          <li><span class="key">シールドの作用</span>：筋圧の排除→歯列発育促進</li>
+        </ul>
+      </div>
+
+      <p class="note">参考：歯科矯正学（相馬）p.241-242（Fränkel装置）</p>
+
+    </div>
+  </div>
+</body>
+</html>

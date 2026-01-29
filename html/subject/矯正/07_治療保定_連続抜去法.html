@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>連続抜去法 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 治療・保定</span>
+    <h1>連続抜去法</h1>
+    <div class="container">
+
+      <h2>連続抜去法とは</h2>
+      <p><span class="highlight">連続抜去法</span>（serial extraction）は、混合歯列期に計画的に乳歯と永久歯を抜去し、<span class="key">負のアーチレングスディスクレパンシー（ALD）</span>を改善する方法。叢生の早期治療に用いる。</p>
+
+      <h2>適応症</h2>
+      <ul>
+        <li><span class="highlight">負のALD</span>が大きい（−4mm以上）</li>
+        <li><span class="key">叢生</span>（歯の排列スペース不足）</li>
+        <li>AngleⅠ級不正咬合</li>
+        <li>骨格的に大きな問題がない</li>
+      </ul>
+
+      <h3>不適応症</h3>
+      <ul>
+        <li><span class="caution">下顎前突</span>（骨格性Ⅲ級）</li>
+        <li><span class="caution">上顎前突</span>（骨格性Ⅱ級）</li>
+        <li>開咬</li>
+        <li>正のALD（空隙歯列）</li>
+      </ul>
+
+      <h2>抜去の手順【重要】</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">連続抜去の順序</div>
+        <ol>
+          <li><span class="highlight">乳犬歯</span>の抜去（側切歯の萌出スペース確保）</li>
+          <li><span class="highlight">第一乳臼歯</span>の抜去（第一小臼歯の萌出促進）</li>
+          <li><span class="highlight">第一小臼歯</span>の抜去（犬歯の自然な遠心移動）</li>
+        </ol>
+        <p class="note">※ C → D → 4 の順番で覚える</p>
+      </div>
+
+      <h2>連続抜去後の予測【頻出】</h2>
+
+      <table>
+        <tr>
+          <th>予測される変化</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td class="highlight">過蓋咬合</td>
+          <td>臼歯部の咬合支持喪失により前歯が過挺出</td>
+        </tr>
+        <tr>
+          <td class="highlight">犬歯の遠心傾斜</td>
+          <td>第一小臼歯抜去後、犬歯が遠心に傾斜して萌出</td>
+        </tr>
+        <tr>
+          <td class="key">第二小臼歯の近心傾斜</td>
+          <td>抜歯空隙に向かって傾斜</td>
+        </tr>
+      </table>
+
+      <p><span class="caution">連続抜去のみでは治療は完了しない</span>。多くの場合、永久歯列完成後に<span class="key">マルチブラケット装置</span>による仕上げが必要。</p>
+
+      <h2>負のALDの改善方法</h2>
+
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>効果</th>
+        </tr>
+        <tr>
+          <td class="highlight">連続抜去</td>
+          <td>歯数を減らしスペース確保</td>
+        </tr>
+        <tr>
+          <td class="key">永久切歯の唇側移動</td>
+          <td>歯列弓周長の増加</td>
+        </tr>
+        <tr>
+          <td class="key">歯槽基底弓の側方拡大</td>
+          <td>歯列弓幅径の増加</td>
+        </tr>
+        <tr>
+          <td class="key">第一大臼歯の遠心移動</td>
+          <td>後方にスペース確保</td>
+        </tr>
+      </table>
+
+      <h3>ALDに影響しないもの</h3>
+      <ul>
+        <li><span class="caution">正中離開の閉鎖</span>：ALDは変わらない（見た目が改善するのみ）</li>
+        <li><span class="caution">正中埋伏過剰歯の抜去</span>：ALDには影響しない</li>
+        <li><span class="caution">乳切歯の早期抜去</span>：永久歯のスペースは増えない</li>
+        <li><span class="caution">永久切歯の舌側移動</span>：ALDは悪化する</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A80</div>
+        <p>連続抜去後に永久歯列期に予測されるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 叢生<br>
+          b 過蓋咬合<br>
+          c 犬歯の遠心傾斜<br>
+          d 第一大臼歯の挺出<br>
+          e 第二小臼歯の遠心傾斜
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】連続抜去後は<span class="highlight">過蓋咬合</span>（臼歯部咬合支持喪失）と<span class="highlight">犬歯の遠心傾斜</span>（第一小臼歯抜去空隙への傾斜）が予測される。叢生は連続抜去で改善される。第二小臼歯は遠心ではなく近心傾斜する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A54</div>
+        <p>負のアーチレングスディスクレパンシーの改善につながるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 連続抜去<br>
+          b 乳切歯の早期抜去<br>
+          c 永久切歯の舌側移動<br>
+          d 乳犬歯の隣接面削除<br>
+          e 第一大臼歯の遠心移動
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】負のALD改善には<span class="key">連続抜去</span>（歯数減少）と<span class="key">第一大臼歯の遠心移動</span>（後方スペース確保）が有効。乳切歯の早期抜去はスペースを増やさない。永久切歯の舌側移動はALDを悪化させる。乳犬歯隣接面削除はわずかな効果しかない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A70</div>
+        <p>負のarch length discrepancyの改善に有効なのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 連続抜去<br>
+          b 正中離開の閉鎖<br>
+          c 永久切歯の唇側移動<br>
+          d 歯槽基底弓の側方拡大<br>
+          e 正中埋伏過剰歯の抜去
+        </div>
+        <div class="answer">正解：a, c, d</div>
+        <p>【解説】負のALD改善には<span class="key">連続抜去</span>、<span class="key">永久切歯の唇側移動</span>（歯列弓周長増加）、<span class="key">側方拡大</span>（歯列弓幅径増加）が有効。正中離開の閉鎖・正中過剰歯の抜去はALDに影響しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C22</div>
+        <p>成長期の下顎前突に対して第一期治療に適用できるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 顎整形装置<br>
+          b 連続抜去法<br>
+          c 舌側弧線装置<br>
+          d 機能的矯正装置<br>
+          e 外科的矯正治療法
+        </div>
+        <div class="answer">正解：a, c, d</div>
+        <p>【解説】下顎前突の第一期治療には<span class="key">顎整形装置</span>（上顎前方牽引装置、チンキャップ）、<span class="key">舌側弧線装置</span>（被蓋改善）、<span class="key">機能的矯正装置</span>が適用。<span class="caution">連続抜去法</span>は叢生（AngleⅠ級）に適用するもので、<span class="caution">下顎前突には不適応</span>。外科的矯正は成長終了後。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターンの整理</div>
+        <ul>
+          <li><span class="key">連続抜去後の予測</span> → 過蓋咬合、犬歯の遠心傾斜</li>
+          <li><span class="key">負のALD改善</span> → 連続抜去、唇側移動、側方拡大、大臼歯遠心移動</li>
+          <li><span class="key">ALDに影響しない</span> → 正中離開閉鎖、過剰歯抜去</li>
+          <li><span class="key">不適応</span> → 下顎前突、上顎前突（骨格性不正咬合）</li>
+        </ul>
+      </div>
+
+      <p class="note">参照：02_診査検査_口腔診査：アーチレングスディスクレパンシー.html</p>
+
+    </div>
+  </div>
+</body>
+</html>

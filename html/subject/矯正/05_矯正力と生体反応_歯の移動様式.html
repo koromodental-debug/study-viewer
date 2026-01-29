@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯の移動様式 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 80%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 矯正力と生体反応</span>
+    <h1>歯の移動様式</h1>
+    <div class="container">
+
+      <h2>6種類の移動様式</h2>
+      <p>矯正力による歯の移動は、以下の6つの様式に分類される。</p>
+
+      <table>
+        <tr>
+          <th>移動様式</th>
+          <th>英語</th>
+          <th>特徴</th>
+          <th>必要な力</th>
+        </tr>
+        <tr>
+          <td class="key">傾斜移動</td>
+          <td>Tipping</td>
+          <td>歯根の根尖側1/3を支点（回転中心）に歯冠が傾斜</td>
+          <td>弱い力</td>
+        </tr>
+        <tr>
+          <td class="key">歯体移動</td>
+          <td>Bodily</td>
+          <td>歯の長軸に平行に移動</td>
+          <td>強い力</td>
+        </tr>
+        <tr>
+          <td class="key">挺出</td>
+          <td>Extrusion</td>
+          <td>歯槽から抜ける方向へ歯軸に沿って移動</td>
+          <td>弱い力</td>
+        </tr>
+        <tr>
+          <td class="key">圧下</td>
+          <td>Intrusion</td>
+          <td>歯槽に食い込む方向へ歯軸に沿って移動</td>
+          <td>強い力</td>
+        </tr>
+        <tr>
+          <td class="key">回転</td>
+          <td>Rotation</td>
+          <td>歯の長軸を中心として回る</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td class="highlight">トルク</td>
+          <td>Torque</td>
+          <td>歯冠部を支点（回転中心）に歯根が唇舌的に移動</td>
+          <td>-</td>
+        </tr>
+      </table>
+
+      <h2>トルク【頻出】</h2>
+      <div class="point-box">
+        <div class="point-box-title">トルクの定義</div>
+        <ul>
+          <li><span class="highlight">歯冠部に回転中心</span>をおいて、<span class="highlight">歯根を唇舌的に傾斜移動</span>させる</li>
+          <li>傾斜移動の一種（傾斜移動は歯根に回転中心、トルクは歯冠に回転中心）</li>
+        </ul>
+      </div>
+
+      <h3>トルクに必要な装置</h3>
+      <ul>
+        <li><span class="key">マルチブラケット装置</span>（エッジワイズ装置）</li>
+        <li><span class="key">レクタンギュラーワイヤー</span>（長方形の断面形態）に<span class="key">捻り</span>を加えて使用</li>
+      </ul>
+
+      <h3>トルクの効果</h3>
+      <p>上顎前歯にトルク（歯根の舌側移動）を加えると：</p>
+      <ul>
+        <li><span class="highlight">上顎中切歯歯軸傾斜角が増大</span>する</li>
+        <li>歯根が舌側へ、歯冠が唇側へ傾斜</li>
+      </ul>
+
+      <h2>各移動様式の詳細</h2>
+
+      <h3>傾斜移動 vs トルク</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>傾斜移動</th>
+          <th>トルク</th>
+        </tr>
+        <tr>
+          <td>回転中心</td>
+          <td>歯根の根尖側1/3</td>
+          <td><span class="key">歯冠部</span></td>
+        </tr>
+        <tr>
+          <td>大きく動く部位</td>
+          <td>歯冠</td>
+          <td><span class="key">歯根</span></td>
+        </tr>
+        <tr>
+          <td>小さく動く部位</td>
+          <td>歯根</td>
+          <td>歯冠</td>
+        </tr>
+      </table>
+
+      <h3>挺出 vs 圧下</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>挺出</th>
+          <th>圧下</th>
+        </tr>
+        <tr>
+          <td>方向</td>
+          <td>歯槽から抜ける方向</td>
+          <td>歯槽に食い込む方向</td>
+        </tr>
+        <tr>
+          <td>歯根膜</td>
+          <td>全体が牽引側</td>
+          <td>全体が圧迫側</td>
+        </tr>
+        <tr>
+          <td>必要な力</td>
+          <td>弱い力で可能</td>
+          <td>強い力が必要</td>
+        </tr>
+        <tr>
+          <td>歯根吸収</td>
+          <td>リスク低い</td>
+          <td><span class="caution">リスク高い</span></td>
+        </tr>
+      </table>
+
+      <h3>回転の特徴</h3>
+      <ul>
+        <li>歯根膜のほかに<span class="key">中隔横断線維</span>も伸展される</li>
+        <li>そのため<span class="caution">後戻りを生じやすい</span></li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A37</div>
+        <p>マルチブラケット装置を用いた矯正治療における歯の移動を図に示す。<br>トルクはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108A37.png" alt="歯の移動様式">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】図の各移動様式は以下の通り：<br>
+        ア＝傾斜移動（歯根を支点に歯冠が傾斜）<br>
+        イ＝歯体移動（歯全体が平行移動）<br>
+        ウ＝挺出（歯が抜ける方向）<br>
+        <span class="key">エ＝トルク</span>（歯冠を支点に歯根が移動）<br>
+        オ＝回転（長軸を中心に回る）</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A27</div>
+        <p>ブラケットが装着された上顎中切歯と、装着予定のアーチワイヤーの矢状断面図を示す。<br>装着後の歯の移動で増大するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A27.png" alt="ブラケットとワイヤー">
+        </div>
+        <div class="choices">
+          a SNA角<br>
+          b ANB角<br>
+          c 上顎突出度<br>
+          d 上顎中切歯歯軸傾斜角<br>
+          e 上下顎中切歯歯軸傾斜角
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】図はブラケットに<span class="key">レクタンギュラーワイヤー</span>（四角形断面）を装着する様子。ワイヤーには捻り（トルク）が加えられており、装着すると歯根が舌側に移動する。これにより<span class="key">上顎中切歯歯軸傾斜角が増大</span>する。SNA角、ANB角、上顎突出度は骨格の指標であり、歯の移動だけでは変化しない。</p>
+      </div>
+
+      <p class="note">参考：新しい歯科矯正学 p.66-67</p>
+
+    </div>
+  </div>
+</body>
+</html>

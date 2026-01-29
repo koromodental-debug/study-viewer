@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯の異常 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 小児の歯科治療</span>
+    <h1>歯の異常</h1>
+    <div class="container">
+
+      <h2>癒合歯</h2>
+      <p>2歯の歯胚が発育途中で結合したもの。</p>
+
+      <h3>特徴</h3>
+      <ul>
+        <li><span class="key">下顎乳前歯部</span>に好発</li>
+        <li>象牙質で結合（歯髄は別々または連続）</li>
+        <li>癒合部に<span class="highlight">溝（癒合溝）</span>があり齲蝕リスク高い</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">癒合歯の管理ポイント（頻出）</div>
+        <ul>
+          <li><span class="highlight">齲蝕予防</span>：癒合溝のシーラント・フッ化物塗布</li>
+          <li><span class="highlight">歯根吸収</span>：交換期に注意（吸収が不均等になることがある）</li>
+          <li><span class="highlight">永久歯先天欠如</span>：後継永久歯が1本欠如することがある</li>
+        </ul>
+      </div>
+
+      <h2>先天欠如歯</h2>
+      <h3>好発部位</h3>
+      <table>
+        <tr>
+          <th>頻度</th>
+          <th>歯種</th>
+        </tr>
+        <tr>
+          <td>最多</td>
+          <td><span class="highlight">下顎第二小臼歯</span></td>
+        </tr>
+        <tr>
+          <td>2番目</td>
+          <td><span class="key">上顎側切歯</span></td>
+        </tr>
+        <tr>
+          <td>3番目</td>
+          <td>下顎側切歯</td>
+        </tr>
+      </table>
+
+      <h3>関連する所見</h3>
+      <ul>
+        <li>乳歯の<span class="key">晩期残存</span>（後継永久歯がないため脱落しない）</li>
+        <li><span class="key">空隙歯列</span></li>
+        <li>乳歯癒合歯がある場合、後継永久歯の先天欠如リスクあり</li>
+      </ul>
+
+      <h2>過剰歯・埋伏歯の影響</h2>
+      <p>上顎正中部の埋伏過剰歯を放置した場合の影響。</p>
+
+      <table>
+        <tr>
+          <th>影響</th>
+          <th>説明</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">萌出方向の異常</span></td>
+          <td>過剰歯が隣在歯の萌出を妨げる</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">歯根の形成障害</span></td>
+          <td>過剰歯による圧迫で歯根形成が阻害</td>
+        </tr>
+        <tr>
+          <td>正中離開</td>
+          <td>上顎中切歯間の空隙</td>
+        </tr>
+        <tr>
+          <td>萌出遅延</td>
+          <td>物理的障害による萌出障害</td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">骨性癒着、歯冠の形態異常・色調異常は過剰歯の直接的影響ではない</span></p>
+
+      <h2>乳歯埋伏を放置した場合の影響</h2>
+      <ul>
+        <li><span class="highlight">後継永久歯の発育不全</span></li>
+        <li>歯列弓周長の縮小</li>
+        <li>隣在乳歯の発育不全</li>
+      </ul>
+      <p class="note">病変の縮小や自然萌出は期待できない</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106B19</div>
+        <p>2歳の男児。下顎前歯の形の異常を母親が気にして来院した。初診時の口腔内写真（別冊No.19）を別に示す。管理するにあたって留意すべきなのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106B19_1.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a 舌　癖<br>
+          b 過剰歯<br>
+          c 歯根吸収<br>
+          d 発音障害<br>
+          e 永久歯先天欠如
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】写真は下顎乳前歯の<span class="highlight">癒合歯</span>。癒合歯の管理では<span class="highlight">歯根吸収</span>（交換期に不均等な吸収）と<span class="highlight">永久歯先天欠如</span>（後継永久歯が1本少ないことがある）に注意が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103D11</div>
+        <p>6歳の男児。下顎前歯の形態異常を主訴として来院した。経過観察を行っている。初診時の口腔内写真（別冊No.11A）とエックス線写真（別冊No.11B）とを別に示す。定期健診時に留意すべきなのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103D11_1.png" alt="口腔内写真">
+          <img src="../../../images/103回_Web画像/103D11_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 齲　蝕<br>
+          b 咬　耗<br>
+          c 歯冠破折<br>
+          d 歯髄感染<br>
+          e 生理的歯根吸収
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】癒合歯の経過観察では<span class="highlight">齲蝕</span>（癒合溝が不潔域になりやすい）と<span class="highlight">生理的歯根吸収</span>（交換期の歯根吸収が不均等になる可能性）に留意する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A87</div>
+        <p>乳歯列後期にエックス線検査で上顎正中部に埋伏過剰歯を認めた。そのままにしていた場合に上顎中切歯に生じる可能性が高いのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 骨性癒着<br>
+          b 歯冠の形態異常<br>
+          c 歯冠の色調異常<br>
+          d 歯根の形成障害<br>
+          e 萌出方向の異常
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】埋伏過剰歯を放置すると、隣在歯（上顎中切歯）に<span class="highlight">歯根の形成障害</span>と<span class="highlight">萌出方向の異常</span>が生じる可能性がある。骨性癒着や歯冠の形態・色調異常は過剰歯の直接的影響ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C40</div>
+        <p>8歳の男児。前歯部の空隙を主訴として来院した。永久歯の抜歯経験はない。初診時の口腔内写真（別冊No.5A）とエックス線画像（別冊No.5B）を別に示す。欠如している永久歯数（本）はどれか。1つ選べ。ただし、智歯は数に含めない。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113C40_1.png" alt="口腔内写真">
+          <img src="../../../images/113回_Web画像/113C40_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 4<br>
+          b 6<br>
+          c 8<br>
+          d 10<br>
+          e 12
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】X線画像から先天欠如歯を数える問題。パノラマX線で歯胚の有無を確認し、<span class="highlight">8本の永久歯が先天欠如</span>していることがわかる。多数歯の先天欠如は先天性無歯症・部分無歯症の可能性がある。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

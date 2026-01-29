@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>部分矯正 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 矯正装置</span>
+    <h1>部分矯正</h1>
+    <div class="container">
+
+      <h2>部分矯正の概要</h2>
+      <p><span class="highlight">部分矯正</span>（MTM: Minor Tooth Movement、限局矯正）は、<span class="key">限局的な歯の移動</span>を目的とした矯正治療。全顎矯正（フルブラケット）と異なり、特定の歯のみを対象とする。</p>
+
+      <h3>部分矯正の特徴</h3>
+      <ul>
+        <li><span class="key">セクショナルアーチ</span>（部分的なアーチワイヤー）を使用</li>
+        <li>治療対象が<span class="key">限局的</span>（数歯のみ）</li>
+        <li>治療期間が<span class="key">短い</span>（全顎矯正より短期間）</li>
+        <li>補綴前処置として行うことが多い</li>
+      </ul>
+
+      <h2>適応症</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">部分矯正の適応</div>
+        <ul>
+          <li><span class="key">傾斜歯のアップライト</span>（直立化）</li>
+          <li><span class="key">挺出</span>（歯冠長延長術前など）</li>
+          <li><span class="key">圧下</span>（挺出歯の整直）</li>
+          <li><span class="key">捻転の改善</span></li>
+          <li><span class="key">空隙閉鎖</span>（小さな空隙）</li>
+          <li><span class="key">補綴前処置</span>（ブリッジやインプラント前の歯軸改善）</li>
+        </ul>
+      </div>
+
+      <h2>セクショナルアーチ【重要】</h2>
+      <p><span class="highlight">セクショナルアーチ</span>は、部分的なアーチワイヤーで、限局的な歯の移動に使用する。</p>
+
+      <h3>セクショナルアーチの種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td class="key">アップライティングスプリング</td>
+          <td>傾斜歯の<span class="key">直立化</span>（アップライト）</td>
+        </tr>
+        <tr>
+          <td class="key">ユーティリティアーチ</td>
+          <td>前歯の<span class="key">圧下</span>・<span class="key">トルク</span>付与</td>
+        </tr>
+        <tr>
+          <td class="key">オープンコイルスプリング</td>
+          <td>空隙の<span class="key">開大</span></td>
+        </tr>
+        <tr>
+          <td class="key">クローズドコイルスプリング</td>
+          <td>空隙の<span class="key">閉鎖</span></td>
+        </tr>
+      </table>
+
+      <h2>セクショナルアーチの作用原理</h2>
+
+      <h3>てこの原理</h3>
+      <p>セクショナルアーチでは、<span class="key">支点</span>・<span class="key">力点</span>・<span class="key">作用点</span>の関係により歯を移動させる。</p>
+
+      <h3>反作用に注意</h3>
+      <p>セクショナルアーチの使用時は、目的の歯だけでなく<span class="caution">固定源となる歯にも反作用</span>が生じる。</p>
+      <ul>
+        <li>目的歯を挺出 → 固定源の歯は<span class="key">圧下</span></li>
+        <li>目的歯を圧下 → 固定源の歯は<span class="key">挺出</span></li>
+        <li>目的歯を遠心傾斜 → 固定源の歯は<span class="key">近心傾斜</span></li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109C53</div>
+        <p>装着前のセクショナルアーチと装着時の矯正装置の模式図（別冊No.11）を別に示す。予測される作用はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 側切歯の舌側傾斜<br>
+          b 犬歯の圧下<br>
+          c 第一小臼歯の遠心傾斜<br>
+          d 第二小臼歯の挺出<br>
+          e 第二大臼歯の遠心傾斜
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】セクショナルアーチの作用を予測する問題。模式図から、<span class="key">犬歯の圧下</span>と<span class="key">第二大臼歯の遠心傾斜</span>が予測される。セクショナルアーチでは支点・力点・作用点の関係を考え、固定源への反作用も考慮する必要がある。</p>
+      </div>
+
+      <h2>全顎矯正との違い</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>部分矯正（MTM）</th>
+          <th>全顎矯正</th>
+        </tr>
+        <tr>
+          <td>治療対象</td>
+          <td><span class="key">限局的</span>（数歯）</td>
+          <td>全歯列</td>
+        </tr>
+        <tr>
+          <td>使用装置</td>
+          <td><span class="key">セクショナルアーチ</span></td>
+          <td>フルアーチワイヤー</td>
+        </tr>
+        <tr>
+          <td>治療期間</td>
+          <td><span class="key">短い</span></td>
+          <td>長い（1〜3年）</td>
+        </tr>
+        <tr>
+          <td>適応</td>
+          <td>補綴前処置、限局的不正</td>
+          <td>全顎的な不正咬合</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターンの整理</div>
+        <ul>
+          <li><span class="key">セクショナルアーチの作用</span>：支点・力点・作用点の関係から予測</li>
+          <li><span class="key">反作用</span>：固定源の歯にも作用が生じる</li>
+          <li><span class="key">適応</span>：アップライト、挺出、圧下、補綴前処置</li>
+        </ul>
+      </div>
+
+      <p class="note">参考：歯科矯正学（相馬）p.227（各種スプリング）</p>
+
+    </div>
+  </div>
+</body>
+</html>

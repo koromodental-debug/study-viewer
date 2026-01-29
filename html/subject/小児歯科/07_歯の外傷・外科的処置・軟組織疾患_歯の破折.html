@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯の破折 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 歯の外傷・外科的処置・軟組織疾患</span>
+    <h1>歯の破折</h1>
+    <div class="container">
+
+      <h2>歯冠破折の分類と処置</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>状態</th>
+          <th>処置</th>
+        </tr>
+        <tr>
+          <td>エナメル質破折</td>
+          <td>露髄なし</td>
+          <td>研磨、CR修復</td>
+        </tr>
+        <tr>
+          <td>象牙質破折</td>
+          <td>露髄なし</td>
+          <td>間接覆髄、CR修復</td>
+        </tr>
+        <tr>
+          <td>露髄を伴う破折（小）</td>
+          <td><span class="highlight">露髄面が小さい</span></td>
+          <td><span class="highlight">直接覆髄</span></td>
+        </tr>
+        <tr>
+          <td>露髄を伴う破折（大）</td>
+          <td><span class="highlight">露髄面が大きい</span></td>
+          <td><span class="highlight">生活歯髄切断</span></td>
+        </tr>
+      </table>
+
+      <h2>露髄を伴う破折の処置選択（頻出）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">直接覆髄 vs 生活断髄</div>
+        <ul>
+          <li><span class="highlight">露髄面の大きさ</span>が処置選択の根拠</li>
+          <li>露髄面が小さい（ピンポイント露髄）→ <span class="key">直接覆髄</span></li>
+          <li>露髄面が大きい → <span class="key">生活歯髄切断</span></li>
+        </ul>
+      </div>
+
+      <h3>生活歯髄切断の適応根拠</h3>
+      <ul>
+        <li><span class="highlight">若年者</span>（歯髄の生活力が旺盛）</li>
+        <li><span class="highlight">受傷から来院までの時間が短い</span>（感染リスクが低い）</li>
+        <li>露髄部分が限局している</li>
+        <li>受傷歯の根尖組織への影響が小さい</li>
+      </ul>
+
+      <h2>歯根破折の処置</h2>
+
+      <table>
+        <tr>
+          <th>破折部位</th>
+          <th>処置</th>
+        </tr>
+        <tr>
+          <td>歯頸部1/3（歯冠側）</td>
+          <td><span class="caution">抜歯</span>（固定困難）</td>
+        </tr>
+        <tr>
+          <td>歯根中央1/3</td>
+          <td><span class="highlight">整復固定</span></td>
+        </tr>
+        <tr>
+          <td>根尖1/3</td>
+          <td>経過観察または固定</td>
+        </tr>
+      </table>
+
+      <p class="note">乳歯の歯根破折で後継永久歯への影響が大きい場合は抜歯</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109D13</div>
+        <p>8歳の女児。歯の破折を主訴として来院した。1時間前に転倒し顔面を強打したという。歯以外に受傷部はなく意識も明瞭である。両側の上顎中切歯の動揺は生理的範囲であり、打診痛はあるが自発痛はない。1┘は生活歯髄切断、└1は直接覆髄を行った。初診時の口腔内写真（別冊No.13A）とエックス線写真（別冊No.13B）を別に示す。1┴1に対する治療法の違いの根拠はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109D13_1.png" alt="口腔内写真">
+          <img src="../../../images/109回_Web画像/109D13_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 歯根の完成度<br>
+          b 辺縁歯肉の形態<br>
+          c 歯根破折の有無<br>
+          d 露髄面の大きさ<br>
+          e 歯根膜腔拡大の有無
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】直接覆髄と生活歯髄切断の選択は<span class="highlight">露髄面の大きさ</span>が根拠。露髄面が小さければ直接覆髄、大きければ生活断髄を選択する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107B41</div>
+        <p>12歳の男児。1時間前に転倒して前歯が破折したため来院した。自発痛はなく、動揺は認められなかった。歯髄電気診で反応を示した。初診時の口腔内写真（別冊No.41A）とエックス線写真（別冊No.41B）とを別に示す。生活歯髄切断法を行うこととした。その根拠として正しいのはどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107B41_1.png" alt="口腔内写真">
+          <img src="../../../images/107回_Web画像/107B41_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 若年者である。<br>
+          b 受傷から来院までの時間が短い。<br>
+          c 露髄部分が切端部に限局している。<br>
+          d 受傷歯の根尖組織への影響が小さい。<br>
+          e 硬組織による根尖閉鎖が期待できる。
+        </div>
+        <div class="answer">正解：a, b, c, d</div>
+        <p>【解説】生活断髄の適応根拠：<span class="highlight">若年者</span>、<span class="highlight">受傷から短時間</span>、露髄が限局、根尖への影響小。eはアペキシフィケーションの説明であり、生活断髄の根拠ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110D11</div>
+        <p>5歳の女児。上顎右側乳中切歯の外傷を主訴として来院した。昨日、転倒し、A┘を打撲したが、自発痛が軽度であったため、そのままにしていたという。A┘の動揺度は2度で打診痛を認める。初診時の口腔内写真（別冊No.11A）とエックス線写真（別冊No.11B）を別に示す。適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110D11_1.png" alt="口腔内写真">
+          <img src="../../../images/110回_Web画像/110D11_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 経過観察<br>
+          b 固　定<br>
+          c 感染根管治療<br>
+          d 歯根尖切除<br>
+          e 抜　歯
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】X線で歯根中央部の破折が認められる。歯根中央1/3の破折では<span class="highlight">整復固定</span>が第一選択。後継永久歯への影響が懸念される場合は抜歯となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C73</div>
+        <p>1歳6か月の男児。上顎乳前歯部の外傷を主訴として来院した。昨日、転倒し、上顎左側乳中切歯を受傷したという。初診時の口腔内写真（別冊No.21A）とエックス線画像（別冊No.21B）を別に示す。適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112C73_1.png" alt="口腔内写真">
+          <img src="../../../images/112回_Web画像/112C73_2.png" alt="X線画像">
+        </div>
+        <div class="choices">
+          a 経過観察<br>
+          b 整復固定<br>
+          c 感染根管治療<br>
+          d 意図的再植<br>
+          e 抜　歯
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】1歳6か月の乳歯で歯頸部に近い歯根破折が認められる。固定が困難であり、後継永久歯歯胚に近接しているため<span class="highlight">抜歯</span>が適切。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -39,7 +39,7 @@
     .key { font-weight: 600; }
     .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
     .caution { color: var(--caution); font-weight: 600; }
-    ul { padding-left: 1.5em; margin: 8px 0; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
     li { margin: 4px 0; }
     .point-box {
       background: var(--accent-light);
@@ -66,6 +66,8 @@
     .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
     .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
     .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
     .category-tag {
       display: inline-block;
       background: var(--bg-secondary);
@@ -98,7 +100,17 @@
         </ul>
       </div>
 
-      <h2>Overall ratio（オーバーオールレイシオ）</h2>
+      <h2>アンテリアレイシオ（Anterior ratio）</h2>
+      <p>上下顎<span class="key">6前歯</span>（犬歯〜犬歯）の歯冠幅径比</p>
+      <div class="formula-box">
+        下顎6前歯の歯冠幅径の総和<br>
+        ─────────────────────── × 100 (%)<br>
+        上顎6前歯の歯冠幅径の総和
+      </div>
+      <p><span class="highlight">日本人標準値 = 78.09 ± 2.19 (%)</span></p>
+      <p class="note">※Bolton原法の標準値は77.2%</p>
+
+      <h2>オーバーオールレイシオ（Overall ratio）</h2>
       <p>上下顎<span class="key">12歯</span>（第一大臼歯〜第一大臼歯）の歯冠幅径比</p>
       <div class="formula-box">
         下顎12歯の歯冠幅径の総和<br>
@@ -107,47 +119,104 @@
       </div>
       <p><span class="highlight">日本人標準値 = 91.37 ± 2.10 (%)</span></p>
 
-      <h2>Anterior ratio（アンテリアレイシオ）</h2>
-      <p>上下顎<span class="key">6前歯</span>（犬歯〜犬歯）の歯冠幅径比</p>
-      <div class="formula-box">
-        下顎6前歯の歯冠幅径の総和<br>
-        ─────────────────────── × 100 (%)<br>
-        上顎6前歯の歯冠幅径の総和
+      <h2>2つのratioの使い分け</h2>
+      <div class="point-box">
+        <div class="point-box-title">どちらのratioが影響を受けるか</div>
+        <ul>
+          <li><span class="key">前歯部</span>の異常（欠如・矮小など）→ <span class="highlight">両方のratio</span>に影響</li>
+          <li><span class="key">小臼歯・大臼歯</span>の異常 → <span class="highlight">オーバーオールレイシオのみ</span>に影響</li>
+        </ul>
       </div>
-      <p><span class="highlight">日本人標準値 = 78.09 ± 2.19 (%)</span></p>
 
-      <h2>ratioの変化と原因</h2>
+      <h2>ratioが変化する原因</h2>
+
+      <h3>ratioが大きくなる場合</h3>
       <table>
-        <tr><th>変化</th><th>原因</th><th>臨床的対応</th></tr>
+        <tr><th>原因</th><th>機序</th></tr>
         <tr>
-          <td><span class="key">小さい</span></td>
-          <td>下顎歯が小さい<br>上顎歯が大きい<br><span class="caution">下顎歯の欠如</span></td>
-          <td>下顎歯冠の形態修整（大きく）<br>上顎歯冠のスライスカット（小さく）</td>
+          <td><span class="highlight">上顎中切歯の矮小</span></td>
+          <td>分母（上顎）が減少</td>
         </tr>
         <tr>
-          <td><span class="key">大きい</span></td>
-          <td>下顎歯が大きい<br>上顎歯が小さい<br><span class="caution">上顎歯の欠如・矮小</span></td>
-          <td>上顎歯冠の形態修整（大きく）<br>下顎歯冠のスライスカット（小さく）</td>
+          <td><span class="highlight">上顎側切歯の先天欠如</span></td>
+          <td>分母（上顎）が減少</td>
+        </tr>
+        <tr>
+          <td>下顎前歯部の過剰歯</td>
+          <td>分子（下顎）が増加</td>
+        </tr>
+        <tr>
+          <td>上顎第一小臼歯の欠如</td>
+          <td>分母（上顎）が減少<br><span class="caution">※Anteriorには影響なし</span></td>
         </tr>
       </table>
 
-      <h2>歯の欠如とratioの変化</h2>
+      <h3>ratioが小さくなる場合</h3>
       <table>
-        <tr><th>欠如歯</th><th>Overall ratio</th><th>Anterior ratio</th></tr>
+        <tr><th>原因</th><th>機序</th></tr>
         <tr>
-          <td><span class="key">下顎側切歯</span>欠如</td>
-          <td><span class="highlight">小さくなる</span></td>
-          <td><span class="highlight">小さくなる</span></td>
+          <td><span class="highlight">下顎の癒合歯</span></td>
+          <td>分子（下顎）が減少（歯数減少）</td>
         </tr>
         <tr>
-          <td><span class="key">上顎側切歯</span>欠如・矮小</td>
+          <td><span class="highlight">下顎側切歯の欠如</span></td>
+          <td>分子（下顎）が減少</td>
+        </tr>
+        <tr>
+          <td>下顎第二小臼歯の欠如</td>
+          <td>分子（下顎）が減少<br><span class="caution">※Anteriorには影響なし</span></td>
+        </tr>
+        <tr>
+          <td>上顎の巨大歯・過剰歯</td>
+          <td>分母（上顎）が増加</td>
+        </tr>
+      </table>
+
+      <h2>歯の異常とratioへの影響まとめ</h2>
+      <table>
+        <tr><th>歯の異常</th><th>Anterior ratio</th><th>Overall ratio</th></tr>
+        <tr>
+          <td>上顎側切歯の欠如・矮小</td>
           <td><span class="highlight">大きくなる</span></td>
           <td><span class="highlight">大きくなる</span></td>
         </tr>
         <tr>
-          <td><span class="key">下顎第二小臼歯</span>欠如</td>
+          <td>下顎前歯の癒合歯</td>
           <td><span class="highlight">小さくなる</span></td>
-          <td>変化なし</td>
+          <td><span class="highlight">小さくなる</span></td>
+        </tr>
+        <tr>
+          <td>下顎第二小臼歯の欠如</td>
+          <td><span class="caution">変化なし</span></td>
+          <td><span class="highlight">小さくなる</span></td>
+        </tr>
+        <tr>
+          <td>上顎第一小臼歯の欠如</td>
+          <td><span class="caution">変化なし</span></td>
+          <td><span class="highlight">大きくなる</span></td>
+        </tr>
+      </table>
+
+      <h2>計算問題の解き方</h2>
+      <ol>
+        <li>対象歯（6前歯 or 12歯）の幅径を合計</li>
+        <li>下顎 ÷ 上顎 × 100 を計算</li>
+        <li>小数点以下第2位を四捨五入</li>
+      </ol>
+      <p class="note">※左右対称の場合、片側の値を2倍して計算することも可能</p>
+
+      <h2>臨床的対応</h2>
+      <table>
+        <tr><th>ratioの状態</th><th>意味</th><th>対応</th></tr>
+        <tr>
+          <td>大きい</td>
+          <td>下顎歯が相対的に大きい<br>or 上顎歯が相対的に小さい</td>
+          <td>・上顎歯冠の形態修整（大きく）<br>・下顎歯冠のスライスカット</td>
+        </tr>
+        <tr>
+          <td>小さい</td>
+          <td>下顎歯が相対的に小さい<br>or 上顎歯が相対的に大きい</td>
+          <td>・下顎歯冠の形態修整（大きく）<br>・上顎歯冠のスライスカット</td>
         </tr>
       </table>
 
@@ -174,6 +243,71 @@
         </div>
         <div class="answer">正解：d, e</div>
         <p>【解説】下顎側切歯の欠如により、<span class="highlight">required arch length</span>（必要な歯列弓周長）は減少する。<span class="highlight">tooth size ratio</span>は分子（下顎）が減少するため小さくなる。basal arch widthは歯の欠如とは無関係。overbite、overjetは歯の欠如だけでは変化しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102D47</div>
+        <p>11歳の女児。歯並びが悪いことを主訴として来院した。模型分析の結果、アンテリアレイシオが標準値よりも小さい。原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 上顎の過剰歯<br>
+          b 上顎の巨大歯<br>
+          c 下顎の癒合歯<br>
+          d 下顎の矮小歯<br>
+          e 下顎の埋伏歯
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】アンテリアレイシオが<span class="highlight">小さい</span>＝分子（下顎）が小さい or 分母（上顎）が大きい。選択肢の中で「分子を減らす」のは<span class="highlight">下顎の癒合歯</span>（c）と下顎の矮小歯（d）。癒合歯は2本の歯が癒合して1本になるため歯数自体が減り、幅径の総和が減少する。埋伏歯は萌出していないだけで計測には含めないため影響しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C104</div>
+        <p>Anterior ratioが大きくなるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 上顎中切歯の矮小<br>
+          b 上顎側切歯の先天欠如<br>
+          c 上顎第一小臼歯の先天欠如<br>
+          d 下顎前歯部の過剰歯<br>
+          e 下顎犬歯の先天欠如
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】Anterior ratioが<span class="highlight">大きくなる</span>＝分子（下顎）が増加 or 分母（上顎）が減少。<br>
+        a：<span class="highlight">上顎中切歯の矮小</span>→分母減少→ratio増加 ○<br>
+        b：<span class="highlight">上顎側切歯の先天欠如</span>→分母減少→ratio増加 ○<br>
+        c：上顎第一小臼歯は<span class="caution">前歯部ではない</span>→Anterior ratioに影響なし ×<br>
+        d：下顎前歯部の過剰歯→分子増加→ratio増加だが、選択肢は2つで優先度はa, bが高い<br>
+        e：下顎犬歯の先天欠如→分子減少→ratio<span class="caution">減少</span> ×</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A89（計算問題）</div>
+        <p>左右側の平均歯冠幅径を表に示す。<br>アンテリアレイシオを求めよ。ただし、小数点以下の数値が得られた場合には、小数点以下第2位を四捨五入すること。</p>
+        <div class="answer">正解：80.0</div>
+        <p>【解説】表から読み取った値で計算：<br>
+        下顎6前歯の総和 ÷ 上顎6前歯の総和 × 100<br>
+        = 80.0（%）<br>
+        標準値78.09%よりやや大きいが、正常範囲内。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B88（計算問題）</div>
+        <p>口腔模型で測定した各歯種の左右歯冠近遠心幅径の平均値を表に示す。<br>オーバーオールレイシオを求めよ。ただし、小数点以下の数値が得られた場合には、小数点以下第2位を四捨五入すること。</p>
+        <div class="answer">正解：90.0</div>
+        <p>【解説】表から各歯種の歯冠幅径を読み取り計算：<br>
+        <span class="key">下顎12歯の総和</span>：（各歯種の幅径 × 2）を合計<br>
+        <span class="key">上顎12歯の総和</span>：（各歯種の幅径 × 2）を合計<br>
+        下顎総和 ÷ 上顎総和 × 100 = <span class="highlight">90.0%</span><br>
+        標準値91.37%よりやや小さいが、許容範囲内。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターンの整理</div>
+        <ul>
+          <li><span class="key">ratioが大きくなる</span> → 上顎歯の欠如・矮小（分母↓）</li>
+          <li><span class="key">ratioが小さくなる</span> → 下顎歯の欠如・癒合（分子↓）</li>
+          <li><span class="key">小臼歯の異常</span> → Overall ratioのみに影響</li>
+          <li><span class="key">前歯の異常</span> → 両方のratioに影響</li>
+          <li><span class="key">計算問題</span> → 下顎÷上顎×100、小数点第2位を四捨五入</li>
+        </ul>
       </div>
 
     </div>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>小児の薬用量 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .formula { background: var(--bg-secondary); padding: 12px 16px; border-radius: 8px; margin: 10px 0; font-family: monospace; }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 小児の歯科治療</span>
+    <h1>小児の薬用量</h1>
+    <div class="container">
+
+      <h2>薬用量算定法の分類</h2>
+      <p>小児薬用量の算定には、年齢・体重・体表面積を基準とした方法がある。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">基準による分類（頻出）</div>
+        <ul>
+          <li><span class="highlight">年齢</span>を用いる：<span class="highlight">Augsbergerの式</span>、<span class="highlight">Youngの式</span></li>
+          <li><span class="key">体重</span>を用いる：Clarkの式、Crawfordの式</li>
+          <li><span class="highlight">体表面積</span>を用いる：<span class="highlight">von Harnackの換算表</span></li>
+        </ul>
+      </div>
+
+      <h2>各算定法の詳細</h2>
+
+      <h3>年齢を用いる方法</h3>
+      <table>
+        <tr>
+          <th>算定法</th>
+          <th>計算式</th>
+        </tr>
+        <tr>
+          <td><span class="key">Augsbergerの式</span></td>
+          <td>小児量 = <span class="highlight">(年齢×4+20)/100</span> × 成人量</td>
+        </tr>
+        <tr>
+          <td><span class="key">Youngの式</span></td>
+          <td>小児量 = <span class="highlight">年齢/(12+年齢)</span> × 成人量</td>
+        </tr>
+      </table>
+      <p class="note">Augsbergerの式は体表面積法の近似値として広く使用される。</p>
+
+      <h3>体重を用いる方法</h3>
+      <table>
+        <tr>
+          <th>算定法</th>
+          <th>計算式</th>
+        </tr>
+        <tr>
+          <td><span class="key">Clarkの式</span></td>
+          <td>小児量 = 体重(ポンド)/150 × 成人量</td>
+        </tr>
+        <tr>
+          <td><span class="key">Crawfordの式</span></td>
+          <td>小児量 = 体表面積(m²)/1.73 × 成人量<br>※体表面積は体重・身長から算出</td>
+        </tr>
+      </table>
+
+      <h3>体表面積を用いる方法</h3>
+      <p><span class="key">von Harnackの換算表</span>は、体表面積法で求めた値を整数比で簡略化した実用的な表。</p>
+
+      <table>
+        <tr>
+          <th>年齢</th>
+          <th>成人量に対する割合</th>
+        </tr>
+        <tr>
+          <td>未熟児</td>
+          <td>1/10</td>
+        </tr>
+        <tr>
+          <td>新生児</td>
+          <td>1/8</td>
+        </tr>
+        <tr>
+          <td>6か月</td>
+          <td>1/5</td>
+        </tr>
+        <tr>
+          <td>1歳</td>
+          <td>1/4</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">3歳</span></td>
+          <td><span class="highlight">1/3</span></td>
+        </tr>
+        <tr>
+          <td>7.5歳</td>
+          <td>1/2</td>
+        </tr>
+        <tr>
+          <td>12歳</td>
+          <td>2/3</td>
+        </tr>
+        <tr>
+          <td>成人</td>
+          <td>1</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方のポイント</div>
+        <ul>
+          <li>von Harnack：<span class="highlight">体表面積</span>が基準（Augsberger式の近似整数値）</li>
+          <li>3歳 = <span class="highlight">1/3</span>（数字が一致で覚えやすい）</li>
+          <li>7.5歳 = 1/2（学童期で半量）</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">111B36</div>
+        <p>小児の薬用量の算定で年齢を用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Augsbergerの式<br>
+          b Clarkの式<br>
+          c Crawfordの式<br>
+          d von Harnackの換算表<br>
+          e Youngの式
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="highlight">年齢</span>を用いるのは<span class="highlight">Augsbergerの式</span>と<span class="highlight">Youngの式</span>。Clarkの式は体重（ポンド）、von Harnackは体表面積、Crawfordの式は体表面積（体重・身長から算出）を基準とする。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A55</div>
+        <p>小児薬用量の算出方法と尺度の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Augsbergerの式 ーーーーーーーー 身　長<br>
+          b von Harnackの換算表 ーーーーーー 骨化度<br>
+          c von Harnackの換算表 ーーーーーー 体表面積<br>
+          d Youngの式 ーーーーーーーーーーーー 体　重<br>
+          e Youngの式 ーーーーーーーーーーーー 基礎代謝率
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">von Harnackの換算表は体表面積</span>を基準とした算定法。Augsbergerの式とYoungの式は年齢を用いる。Clarkの式は体重を用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D22</div>
+        <p>von Harnackの換算表で、成人に対する3歳児の薬用量の割合はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 1/6<br>
+          b 1/5<br>
+          c 1/3<br>
+          d 1/2<br>
+          e 2/3
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】von Harnackの換算表で<span class="highlight">3歳児は成人の1/3</span>。6か月=1/5、1歳=1/4、7.5歳=1/2、12歳=2/3。「3歳=1/3」は数字が一致するため覚えやすい。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

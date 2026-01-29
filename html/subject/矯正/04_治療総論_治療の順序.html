@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>治療の順序 - 矯正</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .step-flow {
+      background: linear-gradient(135deg, #E8F4FD 0%, #F5F5F7 100%);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .step-item {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+    }
+    .step-num {
+      background: var(--accent);
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9pt;
+      font-weight: 600;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    .step-arrow {
+      color: var(--accent);
+      margin: 4px 0 4px 36px;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">矯正 / 治療総論</span>
+    <h1>治療の順序</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li><span class="key">レベリングの次</span>は<span class="highlight">犬歯の遠心移動</span></li>
+          <li>犬歯遠心移動→再レベリング→<span class="key">切歯の舌側移動</span>→咬合緊密化</li>
+          <li>外科的矯正：<span class="key">術前矯正</span>→手術→<span class="key">術後矯正</span>→保定</li>
+        </ul>
+      </div>
+
+      <h2>1. マルチブラケット治療のステージ</h2>
+
+      <h3>抜歯症例の治療順序（エッジワイズ法）</h3>
+
+      <div class="step-flow">
+        <div class="step-item"><span class="step-num">1</span><span class="key">小臼歯抜歯</span></div>
+        <div class="step-arrow">↓</div>
+        <div class="step-item"><span class="step-num">2</span><span class="key">側方歯群のレベリング</span>（犬歯〜第二大臼歯）</div>
+        <div class="step-arrow">↓</div>
+        <div class="step-item"><span class="step-num">3</span><span class="highlight">犬歯の遠心移動</span>（コイルスプリング・エラスティックチェーン）</div>
+        <div class="step-arrow">↓</div>
+        <div class="step-item"><span class="step-num">4</span><span class="key">歯列の再レベリング</span>（4切歯にブラケット装着）</div>
+        <div class="step-arrow">↓</div>
+        <div class="step-item"><span class="step-num">5</span><span class="key">切歯の舌側移動</span>（クロージングループ）</div>
+        <div class="step-arrow">↓</div>
+        <div class="step-item"><span class="step-num">6</span><span class="key">咬合の緊密化</span>（アイデアルアーチ）</div>
+        <div class="step-arrow">↓</div>
+        <div class="step-item"><span class="step-num">7</span><span class="key">装置撤去・保定</span></div>
+      </div>
+
+      <h3>各ステージの詳細</h3>
+      <table>
+        <tr><th>ステージ</th><th>使用ワイヤー/装置</th><th>目的</th></tr>
+        <tr>
+          <td class="key">レベリング</td>
+          <td>細いNi-Ti/ステンレスラウンドワイヤー</td>
+          <td>歯列の排列・整直</td>
+        </tr>
+        <tr>
+          <td class="key">犬歯遠心移動</td>
+          <td>太いステンレスラウンドワイヤー<br>コイルスプリング/エラスティックチェーン</td>
+          <td>抜歯空隙への犬歯移動</td>
+        </tr>
+        <tr>
+          <td class="key">切歯舌側移動</td>
+          <td>レクタンギュラーワイヤー<br>クロージングループ</td>
+          <td>前歯の後退</td>
+        </tr>
+        <tr>
+          <td class="key">咬合緊密化</td>
+          <td>アイデアルアーチ<br>（各オーダーベンド付与）</td>
+          <td>咬頭嵌合の獲得</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113C23</div>
+        <p>上下顎両側第一小臼歯の抜去後、マルチブラケット装置による矯正歯科治療を行うこととした。<br>上下顎側方歯群のレベリングの次に行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咬合の緊密化<br>
+          b 犬歯の遠心移動<br>
+          c 切歯の舌側移動<br>
+          d 歯列の再レベリング<br>
+          e マルチブラケット装置の撤去
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】レベリング終了後は<span class="highlight">犬歯の遠心移動</span>を行う。犬歯を抜歯空隙に移動させてから、切歯にブラケットを装着して再レベリング→切歯舌側移動→咬合緊密化の順で進める。</p>
+      </div>
+
+      <h2>2. 外科的矯正治療の順序</h2>
+
+      <h3>治療の流れ</h3>
+
+      <div class="step-flow">
+        <div class="step-item"><span class="step-num">1</span><span class="key">術前矯正</span>（1〜2年）</div>
+        <div class="step-arrow">↓ 歯列の排列・ディコンペンセーション</div>
+        <div class="step-item"><span class="step-num">2</span><span class="highlight">顎矯正手術</span></div>
+        <div class="step-arrow">↓ 上顎・下顎の位置を外科的に修正</div>
+        <div class="step-item"><span class="step-num">3</span><span class="key">術後矯正</span>（6ヶ月〜1年）</div>
+        <div class="step-arrow">↓ 咬合の緊密化・微調整</div>
+        <div class="step-item"><span class="step-num">4</span><span class="key">保定</span></div>
+      </div>
+
+      <h3>術前矯正の目的</h3>
+      <ul>
+        <li><span class="key">ディコンペンセーション</span>：骨格の不調和を代償していた歯の傾斜を除去</li>
+        <li>歯列の排列・レベリング</li>
+        <li>手術時の顎間固定に適した歯列の準備</li>
+      </ul>
+      <p class="note">※術前矯正により一時的に不正咬合が増悪することがある（代償の除去）</p>
+
+      <div class="question-box">
+        <div class="q-number">111B57</div>
+        <p>外科的矯正治療中の一連の口腔内写真（別冊No.5）を別に示す。<br>治療過程の順番に並べた場合、2番目はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111B57_1.png" alt="治療過程写真">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】外科的矯正治療の順序は、術前矯正（歯列排列）→手術→術後矯正→保定。写真から治療段階を判断し、2番目に該当するものを選択する。</p>
+      </div>
+
+      <h2>3. 顎間ゴムの使用時期</h2>
+
+      <p>AngleⅡ級・Ⅲ級症例では、治療ステップ中に顎間ゴムを併用して大臼歯関係を改善する。</p>
+
+      <table>
+        <tr><th>顎間ゴム</th><th>使用目的</th><th>注意点</th></tr>
+        <tr>
+          <td class="key">Ⅱ級ゴム</td>
+          <td>AngleⅡ級の改善<br>オーバージェットの減少</td>
+          <td class="caution">上顎前歯の挺出・下顎大臼歯の挺出</td>
+        </tr>
+        <tr>
+          <td class="key">Ⅲ級ゴム</td>
+          <td>AngleⅢ級の改善<br>反対咬合の改善</td>
+          <td class="caution">下顎前歯の挺出・上顎大臼歯の挺出</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：治療順序の覚え方</div>
+        <ul>
+          <li>「<span class="highlight">レベ→犬遠→再レベ→切舌→緊密→撤去</span>」</li>
+          <li>レベリングの次は必ず<span class="key">犬歯の遠心移動</span></li>
+          <li>切歯の舌側移動は犬歯遠心移動・再レベリングの<span class="caution">後</span></li>
+          <li>外科的矯正：術前矯正でディコンペンセーション→手術→術後矯正</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

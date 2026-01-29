@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抜髄 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 小児の歯内療法</span>
+    <h1>抜髄（麻酔抜髄法）</h1>
+    <div class="container">
+
+      <h2>概要</h2>
+      <p><span class="key">麻酔抜髄法</span>は、歯髄への炎症が根部歯髄まで波及している場合に、歯髄をすべて除去し、根尖歯周組織や永久歯歯胚への炎症の波及を防止する方法。</p>
+
+      <h2>適応（頻出）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">抜髄の適応</div>
+        <ul>
+          <li><span class="highlight">急性化膿性歯髄炎</span>（全部性）</li>
+          <li>慢性潰瘍性歯髄炎（全部性）</li>
+          <li>慢性増殖性歯髄炎（全部性）</li>
+          <li><span class="key">炎症が根管歯髄にまで波及</span>している場合</li>
+        </ul>
+      </div>
+
+      <h3>抜髄と生活断髄の鑑別（頻出）</h3>
+      <table>
+        <tr>
+          <th>所見</th>
+          <th>生活断髄</th>
+          <th>抜髄</th>
+        </tr>
+        <tr>
+          <td>自発痛</td>
+          <td>軽度または一過性</td>
+          <td><span class="highlight">持続的にあり</span></td>
+        </tr>
+        <tr>
+          <td>打診痛</td>
+          <td><span class="key">なし</span></td>
+          <td><span class="highlight">あり</span></td>
+        </tr>
+        <tr>
+          <td>インピーダンス値</td>
+          <td>15〜18kΩ（仮性露髄〜閉鎖性）</td>
+          <td><span class="highlight">12kΩ以下</span>（露髄）</td>
+        </tr>
+        <tr>
+          <td>炎症の範囲</td>
+          <td>冠部歯髄に限局</td>
+          <td>根管歯髄にも波及</td>
+        </tr>
+      </table>
+
+      <p class="note">打診痛の有無が生活断髄と抜髄の重要な鑑別点</p>
+
+      <h2>乳歯の根管充填（頻出）</h2>
+
+      <h3>使用材料の組み合わせ</h3>
+      <table>
+        <tr>
+          <th>根管充填材</th>
+          <th>仮封材</th>
+          <th>適否</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ヨードホルム製剤</span></td>
+          <td><span class="highlight">グラスアイオノマーセメント</span></td>
+          <td>正解</td>
+        </tr>
+        <tr>
+          <td class="caution">パラホルム製剤</td>
+          <td>−</td>
+          <td>×（毒性あり、使用しない）</td>
+        </tr>
+        <tr>
+          <td class="caution">ガッタパーチャ</td>
+          <td>−</td>
+          <td>×（吸収しない、乳歯に不適）</td>
+        </tr>
+      </table>
+
+      <h3>ヨードホルム製剤を使用する理由</h3>
+      <ul>
+        <li><span class="key">吸収性</span>がある → 乳歯の生理的歯根吸収に対応</li>
+        <li>後継永久歯の萌出を妨げない</li>
+        <li>抗菌作用がある</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108B43</div>
+        <p>5歳の女児。下顎右側第一乳臼歯の自発痛を主訴として来院した。3週前から軽度の冷水痛を訴えたが放置していたという。垂直および水平打診に反応を示す。インピーダンス測定の結果は12.5kΩであった。初診時の口腔内写真（別冊No.43A）とエックス線写真（別冊No.43B）を別に示す。適切な治療はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108B43_1.png" alt="口腔内写真">
+          <img src="../../../images/108回_Web画像/108B43_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a コンポジットレジン修復<br>
+          b 直接覆髄法<br>
+          c 抜髄法<br>
+          d 感染根管治療<br>
+          e 抜　歯
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】自発痛あり、<span class="highlight">打診痛あり</span>、インピーダンス12.5kΩ（露髄）→ 炎症が根管歯髄にも波及。<span class="highlight">抜髄法</span>の適応。打診痛がなければ生活断髄だが、打診痛があるため抜髄となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110D44</div>
+        <p>4歳の女児。下顎右側第二乳臼歯の食事中の疼痛を主訴として来院した。2か月前から時々冷水痛を訴えたがそのままにしていたという。軽度の打診痛を認める。初診時の口腔内写真（別冊No.43A）とエックス線写真（別冊No.43B）を別に示す。適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110D44_1.png" alt="口腔内写真">
+          <img src="../../../images/110回_Web画像/110D44_2.png" alt="X線写真">
+        </div>
+        <div class="choices">
+          a 間接覆髄<br>
+          b 直接覆髄<br>
+          c 生活断髄<br>
+          d 抜　髄<br>
+          e 抜　歯
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】冷水痛あり、<span class="highlight">軽度の打診痛あり</span> → 炎症が根管歯髄にも波及している。<span class="highlight">抜髄</span>の適応。打診痛があれば生活断髄ではなく抜髄を選択。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D46</div>
+        <p>乳歯の麻酔抜髄で根管拡大後の術式と使用薬剤・材料を図に示す。組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111D46_1.png" alt="術式図">
+        </div>
+        <div class="choices">
+          a パラホルム製剤――リン酸亜鉛セメント<br>
+          b パラホルム製剤――グラスアイオノマーセメント<br>
+          c ヨードホルム製剤――MTAセメント<br>
+          d ヨードホルム製剤――グラスアイオノマーセメント<br>
+          e クロロフェノール製剤――リン酸亜鉛セメント
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】乳歯の根管充填には<span class="highlight">ヨードホルム製剤</span>（吸収性があり、乳歯の生理的歯根吸収に対応）を使用。仮封には<span class="highlight">グラスアイオノマーセメント</span>が適切。パラホルム製剤は毒性があり使用しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>外傷の診査・診断 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul, ol { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 歯の外傷・外科的処置・軟組織疾患</span>
+    <h1>外傷の診査・診断</h1>
+    <div class="container">
+
+      <h2>乳歯外傷の特徴（頻出）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">乳歯外傷の特徴</div>
+        <ul>
+          <li>好発部位：<span class="highlight">上顎前歯</span>（下顎ではない）</li>
+          <li>好発時期：<span class="highlight">乳歯萌出期</span>（1〜3歳）</li>
+          <li>性差：<span class="key">男児</span>に多い</li>
+          <li>原因：<span class="highlight">転倒</span>が最多（衝突ではない）</li>
+          <li>損傷タイプ：<span class="highlight">脱臼が破折より多い</span></li>
+        </ul>
+      </div>
+
+      <h3>乳歯外傷と永久歯外傷の違い</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>乳歯外傷</th>
+          <th>永久歯外傷</th>
+        </tr>
+        <tr>
+          <td>損傷タイプ</td>
+          <td><span class="highlight">脱臼 ＞ 破折</span></td>
+          <td>破折 ＞ 脱臼</td>
+        </tr>
+        <tr>
+          <td>理由</td>
+          <td>歯根が短く、歯槽骨が軟らかい</td>
+          <td>歯根が長く、歯槽骨が硬い</td>
+        </tr>
+      </table>
+
+      <h2>外傷歯の検査</h2>
+      <ul>
+        <li><span class="highlight">透照診</span>：歯冠破折の確認</li>
+        <li><span class="highlight">動揺度検査</span>：脱臼の評価</li>
+        <li><span class="highlight">口内法エックス線検査</span>：歯根破折、脱臼の確認</li>
+        <li class="caution">歯髄電気診：乳歯では信頼性が低い</li>
+        <li class="caution">歯周ポケット検査：外傷では不要</li>
+      </ul>
+
+      <h2>後継永久歯への影響（頻出）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">乳歯外傷による影響</div>
+        <ul>
+          <li><span class="highlight">萌出遅延</span></li>
+          <li><span class="highlight">萌出位置異常</span></li>
+          <li><span class="highlight">歯根形成不全</span></li>
+          <li><span class="highlight">歯胚発育停止</span></li>
+          <li>エナメル質形成不全（ターナー歯）</li>
+        </ul>
+      </div>
+
+      <p class="note">歯根内部吸収は後継永久歯への影響ではなく、外傷歯自体の変化</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114A44</div>
+        <p>乳歯外傷の特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 上顎より下顎に多い。<br>
+          b 男児より女児に多い。<br>
+          c 転倒より衝突が多い。<br>
+          d 破折より脱臼が多い。<br>
+          e 2歳児より5歳児に多い。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】乳歯外傷は<span class="highlight">脱臼が破折より多い</span>。上顎前歯に多く、男児に多い。原因は転倒が最多。乳歯萌出期（1〜3歳）に好発。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C87</div>
+        <p>乳歯外傷の特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 下顎前歯に多い。<br>
+          b 乳歯萌出期に多い。<br>
+          c 脱臼よりも破折が多い。<br>
+          d 歯髄電気診の信頼性が高い。<br>
+          e 原因の50%以上が衝突である。
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】乳歯外傷は<span class="highlight">乳歯萌出期</span>（1〜3歳）に多い。歩行が不安定な時期に転倒しやすいため。上顎前歯に多く、脱臼が破折より多い。乳歯では歯髄電気診の信頼性は低い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A30</div>
+        <p>乳歯外傷による後継永久歯への影響として考えられるのはどれか。4つ選べ。</p>
+        <div class="choices">
+          a 萌出遅延<br>
+          b 歯根形成不全<br>
+          c 歯根内部吸収<br>
+          d 歯胚発育停止<br>
+          e 萌出位置異常
+        </div>
+        <div class="answer">正解：a, b, d, e</div>
+        <p>【解説】乳歯外傷による後継永久歯への影響は<span class="highlight">萌出遅延</span>、<span class="highlight">歯根形成不全</span>、<span class="highlight">歯胚発育停止</span>、<span class="highlight">萌出位置異常</span>。歯根内部吸収は外傷歯自体の変化であり、後継永久歯への影響ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104B46</div>
+        <p>4歳6か月の男児。上顎前歯部の打撲を主訴として来院した。1時間前に転倒したという。口腔以外に異常を認めない。口腔内写真（別冊No.45）を別に示す。行うべき検査はどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104B46_1.png" alt="口腔内写真">
+        </div>
+        <div class="choices">
+          a 透照診<br>
+          b 動揺度検査<br>
+          c 歯髄電気診<br>
+          d 歯周ポケット検査<br>
+          e 口内法エックス線検査
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】外傷歯には<span class="highlight">透照診</span>（歯冠破折の確認）、<span class="highlight">動揺度検査</span>（脱臼の評価）、<span class="highlight">口内法X線検査</span>（歯根破折・脱臼の確認）を行う。乳歯では歯髄電気診の信頼性が低い。歯周ポケット検査は外傷では不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A84</div>
+        <p>5歳の男児。上顎前歯の動揺を主訴として来院した。1時間前にコンクリートの床で歯を強打したという。初診時の口腔内写真（別冊No.29A）とエックス線画像（別冊No.29B）を別に示す。上顎両側乳中切歯に認められる病的変化はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111A84_1.png" alt="口腔内写真">
+          <img src="../../../images/111回_Web画像/111A84_2.png" alt="X線画像">
+        </div>
+        <div class="choices">
+          a 陥　入<br>
+          b 歯冠破折<br>
+          c 歯根破折<br>
+          d 舌側転位<br>
+          e 歯冠—歯根破折
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】X線で歯根に水平方向の透過像（破折線）が認められ、<span class="highlight">歯根破折</span>と診断。動揺があり歯冠に異常がないため、歯根部での破折を疑いX線で確認する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -265,20 +265,51 @@ const FlashcardModule = (function() {
     // デッキ一覧のスクロールイベント（ピルボタン表示制御用）
     container.addEventListener('scroll', handleDeckListScroll, { passive: true });
 
+    // アプリ起動時から勉強時間の計測開始
+    state.sessionStartTime = Date.now();
+    state.sessionAccumulatedTime = 0;
+
     // ページ表示/非表示の切り替えで勉強時間を正確に計測
     document.addEventListener('visibilitychange', () => {
-      if (!state.sessionStartTime) return;
-
       if (document.hidden) {
-        // ページが非表示になった：現在までの時間を蓄積
-        const elapsed = Date.now() - state.sessionStartTime;
-        state.sessionAccumulatedTime += elapsed;
-        state.sessionStartTime = null;
+        // ページが非表示になった：現在までの時間を保存
+        if (state.sessionStartTime) {
+          const elapsed = Date.now() - state.sessionStartTime;
+          state.sessionAccumulatedTime += elapsed;
+          state.sessionStartTime = null;
+        }
+        // 非表示時に勉強時間を記録
+        if (state.sessionAccumulatedTime > 0) {
+          recordStudyTime(state.sessionAccumulatedTime);
+          state.sessionAccumulatedTime = 0;
+        }
       } else {
         // ページが再表示された：タイマー再開
         state.sessionStartTime = Date.now();
       }
     });
+
+    // ページを閉じる前に勉強時間を保存
+    window.addEventListener('beforeunload', () => {
+      if (state.sessionStartTime) {
+        const elapsed = Date.now() - state.sessionStartTime;
+        state.sessionAccumulatedTime += elapsed;
+      }
+      if (state.sessionAccumulatedTime > 0) {
+        recordStudyTime(state.sessionAccumulatedTime);
+      }
+    });
+
+    // 5分ごとに自動保存（ブラウザクラッシュ対策）
+    setInterval(() => {
+      if (state.sessionStartTime) {
+        const elapsed = Date.now() - state.sessionStartTime;
+        if (elapsed > 0) {
+          recordStudyTime(elapsed);
+          state.sessionStartTime = Date.now();
+        }
+      }
+    }, 5 * 60 * 1000);
   }
 
   // インポート済みデッキをDATAに追加
@@ -6447,16 +6478,7 @@ const FlashcardModule = (function() {
   }
 
   function exitPracticeMode() {
-    // 勉強時間を記録（中断時）
-    let duration = state.sessionAccumulatedTime;
-    if (state.sessionStartTime) {
-      duration += Date.now() - state.sessionStartTime;
-    }
-    if (duration > 0) {
-      recordStudyTime(duration);
-    }
-    state.sessionStartTime = null;
-    state.sessionAccumulatedTime = 0;
+    // 勉強時間は常時トラッキングのため、ここでは記録しない
 
     document.body.classList.remove('is-practice');
     const tabbar = document.querySelector('.floating-tabbar');
@@ -6611,10 +6633,7 @@ const FlashcardModule = (function() {
 
   // === カード表示 ===
   function renderCard() {
-    // セッション開始時間を記録（まだ記録されていない場合のみ）
-    if (state.isActive && !state.sessionStartTime) {
-      state.sessionStartTime = Date.now();
-    }
+    // 勉強時間は常時トラッキング（init時に開始済み）
 
     enterPracticeMode(); // 演習中はUI要素を隠す
 
@@ -7882,16 +7901,7 @@ const FlashcardModule = (function() {
 
   // === 完了画面 ===
   function renderCompletionScreen() {
-    // 勉強時間を記録
-    let duration = state.sessionAccumulatedTime;
-    if (state.sessionStartTime) {
-      duration += Date.now() - state.sessionStartTime;
-    }
-    if (duration > 0) {
-      recordStudyTime(duration);
-    }
-    state.sessionStartTime = null;
-    state.sessionAccumulatedTime = 0;
+    // 勉強時間は常時トラッキングのため、ここでは記録しない
 
     // 完了したのでセッションをクリア
     clearSession(state.currentTopicId);

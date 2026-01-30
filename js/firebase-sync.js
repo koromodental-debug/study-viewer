@@ -929,29 +929,33 @@ const FirebaseSync = (function() {
 
     try {
       const publicStatsRef = db.collection('publicStats');
-      const snapshot = await publicStatsRef
-        .where('isPublic', '==', true)
-        .orderBy('weeklyCards', 'desc')
-        .limit(20)
-        .get();
+      // インデックス不要のシンプルなクエリ（クライアント側でソート）
+      const snapshot = await publicStatsRef.get();
 
       const ranking = [];
       snapshot.forEach(doc => {
         const data = doc.data();
-        ranking.push({
-          userId: doc.id,
-          displayName: data.displayName || '匿名',
-          weeklyCards: data.weeklyCards || 0,
-          currentStreak: data.currentStreak || 0
-        });
+        // isPublicがfalseでないものを含める（強制参加のため基本全員）
+        if (data.isPublic !== false) {
+          ranking.push({
+            userId: doc.id,
+            displayName: data.displayName || '匿名',
+            weeklyCards: data.weeklyCards || 0,
+            currentStreak: data.currentStreak || 0
+          });
+        }
       });
 
+      // クライアント側でソートして上位20件
+      ranking.sort((a, b) => b.weeklyCards - a.weeklyCards);
+      const top20 = ranking.slice(0, 20);
+
       // キャッシュを更新
-      rankingCache = ranking;
+      rankingCache = top20;
       rankingCacheTime = Date.now();
 
-      console.log('[FirebaseSync] ランキング取得完了:', ranking.length);
-      return ranking;
+      console.log('[FirebaseSync] ランキング取得完了:', top20.length);
+      return top20;
     } catch (error) {
       console.error('[FirebaseSync] ランキング取得エラー:', error);
       return rankingCache || [];

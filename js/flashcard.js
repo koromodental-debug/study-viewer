@@ -148,7 +148,9 @@ const FlashcardModule = (function() {
     pillVisible: false,
     // セッション開始時間（勉強時間トラッキング用）
     sessionStartTime: null,
-    sessionAccumulatedTime: 0  // ページ非表示時に蓄積した時間
+    sessionAccumulatedTime: 0,  // ページ非表示時に蓄積した時間
+    lastActivityTime: null,     // 最後のユーザー操作時刻
+    isIdle: false               // アイドル状態かどうか
   };
 
   // DOM要素
@@ -266,14 +268,67 @@ const FlashcardModule = (function() {
     container.addEventListener('scroll', handleDeckListScroll, { passive: true });
 
     // アプリ起動時から勉強時間の計測開始
-    state.sessionStartTime = Date.now();
+    const now = Date.now();
+    state.sessionStartTime = now;
     state.sessionAccumulatedTime = 0;
+    state.lastActivityTime = now;
+    state.isIdle = false;
+
+    const IDLE_TIMEOUT = 5 * 60 * 1000; // 5分でアイドル判定
+
+    // アクティビティ検知関数
+    function handleActivity() {
+      const now = Date.now();
+
+      // アイドル状態から復帰した場合
+      if (state.isIdle) {
+        state.isIdle = false;
+        state.sessionStartTime = now; // タイマー再開
+        console.log('[StudyTime] アイドルから復帰');
+      }
+
+      state.lastActivityTime = now;
+    }
+
+    // アクティビティイベントを監視（throttle付き）
+    let activityThrottle = null;
+    function throttledActivity() {
+      if (activityThrottle) return;
+      activityThrottle = setTimeout(() => {
+        activityThrottle = null;
+      }, 1000); // 1秒に1回まで
+      handleActivity();
+    }
+
+    ['click', 'scroll', 'keydown', 'touchstart', 'mousemove'].forEach(event => {
+      document.addEventListener(event, throttledActivity, { passive: true });
+    });
+
+    // アイドルチェック（1分ごと）
+    setInterval(() => {
+      if (state.isIdle || !state.sessionStartTime) return;
+
+      const now = Date.now();
+      const idleTime = now - state.lastActivityTime;
+
+      if (idleTime >= IDLE_TIMEOUT) {
+        // アイドル状態に入る：最後の操作時刻までの時間を保存
+        const activeTime = state.lastActivityTime - state.sessionStartTime;
+        if (activeTime > 0) {
+          state.sessionAccumulatedTime += activeTime;
+          recordStudyTime(activeTime);
+        }
+        state.sessionStartTime = null;
+        state.isIdle = true;
+        console.log('[StudyTime] 5分間操作なし - アイドル状態');
+      }
+    }, 60 * 1000);
 
     // ページ表示/非表示の切り替えで勉強時間を正確に計測
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         // ページが非表示になった：現在までの時間を保存
-        if (state.sessionStartTime) {
+        if (state.sessionStartTime && !state.isIdle) {
           const elapsed = Date.now() - state.sessionStartTime;
           state.sessionAccumulatedTime += elapsed;
           state.sessionStartTime = null;
@@ -284,14 +339,17 @@ const FlashcardModule = (function() {
           state.sessionAccumulatedTime = 0;
         }
       } else {
-        // ページが再表示された：タイマー再開
-        state.sessionStartTime = Date.now();
+        // ページが再表示された：タイマー再開（アイドルでなければ）
+        if (!state.isIdle) {
+          state.sessionStartTime = Date.now();
+          state.lastActivityTime = Date.now();
+        }
       }
     });
 
     // ページを閉じる前に勉強時間を保存
     window.addEventListener('beforeunload', () => {
-      if (state.sessionStartTime) {
+      if (state.sessionStartTime && !state.isIdle) {
         const elapsed = Date.now() - state.sessionStartTime;
         state.sessionAccumulatedTime += elapsed;
       }
@@ -300,16 +358,16 @@ const FlashcardModule = (function() {
       }
     });
 
-    // 5分ごとに自動保存（ブラウザクラッシュ対策）
+    // 3分ごとに自動保存（ブラウザクラッシュ対策）
     setInterval(() => {
-      if (state.sessionStartTime) {
+      if (state.sessionStartTime && !state.isIdle) {
         const elapsed = Date.now() - state.sessionStartTime;
         if (elapsed > 0) {
           recordStudyTime(elapsed);
           state.sessionStartTime = Date.now();
         }
       }
-    }, 5 * 60 * 1000);
+    }, 3 * 60 * 1000);
   }
 
   // インポート済みデッキをDATAに追加
@@ -554,6 +612,19 @@ const FlashcardModule = (function() {
       const stored = localStorage.getItem(DAILY_STATS_KEY);
       if (stored) {
         const stats = JSON.parse(stored);
+
+        // 勉強時間リセットマイグレーション（アイドル検知導入に伴い既存データをクリア）
+        if (!stats.studyTimeReset_v2) {
+          console.log('[DailyStats] 勉強時間をリセット（アイドル検知導入）');
+          for (const dateStr of Object.keys(stats.days || {})) {
+            if (stats.days[dateStr]) {
+              stats.days[dateStr].studyTimeMs = 0;
+            }
+          }
+          stats.studyTimeReset_v2 = true;
+          saveDailyStats(stats);
+        }
+
         // 既にマイグレーション済みか、データがある場合はそのまま返す
         if (stats.migrated || Object.keys(stats.days || {}).length > 0) {
           return stats;

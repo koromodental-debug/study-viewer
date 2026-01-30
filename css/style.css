@@ -4938,6 +4938,13 @@ body:not(.is-practice) #flashcard-content {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+.review-total-count {
+  font-size: 13px;
+  color: var(--secondary-label);
+  margin-left: auto;
+  margin-right: 8px;
+}
+
 .review-header-actions {
   display: flex;
   gap: 8px;

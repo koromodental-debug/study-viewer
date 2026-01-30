@@ -1888,6 +1888,7 @@ const FlashcardModule = (function() {
             <button class="review-tab active" data-tab="progress">カード</button>
             <button class="review-tab" data-tab="today">記録</button>
           </div>
+          <span class="review-total-count">全 ${overall.again + overall.learning + overall.mastered} 枚</span>
           <div class="review-header-actions">
             <button class="review-help-btn" id="review-help-btn" aria-label="説明">?</button>
             <button class="review-settings-btn ${state.cramMode ? 'cram-active' : ''}" id="review-settings-btn" aria-label="設定">

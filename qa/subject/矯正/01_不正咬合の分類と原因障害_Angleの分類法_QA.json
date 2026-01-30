@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Angleの分類法",
+    "category": "矯正",
+    "chapter": "01_不正咬合の分類と原因障害"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "AngleⅡ級2類の所見で正しいのはどれか。2つ選べ。",
+          "answer": "A, D",
+          "choices": {
+            "a": "過蓋咬合",
+            "b": "口唇閉鎖不全",
+            "c": "コンケイブタイプの側貌",
+            "d": "上顎中切歯の舌側傾斜",
+            "e": ""
+          },
+          "correctAnswer": "A, D",
+          "numChoices": 2,
+          "code": "102A124"
+        },
+        {
+          "question": "AngleのⅡ級1類と比較したAngleのⅡ級2類の不正咬合の特徴はどれか。2つ選べ。",
+          "answer": "C, D",
+          "choices": {
+            "a": "呼吸様式が口呼吸である。",
+            "b": "オーバーバイトが小さい。",
+            "c": "Interincisal angleが大きい。",
+            "d": "オーバージェットが小さい。",
+            "e": "FH平面に対する上顎中切歯歯軸傾斜角が大きい。"
+          },
+          "correctAnswer": "C, D",
+          "numChoices": 2,
+          "code": "107C109"
+        },
+        {
+          "question": "咬頭嵌合位の口腔内写真を別に示す。Angle II級2類不正咬合はどれか。1つ選べ。",
+          "answer": "A",
+          "choices": {
+            "a": "ア",
+            "b": "イ",
+            "c": "ウ",
+            "d": "エ",
+            "e": "オ"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "111C51"
+        }
+      ]
+    }
+  ]
+}

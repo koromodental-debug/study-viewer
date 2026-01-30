@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "title": "不正咬合：症候群",
+    "category": "矯正",
+    "chapter": "01_不正咬合の分類と原因障害"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "上顎の劣成長がみられるのはどれか。2つ選べ。",
+          "answer": "A, B",
+          "choices": {
+            "a": "Apert症候群",
+            "b": "Crouzon症候群",
+            "c": "Pierre Robin症候群",
+            "d": "Treacher-Collins症候群",
+            "e": "McCune-Albright症候群"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "102B103"
+        },
+        {
+          "question": "反対咬合を特徴とするのはどれか。2つ選べ。",
+          "answer": "A, B",
+          "choices": {
+            "a": "唇顎口蓋裂",
+            "b": "Crouzon 症候群",
+            "c": "Goldenhar 症候群",
+            "d": "Robin シークエンス",
+            "e": "Treacher Collins 症候群"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "113A73"
+        },
+        {
+          "question": "骨格性Ⅱ級を示すのはどれか。1つ選べ。",
+          "answer": "D",
+          "choices": {
+            "a": "唇顎口蓋裂",
+            "b": "Apert 症候群",
+            "c": "Crouzon 症候群",
+            "d": "Robin シークエンス",
+            "e": "Beckwith-Wiedemann 症候群"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "115A76"
+        },
+        {
+          "question": "先天異常と不正咬合との組合せで正しいのはどれか。2つ選べ。",
+          "answer": "A, E",
+          "choices": {
+            "a": "口唇・口蓋裂 ── 反対咬合",
+            "b": "Crouzon症候群 ── 上顎前突",
+            "c": "鎖骨頭蓋骨異形成症 ── 上顎前突",
+            "d": "Pierre Robin症候群 ── 反対咬合",
+            "e": "Treacher Collins症候群 ── 上顎前突"
+          },
+          "correctAnswer": "A, E",
+          "numChoices": 2,
+          "code": "104C90"
+        },
+        {
+          "question": "8歳の男児。咬み合わせの異常を主訴として来院した。初診時の顔面写真、口腔内写真及びエックス線写真を別に示す。原因として考えられるのはどれか。1つ選べ。",
+          "answer": "B",
+          "choices": {
+            "a": "Turner症候群",
+            "b": "Crouzon症候群",
+            "c": "Goldenhar症候群",
+            "d": "Treacher Collins症候群",
+            "e": "Robinシークエンス〈Pierre Robin症候群〉"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "107D34"
+        },
+        {
+          "question": "6歳の女児。咬み合わせが悪いことを主訴として来院した。初診時の顔面写真、口腔内写真、パノラマエックス線画像及び側面と正面の頭部エックス線規格写真を別に示す。不正咬合の原因はどれか。1つ選べ。",
+          "answer": "E",
+          "choices": {
+            "a": "Apert 症候群",
+            "b": "Marfan 症候群",
+            "c": "Turner 症候群",
+            "d": "Crouzon 症候群",
+            "e": "第一第二鰓弓症候群"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "115D58"
+        }
+      ]
+    }
+  ]
+}

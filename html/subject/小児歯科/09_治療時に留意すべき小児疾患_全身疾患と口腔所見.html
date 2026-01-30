@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>全身疾患と口腔所見 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 治療時に留意すべき小児疾患</span>
+    <h1>全身疾患と口腔所見</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核</div>
+        <ul>
+          <li><span class="highlight">全身疾患と口腔所見の組み合わせ</span>が最頻出</li>
+          <li><span class="highlight">乳歯早期脱落を伴う疾患</span>の鑑別（低フォスファターゼ症 vs Papillon-Lefèvre症候群）</li>
+          <li>各疾患の<span class="key">歯科治療上の留意点</span>を問う問題が多い</li>
+        </ul>
+      </div>
+
+      <h2>全身疾患と口腔所見の対応</h2>
+      <h3>遺伝性疾患・先天性疾患</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>口腔所見</th>
+          <th>歯科治療上の留意点</th>
+        </tr>
+        <tr>
+          <td><span class="key">Down症候群</span></td>
+          <td>永久歯の先天欠如、乳歯の晩期残存、萌出遅延、癒合歯・矮小歯、反対咬合・交叉咬合、高口蓋、歯周疾患、<span class="highlight">巨舌・溝状舌、短根歯</span></td>
+          <td><span class="caution">環軸椎亜脱臼→頸部の過後屈防止</span>、先天性心疾患の合併多い</td>
+        </tr>
+        <tr>
+          <td><span class="key">無汗型外胚葉異形成症</span><br>（伴性劣性遺伝）</td>
+          <td><span class="highlight">多数歯の先天欠如</span>（完全無歯症あり）、<span class="highlight">円錐歯</span>、乏毛、皮膚乾燥</td>
+          <td><span class="caution">発汗機能不全→診療室の温度調節</span>、号泣による体調変化に注意、義歯装着</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨形成不全症</span><br>（常染色体優性/劣性）</td>
+          <td><span class="highlight">短根歯</span>、髄腔・根管の消失傾向、<span class="highlight">歯冠がオパール色（象牙質形成不全）</span>、青色強膜</td>
+          <td><span class="caution">抑制具の使用を避ける</span>（骨折のリスク）</td>
+        </tr>
+        <tr>
+          <td><span class="key">鎖骨頭蓋異形成症</span></td>
+          <td><span class="highlight">乳歯の晩期残存</span>、永久歯萌出遅延・埋伏、過剰歯</td>
+          <td>後継永久歯の萌出力乏しい→埋伏歯の開窓・牽引</td>
+        </tr>
+        <tr>
+          <td><span class="key">先天性表皮水疱症</span></td>
+          <td>口腔粘膜に水疱形成、開口障害、瘢痕</td>
+          <td><span class="caution">皮膚・粘膜への外的刺激は禁忌</span>、術野の確保困難、歯ブラシでの粘膜刷掃を避ける</td>
+        </tr>
+        <tr>
+          <td><span class="key">Turner症候群</span><br>（45, X）</td>
+          <td>翼状頸、低身長、性腺の未発達、大動脈二尖弁、高口蓋</td>
+          <td>精神発達遅滞なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">クレチン症</span><br>（甲状腺機能低下症）</td>
+          <td><span class="highlight">巨舌</span>、乳歯の晩期残存、永久歯根形成不全、精神遅滞</td>
+          <td>重度では全身麻酔下で治療</td>
+        </tr>
+      </table>
+
+      <h3>乳歯早期脱落を伴う疾患</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>特徴</th>
+          <th>歯周組織の状態</th>
+        </tr>
+        <tr>
+          <td><span class="key">低フォスファターゼ症</span></td>
+          <td>ALP活性低下→<span class="highlight">セメント質形成不全</span>、乳歯歯根が吸収されず脱落</td>
+          <td><span class="highlight">歯周組織は健全</span>（歯槽骨吸収なし）</td>
+        </tr>
+        <tr>
+          <td><span class="key">Papillon-Lefèvre症候群</span></td>
+          <td><span class="highlight">掌蹠角化症</span>＋高度な歯周炎</td>
+          <td><span class="highlight">著しい歯槽骨吸収</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">好中球減少症</span><br>（Chédiak-Higashi症候群、周期性好中球減少症）</td>
+          <td>好中球機能異常→易感染性</td>
+          <td>重度の歯周炎</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">鑑別のポイント</div>
+        <ul>
+          <li><span class="highlight">掌蹠角化症あり＋著しい歯槽骨吸収</span>→ Papillon-Lefèvre症候群</li>
+          <li><span class="highlight">歯周組織は健全＋歯根が吸収されず脱落</span>→ 低フォスファターゼ症</li>
+          <li>Down症候群は乳歯早期脱落<span class="caution">ではない</span>（晩期残存）</li>
+        </ul>
+      </div>
+
+      <h3>その他の疾患</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>口腔所見</th>
+          <th>歯科治療上の留意点</th>
+        </tr>
+        <tr>
+          <td><span class="key">脳性麻痺</span></td>
+          <td>歯列不正、咬耗、咀嚼・嚥下障害、エナメル質減形成</td>
+          <td>反射抑制体位の応用、開口保持器、<span class="caution">誤嚥性肺炎に注意→吸引器</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">てんかん</span></td>
+          <td><span class="highlight">フェニトイン服用→歯肉増殖症</span>、発作時転倒による外傷</td>
+          <td>発作の頻度・誘因を確認、抗てんかん薬を継続</td>
+        </tr>
+        <tr>
+          <td><span class="key">血友病</span></td>
+          <td>出血傾向</td>
+          <td><span class="caution">観血処置時に凝固因子の補充療法</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">先天性風疹症候群</span></td>
+          <td>心疾患・聴力障害・白内障の三徴候、エナメル質減形成</td>
+          <td>母親が妊娠中に風疹に罹患</td>
+        </tr>
+      </table>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A119</div>
+        <p>小児の全身疾患と口腔の特徴の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a クレチン病－－－－－－－－－巨　舌<br>
+          b Down症候群－－－－－－－－乳歯の早期脱落<br>
+          c 骨形成不全症－－－－－－－－歯根の発育不全<br>
+          d 先天性表皮水疱症－－－－－－象牙質の形成不全<br>
+          e 鎖骨頭蓋骨異形成症－－－－－歯の早期萌出
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】クレチン症は甲状腺機能低下症で巨舌を認める。骨形成不全症は短根歯（歯根の発育不全）が特徴。Down症候群は乳歯の<span class="caution">晩期残存</span>（早期脱落ではない）。先天性表皮水疱症は象牙質形成不全ではなく粘膜水疱。鎖骨頭蓋異形成症は萌出<span class="caution">遅延</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C61</div>
+        <p>短根歯がみられるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Down 症候群<br>
+          b 骨形成不全症<br>
+          c 先天性表皮水疱症<br>
+          d Papillon-Lefevre 症候群<br>
+          e Treacher Collins 症候群
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">短根歯はDown症候群と骨形成不全症</span>に認められる。Papillon-Lefèvre症候群は歯槽骨吸収による乳歯早期脱落が特徴で、歯根自体の異常ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D18（図あり）</div>
+        <p>2歳1か月の男児。外傷により歯が折れたことを主訴として来院した。1時間前に居間で転倒したという。患児はDown症候群で心疾患はなく、アレルギーの既往もないという。<br>
+        治療の際、行うべきなのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 頸部の過後屈防止<br>
+          b 抗菌薬の術前投与<br>
+          c 反射抑制体位の応用<br>
+          d タイムアウト法の使用<br>
+          e 血管収縮薬無添加局所麻酔薬の使用
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】Down症候群では<span class="highlight">環軸椎亜脱臼</span>のリスクがあるため、<span class="highlight">頸部の過後屈を避ける</span>。心疾患がないため抗菌薬の予防投与は不要。反射抑制体位は脳性麻痺で応用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107B13（図あり）</div>
+        <p>3歳の男児。咀嚼障害を主訴として母親と来院した。毛髪は薄く、全身的に皮膚は乾燥している。咀嚼機能の改善のために義歯を製作することとした。<br>
+        診療に際して留意すべき事項はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 抑制による骨折<br>
+          b 診療室の温度調節<br>
+          c 口腔粘膜への刺激<br>
+          d 低酸素発作の出現<br>
+          e 号泣による体調変化
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】毛髪が薄く皮膚乾燥→<span class="highlight">無汗型外胚葉異形成症</span>。発汗機能不全があるため<span class="highlight">診療室の温度調節</span>が必要。また号泣により体温上昇するリスクがある。骨折リスクは骨形成不全症、粘膜刺激は先天性表皮水疱症。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B72（図あり）</div>
+        <p>3歳の男児。上顎左側乳中切歯の齲蝕治療を希望して来院した。自覚症状はないという。強膜が青色にみえる。<br>
+        この患者の治療に際し特に留意すべきなのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 音刺激に注意する。<br>
+          b 粘膜の損傷に注意する。<br>
+          c 抑制具の使用を避ける。<br>
+          d 診療室の温度に注意する。<br>
+          e 観血処置時に抗菌薬を予防投与する。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="highlight">青色強膜</span>は<span class="highlight">骨形成不全症</span>の特徴。骨が脆弱なため<span class="highlight">抑制具の使用は骨折リスク</span>があり避ける。温度調節は外胚葉異形成症、粘膜損傷は表皮水疱症で注意。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108B42（図あり）</div>
+        <p>5歳の男児。歯の動揺を主訴として来院した。2年前から下顎乳中切歯が動揺して自然脱落し、1年前には下顎乳側切歯が、半年前には上顎右側乳中切歯が脱落したという。<br>
+        疑われる疾患はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Down症候群<br>
+          b 先天性表皮水疱症<br>
+          c 先天性好中球減少症<br>
+          d 低フォスファターゼ症<br>
+          e 無汗型外胚葉異形成症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】乳歯が次々と自然脱落→乳歯早期脱落。掌蹠角化症の記載がないため<span class="highlight">低フォスファターゼ症</span>。ALP活性低下によりセメント質形成不全が生じ、歯周組織は健全なまま歯が脱落する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A102（図あり）</div>
+        <p>6歳の女児。歯の動揺を主訴として来院した。3年前から治療を受けていたが症状は改善しないという。手掌と足蹠とに過角化症を認める。<br>
+        考えられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Down 症候群<br>
+          b 先天性好中球減少症<br>
+          c 低ホスファターゼ症<br>
+          d Chédiak─Higashi 症候群<br>
+          e Papillon─Lefèvre 症候群
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">掌蹠角化症＋歯の動揺</span>→<span class="highlight">Papillon-Lefèvre症候群</span>。高度な歯周炎により歯槽骨吸収が進行し乳歯が早期脱落する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110D13（図あり）</div>
+        <p>9歳の女児。咬み合わせが悪いことを主訴として来院した。大動脈二尖弁があるという。性腺の未発達と翼状頸を示し、精神発達遅滞は認められない。身長は同年齢の女児の標準値より13cm低かった。<br>
+        疑われる疾患はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Down症候群<br>
+          b Turner症候群<br>
+          c Crouzon症候群<br>
+          d Robinシークエンス<br>
+          e Beckwith-Wiedemann症候群
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">翼状頸・低身長・性腺未発達・大動脈二尖弁・精神発達遅滞なし</span>→<span class="highlight">Turner症候群（45, X）</span>。Down症候群は精神発達遅滞を伴う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D52（図あり）</div>
+        <p>6歳の男児。多数歯齲蝕を主訴として来院した。出生時から皮膚や爪に異常がみられ、足には合指症を認める。<br>
+        歯科治療に際して留意すべき事項はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 局所麻酔は使用しない。<br>
+          b 全身麻酔が推奨される。<br>
+          c 術野の確保が困難である。<br>
+          d ハンドオーバーマウス法で対応する。<br>
+          e 歯ブラシでの口腔粘膜の刷掃は避ける。
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】皮膚・爪の異常→<span class="highlight">先天性表皮水疱症</span>。粘膜への刺激で水疱形成するため、<span class="highlight">術野の確保が困難</span>であり、<span class="highlight">歯ブラシでの粘膜刷掃は避ける</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B61（図あり）</div>
+        <p>筋緊張が強く、誤嚥性肺炎を繰り返している施設入居の脳性麻痺患者に対してロ腔衛生管理を行うことになった。抗てんかん薬を幼少期から服用しているという。<br>
+        用意すべきなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 含嗽剤<br>
+          b 吸引器<br>
+          c 保湿剤<br>
+          d 開口保持器<br>
+          e 超音波スケーラー
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】脳性麻痺で誤嚥性肺炎の既往→<span class="highlight">吸引器</span>が必要。筋緊張が強いため<span class="highlight">開口保持器</span>も必要。抗てんかん薬（フェニトイン）服用により歯肉増殖症がみられることが多い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C45</div>
+        <p>8か月の乳児。心疾患、聴力障害および白内障の三徴候を有し、下顎乳中切歯にエナメル質減形成がみられる。<br>
+        母親が妊娠中に罹患したと考えられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 腎　炎<br>
+          b 風　疹<br>
+          c 糖尿病<br>
+          d B型肝炎<br>
+          e 再生不良性貧血
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">心疾患・聴力障害・白内障の三徴候</span>→<span class="highlight">先天性風疹症候群</span>。母親が妊娠初期に風疹に罹患することで発症。エナメル質減形成も認める。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

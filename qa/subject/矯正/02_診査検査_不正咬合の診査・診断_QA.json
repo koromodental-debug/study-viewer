@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "不正咬合の診査・診断",
+    "category": "矯正",
+    "chapter": "02_診査検査"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "E-ラインで測定するのはどれか。1つ選べ。",
+          "answer": "D",
+          "choices": {
+            "a": "鼻の高さ",
+            "b": "顔の対称性",
+            "c": "上顎突出度",
+            "d": "上下口唇の突出度",
+            "e": "オトガイの前後的位置"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "103C120"
+        },
+        {
+          "question": "14歳の女子。上顎前歯部の空隙を主訴として来院した。大きな値を示すのはどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "オーバーバイト",
+            "b": "上顎の犬歯間幅径",
+            "c": "アンテリアレイシオ",
+            "d": "上顎のrequired arch length",
+            "e": "下顎のavailable arch length"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "107D21"
+        }
+      ]
+    }
+  ]
+}

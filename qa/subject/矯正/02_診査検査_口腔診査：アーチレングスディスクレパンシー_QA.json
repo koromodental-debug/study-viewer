@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "アーチレングスディスクレパンシー",
+    "category": "矯正",
+    "chapter": "02_診査検査"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "模型計測の結果を表に示す。下顎のavailable arch lengthは62.0mmである。Arch length discrepancyはどれか。1つ選べ。",
+          "answer": "D",
+          "choices": {
+            "a": "＋26.0mm",
+            "b": "＋10.0mm",
+            "c": "＋4.0mm",
+            "d": "−4.0mm",
+            "e": "−26.0mm"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "108C42"
+        },
+        {
+          "question": "負のアーチレングスディスクレパンシーの改善につながるのはどれか。2つ選べ。",
+          "answer": "A, E",
+          "choices": {
+            "a": "連続抜去",
+            "b": "乳切歯の早期抜去",
+            "c": "永久切歯の舌側移動",
+            "d": "乳犬歯の隣接面削除",
+            "e": "第一大臼歯の遠心移動"
+          },
+          "correctAnswer": "A, E",
+          "numChoices": 2,
+          "code": "107A54"
+        },
+        {
+          "question": "負のarch length discrepancyの改善に有効なのはどれか。すべて選べ。",
+          "answer": "A, C, D",
+          "choices": {
+            "a": "連続抜去",
+            "b": "正中離開の閉鎖",
+            "c": "永久切歯の唇側移動",
+            "d": "歯槽基底弓の側方拡大",
+            "e": "正中埋伏過剰歯の抜去"
+          },
+          "correctAnswer": "A, C, D",
+          "numChoices": 3,
+          "code": "109A70"
+        }
+      ]
+    }
+  ]
+}

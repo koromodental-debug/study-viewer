@@ -96,6 +96,7 @@ const FlashcardModule = (function() {
     cramMode: localStorage.getItem('flashcard-cram-mode') === 'true', // 直前期モード（間隔反復OFF）
     againDelay: localStorage.getItem('flashcard-again-delay') || '1day', // 'immediate' or '1day'
     againMode: localStorage.getItem('flashcard-again-mode') || 'reinsert', // 'reinsert'(すぐ再挿入) or 'afterRound'(一周後)
+    initialInterval: parseInt(localStorage.getItem('flashcard-initial-interval')) || 1, // 初回「覚えた」後の間隔（日）
     againCards: [], // 一周後モード用: 「もう一度」カードを貯める
     currentRound: 1, // 現在の周回数
     sessionSize: parseInt(localStorage.getItem('flashcard-session-size')) || 10, // 10, 20, 全問
@@ -728,7 +729,8 @@ const FlashcardModule = (function() {
       <div class="breakdown-section">
         <div class="breakdown-section-title">復習間隔</div>
         <div class="breakdown-section-desc">カードごとに自動調整されます（1日→3日→7日→14日→30日...）</div>
-        <div class="cram-mode-toggle">
+        <div class="breakdown-section-desc" style="margin-top: 4px; color: var(--text-tertiary);">「覚えた」を押すと次の復習までカウントダウン開始。期限が来ると「定着中」→「要復習」に移動します。</div>
+        <div class="cram-mode-toggle" style="margin-top: 12px;">
           <label class="toggle-switch">
             <input type="checkbox" id="cram-mode-checkbox" ${state.cramMode ? 'checked' : ''}>
             <span class="toggle-slider"></span>
@@ -844,7 +846,21 @@ const FlashcardModule = (function() {
       <div class="breakdown-section">
         <div class="breakdown-section-title">復習間隔</div>
         <div class="breakdown-section-desc">カードごとに自動調整されます（1日→3日→7日→14日→30日...）</div>
-        <div class="cram-mode-toggle">
+        <div class="breakdown-section-desc" style="margin-top: 4px; color: var(--text-tertiary);">「覚えた」を押すと次の復習までカウントダウン開始。期限が来ると「定着中」→「要復習」に移動します。</div>
+        <div class="breakdown-section-subtitle" style="margin-top: 12px;">初回の復習間隔</div>
+        <div class="again-delay-buttons" style="margin-top: 8px;">
+          <button class="again-delay-btn initial-interval-btn ${state.initialInterval === 1 ? 'active' : ''}" data-initial="1">
+            1日後
+          </button>
+          <button class="again-delay-btn initial-interval-btn ${state.initialInterval === 3 ? 'active' : ''}" data-initial="3">
+            3日後
+          </button>
+          <button class="again-delay-btn initial-interval-btn ${state.initialInterval === 7 ? 'active' : ''}" data-initial="7">
+            7日後
+          </button>
+        </div>
+        <div class="breakdown-section-desc" style="margin-top: 6px; font-size: 12px;">※ 2回目以降は自動で間隔が延びます</div>
+        <div class="cram-mode-toggle" style="margin-top: 12px;">
           <label class="toggle-switch">
             <input type="checkbox" id="cram-mode-checkbox" ${state.cramMode ? 'checked' : ''}>
             <span class="toggle-slider"></span>
@@ -894,6 +910,19 @@ const FlashcardModule = (function() {
         localStorage.setItem('flashcard-cram-mode', state.cramMode);
       });
     }
+
+    // 初期間隔ボタンのイベント
+    body.querySelectorAll('.initial-interval-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const interval = parseInt(btn.dataset.initial);
+        state.initialInterval = interval;
+        localStorage.setItem('flashcard-initial-interval', interval);
+
+        // ボタンのアクティブ状態を更新
+        body.querySelectorAll('.initial-interval-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
 
     // 「もう一度」タイミングボタンのイベント（モード選択）
     body.querySelectorAll('.again-delay-btn[data-mode]').forEach(btn => {
@@ -2412,7 +2441,7 @@ const FlashcardModule = (function() {
         const currentInterval = existing.interval || 0;
 
         if (action === 'memorized') {
-          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          const newInterval = currentInterval === 0 ? state.initialInterval : getNextInterval(currentInterval);
           state.progress[key] = {
             status: 'memorized',
             lastReview: now,
@@ -3004,7 +3033,7 @@ const FlashcardModule = (function() {
         const currentInterval = existing.interval || 0;
 
         if (action === 'memorized') {
-          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          const newInterval = currentInterval === 0 ? state.initialInterval : getNextInterval(currentInterval);
           state.progress[key] = {
             status: 'memorized',
             lastReview: now,
@@ -3191,7 +3220,7 @@ const FlashcardModule = (function() {
         const currentInterval = existing.interval || 0;
 
         if (action === 'memorized') {
-          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          const newInterval = currentInterval === 0 ? state.initialInterval : getNextInterval(currentInterval);
           state.progress[key] = {
             status: 'memorized',
             lastReview: now,
@@ -3531,7 +3560,7 @@ const FlashcardModule = (function() {
         const currentInterval = existing.interval || 0;
 
         if (action === 'memorized') {
-          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          const newInterval = currentInterval === 0 ? state.initialInterval : getNextInterval(currentInterval);
           state.progress[key] = {
             status: 'memorized',
             lastReview: now,
@@ -3883,7 +3912,7 @@ const FlashcardModule = (function() {
         const currentInterval = existing.interval || 0;
 
         if (action === 'memorized') {
-          const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+          const newInterval = currentInterval === 0 ? state.initialInterval : getNextInterval(currentInterval);
           state.progress[key] = {
             status: 'memorized',
             lastReview: now,
@@ -6810,7 +6839,7 @@ const FlashcardModule = (function() {
 
     // 適応的間隔の計算
     const currentInterval = prev.interval || 0;
-    const newInterval = currentInterval === 0 ? 1 : getNextInterval(currentInterval);
+    const newInterval = currentInterval === 0 ? state.initialInterval : getNextInterval(currentInterval);
     const successCount = (prev.successCount || 0) + 1;
 
     state.progress[key] = {

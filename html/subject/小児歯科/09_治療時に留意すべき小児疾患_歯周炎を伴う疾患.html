@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯周炎を伴う疾患 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 治療時に留意すべき小児疾患</span>
+    <h1>歯周炎を伴う疾患</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">鑑別のポイント（最重要）</div>
+        <ul>
+          <li><span class="highlight">掌蹠角化症あり＋著しい歯槽骨吸収</span> → <span class="key">Papillon-Lefèvre症候群</span></li>
+          <li><span class="highlight">歯周組織は健全＋歯根吸収なく脱落</span> → <span class="key">低フォスファターゼ症</span></li>
+          <li><span class="highlight">易感染性＋重度歯周炎</span> → <span class="key">好中球減少症</span></li>
+        </ul>
+      </div>
+
+      <h2>小児期歯周炎に関連する全身疾患</h2>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>特徴的所見</th>
+          <th>歯周組織の状態</th>
+        </tr>
+        <tr>
+          <td><span class="key">Papillon-Lefèvre症候群</span></td>
+          <td><span class="highlight">掌蹠角化症</span>（手掌・足蹠の過角化）</td>
+          <td><span class="highlight">著しい歯槽骨吸収</span>→乳歯・永久歯ともに早期脱落</td>
+        </tr>
+        <tr>
+          <td><span class="key">低フォスファターゼ症</span></td>
+          <td>ALP活性低下→<span class="highlight">セメント質形成不全</span></td>
+          <td>歯周組織は健全、<span class="caution">歯槽骨吸収なし</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">好中球減少症</span><br>（周期性、Chédiak-Higashi症候群）</td>
+          <td>好中球機能異常→易感染性</td>
+          <td>重度の歯周炎</td>
+        </tr>
+        <tr>
+          <td><span class="key">1型糖尿病</span></td>
+          <td>高血糖→免疫機能低下</td>
+          <td>歯周炎の増悪</td>
+        </tr>
+      </table>
+
+      <h3>Papillon-Lefèvre症候群 vs 低フォスファターゼ症</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>Papillon-Lefèvre症候群</th>
+          <th>低フォスファターゼ症</th>
+        </tr>
+        <tr>
+          <td><span class="key">皮膚所見</span></td>
+          <td><span class="highlight">掌蹠角化症あり</span></td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯槽骨吸収</span></td>
+          <td><span class="highlight">著明</span></td>
+          <td><span class="caution">なし</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">歯根の状態</span></td>
+          <td>正常（吸収される）</td>
+          <td>吸収されずに脱落</td>
+        </tr>
+        <tr>
+          <td><span class="key">病因</span></td>
+          <td>カテプシンC遺伝子変異</td>
+          <td>ALP活性低下→セメント質形成不全</td>
+        </tr>
+      </table>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A102（図あり）</div>
+        <p>6歳の女児。歯の動揺を主訴として来院した。3年前から治療を受けていたが症状は改善しないという。手掌と足蹠とに過角化症を認める。<br>
+        考えられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Down 症候群<br>
+          b 先天性好中球減少症<br>
+          c 低ホスファターゼ症<br>
+          d Chédiak─Higashi 症候群<br>
+          e Papillon─Lefèvre 症候群
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】<span class="highlight">掌蹠角化症（手掌・足蹠の過角化）＋歯の動揺</span>→Papillon-Lefèvre症候群。著しい歯槽骨吸収により乳歯が早期脱落する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108B42（図あり）</div>
+        <p>5歳の男児。歯の動揺を主訴として来院した。2年前から下顎乳中切歯が動揺して自然脱落し、1年前には下顎乳側切歯が、半年前には上顎右側乳中切歯が脱落したという。<br>
+        疑われる疾患はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Down症候群<br>
+          b 先天性表皮水疱症<br>
+          c 先天性好中球減少症<br>
+          d 低フォスファターゼ症<br>
+          e 無汗型外胚葉異形成症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】乳歯が次々と自然脱落、<span class="caution">掌蹠角化症の記載なし</span>→低フォスファターゼ症。ALP活性低下によりセメント質形成不全が生じ、歯周組織は健全なまま歯が脱落する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B39（図あり）</div>
+        <p>11歳の男児。歯の動揺を主訴として来院した。2年前から気付いていたが、そのままにしていたところ、1か月前から大きくなってきたという。全顎的に動揺度は2〜3度であった。<br>
+        疑われるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Down症候群<br>
+          b 好中球減少症<br>
+          c 骨形成不全症<br>
+          d 低フォスファターゼ症<br>
+          e Papillon-Lefevre症候群
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】問題文に「足蹠の写真」とあり、<span class="highlight">掌蹠角化症</span>を示唆。全顎的な歯の動揺＋掌蹠角化症→Papillon-Lefèvre症候群。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D28</div>
+        <p>小児期に発症する歯周炎に関連する全身疾患はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 1型糖尿病<br>
+          b 好中球減少症<br>
+          c 骨形成不全症<br>
+          d 外胚葉異形成症<br>
+          e 筋ジストロフィー
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】<span class="highlight">1型糖尿病</span>は免疫機能低下により歯周炎が増悪。<span class="highlight">好中球減少症</span>は好中球機能異常により重度歯周炎を発症。骨形成不全症は短根歯、外胚葉異形成症は歯の先天欠如が特徴で、歯周炎とは関連しない。</p>
+      </div>
+
+      <p class="note">※ 各疾患の詳細な口腔所見・歯科治療上の留意点は「全身疾患と口腔所見」を参照</p>
+
+    </div>
+  </div>
+</body>
+</html>

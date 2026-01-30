@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "title": "抜歯",
+    "category": "矯正",
+    "chapter": "04_治療総論"
+  },
+  "sections": [
+    {
+      "section": "2. Total Discrepancyの計算【頻出】",
+      "qa": [
+        {
+          "question": "Total discrepancy の算出に用いるのはどれか。2つ選べ。",
+          "answer": "C, E",
+          "choices": {
+            "a": "下顎角",
+            "b": "歯列弓幅径",
+            "c": "永久歯歯冠幅径",
+            "d": "上顎中切歯歯軸角",
+            "e": "Speeの彎曲の深さ"
+          },
+          "correctAnswer": "C, E",
+          "numChoices": 2,
+          "code": "112D60"
+        }
+      ]
+    },
+    {
+      "section": "3. 抜歯部位の選択【頻出】",
+      "qa": [
+        {
+          "question": "14歳の女子。がたがたの歯並びを主訴として来院した。第一大臼歯の咬合関係はAngleⅠ級である。抜歯部位で適切なのはどれか。1つ選べ。",
+          "answer": "B",
+          "choices": {
+            "a": "上顎両側第一小臼歯",
+            "b": "上下顎両側第一小臼歯",
+            "c": "上下顎両側第二小臼歯",
+            "d": "上顎両側第一小臼歯、下顎両側第二小臼歯",
+            "e": "上顎両側第二小臼歯、下顎両側第一小臼歯"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "113C54"
+        }
+      ]
+    }
+  ]
+}

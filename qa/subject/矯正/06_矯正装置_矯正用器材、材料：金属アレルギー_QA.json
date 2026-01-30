@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "金属アレルギー",
+    "category": "矯正",
+    "chapter": "06_矯正装置"
+  },
+  "sections": [
+    {
+      "section": "矯正装置と金属使用",
+      "qa": [
+        {
+          "question": "金属アレルギーを有する患者に使用する際に注意を要するのはどれか。すべて選べ。",
+          "answer": "A, B, D, E",
+          "choices": {
+            "a": "ヘッドギア",
+            "b": "リップバンパー",
+            "c": "トゥースポジショナー",
+            "d": "Hawleyタイプリテーナー",
+            "e": "Nanceのホールディングアーチ"
+          },
+          "correctAnswer": "A, B, D, E",
+          "numChoices": 4,
+          "code": "104A102"
+        }
+      ]
+    }
+  ]
+}

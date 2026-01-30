@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>保隙装置 - 小児歯科</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">小児歯科 / 咬合誘導</span>
+    <h1>保隙装置</h1>
+    <div class="container">
+
+      <h2>保隙とは</h2>
+      <p><span class="key">保隙装置</span>とは、乳歯列期や混合歯列期に乳歯あるいは永久歯が早期に喪失した症例において、喪失歯が占有していた空隙を近遠心的あるいは垂直的に保持することを目的として使用される装置をいう。</p>
+
+      <h2>保隙の適応症</h2>
+      <ul>
+        <li>後継永久歯の萌出空隙が隣在歯の傾斜・移動により狭められる可能性のある場合</li>
+        <li>対合歯が挺出する可能性のある場合</li>
+        <li>咀嚼や発音などの機能が障害される可能性のある場合</li>
+        <li>欠損部へ隣在歯が移動し、永久歯咬合に異常が予想される場合</li>
+      </ul>
+
+      <h2>保隙の非適応症</h2>
+      <ul>
+        <li>後継永久歯萌出のための空隙がすでに失われている（→動的咬合誘導を考慮）</li>
+        <li>不正咬合が存在する（→動的咬合誘導を考慮）</li>
+        <li>保隙装置が顎の成長、歯の萌出や生理的移動を障害する可能性がある</li>
+        <li>後継永久歯が早期に萌出すると予想される</li>
+        <li>患児や保護者の理解や協力が得られない</li>
+      </ul>
+
+      <h2>保隙装置の分類</h2>
+      <table>
+        <tr><th>分類</th><th>装置名</th></tr>
+        <tr><td rowspan="5">固定式</td><td>クラウンループ（バンドループ）</td></tr>
+        <tr><td>ディスタルシュー</td></tr>
+        <tr><td>リンガルアーチ</td></tr>
+        <tr><td>Nanceのホールディングアーチ</td></tr>
+        <tr><td>（その他）</td></tr>
+        <tr><td>可撤式</td><td>可撤保隙装置（床型保隙装置）</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">固定保隙装置に共通する短所</div>
+        <ul>
+          <li><span class="caution">咀嚼機能の回復が不可能</span></li>
+          <li><span class="caution">垂直的保隙が不可能</span></li>
+        </ul>
+      </div>
+
+      <h2>クラウンループ（バンドループ）</h2>
+      <p>乳臼歯<span class="highlight">1歯のみ</span>の早期喪失例に適応。喪失部位の近遠心的空隙を確実に保持する。</p>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>適応</td><td>片側性乳臼歯1歯のみの早期喪失で、喪失部の後方に歯が存在</td></tr>
+        <tr><td>時期</td><td>ⅡA〜ⅢB</td></tr>
+        <tr><td>長所</td><td>近遠心的空隙を確実に保持</td></tr>
+        <tr><td>短所</td><td>片側1歯喪失例に限定される</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115D57</div>
+        <p>7歳の男児。上顎左側乳臼歯部の咀嚼時痛を主訴として来院した。初診時の口腔内写真（別冊No.16A）とエックス線画像（別冊No.16B）を別に示す。<br>治療方針で正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D57_1.png" alt="別冊No.16A">
+          <img src="../../../images/115回_Web画像/115D57_2.png" alt="別冊No.16B">
+        </div>
+        <div class="choices">
+          a └E感染根管処置後、コンポジットレジン修復<br>
+          b └E感染根管処置後、既製乳歯冠装着<br>
+          c └E抜歯後、バンドループ装着<br>
+          d └E抜歯後、クラウンループ装着<br>
+          e └E抜歯後、ディスタルシュー装着
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】第二乳臼歯の保存不可能と判断し抜歯。第一大臼歯が萌出しているので<span class="highlight">バンドループ</span>（c○）を装着する。ディスタルシューは第一大臼歯萌出前に使用する（e×）。</p>
+      </div>
+
+      <h2>ディスタルシュー</h2>
+      <p><span class="highlight">未萌出の第一大臼歯の保隙が行える唯一の装置</span>。第一大臼歯萌出前に第二乳臼歯を早期喪失した場合に適応。</p>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>目的</td><td>萌出前の第一大臼歯の近心移動の防止</td></tr>
+        <tr><td>適応</td><td>第一大臼歯萌出前で片側の第二乳臼歯を早期喪失</td></tr>
+        <tr><td>時期</td><td>ⅡA〜ⅡC</td></tr>
+        <tr><td>長所</td><td>未萌出第一大臼歯の保隙が行える唯一の装置</td></tr>
+        <tr><td>短所</td><td>萌出した第一大臼歯は捻転を起こしやすい</td></tr>
+      </table>
+
+      <h3>ディスタルシューの製作</h3>
+      <p>金属板の先端は<span class="highlight">第一大臼歯近心歯冠最大豊隆部</span>の位置に設定する。</p>
+
+      <div class="question-box">
+        <div class="q-number">105C83</div>
+        <p>ディスタルシューを製作中の作業用模型の写真（別冊No.7）を別に示す。<br>矢印で示す部位に相当するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105C83_1.png" alt="別冊No.7">
+        </div>
+        <div class="choices">
+          a 第一大臼歯近心歯頸部<br>
+          b 第二乳臼歯遠心根根尖部<br>
+          c 第二乳臼歯遠心根中央部<br>
+          d 第一大臼歯近心歯冠辺縁隆線<br>
+          e 第一大臼歯近心歯冠最大豊隆部
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】ディスタルシューの金属板は<span class="highlight">第一大臼歯近心歯冠最大豊隆部</span>（e○）の位置に設定する。この位置で第一大臼歯の近心移動を防止する。</p>
+      </div>
+
+      <h3>ディスタルシュー→クラウンループへの変更</h3>
+      <p>第一大臼歯萌出後はディスタルシューをクラウンループに変更する。</p>
+
+      <div class="question-box">
+        <div class="q-number">114A22</div>
+        <p>6歳の男児。定期検診のため来院した。1年前に下顎左側第二乳臼歯を齲蝕のため抜去し、保隙装置を装着した。診察の結果、クラウンループに変更することとした。保隙装置を変更する前の口腔内写真（別冊No.2）を別に示す。<br>保隙装置を変更する理由はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A22_1.png" alt="別冊No.2">
+        </div>
+        <div class="choices">
+          a 「6の遠心移動<br>
+          b 咀嚼機能の回復<br>
+          c 「6の捻転の防止<br>
+          d 対合歯の挺出の防止<br>
+          e 「6近心部歯肉の清掃性の向上
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】ディスタルシューからクラウンループへ変更する理由は、<span class="highlight">第一大臼歯の捻転の防止</span>（c○）と<span class="highlight">清掃性の向上</span>（e○）。ディスタルシューの短所として萌出した第一大臼歯は捻転を起こしやすい。</p>
+      </div>
+
+      <h2>リンガルアーチ</h2>
+      <p><span class="highlight">2歯以上</span>の乳臼歯を早期喪失した場合に適応。歯列弓周長の維持を目的とする。</p>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>適応</td><td>両側第一大臼歯にバンド適応可能で2歯以上の乳臼歯喪失、可撤保隙装置に不協力な患児</td></tr>
+        <tr><td>時期</td><td>ⅢA〜ⅢC</td></tr>
+        <tr><td>長所</td><td>歯列弓周長の確保が確実、弾線付加により歯の誘導が可能</td></tr>
+        <tr><td>短所</td><td>バンド装着予定歯が萌出途上では適用できない</td></tr>
+      </table>
+
+      <h2>Nanceのホールディングアーチ</h2>
+      <p>リンガルアーチと同様であるが<span class="highlight">上顎のみ</span>に適用。前歯の被蓋関係が緊密な症例に使用可能。</p>
+
+      <h2>可撤保隙装置</h2>
+      <p><span class="highlight">近遠心的・垂直的保隙および咀嚼機能の回復</span>が可能な唯一の装置。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">可撤保隙装置の特徴</div>
+        <ul>
+          <li><span class="highlight">近遠心的＋垂直的保隙が可能</span>（唯一）</li>
+          <li><span class="highlight">咀嚼機能の回復</span>が可能</li>
+          <li>審美性の回復、発音障害の防止</li>
+          <li>口腔習癖の予防効果</li>
+        </ul>
+      </div>
+
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>適応</td><td>両側性乳臼歯喪失、片側2歯以上喪失、乳前歯喪失</td></tr>
+        <tr><td>時期</td><td>ⅡA〜ⅢB</td></tr>
+        <tr><td>短所</td><td>床に隣接する歯に齲蝕を生じやすい、紛失・破損しやすい、低年齢児・不協力児には使用不可</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113A71</div>
+        <p>5歳の男児。齲蝕治療を希望して来院した。検査の結果、すべての下顎乳臼歯を保存不可能と診断し、抜去することとした。初診時の口腔内写真（別冊No.26A）とエックス線画像（別冊No.26B）を別に示す。<br>抜去後に用いる装置で適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A71_1.png" alt="別冊No.26A">
+          <img src="../../../images/113回_Web画像/113A71_2.png" alt="別冊No.26B">
+        </div>
+        <div class="choices">
+          a 可撤保隙装置<br>
+          b クラウンループ<br>
+          c リンガルアーチ<br>
+          d ディスタルシュー<br>
+          e Nanceのホールディングアーチ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】すべての下顎乳臼歯（両側性・複数歯）喪失のため<span class="highlight">可撤保隙装置</span>（a○）が適切。咀嚼機能の回復も期待できる。クラウンループは1歯喪失例（b×）、リンガルアーチは第一大臼歯へのバンド装着が必要（c×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C74</div>
+        <p>5歳の女児。上顎左側乳中切歯を齲蝕により抜去し、可撤保隙装置を装着することにした。<br>期待できるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108C74_1.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a 審美性の回復<br>
+          b 鼻呼吸の促進<br>
+          c 口腔習癖の予防<br>
+          d 唾液分泌の促進<br>
+          e 後継歯の萌出促進
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】乳前歯喪失に対する可撤保隙装置では<span class="highlight">審美性の回復</span>（a○）と<span class="highlight">口腔習癖の予防</span>（c○）が期待できる。前歯部欠損による舌突出癖などの発生を防ぐ。</p>
+      </div>
+
+      <h3>可撤保隙装置の製作</h3>
+
+      <div class="question-box">
+        <div class="q-number">108A107</div>
+        <p>Hellmanの歯齢ⅡA期に用いる可撤保隙装置の製作過程で適切なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 筋形成を行う。<br>
+          b 咬合採得を行う。<br>
+          c レジン歯を用いる。<br>
+          d 乳犬歯に舌面レストを設定する。<br>
+          e 頰側の辺縁を歯肉頰移行部に設定する。
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】可撤保隙装置の製作では<span class="highlight">咬合採得</span>（b○）と<span class="highlight">レジン歯の使用</span>（c○）が適切。筋形成は総義歯製作時に行う（a×）。</p>
+      </div>
+
+      <h2>保隙装置の管理</h2>
+      <p>保隙装置は発育旺盛な小児に装着するため、<span class="highlight">定期検診（3〜4か月に1回）</span>が重要。</p>
+
+      <div class="question-box">
+        <div class="q-number">109D11</div>
+        <p>5歳の女児。定期健診時に保隙装置の適合を確認し修正を行った。修正前の口腔内写真（別冊No.11A）と修正後の装置の写真（別冊No.11B）を別に示す。<br>修正を行った理由はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109D11_1.png" alt="別冊No.11A">
+          <img src="../../../images/109回_Web画像/109D11_2.png" alt="別冊No.11B">
+        </div>
+        <div class="choices">
+          a 審美性の改善<br>
+          b 着脱性の向上<br>
+          c 歯石沈着の予防<br>
+          d 異所萌出の回避<br>
+          e 成長抑制の防止
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】保隙装置が顎の成長を妨げないよう修正を行った。<span class="highlight">成長抑制の防止</span>（e○）が目的。小児は成長期にあるため、装置が成長を阻害しないよう定期的な確認と修正が必要。</p>
+      </div>
+
+      <h2>保隙装置の選択フローチャート</h2>
+      <table>
+        <tr><th>状況</th><th>適切な装置</th></tr>
+        <tr><td>片側乳臼歯1歯喪失（6萌出後）</td><td>クラウンループ／バンドループ</td></tr>
+        <tr><td>第二乳臼歯喪失（6萌出前）</td><td>ディスタルシュー</td></tr>
+        <tr><td>両側性・2歯以上喪失（6萌出後）</td><td>リンガルアーチ／可撤保隙装置</td></tr>
+        <tr><td>乳前歯喪失</td><td>可撤保隙装置</td></tr>
+        <tr><td>咀嚼機能回復が必要</td><td>可撤保隙装置</td></tr>
+        <tr><td>不協力児</td><td>リンガルアーチ（固定式）</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "鋏状咬合",
+    "category": "矯正",
+    "chapter": "07_治療保定"
+  },
+  "sections": [
+    {
+      "section": "交叉咬合との比較【重要】",
+      "qa": [
+        {
+          "question": "第二大臼歯の鋏状咬合を改善するために用いるのはどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "Ⅱ級ゴム",
+            "b": "Ⅲ級ゴム",
+            "c": "交叉ゴム",
+            "d": "四角ゴム",
+            "e": "垂直ゴム"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "106C107"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "トゥースサイズレイシオ",
+    "category": "矯正",
+    "chapter": "01_不正咬合の分類と原因障害"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "下顎側切歯の先天欠如を伴う患者で小さい値を示すのはどれか。2つ選べ。",
+          "answer": "D, E",
+          "choices": {
+            "a": "basal arch width",
+            "b": "overbite",
+            "c": "overjet",
+            "d": "required arch length",
+            "e": "tooth size ratio"
+          },
+          "correctAnswer": "D, E",
+          "numChoices": 2,
+          "code": "109A65"
+        },
+        {
+          "question": "11歳の女児。歯並びが悪いことを主訴として来院した。模型分析の結果、アンテリアレイシオが標準値よりも小さい。原因はどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "上顎の過剰歯",
+            "b": "上顎の巨大歯",
+            "c": "下顎の癒合歯",
+            "d": "下顎の矮小歯",
+            "e": "下顎の埋伏歯"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "102D47"
+        },
+        {
+          "question": "Anterior ratioが大きくなるのはどれか。2つ選べ。",
+          "answer": "A, B",
+          "choices": {
+            "a": "上顎中切歯の矮小",
+            "b": "上顎側切歯の先天欠如",
+            "c": "上顎第一小臼歯の先天欠如",
+            "d": "下顎前歯部の過剰歯",
+            "e": "下顎犬歯の先天欠如"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "108C104"
+        }
+      ]
+    }
+  ]
+}

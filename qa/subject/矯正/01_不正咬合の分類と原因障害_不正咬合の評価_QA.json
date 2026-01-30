@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "不正咬合の評価",
+    "category": "矯正",
+    "chapter": "01_不正咬合の分類と原因障害"
+  },
+  "sections": [
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "不正咬合を評価する指標はどれか。2つ選べ。",
+          "answer": "C, E",
+          "choices": {
+            "a": "CFI",
+            "b": "PDI",
+            "c": "DAI",
+            "d": "PHP",
+            "e": "PAR Index"
+          },
+          "correctAnswer": "C, E",
+          "numChoices": 2,
+          "code": "114D52"
+        },
+        {
+          "question": "PAR Indexを用いて行うのはどれか。2つ選べ。",
+          "answer": "C, D",
+          "choices": {
+            "a": "顔面非対称の評価",
+            "b": "審美感覚の数値化",
+            "c": "矯正歯科治療の成果の判定",
+            "d": "不正咬合の重症度の数値化",
+            "e": "上下顎骨の近遠心的関係の評価"
+          },
+          "correctAnswer": "C, D",
+          "numChoices": 2,
+          "code": "115B33"
+        }
+      ]
+    }
+  ]
+}

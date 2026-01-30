@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "title": "咬合挙上板",
+    "category": "矯正",
+    "chapter": "06_矯正装置"
+  },
+  "sections": [
+    {
+      "section": "セファロ分析値の変化【頻出】",
+      "qa": [
+        {
+          "question": "咬合挙上板による治療で値が大きくなるのはどれか。2つ選べ。",
+          "answer": "A, C",
+          "choices": {
+            "a": "FMA",
+            "b": "IMPA",
+            "c": "Y軸角",
+            "d": "顔面角",
+            "e": "SNB角"
+          },
+          "correctAnswer": "A, C",
+          "numChoices": 2,
+          "code": "106A103"
+        }
+      ]
+    },
+    {
+      "section": "構成咬合の採得【頻出】",
+      "qa": [
+        {
+          "question": "製作にあたり構成咬合の採得が必要なのはどれか。すべて選べ。",
+          "answer": "C, D",
+          "choices": {
+            "a": "咬合挙上板",
+            "b": "咬合斜面板",
+            "c": "Fränkel装置",
+            "d": "バイオネーター",
+            "e": "トゥースポジショナー"
+          },
+          "correctAnswer": "C, D",
+          "numChoices": 2,
+          "code": "112C63"
+        },
+        {
+          "question": "下顎骨の前方成長促進を目的として用いるのはどれか。2つ選べ。",
+          "answer": "B, D",
+          "choices": {
+            "a": "咬合挙上板",
+            "b": "咬合斜面板",
+            "c": "リップバンパー",
+            "d": "バイオネーター",
+            "e": "スライディングプレート"
+          },
+          "correctAnswer": "B, D",
+          "numChoices": 2,
+          "code": "109C92"
+        }
+      ]
+    }
+  ]
+}

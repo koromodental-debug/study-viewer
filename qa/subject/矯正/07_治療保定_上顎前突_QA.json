@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "title": "上顎前突",
+    "category": "矯正",
+    "chapter": "07_治療保定"
+  },
+  "sections": [
+    {
+      "section": "AngleⅡ級1類 vs Ⅱ級2類",
+      "qa": [
+        {
+          "question": "AngleⅡ級2類の所見で正しいのはどれか。2つ選べ。",
+          "answer": "A, D",
+          "choices": {
+            "a": "過蓋咬合",
+            "b": "口唇閉鎖不全",
+            "c": "コンケイブタイプの側貌",
+            "d": "上顎中切歯の舌側傾斜",
+            "e": ""
+          },
+          "correctAnswer": "A, D",
+          "numChoices": 2,
+          "code": "102A124"
+        },
+        {
+          "question": "AngleのⅡ級1類と比較したAngleのⅡ級2類の不正咬合の特徴はどれか。2つ選べ。",
+          "answer": "C, D",
+          "choices": {
+            "a": "呼吸様式が口呼吸である。",
+            "b": "オーバーバイトが小さい。",
+            "c": "lnterincisal angleが大きい。",
+            "d": "オーバージェットが小さい。",
+            "e": "FH平面に対する上顎中切歯歯軸傾斜角が大きい。"
+          },
+          "correctAnswer": "C, D",
+          "numChoices": 2,
+          "code": "107C109"
+        }
+      ]
+    },
+    {
+      "section": "骨格性Ⅱ級を示す症候群",
+      "qa": [
+        {
+          "question": "骨格性Ⅱ級を示すのはどれか。1つ選べ。",
+          "answer": "D",
+          "choices": {
+            "a": "唇顎口蓋裂",
+            "b": "Apert 症候群",
+            "c": "Crouzon 症候群",
+            "d": "Robin シークエンス",
+            "e": "Beckwith-Wiedemann 症候群"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "115A76"
+        }
+      ]
+    },
+    {
+      "section": "治療装置の選択",
+      "qa": [
+        {
+          "question": "7歳の女児。前歯の歯並びが悪いことを主訴として来院した。適切な矯正装置はどれか。1つ選べ。",
+          "answer": "E",
+          "choices": {
+            "a": "咬合斜面板",
+            "b": "リンガルアーチ",
+            "c": "アクチバトール",
+            "d": "ハイプルヘッドギア",
+            "e": "サービカルプルヘッドギア"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "105D22"
+        },
+        {
+          "question": "9歳の女児。口が閉じにくいことを主訴として来院した。適切な矯正装置はどれか。1つ選べ。",
+          "answer": "B",
+          "choices": {
+            "a": "咬合斜面板",
+            "b": "ヘッドギア",
+            "c": "Herbst装置",
+            "d": "バイオネーター",
+            "e": "リップバンパー"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "116C81"
+        }
+      ]
+    }
+  ]
+}

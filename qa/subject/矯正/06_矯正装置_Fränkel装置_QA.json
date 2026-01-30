@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Fränkel装置",
+    "category": "矯正",
+    "chapter": "06_矯正装置"
+  },
+  "sections": [
+    {
+      "section": "Fränkel装置の特徴【頻出】",
+      "qa": [
+        {
+          "question": "混合歯列期における下顎骨劣成長の改善に用いるのはどれか。2つ選べ。",
+          "answer": "B, C",
+          "choices": {
+            "a": "咬合挙上板",
+            "b": "Fränkel装置",
+            "c": "バイオネーター",
+            "d": "リップバンパー",
+            "e": "スライディングプレート"
+          },
+          "correctAnswer": "B, C",
+          "numChoices": 2,
+          "code": "115D41"
+        },
+        {
+          "question": "製作にあたり構成咬合の採得が必要なのはどれか。すべて選べ。",
+          "answer": "C, D",
+          "choices": {
+            "a": "咬合挙上板",
+            "b": "咬合斜面板",
+            "c": "Fränkel装置",
+            "d": "バイオネーター",
+            "e": "トゥースポジショナー"
+          },
+          "correctAnswer": "C, D",
+          "numChoices": 2,
+          "code": "112C63"
+        },
+        {
+          "question": "軟骨性成長の促進と歯列の側方拡大とができるのはどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "ヘッドギア",
+            "b": "チンキャップ",
+            "c": "Fränkel装置",
+            "d": "急速拡大装置",
+            "e": "クワドヘリックス"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "105A94"
+        }
+      ]
+    }
+  ]
+}

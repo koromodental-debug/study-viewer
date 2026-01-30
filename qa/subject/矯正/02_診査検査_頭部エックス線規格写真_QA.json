@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "title": "頭部エックス線規格写真",
+    "category": "矯正",
+    "chapter": "02_診査検査"
+  },
+  "sections": [
+    {
+      "section": "主な基準平面",
+      "qa": [
+        {
+          "question": "セファロ分析で上顎骨の重ね合わせに用いる基準平面はどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "SN平面",
+            "b": "FH平面",
+            "c": "口蓋平面",
+            "d": "咬合平面",
+            "e": "顔面平面"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "102A89"
+        }
+      ]
+    },
+    {
+      "section": "Tweed分析（頻出）",
+      "qa": [
+        {
+          "question": "Tweed分析で用いるのはどれか。すべて選べ。",
+          "answer": "B, D, E",
+          "choices": {
+            "a": "SN平面",
+            "b": "FH平面",
+            "c": "下顎後縁平面",
+            "d": "下顎下縁平面",
+            "e": "下顎中切歯歯軸"
+          },
+          "correctAnswer": "B, D, E",
+          "numChoices": 1,
+          "code": "105C129"
+        }
+      ]
+    },
+    {
+      "section": "病態による計測値の変化（頻出）",
+      "qa": [
+        {
+          "question": "アデノイド顔貌と下顎後退とを伴う患者で小さい値を示すのはどれか。2つ選べ。",
+          "answer": "B, D",
+          "choices": {
+            "a": "FMA",
+            "b": "顔面角",
+            "c": "Y軸角",
+            "d": "SNB角",
+            "e": "前顔面高"
+          },
+          "correctAnswer": "B, D",
+          "numChoices": 2,
+          "code": "105C43"
+        },
+        {
+          "question": "両側性に下顎頭が吸収した場合に値が大きくなるのはどれか。2つ選べ。",
+          "answer": "A, E",
+          "choices": {
+            "a": "FMA",
+            "b": "FMIA",
+            "c": "SNA角",
+            "d": "オーバーバイト",
+            "e": "オーバージェット"
+          },
+          "correctAnswer": "A, E",
+          "numChoices": 2,
+          "code": "106A126"
+        },
+        {
+          "question": "セファログラムの計測点のPNSが存在するのはどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "鼻骨",
+            "b": "上顎骨",
+            "c": "口蓋骨",
+            "d": "後頭骨",
+            "e": "蝶形骨"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "109C84"
+        }
+      ]
+    }
+  ]
+}

@@ -977,41 +977,83 @@ const FlashcardModule = (function() {
     const stats = getDailyStats();
     const today = new Date();
     const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
+    const monthNames = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
 
-    // 期間に応じた日数
-    let days;
-    switch (period) {
-      case 'week': days = 7; break;
-      case 'month': days = 30; break;
-      case '90days': days = 90; break;
-      case '6months': days = 182; break;
-      default: days = 7;
-    }
-
-    // データを収集
-    const data = [];
+    let data = [];
     let totalCards = 0;
     let studyDays = 0;
     let maxCards = 1;
 
-    for (let i = days - 1; i >= 0; i--) {
-      const date = new Date(today);
-      date.setDate(date.getDate() - i);
-      const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-      const dayData = stats.days[dateStr] || { cardsReviewed: 0 };
-      const cards = dayData.cardsReviewed;
+    if (period === 'week') {
+      // 今週：日ごとの棒グラフ
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date(today);
+        date.setDate(date.getDate() - i);
+        const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+        const dayData = stats.days[dateStr] || { cardsReviewed: 0 };
+        const cards = dayData.cardsReviewed;
+        totalCards += cards;
+        if (cards > 0) studyDays++;
+        maxCards = Math.max(maxCards, cards);
+        data.push({ label: dayNames[date.getDay()], cards, isToday: i === 0 });
+      }
+    } else if (period === 'month') {
+      // 今月：週ごとにまとめる（4週間）
+      for (let week = 3; week >= 0; week--) {
+        let weekCards = 0;
+        let weekStart = null;
+        for (let d = 0; d < 7; d++) {
+          const date = new Date(today);
+          date.setDate(date.getDate() - (week * 7 + (6 - d)));
+          if (d === 0) weekStart = date;
+          const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+          const dayData = stats.days[dateStr] || { cardsReviewed: 0 };
+          weekCards += dayData.cardsReviewed;
+          if (dayData.cardsReviewed > 0) studyDays++;
+        }
+        totalCards += weekCards;
+        maxCards = Math.max(maxCards, weekCards);
+        const label = `${weekStart.getMonth() + 1}/${weekStart.getDate()}〜`;
+        data.push({ label, cards: weekCards, isToday: week === 0 });
+      }
+    } else if (period === '90days') {
+      // 90日：週ごとにまとめる（13週間）
+      for (let week = 12; week >= 0; week--) {
+        let weekCards = 0;
+        let weekStart = null;
+        for (let d = 0; d < 7; d++) {
+          const date = new Date(today);
+          date.setDate(date.getDate() - (week * 7 + (6 - d)));
+          if (d === 0) weekStart = date;
+          const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+          const dayData = stats.days[dateStr] || { cardsReviewed: 0 };
+          weekCards += dayData.cardsReviewed;
+          if (dayData.cardsReviewed > 0) studyDays++;
+        }
+        totalCards += weekCards;
+        maxCards = Math.max(maxCards, weekCards);
+        const label = `${weekStart.getMonth() + 1}/${weekStart.getDate()}`;
+        data.push({ label, cards: weekCards, isToday: week === 0 });
+      }
+    } else if (period === '6months') {
+      // 6ヶ月：月ごとにまとめる
+      for (let m = 5; m >= 0; m--) {
+        const targetMonth = new Date(today.getFullYear(), today.getMonth() - m, 1);
+        const nextMonth = new Date(today.getFullYear(), today.getMonth() - m + 1, 1);
+        let monthCards = 0;
 
-      totalCards += cards;
-      if (cards > 0) studyDays++;
-      maxCards = Math.max(maxCards, cards);
-
-      data.push({
-        date: date,
-        dateStr: dateStr,
-        cards: cards,
-        day: dayNames[date.getDay()],
-        isToday: i === 0
-      });
+        for (const [dateStr, dayData] of Object.entries(stats.days)) {
+          const date = new Date(dateStr);
+          if (date >= targetMonth && date < nextMonth) {
+            monthCards += dayData.cardsReviewed || 0;
+            if (dayData.cardsReviewed > 0) studyDays++;
+          }
+        }
+        totalCards += monthCards;
+        maxCards = Math.max(maxCards, monthCards);
+        const label = monthNames[targetMonth.getMonth()];
+        data.push({ label, cards: monthCards, isToday: m === 0 });
+      }
     }
 
     // 合計表示
@@ -1023,33 +1065,16 @@ const FlashcardModule = (function() {
       `;
     }
 
-    // 表示形式を決定
-    if (period === 'week') {
-      // 週: 棒グラフ
-      chartEl.className = 'stats-period-chart bar-chart';
-      chartEl.innerHTML = data.map(d => `
-        <div class="period-bar-container">
-          <div class="period-bar ${d.isToday ? 'today' : ''}" style="height: ${(d.cards / maxCards) * 100}%">
-            <span class="period-bar-value">${d.cards}</span>
-          </div>
-          <span class="period-bar-label">${d.day}</span>
+    // 棒グラフで表示
+    chartEl.className = 'stats-period-chart bar-chart';
+    chartEl.innerHTML = data.map(d => `
+      <div class="period-bar-container">
+        <div class="period-bar ${d.isToday ? 'today' : ''}" style="height: ${maxCards > 0 ? (d.cards / maxCards) * 100 : 0}%">
+          ${d.cards > 0 ? `<span class="period-bar-value">${d.cards}</span>` : ''}
         </div>
-      `).join('');
-    } else {
-      // 月以上: ヒートマップ
-      const columns = period === 'month' ? 7 : period === '90days' ? 13 : 26;
-      chartEl.className = 'stats-period-chart heatmap';
-      chartEl.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
-      chartEl.innerHTML = data.map(d => {
-        let level = 0;
-        if (d.cards > 0) level = 1;
-        if (d.cards >= 10) level = 2;
-        if (d.cards >= 30) level = 3;
-        if (d.cards >= 50) level = 4;
-        const label = `${d.date.getMonth() + 1}/${d.date.getDate()}`;
-        return `<div class="heatmap-cell level-${level}" title="${label}: ${d.cards}枚"></div>`;
-      }).join('');
-    }
+        <span class="period-bar-label">${d.label}</span>
+      </div>
+    `).join('');
   }
 
   // === ランキングシート ===

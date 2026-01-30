@@ -65,6 +65,7 @@ const FlashcardModule = (function() {
     'koromo.dental@gmail.com',
     'den.sata.mo@gmail.com',
     'kameyasuka@gmail.com',
+    'hidetoshimgx@gmail.com',
   ];
 
   // コラボレーターかどうかをチェック

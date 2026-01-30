@@ -972,43 +972,33 @@ const GraphModule = (function() {
    */
   function setupSearch() {
     const searchInput = document.getElementById('graph-search');
+    const searchBtn = document.getElementById('graph-search-btn');
     if (!searchInput) return;
 
-    let debounceTimer = null;
-    let isComposing = false; // IME変換中フラグ
+    // 検索実行関数
+    function executeSearch() {
+      searchQuery = searchInput.value.toLowerCase().trim();
+      applyFilters(true); // 中央移動あり
+    }
 
-    // IME変換開始
-    searchInput.addEventListener('compositionstart', () => {
-      isComposing = true;
-    });
+    // 検索ボタンクリック
+    if (searchBtn) {
+      searchBtn.addEventListener('click', executeSearch);
+    }
 
-    // IME変換終了
-    searchInput.addEventListener('compositionend', (e) => {
-      isComposing = false;
-      // 変換確定後に検索を実行
-      searchQuery = e.target.value.toLowerCase().trim();
-      applyFilters(false);
-      clearTimeout(debounceTimer);
-      if (searchQuery) {
-        debounceTimer = setTimeout(() => {
-          applyFilters(true);
-        }, 300);
+    // Enterキーで検索
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        executeSearch();
       }
     });
 
+    // 入力クリア時はフィルタをリセット
     searchInput.addEventListener('input', (e) => {
-      // IME変換中はスキップ
-      if (isComposing) return;
-
-      searchQuery = e.target.value.toLowerCase().trim();
-      applyFilters(false); // 即時フィルタリング（中央移動なし）
-
-      // デバウンスで中央移動（300ms後）
-      clearTimeout(debounceTimer);
-      if (searchQuery) {
-        debounceTimer = setTimeout(() => {
-          applyFilters(true); // 中央移動あり
-        }, 300);
+      if (e.target.value === '') {
+        searchQuery = '';
+        applyFilters(false);
       }
     });
 

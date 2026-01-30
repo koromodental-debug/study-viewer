@@ -14271,6 +14271,35 @@ body.is-practice .tab-content {
   color: var(--secondary-label);
 }
 
+.graph-search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--tint-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.graph-search-btn:hover {
+  background: var(--tint-color-dark, #0056b3);
+}
+
+.graph-search-btn:active {
+  transform: scale(0.95);
+}
+
+.graph-search-btn svg {
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
 /* ダークモード対応 */
 [data-theme="dark"] .graph-search-pill,
 [data-theme="dark"] .graph-reset-btn {

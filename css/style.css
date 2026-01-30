@@ -5804,8 +5804,8 @@ body:not(.is-practice) #flashcard-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 120px;
-  padding: 12px 8px 8px;
+  height: 140px;
+  padding: 24px 8px 8px;
   background: var(--fill-tertiary);
   border-radius: 12px;
   gap: 4px;

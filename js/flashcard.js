@@ -1121,6 +1121,118 @@ const FlashcardModule = (function() {
   // 公開統計を自動更新（ログインユーザーは強制参加）
   let lastPublicStatsUpdate = 0;
   const PUBLIC_STATS_UPDATE_INTERVAL = 60000; // 1分に1回まで
+  const DISPLAY_NAME_KEY = 'studyViewer_displayName';
+
+  // カスタム表示名を取得
+  function getCustomDisplayName() {
+    try {
+      return localStorage.getItem(DISPLAY_NAME_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // カスタム表示名を保存
+  function setCustomDisplayName(name) {
+    try {
+      if (name) {
+        localStorage.setItem(DISPLAY_NAME_KEY, name);
+      } else {
+        localStorage.removeItem(DISPLAY_NAME_KEY);
+      }
+    } catch (e) {
+      console.error('[DisplayName] 保存エラー:', e);
+    }
+  }
+
+  // 表示名を取得（カスタム名があればそれを使用）
+  function getDisplayName() {
+    const customName = getCustomDisplayName();
+    if (customName) return customName;
+
+    // デフォルトの匿名名を生成
+    if (typeof FirebaseSync !== 'undefined' && FirebaseSync.isLoggedIn()) {
+      const user = FirebaseSync.getCurrentUser();
+      if (user) {
+        return '匿名' + user.uid.substring(0, 4).toUpperCase();
+      }
+    }
+    return '匿名';
+  }
+
+  // 表示名変更ダイアログを表示
+  function showDisplayNameEditor() {
+    const currentName = getCustomDisplayName() || '';
+    const defaultName = (() => {
+      if (typeof FirebaseSync !== 'undefined' && FirebaseSync.isLoggedIn()) {
+        const user = FirebaseSync.getCurrentUser();
+        if (user) return '匿名' + user.uid.substring(0, 4).toUpperCase();
+      }
+      return '匿名';
+    })();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'display-name-overlay';
+    overlay.innerHTML = `
+      <div class="display-name-modal">
+        <h3 class="display-name-title">表示名を変更</h3>
+        <p class="display-name-desc">ランキングに表示される名前を設定できます</p>
+        <input type="text" class="display-name-input" id="display-name-input"
+               value="${escapeHtml(currentName)}"
+               placeholder="${escapeHtml(defaultName)}"
+               maxlength="20">
+        <p class="display-name-hint">空欄にすると自動生成の名前（${escapeHtml(defaultName)}）になります</p>
+        <div class="display-name-actions">
+          <button class="display-name-cancel" id="display-name-cancel">キャンセル</button>
+          <button class="display-name-save" id="display-name-save">保存</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+    setTimeout(() => overlay.classList.add('active'), 10);
+
+    const input = document.getElementById('display-name-input');
+    input.focus();
+    input.select();
+
+    // キャンセル
+    document.getElementById('display-name-cancel').addEventListener('click', () => {
+      overlay.classList.remove('active');
+      setTimeout(() => overlay.remove(), 300);
+    });
+
+    // 保存
+    document.getElementById('display-name-save').addEventListener('click', async () => {
+      const newName = input.value.trim();
+      setCustomDisplayName(newName || null);
+
+      // 即座に公開統計を更新
+      lastPublicStatsUpdate = 0; // 強制更新
+      await updatePublicStats();
+
+      overlay.classList.remove('active');
+      setTimeout(() => {
+        overlay.remove();
+        // ランキングを再読み込み
+        loadRankingInStats();
+      }, 300);
+    });
+
+    // Enterキーで保存
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        document.getElementById('display-name-save').click();
+      }
+    });
+
+    // オーバーレイクリックで閉じる
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        document.getElementById('display-name-cancel').click();
+      }
+    });
+  }
 
   async function updatePublicStats() {
     if (typeof FirebaseSync === 'undefined' || !FirebaseSync.isLoggedIn()) {
@@ -1140,8 +1252,8 @@ const FlashcardModule = (function() {
     const stats = getDailyStats();
     const weeklyCards = getWeeklyCards();
 
-    // 匿名の表示名を生成（ユーザーIDから）
-    const displayName = '匿名' + user.uid.substring(0, 4).toUpperCase();
+    // カスタム表示名または自動生成名を使用
+    const displayName = getDisplayName();
 
     const publicStats = {
       displayName: displayName,
@@ -1253,12 +1365,17 @@ const FlashcardModule = (function() {
         return `
           <div class="stats-ranking-item ${isMe ? 'is-me' : ''}">
             <span class="stats-ranking-rank">${medal}</span>
-            <span class="stats-ranking-name">${escapeHtml(item.displayName)}${isMe ? ' (自分)' : ''}</span>
+            <span class="stats-ranking-name ${isMe ? 'editable' : ''}" ${isMe ? 'data-editable="true"' : ''}>${escapeHtml(item.displayName)}${isMe ? ' (自分) ✏️' : ''}</span>
             <span class="stats-ranking-cards">${item.weeklyCards}枚</span>
             ${item.currentStreak > 0 ? `<span class="stats-ranking-streak">🔥${item.currentStreak}</span>` : ''}
           </div>
         `;
       }).join('');
+
+      // 名前編集のクリックイベント
+      listEl.querySelectorAll('.stats-ranking-name[data-editable="true"]').forEach(el => {
+        el.addEventListener('click', () => showDisplayNameEditor());
+      });
 
     } catch (e) {
       console.error('[Ranking] ランキング読み込みエラー:', e);

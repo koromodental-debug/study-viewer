@@ -30,7 +30,8 @@ const FirebaseSync = (function() {
     'studyViewer_favorites',
     'studyViewer_searchHistory',
     'studyViewer_importedDecks',
-    'studyViewer_deckCustomizations'
+    'studyViewer_deckCustomizations',
+    'studyViewer_dailyStats'
   ];
 
   // 設定キー（デバイスごとに保持、同期しない）
@@ -315,6 +316,8 @@ const FirebaseSync = (function() {
         return JSON.stringify(mergeImportedDecks(localData, cloudData));
       } else if (key === 'studyViewer_deckCustomizations') {
         return JSON.stringify(mergeDeckCustomizations(localData, cloudData));
+      } else if (key === 'studyViewer_dailyStats') {
+        return JSON.stringify(mergeDailyStats(localData, cloudData));
       }
     } catch (e) {
       console.error('[FirebaseSync] マージエラー:', e);
@@ -322,6 +325,127 @@ const FirebaseSync = (function() {
 
     // パースできない場合はクラウドを優先
     return cloudValue;
+  }
+
+  /**
+   * 日別統計のマージ
+   * データ形式: { version: 1, days: { "2026-01-30": { cardsReviewed, memorized, again, studyTimeMs, sessions } }, streak: { current, longest, lastStudyDate } }
+   */
+  function mergeDailyStats(local, cloud) {
+    const merged = {
+      version: Math.max(local.version || 1, cloud.version || 1),
+      days: {},
+      streak: {
+        current: 0,
+        longest: 0,
+        lastStudyDate: null
+      }
+    };
+
+    const localDays = local.days || {};
+    const cloudDays = cloud.days || {};
+
+    // 全ての日付を収集
+    const allDates = new Set([...Object.keys(localDays), ...Object.keys(cloudDays)]);
+
+    for (const date of allDates) {
+      const localDay = localDays[date];
+      const cloudDay = cloudDays[date];
+
+      if (localDay && !cloudDay) {
+        merged.days[date] = localDay;
+      } else if (!localDay && cloudDay) {
+        merged.days[date] = cloudDay;
+      } else if (localDay && cloudDay) {
+        // 両方にある場合は各値の大きい方を採用（学習量は累積するため）
+        merged.days[date] = {
+          cardsReviewed: Math.max(localDay.cardsReviewed || 0, cloudDay.cardsReviewed || 0),
+          memorized: Math.max(localDay.memorized || 0, cloudDay.memorized || 0),
+          again: Math.max(localDay.again || 0, cloudDay.again || 0),
+          studyTimeMs: Math.max(localDay.studyTimeMs || 0, cloudDay.studyTimeMs || 0),
+          sessions: Math.max(localDay.sessions || 0, cloudDay.sessions || 0)
+        };
+      }
+    }
+
+    // ストリークは再計算（日別データから正確に算出）
+    merged.streak = recalculateStreak(merged.days);
+
+    console.log(`[FirebaseSync] 日別統計マージ: ローカル${Object.keys(localDays).length}日, クラウド${Object.keys(cloudDays).length}日 → マージ後${Object.keys(merged.days).length}日`);
+    return merged;
+  }
+
+  /**
+   * 日別データからストリークを再計算
+   */
+  function recalculateStreak(days) {
+    const sortedDates = Object.keys(days).sort().reverse(); // 新しい順
+    if (sortedDates.length === 0) {
+      return { current: 0, longest: 0, lastStudyDate: null };
+    }
+
+    const today = new Date();
+    const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = `${yesterday.getFullYear()}-${String(yesterday.getMonth() + 1).padStart(2, '0')}-${String(yesterday.getDate()).padStart(2, '0')}`;
+
+    // 今日か昨日に学習していなければストリークは0
+    const lastStudyDate = sortedDates[0];
+    if (lastStudyDate !== todayStr && lastStudyDate !== yesterdayStr) {
+      return { current: 0, longest: calculateLongestStreak(days), lastStudyDate };
+    }
+
+    // 連続日数をカウント
+    let current = 0;
+    let checkDate = new Date(lastStudyDate);
+
+    while (true) {
+      const dateStr = `${checkDate.getFullYear()}-${String(checkDate.getMonth() + 1).padStart(2, '0')}-${String(checkDate.getDate()).padStart(2, '0')}`;
+      if (days[dateStr] && days[dateStr].cardsReviewed > 0) {
+        current++;
+        checkDate.setDate(checkDate.getDate() - 1);
+      } else {
+        break;
+      }
+    }
+
+    const longest = Math.max(current, calculateLongestStreak(days));
+
+    return { current, longest, lastStudyDate };
+  }
+
+  /**
+   * 最長ストリークを計算
+   */
+  function calculateLongestStreak(days) {
+    const sortedDates = Object.keys(days).sort();
+    if (sortedDates.length === 0) return 0;
+
+    let longest = 0;
+    let currentStreak = 0;
+    let prevDate = null;
+
+    for (const dateStr of sortedDates) {
+      if (days[dateStr].cardsReviewed === 0) continue;
+
+      const date = new Date(dateStr);
+      if (prevDate) {
+        const diffDays = (date - prevDate) / (1000 * 60 * 60 * 24);
+        if (diffDays === 1) {
+          currentStreak++;
+        } else {
+          currentStreak = 1;
+        }
+      } else {
+        currentStreak = 1;
+      }
+
+      longest = Math.max(longest, currentStreak);
+      prevDate = date;
+    }
+
+    return longest;
   }
 
   /**
@@ -755,6 +879,106 @@ const FirebaseSync = (function() {
     }
   }
 
+  // === 公開統計（ランキング機能） ===
+
+  // ランキングキャッシュ（1時間有効）
+  let rankingCache = null;
+  let rankingCacheTime = 0;
+  const RANKING_CACHE_DURATION = 60 * 60 * 1000; // 1時間
+
+  /**
+   * 公開統計を更新
+   */
+  async function updatePublicStats(stats) {
+    if (!currentUser || !db) {
+      console.log('[FirebaseSync] 未ログインのためスキップ');
+      return;
+    }
+
+    try {
+      const publicStatsRef = db.collection('publicStats').doc(currentUser.uid);
+      await publicStatsRef.set({
+        ...stats,
+        userId: currentUser.uid,
+        lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+      }, { merge: true });
+      console.log('[FirebaseSync] 公開統計を更新しました');
+
+      // キャッシュをクリア
+      rankingCache = null;
+    } catch (error) {
+      console.error('[FirebaseSync] 公開統計更新エラー:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * ランキングを取得（上位20件）
+   */
+  async function getRanking() {
+    if (!db) {
+      console.log('[FirebaseSync] DB未初期化');
+      return [];
+    }
+
+    // キャッシュが有効な場合はキャッシュを返す
+    if (rankingCache && (Date.now() - rankingCacheTime) < RANKING_CACHE_DURATION) {
+      console.log('[FirebaseSync] ランキングキャッシュを使用');
+      return rankingCache;
+    }
+
+    try {
+      const publicStatsRef = db.collection('publicStats');
+      const snapshot = await publicStatsRef
+        .where('isPublic', '==', true)
+        .orderBy('weeklyCards', 'desc')
+        .limit(20)
+        .get();
+
+      const ranking = [];
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        ranking.push({
+          userId: doc.id,
+          displayName: data.displayName || '匿名',
+          weeklyCards: data.weeklyCards || 0,
+          currentStreak: data.currentStreak || 0
+        });
+      });
+
+      // キャッシュを更新
+      rankingCache = ranking;
+      rankingCacheTime = Date.now();
+
+      console.log('[FirebaseSync] ランキング取得完了:', ranking.length);
+      return ranking;
+    } catch (error) {
+      console.error('[FirebaseSync] ランキング取得エラー:', error);
+      return rankingCache || [];
+    }
+  }
+
+  /**
+   * 自分の公開統計を取得
+   */
+  async function getMyPublicStats() {
+    if (!currentUser || !db) {
+      return null;
+    }
+
+    try {
+      const publicStatsRef = db.collection('publicStats').doc(currentUser.uid);
+      const doc = await publicStatsRef.get();
+      if (doc.exists) {
+        return doc.data();
+      }
+      return null;
+    } catch (error) {
+      console.error('[FirebaseSync] 公開統計取得エラー:', error);
+      return null;
+    }
+  }
+
   // 公開API
   return {
     init,
@@ -769,7 +993,11 @@ const FirebaseSync = (function() {
     // デッキインポート
     importDeckWithCode,
     getImportedDecks,
-    syncPurchasedDecks
+    syncPurchasedDecks,
+    // 公開統計（ランキング）
+    updatePublicStats,
+    getRanking,
+    getMyPublicStats
   };
 })();
 

@@ -4900,6 +4900,120 @@ body:not(.is-practice) #flashcard-content {
   border: 1px solid var(--border-subtle);
 }
 
+/* 学習の記録ヘッダー（タブ＋アクション） */
+.review-center-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.review-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-secondary);
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.review-tab {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--secondary-label);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.review-tab:hover {
+  color: var(--text-color);
+}
+
+.review-tab.active {
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.review-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* タブコンテンツ */
+.review-tab-content {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 今日タブの統計グリッド */
+.today-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.today-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.today-stat-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.today-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+.today-stat-label {
+  font-size: 11px;
+  color: var(--secondary-label);
+  margin-top: 2px;
+}
+
+.today-stat-card.streak .today-stat-value {
+  color: #FF6B35;
+}
+
+.today-stat-card.cards .today-stat-value {
+  color: var(--tint-color);
+}
+
+.today-detail-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tint-color);
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.today-detail-btn:hover {
+  background: var(--bg-secondary);
+}
+
 .review-center-title {
   font-size: 17px;
   font-weight: 600;
@@ -5377,6 +5491,702 @@ body:not(.is-practice) #flashcard-content {
 
 .daily-ten-card.completed .daily-ten-desc {
   margin-bottom: 0;
+}
+
+/* 今日の進捗セクション */
+.today-progress-section {
+  margin: 0 16px 16px;
+}
+
+.today-progress-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--separator-color);
+}
+
+.today-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.today-progress-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.today-progress-detail-btn {
+  background: none;
+  border: none;
+  color: #3B82F6;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.today-progress-detail-btn:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.today-progress-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.today-progress-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--fill-tertiary);
+  border-radius: 10px;
+}
+
+.today-progress-icon {
+  font-size: 16px;
+}
+
+.today-progress-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .today-progress-card {
+  background: var(--card-bg);
+  border-color: var(--separator-color);
+}
+
+[data-theme="dark"] .today-progress-item {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* 統計詳細シート */
+.stats-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.stats-detail-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.stats-detail-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.stats-detail-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 85vh;
+  background: var(--bg-color);
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.stats-detail-overlay.active .stats-detail-sheet {
+  transform: translateY(0);
+}
+
+.stats-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--separator-color);
+}
+
+.stats-detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.stats-detail-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fill-tertiary);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.stats-detail-close svg {
+  width: 18px;
+  height: 18px;
+  color: var(--secondary-label);
+}
+
+.stats-detail-content {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(85vh - 70px);
+}
+
+/* ストリークセクション */
+.stats-streak-section {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%);
+  border-radius: 16px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.stats-streak-current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.stats-streak-fire {
+  font-size: 32px;
+}
+
+.stats-streak-number {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.stats-streak-label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.stats-streak-best {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* 今日の統計 */
+.stats-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondary-label);
+  margin: 0 0 12px 0;
+}
+
+.stats-today-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.stats-today-item {
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--fill-tertiary);
+  border-radius: 12px;
+}
+
+.stats-today-value {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.stats-today-label {
+  display: block;
+  font-size: 11px;
+  color: var(--secondary-label);
+  margin-top: 4px;
+}
+
+.stats-today-item.memorized .stats-today-value {
+  color: #34C759;
+}
+
+.stats-today-item.again .stats-today-value {
+  color: #FF3B30;
+}
+
+/* 期間別統計セクション */
+.stats-period-section {
+  margin-bottom: 20px;
+}
+
+/* 期間切り替えタブ */
+.stats-period-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.stats-period-tab {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--fill-tertiary);
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--secondary-label);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stats-period-tab.active {
+  background: #3B82F6;
+  color: white;
+}
+
+.stats-period-tab:not(.active):hover {
+  background: var(--fill-secondary);
+}
+
+/* 期間合計 */
+.stats-period-total {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.period-total-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.period-total-unit {
+  font-size: 16px;
+  color: var(--secondary-label);
+}
+
+.period-total-days {
+  font-size: 14px;
+  color: var(--secondary-label);
+  margin-left: 12px;
+}
+
+/* チャートエリア */
+.stats-period-chart-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 棒グラフ */
+.stats-period-chart.bar-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100px;
+  padding: 8px;
+  background: var(--fill-tertiary);
+  border-radius: 12px;
+}
+
+.period-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+
+.period-bar {
+  width: 28px;
+  min-height: 4px;
+  background: #3B82F6;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  margin-top: auto;
+  transition: height 0.3s ease;
+}
+
+.period-bar.today {
+  background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+}
+
+.period-bar-value {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--secondary-label);
+  white-space: nowrap;
+}
+
+.period-bar-label {
+  font-size: 12px;
+  color: var(--secondary-label);
+  margin-top: 8px;
+}
+
+/* ヒートマップ */
+.stats-period-chart.heatmap {
+  display: grid;
+  gap: 3px;
+  padding: 12px;
+  background: var(--fill-tertiary);
+  border-radius: 12px;
+  min-width: fit-content;
+}
+
+.heatmap-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--separator-color);
+}
+
+.heatmap-cell.level-1 {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+.heatmap-cell.level-2 {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+.heatmap-cell.level-3 {
+  background: rgba(59, 130, 246, 0.75);
+}
+
+.heatmap-cell.level-4 {
+  background: #3B82F6;
+}
+
+/* みんなの学習状況（統計シート内埋め込み） */
+.stats-ranking-section {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--separator-color);
+}
+
+.stats-ranking-desc {
+  font-size: 12px;
+  color: var(--secondary-label);
+  margin: 0 0 12px 0;
+}
+
+.stats-ranking-list {
+  background: var(--card-bg);
+  border: 1px solid var(--separator-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.stats-ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--separator-color);
+}
+
+.stats-ranking-item:last-child {
+  border-bottom: none;
+}
+
+.stats-ranking-item.is-me {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.stats-ranking-rank {
+  width: 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stats-ranking-name {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.stats-ranking-cards {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3B82F6;
+}
+
+.stats-ranking-streak {
+  font-size: 12px;
+  color: #FF9500;
+  margin-left: 2px;
+}
+
+.stats-ranking-average {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 10px;
+  background: var(--fill-tertiary);
+  border-radius: 8px;
+}
+
+.stats-ranking-average-label {
+  font-size: 13px;
+  color: var(--secondary-label);
+}
+
+.stats-ranking-average-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.stats-ranking-average-unit {
+  font-size: 13px;
+  color: var(--secondary-label);
+}
+
+.ranking-empty-inline,
+.ranking-error-inline {
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--secondary-label);
+}
+
+[data-theme="dark"] .stats-ranking-item.is-me {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .stats-detail-sheet {
+  background: var(--bg-color);
+}
+
+[data-theme="dark"] .stats-streak-section {
+  background: linear-gradient(135deg, #FF9500 0%, #CC5500 100%);
+}
+
+/* ランキングシート */
+.ranking-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ranking-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ranking-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.ranking-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 85vh;
+  background: var(--bg-color);
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.ranking-overlay.active .ranking-sheet {
+  transform: translateY(0);
+}
+
+.ranking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--separator-color);
+}
+
+.ranking-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.ranking-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fill-tertiary);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ranking-close svg {
+  width: 18px;
+  height: 18px;
+  color: var(--secondary-label);
+}
+
+.ranking-content {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(85vh - 70px);
+}
+
+/* ランキング説明 */
+.ranking-info-section {
+  background: var(--fill-tertiary);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.ranking-info-desc {
+  font-size: 13px;
+  color: var(--secondary-label);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ランキングリスト */
+.ranking-list-section {
+  margin-bottom: 20px;
+}
+
+.ranking-list-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondary-label);
+  margin: 0 0 12px 0;
+}
+
+.ranking-list {
+  background: var(--card-bg);
+  border: 1px solid var(--separator-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--separator-color);
+}
+
+.ranking-item:last-child {
+  border-bottom: none;
+}
+
+.ranking-item.is-me {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.ranking-rank {
+  width: 28px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ranking-name {
+  flex: 1;
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+.ranking-cards {
+  font-size: 15px;
+  font-weight: 600;
+  color: #3B82F6;
+}
+
+.ranking-streak {
+  font-size: 13px;
+  color: #FF9500;
+  margin-left: 4px;
+}
+
+.ranking-loading,
+.ranking-empty,
+.ranking-error {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--secondary-label);
+}
+
+.ranking-empty p,
+.ranking-error p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* 全体平均 */
+.ranking-average-section {
+  margin-top: 16px;
+}
+
+.ranking-average-card {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: var(--fill-tertiary);
+  border-radius: 12px;
+}
+
+.ranking-average-label {
+  font-size: 13px;
+  color: var(--secondary-label);
+}
+
+.ranking-average-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.ranking-average-unit {
+  font-size: 13px;
+  color: var(--secondary-label);
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .ranking-sheet {
+  background: var(--bg-color);
+}
+
+[data-theme="dark"] .ranking-item.is-me {
+  background: rgba(59, 130, 246, 0.15);
 }
 
 /* デッキジャンプボタン */

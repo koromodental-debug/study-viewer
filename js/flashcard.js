@@ -8,6 +8,7 @@ const FlashcardModule = (function() {
   const SESSIONS_KEY = 'studyViewer_flashcardSessions';
   const REPORTS_KEY = 'studyViewer_cardReports';
   const DECK_CUSTOMIZATIONS_KEY = 'studyViewer_deckCustomizations';
+  const DAILY_STATS_KEY = 'studyViewer_dailyStats';
   const STORAGE_VERSION = 1;
 
   // 科目の表示順序（インポート済み → 必修 → 基礎系 → 保存系 → 補綴系 → その他臨床系 → 社会歯科系）
@@ -144,7 +145,9 @@ const FlashcardModule = (function() {
     // スクロール方向検知用
     lastScrollTop: 0,
     // ピルボタンの表示状態（スクロール制御用）
-    pillVisible: false
+    pillVisible: false,
+    // セッション開始時間（勉強時間トラッキング用）
+    sessionStartTime: null
   };
 
   // DOM要素
@@ -495,6 +498,592 @@ const FlashcardModule = (function() {
       console.log(`[saveProgress] 保存完了: ${cardCount}件`);
     } catch (e) {
       console.error('[saveProgress] 保存エラー:', e);
+    }
+  }
+
+  // === 日別統計（モチベーション管理） ===
+  function loadDailyStats() {
+    try {
+      const stored = localStorage.getItem(DAILY_STATS_KEY);
+      if (stored) {
+        return JSON.parse(stored);
+      }
+    } catch (e) {
+      console.error('[loadDailyStats] 読み込みエラー:', e);
+    }
+    return {
+      version: 1,
+      days: {},
+      streak: {
+        current: 0,
+        longest: 0,
+        lastStudyDate: null
+      }
+    };
+  }
+
+  function saveDailyStats(stats) {
+    try {
+      localStorage.setItem(DAILY_STATS_KEY, JSON.stringify(stats));
+    } catch (e) {
+      console.error('[saveDailyStats] 保存エラー:', e);
+    }
+  }
+
+  function getTodayDateString() {
+    const now = new Date();
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  }
+
+  function recordDailyActivity(type) {
+    const stats = loadDailyStats();
+    const today = getTodayDateString();
+
+    if (!stats.days[today]) {
+      stats.days[today] = {
+        cardsReviewed: 0,
+        memorized: 0,
+        again: 0,
+        studyTimeMs: 0,
+        sessions: 0
+      };
+    }
+
+    stats.days[today].cardsReviewed++;
+    if (type === 'memorized') {
+      stats.days[today].memorized++;
+    } else if (type === 'again') {
+      stats.days[today].again++;
+    }
+
+    // ストリーク更新
+    updateStreak(stats, today);
+
+    saveDailyStats(stats);
+
+    // 公開統計を自動更新（ログインユーザーは強制参加）
+    updatePublicStats();
+
+    return stats;
+  }
+
+  function recordStudyTime(durationMs) {
+    const stats = loadDailyStats();
+    const today = getTodayDateString();
+
+    if (!stats.days[today]) {
+      stats.days[today] = {
+        cardsReviewed: 0,
+        memorized: 0,
+        again: 0,
+        studyTimeMs: 0,
+        sessions: 0
+      };
+    }
+
+    stats.days[today].studyTimeMs += durationMs;
+    stats.days[today].sessions++;
+
+    saveDailyStats(stats);
+    return stats;
+  }
+
+  function updateStreak(stats, today) {
+    const lastStudyDate = stats.streak.lastStudyDate;
+
+    if (lastStudyDate === today) {
+      // 今日既に学習済み - ストリーク変更なし
+      return;
+    }
+
+    const todayDate = new Date(today);
+    const yesterday = new Date(todayDate);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = `${yesterday.getFullYear()}-${String(yesterday.getMonth() + 1).padStart(2, '0')}-${String(yesterday.getDate()).padStart(2, '0')}`;
+
+    if (lastStudyDate === yesterdayStr) {
+      // 昨日学習した - ストリーク継続
+      stats.streak.current++;
+    } else if (lastStudyDate === null) {
+      // 初めての学習
+      stats.streak.current = 1;
+    } else {
+      // 1日以上空いた - ストリークリセット
+      stats.streak.current = 1;
+    }
+
+    // 最長記録更新
+    if (stats.streak.current > stats.streak.longest) {
+      stats.streak.longest = stats.streak.current;
+    }
+
+    stats.streak.lastStudyDate = today;
+  }
+
+  function getDailyStats() {
+    return loadDailyStats();
+  }
+
+  function getTodayStats() {
+    const stats = loadDailyStats();
+    const today = getTodayDateString();
+    return stats.days[today] || {
+      cardsReviewed: 0,
+      memorized: 0,
+      again: 0,
+      studyTimeMs: 0,
+      sessions: 0
+    };
+  }
+
+  function getWeeklyCards() {
+    const stats = loadDailyStats();
+    const today = new Date();
+    let total = 0;
+
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+      const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+      if (stats.days[dateStr]) {
+        total += stats.days[dateStr].cardsReviewed;
+      }
+    }
+
+    return total;
+  }
+
+  function formatStudyTime(ms) {
+    const totalMinutes = Math.floor(ms / 60000);
+    if (totalMinutes < 60) {
+      return `${totalMinutes}分`;
+    }
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return minutes > 0 ? `${hours}時間${minutes}分` : `${hours}時間`;
+  }
+
+  // === 統計詳細シート ===
+  function openStatsDetailSheet() {
+    const existing = document.querySelector('.stats-detail-overlay');
+    if (existing) existing.remove();
+
+    const stats = getDailyStats();
+    const todayStats = getTodayStats();
+    const weeklyCards = getWeeklyCards();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'stats-detail-overlay';
+    overlay.innerHTML = `
+      <div class="stats-detail-backdrop"></div>
+      <div class="stats-detail-sheet">
+        <div class="stats-detail-header">
+          <h2 class="stats-detail-title">学習統計</h2>
+          <button class="stats-detail-close" id="stats-detail-close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="stats-detail-content">
+          <!-- ストリーク表示 -->
+          <div class="stats-streak-section">
+            <div class="stats-streak-current">
+              <span class="stats-streak-fire">${stats.streak.current > 0 ? '🔥' : '💤'}</span>
+              <span class="stats-streak-number">${stats.streak.current}</span>
+              <span class="stats-streak-label">日連続</span>
+            </div>
+            <div class="stats-streak-best">
+              最長記録: ${stats.streak.longest}日
+            </div>
+          </div>
+
+          <!-- 今日の統計 -->
+          <div class="stats-today-section">
+            <h3 class="stats-section-title">今日</h3>
+            <div class="stats-today-grid">
+              <div class="stats-today-item">
+                <span class="stats-today-value">${todayStats.cardsReviewed}</span>
+                <span class="stats-today-label">枚</span>
+              </div>
+              <div class="stats-today-item memorized">
+                <span class="stats-today-value">${todayStats.memorized}</span>
+                <span class="stats-today-label">覚えた</span>
+              </div>
+              <div class="stats-today-item again">
+                <span class="stats-today-value">${todayStats.again}</span>
+                <span class="stats-today-label">もう一度</span>
+              </div>
+              <div class="stats-today-item time">
+                <span class="stats-today-value">${formatStudyTime(todayStats.studyTimeMs) || '0分'}</span>
+                <span class="stats-today-label">勉強時間</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 期間別統計 -->
+          <div class="stats-period-section">
+            <div class="stats-period-tabs">
+              <button class="stats-period-tab active" data-period="week">今週</button>
+              <button class="stats-period-tab" data-period="month">今月</button>
+              <button class="stats-period-tab" data-period="90days">90日</button>
+              <button class="stats-period-tab" data-period="6months">6ヶ月</button>
+            </div>
+            <div class="stats-period-total" id="stats-period-total"></div>
+            <div class="stats-period-chart-wrap">
+              <div class="stats-period-chart" id="stats-period-chart"></div>
+            </div>
+          </div>
+
+          <!-- みんなの学習状況（直接表示） -->
+          <div class="stats-ranking-section">
+            <h3 class="stats-section-title">👥 みんなの学習状況</h3>
+            <p class="stats-ranking-desc">週間学習量ランキング（匿名）</p>
+            <div class="stats-ranking-list" id="stats-ranking-list">
+              <div class="ranking-loading">読み込み中...</div>
+            </div>
+            <div class="stats-ranking-average" id="stats-ranking-average" style="display:none;">
+              <span class="stats-ranking-average-label">全体平均:</span>
+              <span class="stats-ranking-average-value" id="stats-ranking-average-value">-</span>
+              <span class="stats-ranking-average-unit">枚/週</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    // アニメーション
+    requestAnimationFrame(() => {
+      overlay.classList.add('active');
+    });
+
+    // 閉じるボタン
+    overlay.querySelector('#stats-detail-close').addEventListener('click', closeStatsDetailSheet);
+    overlay.querySelector('.stats-detail-backdrop').addEventListener('click', closeStatsDetailSheet);
+
+    // 期間別グラフ描画（デフォルトは今週）
+    renderPeriodChart('week');
+
+    // 期間タブ切り替え
+    overlay.querySelectorAll('.stats-period-tab').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        overlay.querySelectorAll('.stats-period-tab').forEach(t => t.classList.remove('active'));
+        e.target.classList.add('active');
+        renderPeriodChart(e.target.dataset.period);
+      });
+    });
+
+    // ランキング読み込み
+    loadRankingInStats();
+  }
+
+  function closeStatsDetailSheet() {
+    const overlay = document.querySelector('.stats-detail-overlay');
+    if (overlay) {
+      overlay.classList.remove('active');
+      setTimeout(() => overlay.remove(), 300);
+    }
+  }
+
+  function renderPeriodChart(period = 'week') {
+    const chartEl = document.getElementById('stats-period-chart');
+    const totalEl = document.getElementById('stats-period-total');
+    if (!chartEl) return;
+
+    const stats = getDailyStats();
+    const today = new Date();
+    const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
+
+    // 期間に応じた日数
+    let days;
+    switch (period) {
+      case 'week': days = 7; break;
+      case 'month': days = 30; break;
+      case '90days': days = 90; break;
+      case '6months': days = 182; break;
+      default: days = 7;
+    }
+
+    // データを収集
+    const data = [];
+    let totalCards = 0;
+    let studyDays = 0;
+    let maxCards = 1;
+
+    for (let i = days - 1; i >= 0; i--) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+      const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+      const dayData = stats.days[dateStr] || { cardsReviewed: 0 };
+      const cards = dayData.cardsReviewed;
+
+      totalCards += cards;
+      if (cards > 0) studyDays++;
+      maxCards = Math.max(maxCards, cards);
+
+      data.push({
+        date: date,
+        dateStr: dateStr,
+        cards: cards,
+        day: dayNames[date.getDay()],
+        isToday: i === 0
+      });
+    }
+
+    // 合計表示
+    if (totalEl) {
+      totalEl.innerHTML = `
+        <span class="period-total-value">${totalCards}</span>
+        <span class="period-total-unit">枚</span>
+        <span class="period-total-days">${studyDays}日学習</span>
+      `;
+    }
+
+    // 表示形式を決定
+    if (period === 'week') {
+      // 週: 棒グラフ
+      chartEl.className = 'stats-period-chart bar-chart';
+      chartEl.innerHTML = data.map(d => `
+        <div class="period-bar-container">
+          <div class="period-bar ${d.isToday ? 'today' : ''}" style="height: ${(d.cards / maxCards) * 100}%">
+            <span class="period-bar-value">${d.cards}</span>
+          </div>
+          <span class="period-bar-label">${d.day}</span>
+        </div>
+      `).join('');
+    } else {
+      // 月以上: ヒートマップ
+      const columns = period === 'month' ? 7 : period === '90days' ? 13 : 26;
+      chartEl.className = 'stats-period-chart heatmap';
+      chartEl.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+      chartEl.innerHTML = data.map(d => {
+        let level = 0;
+        if (d.cards > 0) level = 1;
+        if (d.cards >= 10) level = 2;
+        if (d.cards >= 30) level = 3;
+        if (d.cards >= 50) level = 4;
+        const label = `${d.date.getMonth() + 1}/${d.date.getDate()}`;
+        return `<div class="heatmap-cell level-${level}" title="${label}: ${d.cards}枚"></div>`;
+      }).join('');
+    }
+  }
+
+  // === ランキングシート ===
+  function openRankingSheet() {
+    const existing = document.querySelector('.ranking-overlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'ranking-overlay';
+    overlay.innerHTML = `
+      <div class="ranking-backdrop"></div>
+      <div class="ranking-sheet">
+        <div class="ranking-header">
+          <h2 class="ranking-title">みんなの学習状況</h2>
+          <button class="ranking-close" id="ranking-close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="ranking-content">
+          <!-- 説明 -->
+          <div class="ranking-info-section">
+            <p class="ranking-info-desc">ログインユーザーの週間学習量ランキングです。表示名は匿名です。</p>
+          </div>
+
+          <!-- ランキングリスト -->
+          <div class="ranking-list-section">
+            <h3 class="ranking-list-title">週間学習量ランキング</h3>
+            <div class="ranking-list" id="ranking-list">
+              <div class="ranking-loading">読み込み中...</div>
+            </div>
+          </div>
+
+          <!-- 全体平均 -->
+          <div class="ranking-average-section" id="ranking-average-section" style="display:none;">
+            <div class="ranking-average-card">
+              <span class="ranking-average-label">全体平均</span>
+              <span class="ranking-average-value" id="ranking-average-value">-</span>
+              <span class="ranking-average-unit">枚/週</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    // アニメーション
+    requestAnimationFrame(() => {
+      overlay.classList.add('active');
+    });
+
+    // イベント
+    overlay.querySelector('#ranking-close').addEventListener('click', closeRankingSheet);
+    overlay.querySelector('.ranking-backdrop').addEventListener('click', closeRankingSheet);
+
+    // ランキング読み込み
+    loadRanking();
+  }
+
+  function closeRankingSheet() {
+    const overlay = document.querySelector('.ranking-overlay');
+    if (overlay) {
+      overlay.classList.remove('active');
+      setTimeout(() => overlay.remove(), 300);
+    }
+  }
+
+  // 公開統計を自動更新（ログインユーザーは強制参加）
+  let lastPublicStatsUpdate = 0;
+  const PUBLIC_STATS_UPDATE_INTERVAL = 60000; // 1分に1回まで
+
+  async function updatePublicStats() {
+    if (typeof FirebaseSync === 'undefined' || !FirebaseSync.isLoggedIn()) {
+      return;
+    }
+
+    // 更新頻度を制限（1分に1回まで）
+    const now = Date.now();
+    if (now - lastPublicStatsUpdate < PUBLIC_STATS_UPDATE_INTERVAL) {
+      return;
+    }
+    lastPublicStatsUpdate = now;
+
+    const user = FirebaseSync.getCurrentUser();
+    if (!user) return;
+
+    const stats = getDailyStats();
+    const weeklyCards = getWeeklyCards();
+
+    // 匿名の表示名を生成（ユーザーIDから）
+    const displayName = '匿名' + user.uid.substring(0, 4).toUpperCase();
+
+    const publicStats = {
+      displayName: displayName,
+      weeklyCards: weeklyCards,
+      currentStreak: stats.streak.current,
+      lastUpdated: Date.now(),
+      isPublic: true
+    };
+
+    try {
+      await FirebaseSync.updatePublicStats(publicStats);
+      console.log('[Ranking] 公開統計を更新しました');
+    } catch (e) {
+      console.error('[Ranking] 公開統計の更新に失敗:', e);
+    }
+  }
+
+  async function loadRanking() {
+    const listEl = document.getElementById('ranking-list');
+    const avgSection = document.getElementById('ranking-average-section');
+    const avgValue = document.getElementById('ranking-average-value');
+
+    if (!listEl) return;
+
+    try {
+      const ranking = await FirebaseSync.getRanking();
+
+      if (ranking.length === 0) {
+        listEl.innerHTML = `
+          <div class="ranking-empty">
+            <p>まだランキングに参加者がいません。</p>
+            <p>学習状況を公開して、最初の参加者になりましょう！</p>
+          </div>
+        `;
+        return;
+      }
+
+      // 平均を計算
+      const totalCards = ranking.reduce((sum, r) => sum + r.weeklyCards, 0);
+      const average = Math.round(totalCards / ranking.length);
+
+      if (avgSection && avgValue) {
+        avgSection.style.display = 'block';
+        avgValue.textContent = average;
+      }
+
+      // 現在のユーザーIDを取得
+      const currentUserId = FirebaseSync.isLoggedIn() ? FirebaseSync.getCurrentUser()?.uid : null;
+
+      listEl.innerHTML = ranking.map((item, index) => {
+        const isMe = currentUserId && item.userId === currentUserId;
+        const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}`;
+        return `
+          <div class="ranking-item ${isMe ? 'is-me' : ''}">
+            <span class="ranking-rank">${medal}</span>
+            <span class="ranking-name">${escapeHtml(item.displayName)}${isMe ? ' (自分)' : ''}</span>
+            <span class="ranking-cards">${item.weeklyCards}枚</span>
+            ${item.currentStreak > 0 ? `<span class="ranking-streak">🔥${item.currentStreak}</span>` : ''}
+          </div>
+        `;
+      }).join('');
+
+    } catch (e) {
+      console.error('[Ranking] ランキング読み込みエラー:', e);
+      listEl.innerHTML = `
+        <div class="ranking-error">
+          <p>ランキングの読み込みに失敗しました。</p>
+          <p>ネットワーク接続を確認してください。</p>
+        </div>
+      `;
+    }
+  }
+
+  // 統計シート内にランキングを表示
+  async function loadRankingInStats() {
+    const listEl = document.getElementById('stats-ranking-list');
+    const avgEl = document.getElementById('stats-ranking-average');
+    const avgValueEl = document.getElementById('stats-ranking-average-value');
+
+    if (!listEl) return;
+
+    try {
+      const ranking = await FirebaseSync.getRanking();
+
+      if (ranking.length === 0) {
+        listEl.innerHTML = `
+          <div class="ranking-empty-inline">
+            まだ参加者がいません。学習を始めましょう！
+          </div>
+        `;
+        return;
+      }
+
+      // 平均を計算
+      const totalCards = ranking.reduce((sum, r) => sum + r.weeklyCards, 0);
+      const average = Math.round(totalCards / ranking.length);
+
+      if (avgEl && avgValueEl) {
+        avgEl.style.display = 'flex';
+        avgValueEl.textContent = average;
+      }
+
+      // 現在のユーザーIDを取得
+      const currentUserId = FirebaseSync.isLoggedIn() ? FirebaseSync.getCurrentUser()?.uid : null;
+
+      listEl.innerHTML = ranking.map((item, index) => {
+        const isMe = currentUserId && item.userId === currentUserId;
+        const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}`;
+        return `
+          <div class="stats-ranking-item ${isMe ? 'is-me' : ''}">
+            <span class="stats-ranking-rank">${medal}</span>
+            <span class="stats-ranking-name">${escapeHtml(item.displayName)}${isMe ? ' (自分)' : ''}</span>
+            <span class="stats-ranking-cards">${item.weeklyCards}枚</span>
+            ${item.currentStreak > 0 ? `<span class="stats-ranking-streak">🔥${item.currentStreak}</span>` : ''}
+          </div>
+        `;
+      }).join('');
+
+    } catch (e) {
+      console.error('[Ranking] ランキング読み込みエラー:', e);
+      listEl.innerHTML = `
+        <div class="ranking-error-inline">
+          読み込みに失敗しました
+        </div>
+      `;
     }
   }
 
@@ -1088,6 +1677,12 @@ const FlashcardModule = (function() {
 
     const dailyTenCompleted = isDailyTenCompleted();
 
+    const todayStats = getTodayStats();
+    const dailyStatsData = getDailyStats();
+    const weeklyCards = getWeeklyCards();
+    const streakCurrent = dailyStatsData.streak.current;
+    const todayStudyTime = formatStudyTime(todayStats.studyTimeMs);
+
     return `
       <!-- 今日の10問 -->
       <div class="daily-ten-section">
@@ -1103,36 +1698,71 @@ const FlashcardModule = (function() {
         </div>
       </div>
 
-      <!-- 学習の記録 -->
+      <!-- 学習の記録（タブ切り替え） -->
       <div class="review-center">
-        <h2 class="review-center-title">
-          学習の記録 <span class="review-total-badge">${totalLearned}件</span>
-          <button class="review-help-btn" id="review-help-btn" aria-label="説明">?</button>
-          <button class="review-settings-btn ${state.cramMode ? 'cram-active' : ''}" id="review-settings-btn" aria-label="設定">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-            </svg>
-          </button>
-        </h2>
-        <div class="review-center-cards four-cards">
-          <button class="review-card review-card-again ${overall.again === 0 ? 'empty' : ''}" id="start-again-deck" ${overall.again === 0 ? 'disabled' : ''}>
-            <span class="review-card-count">${overall.again}</span>
-            <span class="review-card-label">要復習 ›</span>
-          </button>
-          <button class="review-card review-card-learning ${overall.learning === 0 ? 'empty' : ''}" id="start-learning-deck" ${overall.learning === 0 ? 'disabled' : ''}>
-            <span class="review-card-count">${overall.learning}</span>
-            <span class="review-card-label">定着中 ›</span>
-          </button>
-          <button class="review-card review-card-mastered ${overall.mastered === 0 ? 'empty' : ''}" id="start-mastered-deck" ${overall.mastered === 0 ? 'disabled' : ''}>
-            <span class="review-card-count">${overall.mastered}</span>
-            <span class="review-card-label">習得済 ›</span>
+        <div class="review-center-header">
+          <div class="review-tabs">
+            <button class="review-tab active" data-tab="progress">カード</button>
+            <button class="review-tab" data-tab="today">記録</button>
+          </div>
+          <div class="review-header-actions">
+            <button class="review-help-btn" id="review-help-btn" aria-label="説明">?</button>
+            <button class="review-settings-btn ${state.cramMode ? 'cram-active' : ''}" id="review-settings-btn" aria-label="設定">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 進捗タブ -->
+        <div class="review-tab-content" id="review-tab-progress">
+          <div class="review-center-cards four-cards">
+            <button class="review-card review-card-again ${overall.again === 0 ? 'empty' : ''}" id="start-again-deck" ${overall.again === 0 ? 'disabled' : ''}>
+              <span class="review-card-count">${overall.again}</span>
+              <span class="review-card-label">要復習 ›</span>
+            </button>
+            <button class="review-card review-card-learning ${overall.learning === 0 ? 'empty' : ''}" id="start-learning-deck" ${overall.learning === 0 ? 'disabled' : ''}>
+              <span class="review-card-count">${overall.learning}</span>
+              <span class="review-card-label">定着中 ›</span>
+            </button>
+            <button class="review-card review-card-mastered ${overall.mastered === 0 ? 'empty' : ''}" id="start-mastered-deck" ${overall.mastered === 0 ? 'disabled' : ''}>
+              <span class="review-card-count">${overall.mastered}</span>
+              <span class="review-card-label">習得済 ›</span>
+            </button>
+          </div>
+          <button class="favorite-deck-btn ${favoritesCount === 0 ? 'empty' : ''}" id="start-favorite-deck" ${favoritesCount === 0 ? 'disabled' : ''}>
+            <span class="favorite-deck-icon">★</span>
+            <span class="favorite-deck-label">お気に入り ${favoritesCount}件 ›</span>
           </button>
         </div>
-        <button class="favorite-deck-btn ${favoritesCount === 0 ? 'empty' : ''}" id="start-favorite-deck" ${favoritesCount === 0 ? 'disabled' : ''}>
-          <span class="favorite-deck-icon">★</span>
-          <span class="favorite-deck-label">お気に入り ${favoritesCount}件 ›</span>
-        </button>
+
+        <!-- 今日タブ -->
+        <div class="review-tab-content" id="review-tab-today" style="display:none;">
+          <div class="today-stats-grid">
+            <div class="today-stat-card streak">
+              <span class="today-stat-icon">${streakCurrent > 0 ? '🔥' : '💤'}</span>
+              <span class="today-stat-value">${streakCurrent}</span>
+              <span class="today-stat-label">日連続</span>
+            </div>
+            <div class="today-stat-card cards">
+              <span class="today-stat-value">${todayStats.cardsReviewed}</span>
+              <span class="today-stat-label">今日の枚数</span>
+            </div>
+            <div class="today-stat-card time">
+              <span class="today-stat-value">${todayStudyTime || '0分'}</span>
+              <span class="today-stat-label">勉強時間</span>
+            </div>
+            <div class="today-stat-card weekly">
+              <span class="today-stat-value">${weeklyCards}</span>
+              <span class="today-stat-label">週間</span>
+            </div>
+          </div>
+          <button class="today-detail-btn" id="today-progress-detail">
+            詳しく見る →
+          </button>
+        </div>
       </div>
 
       <!-- カード検索 -->
@@ -1719,6 +2349,36 @@ const FlashcardModule = (function() {
     if (dailyTenListBtn) {
       dailyTenListBtn.addEventListener('click', () => renderDailyTenCardList());
     }
+
+    // 「今日の進捗」詳細ボタン
+    const todayProgressDetailBtn = document.getElementById('today-progress-detail');
+    if (todayProgressDetailBtn) {
+      todayProgressDetailBtn.addEventListener('click', () => openStatsDetailSheet());
+    }
+
+    // 学習の記録タブ切り替え
+    const reviewTabs = container.querySelectorAll('.review-tab');
+    reviewTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetTab = tab.dataset.tab;
+
+        // タブのアクティブ状態を切り替え
+        reviewTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // コンテンツの表示切り替え
+        const progressContent = document.getElementById('review-tab-progress');
+        const todayContent = document.getElementById('review-tab-today');
+
+        if (targetTab === 'progress') {
+          if (progressContent) progressContent.style.display = 'block';
+          if (todayContent) todayContent.style.display = 'none';
+        } else if (targetTab === 'today') {
+          if (progressContent) progressContent.style.display = 'none';
+          if (todayContent) todayContent.style.display = 'block';
+        }
+      });
+    });
 
     // 「？」説明ボタン
     const helpBtn = document.getElementById('review-help-btn');
@@ -5635,6 +6295,13 @@ const FlashcardModule = (function() {
   }
 
   function exitPracticeMode() {
+    // 勉強時間を記録（中断時）
+    if (state.sessionStartTime) {
+      const duration = Date.now() - state.sessionStartTime;
+      recordStudyTime(duration);
+      state.sessionStartTime = null;
+    }
+
     document.body.classList.remove('is-practice');
     const tabbar = document.querySelector('.floating-tabbar');
     if (tabbar) tabbar.classList.remove('exercise-hidden');
@@ -5788,6 +6455,11 @@ const FlashcardModule = (function() {
 
   // === カード表示 ===
   function renderCard() {
+    // セッション開始時間を記録（まだ記録されていない場合のみ）
+    if (state.isActive && !state.sessionStartTime) {
+      state.sessionStartTime = Date.now();
+    }
+
     enterPracticeMode(); // 演習中はUI要素を隠す
 
     const card = state.filteredCards[state.currentIndex];
@@ -6851,6 +7523,7 @@ const FlashcardModule = (function() {
       successCount: successCount
     };
     saveProgress();
+    recordDailyActivity('memorized');
 
     // 次のカードへ自動移動（飛びアニメーション付き）
     if (state.currentIndex < state.filteredCards.length - 1) {
@@ -6892,6 +7565,7 @@ const FlashcardModule = (function() {
       successCount: 0
     };
     saveProgress();
+    recordDailyActivity('again');
 
     // 再出題ロジック：モードに応じて分岐
     if (state.againMode === 'afterRound') {
@@ -7052,6 +7726,13 @@ const FlashcardModule = (function() {
 
   // === 完了画面 ===
   function renderCompletionScreen() {
+    // 勉強時間を記録
+    if (state.sessionStartTime) {
+      const duration = Date.now() - state.sessionStartTime;
+      recordStudyTime(duration);
+      state.sessionStartTime = null;
+    }
+
     // 完了したのでセッションをクリア
     clearSession(state.currentTopicId);
     state.completed = true;  // 完了フラグをセット

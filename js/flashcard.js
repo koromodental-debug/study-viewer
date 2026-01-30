@@ -147,7 +147,8 @@ const FlashcardModule = (function() {
     // ピルボタンの表示状態（スクロール制御用）
     pillVisible: false,
     // セッション開始時間（勉強時間トラッキング用）
-    sessionStartTime: null
+    sessionStartTime: null,
+    sessionAccumulatedTime: 0  // ページ非表示時に蓄積した時間
   };
 
   // DOM要素
@@ -263,6 +264,21 @@ const FlashcardModule = (function() {
 
     // デッキ一覧のスクロールイベント（ピルボタン表示制御用）
     container.addEventListener('scroll', handleDeckListScroll, { passive: true });
+
+    // ページ表示/非表示の切り替えで勉強時間を正確に計測
+    document.addEventListener('visibilitychange', () => {
+      if (!state.sessionStartTime) return;
+
+      if (document.hidden) {
+        // ページが非表示になった：現在までの時間を蓄積
+        const elapsed = Date.now() - state.sessionStartTime;
+        state.sessionAccumulatedTime += elapsed;
+        state.sessionStartTime = null;
+      } else {
+        // ページが再表示された：タイマー再開
+        state.sessionStartTime = Date.now();
+      }
+    });
   }
 
   // インポート済みデッキをDATAに追加
@@ -506,11 +522,23 @@ const FlashcardModule = (function() {
     try {
       const stored = localStorage.getItem(DAILY_STATS_KEY);
       if (stored) {
-        return JSON.parse(stored);
+        const stats = JSON.parse(stored);
+        // 既にマイグレーション済みか、データがある場合はそのまま返す
+        if (stats.migrated || Object.keys(stats.days || {}).length > 0) {
+          return stats;
+        }
       }
     } catch (e) {
       console.error('[loadDailyStats] 読み込みエラー:', e);
     }
+
+    // 新規または空のデータの場合、既存の進捗データから復元を試みる
+    const reconstructed = reconstructDailyStatsFromProgress();
+    if (reconstructed) {
+      saveDailyStats(reconstructed);
+      return reconstructed;
+    }
+
     return {
       version: 1,
       days: {},
@@ -519,6 +547,130 @@ const FlashcardModule = (function() {
         longest: 0,
         lastStudyDate: null
       }
+    };
+  }
+
+  // 既存の進捗データから日別統計を復元
+  function reconstructDailyStatsFromProgress() {
+    const progressData = localStorage.getItem(STORAGE_KEY);
+    if (!progressData) return null;
+
+    try {
+      const parsed = JSON.parse(progressData);
+      const cards = parsed.cards || {};
+
+      // lastReviewを日付ごとにグループ化
+      const daysCounts = {};
+
+      for (const [key, value] of Object.entries(cards)) {
+        if (value.lastReview) {
+          const date = new Date(value.lastReview);
+          const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+
+          if (!daysCounts[dateStr]) {
+            daysCounts[dateStr] = {
+              cardsReviewed: 0,
+              memorized: 0,
+              again: 0,
+              studyTimeMs: 0,
+              sessions: 0
+            };
+          }
+
+          daysCounts[dateStr].cardsReviewed++;
+          // ステータスに基づいて分類（最後の状態のみ）
+          if (value.status === 'memorized') {
+            daysCounts[dateStr].memorized++;
+          } else if (value.status === 'again') {
+            daysCounts[dateStr].again++;
+          }
+        }
+      }
+
+      // データがなければnull
+      if (Object.keys(daysCounts).length === 0) return null;
+
+      // ストリークを計算
+      const sortedDates = Object.keys(daysCounts).sort().reverse();
+      const streak = calculateStreakFromDates(sortedDates);
+
+      const stats = {
+        version: 1,
+        migrated: true,  // マイグレーション済みフラグ
+        days: daysCounts,
+        streak: streak
+      };
+
+      console.log(`[reconstructDailyStats] ${Object.keys(daysCounts).length}日分のデータを復元しました`);
+      return stats;
+
+    } catch (e) {
+      console.error('[reconstructDailyStats] 復元エラー:', e);
+      return null;
+    }
+  }
+
+  // 日付リストからストリークを計算
+  function calculateStreakFromDates(sortedDatesDesc) {
+    if (sortedDatesDesc.length === 0) {
+      return { current: 0, longest: 0, lastStudyDate: null };
+    }
+
+    const today = getTodayDateString();
+    const yesterday = (() => {
+      const d = new Date();
+      d.setDate(d.getDate() - 1);
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    })();
+
+    // 現在のストリークを計算
+    let currentStreak = 0;
+    let checkDate = sortedDatesDesc[0] === today ? today :
+                    sortedDatesDesc[0] === yesterday ? yesterday : null;
+
+    if (checkDate) {
+      const dateSet = new Set(sortedDatesDesc);
+      let d = new Date(checkDate);
+
+      while (true) {
+        const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        if (dateSet.has(dateStr)) {
+          currentStreak++;
+          d.setDate(d.getDate() - 1);
+        } else {
+          break;
+        }
+      }
+    }
+
+    // 最長ストリークを計算
+    let longestStreak = 0;
+    let tempStreak = 0;
+    let prevDate = null;
+
+    for (const dateStr of sortedDatesDesc) {
+      if (prevDate === null) {
+        tempStreak = 1;
+      } else {
+        const current = new Date(dateStr);
+        const prev = new Date(prevDate);
+        const diffDays = Math.round((prev - current) / (1000 * 60 * 60 * 24));
+
+        if (diffDays === 1) {
+          tempStreak++;
+        } else {
+          longestStreak = Math.max(longestStreak, tempStreak);
+          tempStreak = 1;
+        }
+      }
+      prevDate = dateStr;
+    }
+    longestStreak = Math.max(longestStreak, tempStreak);
+
+    return {
+      current: currentStreak,
+      longest: longestStreak,
+      lastStudyDate: sortedDatesDesc[0]
     };
   }
 
@@ -6296,11 +6448,15 @@ const FlashcardModule = (function() {
 
   function exitPracticeMode() {
     // 勉強時間を記録（中断時）
+    let duration = state.sessionAccumulatedTime;
     if (state.sessionStartTime) {
-      const duration = Date.now() - state.sessionStartTime;
-      recordStudyTime(duration);
-      state.sessionStartTime = null;
+      duration += Date.now() - state.sessionStartTime;
     }
+    if (duration > 0) {
+      recordStudyTime(duration);
+    }
+    state.sessionStartTime = null;
+    state.sessionAccumulatedTime = 0;
 
     document.body.classList.remove('is-practice');
     const tabbar = document.querySelector('.floating-tabbar');
@@ -7727,11 +7883,15 @@ const FlashcardModule = (function() {
   // === 完了画面 ===
   function renderCompletionScreen() {
     // 勉強時間を記録
+    let duration = state.sessionAccumulatedTime;
     if (state.sessionStartTime) {
-      const duration = Date.now() - state.sessionStartTime;
-      recordStudyTime(duration);
-      state.sessionStartTime = null;
+      duration += Date.now() - state.sessionStartTime;
     }
+    if (duration > 0) {
+      recordStudyTime(duration);
+    }
+    state.sessionStartTime = null;
+    state.sessionAccumulatedTime = 0;
 
     // 完了したのでセッションをクリア
     clearSession(state.currentTopicId);

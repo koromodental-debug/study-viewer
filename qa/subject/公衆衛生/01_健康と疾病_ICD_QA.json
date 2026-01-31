@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "title": "ICD",
+    "chapter": "健康と疾病",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "ICD（国際疾病分類）",
+      "qa": [
+        {
+          "question": "ICDとは何の略か？",
+          "answer": "International Classification of Diseases\n\n[混同注意] ICFはFunctioning、ICIDHはHandicapのDと混同しない"
+        },
+        {
+          "question": "ICDは何を分類するものか？",
+          "answer": "疾病、傷害、死因\nWHOが定める「疾病及び関連保健問題の国際統計分類」"
+        },
+        {
+          "question": "ICDの現行版は何か？",
+          "answer": "ICD-10（第10版）\n※2022年からICD-11が発効\n\n[関連質問]\n- ICDはどこが定めている？ → WHO（世界保健機関）\n- ICDは何に使われる？ → 人口動態調査（死因統計）、患者調査、診療報酬請求"
+        }
+      ]
+    },
+    {
+      "section": "ICDの使用場面",
+      "qa": [
+        {
+          "question": "ICDが使用される場面の数は？",
+          "answer": "主に3つ（人口動態調査、患者調査、診療報酬請求）"
+        },
+        {
+          "question": "死因統計に使われる国際分類は？",
+          "answer": "ICD"
+        },
+        {
+          "question": "診療報酬請求に使う疾病分類は？",
+          "answer": "ICD"
+        },
+        {
+          "question": "患者調査に使われる疾病分類は？",
+          "answer": "ICD"
+        }
+      ]
+    },
+    {
+      "section": "主要な国際分類",
+      "qa": [
+        {
+          "question": "WHOの主要な国際分類の数は？",
+          "answer": "3つ（ICD、ICF、ICIDH）"
+        },
+        {
+          "question": "疾病を分類するWHOの国際分類は？",
+          "answer": "ICD（国際疾病分類）"
+        },
+        {
+          "question": "生活機能を分類するWHOの国際分類は？",
+          "answer": "ICF（国際生活機能分類）"
+        },
+        {
+          "question": "障害を分類するWHOの国際分類は？",
+          "answer": "ICIDH（国際障害分類）※ICFの前身"
+        },
+        {
+          "question": "ICFとは何の略か？",
+          "answer": "International Classification of Functioning, Disability and Health\n\n[混同注意] ICDは疾病（Disease）、ICFは生活機能（Functioning）"
+        },
+        {
+          "question": "ICIDHとは何か？",
+          "answer": "国際障害分類（ICFの前身）\n\n[重要] 環境因子を考慮していない点がICFとの違い"
+        },
+        {
+          "question": "ICFとICIDHの決定的な違いは？",
+          "answer": "ICFは環境因子と個人因子を加え、相互作用としてとらえる\nICIDHは一方向的（疾病→機能不全→能力低下→社会的不利）\n\n[関連質問]\n- ICFで新たに加わった因子は？ → 環境因子と個人因子\n- ICIDHの考え方の流れは？ → 疾病→機能不全→能力低下→社会的不利（一方向）"
+        }
+      ]
+    },
+    {
+      "section": "紛らわしい略語",
+      "qa": [
+        {
+          "question": "ICNPとは何か？",
+          "answer": "看護実践国際分類（Nursing Practice）\n\n[混同注意] 疾病分類（ICD）とは全く異なる"
+        },
+        {
+          "question": "ICDASとは何か？",
+          "answer": "国際う蝕探知評価システム（歯科分野）\n\n[混同注意] ICDに似ているが、歯科のう蝕評価に限定"
+        }
+      ]
+    },
+    {
+      "section": "覚え方（語呂合わせ）",
+      "qa": [
+        {
+          "question": "ICD・ICF・ICIDHの覚え方は？",
+          "answer": "頭文字で覚える\nICD = Disease（疾病）\nICF = Functioning（生活機能）\nICIDH = Handicap（障害）← ICFの前身"
+        },
+        {
+          "question": "[111C23] ★★★\nWHOが定める「疾病及び関連保健問題の国際統計分類」は？",
+          "answer": "ICD\n\n[他の選択肢との違い]\n- ICF: 国際生活機能分類（障害を環境との関係でとらえる）\n- ICNP: 看護実践国際分類（看護分野）\n- ICIDH: 国際障害分類（ICFの前身、環境因子なし）← ICFと混同しやすい\n- ICDAS: 国際う蝕探知評価システム（歯科のう蝕評価）← ICDと名前が似ている\n\n[ポイント]\n「疾病及び関連保健問題」という正式名称＝ICD\n問題文に正式名称が出たらICDを選ぶ"
+        }
+      ]
+    }
+  ]
+}

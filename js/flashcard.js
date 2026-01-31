@@ -153,6 +153,15 @@ const FlashcardModule = (function() {
     isIdle: false               // アイドル状態かどうか
   };
 
+  // テーブル穴埋めカードの状態
+  const tableOcclusionState = {
+    currentOcclusionIndex: 0,
+    revealedCells: new Set(),
+    isTableCard: false,
+    currentCard: null,
+    currentDeck: null
+  };
+
   // DOM要素
   let container = null;
 
@@ -2211,6 +2220,21 @@ const FlashcardModule = (function() {
       </div>
       ` : ''}
 
+      <!-- 表穴埋め -->
+      <div class="table-occlusion-section">
+        <h3 class="section-title">表穴埋め</h3>
+        <div class="table-deck-list" id="table-deck-list">
+          <button class="table-deck-item" data-deck="deck/矯正_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">矯正</span>
+              <span class="table-deck-stats">172表 / 954問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+        </div>
+      </div>
+
       <!-- 科目一覧 -->
       <div class="deck-subjects-wrapper">
         <div class="deck-subjects-list" id="deck-subjects-list">
@@ -2747,6 +2771,17 @@ const FlashcardModule = (function() {
       dailyTenListBtn.addEventListener('click', () => renderDailyTenCardList());
     }
 
+    // 表穴埋めデッキ
+    const tableDeckItems = container.querySelectorAll('.table-deck-item');
+    tableDeckItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const deckPath = item.dataset.deck;
+        if (deckPath) {
+          loadTableOcclusionDeck(deckPath);
+        }
+      });
+    });
+
     // 「今日の進捗」詳細ボタン
     const todayProgressDetailBtn = document.getElementById('today-progress-detail');
     if (todayProgressDetailBtn) {
@@ -2992,8 +3027,16 @@ const FlashcardModule = (function() {
 
     try {
       const response = await fetch(encodeURI(topic.qaPath));
-      const text = await response.text();
-      loadTopicFromText(text, topicId, shuffle);
+
+      // .jsonファイルの場合はJSONとしてパース
+      if (topic.qaPath.endsWith('.json')) {
+        const jsonData = await response.json();
+        const cards = parseJSONToCards(jsonData, topicId);
+        loadTopicFromCards(cards, topicId, shuffle);
+      } else {
+        const text = await response.text();
+        loadTopicFromText(text, topicId, shuffle);
+      }
     } catch (e) {
       console.log('Q&A読み込みエラー:', e);
       container.innerHTML = `<div class="flashcard-error">Q&Aの読み込みに失敗しました</div>`;
@@ -3030,10 +3073,8 @@ const FlashcardModule = (function() {
         savedIndex = Math.min(session.index, state.filteredCards.length - 1);
       }
     } else if (state.shuffleEnabled && state.filteredCards.length > 0) {
-      for (let i = state.filteredCards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
-      }
+      // グループ対応シャッフル（連問を維持）
+      shuffleArray(state.filteredCards);
     }
 
     state.currentIndex = savedIndex;
@@ -3087,11 +3128,8 @@ const FlashcardModule = (function() {
         savedIndex = Math.min(session.index, state.filteredCards.length - 1);
       }
     } else if (state.shuffleEnabled && state.filteredCards.length > 0) {
-      // 新規シャッフル（保存セッションがない場合のみ）
-      for (let i = state.filteredCards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [state.filteredCards[i], state.filteredCards[j]] = [state.filteredCards[j], state.filteredCards[i]];
-      }
+      // グループ対応シャッフル（連問を維持）
+      shuffleArray(state.filteredCards);
     }
 
     state.currentIndex = savedIndex;
@@ -4721,8 +4759,13 @@ const FlashcardModule = (function() {
           cards = parseJSONToCards(topic.localJsonData, topicId);
         } else if (qaPath) {
           const response = await fetch(encodeURI(qaPath));
-          const text = await response.text();
-          cards = parseQAToCards(text, topicId);
+          if (qaPath.endsWith('.json')) {
+            const jsonData = await response.json();
+            cards = parseJSONToCards(jsonData, topicId);
+          } else {
+            const text = await response.text();
+            cards = parseQAToCards(text, topicId);
+          }
         } else {
           continue;
         }
@@ -5039,10 +5082,14 @@ const FlashcardModule = (function() {
         if (topic.localJsonData) {
           cards = parseJSONToCards(topic.localJsonData, topicId);
         } else if (qaPath) {
-          // 組み込みデッキ（.txtベース）の場合
           const response = await fetch(encodeURI(qaPath));
-          const text = await response.text();
-          cards = parseQAToCards(text, topicId);
+          if (qaPath.endsWith('.json')) {
+            const jsonData = await response.json();
+            cards = parseJSONToCards(jsonData, topicId);
+          } else {
+            const text = await response.text();
+            cards = parseQAToCards(text, topicId);
+          }
         } else {
           continue;
         }
@@ -5297,8 +5344,14 @@ const FlashcardModule = (function() {
 
       try {
         const response = await fetch(encodeURI(topic.qaPath));
-        const text = await response.text();
-        const cards = parseQAToCards(text, topicId);
+        let cards;
+        if (topic.qaPath.endsWith('.json')) {
+          const jsonData = await response.json();
+          cards = parseJSONToCards(jsonData, topicId);
+        } else {
+          const text = await response.text();
+          cards = parseQAToCards(text, topicId);
+        }
         topicCardsMap.set(topicId, { cards, topic });
       } catch (e) {
         console.log(`QA読み込みエラー (${topicId}):`, e);
@@ -5385,8 +5438,14 @@ const FlashcardModule = (function() {
 
       try {
         const response = await fetch(encodeURI(topic.qaPath));
-        const text = await response.text();
-        const cards = parseQAToCards(text, topicId);
+        let cards;
+        if (topic.qaPath.endsWith('.json')) {
+          const jsonData = await response.json();
+          cards = parseJSONToCards(jsonData, topicId);
+        } else {
+          const text = await response.text();
+          cards = parseQAToCards(text, topicId);
+        }
         topicCardsMap.set(topicId, { cards, topic });
       } catch (e) {
         console.log(`QA読み込みエラー (${topicId}):`, e);
@@ -5475,13 +5534,19 @@ const FlashcardModule = (function() {
         currentChoices[choiceKey] = choiceValue;
       } else if ((trimmed.startsWith('A: ') || trimmed.startsWith('A:')) && currentQ) {
         const answer = trimmed.replace(/^A:\s*/, '');
+
+        // 問題コードを抽出してgroupIdとして設定（例: [102D21] → 102D21）
+        const codeMatch = currentQ.match(/^\[(\d+[A-Z]\d+)\]/);
+        const groupId = codeMatch ? codeMatch[1] : null;
+
         const card = {
           index: index,
           originalIndex: index,
           section: currentSourceSection || currentSection,
           question: currentQ,
           answer: answer,
-          topicId: topicId
+          topicId: topicId,
+          groupId: groupId  // 連問グループID
         };
 
         // 選択肢がある場合、選択問題として設定
@@ -5514,6 +5579,382 @@ const FlashcardModule = (function() {
     }
 
     return cards;
+  }
+
+  // === テーブル穴埋めカード関連 ===
+
+  // テーブル穴埋めカードかどうか判定
+  function isTableOcclusionCard(card) {
+    return card && card.type === 'table-occlusion';
+  }
+
+  // テーブル穴埋めデッキを読み込み
+  async function loadTableOcclusionDeck(deckPath) {
+    try {
+      const response = await fetch(deckPath);
+      const deck = await response.json();
+      tableOcclusionState.currentDeck = deck;
+      tableOcclusionState.currentOcclusionIndex = 0;
+      tableOcclusionState.revealedCells.clear();
+      tableOcclusionState.isTableCard = true;
+
+      // 最初のカードを設定
+      if (deck.cards && deck.cards.length > 0) {
+        tableOcclusionState.currentCard = deck.cards[0];
+        state.isFlipped = false;
+        renderTableOcclusionCard();
+      }
+    } catch (e) {
+      console.error('テーブルデッキ読み込みエラー:', e);
+    }
+  }
+
+  // テーブル穴埋めカードのHTML生成
+  function renderTableOcclusionHTML() {
+    const card = tableOcclusionState.currentCard;
+    if (!card) return '';
+
+    const { table, occlusions } = card;
+    const currentOcc = occlusions[tableOcclusionState.currentOcclusionIndex];
+
+    let html = '<table class="occlusion-table">';
+
+    // ヘッダー行
+    html += '<tr>';
+    for (const header of table.headers) {
+      html += '<th>' + header + '</th>';
+    }
+    html += '</tr>';
+
+    // データ行
+    for (let rowIdx = 0; rowIdx < table.rows.length; rowIdx++) {
+      const row = table.rows[rowIdx];
+      const isCurrentRow = currentOcc && currentOcc.row === rowIdx;
+      html += '<tr class="' + (isCurrentRow ? 'current-row' : '') + '">';
+
+      for (let colIdx = 0; colIdx < row.length; colIdx++) {
+        const cellValue = row[colIdx];
+        const cellKey = rowIdx + '-' + colIdx;
+        const isOccluded = currentOcc && currentOcc.row === rowIdx && currentOcc.col === colIdx;
+        const isRevealed = tableOcclusionState.revealedCells.has(cellKey);
+
+        if (colIdx === 0) {
+          html += '<td class="key-cell">' + cellValue + '</td>';
+        } else if (isOccluded && !isRevealed) {
+          html += '<td class="occluded-cell">' + cellValue + '</td>';
+        } else if (isRevealed) {
+          html += '<td class="revealed-cell">' + cellValue + '</td>';
+        } else {
+          html += '<td>' + cellValue + '</td>';
+        }
+      }
+      html += '</tr>';
+    }
+    html += '</table>';
+
+    return html;
+  }
+
+  // テーブル穴埋めカードをレンダリング
+  function renderTableOcclusionCard() {
+    const card = tableOcclusionState.currentCard;
+    if (!card) return;
+
+    enterPracticeMode();
+
+    const current = tableOcclusionState.currentOcclusionIndex + 1;
+    const total = card.occlusions.length;
+    const progressPercent = (current / total) * 100;
+    const isRevealed = state.isFlipped;
+
+    const currentOcc = card.occlusions[tableOcclusionState.currentOcclusionIndex];
+    const rowLabel = card.table.rows[currentOcc.row][0];
+    const colLabel = card.table.headers[currentOcc.col];
+
+    container.innerHTML = `
+      <div class="flashcard-exercise table-occlusion-mode">
+        <div class="flashcard-header">
+          <button class="flashcard-back-btn" id="flashcard-back-btn" aria-label="戻る">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <div class="flashcard-progress-bar">
+            <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
+            <span class="flashcard-progress-text">${current} / ${total}</span>
+          </div>
+          <div class="flashcard-header-actions"></div>
+        </div>
+
+        <div class="flashcard-stage table-stage">
+          <div class="table-card-container">
+            <div class="table-card-title">${card.title}</div>
+            <div class="table-card-question">
+              <span class="question-key">${rowLabel}</span>の<span class="question-label">${colLabel}</span>は？
+            </div>
+            <div class="table-card-table" id="table-card-table">
+              ${renderTableOcclusionHTML()}
+            </div>
+            ${isRevealed ? '' : '<div class="table-tap-hint">タップで答え</div>'}
+          </div>
+        </div>
+
+        <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
+          <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
+          <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
+        </div>
+      </div>
+    `;
+
+    bindTableOcclusionEvents();
+  }
+
+  // テーブル穴埋めカードのイベントバインド
+  function bindTableOcclusionEvents() {
+    document.getElementById('flashcard-back-btn').addEventListener('click', goBack);
+
+    // カード全体をタップで答え表示
+    const stageEl = document.querySelector('.table-stage');
+    if (stageEl) {
+      stageEl.addEventListener('click', function() {
+        if (!state.isFlipped) {
+          revealTableOcclusion();
+        }
+      });
+    }
+
+    document.getElementById('flashcard-again-btn').addEventListener('click', handleTableAgain);
+    document.getElementById('flashcard-memorized-btn').addEventListener('click', handleTableMemorized);
+  }
+
+  // 穴埋めを表示
+  function revealTableOcclusion() {
+    const card = tableOcclusionState.currentCard;
+    state.isFlipped = true;
+    const currentOcc = card.occlusions[tableOcclusionState.currentOcclusionIndex];
+    const cellKey = currentOcc.row + '-' + currentOcc.col;
+    tableOcclusionState.revealedCells.add(cellKey);
+    renderTableOcclusionCard();
+  }
+
+  // 次の穴埋めへ進む
+  function advanceTableOcclusion() {
+    const card = tableOcclusionState.currentCard;
+    tableOcclusionState.currentOcclusionIndex++;
+    state.isFlipped = false;
+
+    if (tableOcclusionState.currentOcclusionIndex >= card.occlusions.length) {
+      // 次のカード（表）へ
+      const deck = tableOcclusionState.currentDeck;
+      const currentCardIndex = deck.cards.indexOf(card);
+      if (currentCardIndex < deck.cards.length - 1) {
+        tableOcclusionState.currentCard = deck.cards[currentCardIndex + 1];
+        tableOcclusionState.currentOcclusionIndex = 0;
+        tableOcclusionState.revealedCells.clear();
+        renderTableOcclusionCard();
+      } else {
+        renderTableDeckComplete();
+      }
+    } else {
+      renderTableOcclusionCard();
+    }
+  }
+
+  function handleTableAgain() {
+    advanceTableOcclusion();
+  }
+
+  function handleTableMemorized() {
+    advanceTableOcclusion();
+  }
+
+  // デッキ完了画面
+  function renderTableDeckComplete() {
+    tableOcclusionState.isTableCard = false;
+    container.innerHTML = `
+      <div class="flashcard-complete">
+        <div class="complete-icon">✓</div>
+        <h2>完了！</h2>
+        <p>すべての穴埋めを終了しました</p>
+        <button class="flashcard-back-btn-large" id="flashcard-back-btn">戻る</button>
+      </div>
+    `;
+    document.getElementById('flashcard-back-btn').addEventListener('click', goBack);
+  }
+
+  // === Q&Aデッキ内のテーブル穴埋めカード ===
+  function renderInlineTableCard(card) {
+    const { table, occlusions, currentOcclusionIndex } = card;
+    const currentOcc = occlusions[currentOcclusionIndex];
+    const current = state.currentIndex + 1;
+    const total = state.filteredCards.length;
+    const progressPercent = (current / total) * 100;
+    const isRevealed = state.isFlipped;
+
+    // 現在の穴埋め位置の情報
+    const rowLabel = table.rows[currentOcc.row][0];
+    const colLabel = table.headers[currentOcc.col];
+
+    // テーブルHTML生成
+    let tableHtml = '<table class="occlusion-table">';
+    tableHtml += '<tr>';
+    for (const header of table.headers) {
+      tableHtml += '<th>' + header + '</th>';
+    }
+    tableHtml += '</tr>';
+
+    for (let rowIdx = 0; rowIdx < table.rows.length; rowIdx++) {
+      const row = table.rows[rowIdx];
+      const isCurrentRow = currentOcc && currentOcc.row === rowIdx;
+      tableHtml += '<tr class="' + (isCurrentRow ? 'current-row' : '') + '">';
+
+      for (let colIdx = 0; colIdx < row.length; colIdx++) {
+        const cellValue = row[colIdx];
+        const isOccluded = currentOcc && currentOcc.row === rowIdx && currentOcc.col === colIdx;
+
+        if (colIdx === 0) {
+          tableHtml += '<td class="key-cell">' + cellValue + '</td>';
+        } else if (isOccluded && !isRevealed) {
+          tableHtml += '<td class="occluded-cell">' + cellValue + '</td>';
+        } else if (isOccluded && isRevealed) {
+          tableHtml += '<td class="revealed-cell">' + cellValue + '</td>';
+        } else {
+          tableHtml += '<td>' + cellValue + '</td>';
+        }
+      }
+      tableHtml += '</tr>';
+    }
+    tableHtml += '</table>';
+
+    container.innerHTML = `
+      <div class="flashcard-exercise table-occlusion-mode">
+        <div class="flashcard-header">
+          <button class="flashcard-back-btn" id="flashcard-back-btn" aria-label="戻る">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <div class="flashcard-progress-bar">
+            <div class="flashcard-progress-fill" style="width: ${progressPercent}%"></div>
+            <span class="flashcard-progress-text">${current} / ${total}</span>
+          </div>
+          <div class="flashcard-header-actions"></div>
+        </div>
+
+        <div class="flashcard-stage table-stage">
+          <div class="table-card-container">
+            <div class="table-card-title">${card.title}</div>
+            <div class="table-card-question">
+              <span class="question-key">${rowLabel}</span>の<span class="question-label">${colLabel}</span>は？
+            </div>
+            <div class="table-card-table" id="table-card-table">
+              ${tableHtml}
+            </div>
+            ${isRevealed ? '' : '<div class="table-tap-hint">タップで答え</div>'}
+          </div>
+        </div>
+
+        <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
+          <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
+          <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
+        </div>
+      </div>
+    `;
+
+    bindInlineTableEvents();
+  }
+
+  function bindInlineTableEvents() {
+    document.getElementById('flashcard-back-btn').addEventListener('click', goBack);
+
+    // カード全体をタップで答え表示
+    const stageEl = document.querySelector('.table-stage');
+    if (stageEl) {
+      stageEl.addEventListener('click', function() {
+        if (!state.isFlipped) {
+          revealInlineTableCell();
+        }
+      });
+    }
+
+    document.getElementById('flashcard-again-btn').addEventListener('click', advanceInlineTable);
+    document.getElementById('flashcard-memorized-btn').addEventListener('click', advanceInlineTable);
+  }
+
+  function revealInlineTableCell() {
+    state.isFlipped = true;
+    const card = state.filteredCards[state.currentIndex];
+    renderInlineTableCard(card);
+  }
+
+  function advanceInlineTable() {
+    // 通常のカード遷移と同じ
+    state.isFlipped = false;
+    state.currentIndex++;
+
+    if (state.currentIndex >= state.filteredCards.length) {
+      renderComplete();
+    } else {
+      renderCard();
+    }
+  }
+
+  // === グループ対応シャッフル関数 ===
+  // 連問（同じgroupIdを持つカード）をグループとして維持しながらシャッフル
+  function shuffleArray(cards) {
+    if (!cards || cards.length === 0) return;
+
+    // グループIDがあるカードとないカードを分離
+    const groups = new Map();
+    const ungrouped = [];
+
+    cards.forEach((card, idx) => {
+      if (card.groupId) {
+        if (!groups.has(card.groupId)) {
+          groups.set(card.groupId, []);
+        }
+        groups.get(card.groupId).push({ card, originalIdx: idx });
+      } else {
+        ungrouped.push({ card, originalIdx: idx });
+      }
+    });
+
+    // グループと単独カードを混ぜた配列を作成
+    const units = [];
+
+    // 各グループを1つのユニットとして追加
+    groups.forEach((groupCards, groupId) => {
+      // グループ内はoriginalIndex順にソート（連問の順序を維持）
+      groupCards.sort((a, b) => a.card.originalIndex - b.card.originalIndex);
+      units.push({
+        type: 'group',
+        groupId: groupId,
+        cards: groupCards.map(g => g.card)
+      });
+    });
+
+    // 単独カードを個別のユニットとして追加
+    ungrouped.forEach(item => {
+      units.push({
+        type: 'single',
+        cards: [item.card]
+      });
+    });
+
+    // ユニット単位でFisher-Yatesシャッフル
+    for (let i = units.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [units[i], units[j]] = [units[j], units[i]];
+    }
+
+    // シャッフルされたユニットをフラットな配列に展開
+    let newIndex = 0;
+    for (const unit of units) {
+      for (const card of unit.cards) {
+        cards[newIndex] = card;
+        newIndex++;
+      }
+    }
   }
 
   // === デッキ内カード一覧を表示 ===
@@ -5550,8 +5991,13 @@ const FlashcardModule = (function() {
         cards = parseJSONToCards(topic.localJsonData, topicId);
       } else {
         const response = await fetch(encodeURI(qaPath));
-        const text = await response.text();
-        cards = parseQAToCards(text, topicId);
+        if (qaPath.endsWith('.json')) {
+          const jsonData = await response.json();
+          cards = parseJSONToCards(jsonData, topicId);
+        } else {
+          const text = await response.text();
+          cards = parseQAToCards(text, topicId);
+        }
         isBuiltInDeck = true;
         // 組み込みデッキの場合、カスタマイズを適用
         cards = applyCustomizations(cards, topicId);
@@ -6041,6 +6487,25 @@ const FlashcardModule = (function() {
 
     for (const section of jsonData.sections || []) {
       for (const qa of section.qa || []) {
+        // テーブル穴埋めカードの場合：各穴埋めを個別カードとして展開
+        if (qa.type === 'table-occlusion') {
+          for (let occIdx = 0; occIdx < qa.occlusions.length; occIdx++) {
+            cards.push({
+              index: index,
+              originalIndex: index,
+              section: section.section,
+              type: 'table-occlusion',
+              title: qa.title,
+              table: qa.table,
+              occlusions: qa.occlusions,
+              currentOcclusionIndex: occIdx,  // 現在の穴埋め位置
+              topicId: topicId
+            });
+            index++;
+          }
+          continue;
+        }
+
         const hasChoices = qa.choices && Object.keys(qa.choices).length > 0;
 
         // 選択肢から正解キーを抽出（「○」を含む選択肢）
@@ -6853,6 +7318,12 @@ const FlashcardModule = (function() {
 
     const card = state.filteredCards[state.currentIndex];
     if (!card) return;
+
+    // テーブル穴埋めカードの場合は専用レンダリング
+    if (card.type === 'table-occlusion') {
+      renderInlineTableCard(card);
+      return;
+    }
 
     // ステータスデッキの場合はcard.topicIdを使用
     const keyTopicId = card.topicId || state.currentTopicId;
@@ -8349,6 +8820,21 @@ const FlashcardModule = (function() {
 
   // === 戻る ===
   function goBack() {
+    // テーブル穴埋めモードからの戻り
+    if (tableOcclusionState.isTableCard) {
+      tableOcclusionState.isTableCard = false;
+      tableOcclusionState.currentCard = null;
+      tableOcclusionState.currentDeck = null;
+      tableOcclusionState.currentOcclusionIndex = 0;
+      tableOcclusionState.revealedCells.clear();
+      state.isFlipped = false;
+      exitPracticeMode();
+      const tabbar = document.querySelector('.floating-tabbar');
+      if (tabbar) tabbar.classList.remove('hidden');
+      renderDeckList();
+      return;
+    }
+
     // 現在位置とカード順序を保存（完了後は保存しない）
     if (state.currentTopicId && state.currentIndex > 0 && !state.completed) {
       // 検索結果デッキの場合は searchKey を使用

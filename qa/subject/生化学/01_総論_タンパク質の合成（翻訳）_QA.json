@@ -1,27 +1,211 @@
 {
   "metadata": {
     "title": "タンパク質の合成（翻訳）",
-    "category": "生化学",
-    "chapter": "01_総論"
+    "chapter": "総論",
+    "category": ""
   },
   "sections": [
+    {
+      "section": "セントラルドグマ",
+      "qa": [
+        {
+          "question": "セントラルドグマにおける遺伝情報の流れは？",
+          "answer": "DNA → mRNA → タンパク質"
+        },
+        {
+          "question": "DNAからmRNAが合成される過程は？",
+          "answer": "転写"
+        },
+        {
+          "question": "mRNAからタンパク質が合成される過程は？",
+          "answer": "翻訳"
+        },
+        {
+          "question": "セントラルドグマの例外となるウイルスは？",
+          "answer": "レトロウイルス（HIV等）"
+        },
+        {
+          "question": "レトロウイルスがRNA → DNAを合成する酵素は？",
+          "answer": "逆転写酵素"
+        }
+      ]
+    },
+    {
+      "section": "DNAとRNAの違い",
+      "qa": [
+        {
+          "question": "DNAを構成する糖は？",
+          "answer": "デオキシリボース"
+        },
+        {
+          "question": "RNAを構成する糖は？",
+          "answer": "リボース"
+        },
+        {
+          "question": "DNAにあってRNAにない塩基は？",
+          "answer": "チミン（T）\n\n[混同注意] RNAではチミンの代わりにウラシル（U）"
+        },
+        {
+          "question": "RNAにあってDNAにない塩基は？",
+          "answer": "ウラシル（U）"
+        },
+        {
+          "question": "DNAの構造は？",
+          "answer": "二本鎖（二重らせん）"
+        },
+        {
+          "question": "RNAの構造は？",
+          "answer": "一本鎖"
+        },
+        {
+          "question": "ヌクレオチド鎖が伸長する方向は？",
+          "answer": "5' → 3'方向"
+        },
+        {
+          "question": "アデニン（A）と水素結合する塩基は？",
+          "answer": "チミン（T）またはウラシル（U）"
+        },
+        {
+          "question": "グアニン（G）と水素結合する塩基は？",
+          "answer": "シトシン（C）"
+        }
+      ]
+    },
+    {
+      "section": "転写の基本",
+      "qa": [
+        {
+          "question": "転写を行う酵素は？",
+          "answer": "RNAポリメラーゼ"
+        },
+        {
+          "question": "転写が行われる場所は？",
+          "answer": "核内"
+        },
+        {
+          "question": "mRNAの機能は？",
+          "answer": "タンパク質に翻訳される情報を運ぶ"
+        },
+        {
+          "question": "tRNAの機能は？",
+          "answer": "アミノ酸を運搬（アンチコドンを持つ）"
+        },
+        {
+          "question": "rRNAの機能は？",
+          "answer": "リボソームの構成成分"
+        }
+      ]
+    },
+    {
+      "section": "RNAスプライシング",
+      "qa": [
+        {
+          "question": "RNAスプライシングで除去される部分は？",
+          "answer": "イントロン（不要部分）"
+        },
+        {
+          "question": "RNAスプライシングで結合される部分は？",
+          "answer": "エキソン（必要部分）"
+        },
+        {
+          "question": "同一の前駆体RNAから異なるタンパク質を生成する仕組みは？",
+          "answer": "選択的スプライシング"
+        }
+      ]
+    },
+    {
+      "section": "コドン",
+      "qa": [
+        {
+          "question": "1つのアミノ酸を指定するmRNAの塩基数は？",
+          "answer": "3塩基（トリプレット）"
+        },
+        {
+          "question": "コドンは全部で何種類？",
+          "answer": "64種類（4³ = 64）"
+        },
+        {
+          "question": "開始コドンは？",
+          "answer": "AUG（メチオニンを指定）"
+        },
+        {
+          "question": "終止コドンは？",
+          "answer": "UAA、UAG、UGA\n\n[混同注意] 終止コドンはアミノ酸を指定しない"
+        },
+        {
+          "question": "アミノ酸を指定するコドンは何種類？",
+          "answer": "61種類（64 - 3終止コドン）"
+        },
+        {
+          "question": "20種類のアミノ酸を規定するコドン数は？",
+          "answer": "61種類"
+        }
+      ]
+    },
+    {
+      "section": "アンチコドンとコドンの対応",
+      "qa": [
+        {
+          "question": "tRNAがmRNAコドンに結合する部位は？",
+          "answer": "アンチコドン"
+        },
+        {
+          "question": "アンチコドンとコドンの関係は？",
+          "answer": "相補的に結合"
+        },
+        {
+          "question": "アンチコドンの表記方向は？",
+          "answer": "3' → 5'方向\n\n[混同注意] コドンは5' → 3'方向で読む"
+        }
+      ]
+    },
+    {
+      "section": "タンパク質合成の過程",
+      "qa": [
+        {
+          "question": "翻訳の開始時に最初に結合するtRNAが運ぶアミノ酸は？",
+          "answer": "メチオニン（Met）"
+        },
+        {
+          "question": "翻訳の終結時に終止コドンに結合するものは？",
+          "answer": "終結因子（遊離因子）"
+        },
+        {
+          "question": "タンパク質の翻訳後修飾（糖鎖付加など）が行われる場所は？",
+          "answer": "ゴルジ体"
+        }
+      ]
+    },
     {
       "section": "主要なコドン表（抜粋）",
       "qa": [
         {
-          "question": "mRNAのトリプレットコドン表を示す。3′─CCU─5′をアンチコドンにもつtRNAが運搬するアミノ酸はどれか。",
-          "answer": "B",
-          "choices": {
-            "a": "リシン",
-            "b": "グリシン",
-            "c": "プロリン",
-            "d": "ヒスチジン",
-            "e": "イソロイシン"
-          },
-          "correctAnswer": "B",
-          "numChoices": 1,
-          "code": "99A6",
-          "note": "参考：99回以前"
+          "question": "AUGがコードするアミノ酸は？",
+          "answer": "メチオニン（Met）、かつ開始コドン"
+        },
+        {
+          "question": "GGA、GGC、GGG、GGUがコードするアミノ酸は？",
+          "answer": "グリシン（Gly）"
+        },
+        {
+          "question": "UGGがコードするアミノ酸は？",
+          "answer": "トリプトファン（Trp）"
+        },
+        {
+          "question": "CCU、CCC、CCA、CCGがコードするアミノ酸は？",
+          "answer": "プロリン（Pro）"
+        },
+        {
+          "question": "Glnの正式名称は？",
+          "answer": "グルタミン\n\n[混同注意] Glu＝グルタミン酸"
+        },
+        {
+          "question": "Asnの正式名称は？",
+          "answer": "アスパラギン\n\n[混同注意] Asp＝アスパラギン酸"
+        },
+        {
+          "question": "アンチコドン 3'-CCU-5' を持つtRNAが運搬するアミノ酸は？",
+          "answer": "グリシン（Gly）\n\n[他の選択肢との違い]\n- リシン: AAA, AAGがコード\n- グリシン: GGA, GGC, GGG, GGUがコード ← 正解\n- プロリン: CCU, CCC, CCA, CCGがコード ← ひっかけ\n- ヒスチジン: CAU, CACがコード\n- イソロイシン: AUU, AUC, AUAがコード\n[ポイント]\nアンチコドン 3'-CCU-5' に対応するコドンは 5'-GGA-3'（相補的かつ逆平行）\nGGAはグリシンをコード\nCCUはプロリンのコドンだが、これは「アンチコドン」ではなく「コドン」の場合"
         }
       ]
     }

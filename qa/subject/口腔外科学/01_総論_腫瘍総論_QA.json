@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "title": "腫瘍総論",
+    "chapter": "総論",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "良性腫瘍と悪性腫瘍の鑑別 ★★★",
+      "qa": [
+        {
+          "question": "悪性腫瘍の発育速度の特徴は？",
+          "answer": "急速\n\n[混同注意] 良性は緩徐"
+        },
+        {
+          "question": "悪性腫瘍の発育形式の特徴は？",
+          "answer": "境界不明瞭、浸潤性・破壊性発育\n\n[混同注意] 良性は境界明瞭、膨張性・圧迫性発育"
+        },
+        {
+          "question": "悪性腫瘍の被膜の有無は？",
+          "answer": "なし（または不完全）\n\n[混同注意] 良性は被膜あり"
+        },
+        {
+          "question": "悪性腫瘍の核/細胞質比は？",
+          "answer": "大きい（核が大きい）\n\n[混同注意] 良性はほぼ正常"
+        },
+        {
+          "question": "悪性腫瘍の核分裂像は？",
+          "answer": "多い\n\n[混同注意] 良性は少ない"
+        },
+        {
+          "question": "悪性腫瘍の細胞異型性は？",
+          "answer": "高度\n\n[混同注意] 良性は軽度"
+        },
+        {
+          "question": "悪性腫瘍の放射線感受性は？",
+          "answer": "比較的高い\n\n[混同注意] 良性は比較的低い"
+        }
+      ]
+    },
+    {
+      "section": "口腔癌の疫学 ★★",
+      "qa": [
+        {
+          "question": "口腔癌の発生頻度は全癌の何%か？",
+          "answer": "約1%"
+        },
+        {
+          "question": "口腔癌で最も発生頻度が高い部位は？",
+          "answer": "舌（約60%）"
+        },
+        {
+          "question": "口腔癌で舌に次いで多い部位は？",
+          "answer": "下顎歯肉（約11.7%）"
+        },
+        {
+          "question": "口腔癌の90%以上を占める組織型は？",
+          "answer": "扁平上皮癌"
+        },
+        {
+          "question": "口腔癌の好発年齢・性別は？",
+          "answer": "中高年、男性に多い"
+        }
+      ]
+    },
+    {
+      "section": "腫瘍の分類 ★★",
+      "qa": [
+        {
+          "question": "上皮性悪性腫瘍の総称は？",
+          "answer": "癌腫（carcinoma）"
+        },
+        {
+          "question": "非上皮性悪性腫瘍の総称は？",
+          "answer": "肉腫（sarcoma）"
+        },
+        {
+          "question": "上皮性良性腫瘍の例は？",
+          "answer": "乳頭腫、腺腫"
+        },
+        {
+          "question": "非上皮性良性腫瘍の例は？",
+          "answer": "線維腫、脂肪腫、血管腫、骨腫"
+        }
+      ]
+    },
+    {
+      "section": "TNM分類 ★★★",
+      "qa": [
+        {
+          "question": "TNMの「T」は何を評価する？",
+          "answer": "原発腫瘍の大きさ"
+        },
+        {
+          "question": "TNMの「N」は何を評価する？",
+          "answer": "所属リンパ節転移の有無と大きさ"
+        },
+        {
+          "question": "TNMの「M」は何を評価する？",
+          "answer": "遠隔転移の有無"
+        },
+        {
+          "question": "口腔癌T1の定義は？",
+          "answer": "最大径2cm以下"
+        },
+        {
+          "question": "口腔癌T2の定義は？",
+          "answer": "最大径2cm超〜4cm以下"
+        },
+        {
+          "question": "口腔癌T3の定義は？",
+          "answer": "最大径4cm超"
+        },
+        {
+          "question": "口腔癌T4aの定義は？",
+          "answer": "皮質骨、舌深層の筋肉、上顎洞、顔面皮膚への浸潤"
+        },
+        {
+          "question": "T1とT2の境界となる腫瘍径は？",
+          "answer": "2cm"
+        },
+        {
+          "question": "T2とT3の境界となる腫瘍径は？",
+          "answer": "4cm"
+        }
+      ]
+    },
+    {
+      "section": "DOI（浸潤の深さ）★★★ UICC第8版で追加",
+      "qa": [
+        {
+          "question": "UICC第8版でT分類に追加された評価項目は？",
+          "answer": "DOI（Depth of Invasion：浸潤の深さ）"
+        },
+        {
+          "question": "DOIとは何を測定するものか？",
+          "answer": "隣接粘膜基底部を結んだ仮想線から腫瘍最深部までの垂直距離"
+        },
+        {
+          "question": "T1のDOI基準は？",
+          "answer": "5mm以下"
+        },
+        {
+          "question": "T2のDOI基準は？",
+          "answer": "5mm超〜10mm以下"
+        },
+        {
+          "question": "T3のDOI基準は？",
+          "answer": "10mm超"
+        },
+        {
+          "question": "DOI測定に最も精度が高い検査は？",
+          "answer": "超音波検査（US）\n\n[混同注意] 次いでMRI"
+        },
+        {
+          "question": "UICC第8版のT分類で、最大径2cm以下かつDOI 5mm以下は？",
+          "answer": "T1"
+        },
+        {
+          "question": "UICC第8版のT分類で、最大径2cm以下でもDOI 5mm超なら？",
+          "answer": "T2にアップステージ"
+        },
+        {
+          "question": "UICC第8版のT分類で、最大径4cm以下でもDOI 10mm超なら？",
+          "answer": "T3にアップステージ"
+        }
+      ]
+    },
+    {
+      "section": "N分類・M分類",
+      "qa": [
+        {
+          "question": "N0の定義は？",
+          "answer": "所属リンパ節転移なし"
+        },
+        {
+          "question": "N1の定義は？",
+          "answer": "同側単発、3cm以下"
+        },
+        {
+          "question": "N3の定義は？",
+          "answer": "6cm超"
+        },
+        {
+          "question": "UICC第8版でN分類に追加された評価項目は？",
+          "answer": "節外浸潤（ENE: Extranodal Extension）の有無"
+        },
+        {
+          "question": "節外浸潤とは？",
+          "answer": "転移リンパ節から周囲組織への浸潤"
+        },
+        {
+          "question": "M0の定義は？",
+          "answer": "遠隔転移なし"
+        },
+        {
+          "question": "M1の定義は？",
+          "answer": "遠隔転移あり"
+        }
+      ]
+    },
+    {
+      "section": "病期分類（Stage）★★",
+      "qa": [
+        {
+          "question": "Stage IVCの定義は？",
+          "answer": "M1（遠隔転移あり）\n\n[混同注意] T、Nに関係なくM1ならIVC期"
+        }
+      ]
+    },
+    {
+      "section": "発癌 ★★",
+      "qa": [
+        {
+          "question": "口腔癌の最大の危険因子は？",
+          "answer": "喫煙"
+        },
+        {
+          "question": "喫煙歴の評価に用いる指標は？",
+          "answer": "Brinkman index（1日喫煙本数×喫煙年数）"
+        },
+        {
+          "question": "口腔癌と関連するウイルスは？",
+          "answer": "ヒトパピローマウイルス（HPV）"
+        },
+        {
+          "question": "多段階発癌の最初の段階は？",
+          "answer": "イニシエーション（癌遺伝子の活性化、初発段階）"
+        },
+        {
+          "question": "多段階発癌でイニシエーションの次の段階は？",
+          "answer": "プロモーション（促進段階）"
+        },
+        {
+          "question": "多段階発癌の最終段階は？",
+          "answer": "プログレッション（進行段階：発癌、増殖、転移）"
+        }
+      ]
+    },
+    {
+      "section": "前癌病変 ★★★",
+      "qa": [
+        {
+          "question": "前癌病変で癌化率が最も高いのは？",
+          "answer": "紅板症（約50%）\n\n[混同注意] 白板症は4〜18%"
+        },
+        {
+          "question": "白板症の癌化率は？",
+          "answer": "4〜18%"
+        },
+        {
+          "question": "紅板症の別名は？",
+          "answer": "紅色肥厚症（erythroplakia）"
+        },
+        {
+          "question": "紅板症の臨床的特徴は？",
+          "answer": "鮮紅色ビロード状の病変"
+        },
+        {
+          "question": "白板症で癌化率が高い臨床型は？",
+          "answer": "紅斑混在型（非均一型）\n\n[混同注意] 均一型は癌化率が低い"
+        },
+        {
+          "question": "前癌病変の組織学的特徴は？",
+          "answer": "扁平上皮性異形成（squamous epithelial dysplasia）"
+        }
+      ]
+    },
+    {
+      "section": "前癌状態",
+      "qa": [
+        {
+          "question": "前癌状態に分類される疾患で両側頬粘膜に好発するものは？",
+          "answer": "扁平苔癬"
+        },
+        {
+          "question": "鉄欠乏性貧血に伴う前癌状態は？",
+          "answer": "鉄欠乏性嚥下障害（Plummer-Vinson症候群）"
+        }
+      ]
+    },
+    {
+      "section": "転移 ★★",
+      "qa": [
+        {
+          "question": "口腔癌で最も多い転移様式は？",
+          "answer": "リンパ行性転移\n\n[混同注意] 肉腫は血行性転移が多い"
+        },
+        {
+          "question": "口腔癌のリンパ行性転移の好発部位は？",
+          "answer": "頸部リンパ節"
+        },
+        {
+          "question": "口腔癌の血行性転移の好発部位は？",
+          "answer": "肺"
+        },
+        {
+          "question": "肉腫に多い転移様式は？",
+          "answer": "血行性転移"
+        },
+        {
+          "question": "舌癌のリンパ節転移の好発部位は？",
+          "answer": "顎下リンパ節、上内深頸リンパ節"
+        }
+      ]
+    },
+    {
+      "section": "悪性腫瘍の症状",
+      "qa": [
+        {
+          "question": "悪性腫瘍に特徴的な潰瘍の所見は？",
+          "answer": "易出血性の潰瘍、周囲に堤防状隆起"
+        },
+        {
+          "question": "下顎への浸潤で生じる神経症状は？",
+          "answer": "オトガイ神経麻痺（下唇の知覚異常）"
+        }
+      ]
+    },
+    {
+      "section": "診断 ★★",
+      "qa": [
+        {
+          "question": "悪性腫瘍の確定診断に必須の検査は？",
+          "answer": "生検（病理組織学的診断）\n\n[混同注意] 細胞診は補助的検査"
+        },
+        {
+          "question": "扁平上皮癌の腫瘍マーカーは？",
+          "answer": "SCC抗原"
+        },
+        {
+          "question": "骨破壊の評価に最も有用な画像検査は？",
+          "answer": "CT"
+        },
+        {
+          "question": "軟組織への浸潤範囲の評価に最も有用な画像検査は？",
+          "answer": "MRI"
+        },
+        {
+          "question": "遠隔転移の検索に最も有用な画像検査は？",
+          "answer": "PET-CT"
+        }
+      ]
+    },
+    {
+      "section": "治療 ★★",
+      "qa": [
+        {
+          "question": "早期癌（Stage I, II）の治療は？",
+          "answer": "手術単独または放射線治療単独で根治可能"
+        },
+        {
+          "question": "進行癌（Stage III, IV）の治療は？",
+          "answer": "手術＋放射線＋化学療法の集学的治療"
+        },
+        {
+          "question": "N1以上で併施する手術は？",
+          "answer": "頸部郭清術"
+        }
+      ]
+    },
+    {
+      "section": "鑑別のまとめ",
+      "qa": [
+        {
+          "question": "口腔癌で最多の部位 → 答えは？",
+          "answer": "舌"
+        },
+        {
+          "question": "口腔癌で最多の組織型 → 答えは？",
+          "answer": "扁平上皮癌"
+        },
+        {
+          "question": "癌化率50% → 疾患は？",
+          "answer": "紅板症"
+        },
+        {
+          "question": "T1N0M0 → 病期は？",
+          "answer": "Stage I"
+        },
+        {
+          "question": "M1あり → 病期は？",
+          "answer": "Stage IVC"
+        }
+      ]
+    }
+  ]
+}

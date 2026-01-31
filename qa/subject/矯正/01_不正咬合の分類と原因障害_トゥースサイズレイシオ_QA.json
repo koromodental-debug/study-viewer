@@ -1,54 +1,152 @@
 {
   "metadata": {
     "title": "トゥースサイズレイシオ",
-    "category": "矯正",
-    "chapter": "01_不正咬合の分類と原因障害"
+    "chapter": "不正咬合の分類と原因障害",
+    "category": ""
   },
   "sections": [
+    {
+      "section": "トゥースサイズレイシオとは",
+      "qa": [
+        {
+          "question": "トゥースサイズレイシオの別名は？",
+          "answer": "Bolton分析"
+        },
+        {
+          "question": "トゥースサイズレイシオで判定するのは？",
+          "answer": "上下顎歯冠近遠心幅径の調和"
+        },
+        {
+          "question": "トゥースサイズレイシオの分子は？",
+          "answer": "下顎"
+        },
+        {
+          "question": "トゥースサイズレイシオの分母は？",
+          "answer": "上顎"
+        }
+      ]
+    },
+    {
+      "section": "アンテリアレイシオ",
+      "qa": [
+        {
+          "question": "アンテリアレイシオの対象歯は？",
+          "answer": "上下顎6前歯（犬歯〜犬歯）"
+        },
+        {
+          "question": "アンテリアレイシオの日本人標準値は？",
+          "answer": "78.09 ± 2.19 (%)"
+        }
+      ]
+    },
+    {
+      "section": "オーバーオールレイシオ",
+      "qa": [
+        {
+          "question": "オーバーオールレイシオの対象歯は？",
+          "answer": "上下顎12歯（第一大臼歯〜第一大臼歯）"
+        },
+        {
+          "question": "オーバーオールレイシオの日本人標準値は？",
+          "answer": "91.37 ± 2.10 (%)"
+        }
+      ]
+    },
+    {
+      "section": "2つのratioの使い分け",
+      "qa": [
+        {
+          "question": "前歯部の異常が影響するratioは？",
+          "answer": "両方のratio（Anterior ratio・Overall ratio）"
+        },
+        {
+          "question": "小臼歯・大臼歯の異常が影響するratioは？",
+          "answer": "オーバーオールレイシオのみ\n\n[混同注意] アンテリアレイシオには影響しない"
+        }
+      ]
+    },
+    {
+      "section": "ratioが大きくなる場合",
+      "qa": [
+        {
+          "question": "上顎中切歯の矮小がratioに与える影響は？",
+          "answer": "ratioが大きくなる（分母減少）"
+        },
+        {
+          "question": "上顎側切歯の先天欠如がratioに与える影響は？",
+          "answer": "ratioが大きくなる（分母減少）"
+        },
+        {
+          "question": "上顎第一小臼歯の欠如がAnterior ratioに与える影響は？",
+          "answer": "変化なし（小臼歯は前歯部ではない）"
+        }
+      ]
+    },
+    {
+      "section": "ratioが小さくなる場合",
+      "qa": [
+        {
+          "question": "下顎の癒合歯がratioに与える影響は？",
+          "answer": "ratioが小さくなる（分子減少）"
+        },
+        {
+          "question": "下顎側切歯の欠如がratioに与える影響は？",
+          "answer": "ratioが小さくなる（分子減少）"
+        },
+        {
+          "question": "下顎第二小臼歯の欠如がAnterior ratioに与える影響は？",
+          "answer": "変化なし（小臼歯は前歯部ではない）"
+        }
+      ]
+    },
+    {
+      "section": "計算問題の解き方",
+      "qa": [
+        {
+          "question": "トゥースサイズレイシオの計算式は？",
+          "answer": "下顎歯冠幅径総和 ÷ 上顎歯冠幅径総和 × 100"
+        },
+        {
+          "question": "計算結果の小数点以下の扱いは？",
+          "answer": "小数点以下第2位を四捨五入"
+        }
+      ]
+    },
+    {
+      "section": "関連項目",
+      "qa": [
+        {
+          "question": "basal arch widthは歯の欠如で変化する？",
+          "answer": "変化しない"
+        },
+        {
+          "question": "required arch lengthは歯の欠如で変化する？",
+          "answer": "変化する（減少する）"
+        }
+      ]
+    },
     {
       "section": "過去問",
       "qa": [
         {
-          "question": "下顎側切歯の先天欠如を伴う患者で小さい値を示すのはどれか。2つ選べ。",
-          "answer": "D, E",
-          "choices": {
-            "a": "basal arch width",
-            "b": "overbite",
-            "c": "overjet",
-            "d": "required arch length",
-            "e": "tooth size ratio"
-          },
-          "correctAnswer": "D, E",
-          "numChoices": 2,
-          "code": "109A65"
+          "question": "[109A65] ★★★\n下顎側切歯の先天欠如で小さい値を示すのは？（2つ）",
+          "answer": "required arch length、tooth size ratio\n\n[他の選択肢との違い]\n- basal arch width: 歯の欠如とは無関係\n- overbite: 歯の欠如だけでは変化しない\n- overjet: 歯の欠如だけでは変化しない\n- required arch length: 欠如歯の分だけ減少 ← 正解\n- tooth size ratio: 分子（下顎）減少で小さくなる ← 正解\n\n[ポイント]\n下顎の歯が欠如 → 分子が減る → ratioが小さくなる"
         },
         {
-          "question": "11歳の女児。歯並びが悪いことを主訴として来院した。模型分析の結果、アンテリアレイシオが標準値よりも小さい。原因はどれか。1つ選べ。",
-          "answer": "C",
-          "choices": {
-            "a": "上顎の過剰歯",
-            "b": "上顎の巨大歯",
-            "c": "下顎の癒合歯",
-            "d": "下顎の矮小歯",
-            "e": "下顎の埋伏歯"
-          },
-          "correctAnswer": "C",
-          "numChoices": 1,
-          "code": "102D47"
+          "question": "[102D47] ★★\nアンテリアレイシオが標準値より小さい原因は？",
+          "answer": "下顎の癒合歯\n\n[他の選択肢との違い]\n- 上顎の過剰歯: 分母増加→ratio減少だが選択肢にない\n- 上顎の巨大歯: 分母増加→ratio減少\n- 下顎の癒合歯: 分子減少→ratio減少 ← 正解\n- 下顎の矮小歯: 分子減少→ratio減少だが癒合歯ほど顕著でない\n- 下顎の埋伏歯: 萌出していないため計測に含めない\n\n[ポイント]\n癒合歯は2本→1本になるため歯冠幅径が大きく減少"
         },
         {
-          "question": "Anterior ratioが大きくなるのはどれか。2つ選べ。",
-          "answer": "A, B",
-          "choices": {
-            "a": "上顎中切歯の矮小",
-            "b": "上顎側切歯の先天欠如",
-            "c": "上顎第一小臼歯の先天欠如",
-            "d": "下顎前歯部の過剰歯",
-            "e": "下顎犬歯の先天欠如"
-          },
-          "correctAnswer": "A, B",
-          "numChoices": 2,
-          "code": "108C104"
+          "question": "[108C104] ★★★\nAnterior ratioが大きくなるのは？（2つ）",
+          "answer": "上顎中切歯の矮小、上顎側切歯の先天欠如\n\n[他の選択肢との違い]\n- 上顎中切歯の矮小: 分母減少→ratio増加 ← 正解\n- 上顎側切歯の先天欠如: 分母減少→ratio増加 ← 正解\n- 上顎第一小臼歯の先天欠如: 小臼歯は前歯部ではない→Anteriorに影響なし\n- 下顎前歯部の過剰歯: 分子増加→ratio増加だが優先度低い\n- 下顎犬歯の先天欠如: 分子減少→ratio減少\n\n[ポイント]\nAnterior ratioが大きくなる = 上顎前歯の欠如・矮小"
+        },
+        {
+          "question": "[111A89] ★（計算問題）\nアンテリアレイシオの計算方法は？",
+          "answer": "下顎6前歯の総和 ÷ 上顎6前歯の総和 × 100\n\n[ポイント]\n表から歯冠幅径を読み取り計算。小数点第2位を四捨五入。"
+        },
+        {
+          "question": "[114B88] ★（計算問題）\nオーバーオールレイシオの計算方法は？",
+          "answer": "下顎12歯の総和 ÷ 上顎12歯の総和 × 100\n\n[ポイント]\n片側の値を2倍して計算。小数点第2位を四捨五入。"
         }
       ]
     }

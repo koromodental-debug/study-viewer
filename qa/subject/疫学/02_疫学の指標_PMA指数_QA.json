@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "title": "PMA指数",
+    "chapter": "疫学の指標",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "PMA指数の基礎",
+      "qa": [
+        {
+          "question": "PMA指数は何を評価する指標？",
+          "answer": "歯肉炎の広がり\n\n[混同注意] 歯周ポケットではなく「歯肉炎の広がり」"
+        },
+        {
+          "question": "PMA指数は誰が提唱した？",
+          "answer": "Schour & Massler（1948年）"
+        },
+        {
+          "question": "PMA指数はどのような集団に適している？",
+          "answer": "小児や若年者の集団評価\n\n[混同注意] 成人の重度歯周炎評価には適さない"
+        }
+      ]
+    },
+    {
+      "section": "PMAの意味",
+      "qa": [
+        {
+          "question": "Pは何の略？",
+          "answer": "Papillary gingiva（乳頭歯肉）"
+        },
+        {
+          "question": "Mは何の略？",
+          "answer": "Marginal gingiva（辺縁歯肉）"
+        },
+        {
+          "question": "Aは何の略？",
+          "answer": "Attached gingiva（付着歯肉）\n\n[関連質問]\n- 歯肉炎の広がりの順序は？ → P→M→A（乳頭→辺縁→付着）\n- PMAの名前の由来は？ → 歯肉炎が広がる順序"
+        }
+      ]
+    },
+    {
+      "section": "検査方法",
+      "qa": [
+        {
+          "question": "PMA指数の検査部位は？",
+          "answer": "上下顎前歯部の唇側歯肉"
+        },
+        {
+          "question": "PMA指数はプローブを使用する？",
+          "answer": "使用しない（視診で評価）\n\n[混同注意] GI、BOPはプローブ使用"
+        },
+        {
+          "question": "PMA指数の検査部位の総数は？",
+          "answer": "34か所\n\n[混同注意] P=10, M=12, A=12 → 合計34"
+        },
+        {
+          "question": "PMA指数の最高点は？",
+          "answer": "34点"
+        }
+      ]
+    },
+    {
+      "section": "歯肉炎の広がり",
+      "qa": [
+        {
+          "question": "歯肉炎が広がる順序は？",
+          "answer": "P（乳頭）→ M（辺縁）→ A（付着）"
+        },
+        {
+          "question": "最初に炎症が現れる部位は？",
+          "answer": "乳頭歯肉（P）"
+        }
+      ]
+    },
+    {
+      "section": "プローブ使用の有無",
+      "qa": [
+        {
+          "question": "プローブを使用する指標は？",
+          "answer": "GI、BOP、CPI"
+        },
+        {
+          "question": "プローブを使用しない指標は？",
+          "answer": "PMA指数、OHI、PCR"
+        },
+        {
+          "question": "[107A68] ★\n歯周プローブを用いて評価する代表的な指標は？",
+          "answer": "GI、BOP\n\n[他の選択肢との違い]\n- GI: プローブで歯肉触診 → 出血確認 ← 正解\n- OHI: 視診で歯垢・歯石評価 → プローブ不要\n- BOP: プロービング時の出血 ← 正解\n- PMA Index: 視診で評価 → プローブ不要\n- PCR: 染め出し後、視診 → プローブ不要\n\n[ポイント]\n・PMA Indexはプローブ不要（視診のみ）\n・GI、BOP、CPIはプローブ使用"
+        }
+      ]
+    }
+  ]
+}

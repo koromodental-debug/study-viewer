@@ -1,26 +1,49 @@
 {
   "metadata": {
     "title": "顎運動",
-    "category": "冠橋義歯学",
-    "chapter": "05_診査・診断、前処置"
+    "chapter": "診査・診断、前処置",
+    "category": ""
   },
   "sections": [
     {
       "section": "Posseltの図形",
       "qa": [
         {
-          "question": "顎関節の模式図（A）とPosseltの図形（B）を示す。Aの状態に対応するのはBのどれか。1つ選べ。",
-          "choices": {
-            "a": "ア",
-            "b": "イ",
-            "c": "ウ",
-            "d": "エ",
-            "e": "オ"
-          },
-          "answer": "E",
-          "correctAnswer": "E",
-          "numChoices": 1,
-          "code": "116A68"
+          "question": "Posseltの図形とは？",
+          "answer": "切歯点の矢状面内における限界運動路を示した図形"
+        },
+        {
+          "question": "Posseltの図形の最上点に対応する下顎位は？",
+          "answer": "咬頭嵌合位"
+        },
+        {
+          "question": "Posseltの図形の最後上点に対応する下顎位は？",
+          "answer": "下顎最後退位"
+        },
+        {
+          "question": "Posseltの図形の最下点に対応する下顎位は？",
+          "answer": "最大開口位"
+        },
+        {
+          "question": "下顎安静位はPosseltの図形のどこにある？",
+          "answer": "咬頭嵌合位の約1〜4mm下方"
+        },
+        {
+          "question": "終末蝶番運動はPosseltの図形のどこで生じる？",
+          "answer": "後方限界の上半分"
+        }
+      ]
+    },
+    {
+      "section": "下顎運動の基本",
+      "qa": [
+        {
+          "question": "下顎運動を構成する2つの要素は？",
+          "answer": "回転（rotation）と移動（translation）"
+        },
+        {
+          "question": "蝶番運動とは？",
+          "answer": "下顎頭を中心とした回転運動"
         }
       ]
     },
@@ -28,18 +51,62 @@
       "section": "Bonwill三角とBalkwill角",
       "qa": [
         {
-          "question": "Bonwill三角と関連するのはどれか。1つ選べ。",
-          "choices": {
-            "a": "切歯路角",
-            "b": "Fischer角",
-            "c": "Bennett角",
-            "d": "Balkwill角",
-            "e": "矢状顆路傾斜角"
-          },
-          "answer": "D",
-          "correctAnswer": "D",
-          "numChoices": 1,
-          "code": "114C58"
+          "question": "Bonwill三角の3点は？",
+          "answer": "両側顆頭点と切歯点"
+        },
+        {
+          "question": "Bonwill三角の一辺の長さの平均値は？",
+          "answer": "約10cm"
+        },
+        {
+          "question": "Balkwill角の定義は？",
+          "answer": "Bonwill三角と咬合平面のなす角度"
+        },
+        {
+          "question": "Balkwill角の平均値は？",
+          "answer": "20〜25°"
+        },
+        {
+          "question": "Bonwill三角とBalkwill角、直接関連するのは？",
+          "answer": "関連する（Balkwill角はBonwill三角を基準に定義される）"
+        }
+      ]
+    },
+    {
+      "section": "顎運動に関連する角度",
+      "qa": [
+        {
+          "question": "Bennett角の定義は？",
+          "answer": "側方運動時の非作業側顆頭の移動方向と矢状面のなす角"
+        },
+        {
+          "question": "Bennett角の平均値は？",
+          "answer": "約15°"
+        },
+        {
+          "question": "矢状顆路傾斜角の平均値は？",
+          "answer": "約30〜40°"
+        },
+        {
+          "question": "Fischer角とは？",
+          "answer": "咬合平面に対する側方顆路傾斜角"
+        }
+      ]
+    },
+    {
+      "section": "下顎運動の記録法",
+      "qa": [
+        {
+          "question": "チェックバイト法で調節できる咬合器は？",
+          "answer": "半調節性咬合器"
+        },
+        {
+          "question": "チェックバイトを採得する下顎位は？",
+          "answer": "咬頭嵌合位から約5mm離れた位置"
+        },
+        {
+          "question": "パントグラフ法で調節できる咬合器は？",
+          "answer": "全調節性咬合器"
         }
       ]
     },
@@ -47,18 +114,24 @@
       "section": "審美的基準",
       "qa": [
         {
-          "question": "前歯部ブリッジの形態不良を主訴に来院した50歳の女性の、初診時の口元の写真（別冊No.29A）、診察中に治療の参考となる補助線を記入した写真（別冊No.29B）及び治療後の口腔内写真（別冊No.29C）を別に示す。治療の参考としたのはどれか。2つ選べ。",
-          "choices": {
-            "a": "瞳孔線",
-            "b": "顔面正中",
-            "c": "Spee彎曲",
-            "d": "Balkwill角",
-            "e": "Bonwill三角"
-          },
-          "answer": "A, B",
-          "correctAnswer": "AB",
-          "numChoices": 2,
-          "code": "116B72"
+          "question": "前歯部ブリッジの審美的形態に関連するのは？",
+          "answer": "瞳孔線、顔面正中"
+        },
+        {
+          "question": "前歯部審美と関連しないのは？",
+          "answer": "Spee彎曲、Balkwill角、Bonwill三角"
+        },
+        {
+          "question": "[116A68] ★★\n顎関節模式図で下顎頭が関節窩の最後方にある状態は、Posseltの図形のどこ？",
+          "answer": "下顎最後退位（図形の後上方）\n\n[ポイント]\n下顎最後退位＝下顎頭が関節窩の最後方＝Posseltの図形の後上方"
+        },
+        {
+          "question": "[114C58] ★★★\nBonwill三角と関連する角度は？",
+          "answer": "Balkwill角\n\n[他の選択肢との違い]\n- 切歯路角：前方運動時の切歯の経路\n- Fischer角：側方顆路傾斜角\n- Bennett角：側方運動時の非作業側顆頭の移動方向\n- Balkwill角：正解（Bonwill三角と咬合平面のなす角）← 正解\n- 矢状顆路傾斜角：顆路と基準平面のなす角\n\n[ポイント]\n「Bonwill」と「Balkwill」の名前の類似に注目\nBalkwill角はBonwill三角を基準に定義→直接関連"
+        },
+        {
+          "question": "[116B72] ★★\n前歯部ブリッジの審美的形態の参考となるのは？",
+          "answer": "瞳孔線、顔面正中\n\n[他の選択肢との違い]\n- 瞳孔線：正解（切縁の傾きの参考）← 正解\n- 顔面正中：正解（正中の位置決め）← 正解\n- Spee彎曲：臼歯部の咬合彎曲 ← ひっかけ\n- Balkwill角：咬合器装着の基準\n- Bonwill三角：咬合器の設計基準\n\n[ポイント]\n前歯部審美＝顔貌との調和＝瞳孔線・顔面正中\nSpee彎曲・Bonwill三角は臼歯部・咬合器の話"
         }
       ]
     }

@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "title": "細胞診",
+    "chapter": "病理検査",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "組織診と細胞診の違い",
+      "qa": [
+        {
+          "question": "確定診断に適しているのは組織診と細胞診のどちら？",
+          "answer": "組織診"
+        },
+        {
+          "question": "侵襲が少ないのは組織診と細胞診のどちら？",
+          "answer": "細胞診"
+        },
+        {
+          "question": "組織構造が保持されるのは組織診と細胞診のどちら？",
+          "answer": "組織診\n\n[混同注意] 細胞診は細胞をバラバラに採取するため組織構造は保持されない"
+        },
+        {
+          "question": "標本作製時間が短いのは組織診と細胞診のどちら？",
+          "answer": "細胞診"
+        },
+        {
+          "question": "組織診の一般染色は？",
+          "answer": "HE染色（ヘマトキシリン・エオジン染色）"
+        },
+        {
+          "question": "細胞診の一般染色は？",
+          "answer": "Papanicolaou染色"
+        },
+        {
+          "question": "[105C76] ★★\n通常の病理組織検査に比べた細胞診の利点は？",
+          "answer": "検体採取に伴う侵襲が少ない、標本作製に要する時間が短い\n\n[他の選択肢との違い]\n- 確定診断に適する：組織診の利点 ← ひっかけ\n- 検体からの情報量が多い：組織診の利点\n- 組織構築を把握しやすい：組織診の利点\n- 検体採取に伴う侵襲が少ない：細胞診の利点 ← 正解\n- 標本作製に要する時間が短い：細胞診の利点 ← 正解\n\n[ポイント]\n細胞診の利点は「侵襲少・時間短」。情報量・組織構築・確定診断は組織診。"
+        }
+      ]
+    },
+    {
+      "section": "固定法と染色法の対応",
+      "qa": [
+        {
+          "question": "Papanicolaou染色の固定法は？",
+          "answer": "湿固定（95%エタノール）"
+        },
+        {
+          "question": "May-Giemsa染色の固定法は？",
+          "answer": "乾燥固定（冷風ドライヤー、メタノール）"
+        },
+        {
+          "question": "湿固定に用いる固定液は？",
+          "answer": "95%エタノール"
+        }
+      ]
+    },
+    {
+      "section": "主要な特殊染色と対象",
+      "qa": [
+        {
+          "question": "血液塗抹標本の染色法は？",
+          "answer": "May-Giemsa染色"
+        },
+        {
+          "question": "真菌（カンジダ）の検出に用いる染色法は？",
+          "answer": "Grocott染色"
+        },
+        {
+          "question": "抗酸菌（結核菌）の検出に用いる染色法は？",
+          "answer": "Ziehl-Neelsen染色"
+        },
+        {
+          "question": "Papanicolaou染色で角化細胞は何色に染まる？",
+          "answer": "オレンジ色"
+        },
+        {
+          "question": "PAS染色で検出できるものは？",
+          "answer": "粘液多糖、真菌"
+        },
+        {
+          "question": "[104C114] ★★\n血液塗抹標本の染色法は？",
+          "answer": "May-Giemsa染色\n\n[他の選択肢との違い]\n- Sudan III染色：脂肪の検出\n- Congo-Red染色：アミロイドの検出\n- May-Giemsa染色：血球・血液塗抹標本 ← 正解\n- Ziehl-Neelsen染色：抗酸菌（結核）の検出\n- HE染色：組織診の標準染色\n\n[ポイント]\nMay-Giemsa = 血液（Mayは「赤い」イメージ）"
+        },
+        {
+          "question": "[113B36] ★★\nGrocott染色陽性となる病原体は？",
+          "answer": "真菌（Candida albicansなど）\n\n[他の選択肢との違い]\n- Candida albicans：真菌 ← 正解（Grocott陽性）\n- Treponema pallidum：スピロヘータ（梅毒）\n- Staphylococcus aureus：細菌（ブドウ球菌）\n- Mycoplasma pneumoniae：細菌（マイコプラズマ）\n- Mycobacterium tuberculosis：抗酸菌（結核）→ Ziehl-Neelsen染色\n\n[ポイント]\nGrocott = 真菌、Ziehl-Neelsen = 抗酸菌（結核）"
+        }
+      ]
+    },
+    {
+      "section": "口腔細胞診報告様式ガイドライン（2015年）",
+      "qa": [
+        {
+          "question": "口腔細胞診でOHSIL以上の場合、次に行う検査は？",
+          "answer": "組織診（生検）"
+        },
+        {
+          "question": "NILMの意味は？",
+          "answer": "陰性（悪性所見なし）"
+        },
+        {
+          "question": "OLSILの意味は？",
+          "answer": "軽度異形成（Oral Low-grade Squamous Intraepithelial Lesion）"
+        },
+        {
+          "question": "OHSILの意味は？",
+          "answer": "高度異形成（Oral High-grade Squamous Intraepithelial Lesion）"
+        },
+        {
+          "question": "SCCの意味は？",
+          "answer": "扁平上皮癌（Squamous Cell Carcinoma）\n\n[関連質問]\n- 従来のClass I, IIに相当する分類は？ → NILM\n- 従来のClass IIIに相当する分類は？ → OLSIL / OHSIL\n- 従来のClass IV, Vに相当する分類は？ → SCC"
+        }
+      ]
+    }
+  ]
+}

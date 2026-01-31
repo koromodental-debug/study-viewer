@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "title": "CFI",
+    "chapter": "疫学の指標",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "CFI（地域フッ素症指数）関連",
+      "qa": [
+        {
+          "question": "CFIとは何の略？",
+          "answer": "Community Fluorosis Index（地域フッ素症指数）"
+        },
+        {
+          "question": "CFIの提唱者と年代は？",
+          "answer": "Dean、1942年"
+        },
+        {
+          "question": "CFIは何を評価する指標？",
+          "answer": "地域における歯のフッ素症の発生程度\n\n[混同注意] 個人ではなく地域レベルの評価"
+        },
+        {
+          "question": "CFIで個人の程度を判定する基準は？",
+          "answer": "最も症状の強い2歯で判定"
+        },
+        {
+          "question": "CFIの計算式は？",
+          "answer": "CFI = 個人の点数の合計 ÷ 被験者数"
+        }
+      ]
+    },
+    {
+      "section": "Deanの分類（診査基準）",
+      "qa": [
+        {
+          "question": "Deanの分類で0点の状態は？",
+          "answer": "normal（正常の形態、透明度）"
+        },
+        {
+          "question": "Deanの分類で0.5点の状態は？",
+          "answer": "questionable（点在するわずかな白斑）"
+        },
+        {
+          "question": "Deanの分類で1点の状態は？",
+          "answer": "very mild（白濁部が歯面の1/4以下）"
+        },
+        {
+          "question": "Deanの分類で2点の状態は？",
+          "answer": "mild（白濁部が歯面の1/2以下）"
+        },
+        {
+          "question": "Deanの分類で3点の状態は？",
+          "answer": "moderate（全歯面の白濁および小窩、着色を認める）"
+        },
+        {
+          "question": "Deanの分類で4点の状態は？",
+          "answer": "severe（形成不全を伴う、着色も著しい）"
+        }
+      ]
+    },
+    {
+      "section": "判定基準",
+      "qa": [
+        {
+          "question": "CFI 0.4以下の判定は？",
+          "answer": "公衆衛生上問題なし"
+        },
+        {
+          "question": "CFI 0.4〜0.6の判定は？",
+          "answer": "境界域"
+        },
+        {
+          "question": "CFI 0.6以上の判定は？",
+          "answer": "流行地（飲料水中のフッ化物量を減らす必要性あり）"
+        },
+        {
+          "question": "CFIの境界値は？",
+          "answer": "0.4と0.6\n\n[混同注意] 0.4以下で問題なし、0.6以上で対策必要\n[関連質問]\n- フッ素症の原因は？ → 過剰なフッ化物摂取（主に飲料水）\n- フッ化物量を減らすべきCFI値は？ → 0.6以上"
+        },
+        {
+          "question": "[112A29] ★★\nCFIで被験者の値を判定するとき、何を基準にする？",
+          "answer": "最も症状の強い2歯\n\n[他の選択肢との違い]\n- 0.5: questionable相当\n- 1: very mild相当\n- 2: mild相当\n- 3: moderate相当 ← 正解\n- 4: severe相当\n\n[ポイント]\n表から各歯のフッ素症の程度を読み取り、最も重症度の高い歯で判定する。\nDeanの分類（0〜4点）を正確に覚えておくことが重要。"
+        }
+      ]
+    }
+  ]
+}

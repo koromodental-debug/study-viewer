@@ -1,27 +1,180 @@
 {
   "metadata": {
     "title": "遺伝子工学",
-    "category": "生化学",
-    "chapter": "01_総論"
+    "chapter": "総論",
+    "category": ""
   },
   "sections": [
+    {
+      "section": "制限酵素の基本",
+      "qa": [
+        {
+          "question": "制限酵素の機能は？",
+          "answer": "DNA上の特定の塩基配列（4〜8塩基）を認識して切断"
+        },
+        {
+          "question": "制限酵素を持つ生物は？",
+          "answer": "細菌（ウイルス感染から自身を防御するため）"
+        }
+      ]
+    },
+    {
+      "section": "代表的な制限酵素",
+      "qa": [
+        {
+          "question": "EcoRIの切断末端の種類は？",
+          "answer": "付着末端（sticky end）"
+        },
+        {
+          "question": "AluIの切断末端の種類は？",
+          "answer": "平滑末端（blunt end）"
+        }
+      ]
+    },
+    {
+      "section": "遺伝子組換え",
+      "qa": [
+        {
+          "question": "遺伝子組換えでDNAを切断する酵素は？",
+          "answer": "制限酵素"
+        },
+        {
+          "question": "遺伝子組換えでDNA断片同士を連結する酵素は？",
+          "answer": "DNAリガーゼ"
+        }
+      ]
+    },
     {
       "section": "PCR法に必要な材料",
       "qa": [
         {
-          "question": "PCR法に不要なものはどれか。",
-          "answer": "A",
-          "choices": {
-            "a": "DNAリガーゼ",
-            "b": "DNAプライマー",
-            "c": "DNAテンプレート",
-            "d": "デオキシヌクレオチド",
-            "e": "耐熱性DNAポリメラーゼ"
-          },
-          "correctAnswer": "A",
-          "numChoices": 1,
-          "code": "100A51",
-          "note": "参考：100回以前"
+          "question": "PCR法の目的は？",
+          "answer": "目的とするDNA断片を短時間に大量に増幅する"
+        },
+        {
+          "question": "PCR法で20回のサイクルを行うと何倍に増幅される？",
+          "answer": "約100万倍"
+        },
+        {
+          "question": "PCR法に必要な材料の数は？",
+          "answer": "4つ（ポリメラーゼ、dNTPs、プライマー、鋳型）\n\n[混同注意] DNAリガーゼはPCRには不要（遺伝子組換えで使用）"
+        },
+        {
+          "question": "PCR法でDNA合成を行う酵素は？",
+          "answer": "耐熱性DNAポリメラーゼ（Taqポリメラーゼ）"
+        },
+        {
+          "question": "PCR法でDNA合成の材料となるのは？",
+          "answer": "デオキシヌクレオチド（dNTPs）"
+        },
+        {
+          "question": "PCR法で増幅開始点を決めるのは？",
+          "answer": "プライマー（2種類必要）"
+        },
+        {
+          "question": "PCR法で複製元となるのは？",
+          "answer": "鋳型DNA（テンプレート）"
+        },
+        {
+          "question": "PCR法で使用される耐熱性DNAポリメラーゼの名称は？",
+          "answer": "Taqポリメラーゼ"
+        },
+        {
+          "question": "dNTPsの構成成分は？",
+          "answer": "dATP、dTTP、dGTP、dCTP"
+        },
+        {
+          "question": "PCR法でプライマーは何種類必要？",
+          "answer": "2種類（増幅領域の両端に結合）"
+        }
+      ]
+    },
+    {
+      "section": "PCRの3ステップ",
+      "qa": [
+        {
+          "question": "PCRの変性ステップの温度は？",
+          "answer": "95℃"
+        },
+        {
+          "question": "PCRの変性ステップで起こることは？",
+          "answer": "加熱により二本鎖DNAの水素結合を切断し解離"
+        },
+        {
+          "question": "PCRのアニーリングステップの温度は？",
+          "answer": "55℃"
+        },
+        {
+          "question": "PCRのアニーリングステップで起こることは？",
+          "answer": "一本鎖DNAにプライマーを結合"
+        },
+        {
+          "question": "PCRの伸長ステップの温度は？",
+          "answer": "72℃"
+        },
+        {
+          "question": "PCRの伸長ステップで起こることは？",
+          "answer": "耐熱性DNAポリメラーゼによるDNA合成"
+        },
+        {
+          "question": "PCRの3ステップを順番に答えると？",
+          "answer": "変性 → アニーリング → 伸長"
+        }
+      ]
+    },
+    {
+      "section": "なぜ耐熱性DNAポリメラーゼが必要か",
+      "qa": [
+        {
+          "question": "Taqポリメラーゼの由来は？",
+          "answer": "好熱菌（Thermus aquaticus）"
+        },
+        {
+          "question": "PCRで耐熱性DNAポリメラーゼが必要な理由は？",
+          "answer": "PCRでは95℃の高温処理を繰り返すため、通常の酵素では失活するから"
+        }
+      ]
+    },
+    {
+      "section": "クローニング",
+      "qa": [
+        {
+          "question": "クローニングで目的の遺伝子を組み込む運び屋は？",
+          "answer": "ベクター（プラスミド等）"
+        },
+        {
+          "question": "クローニングの手順は？",
+          "answer": "制限酵素で切断 → DNAリガーゼで連結 → 宿主細胞で増殖"
+        }
+      ]
+    },
+    {
+      "section": "電気泳動",
+      "qa": [
+        {
+          "question": "電気泳動でDNA断片を分離する基準は？",
+          "answer": "大きさ"
+        },
+        {
+          "question": "電気泳動でDNAが移動する方向は？",
+          "answer": "陽極（+）に向かって移動（DNAは負に帯電）"
+        },
+        {
+          "question": "電気泳動で速く移動するDNA断片は？",
+          "answer": "小さい断片ほど速く移動"
+        }
+      ]
+    },
+    {
+      "section": "サザンブロット法",
+      "qa": [
+        {
+          "question": "サザンブロット法の手順は？",
+          "answer": "電気泳動で分離したDNAをメンブレンに転写し、標識プローブで検出"
+        },
+        {
+          "question": "[100A51] （参考：100回以前）★★\nPCR法に不要なものは？",
+          "answer": "DNAリガーゼ\n\n[他の選択肢との違い]\n- DNAリガーゼ: DNA断片の連結酵素、遺伝子組換えには必要だがPCRには不要 ← 正解\n- DNAプライマー: 増幅領域の両端に結合、PCRに必須\n- DNAテンプレート: 鋳型DNA、PCRに必須\n- デオキシヌクレオチド: dNTPs、DNA合成の材料、PCRに必須\n- 耐熱性DNAポリメラーゼ: Taqポリメラーゼ、PCRに必須\n\n[ポイント]\nPCR法の必須材料：「ポリメラーゼ・dNTPs・プライマー・鋳型」\nDNAリガーゼは「連結」酵素 → PCRは増幅であり連結ではない"
         }
       ]
     }

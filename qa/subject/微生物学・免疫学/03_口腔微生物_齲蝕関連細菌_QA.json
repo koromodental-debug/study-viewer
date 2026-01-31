@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "title": "齲蝕関連細菌",
+    "chapter": "口腔微生物",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "主な齲蝕原性菌",
+      "qa": [
+        {
+          "question": "最も重要な齲蝕原性菌は？",
+          "answer": "Streptococcus mutans（ほとんどの日本人から検出）"
+        },
+        {
+          "question": "S. mutansと同様の機序で齲蝕を引き起こすが、検出率が低い菌は？",
+          "answer": "Streptococcus sobrinus（数%の日本人のみから検出）"
+        },
+        {
+          "question": "S. mutansとS. sobrinus、日本人からの検出率が高いのは？",
+          "answer": "S. mutans"
+        },
+        {
+          "question": "象牙質齲蝕の進行に関与する菌は？",
+          "answer": "Lactobacillus属（酸産生能が高い）"
+        },
+        {
+          "question": "Actinomycesが根面齲蝕に特に関与する理由は？",
+          "answer": "根面（セメント質）への付着能が高いため"
+        },
+        {
+          "question": "小窩裂溝齲蝕・平滑面齲蝕に関与する菌は？",
+          "answer": "S. mutans、S. sobrinus"
+        },
+        {
+          "question": "根面齲蝕に関与する菌は？",
+          "answer": "S. mutans、Actinomyces"
+        }
+      ]
+    },
+    {
+      "section": "齲蝕発生の病原因子",
+      "qa": [
+        {
+          "question": "S. mutansがペリクルに初期付着するための因子は？",
+          "answer": "PAc（AgI/II）：線毛様タンパク質"
+        },
+        {
+          "question": "GTFの役割は？",
+          "answer": "スクロースからグルカンを合成し、歯面への強固な付着を促す"
+        },
+        {
+          "question": "S. mutansが産生する酸は？",
+          "answer": "乳酸"
+        },
+        {
+          "question": "齲蝕原性菌が産生する酸は何の結果？",
+          "answer": "スクロースなどの糖を発酵させた結果"
+        }
+      ]
+    },
+    {
+      "section": "GTFとFTFの対比",
+      "qa": [
+        {
+          "question": "GTFの基質と産物は？",
+          "answer": "基質：スクロース → 産物：グルカン（グルコース多糖）"
+        },
+        {
+          "question": "FTFの基質と産物は？",
+          "answer": "基質：スクロース → 産物：フルクタン（フルクトース多糖）"
+        },
+        {
+          "question": "GTFとFTF、グルカンを合成するのは？",
+          "answer": "GTF（グルコシルトランスフェラーゼ）"
+        },
+        {
+          "question": "GTFとFTF、フルクタンを合成するのは？",
+          "answer": "FTF（フルクトシルトランスフェラーゼ）"
+        },
+        {
+          "question": "S. mutansとS. sobrinusに共通する酵素は？",
+          "answer": "GTF、FTF"
+        },
+        {
+          "question": "GTF・FTFは齲蝕原性菌と歯周病原菌のどちらが産生する？",
+          "answer": "齲蝕原性菌（S. mutans、S. sobrinus）"
+        }
+      ]
+    },
+    {
+      "section": "CA-GTFとCF-GTFの対比",
+      "qa": [
+        {
+          "question": "CA-GTF（菌体結合型）が合成するのは？",
+          "answer": "不溶性グルカン（GTF-B、GTF-C）"
+        },
+        {
+          "question": "CF-GTF（遊離型）が合成するのは？",
+          "answer": "水溶性グルカン（GTF-D）"
+        },
+        {
+          "question": "CA-GTFとCF-GTF、不溶性グルカンを合成するのは？",
+          "answer": "CA-GTF（菌体結合型）"
+        },
+        {
+          "question": "不溶性グルカンと水溶性グルカン、歯面付着に重要なのは？",
+          "answer": "不溶性グルカン"
+        },
+        {
+          "question": "[114A66] ★★★\nGTFはどの菌が産生する？",
+          "answer": "S. mutans、S. sobrinus（齲蝕原性菌）\n\n[他の選択肢との違い]\n- ジンジパイン: P. gingivalisが産生（歯周病原因子）\n- デンティリシン: T. denticolaが産生（歯周病原因子）\n- ロイコトキシン: A.a.が産生（歯周病原因子）\n- GTF: S. mutans / S. sobrinusが産生 ← 正解\n- FTF: S. mutans / S. sobrinusが産生 ← 正解\n\n[ポイント]\nGTF・FTF＝齲蝕原性菌（S. mutans系）。ジンジパイン・デンティリシン・ロイコトキシン＝歯周病原菌。"
+        },
+        {
+          "question": "[107A43] ★★★\nS. mutansとS. sobrinusのみが持ち、他の口腔レンサ球菌にはない性質は？",
+          "answer": "グルカン合成（GTF活性）\n\n[ポイント]\n表の問題では「S. mutansとS. sobrinusのみ+」→ GTFによるグルカン合成が特徴。"
+        }
+      ]
+    },
+    {
+      "section": "齲蝕原性菌 vs 歯周病原細菌",
+      "qa": [
+        {
+          "question": "齲蝕原性菌の代表は？",
+          "answer": "S. mutans、S. sobrinus、Lactobacillus"
+        },
+        {
+          "question": "歯周病原細菌の代表は？",
+          "answer": "P. gingivalis、T. denticola、T. forsythia（Red complex）"
+        },
+        {
+          "question": "S. mutansとP. gingivalis、酸産生が主要な病原因子なのは？",
+          "answer": "S. mutans"
+        },
+        {
+          "question": "S. mutansとP. gingivalis、プロテアーゼ（タンパク分解酵素）が病原因子なのは？",
+          "answer": "P. gingivalis（ジンジパイン）"
+        },
+        {
+          "question": "齲蝕原性菌と歯周病原細菌、グラム陰性菌が多いのは？",
+          "answer": "歯周病原細菌"
+        },
+        {
+          "question": "[105A98] ★★★\n根面齲蝕に関与する菌は？",
+          "answer": "S. mutans、Actinomyces viscosus\n\n[他の選択肢との違い]\n- S. mitis: 齲蝕原性が低い口腔レンサ球菌\n- T. denticola: 歯周病原菌（Red complex）\n- S. mutans: 根面齲蝕の主要な原因菌 ← 正解\n- A. viscosus: 根面への付着能が高い ← 正解\n- P. gingivalis: 歯周病原菌（Red complex）\n\n[ポイント]\n根面齲蝕＝S. mutans + Actinomyces。T. denticola・P. gingivalisは歯周病原菌。"
+        }
+      ]
+    },
+    {
+      "section": "キシリトールの特徴",
+      "qa": [
+        {
+          "question": "キシリトールとは？",
+          "answer": "5炭糖の糖アルコール"
+        },
+        {
+          "question": "S. mutansはキシリトールを代謝できるか？",
+          "answer": "できない（酸を産生しない）"
+        },
+        {
+          "question": "キシリトールの齲蝕予防効果の理由は？",
+          "answer": "S. mutansが利用できず、酸産生・グルカン合成がされないため"
+        },
+        {
+          "question": "キシリトールの甘味度は？",
+          "answer": "スクロースとほぼ同等"
+        },
+        {
+          "question": "キシリトールとスクロース、S. mutansが代謝できるのは？",
+          "answer": "スクロース"
+        },
+        {
+          "question": "キシリトールとスクロース、齲蝕原性があるのは？",
+          "answer": "スクロース"
+        },
+        {
+          "question": "キシリトールが非齲蝕原性糖質である理由は？",
+          "answer": "S. mutansが代謝できず、酸・グルカンが産生されないため"
+        }
+      ]
+    }
+  ]
+}

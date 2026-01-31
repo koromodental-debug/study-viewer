@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "title": "DMF歯率",
+    "chapter": "疫学の指標",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "1人平均dmf歯数",
+      "qa": [
+        {
+          "question": "dmf指数は何の指標か？",
+          "answer": "乳歯のう蝕（むし歯）経験を表す指標\n\n[混同注意] 永久歯はDMF（大文字）"
+        },
+        {
+          "question": "dは何の略？意味は？",
+          "answer": "decayed。未処置う蝕歯"
+        },
+        {
+          "question": "mは何の略？意味は？",
+          "answer": "missing。う蝕による喪失歯または要抜去歯\n\n[混同注意] DMFのMとは扱いが異なる"
+        },
+        {
+          "question": "fは何の略？意味は？",
+          "answer": "filled。う蝕が原因で処置した歯"
+        }
+      ]
+    },
+    {
+      "section": "dmf歯率",
+      "qa": [
+        {
+          "question": "DMF指数とdmf指数の違いは？",
+          "answer": "DMF＝永久歯（大文字）、dmf＝乳歯（小文字）"
+        },
+        {
+          "question": "乳歯のmとDMFのMの違いは？",
+          "answer": "DMFのMは「抜去した歯」のみ、dmfのmは「喪失歯」または「要抜去歯」も含む"
+        },
+        {
+          "question": "乳歯は何本？",
+          "answer": "20本"
+        },
+        {
+          "question": "永久歯は何本？",
+          "answer": "28本（第三大臼歯含めると32本）"
+        }
+      ]
+    },
+    {
+      "section": "計算式",
+      "qa": [
+        {
+          "question": "1人平均dmf歯数の計算式は？",
+          "answer": "dmf歯の合計 ÷ 被験者数"
+        },
+        {
+          "question": "dmf歯率の計算式は？",
+          "answer": "dmf歯の合計 ÷ 被験歯数 × 100\n\n[混同注意] 分母は「被験歯数」"
+        },
+        {
+          "question": "dmf者率の計算式は？",
+          "answer": "dmf歯を持つ者の数 ÷ 被験者数 × 100\n\n[関連質問]\n- 3歳児の被験歯数は？ → 20本\n- dmf歯率とdmf者率の分母の違いは？ → 歯率は歯数、者率は人数"
+        }
+      ]
+    },
+    {
+      "section": "3歳児歯科健診",
+      "qa": [
+        {
+          "question": "3歳児の乳歯は通常何本？",
+          "answer": "20本"
+        },
+        {
+          "question": "乳歯の内訳は？",
+          "answer": "乳切歯8本、乳犬歯4本、乳臼歯8本"
+        },
+        {
+          "question": "[105D52] ★\n3歳児のdmf歯率を求める問題",
+          "answer": "15%\n\n[ポイント]\n3歳児の乳歯 = 20本\ndmf歯率の分母は「被験歯数」"
+        }
+      ]
+    }
+  ]
+}

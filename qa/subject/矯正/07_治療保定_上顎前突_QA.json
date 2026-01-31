@@ -1,40 +1,45 @@
 {
   "metadata": {
     "title": "上顎前突",
-    "category": "矯正",
-    "chapter": "07_治療保定"
+    "chapter": "治療保定",
+    "category": ""
   },
   "sections": [
+    {
+      "section": "上顎前突とは",
+      "qa": [
+        {
+          "question": "上顎前突のAngle分類は？",
+          "answer": "Angle II級"
+        }
+      ]
+    },
     {
       "section": "AngleⅡ級1類 vs Ⅱ級2類",
       "qa": [
         {
-          "question": "AngleⅡ級2類の所見で正しいのはどれか。2つ選べ。",
-          "answer": "A, D",
-          "choices": {
-            "a": "過蓋咬合",
-            "b": "口唇閉鎖不全",
-            "c": "コンケイブタイプの側貌",
-            "d": "上顎中切歯の舌側傾斜",
-            "e": ""
-          },
-          "correctAnswer": "A, D",
-          "numChoices": 2,
-          "code": "102A124"
+          "question": "II級1類の上顎前歯傾斜は？",
+          "answer": "唇側傾斜（前突）"
         },
         {
-          "question": "AngleのⅡ級1類と比較したAngleのⅡ級2類の不正咬合の特徴はどれか。2つ選べ。",
-          "answer": "C, D",
-          "choices": {
-            "a": "呼吸様式が口呼吸である。",
-            "b": "オーバーバイトが小さい。",
-            "c": "lnterincisal angleが大きい。",
-            "d": "オーバージェットが小さい。",
-            "e": "FH平面に対する上顎中切歯歯軸傾斜角が大きい。"
-          },
-          "correctAnswer": "C, D",
-          "numChoices": 2,
-          "code": "107C109"
+          "question": "II級2類の上顎前歯傾斜は？",
+          "answer": "舌側傾斜"
+        },
+        {
+          "question": "II級1類とII級2類、オーバージェットが大きいのは？",
+          "answer": "II級1類"
+        },
+        {
+          "question": "II級1類とII級2類、オーバーバイトが大きいのは？",
+          "answer": "II級2類（過蓋咬合）"
+        },
+        {
+          "question": "II級1類とII級2類、Interincisal angleが大きいのは？",
+          "answer": "II級2類"
+        },
+        {
+          "question": "口呼吸、口唇閉鎖不全を伴うのはII級何類？",
+          "answer": "II級1類\n\n[混同注意] II級2類は鼻呼吸"
         }
       ]
     },
@@ -42,18 +47,16 @@
       "section": "骨格性Ⅱ級を示す症候群",
       "qa": [
         {
-          "question": "骨格性Ⅱ級を示すのはどれか。1つ選べ。",
-          "answer": "D",
-          "choices": {
-            "a": "唇顎口蓋裂",
-            "b": "Apert 症候群",
-            "c": "Crouzon 症候群",
-            "d": "Robin シークエンス",
-            "e": "Beckwith-Wiedemann 症候群"
-          },
-          "correctAnswer": "D",
-          "numChoices": 1,
-          "code": "115A76"
+          "question": "下顎劣成長により骨格性II級を示す症候群は？",
+          "answer": "Robinシークエンス、Treacher Collins症候群"
+        },
+        {
+          "question": "Robinシークエンスの特徴は？",
+          "answer": "下顎劣成長、舌根沈下（気道閉塞リスク）"
+        },
+        {
+          "question": "Treacher Collins症候群の特徴は？",
+          "answer": "下顎劣成長、眼裂の外下方傾斜、耳奇形"
         }
       ]
     },
@@ -61,32 +64,45 @@
       "section": "治療装置の選択",
       "qa": [
         {
-          "question": "7歳の女児。前歯の歯並びが悪いことを主訴として来院した。適切な矯正装置はどれか。1つ選べ。",
-          "answer": "E",
-          "choices": {
-            "a": "咬合斜面板",
-            "b": "リンガルアーチ",
-            "c": "アクチバトール",
-            "d": "ハイプルヘッドギア",
-            "e": "サービカルプルヘッドギア"
-          },
-          "correctAnswer": "E",
-          "numChoices": 1,
-          "code": "105D22"
+          "question": "上顎過成長（SNA大）の場合の治療装置は？",
+          "answer": "ヘッドギア"
         },
         {
-          "question": "9歳の女児。口が閉じにくいことを主訴として来院した。適切な矯正装置はどれか。1つ選べ。",
-          "answer": "B",
-          "choices": {
-            "a": "咬合斜面板",
-            "b": "ヘッドギア",
-            "c": "Herbst装置",
-            "d": "バイオネーター",
-            "e": "リップバンパー"
-          },
-          "correctAnswer": "B",
-          "numChoices": 1,
-          "code": "116C81"
+          "question": "下顎劣成長（SNB小）の場合の治療装置は？",
+          "answer": "機能的矯正装置（アクチバトール、バイオネーター、Fränkel装置）、咬合斜面板"
+        },
+        {
+          "question": "ハイアングル（FMA大）に適したヘッドギアは？",
+          "answer": "ハイプルヘッドギア"
+        },
+        {
+          "question": "ローアングル（FMA小）に適したヘッドギアは？",
+          "answer": "サービカルプルヘッドギア"
+        }
+      ]
+    },
+    {
+      "section": "関連過去問",
+      "qa": [
+        {
+          "question": "[102A124] ★★★\nAngle II級2類の所見は？",
+          "answer": "過蓋咬合、上顎中切歯の舌側傾斜\n\n[他の選択肢との違い]\n- 過蓋咬合 → ○ II級2類の特徴\n- 口唇閉鎖不全 → × II級1類の特徴 ← ひっかけ\n- コンケイブタイプの側貌 → × III級の特徴\n- 上顎中切歯の舌側傾斜 → ○ II級2類の特徴\n\n[ポイント]\nII級2類＝舌側傾斜＋過蓋咬合"
+        },
+        {
+          "question": "[107C109] ★★★\nII級1類と比較したII級2類の特徴は？",
+          "answer": "Interincisal angleが大きい、オーバージェットが小さい\n\n[他の選択肢との違い]\n- 口呼吸 → × II級1類の特徴\n- オーバーバイトが小さい → × II級2類は大きい\n- Interincisal angleが大きい → ○ 上顎前歯舌側傾斜\n- オーバージェットが小さい → ○ II級2類の特徴\n- 歯軸傾斜角が大きい → × II級1類の特徴\n\n[ポイント]\nII級2類＝Interincisal angle大、オーバージェット小"
+        },
+        {
+          "question": "[115A76] ★★★\n骨格性II級を示す症候群は？",
+          "answer": "Robinシークエンス\n\n[他の選択肢との違い]\n- 唇顎口蓋裂 → × 上顎劣成長→反対咬合\n- Apert症候群 → × 上顎劣成長→反対咬合\n- Crouzon症候群 → × 上顎劣成長→反対咬合\n- Robinシークエンス → ○ 下顎劣成長→上顎前突\n- Beckwith-Wiedemann → × 巨舌→開咬\n\n[ポイント]\nRobin・Treacher Collins＝下顎劣成長→骨格性II級"
+        },
+        {
+          "question": "[105D22] ★★★\nSNA大でローアングルの場合の適切な矯正装置は？",
+          "answer": "サービカルプルヘッドギア\n\n[他の選択肢との違い]\n- 咬合斜面板 → × 機能性反対咬合用\n- リンガルアーチ → × 前歯唇側傾斜用\n- アクチバトール → × 下顎劣成長用\n- ハイプルヘッドギア → × ハイアングル用\n- サービカルプルヘッドギア → ○ ローアングル＋上顎過成長\n\n[ポイント]\nローアングル＝サービカルプル、ハイアングル＝ハイプル"
+        },
+        {
+          "question": "[116C81] ★★\n口唇閉鎖不全でSNA大の場合の適切な矯正装置は？",
+          "answer": "ヘッドギア\n\n[他の選択肢との違い]\n- 咬合斜面板 → × 機能性反対咬合用\n- ヘッドギア → ○ 上顎過成長の抑制\n- Herbst装置 → × 下顎前方誘導用\n- バイオネーター → × 下顎劣成長用\n- リップバンパー → × 加強固定用\n\n[ポイント]\n口唇閉鎖不全＝II級1類、SNA大＝ヘッドギア"
         }
       ]
     }

@@ -1,0 +1,220 @@
+{
+  "metadata": {
+    "title": "プラーク",
+    "chapter": "口腔微生物",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "基本概念",
+      "qa": [
+        {
+          "question": "デンタルプラークとは？",
+          "answer": "歯面に形成される細菌性バイオフィルム"
+        }
+      ]
+    },
+    {
+      "section": "グラム染色による分類（陽性 vs 陰性、球菌 vs 桿菌）",
+      "qa": [
+        {
+          "question": "Streptococcusはグラム陽性か陰性か、球菌か桿菌か？",
+          "answer": "グラム陽性球菌"
+        },
+        {
+          "question": "Actinomycesはグラム陽性か陰性か、球菌か桿菌か？",
+          "answer": "グラム陽性桿菌\n\n[混同注意] Streptococcusは球菌"
+        },
+        {
+          "question": "Enterococcusはグラム陽性か陰性か、球菌か桿菌か？",
+          "answer": "グラム陽性球菌"
+        },
+        {
+          "question": "Veillonellaはグラム陽性か陰性か、球菌か桿菌か？",
+          "answer": "グラム陰性球菌"
+        },
+        {
+          "question": "Neisseriaはグラム陽性か陰性か、球菌か桿菌か？",
+          "answer": "グラム陰性球菌"
+        },
+        {
+          "question": "Porphyromonas gingivalisはグラム陽性か陰性か？",
+          "answer": "グラム陰性（桿菌）"
+        },
+        {
+          "question": "StreptococcusとActinomyces、桿菌は？",
+          "answer": "Actinomyces"
+        },
+        {
+          "question": "グラム陽性球菌の代表は？",
+          "answer": "Streptococcus、Enterococcus"
+        },
+        {
+          "question": "グラム陰性球菌の代表は？",
+          "answer": "Veillonella、Neisseria"
+        },
+        {
+          "question": "グラム陽性桿菌の代表は？",
+          "answer": "Actinomyces、Propionibacterium"
+        },
+        {
+          "question": "[112A30] ★★★\nグラム陽性球菌は？",
+          "answer": "Streptococcus、Enterococcus\n\n[他の選択肢との違い]\n- Actinomyces: グラム陽性桿菌 ← ひっかけ\n- Enterococcus: グラム陽性球菌 ← 正解\n- Neisseria: グラム陰性球菌\n- Streptococcus: グラム陽性球菌 ← 正解\n- Veillonella: グラム陰性球菌\n\n[ポイント]\nグラム陽性球菌＝Streptococcus、Enterococcus。Actinomycesは「桿菌」なので注意。"
+        },
+        {
+          "question": "[108C63] ★★★\nActinomyces viscosusはグラム陽性桿菌か球菌か？",
+          "answer": "グラム陽性桿菌\n\n[他の選択肢との違い]\n- Actinomyces viscosus: グラム陽性桿菌 ← 正解\n- Bacillus subtilis: 枯草菌、土壌菌（口腔常在菌ではない）\n- Porphyromonas gingivalis: グラム陰性桿菌\n- Propionibacterium acnes: グラム陽性桿菌 ← 正解\n- Staphylococcus aureus: グラム陽性球菌\n\n[ポイント]\nグラム陽性桿菌＝Actinomyces、Propionibacterium。S. aureusは「球菌」なので注意。"
+        }
+      ]
+    },
+    {
+      "section": "口腔常在菌 vs 病原菌",
+      "qa": [
+        {
+          "question": "結核菌は口腔常在菌か？",
+          "answer": "口腔常在菌ではない（肺の病原菌）"
+        },
+        {
+          "question": "ジフテリア菌は口腔常在菌か？",
+          "answer": "口腔常在菌ではない（咽頭の病原菌）"
+        },
+        {
+          "question": "Fusobacterium nucleatumは口腔常在菌か？",
+          "answer": "口腔常在菌（プラーク成熟の中期に関与）"
+        },
+        {
+          "question": "Lactobacillus caseiは口腔常在菌か？",
+          "answer": "口腔常在菌"
+        },
+        {
+          "question": "Streptococcus sanguinisは口腔常在菌か？",
+          "answer": "口腔常在菌（歯面初期定着菌）"
+        },
+        {
+          "question": "[113C24] ★★★\n口腔常在菌は？",
+          "answer": "Fusobacterium nucleatum、Lactobacillus casei、Streptococcus sanguinis\n\n[他の選択肢との違い]\n- Corynebacterium diphtheriae: ジフテリア菌（咽頭の病原菌）\n- Fusobacterium nucleatum: 口腔常在菌 ← 正解\n- Lactobacillus casei: 口腔常在菌 ← 正解\n- Mycobacterium tuberculosis: 結核菌（肺の病原菌）\n- Streptococcus sanguinis: 口腔常在菌（歯面初期定着菌） ← 正解\n\n[ポイント]\nジフテリア菌・結核菌は病原菌であり口腔常在菌ではない。"
+        }
+      ]
+    },
+    {
+      "section": "プラーク成熟に伴う菌叢の変化（S → F → N）",
+      "qa": [
+        {
+          "question": "プラーク成熟の初期（0〜2日）に優勢な菌は？",
+          "answer": "Streptococcus（S. sanguinis、S. oralis）、好気性・通性嫌気性菌"
+        },
+        {
+          "question": "プラーク成熟の中期（3〜7日）に優勢な菌は？",
+          "answer": "Fusobacterium（F. nucleatum）、架橋菌として凝集に介在"
+        },
+        {
+          "question": "プラーク成熟期（1〜2週以降）に優勢な菌は？",
+          "answer": "偏性嫌気性菌、グラム陰性桿菌（歯周病原菌）"
+        },
+        {
+          "question": "プラーク成熟の順序を覚える語呂合わせは？",
+          "answer": "S → F → N（Streptococcus → Fusobacterium → Nocardia等の嫌気性菌）"
+        },
+        {
+          "question": "プラーク成熟で嫌気性菌が増加する理由は？",
+          "answer": "初期の好気性菌が酸素を消費 → 嫌気的環境になる → 嫌気性菌が増加"
+        },
+        {
+          "question": "Fusobacteriumの役割は？",
+          "answer": "架橋菌として他の細菌の凝集に介在する"
+        },
+        {
+          "question": "プラーク初期と成熟期、嫌気性菌が多いのは？",
+          "answer": "成熟期"
+        },
+        {
+          "question": "プラーク初期と成熟期、グラム陰性菌が多いのは？",
+          "answer": "成熟期"
+        },
+        {
+          "question": "[105A41] ★★★\n歯肉縁上プラークの成熟に伴う菌の割合の変化の順序は？",
+          "answer": "Streptococcus → Fusobacterium → Nocardia（S → F → N）\n\n[他の選択肢との違い]\n- S ─ N ─ F: × Nocardiaが先に来ている\n- S ─ F ─ N: ○ 正しい順序 ← 正解\n- N ─ S ─ F: × Nocardiaが最初に来ている\n- F ─ N ─ S: × 順序が逆\n- F ─ S ─ N: × 順序が逆\n\n[ポイント]\nS → F → N（好気性→架橋菌→嫌気性）。初期の好気性菌が酸素を消費し嫌気的環境を作る。"
+        }
+      ]
+    },
+    {
+      "section": "成熟プラークの表層部 vs 深層部",
+      "qa": [
+        {
+          "question": "成熟プラークの表層部と深層部、酸素濃度が高いのは？",
+          "answer": "表層部"
+        },
+        {
+          "question": "成熟プラークの表層部と深層部、酸化還元電位が低いのは？",
+          "answer": "深層部（嫌気的環境）"
+        },
+        {
+          "question": "成熟プラークの表層部と深層部、代謝産物が多いのは？",
+          "answer": "深層部（蓄積する）"
+        },
+        {
+          "question": "成熟プラークの表層部と深層部、嫌気性菌が多いのは？",
+          "answer": "深層部"
+        },
+        {
+          "question": "成熟プラークの表層部と深層部、pHが低いのは？",
+          "answer": "深層部（酸性）"
+        },
+        {
+          "question": "深層部の酸化還元電位が低い理由は？",
+          "answer": "酸素が少なく嫌気的環境になるため"
+        },
+        {
+          "question": "[109C89] ★★★\n成熟プラークの深層部の特徴は？",
+          "answer": "酸化還元電位が低い、代謝産物が多い、嫌気性菌が多い\n\n[他の選択肢との違い]\n- pHが高い: × 深層部は酸性（pHが低い）\n- 緩衝能が高い: × 特に高くない\n- 代謝産物が多い: ○ 細菌代謝産物が蓄積 ← 正解\n- 嫌気性菌が少ない: × 嫌気性菌は深層部に多い ← ひっかけ\n- 酸化還元電位が低い: ○ 嫌気的環境 ← 正解\n\n[ポイント]\n深層部＝酸素少ない＝酸化還元電位低い＝嫌気性菌多い＝代謝産物蓄積＝pH低い"
+        }
+      ]
+    },
+    {
+      "section": "クオラムセンシング",
+      "qa": [
+        {
+          "question": "クオラムセンシングとは？",
+          "answer": "細菌が自らの菌密度を感知し、遺伝子発現を制御する機構"
+        },
+        {
+          "question": "クオラムセンシングでバイオフィルム形成が促進される理由は？",
+          "answer": "菌密度が閾値を超えるとオートインデューサーが受容体に結合し、バイオフィルム関連遺伝子の発現が誘導されるため"
+        },
+        {
+          "question": "クオラムセンシングで病原因子産生が制御される理由は？",
+          "answer": "菌密度が高まり集団で行動することで宿主への攻撃が効果的になるため"
+        },
+        {
+          "question": "オートインデューサーとは？",
+          "answer": "細菌が産生するシグナル分子（クオラムセンシングで使用）"
+        },
+        {
+          "question": "オートインデューサーは細菌由来か宿主由来か？",
+          "answer": "細菌由来"
+        },
+        {
+          "question": "[115C87] ★★★\nクオラムセンシング機構でプラーク細菌が感知しているのは？",
+          "answer": "オートインデューサー\n\n[他の選択肢との違い]\n- 補体: 宿主由来の免疫成分\n- サイトカイン: 宿主由来の免疫成分\n- 免疫グロブリン: 宿主由来の抗体\n- 副腎皮質ホルモン: ステロイドホルモン\n- オートインデューサー: 細菌が産生するシグナル分子 ← 正解\n\n[ポイント]\nクオラムセンシング＝オートインデューサー（細菌由来）。補体・サイトカイン・抗体は宿主由来。"
+        }
+      ]
+    },
+    {
+      "section": "閉鎖膿瘍（嫌気性菌優勢）",
+      "qa": [
+        {
+          "question": "閉鎖膿瘍で優勢なのは好気性菌か嫌気性菌か？",
+          "answer": "嫌気性菌（閉鎖環境のため）"
+        },
+        {
+          "question": "閉鎖膿瘍から分離される代表的な嫌気性菌は？",
+          "answer": "Prevotella（グラム陰性桿菌）、Peptostreptococcus（グラム陽性球菌）"
+        },
+        {
+          "question": "[104A96] ★★★\n閉鎖膿瘍から分離される頻度が高いのは？",
+          "answer": "Prevotella、Peptostreptococcus\n\n[他の選択肢との違い]\n- Serratia: 腸内細菌、好気性菌\n- Neisseria: 好気性菌（淋菌・髄膜炎菌）\n- Prevotella: グラム陰性嫌気性桿菌 ← 正解\n- Enterococcus: 通性嫌気性菌（腸球菌）\n- Peptostreptococcus: グラム陽性嫌気性球菌 ← 正解\n\n[ポイント]\n閉鎖膿瘍＝嫌気的環境＝嫌気性菌が優勢。Prevotella、Peptostreptococcusは嫌気性菌。"
+        }
+      ]
+    }
+  ]
+}

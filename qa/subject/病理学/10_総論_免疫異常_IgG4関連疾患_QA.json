@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "title": "免疫異常_IgG4関連疾患",
+    "chapter": "総論",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "定義と特徴",
+      "qa": [
+        {
+          "question": "IgG4関連疾患の定義は？",
+          "answer": "血清IgG4高値とIgG4陽性形質細胞浸潤を特徴とする全身性疾患"
+        },
+        {
+          "question": "IgG4関連疾患の好発は？",
+          "answer": "中高年男性に多い"
+        },
+        {
+          "question": "IgG4関連疾患の治療は？",
+          "answer": "ステロイドが有効"
+        },
+        {
+          "question": "IgG4関連疾患の罹患臓器は？",
+          "answer": "唾液腺、涙腺、膵臓、後腹膜、胆管など"
+        }
+      ]
+    },
+    {
+      "section": "IgG4関連疾患の特徴（118B55）",
+      "qa": [
+        {
+          "question": "IgG4関連疾患で顎下腺の腫脹の経過は？",
+          "answer": "持続性（Sjögren症候群と異なる）"
+        },
+        {
+          "question": "IgG4関連疾患に合併しやすい疾患は？",
+          "answer": "アレルギー疾患（気管支喘息、アレルギー性鼻炎など）"
+        }
+      ]
+    },
+    {
+      "section": "Mikulicz病（IgG4関連涙腺・唾液腺炎）",
+      "qa": [
+        {
+          "question": "Mikulicz病はどの疾患群に属する？",
+          "answer": "IgG4関連疾患"
+        },
+        {
+          "question": "Mikulicz病の臨床所見は？",
+          "answer": "両側対称性の涙腺・唾液腺腫脹"
+        },
+        {
+          "question": "Mikulicz病の病理所見は？",
+          "answer": "IgG4陽性形質細胞浸潤"
+        }
+      ]
+    },
+    {
+      "section": "Küttner腫瘍（IgG4関連顎下腺炎）",
+      "qa": [
+        {
+          "question": "Küttner腫瘍の好発部位は？",
+          "answer": "顎下腺"
+        },
+        {
+          "question": "Küttner腫瘍の臨床所見は？",
+          "answer": "顎下腺が硬く腫大（腫瘍様）"
+        },
+        {
+          "question": "Küttner腫瘍の病理所見は？",
+          "answer": "線維組織の増生、形質細胞浸潤"
+        }
+      ]
+    },
+    {
+      "section": "Sjögren症候群との比較",
+      "qa": [
+        {
+          "question": "IgG4関連疾患とSjögren症候群、中高年男性に多いのは？",
+          "answer": "IgG4関連疾患"
+        },
+        {
+          "question": "IgG4関連疾患とSjögren症候群、唾液腺が硬いのは？",
+          "answer": "IgG4関連疾患（弾性硬）"
+        },
+        {
+          "question": "IgG4関連疾患とSjögren症候群、腫脹が持続するのは？",
+          "answer": "IgG4関連疾患"
+        },
+        {
+          "question": "IgG4関連疾患とSjögren症候群、ステロイドが有効なのは？",
+          "answer": "IgG4関連疾患"
+        },
+        {
+          "question": "[111B29] ★★★\nIgG4関連疾患に該当するのは？",
+          "answer": "Mikulicz病\n\n[他の選択肢との違い]\n- 粘液嚢胞：導管閉塞による嚢胞\n- Mikulicz病：IgG4関連疾患 ← 正解\n- Sjögren症候群：自己免疫疾患（抗SS-A/B抗体陽性）\n- アミロイドーシス：アミロイド沈着\n- 壊死性唾液腺化生：腺組織の壊死・化生\n\n[ポイント]\nMikulicz病 = IgG4関連疾患、Sjögren症候群 = 自己免疫疾患"
+        },
+        {
+          "question": "[118D14] ★★★\n顎下腺が硬く腫大する疾患は？",
+          "answer": "Küttner腫瘍\n\n[他の選択肢との違い]\n- Frey症候群：味覚性発汗（耳下腺術後）\n- Küttner腫瘍：IgG4関連顎下腺炎、線維化で硬い ← 正解\n- Warthin腫瘍：耳下腺良性腫瘍\n- Sjögren症候群：弾性軟、反復性腫脹\n- Heerfordt症候群：サルコイドーシスの一型\n\n[ポイント]\n顎下腺が硬く腫大 = Küttner腫瘍（線維組織増生）"
+        },
+        {
+          "question": "[115A6] ★★★\nMikulicz病の唾液腺の特徴的病理所見は？",
+          "answer": "形質細胞浸潤（IgG4陽性）\n\n[他の選択肢との違い]\n- 壊死：特徴的でない\n- 脂肪化：特徴的でない\n- 石灰化：特徴的でない\n- 膿瘍形成：感染時の所見\n- 形質細胞浸潤：IgG4関連疾患の特徴 ← 正解\n\n[ポイント]\nIgG4関連疾患の病理 = IgG4陽性形質細胞浸潤 + 線維化"
+        },
+        {
+          "question": "[103A54] ★★\nKüttner腫瘍でみられる所見は？",
+          "answer": "線維組織の増生\n\n[他の選択肢との違い]\n- 腺房の増生：腫瘍性の所見\n- 肉芽腫の形成：肉芽腫性炎の所見\n- 好中球の浸潤：急性炎症の所見\n- 線維組織の増生：Küttner腫瘍の特徴 ← 正解\n- 核内封入体の出現：ウイルス感染の所見\n\n[ポイント]\nKüttner腫瘍 = 線維組織増生 → 顎下腺が硬く腫大\n[関連質問]\n- Mikulicz病とSjögren症候群の鑑別点は？ → 自己抗体（SS-A/B）、男女比、ステロイド反応性"
+        }
+      ]
+    }
+  ]
+}

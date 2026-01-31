@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "ミュータンスレンサ球菌",
+    "chapter": "口腔環境と予防",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "概要",
+      "qa": [
+        {
+          "question": "ミュータンスレンサ球菌の基本的特徴は？",
+          "answer": "・齲蝕の主要な原因細菌\n・グラム陽性の通性嫌気性球菌\n・連鎖状に配列"
+        },
+        {
+          "question": "S. mutansとS. sobrinusの違いは？",
+          "answer": "S. mutans＝ほとんどの日本人から検出、主要な齲蝕原因菌\nS. sobrinus＝数%の日本人から検出、酸産生能がS. mutansより高い"
+        }
+      ]
+    },
+    {
+      "section": "S. mutansの4つの病原因子【頻出】",
+      "qa": [
+        {
+          "question": "S. mutansの病原因子の数は？",
+          "answer": "4つ（PAc、GTF、酸産生能、耐酸性）"
+        },
+        {
+          "question": "S. mutansの初期付着に関与する病原因子は？",
+          "answer": "PAc（Ag I/II）：線毛様タンパク質"
+        },
+        {
+          "question": "S. mutansの酸産生能はなぜ齲蝕の原因となる？",
+          "answer": "スクロースを基質に乳酸発酵し、エナメル質を脱灰するため"
+        },
+        {
+          "question": "S. mutansの耐酸性はなぜ重要？",
+          "answer": "自己産生の酸で死滅せず、持続的に酸を産生できるため"
+        },
+        {
+          "question": "PAc（Ag I/II）の役割は？",
+          "answer": "ペリクルへの初期付着に関与する線毛様タンパク質"
+        },
+        {
+          "question": "GTFの役割は？",
+          "answer": "スクロースを基質にグルカンを合成する酵素\n（グルコシルトランスフェラーゼ）"
+        }
+      ]
+    },
+    {
+      "section": "GTFの種類【頻出】",
+      "qa": [
+        {
+          "question": "GTF-Bが産生するグルカンは？",
+          "answer": "不溶性グルカン（ムタン）\n\n[別名] GTF-I"
+        },
+        {
+          "question": "GTF-Cが産生するグルカンは？",
+          "answer": "不溶性・水溶性両方\n\n[別名] GTF-SI"
+        },
+        {
+          "question": "GTF-Dが産生するグルカンは？",
+          "answer": "水溶性グルカン\n\n[別名] GTF-S"
+        },
+        {
+          "question": "菌体結合型GTF（CA-GTF）に分類されるのは？",
+          "answer": "GTF-BとGTF-C"
+        },
+        {
+          "question": "菌体遊離型GTF（CF-GTF）に分類されるのは？",
+          "answer": "GTF-D"
+        },
+        {
+          "question": "歯面への強固な付着に重要なグルカンは？",
+          "answer": "不溶性グルカン（ムタン）\n→ GTF-Bが産生"
+        }
+      ]
+    },
+    {
+      "section": "S. mutansによる齲蝕発生機序【頻出】",
+      "qa": [
+        {
+          "question": "S. mutansが歯面に付着する最初のステップは？",
+          "answer": "PAcを介してペリクルへ初期付着"
+        },
+        {
+          "question": "S. mutansがグルカンを合成する目的は？",
+          "answer": "グルカンを介して歯面に強固に付着するため"
+        },
+        {
+          "question": "S. mutansによるエナメル質の脱灰の機序は？",
+          "answer": "スクロースを乳酸発酵 → 酸産生 → エナメル質脱灰"
+        },
+        {
+          "question": "S. mutansが齲蝕を持続的に進行させる理由は？",
+          "answer": "耐酸性により自己産生の酸で死滅せず、酸産生を繰り返すため"
+        },
+        {
+          "question": "グルカン合成と酸産生の基質となる糖は？",
+          "answer": "スクロース\n\n[混同注意] グルコース、フルクトースではグルカンは合成されない"
+        },
+        {
+          "question": "キシリトールでS. mutansは酸を産生するか？",
+          "answer": "しない\n→ キシリトールが代用甘味料として齲蝕予防に有効な理由"
+        }
+      ]
+    },
+    {
+      "section": "病因論に基づく齲蝕予防",
+      "qa": [
+        {
+          "question": "Keyesの3つの輪とは？",
+          "answer": "宿主・微生物・飲食物"
+        },
+        {
+          "question": "宿主要因に対する予防法は？",
+          "answer": "フッ化物の歯面塗布、小窩裂溝の予防充填（フィッシャーシーラント）"
+        },
+        {
+          "question": "微生物要因に対する予防法は？",
+          "answer": "ブラッシングによる歯面細菌数の減少、茶由来ポリフェノール洗口（S. mutans初期付着の抑制）"
+        },
+        {
+          "question": "飲食物要因に対する予防法は？",
+          "answer": "キシリトールなどの代用糖の利用、スクロース摂取回数の制限"
+        }
+      ]
+    },
+    {
+      "section": "関連する齲蝕原性細菌",
+      "qa": [
+        {
+          "question": "エナメル質齲蝕（初期）の原因菌は？",
+          "answer": "ミュータンスレンサ球菌"
+        },
+        {
+          "question": "象牙質齲蝕（進行期）の原因菌は？",
+          "answer": "Lactobacillus"
+        },
+        {
+          "question": "根面齲蝕の原因菌は？",
+          "answer": "ミュータンスレンサ球菌、Actinomyces"
+        },
+        {
+          "question": "ミュータンスレンサ球菌の存在は齲蝕発症の絶対条件か？",
+          "answer": "いいえ、絶対条件ではない\nS. mitis、S. gordonii、S. oralisなども同程度の酸産生能・耐酸性を有する"
+        }
+      ]
+    }
+  ]
+}

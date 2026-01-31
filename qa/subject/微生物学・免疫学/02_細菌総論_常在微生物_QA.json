@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "title": "常在微生物",
+    "chapter": "細菌総論",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "常在菌の基本",
+      "qa": [
+        {
+          "question": "常在微生物（常在菌叢）とは？",
+          "answer": "健常者の体表面や体腔に定着している微生物群"
+        },
+        {
+          "question": "常在菌が病原菌の定着を防ぐ機構は？",
+          "answer": "定着阻止（競合的に栄養・定着部位を奪う）"
+        }
+      ]
+    },
+    {
+      "section": "部位別常在菌の対比",
+      "qa": [
+        {
+          "question": "皮膚の主要常在菌は？",
+          "answer": "Staphylococcus属（表皮ブドウ球菌など）"
+        },
+        {
+          "question": "口腔（歯面）の主要常在菌は？",
+          "answer": "Streptococcus属（S. sanguinis、S. gordonii）"
+        },
+        {
+          "question": "膣の主要常在菌は？",
+          "answer": "Lactobacillus属（デーデルライン桿菌）"
+        },
+        {
+          "question": "腸管の主要常在菌は？",
+          "answer": "Bacteroides属、Bifidobacterium属"
+        },
+        {
+          "question": "皮膚と口腔、Staphylococcusが多いのは？",
+          "answer": "皮膚"
+        },
+        {
+          "question": "口腔と膣、Lactobacillusが多いのは？",
+          "answer": "膣"
+        },
+        {
+          "question": "[113D28] ★★★\n皮膚の主要常在細菌は？",
+          "answer": "Staphylococcus属\n\n[他の選択肢との違い]\n- Clostridium属: 腸管に常在\n- Enterococcus属: 腸管に常在\n- Lactobacillus属: 膣・腸管に常在\n- Staphylococcus属: 皮膚の主要常在菌 ← 正解\n- Bifidobacterium属: 腸管に常在\n\n[ポイント]\n皮膚＝Staphylococcus。膣＝Lactobacillus。腸管＝Bacteroides、Bifidobacterium。"
+        }
+      ]
+    },
+    {
+      "section": "口腔内レンサ球菌の分類（定着部位別）",
+      "qa": [
+        {
+          "question": "Salivarius群の代表菌種と定着部位は？",
+          "answer": "S. salivarius、舌背・唾液"
+        },
+        {
+          "question": "Mitis群の代表菌種と定着部位は？",
+          "answer": "S. sanguinis、S. gordonii、S. oralis、歯面（初期定着）"
+        },
+        {
+          "question": "Mutans群の代表菌種と特徴は？",
+          "answer": "S. mutans、S. sobrinus、歯面に定着・齲蝕原性"
+        },
+        {
+          "question": "Anginosus群の代表菌種と定着部位は？",
+          "answer": "S. intermedius、S. anginosus、歯肉溝（膿瘍形成と関連）"
+        },
+        {
+          "question": "唾液中に最も多いレンサ球菌は？",
+          "answer": "S. salivarius"
+        },
+        {
+          "question": "舌背と歯面、S. salivariusが多いのは？",
+          "answer": "舌背"
+        },
+        {
+          "question": "舌背と歯面、S. mutansが多いのは？",
+          "answer": "歯面"
+        },
+        {
+          "question": "歯面の初期定着菌は？",
+          "answer": "S. sanguinis、S. gordonii（Mitis群）"
+        },
+        {
+          "question": "[116C83] ★★★\nヒトの舌背を主たる定着部位とするレンサ球菌は？",
+          "answer": "Streptococcus salivarius\n\n[他の選択肢との違い]\n- Streptococcus mutans: 歯面に定着、齲蝕原性菌\n- Streptococcus pyogenes: 咽頭の病原菌（化膿レンサ球菌）\n- Streptococcus sanguinis: 歯面の初期定着菌\n- Streptococcus salivarius: 舌背に定着、唾液中に最多 ← 正解\n- Streptococcus intermedius: 歯肉溝に定着\n\n[ポイント]\n舌背＝S. salivarius（Salivarius群）。歯面＝S. mutans、S. sanguinis。"
+        }
+      ]
+    },
+    {
+      "section": "黄色ブドウ球菌と表皮ブドウ球菌の対比",
+      "qa": [
+        {
+          "question": "皮膚に常在するブドウ球菌は？",
+          "answer": "表皮ブドウ球菌（S. epidermidis）"
+        },
+        {
+          "question": "鼻腔に常在するブドウ球菌は？",
+          "answer": "黄色ブドウ球菌（S. aureus）"
+        },
+        {
+          "question": "表皮ブドウ球菌はコアグラーゼ陽性か陰性か？",
+          "answer": "陰性"
+        },
+        {
+          "question": "黄色ブドウ球菌はコアグラーゼ陽性か陰性か？",
+          "answer": "陽性\n\n[混同注意] 表皮ブドウ球菌はコアグラーゼ陰性"
+        },
+        {
+          "question": "黄色ブドウ球菌と表皮ブドウ球菌、コアグラーゼ陽性は？",
+          "answer": "黄色ブドウ球菌"
+        },
+        {
+          "question": "黄色ブドウ球菌と表皮ブドウ球菌、病原性が高いのは？",
+          "answer": "黄色ブドウ球菌"
+        },
+        {
+          "question": "表皮ブドウ球菌は日和見感染を起こすか？",
+          "answer": "起こすことがある（免疫低下時）"
+        }
+      ]
+    },
+    {
+      "section": "膣の常在菌",
+      "qa": [
+        {
+          "question": "デーデルライン桿菌とは？",
+          "answer": "膣に常在するLactobacillus属の菌"
+        },
+        {
+          "question": "デーデルライン桿菌の役割は？",
+          "answer": "乳酸を産生して膣内を酸性に保ち、病原菌の増殖を抑制"
+        },
+        {
+          "question": "膣内のpHは？",
+          "answer": "pH 4〜5（酸性）"
+        },
+        {
+          "question": "膣内が酸性に保たれる理由は？",
+          "answer": "デーデルライン桿菌（Lactobacillus属）が乳酸を産生するため"
+        },
+        {
+          "question": "[112A21] ★★★\nデーデルライン桿菌が常在する部位は？",
+          "answer": "膣\n\n[他の選択肢との違い]\n- 胃: 強酸性で細菌はほとんど常在しない\n- 膣: デーデルライン桿菌（Lactobacillus属）が常在 ← 正解\n- 口腔: レンサ球菌が主要常在菌\n- 大腸: Bacteroides属、Bifidobacterium属が常在\n- 皮膚: Staphylococcus属が常在\n\n[ポイント]\nデーデルライン桿菌＝Lactobacillus属＝膣。乳酸産生→酸性環境→感染防御。"
+        }
+      ]
+    },
+    {
+      "section": "腸内細菌叢（母乳栄養児 vs 成人）",
+      "qa": [
+        {
+          "question": "母乳栄養児の腸内で優勢な細菌は？",
+          "answer": "Bifidobacterium属（ビフィズス菌）"
+        },
+        {
+          "question": "成人の腸内で優勢な細菌は？",
+          "answer": "Bacteroides属（嫌気性菌）"
+        },
+        {
+          "question": "母乳栄養児と成人、腸内細菌叢が単純なのは？",
+          "answer": "母乳栄養児（Bifidobacterium属が優勢）"
+        },
+        {
+          "question": "母乳栄養児でBifidobacteriumが優勢になる理由は？",
+          "answer": "母乳中のオリゴ糖がBifidobacteriumの増殖を促進するため"
+        },
+        {
+          "question": "成人の腸内で優勢なのは好気性菌か嫌気性菌か？",
+          "answer": "嫌気性菌（Bacteroides属など）"
+        },
+        {
+          "question": "母乳栄養児と人工栄養児、腸内細菌叢が単純なのは？",
+          "answer": "母乳栄養児"
+        },
+        {
+          "question": "[115A40] ★★★\n母乳栄養児の腸内細菌叢で割合が高いのは？",
+          "answer": "Bifidobacterium属\n\n[他の選択肢との違い]\n- Bacteroides属: 成人の腸内で優勢\n- Clostridium属: 腸管常在菌だが優勢ではない\n- Enterobacter属: 腸内細菌科だが優勢ではない\n- Lactobacillus属: 膣に優勢、腸管にも存在\n- Bifidobacterium属: 母乳栄養児で最優勢 ← 正解\n\n[ポイント]\n母乳栄養児＝Bifidobacterium属。成人＝Bacteroides属。母乳中のオリゴ糖がビフィズス菌の増殖を促進。"
+        }
+      ]
+    }
+  ]
+}

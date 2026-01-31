@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "先天異常_染色体異常",
+    "chapter": "総論",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "数的異常",
+      "qa": [
+        {
+          "question": "トリソミーとは？",
+          "answer": "染色体が3本（1本過剰）"
+        },
+        {
+          "question": "モノソミーとは？",
+          "answer": "染色体が1本（1本欠損）"
+        },
+        {
+          "question": "Down症候群の染色体異常は？",
+          "answer": "21トリソミー（21番染色体が3本）"
+        },
+        {
+          "question": "Turner症候群の染色体異常は？",
+          "answer": "45,X（X染色体が1本のみ）"
+        }
+      ]
+    },
+    {
+      "section": "構造異常",
+      "qa": [
+        {
+          "question": "染色体の欠失とは？",
+          "answer": "染色体の一部が欠損"
+        },
+        {
+          "question": "染色体の転座とは？",
+          "answer": "染色体の一部が他の部位に接合"
+        }
+      ]
+    },
+    {
+      "section": "Down症候群（21トリソミー）",
+      "qa": [
+        {
+          "question": "Down症候群の核型は？",
+          "answer": "47,XX(XY),+21"
+        },
+        {
+          "question": "Down症候群の発生頻度が増加する要因は？",
+          "answer": "高齢出産（特に母体年齢35歳以上）"
+        },
+        {
+          "question": "Down症候群の顔貌の特徴は？",
+          "answer": "扁平な顔、内眼角贅皮、巨舌"
+        },
+        {
+          "question": "Down症候群の全身症状は？",
+          "answer": "先天性心疾患、知的障害、低身長"
+        },
+        {
+          "question": "Down症候群の口腔所見は？",
+          "answer": "高口蓋、短根歯、溝状舌"
+        }
+      ]
+    },
+    {
+      "section": "Turner症候群（45,X）",
+      "qa": [
+        {
+          "question": "Turner症候群の発症する性別は？",
+          "answer": "女性のみ"
+        },
+        {
+          "question": "Turner症候群の身体所見は？",
+          "answer": "低身長、翼状頸、外反肘"
+        },
+        {
+          "question": "Turner症候群の内分泌異常は？",
+          "answer": "第二次性徴の発現不全、性腺機能低下"
+        },
+        {
+          "question": "Turner症候群の口腔所見は？",
+          "answer": "高口蓋、小顎症"
+        },
+        {
+          "question": "Turner症候群の知能は？",
+          "answer": "正常（知的障害なし）\n\n[混同注意] Down症候群は知的障害あり"
+        }
+      ]
+    },
+    {
+      "section": "Klinefelter症候群（47,XXY）",
+      "qa": [
+        {
+          "question": "Klinefelter症候群の核型は？",
+          "answer": "47,XXY"
+        },
+        {
+          "question": "Klinefelter症候群の発症する性別は？",
+          "answer": "男性のみ"
+        },
+        {
+          "question": "Klinefelter症候群の身体所見は？",
+          "answer": "高身長、女性化乳房"
+        },
+        {
+          "question": "[113B38] ★★★\n高齢出産により発生頻度が増加する疾患は？",
+          "answer": "Down症候群\n\n[他の選択肢との違い]\n- Down症候群：高齢出産で増加 ← 正解\n- Apert症候群：頭蓋骨早期癒合症（父親の高齢と関連）\n- Crouzon症候群：頭蓋骨早期癒合症\n- 鎖骨頭蓋骨異形成症：常染色体優性\n- Treacher Collins症候群：常染色体優性\n\n[ポイント]\nDown症候群 = 高齢出産（母体年齢35歳以上でリスク増加）"
+        },
+        {
+          "question": "[116C60] ★★★\nTurner症候群の特徴は？",
+          "answer": "小顎症、先天性心疾患、第二次性徴の発現不全\n\n[他の選択肢との違い]\n- 高身長：低身長が正しい ← ひっかけ\n- 小顎症：Turner症候群の口腔所見 ← 正解\n- 知的障害：通常なし ← ひっかけ\n- 先天性心疾患：大動脈縮窄症など ← 正解\n- 第二次性徴の発現不全：性腺機能低下 ← 正解\n\n[ポイント]\nTurner症候群 = 低身長 + 知的障害なし + 第二次性徴不全"
+        },
+        {
+          "question": "[117B76] ★★\n高口蓋を呈する疾患は？",
+          "answer": "Down症候群、Turner症候群、Crouzon症候群\n\n[他の選択肢との違い]\n- Down症候群：高口蓋、巨舌 ← 正解\n- Turner症候群：高口蓋、小顎症 ← 正解\n- Crouzon症候群：高口蓋、眼球突出 ← 正解\n- Klinefelter症候群：高口蓋は特徴的でない\n- Papillon-Lefevre症候群：掌蹠角化症、歯周炎\n\n[ポイント]\n高口蓋 = Down症候群、Turner症候群、Crouzon症候群"
+        },
+        {
+          "question": "[115C61] ★★\n短根歯がみられる疾患は？",
+          "answer": "Down症候群、骨形成不全症\n\n[他の選択肢との違い]\n- Down症候群：短根歯 ← 正解\n- 骨形成不全症：短根歯、象牙質形成不全症 ← 正解\n- 先天性表皮水疱症：水疱形成\n- Papillon-Lefevre症候群：早期歯周炎\n- Treacher Collins症候群：下顎低形成\n\n[ポイント]\n短根歯 = Down症候群、骨形成不全症\n[関連質問]\n- Down症候群とTurner症候群、知的障害があるのは？ → Down症候群\n- 女性のみに発症する染色体異常は？ → Turner症候群"
+        }
+      ]
+    }
+  ]
+}

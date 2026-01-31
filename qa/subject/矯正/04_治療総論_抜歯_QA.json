@@ -1,26 +1,66 @@
 {
   "metadata": {
     "title": "抜歯",
-    "category": "矯正",
-    "chapter": "04_治療総論"
+    "chapter": "治療総論",
+    "category": ""
   },
   "sections": [
+    {
+      "section": "矯正治療における抜歯の目的",
+      "qa": [
+        {
+          "question": "矯正治療で抜歯を行う目的は？",
+          "answer": "叢生の改善（排列スペースの確保）、前歯の後退（口唇突出の改善）、咬合関係の改善"
+        }
+      ]
+    },
+    {
+      "section": "1. Tweedの三角【計算の基礎】",
+      "qa": [
+        {
+          "question": "Tweedの三角を構成する3つの角度は？",
+          "answer": "FMA、FMIA、IMPA"
+        },
+        {
+          "question": "FMAとは？",
+          "answer": "FH平面と下顎下縁平面のなす角（基準値：25°）"
+        },
+        {
+          "question": "FMIAとは？",
+          "answer": "FH平面と下顎中切歯歯軸のなす角（基準値：57°）"
+        },
+        {
+          "question": "IMPAとは？",
+          "answer": "下顎下縁平面と下顎中切歯歯軸のなす角（基準値：90°）"
+        },
+        {
+          "question": "Tweedの三角の公式は？",
+          "answer": "FMA + FMIA + IMPA = 180°"
+        },
+        {
+          "question": "FMIAを求める公式は？",
+          "answer": "FMIA = 180° − FMA − IMPA"
+        }
+      ]
+    },
     {
       "section": "2. Total Discrepancyの計算【頻出】",
       "qa": [
         {
-          "question": "Total discrepancy の算出に用いるのはどれか。2つ選べ。",
-          "answer": "C, E",
-          "choices": {
-            "a": "下顎角",
-            "b": "歯列弓幅径",
-            "c": "永久歯歯冠幅径",
-            "d": "上顎中切歯歯軸角",
-            "e": "Speeの彎曲の深さ"
-          },
-          "correctAnswer": "C, E",
-          "numChoices": 2,
-          "code": "112D60"
+          "question": "Total discrepancyの算出に用いる3つの要素は？",
+          "answer": "ALD（アーチレングスディスクレパンシー）、Spee彎曲の補正、Headplate correction"
+        },
+        {
+          "question": "Headplate correctionの計算式は？",
+          "answer": "(57° − 実測FMIA) × 2 ÷ 25"
+        },
+        {
+          "question": "下顎中切歯を何度舌側傾斜させるのに1mmのスペースが必要か？",
+          "answer": "25度"
+        },
+        {
+          "question": "抜歯適応となるTotal discrepancyの値は？",
+          "answer": "−4mm以下"
         }
       ]
     },
@@ -28,18 +68,58 @@
       "section": "3. 抜歯部位の選択【頻出】",
       "qa": [
         {
-          "question": "14歳の女子。がたがたの歯並びを主訴として来院した。第一大臼歯の咬合関係はAngleⅠ級である。抜歯部位で適切なのはどれか。1つ選べ。",
-          "answer": "B",
-          "choices": {
-            "a": "上顎両側第一小臼歯",
-            "b": "上下顎両側第一小臼歯",
-            "c": "上下顎両側第二小臼歯",
-            "d": "上顎両側第一小臼歯、下顎両側第二小臼歯",
-            "e": "上顎両側第二小臼歯、下顎両側第一小臼歯"
-          },
-          "correctAnswer": "B",
-          "numChoices": 1,
-          "code": "113C54"
+          "question": "矯正治療で最も多く選択される抜歯部位は？",
+          "answer": "第一小臼歯（4番）"
+        },
+        {
+          "question": "犬歯に近い位置で抜歯すると有利になる目的は？",
+          "answer": "前歯の後退"
+        },
+        {
+          "question": "大臼歯に近い位置で抜歯すると有利になる目的は？",
+          "answer": "臼歯関係の改善"
+        },
+        {
+          "question": "AngleⅠ級の叢生症例での抜歯部位は？",
+          "answer": "上下顎両側第一小臼歯（4番）"
+        },
+        {
+          "question": "上顎前突（AngleⅡ級1類）での抜歯部位は？",
+          "answer": "上顎4｜4、下顎5｜5（上顎前歯を大きく後退、下顎は臼歯関係改善）\n\n[混同注意] 上顎と下顎で抜歯部位が異なる"
+        }
+      ]
+    },
+    {
+      "section": "5. 非抜歯治療",
+      "qa": [
+        {
+          "question": "非抜歯治療後に小さくなるセファロ計測値は？",
+          "answer": "FMIA、interincisal angle（前歯の唇側傾斜により）"
+        }
+      ]
+    },
+    {
+      "section": "関連過去問",
+      "qa": [
+        {
+          "question": "[112D60] ★★\nTotal discrepancyの算出に用いるのは？",
+          "answer": "永久歯歯冠幅径、Speeの彎曲の深さ\n\n[他の選択肢との違い]\n- 下顎角 → × TDの算出には使用しない\n- 歯列弓幅径 → × TDの算出には使用しない\n- 永久歯歯冠幅径 → ○ ALDの算出に必要\n- 上顎中切歯歯軸角 → × TDの算出には使用しない（下顎中切歯歯軸を使用）\n- Speeの彎曲の深さ → ○ Spee補正に必要\n\n[ポイント]\nTD = ALD + Spee補正 + Headplate correction"
+        },
+        {
+          "question": "[113C54] ★★\nAngleⅠ級の叢生で抜歯部位として適切なのは？",
+          "answer": "上下顎両側第一小臼歯\n\n[他の選択肢との違い]\n- 上顎両側第一小臼歯 → × 上顎だけでは不十分\n- 上下顎両側第一小臼歯 → ○ AngleⅠ級の基本パターン\n- 上下顎両側第二小臼歯 → × 基本は第一小臼歯\n- 上顎両側第一、下顎両側第二 → × Ⅱ級1類のパターン\n- 上顎両側第二、下顎両側第一 → × 通常は選択しない\n\n[ポイント]\nAngleⅠ級叢生＝上下同じ部位（4番）を抜歯"
+        },
+        {
+          "question": "[110A48] ★★\n非抜歯治療後に小さくなるセファロ計測値は？",
+          "answer": "FMIA、interincisal angle\n\n[他の選択肢との違い]\n- SNA角 → × 骨格指標なので変化しない\n- SNB角 → × 骨格指標なので変化しない\n- 顔面角 → × 骨格指標なので変化しない\n- FMIA → ○ 下顎中切歯が唇側傾斜→FMIAが小さくなる\n- interincisal angle → ○ 上下切歯が唇側傾斜→角度が小さくなる\n\n[ポイント]\n非抜歯治療＝前歯の唇側傾斜→FMIA↓、interincisal angle↓"
+        },
+        {
+          "question": "[113A89] ★★★（計算問題）\nFMIAが49.5°の場合のHeadplate correctionは？（FMIA基準値57°）",
+          "answer": "0.6mm"
+        },
+        {
+          "question": "[113B89] ★★★（計算問題）\nIMPA 99°、FMA 29°、Available 65.5mm、Required 70.0mmのTotal discrepancyは？",
+          "answer": "−8.5mm"
         }
       ]
     }

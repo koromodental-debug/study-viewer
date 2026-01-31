@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "title": "歯口清掃状態の統計指標",
+    "chapter": "疫学の指標",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "OHIの基礎",
+      "qa": [
+        {
+          "question": "OHIは何の略？",
+          "answer": "Oral Hygiene Index（口腔清掃指数）"
+        },
+        {
+          "question": "OHIは誰が提唱した？",
+          "answer": "Greene & Vermillion（1960年）"
+        },
+        {
+          "question": "OHIの計算式は？",
+          "answer": "OHI = DI（歯垢指数） + CI（歯石指数）"
+        },
+        {
+          "question": "OHIの最高点は？",
+          "answer": "12点（DI 6点 + CI 6点）"
+        }
+      ]
+    },
+    {
+      "section": "DIスコア（Debris Index：歯垢指数）",
+      "qa": [
+        {
+          "question": "DIのスコア基準は？",
+          "answer": "0=付着なし、1=1/3以内、2=1/3〜2/3、3=2/3以上\n\n[混同注意] 歯冠部の付着範囲で判定"
+        }
+      ]
+    },
+    {
+      "section": "CIスコア（Calculus Index：歯石指数）",
+      "qa": [
+        {
+          "question": "CIのスコア基準は？",
+          "answer": "0=付着なし、1=1/3以内、2=1/3〜2/3または点状縁下歯石、3=2/3以上または帯状縁下歯石"
+        },
+        {
+          "question": "CIスコア2の条件は？",
+          "answer": "縁上歯石が1/3〜2/3、または点状の縁下歯石"
+        },
+        {
+          "question": "CIスコア3の条件は？",
+          "answer": "縁上歯石が2/3以上、または帯状の縁下歯石"
+        }
+      ]
+    },
+    {
+      "section": "OHI-S",
+      "qa": [
+        {
+          "question": "OHI-Sは何の略？",
+          "answer": "Simplified Oral Hygiene Index（簡易口腔衛生指数）"
+        },
+        {
+          "question": "OHI-Sの被験歯は何本？",
+          "answer": "6本"
+        },
+        {
+          "question": "OHI-Sの上顎被験歯は？",
+          "answer": "16、11、26（頬側面）"
+        },
+        {
+          "question": "OHI-Sの下顎被験歯は？",
+          "answer": "46、31、36（46・36は舌側面、31は頬側面）\n\n[混同注意] 下顎臼歯は舌側面"
+        },
+        {
+          "question": "OHI-Sの最高点は？",
+          "answer": "6点\n\n[関連質問]\n- 中切歯欠損時の代替歯は？ → 反対側中切歯\n- 第一大臼歯欠損時の代替歯は？ → 第二大臼歯"
+        }
+      ]
+    },
+    {
+      "section": "PCR",
+      "qa": [
+        {
+          "question": "PCRは何の略？",
+          "answer": "Plaque Control Record（プラークコントロールレコード）"
+        },
+        {
+          "question": "PCRは誰が提唱した？",
+          "answer": "O'Leary"
+        },
+        {
+          "question": "PCRの計算式は？",
+          "answer": "プラーク付着歯面数 ÷ 全被検歯面数 × 100"
+        },
+        {
+          "question": "PCRで評価する歯面数は？",
+          "answer": "4面（頬・舌・近心・遠心）"
+        },
+        {
+          "question": "PCRの目標値は？",
+          "answer": "20%以下"
+        },
+        {
+          "question": "PCRの検査方法は？",
+          "answer": "染め出し後、視診で判定\n\n[混同注意] プローブは使用しない"
+        }
+      ]
+    },
+    {
+      "section": "指標の比較",
+      "qa": [
+        {
+          "question": "プローブを使用しない口腔清掃指標は？",
+          "answer": "OHI、OHI-S、PCR（すべて視診で評価）"
+        },
+        {
+          "question": "染め出しを使用する指標は？",
+          "answer": "PCR"
+        },
+        {
+          "question": "歯垢と歯石の両方を評価する指標は？",
+          "answer": "OHI、OHI-S"
+        }
+      ]
+    }
+  ]
+}

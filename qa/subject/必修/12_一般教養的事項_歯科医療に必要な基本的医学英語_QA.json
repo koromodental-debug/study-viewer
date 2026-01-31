@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "title": "歯科医療に必要な基本的医学英語",
+    "chapter": "一般教養的事項",
+    "category": ""
+  },
+  "sections": [
+    {
+      "section": "医療面接関連",
+      "qa": [
+        {
+          "question": "chief complaintの日本語訳は？",
+          "answer": "主訴"
+        },
+        {
+          "question": "medical historyの日本語訳は？",
+          "answer": "既往歴"
+        },
+        {
+          "question": "family historyの日本語訳は？",
+          "answer": "家族歴"
+        },
+        {
+          "question": "diagnosisの日本語訳は？",
+          "answer": "診断"
+        },
+        {
+          "question": "medicationの日本語訳は？",
+          "answer": "服薬・投薬"
+        },
+        {
+          "question": "[115D10] ★★★\n患者自身の言葉で述べた、歯科医院を訪れた動機となる主観的症状を英語で何というか？",
+          "answer": "chief complaint（主訴）\n\n[他の選択肢との違い]\n- diagnosis：診断（医師が行うもの）\n- medication：服薬・投薬\n- family history：家族歴\n- chief complaint：主訴 ← 正解\n- medical history：既往歴\n\n[ポイント]\nchief = 主な、complaint = 訴え → 主訴"
+        }
+      ]
+    },
+    {
+      "section": "歯の部位・方向",
+      "qa": [
+        {
+          "question": "labialの日本語訳は？",
+          "answer": "唇側"
+        },
+        {
+          "question": "lingualの日本語訳は？",
+          "answer": "舌側"
+        },
+        {
+          "question": "mesialの日本語訳は？",
+          "answer": "近心"
+        },
+        {
+          "question": "distalの日本語訳は？",
+          "answer": "遠心"
+        },
+        {
+          "question": "occlusalの日本語訳は？",
+          "answer": "咬合面"
+        },
+        {
+          "question": "[109A1] ★★★\nポーセレンラミネートベニアを前歯に接着する面を英語で何というか？",
+          "answer": "labial surface（唇側面）\n\n[他の選択肢との違い]\n- distal：遠心（審美目的では不適）\n- labial：唇側 ← 正解（見える面）\n- lingual：舌側（見えない面）\n- mesial：近心（隣接面）\n- occlusal：咬合面（臼歯の噛み合わせ面）\n\n[ポイント]\nラミネートベニア＝審美目的＝見える面（唇側）"
+        }
+      ]
+    },
+    {
+      "section": "全身疾患",
+      "qa": [
+        {
+          "question": "diabetes mellitusの日本語訳は？",
+          "answer": "糖尿病"
+        },
+        {
+          "question": "hepatitisの日本語訳は？",
+          "answer": "肝炎"
+        },
+        {
+          "question": "myocardial infarctionの日本語訳は？",
+          "answer": "心筋梗塞"
+        },
+        {
+          "question": "osteoporosisの日本語訳は？",
+          "answer": "骨粗鬆症"
+        },
+        {
+          "question": "[113D3] ★★★\n膵臓のインスリン産生の欠乏またはインスリン効果の低下による慢性疾患を英語で何というか？",
+          "answer": "diabetes mellitus（糖尿病）\n\n[他の選択肢との違い]\n- Hepatitis：肝炎（肝臓の炎症）\n- Periodontitis：歯周炎\n- Osteoporosis：骨粗鬆症\n- Diabetes mellitus：糖尿病 ← 正解\n- Myocardial infarction：心筋梗塞\n\n[ポイント]\ndiabetes = 尿に関する、mellitus = 蜂蜜のような（甘い）→ 糖尿病"
+        }
+      ]
+    },
+    {
+      "section": "口腔疾患",
+      "qa": [
+        {
+          "question": "tooth erosionの日本語訳は？",
+          "answer": "酸蝕症"
+        },
+        {
+          "question": "early childhood cariesの日本語訳は？",
+          "answer": "早期小児う蝕（ECC）"
+        },
+        {
+          "question": "periodontitisの日本語訳は？",
+          "answer": "歯周炎"
+        },
+        {
+          "question": "[111A17] ★★★\n酸への曝露による歯質の不可逆的喪失を英語で何というか？",
+          "answer": "tooth erosion\n\n[他の選択肢との違い]\n- acids：酸 ← 正解（原因物質）\n- bacteria：細菌（う蝕の原因）\n- carbohydrates：炭水化物（う蝕の原因）\n- fluorides：フッ化物（予防に使用）\n- saliva：唾液（防御因子）\n\n[ポイント]\nerosion（酸蝕症）= 酸、caries（う蝕）= 細菌"
+        },
+        {
+          "question": "[110A10] ★★\n早期小児う蝕の予防を英語で何というか？",
+          "answer": "prevention of early childhood caries\n\n[他の選択肢との違い]\n- treatment：治療\n- prevention：予防 ← 正解\n- restoration：修復\n- development：発症・進行\n- decalcification：脱灰\n\n[ポイント]\nスクロース摂取を避ける＝予防（prevention）"
+        }
+      ]
+    },
+    {
+      "section": "薬剤関連",
+      "qa": [
+        {
+          "question": "local anestheticsの日本語訳は？",
+          "answer": "局所麻酔薬"
+        },
+        {
+          "question": "narcotic analgesicsの日本語訳は？",
+          "answer": "麻薬性鎮痛薬"
+        },
+        {
+          "question": "NSAIDsの日本語訳は？",
+          "answer": "非ステロイド性抗炎症薬"
+        },
+        {
+          "question": "muscle relaxantsの日本語訳は？",
+          "answer": "筋弛緩薬"
+        },
+        {
+          "question": "antibacterial agentsの日本語訳は？",
+          "answer": "抗菌薬"
+        },
+        {
+          "question": "[113C5] ★★★\n電位依存性Na+チャネルを遮断して神経活動を抑制する薬物を英語で何というか？",
+          "answer": "local anesthetics（局所麻酔薬）\n\n[他の選択肢との違い]\n- Antibacterial agents：抗菌薬（細菌を殺す）\n- Local anesthetics：局所麻酔薬 ← 正解\n- Muscle relaxants：筋弛緩薬（筋肉に作用）\n- Narcotic analgesics：麻薬性鎮痛薬（中枢神経に作用）\n- Nonsteroidal anti-inflammatory drugs：NSAIDs（抗炎症）\n\n[ポイント]\nNa+チャネル遮断＝局所麻酔の作用機序"
+        }
+      ]
+    },
+    {
+      "section": "ワクチン・副反応",
+      "qa": [
+        {
+          "question": "feverの日本語訳は？",
+          "answer": "発熱"
+        },
+        {
+          "question": "coughの日本語訳は？",
+          "answer": "咳"
+        },
+        {
+          "question": "sore throatの日本語訳は？",
+          "answer": "咽頭痛"
+        },
+        {
+          "question": "loss of tasteの日本語訳は？",
+          "answer": "味覚喪失"
+        },
+        {
+          "question": "smell disturbanceの日本語訳は？",
+          "answer": "嗅覚障害"
+        },
+        {
+          "question": "[116D8] ★★\nCOVID-19ワクチンの主な副反応を英語で何というか？",
+          "answer": "fever（発熱）\n\n[他の選択肢との違い]\n- Cough：咳（感染症状）\n- Fever：発熱 ← 正解（ワクチン副反応）\n- Loss of taste：味覚喪失（感染症状）\n- Smell disturbance：嗅覚障害（感染症状）\n- Sore throat：咽頭痛（感染症状）\n\n[ポイント]\nワクチン副反応＝発熱、感染症状＝味覚・嗅覚障害"
+        }
+      ]
+    },
+    {
+      "section": "歯科材料",
+      "qa": [
+        {
+          "question": "alginateの日本語訳は？",
+          "answer": "アルジネート"
+        },
+        {
+          "question": "agarの日本語訳は？",
+          "answer": "寒天"
+        },
+        {
+          "question": "polyetherの日本語訳は？",
+          "answer": "ポリエーテルゴム"
+        },
+        {
+          "question": "polydimethylsiloxaneの日本語訳は？",
+          "answer": "シリコーンゴム"
+        },
+        {
+          "question": "[112C8] ★★★\n海藻由来で化学反応により弾性ハイドロコロイド印象材を形成するのは？",
+          "answer": "alginate（アルジネート）\n\n[他の選択肢との違い]\n- agar：寒天（可逆性、熱で変化）← ひっかけ\n- alginate：アルジネート ← 正解（不可逆性、化学反応）\n- polyether：ポリエーテルゴム（合成ゴム）\n- zinc oxide eugenol：酸化亜鉛ユージノール\n- polydimethylsiloxane：シリコーンゴム\n\n[ポイント]\nalginate = 海藻由来 + 化学反応（不可逆性）\nagar = 海藻由来 + 熱変化（可逆性）"
+        }
+      ]
+    },
+    {
+      "section": "学問分野",
+      "qa": [
+        {
+          "question": "epidemiologyの日本語訳は？",
+          "answer": "疫学"
+        },
+        {
+          "question": "physiologyの日本語訳は？",
+          "answer": "生理学"
+        },
+        {
+          "question": "anatomyの日本語訳は？",
+          "answer": "解剖学"
+        },
+        {
+          "question": "pharmacologyの日本語訳は？",
+          "answer": "薬理学"
+        },
+        {
+          "question": "biochemistryの日本語訳は？",
+          "answer": "生化学"
+        },
+        {
+          "question": "pedodonticsの日本語訳は？",
+          "answer": "小児歯科学"
+        },
+        {
+          "question": "periodontologyの日本語訳は？",
+          "answer": "歯周病学"
+        },
+        {
+          "question": "prosthodonticsの日本語訳は？",
+          "answer": "補綴歯科学"
+        },
+        {
+          "question": "endodonticsの日本語訳は？",
+          "answer": "歯内療法学"
+        },
+        {
+          "question": "orthodonticsの日本語訳は？",
+          "answer": "矯正歯科学"
+        },
+        {
+          "question": "[114D7] ★★★\n特定集団における健康関連状態・事象の分布と決定因子を研究する学問を英語で何というか？",
+          "answer": "epidemiology（疫学）\n\n[他の選択肢との違い]\n- Anatomy：解剖学（構造を研究）\n- Biochemistry：生化学（化学反応を研究）\n- Epidemiology：疫学 ← 正解\n- Pharmacology：薬理学（薬を研究）\n- Physiology：生理学（機能を研究）\n\n[ポイント]\nepi（上）+ demos（人々）+ logy（学問）＝集団の上で起こることを研究"
+        },
+        {
+          "question": "[108A1] ★★\n生命の起源・発達・進行に関する物理的・化学的因子を説明する学問を英語で何というか？",
+          "answer": "physiology（生理学）\n\n[他の選択肢との違い]\n- pedodontics：小児歯科学\n- periodontology：歯周病学\n- physiology：生理学 ← 正解\n- prosthodontics：補綴歯科学\n- psychology：心理学\n\n[ポイント]\nphysio（自然・生命）+ logy（学問）＝生理学"
+        }
+      ]
+    }
+  ]
+}

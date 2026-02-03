@@ -2226,10 +2226,14 @@ const FlashcardModule = (function() {
       </div>
       ` : ''}
 
-      <!-- 表穴埋め -->
+      <!-- 表穴埋め（アコーディオン） -->
       <div class="table-occlusion-section">
-        <h3 class="section-title">表穴埋め</h3>
-        <div class="table-deck-list" id="table-deck-list">
+        <button class="table-occlusion-toggle" id="table-occlusion-toggle">
+          <span class="table-occlusion-toggle-icon">📋</span>
+          <span class="table-occlusion-toggle-text">表穴埋め</span>
+          <span class="table-occlusion-toggle-chevron">›</span>
+        </button>
+        <div class="table-deck-list collapsed" id="table-deck-list">
           <!-- 必修 -->
           <div class="table-deck-category" style="color: #FF9500">必修</div>
           <button class="table-deck-item" data-deck="deck/必修_table_deck.json">
@@ -2963,6 +2967,18 @@ const FlashcardModule = (function() {
     const dailyTenListBtn = document.getElementById('daily-ten-list');
     if (dailyTenListBtn) {
       dailyTenListBtn.addEventListener('click', () => renderDailyTenCardList());
+    }
+
+    // 表穴埋めアコーディオン
+    const tableOcclusionToggle = document.getElementById('table-occlusion-toggle');
+    if (tableOcclusionToggle) {
+      tableOcclusionToggle.addEventListener('click', () => {
+        const deckList = document.getElementById('table-deck-list');
+        if (deckList) {
+          deckList.classList.toggle('collapsed');
+          tableOcclusionToggle.classList.toggle('expanded');
+        }
+      });
     }
 
     // 表穴埋めデッキ

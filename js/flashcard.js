@@ -68,6 +68,8 @@ const FlashcardModule = (function() {
     'kameyasuka@gmail.com',
     'hidetoshimgx@gmail.com',
     'ryotasetohryotasetoh@gmail.com',
+    '520020sagawatatsuya@gmail.com',
+    '521021tanakamoyuru@gmail.com',
   ];
 
   // コラボレーターかどうかをチェック

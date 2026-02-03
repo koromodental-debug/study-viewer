@@ -8175,6 +8175,15 @@ body.is-practice .tab-content {
   text-align: center;
 }
 
+/* 画像問題の画像表示 - 切れないようにする */
+.flashcard-question img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px auto;
+  border-radius: 8px;
+}
+
 /* タップヒント（カード内）- 読めるけど邪魔しない */
 .flashcard-tap-hint {
   text-align: center;
@@ -16012,4 +16021,259 @@ body.is-practice .close-accordion-pill {
   :root:not([data-theme="light"]) .close-accordion-pill:active {
     background: rgba(58, 58, 60, 0.95);
   }
+}
+
+/* === テーブル穴埋めカード === */
+
+.table-occlusion-mode .table-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.table-card-container {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.table-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.table-card-question {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+}
+
+.table-card-question .question-key {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.table-card-question .question-label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.occlusion-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.occlusion-table th,
+.occlusion-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.occlusion-table th {
+  background: var(--bg-secondary);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.occlusion-table .key-cell {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.occlusion-table .current-row {
+  background: #FFFDE7;
+}
+
+.occlusion-table .occluded-cell {
+  background: #1D1D1F;
+  color: #1D1D1F;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+.occlusion-table .occluded-cell:hover {
+  background: #3D3D3F;
+}
+
+.occlusion-table .revealed-cell {
+  background: #E8F4FD;
+  color: #0071E3;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.table-tap-hint {
+  text-align: center;
+  margin-top: 16px;
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
+
+.flashcard-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+.flashcard-complete .complete-icon {
+  width: 80px;
+  height: 80px;
+  background: #34C759;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: 24px;
+}
+
+.flashcard-complete h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.flashcard-complete p {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.flashcard-back-btn-large {
+  padding: 14px 32px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .table-card-container {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .occlusion-table .current-row {
+  background: rgba(255, 253, 231, 0.1);
+}
+
+[data-theme="dark"] .occlusion-table .occluded-cell {
+  background: #E5E5E5;
+  color: #E5E5E5;
+}
+
+[data-theme="dark"] .occlusion-table .revealed-cell {
+  background: rgba(0, 113, 227, 0.2);
+  color: #0A84FF;
+}
+
+/* === 表穴埋めセクション === */
+
+.table-occlusion-section {
+  margin: 16px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.table-occlusion-section .section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.table-deck-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.table-deck-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.table-deck-item:hover {
+  background: var(--bg-tertiary, #E5E5E5);
+}
+
+.table-deck-icon {
+  font-size: 24px;
+}
+
+.table-deck-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.table-deck-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.table-deck-stats {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.table-deck-arrow {
+  font-size: 18px;
+  color: var(--text-tertiary);
+}
+
+.table-deck-category {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 12px 0 4px 0;
+  margin-top: 4px;
+}
+
+.table-deck-category:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* ダークモード */
+[data-theme="dark"] .table-occlusion-section {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .table-deck-item {
+  background: var(--bg-tertiary);
 }

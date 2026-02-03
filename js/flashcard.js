@@ -2233,7 +2233,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">必修</span>
-              <span class="table-deck-stats">350表 / 1994問</span>
+              <span class="table-deck-stats">223表 / 347問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2243,7 +2243,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">解剖学</span>
-              <span class="table-deck-stats">80表 / 611問</span>
+              <span class="table-deck-stats">35表 / 62問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2251,7 +2251,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">組織学</span>
-              <span class="table-deck-stats">36表 / 266問</span>
+              <span class="table-deck-stats">20表 / 34問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2259,7 +2259,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">生理学</span>
-              <span class="table-deck-stats">137表 / 929問</span>
+              <span class="table-deck-stats">57表 / 98問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2267,7 +2267,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">生化学</span>
-              <span class="table-deck-stats">81表 / 470問</span>
+              <span class="table-deck-stats">37表 / 62問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2275,7 +2275,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">病理学</span>
-              <span class="table-deck-stats">230表 / 1255問</span>
+              <span class="table-deck-stats">195表 / 494問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2283,7 +2283,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">微生物学・免疫学</span>
-              <span class="table-deck-stats">62表 / 517問</span>
+              <span class="table-deck-stats">40表 / 86問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2291,7 +2291,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">薬理学</span>
-              <span class="table-deck-stats">85表 / 485問</span>
+              <span class="table-deck-stats">30表 / 46問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2299,7 +2299,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">歯科理工学</span>
-              <span class="table-deck-stats">180表 / 1282問</span>
+              <span class="table-deck-stats">66表 / 134問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2309,7 +2309,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">保存修復学</span>
-              <span class="table-deck-stats">68表 / 369問</span>
+              <span class="table-deck-stats">25表 / 38問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2317,7 +2317,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">歯内療法学</span>
-              <span class="table-deck-stats">89表 / 576問</span>
+              <span class="table-deck-stats">41表 / 66問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2325,7 +2325,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">歯周病学</span>
-              <span class="table-deck-stats">92表 / 560問</span>
+              <span class="table-deck-stats">49表 / 84問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2335,7 +2335,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">全部床義歯学</span>
-              <span class="table-deck-stats">48表 / 220問</span>
+              <span class="table-deck-stats">12表 / 17問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2343,7 +2343,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">部分床義歯学</span>
-              <span class="table-deck-stats">25表 / 118問</span>
+              <span class="table-deck-stats">8表 / 16問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2351,7 +2351,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">冠橋義歯学</span>
-              <span class="table-deck-stats">107表 / 603問</span>
+              <span class="table-deck-stats">30表 / 66問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2359,7 +2359,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">インプラント</span>
-              <span class="table-deck-stats">16表 / 137問</span>
+              <span class="table-deck-stats">9表 / 26問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2369,7 +2369,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">口腔外科学</span>
-              <span class="table-deck-stats">71表 / 532問</span>
+              <span class="table-deck-stats">16表 / 39問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2377,7 +2377,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">小児歯科</span>
-              <span class="table-deck-stats">112表 / 693問</span>
+              <span class="table-deck-stats">71表 / 135問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2385,7 +2385,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">矯正</span>
-              <span class="table-deck-stats">172表 / 954問</span>
+              <span class="table-deck-stats">44表 / 81問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2393,7 +2393,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">摂食嚥下</span>
-              <span class="table-deck-stats">16表 / 100問</span>
+              <span class="table-deck-stats">11表 / 15問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2403,7 +2403,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">公衆衛生</span>
-              <span class="table-deck-stats">107表 / 683問</span>
+              <span class="table-deck-stats">53表 / 87問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2411,7 +2411,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">疫学</span>
-              <span class="table-deck-stats">62表 / 381問</span>
+              <span class="table-deck-stats">26表 / 46問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -2419,7 +2419,7 @@ const FlashcardModule = (function() {
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">口腔衛生</span>
-              <span class="table-deck-stats">72表 / 496問</span>
+              <span class="table-deck-stats">21表 / 40問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>

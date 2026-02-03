@@ -159,7 +159,10 @@ const FlashcardModule = (function() {
     revealedCells: new Set(),
     isTableCard: false,
     currentCard: null,
-    currentDeck: null
+    currentDeck: null,
+    currentCardIndex: 0,
+    totalOcclusions: 0,
+    globalOcclusionIndex: 0
   };
 
   // DOM要素
@@ -2224,11 +2227,199 @@ const FlashcardModule = (function() {
       <div class="table-occlusion-section">
         <h3 class="section-title">表穴埋め</h3>
         <div class="table-deck-list" id="table-deck-list">
+          <!-- 必修 -->
+          <div class="table-deck-category" style="color: #FF9500">必修</div>
+          <button class="table-deck-item" data-deck="deck/必修_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">必修</span>
+              <span class="table-deck-stats">350表 / 1994問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <!-- 基礎系 -->
+          <div class="table-deck-category" style="color: #007AFF">基礎系</div>
+          <button class="table-deck-item" data-deck="deck/解剖学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">解剖学</span>
+              <span class="table-deck-stats">80表 / 611問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/組織学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">組織学</span>
+              <span class="table-deck-stats">36表 / 266問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/生理学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">生理学</span>
+              <span class="table-deck-stats">137表 / 929問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/生化学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">生化学</span>
+              <span class="table-deck-stats">81表 / 470問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/病理学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">病理学</span>
+              <span class="table-deck-stats">230表 / 1255問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/微生物学・免疫学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">微生物学・免疫学</span>
+              <span class="table-deck-stats">62表 / 517問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/薬理学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">薬理学</span>
+              <span class="table-deck-stats">85表 / 485問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/歯科理工学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">歯科理工学</span>
+              <span class="table-deck-stats">180表 / 1282問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <!-- 保存系 -->
+          <div class="table-deck-category" style="color: #34C759">保存系</div>
+          <button class="table-deck-item" data-deck="deck/保存修復学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">保存修復学</span>
+              <span class="table-deck-stats">68表 / 369問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/歯内療法学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">歯内療法学</span>
+              <span class="table-deck-stats">89表 / 576問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/歯周病学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">歯周病学</span>
+              <span class="table-deck-stats">92表 / 560問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <!-- 補綴系 -->
+          <div class="table-deck-category" style="color: #AF52DE">補綴系</div>
+          <button class="table-deck-item" data-deck="deck/全部床義歯学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">全部床義歯学</span>
+              <span class="table-deck-stats">48表 / 220問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/部分床義歯学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">部分床義歯学</span>
+              <span class="table-deck-stats">25表 / 118問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/冠橋義歯学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">冠橋義歯学</span>
+              <span class="table-deck-stats">107表 / 603問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/インプラント_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">インプラント</span>
+              <span class="table-deck-stats">16表 / 137問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <!-- 外科系 -->
+          <div class="table-deck-category" style="color: #FF3B30">外科系</div>
+          <button class="table-deck-item" data-deck="deck/口腔外科学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">口腔外科学</span>
+              <span class="table-deck-stats">71表 / 532問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/小児歯科_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">小児歯科</span>
+              <span class="table-deck-stats">112表 / 693問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
           <button class="table-deck-item" data-deck="deck/矯正_table_deck.json">
             <span class="table-deck-icon">📋</span>
             <span class="table-deck-info">
               <span class="table-deck-name">矯正</span>
               <span class="table-deck-stats">172表 / 954問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/摂食嚥下_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">摂食嚥下</span>
+              <span class="table-deck-stats">16表 / 100問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <!-- 社会歯科系 -->
+          <div class="table-deck-category" style="color: #5AC8FA">社会歯科系</div>
+          <button class="table-deck-item" data-deck="deck/公衆衛生_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">公衆衛生</span>
+              <span class="table-deck-stats">107表 / 683問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/疫学_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">疫学</span>
+              <span class="table-deck-stats">62表 / 381問</span>
+            </span>
+            <span class="table-deck-arrow">›</span>
+          </button>
+          <button class="table-deck-item" data-deck="deck/口腔衛生_table_deck.json">
+            <span class="table-deck-icon">📋</span>
+            <span class="table-deck-info">
+              <span class="table-deck-name">口腔衛生</span>
+              <span class="table-deck-stats">72表 / 496問</span>
             </span>
             <span class="table-deck-arrow">›</span>
           </button>
@@ -5595,8 +5786,13 @@ const FlashcardModule = (function() {
       const deck = await response.json();
       tableOcclusionState.currentDeck = deck;
       tableOcclusionState.currentOcclusionIndex = 0;
+      tableOcclusionState.currentCardIndex = 0;
       tableOcclusionState.revealedCells.clear();
       tableOcclusionState.isTableCard = true;
+
+      // デッキ全体の穴埋め総数を計算
+      tableOcclusionState.totalOcclusions = deck.cards.reduce((sum, card) => sum + card.occlusions.length, 0);
+      tableOcclusionState.globalOcclusionIndex = 0;
 
       // 最初のカードを設定
       if (deck.cards && deck.cards.length > 0) {
@@ -5662,8 +5858,9 @@ const FlashcardModule = (function() {
 
     enterPracticeMode();
 
-    const current = tableOcclusionState.currentOcclusionIndex + 1;
-    const total = card.occlusions.length;
+    // デッキ全体の進捗を表示
+    const current = tableOcclusionState.globalOcclusionIndex + 1;
+    const total = tableOcclusionState.totalOcclusions;
     const progressPercent = (current / total) * 100;
     const isRevealed = state.isFlipped;
 
@@ -5741,14 +5938,15 @@ const FlashcardModule = (function() {
   function advanceTableOcclusion() {
     const card = tableOcclusionState.currentCard;
     tableOcclusionState.currentOcclusionIndex++;
+    tableOcclusionState.globalOcclusionIndex++;
     state.isFlipped = false;
 
     if (tableOcclusionState.currentOcclusionIndex >= card.occlusions.length) {
       // 次のカード（表）へ
       const deck = tableOcclusionState.currentDeck;
-      const currentCardIndex = deck.cards.indexOf(card);
-      if (currentCardIndex < deck.cards.length - 1) {
-        tableOcclusionState.currentCard = deck.cards[currentCardIndex + 1];
+      tableOcclusionState.currentCardIndex++;
+      if (tableOcclusionState.currentCardIndex < deck.cards.length) {
+        tableOcclusionState.currentCard = deck.cards[tableOcclusionState.currentCardIndex];
         tableOcclusionState.currentOcclusionIndex = 0;
         tableOcclusionState.revealedCells.clear();
         renderTableOcclusionCard();
@@ -8826,6 +9024,9 @@ const FlashcardModule = (function() {
       tableOcclusionState.currentCard = null;
       tableOcclusionState.currentDeck = null;
       tableOcclusionState.currentOcclusionIndex = 0;
+      tableOcclusionState.currentCardIndex = 0;
+      tableOcclusionState.totalOcclusions = 0;
+      tableOcclusionState.globalOcclusionIndex = 0;
       tableOcclusionState.revealedCells.clear();
       state.isFlipped = false;
       exitPracticeMode();

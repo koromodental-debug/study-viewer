@@ -8160,6 +8160,15 @@ body.is-practice .tab-content {
   justify-content: center;
 }
 
+/* 裏面のときもカード+ボタンを中央寄せ（まとめはその下） */
+.flashcard-exercise.flipped .flashcard-card-container {
+  margin-top: auto;
+}
+
+.flashcard-exercise.flipped .flashcard-action-bar {
+  margin-bottom: auto;
+}
+
 /* カードコンテナ */
 .flashcard-card-container {
   flex-shrink: 0;
@@ -8348,29 +8357,12 @@ body.is-practice .tab-content {
   display: block;
 }
 
-/* アクションバー（flexレイアウトで下部配置・Safari対応） */
+/* アクションバー（カード直下に配置） */
 .flashcard-action-bar {
   display: none;
   gap: 12px;
-  padding: 16px;
-  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  background: var(--card-bg, #fff);
-  border-top: 1px solid var(--border-subtle, rgba(60, 60, 67, 0.18));
+  padding: 16px 0;
   flex-shrink: 0;
-  margin-top: auto;
-}
-
-/* ダークモード対応 */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .flashcard-action-bar {
-    background: var(--card-bg);
-    border-top-color: var(--border-subtle);
-  }
-}
-
-[data-theme="dark"] .flashcard-action-bar {
-  background: var(--card-bg);
-  border-top-color: var(--border-subtle);
 }
 
 .flashcard-action-bar.show {

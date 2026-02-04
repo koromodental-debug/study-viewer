@@ -5925,11 +5925,10 @@ const FlashcardModule = (function() {
             </div>
             ${isRevealed ? '' : '<div class="table-tap-hint">タップで答え</div>'}
           </div>
-        </div>
-
-        <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
-          <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
-          <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
+          <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
+            <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
+            <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
+          </div>
         </div>
       </div>
     `;
@@ -6081,11 +6080,10 @@ const FlashcardModule = (function() {
             </div>
             ${isRevealed ? '' : '<div class="table-tap-hint">タップで答え</div>'}
           </div>
-        </div>
-
-        <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
-          <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
-          <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
+          <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
+            <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
+            <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
+          </div>
         </div>
       </div>
     `;
@@ -7632,6 +7630,19 @@ const FlashcardModule = (function() {
             </div>
           </div>
 
+          <!-- アクションバー（カード直下に配置） -->
+          <div class="flashcard-action-bar ${state.isFlipped ? 'show' : ''}">
+            <button class="flashcard-btn again" id="flashcard-again-btn">
+              もう一度
+            </button>
+            ${isCollaborator() ? `<button class="flashcard-btn report" id="flashcard-report-btn">
+              報告
+            </button>` : ''}
+            <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
+              覚えた
+            </button>
+          </div>
+
           <!-- まとめ（読み込み成功時のみ表示） -->
           <div class="flashcard-summary ${state.summaryCollapsed ? 'collapsed' : ''}" id="flashcard-summary">
             <div class="flashcard-summary-header" id="flashcard-summary-toggle">
@@ -7652,19 +7663,6 @@ const FlashcardModule = (function() {
             <div class="flashcard-summary-content" id="flashcard-summary-content">
             </div>
           </div>
-        </div>
-
-        <!-- アクションバー（flexレイアウトで下部配置） -->
-        <div class="flashcard-action-bar ${state.isFlipped ? 'show' : ''}">
-          <button class="flashcard-btn again" id="flashcard-again-btn">
-            もう一度
-          </button>
-          ${isCollaborator() ? `<button class="flashcard-btn report" id="flashcard-report-btn">
-            報告
-          </button>` : ''}
-          <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
-            覚えた
-          </button>
         </div>
 
       </div>

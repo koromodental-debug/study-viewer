@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>導入 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 180px; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 全身麻酔法</span>
+    <h1>導入</h1>
+    <div class="container">
+
+      <h2>MAC（最小肺胞内濃度）</h2>
+      <p><span class="key">MAC</span>（Minimum Alveolar Concentration）は吸入麻酔薬の強さを比較する指標である。</p>
+
+      <h3>MACの定義</h3>
+      <ul>
+        <li><span class="highlight">50%のヒトが皮膚切開に対して体動を示さない</span>肺胞濃度</li>
+        <li>麻酔薬投与濃度の指標となる</li>
+        <li><span class="caution">鎮痛作用の指標ではない</span></li>
+      </ul>
+
+      <h3>MACの特徴</h3>
+      <table>
+        <tr>
+          <th>特性</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>麻酔作用との関係</td>
+          <td>MACが<span class="key">小さい</span> → 麻酔作用が<span class="key">強い</span></td>
+        </tr>
+        <tr>
+          <td>AD95</td>
+          <td>95%有効濃度 ≒ <span class="highlight">1.3MAC</span></td>
+        </tr>
+        <tr>
+          <td>導入の速さ</td>
+          <td>MACとは<span class="caution">無関係</span>（血液/ガス分配係数による）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">110C69</div>
+        <p>吸入麻酔薬の最小肺胞内濃度〈MAC〉で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 導入の速さに比例する。<br>
+          b 麻酔薬の強さに比例する。<br>
+          c 鎮痛作用の強さの指標となる。<br>
+          d 麻酔薬投与濃度の指標となる。<br>
+          e 50％のヒトが皮膚切開に対して体動を示さない肺胞濃度である。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】MACはd「麻酔薬投与濃度の指標」であり、e「50%のヒトが皮膚切開に体動を示さない濃度」の定義。aは誤り（導入の速さは血液/ガス分配係数）、bは逆（MACが小さいほど強い）、cは誤り（鎮痛作用の指標ではない）。</p>
+      </div>
+
+      <h2>マウスプロテクター</h2>
+      <p>全身麻酔導入時に使用する口腔内装置で、<span class="highlight">喉頭展開時の歯の損傷を防止</span>する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">マウスプロテクターの目的</div>
+        <ul>
+          <li><span class="highlight">歯の損傷の防止</span>（喉頭鏡ブレードによる）</li>
+          <li>特に動揺歯がある患者で重要</li>
+          <li>上下顎歯列を覆う透明な装置</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C56</div>
+        <p>全身麻酔導入時に使用する装置装着時の口腔内写真（別冊No.22）を別に示す。<br>
+        この装置の目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C56.png" alt="別冊No.22">
+        </div>
+        <div class="choices">
+          a 歯の損傷の防止<br>
+          b 顎関節脱臼の防止<br>
+          c 喉頭展開時の支点<br>
+          d マスク換気の補助<br>
+          e クレンチングの防止
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】写真は<span class="key">マウスプロテクター</span>。喉頭鏡で喉頭展開する際にブレードが歯に当たり損傷するのを防ぐ。特に動揺歯がある患者では必須。</p>
+      </div>
+
+      <h2>意識下挿管</h2>
+      <p>患者の意識を保ち、<span class="key">自発呼吸下</span>で挿管操作を行う方法。</p>
+
+      <h3>意識下挿管の適応</h3>
+      <table>
+        <tr>
+          <th>適応</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">気道確保困難</span></td>
+          <td>筋弛緩薬投与後に換気できなくなるリスク</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">フルストマック</span>（胃充満）</td>
+          <td>誤嚥リスクが高い（自発呼吸で気道保護）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115A57</div>
+        <p>全身麻酔の導入に際し、意識下挿管を選択する理由はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 無気肺<br>
+          b 気道確保困難<br>
+          c 重度高血圧症<br>
+          d 反回神経麻痺<br>
+          e フルストマック（胃充満）
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】意識下挿管の適応は、b<span class="key">気道確保困難</span>（筋弛緩後に換気不能のリスク）とe<span class="key">フルストマック</span>（誤嚥リスクが高い）。自発呼吸を維持したまま挿管することで安全性を確保する。</p>
+      </div>
+
+      <h2>挿管困難のリスク因子</h2>
+      <p>以下の患者は<span class="key">挿管困難</span>および<span class="key">マスク換気困難</span>のリスクがある。</p>
+      <ul>
+        <li>小顎症、巨舌、短頸</li>
+        <li><span class="highlight">高度肥満</span>、睡眠時無呼吸症候群</li>
+        <li>頸椎可動制限、開口障害</li>
+        <li>顎顔面の先天奇形、腫瘍</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">111C88</div>
+        <p>18歳の男子。多数歯齲蝕の診断で全身麻酔下による歯科治療が予定された。身長162cm、体重110kg、BMI41.9。軽度の知的障害がある。睡眠時無呼吸症候群を合併しており、夜間は経鼻的持続陽圧呼吸（nCPAP）療法を行っている。<br>
+        全身麻酔の導入時のリスクはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 開口困難<br>
+          b 血圧上昇<br>
+          c 挿管困難<br>
+          d 喉頭けいれん<br>
+          e マスク換気困難
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】BMI41.9の<span class="key">高度肥満</span>かつ<span class="key">睡眠時無呼吸症候群</span>は、c<span class="highlight">挿管困難</span>とe<span class="highlight">マスク換気困難</span>のリスク因子。肥満では気道周囲の脂肪沈着により気道確保が困難になる。</p>
+      </div>
+
+      <h2>麻薬性鎮痛薬の役割</h2>
+      <p><span class="key">麻薬性鎮痛薬</span>（フェンタニルなど）は、気管挿管や切開時の<span class="highlight">交感神経活動亢進を抑制</span>する目的で投与される。</p>
+
+      <div class="question-box">
+        <div class="q-number">113A76</div>
+        <p>全身麻酔の際に、気管挿管や切開に伴う交感神経活動の亢進を抑制する目的で投与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a NSAIDs<br>
+          b 筋弛緩薬<br>
+          c 抗不整脈薬<br>
+          d 麻薬性鎮痛薬<br>
+          e カルシウム拮抗薬
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】挿管・切開は侵害刺激となり、交感神経活動が亢進（頻脈・血圧上昇）する。<span class="key">麻薬性鎮痛薬</span>（フェンタニル等）はこれを抑制する。筋弛緩薬は筋弛緩目的、NSAIDsは末梢性の消炎鎮痛。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

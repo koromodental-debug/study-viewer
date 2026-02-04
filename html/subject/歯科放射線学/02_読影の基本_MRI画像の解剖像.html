@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>MRI画像の解剖像 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 読影の基本</span>
+    <h1>MRI画像の解剖像</h1>
+    <div class="container">
+
+      <h2>MRIの原理</h2>
+      <ul>
+        <li><span class="highlight">磁気共鳴</span>を利用（放射線を使用しない）</li>
+        <li>水素原子核（プロトン）の信号を画像化</li>
+        <li><span class="key">軟組織のコントラスト</span>に優れる</li>
+        <li>骨や歯は信号が得られにくい</li>
+      </ul>
+
+      <h2>信号強度の基本</h2>
+      <p>MRIでは<span class="key">高信号 = 白</span>、<span class="key">低信号 = 黒</span>で表現される。</p>
+
+      <table>
+        <tr>
+          <th>組織</th>
+          <th>T1強調像</th>
+          <th>T2強調像</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">脂肪</span></td>
+          <td><span class="highlight">高信号（白）</span></td>
+          <td>高信号（白）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">水（液体）</span></td>
+          <td>低信号（黒）</td>
+          <td><span class="highlight">高信号（白）</span></td>
+        </tr>
+        <tr>
+          <td>筋肉</td>
+          <td>中間</td>
+          <td>中間</td>
+        </tr>
+        <tr>
+          <td>骨皮質</td>
+          <td>低信号（黒）</td>
+          <td>低信号（黒）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">T1とT2の覚え方</div>
+        <ul>
+          <li><span class="highlight">T1強調像</span>：「<span class="key">脂肪</span>が白い」（解剖学的構造がわかりやすい）</li>
+          <li><span class="highlight">T2強調像</span>：「<span class="key">水</span>が白い」（炎症・浮腫がわかりやすい）</li>
+        </ul>
+      </div>
+
+      <h2>拡散強調像（DWI）</h2>
+      <p><span class="highlight">水分子の拡散現象</span>を画像化する撮像法。</p>
+      <ul>
+        <li>拡散が<span class="key">制限</span>されると<span class="highlight">高信号</span>（白）</li>
+        <li><span class="key">急性期脳梗塞</span>の診断に有用（発症早期から検出可能）</li>
+        <li><span class="key">膿瘍</span>、<span class="key">悪性腫瘍</span>の診断にも有用</li>
+      </ul>
+
+      <h2>T1強調像の骨髄信号</h2>
+      <p>骨髄炎の早期診断に重要。</p>
+
+      <table>
+        <tr>
+          <th>状態</th>
+          <th>T1強調像の信号</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="key">正常骨髄</span>（黄色骨髄）</td>
+          <td><span class="highlight">高信号（白）</span></td>
+          <td>脂肪髄のため</td>
+        </tr>
+        <tr>
+          <td><span class="caution">顎骨骨髄炎</span></td>
+          <td><span class="caution">低信号（黒）</span></td>
+          <td>骨髄信号が消失</td>
+        </tr>
+      </table>
+      <p class="note">MRIはCTでの骨破壊より<span class="highlight">早期に骨髄炎を検出</span>できる。</p>
+
+      <h2>MRIとCT値の関係</h2>
+      <p>MRI画像から組織性状を判断し、CT値を推測する問題が出題される。</p>
+
+      <h3>脂肪性病変のMRI所見</h3>
+      <ul>
+        <li>T1強調像：<span class="highlight">高信号</span></li>
+        <li>T2強調像：高信号</li>
+        <li>脂肪抑制で信号低下</li>
+      </ul>
+      <p>脂肪のCT値：<span class="highlight">-200〜0 HU</span>（-100が典型的）</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">112A35</div>
+        <p>水分子の拡散現象を画像化するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a CT<br>
+          b MRI<br>
+          c PET<br>
+          d SPECT<br>
+          e 超音波検査
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】<span class="highlight">拡散強調像（DWI）</span>は<span class="highlight">MRI</span>の撮像法の一つで、水分子の拡散現象を画像化する。急性期脳梗塞や膿瘍の診断に有用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B45</div>
+        <p>頻部の腫脹を主訴として来院した53歳女性。MRI T1強調像、T2強調像および造影T1強調像を示す。病変のCT値（HU）はどれか。1つ選べ。</p>
+        <div class="choices">
+          a -1000<br>
+          b -100<br>
+          c 0<br>
+          d 200<br>
+          e 500
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】MRI画像からT1高信号・T2高信号の<span class="highlight">脂肪性病変</span>（脂肪腫など）と判断。脂肪のCT値は<span class="highlight">-200〜0 HU</span>なので、<span class="highlight">-100</span>が正解。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li><span class="highlight">T1強調像</span>：脂肪が白い、正常骨髄も白い</li>
+          <li><span class="highlight">T2強調像</span>：水が白い（炎症・浮腫）</li>
+          <li><span class="highlight">拡散強調像</span>：水分子の拡散を画像化 → MRI</li>
+          <li>脂肪性病変のCT値：<span class="highlight">-100</span>程度</li>
+          <li>骨髄炎：T1で<span class="caution">低信号</span>（CTより早期に検出）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

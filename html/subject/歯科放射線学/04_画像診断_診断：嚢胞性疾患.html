@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診断：嚢胞性疾患 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .point {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 32px;
+    }
+    .point h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .point p {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    section {
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 20px 0 12px 0;
+      color: var(--accent);
+    }
+    p, li {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    ul, ol {
+      padding-left: 24px;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    th {
+      background: var(--bg-secondary);
+      font-weight: 600;
+    }
+    .highlight {
+      background: #FFF3CD;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .card {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .principle-box {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    .principle-box h3 {
+      color: white;
+      margin-top: 0;
+    }
+    .exam-box {
+      background: #FFF5F5;
+      border-left: 4px solid #E53E3E;
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .exam-box h4 {
+      color: #E53E3E;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .memory-tip {
+      background: #E6F7FF;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .memory-tip-title {
+      font-weight: 600;
+      color: #0050B3;
+      margin-bottom: 8px;
+    }
+    .check {
+      color: #38A169;
+      font-weight: 600;
+    }
+    .cross {
+      color: #E53E3E;
+      font-weight: 600;
+    }
+    .keyword {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+      margin: 2px;
+    }
+    .diff-easy {
+      background: #C6F6D5;
+      color: #22543D;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .diff-hard {
+      background: #FED7D7;
+      color: #822727;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>診断：嚢胞性疾患</h1>
+  <p class="subtitle">歯科放射線学 ｜ 04_画像診断：歯・歯周組織・顎骨</p>
+
+  <div class="point">
+    <h2>最重要ポイント</h2>
+    <p>嚢胞 = 境界明瞭な透過像<br>
+    「発生部位」と「周囲構造との関係」で鑑別<br>
+    単純性骨嚢胞 → ホタテ貝状辺縁が特徴</p>
+  </div>
+
+  <section>
+    <h2>思考の出発点</h2>
+    <p>嚢胞性疾患の画像診断では、まず<span class="highlight">「どこに発生しているか」</span>を確認する。顎骨内か軟組織内かで候補が絞れる。</p>
+
+    <div class="principle-box">
+      <h3>嚢胞診断の基本原則</h3>
+      <ul>
+        <li><strong>顎骨内</strong>：歯根嚢胞、含歯性嚢胞、単純性骨嚢胞、鼻口蓋管嚢胞など</li>
+        <li><strong>上顎洞関連</strong>：術後性上顎嚢胞</li>
+        <li><strong>軟組織内</strong>：類表皮嚢胞、鰓嚢胞、甲状舌管嚢胞など</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>顎骨内嚢胞の画像所見</h2>
+
+    <h3>歯根嚢胞</h3>
+    <div class="card">
+      <div class="card-title">特徴的所見</div>
+      <ul>
+        <li><strong>必ず原因となる失活歯</strong>がある</li>
+        <li>歯根尖に<strong>境界明瞭な円形〜類円形透過像</strong></li>
+        <li>周囲に<strong>硬化縁（骨硬化線）</strong>を伴うことが多い</li>
+        <li>直径1cm以上の大きなものはほとんど歯根嚢胞</li>
+      </ul>
+    </div>
+
+    <h3>含歯性嚢胞</h3>
+    <div class="card">
+      <div class="card-title">特徴的所見</div>
+      <ul>
+        <li><strong>埋伏歯の歯冠部</strong>を取り囲む境界明瞭な透過像</li>
+        <li>嚢胞壁が歯頸部に付着</li>
+        <li>下顎智歯部に好発</li>
+      </ul>
+    </div>
+
+    <h3>単純性骨嚢胞（外傷性骨嚢胞）</h3>
+    <div class="card">
+      <div class="card-title">特徴的所見（104D12で出題）</div>
+      <ul>
+        <li><span class="keyword">ホタテ貝状辺縁</span>：歯槽中隔や根間中隔に陥入する波状の透過像</li>
+        <li><strong>歯槽硬線の変化なし</strong></li>
+        <li><strong>骨膨隆なし</strong></li>
+        <li>周囲の歯は<strong>生活歯が多い</strong></li>
+        <li>手術時に空洞または血清様液体のみ</li>
+      </ul>
+    </div>
+
+    <div class="exam-box">
+      <h4>単純性骨嚢胞 vs 他の嚢胞の鑑別</h4>
+      <ul>
+        <li><span class="check">○</span> vs 歯根嚢胞：ホタテ貝状 vs 類円形、生活歯 vs 失活歯 → <span class="diff-easy">鑑別容易</span></li>
+        <li><span class="check">○</span> vs 残存嚢胞：ホタテ貝状 vs 類円形 → やや困難だが可能</li>
+      </ul>
+    </div>
+
+    <h3>鼻口蓋管嚢胞（切歯管嚢胞）</h3>
+    <div class="card">
+      <div class="card-title">特徴的所見（109D18で出題）</div>
+      <ul>
+        <li><strong>上顎正中部</strong>、切歯管（鼻口蓋管）に発生</li>
+        <li>境界明瞭な<strong>ハート型〜洋梨型透過像</strong></li>
+        <li>左右の中切歯歯根間が開大</li>
+        <li>周囲の歯は生活歯</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>上顎洞関連の嚢胞</h2>
+
+    <h3>術後性上顎嚢胞</h3>
+    <div class="card">
+      <div class="card-title">特徴的所見（114B86で出題）</div>
+      <ul>
+        <li><strong>上顎洞根治術の既往</strong>が必須</li>
+        <li>上顎洞相当部〜上顎骨前方に<strong>境界明瞭な透過像</strong></li>
+        <li>術後数年〜数十年で発症</li>
+      </ul>
+    </div>
+
+    <div class="memory-tip">
+      <div class="memory-tip-title">術後性上顎嚢胞 vs 上顎洞炎の鑑別</div>
+      <ul>
+        <li><strong>術後性上顎嚢胞</strong>：洞相当部に<strong>透過像</strong></li>
+        <li><strong>上顎洞炎</strong>：洞内の<strong>不透過性亢進</strong>（混濁）</li>
+      </ul>
+      <p>→ <span class="diff-easy">鑑別容易</span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>軟組織内の嚢胞</h2>
+    <p>顎骨内に病変がない場合は軟組織嚢胞を考える。</p>
+
+    <h3>類表皮嚢胞・類皮嚢胞</h3>
+    <div class="card">
+      <div class="card-title">特徴</div>
+      <ul>
+        <li><strong>口底部</strong>が好発部位</li>
+        <li>軟組織内に境界明瞭な腫瘤</li>
+        <li>MRI・超音波で診断</li>
+      </ul>
+    </div>
+
+    <h3>鰓嚢胞（側頸嚢胞）</h3>
+    <div class="card">
+      <div class="card-title">特徴</div>
+      <ul>
+        <li>頸部（内頸静脈と胸鎖乳突筋の間）に発生</li>
+        <li>超音波検査が有用</li>
+      </ul>
+    </div>
+
+    <h3>甲状舌管嚢胞</h3>
+    <div class="card">
+      <div class="card-title">特徴</div>
+      <ul>
+        <li><strong>正中頸部</strong>（舌骨付近）に発生</li>
+        <li>嚥下時に上下に移動</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>鑑別診断のポイント</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>組み合わせ</th>
+          <th>鑑別</th>
+          <th>ポイント</th>
+        </tr>
+        <tr>
+          <td>歯根肉芽腫 vs 歯根嚢胞</td>
+          <td><span class="diff-hard">困難</span></td>
+          <td>1cm以上→嚢胞、それ以下は困難</td>
+        </tr>
+        <tr>
+          <td>エナメル上皮腫 vs 含歯性嚢胞</td>
+          <td><span class="diff-hard">困難</span></td>
+          <td>ともに境界明瞭な透過像</td>
+        </tr>
+        <tr>
+          <td>エナメル上皮腫 vs 歯原性角化嚢胞</td>
+          <td><span class="diff-hard">困難</span></td>
+          <td>ともに境界明瞭、骨膨隆あり</td>
+        </tr>
+        <tr>
+          <td>歯牙腫 vs 含歯性嚢胞</td>
+          <td><span class="diff-easy">容易</span></td>
+          <td>歯牙腫は内部に歯様構造物</td>
+        </tr>
+        <tr>
+          <td>上顎洞炎 vs 術後性上顎嚢胞</td>
+          <td><span class="diff-easy">容易</span></td>
+          <td>不透過性亢進 vs 透過像</td>
+        </tr>
+        <tr>
+          <td>歯根嚢胞 vs 単純性骨嚢胞</td>
+          <td><span class="diff-easy">容易</span></td>
+          <td>失活歯あり vs ホタテ貝状・生活歯</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="exam-box">
+      <h4>「鑑別困難な組み合わせ」が出題されたら</h4>
+      <p>→ 臨床所見（年齢、性別、症状、既往歴）や追加検査で判断</p>
+      <ul>
+        <li>含歯性嚢胞 vs エナメル上皮腫 → 生検で確定診断</li>
+        <li>歯根肉芽腫 vs 歯根嚢胞 → 病理診断必須</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>嚢胞の発生部位による分類</h2>
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>発生部位</th>
+          <th>嚢胞名</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td rowspan="4">顎骨内（歯原性）</td>
+          <td>歯根嚢胞</td>
+          <td>失活歯の根尖</td>
+        </tr>
+        <tr>
+          <td>含歯性嚢胞</td>
+          <td>埋伏歯の歯冠部</td>
+        </tr>
+        <tr>
+          <td>歯原性角化嚢胞</td>
+          <td>下顎角部に好発、再発しやすい</td>
+        </tr>
+        <tr>
+          <td>側方性歯周嚢胞</td>
+          <td>歯根側方</td>
+        </tr>
+        <tr>
+          <td rowspan="2">顎骨内（非歯原性）</td>
+          <td>鼻口蓋管嚢胞</td>
+          <td>上顎正中、切歯管</td>
+        </tr>
+        <tr>
+          <td>単純性骨嚢胞</td>
+          <td>ホタテ貝状辺縁</td>
+        </tr>
+        <tr>
+          <td>上顎洞</td>
+          <td>術後性上顎嚢胞</td>
+          <td>上顎洞根治術後</td>
+        </tr>
+        <tr>
+          <td rowspan="3">軟組織</td>
+          <td>類表皮嚢胞</td>
+          <td>口底部</td>
+        </tr>
+        <tr>
+          <td>鰓嚢胞</td>
+          <td>頸部側方</td>
+        </tr>
+        <tr>
+          <td>甲状舌管嚢胞</td>
+          <td>正中頸部</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>過去問で頻出のポイント</h2>
+    <div class="exam-box">
+      <h4>出題パターン</h4>
+      <ol>
+        <li><strong>単純性骨嚢胞の所見</strong>（104D12）：ホタテ貝状辺縁</li>
+        <li><strong>鼻口蓋管嚢胞の位置</strong>（109D18）：上顎正中、切歯管</li>
+        <li><strong>術後性上顎嚢胞の既往</strong>（114B86）：上顎洞根治術</li>
+        <li><strong>鑑別困難・容易の判断</strong>：組み合わせ問題</li>
+        <li><strong>軟組織嚢胞 vs 顎骨内嚢胞</strong>：発生部位で区別</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="memory-tip">
+    <div class="memory-tip-title">暗記のコツ</div>
+    <p><strong>「嚢胞は透過、位置で決まる」</strong></p>
+    <ul>
+      <li>根尖 → 歯根嚢胞（失活歯必須）</li>
+      <li>歯冠 → 含歯性嚢胞</li>
+      <li>正中 → 鼻口蓋管嚢胞</li>
+      <li>ホタテ貝 → 単純性骨嚢胞</li>
+      <li>洞根治後 → 術後性上顎嚢胞</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>まとめ</h2>
+    <div class="card">
+      <ul>
+        <li>嚢胞は<strong>境界明瞭な透過像</strong>が基本</li>
+        <li><strong>発生部位</strong>と<strong>周囲構造との関係</strong>で診断</li>
+        <li>単純性骨嚢胞 = <strong>ホタテ貝状辺縁</strong>が決め手</li>
+        <li>エナメル上皮腫・含歯性嚢胞・歯原性角化嚢胞は画像上<strong>鑑別困難</strong></li>
+        <li>軟組織嚢胞はMRI・超音波で評価</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>術前・術中管理 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .continue { color: #34C759; font-weight: 600; }
+    .stop { color: var(--caution); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 全身麻酔法</span>
+    <h1>術前・術中管理</h1>
+    <div class="container">
+
+      <h2>術前絶飲食</h2>
+      <p>全身麻酔前に経口摂取を制限する目的は、麻酔導入時の胃内容を少なくし、<span class="highlight">誤嚥性肺炎のリスクを減らす</span>ことである。</p>
+
+      <h3>絶飲食スケジュール</h3>
+      <table>
+        <tr>
+          <th>摂取物</th>
+          <th>最低限の絶食時間</th>
+        </tr>
+        <tr>
+          <td>水分（水、ジュース、お茶など）</td>
+          <td><span class="highlight">2時間</span></td>
+        </tr>
+        <tr>
+          <td>母乳</td>
+          <td>4時間</td>
+        </tr>
+        <tr>
+          <td>乳児用粉ミルク</td>
+          <td>6時間</td>
+        </tr>
+        <tr>
+          <td>牛乳</td>
+          <td>6時間</td>
+        </tr>
+        <tr>
+          <td>軽い食事</td>
+          <td><span class="highlight">6時間</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">絶飲食の注意点</div>
+        <ul>
+          <li>脂肪分の多い食物は胃に残留しやすい</li>
+          <li>幼小児では過剰な制限で<span class="caution">脱水</span>を起こしやすい</li>
+          <li>前投薬（1時間前）内服時の水は少量なら問題なし</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A43</div>
+        <p>全身麻酔において患者の術前経口摂取を制限する目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血圧の安定<br>
+          b 誤嚥の予防<br>
+          c 血糖上昇の抑制<br>
+          d 口腔衛生の保持<br>
+          e 意識レベルの維持
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】術前絶飲食の主目的は<span class="highlight">誤嚥の予防</span>である。麻酔導入時に嘔吐・逆流が起こると、胃内容物が気道に入り誤嚥性肺炎を引き起こす危険がある。</p>
+      </div>
+
+      <h2>常用薬への対処</h2>
+      <p>全身麻酔を受ける患者の常用薬は、<span class="key">継続すべき薬</span>と<span class="key">休薬すべき薬</span>を適切に判断する必要がある。</p>
+
+      <h3>薬剤別の対応</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>対応</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="key">β遮断薬</span></td>
+          <td><span class="continue">継続</span></td>
+          <td>急な中止で反跳性高血圧・頻脈</td>
+        </tr>
+        <tr>
+          <td><span class="key">Ca拮抗薬</span></td>
+          <td><span class="continue">継続</span></td>
+          <td>急な中止で血圧上昇</td>
+        </tr>
+        <tr>
+          <td><span class="key">ステロイド薬</span></td>
+          <td><span class="continue">継続</span></td>
+          <td>中止で副腎不全（ステロイドカバー）</td>
+        </tr>
+        <tr>
+          <td><span class="key">H2受容体拮抗薬</span></td>
+          <td><span class="continue">継続</span></td>
+          <td>胃酸分泌抑制（誤嚥時の肺損傷軽減）</td>
+        </tr>
+        <tr>
+          <td><span class="key">インスリン</span></td>
+          <td><span class="stop">減薬/中止</span></td>
+          <td><span class="caution">絶食により低血糖リスク</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">経口糖尿病薬</span></td>
+          <td><span class="stop">当日朝中止</span></td>
+          <td>絶食により低血糖リスク</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方のポイント</div>
+        <ul>
+          <li><span class="continue">継続</span>：急にやめると<span class="caution">反跳現象</span>が起こる薬（β遮断薬、Ca拮抗薬）</li>
+          <li><span class="stop">休薬/減薬</span>：絶食により<span class="caution">低血糖</span>が起こる薬（インスリン、経口糖尿病薬）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B48</div>
+        <p>全身麻酔下に手術を受ける患者の常用薬のうち、手術当日の朝に休薬あるいは減薬が必要なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 緩下剤<br>
+          b β遮断薬<br>
+          c インスリン<br>
+          d H2受容体拮抗薬<br>
+          e カルシウム拮抗薬
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】<span class="key">インスリン</span>は手術当日の朝に<span class="highlight">減薬または中止</span>が必要。術前絶食により食事からの糖摂取がないため、通常量のインスリンを投与すると<span class="caution">低血糖</span>を引き起こす危険がある。一方、β遮断薬やCa拮抗薬は継続する（急な中止で反跳現象）。</p>
+      </div>
+
+      <h2>その他の術前管理</h2>
+      <h3>抗凝固薬・抗血小板薬</h3>
+      <ul>
+        <li>出血リスクと血栓塞栓リスクのバランスを考慮</li>
+        <li>ワルファリン：PT-INRを指標に管理</li>
+        <li>抗血小板薬：侵襲の大きい手術では術前7〜10日に中止</li>
+      </ul>
+
+      <h3>抗精神薬</h3>
+      <ul>
+        <li>三環系抗うつ薬、MAO阻害薬：術中の血圧変動・不整脈に注意</li>
+        <li>通常2週間前からの休薬が推奨される場合あり</li>
+      </ul>
+
+    </div>
+  </div>
+</body>
+</html>

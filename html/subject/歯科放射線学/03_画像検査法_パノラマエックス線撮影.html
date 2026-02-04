@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>パノラマエックス線撮影 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 80%; margin: 5px 0; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 画像検査法</span>
+    <h1>パノラマエックス線撮影</h1>
+    <div class="container">
+
+      <h2>撮像原理</h2>
+      <p><span class="key">回転断層撮影</span>と<span class="key">スリット撮影</span>の原理に基づき、歯列弓を含んだ顎骨の<span class="key">展開像（全体像）</span>を得る撮影法。</p>
+
+      <h3>スリットの構造</h3>
+      <ul>
+        <li><span class="key">一次スリット</span>：エックス線管側に配置</li>
+        <li><span class="key">二次スリット</span>：フィルム（検出器）側に配置</li>
+      </ul>
+      <p>回転しながら二次スリット上をフィルムが移動することで、顎骨の展開像が得られる。</p>
+
+      <h3>スリット幅の影響</h3>
+      <p><span class="highlight">スリットを細くする</span>と以下が減少する：</p>
+      <ul>
+        <li><span class="highlight">散乱線</span>が減少 → 画質向上</li>
+        <li><span class="highlight">被曝線量</span>が減少 → 安全性向上</li>
+        <li><span class="key">断層幅（断層域）</span>が減少</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">103C93</div>
+        <p>パノラマエックス線撮影装置でスリットを細くしたときに減少するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 断層幅<br>
+          b 散乱線<br>
+          c 障害陰影<br>
+          d 被曝線量<br>
+          e コントラスト
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】スリットを細くすると、通過するエックス線の量が減少するため被曝線量が減少する。また、照射野が狭くなることで散乱線も減少する。断層幅も減少するが、選択肢aは「断層幅」なので正解に含まれる。ただし本問では「b, d」が正解とされている。コントラストは散乱線減少により向上する。</p>
+      </div>
+
+      <h2>断層域の特徴</h2>
+      <p><span class="key">断層域</span>（鮮明に見える面の奥行き）は部位によって異なる：</p>
+      <ul>
+        <li><span class="caution">前歯部：断層域が狭い</span> → 画像が不鮮明になりやすい</li>
+        <li>臼歯部：断層域が広い → 比較的鮮明</li>
+      </ul>
+      <p>これは偏心投影（エックス線の入射角度が斜めになる）の影響による。</p>
+
+      <h2>前歯部が不鮮明な理由</h2>
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <p>パノラマで<span class="highlight">前歯部が不鮮明</span>になる理由：</p>
+        <ul>
+          <li><span class="highlight">断層厚が薄い</span>（断層域が狭い）</li>
+          <li><span class="highlight">頸椎の障害陰影が重なる</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A101</div>
+        <p>パノラマエックス線撮影法で前歯部の画像が不鮮明な理由はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 断層厚が薄い。<br>
+          b 散乱線が多くなる。<br>
+          c 偏心投影になりやすい。<br>
+          d 頸椎の障害陰影が重なる。<br>
+          e 金属アーチファクトが出やすい。
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】前歯部は断層域が狭く（断層厚が薄い）、わずかな位置ずれでもぼけやすい。また、正中部では頸椎がぼけた像として重なり、障害陰影となる。偏心投影は主に臼歯部の問題。散乱線や金属アーチファクトは前歯部特有の問題ではない。</p>
+      </div>
+
+      <h2>障害陰影</h2>
+      <p><span class="key">障害陰影</span>とは、診断対象となる部位に対して、診断と直接関係のない構造が重なって写る像のこと。</p>
+      <h3>主な障害陰影</h3>
+      <ul>
+        <li><span class="key">頸椎</span>：正中部にぼけた像として重なる</li>
+        <li><span class="key">下顎角部</span>：反対側のやや上方に拡大して重なる</li>
+        <li><span class="key">軟口蓋・口蓋垂</span>：上顎歯槽部に重なる</li>
+        <li><span class="key">耳介</span>：下顎枝部に重なる</li>
+      </ul>
+
+      <h2>撮影基準（頭部の位置付け）</h2>
+      <h3>3つの基準</h3>
+      <ul>
+        <li><span class="key">①正中矢状面</span>：顔の正中を合わせる（左右対称に）</li>
+        <li><span class="highlight">②フランクフルト平面（眼耳平面）</span>：床と平行にする</li>
+        <li><span class="key">③前歯部断層域</span>：前歯部と断層域の前後的な位置関係を合わせる</li>
+      </ul>
+
+      <h3>位置付けミスによる画像変化</h3>
+      <table>
+        <tr>
+          <th>位置付けミス</th>
+          <th>画像への影響</th>
+        </tr>
+        <tr>
+          <td>断層域が後ろすぎる</td>
+          <td>横に縮む、前歯がぼける</td>
+        </tr>
+        <tr>
+          <td>断層域が前すぎる</td>
+          <td>横に伸びる、前歯がぼける</td>
+        </tr>
+        <tr>
+          <td>患者が下を向く</td>
+          <td>咬合平面のカーブが急になる</td>
+        </tr>
+        <tr>
+          <td>患者が上を向く</td>
+          <td>咬合平面が上に凸になる</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108A129</div>
+        <p>標準的なパノラマエックス線撮影の頭部の位置付けについて、ライトビームと頭部の固定の写真（別冊No.00）を別に示す。<br>前後方向と水平方向の組合せで正しいのはどれか。1つ選べ。<br>前後方向　水平方向<br>ｆ　ウ－－－－－オ</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108A129.png" alt="108A129">
+        </div>
+        <div class="choices">
+          a ア－－－－－エ<br>
+          b ア－－－－－オ<br>
+          c イ－－－－－エ<br>
+          d イ－－－－－オ<br>
+          e ウ－－－－－エ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】標準的なパノラマ撮影では、フランクフルト平面を床と平行にし、正中矢状面を垂直にする。前後方向のライトビームは前歯部の断層域に合わせ、水平方向は正中を合わせる。</p>
+      </div>
+
+      <h2>パノラマ撮影の利点と欠点</h2>
+      <h3>利点（口内法と比較して）</h3>
+      <ul>
+        <li><span class="key">広範囲の観察が可能</span>（顎関節や上顎洞も観察可能）</li>
+        <li><span class="key">開口障害、嘔吐反射</span>の患者でも撮影が可能</li>
+        <li><span class="key">感染対策が容易</span>（口腔内を触らないため）</li>
+      </ul>
+      <h3>欠点</h3>
+      <ul>
+        <li><span class="key">解像度が劣る</span>（断層撮影、増感紙の影響）</li>
+        <li><span class="caution">特に前歯部が不鮮明</span>（頸椎の障害陰影、断層幅が狭い）</li>
+        <li><span class="key">障害陰影</span>が生じる</li>
+      </ul>
+
+      <h2>エックス線束の特徴</h2>
+      <p>パノラマ撮影では、エックス線管と検出器が患者の周りを<span class="key">同期して回転</span>しながら撮影する。エックス線束は<span class="key">扇状（ファンビーム）</span>で、スリットを通過する。</p>
+
+      <div class="question-box">
+        <div class="q-number">112B28</div>
+        <p>撮影時に照射されるエックス線束の模式図（別冊No.3）を別に示す。<br>パノラマエックス線撮影はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B28.png" alt="112B28">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】パノラマ撮影はスリットを通過した細いファンビーム（扇状）で回転しながら撮影する。アは口内法（円錐状）、イはセファロ（平行ビーム）、エはCT（ファンビーム・360度回転）、オはコーンビームCT（円錐状・360度回転）。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：パノラマ撮影のポイント</div>
+        <ul>
+          <li>スリットを細くする → 散乱線↓、被曝線量↓、断層幅↓</li>
+          <li>前歯部が不鮮明 → 断層厚が薄い＋頸椎の障害陰影</li>
+          <li>位置付け → フランクフルト平面を床と平行に</li>
+          <li>利点 → 広範囲観察、開口障害患者に対応可能</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

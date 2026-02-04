@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>エックス線画像の解剖像 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 読影の基本</span>
+    <h1>エックス線画像の解剖像</h1>
+    <div class="container">
+
+      <h2>X線透過性と不透過性の原則</h2>
+      <p>X線画像では、X線の透過しやすさによって<span class="key">黒</span>（透過性）と<span class="key">白</span>（不透過性）で描出される。</p>
+
+      <table>
+        <tr>
+          <th>透過性（黒く見える）</th>
+          <th>不透過性（白く見える）</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">空洞</span>：上顎洞、鼻腔</td>
+          <td><span class="key">骨</span>：鼻中隔、茎状突起、頬骨</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">管腔・孔</span>：切歯管、オトガイ孔、下顎管</td>
+          <td><span class="key">歯</span>：エナメル質、象牙質</td>
+        </tr>
+        <tr>
+          <td><span class="key">軟組織</span>：舌、咽頭、耳垂</td>
+          <td><span class="key">金属</span>：修復物、インプラント</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">透過性の覚え方</div>
+        <ul>
+          <li>「<span class="highlight">空気がある</span>」ところは透過性（黒）</li>
+          <li>「<span class="key">骨や�ite歯</span>」は不透過性（白）</li>
+          <li>孔や管も「空気の通り道」なので透過性</li>
+        </ul>
+      </div>
+
+      <h2>パノラマX線写真の正常解剖</h2>
+
+      <h3>上顎部の構造</h3>
+      <table>
+        <tr>
+          <th>構造物</th>
+          <th>透過性</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">眼窩</span></td>
+          <td>透過性</td>
+          <td>上顎洞の上方</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">上顎洞</span></td>
+          <td><span class="highlight">透過性</span></td>
+          <td>大きな黒い空洞</td>
+        </tr>
+        <tr>
+          <td><span class="key">鼻腔</span></td>
+          <td>透過性</td>
+          <td>正中部</td>
+        </tr>
+        <tr>
+          <td><span class="caution">鼻中隔</span></td>
+          <td><span class="caution">不透過性</span></td>
+          <td>鼻腔を左右に分ける骨</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">切歯管（鼻口蓋管）</span></td>
+          <td><span class="highlight">透過性</span></td>
+          <td>上顎前歯部の正中</td>
+        </tr>
+      </table>
+
+      <h3>下顎部の構造</h3>
+      <table>
+        <tr>
+          <th>構造物</th>
+          <th>透過性</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">下顎管</span></td>
+          <td>透過性</td>
+          <td>下顎骨内を走行</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">オトガイ孔</span></td>
+          <td><span class="highlight">透過性</span></td>
+          <td>小臼歯部付近に開口</td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎頭</span></td>
+          <td>不透過性</td>
+          <td>顎関節部</td>
+        </tr>
+        <tr>
+          <td><span class="key">筋突起</span></td>
+          <td>不透過性</td>
+          <td>側頭筋が付着</td>
+        </tr>
+      </table>
+
+      <h3>その他の構造</h3>
+      <table>
+        <tr>
+          <th>構造物</th>
+          <th>透過性</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">頬骨弓</span></td>
+          <td>不透過性</td>
+          <td>上顎洞の外側</td>
+        </tr>
+        <tr>
+          <td><span class="caution">茎状突起</span></td>
+          <td><span class="caution">不透過性</span></td>
+          <td>側頭骨から下方に伸びる</td>
+        </tr>
+        <tr>
+          <td><span class="key">舌骨</span></td>
+          <td>不透過性</td>
+          <td>下顎骨下方</td>
+        </tr>
+        <tr>
+          <td><span class="key">頸椎</span></td>
+          <td>不透過性</td>
+          <td>正中部に重なる</td>
+        </tr>
+        <tr>
+          <td><span class="key">咽頭扁桃</span></td>
+          <td>透過性〜軟組織</td>
+          <td>咽頭後壁</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">106A114</div>
+        <p>健常成人のパノラマエックス線写真でエックス線透過性を示すのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 鼻中隔<br>
+          b 上顎洞<br>
+          c 切歯管<br>
+          d 茎状突起<br>
+          e オトガイ孔
+        </div>
+        <div class="answer">正解：b, c, e</div>
+        <p>【解説】<br>
+        a：鼻中隔 → <span class="caution">骨なので不透過性</span> ×<br>
+        b：<span class="highlight">上顎洞 → 空洞なので透過性</span> ○<br>
+        c：<span class="highlight">切歯管 → 管腔なので透過性</span> ○<br>
+        d：茎状突起 → <span class="caution">骨なので不透過性</span> ×<br>
+        e：<span class="highlight">オトガイ孔 → 孔なので透過性</span> ○</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A96</div>
+        <p>エックス線写真とトレース図を示す。記号で示す部位と名称との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a ㋐───前頭洞<br>
+          b ㋑───上顎骨<br>
+          c ㋒───頬骨弓<br>
+          d ㋓───下顎頭<br>
+          e ㋔───眼窩
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】パノラマX線写真で各解剖構造を同定する問題。<span class="highlight">頬骨弓</span>は上顎洞の外側を走行する不透過性の構造として描出される。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>「透過性」を問われたら → <span class="highlight">空洞・管腔・孔</span>を選ぶ</li>
+          <li><span class="highlight">上顎洞、切歯管、オトガイ孔</span> → 透過性</li>
+          <li><span class="caution">鼻中隔、茎状突起</span> → 不透過性（骨）</li>
+          <li>パノラマの解剖構造の位置関係を把握しておく</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

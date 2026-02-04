@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アナフィラキシーショック - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 歯科治療中の全身的偶発症</span>
+    <h1>アナフィラキシーショック</h1>
+    <div class="container">
+
+      <h2>定義・病態</h2>
+      <p><span class="key">アナフィラキシー</span>は、<span class="highlight">I型アレルギー</span>（即時型）に属するアレルギー反応で、全身性に重篤な症状を呈する。ショックを伴う場合を<span class="key">アナフィラキシーショック</span>という。</p>
+
+      <h3>発症機序</h3>
+      <ol>
+        <li>過去に感作された抗原（アレルゲン）が再度侵入</li>
+        <li>肥満細胞や好塩基球上の<span class="key">IgE抗体</span>と抗原が結合</li>
+        <li><span class="key">ヒスタミン</span>、ロイコトリエン、プロスタグランジンなどのメディエーターが放出</li>
+        <li><span class="highlight">血管拡張</span>＋<span class="highlight">血管透過性亢進</span></li>
+        <li>血圧低下、気道浮腫、気管支攣縮</li>
+      </ol>
+
+      <h3>歯科領域での原因物質</h3>
+      <ul>
+        <li><span class="key">抗菌薬</span>（ペニシリン系、セフェム系など）</li>
+        <li><span class="key">造影剤</span>（ヨード系）</li>
+        <li><span class="key">ラテックス</span>（ゴム手袋）</li>
+        <li>局所麻酔薬（エステル型に多い、アミド型は稀）</li>
+        <li>NSAIDs（アスピリン喘息）</li>
+      </ul>
+
+      <h2>症状</h2>
+      <p>抗原曝露後<span class="highlight">数分〜30分以内</span>に発症することが多い。</p>
+
+      <h3>症状の進行</h3>
+      <table>
+        <tr>
+          <th>系統</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td><span class="key">皮膚</span></td>
+          <td><span class="highlight">掻痒感</span>、蕁麻疹（膨疹）、紅斑、血管性浮腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">上気道</span></td>
+          <td>鼻閉、咽頭違和感、<span class="highlight">嗄声</span>、声門浮腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">下気道</span></td>
+          <td>胸部圧迫感、<span class="highlight">喘鳴</span>、気管支攣縮、呼吸困難</td>
+        </tr>
+        <tr>
+          <td><span class="key">消化器</span></td>
+          <td>嘔気、嘔吐、腹痛、下痢</td>
+        </tr>
+        <tr>
+          <td><span class="key">循環器</span></td>
+          <td><span class="highlight">血圧低下</span>、頻脈、ショック</td>
+        </tr>
+        <tr>
+          <td><span class="key">神経</span></td>
+          <td>意識消失、失禁</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">血圧低下の機序（112D38）</div>
+        <ul>
+          <li><span class="highlight">血管拡張</span>：末梢血管抵抗↓</li>
+          <li><span class="highlight">血管透過性亢進</span>：血管内容量↓（血漿成分が血管外へ漏出）</li>
+          <li>徐脈や貧血は直接の原因ではない</li>
+        </ul>
+      </div>
+
+      <h2>治療</h2>
+
+      <h3>治療の優先順位</h3>
+      <table>
+        <tr>
+          <th>順序</th>
+          <th>対応</th>
+          <th>詳細</th>
+        </tr>
+        <tr>
+          <td>①</td>
+          <td><span class="highlight">アドレナリン</span></td>
+          <td><span class="highlight">0.3mg 筋注</span>（大腿外側）※第一選択</td>
+        </tr>
+        <tr>
+          <td>②</td>
+          <td>原因物質の除去</td>
+          <td>点滴中止、ラテックス除去など</td>
+        </tr>
+        <tr>
+          <td>③</td>
+          <td>仰臥位・下肢挙上</td>
+          <td>静脈還流↑</td>
+        </tr>
+        <tr>
+          <td>④</td>
+          <td>酸素投与</td>
+          <td>高流量</td>
+        </tr>
+        <tr>
+          <td>⑤</td>
+          <td>輸液</td>
+          <td>等張液 1-2L 急速投与</td>
+        </tr>
+        <tr>
+          <td>⑥</td>
+          <td>補助薬</td>
+          <td>抗ヒスタミン薬、ステロイド</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">アドレナリンの投与方法（112D47）</div>
+        <ul>
+          <li>投与量：成人 <span class="highlight">0.3mg</span>（0.1%製剤 0.3mL）</li>
+          <li>投与経路：<span class="highlight">筋肉内注射</span>（大腿前外側）</li>
+          <li><span class="caution">皮下注射ではない</span>：吸収が遅い</li>
+          <li><span class="caution">静脈内注射は原則避ける</span>：不整脈リスク</li>
+          <li>効果不十分なら5-15分後に再投与可</li>
+        </ul>
+      </div>
+
+      <h3>アドレナリンの作用</h3>
+      <table>
+        <tr>
+          <th>受容体</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td>α₁</td>
+          <td>血管収縮 → 血圧↑、浮腫軽減</td>
+        </tr>
+        <tr>
+          <td>β₁</td>
+          <td>心収縮力↑、心拍数↑</td>
+        </tr>
+        <tr>
+          <td>β₂</td>
+          <td>気管支拡張、肥満細胞からのメディエーター放出抑制</td>
+        </tr>
+      </table>
+
+      <h3>補助薬</h3>
+      <ul>
+        <li><span class="key">抗ヒスタミン薬</span>：皮膚症状に有効、ゆっくり投与</li>
+        <li><span class="key">ステロイド</span>：遅発性反応（4-6時間後）の予防</li>
+      </ul>
+      <p class="note">※抗ヒスタミン薬・ステロイドは補助的であり、アドレナリンの代替にはならない</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112D38</div>
+        <p>アナフィラキシーショックでみられる血圧低下の原因はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 徐脈<br>
+          b 貧血<br>
+          c 血管拡張<br>
+          d 気管支拡張<br>
+          e 血管透過性亢進
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】アナフィラキシーショックの血圧低下は、ヒスタミン等により<span class="key">血管拡張</span>（末梢血管抵抗↓）と<span class="key">血管透過性亢進</span>（血管内容量↓）が起こるため。徐脈ではなく頻脈を呈することが多い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D47</div>
+        <p>成人のアナフィラキシーショックに対し、アドレナリン 0.3mgを投与する場合の適切な方法はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 点鼻<br>
+          b 内服<br>
+          c 皮下注射<br>
+          d 筋肉内注射<br>
+          e 静脈内注射
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】アナフィラキシーへのアドレナリンは<span class="highlight">筋肉内注射</span>が標準。皮下注射より吸収が速く、静脈内注射より不整脈リスクが低い。大腿前外側（外側広筋）に投与する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110B5</div>
+        <p>33歳の男性。下顎左側智歯周囲炎のため、抗菌薬の点滴静注を開始した。投与開始5分後から皮膚の掻痒感と嗄声が生じた。血圧70/40mmHg、心拍数98/分で、次第に意識消失も認められた。投与すべき薬剤はどれか。1つ選べ。</p>
+        <div class="choices">
+          a β遮断薬<br>
+          b ミダゾラム<br>
+          c アドレナリン<br>
+          d 抗ヒスタミン薬<br>
+          e 副腎皮質ステロイド薬
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】抗菌薬投与後の掻痒感、嗄声、血圧低下、意識消失は典型的な<span class="key">アナフィラキシーショック</span>。第一選択は<span class="highlight">アドレナリン</span>。抗ヒスタミン薬やステロイドは補助的であり、ショック時の第一選択にはならない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C37</div>
+        <p>75歳の男性。左側顎下部の腫脹を主訴として来院した。診察の結果、顎下部蜂窩織炎と診断し、抗菌薬の点滴静注を開始したところ、投与開始5分後に呼吸困難を訴えた。胸部の聴診で喘鳴が聴取され、全身の皮膚に膨疹を認める。この時の生体情報モニタ画面の写真（別冊No.11）を別に示す。まず投与すべき薬剤はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116C37_1.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a アスピリン<br>
+          b ジアゼパム<br>
+          c アドレナリン<br>
+          d リドカイン塩酸塩<br>
+          e アセトアミノフェン
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】抗菌薬投与後の呼吸困難、喘鳴、膨疹（蕁麻疹）はアナフィラキシーの症状。まず投与すべきは<span class="highlight">アドレナリン</span>。ジアゼパムは痙攣に、リドカインは不整脈に用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B73</div>
+        <p>30歳の女性。左側顎角部の腫脹を主訴として来院した。ヨード系造影剤によるショックの既往がある。検査の結果、下顎蜂窩織炎と診断し、抗菌薬の静脈内投与を行ったところ、しばらくして掻痒感を訴えた。その時の上腕の皮膚写真（別冊No.21）を別に示す。今後予想されるのはどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B73_1.png" alt="別冊No.21">
+        </div>
+        <div class="choices">
+          a 喘息<br>
+          b 意識消失<br>
+          c 血圧上昇<br>
+          d 体温上昇<br>
+          e 動脈血酸素飽和度の低下
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】ショック既往者に掻痒感・皮膚症状が出現した場合、アナフィラキシーへの進行を予測する。今後予想されるのは<span class="key">喘息</span>（気管支攣縮）、<span class="key">意識消失</span>（ショック）、<span class="key">SpO₂低下</span>（呼吸障害）。血圧は<span class="caution">低下</span>する（上昇ではない）。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>病態：I型アレルギー、IgE介在、ヒスタミン放出</li>
+          <li>血圧低下の原因：<span class="highlight">血管拡張</span>＋<span class="highlight">血管透過性亢進</span></li>
+          <li>第一選択薬：<span class="highlight">アドレナリン 0.3mg 筋注</span></li>
+          <li>投与部位：大腿前外側（外側広筋）</li>
+          <li>抗ヒスタミン薬・ステロイドは補助的（第一選択ではない）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

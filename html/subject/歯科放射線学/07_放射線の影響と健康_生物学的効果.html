@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>生物学的効果 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線の影響と健康</span>
+    <h1>生物学的効果</h1>
+    <div class="container">
+
+      <!-- 1. 放射線の作用機序 -->
+      <h2>放射線の作用機序</h2>
+      <p>放射線のエネルギーによって<span class="key">DNA</span>がダメージを受けることから、放射線の生体への影響が始まる。DNAへの作用経路は2つある。</p>
+
+      <h3>直接作用と間接作用</h3>
+      <ul>
+        <li><span class="key">直接作用</span>：放射線のエネルギーがDNAの分子に直接的に与えられること</li>
+        <li><span class="key">間接作用</span>：放射線のエネルギーが<span class="highlight">水分子</span>を介して、DNAの分子に間接的に与えられること</li>
+      </ul>
+      <p>間接作用では、放射線が水分子を吸収し、生成した<span class="key">フリーラジカル</span>がDNAを損傷する。フリーラジカルは短い時間ではあるが、化学的な反応性が非常に高い。</p>
+
+      <h3>ラジカルスカベンジャー</h3>
+      <p>不安定なフリーラジカルを捕捉して安定化させる物質。細胞中に存在するラジカルスカベンジャーは、フリーラジカルによるDNA損傷量を低下させることで細胞の<span class="key">放射線感受性を下げる</span>。</p>
+
+      <!-- 2. DNA損傷 -->
+      <h2>放射線によるDNA損傷</h2>
+
+      <h3>損傷の種類</h3>
+      <ul>
+        <li><span class="key">塩基の損傷</span>：塩基が化学的に別の物質に変化する（例：チミン→チミングリコール）</li>
+        <li><span class="key">塩基の遊離</span>：塩基がDNAから遊離し、AP部位ができる</li>
+        <li><span class="key">DNAの架橋</span>：近くの2つの塩基が化学的に結合する（例：チミンのダイマー）</li>
+        <li><span class="key">DNA鎖の切断</span>：ホスホジエステル結合が断裂する</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">DNA鎖切断のポイント</div>
+        <ul>
+          <li><span class="key">1本鎖切断（SSB）</span>：修復されやすい</li>
+          <li><span class="highlight">2本鎖切断（DSB）</span>：修復されないことがある → 細胞致死効果や突然変異の主因</li>
+        </ul>
+      </div>
+
+      <p>低LET放射線（X線）では損傷の分布がまばらだが、高LET放射線（α粒子）では密に損傷が生じる（クラスター損傷）。</p>
+
+      <!-- 3. 細胞死と細胞生存率曲線 -->
+      <h2>細胞死と細胞生存率曲線</h2>
+
+      <h3>細胞死の種類</h3>
+      <ul>
+        <li><span class="key">間期死</span>：細胞分裂を経ずに数時間で起こる。大線量の場合に多い</li>
+        <li><span class="key">増殖死</span>：照射後数回の細胞分裂を経て起こる。一般的な放射線による細胞死</li>
+        <li><span class="key">アポトーシス</span>：プログラムされた細胞死。リンパ球などで見られる</li>
+      </ul>
+
+      <h3>直線2次モデル（LQモデル）</h3>
+      <p>細胞生存率曲線を記述するモデル。生存率 S = exp(−αD − βD²)</p>
+      <ul>
+        <li><span class="key">α/β比</span>が大きい → 早期反応組織（肩が小さい曲線）</li>
+        <li><span class="key">α/β比</span>が小さい → 晩期反応組織（肩が大きい曲線）</li>
+      </ul>
+
+      <!-- 4. 修飾因子（核心） -->
+      <h2>放射線の影響を修飾する因子</h2>
+      <p>放射線の<span class="highlight">細胞致死効果</span>は、さまざまな因子によって修飾される。114D22で直接出題されたテーマ。</p>
+
+      <h3>LET（線エネルギー付与）と線質効果</h3>
+      <p>同じ吸収エネルギーでも、放射線の種類やエネルギーによって生物学的効果は異なる。この放射線の種類やエネルギーのことを<span class="key">線質</span>という。</p>
+      <ul>
+        <li><span class="key">LET</span>（Linear Energy Transfer）：放射線が物質中を通過する際に単位長さあたりに与えるエネルギー（keV/μm）</li>
+        <li><span class="highlight">LETが大きい → 生物学的効果が大きい</span></li>
+      </ul>
+
+      <h3>放射線の種類とLET</h3>
+      <table>
+        <tr><th>放射線</th><th>LET</th><th>特徴</th></tr>
+        <tr><td>X線・γ線</td><td>低LET</td><td>細胞生存率曲線に肩がある</td></tr>
+        <tr><td>陽子線</td><td>中程度</td><td></td></tr>
+        <tr><td>α線・重粒子線（炭素イオン線）</td><td>高LET</td><td>細胞生存率曲線は肩のない直線</td></tr>
+      </table>
+
+      <h3>RBE（生物学的効果比）</h3>
+      <p>基準放射線（X線、LET 3〜4 keV/μm）と比較した放射線の生物学的効果の指標。</p>
+      <div class="point-box">
+        <div class="point-box-title">RBEの定義</div>
+        <p>RBE = 基準放射線で同じ生物学的効果を生じるのに必要な線量 ÷ 対象放射線で必要な線量</p>
+        <ul>
+          <li>LETが約100 keV/μm付近で<span class="highlight">RBEは最大</span>になる</li>
+          <li>それ以上のLETではRBEはかえって低下する（overkill効果）</li>
+        </ul>
+      </div>
+
+      <h3>酸素効果とOER（酸素増感比）</h3>
+      <p>酸素の存在が放射線感受性を高めることを<span class="key">酸素効果</span>という。酸素分圧が低い状態で照射された場合、酸素分圧が高い状態での照射より生物学的効果は低くなる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">OER（Oxygen Enhancement Ratio）</div>
+        <p>OER = 無酸素状態で同じ効果を起こすのに必要な線量 ÷ その酸素濃度下で必要な線量</p>
+        <ul>
+          <li>酸素増感比は酸素分圧約<span class="highlight">20 mmHg</span>以上で飽和に達し、値は<span class="highlight">約3</span></li>
+          <li>正常組織は酸素分圧約40 mmHg以上</li>
+          <li>高LET放射線ではOERが小さい（酸素効果が少ない）</li>
+        </ul>
+      </div>
+      <p class="note">※腫瘍内の低酸素細胞は放射線抵抗性を示し、放射線治療における重要な問題となる。</p>
+
+      <h3>細胞周期</h3>
+      <p>細胞分裂周期の位相によって放射線感受性は異なる。</p>
+      <ul>
+        <li>感受性が<span class="highlight">最も高い</span>：<span class="key">M期</span>、<span class="key">G2期後半</span></li>
+        <li>感受性がやや高い：G1期後半〜S期初期</li>
+        <li>感受性が<span class="caution">低い</span>：S期後半、G0期、G1初期、G2初期</li>
+      </ul>
+
+      <h3>線量率効果</h3>
+      <ul>
+        <li>同じ線量を<span class="key">短い時間</span>で照射する方が、長い時間かけるよりダメージが大きい</li>
+        <li>低LET放射線（X線など）で<span class="key">顕著</span>に表れる</li>
+        <li>高LET放射線では線量率効果は小さい</li>
+      </ul>
+
+      <h3>分割照射の効果</h3>
+      <ul>
+        <li>同じ総線量でも、分割して照射した方が<span class="key">生存率が高い</span></li>
+        <li>照射と照射の間にダメージを受けた細胞が修復（<span class="key">亜致死的損傷からの回復</span>）され、回復が起きるため</li>
+        <li>放射線治療では分割照射が基本（正常組織の回復が速い原理を利用）</li>
+      </ul>
+
+      <h3>温熱効果</h3>
+      <ul>
+        <li>放射線照射時に組織の温度が高いと、生物学的効果が大きくなる</li>
+        <li>加温が放射線感受性を高めることを<span class="key">温熱効果</span>という</li>
+        <li>40℃以上の温熱処理で放射線効果が増強（温熱療法の併用）</li>
+      </ul>
+
+      <h3>放射線増感剤と放射線防護剤</h3>
+      <table>
+        <tr><th>種類</th><th>作用</th><th>例</th></tr>
+        <tr><td>放射線増感剤</td><td>生物学的効果を相乗的に高める</td><td>ハロゲン化ピリミジン、低酸素細胞増感剤</td></tr>
+        <tr><td>放射線防護剤</td><td>感受性を低下させ、損傷を低減</td><td>システアミンなどSH基をもつ化合物</td></tr>
+      </table>
+      <p>放射線防護剤は、間接作用で生じたフリーラジカルを消去し、DNA損傷を防ぐ。</p>
+
+      <!-- 5. 修飾因子まとめ -->
+      <h2>修飾因子の整理</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">「修飾因子」と「作用の結果」を区別する</div>
+        <ul>
+          <li><span class="key">修飾因子</span>（効果を変える要因）：酸素、細胞周期、LET/RBE、線量率、温度、増感剤/防護剤</li>
+          <li><span class="caution">修飾因子ではない</span>（作用の結果・過程）：DNA損傷、アポトーシス、突然変異、染色体異常</li>
+        </ul>
+      </div>
+
+      <!-- 6. 放射線感受性 -->
+      <h2>細胞・組織の放射線感受性</h2>
+
+      <h3>ベルゴニーとトリボンドーの法則</h3>
+      <p>放射線感受性についての法則の基本となる3点：</p>
+      <ul>
+        <li><span class="key">分裂頻度</span>の高い細胞ほど感受性が高い</li>
+        <li>将来的に長期にわたって<span class="key">分裂を続ける</span>細胞ほど感受性が高い</li>
+        <li>形態的・機能的に<span class="key">未分化</span>な細胞ほど感受性が高い</li>
+      </ul>
+
+      <h3>ルブロンドによる放射線感受性の分類</h3>
+      <table>
+        <tr><th>細胞系</th><th>放射線感受性</th><th>例</th></tr>
+        <tr><td>細胞新生系</td><td>最も高い</td><td>リンパ組織、造血組織、精上皮</td></tr>
+        <tr><td>細胞再生系</td><td>高い</td><td>皮膚、消化管粘膜</td></tr>
+        <tr><td>細胞増加系</td><td>中程度</td><td>結合組織、小血管</td></tr>
+        <tr><td>細胞静止系</td><td>最も低い</td><td>神経細胞、筋細胞</td></tr>
+      </table>
+
+      <!-- 7. 過去問 -->
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">114D22</div>
+        <p>放射線の細胞致死効果における修飾因子はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 酸　素<br>
+          b dNA損傷<br>
+          c アポトーシス<br>
+          d 細胞分裂周期<br>
+          e 生物学的効果比
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】放射線の細胞致死効果を修飾する因子を問う問題。<span class="key">酸素</span>（酸素効果：酸素分圧が高いほど効果増大）、<span class="key">細胞分裂周期</span>（M期・G2後半で感受性最大）、<span class="key">生物学的効果比（RBE）</span>（放射線の線質によって効果が変わる）はいずれも修飾因子である。一方、<span class="caution">DNA損傷は放射線の直接作用・間接作用による「結果」</span>であり修飾因子ではない。<span class="caution">アポトーシスは細胞死の「一種」</span>であり、効果を修飾する因子ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

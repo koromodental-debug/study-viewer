@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>呼吸器疾患 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 留意すべき疾患・徴候</span>
+    <h1>呼吸器疾患</h1>
+    <div class="container">
+
+      <h2>換気障害の分類</h2>
+      <p>スパイロメトリで<span class="highlight">1秒率と%肺活量</span>を測定し、換気障害のパターンを判定する。</p>
+
+      <h3>判定基準</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>1秒率（FEV1.0%）</th>
+          <th>%肺活量（%VC）</th>
+          <th>代表疾患</th>
+        </tr>
+        <tr>
+          <td>正常</td>
+          <td>≥70%</td>
+          <td>≥80%</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><span class="key">閉塞性</span></td>
+          <td><span class="highlight">&lt;70%</span></td>
+          <td>≥80%</td>
+          <td>COPD、喘息</td>
+        </tr>
+        <tr>
+          <td><span class="key">拘束性</span></td>
+          <td>≥70%</td>
+          <td><span class="highlight">&lt;80%</span></td>
+          <td>間質性肺炎、肺線維症</td>
+        </tr>
+        <tr>
+          <td>混合性</td>
+          <td>&lt;70%</td>
+          <td>&lt;80%</td>
+          <td>-</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <ul>
+          <li><span class="key">閉塞性</span>：気道が狭い → 息を<span class="caution">吐きにくい</span> → 1秒率↓</li>
+          <li><span class="key">拘束性</span>：肺が膨らまない → 息を<span class="caution">吸いにくい</span> → %肺活量↓</li>
+        </ul>
+      </div>
+
+      <h2>COPD（慢性閉塞性肺疾患）</h2>
+      <p>長期の<span class="key">喫煙</span>が主な原因。肺気腫と慢性気管支炎を含む。</p>
+
+      <h3>症状・所見</h3>
+      <ul>
+        <li><span class="highlight">息切れ</span>（労作時呼吸困難）</li>
+        <li><span class="key">気道抵抗増加</span></li>
+        <li><span class="key">起坐呼吸</span>（仰臥位より座位で楽）</li>
+        <li>肺気腫では<span class="highlight">肺コンプライアンス増加</span>（肺が過膨張）</li>
+      </ul>
+
+      <h3>COPDの重症度分類（GOLD分類）</h3>
+      <table>
+        <tr>
+          <th>病期</th>
+          <th>重症度</th>
+          <th>%FEV1</th>
+        </tr>
+        <tr>
+          <td>I期</td>
+          <td>軽度</td>
+          <td>≥80%</td>
+        </tr>
+        <tr>
+          <td>II期</td>
+          <td>中等度</td>
+          <td>50〜80%</td>
+        </tr>
+        <tr>
+          <td>III期</td>
+          <td>高度</td>
+          <td>30〜50%</td>
+        </tr>
+        <tr>
+          <td>IV期</td>
+          <td>きわめて高度</td>
+          <td>&lt;30%</td>
+        </tr>
+      </table>
+
+      <h3>在宅酸素療法（HOT）</h3>
+      <p>重症COPDでは<span class="key">酸素濃縮器</span>を使用して在宅酸素療法を行う。</p>
+      <table>
+        <tr>
+          <th>酸素流量（鼻カニューレ）</th>
+          <th>吸入酸素濃度</th>
+        </tr>
+        <tr>
+          <td>1 L/分</td>
+          <td><span class="highlight">約24%</span></td>
+        </tr>
+        <tr>
+          <td>2 L/分</td>
+          <td>約28%</td>
+        </tr>
+        <tr>
+          <td>3 L/分</td>
+          <td>約32%</td>
+        </tr>
+      </table>
+      <p class="note">※室内気は21%。1L/分増加ごとに約4%上昇。</p>
+
+      <h3>歯科治療時のモニタリング</h3>
+      <ul>
+        <li><span class="highlight">パルスオキシメータ</span>（SpO2）</li>
+        <li><span class="key">モニタ心電図</span></li>
+      </ul>
+
+      <h2>気管支喘息</h2>
+      <p>気道の慢性炎症により、発作性の<span class="key">気道狭窄</span>を起こす疾患。</p>
+
+      <h3>症状</h3>
+      <ul>
+        <li><span class="highlight">喘鳴</span>（wheezing）</li>
+        <li><span class="key">呼気延長</span></li>
+        <li>努力呼吸</li>
+        <li>咳嗽</li>
+      </ul>
+
+      <h3>歯科治療時の注意点</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>全身麻酔時</td>
+          <td><span class="highlight">ステロイドカバー</span>を検討</td>
+        </tr>
+        <tr>
+          <td>発作時の薬物</td>
+          <td><span class="key">アミノフィリン</span>（気管支拡張薬）</td>
+        </tr>
+        <tr>
+          <td><span class="caution">アスピリン喘息</span></td>
+          <td>NSAIDs（ロキソプロフェン等）で発作誘発</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">アスピリン喘息への対応</div>
+        <ul>
+          <li>NSAIDsで発作が誘発されたら → <span class="highlight">酸素投与</span>＋<span class="highlight">アドレナリン</span></li>
+          <li>サルブタモール（β2刺激薬）吸入ができない場合に有効</li>
+        </ul>
+      </div>
+
+      <h2>Hugh-Jones分類</h2>
+      <p><span class="highlight">呼吸機能障害の重症度</span>を評価する分類。</p>
+      <table>
+        <tr>
+          <th>度</th>
+          <th>状態</th>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td>同年齢の健康者と同様の労作ができる</td>
+        </tr>
+        <tr>
+          <td>II</td>
+          <td>坂道・階段は健康者と同様に登れるが、平地では同様に歩けない</td>
+        </tr>
+        <tr>
+          <td>III</td>
+          <td>平地でも健康者並みに歩けないが、自分のペースなら1.6km以上歩ける</td>
+        </tr>
+        <tr>
+          <td>IV</td>
+          <td>休み休みでなければ50m以上歩けない</td>
+        </tr>
+        <tr>
+          <td><span class="caution">V</span></td>
+          <td>会話・着替えにも息切れがする</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A71</div>
+        <p>慢性閉塞性肺疾患患者にみられるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 息切れ<br>
+          b 起坐呼吸<br>
+          c PaO2の上昇<br>
+          d 気道抵抗増加<br>
+          e 胸郭コンプライアンス増加
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】COPDでは気道狭窄により気道抵抗が増加し、労作時の息切れが生じる。PaO2は低下する（低酸素血症）。起坐呼吸は左心不全で典型的。胸郭ではなく肺コンプライアンスが増加。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D30</div>
+        <p>スパイロメトリで1秒率80%、%肺活量50%であった。考えられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 喘息<br>
+          b 間質性肺炎<br>
+          c 気管支拡張症<br>
+          d 慢性閉塞性肺疾患<br>
+          e 睡眠時無呼吸症候群
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】1秒率80%（正常）、%肺活量50%（低下）→ 拘束性換気障害。間質性肺炎は拘束性障害の代表。喘息・COPDは閉塞性（1秒率低下）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D40</div>
+        <p>呼吸機能障害の重症度を評価するための指標はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ASA-PS分類<br>
+          b FAST分類<br>
+          c Hugh-Jones分類<br>
+          d NYHA分類<br>
+          e TNM分類
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】Hugh-Jones分類は呼吸機能障害の重症度。ASA-PSは全身状態、NYHAは心機能、TNMは悪性腫瘍の分類。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A44</div>
+        <p>在宅酸素療法で酸素1L/分を鼻カニューレから投与した際の吸入酸素濃度はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 約20%<br>
+          b 約24%<br>
+          c 約32%<br>
+          d 約40%<br>
+          e 約50%
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】鼻カニューレでは1L/分で約24%。室内気21%＋1L/分ごとに約4%上昇。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C28</div>
+        <p>26歳の男性。下顎右側臼歯部の腫れを主訴として来院した。気管支喘息の既往がある。診察の結果、智歯周囲炎と診断し、全身麻酔下において抜歯した。術後創部痛のためロキソプロフェンナトリウム水和物を内服させたところ、次第に著明な咳嗽と喘鳴が生じた。呼吸困難のためサルブタモール硫酸塩の吸入ができなかった。この時の生体情報モニタ画面の写真（別冊No.4）を別に示す。<br>次に投与するのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C28.png" alt="115C28">
+        </div>
+        <div class="choices">
+          a 酸素<br>
+          b アドレナリン<br>
+          c ニトログリセリン<br>
+          d ランジオロール塩酸塩<br>
+          e チオペンタールナトリウム
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】アスピリン喘息（NSAIDs誘発性喘息）の発作。β2刺激薬吸入ができない場合は、酸素投与とアドレナリン（気管支拡張作用）を投与する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A74</div>
+        <p>肺コンプライアンスが高くなるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肺気腫<br>
+          b 肺水腫<br>
+          c 肺線維症<br>
+          d 間質性肺炎<br>
+          e 気管支喘息
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】肺気腫では肺胞壁が破壊され、肺が過膨張するためコンプライアンス（膨らみやすさ）が増加。肺線維症・間質性肺炎はコンプライアンス低下（膨らみにくい）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

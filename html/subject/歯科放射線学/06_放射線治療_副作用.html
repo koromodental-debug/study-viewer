@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>副作用 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 50%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線治療</span>
+    <h1>放射線治療の副作用</h1>
+    <div class="container">
+
+      <h2>早期影響と晩期影響</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>出現時期</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td><span class="key">早期影響</span></td>
+          <td>照射中〜数週間</td>
+          <td><span class="highlight">粘膜炎</span>、<span class="highlight">味覚障害</span>、皮膚炎（紅斑）、脱毛</td>
+        </tr>
+        <tr>
+          <td><span class="key">晩期影響</span></td>
+          <td>数ヶ月〜数年後</td>
+          <td><span class="highlight">口腔乾燥症</span>、<span class="highlight">顎骨壊死</span>、放射線誘発癌、多発性齲蝕</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">早期 vs 晩期の見分け方</div>
+        <ul>
+          <li><span class="key">早期影響</span>：分裂が盛んな細胞の障害（粘膜、味蕾）→ 照射中に出現</li>
+          <li><span class="key">晩期影響</span>：血管・組織の変性による障害（骨壊死、唾液腺破壊）→ 照射後しばらくしてから</li>
+          <li><span class="caution">放射線誘発癌は晩期影響であり、確率的影響</span></li>
+        </ul>
+      </div>
+
+      <h2>口腔乾燥症</h2>
+      <ul>
+        <li>唾液腺（耳下腺・顎下腺・小唾液腺）が照射野に含まれることで発症</li>
+        <li><span class="caution">回復しにくい</span>（唾液腺の不可逆的障害）</li>
+        <li>口腔乾燥により自浄作用・殺菌作用が低下</li>
+        <li>結果として<span class="highlight">齲蝕が多発</span>（特に歯頸部齲蝕）</li>
+      </ul>
+
+      <h2>放射線性顎骨壊死</h2>
+      <ul>
+        <li>照射による骨組織の血管障害 → 骨の治癒能力低下</li>
+        <li><span class="caution">照射直後には出現しない</span>（晩期影響）</li>
+        <li>照射後の観血的処置（抜歯など）が誘因となる</li>
+      </ul>
+
+      <h2>放射線治療と口腔管理</h2>
+      <h3>照射前</h3>
+      <ul>
+        <li>照射野内の罹患歯は<span class="highlight">約2週間前までに抜歯</span></li>
+        <li>保存不可能な歯、智歯周囲炎のある歯を除去</li>
+        <li>不適合な金属修復物の研磨・撤去</li>
+      </ul>
+
+      <h3>照射中</h3>
+      <ul>
+        <li>粘膜炎への対応（含嗽剤による口腔内洗浄）</li>
+        <li>観血的処置は行わない</li>
+      </ul>
+
+      <h3>照射後</h3>
+      <ul>
+        <li><span class="caution">照射野内の抜歯は禁忌</span>（顎骨壊死リスク）</li>
+        <li>広範性・多発性齲蝕が発症しても抜歯は行わない</li>
+        <li>オーバーデンチャーなど保存的処置を選択</li>
+        <li>齲蝕は<span class="highlight">照射野外の歯にも多発</span>（口腔乾燥が原因）</li>
+      </ul>
+
+      <h2>スペーサー（口腔内装置）</h2>
+      <p>舌癌の小線源治療（組織内照射）時に使用される装置。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">スペーサーの目的</div>
+        <ul>
+          <li>線源と下顎骨の<span class="highlight">距離を離す</span>ことで下顎骨への線量を低減</li>
+          <li><span class="highlight">下顎骨壊死を予防</span>する</li>
+          <li>原理は<span class="key">距離の逆二乗則</span>：距離が2倍になれば線量は1/4</li>
+        </ul>
+      </div>
+
+      <h2>小児の放射線治療</h2>
+      <p>小児では発育中の組織が障害を受けやすい。</p>
+      <ul>
+        <li><span class="highlight">歯胚</span>が最も晩期障害を受けやすい</li>
+        <li>歯の形成異常（矮小歯、歯根の短縮など）を引き起こす</li>
+        <li>骨の成長障害も生じうる</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105C104</div>
+        <p>口腔癌の放射線治療による早期影響はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 粘膜炎<br>
+          b 味覚障害<br>
+          c 下顎骨壊死<br>
+          d 口腔乾燥症<br>
+          e 放射線誘発癌
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】早期影響は照射中〜数週間以内に出現する。<span class="highlight">粘膜炎</span>（a○）と<span class="highlight">味覚障害</span>（b○）は早期影響。下顎骨壊死（c×）・口腔乾燥症（d×）・放射線誘発癌（e×）は晩期影響。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C117</div>
+        <p>口腔領域悪性腫瘍の放射線治療の副作用と口腔管理で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口腔乾燥は早期に回復する。<br>
+          b 照射野内の抜歯は照射後に行う。<br>
+          c 粘膜炎は照射期間中に消失する。<br>
+          d 顎骨壊死は照射直後から出現する。<br>
+          e 齲蝕は照射野外の歯にも多発する。
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】口腔乾燥により自浄作用が低下し、<span class="highlight">齲蝕は照射野外の歯にも多発</span>する（e○）。口腔乾燥は<span class="caution">回復しにくい</span>（a×）。照射野内の抜歯は<span class="caution">照射前に行う</span>（b×）。粘膜炎は照射中に増悪する（c×）。顎骨壊死は晩期影響で照射直後には出現しない（d×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D32</div>
+        <p>放射線診療による発がんについて正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 晩期影響である。<br>
+          b 確定的影響である。<br>
+          c しきい線量がある。<br>
+          d IVR では生じない。<br>
+          e 内部被曝では生じない。
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】放射線誘発癌は<span class="highlight">晩期影響</span>（a○）。<span class="caution">確率的影響</span>であり、しきい線量はない（b×、c×）。IVRでも内部被曝でも発がんは生じうる（d×、e×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A84</div>
+        <p>舌癌の小線源治療に用いられるスペーサーで予防できるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 齲蝕<br>
+          b 歯周病<br>
+          c 舌潰瘍<br>
+          d 下顎骨壊死<br>
+          e 口腔乾燥症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】スペーサーは線源と下顎骨の距離を離すことで<span class="highlight">下顎骨壊死を予防</span>する（d○）。齲蝕・歯周病・口腔乾燥症は距離では予防できない（a×、b×、e×）。舌潰瘍は線源が直接接する舌に生じるもので、スペーサーの目的ではない（c×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C32</div>
+        <p>舌癌の小線源治療時に使用される口腔内装置の写真（別冊No.9A）と装着時の口腔内写真（別冊No.9B）を別に示す。<br>この装置の使用目的に最も関係が深いのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116C32.png" alt="116C32">
+        </div>
+        <div class="choices">
+          a 距離<br>
+          b 遮蔽<br>
+          c 酸素効果<br>
+          d 増感効果<br>
+          e ブラッグピーク
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】スペーサーは線源と下顎骨の<span class="highlight">距離</span>を離す装置（a○）。距離の逆二乗則により、距離を離すと線量が低下し、下顎骨壊死を予防できる。遮蔽（b）は鉛などで放射線を遮る方法で、この装置の原理ではない。酸素効果（c）・増感効果（d）・ブラッグピーク（e）はいずれも無関係。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D36</div>
+        <p>小児における放射線治療で晩期障害を受けやすいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 舌<br>
+          b 口唇<br>
+          c 口底<br>
+          d 歯肉<br>
+          e 歯胚
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】小児では発育中の組織が放射線の障害を受けやすい。<span class="highlight">歯胚</span>は分化・形成途上にあり、最も晩期障害を受けやすい（e○）。歯の形成異常（矮小歯、歯根短縮など）を引き起こす。舌・口唇・口底・歯肉は成人と同様の感受性（a〜d×）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

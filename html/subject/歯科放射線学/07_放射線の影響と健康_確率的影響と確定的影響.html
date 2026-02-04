@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>確率的影響と確定的影響 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 70%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線の影響と健康</span>
+    <h1>確率的影響と確定的影響</h1>
+    <div class="container">
+
+      <h2>放射線影響の分類体系</h2>
+      <p>放射線のヒトへの影響は、<span class="key">影響の現れる個人</span>（身体的/遺伝的）、<span class="key">影響の現れる時期</span>（早期/晩期）、<span class="key">線量-反応関係</span>（確定的/確率的）の3つの観点から分類される。</p>
+
+      <h3>身体的影響と遺伝的影響</h3>
+      <ul>
+        <li><span class="key">身体的影響</span>：被曝した本人に現れる影響</li>
+        <li><span class="key">遺伝的影響</span>：生殖細胞の突然変異が子孫に引き継がれる影響</li>
+      </ul>
+
+      <h2>確定的影響と確率的影響</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>確定的影響</th>
+          <th>確率的影響</th>
+        </tr>
+        <tr>
+          <td><span class="key">しきい線量</span></td>
+          <td><span class="highlight">あり</span></td>
+          <td><span class="highlight">なし</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">線量-反応関係</span></td>
+          <td>S字状曲線</td>
+          <td>直線的（線量に比例）</td>
+        </tr>
+        <tr>
+          <td><span class="key">線量と重篤度</span></td>
+          <td>線量↑ → 重篤度↑</td>
+          <td>線量↑ → 発生確率↑<br>（重篤度は変わらない）</td>
+        </tr>
+        <tr>
+          <td><span class="key">防護の考え方</span></td>
+          <td>しきい線量以下に抑える</td>
+          <td>可能な限り低減（ALARA）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">見分け方のコツ</div>
+        <ul>
+          <li><span class="key">確定的影響</span> = 組織の損傷（一定数以上の細胞が死ぬと発症）→ しきい線量あり</li>
+          <li><span class="key">確率的影響</span> = DNAの突然変異（1個の細胞の変異でも発症しうる）→ しきい線量なし</li>
+          <li><span class="caution">「癌」「白血病」「遺伝」と名のつくもの = 確率的影響</span></li>
+        </ul>
+      </div>
+
+      <h2>具体例の分類</h2>
+      <h3>確定的影響（しきい線量あり）</h3>
+      <table>
+        <tr>
+          <th>影響</th>
+          <th>しきい線量（急性被曝）</th>
+        </tr>
+        <tr>
+          <td><span class="key">骨髄：造血機能低下</span></td>
+          <td>0.5 Gy</td>
+        </tr>
+        <tr>
+          <td><span class="key">精巣：一時的不妊</span></td>
+          <td>0.15 Gy</td>
+        </tr>
+        <tr>
+          <td><span class="key">精巣：永久不妊</span></td>
+          <td>3.5〜6.0 Gy</td>
+        </tr>
+        <tr>
+          <td><span class="key">卵巣：不妊</span></td>
+          <td>2.5〜6.0 Gy</td>
+        </tr>
+        <tr>
+          <td><span class="key">水晶体：白内障</span></td>
+          <td>5.0 Gy</td>
+        </tr>
+        <tr>
+          <td><span class="key">皮膚炎・脱毛</span></td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨壊死</span></td>
+          <td>―</td>
+        </tr>
+      </table>
+
+      <h3>確率的影響（しきい線量なし）</h3>
+      <ul>
+        <li><span class="key">放射線発がん</span>：白血病、甲状腺癌、口腔癌、髄膜腫など</li>
+        <li><span class="key">遺伝的影響</span>：生殖細胞の突然変異による子孫への影響</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">106C122</div>
+        <p>放射線の影響における線量−効果関係を図に示す。<br>実線で示される影響に属するのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106C122.png" alt="106C122">
+        </div>
+        <div class="choices">
+          a 白内障<br>
+          b 骨壊死<br>
+          c 白血病<br>
+          d 甲状腺癌<br>
+          e 遺伝的影響
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】図はしきい線量が存在し、それを超えるとS字状に重篤度が増加する<span class="highlight">確定的影響</span>の線量-効果関係を示している。<span class="highlight">白内障</span>（a○）と<span class="highlight">骨壊死</span>（b○）は確定的影響。白血病（c×）・甲状腺癌（d×）は放射線発がんで確率的影響。遺伝的影響（e×）も確率的影響。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C31</div>
+        <p>人体における放射線影響の発現でしきい線量があるとされるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 不妊<br>
+          b 口腔癌<br>
+          c 髄膜腫<br>
+          d 白内障<br>
+          e 白血病
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】しきい線量があるのは<span class="highlight">確定的影響</span>。<span class="highlight">不妊</span>（精巣0.15Gy、卵巣2.5Gy）と<span class="highlight">白内障</span>（5.0Gy）は確定的影響でしきい線量がある（a○、d○）。口腔癌（b×）・髄膜腫（c×）・白血病（e×）は放射線発がんで確率的影響（しきい線量なし）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

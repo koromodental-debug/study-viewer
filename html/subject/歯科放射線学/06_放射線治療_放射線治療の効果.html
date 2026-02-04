@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>放射線治療の効果 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 80%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線治療</span>
+    <h1>放射線治療の効果</h1>
+    <div class="container">
+
+      <h2>放射線治療の目的</h2>
+      <p>放射線治療は、機能と形態を温存できる生体にやさしい治療法である。目的によって以下に分類される。</p>
+
+      <h3>根治的放射線治療</h3>
+      <p>腫瘍の完全な制御（治癒）を目指す治療。密封小線源治療は根治を目的とする場合がほとんど。外部照射は化学療法との併用で行われることが多い。</p>
+
+      <h3>緩和的放射線照射（緩和照射）</h3>
+      <p><span class="caution">根治性はない</span>が、患者のQOL向上を目的とする治療。放射線治療の7割ほどがこの目的で使用されている。</p>
+      <ul>
+        <li><span class="highlight">疼痛除去</span>（骨転移による痛みなど）</li>
+        <li>食物の通過障害の改善</li>
+        <li>呼吸困難の改善</li>
+        <li>出血制御</li>
+      </ul>
+
+      <h3>術前照射・術後照射</h3>
+      <ul>
+        <li><span class="key">術前照射</span>：腫瘍を縮小させ、手術不可能な癌を手術可能にする</li>
+        <li><span class="key">術後照射</span>：手術後の再発予防、残存部位への追加治療</li>
+      </ul>
+
+      <h2>治療可能比</h2>
+      <p>放射線治療の効果を評価する重要な指標。</p>
+
+      <h3>腫瘍制御確率（TCP）と正常組織障害発生率（NTCP）</h3>
+      <ul>
+        <li><span class="key">TCP</span>（Tumor Control Probability）：腫瘍が制御される（治癒する）確率</li>
+        <li><span class="key">NTCP</span>（Normal Tissue Complication Probability）：正常組織に障害が発生する確率</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">治療可能比（Therapeutic Gain Factor）</div>
+        <p><span class="highlight">TCP曲線とNTCP曲線の間隔が広いほど治療可能比が大きい</span></p>
+        <p>→ 正常組織を守りながら腫瘍を制御できる「治療の窓」が広い</p>
+        <p class="note">※ 2曲線が重なると、腫瘍を制御しようとすると正常組織も障害される</p>
+      </div>
+
+      <h2>放射線感受性に影響を与える因子</h2>
+
+      <h3>内因性因子（細胞固有の特性）</h3>
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>影響</th>
+        </tr>
+        <tr>
+          <td>ラジカルスカベンジャー</td>
+          <td>DNA損傷量を低下させ、放射線感受性を下げる</td>
+        </tr>
+        <tr>
+          <td>DNA修復能</td>
+          <td>修復能が高いと放射線抵抗性になる</td>
+        </tr>
+        <tr>
+          <td>細胞周期</td>
+          <td><span class="highlight">M期・G2期後半が最も感受性が高い</span>、G0期・S期後半は低い</td>
+        </tr>
+      </table>
+
+      <h3>外因性因子（照射条件）</h3>
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>酸素効果</td>
+          <td>低酸素状態では放射線抵抗性↑（<span class="key">OER</span>：酸素効果比 ≒ 3）</td>
+        </tr>
+        <tr>
+          <td>線量率効果</td>
+          <td>短時間照射の方が細胞ダメージ大（回復の時間がない）</td>
+        </tr>
+        <tr>
+          <td>線質（LET）</td>
+          <td>高LET放射線（重粒子線など）は生物学的効果大</td>
+        </tr>
+        <tr>
+          <td>温熱効果</td>
+          <td>加温により放射線感受性↑</td>
+        </tr>
+      </table>
+
+      <h2>分割照射の4R</h2>
+      <p>放射線治療では通常、総線量を分割して照射する（分割照射）。これにより正常組織の障害を軽減しつつ腫瘍を制御できる。</p>
+
+      <table>
+        <tr>
+          <th>4R</th>
+          <th>内容</th>
+          <th>効果</th>
+        </tr>
+        <tr>
+          <td><span class="key">Repair</span><br>（回復）</td>
+          <td>亜致死損傷からの回復</td>
+          <td>正常組織は回復が速い → 正常組織保護</td>
+        </tr>
+        <tr>
+          <td><span class="key">Redistribution</span><br>（再分布）</td>
+          <td>細胞周期の再分布</td>
+          <td>感受性の高いM期・G2期に再分布 → 腫瘍制御↑</td>
+        </tr>
+        <tr>
+          <td><span class="key">Reoxygenation</span><br>（再酸素化）</td>
+          <td>低酸素細胞への酸素供給</td>
+          <td>低酸素細胞が酸素化 → 放射線感受性↑</td>
+        </tr>
+        <tr>
+          <td><span class="key">Repopulation</span><br>（再増殖）</td>
+          <td>腫瘍細胞の加速再増殖</td>
+          <td class="caution">治療期間が長いと腫瘍が再増殖 → 不利</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">分割照射のメリット</div>
+        <ul>
+          <li>Repair・Redistribution・Reoxygenationは治療に有利</li>
+          <li><span class="caution">Repopulationのみ不利</span>（治療期間の延長は避ける）</li>
+        </ul>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115C80</div>
+        <p>放射線治療における腫瘍治癒率曲線を実線で、正常組組織障害発生率曲線を点線で図に示す。<br>治療可能比が最大なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C80.png" alt="115C80">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】治療可能比は、腫瘍治癒率曲線（実線）と正常組織障害発生率曲線（点線）の<span class="highlight">間隔が最も広い</span>ところで最大となる。アは2曲線の間隔が最も広く、治療可能比が最大。オに向かうほど2曲線が接近し、治療可能比は小さくなる（腫瘍を制御しようとすると正常組織も障害される）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A53（採点除外）</div>
+        <p>悪性腫瘍に対する緩和照射で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 痛みを軽減する<br>
+          b 治癒を目的とする<br>
+          c 易出血性を改善する<br>
+          d 化学療法を併用する<br>
+          e 標準治療と同じ総線量を要する
+        </div>
+        <div class="answer">正解：採点除外（想定解：a）</div>
+        <p>【解説】緩和照射は<span class="caution">根治（治癒）を目的としない</span>（b×）。患者のQOL向上が目的で、<span class="highlight">疼痛軽減</span>（骨転移による痛みなど）が最も代表的な適応（a○）。易出血性の改善も緩和照射の目的になりうる（c△）。化学療法併用は必須ではない（d×）。緩和目的なので標準治療より少ない線量で行う（e×）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

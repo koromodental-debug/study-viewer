@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>誤嚥 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 歯科治療中の全身的偶発症</span>
+    <h1>誤嚥</h1>
+    <div class="container">
+
+      <h2>誤嚥と誤飲の違い</h2>
+      <p>歯科治療中に異物（クラウン、インレー、抜去歯など）を落下させた場合、<span class="highlight">気道に入ったか消化管に入ったかで対応が異なる</span>。</p>
+
+      <h3>定義</h3>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>行き先</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td><span class="key">誤嚥</span></td>
+          <td>気道（気管・気管支）</td>
+          <td>咳嗽、呼吸困難、チアノーゼ、窒息</td>
+        </tr>
+        <tr>
+          <td><span class="key">誤飲</span></td>
+          <td>消化管（食道・胃・腸）</td>
+          <td>多くは無症状</td>
+        </tr>
+      </table>
+
+      <h2>異物落下時の対応</h2>
+
+      <h3>Step 1：位置の確認</h3>
+      <p><span class="key">胸腹部X線撮影</span>で異物の位置を確認する。</p>
+      <ul>
+        <li>気道内：気管・気管支に陰影</li>
+        <li>消化管内：胃・腸に陰影</li>
+      </ul>
+
+      <h3>Step 2：対応の選択</h3>
+      <table>
+        <tr>
+          <th>位置</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td><span class="key">気道内</span></td>
+          <td><span class="caution">内視鏡的除去</span>（気管支鏡）を依頼</td>
+        </tr>
+        <tr>
+          <td><span class="key">消化管内</span>（症状なし）</td>
+          <td><span class="highlight">経日的にX線撮影</span>で経過観察<br>→ 自然排泄を待つ</td>
+        </tr>
+        <tr>
+          <td><span class="key">消化管内</span>（症状あり）</td>
+          <td>消化器内科に相談</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">消化管異物の対応で避けるべきこと</div>
+        <ul>
+          <li><span class="caution">催吐薬は使用しない</span>（異物による損傷リスク）</li>
+          <li>絶飲食の必要なし（通常の食事で自然排泄を促す）</li>
+          <li>綿花を飲ませる必要なし</li>
+        </ul>
+      </div>
+
+      <h2>窒息の解除（気道異物）</h2>
+      <p>異物が気道に入り窒息した場合は、緊急対応が必要。</p>
+
+      <h3>窒息の認識</h3>
+      <p><span class="key">万国共通の窒息サイン</span>（universal choking sign）：両手で喉を押さえる動作</p>
+      <table>
+        <tr>
+          <th>重症度</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td>軽度</td>
+          <td>咳や発声が可能、呼吸困難</td>
+        </tr>
+        <tr>
+          <td><span class="caution">重度</span></td>
+          <td>発声不能、会話不能、チアノーゼ</td>
+        </tr>
+      </table>
+
+      <h3>異物除去法の選択</h3>
+      <table>
+        <tr>
+          <th>対象</th>
+          <th>方法</th>
+        </tr>
+        <tr>
+          <td>成人・小児（1歳以上）</td>
+          <td><span class="highlight">ハイムリック法</span>（腹部突き上げ法）</td>
+        </tr>
+        <tr>
+          <td>乳児（1歳未満）</td>
+          <td><span class="key">背部叩打法</span>＋<span class="key">胸部突き上げ法</span></td>
+        </tr>
+        <tr>
+          <td><span class="caution">妊婦・肥満者</span></td>
+          <td><span class="highlight">胸部圧迫法</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">妊婦・肥満者に胸部圧迫法を選ぶ理由</div>
+        <p>腹部突き上げ法は<span class="caution">腹部を圧迫できない</span>ため適応外。胸骨圧迫の要領で胸部を圧迫し、異物を排出させる。</p>
+      </div>
+
+      <h3>ハイムリック法の手技</h3>
+      <ul>
+        <li>傷病者の背後に立つ</li>
+        <li>両腕を傷病者の腹部に回す</li>
+        <li>片手で握り拳をつくり、へその上・剣状突起の下に当てる</li>
+        <li>もう一方の手で握り拳を握り、<span class="key">後上方に素早く突き上げる</span></li>
+      </ul>
+
+      <h2>誤嚥予防（術前管理）</h2>
+      <p>全身麻酔では、<span class="highlight">術前の経口摂取制限</span>が重要。</p>
+
+      <h3>目的</h3>
+      <p>全身麻酔中は意識消失・咽頭反射低下により、<span class="caution">胃内容物の逆流→誤嚥性肺炎</span>のリスクがある。</p>
+
+      <h3>絶飲食ガイドライン</h3>
+      <table>
+        <tr>
+          <th>摂取物</th>
+          <th>最低絶飲食時間</th>
+        </tr>
+        <tr>
+          <td>清澄水（水、お茶）</td>
+          <td>2時間</td>
+        </tr>
+        <tr>
+          <td>母乳</td>
+          <td>4時間</td>
+        </tr>
+        <tr>
+          <td>人工乳・軽食</td>
+          <td>6時間</td>
+        </tr>
+        <tr>
+          <td>固形食</td>
+          <td>6〜8時間</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">102C23</div>
+        <p>77歳の男性。下顎左側第二大臼歯のクラウンを試適中に誤って口腔内に落とし、見失ってしまったためエックス線写真撮影を行った。撮影したエックス線写真（別冊No.20）を別に示す。患者は特に臨床症状を訴えていない。<br>続いて行う対応で適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102C23.png" alt="102C23">
+        </div>
+        <div class="choices">
+          a 催吐薬を服用させる。<br>
+          b 数日間の絶飲食を指示する。<br>
+          c 少量の綿花を飲み込ませる。<br>
+          d 経日的にエックス線写真撮影を行う。<br>
+          e 内視鏡によるクラウン除去を依頼する。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】X線でクラウンは消化管内（胃）に確認される。症状がないため、経日的にX線撮影で経過観察し、自然排泄を待つ。催吐薬（a）は異物による損傷リスクがあり不適切。内視鏡的除去（e）は気道異物や症状がある場合に行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A43</div>
+        <p>全身麻酔において患者の術前経口摂取を制限する目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血圧の安定<br>
+          b 誤嚥の予防<br>
+          c 血糖上昇の抑制<br>
+          d 口腔衛生の保持<br>
+          e 意識レベルの維持
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】全身麻酔中は意識消失・咽頭反射低下により、胃内容物が逆流すると誤嚥性肺炎を起こすリスクがある。これを防ぐために術前の経口摂取を制限する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A35（採点除外）</div>
+        <p>妊娠後期の妊婦に対し、気道異物を排出させるために行う適切な対応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 下顎挙上<br>
+          b 人工呼吸<br>
+          c 胸部圧迫法<br>
+          d ハイムリック法<br>
+          e 腹部突き上げ法
+        </div>
+        <div class="answer">正解：採点除外（cが正解相当）</div>
+        <p>【解説】妊娠後期の妊婦は腹部が大きく、ハイムリック法（腹部突き上げ法）は適用できない。胸部圧迫法で異物を排出させる。下顎挙上・人工呼吸は気道確保・換気であり異物除去法ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

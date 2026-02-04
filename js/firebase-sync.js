@@ -31,7 +31,8 @@ const FirebaseSync = (function() {
     'studyViewer_searchHistory',
     'studyViewer_importedDecks',
     'studyViewer_deckCustomizations',
-    'studyViewer_dailyStats'
+    'studyViewer_dailyStats',
+    'studyViewer_kakomonHistory'
   ];
 
   // 設定キー（デバイスごとに保持、同期しない）
@@ -318,6 +319,8 @@ const FirebaseSync = (function() {
         return JSON.stringify(mergeDeckCustomizations(localData, cloudData));
       } else if (key === 'studyViewer_dailyStats') {
         return JSON.stringify(mergeDailyStats(localData, cloudData));
+      } else if (key === 'studyViewer_kakomonHistory') {
+        return JSON.stringify(mergeKakomonHistory(localData, cloudData));
       }
     } catch (e) {
       console.error('[FirebaseSync] マージエラー:', e);
@@ -446,6 +449,63 @@ const FirebaseSync = (function() {
     }
 
     return longest;
+  }
+
+  /**
+   * 過去問解答履歴のマージ
+   * データ形式: { version: 1, answers: { "118A45": { attempts: [...], lastAttempt, correctCount, totalCount } }, lastUpdated }
+   */
+  function mergeKakomonHistory(local, cloud) {
+    const merged = {
+      version: Math.max(local.version || 1, cloud.version || 1),
+      answers: {},
+      lastUpdated: Math.max(local.lastUpdated || 0, cloud.lastUpdated || 0)
+    };
+
+    const localAnswers = local.answers || {};
+    const cloudAnswers = cloud.answers || {};
+
+    const allCodes = new Set([...Object.keys(localAnswers), ...Object.keys(cloudAnswers)]);
+
+    for (const code of allCodes) {
+      const localEntry = localAnswers[code];
+      const cloudEntry = cloudAnswers[code];
+
+      if (localEntry && !cloudEntry) {
+        merged.answers[code] = localEntry;
+      } else if (!localEntry && cloudEntry) {
+        merged.answers[code] = cloudEntry;
+      } else if (localEntry && cloudEntry) {
+        // attemptsをタイムスタンプでマージ（重複排除）
+        const seenTimestamps = new Set();
+        const allAttempts = [];
+        const combined = [...(localEntry.attempts || []), ...(cloudEntry.attempts || [])];
+        for (const attempt of combined) {
+          const ts = attempt.timestamp;
+          if (!seenTimestamps.has(ts)) {
+            seenTimestamps.add(ts);
+            allAttempts.push(attempt);
+          }
+        }
+        allAttempts.sort((a, b) => a.timestamp - b.timestamp);
+
+        // correctCount / totalCount を再計算
+        let correctCount = 0;
+        for (const a of allAttempts) {
+          if (a.isCorrect) correctCount++;
+        }
+
+        merged.answers[code] = {
+          attempts: allAttempts,
+          lastAttempt: allAttempts.length > 0 ? allAttempts[allAttempts.length - 1].timestamp : 0,
+          correctCount: correctCount,
+          totalCount: allAttempts.length
+        };
+      }
+    }
+
+    console.log(`[FirebaseSync] 過去問履歴マージ: ローカル${Object.keys(localAnswers).length}問, クラウド${Object.keys(cloudAnswers).length}問 → マージ後${Object.keys(merged.answers).length}問`);
+    return merged;
   }
 
   /**

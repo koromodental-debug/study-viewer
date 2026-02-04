@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>周術期検査：スパイロメトリ - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 60%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 全身麻酔法</span>
+    <h1>周術期検査：スパイロメトリ</h1>
+    <div class="container">
+
+      <h2>スパイロメトリとは</h2>
+      <p><span class="key">スパイロメトリ</span>は、気息の出入りを計測して各種肺気量を求める検査であり、<span class="key">呼吸機能検査の中で最も基本となる検査</span>である。</p>
+      <p>術前検査として、呼吸器疾患のスクリーニングや<span class="highlight">呼吸器障害の病型分類</span>に利用される。</p>
+
+      <h2>肺気量分画</h2>
+      <p>肺気量は複数の分画から構成される。スパイロメトリで測定できるものとできないものがある。</p>
+
+      <h3>基本となる4つの分画</h3>
+      <table>
+        <tr>
+          <th>分画</th>
+          <th>略語</th>
+          <th>定義</th>
+        </tr>
+        <tr>
+          <td>吸気予備量</td>
+          <td>IRV</td>
+          <td>安静吸気位→最大吸気位</td>
+        </tr>
+        <tr>
+          <td><span class="key">1回換気量</span></td>
+          <td>TV</td>
+          <td><span class="highlight">安静吸気位と安静呼気位の間</span></td>
+        </tr>
+        <tr>
+          <td>呼気予備量</td>
+          <td>ERV</td>
+          <td>安静呼気位→最大呼気位</td>
+        </tr>
+        <tr>
+          <td>残気量</td>
+          <td>RV</td>
+          <td>最大呼気位で肺内に残る量</td>
+        </tr>
+      </table>
+
+      <h3>複合的な肺気量</h3>
+      <table>
+        <tr>
+          <th>肺気量</th>
+          <th>略語</th>
+          <th>構成</th>
+          <th>スパイロ計測</th>
+        </tr>
+        <tr>
+          <td>最大吸気量</td>
+          <td>IC</td>
+          <td>TV＋IRV</td>
+          <td>可能</td>
+        </tr>
+        <tr>
+          <td>肺活量</td>
+          <td>VC</td>
+          <td>IC＋ERV</td>
+          <td>可能</td>
+        </tr>
+        <tr>
+          <td>機能的残気量</td>
+          <td>FRC</td>
+          <td>ERV＋RV</td>
+          <td class="caution">不可</td>
+        </tr>
+        <tr>
+          <td>全肺気量</td>
+          <td>TLC</td>
+          <td>VC＋RV</td>
+          <td class="caution">不可</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">スパイロメトリで測定できない肺気量</div>
+        <ul>
+          <li><span class="highlight">残気量（RV）</span>を含む分画は測定不可</li>
+          <li>機能的残気量（FRC）、全肺気量（TLC）</li>
+          <li>測定にはヘリウム閉鎖回路法、窒素開放回路法、ボディプレチスモグラフが必要</li>
+        </ul>
+      </div>
+
+      <h2>1秒率による評価</h2>
+      <p>努力性呼気を用いて気道閉塞の程度を評価する。</p>
+
+      <h3>用語の定義</h3>
+      <ul>
+        <li><span class="key">努力性肺活量（FVC）</span>：最大吸気位から一気に呼出した量</li>
+        <li><span class="key">1秒量（FEV₁.₀）</span>：FVCのうち最初の1秒間に呼出された量</li>
+        <li><span class="key">1秒率（FEV₁.₀%）</span>= FEV₁.₀ / FVC × 100</li>
+      </ul>
+
+      <h2>換気障害の病型分類</h2>
+      <p>%VC（予測肺活量に対する実測値の割合）と1秒率を組み合わせて分類する。</p>
+
+      <table>
+        <tr>
+          <th>病型</th>
+          <th>%VC</th>
+          <th>FEV₁.₀%</th>
+          <th>代表疾患</th>
+        </tr>
+        <tr>
+          <td>正常</td>
+          <td>≧80%</td>
+          <td>≧70%</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><span class="key">閉塞性障害</span></td>
+          <td>≧80%</td>
+          <td class="highlight">&lt;70%</td>
+          <td>COPD、気管支喘息</td>
+        </tr>
+        <tr>
+          <td><span class="key">拘束性障害</span></td>
+          <td class="highlight">&lt;80%</td>
+          <td>≧70%</td>
+          <td>間質性肺炎、肺線維症</td>
+        </tr>
+        <tr>
+          <td>混合性障害</td>
+          <td>&lt;80%</td>
+          <td>&lt;70%</td>
+          <td>進行した肺気腫</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">病型分類の覚え方</div>
+        <ul>
+          <li><span class="key">閉塞性</span>：気道が狭い→息が<span class="highlight">吐きにくい</span>→1秒率↓</li>
+          <li><span class="key">拘束性</span>：肺が硬い→<span class="highlight">膨らみにくい</span>→肺活量↓</li>
+        </ul>
+      </div>
+
+      <h2>フローボリューム曲線</h2>
+      <p>努力性呼気時の気量（横軸）と気流速度（縦軸）の関係を示す曲線。疾患により特徴的なパターンを示す。</p>
+      <ul>
+        <li><span class="key">閉塞性障害</span>：下に凸のパターン（呼気終末の流速低下）</li>
+        <li><span class="key">拘束性障害</span>：正常に近い形だが全体的に小さい</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A65</div>
+        <p>肺気量分画を図に示す。<br>1回換気量はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103A65.png" alt="肺気量分画">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】1回換気量（TV）は<span class="highlight">安静吸気位と安静呼気位の間</span>の量である。図中の「エ」は安静呼吸時の波形の振幅部分を示しており、これが1回換気量に相当する。「ア」は吸気予備量、「オ」は呼気予備量、「イ」は最大呼気位を示している。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A61</div>
+        <p>術前検査で呼吸器障害の病型分類に利用されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心電図<br>
+          b 血液ガス分析<br>
+          c カプノグラフィ<br>
+          d スパイロメトリ<br>
+          e パルスオキシメータ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">スパイロメトリ</span>は%VCと1秒率を用いて呼吸器障害を<span class="key">閉塞性・拘束性・混合性</span>に分類できる。血液ガス分析は酸素化・換気状態の評価、パルスオキシメータはSpO₂の測定、カプノグラフィはETCO₂の測定に用いる。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>1回換気量は<span class="highlight">安静吸気位と安静呼気位の間</span></li>
+          <li>スパイロメトリで測定不可：<span class="highlight">残気量を含む分画</span>（RV、FRC、TLC）</li>
+          <li>病型分類：<span class="highlight">1秒率&lt;70%→閉塞性、%VC&lt;80%→拘束性</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

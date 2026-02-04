@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>周術期検査：ヘモグロビン酸素飽和度 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 50%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 全身麻酔法</span>
+    <h1>周術期検査：ヘモグロビン酸素飽和度</h1>
+    <div class="container">
+
+      <h2>酸素解離曲線とは</h2>
+      <p><span class="key">酸素解離曲線</span>は、酸素分圧（PO₂）とヘモグロビン酸素飽和度（SO₂）の関係を示す曲線である。</p>
+      <p>曲線は<span class="key">S字状（シグモイド曲線）</span>を描き、これは酸素の運搬と組織での取り込みに有利な特性である。</p>
+
+      <h2>酸素分圧と酸素飽和度の関係</h2>
+      <table>
+        <tr>
+          <th>PaO₂ (mmHg)</th>
+          <th>SaO₂ (%)</th>
+          <th>臨床的意義</th>
+        </tr>
+        <tr>
+          <td>100</td>
+          <td>約97-98%</td>
+          <td>正常上限（空気呼吸）</td>
+        </tr>
+        <tr>
+          <td>80〜100</td>
+          <td>95%以上</td>
+          <td>正常範囲</td>
+        </tr>
+        <tr>
+          <td class="highlight">60</td>
+          <td class="highlight">90%</td>
+          <td class="caution">低酸素血症の境界</td>
+        </tr>
+        <tr>
+          <td>40</td>
+          <td>約75%</td>
+          <td>混合静脈血レベル</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td>50%</td>
+          <td>P₅₀（基準点）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">必ず覚える！重要な対応値</div>
+        <ul>
+          <li><span class="highlight">SpO₂ 90% ＝ PaO₂ 60mmHg</span>（低酸素血症の境界）</li>
+          <li>SpO₂ 75% ＝ PaO₂ 40mmHg（静脈血レベル）</li>
+          <li>SpO₂ 50% ＝ PaO₂ 27mmHg（P₅₀）</li>
+        </ul>
+      </div>
+
+      <h2>S字曲線の臨床的意義</h2>
+      <h3>高酸素分圧域（PaO₂ 60mmHg以上）</h3>
+      <p>曲線が<span class="key">平坦</span>なため、PaO₂が多少低下してもSaO₂は大きく変化しない。酸素運搬に有利。</p>
+
+      <h3>低酸素分圧域（PaO₂ 60mmHg以下）</h3>
+      <p>曲線の<span class="key">傾きが急</span>になり、PaO₂のわずかな低下でSaO₂が大きく低下する。<span class="caution">注意が必要な領域</span>。</p>
+
+      <h2>酸素解離曲線の移動</h2>
+      <p>様々な因子により曲線が左右に移動する。</p>
+
+      <h3>右方移動（酸素を離しやすい）</h3>
+      <table>
+        <tr>
+          <th>因子</th>
+          <th>変化</th>
+        </tr>
+        <tr>
+          <td>体温</td>
+          <td>上昇↑</td>
+        </tr>
+        <tr>
+          <td>pH（H⁺濃度）</td>
+          <td>低下↓（H⁺上昇）</td>
+        </tr>
+        <tr>
+          <td>PCO₂</td>
+          <td>上昇↑</td>
+        </tr>
+        <tr>
+          <td>2,3-DPG</td>
+          <td>上昇↑</td>
+        </tr>
+      </table>
+      <p class="note">→ 末梢組織で酸素が放出されやすくなる</p>
+
+      <h3>左方移動（酸素を離しにくい）</h3>
+      <p>上記の因子が逆方向に変化した場合。一酸化炭素中毒、低体温、アルカローシスなど。</p>
+
+      <h2>ボアー効果</h2>
+      <p><span class="key">ボアー効果</span>とは、CO₂分圧の上昇により酸素解離曲線が<span class="key">右方移動</span>する現象である。</p>
+      <ul>
+        <li><span class="key">末梢組織</span>：CO₂が産生される→曲線右方移動→<span class="highlight">酸素を放出しやすい</span></li>
+        <li><span class="key">肺</span>：CO₂が排出される→曲線左方移動→<span class="highlight">酸素を結合しやすい</span></li>
+      </ul>
+      <p>この効果により、効率よく酸素の運搬・供給が可能となる。</p>
+
+      <h2>2,3-DPG（ジホスホグリセリン酸）</h2>
+      <p>赤血球内に存在し、酸素解離曲線の位置に影響を与える。</p>
+      <h3>2,3-DPGが増加する状態</h3>
+      <ul>
+        <li>慢性肺疾患</li>
+        <li>右→左シャントのある心疾患</li>
+        <li>高地居住</li>
+        <li>貧血</li>
+      </ul>
+      <h3>2,3-DPGが減少する状態</h3>
+      <ul>
+        <li class="caution">保存血（採血後数日で激減）</li>
+        <li>老齢赤血球</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116B57</div>
+        <p>安静時のヘモグロビン酸素飽和度と予想される血液酸素分圧〈PO₂〉の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 100% ── 90mmHg<br>
+          b 90% ── 60mmHg<br>
+          c 75% ── 30mmHg<br>
+          d 60% ── 20mmHg<br>
+          e 50% ── 10mmHg
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】酸素解離曲線において、<span class="highlight">SpO₂ 90%はPaO₂ 60mmHg</span>に相当する。これは低酸素血症の境界値として重要な対応値である。他の選択肢は酸素解離曲線の関係に合致しない。SpO₂ 75%はPaO₂約40mmHg、SpO₂ 50%（P₅₀）はPaO₂ 27mmHgに相当する。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li><span class="highlight">SpO₂ 90% ＝ PaO₂ 60mmHg</span>（必ず覚える！）</li>
+          <li>酸素解離曲線はS字状（シグモイド曲線）</li>
+          <li>右方移動：体温↑、pH↓、PCO₂↑、2,3-DPG↑→酸素を離しやすい</li>
+          <li>ボアー効果：CO₂↑で右方移動（末梢での酸素放出促進）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>核医学検査 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 80%; margin: 5px 0; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 画像検査法</span>
+    <h1>核医学検査</h1>
+    <div class="container">
+
+      <h2>核医学検査とは</h2>
+      <p><span class="key">放射性同位元素（RI）</span>を投与し、その分布から臓器や組織の<span class="key">機能</span>を画像化・評価する検査。形態ではなく機能をみる点が特徴。</p>
+
+      <h3>検査の種類</h3>
+      <ul>
+        <li><span class="key">シンチグラフィ</span>：ガンマ線を検出（平面画像）</li>
+        <li><span class="key">SPECT</span>：シンチグラフィの断層撮像</li>
+        <li><span class="key">PET</span>：陽電子（ポジトロン）を検出（断層画像）</li>
+      </ul>
+
+      <h2>放射性医薬品と検査の対応</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：放射性医薬品の対応</div>
+        <ul>
+          <li><span class="highlight">99mTc-MDP / HMDP</span> → 骨シンチ</li>
+          <li><span class="highlight">99mTcO4-</span> → 唾液腺シンチ</li>
+          <li><span class="highlight">67Ga-citrate</span> → 腫瘍・炎症シンチ</li>
+          <li><span class="highlight">18F-FDG</span> → PET/CT</li>
+        </ul>
+      </div>
+
+      <table>
+        <tr>
+          <th>検査</th>
+          <th>放射性医薬品</th>
+          <th>対象疾患・目的</th>
+        </tr>
+        <tr>
+          <td><span class="key">骨シンチ</span></td>
+          <td><span class="highlight">99mTc-MDP / HMDP</span></td>
+          <td>骨転移、骨髄炎、疲労骨折</td>
+        </tr>
+        <tr>
+          <td><span class="key">唾液腺シンチ</span></td>
+          <td><span class="highlight">99mTcO4-</span></td>
+          <td>唾液腺機能、Sjögren症候群、Warthin腫瘍</td>
+        </tr>
+        <tr>
+          <td><span class="key">腫瘍シンチ</span></td>
+          <td><span class="highlight">67Ga-citrate</span></td>
+          <td>腫瘍、炎症、悪性リンパ腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">FDG-PET/CT</span></td>
+          <td><span class="highlight">18F-FDG</span></td>
+          <td>悪性腫瘍、転移検索</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102B123</div>
+        <p>シンチグラフィの組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 201TlCl────────腺リンパ腫<br>
+          b 99mTcO4−───────悪性リンパ腫<br>
+          c 123I-NaI────────顎関節症<br>
+          d 99mTc-MDP──────骨転移<br>
+          e 67Ga-citrate──────口腔乾燥症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】99mTc-MDPは骨シンチグラフィに使用され、骨転移の検出に用いる。99mTcO4-は唾液腺シンチ、67Ga-citrateは腫瘍・炎症シンチ、123I-NaIは甲状腺シンチに使用。</p>
+      </div>
+
+      <h2>骨シンチグラフィ</h2>
+      <p><span class="key">99mTc-MDP（または99mTc-HMDP）</span>を静注し、骨代謝が亢進した部位を検出する。</p>
+
+      <h3>臨床的意義</h3>
+      <ul>
+        <li><span class="highlight">悪性腫瘍の骨転移</span>の検出</li>
+        <li><span class="key">骨髄炎</span>の活動性評価</li>
+        <li>疲労骨折の診断</li>
+        <li>代謝性骨疾患の評価</li>
+      </ul>
+      <p class="note">骨シンチは骨の「代謝」を検出するため、形態変化より早期に病変を検出できる。</p>
+
+      <div class="question-box">
+        <div class="q-number">104C127</div>
+        <p>99mTc-MDPを用いた核医学検査で判定できるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 唾液の分泌能<br>
+          b 骨髄炎の活動性<br>
+          c 軟部嚢胞の性状<br>
+          d 悪性腫瘍の骨への転移<br>
+          e 悪性腫瘍の軟組織への転移
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】99mTc-MDPは骨シンチグラフィに使用され、骨代謝が亢進した部位に集積する。骨髄炎の活動性と悪性腫瘍の骨転移の評価に有用。唾液の分泌能は99mTcO4-、軟組織病変は骨シンチでは評価できない。</p>
+      </div>
+
+      <h2>SPECT検査</h2>
+      <p>シンチグラフィの<span class="key">断層撮像法</span>。検出器を回転させて三次元画像を作成する。</p>
+      <p>使用核種：<span class="highlight">99mTc</span>（テクネチウム）が最も多い。</p>
+
+      <div class="question-box">
+        <div class="q-number">113C44</div>
+        <p>SPECT頭部矢状断像（別冊No.6）を別に示す。<br>使用核種はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113C44.png" alt="113C44">
+        </div>
+        <div class="choices">
+          a 18F<br>
+          b 67Ga<br>
+          c 99mTc<br>
+          d 131I<br>
+          e 133Xe
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】SPECTで最も多く使用される核種は99mTc（テクネチウム）。半減期6時間で適度な長さ、ガンマ線エネルギーも検出に適している。18FはPET、67Gaは腫瘍シンチ、131Iは甲状腺治療、133Xeは肺換気シンチに使用。</p>
+      </div>
+
+      <h2>FDG-PET/CT</h2>
+      <p><span class="key">18F-FDG（フルオロデオキシグルコース）</span>を使用し、<span class="highlight">糖代謝</span>が亢進した部位を検出する。悪性腫瘍の診断に最も有用。</p>
+
+      <h3>原理</h3>
+      <p>FDGはグルコースの類似物質。悪性腫瘍は糖代謝が亢進しているため、FDGが集積する。</p>
+
+      <h3>臨床的意義</h3>
+      <ul>
+        <li><span class="highlight">原発巣の検出</span>と悪性度評価</li>
+        <li><span class="highlight">リンパ節転移</span>の検出</li>
+        <li><span class="highlight">遠隔転移</span>の検出</li>
+        <li>治療効果の判定</li>
+        <li>再発の検出</li>
+      </ul>
+
+      <h3>生理的集積</h3>
+      <p>正常でもFDGが集積する部位があり、読影時に注意が必要。</p>
+      <ul>
+        <li>脳</li>
+        <li><span class="caution">扁桃（口蓋扁桃、舌扁桃）</span></li>
+        <li>大唾液腺</li>
+        <li>腎臓〜尿管〜膀胱（排泄経路）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108A122</div>
+        <p>口底癌術後の患者に行った検査画像（別冊No.24）を別に示す。<br>この検査法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108A122.png" alt="108A122">
+        </div>
+        <div class="choices">
+          a PET/CT<br>
+          b 超音波ドプラ<br>
+          c 拡散強調MRI<br>
+          d 腫瘍シンチグラフィ<br>
+          e 歯科用コーンビームCT
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】画像はPET/CT。全身の代謝活性を示すPET画像とCT画像が融合されている。脳や膀胱に生理的集積が見られ、異常集積部位を検出できる。術後の再発・転移検索に有用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C45</div>
+        <p>右側舌縁部の扁平上皮癌のFDG-PET/CT（別冊No.7）を別に示す。<br>矢印で示す集積部位はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113C45.png" alt="113C45">
+        </div>
+        <div class="choices">
+          a 舌下腺<br>
+          b 外頸動脈<br>
+          c 口蓋扁桃<br>
+          d 内側翼突筋<br>
+          e 上内深頸リンパ節
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】口蓋扁桃はリンパ組織であり、FDGの生理的集積がみられる部位。舌癌の評価時に、扁桃への生理的集積を転移と間違えないよう注意が必要。両側対称性に集積していれば生理的集積の可能性が高い。</p>
+      </div>
+
+      <h2>唾液腺シンチグラフィ</h2>
+      <p><span class="key">99mTcO4-（過テクネチウム酸）</span>を使用し、唾液腺機能を評価する。</p>
+
+      <h3>臨床的意義</h3>
+      <ul>
+        <li><span class="key">Sjögren症候群</span>の診断（集積低下、排泄低下）</li>
+        <li><span class="key">Warthin腫瘍</span>の診断（高集積）</li>
+        <li>唾液腺機能の評価</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">113D70</div>
+        <p>口腔乾燥を主訴として来院した患者の酸刺激前後の唾液腺シンチグラム（別冊No.23）を別に示す。<br>最も機能低下がみられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D70.png" alt="113D70">
+        </div>
+        <div class="choices">
+          a 右側顎下腺<br>
+          b 左側顎下腺<br>
+          c 右側耳下腺<br>
+          d 左側耳下腺<br>
+          e 両側耳下腺
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】唾液腺シンチでは、酸刺激後に唾液分泌とともに99mTcO4-が排泄され、集積が減少する。機能低下した腺では排泄が不良となる。画像で右側耳下腺の排泄が最も不良であれば、右側耳下腺の機能低下を示す。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：核医学検査のポイント</div>
+        <ul>
+          <li>骨シンチ → <span class="highlight">99mTc-MDP</span>（骨転移、骨髄炎）</li>
+          <li>唾液腺シンチ → <span class="highlight">99mTcO4-</span>（Sjögren、Warthin腫瘍）</li>
+          <li>腫瘍シンチ → <span class="highlight">67Ga-citrate</span>（悪性リンパ腫）</li>
+          <li>FDG-PET/CT → <span class="highlight">18F-FDG</span>（悪性腫瘍、転移検索）</li>
+          <li>FDGの生理的集積：脳、<span class="caution">扁桃</span>、唾液腺、膀胱</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

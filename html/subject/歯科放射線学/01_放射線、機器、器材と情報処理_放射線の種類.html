@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>放射線の種類 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線、機器、器材と情報処理</span>
+    <h1>放射線の種類</h1>
+    <div class="container">
+
+      <h2>放射線とは</h2>
+      <p><span class="key">電離性</span>を有する高いエネルギーをもった<span class="key">粒子線</span>や<span class="key">電磁波</span>のこと。</p>
+      <p class="note">電離とは：電子が原子から離れ、原子がプラスにイオン化されること。</p>
+
+      <h2>放射線の分類</h2>
+      <p>放射線は複数の軸で分類できる。国試では<span class="highlight">「電磁放射線 vs 粒子放射線」</span>と<span class="highlight">「直接電離 vs 間接電離」</span>の2つが頻出。</p>
+
+      <h3>分類①：粒子放射線 vs 電磁放射線</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>特徴</th>
+          <th>該当する放射線</th>
+        </tr>
+        <tr>
+          <td><span class="key">粒子放射線</span></td>
+          <td>質量をもつ</td>
+          <td>α線、β線、電子線、陽子線、重粒子線、中性子線</td>
+        </tr>
+        <tr>
+          <td><span class="key">電磁放射線</span></td>
+          <td>質量も電荷ももたない<br>光と同じ速さで進む</td>
+          <td><span class="highlight">エックス線、ガンマ線</span></td>
+        </tr>
+      </table>
+
+      <h3>分類②：直接電離放射線 vs 間接電離放射線</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>特徴</th>
+          <th>該当する放射線</th>
+        </tr>
+        <tr>
+          <td><span class="key">直接電離放射線</span></td>
+          <td><span class="highlight">荷電粒子</span><br>電荷をもつため直接電離を起こす</td>
+          <td><span class="highlight">α線、β線、電子線、陽子線、重粒子線</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">間接電離放射線</span></td>
+          <td>電荷をもたない<br>二次的に電離を起こす</td>
+          <td>エックス線、ガンマ線、<span class="caution">中性子線</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ひっかけポイント</div>
+        <ul>
+          <li><span class="caution">中性子線</span>は「粒子放射線」だが、電荷をもたないので「<span class="caution">間接電離</span>放射線」</li>
+          <li><span class="key">電子線</span>は「粒子放射線」であり「直接電離放射線」</li>
+        </ul>
+      </div>
+
+      <h2>電磁波と放射線</h2>
+      <p>電磁波のなかで<span class="key">電離作用</span>をもつのは<span class="highlight">エックス線とガンマ線のみ</span>。</p>
+      <p>波長が短いほど周波数は大きくなり、エネルギーも大きい。</p>
+
+      <h3>電磁波の分類（波長の長い順）</h3>
+      <table>
+        <tr>
+          <th>電磁波</th>
+          <th>波長</th>
+          <th>電離作用</th>
+        </tr>
+        <tr>
+          <td>電波</td>
+          <td>長い</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>赤外線</td>
+          <td>↓</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>可視光線</td>
+          <td>↓</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>紫外線</td>
+          <td>↓</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">エックス線・ガンマ線</span></td>
+          <td>短い</td>
+          <td><span class="highlight">あり</span></td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">106A122</div>
+        <p>電磁放射線はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 電子線<br>
+          b 中性子線<br>
+          c ガンマ線<br>
+          d アルファ線<br>
+          e エックス線
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】電磁放射線は質量も電荷ももたない放射線で、<span class="key">ガンマ線</span>と<span class="key">エックス線</span>が該当する。電子線・中性子線・アルファ線はいずれも粒子放射線である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C126</div>
+        <p>直接電離放射線はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 陽子線<br>
+          b ガンマ線<br>
+          c 中性子線<br>
+          d エックス線<br>
+          e 重粒子線〈重荷電粒子線〉
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】直接電離放射線は<span class="key">荷電粒子</span>である。<span class="key">陽子線</span>と<span class="key">重粒子線</span>は電荷をもつため直接電離を起こす。ガンマ線・エックス線は電磁放射線、中性子線は電荷をもたない粒子なので、いずれも間接電離放射線である。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>「電磁放射線」を問われたら → <span class="highlight">エックス線、ガンマ線</span></li>
+          <li>「直接電離放射線」を問われたら → <span class="highlight">荷電粒子（α線、β線、電子線、陽子線、重粒子線）</span></li>
+          <li>中性子線は粒子だが電荷がないので<span class="caution">間接電離</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

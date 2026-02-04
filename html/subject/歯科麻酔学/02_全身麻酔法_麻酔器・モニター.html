@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>麻酔器・モニター - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 200px; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula-box {
+      background: #FFF9E6;
+      border-left: 4px solid #F5A623;
+      padding: 12px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 全身麻酔法</span>
+    <h1>麻酔器・モニター</h1>
+    <div class="container">
+
+      <h2>麻酔器の主要構成</h2>
+      <p>全身麻酔器（循環式麻酔回路）は以下の部品で構成される。</p>
+
+      <h3>ガス供給部</h3>
+      <table>
+        <tr>
+          <th>部品</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">酸素ボンベ</span></td>
+          <td>酸素を供給（緑色）、圧力計で残量確認</td>
+        </tr>
+        <tr>
+          <td><span class="key">流量計</span></td>
+          <td>各ガスの流量（L/分）を調整・表示</td>
+        </tr>
+        <tr>
+          <td><span class="key">気化器</span></td>
+          <td>吸入麻酔薬を気化して混合</td>
+        </tr>
+      </table>
+
+      <h3>呼吸回路</h3>
+      <table>
+        <tr>
+          <th>部品</th>
+          <th>機能</th>
+        </tr>
+        <tr>
+          <td><span class="key">CO2アブソーバー</span></td>
+          <td><span class="highlight">呼気中の炭酸ガスを除去</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">呼吸バッグ</span></td>
+          <td>調節呼吸・補助呼吸に使用</td>
+        </tr>
+        <tr>
+          <td><span class="key">APL弁</span></td>
+          <td>回路内圧を調節（余剰ガス排出）</td>
+        </tr>
+        <tr>
+          <td><span class="key">Yアダプター</span></td>
+          <td>吸気・呼気の分岐点</td>
+        </tr>
+      </table>
+
+      <h2>CO2アブソーバー（ソーダライム）</h2>
+      <p><span class="key">ソーダライム</span>や<span class="key">バラライム</span>を充填した装置で、<span class="highlight">呼気中のCO2を吸収</span>する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">ソーダライムの特徴</div>
+        <ul>
+          <li>主成分：水酸化カルシウム、水酸化ナトリウム</li>
+          <li>CO2と化学反応して炭酸カルシウムに変化</li>
+          <li>使用限界で<span class="caution">色が変化</span>（pH指示薬入り）</li>
+          <li>半閉鎖・閉鎖循環回路で使用</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A80</div>
+        <p>全身麻酔器の一部の写真（別冊No.11）を別に示す。<br>
+        矢印で示す装置の主たる目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109A80.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a 回路内の加湿<br>
+          b 回路内の除菌<br>
+          c 麻酔ガスの加温<br>
+          d 麻酔ガスの除塵<br>
+          e 炭酸ガスの除去
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】矢印が示す円筒形の容器（茶色の顆粒入り）は<span class="key">ソーダライムキャニスター</span>（CO2アブソーバー）。呼気中の<span class="highlight">炭酸ガス（CO2）を除去</span>し、再吸入による高炭酸ガス血症を防ぐ。</p>
+      </div>
+
+      <h2>流量計とFiO2計算</h2>
+      <p>流量計は医療ガスの流量を表示する。<span class="highlight">カラーコード</span>で識別される。</p>
+
+      <h3>ガスのカラーコード</h3>
+      <table>
+        <tr>
+          <th>ガス</th>
+          <th>色</th>
+          <th>FiO2</th>
+        </tr>
+        <tr>
+          <td><span class="key">酸素（O2）</span></td>
+          <td style="color: green;">●緑</td>
+          <td>1.0（100%）</td>
+        </tr>
+        <tr>
+          <td><span class="key">空気（Air）</span></td>
+          <td style="color: #C5A000;">●黄</td>
+          <td>0.21（21%）</td>
+        </tr>
+        <tr>
+          <td><span class="key">亜酸化窒素（N2O）</span></td>
+          <td style="color: blue;">●青</td>
+          <td>0</td>
+        </tr>
+      </table>
+
+      <h3>吸入酸素濃度（FiO2）の計算</h3>
+      <div class="formula-box">
+        <p><span class="key">FiO2</span> = (O2流量 × 1.0 + Air流量 × 0.21) / 総流量</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C74</div>
+        <p>全身麻酔器の一部の写真（別冊No.18）を別に示す。<br>
+        吸入酸素濃度はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C74.png" alt="別冊No.18">
+        </div>
+        <div class="choices">
+          a 18％<br>
+          b 21％<br>
+          c 34％<br>
+          d 50％<br>
+          e 83％
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】流量計の読み取り：O2（緑）= <span class="key">1.0 L/min</span>、Air（黄）= <span class="key">5.0 L/min</span>、N2O（青）= 0<br>
+        FiO2 = (1.0×1.0 + 5.0×0.21) / 6.0 = (1.0 + 1.05) / 6.0 ≒ <span class="highlight">0.34（34%）</span></p>
+      </div>
+
+      <h2>酸素ボンベの残量計算</h2>
+      <p>酸素ボンベの残量は<span class="key">圧力計</span>から計算できる。</p>
+
+      <div class="formula-box">
+        <p><span class="key">残量（L）</span> = ボンベ容量 × (現在の圧力 / 最高充填圧力)</p>
+        <p><span class="key">使用可能時間</span> = 残量 / 流量（L/分）</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D56</div>
+        <p>78歳の男性。全身麻酔下での手術終了後、酸素マスクを装着して病棟に帰室させることとした。ガス容量500Lの医療用酸素ボンベ（最高充填圧力：14.7MPa）に装着された圧力計の写真（別冊No.19）を別に示す。<br>
+        流量3L／分で使用した場合、酸素ボンベが空になるまでの時間はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D56.png" alt="別冊No.19">
+        </div>
+        <div class="choices">
+          a 約30分<br>
+          b 約45分<br>
+          c 約90分<br>
+          d 約135分<br>
+          e 約180分
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】圧力計は約<span class="key">8MPa</span>を示している。<br>
+        残量 = 500L × (8/14.7) ≒ <span class="key">272L</span><br>
+        使用時間 = 272L ÷ 3L/分 ≒ <span class="highlight">約90分</span></p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">計算問題のコツ</div>
+        <ul>
+          <li>圧力が<span class="highlight">約半分</span>なら残量も約半分</li>
+          <li>8MPa / 14.7MPa ≒ 0.54（約半分強）</li>
+          <li>500L × 0.54 ≒ 270L → 3L/分で90分</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

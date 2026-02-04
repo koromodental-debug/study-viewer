@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>導入の手順 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    ol { padding-left: 1.5em; margin: 8px 0; }
+    ol li { margin: 6px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .step-num {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-weight: 600;
+      font-size: 9pt;
+      margin-right: 8px;
+    }
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      margin: 10px 0;
+    }
+    .step-content { flex: 1; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 全身麻酔法</span>
+    <h1>導入の手順</h1>
+    <div class="container">
+
+      <h2>全身麻酔導入（急速導入）の流れ</h2>
+      <p>静脈麻酔薬を用いた全身麻酔導入（急速導入）は、以下の順序で行う。</p>
+
+      <div class="step-item">
+        <span class="step-num">1</span>
+        <div class="step-content"><span class="key">モニター装着</span>：血圧計、心電図、パルスオキシメータを装着しバイタルサインを確認</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">2</span>
+        <div class="step-content"><span class="key">静脈路確保</span>：末梢静脈ラインを確保</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">3</span>
+        <div class="step-content"><span class="key">酸素化（preoxygenation）</span>：酸素マスクで5〜6L/分、約3分間投与（脱窒素）</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">4</span>
+        <div class="step-content"><span class="highlight">静脈麻酔薬投与</span>：意識消失・呼吸停止を確認</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">5</span>
+        <div class="step-content"><span class="key">マスク換気</span>：人工呼吸が可能であることを確認</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">6</span>
+        <div class="step-content"><span class="highlight">筋弛緩薬投与</span>：効果発現まで麻酔を維持</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">7</span>
+        <div class="step-content"><span class="highlight">喉頭展開</span>：喉頭鏡で声帯を直視</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">8</span>
+        <div class="step-content"><span class="highlight">気管挿管</span>：チューブを声帯を超えて挿入</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">9</span>
+        <div class="step-content"><span class="key">カフ注入</span>：リークがない程度に膨らませる</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">10</span>
+        <div class="step-content"><span class="highlight">両肺野の聴診</span>：食道挿管・片肺挿管でないことを確認</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">11</span>
+        <div class="step-content"><span class="key">チューブ固定</span>：テープで固定、人工呼吸開始</div>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">順序の根拠</div>
+        <ul>
+          <li><span class="key">静脈麻酔薬 → 筋弛緩薬</span>：意識消失を確認してから筋弛緩（意識下で筋弛緩は危険）</li>
+          <li><span class="key">筋弛緩薬 → 喉頭展開</span>：筋弛緩で開口・喉頭展開が容易に</li>
+          <li><span class="key">気管挿管 → 聴診</span>：正しい位置に挿管されたことを確認</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">113B90</div>
+        <p>静脈麻酔薬を用いて全身麻酔を導入する際の手技を実施の順番に並べよ。<br>
+        ただし、①〜⑤はa〜eのいずれかに該当する。</p>
+        <div class="choices">
+          a 気管挿管<br>
+          b 喉頭展開<br>
+          c 筋弛緩薬の投与<br>
+          d 静脈麻酔薬の投与<br>
+          e 両側肺野の呼吸音の聴診
+        </div>
+        <div class="answer">正解：d → c → b → a → e</div>
+        <p>【解説】急速導入の正しい順序は以下の通り。<br>
+        ① <span class="key">d 静脈麻酔薬の投与</span>：まず意識を消失させる<br>
+        ② <span class="key">c 筋弛緩薬の投与</span>：意識消失後に筋弛緩<br>
+        ③ <span class="key">b 喉頭展開</span>：喉頭鏡で声帯を確認<br>
+        ④ <span class="key">a 気管挿管</span>：チューブを挿入<br>
+        ⑤ <span class="key">e 両側肺野の呼吸音の聴診</span>：正しく挿管されたか確認</p>
+      </div>
+
+      <h2>導入時の注意点</h2>
+
+      <h3>酸素化（Preoxygenation）の目的</h3>
+      <ul>
+        <li>体内の窒素を純酸素で置換（脱窒素）</li>
+        <li>麻酔導入時の<span class="highlight">低酸素血症のリスクを低下</span></li>
+        <li>無呼吸許容時間を延長</li>
+      </ul>
+
+      <h3>挿管後の確認事項</h3>
+      <table>
+        <tr>
+          <th>確認方法</th>
+          <th>目的</th>
+        </tr>
+        <tr>
+          <td><span class="key">両側肺野の聴診</span></td>
+          <td>食道挿管・片肺挿管の除外</td>
+        </tr>
+        <tr>
+          <td><span class="key">呼気CO2（ETCO2）波形</span></td>
+          <td>気管挿管の確認（最も確実）</td>
+        </tr>
+        <tr>
+          <td><span class="key">胸郭の挙上</span></td>
+          <td>換気の視覚的確認</td>
+        </tr>
+        <tr>
+          <td><span class="key">チューブの曇り</span></td>
+          <td>呼気による結露</td>
+        </tr>
+      </table>
+
+      <p class="note">※チューブの深さ：成人男性 22〜24cm、成人女性 20〜22cm（門歯から）</p>
+
+    </div>
+  </div>
+</body>
+</html>

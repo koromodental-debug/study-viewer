@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>疾患と画像検査 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .point {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 32px;
+    }
+    .point h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .point p {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    section {
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 20px 0 12px 0;
+      color: var(--accent);
+    }
+    p, li {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    ul, ol {
+      padding-left: 24px;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    th {
+      background: var(--bg-secondary);
+      font-weight: 600;
+    }
+    .highlight {
+      background: #FFF3CD;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .card {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .principle-box {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    .principle-box h3 {
+      color: white;
+      margin-top: 0;
+    }
+    .exam-box {
+      background: #FFF5F5;
+      border-left: 4px solid #E53E3E;
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .exam-box h4 {
+      color: #E53E3E;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .memory-tip {
+      background: #E6F7FF;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .memory-tip-title {
+      font-weight: 600;
+      color: #0050B3;
+      margin-bottom: 8px;
+    }
+    .check {
+      color: #38A169;
+      font-weight: 600;
+    }
+    .cross {
+      color: #E53E3E;
+      font-weight: 600;
+    }
+    .keyword {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+      margin: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>疾患と画像検査</h1>
+  <p class="subtitle">歯科放射線学 ｜ 03_画像検査法</p>
+
+  <div class="point">
+    <h2>最重要ポイント</h2>
+    <p>軟組織疾患 → MRI・造影CT・超音波<br>
+    硬組織疾患 → エックス線・CT<br>
+    「軟か硬か」で検査を選ぶ！</p>
+  </div>
+
+  <section>
+    <h2>思考の出発点</h2>
+    <p>疾患と画像検査の組み合わせを問われたら、まず<span class="highlight">「病変が軟組織か硬組織か」</span>を判断する。これが検査選択の大原則。</p>
+
+    <div class="principle-box">
+      <h3>大原則：組織による検査の棲み分け</h3>
+      <ul>
+        <li><strong>軟組織疾患</strong>（舌、唾液腺、リンパ節、頸部）→ MRI、造影CT、超音波検査</li>
+        <li><strong>硬組織疾患</strong>（歯、顎骨）→ エックス線検査、CT</li>
+        <li><strong>機能評価・代謝評価</strong>→ 核医学検査（シンチグラフィ）</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>検査別の適応疾患</h2>
+
+    <h3>MRI</h3>
+    <p><strong>特徴</strong>：軟組織コントラスト能が最も高い</p>
+    <div class="card">
+      <div class="card-title">MRIが第一選択となる疾患</div>
+      <ul>
+        <li><strong>舌癌の進展範囲</strong>の評価</li>
+        <li><strong>顎関節疾患</strong>（関節円板転位、炎症性変化）</li>
+        <li>顎下部・頸部の<strong>嚢胞性疾患</strong>の鑑別</li>
+        <li><strong>骨髄内の変化</strong>（急性骨髄炎など）</li>
+      </ul>
+    </div>
+
+    <h3>造影CT</h3>
+    <p><strong>特徴</strong>：造影剤で軟組織コントラストを増強</p>
+    <div class="card">
+      <div class="card-title">造影CTが有用な疾患</div>
+      <ul>
+        <li><strong>舌癌</strong>の血流評価・進展範囲</li>
+        <li><strong>悪性腫瘍の転移リンパ節</strong>の評価</li>
+        <li>顎下部・頸部の<strong>嚢胞性疾患</strong></li>
+        <li><strong>膿瘍</strong>の範囲評価</li>
+      </ul>
+    </div>
+
+    <h3>超音波検査</h3>
+    <p><strong>特徴</strong>：表在性軟組織の観察に優れる、リアルタイム、被曝なし</p>
+    <div class="card">
+      <div class="card-title">超音波検査の適応</div>
+      <ul>
+        <li><strong>頸部・顎下部の腫瘤</strong>性病変</li>
+        <li><strong>唾液腺疾患</strong>（Warthin腫瘍など）</li>
+        <li><strong>頸部リンパ節炎</strong></li>
+        <li><strong>鰓嚢胞</strong>（側頸嚢胞）</li>
+        <li><strong>ラヌーラ</strong>（口底部）</li>
+      </ul>
+    </div>
+
+    <div class="exam-box">
+      <h4>超音波検査が不適応な疾患（頻出！）</h4>
+      <ul>
+        <li><span class="cross">×</span> <strong>顎骨内病変</strong>（内骨症、歯根嚢胞）</li>
+        <li><span class="cross">×</span> <strong>上顎洞病変</strong></li>
+        <li><span class="cross">×</span> <strong>顎骨骨髄炎</strong>（骨内病変）</li>
+      </ul>
+      <p>理由：硬組織で超音波が反射され、深部が観察できない</p>
+    </div>
+
+    <h3>歯科用コーンビームCT</h3>
+    <p><strong>特徴</strong>：三次元情報、高い空間分解能</p>
+    <div class="card">
+      <div class="card-title">歯科用コーンビームCTが有用な疾患</div>
+      <ul>
+        <li><strong>埋伏歯の位置</strong>把握（唇舌的位置）</li>
+        <li><strong>顎骨内腫瘍</strong>の範囲評価</li>
+        <li><strong>下顎管と病変の位置関係</strong></li>
+        <li>骨折線の走行評価</li>
+      </ul>
+      <p>※ただしCT値の正確性が低く、軟組織描出は不得意</p>
+    </div>
+
+    <h3>核医学検査（シンチグラフィ）</h3>
+    <p><strong>特徴</strong>：機能・代謝の評価が可能</p>
+    <div class="card">
+      <div class="card-title">核種と適応疾患</div>
+      <ul>
+        <li><strong>99mTc-MDP</strong>：骨転移、骨髄炎の活動性</li>
+        <li><strong>67Ga-citrate</strong>：悪性腫瘍の検索</li>
+        <li><strong>99mTcO4-</strong>：唾液腺機能評価</li>
+        <li><strong>18F-FDG（PET）</strong>：悪性腫瘍の糖代謝評価</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>疾患別・検査選択早見表</h2>
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>第一選択</th>
+          <th>補助的検査</th>
+        </tr>
+        <tr>
+          <td>舌癌の進展範囲</td>
+          <td><span class="keyword">MRI</span><span class="keyword">造影CT</span></td>
+          <td>口腔内超音波</td>
+        </tr>
+        <tr>
+          <td>顎関節炎症性変化</td>
+          <td><span class="keyword">MRI</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>顎下部嚢胞性疾患</td>
+          <td><span class="keyword">MRI</span><span class="keyword">造影CT</span><span class="keyword">超音波</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>頸部リンパ節炎</td>
+          <td><span class="keyword">超音波</span></td>
+          <td>造影CT</td>
+        </tr>
+        <tr>
+          <td>唾液腺腫瘍（Warthin腫瘍など）</td>
+          <td><span class="keyword">超音波</span><span class="keyword">MRI</span></td>
+          <td>造影CT</td>
+        </tr>
+        <tr>
+          <td>埋伏歯の位置把握</td>
+          <td><span class="keyword">歯科用コーンビームCT</span></td>
+          <td>咬合法、口内法</td>
+        </tr>
+        <tr>
+          <td>顎骨骨折</td>
+          <td><span class="keyword">CT</span></td>
+          <td>パノラマ、頭部後前方向撮影</td>
+        </tr>
+        <tr>
+          <td>骨転移</td>
+          <td><span class="keyword">骨シンチグラフィ</span></td>
+          <td>CT、MRI</td>
+        </tr>
+        <tr>
+          <td>嚥下障害</td>
+          <td><span class="keyword">VF（嚥下造影）</span></td>
+          <td>VE（内視鏡）</td>
+        </tr>
+        <tr>
+          <td>骨粗鬆症</td>
+          <td><span class="keyword">DXA</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>動静脈奇形</td>
+          <td><span class="keyword">IVR</span>（治療も兼ねる）</td>
+          <td>造影CT、MRA</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>109C49の頻出パターン</h2>
+    <p>「疾患と検査・治療法の組合せ」問題の定番。</p>
+    <div class="card">
+      <div class="card-title">正しい組み合わせ</div>
+      <ul>
+        <li><span class="check">○</span> 嚥下障害 ――― VF（嚥下造影）</li>
+        <li><span class="check">○</span> 顎関節症 ――― MRI</li>
+        <li><span class="check">○</span> 骨粗鬆症 ――― DXA</li>
+        <li><span class="check">○</span> 動静脈奇形 ―― IVR</li>
+        <li><span class="cross">×</span> 真性三叉神経痛 ― PET（誤り！PETは糖代謝評価で神経痛には不適）</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>病変の深達度評価</h2>
+    <p>114A68で出題。舌癌などの深達度評価には：</p>
+    <ul>
+      <li><span class="check">○</span> <strong>MRI</strong>：軟組織描出に優れる</li>
+      <li><span class="check">○</span> <strong>造影CT</strong>：血流豊富な部位を明瞭化</li>
+      <li><span class="check">○</span> <strong>口腔内超音波検査</strong>：表在性病変の深達度をリアルタイムで評価</li>
+      <li><span class="cross">×</span> 擦過細胞診：表層の細胞のみ</li>
+      <li><span class="cross">×</span> ヨード生体染色：表層の染色性のみ</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>骨病変の範囲評価</h2>
+    <p>115C39で出題。骨髄炎などの骨病変には：</p>
+    <ul>
+      <li><span class="check">○</span> <strong>CT</strong>：骨破壊の範囲</li>
+      <li><span class="check">○</span> <strong>MRI</strong>：骨髄内の変化</li>
+      <li><span class="check">○</span> <strong>99mTc-MDPシンチグラフィ</strong>：骨代謝亢進部位</li>
+      <li><span class="cross">×</span> 超音波検査：骨内は観察不能</li>
+      <li><span class="cross">×</span> 99mTcO4-シンチグラフィ：甲状腺・唾液腺用</li>
+    </ul>
+  </section>
+
+  <div class="memory-tip">
+    <div class="memory-tip-title">暗記のコツ</div>
+    <p><strong>「軟はMUC、硬はXC」</strong></p>
+    <ul>
+      <li>軟組織 → <strong>M</strong>RI、<strong>U</strong>ltrasound（超音波）、<strong>C</strong>T造影</li>
+      <li>硬組織 → <strong>X</strong>線、<strong>C</strong>T</li>
+    </ul>
+    <p>さらに「表在性の軟組織」は超音波が最も手軽で有効！</p>
+  </div>
+
+  <section>
+    <h2>過去問で頻出のポイント</h2>
+    <div class="exam-box">
+      <h4>出題パターン</h4>
+      <ol>
+        <li><strong>超音波検査の適応・非適応</strong>（104A60）：軟組織vs硬組織</li>
+        <li><strong>疾患と検査の組み合わせ</strong>（109C49）：定番の暗記問題</li>
+        <li><strong>軟組織腫瘍の評価</strong>（105C36、114A68）：MRI+造影CT</li>
+        <li><strong>埋伏歯の位置把握</strong>（109A111）：コーンビームCT</li>
+        <li><strong>顎関節炎症</strong>（107C92）：MRI一択</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>まとめ</h2>
+    <div class="card">
+      <ul>
+        <li><strong>軟組織疾患</strong>：MRI（最も優れる）、造影CT、超音波検査</li>
+        <li><strong>硬組織疾患</strong>：エックス線検査、CT</li>
+        <li><strong>超音波検査</strong>：表在性軟組織限定、顎骨内は不可</li>
+        <li><strong>機能・代謝評価</strong>：核医学検査</li>
+        <li>「軟か硬か」の判断が検査選択の第一歩</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>

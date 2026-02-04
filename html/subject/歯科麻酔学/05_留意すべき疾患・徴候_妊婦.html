@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>妊婦 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 留意すべき疾患・徴候</span>
+    <h1>妊婦</h1>
+    <div class="container">
+
+      <!-- ========== 歯科治療の時期別リスク ========== -->
+      <h2>妊婦の歯科治療と時期別リスク</h2>
+
+      <h3>妊娠時期と歯科治療</h3>
+      <table>
+        <tr><th>時期</th><th>週数</th><th>リスク</th><th>可能な処置</th></tr>
+        <tr><td>初期</td><td>〜15週</td><td>器官形成期（催奇形性リスク）、つわり、切迫流産</td><td>応急処置のみ</td></tr>
+        <tr><td><span class="highlight">中期（安定期）</span></td><td><span class="highlight">16〜27週</span></td><td>胎盤完成、体調安定、リスク最低</td><td>通常の歯科治療が可能</td></tr>
+        <tr><td>後期</td><td>28週〜</td><td>仰臥位低血圧症候群、早産リスク</td><td>応急処置のみ</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">器官形成期の催奇形性リスク</div>
+        <ul>
+          <li><span class="key">絶対過敏期</span>：妊娠4〜7週（器官の大部分が形成される時期）</li>
+          <li><span class="key">相対過敏期</span>：〜12週</li>
+          <li>この時期は薬剤投与を極力避ける</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A76</div>
+        <p>妊婦の歯科治療で合併症のリスクが低い時期はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 妊娠 5～10週<br>
+          b 妊娠11～15週<br>
+          c 妊娠16～27週<br>
+          d 妊娠28～34週<br>
+          e 妊娠35～40週
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】妊娠中期（16〜27週）は安定期にあたり、胎盤が完成して胎児の器官形成も完了しているため、合併症リスクが最も低い。初期は催奇形性と流産のリスク、後期は仰臥位低血圧症候群と早産のリスクがある。</p>
+      </div>
+
+      <!-- ========== 仰臥位低血圧症候群 ========== -->
+      <h2>仰臥位低血圧症候群</h2>
+
+      <h3>病態</h3>
+      <p>妊娠後期（8か月以降）の妊婦を仰臥位にすると、増大した子宮が脊柱の<span class="key">右側</span>を走行する<span class="highlight">下大静脈を圧迫</span>し、右心房への静脈還流量が減少する。その結果、心拍出量が低下して血圧低下・意識消失をきたす。</p>
+
+      <h3>症状</h3>
+      <p>仰臥位にしてから3〜10分以内に出現。突然の血圧低下、頻脈、冷汗、悪心・嘔吐、顔面蒼白、意識消失。</p>
+
+      <h3>対応</h3>
+      <div class="point-box">
+        <div class="point-box-title">仰臥位低血圧症候群の対応</div>
+        <ul>
+          <li><span class="highlight">左側臥位</span>にする（左を下にして横にする）</li>
+          <li>下大静脈は脊柱の右側を走行 → 左側臥位で子宮が左に移動し圧迫解除</li>
+          <li><span class="caution">昇圧薬は無効</span>（原因は機械的圧迫であり、体位変換が唯一の治療）</li>
+          <li><span class="caution">下肢挙上は不適切</span>（血管迷走神経反射の対応であり、本症候群には無効）</li>
+        </ul>
+      </div>
+
+      <p class="note">予防：妊娠後期の妊婦は水平仰臥位を避け、座位またはやや左に傾けた半座位で治療を行う。</p>
+
+      <div class="question-box">
+        <div class="q-number">104A55</div>
+        <p>32歳の女性。上顎第一大臼歯の疼痛を主訴として来院した。妊娠8か月であるという。診察のため水平位にしたところ、気分不快を訴え、冷汗と血圧低下とがみられた。<br>適切な対応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 身体を起こす。<br>
+          b 水を飲ませる。<br>
+          c 左側臥位にする。<br>
+          d 下肢を挙上する。<br>
+          e 口腔内吸引を行う。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】妊娠8か月の妊婦が水平位で血圧低下 → 仰臥位低血圧症候群。増大した子宮による下大静脈圧迫が原因であり、左側臥位にして圧迫を解除する。下肢挙上は血管迷走神経反射（ショック体位）の対応であり本症候群には不適切。身体を起こすだけでは不十分で、左に傾けることが重要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A41</div>
+        <p>歯科治療時の偶発症で、妊娠後期の妊婦が起こしやすいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 過換気症候群<br>
+          b ホルネル症候群<br>
+          c 口腔ジスキネジア<br>
+          d 神経原性ショック<br>
+          e 仰臥位低血圧症候群
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】妊娠後期は増大した子宮による下大静脈圧迫のリスクが高く、仰臥位低血圧症候群を起こしやすい。過換気症候群は不安・恐怖が誘因で妊娠との直接的関連はない。ホルネル症候群は交感神経障害（眼瞼下垂・縮瞳・発汗低下）であり偶発症としては稀。</p>
+      </div>
+
+      <!-- ========== 妊婦への薬剤使用 ========== -->
+      <h2>妊婦への薬剤使用</h2>
+
+      <h3>局所麻酔薬</h3>
+      <table>
+        <tr><th>薬剤</th><th>安全性</th><th>備考</th></tr>
+        <tr><td><span class="highlight">リドカイン</span></td><td>FDA分類B（安全）</td><td>妊婦に最も安全。無痛分娩でも使用される</td></tr>
+        <tr><td>メピバカイン</td><td>FDA分類C</td><td>リドカインより安全性で劣る</td></tr>
+        <tr><td>プリロカイン＋フェリプレシン</td><td>注意</td><td><span class="caution">フェリプレシンに子宮収縮作用あり</span> → 妊娠後期は避ける</td></tr>
+      </table>
+      <p>アドレナリン含有局所麻酔薬は、血管収縮により全身吸収が抑制されるため、むしろ母体・胎児への影響が軽減される。必要最小限の用量で使用する。</p>
+
+      <h3>鎮痛薬</h3>
+      <table>
+        <tr><th>薬剤</th><th>安全性</th><th>備考</th></tr>
+        <tr><td><span class="highlight">アセトアミノフェン</span></td><td>全妊娠期間で使用可能</td><td>第一選択。動脈管閉鎖リスクなし</td></tr>
+        <tr><td><span class="caution">NSAIDs</span></td><td><span class="caution">妊娠28週以降は禁忌</span></td><td>胎児動脈管の早期閉鎖を起こす</td></tr>
+      </table>
+
+      <h3>禁忌薬剤</h3>
+      <table>
+        <tr><th>薬剤</th><th>理由</th></tr>
+        <tr><td><span class="caution">テトラサイクリン系</span></td><td>胎児の<span class="key">歯牙着色（黄染）</span>。妊娠中期以降にCaと結合して歯に沈着</td></tr>
+        <tr><td><span class="caution">NSAIDs</span>（28週以降）</td><td>胎児<span class="key">動脈管の早期閉鎖</span> → 肺高血圧・右心不全</td></tr>
+        <tr><td><span class="caution">ニューキノロン系</span></td><td>胎児の関節軟骨障害</td></tr>
+      </table>
+
+      <h3>使用可能な抗菌薬</h3>
+      <p><span class="key">ペニシリン系</span>（アモキシシリン）、<span class="key">セフェム系</span>（セフカペン等）が安全に使用できる。</p>
+
+      <!-- ========== エックス線撮影 ========== -->
+      <h2>妊婦のエックス線撮影</h2>
+      <p>歯科用エックス線の被曝量は極めて少なく（デンタル：約0.01 mSv）、胎児に影響が出る閾値（50〜100 mSv）の数千分の1以下である。照射部位が口腔周囲であり子宮から離れているため、胎児への影響は無視できる。妊婦の心理的安心のため、防護エプロンの装着が推奨される。</p>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診断：炎症 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F7;
+      --border: #D2D2D7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .point {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 32px;
+    }
+    .point h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .point p {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    section {
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 20px 0 12px 0;
+      color: var(--accent);
+    }
+    p, li {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    ul, ol {
+      padding-left: 24px;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    th {
+      background: var(--bg-secondary);
+      font-weight: 600;
+    }
+    .highlight {
+      background: #FFF3CD;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .card {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .principle-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    .principle-box h3 {
+      color: white;
+      margin-top: 0;
+    }
+    .exam-box {
+      background: #FFF5F5;
+      border-left: 4px solid #E53E3E;
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .exam-box h4 {
+      color: #E53E3E;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .memory-tip {
+      background: #E6F7FF;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .memory-tip-title {
+      font-weight: 600;
+      color: #0050B3;
+      margin-bottom: 8px;
+    }
+    .check {
+      color: #38A169;
+      font-weight: 600;
+    }
+    .cross {
+      color: #E53E3E;
+      font-weight: 600;
+    }
+    .keyword {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+      margin: 2px;
+    }
+    .compare-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+    @media (max-width: 600px) {
+      .compare-box {
+        grid-template-columns: 1fr;
+      }
+    }
+    .compare-item {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .compare-item h4 {
+      font-size: 14px;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .acute {
+      border-left: 4px solid #E53E3E;
+    }
+    .chronic {
+      border-left: 4px solid #3182CE;
+    }
+    .signal-high {
+      background: #FFFAF0;
+      color: #C05621;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .signal-low {
+      background: #1A202C;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <h1>診断：炎症</h1>
+  <p class="subtitle">歯科放射線学 ｜ 04_画像診断：歯・歯周組織・顎骨</p>
+
+  <div class="point">
+    <h2>最重要ポイント</h2>
+    <p>急性骨髄炎 → MRIで診断（X線不顕期あり）<br>
+    T1：低信号 / T2：高信号<br>
+    慢性骨髄炎 → 腐骨・硬化性変化・骨膜反応</p>
+  </div>
+
+  <section>
+    <h2>思考の出発点</h2>
+    <p>炎症の画像診断では、<span class="highlight">「急性か慢性か」</span>で画像所見が大きく異なる。特に急性骨髄炎は<strong>エックス線不顕期</strong>があり、MRIでないと診断できないことがある。</p>
+
+    <div class="principle-box">
+      <h3>炎症診断の基本原則</h3>
+      <ul>
+        <li><strong>急性期</strong>：骨変化が少ない → MRI・核医学検査が有効</li>
+        <li><strong>慢性期</strong>：骨変化が明瞭 → エックス線・CTで診断可能</li>
+        <li><strong>軟組織の炎症</strong>（膿瘍など）→ MRI・造影CT</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>急性骨髄炎 vs 慢性骨髄炎</h2>
+
+    <div class="compare-box">
+      <div class="compare-item acute">
+        <h4>急性骨髄炎</h4>
+        <ul>
+          <li>発症から2週間以内</li>
+          <li><strong>エックス線不顕期</strong>あり</li>
+          <li>MRIが診断に有効</li>
+          <li>骨シンチでも早期診断可能</li>
+        </ul>
+      </div>
+      <div class="compare-item chronic">
+        <h4>慢性骨髄炎</h4>
+        <ul>
+          <li>発症から数週間〜数ヶ月以上</li>
+          <li>エックス線・CTで明瞭に描出</li>
+          <li>腐骨・硬化性変化が特徴</li>
+          <li>Garré骨髄炎では骨膜反応</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>急性骨髄炎のMRI所見</h2>
+    <p>106C123で出題。急性骨髄炎のMRI所見は頻出。</p>
+
+    <div class="card">
+      <div class="card-title">正常骨髄と急性骨髄炎の信号強度比較</div>
+      <div class="table-wrapper">
+        <table>
+          <tr>
+            <th></th>
+            <th>T1強調像</th>
+            <th>脂肪抑制T2強調像</th>
+          </tr>
+          <tr>
+            <td><strong>正常骨髄</strong>（脂肪）</td>
+            <td><span class="signal-high">高信号（白）</span></td>
+            <td><span class="signal-low">低信号（黒）</span></td>
+          </tr>
+          <tr>
+            <td><strong>急性骨髄炎</strong></td>
+            <td><span class="signal-low">低信号（黒）</span></td>
+            <td><span class="signal-high">高信号（白）</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="exam-box">
+      <h4>なぜ急性骨髄炎でMRIが有効か？</h4>
+      <ul>
+        <li><strong>エックス線不顕期</strong>：発症初期は骨変化がなくX線では見えない</li>
+        <li>MRIは<strong>骨髄内の浮腫・炎症</strong>を検出可能</li>
+        <li>T1で正常骨髄（高信号）が<strong>低下</strong>するのが特徴</li>
+        <li>T2で炎症による<strong>水分増加</strong>が高信号として描出</li>
+      </ul>
+    </div>
+
+    <div class="memory-tip">
+      <div class="memory-tip-title">暗記のコツ</div>
+      <p><strong>「急性は逆転」</strong></p>
+      <ul>
+        <li>正常骨髄：T1高・T2低（脂肪の性質）</li>
+        <li>急性骨髄炎：T1低・T2高（<strong>逆転する</strong>）</li>
+      </ul>
+      <p>「炎症で水が増える → T2で白くなる」と覚える</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>慢性骨髄炎の画像所見</h2>
+    <p>107B44, 110C79で出題。エックス線・CTで特徴的所見が見られる。</p>
+
+    <div class="card">
+      <div class="card-title">慢性骨髄炎の特徴的所見</div>
+      <ul>
+        <li><span class="keyword">腐骨</span>：周囲骨から分離された壊死骨片（不透過像）</li>
+        <li><span class="keyword">硬化性変化</span>：周囲骨の反応性骨硬化</li>
+        <li><span class="keyword">骨膜反応</span>：皮質骨表面の新生骨形成</li>
+        <li><span class="keyword">骨破壊像</span>：虫食い状の透過像</li>
+      </ul>
+    </div>
+
+    <h3>腐骨の画像所見</h3>
+    <p>壊死した骨が周囲から分離され、<strong>不透過像</strong>として認められる。CTでは「周囲正常骨から分離された骨片」として明瞭に描出される。</p>
+
+    <h3>骨膜反応（Garréの骨髄炎）</h3>
+    <p>若年者の慢性化膿性骨髄炎で特徴的。皮質骨表面に<strong>タマネギ様の層状骨膜反応</strong>を示す。</p>
+
+    <div class="card">
+      <div class="card-title">骨膜反応を生じる疾患（比較）</div>
+      <ul>
+        <li><strong>Garréの骨髄炎</strong>：タマネギ様（層状）</li>
+        <li><strong>骨肉腫</strong>：旭日状、Codman三角</li>
+        <li><strong>転移性悪性腫瘍</strong>：不規則型</li>
+        <li><strong>外傷</strong>：平行型</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>外歯瘻</h2>
+    <p>112C52で出題。慢性化膿性炎症の帰結として重要。</p>
+
+    <div class="card">
+      <div class="card-title">外歯瘻とは</div>
+      <ul>
+        <li>原因歯の<strong>慢性化膿性炎症</strong>が皮下組織を越えて<strong>皮膚と交通</strong></li>
+        <li>顔面・頸部の皮膚に<strong>瘻孔</strong>を形成</li>
+        <li>歯の症状がないことが多く、医科受診が先行</li>
+      </ul>
+    </div>
+
+    <h3>CT所見</h3>
+    <p>下顎骨から連続する<strong>軟組織濃度の病変</strong>が、皮下の脂肪層を越えて口腔外と交通している像が特徴。</p>
+  </section>
+
+  <section>
+    <h2>炎症と画像検査の選択</h2>
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>病態</th>
+          <th>第一選択</th>
+          <th>所見</th>
+        </tr>
+        <tr>
+          <td>急性骨髄炎<br>（X線不顕期）</td>
+          <td><span class="keyword">MRI</span><span class="keyword">骨シンチ</span></td>
+          <td>T1低信号、T2高信号</td>
+        </tr>
+        <tr>
+          <td>慢性骨髄炎</td>
+          <td><span class="keyword">X線</span><span class="keyword">CT</span></td>
+          <td>腐骨、硬化性変化、骨膜反応</td>
+        </tr>
+        <tr>
+          <td>膿瘍</td>
+          <td><span class="keyword">MRI</span><span class="keyword">造影CT</span></td>
+          <td>軟組織内の境界明瞭な病変</td>
+        </tr>
+        <tr>
+          <td>外歯瘻</td>
+          <td><span class="keyword">CT</span></td>
+          <td>骨から皮膚への瘻孔形成</td>
+        </tr>
+        <tr>
+          <td>根尖性歯周炎</td>
+          <td><span class="keyword">口内法X線</span></td>
+          <td>根尖部の透過像</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>過去問で頻出のポイント</h2>
+    <div class="exam-box">
+      <h4>出題パターン</h4>
+      <ol>
+        <li><strong>急性骨髄炎のMRI所見</strong>（106C123, 108A65）：T1低・T2高が頻出</li>
+        <li><strong>慢性骨髄炎の特徴的所見</strong>（107B44, 110C79）：腐骨、硬化性変化</li>
+        <li><strong>外歯瘻のCT所見</strong>（112C52）：骨から皮膚への連続性</li>
+        <li><strong>骨膜反応を生じる疾患</strong>：骨肉腫、Garré骨髄炎との鑑別</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>鑑別診断のポイント</h2>
+    <div class="card">
+      <div class="card-title">慢性骨髄炎と類似する疾患</div>
+      <ul>
+        <li><strong>骨性異形成症</strong>：硬化性変化が類似するが、炎症症状なし</li>
+        <li><strong>歯根嚢胞</strong>：境界明瞭な透過像、周囲の硬化縁あり</li>
+        <li><strong>腫瘍</strong>：歯根吸収、下顎管偏位などを伴うことが多い</li>
+      </ul>
+      <p>→ <strong>臨床症状</strong>（疼痛、腫脹、排膿、発熱）と合わせて判断</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>まとめ</h2>
+    <div class="card">
+      <ul>
+        <li><strong>急性骨髄炎</strong>：X線不顕期あり → MRIで診断（T1低・T2高）</li>
+        <li><strong>慢性骨髄炎</strong>：腐骨・硬化性変化・骨膜反応 → X線・CTで診断</li>
+        <li><strong>Garréの骨髄炎</strong>：タマネギ様骨膜反応（若年者）</li>
+        <li><strong>外歯瘻</strong>：慢性化膿性炎症 → 皮膚との交通</li>
+        <li>「急性は逆転」：正常骨髄のMRI信号が逆転する</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>

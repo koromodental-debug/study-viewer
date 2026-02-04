@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>甲状腺疾患 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 留意すべき疾患・徴候</span>
+    <h1>甲状腺疾患</h1>
+    <div class="container">
+
+      <h2>甲状腺機能亢進症 vs 低下症</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>機能亢進症（バセドウ病）</th>
+          <th>機能低下症（粘液水腫）</th>
+        </tr>
+        <tr>
+          <td>ホルモン</td>
+          <td>T3・T4 <span class="key">↑</span></td>
+          <td>T3・T4 <span class="key">↓</span></td>
+        </tr>
+        <tr>
+          <td>脈拍</td>
+          <td><span class="highlight">頻脈</span></td>
+          <td><span class="key">徐脈</span></td>
+        </tr>
+        <tr>
+          <td>体温・発汗</td>
+          <td>暑がり、<span class="key">多汗</span></td>
+          <td>寒がり</td>
+        </tr>
+        <tr>
+          <td>体重</td>
+          <td>減少</td>
+          <td>増加</td>
+        </tr>
+        <tr>
+          <td>その他</td>
+          <td><span class="key">手指振戦</span>、動悸</td>
+          <td>浮腫、巨舌、嗄声</td>
+        </tr>
+      </table>
+
+      <h2>甲状腺機能亢進症</h2>
+      <p>甲状腺ホルモン（T3、T4）の過剰分泌により、代謝亢進・交感神経系の活性化が起こる。</p>
+
+      <h3>代表疾患</h3>
+      <ul>
+        <li><span class="key">バセドウ病</span>（Graves病）</li>
+        <li>機能性甲状腺腺腫</li>
+      </ul>
+
+      <h3>術前評価</h3>
+      <ul>
+        <li><span class="key">freeT3、freeT4</span>の測定</li>
+        <li>甲状腺腫大による<span class="key">気管偏位・狭窄</span>をCT・X線で確認</li>
+        <li>心電図（心房性不整脈）、心拍数、血圧</li>
+      </ul>
+
+      <h3>麻酔管理で避けるべき薬物</h3>
+      <table>
+        <tr>
+          <th>薬物</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="caution">アドレナリン添加局麻</span></td>
+          <td>頻脈・高血圧を悪化させる</td>
+        </tr>
+        <tr>
+          <td><span class="caution">ポビドンヨード</span></td>
+          <td>ヨウ素含有で甲状腺機能に影響</td>
+        </tr>
+        <tr>
+          <td><span class="caution">アトロピン</span></td>
+          <td>頻脈を誘発</td>
+        </tr>
+        <tr>
+          <td><span class="caution">ケタミン</span></td>
+          <td>頻脈・血圧上昇</td>
+        </tr>
+        <tr>
+          <td>イソフルラン</td>
+          <td>頻脈をきたしやすい</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">なぜアドレナリンを避けるか</div>
+        <p>甲状腺機能亢進症では交感神経系が<span class="key">過敏</span>な状態。アドレナリンを投与すると頻脈・高血圧が著しく増悪し、<span class="caution">甲状腺クリーゼ</span>を誘発する危険がある。</p>
+      </div>
+
+      <h3>甲状腺クリーゼ</h3>
+      <p>甲状腺機能亢進症の急性増悪。高熱、頻脈、意識障害を呈し、致死的となりうる。</p>
+
+      <h3>クリーゼへの対応</h3>
+      <ul>
+        <li><span class="highlight">β遮断薬</span>（プロプラノロール）→ 頻脈を抑制</li>
+        <li>抗甲状腺薬</li>
+        <li>ステロイド薬</li>
+        <li>冷却</li>
+      </ul>
+
+      <h2>甲状腺機能低下症</h2>
+      <p>甲状腺ホルモンの分泌低下により、代謝低下が起こる。</p>
+
+      <h3>代表疾患</h3>
+      <ul>
+        <li><span class="key">粘液水腫</span>（成人）</li>
+        <li>クレチン病（先天性）</li>
+        <li>橋本病（慢性甲状腺炎）</li>
+      </ul>
+
+      <h3>症状</h3>
+      <ul>
+        <li>浮腫（非圧痕性）</li>
+        <li>寒がり、徐脈</li>
+        <li><span class="key">巨舌</span>、嗄声</li>
+        <li>易疲労</li>
+      </ul>
+
+      <h3>麻酔管理の注意点</h3>
+      <ul>
+        <li>鎮静薬・鎮痛薬に対する<span class="key">感受性が高い</span> → 少量から投与</li>
+        <li>薬物代謝遅延</li>
+        <li>術中の体温低下に注意</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">104A101</div>
+        <p>歯科用リドカイン塩酸塩・アドレナリン配合局所麻酔薬の原則禁忌はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 糖尿病<br>
+          b 高血圧症<br>
+          c 慢性肝炎<br>
+          d 十二指腸潰瘍<br>
+          e 甲状腺機能亢進症
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】アドレナリン含有局麻の原則禁忌：糖尿病（血糖上昇）、高血圧症（血圧上昇）、甲状腺機能亢進症（頻脈・高血圧悪化）。慢性肝炎・十二指腸潰瘍は禁忌ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C65</div>
+        <p>40歳の女性。全身麻酔下に下顎骨骨折に対する観血的整復固定術を行うこととした。2か月前から動悸と手の振戦を自覚している。血液学検査の結果の一部を表に示す。<br>使用を避けるべきなのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a デキサメタゾン<br>
+          b ポビドンヨード<br>
+          c フェンタニルクエン酸塩<br>
+          d プロプラノロール塩酸塩<br>
+          e アドレナリン添加リドカイン塩酸塩
+        </div>
+        <div class="answer">正解：b / e</div>
+        <p>【解説】動悸・手指振戦から甲状腺機能亢進症が疑われる。避けるべきは：<br>
+        ・<span class="key">ポビドンヨード</span>：ヨウ素含有で甲状腺機能に影響<br>
+        ・<span class="key">アドレナリン添加局麻</span>：頻脈・高血圧を悪化<br>
+        プロプラノロール（β遮断薬）はむしろクリーゼ対策に使用する。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：甲状腺機能亢進症で避けるもの</div>
+        <ul>
+          <li><span class="caution">アドレナリン</span>（局麻添加含む）</li>
+          <li><span class="caution">ポビドンヨード</span>（ヨウ素含有）</li>
+          <li><span class="caution">アトロピン、ケタミン</span>（頻脈誘発）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

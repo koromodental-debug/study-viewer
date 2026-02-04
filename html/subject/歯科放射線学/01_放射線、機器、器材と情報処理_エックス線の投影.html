@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>エックス線の投影 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線、機器、器材と情報処理</span>
+    <h1>エックス線の投影</h1>
+    <div class="container">
+
+      <h2>エックス線画像形成の原理</h2>
+      <p>エックス線は被写体を通過する際に<span class="key">透過・減弱・散乱・吸収</span>される。</p>
+      <p>被写体を通過した後のエックス線の強弱を<span class="key">被写体コントラスト</span>とよぶ。</p>
+      <p>画像診断領域では<span class="highlight">光電効果</span>と<span class="key">コンプトン効果</span>が主に関与。</p>
+
+      <h2>散乱線の発生条件</h2>
+      <p>コンプトン効果で発生する散乱線は、以下の条件で<span class="caution">増加</span>する：</p>
+      <ul>
+        <li><span class="key">管電圧</span>が高い</li>
+        <li><span class="key">被写体</span>が厚い</li>
+        <li><span class="highlight">照射野</span>が大きい</li>
+      </ul>
+      <p>散乱線は画像の<span class="caution">コントラストを低下</span>させ、人体にも有害。</p>
+
+      <h2>照射野を小さくした効果</h2>
+      <table>
+        <tr>
+          <th>効果</th>
+          <th>理由</th>
+          <th>正誤</th>
+        </tr>
+        <tr>
+          <td><span class="key">散乱線の減少</span></td>
+          <td>照射野が小さいと散乱線発生が減る</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="key">鮮鋭度の向上</span></td>
+          <td>散乱線減少による</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="key">被曝線量の低減</span></td>
+          <td>照射範囲が狭くなる</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="key">被写体コントラストの上昇</span></td>
+          <td>散乱線減少による</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td><span class="caution">コーンカットの減少</span></td>
+          <td>位置合わせが難しくなり<span class="caution">増える</span></td>
+          <td><span class="caution">×</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">コーンカットとは</div>
+        <p>照射野がフィルム（検出器）を完全にカバーしないこと。照射野を小さくすると位置合わせが難しくなり、コーンカットは<span class="caution">増える</span>。</p>
+      </div>
+
+      <h2>各検査法の画像形成原理</h2>
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>画像形成原理</th>
+          <th>光電効果</th>
+        </tr>
+        <tr>
+          <td><span class="key">CT</span></td>
+          <td>エックス線の吸収差</td>
+          <td><span class="highlight">○</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">パノラマ</span></td>
+          <td>エックス線の吸収差</td>
+          <td><span class="highlight">○</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">口内法</span></td>
+          <td>エックス線の吸収差</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td>MRI</td>
+          <td>磁気共鳴</td>
+          <td>×</td>
+        </tr>
+        <tr>
+          <td>PET</td>
+          <td>陽電子放出</td>
+          <td>×</td>
+        </tr>
+        <tr>
+          <td>超音波検査</td>
+          <td>音波の反射</td>
+          <td>×</td>
+        </tr>
+      </table>
+      <p class="note">「光電効果により画像コントラストが形成」= エックス線を使用する検査</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A81</div>
+        <p>口内法エックス線撮影で照射野を小さくしたときに得られる効果はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 散乱線の減少<br>
+          b 鮮鋭度の向上<br>
+          c 被曝線量の低減<br>
+          d コーンカットの減少<br>
+          e 被写体コントラストの上昇
+        </div>
+        <div class="answer">正解：a, b, c, e</div>
+        <p>【解説】照射野を小さくすると散乱線が減少し、鮮鋭度・コントラストが向上、被曝も低減する。<span class="caution">dは誤り</span>：照射野を小さくすると位置合わせが難しくなり、コーンカットは<span class="caution">増える</span>。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C22</div>
+        <p>主として被写体の光電効果により画像コントラストが形成されるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a CT<br>
+          b MRI<br>
+          c PET<br>
+          d 超音波検査<br>
+          e パノラマエックス線撮影
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】光電効果で画像形成 = <span class="highlight">エックス線を使用する検査</span>。<span class="key">CT</span>と<span class="key">パノラマエックス線撮影</span>が該当。MRIは磁気共鳴、PETは陽電子放出、超音波は音波の反射による。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>照射野を小さく → 散乱線減少、画質向上、被曝低減</li>
+          <li><span class="caution">コーンカットは増える</span>（ひっかけ注意）</li>
+          <li>「光電効果で画像形成」= <span class="highlight">エックス線を使う検査</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

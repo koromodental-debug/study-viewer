@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>造影検査 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 画像検査法</span>
+    <h1>造影検査</h1>
+    <div class="container">
+
+      <h2>造影検査とは</h2>
+      <p><span class="key">造影剤</span>を投与してコントラストを増強し、病変や血管を明瞭に描出する検査法。</p>
+
+      <h2>検査法と造影剤の組み合わせ</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：検査と造影剤の対応</div>
+        <ul>
+          <li>造影CT → <span class="highlight">ヨード製剤</span></li>
+          <li>造影MRI → <span class="highlight">ガドリニウム製剤</span></li>
+          <li>唾液腺造影 → <span class="highlight">水溶性ヨード製剤</span></li>
+          <li>顎関節腔造影 → <span class="highlight">空気</span>（陰性造影剤）</li>
+        </ul>
+      </div>
+
+      <h3>造影剤の種類と対応検査</h3>
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>造影剤</th>
+          <th>投与経路</th>
+        </tr>
+        <tr>
+          <td><span class="key">造影CT</span></td>
+          <td><span class="highlight">ヨード製剤</span></td>
+          <td>静脈内投与</td>
+        </tr>
+        <tr>
+          <td><span class="key">造影MRI</span></td>
+          <td><span class="highlight">ガドリニウム製剤</span></td>
+          <td>静脈内投与</td>
+        </tr>
+        <tr>
+          <td><span class="key">唾液腺造影</span></td>
+          <td>水溶性ヨード製剤</td>
+          <td>導管内注入</td>
+        </tr>
+        <tr>
+          <td><span class="key">顎関節腔造影</span></td>
+          <td><span class="highlight">空気</span></td>
+          <td>関節腔内注入</td>
+        </tr>
+        <tr>
+          <td>消化管造影</td>
+          <td>バリウム</td>
+          <td>経口投与</td>
+        </tr>
+        <tr>
+          <td>超音波造影</td>
+          <td>マイクロバブル</td>
+          <td>静脈内投与</td>
+        </tr>
+        <tr>
+          <td>核医学検査</td>
+          <td>テクネチウム、ガリウム等</td>
+          <td>静脈内投与</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102A105</div>
+        <p>画像検査法と造影剤との組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 造影CT────────バリウム<br>
+          b 造影MRI────────ヨード<br>
+          c 超音波検査───────ガドリニウム<br>
+          d 唾液腺造影───────ガリウム<br>
+          e 顎関節腔造影──────空気
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】顎関節腔造影には空気（陰性造影剤）を使用する。造影CTはヨード、造影MRIはガドリニウム、唾液腺造影は水溶性ヨード、超音波造影はマイクロバブル、核医学検査にテクネチウムやガリウムを使用する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C69</div>
+        <p>MRIの造影剤の成分はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ヨード<br>
+          b バリウム<br>
+          c ガドリニウム<br>
+          d テクネチウム<br>
+          e マイクロバブル
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】MRI造影剤はガドリニウム製剤。ガドリニウムはキレート化合物として投与され、T1強調像で高信号（増強効果）を示す。ヨードはCT造影剤、バリウムは消化管造影、テクネチウムは核医学検査、マイクロバブルは超音波造影に使用。</p>
+      </div>
+
+      <h2>造影CTの詳細</h2>
+      <p><span class="key">ヨード製剤</span>を静脈内に投与し、血管や血流の豊富な組織のコントラストを増強させる。</p>
+
+      <h3>造影される組織</h3>
+      <ul>
+        <li>血管</li>
+        <li>血流の豊富な腫瘍</li>
+        <li>炎症部位</li>
+      </ul>
+
+      <h3>造影されない組織</h3>
+      <ul>
+        <li>皮下脂肪</li>
+        <li>神経</li>
+        <li>緻密骨</li>
+      </ul>
+
+      <h3>禁忌</h3>
+      <ul>
+        <li><span class="caution">ヨードアレルギー</span>の患者</li>
+        <li><span class="caution">重篤な腎疾患</span>の患者（造影剤腎症のリスク）</li>
+      </ul>
+
+      <h2>造影MRIの詳細</h2>
+      <p><span class="key">ガドリニウム製剤</span>を静脈内に投与し、T1強調像を撮像する。</p>
+
+      <h3>特徴</h3>
+      <ul>
+        <li>ガドリニウムは<span class="key">キレート化合物</span>として投与（毒性低減）</li>
+        <li>血流のある病変が<span class="key">T1強調像で高信号</span>（増強効果）</li>
+        <li>CT造影剤（ヨード）とは異なる</li>
+      </ul>
+
+      <h3>注意点</h3>
+      <ul>
+        <li>腎機能低下患者では注意が必要（腎性全身性線維症のリスク）</li>
+      </ul>
+
+      <h2>造影検査と感染リスク</h2>
+
+      <div class="question-box">
+        <div class="q-number">113B33</div>
+        <p>画像検査を実施する際に医療従事者の感染リスクが最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 造影CT<br>
+          b 単純MRI<br>
+          c 超音波検査<br>
+          d 嚥下造影検査<br>
+          e パノラマエックス線撮影
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】造影CTは静脈内に造影剤を注射するため、針刺し事故による血液感染のリスクがある。単純MRI、超音波検査、パノラマエックス線撮影は非侵襲的で針を使用しない。嚥下造影検査は経口投与のため針刺しリスクはない。</p>
+      </div>
+
+      <h2>陽性造影剤と陰性造影剤</h2>
+
+      <h3>陽性造影剤（高吸収）</h3>
+      <p>エックス線を吸収し、<span class="key">白く描出</span>される。</p>
+      <ul>
+        <li>ヨード製剤</li>
+        <li>バリウム</li>
+      </ul>
+
+      <h3>陰性造影剤（低吸収）</h3>
+      <p>エックス線を透過し、<span class="key">黒く描出</span>される。</p>
+      <ul>
+        <li><span class="key">空気</span>（顎関節腔造影に使用）</li>
+        <li>二酸化炭素</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：造影検査のポイント</div>
+        <ul>
+          <li>造影CT → <span class="highlight">ヨード</span>（禁忌：ヨードアレルギー、腎疾患）</li>
+          <li>造影MRI → <span class="highlight">ガドリニウム</span></li>
+          <li>顎関節腔造影 → <span class="highlight">空気</span>（陰性造影剤）</li>
+          <li>造影CTは<span class="caution">針刺し事故</span>による感染リスクあり</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

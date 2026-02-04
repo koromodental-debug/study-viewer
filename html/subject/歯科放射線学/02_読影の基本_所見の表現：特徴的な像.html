@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>所見の表現：特徴的な像 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 読影の基本</span>
+    <h1>所見の表現：特徴的な像</h1>
+    <div class="container">
+
+      <h2>特徴的なX線像と疾患の対応</h2>
+      <p>X線写真の所見を表現する特徴的な用語と、それが示す疾患の対応を覚える。</p>
+
+      <table>
+        <tr>
+          <th>X線所見</th>
+          <th>英語名</th>
+          <th>該当疾患</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">旭日状</span></td>
+          <td>sunburst / sunray</td>
+          <td><span class="highlight">骨肉腫</span></td>
+          <td>放射状の骨膜反応</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">蜂巣状</span></td>
+          <td>honeycomb</td>
+          <td><span class="highlight">エナメル上皮腫</span></td>
+          <td>多嚢性の透過像</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">石けん泡状</span></td>
+          <td>soap bubble</td>
+          <td><span class="highlight">エナメル上皮腫</span></td>
+          <td>多嚢性の透過像</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">テニスラケット状</span></td>
+          <td>tennis racket</td>
+          <td><span class="highlight">歯原性粘液腫</span></td>
+          <td>樹枝状の隔壁構造</td>
+        </tr>
+        <tr>
+          <td><span class="key">綿花状</span></td>
+          <td>cotton wool</td>
+          <td><span class="key">骨パジェット病</span></td>
+          <td>不規則な不透過像</td>
+        </tr>
+        <tr>
+          <td><span class="key">すりガラス状</span></td>
+          <td>ground glass</td>
+          <td>線維性骨異形成症<br>セメント質骨形成線維腫</td>
+          <td>均一な不透過像</td>
+        </tr>
+      </table>
+
+      <h2>各所見の詳細</h2>
+
+      <h3>旭日状（骨肉腫）</h3>
+      <ul>
+        <li>骨膜反応により<span class="key">放射状</span>の骨新生像</li>
+        <li>悪性腫瘍（骨肉腫）に特徴的</li>
+        <li>太陽の光線が広がるような像</li>
+      </ul>
+
+      <h3>蜂巣状・石けん泡状（エナメル上皮腫）</h3>
+      <ul>
+        <li><span class="key">多嚢性</span>の境界明瞭な透過像</li>
+        <li>隔壁により蜂の巣や泡のような像</li>
+        <li>ナイフカット状の歯根吸収を伴うことが多い</li>
+      </ul>
+
+      <h3>テニスラケット状（歯原性粘液腫）</h3>
+      <ul>
+        <li>境界明瞭な多嚢性の透過像</li>
+        <li>内部に<span class="key">樹枝状の隔壁構造</span></li>
+        <li>ラケットの網目のような像</li>
+      </ul>
+
+      <h3>綿花状（骨パジェット病）</h3>
+      <ul>
+        <li><span class="key">不規則な不透過像</span>が散在</li>
+        <li>綿を丸めたような像</li>
+        <li>骨の代謝異常による</li>
+      </ul>
+
+      <h3>すりガラス状（線維性骨異形成症など）</h3>
+      <ul>
+        <li>境界明瞭な<span class="key">均一な不透過像</span></li>
+        <li>すりガラスのようにぼんやりした像</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">間違えやすい組み合わせ</div>
+        <ul>
+          <li><span class="caution">綿花状 ≠ 角化嚢胞</span> → 骨パジェット病</li>
+          <li><span class="caution">蜂巣状 ≠ 慢性骨髄炎</span> → エナメル上皮腫</li>
+          <li><span class="caution">石けん泡状 ≠ 骨腫</span> → エナメル上皮腫</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C65</div>
+        <p>エックス線写真所見と疾患名との組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 旭日状 ─ 骨肉腫<br>
+          b 綿花状 ─ 角化嚢胞性歯原性腫瘍<br>
+          c 蜂巣状 ─ 慢性骨髄炎<br>
+          d 石けん泡状 ─ 骨腫<br>
+          e テニスラケット状 ─ 歯原性粘液腫
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<br>
+        a：<span class="highlight">旭日状 = 骨肉腫</span> ○<br>
+        b：綿花状 = <span class="caution">骨パジェット病</span>（角化嚢胞ではない）×<br>
+        c：蜂巣状 = <span class="caution">エナメル上皮腫</span>（慢性骨髄炎ではない）×<br>
+        d：石けん泡状 = <span class="caution">エナメル上皮腫</span>（骨腫ではない）×<br>
+        e：<span class="highlight">テニスラケット状 = 歯原性粘液腫</span> ○</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li><span class="highlight">旭日状</span> → 骨肉腫（悪性！）</li>
+          <li><span class="highlight">蜂巣状・石けん泡状</span> → エナメル上皮腫</li>
+          <li><span class="highlight">テニスラケット状</span> → 歯原性粘液腫</li>
+          <li><span class="key">綿花状</span> → 骨パジェット病</li>
+          <li><span class="key">すりガラス状</span> → 線維性骨異形成症</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

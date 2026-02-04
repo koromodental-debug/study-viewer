@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>出血性ショック - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 歯科治療中の全身的偶発症</span>
+    <h1>出血性ショック</h1>
+    <div class="container">
+
+      <h2>定義・病態</h2>
+      <p><span class="key">出血性ショック</span>は、大量出血により<span class="key">循環血液量</span>が減少し、組織灌流が低下して臓器障害をきたす状態である。<span class="key">循環血液量減少性ショック</span>に分類される。</p>
+
+      <h3>発症機序</h3>
+      <ol>
+        <li>大量出血により循環血液量が減少</li>
+        <li>静脈還流量↓ → 心拍出量↓</li>
+        <li>代償機転：交感神経緊張 → <span class="key">頻脈</span>、末梢血管収縮</li>
+        <li>代償破綻 → 血圧低下、組織灌流↓</li>
+        <li>嫌気性代謝 → <span class="key">代謝性アシドーシス</span>、乳酸蓄積</li>
+      </ol>
+
+      <h2>ショックの分類</h2>
+      <p>ショックは原因により4つに大別される。</p>
+
+      <h3>ショックの4分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>原因</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">循環血液量減少性</span></td>
+          <td>血液・体液の喪失</td>
+          <td><span class="key">出血性ショック</span>、脱水</td>
+        </tr>
+        <tr>
+          <td><span class="key">心原性</span></td>
+          <td>心ポンプ機能障害</td>
+          <td>心筋梗塞、不整脈</td>
+        </tr>
+        <tr>
+          <td><span class="key">血液分布異常性</span></td>
+          <td>血管拡張・透過性亢進</td>
+          <td>アナフィラキシー、敗血症、神経原性</td>
+        </tr>
+        <tr>
+          <td><span class="key">閉塞性</span></td>
+          <td>血流の物理的閉塞</td>
+          <td>心タンポナーデ、肺塞栓</td>
+        </tr>
+      </table>
+
+      <h2>重症度分類（出血量による）</h2>
+      <p>成人の循環血液量は約5L（体重の約7-8%）。出血量により症状が異なる。</p>
+
+      <h3>出血性ショックの分類（ATLSによる）</h3>
+      <table>
+        <tr>
+          <th>クラス</th>
+          <th>出血量</th>
+          <th>脈拍</th>
+          <th>血圧</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td>&lt;15%（〜750mL）</td>
+          <td>正常〜軽度↑</td>
+          <td>正常</td>
+          <td>軽度不穏</td>
+        </tr>
+        <tr>
+          <td>II</td>
+          <td>15-30%（750-1500mL）</td>
+          <td><span class="key">100-120</span></td>
+          <td>正常〜軽度↓</td>
+          <td>不安、口渇</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">III</span></td>
+          <td>30-40%（1500-2000mL）</td>
+          <td><span class="highlight">120-140</span></td>
+          <td><span class="highlight">低下</span></td>
+          <td>冷汗、蒼白、混乱</td>
+        </tr>
+        <tr>
+          <td><span class="caution">IV</span></td>
+          <td>&gt;40%（&gt;2000mL）</td>
+          <td>&gt;140または↓</td>
+          <td><span class="caution">著明低下</span></td>
+          <td>意識障害、無尿</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ショック指数（Shock Index: SI）</div>
+        <ul>
+          <li>SI = 脈拍数 / 収縮期血圧</li>
+          <li>正常：0.5〜0.7</li>
+          <li><span class="highlight">SI ≧ 1.0</span>：ショック状態を示唆</li>
+          <li>例：脈拍120、血圧100 → SI = 1.2（ショック）</li>
+        </ul>
+      </div>
+
+      <h2>症状</h2>
+
+      <h3>初期症状（代償期）</h3>
+      <ul>
+        <li><span class="highlight">頻脈</span>（交感神経緊張による）</li>
+        <li>皮膚蒼白、四肢冷感</li>
+        <li>冷汗</li>
+        <li>不安、軽度の意識変容</li>
+        <li>尿量減少</li>
+      </ul>
+
+      <h3>進行期症状</h3>
+      <ul>
+        <li><span class="highlight">血圧低下</span></li>
+        <li>脈拍微弱</li>
+        <li>呼吸促迫</li>
+        <li>意識障害</li>
+        <li>無尿</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">他のショックとの鑑別</div>
+        <ul>
+          <li>出血性ショック：<span class="highlight">頻脈</span>、皮膚蒼白・冷感、出血源あり</li>
+          <li>アナフィラキシー：頻脈、皮膚紅潮・蕁麻疹、気道症状</li>
+          <li>血管迷走神経反射：<span class="caution">徐脈</span>、精神的誘因</li>
+        </ul>
+      </div>
+
+      <h2>治療</h2>
+
+      <h3>治療の優先順位</h3>
+      <table>
+        <tr>
+          <th>順序</th>
+          <th>対応</th>
+          <th>詳細</th>
+        </tr>
+        <tr>
+          <td>①</td>
+          <td><span class="highlight">止血</span></td>
+          <td>最優先：圧迫止血、外科的止血</td>
+        </tr>
+        <tr>
+          <td>②</td>
+          <td>静脈路確保</td>
+          <td>太い静脈カテーテル（複数箇所）</td>
+        </tr>
+        <tr>
+          <td>③</td>
+          <td><span class="highlight">輸液</span></td>
+          <td>乳酸リンゲル液、生理食塩水</td>
+        </tr>
+        <tr>
+          <td>④</td>
+          <td><span class="key">輸血</span></td>
+          <td>RBC:FFP:PC = 1:1:1</td>
+        </tr>
+        <tr>
+          <td>⑤</td>
+          <td>酸素投与</td>
+          <td>高流量、必要時挿管</td>
+        </tr>
+      </table>
+
+      <h3>輸液療法</h3>
+      <ul>
+        <li><span class="key">晶質液</span>：乳酸リンゲル液、生理食塩水</li>
+        <li><span class="key">膠質液</span>：アルブミン製剤、HES</li>
+        <li>初期輸液：1-2Lを急速投与し反応を評価</li>
+      </ul>
+
+      <h3>輸血</h3>
+      <ul>
+        <li>大量出血時は<span class="key">赤血球製剤（RBC）</span>で酸素運搬能を維持</li>
+        <li><span class="key">新鮮凍結血漿（FFP）</span>：凝固因子補充</li>
+        <li><span class="key">血小板製剤（PC）</span>：止血能維持</li>
+        <li>大量輸血時は<span class="highlight">RBC:FFP:PC = 1:1:1</span>で投与</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">死の三徴（Lethal Triad）</div>
+        <ul>
+          <li><span class="caution">低体温</span>：出血・輸液による体温低下</li>
+          <li><span class="caution">凝固障害</span>：凝固因子消費・希釈</li>
+          <li><span class="caution">アシドーシス</span>：組織低灌流による乳酸蓄積</li>
+          <li>この3つが揃うと止血困難となり悪循環に陥る</li>
+        </ul>
+      </div>
+
+      <h2>歯科・口腔外科領域での注意</h2>
+      <ul>
+        <li>顎骨骨折、顎顔面外傷での大量出血</li>
+        <li>悪性腫瘍手術（頸部郭清など）での術中出血</li>
+        <li>抗凝固薬・抗血小板薬服用患者の抜歯後出血</li>
+        <li>血友病など出血性素因を有する患者</li>
+      </ul>
+
+      <h2>関連過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B33</div>
+        <p>25歳の男性。左側顎下部の腫脹を主訴として来院した。体温は39.0℃で、強い疼痛と開口障害とがある。昨日から食事をとっていないという。特記すべき既往歴はない。抗菌薬の点滴とともに輸液を行うこととした。投与すべき成分はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 電解質<br>
+          b ブドウ糖<br>
+          c アミノ酸<br>
+          d ビタミン<br>
+          e アルブミン
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】食事摂取不能による脱水・低血糖に対する輸液。<span class="key">電解質</span>（Na、K等）と<span class="key">ブドウ糖</span>を含む維持輸液が適切。アルブミンは低タンパク血症や大量出血時、アミノ酸は高カロリー輸液に用いる。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>分類：<span class="key">循環血液量減少性ショック</span></li>
+          <li>症状：<span class="highlight">頻脈</span>（徐脈ではない）、血圧低下、蒼白、冷汗</li>
+          <li>ショック指数：SI = 脈拍/血圧 ≧1.0でショック</li>
+          <li>治療：<span class="highlight">止血</span>が最優先、輸液＋輸血</li>
+          <li>大量輸血：RBC:FFP:PC = 1:1:1</li>
+          <li>死の三徴：低体温・凝固障害・アシドーシス</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

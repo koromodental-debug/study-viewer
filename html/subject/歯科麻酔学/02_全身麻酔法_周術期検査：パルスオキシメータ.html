@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>周術期検査：パルスオキシメータ - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 50%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 全身麻酔法</span>
+    <h1>周術期検査：パルスオキシメータ</h1>
+    <div class="container">
+
+      <h2>パルスオキシメータとは</h2>
+      <p><span class="key">パルスオキシメータ</span>は、非侵襲的に経皮的動脈血酸素飽和度（SpO₂）と脈拍数を連続的に測定できるモニター機器である。</p>
+      <p>手指や耳朶にプローブを挟むだけで測定を開始でき、全身麻酔・精神鎮静法・歯科診療で広く使用される。</p>
+
+      <h2>測定項目</h2>
+      <div class="point-box">
+        <div class="point-box-title">パルスオキシメータで測定できるもの</div>
+        <ul>
+          <li><span class="highlight">経皮的動脈血酸素飽和度（SpO₂）</span></li>
+          <li><span class="highlight">脈拍数</span></li>
+        </ul>
+      </div>
+
+      <h3>測定できないもの</h3>
+      <ul>
+        <li class="caution">血圧</li>
+        <li class="caution">体温</li>
+        <li class="caution">動脈血酸素分圧（PaO₂）</li>
+        <li class="caution">二酸化炭素分圧</li>
+      </ul>
+      <p class="note">※ SpO₂とPaO₂は異なる。PaO₂の測定には動脈血採取による血液ガス分析が必要。</p>
+
+      <h2>SpO₂の基準値と判定</h2>
+      <table>
+        <tr>
+          <th>SpO₂値</th>
+          <th>判定</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td><span class="key">95%以上</span></td>
+          <td>良好な呼吸状態</td>
+          <td>経過観察</td>
+        </tr>
+        <tr>
+          <td>90〜94%</td>
+          <td>要注意</td>
+          <td>原因検索</td>
+        </tr>
+        <tr>
+          <td class="caution">90%未満</td>
+          <td><span class="caution">低酸素血症</span></td>
+          <td>原因究明と対策が必要</td>
+        </tr>
+      </table>
+
+      <h2>測定誤差の原因</h2>
+      <ul>
+        <li>プローブ装着部位の<span class="key">血液灌流が悪い</span>場合</li>
+        <li><span class="key">低体温</span></li>
+        <li>著しい<span class="key">体動</span></li>
+        <li>マニキュア・ネイルアートの装着</li>
+        <li>一酸化炭素中毒（偽高値を示す）</li>
+      </ul>
+
+      <h2>パルスオキシメータが有用な状況</h2>
+      <h3>検出できる異常</h3>
+      <table>
+        <tr>
+          <th>異常</th>
+          <th>検出指標</th>
+          <th>メカニズム</th>
+        </tr>
+        <tr>
+          <td><span class="key">上気道閉塞</span></td>
+          <td>SpO₂低下</td>
+          <td>換気障害→低酸素血症</td>
+        </tr>
+        <tr>
+          <td><span class="key">血管迷走神経反射</span></td>
+          <td>脈拍数低下（徐脈）</td>
+          <td>迷走神経亢進→徐脈</td>
+        </tr>
+        <tr>
+          <td>呼吸抑制</td>
+          <td>SpO₂低下</td>
+          <td>低換気→低酸素血症</td>
+        </tr>
+      </table>
+
+      <h3>モニタリングが必要な疾患</h3>
+      <ul>
+        <li><span class="key">Fallot四徴症</span>：チアノーゼ性心疾患、低酸素血症のリスク</li>
+        <li><span class="key">脳性麻痺</span>：嚥下・呼吸機能障害のリスク</li>
+        <li>その他のチアノーゼ性心疾患</li>
+        <li>呼吸器疾患（COPD、気管支喘息など）</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">103C129（連問）</div>
+        <p>モニター中の写真（別冊No.10）を別に示す。<br>測定しているのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103C129.png" alt="別冊No.10">
+        </div>
+        <div class="choices">
+          a 血圧<br>
+          b 脈拍<br>
+          c 体温<br>
+          d 動脈血酸素分圧<br>
+          e 動脈血酸素飽和度
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】写真はパルスオキシメータのプローブを指に装着した様子。パルスオキシメータで測定できるのは<span class="highlight">脈拍</span>と<span class="highlight">経皮的動脈血酸素飽和度（SpO₂）</span>である。動脈血酸素分圧（PaO₂）の測定には動脈血採取が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C130（連問）</div>
+        <p>歯科治療の際、写真（別冊No.10）の対応が必要なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 自閉症<br>
+          b 白血病<br>
+          c 脳性麻痺<br>
+          d Fallot四徴症<br>
+          e ネフローゼ症候群
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="key">脳性麻痺</span>は嚥下・呼吸機能障害のリスクがあり、<span class="key">Fallot四徴症</span>はチアノーゼ性心疾患で低酸素血症のリスクがある。いずれもパルスオキシメータによるSpO₂モニタリングが必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D32</div>
+        <p>パルスオキシメータが症状の検出に有用なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 上気道閉塞<br>
+          b 異常絞扼反射<br>
+          c 過換気症候群<br>
+          d クモ膜下出血<br>
+          e 血管迷走神経反射
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="key">上気道閉塞</span>ではSpO₂低下を検出できる。<span class="key">血管迷走神経反射</span>では徐脈（脈拍数低下）を検出できる。過換気症候群ではSpO₂は正常〜上昇するため検出に不向き。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>測定項目：<span class="highlight">SpO₂と脈拍</span>（PaO₂は測定不可）</li>
+          <li>SpO₂ <span class="highlight">90%未満は低酸素血症</span></li>
+          <li>検出可能：<span class="highlight">上気道閉塞（SpO₂↓）、血管迷走神経反射（徐脈）</span></li>
+          <li>適応疾患：<span class="highlight">Fallot四徴症、脳性麻痺</span>など</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

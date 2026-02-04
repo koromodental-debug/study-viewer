@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>エックス線の減弱 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula { background: var(--bg-secondary); padding: 12px 16px; border-radius: 8px; margin: 10px 0; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線、機器、器材と情報処理</span>
+    <h1>エックス線の減弱</h1>
+    <div class="container">
+
+      <h2>エックス線の減弱とは</h2>
+      <p>エックス線は被写体を通過する際に<span class="key">透過・減弱・散乱・吸収</span>される。</p>
+      <p>減弱の程度は以下の要因で変化する：</p>
+      <ul>
+        <li><span class="key">焦点からの距離</span>（距離の逆2乗則）</li>
+        <li><span class="key">物質との相互作用</span>（光電効果、コンプトン効果）</li>
+      </ul>
+
+      <h2>距離の逆2乗則</h2>
+      <div class="formula">
+        エックス線の強さ ∝ 1 / 距離²
+      </div>
+      <p>焦点からの<span class="highlight">距離の2乗に反比例</span>して減弱する。</p>
+      <p class="note">例：距離が2倍 → 強さは1/4</p>
+
+      <h2>物質による減弱</h2>
+      <p>物質にあたると以下の要因によって減弱される：</p>
+      <ul>
+        <li><span class="key">原子番号</span>が大きいほど減弱大</li>
+        <li><span class="key">密度</span>が高いほど減弱大</li>
+        <li><span class="key">厚み</span>が大きいほど減弱大</li>
+      </ul>
+      <p><span class="caution">波長が短い（エネルギー高い）ほど透過しやすい</span>（減弱されにくい）</p>
+
+      <h2>エックス線と物質の相互作用</h2>
+
+      <h3>光電効果</h3>
+      <ul>
+        <li>エックス線が<span class="key">全エネルギー</span>を軌道電子に与え<span class="highlight">消滅</span></li>
+        <li>エネルギーを受けた電子は原子外に飛び出す（<span class="key">光電子</span>）</li>
+        <li>特性エックス線が発生</li>
+      </ul>
+      <p><span class="key">起きやすい条件</span>：エネルギー小、原子番号大</p>
+
+      <h3>コンプトン効果</h3>
+      <ul>
+        <li>エックス線が<span class="key">一部のエネルギー</span>を自由電子に与え<span class="highlight">散乱</span></li>
+        <li>エネルギーを受けた電子（<span class="key">コンプトン電子</span>）が飛び出す</li>
+        <li>弱まったエックス線 = <span class="caution">散乱線</span></li>
+      </ul>
+      <p><span class="key">起きやすい条件</span>：エネルギー大、管電圧高い</p>
+
+      <table>
+        <tr>
+          <th>相互作用</th>
+          <th>エネルギーの変化</th>
+          <th>起きやすい条件</th>
+        </tr>
+        <tr>
+          <td><span class="key">光電効果</span></td>
+          <td>全て失う（消滅）</td>
+          <td>低エネルギー、高原子番号</td>
+        </tr>
+        <tr>
+          <td><span class="key">コンプトン効果</span></td>
+          <td>一部失う（散乱）</td>
+          <td>高エネルギー、高管電圧</td>
+        </tr>
+      </table>
+
+      <h2>散乱線</h2>
+      <p>コンプトン効果で発生する方向性のないエックス線。</p>
+      <h3>散乱線が多く発生する条件</h3>
+      <ul>
+        <li><span class="key">管電圧</span>が高い</li>
+        <li><span class="key">被写体</span>が厚い</li>
+        <li><span class="key">照射野</span>が大きい</li>
+      </ul>
+      <h3>散乱線の影響</h3>
+      <ul>
+        <li>画像の<span class="caution">コントラスト低下</span></li>
+        <li>人体に有害</li>
+      </ul>
+      <p>対策：<span class="highlight">グリッド</span>で除去</p>
+
+      <h2>フィルム感度と露光時間</h2>
+      <p>同じ黒化度を得るために必要な線量は、フィルム感度に反比例する。</p>
+      <div class="formula">
+        感度 × 線量（mAs） = 一定
+      </div>
+
+      <h3>フィルム感度グループ</h3>
+      <table>
+        <tr>
+          <th>グループ</th>
+          <th>感度</th>
+          <th>必要線量</th>
+        </tr>
+        <tr>
+          <td>Dグループ</td>
+          <td>1倍（基準）</td>
+          <td>多い</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Fグループ</span></td>
+          <td><span class="highlight">4倍</span></td>
+          <td><span class="highlight">1/4</span></td>
+        </tr>
+      </table>
+      <p class="note">感度4倍 → 同じ黒化度に必要な線量は1/4 → 露光時間も1/4</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">103C68</div>
+        <p>口内法エックス線撮影の使用フイルムと撮影条件とを表に示す。Fグループのフイルム感度はDグループの4倍である。黒化度が同じになるときの①はどれか。1つ選べ。</p>
+        <p class="note">【表の内容】Dグループ：60kV, 4mA, 4.00秒 → Fグループ：60kV, 4mA, ①秒</p>
+        <div class="choices">
+          a 0.25秒<br>
+          b 0.50秒<br>
+          c 1.00秒<br>
+          d 2.00秒<br>
+          e 4.00秒
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】Fグループの感度はDグループの<span class="highlight">4倍</span>。同じ黒化度を得るには必要線量は<span class="highlight">1/4</span>。管電圧・管電流が同じなので、露光時間を1/4にする。4.00秒 × 1/4 = <span class="highlight">1.00秒</span></p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>距離の<span class="highlight">逆2乗則</span>：距離2倍で強さ1/4</li>
+          <li><span class="key">光電効果</span>：エネルギー全て失い消滅</li>
+          <li><span class="key">コンプトン効果</span>：一部失い散乱（散乱線発生）</li>
+          <li>感度と線量は<span class="highlight">反比例</span>：感度4倍なら線量1/4</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

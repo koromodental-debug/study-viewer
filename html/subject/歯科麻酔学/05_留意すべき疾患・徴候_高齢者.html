@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>高齢者 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 留意すべき疾患・徴候</span>
+    <h1>高齢者</h1>
+    <div class="container">
+
+      <!-- ========== 老年期の疾患の特徴 ========== -->
+      <h2>老年期の疾患の特徴</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">高齢者の疾患の特徴</div>
+        <ul>
+          <li><span class="highlight">複数の疾患を併発</span>する（多疾患併存）</li>
+          <li><span class="highlight">完治が困難</span>である（慢性・退行性疾患が多い）</li>
+          <li><span class="key">個人差が大きい</span>（同年齢でも臓器機能に著しい差）</li>
+          <li><span class="key">環境に左右されやすい</span>（気温変化、生活環境など）</li>
+          <li>症状が<span class="key">非典型的</span>（肺炎でも発熱しない、心筋梗塞でも胸痛を訴えない等）</li>
+          <li>治療に対する<span class="caution">反応性が低い</span>（免疫機能・基礎体力の低下）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C65</div>
+        <p>老年期の疾患の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 個人差が小さい。<br>
+          b 完治が困難である。<br>
+          c 複数の疾患を併発する。<br>
+          d 環境要因に左右されにくい。<br>
+          e 治療に対する反応性が高い。
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】高齢者は慢性・退行性疾患が多く完治が困難であり、複数の疾患を同時に抱える。個人差は大きく（小さいは誤り）、環境に左右されやすく（されにくいは誤り）、治療への反応性は低下する（高いは誤り）。</p>
+      </div>
+
+      <!-- ========== 老化に伴う生理的変化 ========== -->
+      <h2>老化に伴う生理的変化</h2>
+
+      <h3>呼吸器系</h3>
+      <table>
+        <tr><th>パラメータ</th><th>変化</th><th>機序</th></tr>
+        <tr><td><span class="highlight">残気量（RV）</span></td><td><span class="highlight">増加</span></td><td>肺弾性収縮力の低下 → 肺が縮みにくい</td></tr>
+        <tr><td><span class="key">肺活量（VC）</span></td><td>低下</td><td>呼吸筋力低下＋胸郭コンプライアンス低下</td></tr>
+        <tr><td><span class="key">咳嗽反射</span></td><td><span class="caution">低下</span></td><td>不顕性誤嚥 → 誤嚥性肺炎のリスク</td></tr>
+        <tr><td>ガス拡散能（DLCO）</td><td>低下</td><td>肺胞面積の減少、肺毛細血管床の減少</td></tr>
+        <tr><td>胸郭コンプライアンス</td><td>低下</td><td>肋軟骨の石灰化・骨化</td></tr>
+        <tr><td>肺コンプライアンス</td><td>上昇</td><td>肺弾性線維の変性 → 膨らみやすくなる</td></tr>
+        <tr><td>PaO<sub>2</sub></td><td>低下</td><td>V/Q不均等の増加</td></tr>
+      </table>
+      <p class="note"><span class="caution">注意</span>：胸郭コンプライアンスは「低下」、肺コンプライアンスは「上昇」。混同しやすい。</p>
+
+      <div class="question-box">
+        <div class="q-number">107C73</div>
+        <p>老化に伴う呼吸器系の変化はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 残気量の増加<br>
+          b 肺活量の増加<br>
+          c 咳嗽反射の亢進<br>
+          d ガス拡散能の上昇<br>
+          e 胸郭コンプライアンスの上昇
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】加齢により肺弾性収縮力が低下し、肺が縮みにくくなるため残気量は増加する。肺活量は低下（増加ではない）、咳嗽反射は低下（亢進ではない）、ガス拡散能は低下（上昇ではない）、胸郭コンプライアンスは低下（上昇ではない）。</p>
+      </div>
+
+      <h3>循環器系</h3>
+      <ul>
+        <li><span class="key">心拍出量</span>の低下（心室壁の肥厚・硬化 → 一回拍出量減少）</li>
+        <li><span class="key">動脈硬化</span>による末梢血管抵抗の増大 → 収縮期血圧上昇</li>
+        <li><span class="key">圧受容体反射</span>の低下 → 起立性低血圧を起こしやすい</li>
+        <li>β受容体感受性の低下 → 運動時の心拍数増加反応が鈍化</li>
+      </ul>
+
+      <h3>肝臓・腎臓</h3>
+      <ul>
+        <li><span class="key">肝クリアランス</span>：30〜40%低下（CYP450の第I相反応が低下）</li>
+        <li>リドカインの半減期：高齢者140分 vs 若年者81分（約1.7倍に延長）</li>
+        <li><span class="key">GFR</span>：40歳以降、10年毎に約8 mL/min/1.73m<sup>2</sup>低下</li>
+        <li>局所麻酔薬の投与量は減量を考慮</li>
+      </ul>
+
+      <!-- ========== サルコペニア ========== -->
+      <h2>サルコペニア</h2>
+
+      <h3>定義</h3>
+      <p><span class="key">サルコペニア</span>（sarcopenia）は、加齢に伴う<span class="highlight">骨格筋量および筋力の低下</span>を特徴とする症候群。ギリシャ語のsarx（筋肉）+ penia（減少）に由来する。</p>
+
+      <h3>分類</h3>
+      <ul>
+        <li><span class="key">一次性</span>：加齢のみが原因</li>
+        <li><span class="key">二次性</span>：低活動（廃用）、低栄養、疾患（悪液質等）が原因</li>
+      </ul>
+
+      <h3>歯科との関連</h3>
+      <ul>
+        <li><span class="key">サルコペニア嚥下障害</span>：嚥下関連筋群の筋力低下による摂食嚥下障害</li>
+        <li>舌圧20 kPa未満 → 摂食嚥下障害に相当</li>
+        <li><span class="key">オーラルフレイル</span>：わずかなむせ・食べこぼし・滑舌低下 → 口腔機能低下 → 全身のフレイルへ</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">110B36</div>
+        <p>85歳の男性。摂食・嚥下障害を主訴として、訪問歯科診療の依頼があった。半年の間に10％の体重減少を示し、歩行は困難である。患者の舌上には食物残渣がみられる。訪問時の下肢の写真（別冊No.32）を別に示す。<br>この患者の状態を示すのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110B36.png" alt="別冊No.32">
+        </div>
+        <div class="choices">
+          a アカラシア<br>
+          b ジストニア<br>
+          c サルコペニア<br>
+          d ジスキネジア<br>
+          e ディスアスリア
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】85歳男性、摂食嚥下障害、半年で10%の体重減少、歩行困難、下肢の筋萎縮（写真） → サルコペニア。加齢に伴う骨格筋量・筋力の低下により、摂食嚥下機能も障害される。アカラシアは食道の運動障害。ジストニア・ジスキネジアは不随意運動。ディスアスリア（構音障害）は発話の障害で摂食嚥下障害とは異なる。</p>
+      </div>
+
+      <!-- ========== 高齢者の歯科治療時の全身管理 ========== -->
+      <h2>高齢者の歯科治療時の全身管理</h2>
+
+      <h3>局所麻酔の注意</h3>
+      <ul>
+        <li>肝代謝・腎排泄の低下により薬物半減期が延長 → <span class="key">投与量の減量</span>を考慮</li>
+        <li>少量ずつ分割投与し、投与毎に観察する</li>
+        <li>アドレナリンへの感受性亢進 → <span class="key">慎重投与</span>、モニター監視下で低圧・ゆっくり注入</li>
+        <li>高血圧・糖尿病の患者には<span class="key">フェリプレシン</span>が比較的安全に使用できる</li>
+      </ul>
+
+      <h3>多剤併用（ポリファーマシー）</h3>
+      <table>
+        <tr><th>注意すべき薬剤</th><th>歯科での問題</th></tr>
+        <tr><td><span class="key">抗血栓薬</span>（ワルファリン・DOAC・抗血小板薬）</td><td>原則<span class="caution">休薬しない</span>。止血をしっかり行う</td></tr>
+        <tr><td><span class="key">骨吸収抑制薬</span>（BP製剤・デノスマブ）</td><td>MRONJ（薬剤関連顎骨壊死）のリスク</td></tr>
+        <tr><td>Ca拮抗薬（ニフェジピン等）</td><td>歯肉増殖の副作用</td></tr>
+      </table>
+
+      <h3>体位の配慮</h3>
+      <ul>
+        <li>急な体位変換を避ける（<span class="key">起立性低血圧</span>の予防）</li>
+        <li>治療終了後はゆっくり起き上がらせる</li>
+        <li>バイタルサインの継続的モニタリング</li>
+      </ul>
+
+    </div>
+  </div>
+</body>
+</html>

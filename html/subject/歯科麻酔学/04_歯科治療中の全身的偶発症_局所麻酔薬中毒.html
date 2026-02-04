@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>局所麻酔薬中毒 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 歯科治療中の全身的偶発症</span>
+    <h1>局所麻酔薬中毒</h1>
+    <div class="container">
+
+      <h2>定義・発症機序</h2>
+      <p><span class="key">局所麻酔薬急性中毒</span>とは、局所に注入された局所麻酔薬が血中に急速に吸収され、<span class="key">中枢神経系</span>と<span class="key">心血管系</span>に影響を与えた結果生じる全身的偶発症である。</p>
+
+      <h3>発症の原因</h3>
+      <ul>
+        <li><span class="highlight">血管内直接注入</span>：下顎孔伝達麻酔時の下顎動静脈への誤注入</li>
+        <li>大量投与（極量超過）</li>
+        <li>連続使用による蓄積（アミド型は肝臓で代謝）</li>
+        <li>表面麻酔薬スプレーの過量使用</li>
+      </ul>
+
+      <h3>中枢神経系への影響</h3>
+      <p>局所麻酔薬は容易に<span class="key">血液脳関門</span>を通過する。中枢神経系は心血管系より<span class="caution">低い血中濃度</span>で影響を受ける。</p>
+      <ul>
+        <li>初期：大脳皮質の<span class="key">抑制系ニューロン</span>が抑制 → 促進系が優位 → <span class="highlight">興奮症状</span></li>
+        <li>進行：促進系も抑制 → 中枢神経系全体が抑制 → 意識消失・呼吸停止</li>
+      </ul>
+
+      <h2>症状</h2>
+      <p>症状は血中濃度の上昇に伴い段階的に進行する。<span class="caution">初期症状を見逃さない</span>ことが重要。</p>
+
+      <h3>リドカイン血中濃度と症状</h3>
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>血中濃度</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">初期</span></td>
+          <td>4.5-7.0 μg/mL</td>
+          <td><span class="highlight">多弁、興奮</span>、めまい、耳鳴り、不安、吐気、ふるえ、ろれつ障害</td>
+        </tr>
+        <tr>
+          <td><span class="key">中期</span></td>
+          <td>7.5-10 μg/mL</td>
+          <td><span class="highlight">全身痙攣</span>（間代性）、意識消失</td>
+        </tr>
+        <tr>
+          <td><span class="caution">末期</span></td>
+          <td>高濃度</td>
+          <td>呼吸停止、チアノーゼ、循環虚脱、心停止</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">血管内直接注入の場合</div>
+        <ul>
+          <li>初期症状なく<span class="caution">突然</span>意識消失・全身痙攣が出現</li>
+          <li>循環抑制も急速に進行</li>
+          <li>伝達麻酔時は特に注意が必要</li>
+        </ul>
+      </div>
+
+      <h3>痙攣の特徴</h3>
+      <ul>
+        <li>眼輪筋、表情筋の<span class="key">間代性痙攣</span>から始まる</li>
+        <li>四肢および全身痙攣へ進行</li>
+        <li>数分間持続</li>
+        <li>呼吸停止 → チアノーゼ</li>
+      </ul>
+
+      <h2>治療・対応</h2>
+
+      <h3>初期対応</h3>
+      <table>
+        <tr>
+          <th>順序</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td>①</td>
+          <td>注射・歯科治療の<span class="key">中止</span>、口腔内の器材除去</td>
+        </tr>
+        <tr>
+          <td>②</td>
+          <td><span class="key">気道確保</span>・仰臥位</td>
+        </tr>
+        <tr>
+          <td>③</td>
+          <td><span class="highlight">酸素投与</span></td>
+        </tr>
+        <tr>
+          <td>④</td>
+          <td>バイタルサインチェック（SpO₂など）</td>
+        </tr>
+        <tr>
+          <td>⑤</td>
+          <td>静脈路確保（輸液）</td>
+        </tr>
+      </table>
+
+      <h3>薬物療法</h3>
+      <table>
+        <tr>
+          <th>症状</th>
+          <th>薬物</th>
+          <th>注意点</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">全身痙攣</span></td>
+          <td><span class="highlight">ジアゼパム</span>、ミダゾラム</td>
+          <td>呼吸を止めない程度に投与</td>
+        </tr>
+        <tr>
+          <td>低血圧</td>
+          <td>輸液＋血管収縮薬</td>
+          <td>アドレナリンは心室細動リスクあり</td>
+        </tr>
+        <tr>
+          <td>呼吸停止</td>
+          <td>人工呼吸</td>
+          <td>必要時は気管挿管＋筋弛緩薬</td>
+        </tr>
+      </table>
+
+      <p class="note">※全身痙攣発症時の気道確保・静脈路確保は困難であることに留意</p>
+
+      <div class="point-box">
+        <div class="point-box-title">ブピバカインの心毒性</div>
+        <ul>
+          <li>ブピバカインは<span class="caution">強い心毒性</span>を有する</li>
+          <li>心室細動・心停止を起こしやすい</li>
+          <li>蘇生が困難なことがある</li>
+          <li>治療：<span class="key">脂肪乳剤（イントラリピッド）</span>静注が有効</li>
+        </ul>
+      </div>
+
+      <h2>予防</h2>
+      <ul>
+        <li>最低有効濃度を必要最少量で投与</li>
+        <li><span class="key">吸引テスト</span>・緩徐注入を繰り返す</li>
+        <li>27Gより細い針では血液逆流が確認しにくいことに注意</li>
+        <li>ハイリスク患者（肝障害、高齢者、衰弱者）には特に注意</li>
+        <li>救急蘇生器具・薬剤の準備</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110A68</div>
+        <p>局所麻酔薬中毒の初期症状はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 興奮<br>
+          b 徐脈<br>
+          c 意識消失<br>
+          d けいれん<br>
+          e チアノーゼ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】局所麻酔薬中毒の<span class="key">初期症状</span>は<span class="highlight">興奮</span>（多弁、めまい、耳鳴りなど）である。これは大脳皮質の抑制系が先に抑制され、促進系が優位になるため。痙攣・意識消失・チアノーゼは進行期〜末期の症状。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A81</div>
+        <p>17歳の女子。下顎左側臼歯部の痛みを主訴として来院した。検査の結果、智歯周囲炎と診断し、⎾8の抜歯を行うこととした。下顎孔伝達麻酔を施行後、やや多弁となり、その後けいれんを起こしたため、しばらく経過をみたがおさまらない。その時の生体モニタの画面（別冊No.32）を別に示す。行うべき対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A81_1.png" alt="別冊No.32">
+        </div>
+        <div class="choices">
+          a 酸素の投与<br>
+          b 鎮静薬の投与<br>
+          c 紙袋による再呼吸<br>
+          d 副交感神経遮断薬の投与<br>
+          e トレンデレンブルグ体位への変換
+        </div>
+        <div class="answer">正解：a または b</div>
+        <p>【解説】伝達麻酔後の「多弁→けいれん」は典型的な<span class="key">局所麻酔薬中毒</span>の経過。まず<span class="highlight">酸素投与</span>で低酸素を防ぎ、痙攣が続く場合は<span class="key">鎮静薬（ジアゼパム等）</span>を投与。紙袋再呼吸は過換気症候群、トレンデレンブルグ体位は血管迷走神経反射への対応。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106D49</div>
+        <p>30歳の男性。左口角部の知覚異常のため星状神経節ブロックを行うこととした。第6頸椎横突起の高さで1%リドカイン塩酸塩6mιを注入したところ、突然、全身けいれん発作を起こし意識を消失した。頸動脈で脈拍を触知する。チアノーゼを認める。適切な処置はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 酸素投与<br>
+          b 胸骨圧迫<br>
+          c ジアゼパムの静注<br>
+          d アドレナリンの静注<br>
+          e アミノフィリン水和物の静注
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】星状神経節ブロック後の突然のけいれん・意識消失は<span class="key">血管内誤注入</span>による局麻中毒。脈拍は触知できるので心停止ではなく、胸骨圧迫は不要。<span class="highlight">酸素投与</span>で低酸素を防ぎ、<span class="highlight">ジアゼパム</span>で痙攣を抑制する。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>初期症状：<span class="highlight">興奮・多弁</span>（抑制系ニューロンが先に抑制）</li>
+          <li>進行：興奮 → <span class="key">痙攣</span> → 意識消失 → 呼吸停止</li>
+          <li>原因：血管内直接注入（伝達麻酔時に注意）</li>
+          <li>治療：<span class="highlight">酸素投与</span>＋<span class="highlight">ジアゼパム</span>（痙攣に対して）</li>
+          <li>予防：吸引テスト、緩徐注入</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

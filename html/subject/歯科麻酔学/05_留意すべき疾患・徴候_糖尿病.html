@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>糖尿病 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 留意すべき疾患・徴候</span>
+    <h1>糖尿病</h1>
+    <div class="container">
+
+      <h2>糖尿病の分類</h2>
+      <h3>1型 vs 2型</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>1型糖尿病</th>
+          <th>2型糖尿病</th>
+        </tr>
+        <tr>
+          <td>原因</td>
+          <td><span class="key">膵β細胞の破壊</span></td>
+          <td><span class="key">インスリン抵抗性</span>＋分泌低下</td>
+        </tr>
+        <tr>
+          <td>発症年齢</td>
+          <td>若年者に多い</td>
+          <td>中高年に多い</td>
+        </tr>
+        <tr>
+          <td>体型</td>
+          <td>やせ型が多い</td>
+          <td><span class="highlight">肥満</span>と関連</td>
+        </tr>
+        <tr>
+          <td>治療</td>
+          <td><span class="highlight">インスリン自己注射</span>が必須</td>
+          <td>食事・運動療法、経口薬</td>
+        </tr>
+        <tr>
+          <td>ケトアシドーシス</td>
+          <td><span class="caution">起こしやすい</span></td>
+          <td>まれ</td>
+        </tr>
+      </table>
+
+      <h2>診断基準</h2>
+      <table>
+        <tr>
+          <th>検査項目</th>
+          <th>糖尿病型</th>
+        </tr>
+        <tr>
+          <td>空腹時血糖</td>
+          <td>≥126 mg/dL</td>
+        </tr>
+        <tr>
+          <td>OGTT 2時間値</td>
+          <td>≥200 mg/dL</td>
+        </tr>
+        <tr>
+          <td>随時血糖</td>
+          <td>≥200 mg/dL</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">HbA1c</span></td>
+          <td>≥6.5%</td>
+        </tr>
+      </table>
+
+      <h3>HbA1cとフルクトサミン</h3>
+      <table>
+        <tr>
+          <th>指標</th>
+          <th>反映期間</th>
+        </tr>
+        <tr>
+          <td><span class="key">HbA1c</span></td>
+          <td>過去<span class="highlight">1〜2か月</span></td>
+        </tr>
+        <tr>
+          <td>フルクトサミン</td>
+          <td>過去約2週間</td>
+        </tr>
+      </table>
+
+      <h2>糖尿病の症状</h2>
+      <ul>
+        <li><span class="key">多尿</span>（浸透圧利尿）</li>
+        <li>口渇、多飲</li>
+        <li>体重減少</li>
+        <li><span class="key">易感染性</span></li>
+      </ul>
+
+      <h3>3大合併症（細小血管症）</h3>
+      <ul>
+        <li><span class="key">網膜症</span></li>
+        <li><span class="key">腎症</span></li>
+        <li><span class="key">神経障害</span></li>
+      </ul>
+
+      <h2>低血糖</h2>
+      <p>インスリン使用患者で最も注意すべき緊急事態。</p>
+
+      <h3>症状</h3>
+      <ul>
+        <li><span class="highlight">発汗</span></li>
+        <li><span class="highlight">振戦</span>（ふるえ）</li>
+        <li><span class="key">動悸</span></li>
+        <li>空腹感</li>
+        <li><span class="caution">意識低下・消失</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">低血糖発作への対応</div>
+        <ul>
+          <li>意識あり → <span class="highlight">ブドウ糖</span>を経口投与</li>
+          <li>意識なし → ブドウ糖静注、グルカゴン筋注</li>
+          <li>検査：<span class="key">血糖値測定</span>、動脈血ガス分析</li>
+        </ul>
+      </div>
+
+      <h2>歯科治療時の注意点</h2>
+      <table>
+        <tr>
+          <th>注意点</th>
+          <th>理由・対策</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">低血糖</span></td>
+          <td>食事を抜いて来院 → 治療は<span class="key">午前中</span>に</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">術後感染</span></td>
+          <td>易感染性 → 抗菌薬投与を検討</td>
+        </tr>
+        <tr>
+          <td>創傷治癒遅延</td>
+          <td>血糖コントロール不良で治癒が遅れる</td>
+        </tr>
+      </table>
+
+      <h3>経口血糖降下薬の取り扱い</h3>
+      <ul>
+        <li>食事・運動療法のみ → 正常人と同様に管理</li>
+        <li>経口薬服用中 → 当日朝は中止することも</li>
+        <li>インスリン使用中 → 低血糖に特に注意</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A99</div>
+        <p>2型糖尿病で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 若年者に好発する。<br>
+          b 肥満と関係が深い。<br>
+          c 島細胞抗体が陽性である。<br>
+          d 組織のインスリン抵抗性が存在する。<br>
+          e ケトアシドーシスを随伴することが多い。
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】2型糖尿病は肥満と関連し、インスリン抵抗性が特徴。若年発症、島細胞抗体陽性、ケトアシドーシスは1型の特徴。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105D47</div>
+        <p>54歳の男性。上顎右側第一大臼歯の痛みを主訴として来院した。1型糖尿病で治療を受けているという。正午前の歯科治療中に、気分不快と動悸とを訴え、発汗、振戦および意識の低下がみられた。<br>まず投与すべき薬物はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ブドウ糖<br>
+          b インスリン<br>
+          c ミダゾラム<br>
+          d アスピリン<br>
+          e ニトログリセリン
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】発汗、振戦、動悸、意識低下は低血糖の典型的症状。1型糖尿病でインスリン治療中、午前中（食事から時間が経過）という状況からも低血糖を疑う。ブドウ糖を投与する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B36</div>
+        <p>糖尿病患者の歯科治療に際し、特に注意すべきなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 低血糖<br>
+          b 血圧低下<br>
+          c 出血傾向<br>
+          d 術後感染<br>
+          e 病態失認
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】糖尿病患者では低血糖（特にインスリン使用時）と術後感染（易感染性のため）に注意が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B41</div>
+        <p>1型糖尿病の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 易感染性である。<br>
+          b 家族性の発症が多い。<br>
+          c 肥満者の発症が多い。<br>
+          d 呼吸性アシドーシスが頻発する。<br>
+          e インスリン自己注射が必要である。
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】1型糖尿病は膵β細胞破壊によりインスリン分泌がなくなるため、インスリン自己注射が必須。易感染性は糖尿病全般の特徴。肥満・家族性は2型の特徴。ケトアシドーシス（代謝性）は起こしやすいが、呼吸性アシドーシスではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B26</div>
+        <p>浸透圧利尿による多尿をきたすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 糖尿病<br>
+          b 尿崩症<br>
+          c 高血圧症<br>
+          d 過活動膀胱<br>
+          e 心因性多飲症
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】糖尿病では高血糖により尿中に糖が排泄され、浸透圧利尿により多尿となる。尿崩症はADH（抗利尿ホルモン）の異常による。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

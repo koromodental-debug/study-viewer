@@ -24,6 +24,7 @@ def main():
     # qa/subject/内のQAファイルをスキャン
     new_entries = []
     added_titles = set()  # このセッションで追加したタイトルを追跡
+    updated_count = 0  # 更新したエントリ数
 
     for subject_dir in sorted(os.listdir(QA_SUBJECT_DIR)):
         subject_path = os.path.join(QA_SUBJECT_DIR, subject_dir)
@@ -53,8 +54,19 @@ def main():
             # タイトルを生成
             title = qa_file.replace(suffix, '').split('_', 1)[-1] if '_' in qa_file else qa_file.replace(suffix, '')
 
-            # IDが既に存在する場合、またはこのセッションで既に追加した場合はスキップ
-            if title in existing_ids or title in added_titles:
+            # IDが既に存在する場合、qaPath: nullを更新
+            if title in existing_ids:
+                # qaPath: null を qaPath: "実際のパス" に置換
+                pattern = rf'("id":\s*"{re.escape(title)}"[^}}]*"qaPath":\s*)null'
+                replacement = rf'\1"{qa_path}"'
+                new_content, count = re.subn(pattern, replacement, content)
+                if count > 0:
+                    content = new_content
+                    updated_count += count
+                    print(f"  * 更新: {title} → {qa_path}")
+                continue
+
+            if title in added_titles:
                 continue
 
             added_titles.add(title)
@@ -87,17 +99,14 @@ def main():
         if insert_pos == -1:
             print("ERROR: DATA配列の末尾が見つかりません", file=sys.stderr)
             return 1
-        
+
         # 最後のエントリの後にカンマがあるか確認
         before_bracket = content[:insert_pos].rstrip()
         if not before_bracket.endswith(','):
             before_bracket += ','
-        
-        new_content = before_bracket + '\n' + ',\n'.join(new_entries) + '\n];'
-        
-        with open(DATA_JS_PATH, 'w') as f:
-            f.write(new_content)
-        
+
+        content = before_bracket + '\n' + ',\n'.join(new_entries) + '\n];'
+
         print(f"data.jsに{len(new_entries)}件のQAを追加しました:")
         for entry in new_entries[:5]:
             match = re.search(r'"qaPath": "([^"]+)"', entry)
@@ -105,8 +114,14 @@ def main():
                 print(f"  + {match.group(1)}")
         if len(new_entries) > 5:
             print(f"  ... 他{len(new_entries)-5}件")
+
+    if new_entries or updated_count > 0:
+        with open(DATA_JS_PATH, 'w') as f:
+            f.write(content)
+        if updated_count > 0:
+            print(f"data.jsの{updated_count}件のqaPathを更新しました")
         return 2  # 変更あり
-    
+
     return 0  # 変更なし
 
 if __name__ == "__main__":

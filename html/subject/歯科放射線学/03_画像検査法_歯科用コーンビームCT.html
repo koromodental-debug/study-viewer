@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯科用コーンビームCT - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .compare-table td:first-child { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 画像検査法</span>
+    <h1>歯科用コーンビームCT（CBCT）</h1>
+    <div class="container">
+
+      <h2>歯科用コーンビームCTとは</h2>
+      <p>歯科独自の撮影方法として開発されたCT装置。<span class="key">円錐状（コーン状）</span>のエックス線ビームを用いて、360°回転しながら顎骨の三次元データを取得する。</p>
+
+      <h3>撮像原理の特徴</h3>
+      <ul>
+        <li>小さく絞り込まれた<span class="key">円錐（コーン）</span>または四角錐状のエックス線ビーム</li>
+        <li><span class="key">二次元検出器（フラットパネルディテクタ）</span>で受像</li>
+        <li>360°回転しながら投影データを取得</li>
+        <li><span class="key">座位または立位</span>で撮影（小スペース）</li>
+      </ul>
+
+      <h2>口内法エックス線との比較</h2>
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント：口内法と比較して</div>
+        <p><span class="highlight">優れている点</span></p>
+        <ul>
+          <li><span class="highlight">三次元画像が得られる</span></li>
+          <li>開口障害、嘔吐反射の患者でも撮影可能</li>
+        </ul>
+        <p><span class="caution">劣っている点</span></p>
+        <ul>
+          <li>解像度が劣る</li>
+          <li>被曝線量が多い</li>
+          <li>金属によるアーチファクトの影響が大きい</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A82</div>
+        <p>口内法エックス線検査に比べて歯科用コーンビームCTが優れているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 解像力が高い。<br>
+          b 被曝線量が少ない。<br>
+          c 三次元画像が得られる。<br>
+          d 軟組織を明瞭に描出できる。<br>
+          e 金属によるアーチファクトが少ない。
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】歯科用CBCTは口内法と比較して、三次元画像が得られることが最大の利点。解像度は口内法の方が高く、被曝も口内法の方が少ない。軟組織の描出はCBCTでは困難。金属アーチファクトはCBCTの方が大きい。</p>
+      </div>
+
+      <h2>通常CT（マルチスライスCT）との比較</h2>
+
+      <h3>歯科用CBCTの利点（通常CTと比較して）</h3>
+      <table class="compare-table">
+        <tr>
+          <th>項目</th>
+          <th>歯科用CBCT</th>
+          <th>通常CT</th>
+        </tr>
+        <tr>
+          <td>空間分解能（解像力）</td>
+          <td><span class="highlight">高い</span></td>
+          <td>低い</td>
+        </tr>
+        <tr>
+          <td>被曝線量</td>
+          <td><span class="highlight">少ない</span></td>
+          <td>多い</td>
+        </tr>
+        <tr>
+          <td>装置サイズ</td>
+          <td><span class="highlight">小型・安価</span></td>
+          <td>大型・高価</td>
+        </tr>
+        <tr>
+          <td>ボクセルサイズ</td>
+          <td><span class="highlight">小さい</span></td>
+          <td>大きい</td>
+        </tr>
+      </table>
+
+      <h3>歯科用CBCTの欠点（通常CTと比較して）</h3>
+      <table class="compare-table">
+        <tr>
+          <th>項目</th>
+          <th>歯科用CBCT</th>
+          <th>通常CT</th>
+        </tr>
+        <tr>
+          <td>濃度分解能</td>
+          <td><span class="caution">低い（軟組織観察不可）</span></td>
+          <td>高い</td>
+        </tr>
+        <tr>
+          <td>CT値評価</td>
+          <td><span class="caution">不可能</span></td>
+          <td>可能</td>
+        </tr>
+        <tr>
+          <td>散乱線</td>
+          <td><span class="caution">多い（グリッドなし）</span></td>
+          <td>少ない</td>
+        </tr>
+        <tr>
+          <td>スキャン方式</td>
+          <td>1回転で撮影</td>
+          <td>らせん状（ヘリカル）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">105A123</div>
+        <p>通常のCTと比較した小照射野歯科用コーンビームCTの特徴はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 解像力が高い。<br>
+          b 被曝線量が多い。<br>
+          c 設置面積が広い。<br>
+          d 軟組織の描出に優れる。<br>
+          e らせん状にスキャンする。
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】歯科用CBCTは通常CTと比較して空間分解能（解像力）が高い。被曝は少なく、設置面積は狭い（小型）。軟組織の描出は通常CTの方が優れる（濃度分解能が高い）。らせん状スキャンは通常CT（ヘリカルCT）の特徴。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A40</div>
+        <p>マルチスライスCTと比べた歯科用コーンビームCTの特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 撮影時間が短い。<br>
+          b 空間分解能が高い。<br>
+          c 濃度分解能が高い。<br>
+          d 画素値正確性が高い。<br>
+          e ボクセルサイズが小さい。
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】歯科用CBCTはマルチスライスCTと比較して、空間分解能が高く、ボクセルサイズが小さい（=細かい構造を描出できる）。濃度分解能と画素値正確性（CT値の正確さ）は通常CTの方が高い。撮影時間は機種により異なる。</p>
+      </div>
+
+      <h2>臨床応用</h2>
+      <p>歯科用CBCTの三次元画像により、二次元画像では把握できなかった情報が得られる。</p>
+
+      <h3>CBCTで把握できる情報</h3>
+      <ul>
+        <li><span class="key">下顎管と病変の三次元的位置関係</span>（頬舌的な関係）</li>
+        <li>歯根の形態（根管の走行、破折線）</li>
+        <li>顎骨の頬舌的な厚み</li>
+        <li>埋伏歯の三次元的位置</li>
+        <li>インプラント埋入部位の評価</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">115B49</div>
+        <p>下顎左側臼歯部の腫脹を有する患者の初診時のパノラマエックス線画像（別冊No.20A）、頭部後前方向撮影エックス線画像（別冊No.20B）及びその後追加で撮影した歯科用コーンビームCT（別冊No.20C）を別に示す。<br>歯科用コーンビームCTで新たに得られた所見はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115B49_1.png" alt="115B49_1">
+          <img src="../../../images/115回_Web画像/115B49_2.png" alt="115B49_2">
+        </div>
+        <div class="choices">
+          a 病変部の辺縁不整<br>
+          b 左側下顎管の下方圧排<br>
+          c 左側下顎管の病変舌側部通過<br>
+          d 左側下顎枝部の頬舌的骨膨隆<br>
+          e 左側下顎枝前縁の皮質骨非薄化
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】パノラマやP-A撮影（二次元画像）では、下顎管が病変の上下どちらを通過しているかは分かるが、頬舌的な位置関係は分からない。CBCTの断面像により、下顎管が病変の舌側を通過していることが新たに確認できた。これはCBCTの三次元的評価の利点を示す典型例。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：歯科用CBCTの比較ポイント</div>
+        <ul>
+          <li><span class="highlight">vs 口内法</span>：三次元画像が得られる（優）、解像度・被曝は劣る</li>
+          <li><span class="highlight">vs 通常CT</span>：空間分解能が高い・被曝少ない・小型（優）、濃度分解能・CT値評価は劣る</li>
+          <li>臨床的には<span class="key">三次元的な位置関係の把握</span>に有用（下顎管、埋伏歯など）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

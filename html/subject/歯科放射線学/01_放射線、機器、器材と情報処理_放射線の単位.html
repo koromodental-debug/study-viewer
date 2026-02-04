@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>放射線の単位 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線、機器、器材と情報処理</span>
+    <h1>放射線の単位</h1>
+    <div class="container">
+
+      <h2>放射線の4つの重要単位</h2>
+      <p>歯科放射線学で重要な単位は以下の4つ。それぞれ<span class="highlight">何を測っているか</span>を理解することがポイント。</p>
+
+      <table>
+        <tr>
+          <th>単位</th>
+          <th>名称</th>
+          <th>定義</th>
+          <th>評価対象</th>
+        </tr>
+        <tr>
+          <td><span class="key">C/kg</span></td>
+          <td>照射線量</td>
+          <td>電磁放射線が空気を電離して生成した電荷量</td>
+          <td>空気中の電離能力</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Gy（グレイ）</span></td>
+          <td>吸収線量</td>
+          <td><span class="highlight">物質の単位質量あたりに吸収されたエネルギー</span></td>
+          <td>物質へのエネルギー</td>
+        </tr>
+        <tr>
+          <td><span class="key">Sv（シーベルト）</span></td>
+          <td>等価線量</td>
+          <td>吸収線量 × 放射線加重係数</td>
+          <td><span class="key">確定的影響</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">Sv（シーベルト）</span></td>
+          <td>実効線量</td>
+          <td>等価線量 × 組織加重係数の総和</td>
+          <td><span class="key">確率的影響</span></td>
+        </tr>
+      </table>
+
+      <h3>放射能の単位</h3>
+      <p><span class="key">Bq（ベクレル）</span>：単位時間あたりの放射性壊変の回数</p>
+
+      <div class="point-box">
+        <div class="point-box-title">単位の覚え方</div>
+        <ul>
+          <li><span class="key">Gy</span> = 物質が「<span class="highlight">吸収</span>」したエネルギー</li>
+          <li><span class="key">Sv</span> = 人体への「<span class="highlight">影響</span>」を評価（等価線量・実効線量）</li>
+          <li><span class="key">Bq</span> = 放射性物質の「<span class="highlight">壊変</span>」回数</li>
+        </ul>
+      </div>
+
+      <h2>放射線加重係数</h2>
+      <p>放射線の種類による生物学的影響の違いを補正する係数。エックス線を<span class="key">1</span>として比較。</p>
+
+      <table>
+        <tr>
+          <th>放射線の種類</th>
+          <th>放射線加重係数</th>
+        </tr>
+        <tr>
+          <td>光子（エックス線、ガンマ線）</td>
+          <td><span class="highlight">1</span></td>
+        </tr>
+        <tr>
+          <td>電子、ミュー粒子</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>陽子、荷電パイ中間子</td>
+          <td><span class="key">2</span></td>
+        </tr>
+        <tr>
+          <td>アルファ粒子、核分裂片、重イオン</td>
+          <td><span class="highlight">20</span></td>
+        </tr>
+        <tr>
+          <td>中性子</td>
+          <td>2.5〜20.7</td>
+        </tr>
+      </table>
+      <p class="note">α粒子は電離密度が高いため、同じ吸収線量でも生物学的影響が大きい。</p>
+
+      <h2>組織加重係数</h2>
+      <p>組織・臓器ごとの放射線感受性の違いを補正する係数。全身合計で<span class="key">1</span>になる。</p>
+
+      <table>
+        <tr>
+          <th>組織・臓器</th>
+          <th>組織加重係数</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">骨髄、結腸、肺、胃、乳房</span>（5組織）</td>
+          <td>各<span class="highlight">0.12</span>（計0.60）</td>
+        </tr>
+        <tr>
+          <td>生殖腺</td>
+          <td>0.08</td>
+        </tr>
+        <tr>
+          <td>膀胱、食道、肝臓、甲状腺（4組織）</td>
+          <td>各0.04（計0.16）</td>
+        </tr>
+        <tr>
+          <td>骨表面、脳、唾液腺、皮膚（4組織）</td>
+          <td>各0.01（計0.04）</td>
+        </tr>
+        <tr>
+          <td>残りの組織</td>
+          <td>0.12</td>
+        </tr>
+      </table>
+      <p class="note">組織加重係数が高い = 放射線感受性が高い = 発がんリスクが高い</p>
+
+      <h2>線量の計算式</h2>
+      <h3>等価線量の計算</h3>
+      <p><span class="key">等価線量（Sv）</span> = 吸収線量（Gy） × <span class="highlight">放射線加重係数</span></p>
+
+      <h3>実効線量の計算</h3>
+      <p><span class="key">実効線量（Sv）</span> = Σ（等価線量 × <span class="highlight">組織加重係数</span>）</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">103C37</div>
+        <p>線量の単位でGyはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 空気中の電離による電荷の量<br>
+          b 物質が吸収したエネルギー量<br>
+          c 吸収線量と放射線荷重係数の積<br>
+          d 単位時間あたりの放射性壊変の回数<br>
+          e 組織等価線量と組織荷重係数の積の総和
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】各選択肢の該当単位：<br>
+        a：照射線量（C/kg）<br>
+        b：<span class="highlight">吸収線量（Gy）</span>★正解<br>
+        c：等価線量（Sv）<br>
+        d：放射能（Bq）<br>
+        e：実効線量（Sv）</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li><span class="highlight">Gy</span> = 物質が吸収したエネルギー量（吸収線量）</li>
+          <li><span class="key">Sv</span> = 人体への影響を評価（等価線量 or 実効線量）</li>
+          <li><span class="key">Bq</span> = 壊変回数（放射能）</li>
+          <li>放射線加重係数：α粒子は<span class="highlight">20</span>、X線・γ線は<span class="highlight">1</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

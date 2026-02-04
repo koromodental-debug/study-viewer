@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>撮影装置：デジタル装置 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線、機器、器材と情報処理</span>
+    <h1>撮影装置：デジタル装置</h1>
+    <div class="container">
+
+      <h2>デジタルエックス線検出器の種類</h2>
+      <p>フィルムの代わりに使用される受光器。大きく2種類に分けられる。</p>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>原理</th>
+          <th>即時性</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">半導体センサー</span><br>（CCD/CMOS）</td>
+          <td>X線を電気や光に変換</td>
+          <td><span class="highlight">高い</span></td>
+          <td>空間分解能が高い<br>コードで接続</td>
+        </tr>
+        <tr>
+          <td><span class="key">IP</span><br>（イメージングプレート）</td>
+          <td><span class="highlight">輝尽発光現象</span></td>
+          <td>低い</td>
+          <td>レーザー光で読み取り<br>薄くて柔軟</td>
+        </tr>
+      </table>
+
+      <h2>半導体センサー（CCD/CMOS）</h2>
+      <ul>
+        <li>撮影後<span class="highlight">短時間で画像表示</span>（即時性が高い）</li>
+        <li>デジタルの中では<span class="highlight">空間分解能が高い</span></li>
+        <li>CCDセンサー、CMOSセンサーがある</li>
+        <li>コードで本体と接続（取り扱いに注意）</li>
+      </ul>
+
+      <h2>IP（イメージングプレート）</h2>
+      <ul>
+        <li><span class="key">輝尽発光現象</span>を利用</li>
+        <li><span class="highlight">レーザー光</span>で情報を電気信号に変換</li>
+        <li>フィルムと同様に薄くて柔軟（口腔内で扱いやすい）</li>
+        <li><span class="caution">光が当たると画像情報が減衰</span>（遮光が必要）</li>
+        <li>半導体センサーに比べて<span class="caution">即時性に劣る</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">半導体センサー vs IP の見分け方</div>
+        <ul>
+          <li>「<span class="highlight">短時間で表示</span>」「<span class="highlight">空間分解能が高い</span>」→ 半導体センサー</li>
+          <li>「<span class="highlight">レーザー光</span>」「光で減衰」「柔軟」→ IP</li>
+        </ul>
+      </div>
+
+      <h2>デジタルシステムの利点</h2>
+      <p>フィルムと比較した場合の利点：</p>
+
+      <h3>○ 利点</h3>
+      <ul>
+        <li><span class="key">廃液が出ない</span>（現像不要）</li>
+        <li><span class="key">画像処理ができる</span>（濃度・コントラスト調整など）</li>
+        <li><span class="key">被曝線量を低減</span>できる（感度が高い）</li>
+        <li><span class="key">画質を維持</span>できる（経年劣化しない）</li>
+      </ul>
+
+      <h3>× 欠点</h3>
+      <ul>
+        <li><span class="caution">解像力はフィルムより低い</span></li>
+      </ul>
+      <p class="note">「解像力が高い」は誤り。デジタルはフィルムに解像力で劣る。</p>
+
+      <h2>画像のデジタル化</h2>
+      <h3>画像の最小単位</h3>
+      <table>
+        <tr>
+          <th>用語</th>
+          <th>意味</th>
+        </tr>
+        <tr>
+          <td><span class="key">ピクセル（pixel）</span></td>
+          <td>2次元画像の最小単位</td>
+        </tr>
+        <tr>
+          <td><span class="key">ボクセル（voxel）</span></td>
+          <td>3次元画像の最小単位</td>
+        </tr>
+      </table>
+
+      <h3>DICOM</h3>
+      <p><span class="key">DICOM</span>（Digital Imaging and Communications in Medicine）</p>
+      <ul>
+        <li>医用画像フォーマットと通信の<span class="key">標準規格</span></li>
+        <li>どの施設・パソコンでも画像を閲覧可能</li>
+        <li>遠隔画像診断に利用</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A61</div>
+        <p>口内法エックス線検査で、フイルムを使用する方法と比較してデジタルエックス線画像システムが優れているのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 解像力が高い。<br>
+          b 廃液が出ない。<br>
+          c 画像処理ができる。<br>
+          d 被曝線量を低減できる。<br>
+          e 撮影時の画質を維持できる。
+        </div>
+        <div class="answer">正解：b, c, d, e</div>
+        <p>【解説】デジタルの利点は廃液なし、画像処理可能、被曝低減、画質維持。<span class="caution">aは誤り</span>：解像力はフィルムの方が高い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C91</div>
+        <p>歯科用デジタルエックス線撮影システムのセンサーの写真（別冊No.11）を別に示す。このシステムの特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 撮影後短時間で画像が表示される。<br>
+          b レーザー光で情報を電気信号に変換する。<br>
+          c センサーに光が当たると画像情報が減衰する。<br>
+          d デジタルシステムとしては空間分解能が高い。<br>
+          e 口腔内で従来の歯科用エックス線フィルムと同様に扱える。
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】写真は<span class="highlight">半導体センサー（CCD/CMOS）</span>。即時性が高く（a）、空間分解能が高い（d）。bとcは<span class="caution">IPの特徴</span>。eはIPの特徴（柔軟でフィルムのように扱える）。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>デジタルの利点：廃液なし、画像処理、被曝低減、画質維持</li>
+          <li><span class="caution">解像力はフィルムより低い</span>（ひっかけ注意）</li>
+          <li><span class="highlight">半導体センサー</span>：即時性高い、空間分解能高い</li>
+          <li><span class="highlight">IP</span>：レーザー光で読み取り、光で減衰、柔軟</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

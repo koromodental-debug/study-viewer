@@ -6,6 +6,9 @@ const KakomonModule = (function() {
   const dataCache = new Map();
   const explanationCache = new Map();
   const imageExplanationCache = new Map();
+  const integratedExplanationCache = { data: null, loaded: false };
+  const questionTopicMapCache = { data: null, loaded: false };
+  const thinkingExplanationCache = { data: null, loaded: false };
   let questionsData = null;
 
   // 状態
@@ -68,7 +71,7 @@ const KakomonModule = (function() {
   );
 
   // セグメント定義
-  const SEGMENTS = ['year', 'subject', 'search'];
+  const SEGMENTS = ['year', 'subject', 'search', 'analysis'];
 
   /**
    * questions.jsonを読み込み
@@ -125,6 +128,186 @@ const KakomonModule = (function() {
       console.log(`${year}回の画像解説データなし`);
       return null;
     }
+  }
+
+  /**
+   * 統合解説データを読み込み（アプローチ・画像診断・選択肢解説）
+   */
+  async function loadIntegratedExplanations() {
+    if (integratedExplanationCache.loaded) {
+      return integratedExplanationCache.data;
+    }
+
+    try {
+      const response = await fetch('kakomon/integrated-explanations.json');
+      if (!response.ok) return null;
+      const data = await response.json();
+      integratedExplanationCache.data = data;
+      integratedExplanationCache.loaded = true;
+      return data;
+    } catch (e) {
+      console.log('統合解説データ読み込みエラー:', e);
+      integratedExplanationCache.loaded = true;
+      return null;
+    }
+  }
+
+  /**
+   * 問題-トピックマッピングを読み込み
+   */
+  async function loadQuestionTopicMap() {
+    if (questionTopicMapCache.loaded) {
+      return questionTopicMapCache.data;
+    }
+
+    try {
+      const response = await fetch('question-topic-map.json');
+      if (!response.ok) return null;
+      const data = await response.json();
+      questionTopicMapCache.data = data.mapping || {};
+      questionTopicMapCache.loaded = true;
+      return questionTopicMapCache.data;
+    } catch (e) {
+      console.log('question-topic-map.json読み込みエラー:', e);
+      questionTopicMapCache.loaded = true;
+      return null;
+    }
+  }
+
+  /**
+   * 思考プロセス型解説を読み込み
+   */
+  async function loadThinkingExplanations() {
+    if (thinkingExplanationCache.loaded) {
+      return thinkingExplanationCache.data;
+    }
+
+    try {
+      const response = await fetch('kakomon/thinking-explanations.json');
+      if (!response.ok) return null;
+      const data = await response.json();
+      thinkingExplanationCache.data = data.explanations || {};
+      thinkingExplanationCache.loaded = true;
+      return thinkingExplanationCache.data;
+    } catch (e) {
+      console.log('thinking-explanations.json読み込みスキップ');
+      thinkingExplanationCache.loaded = true;
+      return null;
+    }
+  }
+
+  /**
+   * 思考プロセス型解説をレンダリング
+   */
+  function renderThinkingExplanation(thinking) {
+    if (!thinking || !thinking.thinking_process) return '';
+
+    let html = '<div class="thinking-explanation">';
+
+    // 思考の流れ
+    html += `
+      <div class="thinking-section thinking-process">
+        <div class="thinking-section-title">
+          <span class="thinking-icon">💭</span>
+          <span>思考の流れ</span>
+        </div>
+        <div class="thinking-section-content">${escapeHtml(thinking.thinking_process)}</div>
+      </div>
+    `;
+
+    // 核心知識
+    if (thinking.core_knowledge) {
+      html += `
+        <div class="thinking-section core-knowledge">
+          <div class="thinking-section-title">
+            <span class="thinking-icon">📌</span>
+            <span>核心知識</span>
+          </div>
+          <div class="thinking-section-content">${escapeHtml(thinking.core_knowledge)}</div>
+        </div>
+      `;
+    }
+
+    // 引っかけポイント
+    if (thinking.trap_point) {
+      html += `
+        <div class="thinking-section trap-point">
+          <div class="thinking-section-title">
+            <span class="thinking-icon">⚠️</span>
+            <span>間違えやすいポイント</span>
+          </div>
+          <div class="thinking-section-content">${escapeHtml(thinking.trap_point)}</div>
+        </div>
+      `;
+    }
+
+    html += '</div>';
+    return html;
+  }
+
+  /**
+   * htmlPathからDATAのトピックIDを逆引き
+   */
+  function findTopicIdByHtmlPath(htmlPath) {
+    if (typeof DATA === 'undefined') return null;
+    const item = DATA.find(d => d.htmlPath === htmlPath);
+    return item ? item.id : null;
+  }
+
+  /**
+   * 関連トピックのHTMLを生成
+   */
+  function renderRelatedTopics(topicEntries) {
+    if (!topicEntries || topicEntries.length === 0) return '';
+
+    const links = topicEntries.map(entry => {
+      const topicId = findTopicIdByHtmlPath(entry.htmlFile);
+      if (!topicId) return '';
+      return `
+        <button class="related-topic-link" data-topic-id="${escapeHtml(topicId)}" data-html-path="${escapeHtml(entry.htmlFile)}">
+          <span class="related-topic-subject">${escapeHtml(entry.subject)}</span>
+          <span class="related-topic-title">${escapeHtml(entry.topicTitle)}</span>
+          <svg class="related-topic-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      `;
+    }).filter(html => html !== '');
+
+    if (links.length === 0) return '';
+
+    return `
+      <div class="related-topics-section">
+        <div class="related-topics-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+          <span>関連トピック</span>
+        </div>
+        <div class="related-topics-links">
+          ${links.join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * 関連トピックリンクのイベントをバインド
+   */
+  function bindRelatedTopicLinks(container) {
+    container.querySelectorAll('.related-topic-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const topicId = link.dataset.topicId;
+        if (topicId && typeof window.switchTab === 'function') {
+          window.switchTab('html', false, true);
+          if (typeof window.selectItem === 'function') {
+            window.selectItem(topicId);
+          }
+        }
+      });
+    });
   }
 
   /**
@@ -272,6 +455,7 @@ const KakomonModule = (function() {
             <button class="segment-btn active" data-mode="year">年度別</button>
             <button class="segment-btn" data-mode="subject">科目別</button>
             <button class="segment-btn" data-mode="search">検索</button>
+            <button class="segment-btn" data-mode="analysis">分析</button>
           </div>
           <div class="kakomon-nav-content" id="kakomon-nav-content">
             ${renderYearList()}
@@ -636,6 +820,12 @@ const KakomonModule = (function() {
         } else if (mode === 'search') {
           navContent.innerHTML = renderSearchScreen();
           bindSearchEvents(elements);
+        } else if (mode === 'analysis') {
+          navContent.innerHTML = '<div id="weakness-analysis-container" class="weakness-analysis-container"></div>';
+          if (typeof WeaknessModule !== 'undefined') {
+            const container = navContent.querySelector('#weakness-analysis-container');
+            WeaknessModule.renderAnalysisView(container);
+          }
         }
       });
     });
@@ -1121,9 +1311,12 @@ const KakomonModule = (function() {
 
         <div class="kakomon-explanation" style="display:none;">
           <button class="show-explanation-btn">解説を見る</button>
+          <div class="integrated-explanation-container" style="display:none;"></div>
           <div class="image-explanation-container" style="display:none;"></div>
           <div class="conversation-container"></div>
         </div>
+
+        <div class="related-topics-container" style="display:none;"></div>
       </div>
     `;
   }
@@ -1472,6 +1665,42 @@ const KakomonModule = (function() {
       explanationDiv.style.display = 'block';
       bindExplanationBtn(card);
     }
+
+    // 解答履歴を保存
+    const code = card.dataset.code;
+    if (code && typeof WeaknessModule !== 'undefined') {
+      WeaknessModule.saveAnswer(code, selectedKeys, isCorrect);
+    }
+
+    // 関連トピックを表示
+    showRelatedTopics(card);
+  }
+
+  /**
+   * 関連トピックを非同期で表示
+   */
+  async function showRelatedTopics(card) {
+    const code = card.dataset.code;
+    if (!code) return;
+
+    const topicMap = await loadQuestionTopicMap();
+    if (!topicMap) return;
+
+    const mapping = topicMap[code];
+    if (!mapping) return;
+
+    // 単一エントリかリストかを正規化
+    const entries = Array.isArray(mapping) ? mapping : [mapping];
+
+    const html = renderRelatedTopics(entries);
+    if (!html) return;
+
+    const container = card.querySelector('.related-topics-container');
+    if (container) {
+      container.innerHTML = html;
+      container.style.display = 'block';
+      bindRelatedTopicLinks(container);
+    }
   }
 
   /**
@@ -1481,6 +1710,7 @@ const KakomonModule = (function() {
     const btn = card.querySelector('.show-explanation-btn');
     const container = card.querySelector('.conversation-container');
     const imageContainer = card.querySelector('.image-explanation-container');
+    const integratedContainer = card.querySelector('.integrated-explanation-container');
 
     if (btn && container) {
       btn.addEventListener('click', async () => {
@@ -1489,6 +1719,38 @@ const KakomonModule = (function() {
 
         const code = card.dataset.code;
         const year = parseInt(code.match(/^\d+/)?.[0]) || 0;
+        const answer = (card.dataset.answer || '').toLowerCase();
+
+        let hasAnyExplanation = false;
+
+        // 思考プロセス型解説を読み込み（最優先で表示）
+        const thinkingData = await loadThinkingExplanations();
+        const thinking = thinkingData?.[code];
+
+        if (thinking) {
+          const thinkingHtml = renderThinkingExplanation(thinking);
+          if (thinkingHtml) {
+            // integratedContainerの前に挿入
+            const thinkingDiv = document.createElement('div');
+            thinkingDiv.className = 'thinking-explanation-container';
+            thinkingDiv.innerHTML = thinkingHtml;
+            integratedContainer.parentNode.insertBefore(thinkingDiv, integratedContainer);
+            hasAnyExplanation = true;
+          }
+        }
+
+        // 統合解説を読み込み（アプローチ・画像診断・選択肢解説）
+        const integratedData = await loadIntegratedExplanations();
+        const integrated = integratedData?.[code];
+
+        if (integrated && integratedContainer) {
+          const integratedHtml = renderIntegratedExplanation(integrated, answer);
+          if (integratedHtml) {
+            integratedContainer.innerHTML = integratedHtml;
+            integratedContainer.style.display = 'block';
+            hasAnyExplanation = true;
+          }
+        }
 
         // 画像解説を読み込み
         const imageExplanations = await loadImageExplanations(year);
@@ -1497,9 +1759,9 @@ const KakomonModule = (function() {
         if (imageExplanation && imageContainer) {
           imageContainer.innerHTML = renderImageExplanation(imageExplanation);
           imageContainer.style.display = 'block';
-          // アノテーションを画像に適用
           applyAnnotations(card, imageExplanation.annotations);
           bindAnnotationToggle(card);
+          hasAnyExplanation = true;
         }
 
         // 会話解説を読み込み
@@ -1509,7 +1771,10 @@ const KakomonModule = (function() {
         if (explanation && explanation.conversation) {
           container.innerHTML = renderConversation(explanation);
           animateConversation(container);
-        } else if (!imageExplanation) {
+          hasAnyExplanation = true;
+        }
+
+        if (!hasAnyExplanation) {
           container.innerHTML = `
             <div class="no-explanation">
               <p>この問題の解説は準備中です</p>
@@ -1520,6 +1785,94 @@ const KakomonModule = (function() {
         btn.style.display = 'none';
       });
     }
+  }
+
+  /**
+   * 統合解説をレンダリング（アプローチ・画像診断・選択肢解説）
+   */
+  function renderIntegratedExplanation(integrated, answer) {
+    if (!integrated) return '';
+
+    let html = '<div class="integrated-explanation">';
+    let hasContent = false;
+
+    // アプローチ
+    if (integrated.approach && integrated.approach.trim()) {
+      hasContent = true;
+      html += `
+        <div class="integrated-section approach-section">
+          <div class="integrated-section-title">
+            <span class="section-icon">📝</span>
+            <span>アプローチ</span>
+          </div>
+          <div class="integrated-section-content approach-content">
+            ${escapeHtml(integrated.approach)}
+          </div>
+        </div>
+      `;
+    }
+
+    // 画像診断
+    if (integrated.image_diagnosis && Object.keys(integrated.image_diagnosis).length > 0) {
+      const diagEntries = Object.entries(integrated.image_diagnosis)
+        .filter(([_, text]) => text && text.trim());
+
+      if (diagEntries.length > 0) {
+        hasContent = true;
+        html += `
+          <div class="integrated-section image-diagnosis-section">
+            <div class="integrated-section-title">
+              <span class="section-icon">🔍</span>
+              <span>画像診断</span>
+            </div>
+            <div class="integrated-section-content">
+              ${diagEntries.map(([label, text]) => `
+                <div class="image-diagnosis-item">
+                  <span class="image-diagnosis-label">${escapeHtml(label)}:</span>
+                  <span class="image-diagnosis-text">${escapeHtml(text)}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // 選択肢解説
+    if (integrated.choices && Object.keys(integrated.choices).length > 0) {
+      const choiceEntries = Object.entries(integrated.choices)
+        .filter(([_, text]) => text && text.trim())
+        .sort(([a], [b]) => a.localeCompare(b));
+
+      if (choiceEntries.length > 0) {
+        hasContent = true;
+        html += `
+          <div class="integrated-section choices-section">
+            <div class="integrated-section-title">
+              <span class="section-icon">📋</span>
+              <span>選択肢解説</span>
+            </div>
+            <div class="integrated-section-content">
+              ${choiceEntries.map(([key, text]) => {
+                const cleanKey = key.toLowerCase().trim();
+                const isCorrect = answer.includes(cleanKey);
+                return `
+                  <div class="choice-explanation-item ${isCorrect ? 'correct' : 'incorrect'}">
+                    <span class="choice-exp-marker">${isCorrect ? '○' : '×'}</span>
+                    <span class="choice-exp-key">${cleanKey}</span>
+                    <span class="choice-exp-text">${escapeHtml(text)}</span>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    html += '</div>';
+
+    return hasContent ? html : '';
   }
 
   /**

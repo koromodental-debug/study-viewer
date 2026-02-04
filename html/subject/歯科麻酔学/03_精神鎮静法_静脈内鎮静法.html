@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>静脈内鎮静法 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 精神鎮静法</span>
+    <h1>静脈内鎮静法</h1>
+    <div class="container">
+
+      <h2>静脈内鎮静法の概要</h2>
+      <p><span class="key">静脈内鎮静法</span>は、静脈路から鎮静薬を投与して患者の不安・恐怖心を軽減し、歯科治療への協力を得る方法である。<span class="highlight">意識は保たれる</span>ため、全身麻酔とは異なる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出ポイント</div>
+        <ul>
+          <li>麻酔深度が深くなった時のリスク：<span class="highlight">上気道閉塞</span>、<span class="highlight">誤嚥</span></li>
+          <li><span class="highlight">いびき</span> = 上気道閉塞のサイン → まず<span class="highlight">気道確保</span></li>
+          <li>使用薬剤：<span class="highlight">ミダゾラム</span>、<span class="highlight">プロポフォール</span></li>
+        </ul>
+      </div>
+
+      <h2>精神鎮静法と全身麻酔法の相違</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>精神鎮静法</th>
+          <th>全身麻酔法</th>
+        </tr>
+        <tr>
+          <td><span class="key">意識</span></td>
+          <td><span class="highlight">保たれる</span></td>
+          <td>消失</td>
+        </tr>
+        <tr>
+          <td>患者の協力</td>
+          <td>得られる</td>
+          <td>得られない</td>
+        </tr>
+        <tr>
+          <td>防御反応</td>
+          <td>あり</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">鎮痛効果</span></td>
+          <td><span class="caution">なし</span></td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>健忘</td>
+          <td>不完全</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>回復</td>
+          <td>すみやか</td>
+          <td>遅い</td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">注意</span>：精神鎮静法には鎮痛効果がないため、痛みを伴う処置には必ず<span class="key">局所麻酔</span>を併用する</p>
+
+      <h2>使用薬剤</h2>
+
+      <h3>ベンゾジアゼピン誘導体</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>特徴</th>
+          <th>投与量</th>
+        </tr>
+        <tr>
+          <td><span class="key">ミダゾラム</span></td>
+          <td>効果持続時間が<span class="highlight">最も短い</span>、水溶性</td>
+          <td>0.075 mg/kg</td>
+        </tr>
+        <tr>
+          <td>ジアゼパム</td>
+          <td>効果持続時間は中間</td>
+          <td>0.2〜0.4 mg/kg</td>
+        </tr>
+        <tr>
+          <td>フルニトラゼパム</td>
+          <td>効果持続時間が最も長い</td>
+          <td>0.01〜0.015 mg/kg</td>
+        </tr>
+      </table>
+
+      <h3>静脈麻酔薬</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">プロポフォール</span></td>
+          <td>導入・覚醒が<span class="highlight">すみやか</span>、<span class="key">シリンジポンプ</span>で持続投与</td>
+        </tr>
+        <tr>
+          <td>ケタミン</td>
+          <td>呼吸抑制が少ない、鎮痛作用あり</td>
+        </tr>
+      </table>
+
+      <h3>拮抗薬</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>対象</th>
+          <th>注意点</th>
+        </tr>
+        <tr>
+          <td><span class="key">フルマゼニル</span></td>
+          <td>ベンゾジアゼピン誘導体</td>
+          <td><span class="caution">再鎮静</span>に注意（効果持続時間が短い）</td>
+        </tr>
+        <tr>
+          <td>ナロキソン</td>
+          <td>麻薬（オピオイド）</td>
+          <td>-</td>
+        </tr>
+      </table>
+
+      <h2>偶発症とリスク【最頻出】</h2>
+      <p>静脈内鎮静法で麻酔深度が深くなると、以下のリスクが生じる。</p>
+
+      <h3>主なリスク</h3>
+      <ul>
+        <li><span class="highlight">上気道閉塞</span>：舌根沈下による気道狭窄</li>
+        <li><span class="highlight">誤嚥</span>：防御反射低下による</li>
+        <li>呼吸抑制</li>
+      </ul>
+
+      <h3>上気道閉塞のサインと対応</h3>
+      <table>
+        <tr>
+          <th>サイン</th>
+          <th>対応（優先順位順）</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">いびき</span>、SpO2低下、深呼吸の指示に応答なし</td>
+          <td>1. <span class="highlight">気道確保</span>（下顎挙上）<br>2. 酸素投与<br>3. 必要に応じてフルマゼニル投与</td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">重要</span>：上気道閉塞時は<span class="highlight">気道確保が最優先</span>。フルマゼニル投与は気道確保・酸素投与の後</p>
+
+      <h2>健忘効果</h2>
+      <p>ベンゾジアゼピン系薬剤には<span class="key">健忘効果</span>（前向性健忘）があり、投与後の出来事を記憶しにくくなる。</p>
+
+      <h3>健忘効果を期待する時期</h3>
+      <ul>
+        <li><span class="highlight">浸潤麻酔時</span>（注射の痛み・恐怖）</li>
+        <li><span class="highlight">抜歯処置時</span>（処置中の不快感）</li>
+      </ul>
+      <p class="note">来院時や静脈路確保時、帰宅時には健忘効果は不要（むしろ帰宅時は意識清明であるべき）</p>
+
+      <h2>シリンジポンプ</h2>
+      <p><span class="key">シリンジポンプ</span>は、プロポフォールなど極少量の薬剤を正確に持続投与するための機器である。</p>
+      <ul>
+        <li>目的：<span class="highlight">鎮静レベルの維持</span></li>
+        <li>適応：プロポフォール（半減期が短く持続投与が必要）</li>
+      </ul>
+
+      <h2>過去問で実践</h2>
+
+      <div class="question-box">
+        <div class="q-number">104C69</div>
+        <p>ミダゾラムを用いた静脈内鎮静中に患者の意識が消失した。いびきをかき、SpO2が90%である。<br>まず行うのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 気道確保<br>
+          b 酸素投与<br>
+          c 人工呼吸<br>
+          d 電気的除細動<br>
+          e フルマゼニル投与
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】<span class="highlight">いびき</span>は<span class="key">上気道閉塞</span>のサインである。SpO2低下（90%）を伴っており、<span class="highlight">まず気道確保</span>（下顎挙上など）を行う。酸素投与やフルマゼニル投与は気道が確保されてから行う。心停止ではないのでAEDや胸骨圧迫は不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B18</div>
+        <p>45歳の女性。下顎右側臼歯部欠損のためインプラント治療を希望して来院した。恐怖心が強いため静脈内鎮静法を併用することとした。薬物投与のために使用した機器の写真（別冊No.18）を別に示す。<br>この機器を使用する目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B18_1.png" alt="別冊No.18">
+        </div>
+        <div class="choices">
+          a 血管痛の軽減<br>
+          b 健忘効果の増強<br>
+          c 血圧変動の防止<br>
+          d 鎮静レベルの維持<br>
+          e アレルギー反応発生の予防
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】写真は<span class="key">シリンジポンプ</span>である。プロポフォールなど半減期の短い薬剤を極少量ずつ正確に持続投与することで、<span class="highlight">鎮静レベルを一定に維持</span>することが目的である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C34</div>
+        <p>静脈内鎮静法において麻酔深度が深くなった時のリスクはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 痙攣<br>
+          b 誤嚥<br>
+          c ショック<br>
+          d 上気道閉塞<br>
+          e 血管迷走神経反射
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】静脈内鎮静法で麻酔深度が深くなると、舌根沈下による<span class="highlight">上気道閉塞</span>（d○）と、防御反射低下による<span class="highlight">誤嚥</span>（b○）のリスクが高まる。痙攣は局所麻酔薬中毒、ショックはアナフィラキシー、血管迷走神経反射は疼痛や恐怖によるもので、鎮静深度とは関係しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B77</div>
+        <p>29歳の男性。下顎右側第二大臼歯の冷水痛を主訴として来院した。診察の結果、歯科治療恐怖症のため、ミダゾラムによる静脈内鎮静下に7┐のコンポジットレジン修復を行うこととした。処置中にいびきをかきはじめたので深呼吸を指示したが応答しない。その時の生体モニタの画面（別冊No.27）を別に示す。<br>行うべき対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113B77_1.png" alt="別冊No.27">
+        </div>
+        <div class="choices">
+          a 酸素投与<br>
+          b AEDの使用<br>
+          c 胸骨圧迫心マッサージ<br>
+          d 局所麻酔薬の追加投与<br>
+          e 下顎挙上による気道確保
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】いびき＋深呼吸指示に応答なし＝<span class="key">上気道閉塞</span>である。モニタで心拍は維持されており心停止ではないため、AEDや胸骨圧迫は不要。<span class="highlight">下顎挙上による気道確保</span>（e○）と<span class="highlight">酸素投与</span>（a○）を行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D45</div>
+        <p>抜歯時に行う静脈内鎮静法で健忘効果を期待する時期はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 来院時<br>
+          b 静脈路確保時<br>
+          c 浸潤麻酔時<br>
+          d 抜歯処置時<br>
+          e 帰宅時
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】健忘効果は、患者にとって不快な記憶（注射の痛み、処置中の恐怖）を残さないことが目的である。<span class="highlight">浸潤麻酔時</span>（c○）の注射の痛みと、<span class="highlight">抜歯処置時</span>（d○）の処置に対する恐怖を忘れさせる。来院時や帰宅時に健忘があると危険であり、静脈路確保時はまだ鎮静薬投与前である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B36</div>
+        <p>知的障害を伴う成人の静脈内鎮静法で用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a ミダゾラム<br>
+          b フェニトイン<br>
+          c プレガバリン<br>
+          d プロポフォール<br>
+          e アミトリプチリン塩酸塩
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】静脈内鎮静法に用いる薬剤は、<span class="highlight">ミダゾラム</span>（a○：ベンゾジアゼピン系）と<span class="highlight">プロポフォール</span>（d○：静脈麻酔薬）である。フェニトインは抗てんかん薬、プレガバリンは神経障害性疼痛治療薬、アミトリプチリンは三環系抗うつ薬であり、鎮静法には用いない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

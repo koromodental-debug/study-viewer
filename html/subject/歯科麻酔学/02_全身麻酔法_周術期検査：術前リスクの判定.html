@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>術前リスクの判定 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 全身麻酔法</span>
+    <h1>術前リスクの判定</h1>
+    <div class="container">
+
+      <h2>ASA-PS分類とは</h2>
+      <p><span class="key">ASA-PS分類</span>（American Society of Anesthesiologists Physical Status classification）は、米国麻酔科学会が作成した<span class="highlight">術前状態を総合的に評価する分類</span>である。</p>
+      <p>手術・麻酔のリスク評価に広く用いられ、患者の全身状態と日常生活の制限度から判定する。</p>
+
+      <h3>ASA-PS分類（6段階）</h3>
+      <table>
+        <tr>
+          <th style="width: 15%;">分類</th>
+          <th style="width: 50%;">定義</th>
+          <th style="width: 35%;">例</th>
+        </tr>
+        <tr>
+          <td><span class="key">PS-I</span></td>
+          <td>全身状態が良好</td>
+          <td>健康な成人</td>
+        </tr>
+        <tr>
+          <td><span class="key">PS-II</span></td>
+          <td>軽〜中等度の全身的疾患があるが、<span class="highlight">日常生活に支障はない</span></td>
+          <td>高血圧、糖尿病、肥満、高齢者（80歳以上）、新生児など</td>
+        </tr>
+        <tr>
+          <td><span class="key">PS-III</span></td>
+          <td>重度の全身疾患があり、活動は制限されているが、日常生活はどうにかできる</td>
+          <td><span class="caution">コントロール不良</span>の高血圧、狭心症、心筋梗塞の既往など</td>
+        </tr>
+        <tr>
+          <td><span class="key">PS-IV</span></td>
+          <td>生命を脅かすほどの全身の疾患があり、日常生活は不可能</td>
+          <td>うっ血性心不全、不安定狭心症など</td>
+        </tr>
+        <tr>
+          <td><span class="key">PS-V</span></td>
+          <td>手術しなければ生存が期待できない瀕死の状態</td>
+          <td>頭蓋内圧亢進を伴う頭部外傷など</td>
+        </tr>
+        <tr>
+          <td><span class="key">PS-VI</span></td>
+          <td>臓器提供が予定された脳死状態</td>
+          <td>—</td>
+        </tr>
+      </table>
+      <p class="note">※緊急手術の場合はナンバーの後ろに<span class="key">E</span>をつける（例：PS-3E）</p>
+
+      <div class="point-box">
+        <div class="point-box-title">判定のポイント</div>
+        <ul>
+          <li><span class="key">疾患の有無</span>：全身的疾患があるか</li>
+          <li><span class="key">コントロール状態</span>：良好か不良か</li>
+          <li><span class="key">日常生活の制限</span>：支障なし → II、制限あり → III以上</li>
+        </ul>
+      </div>
+
+      <h2>PS-IIとPS-IIIの鑑別</h2>
+      <p>国試で最も問われやすいのが<span class="highlight">PS-IIとPS-IIIの鑑別</span>である。</p>
+
+      <h3>判定基準</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>PS-II</th>
+          <th>PS-III</th>
+        </tr>
+        <tr>
+          <td>疾患の程度</td>
+          <td>軽〜中等度</td>
+          <td>重度</td>
+        </tr>
+        <tr>
+          <td>コントロール</td>
+          <td><span class="highlight">良好</span></td>
+          <td><span class="caution">不良</span></td>
+        </tr>
+        <tr>
+          <td>日常生活</td>
+          <td>支障なし</td>
+          <td>活動制限あり</td>
+        </tr>
+        <tr>
+          <td>高血圧の例</td>
+          <td>血圧コントロール良好</td>
+          <td>コントロール不良の高血圧</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">114B72</div>
+        <p>本態性高血圧症と診断されているが、安静時血圧のコントロールは良好で日常生活に制限はない。<br>
+        この患者の米国麻酔科学会による術前状態分類〈ASA-PS〉はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Ⅰ<br>
+          b Ⅱ<br>
+          c Ⅲ<br>
+          d Ⅳ<br>
+          e Ⅴ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】本態性高血圧症（全身的疾患あり）だが、<span class="highlight">コントロール良好</span>かつ<span class="highlight">日常生活に制限なし</span>であるため、<span class="key">PS-II</span>に該当する。PS-Iは「全身状態が良好」で疾患がない場合。PS-IIIはコントロール不良または日常生活に制限がある場合に該当する。</p>
+      </div>
+
+      <h2>その他のリスク評価</h2>
+      <p>ASA-PS分類以外にも、以下の評価法が術前リスク判定に用いられる。</p>
+      <ul>
+        <li><span class="key">NYHA分類</span>：心機能の評価（I〜IV度）</li>
+        <li><span class="key">CCS分類</span>：狭心症の重症度評価</li>
+        <li><span class="key">Child-Pugh分類</span>：肝機能の評価（A〜C）</li>
+        <li><span class="key">Hugh-Jones分類</span>：呼吸困難の評価</li>
+      </ul>
+
+    </div>
+  </div>
+</body>
+</html>

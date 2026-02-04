@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>血管迷走神経反射 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 歯科治療中の全身的偶発症</span>
+    <h1>血管迷走神経反射</h1>
+    <div class="container">
+
+      <h2>定義・病態</h2>
+      <p><span class="key">血管迷走神経反射</span>（VVR: vasovagal reflex）は、歯科治療時に最も多く発生する偶発症の一つで、<span class="key">脳貧血様発作</span>や<span class="key">デンタルショック</span>とも呼ばれる。</p>
+
+      <h3>発症機序</h3>
+      <ol>
+        <li>恐怖心や不安により<span class="key">カテコールアミン</span>が分泌され、交感神経緊張状態となる</li>
+        <li>筋肉の血管が拡張し、血液貯留と血流量が増加（筋肉運動への準備反応）</li>
+        <li>この状態で疼痛や過度の心理的刺激が加わると、腹腔内臓器にも血液が貯留</li>
+        <li>心臓への静脈還流が減少</li>
+        <li><span class="highlight">迷走神経の緊張</span>が起こり、<span class="highlight">徐脈と血圧低下</span>をきたす</li>
+        <li>脳血流量が減少し、意識消失に至る</li>
+      </ol>
+
+      <h2>誘発要因</h2>
+      <ul>
+        <li><span class="key">精神的ストレス</span>：歯科恐怖、不安、緊張</li>
+        <li><span class="key">疼痛刺激</span>：麻酔が不十分なままの処置</li>
+        <li><span class="key">喉頭操作</span>：気管挿管時の喉頭蓋挙上（113B81）</li>
+        <li>体位変換（急な起立）</li>
+        <li>空腹、疲労、睡眠不足</li>
+      </ul>
+
+      <h2>症状</h2>
+      <p>症状は段階的に進行する。</p>
+
+      <h3>症状の進行</h3>
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>症状</th>
+          <th>バイタル</th>
+        </tr>
+        <tr>
+          <td><span class="key">前駆期</span></td>
+          <td>気分不快、顔面蒼白、冷汗（前額部から）、嘔気</td>
+          <td>脈拍数増加、血圧正常〜やや低下</td>
+        </tr>
+        <tr>
+          <td><span class="key">進行期</span></td>
+          <td>あくび、めまい、手足の冷感、瞳孔散大、呼吸深大</td>
+          <td><span class="highlight">徐脈</span>、血圧下降</td>
+        </tr>
+        <tr>
+          <td><span class="key">意識消失期</span></td>
+          <td>顔面蒼白、瞳孔散大、不規則な呼吸、痙攣・硬直</td>
+          <td>著明な徐脈、血圧著明低下、心停止</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">過換気症候群との鑑別</div>
+        <ul>
+          <li>血管迷走神経反射：<span class="highlight">徐脈</span>、血圧低下、顔面蒼白</li>
+          <li>過換気症候群：<span class="caution">頻脈</span>、血圧正常〜上昇、テタニー症状</li>
+        </ul>
+      </div>
+
+      <h2>診断</h2>
+      <ul>
+        <li><span class="key">パルスオキシメータ</span>：SpO₂低下を検出（脳血流低下に伴う低酸素）</li>
+        <li><span class="key">心電図</span>：徐脈（洞性徐脈）を確認</li>
+        <li>血圧測定：低血圧</li>
+      </ul>
+
+      <h2>治療・対応</h2>
+
+      <h3>初期対応</h3>
+      <table>
+        <tr>
+          <th>対応</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>体位</td>
+          <td><span class="highlight">ショック体位</span>（トレンデレンブルグ体位）：下肢挙上で静脈還流↑</td>
+        </tr>
+        <tr>
+          <td>気道確保</td>
+          <td>下顎挙上、頭部後屈、必要時エアウェイ</td>
+        </tr>
+        <tr>
+          <td>酸素投与</td>
+          <td>マスクで酸素吸入</td>
+        </tr>
+        <tr>
+          <td>バイタル監視</td>
+          <td>SpO₂、心電図、血圧を継続監視</td>
+        </tr>
+      </table>
+      <p class="note">※通常は数分以内に回復する</p>
+
+      <h3>薬物療法</h3>
+      <table>
+        <tr>
+          <th>症状</th>
+          <th>薬物</th>
+          <th>投与法</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">徐脈</span></td>
+          <td><span class="highlight">アトロピン硫酸塩</span></td>
+          <td>0.5mg 筋注または静注</td>
+        </tr>
+        <tr>
+          <td>低血圧持続</td>
+          <td>エフェドリン、フェニレフリン</td>
+          <td>静注</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">アトロピンの作用機序</div>
+        <ul>
+          <li>ムスカリン受容体（M₂）拮抗薬</li>
+          <li>迷走神経による心拍抑制を解除 → 心拍数↑</li>
+          <li>副作用：口渇、散瞳、排尿困難</li>
+        </ul>
+      </div>
+
+      <h2>予防</h2>
+      <ul>
+        <li><span class="key">疼痛の確実な除去</span>：十分な局所麻酔</li>
+        <li><span class="key">鎮静法の活用</span>：亜酸化窒素吸入鎮静法、静脈内鎮静法</li>
+        <li>患者との信頼関係構築</li>
+        <li>空腹状態を避ける（軽い食事を摂取）</li>
+        <li>リクライニング位での処置（急な体位変換を避ける）</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112B22</div>
+        <p>徐脈を呈するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 心室細動<br>
+          b 過換気症候群<br>
+          c 洞不全症候群<br>
+          d 血管迷走神経反射<br>
+          e 甲状腺機能亢進症
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="key">血管迷走神経反射</span>は迷走神経緊張により<span class="key">徐脈</span>を呈する。洞不全症候群も洞結節機能低下で徐脈となる。過換気症候群は交感神経優位で頻脈、甲状腺機能亢進症も代謝亢進で頻脈となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D32</div>
+        <p>パルスオキシメータが症状の検出に有用なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 上気道閉塞<br>
+          b 異常絞扼反射<br>
+          c 過換気症候群<br>
+          d クモ膜下出血<br>
+          e 血管迷走神経反射
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】パルスオキシメータはSpO₂低下を検出する。上気道閉塞は換気障害でSpO₂低下。<span class="key">血管迷走神経反射</span>は脳血流低下に伴いSpO₂が低下する。過換気症候群はむしろSpO₂は正常〜上昇する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108B22</div>
+        <p>56歳の男性。下顎右側第一大臼歯の抜髄を予定した。心筋梗塞の既往があり高血圧症で加療中である。モニター心電図とパルスオキシメータを装着後、仰臥位で浸潤麻酔直後にいびきをかきはじめ、不規則な呼吸となった。その時の心電図（別冊No.22）を別に示す。パルスオキシメータは88％を示し、血圧は110/68 mmHgであった。対応として正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 気道の確保<br>
+          b 下肢の挙上<br>
+          c 胸骨圧迫の開始<br>
+          d アトロピン硫酸塩水和物の投与<br>
+          e ニトログリセリン貼付剤の適用
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】いびき・不規則な呼吸・SpO₂低下は迷走神経反射による意識消失を示唆。まず<span class="key">気道確保</span>が必要。心電図で徐脈を認めれば<span class="key">アトロピン</span>投与。胸骨圧迫は心停止時、ニトログリセリンは狭心症発作時に用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B81</div>
+        <p>57歳の男性。全身麻酔下に右側の下顎骨嚢胞摘出術を行うこととした。麻酔導入後、気管挿管のために喉頭蓋を持ち上げた時点で心電図の変化を認めた。心電図と脈波の波形（別冊No.31）を別に示す。心電図異常の原因として考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113B81_1.png" alt="別冊No.31">
+        </div>
+        <div class="choices">
+          a Cushing反射<br>
+          b 眼球心臓反射<br>
+          c 頸動脈洞反射<br>
+          d 迷走神経反射<br>
+          e Bainbridge反射
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】喉頭蓋挙上という機械的刺激により<span class="key">迷走神経反射</span>が誘発され、徐脈が生じた。Cushing反射は頭蓋内圧亢進時、眼球心臓反射は眼球圧迫時、頸動脈洞反射は頸動脈洞圧迫時、Bainbridge反射は静脈還流増加時に起こる。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>歯科治療中<span class="highlight">最多の偶発症</span></li>
+          <li>バイタル：<span class="highlight">徐脈</span>＋血圧低下（過換気症候群は頻脈）</li>
+          <li>誘発：精神的ストレス、疼痛、<span class="key">喉頭操作</span></li>
+          <li>対応：ショック体位、気道確保、酸素、<span class="highlight">アトロピン</span></li>
+          <li>予防：疼痛除去、鎮静法</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

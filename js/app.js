@@ -204,6 +204,12 @@
     // フラッシュカード機能の初期化
     if (typeof FlashcardModule !== 'undefined') {
       FlashcardModule.init();
+    } else {
+      window.addEventListener('flashcard-module-ready', () => {
+        if (typeof FlashcardModule !== 'undefined') {
+          FlashcardModule.init();
+        }
+      }, { once: true });
     }
 
     // テーマ切り替え機能の初期化

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CT画像の解剖像 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 読影の基本</span>
+    <h1>CT画像の解剖像</h1>
+    <div class="container">
+
+      <h2>CT値（Hounsfield Unit：HU）</h2>
+      <p>CT画像の濃淡は<span class="key">CT値</span>で表される。水を<span class="highlight">0</span>、空気を<span class="highlight">-1,000</span>とした相対値。</p>
+      <p>CT値が<span class="key">高い</span>ほど<span class="key">高吸収</span>（白く見える）</p>
+
+      <table>
+        <tr>
+          <th>組織</th>
+          <th>CT値（HU）</th>
+          <th>画像上の見え方</th>
+        </tr>
+        <tr>
+          <td><span class="key">緻密骨</span></td>
+          <td>1,000〜2,000</td>
+          <td>白い（高吸収）</td>
+        </tr>
+        <tr>
+          <td><span class="key">筋肉・リンパ節</span></td>
+          <td>30〜70</td>
+          <td>灰色</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">水</span></td>
+          <td><span class="highlight">0</span></td>
+          <td>基準</td>
+        </tr>
+        <tr>
+          <td><span class="key">脂肪</span></td>
+          <td>-200〜0</td>
+          <td>黒っぽい</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">空気</span></td>
+          <td><span class="highlight">-1,000</span></td>
+          <td>黒い（低吸収）</td>
+        </tr>
+      </table>
+
+      <h2>造影CT</h2>
+      <p><span class="key">ヨード製剤</span>を静脈内投与し、血管・血流の存在を診断する。</p>
+
+      <h3>造影効果の原則</h3>
+      <p><span class="highlight">血流が豊富な組織</span>が白く描出される（造影増強効果）</p>
+
+      <h3>造影効果が顕著な構造</h3>
+      <table>
+        <tr>
+          <th>構造</th>
+          <th>造影効果</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">顎下腺</span>（唾液腺）</td>
+          <td><span class="highlight">顕著</span></td>
+          <td>血流豊富</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">外頸動脈</span></td>
+          <td><span class="highlight">顕著</span></td>
+          <td>血管そのもの</td>
+        </tr>
+        <tr>
+          <td><span class="caution">頰脂肪体</span></td>
+          <td>乏しい</td>
+          <td>脂肪は血流少ない</td>
+        </tr>
+        <tr>
+          <td><span class="caution">下顎神経</span></td>
+          <td>乏しい</td>
+          <td>神経は造影されにくい</td>
+        </tr>
+        <tr>
+          <td><span class="caution">下顎骨骨皮質</span></td>
+          <td>なし</td>
+          <td>骨は造影されない</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">造影効果の覚え方</div>
+        <ul>
+          <li>「<span class="highlight">血管</span>」と「<span class="highlight">血流豊富な腺組織</span>」は造影される</li>
+          <li>脂肪、神経、骨は造影されない</li>
+        </ul>
+      </div>
+
+      <h2>CT画像の解剖構造</h2>
+
+      <h3>副鼻腔</h3>
+      <table>
+        <tr>
+          <th>副鼻腔</th>
+          <th>位置</th>
+        </tr>
+        <tr>
+          <td><span class="key">前頭洞</span></td>
+          <td>前頭骨内（眉の上方）</td>
+        </tr>
+        <tr>
+          <td><span class="key">篩骨洞</span></td>
+          <td>篩骨内（眼窩内側）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">上顎洞</span></td>
+          <td>上顎骨内（最大の副鼻腔）</td>
+        </tr>
+        <tr>
+          <td><span class="key">蝶形骨洞</span></td>
+          <td>蝶形骨内（最後方）</td>
+        </tr>
+      </table>
+
+      <h3>頭蓋底の孔</h3>
+      <table>
+        <tr>
+          <th>孔</th>
+          <th>通過する構造</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">卵円孔</span></td>
+          <td>下顎神経（V3）</td>
+        </tr>
+        <tr>
+          <td><span class="key">棘孔</span></td>
+          <td>中硬膜動脈</td>
+        </tr>
+        <tr>
+          <td><span class="key">正円孔</span></td>
+          <td>上顎神経（V2）</td>
+        </tr>
+        <tr>
+          <td><span class="key">眼窩下管</span></td>
+          <td>眼窩下神経・血管</td>
+        </tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">106C85</div>
+        <p>造影CTで造影効果が顕著なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 顎下腺<br>
+          b 外頸動脈<br>
+          c 頰脂肪体<br>
+          d 下顎神経<br>
+          e 下顎骨骨皮質
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】造影効果 = <span class="highlight">血流が豊富な組織</span>。<br>
+        a：<span class="highlight">顎下腺 → 唾液腺は血流豊富</span> ○<br>
+        b：<span class="highlight">外頸動脈 → 血管そのもの</span> ○<br>
+        c：頰脂肪体 → <span class="caution">脂肪は血流少ない</span> ×<br>
+        d：下顎神経 → <span class="caution">神経は造影されにくい</span> ×<br>
+        e：下顎骨骨皮質 → <span class="caution">骨は造影されない</span> ×</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A122</div>
+        <p>水平断CTと再構成CTで矢印が示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 前頭洞<br>
+          b 篩骨洞<br>
+          c 鼻腔<br>
+          d 上顎洞<br>
+          e 蝶形骨洞
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】副鼻腔のなかで最大なのは<span class="highlight">上顎洞</span>。上顎骨内に位置し、CTで大きな低吸収域（黒）として描出される。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>CT値：水 = <span class="highlight">0</span>、空気 = <span class="highlight">-1,000</span></li>
+          <li>造影効果 = <span class="highlight">血流豊富な組織</span>（血管、腺組織）</li>
+          <li>脂肪・神経・骨は造影されない</li>
+          <li>副鼻腔の位置関係、頭蓋底の孔を把握</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

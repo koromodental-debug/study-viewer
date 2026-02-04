@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>過換気症候群 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 歯科治療中の全身的偶発症</span>
+    <h1>過換気症候群</h1>
+    <div class="container">
+
+      <h2>定義・病態</h2>
+      <p><span class="key">過換気症候群</span>は、発作性の過呼吸と呼吸困難、テタニー様症状、意識障害、動悸など多彩な症状を呈する機能的疾患である。</p>
+
+      <h3>発症機序</h3>
+      <ol>
+        <li>不安や恐怖により<span class="key">自律神経</span>（交感神経）の興奮が高まる</li>
+        <li>血中<span class="key">カテコールアミン</span>濃度が上昇</li>
+        <li>心悸亢進、胸部圧迫感、発汗、興奮などの症状が出現</li>
+        <li>呼吸の深さと回数が増大（<span class="key">過呼吸</span>）</li>
+        <li><span class="highlight">PaCO₂低下</span> → <span class="highlight">呼吸性アルカローシス</span></li>
+        <li>脳血管収縮・脳血流減少 → 脳の低酸素状態</li>
+        <li>症状が不安を増幅し<span class="caution">悪循環</span>となる</li>
+      </ol>
+
+      <div class="point-box">
+        <div class="point-box-title">テタニー症状の機序</div>
+        <ul>
+          <li>血液pHがアルカリ性に傾く → <span class="key">イオン化Ca²⁺</span>が低下</li>
+          <li>神経・筋の興奮性が亢進 → テタニー型痙攣、carpal spasm</li>
+          <li>総Ca濃度は正常だが、イオン化Caのみ低下する点に注意</li>
+        </ul>
+      </div>
+
+      <h2>誘発要因</h2>
+      <ul>
+        <li><span class="key">精神的ストレス</span>：歯科恐怖、不安、緊張</li>
+        <li>激しい運動と疲労</li>
+        <li>温冷刺激、注射や処置時の疼痛</li>
+        <li>若年女性に多い（神経症的傾向）</li>
+      </ul>
+
+      <h2>症状</h2>
+
+      <h3>自覚症状</h3>
+      <ul>
+        <li>呼吸困難（息が吸えない感じ）</li>
+        <li><span class="key">四肢のしびれ感</span></li>
+        <li>頭重感、めまい</li>
+        <li>心悸亢進</li>
+        <li>腹部膨満感</li>
+        <li><span class="key">死の恐怖感</span></li>
+      </ul>
+
+      <h3>他覚症状・所見</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>所見</th>
+        </tr>
+        <tr>
+          <td>呼吸</td>
+          <td><span class="highlight">過呼吸</span>（深く速い呼吸）</td>
+        </tr>
+        <tr>
+          <td>脈拍</td>
+          <td><span class="highlight">頻脈</span>（徐脈ではない！）</td>
+        </tr>
+        <tr>
+          <td>血圧</td>
+          <td>正常〜やや上昇</td>
+        </tr>
+        <tr>
+          <td>神経・筋</td>
+          <td>四肢硬直、<span class="key">テタニー型痙攣</span>、<span class="key">carpal spasm</span>（助産師手位）</td>
+        </tr>
+        <tr>
+          <td>血液ガス</td>
+          <td>PaCO₂↓、pH↑（呼吸性アルカローシス）、イオン化Ca↓</td>
+        </tr>
+        <tr>
+          <td>心電図</td>
+          <td>QT延長、ST軽度低下、T波扁平化（一過性）</td>
+        </tr>
+        <tr>
+          <td>SpO₂</td>
+          <td><span class="caution">正常〜上昇</span>（低下しない）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">血管迷走神経反射との鑑別</div>
+        <ul>
+          <li>過換気症候群：<span class="highlight">頻脈</span>、血圧正常〜↑、SpO₂正常、テタニー</li>
+          <li>血管迷走神経反射：<span class="caution">徐脈</span>、血圧↓、SpO₂↓、顔面蒼白</li>
+        </ul>
+      </div>
+
+      <h2>治療・対応</h2>
+
+      <h3>初期対応</h3>
+      <table>
+        <tr>
+          <th>対応</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>精神的安静</td>
+          <td>安心させる、意識的に呼吸を止めるよう指示</td>
+        </tr>
+        <tr>
+          <td>息こらえ</td>
+          <td>換気回数を減少させる</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">紙袋再呼吸</span></td>
+          <td>ビニール袋や紙袋で呼気を再呼吸 → PaCO₂低下を防ぐ</td>
+        </tr>
+      </table>
+
+      <h3>薬物療法</h3>
+      <p>初期対応で著効しない場合に使用する。</p>
+      <table>
+        <tr>
+          <th>薬物</th>
+          <th>投与法</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">ジアゼパム</span></td>
+          <td>5-10mg 静注</td>
+          <td>抗不安作用、鎮静作用</td>
+        </tr>
+        <tr>
+          <td>ミダゾラム</td>
+          <td>2-5mg 静注</td>
+          <td>抗不安作用、鎮静作用</td>
+        </tr>
+      </table>
+      <p class="note">※ベンゾジアゼピン系薬剤が第一選択</p>
+
+      <div class="point-box">
+        <div class="point-box-title">注意：紙袋再呼吸の限界</div>
+        <ul>
+          <li>紙袋再呼吸は<span class="caution">低酸素血症を引き起こすリスク</span>がある</li>
+          <li>他の疾患（肺塞栓症など）の除外が必要</li>
+          <li>最近は積極的には推奨されていない</li>
+        </ul>
+      </div>
+
+      <h2>予防</h2>
+      <ul>
+        <li>患者との信頼関係構築</li>
+        <li><span class="key">静脈内鎮静法</span>の積極的活用</li>
+        <li>亜酸化窒素吸入鎮静法</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104A62</div>
+        <p>過換気症候群の発作時に有用な治療薬はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ジアゼパム<br>
+          b アドレナリン<br>
+          c リドカイン塩酸塩<br>
+          d ニカルジピン塩酸塩<br>
+          e ヒドロコルチゾンコハク酸エステルナトリウム
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】過換気症候群は不安・恐怖が誘因であり、<span class="key">ベンゾジアゼピン系</span>の<span class="key">ジアゼパム</span>が抗不安・鎮静作用で有効。アドレナリンはアナフィラキシー、リドカインは不整脈、ニカルジピンは高血圧、ヒドロコルチゾンは副腎不全・アレルギーに用いる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A60</div>
+        <p>アルカローシスを生じるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 嘔吐<br>
+          b 下痢<br>
+          c 窒息<br>
+          d 腎不全<br>
+          e 過換気症候群
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】<span class="key">過換気症候群</span>は過呼吸によるCO₂排出過多で<span class="key">呼吸性アルカローシス</span>。嘔吐は胃酸（HCl）喪失で<span class="key">代謝性アルカローシス</span>。下痢はHCO₃⁻喪失で代謝性アシドーシス、窒息・腎不全もアシドーシスとなる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B22</div>
+        <p>徐脈を呈するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 心室細動<br>
+          b 過換気症候群<br>
+          c 洞不全症候群<br>
+          d 血管迷走神経反射<br>
+          e 甲状腺機能亢進症
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】<span class="caution">過換気症候群は頻脈</span>を呈する（交感神経優位のため）。徐脈を呈するのは洞不全症候群（刺激伝導障害）と血管迷走神経反射（迷走神経緊張）。甲状腺機能亢進症は代謝亢進で頻脈となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D32</div>
+        <p>パルスオキシメータが症状の検出に有用なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 上気道閉塞<br>
+          b 異常絞扼反射<br>
+          c 過換気症候群<br>
+          d クモ膜下出血<br>
+          e 血管迷走神経反射
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】パルスオキシメータはSpO₂低下を検出する。<span class="caution">過換気症候群はSpO₂が低下しない</span>（むしろ正常〜上昇）ため不正解。上気道閉塞は換気障害、血管迷走神経反射は脳血流低下に伴いSpO₂が低下する。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>病態：過呼吸 → PaCO₂↓ → <span class="highlight">呼吸性アルカローシス</span></li>
+          <li>症状：<span class="key">テタニー</span>（carpal spasm）、四肢しびれ、<span class="highlight">頻脈</span></li>
+          <li>SpO₂：<span class="caution">低下しない</span>（血管迷走神経反射との鑑別点）</li>
+          <li>治療：紙袋再呼吸、<span class="highlight">ジアゼパム</span>（ベンゾジアゼピン系）</li>
+          <li>アルカローシス：過換気症候群＋嘔吐</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

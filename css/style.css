@@ -16312,3 +16312,1067 @@ body.is-practice .close-accordion-pill {
 [data-theme="dark"] .table-deck-item {
   background: var(--bg-tertiary);
 }
+
+/* ===== 統合解説スタイル ===== */
+.integrated-explanation {
+  margin-top: 16px;
+}
+
+.integrated-section {
+  margin-bottom: 16px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.integrated-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--bg-color);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.section-icon {
+  font-size: 16px;
+}
+
+.integrated-section-content {
+  padding: 16px;
+  background: var(--card-bg, #fff);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-color);
+  white-space: pre-wrap;
+}
+
+/* アプローチセクション */
+.approach-section .integrated-section-title {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.approach-section .integrated-section-content {
+  background: #f8fbff;
+  border-left: 3px solid #1976d2;
+}
+
+/* 画像診断セクション */
+.image-diagnosis-section .integrated-section-title {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.image-diagnosis-section .integrated-section-content {
+  background: #fffbf5;
+  border-left: 3px solid #ff9800;
+}
+
+.image-diagnosis-item {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.image-diagnosis-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.image-diagnosis-label {
+  display: inline-block;
+  min-width: 24px;
+  font-weight: 700;
+  color: #e65100;
+  margin-right: 8px;
+}
+
+.image-diagnosis-text {
+  color: var(--text-color);
+}
+
+/* 選択肢解説セクション */
+.choices-section .integrated-section-title {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.choices-section .integrated-section-content {
+  background: #faf8fc;
+  border-left: 3px solid #9c27b0;
+  padding: 12px;
+}
+
+.choice-explanation-item {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: var(--card-bg, #fff);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.choice-explanation-item:last-child {
+  margin-bottom: 0;
+}
+
+.choice-explanation-item.correct {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.choice-explanation-item.incorrect {
+  background: #fff;
+  border-color: var(--border-color);
+}
+
+.choice-exp-marker {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.choice-explanation-item.correct .choice-exp-marker {
+  background: #4caf50;
+  color: #fff;
+}
+
+.choice-explanation-item.incorrect .choice-exp-marker {
+  background: #e0e0e0;
+  color: #757575;
+}
+
+.choice-exp-key {
+  flex-shrink: 0;
+  width: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.choice-exp-text {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* ダークモード対応 */
+[data-theme="dark"] .approach-section .integrated-section-title {
+  background: rgba(25, 118, 210, 0.2);
+  color: #64b5f6;
+}
+
+[data-theme="dark"] .approach-section .integrated-section-content {
+  background: rgba(25, 118, 210, 0.1);
+  border-left-color: #64b5f6;
+}
+
+[data-theme="dark"] .image-diagnosis-section .integrated-section-title {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ffb74d;
+}
+
+[data-theme="dark"] .image-diagnosis-section .integrated-section-content {
+  background: rgba(255, 152, 0, 0.1);
+  border-left-color: #ffb74d;
+}
+
+[data-theme="dark"] .image-diagnosis-label {
+  color: #ffb74d;
+}
+
+[data-theme="dark"] .choices-section .integrated-section-title {
+  background: rgba(156, 39, 176, 0.2);
+  color: #ce93d8;
+}
+
+[data-theme="dark"] .choices-section .integrated-section-content {
+  background: rgba(156, 39, 176, 0.1);
+  border-left-color: #ce93d8;
+}
+
+[data-theme="dark"] .choice-explanation-item {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .choice-explanation-item.correct {
+  background: rgba(76, 175, 80, 0.15);
+  border-color: #4caf50;
+}
+
+[data-theme="dark"] .choice-explanation-item.incorrect .choice-exp-marker {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+}
+
+/* ===== 思考プロセス型解説 ===== */
+.thinking-explanation {
+  margin-bottom: 16px;
+}
+
+.thinking-section {
+  margin-bottom: 12px;
+}
+
+.thinking-section:last-child {
+  margin-bottom: 0;
+}
+
+.thinking-section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-color, #1d1d1f);
+  margin-bottom: 6px;
+}
+
+.thinking-icon {
+  font-size: 14px;
+}
+
+.thinking-section-content {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-color, #1d1d1f);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.thinking-process .thinking-section-content {
+  background: #f0f7ff;
+  border-left: 3px solid var(--accent, #007AFF);
+}
+
+.core-knowledge .thinking-section-content {
+  background: #f0faf0;
+  border-left: 3px solid #34c759;
+}
+
+.trap-point .thinking-section-content {
+  background: #fff8f0;
+  border-left: 3px solid #ff9500;
+}
+
+/* ダークモード */
+[data-theme="dark"] .thinking-process .thinking-section-content {
+  background: rgba(0, 122, 255, 0.1);
+  border-left-color: var(--accent);
+}
+
+[data-theme="dark"] .core-knowledge .thinking-section-content {
+  background: rgba(52, 199, 89, 0.1);
+  border-left-color: #34c759;
+}
+
+[data-theme="dark"] .trap-point .thinking-section-content {
+  background: rgba(255, 149, 0, 0.1);
+  border-left-color: #ff9500;
+}
+
+/* ===== 関連トピックリンク（過去問カード内） ===== */
+.related-topics-container {
+  margin-top: 16px;
+}
+
+.related-topics-section {
+  border-top: 1px solid var(--border-color, #d2d2d7);
+  padding-top: 14px;
+}
+
+.related-topics-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted, #86868b);
+  margin-bottom: 10px;
+}
+
+.related-topics-header svg {
+  color: var(--accent, #007AFF);
+  flex-shrink: 0;
+}
+
+.related-topics-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.related-topic-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--bg-secondary, #f5f5f7);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+  color: var(--text-color, #1d1d1f);
+  transition: background 0.15s, transform 0.1s;
+  width: 100%;
+}
+
+.related-topic-link:hover {
+  background: var(--hover-color, #e8e8ed);
+}
+
+.related-topic-link:active {
+  transform: scale(0.98);
+}
+
+.related-topic-subject {
+  padding: 2px 8px;
+  background: var(--accent, #007AFF);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.related-topic-title {
+  flex: 1;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.related-topic-arrow {
+  color: var(--text-muted, #86868b);
+  flex-shrink: 0;
+}
+
+/* ダークモード */
+[data-theme="dark"] .related-topic-link {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .related-topic-link:hover {
+  background: var(--hover-color);
+}
+
+[data-theme="dark"] .related-topic-subject {
+  background: var(--accent);
+}
+
+/* ==============================
+   弱点分析UI
+   ============================== */
+
+.weakness-analysis-container {
+  padding: 0;
+}
+
+.weakness-analysis {
+  position: relative;
+}
+
+/* 戻るボタン */
+.weakness-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--system-blue, #0A84FF);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 12px;
+}
+
+.weakness-back-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* セクションタイトル */
+.weakness-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted, #666);
+  margin: 20px 0 12px;
+}
+
+.weakness-section-title:first-child {
+  margin-top: 0;
+}
+
+/* 全体サマリー */
+.weakness-overall {
+  background: var(--card-bg, #fff);
+  border-radius: var(--radius-md, 12px);
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.weakness-overall-rate {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1;
+}
+
+.weakness-rate-unit {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.weakness-overall-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 4px 0 16px;
+}
+
+.weakness-overall-counts {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* プログレスバー */
+.weakness-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--border-color, #e8e8e8);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.weakness-bar-sm {
+  height: 6px;
+}
+
+.weakness-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* 科目カード */
+.weakness-subject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weakness-subject-card {
+  background: var(--card-bg, #fff);
+  border-radius: var(--radius-md, 12px);
+  padding: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.weakness-subject-card:active {
+  background: var(--border-color, #e8e8e8);
+}
+
+.weakness-subject-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.weakness-subject-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.weakness-subject-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.weakness-rate-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.weakness-subject-counts {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.weakness-subject-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted, #86868b);
+}
+
+/* バッジ */
+.weakness-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.weakness-badge.red {
+  background: rgba(229, 34, 34, 0.12);
+  color: #d32f2f;
+}
+
+.weakness-badge.yellow {
+  background: rgba(255, 159, 10, 0.12);
+  color: #e88800;
+}
+
+.weakness-badge.green {
+  background: rgba(52, 199, 89, 0.12);
+  color: #2e9e4e;
+}
+
+.weakness-badge.grey {
+  background: var(--border-color, #e8e8e8);
+  color: var(--text-muted);
+}
+
+/* 未挑戦 */
+.weakness-unattempted-title {
+  margin-top: 28px;
+}
+
+.weakness-unattempted {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.weakness-unattempted:active {
+  background: var(--card-bg, #fff);
+}
+
+/* 空状態 */
+.weakness-empty {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.weakness-empty-icon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  opacity: 0.4;
+}
+
+.weakness-empty-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.weakness-empty-hint {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* トピック別ドリルダウン */
+.weakness-detail-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+
+.weakness-topic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weakness-topic-row {
+  background: var(--card-bg, #fff);
+  border-radius: var(--radius-md, 12px);
+  padding: 14px 16px;
+}
+
+.weakness-topic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.weakness-topic-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+  flex: 1;
+  margin-right: 12px;
+}
+
+.weakness-topic-rate {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-color);
+  flex-shrink: 0;
+}
+
+.weakness-topic-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.weakness-topic-counts {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.weakness-material-link {
+  font-size: 13px;
+  color: var(--system-blue, #0A84FF);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.weakness-material-link:hover {
+  text-decoration: underline;
+}
+
+/* 間違えた問題コード */
+.weakness-wrong-codes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color, #e8e8e8);
+}
+
+.weakness-wrong-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.weakness-code-link {
+  display: inline-block;
+  padding: 3px 8px;
+  background: rgba(229, 34, 34, 0.08);
+  color: #d32f2f;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: -apple-system, system-ui, monospace;
+}
+
+.weakness-code-link:hover {
+  background: rgba(229, 34, 34, 0.16);
+}
+
+/* ==============================
+   弱点分析 ダークモード
+   ============================== */
+
+[data-theme="dark"] .weakness-overall {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .weakness-subject-card {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .weakness-subject-card:active {
+  background: var(--border-color);
+}
+
+[data-theme="dark"] .weakness-unattempted:active {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .weakness-topic-row {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .weakness-badge.red {
+  background: rgba(229, 34, 34, 0.2);
+  color: #ef5350;
+}
+
+[data-theme="dark"] .weakness-badge.yellow {
+  background: rgba(255, 159, 10, 0.2);
+  color: #ffb74d;
+}
+
+[data-theme="dark"] .weakness-badge.green {
+  background: rgba(52, 199, 89, 0.2);
+  color: #66bb6a;
+}
+
+[data-theme="dark"] .weakness-badge.grey {
+  background: var(--border-color);
+}
+
+[data-theme="dark"] .weakness-code-link {
+  background: rgba(229, 34, 34, 0.15);
+  color: #ef5350;
+}
+
+[data-theme="dark"] .weakness-code-link:hover {
+  background: rgba(229, 34, 34, 0.25);
+}
+
+[data-theme="dark"] .weakness-wrong-codes {
+  border-top-color: var(--border-color);
+}
+
+/* ダークモード（システム設定ベース） */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .weakness-overall {
+    background: var(--card-bg);
+  }
+  :root:not([data-theme="light"]) .weakness-subject-card {
+    background: var(--card-bg);
+  }
+  :root:not([data-theme="light"]) .weakness-subject-card:active {
+    background: var(--border-color);
+  }
+  :root:not([data-theme="light"]) .weakness-unattempted:active {
+    background: var(--card-bg);
+  }
+  :root:not([data-theme="light"]) .weakness-topic-row {
+    background: var(--card-bg);
+  }
+  :root:not([data-theme="light"]) .weakness-badge.red {
+    background: rgba(229, 34, 34, 0.2);
+    color: #ef5350;
+  }
+  :root:not([data-theme="light"]) .weakness-badge.yellow {
+    background: rgba(255, 159, 10, 0.2);
+    color: #ffb74d;
+  }
+  :root:not([data-theme="light"]) .weakness-badge.green {
+    background: rgba(52, 199, 89, 0.2);
+    color: #66bb6a;
+  }
+  :root:not([data-theme="light"]) .weakness-badge.grey {
+    background: var(--border-color);
+  }
+  :root:not([data-theme="light"]) .weakness-code-link {
+    background: rgba(229, 34, 34, 0.15);
+    color: #ef5350;
+  }
+  :root:not([data-theme="light"]) .weakness-wrong-codes {
+    border-top-color: var(--border-color);
+  }
+}
+
+/* ==============================
+   フラッシュカード 分析タブ
+   ============================== */
+
+.analysis-container {
+  padding: 4px 0;
+}
+
+.analysis-overall {
+  margin-bottom: 16px;
+}
+
+.analysis-overall-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted, #666);
+  margin-bottom: 8px;
+}
+
+/* スタックバー */
+.analysis-stacked-bar {
+  display: flex;
+  width: 100%;
+  height: 8px;
+  background: var(--border-color, #e8e8e8);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.analysis-bar-segment {
+  height: 100%;
+  transition: width 0.6s ease;
+}
+
+.analysis-bar-segment.again {
+  background: #ff3b30;
+}
+
+.analysis-bar-segment.learning {
+  background: #ff9500;
+}
+
+.analysis-bar-segment.mastered {
+  background: #34c759;
+}
+
+.analysis-bar-empty {
+  width: 100%;
+  height: 100%;
+}
+
+/* レジェンド */
+.analysis-legend {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.analysis-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted, #666);
+}
+
+.analysis-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.analysis-legend-dot.again { background: #ff3b30; }
+.analysis-legend-dot.learning { background: #ff9500; }
+.analysis-legend-dot.mastered { background: #34c759; }
+
+/* セクションタイトル */
+.analysis-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted, #666);
+  margin: 12px 0 8px;
+}
+
+/* 科目カード */
+.analysis-subject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.analysis-subject-card {
+  background: var(--card-bg, #fff);
+  border-radius: var(--radius-md, 12px);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.analysis-subject-card:active {
+  background: var(--border-color, #e8e8e8);
+}
+
+.analysis-subject-card.unattempted {
+  opacity: 0.7;
+}
+
+.analysis-subject-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.analysis-subject-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.analysis-subject-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.analysis-subject-counts {
+  font-size: 12px;
+  color: var(--text-muted, #666);
+}
+
+.analysis-subject-arrow {
+  font-size: 18px;
+  color: var(--text-muted, #86868b);
+  font-weight: 300;
+}
+
+/* 戻るボタン */
+.analysis-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: var(--system-blue, #0A84FF);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 0;
+  margin-bottom: 8px;
+}
+
+.analysis-back-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ドリルダウンタイトル */
+.analysis-detail-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+
+/* トピック一覧 */
+.analysis-topic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.analysis-topic-row {
+  background: var(--card-bg, #fff);
+  border-radius: var(--radius-md, 12px);
+  padding: 14px 16px;
+}
+
+.analysis-topic-row.unattempted {
+  opacity: 0.7;
+}
+
+.analysis-topic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.analysis-topic-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  flex: 1;
+  margin-right: 10px;
+}
+
+.analysis-topic-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.analysis-topic-counts {
+  font-size: 12px;
+  color: var(--text-muted, #666);
+}
+
+/* 「学習する」ボタン */
+.analysis-study-btn {
+  background: none;
+  border: none;
+  color: var(--system-blue, #0A84FF);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0;
+  white-space: nowrap;
+}
+
+.analysis-study-btn:active {
+  opacity: 0.6;
+}
+
+/* 空状態 */
+.analysis-empty {
+  text-align: center;
+  padding: 36px 24px;
+}
+
+.analysis-empty-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  opacity: 0.4;
+}
+
+.analysis-empty-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 6px;
+}
+
+.analysis-empty-hint {
+  font-size: 14px;
+  color: var(--text-muted, #666);
+}
+
+/* ==============================
+   分析タブ ダークモード
+   ============================== */
+
+[data-theme="dark"] .analysis-subject-card {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .analysis-subject-card:active {
+  background: var(--border-color);
+}
+
+[data-theme="dark"] .analysis-topic-row {
+  background: var(--card-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .analysis-subject-card {
+    background: var(--card-bg);
+  }
+  :root:not([data-theme="light"]) .analysis-subject-card:active {
+    background: var(--border-color);
+  }
+  :root:not([data-theme="light"]) .analysis-topic-row {
+    background: var(--card-bg);
+  }
+}

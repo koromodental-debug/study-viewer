@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>外部照射 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; vertical-align: top; }
+    .question-images-single img { max-width: 70%; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線治療</span>
+    <h1>外部照射</h1>
+    <div class="container">
+
+      <h2>外部照射とは</h2>
+      <p>外部照射装置を用いて体の外部から放射線を照射する方法。組織内照射（密封小線源治療）と対比される。</p>
+
+      <h2>外部照射法の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>方法</th>
+        </tr>
+        <tr>
+          <td><span class="key">外部照射法</span></td>
+          <td>エックス線照射、電子線照射、<span class="highlight">粒子線治療</span>、<span class="highlight">IMRT</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">密封小線源治療</span></td>
+          <td>組織内照射、腔内照射、モールド照射</td>
+        </tr>
+      </table>
+
+      <h2>外部照射装置</h2>
+      <h3>リニアック（直線加速装置）</h3>
+      <p><span class="key">Linear accelerator</span>の略。外部照射に使用される代表的な治療装置。</p>
+      <ul>
+        <li><span class="highlight">エックス線と電子線</span>を発生させることができる</li>
+        <li>精度の高いコリメータ（絞り）で照射野を調整</li>
+        <li>多方向から照射可能（回転照射）</li>
+      </ul>
+
+      <h2>外部照射に使用する放射線</h2>
+      <table>
+        <tr>
+          <th>放射線</th>
+          <th>特徴</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td><span class="key">エックス線</span></td>
+          <td>体表近くで最大、深部で徐々に低下</td>
+          <td>深部腫瘍、広範囲照射</td>
+        </tr>
+        <tr>
+          <td><span class="key">電子線</span></td>
+          <td>一定深度まで高線量、その後急激に低下</td>
+          <td><span class="highlight">表在性腫瘍</span>（口唇癌など）</td>
+        </tr>
+        <tr>
+          <td><span class="key">陽子線</span></td>
+          <td>ブラッグピーク（深部で急上昇）</td>
+          <td>深部腫瘍、正常組織保護</td>
+        </tr>
+        <tr>
+          <td><span class="key">重粒子線</span></td>
+          <td>ブラッグピーク＋高LET</td>
+          <td>難治性腫瘍</td>
+        </tr>
+        <tr>
+          <td class="caution">アルファ線</td>
+          <td>透過力が弱い</td>
+          <td class="caution">外部照射には使用しない</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">ブラッグピーク</div>
+        <p><span class="highlight">陽子線・重粒子線</span>は深部で線量が急激に上昇し、その後急激に低下する特徴的な曲線（ブラッグピーク）を示す。</p>
+        <p>→ 腫瘍に高線量を集中させ、周囲正常組織への被曝を最小限に抑えられる</p>
+      </div>
+
+      <h2>IMRT（強度変調放射線治療）</h2>
+      <p><span class="key">Intensity Modulated Radiation Therapy</span>の略。</p>
+      <ul>
+        <li>X線の<span class="highlight">強度を連続的に変化</span>させながら照射</li>
+        <li>腫瘍に高線量を集中させ、周囲正常組織を保護</li>
+        <li>複雑な形状の腫瘍にも対応可能</li>
+        <li>治療計画にCTを使用（3次元的な線量分布を計算）</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113C26</div>
+        <p>放射線療法で外部照射法はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 腔内照射法<br>
+          b 粒子線治療<br>
+          c 組織内照射法<br>
+          d モールド照射法<br>
+          e 強度変調放射線治療
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】外部照射法は体の外部から照射する方法。<span class="highlight">粒子線治療</span>（陽子線・重粒子線）と<span class="highlight">強度変調放射線治療（IMRT）</span>は外部照射法（b○、e○）。腔内照射・組織内照射・モールド照射は密封小線源治療（a×、c×、d×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A28</div>
+        <p>表在性の口唇扁平上皮癌に対する放射線外部照射で用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 電子線<br>
+          b 陽子線<br>
+          c 重粒子線<br>
+          d アルファ線<br>
+          e エックス線
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】表在性腫瘍には<span class="highlight">電子線</span>と<span class="highlight">エックス線</span>が適応（a○、e○）。これらはリニアックで発生可能。陽子線・重粒子線は深部腫瘍向き（b×、c×）。<span class="caution">アルファ線は透過力が弱く外部照射には使用しない</span>（d×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A60</div>
+        <p>治療に用いる放射線の深部線量率を図に示す。<br>この図の曲線を示すのはどれか。2つ選べ。</p>
+        <div class="question-images question-images-single">
+          <img src="../../../images/114回_Web画像/114A60.png" alt="114A60">
+        </div>
+        <div class="choices">
+          a 電子線<br>
+          b 陽子線<br>
+          c ガンマ線<br>
+          d 重粒子線<br>
+          e エックス線
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】図は深部で線量が急激に上昇し、その後急激に低下する<span class="highlight">ブラッグピーク</span>を示している。これは<span class="highlight">陽子線</span>と<span class="highlight">重粒子線</span>の特徴（b○、d○）。電子線は一定深度まで高線量後に急低下、エックス線・ガンマ線は体表近くで最大で徐々に低下（a×、c×、e×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B23</div>
+        <p>癌治療に用いる外部照射装置（別冊No.3）を別に示す。<br>使用できるのはどれか。2つ選べ。</p>
+        <div class="question-images question-images-single">
+          <img src="../../../images/115回_Web画像/115B23.png" alt="115B23">
+        </div>
+        <div class="choices">
+          a 電子線<br>
+          b 陽子線<br>
+          c 中性子線<br>
+          d アルファ線<br>
+          e エックス線
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】写真は<span class="key">リニアック（直線加速装置）</span>。リニアックでは<span class="highlight">電子線</span>と<span class="highlight">エックス線</span>を発生させることができる（a○、e○）。陽子線・重粒子線は専用の加速器が必要（b×）。中性子線・アルファ線はリニアックでは発生しない（c×、d×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C85</div>
+        <p>口腔癌における術後照射の治療計画時の線量分布（別冊No.21A）、照射野の写真（別冊No.21B）及び治療装置の写真（別冊No.21C）を別に示す。<br>治療法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C85_1.png" alt="109C85_1">
+          <img src="../../../images/109回_Web画像/109C85_2.png" alt="109C85_2">
+        </div>
+        <div class="choices">
+          a 電子線照射<br>
+          b モールド照射<br>
+          c 低線量率組織内照射<br>
+          d 高線量率組織内照射<br>
+          e エックス線外部照射
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】A：CT画像上の線量分布（治療計画）、B：照射野確認写真、C：リニアック。CTによる治療計画とリニアックを使用した<span class="highlight">エックス線外部照射</span>（e○）。組織内照射（c、d）やモールド照射（b）では線源を直接腫瘍に接触させるため、このような治療計画は行わない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

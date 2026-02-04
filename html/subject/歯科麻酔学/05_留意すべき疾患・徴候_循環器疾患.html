@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>循環器疾患 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 留意すべき疾患・徴候</span>
+    <h1>循環器疾患</h1>
+    <div class="container">
+
+      <h2>NYHA分類（心機能の重症度）</h2>
+      <table>
+        <tr>
+          <th>度</th>
+          <th>状態</th>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td>心疾患はあるが、日常生活に制限なし</td>
+        </tr>
+        <tr>
+          <td>II</td>
+          <td>日常生活に軽度制限。安静時は無症状</td>
+        </tr>
+        <tr>
+          <td>III</td>
+          <td>日常生活に著明な制限。安静時は無症状</td>
+        </tr>
+        <tr>
+          <td><span class="caution">IV</span></td>
+          <td>安静時でも心不全症状や狭心症状がある</td>
+        </tr>
+      </table>
+
+      <h2>高血圧症</h2>
+      <h3>血圧の分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>収縮期</th>
+          <th>拡張期</th>
+        </tr>
+        <tr>
+          <td>正常血圧</td>
+          <td>&lt;120</td>
+          <td>&lt;80</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">I度高血圧</span></td>
+          <td>140-159</td>
+          <td>90-99</td>
+        </tr>
+        <tr>
+          <td>II度高血圧</td>
+          <td>160-179</td>
+          <td>100-109</td>
+        </tr>
+        <tr>
+          <td>III度高血圧</td>
+          <td>≥180</td>
+          <td>≥110</td>
+        </tr>
+      </table>
+
+      <h3>高血圧緊急症の対応</h3>
+      <p>歯科治療中に血圧が著しく上昇した場合 → <span class="highlight">ニカルジピン</span>（Ca拮抗薬）静注</p>
+
+      <h2>心不全</h2>
+      <h3>左心不全 vs 右心不全</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td><span class="key">左心不全</span></td>
+          <td><span class="highlight">起坐呼吸</span>、肺うっ血、肺水腫、呼吸困難</td>
+        </tr>
+        <tr>
+          <td><span class="key">右心不全</span></td>
+          <td><span class="highlight">下腿浮腫</span>、<span class="key">静脈怒張</span>、肝腫大</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">起坐呼吸とは</div>
+        <p>仰臥位より<span class="key">座位で呼吸が楽</span>になる症状。就寝後に息苦しくなり、起き上がると楽になる（発作性夜間呼吸困難）。</p>
+      </div>
+
+      <h3>心胸郭比（CTR）</h3>
+      <p><span class="key">胸部X線撮影</span>で評価。正常は50%以下。心不全では<span class="highlight">心陰影の拡大</span>を認める。</p>
+
+      <h2>狭心症</h2>
+      <h3>なぜ頻脈を避けるか</h3>
+      <p>冠動脈への血流は<span class="highlight">拡張期</span>に行われる。頻脈になると<span class="caution">拡張期時間が短縮</span>し、心筋への酸素供給が減少する。</p>
+
+      <h3>ニトログリセリンの作用</h3>
+      <ul>
+        <li><span class="highlight">冠動脈の拡張</span> → 心筋への酸素供給↑</li>
+        <li><span class="highlight">静脈還流量の減少</span>（前負荷↓）</li>
+      </ul>
+
+      <h2>心筋梗塞</h2>
+      <h3>心電図所見</h3>
+      <p>急性心筋梗塞では<span class="highlight">ST上昇</span>を認める。</p>
+      <p class="note">※狭心症ではST低下またはT波逆転</p>
+
+      <h2>不整脈</h2>
+      <h3>心房細動</h3>
+      <p>心房が無秩序に興奮 → 心房内に血栓形成 → <span class="highlight">心原性脳塞栓症</span>の原因となる。</p>
+
+      <h3>徐脈をきたす病態</h3>
+      <ul>
+        <li><span class="key">血管迷走神経反射</span></li>
+        <li><span class="key">洞不全症候群</span></li>
+        <li>房室ブロック</li>
+      </ul>
+
+      <h3>ペースメーカー患者の禁忌</h3>
+      <ul>
+        <li><span class="caution">電気メス</span></li>
+        <li><span class="caution">歯髄電気診</span></li>
+        <li><span class="caution">イオン導入</span></li>
+      </ul>
+
+      <h2>抗血栓療法</h2>
+      <h3>抗血小板薬 vs 抗凝固薬</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>代表薬</th>
+          <th>予防対象</th>
+        </tr>
+        <tr>
+          <td><span class="key">抗血小板薬</span></td>
+          <td>アスピリン、クロピドグレル</td>
+          <td>心筋梗塞、アテローム血栓性脳梗塞</td>
+        </tr>
+        <tr>
+          <td><span class="key">抗凝固薬</span></td>
+          <td>ワルファリン、DOAC</td>
+          <td>心原性脳塞栓症、深部静脈血栓症</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">歯科治療時の対応</div>
+        <ul>
+          <li>抗血小板薬・抗凝固薬は<span class="highlight">継続して抜歯</span>が基本</li>
+          <li>侵襲が大きい場合は内科主治医と連携</li>
+          <li>PT-INRの確認（ワルファリン服用者）</li>
+        </ul>
+      </div>
+
+      <h3>深部静脈血栓症</h3>
+      <p>下肢の静脈に血栓形成 → 血栓が遊離すると<span class="caution">肺塞栓症</span>を起こす。</p>
+      <p>歯科治療中は<span class="key">胸痛</span>・<span class="key">呼吸困難</span>に注意。</p>
+
+      <h2>感染性心内膜炎の予防</h2>
+      <h3>抗菌薬予防投与が必要な患者</h3>
+      <ul>
+        <li><span class="highlight">人工弁置換術後</span></li>
+        <li>感染性心内膜炎の既往</li>
+        <li>先天性心疾患（チアノーゼ性など）</li>
+      </ul>
+      <p>抜歯前に<span class="highlight">アモキシシリン</span>を投与。</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">102B89</div>
+        <p>狭心症を合併する患者の歯科治療で頻脈にさせない理由はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 収縮期血圧が上昇するため<br>
+          b 平均動脈圧が上昇するため<br>
+          c 拡張期血圧が低下するため<br>
+          d 収縮期時間が延長するため<br>
+          e 拡張期時間が短縮するため
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】冠動脈血流は拡張期に行われる。頻脈では拡張期時間が短縮し、心筋への酸素供給が減少する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C59</div>
+        <p>左心不全の症状はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肝腫大<br>
+          b 眼瞼浮腫<br>
+          c 下腿浮腫<br>
+          d 静脈怒張<br>
+          e 起坐呼吸
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】左心不全では肺うっ血により呼吸困難・起坐呼吸が生じる。肝腫大・下腿浮腫・静脈怒張は右心不全の症状。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C63</div>
+        <p>成人におけるI度高血圧（収縮期血圧/拡張期血圧(mmHg)）に分類されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 114/74<br>
+          b 125/74<br>
+          c 135/79<br>
+          d 145/85<br>
+          e 165/90
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】I度高血圧は140-159/90-99 mmHg。145/85はこの範囲に該当。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A62</div>
+        <p>心原性脳塞栓症の原因となる不整脈はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 心室細動<br>
+          b 心室頻拍<br>
+          c 心房細動<br>
+          d 上室性期外収縮<br>
+          e II度房室ブロック（Wenckebach型）
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】心房細動では心房内に血栓が形成され、これが脳に飛ぶと心原性脳塞栓症を起こす。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C56</div>
+        <p>既往歴と歯科治療時の対応の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 腎不全 ――― カリウムの補液<br>
+          b 脳血管障害 ――― 麻痺側での血圧測定<br>
+          c 人工弁置換術後 ――― 抗菌薬予防投与下での抜歯<br>
+          d 抗血小板薬服用 ――― 服用を中止して抜歯<br>
+          e ペースメーカ植込み ――― 電気メスの使用
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】人工弁置換術後は感染性心内膜炎予防のため抗菌薬を予防投与する。抗血小板薬は継続して抜歯、ペースメーカー患者には電気メス禁忌。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

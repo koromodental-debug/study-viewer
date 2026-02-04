@@ -2115,6 +2115,7 @@ const FlashcardModule = (function() {
           <div class="review-tabs">
             <button class="review-tab active" data-tab="progress">カード</button>
             <button class="review-tab" data-tab="today">記録</button>
+            <button class="review-tab" data-tab="analysis">分析</button>
           </div>
           <span class="review-total-count">全 ${overall.again + overall.learning + overall.mastered} 枚</span>
           <div class="review-header-actions">
@@ -2174,6 +2175,11 @@ const FlashcardModule = (function() {
           <button class="today-detail-btn" id="today-progress-detail">
             詳しく見る →
           </button>
+        </div>
+
+        <!-- 分析タブ -->
+        <div class="review-tab-content" id="review-tab-analysis" style="display:none;">
+          <!-- renderAnalysisTab() で動的に生成 -->
         </div>
       </div>
 
@@ -3011,13 +3017,15 @@ const FlashcardModule = (function() {
         // コンテンツの表示切り替え
         const progressContent = document.getElementById('review-tab-progress');
         const todayContent = document.getElementById('review-tab-today');
+        const analysisContent = document.getElementById('review-tab-analysis');
 
-        if (targetTab === 'progress') {
-          if (progressContent) progressContent.style.display = 'block';
-          if (todayContent) todayContent.style.display = 'none';
-        } else if (targetTab === 'today') {
-          if (progressContent) progressContent.style.display = 'none';
-          if (todayContent) todayContent.style.display = 'block';
+        if (progressContent) progressContent.style.display = targetTab === 'progress' ? 'block' : 'none';
+        if (todayContent) todayContent.style.display = targetTab === 'today' ? 'block' : 'none';
+        if (analysisContent) analysisContent.style.display = targetTab === 'analysis' ? 'block' : 'none';
+
+        // 分析タブが選択されたらレンダリング
+        if (targetTab === 'analysis' && analysisContent) {
+          renderAnalysisTab(analysisContent);
         }
       });
     });
@@ -10135,6 +10143,232 @@ const FlashcardModule = (function() {
       saveSession();
     }
   });
+
+  // === 分析タブ ===
+
+  function getAnalysisBadge(again, total) {
+    if (total < 5) return { cls: 'grey', label: '未着手' };
+    const rate = total > 0 ? again / total : 0;
+    if (rate > 0.4) return { cls: 'red', label: '弱点' };
+    if (rate >= 0.2) return { cls: 'yellow', label: '要注意' };
+    return { cls: 'green', label: '得意' };
+  }
+
+  function renderAnalysisStackedBar(again, learning, mastered) {
+    const total = again + learning + mastered;
+    if (total === 0) return '<div class="analysis-stacked-bar"><div class="analysis-bar-empty"></div></div>';
+    const pctAgain = (again / total * 100).toFixed(1);
+    const pctLearning = (learning / total * 100).toFixed(1);
+    const pctMastered = (mastered / total * 100).toFixed(1);
+    return `
+      <div class="analysis-stacked-bar">
+        ${again > 0 ? `<div class="analysis-bar-segment again" style="width:${pctAgain}%"></div>` : ''}
+        ${learning > 0 ? `<div class="analysis-bar-segment learning" style="width:${pctLearning}%"></div>` : ''}
+        ${mastered > 0 ? `<div class="analysis-bar-segment mastered" style="width:${pctMastered}%"></div>` : ''}
+      </div>
+    `;
+  }
+
+  function renderAnalysisTab(containerEl) {
+    const rawSubjects = [...new Set(DATA.map(d => d.subject).filter(Boolean))];
+    const subjects = rawSubjects.sort((a, b) => {
+      const indexA = SUBJECT_ORDER.indexOf(a);
+      const indexB = SUBJECT_ORDER.indexOf(b);
+      return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
+    });
+
+    // 全体統計
+    const overall = getOverallStats();
+    const overallTotal = overall.again + overall.learning + overall.mastered;
+
+    // 科目別統計を収集
+    const subjectDataList = subjects.map(subject => {
+      const stats = getSubjectStats(subject);
+      const total = stats.again + stats.learning + stats.mastered;
+      const badge = getAnalysisBadge(stats.again, total);
+      return { subject, stats, total, badge };
+    }).filter(d => d.total > 0 || DATA.some(t => t.subject === d.subject && (t.qaPath || t.localJsonData)));
+
+    // 弱点順にソート（要復習率の高い順、未着手は最後）
+    const attempted = subjectDataList.filter(d => d.total >= 5);
+    const unattempted = subjectDataList.filter(d => d.total < 5);
+    attempted.sort((a, b) => {
+      const rateA = a.total > 0 ? a.stats.again / a.total : 0;
+      const rateB = b.total > 0 ? b.stats.again / b.total : 0;
+      return rateB - rateA;
+    });
+
+    // 全体プログレスバー
+    const overallBarHtml = renderAnalysisStackedBar(overall.again, overall.learning, overall.mastered);
+
+    // レジェンド
+    const legendHtml = `
+      <div class="analysis-legend">
+        <span class="analysis-legend-item"><span class="analysis-legend-dot again"></span>要復習 ${overall.again}</span>
+        <span class="analysis-legend-item"><span class="analysis-legend-dot learning"></span>定着中 ${overall.learning}</span>
+        <span class="analysis-legend-item"><span class="analysis-legend-dot mastered"></span>習得済 ${overall.mastered}</span>
+      </div>
+    `;
+
+    // 科目カード生成
+    const subjectCardsHtml = attempted.map(d => {
+      const info = SUBJECT_CATEGORIES[d.subject] || { color: '#8E8E93' };
+      return `
+        <div class="analysis-subject-card" data-subject="${escapeHtml(d.subject)}">
+          <div class="analysis-subject-header">
+            <span class="analysis-subject-name" style="border-left: 3px solid ${info.color}; padding-left: 8px;">${escapeHtml(d.subject)}</span>
+            <span class="weakness-badge ${d.badge.cls}">${d.badge.label}</span>
+          </div>
+          ${renderAnalysisStackedBar(d.stats.again, d.stats.learning, d.stats.mastered)}
+          <div class="analysis-subject-footer">
+            <span class="analysis-subject-counts">要復習 ${d.stats.again} / 定着中 ${d.stats.learning} / 習得済 ${d.stats.mastered}</span>
+            <span class="analysis-subject-arrow">›</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // 未着手科目
+    const unattemptedHtml = unattempted.length > 0 ? `
+      <div class="analysis-section-title" style="margin-top: 20px;">未着手</div>
+      ${unattempted.map(d => {
+        const info = SUBJECT_CATEGORIES[d.subject] || { color: '#8E8E93' };
+        const topicCount = DATA.filter(t => t.subject === d.subject && (t.qaPath || t.localJsonData)).length;
+        return `
+          <div class="analysis-subject-card unattempted" data-subject="${escapeHtml(d.subject)}">
+            <div class="analysis-subject-header">
+              <span class="analysis-subject-name" style="border-left: 3px solid ${info.color}; padding-left: 8px;">${escapeHtml(d.subject)}</span>
+              <span class="weakness-badge grey">未着手</span>
+            </div>
+            <div class="analysis-subject-footer">
+              <span class="analysis-subject-counts">${topicCount}デッキ</span>
+              <span class="analysis-subject-arrow">›</span>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    ` : '';
+
+    // 空状態
+    if (overallTotal === 0 && unattempted.length === 0) {
+      containerEl.innerHTML = `
+        <div class="analysis-empty">
+          <div class="analysis-empty-icon">📊</div>
+          <div class="analysis-empty-text">まだ学習データがありません</div>
+          <div class="analysis-empty-hint">カードを学習すると、ここに科目別の習得状況が表示されます</div>
+        </div>
+      `;
+      return;
+    }
+
+    containerEl.innerHTML = `
+      <div class="analysis-container">
+        <div class="analysis-overall">
+          <div class="analysis-overall-label">全体の習得状況（${overallTotal}枚）</div>
+          ${overallBarHtml}
+          ${legendHtml}
+        </div>
+        <div class="analysis-section-title">科目別（弱点順）</div>
+        <div class="analysis-subject-list">
+          ${subjectCardsHtml}
+        </div>
+        ${unattemptedHtml}
+      </div>
+    `;
+
+    // イベントバインド: 科目カードクリック
+    containerEl.querySelectorAll('.analysis-subject-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const subject = card.dataset.subject;
+        renderAnalysisSubjectDetail(containerEl, subject);
+      });
+    });
+  }
+
+  function renderAnalysisSubjectDetail(containerEl, subject) {
+    const info = SUBJECT_CATEGORIES[subject] || { color: '#8E8E93' };
+    const allTopics = DATA.filter(d => d.subject === subject && (d.qaPath || d.localJsonData));
+    const topics = deduplicateTopics(allTopics);
+
+    // トピック別統計を収集
+    const topicDataList = topics.map(topic => {
+      const stats = getTopicStats(topic.id);
+      const total = stats.again + stats.learning + stats.mastered;
+      const badge = getAnalysisBadge(stats.again, total);
+      return { topic, stats, total, badge };
+    });
+
+    // 弱点順にソート
+    const attempted = topicDataList.filter(d => d.total >= 5);
+    const unattempted = topicDataList.filter(d => d.total < 5);
+    attempted.sort((a, b) => {
+      const rateA = a.total > 0 ? a.stats.again / a.total : 0;
+      const rateB = b.total > 0 ? b.stats.again / b.total : 0;
+      return rateB - rateA;
+    });
+
+    const allSorted = [...attempted, ...unattempted];
+
+    const topicRowsHtml = allSorted.map(d => {
+      const title = d.topic.title.replace(/^[ア-オ]_/, '');
+      const isUnattempted = d.total < 5;
+      return `
+        <div class="analysis-topic-row ${isUnattempted ? 'unattempted' : ''}">
+          <div class="analysis-topic-header">
+            <span class="analysis-topic-name">${escapeHtml(title)}</span>
+            <span class="weakness-badge ${d.badge.cls}">${d.badge.label}</span>
+          </div>
+          ${d.total > 0 ? renderAnalysisStackedBar(d.stats.again, d.stats.learning, d.stats.mastered) : ''}
+          <div class="analysis-topic-footer">
+            <span class="analysis-topic-counts">${d.total > 0 ? `要復習 ${d.stats.again} / 定着中 ${d.stats.learning} / 習得済 ${d.stats.mastered}` : '未学習'}</span>
+            <button class="analysis-study-btn" data-topic-id="${escapeHtml(d.topic.id)}">学習する ›</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // 科目全体の統計
+    const subjectStats = getSubjectStats(subject);
+
+    containerEl.innerHTML = `
+      <div class="analysis-container">
+        <button class="analysis-back-btn" id="analysis-back-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          科目一覧
+        </button>
+        <div class="analysis-detail-title" style="border-left: 3px solid ${info.color}; padding-left: 10px;">${escapeHtml(subject)}</div>
+        <div class="analysis-overall" style="margin-bottom: 16px;">
+          ${renderAnalysisStackedBar(subjectStats.again, subjectStats.learning, subjectStats.mastered)}
+          <div class="analysis-legend" style="margin-top: 8px;">
+            <span class="analysis-legend-item"><span class="analysis-legend-dot again"></span>要復習 ${subjectStats.again}</span>
+            <span class="analysis-legend-item"><span class="analysis-legend-dot learning"></span>定着中 ${subjectStats.learning}</span>
+            <span class="analysis-legend-item"><span class="analysis-legend-dot mastered"></span>習得済 ${subjectStats.mastered}</span>
+          </div>
+        </div>
+        <div class="analysis-topic-list">
+          ${topicRowsHtml}
+        </div>
+      </div>
+    `;
+
+    // 戻るボタン
+    const backBtn = containerEl.querySelector('#analysis-back-btn');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => renderAnalysisTab(containerEl));
+    }
+
+    // 「学習する」ボタン
+    containerEl.querySelectorAll('.analysis-study-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const topicId = btn.dataset.topicId;
+        state.isReviewMode = false;
+        await loadTopic(topicId, state.shuffleEnabled);
+      });
+    });
+  }
 
   // === 公開API ===
   return {

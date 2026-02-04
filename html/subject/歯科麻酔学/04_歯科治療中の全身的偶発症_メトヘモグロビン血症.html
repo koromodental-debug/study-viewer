@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>メトヘモグロビン血症 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 歯科治療中の全身的偶発症</span>
+    <h1>メトヘモグロビン血症</h1>
+    <div class="container">
+
+      <h2>定義・病態</h2>
+      <p><span class="key">メトヘモグロビン（MetHb）</span>とは、ヘモグロビン中の<span class="highlight">Fe²⁺（2価鉄）がFe³⁺（3価鉄）に酸化</span>されたものである。酸素結合能が失われるため、<span class="key">酸素運搬能力が低下</span>する。</p>
+      <p>通常、血中MetHb濃度は1-2%未満に維持されているが、これが上昇した状態を<span class="key">メトヘモグロビン血症</span>という。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">なぜ酸素を運べないのか</div>
+        <ul>
+          <li>Fe³⁺は酸素と結合できない</li>
+          <li>さらに残りの正常なヘモグロビンも酸素を離しにくくなる（酸素解離曲線の左方移動）</li>
+          <li>結果として組織への酸素供給が著しく低下する</li>
+        </ul>
+      </div>
+
+      <h2>原因薬物</h2>
+      <p>歯科領域で問題となるのは<span class="key">局所麻酔薬</span>によるメトヘモグロビン血症である。</p>
+
+      <h3>主な原因薬物</h3>
+      <table>
+        <tr>
+          <th>薬物</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">プリロカイン</span></td>
+          <td>代謝産物の<span class="key">オルトトルイジン</span>がMetHbを生成。大量投与で発症リスク増</td>
+        </tr>
+        <tr>
+          <td><span class="key">ベンゾカイン</span></td>
+          <td>表面麻酔薬。咽頭スプレーなどで使用</td>
+        </tr>
+        <tr>
+          <td>リドカイン</td>
+          <td>稀だが報告あり</td>
+        </tr>
+        <tr>
+          <td><span class="key">EMLA</span></td>
+          <td>リドカイン＋プリロカインの共融混合物クリーム</td>
+        </tr>
+      </table>
+      <p class="note">※プリロカインは600mg以上の大量投与で発症リスクが高まる</p>
+
+      <h2>症状</h2>
+      <p>症状はMetHb濃度に依存する。投与後<span class="key">1-3時間</span>で最高値に達することが多い。</p>
+
+      <h3>MetHb濃度と症状</h3>
+      <table>
+        <tr>
+          <th>MetHb濃度</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td>10-15%</td>
+          <td>皮膚の灰色調変化（無症状のことも）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">15-20%</span></td>
+          <td><span class="highlight">チアノーゼ</span>（口唇・爪床の暗赤色化）</td>
+        </tr>
+        <tr>
+          <td>30-40%</td>
+          <td>頭痛、めまい、倦怠感、頻脈、呼吸困難</td>
+        </tr>
+        <tr>
+          <td>50-60%</td>
+          <td>意識障害、痙攣、不整脈</td>
+        </tr>
+        <tr>
+          <td>70%以上</td>
+          <td>致死的</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">チアノーゼの特徴</div>
+        <ul>
+          <li><span class="caution">酸素投与しても改善しない</span>チアノーゼ</li>
+          <li>通常のチアノーゼ（還元Hb 5g/dL以上）と異なり、MetHb 1.5g/dL程度で出現</li>
+          <li>「チョコレート色」の血液が特徴的</li>
+        </ul>
+      </div>
+
+      <h2>診断</h2>
+
+      <h3>パルスオキシメータの特徴</h3>
+      <p><span class="highlight">パルスオキシメータ</span>はスクリーニングに有用だが、以下の特徴に注意が必要である。</p>
+      <ul>
+        <li>MetHb血症では<span class="highlight">SpO₂が85%付近で安定</span>する傾向がある</li>
+        <li>酸素投与してもSpO₂が改善しない</li>
+        <li>実際のSaO₂とSpO₂に乖離が生じる（パルスオキシメータは過大評価も過小評価もしうる）</li>
+      </ul>
+
+      <h3>確定診断</h3>
+      <ul>
+        <li><span class="key">動脈血ガス分析</span>（CO-oximetry）でMetHb濃度を直接測定</li>
+        <li>PaO₂は正常なのにSpO₂が低い → MetHb血症を疑う</li>
+      </ul>
+
+      <h2>治療</h2>
+
+      <h3>メチレンブルー（第一選択）</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>投与量</td>
+          <td><span class="highlight">1-2 mg/kg</span> を5分以上かけて静注</td>
+        </tr>
+        <tr>
+          <td>効果発現</td>
+          <td>30-60分以内に症状改善</td>
+        </tr>
+        <tr>
+          <td>追加投与</td>
+          <td>1時間後に改善なければ同量追加（累積最大7mg/kg）</td>
+        </tr>
+      </table>
+
+      <p><span class="key">作用機序</span>：NADPH還元酵素によりロイコメチレンブルーに還元され、これがMetHb（Fe³⁺）をHb（Fe²⁺）に還元する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">メチレンブルーの禁忌・注意</div>
+        <ul>
+          <li><span class="caution">G6PD欠損症には禁忌</span>（溶血のリスク）</li>
+          <li>セロトニン作動薬併用でセロトニン症候群のリスク</li>
+          <li>効果不十分時はアスコルビン酸（ビタミンC）を考慮</li>
+        </ul>
+      </div>
+
+      <h3>その他の治療</h3>
+      <ul>
+        <li>高濃度酸素投与（溶存酸素を増やす）</li>
+        <li>重症例：交換輸血、高圧酸素療法</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">115C32</div>
+        <p>メトヘモグロビン血症のスクリーニングに有用なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a カプノメータ<br>
+          b 筋弛緩モニタ<br>
+          c 血糖測定装置<br>
+          d パルスオキシメータ<br>
+          e BIS〈Bispectral index〉モニタ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】メトヘモグロビン血症では酸素運搬能が低下するため、<span class="key">パルスオキシメータ</span>でSpO₂低下（85%付近で安定）を検出できる。カプノメータは呼気CO₂、筋弛緩モニタは筋弛緩薬の効果、BISモニタは鎮静深度の評価に用いる。</p>
+      </div>
+
+      <h2>まとめ</h2>
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>原因：<span class="key">プリロカイン</span>、ベンゾカイン、EMLA</li>
+          <li>病態：Fe²⁺→Fe³⁺で酸素運搬能↓</li>
+          <li>症状：<span class="caution">酸素投与で改善しない</span>チアノーゼ</li>
+          <li>診断：<span class="key">パルスオキシメータ</span>（SpO₂ 85%付近で安定）</li>
+          <li>治療：<span class="key">メチレンブルー</span> 1-2mg/kg静注（G6PD欠損症は禁忌）</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

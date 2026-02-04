@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>骨折 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 画像診断</span>
+    <h1>骨折</h1>
+    <div class="container">
+
+      <h2>顎骨骨折の画像診断</h2>
+      <p>骨折の画像診断では、<span class="key">骨折線の部位</span>と<span class="key">骨片の偏位</span>を確認する。</p>
+
+      <h3>骨折の分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>定義</th>
+          <th>例</th>
+        </tr>
+        <tr>
+          <td><span class="key">直達骨折</span></td>
+          <td>外力が加わった部位に生じる骨折</td>
+          <td>オトガイ部打撲→正中部骨折</td>
+        </tr>
+        <tr>
+          <td><span class="key">介達骨折</span></td>
+          <td>外力が加わった部位から離れた部位に生じる骨折</td>
+          <td>オトガイ部打撲→<span class="highlight">関節突起骨折</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">出題ポイント</div>
+        <ul>
+          <li><span class="highlight">オトガイ部打撲では関節突起骨折を疑う</span>（介達骨折）</li>
+          <li>関節突起骨折は頻度が高い</li>
+        </ul>
+      </div>
+
+      <h2>下顎骨骨折</h2>
+
+      <h3>関節突起骨折の特徴</h3>
+      <ul>
+        <li>顎関節、特に<span class="highlight">関節突起骨折の頻度が高い</span></li>
+        <li>骨片は<span class="key">外側翼突筋</span>に牽引される</li>
+        <li><span class="highlight">内側前下方へ転位</span>し、顎関節から脱臼することが多い</li>
+      </ul>
+
+      <h3>下顎骨の解剖学的部位</h3>
+      <table>
+        <tr>
+          <th>部位</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>関節突起部</td>
+          <td>介達骨折で最も多い。両側性になることも</td>
+        </tr>
+        <tr>
+          <td>下顎角部</td>
+          <td>智歯周囲に骨折線が入りやすい</td>
+        </tr>
+        <tr>
+          <td>下顎骨体部</td>
+          <td>歯根部に沿って骨折線が走行</td>
+        </tr>
+        <tr>
+          <td>筋突起部</td>
+          <td>側頭筋が付着</td>
+        </tr>
+        <tr>
+          <td>正中部</td>
+          <td>直達骨折で生じやすい</td>
+        </tr>
+      </table>
+
+      <h2>上顎骨骨折</h2>
+
+      <h3>頬骨上顎骨複合骨折（三脚骨折）</h3>
+      <p>頻度が高い。以下の<span class="key">三点</span>で骨折し陥凹する：</p>
+      <ul>
+        <li>頬骨弓</li>
+        <li>上顎骨頬骨突起部（上顎洞前壁〜後壁部）</li>
+        <li>前頭上顎縫合部（眼窩外側〜下壁部）</li>
+      </ul>
+
+      <h3>吹き抜け骨折（blow-out fracture）</h3>
+      <p>顔面前方から顔面中央への強い衝撃で、<span class="key">眼窩下壁が上顎洞へ骨折陥凹</span>する。</p>
+
+      <h2>骨折の画像検査</h2>
+
+      <h3>検査法の選択</h3>
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>特徴・適応</th>
+        </tr>
+        <tr>
+          <td>パノラマX線</td>
+          <td>下顎骨全体の概観。スクリーニングに有用</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">頭部後前方向撮影法（PA法）</span></td>
+          <td>下顎骨、特に<span class="key">顎角部</span>を適切に描出。骨折線の走行評価に有用</td>
+        </tr>
+        <tr>
+          <td>Waters法</td>
+          <td>顔面全体の画像化。上顎骨・頬骨骨折の評価</td>
+        </tr>
+        <tr>
+          <td>CT</td>
+          <td>骨形態や3次元的位置を詳細に観察</td>
+        </tr>
+        <tr>
+          <td>セファログラム</td>
+          <td>上顎骨骨折の精査</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">追加検査の選択</div>
+        <ul>
+          <li>骨折線の走行評価 → <span class="highlight">頭部後前方向撮影法</span></li>
+          <li>側方向撮影法は顎骨が重複するため骨折線診断に不適</li>
+          <li>側斜位経頭蓋撮影法は顎関節部検査用</li>
+        </ul>
+      </div>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">104D40</div>
+        <p>39歳の男性。オトガイ部の疼痛と開口障害とを主訴として来院した。昨夜自転車で走行中に転倒しオトガイ部を強打したという。初診時のエックス線写真（別冊No.40A、B）とトレース図（別冊No.40C）とを別に示す。<br>骨折部位はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D40_1.png" alt="別冊No.40A">
+          <img src="../../../images/104回_Web画像/104D40_2.png" alt="別冊No.40B、C">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】オトガイ部打撲では、直達骨折（正中部＝ウ）と介達骨折（関節突起部＝オ）の両方を疑う。開口障害は関節突起骨折を示唆する所見。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110D38</div>
+        <p>78歳の男性。咬合異常を主訴として来院した。3週前に歩行中に転倒し上唇と下顎部を強打したという。初診時のエックス線写真（別冊No.38A）とCT（別冊No.38B）を別に示す。<br>骨折の部位はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110D38_1.png" alt="別冊No.38A">
+          <img src="../../../images/110回_Web画像/110D38_2.png" alt="別冊No.38B">
+        </div>
+        <div class="choices">
+          a 両側下顎角部<br>
+          b 両側筋突起部<br>
+          c 両側下顎骨体部<br>
+          d 両側関節突起部<br>
+          e 下顎左側犬歯部
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】下顎部打撲による介達骨折で両側関節突起部骨折を生じている。CTで両側の関節突起に骨折線を認め、骨片は内側前下方へ転位している。咬合異常は関節突起骨折による下顎位の変化を示唆。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A89</div>
+        <p>75歳の男性。転倒し右頰部を打撲したという。エックス線写真（別冊No.12）を別に示す。<br>骨折線の走行を評価するために追加すべき検査はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110A89.png" alt="別冊No.12">
+        </div>
+        <div class="choices">
+          a 咬合法<br>
+          b Waters法<br>
+          c 頭部側方向撮影法<br>
+          d 側斜位経頭蓋撮影法<br>
+          e 頭部後前方向撮影法
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】頭部後前方向撮影法は下顎骨、特に顎角部を適切に描出でき、骨折線の走行評価に最適。側方向撮影法は顎骨が重複するため不適。側斜位経頭蓋撮影法は顎関節部検査用。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

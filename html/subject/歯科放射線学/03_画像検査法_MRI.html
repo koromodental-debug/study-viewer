@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>MRI - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 画像検査法</span>
+    <h1>MRI（磁気共鳴画像）</h1>
+    <div class="container">
+
+      <h2>MRIとは</h2>
+      <p><span class="key">MRI（Magnetic Resonance Imaging）</span>は、核磁気共鳴を利用した画像検査法。体内の水と脂肪に含まれる<span class="key">H原子核（プロトン）</span>の密度と状態を画像化する。</p>
+
+      <h3>特徴</h3>
+      <ul>
+        <li><span class="key">エックス線を使用しない</span>（被曝なし）</li>
+        <li><span class="key">軟組織の描出に優れる</span>（組織分解能が高い）</li>
+        <li>強い磁場を使用（1.5〜3テスラ）</li>
+      </ul>
+
+      <h2>MRIの種類と信号強度</h2>
+
+      <h3>T1強調像とT2強調像</h3>
+      <ul>
+        <li><span class="key">T1強調像</span>：縦緩和時間（T1）の違いを強調 → <span class="highlight">脂肪が高信号（白）</span></li>
+        <li><span class="key">T2強調像</span>：横緩和時間（T2）の違いを強調 → <span class="highlight">水分が高信号（白）</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">覚え方</div>
+        <ul>
+          <li><span class="highlight">T1 = 脂肪が白い</span>（ネバネバしたもの）</li>
+          <li><span class="highlight">T2 = 水が白い</span>（サラサラしたもの）</li>
+        </ul>
+      </div>
+
+      <h3>組織ごとの信号強度</h3>
+      <table>
+        <tr>
+          <th>組織</th>
+          <th>T1強調像</th>
+          <th>T2強調像</th>
+        </tr>
+        <tr>
+          <td><span class="key">脂肪、骨髄</span></td>
+          <td><span class="highlight">高信号（白）</span></td>
+          <td>やや高信号</td>
+        </tr>
+        <tr>
+          <td>粘膜、リンパ節</td>
+          <td>中信号（灰）</td>
+          <td><span class="highlight">高信号（白）</span></td>
+        </tr>
+        <tr>
+          <td>筋肉、神経</td>
+          <td>低〜中信号</td>
+          <td>低〜中信号</td>
+        </tr>
+        <tr>
+          <td>関節円板、筋膜</td>
+          <td>低信号（黒）</td>
+          <td>低信号（黒）</td>
+        </tr>
+        <tr>
+          <td><span class="key">空気、皮質骨、石灰化</span></td>
+          <td><span class="caution">無信号（黒）</span></td>
+          <td><span class="caution">無信号（黒）</span></td>
+        </tr>
+      </table>
+      <p class="note">病変は水分が多いため、T2強調像で高信号になりやすい。</p>
+
+      <div class="question-box">
+        <div class="q-number">102B41</div>
+        <p>健常成人のMRIのT1強調像において高信号で描出されるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 咬筋<br>
+          b 頸静脈<br>
+          c 顎下腺<br>
+          d 頬脂肪体<br>
+          e 下顎骨骨髄
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】T1強調像では脂肪が高信号となる。頬脂肪体は脂肪組織、下顎骨骨髄は脂肪を含む（黄色骨髄）ため高信号。咬筋は筋肉で低〜中信号。頸静脈は血流があり低信号（フローボイド）。顎下腺は唾液腺で中信号。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C61</div>
+        <p>MRI T2強調像で高信号を呈するのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 硝子体<br>
+          b 鼻粘膜<br>
+          c 脳脊髄液<br>
+          d 顎関節円板<br>
+          e 胸鎖乳突筋
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】T2強調像では水分が多い組織が高信号となる。硝子体（眼球内の水様物質）、鼻粘膜（粘液を含む）、脳脊髄液（水分）は高信号。顎関節円板は線維軟骨で低信号。胸鎖乳突筋は筋肉で低〜中信号。</p>
+      </div>
+
+      <h2>MRIと金属</h2>
+      <p>MRIは強い磁場を使用するため、<span class="key">金属</span>が問題となる。</p>
+
+      <h3>金属による問題</h3>
+      <ul>
+        <li><span class="key">アーチファクト</span>：磁場の乱れによる画像の歪み</li>
+        <li><span class="caution">発熱・移動</span>：強磁性体金属は危険</li>
+        <li><span class="caution">機器の故障</span>：ペースメーカなど</li>
+      </ul>
+
+      <h3>MRI画像に影響を与える補綴物</h3>
+      <p>金属を含む補綴物はアーチファクトの原因となる。</p>
+
+      <div class="question-box">
+        <div class="q-number">106C105</div>
+        <p>MRIの画像形成に影響を与えるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 根面板<br>
+          b 接着ブリッジ<br>
+          c 陶材焼付鋳造冠<br>
+          d レジンジャケット冠<br>
+          e オールセラミッククラウン
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】金属を含む補綴物がMRI画像に影響を与える。根面板（金属）、接着ブリッジ（金属フレーム）、陶材焼付鋳造冠（金属コーピング）は金属を含む。レジンジャケット冠とオールセラミッククラウンは金属を含まないため影響しない。</p>
+      </div>
+
+      <h3>MRI検査時に撤去が必要な矯正装置</h3>
+
+      <div class="question-box">
+        <div class="q-number">113B29</div>
+        <p>頭部MRI検査時に撤去が必要なのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a ヘッドギア<br>
+          b 上顎急速拡大装置<br>
+          c クワドヘリックス装置<br>
+          d トランスパラタルアーチ<br>
+          e Nanceのホールディングアーチ
+        </div>
+        <div class="answer">正解：a, b, c, d, e</div>
+        <p>【解説】これらの矯正装置はすべて金属を含むため、MRI検査時には撤去が必要。特にヘッドギアは口腔外装置で容易に外せる。固定式装置（b〜e）も金属ワイヤーやバンドを含むため撤去対象。口腔内の金属はアーチファクトの原因となるだけでなく、発熱のリスクもある。</p>
+      </div>
+
+      <h2>MRIの禁忌</h2>
+      <p>以下の患者にはMRI検査を行えない場合がある。</p>
+      <ul>
+        <li><span class="caution">心臓ペースメーカ</span>装着者</li>
+        <li><span class="caution">植込み型除細動器（ICD）</span>装着者</li>
+        <li><span class="caution">人工内耳</span>装着者</li>
+        <li>脳動脈クリップ（材質による）</li>
+        <li>閉所恐怖症（検査が困難）</li>
+      </ul>
+
+      <h2>造影MRI</h2>
+      <p><span class="key">ガドリニウム製剤</span>を静脈内投与し、T1強調像で撮像する。</p>
+      <ul>
+        <li>血流のある病変が<span class="key">高信号（増強効果）</span>を呈する</li>
+        <li>CT造影剤（ヨード製剤）とは異なる</li>
+        <li>腎機能低下患者では注意が必要</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">まとめ：MRIのポイント</div>
+        <ul>
+          <li><span class="highlight">T1強調像</span>：脂肪・骨髄が高信号（白）</li>
+          <li><span class="highlight">T2強調像</span>：水分が多い組織が高信号（白）</li>
+          <li>金属を含む補綴物・矯正装置は<span class="caution">アーチファクト</span>の原因</li>
+          <li>ペースメーカ・ICD・人工内耳は<span class="caution">禁忌</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

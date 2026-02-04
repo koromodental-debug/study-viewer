@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>周術期検査：血圧 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 50%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 全身麻酔法</span>
+    <h1>周術期検査：血圧</h1>
+    <div class="container">
+
+      <h2>血圧とは</h2>
+      <p><span class="key">血圧</span>は循環状態のモニタリングとして最も重要なパラメータであり、血管壁に及ぼす圧力を示す。</p>
+
+      <h3>血圧の決定因子</h3>
+      <ul>
+        <li><span class="key">心拍出量</span></li>
+        <li><span class="key">循環血液量</span></li>
+        <li><span class="key">末梢血管抵抗</span></li>
+        <li>血管の性状</li>
+        <li>血液の粘稠度</li>
+      </ul>
+
+      <h3>血圧の変動</h3>
+      <table>
+        <tr>
+          <th>状態</th>
+          <th>血圧変化</th>
+          <th>原因</th>
+        </tr>
+        <tr>
+          <td>低下</td>
+          <td>↓</td>
+          <td>心筋抑制、出血、ショック</td>
+        </tr>
+        <tr>
+          <td>上昇</td>
+          <td>↑</td>
+          <td>麻酔が浅い、過剰輸液、カテコールアミン投与</td>
+        </tr>
+      </table>
+
+      <h2>血圧の種類と正常値</h2>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>定義</th>
+          <th>正常値</th>
+        </tr>
+        <tr>
+          <td><span class="key">収縮期血圧</span></td>
+          <td>心臓収縮時の最高血圧</td>
+          <td>&lt;120 mmHg</td>
+        </tr>
+        <tr>
+          <td><span class="key">拡張期血圧</span></td>
+          <td>心臓拡張時の最低血圧</td>
+          <td>&lt;80 mmHg</td>
+        </tr>
+        <tr>
+          <td><span class="key">脈圧</span></td>
+          <td>収縮期血圧 − 拡張期血圧</td>
+          <td>約40 mmHg</td>
+        </tr>
+      </table>
+
+      <h2>非観血的血圧測定法</h2>
+
+      <h3>触診法</h3>
+      <ul>
+        <li>橈骨動脈で拍動を触知</li>
+        <li>拍動を感じた圧 → 収縮期血圧</li>
+        <li class="caution">拡張期血圧は測定できない</li>
+      </ul>
+
+      <h3>聴診法（コロトコフ音法）</h3>
+      <div class="point-box">
+        <div class="point-box-title">聴診法の原理</div>
+        <ul>
+          <li>上腕動脈に聴診器を置き、マンシェットを減圧</li>
+          <li><span class="highlight">コロトコフ音が聞こえ始めた圧 → 収縮期血圧</span></li>
+          <li><span class="highlight">コロトコフ音が消失した圧 → 拡張期血圧</span></li>
+          <li>収縮期・拡張期両方を測定可能</li>
+        </ul>
+      </div>
+
+      <h3>オシロメトリック法</h3>
+      <ul>
+        <li>動脈の拍動パターンを機械的に読み取り</li>
+        <li>振幅の変化が最大 → 収縮期血圧</li>
+        <li>振幅の変化が最小 → 拡張期血圧</li>
+        <li>自動血圧計で使用</li>
+      </ul>
+
+      <h3>測定法の比較</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>収縮期</th>
+          <th>拡張期</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td>触診法</td>
+          <td>○</td>
+          <td class="caution">×</td>
+          <td>簡便だが不完全</td>
+        </tr>
+        <tr>
+          <td>聴診法</td>
+          <td>○</td>
+          <td>○</td>
+          <td>標準的方法</td>
+        </tr>
+        <tr>
+          <td>オシロメトリック法</td>
+          <td>○</td>
+          <td>○</td>
+          <td>自動測定</td>
+        </tr>
+      </table>
+
+      <h2>観血的血圧測定法</h2>
+      <ul>
+        <li>動脈内にカテーテルを挿入留置</li>
+        <li>リアルタイムで連続測定可能</li>
+        <li>全身麻酔中、集中治療室で使用</li>
+        <li>血液ガス分析も可能</li>
+      </ul>
+
+      <h2>測定時の注意点</h2>
+      <ul>
+        <li>上腕が<span class="key">心臓の高さ</span>になるように調節</li>
+        <li>マンシェットは上腕の<span class="key">2/3を覆う</span>適切なサイズ</li>
+        <li>肘にかからないように装着</li>
+        <li>予想血圧の20〜30mmHg高く加圧後、1心拍に2〜3mmHgで減圧</li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107C79</div>
+        <p>聴診法にて上腕で血圧測定を行った時の圧迫帯（マンシェット）の内圧を図に示す。血管音（コロトコフ音）が、アで聞こえ始めイで消失した。<br>測定された血圧（mmHg）の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107C79.png" alt="血圧測定グラフ">
+        </div>
+        <div class="choices">
+          　　　　収縮期血圧　拡張期血圧　脈圧<br>
+          a　　　80　　　　120　　　　40<br>
+          b　　　80　　　　120　　　　70<br>
+          c　　　120　　　　80　　　　40<br>
+          d　　　120　　　　80　　　　100<br>
+          e　　　140　　　　70　　　　80
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】聴診法では、コロトコフ音が<span class="highlight">聞こえ始めた圧が収縮期血圧</span>、<span class="highlight">消失した圧が拡張期血圧</span>である。図より、アは約120mmHg、イは約80mmHg。<br>脈圧 = 収縮期血圧 − 拡張期血圧 = 120 − 80 = <span class="highlight">40mmHg</span></p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">国試のポイント</div>
+        <ul>
+          <li>聴診法：<span class="highlight">コロトコフ音出現＝収縮期、消失＝拡張期</span></li>
+          <li>触診法：<span class="highlight">収縮期血圧のみ</span>測定可能（拡張期は不可）</li>
+          <li>脈圧 ＝ 収縮期血圧 − 拡張期血圧</li>
+          <li>血圧の決定因子：心拍出量・循環血液量・末梢血管抵抗</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

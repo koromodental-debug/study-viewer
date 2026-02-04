@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顎関節の病変 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 画像診断</span>
+    <h1>顎関節の病変</h1>
+    <div class="container">
+
+      <h2>顎関節の画像検査</h2>
+
+      <table>
+        <tr>
+          <th>検査法</th>
+          <th>特徴・適応</th>
+        </tr>
+        <tr>
+          <td><span class="key">単純X線</span></td>
+          <td>下顎窩に対する下顎頭の位置、骨形態の観察</td>
+        </tr>
+        <tr>
+          <td><span class="key">CT</span></td>
+          <td>骨形態や3次元的位置を詳細に観察<br><span class="highlight">骨変形の診断に優れる</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">MRI</span></td>
+          <td>軟組織診査、<span class="highlight">関節円板の位置異常</span>、骨髄信号<br><span class="caution">円板穿孔・関節腔狭窄の診断は限界あり</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">顎関節造影</span></td>
+          <td>二重造影で<span class="key">円板の穿孔や関節腔狭窄</span>を描出可能</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">検査法の使い分け</div>
+        <ul>
+          <li>関節円板の位置 → <span class="highlight">MRI</span></li>
+          <li>骨変形の評価 → <span class="highlight">CT</span></li>
+          <li>円板穿孔の診断 → 顎関節造影（二重造影）</li>
+        </ul>
+      </div>
+
+      <h2>顎関節症の病態分類</h2>
+
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>病態</th>
+          <th>画像所見</th>
+        </tr>
+        <tr>
+          <td>I型</td>
+          <td>咀嚼筋痛障害</td>
+          <td>画像所見なし</td>
+        </tr>
+        <tr>
+          <td>II型</td>
+          <td>顎関節痛障害</td>
+          <td>画像所見なし</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">III型</span></td>
+          <td>顎関節円板障害<br>a. 復位性 / b. 非復位性</td>
+          <td><span class="highlight">MRIで関節円板転位</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">IV型</span></td>
+          <td>変形性顎関節症</td>
+          <td><span class="highlight">CT・X線で骨変形</span><br>骨棘、骨硬化、吸収など</td>
+        </tr>
+      </table>
+
+      <p class="note">画像検査で所見を検出できるのはIII型とIV型のみ</p>
+
+      <h2>関節円板のMRI所見</h2>
+
+      <h3>関節円板の信号</h3>
+      <p>関節円板は<span class="highlight">T1・T2・プロトン密度強調像いずれも低信号</span>（皮質骨と同様にプロトン数が少ないため）</p>
+
+      <h3>関節円板転位の分類</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>閉口時</th>
+          <th>開口時</th>
+        </tr>
+        <tr>
+          <td><span class="key">正常</span></td>
+          <td>下顎頭上に位置</td>
+          <td>下顎頭上に位置</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">復位性前方転位</span></td>
+          <td><span class="caution">前方転位</span></td>
+          <td>正常位に戻る</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">非復位性前方転位</span></td>
+          <td><span class="caution">前方転位</span></td>
+          <td><span class="caution">前方転位のまま</span></td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">復位性 vs 非復位性の鑑別</div>
+        <ul>
+          <li><span class="key">復位性</span>：開口時にクリック音、開口により円板が戻る</li>
+          <li><span class="key">非復位性</span>：クリック音消失→開口障害、円板は戻らない</li>
+        </ul>
+      </div>
+
+      <h2>顎関節の主な疾患</h2>
+
+      <h3>変形性顎関節症（IV型）</h3>
+      <ul>
+        <li>下顎頭の<span class="key">骨棘形成</span>、<span class="key">骨硬化</span>、<span class="key">吸収</span></li>
+        <li>関節面の粗造化</li>
+        <li>骨変形の診断は<span class="highlight">CTが優れる</span></li>
+      </ul>
+
+      <h3>滑膜性骨軟骨腫症</h3>
+      <ul>
+        <li>軟骨粒が関節腔に脱皮する腫瘍類似疾患</li>
+        <li>画像所見：<span class="highlight">顆粒状の不透過像</span>が下顎頭周囲に散見</li>
+        <li>MRI T2強調像で関節腔の著明な拡張、多数の顆粒状低信号</li>
+      </ul>
+
+      <h3>顎関節強直症</h3>
+      <ul>
+        <li>強度の<span class="key">開口障害</span>をきたす</li>
+        <li>下顎頭と下顎窩が線維性または<span class="highlight">骨性に連続</span></li>
+        <li>外傷や感染が誘因</li>
+      </ul>
+
+      <h3>筋突起過長症</h3>
+      <ul>
+        <li>開口障害（<span class="caution">雑音・疼痛なし</span>が特徴）</li>
+        <li>筋突起が頬骨弓下面に接触</li>
+        <li><span class="key">3D-CT</span>で筋突起の形態を確認</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">103D13【正常顎関節のMRI】</div>
+        <p>36歳の女性。左側頬部の疼痛を主訴として来院した。閉口時と開口時の左側顎関節MRI（別冊No.13）を別に示す。<br>顎関節の状態はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103D13_1.png" alt="別冊No.13">
+          <img src="../../../images/103回_Web画像/103D13_2.png" alt="別冊No.13">
+        </div>
+        <div class="choices">
+          a 正常<br>
+          b 脱臼<br>
+          c 滑膜炎<br>
+          d 関節円板転位<br>
+          e 下顎頭の変形
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】閉口時・開口時ともに関節円板（低信号）が下顎頭上の正常位置にある。骨変形もなく正常。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110B35【関節円板転位の読影】</div>
+        <p>45歳の女性。顎関節部の痛みを主訴として来院した。1年前に開口時の雑音を自覚したが、2か月前から雑音が消失し痛みが出てきたという。顎関節部に開口時痛を認める。開閉口位のMRIプロトン密度強調像（別冊No.31）を別に示す。<br>関節円板の位置の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110B35_1.png" alt="別冊No.31">
+          <img src="../../../images/110回_Web画像/110B35_2.png" alt="別冊No.31">
+        </div>
+        <div class="choices">
+          a 復位性前方転位　　復位性前方転位<br>
+          b 復位性前方転位　　非復位性前方転位<br>
+          c 正常　　　　　　　復位性前方転位<br>
+          d 非復位性前方転位　正常<br>
+          e 非復位性前方転位　非復位性前方転位
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】「雑音が消失し痛みが出てきた」は復位性→非復位性への移行を示唆。左右で所見が異なり、片側が非復位性前方転位、片側が正常。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A71【MRI所見の読影】</div>
+        <p>右側顎関節部の開口時痛を有する患者の右側顎関節部MRI（別冊No.27）を別に示す。<br>認められる所見はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115A71_1.png" alt="別冊No.27">
+          <img src="../../../images/115回_Web画像/115A71_2.png" alt="別冊No.27">
+        </div>
+        <div class="choices">
+          a 関節円板穿孔<br>
+          b 下顎頭の骨棘形成<br>
+          c 下顎頭の骨髄浮腫<br>
+          d 上関節腔の滑液貯留<br>
+          e 非復位性関節円板前方転位
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】MRIで関節円板が前方に転位したまま（非復位性）。上関節腔にT2高信号の滑液貯留を認める。円板穿孔はMRIでは診断困難。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106D13【変形性顎関節症】</div>
+        <p>67歳の女性。右側顎関節部の開口時痛を主訴として来院した。2年前から自覚していたが、痛みが弱いため放置していたという。初診時のエックス線写真（別冊No.13A）、CT（別冊No.13B）及びMRI（別冊No.13C）を別に示す。<br>最も疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106D13_1.png" alt="別冊No.13A">
+          <img src="../../../images/106回_Web画像/106D13_2.png" alt="別冊No.13B、C">
+        </div>
+        <div class="choices">
+          a 骨腫<br>
+          b 下顎頭肥大<br>
+          c 関節突起骨折<br>
+          d 変形性顎関節症<br>
+          e 関節突起発育不全
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】CTで下顎頭の変形（骨棘形成、関節面の粗造化）を認める。長期の開口時痛と骨変形から変形性顎関節症（IV型）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A67【滑膜性骨軟骨腫症】</div>
+        <p>56歳の男性。開口障害を主訴として来院した。3か月前から症状があるという。最大開口量は28mmで、開口時に左側顎関節に疼痛を認める。初診時のエックス線画像（別冊No.13A）、CT（別冊No.13B）及びMRI（別冊No.13C）を別に示す。<br>最も疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112A67_1.png" alt="別冊No.13A">
+          <img src="../../../images/112回_Web画像/112A67_2.png" alt="別冊No.13B、C">
+        </div>
+        <div class="choices">
+          a 下顎頭肥大<br>
+          b 顎関節強直症<br>
+          c 化膿性顎関節炎<br>
+          d 滑膜性骨軟骨腫症<br>
+          e リウマチ性顎関節炎
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】CTで下顎頭周囲に顆粒状の石灰化像、MRIで関節腔の拡張と多発性の低信号を認める。滑膜性骨軟骨腫症の特徴的所見。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D68【筋突起過長症】</div>
+        <p>15歳の男子。口を開けづらいことを主訴として来院した。5年前に気付き、徐々に開きにくくなったという。顎関節部に雑音や疼痛は認められない。最大開口量は20mmであった。初診時のエックス線画像（別冊No.15A）とCT横断像、矢状断像および3D-CT像（別冊No.15B）を別に示す。<br>診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D68_1.png" alt="別冊No.15A">
+          <img src="../../../images/112回_Web画像/112D68_2.png" alt="別冊No.15B">
+        </div>
+        <div class="choices">
+          a 顎関節症<br>
+          b 骨軟骨腫<br>
+          c 軟骨肉腫<br>
+          d 顎関節強直症<br>
+          e 筋突起過長症
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】開口障害があるが「雑音・疼痛なし」が重要。3D-CTで筋突起の過長を認める。筋突起が頬骨弓下面に接触して開口制限を生じている。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

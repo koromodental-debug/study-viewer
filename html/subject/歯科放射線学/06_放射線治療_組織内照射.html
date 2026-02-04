@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>組織内照射 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; text-align: center; }
+    .question-images img { max-width: 60%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 放射線治療</span>
+    <h1>組織内照射</h1>
+    <div class="container">
+
+      <h2>組織内照射とは</h2>
+      <p><span class="key">密封小線源</span>を腫瘍内に直接刺入して照射する方法。腫瘍に高線量を集中させ、周囲正常組織への被曝を最小限に抑えられる。口腔癌では<span class="highlight">根治を目的</span>として行われることがほとんど。</p>
+
+      <h2>組織内照射の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>線量率</th>
+          <th>特徴</th>
+          <th>使用線源</th>
+        </tr>
+        <tr>
+          <td><span class="key">低線量率照射</span><br>（LDR）</td>
+          <td>&lt;2 Gy/h</td>
+          <td>線源を直接刺入<br>数日間留置</td>
+          <td>イリジウム針<br>金粒子（グレイン）</td>
+        </tr>
+        <tr>
+          <td><span class="key">高線量率照射</span><br>（HDR）</td>
+          <td>&gt;12 Gy/h</td>
+          <td>RALSを使用<br>数回に分割照射</td>
+          <td>イリジウム<br>（遠隔操作）</td>
+        </tr>
+      </table>
+
+      <h2>RALS（遠隔後装填法）</h2>
+      <p><span class="key">Remote Afterloading System</span>の略。高放射能のイリジウム線源を遠隔操作で腫瘍内に送り込む方法。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">RALSの特徴</div>
+        <ul>
+          <li>アプリケータ（チューブ）を腫瘍に挿入後、別室から遠隔操作</li>
+          <li><span class="highlight">術者被曝がない</span>（最大のメリット）</li>
+          <li>高線量率（12Gy/h以上）で短時間照射</li>
+          <li>数回に分けて分割照射</li>
+        </ul>
+      </div>
+
+      <h2>密封小線源の種類</h2>
+      <h3>現在使用されている線源</h3>
+      <table>
+        <tr>
+          <th>線源</th>
+          <th>形状</th>
+          <th>半減期</th>
+          <th>用途</th>
+        </tr>
+        <tr>
+          <td><span class="highlight"><sup>192</sup>Ir（イリジウム）</span></td>
+          <td>針金状、シード状</td>
+          <td>74.2日</td>
+          <td>低線量率・高線量率両方で使用</td>
+        </tr>
+        <tr>
+          <td><span class="highlight"><sup>198</sup>Au（金）</span></td>
+          <td>グレイン（粒状）</td>
+          <td>2.7日</td>
+          <td>永久刺入（取り出さない）</td>
+        </tr>
+        <tr>
+          <td><sup>125</sup>I（ヨウ素）</td>
+          <td>シード</td>
+          <td>60.2日</td>
+          <td>前立腺癌（口腔では使用少）</td>
+        </tr>
+      </table>
+
+      <h3>現在使用されていない線源</h3>
+      <table>
+        <tr>
+          <th>線源</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td class="caution"><sup>226</sup>Ra（ラジウム）</td>
+          <td>ほとんど使用されず（防護上の問題）</td>
+        </tr>
+        <tr>
+          <td class="caution"><sup>222</sup>Rn（ラドン）</td>
+          <td>使用されず</td>
+        </tr>
+        <tr>
+          <td><sup>137</sup>Cs（セシウム）</td>
+          <td>2001年に製造中止</td>
+        </tr>
+        <tr>
+          <td><sup>60</sup>Co（コバルト）</td>
+          <td>外部照射用（組織内照射には不使用）</td>
+        </tr>
+      </table>
+
+      <h2>組織内照射の適応</h2>
+      <h3>適応となる部位</h3>
+      <p>線源を刺入できる<span class="key">軟組織</span>の腫瘍が適応。</p>
+      <ul>
+        <li><span class="highlight">舌癌</span>（最も代表的な適応）</li>
+        <li>口底癌</li>
+        <li>頬粘膜癌</li>
+        <li>口唇癌</li>
+      </ul>
+
+      <h3>適応とならない部位</h3>
+      <ul>
+        <li><span class="caution">硬口蓋癌</span>（骨に近い）</li>
+        <li><span class="caution">歯肉癌</span>（下顎歯肉癌、上顎歯肉癌）</li>
+        <li><span class="caution">上顎洞癌</span>（深部、外部照射が適応）</li>
+        <li><span class="caution">耳下腺癌</span>（深部、手術が第一選択）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">適応の考え方</div>
+        <p>線源を<span class="highlight">刺入できる軟組織</span>が適応。骨に近い部位や深部は不適。</p>
+      </div>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A39</div>
+        <p>密封小線源による低線量率組織内照射の適応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 舌癌<br>
+          b 硬口蓋癌<br>
+          c 耳下腺癌<br>
+          d 上顎洞癌<br>
+          e 下顎歯肉癌
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】密封小線源による組織内照射は、線源を刺入できる軟組織の腫瘍が適応。<span class="highlight">舌癌</span>は最も代表的な適応（a○）。硬口蓋癌・下顎歯肉癌は骨に近く不適（b×、e×）。耳下腺癌・上顎洞癌は深部で刺入困難（c×、d×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B34</div>
+        <p>口腔癌の放射線治療時の写真（別冊No.5）を別に示す。<br>治療法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B34.png" alt="112B34">
+        </div>
+        <div class="choices">
+          a 電子線外部照射法<br>
+          b 粒子線外部照射法<br>
+          c 低線量率組織内照射法<br>
+          d 強度変調放射線外部照射法<br>
+          e 遠隔後装填型高線量率組織内照射法
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】写真には<span class="key">RALS（遠隔後装填型）の装置</span>とアプリケータ（チューブ）が写っている。装置から患者に接続されたチューブを通じて線源が送り込まれる。これは<span class="highlight">遠隔後装填型高線量率組織内照射法</span>（e○）。低線量率組織内照射（c）では線源を直接刺入するため、このような装置は使用しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B88</div>
+        <p>我が国において口腔癌に対する組織内照射に現在用いられている線源はどれか。2つ選べ。</p>
+        <div class="choices">
+          a <sup>198</sup>Au<br>
+          b <sup>60</sup>Co<br>
+          c <sup>192</sup>Ir<br>
+          d <sup>226</sup>Ra<br>
+          e <sup>222</sup>Rn
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】現在口腔癌の組織内照射に使用されている線源は<span class="highlight"><sup>198</sup>Au（金）</span>と<span class="highlight"><sup>192</sup>Ir（イリジウム）</span>（a○、c○）。<sup>60</sup>Co（コバルト）は外部照射用（b×）。<sup>226</sup>Ra（ラジウム）と<sup>222</sup>Rn（ラドン）は現在使用されていない（d×、e×）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

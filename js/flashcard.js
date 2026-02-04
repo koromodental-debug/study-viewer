@@ -1017,6 +1017,9 @@ const FlashcardModule = (function() {
               <span class="stats-ranking-average-unit">枚/週</span>
             </div>
           </div>
+
+          <!-- 閉じるボタン（末尾） -->
+          <button class="stats-detail-close-bottom" id="stats-detail-close-bottom">閉じる</button>
         </div>
       </div>
     `;
@@ -1029,6 +1032,7 @@ const FlashcardModule = (function() {
 
     // 閉じるボタン
     overlay.querySelector('#stats-detail-close').addEventListener('click', closeStatsDetailSheet);
+    overlay.querySelector('#stats-detail-close-bottom').addEventListener('click', closeStatsDetailSheet);
     overlay.querySelector('.stats-detail-backdrop').addEventListener('click', closeStatsDetailSheet);
 
     // 期間別グラフ描画（デフォルトは今週）

@@ -5653,6 +5653,24 @@ body:not(.is-practice) #flashcard-content {
   max-height: calc(85vh - 70px);
 }
 
+.stats-detail-close-bottom {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  background: var(--fill-tertiary, #e5e5ea);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--system-blue, #007AFF);
+  cursor: pointer;
+}
+
+.stats-detail-close-bottom:active {
+  opacity: 0.6;
+}
+
 /* ストリークセクション */
 .stats-streak-section {
   text-align: center;

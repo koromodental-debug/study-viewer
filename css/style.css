@@ -8155,18 +8155,12 @@ body.is-practice .tab-content {
   padding-bottom: 16px;
 }
 
-/* 表面のときはカードを中央寄せ */
-.flashcard-exercise:not(.flipped) .flashcard-stage {
+/* カード+ボタンを中央寄せ（まとめはこのラッパーの外） */
+.flashcard-main-content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-}
-
-/* 裏面のときもカード+ボタンを中央寄せ（まとめはその下） */
-.flashcard-exercise.flipped .flashcard-card-container {
-  margin-top: auto;
-}
-
-.flashcard-exercise.flipped .flashcard-action-bar {
-  margin-bottom: auto;
 }
 
 /* カードコンテナ */

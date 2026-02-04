@@ -5915,19 +5915,21 @@ const FlashcardModule = (function() {
         </div>
 
         <div class="flashcard-stage table-stage">
-          <div class="table-card-container">
-            <div class="table-card-title">${card.title}</div>
-            <div class="table-card-question">
-              <span class="question-key">${rowLabel}</span>の<span class="question-label">${colLabel}</span>は？
+          <div class="flashcard-main-content">
+            <div class="table-card-container">
+              <div class="table-card-title">${card.title}</div>
+              <div class="table-card-question">
+                <span class="question-key">${rowLabel}</span>の<span class="question-label">${colLabel}</span>は？
+              </div>
+              <div class="table-card-table" id="table-card-table">
+                ${renderTableOcclusionHTML()}
+              </div>
+              ${isRevealed ? '' : '<div class="table-tap-hint">タップで答え</div>'}
             </div>
-            <div class="table-card-table" id="table-card-table">
-              ${renderTableOcclusionHTML()}
+            <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
+              <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
+              <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
             </div>
-            ${isRevealed ? '' : '<div class="table-tap-hint">タップで答え</div>'}
-          </div>
-          <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
-            <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
-            <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
           </div>
         </div>
       </div>
@@ -6070,19 +6072,21 @@ const FlashcardModule = (function() {
         </div>
 
         <div class="flashcard-stage table-stage">
-          <div class="table-card-container">
-            <div class="table-card-title">${card.title}</div>
-            <div class="table-card-question">
-              <span class="question-key">${rowLabel}</span>の<span class="question-label">${colLabel}</span>は？
+          <div class="flashcard-main-content">
+            <div class="table-card-container">
+              <div class="table-card-title">${card.title}</div>
+              <div class="table-card-question">
+                <span class="question-key">${rowLabel}</span>の<span class="question-label">${colLabel}</span>は？
+              </div>
+              <div class="table-card-table" id="table-card-table">
+                ${tableHtml}
+              </div>
+              ${isRevealed ? '' : '<div class="table-tap-hint">タップで答え</div>'}
             </div>
-            <div class="table-card-table" id="table-card-table">
-              ${tableHtml}
+            <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
+              <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
+              <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
             </div>
-            ${isRevealed ? '' : '<div class="table-tap-hint">タップで答え</div>'}
-          </div>
-          <div class="flashcard-action-bar ${isRevealed ? 'show' : ''}">
-            <button class="flashcard-btn again" id="flashcard-again-btn">もう一度</button>
-            <button class="flashcard-btn memorized" id="flashcard-memorized-btn">覚えた</button>
           </div>
         </div>
       </div>
@@ -7593,74 +7597,76 @@ const FlashcardModule = (function() {
 
         <!-- メインステージ（カード中央配置） -->
         <div class="flashcard-stage">
-          <div class="flashcard-card-container" id="flashcard-card-container">
-            <div class="flashcard-card ${state.isFlipped ? 'flipped' : ''}" id="flashcard-card">
-              <div class="flashcard-card-inner">
-                <div class="flashcard-question">
-                  ${card.question}
+          <div class="flashcard-main-content">
+            <div class="flashcard-card-container" id="flashcard-card-container">
+              <div class="flashcard-card ${state.isFlipped ? 'flipped' : ''}" id="flashcard-card">
+                <div class="flashcard-card-inner">
+                  <div class="flashcard-question">
+                    ${card.question}
+                  </div>
+                  ${card.isChoiceCard ? renderChoicesUI(card) : `
+                  <!-- タップヒント（カード内、表面のみ、通常カードのみ） -->
+                  <div class="flashcard-tap-hint ${state.isFlipped ? 'hide' : ''}" id="tap-hint">
+                    タップで答え
+                  </div>
+                  `}
+                  <div class="flashcard-answer">
+                    ${card.answer}
+                  </div>
+                  ${card.topicTitle ? `
+                  <div class="flashcard-deck-pill-wrap">
+                    <button class="flashcard-deck-pill" data-topic-id="${card.topicId}">
+                      ${card.topicTitle}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    </button>
+                  </div>
+                  ` : ''}
                 </div>
-                ${card.isChoiceCard ? renderChoicesUI(card) : `
-                <!-- タップヒント（カード内、表面のみ、通常カードのみ） -->
-                <div class="flashcard-tap-hint ${state.isFlipped ? 'hide' : ''}" id="tap-hint">
-                  タップで答え
+                <div class="swipe-overlay swipe-left" id="swipe-overlay-left">
+                  <span>もう一度</span>
                 </div>
-                `}
-                <div class="flashcard-answer">
-                  ${card.answer}
+                <div class="swipe-overlay swipe-right" id="swipe-overlay-right">
+                  <span>覚えた</span>
                 </div>
-                ${card.topicTitle ? `
-                <div class="flashcard-deck-pill-wrap">
-                  <button class="flashcard-deck-pill" data-topic-id="${card.topicId}">
-                    ${card.topicTitle}
+              </div>
+            </div>
+
+            <!-- アクションバー（カード直下に配置） -->
+            <div class="flashcard-action-bar ${state.isFlipped ? 'show' : ''}">
+              <button class="flashcard-btn again" id="flashcard-again-btn">
+                もう一度
+              </button>
+              ${isCollaborator() ? `<button class="flashcard-btn report" id="flashcard-report-btn">
+                報告
+              </button>` : ''}
+              <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
+                覚えた
+              </button>
+            </div>
+
+            <!-- まとめ（読み込み成功時のみ表示） -->
+            <div class="flashcard-summary ${state.summaryCollapsed ? 'collapsed' : ''}" id="flashcard-summary">
+              <div class="flashcard-summary-header" id="flashcard-summary-toggle">
+                <span>まとめ</span>
+                <div class="summary-header-actions">
+                  <button class="summary-save-btn" id="summary-save-btn" title="画像として保存">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                      <rect x="3" y="3" width="18" height="18" rx="2"/>
+                      <circle cx="8.5" cy="8.5" r="1.5"/>
+                      <path d="M21 15l-5-5L5 21"/>
                     </svg>
                   </button>
-                </div>
-                ` : ''}
-              </div>
-              <div class="swipe-overlay swipe-left" id="swipe-overlay-left">
-                <span>もう一度</span>
-              </div>
-              <div class="swipe-overlay swipe-right" id="swipe-overlay-right">
-                <span>覚えた</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- アクションバー（カード直下に配置） -->
-          <div class="flashcard-action-bar ${state.isFlipped ? 'show' : ''}">
-            <button class="flashcard-btn again" id="flashcard-again-btn">
-              もう一度
-            </button>
-            ${isCollaborator() ? `<button class="flashcard-btn report" id="flashcard-report-btn">
-              報告
-            </button>` : ''}
-            <button class="flashcard-btn memorized" id="flashcard-memorized-btn">
-              覚えた
-            </button>
-          </div>
-
-          <!-- まとめ（読み込み成功時のみ表示） -->
-          <div class="flashcard-summary ${state.summaryCollapsed ? 'collapsed' : ''}" id="flashcard-summary">
-            <div class="flashcard-summary-header" id="flashcard-summary-toggle">
-              <span>まとめ</span>
-              <div class="summary-header-actions">
-                <button class="summary-save-btn" id="summary-save-btn" title="画像として保存">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path d="M21 15l-5-5L5 21"/>
+                  <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"/>
                   </svg>
-                </button>
-                <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 9l6 6 6-6"/>
-                </svg>
+                </div>
               </div>
-            </div>
-            <div class="flashcard-summary-content" id="flashcard-summary-content">
+              <div class="flashcard-summary-content" id="flashcard-summary-content">
+              </div>
             </div>
           </div>
         </div>

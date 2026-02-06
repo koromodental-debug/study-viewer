@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "title": "核医学検査",
+    "category": "歯科放射線学",
+    "chapter": "03_画像検査法"
+  },
+  "sections": [
+    {
+      "section": "検査の種類",
+      "qa": [
+        {
+          "question": "シンチグラフィの組合せで正しいのはどれか。1つ選べ。",
+          "answer": "D",
+          "choices": {
+            "a": "201TlCl────────腺リンパ腫",
+            "b": "99mTcO4−───────悪性リンパ腫",
+            "c": "123I-NaI────────顎関節症",
+            "d": "99mTc-MDP──────骨転移",
+            "e": "67Ga-citrate──────口腔乾燥症"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "102B123"
+        },
+        {
+          "question": "SPECT 頭部矢状断像（別冊No.6）を別に示す。使用核種はどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "18F",
+            "b": "67Ga",
+            "c": "99mTc",
+            "d": "131I",
+            "e": "133Xe"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "113C44"
+        }
+      ]
+    },
+    {
+      "section": "臨床的意義",
+      "qa": [
+        {
+          "question": "99mTc-MDPを用いた核医学検査で判定できるのはどれか。2つ選べ。",
+          "answer": "B, D",
+          "choices": {
+            "a": "唾液の分泌能",
+            "b": "骨髄炎の活動性",
+            "c": "軟部嚢胞の性状",
+            "d": "悪性腫瘍の骨への転移",
+            "e": "悪性腫瘍の軟組織への転移"
+          },
+          "correctAnswer": "B, D",
+          "numChoices": 2,
+          "code": "104C127"
+        },
+        {
+          "question": "口底癌術後の患者に行った検査画像（別冊No.24）を別に示す。この検査法はどれか。1つ選べ。",
+          "answer": "A",
+          "choices": {
+            "a": "PET/CT",
+            "b": "超音波ドプラ",
+            "c": "拡散強調MRI",
+            "d": "腫瘍シンチグラフィ",
+            "e": "歯科用コーンビームCT"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "108A122"
+        },
+        {
+          "question": "口腔乾燥を主訴として来院した患者の酸刺激前後の唾液腺シンチグラム（別冊No.23）を別に示す。最も機能低下がみられるのはどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "右側顎下腺",
+            "b": "左側顎下腺",
+            "c": "右側耳下腺",
+            "d": "左側耳下腺",
+            "e": "両側耳下腺"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "113D70"
+        }
+      ]
+    },
+    {
+      "section": "生理的集積",
+      "qa": [
+        {
+          "question": "右側舌縁部の扁平上皮癌のFDG-PET/CT（別冊No.7）を別に示す。矢印で示す集積部位はどれか。1つ選べ。",
+          "answer": "C",
+          "choices": {
+            "a": "舌下腺",
+            "b": "外頸動脈",
+            "c": "口蓋扁桃",
+            "d": "内側翼突筋",
+            "e": "上内深頸リンパ節"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "113C45"
+        }
+      ]
+    },
+    {
+      "section": "表穴埋め",
+      "qa": [
+        {
+          "type": "table-occlusion",
+          "title": "放射性医薬品と検査の対応",
+          "table": {
+            "headers": ["検査", "放射性医薬品", "対象疾患・目的"],
+            "rows": [
+              ["骨シンチ", "99mTc-MDP / HMDP", "骨転移、骨髄炎、疲労骨折"],
+              ["唾液腺シンチ", "99mTcO4-", "唾液腺機能、Sjögren症候群、Warthin腫瘍"],
+              ["腫瘍シンチ", "67Ga-citrate", "腫瘍、炎症、悪性リンパ腫"],
+              ["FDG-PET/CT", "18F-FDG", "悪性腫瘍、転移検索"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 0, "col": 2},
+            {"row": 1, "col": 1},
+            {"row": 1, "col": 2},
+            {"row": 2, "col": 1},
+            {"row": 2, "col": 2},
+            {"row": 3, "col": 1},
+            {"row": 3, "col": 2}
+          ]
+        }
+      ]
+    }
+  ]
+}

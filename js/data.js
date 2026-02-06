@@ -13097,7 +13097,7 @@ const DATA = [
   {
     "id": "放射線、機器、器材と情報処理_エックス線の投影",
     "title": "放射線、機器、器材と情報処理_エックス線の投影",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/01_放射線、機器、器材と情報処理_エックス線の投影_QA.json",
     "htmlPath": "html/subject/歯科放射線学/01_放射線、機器、器材と情報処理_エックス線の投影.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13106,7 +13106,7 @@ const DATA = [
   {
     "id": "放射線、機器、器材と情報処理_エックス線の減弱",
     "title": "放射線、機器、器材と情報処理_エックス線の減弱",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/01_放射線、機器、器材と情報処理_エックス線の減弱_QA.json",
     "htmlPath": "html/subject/歯科放射線学/01_放射線、機器、器材と情報処理_エックス線の減弱.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13115,7 +13115,7 @@ const DATA = [
   {
     "id": "放射線、機器、器材と情報処理_撮影装置：デジタル装置",
     "title": "放射線、機器、器材と情報処理_撮影装置：デジタル装置",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/01_放射線、機器、器材と情報処理_撮影装置：デジタル装置_QA.json",
     "htmlPath": "html/subject/歯科放射線学/01_放射線、機器、器材と情報処理_撮影装置：デジタル装置.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13124,7 +13124,7 @@ const DATA = [
   {
     "id": "放射線、機器、器材と情報処理_放射線の単位",
     "title": "放射線、機器、器材と情報処理_放射線の単位",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/01_放射線、機器、器材と情報処理_放射線の単位_QA.json",
     "htmlPath": "html/subject/歯科放射線学/01_放射線、機器、器材と情報処理_放射線の単位.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13133,7 +13133,7 @@ const DATA = [
   {
     "id": "放射線、機器、器材と情報処理_放射線の種類",
     "title": "放射線、機器、器材と情報処理_放射線の種類",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/01_放射線、機器、器材と情報処理_放射線の種類_QA.json",
     "htmlPath": "html/subject/歯科放射線学/01_放射線、機器、器材と情報処理_放射線の種類.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13142,7 +13142,7 @@ const DATA = [
   {
     "id": "読影の基本_CT画像の解剖像",
     "title": "読影の基本_CT画像の解剖像",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/02_読影の基本_CT画像の解剖像_QA.json",
     "htmlPath": "html/subject/歯科放射線学/02_読影の基本_CT画像の解剖像.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13151,7 +13151,7 @@ const DATA = [
   {
     "id": "読影の基本_MRI画像の解剖像",
     "title": "読影の基本_MRI画像の解剖像",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/02_読影の基本_MRI画像の解剖像_QA.json",
     "htmlPath": "html/subject/歯科放射線学/02_読影の基本_MRI画像の解剖像.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13160,7 +13160,7 @@ const DATA = [
   {
     "id": "読影の基本_エックス線画像の解剖像",
     "title": "読影の基本_エックス線画像の解剖像",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/02_読影の基本_エックス線画像の解剖像_QA.json",
     "htmlPath": "html/subject/歯科放射線学/02_読影の基本_エックス線画像の解剖像.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13169,7 +13169,7 @@ const DATA = [
   {
     "id": "読影の基本_所見の表現：特徴的な像",
     "title": "読影の基本_所見の表現：特徴的な像",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/02_読影の基本_所見の表現：特徴的な像_QA.json",
     "htmlPath": "html/subject/歯科放射線学/02_読影の基本_所見の表現：特徴的な像.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13178,7 +13178,7 @@ const DATA = [
   {
     "id": "画像検査法_CT",
     "title": "画像検査法_CT",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_CT_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_CT.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13187,7 +13187,7 @@ const DATA = [
   {
     "id": "画像検査法_IVR",
     "title": "画像検査法_IVR",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_IVR_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_IVR.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13196,7 +13196,7 @@ const DATA = [
   {
     "id": "画像検査法_MRI",
     "title": "画像検査法_MRI",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_MRI_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_MRI.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13205,7 +13205,7 @@ const DATA = [
   {
     "id": "画像検査法_パノラマエックス線撮影",
     "title": "画像検査法_パノラマエックス線撮影",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_パノラマエックス線撮影_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_パノラマエックス線撮影.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13214,7 +13214,7 @@ const DATA = [
   {
     "id": "画像検査法_動注化学療法",
     "title": "画像検査法_動注化学療法",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_動注化学療法_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_動注化学療法.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13223,7 +13223,7 @@ const DATA = [
   {
     "id": "画像検査法_嚥下造影剤",
     "title": "画像検査法_嚥下造影剤",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_嚥下造影剤_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_嚥下造影剤.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13232,7 +13232,7 @@ const DATA = [
   {
     "id": "画像検査法_核医学検査",
     "title": "画像検査法_核医学検査",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_核医学検査_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_核医学検査.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13241,7 +13241,7 @@ const DATA = [
   {
     "id": "画像検査法_歯科用コーンビームCT",
     "title": "画像検査法_歯科用コーンビームCT",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_歯科用コーンビームCT_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_歯科用コーンビームCT.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13250,7 +13250,7 @@ const DATA = [
   {
     "id": "画像検査法_疾患と画像検査",
     "title": "画像検査法_疾患と画像検査",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_疾患と画像検査_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_疾患と画像検査.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13259,7 +13259,7 @@ const DATA = [
   {
     "id": "画像検査法_超音波検査",
     "title": "画像検査法_超音波検査",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_超音波検査_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_超音波検査.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13268,7 +13268,7 @@ const DATA = [
   {
     "id": "画像検査法_造影検査",
     "title": "画像検査法_造影検査",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/03_画像検査法_造影検査_QA.json",
     "htmlPath": "html/subject/歯科放射線学/03_画像検査法_造影検査.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13277,7 +13277,7 @@ const DATA = [
   {
     "id": "画像診断_診断：嚢胞性疾患",
     "title": "画像診断_診断：嚢胞性疾患",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/04_画像診断_診断：嚢胞性疾患_QA.json",
     "htmlPath": "html/subject/歯科放射線学/04_画像診断_診断：嚢胞性疾患.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13286,7 +13286,7 @@ const DATA = [
   {
     "id": "画像診断_診断：炎症",
     "title": "画像診断_診断：炎症",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/04_画像診断_診断：炎症_QA.json",
     "htmlPath": "html/subject/歯科放射線学/04_画像診断_診断：炎症.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13295,7 +13295,7 @@ const DATA = [
   {
     "id": "画像診断_診断：腫瘍および類似疾患",
     "title": "画像診断_診断：腫瘍および類似疾患",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/04_画像診断_診断：腫瘍および類似疾患_QA.json",
     "htmlPath": "html/subject/歯科放射線学/04_画像診断_診断：腫瘍および類似疾患.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13304,7 +13304,7 @@ const DATA = [
   {
     "id": "画像診断_骨折",
     "title": "画像診断_骨折",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/04_画像診断_骨折_QA.json",
     "htmlPath": "html/subject/歯科放射線学/04_画像診断_骨折.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13313,7 +13313,7 @@ const DATA = [
   {
     "id": "画像診断_上顎洞部の病変",
     "title": "画像診断_上顎洞部の病変",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/05_画像診断_上顎洞部の病変_QA.json",
     "htmlPath": "html/subject/歯科放射線学/05_画像診断_上顎洞部の病変.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13322,7 +13322,7 @@ const DATA = [
   {
     "id": "画像診断_全身疾患",
     "title": "画像診断_全身疾患",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/05_画像診断_全身疾患_QA.json",
     "htmlPath": "html/subject/歯科放射線学/05_画像診断_全身疾患.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13331,7 +13331,7 @@ const DATA = [
   {
     "id": "画像診断_唾液腺の病変",
     "title": "画像診断_唾液腺の病変",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/05_画像診断_唾液腺の病変_QA.json",
     "htmlPath": "html/subject/歯科放射線学/05_画像診断_唾液腺の病変.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13340,7 +13340,7 @@ const DATA = [
   {
     "id": "画像診断_舌下・顎下・頸部の病変",
     "title": "画像診断_舌下・顎下・頸部の病変",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/05_画像診断_舌下・顎下・頸部の病変_QA.json",
     "htmlPath": "html/subject/歯科放射線学/05_画像診断_舌下・顎下・頸部の病変.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13349,7 +13349,7 @@ const DATA = [
   {
     "id": "画像診断_顎関節の病変",
     "title": "画像診断_顎関節の病変",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/05_画像診断_顎関節の病変_QA.json",
     "htmlPath": "html/subject/歯科放射線学/05_画像診断_顎関節の病変.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13358,7 +13358,7 @@ const DATA = [
   {
     "id": "放射線治療_副作用",
     "title": "放射線治療_副作用",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/06_放射線治療_副作用_QA.json",
     "htmlPath": "html/subject/歯科放射線学/06_放射線治療_副作用.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13367,7 +13367,7 @@ const DATA = [
   {
     "id": "放射線治療_外部照射",
     "title": "放射線治療_外部照射",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/06_放射線治療_外部照射_QA.json",
     "htmlPath": "html/subject/歯科放射線学/06_放射線治療_外部照射.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13376,7 +13376,7 @@ const DATA = [
   {
     "id": "放射線治療_放射線治療の効果",
     "title": "放射線治療_放射線治療の効果",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/06_放射線治療_放射線治療の効果_QA.json",
     "htmlPath": "html/subject/歯科放射線学/06_放射線治療_放射線治療の効果.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13385,7 +13385,7 @@ const DATA = [
   {
     "id": "放射線治療_組織内照射",
     "title": "放射線治療_組織内照射",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/06_放射線治療_組織内照射_QA.json",
     "htmlPath": "html/subject/歯科放射線学/06_放射線治療_組織内照射.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13394,7 +13394,7 @@ const DATA = [
   {
     "id": "放射線の影響と健康_急性放射線症候群",
     "title": "放射線の影響と健康_急性放射線症候群",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/07_放射線の影響と健康_急性放射線症候群_QA.json",
     "htmlPath": "html/subject/歯科放射線学/07_放射線の影響と健康_急性放射線症候群.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13403,7 +13403,7 @@ const DATA = [
   {
     "id": "放射線の影響と健康_生物学的効果",
     "title": "放射線の影響と健康_生物学的効果",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/07_放射線の影響と健康_生物学的効果_QA.json",
     "htmlPath": "html/subject/歯科放射線学/07_放射線の影響と健康_生物学的効果.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13412,7 +13412,7 @@ const DATA = [
   {
     "id": "放射線の影響と健康_確率的影響と確定的影響",
     "title": "放射線の影響と健康_確率的影響と確定的影響",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科放射線学/07_放射線の影響と健康_確率的影響と確定的影響_QA.json",
     "htmlPath": "html/subject/歯科放射線学/07_放射線の影響と健康_確率的影響と確定的影響.html",
     "subject": "歯科放射線",
     "subjectCategory": "基礎",
@@ -13421,7 +13421,7 @@ const DATA = [
   {
     "id": "局所麻酔法_伝達麻酔法",
     "title": "局所麻酔法_伝達麻酔法",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/01_局所麻酔法_伝達麻酔法_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/01_局所麻酔法_伝達麻酔法.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13430,7 +13430,7 @@ const DATA = [
   {
     "id": "局所麻酔法_局所麻酔薬",
     "title": "局所麻酔法_局所麻酔薬",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/01_局所麻酔法_局所麻酔薬_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/01_局所麻酔法_局所麻酔薬.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13439,7 +13439,7 @@ const DATA = [
   {
     "id": "局所麻酔法_血管収縮薬",
     "title": "局所麻酔法_血管収縮薬",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/01_局所麻酔法_血管収縮薬_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/01_局所麻酔法_血管収縮薬.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13448,7 +13448,7 @@ const DATA = [
   {
     "id": "局所麻酔法_適応と禁忌",
     "title": "局所麻酔法_適応と禁忌",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/01_局所麻酔法_適応と禁忌_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/01_局所麻酔法_適応と禁忌.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13457,7 +13457,7 @@ const DATA = [
   {
     "id": "全身麻酔法_周術期検査：カプノメータ",
     "title": "全身麻酔法_周術期検査：カプノメータ",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_周術期検査：カプノメータ_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_周術期検査：カプノメータ.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13466,7 +13466,7 @@ const DATA = [
   {
     "id": "全身麻酔法_周術期検査：スパイロメトリ",
     "title": "全身麻酔法_周術期検査：スパイロメトリ",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_周術期検査：スパイロメトリ_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_周術期検査：スパイロメトリ.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13475,7 +13475,7 @@ const DATA = [
   {
     "id": "全身麻酔法_周術期検査：パルスオキシメータ",
     "title": "全身麻酔法_周術期検査：パルスオキシメータ",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_周術期検査：パルスオキシメータ_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_周術期検査：パルスオキシメータ.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13484,7 +13484,7 @@ const DATA = [
   {
     "id": "全身麻酔法_周術期検査：ヘモグロビン酸素飽和度",
     "title": "全身麻酔法_周術期検査：ヘモグロビン酸素飽和度",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_周術期検査：ヘモグロビン酸素飽和度_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_周術期検査：ヘモグロビン酸素飽和度.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13493,7 +13493,7 @@ const DATA = [
   {
     "id": "全身麻酔法_周術期検査：心電図",
     "title": "全身麻酔法_周術期検査：心電図",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_周術期検査：心電図_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_周術期検査：心電図.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13502,7 +13502,7 @@ const DATA = [
   {
     "id": "全身麻酔法_周術期検査：血圧",
     "title": "全身麻酔法_周術期検査：血圧",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_周術期検査：血圧_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_周術期検査：血圧.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13511,7 +13511,7 @@ const DATA = [
   {
     "id": "全身麻酔法_周術期検査：術前リスクの判定",
     "title": "全身麻酔法_周術期検査：術前リスクの判定",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_周術期検査：術前リスクの判定_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_周術期検査：術前リスクの判定.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13520,7 +13520,7 @@ const DATA = [
   {
     "id": "全身麻酔法_導入",
     "title": "全身麻酔法_導入",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_導入_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_導入.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13529,7 +13529,7 @@ const DATA = [
   {
     "id": "全身麻酔法_導入の手順",
     "title": "全身麻酔法_導入の手順",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_導入の手順_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_導入の手順.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13538,7 +13538,7 @@ const DATA = [
   {
     "id": "全身麻酔法_導入時の合併症",
     "title": "全身麻酔法_導入時の合併症",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_導入時の合併症_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_導入時の合併症.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13547,7 +13547,7 @@ const DATA = [
   {
     "id": "全身麻酔法_気道管理",
     "title": "全身麻酔法_気道管理",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_気道管理_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_気道管理.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13556,7 +13556,7 @@ const DATA = [
   {
     "id": "全身麻酔法_術中・術後管理",
     "title": "全身麻酔法_術中・術後管理",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_術中・術後管理_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_術中・術後管理.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13565,7 +13565,7 @@ const DATA = [
   {
     "id": "全身麻酔法_術前・術中管理",
     "title": "全身麻酔法_術前・術中管理",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_術前・術中管理_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_術前・術中管理.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13574,7 +13574,7 @@ const DATA = [
   {
     "id": "全身麻酔法_麻酔器・モニター",
     "title": "全身麻酔法_麻酔器・モニター",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/02_全身麻酔法_麻酔器・モニター_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/02_全身麻酔法_麻酔器・モニター.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13583,7 +13583,7 @@ const DATA = [
   {
     "id": "精神鎮静法_静脈内鎮静法",
     "title": "精神鎮静法_静脈内鎮静法",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/03_精神鎮静法_静脈内鎮静法_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/03_精神鎮静法_静脈内鎮静法.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13592,7 +13592,7 @@ const DATA = [
   {
     "id": "歯科治療中の全身的偶発症_アナフィラキシーショック",
     "title": "歯科治療中の全身的偶発症_アナフィラキシーショック",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_アナフィラキシーショック_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_アナフィラキシーショック.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13601,7 +13601,7 @@ const DATA = [
   {
     "id": "歯科治療中の全身的偶発症_メトヘモグロビン血症",
     "title": "歯科治療中の全身的偶発症_メトヘモグロビン血症",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_メトヘモグロビン血症_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_メトヘモグロビン血症.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13610,7 +13610,7 @@ const DATA = [
   {
     "id": "歯科治療中の全身的偶発症_出血性ショック",
     "title": "歯科治療中の全身的偶発症_出血性ショック",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_出血性ショック_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_出血性ショック.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13619,7 +13619,7 @@ const DATA = [
   {
     "id": "歯科治療中の全身的偶発症_局所麻酔薬中毒",
     "title": "歯科治療中の全身的偶発症_局所麻酔薬中毒",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_局所麻酔薬中毒_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_局所麻酔薬中毒.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13628,7 +13628,7 @@ const DATA = [
   {
     "id": "歯科治療中の全身的偶発症_悪性高熱症",
     "title": "歯科治療中の全身的偶発症_悪性高熱症",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_悪性高熱症_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_悪性高熱症.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13637,7 +13637,7 @@ const DATA = [
   {
     "id": "歯科治療中の全身的偶発症_血管迷走神経反射",
     "title": "歯科治療中の全身的偶発症_血管迷走神経反射",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_血管迷走神経反射_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_血管迷走神経反射.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13646,7 +13646,7 @@ const DATA = [
   {
     "id": "歯科治療中の全身的偶発症_誤嚥",
     "title": "歯科治療中の全身的偶発症_誤嚥",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_誤嚥_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_誤嚥.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13655,7 +13655,7 @@ const DATA = [
   {
     "id": "歯科治療中の全身的偶発症_過換気症候群",
     "title": "歯科治療中の全身的偶発症_過換気症候群",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_過換気症候群_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/04_歯科治療中の全身的偶発症_過換気症候群.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13664,7 +13664,7 @@ const DATA = [
   {
     "id": "留意すべき疾患・徴候_呼吸器疾患",
     "title": "留意すべき疾患・徴候_呼吸器疾患",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_呼吸器疾患_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_呼吸器疾患.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13673,7 +13673,7 @@ const DATA = [
   {
     "id": "留意すべき疾患・徴候_妊婦",
     "title": "留意すべき疾患・徴候_妊婦",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_妊婦_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_妊婦.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13682,7 +13682,7 @@ const DATA = [
   {
     "id": "留意すべき疾患・徴候_循環器疾患",
     "title": "留意すべき疾患・徴候_循環器疾患",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_循環器疾患_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_循環器疾患.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13691,7 +13691,7 @@ const DATA = [
   {
     "id": "留意すべき疾患・徴候_甲状腺疾患",
     "title": "留意すべき疾患・徴候_甲状腺疾患",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_甲状腺疾患_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_甲状腺疾患.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13700,7 +13700,7 @@ const DATA = [
   {
     "id": "留意すべき疾患・徴候_精神・神経疾患",
     "title": "留意すべき疾患・徴候_精神・神経疾患",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_精神・神経疾患_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_精神・神経疾患.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13709,7 +13709,7 @@ const DATA = [
   {
     "id": "留意すべき疾患・徴候_糖尿病",
     "title": "留意すべき疾患・徴候_糖尿病",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_糖尿病_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_糖尿病.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13718,7 +13718,7 @@ const DATA = [
   {
     "id": "留意すべき疾患・徴候_脳血管疾患",
     "title": "留意すべき疾患・徴候_脳血管疾患",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_脳血管疾患_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_脳血管疾患.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
@@ -13727,10 +13727,106 @@ const DATA = [
   {
     "id": "留意すべき疾患・徴候_高齢者",
     "title": "留意すべき疾患・徴候_高齢者",
-    "qaPath": null,
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_高齢者_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_高齢者.html",
     "subject": "歯科麻酔",
     "subjectCategory": "基礎",
     "searchText": "留意すべき疾患・徴候_高齢者 GFR オーラルフレイル サルコペニア サルコペニア嚥下障害 フェリプレシン 一次性 二次性 体位の配慮 個人差が大きい 分類 動脈硬化 呼吸器系 咳嗽反射 圧受容体反射 増加 多剤併用（ポリファーマシー） 完治が困難 定義 局所麻酔の注意 循環器系 心拍出量 慎重投与 投与量の減量 抗血栓薬 歯科との関連 残気量（RV） 環境に左右されやすい 老化に伴う生理的変化 老年期の疾患の特徴 肝クリアランス 肝臓・腎臓 肺活量（VC） 複数の疾患を併発 起立性低血圧 非典型的 骨吸収抑制薬 骨格筋量および筋力の低下 高齢者 高齢者の歯科治療時の全身管理 高齢者の疾患の特徴"
+  },
+  {
+    "id": "防護、法的規制_患者の防護",
+    "title": "防護、法的規制_患者の防護",
+    "qaPath": "qa/subject/歯科放射線学/08_防護、法的規制_患者の防護_QA.json",
+    "htmlPath": "html/subject/歯科放射線学/08_防護、法的規制_患者の防護.html",
+    "subject": "歯科放射線",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "防護、法的規制_患者の防護：小児",
+    "title": "防護、法的規制_患者の防護：小児",
+    "qaPath": "qa/subject/歯科放射線学/08_防護、法的規制_患者の防護：小児_QA.json",
+    "htmlPath": "html/subject/歯科放射線学/08_防護、法的規制_患者の防護：小児.html",
+    "subject": "歯科放射線",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "防護、法的規制_防護：実効線量",
+    "title": "防護、法的規制_防護：実効線量",
+    "qaPath": "qa/subject/歯科放射線学/08_防護、法的規制_防護：実効線量_QA.json",
+    "htmlPath": "html/subject/歯科放射線学/08_防護、法的規制_防護：実効線量.html",
+    "subject": "歯科放射線",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "防護、法的規制_防護：放射線被曝",
+    "title": "防護、法的規制_防護：放射線被曝",
+    "qaPath": "qa/subject/歯科放射線学/08_防護、法的規制_防護：放射線被曝_QA.json",
+    "htmlPath": "html/subject/歯科放射線学/08_防護、法的規制_防護：放射線被曝.html",
+    "subject": "歯科放射線",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "留意すべき疾患・徴候_脱水",
+    "title": "留意すべき疾患・徴候_脱水",
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_脱水_QA.json",
+    "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_脱水.html",
+    "subject": "歯科麻酔",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "留意すべき疾患・徴候_血液製剤",
+    "title": "留意すべき疾患・徴候_血液製剤",
+    "qaPath": "qa/subject/歯科麻酔学/05_留意すべき疾患・徴候_血液製剤_QA.json",
+    "htmlPath": "html/subject/歯科麻酔学/05_留意すべき疾患・徴候_血液製剤.html",
+    "subject": "歯科麻酔",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "疼痛緩和治療_悪性腫瘍の疼痛管理",
+    "title": "疼痛緩和治療_悪性腫瘍の疼痛管理",
+    "qaPath": "qa/subject/歯科麻酔学/06_疼痛緩和治療_悪性腫瘍の疼痛管理_QA.json",
+    "htmlPath": "html/subject/歯科麻酔学/06_疼痛緩和治療_悪性腫瘍の疼痛管理.html",
+    "subject": "歯科麻酔",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "疼痛緩和治療_星状神経節ブロック",
+    "title": "疼痛緩和治療_星状神経節ブロック",
+    "qaPath": "qa/subject/歯科麻酔学/06_疼痛緩和治療_星状神経節ブロック_QA.json",
+    "htmlPath": "html/subject/歯科麻酔学/06_疼痛緩和治療_星状神経節ブロック.html",
+    "subject": "歯科麻酔",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "疼痛緩和治療_疼痛性疾患",
+    "title": "疼痛緩和治療_疼痛性疾患",
+    "qaPath": "qa/subject/歯科麻酔学/06_疼痛緩和治療_疼痛性疾患_QA.json",
+    "htmlPath": "html/subject/歯科麻酔学/06_疼痛緩和治療_疼痛性疾患.html",
+    "subject": "歯科麻酔",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "救急蘇生法_心肺蘇生法",
+    "title": "救急蘇生法_心肺蘇生法",
+    "qaPath": "qa/subject/歯科麻酔学/07_救急蘇生法_心肺蘇生法_QA.json",
+    "htmlPath": "html/subject/歯科麻酔学/07_救急蘇生法_心肺蘇生法.html",
+    "subject": "歯科麻酔",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "救急蘇生法_心肺蘇生法に必要な解剖",
+    "title": "救急蘇生法_心肺蘇生法に必要な解剖",
+    "qaPath": "qa/subject/歯科麻酔学/07_救急蘇生法_心肺蘇生法に必要な解剖_QA.json",
+    "htmlPath": "html/subject/歯科麻酔学/07_救急蘇生法_心肺蘇生法に必要な解剖.html",
+    "subject": "歯科麻酔",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "救急蘇生法_救急時の診断",
+    "title": "救急蘇生法_救急時の診断",
+    "qaPath": "qa/subject/歯科麻酔学/07_救急蘇生法_救急時の診断_QA.json",
+    "htmlPath": "html/subject/歯科麻酔学/07_救急蘇生法_救急時の診断.html",
+    "subject": "歯科麻酔",
+    "subjectCategory": "基礎"
   }
 ];

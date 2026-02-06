@@ -35,15 +35,15 @@ def main():
         qa_files = sorted(os.listdir(subject_path))
 
         for qa_file in qa_files:
-            # .txt と .json の両方をサポート（.txtを優先）
-            if qa_file.endswith('_QA.txt'):
-                suffix = '_QA.txt'
-            elif qa_file.endswith('_QA.json'):
+            # .json と .txt の両方をサポート（.jsonを優先）
+            if qa_file.endswith('_QA.json'):
                 suffix = '_QA.json'
-                # 対応する.txtファイルが存在する場合はスキップ
-                txt_file = qa_file.replace('_QA.json', '_QA.txt')
-                if txt_file in qa_files:
-                    continue  # .txtを優先
+            elif qa_file.endswith('_QA.txt'):
+                suffix = '_QA.txt'
+                # 対応する.jsonファイルが存在する場合はスキップ
+                json_file = qa_file.replace('_QA.txt', '_QA.json')
+                if json_file in qa_files:
+                    continue  # .jsonを優先
             else:
                 continue
 

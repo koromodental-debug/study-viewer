@@ -272,8 +272,13 @@ def find_qa_files():
     """Q&Aファイルを検索"""
     qa_files = {}
     for file in QA_DIR.iterdir():
-        if file.suffix == '.txt' and file.name.endswith('_QA.txt'):
+        if file.name.endswith('_QA.json') or file.name.endswith('_QA.txt'):
             key = normalize_name(file.name)
+            # .jsonを優先：同名の.jsonがあれば.txtはスキップ
+            if file.name.endswith('_QA.txt'):
+                json_version = file.with_name(file.name.replace('_QA.txt', '_QA.json'))
+                if json_version.exists():
+                    continue
             rel_path = file.relative_to(BASE_DIR)
             qa_files[key] = {
                 'path': str(rel_path),
@@ -337,7 +342,12 @@ def find_subject_qa_files():
         subject_name = subject_dir.name
 
         for file in subject_dir.iterdir():
-            if file.suffix == '.txt' and file.name.endswith('_QA.txt'):
+            if file.name.endswith('_QA.json') or file.name.endswith('_QA.txt'):
+                # .jsonを優先：同名の.jsonがあれば.txtはスキップ
+                if file.name.endswith('_QA.txt'):
+                    json_version = file.with_name(file.name.replace('_QA.txt', '_QA.json'))
+                    if json_version.exists():
+                        continue
                 # キーは科目名_ファイル名（_QA除く）
                 base_name = file.stem.replace('_QA', '')
                 key = f"{subject_name}_{base_name}"

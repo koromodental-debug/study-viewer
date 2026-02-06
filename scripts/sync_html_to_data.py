@@ -98,9 +98,14 @@ def main():
             html_path = f"html/subject/{subject_dir}/{html_file}"
             html_full_path = os.path.join(BASE_DIR, html_path)
 
-            # 対応するQAファイルパスを生成
+            # 対応するQAファイルパスを生成（.jsonを優先）
             base_name = html_file.replace('.html', '')
-            qa_path = f"qa/subject/{subject_dir}/{base_name}_QA.txt"
+            qa_json = f"qa/subject/{subject_dir}/{base_name}_QA.json"
+            qa_txt = f"qa/subject/{subject_dir}/{base_name}_QA.txt"
+            if os.path.exists(os.path.join(BASE_DIR, qa_json)):
+                qa_path = qa_json
+            else:
+                qa_path = qa_txt
 
             if html_path not in existing_html_paths:
                 # 新規HTMLファイル

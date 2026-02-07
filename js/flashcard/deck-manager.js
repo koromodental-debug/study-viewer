@@ -2982,10 +2982,14 @@ export function createDeckManager(deps) {
 
         let correctAnswerKey = '';
         if (hasChoices) {
-          const correctKeys = Object.entries(qa.choices)
-            .filter(([key, value]) => value && value.includes('○'))
-            .map(([key]) => key);
-          correctAnswerKey = correctKeys.join('').toUpperCase();
+          if (qa.correctAnswer) {
+            correctAnswerKey = qa.correctAnswer;
+          } else {
+            const correctKeys = Object.entries(qa.choices)
+              .filter(([key, value]) => value && value.includes('○'))
+              .map(([key]) => key);
+            correctAnswerKey = correctKeys.join('').toUpperCase();
+          }
         }
 
         let numChoices = qa.numChoices || 1;

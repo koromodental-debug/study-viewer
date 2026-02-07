@@ -116,7 +116,7 @@ export function createCardRenderer(deps) {
       .map(k => k.toUpperCase())
       .sort()
       .join('');
-    const sortedCorrect = correctAnswer.split('').sort().join('');
+    const sortedCorrect = correctAnswer.replace(/[^A-E]/g, '').split('').sort().join('');
     const isCorrect = selectedKeys === sortedCorrect;
 
     state.choiceAnswered = true;
@@ -176,6 +176,7 @@ export function createCardRenderer(deps) {
     if (!card) return;
 
     if (card.type === 'table-occlusion') {
+      state.isFlipped = false;
       renderInlineTableCard(card);
       return;
     }

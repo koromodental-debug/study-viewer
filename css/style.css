@@ -12717,6 +12717,14 @@ body.is-practice .tab-content {
    選択問題用スタイル（フラッシュカード内）
    ========================================= */
 
+/* 選択数ヒント */
+.flashcard-choices-hint {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 12px;
+}
+
 /* 選択肢コンテナ */
 .flashcard-choices {
   display: flex;

@@ -6108,8 +6108,14 @@ const FlashcardModule = (function() {
       });
     }
 
-    document.getElementById('flashcard-again-btn').addEventListener('click', advanceInlineTable);
-    document.getElementById('flashcard-memorized-btn').addEventListener('click', advanceInlineTable);
+    document.getElementById('flashcard-again-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      advanceInlineTable();
+    });
+    document.getElementById('flashcard-memorized-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      advanceInlineTable();
+    });
   }
 
   function revealInlineTableCell() {
@@ -6712,12 +6718,20 @@ const FlashcardModule = (function() {
   }
 
   // JSONフォーマットのQAをパース
+  // 画像がないと成立しない問題を判定
+  const IMAGE_DEP_RE = /写真|別冊|画像を示す|エックス線.*を示す|X線.*を示す|CT.*を示す|MRI.*を示す|パノラマ.*を示す|口腔内.*を示す|顔貌.*を示す|模型.*を示す|装置.*を示す|器具.*を示す|図を示す|グラフを示す|セファロ/;
+
   function parseJSONToCards(jsonData, topicId) {
     const cards = [];
     let index = 0;
 
     for (const section of jsonData.sections || []) {
       for (const qa of section.qa || []) {
+        // 画像依存問題を除外
+        if (qa.question && IMAGE_DEP_RE.test(qa.question)) {
+          continue;
+        }
+
         // テーブル穴埋めカードの場合：各穴埋めを個別カードとして展開
         if (qa.type === 'table-occlusion') {
           for (let occIdx = 0; occIdx < qa.occlusions.length; occIdx++) {
@@ -6739,13 +6753,17 @@ const FlashcardModule = (function() {
 
         const hasChoices = qa.choices && Object.keys(qa.choices).length > 0;
 
-        // 選択肢から正解キーを抽出（「○」を含む選択肢）
+        // 選択肢から正解キーを抽出（correctAnswerフィールド優先、なければ「○」を含む選択肢）
         let correctAnswerKey = '';
         if (hasChoices) {
-          const correctKeys = Object.entries(qa.choices)
-            .filter(([key, value]) => value && value.includes('○'))
-            .map(([key]) => key);
-          correctAnswerKey = correctKeys.join('').toUpperCase();
+          if (qa.correctAnswer) {
+            correctAnswerKey = qa.correctAnswer;
+          } else {
+            const correctKeys = Object.entries(qa.choices)
+              .filter(([key, value]) => value && value.includes('○'))
+              .map(([key]) => key);
+            correctAnswerKey = correctKeys.join('').toUpperCase();
+          }
         }
 
         // 問題文から「（○つ）」を抽出してnumChoicesを決定
@@ -6825,6 +6843,8 @@ const FlashcardModule = (function() {
     const terms = normalizedQuery.split(/\s+/).filter(t => t.length > 0);
 
     const results = state.cardSearch.allCardsIndex.filter(item => {
+      // 画像依存問題を除外
+      if (item.question && IMAGE_DEP_RE.test(item.question)) return false;
       // カードの場合は question と answer を検索
       // まとめの場合は searchText を検索
       const searchTarget = item.type === 'summary'
@@ -7422,8 +7442,11 @@ const FlashcardModule = (function() {
         .trim();
     };
 
+    const num = card.numChoices || 1;
+
     return `
-      <div class="flashcard-choices" data-num="${card.numChoices || 1}">
+      <div class="flashcard-choices-hint">${num}つ選べ</div>
+      <div class="flashcard-choices" data-num="${num}">
         ${validChoices.map(([key, value]) => `
           <button class="flashcard-choice-btn" data-choice="${key}">
             <span class="choice-label">${key.toUpperCase()}</span>
@@ -7481,7 +7504,7 @@ const FlashcardModule = (function() {
       .map(k => k.toUpperCase())
       .sort()
       .join('');
-    const sortedCorrect = correctAnswer.split('').sort().join('');
+    const sortedCorrect = correctAnswer.replace(/[^A-E]/g, '').split('').sort().join('');
     const isCorrect = selectedKeys === sortedCorrect;
 
     // 状態を更新

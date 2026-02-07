@@ -3,6 +3,21 @@
 __pycache__/
 images/*_backup/
 
+# Firebase cache
+.firebase/
+
+# Build artifacts
+data/
+scripts/
+*.backup
+*.backup2
+AGENTS.md
+check_questions.js
+cleanup-kokoshika.js
+migrate-node.js
+国家試験過去問/
+国家試験過去問 2/
+
 # Capacitor
 www/
 ios/

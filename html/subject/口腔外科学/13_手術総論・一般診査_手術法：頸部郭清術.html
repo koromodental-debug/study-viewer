@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>手術法：頸部郭清術 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>手術法：頸部郭清術</h1>
+    <div class="container">
+
+      <h2>頸部郭清術とは</h2>
+      <p><span class="key">頸部郭清術</span>（neck dissection）は、口腔癌などの悪性腫瘍の<span class="key">頸部リンパ節転移</span>に対し、転移リンパ節を含む頸部の組織を一括して切除する手術である。頸部リンパ節転移の制御は予後を左右する重要な因子であり、リンパ節転移に対する治療は頸部郭清術が主体となる。</p>
+
+      <h3>適応</h3>
+      <ul>
+        <li><span class="highlight">N（+）</span>（頸部リンパ節転移あり）の口腔癌</li>
+        <li>臨床的にN0でも潜在転移リスクが高い症例（予防的郭清）</li>
+      </ul>
+
+      <!-- ========== 頸部リンパ節のレベル分類 ========== -->
+      <h2>頸部リンパ節のレベル分類</h2>
+      <p>MSKCC（Memorial Sloan-Kettering Cancer Center）のレベル分類が国際的に用いられる。</p>
+
+      <table>
+        <tr><th>レベル</th><th>名称</th><th>部位</th></tr>
+        <tr><td class="key">IA</td><td>オトガイ下リンパ節</td><td>オトガイ下三角</td></tr>
+        <tr><td class="key">IB</td><td>顎下リンパ節</td><td>顎下三角</td></tr>
+        <tr><td class="key">IIA</td><td>上内頸静脈リンパ節（前方）</td><td>顎二腹筋後腹〜舌骨の高さ（前方）</td></tr>
+        <tr><td class="key">IIB</td><td>上内頸静脈リンパ節（後方）</td><td>顎二腹筋後腹〜舌骨の高さ（後方）</td></tr>
+        <tr><td class="key">III</td><td>中内頸静脈リンパ節</td><td>舌骨〜輪状軟骨の高さ</td></tr>
+        <tr><td class="key">IV</td><td>下内頸静脈リンパ節</td><td>輪状軟骨〜鎖骨の高さ</td></tr>
+        <tr><td class="key">VA</td><td>副神経リンパ節</td><td>後頸三角（上部）</td></tr>
+        <tr><td class="key">VB</td><td>鎖骨上窩リンパ節</td><td>後頸三角（下部）</td></tr>
+      </table>
+
+      <p class="note">※口腔癌は<span class="key">顎下リンパ節（IB）</span>や<span class="key">上内頸静脈リンパ節（IIA）</span>への転移頻度が高い</p>
+
+      <!-- ========== 頸部郭清術の分類 ========== -->
+      <h2>頸部郭清術の分類</h2>
+
+      <table>
+        <tr><th>術式</th><th>郭清範囲</th><th>内頸静脈・副神経・胸鎖乳突筋</th></tr>
+        <tr>
+          <td><span class="highlight">根治的頸部郭清術（RND）</span></td>
+          <td>Level I〜V全て</td>
+          <td><span class="caution">3つとも切除</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">根治的頸部郭清術変法（mRND）</span></td>
+          <td>Level I〜V全て</td>
+          <td><span class="key">少なくとも1つを温存</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">選択的頸部郭清術</span></td>
+          <td>特定レベルのみ</td>
+          <td>温存</td>
+        </tr>
+        <tr>
+          <td><span class="key">拡大頸部郭清術</span></td>
+          <td>Level I〜V＋頸部以外</td>
+          <td>3つとも切除＋追加構造物</td>
+        </tr>
+        <tr>
+          <td><span class="key">予防的頸部郭清術</span></td>
+          <td>臨床的N0で実施</td>
+          <td>選択的or根治的変法</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">RNDで切除される3構造物</div>
+        <ul>
+          <li><span class="key">内頸静脈</span></li>
+          <li><span class="key">副神経（XI）</span> → 切除すると<span class="highlight">僧帽筋麻痺（肩の挙上困難）</span></li>
+          <li><span class="key">胸鎖乳突筋</span></li>
+        </ul>
+      </div>
+
+      <p class="note">※mRNDで3つとも温存する場合を特に<span class="key">機能的頸部郭清術</span>（functional neck dissection）と呼ぶ</p>
+
+      <h3>センチネルリンパ節生検</h3>
+      <p>原発巣から最初にリンパ流が到達するリンパ節（<span class="key">センチネルリンパ節</span>）を同定し、転移の有無を術中迅速病理で判定する方法。センチネルリンパ節に転移がなければ頸部郭清を省略できる可能性がある。</p>
+
+      <!-- ========== 術野の重要な神経 ========== -->
+      <h2>術野の重要な神経</h2>
+
+      <table>
+        <tr><th>神経</th><th>脳神経</th><th>支配</th><th>損傷時の障害</th></tr>
+        <tr><td class="key">副神経</td><td>XI</td><td>僧帽筋・胸鎖乳突筋</td><td><span class="highlight">肩の挙上困難</span></td></tr>
+        <tr><td class="key">舌下神経</td><td>XII</td><td>舌の運動</td><td>舌の偏位（患側へ）</td></tr>
+        <tr><td class="key">顔面神経下顎縁枝</td><td>VII</td><td>下唇の運動</td><td>下唇の運動障害</td></tr>
+        <tr><td class="key">迷走神経</td><td>X</td><td>声門（反回神経経由）</td><td>嗄声</td></tr>
+        <tr><td class="key">横隔神経</td><td>C3-5</td><td>横隔膜</td><td>呼吸障害</td></tr>
+      </table>
+
+      <p class="note">※胸管（左側頸部に存在）の損傷 → <span class="key">乳び漏</span></p>
+
+      <!-- ========== 術後管理 ========== -->
+      <h2>術後管理</h2>
+
+      <h3>ドレーン留置</h3>
+      <p>頸部郭清術後は広範な<span class="key">死腔</span>が生じ、滲出液や血液が貯留しやすい。</p>
+      <ul>
+        <li>目的：<span class="highlight">貯留滲出液の排出</span>（死腔閉鎖の促進・血腫予防）</li>
+        <li>方法：<span class="key">閉鎖式低圧持続吸引ドレーン</span>が標準的</li>
+        <li>留置部位：顎下部、後頸部、鎖骨上窩など死腔が生じやすい部位</li>
+        <li>抜去基準：排液量が<span class="highlight">24時間10mL以下</span>に減少（術後3〜5日が目安）</li>
+      </ul>
+
+      <h3>排液の観察ポイント</h3>
+      <table>
+        <tr><th>排液の性状</th><th>考えられる状態</th></tr>
+        <tr><td>暗赤色 → 淡血性 → 淡黄色透明</td><td>正常な経過</td></tr>
+        <tr><td><span class="caution">鮮血の持続</span></td><td>術後出血</td></tr>
+        <tr><td><span class="caution">白濁した乳び状</span></td><td>乳び漏（胸管損傷）</td></tr>
+        <tr><td>膿性・悪臭</td><td>創部感染</td></tr>
+      </table>
+
+      <h3>術後の合併症</h3>
+      <ul>
+        <li><span class="key">出血・血腫</span>：術後早期の合併症。ドレーンで監視</li>
+        <li><span class="key">乳び漏</span>：<span class="caution">左側郭清時</span>に胸管を損傷 → 乳白色の排液</li>
+        <li><span class="key">創部感染</span>：抗菌薬投与で予防</li>
+        <li><span class="key">副神経損傷による肩関節障害</span>：リハビリテーションが必要</li>
+        <li><span class="key">顔面神経下顎縁枝の損傷</span>：下唇の運動障害</li>
+      </ul>
+
+      <!-- ========== 過去問 ========== -->
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">116A38</div>
+        <p>頸部郭清術後の創部にドレーンを留置する目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 創部の洗浄<br>
+          b 抗菌薬の投与<br>
+          c 排膿路の確保<br>
+          d 創部出血の防止<br>
+          e 貯留滲出液の排出
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】頸部郭清術後は広範な死腔が生じ、滲出液が貯留しやすい。ドレーンは貯留した滲出液を体外に排出し、死腔を閉鎖して感染予防・創傷治癒促進を図る目的で留置する。創部の洗浄（a）や抗菌薬の投与（b）はドレーンの目的ではない。排膿路の確保（c）は膿瘍のドレナージであり、術後の予防的ドレーンとは異なる。創部出血の防止（d）はドレーンの目的ではなく、ドレーンは出血を「防止」するのではなく出血を「検知」する役割がある。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

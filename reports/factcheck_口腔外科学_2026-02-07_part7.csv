@@ -1,0 +1,3 @@
+ファイル名,検証項目,現在の記述,判定,問題点,正しい情報,情報源,修正提案
+06_口腔粘膜疾患_口腔粘膜疾患.html,白板症の定義の時代整合,"WHO（1978）定義を主記載",要確認,"歴史的定義のみだと現行OPMD概念との接続が弱い。","旧定義を保持しつつ、現行はOPMD枠組みで扱うことを併記。",https://www.ncbi.nlm.nih.gov/books/NBK611818/ ; https://www.cancer.gov/publications/dictionaries/cancer-terms/def/oral-potentially-malignant-disorder,本文へOPMD併記（実施済み）
+06_口腔粘膜疾患_口腔粘膜疾患.html,OLP悪性転化率の表現,"悪性転化率は約1%",要確認,"単一点の断定は文献差を吸収しにくい。","1%前後（報告差あり）と記載。",https://www.ncbi.nlm.nih.gov/books/NBK611818/,表現を幅付きへ修正（実施済み）

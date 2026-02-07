@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唾液腺良性腫瘍 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 唾液腺疾患</span>
+    <h1>唾液腺良性腫瘍</h1>
+    <div class="container">
+
+      <h2>唾液腺腫瘍の概要</h2>
+      <p>唾液腺腫瘍は耳下腺、顎下腺、舌下腺の大唾液腺と、口蓋・口唇・頬粘膜などに存在する小唾液腺から発生する。全唾液腺腫瘍の約5%が全腫瘍に占める割合であり、頭頸部の約1%である。</p>
+
+      <h3>部位別の良性・悪性比</h3>
+      <table>
+        <tr><th>部位</th><th>良性の割合</th><th>特徴</th></tr>
+        <tr><td>耳下腺</td><td>約80%</td><td>唾液腺腫瘍の発生頻度が最も高い</td></tr>
+        <tr><td>顎下腺</td><td>約50%</td><td>悪性の割合が耳下腺より高い</td></tr>
+        <tr><td>舌下腺</td><td>低い</td><td><span class="caution">悪性の割合が高い</span></td></tr>
+        <tr><td>小唾液腺</td><td>約50%</td><td>口蓋に最も多い</td></tr>
+      </table>
+
+      <h3>WHO分類（2005年）における良性上皮性腫瘍</h3>
+      <ul>
+        <li><span class="key">多形腺腫</span> pleomorphic adenoma</li>
+        <li>筋上皮腫 myoepithelioma</li>
+        <li>基底細胞腺腫 basal cell adenoma</li>
+        <li><span class="key">Warthin腫瘍</span> Warthin tumour</li>
+        <li>オンコサイトーマ oncocytoma</li>
+        <li>管状腺腫 canalicular adenoma</li>
+        <li>脂腺腺腫 sebaceous adenoma</li>
+        <li>導管乳頭腫 ductal adenoma</li>
+        <li>嚢胞腺腫 cystadenoma</li>
+      </ul>
+
+      <!-- ===================== 多形腺腫 ===================== -->
+      <h2>多形腺腫（混合腫瘍）</h2>
+      <p><span class="highlight">唾液腺腫瘍で最も頻度が高い</span>（全唾液腺腫瘍の約60%）。上皮成分と間葉成分（粘液腫様、軟骨様など）が混在し、きわめて多彩な組織像を呈することから「混合腫瘍」ともよばれていたが、上皮起源であることが認められ、現在は多形腺腫の名称が広く用いられている。</p>
+
+      <h3>疫学</h3>
+      <ul>
+        <li>発現年齢：20〜50歳の広い年齢分布</li>
+        <li>性差：<span class="key">女性にやや多い</span></li>
+        <li>小児の発生率はきわめて低い</li>
+      </ul>
+
+      <h3>好発部位</h3>
+      <table>
+        <tr><th>部位</th><th>頻度</th></tr>
+        <tr><td>耳下腺</td><td>84%</td></tr>
+        <tr><td>顎下腺</td><td>8%</td></tr>
+        <tr><td>小唾液腺</td><td>6.5%</td></tr>
+      </table>
+
+      <p>小唾液腺原発の部位別頻度は、<span class="highlight">口蓋が最多（65%）</span>、次いで口唇18%、頬5%、舌2%である。口腔内では口蓋の硬口蓋移行部に好発する。</p>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>無痛性、類球形の腫瘤として触知される</li>
+        <li>表面は通常<span class="key">平滑</span>で、弾性硬〜弾性軟</li>
+        <li>発育は緩徐で、時に分葉状を呈する</li>
+        <li>被膜を有するが、厚さは症例によって異なる</li>
+        <li><span class="caution">疼痛や神経麻痺を伴う場合は悪性化を疑う</span></li>
+      </ul>
+
+      <h3>病理組織像</h3>
+      <ul>
+        <li>上皮細胞は主に2層の腺管状増殖を示す</li>
+        <li>間質に<span class="key">粘液腫様、軟骨様、骨様</span>などの多彩な組織成分が混在</li>
+        <li>腫瘍性筋上皮細胞が間質の多彩な組織像に関与</li>
+        <li>被膜は線維性結合組織からなる</li>
+      </ul>
+
+      <h3>経過と予後</h3>
+      <ul>
+        <li>再発率は<span class="key">5〜45%</span>（術式による差が大きい）</li>
+        <li>再発までの期間は長く、数年から10数年のこともある</li>
+        <li><span class="caution">悪性転化</span>の可能性あり → carcinoma in pleomorphic adenoma（多形腺腫内癌）</li>
+        <li>長期間放置すると悪性化のリスクが上昇</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">多形腺腫の出題ポイント</div>
+        <ul>
+          <li>唾液腺腫瘍で<span class="highlight">最多</span></li>
+          <li>口腔内では<span class="highlight">口蓋に最多</span></li>
+          <li>女性にやや多い（⇔ Warthin腫瘍は男性に多い）</li>
+          <li>治療は<span class="key">外科的切除</span>（被膜外切除は再発リスク）</li>
+        </ul>
+      </div>
+
+      <h3>過去問：多形腺腫</h3>
+
+      <div class="question-box">
+        <div class="q-number">102A114</div>
+        <p>多形（性）腺腫で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 男性に多い。<br>
+          b 多発性に生じる。<br>
+          c 高齢者に好発する。<br>
+          d 口腔では口蓋に多い。<br>
+          e 唾液腺腫瘍で最も多い。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】多形腺腫は唾液腺腫瘍で最も頻度が高く（約60%）、口腔内では口蓋に最多である。女性にやや多く（a×）、単発性であり（b×）、20〜50歳に好発する（c×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C42</div>
+        <p>39歳の女性。口蓋の腫瘤を主訴として来院した。かかりつけ歯科医で指摘されたという。触診では弾性軟で、圧痛はない。初診時の口腔内写真（別冊No.13A）、造影CT（別冊No.13B）及び生検時のH-E染色病理組織像（別冊No.13C）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C42_1.png" alt="別冊No.13">
+        </div>
+        <div class="choices">
+          a 線維腫<br>
+          b 多形腺腫<br>
+          c 粘表皮癌<br>
+          d 腺様嚢胞癌<br>
+          e 壊死性唾液腺化生
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】39歳女性、口蓋の弾性軟・無痛性腫瘤。口蓋は小唾液腺腫瘍の好発部位であり、年齢・性別・臨床所見から多形腺腫を考える。病理像で上皮成分と間葉成分の混在が確認できれば診断確定。粘表皮癌・腺様嚢胞癌は悪性で浸潤性増殖を示す。壊死性唾液腺化生は口蓋に生じるが潰瘍を伴う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B66</div>
+        <p>44歳の女性。口蓋の腫脹部の精査を希望して来院した。かかりつけ歯科医で指摘されたという。口蓋に弾性軟から中等度、無痛性の腫瘤を認める。初診時の口腔内写真（別冊No.25A）、CT（別冊No.25B）、MRI（別冊No.25C）及びH-E染色病理組織像（別冊No.25D）を別に示す。
+診断名はどれか。1つ選べ。
+ｆ　腺様嚢胞癌
+ｇ　扁平上皮癌
+ｈ　Warthin腫瘍</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116B66_1.png" alt="別冊No.25">
+        </div>
+        <div class="choices">
+          a 血管腫<br>
+          b 線維腫<br>
+          c 乳頭腫<br>
+          d 多形腺腫<br>
+          e 粘表皮癌
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】44歳女性、口蓋の弾性軟〜中等度・無痛性腫瘤。口蓋は小唾液腺の多形腺腫が最も多い部位である。Warthin腫瘍は耳下腺に好発し口蓋には生じない。腺様嚢胞癌・粘表皮癌・扁平上皮癌は悪性腫瘍であり、無痛性の境界明瞭な腫瘤像とは異なる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D57</div>
+        <p>71歳の男性。口蓋部の腫脹を主訴として来院した。半年前に自覚したが、痛みがないためそのままにしていたという。左側口蓋部に弾性硬の腫脹を認める。初診時の口腔内写真（別冊No.12A）、CT（別冊No.12B）、MRI（別冊No.12C）及び生検時のH-E染色病理組織像（別冊No.12D）を別に示す。
+適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D57_1.png" alt="別冊No.12">
+        </div>
+        <div class="choices">
+          a 経過観察<br>
+          b 切開排膿<br>
+          c 開　窓<br>
+          d 放射線療法<br>
+          e 外科的切除
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】口蓋部の無痛性腫瘤で、病理像から多形腺腫と診断される。多形腺腫の治療は外科的切除が原則である。被膜外切除（核出術）では再発のリスクがあるため、周囲組織を含めた切除が推奨される。経過観察では悪性転化のリスクがあり、放射線療法は良性腫瘍には適応しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D49</div>
+        <p>78歳の女性。口底部の腫脹を主訴として来院した。6か月前に自覚したが、疼痛がないためそのままにしていたところ、徐々に大きくなってきたという。左側舌下小丘からの唾液の排出は良好で、舌の知覚異常はみられない。初診時の口腔内写真（別冊No.13A）、MRI脂肪抑制T2強調像（別冊No.13B）及び生検時のH-E染色病理組織像（別冊No.13C）を別に示す。
+適切な治療法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114D49_1.png" alt="別冊No.13">
+        </div>
+        <div class="choices">
+          a 開　窓<br>
+          b 穿刺吸引<br>
+          c 顎下腺摘出<br>
+          d 舌下腺摘出<br>
+          e 放射線治療
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】口底部の無痛性腫脹で、舌下小丘からの唾液排出は良好（唾石症ではない）。口底部に発生した腫瘍であり、舌下腺由来の良性腫瘍（多形腺腫）と考えられる。治療は腫瘍を含めた舌下腺摘出が適切である。顎下腺摘出では原発巣が残存する。開窓や穿刺吸引は嚢胞に対する処置であり、充実性腫瘍には適さない。</p>
+      </div>
+
+      <!-- ===================== Warthin腫瘍 ===================== -->
+      <h2>Warthin腫瘍（腺リンパ腫）</h2>
+      <p>リンパ組織と乳頭状に増殖した嚢胞状の腺腔構造を呈する腺上皮からなる腫瘍である。唾液腺腫瘍の<span class="key">2〜15%</span>を占める。わが国での頻度は欧米に比べてやや少ない。</p>
+
+      <h3>疫学</h3>
+      <ul>
+        <li>好発年齢：<span class="highlight">40〜70歳</span>（とくに50歳代がピーク）</li>
+        <li>性差：<span class="highlight">男性に多い</span>（男女比 3〜5：1）</li>
+        <li><span class="caution">中高年男性に好発</span>する点が多形腺腫との重要な鑑別点</li>
+      </ul>
+
+      <h3>好発部位</h3>
+      <ul>
+        <li>大多数が<span class="highlight">耳下腺</span>に発生（とくに浅葉の下極部）</li>
+        <li>約<span class="key">7〜10%が両側性</span>に発生することがある</li>
+        <li>その他まれに顎下腺、口蓋などの小唾液腺原発の報告もある</li>
+      </ul>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>発育緩慢で、境界明瞭な限局性の腫瘤</li>
+        <li><span class="key">弾性軟</span>で、時に波動を触れる</li>
+        <li>無痛性</li>
+      </ul>
+
+      <h3>画像診断</h3>
+      <ul>
+        <li><span class="highlight">99mTcO<sub>4</sub><sup>−</sup>シンチグラム</span>で集積を認める（hot spot）</li>
+        <li>Warthin腫瘍は特異的に<sup>99m</sup>Tcを取り込む → 診断学的に有用</li>
+        <li>オンコサイトーマも同様に取り込むが、Warthin腫瘍のほうが頻度が高い</li>
+      </ul>
+
+      <h3>病理組織像</h3>
+      <ul>
+        <li>腫瘍は<span class="key">乳頭状に増殖する2層の上皮細胞</span>とリンパ組織からなる</li>
+        <li>上皮は通常、高円柱細胞（内層）と多角形細胞（外層）の2層から成る</li>
+        <li>嚢胞内に乳頭状の増殖を示す</li>
+        <li>多数の好酸性のミトコンドリアを有するオンコサイトに類似した形態</li>
+        <li>上皮の基底膜に隣接して大小のリンパ組織がみられる</li>
+      </ul>
+
+      <h3>予後</h3>
+      <p>良性の経過で、再発はまれである。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">Warthin腫瘍の出題ポイント</div>
+        <ul>
+          <li><span class="highlight">中高年男性</span>に好発（多形腺腫との鑑別）</li>
+          <li><span class="highlight">耳下腺</span>に好発</li>
+          <li><span class="highlight">両側性</span>に生じることがある</li>
+          <li><span class="highlight">99mTcシンチグラムで集積</span>（診断の決め手）</li>
+        </ul>
+      </div>
+
+      <h3>過去問：Warthin腫瘍</h3>
+
+      <div class="question-box">
+        <div class="q-number">110C91</div>
+        <p>中高年の男性に好発するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 多形腺腫<br>
+          b 横紋筋肉腫<br>
+          c リンパ管腫<br>
+          d Warthin腫瘍<br>
+          e 神経芽細胞腫
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】Warthin腫瘍は40〜70歳の男性に好発する（男女比3〜5：1）。多形腺腫は女性にやや多い。横紋筋肉腫・リンパ管腫・神経芽細胞腫は小児に好発する腫瘍である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105D18</div>
+        <p>64歳の男性。左側顔面の無痛性腫瘤を主訴として来院した。数年前に気付いたが、痛みがないため放置していたところ、徐々に増大してきたという。初診時のCT（別冊No.18A）、99mTcO4−シンチグラム（別冊No.18B）及び生検時のH-E染色病理組織像（別冊No.18C）を別に示す。
+この疾患の特徴はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105D18_1.png" alt="別冊No.18">
+        </div>
+        <div class="choices">
+          a 耳下腺に多い。<br>
+          b 唾疝痛がある。<br>
+          c 口腔乾燥を伴う。<br>
+          d 神経麻痺がみられる。<br>
+          e 両側性に生じることがある。
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】64歳男性の左側顔面の無痛性腫瘤で、99mTcシンチグラムで集積を認める → Warthin腫瘍。耳下腺に好発し（a○）、約7〜10%が両側性に発生する（e○）。唾疝痛は唾石症の症状（b×）。口腔乾燥はSjögren症候群（c×）。神経麻痺は悪性腫瘍を示唆する所見（d×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C77</div>
+        <p>65歳の男性。頸部の腫脹を主訴として来院した。右側耳介下部に無痛性の腫脹を認める。初診時のPET/CT（別冊No.25A）、MRI脂肪抑制造影T1強調像と脂肪抑制T2強調像（別冊No.25B）、ドプラ超音波横断像（別冊No.25C）及び生検時のH-E染色病理組織像（別冊No.25D）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112C77_1.png" alt="別冊No.25">
+        </div>
+        <div class="choices">
+          a 血管腫<br>
+          b 神経鞘腫<br>
+          c 多形腺腫<br>
+          d Warthin腫瘍<br>
+          e リンパ節転移
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】65歳男性、右側耳介下部（耳下腺部）の無痛性腫脹。年齢・性別・部位からWarthin腫瘍を考える。病理組織像でリンパ組織と二層の腺上皮が乳頭状に増殖する像が確認できれば確定診断となる。多形腺腫は女性に多く、病理像が異なる。</p>
+      </div>
+
+      <!-- ===================== 多形腺腫 vs Warthin腫瘍 ===================== -->
+      <h2>多形腺腫とWarthin腫瘍の比較</h2>
+      <table>
+        <tr><th>項目</th><th>多形腺腫</th><th>Warthin腫瘍</th></tr>
+        <tr><td>頻度</td><td>唾液腺腫瘍の約60%（最多）</td><td>2〜15%</td></tr>
+        <tr><td>好発年齢</td><td>20〜50歳</td><td>40〜70歳</td></tr>
+        <tr><td>性差</td><td>女性にやや多い</td><td><span class="highlight">男性に多い</span>（3〜5：1）</td></tr>
+        <tr><td>好発部位</td><td>耳下腺、口腔内では<span class="highlight">口蓋</span></td><td><span class="highlight">耳下腺</span>（浅葉下極）</td></tr>
+        <tr><td>両側性</td><td>まれ</td><td><span class="key">7〜10%</span></td></tr>
+        <tr><td>硬さ</td><td>弾性硬〜弾性軟</td><td>弾性軟（時に波動）</td></tr>
+        <tr><td>99mTcシンチ</td><td>集積なし</td><td><span class="highlight">集積あり</span></td></tr>
+        <tr><td>病理</td><td>上皮＋間葉成分の混在</td><td>二層上皮＋リンパ組織</td></tr>
+        <tr><td>悪性転化</td><td>あり</td><td>まれ</td></tr>
+        <tr><td>再発</td><td>5〜45%</td><td>まれ</td></tr>
+      </table>
+
+      <!-- ===================== その他の良性腫瘍 ===================== -->
+      <h2>その他の良性腫瘍</h2>
+
+      <h3>基底細胞腺腫</h3>
+      <ul>
+        <li>全唾液腺腫瘍の<span class="key">1〜2%</span>に相当</li>
+        <li>好発部位：耳下腺と上口唇</li>
+        <li>基底細胞様の均一な増殖からなる腫瘍で、明瞭な被膜をもつ</li>
+        <li>充実型、索状型、管状型、膜性型の4型に分類</li>
+        <li>多形腺腫に類似するが間葉成分を欠く</li>
+      </ul>
+
+      <h3>筋上皮腫</h3>
+      <ul>
+        <li>多形腺腫の一亜型として取り扱われていたが、独立した腫瘍型</li>
+        <li>多形腺腫と異なり、導管上皮への分化がみられない</li>
+        <li>紡錘形、形質細胞様（ヒアリン細胞）、類上皮型などの細胞形態を示す</li>
+      </ul>
+
+      <h3>オンコサイトーマ</h3>
+      <ul>
+        <li>好酸性の顆粒を有する大型の細胞（オンコサイト）の増殖</li>
+        <li>加齢に伴って増加する傾向</li>
+        <li>Warthin腫瘍と同様に<span class="key">99mTcシンチグラムで集積</span>を示す</li>
+        <li>耳下腺に好発、きわめてまれ（1%以下）</li>
+      </ul>
+
+      <!-- ===================== 治療 ===================== -->
+      <h2>唾液腺良性腫瘍の治療</h2>
+      <p>唾液腺良性腫瘍に対する最適の治療は、<span class="highlight">外科手術による腫瘍組織の完全な切除</span>である。</p>
+
+      <h3>術式の選択</h3>
+      <table>
+        <tr><th>部位</th><th>術式</th></tr>
+        <tr><td>耳下腺浅葉</td><td>耳下腺浅葉切除術</td></tr>
+        <tr><td>耳下腺深葉</td><td>耳下腺全摘出術</td></tr>
+        <tr><td>顎下腺</td><td>顎下腺全摘出術</td></tr>
+        <tr><td>口蓋（小唾液腺）</td><td>周囲組織を含めた切除</td></tr>
+        <tr><td>舌下腺</td><td>舌下腺摘出術</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">治療の注意点</div>
+        <ul>
+          <li>多形腺腫は<span class="caution">被膜外切除（核出術）では再発リスクが高い</span></li>
+          <li>周囲組織を含めた切除（low malignancyの手術）が推奨される</li>
+          <li>耳下腺手術では<span class="caution">顔面神経の温存</span>が重要な課題となる</li>
+          <li>Warthin腫瘍は良性で再発はまれであり、核出術でも可</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

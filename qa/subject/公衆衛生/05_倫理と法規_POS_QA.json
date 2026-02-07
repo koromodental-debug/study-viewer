@@ -25,8 +25,26 @@
           "answer": "POS＝システム全体、POMR＝その中で用いる診療録"
         },
         {
-          "question": "[115A34] ★★★\n診察から治療計画立案までを系統的に行うシステムは？",
-          "answer": "POS（Problem Oriented System）\n\n[他の選択肢との違い]\n- DNR: Do Not Resuscitate（蘇生しないでほしい意思表示）\n- DOS: Disease Oriented System（疾患志向型システム）\n- EBM: Evidence Based Medicine（根拠に基づく医療）\n- NBM: Narrative Based Medicine（物語に基づく医療）\n- POS: Problem Oriented System ✓正解\n\n[ポイント]\nPOS＝問題志向型＝系統的な診療記録システム"
+          "question": "診察から治療計画立案までを系統的に行うシステムは？",
+          "answer": "E",
+          "choices": {
+            "a": "DNR",
+            "b": "DOS",
+            "c": "EBM",
+            "d": "NBM",
+            "e": "POS"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "115A34",
+          "choiceExplanations": {
+            "a": "Do Not Resuscitate（蘇生しないでほしい意思表示）",
+            "b": "Disease Oriented System（疾患志向型システム）",
+            "c": "Evidence Based Medicine（根拠に基づく医療）",
+            "d": "Narrative Based Medicine（物語に基づく医療）",
+            "e": "Problem Oriented System ✓正解"
+          },
+          "point": "POS＝問題志向型＝系統的な診療記録システム"
         }
       ]
     },
@@ -91,20 +109,92 @@
           "answer": "A（評価）"
         },
         {
-          "question": "[117D13] ★★★\nSOAPの「O」に該当するのは？",
-          "answer": "生体監視モニタ情報\n\n[他の選択肢との違い]\n- 主訴: S（患者の訴え）\n- 感染源の推定: A（評価）\n- 処方する薬剤: P（計画）\n- 予定手術術式: P（計画）\n- 生体監視モニタ情報: O（客観的データ）✓正解\n\n[ポイント]\nO＝医療者が客観的に得た情報（モニタ、検査、視診など）"
+          "question": "SOAPの「O」に該当するのは？",
+          "answer": "E",
+          "choices": {
+            "a": "主訴",
+            "b": "感染源の推定",
+            "c": "処方する薬剤",
+            "d": "予定手術術式",
+            "e": "生体監視モニタ情報"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "117D13",
+          "choiceExplanations": {
+            "a": "S（患者の訴え）",
+            "b": "A（評価）",
+            "c": "P（計画）",
+            "d": "P（計画）",
+            "e": "O（客観的データ）✓正解"
+          },
+          "point": "O＝医療者が客観的に得た情報（モニタ、検査、視診など）"
         },
         {
-          "question": "[113C20] ★★★\n「視診で齲窩が認められる」はSOAPのどれ？",
-          "answer": "O\n\n[他の選択肢との違い]\n- 2日前に冷水痛があった: S（患者の訴え）\n- 視診で齲窩が認められる: O（客観的所見）✓正解\n- コンポジットレジン修復をする: P（治療計画）\n- 審美的な歯科治療を希望している: S（患者の希望）\n- これまで歯科治療を受けたことがある: S（患者の既往）\n\n[ポイント]\n視診所見＝医療者が得た客観的情報＝O"
+          "question": "「視診で齲窩が認められる」はSOAPのどれ？",
+          "answer": "B",
+          "choices": {
+            "a": "2日前に冷水痛があった",
+            "b": "視診で齲窩が認められる",
+            "c": "コンポジットレジン修復をする",
+            "d": "審美的な歯科治療を希望している",
+            "e": "これまで歯科治療を受けたことがある"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "113C20",
+          "choiceExplanations": {
+            "a": "S（患者の訴え）",
+            "b": "O（客観的所見）✓正解",
+            "c": "P（治療計画）",
+            "d": "S（患者の希望）",
+            "e": "S（患者の既往）"
+          },
+          "point": "視診所見＝医療者が得た客観的情報＝O"
         },
         {
-          "question": "[111B11] ★★★\nSOAPの「A」にあたるのは？",
-          "answer": "鑑別診断\n\n[他の選択肢との違い]\n- 鑑別診断: A（評価・診断）✓正解\n- 検査所見: O（客観的情報）\n- 指導計画: P（計画）\n- 治療結果: 経過記録\n- 治療方針: P（計画）\n\n[ポイント]\nA＝Assessment＝評価＝診断・鑑別診断"
+          "question": "SOAPの「A」にあたるのは？",
+          "answer": "A",
+          "choices": {
+            "a": "鑑別診断",
+            "b": "検査所見",
+            "c": "指導計画",
+            "d": "治療結果",
+            "e": "治療方針"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "111B11",
+          "choiceExplanations": {
+            "a": "A（評価・診断）✓正解",
+            "b": "O（客観的情報）",
+            "c": "P（計画）",
+            "d": "経過記録",
+            "e": "P（計画）"
+          },
+          "point": "A＝Assessment＝評価＝診断・鑑別診断"
         },
         {
-          "question": "[109A31] ★★★\n修復物の「脱離時期」はSOAPのどれ？",
-          "answer": "S\n\n[他の選択肢との違い]\n- 窩洞形態: O（客観的所見）\n- 治療方針: P（計画）\n- 脱離時期: S（患者から聴取）✓正解\n- 再装着処置: P（計画）\n- エックス線所見: O（客観的情報）\n\n[ポイント]\n脱離時期＝患者に「いつ取れましたか？」と聞く＝S"
+          "question": "修復物の「脱離時期」はSOAPのどれ？",
+          "answer": "C",
+          "choices": {
+            "a": "窩洞形態",
+            "b": "治療方針",
+            "c": "脱離時期",
+            "d": "再装着処置",
+            "e": "エックス線所見"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "109A31",
+          "choiceExplanations": {
+            "a": "O（客観的所見）",
+            "b": "P（計画）",
+            "c": "S（患者から聴取）✓正解",
+            "d": "P（計画）",
+            "e": "O（客観的情報）"
+          },
+          "point": "脱離時期＝患者に「いつ取れましたか？」と聞く＝S"
         }
       ]
     },

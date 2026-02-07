@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>手術法：骨移植 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>手術法：骨移植</h1>
+    <div class="container">
+
+      <h2>骨移植の分類（表15-4）</h2>
+      <p>骨移植は移植骨の由来によって分類される。</p>
+
+      <table>
+        <tr><th>分類</th><th>内容</th><th>特徴</th></tr>
+        <tr>
+          <td><span class="highlight">自家骨移植</span><br>autogenous</td>
+          <td>自分自身の骨を移植</td>
+          <td><span class="key">骨誘導能＋骨伝導能＋骨形成能</span>を兼備。拒絶反応なし。<span class="key">ゴールドスタンダード</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">同種骨移植</span><br>allogeneic</td>
+          <td>同種他人の骨を移植</td>
+          <td>免疫学的問題あり。DFDBA（脱灰凍結乾燥骨）は骨誘導能を有する</td>
+        </tr>
+        <tr>
+          <td><span class="key">異種骨移植</span><br>xenogenous</td>
+          <td>異なる種（牛など）の骨</td>
+          <td>Kiel bone（仔牛骨）。抗原性除去が必要。骨伝導能を有する</td>
+        </tr>
+        <tr>
+          <td><span class="key">処理骨移植</span></td>
+          <td>摘出骨を処理し再利用</td>
+          <td>煮沸骨・放射線照射骨・凍結骨（→下記参照）</td>
+        </tr>
+      </table>
+
+      <h3>骨の再生に関わる3つの能力</h3>
+      <table>
+        <tr><th>能力</th><th>定義</th><th>該当する移植材</th></tr>
+        <tr>
+          <td><span class="highlight">骨形成能</span><br>osteogenesis</td>
+          <td>移植骨中の生きた<span class="key">骨芽細胞</span>が直接骨を形成</td>
+          <td><span class="caution">新鮮自家骨のみ</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">骨誘導能</span><br>osteoinduction</td>
+          <td>未分化間葉細胞を骨芽細胞に<span class="key">分化誘導</span></td>
+          <td>自家骨、BMP、DFDBA</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">骨伝導能</span><br>osteoconduction</td>
+          <td>移植材が<span class="key">足場</span>となり骨芽細胞の遊走・骨形成を促進</td>
+          <td>自家骨、HA、β-TCP、異種骨</td>
+        </tr>
+      </table>
+
+      <h2>自家骨移植の形態</h2>
+      <table>
+        <tr><th>形態</th><th>別名</th><th>方法</th></tr>
+        <tr>
+          <td><span class="key">海綿骨移植</span></td>
+          <td>chip bone graft</td>
+          <td>海綿骨を細片状に採取。金属メッシュトレーと併用して充填</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ブロック骨移植</span></td>
+          <td>solid bone graft</td>
+          <td>骨を塊として採取・移植。形態を維持しやすい。<span class="key">遊離骨移植</span>と<span class="key">血管柄付き骨移植</span>に分かれる</td>
+        </tr>
+      </table>
+
+      <h3>移植骨の治癒機転</h3>
+      <p>遊離骨移植後、移植骨の骨細胞は<span class="key">ほとんど全て死滅</span>し骨格のみが残る。その後、周辺部の結合組織に由来する骨形成細胞群が侵入し、<span class="highlight">吸収と置換を繰り返しながら新骨に置換</span>される（creeping substitution）。</p>
+
+      <h3>遊離骨移植の成功条件</h3>
+      <ul>
+        <li>移植床に<span class="key">炎症・感染がない</span>こと</li>
+        <li>移植床に十分な<span class="key">血行</span>があること</li>
+        <li>移植骨が母床骨と十分な面積で<span class="key">密着</span>すること</li>
+        <li><span class="key">強固な固定</span>がなされていること</li>
+        <li><span class="key">死腔をなくし</span>、血腫を予防すること</li>
+      </ul>
+
+      <h2>自家骨の採取部位</h2>
+
+      <h3>口腔内（局所麻酔で採取可能）</h3>
+      <table>
+        <tr><th>採取部位</th><th>骨の特徴</th><th>適応</th></tr>
+        <tr>
+          <td><span class="highlight">オトガイ部</span></td>
+          <td>皮質骨主体のブロック骨</td>
+          <td>歯槽堤の局所的な骨造成（インプラント前処置など）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">下顎枝</span></td>
+          <td>皮質骨主体のブロック骨</td>
+          <td>同上。オトガイ部より採取量がやや多い</td>
+        </tr>
+        <tr>
+          <td>上顎結節</td>
+          <td>海綿骨が主体で少量</td>
+          <td>少量の骨補填（チップ状で使用）</td>
+        </tr>
+      </table>
+
+      <h3>口腔外（全身麻酔下で採取）</h3>
+      <table>
+        <tr><th>採取部位</th><th>骨の特徴</th><th>適応</th></tr>
+        <tr>
+          <td><span class="highlight">腸骨</span>（腸骨稜）</td>
+          <td><span class="key">海綿骨が豊富</span>。大量採取可能</td>
+          <td>顎骨再建、大量の骨造成。形態が顎骨に適合しやすい</td>
+        </tr>
+        <tr>
+          <td>肋骨</td>
+          <td>皮質骨。長い骨片が採取可能</td>
+          <td>顎骨再建（<span class="caution">気胸のリスク</span>あり）</td>
+        </tr>
+        <tr>
+          <td>脛骨</td>
+          <td>海綿骨</td>
+          <td>中等量の骨造成</td>
+        </tr>
+      </table>
+
+      <h2>血管柄付き骨移植</h2>
+      <p>遊離骨移植では大きな骨片ほど吸収されやすく、放射線照射後の骨では生着しにくい。これらの問題を解決するため、<span class="key">骨に血管柄をつけたまま移植</span>し血行を維持する方法。大きな顎骨欠損の再建に用いる。</p>
+
+      <table>
+        <tr><th>骨弁</th><th>栄養血管</th><th>特徴</th></tr>
+        <tr>
+          <td><span class="highlight">遊離腓骨弁</span></td>
+          <td>腓骨動静脈</td>
+          <td>採取最大長20〜25cm。強度が高く下顎再建に適する。皮弁との自由度が高い</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">遊離肩甲骨弁</span></td>
+          <td>肩甲回旋動静脈</td>
+          <td>採取最大長10〜14cm。皮弁との自由度が最も高い。軟組織量が豊富</td>
+        </tr>
+        <tr>
+          <td><span class="key">遊離腸骨弁</span></td>
+          <td>深腸骨回旋動静脈</td>
+          <td>採取最大長10〜14cm。形態が顎骨に適合。強度が高い</td>
+        </tr>
+      </table>
+
+      <h2>処理骨移植</h2>
+      <ul>
+        <li><span class="key">煮沸骨</span>：抗原性は低下するが骨誘導能も低下</li>
+        <li><span class="key">放射線照射骨</span>：摘出組織から腫瘍組織を除去し、放射線で骨髄腫瘍細胞を減衰→再移植</li>
+        <li><span class="key">凍結骨</span>：-85〜-190℃で凍結保存。<span class="key">DFDBA</span>（脱灰凍結乾燥骨）は骨誘導能を有する</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">108A123</div>
+        <p>顎骨のブロック骨移植によく用いられる骨の供給部位はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 犬歯窩<br>
+          b 下顎枝<br>
+          c オトガイ<br>
+          d 下顎骨体<br>
+          e 上顎結節
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】顎骨のブロック骨移植に多用される口腔内の骨採取部位は、<span class="key">下顎枝</span>（b）と<span class="key">オトガイ部</span>（c）である。いずれも皮質骨主体のブロック骨が採取可能で、同一術野から局所麻酔下で採取できる利点がある。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">108A123の正誤判定ロジック</div>
+        <ul>
+          <li>犬歯窩（a）：× 上顎洞前壁の薄い骨。ブロック骨の採取には<span class="caution">骨量不足</span></li>
+          <li><span class="key">下顎枝</span>（b）：<span class="highlight">○</span> 皮質骨主体のブロック骨が採取可能。局所麻酔で可</li>
+          <li><span class="key">オトガイ部</span>（c）：<span class="highlight">○</span> 同上。ブロック骨移植の代表的採取部位</li>
+          <li>下顎骨体（d）：× <span class="caution">下歯槽神経・歯根が近接</span>しており採取リスクが高い</li>
+          <li>上顎結節（e）：× 海綿骨主体で少量のチップ骨は採取可能だが、<span class="caution">ブロック骨としては不適</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

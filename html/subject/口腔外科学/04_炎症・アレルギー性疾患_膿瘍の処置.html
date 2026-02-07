@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>膿瘍の処置 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 炎症・アレルギー性疾患</span>
+    <h1>膿瘍の処置</h1>
+    <div class="container">
+
+      <h2>膿瘍の分類と切開時期</h2>
+      <p>歯性感染症に起因する膿瘍は、膿の貯留部位により以下のように分類される。</p>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>膿の貯留部位</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">歯肉膿瘍</td>
+          <td>歯肉粘膜下</td>
+          <td>辺縁性歯周炎に続発。限局性の腫脹（数mm径）</td>
+        </tr>
+        <tr>
+          <td class="key">歯槽膿瘍</td>
+          <td>骨膜下→粘膜下</td>
+          <td>根尖性歯周炎に続発。骨膜を穿孔して粘膜下に達すると<span class="highlight">波動を触知</span></td>
+        </tr>
+        <tr>
+          <td class="key">骨膜下膿瘍</td>
+          <td>骨膜下</td>
+          <td>急性顎骨骨膜炎に伴う。骨膜が強靭なため強い自発痛</td>
+        </tr>
+        <tr>
+          <td class="key">筋膜隙膿瘍</td>
+          <td>筋膜隙</td>
+          <td>炎症が筋膜隙に波及。開口障害・嚥下痛を伴う</td>
+        </tr>
+      </table>
+      <p><span class="caution">切開排膿の適応は「波動を触知する」ことが前提条件。</span>波動がなければ抗菌薬投与で膿瘍が成熟するまで待機する。</p>
+
+      <h2>切開排膿術の手順</h2>
+      <p>口腔外からの切開排膿を例に示す。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">切開排膿の手順（115D89で出題）</div>
+        <ol style="padding-left: 1.5em; margin: 8px 0;">
+          <li><span class="highlight">穿刺吸引</span>：注射針で膿瘍腔を穿刺し、膿の存在と性状を確認</li>
+          <li><span class="highlight">皮膚切開</span>：波動が最も明瞭な部位にメスで切開</li>
+          <li><span class="highlight">排膿</span>：止血鉗子（ペアン鉗子）を膿瘍腔に挿入し、先端を開いて膿瘍腔を拡大</li>
+          <li><span class="highlight">膿瘍腔の洗浄</span>：生理食塩水で十分に洗浄</li>
+          <li><span class="highlight">ドレーン留置</span>：ペンローズドレーンを挿入し、絹糸で縫合固定</li>
+        </ol>
+      </div>
+      <p class="note"><span class="caution">穿刺吸引は「切開の前」に行う。</span>膿の存在確認が先であり、いきなり切開しない。</p>
+
+      <h2>切開部位の選択原則</h2>
+
+      <h3>口腔内（口内法）の切開</h3>
+      <ul>
+        <li><span class="highlight">波動が最も明瞭な部位</span>の近くを切開する</li>
+        <li>上顎：膿瘍腔頂部よりやや下側で<span class="key">下に凸の弧状切開</span></li>
+        <li>下顎：膿瘍腔頂部よりやや上側で<span class="key">上に凸の弧状切開</span></li>
+        <li>切開の深さは<span class="key">骨面まで到達</span>させる（中途半端だと排膿路が閉塞）</li>
+        <li>メスは<span class="key">ペングリップ</span>で把持する</li>
+      </ul>
+
+      <h3>口腔外（口外法）の切開</h3>
+      <ul>
+        <li>皮膚表面にまで膿瘍が波及した場合に適応</li>
+        <li>切開線は<span class="highlight">皮膚割線（ランゲル線）に平行</span>に設定する（瘢痕を目立たなくする）</li>
+        <li>血管・神経を損傷しないよう切開線を設定する</li>
+        <li>波動が最も明瞭な部位を選択する</li>
+      </ul>
+
+      <h3>口内法と口外法の選択基準</h3>
+      <table>
+        <tr>
+          <th>筋膜隙</th>
+          <th>切開経路</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td class="key">舌下隙</td>
+          <td><span class="highlight">口腔内</span></td>
+          <td>口腔底粘膜直下に位置。口内からアクセスが容易</td>
+        </tr>
+        <tr>
+          <td class="key">翼突下顎隙</td>
+          <td><span class="highlight">口腔内</span></td>
+          <td>下顎枝内側に位置。口内から下顎枝内側にアクセス</td>
+        </tr>
+        <tr>
+          <td class="key">顎下隙</td>
+          <td>口腔外</td>
+          <td>顎下部の皮膚直下。口外からの切開が必要</td>
+        </tr>
+        <tr>
+          <td class="key">側咽頭隙</td>
+          <td>口腔外</td>
+          <td>深部に位置し、口内からのアクセスが困難</td>
+        </tr>
+        <tr>
+          <td class="key">オトガイ下隙</td>
+          <td>口腔外</td>
+          <td>オトガイ下部の皮膚直下。口外からの切開が必要</td>
+        </tr>
+      </table>
+      <p class="note"><span class="caution">口内法で切開できるのは舌下隙と翼突下顎隙。</span>顎下隙・側咽頭隙・オトガイ下隙は口外法。</p>
+
+      <h2>切開の目的</h2>
+      <p>急性化膿性根尖性歯周炎の粘膜下期に切開を行う目的：</p>
+      <ul>
+        <li><span class="highlight">疼痛の緩和</span>：膿による内圧を解放することで疼痛が軽減する</li>
+        <li><span class="highlight">腫脹の軽減</span>：貯留した膿を排出することで腫脹が改善する</li>
+      </ul>
+      <p class="note"><span class="caution">「感染の除去」は切開の目的ではない。</span>感染の除去には原因歯の処置（抜歯や根管治療）が必要。切開はあくまで排膿・減圧が目的。「骨修復の促進」「患歯の安静」も切開の目的ではない。</p>
+
+      <h2>ドレーン管理</h2>
+      <ul>
+        <li>ドレーン先端は原因歯の骨欠損部付近に留置する</li>
+        <li>口腔内への露出部は約2cm程度</li>
+        <li>脱落防止のため<span class="key">絹糸で粘膜に縫合固定</span></li>
+        <li>排膿が認められなくなったら除去（通常1〜2日後）</li>
+        <li>消炎後に<span class="key">原因歯の処置</span>（抜歯または根管治療）を行う</li>
+      </ul>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">115D89</div>
+        <p>32歳の男性。オトガイ下部の腫脹を主訴として来院した。5日前から下顎前歯部の疼痛を自覚し、3日前から腫脹が増大してきたという。体温は38.4℃で、腫脹部に波動を触れる。診察の結果、消炎処置を行うこととした。初診時の顔貌写真（別冊No.32A）と口腔内写真（別冊No.32B）を別に示す。</p>
+        <p>処置を実施の順番に並べよ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D89.png" alt="別冊No.32">
+        </div>
+        <div class="choices">
+          a 排　膿<br>
+          b 穿刺吸引<br>
+          c 皮膚切開<br>
+          d ドレーン留置<br>
+          e 膿瘍腔の洗浄
+        </div>
+        <div class="answer">正解：b, c, a, e, d</div>
+        <p>【解説】口腔外からの切開排膿術の正しい手順は、<span class="highlight">穿刺吸引→皮膚切開→排膿→膿瘍腔の洗浄→ドレーン留置</span>の順である。まず穿刺吸引で膿の存在を確認してから切開を行う。排膿後に洗浄し、最後にドレーンを留置して排膿路を確保する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C41</div>
+        <p>化膿性炎で口腔内から切開排膿を行う部位はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌下隙<br>
+          b 顎下隙<br>
+          c 側咽頭隙<br>
+          d 翼突下顎隙<br>
+          e オトガイ下隙
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】口腔内から切開排膿を行えるのは<span class="highlight">舌下隙</span>と<span class="highlight">翼突下顎隙</span>である。舌下隙は口腔底粘膜直下に、翼突下顎隙は下顎枝内側に位置するため、口腔内からのアクセスが可能。<span class="caution">顎下隙・側咽頭隙・オトガイ下隙は口腔外からの切開が必要。</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C103</div>
+        <p>急性化膿性根尖性歯周炎の粘膜下期に切開を行う目的はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 患歯の安静<br>
+          b 感染の除去<br>
+          c 疼痛の緩和<br>
+          d 腫脹の軽減<br>
+          e 骨修復の促進
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】粘膜下期に切開を行う目的は<span class="highlight">疼痛の緩和</span>と<span class="highlight">腫脹の軽減</span>である。膿による内圧を解放することで疼痛が軽減し、膿を排出することで腫脹が改善する。<span class="caution">感染の除去は原因歯の処置（抜歯・根管治療）によって行うものであり、切開の目的ではない。</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103B22</div>
+        <p>38歳の男性。オトガイ下部の疼痛を主訴として来院した。オトガイ部に著明なびまん性腫脹と発赤とを認め、波動を触知する。口腔外から切開排膿術を行うこととした。波動部と切開線の写真（別冊No.20）を別に示す。</p>
+        <p>適切な切開線はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103B22.png" alt="別冊No.20">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】口腔外からの切開排膿では、<span class="highlight">皮膚割線（ランゲル線）に平行</span>に切開線を設定する。オトガイ下部では皮膚割線は水平方向に走行するため、水平方向の切開線が適切である。波動が最も明瞭な部位の近くで、かつ皮膚割線に沿った切開を選択する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C39</div>
+        <p>46歳の男性。開口障害を主訴として来院した。3日前に他院で下顎右側第二大臼歯の抜去後から次第に疼痛と腫脹が増大し、昨日から開口しにくくなってきたという。体温は38.3℃で、嚥下痛がある。診察の結果、口腔外から切開排膿することとした。初診時のエックス線画像（別冊No.12A）、造影CT（別冊No.12B）及び切開部位の模式図（別冊No.12C）を別に示す。血液検査の結果を表に示す。</p>
+        <p>適切な切開部位はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116C39_1.png" alt="別冊No.12A">
+          <img src="../../../images/116回_Web画像/116C39_2.png" alt="別冊No.12B">
+          <img src="../../../images/116回_Web画像/116C39_3.png" alt="別冊No.12C">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】造影CTで膿瘍の位置を確認し、波動が触知できる部位に対して適切な切開部位を選択する。抜歯後に炎症が顎下部・オトガイ下部に波及した症例であり、CT所見から膿瘍の位置に対応する切開部位を選ぶ。口腔外からの切開では、皮膚割線に平行な切開線を設定し、血管・神経を損傷しないよう留意する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

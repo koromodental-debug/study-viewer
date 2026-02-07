@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔内検査・口腔機能検査 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>口腔内検査・口腔機能検査</h1>
+    <div class="container">
+
+      <!-- ========== オーラルディアドコキネシス ========== -->
+      <h2>オーラルディアドコキネシス（OD）</h2>
+      <p>舌・口唇・軟口蓋の<span class="key">運動の速度と巧緻性</span>を、発音を用いて評価する検査。/pa/、/ta/、/ka/を<span class="highlight">10秒間できるだけ速く</span>繰り返し発音させ、1秒あたりの回数を算出する。</p>
+
+      <h3>各音節と評価対象</h3>
+      <table>
+        <tr><th>音節</th><th>評価する運動</th><th>構音器官</th></tr>
+        <tr><td><span class="key">/pa/</span></td><td><span class="highlight">口唇</span>の開閉運動</td><td>上下口唇</td></tr>
+        <tr><td><span class="key">/ta/</span></td><td><span class="highlight">舌尖</span>の運動</td><td>舌尖と口蓋前方</td></tr>
+        <tr><td><span class="key">/ka/</span></td><td><span class="highlight">舌根（舌後方）</span>の運動</td><td>舌後方と軟口蓋</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">OD の核心ポイント</div>
+        <ul>
+          <li>評価するのは<span class="highlight">破裂音</span>（構音器官を閉鎖→開放する動き）</li>
+          <li>カットオフ値：いずれかが<span class="highlight">6回/秒未満</span>→舌口唇運動機能低下</li>
+          <li><span class="key">構音を用いる検査</span>である（パラトグラム検査と同じカテゴリ）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D27</div>
+        <p>オーラルディアドコキネシスで評価するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D27_1.png" alt="113D27">
+        </div>
+        <div class="choices">
+          a 弾　音<br>
+          b 通鼻音<br>
+          c 破擦音<br>
+          d 破裂音<br>
+          e 摩擦音
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】/pa/、/ta/、/ka/はいずれも破裂音。構音器官を閉鎖してから開放する動きで運動速度を評価する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A66 ★</div>
+        <p>85歳の女性。咀嚼困難を主訴として来院した。最近、食物の摂取が困難となり、食事に時間がかかるようになったという。オーラルディアドコキネシスを行った。基準値と計測値を表に示す。<br>特に機能が低下していると考えられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口　唇<br>
+          b 喉　頭<br>
+          c 舌　根<br>
+          d 舌　尖<br>
+          e 軟口蓋
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】/pa/の計測値が基準値を下回っている→口唇の運動機能低下。/pa/=口唇、/ta/=舌尖、/ka/=舌根の対応を押さえる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A70</div>
+        <p>評価に構音を用いるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A70_1.png" alt="116A70">
+        </div>
+        <div class="choices">
+          a 咬合音検査<br>
+          b Saxonテスト<br>
+          c パラトグラム検査<br>
+          d ブローイング検査<br>
+          e オーラルディアドコキネシス
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】パラトグラム検査は発音時の舌と口蓋の接触パターンを記録する。ODは/pa/ta/ka/の発音速度を測定する。いずれも構音を用いる検査。Saxonテストはガーゼ咀嚼による唾液量測定。ブローイング検査は呼気を用いるため構音ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D51</div>
+        <p>検査とその目的の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D51_1.png" alt="112D51">
+        </div>
+        <div class="choices">
+          a 頸部聴診法 ーーーーー 肺換気能<br>
+          b フードテスト ーーーーー 食塊形成能<br>
+          c 改訂水飲みテスト ーーーーー 味覚閾值<br>
+          d 反復唾液嚥下テスト ーーーーー 唾液分泌能<br>
+          e オーラルディアドコキネシス ーーーーー 舌と口唇の運動機能
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】フードテスト=食塊形成能、OD=舌と口唇の運動機能が正しい組合せ。頸部聴診法は嚥下機能のスクリーニング。改訂水飲みテストは嚥下機能評価。RSSTも嚥下機能評価であり唾液分泌能の評価ではない。</p>
+      </div>
+
+      <!-- ========== 嚥下スクリーニング検査 ========== -->
+      <h2>嚥下スクリーニング検査</h2>
+
+      <h3>各スクリーニング検査の比較</h3>
+      <table>
+        <tr><th>検査</th><th>方法</th><th>判定基準</th><th>特徴</th></tr>
+        <tr><td><span class="key">RSST</span></td><td>30秒間の空嚥下回数を計測（舌骨・甲状軟骨を触知）</td><td><span class="highlight">3回未満→陽性</span></td><td>器具不要、ベッドサイド可</td></tr>
+        <tr><td><span class="key">MWST（改訂水飲みテスト）</span></td><td><span class="highlight">冷水3mL</span>をシリンジで<span class="highlight">口腔底</span>に注入→嚥下</td><td>5段階評価、3点以下→異常</td><td>嚥下後に「エー」→湿性嗄声確認</td></tr>
+        <tr><td><span class="key">フードテスト</span></td><td><span class="highlight">プリン約4g</span>を舌背前部に置く→嚥下</td><td>5段階評価</td><td><span class="highlight">食塊形成能</span>の評価</td></tr>
+        <tr><td><span class="key">咳テスト</span></td><td>1%クエン酸を霧化吸入</td><td>30秒以内に咳なし→陽性</td><td><span class="highlight">認知症でも可</span>（指示不要・不随意反射）</td></tr>
+        <tr><td><span class="key">頸部聴診法</span></td><td>聴診器で嚥下音・呼吸音を聴取</td><td>異常嚥下音の有無</td><td><span class="highlight">食事中に行える唯一の検査</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">咳テストの重要性</div>
+        <ul>
+          <li>RSSTやMWSTでは検出できない<span class="highlight">不顕性誤嚥（silent aspiration）</span>のスクリーニングに有用</li>
+          <li><span class="caution">重度認知症でも実施可能</span>：霧化クエン酸の吸入のみで随意運動・指示理解が不要</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A54</div>
+        <p>改訂水飲み検査で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 温水を用いる。<br>
+          b シリンジを用いる。<br>
+          c 30mLを嚥下させる。<br>
+          d 口腔底に水を入れる。<br>
+          e 5回繰り返して評価する。
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】MWSTは冷水3mL（温水ではない）をシリンジで口腔底に注入する。30mLではなく3mL。4点以上なら最大2回繰り返し（5回ではない）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D84</div>
+        <p>重度認知症の高齢者に実施できる摂食嚥下機能検査はどれか。1つ選べ。</p>
+        <div class="choices">
+          a RSST<br>
+          b 咳テスト<br>
+          c 舌圧検査<br>
+          d フードテスト<br>
+          e 咀嚼能力検査
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】咳テストは霧化クエン酸を吸入させるだけで、指示理解・随意運動が不要。咳反射は不随意反射なので重度認知症でも実施可能。RSSTは「唾液を飲んでください」という指示理解が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D25</div>
+        <p>脳梗塞発症後の上下顎全部床義歯装着者に対する摂食嚥下リハビリテーションにおいて、直接訓練開始前の対応で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a RSST<br>
+          b 咳テスト<br>
+          c 咬合力検査<br>
+          d 咀嚼能力検査<br>
+          e 発語機能検査
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】直接訓練（食物を用いる訓練）開始前には嚥下機能のスクリーニングが必要。RSSTで嚥下反射を、咳テストで咳反射（不顕性誤嚥のリスク）を評価する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A37</div>
+        <p>88歳の男性。介護老人福祉施設が実施するミールラウンド（食事場面の観察）の場において食事中のむせが認められた。<br>まず行う検査はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 頸部聴診法<br>
+          b 超音波検査<br>
+          c 嚥下造影検査<br>
+          d 嚥下内視鏡検査<br>
+          e ブローイング検査
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】食事場面で「まず行う」検査として、頸部聴診法が適切。食事中に行える唯一のスクリーニング検査であり、非侵襲的で繰り返し実施可能。VFやVEは精密検査であり一次スクリーニングの後に行う。</p>
+      </div>
+
+      <!-- ========== 嚥下精密検査 ========== -->
+      <h2>嚥下精密検査（VF・VE）</h2>
+
+      <h3>VF vs VE</h3>
+      <table>
+        <tr><th></th><th>VF（嚥下造影検査）</th><th>VE（嚥下内視鏡検査）</th></tr>
+        <tr><td><span class="key">方法</span></td><td>造影剤入り食品をX線透視下で撮影</td><td>経鼻内視鏡で咽頭・喉頭を直接観察</td></tr>
+        <tr><td><span class="key">観察可能な相</span></td><td><span class="highlight">口腔期・咽頭期・食道期すべて</span></td><td>主に咽頭期</td></tr>
+        <tr><td><span class="key">放射線被曝</span></td><td>あり</td><td><span class="highlight">なし</span></td></tr>
+        <tr><td><span class="key">実施場所</span></td><td>検査室</td><td><span class="highlight">ベッドサイド・訪問可</span></td></tr>
+        <tr><td><span class="key">嚥下の瞬間</span></td><td>観察可能</td><td><span class="caution">ホワイトアウト</span></td></tr>
+      </table>
+
+      <h3>VF・VEで確認する所見</h3>
+      <ul>
+        <li><span class="key">誤嚥（aspiration）</span>：食物が声帯より下方（気管内）に侵入</li>
+        <li><span class="key">喉頭侵入（penetration）</span>：食物が喉頭前庭に侵入するが声帯は越えない</li>
+        <li><span class="key">咽頭残留</span>：嚥下後に喉頭蓋谷・梨状陥凹に食物が残る</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108D3 ★</div>
+        <p>70歳の女性。嚥下困難を主訴として来院した。半年前から自覚しているという。嚥下内視鏡検査の画像（別冊No.3）を別に示す。<br>矢印で示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 気　道<br>
+          b 食　道<br>
+          c 声　帯<br>
+          d 喉頭蓋<br>
+          e 軟口蓋
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】VEで咽頭を観察した際に見える構造物。喉頭蓋は嚥下時に喉頭口を閉鎖して気管への食物侵入を防ぐ。VE画像で最も特徴的な構造の一つ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109D35 ★</div>
+        <p>79歳の男性。食事時のむせを主訴として来院した。嚥下造影検査の画像（別冊No.35）を別に示す。<br>矢印で示す所見はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 誤　嚥<br>
+          b 鼻腔逆流<br>
+          c 喉頭侵入<br>
+          d 梨状窩残留<br>
+          e 喉頭蓋谷残留
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】VFで造影剤が声帯より下方の気管に流入している所見→誤嚥。喉頭侵入は声帯を越えていない状態。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C69</div>
+        <p>嚥下に関連する器官の模式図を示す。<br>嚥下開始時に舌骨が移動する方向はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】嚥下開始時に舌骨は<span class="highlight">前上方</span>に移動する。これにより喉頭蓋が倒れて喉頭口を閉鎖し、食道入口部が開大する。「イ」が前上方を示す。</p>
+      </div>
+
+      <!-- ========== パラトグラム・構音 ========== -->
+      <h2>パラトグラム検査と構音</h2>
+      <p>口蓋面にワセリン+アルジネート粉末を塗布し、発音時の<span class="key">舌と口蓋の接触パターン</span>を記録する検査。構音障害の診断に有用。</p>
+
+      <h3>各音と舌接触部位</h3>
+      <table>
+        <tr><th>音</th><th>舌接触部位</th></tr>
+        <tr><td><span class="key">/t/</span></td><td><span class="highlight">舌尖</span>と口蓋前方（歯槽隆起付近）</td></tr>
+        <tr><td><span class="key">/s/</span></td><td><span class="highlight">舌</span>と歯槽隆起</td></tr>
+        <tr><td><span class="key">/k/</span></td><td><span class="highlight">舌後方</span>と軟口蓋</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109C112</div>
+        <p>健常者におけるパラトグラム検査で舌接触が確認できるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a /h/<br>
+          b /k/<br>
+          c /m/<br>
+          d /p/<br>
+          e /s/
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】パラトグラムは舌と口蓋の接触を記録する。/k/は舌後方と軟口蓋、/s/は舌と歯槽隆起で接触がある。/h/は声門摩擦音で口蓋接触なし。/m/は鼻音で口唇閉鎖。/p/は両唇破裂音で口蓋接触なし。</p>
+      </div>
+
+      <h3>母音発声時の舌の位置</h3>
+      <table>
+        <tr><th>母音</th><th>舌の前後位置</th><th>舌の高さ</th></tr>
+        <tr><td>[i]</td><td>前舌</td><td>高い</td></tr>
+        <tr><td>[e]</td><td>前舌</td><td>中間</td></tr>
+        <tr><td><span class="highlight">[a]</span></td><td>中舌</td><td><span class="highlight">最も低い</span></td></tr>
+        <tr><td>[o]</td><td>後舌</td><td>中間</td></tr>
+        <tr><td>[u]</td><td>後舌</td><td>高い</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">112B33</div>
+        <p>発声時に舌の位置が最も低いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a [a]<br>
+          b [i]<br>
+          c [u]<br>
+          d [e]<br>
+          e [o]
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】日本語5母音で舌の位置が最も低いのは[a]（低母音・開母音）。口を大きく開けて発音する。</p>
+      </div>
+
+      <!-- ========== ブローイング検査 ========== -->
+      <h2>ブローイング検査</h2>
+      <p>コップの水にストローで息を吹き込み、<span class="highlight">鼻咽腔閉鎖機能</span>を評価する検査。鼻からの空気漏出の有無・程度を観察する。</p>
+      <ul>
+        <li>関連する筋：<span class="highlight">口蓋帆挙筋</span>（軟口蓋を後上方に挙上する主動筋）</li>
+        <li><span class="caution">構音を用いる検査ではない</span>（呼気を用いる検査）</li>
+        <li>ソフトブローイング：構音時の鼻咽腔閉鎖に近い / ハードブローイング：最大努力時</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">116D71</div>
+        <p>脳梗塞の既往がある患者に対して行った検査の写真（別冊No.25）を別に示す。<br>検査結果に最も関連しているのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D71_1.png" alt="116D71">
+        </div>
+        <div class="choices">
+          a 口輪筋<br>
+          b 側頭筋<br>
+          c 顎舌骨筋<br>
+          d 外側翼突筋<br>
+          e 口蓋帆挙筋
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】ブローイング検査の写真。鼻咽腔閉鎖機能を評価しており、軟口蓋の挙上に関わる口蓋帆挙筋が最も関連する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110B21 ★</div>
+        <p>12歳の男児。言語異常を主訴として来院した。幼少時に口蓋裂の手術を受け、その後言語治療を受けていなかったという。鼻咽腔内視鏡検査で鼻咽腔閉鎖不全と診断された。/ア/発声時の鼻咽腔内視鏡検査の画像（別冊No.18A）と治療に用いた装置（別冊No.18B）を別に示す。<br>装置の調整に有用な検査法はどれか。2つ選べ。</p>
+        <div class="choices">
+          a MRI<br>
+          b 頸部聴診法<br>
+          c パラトグラム検査<br>
+          d ブローイング検査<br>
+          e 側面頭部エックス線規格撮影
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】鼻咽腔閉鎖不全に対するスピーチエイド（軟口蓋挙上装置）の調整には、ブローイング検査で鼻咽腔閉鎖機能を評価し、側面セファロで軟口蓋と咽頭壁の位置関係を確認する。</p>
+      </div>
+
+      <!-- ========== 咀嚼能力検査 ========== -->
+      <h2>咀嚼能力検査</h2>
+
+      <h3>検査法の比較</h3>
+      <table>
+        <tr><th>検査法</th><th>方法</th><th>評価指標</th></tr>
+        <tr><td><span class="key">篩分法</span></td><td>ピーナツを一定回数咀嚼→10メッシュふるいで篩い分け</td><td>ふるい通過量から咀嚼能率を算出</td></tr>
+        <tr><td><span class="key">グルコース溶出量測定</span></td><td>グミゼリー2gを20秒間咀嚼→グルコース濃度測定</td><td>100mg/dL未満→咀嚼機能低下</td></tr>
+        <tr><td><span class="key">ガム試験</span></td><td>チューインガムを咀嚼、色変化を評価</td><td>色変化の程度で咀嚼能力を評価</td></tr>
+      </table>
+      <p class="note">篩分法とグルコース溶出量測定が咀嚼能力の「客観的評価」。食品摂取アンケートやOHIPは主観的評価。</p>
+
+      <div class="question-box">
+        <div class="q-number">115C34</div>
+        <p>咀嚼能力を客観的に評価する検査はどれか。2つ選べ。</p>
+        <div class="choices">
+          a OHIP<br>
+          b 篩分法<br>
+          c フードテスト<br>
+          d 食品摂取アンケート<br>
+          e グルコース溶出量測定
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】篩分法とグルコース溶出量測定が客観的な咀嚼能力検査。OHIPと食品摂取アンケートは主観的評価（アンケート）。フードテストは嚥下機能のスクリーニング。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C71</div>
+        <p>口腔における食物移送に関わる機能を評価するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌圧検査<br>
+          b 咬合音検査<br>
+          c 咬合力検査<br>
+          d 咀嚼能力検査<br>
+          e ブローイング検査
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】食物移送には舌の押しつぶし力（舌圧）と咀嚼による食塊形成・移送能力が関わる。咬合音検査・咬合力検査は咬合の評価。ブローイング検査は鼻咽腔閉鎖機能。</p>
+      </div>
+
+      <!-- ========== 口腔機能低下症 ========== -->
+      <h2>口腔機能低下症</h2>
+      <p><span class="highlight">7項目中3項目以上</span>に該当で口腔機能低下症と診断。</p>
+
+      <h3>7つの検査項目とカットオフ値</h3>
+      <table>
+        <tr><th>検査項目</th><th>検査方法</th><th>カットオフ値</th></tr>
+        <tr><td><span class="key">口腔衛生状態不良</span></td><td>舌苔付着度（TCI）</td><td>50%以上</td></tr>
+        <tr><td><span class="key">口腔乾燥</span></td><td>口腔水分計 / Saxonテスト</td><td>27.0未満 / 2.0g以下</td></tr>
+        <tr><td><span class="key">咬合力低下</span></td><td>残存歯数 / デンタルプレスケール</td><td><span class="highlight">20本未満 / 200N未満</span></td></tr>
+        <tr><td><span class="key">舌口唇運動機能低下</span></td><td>OD（/pa/ta/ka/）</td><td><span class="highlight">6回/秒未満</span></td></tr>
+        <tr><td><span class="key">低舌圧</span></td><td>舌圧測定器</td><td><span class="highlight">30kPa未満</span></td></tr>
+        <tr><td><span class="key">咀嚼機能低下</span></td><td>グルコース溶出量測定</td><td>100mg/dL未満</td></tr>
+        <tr><td><span class="key">嚥下機能低下</span></td><td>EAT-10</td><td>3点以上</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115B57</div>
+        <p>口腔機能低下症が疑われる患者に対して行う検査はどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115B57_1.png" alt="115B57">
+        </div>
+        <div class="choices">
+          a 舌圧検査<br>
+          b 顎運動検査<br>
+          c 咬合力検査<br>
+          d パラトグラム検査<br>
+          e オーラルディアドコキネシス
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】口腔機能低下症の7項目に含まれるのは、舌圧検査（低舌圧）、咬合力検査（咬合力低下）、OD（舌口唇運動機能低下）。顎運動検査とパラトグラム検査は7項目に含まれない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D37 ★</div>
+        <p>78歳の女性。硬いものが噛みにくいことを主訴として来院した。10年前から2型糖尿病によりインスリン療法を受けているという。頭頸部における疼痛の訴えはなく、最大開口量（義歯の切歯間距離）は43mmであった。全部床義歯の適合と咬合に問題はない。初診時の口腔内写真（別冊No.7A、B）を別に示す。<br>次に行う検査として適切なのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a ガム試験<br>
+          b 咬合力検査<br>
+          c 咀嚼能力検査<br>
+          d 顎関節部MRI<br>
+          e 改訂水飲みテスト
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】義歯の適合・咬合に問題がないのに「硬いものが噛みにくい」→口腔機能低下症を疑う。咀嚼に関わる検査（ガム試験、咬合力検査、咀嚼能力検査）が適切。疼痛なし・開口量正常で顎関節部MRIは不要。嚥下の訴えがなく改訂水飲みテストは不適。</p>
+      </div>
+
+      <!-- ========== その他 ========== -->
+      <h2>その他の口腔内検査</h2>
+
+      <h3>口臭検査</h3>
+      <p>口臭の原因物質（メチルメルカプタン、硫化水素）をハリメーター等で測定する。</p>
+
+      <div class="question-box">
+        <div class="q-number">115D49</div>
+        <p>検査前に洗口の禁止を指示するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 口臭症<br>
+          b 嚥下障害<br>
+          c 味覚障害<br>
+          d 口腔乾燥症<br>
+          e 鼻咽腔閉鎖不全
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】口臭検査では口腔内のガス成分を測定するため、検査前の洗口やブラッシングは禁止。洗口により原因物質が除去されて正確な測定ができなくなる。</p>
+      </div>
+
+      <h3>触診（羊皮紙様感）</h3>
+      <p><span class="key">羊皮紙様感</span>とは、骨の菲薄化した部位を指で圧迫した際に感じるパリパリという感触。顎骨内で膨張性に増大する病変で骨が菲薄化すると触知される。</p>
+
+      <div class="question-box">
+        <div class="q-number">106A88</div>
+        <p>羊皮紙様感を触知するのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106A88_1.png" alt="106A88">
+        </div>
+        <div class="choices">
+          a 鼻歯槽嚢胞<br>
+          b 静止性骨空洞<br>
+          c 甲状舌管嚢胞<br>
+          d エナメル上皮腫<br>
+          e 角化嚢胞性歯原性腫瘍
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】エナメル上皮腫と角化嚢胞性歯原性腫瘍は顎骨内で膨張性に増大し、骨を菲薄化させるため羊皮紙様感を触知する。鼻歯槽嚢胞は軟組織の嚢胞。静止性骨空洞は骨の陥凹（骨欠損）。甲状舌管嚢胞は頸部正中の軟組織嚢胞。</p>
+      </div>
+
+      <!-- ========== まとめ ========== -->
+      <div class="point-box">
+        <div class="point-box-title">口腔機能検査の整理</div>
+        <ul>
+          <li><span class="key">構音を用いる検査</span>：OD、パラトグラム検査</li>
+          <li><span class="key">鼻咽腔閉鎖機能</span>：ブローイング検査（口蓋帆挙筋）</li>
+          <li><span class="key">嚥下スクリーニング</span>：RSST、MWST、フードテスト、咳テスト、頸部聴診法</li>
+          <li><span class="key">嚥下精密検査</span>：VF（全相・被曝あり）、VE（ベッドサイド可・被曝なし）</li>
+          <li><span class="key">咀嚼能力（客観的）</span>：篩分法、グルコース溶出量測定</li>
+          <li><span class="key">口腔機能低下症</span>：7項目中3項目以上で診断</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

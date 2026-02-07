@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顎変形症の治療 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 01_先天異常・発育不全</span>
+    <h1>顎変形症の治療</h1>
+    <div class="container">
+
+      <h2>顎変形症の手術一覧</h2>
+      <table>
+        <tr><th>分類</th><th>術式</th><th>移動方向</th><th>移動可能量</th><th>抜歯</th><th>固定法</th></tr>
+        <tr>
+          <td rowspan="2">上顎骨切り</td>
+          <td><span class="highlight">Le Fort I型骨切り術</span></td>
+          <td>前後・上下</td>
+          <td>10mm（最大15mm）</td>
+          <td>なし</td>
+          <td>プレート固定</td>
+        </tr>
+        <tr>
+          <td><span class="key">上顎前方歯槽骨切り術</span>（Wassmund-Wunderer法）</td>
+          <td>後方</td>
+          <td>小臼歯1歯分</td>
+          <td>小臼歯</td>
+          <td>プレート固定</td>
+        </tr>
+        <tr>
+          <td rowspan="4">下顎骨切り</td>
+          <td><span class="highlight">下顎枝矢状分割術（SSRO）</span></td>
+          <td>前後・左右非対称改善</td>
+          <td>10mm（最大15mm）</td>
+          <td>なし</td>
+          <td>プレート固定＋顎間固定</td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎枝垂直骨切り術（IVRO）</span></td>
+          <td>後方・左右非対称改善</td>
+          <td>5mm程度</td>
+          <td>なし</td>
+          <td>固定なし（顎間固定のみ）</td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎前方歯槽骨切り術</span>（Köle法）</td>
+          <td>後方</td>
+          <td>小臼歯1歯分</td>
+          <td>小臼歯</td>
+          <td>プレート固定＋顎間固定</td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎骨体骨切り術</span>（Dingman法）</td>
+          <td>後方</td>
+          <td>―</td>
+          <td>―</td>
+          <td>プレート固定＋顎間固定</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">術式名の対応（頻出）</div>
+        <ul>
+          <li>Le Fort I型骨切り術 → 上顎全体を移動</li>
+          <li><span class="key">Wassmund-Wunderer法</span> → 上顎前方歯槽骨切り術（口蓋側からアプローチ）</li>
+          <li><span class="key">Köle法</span> → 下顎前方歯槽骨切り術</li>
+          <li><span class="key">Dingman法</span> → 下顎骨体骨切り術</li>
+          <li><span class="key">Obwegeser-Dal Pont法</span> → 下顎枝矢状分割術（SSRO）</li>
+          <li><span class="key">Kostečka法</span> → 上顎前方歯槽骨切り術（前方アプローチ）</li>
+        </ul>
+      </div>
+
+      <h2>下顎枝矢状分割術（SSRO）</h2>
+      <p>最も多用される顎矯正手術。下顎枝を矢状方向に分割し、遠位骨片を前後に移動させる。</p>
+
+      <h3>近位骨片と遠位骨片</h3>
+      <ul>
+        <li><span class="key">近位骨片</span>（体幹に近い）：下顎頭のある方。咬筋、側頭筋、外側翼突筋が付着</li>
+        <li><span class="key">遠位骨片</span>（体幹から遠い）：歯のある方。内側翼突筋、舌骨上筋群が付着</li>
+      </ul>
+
+      <h3>合併症</h3>
+      <ul>
+        <li><span class="highlight">下歯槽神経麻痺</span>（下唇・オトガイ皮膚・歯肉の感覚異常）← 特に損傷しやすい</li>
+        <li><span class="key">舌神経麻痺</span></li>
+        <li>顔面神経麻痺</li>
+        <li><span class="key">顎動脈</span>、顔面動脈、<span class="key">下歯槽動脈</span>からの出血</li>
+      </ul>
+
+      <h2>下顎枝垂直骨切り術（IVRO）</h2>
+      <p>下顎枝を垂直方向に骨切りする。SSROより手技がシンプルで神経損傷リスクが低い。</p>
+
+      <h3>損傷に注意すべき血管</h3>
+      <ul>
+        <li><span class="highlight">顎動脈</span>：下顎枝内側を走行、骨切り時に損傷リスク</li>
+        <li><span class="highlight">顔面動脈</span>：下顎骨下縁付近を走行</li>
+      </ul>
+
+      <h2>Le Fort I型骨切り術</h2>
+      <p>上顎骨全体を骨切りし、前後・上下方向に移動させる術式。</p>
+
+      <h3>手順</h3>
+      <ul>
+        <li>口腔前庭水平切開 → 骨膜剥離・鼻粘膜の剥離 → 骨切り（鼻中隔切離を含む）→ Down Fracture → プレートによる固定</li>
+      </ul>
+
+      <h3>合併症</h3>
+      <ul>
+        <li>出血：顎動脈（後上歯槽動脈、頬動脈）、翼突筋静脈叢、下行口蓋動脈</li>
+        <li><span class="key">眼窩下神経麻痺</span>（鼻背、鼻翼、鼻下、上唇の感覚異常）</li>
+        <li>鼻涙管の損傷（流涙）</li>
+        <li>視力障害</li>
+        <li><span class="caution">鼻咽腔閉鎖不全</span>（唇顎口蓋裂患者の上顎前方移動時）</li>
+      </ul>
+      <p class="note">※鼻口蓋動脈・鼻口蓋神経はDown Fracture時に切断される。下行口蓋動脈は絶対に切ってはいけない。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">104A67</div>
+        <p>正しい組合せはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 下顎枝矢状分割術 ―――――― Kostečka法<br>
+          b 下顎枝垂直骨切り術 ――――― Wassmund法<br>
+          c 下顎枝水平骨切り術 ――――― Köle法<br>
+          d 下顎骨体一部切除術 ――――― Dingman法<br>
+          e 下顎前歯部歯槽骨切り術 ――― Wunderer法
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】Dingman法は下顎骨体骨切り術（d）。a：Kostečka法は上顎前方歯槽骨切り術。b：Wassmund法も上顎前方歯槽骨切り術。c：Köle法は下顎前方歯槽骨切り術。e：Wunderer法は上顎前方歯槽骨切り術（口蓋側アプローチ）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C73</div>
+        <p>術中の口腔内写真（別冊No.17）を別に示す。行っている手術はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C73_1.png" alt="別冊No.17">
+        </div>
+        <div class="choices">
+          a 下顎区域切除術<br>
+          b 下顎枝矢状分割術<br>
+          c 下顎骨嚢胞摘出術<br>
+          d 下顎枝垂直骨切り術<br>
+          e 下顎骨骨折観血的整復術
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】術中写真で下顎枝の矢状方向の骨切りとスプレッティングオステオトームによる骨分割が確認できる → 下顎枝矢状分割術（SSRO）（b）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A77</div>
+        <p>下顎枝矢状分割術の際に起こりうる合併症はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 視力障害<br>
+          b 舌神経麻痺<br>
+          c 鼻咽腔閉鎖不全<br>
+          d 下歯槽動脈からの出血<br>
+          e オトガイ下動脈からの出血
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】SSROでは下顎枝内面の骨切り時に舌神経麻痺（b）が起こりうる。また下歯槽動脈は下顎管内を走行し、骨分割時に損傷の可能性がある（d）。a（視力障害）はLe Fort I型骨切り術の合併症。c（鼻咽腔閉鎖不全）もLe Fort I型の合併症。e（オトガイ下動脈）はオトガイ形成術の合併症。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D55</div>
+        <p>下顎枝垂直骨切り術において、骨切り時の損傷に注意すべきなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 顎動脈<br>
+          b 舌動脈<br>
+          c 顔面動脈<br>
+          d 浅側頭動脈<br>
+          e 上行咽頭動脈
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】下顎枝垂直骨切り術（IVRO）では、下顎枝内側を走行する顎動脈（a）と下顎骨下縁付近の顔面動脈（c）の損傷に注意が必要。b（舌動脈）は舌の深部を走行。d（浅側頭動脈）は耳前部の皮下。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110B42</div>
+        <p>19歳の女性。反対咬合を主訴として来院した。術前矯正治療後に顎矯正手術を行うこととした。術前矯正中の口腔内写真（別冊No.38A）、頭部エックス線規格写真（別冊No.38B）及び手術中の写真（別冊No.38C）を別に示す。行っている手術はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110B42_1.png" alt="別冊No.38">
+        </div>
+        <div class="choices">
+          a Köle法<br>
+          b Kostečka法<br>
+          c Le FortⅠ型骨切り術<br>
+          d Obwegeser-Dal Pont法<br>
+          e Wassmund-Wunderer法
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】術中写真で上顎の骨切りとDown Fractureの操作が確認できる → Le Fort I型骨切り術（c）。反対咬合に対して上顎を前方移動する目的。a（Köle法）は下顎前方歯槽骨切り術。d（Obwegeser-Dal Pont法）は下顎枝矢状分割術。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B78</div>
+        <p>17歳の女子。上顎前歯の前突を主訴として来院した。術前矯正治療後に顎矯正手術を行うこととした。手術中の口腔内写真（別冊No.19）を別に示す。この手術法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111B78_1.png" alt="別冊No.19">
+        </div>
+        <div class="choices">
+          a Dingman 法<br>
+          b Robinson 法<br>
+          c Wunderer 法<br>
+          d Le Fort I型骨切り術<br>
+          e Obwegeser-Dal Pont 法
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】上顎前歯の前突に対する手術。術中写真で口蓋側からのアプローチが確認できる → Wunderer法（c）＝上顎前方歯槽骨切り術（口蓋側アプローチ）。上顎前歯部を後方に移動する。d（Le Fort I型骨切り術）は上顎全体を移動する術式で、前歯部のみの移動には用いない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D22</div>
+        <p>下顎枝矢状分割術を行う下顎前突症患者の術前3D-CT（別冊No.2A）とCTを用いたシミュレーション像（別冊No.2B）を別に示す。術後に予想されるのはどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D22_1.png" alt="別冊No.2">
+        </div>
+        <div class="choices">
+          a 下顔面高の増大<br>
+          b 咬合平面の改善<br>
+          c 右側の内外側骨片間の干渉<br>
+          d 左側の内外側骨片間の空隙<br>
+          e 下顎枝部後縁からの内側骨片の突出
+        </div>
+        <div class="answer">正解：c, d, e</div>
+        <p>【解説】SSROで下顎を後方移動する際、3D-CTシミュレーションから術後に予想される所見を問う問題。遠位骨片（歯のある方）を後方に移動させると、骨片の形状によって内外側骨片間の干渉（c）や空隙（d）が生じ、下顎枝部後縁から内側骨片が突出（e）することがある。a（下顔面高の増大）は後方移動では生じない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

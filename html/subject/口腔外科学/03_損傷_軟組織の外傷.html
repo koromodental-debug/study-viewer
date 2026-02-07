@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>軟組織の外傷 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 損傷</span>
+    <h1>軟組織の外傷</h1>
+    <div class="container">
+
+      <h2>創傷の分類</h2>
+      <p>軟組織の外傷は原因と性状により7種類に分類される。</p>
+
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>原因・特徴</th>
+          <th>組織欠損</th>
+        </tr>
+        <tr>
+          <td class="key">咬創</td>
+          <td>咀嚼時・てんかん発作・外傷などで軟組織を噛んで生じた創。難治性潰瘍となることがある</td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td class="key">切創</td>
+          <td>鋭利な刃物やガラスなどで生じた創。周囲組織の損傷は少ない</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td class="key">挫傷</td>
+          <td>鈍器により組織が圧挫した開放性損傷。周囲組織の挫滅、<span class="caution">創縁不規則</span></td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td class="key">割創</td>
+          <td>組織が分断された創。周囲組織の損傷あり</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td class="key">裂創</td>
+          <td>牽引力によって組織の弾性力を超えて引き裂かれた創。<span class="caution">創縁不規則</span></td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td class="key">刺創</td>
+          <td>針などの鋭器が刺入して生じた創。<span class="highlight">創部は小さいが深部に及ぶ</span>ことがあり、血腫を形成することがある</td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td class="key">擦過傷</td>
+          <td>摩擦によって生じた傷。組織液の滲出、上皮層の剥離</td>
+          <td>あり</td>
+        </tr>
+      </table>
+
+      <p class="note">組織欠損があると<span class="key">二次治癒</span>をたどることが多い。</p>
+      <p class="note">「<span class="key">創</span>」は外界と交通している開放性損傷、「<span class="key">傷</span>」は外界と交通していない非開放性損傷。</p>
+
+      <h2>創傷治癒の分類</h2>
+      <h3>一次治癒</h3>
+      <p>鋭利に切断された創傷が無菌的に縫合された場合の治癒経過。創面に血腫などの異物がなく、感染がないことが条件。</p>
+
+      <h3>二次治癒（瘢痕治癒）</h3>
+      <p>創面が接触せずに離開している場合の治癒経過。創面に壊死・血腫・感染・異物が介在する場合に発生し、瘢痕形成を認める。</p>
+
+      <h3>三次治癒</h3>
+      <p>感染の危険性が高い創面で、初めは二次治癒を行わせ、その後に縫合閉鎖した場合の治癒経過。瘢痕も少なく、一次治癒に近い経過をたどる。</p>
+
+      <h2>軟組織損傷の治療方針</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">治療の流れ（この順番を守る）</div>
+        <p><span class="highlight">① 止血</span> → ② 創の洗浄・異物除去 → <span class="highlight">③ デブリードマン</span> → ④ 創の閉鎖・縫合 → ⑤ 感染対策</p>
+      </div>
+
+      <h3>① 止血</h3>
+      <p><span class="key">圧迫止血</span>が基本。必要に応じて電気凝固法や縫合結紮法を用いる。</p>
+
+      <h3>② 創の洗浄・異物除去</h3>
+      <ul>
+        <li>まず術野の消毒を行う</li>
+        <li>次いで大量の<span class="key">滅菌生理食塩液</span>にて創内を十分に洗浄する</li>
+        <li>ガーゼ、滅菌ブラシ、鋭匙、ピンセットなどで異物除去</li>
+        <li><span class="caution">創内は消毒液を用いない</span></li>
+      </ul>
+
+      <h3>③ デブリードマン（新鮮化）</h3>
+      <p>壊死組織や挫滅組織、洗浄では除去できないほど創部の汚染が著しい症例では、切除して<span class="key">新鮮創化</span>を図る。</p>
+
+      <h3>④ 創の閉鎖・縫合</h3>
+      <ul>
+        <li>感染の可能性が低く組織欠損を伴わない場合 → 可能な限り縫合閉鎖 → <span class="key">一次治癒</span>を図る</li>
+        <li>大きな組織欠損を伴う場合 → 埋没縫合（筋層縫合、皮下縫合）の後に皮膚縫合</li>
+        <li>縫縮できないような大きな実質欠損 → <span class="highlight">湿潤療法</span>（Wet-to-dry dressing法）→ <span class="key">二次治癒</span>を図る</li>
+      </ul>
+
+      <h3>ドレッシング材の種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">ポリウレタンフィルム</td>
+          <td>透明で創面の観察が可能。浅い擦過傷向き</td>
+        </tr>
+        <tr>
+          <td class="key">ポリウレタンフォーム</td>
+          <td>吸収性がある。中等度の滲出液がある創向き</td>
+        </tr>
+        <tr>
+          <td class="highlight">ハイドロコロイド</td>
+          <td>滲出液を吸収してゲル化し、湿潤環境を維持。擦過傷に適する</td>
+        </tr>
+        <tr>
+          <td class="key">アルギン酸</td>
+          <td>滲出液が多い創向き。止血効果もある</td>
+        </tr>
+      </table>
+
+      <h3>⑤ 感染対策</h3>
+      <ul>
+        <li>抗菌薬・抗炎症薬の投与</li>
+        <li>破傷風の予防：土壌からの汚染がみられる際には、<span class="key">抗破傷風ヒト免疫グロブリン</span>および<span class="key">破傷風トキソイド</span>の投与を検討</li>
+      </ul>
+
+      <h3>上皮組織欠損への対処法</h3>
+      <p>①周囲組織の縫縮、②皮膚（粘膜）自家移植、③局所皮膚弁（有茎・遊離）、④人工材料による被覆、⑤開放創による二次治癒 のいずれかを選択する。できるだけ単純に縫縮し、一次治癒にしたほうが審美的によい。</p>
+
+      <h2>創傷治癒を妨げる要因</h2>
+
+      <h3>全身的要因</h3>
+      <ul>
+        <li>加齢、肥満</li>
+        <li>低栄養（PEM）、低タンパク血症、<span class="key">ビタミン欠乏</span>（A、C、E、K）</li>
+        <li>慢性疾患：<span class="key">糖尿病</span>、貧血、末梢の循環不全</li>
+        <li>副腎皮質ステロイド・免疫抑制薬・抗腫瘍薬の投与</li>
+      </ul>
+
+      <h3>局所的要因</h3>
+      <ul>
+        <li>異物、壊死組織</li>
+        <li>感染</li>
+        <li>創面への圧迫・刺激（安静の有無）</li>
+        <li>血行不良</li>
+        <li>死腔（離断した組織間の間隙）→ 二次治癒となる</li>
+      </ul>
+
+      <h2>創傷治癒の経過</h2>
+      <table>
+        <tr>
+          <th>相</th>
+          <th>時期</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">第1相（炎症・破壊相）</td>
+          <td>受傷直後〜数日間</td>
+          <td>炎症性機転、白血球による壊死組織の清浄化、組織の再生・増殖の開始</td>
+        </tr>
+        <tr>
+          <td class="key">第2相（増殖相）</td>
+          <td>受傷後約2週間</td>
+          <td>コラーゲンの増殖・同化期間、肉芽組織の形成</td>
+        </tr>
+        <tr>
+          <td class="key">第3相（成熟相）</td>
+          <td>数か月〜数年</td>
+          <td>線維化から瘢痕組織形成、瘢痕の再形成・再編成</td>
+        </tr>
+      </table>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">102D9</div>
+        <p>生後11か月の乳児。口蓋部からの出血を主訴として来院した。30分前に箸をくわえたまま転倒したという。箸の破損はなく、創部からの出血も止まっていた。全身状態に異常所見はみられない。全身麻酔下で処置を行うこととした。術中の口腔内写真（別冊No.7）を別に示す。矢印は創部を示す。
+まず行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102D9_1.png" alt="別冊No.7">
+        </div>
+        <div class="choices">
+          a 縫　合<br>
+          b 掻　爬<br>
+          c 粘膜下剥離<br>
+          d デブリドマン<br>
+          e 創の深さの確認
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】箸による口蓋部の<span class="key">刺創</span>の症例。刺創は創部が小さいが深部に及ぶことがあり、血腫形成のリスクもある。口蓋部は内頸動脈や頭蓋底に近く、深部の重要組織損傷の有無を確認する必要がある。<span class="highlight">縫合やデブリードマンの前に、まず創の深さを確認する</span>ことが最優先となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D1</div>
+        <p>13歳の男子。顔面の外傷で来院した。クラブ活動中に運動場で転倒したという。術中の口腔外写真（別冊No.1）を別に示す。
+一次止血とともに行う処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D1_1.png" alt="別冊No.1">
+        </div>
+        <div class="choices">
+          a 縫　合<br>
+          b デブリードマン<br>
+          c 局所止血材の塡塞<br>
+          d 組織接着材の塗布<br>
+          e 皮膚接合用テープによる固定
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】運動場での転倒による顔面の<span class="key">擦過傷</span>の症例。擦過傷は砂や土などの異物が混入しやすく、治療フローに従って一次止血とともに<span class="highlight">デブリードマン</span>（異物除去・壊死組織の切除）を行う。異物が残存すると感染リスクが高まり、また<span class="caution">外傷性刺青</span>（色素沈着）の原因となる。縫合は創の状態を確認した後に行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107B38</div>
+        <p>78歳の女性。顔面の疼痛を主訴として来院した。2時間前に自宅で転倒して顔面をぶつけたという。初診時の顔貌写真（別冊No.38）を別に示す。
+皮膚に対する適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107B38_1.png" alt="別冊No.38">
+        </div>
+        <div class="choices">
+          a コラーゲン膜の縫着<br>
+          b 次亜塩素酸による消毒<br>
+          c ミコナゾール硫酸塩の塗布<br>
+          d 乾ガーゼによるドレッシング<br>
+          e ハイドロコロイド材による被覆
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】転倒による顔面の<span class="key">擦過傷</span>の症例。擦過傷は組織欠損を伴うため縫合閉鎖は困難であり、<span class="highlight">湿潤療法</span>が適応となる。ハイドロコロイド材は滲出液を吸収してゲル化し、創面の湿潤環境を維持して二次治癒を促進する。<span class="caution">乾ガーゼによるドレッシングは創面を乾燥させ、治癒を遅延させる</span>ため不適切。次亜塩素酸は消毒薬だが創内への使用は組織障害を起こすため推奨されない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

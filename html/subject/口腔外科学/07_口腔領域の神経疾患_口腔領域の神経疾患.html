@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔領域の神経疾患 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 口腔領域の神経疾患</span>
+    <h1>口腔領域の神経疾患</h1>
+    <div class="container">
+
+      <!-- ===== 1. 顔面神経麻痺 ===== -->
+      <h2>1. 顔面神経麻痺</h2>
+
+      <h3>顔面神経の走行と分岐</h3>
+      <p>顔面神経は側頭骨内を走行し、<span class="key">膝神経節</span>を経て以下の順に分枝する。障害部位が中枢側ほど多くの症状が出現する。</p>
+
+      <table>
+        <tr><th>分枝（中枢側から順）</th><th>機能</th><th>障害時の症状</th></tr>
+        <tr><td><span class="key">大錐体神経</span></td><td>涙腺分泌</td><td>涙液分泌障害（口渇ではなく<span class="caution">ドライアイ</span>）</td></tr>
+        <tr><td><span class="key">アブミ骨筋神経</span></td><td>アブミ骨筋の収縮</td><td>聴覚過敏</td></tr>
+        <tr><td><span class="key">鼓索神経</span></td><td>舌前方2/3味覚＋顎下腺・舌下腺分泌</td><td>味覚障害＋唾液分泌障害</td></tr>
+        <tr><td><span class="key">末梢運動枝</span></td><td>顔面表情筋の運動</td><td>表情筋麻痺のみ</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">病巣の局在診断（表12-6）</div>
+        <ul>
+          <li><span class="key">膝神経節の障害</span>：涙液↓＋味覚↓＋聴覚過敏＋唾液↓＋表情筋麻痺（<span class="highlight">全症状</span>）</li>
+          <li>アブミ骨筋神経〜鼓索神経の間：味覚↓＋聴覚過敏＋唾液↓＋表情筋麻痺</li>
+          <li>鼓索神経〜末梢の間：味覚↓＋唾液↓＋表情筋麻痺</li>
+          <li><span class="key">鼓索神経より末梢</span>：<span class="highlight">表情筋麻痺のみ</span></li>
+        </ul>
+      </div>
+
+      <h3>Bell麻痺 vs Ramsay Hunt症候群</h3>
+      <table>
+        <tr><th></th><th>Bell麻痺</th><th>Ramsay Hunt症候群</th></tr>
+        <tr><td>原因</td><td>原因不明（HSV-1再活性化説）</td><td><span class="highlight">VZVの膝神経節再活性化</span></td></tr>
+        <tr><td>外耳道水疱</td><td><span class="key">なし</span></td><td><span class="highlight">あり</span>（帯状疱疹）</td></tr>
+        <tr><td>第VIII脳神経症状</td><td>なし</td><td><span class="key">あり</span>（難聴・耳鳴り・めまい）</td></tr>
+        <tr><td>味覚障害</td><td>あり（鼓索神経障害）</td><td>あり</td></tr>
+        <tr><td>唾液分泌障害</td><td>あり</td><td>あり</td></tr>
+        <tr><td>予後</td><td>比較的良好（完全治癒率約50%）</td><td><span class="caution">不良</span>（後遺症30%）</td></tr>
+        <tr><td>治療</td><td>ステロイド＋VB<sub>12</sub>＋抗ウイルス薬</td><td>抗ウイルス薬（アシクロビル）＋ステロイド</td></tr>
+      </table>
+
+      <p class="note">Bell現象：閉眼時に眼球が反射性に上転する現象。末梢性顔面神経麻痺で閉眼不能のため観察される。</p>
+
+      <h3>中枢性 vs 末梢性の鑑別</h3>
+      <table>
+        <tr><th></th><th>中枢性</th><th>末梢性（Bell麻痺等）</th></tr>
+        <tr><td>前額部のしわ寄せ</td><td><span class="highlight">可能</span>（両側支配のため）</td><td><span class="caution">不能</span></td></tr>
+        <tr><td>麻痺の範囲</td><td>顔面下半分のみ</td><td>顔面全体（額を含む）</td></tr>
+        <tr><td>原因</td><td>脳出血・脳梗塞など</td><td>Bell麻痺・Hunt症候群など</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">115B47</div>
+        <p>42歳の男性。顔の違和感を主訴として来院した。今朝洗顔時に気付いたという。既往歴に特記事項はない。初診時の眉挙上時と口唇突出時の顔貌写真（別冊No.19A、B）を別に示す。<br>適切な治療法はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115B47_1.png" alt="別冊No.19A">
+          <img src="../../../images/115回_Web画像/115B47_2.png" alt="別冊No.19B">
+        </div>
+        <div class="choices">
+          a 冷罨法<br>
+          b NSAIDsの投与<br>
+          c ビタミンB<sub>12</sub>の投与<br>
+          d カルバマゼピンの投与<br>
+          e 副腎皮質ステロイド薬の投与
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】朝の洗顔時に気付いた顔面の違和感＋既往歴なし→Bell麻痺。治療はステロイド（神経浮腫の軽減）＋ビタミンB<sub>12</sub>（神経修復促進）。カルバマゼピンは三叉神経痛の治療薬。NSAIDsは対症療法にすぎない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C97</div>
+        <p>Bell麻痺の症状はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 耳鳴り<br>
+          b めまい<br>
+          c 味覚異常<br>
+          d 外耳道の水疱<br>
+          e 唾液分泌障害
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】Bell麻痺は膝神経節付近の障害で鼓索神経が侵されるため、味覚異常＋唾液分泌障害を伴う。<span class="caution">外耳道の水疱はHunt症候群</span>の所見。耳鳴り・めまいは第VIII脳神経症状でHunt症候群に随伴する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C44</div>
+        <p>Hunt症候群でみられる症状はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌　痛<br>
+          b 難　聴<br>
+          c 視力障害<br>
+          d 鼻唇溝消失<br>
+          e 上唇知覚鈍麻
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】Hunt症候群の三徴は外耳道帯状疱疹＋顔面神経麻痺＋第VIII脳神経症状。難聴（第VIII脳神経）と鼻唇溝消失（顔面神経麻痺）が該当。上唇知覚鈍麻は三叉神経（V2）の症状。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B47</div>
+        <p>61歳の女性。顔面の非対称を主訴として来院した。数日前から食事時に口角から食物が漏れるようになったという。聴覚検査で高音域の閾値の低下が認められた。初診時の閉眼時の写真（別冊No.7A）、口笛吹き時の写真（別冊No.7B）及び耳介部の写真（別冊No.7C）を別に示す。<br>この患者が随伴しやすいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113B47_1.png" alt="別冊No.7A">
+          <img src="../../../images/113回_Web画像/113B47_2.png" alt="別冊No.7B">
+          <img src="../../../images/113回_Web画像/113B47_3.png" alt="別冊No.7C">
+        </div>
+        <div class="choices">
+          a 複　視<br>
+          b 味覚異常<br>
+          c 舌運動障害<br>
+          d 唾液分泌障害<br>
+          e 頬部の知覚鈍麻
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】顔面非対称＋口角からの食物漏れ＋聴覚障害＋耳介部の所見（水疱）→Ramsay Hunt症候群。膝神経節の障害により鼓索神経が侵され、味覚異常＋唾液分泌障害を随伴する。複視は動眼神経、舌運動障害は舌下神経、頬部知覚は三叉神経の症状。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D65</div>
+        <p>膝神経節付近での顔面神経損傷により認められるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 口　渇<br>
+          b 顔面痛<br>
+          c 瞳孔散大<br>
+          d 角膜反射消失<br>
+          e 舌後部1/3の味覚消失
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】膝神経節付近の損傷→大錐体神経の障害→涙腺分泌障害（ドライアイ）→代償的に口渇を感じる。また、角膜反射は三叉神経（求心路）と顔面神経（遠心路＝閉眼）で構成され、顔面神経障害で閉眼不能→角膜反射消失。<span class="caution">舌後部1/3は舌咽神経</span>の支配。瞳孔散大は動眼神経。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A130</div>
+        <p>Bell麻痺で運動が障害されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 咬　筋<br>
+          b 下直筋<br>
+          c 口輪筋<br>
+          d 声帯筋<br>
+          e 顎舌骨筋
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】Bell麻痺は顔面神経麻痺であり、顔面表情筋が障害される。口輪筋は表情筋。咬筋は三叉神経V3、下直筋は動眼神経、声帯筋は迷走神経（反回神経）、顎舌骨筋は三叉神経V3の支配。</p>
+      </div>
+
+      <!-- ===== 2. 片側顔面痙攣 ===== -->
+      <h2>2. 片側顔面痙攣・三叉神経痛</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">血管による神経圧迫が原因の疾患</div>
+        <ul>
+          <li><span class="highlight">三叉神経痛</span>：上小脳動脈（SCA）が三叉神経根を圧迫→電撃様疼痛</li>
+          <li><span class="highlight">片側顔面痙攣</span>：後下小脳動脈（PICA）等が顔面神経を圧迫→不随意な顔面筋収縮</li>
+          <li>根治的手術はいずれも<span class="key">微小血管減圧術（Jannetta手術）</span></li>
+        </ul>
+      </div>
+
+      <h3>三叉神経痛：真性 vs 仮性</h3>
+      <table>
+        <tr><th></th><th>真性（特発性）</th><th>仮性（症候性）</th></tr>
+        <tr><td>原因</td><td><span class="highlight">血管圧迫</span></td><td>腫瘍・多発性硬化症・帯状疱疹後など</td></tr>
+        <tr><td>痛みの性質</td><td><span class="key">電撃痛</span>（一瞬の激痛を反復）</td><td>持続痛・鈍痛が多い</td></tr>
+        <tr><td>トリガーゾーン</td><td>あり（洗顔・歯磨き・食事で誘発）</td><td>ないことが多い</td></tr>
+        <tr><td>不応期</td><td>あり</td><td>なし</td></tr>
+        <tr><td>薬物治療</td><td><span class="highlight">カルバマゼピン</span>が著効</td><td>効果が乏しいことがある</td></tr>
+      </table>
+
+      <h3>片側顔面痙攣</h3>
+      <ul>
+        <li>初発部位：<span class="highlight">眼輪筋</span>（目の周りのピクつき）→頬→口角→広頸筋へ拡大</li>
+        <li>女性に多い。夜間にも持続</li>
+        <li>治療：<span class="key">ボツリヌス毒素注射</span>（対症療法）、微小血管減圧術（根治的）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">114C74</div>
+        <p>頭蓋内での血管による組織圧迫が原因となるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌痛症<br>
+          b 三叉神経痛<br>
+          c Parkinson病<br>
+          d 片側顔面痙攣<br>
+          e Ramsay Hunt症候群
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】三叉神経痛と片側顔面痙攣はともに頭蓋内血管による神経圧迫が原因。Parkinson病は中脳黒質のドパミン神経変性。Hunt症候群はVZV感染。舌痛症は心因性要素が強い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D63</div>
+        <p>顔面痙攣が初発する筋はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 鼻　筋<br>
+          b 眼輪筋<br>
+          c 口輪筋<br>
+          d オトガイ筋<br>
+          e 口角下制筋
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】片側顔面痙攣は眼輪筋のblepharospasmから始まり、下方へ拡大する。</p>
+      </div>
+
+      <!-- ===== 3. 脳神経麻痺と症状 ===== -->
+      <h2>3. 各脳神経の麻痺と症状</h2>
+
+      <h3>主要な脳神経麻痺の症状</h3>
+      <table>
+        <tr><th>神経</th><th>主な支配</th><th>麻痺時の症状</th></tr>
+        <tr><td>三叉神経（V）</td><td>顔面の知覚、咀嚼筋</td><td>顔面の知覚鈍麻、咬合力低下</td></tr>
+        <tr><td><span class="key">顔面神経（VII）</span></td><td>表情筋、味覚（前2/3）、唾液腺</td><td><span class="highlight">口唇閉鎖不全</span>、鼻唇溝消失、閉眼不能</td></tr>
+        <tr><td><span class="key">舌咽神経（IX）</span></td><td>咽頭筋（茎突咽頭筋）、味覚（後1/3）</td><td><span class="highlight">開鼻声</span>、口蓋垂の偏位</td></tr>
+        <tr><td><span class="key">迷走神経（X）</span></td><td>咽頭筋・喉頭筋、内臓</td><td><span class="highlight">嗄声</span>（反回神経麻痺）、口蓋垂の偏位</td></tr>
+        <tr><td>副神経（XI）</td><td>僧帽筋、胸鎖乳突筋</td><td>肩の挙上障害</td></tr>
+        <tr><td><span class="key">舌下神経（XII）</span></td><td>舌筋の運動</td><td><span class="highlight">挺舌時に患側へ偏位</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">口蓋垂の偏位の診断</div>
+        <ul>
+          <li>「アー」発音時に口蓋垂が<span class="key">健側に引かれる</span>→患側の舌咽神経・迷走神経の麻痺</li>
+          <li>舌咽神経と迷走神経は咽頭神経叢を形成し、軟口蓋の運動を支配</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A95</div>
+        <p>神経麻痺と症状との組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 動眼神経麻痺———閉眼不能<br>
+          b 舌神経麻痺———挺舌時の偏位<br>
+          c 顔面神経麻痺———口唇閉鎖不全<br>
+          d 迷走神経麻痺———嗄　声<br>
+          e 舌下神経麻痺———鼻唇溝消失
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】顔面神経は表情筋（口輪筋）を支配→麻痺で口唇閉鎖不全。迷走神経の反回神経が声帯を支配→麻痺で嗄声。<span class="caution">閉眼不能は顔面神経</span>麻痺（動眼神経ではない）。挺舌時偏位は<span class="caution">舌下神経</span>（舌神経ではない）。鼻唇溝消失は<span class="caution">顔面神経</span>（舌下神経ではない）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D33</div>
+        <p>舌咽神経麻痺の症状はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 嗄　声<br>
+          b 開鼻声<br>
+          c 口腔ジスキネジア<br>
+          d 舌前方2/3の味覚障害<br>
+          e 舌突出時の舌尖の偏位
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】舌咽神経は咽頭神経叢に参加し軟口蓋の運動に関与。麻痺すると軟口蓋挙上不全→鼻咽腔閉鎖不全→開鼻声。嗄声は迷走神経（反回神経）。舌前方2/3の味覚は顔面神経（鼓索神経）。舌尖の偏位は舌下神経。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C100</div>
+        <p>80歳の男性。脳梗塞で片側が麻痺している。「アー」と発音させたところ、口蓋垂が健側に引かれた。<br>この検査から判断して麻痺している可能性が高い神経はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 滑車神経<br>
+          b 顔面神経<br>
+          c 舌咽神経<br>
+          d 迷走神経<br>
+          e 舌下神経
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】「アー」発音時の口蓋垂の偏位→軟口蓋の運動障害→咽頭神経叢を形成する舌咽神経＋迷走神経の麻痺。口蓋垂は健側（正常側）に引かれる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C126</div>
+        <p>障害によって嗄声を生じるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 三叉神経<br>
+          b 顔面神経<br>
+          c 前庭神経<br>
+          d 反回神経<br>
+          e 舌下神経
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】反回神経（迷走神経の枝）は声帯を支配する。障害により声帯麻痺→嗄声。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C67</div>
+        <p>76歳の男性。舌の違和感を主訴として来院した。1か月前から食物の食べにくさを自覚していたという。既往歴に特記すべき事項はない。初診時の口腔内写真（別冊No.22A）と舌前方突出時の写真（別冊No.22B）を別に示す。<br>最も考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113C67_1.png" alt="別冊No.22A">
+          <img src="../../../images/113回_Web画像/113C67_2.png" alt="別冊No.22B">
+        </div>
+        <div class="choices">
+          a 三叉神経麻痺<br>
+          b 顔面神経麻痺<br>
+          c 舌咽神経麻痺<br>
+          d 迷走神経麻痺<br>
+          e 舌下神経麻痺
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】舌の違和感＋食べにくさ＋挺舌時の偏位→舌下神経麻痺。舌下神経は舌筋の運動を支配し、片側麻痺では挺舌時に舌尖が患側に偏位する。舌の片側萎縮を伴うこともある。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C99</div>
+        <p>合併症と原因の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 嗄　声 ――――――― 反回神経麻痺<br>
+          b 過換気症候群 ――― てんかん<br>
+          c 血管迷走神経反射 ― 感覚神経機能低下<br>
+          d メトヘモグロビン血症 ― 一酸化炭素中毒<br>
+          e アナフィラキシーショック ― 薬物アレルギー
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】反回神経麻痺→声帯麻痺→嗄声は正しい。薬物アレルギー→アナフィラキシーショックも正しい。過換気症候群は精神的ストレスが原因（てんかんではない）。血管迷走神経反射は迷走神経の過度の興奮が原因。メトヘモグロビン血症はプリロカインの過量投与が原因（一酸化炭素中毒は一酸化炭素ヘモグロビン血症）。</p>
+      </div>
+
+      <!-- ===== 4. 神経損傷後の対応 ===== -->
+      <h2>4. 神経損傷後の対応</h2>
+
+      <p>抜歯やインプラント埋入後の下歯槽神経・オトガイ神経損傷による知覚障害は臨床で遭遇しやすい偶発症である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">神経損傷後の治療</div>
+        <ul>
+          <li>基本治療：<span class="highlight">ビタミンB<sub>12</sub>（メコバラミン）</span>＋ATP＋ステロイド</li>
+          <li>原因が物理的圧迫（インプラント）の場合→<span class="key">インプラント除去</span>が先決</li>
+          <li><span class="caution">カルバマゼピンは神経痛（電撃痛）の治療薬であり、知覚麻痺には不適</span></li>
+          <li>回復しない場合→星状神経節ブロック、理学療法、神経縫合術</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B86</div>
+        <p>40歳の男性。下唇のしびれを主訴として来院した。3日前に他院で下顎右側智歯を抜去し、その後に生じたという。触覚検査と二点識別検査の結果、オトガイ部と下唇の一部は健側と比べて閾値が上昇していた。初診時に閾値の上昇がみられた範囲を印記した顔貌写真（別冊No.34A）と抜歯後のエックス線画像（別冊No.34B）を別に示す。<br>適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B86_1.png" alt="別冊No.34A">
+          <img src="../../../images/112回_Web画像/112B86_2.png" alt="別冊No.34B">
+        </div>
+        <div class="choices">
+          a 神経縫合<br>
+          b 抗菌薬の投与<br>
+          c 抜歯窩の再掻爬<br>
+          d ビタミンB<sub>12</sub>の投与<br>
+          e カルバマゼピンの投与
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】智歯抜歯後のオトガイ部・下唇のしびれ→下歯槽神経損傷。まずビタミンB<sub>12</sub>で神経修復を促進する。3日後の段階では神経縫合は早計。カルバマゼピンは電撃痛（三叉神経痛）の治療薬であり知覚麻痺には無効。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102C5</div>
+        <p>72歳の男性。右側オトガイ部の知覚麻痺を主訴として来院した。3週前にインプラント埋入手術を受けたという。初診時のエックス線写真（別冊No.5）を別に示す。<br>まず行うべき対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102C5_1.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a レーザー照射<br>
+          b インプラント除去<br>
+          c カルバマゼピン投与<br>
+          d ビタミンB<sub>12</sub>製剤投与<br>
+          e 副腎皮質ステロイド投与
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】インプラント埋入後のオトガイ部知覚麻痺→インプラントが下歯槽神経を圧迫している可能性。まずインプラント除去で圧迫を解除し、ビタミンB<sub>12</sub>で神経修復を促進する。カルバマゼピンは知覚麻痺には無効。</p>
+      </div>
+
+      <!-- ===== 5. 茎状突起過長症 ===== -->
+      <h2>5. 茎状突起過長症（Eagle症候群）</h2>
+
+      <p>茎状突起（通常25mm程度）が<span class="key">85mm以上</span>に過長、または茎突舌骨靱帯の石灰化により、嚥下時の咽頭部疼痛や異物感を生じる。</p>
+      <ul>
+        <li>食事時に<span class="key">舌根部〜咽頭部</span>の疼痛・違和感</li>
+        <li>開口障害は通常認めない</li>
+        <li>診断：エックス線写真で過長した茎状突起を確認</li>
+        <li>治療：茎状突起の切除</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">105D31</div>
+        <p>48歳の女性。食事時の左側舌根部から咽頭部にかけての違和感を主訴として来院した。開口障害を認めない。初診時のエックス線写真（別冊No.31）を別に示す。<br>疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105D31_1.png" alt="別冊No.31">
+        </div>
+        <div class="choices">
+          a 血管腫<br>
+          b 慢性骨髄炎<br>
+          c 関節突起骨折<br>
+          d 茎状突起過長症<br>
+          e 顎下腺体内唾石
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】食事時の舌根部〜咽頭部の違和感＋開口障害なし＋エックス線で過長した茎状突起→茎状突起過長症（Eagle症候群）。関節突起骨折では開口障害を伴う。唾石症では食事時の顎下部腫脹が特徴。</p>
+      </div>
+
+      <!-- ===== まとめ ===== -->
+      <h2>6. 鑑別のまとめ</h2>
+
+      <h3>顔面神経麻痺の鑑別</h3>
+      <table>
+        <tr><th></th><th>Bell麻痺</th><th>Hunt症候群</th><th>中枢性</th></tr>
+        <tr><td>原因</td><td>HSV-1?</td><td>VZV</td><td>脳血管障害</td></tr>
+        <tr><td>額のしわ寄せ</td><td>不能</td><td>不能</td><td><span class="highlight">可能</span></td></tr>
+        <tr><td>外耳道水疱</td><td>なし</td><td><span class="highlight">あり</span></td><td>なし</td></tr>
+        <tr><td>難聴・めまい</td><td>なし</td><td>あり</td><td>なし</td></tr>
+        <tr><td>治療</td><td>ステロイド＋VB<sub>12</sub></td><td>抗ウイルス薬＋ステロイド</td><td>原疾患の治療</td></tr>
+      </table>
+
+      <h3>カルバマゼピン vs ビタミンB<sub>12</sub></h3>
+      <table>
+        <tr><th>薬剤</th><th>適応</th><th>機序</th></tr>
+        <tr><td><span class="key">カルバマゼピン</span></td><td>三叉神経痛、舌咽神経痛（<span class="highlight">電撃痛</span>）</td><td>Naチャネル遮断→異常興奮抑制</td></tr>
+        <tr><td><span class="key">ビタミンB<sub>12</sub></span></td><td>神経損傷後の知覚麻痺、Bell麻痺</td><td>神経修復促進</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

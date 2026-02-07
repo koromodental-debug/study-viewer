@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "title": "上顎の発育異常を伴う症候群",
+    "chapter": "先天異常・発育不全",
+    "category": "口腔外科学",
+    "brushup": "2026-02-07"
+  },
+  "sections": [
+    {
+      "section": "鎖骨頭蓋骨異形成症",
+      "qa": [
+        {
+          "question": "鎖骨頭蓋骨異形成症の遺伝形式は？",
+          "answer": "常染色体優性遺伝"
+        },
+        {
+          "question": "鎖骨頭蓋骨異形成症の鎖骨所見は？",
+          "answer": "鎖骨の欠損・低形成（両肩を前方で接触させることができる）"
+        },
+        {
+          "question": "鎖骨頭蓋骨異形成症の頭蓋骨所見は？",
+          "answer": "泉門の閉鎖遅延（大泉門開存）"
+        },
+        {
+          "question": "鎖骨頭蓋骨異形成症の永久歯の特徴は？",
+          "answer": "多数歯埋伏・萌出遅延"
+        },
+        {
+          "question": "鎖骨頭蓋骨異形成症の乳歯の特徴は？",
+          "answer": "晩期残存"
+        },
+        {
+          "question": "鎖骨頭蓋骨異形成症で「両肩を前方で接触させることができる」のはなぜ？",
+          "answer": "鎖骨の欠損・低形成により肩の支持構造が失われるため"
+        },
+        {
+          "question": "鎖骨頭蓋骨異形成症の識別ポイントとなる組み合わせは？",
+          "answer": "「前歯が生えてこない」＋「鎖骨の異常」、または「歯の生え代わりが遅い」＋「低身長」＋多数歯埋伏"
+        },
+        {
+          "question": "鎖骨頭蓋骨異形成症でよくみられる所見は？",
+          "answer": "E",
+          "choices": {
+            "a": "合指",
+            "b": "耳介変形",
+            "c": "毛髪の減少",
+            "d": "先天性心疾患",
+            "e": "大泉門閉鎖遅延"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "113C72",
+          "choiceExplanations": {
+            "a": "Apert症候群の特徴",
+            "b": "Treacher Collins症候群やGoldenhar症候群の特徴",
+            "c": "鎖骨頭蓋骨異形成症の主症状ではない",
+            "d": "鎖骨頭蓋骨異形成症の主症状ではない",
+            "e": "正解。泉門の閉鎖遅延は鎖骨頭蓋骨異形成症の特徴的所見"
+          },
+          "point": "「歯の生え代わりが遅い」＋「遺伝疾患」＋「低身長」＋多数歯埋伏 → 鎖骨頭蓋骨異形成症\n大泉門閉鎖遅延が頻出所見"
+        },
+        {
+          "question": "永久歯の多数歯埋伏・萌出遅延を特徴とする先天異常は？",
+          "answer": "D",
+          "choices": {
+            "a": "軟骨無形成症",
+            "b": "Goldenhar症候群",
+            "c": "Robinシークエンス",
+            "d": "鎖骨頭蓋骨異形成症",
+            "e": "Treacher Collins症候群"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "114C53",
+          "choiceExplanations": {
+            "a": "低身長・四肢短縮が特徴で、多数歯埋伏は主症状ではない",
+            "b": "片側性の顔面低形成が特徴",
+            "c": "小下顎症・舌根沈下・気道閉塞が特徴",
+            "d": "正解。永久歯の多数歯埋伏・萌出遅延が特徴",
+            "e": "両側性の顔面低形成・小顎症・小耳症が特徴"
+          },
+          "point": "「前歯が生えてこない」＋多数歯埋伏 → 鎖骨頭蓋骨異形成症"
+        }
+      ]
+    },
+    {
+      "section": "Crouzon症候群（頭蓋顔面異形成症）",
+      "qa": [
+        {
+          "question": "Crouzon症候群の遺伝形式は？",
+          "answer": "常染色体優性遺伝"
+        },
+        {
+          "question": "Crouzon症候群の骨格所見は？",
+          "answer": "頭蓋骨早期癒合、中顔面の低形成（上顎劣成長）"
+        },
+        {
+          "question": "Crouzon症候群の眼の位置異常は？",
+          "answer": "両眼開離、眼球突出"
+        },
+        {
+          "question": "Crouzon症候群でみられる斜視は？",
+          "answer": "外斜視"
+        },
+        {
+          "question": "Crouzon症候群の口腔所見は？",
+          "answer": "口蓋裂"
+        },
+        {
+          "question": "Crouzon症候群で口呼吸のリスクが高い理由は？",
+          "answer": "上咽頭腔の狭窄があるため"
+        }
+      ]
+    },
+    {
+      "section": "Apert症候群（尖頭合指症）",
+      "qa": [
+        {
+          "question": "Apert症候群の遺伝形式は？",
+          "answer": "常染色体優性遺伝"
+        },
+        {
+          "question": "Apert症候群の骨格所見は？",
+          "answer": "頭蓋骨早期癒合による尖頭、合指症"
+        },
+        {
+          "question": "Apert症候群の顔面所見は？",
+          "answer": "両眼開離、眼球突出"
+        },
+        {
+          "question": "Apert症候群の口腔所見は？",
+          "answer": "口蓋裂"
+        },
+        {
+          "question": "Apert症候群でみられる精神面の特徴は？",
+          "answer": "精神発達遅滞を伴うことがある"
+        },
+        {
+          "question": "Crouzon症候群とApert症候群に共通する頭蓋の異常は？",
+          "answer": "頭蓋骨早期癒合"
+        },
+        {
+          "question": "Crouzon症候群とApert症候群に共通する顔面の異常は？",
+          "answer": "中顔面低形成、両眼開離"
+        },
+        {
+          "question": "Crouzon症候群とApert症候群の鑑別点は？",
+          "answer": "Apert症候群のみに合指症と精神発達遅滞がある\n\n[混同注意] Crouzon症候群は合指症なし"
+        },
+        {
+          "question": "上咽頭腔の狭窄による口呼吸のリスクが高い疾患は？（2つ）",
+          "answer": "A, B",
+          "choices": {
+            "a": "Apert症候群",
+            "b": "Crouzon症候群",
+            "c": "Robinシークエンス",
+            "d": "Treacher Collins症候群",
+            "e": "Beckwith-Wiedemann症候群"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "112B46",
+          "choiceExplanations": {
+            "a": "正解。頭蓋骨早期癒合と中顔面低形成により上咽頭腔が狭窄",
+            "b": "正解。頭蓋骨早期癒合と中顔面低形成により上咽頭腔が狭窄",
+            "c": "小下顎症による舌根沈下で気道閉塞（上咽頭腔の狭窄ではない）",
+            "d": "後鼻腔狭窄の可能性はあるが上咽頭腔狭窄が主ではない",
+            "e": "巨舌・巨体が特徴"
+          },
+          "point": "上咽頭腔の狭窄 → Apert症候群とCrouzon症候群（中顔面低形成が共通原因）\nRobinシークエンスは「舌根沈下」であり上咽頭腔狭窄ではない"
+        },
+        {
+          "question": "「頭蓋縫合早期癒合＋合指＋口蓋裂」の3徴候から診断される疾患は？",
+          "answer": "A",
+          "choices": {
+            "a": "Apert症候群",
+            "b": "鎖骨頭蓋骨異形成症",
+            "c": "Sturge-Weber症候群",
+            "d": "Treacher Collins症候群",
+            "e": "Beckwith-Wiedemann症候群"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "109D39",
+          "choiceExplanations": {
+            "a": "正解。頭蓋縫合早期癒合＋合指症＋口蓋裂の3徴候",
+            "b": "鎖骨欠損・多数歯埋伏が特徴（合指症なし）",
+            "c": "顔面の血管腫が特徴",
+            "d": "両側性顔面低形成・小顎症が特徴（合指症なし）",
+            "e": "巨舌・巨体・臍帯脱出が特徴"
+          },
+          "point": "合指症があれば → Apert症候群\nCrouzon症候群にも頭蓋骨早期癒合はあるが、合指症は伴わない"
+        }
+      ]
+    },
+    {
+      "section": "Treacher Collins症候群",
+      "qa": [
+        {
+          "question": "Treacher Collins症候群の遺伝形式は？",
+          "answer": "常染色体優性遺伝"
+        },
+        {
+          "question": "Treacher Collins症候群の発生異常の由来は？",
+          "answer": "第一・第二鰓弓の発生異常"
+        },
+        {
+          "question": "Treacher Collins症候群の骨の低形成部位は？",
+          "answer": "顎骨・頬骨（両側性）"
+        },
+        {
+          "question": "Treacher Collins症候群の耳の異常は？",
+          "answer": "小耳症"
+        },
+        {
+          "question": "Treacher Collins症候群の咬合の特徴は？",
+          "answer": "開咬"
+        },
+        {
+          "question": "Treacher Collins症候群の口腔所見は？",
+          "answer": "口蓋裂、巨口症（横顔裂）"
+        },
+        {
+          "question": "Treacher Collins症候群で注意すべき合併症は？",
+          "answer": "後鼻腔狭窄による気道閉塞"
+        },
+        {
+          "question": "Treacher Collins症候群とGoldenhar症候群の違いは？",
+          "answer": "Treacher Collins症候群は両側性の顔面低形成、Goldenhar症候群は片側性の顔面低形成"
+        }
+      ]
+    },
+    {
+      "section": "軟骨無形成症",
+      "qa": [
+        {
+          "question": "軟骨無形成症の遺伝形式は？",
+          "answer": "常染色体優性遺伝"
+        },
+        {
+          "question": "軟骨無形成症の四肢の特徴は？",
+          "answer": "四肢短縮（近位肢型）、三尖手"
+        },
+        {
+          "question": "軟骨無形成症の頭部の特徴は？",
+          "answer": "前頭部の突出"
+        },
+        {
+          "question": "軟骨無形成症に知的障害はあるか？",
+          "answer": "ない"
+        },
+        {
+          "question": "軟骨無形成症の顔面所見は？",
+          "answer": "中顔面の低形成を伴う"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>歯の異常を伴う症候群 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 01_先天異常・発育不全</span>
+    <h1>歯の異常を伴う症候群</h1>
+    <div class="container">
+
+      <h2>歯の異常と疾患の対応一覧</h2>
+      <table>
+        <tr><th>歯の異常</th><th>疾患</th></tr>
+        <tr>
+          <td><span class="key">多数歯の先天欠如</span></td>
+          <td><span class="highlight">無汗型外胚葉異形成症</span>、先天性色素失調症</td>
+        </tr>
+        <tr>
+          <td><span class="key">多数歯埋伏・萌出遅延</span></td>
+          <td>鎖骨頭蓋骨異形成症、大理石骨病</td>
+        </tr>
+        <tr>
+          <td><span class="key">乳歯早期脱落</span></td>
+          <td><span class="highlight">低フォスファターゼ症</span>、Papillon-Lefèvre症候群</td>
+        </tr>
+        <tr>
+          <td><span class="key">象牙質形成不全</span></td>
+          <td>骨形成不全症</td>
+        </tr>
+        <tr>
+          <td><span class="key">エナメル質形成不全</span></td>
+          <td>エナメル質形成不全症、先天性表皮水疱症</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯周炎の随伴</span></td>
+          <td>低フォスファターゼ症、Papillon-Lefèvre症候群</td>
+        </tr>
+        <tr>
+          <td><span class="key">過剰歯</span></td>
+          <td>鎖骨頭蓋骨異形成症、Gardner症候群</td>
+        </tr>
+        <tr>
+          <td><span class="key">歯槽骨の形成不全</span></td>
+          <td>無汗型外胚葉異形成症</td>
+        </tr>
+      </table>
+
+      <h2>無汗型外胚葉異形成症</h2>
+      <p>X連鎖劣性遺伝（男性に多い）。外胚葉由来組織の形成不全。</p>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr>
+          <td>3主徴</td>
+          <td><span class="highlight">無汗症</span>、<span class="highlight">発毛不全（毛髪発育不全）</span>、<span class="highlight">無歯症（多数歯先天欠如）</span></td>
+        </tr>
+        <tr>
+          <td>皮膚</td>
+          <td><span class="key">皮膚乾燥</span>（汗腺の欠如）</td>
+        </tr>
+        <tr>
+          <td>口腔所見</td>
+          <td>多数歯の先天欠如、<span class="key">歯槽骨の形成不全</span>、円錐歯</td>
+        </tr>
+        <tr>
+          <td>注意点</td>
+          <td><span class="caution">体温調節障害</span>（無汗のため体温上昇のリスク）</td>
+        </tr>
+      </table>
+
+      <h2>大理石骨病（Albers-Schönberg病）</h2>
+      <p>全身性骨硬化病変。常染色体劣性（先天型：重症）と常染色体優性（遅延型：軽症）がある。</p>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr>
+          <td>骨所見</td>
+          <td><span class="highlight">易骨折性（chalk bone）</span>、大理石様エックス線不透過像</td>
+        </tr>
+        <tr>
+          <td>造血障害</td>
+          <td>骨髄腔の狭窄 → <span class="key">貧血</span>、出血傾向、肝脾腫</td>
+        </tr>
+        <tr>
+          <td>神経障害</td>
+          <td>脳神経圧迫 → <span class="key">失明</span>、顔面神経麻痺、難聴</td>
+        </tr>
+        <tr>
+          <td>口腔所見</td>
+          <td>歯の形成障害、萌出遅延、埋伏歯</td>
+        </tr>
+        <tr>
+          <td>注意点</td>
+          <td><span class="caution">血行が悪いため、齲歯・抜歯後の感染により顎骨骨髄炎が生じやすい</span></td>
+        </tr>
+      </table>
+
+      <h2>低フォスファターゼ症</h2>
+      <p>ALP（アルカリホスファターゼ）活性低下による遺伝性の代謝異常。</p>
+      <ul>
+        <li><span class="key">骨形成不全</span>、<span class="key">歯槽骨の吸収</span></li>
+        <li>エナメル質・セメント質形成不全</li>
+        <li><span class="highlight">乳歯早期脱落</span>（セメント質形成不全により歯根膜が結合できない）</li>
+        <li>歯周炎を随伴する</li>
+      </ul>
+
+      <h2>エナメル質形成不全症</h2>
+      <p>エナメル芽細胞の障害によりエナメル質に限局して形成不全が発症する疾患。</p>
+      <ul>
+        <li>エナメル質の表面性状異常（萌出時からの変化なし）</li>
+        <li>象牙質・歯髄は正常</li>
+        <li>皮膚に異常は認めない</li>
+      </ul>
+
+      <h2>骨形成不全症</h2>
+      <p>I〜IV型あり。先天性結合組織代謝異常。</p>
+      <ul>
+        <li><span class="key">易骨折性</span>（反復性の病的骨折）、骨変形、低身長</li>
+        <li><span class="highlight">象牙質形成不全</span>（オパール様色沢歯冠、咬耗、短根、歯髄腔・根管の狭窄）</li>
+      </ul>
+
+      <h2>先天性表皮水疱症</h2>
+      <p>機械的刺激部位に水疱、びらん形成を繰り返す。</p>
+      <ul>
+        <li>瘢痕萎縮による<span class="key">開口障害</span>、舌癒着</li>
+        <li>エナメル質形成不全、多数歯齲蝕</li>
+      </ul>
+
+      <h2>Papillon-Lefèvre症候群</h2>
+      <p>常染色体劣性遺伝。</p>
+      <ul>
+        <li><span class="key">掌蹠過角化</span>と<span class="key">高度歯周疾患</span></li>
+        <li><span class="highlight">乳歯・永久歯の早期脱落</span></li>
+      </ul>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">112B57</div>
+        <p>歯の異常と疾患の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 過剰歯 ーーーーーーーー Down 症候群<br>
+          b 矮小歯 ーーーーーーーー 鎖骨頭蓋骨異形成症<br>
+          c 先天欠如 ーーーーーーー 骨形成不全症<br>
+          d 乳歯早期脱落 ーーーーー 低フォスファターゼ症<br>
+          e 象牙質形成不全 ーーーー 先天性外胚葉異形成症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】低フォスファターゼ症ではALP活性低下によりセメント質形成不全が生じ、乳歯早期脱落（d）が起こる。a：Down症候群は過剰歯ではなく歯の萌出遅延。b：鎖骨頭蓋骨異形成症は多数歯埋伏であり矮小歯ではない。c：骨形成不全症は象牙質形成不全であり先天欠如ではない。e：外胚葉異形成症は多数歯先天欠如であり象牙質形成不全ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108B8</div>
+        <p>3歳の男児。歯の萌出遅延を主訴として来院した。初診時の口腔内写真（別冊No.8）を別に示す。疑われる疾患に合併する症状はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108B8_1.png" alt="別冊No.8">
+        </div>
+        <div class="choices">
+          a 多発骨折<br>
+          b 表皮水疱<br>
+          c 皮膚乾燥<br>
+          d 多数歯埋伏<br>
+          e 毛髪発育不全
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】3歳男児で歯の萌出遅延（多数歯先天欠如）→ 外胚葉異形成症。外胚葉異形成症の3主徴は無汗症・発毛不全・無歯症。皮膚乾燥（c＝無汗による）と毛髪発育不全（e）が合併症状。a（多発骨折）は骨形成不全症。d（多数歯埋伏）は鎖骨頭蓋骨異形成症。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D83</div>
+        <p>13歳の男子。食事がしづらいことを主訴として来院した。精神発達は正常である。初診時の口腔内写真（別冊No.30A）とエックス線画像（別冊No.30B）を別に示す。疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D83_1.png" alt="別冊No.30">
+        </div>
+        <div class="choices">
+          a 骨形成不全症<br>
+          b 先天性表皮水疱症<br>
+          c Robin シークエンス<br>
+          d 鎖骨頭蓋骨異形成症<br>
+          e 先天性外胚葉異形成症
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】13歳男子で多数歯欠如、歯槽骨の形成不全がみられる。精神発達は正常 → 先天性外胚葉異形成症（e）。a（骨形成不全症）は象牙質形成不全・易骨折性。d（鎖骨頭蓋骨異形成症）は多数歯埋伏であり欠如ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C72</div>
+        <p>多数歯の先天欠如を伴う疾患はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 骨形成不全症<br>
+          b 軟骨無形成症<br>
+          c 先天性表皮水疱症<br>
+          d 先天性色素失調症<br>
+          e 無汗型外胚葉異形成症
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】多数歯の先天欠如を伴うのは先天性色素失調症（d）と無汗型外胚葉異形成症（e）。a（骨形成不全症）は象牙質形成不全。b（軟骨無形成症）は低身長・四肢短縮。c（先天性表皮水疱症）はエナメル質形成不全。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A79</div>
+        <p>疾患と症状の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 骨形成不全症 ————— 開口障害<br>
+          b 先天性表皮水疱症 ——— 多数の埋伏歯<br>
+          c 鎖骨頭蓋骨異形成症 —— エナメル質減形成<br>
+          d 無汗型外胚葉異形成症 — 歯槽骨の形成不全<br>
+          e 先天性甲状腺機能低下症 — 巨　舌
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】無汗型外胚葉異形成症では歯槽骨の形成不全（d）がみられる。先天性甲状腺機能低下症（クレチン症）では巨舌（e）がみられる。a：骨形成不全症は易骨折性であり開口障害ではない（開口障害は先天性表皮水疱症）。b：先天性表皮水疱症は開口障害であり埋伏歯ではない。c：鎖骨頭蓋骨異形成症は多数歯埋伏であり、エナメル質減形成ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C96</div>
+        <p>歯周炎を随伴する遺伝疾患はどれか。2つ選べ。</p>
+        <div class="choices">
+          a Sturge-Weber症候群<br>
+          b Peutz-Jeghers症候群<br>
+          c 低フォスファターゼ症<br>
+          d von Recklinghausen病<br>
+          e Papillon-Lefèvre症候群
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】低フォスファターゼ症（c）はALP活性低下によりセメント質形成不全を起こし歯周炎を随伴する。Papillon-Lefèvre症候群（e）は掌蹠過角化と高度歯周疾患が主症状。a（Sturge-Weber）は顔面血管腫。b（Peutz-Jeghers）は色素斑＋消化管ポリポーシス。d（von Recklinghausen病）は神経線維腫。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B68</div>
+        <p>15歳の女子。飲水時の上顎臼歯部における疼痛を主訴として来院した。歯の表面性状は萌出してから変化はないという。皮膚に異常は認められない。初診時の口腔内写真（別冊No.9A）とエックス線画像（別冊No.9B）を別に示す。診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111B68_1.png" alt="別冊No.9">
+        </div>
+        <div class="choices">
+          a 骨形成不全症<br>
+          b 歯のフッ素症<br>
+          c 先天性表皮水疱症<br>
+          d エナメル質形成不全症<br>
+          e 先天性外胚葉異形成症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】「歯の表面性状は萌出してから変化はない」＋「皮膚に異常なし」→ エナメル質に限局した先天的な形成不全 = エナメル質形成不全症（d）。b（歯のフッ素症）は斑状歯で後天的。c（先天性表皮水疱症）は皮膚の水疱を伴う。e（外胚葉異形成症）は皮膚乾燥・発毛不全を伴う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C80</div>
+        <p>14歳の男子。食物が噛みにくいことを主訴として来院した。3歳から義歯を使用しており、何度も調整と新製を繰り返しているという。弟にも同様の所見がある。診察の結果、義歯を新製することとした。初診時の口腔内写真（別冊No.36A）とエックス線画像（別冊No.36B）を別に示す。治療に際して特に留意すべきなのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C80_1.png" alt="別冊No.36">
+        </div>
+        <div class="choices">
+          a 気道閉塞<br>
+          b 頸椎脱臼<br>
+          c 体温上昇<br>
+          d 下顎骨骨折<br>
+          e てんかん発作
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】3歳から義歯使用（多数歯先天欠如）＋弟にも同様（遺伝性）→ 外胚葉異形成症。外胚葉異形成症では無汗症により体温調節障害があるため、治療に際して体温上昇（c）に特に留意する必要がある。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104B28</div>
+        <p>59歳の女性。下顎左側臼歯部の疼痛を主訴として来院した。疼痛は1年前に抜歯してから持続しているという。同部の骨の露出、視力障害、聴力障害および貧血を認める。初診時の口腔内写真（別冊No.27A）とエックス線写真（別冊No.27B、C）とを別に示す。疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104B28_1.png" alt="別冊No.27">
+        </div>
+        <div class="choices">
+          a 大理石骨病<br>
+          b 骨性異形成症<br>
+          c 腎性骨異栄養症<br>
+          d 線維性異形成症<br>
+          e Gardner症候群
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】抜歯後の治癒不全（骨露出）＋視力障害＋聴力障害＋貧血 → 大理石骨病（a）。大理石骨病では骨硬化により骨髄腔が狭窄し造血障害（貧血）が生じ、脳神経圧迫により失明・難聴が起こる。血行不良のため抜歯後に顎骨骨髄炎を生じやすい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C77</div>
+        <p>59歳の女性。抜歯後の治癒不全を主訴として来院した。 2か月前、近医で上顎左側第二小臼歯を抜去したという。貧血の既往がある。上顎左側に疼痛と腫脹を認める。初診時の口腔内写真（別冊No.34A）、エックス線画像（別冊No.34B）及びCT（別冊No.34C）を別に示す。治癒不全の発症に関与すると考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C77_1.png" alt="別冊No.34">
+        </div>
+        <div class="choices">
+          a 骨粗鬆症<br>
+          b 大理石骨病<br>
+          c 線維性異形成症<br>
+          d 基底細胞母斑症候群<br>
+          e 副甲状腺機能亢進症
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】抜歯後の治癒不全＋貧血の既往＋エックス線で骨硬化像 → 大理石骨病（b）。大理石骨病では血行が悪いため抜歯後に顎骨骨髄炎を起こしやすく、治癒不全となる。a（骨粗鬆症）は骨密度低下で骨硬化ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

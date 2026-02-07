@@ -166,16 +166,70 @@
       "section": "過去問",
       "qa": [
         {
-          "question": "[114D24] ★★★\n空気感染するのは？（2つ）",
-          "answer": "結核菌、麻疹ウイルス\n\n[他の選択肢との違い]\n- 結核菌: 空気感染 ← 正解\n- 麻疹ウイルス: 空気感染 ← 正解\n- 黄色ブドウ球菌: 接触感染\n- 日本脳炎ウイルス: 蚊媒介感染\n- EBウイルス: 唾液を介した接触感染\n\n[ポイント]\n空気感染＝結核・麻疹・水痘の3つ"
+          "question": "空気感染するのは？（2つ）",
+          "answer": "A, B",
+          "choices": {
+            "a": "結核菌",
+            "b": "麻疹ウイルス",
+            "c": "黄色ブドウ球菌",
+            "d": "日本脳炎ウイルス",
+            "e": "EBウイルス"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "114D24",
+          "choiceExplanations": {
+            "a": "空気感染 ← 正解",
+            "b": "空気感染 ← 正解",
+            "c": "接触感染",
+            "d": "蚊媒介感染",
+            "e": "唾液を介した接触感染"
+          },
+          "point": "空気感染＝結核・麻疹・水痘の3つ"
         },
         {
-          "question": "[107C116] ★★\n垂直感染によって持続感染を起こすのは？",
-          "answer": "B型肝炎ウイルス（HBV）\n\n[他の選択肢との違い]\n- ノロウイルス: 経口感染、急性感染\n- ポリオウイルス: 経口感染、急性感染\n- A型肝炎ウイルス: 経口感染、急性感染\n- B型肝炎ウイルス: 母子感染→持続感染（キャリア化）← 正解\n- 日本脳炎ウイルス: 蚊媒介、急性感染\n\n[ポイント]\nHBVの母子感染→新生児の免疫寛容→キャリア化"
+          "question": "垂直感染によって持続感染を起こすのは？",
+          "answer": "D",
+          "choices": {
+            "a": "ノロウイルス",
+            "b": "ポリオウイルス",
+            "c": "A型肝炎ウイルス",
+            "d": "B型肝炎ウイルス",
+            "e": "日本脳炎ウイルス"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "107C116",
+          "choiceExplanations": {
+            "a": "経口感染、急性感染",
+            "b": "経口感染、急性感染",
+            "c": "経口感染、急性感染",
+            "d": "母子感染→持続感染（キャリア化）← 正解",
+            "e": "蚊媒介、急性感染"
+          },
+          "point": "HBVの母子感染→新生児の免疫寛容→キャリア化"
         },
         {
-          "question": "[114D54] ★★\n日和見感染を起こすのは？（2つ）",
-          "answer": "Candida albicans、Pseudomonas aeruginosa（緑膿菌）\n\n[他の選択肢との違い]\n- Vibrio cholerae（コレラ菌）: 真性病原体\n- Candida albicans: 日和見病原体 ← 正解\n- Bacillus anthracis（炭疽菌）: 真性病原体\n- Treponema pallidum（梅毒）: 真性病原体\n- Pseudomonas aeruginosa（緑膿菌）: 日和見病原体 ← 正解\n\n[ポイント]\n日和見感染：Candida、緑膿菌、Aspergillus、CMV、Pneumocystis\n真性病原体：コレラ菌、炭疽菌、梅毒、結核菌"
+          "question": "日和見感染を起こすのは？（2つ）",
+          "answer": "B, E",
+          "choices": {
+            "a": "Vibrio cholerae（コレラ菌）",
+            "b": "Candida albicans",
+            "c": "Bacillus anthracis（炭疽菌）",
+            "d": "Treponema pallidum（梅毒）",
+            "e": "Pseudomonas aeruginosa（緑膿菌）"
+          },
+          "correctAnswer": "B, E",
+          "numChoices": 2,
+          "code": "114D54",
+          "choiceExplanations": {
+            "a": "真性病原体",
+            "b": "日和見病原体 ← 正解",
+            "c": "真性病原体",
+            "d": "真性病原体",
+            "e": "日和見病原体 ← 正解"
+          },
+          "point": "日和見感染：Candida、緑膿菌、Aspergillus、CMV、Pneumocystis\n真性病原体：コレラ菌、炭疽菌、梅毒、結核菌"
         }
       ]
     }

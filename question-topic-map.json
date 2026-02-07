@@ -1,9 +1,9 @@
 {
   "meta": {
-    "totalQuestionCodes": 2445,
-    "htmlFilesProcessed": 849,
-    "htmlFilesWithQuestions": 794,
-    "totalQuestionBoxes": 3063,
+    "totalQuestionCodes": 2472,
+    "htmlFilesProcessed": 851,
+    "htmlFilesWithQuestions": 796,
+    "totalQuestionBoxes": 3087,
     "duplicateCodes": 462
   },
   "mapping": {
@@ -16245,6 +16245,141 @@
       "htmlFile": "html/食事摂取基準.html",
       "topicTitle": "食事摂取基準",
       "subject": "不明"
+    },
+    "106A81": {
+      "htmlFile": "html/subject/口腔外科学/04_炎症・アレルギー性疾患_BRONJ・ARONJ.html",
+      "topicTitle": "BRONJ・ARONJ",
+      "subject": "口腔外科学"
+    },
+    "109B40": {
+      "htmlFile": "html/subject/口腔外科学/04_炎症・アレルギー性疾患_BRONJ・ARONJ.html",
+      "topicTitle": "BRONJ・ARONJ",
+      "subject": "口腔外科学"
+    },
+    "107D33": {
+      "htmlFile": "html/subject/口腔外科学/04_炎症・アレルギー性疾患_BRONJ・ARONJ.html",
+      "topicTitle": "BRONJ・ARONJ",
+      "subject": "口腔外科学"
+    },
+    "108D19": {
+      "htmlFile": "html/subject/口腔外科学/05_感染症_真菌感染症.html",
+      "topicTitle": "真菌感染症",
+      "subject": "口腔外科学"
+    },
+    "106C47": {
+      "htmlFile": "html/subject/口腔外科学/05_感染症_真菌感染症.html",
+      "topicTitle": "真菌感染症",
+      "subject": "口腔外科学"
+    },
+    "113A84": {
+      "htmlFile": "html/subject/口腔外科学/05_感染症_真菌感染症.html",
+      "topicTitle": "真菌感染症",
+      "subject": "口腔外科学"
+    },
+    "116C57": {
+      "htmlFile": "html/subject/口腔外科学/05_感染症_真菌感染症.html",
+      "topicTitle": "真菌感染症",
+      "subject": "口腔外科学"
+    },
+    "108A48": {
+      "htmlFile": "html/subject/口腔外科学/05_感染症_真菌感染症.html",
+      "topicTitle": "真菌感染症",
+      "subject": "口腔外科学"
+    },
+    "108C36": {
+      "htmlFile": "html/subject/口腔外科学/05_感染症_真菌感染症.html",
+      "topicTitle": "真菌感染症",
+      "subject": "口腔外科学"
+    },
+    "107C49": {
+      "htmlFile": "html/subject/口腔外科学/05_感染症_真菌感染症.html",
+      "topicTitle": "真菌感染症",
+      "subject": "口腔外科学"
+    },
+    "109A123": {
+      "htmlFile": "html/subject/口腔外科学/05_感染症_真菌感染症.html",
+      "topicTitle": "真菌感染症",
+      "subject": "口腔外科学"
+    },
+    "114C42": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "113B71": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "106B38": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "106B46": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "102D1": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "104C128": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "116B80": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "113C69": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "111A73": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "106A91": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "109C94": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "109B37": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "114A27": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "105B39": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "103D6": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
+    },
+    "109C127": {
+      "htmlFile": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+      "topicTitle": "骨折の診断・治療",
+      "subject": "口腔外科学"
     }
   }
 }

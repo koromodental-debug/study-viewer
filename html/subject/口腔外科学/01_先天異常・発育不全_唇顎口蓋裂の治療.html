@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唇顎口蓋裂の治療 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 01_先天異常・発育不全</span>
+    <h1>唇顎口蓋裂の治療</h1>
+    <div class="container">
+
+      <h2>治療の手順（タイムライン）</h2>
+      <p>唇顎口蓋裂は成長に応じた段階的治療を行う。</p>
+
+      <table>
+        <tr><th>時期</th><th>治療内容</th></tr>
+        <tr>
+          <td>出生直後</td>
+          <td>初診・哺乳指導・<span class="highlight">Hotz床の装着</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">3〜6か月</span><br>体重5〜6kg</td>
+          <td><span class="key">口唇形成術</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">1歳〜1歳6か月</span><br>体重10kg</td>
+          <td><span class="key">口蓋形成術</span>（一期法）<br>※鼓膜換気チューブ留置術</td>
+        </tr>
+        <tr>
+          <td>3〜4歳</td>
+          <td>発音検査</td>
+        </tr>
+        <tr>
+          <td>4〜5歳</td>
+          <td>構音訓練開始</td>
+        </tr>
+        <tr>
+          <td>就学前</td>
+          <td>言語治療</td>
+        </tr>
+        <tr>
+          <td>6歳</td>
+          <td>口唇・鼻修正手術</td>
+        </tr>
+        <tr>
+          <td><span class="key">8〜10歳</span><br>犬歯誘導</td>
+          <td><span class="highlight">顎裂部二次的骨移植術</span></td>
+        </tr>
+        <tr>
+          <td>10歳以降</td>
+          <td>口唇・鼻修正手術（適宜）</td>
+        </tr>
+        <tr>
+          <td>18歳以降</td>
+          <td>顎変形症手術（必要時）</td>
+        </tr>
+      </table>
+      <p class="note">※歯科の定期健診・矯正治療・耳鼻科の定期健診（中耳炎）は全期間を通じて行う</p>
+
+      <h2>Hotz床</h2>
+      <h3>役割</h3>
+      <ul>
+        <li><span class="highlight">哺乳の改善</span>（口蓋裂による口腔内圧低下を補う）</li>
+        <li>舌の迷入を防ぐ</li>
+        <li><span class="highlight">顎発育の誘導</span>（歯槽形態の改善）</li>
+        <li>嚥下改善</li>
+      </ul>
+      <p class="note">※Hotz床は<span class="caution">軟口蓋の挙上や鼻咽腔閉鎖機能の正常化を目的としない</span>（それはスピーチエイドの役割）</p>
+
+      <h2>顎裂部二次的骨移植術</h2>
+      <h3>時期</h3>
+      <p><span class="highlight">8〜10歳</span>（犬歯萌出前、犬歯誘導の時期）</p>
+
+      <h3>骨採取部位</h3>
+      <p>自家海綿骨（<span class="key">腸骨</span>が多い）</p>
+
+      <h3>目的（最頻出）</h3>
+      <ul>
+        <li><span class="highlight">犬歯の萌出誘導</span>（顎裂部に歯を誘導）</li>
+        <li><span class="highlight">鼻口腔瘻の閉鎖</span>（鼻腔漏出の防止）</li>
+        <li><span class="key">上顎骨の連続性の回復</span></li>
+        <li><span class="key">鼻翼基部の挙上</span>（外鼻形態の改善）</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">顎裂部骨移植術の目的（頻出）</div>
+        <ul>
+          <li>「犬歯の萌出誘導」＋「鼻口腔瘻の閉鎖」が最頻出の正解パターン</li>
+          <li><span class="caution">中耳炎の予防・上顎洞炎の改善・反対咬合の改善は目的ではない</span></li>
+          <li><span class="caution">鼻咽腔閉鎖機能の改善は骨移植の目的ではない</span>（咽頭弁形成術の目的）</li>
+        </ul>
+      </div>
+
+      <h2>開鼻声と口蓋裂</h2>
+      <p>開鼻声は<span class="key">鼻咽腔閉鎖機能不全</span>により発生する。口蓋裂を伴う疾患（<span class="key">唇顎口蓋裂</span>・<span class="key">粘膜下口蓋裂</span>）で術後の経過観察時に注意する。</p>
+      <p class="note">※口唇裂のみ・唇顎裂のみ・横顔裂では口蓋に裂がないため開鼻声は通常生じない</p>
+
+      <h2>スピーチエイド</h2>
+      <p>口蓋形成術後に鼻咽腔閉鎖機能不全が残存する場合に使用。軟口蓋を挙上し鼻咽腔を狭小化して閉鎖機能を補助する装置。</p>
+
+      <h2>咽頭弁形成術</h2>
+      <p>スピーチエイドで改善しない鼻咽腔閉鎖機能不全に対して、<span class="key">10歳以降</span>に適宜施行。咽頭後壁の粘膜弁を軟口蓋に移植する。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108B14</div>
+        <p>生後1日の新生児。全身状態には問題がないという。初診時の口腔内写真（別冊No.14）を別に示す。<br>哺乳障害に対してまず行うべき処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108B14_1.png" alt="別冊No.14">
+        </div>
+        <div class="choices">
+          a 骨移植術<br>
+          b 口唇形成術<br>
+          c 口蓋形成術<br>
+          d 胃瘻の造設<br>
+          e Hotz床の装着
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】生後1日の新生児の哺乳障害に対しては、まずHotz床を装着する。口唇形成術は3〜6か月、口蓋形成術は1歳〜1歳6か月が適切な時期であり、出生直後に行うものではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A40</div>
+        <p>生後8日の男児。唇顎口蓋裂の治療を希望して来院した。診断をした結果、ある装置を製作することとした。初診時の顔貌写真（別冊No.15A）、口腔模型の写真（別冊No.15B）及び製作した装置の写真（別冊No.15C）を別に示す。<br>この装置を用いる目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A40_1.png" alt="別冊No.15">
+        </div>
+        <div class="choices">
+          a 哺乳の改善<br>
+          b 軟口蓋の挙上<br>
+          c 呼吸機能の改善<br>
+          d 歯槽形態の改善<br>
+          e 鼻咽腔閉鎖機能の正常化
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】生後8日→Hotz床。Hotz床の目的は哺乳の改善（a）と歯槽形態の改善＝顎発育誘導（d）。b（軟口蓋の挙上）とe（鼻咽腔閉鎖機能の正常化）はスピーチエイドの目的。c：Hotz床は呼吸機能改善を主目的としない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A75</div>
+        <p>8歳の唇顎口蓋裂児において顎裂部二次的骨移植術を行う目的はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 中耳炎の予防<br>
+          b 犬歯の萌出誘導<br>
+          c 上顎洞炎の改善<br>
+          d 反対咬合の改善<br>
+          e 鼻口腔瘻の閉鎖
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】顎裂部骨移植の目的は犬歯の萌出誘導（b）と鼻口腔瘻の閉鎖（e）。a：中耳炎予防は鼓膜換気チューブ。c：上顎洞炎改善は骨移植の目的ではない。d：反対咬合改善は矯正治療・顎変形症手術の目的。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110B29</div>
+        <p>8歳の男児。左側唇顎口蓋裂で生後すぐに口唇形成術と口蓋形成術を受けた。今回自家骨の移植手術を行うこととなった。術中の写真（別冊No.26）を別に示す。<br>手術の目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110B29_1.png" alt="別冊No.26">
+        </div>
+        <div class="choices">
+          a 外鼻を高くする。<br>
+          b 鼻腔を広くする。<br>
+          c 鼻咽腔を狭くする。<br>
+          d 上顎骨を連続させる。<br>
+          e 顎裂部に歯を誘導する。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】8歳＋自家骨移植 → 顎裂部二次的骨移植術。目的は上顎骨の連続性回復（d）と犬歯の萌出誘導（e）。c：鼻咽腔を狭くするのは咽頭弁形成術の目的。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D71</div>
+        <p>9歳の男児。上顎前歯部の歯列不正を主訴として来院した。左側唇顎口蓋裂に対して口唇形成術と口蓋形成術を受けた既往がある。矯正治療後、顎裂部に手術を行った。術前のエックス線画像（別冊No.18A）と術後のエックス線画像（別冊No.18B）を別に示す。<br>この手術の目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D71_1.png" alt="別冊No.18">
+        </div>
+        <div class="choices">
+          a 咬合高径の増大<br>
+          b 上顎発育の促進<br>
+          c 鼻翼基部の挙上<br>
+          d 鼻咽腔閉鎖機能の改善<br>
+          e 上顎左側犬歯の萌出誘導
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】9歳＋顎裂部の手術 → 顎裂部骨移植術。犬歯の萌出誘導（e）と鼻翼基部の挙上（c）が目的。d：鼻咽腔閉鎖機能の改善は骨移植ではなく咽頭弁形成術の目的。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A55</div>
+        <p>術後の経過観察時に開鼻声の発現に注意するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 口唇裂<br>
+          b 唇顎裂<br>
+          c 横顔裂<br>
+          d 唇顎口蓋裂<br>
+          e 粘膜下口蓋裂
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】開鼻声は鼻咽腔閉鎖機能不全により発生し、口蓋裂を伴う疾患で注意が必要。唇顎口蓋裂（d）と粘膜下口蓋裂（e）は口蓋に裂があるため、術後に開鼻声の発現に注意する。a（口唇裂）、b（唇顎裂）、c（横顔裂）は口蓋に裂がないため開鼻声は通常生じない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B85</div>
+        <p>4歳の男児。定期的な口腔管理を希望して来院した。生後3か月時に口唇閉鎖術、1歳2か月時に口蓋形成術を受けたという。来院時の顔貌写真（別冊No.33A）と口腔内写真（別冊No.33B）を別に示す。<br>現時点で適切な対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B85_1.png" alt="別冊No.33">
+        </div>
+        <div class="choices">
+          a 食事指導<br>
+          b 過剰歯の抜去<br>
+          c 口腔衛生指導<br>
+          d 上唇小帯切除術<br>
+          e 上顎左側乳中切歯の抜去
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】4歳で口唇・口蓋形成術後。現時点で適切なのは食事指導（a）と口腔衛生指導（c）。定期的な口腔管理として基本的な指導が重要。b・d・eは写真から判断して現時点では不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103B40</div>
+        <p>5歳の男児。定期健診のため来院した。唇顎口蓋裂のため生後4か月時に口唇形成術、1歳8か月時に口蓋形成術を行ったという。初診時の口腔内写真（別冊No.38A）と装置の写真（別冊No.38B）とを別に示す。<br>この装置を使用する目的はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103B40_1.png" alt="別冊No.38">
+        </div>
+        <div class="choices">
+          a 鼻腔漏出の防止<br>
+          b 歯列弓の側方拡大<br>
+          c 咽頭破裂音の改善<br>
+          d 鼻咽腔閉鎖不全の改善<br>
+          e 永久歯萌出スペースの確保
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】口蓋形成術後に装着されている装置の写真から、口蓋部の瘻孔（鼻口腔瘻）を閉鎖する装置（閉鎖床）と判断。目的は鼻腔漏出の防止（a）。d：鼻咽腔閉鎖不全の改善はスピーチエイドや咽頭弁形成術。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

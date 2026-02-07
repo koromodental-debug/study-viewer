@@ -102,23 +102,56 @@
       "section": "関連過去問",
       "qa": [
         {
-          "question": "[112D60] ★★\nTotal discrepancyの算出に用いるのは？",
-          "answer": "永久歯歯冠幅径、Speeの彎曲の深さ\n\n[他の選択肢との違い]\n- 下顎角 → × TDの算出には使用しない\n- 歯列弓幅径 → × TDの算出には使用しない\n- 永久歯歯冠幅径 → ○ ALDの算出に必要\n- 上顎中切歯歯軸角 → × TDの算出には使用しない（下顎中切歯歯軸を使用）\n- Speeの彎曲の深さ → ○ Spee補正に必要\n\n[ポイント]\nTD = ALD + Spee補正 + Headplate correction"
+          "question": "Total discrepancyの算出に用いるのは？",
+          "answer": "C, E",
+          "choices": {
+            "a": "下顎角 → × TDの算出には使用しない",
+            "b": "歯列弓幅径 → × TDの算出には使用しない",
+            "c": "永久歯歯冠幅径 → ○ ALDの算出に必要",
+            "d": "上顎中切歯歯軸角 → × TDの算出には使用しない（下顎中切歯歯軸を使用）",
+            "e": "Speeの彎曲の深さ → ○ Spee補正に必要"
+          },
+          "correctAnswer": "C, E",
+          "numChoices": 2,
+          "code": "112D60",
+          "point": "TD = ALD + Spee補正 + Headplate correction"
         },
         {
-          "question": "[113C54] ★★\nAngleⅠ級の叢生で抜歯部位として適切なのは？",
-          "answer": "上下顎両側第一小臼歯\n\n[他の選択肢との違い]\n- 上顎両側第一小臼歯 → × 上顎だけでは不十分\n- 上下顎両側第一小臼歯 → ○ AngleⅠ級の基本パターン\n- 上下顎両側第二小臼歯 → × 基本は第一小臼歯\n- 上顎両側第一、下顎両側第二 → × Ⅱ級1類のパターン\n- 上顎両側第二、下顎両側第一 → × 通常は選択しない\n\n[ポイント]\nAngleⅠ級叢生＝上下同じ部位（4番）を抜歯"
+          "question": "AngleⅠ級の叢生で抜歯部位として適切なのは？",
+          "answer": "B",
+          "choices": {
+            "a": "上顎両側第一小臼歯 → × 上顎だけでは不十分",
+            "b": "上下顎両側第一小臼歯 → ○ AngleⅠ級の基本パターン",
+            "c": "上下顎両側第二小臼歯 → × 基本は第一小臼歯",
+            "d": "上顎両側第一、下顎両側第二 → × Ⅱ級1類のパターン",
+            "e": "上顎両側第二、下顎両側第一 → × 通常は選択しない"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "113C54",
+          "point": "AngleⅠ級叢生＝上下同じ部位（4番）を抜歯"
         },
         {
-          "question": "[110A48] ★★\n非抜歯治療後に小さくなるセファロ計測値は？",
-          "answer": "FMIA、interincisal angle\n\n[他の選択肢との違い]\n- SNA角 → × 骨格指標なので変化しない\n- SNB角 → × 骨格指標なので変化しない\n- 顔面角 → × 骨格指標なので変化しない\n- FMIA → ○ 下顎中切歯が唇側傾斜→FMIAが小さくなる\n- interincisal angle → ○ 上下切歯が唇側傾斜→角度が小さくなる\n\n[ポイント]\n非抜歯治療＝前歯の唇側傾斜→FMIA↓、interincisal angle↓"
+          "question": "非抜歯治療後に小さくなるセファロ計測値は？",
+          "answer": "D, E",
+          "choices": {
+            "a": "SNA角 → × 骨格指標なので変化しない",
+            "b": "SNB角 → × 骨格指標なので変化しない",
+            "c": "顔面角 → × 骨格指標なので変化しない",
+            "d": "FMIA → ○ 下顎中切歯が唇側傾斜→FMIAが小さくなる",
+            "e": "interincisal angle → ○ 上下切歯が唇側傾斜→角度が小さくなる"
+          },
+          "correctAnswer": "D, E",
+          "numChoices": 2,
+          "code": "110A48",
+          "point": "非抜歯治療＝前歯の唇側傾斜→FMIA↓、interincisal angle↓"
         },
         {
-          "question": "[113A89] ★★★（計算問題）\nFMIAが49.5°の場合のHeadplate correctionは？（FMIA基準値57°）",
+          "question": "（計算問題）\nFMIAが49.5°の場合のHeadplate correctionは？（FMIA基準値57°）",
           "answer": "0.6mm"
         },
         {
-          "question": "[113B89] ★★★（計算問題）\nIMPA 99°、FMA 29°、Available 65.5mm、Required 70.0mmのTotal discrepancyは？",
+          "question": "（計算問題）\nIMPA 99°、FMA 29°、Available 65.5mm、Required 70.0mmのTotal discrepancyは？",
           "answer": "−8.5mm"
         }
       ]

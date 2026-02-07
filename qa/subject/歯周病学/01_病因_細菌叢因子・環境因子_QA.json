@@ -91,8 +91,24 @@
           "answer": "初期定着菌（Streptococcus属、V. parvula、A. odontolyticusなど）\n\n[関連質問]\n- Red complex以外で重要な菌は？ → Orange complexのF. nucleatum（共凝集の中心）"
         },
         {
-          "question": "[113C52] ★★★\nRed complexに属する菌は？",
-          "answer": "P. gingivalis、T. forsythia\n\n[他の選択肢との違い]\n- a P. intermedia：Orange complex ← 超頻出ひっかけ\n- b E. corrodens：Green complex\n- c P. gingivalis ← 正解\n- d F. nucleatum：Orange complex ← 超頻出ひっかけ\n- e T. forsythia ← 正解\n\n[ポイント]\nRed = P.g.、T.f.、T.d.の3菌種のみ。P. intermediaとF. nucleatumはOrange"
+          "question": "Red complexに属する菌は？",
+          "answer": "C, E",
+          "choices": {
+            "a": "P. intermedia",
+            "b": "E. corrodens",
+            "c": "P. gingivalis ← 正解",
+            "d": "F. nucleatum",
+            "e": "T. forsythia ← 正解"
+          },
+          "correctAnswer": "C, E",
+          "numChoices": 2,
+          "code": "113C52",
+          "point": "Red = P.g.、T.f.、T.d.の3菌種のみ。P. intermediaとF. nucleatumはOrange",
+          "choiceExplanations": {
+            "a": "Orange complex ← 超頻出ひっかけ",
+            "b": "Green complex",
+            "d": "Orange complex ← 超頻出ひっかけ"
+          }
         }
       ]
     },
@@ -120,8 +136,24 @@
           "answer": "トリプシン様酵素（P. gingivalis特有）\n\n[関連質問]\n- 黒色色素産生菌は他に？ → P. intermedia"
         },
         {
-          "question": "[111A67] ★★★\nP. gingivalisの病原因子は？",
-          "answer": "線毛、ジンジパイン\n\n[他の選択肢との違い]\n- a 莢膜：病原因子というより構造\n- b 線毛 ← 正解\n- c ジンジパイン ← 正解\n- d ロイコトキシン：A.a.の病原因子 ← 超頻出ひっかけ\n- e 細胞膨化致死毒素：A.a.の病原因子 ← 超頻出ひっかけ\n\n[ポイント]\nP.g.＝ジンジパイン、A.a.＝ロイコトキシン・CDT"
+          "question": "P. gingivalisの病原因子は？",
+          "answer": "B, C",
+          "choices": {
+            "a": "莢膜",
+            "b": "線毛 ← 正解",
+            "c": "ジンジパイン ← 正解",
+            "d": "ロイコトキシン",
+            "e": "細胞膨化致死毒素"
+          },
+          "correctAnswer": "B, C",
+          "numChoices": 2,
+          "code": "111A67",
+          "point": "P.g.＝ジンジパイン、A.a.＝ロイコトキシン・CDT",
+          "choiceExplanations": {
+            "a": "病原因子というより構造",
+            "d": "A.a.の病原因子 ← 超頻出ひっかけ",
+            "e": "A.a.の病原因子 ← 超頻出ひっかけ"
+          }
         }
       ]
     },
@@ -145,8 +177,25 @@
           "answer": "高病原性、ロイコトキシン産生量が多い\n\n[関連質問]\n- 侵襲性歯周炎の特徴は？ → 若年発症、急速進行、家族内集積"
         },
         {
-          "question": "[116A58] ★★★\nロイコトキシンを産生するのはどれか。",
-          "answer": "A. actinomycetemcomitans\n\n[他の選択肢との違い]\n- a P. gingivalis：ジンジパイン ← 超頻出ひっかけ\n- b P. intermedia：Orange complex\n- c A. actinomycetemcomitans ← 正解\n- d T. forsythia：トリプシン様酵素\n- e T. denticola：Red complex\n\n[ポイント]\nロイコトキシン＝A.a.（侵襲性歯周炎）、ジンジパイン＝P.g.（慢性歯周炎）"
+          "question": "ロイコトキシンを産生するのはどれか。",
+          "answer": "C",
+          "choices": {
+            "a": "P. gingivalis",
+            "b": "P. intermedia",
+            "c": "A. actinomycetemcomitans ← 正解",
+            "d": "T. forsythia",
+            "e": "T. denticola"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "116A58",
+          "point": "ロイコトキシン＝A.a.（侵襲性歯周炎）、ジンジパイン＝P.g.（慢性歯周炎）",
+          "choiceExplanations": {
+            "a": "ジンジパイン ← 超頻出ひっかけ",
+            "b": "Orange complex",
+            "d": "トリプシン様酵素",
+            "e": "Red complex"
+          }
         }
       ]
     },

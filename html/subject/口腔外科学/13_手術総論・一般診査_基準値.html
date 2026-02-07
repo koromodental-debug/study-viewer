@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>基準値 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>基準値</h1>
+    <div class="container">
+
+      <p>検査値が基準値内か異常かを判断する問題が出題される。数値を丸暗記するのではなく、<span class="key">各検査項目の臨床的意義</span>と合わせて覚えることで、異常値から疾患を推定できるようになる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">出題パターン</div>
+        <ul>
+          <li>検査値を提示し、基準値内かどうかを判断させる</li>
+          <li><span class="highlight">クレアチニン（Cr）の異常高値</span>が2回とも出題（頻出）</li>
+          <li>明らかに異常な値を見抜けるかがポイント</li>
+        </ul>
+      </div>
+
+      <!-- ========== 血液一般検査 ========== -->
+      <h2>血液一般検査の基準値</h2>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>異常の意味</th></tr>
+        <tr><td><span class="key">赤血球数（RBC）</span></td><td>男 400〜540×10<sup>4</sup>/μl<br>女 380〜490×10<sup>4</sup>/μl</td><td>低値→貧血、高値→多血症</td></tr>
+        <tr><td><span class="key">Hb（ヘモグロビン）</span></td><td>男 14〜18 g/dl<br>女 12〜16 g/dl</td><td>低値→貧血</td></tr>
+        <tr><td><span class="highlight">Ht（ヘマトクリット）</span></td><td>男 36〜49%<br>女 34〜44%</td><td>低値→貧血、高値→脱水・多血症</td></tr>
+        <tr><td><span class="key">白血球数（WBC）</span></td><td>5,000〜8,500/μl</td><td>高値→感染・炎症、低値→免疫低下</td></tr>
+        <tr><td><span class="highlight">血小板数（Plt）</span></td><td>13〜35×10<sup>4</sup>/μl</td><td>低値→出血傾向、8万以下で観血処置注意</td></tr>
+      </table>
+      <p class="note">※Ht 30%は男女とも基準値以下（貧血）。血小板 50,000/μl（=5万）は基準値13〜35万の範囲外で著明低値。</p>
+
+      <!-- ========== 凝固系 ========== -->
+      <h2>凝固系検査の基準値</h2>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>延長する場合</th></tr>
+        <tr><td><span class="key">PT（プロトロンビン時間）</span></td><td>10〜13秒</td><td>外因系異常（肝硬変、VitK欠乏）</td></tr>
+        <tr><td><span class="key">APTT</span></td><td>25〜40秒</td><td>内因系異常（血友病）</td></tr>
+        <tr><td><span class="key">出血時間（Ivy法）</span></td><td>2〜5分</td><td>血小板異常、血管壁異常</td></tr>
+      </table>
+
+      <!-- ========== 生化学（肝機能） ========== -->
+      <h2>生化学検査の基準値：肝機能</h2>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>高値の意味</th></tr>
+        <tr><td><span class="highlight">AST（GOT）</span></td><td>10〜40 IU/L</td><td>肝障害、心筋梗塞、筋疾患</td></tr>
+        <tr><td><span class="key">ALT（GPT）</span></td><td>5〜40 IU/L</td><td>肝障害（肝特異性が高い）</td></tr>
+        <tr><td><span class="key">γ-GTP</span></td><td>男 ≦70 IU/L<br>女 ≦30 IU/L</td><td>アルコール性肝障害、胆汁うっ滞</td></tr>
+        <tr><td><span class="key">ALP</span></td><td>100〜340 IU/L</td><td>胆汁うっ滞、骨疾患</td></tr>
+        <tr><td><span class="key">LDH（LD）</span></td><td>120〜240 IU/L</td><td>組織破壊（非特異的）</td></tr>
+        <tr><td><span class="highlight">総ビリルビン（T-Bil）</span></td><td>0.2〜1.2 mg/dl</td><td>黄疸（肝障害、溶血、胆道閉塞）</td></tr>
+        <tr><td><span class="key">総タンパク（TP）</span></td><td>6.5〜8.0 g/dl</td><td>高値→脱水・多発性骨髄腫<br>低値→肝障害・ネフローゼ</td></tr>
+        <tr><td><span class="key">アルブミン（Alb）</span></td><td>3.8〜5.3 g/dl</td><td>低値→肝障害・栄養不良</td></tr>
+      </table>
+      <p class="note">※AST 20 IU/L は基準値内（正常）。総ビリルビン 1.0 mg/dl は基準値内（正常）。TP 7.2 g/dl は基準値内（正常）。</p>
+
+      <!-- ========== 生化学（腎機能） ========== -->
+      <h2>生化学検査の基準値：腎機能</h2>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>異常の意味</th></tr>
+        <tr><td><span class="highlight">クレアチニン（Cr）</span></td><td>男 0.6〜1.1 mg/dl<br>女 0.4〜0.8 mg/dl</td><td>高値→腎機能低下</td></tr>
+        <tr><td><span class="highlight">BUN（尿素窒素）</span></td><td>8〜20 mg/dl</td><td>高値→腎機能低下・脱水・消化管出血</td></tr>
+        <tr><td><span class="key">尿酸（UA）</span></td><td>男 3.0〜7.0 mg/dl<br>女 2.5〜7.0 mg/dl</td><td>高値→痛風、腎障害</td></tr>
+        <tr><td><span class="key">eGFR</span></td><td>≧90 ml/min/1.73m<sup>2</sup></td><td>低値→CKD（60未満でG3以上）</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Crは頻出：異常値の判断</div>
+        <ul>
+          <li>基準値は男 0.6〜1.1 mg/dl → <span class="highlight">Cr 2.0 も 5.0 も明らかな異常高値</span></li>
+          <li>Cr高値 ＝ 腎機能低下（GFR低下により排泄されない）</li>
+          <li>BUN 20 mg/dl は基準値上限であり<span class="caution">正常範囲内</span></li>
+        </ul>
+      </div>
+
+      <!-- ========== 電解質 ========== -->
+      <h2>電解質の基準値</h2>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>異常の意味</th></tr>
+        <tr><td><span class="highlight">K（カリウム）</span></td><td>3.5〜5.0 mEq/L</td><td>高値→不整脈（心停止）、低値→筋力低下</td></tr>
+        <tr><td><span class="key">Na（ナトリウム）</span></td><td>135〜147 mEq/L</td><td>低値→意識障害、高値→脱水</td></tr>
+        <tr><td><span class="key">Cl（クロール）</span></td><td>98〜108 mEq/L</td><td>Naと連動して変動</td></tr>
+        <tr><td><span class="key">Ca（カルシウム）</span></td><td>8.4〜10.4 mg/dl</td><td>低値→テタニー、高値→悪性腫瘍</td></tr>
+      </table>
+      <p class="note">※K 4.1 mEq/L は基準値内（正常）。</p>
+
+      <!-- ========== 糖代謝・脂質 ========== -->
+      <h2>糖代謝・脂質の基準値</h2>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>異常の意味</th></tr>
+        <tr><td><span class="highlight">空腹時血糖</span></td><td>70〜109 mg/dl</td><td>110〜125→境界型、≧126→糖尿病型</td></tr>
+        <tr><td><span class="key">HbA1c</span></td><td>4.6〜6.2%</td><td>≧6.5%→糖尿病</td></tr>
+        <tr><td><span class="key">総コレステロール</span></td><td>＜220 mg/dl</td><td>高値→動脈硬化リスク</td></tr>
+        <tr><td><span class="key">TG（トリグリセリド）</span></td><td>＜150 mg/dl</td><td>高値→脂質異常症</td></tr>
+        <tr><td><span class="key">HDLコレステロール</span></td><td>≧40 mg/dl</td><td>低値→冠動脈疾患リスク</td></tr>
+        <tr><td><span class="key">LDLコレステロール</span></td><td>＜140 mg/dl</td><td>高値→動脈硬化リスク</td></tr>
+      </table>
+      <p class="note">※空腹時血糖 90 mg/dl は基準値内（正常）。</p>
+
+      <!-- ========== その他 ========== -->
+      <h2>その他の基準値</h2>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th></tr>
+        <tr><td>CRP</td><td>≦0.3 mg/dl</td></tr>
+        <tr><td>赤沈（ESR）</td><td>男 2〜10 mm/h、女 3〜15 mm/h</td></tr>
+        <tr><td>TTT</td><td>1.5〜7.0 単位</td></tr>
+        <tr><td>ZTT</td><td>4〜12 単位</td></tr>
+        <tr><td>アミラーゼ</td><td>40〜120 IU/L</td></tr>
+      </table>
+
+      <!-- ========== 過去問 ========== -->
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110A121</div>
+        <p>成人の検査値で基準値内にあるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 血小板　　　　　50,000/μL<br>
+          b 空腹時血糖　　　90mg/dL<br>
+          c クレアチニン　　　5.0mg/dL<br>
+          d 総ビリルビン　　1.0mg/dL<br>
+          e ヘマトクリット　30％
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】各選択肢の判定：</p>
+        <ul>
+          <li>a 血小板 50,000/μL（=5×10<sup>4</sup>）→ <span class="caution">異常低値</span>（基準値 13〜35×10<sup>4</sup>）</li>
+          <li>b 空腹時血糖 90mg/dL → <span class="key">正常</span>（基準値 70〜109）</li>
+          <li>c Cr 5.0mg/dL → <span class="caution">異常高値</span>（基準値 男0.6〜1.1）</li>
+          <li>d 総ビリルビン 1.0mg/dL → <span class="key">正常</span>（基準値 0.2〜1.2）</li>
+          <li>e Ht 30% → <span class="caution">異常低値</span>（基準値 男36〜49%、女34〜44%）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109A91</div>
+        <p>検査値が異常値を示しているのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a AST　20IU/L<br>
+          b BUN　20mg/dL<br>
+          c Cr　 2.0mg/dL<br>
+          d K　　4.1mEq/L<br>
+          e TP　 7.2g/dL
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】各選択肢の判定：</p>
+        <ul>
+          <li>a AST 20 IU/L → <span class="key">正常</span>（基準値 10〜40）</li>
+          <li>b BUN 20 mg/dL → <span class="key">正常</span>（基準値 8〜20、上限ギリギリだが範囲内）</li>
+          <li>c Cr 2.0 mg/dL → <span class="caution">異常高値</span>（基準値 男0.6〜1.1）→ 腎機能低下</li>
+          <li>d K 4.1 mEq/L → <span class="key">正常</span>（基準値 3.5〜5.0）</li>
+          <li>e TP 7.2 g/dL → <span class="key">正常</span>（基準値 6.5〜8.0）</li>
+        </ul>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">基準値の覚え方のコツ</div>
+        <ul>
+          <li>全項目を暗記するより、<span class="key">明らかな異常値を見抜く力</span>が重要</li>
+          <li>Cr 2.0以上 → 確実に異常（基準上限の約2倍）</li>
+          <li>血小板 5万 → 確実に異常（基準下限の1/3以下）</li>
+          <li>Ht 30% → 男女とも異常（貧血）</li>
+          <li>正常値の選択肢は「基準範囲のど真ん中」に設定されることが多い</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

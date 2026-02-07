@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>遺伝性を示す疾患 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 01_先天異常・発育不全</span>
+    <h1>遺伝性を示す疾患</h1>
+    <div class="container">
+
+      <h2>遺伝形式による症候群の分類</h2>
+      <p>顎口腔領域に関連する症候群は遺伝形式で大きく分類される。国試では<span class="highlight">遺伝形式と疾患の対応</span>、および<span class="highlight">各疾患の特徴的所見</span>が問われる。</p>
+
+      <h3>遺伝形式と主な疾患</h3>
+      <table>
+        <tr>
+          <th>遺伝形式</th>
+          <th>主な疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">A 常染色体優性</span></td>
+          <td>鎖骨頭蓋骨異形成症、Treacher Collins、Crouzon、Apert、軟骨無形成症、Marfan、Gardner、基底細胞母斑症候群、Peutz-Jeghers、von Recklinghausen</td>
+        </tr>
+        <tr>
+          <td><span class="key">B 常染色体劣性</span></td>
+          <td>Papillon-Lefèvre、Beckwith-Wiedemann</td>
+        </tr>
+        <tr>
+          <td><span class="key">C 常優＋常劣</span></td>
+          <td>先天性表皮水疱症、骨形成不全症、低フォスファターゼ症、大理石骨病</td>
+        </tr>
+        <tr>
+          <td><span class="key">E X連鎖劣性</span></td>
+          <td>無汗型外胚葉異形成症、血友病、筋ジストロフィー</td>
+        </tr>
+        <tr>
+          <td><span class="key">G その他</span></td>
+          <td>Robinシークエンス、McCune-Albright、Sturge-Weber、Addison病</td>
+        </tr>
+      </table>
+
+      <!-- 悪性腫瘍リスクのある疾患 -->
+      <h2>悪性腫瘍の発生に注意すべき疾患</h2>
+      <p>国試で最も頻出のテーマ。<span class="highlight">癌化傾向のある症候群</span>を正確に覚える。</p>
+
+      <h3>Gardner症候群（常染色体優性）</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>原因遺伝子</td><td><span class="key">APC遺伝子</span>（癌抑制遺伝子）の異常</td></tr>
+        <tr><td>全身所見</td><td><span class="highlight">大腸ポリポーシス → 癌化傾向強い</span>、多発性骨腫（頭蓋冠）、類皮嚢胞</td></tr>
+        <tr><td>口腔所見</td><td><span class="key">多発性骨腫</span>（下顎骨・上顎骨）、<span class="key">過剰歯</span>・埋伏歯、萌出異常、歯牙腫、含歯性嚢胞</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Gardner症候群の出題パターン</div>
+        <ul>
+          <li>「顎骨の骨様硬の腫瘤＋大腸の腫瘤性病変＋家族歴」→ Gardner（113D50）</li>
+          <li>「顔面非対称＋顎骨の不透過像 → 他に精査すべき臓器は？」→ <span class="key">大腸</span>（104D33）</li>
+          <li>「悪性腫瘍の発生に注意すべき」→ Gardner＋Peutz-Jeghers（107A50）</li>
+        </ul>
+      </div>
+
+      <h3>基底細胞母斑症候群（Gorlin-Goltz症候群）（常染色体優性）</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>原因遺伝子</td><td><span class="key">PTCH1（Patched1）遺伝子</span>の異常</td></tr>
+        <tr><td>皮膚所見</td><td><span class="highlight">多発性基底細胞母斑</span> → 基底細胞癌になる可能性、<span class="key">掌蹠点状小窩</span>（skin pits）</td></tr>
+        <tr><td>骨格所見</td><td><span class="key">大脳鎌の石灰化</span>、トルコ鞍異常、<span class="key">二分肋骨</span>、両眼隔離</td></tr>
+        <tr><td>口腔所見</td><td><span class="highlight">多発性顎嚢胞（歯原性角化嚢胞）</span>、口蓋裂、下顔面の低形成</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">基底細胞母斑症候群の3点セット</div>
+        <ul>
+          <li><span class="key">二分肋骨</span>＋<span class="key">掌蹠点状小窩</span>＋<span class="key">大脳鎌の石灰化</span>（113A66の正解ACD）</li>
+          <li>口蓋裂の手術既往＋頬部の骨様硬膨隆＋家族歴 → 基底細胞母斑症候群を想起</li>
+        </ul>
+      </div>
+
+      <h3>Peutz-Jeghers症候群（常染色体優性）</h3>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>原因遺伝子</td><td><span class="key">STK11遺伝子</span>の異常</td></tr>
+        <tr><td>全身所見</td><td><span class="highlight">多発性メラニン色素斑</span>（手足・結膜・鼻粘膜・皮膚・顔面）、<span class="highlight">消化管ポリポーシス → 癌化傾向強い</span>、乳腺・卵巣・膵臓・大腸の悪性腫瘍を随伴</td></tr>
+        <tr><td>口腔所見</td><td><span class="key">多発性色素斑</span>（口唇・頬粘膜）</td></tr>
+      </table>
+      <p class="note">※家族性疾患。「口腔粘膜の着色＋大腸ポリープ切除歴＋家族歴」→ Peutz-Jeghers（107D19）</p>
+
+      <!-- 色素沈着の鑑別 -->
+      <h2>色素沈着を伴う疾患の鑑別</h2>
+      <h3>メラニン色素沈着の鑑別</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>色素斑の特徴</th>
+          <th>鑑別のキー</th>
+        </tr>
+        <tr>
+          <td><span class="key">Peutz-Jeghers</span></td>
+          <td>口唇・頬粘膜・手足の色素斑</td>
+          <td>消化管ポリポーシス＋家族歴</td>
+        </tr>
+        <tr>
+          <td><span class="key">McCune-Albright</span></td>
+          <td>カフェオレ斑（境界不整）</td>
+          <td>多骨性線維性異形成症＋性的早熟</td>
+        </tr>
+        <tr>
+          <td><span class="key">von Recklinghausen</span></td>
+          <td>カフェオレ斑（境界整）</td>
+          <td>多発性神経線維腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">Addison病</span></td>
+          <td>皮膚・粘膜（頬粘膜・口唇）の色素沈着</td>
+          <td>副腎皮質機能不全、全身衰弱</td>
+        </tr>
+      </table>
+
+      <!-- von Recklinghausen病 -->
+      <h2>von Recklinghausen病（神経線維腫症I型）（常染色体優性）</h2>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>原因遺伝子</td><td><span class="key">NF1遺伝子</span>の異常</td></tr>
+        <tr><td>全身所見</td><td><span class="key">カフェオレ斑</span>、<span class="key">多発性神経線維腫</span> → まれに癌化、眼病変（虹彩小結節＝Lisch結節）、脊椎側弯症</td></tr>
+        <tr><td>口腔所見</td><td>多発性神経線維腫（舌・口唇・頬粘膜・歯肉）</td></tr>
+      </table>
+
+      <!-- Sturge-Weber症候群 -->
+      <h2>Sturge-Weber症候群</h2>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>皮膚所見</td><td>顔面の<span class="highlight">血管腫（ポートワイン母斑）</span>：<span class="key">三叉神経第1・2枝領域</span>に多い</td></tr>
+        <tr><td>中枢神経</td><td>脳軟膜血管腫 → <span class="key">てんかん</span>、精神遅滞、<span class="key">大脳の石灰化</span></td></tr>
+        <tr><td>眼症状</td><td>眼球血管腫 → <span class="key">緑内障</span>（牛眼）</td></tr>
+        <tr><td>口腔所見</td><td>血管腫</td></tr>
+        <tr><td>注意点</td><td><span class="caution">大出血に注意</span></td></tr>
+      </table>
+      <p class="note">※110C121：顔面色調異常＋フェニトイン服用（てんかん治療）→ Sturge-Weber</p>
+
+      <!-- 先天性外胚葉異形成症 -->
+      <h2>先天性外胚葉異形成症（X連鎖劣性）</h2>
+      <ul>
+        <li>外胚葉由来組織の形成不全：<span class="key">無汗症</span>・<span class="key">発毛不全</span>・<span class="key">無歯症</span></li>
+        <li><span class="highlight">爪の形成不全</span>（114D25の正解）</li>
+        <li><span class="key">皮膚乾燥</span>（115B48の正解肢c）</li>
+        <li>女性より<span class="key">男性に多い</span>（X連鎖劣性遺伝）</li>
+      </ul>
+      <p class="note">※体温調節困難は<span class="caution">鎖骨頭蓋骨異形成症ではなく外胚葉異形成症ではない</span>（115B48の選択肢eは誤り）</p>
+
+      <!-- McCune-Albright -->
+      <h2>McCune-Albright症候群</h2>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>全身所見</td><td><span class="key">多骨性線維性異形成症</span>（顎骨含む）、<span class="key">カフェオレ斑</span>、内分泌異常（女性の<span class="key">性的早熟</span>）、血清ALP↑</td></tr>
+        <tr><td>口腔所見</td><td>顎骨の無痛性膨隆（線維性異形成症）、<span class="key">すりガラス様不透過像</span></td></tr>
+      </table>
+
+      <!-- 疾患と症状の組合せ（横断的知識） -->
+      <h2>疾患と症状の組合せ（横断的知識）</h2>
+
+      <h3>先天性心疾患を併発しやすい疾患</h3>
+      <ul>
+        <li><span class="key">Down症候群</span>（心房・心室中隔欠損）</li>
+        <li><span class="key">Marfan症候群</span>（心血管系異常：弁閉鎖不全）</li>
+        <li>Turner症候群（大動脈縮窄症）</li>
+        <li>Noonan症候群（心奇形）</li>
+      </ul>
+
+      <h3>巨舌を認める疾患</h3>
+      <ul>
+        <li><span class="key">先端巨大症</span>（成長ホルモン過剰）</li>
+        <li><span class="key">Down症候群</span>（巨舌・溝状舌）</li>
+        <li><span class="key">Beckwith-Wiedemann症候群</span>（臍帯脱出E・巨舌M・巨体G）</li>
+        <li><span class="caution">Robinシークエンスは巨舌ではない</span>（小下顎・舌根沈下）</li>
+      </ul>
+
+      <h3>先天性疾患と口腔の特徴</h3>
+      <table>
+        <tr><th>疾患</th><th>口腔の特徴</th></tr>
+        <tr><td>鎖骨頭蓋骨異形成症</td><td>永久歯の多数歯埋伏、乳歯晩期残存、過剰歯</td></tr>
+        <tr><td><span class="key">Marfan症候群</span></td><td><span class="highlight">高口蓋</span>（114B61の正解）</td></tr>
+        <tr><td>軟骨無形成症</td><td>中顔面の低形成（<span class="caution">歯の早期萌出ではない</span>）</td></tr>
+        <tr><td>Robinシークエンス</td><td>小下顎（<span class="caution">下顎歯列弓の開大ではない</span>）</td></tr>
+        <tr><td>先天性表皮水疱症</td><td><span class="key">開口障害</span>（瘢痕萎縮による）、舌癒着</td></tr>
+        <tr><td>骨形成不全症</td><td><span class="key">象牙質形成不全</span>を合併</td></tr>
+      </table>
+
+      <!-- 過去問 -->
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A50</div>
+        <p>悪性腫瘍の発生に注意すべきなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Hunt症候群<br>
+          b Gardner症候群<br>
+          c Peutz-Jeghers症候群<br>
+          d Stevens-Johnson症候群<br>
+          e Melkersson-Rosenthal症侯群
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】Gardner症候群は大腸ポリポーシスが癌化しやすい（APC遺伝子異常）。Peutz-Jeghers症候群も消化管ポリポーシスの癌化リスクが高く、乳腺・卵巣・膵臓の悪性腫瘍も随伴する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A21</div>
+        <p>上皮性腫揚の発生頻度が高いのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Gardner 症候群<br>
+          b 基底細胞母斑症候群<br>
+          c Sturge-Weber 症候群<br>
+          d von Recklinghausen 病<br>
+          e Melkersson-Rosenthal 症候群
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】Gardner症候群は大腸癌（上皮性）、基底細胞母斑症候群は基底細胞癌（上皮性）のリスクが高い。von Recklinghausen病は神経線維腫（非上皮性）が主体であり「上皮性腫瘍」には該当しにくい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D50</div>
+        <p>24歳の女性。右側頬部の腫脹を主訴として来院した。同部に骨様硬の腫瘤を認める。自発痛と圧痛はなく、開口障害は認めない。内科で大腸内視鏡検査を受け、腫瘤性病変を指摘されている。兄にも同様の顎骨病変がみられる。初診時のエックス線画像（別冊No.8A）とCT（別冊No.8B）を別に示す。<br>最も疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D50_1.png" alt="別冊No.8A">
+        </div>
+        <div class="choices">
+          a Marfan 症候群<br>
+          b Gardner 症候群<br>
+          c Peutz-Jeghers 症候群<br>
+          d von Recklinghausen 病<br>
+          e McCune-Albright 症候群
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】「顎骨の骨様硬腫瘤」＋「大腸の腫瘤性病変」＋「家族歴（兄にも同様）」→ Gardner症候群。顎骨の多発性骨腫と大腸ポリポーシスの組合せが決め手。常染色体優性遺伝なので家族内発症する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104D33</div>
+        <p>21歳の男性。顔面の非対称性を主訴として来院した。数年前に家族から指摘されたが自覚症状がなかったため放置していたという。初診時の顔貌写真（別冊No.33A）、エックス線写真（別冊No.33B）、CT（別冊No.33C）及び生検時のH−E染色病理組織像（別冊No.33D）を別に示す。<br>他に精査すべきなのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D33_1.png" alt="別冊No.33">
+        </div>
+        <div class="choices">
+          a 大　脳<br>
+          b 唾液腺<br>
+          c 副　腎<br>
+          d 腎　臓<br>
+          e 大　腸
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】顎骨の骨腫＋家族歴 → Gardner症候群を疑う。Gardner症候群では大腸ポリポーシスの癌化リスクが高いため、大腸の精査が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A66</div>
+        <p>12歳の男児。右側頬部の膨隆を主訴として来院した。左側唇顎口蓋裂に対する手術の既往があり、矯正歯科治療を受けている。両側頬部に骨様硬の膨隆を触知する。母親も同じ疾患で治療を受けたという。初診時の顔貌写真（別冊No.22A）、エックス線画像（別冊No.22B）、歯科用コーンビームCT（別冊No.22C）及び生検時のH-E染色病理組織像（別冊No.22D）を別に示す。<br>この疾患でよくみられるのはどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A66_1.png" alt="別冊No.22">
+        </div>
+        <div class="choices">
+          a 二分肋骨<br>
+          b 四肢の末端肥大<br>
+          c 手掌の点状小窩<br>
+          d 大脳鎌の石灰化<br>
+          e 皮膚のカフェオレ斑
+        </div>
+        <div class="answer">正解：a, c, d</div>
+        <p>【解説】口蓋裂＋多発性顎嚢胞＋家族歴（母親も同じ疾患）→ 基底細胞母斑症候群。二分肋骨（a）、掌蹠点状小窩（c）、大脳鎌の石灰化（d）が特徴。b：四肢の末端肥大は先端巨大症。e：カフェオレ斑はvon Recklinghausen病やMcCune-Albright症候群。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C121</div>
+        <p>メラニン色素の沈着を伴うのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Marfan症候群<br>
+          b Gardner症候群<br>
+          c Sturge-Weber症候群<br>
+          d Peutz-Jeghers症候群<br>
+          e McCune-Albright症候群
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】Peutz-Jeghers症候群は口唇・頬粘膜・手足にメラニン色素斑。McCune-Albright症候群はカフェオレ斑（メラニン色素沈着）。Sturge-Weber症候群の色調異常は血管腫（ポートワイン母斑）であり、メラニン色素沈着ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C38</div>
+        <p>口腔粘膜や皮膚の色素沈着が家族性に生じるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Behcet病<br>
+          b 白色海綿状母斑<br>
+          c Peutz-Jeghers症候群<br>
+          d Sturge-Weber症候群<br>
+          e von Recklinghausen病
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】Peutz-Jeghers症候群（メラニン色素斑）とvon Recklinghausen病（カフェオレ斑）はいずれも常染色体優性遺伝で家族性に色素沈着が生じる。Sturge-Weber症候群は血管腫であり色素沈着ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107D19</div>
+        <p>65歳の男性。口腔粘膜の着色を主訴として来院した。10年前から気になっていたが放置していたという。家族歴で弟にも同様の症状が確認された。既往歴として2年前に大腸ポリープ切除を受けていた。初診時の口腔内写真（別冊No.19）を別に示す。<br>疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107D19_1.png" alt="別冊No.19">
+        </div>
+        <div class="choices">
+          a Addison病<br>
+          b 悪性黒色腫<br>
+          c Peutz-Jeghers症候群<br>
+          d von Recklinghausen病<br>
+          e McCune-Albright症候群
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】「口腔粘膜の着色」＋「大腸ポリープ切除歴」＋「家族歴（弟にも）」→ Peutz-Jeghers症候群。Addison病は副腎皮質機能不全による色素沈着だが、大腸ポリープや家族歴とは結びつかない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C121</div>
+        <p>11歳の女児。咬み合わせの違和感を主訴として来院した。出生直後から顔面部に色調の異常がみられ、成長とともに目立ってきたという。幼児期からフェニトインを服用している。初診時の下顔面の写真（別冊No.19A）と口腔内写真（別冊No.19B）を別に示す。<br>疑われる疾患はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110C121_1.png" alt="別冊No.19">
+        </div>
+        <div class="choices">
+          a 神経線維腫症<br>
+          b 先天性表皮水疱症<br>
+          c 基底細胞母斑症候群<br>
+          d Sturge-Weber症候群<br>
+          e Peutz-Jeghers症候群
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】「出生直後からの顔面色調異常」＋「フェニトイン服用（てんかん治療）」→ Sturge-Weber症候群。顔面の血管腫（ポートワイン母斑）と脳軟膜血管腫によるてんかんが特徴。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D25</div>
+        <p>先天性外胚葉異形成症でよくみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 低身長<br>
+          b 易骨折性<br>
+          c 知的障害<br>
+          d 心血管障害<br>
+          e 爪の形成不全
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】先天性外胚葉異形成症は外胚葉由来組織（皮膚・毛・汗腺・爪・歯）の形成不全。無汗症・発毛不全・無歯症・爪形成不全が特徴。b：易骨折性は骨形成不全症。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B61</div>
+        <p>先天性疾患と口腔の特徴の組合せで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 軟骨無形成症 ーーーー 歯の早期萌出<br>
+          b Marfan症候群 ーーーー 高口蓋<br>
+          c Crouzon症候群 ーーー 下顎骨の劣成長<br>
+          d Robinシークエンス ーー 下顎歯列弓の開大<br>
+          e 鎖骨頭蓋骨異形成症 ーー 歯の先天欠如
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】Marfan症候群は高身長・くも状指・高口蓋が特徴。a：軟骨無形成症は萌出遅延。c：Crouzon症候群は上顎の劣成長（中顔面の低形成）で下顎ではない。d：Robinシークエンスは小下顎。e：鎖骨頭蓋骨異形成症は歯の先天欠如ではなく過剰歯・埋伏歯。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B48</div>
+        <p>疾患と症状の組合せで正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 骨形成不全症 ーーーーーー 易骨折性<br>
+          b 軟骨無形成症 ーーーーーー 巨　舌<br>
+          c 外胚葉異形成症 ーーーーー 皮膚乾燥<br>
+          d 先天性表皮水疱症 ーーーー 開口障害<br>
+          e 鎖骨頭蓋骨異形成症 ーーー 体温調節困難
+        </div>
+        <div class="answer">正解：a, c, d</div>
+        <p>【解説】a：骨形成不全症は結合組織代謝異常で易骨折性（◯）。b：軟骨無形成症は巨舌ではない（×）。c：外胚葉異形成症は汗腺異常による皮膚乾燥（◯）。d：先天性表皮水疱症は瘢痕萎縮による開口障害（◯）。e：鎖骨頭蓋骨異形成症に体温調節困難はない（×）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B73</div>
+        <p>先天性心疾患を併発しやすいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Down症候群<br>
+          b Marfan症候群<br>
+          c 先天性表皮水疱症<br>
+          d 先天性外胚葉異形成症<br>
+          e Beckwith-Wiedemann症候群
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】Down症候群は心房・心室中隔欠損などの先天性心疾患を高頻度に合併。Marfan症候群は心血管系異常（弁閉鎖不全、大動脈瘤など）を合併。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C33</div>
+        <p>巨舌を認めるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 先端巨大症<br>
+          b Down症候群<br>
+          c Robinシークエンス<br>
+          d 第一第二鰓弓症候群<br>
+          e Beckwith-Wiedemann症候群
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】先端巨大症（成長ホルモン過剰）、Down症候群（巨舌・溝状舌）、Beckwith-Wiedemann症候群（臍帯脱出E・巨舌M・巨体G）は巨舌を呈する。c：Robinシークエンスは小下顎・舌根沈下であり巨舌ではない。d：第一第二鰓弓症候群は下顎の低形成で巨舌ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103B51</div>
+        <p>18歳の女子。両側下顎の腫脹を主訴として来院した。数年前から同部が腫脹することがあったが放置していたという。本人のエックス線写真（別冊No.48A）、弟のエックス線写真（別冊No.48B）及び本人の生検時のH−E染色病理組織像（別冊No.48C）を別に示す。<br>この疾患の遺伝形式はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103B51_1.png" alt="別冊No.48">
+        </div>
+        <div class="choices">
+          a 伴性優性遺伝<br>
+          b 伴性劣性遺伝<br>
+          c 常染色体優性遺伝<br>
+          d 常染色体劣性遺伝<br>
+          e ミトコンドリア遺伝
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】両側下顎の多房性透過像＋家族歴（弟にも同様）→ ケルビズム。ケルビズムは常染色体優性遺伝で、SH3BP2遺伝子の変異による。小児期に発症し、思春期以降に自然退縮する傾向がある。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

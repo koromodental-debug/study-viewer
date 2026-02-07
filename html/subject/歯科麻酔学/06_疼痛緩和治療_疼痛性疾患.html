@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>疼痛性疾患 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 疼痛緩和治療</span>
+    <h1>疼痛性疾患</h1>
+    <div class="container">
+
+      <!-- 疼痛の分類 -->
+      <h2>口腔顔面の疼痛の分類</h2>
+      <p>口腔顔面領域の疼痛は、その発生メカニズムから大きく3つに分類される。</p>
+
+      <h3>疼痛の分類（表14-1）</h3>
+      <table>
+        <tr>
+          <th>大分類</th>
+          <th>小分類</th>
+          <th>代表的疾患</th>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">侵害受容性疼痛</span>（体性痛）</td>
+          <td>体表痛</td>
+          <td>咬傷、口内炎</td>
+        </tr>
+        <tr>
+          <td>深部痛</td>
+          <td>歯髄炎、筋・筋膜痛症候群、顎内障、骨髄炎</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="key">神経障害性疼痛</span></td>
+          <td>発作性</td>
+          <td>三叉神経痛、舌咽神経痛</td>
+        </tr>
+        <tr>
+          <td>持続性</td>
+          <td>帯状疱疹後神経痛、CRPS</td>
+        </tr>
+        <tr>
+          <td><span class="key">精神疾患による疼痛</span></td>
+          <td>—</td>
+          <td>疼痛性障害、身体表現性障害、うつ病性障害</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">侵害受容性疼痛 vs 神経障害性疼痛</div>
+        <ul>
+          <li><span class="key">侵害受容性疼痛</span>：侵害刺激が加わって発生する疼痛（炎症など）。歯髄炎・歯周炎はこちら</li>
+          <li><span class="key">神経障害性疼痛</span>：末梢神経または中枢神経自体に原因があって生じる疼痛。<span class="caution">侵害受容器は刺激を受ける必要がない</span></li>
+        </ul>
+      </div>
+
+      <!-- 筋・筋膜痛症候群（非歯原性歯痛） -->
+      <h2>筋・筋膜痛症候群（非歯原性歯痛）</h2>
+
+      <h3>病態と病因</h3>
+      <p><span class="key">咀嚼筋や頸肩部の筋の過緊張</span>によって生じる痛みで、顎関節症の一部として扱われることが多い。咀嚼筋の持続的な緊張（無意識の上下の歯の弱い力での噛み合わせ、くいしばり）が原因であることが多く、安静時空隙を保てていないことが筋緊張の引き金となる。</p>
+
+      <h3>症状</h3>
+      <ul>
+        <li>安静時の上下臼歯部痛、頭痛、頸肩部痛</li>
+        <li>開口時痛、咬合痛を伴うこともある</li>
+        <li>一般的には<span class="key">開口痛</span>としてみられることが多い（顎運動障害でも開口障害が主となる）</li>
+        <li>起床時に痛みが強いことがあるが、一般的にはタ方から痛みが増強する</li>
+      </ul>
+
+      <h3>診断</h3>
+      <p><span class="highlight">2 kg/cm²の触診で圧痛</span>を認めることにより診断する。圧痛を認める筋において、詳細な触診で痛みの放散する（離れた部位に疼痛を自覚する）ピンポイントの強い圧痛点を特定できる。このポイントを<span class="highlight">トリガーポイント</span>と呼び、この部位への微量の局所麻酔薬注入で疼痛が消退し、明らかな改善が得られたら関連痛の存在を証明できる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">非歯原性歯痛の診断ポイント</div>
+        <ul>
+          <li>歯・歯周組織に異常がないのに歯痛がある</li>
+          <li>咀嚼筋（咬筋・側頭筋など）の触診で歯痛が<span class="highlight">誘発・再現</span>される</li>
+          <li><span class="caution">浸潤麻酔で歯痛が軽減しない</span>（歯が原因ではないため）</li>
+        </ul>
+      </div>
+
+      <h3>治療</h3>
+      <table>
+        <tr>
+          <th>治療法</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">トリガーポイント注射</span></td>
+          <td>22Gの針で1%リドカインまたは1%メピバカイン 0.5mLを注入（血管収縮薬を含まない）</td>
+        </tr>
+        <tr>
+          <td><span class="key">生活指導・行動療法</span></td>
+          <td>上下の歯のコンタクトの自己チェック、安静空隙の保持、咀嚼筋群のストレッチ運動</td>
+        </tr>
+        <tr>
+          <td>薬物療法</td>
+          <td>NSAIDs（補助的）、<span class="key">三環系抗うつ薬</span></td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">108D47</div>
+        <p>30歳の女性。下顎右側第一大臼歯の疼痛を主訴として来院した。口腔内検査により、歯と歯周組織には異常を認めない。右側頰部の触診により圧痛を認め、当該歯の歯痛が誘発される。痛みが誘発される部位を患者に示させた写真（別冊No.47）を別に示す。<br>治療として適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D47.png" alt="別冊No.47">
+        </div>
+        <div class="choices">
+          a 咬合調整<br>
+          b 抗菌薬投与<br>
+          c 神経ブロック<br>
+          d 表面麻酔薬塗布<br>
+          e 咀嚼筋ストレッチ
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】歯・歯周組織に異常なし＋頰部触診で歯痛誘発→筋・筋膜痛による非歯原性歯痛と判断できる。治療は咀嚼筋ストレッチ（生活指導・行動療法）が適切。咬合調整は歯原性の問題への対応であり不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D77</div>
+        <p>34歳の女性。下顎右側第一大臼歯部の痛みを主訴として来院した。1年前にクラウンが装着された直後から同部の痛みが発現し、鈍痛が持続しているという。クラウンは除去され、テンポラリークラウン装着後、調整が続けられたが、症状に変化はなかったという。当該歯に打診痛はなく、浸澗麻酔による歯痛の軽減は認めない。右側咬筋部の触診によって歯痛が再現される。4mm以上の歯周ポケットは認められない。初診時に咬合状態を検査した口腔内写真（別冊No.23A）とエックス線画像（別冊No.23B）を別に示す。<br>最も疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111D77.png" alt="別冊No.23A, 23B">
+        </div>
+        <div class="choices">
+          a 歯根破折<br>
+          b 咬合性外偽<br>
+          c 非歯原性歯痛<br>
+          d 慢性辺縁性歯周炎<br>
+          e 慢性根尖性歯周炎
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】打診痛なし＋浸潤麻酔で軽減しない＋咬筋触診で歯痛再現＋歯周ポケット正常→歯原性の疾患（歯根破折・歯周炎・根尖性歯周炎）はすべて否定される。咀嚼筋の関連痛による非歯原性歯痛が最も疑われる。</p>
+      </div>
+
+      <!-- 三叉神経痛・舌咽神経痛 -->
+      <h2>反復性発作性神経障害性疼痛：三叉神経痛・舌咽神経痛</h2>
+
+      <h3>病態</h3>
+      <p>神経障害性疼痛に分類される反復する発作性の疼痛を包括する病態名である。三叉神経痛、舌咽神経痛は、反前は特発性の神経痛として原因不明とされてきたが、<span class="highlight">微小血管による神経の圧迫</span>が主な病因であることが明らかになっている。</p>
+      <p>三叉神経痛は<span class="key">第2枝、第3枝</span>に多く、口腔内に初発症状が出ることから歯痛炎や歯周炎と誤認されることがある。</p>
+
+      <h3>症状の特徴（7項目）</h3>
+      <table>
+        <tr>
+          <th>#</th>
+          <th>特徴</th>
+        </tr>
+        <tr><td>1</td><td><span class="key">反復して生じる発作痛</span></td></tr>
+        <tr><td>2</td><td>発作は<span class="highlight">数秒から数十秒</span>持続で自然寛解する</td></tr>
+        <tr><td>3</td><td>疼痛発作と次の疼痛発作の間は<span class="key">無症状</span></td></tr>
+        <tr><td>4</td><td>しばしば軽い刺激で疼痛を生じさせる<span class="highlight">誘発帯（トリガーゾーン）</span>が確認される</td></tr>
+        <tr><td>5</td><td>疼痛以外には自覚症状がない</td></tr>
+        <tr><td>6</td><td>他覚的に知覚・味覚などの<span class="caution">感覚異常がみられない</span></td></tr>
+        <tr><td>7</td><td>中長期的には痛みの寛解と増悪を繰り返す</td></tr>
+      </table>
+
+      <h3>診断</h3>
+      <p>上記の症状に当てはまれば、反復性発作性神経障害性疼痛（神経痛）を疑う。<span class="key">8%リドカインスプレー</span>を口腔内粘膜に吹きかけ、トリガーゾーンとなっている場合に疼痛が消失するか確認する。また、<span class="highlight">カルバマゼピンが奏効</span>すると神経痛を疑うことの裏付けとなる。</p>
+      <p>三叉神経痛と舌咽神経痛の相違は疼痛発作の部位による。頬面部を中心とする場合は三叉神経痛、<span class="key">咽頭部に疼痛</span>がある場合は舌咽神経痛を疑う。</p>
+
+      <h3>治療</h3>
+      <p>2段階法で考える。まずは<span class="key">薬物療法</span>を試み、薬剤でコントロールできない場合は<span class="key">外科的治療法</span>へと進む。</p>
+
+      <h3>第1段階：薬物療法</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">カルバマゼピン（テグレトール®）</span></td>
+          <td>特効薬。副作用として眠気・ふらつきあり</td>
+        </tr>
+        <tr>
+          <td>ヒダントイン</td>
+          <td>代替薬</td>
+        </tr>
+        <tr>
+          <td>ガバペンチン、クロナゼパム、バクロフェン</td>
+          <td>増量しても奏効しない場合</td>
+        </tr>
+      </table>
+
+      <h3>第2段階：外科的治療</h3>
+      <ul>
+        <li><span class="key">神経ブロック療法</span>（末梢神経にブロック針を刺入し感覚障害を生じさせる）</li>
+        <li>ガンマナイフ</li>
+        <li><span class="key">神経血管減圧術</span>（微小血管による圧迫の解除）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">111B58</div>
+        <p>41歳の男性。洗顔時の右側頬部の疼痛を主訴として来院した。6か月前から右側鼻翼部にチクチクするような疼痛を自覚し、その後電撃痛へと変化したという。また、痛みが発生すると疼痛は数秒間持続するという。<br>診断のために有効なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 眼窩下孔の圧迫<br>
+          b ビタミンB12の投与<br>
+          c 星状神経節ブロック<br>
+          d カルバマゼピンの投与<br>
+          e 眼窩下孔のアルコールブロック
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】鼻翼部のチクチクする痛み→電撃痛、数秒間持続→三叉神経痛（第2枝）の典型像。診断には、トリガーゾーンの確認として<span class="key">眼窩下孔の圧迫</span>（a）、および薬物による診断的治療として<span class="key">カルバマゼピンの投与</span>（d）が有効。星状神経節ブロック（c）は持続性神経障害性疼痛の治療法。アルコールブロック（e）は治療法であり診断目的ではない。</p>
+      </div>
+
+      <!-- 持続性神経障害性疼痛 -->
+      <h2>持続性神経障害性疼痛</h2>
+
+      <h3>病態</h3>
+      <p>三叉神経に傷害が加わった場合、神経線維に伝導障害が生じ、知覚の低下が生じる。それに引き続き、その神経の支配領域ならびにその周囲に難治性の疼痛を自覚するようになる。</p>
+      <p><span class="key">舌痛症</span>は、外傷性神経障害ではないが、末梢神経からの刺激がうまく伝わらないことによって生じる中枢の<span class="key">疼痛抑制系の脱抑制</span>によって生じる病態であり、神経障害性疼痛の一種と考えられるようになってきている。</p>
+
+      <h3>症状</h3>
+      <ul>
+        <li><span class="key">自発痛</span>と<span class="key">誘発痛</span>がある</li>
+        <li>自発痛：灼けるような持続痛（灼熱痛）に加えて発作性の刺痛がある</li>
+        <li><span class="highlight">知覚低下</span>（感覚の鈍麻）がみられる一方で、<span class="highlight">感覚過敏</span>も生じる</li>
+        <li><span class="key">アロディニア</span>：非侵害刺激に対して痛みを感じる（触れるだけで痛い）</li>
+      </ul>
+
+      <h3>治療</h3>
+      <p><span class="caution">NSAIDsは十分な効果を示さない</span>ことが多く、抗けいれん薬や抗うつ薬が用いられる。</p>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>分類</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">プレガバリン</span></td>
+          <td>カルシウムチャンネル阻害性抗けいれん薬</td>
+        </tr>
+        <tr>
+          <td>ガバペンチン</td>
+          <td>抗けいれん薬</td>
+        </tr>
+        <tr>
+          <td>バクロフェン</td>
+          <td>GABA作動性抗けいれん薬</td>
+        </tr>
+        <tr>
+          <td>アミトリプチリン</td>
+          <td>三環系抗うつ薬</td>
+        </tr>
+        <tr>
+          <td>メキシレチン</td>
+          <td>リドカイン類似のNaチャンネル阻害薬</td>
+        </tr>
+      </table>
+      <p class="note">痛みの発生に交感神経が関与している場合には、星状神経節ブロック（SGB）が用いられる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">神経障害性疼痛を起こす神経</div>
+        <ul>
+          <li><span class="highlight">三叉神経</span>（感覚神経）と<span class="key">舌咽神経</span>（感覚＋運動神経）が代表的</li>
+          <li>動眼神経・滑車神経・外転神経は<span class="caution">運動神経</span>であり、神経障害性疼痛は起こしにくい</li>
+          <li>副神経も運動神経が主体</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A128</div>
+        <p>神経障害性疼痛を起こす可能性が最も高いのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 動眼神経<br>
+          b 滑車神経<br>
+          c 三叉神経<br>
+          d 外転神経<br>
+          e 副神経
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】神経障害性疼痛は末梢神経（特に感覚神経）の障害によって生じる。選択肢のうち感覚神経を含むのは三叉神経（c）のみ。動眼・滑車・外転神経は眼球運動を支配する運動神経、副神経も運動神経が主体である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C29</div>
+        <p>神経障害性疼痛が生じるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 歯髄炎<br>
+          b 舌痛症<br>
+          c 顎関節症<br>
+          d 舌咽神経痛<br>
+          e 身体表現性障害
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】神経障害性疼痛に分類されるのは舌咽神経痛（d）。歯髄炎（a）は侵害受容性疼痛。顎関節症（c）は侵害受容性疼痛（深部痛）。身体表現性障害（e）は精神疾患による疼痛。舌痛症（b）は近年、神経障害性疼痛の一種と考えられてきているが、<span class="caution">従来の分類では精神疾患による疼痛に含まれる</span>ため、本問では舌咽神経痛が正解となる。</p>
+      </div>
+
+      <!-- 疼痛性疾患の薬物療法まとめ -->
+      <h2>疼痛性疾患と治療薬のまとめ</h2>
+
+      <h3>疾患別の薬物療法</h3>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>第一選択薬</th>
+          <th>分類</th>
+        </tr>
+        <tr>
+          <td><span class="key">三叉神経痛</span></td>
+          <td><span class="highlight">カルバマゼピン</span></td>
+          <td>抗けいれん薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">舌咽神経痛</span></td>
+          <td><span class="highlight">カルバマゼピン</span></td>
+          <td>抗けいれん薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">持続性神経障害性疼痛</span></td>
+          <td><span class="highlight">プレガバリン</span></td>
+          <td>Ca²⁺チャンネル阻害性抗けいれん薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">筋・筋膜痛症候群</span></td>
+          <td>三環系抗うつ薬</td>
+          <td>抗うつ薬</td>
+        </tr>
+        <tr>
+          <td><span class="key">疼痛性障害</span></td>
+          <td>三環系抗うつ薬、SSRI</td>
+          <td>抗うつ薬</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">頻出の誤りパターン</div>
+        <ul>
+          <li>舌痛症にモルヒネ → <span class="caution">×</span>（オピオイドは不適切）</li>
+          <li>三叉神経痛にビタミンA → <span class="caution">×</span>（カルバマゼピンが特効薬）</li>
+          <li>顔面神経麻痺にアセトアミノフェン → <span class="caution">×</span>（ステロイド＋抗ウイルス薬が基本）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A59</div>
+        <p>疾患と治療薬の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌痛症 ーーーーーーー モルヒネ塩酸塩水和物<br>
+          b 三叉神経痛 ーーーーー ビタミンA<br>
+          c 舌咽神経痛 ーーーーー カルバマゼピン<br>
+          d 顔面神経麻痺 ーーーー アセトアミノフェン<br>
+          e 神経障害性疼痛 ーーー プレガバリン
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】舌咽神経痛は反復性発作性神経障害性疼痛であり、カルバマゼピンが特効薬（c：○）。神経障害性疼痛（持続性）にはプレガバリンが第一選択（e：○）。舌痛症にモルヒネは不適切（a：×）。三叉神経痛にビタミンAは無関係（b：×）。顔面神経麻痺の治療はステロイドと抗ウイルス薬であり鎮痛薬ではない（d：×）。</p>
+      </div>
+
+      <!-- 疼痛性障害 -->
+      <h2>疼痛性障害</h2>
+      <p>精神疾患のうち疼痛を症状として表すもので、身体疾患の慢性化に伴う頻度ではなく、精神疾患の1つとして理解されるべきものである。疼痛の程度は日常生活ができないほどではないが、治療を要して複数の医療施設を受診していることが多い。</p>
+
+      <h3>DSM-IV TR 診断基準</h3>
+      <ul>
+        <li>1つまたはそれ以上の解剖学的部位における疼痛が臨床像の中心</li>
+        <li>その疼痛は臨床的に著しい苦痛、または社会的・職業的な機能の障害を引き起こしている</li>
+        <li>心理的要因が疼痛の発症、重症度、悪化、または持続に重要な役割をはたしていること</li>
+      </ul>
+
+      <h3>治療</h3>
+      <ul>
+        <li><span class="key">薬物療法</span>：三環系抗うつ薬、SSRI、漢方薬</li>
+        <li><span class="key">行動療法</span>：薬物療法に自律訓練法を組み合わせると治療効果が向上</li>
+      </ul>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抜歯の偶発症 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>抜歯の偶発症</h1>
+    <div class="container">
+
+      <h2>全身的偶発症</h2>
+
+      <table>
+        <tr><th>偶発症</th><th>原因</th><th>症状</th><th>対応</th></tr>
+        <tr>
+          <td><span class="key">局所麻酔薬中毒</span></td>
+          <td>局所麻酔薬の血管内注入、過量投与、高濃度麻酔薬の使用</td>
+          <td>興奮→不安感→嘔吐→呼吸抑制→徐脈→血圧低下→意識消失</td>
+          <td>吸引操作中止、酸素投与、静脈路確保、抗痙攣薬（ジアゼパム）</td>
+        </tr>
+        <tr>
+          <td><span class="key">アナフィラキシーショック</span></td>
+          <td>麻酔薬・添加物に対するアレルギー反応（エステル型に多い）</td>
+          <td>蕁麻疹、喉頭浮腫、呼吸困難、血圧低下</td>
+          <td><span class="highlight">アドレナリン筋注</span>（0.01mg/kg）、酸素投与、輸液</td>
+        </tr>
+        <tr>
+          <td><span class="key">神経原性ショック</span><br>（脳貧血）</td>
+          <td>不安・恐怖・疼痛→迷走神経反射→末梢血管拡張</td>
+          <td>顔面蒼白、冷汗、四肢の無力感、徐脈、血圧低下</td>
+          <td><span class="highlight">頭低位（Trendelenburg体位）</span>、下肢挙上、衣服を緩める</td>
+        </tr>
+      </table>
+      <p class="note"><span class="highlight">神経原性ショックが最も頻度の高い全身的偶発症</span>である。</p>
+
+      <h2>局所的偶発症</h2>
+
+      <h3>1. 神経損傷 ★★★最頻出</h3>
+      <p>下顎埋伏智歯が下顎管に近接する場合や、舌側骨を操作する際に発生する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">下顎智歯抜歯時に損傷に注意すべき神経</div>
+        <ul>
+          <li><span class="highlight">下歯槽神経</span>：下顎管内を走行。損傷すると同側の<span class="key">下唇・オトガイ部の感覚麻痺</span>、<span class="key">下顎前歯部唇側歯肉の感覚異常</span></li>
+          <li><span class="highlight">舌神経</span>：下顎智歯の舌側を走行。損傷すると同側の<span class="key">舌前2/3の感覚麻痺</span>と<span class="key">味覚障害</span></li>
+        </ul>
+      </div>
+
+      <h3>神経損傷の検査</h3>
+      <table>
+        <tr><th>検査</th><th>内容</th><th>評価対象</th></tr>
+        <tr><td><span class="key">SWテスト</span><br>（Semmes-Weinstein）</td><td>太さの異なるモノフィラメントで触覚閾値を測定</td><td>触覚・圧覚</td></tr>
+        <tr><td><span class="key">濾紙ディスク法</span></td><td>味覚溶液を浸した濾紙を舌に置いて味覚を評価</td><td>味覚</td></tr>
+        <tr><td>二点識別覚検査</td><td>2点の刺激を識別できる最小距離を測定</td><td>触覚の精度</td></tr>
+      </table>
+      <p class="note">知覚異常は数か月〜1年以内に回復する場合が多いが、永続する場合もある。ビタミンB<sub>12</sub>製剤の投与、星状神経節ブロックなどが行われる。</p>
+
+      <h3>損傷される神経と症状の整理</h3>
+      <table>
+        <tr><th>神経</th><th>損傷で生じる症状</th></tr>
+        <tr><td><span class="key">下歯槽神経</span></td><td>下唇・オトガイ部の感覚麻痺、下顎前歯部唇側歯肉の感覚異常、損傷部位からの出血</td></tr>
+        <tr><td><span class="key">舌神経</span></td><td>舌前2/3の感覚麻痺、味覚障害（鼓索神経線維を含むため）</td></tr>
+      </table>
+      <p><span class="caution">舌咽神経・舌下神経・顔面神経下顎縁枝は下顎智歯抜歯では通常損傷しない</span></p>
+
+      <h3>2. 皮下気腫（気腫） ★★</h3>
+      <p><span class="key">エアシリンジ</span>や<span class="key">エアータービン</span>から出る空気が、組織腔内に入ることで発生する。下顎智歯の歯冠分割時に<span class="highlight">エアータービン</span>を使用した際に多い。</p>
+
+      <h3>皮下気腫の特徴</h3>
+      <ul>
+        <li>抜歯中〜直後に<span class="key">顎下部〜頸部のびまん性腫脹</span>が急速に出現</li>
+        <li>触診で<span class="highlight">捻髪音</span>（雪を握るような感触）を触知</li>
+        <li>キュッキュッまたはパチパチという異常音を発する</li>
+        <li>気腫は数日で自然に組織内に吸収されて消退する</li>
+      </ul>
+
+      <h3>皮下気腫への対応</h3>
+      <ul>
+        <li><span class="key">バイタルサインの確認</span>（縦隔への進展の有無を評価）</li>
+        <li><span class="key">抗菌薬投与</span>（口腔内細菌が組織腔内に送り込まれるため感染予防）</li>
+        <li>経過観察（通常は数日で自然消退）</li>
+        <li><span class="caution">頬部圧迫は不要</span>（気腫の治療としては無効）</li>
+      </ul>
+
+      <h3>3. 上顎洞穿孔と歯の迷入</h3>
+      <p><span class="key">上顎臼歯</span>、とくに<span class="highlight">上顎第一大臼歯の口蓋根</span>は上顎洞底に近接しており、抜歯時に穿孔や歯根迷入が起こりうる。</p>
+
+      <h3>上顎洞穿孔</h3>
+      <ul>
+        <li>穿孔が小さい場合（5mm以下）：自然閉鎖が期待できる → 肉芽に置換して閉鎖</li>
+        <li>穿孔が大きい場合：即時閉鎖（<span class="key">頬粘膜弁法</span>による上顎洞瘻孔の閉鎖術）</li>
+        <li>副鼻腔炎の合併：消炎後に閉鎖手術</li>
+      </ul>
+
+      <h3>上顎洞への歯根迷入</h3>
+      <ul>
+        <li>術前にエックス線・CT検査でその位置や深さを確認</li>
+        <li>上顎洞前壁の骨を削除し、洞粘膜も剥離して洞内を直視しながら迷入歯根をピンセットで摘出</li>
+        <li>迷入歯を放置すると組織障害を生じるため、必ず摘出</li>
+      </ul>
+
+      <h3>4. ドライソケット</h3>
+      <ul>
+        <li>抜歯後の術後疼痛は急性骨膜骨髄炎とドライソケット</li>
+        <li>抜歯窩の血餅が崩壊し<span class="caution">骨面が露出</span>した状態</li>
+        <li>抜歯後<span class="highlight">2〜3日後</span>から強い持続痛、悪臭</li>
+        <li>処置：洗浄、抗菌薬含有軟膏ガーゼの填入、鎮痛薬</li>
+      </ul>
+
+      <h3>5. その他の局所的偶発症</h3>
+      <table>
+        <tr><th>偶発症</th><th>内容</th></tr>
+        <tr><td><span class="key">異常出血</span></td><td>炎症性出血、全身的出血性素因。局所止血（圧迫・縫合・止血材填入）で対応</td></tr>
+        <tr><td><span class="key">歯槽骨骨折</span></td><td>抜歯時に高頻度。遊離した破折片は原則的に除去。骨膜と接着している場合は抜歯創を縫合して安静に保つ</td></tr>
+        <tr><td><span class="key">誤抜歯</span></td><td>術者の間違い。隣在歯の歯根膜空間に挺子を挿入してしまう</td></tr>
+        <tr><td><span class="key">口腔軟組織損傷</span></td><td>挺子の滑脱、タービンエンジンで粘膜弁を巻き込むなど</td></tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A120</div>
+        <p>下顎水平埋伏智歯を抜去するときに、損傷に注意すべきなのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 舌神経<br>
+          b 舌咽神経<br>
+          c 舌下神経<br>
+          d 下歯槽神経<br>
+          e 顔面神経下顎縁枝
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】下顎埋伏智歯の抜歯で損傷に注意すべきは、下顎管内を走行する下歯槽神経（d）と、下顎智歯の舌側を走行する舌神経（a）。舌咽神経（b）は咽頭、舌下神経（c）は舌筋の運動神経であり、智歯抜歯では通常損傷しない。顔面神経下顎縁枝（e）は下顎骨下縁の外側を走行し、通常の口腔内からの抜歯では損傷しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111C58</div>
+        <p>下顎左側智歯の抜去を予定している患者のエックス線画像（別冊No.11A）とCT（別冊No.11B）を別に示す。
+矢印で示す構造を損傷すると同側に生じる可能性が高いのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111C58.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a 舌の味覚障害<br>
+          b 下唇の運動障害<br>
+          c 頬粘膜の感覚異常<br>
+          d 損傷部位からの出血<br>
+          e 下顎前歯部唇側歯肉の感覚異常
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】矢印は下顎管（下歯槽神経・動静脈）を示す。下歯槽神経を損傷すると同側の下唇・オトガイ部・下顎前歯部唇側歯肉の感覚異常（e）が生じる。また、下歯槽動脈を損傷すると損傷部位からの出血（d）が起こる。舌の味覚障害（a）は舌神経損傷、下唇の運動障害（b）は顔面神経損傷で生じるもの。頬粘膜の感覚異常（c）は頬神経の支配領域。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B73</div>
+        <p>34歳の女性。舌の知覚麻痺を主訴として来院した。1か月前に他院で下顎左側第三大臼歯を抜去後から自覚し、その後改善しないという。初診時の舌の写真（別冊No.26A）、エックス線画像（別冊No.26B）及び「8の歯科用コーンビームCT（別冊No.26C）を別に示す。
+行うべきなのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114B73.png" alt="別冊No.26">
+        </div>
+        <div class="choices">
+          a SWテスト<br>
+          b Schirmer試験<br>
+          c 濾紙ディスク法<br>
+          d ドプラ超音波検査<br>
+          e ブローイング検査
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】下顎智歯抜歯後の舌の知覚麻痺は舌神経損傷を示唆する。舌神経は感覚と味覚（鼓索神経線維）を伝えるため、触覚の評価にSWテスト（a）、味覚の評価に濾紙ディスク法（c）を行う。Schirmer試験（b）は涙液分泌検査、ドプラ超音波検査（d）は血流検査、ブローイング検査（e）は鼻咽腔閉鎖機能の検査であり、舌の知覚麻痺の評価には不適。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A83</div>
+        <p>23歳の男性。下顎左側水平埋伏智歯の抜去中に、左側顎下部から頸部にかけて疼痛と急激なび漫性の腫脹とを認めた。
+考えられる原因はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 広範囲の粘膜骨膜弁形成<br>
+          b エアータービンによる歯の分割<br>
+          c 抜歯挺子の滑脱<br>
+          d 舌側歯槽骨の骨折<br>
+          e 生理食塩液による強圧洗浄
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】抜歯中の急激なびまん性腫脹は皮下気腫を示す。エアータービンによる歯の分割（b）で発生する圧縮空気が、骨膜下や組織腔内に侵入して気腫を引き起こす。触診で捻髪音を触知する。粘膜骨膜弁形成（a）、挺子の滑脱（c）、舌側骨折（d）、生食洗浄（e）では急激なびまん性腫脹は通常起こらない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A62</div>
+        <p>40歳の女性。左側頬部の腫脹を主訴として来院した。30分前にかかりつけ歯科医で下顎左側埋伏智歯の抜去直後から腫脹が出現したため、紹介された。初診時の顔貌写真（別冊No.18A）、CT（別冊No.18B）及び抜歯前のエックス線画像（別冊No.18C）を別に示す。
+適切な対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A62_1.png" alt="別冊No.18A・B">
+          <img src="../../../images/116回_Web画像/116A62_2.png" alt="別冊No.18C">
+        </div>
+        <div class="choices">
+          a 頬部圧迫<br>
+          b 抗菌薬投与<br>
+          c 抗ヒスタミン薬投与<br>
+          d アドレナリン筋肉注射<br>
+          e バイタルサインの確認
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】抜歯直後の急速な頬部腫脹で、CTで組織内に空気が確認されれば皮下気腫と診断される。対応として、口腔内細菌が組織腔内に送り込まれているため抗菌薬投与（b）で感染予防を行い、縦隔への気腫波及の危険性があるためバイタルサインの確認（e）を行う。頬部圧迫（a）は気腫には無効。抗ヒスタミン薬（c）やアドレナリン筋注（d）はアレルギー反応への対応であり、気腫には不適。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A102</div>
+        <p>30歳の男性。上顎左側智歯周囲炎で抜歯することとした。初診時のエックス線写真（別冊No.13）を別に示す。
+抜歯の際に留意すべき合併症はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105A102.png" alt="別冊No.13">
+        </div>
+        <div class="choices">
+          a 歯の迷入<br>
+          b 上顎洞穿孔<br>
+          c 顔面神経麻痺<br>
+          d 鼻口蓋動脈損傷<br>
+          e 眼窩下神経麻痺
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】上顎智歯は上顎洞底に近接していることが多く、抜歯時に上顎洞穿孔（b）や上顎洞内への歯の迷入（a）のリスクがある。顔面神経麻痺（c）、鼻口蓋動脈損傷（d）、眼窩下神経麻痺（e）は上顎智歯抜歯の偶発症としては考えにくい。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

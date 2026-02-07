@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ココシカ - Logo Concepts</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", sans-serif;
+      background: #F5F5F7;
+      color: #1C1C1E;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    h1 { text-align: center; font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
+    .page-sub { text-align: center; color: rgba(60,60,67,0.72); font-size: 0.875rem; margin-bottom: 48px; }
+
+    .concepts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .concept-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .concept-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 32px;
+      min-height: 220px;
+    }
+    .concept-preview.dark { background: #1C1C1E; }
+    .concept-info {
+      padding: 20px 24px;
+      border-top: 1px solid #E8E8E8;
+    }
+    .concept-info h2 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+    .concept-info p { font-size: 0.8125rem; color: rgba(60,60,67,0.72); line-height: 1.5; }
+
+    /* Comparison section */
+    .comparison {
+      max-width: 1080px;
+      margin: 48px auto 0;
+      text-align: center;
+    }
+    .comparison h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: rgba(60,60,67,0.72);
+    }
+    .comparison-row {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .comp-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .comp-label {
+      font-size: 0.75rem;
+      color: rgba(60,60,67,0.5);
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== Concept A: Red Accent Wordmark ===== */
+    .logo-a .koko {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1C1C1E;
+    }
+    .dark .logo-a .koko { color: #F5F5F7; }
+    .logo-a .shika {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #e52222;
+    }
+
+    /* ===== Concept B: Warm Gradient ===== */
+    .logo-b .koko {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1C1C1E;
+    }
+    .dark .logo-b .koko { color: #F5F5F7; }
+    .logo-b .shika {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FF6B6B, #e52222);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ===== Concept C: Coral Accent ===== */
+    .logo-c .koko {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1C1C1E;
+    }
+    .dark .logo-c .koko { color: #F5F5F7; }
+    .logo-c .shika {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #FF6259;
+    }
+
+    /* ===== Concept D: Full Red Bold ===== */
+    .logo-d {
+      display: flex;
+      align-items: baseline;
+    }
+    .logo-d .all {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #e52222;
+    }
+
+    /* ===== Concept E: Dot Mark + Wordmark ===== */
+    .logo-e {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-e .mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #e52222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-e .mark-inner {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    .logo-e .text {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1C1C1E;
+    }
+    .dark .logo-e .text { color: #F5F5F7; }
+
+    /* ===== Concept F: Tooth-inspired mark ===== */
+    .logo-f {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-f .tooth-mark {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-f .text-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-f .name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1C1C1E;
+      line-height: 1.1;
+    }
+    .dark .logo-f .name { color: #F5F5F7; }
+    .logo-f .name .red { color: #e52222; }
+    .logo-f .desc {
+      font-size: 0.625rem;
+      color: rgba(60,60,67,0.45);
+      letter-spacing: 0.1em;
+      margin-top: 2px;
+    }
+    .dark .logo-f .desc { color: rgba(235,235,245,0.4); }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #000; color: #F5F5F7; }
+      .concept-card { background: #1C1C1E; }
+      .concept-info { border-top-color: #38383A; }
+      .concept-info p { color: rgba(235,235,245,0.6); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ココシカ</h1>
+  <p class="page-sub">Logo Concepts - Minimal Direction (Red Accent)</p>
+
+  <div class="concepts">
+
+    <!-- A: Red Accent (matching class style) -->
+    <div class="concept-card">
+      <div class="concept-preview">
+        <div class="logo-a">
+          <span class="koko">ココ</span><span class="shika">シカ</span>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>A. Red Accent Wordmark</h2>
+        <p>ココシカclassと同じ構成で、アクセントを赤に。姉妹アプリとしての統一感を維持しつつ差別化。</p>
+      </div>
+    </div>
+
+    <!-- A Dark -->
+    <div class="concept-card">
+      <div class="concept-preview dark">
+        <div class="logo-a">
+          <span class="koko">ココ</span><span class="shika">シカ</span>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>A. Red Accent (Dark)</h2>
+        <p>ダークモード。赤がアクセントとして映える。</p>
+      </div>
+    </div>
+
+    <!-- B: Warm Gradient -->
+    <div class="concept-card">
+      <div class="concept-preview">
+        <div class="logo-b">
+          <span class="koko">ココ</span><span class="shika">シカ</span>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>B. Warm Gradient</h2>
+        <p>「シカ」にコーラル→赤のグラデーション。温かみがあり、学生向けアプリとして親しみやすい。</p>
+      </div>
+    </div>
+
+    <!-- B Dark -->
+    <div class="concept-card">
+      <div class="concept-preview dark">
+        <div class="logo-b">
+          <span class="koko">ココ</span><span class="shika">シカ</span>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>B. Warm Gradient (Dark)</h2>
+        <p>ダークモードでもグラデーションがきれいに表示。</p>
+      </div>
+    </div>
+
+    <!-- C: Coral Accent -->
+    <div class="concept-card">
+      <div class="concept-preview">
+        <div class="logo-c">
+          <span class="koko">ココ</span><span class="shika">シカ</span>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>C. Coral Accent</h2>
+        <p>赤よりも柔らかいコーラル（#FF6259）。モダンで軽やかな印象。</p>
+      </div>
+    </div>
+
+    <!-- C Dark -->
+    <div class="concept-card">
+      <div class="concept-preview dark">
+        <div class="logo-c">
+          <span class="koko">ココ</span><span class="shika">シカ</span>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>C. Coral Accent (Dark)</h2>
+        <p>ダークモード。コーラルが柔らかく浮かぶ。</p>
+      </div>
+    </div>
+
+    <!-- D: Full Red -->
+    <div class="concept-card">
+      <div class="concept-preview">
+        <div class="logo-d">
+          <span class="all">ココシカ</span>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>D. Full Red Bold</h2>
+        <p>全文字を赤で統一。強いインパクト。アプリアイコンやスプラッシュスクリーン向き。</p>
+      </div>
+    </div>
+
+    <!-- E: Dot Mark -->
+    <div class="concept-card">
+      <div class="concept-preview">
+        <div class="logo-e">
+          <div class="mark"><div class="mark-inner"></div></div>
+          <span class="text">ココシカ</span>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>E. Dot Mark + Wordmark</h2>
+        <p>赤い角丸スクエアに白い丸。ミニマルなアプリアイコンとしても使える。</p>
+      </div>
+    </div>
+
+    <!-- E Dark -->
+    <div class="concept-card">
+      <div class="concept-preview dark">
+        <div class="logo-e">
+          <div class="mark"><div class="mark-inner"></div></div>
+          <span class="text">ココシカ</span>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>E. Dot Mark (Dark)</h2>
+        <p>ダークモード。マークが際立つ。</p>
+      </div>
+    </div>
+
+    <!-- F: With tagline -->
+    <div class="concept-card">
+      <div class="concept-preview">
+        <div class="logo-f">
+          <div class="tooth-mark">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <rect width="36" height="36" rx="8" fill="#e52222"/>
+              <text x="18" y="24" text-anchor="middle" fill="#fff" font-family="-apple-system, sans-serif" font-size="18" font-weight="700">コ</text>
+            </svg>
+          </div>
+          <div class="text-group">
+            <span class="name">ココ<span class="red">シカ</span></span>
+            <span class="desc">歯科国試対策</span>
+          </div>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>F. Monogram + Tagline</h2>
+        <p>「コ」のモノグラム付き。タグライン「歯科国試対策」で用途を明示。</p>
+      </div>
+    </div>
+
+    <!-- F Dark -->
+    <div class="concept-card">
+      <div class="concept-preview dark">
+        <div class="logo-f">
+          <div class="tooth-mark">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <rect width="36" height="36" rx="8" fill="#e52222"/>
+              <text x="18" y="24" text-anchor="middle" fill="#fff" font-family="-apple-system, sans-serif" font-size="18" font-weight="700">コ</text>
+            </svg>
+          </div>
+          <div class="text-group">
+            <span class="name">ココ<span class="red">シカ</span></span>
+            <span class="desc">歯科国試対策</span>
+          </div>
+        </div>
+      </div>
+      <div class="concept-info">
+        <h2>F. Monogram + Tagline (Dark)</h2>
+        <p>ダークモード。モノグラムの赤が映える。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Family Comparison -->
+  <div class="comparison">
+    <h2>ファミリー比較（Concept A の場合）</h2>
+    <div class="comparison-row">
+      <div class="comp-item">
+        <div class="logo-a">
+          <span class="koko" style="font-size:1.75rem">ココ</span><span class="shika" style="font-size:1.75rem">シカ</span>
+        </div>
+        <span class="comp-label">学生アプリ</span>
+      </div>
+      <div class="comp-item">
+        <div style="display:flex;align-items:baseline;gap:2px;">
+          <span style="font-size:1.75rem;font-weight:700;color:#1C1C1E">ココ</span><span style="font-size:1.75rem;font-weight:700;color:#0A84FF">シカ</span><span style="font-size:1.125rem;font-weight:400;color:rgba(60,60,67,0.5);margin-left:2px">class</span>
+        </div>
+        <span class="comp-label">教員アプリ</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

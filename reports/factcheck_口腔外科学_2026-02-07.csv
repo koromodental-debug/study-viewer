@@ -1,0 +1,6 @@
+ファイル名,検証項目,現在の記述,判定,問題点,正しい情報,情報源,修正提案
+04_炎症・アレルギー性疾患_BRONJ・ARONJ.html,MRONJ病期分類,"Stage 1〜3のみを提示",NG,"AAOMS 2022では『At risk』と『Stage 0』を含む病期体系。1〜3のみだと初期管理の学習が欠落する。","病期はAt risk, Stage 0, Stage 1, Stage 2, Stage 3で整理する。",https://aaoms.org/wp-content/uploads/2024/03/mronj_position_paper.pdf ; https://pubmed.ncbi.nlm.nih.gov/35300956/,表にAt riskとStage 0を追加し各管理方針を追記
+06_口腔粘膜疾患_口腔粘膜疾患.html,白板症の定義表現,"WHO（1978）の定義を主記載",要確認,"歴史的には正しいが、現在はOPMD概念での記載が主流。単独で1978定義のみ強調すると最新概念との対応が弱い。","現行教育では『白板症はOPMDの一つ』を併記し、旧定義は歴史的定義として扱う。",https://www.cancer.gov/publications/dictionaries/cancer-terms/def/oral-potentially-malignant-disorder ; https://www.ncbi.nlm.nih.gov/books/NBK611818/,本文冒頭にOPMD枠組み（現行）を1行追加
+06_口腔粘膜疾患_口腔粘膜疾患.html,OLP悪性転化率,"悪性転化率は約1%",要確認,"概ね妥当だが報告に幅があるため単一点で断定すると誤解余地がある。","『概ね1%前後（報告により幅）』のように幅を明記すると安全。",https://www.ncbi.nlm.nih.gov/books/NBK611818/,「約1%前後（報告差あり）」に修正
+10_腫瘍および類似疾患_上皮性悪性腫瘍：TNM分類.html,UICC2017のT分類（DOI導入）,"DOIを含めたT分類の説明",OK,現行体系と整合,現状維持,https://pubmed.ncbi.nlm.nih.gov/29675646/ ; https://rightdecisions.scot.nhs.uk/scottish-cancer-network-clinical-management-pathways/head-and-neck-cancer/staging/oral-cavity-squamous-cell-cancer-scc-tnm/,変更不要
+05_感染症_ウイルス感染症.html,AIDS診断補助情報,"CD4陽性リンパ球数200/μL未満でAIDS",OK,標準的記載と整合,現状維持,https://www.cdc.gov/hivnexus/hcp/diagnosis-staging/index.html,変更不要

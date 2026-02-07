@@ -37,8 +37,26 @@
           "answer": "一次染色（クリスタルバイオレット）→媒染（ルゴール）→脱色（アルコール）→対比染色（サフラニン）"
         },
         {
-          "question": "[112D37] ★★★\nGram染色で陽性に染める色素は？",
-          "answer": "クリスタルバイオレット\n\n[他の選択肢との違い]\n- ヨウ素: 媒染剤（色素を固定）、染色ではない\n- フクシン: 対比染色（陰性菌を赤く染める）\n- サフラニン: 対比染色（陰性菌を赤く染める）\n- ヘマトキシリン: 組織染色用（グラム染色には使わない）\n- クリスタルバイオレット: 一次染色で陽性菌を青紫色に染める ← 正解\n\n[ポイント]\nグラム陽性を染める＝一次染色＝クリスタルバイオレット。サフラニン・フクシンは陰性菌用。"
+          "question": "Gram染色で陽性に染める色素は？",
+          "answer": "E",
+          "choices": {
+            "a": "ヨウ素",
+            "b": "フクシン",
+            "c": "サフラニン",
+            "d": "ヘマトキシリン",
+            "e": "クリスタルバイオレット"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "112D37",
+          "choiceExplanations": {
+            "a": "媒染剤（色素を固定）、染色ではない",
+            "b": "対比染色（陰性菌を赤く染める）",
+            "c": "対比染色（陰性菌を赤く染める）",
+            "d": "組織染色用（グラム染色には使わない）",
+            "e": "一次染色で陽性菌を青紫色に染める ← 正解"
+          },
+          "point": "グラム陽性を染める＝一次染色＝クリスタルバイオレット。サフラニン・フクシンは陰性菌用。"
         }
       ]
     },
@@ -74,8 +92,26 @@
           "answer": "グラム陽性菌"
         },
         {
-          "question": "[116B74] ★★★\n破傷風菌はグラム陽性か陰性か？",
-          "answer": "グラム陽性（青紫色に染まる）\n\n[他の選択肢との違い]\n- Vibrio cholerae: コレラ菌、グラム陰性\n- Clostridium tetani: 破傷風菌、グラム陽性 ← 正解\n- Helicobacter pylori: ピロリ菌、グラム陰性\n- Staphylococcus aureus: 黄色ブドウ球菌、グラム陽性 ← 正解\n- Haemophilus influenzae: インフルエンザ菌、グラム陰性\n\n[ポイント]\nグラム陽性＝Clostridium属、Staphylococcus属、Streptococcus属。"
+          "question": "破傷風菌はグラム陽性か陰性か？",
+          "answer": "B, D",
+          "choices": {
+            "a": "Vibrio cholerae",
+            "b": "Clostridium tetani",
+            "c": "Helicobacter pylori",
+            "d": "Staphylococcus aureus",
+            "e": "Haemophilus influenzae"
+          },
+          "correctAnswer": "B, D",
+          "numChoices": 2,
+          "code": "116B74",
+          "choiceExplanations": {
+            "a": "コレラ菌、グラム陰性",
+            "b": "破傷風菌、グラム陽性 ← 正解",
+            "c": "ピロリ菌、グラム陰性",
+            "d": "黄色ブドウ球菌、グラム陽性 ← 正解",
+            "e": "インフルエンザ菌、グラム陰性"
+          },
+          "point": "グラム陽性＝Clostridium属、Staphylococcus属、Streptococcus属。"
         }
       ]
     },
@@ -115,11 +151,29 @@
           "answer": "微量液体希釈法"
         },
         {
-          "question": "[114B58] ★★★\n薬剤感受性試験は？",
-          "answer": "MIC法、MBC法、ディスク法、微量液体希釈法\n\n[他の選択肢との違い]\n- MIC法: 最小発育阻止濃度を測定 ← 正解\n- MBC法: 最小殺菌濃度を測定 ← 正解\n- ELISA法: 抗原抗体反応を利用した検出法\n- Ouchterlony法: 沈降反応（免疫拡散法）\n- Western blot法: タンパク質の検出法\n\n[ポイント]\n薬剤感受性試験＝MIC法・MBC法・ディスク法・微量液体希釈法。ELISA・Western blotは免疫学的検査。"
+          "question": "薬剤感受性試験は？",
+          "answer": "A, B",
+          "choices": {
+            "a": "MIC法",
+            "b": "MBC法",
+            "c": "ELISA法",
+            "d": "Ouchterlony法",
+            "e": "Western blot法"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "114B58",
+          "choiceExplanations": {
+            "a": "最小発育阻止濃度を測定 ← 正解",
+            "b": "最小殺菌濃度を測定 ← 正解",
+            "c": "抗原抗体反応を利用した検出法",
+            "d": "沈降反応（免疫拡散法）",
+            "e": "タンパク質の検出法"
+          },
+          "point": "薬剤感受性試験＝MIC法・MBC法・ディスク法・微量液体希釈法。ELISA・Western blotは免疫学的検査。"
         },
         {
-          "question": "[110C82] ★★★\n抗菌薬感受性試験は？",
+          "question": "抗菌薬感受性試験は？",
           "answer": "ディスク法、微量液体希釈法\n\n[ポイント]\n抗菌薬感受性試験＝ディスク法（定性的）・微量液体希釈法（定量的）。"
         }
       ]
@@ -148,8 +202,26 @@
           "answer": "不可能（抗原があれば検出される）"
         },
         {
-          "question": "[106A60] ★★★\n生菌のみを検出できる検査法は？",
-          "answer": "培養法\n\n[他の選択肢との違い]\n- 培養法: 生きた細菌のみが増殖 ← 正解\n- 間接蛍光抗体法: 抗体で菌を検出、死菌も検出\n- トリプシン活性測定法: 酵素活性を測定\n- ELISA法: 抗原を検出、死菌も検出\n- PCR法: DNAを増幅、死菌も検出 ← ひっかけ\n\n[ポイント]\n生菌のみ＝培養法。PCR法は死菌のDNAも増幅するため生死を区別できない。"
+          "question": "生菌のみを検出できる検査法は？",
+          "answer": "A",
+          "choices": {
+            "a": "培養法",
+            "b": "間接蛍光抗体法",
+            "c": "トリプシン活性測定法",
+            "d": "ELISA法",
+            "e": "PCR法"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "106A60",
+          "choiceExplanations": {
+            "a": "生きた細菌のみが増殖 ← 正解",
+            "b": "抗体で菌を検出、死菌も検出",
+            "c": "酵素活性を測定",
+            "d": "抗原を検出、死菌も検出",
+            "e": "DNAを増幅、死菌も検出 ← ひっかけ"
+          },
+          "point": "生菌のみ＝培養法。PCR法は死菌のDNAも増幅するため生死を区別できない。"
         }
       ]
     },
@@ -181,8 +253,26 @@
           "answer": "スピロヘータ（梅毒トレポネーマなど）"
         },
         {
-          "question": "[109A67] ★★★\n黄色ブドウ球菌の検査法は？",
-          "answer": "コアグラーゼ試験\n\n[他の選択肢との違い]\n- 抗酸菌 — Giemsa染色: × 抗酸菌はZiehl-Neelsen染色\n- チフス菌 — Weil-Felix反応: × Weil-Felix反応はリケッチア\n- ジフテリア菌 — ASO試験: × ASO試験はA群レンサ球菌\n- 黄色ブドウ球菌 — コアグラーゼ試験: ○ 血漿凝固能を検出 ← 正解\n- 梅毒トレポネーマ — Ziehl-Neelsen染色: × 梅毒はSTS・TPHA法\n\n[ポイント]\n黄色ブドウ球菌＝コアグラーゼ陽性。抗酸菌＝Ziehl-Neelsen染色。リケッチア＝Weil-Felix反応。"
+          "question": "黄色ブドウ球菌の検査法は？",
+          "answer": "D",
+          "choices": {
+            "a": "抗酸菌 — Giemsa染色",
+            "b": "チフス菌 — Weil-Felix反応",
+            "c": "ジフテリア菌 — ASO試験",
+            "d": "黄色ブドウ球菌 — コアグラーゼ試験",
+            "e": "梅毒トレポネーマ — Ziehl-Neelsen染色"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "109A67",
+          "choiceExplanations": {
+            "a": "抗酸菌はZiehl-Neelsen染色",
+            "b": "Weil-Felix反応はリケッチア",
+            "c": "ASO試験はA群レンサ球菌",
+            "d": "血漿凝固能を検出 ← 正解",
+            "e": "梅毒はSTS・TPHA法"
+          },
+          "point": "黄色ブドウ球菌＝コアグラーゼ陽性。抗酸菌＝Ziehl-Neelsen染色。リケッチア＝Weil-Felix反応。"
         }
       ]
     }

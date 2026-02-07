@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "title": "精神・神経疾患：認知症",
+    "category": "口腔外科学",
+    "chapter": "全身疾患"
+  },
+  "sections": [
+    {
+      "section": "中核症状とBPSD",
+      "qa": [
+        {
+          "question": "認知症の症状は大きく2つに分類されるが、それは何か？",
+          "answer": "中核症状とBPSD（行動・心理症状）"
+        },
+        {
+          "question": "中核症状（認知機能障害）を6つ挙げよ。",
+          "answer": "記憶障害、見当識障害、失行、失認、失語、実行機能障害"
+        },
+        {
+          "question": "記憶障害とはどのような症状か？",
+          "answer": "もの忘れ（認知症の最も基本的な症状）"
+        },
+        {
+          "question": "見当識障害とはどのような症状か？",
+          "answer": "時間・場所・人の認識ができない"
+        },
+        {
+          "question": "失行とはどのような症状か？",
+          "answer": "運動機能は保たれているのに巧みな動作ができない"
+        },
+        {
+          "question": "失認とはどのような症状か？",
+          "answer": "感覚は正常なのに対象を認識できない"
+        },
+        {
+          "question": "実行機能障害とはどのような症状か？",
+          "answer": "計画・段取りが立てられない"
+        },
+        {
+          "question": "BPSDの心理症状を5つ挙げよ。",
+          "answer": "妄想（物盗られ妄想など）、幻覚、焦燥、不安、うつ"
+        },
+        {
+          "question": "BPSDの行動症状を5つ挙げよ。",
+          "answer": "徘徊、異食、不潔行為、暴力・暴言、せん妄"
+        }
+      ]
+    },
+    {
+      "section": "中核症状 vs BPSDの見分け方",
+      "qa": [
+        {
+          "question": "中核症状の本質は何か？",
+          "answer": "認知機能の障害"
+        },
+        {
+          "question": "BPSDの本質は何か？",
+          "answer": "行動・心理の症状"
+        },
+        {
+          "question": "中核症状の出現パターンは？",
+          "answer": "全ての患者に出現する"
+        },
+        {
+          "question": "BPSDの出現パターンは？",
+          "answer": "患者により異なる"
+        },
+        {
+          "question": "中核症状の原因は？",
+          "answer": "脳の器質的変化に直結"
+        },
+        {
+          "question": "BPSDの原因は？",
+          "answer": "中核症状＋環境・心理要因"
+        },
+        {
+          "question": "認知症の行動・心理症状〈BPSD〉はどれか。3つ選べ。",
+          "answer": "正解: B,C,D",
+          "choices": {
+            "a": "失行",
+            "b": "焦燥",
+            "c": "徘徊",
+            "d": "せん妄",
+            "e": "記憶障害"
+          },
+          "correctAnswer": "B,C,D",
+          "numChoices": 3,
+          "code": "114D79"
+        },
+        {
+          "question": "85歳の男性。家族に義歯を隠されたと訴えて来院した。家族によるとその事実はないという。この症状と同じカテゴリーに分類される認知症の症状はどれか。2つ選べ。",
+          "answer": "正解: A,C",
+          "choices": {
+            "a": "異食",
+            "b": "失認",
+            "c": "不潔行為",
+            "d": "見当識障害",
+            "e": "実行機能障害"
+          },
+          "correctAnswer": "A,C",
+          "numChoices": 2,
+          "code": "111B47"
+        },
+        {
+          "question": "運動を実行する身体機能が保たれているにもかかわらず、熟練した運動行為を遂行することができない神経学的障害はどれか。1つ選べ。",
+          "answer": "正解: A",
+          "choices": {
+            "a": "失行",
+            "b": "失認",
+            "c": "無動",
+            "d": "運動失調症",
+            "e": "協調運動障害"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "112B55"
+        }
+      ]
+    },
+    {
+      "section": "認知症の種類と鑑別",
+      "qa": [
+        {
+          "question": "認知症で最も多い種類は何か？",
+          "answer": "Alzheimer型認知症（60-70%）"
+        },
+        {
+          "question": "Alzheimer型認知症の特徴は？",
+          "answer": "記憶障害から始まる。海馬の萎縮。緩徐に進行"
+        },
+        {
+          "question": "脳血管性認知症の原因は？",
+          "answer": "脳梗塞・脳出血が原因"
+        },
+        {
+          "question": "脳血管性認知症の進行パターンは？",
+          "answer": "段階的に悪化。まだら認知症"
+        },
+        {
+          "question": "Lewy小体型認知症の4つの特徴は？",
+          "answer": "幻視、パーキンソン症状、認知機能の変動、REM睡眠行動障害"
+        },
+        {
+          "question": "前頭側頭型認知症の特徴は？",
+          "answer": "性格変化、行動異常（自己中心的・短絡的）、意欲低下、常同行動。比較的若年発症"
+        },
+        {
+          "question": "意欲低下や無関心といった性格変化や、自己中心的で短絡的な行動異常を特徴とするのはどれか。1つ選べ。",
+          "answer": "正解: D",
+          "choices": {
+            "a": "Parkinson病",
+            "b": "Alzheimer病",
+            "c": "脳血管性認知症",
+            "d": "前頭側頭型認知症",
+            "e": "Lewy小体型認知症"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "115C43"
+        }
+      ]
+    },
+    {
+      "section": "Alzheimer病の病期分類：FAST",
+      "qa": [
+        {
+          "question": "FASTとは何か？",
+          "answer": "Functional Assessment Staging。Alzheimer病の病期を日常生活動作（ADL）の障害度で分類するスケール"
+        },
+        {
+          "question": "FASTのStage 1〜3はどのような段階か？",
+          "answer": "Stage 1＝正常、Stage 2＝年齢相応のもの忘れ、Stage 3＝境界状態（仕事に支障）"
+        },
+        {
+          "question": "FASTのStage 4はどのような段階か？",
+          "answer": "軽度（金銭管理など困難）"
+        },
+        {
+          "question": "FASTのStage 5はどのような段階か？",
+          "answer": "中等度（着衣の介助が必要）"
+        },
+        {
+          "question": "FASTのStage 6はどのような段階か？",
+          "answer": "やや高度（入浴・排泄に介助）"
+        },
+        {
+          "question": "FASTのStage 7はどのような段階か？",
+          "answer": "高度（言語機能喪失、歩行不能）"
+        }
+      ]
+    },
+    {
+      "section": "紛らわしい評価スケールとの区別",
+      "qa": [
+        {
+          "question": "FASTは何の評価に使われるか？",
+          "answer": "Alzheimer病の病期分類"
+        },
+        {
+          "question": "CGAは何の評価に使われるか？",
+          "answer": "高齢者総合機能評価（Comprehensive Geriatric Assessment）"
+        },
+        {
+          "question": "FIMは何の評価に使われるか？",
+          "answer": "ADLの自立度評価（Functional Independence Measure）"
+        },
+        {
+          "question": "GDSは何の評価に使われるか？",
+          "answer": "高齢者のうつ評価（Geriatric Depression Scale）"
+        },
+        {
+          "question": "SGAは何の評価に使われるか？",
+          "answer": "栄養状態の評価（Subjective Global Assessment）"
+        },
+        {
+          "question": "Alzheimer病の病期分類はどれか。1つ選べ。",
+          "answer": "正解: B",
+          "choices": {
+            "a": "CGA",
+            "b": "FAST",
+            "c": "FIM",
+            "d": "GDS",
+            "e": "SGA"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "112D42"
+        }
+      ]
+    },
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "初期のAlzheimer型認知症で障害が生じやすい感覚は？（採点除外問題）",
+          "answer": "嗅覚。嗅内皮質は海馬の近傍に位置し、早期から障害を受けやすい。ただし本問は採点除外となった",
+          "code": "113A33"
+        }
+      ]
+    },
+    {
+      "section": "表穴埋め",
+      "qa": [
+        {
+          "type": "table-occlusion",
+          "title": "中核症状 vs BPSD",
+          "table": {
+            "headers": ["", "中核症状", "BPSD"],
+            "rows": [
+              ["本質", "認知機能の障害", "行動・心理の症状"],
+              ["出現", "全ての患者に出現", "患者により異なる"],
+              ["原因", "脳の器質的変化に直結", "中核症状＋環境・心理要因"],
+              ["具体例", "記憶障害、失行、失認、失語、見当識障害、実行機能障害", "妄想、徘徊、焦燥、せん妄、異食、不潔行為"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 0, "col": 2},
+            {"row": 1, "col": 1},
+            {"row": 1, "col": 2},
+            {"row": 2, "col": 1},
+            {"row": 2, "col": 2},
+            {"row": 3, "col": 1},
+            {"row": 3, "col": 2}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "認知症の種類と鑑別",
+          "table": {
+            "headers": ["種類", "特徴"],
+            "rows": [
+              ["Alzheimer型", "最多（60-70%）。記憶障害から始まる。海馬の萎縮。緩徐に進行"],
+              ["脳血管性", "脳梗塞・脳出血が原因。段階的に悪化。まだら認知症"],
+              ["Lewy小体型", "幻視、パーキンソン症状、認知機能の変動、REM睡眠行動障害"],
+              ["前頭側頭型", "性格変化、行動異常（自己中心的・短絡的）、意欲低下、常同行動。比較的若年発症"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1},
+            {"row": 3, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "FASTの病期分類",
+          "table": {
+            "headers": ["Stage", "臨床的特徴"],
+            "rows": [
+              ["1", "正常"],
+              ["2", "年齢相応のもの忘れ"],
+              ["3", "境界状態（仕事に支障）"],
+              ["4", "軽度（金銭管理など困難）"],
+              ["5", "中等度（着衣の介助が必要）"],
+              ["6", "やや高度（入浴・排泄に介助）"],
+              ["7", "高度（言語機能喪失、歩行不能）"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1},
+            {"row": 3, "col": 1},
+            {"row": 4, "col": 1},
+            {"row": 5, "col": 1},
+            {"row": 6, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "紛らわしい評価スケール",
+          "table": {
+            "headers": ["略称", "正式名称", "用途"],
+            "rows": [
+              ["FAST", "Functional Assessment Staging", "Alzheimer病の病期分類"],
+              ["CGA", "Comprehensive Geriatric Assessment", "高齢者総合機能評価"],
+              ["FIM", "Functional Independence Measure", "ADLの自立度評価"],
+              ["GDS", "Geriatric Depression Scale", "高齢者のうつ評価"],
+              ["SGA", "Subjective Global Assessment", "栄養状態の評価"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 0, "col": 2},
+            {"row": 1, "col": 1},
+            {"row": 1, "col": 2},
+            {"row": 2, "col": 1},
+            {"row": 2, "col": 2},
+            {"row": 3, "col": 1},
+            {"row": 3, "col": 2},
+            {"row": 4, "col": 1},
+            {"row": 4, "col": 2}
+          ]
+        }
+      ]
+    }
+  ]
+}

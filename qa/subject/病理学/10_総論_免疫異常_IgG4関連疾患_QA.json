@@ -93,20 +93,92 @@
           "answer": "IgG4関連疾患"
         },
         {
-          "question": "[111B29] ★★★\nIgG4関連疾患に該当するのは？",
-          "answer": "Mikulicz病\n\n[他の選択肢との違い]\n- 粘液嚢胞：導管閉塞による嚢胞\n- Mikulicz病：IgG4関連疾患 ← 正解\n- Sjögren症候群：自己免疫疾患（抗SS-A/B抗体陽性）\n- アミロイドーシス：アミロイド沈着\n- 壊死性唾液腺化生：腺組織の壊死・化生\n\n[ポイント]\nMikulicz病 = IgG4関連疾患、Sjögren症候群 = 自己免疫疾患"
+          "question": "IgG4関連疾患に該当するのは？",
+          "answer": "B",
+          "choices": {
+            "a": "粘液嚢胞",
+            "b": "Mikulicz病",
+            "c": "Sjögren症候群",
+            "d": "アミロイドーシス",
+            "e": "壊死性唾液腺化生"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "111B29",
+          "point": "Mikulicz病 = IgG4関連疾患、Sjögren症候群 = 自己免疫疾患",
+          "choiceExplanations": {
+            "a": "導管閉塞による嚢胞",
+            "b": "IgG4関連疾患 ← 正解",
+            "c": "自己免疫疾患（抗SS-A/B抗体陽性）",
+            "d": "アミロイド沈着",
+            "e": "腺組織の壊死・化生"
+          }
         },
         {
-          "question": "[118D14] ★★★\n顎下腺が硬く腫大する疾患は？",
-          "answer": "Küttner腫瘍\n\n[他の選択肢との違い]\n- Frey症候群：味覚性発汗（耳下腺術後）\n- Küttner腫瘍：IgG4関連顎下腺炎、線維化で硬い ← 正解\n- Warthin腫瘍：耳下腺良性腫瘍\n- Sjögren症候群：弾性軟、反復性腫脹\n- Heerfordt症候群：サルコイドーシスの一型\n\n[ポイント]\n顎下腺が硬く腫大 = Küttner腫瘍（線維組織増生）"
+          "question": "顎下腺が硬く腫大する疾患は？",
+          "answer": "B",
+          "choices": {
+            "a": "Frey症候群",
+            "b": "Küttner腫瘍",
+            "c": "Warthin腫瘍",
+            "d": "Sjögren症候群",
+            "e": "Heerfordt症候群"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "118D14",
+          "point": "顎下腺が硬く腫大 = Küttner腫瘍（線維組織増生）",
+          "choiceExplanations": {
+            "a": "味覚性発汗（耳下腺術後）",
+            "b": "IgG4関連顎下腺炎、線維化で硬い ← 正解",
+            "c": "耳下腺良性腫瘍",
+            "d": "弾性軟、反復性腫脹",
+            "e": "サルコイドーシスの一型"
+          }
         },
         {
-          "question": "[115A6] ★★★\nMikulicz病の唾液腺の特徴的病理所見は？",
-          "answer": "形質細胞浸潤（IgG4陽性）\n\n[他の選択肢との違い]\n- 壊死：特徴的でない\n- 脂肪化：特徴的でない\n- 石灰化：特徴的でない\n- 膿瘍形成：感染時の所見\n- 形質細胞浸潤：IgG4関連疾患の特徴 ← 正解\n\n[ポイント]\nIgG4関連疾患の病理 = IgG4陽性形質細胞浸潤 + 線維化"
+          "question": "Mikulicz病の唾液腺の特徴的病理所見は？",
+          "answer": "E",
+          "choices": {
+            "a": "壊死",
+            "b": "脂肪化",
+            "c": "石灰化",
+            "d": "膿瘍形成",
+            "e": "形質細胞浸潤"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "115A6",
+          "point": "IgG4関連疾患の病理 = IgG4陽性形質細胞浸潤 + 線維化",
+          "choiceExplanations": {
+            "a": "特徴的でない",
+            "b": "特徴的でない",
+            "c": "特徴的でない",
+            "d": "感染時の所見",
+            "e": "IgG4関連疾患の特徴 ← 正解"
+          }
         },
         {
-          "question": "[103A54] ★★\nKüttner腫瘍でみられる所見は？",
-          "answer": "線維組織の増生\n\n[他の選択肢との違い]\n- 腺房の増生：腫瘍性の所見\n- 肉芽腫の形成：肉芽腫性炎の所見\n- 好中球の浸潤：急性炎症の所見\n- 線維組織の増生：Küttner腫瘍の特徴 ← 正解\n- 核内封入体の出現：ウイルス感染の所見\n\n[ポイント]\nKüttner腫瘍 = 線維組織増生 → 顎下腺が硬く腫大\n[関連質問]\n- Mikulicz病とSjögren症候群の鑑別点は？ → 自己抗体（SS-A/B）、男女比、ステロイド反応性"
+          "question": "Küttner腫瘍でみられる所見は？",
+          "answer": "D",
+          "choices": {
+            "a": "腺房の増生",
+            "b": "肉芽腫の形成",
+            "c": "好中球の浸潤",
+            "d": "線維組織の増生",
+            "e": "核内封入体の出現"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "103A54",
+          "point": "Küttner腫瘍 = 線維組織増生 → 顎下腺が硬く腫大\n[関連質問]\n- Mikulicz病とSjögren症候群の鑑別点は？ → 自己抗体（SS-A/B）、男女比、ステロイド反応性",
+          "choiceExplanations": {
+            "a": "腫瘍性の所見",
+            "b": "肉芽腫性炎の所見",
+            "c": "急性炎症の所見",
+            "d": "Küttner腫瘍の特徴 ← 正解",
+            "e": "ウイルス感染の所見"
+          }
         }
       ]
     }

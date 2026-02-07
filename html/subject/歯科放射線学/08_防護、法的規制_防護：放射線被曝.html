@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>防護：放射線被曝 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 防護、法的規制</span>
+    <h1>防護：放射線被曝</h1>
+    <div class="container">
+
+      <!-- 1. 被曝の3分類 -->
+      <h2>放射線被曝の3つのカテゴリー</h2>
+      <p>ICRPは放射線被曝を以下の3つに分類している。</p>
+
+      <table>
+        <tr><th>カテゴリー</th><th>定義</th><th>対象者の例</th></tr>
+        <tr><td><span class="key">職業被曝</span></td><td>職業上の業務により受ける放射線被曝</td><td>歯科医師、歯科衛生士、看護師、診療放射線技師</td></tr>
+        <tr><td><span class="key">医療被曝</span></td><td>診断や治療に伴う患者の放射線被曝</td><td>治療中の患者、検診受診者、医学研究のボランティア</td></tr>
+        <tr><td><span class="key">公衆被曝</span></td><td>職業被曝にも医療被曝にも属さないすべての被曝</td><td>一般住民、患児を固定する母親</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">被曝カテゴリーの判別ポイント（104A124の核心）</div>
+        <ul>
+          <li><span class="key">診療時の歯科医師・歯科衛生士</span> → 職業被曝（線量限度あり）</li>
+          <li><span class="key">治療中の患者</span> → 医療被曝（<span class="caution">線量限度なし</span>）</li>
+          <li><span class="key">研究のための被験者</span> → 医療被曝（<span class="caution">線量限度なし</span>）</li>
+          <li><span class="key">患児を固定する母親</span> → 公衆被曝（線量限度あり）</li>
+        </ul>
+      </div>
+
+      <!-- 2. ICRP -->
+      <h2>ICRP（国際放射線防護委員会）</h2>
+      <p><span class="key">ICRP</span>（International Commission on Radiological Protection）は、放射線防護に関する勧告を行う民間の国際学術組織。</p>
+
+      <h3>ICRPの放射線防護の目標</h3>
+      <ul>
+        <li>便益をもたらす放射線の利用を不当に制限しないこと</li>
+        <li>便益をもたらす放射線の利用の際には安全を確保すること</li>
+        <li><span class="key">確定的影響</span>の発生を<span class="key">防止</span>すること</li>
+        <li><span class="key">確率的影響</span>の発生を<span class="key">減少</span>すること</li>
+      </ul>
+
+      <!-- 3. 防護の3原則 -->
+      <h2>放射線防護の3原則</h2>
+
+      <h3>1. 行為の正当化</h3>
+      <p>放射線被曝を伴う行為がもたらす<span class="key">便益</span>が、放射線被曝による<span class="key">害</span>を上回る場合にのみ、放射線を用いる行為は正当化される。</p>
+
+      <h3>2. 防護の最適化（ALARAの原則）</h3>
+      <p>行為が正当化されれば、さまざまな要因を考慮し、合理的に達成できる限り低くする最適な手段をとる。</p>
+      <p><span class="highlight">ALARA</span> = As Low As Reasonably Achievable（合理的に達成できる限り低く）</p>
+
+      <h3>3. 線量限度の適用</h3>
+      <ul>
+        <li><span class="key">職業被曝</span>と<span class="key">公衆被曝</span>それぞれに、個人の線量限度が決められている</li>
+        <li><span class="caution">医療被曝には線量限度は適用されない</span></li>
+      </ul>
+
+      <!-- 4. 線量限度 -->
+      <h2>線量限度</h2>
+
+      <h3>作業者および一般公衆の線量限度</h3>
+      <table>
+        <tr><th>限度のタイプ</th><th>職業被曝</th><th>公衆被曝</th></tr>
+        <tr><td><span class="highlight">実効線量</span></td><td>5年平均で年<span class="highlight">20 mSv</span></td><td>1年につき<span class="highlight">1 mSv</span></td></tr>
+        <tr><td>水晶体等価線量</td><td>50 mSv/年</td><td>15 mSv/年</td></tr>
+        <tr><td>皮膚等価線量</td><td>500 mSv/年</td><td>50 mSv/年</td></tr>
+        <tr><td>手・足の等価線量</td><td>500 mSv/年</td><td>―</td></tr>
+      </table>
+      <p class="note">※水晶体等価線量は2007年まで150 mSvだったが、ICRP 103（2007年）により50 mSvに改定。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">線量限度の設定対象（109C36の核心）</div>
+        <ul>
+          <li>線量限度が設定されているのは<span class="highlight">等価線量</span>と<span class="highlight">実効線量</span></li>
+          <li>照射線量、吸収線量、耐容線量には線量限度は設定されていない</li>
+        </ul>
+      </div>
+
+      <!-- 5. 公衆被曝の線量限度が低い理由 -->
+      <h2>公衆被曝の線量限度が低い理由</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">102A110の核心</div>
+        <ul>
+          <li><span class="highlight">妊婦や子どもが含まれる</span>（放射線感受性が高い集団）</li>
+          <li><span class="highlight">被曝によって利益を受けない</span>（職業被曝は業務上の利益がある）</li>
+          <li><span class="highlight">個人の被曝が管理されていない</span>（個人線量計の装着なし）</li>
+          <li>被曝以外に自分自身の職業の恩恵がない</li>
+          <li>被曝期間が長い（生涯にわたる可能性）</li>
+          <li>選択の自由がない</li>
+        </ul>
+      </div>
+
+      <!-- 6. 医療被曝の特徴 -->
+      <h2>医療被曝の特徴</h2>
+      <ul>
+        <li><span class="caution">線量限度は適用されない</span></li>
+        <li>放射線診療の必要性は医師や歯科医師の<span class="key">臨床判断</span>に委ねられる</li>
+        <li><span class="key">正当化</span>と<span class="key">最適化</span>のみが適用される</li>
+      </ul>
+
+      <h3>医療被曝に線量限度がない理由</h3>
+      <p>正当化と最適化のみで十分とされる。患者の利益は被曝を伴う損害に比して大きいと見込まれるため、必要な医療行為を線量によって制限すべきではない。</p>
+
+      <h3>診断参考レベル（DRL）</h3>
+      <p>医療被曝には線量限度はないが、放射線防護の最適化が行われているかをチェックする必要がある。各診療施設におけるエックス線撮影が適切に施行されているかを確認するための量を<span class="key">診断参考レベル</span>（diagnostic reference level：DRL）という。</p>
+
+      <!-- 7. 放射線診療従事者の管理 -->
+      <h2>放射線診療従事者の防護と管理</h2>
+
+      <h3>放射線診療従事者</h3>
+      <p>管理区域に立ち入る者をさす。医師、歯科医師、診療放射線技師、看護師、歯科衛生士が含まれる。</p>
+
+      <h3>環境の管理</h3>
+      <ul>
+        <li><span class="key">エックス線診療室</span>：画壁の外側において<span class="highlight">1 mSv/週</span>以下と規制</li>
+        <li><span class="key">放射線管理区域</span>：実効線量が<span class="highlight">1.3 mSv/3か月</span>を超えるおそれのある場所</li>
+      </ul>
+
+      <h3>個人の管理</h3>
+      <ul>
+        <li>ガラスバッジやルミネスバッジなどの個人線量計を装着</li>
+        <li>装着部位：男性は<span class="key">胸部</span>、女性は<span class="key">腹部</span></li>
+        <li>管理区域に立ち入る前、その後<span class="key">1年を超えない期間</span>ごとに健康診断</li>
+        <li>測定記録は<span class="key">5年間</span>保存</li>
+      </ul>
+
+      <h3>健康診断の内容</h3>
+      <ul>
+        <li>問診：被曝歴の有無</li>
+        <li>検診：皮膚と眼の観察</li>
+        <li>検査項目：血色素量、ヘマトクリット値、赤血球数、白血球数、白血球百分率</li>
+      </ul>
+
+      <!-- 8. 被曝線量の実際 -->
+      <h2>年間被曝線量の目安</h2>
+      <p>個人が1年間で被曝する平均線量（日本）：</p>
+      <ul>
+        <li>自然放射線による被曝：<span class="key">2.4 mSv</span></li>
+        <li>医療被曝：0.62 mSv</li>
+        <li>歯科医療被曝：0.002 mSv</li>
+      </ul>
+      <p class="note">※自然放射線被曝が全体の約80%を占める。近年は医療被曝の割合が増加傾向。</p>
+
+      <!-- 9. 過去問 -->
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A110</div>
+        <p>公衆被曝の線量限度が職業被曝よりも低い理由はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 妊婦や小児が含まれる。<br>
+          b 被曝から利益を受けない。<br>
+          c 職業被曝を受ける人が多い。<br>
+          d 医療被曝を受ける人が多い。<br>
+          e 個人の被曝が管理されていない。
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】公衆被曝の線量限度が職業被曝より低く設定されている理由を問う問題。公衆には<span class="key">妊婦や小児</span>（感受性が高い）が含まれる（a）、公衆は被曝から<span class="key">利益を受けない</span>（b）、公衆は<span class="key">個人管理されていない</span>（e）が正解。c「職業被曝を受ける人が多い」やd「医療被曝を受ける人が多い」は線量限度の違いの理由にはならない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A124</div>
+        <p>エックス線画像検査による被曝で線量限度が定められているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 治療中の患者<br>
+          b 診療時の歯科医師<br>
+          c 研究のための被験者<br>
+          d 患児を固定する母親<br>
+          e 診療補助時の歯科衛生士
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】線量限度が適用される被曝カテゴリーを問う問題。<span class="key">診療時の歯科医師</span>（b）と<span class="key">診療補助時の歯科衛生士</span>（e）は職業被曝であり線量限度が適用される。治療中の患者（a）と研究のための被験者（c）は医療被曝であり<span class="caution">線量限度は適用されない</span>。患児を固定する母親（d）は公衆被曝に分類されるが、この問題では「エックス線画像検査による被曝で線量限度が定められている」のは業務として継続的に被曝する職業被曝者が該当する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C36</div>
+        <p>国際放射線防護委員会の勧告で公衆の線量限度が設定されているのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 照射線量<br>
+          b 耐容線量<br>
+          c 吸収線量<br>
+          d 等価線量<br>
+          e 実効線量
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】ICRPの勧告で線量限度が設定されている線量の種類を問う問題。線量限度は<span class="key">等価線量</span>（水晶体、皮膚、手足など臓器・組織ごと）と<span class="key">実効線量</span>（全身の被曝を評価）に設定されている。照射線量（a）は空気中の電離量を表す古い単位、耐容線量（b）はICRP初期の概念で現在は使われない、吸収線量（c）は物質が吸収したエネルギー量で放射線防護の線量限度としては用いられない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

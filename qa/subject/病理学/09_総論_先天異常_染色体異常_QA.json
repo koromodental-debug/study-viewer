@@ -105,20 +105,92 @@
           "answer": "高身長、女性化乳房"
         },
         {
-          "question": "[113B38] ★★★\n高齢出産により発生頻度が増加する疾患は？",
-          "answer": "Down症候群\n\n[他の選択肢との違い]\n- Down症候群：高齢出産で増加 ← 正解\n- Apert症候群：頭蓋骨早期癒合症（父親の高齢と関連）\n- Crouzon症候群：頭蓋骨早期癒合症\n- 鎖骨頭蓋骨異形成症：常染色体優性\n- Treacher Collins症候群：常染色体優性\n\n[ポイント]\nDown症候群 = 高齢出産（母体年齢35歳以上でリスク増加）"
+          "question": "高齢出産により発生頻度が増加する疾患は？",
+          "answer": "A",
+          "choices": {
+            "a": "Down症候群",
+            "b": "Apert症候群",
+            "c": "Crouzon症候群",
+            "d": "鎖骨頭蓋骨異形成症",
+            "e": "Treacher Collins症候群"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "113B38",
+          "point": "Down症候群 = 高齢出産（母体年齢35歳以上でリスク増加）",
+          "choiceExplanations": {
+            "a": "高齢出産で増加 ← 正解",
+            "b": "頭蓋骨早期癒合症（父親の高齢と関連）",
+            "c": "頭蓋骨早期癒合症",
+            "d": "常染色体優性",
+            "e": "常染色体優性"
+          }
         },
         {
-          "question": "[116C60] ★★★\nTurner症候群の特徴は？",
-          "answer": "小顎症、先天性心疾患、第二次性徴の発現不全\n\n[他の選択肢との違い]\n- 高身長：低身長が正しい ← ひっかけ\n- 小顎症：Turner症候群の口腔所見 ← 正解\n- 知的障害：通常なし ← ひっかけ\n- 先天性心疾患：大動脈縮窄症など ← 正解\n- 第二次性徴の発現不全：性腺機能低下 ← 正解\n\n[ポイント]\nTurner症候群 = 低身長 + 知的障害なし + 第二次性徴不全"
+          "question": "Turner症候群の特徴は？",
+          "answer": "B, D, E",
+          "choices": {
+            "a": "高身長",
+            "b": "小顎症",
+            "c": "知的障害",
+            "d": "先天性心疾患",
+            "e": "第二次性徴の発現不全"
+          },
+          "correctAnswer": "B, D, E",
+          "numChoices": 3,
+          "code": "116C60",
+          "point": "Turner症候群 = 低身長 + 知的障害なし + 第二次性徴不全",
+          "choiceExplanations": {
+            "a": "低身長が正しい ← ひっかけ",
+            "b": "Turner症候群の口腔所見 ← 正解",
+            "c": "通常なし ← ひっかけ",
+            "d": "大動脈縮窄症など ← 正解",
+            "e": "性腺機能低下 ← 正解"
+          }
         },
         {
-          "question": "[117B76] ★★\n高口蓋を呈する疾患は？",
-          "answer": "Down症候群、Turner症候群、Crouzon症候群\n\n[他の選択肢との違い]\n- Down症候群：高口蓋、巨舌 ← 正解\n- Turner症候群：高口蓋、小顎症 ← 正解\n- Crouzon症候群：高口蓋、眼球突出 ← 正解\n- Klinefelter症候群：高口蓋は特徴的でない\n- Papillon-Lefevre症候群：掌蹠角化症、歯周炎\n\n[ポイント]\n高口蓋 = Down症候群、Turner症候群、Crouzon症候群"
+          "question": "高口蓋を呈する疾患は？",
+          "answer": "A, B, C",
+          "choices": {
+            "a": "Down症候群",
+            "b": "Turner症候群",
+            "c": "Crouzon症候群",
+            "d": "Klinefelter症候群",
+            "e": "Papillon-Lefevre症候群"
+          },
+          "correctAnswer": "A, B, C",
+          "numChoices": 3,
+          "code": "117B76",
+          "point": "高口蓋 = Down症候群、Turner症候群、Crouzon症候群",
+          "choiceExplanations": {
+            "a": "高口蓋、巨舌 ← 正解",
+            "b": "高口蓋、小顎症 ← 正解",
+            "c": "高口蓋、眼球突出 ← 正解",
+            "d": "高口蓋は特徴的でない",
+            "e": "掌蹠角化症、歯周炎"
+          }
         },
         {
-          "question": "[115C61] ★★\n短根歯がみられる疾患は？",
-          "answer": "Down症候群、骨形成不全症\n\n[他の選択肢との違い]\n- Down症候群：短根歯 ← 正解\n- 骨形成不全症：短根歯、象牙質形成不全症 ← 正解\n- 先天性表皮水疱症：水疱形成\n- Papillon-Lefevre症候群：早期歯周炎\n- Treacher Collins症候群：下顎低形成\n\n[ポイント]\n短根歯 = Down症候群、骨形成不全症\n[関連質問]\n- Down症候群とTurner症候群、知的障害があるのは？ → Down症候群\n- 女性のみに発症する染色体異常は？ → Turner症候群"
+          "question": "短根歯がみられる疾患は？",
+          "answer": "A, B",
+          "choices": {
+            "a": "Down症候群",
+            "b": "骨形成不全症",
+            "c": "先天性表皮水疱症",
+            "d": "Papillon-Lefevre症候群",
+            "e": "Treacher Collins症候群"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "115C61",
+          "point": "短根歯 = Down症候群、骨形成不全症\n[関連質問]\n- Down症候群とTurner症候群、知的障害があるのは？ → Down症候群\n- 女性のみに発症する染色体異常は？ → Turner症候群",
+          "choiceExplanations": {
+            "a": "短根歯 ← 正解",
+            "b": "短根歯、象牙質形成不全症 ← 正解",
+            "c": "水疱形成",
+            "d": "早期歯周炎",
+            "e": "下顎低形成"
+          }
         }
       ]
     }

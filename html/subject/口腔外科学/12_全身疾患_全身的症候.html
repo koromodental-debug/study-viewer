@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>全身的症候 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 全身疾患</span>
+    <h1>全身的症候</h1>
+    <div class="container">
+
+      <!-- ===================== 発熱 ===================== -->
+      <h2>発熱</h2>
+      <p>正常体温は腋窩温で36.0〜37.0℃。一般に腋窩体温が37.0℃を超えると発熱とされる。口腔内体温は腋窩体温に比べて0.2〜0.5℃、直腸体温は0.6〜1.0℃高い。</p>
+
+      <h3>体温の高さによる分類</h3>
+      <table>
+        <tr><th>分類</th><th>体温</th></tr>
+        <tr><td>微熱</td><td>37.1〜38.0℃</td></tr>
+        <tr><td>軽度発熱</td><td>38.1〜38.5℃</td></tr>
+        <tr><td>中等度発熱</td><td>38.6〜39.9℃</td></tr>
+        <tr><td>高熱</td><td>39.1〜41.5℃</td></tr>
+      </table>
+
+      <h3>熱型の分類</h3>
+      <table>
+        <tr><th>熱型</th><th>特徴</th><th>関連疾患</th></tr>
+        <tr><td><span class="key">稽留熱</span></td><td>日差が<span class="highlight">1℃以内</span>の持続する高熱</td><td>腸チフス、大葉性肺炎</td></tr>
+        <tr><td><span class="key">弛張熱</span></td><td>日差が<span class="highlight">1℃以上</span>変化するが、37℃以下にならない</td><td><span class="highlight">急性化膿性炎</span>、敗血症</td></tr>
+        <tr><td><span class="key">間欠熱</span></td><td>日差が1℃以上変動し、最低が<span class="caution">37℃以下</span>になる</td><td>マラリア、胆道感染症</td></tr>
+        <tr><td><span class="key">周期熱</span></td><td>周期的に発熱を繰り返す</td><td>マラリア、Hodgkinリンパ腫</td></tr>
+        <tr><td><span class="key">波状熱</span></td><td>発熱と解熱を波状に繰り返す</td><td>ブルセラ症</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">弛張熱 vs 間欠熱の鑑別</div>
+        <ul>
+          <li>弛張熱：日差1℃以上だが<span class="highlight">37℃以下にならない</span>（常に発熱状態）</li>
+          <li>間欠熱：日差1℃以上で<span class="highlight">37℃以下になる</span>（無熱期がある）</li>
+          <li><span class="caution">口腔内の急性化膿性炎では弛張熱</span>を呈する</li>
+        </ul>
+      </div>
+
+      <h3>発熱の原因</h3>
+      <ul>
+        <li>感染症：最も多い</li>
+        <li>膠原病（自己免疫疾患）</li>
+        <li>アレルギー性疾患</li>
+        <li>腫瘍：悪性腫瘍の壊死や産熱</li>
+        <li>代謝異常：甲状腺機能亢進症など</li>
+        <li>その他：薬物性、悪性高熱、疑似発熱など</li>
+      </ul>
+
+      <h3>過去問：発熱</h3>
+
+      <div class="question-box">
+        <div class="q-number">107C38</div>
+        <p>体温の変化を図に示す。
+熱型はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107C38_1.png" alt="体温変化図">
+        </div>
+        <div class="choices">
+          a 間欠熱<br>
+          b 稽留熱<br>
+          c 弛張熱<br>
+          d 周期熱<br>
+          e 波状熱
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】図から日差が1℃以内で持続する高熱のパターンを読み取る → 稽留熱。弛張熱は日差1℃以上、間欠熱は37℃以下に下がる時がある。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D23</div>
+        <p>急性化膿性炎でみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 間欠熱<br>
+          b 稽留熱<br>
+          c 弛張熱<br>
+          d 周期熱<br>
+          e 波状熱
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】口腔内の急性化膿性炎（膿瘍など）では弛張熱を呈する。日差が1℃以上変動するが、37℃以下にはならない熱型である。稽留熱は腸チフスや大葉性肺炎、間欠熱はマラリア、波状熱はブルセラ症が代表的。</p>
+      </div>
+
+      <!-- ===================== リンパ節腫脹 ===================== -->
+      <h2>リンパ節腫脹</h2>
+      <p>リンパ節腫脹の診察では、<span class="key">大きさ、数、硬さ、可動性、圧痛の有無、部位</span>などを確認する。</p>
+
+      <h3>リンパ節腫脹の性状と疾患</h3>
+      <table>
+        <tr><th>性状</th><th>考えられる疾患</th></tr>
+        <tr><td>圧痛あり、軟〜弾性軟</td><td>炎症性（感染症、反応性腫脹）</td></tr>
+        <tr><td>硬い、可動性不良、癒着</td><td><span class="caution">癌の転移</span></td></tr>
+        <tr><td>弾性硬、多発性</td><td>悪性リンパ腫</td></tr>
+        <tr><td>乾酪壊死を伴う</td><td>結核性リンパ節炎</td></tr>
+      </table>
+
+      <h3>リンパ節腫脹の原因</h3>
+      <ul>
+        <li><span class="key">感染症</span>：細菌感染、ウイルス感染（伝染性単核球症など）、結核</li>
+        <li><span class="key">腫瘍性</span>：癌の転移、悪性リンパ腫</li>
+        <li><span class="key">肉芽腫性</span>：サルコイドーシス、結核</li>
+        <li>その他：薬物性、自己免疫疾患</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">116C44</div>
+        <p>リンパ節腫脹の原因として考えられるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 結　核<br>
+          b 癌の転移<br>
+          c 悪性リンパ腫<br>
+          d 伝染性単核球症<br>
+          e サルコイドーシス
+        </div>
+        <div class="answer">正解：a, b, c, d, e</div>
+        <p>【解説】すべてリンパ節腫脹の原因となる。結核（肉芽腫性リンパ節炎、a○）、癌の転移（転移性リンパ節腫脹、b○）、悪性リンパ腫（リンパ節原発の腫瘍、c○）、伝染性単核球症（EBウイルス感染による反応性リンパ節腫脹、d○）、サルコイドーシス（非乾酪性肉芽腫、e○）。</p>
+      </div>
+
+      <!-- ===================== アミロイドーシス ===================== -->
+      <h2>アミロイドーシス</h2>
+      <p>アミロイドと呼ばれる線維状タンパク質が組織に沈着する疾患群。口腔領域では<span class="key">舌の腫大（巨舌症）</span>を呈することがある。</p>
+
+      <h3>診断</h3>
+      <ul>
+        <li><span class="highlight">Congo-Red染色</span>：アミロイド沈着部が赤橙色に染まる</li>
+        <li>偏光顕微鏡下で<span class="key">apple-green birefringence</span>（緑色複屈折）を呈する</li>
+        <li>H-E染色ではアミロイドは均質な好酸性物質として描出される</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">115C30</div>
+        <p>舌の違和感を主訴として来院した患者の口腔内写真（別冊No.6B）、生検時のH-E染色病理組織像（別冊No.6B）及びCongo-Red 染色病理組織像（別冊No. 6C）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115C30_1.png" alt="別冊No.6">
+        </div>
+        <div class="choices">
+          a 白板症<br>
+          b 尋常性天疱瘡<br>
+          c 正中菱形舌炎<br>
+          d 口腔カンジダ症<br>
+          e アミロイドーシス
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】Congo-Red染色が施されている時点でアミロイドーシスを疑う。Congo-Red染色でアミロイド沈着が赤橙色に染まり、偏光顕微鏡下で緑色複屈折を呈すれば確定診断となる。舌のアミロイド沈着により巨舌を呈する。</p>
+      </div>
+
+      <!-- ===================== 自己免疫性水疱症の抗体 ===================== -->
+      <h2>自己免疫性水疱症と抗体検査</h2>
+      <p>口腔粘膜に水疱・びらんを生じる自己免疫疾患の鑑別には、特異的な自己抗体の検出が重要である。</p>
+
+      <h3>疾患と対応する自己抗体</h3>
+      <table>
+        <tr><th>疾患</th><th>標的抗原</th><th>自己抗体</th></tr>
+        <tr><td><span class="key">尋常性天疱瘡</span></td><td>デスモグレイン3（粘膜型）<br>デスモグレイン1+3（粘膜皮膚型）</td><td><span class="highlight">抗デスモグレイン抗体</span></td></tr>
+        <tr><td><span class="key">類天疱瘡</span></td><td>BP180（XVII型コラーゲン）<br>BP230</td><td><span class="highlight">抗BP180抗体</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">天疱瘡 vs 類天疱瘡</div>
+        <ul>
+          <li>天疱瘡：<span class="key">上皮内</span>水疱（棘融解）→ Nikolsky現象陽性、Tzanck細胞</li>
+          <li>類天疱瘡：<span class="key">上皮下</span>水疱（基底膜部の自己免疫反応）</li>
+          <li>天疱瘡の方が重篤で予後不良</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B81</div>
+        <p>下唇の異常を主訴として来院した女性の口唇の写真（別冊No.33）を別に示す。2か月前からしみるような接触痛の出現と消退を繰り返しているという。
+診断の確定に必要なのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116B81_1.png" alt="別冊No.33">
+        </div>
+        <div class="choices">
+          a 抗CCP抗体<br>
+          b 抗BP180抗体<br>
+          c 好中球機能検査<br>
+          d マイコプラズマ抗体<br>
+          e 抗デスモグレイン抗体
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】口唇のびらん・水疱を呈する自己免疫性水疱症の鑑別。天疱瘡（抗デスモグレイン抗体、e○）と類天疱瘡（抗BP180抗体、b○）の鑑別が必要。抗CCP抗体は関節リウマチ（a×）。マイコプラズマ抗体は肺炎の診断（d×）。</p>
+      </div>
+
+      <!-- ===================== 石灰化を伴う病変 ===================== -->
+      <h2>石灰化を伴う病変</h2>
+      <p>口腔顎顔面領域で石灰化物を伴う病変は画像診断で偶発的に発見されることがある。</p>
+
+      <h3>石灰化を伴う主な疾患</h3>
+      <ul>
+        <li><span class="key">血管腫</span>：静脈石（phlebolith）を伴うことがある</li>
+        <li><span class="key">滑膜性骨軟骨腫症</span>：顎関節内に石灰化した遊離体</li>
+        <li><span class="key">結核性リンパ節炎</span>：乾酪壊死後の石灰化</li>
+        <li>唾石症：唾液腺導管内の石灰化物</li>
+        <li>石灰化上皮性歯原性腫瘍（Pindborg腫瘍）：Liesegang輪</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">115A80</div>
+        <p>病変に石灰化物を伴うことがあるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 血管腫<br>
+          b 上皮真珠<br>
+          c 顎放線菌症<br>
+          d 滑膜性骨軟骨腫症<br>
+          e 結核性リンパ節炎
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】血管腫は静脈石（phlebolith）を伴うことがある（a○）。滑膜性骨軟骨腫症は関節内の骨軟骨遊離体で石灰化する（d○）。結核性リンパ節炎は乾酪壊死後に石灰化を生じる（e○）。上皮真珠は新生児歯肉の上皮性嚢胞で石灰化は伴わない（b×）。顎放線菌症はdruse（菌塊）を形成するが石灰化とは異なる（c×）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

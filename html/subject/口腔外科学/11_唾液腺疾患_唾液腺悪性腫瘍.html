@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>唾液腺悪性腫瘍 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 唾液腺疾患</span>
+    <h1>唾液腺悪性腫瘍</h1>
+    <div class="container">
+
+      <h2>唾液腺悪性腫瘍の概要</h2>
+      <p>唾液腺悪性腫瘍のWHO分類（2005年）では、腺房細胞癌、粘表皮癌、腺様嚢胞癌、多型低悪性度腺癌、上皮・筋上皮癌、基底細胞腺癌など多くの組織型が含まれる。国試で特に重要なのは<span class="key">粘表皮癌</span>と<span class="key">腺様嚢胞癌</span>である。</p>
+
+      <h3>主な唾液腺悪性腫瘍の頻度</h3>
+      <table>
+        <tr><th>組織型</th><th>頻度</th><th>好発部位</th></tr>
+        <tr><td><span class="key">粘表皮癌</span></td><td>唾液腺悪性腫瘍で最多（全体の約1割）</td><td>耳下腺、口蓋</td></tr>
+        <tr><td><span class="key">腺様嚢胞癌</span></td><td>小唾液腺腫瘍で多形腺腫に次いで多い</td><td>口蓋、口底</td></tr>
+        <tr><td>腺房細胞癌</td><td>約1%</td><td>耳下腺（80%以上）</td></tr>
+        <tr><td>多型低悪性度腺癌</td><td>まれ</td><td>口蓋（小唾液腺）</td></tr>
+      </table>
+
+      <!-- ===================== 粘表皮癌 ===================== -->
+      <h2>粘表皮癌</h2>
+      <p><span class="highlight">唾液腺悪性腫瘍で最も頻度が高い</span>。扁平上皮、粘液産生細胞、中間型細胞の3種の細胞から構成される。従来より良性・悪性についての論議がなされてきたが、本腫瘍のすべてが悪性能を有するという見解である。</p>
+
+      <h3>疫学</h3>
+      <ul>
+        <li>好発年齢：<span class="key">30〜40歳代</span></li>
+        <li>耳下腺にもっとも多く、次に<span class="key">小唾液腺（とくに口蓋）</span></li>
+        <li>顎骨中心性（顎中心性）にも発生する</li>
+      </ul>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>高分化型（低悪性型）：多形腺腫のそれと類似した限局性の腫瘤で、境界明瞭</li>
+        <li>低分化型（高悪性型）：周囲組織との境界が不明瞭、浸潤性</li>
+        <li>小唾液腺原発の場合は<span class="key">青味を帯びた粘液嚢腫様の腫瘤</span>を呈することがある</li>
+        <li>時に発育の速い被粘膜に潰瘍、骨の破壊的吸収像を認めることもある</li>
+      </ul>
+
+      <h3>病理組織像</h3>
+      <ul>
+        <li><span class="key">扁平上皮細胞</span>、<span class="key">粘液産生細胞</span>、<span class="key">中間型細胞</span>の3種の細胞から構成</li>
+        <li>粘液産生細胞は上皮性ムチンを含む大型の細胞</li>
+        <li><span class="highlight">ムチカルミン染色・PAS染色</span>で粘液産生細胞を確認</li>
+      </ul>
+
+      <h3>悪性度による分類</h3>
+      <table>
+        <tr><th>分類</th><th>高分化型（低悪性型）</th><th>低分化型（高悪性型）</th></tr>
+        <tr><td>細胞構成</td><td>粘液産生細胞が50%以上</td><td>粘液産生細胞は10%以下</td></tr>
+        <tr><td>嚢胞形成</td><td>明らか</td><td>なし（充実性）</td></tr>
+        <tr><td>浸潤性</td><td>被膜あり</td><td>周囲組織への浸潤あり</td></tr>
+        <tr><td>5年生存率</td><td>約70%</td><td><span class="caution">約10%</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">粘表皮癌の出題ポイント</div>
+        <ul>
+          <li><span class="highlight">唾液腺悪性腫瘍で最多</span></li>
+          <li>口蓋の腫瘤 → 多形腺腫との鑑別が頻出</li>
+          <li><span class="highlight">ムチカルミン染色</span>で粘液産生細胞を確認 → 診断の決め手</li>
+          <li>高分化型と低分化型で予後が大きく異なる</li>
+        </ul>
+      </div>
+
+      <h3>過去問：粘表皮癌</h3>
+
+      <div class="question-box">
+        <div class="q-number">107D49</div>
+        <p>25歳の女性。口蓋の腫脹を主訴として来院した。2か月前から自覚していたが、無痛性のため放置していたという。既往歴に特記事項はない。腫脹は弾性軟で、可動性に乏しい。圧痛はなく、所属リンパ節の腫脹は認められない。初診時の口腔内写真（別冊No.49A）とMRI（別冊No.49B）及び生検時のH-E染色病理組織像（別冊No.49C）とムチカルミン染色病理組織像（別冊No.49D）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107D49_1.png" alt="別冊No.49">
+        </div>
+        <div class="choices">
+          a 多形腺腫<br>
+          b 粘表皮癌<br>
+          c 腺様嚢胞癌<br>
+          d 扁平上皮癌<br>
+          e Warthin腫瘍
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】口蓋の無痛性腫瘤で、ムチカルミン染色が施されている点がヒント。ムチカルミン染色で陽性の粘液産生細胞が確認できれば粘表皮癌と診断できる。Warthin腫瘍は耳下腺に好発し口蓋には生じない。腺様嚢胞癌は篩状型の組織像を呈する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D74</div>
+        <p>43歳の女性。口蓋部の腫瘤を主訴として来院した。2か月前に無痛性腫瘤 に気付いたという。圧痛はなく、触診にて弾性硬である。初診時の口腔内写真（別冊No.20A）と摘出物のH-E染色病理組織像（別冊No.20B）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111D74_1.png" alt="別冊No.20">
+        </div>
+        <div class="choices">
+          a 多形腺腫<br>
+          b 粘表皮癌<br>
+          c 腺様嚢胞癌<br>
+          d 扁平上皮癌<br>
+          e 悪性リンパ腫
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】43歳女性、口蓋の無痛性・弾性硬の腫瘤。口蓋は多形腺腫と粘表皮癌の鑑別が重要な部位である。病理組織像で扁平上皮細胞・粘液産生細胞・中間型細胞の混在が確認されれば粘表皮癌と診断される。多形腺腫は上皮成分と間葉成分（粘液腫様・軟骨様）の混在を示す。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A46</div>
+        <p>43歳の女性。口蓋部の腫脹を主訴として来院した。3年前に気付き、その後徐々に大きくなったという。腫脹は弾性硬である。初診時の口腔内写真（別冊No.5A）、MRI T2強調像（別冊No.5B）及び生検時の H-E 染色病理組織像（別冊No.5C）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112A46_1.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a 多形腺腫<br>
+          b 粘表皮癌<br>
+          c 腺房細胞癌<br>
+          d 腺様嚢胞癌<br>
+          e Warthin 腫瘍
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】43歳女性、口蓋部の弾性硬の腫脹で3年の経過。低悪性型の粘表皮癌は発育が緩慢で多形腺腫に類似した臨床像を呈する。病理組織像で粘液産生細胞と扁平上皮細胞が確認されれば確定診断となる。腺房細胞癌は耳下腺に好発し口蓋にはまれ。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A64</div>
+        <p>46歳の女性。硬口蓋の腫脹を主訴として来院した。2週前に自覚したが自発痛はないという。左側硬口蓋に境界明瞭な膨隆を認める。初診時の口腔内写真（別冊No.20A）、エックス線画像（別冊No.20B）、脂肪抑制造影MRIT1強調像（別冊No.20C）及び生検時のH-E染色病理組織像（別冊No.20D）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A64_1.png" alt="別冊No.20">
+        </div>
+        <div class="choices">
+          a 口蓋膿瘍<br>
+          b 多形腺腫<br>
+          c 粘表皮癌<br>
+          d 腺房細胞癌<br>
+          e 腺様嚢胞癌
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】46歳女性、硬口蓋の境界明瞭な無痛性膨隆。病理組織像が診断の鍵で、粘液産生細胞・扁平上皮細胞・中間型細胞の混在が確認されれば粘表皮癌と診断される。口蓋膿瘍は炎症所見（発赤・圧痛・波動）を伴う。</p>
+      </div>
+
+      <!-- ===================== 腺様嚢胞癌 ===================== -->
+      <h2>腺様嚢胞癌</h2>
+      <p>篩状の胞巣形成をきわめて緩徐な発育と著明な浸潤性増殖を示す悪性腫瘍である。<span class="highlight">神経浸潤</span>と<span class="highlight">遠隔転移</span>が臨床的に大きな特徴である。</p>
+
+      <h3>疫学</h3>
+      <ul>
+        <li>小唾液腺腫瘍の中で多形腺腫に次いで多い（約25%）</li>
+        <li>好発部位：<span class="key">口蓋</span>が最多、その他に口底、頬粘膜、口唇、舌</li>
+        <li>大唾液腺では顎下腺の15〜20%、耳下腺の4%以下</li>
+        <li>好発年齢：<span class="key">40〜70歳</span>、やや女性に多い</li>
+      </ul>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>臨床的には多形腺腫に類似した限局性の腫瘤にみえることが多い</li>
+        <li>浸潤性増殖が特徴で、とくに<span class="highlight">神経周囲への浸潤</span>が顕著</li>
+        <li><span class="caution">疼痛や麻痺などの神経症状</span>を呈することも少なくない</li>
+        <li>きわめて緩徐な発育だが、数年を経たものが多い</li>
+      </ul>
+
+      <h3>病理組織像</h3>
+      <ul>
+        <li>3つの組織型に分類される：</li>
+      </ul>
+      <table>
+        <tr><th>組織型</th><th>特徴</th><th>悪性度</th></tr>
+        <tr><td><span class="key">篩状型</span> cribriform</td><td>篩状（ふるい状）の胞巣形成、偽嚢胞（基底膜物質の蓄積）</td><td>中等度</td></tr>
+        <tr><td>管状型 tubular</td><td>腺管構造を形成</td><td>低い</td></tr>
+        <tr><td><span class="caution">充実型 solid</span></td><td>充実性の胞巣、嚢胞形成なし</td><td>高い</td></tr>
+      </table>
+      <ul>
+        <li>偽嚢胞の内容物は<span class="key">基底膜物質</span>（コンドロイチン硫酸、ヒアルロン酸など）</li>
+        <li>神経周囲への浸潤像が特徴的</li>
+      </ul>
+
+      <h3>転移と予後</h3>
+      <ul>
+        <li>転移は<span class="highlight">血行性が多い</span>（リンパ節転移は少ない）</li>
+        <li>転移部位：おもに<span class="key">肺</span>、そのほか肝、骨、脳</li>
+        <li>5年生存率は50%以上だが、<span class="caution">長期予後は不良</span>（15〜20年でみると20%）</li>
+        <li>局所再発および遠隔転移をしばしばくり返す</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">腺様嚢胞癌の出題ポイント</div>
+        <ul>
+          <li><span class="highlight">神経浸潤</span>が特徴的（疼痛・麻痺の原因）</li>
+          <li><span class="highlight">遠隔転移しやすい</span>（血行性、主に肺）</li>
+          <li><span class="caution">リンパ節転移は少ない</span>（血行性 ＞ リンパ行性）</li>
+          <li>篩状型の組織像が典型的</li>
+          <li>口蓋に好発</li>
+        </ul>
+      </div>
+
+      <h3>過去問：腺様嚢胞癌</h3>
+
+      <div class="question-box">
+        <div class="q-number">104D48</div>
+        <p>60歳の女性。左側口底部の腫瘤を主訴として来院した。1年前から自覚していたという。初診時の口腔内写真（別冊No.47A）と生検時のH−E染色病理組織像（別冊No.47B）とを別に示す。
+この疾患の特徴はどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D48_1.png" alt="別冊No.47">
+        </div>
+        <div class="choices">
+          a 遠隔転移が多い。<br>
+          b 発育が急速である。<br>
+          c 神経浸潤がみられる。<br>
+          d 化学療法が有効である。<br>
+          e 口腔では口蓋に好発する。
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】口底部腫瘤の病理像から腺様嚢胞癌と診断される。遠隔転移が多い（a○、血行性に主に肺へ）。発育はきわめて緩徐（b×）。神経浸潤が特徴的（c○）。化学療法の効果は限定的（d×）。口腔では口蓋に好発する（e○）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B53</div>
+        <p>口底部の腫瘤の口腔内写真（別冊No.9A）と生検時の H-E 染色病理組織像（別冊No.9B）を別に示す。
+この疾患の特徴はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B53_1.png" alt="別冊No.9">
+        </div>
+        <div class="choices">
+          a 遠隔転移しやすい。<br>
+          b 放射線感受性が高い。<br>
+          c 明瞭な被膜を有する。<br>
+          d リンパ節転移はない。<br>
+          e 神経組織への浸潤が多い。
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】口底部腫瘤の病理像から腺様嚢胞癌と診断される。遠隔転移しやすい（a○、血行性に肺へ）。放射線感受性は低い（b×）。被膜はなく浸潤性に増殖（c×）。リンパ節転移は少ないが「ない」わけではない（d×）。神経組織への浸潤が本腫瘍の最大の特徴である（e○）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B54</div>
+        <p>76歳の女性。左側口底部の腫脹を主訴として来院した。かかりつけ歯科医にて指摘されたという。触診で粘膜下に境界明瞭なやや硬い腫瘤を触れる。舌下小丘からの唾液の流出は良好である。初診時の口腔内写真（別冊No.24A）、造影CT（別冊No.24B）、MRI脂肪抑制T2強調像（別冊No.24C）及び生検時のH-E染色病理組織像（別冊No.24D）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115B54_1.png" alt="別冊No.24">
+        </div>
+        <div class="choices">
+          a 多形腺腫<br>
+          b 粘表皮癌<br>
+          c ラヌーラ<br>
+          d 類皮嚢胞<br>
+          e 腺様嚢胞癌
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】76歳女性、口底部の境界明瞭なやや硬い腫瘤。唾液排出は良好で唾石症は否定。病理組織像で篩状型の胞巣形成（ふるい状の構造）が確認されれば腺様嚢胞癌と診断される。ラヌーラは青紫色の嚢胞性病変で充実性腫瘤とは異なる。類皮嚢胞は正中部に好発する。</p>
+      </div>
+
+      <!-- ===================== 腺房細胞癌 ===================== -->
+      <h2>腺房細胞癌</h2>
+      <p>漿液性腺房細胞に類似した細胞増殖を特徴とする腫瘍で、唾液腺腫瘍の約1%を占める。</p>
+      <ul>
+        <li>80%以上が<span class="key">耳下腺</span>に発生</li>
+        <li>30〜40歳代に好発、性差なし</li>
+        <li>臨床的には多形腺腫に類似した無痛性腫瘤を呈することが多い</li>
+        <li>組織学的に高分化で良性にみえるものもあるが、再発や遠隔転移することがある</li>
+        <li>予後は他の唾液腺悪性腫瘍と比較すると良好（5年生存率76〜89%）</li>
+      </ul>
+
+      <h3>過去問：唾液腺悪性腫瘍の治療</h3>
+
+      <div class="question-box">
+        <div class="q-number">111A82</div>
+        <p>75歳の女性。左側口底の腫瘤を主訴として来院した。5か月前に気付いたが、疼痛がないためそのままにしていたという。初診時の口腔内写真（別冊No.27A）、CT（別冊No.27B）、MRI T2強調像（別冊No.27C）及び生検時のH-E染色病理組織像（別冊No.27D）を別に示す。
+適切な治療法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111A82_1.png" alt="別冊No.27">
+        </div>
+        <div class="choices">
+          a 開　窓<br>
+          b 腫瘤切除<br>
+          c 切開排膿<br>
+          d 顎下腺摘出<br>
+          e 抗癌剤投与
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】75歳女性、口底の無痛性腫瘤。病理組織像から唾液腺腫瘍と診断される。唾液腺腫瘍の治療は外科的切除が原則であり、腫瘤切除が適切である。開窓は嚢胞に対する処置、切開排膿は膿瘍に対する処置であり不適切。抗癌剤のみでの治療は唾液腺腫瘍には一般に有効性が低い。</p>
+      </div>
+
+      <!-- ===================== 鑑別まとめ ===================== -->
+      <h2>唾液腺悪性腫瘍の鑑別まとめ</h2>
+      <table>
+        <tr><th>項目</th><th>粘表皮癌</th><th>腺様嚢胞癌</th><th>腺房細胞癌</th></tr>
+        <tr><td>頻度</td><td><span class="highlight">悪性で最多</span></td><td>小唾液腺で多い</td><td>約1%</td></tr>
+        <tr><td>好発部位</td><td>耳下腺、口蓋</td><td>口蓋、口底</td><td>耳下腺</td></tr>
+        <tr><td>好発年齢</td><td>30〜40歳代</td><td>40〜70歳</td><td>30〜40歳代</td></tr>
+        <tr><td>特徴的所見</td><td><span class="key">ムチカルミン染色陽性</span></td><td><span class="key">神経浸潤</span></td><td>腺房様細胞</td></tr>
+        <tr><td>組織型</td><td>扁平上皮＋粘液＋中間型</td><td>篩状型・管状型・充実型</td><td>漿液性腺房様</td></tr>
+        <tr><td>転移様式</td><td>リンパ節・遠隔</td><td><span class="caution">血行性（肺）</span></td><td>局所再発・遠隔</td></tr>
+        <tr><td>予後</td><td>悪性度による</td><td>長期予後不良</td><td>比較的良好</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">口蓋の腫瘤 ─ 鑑別の考え方</div>
+        <ul>
+          <li>口蓋は多形腺腫・粘表皮癌・腺様嚢胞癌のいずれも好発する</li>
+          <li>臨床所見のみでの鑑別は困難 → <span class="key">病理組織像が決め手</span></li>
+          <li>上皮＋間葉の多彩な組織 → 多形腺腫</li>
+          <li>粘液産生細胞（ムチカルミン陽性）→ 粘表皮癌</li>
+          <li>篩状の胞巣形成 → 腺様嚢胞癌</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

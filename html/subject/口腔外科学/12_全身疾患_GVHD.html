@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>GVHD - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 全身疾患</span>
+    <h1>GVHD（移植片対宿主病）</h1>
+    <div class="container">
+
+      <h2>概要</h2>
+      <p>GVHD（graft-versus-host disease：移植片対宿主病）は、同種造血幹細胞移植後に<span class="highlight">ドナー由来のTリンパ球</span>がレシピエント（宿主）の組織を異物として攻撃する免疫反応である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">GVHDの本質</div>
+        <ul>
+          <li>移植片（ドナー）の免疫細胞 → 宿主（レシピエント）の組織を攻撃</li>
+          <li>原因細胞 = <span class="highlight">ドナー由来のTリンパ球</span></li>
+        </ul>
+      </div>
+
+      <h2>分類</h2>
+      <h3>急性GVHD（移植後100日以内）</h3>
+      <p>3つの標的臓器に症状が出現する。</p>
+      <ul>
+        <li><span class="key">皮膚</span>：紅斑、発疹（通常最初に出現）</li>
+        <li><span class="key">肝臓</span>：黄疸、肝機能障害</li>
+        <li><span class="key">消化管</span>：下痢、腹痛、悪心</li>
+      </ul>
+
+      <h3>慢性GVHD（移植後100日以降）</h3>
+      <p>全身の多臓器に及ぶ。口腔症状が重要。</p>
+      <ul>
+        <li><span class="key">皮膚</span>：硬化性病変、色素沈着</li>
+        <li><span class="highlight">口腔</span>：扁平苔癬様病変、口腔乾燥症</li>
+        <li><span class="key">眼</span>：乾燥（ドライアイ）</li>
+        <li><span class="key">肝臓</span>：胆汁うっ滞</li>
+        <li><span class="key">肺</span>：閉塞性細気管支炎</li>
+      </ul>
+
+      <h2>口腔症状（慢性GVHD）</h2>
+      <p>口腔病変は慢性GVHDの診断において重要な位置を占める。</p>
+
+      <h3>扁平苔癬様病変（最頻出）</h3>
+      <ul>
+        <li>白色の<span class="key">網状・レース状病変</span>が口腔粘膜に出現</li>
+        <li>慢性GVHDの<span class="highlight">唯一の診断的所見（diagnostic）</span>とされる</li>
+        <li>病理組織像も口腔扁平苔癬と類似（リンパ球の帯状浸潤、基底層の変性）</li>
+        <li>食事や歯磨きで疼痛を生じる</li>
+      </ul>
+
+      <h3>口腔乾燥症</h3>
+      <ul>
+        <li>唾液腺がGVHDの標的となり、唾液分泌が低下</li>
+        <li>Sjögren症候群に類似した症状</li>
+      </ul>
+
+      <h3>急性GVHD vs 慢性GVHDの比較</h3>
+      <table>
+        <tr><th></th><th>急性GVHD</th><th>慢性GVHD</th></tr>
+        <tr><td class="key">発症時期</td><td>移植後100日以内</td><td>移植後100日以降</td></tr>
+        <tr><td class="key">標的臓器</td><td>皮膚、肝臓、消化管</td><td>全身多臓器</td></tr>
+        <tr><td class="key">口腔症状</td><td>粘膜炎（非特異的）</td><td>扁平苔癬様病変、口腔乾燥症</td></tr>
+        <tr><td class="key">病態</td><td colspan="2">ドナー由来Tリンパ球がレシピエント組織を攻撃</td></tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">110D10</div>
+        <p>35歳の男性。口腔内の疼痛のため摂食困難を訴えて来院した。白血病のため造血幹細胞移植を受けたが、術後半年ころから同様の症状が繰り返されるようになったという。初診時の口腔内写真（別冊No.10）を別に示す。<br>症状の主な原因となるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110D10_1.png" alt="別冊No.10">
+        </div>
+        <div class="choices">
+          a レシピエントの抗体<br>
+          b レシピエントの血小板<br>
+          c ドナー由来のBリンパ球<br>
+          d ドナー由来のTリンパ球<br>
+          e レシピエントの末梢血幹細胞
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】造血幹細胞移植後半年（100日以降）に口腔症状が繰り返されており、慢性GVHDが考えられる。GVHDの原因は<span class="key">ドナー由来のTリンパ球</span>がレシピエントの組織を異物として攻撃する免疫反応である。Bリンパ球ではなくTリンパ球が主役である点に注意。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A96</div>
+        <p>GVHDと類似した組織像を示す口腔粘膜病変はどれか。1つ選べ。</p>
+        <div class="choices">
+          a Behçet病<br>
+          b 口腔扁平苔癬<br>
+          c 尋常性天疱瘡<br>
+          d 壊死性潰瘍性口内炎<br>
+          e ジフテリア性口内炎
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】慢性GVHDの口腔病変は<span class="key">扁平苔癬様病変</span>を呈し、病理組織像も口腔扁平苔癬と類似する（リンパ球の帯状浸潤、基底層の変性）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A118</div>
+        <p>造血幹細胞移植後の慢性GVHDに特徴的な病態はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 線維腫<br>
+          b 顎骨壊死<br>
+          c 口腔乾燥症<br>
+          d 再発性アフタ<br>
+          e 口腔扁平苔癬様病変
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】慢性GVHDに特徴的な口腔病態は<span class="key">口腔扁平苔癬様病変</span>（診断的所見）と<span class="key">口腔乾燥症</span>（唾液腺障害）の2つ。線維腫・顎骨壊死・再発性アフタはGVHDの特徴的所見ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C77</div>
+        <p>1か月前に悪性リンパ腫の治療のため同種造血幹細胞移植を受けた患者の初診時の口腔内写真（別冊No.29）を別に示す。初診時の血液学検査結果の一部を表に示す。<br>最も考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113C77_1.png" alt="別冊No.29">
+        </div>
+        <div class="choices">
+          a GVHD<br>
+          b 類天疱瘡<br>
+          c 壊疽性口内炎<br>
+          d 口腔扁平苔癬<br>
+          e 全身性エリテマトーデス
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】同種造血幹細胞移植後1か月という病歴がGVHDを示唆する最大の手がかり。口腔扁平苔癬と類似した所見を呈するが、造血幹細胞移植後という背景からGVHDと診断する。扁平苔癬そのものではなく「扁平苔癬様病変」である点に注意。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A46</div>
+        <p>疾患と口腔粘膜症状の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 手足口病 ーーーーーーーーーー 地図状舌<br>
+          b 慢性GVHD ーーーーーーーーー 扁平苔癬様病変<br>
+          c 尋常性天疱瘡 ーーーーーーーー Nikolsky現象<br>
+          d Peutz-Jeghers症候群 ーーーーー 平滑舌<br>
+          e Plummer-Vinson症候群 ーーーー 再発性アフタ
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】慢性GVHDの口腔粘膜症状は<span class="key">扁平苔癬様病変</span>（b：正しい）。尋常性天疱瘡では棘融解により<span class="key">Nikolsky現象</span>陽性（c：正しい）。手足口病は手掌・足底・口腔の水疱で地図状舌ではない。Peutz-Jeghers症候群は口唇の色素沈着。Plummer-Vinson症候群は鉄欠乏性貧血に伴う嚥下障害で平滑舌を呈する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

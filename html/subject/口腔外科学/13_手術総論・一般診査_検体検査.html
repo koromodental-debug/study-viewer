@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>検体検査 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>検体検査</h1>
+    <div class="container">
+
+      <h2>検体検査の概要</h2>
+      <p>検体検査とは、患者から得られた<span class="key">生体材料</span>（血液・尿・組織など）を用いて行う検査である。全身的評価が必要な場合にスクリーニング検査として行われ、入院・全身麻酔を必要とする患者にはさらに検査が追加される。</p>
+      <p>検査は大きく3つに分類される：<span class="key">検体検査</span>（血液・尿・組織）、<span class="key">生理・生体検査</span>（血圧・心電図など患者自身に行う）、<span class="key">画像検査</span>（X線・CT・MRIなど）。</p>
+
+      <h3>術前検査の主要項目</h3>
+      <table>
+        <tr><th>カテゴリ</th><th>検査項目</th></tr>
+        <tr><td>尿検査</td><td>尿糖、尿タンパク、沈渣、比重、pH</td></tr>
+        <tr><td>血液一般</td><td>白血球数、赤血球数、Hb、Ht、血小板数、血液型（ABO・Rh）</td></tr>
+        <tr><td>炎症</td><td>赤沈、CRP</td></tr>
+        <tr><td>生化学</td><td>総タンパク、A/G比、BUN、電解質、コレステロール、TG、AST、ALT、LDH、ALP、γ-GTP、Cr、尿酸、血糖、CRP</td></tr>
+        <tr><td>出血凝固</td><td>出血時間、凝固因子、PT、APTT、フィブリノーゲン</td></tr>
+        <tr><td>感染免疫</td><td>HBs抗原・抗体、HC抗体、梅毒血清反応</td></tr>
+        <tr><td>血液ガス</td><td>pH、PaO<sub>2</sub>、PaCO<sub>2</sub>、HCO<sub>3</sub><sup>−</sup>、BE</td></tr>
+      </table>
+
+      <!-- ========== 凝固系検査 ========== -->
+      <h2>凝固系検査（PT・APTT・Dダイマー）</h2>
+      <p>血液凝固は<span class="key">内因系</span>と<span class="key">外因系</span>の2つの経路に大別される。それぞれのスクリーニング検査が異なるため、PT・APTTの延長パターンから原因疾患を推定できることが頻出ポイントである。</p>
+
+      <h3>凝固系のスクリーニング検査</h3>
+      <table>
+        <tr><th>検査</th><th>評価する経路</th><th>基準値</th><th>延長する疾患</th></tr>
+        <tr><td><span class="highlight">PT（プロトロンビン時間）</span></td><td>外因系＋共通系</td><td>10〜13秒</td><td>肝硬変、VitK欠乏症、DIC、ワルファリン服用</td></tr>
+        <tr><td><span class="highlight">APTT（活性化部分トロンボプラスチン時間）</span></td><td>内因系＋共通系</td><td>25〜40秒</td><td>血友病A・B、von Willebrand病、DIC、ヘパリン投与</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">PT・APTTの延長パターンによる鑑別</div>
+        <ul>
+          <li><span class="highlight">PT延長＋APTT正常</span> → 外因系の異常（第VII因子欠乏など）</li>
+          <li><span class="highlight">PT正常＋APTT延長</span> → 内因系の異常（<span class="key">血友病</span>＝第VIII・IX因子欠乏）</li>
+          <li>PT延長＋APTT延長 → 共通系の異常、肝硬変、DIC、VitK欠乏</li>
+        </ul>
+      </div>
+
+      <p><span class="key">Dダイマー</span>は、フィブリンが形成されたのち線溶系で分解された産物であり、血栓の存在を示すマーカーである。<span class="highlight">肺血栓塞栓症</span>やDICの診断に有用。</p>
+
+      <div class="question-box">
+        <div class="q-number">113D23</div>
+        <p>プロトロンビン時間が延長するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 血友病<br>
+          b 肝硬変<br>
+          c 慢性腎不全<br>
+          d ビタミンK欠乏症<br>
+          e 血小板減少性紫斑病
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】PTは外因系＋共通系を評価する。肝硬変では凝固因子の産生低下、VitK欠乏では凝固因子（II, VII, IX, X）の活性化障害によりPTが延長する。血友病は内因系（APTT延長）、慢性腎不全・血小板減少性紫斑病はPTに直接関与しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C44</div>
+        <p>プロトロンビン時間は正常であるが、活性化部分トロンボプラスチン時間が延長したときに疑われる疾患はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 肝硬変<br>
+          b 血友病<br>
+          c 肺血栓塞栓症<br>
+          d 再生不良性貧血<br>
+          e 特発性血小板減少性紫斑病
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】PT正常＋APTT延長は内因系の異常を示す。血友病A（第VIII因子欠乏）・血友病B（第IX因子欠乏）が代表的。肝硬変はPTも延長する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B30</div>
+        <p>長期臥床患者では全身麻酔後に肺血栓塞栓症を起こしやすい。このリスクを判断するための検査項目はどれか。1つ選べ。</p>
+        <div class="choices">
+          a CK<br>
+          b PT<br>
+          c CRP<br>
+          d Dダイマー<br>
+          e 心筋トロポニンT
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】Dダイマーはフィブリン分解産物であり、体内での血栓形成を反映する。長期臥床→深部静脈血栓→肺血栓塞栓症のリスク評価に用いる。CKは筋障害、心筋トロポニンTは心筋梗塞のマーカー。</p>
+      </div>
+
+      <!-- ========== 肝機能検査 ========== -->
+      <h2>肝機能検査</h2>
+      <p>肝機能検査は、肝臓の<span class="key">細胞障害</span>、<span class="key">胆汁うっ滞</span>、<span class="key">合成能</span>、<span class="key">解毒能</span>をそれぞれ評価する検査に分類される。</p>
+
+      <h3>主要な肝機能マーカー</h3>
+      <table>
+        <tr><th>検査項目</th><th>臨床的意義</th><th>特徴</th></tr>
+        <tr><td><span class="key">AST（GOT）</span></td><td>細胞破壊マーカー</td><td>肝臓・心筋・骨格筋に存在。肝硬変ではAST＞ALT</td></tr>
+        <tr><td><span class="key">ALT（GPT）</span></td><td>細胞破壊マーカー</td><td>肝臓に特異性が高い。急性肝炎で著明に上昇</td></tr>
+        <tr><td><span class="highlight">γ-GTP</span></td><td>胆汁うっ滞・アルコール</td><td><span class="highlight">アルコール摂取で特異的に上昇</span></td></tr>
+        <tr><td><span class="key">ALP</span></td><td>胆汁うっ滞</td><td>6種のアイソザイム。骨疾患でも上昇</td></tr>
+        <tr><td><span class="key">LDH（LD）</span></td><td>細胞破壊マーカー</td><td>あらゆる組織に存在。特異性は低いがスクリーニングに有用</td></tr>
+        <tr><td><span class="key">ChE</span></td><td>肝合成能</td><td>肝実質障害で低下（他の酵素は上昇するのにChEは低下）</td></tr>
+        <tr><td><span class="key">色素排泄試験</span></td><td>肝解毒能</td><td>ICG試験・BSP試験。肝臓の異物処理能力を評価</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">アルコール性肝障害の特徴</div>
+        <ul>
+          <li><span class="highlight">AST＞ALT</span>（通常の肝炎ではALT＞AST）</li>
+          <li><span class="highlight">γ-GTPが著明に上昇</span></li>
+          <li>この2つの組み合わせがアルコール性肝障害の典型パターン</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D81</div>
+        <p>アルコール性肝障害で高値を示すのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a Alb<br>
+          b ALP<br>
+          c AST<br>
+          d γ-GTP<br>
+          e TP
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】アルコール性肝障害ではAST＞ALTの上昇パターンとγ-GTPの著明な上昇が特徴的。Alb・TPは肝合成能の指標であり、障害時はむしろ低下する。ALPは胆汁うっ滞で上昇するが、アルコール性肝障害の主要マーカーではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C106</div>
+        <p>細胞破壊で漏出した酵素の活性を測定する生化学検査項目はどれか。2つ選べ。</p>
+        <div class="choices">
+          a TG<br>
+          b UA<br>
+          c ALT<br>
+          d ACTH<br>
+          e LD〈LDH〉
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】ALT（GPT）は肝細胞、LDH（LD）はあらゆる組織の細胞に存在する酵素で、細胞が破壊されると血中に漏出して上昇する（逸脱酵素）。TGは脂質、UAは尿酸（プリン体代謝産物）、ACTHは下垂体ホルモンであり酵素ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C84</div>
+        <p>肝臓の解毒能力を評価するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a レノグラム<br>
+          b ACTH試験<br>
+          c 色素排泄試験<br>
+          d フロセミド負荷試験<br>
+          e クレアチニンクリアランス
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】色素排泄試験（ICG試験・BSP試験）は、肝臓に色素を注入しその排泄速度から肝臓の解毒能・異物処理能力を評価する。レノグラムは腎血流、ACTH試験は副腎機能、フロセミド負荷試験は腎機能、Ccrは糸球体濾過量の評価。</p>
+      </div>
+
+      <!-- ========== 腎機能検査 ========== -->
+      <h2>腎機能検査（eGFR・Ccr）</h2>
+      <p>腎機能の評価は、<span class="key">糸球体濾過量（GFR）</span>の推定が中心となる。GFRの推定には<span class="key">クレアチニンクリアランス（Ccr）</span>と<span class="key">推算GFR（eGFR）</span>が用いられる。</p>
+
+      <h3>クレアチニン（Cr）</h3>
+      <p>筋肉内のクレアチンの代謝産物で、腎糸球体で濾過され<span class="caution">再吸収されずに</span>排泄される。このため腎機能の指標として有用。筋肉量に比例するため、性別・年齢・体格の影響を受ける。</p>
+
+      <h3>Ccr と eGFR</h3>
+      <table>
+        <tr><th>指標</th><th>評価方法</th><th>特徴</th></tr>
+        <tr><td><span class="key">Ccr</span></td><td>24時間蓄尿で血中・尿中のCrを測定</td><td>GFRを推算できる。実測値に近い</td></tr>
+        <tr><td><span class="highlight">eGFR</span></td><td>血清Cr値から計算式で推算</td><td>算出に用いるのは<span class="highlight">性別・年齢・血清Cr</span>の3項目</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">eGFR算出の3要素（頻出）</div>
+        <ul>
+          <li><span class="highlight">性別</span>（男女で筋肉量が異なる）</li>
+          <li><span class="highlight">年齢</span>（加齢で腎機能が低下）</li>
+          <li><span class="highlight">血清クレアチニン値</span></li>
+        </ul>
+        <p class="note">※体重・身長・BUNは使用しない</p>
+      </div>
+
+      <p><span class="key">CKD（慢性腎臓病）</span>の重症度評価には<span class="highlight">eGFR</span>が用いられ、GFR区分（G1〜G5）で病期を分類する。</p>
+
+      <div class="question-box">
+        <div class="q-number">116B67</div>
+        <p>慢性腎臓病〈CKD〉の重症度の評価に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a AST<br>
+          b BNP<br>
+          c BUN<br>
+          d CRP<br>
+          e eGFR
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】CKDの重症度はeGFRで評価する。ASTは肝機能、BNPは心不全、BUNは腎機能の指標だがeGFRほど正確ではない（食事・脱水の影響を受ける）、CRPは炎症マーカー。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C117</div>
+        <p>クレアチニンクリアランスで正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a GFRを推算できる。<br>
+          b 筋肉量低下で上昇する。<br>
+          c 腎機能低下で上昇する。<br>
+          d 血清蛋白増加で上昇する。<br>
+          e 腎臓で生合成されたクレアチニンを測定する。
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】CcrはGFRの推算に用いられる。筋肉量低下→Cr産生減少→Ccr見かけ上変化なし（低下する方向）。腎機能低下→Cr排泄減少→血清Cr上昇→Ccr低下。クレアチニンは筋肉内で産生される（腎臓ではない）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C50</div>
+        <p>推算糸球体濾過量 〈eGFR〉の算出に用いるのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 性　別<br>
+          b 体　重<br>
+          c 年　齢<br>
+          d 血清尿素窒素<br>
+          e 血清クレアチニン
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】eGFRの算出式には性別・年齢・血清Crの3項目を用いる。体重やBUNは含まれない。</p>
+      </div>
+
+      <!-- ========== 糖代謝・脂質代謝 ========== -->
+      <h2>糖代謝・脂質代謝検査</h2>
+
+      <h3>糖代謝の検査</h3>
+      <table>
+        <tr><th>検査項目</th><th>評価内容</th><th>食事の影響</th></tr>
+        <tr><td><span class="key">空腹時血糖</span></td><td>その時点の血糖値</td><td><span class="highlight">直前の食事で上昇</span></td></tr>
+        <tr><td><span class="key">HbA1c</span></td><td>過去1〜2ヵ月の平均血糖</td><td><span class="caution">食事の影響を受けない</span></td></tr>
+        <tr><td>尿糖</td><td>血糖が閾値（約170mg/dl）を超えると陽性</td><td>食事の影響を受ける</td></tr>
+      </table>
+
+      <h3>脂質代謝の検査</h3>
+      <table>
+        <tr><th>検査項目</th><th>臨床的意義</th><th>食事の影響</th></tr>
+        <tr><td><span class="highlight">トリグリセリド（TG）</span></td><td>脂肪組織の主成分。脂質代謝の指標</td><td><span class="highlight">直前の食事で上昇</span></td></tr>
+        <tr><td>総コレステロール</td><td>動脈硬化の指標</td><td>比較的安定</td></tr>
+        <tr><td>HDLコレステロール</td><td>善玉。低値→冠動脈疾患リスク</td><td>比較的安定</td></tr>
+        <tr><td>LDLコレステロール</td><td>悪玉。高値→動脈硬化リスク</td><td>比較的安定</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">直前の食事で影響を受ける検査項目</div>
+        <ul>
+          <li><span class="highlight">血糖</span>（食後に上昇）</li>
+          <li><span class="highlight">トリグリセリド（TG）</span>（食後に上昇）</li>
+        </ul>
+        <p class="note">※HbA1c、γ-GTP、HDLコレステロールは食事の直接的影響を受けない</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A111</div>
+        <p>直前の食事の影響を受ける血液検査項目はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 血　糖<br>
+          b HbA1c<br>
+          c γ-GTP<br>
+          d トリグリセライド<br>
+          e HDLコレステロール
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】血糖値は食後に急速に上昇し、TGも食事中の脂肪を反映して食後に上昇する。HbA1cは過去1〜2ヵ月の平均血糖の指標であり食事の直接的影響を受けない。γ-GTPはアルコール・薬物の影響、HDLコレステロールは食事の直接的影響を受けにくい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115C36</div>
+        <p>脂質代謝の指標となる検査項目はどれか。1つ選べ。</p>
+        <div class="choices">
+          a ALT<br>
+          b HbAlc<br>
+          c フェリチン<br>
+          d クレアチニン<br>
+          e トリグリセリド
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】TG（トリグリセリド）は脂肪組織の主成分であり脂質代謝の指標。ALTは肝機能、HbA1cは糖代謝、フェリチンは鉄代謝（貯蔵鉄）、クレアチニンは腎機能の指標。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D50</div>
+        <p>56歳の男性。左側下顎智歯の抜去目的で来院した。本人持参の健康診断の結果を示す。根拠となったのはどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D50_1.png" alt="健康診断の結果">
+        </div>
+        <div class="choices">
+          a 血　圧<br>
+          b HbA1c<br>
+          c 空腹時血糖<br>
+          d トリグリセライド<br>
+          e 総コレステロール
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】健康診断の結果から、血圧高値・HbA1c高値・空腹時血糖高値が認められ、高血圧と糖尿病が疑われる。抜歯前にこれらの管理が必要。TGと総コレステロールは基準範囲内であった。</p>
+      </div>
+
+      <!-- ========== 炎症マーカー ========== -->
+      <h2>炎症マーカー</h2>
+      <p>感染症・炎症の評価に用いる血液検査マーカー。歯性感染症の重症度判定に重要。</p>
+
+      <h3>主要な炎症マーカー</h3>
+      <table>
+        <tr><th>検査項目</th><th>臨床的意義</th><th>特徴</th></tr>
+        <tr><td><span class="key">CRP（C反応性タンパク）</span></td><td>炎症・組織破壊の存在</td><td>肺炎球菌のC多糖体と反応。炎症で迅速に上昇</td></tr>
+        <tr><td><span class="key">白血球数（WBC）</span></td><td>感染・炎症</td><td>基準値 5,000〜8,500/μl。細菌感染で好中球増多</td></tr>
+        <tr><td><span class="key">プロカルシトニン（PCT）</span></td><td>細菌感染の重症度</td><td>細菌性敗血症で著明に上昇。ウイルス感染では上昇しにくい</td></tr>
+        <tr><td>赤沈（ESR）</td><td>炎症の存在</td><td>反応が遅い（CRPより鈍い）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">111D42</div>
+        <p>血液検査で歯性全身感染症の際に増加するのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a CRP<br>
+          b CEA<br>
+          c 白血球数<br>
+          d アミラーゼ<br>
+          e プロカルシトニン
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】歯性全身感染症（敗血症など）ではCRP・WBC・PCTがいずれも上昇する。CEAは腫瘍マーカー（大腸癌など）、アミラーゼは唾液腺・膵臓の酵素であり感染症マーカーではない。</p>
+      </div>
+
+      <!-- ========== その他の検体検査 ========== -->
+      <h2>その他の検体検査</h2>
+
+      <h3>真菌感染マーカー</h3>
+      <p><span class="key">β-グルカン</span>は真菌の細胞壁成分であり、血中β-グルカン高値は<span class="highlight">深在性真菌症</span>（カンジダ血症、アスペルギルス症など）の診断に用いられる。表在性の口腔カンジダ症では上昇しない。</p>
+
+      <div class="question-box">
+        <div class="q-number">110A120</div>
+        <p>血中β-グルカン値が診断に用いられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a B型肝炎<br>
+          b 帯状疱疹<br>
+          c 深在性真菌症<br>
+          d MRSA感染症<br>
+          e 化膿レンサ球菌感染症
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】β-グルカンは真菌細胞壁の構成成分。血中で高値を示すのは深在性真菌症。B型肝炎・帯状疱疹はウイルス感染、MRSA・化膿レンサ球菌は細菌感染であり、β-グルカンとは無関係。</p>
+      </div>
+
+      <h3>内分泌検査</h3>
+      <p><span class="key">コルチゾール</span>は副腎皮質から分泌されるステロイドホルモンで、ストレス応答・糖代謝・抗炎症作用に関与する。</p>
+      <p><span class="key">Addison病</span>（慢性副腎皮質機能低下症）では副腎皮質の破壊によりコルチゾールが低下する。色素沈着、低血圧、易疲労感が特徴的。</p>
+
+      <div class="question-box">
+        <div class="q-number">115C22</div>
+        <p>内分泌検査で血中コルチゾールが低値を示すのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 褐色細胞腫<br>
+          b クレチン病<br>
+          c 1型糖尿病<br>
+          d Addison 病<br>
+          e アクロメガリー
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】Addison病は副腎皮質の機能低下によりコルチゾールが低値を示す。褐色細胞腫はカテコールアミン過剰（副腎髄質）、クレチン病は甲状腺機能低下、1型糖尿病はインスリン分泌低下（膵臓）、アクロメガリーは成長ホルモン過剰（下垂体）。</p>
+      </div>
+
+      <h3>尿検査</h3>
+      <p>尿は各種代謝産物や有機・無機塩類を含み、生体内の状況を反映する。一般的な検査項目は<span class="key">尿沈渣</span>、<span class="key">尿比重・尿量</span>、<span class="key">尿タンパク</span>（150mg/日以上で腎性タンパク尿）、<span class="key">尿ブドウ糖・ケトン体</span>である。</p>
+      <p><span class="key">ケトン体</span>は脂肪酸のβ酸化で産生され、飢餓・糖尿病（インスリン不足）で脂肪分解が亢進した際に尿中に出現する。<span class="caution">血液ではなく尿を検体として測定する</span>点に注意。</p>
+
+      <div class="question-box">
+        <div class="q-number">109C43</div>
+        <p>尿を検体として用いる検査項目はどれか。1つ選べ。</p>
+        <div class="choices">
+          a PT<br>
+          b AST<br>
+          c ケトン体<br>
+          d HIV抗体<br>
+          e HbA1c値
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】ケトン体は尿を検体として測定する。PT・AST・HIV抗体・HbA1cはいずれも血液検体で測定する検査項目。</p>
+      </div>
+
+      <h3>病理組織学的検査（生検）</h3>
+      <p><span class="key">生検（biopsy）</span>は、病変の一部を採取して組織学的に診断する検査。悪性腫瘍を疑う場合、採取部位の選択が重要となる。</p>
+      <p>生検の採取部位は、腫瘍の<span class="highlight">辺縁部（正常組織との境界領域）</span>から採取するのが原則。中心部は壊死組織が多く、診断に適さないことがある。</p>
+
+      <div class="question-box">
+        <div class="q-number">102A81</div>
+        <p>初診時の口腔内写真（別冊No.7A）を別に示す。潰瘍周囲には硬結を触知する。悪性腫瘍を疑い生検を行うこととした。採取部位（別冊No.7B）を図に示す。適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102A81_1.png" alt="別冊No.7">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】生検は病変の辺縁部（正常組織との境界）から採取する。中心部の壊死組織や、病変から離れた正常組織からでは正確な診断ができない。「イ」は辺縁部に該当する。</p>
+      </div>
+
+      <!-- ========== 基準値まとめ ========== -->
+      <h2>主要検査項目の基準値まとめ</h2>
+      <table>
+        <tr><th>検査項目</th><th>基準値</th><th>臨床的意義</th></tr>
+        <tr><td>赤血球数</td><td>男 400〜540×10<sup>4</sup>/μl<br>女 380〜490×10<sup>4</sup>/μl</td><td>貧血の評価</td></tr>
+        <tr><td>Hb</td><td>男 14〜18 g/dl<br>女 12〜16 g/dl</td><td>貧血の評価</td></tr>
+        <tr><td>Ht</td><td>男 36〜49%<br>女 34〜44%</td><td>貧血・脱水の評価</td></tr>
+        <tr><td>白血球数</td><td>5,000〜8,500/μl</td><td>炎症・感染の評価</td></tr>
+        <tr><td>血小板数</td><td>13〜35×10<sup>4</sup>/μl</td><td>出血傾向の評価</td></tr>
+        <tr><td>PT</td><td>10〜13秒</td><td>外因系凝固</td></tr>
+        <tr><td>APTT</td><td>25〜40秒</td><td>内因系凝固</td></tr>
+        <tr><td>出血時間（Ivy法）</td><td>2〜5分</td><td>血小板・血管壁機能</td></tr>
+        <tr><td>総タンパク</td><td>6.5〜8.0 g/dl</td><td>栄養状態・肝機能</td></tr>
+        <tr><td>TTT</td><td>1.5〜7.0 単位</td><td>肝機能（膠質反応）</td></tr>
+        <tr><td>ZTT</td><td>4〜12 単位</td><td>肝機能（膠質反応）</td></tr>
+        <tr><td>eGFR</td><td>≧90 ml/min/1.73m<sup>2</sup></td><td>腎機能（G1正常）</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

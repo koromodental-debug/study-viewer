@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>悪性腫瘍の疼痛管理 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 疼痛緩和治療</span>
+    <h1>悪性腫瘍の疼痛管理</h1>
+    <div class="container">
+
+      <!-- WHO方式がん疼痛治療法 -->
+      <h2>WHO方式がん疼痛治療法</h2>
+      <p>がん性疼痛に対する薬物療法は、WHOが提唱する<span class="key">「鎮痛薬使用の5原則」</span>と<span class="key">「3段階除痛ラダー」</span>に基づいて行われる。非オピオイド鎮痛薬・オピオイドの使用に加え、鎮痛補助薬、副作用対策、心理社会的支援などを包括的に用いた鎮痛法である。</p>
+
+      <!-- 5原則 -->
+      <h2>鎮痛薬使用の5原則</h2>
+      <table>
+        <tr>
+          <th>#</th>
+          <th>原則</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><span class="highlight">経口的に（by mouth）</span></td>
+          <td>経口投与を基本とする。簡便で用量調節が容易</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><span class="highlight">時間を決めて規則正しく（by the clock）</span></td>
+          <td>痛みが出てからではなく、予防的に定時投与する</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><span class="key">除痛ラダーに沿って（by the ladder）</span></td>
+          <td>痛みの強さに応じて段階的に鎮痛薬を選択</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><span class="key">患者ごとに個別的な量で（for the individual）</span></td>
+          <td>患者の痛みに応じて投与量・投薬内容を調整</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><span class="key">細かい配慮を（with attention to detail）</span></td>
+          <td>副作用対策、患者・家族への十分な説明</td>
+        </tr>
+      </table>
+      <p class="note">2018年の改訂で第3原則（ラダー）が削除され4原則となったが、国試対策としては5原則と3段階除痛ラダーを理解しておく。</p>
+
+      <!-- 3段階除痛ラダー -->
+      <h2>3段階除痛ラダー</h2>
+      <p>痛みの強さに応じて鎮痛薬を段階的に使用する。各段階で<span class="key">鎮痛補助薬</span>の併用を検討する。</p>
+
+      <h3>各段階の薬剤</h3>
+      <table>
+        <tr>
+          <th>段階</th>
+          <th>痛みの程度</th>
+          <th>使用薬剤</th>
+          <th>代表薬</th>
+        </tr>
+        <tr>
+          <td><span class="key">第1段階</span></td>
+          <td>軽度</td>
+          <td><span class="highlight">非オピオイド鎮痛薬（NSAIDs）</span></td>
+          <td>アセトアミノフェン、ロキソプロフェン、ジクロフェナク</td>
+        </tr>
+        <tr>
+          <td><span class="key">第2段階</span></td>
+          <td>中等度</td>
+          <td><span class="highlight">弱オピオイド</span> ± NSAIDs</td>
+          <td>コデイン、トラマドール</td>
+        </tr>
+        <tr>
+          <td><span class="key">第3段階</span></td>
+          <td>高度</td>
+          <td><span class="highlight">強オピオイド</span> ± NSAIDs</td>
+          <td>モルヒネ、オキシコドン、フェンタニル</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">除痛ラダーのポイント</div>
+        <ul>
+          <li>第1段階で効果不十分→第2段階へ、第2段階で不十分→第3段階へと<span class="key">段階的に</span>上げる</li>
+          <li><span class="caution">高用量から開始しない</span>（低用量から開始し、効果をみながら増量）</li>
+          <li>NSAIDsは各段階で<span class="highlight">併用可能</span>（天井効果があるため増量には限界がある）</li>
+          <li>オピオイドは<span class="caution">軽度な疼痛に対する第一選択薬ではない</span>（まずNSAIDs）</li>
+        </ul>
+      </div>
+
+      <!-- オピオイドの使用原則 -->
+      <h2>オピオイドの使用原則</h2>
+
+      <h3>使用にあたっての原則</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>正しい使い方</th>
+          <th>誤った認識</th>
+        </tr>
+        <tr>
+          <td>投与対象</td>
+          <td><span class="highlight">末期に限定しない</span></td>
+          <td><span class="caution">×「末期患者のみに使用」</span></td>
+        </tr>
+        <tr>
+          <td>投与経路</td>
+          <td><span class="highlight">経口投与が優先</span></td>
+          <td>×「注射が基本」</td>
+        </tr>
+        <tr>
+          <td>開始用量</td>
+          <td><span class="key">低用量から開始</span></td>
+          <td><span class="caution">×「高用量から開始」</span></td>
+        </tr>
+        <tr>
+          <td>NSAIDsとの関係</td>
+          <td><span class="highlight">併用できる</span></td>
+          <td>×「どちらか一方のみ」</td>
+        </tr>
+        <tr>
+          <td>軽度の痛みへの適応</td>
+          <td>第一選択ではない（まずNSAIDs）</td>
+          <td><span class="caution">×「軽度な疼痛の第一選択薬」</span></td>
+        </tr>
+      </table>
+
+      <!-- 代表的なオピオイド -->
+      <h2>代表的なオピオイド鎮痛薬</h2>
+
+      <h3>弱オピオイド（第2段階）</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">コデイン</span></td>
+          <td>体内でモルヒネに代謝されて鎮痛効果を発揮。鎮咳作用もある</td>
+        </tr>
+        <tr>
+          <td><span class="key">トラマドール</span></td>
+          <td>オピオイド受容体作用＋セロトニン・ノルアドレナリン再取り込み阻害</td>
+        </tr>
+      </table>
+
+      <h3>強オピオイド（第3段階）</h3>
+      <table>
+        <tr>
+          <th>薬剤</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">モルヒネ</span></td>
+          <td>がん性疼痛治療の基本薬。経口・注射・坐薬。天井効果なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">オキシコドン</span></td>
+          <td>モルヒネと同等の鎮痛効果。経口投与での生体内利用率が高い</td>
+        </tr>
+        <tr>
+          <td><span class="key">フェンタニル</span></td>
+          <td>モルヒネの50〜100倍の鎮痛力。貼付剤（パッチ）あり</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">オピオイドの三大副作用</div>
+        <ul>
+          <li><span class="highlight">便秘</span>：耐性が生じにくく、ほぼ必発。<span class="key">緩下剤の予防的投与</span>が必要</li>
+          <li><span class="key">悪心・嘔吐</span>：投与初期に出現しやすい。耐性が生じることが多い</li>
+          <li><span class="key">眠気</span>：投与初期や増量時に出現。数日で耐性が生じることが多い</li>
+        </ul>
+      </div>
+
+      <!-- 鎮痛補助薬 -->
+      <h2>鎮痛補助薬</h2>
+      <p>本来は鎮痛薬ではないが、鎮痛薬と併用することで鎮痛効果を高める、あるいは特定の痛みに効果を発揮する薬剤である。除痛ラダーの各段階で併用を検討する。</p>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>代表薬</th>
+          <th>適応となる痛み</th>
+        </tr>
+        <tr>
+          <td>抗けいれん薬</td>
+          <td>カルバマゼピン、プレガバリン、ガバペンチン</td>
+          <td>神経障害性疼痛</td>
+        </tr>
+        <tr>
+          <td>抗うつ薬</td>
+          <td>アミトリプチリン（三環系）、デュロキセチン（SNRI）</td>
+          <td>神経障害性疼痛、慢性疼痛</td>
+        </tr>
+        <tr>
+          <td>ステロイド</td>
+          <td>デキサメタゾン</td>
+          <td>腫瘍による圧迫・浮腫に伴う痛み</td>
+        </tr>
+      </table>
+
+      <!-- 過去問 -->
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A88</div>
+        <p>口腔癌患者の疼痛コントロールにおけるオピオイドの使用方法はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 末期患者に限定する。<br>
+          b NSAIDsと併用できる。<br>
+          c 経口投与が優先される。<br>
+          d 高用量から投与を開始する。<br>
+          e 軽度な疼痛に対する第一選択薬である。
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】WHO方式がん疼痛治療法の原則に基づく問題。<br>
+        a（×）：オピオイドは末期に限定せず、中等度以上の痛みに対して使用する。<br>
+        b（○）：NSAIDsとオピオイドは作用機序が異なり、併用することで相加的な鎮痛効果が得られる。除痛ラダーの各段階でNSAIDsの併用が推奨されている。<br>
+        c（○）：WHO方式の第1原則「経口的に（by mouth）」。簡便で用量調節が容易なため経口投与が優先される。<br>
+        d（×）：低用量から開始し、効果をみながら漸増する。<br>
+        e（×）：軽度の疼痛には第1段階のNSAIDsが第一選択。オピオイドは第2段階以降。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

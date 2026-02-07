@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>骨折の診断・治療 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 損傷</span>
+    <h1>骨折の診断・治療</h1>
+    <div class="container">
+
+      <!-- ===== 骨折の分類 ===== -->
+      <h2>骨折の分類</h2>
+
+      <h3>軟組織状態による分類</h3>
+      <table>
+        <tr><th>分類</th><th>特徴</th></tr>
+        <tr>
+          <td class="key">閉鎖性骨折（単純骨折）</td>
+          <td>骨折部と皮膚や粘膜の創傷との交通がないもの</td>
+        </tr>
+        <tr>
+          <td class="key">開放性骨折（複雑骨折）</td>
+          <td>骨折部と皮膚や粘膜の創傷が交通しているもの。<span class="caution">感染を生じやすい</span></td>
+        </tr>
+      </table>
+      <p><span class="caution">注意：「複雑骨折」≠「重複骨折」</span>。複雑骨折＝開放性骨折（創傷が外界と交通）。重複骨折＝骨折線が複数存在するもの。</p>
+
+      <h3>外力の作用状況による分類</h3>
+      <table>
+        <tr><th>分類</th><th>定義</th><th>代表例</th></tr>
+        <tr>
+          <td class="key">直達骨折</td>
+          <td>直接外力の作用した部位に生じた骨折</td>
+          <td>頬骨弓骨折など</td>
+        </tr>
+        <tr>
+          <td class="key">介達骨折</td>
+          <td>外力の作用した部位から<span class="highlight">離れた部位</span>に生じた骨折</td>
+          <td><span class="highlight">関節突起骨折</span>（オトガイ部強打で発生）</td>
+        </tr>
+      </table>
+
+      <h3>骨離断状態による分類</h3>
+      <ul>
+        <li><span class="key">完全骨折</span>：骨の連続性が断たれた状態</li>
+        <li><span class="key">不完全骨折</span>（若木骨折を含む）：断端間の骨の連続性が保たれている。<span class="highlight">若年者の下顎骨に多い</span></li>
+        <li><span class="key">亀裂骨折</span>：裂隙形成（ヒビ）にとどまる。骨折片は可動性であるが整復は比較的容易</li>
+      </ul>
+
+      <h3>受傷後の経過期間による分類</h3>
+      <ul>
+        <li><span class="key">新鮮骨折</span>：受傷後約2週間以内。治癒機転が始まっていない</li>
+        <li><span class="key">陳旧骨折</span>：受傷後約2週間以上経過。治癒機転が進行している</li>
+      </ul>
+
+      <!-- ===== 整復法 ===== -->
+      <h2>骨折の整復</h2>
+      <p>受傷後可及的に早く行うのが原則。</p>
+
+      <table>
+        <tr><th>整復法</th><th>方法</th><th>適応</th></tr>
+        <tr>
+          <td class="key">非観血的整復法（保存的）</td>
+          <td>顎間ゴムや口腔外装置による牽引整復、手指による徒手整復</td>
+          <td>亀裂骨折、不完全骨折、<span class="highlight">小児・高齢者</span></td>
+        </tr>
+        <tr>
+          <td class="key">観血的整復法</td>
+          <td>直接骨折線を明示して整復</td>
+          <td>偏位のある完全骨折</td>
+        </tr>
+      </table>
+
+      <!-- ===== 固定法 ===== -->
+      <h2>骨折の固定法（★最頻出★）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">固定法の使い分け（症例別）</div>
+        <ul>
+          <li><span class="key">有歯顎の成人</span> → <span class="highlight">線副子</span>による顎間固定 ＋ ミニプレートによる顎内固定</li>
+          <li><span class="key">無歯顎・多数歯欠損</span> → <span class="highlight">床副子</span>（上顎：懸垂固定、下顎：囲繞結紮） ＋ 金属プレート</li>
+          <li><span class="key">小児</span> → <span class="highlight">チンキャップ</span>（顎外固定） ＋ 開口訓練（保存的治療が原則）</li>
+          <li><span class="key">偏位なし・不正咬合なし</span> → 顎外固定（チンキャップ、弾性包帯）のみ</li>
+        </ul>
+      </div>
+
+      <h3>顎外固定</h3>
+      <p><span class="key">オトガイ帽（チンキャップ）</span>、弾性包帯など。骨折線の偏位がなく不正咬合が認められない症例や、顎間・顎内固定ができない症例に対し骨折部位の安静を保つ目的で行う。</p>
+
+      <h3>顎間固定</h3>
+      <p>上下顎の歯に結紮線や副子を装着し、整復後に中心咬合位で鋼線やゴム輪で結紮する方法。対合歯列と緊密に咬合させ、筋活動の影響を抑制し、骨折部位の安静および咬合の維持を得る。</p>
+      <table>
+        <tr><th>方法</th><th>特徴・適応</th></tr>
+        <tr>
+          <td class="key">歯牙結紮</td>
+          <td>0.3〜0.5mm径の鋼線で歯を結紮する</td>
+        </tr>
+        <tr>
+          <td class="key">線副子</td>
+          <td>歯列弓の唇頬側に沿って適合させた副子を鋼線や接着性レジンで歯に固定。<span class="highlight">最も一般的な顎間固定法</span></td>
+        </tr>
+        <tr>
+          <td class="key">床副子</td>
+          <td><span class="highlight">無歯顎・多数歯欠損・小児</span>のように歯を固定源として利用しにくい症例に使用。上顎では頬骨弓や前頭骨に<span class="key">懸垂固定</span>、下顎では<span class="key">囲繞結紮法</span>で鋼線により下顎骨に直接固定</td>
+        </tr>
+        <tr>
+          <td class="key">ブラケット法</td>
+          <td>歯科矯正装置を利用。顎変形症手術に用いる</td>
+        </tr>
+        <tr>
+          <td class="key">顎間固定用骨ネジ</td>
+          <td>歯槽骨に骨ネジを打ち込んで固定</td>
+        </tr>
+        <tr>
+          <td class="key">ハイブリッドMMF</td>
+          <td>アーチバーの固定性と顎間固定スクリューの効率性を有する。骨ネジより固定力が強く、線副子より簡便</td>
+        </tr>
+      </table>
+
+      <h3>骨内固定（顎内固定）</h3>
+      <table>
+        <tr><th>材料</th><th>利点</th><th>欠点</th></tr>
+        <tr>
+          <td class="key">金属プレート（チタン）</td>
+          <td>・力学的強度が高い<br>・術後の顎間固定を必要としない場合がある<br>→ <span class="highlight">骨片の安静＋咀嚼の早期回復</span></td>
+          <td>・<span class="caution">除去手術が必要</span><br>・チタンアレルギーの可能性</td>
+        </tr>
+        <tr>
+          <td class="key">吸収性プレート（PLLA：ポリL-乳酸）</td>
+          <td>・<span class="highlight">除去手術が不要</span></td>
+          <td>・エックス線検査で確認できない<br>・強度に難点がある<br>・完全吸収まで長期間を要する<br>・術後の顎間固定が必要になる場合がある</td>
+        </tr>
+      </table>
+
+      <!-- ===== 術後管理と合併症 ===== -->
+      <h2>術後管理と合併症（★頻出★）</h2>
+
+      <h3>術後顎間固定の目的</h3>
+      <ul>
+        <li><span class="highlight">咬合の緊密化</span>：正常な咬合関係の回復</li>
+        <li><span class="highlight">異常癒着の防止</span>：不正咬合のまま癒合することを防ぐ</li>
+      </ul>
+      <p class="note">※感染予防や腫脹軽減は顎間固定の目的ではない。</p>
+
+      <h3>開口訓練の必要性</h3>
+      <p>関節突起骨折では、非観血的でも観血的でも顎間固定解除後に<span class="highlight">開口訓練</span>が必要。行わないと関節周囲の線維化・骨性癒着により<span class="caution">顎関節強直症</span>を生じる。</p>
+
+      <h3>両側関節突起骨折：外科療法の利点</h3>
+      <ul>
+        <li><span class="key">顎間固定期間が短い</span>：確実な固定により早期に顎間固定を解除できる</li>
+        <li><span class="key">偏位骨片を整復できる</span>：直視下で正確な整復が可能</li>
+      </ul>
+      <p class="note">※感染リスクは外科療法の方がむしろ高い。開口訓練は外科療法でも必要。</p>
+
+      <h3>神経損傷</h3>
+      <table>
+        <tr><th>アプローチ</th><th>損傷リスクのある神経</th><th>症状</th></tr>
+        <tr>
+          <td class="key">下顎骨下縁アプローチ</td>
+          <td><span class="highlight">顔面神経下顎縁枝</span></td>
+          <td><span class="highlight">下唇の下制障害</span>（口角下制筋・下唇下制筋の麻痺）</td>
+        </tr>
+        <tr>
+          <td class="key">下顎骨体部の骨折</td>
+          <td>下歯槽神経</td>
+          <td>下唇・オトガイ部の感覚障害（Vincent症状）</td>
+        </tr>
+      </table>
+
+      <h3>下歯槽神経障害の検査法</h3>
+      <ul>
+        <li><span class="key">触覚検査</span>：軽い接触刺激に対する知覚の有無を確認</li>
+        <li><span class="key">二点識別検査</span>：2点間の弁別閾を測定</li>
+      </ul>
+      <p class="note">※味覚検査（鼓索神経）、Saxonテスト（唾液分泌量）、プリックテスト（I型アレルギー）は下歯槽神経の検査ではない。</p>
+
+      <!-- ===== 小児・高齢者の骨折治療 ===== -->
+      <h2>年齢別の治療方針</h2>
+
+      <h3>小児の関節突起骨折</h3>
+      <p>小児では原則として<span class="highlight">保存的治療</span>を行う。<span class="key">チンキャップ</span>（顎外固定）で骨折部の安静を保ち、<span class="key">開口訓練</span>で顎関節強直症を予防。骨のリモデリング能力が高いため良好な予後が得られる。</p>
+
+      <h3>乳幼児の下顎骨骨折</h3>
+      <p>治療法選択の考慮因子：</p>
+      <ul>
+        <li><span class="highlight">骨片の偏位</span>：偏位の程度で保存的か観血的かを判断</li>
+        <li><span class="highlight">永久歯胚の位置</span>：プレート固定時にスクリューが永久歯胚を損傷しないよう注意</li>
+      </ul>
+
+      <h3>無歯顎高齢者の下顎骨骨折</h3>
+      <p>歯がないため線副子は使用不可。<span class="key">床副子を用いた囲繞結紮</span>（義歯を鋼線で下顎骨に直接固定）に加え、<span class="key">金属プレート</span>による骨内固定を併用する。</p>
+
+      <!-- ===== 創傷の分類 ===== -->
+      <h2>創傷の分類</h2>
+      <table>
+        <tr><th>創の種類</th><th>原因・特徴</th><th>組織欠損</th></tr>
+        <tr><td class="key">咬創</td><td>咀嚼時やてんかん発作で軟組織を噛んで生じた創。→難治性潰瘍</td><td>—</td></tr>
+        <tr><td class="key">切創</td><td>鋭利な刃物やガラスで生じた創。周囲組織の損傷は少ない</td><td>なし</td></tr>
+        <tr><td class="key">挫傷</td><td>鈍器により組織が圧挫した開放性損傷。<span class="key">創縁不規則、周囲組織の挫滅</span></td><td><span class="caution">あり</span></td></tr>
+        <tr><td class="key">割創</td><td>組織が分断された創。周囲組織の損傷あり</td><td>なし</td></tr>
+        <tr><td class="key">裂創</td><td><span class="highlight">牽引力</span>により組織の弾性力を超えて引き裂かれた創。<span class="key">創縁不規則</span></td><td>—</td></tr>
+        <tr><td class="key">刺創</td><td>針などの鋭器が刺入して生じた創。創部は小さいが深い。血腫形成あり</td><td>—</td></tr>
+        <tr><td class="key">擦過傷</td><td>摩擦で生じた傷。組織液の滲出、上皮層の剥離</td><td>あり</td></tr>
+      </table>
+      <p class="note">※組織欠損がある場合は二次治癒をたどることが多い。</p>
+
+      <h3>軟組織損傷の治療フロー</h3>
+      <p>①<span class="key">止血</span>（圧迫止血が基本）→ ②<span class="key">洗浄・異物除去</span>（滅菌生理食塩液。創内は消毒液を用いない）→ ③<span class="key">デブリードマン</span>（壊死組織・挫滅組織を切除して新鮮創化）→ ④<span class="key">創の閉鎖・縫合</span> → ⑤感染対策</p>
+      <p>縫縮できない大きな実質欠損 → <span class="key">湿潤療法</span>（ハイドロコロイド等のドレッシング材で被覆）→ 二次治癒を図る。</p>
+
+      <!-- ===== 過去問 ===== -->
+      <h2>過去問</h2>
+
+      <h3>固定法・治療法の選択（6件）</h3>
+
+      <div class="question-box">
+        <div class="q-number">114C42（有歯顎成人の下顎骨骨折）</div>
+        <p>30歳の男性。咬合不全を主訴として来院した。昨夜、転倒して下顎を強打したという。初診時のエックス線画像（別冊No.11A）と3D-CT（別冊No.11B）を別に示す。
+適切な治療法はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C42_1.png" alt="別冊No.11A">
+          <img src="../../../images/114回_Web画像/114C42_2.png" alt="別冊No.11B">
+        </div>
+        <div class="choices">
+          a 骨ネジを用いた顎内固定<br>
+          b 床副子を用いた顎内固定<br>
+          c 線副子を用いた顎間固定<br>
+          d チンキャップを用いた開口制限<br>
+          e ミニプレートを用いた顎内固定
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】有歯顎成人の下顎骨骨折（偏位あり）。<span class="key">線副子による顎間固定</span>（最も一般的な方法）で咬合を安定させ、<span class="key">ミニプレートによる顎内固定</span>で骨片を確実に固定する。有歯顎のため床副子は不要。チンキャップは偏位のない場合の顎外固定であり本症例には不十分。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B71（関節突起骨折の保存的治療）</div>
+        <p>19歳の女性。咀嚼困難を主訴として来院した。3日前に階段から転落し、オトガイ部を強打したという。検査の結果、保存的治療を行うこととした。初診時のエックス線画像（別冊No.23A）とCT（別冊No.23B）を別に示す。
+使用するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113B71_1.png" alt="別冊No.23A">
+          <img src="../../../images/113回_Web画像/113B71_2.png" alt="別冊No.23B">
+        </div>
+        <div class="choices">
+          a 床副子<br>
+          b 線副子<br>
+          c Kirschner 鋼線<br>
+          d 骨接合用骨ネジ<br>
+          e 骨接合用プレート
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】オトガイ部強打による関節突起骨折（介達骨折の代表）。「保存的治療」と明示されているため非観血的整復固定を行う。有歯顎の19歳女性であるため<span class="key">線副子</span>を用いた顎間固定が適切。Kirschner鋼線・骨接合用骨ネジ・プレートはいずれも観血的治療の器材。床副子は無歯顎や小児で使用。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B38（無歯顎高齢者の下顎骨骨折）</div>
+        <p>76歳の女性。下顎の腫脹を主訴として来院した。昨夜転倒して受傷したという。全身状態は良好である。既往歴として高血圧と糖尿病とがあり、血圧は130/87mmHg、HbA1Cは6.0%である。初診時のエックス線写真（別冊No.38）を別に示す。
+適切な治療法はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106B38_1.png" alt="別冊No.38">
+        </div>
+        <div class="choices">
+          a 線副子を用いた顎間固定<br>
+          b 床副子を用いた囲繞結紮<br>
+          c 金属プレートによる固定<br>
+          d ワイヤーによる懸垂固定<br>
+          e 遊離骨移植による再建固定
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】無歯顎高齢者の下顎骨骨折。歯がないため線副子は使用できない。下顎の無歯顎では<span class="key">床副子を用いた囲繞結紮</span>（義歯を鋼線で下顎骨に直接固定）で顎間固定を行い、<span class="key">金属プレート</span>で骨内固定を行う。HbA1C 6.0%で血糖コントロール良好のため手術可能。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B46（小児の関節突起骨折）</div>
+        <p>8歳の女児。開口時の右側への偏位を主訴として来院した。階段で転倒して顎を打ってから開口時に痛みがあるという。クリック音を認めない。初診時のエックス線写真（別冊No.46）を別に示す。
+適切な対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106B46_1.png" alt="別冊No.46">
+        </div>
+        <div class="choices">
+          a 開口訓練<br>
+          b 下顎頭切除術<br>
+          c 観血的整復固定<br>
+          d 顎関節腔内洗浄<br>
+          e チンキャップ装着
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】8歳の小児の関節突起骨折（開口時に患側への偏位）。小児では<span class="key">保存的治療</span>が原則。<span class="key">チンキャップ</span>で骨折部の安静を保ち、<span class="key">開口訓練</span>で顎関節強直症を予防する。小児は骨のリモデリング能力が高く、観血的治療は通常不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102D1（乳幼児の骨折治療）</div>
+        <p>1歳6か月の男児。摂食障害を主訴として来院した。2日前に階段から落ちオトガイ部を強打したという。全身状態に異常はない。初診時の口腔内写真（別冊No.1A）とエックス線写真（別冊No.1B）とを別に示す。
+治療法の選択に当たり考慮するのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102D1_1.png" alt="別冊No.1A">
+          <img src="../../../images/102回_Web画像/102D1_2.png" alt="別冊No.1B">
+        </div>
+        <div class="choices">
+          a 骨密度<br>
+          b 弄舌癖<br>
+          c 骨片の偏位<br>
+          d 永久歯胚の位置<br>
+          e 舌小帯の付着位置
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】1歳半の乳幼児の下顎骨骨折（オトガイ部強打）。治療法選択で考慮するのは<span class="key">骨片の偏位</span>（偏位の程度で保存的か観血的かを判断）と<span class="key">永久歯胚の位置</span>（スクリューが永久歯胚を損傷しないように）。骨密度・弄舌癖・舌小帯は骨折治療の選択因子にならない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104C128（金属プレートの使用理由）</div>
+        <p>下顎骨骨折の治療に金属プレートを用いる理由はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 血腫の予防<br>
+          b 骨片の安静<br>
+          c 咀嚼の早期回復<br>
+          d 腫脹の早期消退<br>
+          e 顎骨壊死の防止
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】金属プレートによる骨内固定の目的は<span class="key">骨片の安静</span>（骨折断端の確実な固定）と<span class="key">咀嚼の早期回復</span>（強固な固定により術後の顎間固定を短縮または不要にできる）。血腫予防・腫脹消退・顎骨壊死防止はプレートの使用理由ではない。</p>
+      </div>
+
+      <h3>術後管理・合併症（4件）</h3>
+
+      <div class="question-box">
+        <div class="q-number">116B80（術後顎間固定の目的）</div>
+        <p>下顎骨骨折の観血的整復固定術後の口腔内写真（別冊No.32）を別に示す。
+この処置の目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116B80_1.png" alt="別冊No.32">
+        </div>
+        <div class="choices">
+          a 咬合の緊密化<br>
+          b 異常癒着の防止<br>
+          c 術後感染の予防<br>
+          d 術後腫脹の軽減<br>
+          e 顎関節脱臼の予防
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】術後のゴムによる顎間牽引の写真。<span class="key">咬合の緊密化</span>と<span class="key">異常癒着の防止</span>が目的。感染予防は抗菌薬、腫脹軽減は消炎処置で対応するものであり、顎間固定の目的ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C69（開口訓練で予防するもの）</div>
+        <p>20歳の男性。咬み合わせの異常を主訴として来院した。前夜、顔面を殴打された後から咬合の異常を自覚しているという。検査の結果、保存的治療を行うこととした。初診時のエックス線画像（別冊No.24A）、CT（別冊No.24B）及び顎間固定解除後のある訓練時の写真（別冊No.24C）を別に示す。
+この訓練で予防するのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113C69_1.png" alt="別冊No.24A">
+          <img src="../../../images/113回_Web画像/113C69_2.png" alt="別冊No.24B">
+          <img src="../../../images/113回_Web画像/113C69_3.png" alt="別冊No.24C">
+        </div>
+        <div class="choices">
+          a 顎関節強直症<br>
+          b 変形性顎関節症<br>
+          c 滑膜性骨軟骨腫症<br>
+          d 習慣性顎関節脱臼<br>
+          e 非復位性関節円板転位
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】関節突起骨折後の顎間固定解除後に行う開口訓練。最大の目的は<span class="key">顎関節強直症の予防</span>。顎間固定後に開口訓練を行わないと、関節周囲の線維化・骨性癒着により開口障害が不可逆的に生じる。顎関節強直症は原因として外傷（オトガイ部の強打）、感染、炎症が挙げられる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111A73（下顎骨下縁アプローチの合併症）</div>
+        <p>22歳の女性。開口障害を主訴として来院した。交通事故に遭遇して顔面を強打したという。
+観血的に治療を行うこととした。初診時のエックス線画像（別冊No.18A）と3D-CT（別冊No.18B）、下顎骨下縁を矢印で示した術中写真（別冊No.18C）及び術後の頭部後前方向エックス線写真（別冊No.18D）を別に示す。
+術後に起こりやすい合併症はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111A73_1.png" alt="別冊No.18A">
+          <img src="../../../images/111回_Web画像/111A73_2.png" alt="別冊No.18B">
+          <img src="../../../images/111回_Web画像/111A73_3.png" alt="別冊No.18C">
+          <img src="../../../images/111回_Web画像/111A73_4.png" alt="別冊No.18D">
+        </div>
+        <div class="choices">
+          a 舌の感覚異常<br>
+          b 下唇の下制障害<br>
+          c 下唇の感覚異常<br>
+          d 眼裂の閉鎖障害<br>
+          e 上唇の挙上障害
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】下顎骨下縁アプローチで観血的整復固定を行っている。この手術アプローチで最も損傷リスクが高いのは<span class="key">顔面神経下顎縁枝</span>であり、損傷すると<span class="key">下唇の下制障害</span>（口角下制筋・下唇下制筋の麻痺による口角非対称）を生じる。下唇の感覚異常は下歯槽神経損傷、眼裂閉鎖障害は顔面神経頬骨枝損傷によるもので、下顎骨下縁アプローチとは関連が薄い。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A91（外科療法 vs 保存療法）</div>
+        <p>両側関節突起骨折において保存療法と比較した外科療法の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 関節痛が改善する。<br>
+          b 感染リスクが低い。<br>
+          c 顎間固定期間が短い。<br>
+          d 偏位骨片を整復できる。<br>
+          e 開口訓練の必要がない。
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】外科療法（観血的整復固定）の利点は<span class="key">顎間固定期間が短い</span>ことと<span class="key">偏位骨片を整復できる</span>こと。外科療法でも開口訓練は必要（顎関節強直症予防のため）。感染リスクはむしろ外科療法の方が高い（手術創の存在）。関節痛の改善は外科療法に特有の利点とはいえない。</p>
+      </div>
+
+      <h3>固定材料（1件）</h3>
+
+      <div class="question-box">
+        <div class="q-number">109C94（吸収性プレートの利点）</div>
+        <p>下顎骨骨折の手術中の口腔内写真（別冊No.94）を別に示す。
+この骨接合プレート材料の利点はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C94_1.png" alt="別冊No.94">
+        </div>
+        <div class="choices">
+          a 耐熱性が高い。<br>
+          b 骨伝導性がある。<br>
+          c 力学的強度が高い。<br>
+          d 除去手術が不要である。<br>
+          e 組織の色調と鑑別しやすい。
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】写真は吸収性プレート（PLLA：ポリL-乳酸）。白色・半透明の外観で金属プレートと容易に鑑別できる。最大の利点は<span class="key">除去手術が不要</span>であること。力学的強度は金属プレートより低い。骨伝導性はない（骨伝導性をもつのはハイドロキシアパタイトやβ-TCPなど）。</p>
+      </div>
+
+      <h3>神経障害の検査（1件）</h3>
+
+      <div class="question-box">
+        <div class="q-number">109B37（下歯槽神経障害の検査）</div>
+        <p>19歳の男性。咬合不全を主訴として来院した。昨日、野球の練習中にボールが顎に当たったという。初診時のエックス線写真（別冊No.37）を別に示す。
+この外傷に伴う神経麻痺の診断に有用なのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109B37_1.png" alt="別冊No.37">
+        </div>
+        <div class="choices">
+          a 味覚検査<br>
+          b 触覚検査<br>
+          c Saxonテスト<br>
+          d 二点識別検査<br>
+          e プリックテスト
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】下顎骨骨折に伴う下歯槽神経（三叉神経第III枝）の障害を検査する。<span class="key">触覚検査</span>と<span class="key">二点識別検査</span>はいずれも感覚神経の機能評価に有用。味覚検査は鼓索神経（顔面神経の枝）、Saxonテストは唾液分泌量（唾液腺機能）、プリックテスト（skin prick test）はI型アレルギー（即時型過敏反応）の検査であり、いずれも下歯槽神経の評価には用いない。</p>
+      </div>
+
+      <h3>画像診断・その他（4件）</h3>
+
+      <div class="question-box">
+        <div class="q-number">114A27（Battle signの診断）</div>
+        <p>交通外傷で搬送された患者の耳部の写真（別冊No. 7）を別に示す。
+疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A27_1.png" alt="別冊No.7">
+        </div>
+        <div class="choices">
+          a 頬骨骨折<br>
+          b 顎関節脱臼<br>
+          c 頭蓋底骨折<br>
+          d 頭蓋内血腫<br>
+          e Le FortⅠ型骨折
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】耳介後方（乳様突起周囲）の皮下出血＝<span class="key">Battle sign（Battle徴候）</span>であり、<span class="key">中頭蓋底骨折</span>を示唆する。中蓋底骨折の出血が乳様突起耳介後方周囲に皮膚の変色・腫脹として現れるもの。頬骨骨折やLe Fort I型骨折ではこのような耳介後方の変色は見られない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B39（骨折部位の同定）</div>
+        <p>35歳の男性。右側頬部の疼痛を主訴として来院した。昨日、オートバイで塀に激突し、顔面を強打したという。初診時のエックス線写真（別冊No.39A、B）とCT（別冊No.39C）とを別に示す。
+骨折部位はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B39_1.png" alt="別冊No.39A">
+          <img src="../../../images/105回_Web画像/105B39_2.png" alt="別冊No.39B">
+          <img src="../../../images/105回_Web画像/105B39_3.png" alt="別冊No.39C">
+        </div>
+        <div class="choices">
+          a 下顎頭<br>
+          b 頬骨弓<br>
+          c 鼻中隔<br>
+          d 上顎洞前壁<br>
+          e 蝶形骨翼状突起
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】顔面強打後の右側頬部痛。画像から<span class="key">頬骨弓</span>の陥没骨折と<span class="key">上顎洞前壁</span>（頬骨上顎バットレス部）の骨折が確認できる。頬骨体部骨折は頬骨の5つの部位（①頬骨上顎バットレス ②前頭突起 ③眼窩下縁 ④頬骨弓 ⑤眼窩側壁）のいずれかで生じる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103D6（頬骨弓骨折の整復：切開線の選択）</div>
+        <p>68歳の男性。顔面の打撲を主訴として来院した。昨夜、階段から転落して顔面を強打し鼻血が出たという。咬合に異常は認めないが開口障害を認める。初診時のCT（別冊No.6A）、治療に使用する器具（別冊No.6B）及び切開線部位の図（別冊No.6C）を別に示す。
+この器具を使用する際の切開線はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103D6_1.png" alt="別冊No.6A">
+          <img src="../../../images/103回_Web画像/103D6_2.png" alt="別冊No.6B">
+          <img src="../../../images/103回_Web画像/103D6_3.png" alt="別冊No.6C">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】咬合異常なし＋開口障害→<span class="key">頬骨弓骨折</span>（筋突起の運動障害による開口障害で、咬合異常は伴わない）。器具はRoweのエレベータ。<span class="key">Gilliesのtemporal approach</span>（側頭部皮膚切開）から挿入して整復する。「イ」が側頭部皮膚切開に相当。頬骨弓骨折は直達骨折であることも重要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C127（創傷の分類：裂創）</div>
+        <p>21歳の男性。顔面の外傷で来院した。タクシー乗車中に自動車事故に遭い、前席のシートで顔面を強打したという。初診時の口腔外写真（別冊No.29）を別に示す。
+矢印で示す上唇の創はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C127_1.png" alt="別冊No.29">
+        </div>
+        <div class="choices">
+          a 咬　創<br>
+          b 挫　創<br>
+          c 刺　創<br>
+          d 切　創<br>
+          e 裂　創
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】自動車事故でシートに顔面を強打（鈍的外力）して生じた上唇の創。牽引力により皮膚が弾性力を超えて引き裂かれた<span class="key">裂創</span>。創縁が不規則なのが特徴。鑑別として、挫傷は鈍器による圧挫で組織欠損を伴い、切創は鋭利な器具による創縁整な創である。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -33,8 +33,26 @@
           "answer": "Papanicolaou染色"
         },
         {
-          "question": "[105C76] ★★\n通常の病理組織検査に比べた細胞診の利点は？",
-          "answer": "検体採取に伴う侵襲が少ない、標本作製に要する時間が短い\n\n[他の選択肢との違い]\n- 確定診断に適する：組織診の利点 ← ひっかけ\n- 検体からの情報量が多い：組織診の利点\n- 組織構築を把握しやすい：組織診の利点\n- 検体採取に伴う侵襲が少ない：細胞診の利点 ← 正解\n- 標本作製に要する時間が短い：細胞診の利点 ← 正解\n\n[ポイント]\n細胞診の利点は「侵襲少・時間短」。情報量・組織構築・確定診断は組織診。"
+          "question": "通常の病理組織検査に比べた細胞診の利点は？",
+          "answer": "D, E",
+          "choices": {
+            "a": "確定診断に適する",
+            "b": "検体からの情報量が多い",
+            "c": "組織構築を把握しやすい",
+            "d": "検体採取に伴う侵襲が少ない",
+            "e": "標本作製に要する時間が短い"
+          },
+          "correctAnswer": "D, E",
+          "numChoices": 2,
+          "code": "105C76",
+          "point": "細胞診の利点は「侵襲少・時間短」。情報量・組織構築・確定診断は組織診。",
+          "choiceExplanations": {
+            "a": "組織診の利点 ← ひっかけ",
+            "b": "組織診の利点",
+            "c": "組織診の利点",
+            "d": "細胞診の利点 ← 正解",
+            "e": "細胞診の利点 ← 正解"
+          }
         }
       ]
     },
@@ -79,12 +97,48 @@
           "answer": "粘液多糖、真菌"
         },
         {
-          "question": "[104C114] ★★\n血液塗抹標本の染色法は？",
-          "answer": "May-Giemsa染色\n\n[他の選択肢との違い]\n- Sudan III染色：脂肪の検出\n- Congo-Red染色：アミロイドの検出\n- May-Giemsa染色：血球・血液塗抹標本 ← 正解\n- Ziehl-Neelsen染色：抗酸菌（結核）の検出\n- HE染色：組織診の標準染色\n\n[ポイント]\nMay-Giemsa = 血液（Mayは「赤い」イメージ）"
+          "question": "血液塗抹標本の染色法は？",
+          "answer": "C",
+          "choices": {
+            "a": "Sudan III染色",
+            "b": "Congo-Red染色",
+            "c": "May-Giemsa染色",
+            "d": "Ziehl-Neelsen染色",
+            "e": "HE染色"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "104C114",
+          "point": "May-Giemsa = 血液（Mayは「赤い」イメージ）",
+          "choiceExplanations": {
+            "a": "脂肪の検出",
+            "b": "アミロイドの検出",
+            "c": "血球・血液塗抹標本 ← 正解",
+            "d": "抗酸菌（結核）の検出",
+            "e": "組織診の標準染色"
+          }
         },
         {
-          "question": "[113B36] ★★\nGrocott染色陽性となる病原体は？",
-          "answer": "真菌（Candida albicansなど）\n\n[他の選択肢との違い]\n- Candida albicans：真菌 ← 正解（Grocott陽性）\n- Treponema pallidum：スピロヘータ（梅毒）\n- Staphylococcus aureus：細菌（ブドウ球菌）\n- Mycoplasma pneumoniae：細菌（マイコプラズマ）\n- Mycobacterium tuberculosis：抗酸菌（結核）→ Ziehl-Neelsen染色\n\n[ポイント]\nGrocott = 真菌、Ziehl-Neelsen = 抗酸菌（結核）"
+          "question": "Grocott染色陽性となる病原体は？",
+          "answer": "A",
+          "choices": {
+            "a": "Candida albicans",
+            "b": "Treponema pallidum",
+            "c": "Staphylococcus aureus",
+            "d": "Mycoplasma pneumoniae",
+            "e": "Mycobacterium tuberculosis"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "113B36",
+          "point": "Grocott = 真菌、Ziehl-Neelsen = 抗酸菌（結核）",
+          "choiceExplanations": {
+            "a": "真菌 ← 正解（Grocott陽性）",
+            "b": "スピロヘータ（梅毒）",
+            "c": "細菌（ブドウ球菌）",
+            "d": "細菌（マイコプラズマ）",
+            "e": "抗酸菌（結核）→ Ziehl-Neelsen染色"
+          }
         }
       ]
     },

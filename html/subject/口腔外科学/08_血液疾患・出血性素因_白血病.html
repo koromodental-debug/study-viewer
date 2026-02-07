@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>白血病 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 血液疾患・出血性素因</span>
+    <h1>白血病</h1>
+    <div class="container">
+
+      <h2>白血病とは</h2>
+      <p><span class="key">白血病</span>は、造血幹細胞/前駆細胞に遺伝子異常が起こり、異常な白血病細胞が骨髄を占拠して<span class="highlight">正常造血が障害される</span>疾患である。放射線被曝、ベンゼン、化学療法などが原因となるが、原因不明が圧倒的に多い。</p>
+      <p>臨床経過から<span class="key">急性白血病</span>と<span class="key">慢性白血病</span>に、細胞系列から<span class="key">骨髄性</span>と<span class="key">リンパ性</span>に分類される。</p>
+
+      <h3>白血病の分類</h3>
+      <table>
+        <tr><th>分類</th><th>略称</th><th>特徴</th></tr>
+        <tr><td>急性骨髄性白血病</td><td>AML</td><td>FAB分類でM0〜M7。成人に多い</td></tr>
+        <tr><td>急性リンパ性白血病</td><td>ALL</td><td>FAB分類でL1〜L3。小児に多い</td></tr>
+        <tr><td>慢性骨髄性白血病</td><td>CML</td><td>Ph染色体陽性。慢性期→急性転化</td></tr>
+        <tr><td>慢性リンパ性白血病</td><td>CLL</td><td>欧米に多い。日本では稀</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">FAB分類の診断基準</div>
+        <ul>
+          <li>骨髄有核細胞の<span class="highlight">芽球が30%以上</span> → 急性白血病と診断</li>
+          <li>AMLの病型分類にはMPO（myeloperoxidase）染色、非特異的エステラーゼ染色、フローサイトメトリーを用いた免疫学的検査などが用いられる</li>
+        </ul>
+      </div>
+
+      <h2>急性白血病の臨床症状</h2>
+      <p>白血病細胞が骨髄を占拠し正常造血が障害されることで、以下の3大症状が現れる。</p>
+
+      <h3>正常造血障害による3大症状</h3>
+      <table>
+        <tr><th>障害される血球</th><th>症状</th></tr>
+        <tr><td>赤血球減少（貧血）</td><td><span class="key">倦怠感</span>、顔面蒼白、息切れ</td></tr>
+        <tr><td>白血球減少（免疫低下）</td><td><span class="key">発熱</span>、易感染性</td></tr>
+        <tr><td>血小板減少</td><td><span class="highlight">歯肉出血</span>、紫斑、鼻出血</td></tr>
+      </table>
+      <p class="note">急性白血病の初発時症状として、発熱・倦怠感・歯肉出血・顔面蒼白が重要（103A103）</p>
+
+      <h3>口腔症状</h3>
+      <p>急性白血病、特に<span class="key">急性単球性白血病（M5）</span>では白血病細胞の歯肉浸潤により<span class="highlight">歯肉の腫脹</span>がみられる。これは歯垢による歯肉炎とは異なり、全顎にわたるびまん性の腫脹を呈する。</p>
+      <p>歯肉出血の原因は<span class="highlight">血小板減少</span>であり、播種性血管内凝固症（DIC）の合併によりさらに増悪する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">急性白血病の口腔所見まとめ</div>
+        <ul>
+          <li><span class="key">歯肉腫脹</span>：白血病細胞の歯肉浸潤（特にM5）</li>
+          <li><span class="key">歯肉出血</span>：血小板減少・DIC</li>
+          <li>口腔粘膜の出血斑・紫斑</li>
+          <li>感染による口内炎・壊死性潰瘍</li>
+        </ul>
+      </div>
+
+      <h2>急性前骨髄球性白血病（APL, M3）</h2>
+      <p>AMLの中でも<span class="key">APL（M3）</span>は特に重要である。<span class="caution">高頻度にDICを合併</span>し、出血傾向が顕著となる。肝脾腫、歯肉や皮膚への浸潤も認められる。</p>
+
+      <h2>慢性骨髄性白血病（CML）</h2>
+      <p>CML症例の95%以上に<span class="highlight">Ph（フィラデルフィア）染色体</span> t(9;22)が認められる。9番染色体上のABL遺伝子と22番染色体上のBCR遺伝子が融合し、<span class="key">BCR-ABLキメラ分子</span>を形成する。</p>
+      <ul>
+        <li><span class="key">慢性期</span>（3〜4年）：貧血は軽度、脾腫による腹部膨満感と全身倦怠感</li>
+        <li><span class="key">急性転化</span>：急性白血病と同様の症状に進展</li>
+      </ul>
+
+      <h3>CMLの治療</h3>
+      <p>分子標的薬である<span class="highlight">イマチニブ</span>（BCR-ABL阻害薬）が第一選択。5年生存率90%程度。イマチニブ耐性例には第2世代のダサチニブ、ニロチニブが用いられる。</p>
+
+      <h2>白血病の検査</h2>
+      <p>白血病を疑った場合に追加すべき検査は<span class="highlight">白血球分画</span>である。末梢血中に未分化な芽球が出現しているか確認する。</p>
+      <ul>
+        <li><span class="key">血液検査</span>：貧血、血小板減少。白血球数は増減どちらもあり得る</li>
+        <li><span class="key">血清LDH</span>上昇、<span class="key">尿酸値</span>上昇</li>
+        <li><span class="key">骨髄穿刺</span>：確定診断。芽球の比率と形態を評価</li>
+        <li>DICを合併すると止血異常を認める</li>
+      </ul>
+
+      <h2>白血病患者の歯科的管理</h2>
+      <p>造血幹細胞移植（骨髄移植）を予定している患者では、移植前に<span class="highlight">感染病巣の除去</span>を行うことが重要である。移植後は免疫抑制状態となるため、口腔内の感染源が全身感染の原因となりうる。</p>
+
+      <h3>移植前の歯科的対応</h3>
+      <ul>
+        <li>齲蝕・歯周疾患の治療、感染歯の抜歯</li>
+        <li>口腔衛生指導の徹底</li>
+        <li>動揺歯・破折歯の処置</li>
+      </ul>
+
+      <h3>移植後の口腔合併症</h3>
+      <ul>
+        <li><span class="key">口腔粘膜炎</span>：前処置（大量化学療法・全身放射線照射）による</li>
+        <li><span class="key">GVHD</span>（移植片対宿主病）：口腔乾燥、扁平苔癬様病変、粘膜萎縮</li>
+        <li>日和見感染（カンジダ症、ヘルペスなど）</li>
+      </ul>
+
+      <h2>骨髄異形成症候群（MDS）</h2>
+      <p><span class="key">MDS</span>は造血幹/前駆細胞に起こった遺伝子異常に起因し、一部は<span class="caution">AMLに移行</span>する前白血病状態である。原因不明の発症が大半で、形態異常を伴う無効造血を特徴とする。</p>
+      <p>予後評価には<span class="key">国際予後スコアリングシステム（IPSS）</span>が用いられる。</p>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A103</div>
+        <p>急性白血病の初発時症状はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 徐　脈<br>
+          b 発　熱<br>
+          c 倦怠感<br>
+          d 歯肉出血<br>
+          e 顔面蒼白
+        </div>
+        <div class="answer">正解：b, c, d, e</div>
+        <p>【解説】急性白血病では正常造血が障害され、赤血球減少による倦怠感・顔面蒼白（貧血症状）、白血球減少による発熱（感染）、血小板減少による歯肉出血が初発症状として現れる。徐脈は白血病の症状ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109D3</div>
+        <p>32歳の男性。歯肉の腫脹と出血を主訴として来院した。数日前から微熱と倦怠感を自覚しているという。初診時の口腔内写真（別冊No.3）を別に示す。血液検査結果を表に示す。<br>追加すべき検査項目はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109D3_1.png" alt="別冊No.3（口腔内写真）">
+          <img src="../../../images/109回_Web画像/109D3_2.png" alt="別冊No.3（血液検査結果）">
+        </div>
+        <div class="choices">
+          a PSA<br>
+          b CEA<br>
+          c SCC抗原<br>
+          d 白血球分画<br>
+          e Bence Jones蛋白
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】歯肉腫脹・出血＋微熱＋倦怠感 → 白血病を疑う所見。白血病の診断には<span class="highlight">白血球分画</span>で芽球の出現を確認することが重要。PSAは前立腺癌、CEAは消化器癌、SCC抗原は扁平上皮癌、Bence Jones蛋白は多発性骨髄腫の腫瘍マーカーである。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A78</div>
+        <p>骨髄移植直前の小児に対して歯科治療を行う目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 発音機能の回復<br>
+          b 感染病巣の除去<br>
+          c 疼痛発現の予防<br>
+          d 不正咬合の改善<br>
+          e 咀嚼能率の向上
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】骨髄移植前は前処置として大量化学療法や全身放射線照射を行うため、移植後は高度の免疫抑制状態となる。口腔内の感染源が致命的な全身感染の原因となりうるため、移植前に<span class="highlight">感染病巣の除去</span>を行う。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

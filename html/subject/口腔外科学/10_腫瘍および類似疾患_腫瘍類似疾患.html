@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>腫瘍類似疾患 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 腫瘍および類似疾患</span>
+    <h1>腫瘍類似疾患</h1>
+    <div class="container">
+
+      <div class="point-box">
+        <div class="point-box-title">出題の核</div>
+        <ul>
+          <li>エプーリスの治療 = <span class="highlight">骨膜を含めて切除</span>（再発防止のため）</li>
+          <li>義歯性線維腫 → <span class="highlight">腫瘤切除</span>＋義歯の調整</li>
+          <li>腫瘍類似疾患は真の腫瘍ではなく反応性・過形成性の腫瘤 → 治療法は過剰にならないことが重要</li>
+        </ul>
+      </div>
+
+      <h2>エプーリス（epulis）</h2>
+
+      <h3>概念</h3>
+      <ul>
+        <li><span class="key">歯肉に生じる限局性の腫瘤</span>の臨床名（組織学的診断名ではない）</li>
+        <li>歯肉の結合組織に由来する反応性・過形成性の腫瘤</li>
+        <li>有茎性または広基性で、歯間乳頭部から発生することが多い</li>
+      </ul>
+
+      <h3>エプーリスの分類</h3>
+      <table>
+        <tr><th>種類</th><th>組織学的特徴</th><th>特記事項</th></tr>
+        <tr>
+          <td><span class="key">線維性エプーリス</span></td>
+          <td>膠原線維の増殖</td>
+          <td>最も頻度が高い</td>
+        </tr>
+        <tr>
+          <td><span class="key">巨細胞性エプーリス</span></td>
+          <td>多核巨細胞を含む肉芽組織</td>
+          <td>= 周辺性巨細胞肉芽腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">血管腫性エプーリス</span></td>
+          <td>血管の増生が主体</td>
+          <td>妊娠性エプーリスを含む</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨形成性エプーリス</span></td>
+          <td>骨・セメント質様硬組織の形成</td>
+          <td>= 周辺性骨形成線維腫</td>
+        </tr>
+        <tr>
+          <td><span class="key">先天性エプーリス</span></td>
+          <td>顆粒細胞が増殖</td>
+          <td>新生児、女児に多い</td>
+        </tr>
+      </table>
+
+      <h3>エプーリスの治療</h3>
+      <ul>
+        <li><span class="highlight">骨膜を含めて切除</span>する → 再発防止のため</li>
+        <li><span class="caution">骨膜上での切除では再発しやすい</span></li>
+        <li>周囲の歯槽骨を一部掻爬することもある</li>
+        <li>妊娠性エプーリスは分娩後に縮小することがある → 経過観察も選択肢</li>
+      </ul>
+
+      <h2>義歯性線維腫（denture fibroma）</h2>
+      <ul>
+        <li>不適合義歯の慢性的刺激により歯肉や粘膜に生じる<span class="key">反応性の線維性腫瘤</span></li>
+        <li>義歯床縁に沿って生じることが多い</li>
+        <li>表面粘膜は正常色で、潰瘍や出血を伴うこともある</li>
+        <li>治療：<span class="highlight">腫瘤切除</span>＋原因となる義歯の調整・再製作</li>
+        <li><span class="caution">義歯を調整せずに切除だけでは再発する</span></li>
+      </ul>
+
+      <h2>刺激性線維腫（irritation fibroma）</h2>
+      <ul>
+        <li>慢性的な機械的刺激（咬傷、不適合補綴物など）により生じる反応性腫瘤</li>
+        <li>線維芽細胞とコラーゲン線維の増殖からなる</li>
+        <li><span class="caution">厳密な意味では真の腫瘍ではなく反応性の過形成</span></li>
+        <li>soft fibroma（柔らかい）とhard fibroma（硬い）に分けられる</li>
+        <li>治療：外科的切除（刺激原因の除去も必要）</li>
+      </ul>
+
+      <h2>乳頭腫（papilloma）</h2>
+      <ul>
+        <li>上皮の外方性増殖による良性腫瘍</li>
+        <li>カリフラワー状あるいは乳頭状の白色〜赤色腫瘤</li>
+        <li>ヒトパピローマウイルス（HPV）との関連が示唆される</li>
+        <li>口蓋、舌、歯肉に好発</li>
+        <li>治療：外科的切除、再発は少ない</li>
+      </ul>
+
+      <h2>ランゲルハンス細胞組織球症</h2>
+      <ul>
+        <li>ランゲルハンス細胞（樹状細胞）が活性に増殖する疾患群</li>
+        <li>以前はhistiocytosis Xとよばれていた</li>
+        <li>細胞内に特有の<span class="key">バーベック（Birbeck）顆粒</span>をもつ</li>
+      </ul>
+
+      <h3>ランゲルハンス細胞組織球症の分類</h3>
+      <table>
+        <tr><th>病型</th><th>好発年齢</th><th>特徴</th><th>予後</th></tr>
+        <tr>
+          <td><span class="key">Letterer-Siwe病</span></td>
+          <td>乳幼児</td>
+          <td>急性に全身に発症（発熱、貧血、血小板減少、肝脾腫）</td>
+          <td>不良</td>
+        </tr>
+        <tr>
+          <td><span class="key">Hand-Schüller-Christian病</span></td>
+          <td>小児</td>
+          <td>三大症状：<span class="highlight">骨欠損・尿崩症・眼球突出</span></td>
+          <td>中間</td>
+        </tr>
+        <tr>
+          <td><span class="key">好酸球性肉芽腫</span></td>
+          <td>若年〜高齢</td>
+          <td>単一骨に限局、他臓器の骨や頭蓋骨に好発</td>
+          <td>良好</td>
+        </tr>
+      </table>
+      <p class="note">口腔所見：歯肉の腫脹・発赤、歯の動揺、歯槽骨の吸収（floating teeth像）がみられることがある。</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">108D15（エプーリス・治療法）</div>
+        <p>20歳の女性。上顎右側前歯部の腫瘤を主訴として来院した。2年前から腫瘤に気付いていたが放置していたという。腫瘤は有茎性で、隣接歯の動揺およびエックス線写真上で骨吸収像は認めない。初診時の口腔内写真（別冊No.15A）と生検時のH−E染色病理組織像（別冊No.15B）を別に示す。
+適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D15_1.png" alt="別冊No.15">
+        </div>
+        <div class="choices">
+          a 減量術<br>
+          b 骨膜上で切除<br>
+          c 上顎骨部分切除<br>
+          d 骨膜を含めて切除<br>
+          e 隣接歯を含めて切除
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】上顎前歯部歯肉の有茎性腫瘤で、骨吸収なし → エプーリス（線維性エプーリス）と考えられる。エプーリスの治療は<span class="highlight">骨膜を含めて切除</span>する。骨膜上での切除では再発しやすい。上顎骨部分切除や隣接歯を含めた切除は過剰。減量術は線維性骨異形成症の治療法。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108D2（義歯性線維腫・治療法）</div>
+        <p>73歳の女性。摂食困難を主訴として来院した。6か月前から義歯の不適合に気付き、1か月前から食事時に痛みが生じるようになったという。初診時の口腔内写真（別冊No.2A）、エックス線写真（別冊No.2B）及び生検時のH−E染色病理組織像（別冊No.2C）を別に示す。
+適切な治療法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D2_1.png" alt="別冊No.2">
+        </div>
+        <div class="choices">
+          a 腫瘤切除<br>
+          b 抗癌剤投与<br>
+          c 抗真菌薬投与<br>
+          d 下顎区域切除<br>
+          e 副腎皮質ステロイド軟膏塗布
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】高齢女性、義歯不適合に伴う歯肉の腫瘤 → <span class="highlight">義歯性線維腫</span>と考えられる。義歯の慢性刺激による反応性の線維性腫瘤であり、治療は<span class="highlight">腫瘤切除</span>＋義歯の調整。悪性腫瘍ではないため抗癌剤は不適切。真菌感染やアレルギーでもないため抗真菌薬やステロイドも不適切。区域切除は過剰。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D73（歯肉腫瘤の治療）★</div>
+        <p>65歳の女性。上顎前歯部の腫瘤を主訴として来院した。3か月前から徐々に増大してきたという。初診時の口腔内写真（別冊No.26A）、エックス線画像（別冊No.26B）及び生検時のH-E染色病理組織像（別冊No.26C）を別に示す。
+適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D73_1.png" alt="別冊No.26">
+        </div>
+        <div class="choices">
+          a 経過観察<br>
+          b 抗菌薬投与<br>
+          c 切　除<br>
+          d 上顎部分切除<br>
+          e 放射線療法
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】上顎前歯部の腫瘤で、3か月で徐々に増大。生検で良性の腫瘤性病変（エプーリスや線維腫）と診断された場合、治療は<span class="highlight">切除</span>。良性腫瘤であり経過観察では改善しない。上顎部分切除や放射線療法は過剰な治療。抗菌薬は感染症に対する治療であり不適切。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

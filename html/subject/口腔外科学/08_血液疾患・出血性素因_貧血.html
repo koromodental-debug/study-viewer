@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>貧血 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 血液疾患・出血性素因</span>
+    <h1>貧血</h1>
+    <div class="container">
+
+      <!-- ===== 1. 貧血の分類 ===== -->
+      <h2>1. 赤血球指数による貧血の分類</h2>
+
+      <h3>赤血球指数の基準値</h3>
+      <table>
+        <tr><th>指数</th><th>意味</th><th>基準値</th></tr>
+        <tr><td><span class="key">MCV</span>（平均赤血球容積）</td><td>赤血球1個の大きさ</td><td><span class="highlight">80〜100 fl</span></td></tr>
+        <tr><td><span class="key">MCH</span>（平均赤血球Hb量）</td><td>赤血球1個のHb量</td><td>27〜31 pg</td></tr>
+        <tr><td><span class="key">MCHC</span>（平均赤血球Hb濃度）</td><td>赤血球1個のHb濃度</td><td><span class="highlight">30〜35%</span></td></tr>
+      </table>
+
+      <h3>3つの分類と代表的疾患</h3>
+      <table>
+        <tr><th>分類</th><th>MCV</th><th>MCHC</th><th>代表的疾患</th></tr>
+        <tr><td><span class="highlight">小球性低色素性</span></td><td>≤80</td><td>≤30</td><td><span class="key">鉄欠乏性貧血</span>、サラセミア、鉄芽球性貧血</td></tr>
+        <tr><td><span class="key">正球性正色素性</span></td><td>81〜100</td><td>31〜35</td><td>再生不良性貧血、溶血性貧血、急性出血</td></tr>
+        <tr><td><span class="highlight">大球性正色素性</span></td><td>≥101</td><td>31〜35</td><td><span class="key">巨赤芽球性貧血</span>（VB<sub>12</sub>欠乏・葉酸欠乏）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116B43</div>
+        <p>小球性低色素性貧血に分類されるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 溶血性貧血<br>
+          b 鉄欠乏性貧血<br>
+          c 巨赤芽球性貧血<br>
+          d 再生不良性貧血<br>
+          e 骨髄異形成症候群
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】鉄欠乏→ヘモグロビン合成障害→赤血球が小さく（MCV↓）色が薄い（MCHC↓）。溶血性貧血・再生不良性貧血は正球性正色素性。巨赤芽球性貧血は大球性。骨髄異形成症候群は大球性を示すことが多い。</p>
+      </div>
+
+      <!-- ===== 2. 鉄欠乏性貧血 ===== -->
+      <h2>2. 鉄欠乏性貧血</h2>
+
+      <p>全貧血の<span class="highlight">80〜90%</span>を占める最も頻度の高い貧血。女性に多い（男:女＝1:5〜6）。原因は鉄需要の増大（妊娠・出産）、慢性出血、鉄分摂取不足。</p>
+
+      <h3>診察所見と口腔症状</h3>
+      <table>
+        <tr><th>所見</th><th>詳細</th></tr>
+        <tr><td><span class="highlight">眼瞼結膜の蒼白</span></td><td>Hb値の低下を反映。貧血のスクリーニングとして最重要</td></tr>
+        <tr><td><span class="highlight">匙状爪（スプーンネイル）</span></td><td>爪が薄くなりスプーン状に反り返る</td></tr>
+        <tr><td><span class="key">平滑舌</span></td><td>舌乳頭の萎縮により舌が滑らかになる</td></tr>
+        <tr><td><span class="key">口角炎</span></td><td>口角のびらん</td></tr>
+        <tr><td>異食症</td><td>氷を好んで食べるなどの異常な食嗜好</td></tr>
+      </table>
+
+      <h3>検査所見</h3>
+      <table>
+        <tr><th>検査項目</th><th>変化</th></tr>
+        <tr><td>Hb、Ht</td><td>↓</td></tr>
+        <tr><td>MCV、MCHC</td><td>↓（小球性低色素性）</td></tr>
+        <tr><td><span class="key">血清鉄</span></td><td>↓</td></tr>
+        <tr><td><span class="key">フェリチン</span>（貯蔵鉄）</td><td><span class="highlight">↓（最も早期に低下）</span></td></tr>
+        <tr><td><span class="key">TIBC</span>（総鉄結合能）</td><td>↑</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">109A78</div>
+        <p>疾患と症状の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 鉄欠乏性貧血 ————— 平滑舌<br>
+          b Sjögren症候群 ———— 流涎<br>
+          c 巨赤芽球性貧血 ——— 出血傾向<br>
+          d Ramsay Hunt症候群 — 味覚障害<br>
+          e Stevens-Johnson症候群 — 電撃痛
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】鉄欠乏性貧血→舌乳頭萎縮→平滑舌は正しい。Hunt症候群→鼓索神経障害→味覚障害も正しい。Sjögren症候群は口腔乾燥（流涎ではない）。巨赤芽球性貧血は出血傾向ではなくHunter舌炎。SJSは皮膚粘膜のびらん（電撃痛ではない）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C61</div>
+        <p>鉄欠乏性貧血を疑う患者の診察で留意すべき部位はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 頭　髪<br>
+          b 結　膜<br>
+          c 指　爪<br>
+          d 外陰部<br>
+          e 足　底
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】鉄欠乏性貧血の診察で重要なのは結膜（蒼白→Hb低下を反映）と指爪（匙状爪→鉄欠乏に特徴的）。頭髪・外陰部・足底は鉄欠乏性貧血の特異的所見ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C65</div>
+        <p>眼瞼結膜の所見と関連するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 血小板数<br>
+          b 白血球数<br>
+          c ヘモグロビン値<br>
+          d 毛細血管抵抗性試験<br>
+          e 経皮的動脈血酸素飽和度
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】眼瞼結膜の蒼白はヘモグロビン値の低下を反映する。結膜は血管が豊富で色調変化を観察しやすい部位。血小板数は点状出血（紫斑）、白血球数は感染徴候と関連。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109B48</div>
+        <p>27歳の女性。顎変形症の手術を希望して来院した。時々立ちくらみや、めまいを自覚しているという。血液検査の結果を表に示す。<br>立ちくらみや、めまいの原因として考えられるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 脱　水<br>
+          b 慢性出血<br>
+          c アレルギー<br>
+          d 鉄分摂取不足<br>
+          e ビタミンB<sub>12</sub>欠乏
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】27歳女性の立ちくらみ・めまい→鉄欠乏性貧血を疑う。若年女性では月経による慢性出血と鉄分摂取不足が二大原因。血液検査でMCV↓・MCHC↓であれば確定的。VB<sub>12</sub>欠乏は大球性貧血で、若年女性では稀。</p>
+      </div>
+
+      <!-- ===== 3. Plummer-Vinson症候群 ===== -->
+      <h2>3. Plummer-Vinson症候群</h2>
+
+      <p><span class="key">鉄欠乏性貧血</span>＋<span class="key">舌炎</span>＋<span class="key">嚥下障害</span>の三徴を示す症候群。鉄欠乏性貧血の<span class="highlight">7〜19%</span>に認められる。咽頭粘膜の萎縮により嚥下困難（sideropenic dysphagia）を生じる。</p>
+
+      <div class="question-box">
+        <div class="q-number">107B27</div>
+        <p>77歳の女性。舌の痛みと嚥下困難を主訴として来院した。半年前から舌の痛みに気付いていたが放置していた。2か月前から嚥下困難を自覚しているという。初診時の口腔内写真（別冊No.27）を別に示す。血液検査の結果を表に示す。<br>嚥下困難の原因として考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107B27_1.png" alt="別冊No.27">
+        </div>
+        <div class="choices">
+          a 球麻痺<br>
+          b 胃切除<br>
+          c 逆流性食道炎<br>
+          d 咽頭粘膜萎縮<br>
+          e 鼻咽腔閉鎖不全
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】舌の痛み＋嚥下困難＋血液検査で貧血（鉄欠乏性を示唆）→Plummer-Vinson症候群。鉄欠乏により咽頭粘膜が萎縮し嚥下困難を生じる。球麻痺は神経性、鼻咽腔閉鎖不全は軟口蓋の問題であり貧血とは関連しない。</p>
+      </div>
+
+      <!-- ===== 4. 巨赤芽球性貧血 ===== -->
+      <h2>4. 巨赤芽球性貧血（ビタミンB<sub>12</sub>欠乏）</h2>
+
+      <p>ビタミンB<sub>12</sub>は<span class="key">胃壁細胞</span>から分泌される<span class="highlight">内因子</span>と結合し、<span class="key">回腸遠位部</span>で吸収される。内因子が欠乏するとVB<sub>12</sub>が吸収できなくなる。</p>
+
+      <h3>原因</h3>
+      <ul>
+        <li><span class="highlight">胃全摘後</span>→内因子欠乏→術後<span class="key">約5年</span>で貧血発症（VB<sub>12</sub>の体内貯蔵量が多いため）</li>
+        <li><span class="key">悪性貧血</span>（pernicious anemia）：抗壁細胞抗体・抗内因子抗体による自己免疫疾患</li>
+        <li>葉酸欠乏：妊娠、アルコール中毒、抗てんかん薬など</li>
+      </ul>
+
+      <h3>Hunter舌炎</h3>
+      <p>VB<sub>12</sub>欠乏による舌炎。舌乳頭の萎縮により<span class="highlight">舌が平滑化・発赤</span>し、灼熱感・疼痛を伴う。悪性貧血の約<span class="key">75%</span>に認められる。</p>
+
+      <h3>検査所見</h3>
+      <table>
+        <tr><th>検査項目</th><th>変化</th></tr>
+        <tr><td>MCV</td><td><span class="highlight">↑（大球性）</span></td></tr>
+        <tr><td>LDH</td><td>↑（巨赤芽球の骨髄内崩壊による）</td></tr>
+        <tr><td>間接ビリルビン</td><td>↑</td></tr>
+        <tr><td>血清VB<sub>12</sub></td><td>↓</td></tr>
+        <tr><td>骨髄</td><td>巨赤芽球の出現</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">鉄欠乏性貧血 vs 巨赤芽球性貧血</div>
+        <ul>
+          <li>鉄欠乏性：<span class="key">小球性低色素性</span>、平滑舌、匙状爪、Plummer-Vinson症候群</li>
+          <li>巨赤芽球性：<span class="key">大球性正色素性</span>、<span class="key">Hunter舌炎</span>、神経障害（亜急性連合性脊髄変性症）</li>
+          <li>共通点：どちらも舌の萎縮・平滑化を生じるが、<span class="caution">VB<sub>12</sub>欠乏では神経症状を伴う</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D79</div>
+        <p>67歳の女性。味覚異常を主訴として来院した。6か月前から自覚していたが変化がないという。2年前に胃を切除している。初診時の口腔内写真（別冊No.28）を別に示す。血液検査の結果を表に示す。<br>考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D79_1.png" alt="別冊No.28">
+        </div>
+        <div class="choices">
+          a 糖尿病<br>
+          b Hunter 舌炎<br>
+          c Sjögren 症候群<br>
+          d Plummer-Vinson 症候群<br>
+          e 特発性血小板減少性紫斑病〈ITP〉
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】味覚異常＋胃切除の既往＋舌の萎縮所見→胃切除後のVB<sub>12</sub>吸収不全→Hunter舌炎。Plummer-Vinson症候群は鉄欠乏性貧血に伴うもので、胃切除との関連は薄い。ITPは血小板減少で出血傾向を呈し舌の症状とは異なる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B10</div>
+        <p>55歳の女性。舌の灼熱感を主訴として来院した。3年前に胃全摘出術を受け、6か月前から自覚しているという。初診時の舌の写真（別冊No.10）を別に示す。血液検査の結果を表に示す。<br>考えられる原因はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B10_1.png" alt="別冊No.10">
+        </div>
+        <div class="choices">
+          a 鉄の摂取不足<br>
+          b 内因子の欠乏<br>
+          c 葉酸の吸収不全<br>
+          d ビタミンB<sub>12</sub>の吸収不全<br>
+          e プロスタグランジンの合成阻害
+        </div>
+        <div class="answer">正解：b, d</div>
+        <p>【解説】胃全摘後3年→胃壁細胞からの内因子分泌が消失→VB<sub>12</sub>が回腸で吸収できない→巨赤芽球性貧血→Hunter舌炎。内因子の欠乏＋VB<sub>12</sub>の吸収不全が直接の原因。葉酸は空腸で吸収されるため胃切除の影響は少ない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106D37</div>
+        <p>53歳の女性。味覚障害を主訴として来院した。半年前から味覚低下を自覚するようになったという。舌背のカンジダ培養検査は陰性で唾液分泌量も正常であった。初診時の舌の写真（別冊No.37）を別に示す。血液学検査の結果を表に示す。<br>診断に必要な追加すべき検査項目はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106D37_1.png" alt="別冊No.37">
+        </div>
+        <div class="choices">
+          a Zn<br>
+          b IgE<br>
+          c CRP<br>
+          d アミラーゼ<br>
+          e ビタミンB<sub>12</sub>
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】味覚障害＋舌の萎縮→VB<sub>12</sub>欠乏（Hunter舌炎）と亜鉛欠乏の鑑別が必要。味覚障害の原因として<span class="key">亜鉛欠乏</span>と<span class="key">VB<sub>12</sub>欠乏</span>は二大原因であり、追加検査として両者を測定する。IgEはアレルギー、CRPは炎症、アミラーゼは唾液腺・膵臓の検査。</p>
+      </div>
+
+      <!-- ===== 5. 貧血の全身症状 ===== -->
+      <h2>5. 貧血の全身症状と関連知識</h2>
+
+      <p>貧血では酸素運搬能の低下を代償するため、心拍数増加（<span class="key">頻脈</span>）、心拍出量増加、呼吸促進が起こる。</p>
+      <ul>
+        <li>自覚症状：息切れ、動悸、倦怠感、立ちくらみ、めまい</li>
+        <li>他覚所見：結膜蒼白、頻脈、収縮期雑音</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">104A52</div>
+        <p>頻脈がみられるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 発　熱<br>
+          b 貧　血<br>
+          c 低血圧<br>
+          d 甲状腺機能低下<br>
+          e 血管迷走神経反射
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】発熱では代謝亢進に伴い心拍数が増加する（体温1℃上昇で約10回/分増加）。貧血では酸素運搬能低下を代償するため頻脈となる。甲状腺機能低下は徐脈。血管迷走神経反射は徐脈＋血圧低下。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102B56</div>
+        <p>血小板数が減少するのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 血友病<br>
+          b 再生不良性貧血<br>
+          c 急性糸球体腎炎<br>
+          d 甲状腺機能低下症<br>
+          e 急性リンパ性白血病
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】再生不良性貧血は造血幹細胞の障害→<span class="key">汎血球減少</span>（赤血球↓・白血球↓・血小板↓）。急性リンパ性白血病は白血病細胞の骨髄浸潤→正常造血の抑制→血小板減少。<span class="caution">血友病は凝固因子の欠乏であり血小板数は正常</span>。</p>
+      </div>
+
+      <!-- ===== まとめ ===== -->
+      <h2>6. 貧血と口腔症状のまとめ</h2>
+
+      <table>
+        <tr><th>貧血の種類</th><th>赤血球指数</th><th>口腔症状</th><th>特徴的所見</th></tr>
+        <tr><td><span class="key">鉄欠乏性貧血</span></td><td>小球性低色素性</td><td>平滑舌、口角炎</td><td>匙状爪、結膜蒼白、フェリチン↓</td></tr>
+        <tr><td><span class="key">巨赤芽球性貧血</span></td><td>大球性正色素性</td><td>Hunter舌炎（灼熱感）</td><td>胃切除後、LDH↑、神経症状</td></tr>
+        <tr><td>Plummer-Vinson</td><td>小球性低色素性</td><td>舌炎＋嚥下障害</td><td>鉄欠乏性貧血に合併</td></tr>
+        <tr><td><span class="key">再生不良性貧血</span></td><td>正球性正色素性</td><td>歯肉出血、口腔粘膜出血</td><td>汎血球減少</td></tr>
+      </table>
+
+      <h3>味覚障害の鑑別検査</h3>
+      <table>
+        <tr><th>検査項目</th><th>関連する疾患</th></tr>
+        <tr><td><span class="key">血清亜鉛（Zn）</span></td><td>亜鉛欠乏性味覚障害</td></tr>
+        <tr><td><span class="key">ビタミンB<sub>12</sub></span></td><td>巨赤芽球性貧血（Hunter舌炎）</td></tr>
+        <tr><td>血清鉄・フェリチン</td><td>鉄欠乏性貧血</td></tr>
+        <tr><td>唾液分泌量</td><td>Sjögren症候群、薬剤性口腔乾燥</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

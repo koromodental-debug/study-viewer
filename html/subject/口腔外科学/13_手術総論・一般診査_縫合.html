@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>縫合 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>縫合</h1>
+    <div class="container">
+
+      <h2>縫合の原則</h2>
+      <p>縫合とは、<span class="key">離断されたすべての組織層をふたたび寄着させて、各組織層にすきまができないようにする</span>こと。創を緊密に合わせた状態で、真皮分が正確に合うように接合した状態で保持する。創縁から針を進め、対側の創縁から出す。</p>
+
+      <h2>縫合針</h2>
+
+      <h3>直針と曲針</h3>
+      <p><span class="key">直針</span>は口腔外科での使用頻度は少ない。口腔粘膜の浮き上がりを押さえたり、移植皮弁を床組織に密着させるために用いることがある。</p>
+      <p>通常、組織の縫合に用いられるのは<span class="key">曲針（弯針）</span>である。</p>
+
+      <h3>曲針の弯曲の程度</h3>
+      <table>
+        <tr><th>種類</th><th>弯曲</th><th>特徴</th></tr>
+        <tr><td><span class="key">弱弯針</span></td><td>3/8円</td><td>浅い弯曲、皮膚など平坦な部位</td></tr>
+        <tr><td><span class="key">強弯針</span></td><td>1/2円・5/8円</td><td>深い弯曲、口腔内など深部の縫合</td></tr>
+      </table>
+      <p>円弧の大きさ（サイズ）により4〜80mmまで種々のものがある。</p>
+
+      <h3>断面の形状による分類</h3>
+      <table>
+        <tr><th>種類</th><th>断面形状</th><th>適応</th></tr>
+        <tr><td><span class="key">角針</span></td><td>正三角・逆三角など</td><td><span class="highlight">皮膚</span>、口腔粘膜（硬い組織）</td></tr>
+        <tr><td><span class="key">丸針</span>（円針）</td><td>円形</td><td>粘膜下、<span class="highlight">結合組織</span>、筋肉、血管</td></tr>
+      </table>
+      <p class="note">角針は組織の通りがよいが、組織が裂けやすい。丸針は縫合による組織損傷が少ない。硬口蓋と歯肉の一部は角針がよい。</p>
+
+      <h3>針孔の種類</h3>
+      <ul>
+        <li><span class="key">普通孔</span>：一般的な糸通し孔</li>
+        <li><span class="key">弾機孔</span>：糸を押し込むだけで通せる</li>
+        <li><span class="key">無傷針</span>（atraumatic needle / 糸つき針）：針と糸が一体化。糸つき針の通過による<span class="highlight">組織障害が少ない</span></li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">運針のポイント</div>
+        <ul>
+          <li>曲針は<span class="highlight">針の弯曲に沿って回転させるように</span>運針する</li>
+          <li>弯曲に逆らって直線的に引くと<span class="caution">針が変形する</span></li>
+          <li>持針器で把持する位置は針のボディ後方1/3付近</li>
+        </ul>
+      </div>
+
+      <h2>持針器</h2>
+      <table>
+        <tr><th>種類</th><th>特徴</th><th>適応</th></tr>
+        <tr><td><span class="key">Mathew型</span></td><td>ストッパーと戻しバネ付き、堅牢</td><td>丈夫な組織の縫合</td></tr>
+        <tr><td><span class="key">Hegar型</span></td><td>バネなし、構造が簡単で軽い</td><td>柔らかい・小さい組織の縫合</td></tr>
+        <tr><td>マイクロ用</td><td>微小血管吻合などの精密操作</td><td>マイクロサージェリー</td></tr>
+      </table>
+      <p class="note">先端部にダイヤモンドチップがついているものもあり、把持をよくする。</p>
+
+      <h2>縫合糸</h2>
+
+      <h3>非吸収性縫合糸</h3>
+      <table>
+        <tr><th>分類</th><th>素材</th><th>特徴</th></tr>
+        <tr><td>天然素材</td><td><span class="key">絹糸</span></td><td>結紮しやすい、組織反応がやや強い。現在はシリコンコーティングされたものが主流</td></tr>
+        <tr><td rowspan="2">合成素材</td><td><span class="key">ナイロン</span></td><td>組織親和性良好、結節がゆるみやすい→<span class="highlight">3回以上結紮</span></td></tr>
+        <tr><td><span class="key">ポリエステル・ポリプロピレン</span></td><td>抗張力が強い</td></tr>
+      </table>
+
+      <h3>吸収性縫合糸</h3>
+      <table>
+        <tr><th>分類</th><th>素材</th><th>吸収期間</th><th>用途</th></tr>
+        <tr><td>天然</td><td><span class="key">カットグート</span></td><td>プレーン：1週間程度<br>クロミック：3〜4週間</td><td>口腔粘膜、乳幼児の抜歯窩</td></tr>
+        <tr><td rowspan="2">合成</td><td><span class="key">PGA</span>（デキソン等）</td><td>抗張力：4週間で50〜65%<br>吸収：8〜10週間</td><td>一般的な吸収性縫合</td></tr>
+        <tr><td><span class="key">ポリジオキサノン</span>（モノ）</td><td>抗張力が2倍持続<br>1週間で60%まで低下しにくい</td><td>長期間の張力維持が必要な部位</td></tr>
+      </table>
+
+      <h3>モノフィラメントとブレイド</h3>
+      <ul>
+        <li><span class="key">モノフィラメント</span>：1本の糸。きわめて細い糸をつくれる。結節がゆるみやすいので注意</li>
+        <li><span class="key">ブレイド</span>（編み糸）：複数の糸を編んだもの。柔軟で扱いやすく結紮しやすい</li>
+      </ul>
+
+      <h2>縫合法の種類</h2>
+
+      <h3>1. 結節縫合と連続縫合</h3>
+      <p><span class="key">結節縫合</span>：1針ごとに糸を結紮して切断する。連続縫合に比べ確実。始めと終わりを結紮する方法。</p>
+      <p><span class="key">連続縫合</span>：1針ごとに糸を結紮せず、続けて縫合していく。始めと終わりのみ結紮。迅速だが、1箇所ほどけると全体がゆるむリスクがある。</p>
+
+      <h3>2. 単純縫合とマットレス縫合</h3>
+      <p>創縁と糸の交差の有無により区別する。</p>
+      <p><span class="key">単純縫合</span>：創縁の両端に糸をかけるだけのシンプルな方法。皮膚の創縁は単純結節縫合、皮膚の創縁と糸を交差させるのがマットレス縫合。</p>
+      <p><span class="key">マットレス縫合</span>：</p>
+      <ul>
+        <li><span class="key">水平マットレス縫合</span>：創縁に平行に糸が走る。皮膚の寄せが強い</li>
+        <li><span class="key">垂直マットレス縫合</span>：皮膚の挙上効果があり、<span class="highlight">創縁を持ち上げるように縫合</span>したいときに使用</li>
+      </ul>
+
+      <h3>3. 真皮縫合（埋没縫合）</h3>
+      <div class="point-box">
+        <div class="point-box-title">埋没縫合の目的</div>
+        <ul>
+          <li><span class="highlight">死腔の防止</span>：組織層間のすきまをなくす</li>
+          <li><span class="highlight">瘢痕形成の抑制</span>：真皮分を正確に合わせることで創面の張力を減らし、瘢痕を目立たなくする</li>
+        </ul>
+      </div>
+      <p>真皮縫合は、真皮分が正確に合う状態にするために、創縁から針を進めて真皮内に埋没させて縫合する方法。皮膚表面に糸が露出しない。</p>
+
+      <h2>糸の結び方</h2>
+      <table>
+        <tr><th>結び方</th><th>特徴</th></tr>
+        <tr><td><span class="key">男結び</span>（こま結び）</td><td>結節の基本。<span class="highlight">堅固で緩みにくい</span></td></tr>
+        <tr><td><span class="key">女結び</span>（縦結び）</td><td>解けやすいため<span class="caution">単独では使用しない</span></td></tr>
+        <tr><td><span class="key">外科結び</span></td><td>最初の結びを2回行う（3段結び・4段結び）。<span class="highlight">緩みにくい</span>ため合成繊維の糸に適する</td></tr>
+      </table>
+      <p>結節のつくり方は、指を用いる方法と持針器やピンセットなどの器械を用いる方法がある。</p>
+
+      <h2>縫合の用途別まとめ</h2>
+      <h3>部位と縫合糸・針の選択</h3>
+      <table>
+        <tr><th>用途</th><th>縫合糸</th><th>針</th></tr>
+        <tr><td>顔面皮膚縫合</td><td>ナイロン（非吸収性）</td><td>角針・弱弯（3/8円）</td></tr>
+        <tr><td>前面皮膚縫合（6-0, 7-0）</td><td>ナイロン・ポリプロピレン</td><td>角針</td></tr>
+        <tr><td>筋肉縫合・真皮縫合</td><td>吸収性（PGAなど）</td><td>丸針</td></tr>
+        <tr><td>口腔粘膜</td><td>絹糸・吸収性縫合糸</td><td>角針または丸針</td></tr>
+        <tr><td>血管縫合・咬合</td><td>ナイロン（10-0, 11-0）</td><td>丸針・マイクロ用</td></tr>
+      </table>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">105A129</div>
+        <p>縫合時に変形した曲針の写真（別冊No.17）を別に示す。
+これを防止するために改善すべきなのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105A129_1.png" alt="別冊No.17">
+        </div>
+        <div class="choices">
+          a 縫合の速度<br>
+          b 運針の方向<br>
+          c 針把持の位置<br>
+          d 持針器の大きさ<br>
+          e 持針器の把持法
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】曲針が変形する最大の原因は、針の弯曲に逆らった方向に力を加えること。曲針は弯曲に沿って回転させるように運針しなければならない。直線的に引き抜くと針が伸びて変形する。したがって改善すべきは「運針の方向」である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C122</div>
+        <p>埋没縫合の目的はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 止　血<br>
+          b 疼痛の軽減<br>
+          c 腫脹の防止<br>
+          d 死腔の防止<br>
+          e 瘢痕形成の抑制
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】埋没縫合（真皮縫合）は皮下の組織層を合わせて死腔（組織間のすきま）を防止し、真皮を正確に合わせることで創面にかかる張力を減らし瘢痕形成を抑制する。止血・疼痛軽減・腫脹防止は埋没縫合の主目的ではない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

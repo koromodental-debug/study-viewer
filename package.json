@@ -29,6 +29,7 @@
     "@capacitor/cli": "^8.0.0",
     "@capacitor/core": "^8.0.0",
     "@capacitor/ios": "^8.0.0",
-    "firebase": "^12.7.0"
+    "firebase": "^12.7.0",
+    "firebase-admin": "^13.6.1"
   }
 }

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>軟組織に発生する嚢胞 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 嚢胞</span>
+    <h1>軟組織に発生する嚢胞</h1>
+    <div class="container">
+
+      <h2>軟組織嚢胞の分類</h2>
+      <p>顎骨内ではなく<span class="key">軟組織に発生する嚢胞</span>をまとめる。唾液腺の導管障害による嚢胞（粘液嚢胞・ガマ腫）と、胎生期の遺残組織に由来する発育性嚢胞（類皮嚢胞・甲状舌管嚢胞・鰓嚢胞など）に大別される。</p>
+
+      <h3>軟組織に発生する嚢胞の一覧</h3>
+      <table>
+        <tr><th>嚢胞</th><th>由来</th><th>好発部位</th></tr>
+        <tr><td><span class="key">粘液嚢胞</span></td><td>小唾液腺の導管損傷</td><td>下唇、舌、頬粘膜</td></tr>
+        <tr><td><span class="key">ガマ腫</span></td><td>舌下腺の導管障害</td><td>口腔底</td></tr>
+        <tr><td><span class="key">類皮嚢胞・類表皮嚢胞</span></td><td>胎生期の外胚葉遺残</td><td>口腔底（舌下型・オトガイ下型）</td></tr>
+        <tr><td><span class="key">甲状舌管嚢胞</span></td><td>甲状舌管の遺残上皮</td><td>前頸部正中（舌骨付近）</td></tr>
+        <tr><td><span class="key">鰓嚢胞</span></td><td>鰓裂の遺残組織</td><td>胸鎖乳突筋前縁</td></tr>
+        <tr><td><span class="key">リンパ上皮性嚢胞</span></td><td>鰓嚢胞と同じ</td><td>頸部 / 口腔粘膜</td></tr>
+        <tr><td><span class="key">鼻歯槽嚢胞</span></td><td>鼻涙管の遺残上皮</td><td>鼻翼付近の軟組織</td></tr>
+        <tr><td><span class="key">上顎洞粘液貯留嚢胞</span></td><td>上顎洞粘膜の腺の閉塞</td><td>上顎洞底</td></tr>
+      </table>
+
+      <!-- ==================== 粘液嚢胞 ==================== -->
+      <h2>粘液嚢胞</h2>
+      <p><span class="key">粘液嚢胞</span>（mucosal cyst）は、小唾液腺あるいは大唾液腺の導管が何らかの原因によって損傷され、唾液の流出障害により発生する唾液腺嚢胞全体をさす。口腔領域に発生する軟組織嚢胞の中で<span class="highlight">最も多い</span>。</p>
+
+      <h3>分類</h3>
+      <ul>
+        <li>小唾液腺由来 → <span class="key">粘液瘤</span>（mucocele）</li>
+        <li>大唾液腺（舌下腺）由来 → <span class="key">ガマ腫</span>（ranula）</li>
+      </ul>
+
+      <h3>病因</h3>
+      <p>大多数は<span class="key">溢出型</span>（extravasation type）で、外傷などで損傷した導管から溢出した唾液に対して肉芽組織が増殖し嚢胞様腔を形成する。一方、<span class="key">貯溜型</span>（retention type）は導管内に唾液が貯溜した結果であり、5.1〜17.6%にすぎない。</p>
+
+      <h3>好発年齢・好発部位</h3>
+      <ul>
+        <li>年齢：<span class="highlight">10〜30歳代</span>に多い。50歳以後は少ない</li>
+        <li>好発部位：<span class="highlight">下唇</span>が最多。ほかに口腔底、舌、頬粘膜</li>
+        <li>舌尖部下面に生じるものは<span class="key">Blandin-Nuhn嚢胞</span>とよばれる</li>
+        <li>大きさ：5mm前後が多数、1cmを超えるものは少ない</li>
+      </ul>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>無痛性の膨隆で、表在性のものは<span class="highlight">半透明の青紫色の色調</span></li>
+        <li>深在性のものは膨隆は軽度で波動もあまり触れない</li>
+        <li>腫脹と消退を繰り返すことがある</li>
+      </ul>
+
+      <h3>病理組織学的所見</h3>
+      <ul>
+        <li>溢出型：明瞭な嚢胞腔の形成がなく、裏装上皮も明らかでない。肉芽組織や結合組織で囲まれた嚢胞壁</li>
+        <li>貯溜型：上皮の裏装を有する嚢胞腔がみられる</li>
+      </ul>
+
+      <h3>治療</h3>
+      <div class="point-box">
+        <div class="point-box-title">粘液嚢胞の治療のポイント</div>
+        <ul>
+          <li>摘出術が基本。<span class="highlight">原因となっている小唾液腺も同時に除去</span>する</li>
+          <li>隣接する小唾液腺も除去 → <span class="highlight">再発防止</span></li>
+          <li>小さなものは被覆粘膜を嚢胞と一緒に全摘出</li>
+          <li>大きなものは嚢胞直上の粘膜を半月状に切開し、嚢胞壁と周囲組織を剥離して摘出</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C64</div>
+        <p>10歳の男児。腫脹と消退とを繰り返す病変部の写真（別冊No. 6）を別に示す。
+手術時に再発防止のために行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105C64_1.png" alt="別冊No.6">
+        </div>
+        <div class="choices">
+          a 創部圧迫<br>
+          b 粘膜下縫合<br>
+          c ドレーン挿入<br>
+          d 小睡液腺摘出<br>
+          e マットレス縫合
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】下唇の腫脹と消退を繰り返す病変は粘液嚢胞を示す。再発防止のためには嚢胞の摘出だけでなく、原因となる小唾液腺を同時に摘出することが重要である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C65</div>
+        <p>17歳の女子。舌下面の腫瘤を主訴として来院した。1か月前に気付いたが放置していたところ、徐々に増大してきたという。腫瘤は無痛性で弾性軟である。初診時の口腔内写真（別冊No.13A）と切除時のH-E染色病理組織像（別冊No.13B）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112C65_1.png" alt="別冊No.13">
+        </div>
+        <div class="choices">
+          a 線維腫<br>
+          b 乳頭腫<br>
+          c 粘液嚢胞<br>
+          d 粘表皮癌<br>
+          e 腺樣囊胞癌
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】舌下面の無痛性・弾性軟の腫瘤で、10歳代の女子。病理組織像で嚢胞壁に粘液様物質の貯留がみられ、粘液嚢胞（Blandin-Nuhn嚢胞）の診断となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D45</div>
+        <p>65歳の男性。右側頬粘膜部の腫脹を主訴として来院した。1か月前に自覚したが大きさの変化はないという。初診時の口腔内写真（別冊No.11A）、CT（別冊No11B）、MRI（別冊No.11C）、術中の口腔内写真（別冊No.11D）及び摘出物のH-E染色病理組織像（別冊No.11E）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D45_1.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a 脂肪腫<br>
+          b 粘液嚢胞<br>
+          c 類皮嚢胞<br>
+          d 腺様嚢胞癌<br>
+          e リンパ管腫
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】頬粘膜部の腫脹で、病理組織像から粘液嚢胞と診断される。頬粘膜にも小唾液腺が存在するため粘液嚢胞が発生しうる。脂肪腫やリンパ管腫との鑑別がポイント。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C66</div>
+        <p>15歳の女子。右側舌下部の腫瘤を主訴として来院した。数か月前から同部の腫瘤を自覚していたが、そのままにしていたところ、徐々に増大したという。初診時と処置時の口腔内写真（別冊No.66A）を別に示す。
+別に示すH-E染色病理組織像（別冊No.66B）のうち、本症例の切除組織の所見を示すのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110C66_1.png" alt="別冊No.66">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】舌下部の粘液嚢胞の病理組織像を選ぶ問題。溢出型粘液嚢胞では、明瞭な上皮裏装がなく、肉芽組織に囲まれた嚢胞腔内に粘液様物質が貯留している像が特徴的である。</p>
+      </div>
+
+      <!-- ==================== ガマ腫 ==================== -->
+      <h2>ガマ腫</h2>
+      <p><span class="key">ガマ腫</span>（ranula）は、舌下腺の排出管に関連して口腔底の片側に出現する比較的大きな粘液嚢胞である。外観がガマ（蛙）の喉に似ていることからラテン語のrana（蛙）に由来する。</p>
+
+      <h3>分類</h3>
+      <p>ガマ腫は発生する解剖学的部位により<span class="highlight">舌下型と顎下型</span>の2型に分類される。</p>
+      <ul>
+        <li><span class="key">舌下型</span>：口腔底に限局。嚢胞が顎舌骨筋より上方に存在</li>
+        <li><span class="key">顎下型</span>（plunging ranula / cervical ranula）：嚢胞が<span class="highlight">顎舌骨筋を超えて</span>顎下部に進展。顎下部の腫脹として現れる</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">舌下型と顎下型の鑑別指標</div>
+        <ul>
+          <li>鑑別の指標は<span class="highlight">顎舌骨筋</span></li>
+          <li>舌下型：顎舌骨筋より上方（口腔底に限局）</li>
+          <li>顎下型：顎舌骨筋を貫通して顎下部へ進展</li>
+        </ul>
+      </div>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>舌下型：口腔底の片側性、無痛性で弾性軟のドーム状膨隆。表在性のものは<span class="key">透明感のある青味がかった色調</span></li>
+        <li>巨大になると舌を挙上し、嚥下・構音障害をきたすことも</li>
+        <li>顎下型：顎下部に限局性で弾性軟の膨隆。波動は必ずしも触れない。圧痛なし</li>
+        <li>好発：口腔底や舌下部、<span class="key">40歳以下の女性</span>に多い</li>
+      </ul>
+
+      <h3>治療</h3>
+      <ul>
+        <li>開窓術：再発率<span class="caution">60%以上</span>と高い。ガーゼ挿入で約10%に減少</li>
+        <li><span class="highlight">嚢胞摘出＋舌下腺摘出</span>：最も確実な治療法。再発率約1%</li>
+        <li>plunging ranulaに対してOK-432硬化療法も試みられている</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">102B44</div>
+        <p>ガマ腫で舌下型と顎下型とを鑑別する指標はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 広頸筋<br>
+          b 顎舌骨筋<br>
+          c 茎突舌骨筋<br>
+          d オトガイ筋<br>
+          e 顎二腹筋前腹
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】ガマ腫の舌下型と顎下型（plunging ranula）の鑑別指標は顎舌骨筋である。舌下腺は顎舌骨筋の上方に位置し、嚢胞が顎舌骨筋を超えて顎下部に進展したものが顎下型となる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C70</div>
+        <p>口底に腫脹と消退を繰り返す病変の口腔内写真（別冊No.30）を別に示す。
+原因療法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114C70_1.png" alt="別冊No.30">
+        </div>
+        <div class="choices">
+          a 開　窓<br>
+          b 切　開<br>
+          c 穿刺吸引<br>
+          d 顎下肱摘出<br>
+          e 舌下腺摘出
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】口腔底の腫脹と消退の繰り返しはガマ腫を示す。開窓や穿刺吸引は対症療法であり再発率が高い。原因療法として最も確実なのは原因となる舌下腺の摘出である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107B25</div>
+        <p>60歳の男性。口底の腫脹を主訴として来院した。1か月前に気付き、徐々に増大してきたという。腫脹部には波動を触知し、圧痛はない。初診時の口腔内写真（別冊No.25A）、MRI（別冊No.25B）及び手術中と終了時の写真（別冊No.25C）を別に示す。
+この手術法の選択理由はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107B25_1.png" alt="別冊No.25">
+        </div>
+        <div class="choices">
+          a 根治性が高い。<br>
+          b 低侵襲である。<br>
+          c 病変が多房性である。<br>
+          d 病変の壁が脆弱である。<br>
+          e オトガイ下隙に増大している。
+        </div>
+        <div class="answer">正解：b,d</div>
+        <p>【解説】写真から開窓術（造袋術）が行われている。ガマ腫の嚢胞壁は非常に薄く脆弱であるため完全摘出が困難な場合がある。開窓術は低侵襲で、嚢胞壁が脆弱な症例に適している。ただし再発率は高いため、確実な治療には舌下腺摘出が推奨される。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104B25</div>
+        <p>52歳の男性。口底の腫脹を主訴として来院した。疼痛はなく、腫脹は数か月前から増大し、最近就寝中に時々目覚めるという。圧迫すると陥凹し、徐々に元に戻る。初診時の口腔内写真（別冊No.24A）とMRI（別冊No.24B）とを別に示す。
+適切な治療法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104B25_1.png" alt="別冊No.24">
+        </div>
+        <div class="choices">
+          a 掻爬術<br>
+          b 摘出術<br>
+          c 凍結療法<br>
+          d 切開排膿術<br>
+          e 選択的血管塞栓術
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】口腔底の無痛性腫脹で圧迫により陥凹し徐々に復元する所見はガマ腫を示す。就寝中に目覚めるほどの大きさから摘出術が適切。掻爬術は嚢胞壁の確実な除去が困難で、切開排膿は炎症性疾患に対する処置である。</p>
+      </div>
+
+      <!-- ==================== 類皮嚢胞・類表皮嚢胞 ==================== -->
+      <h2>類皮嚢胞と類表皮嚢胞</h2>
+      <p>発育期に<span class="key">外胚葉組織が封入</span>されて生じる先天的な嚢胞で、嚢胞壁が皮膚の表面に類似していることから命名された。</p>
+
+      <h3>類皮嚢胞と類表皮嚢胞の違い</h3>
+      <table>
+        <tr><th>項目</th><th>類皮嚢胞（dermoid cyst）</th><th>類表皮嚢胞（epidermoid cyst）</th></tr>
+        <tr><td>嚢胞壁</td><td>表皮嚢胞膜 + <span class="highlight">皮膚付属器</span>（汗腺・脂腺・毛嚢）</td><td>表皮嚢胞膜<span class="caution">のみ</span></td></tr>
+        <tr><td>内容物</td><td>皮脂腺からの分泌物、コレステリン結晶</td><td>角化物、ケラチン</td></tr>
+        <tr><td>内容物の性状</td><td>粥状あるいは豆腐カス状</td><td>同様</td></tr>
+      </table>
+
+      <h3>好発年齢・好発部位</h3>
+      <ul>
+        <li>好発年齢：<span class="key">20〜30歳代</span></li>
+        <li>発生部位：<span class="key">顎舌骨筋</span>により舌下型とオトガイ下型に分けられる</li>
+        <li>舌下型：口腔底の膨隆、舌は後方に挙上し<span class="key">二重舌</span>を呈する</li>
+        <li>オトガイ下型：オトガイ下部の膨隆により<span class="highlight">double-chin appearance</span>を呈する</li>
+      </ul>
+
+      <h3>治療</h3>
+      <ul>
+        <li>舌下型：口腔内より垂直粘膜切開にて摘出</li>
+        <li>オトガイ下型：オトガイ下部からアプローチして摘出</li>
+        <li><span class="caution">類表皮嚢胞は嚢胞壁が薄く破れやすい</span>ので注意。類皮嚢胞は比較的厚く剥離しやすい</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108B5</div>
+        <p>22歳の男性。オトガイ下の膨隆を主訴として来院した。1年前から同部の腫脹に気付いたが疼痛がないため放置していたところ、徐々に増大してきたという。嚢胞性疾患の診断のもと摘出術を施行した。初診時の顔貌写真（別冊No.5A）と摘出物のH−E染色病理組織像（別冊No.5B）を別に示す。
+診断はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108B5_1.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a ガマ腫<br>
+          b 類皮嚢胞<br>
+          c 類表皮嚢胞<br>
+          d 甲状舌管嚢胞<br>
+          e リンパ上皮性嚢胞
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】オトガイ下の膨隆（double-chin appearance）で、病理組織像に皮膚付属器（毛嚢、脂腺、汗腺）を含む嚢胞壁が認められれば類皮嚢胞と診断される。類表皮嚢胞であれば皮膚付属器を含まない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A41</div>
+        <p>50歳の男性。口底部の腫脹を主訴として来院した。腫脹は弾性軟である。初診時の造影CT（別冊No.11A）、MRI（別冊No.11B）及び摘出物のH-E染色病理組織像（別冊No.11C）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115A41_1.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a 脂肪腫<br>
+          b ラヌーラ<br>
+          c 類皮嚢胞<br>
+          d 類表皮嚢胞<br>
+          e 甲状舌管嚢胞
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】口底部の弾性軟の腫脹で、病理組織像に皮膚付属器を含む嚢胞壁がみられることから類皮嚢胞と診断される。ラヌーラ（ガマ腫）は粘液様の内容液を有し、甲状舌管嚢胞は前頸部正中に発生する。</p>
+      </div>
+
+      <!-- ==================== 甲状舌管嚢胞 ==================== -->
+      <h2>甲状舌管嚢胞</h2>
+      <p><span class="key">甲状舌管嚢胞</span>（thyroglossal duct cyst）は、頸部に発生するもっとも代表的な非歯原性嚢胞で、胎生期の甲状舌管の遺残上皮に由来する。<span class="key">正中頸嚢胞</span>（median cervical cyst）ともよばれる。</p>
+
+      <h3>発生機序</h3>
+      <p>甲状腺の原基は胎生第4週末に舌盲孔の先端に内胚葉の増殖塊として出現し、頸部の正中線に沿って下降する。通常は退行変性的に消失するが、管の一部が残ると嚢胞を形成する。</p>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>好発年齢：いずれの年齢層にも発生。約60%は10歳代・20歳代</li>
+        <li>約<span class="highlight">50%は舌骨体付近</span>に位置</li>
+        <li>前頸部正中の表面平滑な半球状で境界明瞭な腫瘤</li>
+        <li>嚥下時に舌骨の動きに合わせて上下する</li>
+        <li>大きさ：普通は径1〜2 cm</li>
+      </ul>
+
+      <h3>治療</h3>
+      <div class="point-box">
+        <div class="point-box-title">Sistrunk法（甲状舌管嚢胞の治療）</div>
+        <ul>
+          <li><span class="highlight">舌骨とともに外科的に摘出</span>する（Sistrunk法）</li>
+          <li>嚢胞壁が非常に薄いため、周囲組織との剥離で注意が必要</li>
+          <li>嚢胞摘出後、舌骨体の約2 cm切除し、残遺管を剥離して摘出</li>
+          <li>舌骨を切除しない純粋な摘出術より<span class="caution">再発率が少ない</span></li>
+        </ul>
+      </div>
+      <p class="note">甲状舌管嚢胞の約1%に癌化が起こり、そのうち85%は扁平上皮癌である。</p>
+
+      <div class="question-box">
+        <div class="q-number">106C49</div>
+        <p>手術時に周囲の関連組織を含めて切除するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 残留嚢胞<br>
+          b 類皮嚢胞<br>
+          c 鼻歯槽嚢胞<br>
+          d 甲状舌管嚢胞<br>
+          e リンパ上皮性嚢胞
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】甲状舌管嚢胞はSistrunk法により舌骨（周囲の関連組織）を含めて切除する。他の嚢胞は嚢胞そのものを摘出すれば足り、周囲組織を含めて切除する必要はない。</p>
+      </div>
+
+      <!-- ==================== 鰓嚢胞・リンパ上皮性嚢胞 ==================== -->
+      <h2>鰓嚢胞・リンパ上皮性嚢胞</h2>
+      <p><span class="key">鰓嚢胞</span>（branchial cyst）は発育嚢胞の一つで、胎生初期の鰓裂の遺残組織に由来するとされる。側頸嚢胞（lateral cervical cyst）ともよばれる。</p>
+
+      <h3>分類（Bailey分類）</h3>
+      <table>
+        <tr><th>型</th><th>位置</th></tr>
+        <tr><td>I型</td><td>胸鎖乳突筋前縁に沿うもの</td></tr>
+        <tr><td>II型</td><td>内頸静脈に癒着しているもの（最多）</td></tr>
+        <tr><td>III型</td><td>内頸静脈と外頸動脈の間から第一頸椎や頭蓋底に及ぶ</td></tr>
+        <tr><td>IV型</td><td>頸動脈より内側で咽頭側壁に近い</td></tr>
+      </table>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>好発年齢：<span class="key">20〜30歳代</span></li>
+        <li>好発部位：<span class="key">胸鎖乳突筋前縁</span>の深部</li>
+        <li>緩徐に増大する無痛性の膨隆で波動を触れる</li>
+        <li>内容液は灰白色の液体、アミラーゼやコレステリン結晶を含む</li>
+        <li>病理：<span class="key">重層扁平上皮</span>で被覆され、上皮下に<span class="highlight">リンパ組織</span>を認める</li>
+      </ul>
+
+      <h3>口腔リンパ上皮性嚢胞</h3>
+      <p>口腔粘膜の表面付近に鰓嚢胞と同じ病理組織像を示す嚢胞が発生する。大きさは<span class="key">10mm以下</span>で半球状の小腫瘤。30〜50歳に好発。</p>
+
+      <div class="question-box">
+        <div class="q-number">113A53</div>
+        <p>右側頸部の腫脹を主訴として来院した患者の初診時の顔貌写真（別冊No.11A）、MRI脂肪抑制造影T1強調冠状断像（別冊No.11B）、T2強調横断像（別冊No.11C）及び生検時のH-E染色病理組織像（別冊No.11D）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A53_1.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a 脂肪腫<br>
+          b 神経鞘腫<br>
+          c 多形腺腫<br>
+          d 類表皮嚢胞<br>
+          e リンパ上皮性嚢胞
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】頸部の腫脹で、病理組織像に嚢胞壁を裏装する上皮の外側にリンパ組織（リンパ濾胞）が認められればリンパ上皮性嚢胞（鰓嚢胞）と診断される。類表皮嚢胞にはリンパ組織を伴わない。</p>
+      </div>
+
+      <!-- ==================== 鼻歯槽嚢胞 ==================== -->
+      <h2>鼻歯槽嚢胞</h2>
+      <p><span class="key">鼻歯槽嚢胞</span>（nasoalveolar cyst）は、鼻翼付近とその付近の表面との間の<span class="highlight">軟組織に発生</span>する嚢胞で、<span class="key">鼻唇嚢胞</span>（nasolabial cyst）、Klestadt嚢胞ともよばれる。鼻涙管の遺残上皮に由来するとされ、<span class="caution">顎骨内には発生しない</span>。</p>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>鼻唇溝の消失、鼻腔底の隆起</li>
+        <li>歯肉唇移行部で弾性軟の腫瘤を触知</li>
+        <li>穿刺により黄色粘稠性の内容液を吸引</li>
+      </ul>
+
+      <h3>治療</h3>
+      <p><span class="key">摘出術</span>が適切。軟組織内の嚢胞であり、顎骨の処置は不要。</p>
+
+      <div class="question-box">
+        <div class="q-number">106D38</div>
+        <p>52歳の女性。左側上唇部の違和感を主訴として来院した。2年前から自覚していたという。上顎左側前歯部の歯肉唇移行部で弾性軟の病変を触知するが圧痛はない。初診時の口腔外写真（別冊No.38A）、口腔内写真（別冊No.38B）、MRI（別冊No.38C）及び試験穿刺時の写真（別冊No.38D）を別に示す。
+適切な治療法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106D38_1.png" alt="別冊No.38">
+        </div>
+        <div class="choices">
+          a 開窓術<br>
+          b 掻爬術<br>
+          c 摘出術<br>
+          d 凍結外科<br>
+          e 上顎骨部分切除術
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】上唇部の歯肉唇移行部に弾性軟の病変があり、穿刺で粘稠性の内容液が吸引されることから鼻歯槽嚢胞と診断される。軟組織に発生する嚢胞であり摘出術が適切。顎骨内の嚢胞ではないため上顎骨切除は不要。</p>
+      </div>
+
+      <!-- ==================== 上顎洞粘液貯留嚢胞 ==================== -->
+      <h2>上顎洞粘液貯留嚢胞</h2>
+      <p><span class="key">上顎洞粘液貯留嚢胞</span>は上顎洞底粘膜の小腺の排出管が閉塞し、粘液が貯留して形成される嚢胞様病変である。パノラマエックス線写真などで<span class="key">偶然発見</span>されることが多い。</p>
+
+      <h3>臨床的特徴</h3>
+      <ul>
+        <li>多くは無症状で、エックス線写真上の<span class="key">上顎洞底のドーム状不透過像</span>として発見</li>
+        <li>周囲歯に異常がない（生活歯・動揺なし・打診痛なし）</li>
+        <li>自然消退することが多い</li>
+        <li>治療：<span class="highlight">経過観察</span>（基本的に治療不要）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">116D61</div>
+        <p>左側上顎洞内のエックス線不透過像を指摘された患者のエックス線画像（別冊No.23A）と歯科用コーンビームCT（別冊No.23B）を別に示す。上顎左側大臼歯はすべて歯髄電気診で生活反応を示し、動揺や打診痛も認めない。
+適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D61_1.png" alt="別冊No.23">
+        </div>
+        <div class="choices">
+          a 経過観察<br>
+          b 穿刺吸引<br>
+          c 開　窓<br>
+          d 摘　出<br>
+          e 上顎洞根治術
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】上顎洞底のドーム状不透過像で、周囲歯はすべて生活歯・動揺なし・打診痛なしから、上顎洞粘液貯留嚢胞が最も考えられる。自然消退することが多く、無症状であれば経過観察が適切な対応である。</p>
+      </div>
+
+      <!-- ==================== まとめ ==================== -->
+      <h2>鑑別のまとめ</h2>
+
+      <h3>軟組織嚢胞の治療法の整理</h3>
+      <table>
+        <tr><th>嚢胞</th><th>治療</th><th>ポイント</th></tr>
+        <tr><td>粘液嚢胞</td><td>摘出術</td><td><span class="highlight">原因の小唾液腺も同時除去</span></td></tr>
+        <tr><td>ガマ腫</td><td>嚢胞摘出＋舌下腺摘出</td><td>開窓術は再発率60%↑</td></tr>
+        <tr><td>類皮嚢胞</td><td>摘出術</td><td>オトガイ下型は外側からアプローチ</td></tr>
+        <tr><td>甲状舌管嚢胞</td><td><span class="highlight">Sistrunk法（舌骨含め摘出）</span></td><td>周囲組織を含め切除する唯一の嚢胞</td></tr>
+        <tr><td>鰓嚢胞</td><td>摘出術</td><td>residual tractは結紮</td></tr>
+        <tr><td>鼻歯槽嚢胞</td><td>摘出術</td><td>顎骨の処置は不要</td></tr>
+        <tr><td>上顎洞粘液貯留嚢胞</td><td><span class="highlight">経過観察</span></td><td>自然消退することが多い</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

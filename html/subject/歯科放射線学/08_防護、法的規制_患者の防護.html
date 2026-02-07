@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>患者の防護 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 防護、法的規制</span>
+    <h1>患者の防護</h1>
+    <div class="container">
+
+      <!-- 1. 医療被曝の特徴 -->
+      <h2>医療被曝の特徴</h2>
+      <ul>
+        <li>医療被曝には<span class="caution">線量限度は適用されない</span></li>
+        <li>放射線診療の必要性は医師や歯科医師の<span class="key">臨床判断</span>に委ねられる</li>
+        <li>適用されるのは<span class="key">正当化</span>と<span class="key">最適化</span>のみ</li>
+      </ul>
+
+      <!-- 2. 正当化 -->
+      <h2>放射線診療の正当化</h2>
+      <p>放射線診療の益が、放射線被曝による害を上回る場合に限って、放射線診療は正当化される。</p>
+      <ul>
+        <li>検査の適応があるかを判断する</li>
+        <li>疾患ごとにX線検査の適用が解説されている（ヨーロッパのガイドライン等）</li>
+        <li>齲蝕：咬翼法は診療を補助するものとして必須。その適用は齲蝕リスク評価に基づく</li>
+        <li>歯周治療：パノラマX線撮影で歯列の成長の有無を確認、治療計画の立案に不可欠</li>
+      </ul>
+
+      <!-- 3. 最適化（核心） -->
+      <h2>防護の最適化（ALARAの原則）</h2>
+      <p>正当化された放射線診療は、<span class="highlight">ALARA</span>（As Low As Reasonably Achievable）の原則に基づき手段を最適化する。</p>
+
+      <h3>患者の防護における最適化の具体的手段</h3>
+      <ul>
+        <li><span class="key">目的に適した照射野の選択</span>：目的の部位以外には照射しない。受光器と同形の絞りを使用</li>
+        <li><span class="key">高感度システムの使用</span>：F感度フィルム、高感度デジタルセンサーの利用で線量を低減</li>
+        <li><span class="key">適切な撮影条件の設定</span>：管電圧・管電流・撮影時間を適切に設定</li>
+        <li><span class="key">照射野の制限</span>：パノラマやCBCTでは目的部位のみに制限</li>
+        <li><span class="key">撮影の失敗をなくす</span>：位置づけ・方向を正しく設定し再撮影を防ぐ</li>
+        <li><span class="key">放射線装置の管理</span>：放射線発生装置を正しく管理する</li>
+        <li><span class="key">防護衣の使用</span>：甲状腺や腹部が直接照射されないように遮蔽</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">「患者の最適化」vs「従事者の防護」の区別（頻出）</div>
+        <ul>
+          <li><span class="key">患者の最適化</span>：高感度フィルム使用、照射野の選択、適切な撮影条件、防護衣</li>
+          <li><span class="caution">従事者の防護</span>：管理区域の設定、ポケット線量計の着用、環境モニタリング</li>
+          <li>105A119・108C50では、両者の混同がひっかけポイント</li>
+        </ul>
+      </div>
+
+      <h3>歯科エックス線撮影における最適化の手段</h3>
+      <ul>
+        <li>口内法：受光器と同形の絞りを利用し、適切な照射時間を設定する</li>
+        <li>歯科用フィルム使用時は<span class="key">F感度</span>のものを選ぶ</li>
+        <li>円形絞りより<span class="key">矩形絞り</span>の方が照射野を制限できる</li>
+        <li>パノラマ・CBCT：照射野を目的部位のみに制限する</li>
+        <li>受光器は感度の高いデジタルセンサーを利用する</li>
+        <li>歯科エックス線撮影では甲状腺や腹部が直接照射されることはないが、鉛製の防護衣は不要とされていない。小児では<span class="key">甲状腺カラー</span>の使用が勧められる</li>
+      </ul>
+
+      <!-- 4. 診断参考レベル -->
+      <h2>診断参考レベル（DRL）</h2>
+      <p>医療被曝には線量限度はないが、放射線防護の最適化が行われているかをチェックする必要がある。そのための指標が<span class="highlight">診断参考レベル</span>（diagnostic reference level：DRL）である。</p>
+
+      <h3>DRLの定義と求め方</h3>
+      <ul>
+        <li>ある地域の多くの診療施設での被曝線量を測定して集計する</li>
+        <li>測定値の<span class="highlight">第3四分位数</span>（75パーセンタイル）をDRLとして決定する</li>
+        <li>自施設の線量がDRLを超えていれば、改善の余地がある</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">DRLの注意点</div>
+        <ul>
+          <li>DRLは「超えてはならない<span class="caution">線量限度ではない</span>」</li>
+          <li>あくまで最適化の<span class="key">目安・指標</span>として使用する</li>
+          <li>DRLを下回っていても、さらなる最適化の余地がある場合もある</li>
+          <li>DRLを超えている場合は、撮影条件や機器の見直しが必要</li>
+        </ul>
+      </div>
+
+      <h3>歯科エックス線撮影における実効線量の目安</h3>
+      <table>
+        <tr><th>歯科における撮影法</th><th>実効線量（μSv）</th><th>医科における撮影法</th><th>実効線量（μSv）</th></tr>
+        <tr><td>口内法X線撮影</td><td>1〜8</td><td>胸部エックス線撮影</td><td>17〜50</td></tr>
+        <tr><td>パノラマX線撮影</td><td>4〜30</td><td>マンモグラフィー</td><td>230〜400</td></tr>
+        <tr><td>セファロ撮影</td><td>2〜3</td><td>注腸バリウム造影検査</td><td>7,200〜8,000</td></tr>
+        <tr><td>CBCT</td><td>20〜222</td><td>MDCT</td><td>3,100〜14,900</td></tr>
+      </table>
+      <p class="note">※歯科のX線撮影による線量は医科と比較して非常に少ないが、最適化は常に必要。</p>
+
+      <!-- 5. 過去問 -->
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105A119</div>
+        <p>エックス線撮影における患者の放射線防護で「防護の最適化」はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 管理区域の設定<br>
+          b ポケット線量計の着用<br>
+          c 高感度フィルムの使用<br>
+          d 環境モニタリングの実施<br>
+          e 目的に適した照射野の選択
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】「患者の防護」における最適化を問う問題。<span class="key">高感度フィルムの使用</span>（c）は被曝線量の低減につながり、<span class="key">目的に適した照射野の選択</span>（e）は不要な部位への照射を防ぐ。いずれも患者の被曝を合理的に低減する手段。管理区域の設定（a）、ポケット線量計（b）、環境モニタリング（d）は<span class="caution">従事者の防護・施設管理</span>であり、患者の最適化ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108C50</div>
+        <p>放射線防護の最適化で正しいのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 20mSvの年間の線量限度<br>
+          b 「ALARAの原則」による患者の防護<br>
+          c エックス線診療室による管理区域の設定<br>
+          d 電離箱式サーベイメータによる環境管理<br>
+          e ガラスバッジ線量計による被曝線量の管理
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】防護の最適化とはALARAの原則のこと。<span class="key">「ALARAの原則」による患者の防護</span>（b）が正解。線量限度（a）は防護の3原則の「線量限度の適用」に該当し最適化ではない。管理区域の設定（c）、環境管理（d）、個人線量管理（e）は従事者の防護・施設管理であり最適化の概念とは異なる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C60</div>
+        <p>標準的な放射線検査の線量調査に基づき、それぞれの医療機関が最適化をはかる指標はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 国民線量<br>
+          b 照射線量<br>
+          c 環境放射線量<br>
+          d 平均臓器線量<br>
+          e 診断参考レベル
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】各医療機関が最適化をはかるための指標は<span class="key">診断参考レベル（DRL）</span>（e）である。DRLは各地域の施設における線量の第3四分位数をもとに設定され、自施設の線量がDRLを超えていれば改善の必要性を示唆する。国民線量（a）は国民全体の被曝量、照射線量（b）は空気中の電離量、環境放射線量（c）は環境中の線量、平均臓器線量（d）は臓器への平均的な線量であり、いずれも個々の施設の最適化の指標としては用いない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A33</div>
+        <p>あるエックス線撮影について、ある地域の医療機関における線量の分布を調査した結果を図に示す。<br>診断参考レベルはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A33.png" alt="線量分布図">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】診断参考レベル（DRL）は各地域の施設における線量分布の<span class="highlight">第3四分位数</span>（75パーセンタイル）である。図の線量分布において、第3四分位数の位置にあたる「エ」が正解。DRLは線量限度ではなく、この値を超えている施設は撮影条件の見直しなど最適化の余地があることを示す。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顎骨の炎症 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 炎症・アレルギー性疾患</span>
+    <h1>顎骨の炎症</h1>
+    <div class="container">
+
+      <h2>顎骨炎の分類</h2>
+      <p>顎骨炎は病変の主体がどこにあるかにより、以下の3つに分類される。</p>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>病変の主体</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td class="key">骨膜炎</td>
+          <td>骨膜</td>
+          <td>根尖部の炎症が皮質骨を穿孔して骨膜に達する。<span class="highlight">骨膜と皮質骨の間</span>に膿が貯留</td>
+        </tr>
+        <tr>
+          <td class="key">骨炎（歯槽骨炎）</td>
+          <td>歯槽骨</td>
+          <td>歯槽骨部を中心とした炎症。急性型と慢性型がある</td>
+        </tr>
+        <tr>
+          <td class="key">骨髄炎</td>
+          <td>骨髄</td>
+          <td>最も重篤。成人では主に下顎に好発。急性型と慢性型がある</td>
+        </tr>
+      </table>
+      <p class="note">鑑別困難な例も多く、同一症例で骨膜炎→骨髄炎と進展することがある。</p>
+
+      <h2>骨膜炎</h2>
+
+      <h3>急性顎骨骨膜炎</h3>
+      <ul>
+        <li>根尖部の炎症が骨髄内に進展→皮質骨を穿孔→<span class="highlight">骨膜と皮質骨の間に膿瘍形成</span>（骨膜下膿瘍）</li>
+        <li>下顎の智歯周囲炎や抜歯後感染に続発することが多い</li>
+        <li>罹患部のびまん性腫脹、熱感、圧痛を認める</li>
+        <li>骨膜下膿瘍の段階では<span class="key">強い自発痛（拍動痛）</span>。粘膜下膿瘍に移行すると痛みは軽減</li>
+        <li>急性期では体温上昇、<span class="key">開口障害</span>が著明</li>
+      </ul>
+
+      <h3>試験穿刺の目的</h3>
+      <div class="point-box">
+        <div class="point-box-title">試験穿刺で確認すること（102A86で出題）</div>
+        <ul>
+          <li><span class="highlight">抗菌薬の感受性検査</span>：穿刺液を培養し、起炎菌に有効な抗菌薬を決定</li>
+          <li><span class="highlight">切開排膿処置の決定</span>：膿の貯留を確認し、切開排膿の適応を判断</li>
+        </ul>
+        <p class="note"><span class="caution">骨欠損の診査、冷罨法の決定、抗炎症薬投与の決定は試験穿刺の目的ではない。</span></p>
+      </div>
+
+      <h3>慢性顎骨骨膜炎（Garré骨膜炎）</h3>
+      <ul>
+        <li>慢性骨髄炎が骨膜に波及し、骨膜下に<span class="key">骨の新生</span>をきたす</li>
+        <li>若年者の下顎大臼歯部、下顎角、下顎枝に<span class="key">硬い腫瘤</span>を認める</li>
+        <li>エックス線では<span class="highlight">玉ねぎの皮状（層板状）</span>の骨新生像</li>
+      </ul>
+
+      <h2>骨髄炎</h2>
+
+      <h3>急性骨髄炎</h3>
+      <p>乳幼児ではほとんどが上顎、成人ではおもに下顎に好発する。</p>
+      <table>
+        <tr>
+          <th>時期</th>
+          <th>期間</th>
+          <th>臨床所見</th>
+        </tr>
+        <tr>
+          <td class="key">初期</td>
+          <td>2〜7日</td>
+          <td>患部の腫脹は軽度。原因歯の拍動性疼痛、発熱、食欲不振</td>
+        </tr>
+        <tr>
+          <td class="key">進行期</td>
+          <td>1〜3週</td>
+          <td>全身状態と血液検査値の悪化。歯の動揺、瘻孔形成、<span class="highlight">Vincent症状</span>（下歯槽神経障害による知覚異常）</td>
+        </tr>
+        <tr>
+          <td class="key">腐骨形成期</td>
+          <td>3〜10週</td>
+          <td>全身状態はやや改善。骨組織が壊死→<span class="key">腐骨</span>を形成。悪臭を認める</td>
+        </tr>
+        <tr>
+          <td class="key">腐骨分離期</td>
+          <td>3か月〜1年</td>
+          <td>瘻孔形成と排膿を繰り返す。腐骨が分離</td>
+        </tr>
+      </table>
+
+      <h3>慢性骨髄炎</h3>
+      <p>不完全な治療により急性骨髄炎から移行することが多い。</p>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>特徴</th>
+          <th>エックス線所見</th>
+        </tr>
+        <tr>
+          <td class="key">慢性化膿性骨髄炎</td>
+          <td>罹患部の腫脹・疼痛は軽度。瘻孔からの排膿</td>
+          <td>骨吸収像と硬化像の混在</td>
+        </tr>
+        <tr>
+          <td class="key">慢性巣状硬化性骨髄炎</td>
+          <td>condensing osteitis。自覚的にはほぼ無症状</td>
+          <td>限局性の骨硬化像</td>
+        </tr>
+        <tr>
+          <td class="key">慢性びまん性硬化性骨髄炎</td>
+          <td>骨の硬化性変化が広範囲に及ぶ</td>
+          <td>広範な骨硬化像</td>
+        </tr>
+      </table>
+
+      <h2>慢性骨髄炎の治療</h2>
+
+      <h3>治療方針</h3>
+      <ul>
+        <li><span class="key">急性期</span>：まず<span class="highlight">抗菌薬投与＋NSAIDs投与</span>で消炎を図る（外科処置は急性期には行わない）</li>
+        <li><span class="key">消炎後</span>：原因歯の抜歯、外科的処置を検討</li>
+      </ul>
+
+      <h3>外科的治療の選択</h3>
+      <table>
+        <tr>
+          <th>術式</th>
+          <th>適応</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td class="highlight">腐骨除去術</td>
+          <td><span class="key">腐骨が分離</span>した場合</td>
+          <td>分離した腐骨（壊死骨片）を除去する</td>
+        </tr>
+        <tr>
+          <td class="highlight">皮質骨除去術</td>
+          <td>慢性化した骨髄炎（<span class="key">腐骨が分離していない</span>）</td>
+          <td>感染した皮質骨を除去し、骨髄腔を開放。杯形成・割腐除去を行う</td>
+        </tr>
+        <tr>
+          <td class="key">下顎骨区域切除術</td>
+          <td>広範な骨破壊</td>
+          <td>罹患骨の区域切除。最終手段</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">腐骨除去術 vs 皮質骨除去術の使い分け</div>
+        <ul>
+          <li>腐骨が<span class="highlight">分離している</span>→ <span class="key">腐骨除去術</span>（分離した壊死骨片を摘出）</li>
+          <li>腐骨が<span class="highlight">分離していない</span>（慢性化）→ <span class="key">皮質骨除去術</span>（皮質骨を切除して骨髄腔を開放）</li>
+          <li><span class="caution">画像所見で腐骨の有無と分離の程度を確認して術式を選択する</span></li>
+        </ul>
+      </div>
+
+      <h3>高気圧酸素療法</h3>
+      <ul>
+        <li>難治性の慢性骨髄炎や<span class="highlight">放射線性骨髄炎</span>に適応</li>
+        <li>高圧環境下で高濃度酸素を吸入→嫌気性菌への殺菌効果、骨の再生促進</li>
+        <li><span class="caution">根尖性歯周炎、顎関節強直症、慢性副鼻腔炎、線維性異形成症は適応ではない</span></li>
+      </ul>
+
+      <h2>放射線性骨壊死・放射線性骨髄炎</h2>
+      <ul>
+        <li><span class="key">放射線性骨壊死</span>：照射により骨組織が失活した状態。極端に活性が低下し感染しやすい</li>
+        <li><span class="key">放射線性骨髄炎</span>：壊死に陥った骨組織に<span class="highlight">細菌感染</span>が加わり、骨髄炎の症候を呈するもの</li>
+        <li><span class="highlight">照射後10年以上経過しても易感染状態</span>が持続する</li>
+        <li>治療は通常の骨髄炎治療に準ずる＋高気圧酸素療法</li>
+      </ul>
+      <p class="note">舌癌や歯肉癌の放射線治療歴がある患者の下顎疼痛・開口障害→放射線性骨髄炎を疑う。</p>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">107A126</div>
+        <p>下顎骨骨膜炎において最初に膿が貯留するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 骨膜と皮膚との間<br>
+          b 骨膜と顎下腺との間<br>
+          c 骨膜と皮質骨との間<br>
+          d 骨膜と咀嚼筋との間<br>
+          e 骨膜と歯槽粘膜との間
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】骨膜炎では、根尖部の炎症が皮質骨を穿孔して骨膜に達し、<span class="highlight">骨膜と皮質骨の間</span>に最初に膿が貯留する（骨膜下膿瘍）。その後、骨膜を破って粘膜下や皮下に膿瘍が広がる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102A86</div>
+        <p>急性下顎骨骨膜炎の診断で試験穿刺を行うこととした。</p>
+        <p>その目的はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 骨欠損の診査<br>
+          b 冷罨法実施の決定<br>
+          c 抗菌薬の感受性検査<br>
+          d 抗炎症薬投与の決定<br>
+          e 切開排膿処置の決定
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】試験穿刺の目的は、穿刺液の培養による<span class="highlight">抗菌薬の感受性検査</span>と、膿の貯留を確認して<span class="highlight">切開排膿処置の適応を決定</span>することである。<span class="caution">骨欠損の診査はエックス線検査で行う。</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B34</div>
+        <p>22歳の女性。下顎左側部の腫脹と疼痛とを主訴として来院した。以前から同様の症状が断続的にあったという。体温38.0℃、脈拍100/分である。初診時の顔貌写真（別冊No.34A）、最大開口時の口腔内写真（別冊No.34B）、エックス線写真（別冊No.34C）、CT（別冊No.34D）及びMRI（別冊No.34E）を別に示す。</p>
+        <p>まず行うべき治療はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106B34_1.png" alt="別冊No.34A,B">
+          <img src="../../../images/106回_Web画像/106B34_2.png" alt="別冊No.34C,D">
+          <img src="../../../images/106回_Web画像/106B34_3.png" alt="別冊No.34E">
+        </div>
+        <div class="choices">
+          a 抗菌薬投与<br>
+          b NSAIDs投与<br>
+          c 高圧酸素療法<br>
+          d 骨皮質除去術<br>
+          e ┌78の抜歯
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】急性炎症期（体温38.0℃、腫脹・疼痛あり）には、<span class="highlight">まず抗菌薬投与とNSAIDs投与</span>で消炎を図る。<span class="caution">急性期に外科処置（骨皮質除去術、抜歯）を行うと炎症が拡大する恐れがある</span>ため、消炎後に行う。高圧酸素療法は難治例への適応であり、初期対応ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102C13</div>
+        <p>78歳の男性。左側顎下部からの排膿を主訴として来院した。2年前に下顎左側歯槽粘膜部が腫脹したという。初診時の顔貌写真（別冊No.12A）、エックス線写真（別冊No.12B）及びCT（別冊No.12C）を別に示す。</p>
+        <p>最も適切な処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102C13.png" alt="別冊No.12">
+        </div>
+        <div class="choices">
+          a 瘻孔切除術<br>
+          b 腐骨除去術<br>
+          c 切開排膿術<br>
+          d 下顎骨辺縁切除術<br>
+          e 下顎骨区域切除術
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】2年前からの経過で慢性骨髄炎と考えられる。顎下部からの排膿があり、画像上で<span class="highlight">腐骨の分離</span>が確認できるため、<span class="highlight">腐骨除去術</span>が適切。切開排膿術は急性膿瘍に対する処置であり、慢性骨髄炎の腐骨に対しては不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104A130</div>
+        <p>慢性下顎骨骨髄炎の術後の模式図を示す。</p>
+        <p>この術式はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104A130.png" alt="術後模式図">
+        </div>
+        <div class="choices">
+          a 掻爬術<br>
+          b 開窓術<br>
+          c 皮質骨除去術<br>
+          d 骨髄穿孔術<br>
+          e 下顎骨区域切除術
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】模式図では下顎骨の<span class="highlight">皮質骨（頬側骨板）が除去</span>され、骨髄腔が開放されている所見がみられる。慢性骨髄炎で腐骨が分離していない場合に行われる<span class="highlight">皮質骨除去術</span>（decortication）である。感染した皮質骨を除去して骨髄腔を開放し、ドレナージを図る。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113C53</div>
+        <p>56歳の女性。下顎右側臼歯部の疼痛を主訴として来院した。6か月前、5┐の抜歯後に生じ、その後疼痛の範囲が広がったため抗菌薬を1か月間服用したが、症状の改善がみられなかったという。特記すべき既往歴はない。右側オトガイ部の知覚鈍麻を認めたため下顎右側臼歯部の生検を行った。初診時のエックス線画像（別冊No.13A）、CT（別冊No.13B）及び生検時のH-E染色病理組織像（別冊No.13C）を別に示す。</p>
+        <p>行うべき処置はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113C53_1.png" alt="別冊No.13A,B">
+          <img src="../../../images/113回_Web画像/113C53_2.png" alt="別冊No.13C">
+        </div>
+        <div class="choices">
+          a 開窓術<br>
+          b 腐骨除去術<br>
+          c 放射線療法<br>
+          d 皮質骨除去術<br>
+          e 下顎区域切除術
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】抜歯後6か月の経過で抗菌薬に反応しない慢性骨髄炎。オトガイ部の知覚鈍麻（Vincent症状）を認め、画像上で広範な骨変化がみられるが腐骨の分離は明瞭でない。<span class="highlight">皮質骨除去術</span>により感染した皮質骨を除去し、骨髄腔を開放する。<span class="caution">腐骨除去術は腐骨が分離している場合に選択する。</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A125</div>
+        <p>高気圧酸素療法の適応となるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 根尖性歯周炎<br>
+          b 顎関節強直症<br>
+          c 慢性副鼻腔炎<br>
+          d 放射線性骨髄炎<br>
+          e 線維性異形成症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】<span class="highlight">高気圧酸素療法</span>は難治性の慢性骨髄炎や<span class="highlight">放射線性骨髄炎</span>に適応される。高圧環境下で高濃度酸素を吸入することにより、嫌気性菌への殺菌効果と骨の再生促進が期待できる。根尖性歯周炎は通常の根管治療で対応し、その他の疾患も高気圧酸素療法の適応ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115A26</div>
+        <p>75歳の男性。下顎右側の鈍痛を主訴として来院した。2年前に下顎歯肉扁平上皮癌に対して放射線治療を受けたという。初診時の口腔内写真（別冊No.4A））、エックス線画像（別冊No.4B）、CT（別冊No.4C）及び生検時のH-E染色病理組織像（別冊No.4D）を別に示す。</p>
+        <p>最も考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115A26_1.png" alt="別冊No.4A,B">
+          <img src="../../../images/115回_Web画像/115A26_2.png" alt="別冊No.4C,D">
+        </div>
+        <div class="choices">
+          a 骨壊死<br>
+          b 骨肉腫<br>
+          c 悪性リンパ腫<br>
+          d 放射線誘発癌<br>
+          e 扁平上皮癌の再発
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】下顎歯肉癌に対する放射線治療の既往があり、2年後に下顎の鈍痛が出現。画像上で骨の変性・壊死像を認め、病理組織像では腫瘍性変化がみられない。<span class="highlight">放射線性骨壊死</span>と診断される。照射後10年以上経過しても骨壊死は発症しうる。<span class="caution">腫瘍の再発や放射線誘発癌との鑑別には生検が重要。</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114D37</div>
+        <p>72歳の男性。開口困難を主訴として来院した。2年前から右側下顎に疼痛を自覚していたがそのままにしていたところ、2か月前から開口障害が発現したという。5年前に右側舌癌の治療歴があるが、現在まで再発はない。初診時の顔貌写真（別冊No.9A）、口腔内写真（別冊No.9B）及びエックス線画像（別冊No.9C）を別に示す。</p>
+        <p>原因として疑われるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114D37.png" alt="別冊No.9">
+        </div>
+        <div class="choices">
+          a 顎関節強直症<br>
+          b 関節突起骨折<br>
+          c 筋突起過長症<br>
+          d 放射線性骨髄炎<br>
+          e 滑膜性骨軟骨腫症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】5年前の舌癌治療歴（放射線照射の既往）があり、2年前からの右側下顎疼痛と開口障害が出現。<span class="highlight">放射線性骨髄炎</span>による下顎骨の変化が開口障害の原因と考えられる。照射野内の骨は長期にわたり感染しやすい状態が続く。顎関節強直症は関節部の骨癒合であり、本症例の経過とは合致しない。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

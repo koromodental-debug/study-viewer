@@ -85,8 +85,26 @@
           "answer": "PMA指数、OHI、PCR"
         },
         {
-          "question": "[107A68] ★\n歯周プローブを用いて評価する代表的な指標は？",
-          "answer": "GI、BOP\n\n[他の選択肢との違い]\n- GI: プローブで歯肉触診 → 出血確認 ← 正解\n- OHI: 視診で歯垢・歯石評価 → プローブ不要\n- BOP: プロービング時の出血 ← 正解\n- PMA Index: 視診で評価 → プローブ不要\n- PCR: 染め出し後、視診 → プローブ不要\n\n[ポイント]\n・PMA Indexはプローブ不要（視診のみ）\n・GI、BOP、CPIはプローブ使用"
+          "question": "歯周プローブを用いて評価する代表的な指標は？",
+          "answer": "A, C",
+          "choices": {
+            "a": "GI",
+            "b": "OHI",
+            "c": "BOP",
+            "d": "PMA Index",
+            "e": "PCR"
+          },
+          "correctAnswer": "A, C",
+          "numChoices": 2,
+          "code": "107A68",
+          "choiceExplanations": {
+            "a": "プローブで歯肉触診 → 出血確認 ← 正解",
+            "b": "視診で歯垢・歯石評価 → プローブ不要",
+            "c": "プロービング時の出血 ← 正解",
+            "d": "視診で評価 → プローブ不要",
+            "e": "染め出し後、視診 → プローブ不要"
+          },
+          "point": "・PMA Indexはプローブ不要（視診のみ）\n・GI、BOP、CPIはプローブ使用"
         }
       ]
     }

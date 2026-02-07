@@ -108,11 +108,29 @@
           "answer": "不溶性グルカン"
         },
         {
-          "question": "[114A66] ★★★\nGTFはどの菌が産生する？",
-          "answer": "S. mutans、S. sobrinus（齲蝕原性菌）\n\n[他の選択肢との違い]\n- ジンジパイン: P. gingivalisが産生（歯周病原因子）\n- デンティリシン: T. denticolaが産生（歯周病原因子）\n- ロイコトキシン: A.a.が産生（歯周病原因子）\n- GTF: S. mutans / S. sobrinusが産生 ← 正解\n- FTF: S. mutans / S. sobrinusが産生 ← 正解\n\n[ポイント]\nGTF・FTF＝齲蝕原性菌（S. mutans系）。ジンジパイン・デンティリシン・ロイコトキシン＝歯周病原菌。"
+          "question": "GTFはどの菌が産生する？",
+          "answer": "D, E",
+          "choices": {
+            "a": "ジンジパイン",
+            "b": "デンティリシン",
+            "c": "ロイコトキシン",
+            "d": "GTF",
+            "e": "FTF"
+          },
+          "correctAnswer": "D, E",
+          "numChoices": 2,
+          "code": "114A66",
+          "choiceExplanations": {
+            "a": "P. gingivalisが産生（歯周病原因子）",
+            "b": "T. denticolaが産生（歯周病原因子）",
+            "c": "A.a.が産生（歯周病原因子）",
+            "d": "S. mutans / S. sobrinusが産生 ← 正解",
+            "e": "S. mutans / S. sobrinusが産生 ← 正解"
+          },
+          "point": "GTF・FTF＝齲蝕原性菌（S. mutans系）。ジンジパイン・デンティリシン・ロイコトキシン＝歯周病原菌。"
         },
         {
-          "question": "[107A43] ★★★\nS. mutansとS. sobrinusのみが持ち、他の口腔レンサ球菌にはない性質は？",
+          "question": "S. mutansとS. sobrinusのみが持ち、他の口腔レンサ球菌にはない性質は？",
           "answer": "グルカン合成（GTF活性）\n\n[ポイント]\n表の問題では「S. mutansとS. sobrinusのみ+」→ GTFによるグルカン合成が特徴。"
         }
       ]
@@ -141,8 +159,26 @@
           "answer": "歯周病原細菌"
         },
         {
-          "question": "[105A98] ★★★\n根面齲蝕に関与する菌は？",
-          "answer": "S. mutans、Actinomyces viscosus\n\n[他の選択肢との違い]\n- S. mitis: 齲蝕原性が低い口腔レンサ球菌\n- T. denticola: 歯周病原菌（Red complex）\n- S. mutans: 根面齲蝕の主要な原因菌 ← 正解\n- A. viscosus: 根面への付着能が高い ← 正解\n- P. gingivalis: 歯周病原菌（Red complex）\n\n[ポイント]\n根面齲蝕＝S. mutans + Actinomyces。T. denticola・P. gingivalisは歯周病原菌。"
+          "question": "根面齲蝕に関与する菌は？",
+          "answer": "C, D",
+          "choices": {
+            "a": "S. mitis",
+            "b": "T. denticola",
+            "c": "S. mutans",
+            "d": "A. viscosus",
+            "e": "P. gingivalis"
+          },
+          "correctAnswer": "C, D",
+          "numChoices": 2,
+          "code": "105A98",
+          "choiceExplanations": {
+            "a": "齲蝕原性が低い口腔レンサ球菌",
+            "b": "歯周病原菌（Red complex）",
+            "c": "根面齲蝕の主要な原因菌 ← 正解",
+            "d": "根面への付着能が高い ← 正解",
+            "e": "歯周病原菌（Red complex）"
+          },
+          "point": "根面齲蝕＝S. mutans + Actinomyces。T. denticola・P. gingivalisは歯周病原菌。"
         }
       ]
     },

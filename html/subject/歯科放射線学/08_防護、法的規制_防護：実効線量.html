@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>防護：実効線量 - 歯科放射線学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+    .formula {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      font-size: 10pt;
+      text-align: center;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科放射線学 / 防護、法的規制</span>
+    <h1>防護：実効線量</h1>
+    <div class="container">
+
+      <!-- 1. 放射線防護に関する線量の全体像 -->
+      <h2>放射線防護に関する4つの線量</h2>
+
+      <table>
+        <tr><th>線量</th><th>単位</th><th>意味</th><th>評価対象</th></tr>
+        <tr><td><span class="key">照射線量</span></td><td>C/kg</td><td>電磁放射線が空気を電離する能力</td><td>空気中の電離量</td></tr>
+        <tr><td><span class="key">吸収線量</span></td><td>Gy（グレイ）</td><td>物質の単位質量あたりに吸収されたエネルギー</td><td>物理的なエネルギー量</td></tr>
+        <tr><td><span class="key">等価線量</span></td><td>Sv（シーベルト）</td><td>放射線の種類による影響の違いを考慮した線量</td><td><span class="highlight">確定的影響</span>（臓器ごと）</td></tr>
+        <tr><td><span class="key">実効線量</span></td><td>Sv（シーベルト）</td><td>各臓器の感受性の違いを考慮した全身の線量</td><td><span class="highlight">確率的影響</span>（全身）</td></tr>
+      </table>
+
+      <!-- 2. 変換関係（核心） -->
+      <h2>線量の変換関係</h2>
+      <p>吸収線量から実効線量に至る変換には、2つの荷重係数が必要。</p>
+
+      <div class="formula">吸収線量（Gy）×<span style="color: var(--accent);">放射線荷重係数 W<sub>R</sub></span> = 等価線量（Sv）</div>
+      <div class="formula">Σ（等価線量 ×<span style="color: var(--accent);">組織荷重係数 W<sub>T</sub></span>）= 実効線量（Sv）</div>
+
+      <div class="point-box">
+        <div class="point-box-title">105C40の核心：吸収線量→実効線量に必要なもの</div>
+        <ul>
+          <li><span class="highlight">放射線荷重係数（W<sub>R</sub>）</span>：放射線の種類ごとの生物学的効果の違いを重みづけ</li>
+          <li><span class="highlight">組織荷重係数（W<sub>T</sub>）</span>：各組織・臓器の放射線感受性の違いを重みづけ</li>
+        </ul>
+      </div>
+
+      <!-- 3. 放射線荷重係数 -->
+      <h2>放射線荷重係数（W<sub>R</sub>）</h2>
+      <p>X線を1としたとき、他の放射線の種類による影響の度合いを重みづけする係数。</p>
+
+      <table>
+        <tr><th>放射線の種類</th><th>W<sub>R</sub></th></tr>
+        <tr><td>光子（X線・γ線）</td><td><span class="highlight">1</span></td></tr>
+        <tr><td>電子・μ中間子</td><td>1</td></tr>
+        <tr><td>陽子・荷電π中間子</td><td>2</td></tr>
+        <tr><td>α粒子・核分裂片・重い原子核</td><td><span class="highlight">20</span></td></tr>
+        <tr><td>中性子</td><td>2.5〜20（エネルギーに依存）</td></tr>
+      </table>
+      <p class="note">※歯科で主に使用するX線の W<sub>R</sub> = 1 のため、X線では吸収線量1 Gy = 等価線量1 Sv となる。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">放射線荷重係数 vs 生物学的効果比（RBE）</div>
+        <ul>
+          <li><span class="key">RBE</span>：実験的に測定された値。生物学的効果の評価に使用</li>
+          <li><span class="key">W<sub>R</sub></span>：RBEを参考にICRPが<span class="key">放射線防護の目的で</span>定めた値</li>
+          <li><span class="caution">RBEは修飾因子、W<sub>R</sub>は防護用の係数</span>（目的が異なる）</li>
+        </ul>
+      </div>
+
+      <!-- 4. 等価線量 -->
+      <h2>等価線量（H<sub>T</sub>）</h2>
+      <p>ある組織・臓器Tにおける等価線量：</p>
+      <div class="formula">H<sub>T</sub> = Σ W<sub>R</sub> × D<sub>T,R</sub></div>
+      <p>D<sub>T,R</sub> は、放射線Rによる組織Tにおける平均吸収線量。単位は<span class="key">シーベルト（Sv）</span>。</p>
+      <ul>
+        <li>放射線が臓器などに及ぼす影響（<span class="key">確定的影響</span>）を評価するための単位</li>
+        <li>線量限度は水晶体、皮膚、手足ごとに設定されている</li>
+      </ul>
+
+      <!-- 5. 組織荷重係数 -->
+      <h2>組織荷重係数（W<sub>T</sub>）</h2>
+      <p>全身に均一に照射された場合と同様に、各組織・臓器に重みづけするための係数。</p>
+
+      <h3>主な組織荷重係数（ICRP 2007年勧告）</h3>
+      <table>
+        <tr><th>組織・臓器</th><th>W<sub>T</sub></th></tr>
+        <tr><td>赤色骨髄、結腸、肺、胃、乳房、残りの組織</td><td><span class="highlight">0.12</span>（各）</td></tr>
+        <tr><td>生殖腺</td><td>0.08</td></tr>
+        <tr><td>膀胱、肝臓、食道、甲状腺</td><td>0.04（各）</td></tr>
+        <tr><td>皮膚、骨表面、脳、唾液腺</td><td>0.01（各）</td></tr>
+      </table>
+      <p class="note">※全組織のW<sub>T</sub>の合計 = 1.00。乳房・結腸・肺・胃のリスクが高い組織ほどW<sub>T</sub>が大きい。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">2007年勧告での主な変更点</div>
+        <ul>
+          <li><span class="key">生殖腺</span>：0.20 → <span class="highlight">0.08</span>（大幅に低下）</li>
+          <li><span class="key">乳房</span>：0.05 → 0.12（上昇）</li>
+          <li>新たに<span class="key">脳</span>と<span class="key">唾液腺</span>が独立して追加（各0.01）</li>
+        </ul>
+      </div>
+
+      <!-- 6. 実効線量 -->
+      <h2>実効線量（E）</h2>
+      <div class="formula">E = Σ W<sub>T</sub> × H<sub>T</sub></div>
+      <p>各臓器が受けた放射線の等価線量にその臓器の組織荷重係数を掛けた値の<span class="key">総和</span>。単位は<span class="key">シーベルト（Sv）</span>。</p>
+      <ul>
+        <li>放射線がヒトに及ぼす影響（<span class="key">確率的影響</span>：発がんおよび遺伝的影響）を評価するための単位</li>
+        <li>被曝したヒト集団から得られた各組織・臓器の単位線量（Sv）あたりの致死確率とリスク係数の合計との比で求められる</li>
+        <li>線量限度：職業被曝 <span class="highlight">20 mSv/年</span>（5年平均）、公衆被曝 <span class="highlight">1 mSv/年</span></li>
+      </ul>
+
+      <!-- 7. 線量の使い分けまとめ -->
+      <h2>線量の使い分けまとめ</h2>
+      <table>
+        <tr><th>目的</th><th>使用する線量</th><th>荷重係数</th></tr>
+        <tr><td>物理的なエネルギー吸収の測定</td><td>吸収線量（Gy）</td><td>なし</td></tr>
+        <tr><td>臓器ごとの確定的影響の評価</td><td>等価線量（Sv）</td><td>W<sub>R</sub></td></tr>
+        <tr><td>全身の確率的影響の評価</td><td>実効線量（Sv）</td><td>W<sub>R</sub> + W<sub>T</sub></td></tr>
+      </table>
+
+      <!-- 8. 過去問 -->
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">105C40</div>
+        <p>吸収線量から実効線量を求めるのに必要なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 線量率<br>
+          b 線量限度<br>
+          c 組織荷重係数<br>
+          d 生物学的効果比<br>
+          e 放射線荷重係数
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】吸収線量から実効線量への変換は2段階で行われる。まず吸収線量に<span class="key">放射線荷重係数（W<sub>R</sub>）</span>を掛けて等価線量を求め（e）、次に等価線量に<span class="key">組織荷重係数（W<sub>T</sub>）</span>を掛けた総和が実効線量となる（c）。線量率（a）は単位時間あたりの線量、線量限度（b）は被曝の上限値で変換には不要。<span class="caution">生物学的効果比（RBE）</span>（d）は実験的に求める値であり、放射線防護の線量計算で使うのは放射線荷重係数（W<sub>R</sub>）である。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

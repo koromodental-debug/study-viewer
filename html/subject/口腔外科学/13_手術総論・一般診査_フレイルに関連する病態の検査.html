@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>フレイルに関連する病態の検査 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>フレイルに関連する病態の検査</h1>
+    <div class="container">
+
+      <p><span class="key">フレイル（Frailty）</span>とは、加齢に伴い心身の活力（筋力、認知機能、社会的つながりなど）が低下し、要介護状態に陥りやすい状態をいう。健康と要介護の中間に位置する概念である。</p>
+
+      <!-- ========== フレイルの概念 ========== -->
+      <h2>フレイルの位置づけ</h2>
+      <p>健康 → <span class="key">プレフレイル</span> → <span class="key">フレイル</span> → 要介護</p>
+      <p>フレイルは適切な介入により<span class="highlight">健康な状態に戻りうる可逆的な段階</span>であるため、早期発見・早期介入が重要。</p>
+
+      <h3>フレイルの3つの側面</h3>
+      <table>
+        <tr><th>側面</th><th>内容</th><th>例</th></tr>
+        <tr><td><span class="key">身体的フレイル</span></td><td>筋力・体力の低下</td><td>サルコペニア、ロコモティブシンドローム</td></tr>
+        <tr><td><span class="key">精神・心理的フレイル</span></td><td>認知機能・意欲の低下</td><td>認知症、うつ</td></tr>
+        <tr><td><span class="key">社会的フレイル</span></td><td>社会的つながりの減少</td><td>閉じこもり、孤食</td></tr>
+      </table>
+
+      <!-- ========== フレイルの診断基準 ========== -->
+      <h2>フレイルの診断基準（Friedの5項目）</h2>
+
+      <div class="point-box">
+        <div class="point-box-title">フレイルの5項目（全3問で出題）</div>
+        <ul>
+          <li><span class="highlight">体重減少</span>（意図しない年間4.5kg以上の減少）</li>
+          <li><span class="highlight">易疲労</span>（主観的な疲労感）</li>
+          <li><span class="highlight">身体活動量の低下</span>（日常生活活動量の減少）</li>
+          <li><span class="highlight">歩行速度の低下</span></li>
+          <li><span class="highlight">握力の低下</span></li>
+        </ul>
+        <p class="note">3項目以上 → フレイル、1〜2項目 → プレフレイル、0項目 → 健常</p>
+      </div>
+
+      <p><span class="caution">口腔衛生状態はフレイルの診断項目に含まれない</span>（2問でひっかけ選択肢として出題）。ただし口腔機能の低下はオーラルフレイルとして関連する別概念である。</p>
+
+      <div class="question-box">
+        <div class="q-number">113D33</div>
+        <p>フレイルの診断に用いるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 握　力<br>
+          b 体　重<br>
+          c 歩行速度<br>
+          d 身体活動量<br>
+          e 口腔衛生状態
+        </div>
+        <div class="answer">正解：a, b, c, d</div>
+        <p>【解説】Friedの基準で用いるのは握力・体重（変化）・歩行速度・身体活動量・易疲労の5項目。口腔衛生状態はフレイルの診断項目ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A42</div>
+        <p>フレイルの診断項目に含まれるのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 握　力<br>
+          b 体　重<br>
+          c 易疲労<br>
+          d 口腔衛生状態<br>
+          e 日常生活活動量
+        </div>
+        <div class="answer">正解：a, b, c, e</div>
+        <p>【解説】握力・体重（変化）・易疲労・日常生活活動量（身体活動量）はいずれもFriedの基準に含まれる。口腔衛生状態は含まれない。113D33と同じひっかけパターン。</p>
+      </div>
+
+      <!-- ========== サルコペニア ========== -->
+      <h2>サルコペニア</h2>
+      <p><span class="key">サルコペニア（Sarcopenia）</span>とは、加齢に伴う<span class="highlight">骨格筋量の減少</span>と<span class="highlight">筋力低下</span>を特徴とする症候群である。フレイルの身体的側面の主要因。</p>
+
+      <h3>サルコペニアの診断基準</h3>
+      <table>
+        <tr><th>項目</th><th>評価方法</th><th>カットオフ値</th></tr>
+        <tr><td><span class="highlight">筋肉量の低下</span>（必須）</td><td>DXA法、BIA法</td><td>SMI：男＜7.0 kg/m<sup>2</sup>、女＜5.7 kg/m<sup>2</sup></td></tr>
+        <tr><td><span class="highlight">握力の低下</span></td><td>握力計</td><td>男＜28 kg、女＜18 kg</td></tr>
+        <tr><td><span class="highlight">歩行速度の低下</span></td><td>通常歩行速度</td><td>＜1.0 m/秒</td></tr>
+      </table>
+      <p>診断：筋肉量低下（必須）＋ 握力低下 または 歩行速度低下</p>
+
+      <div class="point-box">
+        <div class="point-box-title">フレイル vs サルコペニアの違い</div>
+        <ul>
+          <li><span class="key">フレイル</span>：身体・精神・社会的な包括的虚弱状態</li>
+          <li><span class="key">サルコペニア</span>：骨格筋量・筋力に特化した概念</li>
+          <li>共通する診断項目：<span class="highlight">握力</span>と<span class="highlight">歩行速度</span></li>
+          <li>サルコペニアにあってフレイルにない項目：筋肉量（DXA等で測定）</li>
+          <li>フレイルにあってサルコペニアにない項目：体重変化、易疲労、身体活動量</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B25</div>
+        <p>サルコペニアの診断に用いるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 握　力<br>
+          b 腹　囲<br>
+          c 血糖値<br>
+          d 歩行速度<br>
+          e 血清アルブミン値
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】サルコペニアの診断には筋肉量・握力・歩行速度を用いる。腹囲はメタボリックシンドロームの診断基準（男≧85cm、女≧90cm）。血糖値は糖尿病、血清アルブミンは栄養評価の指標であり、いずれもサルコペニアの診断項目ではない。</p>
+      </div>
+
+      <!-- ========== オーラルフレイル ========== -->
+      <h2>オーラルフレイル</h2>
+      <p><span class="key">オーラルフレイル</span>とは、口腔機能の軽微な低下が連鎖的に生じ、全身的なフレイルの入り口となる状態をいう。</p>
+
+      <h3>オーラルフレイルの徴候</h3>
+      <ul>
+        <li>滑舌の低下</li>
+        <li>食べこぼし</li>
+        <li>わずかなむせ</li>
+        <li>噛めない食品の増加</li>
+        <li>口腔乾燥</li>
+      </ul>
+      <p class="note">※オーラルフレイルは「口腔衛生状態」とは異なる概念。フレイルの診断項目に口腔衛生状態が含まれないのはこのため。</p>
+
+      <h3>フレイルサイクル</h3>
+      <p>低栄養 → サルコペニア → 身体機能低下 → 活動量低下 → 食欲低下 → 低栄養…という悪循環が形成される。口腔機能の低下（オーラルフレイル）は、咀嚼・嚥下障害を介して<span class="key">低栄養</span>の入り口となり、このサイクルに関与する。</p>
+
+      <!-- ========== 関連する評価法 ========== -->
+      <h2>高齢者の評価法まとめ</h2>
+      <table>
+        <tr><th>評価法</th><th>評価対象</th></tr>
+        <tr><td><span class="key">Friedの基準（5項目）</span></td><td>フレイル</td></tr>
+        <tr><td><span class="key">AWGS基準</span></td><td>サルコペニア</td></tr>
+        <tr><td>MNA</td><td>栄養状態（低栄養）</td></tr>
+        <tr><td>SGA</td><td>栄養状態（主観的評価）</td></tr>
+        <tr><td>BMI</td><td>体格</td></tr>
+        <tr><td>MMSE / HDS-R</td><td>認知機能</td></tr>
+        <tr><td>GDS</td><td>うつ（高齢者）</td></tr>
+        <tr><td>Barthel Index / FIM</td><td>ADL（日常生活動作）</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

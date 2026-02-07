@@ -1,0 +1,451 @@
+{
+  "metadata": {
+    "title": "下顎の発育異常を伴う症候群",
+    "category": "口腔外科学",
+    "chapter": "先天異常・発育不全",
+    "brushup": "2026-02-07"
+  },
+  "sections": [
+    {
+      "section": "Beckwith-Wiedemann症候群（EMG症候群）",
+      "qa": [
+        {
+          "question": "Beckwith-Wiedemann症候群の遺伝形式は？",
+          "answer": "常染色体劣性遺伝"
+        },
+        {
+          "question": "Beckwith-Wiedemann症候群の3主徴は？",
+          "answer": "臍帯脱出（E: Exomphalos）、巨舌（M: Macroglossia）、巨体（G: Gigantism）"
+        },
+        {
+          "question": "Beckwith-Wiedemann症候群の咬合の特徴は？",
+          "answer": "巨舌により下顎前突・開咬を呈する"
+        },
+        {
+          "question": "Beckwith-Wiedemann症候群に知的障害はあるか？",
+          "answer": "なし"
+        },
+        {
+          "question": "Beckwith-Wiedemann症候群の経過の特徴は？",
+          "answer": "多くは成人までに消失する"
+        },
+        {
+          "question": "Beckwith-Wiedemann症候群の不正咬合に対する治療は？",
+          "answer": "舌縮小術"
+        },
+        {
+          "question": "生後11か月の乳児。口唇の閉鎖不全を主訴として来院した。体重は12kgで臍帯ヘルニアを合併していた。初診時の顔貌写真（別冊No.6）を別に示す。考えられるのはどれか。1つ選べ。",
+          "answer": "正解: E",
+          "choices": {
+            "a": "Down症候群",
+            "b": "Crouzon症候群",
+            "c": "Robinシークエンス",
+            "d": "Treacher Collins症候群",
+            "e": "Beckwith-Wiedemann症候群"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "108B6"
+        },
+        {
+          "question": "巨舌を伴うのはどれか。1つ選べ。",
+          "answer": "正解: E",
+          "choices": {
+            "a": "Crouzon症候群",
+            "b": "Pierre Robin症候群",
+            "c": "Russell-Silver症候群",
+            "d": "Treacher Collins症候群",
+            "e": "Beckwith-Wiedemann症候群"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "104C56"
+        },
+        {
+          "question": "Beckwith-Wiedemann 症候群でみられる不正咬合の改善を目的に行うのはどれか。1つ選べ。",
+          "answer": "正解: A",
+          "choices": {
+            "a": "舌縮小術",
+            "b": "口蓋形成術",
+            "c": "咽頭弁形成術",
+            "d": "舌小帯切除術",
+            "e": "上唇小帯切除術"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "115D61"
+        },
+        {
+          "question": "下顎前突を呈するのはどれか。1つ選べ。",
+          "answer": "正解: E",
+          "choices": {
+            "a": "Turner 症候群",
+            "b": "Robin シークエンス",
+            "c": "Russell-Silver 症候群",
+            "d": "Treacher Collins 症候群",
+            "e": "Beckwith-Wiedemann 症候群"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "112A65"
+        }
+      ]
+    },
+    {
+      "section": "Robinシークエンス（Pierre Robin症候群）",
+      "qa": [
+        {
+          "question": "Robinシークエンスの3主徴は？",
+          "answer": "小下顎、舌根沈下、上気道閉塞"
+        },
+        {
+          "question": "Robinシークエンスに合併する口腔の異常は？",
+          "answer": "口蓋裂"
+        },
+        {
+          "question": "Robinシークエンスに合併する全身疾患は？",
+          "answer": "心疾患、眼疾患"
+        },
+        {
+          "question": "Robinシークエンスで歯科診療時に注意すべき点は？",
+          "answer": "仰臥位で舌根が沈下し気道を閉塞するため、水平位での気道閉塞の危険がある\n\n[混同注意] 呼吸困難・挿管困難症のリスクあり"
+        },
+        {
+          "question": "生後1か月の乳児。哺乳障害がみられたため、小児科からの紹介で来院した。出生直後から仰臥位で吸気時の喘鳴とチアノーゼがみられるという。初診時の側貌写真（別冊No.10A）、口腔内写真（別冊No.10B）及び頭部側方向エックス線写真（別冊No.10C） を別に示す。考えられる疾患はどれか。1 つ選べ。",
+          "answer": "正解: D",
+          "choices": {
+            "a": "Down 症候群",
+            "b": "Apert 症候群",
+            "c": "Crouzon 症候群",
+            "d": "Robin シーク エンス",
+            "e": "Beckwith-Wiedemann 症候群"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "111B69"
+        }
+      ]
+    },
+    {
+      "section": "第一第二鰓弓症候群（Goldenhar症候群）",
+      "qa": [
+        {
+          "question": "第一第二鰓弓症候群の原因は？",
+          "answer": "第一・第二鰓弓由来の発育異常"
+        },
+        {
+          "question": "第一第二鰓弓症候群の下顎所見は？",
+          "answer": "下顎の低形成（筋突起、関節突起）、下顎枝の形成不全"
+        },
+        {
+          "question": "第一第二鰓弓症候群の顔面所見は？",
+          "answer": "耳介低形成、巨口症（横顔裂）"
+        },
+        {
+          "question": "第一第二鰓弓症候群の発症パターンは？",
+          "answer": "片側性に発症しやすい"
+        },
+        {
+          "question": "Treacher Collins症候群との鑑別点は？",
+          "answer": "Treacher Collins症候群は両側性の顔面低形成、第一第二鰓弓症候群は片側性に発症しやすい"
+        },
+        {
+          "question": "Goldenhar症候群と呼ばれる条件は？",
+          "answer": "眼（眼球結膜類上皮腫）・脊椎奇形を合併する場合"
+        },
+        {
+          "question": "第一鰓弓の神経支配は？",
+          "answer": "三叉神経（咀嚼筋、口蓋帆張筋）"
+        },
+        {
+          "question": "第二鰓弓の神経支配は？",
+          "answer": "顔面神経（表情筋）"
+        },
+        {
+          "question": "下顎枝の形成不全を特徴とするのはどれか。1つ選べ。",
+          "answer": "正解: E",
+          "choices": {
+            "a": "Down症候群",
+            "b": "Apert症候群",
+            "c": "Turner症候群",
+            "d": "Klinefelter症候群",
+            "e": "第一第二鰓弓症候群"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "110A44"
+        },
+        {
+          "question": "Goldenhar 症候群にみられる症状はどれか。2つ選べ。",
+          "answer": "正解: BD",
+          "choices": {
+            "a": "巨　舌",
+            "b": "横顔裂",
+            "c": "両眼隔離",
+            "d": "下顎低形成",
+            "e": "頭蓋骨早期癒合"
+          },
+          "correctAnswer": "BD",
+          "numChoices": 2,
+          "code": "112B42"
+        },
+        {
+          "question": "7歳の女児。歯並びと咬み合わせが悪いことを主訴として来院した。1歳6か月時に口蓋形成術を受けたという。初診時の顔貌写真（別冊No.12A）、口腔内写真（別冊No.12B）及びエックス線写真（別冊No.12C）を別に示す。疑われるのはどれか。1つ選べ。",
+          "answer": "正解: D",
+          "choices": {
+            "a": "Down症候群",
+            "b": "Crouzon症候群",
+            "c": "鎖骨頭蓋骨異形成症",
+            "d": "第一第二鰓弓症候群",
+            "e": "Beckwith-Wiedemann症候群"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "109B12"
+        },
+        {
+          "question": "3か月の乳児。口腔管理を希望して来院した。初診時の顔貌写真（別冊No.8） を別に示す。今後の可能性として保護者に説明すべきなのはどれか。2つ選べ。",
+          "answer": "正解: DE",
+          "choices": {
+            "a": "高口蓋",
+            "b": "多数歯欠如",
+            "c": "タウロドント",
+            "d": "下顎枝の劣成長",
+            "e": "咀嚼筋の低形成"
+          },
+          "correctAnswer": "DE",
+          "numChoices": 2,
+          "code": "112A50"
+        }
+      ]
+    },
+    {
+      "section": "アクロメガリー（先端巨大症）",
+      "qa": [
+        {
+          "question": "アクロメガリーの原因は？",
+          "answer": "下垂体腺腫による成長ホルモン（GH）の過剰分泌"
+        },
+        {
+          "question": "アクロメガリーの発症条件は？",
+          "answer": "骨端線閉鎖後に発症"
+        },
+        {
+          "question": "アクロメガリーの四肢の特徴は？",
+          "answer": "手足の巨大化"
+        },
+        {
+          "question": "アクロメガリーの顔面の特徴は？",
+          "answer": "前額部突出、軟組織の肥大"
+        },
+        {
+          "question": "アクロメガリーの顎顔面所見は？",
+          "answer": "下顎前突（進行性）、空隙歯列"
+        },
+        {
+          "question": "アクロメガリーを疑う臨床像のキーワードは？",
+          "answer": "成人後に「数年前から次第に増悪」する下顎前突"
+        },
+        {
+          "question": "40歳の女性。前歯で食物が噛みにくいことを主訴として来院した。数年前から次第に増悪してきたという。初診時の顔面写真（別冊No.00A）、口腔内写真（別冊No.00B）及びエックス線写真（別冊No.00C）を別に示す。考えられるのはどれか。1つ選べ。",
+          "answer": "正解: C",
+          "choices": {
+            "a": "関節リウマチ",
+            "b": "線維性異形成症",
+            "c": "アクロメガリー",
+            "d": "Goldenhar症候群",
+            "e": "Beckwith-Wiedemann症候群"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "106B26"
+        }
+      ]
+    },
+    {
+      "section": "骨延長術の適応",
+      "qa": [
+        {
+          "question": "骨延長術の原理は？",
+          "answer": "顎骨の形態異常（低形成）に対して、骨切り後に骨延長器を用いて徐々に骨を延長する術式"
+        },
+        {
+          "question": "骨延長術が顎骨の低形成に適応となる理由は？",
+          "answer": "骨切り後に骨延長器で徐々に骨を伸ばし、形態を改善できるため"
+        },
+        {
+          "question": "McCune-Albright症候群に骨延長術が不適な理由は？",
+          "answer": "線維性異形成症であり、顎骨の低形成が主病態ではないため"
+        },
+        {
+          "question": "顎骨の形態異常に骨延長術が適用できるのはどれか。3つ選べ。",
+          "answer": "正解: ABD",
+          "choices": {
+            "a": "Crouzon症候群",
+            "b": "Robinシークエンス",
+            "c": "von Recklinghausen病",
+            "d": "Treacher Collins症候群",
+            "e": "McCune-Albright症候群"
+          },
+          "correctAnswer": "ABD",
+          "numChoices": 3,
+          "code": "114A82"
+        },
+        {
+          "question": "骨延長術が用いられるのはどれか。1つ選べ。",
+          "answer": "正解: D",
+          "choices": {
+            "a": "くる病",
+            "b": "大理石骨病",
+            "c": "Gardner症候群",
+            "d": "Goldenhar症候群",
+            "e": "McCune-Albright症候群"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "103C51"
+        }
+      ]
+    },
+    {
+      "section": "水平位での気道閉塞リスク",
+      "qa": [
+        {
+          "question": "水平位で気道閉塞のリスクがある疾患は？",
+          "answer": "Robinシークエンス、Treacher Collins症候群"
+        },
+        {
+          "question": "Robinシークエンスの気道閉塞の機序は？",
+          "answer": "小下顎による舌根沈下 → 仰臥位で上気道閉塞"
+        },
+        {
+          "question": "Treacher Collins症候群の気道閉塞の機序は？",
+          "answer": "両側性の顎骨低形成 → 後鼻腔狭窄 → 気道閉塞"
+        },
+        {
+          "question": "歯科診療を水平位で行ったとき、気道閉塞を起こす危険性が高いのはどれか。1つ選べ。",
+          "answer": "正解: D",
+          "choices": {
+            "a": "Down症候群",
+            "b": "Klinefelter症候群",
+            "c": "鎖骨頭蓋骨異形成症",
+            "d": "Treacher Collins症候群",
+            "e": "Beckwith-Wiedemann症候群"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "105C70"
+        }
+      ]
+    },
+    {
+      "section": "表穴埋め",
+      "qa": [
+        {
+          "type": "table-occlusion",
+          "title": "Beckwith-Wiedemann症候群（EMG症候群）",
+          "table": {
+            "headers": ["項目", "内容"],
+            "rows": [
+              ["3主徴", "臍帯脱出（E: Exomphalos）、巨舌（M: Macroglossia）、巨体（G: Gigantism）"],
+              ["咬合", "巨舌により下顎前突・開咬を呈する"],
+              ["知的障害", "なし"],
+              ["経過", "多くは成人までに消失する"],
+              ["治療", "不正咬合の改善には舌縮小術を行う"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1},
+            {"row": 3, "col": 1},
+            {"row": 4, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "Robinシークエンス（Pierre Robin症候群）",
+          "table": {
+            "headers": ["項目", "内容"],
+            "rows": [
+              ["3主徴", "小下顎、舌根沈下、上気道閉塞"],
+              ["合併", "口蓋裂、心疾患、眼疾患"],
+              ["注意点", "呼吸困難・挿管困難症。仰臥位で気道閉塞のリスク"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "第一第二鰓弓症候群（Goldenhar症候群）",
+          "table": {
+            "headers": ["項目", "内容"],
+            "rows": [
+              ["下顎所見", "下顎の低形成（筋突起、関節突起）、下顎枝の形成不全"],
+              ["顔面所見", "耳介低形成、巨口症（横顔裂）"],
+              ["口腔所見", "口蓋裂"],
+              ["発症", "片側性に発症しやすい"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1},
+            {"row": 3, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "アクロメガリー（先端巨大症）",
+          "table": {
+            "headers": ["項目", "内容"],
+            "rows": [
+              ["全身所見", "手足の巨大化、前額部突出、軟組織の肥大"],
+              ["顎顔面所見", "下顎前突（進行性）、空隙歯列"],
+              ["臨床像", "成人後に徐々に進行する下顎前突 →「数年前から次第に増悪」がキーワード"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "水平位での気道閉塞リスク",
+          "table": {
+            "headers": ["疾患", "気道閉塞の機序"],
+            "rows": [
+              ["Robinシークエンス", "小下顎による舌根沈下 → 仰臥位で上気道閉塞"],
+              ["Treacher Collins症候群", "両側性の顎骨低形成 → 後鼻腔狭窄 → 気道閉塞"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "Treacher Collins症候群との鑑別",
+          "table": {
+            "headers": ["症候群", "発症パターン"],
+            "rows": [
+              ["Treacher Collins症候群", "両側性に顔面低形成"],
+              ["第一第二鰓弓症候群", "片側性に発症しやすい"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1}
+          ]
+        }
+      ]
+    }
+  ]
+}

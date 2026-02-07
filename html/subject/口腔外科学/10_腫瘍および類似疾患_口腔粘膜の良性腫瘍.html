@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔粘膜の良性腫瘍 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 腫瘍および類似疾患</span>
+    <h1>口腔粘膜の良性腫瘍</h1>
+    <div class="container">
+
+      <h2>良性腫瘍の分類</h2>
+      <p>口腔粘膜（軟組織）に発生する良性腫瘍は、<span class="key">上皮性</span>と<span class="key">非上皮性</span>に大別される。</p>
+
+      <h3>口腔粘膜の主な良性腫瘍</h3>
+      <table>
+        <tr><th>分類</th><th>腫瘍名</th><th>由来</th><th>特徴的所見</th></tr>
+        <tr><td rowspan="2">上皮性</td><td><span class="key">乳頭腫</span></td><td>扁平上皮</td><td>有茎性、カリフラワー状</td></tr>
+        <tr><td>角化棘細胞腫</td><td>扁平上皮</td><td>火山口状、自然消退あり</td></tr>
+        <tr><td rowspan="5">非上皮性</td><td><span class="key">血管腫・血管奇形</span></td><td>血管系</td><td>退色性、被圧縮性</td></tr>
+        <tr><td><span class="key">神経鞘腫</span></td><td>Schwann細胞</td><td>Antoni A/B型、S-100陽性</td></tr>
+        <tr><td><span class="key">神経線維腫</span></td><td>Schwann細胞＋線維芽細胞</td><td>NF1との関連</td></tr>
+        <tr><td><span class="key">脂肪腫</span></td><td>脂肪細胞</td><td>黄白色、被膜あり</td></tr>
+        <tr><td>リンパ管奇形</td><td>リンパ管</td><td>舌の巨舌症</td></tr>
+      </table>
+
+      <!-- ==================== 血管腫・血管奇形 ==================== -->
+      <h2>血管腫・血管奇形</h2>
+      <p>血管系の腫瘍・腫瘤は、ISSVA分類により<span class="key">血管腫</span>（vascular tumor）と<span class="key">血管奇形</span>（vascular malformation）に二分される。従来「血管腫」と呼ばれていた病変の多くは血管奇形に分類される。</p>
+
+      <h3>ISSVA分類の概要</h3>
+      <table>
+        <tr><th>分類</th><th>病変</th><th>特徴</th></tr>
+        <tr><td><span class="key">血管腫</span></td><td>乳児血管腫（毛細血管腫）</td><td>生後まもなく出現し<span class="highlight">自然退縮</span>する。苺状血管腫（strawberry mark）</td></tr>
+        <tr><td rowspan="3"><span class="key">血管奇形</span></td><td>毛細血管奇形</td><td>ポートワイン母斑。自然消退しない</td></tr>
+        <tr><td><span class="highlight">静脈性血管奇形</span>（海綿状血管腫）</td><td>暗紫色、弾性軟、<span class="highlight">退色性・被圧縮性</span></td></tr>
+        <tr><td>動静脈奇形</td><td><span class="caution">拍動性</span>の腫脹。血管造影が必要</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">海綿状血管腫（静脈性血管奇形）の診断のポイント</div>
+        <ul>
+          <li><span class="highlight">退色性</span>：圧迫すると退色し、離すと元に戻る</li>
+          <li><span class="highlight">被圧縮性</span>：圧迫により縮小する</li>
+          <li><span class="caution">拍動や波動はない</span>（拍動があれば動静脈奇形を疑う）</li>
+          <li>MRI T2強調像で<span class="key">高信号</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A87</div>
+        <p>海綿状血管腫の特徴はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 波　動<br>
+          b 硬　結<br>
+          c 拍　動<br>
+          d 退色性<br>
+          e 被圧縮性
+        </div>
+        <div class="answer">正解：d,e</div>
+        <p>【解説】海綿状血管腫（静脈性血管奇形）の特徴は退色性と被圧縮性である。圧迫すると血液が押し出されて退色・縮小し、圧迫を解除すると元に戻る。拍動は動静脈奇形の特徴であり、海綿状血管腫にはみられない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C124</div>
+        <p>7歳の男児。舌の形態異常を主訴として来院した。触診で圧迫によって退色する。初診時の舌の写真（別冊No.124）を別に示す。
+考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106C124_1.png" alt="別冊No.124">
+        </div>
+        <div class="choices">
+          a 咬　傷<br>
+          b 血管腫<br>
+          c 地図状舌<br>
+          d 正中菱形舌炎<br>
+          e Blandin-Nuhn嚢胞
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】舌の形態異常で「圧迫によって退色する」が決め手。退色性は血管腫（血管奇形）に特徴的な所見である。地図状舌や正中菱形舌炎では圧迫による退色はみられない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A56</div>
+        <p>67歳の女性。口底部の腫脹を主訴として来院した。数年前から自覚していたが痛みがないためそのままにしていたところ、最近増大してきたという。初診時の口腔内写真（別冊No.21A）、MRI脂肪抑制T2強調像（別冊No. 21B）、術中の口腔内写真（別冊No. 21C）及び摘出時のH-E染色病理組織像（別冊No.21D）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A56_1.png" alt="別冊No.21">
+        </div>
+        <div class="choices">
+          a 血管腫<br>
+          b 脂肪腫<br>
+          c 平滑筋腫<br>
+          d リンパ管腫<br>
+          e 類表皮嚢胞
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】口底部の腫脹で、病理組織像に多数の血管腔の増殖がみられれば血管腫と診断される。MRI脂肪抑制T2強調像で高信号を示すことも血管腫の特徴である。脂肪腫であればT1強調像で高信号を示す。</p>
+      </div>
+
+      <!-- ==================== 神経鞘腫 ==================== -->
+      <h2>神経鞘腫</h2>
+      <p><span class="key">神経鞘腫</span>（Schwannoma）は末梢神経の<span class="key">Schwann鞘</span>から発生する良性腫瘍で、被膜を有する孤立性の膨隆を形成する。</p>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>好発部位：四肢、躯幹、頭頸部の軟部。口腔領域では<span class="highlight">舌</span>に多い</li>
+        <li>限局性の弾性硬の類球形の膨隆。分葉状を呈することもある</li>
+        <li>大きさ：直径1〜2 cm。時に嚢胞状になることがある</li>
+        <li>無痛性だが、時には圧痛を有する</li>
+      </ul>
+
+      <h3>病理組織学的所見</h3>
+      <table>
+        <tr><th>型</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">Antoni A型</span></td><td>紡錘形細胞が密に増殖。核が<span class="highlight">柵状配列（palisading）</span>を示す。渦巻き状構造</td></tr>
+        <tr><td><span class="key">Antoni B型</span></td><td>細胞成分が疎で不規則に分布。粘液変性や嚢胞状変化を伴うことがある</td></tr>
+      </table>
+      <ul>
+        <li>免疫染色：<span class="highlight">S-100タンパク陽性</span></li>
+        <li>被膜を有するため容易に摘出でき、再発は少ない</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">114B70</div>
+        <p>舌背部の腫瘤を主訴として来院した患者の初診時の口腔内写真（別冊No.24A）と切除時のH-E染色病理組織（別冊No. 24B）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114B70_1.png" alt="別冊No.24">
+        </div>
+        <div class="choices">
+          a 血管腫<br>
+          b 脂肪腫<br>
+          c 線維腫<br>
+          d 神経鞘腫<br>
+          e リンパ管腫
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】舌の腫瘤で、病理組織像に紡錘形細胞の密な増殖と柵状配列（palisading）がみられれば神経鞘腫（Antoni A型）と診断される。舌は口腔領域で神経鞘腫が最も好発する部位である。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105D13</div>
+        <p>41歳の男性。口底部の腫脹を主訴として来院した。1年前から腫脹に気付いていたが、痛みがないため放置していたという。弾性軟の腫瘤を触知する。初診時のMRI（別冊No.13A）、造影MRI（別冊No.13B）及び生検時のH-E染色病理組織像（別冊No.13C）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105D13_1.png" alt="別冊No.13">
+        </div>
+        <div class="choices">
+          a 血管腫<br>
+          b 脂肪腫<br>
+          c 多形腺腫<br>
+          d 神経鞘腫<br>
+          e リンパ管腫
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】口底部の無痛性腫瘤で、病理組織像にAntoni A型（紡錘形細胞の密な増殖、柵状配列）の所見がみられることから神経鞘腫と診断される。S-100タンパク陽性も確定診断の根拠となる。</p>
+      </div>
+
+      <!-- ==================== 乳頭腫 ==================== -->
+      <h2>乳頭腫</h2>
+      <p><span class="key">乳頭腫</span>（papilloma）は皮膚や粘膜上皮から発生する良性の上皮性腫瘍で、扁平上皮乳頭腫（squamous papilloma）ともよばれる。発生原因としてヒトパピローマウイルス（<span class="key">HPV</span>）の関与が指摘されている。</p>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>好発部位：<span class="key">舌、口蓋</span>に好発</li>
+        <li>乳頭状あるいは<span class="highlight">カリフラワー状</span>に増殖する<span class="key">有茎性</span>の腫瘤</li>
+        <li>白色で疣状のものが多い</li>
+        <li>大きさ：直径10 mm以下が多い</li>
+        <li>各年齢層を通じて発生し、年齢の上昇とともに発生頻度は高くなる</li>
+      </ul>
+
+      <h3>病理組織学的所見</h3>
+      <ul>
+        <li>重層扁平上皮が<span class="highlight">乳頭状あるいは樹枝状に増殖</span></li>
+        <li>表層は<span class="key">過角化</span>を伴う。角化が著しく充進した上皮の肥厚がみられる</li>
+        <li>基底膜が明瞭で、細胞の異型性は少ない</li>
+      </ul>
+
+      <h3>治療・予後</h3>
+      <p>外科的切除を行うとともに、<span class="key">刺激の原因となるものの除去</span>を行う。予後は良好。</p>
+
+      <div class="question-box">
+        <div class="q-number">113C66</div>
+        <p>右側口蓋の病変の写真（別冊No.21A）とH-E染色病理組織像（別冊No.21B）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113C66_1.png" alt="別冊No.21">
+        </div>
+        <div class="choices">
+          a 線維腫<br>
+          b 乳頭腫<br>
+          c 多形腺腫<br>
+          d 粘表皮癌<br>
+          e 扁平上皮癌
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】口蓋の有茎性腫瘤で、病理組織像に上皮の樹枝状増殖と過角化がみられれば乳頭腫と診断される。多形腺腫は唾液腺由来で上皮と間葉の二相性増殖を示し、扁平上皮癌では異型性や浸潤がみられる。</p>
+      </div>
+
+      <!-- ==================== 脂肪腫 ==================== -->
+      <h2>脂肪腫</h2>
+      <p><span class="key">脂肪腫</span>（lipoma）は分化した脂肪細胞からなる良性非上皮性腫瘍で、もっとも多い良性腫瘍の一つである。口腔領域での発生は比較的まれ。</p>
+
+      <h3>臨床所見</h3>
+      <ul>
+        <li>皮膚あるいは粘膜下に<span class="key">無痛性の弾性軟の膨隆</span></li>
+        <li>上皮直下に存在する場合は<span class="highlight">黄白色</span>を呈する</li>
+        <li>被膜に包まれ、<span class="key">充実性</span></li>
+        <li>口腔領域では頬粘膜や口腔底に発生することがある</li>
+      </ul>
+
+      <h3>病理組織学的所見</h3>
+      <ul>
+        <li><span class="highlight">成熟脂肪細胞</span>から構成。小葉構造を示す</li>
+        <li>線維性被膜によって被覆されている</li>
+        <li>正常の脂肪組織とはほぼ区別がつかない</li>
+      </ul>
+
+      <h3>画像・治療</h3>
+      <ul>
+        <li>MRI：<span class="highlight">T1強調像で高信号</span>（脂肪成分を反映）</li>
+        <li>治療：腫瘍摘出術。被膜に包まれているため再発は少ない</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">103B27</div>
+        <p>38歳の女性。左側顎下部の腫脹を主訴として来院した。5年前から同部の無痛性腫脹に気付いたという。初診時の顔貌写真（別冊No.25A）、MRIのT2強調像（別冊No.25B）及び摘出物のH−E染色病理組織像（別冊No.25C）を別に示す。
+診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103B27_1.png" alt="別冊No.25">
+        </div>
+        <div class="choices">
+          a 血管腫<br>
+          b 脂肪腫<br>
+          c 多形腺腫<br>
+          d リンパ管腫<br>
+          e 歯原性粘液腫
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】5年来の無痛性腫脹で、病理組織像に成熟した脂肪細胞の集簇がみられることから脂肪腫と診断される。多形腺腫であれば上皮と間葉の二相性増殖を示し、リンパ管腫であれば拡張したリンパ管腔が認められる。</p>
+      </div>
+
+      <!-- ==================== 神経線維腫 ==================== -->
+      <h2>神経線維腫</h2>
+      <p><span class="key">神経線維腫</span>（neurofibroma）はSchwann細胞と線維芽細胞の混在によって構成される良性腫瘍である。口腔領域では舌に多くみられる。</p>
+
+      <h3>神経鞘腫との違い</h3>
+      <table>
+        <tr><th>項目</th><th>神経鞘腫</th><th>神経線維腫</th></tr>
+        <tr><td>構成細胞</td><td>Schwann細胞のみ</td><td>Schwann細胞＋線維芽細胞</td></tr>
+        <tr><td>被膜</td><td><span class="highlight">あり</span>（摘出容易）</td><td><span class="caution">なし</span>（境界不明瞭）</td></tr>
+        <tr><td>病理所見</td><td>Antoni A/B型、palisading</td><td>波状に走行する核や細胞質を有する膠原繊維の増殖</td></tr>
+        <tr><td>多発性</td><td>通常孤立性</td><td>NF1で多発</td></tr>
+      </table>
+
+      <h3>神経線維腫症I型（von Recklinghausen病）</h3>
+      <ul>
+        <li><span class="key">常染色体優性遺伝</span>（neurofibromin遺伝子とmerlin遺伝子の変異）</li>
+        <li><span class="highlight">多発性神経線維腫</span>＋<span class="highlight">café-au-lait斑</span>（カフェオレ斑）</li>
+        <li>皮膚の色素斑は常染色体優性遺伝の指標となる</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">104D8</div>
+        <p>4歳の女児。上顎右側の腫れを主訴として来院した。初診時の下顔面の写真（別冊No.8A）、口腔内写真（別冊No.8B）及びエックス線写真（別冊No.8C）を別に示す。
+腫大の原因として考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104D8_1.png" alt="別冊No.8">
+        </div>
+        <div class="choices">
+          a 血管腫<br>
+          b 神経線維腫<br>
+          c 歯原性粘液腫<br>
+          d 線維性異形成症<br>
+          e エナメル上皮腫
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】小児の片側性上顎腫大で、神経線維腫が考えられる。神経線維腫は時間の経過とともに増大し、大きな蔓状の腫瘤となることがある。神経線維腫症I型（von Recklinghausen病）の部分症状として発現している可能性もある。</p>
+      </div>
+
+      <!-- ==================== 良性腫瘍の検査 ==================== -->
+      <h2>良性腫瘍の検査</h2>
+      <p>口腔内に腫瘤を発見した場合、良性・悪性の鑑別のためにまず<span class="highlight">生検（biopsy）</span>を行うことが重要である。</p>
+
+      <div class="question-box">
+        <div class="q-number">113A63</div>
+        <p>75歳の女性。左側舌縁部の腫瘤を主訴として来院した。3か月前に気付いたが、大きさに変化がないのでそのままにしていたという。腫瘤は無痛性で弾性軟である。初診時の口腔内写真（別冊No.19A）とMRI（別冊No.19B）を別に示す。
+まず行うべき対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A63_1.png" alt="別冊No.19">
+        </div>
+        <div class="choices">
+          a 生　検<br>
+          b 切　開<br>
+          c 抗菌薬投与<br>
+          d 擦過細胞診<br>
+          e 舌部分切除
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】舌縁部の腫瘤に対しては、良性・悪性の鑑別のためまず生検を行う。舌縁部は口腔癌の好発部位でもあるため、画像所見だけで良性と判断して直ちに切除することは避け、組織学的診断を確定してから治療方針を決定する。擦過細胞診は粘膜表面の病変には有用だが、粘膜下腫瘤の診断には不十分である。</p>
+      </div>
+
+      <!-- ==================== まとめ ==================== -->
+      <h2>鑑別のまとめ</h2>
+
+      <h3>口腔粘膜の良性腫瘍：鑑別の要点</h3>
+      <table>
+        <tr><th>腫瘍</th><th>臨床的特徴</th><th>病理的特徴</th></tr>
+        <tr><td>乳頭腫</td><td>カリフラワー状、有茎性</td><td>上皮の樹枝状増殖、過角化</td></tr>
+        <tr><td>血管腫</td><td><span class="highlight">退色性・被圧縮性</span></td><td>血管腔の増殖</td></tr>
+        <tr><td>神経鞘腫</td><td>舌に好発、被膜あり</td><td><span class="highlight">Antoni A/B型、palisading、S-100陽性</span></td></tr>
+        <tr><td>神経線維腫</td><td>NF1で多発、被膜なし</td><td>Schwann細胞＋線維芽細胞の混在</td></tr>
+        <tr><td>脂肪腫</td><td><span class="highlight">黄白色</span>、弾性軟、被膜あり</td><td>成熟脂肪細胞、MRI T1高信号</td></tr>
+        <tr><td>リンパ管腫</td><td>舌の巨舌、頸部膨隆</td><td>拡張したリンパ管腔</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

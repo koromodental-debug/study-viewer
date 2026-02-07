@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>染色体異常による症候群 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 01_先天異常・発育不全</span>
+    <h1>染色体異常による症候群</h1>
+    <div class="container">
+
+      <h2>染色体異常の分類</h2>
+      <p>染色体の数や構造の異常によって生じる先天異常。遺伝形式（常染色体優性・劣性など）とは異なるカテゴリーに分類される。</p>
+
+      <h3>染色体異常による4つの症候群</h3>
+      <table>
+        <tr>
+          <th>症候群</th>
+          <th>染色体異常</th>
+          <th>性別</th>
+          <th>頻度</th>
+        </tr>
+        <tr>
+          <td><span class="key">Down症候群</span></td>
+          <td>21番染色体トリソミー</td>
+          <td>男女</td>
+          <td>1/700</td>
+        </tr>
+        <tr>
+          <td><span class="key">Turner症候群</span></td>
+          <td>X染色体モノソミー（45,X）</td>
+          <td>女性のみ</td>
+          <td>1/2,000</td>
+        </tr>
+        <tr>
+          <td><span class="key">Klinefelter症候群</span></td>
+          <td>XXY・XXXY</td>
+          <td>男性のみ</td>
+          <td>1/500</td>
+        </tr>
+        <tr>
+          <td><span class="key">Russell-Silver症候群</span></td>
+          <td>7番染色体</td>
+          <td>男女</td>
+          <td>まれ</td>
+        </tr>
+      </table>
+
+      <!-- Down症候群 -->
+      <h2>Down症候群（21トリソミー）</h2>
+      <p><span class="highlight">母親の年齢と発症率が相関</span>する。高齢出産で発生頻度が増加する代表的な染色体異常。</p>
+
+      <h3>全身所見</h3>
+      <ul>
+        <li>特徴的顔貌：<span class="key">両眼開離</span>、鞍鼻、扁平鼻</li>
+        <li><span class="key">心奇形</span>（心房中隔欠損、心室中隔欠損など）</li>
+        <li><span class="key">精神発達遅滞</span></li>
+        <li>低身長</li>
+        <li>白血病の合併リスク</li>
+        <li>感染に弱い（免疫機能低下）</li>
+        <li><span class="caution">易頸椎脱臼</span>のため過後屈注意（環軸椎不安定症）</li>
+      </ul>
+
+      <h3>口腔所見</h3>
+      <ul>
+        <li><span class="key">巨舌</span>・溝状舌</li>
+        <li>口蓋裂</li>
+        <li><span class="key">歯周病早期発症</span></li>
+        <li>歯の萌出遅延</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">Down症候群のポイント</div>
+        <ul>
+          <li>高齢出産との関連が最頻出（113B38）</li>
+          <li>21トリソミー → 「21」と「Down」をセットで記憶</li>
+          <li>歯科的には巨舌・歯周病早期発症・萌出遅延が重要</li>
+        </ul>
+      </div>
+
+      <!-- Turner症候群 -->
+      <h2>Turner症候群（45,X）</h2>
+      <p><span class="highlight">女性にのみ発症</span>するX染色体モノソミー。新生女児の約1/2,000に発症。</p>
+
+      <h3>全身所見</h3>
+      <ul>
+        <li><span class="key">低身長</span></li>
+        <li><span class="key">性腺発育障害</span>：無月経、<span class="key">第二次性徴の発現不全</span></li>
+        <li><span class="key">先天性心疾患</span>（大動脈縮窄症、二尖大動脈弁など）</li>
+        <li><span class="key">小顎症</span></li>
+        <li>翼状頸</li>
+        <li>外反肘</li>
+        <li><span class="caution">精神発達遅滞はほとんどない</span>（←ひっかけ注意）</li>
+      </ul>
+
+      <h3>口腔所見</h3>
+      <ul>
+        <li>口蓋裂</li>
+        <li>歯列不正</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">Turner症候群のポイント（最頻出）</div>
+        <ul>
+          <li>「低身長＋心疾患＋小顎症＋女児」→ Turner症候群を想起</li>
+          <li>知的障害は<span class="caution">ない</span>（Down症候群との鑑別点）</li>
+          <li>第二次性徴の発現不全（無月経）が特徴的</li>
+        </ul>
+      </div>
+
+      <!-- Klinefelter症候群 -->
+      <h2>Klinefelter症候群（XXY）</h2>
+      <p><span class="highlight">男性にのみ発症</span>。新生男児の約1/500に発症。</p>
+      <ul>
+        <li>細身<span class="key">高身長</span></li>
+        <li><span class="key">精巣の発育不全</span>、不妊</li>
+        <li><span class="key">女性様乳房</span></li>
+        <li>骨年齢遅延、精神発達遅滞</li>
+        <li>上下顎前突、口蓋裂</li>
+        <li><span class="highlight">タウロドント（長胴歯）</span>が出現</li>
+      </ul>
+      <p class="note">※タウロドントはKlinefelter症候群とくる病で出現する。</p>
+
+      <!-- Russell-Silver症候群 -->
+      <h2>Russell-Silver症候群（7番染色体）</h2>
+      <ul>
+        <li><span class="key">子宮内発育遅延</span>を伴う低身長・低体重</li>
+        <li>性発育異常</li>
+        <li><span class="key">骨格の非対称</span>（左右差）</li>
+        <li>手指の形態異常</li>
+        <li>高口蓋、嚥下障害</li>
+      </ul>
+
+      <!-- 鑑別のポイント -->
+      <h2>鑑別のポイント</h2>
+
+      <h3>身長による鑑別</h3>
+      <table>
+        <tr>
+          <th>低身長</th>
+          <th>高身長</th>
+        </tr>
+        <tr>
+          <td>Down症候群<br>Turner症候群<br>Russell-Silver症候群<br>軟骨無形成症</td>
+          <td>Klinefelter症候群<br>Marfan症候群</td>
+        </tr>
+      </table>
+
+      <h3>知的障害の有無による鑑別</h3>
+      <table>
+        <tr>
+          <th>知的障害あり</th>
+          <th>知的障害なし</th>
+        </tr>
+        <tr>
+          <td>Down症候群<br>Klinefelter症候群</td>
+          <td><span class="caution">Turner症候群</span><br>Beckwith-Wiedemann症候群<br>軟骨無形成症</td>
+        </tr>
+      </table>
+
+      <!-- 過去問 -->
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">113B38</div>
+        <p>高齢出産により最も発生頻度が増加するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Down 症候群<br>
+          b Apert 症候群<br>
+          c Crouzon 症候群<br>
+          d 鎖骨頭蓋骨異形成症<br>
+          e Treacher Collins 症候群
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】Down症候群（21トリソミー）は母親の年齢と発症率が相関し、高齢出産で発生頻度が増加する。他の選択肢はいずれも常染色体優性遺伝の疾患であり、親の年齢とは関連しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B48</div>
+        <p>5歳の女児。低身長、心疾患および小顎症が認められる。姉にも同様の所見がみられる。<br>疑われるのはどれか。1つ選へ。</p>
+        <div class="choices">
+          a Down 症候群<br>
+          b Marfan 症候群<br>
+          c Turner 症候群<br>
+          d Papillon-Lefevre 症候群<br>
+          e Beckwith-Wiedemann 症候群
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】「女児」＋「低身長」＋「心疾患」＋「小顎症」はTurner症候群の典型的所見。姉にも同様の所見がみられることから遺伝性疾患が示唆される。Down症候群は精神発達遅滞や巨舌を伴い、Marfan症候群は高身長が特徴であるため鑑別できる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C60</div>
+        <p>Turner症候群の特徴として正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 高身長<br>
+          b 小顎症<br>
+          c 知的障害<br>
+          d 先天性心疾患<br>
+          e 第二次性徴の発現不全
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】Turner症候群（45,X）の特徴は低身長・小顎症・先天性心疾患・第二次性徴の発現不全（性腺発育障害による無月経）。a：高身長ではなく<span class="caution">低身長</span>が特徴。c：<span class="caution">知的障害はほとんどない</span>（Down症候群との重要な鑑別点）。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

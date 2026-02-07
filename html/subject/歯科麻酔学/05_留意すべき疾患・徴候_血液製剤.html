@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>血液製剤 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 留意すべき疾患・徴候</span>
+    <h1>血液製剤</h1>
+    <div class="container">
+
+      <!-- ========== 血液製剤の種類と使用目的 ========== -->
+      <h2>血液製剤の種類と使用目的</h2>
+
+      <table>
+        <tr><th>血液製剤</th><th>使用目的</th><th>備考</th></tr>
+        <tr><td><span class="highlight">赤血球液（RBC）</span></td><td><span class="highlight">酸素運搬能の改善</span></td><td>Hb 7〜8 g/dL以下がトリガー</td></tr>
+        <tr><td><span class="highlight">血小板濃厚液（PC）</span></td><td><span class="highlight">止血能の改善（一次止血）</span></td><td>血小板減少時の血小板血栓形成を補助</td></tr>
+        <tr><td><span class="highlight">新鮮凍結血漿（FFP）</span></td><td><span class="highlight">凝固能の改善（二次止血）</span></td><td>凝固因子を含む。PT延長・APTT延長時</td></tr>
+        <tr><td><span class="key">アルブミン製剤</span></td><td><span class="key">膠質浸透圧の維持</span></td><td>循環血漿量の確保。<span class="caution">栄養補給ではない</span></td></tr>
+        <tr><td><span class="key">トロンビン製剤</span></td><td><span class="key">局所止血</span></td><td>フィブリノゲン→フィブリンに転化。抜歯後止血</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">114C54</div>
+        <p>血液製剤と使用目的の組合せで正しいのはどれか。3つ選べ。</p>
+        <div class="choices">
+          a 赤血球液 ーーーーー 酸素運搬能の改善<br>
+          b 血小板濃厚液 ーーー ビタミンKの補充<br>
+          c 新鮮凍結血漿 ーーー 凝固能の改善<br>
+          d アルブミン製剤 ーー 栄養補給<br>
+          e トロンビン製剤 ーー 局所止血
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】赤血球液は酸素運搬能の改善（○）。新鮮凍結血漿は凝固因子を含み凝固能の改善（○）。トロンビン製剤はフィブリノゲンをフィブリンに転化させて局所止血（○）。血小板濃厚液は止血能の改善であり<span class="caution">ビタミンKの補充ではない</span>（×）。アルブミン製剤は膠質浸透圧の維持が目的であり<span class="caution">栄養補給ではない</span>（×）。</p>
+      </div>
+
+      <!-- ========== ひっかけポイント ========== -->
+      <h2>誤答選択肢の解説</h2>
+
+      <h3>血小板濃厚液 ≠ ビタミンK補充</h3>
+      <p>止血は<span class="key">一次止血</span>（血小板）と<span class="key">二次止血</span>（凝固因子）の2段階で行われる。</p>
+      <table>
+        <tr><th>段階</th><th>主役</th><th>機序</th><th>関連製剤</th></tr>
+        <tr><td><span class="key">一次止血</span></td><td>血小板</td><td>血小板粘着・凝集 → 血小板血栓</td><td>血小板濃厚液</td></tr>
+        <tr><td><span class="key">二次止血</span></td><td>凝固因子</td><td>凝固カスケード → フィブリン血栓</td><td>FFP、ビタミンK</td></tr>
+      </table>
+      <p><span class="key">ビタミンK</span>は第<span class="highlight">II・VII・IX・X因子</span>（ビタミンK依存性凝固因子）の合成に必要であり、<span class="key">二次止血</span>に関与する。血小板濃厚液は<span class="key">一次止血</span>の補助であり、ビタミンKとは無関係である。</p>
+
+      <h3>アルブミン製剤 ≠ 栄養補給</h3>
+      <div class="point-box">
+        <div class="point-box-title">アルブミン製剤が栄養補給に不適切な理由</div>
+        <ul>
+          <li>アルブミンは血漿膠質浸透圧の約<span class="key">80%</span>を担う → 本来の役割は<span class="highlight">膠質浸透圧の維持</span></li>
+          <li>必須アミノ酸組成が不適切（トリプトファン等に乏しい）→ タンパク質源としての栄養学的意義がない</li>
+          <li>投与されたアルブミンは大部分が熱源として消費され、タンパク質合成にはほとんど利用されない</li>
+          <li>栄養補給には<span class="key">アミノ酸製剤</span>や<span class="key">TPN（高カロリー輸液）</span>を用いる</li>
+        </ul>
+      </div>
+
+      <!-- ========== 出血量に応じた輸血の適応 ========== -->
+      <h2>出血量に応じた輸血の適応</h2>
+
+      <table>
+        <tr><th>循環血液量に対する出血量</th><th>使用する製剤</th></tr>
+        <tr><td>15〜20%</td><td>細胞外液補充液（乳酸リンゲル液等）</td></tr>
+        <tr><td>20〜50%</td><td>赤血球濃厚液 ± 膠質液</td></tr>
+        <tr><td>50〜100%</td><td>上記 + 等張アルブミン製剤</td></tr>
+        <tr><td>100%以上（24時間以内）</td><td>上記 + <span class="key">新鮮凍結血漿</span> + <span class="key">血小板濃厚液</span>（大量輸血）</td></tr>
+      </table>
+
+      <!-- ========== 輸血の副作用 ========== -->
+      <h2>輸血の副作用</h2>
+
+      <table>
+        <tr><th>副作用</th><th>発症時期</th><th>機序</th><th>予防</th></tr>
+        <tr><td><span class="highlight">不適合輸血</span></td><td>輸血直後</td><td>ABO不適合 → IgM＋補体活性化 → 血管内溶血</td><td><span class="highlight">ダブルチェック</span></td></tr>
+        <tr><td><span class="key">TRALI</span></td><td>6時間以内</td><td>抗白血球抗体 → 非心原性肺水腫</td><td>男性血漿の優先使用</td></tr>
+        <tr><td><span class="key">GVHD</span></td><td>1〜2週間後</td><td>供血者T細胞が受血者を攻撃。<span class="caution">致死率ほぼ100%</span></td><td><span class="highlight">放射線照射（Ir）</span></td></tr>
+        <tr><td>発熱性副作用</td><td>輸血中〜2時間後</td><td>サイトカイン産生</td><td>保存前白血球除去</td></tr>
+        <tr><td>アレルギー</td><td>輸血中</td><td>IgE・I型アレルギー</td><td>洗浄製剤の使用</td></tr>
+        <tr><td>ウイルス感染</td><td>数週〜数か月後</td><td>HBV, HCV, HIV等</td><td>NAT（核酸増幅検査）</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">輸血後GVHD（PT-GVHD）</div>
+        <ul>
+          <li>供血者のリンパ球（T細胞）が受血者の組織を攻撃する致死的な副作用</li>
+          <li>有効な治療法がなく、発症すると<span class="caution">ほぼ100%死亡</span></li>
+          <li>予防：血液製剤への<span class="highlight">放射線照射</span>（15〜50 Gy）でリンパ球を不活化</li>
+          <li>FFPはリンパ球が凍結で死滅するため照射不要</li>
+        </ul>
+      </div>
+
+      <h3>TRALIとTACOの鑑別</h3>
+      <table>
+        <tr><th>項目</th><th>TRALI</th><th>TACO</th></tr>
+        <tr><td>病態</td><td><span class="key">非心原性</span>肺水腫</td><td><span class="key">心原性</span>肺水腫（循環過負荷）</td></tr>
+        <tr><td>血圧</td><td>低血圧</td><td>高血圧</td></tr>
+        <tr><td>BNP</td><td>正常</td><td>上昇</td></tr>
+        <tr><td>利尿薬</td><td><span class="caution">無効</span></td><td>有効</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>止血法 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>止血法</h1>
+    <div class="container">
+
+      <p>出血は局所の血管の破綻と全身の止血機構（hemostasis）の障害によって生じる。出血の種類に応じた適切な止血法の選択が重要。</p>
+
+      <!-- ========== 出血の種類 ========== -->
+      <h2>出血の種類</h2>
+      <table>
+        <tr><th>種類</th><th>出血の特徴</th><th>血液の色</th></tr>
+        <tr><td><span class="key">動脈性出血</span></td><td>拍動性に噴出</td><td>鮮紅色</td></tr>
+        <tr><td><span class="key">静脈性出血</span></td><td>間断なく流出</td><td>暗赤色</td></tr>
+        <tr><td><span class="key">毛細血管性出血（実質性）</span></td><td>じわじわと滲み出す</td><td>やや鮮やか</td></tr>
+      </table>
+
+      <!-- ========== 止血法の分類 ========== -->
+      <h2>止血法の分類</h2>
+
+      <h3>永久的止血法</h3>
+      <table>
+        <tr><th>方法</th><th>手技</th><th>適応</th></tr>
+        <tr><td><span class="key">栓減法</span></td><td>血鉗子で血管壁を挟んで押し潰す</td><td>小出血</td></tr>
+        <tr><td><span class="highlight">結紮法</span></td><td>止血鉗子で挟み、血管を糸で結紮</td><td>やや太い動静脈からの出血</td></tr>
+        <tr><td><span class="key">周囲結紮法</span></td><td>縫合針で周囲組織ごとZ形に縫合</td><td>血管が単離できない場合、出血点不明</td></tr>
+        <tr><td><span class="key">側壁結紮法</span></td><td>血管壁の損傷部分のみを縫合糸で結紮</td><td>比較的太い血管で血流を完全に遮断したくない場合</td></tr>
+        <tr><td><span class="highlight">焼灼法</span></td><td>電気メスの凝固作用で焼灼</td><td>小血管からの出血。<span class="caution">太い動静脈には不適</span></td></tr>
+      </table>
+
+      <h3>一時的止血法</h3>
+      <table>
+        <tr><th>方法</th><th>手技</th><th>適応</th></tr>
+        <tr><td><span class="highlight">圧迫法（指圧法）</span></td><td>損傷された動脈の中枢側を指で圧迫</td><td>出血の応急処置、次に行う止血法を考える間</td></tr>
+        <tr><td><span class="highlight">栓塞法（タンポナーデ法）</span></td><td>ガーゼを創内に詰め込んで圧迫止血</td><td>創が深い場合。Mickuliczタンポン</td></tr>
+        <tr><td><span class="key">緊縛法（ターニケット法）</span></td><td>駆血帯（tourniquet）で出血部より中枢側を締める</td><td>四肢からの出血。口腔顎顔面領域では使用しない</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">手術の止血法（過去問の核心）</div>
+        <ul>
+          <li><span class="highlight">圧迫</span>（指圧法・タンポナーデ）→ 止血法 ○</li>
+          <li><span class="highlight">結紮</span>（血管を糸で縛る）→ 止血法 ○</li>
+          <li><span class="highlight">焼灼</span>（電気メスで凝固）→ 止血法 ○</li>
+          <li><span class="highlight">栓塞</span>（ガーゼ充填・骨ロウ等）→ 止血法 ○</li>
+          <li><span class="caution">吸引は止血法ではない</span>（術野の血液を除去する操作）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C46</div>
+        <p>手術の際の止血法はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 圧　迫<br>
+          b 吸　引<br>
+          c 結　紮<br>
+          d 焼　灼<br>
+          e 栓　塞
+        </div>
+        <div class="answer">正解：a, c, d, e</div>
+        <p>【解説】圧迫（指圧法・タンポナーデ）、結紮（血管を糸で縛る）、焼灼（電気メスの凝固作用）、栓塞（ガーゼや止血材料の充填）はいずれも止血法。吸引は術野の視野確保のために血液を吸い取る操作であり、止血法には含まれない。</p>
+      </div>
+
+      <!-- ========== その他の止血法 ========== -->
+      <h2>その他の止血法・止血材料</h2>
+
+      <h3>局所止血材料</h3>
+      <table>
+        <tr><th>止血材料</th><th>作用機序</th><th>適応</th></tr>
+        <tr><td><span class="highlight">酸化セルロース</span>（オキシセル、サージセル）</td><td>血液を吸収し凝血を促進。吸収性</td><td>実質性出血、抜歯窩の止血</td></tr>
+        <tr><td><span class="highlight">トロンビン製剤</span></td><td>フィブリノーゲン→フィブリンへの変換を促進</td><td>実質性出血。局所散布</td></tr>
+        <tr><td><span class="key">フィブリン糊</span></td><td>トロンビン＋フィブリノーゲンで人工的にフィブリン塊を形成</td><td>組織接着・止血</td></tr>
+        <tr><td><span class="key">骨ロウ（ボーンワックス）</span></td><td>骨面を物理的に封鎖</td><td>骨からの出血</td></tr>
+        <tr><td><span class="key">ゼラチンスポンジ</span>（スポンゼル）</td><td>血液吸収・足場形成。吸収性</td><td>抜歯窩の止血</td></tr>
+      </table>
+
+      <h3>局所止血薬 vs 全身性止血薬</h3>
+      <table>
+        <tr><th>分類</th><th>薬剤</th><th>作用</th></tr>
+        <tr><td rowspan="3"><span class="key">局所止血薬</span></td><td><span class="highlight">トロンビン</span></td><td>フィブリン形成促進</td></tr>
+        <tr><td><span class="highlight">酸化セルロース</span></td><td>血液吸収・凝血促進</td></tr>
+        <tr><td>エピネフリン（アドレナリン）</td><td>血管収縮（局所麻酔薬に含有）</td></tr>
+        <tr><td rowspan="3"><span class="caution">全身性（局所ではない）</span></td><td>ビタミンK</td><td>肝臓での凝固因子（II, VII, IX, X）合成に必要</td></tr>
+        <tr><td>エリスロポエチン</td><td>赤血球産生促進（腎性貧血の治療薬）</td></tr>
+        <tr><td>アドレノクロム誘導体</td><td>毛細血管壁の抵抗性増強（全身投与）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">104A65</div>
+        <p>止血を目的として局所に使用するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a トロンビン<br>
+          b ビタミンK<br>
+          c 酸化セルロース<br>
+          d エリスロポエチン<br>
+          e アドレノクロム誘導体
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】トロンビン（局所散布でフィブリン形成促進）と酸化セルロース（創部に充填して凝血促進）は局所止血材料。ビタミンKは凝固因子の合成に関与する全身性薬剤。エリスロポエチンは赤血球産生を促進する造血因子。アドレノクロム誘導体は毛細血管壁を強化する全身投与薬。</p>
+      </div>
+
+      <!-- ========== 止血鉗子 ========== -->
+      <h2>止血鉗子</h2>
+      <p>口腔外科で頻用される鉗子（教科書 図13-4）。止血と組織の把持に用いる。</p>
+
+      <h3>口腔外科で頻用される鉗子</h3>
+      <table>
+        <tr><th>鉗子名</th><th>特徴</th></tr>
+        <tr><td><span class="key">Kocher鉗子</span></td><td>先端に鈎（歯）がある。しっかり把持できるが組織損傷のリスクあり</td></tr>
+        <tr><td><span class="key">モスキート鉗子</span></td><td>先端が細い。繊細な止血操作に適する</td></tr>
+        <tr><td><span class="key">Péan鉗子</span></td><td>先端に鈎がない。組織損傷が少ない</td></tr>
+        <tr><td><span class="key">Kelly鉗子</span></td><td>Péan鉗子に類似。先端がやや長く弯曲</td></tr>
+      </table>
+      <p class="note">※鉗子の使用目的は「止血」と「把持」の2つ。止血鉗子で血管を挟み、その後結紮して永久的に止血する。</p>
+
+      <div class="question-box">
+        <div class="q-number">112B29</div>
+        <p>手術器具の写真（別冊No.4）を別に示す。使用目的はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112B29_1.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a 止　血<br>
+          b 穿　刺<br>
+          c 掻　爬<br>
+          d 把　持<br>
+          e 抜　歯
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】写真は止血鉗子（Kocher鉗子またはPéan鉗子）。止血鉗子の使用目的は「止血」（血管を鉗子で挟んで止血）と「把持」（組織や血管を掴む）の2つ。穿刺は注射針、掻爬はキュレットやスプーンエキスカ、抜歯は鉗子（別の形状）やヘーベルを使用する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

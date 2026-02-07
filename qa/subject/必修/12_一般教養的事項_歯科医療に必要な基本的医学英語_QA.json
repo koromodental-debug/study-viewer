@@ -29,8 +29,26 @@
           "answer": "服薬・投薬"
         },
         {
-          "question": "[115D10] ★★★\n患者自身の言葉で述べた、歯科医院を訪れた動機となる主観的症状を英語で何というか？",
-          "answer": "chief complaint（主訴）\n\n[他の選択肢との違い]\n- diagnosis：診断（医師が行うもの）\n- medication：服薬・投薬\n- family history：家族歴\n- chief complaint：主訴 ← 正解\n- medical history：既往歴\n\n[ポイント]\nchief = 主な、complaint = 訴え → 主訴"
+          "question": "患者自身の言葉で述べた、歯科医院を訪れた動機となる主観的症状を英語で何というか？",
+          "answer": "D",
+          "choices": {
+            "a": "diagnosis",
+            "b": "medication",
+            "c": "family history",
+            "d": "chief complaint",
+            "e": "medical history"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "115D10",
+          "point": "chief = 主な、complaint = 訴え → 主訴",
+          "choiceExplanations": {
+            "a": "診断（医師が行うもの）",
+            "b": "服薬・投薬",
+            "c": "家族歴",
+            "d": "主訴 ← 正解",
+            "e": "既往歴"
+          }
         }
       ]
     },
@@ -58,8 +76,26 @@
           "answer": "咬合面"
         },
         {
-          "question": "[109A1] ★★★\nポーセレンラミネートベニアを前歯に接着する面を英語で何というか？",
-          "answer": "labial surface（唇側面）\n\n[他の選択肢との違い]\n- distal：遠心（審美目的では不適）\n- labial：唇側 ← 正解（見える面）\n- lingual：舌側（見えない面）\n- mesial：近心（隣接面）\n- occlusal：咬合面（臼歯の噛み合わせ面）\n\n[ポイント]\nラミネートベニア＝審美目的＝見える面（唇側）"
+          "question": "ポーセレンラミネートベニアを前歯に接着する面を英語で何というか？",
+          "answer": "B",
+          "choices": {
+            "a": "distal",
+            "b": "labial",
+            "c": "lingual",
+            "d": "mesial",
+            "e": "occlusal"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "109A1",
+          "point": "ラミネートベニア＝審美目的＝見える面（唇側）",
+          "choiceExplanations": {
+            "a": "遠心（審美目的では不適）",
+            "b": "唇側 ← 正解（見える面）",
+            "c": "舌側（見えない面）",
+            "d": "近心（隣接面）",
+            "e": "咬合面（臼歯の噛み合わせ面）"
+          }
         }
       ]
     },
@@ -83,8 +119,26 @@
           "answer": "骨粗鬆症"
         },
         {
-          "question": "[113D3] ★★★\n膵臓のインスリン産生の欠乏またはインスリン効果の低下による慢性疾患を英語で何というか？",
-          "answer": "diabetes mellitus（糖尿病）\n\n[他の選択肢との違い]\n- Hepatitis：肝炎（肝臓の炎症）\n- Periodontitis：歯周炎\n- Osteoporosis：骨粗鬆症\n- Diabetes mellitus：糖尿病 ← 正解\n- Myocardial infarction：心筋梗塞\n\n[ポイント]\ndiabetes = 尿に関する、mellitus = 蜂蜜のような（甘い）→ 糖尿病"
+          "question": "膵臓のインスリン産生の欠乏またはインスリン効果の低下による慢性疾患を英語で何というか？",
+          "answer": "D",
+          "choices": {
+            "a": "Hepatitis",
+            "b": "Periodontitis",
+            "c": "Osteoporosis",
+            "d": "Diabetes mellitus",
+            "e": "Myocardial infarction"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "113D3",
+          "point": "diabetes = 尿に関する、mellitus = 蜂蜜のような（甘い）→ 糖尿病",
+          "choiceExplanations": {
+            "a": "肝炎（肝臓の炎症）",
+            "b": "歯周炎",
+            "c": "骨粗鬆症",
+            "d": "糖尿病 ← 正解",
+            "e": "心筋梗塞"
+          }
         }
       ]
     },
@@ -104,12 +158,48 @@
           "answer": "歯周炎"
         },
         {
-          "question": "[111A17] ★★★\n酸への曝露による歯質の不可逆的喪失を英語で何というか？",
-          "answer": "tooth erosion\n\n[他の選択肢との違い]\n- acids：酸 ← 正解（原因物質）\n- bacteria：細菌（う蝕の原因）\n- carbohydrates：炭水化物（う蝕の原因）\n- fluorides：フッ化物（予防に使用）\n- saliva：唾液（防御因子）\n\n[ポイント]\nerosion（酸蝕症）= 酸、caries（う蝕）= 細菌"
+          "question": "酸への曝露による歯質の不可逆的喪失を英語で何というか？",
+          "answer": "A",
+          "choices": {
+            "a": "acids",
+            "b": "bacteria",
+            "c": "carbohydrates",
+            "d": "fluorides",
+            "e": "saliva"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "111A17",
+          "point": "erosion（酸蝕症）= 酸、caries（う蝕）= 細菌",
+          "choiceExplanations": {
+            "a": "酸 ← 正解（原因物質）",
+            "b": "細菌（う蝕の原因）",
+            "c": "炭水化物（う蝕の原因）",
+            "d": "フッ化物（予防に使用）",
+            "e": "唾液（防御因子）"
+          }
         },
         {
-          "question": "[110A10] ★★\n早期小児う蝕の予防を英語で何というか？",
-          "answer": "prevention of early childhood caries\n\n[他の選択肢との違い]\n- treatment：治療\n- prevention：予防 ← 正解\n- restoration：修復\n- development：発症・進行\n- decalcification：脱灰\n\n[ポイント]\nスクロース摂取を避ける＝予防（prevention）"
+          "question": "早期小児う蝕の予防を英語で何というか？",
+          "answer": "B",
+          "choices": {
+            "a": "treatment",
+            "b": "prevention",
+            "c": "restoration",
+            "d": "development",
+            "e": "decalcification"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "110A10",
+          "point": "スクロース摂取を避ける＝予防（prevention）",
+          "choiceExplanations": {
+            "a": "治療",
+            "b": "予防 ← 正解",
+            "c": "修復",
+            "d": "発症・進行",
+            "e": "脱灰"
+          }
         }
       ]
     },
@@ -137,8 +227,26 @@
           "answer": "抗菌薬"
         },
         {
-          "question": "[113C5] ★★★\n電位依存性Na+チャネルを遮断して神経活動を抑制する薬物を英語で何というか？",
-          "answer": "local anesthetics（局所麻酔薬）\n\n[他の選択肢との違い]\n- Antibacterial agents：抗菌薬（細菌を殺す）\n- Local anesthetics：局所麻酔薬 ← 正解\n- Muscle relaxants：筋弛緩薬（筋肉に作用）\n- Narcotic analgesics：麻薬性鎮痛薬（中枢神経に作用）\n- Nonsteroidal anti-inflammatory drugs：NSAIDs（抗炎症）\n\n[ポイント]\nNa+チャネル遮断＝局所麻酔の作用機序"
+          "question": "電位依存性Na+チャネルを遮断して神経活動を抑制する薬物を英語で何というか？",
+          "answer": "B",
+          "choices": {
+            "a": "Antibacterial agents",
+            "b": "Local anesthetics",
+            "c": "Muscle relaxants",
+            "d": "Narcotic analgesics",
+            "e": "Nonsteroidal anti-inflammatory drugs"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "113C5",
+          "point": "Na+チャネル遮断＝局所麻酔の作用機序",
+          "choiceExplanations": {
+            "a": "抗菌薬（細菌を殺す）",
+            "b": "局所麻酔薬 ← 正解",
+            "c": "筋弛緩薬（筋肉に作用）",
+            "d": "麻薬性鎮痛薬（中枢神経に作用）",
+            "e": "NSAIDs（抗炎症）"
+          }
         }
       ]
     },
@@ -166,8 +274,26 @@
           "answer": "嗅覚障害"
         },
         {
-          "question": "[116D8] ★★\nCOVID-19ワクチンの主な副反応を英語で何というか？",
-          "answer": "fever（発熱）\n\n[他の選択肢との違い]\n- Cough：咳（感染症状）\n- Fever：発熱 ← 正解（ワクチン副反応）\n- Loss of taste：味覚喪失（感染症状）\n- Smell disturbance：嗅覚障害（感染症状）\n- Sore throat：咽頭痛（感染症状）\n\n[ポイント]\nワクチン副反応＝発熱、感染症状＝味覚・嗅覚障害"
+          "question": "COVID-19ワクチンの主な副反応を英語で何というか？",
+          "answer": "B",
+          "choices": {
+            "a": "Cough",
+            "b": "Fever",
+            "c": "Loss of taste",
+            "d": "Smell disturbance",
+            "e": "Sore throat"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "116D8",
+          "point": "ワクチン副反応＝発熱、感染症状＝味覚・嗅覚障害",
+          "choiceExplanations": {
+            "a": "咳（感染症状）",
+            "b": "発熱 ← 正解（ワクチン副反応）",
+            "c": "味覚喪失（感染症状）",
+            "d": "嗅覚障害（感染症状）",
+            "e": "咽頭痛（感染症状）"
+          }
         }
       ]
     },
@@ -191,8 +317,26 @@
           "answer": "シリコーンゴム"
         },
         {
-          "question": "[112C8] ★★★\n海藻由来で化学反応により弾性ハイドロコロイド印象材を形成するのは？",
-          "answer": "alginate（アルジネート）\n\n[他の選択肢との違い]\n- agar：寒天（可逆性、熱で変化）← ひっかけ\n- alginate：アルジネート ← 正解（不可逆性、化学反応）\n- polyether：ポリエーテルゴム（合成ゴム）\n- zinc oxide eugenol：酸化亜鉛ユージノール\n- polydimethylsiloxane：シリコーンゴム\n\n[ポイント]\nalginate = 海藻由来 + 化学反応（不可逆性）\nagar = 海藻由来 + 熱変化（可逆性）"
+          "question": "海藻由来で化学反応により弾性ハイドロコロイド印象材を形成するのは？",
+          "answer": "B",
+          "choices": {
+            "a": "agar",
+            "b": "alginate",
+            "c": "polyether",
+            "d": "zinc oxide eugenol",
+            "e": "polydimethylsiloxane"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "112C8",
+          "point": "alginate = 海藻由来 + 化学反応（不可逆性）\nagar = 海藻由来 + 熱変化（可逆性）",
+          "choiceExplanations": {
+            "a": "寒天（可逆性、熱で変化）← ひっかけ",
+            "b": "アルジネート ← 正解（不可逆性、化学反応）",
+            "c": "ポリエーテルゴム（合成ゴム）",
+            "d": "酸化亜鉛ユージノール",
+            "e": "シリコーンゴム"
+          }
         }
       ]
     },
@@ -240,12 +384,48 @@
           "answer": "矯正歯科学"
         },
         {
-          "question": "[114D7] ★★★\n特定集団における健康関連状態・事象の分布と決定因子を研究する学問を英語で何というか？",
-          "answer": "epidemiology（疫学）\n\n[他の選択肢との違い]\n- Anatomy：解剖学（構造を研究）\n- Biochemistry：生化学（化学反応を研究）\n- Epidemiology：疫学 ← 正解\n- Pharmacology：薬理学（薬を研究）\n- Physiology：生理学（機能を研究）\n\n[ポイント]\nepi（上）+ demos（人々）+ logy（学問）＝集団の上で起こることを研究"
+          "question": "特定集団における健康関連状態・事象の分布と決定因子を研究する学問を英語で何というか？",
+          "answer": "C",
+          "choices": {
+            "a": "Anatomy",
+            "b": "Biochemistry",
+            "c": "Epidemiology",
+            "d": "Pharmacology",
+            "e": "Physiology"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "114D7",
+          "point": "epi（上）+ demos（人々）+ logy（学問）＝集団の上で起こることを研究",
+          "choiceExplanations": {
+            "a": "解剖学（構造を研究）",
+            "b": "生化学（化学反応を研究）",
+            "c": "疫学 ← 正解",
+            "d": "薬理学（薬を研究）",
+            "e": "生理学（機能を研究）"
+          }
         },
         {
-          "question": "[108A1] ★★\n生命の起源・発達・進行に関する物理的・化学的因子を説明する学問を英語で何というか？",
-          "answer": "physiology（生理学）\n\n[他の選択肢との違い]\n- pedodontics：小児歯科学\n- periodontology：歯周病学\n- physiology：生理学 ← 正解\n- prosthodontics：補綴歯科学\n- psychology：心理学\n\n[ポイント]\nphysio（自然・生命）+ logy（学問）＝生理学"
+          "question": "生命の起源・発達・進行に関する物理的・化学的因子を説明する学問を英語で何というか？",
+          "answer": "C",
+          "choices": {
+            "a": "pedodontics",
+            "b": "periodontology",
+            "c": "physiology",
+            "d": "prosthodontics",
+            "e": "psychology"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "108A1",
+          "point": "physio（自然・生命）+ logy（学問）＝生理学",
+          "choiceExplanations": {
+            "a": "小児歯科学",
+            "b": "歯周病学",
+            "c": "生理学 ← 正解",
+            "d": "補綴歯科学",
+            "e": "心理学"
+          }
         }
       ]
     }

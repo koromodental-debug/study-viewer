@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ウイルス感染症 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 感染症</span>
+    <h1>ウイルス感染症</h1>
+    <div class="container">
+
+      <!-- ============================================ -->
+      <!-- セクション1: ヘルペスウイルス感染症 ★★★★★ -->
+      <!-- ============================================ -->
+      <h2>1. ヘルペスウイルス感染症</h2>
+
+      <h3>ヘルペスウイルスの分類</h3>
+      <table>
+        <tr><th>ウイルス</th><th>略称</th><th>初感染</th><th>再活性化</th><th>潜伏部位</th></tr>
+        <tr><td>単純ヘルペスウイルス1型</td><td>HSV-1</td><td>疱疹性歯肉口内炎</td><td>口唇ヘルペス</td><td>三叉神経節</td></tr>
+        <tr><td>単純ヘルペスウイルス2型</td><td>HSV-2</td><td>性器ヘルペス</td><td>性器ヘルペス再発</td><td>仙骨神経節</td></tr>
+        <tr><td>水痘・帯状疱疹ウイルス</td><td>VZV</td><td>水痘</td><td>帯状疱疹</td><td>脊髄後根神経節</td></tr>
+        <tr><td>Epstein-Barrウイルス</td><td>EBV</td><td>伝染性単核球症</td><td>毛様白板症</td><td>Bリンパ球</td></tr>
+      </table>
+
+      <h3>疱疹性歯肉口内炎（HSV-1初感染）</h3>
+      <p><span class="highlight">HSV-1の初感染</span>により起きる歯肉口内炎。通常は生後3〜7日で発症する。</p>
+      <ul>
+        <li><span class="key">好発年齢</span>：生後6ヶ月〜3歳の乳幼児（母体からの移行抗体消失後）</li>
+        <li><span class="key">症状</span>：連続発熱、倦怠感から始まり、歯肉、口唇粘膜、舌、口蓋などの粘膜に小水疱→びらん。接触痛、刺激痛のため食事困難。両側性の頸部リンパ節腫脹</li>
+        <li><span class="key">経過</span>：約2週間で瘢痕を残さず治癒</li>
+        <li><span class="key">検査</span>：ウイルス分離、抗原検出、ウイルスDNA検出、<span class="caution">抗体価は急性期と回復期の比較（4倍以上の上昇）</span>が重要</li>
+        <li><span class="key">治療</span>：<span class="highlight">アシクロビル</span>（ヌクレオシド類似化合物）の内服。含嗽、局所にアシクロビル軟膏。栄養補給</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">アシクロビルの作用機序</div>
+        <ul>
+          <li>ウイルス固有のチミジンキナーゼでリン酸化 → 三リン酸化体となりウイルスDNAポリメラーゼ活性を阻害</li>
+          <li>DNA鎖の伸長を停止（DNA合成阻害）</li>
+          <li>HSV、VZV、水痘に有効。<span class="caution">チミジンキナーゼ活性の低いサイトメガロウイルスやEBVには効果がない</span></li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D53</div>
+        <p>3日前から38.5℃の発熱と歯肉腫脹がみられた小児の口腔内写真（別冊No.17）を別に示す。検査の結果、単純ヘルペスウイルスの感染を認めた。<br>考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116D53.png" alt="別冊No.17">
+        </div>
+        <div class="choices">
+          a 水痘<br>
+          b 風疹<br>
+          c 麻疹<br>
+          d 帯状疱疹<br>
+          e ヘルパンギーナ<br>
+          f 疱疹性歯肉口内炎
+        </div>
+        <div class="answer">正解：f</div>
+        <p>【解説】小児＋発熱＋歯肉腫脹＋HSV感染 → 疱疹性歯肉口内炎。帯状疱疹はVZV再活性化で片側性。ヘルパンギーナはコクサッキーA群で軟口蓋が主体。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105B21</div>
+        <p>9歳の男児。歯磨きに伴う歯肉の痛みを主訴として来院した。38℃の発熱が2日間続いた後、口腔周囲と口腔内とに限局して小水疱が出現したという。発熱から4日目の病変部の写真（別冊No.21）を別に示す。<br>考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/105回_Web画像/105B21.png" alt="別冊No.21">
+        </div>
+        <div class="choices">
+          a 白血病<br>
+          b 放線菌症<br>
+          c 好中球減少症<br>
+          d 単純疱疹ウイルス感染症<br>
+          e 水痘・帯状疱疹ウイルス感染症
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】小児＋発熱＋口腔周囲と口腔内に限局した小水疱 → HSV-1初感染（疱疹性歯肉口内炎）。帯状疱疹は片側性神経支配領域に限局する点が異なる。</p>
+      </div>
+
+      <h3>口唇ヘルペス（HSV-1再活性化）</h3>
+      <p>HSV-1の<span class="key">再活性化</span>により口唇およびその周囲皮膚に集簇性の小水疱を形成する。</p>
+      <ul>
+        <li><span class="key">誘因</span>：紫外線曝露、ストレス、疲労、歯科治療、手術など</li>
+        <li>前駆症状として小水疱形成の数時間前から皮膚に違和感や灼熱感</li>
+        <li>小水疱は破れて痂皮を形成し、1週間程度で治癒</li>
+        <li>治療：再発病変にアシクロビル軟膏を1日数回塗布。前駆症状があればただちに軟膏塗布を開始</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">104A48</div>
+        <p>28歳の女性。顔貌写真（別冊No.5）を別に示す。<br>投与すべき薬物はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104A48.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a ミコナゾール<br>
+          b ニフェジピン<br>
+          c アシクロビル<br>
+          d シクロスポリン<br>
+          e ブレオマイシン塩酸塩
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】口唇周囲の集簇性水疱 → 口唇ヘルペス。治療薬はアシクロビル。ミコナゾールは抗真菌薬、ニフェジピンはCa拮抗薬、シクロスポリンは免疫抑制剤、ブレオマイシンは抗腫瘍薬。</p>
+      </div>
+
+      <h3>帯状疱疹（VZV再活性化）</h3>
+      <p>水痘治癒後に神経節に潜伏していた<span class="key">VZV</span>が、細胞性免疫能の低下により再活性化し、特定の<span class="highlight">神経支配領域に一致して片側性</span>に水疱性病変を形成する。</p>
+      <ul>
+        <li><span class="key">好発年齢</span>：20歳前後と60歳以上に好発</li>
+        <li><span class="key">症状</span>：栄養不良、過労、感冒、免疫能低下が誘因。片側性の神経支配領域に水疱が生じる</li>
+        <li>口腔内では水疱は膨疹、びらん、痂皮となり、色素沈着または色素脱失を残す</li>
+        <li>口腔内の水疱はすぐに破れ、びらんとして認められ、易出血性</li>
+        <li><span class="caution">帯状疱疹後神経痛（PHN）</span>：皮疹治癒後も持続する強い神経痛。高齢ほど生じやすく重症化</li>
+      </ul>
+
+      <h3>Ramsay Hunt症候群</h3>
+      <p>VZVの<span class="key">膝神経節</span>再活性化による。以下の三徴を示す：</p>
+      <ul>
+        <li><span class="highlight">耳介周囲の帯状疱疹</span>（水疱）</li>
+        <li><span class="highlight">顔面神経麻痺</span></li>
+        <li><span class="highlight">難聴・耳鳴り・めまい</span></li>
+      </ul>
+
+      <h3>帯状疱疹の治療</h3>
+      <table>
+        <tr><th>治療薬</th><th>用途</th></tr>
+        <tr><td><span class="key">アシクロビル</span></td><td>抗ウイルス薬（ウイルス増殖の抑制）</td></tr>
+        <tr><td><span class="key">バラシクロビル</span></td><td>アシクロビルのプロドラッグ。経口吸収率が高い</td></tr>
+        <tr><td>アセトアミノフェン等</td><td>鎮痛（疼痛管理）</td></tr>
+        <tr><td>プレガバリン、カルバマゼピン</td><td>PHN（帯状疱疹後神経痛）の治療</td></tr>
+        <tr><td>神経ブロック</td><td>PHNの疼痛管理</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">106D6</div>
+        <p>55歳の男性。右側顔面の疼痛を主訴として来院した。10日前から違和感を自覚するようになり、次第に増悪してきたという。初診時の顔貌写真（別冊No.6A）、舌の写真（別冊No.6B）及び口腔内写真（別冊No.6C）を別に示す。<br>この疾患の治療薬と使用目的との組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106D6_1.png" alt="別冊No.6A">
+          <img src="../../../images/106回_Web画像/106D6_2.png" alt="別冊No.6B,C">
+        </div>
+        <div class="choices">
+          a アシクロビル——————————細菌増殖の抑制<br>
+          b ピシバニール——————————免疫活性化<br>
+          c アセトアミノフェン———————鎮痛<br>
+          d ドセタキセル水和物———————細胞増殖の抑制<br>
+          e バラシクロビル塩酸塩——————ウイルス増殖の抑制
+        </div>
+        <div class="answer">正解：c,e</div>
+        <p>【解説】右側顔面に限局した疼痛＋水疱 → 帯状疱疹。バラシクロビルはウイルス増殖の抑制に使用（正しい組み合わせ）。アシクロビルは抗ウイルス薬であり「細菌増殖の抑制」は誤り。アセトアミノフェンによる鎮痛は正しい。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110D45</div>
+        <p>48歳の女性。口腔内の疼痛を主訴として来院した。1週ほど前に発熱があり、その後口腔内に水疱が多発し、疼痛のため摂食困難をきたしたという。初診時の口腔内写真（別冊No.44）を別に示す。<br>適切な処置はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/110回_Web画像/110D45.png" alt="別冊No.44">
+        </div>
+        <div class="choices">
+          a 栄養補給<br>
+          b アシクロビルの投与<br>
+          c 副腎皮質ステロイド薬の投与<br>
+          d シクロスポリン軟膏の局所塗布<br>
+          e スポンジブラシによる偽膜の除去
+        </div>
+        <div class="answer">正解：a,b</div>
+        <p>【解説】発熱後の口腔内水疱多発＋摂食困難 → ヘルペスウイルス感染症。アシクロビル投与と栄養補給が適切。ステロイドはウイルス感染症では<span class="caution">禁忌</span>（免疫抑制で悪化）。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション2: HIV/AIDS ★★★★★ -->
+      <!-- ============================================ -->
+      <h2>2. HIV/AIDS</h2>
+
+      <h3>HIV感染の経過</h3>
+      <p>HIV（ヒト免疫不全ウイルス）はレトロウイルスの一種で、CD4陽性Tリンパ球に感染して破壊する。</p>
+      <ul>
+        <li><span class="key">感染経路</span>：血液感染（輸血、針刺し）、性行為感染、母子感染</li>
+        <li>感染後2〜3週で急性期症状を示すことがあり、未治療では慢性経過で免疫不全が進行して<span class="key">AIDS</span>に至る</li>
+        <li>進行速度には個人差があり、<span class="highlight">ART導入によりAIDS発症は大幅に抑制可能</span></li>
+      </ul>
+
+      <h3>AIDS指標疾患（口腔関連）</h3>
+      <table>
+        <tr><th>口腔症状</th><th>CD4数目安</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">口腔カンジダ症</span></td><td>400/μL前後</td><td>最も頻度が高い口腔症状。AIDS初期症状</td></tr>
+        <tr><td><span class="highlight">毛様白板症</span></td><td>500/μL前後</td><td>EBウイルスによる。舌側縁の白色過角化病変。悪性化しない</td></tr>
+        <tr><td><span class="key">Kaposi肉腫</span></td><td>100〜200/μL</td><td>AIDS患者に特徴的な悪性腫瘍</td></tr>
+        <tr><td><span class="key">壊死性潰瘍性歯肉炎</span></td><td>100/μL以下</td><td>歯間乳頭の潰瘍、激しい疼痛</td></tr>
+      </table>
+
+      <h3>AIDSの診断</h3>
+      <div class="point-box">
+        <div class="point-box-title">AIDS診断に必要な検査</div>
+        <ul>
+          <li><span class="highlight">HIV抗体検査</span>（スクリーニング）＋ 確認検査（Western blot法 / IC法）</li>
+          <li><span class="highlight">CD4陽性リンパ球数</span>：200/μL未満でAIDS診断基準を満たす</li>
+          <li>AIDS指標疾患（23疾患）のいずれかの発症</li>
+        </ul>
+      </div>
+
+      <h3>歯科治療時の注意</h3>
+      <ul>
+        <li><span class="key">標準予防策（スタンダードプリコーション）</span>の徹底</li>
+        <li>ディスポーザブル器具の使用、ゴーグル/バイザーの着用</li>
+        <li>針刺し事故のリスク：経皮的曝露で感染率<span class="key">0.3%</span></li>
+        <li>抜歯前に内科に問い合わせ：<span class="key">出血傾向</span>と<span class="key">ウイルス抗原の有無</span></li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">114B42</div>
+        <p>後天性免疫不全症候群に伴いやすいのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 毛様白板症<br>
+          b Kaposi肉腫<br>
+          c 尋常性天疱瘡<br>
+          d 口腔カンジダ症<br>
+          e 壊死性潰瘍性歯肉炎
+        </div>
+        <div class="answer">正解：a,b,d,e</div>
+        <p>【解説】AIDS関連口腔症状は毛様白板症、Kaposi肉腫、口腔カンジダ症、壊死性潰瘍性歯肉炎。尋常性天疱瘡は自己免疫疾患でありAIDSとの関連はない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A57</div>
+        <p>後天性免疫不全症候群患者に発生しやすい口腔疾患はどれか。すべて選べ。</p>
+        <div class="choices">
+          a 天疱瘡<br>
+          b 毛様白板症<br>
+          c カポジ肉腫<br>
+          d 口腔扁平苔癬<br>
+          e 口腔カンジダ症
+        </div>
+        <div class="answer">正解：b,c,e</div>
+        <p>【解説】AIDS関連口腔症状として毛様白板症（EBウイルス）、Kaposi肉腫、口腔カンジダ症が正しい。天疱瘡は自己免疫疾患、口腔扁平苔癬は金属アレルギーやストレス等が原因。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A64</div>
+        <p>AIDSの診断に必要なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 抗体検査<br>
+          b 脂質検査<br>
+          c 組織適合検査<br>
+          d 唾液分泌検査<br>
+          e CD4陽性リンパ球数検査
+        </div>
+        <div class="answer">正解：a,e</div>
+        <p>【解説】AIDS診断にはHIV抗体検査（感染確認）とCD4陽性リンパ球数検査（病期評価、200/μL未満でAIDS）が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107B9</div>
+        <p>45歳の男性。口腔内の白色病変を主訴として来院した。2週前から口腔内に違和感があり、5日前に鏡で見ると白くなっていたという。最近食欲がなく、倦怠感があるという。服用薬はない。初診時の口腔内写真（別冊No.9）を別に示す。血液検査の結果を表に示す。<br>口腔内病変の原因として考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107B9_1.png" alt="別冊No.9A">
+          <img src="../../../images/107回_Web画像/107B9_2.png" alt="別冊No.9B">
+        </div>
+        <div class="choices">
+          a 白血病<br>
+          b 糖尿病<br>
+          c 誤嚥性肺炎<br>
+          d 鉄欠乏性貧血<br>
+          e 後天性免疫不全症候群
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】口腔内の白色病変（毛様白板症またはカンジダ症）＋倦怠感＋食欲不振 → AIDS を疑う。血液検査でCD4低下やHIV陽性所見が認められる。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106B48</div>
+        <p>かかりつけ内科医からの紹介状と検査結果を示す。<br>抜歯前に内科医に問い合わせるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106B48.png" alt="紹介状・検査結果">
+        </div>
+        <div class="choices">
+          a HbA1c<br>
+          b 出血傾向<br>
+          c 血清鉄値<br>
+          d ウイルス抗原の有無<br>
+          e クレアチニンクリアランス値
+        </div>
+        <div class="answer">正解：b,d</div>
+        <p>【解説】ウイルス性肝炎患者の抜歯時には、出血傾向（肝機能低下による凝固因子減少）とウイルス抗原の有無（感染性の評価）を確認する。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション3: ウイルス疾患と徴候 ★★ -->
+      <!-- ============================================ -->
+      <h2>3. ウイルス性疾患と徴候</h2>
+
+      <h3>疾患と特徴的徴候の組み合わせ</h3>
+      <table>
+        <tr><th>疾患</th><th>原因ウイルス</th><th>特徴的徴候</th></tr>
+        <tr><td><span class="key">麻疹</span></td><td>麻疹ウイルス</td><td><span class="highlight">Koplik斑</span>（頬粘膜の白色砂粒様斑点、発疹出現の2日前）</td></tr>
+        <tr><td><span class="key">ムンプス</span></td><td>ムンプスウイルス</td><td><span class="highlight">耳下腺腫大</span>（両側性が多い）</td></tr>
+        <tr><td>口唇ヘルペス</td><td>HSV-1</td><td>口唇赤唇部の集簇性小水疱</td></tr>
+        <tr><td>ヘルパンギーナ</td><td>コクサッキーA群</td><td>軟口蓋の小水疱、<span class="caution">舌下部潰瘍ではない</span></td></tr>
+        <tr><td>風疹</td><td>風疹ウイルス</td><td>発疹＋リンパ節腫脹。<span class="caution">苺舌ではない</span>（苺舌は猩紅熱/川崎病）</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">104A108</div>
+        <p>疾患と徴候との組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 麻疹ーーーーーーーーKoplik斑<br>
+          b 風疹ーーーーーーーー苺舌<br>
+          c ムンプスーーーーーー耳下腺腫大<br>
+          d 口唇ヘルペスーーーー偽膜<br>
+          e ヘルパンギーナーーー舌下部潰瘍
+        </div>
+        <div class="answer">正解：a,c</div>
+        <p>【解説】麻疹→Koplik斑、ムンプス→耳下腺腫大が正しい。苺舌は猩紅熱や川崎病、偽膜は偽膜性カンジダ症やジフテリア、ヘルパンギーナの潰瘍は軟口蓋に生じる。</p>
+      </div>
+
+      <h3>水疱形成を特徴とするウイルス性疾患</h3>
+      <table>
+        <tr><th>疾患</th><th>原因</th><th>好発部位</th><th>好発年齢・季節</th></tr>
+        <tr><td>単純疱疹（疱疹性歯肉口内炎）</td><td>HSV-1</td><td>歯肉・口腔粘膜全体</td><td>乳幼児</td></tr>
+        <tr><td>口唇ヘルペス</td><td>HSV-1再活性化</td><td>口唇赤唇部</td><td>成人</td></tr>
+        <tr><td>帯状疱疹</td><td>VZV再活性化</td><td>片側性神経支配領域</td><td>高齢者</td></tr>
+        <tr><td>手足口病</td><td>EV71・CA16</td><td>手掌・足底・口腔粘膜</td><td>小児・夏季</td></tr>
+        <tr><td>ヘルパンギーナ</td><td>コクサッキーA群</td><td>軟口蓋・前口蓋弓</td><td>小児・夏季</td></tr>
+        <tr><td>水痘</td><td>VZV初感染</td><td>全身（体幹→四肢）</td><td>小児</td></tr>
+      </table>
+      <p class="note">天疱瘡・類天疱瘡も水疱を形成するが、これらは自己免疫疾患でありウイルス性ではない。</p>
+
+      <div class="question-box">
+        <div class="q-number">104A41</div>
+        <p>水疱形成を特徴とするのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 単純疱疹<br>
+          b 手足口病<br>
+          c 類天疱瘡<br>
+          d ヘルパンギーナ<br>
+          e 慢性再発性アフタ
+        </div>
+        <div class="answer">正解：a,b,c,d</div>
+        <p>【解説】単純疱疹・手足口病・ヘルパンギーナはウイルス性の水疱形成疾患。類天疱瘡は自己免疫性だが水疱を形成する。慢性再発性アフタは潰瘍であり水疱形成ではない。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション4: 手足口病・ヘルパンギーナ ★ -->
+      <!-- ============================================ -->
+      <h2>4. 手足口病・ヘルパンギーナ</h2>
+
+      <h3>手足口病</h3>
+      <p><span class="key">エンテロウイルス71型</span>と<span class="key">コクサッキーウイルスA16型</span>が主な原因。好発年齢は4歳以下。夏季に流行する。</p>
+      <ul>
+        <li>口腔粘膜に小水疱→アフタ様潰瘍</li>
+        <li>手掌・足底に小水疱を伴う発疹</li>
+        <li>軽症例が多く、7〜10日で自然治癒。特に治療は必要としない</li>
+      </ul>
+
+      <h3>ヘルパンギーナ</h3>
+      <p><span class="key">コクサッキーウイルスA群</span>による感染症。夏季に流行する夏風邪の一種。</p>
+      <ul>
+        <li>突然の高熱で発症。4歳以下に好発</li>
+        <li><span class="highlight">軟口蓋</span>を中心として咽頭に多数の小水疱</li>
+        <li>小水疱はやがてアフタ様潰瘍となる</li>
+        <li>2〜3日で解熱し、1週間程度で自然治癒</li>
+      </ul>
+
+      <div class="point-box">
+        <div class="point-box-title">手足口病 vs ヘルパンギーナの鑑別</div>
+        <ul>
+          <li>手足口病：口腔＋<span class="highlight">手足に皮疹</span>あり</li>
+          <li>ヘルパンギーナ：<span class="highlight">咽頭部のみ</span>に病変、手足に皮疹なし</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A77</div>
+        <p>5歳の女児。舌の疼痛を主訴として来院した。数日前から発熱、食欲不振、感冒様症状があるという。初診時の口腔内写真（別冊No.28A）と手足の写真（別冊No.28B）を別に示す。<br>原因として考えられるのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A77_1.png" alt="別冊No.28A">
+          <img src="../../../images/116回_Web画像/116A77_2.png" alt="別冊No.28B">
+        </div>
+        <div class="choices">
+          a 麻疹ウイルス<br>
+          b エンテロウイルス<br>
+          c ムンプスウイルス<br>
+          d コクサッキーウイルス<br>
+          e 単純ヘルペスウイルス
+        </div>
+        <div class="answer">正解：b,d</div>
+        <p>【解説】小児＋口腔内病変＋手足の皮疹 → 手足口病。原因はエンテロウイルス71型とコクサッキーウイルスA16型。麻疹はKoplik斑が特徴、ムンプスは耳下腺腫大。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション5: C型肝炎 ★ -->
+      <!-- ============================================ -->
+      <h2>5. C型肝炎</h2>
+
+      <h3>C型肝炎の特徴</h3>
+      <table>
+        <tr><th>項目</th><th>C型肝炎</th><th>B型肝炎（参考）</th></tr>
+        <tr><td>感染症分類</td><td><span class="highlight">5類感染症</span></td><td>5類感染症</td></tr>
+        <tr><td>感染経路</td><td><span class="key">血液感染</span>（経口感染しない）</td><td>血液感染・性行為・母子感染</td></tr>
+        <tr><td>慢性化率</td><td><span class="highlight">60〜75%</span>（高い）</td><td>成人感染では低い</td></tr>
+        <tr><td>ワクチン</td><td><span class="caution">なし</span></td><td>あり（HBワクチン）</td></tr>
+        <tr><td>肝硬変・肝癌</td><td>進行しやすい</td><td>進行しうる</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">107A73</div>
+        <p>C型肝炎で正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 5類感染症に分類されている。<br>
+          b 食物や飲み水により経口感染する。<br>
+          c 予防にはワクチン接種が有効である。<br>
+          d キャリアの半数以上が慢性肝炎へと移行する。<br>
+          e キャリアの割合は30歳代より若い世代で増加している。
+        </div>
+        <div class="answer">正解：a,d</div>
+        <p>【解説】C型肝炎は5類感染症で正しい。キャリアの60〜75%が慢性肝炎に移行するため「半数以上」も正しい。経口感染はしない（A型・E型肝炎が経口感染）。C型肝炎にワクチンはない。若い世代ではキャリア割合は減少傾向。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション6: 鑑別まとめ -->
+      <!-- ============================================ -->
+      <h2>6. ウイルス感染症の鑑別まとめ</h2>
+
+      <h3>初感染 vs 再活性化</h3>
+      <table>
+        <tr><th>区分</th><th>疾患</th><th>特徴</th></tr>
+        <tr><td>初感染</td><td>疱疹性歯肉口内炎</td><td>小児、全身症状強い、両側性</td></tr>
+        <tr><td>再活性化</td><td>口唇ヘルペス</td><td>成人、局所症状のみ、再発性</td></tr>
+        <tr><td>初感染</td><td>水痘</td><td>小児、全身の水疱</td></tr>
+        <tr><td>再活性化</td><td>帯状疱疹</td><td>高齢者、片側性神経支配領域</td></tr>
+      </table>
+
+      <h3>治療薬の整理</h3>
+      <table>
+        <tr><th>疾患</th><th>治療</th></tr>
+        <tr><td>ヘルペス・帯状疱疹</td><td><span class="key">アシクロビル / バラシクロビル</span></td></tr>
+        <tr><td>手足口病・ヘルパンギーナ</td><td>対症療法のみ（抗ウイルス薬<span class="caution">無効</span>）</td></tr>
+        <tr><td>麻疹</td><td>対症療法。予防はワクチン</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

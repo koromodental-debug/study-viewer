@@ -30,38 +30,51 @@ def parse_data_js():
 
 
 def parse_qa_file(file_path, topic_id):
-    """QAファイルをパースしてカードリストを返す"""
+    """QAファイル（JSON）をパースしてカードリストを返す"""
     cards = []
 
     try:
         with open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
-    except FileNotFoundError:
+            data = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
         return cards
 
-    lines = content.split("\n")
-    current_section = ""
-    current_q = None
     index = 0
+    for section in data.get("sections", []):
+        section_name = section.get("section", "")
+        for qa in section.get("qa", []):
+            qa_type = qa.get("type", "")
 
-    for line in lines:
-        trimmed = line.strip()
+            if qa_type == "table-occlusion":
+                # 表穴埋め: タイトルとヘッダー・行の内容を検索対象にする
+                title = qa.get("title", "")
+                table = qa.get("table", {})
+                headers = table.get("headers", [])
+                rows = table.get("rows", [])
+                row_texts = [" / ".join(row) for row in rows]
+                question = title
+                answer = " | ".join(headers) + " — " + " ; ".join(row_texts)
+            elif "choices" in qa:
+                # 選択肢問題
+                question = qa.get("question", "")
+                correct = qa.get("correctAnswer", qa.get("answer", ""))
+                choices = qa.get("choices", {})
+                correct_text = choices.get(correct.lower(), correct) if isinstance(correct, str) and len(correct) == 1 else correct
+                answer = correct_text
+            else:
+                # 一問一答
+                question = qa.get("question", "")
+                answer = qa.get("answer", "")
 
-        if trimmed.startswith("## "):
-            current_section = trimmed[3:]
-        elif trimmed.startswith("Q: ") or trimmed.startswith("Q:"):
-            current_q = re.sub(r'^Q:\s*', '', trimmed)
-        elif (trimmed.startswith("A: ") or trimmed.startswith("A:")) and current_q:
-            answer = re.sub(r'^A:\s*', '', trimmed)
-            cards.append({
-                "originalIndex": index,
-                "section": current_section,
-                "question": current_q,
-                "answer": answer,
-                "topicId": topic_id
-            })
-            index += 1
-            current_q = None
+            if question or answer:
+                cards.append({
+                    "originalIndex": index,
+                    "section": section_name,
+                    "question": question,
+                    "answer": answer,
+                    "topicId": topic_id
+                })
+                index += 1
 
     return cards
 

@@ -104,31 +104,138 @@
           "answer": "レジンと重合"
         },
         {
-          "question": "[114C60] ★★★\n歯質の無機成分に接着するモノマーは？（MDP、MMA、HEMA、4-META、Bis-GMAから2つ）",
-          "answer": "MDP、4-META\n\n[他の選択肢との違い]\n- MDP: リン酸エステル系接着性モノマー ← 正解\n- MMA: ベースモノマー（義歯床など）\n- HEMA: 中性モノマー ← ひっかけ（象牙質接着に有効だが接着性モノマーではない）\n- 4-META: カルボン酸系接着性モノマー ← 正解\n- Bis-GMA: ベースモノマー（CRのマトリックス）\n\n[ポイント]\n「接着性モノマー」＝酸性モノマー＝HApに結合\nHEMAは「有効」だが「接着性モノマー」ではない"
+          "question": "歯質の無機成分に接着するモノマーは？（MDP、MMA、HEMA、4-META、Bis-GMAから2つ）",
+          "answer": "A, D",
+          "choices": {
+            "a": "MDP",
+            "b": "MMA",
+            "c": "HEMA",
+            "d": "4-META",
+            "e": "Bis-GMA"
+          },
+          "correctAnswer": "A, D",
+          "numChoices": 2,
+          "code": "114C60",
+          "choiceExplanations": {
+            "a": "リン酸エステル系接着性モノマー ← 正解",
+            "b": "ベースモノマー（義歯床など）",
+            "c": "中性モノマー ← ひっかけ（象牙質接着に有効だが接着性モノマーではない）",
+            "d": "カルボン酸系接着性モノマー ← 正解",
+            "e": "ベースモノマー（CRのマトリックス）"
+          },
+          "point": "「接着性モノマー」＝酸性モノマー＝HApに結合\nHEMAは「有効」だが「接着性モノマー」ではない"
         },
         {
-          "question": "[111C40] ★★★\nカルボン酸系接着性モノマーは？（MDP、HEMA、4-MET、MAC-10、Phenyl-Pから2つ）",
-          "answer": "4-MET、MAC-10\n\n[他の選択肢との違い]\n- MDP: リン酸エステル系\n- HEMA: 中性モノマー（接着性モノマーではない）\n- 4-MET: カルボン酸系 ← 正解\n- MAC-10: カルボン酸系 ← 正解\n- Phenyl-P: リン酸エステル系\n\n[ポイント]\n4-で始まる → カルボン酸系（4-META、4-MET、4-AET）\nMDPとPhenyl-P → リン酸エステル系"
+          "question": "カルボン酸系接着性モノマーは？（MDP、HEMA、4-MET、MAC-10、Phenyl-Pから2つ）",
+          "answer": "C, D",
+          "choices": {
+            "a": "MDP",
+            "b": "HEMA",
+            "c": "4-MET",
+            "d": "MAC-10",
+            "e": "Phenyl-P"
+          },
+          "correctAnswer": "C, D",
+          "numChoices": 2,
+          "code": "111C40",
+          "choiceExplanations": {
+            "a": "リン酸エステル系",
+            "b": "中性モノマー（接着性モノマーではない）",
+            "c": "カルボン酸系 ← 正解",
+            "d": "カルボン酸系 ← 正解",
+            "e": "リン酸エステル系"
+          },
+          "point": "4-で始まる → カルボン酸系（4-META、4-MET、4-AET）\nMDPとPhenyl-P → リン酸エステル系"
         },
         {
-          "question": "[106A119] ★★\n歯質接着性モノマーに共通する構造は？",
-          "answer": "親水性基、二重結合\n\n[他の選択肢との違い]\n- Sを含む: イオウ系メタルプライマー\n- Siを含む: シランカップリング剤\n- 親水性基がある: 全ての接着性モノマーに共通 ← 正解\n- 二重結合がある: 全ての接着性モノマーに共通 ← 正解\n- -COOH基がある: カルボン酸系のみ（リン酸系は-PO₄H₂）\n\n[ポイント]\n共通＝全ての接着性モノマーにある\n-COOH、-PO₄H₂は「親水性基」の例"
+          "question": "歯質接着性モノマーに共通する構造は？",
+          "answer": "C, D",
+          "choices": {
+            "a": "Sを含む",
+            "b": "Siを含む",
+            "c": "親水性基がある",
+            "d": "二重結合がある",
+            "e": "-COOH基がある"
+          },
+          "correctAnswer": "C, D",
+          "numChoices": 2,
+          "code": "106A119",
+          "choiceExplanations": {
+            "a": "イオウ系メタルプライマー",
+            "b": "シランカップリング剤",
+            "c": "全ての接着性モノマーに共通 ← 正解",
+            "d": "全ての接着性モノマーに共通 ← 正解",
+            "e": "カルボン酸系のみ（リン酸系は-PO₄H₂）"
+          },
+          "point": "共通＝全ての接着性モノマーにある\n-COOH、-PO₄H₂は「親水性基」の例"
         },
         {
-          "question": "[105A113] ★★\n歯質接着性モノマーは？（MDP、UDMA、MAC-10、Bis-GMA、DMAEMAから2つ）",
-          "answer": "MDP、MAC-10\n\n[他の選択肢との違い]\n- MDP: リン酸エステル系接着性モノマー ← 正解\n- UDMA: ベースモノマー\n- MAC-10: カルボン酸系接着性モノマー ← 正解\n- Bis-GMA: ベースモノマー\n- DMAEMA: 重合促進剤（第3級アミン）"
+          "question": "歯質接着性モノマーは？（MDP、UDMA、MAC-10、Bis-GMA、DMAEMAから2つ）",
+          "answer": "A, C",
+          "choices": {
+            "a": "MDP",
+            "b": "UDMA",
+            "c": "MAC-10",
+            "d": "Bis-GMA",
+            "e": "DMAEMA"
+          },
+          "correctAnswer": "A, C",
+          "numChoices": 2,
+          "code": "105A113",
+          "choiceExplanations": {
+            "a": "リン酸エステル系接着性モノマー ← 正解",
+            "b": "ベースモノマー",
+            "c": "カルボン酸系接着性モノマー ← 正解",
+            "d": "ベースモノマー",
+            "e": "重合促進剤（第3級アミン）"
+          }
         },
         {
-          "question": "[108A83] ★★\n象牙質との接着に有効なものは？（HEMA、UDMA、4-AET、γ-MPTS、Bis-GMAから2つ）",
-          "answer": "HEMA、4-AET\n\n[他の選択肢との違い]\n- HEMA: コラーゲン膨潤で象牙質接着を補助 ← 正解\n- UDMA: ベースモノマー\n- 4-AET: カルボン酸系接着性モノマー ← 正解\n- γ-MPTS: シランカップリング剤（セラミックス用）\n- Bis-GMA: ベースモノマー\n\n[ポイント]\nこの問題では「接着性モノマー」ではなく「象牙質接着に有効」と聞いている\n→ HEMAも正解になる"
+          "question": "象牙質との接着に有効なものは？（HEMA、UDMA、4-AET、γ-MPTS、Bis-GMAから2つ）",
+          "answer": "A, C",
+          "choices": {
+            "a": "HEMA",
+            "b": "UDMA",
+            "c": "4-AET",
+            "d": "γ-MPTS",
+            "e": "Bis-GMA"
+          },
+          "correctAnswer": "A, C",
+          "numChoices": 2,
+          "code": "108A83",
+          "choiceExplanations": {
+            "a": "コラーゲン膨潤で象牙質接着を補助 ← 正解",
+            "b": "ベースモノマー",
+            "c": "カルボン酸系接着性モノマー ← 正解",
+            "d": "シランカップリング剤（セラミックス用）",
+            "e": "ベースモノマー"
+          },
+          "point": "この問題では「接着性モノマー」ではなく「象牙質接着に有効」と聞いている\n→ HEMAも正解になる"
         },
         {
-          "question": "[104A106] ★★\nHEMAの分子末端にある官能基は？",
-          "answer": "水酸基（-OH）\n\n[他の選択肢との違い]\n- 水酸基: HEMAの末端にある ← 正解\n- リン酸基: MDP、Phenyl-Pにある\n- アミノ基: 重合促進剤に含まれる\n- プロピル基: 該当なし\n- シアネート基: 該当なし\n\n[ポイント]\nHEMA ＝ 2-ヒドロキシエチルメタクリレート\nヒドロキシ（hydroxy）＝ 水酸基（-OH）"
+          "question": "HEMAの分子末端にある官能基は？",
+          "answer": "A",
+          "choices": {
+            "a": "水酸基",
+            "b": "リン酸基",
+            "c": "アミノ基",
+            "d": "プロピル基",
+            "e": "シアネート基"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "104A106",
+          "choiceExplanations": {
+            "a": "HEMAの末端にある ← 正解",
+            "b": "MDP、Phenyl-Pにある",
+            "c": "重合促進剤に含まれる",
+            "d": "該当なし",
+            "e": "該当なし"
+          },
+          "point": "HEMA ＝ 2-ヒドロキシエチルメタクリレート\nヒドロキシ（hydroxy）＝ 水酸基（-OH）"
         },
         {
-          "question": "[113D42] ★★\nMDPの構造式で、歯質との接着部位は？",
+          "question": "MDPの構造式で、歯質との接着部位は？",
           "answer": "リン酸基\n\n[ポイント]\n二重結合側 → レジンと重合\nリン酸基側 → 歯質のHApと化学結合"
         }
       ]

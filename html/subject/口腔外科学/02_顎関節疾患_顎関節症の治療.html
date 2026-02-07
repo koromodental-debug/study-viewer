@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顎関節症の治療 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 顎関節疾患</span>
+    <h1>顎関節症の治療</h1>
+    <div class="container">
+
+      <h2>治療の原則</h2>
+      <div class="point-box">
+        <div class="point-box-title">治療の大原則</div>
+        <ul>
+          <li>必ず<span class="highlight">保存療法・可逆的療法</span>から行う（難症例でも同様）</li>
+          <li>奏功しない場合に外科療法を検討するが、現在は<span class="key">理学・運動療法</span>が推奨</li>
+          <li>小児・混合歯列期 → まず<span class="highlight">セルフケアの指導</span></li>
+        </ul>
+      </div>
+
+      <h2>型別の治療法一覧</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>治療法</th>
+        </tr>
+        <tr>
+          <td><span class="key">I型</span>（咀嚼筋障害）</td>
+          <td>理学療法（マッサージ、温罨法、運動療法、マイオモニター）、投薬（消炎鎮痛薬、中枢性筋弛緩薬）、<span class="key">スタビライゼーションスプリント</span>、前歯部接触型</td>
+        </tr>
+        <tr>
+          <td><span class="key">II型</span>（顎関節痛障害）</td>
+          <td>消炎鎮痛薬の投与、理学療法（運動療法：顎関節可動域訓練）、<span class="key">スタビライゼーションスプリント</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">IIIa型</span>（復位性）</td>
+          <td>徒手的関節円板整復術（マニピュレーション）、スタビライゼーションスプリント、<span class="key">前方整位型（リポジショニング型）</span>、消炎鎮痛薬、円板整復運動療法、パンピングマニピュレーション</td>
+        </tr>
+        <tr>
+          <td><span class="key">IIIb型</span>（非復位性）</td>
+          <td>徒手的関節円板整復術、スタビライゼーションスプリント、<span class="key">臼歯部挙上型（ピボット型）</span>、消炎鎮痛薬、顎関節可動域訓練、パンピングマニピュレーション、<span class="key">関節腔洗浄療法</span>（乳酸リンゲル液）、関節腔内注入療法（ヒアルロン酸）</td>
+        </tr>
+        <tr>
+          <td><span class="key">IV型</span>（変形性）</td>
+          <td>基本的にはIIIbに準じる。外科的療法、関節腔内注入療法、顎関節の負担軽減（スプリント療法、薬物療法、理学療法）</td>
+        </tr>
+      </table>
+
+      <h2>スプリント療法 ★最頻出</h2>
+
+      <h3>スプリントの種類と適応</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>適応</th>
+          <th>目的・特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">スタビライゼーション型</span></td>
+          <td>I, II, IIIa, IIIb, (IV)</td>
+          <td>左右均等な咬合接触を付与。咬合の安定化、咀嚼筋の緊張緩和、顎関節部への過重負担の軽減</td>
+        </tr>
+        <tr>
+          <td><span class="key">前方整位型（リポジショニング型）</span></td>
+          <td>IIIa, IIIb→クリック出現時</td>
+          <td>下顎を前方に誘導しOn the Diskの状態にする。クリックに効果。<span class="caution">開咬の副作用あり</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">臼歯部挙上型（ピボット型）</span></td>
+          <td>IIIb→ロック解除目的</td>
+          <td>臼歯部を支点として下顎頭を下方に牽引。開口量の増加、疼痛の緩和</td>
+        </tr>
+        <tr>
+          <td>前歯部接触型</td>
+          <td>I型</td>
+          <td>咀嚼筋の過緊張を収める。<span class="caution">顎関節部への過重負担は増大</span></td>
+        </tr>
+      </table>
+
+      <h3>スタビライゼーションスプリントの咬合接触 ★頻出</h3>
+      <table>
+        <tr>
+          <th>咬合位</th>
+          <th>接触部位</th>
+        </tr>
+        <tr>
+          <td>習慣性咬合位（中心咬合位）</td>
+          <td><span class="highlight">下顎臼歯部頬側咬頭頂</span>が均等に接触</td>
+        </tr>
+        <tr>
+          <td>前方咬合位</td>
+          <td><span class="highlight">下顎前歯切縁</span>のみ接触（臼歯部は離開）</td>
+        </tr>
+        <tr>
+          <td>側方咬合位（犬歯誘導型）</td>
+          <td><span class="caution">作業側は犬歯のみ接触</span>、非作業側は離開</td>
+        </tr>
+      </table>
+      <p class="note">※調整時は咬合紙で印記し、均等でない接触点を削合する。</p>
+
+      <h2>外科的療法</h2>
+      <table>
+        <tr>
+          <th>治療法</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="key">パンピングマニピュレーション</span></td>
+          <td>上関節腔に穿刺し、局所麻酔薬またはヒアルロン酸を注入後、顎関節徒手的授動を施行</td>
+        </tr>
+        <tr>
+          <td><span class="key">上関節腔洗浄療法</span></td>
+          <td>流入用と排出用の注射針を穿刺し、乳酸リンゲル液で洗浄</td>
+        </tr>
+        <tr>
+          <td>顎関節鏡視下手術</td>
+          <td>関節円板癒着部位の剥離、関節可動域の回復</td>
+        </tr>
+        <tr>
+          <td>顎関節開放手術</td>
+          <td>関節円板切除術、関節円板形成術、下顎頭形成術</td>
+        </tr>
+      </table>
+
+      <h3>IIIb型の段階的治療フロー</h3>
+      <p>①セルフケア指導 + NSAIDs → ②<span class="key">下顎可動化訓練</span>（開口訓練）→ ③スプリント療法 → ④パンピングマニピュレーション → ⑤<span class="key">関節腔洗浄療法</span> → ⑥外科手術</p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116C89</div>
+        <p>9歳の女児。右側顎関節雑音を主訴として来院した。1年前から右側顎関節部の開口時のクリック音を自覚するようになったという。咀嚼筋に圧痛はなく、最大開口量は45mmである。初診時の口腔内写真（別冊No.37A）と両側顎関節部MRI（別冊No.37B）を別に示す。<br>まず行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116C89_1.png" alt="別冊No.37A">
+          <img src="../../../images/116回_Web画像/116C89_2.png" alt="別冊No.37B">
+        </div>
+        <div class="choices">
+          a 咬合調整<br>
+          b 矯正歯科治療<br>
+          c NSAIDsの投与<br>
+          d スプリント療法<br>
+          e セルフケアの指導
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】9歳の小児（混合歯列期）で、クリック音はあるが疼痛や開口制限がない軽症例。小児の顎関節症ではまず<span class="highlight">セルフケアの指導</span>（TCH是正、頬杖禁止、大開口回避など）を行う。咬合調整やスプリントは小児には不適切。NSAIDsは疼痛がないため不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112A58</div>
+        <p>混合歯列期の顎関節症の対応として最も優先するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 矯正治療<br>
+          b 咬合調整<br>
+          c 筋弛緩薬の使用<br>
+          d スプリントの装着<br>
+          e セルフケアの指導
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】混合歯列期の顎関節症では<span class="highlight">セルフケアの指導</span>が最優先。咬合が安定していない時期に咬合調整やスプリントを行うことは不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114B35</div>
+        <p>咀嚼筋痛障害に対する適切な治療法はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 薬物療法<br>
+          b パンピング<br>
+          c スプリント療法<br>
+          d 筋ストレッチ訓練<br>
+          e マニピュレーション
+        </div>
+        <div class="answer">正解：a, c, d</div>
+        <p>【解説】咀嚼筋痛障害＝I型。治療は薬物療法（消炎鎮痛薬・筋弛緩薬）、スプリント療法（スタビライゼーション型）、筋ストレッチ訓練（理学療法）。パンピングマニピュレーションは関節腔内の処置でIIIb型に行う。マニピュレーションは関節円板整復術でIII型に行う。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112B63</div>
+        <p>上顎スタビライゼーションスプリントについて、咬合位と咬合接触部位の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 前方咬合位 ーーーーーーーー 下顎前菌切緣<br>
+          b 側方咬合位 ーーーーーーーー 作業側の下顎臼歯部頬側咬頭<br>
+          c 側方咬合位 ーーーーーーーー 非作業側の下顎臼歯部舌側咬頭<br>
+          d 習慣性咬合位 ーーーーーーー 下顎臼歯部頰舌側咬頭<br>
+          e 習慣性咬合位 ーーーーーーー 下顎臼歯部頰側咬頭頂
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】スタビライゼーションスプリントの咬合接触：習慣性咬合位では<span class="highlight">下顎臼歯部頬側咬頭頂</span>が均等に接触（e）。前方咬合位では<span class="key">下顎前歯切縁</span>のみが接触し臼歯部は離開する（a）。側方咬合位では犬歯誘導により作業側犬歯のみ接触し、非作業側は離開する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C49</div>
+        <p>顎関節疾患と治療法の組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112C49_1.png" alt="別冊">
+        </div>
+        <div class="choices">
+          a 顎関節強直症 ーーーー 顎関節授動術<br>
+          b 顎関節症I型 ーーーーー スプリント療法<br>
+          c 関節突起骨折 ーーーー 頸関節制動術<br>
+          d 筋突起過長症 ーーーー 関節結節削除術<br>
+          e 習慣性顎関節脱臼 ーー 筋突起切除術
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】顎関節強直症→顎関節授動術（a:正）、顎関節症I型→スプリント療法（b:正）。関節突起骨折→顎間固定が基本（制動術ではない）（c:誤）。筋突起過長症→筋突起切除術（関節結節削除術ではない）（d:誤）。習慣性顎関節脱臼→顎関節制動術（筋突起切除術ではない）（e:誤）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111B84</div>
+        <p>23歳の女性。開口障害を主訴として来院した。4か月前から右側顎関節のクリック音を自覚していたが、3日前に口が開かなくなったという。右側顎関節部の圧痛と開口時痛を認める。右側顎関節のMRI（別冊No.24A）と切歯点開閉口運動路を正面から観察した図（別冊No.24B）を別に示す。<br>まず行う対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/111回_Web画像/111B84_1.png" alt="別冊No.24A">
+          <img src="../../../images/111回_Web画像/111B84_2.png" alt="別冊No.24B">
+        </div>
+        <div class="choices">
+          a 咬合調整<br>
+          b 下顎可動化訓練<br>
+          c 顎関節円板切除術<br>
+          d 中枢性筋弛緩薬の投与<br>
+          e 非ステロイド性抗炎症薬の投与
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】クリック音があったが3日前に消失し開口制限→IIIa→IIIb移行（非復位性関節円板障害）。急性期のため、まず<span class="key">NSAIDs</span>で疼痛・炎症を抑え、<span class="key">下顎可動化訓練</span>（開口訓練）で可動域の回復を図る。咬合調整は不可逆的で初期対応として不適切。円板切除術は保存療法無効時に検討。筋弛緩薬はI型向け。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103B39</div>
+        <p>25歳の男性。開口障害を主訴として来院した。4か月前から口が開かなくなり、2か月前から近医にてスプリント治療と疼痛時の消炎鎮痛薬投与とを受けていたという。初診時の最大開口量は30mmで、左側顎関節部の圧痛と開口時痛とを認める。初診時の開口時顔貌写真（別冊No.37A）、エックス線写真（別冊No.37B）及び左側の開閉口時MRI（別冊No.37C）を別に示す。<br>適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103B39_1.png" alt="別冊No.37A">
+          <img src="../../../images/103回_Web画像/103B39_2.png" alt="別冊No.37B">
+          <img src="../../../images/103回_Web画像/103B39_3.png" alt="別冊No.37C">
+        </div>
+        <div class="choices">
+          a 経過観察<br>
+          b 咬合調整<br>
+          c 顎関節円板切除術<br>
+          d 関節腔内洗浄療法<br>
+          e 中枢性筋弛緩薬の投与
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】2か月間スプリント治療と消炎鎮痛薬で保存的に治療したが改善しないIIIb型。保存療法が奏功しない場合、次のステップは<span class="highlight">関節腔内洗浄療法</span>（上関節腔に乳酸リンゲル液を注入して洗浄）。経過観察は不適切。円板切除術は最後の手段。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109B6</div>
+        <p>42歳の女性。顔面部の開口時痛を主訴として来院した。3か月前から頰部に疼痛を認めるという。最大開口量は42mmであり、開口時の顕著な下顎偏位は発現しないものの、咬筋の圧痛が認められた。疼痛を認める部位を指した写真（別冊No.6A）と左側顎関節のMRI（別冊No.6B）を別に示す。<br>適切な治療法はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109B6_1.png" alt="別冊No.6A">
+          <img src="../../../images/109回_Web画像/109B6_2.png" alt="別冊No.6B">
+        </div>
+        <div class="choices">
+          a 筋のストレッチ<br>
+          b ヒアルロン酸の投与<br>
+          c 副腎皮質ステロイド薬の投与<br>
+          d パンピングマニピュレーションの実施<br>
+          e スタビライゼーションスプリントの使用
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】頬部疼痛＋咬筋の圧痛＋開口量正常（42mm）→I型（咀嚼筋障害）。治療は<span class="key">筋のストレッチ</span>（理学療法）と<span class="key">スタビライゼーションスプリント</span>。ヒアルロン酸やパンピングは関節腔内の治療でI型には不適切。ステロイド投与も不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A63</div>
+        <p>35歳の女性。右側咬筋部の疼痛を主訴として来院した。顎関節症Ⅰ型と診断し、犬歯誘導型のスタビライゼーションスプリントによる治療を計画した。初診時の口腔内写真（別冊No.19A）、タッピングでの調整終了時（別冊No.19B）及び側方滑走運動での調整時のスプリントの写真（別冊No.19C、D）を別に示す。<br>削合すべき部位はどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A63_1.png" alt="別冊No.19A">
+          <img src="../../../images/116回_Web画像/116A63_2.png" alt="別冊No.19B">
+          <img src="../../../images/116回_Web画像/116A63_3.png" alt="別冊No.19C">
+          <img src="../../../images/116回_Web画像/116A63_4.png" alt="別冊No.19D">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】犬歯誘導型スタビライゼーションスプリントでは、側方滑走運動時に作業側犬歯のみが接触し、臼歯部と非作業側は離開する。削合すべきは側方運動時に接触している犬歯以外の部位。写真から犬歯誘導を妨げている接触点を削合する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B53</div>
+        <p>スタビライゼーションスプリントの調整を行うこととした。中心咬合位における咬合接触部位を印記した写真（別冊No.23）を別に示す。<br>まず削合すべき部位はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115B53_1.png" alt="別冊No.23">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】中心咬合位での調整は、均等な咬合接触を目指す。咬合紙で印記された接触点のうち、早期接触となっている部位を削合して均等化する。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107C105</div>
+        <p>顎関節疾患の手術を行う際の皮膚切開図（別冊No.14）を別に示す。<br>矢印で示す切開法を選択する理由はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107C105_1.png" alt="別冊No.14">
+        </div>
+        <div class="choices">
+          a 術野の確保<br>
+          b 浮腫の予防<br>
+          c 関節包の保護<br>
+          d Frey症候群の予防<br>
+          e 顔面神経損傷の回避
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】顎関節の外科手術における皮膚切開（耳前側頭部切開：Al-Kayat-Bramley法など）は、十分な<span class="key">術野の確保</span>と<span class="key">顔面神経損傷の回避</span>を目的とする。顔面神経側頭枝は耳前部を走行するため、その走行を避けた切開線が選択される。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

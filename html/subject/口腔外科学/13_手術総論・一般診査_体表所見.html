@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>体表所見 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>体表所見</h1>
+    <div class="container">
+
+      <h2>全身診察で観察する体表所見</h2>
+      <p>口腔外科領域の診察では、局所の観察に入る前に全身の体表所見を系統的に観察する。体格、栄養状態、皮膚・毛髪の状態、顔色、チアノーゼの有無、意識状態などを確認し、全身状態を把握する。</p>
+
+      <h3>臓器系統別の観察ポイント</h3>
+      <table>
+        <tr><th>系統</th><th>主な体表所見</th></tr>
+        <tr><td><span class="key">心臓系</span></td><td>顔色、チアノーゼ、浮腫、ばち指、頸静脈怒張、脈拍・血圧異常</td></tr>
+        <tr><td><span class="key">腎・肝系</span></td><td>浮腫、皮膚色変化（黄疸）、くも状血管腫、手掌紅斑、腹水</td></tr>
+        <tr><td><span class="key">呼吸器系</span></td><td>チアノーゼ、ばち指、呼吸パターン異常</td></tr>
+        <tr><td><span class="key">内分泌系</span></td><td>特徴的顔貌、皮膚変化、体型変化</td></tr>
+        <tr><td><span class="key">血液系</span></td><td>紫斑、点状出血、蒼白（貧血）、歯肉出血</td></tr>
+      </table>
+
+      <h2>チアノーゼ</h2>
+      <p>皮膚や粘膜が紫青色〜暗赤色を呈する状態。毛細血管レベルで<span class="highlight">還元ヘモグロビンが5g/dL以上</span>になると出現する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">チアノーゼの注意点</div>
+        <ul>
+          <li><span class="caution">高度貧血ではチアノーゼが出現しにくい</span>（Hb総量が少なく還元Hbが5g/dLに達しない）</li>
+          <li>逆に多血症ではチアノーゼが出やすい</li>
+        </ul>
+      </div>
+
+      <h3>中心性チアノーゼ vs 末梢性チアノーゼ</h3>
+      <table>
+        <tr><th></th><th>中心性チアノーゼ</th><th>末梢性チアノーゼ</th></tr>
+        <tr><td><span class="key">機序</span></td><td>動脈血の酸素飽和度低下</td><td>末梢での酸素消費亢進・循環不全</td></tr>
+        <tr><td><span class="key">出現部位</span></td><td>全身の皮膚・粘膜（<span class="highlight">舌・口腔粘膜にも出現</span>）</td><td>四肢末梢に限局（<span class="caution">舌・口腔粘膜には出現しない</span>）</td></tr>
+        <tr><td><span class="key">皮膚温</span></td><td>温かい</td><td>冷たい</td></tr>
+        <tr><td><span class="key">原因</span></td><td>肺疾患、チアノーゼ性先天性心疾患</td><td>心不全、ショック、寒冷曝露</td></tr>
+      </table>
+      <p class="note">鑑別のポイント：舌・口腔粘膜にチアノーゼがあれば中心性、なければ末梢性。</p>
+
+      <h3>チアノーゼの観察部位</h3>
+      <p><span class="highlight">口唇、爪床</span>、耳朶、鼻尖、頬部、手指末端で確認する。口唇と爪床は毛細血管が豊富で皮膚が薄いため、チアノーゼを確認しやすい。</p>
+
+      <div class="question-box">
+        <div class="q-number">116A43</div>
+        <p>チアノーゼを確認するために観察する部位はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116A43_1.png" alt="116A43">
+        </div>
+        <div class="choices">
+          a 額<br>
+          b 眼　球<br>
+          c 口　唇<br>
+          d 耳　介<br>
+          e 爪　床
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】チアノーゼは毛細血管が豊富で皮膚・粘膜が薄い部位で確認する。口唇と爪床が代表的な観察部位である。額は皮膚が厚く不適。眼球（眼球結膜）は黄疸の観察部位。耳介は末梢性チアノーゼで変化しうるが、確認部位としては口唇・爪床が優先される。</p>
+      </div>
+
+      <h3>チアノーゼの原因疾患</h3>
+      <table>
+        <tr><th>分類</th><th>代表的疾患</th></tr>
+        <tr><td><span class="key">中心性（肺疾患）</span></td><td>COPD、肺炎、肺水腫、肺塞栓症</td></tr>
+        <tr><td><span class="key">中心性（心疾患）</span></td><td>Fallot四徴症（最多）、完全大血管転位症、三尖弁閉鎖症</td></tr>
+        <tr><td><span class="key">末梢性</span></td><td>心不全、ショック、末梢動脈疾患、Raynaud現象</td></tr>
+      </table>
+
+      <h2>黄疸</h2>
+      <p>血清ビリルビンの上昇により皮膚・粘膜が黄色く染まる状態。<span class="highlight">ビリルビン2〜3mg/dL以上</span>で肉眼的に確認できる（顕性黄疸）。</p>
+      <p><span class="highlight">眼球結膜（強膜）が最も早く黄染を確認できる</span>部位である。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">黄疸 vs カロテン血症の鑑別</div>
+        <ul>
+          <li>黄疸：眼球結膜が黄染する</li>
+          <li><span class="caution">カロテン血症（柑皮症）：眼球結膜は黄染しない</span>（手掌・足底が黄染）</li>
+        </ul>
+      </div>
+
+      <h3>黄疸の分類</h3>
+      <table>
+        <tr><th>分類</th><th>機序</th><th>優位なビリルビン</th><th>便の色</th><th>代表疾患</th></tr>
+        <tr><td><span class="key">溶血性（肝前性）</span></td><td>赤血球の過剰破壊</td><td>間接型</td><td>濃色</td><td>溶血性貧血、新生児黄疸</td></tr>
+        <tr><td><span class="key">肝細胞性（肝性）</span></td><td>肝細胞の障害</td><td>混合型</td><td>やや淡色</td><td>急性肝炎、肝硬変</td></tr>
+        <tr><td><span class="key">閉塞性（肝後性）</span></td><td>胆汁流出路の閉塞</td><td>直接型</td><td><span class="caution">灰白色（白色便）</span></td><td>胆管結石、膵頭部癌</td></tr>
+      </table>
+      <p class="note">歯科的注意：閉塞性黄疸ではビタミンK吸収障害により出血傾向が生じる。</p>
+
+      <h2>浮腫</h2>
+
+      <h3>圧痕性浮腫 vs 非圧痕性浮腫</h3>
+      <table>
+        <tr><th></th><th>圧痕性（pitting）</th><th>非圧痕性（non-pitting）</th></tr>
+        <tr><td><span class="key">定義</span></td><td>指で圧迫すると圧痕が残る</td><td>圧迫しても圧痕が残らない</td></tr>
+        <tr><td><span class="key">機序</span></td><td>水分・Na貯留による間質液増加</td><td>ムコ多糖類・蛋白質の間質への沈着</td></tr>
+        <tr><td><span class="key">原因</span></td><td>心不全、腎不全、肝硬変、低アルブミン血症</td><td><span class="highlight">甲状腺機能低下症（粘液水腫）</span>、リンパ浮腫</td></tr>
+      </table>
+
+      <h3>全身性浮腫の原因鑑別</h3>
+      <table>
+        <tr><th>原因</th><th>浮腫の特徴</th><th>随伴所見</th></tr>
+        <tr><td><span class="key">心臓性</span></td><td>下肢優位（重力依存性）、夕方に増悪</td><td>頸静脈怒張、肝腫大</td></tr>
+        <tr><td><span class="key">腎臓性</span></td><td>眼瞼浮腫（朝に目立つ）、全身性</td><td>蛋白尿、血尿</td></tr>
+        <tr><td><span class="key">肝臓性</span></td><td>腹水を伴う、下肢浮腫</td><td>黄疸、くも状血管腫</td></tr>
+      </table>
+
+      <h2>その他の重要な体表所見</h2>
+
+      <h3>ばち指</h3>
+      <p>手指・足趾の末節が太鼓のばちのように膨隆した状態。爪の付け根の角度（Lovibond角）が正常では160度以下だが、ばち指では<span class="highlight">180度以上</span>になる。</p>
+      <ul>
+        <li><span class="key">Schamrothの窓テスト</span>：両手の同じ指の爪を背中合わせにし、正常ではダイヤモンド型の隙間ができるが、ばち指では消失</li>
+        <li>最多原因：<span class="key">肺癌</span></li>
+        <li>その他：チアノーゼ性先天性心疾患、感染性心内膜炎、肝硬変、間質性肺炎</li>
+      </ul>
+
+      <h3>くも状血管腫・手掌紅斑</h3>
+      <p>いずれも<span class="key">肝硬変</span>に特徴的な体表所見。肝臓でのエストロゲン代謝（不活化）が低下し、血中エストロゲン濃度が上昇して細動脈が拡張する。</p>
+      <ul>
+        <li><span class="key">くも状血管腫</span>：中心点から放射状に毛細血管が拡張。顔面・頸部・前胸部に好発</li>
+        <li><span class="key">手掌紅斑</span>：母指球・小指球の発赤</li>
+      </ul>
+
+      <h3>紫斑のサイズ分類</h3>
+      <table>
+        <tr><th>名称</th><th>サイズ</th><th>示唆する病態</th></tr>
+        <tr><td><span class="key">点状出血（petechiae）</span></td><td>直径2mm以下</td><td>血小板異常（ITP、白血病、DIC）</td></tr>
+        <tr><td><span class="key">紫斑（purpura）</span></td><td>数mm〜1cm</td><td>血管壁異常（Henoch-Schönlein紫斑病）</td></tr>
+        <tr><td><span class="key">斑状出血（ecchymosis）</span></td><td>数cm以内</td><td>凝固因子異常（血友病）</td></tr>
+      </table>
+      <p class="note">紫斑は硝子圧法で消退しない（充血による紅斑との鑑別点）。</p>
+
+      <h2>特徴的顔貌</h2>
+
+      <h3>疾患と顔貌の対応</h3>
+      <table>
+        <tr><th>顔貌</th><th>疾患</th><th>特徴</th></tr>
+        <tr><td><span class="key">満月様顔貌</span></td><td>Cushing症候群、ステロイド長期投与</td><td>顔面に脂肪沈着、丸く赤みを帯びる。野牛肩、中心性肥満を伴う</td></tr>
+        <tr><td><span class="key">粘液水腫様顔貌</span></td><td>甲状腺機能低下症（橋本病）</td><td>顔全体のむくみ、眼瞼腫脹、無気力な表情。巨舌、嗄声、眉毛外側1/3脱落</td></tr>
+        <tr><td><span class="key">仮面様顔貌</span></td><td>Parkinson病</td><td>無表情、瞬きが少ない。安静時振戦、筋固縮、無動を伴う</td></tr>
+        <tr><td><span class="key">アデノイド顔貌</span></td><td>咽頭扁桃肥大</td><td>口唇閉鎖不全、面長、V字型歯列弓、上顎前突。口呼吸の常態化</td></tr>
+        <tr><td><span class="key">先端巨大症様顔貌</span></td><td>成長ホルモン過剰</td><td>下顎前突、巨舌、鼻・口唇の肥大、眉弓突出</td></tr>
+        <tr><td><span class="key">蝶形紅斑</span></td><td>SLE</td><td>両頬〜鼻背にかけての蝶型の紅斑</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">体表所見と観察部位の対応（まとめ）</div>
+        <ul>
+          <li>チアノーゼ → <span class="key">口唇・爪床</span></li>
+          <li>黄疸 → <span class="key">眼球結膜（強膜）</span></li>
+          <li>貧血 → <span class="key">眼瞼結膜・爪床</span></li>
+          <li>浮腫 → <span class="key">下腿前面（脛骨前面）・眼瞼</span></li>
+          <li>脱水 → <span class="key">皮膚のツルゴール（張り）低下、舌の乾燥</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

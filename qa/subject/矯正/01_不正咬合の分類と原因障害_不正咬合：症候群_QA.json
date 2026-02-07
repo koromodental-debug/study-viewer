@@ -129,27 +129,99 @@
       "section": "過去問",
       "qa": [
         {
-          "question": "[102B103] ★★★\n上顎の劣成長がみられる症候群は？（2つ）",
-          "answer": "Apert症候群、Crouzon症候群\n\n[他の選択肢との違い]\n- Apert症候群: 頭蓋骨縫合早期癒合症、上顎劣成長 ← 正解\n- Crouzon症候群: 頭蓋骨縫合早期癒合症、上顎劣成長 ← 正解\n- Pierre Robin症候群: 下顎劣成長\n- Treacher-Collins症候群: 下顎劣成長\n- McCune-Albright症候群: 線維性骨異形成症\n\n[ポイント]\nApert・Crouzon = 頭蓋骨縫合早期癒合症 = 上顎劣成長\nPierre Robin・Treacher Collins = 下顎劣成長"
+          "question": "上顎の劣成長がみられる症候群は？（2つ）",
+          "answer": "A, B",
+          "choices": {
+            "a": "Apert症候群",
+            "b": "Crouzon症候群",
+            "c": "Pierre Robin症候群",
+            "d": "Treacher-Collins症候群",
+            "e": "McCune-Albright症候群"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "102B103",
+          "choiceExplanations": {
+            "a": "頭蓋骨縫合早期癒合症、上顎劣成長 ← 正解",
+            "b": "頭蓋骨縫合早期癒合症、上顎劣成長 ← 正解",
+            "c": "下顎劣成長",
+            "d": "下顎劣成長",
+            "e": "線維性骨異形成症"
+          },
+          "point": "Apert・Crouzon = 頭蓋骨縫合早期癒合症 = 上顎劣成長\nPierre Robin・Treacher Collins = 下顎劣成長"
         },
         {
-          "question": "[113A73] ★★★\n反対咬合を特徴とする疾患は？（2つ）",
-          "answer": "唇顎口蓋裂、Crouzon症候群\n\n[他の選択肢との違い]\n- 唇顎口蓋裂: 上顎劣成長→反対咬合 ← 正解\n- Crouzon症候群: 上顎劣成長→反対咬合 ← 正解\n- Goldenhar症候群: 顔面非対称、交叉咬合\n- Robinシークエンス: 下顎劣成長→上顎前突 ← ひっかけ\n- Treacher Collins症候群: 下顎劣成長→上顎前突\n\n[ポイント]\n反対咬合 = 上顎劣成長\nRobin・Treacher Collinsは下顎劣成長なので反対咬合ではない！"
+          "question": "反対咬合を特徴とする疾患は？（2つ）",
+          "answer": "A, B",
+          "choices": {
+            "a": "唇顎口蓋裂",
+            "b": "Crouzon症候群",
+            "c": "Goldenhar症候群",
+            "d": "Robinシークエンス",
+            "e": "Treacher Collins症候群"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "113A73",
+          "choiceExplanations": {
+            "a": "上顎劣成長→反対咬合 ← 正解",
+            "b": "上顎劣成長→反対咬合 ← 正解",
+            "c": "顔面非対称、交叉咬合",
+            "d": "下顎劣成長→上顎前突 ← ひっかけ",
+            "e": "下顎劣成長→上顎前突"
+          },
+          "point": "反対咬合 = 上顎劣成長\nRobin・Treacher Collinsは下顎劣成長なので反対咬合ではない！"
         },
         {
-          "question": "[115A76] ★★★\n骨格性Ⅱ級を示す症候群は？",
-          "answer": "Robin シークエンス\n\n[他の選択肢との違い]\n- 唇顎口蓋裂: 骨格性Ⅲ級（反対咬合）\n- Apert症候群: 骨格性Ⅲ級（反対咬合）\n- Crouzon症候群: 骨格性Ⅲ級（反対咬合）\n- Robinシークエンス: 骨格性Ⅱ級（上顎前突） ← 正解\n- Beckwith-Wiedemann症候群: 開咬\n\n[ポイント]\n骨格性Ⅱ級 = 下顎劣成長 = Robin シークエンス、Treacher Collins\n他の多くの症候群は上顎劣成長で骨格性Ⅲ級"
+          "question": "骨格性Ⅱ級を示す症候群は？",
+          "answer": "D",
+          "choices": {
+            "a": "唇顎口蓋裂",
+            "b": "Apert症候群",
+            "c": "Crouzon症候群",
+            "d": "Robinシークエンス",
+            "e": "Beckwith-Wiedemann症候群"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "115A76",
+          "choiceExplanations": {
+            "a": "骨格性Ⅲ級（反対咬合）",
+            "b": "骨格性Ⅲ級（反対咬合）",
+            "c": "骨格性Ⅲ級（反対咬合）",
+            "d": "骨格性Ⅱ級（上顎前突） ← 正解",
+            "e": "開咬"
+          },
+          "point": "骨格性Ⅱ級 = 下顎劣成長 = Robin シークエンス、Treacher Collins\n他の多くの症候群は上顎劣成長で骨格性Ⅲ級"
         },
         {
-          "question": "[104C90] ★★\n口唇・口蓋裂と正しく組合せられる不正咬合は？",
-          "answer": "反対咬合\n\n[他の選択肢との違い]\n- 口唇・口蓋裂→反対咬合: 上顎劣成長による ← 正解\n- Crouzon症候群→上顎前突: 反対咬合が正しい\n- 鎖骨頭蓋骨異形成症→上顎前突: 反対咬合が正しい\n- Pierre Robin症候群→反対咬合: 上顎前突が正しい\n- Treacher Collins症候群→上顎前突: 正しい ← 正解\n\n[ポイント]\n上顎劣成長（Crouzon、口蓋裂など）→ 反対咬合\n下顎劣成長（Robin、Treacher Collins）→ 上顎前突"
+          "question": "口唇・口蓋裂と正しく組合せられる不正咬合は？",
+          "answer": "A, E",
+          "choices": {
+            "a": "口唇・口蓋裂→反対咬合",
+            "b": "Crouzon症候群→上顎前突",
+            "c": "鎖骨頭蓋骨異形成症→上顎前突",
+            "d": "Pierre Robin症候群→反対咬合",
+            "e": "Treacher Collins症候群→上顎前突"
+          },
+          "correctAnswer": "A, E",
+          "numChoices": 2,
+          "code": "104C90",
+          "choiceExplanations": {
+            "a": "上顎劣成長による ← 正解",
+            "b": "反対咬合が正しい",
+            "c": "反対咬合が正しい",
+            "d": "上顎前突が正しい",
+            "e": "正しい ← 正解"
+          },
+          "point": "上顎劣成長（Crouzon、口蓋裂など）→ 反対咬合\n下顎劣成長（Robin、Treacher Collins）→ 上顎前突"
         },
         {
-          "question": "[107D34] ★（図あり）\n眼球突出、中顔面陥凹、反対咬合を示す症候群は？",
+          "question": "（図あり）\n眼球突出、中顔面陥凹、反対咬合を示す症候群は？",
           "answer": "Crouzon症候群\n\n[ポイント]\n眼球突出 + 上顎劣成長 + 反対咬合 = Crouzon症候群"
         },
         {
-          "question": "[115D58] ★（図あり）\n片側性顔面短小、下顎偏位、顔面非対称を示す症候群は？",
+          "question": "（図あり）\n片側性顔面短小、下顎偏位、顔面非対称を示す症候群は？",
           "answer": "第一第二鰓弓症候群（Goldenhar症候群）\n\n[ポイント]\n片側性の顔面非対称 = Goldenhar症候群（第一第二鰓弓症候群）"
         }
       ]

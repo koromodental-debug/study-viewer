@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>心理テスト - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>心理テスト</h1>
+    <div class="container">
+
+      <!-- ========== 認知機能評価 ========== -->
+      <h2>認知機能評価スケール</h2>
+      <p>認知機能の評価法は<span class="highlight">質問式（被検者に質問・課題を行わせる）</span>と<span class="highlight">観察式（医療者・家族が観察で評価）</span>に大別される。</p>
+
+      <h3>質問式（対面式）</h3>
+      <table>
+        <tr><th>スケール</th><th>概要</th><th>カットオフ</th><th>特徴</th></tr>
+        <tr><td><span class="key">HDS-R</span></td><td>9項目・30点満点</td><td><span class="highlight">20点以下</span>→認知症疑い</td><td>言語性課題のみ（図形模写・書字なし）</td></tr>
+        <tr><td><span class="key">MMSE</span></td><td>11項目・30点満点</td><td><span class="highlight">23点以下</span>→認知症疑い</td><td><span class="caution">動作性課題あり</span>（図形模写・書字・口頭命令）</td></tr>
+        <tr><td><span class="key">TMT</span></td><td>Part A / Part B</td><td>所要時間で評価</td><td>注意機能・遂行機能の評価</td></tr>
+        <tr><td><span class="key">MoCA-J</span></td><td>8項目・30点満点</td><td>25点以下→MCI疑い</td><td>軽度認知障害（MCI）のスクリーニングに特化</td></tr>
+      </table>
+
+      <h3>観察式</h3>
+      <table>
+        <tr><th>スケール</th><th>概要</th><th>評価者</th><th>特徴</th></tr>
+        <tr><td><span class="key">CDR</span></td><td>6領域・5段階（0〜3）</td><td>医師</td><td>面接+家族情報に基づく<span class="highlight">観察評価</span></td></tr>
+        <tr><td><span class="key">FAST</span></td><td>7段階（1〜7）</td><td>医療者</td><td><span class="highlight">ADLの障害度を観察</span>。アルツハイマー型に特化</td></tr>
+        <tr><td><span class="key">DBD</span></td><td>28項目（短縮版13項目）</td><td>介護者・家族</td><td>BPSD（行動・心理症状）の観察評価</td></tr>
+        <tr><td><span class="key">NMスケール</span></td><td>5項目・50点満点</td><td>家族・施設職員</td><td>行動観察のみ。直接質問しない</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">質問式 vs 観察式の核心</div>
+        <ul>
+          <li><span class="key">質問式</span>：被検者本人に質問・課題を実施 → HDS-R, MMSE, TMT, MoCA</li>
+          <li><span class="key">観察式</span>：医療者・家族が日常の様子を観察して評価 → <span class="highlight">CDR, FAST</span>, DBD, NMスケール</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113B61</div>
+        <p>観察による認知機能の評価法はどれか。2つ選べ。</p>
+        <div class="choices">
+          a Trail Making Test〈TMT〉<br>
+          b Clinical Dementia Rating〈CDR〉<br>
+          c Functional Assessment Staging〈FAST〉<br>
+          d Mini-Mental State Examination〈MMSE〉<br>
+          e 改訂長谷川式簡易知能評価スケール〈HDS-R〉
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】CDRは6領域を面接・観察で評価する5段階スケール。FASTはADLの障害度を観察で7段階評価する。TMT・MMSE・HDS-Rは被検者本人に質問・課題を行わせる質問式。</p>
+      </div>
+
+      <!-- ========== HDS-R vs MMSE ========== -->
+      <h3>HDS-R vs MMSE の違い</h3>
+      <table>
+        <tr><th></th><th>HDS-R</th><th>MMSE</th></tr>
+        <tr><td><span class="key">カットオフ</span></td><td>20点以下</td><td>23点以下</td></tr>
+        <tr><td><span class="key">動作性課題</span></td><td><span class="caution">なし</span></td><td>あり（図形模写・書字・口頭命令）</td></tr>
+        <tr><td><span class="key">使用範囲</span></td><td>日本中心</td><td>世界標準</td></tr>
+        <tr><td><span class="key">遅延再生</span></td><td>6点（配点大）</td><td>3点</td></tr>
+      </table>
+      <p class="note">HDS-Rは言語性のみのため、視力障害や運動障害のある患者にも適用しやすい。MMSEは動作性課題を含むため、より幅広い認知機能を評価できる。</p>
+
+      <!-- ========== CDR / FAST ========== -->
+      <h3>CDRの段階</h3>
+      <table>
+        <tr><th>CDRスコア</th><th>重症度</th></tr>
+        <tr><td>CDR 0</td><td>健康（認知症なし）</td></tr>
+        <tr><td>CDR 0.5</td><td>認知症の疑い</td></tr>
+        <tr><td>CDR 1</td><td>軽度認知症</td></tr>
+        <tr><td>CDR 2</td><td>中等度認知症</td></tr>
+        <tr><td>CDR 3</td><td>重度認知症</td></tr>
+      </table>
+
+      <h3>FASTのステージ</h3>
+      <table>
+        <tr><th>ステージ</th><th>状態</th><th>主な特徴</th></tr>
+        <tr><td>1〜2</td><td>正常〜年齢相応</td><td>主観的機能低下のみ</td></tr>
+        <tr><td>3</td><td>境界状態</td><td>熟練を要する仕事で低下。MCI相当</td></tr>
+        <tr><td>4</td><td>軽度AD</td><td>買い物・金銭管理の障害</td></tr>
+        <tr><td>5</td><td>中等度AD</td><td>適切な衣服選択に介助。<span class="caution">独居困難</span></td></tr>
+        <tr><td>6</td><td>やや重度AD</td><td>着衣・入浴・排泄に介助が必要</td></tr>
+        <tr><td>7</td><td>重度AD</td><td>語彙6語以下、歩行・嚥下困難</td></tr>
+      </table>
+
+      <!-- ========== TMT ========== -->
+      <h3>TMT（トレイルメイキングテスト）</h3>
+      <table>
+        <tr><th></th><th>Part A</th><th>Part B</th></tr>
+        <tr><td><span class="key">課題</span></td><td>1〜25の数字を順に結ぶ</td><td>数字とひらがなを交互に結ぶ（1→あ→2→い…）</td></tr>
+        <tr><td><span class="key">評価機能</span></td><td>視覚探索・処理速度</td><td><span class="highlight">注意の切り替え・遂行機能</span>（前頭葉機能）</td></tr>
+      </table>
+      <p class="note">Part Bの方がより高次の認知機能を評価。Part B−Part Aの時間差が大きいほど遂行機能障害を示唆。</p>
+
+      <!-- ========== うつ病評価 ========== -->
+      <h2>うつ病の評価スケール</h2>
+
+      <h3>自己評価式 vs 他者評価式</h3>
+      <table>
+        <tr><th>スケール</th><th>評価者</th><th>対象</th><th>項目数</th><th>カットオフ</th><th>特徴</th></tr>
+        <tr><td><span class="key">GDS-15</span></td><td>自己</td><td><span class="highlight">高齢者</span></td><td>15項目</td><td>5点以上→うつ傾向</td><td>はい/いいえの2択。<span class="caution">身体症状を含まない</span></td></tr>
+        <tr><td><span class="key">SDS</span></td><td>自己</td><td>一般</td><td>20項目</td><td>40点以上</td><td>4段階評価。広く使用</td></tr>
+        <tr><td><span class="key">PHQ-9</span></td><td>自己</td><td>一般</td><td>9項目</td><td>10点以上</td><td>DSM基準対応。簡便で高精度</td></tr>
+        <tr><td><span class="key">SRQ-D</span></td><td>自己</td><td>一般</td><td>18項目</td><td>16点以上</td><td><span class="highlight">仮面うつ病</span>のスクリーニング</td></tr>
+        <tr><td><span class="key">HAM-D</span></td><td><span class="highlight">医師</span></td><td>一般</td><td>17項目</td><td>8点以上→軽度</td><td><span class="highlight">唯一の他者評価式</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">うつ病評価のポイント</div>
+        <ul>
+          <li>GDS：<span class="key">高齢者専用</span>。身体症状を含まない（高齢者は身体疾患が多いため）</li>
+          <li>HAM-D：うつ病評価で<span class="highlight">唯一の医師（他者）評価式</span></li>
+          <li>SRQ-D：身体症状が前面に出る<span class="key">仮面うつ病</span>の検出に特化</li>
+        </ul>
+      </div>
+
+      <!-- ========== 不安・恐怖 ========== -->
+      <h2>不安・恐怖の評価</h2>
+
+      <h3>不安評価スケール</h3>
+      <table>
+        <tr><th>スケール</th><th>概要</th><th>特徴</th></tr>
+        <tr><td><span class="key">STAI</span></td><td>40項目（状態不安20 + 特性不安20）</td><td><span class="highlight">状態不安</span>：今この瞬間の不安 / <span class="highlight">特性不安</span>：普段からの不安傾向</td></tr>
+        <tr><td><span class="key">DAS</span></td><td>4項目（4〜20点）</td><td><span class="highlight">歯科不安に特化</span>。15点以上→歯科恐怖症レベル</td></tr>
+        <tr><td><span class="key">VAS</span></td><td>100mmの直線上に印</td><td>疼痛・不安の主観的評価。最も簡便</td></tr>
+      </table>
+      <p class="note">STAIの状態不安は治療前後で変動するが、特性不安は比較的安定（パーソナリティ特性）。</p>
+
+      <!-- ========== 心因性疼痛 ========== -->
+      <h2>心因性疼痛に関連するテスト</h2>
+
+      <h3>口腔心身症のスクリーニング</h3>
+      <table>
+        <tr><th>テスト</th><th>概要</th><th>特徴</th></tr>
+        <tr><td><span class="key">CMI</span></td><td>約211項目。身体的12区分＋精神的6区分</td><td>身体と精神の<span class="highlight">両方を包括的に評価</span>。領域I〜IVで神経症傾向を判定</td></tr>
+        <tr><td><span class="key">SRQ-D</span></td><td>18項目（実質12項目）</td><td>仮面うつ病のスクリーニング</td></tr>
+        <tr><td><span class="key">POMS</span></td><td>6つの気分尺度</td><td>緊張-不安、抑うつ、怒り-敵意、活気、疲労、混乱を同時評価</td></tr>
+      </table>
+
+      <h3>POMSの6尺度</h3>
+      <table>
+        <tr><th>尺度</th><th>内容</th><th>方向</th></tr>
+        <tr><td>T-A（緊張-不安）</td><td>緊張感や不安の強さ</td><td>ネガティブ</td></tr>
+        <tr><td>D（抑うつ-落込み）</td><td>自信喪失を伴う抑うつ</td><td>ネガティブ</td></tr>
+        <tr><td>A-H（怒り-敵意）</td><td>不機嫌やイライラ</td><td>ネガティブ</td></tr>
+        <tr><td><span class="highlight">V（活気）</span></td><td>元気さ、躍動感</td><td><span class="highlight">唯一のポジティブ</span></td></tr>
+        <tr><td>F（疲労）</td><td>意欲減退、疲労感</td><td>ネガティブ</td></tr>
+        <tr><td>C（混乱）</td><td>思考力低下、当惑</td><td>ネガティブ</td></tr>
+      </table>
+      <p class="note">TMD（総合気分障害）=（T-A + D + A-H + F + C）− V。V（活気）のみポジティブ。</p>
+
+      <!-- ========== まとめ ========== -->
+      <div class="point-box">
+        <div class="point-box-title">カットオフ値の整理</div>
+        <ul>
+          <li>HDS-R：<span class="highlight">20点以下</span>→認知症疑い</li>
+          <li>MMSE：<span class="highlight">23点以下</span>→認知症疑い</li>
+          <li>MoCA-J：25点以下→MCI疑い</li>
+          <li>GDS-15：5点以上→うつ傾向</li>
+          <li>SDS：40点以上→うつの可能性</li>
+          <li>DAS：15点以上→歯科恐怖症レベル</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

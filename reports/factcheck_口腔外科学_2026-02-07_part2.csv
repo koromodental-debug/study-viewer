@@ -1,0 +1,4 @@
+ファイル名,検証項目,現在の記述,判定,問題点,正しい情報,情報源,修正提案
+10_腫瘍および類似疾患_上皮性悪性腫瘍：TNM分類.html,TNM表記の誤記,"a T1N1MO / c T2NOMO / d T2N1MO",NG,"M0が英字Oに誤記されており学習時に混乱を招く。","TNMは0（ゼロ）で表記（M0, N0M0）。",https://www.uicc.org/resources/tnm ; https://pubmed.ncbi.nlm.nih.gov/29675646/,M0/N0M0へ修正（実施済み）
+05_感染症_ウイルス感染症.html,HIV感染の自然歴の固定割合,"感染から5年で15%、10年で約50%がAIDSに進行",要確認,"未治療時代の古い推定に依存しやすく、ART普及後の実臨床ではそのまま適用困難。","未治療で進行し得ることと、ARTでAIDS発症が大幅に抑制される点を併記する。",https://www.cdc.gov/hivnexus/hcp/diagnosis-staging/index.html ; https://www.who.int/teams/global-hiv-hepatitis-and-stis-programmes/hiv/treatment,固定割合を削除し現行診療に合わせた表現へ修正（実施済み）
+04_炎症・アレルギー性疾患_BRONJ・ARONJ.html,MRONJ病期体系の網羅,"At risk / Stage 0 を追加済み",OK,AAOMS病期体系と整合,現状維持,https://aaoms.org/wp-content/uploads/2024/03/mronj_position_paper.pdf,変更不要

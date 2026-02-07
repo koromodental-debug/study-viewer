@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>全身疾患の病態 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 全身疾患</span>
+    <h1>全身疾患の病態</h1>
+    <div class="container">
+
+      <!-- ===== SIRS ===== -->
+      <h2>1. SIRS（全身性炎症反応症候群）</h2>
+
+      <p><span class="key">SIRS（Systemic Inflammatory Response Syndrome）</span>とは、感染・外傷・熱傷・手術などの侵襲に対して、<span class="highlight">炎症性サイトカイン</span>が過剰に産生されることで引き起こされる全身的な炎症反応である。</p>
+
+      <h3>診断基準（4項目中2項目以上で診断）</h3>
+      <table>
+        <tr><th>項目</th><th>基準値</th></tr>
+        <tr><td><span class="key">体温</span></td><td>&gt;38℃ または &lt;36℃</td></tr>
+        <tr><td><span class="key">心拍数</span></td><td>&gt;90回/分</td></tr>
+        <tr><td><span class="key">呼吸数</span></td><td>&gt;20回/分 または PaCO₂ &lt;32mmHg</td></tr>
+        <tr><td><span class="key">白血球数</span></td><td>&gt;12,000/mm³ または &lt;4,000/mm³ または 幼若球&gt;10%</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">出題のポイント</div>
+        <ul>
+          <li><span class="caution">血圧はSIRSの診断基準に含まれない</span>（113D81で出題）</li>
+          <li>SIRSの症候を引き起こすのは<span class="highlight">サイトカイン</span>（IL-1, IL-6, TNF-αなど）</li>
+          <li>抗体・補体・ケトン体・クレアチニンはSIRSの直接的な原因ではない</li>
+        </ul>
+      </div>
+
+      <h3>病態メカニズム</h3>
+      <p>侵襲を受けると、免疫担当細胞（マクロファージなど）から<span class="key">炎症性サイトカイン</span>（IL-1, IL-6, TNF-αなど）が大量に産生される。これにより好中球の活性化、血管透過性亢進、凝固系の活性化が生じ、発熱・頻脈・頻呼吸・白血球数異常といった全身症状が出現する。</p>
+
+      <h3>SIRSから敗血症への進展</h3>
+      <table>
+        <tr><th>病態</th><th>定義</th></tr>
+        <tr><td><span class="key">SIRS</span></td><td>4項目中2項目以上を満たす全身性炎症反応</td></tr>
+        <tr><td><span class="key">敗血症（sepsis）</span></td><td>SIRS＋感染症</td></tr>
+        <tr><td><span class="key">重症敗血症</span></td><td>敗血症＋臓器障害</td></tr>
+        <tr><td><span class="key">敗血症性ショック</span></td><td>重症敗血症＋十分な輸液でも持続する低血圧</td></tr>
+      </table>
+      <p class="note">※Sepsis-3（2016年）では、敗血症を「感染に対する制御不十分な生体反応に起因する臓器障害」と再定義し、SOFAスコア2点以上の上昇で診断する。</p>
+
+      <h3>過去問</h3>
+
+      <div class="question-box">
+        <div class="q-number">109A73</div>
+        <p>全身性炎症反応症候群でみられる症候を引き起こすのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 抗　体<br>
+          b 補　体<br>
+          c ケトン体<br>
+          d クレアチニン<br>
+          e サイトカイン
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】SIRSは侵襲に対して炎症性サイトカイン（IL-1, IL-6, TNF-αなど）が過剰に産生されることで全身炎症反応が生じる病態である。抗体（a）は液性免疫に関与、補体（b）は自然免疫に関与するが、SIRSの直接的な原因ではない。ケトン体（c）は糖尿病性ケトアシドーシス、クレアチニン（d）は腎機能の指標であり、いずれもSIRSとは無関係。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D81</div>
+        <p>全身性炎症反応症候群の診断基準項目はどれか。4つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D81_1.png" alt="113D81">
+        </div>
+        <div class="choices">
+          a 血　圧<br>
+          b 体　温<br>
+          c 呼吸数<br>
+          d 心拍数<br>
+          e 白血球数
+        </div>
+        <div class="answer">正解：b, c, d, e</div>
+        <p>【解説】SIRSの診断基準は①体温、②心拍数、③呼吸数（またはPaCO₂）、④白血球数の4項目で、このうち2項目以上を満たすとSIRSと診断される。血圧（a）はSIRSの診断基準に含まれない。血圧低下は敗血症性ショックの判定に用いられる指標である。</p>
+      </div>
+
+      <!-- ===== 廃用症候群 ===== -->
+      <h2>2. 廃用症候群</h2>
+
+      <p><span class="key">廃用症候群（disuse syndrome）</span>とは、長期臥床や不動状態の持続により、身体の各器官・組織に生じる<span class="key">二次的障害</span>の総称である。高齢者の入院・手術後に特に生じやすい。</p>
+
+      <h3>主な症状</h3>
+      <table>
+        <tr><th>分類</th><th>症状</th></tr>
+        <tr><td><span class="key">運動器</span></td><td>筋萎縮、関節拘縮、骨粗鬆症</td></tr>
+        <tr><td><span class="key">循環器</span></td><td>起立性低血圧、深部静脈血栓症</td></tr>
+        <tr><td><span class="key">皮膚</span></td><td>褥瘡（じょくそう）</td></tr>
+        <tr><td><span class="key">呼吸器</span></td><td>沈下性肺炎、肺活量低下</td></tr>
+        <tr><td><span class="key">泌尿器</span></td><td>尿路感染症、尿路結石</td></tr>
+        <tr><td><span class="key">精神・神経</span></td><td>うつ状態、せん妄、見当識障害</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">鑑別のポイント</div>
+        <ul>
+          <li><span class="caution">筋固縮はパーキンソン病</span>の症状 → 廃用症候群ではない</li>
+          <li><span class="caution">常同運動は精神疾患</span>（統合失調症など）の症状 → 廃用症候群ではない</li>
+          <li>廃用症候群は「動かないことで起きる」障害 → 褥瘡・関節拘縮・起立性低血圧が典型</li>
+        </ul>
+      </div>
+
+      <h3>予防</h3>
+      <p>廃用症候群の予防には<span class="key">早期離床・早期リハビリテーション</span>が最も重要である。可能な限り早期からベッドアップ、関節可動域訓練、座位保持などを行い、不動状態の長期化を防ぐ。</p>
+
+      <h3>過去問</h3>
+
+      <div class="question-box">
+        <div class="q-number">112D29</div>
+        <p>廃用症候群でみられるのはどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D29_1.png" alt="112D29">
+        </div>
+        <div class="choices">
+          a 褥　瘡<br>
+          b 筋固縮<br>
+          c 関節拘縮<br>
+          d 常同運動<br>
+          e 起立性低血圧
+        </div>
+        <div class="answer">正解：a, c, e</div>
+        <p>【解説】廃用症候群は長期臥床により生じる二次的障害の総称である。褥瘡（a）は体圧による皮膚壊死、関節拘縮（c）は関節の不動による可動域制限、起立性低血圧（e）は循環調節機能の低下により生じる。筋固縮（b）はパーキンソン病の四大症状（振戦・固縮・無動・姿勢反射障害）の一つであり、廃用症候群の症状ではない。常同運動（d）は統合失調症などでみられる反復的な無目的運動であり、これも廃用症候群とは無関係。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -46,8 +46,26 @@
           "answer": "膣"
         },
         {
-          "question": "[113D28] ★★★\n皮膚の主要常在細菌は？",
-          "answer": "Staphylococcus属\n\n[他の選択肢との違い]\n- Clostridium属: 腸管に常在\n- Enterococcus属: 腸管に常在\n- Lactobacillus属: 膣・腸管に常在\n- Staphylococcus属: 皮膚の主要常在菌 ← 正解\n- Bifidobacterium属: 腸管に常在\n\n[ポイント]\n皮膚＝Staphylococcus。膣＝Lactobacillus。腸管＝Bacteroides、Bifidobacterium。"
+          "question": "皮膚の主要常在細菌は？",
+          "answer": "D",
+          "choices": {
+            "a": "Clostridium属",
+            "b": "Enterococcus属",
+            "c": "Lactobacillus属",
+            "d": "Staphylococcus属",
+            "e": "Bifidobacterium属"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "113D28",
+          "choiceExplanations": {
+            "a": "腸管に常在",
+            "b": "腸管に常在",
+            "c": "膣・腸管に常在",
+            "d": "皮膚の主要常在菌 ← 正解",
+            "e": "腸管に常在"
+          },
+          "point": "皮膚＝Staphylococcus。膣＝Lactobacillus。腸管＝Bacteroides、Bifidobacterium。"
         }
       ]
     },
@@ -87,8 +105,26 @@
           "answer": "S. sanguinis、S. gordonii（Mitis群）"
         },
         {
-          "question": "[116C83] ★★★\nヒトの舌背を主たる定着部位とするレンサ球菌は？",
-          "answer": "Streptococcus salivarius\n\n[他の選択肢との違い]\n- Streptococcus mutans: 歯面に定着、齲蝕原性菌\n- Streptococcus pyogenes: 咽頭の病原菌（化膿レンサ球菌）\n- Streptococcus sanguinis: 歯面の初期定着菌\n- Streptococcus salivarius: 舌背に定着、唾液中に最多 ← 正解\n- Streptococcus intermedius: 歯肉溝に定着\n\n[ポイント]\n舌背＝S. salivarius（Salivarius群）。歯面＝S. mutans、S. sanguinis。"
+          "question": "ヒトの舌背を主たる定着部位とするレンサ球菌は？",
+          "answer": "D",
+          "choices": {
+            "a": "Streptococcus mutans",
+            "b": "Streptococcus pyogenes",
+            "c": "Streptococcus sanguinis",
+            "d": "Streptococcus salivarius",
+            "e": "Streptococcus intermedius"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "116C83",
+          "choiceExplanations": {
+            "a": "歯面に定着、齲蝕原性菌",
+            "b": "咽頭の病原菌（化膿レンサ球菌）",
+            "c": "歯面の初期定着菌",
+            "d": "舌背に定着、唾液中に最多 ← 正解",
+            "e": "歯肉溝に定着"
+          },
+          "point": "舌背＝S. salivarius（Salivarius群）。歯面＝S. mutans、S. sanguinis。"
         }
       ]
     },
@@ -145,8 +181,26 @@
           "answer": "デーデルライン桿菌（Lactobacillus属）が乳酸を産生するため"
         },
         {
-          "question": "[112A21] ★★★\nデーデルライン桿菌が常在する部位は？",
-          "answer": "膣\n\n[他の選択肢との違い]\n- 胃: 強酸性で細菌はほとんど常在しない\n- 膣: デーデルライン桿菌（Lactobacillus属）が常在 ← 正解\n- 口腔: レンサ球菌が主要常在菌\n- 大腸: Bacteroides属、Bifidobacterium属が常在\n- 皮膚: Staphylococcus属が常在\n\n[ポイント]\nデーデルライン桿菌＝Lactobacillus属＝膣。乳酸産生→酸性環境→感染防御。"
+          "question": "デーデルライン桿菌が常在する部位は？",
+          "answer": "B",
+          "choices": {
+            "a": "胃",
+            "b": "膣",
+            "c": "口腔",
+            "d": "大腸",
+            "e": "皮膚"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "112A21",
+          "choiceExplanations": {
+            "a": "強酸性で細菌はほとんど常在しない",
+            "b": "デーデルライン桿菌（Lactobacillus属）が常在 ← 正解",
+            "c": "レンサ球菌が主要常在菌",
+            "d": "Bacteroides属、Bifidobacterium属が常在",
+            "e": "Staphylococcus属が常在"
+          },
+          "point": "デーデルライン桿菌＝Lactobacillus属＝膣。乳酸産生→酸性環境→感染防御。"
         }
       ]
     },
@@ -178,8 +232,26 @@
           "answer": "母乳栄養児"
         },
         {
-          "question": "[115A40] ★★★\n母乳栄養児の腸内細菌叢で割合が高いのは？",
-          "answer": "Bifidobacterium属\n\n[他の選択肢との違い]\n- Bacteroides属: 成人の腸内で優勢\n- Clostridium属: 腸管常在菌だが優勢ではない\n- Enterobacter属: 腸内細菌科だが優勢ではない\n- Lactobacillus属: 膣に優勢、腸管にも存在\n- Bifidobacterium属: 母乳栄養児で最優勢 ← 正解\n\n[ポイント]\n母乳栄養児＝Bifidobacterium属。成人＝Bacteroides属。母乳中のオリゴ糖がビフィズス菌の増殖を促進。"
+          "question": "母乳栄養児の腸内細菌叢で割合が高いのは？",
+          "answer": "E",
+          "choices": {
+            "a": "Bacteroides属",
+            "b": "Clostridium属",
+            "c": "Enterobacter属",
+            "d": "Lactobacillus属",
+            "e": "Bifidobacterium属"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "115A40",
+          "choiceExplanations": {
+            "a": "成人の腸内で優勢",
+            "b": "腸管常在菌だが優勢ではない",
+            "c": "腸内細菌科だが優勢ではない",
+            "d": "膣に優勢、腸管にも存在",
+            "e": "母乳栄養児で最優勢 ← 正解"
+          },
+          "point": "母乳栄養児＝Bifidobacterium属。成人＝Bacteroides属。母乳中のオリゴ糖がビフィズス菌の増殖を促進。"
         }
       ]
     }

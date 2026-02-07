@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>栄養評価 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>栄養評価</h1>
+    <div class="container">
+
+      <p>周術期や高齢者の管理において、栄養状態の評価は重要である。栄養評価ツールの特徴と、低栄養を示す検査値の判定が頻出。</p>
+
+      <!-- ========== 栄養評価ツール ========== -->
+      <h2>栄養評価ツールの比較</h2>
+      <table>
+        <tr><th>ツール</th><th>正式名称</th><th>対象</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">SGA</span></td><td>Subjective Global Assessment<br>（主観的包括的栄養評価）</td><td>成人全般</td><td><span class="highlight">検査値を使わない</span>。問診と身体所見のみで評価</td></tr>
+        <tr><td><span class="highlight">MNA</span></td><td>Mini Nutritional Assessment<br>（簡易栄養状態評価表）</td><td>高齢者</td><td><span class="highlight">高齢者の低栄養</span>スクリーニング専用</td></tr>
+        <tr><td><span class="key">BMI</span></td><td>Body Mass Index</td><td>全年齢</td><td>体重(kg)÷身長(m)<sup>2</sup>。体格の基本指標</td></tr>
+      </table>
+
+      <!-- ========== SGA ========== -->
+      <h2>SGA（主観的包括的栄養評価）</h2>
+      <p>SGAは<span class="highlight">検査値（血液検査など）を一切使わず</span>、問診と身体所見だけで栄養状態を評価する方法である。</p>
+
+      <h3>SGAの評価項目</h3>
+      <table>
+        <tr><th>カテゴリ</th><th>評価項目</th></tr>
+        <tr><td>問診（病歴）</td><td><span class="highlight">体重変化</span>、食事摂取量の変化、消化器症状（悪心・嘔吐・下痢）、身体機能の変化、疾患と栄養必要量の関係</td></tr>
+        <tr><td>身体所見</td><td>皮下脂肪の減少、筋肉量の減少（筋萎縮）、浮腫・腹水</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">SGAの核心ポイント（3問で出題）</div>
+        <ul>
+          <li>SGAの最重要指標は<span class="highlight">体重変化</span></li>
+          <li><span class="caution">血清アルブミンやBMIはSGAの項目ではない</span></li>
+          <li>「主観的」＝検査値に頼らず、医療者の問診・観察で判断</li>
+          <li>評価結果：A（良好）、B（中等度栄養不良）、C（高度栄養不良）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110C77</div>
+        <p>高齢者の栄養評価で用いられるSGA〈Subjective Global Assessment〉で利用される指標はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 総蛋白量<br>
+          b 体重変化<br>
+          c 上腕筋面積<br>
+          d Body Mass Index<br>
+          e 血清アルブミン値
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】SGAは問診と身体所見のみで評価する方法で、体重変化が最も重要な指標。総タンパク・Alb・BMIは客観的指標であり、SGAには含まれない。上腕筋面積は身体計測の指標。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107A60</div>
+        <p>高齢者の栄養評価と評価内容との組合せで正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a SGA－－－－－－－－－－－脱　水<br>
+          b 体重変化率－－－－－－－－栄養状態の変化<br>
+          c 尿素窒素値－－－－－－－－骨格筋量<br>
+          d Body Mass Index－－－－－体脂肪量<br>
+          e 血清アルブミン値－－－－－血清蛋白
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】体重変化率は栄養状態の経時的変化を反映する（正しい）。血清アルブミン値は血清蛋白の代表的指標（正しい）。SGAは脱水の評価ではなく栄養状態の評価。BUNは腎機能の指標であり骨格筋量ではない。BMIは体格指数であり体脂肪量そのものではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">111D31</div>
+        <p>栄養アセスメントで用いられる指標はどれか。2つ選べ。</p>
+        <div class="choices">
+          a BMI<br>
+          b HbA1c<br>
+          c MMSE<br>
+          d PT-INR<br>
+          e SGA
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】BMI（体格指数）とSGA（主観的包括的栄養評価）は栄養アセスメントの指標。HbA1cは糖代謝、MMSEは認知機能（Mini-Mental State Examination）、PT-INRは凝固系の指標であり、いずれも栄養評価には使われない。</p>
+      </div>
+
+      <!-- ========== MNA ========== -->
+      <h2>MNA（簡易栄養状態評価表）</h2>
+      <p>MNAは<span class="highlight">高齢者の低栄養</span>を早期に発見するためのスクリーニングツールである。簡易版（MNA-SF）と完全版がある。</p>
+
+      <h3>MNA-SF（簡易版）の評価項目</h3>
+      <ul>
+        <li>過去3ヵ月間の食事摂取量の減少</li>
+        <li>過去3ヵ月間の体重減少</li>
+        <li>移動能力（自立歩行、車椅子など）</li>
+        <li>過去3ヵ月間の精神的ストレス・急性疾患</li>
+        <li>神経・精神的問題（認知症、うつなど）</li>
+        <li>BMI（またはふくらはぎ周囲長）</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108C41</div>
+        <p>MNAでスクリーニングできるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 誤　嚥<br>
+          b 肥　満<br>
+          c 脱　水<br>
+          d 低栄養<br>
+          e 意識障害
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】MNA（Mini Nutritional Assessment）は高齢者の低栄養スクリーニングに特化したツール。誤嚥（RSST等）、肥満（BMI等）、脱水（血液検査等）、意識障害（JCS・GCS）はそれぞれ別の評価法を用いる。</p>
+      </div>
+
+      <!-- ========== 低栄養の判定 ========== -->
+      <h2>低栄養の判定基準</h2>
+
+      <h3>低栄養を示す検査値・指標</h3>
+      <table>
+        <tr><th>指標</th><th>基準値</th><th>低栄養の目安</th></tr>
+        <tr><td><span class="highlight">BMI</span></td><td>18.5〜24.9</td><td><span class="highlight">18.5未満</span>＝低体重</td></tr>
+        <tr><td><span class="highlight">血清アルブミン（Alb）</span></td><td>3.8〜5.3 g/dL</td><td><span class="highlight">3.5未満</span>＝低栄養<br>3.0未満＝重度低栄養</td></tr>
+        <tr><td><span class="key">総タンパク（TP）</span></td><td>6.5〜8.0 g/dL</td><td>6.5未満で低下</td></tr>
+        <tr><td><span class="key">体重変化率</span></td><td>安定</td><td>1ヵ月で5%以上減少、6ヵ月で10%以上減少</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">低栄養の判定ポイント</div>
+        <ul>
+          <li><span class="highlight">BMI 18.5未満</span>と<span class="highlight">Alb 3.5g/dL未満</span>が低栄養の二大指標</li>
+          <li>TP・TG・TCが正常でもAlb低値なら低栄養を疑う</li>
+          <li>Albは半減期が約20日 → 慢性的な栄養状態を反映</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D33</div>
+        <p>要介護高齢者において低栄養が疑われるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a BMI　　　　　　　　　　　：17.0<br>
+          b 総タンパク〈TP〉　　　　 ：7.5g/dL<br>
+          c アルブミン〈Alb〉　　　　 ：3.1g/dL<br>
+          d トリグリセリド〈TG〉　　 ：100mg/dL<br>
+          e 総コレステロール〈TC〉　 ：170mg/dL
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】BMI 17.0は18.5未満で低体重（低栄養）。Alb 3.1g/dLは3.5未満で低栄養。TP 7.5は正常範囲内、TG 100は正常（150未満）、TC 170は正常（220未満）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C83</div>
+        <p>85歳の男性。血液生化学検査データを表に示す。推奨される食事はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C83_1.png" alt="血液生化学検査データ">
+        </div>
+        <div class="choices">
+          a 減塩食<br>
+          b 高蛋白食<br>
+          c 糖質制限食<br>
+          d 低カリウム食<br>
+          e 低カロリー食
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】検査データからAlb低値（低栄養）が読み取れる。85歳の高齢者でタンパク質が不足しているため、高蛋白食が推奨される。減塩食は高血圧、糖質制限食は糖尿病、低カリウム食は高K血症（腎不全）、低カロリー食は肥満に対する食事療法。</p>
+      </div>
+
+      <!-- ========== 栄養管理 ========== -->
+      <h2>栄養管理の方法</h2>
+      <p>栄養摂取の基本は<span class="key">経口摂取</span>である。経口摂取が困難な場合、以下の順に検討する。</p>
+
+      <h3>栄養摂取経路の選択</h3>
+      <table>
+        <tr><th>経路</th><th>方法</th><th>適応</th></tr>
+        <tr><td><span class="key">経口摂取</span></td><td>通常の食事</td><td>嚥下機能が保たれている場合（第一選択）</td></tr>
+        <tr><td><span class="key">経腸栄養</span></td><td>経鼻胃管、胃瘻（PEG）、腸瘻</td><td>消化管機能は保たれているが経口摂取困難な場合</td></tr>
+        <tr><td><span class="key">経静脈栄養</span></td><td>末梢静脈栄養、中心静脈栄養（TPN）</td><td>消化管が使用できない場合</td></tr>
+      </table>
+      <p class="note">※消化管が機能している限り、経静脈栄養より経腸栄養が優先される（腸管免疫の維持、bacterial translocationの予防）。</p>
+
+    </div>
+  </div>
+</body>
+</html>

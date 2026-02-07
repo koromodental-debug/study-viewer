@@ -205,7 +205,24 @@
         },
         {
           "question": "アンチコドン 3'-CCU-5' を持つtRNAが運搬するアミノ酸は？",
-          "answer": "グリシン（Gly）\n\n[他の選択肢との違い]\n- リシン: AAA, AAGがコード\n- グリシン: GGA, GGC, GGG, GGUがコード ← 正解\n- プロリン: CCU, CCC, CCA, CCGがコード ← ひっかけ\n- ヒスチジン: CAU, CACがコード\n- イソロイシン: AUU, AUC, AUAがコード\n[ポイント]\nアンチコドン 3'-CCU-5' に対応するコドンは 5'-GGA-3'（相補的かつ逆平行）\nGGAはグリシンをコード\nCCUはプロリンのコドンだが、これは「アンチコドン」ではなく「コドン」の場合"
+          "answer": "B",
+          "choices": {
+            "a": "リシン",
+            "b": "グリシン",
+            "c": "プロリン",
+            "d": "ヒスチジン",
+            "e": "イソロイシン"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "choiceExplanations": {
+            "a": "AAA, AAGがコード",
+            "b": "GGA, GGC, GGG, GGUがコード ← 正解",
+            "c": "CCU, CCC, CCA, CCGがコード ← ひっかけ",
+            "d": "CAU, CACがコード",
+            "e": "AUU, AUC, AUAがコード"
+          },
+          "point": "アンチコドン 3'-CCU-5' に対応するコドンは 5'-GGA-3'（相補的かつ逆平行）\nGGAはグリシンをコード\nCCUはプロリンのコドンだが、これは「アンチコドン」ではなく「コドン」の場合"
         }
       ]
     }

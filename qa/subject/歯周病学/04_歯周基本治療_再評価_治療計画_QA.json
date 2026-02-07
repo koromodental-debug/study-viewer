@@ -72,8 +72,24 @@
           "answer": "下顎舌側咬頭内斜面（Lingual of Lower）\n\n[関連質問]\n- 咬合調整のみで改善できない場合は？ → 暫間固定を行う"
         },
         {
-          "question": "[112B61] ★★★\n二次性咬合性外傷を伴う歯の側方運動時作業側の削合部位はどれか。2つ選べ。",
-          "answer": "下顎舌側咬頭内斜面、上顎頬側咬頭内斜面\n\n[他の選択肢との違い]\n- a 下顎頬側咬頭内斜面：BULLの法則に該当しない\n- b 下顎舌側咬頭内斜面 ← 正解（Lingual Lower）\n- c 上顎頬側咬頭外斜面：外斜面は咬頭嵌合位（Jankelson I・II級）\n- d 上顎頬側咬頭内斜面 ← 正解（Buccal Upper）\n- e 上顎舌側咬頭内斜面：作業側ではなく平衡側で削合 ← ひっかけ\n\n[ポイント]\nBULLの法則＝Buccal Upper、Lingual Lower（作業側の法則）"
+          "question": "二次性咬合性外傷を伴う歯の側方運動時作業側の削合部位はどれか。2つ選べ。",
+          "answer": "B, D",
+          "choices": {
+            "a": "下顎頬側咬頭内斜面",
+            "b": "下顎舌側咬頭内斜面 ← 正解（Lingual Lower）",
+            "c": "上顎頬側咬頭外斜面",
+            "d": "上顎頬側咬頭内斜面 ← 正解（Buccal Upper）",
+            "e": "上顎舌側咬頭内斜面"
+          },
+          "correctAnswer": "B, D",
+          "numChoices": 2,
+          "code": "112B61",
+          "point": "BULLの法則＝Buccal Upper、Lingual Lower（作業側の法則）",
+          "choiceExplanations": {
+            "a": "BULLの法則に該当しない",
+            "c": "外斜面は咬頭嵌合位（Jankelson I・II級）",
+            "e": "作業側ではなく平衡側で削合 ← ひっかけ"
+          }
         }
       ]
     }

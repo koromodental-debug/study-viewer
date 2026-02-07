@@ -1,0 +1,10 @@
+ファイル名,検証項目,現在の記述,判定,問題点,正しい情報,情報源,修正提案
+02_口腔環境と予防_要介護者のリハビリテーション.html,鼻咽腔閉鎖不全の補綴分類,"器質的欠損（口蓋裂など） → PLP、栓塞子",NG,"PLPと栓塞子の適応が混在。器質的欠損（velopharyngeal insufficiency）で第一選択は栓塞子/スピーチバルブ系で、PLPは主に軟口蓋運動不全（velopharyngeal incompetence）に用いる。","器質的欠損（口蓋裂・軟口蓋短小・欠損）→栓塞子/スピーチバルブ。軟口蓋の運動不全（神経筋性）→PLP。","https://pubmed.ncbi.nlm.nih.gov/10633028/ ; https://musckids.org/our-services/cleft-palate-program/velopharyngeal-dysfunction",表記を「器質的欠損→栓塞子（speech bulb/obturator）」「運動不全→PLP」に分ける
+02_口腔環境と予防_栄養療法.html,経管栄養の期間閾値,"短期（4週未満）→経鼻経管栄養、長期（4週以上）→胃瘻・腸瘻",要確認,"4週閾値は資料により4〜6週の幅がある。単一閾値として断定すると過度に単純化。","『概ね4〜6週以上の長期見込みで胃瘻/腸瘻を検討』のように幅を持たせる。","https://www.espen.org/files/ESPEN-Guidelines/ESPEN_practical_guideline_Home_enteral_nutrition.pdf ; https://www.peg.or.jp/en/lecture/peg/02.html",注記を追加し「施設方針・全身状態で最終判断」と明記
+02_口腔環境と予防_栄養療法.html,腸管免疫の割合,"消化管には免疫細胞の50〜80%が存在",要確認,"『免疫細胞』の定義で数値がぶれやすい（免疫系重量・抗体産生細胞・粘膜免疫細胞などで記載が異なる）。50〜80%は教育用としては幅が広い。","『腸管は最大の免疫器官（GALT）で、免疫機能維持に重要』など定性的表現を主にし、定量値は出典付きで限定。","https://pubmed.ncbi.nlm.nih.gov/24500441/ ; https://www.nature.com/articles/mi200817",数値を使う場合は『文献により差あり』を併記し出典脚注を付ける
+02_口腔環境と予防_摂食嚥下訓練.html,RSSTカットオフ,"30秒間の空嚥下回数（3回未満で異常）",OK,根拠と一致,現状維持,https://member.jsdr.or.jp/elearning3/lesson/1476/25/,変更不要
+02_口腔環境と予防_摂食嚥下訓練.html,MWST手技,"改訂水飲みテスト（3mL冷水）",OK,根拠と一致,現状維持,https://member.jsdr.or.jp/elearning3/lesson/1476/25/,変更不要
+02_口腔環境と予防_摂食嚥下訓練.html,フードテスト手技,"プリン4gを嚥下",OK,根拠と一致,現状維持,https://member.jsdr.or.jp/elearning3/lesson/1476/25/,変更不要
+02_口腔環境と予防_摂食嚥下訓練.html,嚥下調整食分類,"嚥下調整食分類2013で軟飯・全粥はコード4",OK,学会分類の構成と整合,現状維持,https://www.jsdr.or.jp/news/news_20130920.html,変更不要
+02_口腔環境と予防_軟口蓋挙上装置.html,PLPの適応,"開鼻声を伴う嚥下障害・構音障害",OK,概ね妥当,現状維持,https://pubmed.ncbi.nlm.nih.gov/33612665/ ; https://pubmed.ncbi.nlm.nih.gov/23387878/,変更不要
+02_口腔環境と予防_舌接触補助床.html,PAPの効果,"PAPで嚥下圧・食塊形成能が改善",OK,文献報告と整合,現状維持,https://pubmed.ncbi.nlm.nih.gov/28233692/ ; https://pubmed.ncbi.nlm.nih.gov/39019592/,変更不要

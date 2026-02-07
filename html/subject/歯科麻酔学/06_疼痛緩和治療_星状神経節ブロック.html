@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>星状神経節ブロック - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 疼痛緩和治療</span>
+    <h1>星状神経節ブロック</h1>
+    <div class="container">
+
+      <!-- 概要 -->
+      <h2>概要</h2>
+      <p><span class="key">星状神経節ブロック（SGB: stellate ganglion block）</span>は、交感神経に対する神経ブロックの1つで、<span class="key">交感神経依存性疼痛</span>の治療ならびに<span class="key">局所の循環改善</span>を目的に用いられる。鑑別診断を行ううえで診断的治療ともなり、また用いる薬剤を選択することで長期の治療ともなり得る。</p>
+
+      <h3>適応</h3>
+      <ul>
+        <li>持続性神経障害性疼痛（交感神経が関与する場合）</li>
+        <li><span class="key">顔面神経麻痺</span>（顔面神経幹中の循環改善目的）</li>
+        <li>帯状疱疹後神経痛</li>
+        <li>CRPS（複合性局所疼痛症候群）</li>
+      </ul>
+
+      <!-- 解剖 -->
+      <h2>解剖</h2>
+      <p>頸顔部に分布する交感神経は、<span class="key">交感神経節前線維</span>（B線維）として頸胸部脊髄から起こり、脊椎から出ると<span class="key">星状神経節</span>を経て上行して末梢に分布する。一部は星状神経節を経由せずに上行して、中頸神経節あるいは上頸神経節を形成し局所に分布する。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">星状神経節の位置と刺入のランドマーク</div>
+        <ul>
+          <li>星状神経節は<span class="highlight">第7頸椎〜第1胸椎</span>の高さに位置する</li>
+          <li>刺入部位は<span class="highlight">第6頸椎横突起（Chassaignac結節）</span>の前面</li>
+          <li>第4〜6頸椎の高さでは、<span class="key">椎骨動脈</span>が頸椎横突起の中を走行し、各横突起根で骨から露出する</li>
+          <li>刺入時に触知するのは<span class="highlight">頸椎横突起</span></li>
+        </ul>
+      </div>
+      <p class="note">実際には星状神経節自体をブロックするわけではなく、頸椎横突起前面を上行する頸部交感神経幹をブロックすることで、星状神経節を経由したC線維と、中頸神経節・上頸神経節に至るB線維が混合した神経幹をブロックしてその効果を得る。</p>
+
+      <!-- 術式 -->
+      <h2>術式</h2>
+      <h3>SGBの種類</h3>
+      <table>
+        <tr>
+          <th>種類</th>
+          <th>刺入部位</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">C6SGB</span></td>
+          <td>第6頸椎横突起の高さ</td>
+          <td>歯科領域では通常こちらを使用</td>
+        </tr>
+        <tr>
+          <td>C7SGB</td>
+          <td>第7頸椎横突起の高さ</td>
+          <td>特別な場合に使用</td>
+        </tr>
+      </table>
+
+      <h3>使用薬剤</h3>
+      <p><span class="caution">エピネフリンを含まない</span>局所麻酔薬を使用する。</p>
+      <ul>
+        <li><span class="key">1%リドカイン</span>または<span class="key">1%メピバカイン</span></li>
+        <li>用量：<span class="highlight">3〜5 mL</span></li>
+      </ul>
+      <p class="note">最近では安全性と確実性の理由から超音波波ガイド下での手技が推奨されている。</p>
+
+      <!-- 効果（ホルネル徴候） -->
+      <h2>効果：ホルネル徴候</h2>
+      <p>SGBが効果的に施行されると、交感神経遮断による<span class="highlight">ホルネル徴候</span>と呼ばれる自覚症状が出現する。</p>
+
+      <h3>ホルネル徴候の症状</h3>
+      <table>
+        <tr>
+          <th>症状</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">眼瞼下垂</span></td>
+          <td rowspan="3">ホルネルの三徴候（交感神経遮断による眼症状）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">縮瞳</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">眼球陥凹</span></td>
+        </tr>
+        <tr>
+          <td>眼球結膜の充血</td>
+          <td>血管拡張</td>
+        </tr>
+        <tr>
+          <td><span class="key">顔面紅潮</span></td>
+          <td>血管拡張→血流量増加・皮膚温上昇</td>
+        </tr>
+        <tr>
+          <td>鼻閉</td>
+          <td>鼻粘膜血管の拡張</td>
+        </tr>
+        <tr>
+          <td>発汗ならびに立毛の停止</td>
+          <td>交感神経遮断による分泌抑制</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">交感神経遮断の生理学的変化</div>
+        <ul>
+          <li>交感神経遮断→血管拡張→<span class="highlight">血流量の増加</span>＋<span class="highlight">皮膚温の上昇</span></li>
+          <li><span class="caution">散瞳ではなく縮瞳</span>（交感神経遮断で瞳孔散大筋が弛緩→縮瞳）</li>
+          <li><span class="caution">発汗は増加ではなく停止</span>（交感神経が発汗を支配しているため）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107B34</div>
+        <p>32歳の女性。右側下唇の麻痺を主訴として来院した。2週前に下顎右側第三大臼歯を下顎孔伝達麻酔下に抜去してから発現したという。治療中の写真（別冊No.34）を別に示す。<br>この治療法に伴う生理学的変化はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107B34.png" alt="別冊No.34">
+        </div>
+        <div class="choices">
+          a 散　瞳<br>
+          b 血流量の増加<br>
+          c 皮膚温の上昇<br>
+          d 発汗量の増加<br>
+          e 鼻腔通気量の増加
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】写真から星状神経節ブロック（SGB）と判断できる。交感神経遮断により血管が拡張し、血流量の増加（b）と皮膚温の上昇（c）が生じる。散瞳（a）は誤りで縮瞳が正しい。発汗量（d）は増加ではなく停止する。鼻腔通気量（e）は鼻閉により減少する。</p>
+      </div>
+
+      <!-- 偶発症 -->
+      <h2>合併症・偶発症</h2>
+      <p>星状神経節の周囲には重要な構造物が存在し、誤刺入や薬液の拡散によりさまざまな合併症が生じ得る。</p>
+
+      <h3>主な合併症</h3>
+      <table>
+        <tr>
+          <th>合併症</th>
+          <th>原因</th>
+          <th>症状</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">局所麻酔薬中毒</span></td>
+          <td>椎骨動脈・総頸動脈への誤注入</td>
+          <td>全身けいれん、意識消失</td>
+        </tr>
+        <tr>
+          <td><span class="key">反回神経麻痺</span></td>
+          <td>頸長筋前面に針が到達しなかった場合</td>
+          <td>嗄声、無声、嚥下障害</td>
+        </tr>
+        <tr>
+          <td><span class="key">腕神経叢麻酔</span></td>
+          <td>針先が横突起起始部前面に達した場合</td>
+          <td>頸部・上肢の感覚運動障害</td>
+        </tr>
+        <tr>
+          <td><span class="caution">硬膜穿刺・クモ膜下注入</span></td>
+          <td>針が椎間板を貫いて脊柱管内に到達</td>
+          <td>呼吸停止、循環虚脱</td>
+        </tr>
+        <tr>
+          <td>迷走神経麻痺</td>
+          <td>薬液の拡散</td>
+          <td>頻脈、異常高血圧</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">106D49</div>
+        <p>30歳の男性。左口角部の知覚異常のため星状神経節ブロックを行うこととした。第6頸椎横突起の高さで1%リドカイン塩酸塩6mιを注入したところ、突然、全身けいれん発作を起こし意識を消失した。頸動脈で脈拍を触知する。チアノーゼを認める。<br>適切な処置はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 酸素投与<br>
+          b 胸骨圧迫<br>
+          c ジアゼパムの静注<br>
+          d アドレナリンの静注<br>
+          e アミノフィリン水和物の静注
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】SGB時に全身けいれん＋意識消失→椎骨動脈への誤注入による局所麻酔薬中毒と判断できる。頸動脈で脈拍触知＝心停止ではないため胸骨圧迫（b）は不要。チアノーゼ→酸素投与（a）が必要。けいれんに対してはジアゼパム静注（c）が適切。アドレナリン（d）は心停止時の対応。</p>
+      </div>
+
+      <!-- 刺入部位 -->
+      <h2>刺入部位の解剖</h2>
+      <p>SGBでは<span class="highlight">第6頸椎横突起（Chassaignac結節）</span>を触知して刺入部位を決定する。輪状軟骨の高さがほぼ第6頸椎に相当する。</p>
+
+      <h3>触知のランドマーク</h3>
+      <table>
+        <tr>
+          <th>構造物</th>
+          <th>頸椎レベル</th>
+        </tr>
+        <tr>
+          <td>舌骨</td>
+          <td>C3</td>
+        </tr>
+        <tr>
+          <td>甲状軟骨上縁</td>
+          <td>C4</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">輪状軟骨</span></td>
+          <td><span class="highlight">C6</span>（SGBの刺入レベル）</td>
+        </tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">102D39</div>
+        <p>50歳の女性。歯科治療後に顔面神経麻痺が生じたため神経ブロックを行うこととした。針の刺入直前の写真（別冊No.36）を別に示す。<br>触知しているのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102D39.png" alt="別冊No.36">
+        </div>
+        <div class="choices">
+          a 舌骨大角<br>
+          b 輪状軟骨<br>
+          c 頸椎横突起<br>
+          d 総頸動脈分岐部<br>
+          e 胸鎖乳突筋前縁
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】顔面神経麻痺に対する星状神経節ブロックの手技写真。SGBの刺入時に触知するのは第6頸椎横突起（c）である。輪状軟骨（b）はC6の高さを確認するためのランドマークではあるが、直接触知して刺入するのは頸椎横突起の前結節である。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

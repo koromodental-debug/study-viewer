@@ -58,12 +58,48 @@
           "answer": "Actinomyces、Propionibacterium"
         },
         {
-          "question": "[112A30] ★★★\nグラム陽性球菌は？",
-          "answer": "Streptococcus、Enterococcus\n\n[他の選択肢との違い]\n- Actinomyces: グラム陽性桿菌 ← ひっかけ\n- Enterococcus: グラム陽性球菌 ← 正解\n- Neisseria: グラム陰性球菌\n- Streptococcus: グラム陽性球菌 ← 正解\n- Veillonella: グラム陰性球菌\n\n[ポイント]\nグラム陽性球菌＝Streptococcus、Enterococcus。Actinomycesは「桿菌」なので注意。"
+          "question": "グラム陽性球菌は？",
+          "answer": "B, D",
+          "choices": {
+            "a": "Actinomyces",
+            "b": "Enterococcus",
+            "c": "Neisseria",
+            "d": "Streptococcus",
+            "e": "Veillonella"
+          },
+          "correctAnswer": "B, D",
+          "numChoices": 2,
+          "code": "112A30",
+          "choiceExplanations": {
+            "a": "グラム陽性桿菌 ← ひっかけ",
+            "b": "グラム陽性球菌 ← 正解",
+            "c": "グラム陰性球菌",
+            "d": "グラム陽性球菌 ← 正解",
+            "e": "グラム陰性球菌"
+          },
+          "point": "グラム陽性球菌＝Streptococcus、Enterococcus。Actinomycesは「桿菌」なので注意。"
         },
         {
-          "question": "[108C63] ★★★\nActinomyces viscosusはグラム陽性桿菌か球菌か？",
-          "answer": "グラム陽性桿菌\n\n[他の選択肢との違い]\n- Actinomyces viscosus: グラム陽性桿菌 ← 正解\n- Bacillus subtilis: 枯草菌、土壌菌（口腔常在菌ではない）\n- Porphyromonas gingivalis: グラム陰性桿菌\n- Propionibacterium acnes: グラム陽性桿菌 ← 正解\n- Staphylococcus aureus: グラム陽性球菌\n\n[ポイント]\nグラム陽性桿菌＝Actinomyces、Propionibacterium。S. aureusは「球菌」なので注意。"
+          "question": "Actinomyces viscosusはグラム陽性桿菌か球菌か？",
+          "answer": "A, D",
+          "choices": {
+            "a": "Actinomyces viscosus",
+            "b": "Bacillus subtilis",
+            "c": "Porphyromonas gingivalis",
+            "d": "Propionibacterium acnes",
+            "e": "Staphylococcus aureus"
+          },
+          "correctAnswer": "A, D",
+          "numChoices": 2,
+          "code": "108C63",
+          "choiceExplanations": {
+            "a": "グラム陽性桿菌 ← 正解",
+            "b": "枯草菌、土壌菌（口腔常在菌ではない）",
+            "c": "グラム陰性桿菌",
+            "d": "グラム陽性桿菌 ← 正解",
+            "e": "グラム陽性球菌"
+          },
+          "point": "グラム陽性桿菌＝Actinomyces、Propionibacterium。S. aureusは「球菌」なので注意。"
         }
       ]
     },
@@ -91,8 +127,26 @@
           "answer": "口腔常在菌（歯面初期定着菌）"
         },
         {
-          "question": "[113C24] ★★★\n口腔常在菌は？",
-          "answer": "Fusobacterium nucleatum、Lactobacillus casei、Streptococcus sanguinis\n\n[他の選択肢との違い]\n- Corynebacterium diphtheriae: ジフテリア菌（咽頭の病原菌）\n- Fusobacterium nucleatum: 口腔常在菌 ← 正解\n- Lactobacillus casei: 口腔常在菌 ← 正解\n- Mycobacterium tuberculosis: 結核菌（肺の病原菌）\n- Streptococcus sanguinis: 口腔常在菌（歯面初期定着菌） ← 正解\n\n[ポイント]\nジフテリア菌・結核菌は病原菌であり口腔常在菌ではない。"
+          "question": "口腔常在菌は？",
+          "answer": "B, C, E",
+          "choices": {
+            "a": "Corynebacterium diphtheriae",
+            "b": "Fusobacterium nucleatum",
+            "c": "Lactobacillus casei",
+            "d": "Mycobacterium tuberculosis",
+            "e": "Streptococcus sanguinis"
+          },
+          "correctAnswer": "B, C, E",
+          "numChoices": 3,
+          "code": "113C24",
+          "choiceExplanations": {
+            "a": "ジフテリア菌（咽頭の病原菌）",
+            "b": "口腔常在菌 ← 正解",
+            "c": "口腔常在菌 ← 正解",
+            "d": "結核菌（肺の病原菌）",
+            "e": "口腔常在菌（歯面初期定着菌） ← 正解"
+          },
+          "point": "ジフテリア菌・結核菌は病原菌であり口腔常在菌ではない。"
         }
       ]
     },
@@ -132,8 +186,26 @@
           "answer": "成熟期"
         },
         {
-          "question": "[105A41] ★★★\n歯肉縁上プラークの成熟に伴う菌の割合の変化の順序は？",
-          "answer": "Streptococcus → Fusobacterium → Nocardia（S → F → N）\n\n[他の選択肢との違い]\n- S ─ N ─ F: × Nocardiaが先に来ている\n- S ─ F ─ N: ○ 正しい順序 ← 正解\n- N ─ S ─ F: × Nocardiaが最初に来ている\n- F ─ N ─ S: × 順序が逆\n- F ─ S ─ N: × 順序が逆\n\n[ポイント]\nS → F → N（好気性→架橋菌→嫌気性）。初期の好気性菌が酸素を消費し嫌気的環境を作る。"
+          "question": "歯肉縁上プラークの成熟に伴う菌の割合の変化の順序は？",
+          "answer": "B",
+          "choices": {
+            "a": "S ─ N ─ F",
+            "b": "S ─ F ─ N",
+            "c": "N ─ S ─ F",
+            "d": "F ─ N ─ S",
+            "e": "F ─ S ─ N"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "105A41",
+          "choiceExplanations": {
+            "a": "Nocardiaが先に来ている",
+            "b": "正しい順序 ← 正解",
+            "c": "Nocardiaが最初に来ている",
+            "d": "順序が逆",
+            "e": "順序が逆"
+          },
+          "point": "S → F → N（好気性→架橋菌→嫌気性）。初期の好気性菌が酸素を消費し嫌気的環境を作る。"
         }
       ]
     },
@@ -165,8 +237,26 @@
           "answer": "酸素が少なく嫌気的環境になるため"
         },
         {
-          "question": "[109C89] ★★★\n成熟プラークの深層部の特徴は？",
-          "answer": "酸化還元電位が低い、代謝産物が多い、嫌気性菌が多い\n\n[他の選択肢との違い]\n- pHが高い: × 深層部は酸性（pHが低い）\n- 緩衝能が高い: × 特に高くない\n- 代謝産物が多い: ○ 細菌代謝産物が蓄積 ← 正解\n- 嫌気性菌が少ない: × 嫌気性菌は深層部に多い ← ひっかけ\n- 酸化還元電位が低い: ○ 嫌気的環境 ← 正解\n\n[ポイント]\n深層部＝酸素少ない＝酸化還元電位低い＝嫌気性菌多い＝代謝産物蓄積＝pH低い"
+          "question": "成熟プラークの深層部の特徴は？",
+          "answer": "C, E",
+          "choices": {
+            "a": "pHが高い",
+            "b": "緩衝能が高い",
+            "c": "代謝産物が多い",
+            "d": "嫌気性菌が少ない",
+            "e": "酸化還元電位が低い"
+          },
+          "correctAnswer": "C, E",
+          "numChoices": 2,
+          "code": "109C89",
+          "choiceExplanations": {
+            "a": "深層部は酸性（pHが低い）",
+            "b": "特に高くない",
+            "c": "細菌代謝産物が蓄積 ← 正解",
+            "d": "嫌気性菌は深層部に多い ← ひっかけ",
+            "e": "嫌気的環境 ← 正解"
+          },
+          "point": "深層部＝酸素少ない＝酸化還元電位低い＝嫌気性菌多い＝代謝産物蓄積＝pH低い"
         }
       ]
     },
@@ -194,8 +284,26 @@
           "answer": "細菌由来"
         },
         {
-          "question": "[115C87] ★★★\nクオラムセンシング機構でプラーク細菌が感知しているのは？",
-          "answer": "オートインデューサー\n\n[他の選択肢との違い]\n- 補体: 宿主由来の免疫成分\n- サイトカイン: 宿主由来の免疫成分\n- 免疫グロブリン: 宿主由来の抗体\n- 副腎皮質ホルモン: ステロイドホルモン\n- オートインデューサー: 細菌が産生するシグナル分子 ← 正解\n\n[ポイント]\nクオラムセンシング＝オートインデューサー（細菌由来）。補体・サイトカイン・抗体は宿主由来。"
+          "question": "クオラムセンシング機構でプラーク細菌が感知しているのは？",
+          "answer": "E",
+          "choices": {
+            "a": "補体",
+            "b": "サイトカイン",
+            "c": "免疫グロブリン",
+            "d": "副腎皮質ホルモン",
+            "e": "オートインデューサー"
+          },
+          "correctAnswer": "E",
+          "numChoices": 1,
+          "code": "115C87",
+          "choiceExplanations": {
+            "a": "宿主由来の免疫成分",
+            "b": "宿主由来の免疫成分",
+            "c": "宿主由来の抗体",
+            "d": "ステロイドホルモン",
+            "e": "細菌が産生するシグナル分子 ← 正解"
+          },
+          "point": "クオラムセンシング＝オートインデューサー（細菌由来）。補体・サイトカイン・抗体は宿主由来。"
         }
       ]
     },
@@ -211,8 +319,26 @@
           "answer": "Prevotella（グラム陰性桿菌）、Peptostreptococcus（グラム陽性球菌）"
         },
         {
-          "question": "[104A96] ★★★\n閉鎖膿瘍から分離される頻度が高いのは？",
-          "answer": "Prevotella、Peptostreptococcus\n\n[他の選択肢との違い]\n- Serratia: 腸内細菌、好気性菌\n- Neisseria: 好気性菌（淋菌・髄膜炎菌）\n- Prevotella: グラム陰性嫌気性桿菌 ← 正解\n- Enterococcus: 通性嫌気性菌（腸球菌）\n- Peptostreptococcus: グラム陽性嫌気性球菌 ← 正解\n\n[ポイント]\n閉鎖膿瘍＝嫌気的環境＝嫌気性菌が優勢。Prevotella、Peptostreptococcusは嫌気性菌。"
+          "question": "閉鎖膿瘍から分離される頻度が高いのは？",
+          "answer": "C, E",
+          "choices": {
+            "a": "Serratia",
+            "b": "Neisseria",
+            "c": "Prevotella",
+            "d": "Enterococcus",
+            "e": "Peptostreptococcus"
+          },
+          "correctAnswer": "C, E",
+          "numChoices": 2,
+          "code": "104A96",
+          "choiceExplanations": {
+            "a": "腸内細菌、好気性菌",
+            "b": "好気性菌（淋菌・髄膜炎菌）",
+            "c": "グラム陰性嫌気性桿菌 ← 正解",
+            "d": "通性嫌気性菌（腸球菌）",
+            "e": "グラム陽性嫌気性球菌 ← 正解"
+          },
+          "point": "閉鎖膿瘍＝嫌気的環境＝嫌気性菌が優勢。Prevotella、Peptostreptococcusは嫌気性菌。"
         }
       ]
     }

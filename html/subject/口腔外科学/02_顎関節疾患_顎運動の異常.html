@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顎運動の異常 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 顎関節疾患</span>
+    <h1>顎運動の異常</h1>
+    <div class="container">
+
+      <h2>開口障害の分類</h2>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>疼痛</th>
+          <th>原因疾患</th>
+        </tr>
+        <tr>
+          <td><span class="key">筋性開口障害</span></td>
+          <td>あり（咬筋・側頭筋の圧痛）</td>
+          <td>顎関節症I型、咀嚼筋腱・腱膜過形成症、炎症の波及（蜂窩織炎など）</td>
+        </tr>
+        <tr>
+          <td><span class="key">関節性開口障害</span></td>
+          <td>あり/なし</td>
+          <td>顎関節症IIIb型（非復位性円板障害）、顎関節強直症、関節突起骨折</td>
+        </tr>
+        <tr>
+          <td><span class="key">骨性開口障害</span></td>
+          <td>なし</td>
+          <td>顎関節強直症（骨性）、筋突起過長症</td>
+        </tr>
+        <tr>
+          <td><span class="key">瘢痕性開口障害</span></td>
+          <td>なし</td>
+          <td>放射線治療後、口腔癌術後、熱傷後</td>
+        </tr>
+      </table>
+
+      <h3>筋性開口障害の疼痛好発部位</h3>
+      <div class="point-box">
+        <div class="point-box-title">筋性開口障害で圧痛を示す筋</div>
+        <ul>
+          <li><span class="highlight">咬筋</span>：最も頻度が高い</li>
+          <li><span class="highlight">側頭筋</span></li>
+        </ul>
+        <p class="note">※閉口筋（咬筋・側頭筋・内側翼突筋）の過緊張・スパスムが原因。顎舌骨筋（開口筋）や胸鎖乳突筋は開口障害の原因にならない。</p>
+      </div>
+
+      <h2>開口障害をきたす疾患</h2>
+
+      <h3>筋突起過長症・咀嚼筋腱腱膜過形成症</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>筋突起過長症</th>
+          <th>咀嚼筋腱・腱膜過形成症</th>
+        </tr>
+        <tr>
+          <td>病態</td>
+          <td>筋突起が過長で頬骨弓と干渉</td>
+          <td>咀嚼筋の腱・腱膜が過形成</td>
+        </tr>
+        <tr>
+          <td>開口障害</td>
+          <td><span class="highlight">無痛性</span></td>
+          <td><span class="highlight">無痛性</span>（開口制限）</td>
+        </tr>
+        <tr>
+          <td>特徴的所見</td>
+          <td>CTで筋突起の過長を確認</td>
+          <td><span class="key">下顎角部の肥大</span></td>
+        </tr>
+        <tr>
+          <td>治療</td>
+          <td><span class="key">筋突起切除術</span></td>
+          <td>筋突起切除術</td>
+        </tr>
+        <tr>
+          <td>鑑別</td>
+          <td colspan="2">顎関節症や顎関節強直症との鑑別が必要</td>
+        </tr>
+      </table>
+
+      <h3>顎関節強直症</h3>
+      <ul>
+        <li>原因：炎症（関節リウマチなど）、感染、外傷</li>
+        <li><span class="key">線維性</span>と<span class="key">骨性</span>がある</li>
+        <li><span class="highlight">疼痛を伴わない</span>強度の開口障害</li>
+        <li>幼少期に発症 → 顎骨の成長発育が障害 → <span class="key">小下顎症</span>、鳥貌</li>
+        <li>治療：<span class="key">顎関節授動術</span>（＋開口訓練）</li>
+      </ul>
+
+      <h2>開咬を呈する疾患</h2>
+      <div class="point-box">
+        <div class="point-box-title">前歯部開咬を呈する疾患</div>
+        <ul>
+          <li><span class="highlight">進行性（特発性）下顎頭吸収</span>（PCR/ICR）：下顎頭の吸収→下顎枝高径の短縮→著しい開咬・小下顎</li>
+          <li><span class="highlight">両側関節突起骨折</span>：両側の下顎枝高径が低下→前歯部開咬</li>
+          <li>リウマチ性顎関節炎（進行例）：下顎頭吸収→前歯部開咬</li>
+        </ul>
+      </div>
+
+      <h2>開口障害の原因疾患まとめ</h2>
+      <table>
+        <tr>
+          <th>疾患</th>
+          <th>開口障害</th>
+          <th>疼痛</th>
+        </tr>
+        <tr>
+          <td>顎関節症IIIb型</td>
+          <td>○（急性期）</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>顎関節強直症</td>
+          <td>◎（強度）</td>
+          <td><span class="caution">なし</span></td>
+        </tr>
+        <tr>
+          <td>筋突起過長症</td>
+          <td>○</td>
+          <td><span class="caution">なし</span></td>
+        </tr>
+        <tr>
+          <td>咀嚼筋腱・腱膜過形成症</td>
+          <td>○</td>
+          <td><span class="caution">なし</span></td>
+        </tr>
+        <tr>
+          <td>急性顎骨骨髄炎</td>
+          <td>○（炎症の波及）</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>蜂窩織炎（咬筋隙・翼突下顎隙）</td>
+          <td>○（炎症の波及）</td>
+          <td>あり</td>
+        </tr>
+      </table>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">109A63</div>
+        <p>筋性開口障害における疼痛好発部位はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 咬　筋<br>
+          b 側頭筋<br>
+          c 顎舌骨筋<br>
+          d 胸鎖乳突筋<br>
+          e 顎二腹筋前腹
+        </div>
+        <div class="answer">正解：a, b</div>
+        <p>【解説】筋性開口障害は閉口筋の過緊張が原因。疼痛好発部位は<span class="key">咬筋</span>と<span class="key">側頭筋</span>（いずれも閉口筋）。顎舌骨筋・顎二腹筋前腹は開口筋であり開口障害の原因にならない。胸鎖乳突筋は咀嚼筋ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C32</div>
+        <p>開口障害の原因となるのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 口角炎<br>
+          b 歯肉膿瘍<br>
+          c 萌出嚢胞<br>
+          d 急性顎骨骨髄炎<br>
+          e 急性化膿性歯髄炎
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】<span class="key">急性顎骨骨髄炎</span>は炎症が咀嚼筋間隙に波及し開口障害を起こす。<span class="key">口角炎</span>は口角部の炎症・疼痛により大開口が制限される。歯肉膿瘍・萌出嚢胞は限局性で開口障害を起こさない。歯髄炎は歯の内部の炎症で開口障害とは無関係。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D83</div>
+        <p>咀嚼筋腱・腱膜過形成症の特徴的な所見はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 開口制限<br>
+          b クリック<br>
+          c 下顎の偏位<br>
+          d 下顎角部の肥大<br>
+          e 顎関節部の圧痛
+        </div>
+        <div class="answer">正解：a, d</div>
+        <p>【解説】咀嚼筋腱・腱膜過形成症は咀嚼筋（特に咬筋・側頭筋）の腱・腱膜が過形成する疾患。特徴は<span class="key">開口制限</span>（無痛性）と<span class="key">下顎角部の肥大</span>。クリックは顎関節症IIIa型、顎関節部の圧痛は顎関節症の症状であり本症には見られない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B55</div>
+        <p>9歳の男児。開口障害を主訴として来院した。4年前から口が開きにくいことに気付いていたがそのままにしていたところ、3日前にかかりつけ歯科医で精査を勧められたという。開口量は15mmで、開口時に疼痛はない。初診時のエックス線画像（別冊No.19A）、CT（別冊No.19B）及び3D-CT（別冊No.19C）を別に示す。<br>原因として考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116B55_1.png" alt="別冊No.19A">
+          <img src="../../../images/116回_Web画像/116B55_2.png" alt="別冊No.19B">
+          <img src="../../../images/116回_Web画像/116B55_3.png" alt="別冊No.19C">
+        </div>
+        <div class="choices">
+          a 咬筋の肥大<br>
+          b 下顎頭の骨折<br>
+          c 下顎頭の腫腸<br>
+          d 筋突起の過長<br>
+          e 顎関節の骨性癒着
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】9歳男児、4年前からの慢性的な開口障害で<span class="highlight">疼痛なし</span>。CT・3D-CTで<span class="key">筋突起の過長</span>が確認できる。筋突起が頬骨弓と干渉して開口が制限される。顎関節強直症との鑑別が重要だが、画像で関節部に異常がなく筋突起が大きい場合は筋突起過長症。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116B29</div>
+        <p>前歯部開咬を呈するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 顎放線菌症<br>
+          b 茎状突起過長症<br>
+          c 痛風性顎関節炎<br>
+          d 進行性下顎頭吸収<br>
+          e 両側関節突起骨折
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】<span class="key">進行性下顎頭吸収</span>は下顎頭が吸収され下顎枝高径が短縮→著しい開咬と小下顎を呈する。<span class="key">両側関節突起骨折</span>も両側の下顎枝高径が低下し前歯部開咬となる。顎放線菌症・茎状突起過長症・痛風性顎関節炎は開咬を呈さない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109C96</div>
+        <p>70歳の女性。左側顎関節の運動痛を主訴として来院した。開口時に顎関節雑音を認めるという。開口制限は認めない。顎関節の歯科用コーンビームCT（別冊No.25）を別に示す。<br>処置として適切なのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C96_1.png" alt="別冊No.25">
+        </div>
+        <div class="choices">
+          a ストレッチ<br>
+          b NSAIDs投与<br>
+          c スプリント装着<br>
+          d マニピュレーション<br>
+          e 顎関節鏡視下剥離授動術
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】運動痛＋顎関節雑音（クレピタス）＋開口制限なし→IV型（変形性顎関節症）の可能性。CBCTで下顎頭の形態変化が確認できる。治療は保存療法から開始：<span class="key">NSAIDs投与</span>（疼痛管理）と<span class="key">スプリント装着</span>（顎関節への負担軽減）。ストレッチは筋性障害向け。マニピュレーションはIII型向け。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">104B52・104B53（連問）</div>
+        <p>42歳の男性。開口時の疼痛を主訴として来院した。昨夜食事時に左側耳珠前方に激痛が生じ、以後開口時に痛みがあるという。同部に圧痛を認める。開口度は15mmである。エックス線写真では下顎の運動制限の他に異常を認めない。初診時のMRI（別冊No.50）を別に示す。</p>
+        <div class="question-images">
+          <img src="../../../images/104回_Web画像/104B52_1.png" alt="別冊No.50">
+        </div>
+        <p><span class="key">問52</span>：左側顎関節部のMRIで観察できるのはどれか。1つ選べ。</p>
+        <div class="answer">正解：e（関節円板の前方転位）</div>
+        <p><span class="key">問53</span>：適切な対応はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 顎関節授動術<br>
+          b 抗菌薬の投与<br>
+          c 顎運動制限の指導<br>
+          d Hippocrates法による整復<br>
+          e 関節円板のマニピュレーション
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】急性期の非復位性関節円板前方転位（IIIb型）。MRIで関節円板の前方転位を確認。急性期の対応として<span class="key">顎運動制限の指導</span>（安静）が適切。Hippocrates法は顎関節脱臼の整復法であり不適切。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

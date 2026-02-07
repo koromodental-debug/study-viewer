@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>BRONJ・ARONJ - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 炎症・アレルギー性疾患</span>
+    <h1>BRONJ・ARONJ（薬剤関連顎骨壊死）</h1>
+    <div class="container">
+
+      <h2>用語の変遷</h2>
+      <table>
+        <tr>
+          <th>略称</th>
+          <th>正式名称</th>
+          <th>範囲</th>
+        </tr>
+        <tr>
+          <td class="key">BRONJ</td>
+          <td>Bisphosphonate-Related Osteonecrosis of the Jaw</td>
+          <td>BP製剤に関連した顎骨壊死</td>
+        </tr>
+        <tr>
+          <td class="key">ARONJ</td>
+          <td>Anti-Resorptive Agent-Related ONJ</td>
+          <td>BP製剤＋デノスマブ（抗骨吸収薬）</td>
+        </tr>
+        <tr>
+          <td class="highlight">MRONJ</td>
+          <td>Medication-Related ONJ</td>
+          <td>BP製剤＋デノスマブ＋血管新生阻害薬など全薬剤</td>
+        </tr>
+      </table>
+      <p class="note">2023年のポジションペーパーでは<span class="key">MRONJ</span>（薬剤関連顎骨壊死）が公式用語として採用された。</p>
+
+      <h2>診断基準</h2>
+      <div class="point-box">
+        <div class="point-box-title">BRONJ/MRONJの診断基準（3条件すべてを満たす）</div>
+        <ol style="padding-left: 1.5em; margin: 8px 0;">
+          <li><span class="highlight">骨吸収抑制薬（BP製剤等）の投与歴</span>がある、または投与中である</li>
+          <li>顎顔面領域に<span class="highlight">壊死骨の露出が8週間以上</span>持続している</li>
+          <li>顎骨に<span class="highlight">放射線照射の既往がない</span></li>
+        </ol>
+      </div>
+      <p class="note"><span class="caution">放射線照射の既往がある場合は「放射線性骨壊死」であり、BRONJではない。</span></p>
+
+      <h2>BP製剤の種類とリスク</h2>
+      <table>
+        <tr>
+          <th>剤型</th>
+          <th>代表的薬剤</th>
+          <th>主な適応</th>
+          <th>顎骨壊死リスク</th>
+        </tr>
+        <tr>
+          <td class="key">注射薬</td>
+          <td>ゾレドロン酸（ゾメタ）、パミドロン酸（アレディア）</td>
+          <td>悪性腫瘍の骨転移、高カルシウム血症</td>
+          <td><span class="caution">高い</span>（0.8〜12%）</td>
+        </tr>
+        <tr>
+          <td class="key">経口薬</td>
+          <td>アレンドロン酸（フォサマック/ボナロン）、リセドロン酸（アクトネル/ベネット）</td>
+          <td>骨粗鬆症</td>
+          <td>低い（0.01〜0.04%）</td>
+        </tr>
+      </table>
+      <p class="note"><span class="highlight">注射薬は経口薬の約100倍のリスク</span>がある。悪性腫瘍に対して使用されることが多い。</p>
+
+      <h2>病期分類（ステージ）</h2>
+      <table>
+        <tr>
+          <th>Stage</th>
+          <th>所見</th>
+          <th>治療</th>
+        </tr>
+        <tr>
+          <td class="key">At risk</td>
+          <td>抗吸収薬/血管新生阻害薬の投与歴あり、<span class="key">骨露出なし・症状なし</span></td>
+          <td>患者教育、口腔衛生管理、侵襲的処置の回避</td>
+        </tr>
+        <tr>
+          <td class="key">Stage 0</td>
+          <td>骨露出なしだが、非特異的症状・画像所見（疼痛、骨硬化など）を認める</td>
+          <td>対症療法、感染管理、厳密な経過観察</td>
+        </tr>
+        <tr>
+          <td class="key">Stage 1</td>
+          <td><span class="key">無症状</span>で感染を伴わない骨露出・骨壊死</td>
+          <td>抗菌性含嗽剤、経過観察</td>
+        </tr>
+        <tr>
+          <td class="key">Stage 2</td>
+          <td><span class="key">感染を伴う</span>骨露出。疼痛、発赤、排膿</td>
+          <td>抗菌薬投与、局所洗浄、腐骨除去</td>
+        </tr>
+        <tr>
+          <td class="key">Stage 3</td>
+          <td>感染＋以下のいずれか：<span class="key">病的骨折、外歯瘻、口腔上顎洞瘻</span>、下顎下縁までの骨融解</td>
+          <td>外科的治療（腐骨除去＋顎骨切除）</td>
+        </tr>
+      </table>
+
+      <h2>発生機序とリスクファクター</h2>
+
+      <h3>発生機序</h3>
+      <ul>
+        <li>BP製剤が<span class="key">破骨細胞の機能を抑制</span>→骨吸収が低下</li>
+        <li>顎骨は咀嚼により常に微小骨折が蓄積→正常なら骨リモデリングで修復</li>
+        <li>BP製剤により骨リモデリングが抑制→微小骨折が蓄積→<span class="key">骨の脆弱化</span></li>
+        <li>抜歯などの侵襲により口腔細菌が感染→<span class="key">顎骨壊死</span></li>
+      </ul>
+
+      <h3>リスクファクター</h3>
+      <ul>
+        <li><span class="key">コルチコステロイド療法</span>の併用</li>
+        <li>糖尿病、喫煙、飲酒</li>
+        <li>口腔衛生不良</li>
+        <li>化学療法の併用</li>
+        <li><span class="highlight">注射薬は経口薬より高リスク</span></li>
+      </ul>
+
+      <h2>BP剤服用患者への歯科対応</h2>
+
+      <h3>BP製剤投与前の患者</h3>
+      <ul>
+        <li>BP製剤投与開始前に<span class="highlight">口腔管理を完了</span>させる</li>
+        <li>必要な抜歯・歯周治療・義歯調整を先に行う</li>
+        <li>治癒を確認した後にBP製剤の投与を開始する</li>
+        <li><span class="caution">骨侵襲の大きなインプラント治療は避ける</span></li>
+      </ul>
+
+      <h3>BP製剤投与中の抜歯時の留意点</h3>
+      <div class="point-box">
+        <div class="point-box-title">BP剤服用中の抜歯で行うべきこと（112A70で出題）</div>
+        <ul>
+          <li><span class="highlight">術前の十分な消炎</span>：感染リスクを最小限にする</li>
+          <li><span class="highlight">抜歯窩の骨鋭縁の除去</span>：粘膜への刺激を防ぎ、骨露出を予防</li>
+          <li><span class="highlight">周囲軟組織による抜歯窩の閉鎖</span>：骨の露出を防ぐ</li>
+        </ul>
+        <p class="note"><span class="caution">副腎皮質ステロイド薬の投与はリスクファクターであり行わない。</span>2023年PPでは抜歯時の休薬は原則不要とされている。</p>
+      </div>
+
+      <h3>インプラント希望患者の確認事項</h3>
+      <ul>
+        <li>乳癌等の悪性腫瘍の既往がある場合：<span class="highlight">転移・再発の有無</span>と<span class="highlight">BP製剤投与歴</span>を確認</li>
+        <li>BP製剤投与中・投与歴がある場合→インプラントは原則禁忌</li>
+      </ul>
+
+      <h2>BRONJの治療</h2>
+      <ul>
+        <li>At risk：患者教育、定期的口腔管理、侵襲回避</li>
+        <li>Stage 0：疼痛管理、感染管理、経過観察</li>
+        <li>Stage 1：<span class="key">抗菌性含嗽剤</span>、経過観察</li>
+        <li>Stage 2：<span class="key">抗菌薬投与</span>（3週間程度）、<span class="key">局所洗浄</span>、<span class="key">腐骨除去</span></li>
+        <li>Stage 3：外科的治療（顎骨切除を含む）</li>
+        <li><span class="caution">放射線治療は適応ではない</span></li>
+        <li><span class="caution">副腎皮質ステロイド薬はリスクファクターであり治療には使用しない</span></li>
+      </ul>
+
+      <h2>過去問で実力チェック</h2>
+
+      <div class="question-box">
+        <div class="q-number">112A70</div>
+        <p>68歳の女性。下顎左側犬歯の補綴装置脱離を主訴として来院した。2年前から骨粗鬆症のためビスホスホネート製剤を内服しているが、他に特記すべき既往歴、服薬歴、喫煙歴、過度の飲酒歴および肥満はない。「3は動揺と打診痛があり、排膿を認める。内科医と相談のうえ抜歯することとした。初診時の口腔内写真（別冊 No.16A）とエックス線画像（別冊No.16B）を別に示す。</p>
+        <p>抜歯に際して行うべきなのはどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112A70.png" alt="別冊No.16">
+        </div>
+        <div class="choices">
+          a 術前の十分な消炎<br>
+          b 抜歯窩の骨鋭縁の除去<br>
+          c 副腎皮質ステロイド薬の投与<br>
+          d 周囲軟組織による抜歯窩の閉鎖<br>
+          e ビスホスホネート製剤の6か月間の休薬
+        </div>
+        <div class="answer">正解：a, b, d</div>
+        <p>【解説】BP製剤服用中の抜歯では、BRONJ予防のために<span class="highlight">術前の十分な消炎</span>、<span class="highlight">骨鋭縁の除去</span>、<span class="highlight">軟組織による抜歯窩の閉鎖</span>を行う。骨の露出を防ぐことが重要。<span class="caution">副腎皮質ステロイド薬はBRONJのリスクファクターであり投与しない。</span>2023年PPでは抜歯時の休薬は原則不要とされており、6か月間の休薬は必須ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106A81</div>
+        <p>48歳の女性。インプラント治療を希望して来院した。5年前に乳癌の手術を受け、現在も通院しているという。医療機関から診療情報提供を受けることとした。</p>
+        <p>インプラント適用の判断で確認すべき情報はどれか。2つ選べ。</p>
+        <div class="choices">
+          a 入院の期間<br>
+          b 乳癌手術の術式<br>
+          c 転移・再発の有無<br>
+          d ビスホスホネート製剤投与歴<br>
+          e 乳癌手術前の腫瘍マーカーの値
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】乳癌患者がインプラントを希望した場合、<span class="highlight">転移・再発の有無</span>（骨転移があればインプラントは禁忌）と<span class="highlight">BP製剤投与歴</span>（BRONJ発症リスクの評価）を確認する必要がある。入院期間や手術術式、術前の腫瘍マーカー値はインプラント適用の判断には直接関係しない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109B40</div>
+        <p>65歳の男性。左側の下顎臼歯部からの排膿を主訴として紹介来院した。2年前から前立腺癌の再発と骨転移のために、ビスホスホネート製剤を定期的に投与されているという。同部から排膿を認めた。口腔内写真（別冊No.40A）とエックス線写真（別冊No.40B）を別に示す。</p>
+        <p>適切な対応はどれか。すべて選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109B40.png" alt="別冊No.40">
+        </div>
+        <div class="choices">
+          a 腐骨除去<br>
+          b 局所洗浄<br>
+          c 抗菌薬投与<br>
+          d 下顎骨への放射線治療<br>
+          e 副腎皮質ステロイド薬投与
+        </div>
+        <div class="answer">正解：a, b, c</div>
+        <p>【解説】BP製剤投与中にBRONJが発症した症例。排膿を伴うStage 2に該当し、<span class="highlight">腐骨除去</span>、<span class="highlight">局所洗浄</span>、<span class="highlight">抗菌薬投与</span>が適切な対応である。<span class="caution">放射線治療はBRONJの治療法ではない。副腎皮質ステロイド薬はリスクファクターであり投与しない。</span></p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">107D33</div>
+        <p>75歳の女性。下顎の腫脹を主訴として来院した。1か月前から下顎右側に時々自発痛があったが放置していたところ、2週前から腫脹が生じてきたという。体温は37.8℃で倦怠感がある。5年前に乳癌の切除術を受けたが、2年後に肋骨に転移したため、骨破壊を抑制する薬物が投与されている。初診時の顔貌写真（別冊No.33A）、口腔内写真（別冊No.33B）及びエックス線写真（別冊No.33C）を別に示す。</p>
+        <p>発症の誘因として考慮すべきなのはどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/107回_Web画像/107D33_1.png" alt="別冊No.33A">
+          <img src="../../../images/107回_Web画像/107D33_2.png" alt="別冊No.33B">
+          <img src="../../../images/107回_Web画像/107D33_3.png" alt="別冊No.33C">
+        </div>
+        <div class="choices">
+          a 骨隆起<br>
+          b 顎骨壊死<br>
+          c 下顎骨骨折<br>
+          d 線維性異形成症<br>
+          e 乳癌の下顎骨転移
+        </div>
+        <div class="answer">正解：b, e</div>
+        <p>【解説】乳癌の肋骨転移に対して「骨破壊を抑制する薬物」（BP製剤）が投与されている患者の下顎腫脹。考慮すべきは<span class="highlight">顎骨壊死</span>（BRONJ：BP製剤による）と<span class="highlight">乳癌の下顎骨転移</span>である。両者の鑑別には生検が重要。骨隆起は無症状の骨性膨隆であり腫脹・疼痛を伴わない。線維性異形成症は若年者に好発する。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "title": "染色体異常による症候群",
+    "category": "口腔外科学",
+    "chapter": "先天異常・発育不全"
+  },
+  "sections": [
+    {
+      "section": "染色体異常による4つの症候群",
+      "qa": [
+        {
+          "question": "Down症候群の染色体異常は？",
+          "answer": "21番染色体トリソミー"
+        },
+        {
+          "question": "Turner症候群の染色体異常は？",
+          "answer": "X染色体モノソミー（45,X）"
+        },
+        {
+          "question": "Klinefelter症候群の染色体異常は？",
+          "answer": "XXY・XXXY"
+        },
+        {
+          "question": "Russell-Silver症候群の染色体異常は？",
+          "answer": "7番染色体の異常"
+        },
+        {
+          "question": "Turner症候群の発症する性別は？",
+          "answer": "女性のみ"
+        },
+        {
+          "question": "Klinefelter症候群の発症する性別は？",
+          "answer": "男性のみ"
+        },
+        {
+          "question": "染色体異常による症候群で最も頻度が高いのは？",
+          "answer": "Klinefelter症候群（1/500）"
+        }
+      ]
+    },
+    {
+      "section": "表穴埋め",
+      "qa": [
+        {
+          "type": "table-occlusion",
+          "title": "染色体異常の分類",
+          "table": {
+            "headers": ["症候群", "染色体異常", "性別", "頻度"],
+            "rows": [
+              ["Down症候群", "21番染色体トリソミー", "男女", "1/700"],
+              ["Turner症候群", "X染色体モノソミー（45,X）", "女性のみ", "1/2,000"],
+              ["Klinefelter症候群", "XXY・XXXY", "男性のみ", "1/500"],
+              ["Russell-Silver症候群", "7番染色体", "男女", "まれ"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 0, "col": 2},
+            {"row": 0, "col": 3},
+            {"row": 1, "col": 1},
+            {"row": 1, "col": 2},
+            {"row": 1, "col": 3},
+            {"row": 2, "col": 1},
+            {"row": 2, "col": 2},
+            {"row": 2, "col": 3},
+            {"row": 3, "col": 1},
+            {"row": 3, "col": 2},
+            {"row": 3, "col": 3}
+          ]
+        }
+      ]
+    },
+    {
+      "section": "全身所見（Down症候群）",
+      "qa": [
+        {
+          "question": "Down症候群の特徴的顔貌は？",
+          "answer": "両眼開離、鞍鼻、扁平鼻"
+        },
+        {
+          "question": "Down症候群に合併する心奇形は？",
+          "answer": "心房中隔欠損、心室中隔欠損"
+        },
+        {
+          "question": "Down症候群の発症率と相関する因子は？",
+          "answer": "母親の年齢（高齢出産で発生頻度が増加）"
+        },
+        {
+          "question": "Down症候群の頸椎に関する注意点は？",
+          "answer": "易頸椎脱臼のため過後屈注意（環軸椎不安定症）"
+        },
+        {
+          "question": "高齢出産により発生頻度が最も増加する症候群は？",
+          "answer": "正解: A",
+          "choices": {
+            "a": "Down 症候群",
+            "b": "Apert 症候群",
+            "c": "Crouzon 症候群",
+            "d": "鎖骨頭蓋骨異形成症",
+            "e": "Treacher Collins 症候群"
+          },
+          "correctAnswer": "A",
+          "numChoices": 1,
+          "code": "113B38"
+        }
+      ]
+    },
+    {
+      "section": "口腔所見（Down症候群）",
+      "qa": [
+        {
+          "question": "Down症候群の舌の特徴は？",
+          "answer": "巨舌・溝状舌"
+        },
+        {
+          "question": "Down症候群の歯周組織の特徴は？",
+          "answer": "歯周病早期発症"
+        }
+      ]
+    },
+    {
+      "section": "全身所見（Turner症候群）",
+      "qa": [
+        {
+          "question": "Turner症候群の身長の特徴は？",
+          "answer": "低身長"
+        },
+        {
+          "question": "Turner症候群の性腺の特徴は？",
+          "answer": "性腺発育障害（無月経、第二次性徴の発現不全）"
+        },
+        {
+          "question": "Turner症候群に合併する心疾患は？",
+          "answer": "先天性心疾患（大動脈縮窄症、二尖大動脈弁など）"
+        },
+        {
+          "question": "Turner症候群の顎の特徴は？",
+          "answer": "小顎症"
+        },
+        {
+          "question": "Turner症候群に知的障害はあるか？",
+          "answer": "ほとんどない（Down症候群との重要な鑑別点）"
+        },
+        {
+          "question": "女児＋低身長＋心疾患＋小顎症から疑われる症候群は？",
+          "answer": "正解: C",
+          "choices": {
+            "a": "Down 症候群",
+            "b": "Marfan 症候群",
+            "c": "Turner 症候群",
+            "d": "Papillon-Lefevre 症候群",
+            "e": "Beckwith-Wiedemann 症候群"
+          },
+          "correctAnswer": "C",
+          "numChoices": 1,
+          "code": "113B48"
+        },
+        {
+          "question": "Turner症候群の特徴として正しい3つは？",
+          "answer": "正解: B, D, E",
+          "choices": {
+            "a": "高身長",
+            "b": "小顎症",
+            "c": "知的障害",
+            "d": "先天性心疾患",
+            "e": "第二次性徴の発現不全"
+          },
+          "correctAnswer": "BDE",
+          "numChoices": 3,
+          "code": "116C60"
+        }
+      ]
+    },
+    {
+      "section": "口腔所見（Turner症候群）",
+      "qa": [
+        {
+          "question": "Turner症候群の口腔所見は？",
+          "answer": "口蓋裂、歯列不正"
+        }
+      ]
+    },
+    {
+      "section": "Klinefelter症候群",
+      "qa": [
+        {
+          "question": "Klinefelter症候群の身長の特徴は？",
+          "answer": "細身高身長"
+        },
+        {
+          "question": "Klinefelter症候群の精巣の特徴は？",
+          "answer": "精巣の発育不全、不妊"
+        },
+        {
+          "question": "Klinefelter症候群の胸部の特徴は？",
+          "answer": "女性様乳房"
+        },
+        {
+          "question": "Klinefelter症候群に出現する歯の形態異常は？",
+          "answer": "タウロドント（長胴歯）"
+        },
+        {
+          "question": "タウロドントが出現する2つの疾患は？",
+          "answer": "Klinefelter症候群、くる病"
+        }
+      ]
+    },
+    {
+      "section": "Russell-Silver症候群",
+      "qa": [
+        {
+          "question": "Russell-Silver症候群の成長の特徴は？",
+          "answer": "子宮内発育遅延を伴う低身長・低体重"
+        },
+        {
+          "question": "Russell-Silver症候群の骨格の特徴は？",
+          "answer": "骨格の非対称（左右差）"
+        }
+      ]
+    },
+    {
+      "section": "身長による鑑別",
+      "qa": [
+        {
+          "question": "染色体異常による症候群で高身長を示すのは？",
+          "answer": "Klinefelter症候群"
+        },
+        {
+          "question": "染色体異常による症候群で低身長を示す3つは？",
+          "answer": "Down症候群、Turner症候群、Russell-Silver症候群"
+        }
+      ]
+    },
+    {
+      "section": "表穴埋め（鑑別）",
+      "qa": [
+        {
+          "type": "table-occlusion",
+          "title": "鑑別のポイント",
+          "table": {
+            "headers": ["低身長", "高身長"],
+            "rows": [
+              ["Down症候群\nTurner症候群\nRussell-Silver症候群\n軟骨無形成症", "Klinefelter症候群\nMarfan症候群"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 0},
+            {"row": 0, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "鑑別のポイント",
+          "table": {
+            "headers": ["知的障害あり", "知的障害なし"],
+            "rows": [
+              ["Down症候群\nKlinefelter症候群", "Turner症候群\nBeckwith-Wiedemann症候群\n軟骨無形成症"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 0},
+            {"row": 0, "col": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "section": "知的障害の有無による鑑別",
+      "qa": [
+        {
+          "question": "知的障害を伴う染色体異常の症候群は？",
+          "answer": "Down症候群、Klinefelter症候群"
+        },
+        {
+          "question": "Turner症候群に知的障害はあるか？",
+          "answer": "ない（重要な鑑別点）"
+        }
+      ]
+    }
+  ]
+}

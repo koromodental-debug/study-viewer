@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>真菌感染症 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 感染症</span>
+    <h1>真菌感染症</h1>
+    <div class="container">
+
+      <!-- ============================================ -->
+      <!-- セクション1: 口腔カンジダ症の概要 -->
+      <!-- ============================================ -->
+      <h2>1. 口腔カンジダ症</h2>
+
+      <h3>原因菌と発症機序</h3>
+      <p>口腔に常在する真菌である<span class="key">Candida属</span>の感染による。<span class="key"><i>C. albicans</i></span>が主体であるが、近年は<i>C. glabrata</i>、<i>C. tropicalis</i>、<i>C. krusei</i>などのnon-albicans属も増加している。</p>
+      <p>成人口腔の<span class="key">30〜50%</span>で菌が検出されるが、何らかの症状を示す場合に「口腔カンジダ症」と診断される。日和見感染症の一つである。</p>
+
+      <h3>発症の誘因</h3>
+      <table>
+        <tr><th>分類</th><th>誘因</th></tr>
+        <tr><td>局所的要因</td><td><span class="key">義歯の不潔・不適合</span>、唾液分泌減少、口腔乾燥</td></tr>
+        <tr><td>全身的要因</td><td>糖尿病、免疫低下、<span class="key">抗菌薬</span>長期投与（菌交代現象）、副腎皮質<span class="key">ステロイド</span>薬、抗がん薬、免疫抑制剤</td></tr>
+        <tr><td>年齢</td><td><span class="key">高齢者</span>（特に寝たきり）、新生児</td></tr>
+      </table>
+
+      <h3>臨床分類</h3>
+      <table>
+        <tr><th>分類</th><th>臨床型</th><th>特徴</th></tr>
+        <tr><td rowspan="2">急性型</td><td><span class="key">偽膜性カンジダ症</span></td><td>白色の偽膜（ガーゼで拭うと剥離→びらん面、易出血性）</td></tr>
+        <tr><td><span class="key">萎縮性（紅斑性）カンジダ症</span></td><td>粘膜の紅斑が主体。白色偽膜なし。抗菌薬使用後に生じやすい</td></tr>
+        <tr><td rowspan="2">慢性型</td><td><span class="key">肥厚性カンジダ症</span></td><td>白色被苔は<span class="caution">剥離困難</span>。上皮の過形成と角化亢進。白板症との鑑別が必要</td></tr>
+        <tr><td><span class="key">萎縮性カンジダ症（義歯性口内炎）</span></td><td><span class="highlight">義歯床下粘膜の紅斑</span>が特徴。義歯の不潔が原因</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">偽膜性 vs 肥厚性の鑑別ポイント</div>
+        <ul>
+          <li>偽膜性：ガーゼで<span class="highlight">拭うと剥離できる</span>（その下にびらん面）</li>
+          <li>肥厚性：<span class="caution">剥離困難</span>（上皮の角化亢進のため）→ 白板症との鑑別が必要</li>
+          <li>萎縮性：白色偽膜<span class="caution">なし</span>。紅斑が主体</li>
+        </ul>
+      </div>
+
+      <h3>診断</h3>
+      <ul>
+        <li>臨床診断：白斑やびらんの鑑別</li>
+        <li><span class="key">培養検査</span>：カンジダ菌の同定</li>
+        <li><span class="key">塗抹標本</span>：<span class="highlight">PAS染色</span>で菌糸（仮性菌糸）と胞子を確認</li>
+        <li>病理組織学的検査：カンジダ菌を検出。カンジダの血清中抗体の有無の検索も一助</li>
+      </ul>
+
+      <!-- ============================================ -->
+      <!-- セクション2: 治療薬 ★★★★ -->
+      <!-- ============================================ -->
+      <h2>2. カンジダ症の治療</h2>
+
+      <h3>治療の原則</h3>
+      <ul>
+        <li>まず<span class="highlight">基礎疾患の治療</span>と全身状態の改善</li>
+        <li><span class="highlight">口腔内を清潔</span>にする（義歯の清掃含む）</li>
+        <li>局所および全身抗真菌薬の投与</li>
+      </ul>
+
+      <h3>抗真菌薬</h3>
+      <table>
+        <tr><th>薬剤</th><th>分類</th><th>剤形</th><th>特徴</th></tr>
+        <tr><td><span class="highlight">ミコナゾール</span></td><td>アゾール系</td><td>ゲル（フロリードゲル）</td><td>局所使用が一般的。口腔カンジダ症の第一選択</td></tr>
+        <tr><td><span class="highlight">アムホテリシンB</span></td><td>ポリエン系</td><td>シロップ、注射</td><td>広い抗真菌スペクトル。重症例に使用</td></tr>
+        <tr><td>イトラコナゾール</td><td>アゾール系</td><td>内用液、カプセル</td><td>全身投与。深在性真菌症にも有効</td></tr>
+        <tr><td>フルコナゾール</td><td>アゾール系</td><td>カプセル、注射</td><td>重症例、全身性カンジダ症</td></tr>
+      </table>
+      <p class="note">ミコナゾールはワルファリンとの相互作用（抗凝固作用増強）に注意。</p>
+
+      <div class="question-box">
+        <div class="q-number">108D19</div>
+        <p>78歳の女性。口の中の疼痛を主訴として来院した。2か月前から口の中がピリピリするという。1年前から寝たきりで介護施設に入所している。初診時の口腔内写真（別冊No.19A）と口腔粘膜からの剥離物のPAS染色塗抹標本像（別冊No.19B）を別に示す。<br>有効な薬物はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108D19.png" alt="別冊No.19">
+        </div>
+        <div class="choices">
+          a アシクロビル<br>
+          b ミコナゾール<br>
+          c シスプラチン<br>
+          d デキサメタゾン<br>
+          e アモキシシリン水和物
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】高齢・寝たきり＋口腔内疼痛＋PAS染色で菌糸確認 → 口腔カンジダ症。治療薬はミコナゾール（抗真菌薬）。アシクロビルは抗ウイルス薬、デキサメタゾンはステロイド（カンジダ症を悪化させる）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">106C47</div>
+        <p>70歳の女性。口角の痛みを主訴として来院した。食事中に痛みが増悪するという。初診時の口腔内写真（別冊No.5A）と細胞診の染色像（別冊No.5B）とを別に示す。<br>有効な薬剤はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/106回_Web画像/106C47.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a 5-FU<br>
+          b アシクロビル<br>
+          c ビタミンB2製剤<br>
+          d ミコナゾール硫酸塩<br>
+          e アモキシシリン水和物
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】高齢者の口角炎＋細胞診でカンジダ菌確認 → カンジダ性口角炎。治療薬はミコナゾール。ビタミンB2欠乏でも口角炎は生じるが、細胞診で真菌が確認されている点がポイント。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113A84</div>
+        <p>82歳の女性。摂食時の疼痛を主訴として訪問歯科診療の依頼があった。脳梗塞の既往があり、ワルファリンカリウムを服用している。口腔清掃に介助が必要である。初診時の口腔内写真（別冊No.34A）と使用中の義歯の写真（別冊No.34B)を別に示す。<br>家族への義歯の清掃指導とともに投与すべき薬物はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A84.png" alt="別冊No.34">
+        </div>
+        <div class="choices">
+          a デキサメタゾン<br>
+          b アムホテリシンB<br>
+          c アセトアミノフェン<br>
+          d ミコナゾール硝酸塩<br>
+          e セファゾリンナトリウム
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】高齢＋要介護＋義歯不潔＋口腔内病変 → 義歯性カンジダ症。ワルファリン服用中のため<span class="caution">ミコナゾールは禁忌</span>（ワルファリンの抗凝固作用を増強し出血リスク増大）。アムホテリシンBはワルファリンとの相互作用がなく、この症例では適切。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション3: 義歯性カンジダ症 ★★★ -->
+      <!-- ============================================ -->
+      <h2>3. 義歯性カンジダ症（義歯性口内炎）</h2>
+
+      <h3>病態</h3>
+      <p>慢性萎縮性カンジダ症の代表的な臨床像。<span class="highlight">義歯床下粘膜の紅斑</span>を特徴とし、不潔な義歯の長期装着が原因となる。白色偽膜は認めないことが多い。</p>
+
+      <h3>対応の順序</h3>
+      <div class="point-box">
+        <div class="point-box-title">義歯性カンジダ症の治療ステップ</div>
+        <ul>
+          <li>1. まず<span class="highlight">義歯の清掃指導</span>が最優先（原因除去）</li>
+          <li>2. 義歯洗浄剤による義歯の消毒</li>
+          <li>3. 必要に応じて抗真菌薬の投与</li>
+          <li>4. 義歯の適合不良があれば修理・再製</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C57</div>
+        <p>80歳の女性。2年ぶりに上顎残根上全部床義歯装着後の定期検診で来院した。７」付近の粘膜の口腔内写真（別冊No.22A）、ガーゼで粘膜を拭った後の口腔内写真（別冊No.22B）及び使用中の義歯の写真（別冊No.22C）を別に示す。<br>最初に行う対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116C57_1.png" alt="別冊No.22A,B">
+          <img src="../../../images/116回_Web画像/116C57_2.png" alt="別冊No.22C">
+        </div>
+        <div class="choices">
+          a 生検<br>
+          b 経過観察<br>
+          c 抗菌薬投与<br>
+          d 義歯の清掃指導<br>
+          e 副腎皮質ステロイド軟膏の塗布
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】義歯装着高齢者の粘膜白色病変で、ガーゼで拭うと剥離 → 偽膜性カンジダ症。最初に行うべきは義歯の清掃指導（原因除去）。ステロイド軟膏はカンジダ症を悪化させる。抗菌薬は細菌感染に対するもので無効。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">108A48</div>
+        <p>70歳の男性。口腔内の灼熱感を主訴として来院した。2か月前から口蓋粘膜の違和感を自覚しているという。3年前に作製した上顎義歯を現在も装着している。<br>初診時の口腔内写真（別冊No.6）を別に示す。<br>考えられる疾患はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108A48.png" alt="別冊No.6">
+        </div>
+        <div class="choices">
+          a 白板症<br>
+          b 類天疱瘡<br>
+          c 口腔扁平苔癬<br>
+          d アフタ性口内炎<br>
+          e 口腔カンジダ症
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】高齢者＋義歯装着＋口蓋粘膜の灼熱感 → 義歯性カンジダ症（慢性萎縮性カンジダ症）。義歯床下粘膜の発赤・灼熱感が特徴。白板症は白色病変、類天疱瘡は水疱形成、扁平苔癬はレース状白色病変。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション4: 口角炎とカンジダ ★★ -->
+      <!-- ============================================ -->
+      <h2>4. カンジダ性口角炎</h2>
+
+      <h3>病態</h3>
+      <p>口角部のびらん・亀裂にカンジダが感染して生じる。高齢者に多く、<span class="key">咬合高径の低下</span>による口角部の唾液貯留が原因の一つ。義歯不適合や口腔乾燥も誘因となる。</p>
+      <ul>
+        <li>口角部の発赤、びらん、亀裂、痂皮形成</li>
+        <li>開口時や食事中に疼痛が増悪</li>
+        <li>治療：抗真菌薬（ミコナゾール等）の局所塗布＋義歯の咬合高径の回復</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108C36</div>
+        <p>高齢者の口角びらんに関与するのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Quincke浮腫<br>
+          b 慢性耳下腺炎<br>
+          c 口腔カンジダ症<br>
+          d ヘルパンギーナ<br>
+          e 全身性エリテマトーデス
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】高齢者の口角びらん → カンジダ性口角炎。Quincke浮腫は血管性浮腫で口唇腫脹、ヘルパンギーナは小児の軟口蓋の水疱、SLEは蝶形紅斑が特徴。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション5: 萎縮性カンジダ症の特徴 ★ -->
+      <!-- ============================================ -->
+      <h2>5. 萎縮性カンジダ症の特徴</h2>
+
+      <div class="question-box">
+        <div class="q-number">107C49</div>
+        <p>萎縮性カンジダ症について正しいのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 口角炎を併発する。<br>
+          b 病変は角質層にとどまる。<br>
+          c 清掃不良の義歯が原因となる。<br>
+          d 擦過によって病変を除去できる。<br>
+          e 副腎皮質ステロイドによって改善する。
+        </div>
+        <div class="answer">正解：a,c</div>
+        <p>【解説】萎縮性カンジダ症は義歯性口内炎として出現し、口角炎を併発する（a正しい）。清掃不良の義歯が原因（c正しい）。偽膜がないため擦過で除去できない（dは偽膜性の特徴）。ステロイドはカンジダ症を<span class="caution">悪化させる</span>（e誤り）。角質層にとどまるのはカンジダ症一般の特徴だが、萎縮性では上皮の菲薄化が主体（b誤り）。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション6: 正中菱形舌炎 ★ -->
+      <!-- ============================================ -->
+      <h2>6. 正中菱形舌炎とカンジダ</h2>
+
+      <h3>正中菱形舌炎（median rhomboid glossitis）</h3>
+      <p>舌背の中央部、分界溝の前方に境界明瞭な<span class="key">楕円形の赤み</span>を帯びた隆起と陥起を認める病変。かつては発生異常と考えられていたが、現在は<span class="highlight">カンジダの関与</span>が考えられている。</p>
+      <ul>
+        <li>舌乳頭の消失による平滑な赤色病変</li>
+        <li>自覚症状は乏しいことが多い</li>
+        <li>治療：カンジダが関与する場合は抗真菌薬</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">109A123</div>
+        <p>55歳の男性。舌背後方の接触痛を主訴として来院した。口腔内写真（別冊No.21）を別に示す。<br>この病変の原因の1つとして考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109A123.png" alt="別冊No.21">
+        </div>
+        <div class="choices">
+          a 放線菌<br>
+          b カンジダ<br>
+          c マイコプラズマ<br>
+          d 単純ヘルペスウイルス<br>
+          e ヒトパピローマウイルス
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】舌背後方の病変 → 正中菱形舌炎。カンジダの関与が考えられている。放線菌は顎放線菌症、マイコプラズマは肺炎、HPVは乳頭腫の原因。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション7: まとめ -->
+      <!-- ============================================ -->
+      <h2>7. 口腔カンジダ症のまとめ</h2>
+
+      <h3>臨床型と鑑別のポイント</h3>
+      <table>
+        <tr><th>臨床型</th><th>外観</th><th>擦過での剥離</th><th>好発状況</th></tr>
+        <tr><td>急性偽膜性</td><td>白色偽膜</td><td><span class="highlight">可能</span>（下にびらん面）</td><td>抗菌薬使用後、免疫低下</td></tr>
+        <tr><td>急性萎縮性（紅斑性）</td><td>粘膜の紅斑</td><td>偽膜なし</td><td>抗菌薬使用後（菌交代現象）</td></tr>
+        <tr><td>慢性肥厚性</td><td>白色被苔（角化亢進）</td><td><span class="caution">困難</span></td><td>頬粘膜、白板症との鑑別要</td></tr>
+        <tr><td>慢性萎縮性（義歯性）</td><td>義歯床下の紅斑</td><td>偽膜なし</td><td>義歯不潔、高齢者</td></tr>
+      </table>
+
+      <h3>治療薬選択の注意点</h3>
+      <div class="point-box">
+        <div class="point-box-title">ワルファリン服用患者のカンジダ症</div>
+        <ul>
+          <li><span class="caution">ミコナゾールはワルファリンの作用を増強</span>（CYP2C9阻害）→ 出血リスク増大</li>
+          <li>ワルファリン服用中は<span class="highlight">アムホテリシンB</span>を選択</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

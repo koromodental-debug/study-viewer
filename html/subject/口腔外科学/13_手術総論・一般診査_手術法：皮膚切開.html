@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>手術法：皮膚切開 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>手術法：皮膚切開</h1>
+    <div class="container">
+
+      <h2>皮膚切開の原則</h2>
+      <p>皮膚の切開は、皮下組織→筋膜→筋肉→骨膜の順に各層を確認しながら行う。顔面領域では審美性が要求されるため、術後の瘢痕が目立たないよう切開線の設定が重要である。</p>
+
+      <h3>切開線設定の指標</h3>
+      <table>
+        <tr><th>指標</th><th>定義</th><th>臨床的意義</th></tr>
+        <tr>
+          <td><span class="highlight">Langer割線</span></td>
+          <td>皮膚の<span class="key">緊張方向</span>を連続的に連ねた線</td>
+          <td>割線に平行な切開は瘢痕が目立ちにくい</td>
+        </tr>
+        <tr>
+          <td><span class="key">皺線</span>（表情皺）</td>
+          <td><span class="key">表情筋の走行に対して垂直</span>に走る線（しわの方向）</td>
+          <td>皺線に沿った切開は既存の皺に紛れて瘢痕が目立たない</td>
+        </tr>
+        <tr>
+          <td><span class="key">顎部線</span></td>
+          <td>角度をもって移行する部位の境界線（耳介→頸部、外鼻→口角など）</td>
+          <td>影になる部位のため切開痕が目立たない</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Bockenheimer線</span></td>
+          <td><span class="key">顔面神経の走行に沿って</span>設けられた切開線</td>
+          <td>この線に沿って切開すれば顔面神経を切断しにくい</td>
+        </tr>
+      </table>
+      <p>切開はこれらの指標（特に<span class="highlight">しわの方向</span>）に沿って行うことで、瘢痕が目立たなくなる。切開後の瘢痕拘縮は切開線に沿って生じ、その部位が短縮する → <span class="key">三角弁（Z形成術）</span>を付加して拘縮の影響を軽減する。</p>
+
+      <h2>顎顔面の主な皮膚切開線</h2>
+      <p>教科書（p.502）に記載される代表的な顔面切開線を以下に示す。</p>
+      <table>
+        <tr><th>切開線</th><th>位置・走行</th><th>主な適応</th></tr>
+        <tr>
+          <td><span class="key">額部切開線</span><br>（横頭部切開線）</td>
+          <td>額の横しわに沿う水平切開</td>
+          <td>前頭骨骨折、前頭洞の手術</td>
+        </tr>
+        <tr>
+          <td><span class="key">眉毛下切開</span></td>
+          <td>眉毛の下縁に沿う切開</td>
+          <td>眼窩上縁・前頭骨へのアプローチ</td>
+        </tr>
+        <tr>
+          <td><span class="key">耳介前切開</span></td>
+          <td>耳珠前方の皮膚溝に沿う切開</td>
+          <td>顎関節・関節突起・頬骨弓へのアプローチ</td>
+        </tr>
+        <tr>
+          <td><span class="key">Dieffenbach切開線</span></td>
+          <td>耳前部から下顎角に向かう切開</td>
+          <td>耳下腺・顎関節の手術</td>
+        </tr>
+        <tr>
+          <td><span class="key">Weber切開線</span></td>
+          <td>鼻翼基部から上口唇を経て鼻中隔に沿う切開</td>
+          <td>上顎の腫瘍手術</td>
+        </tr>
+        <tr>
+          <td><span class="key">鼻唇溝切開線</span></td>
+          <td>鼻唇溝（ほうれい線）に沿う切開</td>
+          <td>上顎・頬部へのアプローチ</td>
+        </tr>
+        <tr>
+          <td><span class="key">Velpeau切開線</span></td>
+          <td>下口唇正中を下方へ延長する切開</td>
+          <td>下顎正中部の手術</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">顎下部切開</span></td>
+          <td>下顎骨下縁の<span class="highlight">約2横指（1.5〜2cm）下方</span>、しわに沿う水平切開</td>
+          <td>顎下隙・翼突下顎隙の膿瘍排膿、下顎骨骨折の整復固定</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">なぜ下顎骨下縁の「下方」で切開するか</div>
+        <ul>
+          <li><span class="highlight">顔面神経下顎縁枝</span>は下顎骨下縁に沿って走行する</li>
+          <li>下顎縁枝は下顎角付近で下顎骨下縁より<span class="key">最大1cm下方</span>を走行することがある</li>
+          <li>約2横指下方で切開し、上方に剥離を進めることで、下顎縁枝を含む組織弁を上方に牽引でき、<span class="caution">神経損傷を回避</span>できる</li>
+        </ul>
+      </div>
+
+      <h3>顎下部切開の層構造</h3>
+      <p>皮膚 → 皮下組織 → <span class="key">広頸筋</span>（platysma）→ 顎下腺被膜 → 顎下隙</p>
+      <p>広頸筋を切開した後、<span class="key">広頸筋の深層</span>に顔面神経下顎縁枝が走行するため、広頸筋より深部では<span class="key">鈍的剥離</span>を行い神経損傷を防ぐ。</p>
+
+      <h3>Risdon切開</h3>
+      <p><span class="key">Risdon切開</span>は下顎角部へのアプローチに用いられる。下顎角の下方約2横指、下顎骨下縁に沿うように切開する。下顎角骨折や下顎枝の手術に用いられる。顎下部切開と同様、顔面神経下顎縁枝の損傷に注意する。</p>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">102A113</div>
+        <p>顎下隙に到達するための切開部位の写真（別冊No.13）を別に示す。<br>適切なのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102A113.png" alt="別冊No.13">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：b</div>
+        <p>【解説】顎下隙へのアプローチには<span class="key">顎下部切開</span>を用いる。写真のイは下顎骨下縁の約2横指下方に位置する水平な切開線であり、これが正解である。</p>
+      </div>
+
+      <div class="point-box">
+        <div class="point-box-title">102A113の正誤判定ロジック</div>
+        <ul>
+          <li>ア（a）：× 下顎骨下縁よりやや上方〜口角の高さ。<span class="caution">顔面神経下顎縁枝を損傷するリスク</span>が高い</li>
+          <li><span class="key">イ</span>（b）：<span class="highlight">○</span> 下顎骨下縁の約2横指下方。顎下部切開の正しい位置</li>
+          <li>ウ（c）：× 下顎角の後下方。顎下隙ではなく<span class="caution">耳下腺・胸鎖乳突筋方向</span>のアプローチ位置</li>
+          <li>エ（d）：× 耳介後方。乳様突起付近であり顎下隙とは方向が異なる</li>
+          <li>オ（e）：× オトガイ下方の正中付近。オトガイ下隙へのアプローチには使えるが、<span class="caution">顎下隙への到達は困難</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

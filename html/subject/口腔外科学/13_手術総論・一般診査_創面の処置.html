@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>創面の処置 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>創面の処置</h1>
+    <div class="container">
+
+      <h2>創傷治癒の分類</h2>
+      <p>創傷の治癒は、創面の状態と閉鎖方法によって3つに分類される。</p>
+
+      <h3>一次治癒・二次治癒・三次治癒</h3>
+      <table>
+        <tr>
+          <th>分類</th>
+          <th>別名</th>
+          <th>条件</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="key">一次治癒</span></td>
+          <td>第一期癒合<br>healing by first intention</td>
+          <td>創面が密接・無菌的・壊死や異物なし・平滑な創縁</td>
+          <td>肉芽形成が少なく、わずかな<span class="key">線状瘢痕</span>のみ</td>
+        </tr>
+        <tr>
+          <td><span class="key">二次治癒</span></td>
+          <td>第二期癒合<br>healing by second intention</td>
+          <td>創縁が開離・壊死組織や感染・血腫がある場合</td>
+          <td>4日目頃から<span class="key">肉芽形成</span>開始→7日目頃に肉芽で覆われる→<span class="key">瘢痕組織</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">三次治癒</span></td>
+          <td>第三期癒合<br>healing by third intention</td>
+          <td>感染の危険性が大きい創面</td>
+          <td>まず二次治癒→増殖化した段階で肉芽を切除・縫合閉創</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">一次治癒を目指す原則</div>
+        <ul>
+          <li>口腔面の新鮮創は可能な限り<span class="highlight">縫合して一次治癒</span>を図る</li>
+          <li>デブリードマンは最小限にとどめる</li>
+          <li>裂創では筋層・粘膜の層ごとの縫合が基本</li>
+        </ul>
+      </div>
+
+      <h3>肉芽組織の構成要素</h3>
+      <p>二次治癒の過程で形成される肉芽組織は、以下の要素から構成される。</p>
+      <ul>
+        <li><span class="highlight">毛細血管</span>（血管新生）</li>
+        <li><span class="highlight">線維芽細胞</span>（コラーゲン産生）</li>
+        <li><span class="highlight">リンパ球</span>（炎症細胞）</li>
+      </ul>
+      <p class="note"><span class="caution">脂肪細胞・軟骨細胞は肉芽組織の構成要素ではない</span>（110A111の選択肢）</p>
+      <p>肉芽組織は徐々に線維性に変化して硬化し、瘢痕組織となる。瘢痕組織が過剰に増殖して膨瘤状に隆起したものを<span class="key">ケロイド</span>という。</p>
+
+      <h3>擦過創の治癒過程</h3>
+      <p>擦過創（表皮のみの損傷）では、真皮層の再生は起こらず、<span class="highlight">扁平上皮細胞の増殖</span>によって創面が被覆される。肉芽組織の形成を経ずに上皮の再生で治癒するのが特徴。</p>
+
+      <h2>創傷の洗浄</h2>
+      <p>創傷処置における洗浄は、異物や壊死組織の除去を目的として行う。</p>
+
+      <div class="point-box">
+        <div class="point-box-title">洗浄液の選択</div>
+        <ul>
+          <li>創傷洗浄には<span class="highlight">滅菌生理食塩液</span>を用いる</li>
+          <li><span class="caution">消毒薬（エタノール、オキシドール、ポビドンヨード等）は創部に対して細胞毒性があり、組織修復を阻害するため避ける</span></li>
+        </ul>
+      </div>
+
+      <h3>消毒薬を避ける理由</h3>
+      <p>消毒薬は細菌だけでなく、創傷治癒に必要な線維芽細胞や上皮細胞にも毒性を示す。教科書でも「消毒液は創部に対して毒性を与えないよう極力避ける」と明記されている。</p>
+
+      <h2>創面被覆（湿潤療法）</h2>
+      <p>創傷治癒を促進するためには、創面を適切な湿潤環境に保つことが重要である。</p>
+
+      <h3>ハイドロコロイド材による被覆</h3>
+      <p><span class="key">ハイドロコロイド材</span>は創面を閉鎖性に被覆するドレッシング材であり、口腔外科領域では口腔粘膜の創面保護に用いられる。</p>
+
+      <h3>ハイドロコロイド材の目的</h3>
+      <table>
+        <tr>
+          <th>目的</th>
+          <th>機序</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">乾燥防止</span></td>
+          <td>創面を閉鎖して湿潤環境を維持し、上皮細胞の遊走を促進</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">再生上皮の保護</span></td>
+          <td>新生上皮への機械的刺激を防ぎ、創傷治癒を妨げない</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">瘢痕形成の抑制</span></td>
+          <td>湿潤環境下では過剰な線維化が抑制され、瘢痕が目立ちにくい</td>
+        </tr>
+      </table>
+      <p><span class="caution">止血や殺菌作用はハイドロコロイド材の目的ではない</span>（116C68の誤選択肢）</p>
+
+      <h2>ドレーン留置</h2>
+      <p>手術後の創部にドレーンを留置する場合がある。</p>
+      <ul>
+        <li>目的：<span class="highlight">貯留滲出液の排出</span></li>
+        <li>頸部郭清術後など、死腔が生じやすい手術で重要</li>
+        <li>滲出液の貯留は感染源となるため、排出して創傷治癒を促進する</li>
+      </ul>
+      <p class="note"><span class="caution">創部の洗浄・抗菌薬の投与・創部出血の防止はドレーンの目的ではない</span></p>
+
+      <h2>過去問</h2>
+
+      <div class="question-box">
+        <div class="q-number">116C68</div>
+        <p>ハイドロコロイド材で創面を被覆する目的はどれか。3つ選べ。</p>
+        <div class="choices">
+          a 止　血<br>
+          b 乾燥防止<br>
+          c 殺菌作用<br>
+          d 再生上皮の保護<br>
+          e 瘢痕形成の抑制
+        </div>
+        <div class="answer">正解：b, d, e</div>
+        <p>【解説】ハイドロコロイド材は湿潤環境を維持するドレッシング材。乾燥防止により上皮細胞の遊走を促し、再生上皮を機械的刺激から保護し、瘢痕形成を抑制する。止血作用や殺菌作用は持たない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116D3</div>
+        <p>創傷処置時の洗浄に用いるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a エタノール<br>
+          b オキシドール<br>
+          c ポビドンヨード<br>
+          d 滅菌生理食塩液<br>
+          e ベンザルコニウム塩化物
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】創傷洗浄には滅菌生理食塩液を用いる。消毒薬は細菌のみならず、創傷治癒に必要な線維芽細胞や上皮細胞にも細胞毒性を示すため、創面への使用は避ける。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">110A111</div>
+        <p>肉芽組織を構成するのはどれか。すべて選べ。</p>
+        <div class="choices">
+          a 脂肪細胞<br>
+          b 軟骨細胞<br>
+          c 毛細血管<br>
+          d リンパ球<br>
+          e 線維芽細胞
+        </div>
+        <div class="answer">正解：c, d, e</div>
+        <p>【解説】肉芽組織は、血管新生による毛細血管、コラーゲンを産生する線維芽細胞、炎症細胞であるリンパ球から構成される。脂肪細胞や軟骨細胞は肉芽組織の構成要素ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C80</div>
+        <p>擦過創の治癒過程でみられるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 真皮層の再生<br>
+          b リンパ球の浸潤<br>
+          c 毛細血管の新生<br>
+          d 線維芽細胞の増殖<br>
+          e 扁平上皮細胞の増殖
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】擦過創は表皮のみの損傷であり、真皮層は破壊されていないため肉芽組織形成を経ない。基底層から扁平上皮細胞が増殖して創面を被覆する。b〜dは二次治癒（肉芽組織形成）でみられる所見。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">102D5</div>
+        <p>20歳の男性。左側上唇の裂傷を主訴として来院した。30分前に自転車で転倒したという。歯、骨および全身状態に異常は認められないため、裂創の処置を行うこととした。局所洗浄後の創部の写真（別冊No．4A、B）を別に示す。
+次に行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/102回_Web画像/102D5_1.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a 口唇動脈結紮<br>
+          b ドレーン留置<br>
+          c 筋層・粘膜縫合<br>
+          d スキンテープ貼付<br>
+          e 医療用接着剤使用
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】口唇の裂創は筋層（口輪筋）を含む全層の損傷であり、一次治癒を目指して層ごとに縫合する。まず筋層を縫合し、次に粘膜・皮膚を縫合する。スキンテープや接着剤は浅い表皮の損傷に用いるもので、全層裂創には不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116A38</div>
+        <p>頸部郭清術後の創部にドレーンを留置する目的はどれか。1つ選べ。</p>
+        <div class="choices">
+          a 創部の洗浄<br>
+          b 抗菌薬の投与<br>
+          c 排膿路の確保<br>
+          d 創部出血の防止<br>
+          e 貯留滲出液の排出
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】頸部郭清術後は広範な死腔が生じ、滲出液が貯留しやすい。ドレーンは貯留した滲出液を体外に排出し、死腔を閉鎖して感染予防・創傷治癒促進を図る目的で留置する。排膿路の確保は膿瘍に対するドレナージの目的であり、術後の予防的ドレーンとは異なる。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

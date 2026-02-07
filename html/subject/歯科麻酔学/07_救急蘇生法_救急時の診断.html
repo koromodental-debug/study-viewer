@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>救急時の診断 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 救急蘇生法</span>
+    <h1>救急時の診断</h1>
+    <div class="container">
+
+      <!-- バイタルサインの評価 -->
+      <h2>バイタルサイン</h2>
+      <p>歯科診療において緊急事態が起こった際、適切な救急処置を行うために<span class="key">生命徴候（バイタルサイン）</span>の確認が必要となる。バイタルサインとは、人間が生きている状態を示す指標で、<span class="key">呼吸、血圧、脈拍、体温</span>の4徴候を意味し、これに<span class="key">意識レベル</span>が含まれる。</p>
+
+      <h3>バイタルサインの正常値</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>正常値（成人）</th>
+          <th>異常</th>
+        </tr>
+        <tr>
+          <td><span class="key">呼吸</span></td>
+          <td>14〜20回/分</td>
+          <td>頻呼吸：24回/分以上、徐呼吸：10回/分以下</td>
+        </tr>
+        <tr>
+          <td><span class="key">血圧</span></td>
+          <td>収縮期＜140 / 拡張期＜90 mmHg</td>
+          <td>収縮期80mmHg以下→ショック</td>
+        </tr>
+        <tr>
+          <td><span class="key">脈拍</span></td>
+          <td>60〜100回/分</td>
+          <td>頻脈：100回/分超、徐脈：60回/分未満</td>
+        </tr>
+        <tr>
+          <td><span class="key">体温</span></td>
+          <td>35〜37℃（深部温）</td>
+          <td>—</td>
+        </tr>
+      </table>
+
+      <!-- 脈拍の触知 -->
+      <h2>脈拍の触知</h2>
+      <p>心臓から拍出される血流は末梢動脈の血管に拍動として伝わり、脈拍として触れることができる。</p>
+
+      <h3>触診できる動脈</h3>
+      <table>
+        <tr>
+          <th>動脈</th>
+          <th>触知部位</th>
+          <th>緊急時の使用</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">総頸動脈</span></td>
+          <td>気管と胸鎖乳突筋前縁の間のくぼみ</td>
+          <td>○（心臓に近く確実）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">橈骨動脈</span></td>
+          <td>手首の橈側（親指側）</td>
+          <td>○（日常的に使用）</td>
+        </tr>
+        <tr>
+          <td>浅側頭動脈</td>
+          <td>耳前部</td>
+          <td>△</td>
+        </tr>
+        <tr>
+          <td>上腕動脈</td>
+          <td>上腕内側</td>
+          <td>△（乳児ではこちら）</td>
+        </tr>
+        <tr>
+          <td>大腿動脈</td>
+          <td>鼠径部</td>
+          <td>△（衣服の上から困難）</td>
+        </tr>
+        <tr>
+          <td>足背動脈</td>
+          <td>足背部</td>
+          <td>△（末梢で不確実）</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">緊急時の脈拍触知</div>
+        <ul>
+          <li><span class="highlight">総頸動脈</span>：心臓に最も近い動脈であり、心肺停止時などの緊急時に最も適切</li>
+          <li><span class="highlight">橈骨動脈</span>：歯科治療中の偶発症発生時に簡便に触知できる</li>
+          <li>触知方法（総頸動脈）：気管の上に示指と中指を置き、外側へ滑すように下ろし、胸鎖乳突筋前縁の凹みで触知</li>
+          <li><span class="caution">医療従事者であっても脈拍の確認に自信がない場合は、呼吸の確認のみで専念</span>する</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105A99</div>
+        <p>歯科治療中の偶発症発生時において脈拍を触知するのに適切なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 顔面動脈<br>
+          b 総頸動脈<br>
+          c 橈骨動脈<br>
+          d 大腿動脈<br>
+          e 足背動脈
+        </div>
+        <div class="answer">正解：b, c</div>
+        <p>【解説】偶発症発生時に適切な脈拍触知部位は、総頸動脈（b）と橈骨動脈（c）。総頸動脈は心臓に近く確実に触知でき、橈骨動脈は手首で簡便に触知できる。顔面動脈（a）は細く不安定で緊急時には不適。大腿動脈（d）は衣服の上からは困難。足背動脈（e）は末梢で不確実。</p>
+      </div>
+
+      <!-- 意識レベルの評価 -->
+      <h2>意識レベルの評価</h2>
+      <p>意識レベルの把握は、中枢神経の機能の状態を判断することであり、どの程度の刺激でどのように反応するかによって評価する。</p>
+
+      <h3>Glasgow Coma Scale（GCS）</h3>
+      <table>
+        <tr>
+          <th>大分類</th>
+          <th>小分類</th>
+          <th>スコア</th>
+        </tr>
+        <tr>
+          <td rowspan="4"><span class="key">開眼</span>（E）</td>
+          <td>自発的</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>言葉により</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>痛み刺激により</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>開眼しない</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td rowspan="5"><span class="key">言語</span>（V）</td>
+          <td>見当識あり</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>錯乱状態</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>不適当な言葉</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>理解できない発語</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>発語がみられない</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td rowspan="6"><span class="key">運動</span>（M）</td>
+          <td>命令に従う</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>痛み刺激部位に手足をもってくる</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>四肢を屈曲する（逃避）</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>異常屈曲</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>四肢伸展</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>まったく動かさない</td>
+          <td>1</td>
+        </tr>
+      </table>
+      <p>各項目の合計で意識障害の重症度を評価。<span class="highlight">最重症は3点、最軽症は15点</span>。8点以下は重症意識障害とされる。</p>
+
+      <!-- 病的な呼吸の型 -->
+      <h2>病的な呼吸の型</h2>
+      <table>
+        <tr>
+          <th>呼吸型</th>
+          <th>パターン</th>
+          <th>関連病態</th>
+        </tr>
+        <tr>
+          <td><span class="key">チェーン・ストークス型</span></td>
+          <td>呼吸量が漸増→漸減→無呼吸（10〜20秒）を繰り返す。周期は30秒〜2分</td>
+          <td>中枢神経系の障害、脳の低酸素状態</td>
+        </tr>
+        <tr>
+          <td><span class="key">ビオー型</span></td>
+          <td>深い呼吸が突然消失し、無呼吸のあとに再び深い呼吸が始まる</td>
+          <td>脳膜炎</td>
+        </tr>
+        <tr>
+          <td><span class="key">クスマウル型</span></td>
+          <td>深い呼吸が持続する異常呼吸</td>
+          <td>糖尿病性ケトアシドーシス、尿毒症（代謝性アシドーシスの代償）</td>
+        </tr>
+      </table>
+
+      <!-- BLSの初期対応手順 -->
+      <h2>BLSの初期対応手順</h2>
+      <p>倒れている人を発見した場合、<span class="key">BLS（一次救命処置）</span>のアルゴリズムに従って対応する。</p>
+
+      <h3>成人のBLSアルゴリズム</h3>
+      <table>
+        <tr>
+          <th>手順</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">1. 反応の確認</span></td>
+          <td>肩を軽く叩きながら「大丈夫ですか」と声をかける</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">2. 通報・AED手配</span></td>
+          <td>反応なし→大声で応援を呼び、<span class="highlight">119番通報</span>と<span class="highlight">AEDの手配</span>を依頼</td>
+        </tr>
+        <tr>
+          <td><span class="key">3. 呼吸の確認</span></td>
+          <td>気道確保を行いながら呼吸を10秒以内で確認</td>
+        </tr>
+        <tr>
+          <td>3a. 正常な呼吸あり</td>
+          <td>気道確保、<span class="key">回復体位</span>を考慮、応援を待つ</td>
+        </tr>
+        <tr>
+          <td>3b. 呼吸なし/死戦期呼吸</td>
+          <td>ただちに<span class="key">胸骨圧迫を開始</span></td>
+        </tr>
+        <tr>
+          <td>4. CPR</td>
+          <td>胸骨圧迫30回＋人工呼吸2回（30：2）</td>
+        </tr>
+        <tr>
+          <td>5. AED装着</td>
+          <td>心電図解析→電気ショックの要否を判断</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">「反応なし」→まず行うこと</div>
+        <ul>
+          <li><span class="highlight">119番通報</span>と<span class="highlight">AEDの手配</span>を同時に行う（人に依頼）</li>
+          <li><span class="caution">胸骨圧迫や人工呼吸は呼吸・脈拍の確認後</span>（まず通報が先）</li>
+          <li>下肢挙上はショック時の対応であり、BLSの初期手順ではない</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D44</div>
+        <p>歯科医院の待合室で倒れている患者を発見した。呼びかけに反応しない。<br>まず行うのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 下肢を挙上する。<br>
+          b 胸骨を圧迫する。<br>
+          c 人工呼吸を行う。<br>
+          d AED を手配する。<br>
+          e 119番に通報する。
+        </div>
+        <div class="answer">正解：d, e</div>
+        <p>【解説】反応のない患者を発見した場合、BLSアルゴリズムに従い、まず119番通報（e）とAEDの手配（d）を行う。胸骨圧迫（b）や人工呼吸（c）は呼吸・脈拍の確認後に行うものであり、通報が優先。下肢挙上（a）はショック時の補助的対応。</p>
+      </div>
+
+      <!-- 状態別の対応 -->
+      <h2>状態別の対応判断</h2>
+
+      <h3>呼吸の有無による判断</h3>
+      <table>
+        <tr>
+          <th>状態</th>
+          <th>対応</th>
+        </tr>
+        <tr>
+          <td>反応なし＋<span class="highlight">正常な呼吸あり</span></td>
+          <td>気道確保＋<span class="highlight">回復体位</span>＋応援を待つ</td>
+        </tr>
+        <tr>
+          <td>反応なし＋<span class="caution">呼吸なし/死戦期呼吸</span></td>
+          <td>ただちに<span class="key">胸骨圧迫</span>を開始（CPR）</td>
+        </tr>
+      </table>
+
+      <p><span class="key">回復体位</span>とは、意識がないが呼吸がある場合に、嘔吐物による窒息を防止するために側臥位にする体位である。気道を確保しつつ、嘔吐した場合に口腔内から吐物が流れ出るようにする。</p>
+
+      <div class="question-box">
+        <div class="q-number">115A88</div>
+        <p>83歳の男性。齲蝕治療を希望して来院した。糖尿病の既往がある。処置直前の血糖値は134mg/dLであった。生体モニタを装着後、齲蝕治療中に呂律が回らなくなり意識を失った。呼吸はあるが呼びかけに応答しないため救急対応システムに出動を要請した。このときの生体モニタの写真（別冊No.34）を別に示す。<br>次に行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115A88.png" alt="別冊No.34">
+        </div>
+        <div class="choices">
+          a 回復体位の実施<br>
+          b 胸骨圧迫の実施<br>
+          c 人工呼吸の実施<br>
+          d ブドウ糖の投与<br>
+          e アドレナリンの投与
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】呼吸はあるが意識なし→BLSアルゴリズムに従い回復体位（a）が適切。胸骨圧迫（b）・人工呼吸（c）は呼吸がない場合に行う。呂律が回らない＋意識消失→脳血管障害が疑われるが、呼吸がある以上まず回復体位で気道を確保する。血糖値134mg/dLは正常範囲であり低血糖は否定的→ブドウ糖投与（d）は不適切。アドレナリン（e）はアナフィラキシーや心停止時の薬剤。</p>
+      </div>
+
+      <!-- 救命の連鎖 -->
+      <h2>救命の連鎖（Chain of Survival）</h2>
+      <p>心肺蘇生法により傷病者を社会復帰に導くためには、一連の救命処置がうまく連携されることが大切である。</p>
+      <table>
+        <tr>
+          <th>#</th>
+          <th>要素</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><span class="key">心停止の予防</span></td>
+          <td>急性冠症候群や脳卒中の初期症状の早期発見</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><span class="highlight">心停止の早期認識と通報</span></td>
+          <td>反応なし→119番通報＋AED手配</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><span class="highlight">一次救命処置（BLS＋AED）</span></td>
+          <td>胸骨圧迫、人工呼吸、AEDによる除細動</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><span class="key">二次救命処置と心拍再開後の集中治療</span></td>
+          <td>薬物投与、気管挿管、原因究明、集中治療</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

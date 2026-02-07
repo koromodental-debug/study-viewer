@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>口腔粘膜疾患 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 口腔粘膜疾患</span>
+    <h1>口腔粘膜疾患</h1>
+    <div class="container">
+
+      <!-- ===== 1. 白板症 ===== -->
+      <h2>1. 白板症（leukoplakia）</h2>
+
+      <p>白板症はWHO（1978）で<span class="highlight">「摩擦によって除去できない白斑で、他の診断可能な疾患に分類できないもの」</span>と定義された。現在は<span class="key">口腔潜在的悪性疾患（OPMD）</span>の枠組みで扱われる代表病変であり、臨床的な<span class="key">除外診断名</span>である。</p>
+
+      <h3>臨床型分類</h3>
+      <table>
+        <tr><th>臨床型</th><th>特徴</th><th>癌化リスク</th></tr>
+        <tr><td><span class="key">均一型</span></td><td>均一な白色、平坦またはやや皺状</td><td>比較的低い</td></tr>
+        <tr><td><span class="key">非均一型：斑状型</span></td><td>紅斑を背景に白斑が散在（紅白斑症）</td><td rowspan="3"><span class="caution">高い</span></td></tr>
+        <tr><td><span class="key">非均一型：結節型</span></td><td>小さな表面隆起</td></tr>
+        <tr><td><span class="key">非均一型：疣贅型</span></td><td>いぼ状、波状の白色表面</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">白板症の臨床ポイント</div>
+        <ul>
+          <li>癌化率：<span class="highlight">0.4〜6.0%</span>（教科書）、メタアナリシスでは約7%</li>
+          <li><span class="key">舌・口底</span>（可動粘膜）に発生するものは癌化しやすい</li>
+          <li>確定診断には<span class="highlight">部分（切開）生検</span>が必要</li>
+          <li>対応：<span class="key">禁煙指導</span>、<span class="key">歯の鋭縁の削合</span>、定期観察、必要に応じ外科的切除</li>
+          <li><span class="caution">副腎皮質ステロイド軟膏は無効</span>（白板症は炎症性疾患ではない）</li>
+        </ul>
+      </div>
+
+      <h3>白板症と鑑別すべき疾患</h3>
+      <table>
+        <tr><th>疾患</th><th>鑑別ポイント</th></tr>
+        <tr><td>口腔カンジダ症（偽膜性）</td><td>ガーゼで<span class="highlight">拭き取れる</span></td></tr>
+        <tr><td>口腔扁平苔癬</td><td>Wickham線条、<span class="key">両側性</span></td></tr>
+        <tr><td>白色海綿状母斑</td><td>常染色体優性遺伝、幼少期から</td></tr>
+        <tr><td>摩擦性角化症</td><td>原因除去で消失</td></tr>
+        <tr><td>ニコチン性口内炎</td><td>口蓋に好発、喫煙者</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">116B60</div>
+        <p>78歳の男性。右側舌縁部の疼痛を主訴として来院した。6か月前に自覚し、かかりつけ歯科医で副腎皮質ステロイド軟膏の処方を受けているが、再発を繰り返しているという。50年間毎日20本以上喫煙しており、飲酒歴はない。初診時の舌縁の写真（別冊No.21）を別に示す。<br>適切な対応はどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/116回_Web画像/116B60_1.png" alt="別冊No.21">
+        </div>
+        <div class="choices">
+          a 細胞診<br>
+          b 禁煙支援<br>
+          c 舌部分切除<br>
+          d 抗菌薬の投与<br>
+          e 歯の鋭縁の確認
+        </div>
+        <div class="answer">正解：a, b, e</div>
+        <p>【解説】舌縁部の白斑＋長期喫煙歴＋ステロイド無効→白板症を疑う。白板症は炎症性疾患ではないためステロイドは無効。細胞診で悪性の有無を確認、禁煙支援で発癌リスクを低減、歯の鋭縁確認で機械的刺激を排除する。生検前の段階で舌部分切除は過剰。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115D33</div>
+        <p>62歳の男性。舌の異常を主訴として来院した。1週前に歯科治療時に指摘され、精査を勧められたという。自覚症状はなく、圧痛は認めないが周囲に比べやや硬い。初診時の口腔内写真（別冊No.5A）と生検時のH-E染色病理組織像（別冊No.5B）を別に示す。<br>診断名はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/115回_Web画像/115D33_1.png" alt="別冊No.5A">
+          <img src="../../../images/115回_Web画像/115D33_2.png" alt="別冊No.5B">
+        </div>
+        <div class="choices">
+          a 白板症<br>
+          b 扁平上皮癌<br>
+          c 口腔扁平苔癬<br>
+          d 口腔カンジダ症<br>
+          e 白色海綿状母斑
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】舌に無症状の白斑、やや硬い→白板症。病理組織像で上皮の過角化・異形成を確認。扁平上皮癌は浸潤・硬結が著明。OLPは網状のWickham線条が特徴。カンジダ症は拭き取り可能。白色海綿状母斑は遺伝性で幼少期から。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114C73</div>
+        <p>舌白板症患者への対応で適切なのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 禁煙の指導<br>
+          b 糖質制限の指導<br>
+          c 歯の鋭縁の削合<br>
+          d マウスガードの装着<br>
+          e 副腎皮質ステロイド軟膏の塗布
+        </div>
+        <div class="answer">正解：a, c</div>
+        <p>【解説】白板症の対応は誘因の除去が基本。喫煙は白板症の主要な誘因であり禁煙指導は必須。歯の鋭縁による機械的刺激も誘因となるため削合する。ステロイドは白板症には無効（OLPやアフタに使用）。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D58</div>
+        <p>63歳の男性。舌の異常を主訴として来院した。舌縁部に接触痛や硬結を伴わない病変を認める。初診時の口腔内写真（別冊No.9）を別に示す。<br>確定診断に必要な検査はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D58_1.png" alt="別冊No.9">
+        </div>
+        <div class="choices">
+          a PET<br>
+          b 針生検<br>
+          c 造影CT<br>
+          d 部分(切開)生検<br>
+          e 口腔内超音波検査
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】舌縁部の白斑→白板症を疑う。確定診断には<span class="key">部分（切開）生検</span>で病理組織検査を行う。PET・造影CTは悪性腫瘍の広がりを評価するもので確定診断には使えない。針生検は深部腫瘍向きで表在性病変には不適。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109B45</div>
+        <p>72歳の男性。歯科医院で右側舌縁部の白斑を指摘され、紹介により来院した。2年前に気付いたが疼痛はなく、性状も大きさも変化はないという。初診時の口腔内写真（別冊No.45A）と生検時のH−E染色病理組織像（別冊No.45B）を別に示す。<br>考えられる対応はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109B45_1.png" alt="別冊No.45A">
+          <img src="../../../images/109回_Web画像/109B45_2.png" alt="別冊No.45B">
+        </div>
+        <div class="choices">
+          a 定期的診察<br>
+          b 副腎皮質ステロイド軟膏塗布<br>
+          c 放射線照射<br>
+          d 抗癌剤投与<br>
+          e 外科的切除
+        </div>
+        <div class="answer">正解：a, e</div>
+        <p>【解説】舌縁部白板症→異形成の程度に応じて対応を決定。軽度であれば定期的診察で経過観察、異形成が強い場合や範囲が広い場合は外科的切除。放射線照射・抗癌剤は悪性腫瘍の治療であり白板症には過剰。ステロイドは無効。</p>
+      </div>
+
+      <!-- ===== 2. 口腔扁平苔癬 ===== -->
+      <h2>2. 口腔扁平苔癬（OLP）</h2>
+
+      <p>口腔扁平苔癬は口腔粘膜の角化異常を伴う<span class="key">慢性炎症性疾患</span>で、発生率は0.1〜4%。中年以降の女性に好発する。</p>
+
+      <h3>6つの臨床型（WHO分類）</h3>
+      <table>
+        <tr><th>型</th><th>カテゴリ</th><th>特徴</th><th>症状</th></tr>
+        <tr><td><span class="key">網状型</span></td><td rowspan="3">白色型</td><td><span class="highlight">Wickham線条</span>（白色レース状模様）</td><td>無症状</td></tr>
+        <tr><td>丘疹型</td><td>白色丘疹</td><td>無症状</td></tr>
+        <tr><td>斑状型</td><td>白板症様の白色斑</td><td>無症状</td></tr>
+        <tr><td>萎縮型</td><td rowspan="3">紅色型</td><td>紅斑＋萎縮性変化</td><td>有症状</td></tr>
+        <tr><td><span class="key">びらん型</span></td><td>びらん・潰瘍</td><td><span class="caution">最も症状が強い</span></td></tr>
+        <tr><td>水疱型</td><td>水疱形成（まれ）</td><td>有症状</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">OLPの臨床ポイント</div>
+        <ul>
+          <li><span class="highlight">網状型が最多</span>。頬粘膜に好発、<span class="key">両側性</span></li>
+          <li>組織学的に上皮基底層の液状変性、上皮下の帯状リンパ球浸潤が特徴的</li>
+          <li>治療の第一選択は<span class="highlight">局所ステロイド</span>（ケナログなど）</li>
+          <li>ステロイド抵抗性には<span class="key">タクロリムス軟膏</span></li>
+          <li>口腔潜在的悪性疾患（OPMD）に分類。悪性転化率は<span class="highlight">概ね1%前後（報告差あり）</span></li>
+          <li>金属アレルギーに関連する場合は<span class="key">OLL</span>（oral lichenoid lesion）</li>
+        </ul>
+      </div>
+
+      <h3>OLP vs OLL（oral lichenoid lesion）</h3>
+      <table>
+        <tr><th></th><th>OLP</th><th>OLL</th></tr>
+        <tr><td>原因</td><td><span class="key">特発性</span>（原因不明）</td><td>原因が同定可能（金属、薬剤、GVHDなど）</td></tr>
+        <tr><td>分布</td><td><span class="highlight">両側性・対称性</span></td><td>片側性・非対称のことが多い</td></tr>
+        <tr><td>原因除去</td><td>不可</td><td>原因除去で改善の可能性</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">105A63</div>
+        <p>副腎皮質ステロイド軟膏が奏効するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 白板症<br>
+          b 疱疹性口内炎<br>
+          c 口腔扁平苔癬<br>
+          d 口腔カンジダ症<br>
+          e 慢性再発性アフタ
+        </div>
+        <div class="answer">正解：c, e</div>
+        <p>【解説】ステロイド軟膏が有効なのは<span class="key">炎症性・免疫異常による疾患</span>。口腔扁平苔癬は慢性炎症性疾患でステロイドが第一選択。慢性再発性アフタも免疫異常が関与しステロイドが有効。白板症は角化異常で無効。疱疹性口内炎はウイルス性で<span class="caution">ステロイドは禁忌</span>（ウイルス増殖を助長）。カンジダ症は真菌感染でステロイドは増悪因子。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">115B66</div>
+        <p>口腔粘膜の扁平苔癬様症状と両側掌の膿疱を呈する患者に行う検査はどれか。1つ選べ。</p>
+        <div class="choices">
+          a バッチテスト<br>
+          b トロンボテスト<br>
+          c プリックテスト<br>
+          d スクラッチテスト<br>
+          e ローズベンガルテスト
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】扁平苔癬様症状＋掌蹠膿疱症→<span class="key">歯科金属アレルギー</span>を疑う。歯科用金属が原因でOLL（oral lichenoid lesion）と掌蹠膿疱症を同時に発症することがある。<span class="key">パッチテスト</span>（IV型アレルギーの検査）で原因金属を特定する。プリックテスト・スクラッチテストはI型アレルギーの検査。トロンボテストは凝固能検査。ローズベンガルテストはドライアイの検査。</p>
+      </div>
+
+      <!-- ===== 3. 潰瘍・口腔粘膜炎 ===== -->
+      <h2>3. 口腔の潰瘍・粘膜炎</h2>
+
+      <h3>褥瘡性潰瘍（decubital ulcer）</h3>
+      <p>義歯の不適合、歯の鋭縁、矯正装置などの<span class="key">機械的刺激</span>が持続することで生じる潰瘍。舌、頬粘膜、歯肉に好発する。</p>
+      <ul>
+        <li>治療の基本は<span class="highlight">原因（刺激）の除去</span></li>
+        <li>原因を除去すれば通常1〜2週間で治癒</li>
+        <li><span class="caution">長期間治癒しない潰瘍は悪性腫瘍との鑑別が必要</span></li>
+      </ul>
+
+      <h3>化学療法による口腔粘膜炎</h3>
+      <p>化学療法（抗がん剤）の副作用として発症。投与後5〜14日頃に出現し、粘膜のびらん・潰瘍を形成する。</p>
+      <ul>
+        <li>対応：<span class="key">口腔の保湿</span>、<span class="key">創傷被覆保護剤の塗布</span>、<span class="key">局所麻酔薬添加含嗽剤</span></li>
+        <li><span class="caution">CO<sub>2</sub>レーザー照射は不適切</span>（粘膜障害を増悪させる）</li>
+        <li>二次感染の予防・管理が重要</li>
+      </ul>
+
+      <h3>壊死性潰瘍性口内炎</h3>
+      <p>紡錘菌とスピロヘータの混合感染による急性口内炎。壊死に陥った歯肉や口腔粘膜に<span class="key">偽膜</span>が形成され、重症化するとVincent angina（口峡炎）に至る。抵抗力の低下した小児や老人に好発。</p>
+
+      <div class="question-box">
+        <div class="q-number">107A116</div>
+        <p>舌の褥瘡性潰瘍への対応として適切なのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 刺激除去<br>
+          b 鎮痛薬投与<br>
+          c 抗菌薬投与<br>
+          d 外科的切除<br>
+          e レーザー焼灼
+        </div>
+        <div class="answer">正解：a</div>
+        <p>【解説】褥瘡性潰瘍の治療は原因となる機械的刺激の除去が第一。歯の鋭縁の削合、不適合義歯の調整・修理で刺激を取り除けば自然治癒する。鎮痛薬は対症療法で根本治療ではない。外科的切除やレーザーは不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A29</div>
+        <p>65歳の女性。両側頬粘膜の接触時痛を主訴として来院した。10日前からホジキンリンパ腫に対して血液内科で化学療法を受けている。病変は両側の頬粘膜から口角に及び、易出血性である。初診時の口腔内写真（別冊No.9）を別に示す。<br>適切な対応はどれか。3つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A29_1.png" alt="別冊No.9">
+        </div>
+        <div class="choices">
+          a 口腔の保湿<br>
+          b 抗真菌薬の投与<br>
+          c CO<sub>2</sub>レーザーの照射<br>
+          d 創傷被覆保護剤の塗布<br>
+          e 局所麻酔薬添加含嗽剤の使用
+        </div>
+        <div class="answer">正解：a, d, e</div>
+        <p>【解説】化学療法後10日→口腔粘膜炎。対応は口腔保湿で乾燥防止、創傷被覆保護剤で物理的保護、局所麻酔薬添加含嗽剤で疼痛管理。抗真菌薬はカンジダ症が合併していれば投与するが、本症例では粘膜炎が主体。CO<sub>2</sub>レーザーは粘膜障害を増悪させるため不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103C61</div>
+        <p>1週前に発症した病変の写真（別冊No.4）を別に示す。<br>発症に関連すると考えられる既往症はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103C61_1.png" alt="別冊No.4">
+        </div>
+        <div class="choices">
+          a 高血圧<br>
+          b 脳梗塞<br>
+          c 上顎洞炎<br>
+          d 慢性腎不全<br>
+          e ウイルス性肝炎
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】写真は口蓋部の病変で、上顎洞炎に関連した粘膜病変と考えられる。上顎洞炎では上顎洞底に近接する口蓋粘膜・歯肉に炎症が波及し、瘻孔や腫脹、潰瘍を形成することがある。歯性上顎洞炎では上顎臼歯部の感染が上顎洞に波及する。</p>
+      </div>
+
+      <!-- ===== 4. 再発性アフタ性口内炎 ===== -->
+      <h2>4. 再発性アフタ性口内炎</h2>
+
+      <p>口腔粘膜に再発を繰り返すアフタ（有痛性の円形〜楕円形の浅い潰瘍）。<span class="key">非角化粘膜</span>（口唇、頬、舌）に好発する。原因は不明だがHLA-B51との関連が示唆されている。</p>
+
+      <h3>3つの型の比較</h3>
+      <table>
+        <tr><th></th><th>小アフタ型</th><th>大アフタ型</th><th>疱疹状潰瘍型</th></tr>
+        <tr><td>頻度</td><td><span class="highlight">最多（70〜80%）</span></td><td>約10%</td><td>約10%</td></tr>
+        <tr><td>大きさ</td><td><span class="key">10mm未満</span></td><td><span class="key">10mm以上</span></td><td>1〜3mm</td></tr>
+        <tr><td>個数</td><td>1〜5個</td><td>1〜数個</td><td><span class="key">多数（10〜100個）</span></td></tr>
+        <tr><td>治癒期間</td><td>7〜14日</td><td><span class="caution">6週間以上</span></td><td>約1か月</td></tr>
+        <tr><td>瘢痕</td><td>なし</td><td><span class="caution">あり</span></td><td>通常なし</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">Behcet病との関連</div>
+        <ul>
+          <li>Behcet病の主症状4項目：<span class="key">口腔粘膜の再発性アフタ</span>、皮膚症状、眼症状、外陰部潰瘍</li>
+          <li>口腔アフタはBehcet病で<span class="highlight">ほぼ必発（98%以上）</span>、初発症状であることが多い</li>
+          <li><span class="key">HLA-B51</span>陽性がBehcet病の遺伝的素因</li>
+          <li>針反応（pathergy test）陽性も参考所見</li>
+        </ul>
+      </div>
+
+      <!-- ===== 5. 舌の疾患 ===== -->
+      <h2>5. 舌の疾患</h2>
+
+      <h3>地図状舌（geographic tongue）</h3>
+      <p>舌背の糸状乳頭が消失した紅斑部と、周囲の<span class="key">黄白色の帯状隆起縁</span>が融合して地図状を呈する。小児や若い女性に多い。</p>
+      <ul>
+        <li>最大の特徴：<span class="highlight">病変が日ごとに移動する</span>（良性移動性舌炎）</li>
+        <li>多くは無症状。刺激物摂取時にピリピリ感を生じることがある</li>
+        <li><span class="key">溝状舌</span>との合併が多い</li>
+        <li>組織学的には<span class="key">乾癬に酷似</span>（Munro微小膿瘍を認める）</li>
+        <li>治療は対症療法（含嗽剤）。自覚症状がなければ経過観察</li>
+      </ul>
+
+      <h3>その他の舌の疾患</h3>
+      <table>
+        <tr><th>疾患</th><th>特徴</th></tr>
+        <tr><td><span class="key">溝状舌</span></td><td>舌背の多数の溝。遺伝的。<span class="key">Down症候群</span>、Melkersson-Rosenthal症候群で高頻度</td></tr>
+        <tr><td><span class="key">正中菱形舌炎</span></td><td>舌背正中の分界溝前方に赤みを帯びた菱形の病変。カンジダ症との関連</td></tr>
+        <tr><td><span class="key">黒毛舌</span></td><td>糸状乳頭の過伸長＋着色。抗菌薬長期使用、カンジダ症が原因</td></tr>
+        <tr><td><span class="key">苺状舌</span></td><td><span class="highlight">猩紅熱</span>（A群溶連菌）の口腔症状。急性熱性疾患</td></tr>
+        <tr><td><span class="key">平滑舌（Hunter舌炎）</span></td><td>悪性貧血（ビタミンB<sub>12</sub>欠乏）。糸状乳頭の萎縮</td></tr>
+        <tr><td><span class="key">Plummer-Vinson症候群</span></td><td>鉄欠乏性貧血＋舌炎＋嚥下障害</td></tr>
+      </table>
+
+      <div class="question-box">
+        <div class="q-number">113A74</div>
+        <p>69歳の女性。舌の痛みを主訴として来院した。半年前から疼痛の出現と消退を繰り返しているという。初診時の口腔内写真（別冊No.28）を別に示す。<br>適切な対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113A74_1.png" alt="別冊No.28">
+        </div>
+        <div class="choices">
+          a 生　検<br>
+          b 舌縮小術<br>
+          c 含嗽剤の処方<br>
+          d 抗菌薬の処方<br>
+          e レーザー照射
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】「疼痛の出現と消退を繰り返す」→地図状舌を示唆。地図状舌は良性疾患であり、生検は不要。治療は対症療法で含嗽剤の処方が適切。抗菌薬は感染症でないため無効。レーザー照射は不要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">105C124</div>
+        <p>急性熱性疾患で生じるのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a 巨　舌<br>
+          b 溝状舌<br>
+          c 平滑舌<br>
+          d 苺状舌<br>
+          e 黒毛舌
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】苺状舌は猩紅熱（A群β溶血性連鎖球菌感染）で認められる舌の変化で、急性熱性疾患に伴う。舌粘膜の発赤を背景に肥大した茸状乳頭が苺様の外観を呈する。溝状舌は先天性。平滑舌は慢性的な貧血。黒毛舌は抗菌薬長期使用など。巨舌はアミロイドーシスや甲状腺機能低下症など。</p>
+      </div>
+
+      <!-- ===== 6. Fordyce斑 ===== -->
+      <h2>6. Fordyce斑</h2>
+
+      <p>Fordyce斑は<span class="highlight">異所性皮脂腺</span>（ectopic sebaceous glands）で、疾患ではなく正常構造物のバリエーションである。</p>
+      <ul>
+        <li>好発部位：<span class="key">頬粘膜</span>（最多）、口唇</li>
+        <li>臨床所見：<span class="key">淡黄色〜白色</span>の小丘疹（1〜3mm）、散在性〜集簇性</li>
+        <li>自覚症状：なし</li>
+        <li>成人の<span class="key">70〜80%</span>に認められる</li>
+        <li><span class="highlight">治療は不要</span></li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">108C91</div>
+        <p>55歳の男性。頰粘膜の異常を主訴として来院した。口腔内写真（別冊No.18）を別に示す。<br>考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/108回_Web画像/108C91_1.png" alt="別冊No.18">
+        </div>
+        <div class="choices">
+          a 白板症<br>
+          b 類天疱瘡<br>
+          c Fordyce斑<br>
+          d 口腔扁平苔癬<br>
+          e 口腔カンジダ症
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】頬粘膜の淡黄色小丘疹→Fordyce斑（異所性皮脂腺）。白板症は白色の板状病変。類天疱瘡は水疱・びらん。OLPはWickham線条を伴うレース状の白色病変。カンジダ症は白色偽膜で拭き取れる。Fordyce斑は治療不要で正常バリエーション。</p>
+      </div>
+
+      <!-- ===== まとめ ===== -->
+      <h2>7. 口腔粘膜疾患の鑑別まとめ</h2>
+
+      <h3>白色病変の鑑別</h3>
+      <table>
+        <tr><th>疾患</th><th>拭き取り</th><th>分布</th><th>治療</th></tr>
+        <tr><td>白板症</td><td>不可</td><td>片側性が多い</td><td>禁煙・刺激除去・切除</td></tr>
+        <tr><td>OLP</td><td>不可</td><td><span class="key">両側性</span></td><td>ステロイド軟膏</td></tr>
+        <tr><td>口腔カンジダ症</td><td><span class="highlight">可能</span></td><td>さまざま</td><td>抗真菌薬</td></tr>
+        <tr><td>Fordyce斑</td><td>不可</td><td>頬粘膜</td><td><span class="key">治療不要</span></td></tr>
+      </table>
+
+      <h3>ステロイド軟膏の適応・禁忌</h3>
+      <table>
+        <tr><th>有効</th><th>無効・禁忌</th></tr>
+        <tr><td>口腔扁平苔癬</td><td><span class="caution">白板症</span>（角化異常）</td></tr>
+        <tr><td>再発性アフタ</td><td><span class="caution">疱疹性口内炎</span>（ウイルス増殖を助長）</td></tr>
+        <tr><td>多形滲出性紅斑（重症例）</td><td><span class="caution">口腔カンジダ症</span>（増悪因子）</td></tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

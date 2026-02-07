@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>抜歯と全身疾患 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 手術総論・一般診査</span>
+    <h1>抜歯と全身疾患</h1>
+    <div class="container">
+
+      <h2>抜歯の全身的禁忌症</h2>
+      <p>抜歯の禁忌症は、全身的原因による禁忌症と局所的原因による禁忌症に大別される。全身的禁忌症があっても、適切な対応や治療法が講じられれば抜歯は可能となることが多い。</p>
+
+      <h3>全身的禁忌症の一覧</h3>
+      <table>
+        <tr><th>系統</th><th>代表的疾患</th><th>注意点</th></tr>
+        <tr><td><span class="key">心・血管系</span></td><td>高血圧症、虚血性心疾患、心不全、心臓弁膜症、先天性心疾患</td><td>IE予防、血圧管理、内科と連携</td></tr>
+        <tr><td><span class="key">脳血管系</span></td><td>脳梗塞、脳出血</td><td>抗凝固薬の管理</td></tr>
+        <tr><td><span class="key">内分泌系</span></td><td>甲状腺機能低下症・亢進症、副腎皮質機能低下症</td><td>ステロイドカバー</td></tr>
+        <tr><td><span class="key">代謝性</span></td><td>糖尿病、骨粗鬆症</td><td>血糖管理、BP製剤の確認</td></tr>
+        <tr><td><span class="key">神経性</span></td><td>パーキンソン病、てんかん、認知症</td><td>発作の予防</td></tr>
+        <tr><td><span class="key">呼吸器系</span></td><td>気管支喘息、COPD</td><td>発作誘発に注意</td></tr>
+        <tr><td><span class="key">消化器系</span></td><td>慢性肝疾患、肝硬変</td><td>出血傾向</td></tr>
+        <tr><td><span class="key">血液疾患</span></td><td>貧血、ITP、血友病、白血病</td><td>止血管理</td></tr>
+        <tr><td><span class="key">腎疾患</span></td><td>ネフローゼ症候群、慢性腎炎</td><td>出血傾向、薬物代謝</td></tr>
+        <tr><td><span class="key">膠原病・自己免疫</span></td><td>関節リウマチ、Behçet病、SLE</td><td>ステロイド投与の確認</td></tr>
+        <tr><td><span class="key">薬物投与中</span></td><td>ステロイド、免疫抑制剤、抗凝固薬、BP製剤</td><td>各薬剤に応じた対応</td></tr>
+      </table>
+
+      <h2>感染性心内膜炎（IE）の予防</h2>
+      <p>抜歯などの観血的処置では一過性の<span class="key">菌血症</span>が生じる。特定の心疾患を持つ患者では、菌血症により感染性心内膜炎（IE）を発症するリスクがあるため、<span class="highlight">術前に予防的抗菌薬投与</span>が必要である。</p>
+
+      <h3>IE予防が必要な心疾患（ハイリスク群）</h3>
+      <div class="point-box">
+        <div class="point-box-title">抗菌薬の予防投与が必要</div>
+        <ul>
+          <li><span class="highlight">人工弁置換術後</span></li>
+          <li><span class="highlight">IE の既往</span></li>
+          <li><span class="highlight">未修復のチアノーゼ型先天性心疾患</span>（Fallot四徴症など）</li>
+          <li>修復後6か月以内の先天性心疾患</li>
+          <li>修復後も遺残短絡や弁逆流のある先天性心疾患</li>
+          <li>心臓移植後の弁膜症</li>
+        </ul>
+      </div>
+
+      <h3>IE予防が不要な疾患</h3>
+      <ul>
+        <li><span class="caution">心不全</span>（単独では）</li>
+        <li><span class="caution">心筋梗塞</span></li>
+        <li><span class="caution">心房中隔欠損症</span>（二次孔型：IEリスクが低い）</li>
+        <li>僧帽弁逸脱（逆流を伴わないもの）</li>
+        <li>冠動脈バイパス術後</li>
+      </ul>
+
+      <h3>予防投与のプロトコル</h3>
+      <table>
+        <tr><th>条件</th><th>薬剤</th><th>投与法</th></tr>
+        <tr><td>標準</td><td><span class="key">アモキシシリン</span></td><td>処置<span class="highlight">1時間前</span>に2g経口投与</td></tr>
+        <tr><td>経口投与不可</td><td>アンピシリン</td><td>処置30分前にIM/IV</td></tr>
+        <tr><td>ペニシリンアレルギー</td><td>クリンダマイシン / アジスロマイシン</td><td>処置1時間前に経口投与</td></tr>
+      </table>
+
+      <h2>主な全身疾患と抜歯時の注意</h2>
+
+      <h3>心・血管系疾患</h3>
+      <ul>
+        <li>高血圧：血圧が180/110mmHg以上では抜歯を延期。内科と連携して血圧管理</li>
+        <li>虚血性心疾患：心筋梗塞後<span class="highlight">6か月以内</span>は絶対的禁忌。抗血栓薬の管理</li>
+        <li>弁膜症・先天性心疾患：IE予防の抗菌薬投与</li>
+      </ul>
+
+      <h3>出血性素因・抗血栓療法</h3>
+      <ul>
+        <li>ワルファリン：<span class="highlight">PT-INRが3.0以下</span>であれば、原則として休薬せずに抜歯可能</li>
+        <li>抗血小板薬（アスピリン等）：<span class="highlight">原則として休薬しない</span>（局所止血で対応）</li>
+        <li><span class="caution">休薬による血栓塞栓症のリスクが、抜歯後出血のリスクより高い</span></li>
+      </ul>
+
+      <h3>糖尿病</h3>
+      <ul>
+        <li>血糖コントロールが不良な場合は抜歯を延期</li>
+        <li><span class="key">HbA1c</span>を確認し、コントロール状態を評価</li>
+        <li>抜歯のストレスで血糖値が上昇する可能性</li>
+        <li>低血糖発作にも注意（食事摂取の確認）</li>
+        <li>術後感染のリスクが高い → 抗菌薬投与を考慮</li>
+      </ul>
+
+      <h3>ステロイド投与中の患者</h3>
+      <ul>
+        <li>長期ステロイド投与で副腎皮質機能が低下</li>
+        <li>抜歯のストレスに対して<span class="caution">副腎クリーゼ</span>（ショック）を起こす危険性</li>
+        <li><span class="highlight">ステロイドカバー</span>（補充）が必要</li>
+      </ul>
+
+      <h3>BP製剤投与中の患者</h3>
+      <ul>
+        <li>ビスフォスフォネート製剤投与中は<span class="key">BRONJ/ARONJ</span>（顎骨壊死）のリスク</li>
+        <li>抜歯前に投与歴の確認が必須</li>
+        <li>休薬の要否は主治医と協議</li>
+      </ul>
+
+      <h3>妊娠中の女性</h3>
+      <ul>
+        <li>妊娠初期（12週まで）や晩期は避ける</li>
+        <li><span class="highlight">妊娠5〜7か月</span>が安定した時期</li>
+        <li>許される範囲で対症的処置を先行し、抜歯は出産後に</li>
+      </ul>
+
+      <h2>局所的禁忌症</h2>
+      <ul>
+        <li><span class="key">急性期の化膿性炎症の原因歯</span>：炎症が波及して蜂窩織炎になるリスク → 消炎後に抜歯</li>
+        <li><span class="key">悪性腫瘍に近接する歯</span>：悪性腫瘍が露出・播種する危険</li>
+        <li><span class="key">放射線照射野に含まれる歯</span>：放射線性骨壊死のリスク（60〜70Gy以上）</li>
+        <li><span class="key">顎骨中心性血管腫内の歯</span>：大量出血のリスク</li>
+      </ul>
+
+      <h2>過去問で確認</h2>
+
+      <div class="question-box">
+        <div class="q-number">103A85</div>
+        <p>感染性心内膜炎の予防のために抗菌薬投与が必要なのはどれか。 2つ選べ。</p>
+        <div class="choices">
+          a 心不全<br>
+          b 心筋梗塞<br>
+          c Fallot四徴症<br>
+          d 人工弁置換術後<br>
+          e 心房中隔欠損症
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】感染性心内膜炎（IE）の予防的抗菌薬投与が必要なのは、人工弁置換術後（d）と未修復のチアノーゼ型先天性心疾患であるFallot四徴症（c）。心不全（a）と心筋梗塞（b）は単独ではIEハイリスクに該当しない。心房中隔欠損症（e）の二次孔型はIEリスクが低く、予防投与は不要とされている。</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

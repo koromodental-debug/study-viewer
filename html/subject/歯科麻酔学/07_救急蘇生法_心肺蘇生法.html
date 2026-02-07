@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>心肺蘇生法 - 歯科麻酔学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">歯科麻酔学 / 救急蘇生法</span>
+    <h1>心肺蘇生法</h1>
+    <div class="container">
+
+      <!-- 一次救命処置 vs 二次救命処置 -->
+      <h2>一次救命処置（BLS）と二次救命処置（ALS）</h2>
+      <p>心肺蘇生法（CPR）は、一次救命処置（BLS）と二次救命処置（ALS）に分けられる。</p>
+
+      <h3>BLS vs ALS</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>一次救命処置（BLS）</th>
+          <th>二次救命処置（ALS）</th>
+        </tr>
+        <tr>
+          <td><span class="key">実施者</span></td>
+          <td>一般市民・医療従事者</td>
+          <td>医療従事者</td>
+        </tr>
+        <tr>
+          <td><span class="key">内容</span></td>
+          <td><span class="highlight">意識の確認</span>、通報・AED手配、<span class="highlight">胸骨圧迫</span>、人工呼吸、<span class="highlight">AED</span></td>
+          <td>気管挿管、薬剤投与、輸液、電気的除細動（手動式）</td>
+        </tr>
+        <tr>
+          <td><span class="key">器具</span></td>
+          <td>AED、ポケットマスク、バッグバルブマスク</td>
+          <td>喉頭鏡、気管チューブ、薬剤、除細動器</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">BLSに含まれるもの・含まれないもの</div>
+        <ul>
+          <li>BLSに<span class="highlight">含まれる</span>：意識の確認、胸骨圧迫、人工呼吸、AED</li>
+          <li>BLSに<span class="caution">含まれない</span>：気管挿管、薬剤投与、輸液（これらはALS）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112C24</div>
+        <p>一次救命処置で行うのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 輸　液<br>
+          b 気管挿管<br>
+          c 胸骨圧迫<br>
+          d 意識の確認<br>
+          e 薬剤の投与
+        </div>
+        <div class="answer">正解：c, d</div>
+        <p>【解説】一次救命処置（BLS）に含まれるのは胸骨圧迫（c）と意識の確認（d）。輸液（a）、気管挿管（b）、薬剤投与（e）はいずれも二次救命処置（ALS）で行う内容。</p>
+      </div>
+
+      <!-- 胸骨圧迫 -->
+      <h2>胸骨圧迫</h2>
+      <p>胸骨圧迫は心肺蘇生法の最も重要な部分であり、胸骨の下半分を圧迫して心臓や重要臓器に血液を送り出す手技である。</p>
+
+      <h3>胸骨圧迫の要点</h3>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>成人</th>
+          <th>小児</th>
+          <th>乳児</th>
+        </tr>
+        <tr>
+          <td><span class="key">圧迫部位</span></td>
+          <td>胸骨の下半分</td>
+          <td>胸骨の下半分</td>
+          <td>両乳頭を結ぶ線の少し足側</td>
+        </tr>
+        <tr>
+          <td><span class="key">圧迫の深さ</span></td>
+          <td><span class="highlight">約5cm（6cmを超えない）</span></td>
+          <td>胸の厚さの約1/3</td>
+          <td>胸の厚さの約1/3</td>
+        </tr>
+        <tr>
+          <td><span class="key">圧迫のテンポ</span></td>
+          <td colspan="3"><span class="highlight">100〜120回/分</span></td>
+        </tr>
+        <tr>
+          <td><span class="key">圧迫と人工呼吸の比</span></td>
+          <td><span class="highlight">30：2</span></td>
+          <td>30：2（救助者1人）/ 15：2（救助者2人以上）</td>
+          <td>30：2 / 15：2</td>
+        </tr>
+        <tr>
+          <td><span class="key">手技</span></td>
+          <td>両手の手根部</td>
+          <td>片手または両手</td>
+          <td>2本指法または胸郭包み込み両母指圧迫法</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">胸骨圧迫の3原則</div>
+        <ul>
+          <li><span class="highlight">強く</span>：約5cm、6cmを超えない</li>
+          <li><span class="highlight">速く</span>：100〜120回/分</li>
+          <li><span class="highlight">絶え間なく</span>：中断は最小限にする</li>
+        </ul>
+      </div>
+
+      <!-- 人工呼吸 -->
+      <h2>人工呼吸</h2>
+      <h3>気道確保の方法</h3>
+      <table>
+        <tr>
+          <th>方法</th>
+          <th>手技</th>
+          <th>適応</th>
+        </tr>
+        <tr>
+          <td><span class="key">頭部後屈−あご先挙上</span></td>
+          <td>片手で頭部を後方に押し、もう一方の手であご先を挙上</td>
+          <td>通常の気道確保（標準法）</td>
+        </tr>
+        <tr>
+          <td><span class="key">下顎挙上</span></td>
+          <td>両側の下顎角部に指をかけ、下顎を前上方に挙上</td>
+          <td><span class="caution">頸椎損傷が疑われる場合</span></td>
+        </tr>
+      </table>
+
+      <h3>人工呼吸の種類</h3>
+      <ul>
+        <li><span class="key">口対口人工呼吸</span>：傷病者の鼻をつまみ、口に息を吹き込む。約1秒かけて2回</li>
+        <li><span class="key">口対マスク人工呼吸</span>：ポケットマスクを使用。感染防止</li>
+        <li><span class="key">バッグバルブマスク</span>：できる限り早い時期にこちらに切り替える</li>
+      </ul>
+      <p class="note">人工呼吸ができない状況では胸骨圧迫のみを行う。</p>
+
+      <!-- AED -->
+      <h2>AED（自動体外式除細動器）</h2>
+      <p>突然の心停止の最も一般的な原因は<span class="highlight">心室細動（VF）</span>であり、心臓が痙攣するのみで十分な血流量を拍出できない。VFに対する最も効果的な治療法は<span class="highlight">電気的除細動</span>である。</p>
+
+      <h3>心停止の4つのリズムと除細動の適応</h3>
+      <table>
+        <tr>
+          <th>心電図リズム</th>
+          <th>除細動</th>
+          <th>特徴</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">心室細動（VF）</span></td>
+          <td><span class="highlight">適応</span></td>
+          <td>心室の無秩序な電気活動。最も多い突然死の原因</td>
+        </tr>
+        <tr>
+          <td><span class="key">無脈性心室頻拍（pulseless VT）</span></td>
+          <td><span class="highlight">適応</span></td>
+          <td>脈のない心室頻拍</td>
+        </tr>
+        <tr>
+          <td><span class="key">無脈性電気活動（PEA）</span></td>
+          <td><span class="caution">禁忌</span></td>
+          <td>心電図上は波形があるが脈なし</td>
+        </tr>
+        <tr>
+          <td><span class="key">心静止（asystole）</span></td>
+          <td><span class="caution">禁忌</span></td>
+          <td>フラットライン</td>
+        </tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">AED使用後の手順</div>
+        <ul>
+          <li>電気ショック実施後→<span class="highlight">ただちに胸骨圧迫からCPRを再開</span>（2分間）</li>
+          <li>電気ショック不要の場合→同様にただちに胸骨圧迫からCPRを再開（2分間）</li>
+          <li><span class="caution">ショック後に呼吸や脈拍の確認はしない</span>（まず胸骨圧迫）</li>
+        </ul>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103A116</div>
+        <p>心肺蘇生に使用する機器の写真（別冊No.5）を別に示す。<br>使用後に直ちに行うのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103A116.png" alt="別冊No.5">
+        </div>
+        <div class="choices">
+          a 意識の確認<br>
+          b 呼吸の確認<br>
+          c 脈拍の確認<br>
+          d 人工呼吸<br>
+          e 胸骨圧迫
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】写真はAED（自動体外式除細動器）。AEDによる電気ショック実施後は、ただちに胸骨圧迫（e）からCPRを再開する。意識（a）・呼吸（b）・脈拍（c）の確認や人工呼吸（d）ではなく、まず胸骨圧迫を優先する。2分間のCPR後に再度AEDが自動で心電図を解析する。</p>
+      </div>
+
+      <!-- 輪状甲状靭帯穿刺・切開法 -->
+      <h2>緊急気道確保：輪状甲状靭帯穿刺・切開法</h2>
+      <p>外傷などによる開口障害や、気道内異物が除去できないために気管挿管ができず、窒息の危機が迫っているときに行う<span class="key">緊急気道確保手技</span>である。</p>
+
+      <h3>解剖と切開部位</h3>
+      <p><span class="highlight">甲状軟骨と輪状軟骨の間</span>の隙間にある<span class="highlight">輪状甲状靭帯（輪状甲状間膜）</span>に穿刺・切開を行う。この部分が上気道に達するのに<span class="key">最短の距離</span>で、太い血管や神経も少なく比較的安全に穿刺できる。</p>
+
+      <h3>前頸部の解剖（上から順に）</h3>
+      <table>
+        <tr>
+          <th>構造物</th>
+          <th>頸椎レベル</th>
+          <th>備考</th>
+        </tr>
+        <tr>
+          <td>舌骨</td>
+          <td>C3</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><span class="key">甲状軟骨</span></td>
+          <td>C4-5</td>
+          <td>喉頭隆起（のどぼとけ）</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">輪状甲状靭帯</span></td>
+          <td>—</td>
+          <td>穿刺・切開部位</td>
+        </tr>
+        <tr>
+          <td><span class="key">輪状軟骨</span></td>
+          <td>C6</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>気管軟骨</td>
+          <td>C7以下</td>
+          <td>—</td>
+        </tr>
+      </table>
+
+      <h3>術式</h3>
+      <ul>
+        <li>外径<span class="key">12〜16ゲージ</span>の針に外鞘（テフロン管）を有する経皮的気管穿刺針を挿入</li>
+        <li>または皮膚切開を加え、輪状甲状靭帯を露出し直視下に小切開を加え、切開孔に気管カニューレを挿入</li>
+      </ul>
+
+      <div class="question-box">
+        <div class="q-number">109C98</div>
+        <p>前頸部の模式図（別冊No.27）を別に示す。<br>輪状甲状間膜切開を行う場合の皮膚切開部位はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109C98.png" alt="別冊No.27">
+        </div>
+        <div class="choices">
+          a ア<br>
+          b イ<br>
+          c ウ<br>
+          d エ<br>
+          e オ
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】輪状甲状間膜切開は甲状軟骨と輪状軟骨の間で行う。前頸部の模式図において、甲状軟骨（のどぼとけ）の下方、輪状軟骨の上方の隙間が「エ」の位置に相当する。この部位は上気道に達する最短距離であり、太い血管や神経が少ないため緊急気道確保に適している。</p>
+      </div>
+
+      <!-- CPRの数値まとめ -->
+      <h2>CPR 重要数値まとめ</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>数値</th>
+        </tr>
+        <tr>
+          <td>胸骨圧迫の深さ（成人）</td>
+          <td><span class="highlight">約5cm（6cmを超えない）</span></td>
+        </tr>
+        <tr>
+          <td>胸骨圧迫のテンポ</td>
+          <td><span class="highlight">100〜120回/分</span></td>
+        </tr>
+        <tr>
+          <td>圧迫：換気の比</td>
+          <td><span class="highlight">30：2</span></td>
+        </tr>
+        <tr>
+          <td>呼吸確認の時間</td>
+          <td>10秒以内</td>
+        </tr>
+        <tr>
+          <td>人工呼吸の送気時間</td>
+          <td>約1秒</td>
+        </tr>
+        <tr>
+          <td>AED後のCPR継続時間</td>
+          <td>2分間</td>
+        </tr>
+        <tr>
+          <td>救助者の交代タイミング</td>
+          <td>2分ごと（5サイクルごと）</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>

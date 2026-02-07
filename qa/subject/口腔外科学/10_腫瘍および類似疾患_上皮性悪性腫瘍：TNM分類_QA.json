@@ -1,0 +1,515 @@
+{
+  "metadata": {
+    "title": "上皮性悪性腫瘍：TNM分類",
+    "category": "口腔外科学",
+    "chapter": "腫瘍および類似疾患"
+  },
+  "sections": [
+    {
+      "section": "TNM分類の概念",
+      "qa": [
+        {
+          "question": "TNM分類とは何か？",
+          "answer": "原発腫瘍の広がり（T）、所属リンパ節への転移（N）、遠隔転移の有無（M）により腫瘍の病期を表すシステム"
+        },
+        {
+          "question": "TNM分類を開発した国際機関は？",
+          "answer": "国際対がん連合（UICC）"
+        },
+        {
+          "question": "TNMのTは何を表すか？",
+          "answer": "原発腫瘍（primary tumour）の広がり"
+        },
+        {
+          "question": "TNMのNは何を表すか？",
+          "answer": "所属リンパ節（regional lymph nodes）への転移"
+        },
+        {
+          "question": "TNMのMは何を表すか？",
+          "answer": "遠隔転移（distant metastasis）の有無"
+        },
+        {
+          "question": "口腔領域の所属リンパ節はどこか？",
+          "answer": "頸部リンパ節"
+        }
+      ]
+    },
+    {
+      "section": "T分類（原発腫瘍）― 口腔癌",
+      "qa": [
+        {
+          "question": "UICC 2017（第8版）でT分類に追加された評価項目は？",
+          "answer": "DOI（depth of invasion：浸潤の深さ）\n\n[混同注意] 従来は最大径のみで判定していた"
+        },
+        {
+          "question": "DOIが深い場合、T分類にどのような影響があるか？",
+          "answer": "サイズが小さくてもT分類が格上げされる（例：最大径1.5cmでもDOI 8mmならT2）"
+        }
+      ]
+    },
+    {
+      "section": "T分類（UICC 2017 第8版）",
+      "qa": [
+        {
+          "question": "TXの定義は？",
+          "answer": "原発腫瘍の評価が不可能"
+        },
+        {
+          "question": "T0の定義は？",
+          "answer": "原発腫瘍を認めない"
+        },
+        {
+          "question": "Tisの定義は？",
+          "answer": "上皮内癌"
+        },
+        {
+          "question": "T1の最大径とDOIの基準は？",
+          "answer": "最大径≤2cm、DOI≤5mm"
+        },
+        {
+          "question": "T2の最大径とDOIの基準は？",
+          "answer": "最大径≤4cm、DOI≤10mm"
+        },
+        {
+          "question": "T3の最大径とDOIの基準は？",
+          "answer": "最大径>4cm、DOI>10mm"
+        },
+        {
+          "question": "T4aの定義は？",
+          "answer": "隣接構造に浸潤"
+        },
+        {
+          "question": "T4bの定義は？",
+          "answer": "高度進展"
+        }
+      ]
+    },
+    {
+      "section": "T4の定義（口腔）",
+      "qa": [
+        {
+          "question": "T4a（口唇）の浸潤範囲は？",
+          "answer": "皮質骨、下歯槽神経、口腔底、皮膚（顎または外鼻）に浸潤"
+        },
+        {
+          "question": "T4a（口腔）の浸潤範囲は？",
+          "answer": "皮質骨、舌深層の筋肉／外舌筋（オトガイ舌筋、舌骨舌筋、口蓋舌筋、茎突舌筋）、上顎洞、顔面の皮膚に浸潤"
+        },
+        {
+          "question": "T4bの浸潤範囲は？",
+          "answer": "咀嚼筋間隙、翼状突起、頭蓋底に浸潤、または内頸動脈を全周性に取り囲む"
+        },
+        {
+          "question": "外舌筋への浸潤はT分類で何に該当するか？",
+          "answer": "T4a\n\n[混同注意] 内舌筋（横舌筋・垂直舌筋・上縦舌筋・下縦舌筋）への浸潤はT4にならない"
+        },
+        {
+          "question": "外舌筋を4つ挙げよ",
+          "answer": "オトガイ舌筋、舌骨舌筋、口蓋舌筋、茎突舌筋"
+        },
+        {
+          "question": "内舌筋への浸潤はT4になるか？",
+          "answer": "ならない。内舌筋（横舌筋・垂直舌筋・上縦舌筋・下縦舌筋）は舌実質内の筋肉であるため"
+        },
+        {
+          "question": "舌下腺への進展はT分類で何に該当するか？",
+          "answer": "T4。舌の外側構造への浸潤に該当する"
+        }
+      ]
+    },
+    {
+      "section": "N分類（所属リンパ節転移）",
+      "qa": [
+        {
+          "question": "NXの定義は？",
+          "answer": "所属リンパ節転移の評価が不可能"
+        },
+        {
+          "question": "N0の定義は？",
+          "answer": "所属リンパ節転移なし"
+        },
+        {
+          "question": "N1の定義は？",
+          "answer": "同側の単発性リンパ節転移で最大径≤3cm、ENE(-)"
+        },
+        {
+          "question": "N2aの定義は？",
+          "answer": "同側の単発性リンパ節転移で最大径>3cmかつ≤6cm、ENE(-)"
+        },
+        {
+          "question": "N2bの定義は？",
+          "answer": "同側の多発性リンパ節転移で最大径≤6cm、ENE(-)"
+        },
+        {
+          "question": "N2cの定義は？",
+          "answer": "両側または対側のリンパ節転移で最大径≤6cm、ENE(-)"
+        },
+        {
+          "question": "N3aの定義は？",
+          "answer": "最大径>6cm、ENE(-)"
+        },
+        {
+          "question": "N3bの定義は？",
+          "answer": "いずれかのリンパ節でENE(+)"
+        },
+        {
+          "question": "ENEとは何か？",
+          "answer": "extranodal extension（節外浸潤）。UICC 2017で追加された評価項目"
+        },
+        {
+          "question": "ENE(+)の場合、N分類はどうなるか？",
+          "answer": "自動的にN3bとなる"
+        }
+      ]
+    },
+    {
+      "section": "M分類（遠隔転移）",
+      "qa": [
+        {
+          "question": "MXの定義は？",
+          "answer": "遠隔転移の評価が不可能"
+        },
+        {
+          "question": "M0の定義は？",
+          "answer": "遠隔転移なし"
+        },
+        {
+          "question": "M1の定義は？",
+          "answer": "遠隔転移あり"
+        },
+        {
+          "question": "M分類の評価に用いる検査は？",
+          "answer": "CT、PET（FDG-PET/CT）"
+        },
+        {
+          "question": "口腔内超音波検査はM分類の評価に使えるか？",
+          "answer": "使えない。口腔内超音波検査は原発腫瘍の浸潤深さ（DOI）の評価に用いる\n\n[混同注意] パノラマエックス線撮影、歯科用コーンビームCTも遠隔転移の評価には用いない"
+        }
+      ]
+    },
+    {
+      "section": "Stage分類",
+      "qa": [
+        {
+          "question": "Stage 0のTNMは？",
+          "answer": "TisN0M0"
+        },
+        {
+          "question": "Stage IのTNMは？",
+          "answer": "T1N0M0"
+        },
+        {
+          "question": "Stage IIのTNMは？",
+          "answer": "T2N0M0"
+        },
+        {
+          "question": "Stage IIIのTNMは？",
+          "answer": "T3N0M0、またはT1〜T3でN1M0"
+        },
+        {
+          "question": "Stage IVAのTNMは？",
+          "answer": "T4aN0〜N2M0、またはT1〜T3でN2M0"
+        },
+        {
+          "question": "Stage IVBのTNMは？",
+          "answer": "T4bで任意のNかつM0、または任意のTでN3かつM0"
+        },
+        {
+          "question": "Stage IVCのTNMは？",
+          "answer": "任意のT・Nで、M1"
+        },
+        {
+          "question": "M1があれば病期は？",
+          "answer": "問答無用でStage IVC\n\n[混同注意] T, Nに関係なくStage IVC"
+        },
+        {
+          "question": "T4bまたはN3がある場合の病期は？",
+          "answer": "Stage IVB"
+        },
+        {
+          "question": "T1N0M0の病期は？",
+          "answer": "Stage I（頻出）"
+        },
+        {
+          "question": "N1がある場合のStageは最低何か？（T1-3の場合）",
+          "answer": "Stage III以上"
+        }
+      ]
+    },
+    {
+      "section": "病理組織学的分化度（G分類）",
+      "qa": [
+        {
+          "question": "GXの定義は？",
+          "answer": "分化の程度の評価が不可能"
+        },
+        {
+          "question": "G1の定義は？",
+          "answer": "高分化"
+        },
+        {
+          "question": "G2の定義は？",
+          "answer": "中分化"
+        },
+        {
+          "question": "G3の定義は？",
+          "answer": "低分化"
+        },
+        {
+          "question": "G4の定義は？",
+          "answer": "未分化"
+        }
+      ]
+    },
+    {
+      "section": "過去問",
+      "qa": [
+        {
+          "question": "左側頰粘膜前方部に15×10mmの硬結を認め、扁平上皮癌と診断された。頰筋への浸潤はみられない。画像検査で所属リンパ節と他臓器への転移は認めない。病期はどれか。1つ選べ。",
+          "answer": "正解: B",
+          "choices": {
+            "a": "Stage0",
+            "b": "StageI",
+            "c": "StageII",
+            "d": "StageIII",
+            "e": "StageIV"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "105A84"
+        },
+        {
+          "question": "舌癌のTNM分類（UICC 2002）でT4とする診断根拠はどれか。1つ選べ。",
+          "answer": "正解: B",
+          "choices": {
+            "a": "肺への転移",
+            "b": "舌下腺への進展",
+            "c": "横舌筋への進展",
+            "d": "垂直舌筋への進展",
+            "e": "顎下リンパ節への転移"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "107C85"
+        },
+        {
+          "question": "右側舌縁部に最大径3cmの舌癌を認めた。また同側顎下リンパ節のみに最大径が2cmの転移を1つ認めたが、遠隔転移は認めなかった。このTNM分類はどれか。1つ選べ。",
+          "answer": "正解: D",
+          "choices": {
+            "a": "T1N1MO",
+            "b": "T1N1M1",
+            "c": "T2NOMO",
+            "d": "T2N1MO",
+            "e": "T2N1M1"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "109A116"
+        },
+        {
+          "question": "口腔癌のTNM分類でM分類の評価に用いられるのはどれか。2つ選べ。",
+          "answer": "正解: A, B",
+          "choices": {
+            "a": "CT",
+            "b": "PET",
+            "c": "口腔内超音波検査",
+            "d": "歯科用コーンビームCT",
+            "e": "パノラマエックス線撮影"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "112A49"
+        },
+        {
+          "question": "70歳の男性。舌の腫脹を主訴として来院した。1か月前に自覚したが、痛みがないためにそのままにしていたという。右側舌縁部に易出血性の腫脹を認める。超音波検査、CT及びFDG-PET/CTで頸部リンパ節転移と遠隔転移を認めなかった。TNM分類（UICC2017）におけるstage分類はどれか。1つ選べ。",
+          "answer": "正解: B",
+          "choices": {
+            "a": "Stage 0",
+            "b": "StageI",
+            "c": "StageII",
+            "d": "StageIII",
+            "e": "StageIVa"
+          },
+          "correctAnswer": "B",
+          "numChoices": 1,
+          "code": "114B81"
+        },
+        {
+          "question": "56歳の女性。下顎左側臼歯部の痛みと歯の動揺を主訴として来院した。2か月前から疼痛を自覚し、次第に動揺してきたという。下顎左側臼歯部に42×20mm大の腫瘤を認め、生検の結果は扁平上皮癌であった。FDG-PET/CTで遠隔転移を認めなかった。TNM分類（UICC2017）はどれか。1つ選べ。",
+          "answer": "正解: D",
+          "choices": {
+            "a": "T1N2bM0",
+            "b": "T2N1M1",
+            "c": "T3N2aM1",
+            "d": "T4aN2bM0",
+            "e": "T4bN3aM0"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "116B77"
+        }
+      ]
+    },
+    {
+      "section": "表穴埋め",
+      "qa": [
+        {
+          "type": "table-occlusion",
+          "title": "T分類（UICC 2017 第8版）",
+          "table": {
+            "headers": ["分類", "最大径", "DOI（浸潤の深さ）"],
+            "rows": [
+              ["TX", "原発腫瘍の評価が不可能", ""],
+              ["T0", "原発腫瘍を認めない", ""],
+              ["Tis", "上皮内癌", ""],
+              ["T1", "≤2cm", "≤5mm"],
+              ["T2", "≤4cm", "≤10mm"],
+              ["T3", ">4cm", ">10mm"],
+              ["T4a", "隣接構造に浸潤", ""],
+              ["T4b", "高度進展", ""]
+            ]
+          },
+          "occlusions": [
+            {"row": 2, "col": 1},
+            {"row": 3, "col": 1},
+            {"row": 3, "col": 2},
+            {"row": 4, "col": 1},
+            {"row": 4, "col": 2},
+            {"row": 5, "col": 1},
+            {"row": 5, "col": 2},
+            {"row": 6, "col": 1},
+            {"row": 7, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "T4の定義（口腔）",
+          "table": {
+            "headers": ["分類", "浸潤範囲"],
+            "rows": [
+              ["T4a（口唇）", "皮質骨、下歯槽神経、口腔底、皮膚（顎または外鼻）に浸潤"],
+              ["T4a（口腔）", "皮質骨、外舌筋（オトガイ舌筋、舌骨舌筋、口蓋舌筋、茎突舌筋）、上顎洞、顔面の皮膚に浸潤"],
+              ["T4b", "咀嚼筋間隙、翼状突起、頭蓋底に浸潤、または内頸動脈を全周性に取り囲む"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "N分類（UICC 2017 第8版）",
+          "table": {
+            "headers": ["分類", "定義"],
+            "rows": [
+              ["NX", "所属リンパ節転移の評価が不可能"],
+              ["N0", "所属リンパ節転移なし"],
+              ["N1", "同側の単発性リンパ節転移で最大径≤3cm、ENE(-)"],
+              ["N2a", "同側の単発性リンパ節転移で最大径>3cmかつ≤6cm、ENE(-)"],
+              ["N2b", "同側の多発性リンパ節転移で最大径≤6cm、ENE(-)"],
+              ["N2c", "両側または対側のリンパ節転移で最大径≤6cm、ENE(-)"],
+              ["N3a", "最大径>6cm、ENE(-)"],
+              ["N3b", "いずれかのリンパ節でENE(+)"]
+            ]
+          },
+          "occlusions": [
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1},
+            {"row": 3, "col": 1},
+            {"row": 4, "col": 1},
+            {"row": 5, "col": 1},
+            {"row": 6, "col": 1},
+            {"row": 7, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "M分類（遠隔転移）",
+          "table": {
+            "headers": ["分類", "定義", "評価に用いる検査"],
+            "rows": [
+              ["MX", "遠隔転移の評価が不可能", "―"],
+              ["M0", "遠隔転移なし", "CT、PET（FDG-PET/CT）"],
+              ["M1", "遠隔転移あり", "CT、PET（FDG-PET/CT）"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 1, "col": 2},
+            {"row": 2, "col": 1},
+            {"row": 2, "col": 2}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "Stage分類",
+          "table": {
+            "headers": ["Stage", "T", "N", "M"],
+            "rows": [
+              ["0", "Tis", "N0", "M0"],
+              ["I", "T1", "N0", "M0"],
+              ["II", "T2", "N0", "M0"],
+              ["III", "T3 / T1〜T3", "N0 / N1", "M0"],
+              ["IVA", "T4a / T1〜T3", "N0〜N2 / N2", "M0"],
+              ["IVB", "T4b / 任意のT", "任意のN / N3", "M0"],
+              ["IVC", "任意のT", "任意のN", "M1"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1},
+            {"row": 3, "col": 1},
+            {"row": 3, "col": 2},
+            {"row": 4, "col": 1},
+            {"row": 4, "col": 2},
+            {"row": 5, "col": 1},
+            {"row": 5, "col": 2},
+            {"row": 6, "col": 3}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "病理組織学的分化度（G分類）",
+          "table": {
+            "headers": ["分類", "定義"],
+            "rows": [
+              ["GX", "分化の程度の評価が不可能"],
+              ["G1", "高分化"],
+              ["G2", "中分化"],
+              ["G3", "低分化"],
+              ["G4", "未分化"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 1, "col": 1},
+            {"row": 2, "col": 1},
+            {"row": 3, "col": 1},
+            {"row": 4, "col": 1}
+          ]
+        },
+        {
+          "type": "table-occlusion",
+          "title": "外舌筋 vs 内舌筋（T4判定のひっかけ）",
+          "table": {
+            "headers": ["区分", "含まれる筋", "T4該当"],
+            "rows": [
+              ["外舌筋", "オトガイ舌筋、舌骨舌筋、口蓋舌筋、茎突舌筋", "T4a"],
+              ["内舌筋", "横舌筋、垂直舌筋、上縦舌筋、下縦舌筋", "T4にならない"]
+            ]
+          },
+          "occlusions": [
+            {"row": 0, "col": 1},
+            {"row": 0, "col": 2},
+            {"row": 1, "col": 1},
+            {"row": 1, "col": 2}
+          ]
+        }
+      ]
+    }
+  ]
+}

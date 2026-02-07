@@ -122,16 +122,52 @@
           "answer": "Spee彎曲、Balkwill角、Bonwill三角"
         },
         {
-          "question": "[116A68] ★★\n顎関節模式図で下顎頭が関節窩の最後方にある状態は、Posseltの図形のどこ？",
+          "question": "顎関節模式図で下顎頭が関節窩の最後方にある状態は、Posseltの図形のどこ？",
           "answer": "下顎最後退位（図形の後上方）\n\n[ポイント]\n下顎最後退位＝下顎頭が関節窩の最後方＝Posseltの図形の後上方"
         },
         {
-          "question": "[114C58] ★★★\nBonwill三角と関連する角度は？",
-          "answer": "Balkwill角\n\n[他の選択肢との違い]\n- 切歯路角：前方運動時の切歯の経路\n- Fischer角：側方顆路傾斜角\n- Bennett角：側方運動時の非作業側顆頭の移動方向\n- Balkwill角：正解（Bonwill三角と咬合平面のなす角）← 正解\n- 矢状顆路傾斜角：顆路と基準平面のなす角\n\n[ポイント]\n「Bonwill」と「Balkwill」の名前の類似に注目\nBalkwill角はBonwill三角を基準に定義→直接関連"
+          "question": "Bonwill三角と関連する角度は？",
+          "answer": "D",
+          "choices": {
+            "a": "切歯路角",
+            "b": "Fischer角",
+            "c": "Bennett角",
+            "d": "Balkwill角",
+            "e": "矢状顆路傾斜角"
+          },
+          "correctAnswer": "D",
+          "numChoices": 1,
+          "code": "114C58",
+          "point": "「Bonwill」と「Balkwill」の名前の類似に注目\nBalkwill角はBonwill三角を基準に定義→直接関連",
+          "choiceExplanations": {
+            "a": "前方運動時の切歯の経路",
+            "b": "側方顆路傾斜角",
+            "c": "側方運動時の非作業側顆頭の移動方向",
+            "d": "正解（Bonwill三角と咬合平面のなす角）← 正解",
+            "e": "顆路と基準平面のなす角"
+          }
         },
         {
-          "question": "[116B72] ★★\n前歯部ブリッジの審美的形態の参考となるのは？",
-          "answer": "瞳孔線、顔面正中\n\n[他の選択肢との違い]\n- 瞳孔線：正解（切縁の傾きの参考）← 正解\n- 顔面正中：正解（正中の位置決め）← 正解\n- Spee彎曲：臼歯部の咬合彎曲 ← ひっかけ\n- Balkwill角：咬合器装着の基準\n- Bonwill三角：咬合器の設計基準\n\n[ポイント]\n前歯部審美＝顔貌との調和＝瞳孔線・顔面正中\nSpee彎曲・Bonwill三角は臼歯部・咬合器の話"
+          "question": "前歯部ブリッジの審美的形態の参考となるのは？",
+          "answer": "A, B",
+          "choices": {
+            "a": "瞳孔線",
+            "b": "顔面正中",
+            "c": "Spee彎曲",
+            "d": "Balkwill角",
+            "e": "Bonwill三角"
+          },
+          "correctAnswer": "A, B",
+          "numChoices": 2,
+          "code": "116B72",
+          "point": "前歯部審美＝顔貌との調和＝瞳孔線・顔面正中\nSpee彎曲・Bonwill三角は臼歯部・咬合器の話",
+          "choiceExplanations": {
+            "a": "正解（切縁の傾きの参考）← 正解",
+            "b": "正解（正中の位置決め）← 正解",
+            "c": "臼歯部の咬合彎曲 ← ひっかけ",
+            "d": "咬合器装着の基準",
+            "e": "咬合器の設計基準"
+          }
         }
       ]
     }

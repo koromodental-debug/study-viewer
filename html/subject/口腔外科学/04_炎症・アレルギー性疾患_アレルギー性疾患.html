@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アレルギー性疾患 - 口腔外科学</title>
+  <style>
+    :root {
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent: #0071E3;
+      --accent-light: #E8F4FD;
+      --bg-secondary: #F5F5F7;
+      --border-light: #D2D2D7;
+      --caution: #BF5600;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 10pt;
+      line-height: 1.8;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { padding: 24px; max-width: 900px; margin: 0 auto; }
+    .container { column-count: 1; }
+    @media print {
+      @page { size: A4 landscape; margin: 12mm 15mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 12mm 15mm; max-width: 297mm; }
+      .container { column-count: 2; column-gap: 30px; }
+    }
+    h1 { font-size: 22pt; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); letter-spacing: -0.5px; }
+    h2 { font-size: 13pt; font-weight: 600; margin: 20px 0 10px 0; color: var(--text-primary); }
+    h3 { font-size: 10pt; font-weight: 600; margin: 14px 0 8px 0; color: var(--accent); }
+    p { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; }
+    .key { font-weight: 600; }
+    .highlight { background: linear-gradient(transparent 60%, #FFE066 60%); font-weight: 600; }
+    .caution { color: var(--caution); font-weight: 600; }
+    ul { padding-left: 1.5em; margin: 8px 0; }
+    li { margin: 4px 0; }
+    .point-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+    .point-box-title { font-weight: 600; color: var(--accent); margin-bottom: 8px; font-size: 10pt; }
+    .question-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    .question-box .q-number { font-weight: 600; color: var(--text-secondary); font-size: 9pt; margin-bottom: 6px; }
+    .question-box .choices { margin: 10px 0; line-height: 1.8; color: var(--text-secondary); }
+    .question-box .answer { color: var(--accent); font-weight: 600; margin-top: 10px; }
+    .question-images { margin: 12px 0; }
+    .question-images img { max-width: 45%; margin: 5px; border-radius: 8px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 9pt;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .note { font-size: 9pt; color: var(--text-secondary); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="category-tag">口腔外科学 / 炎症・アレルギー性疾患</span>
+    <h1>アレルギー性疾患</h1>
+    <div class="container">
+
+      <!-- ============================================ -->
+      <!-- セクション1: Stevens-Johnson症候群（薬疹）★★★★ -->
+      <!-- ============================================ -->
+      <h2>1. Stevens-Johnson症候群と薬疹</h2>
+
+      <h3>多形滲出性紅斑（erythema exsudativum multiforme）</h3>
+      <p>皮膚および粘膜に紅斑、水疱、びらんを生じる<span class="key">急性非化膿性炎症性疾患</span>である。皮膚のみの軽症型と、粘膜障害や全身症状を伴う重症型に分けられる。</p>
+      <ul>
+        <li>原因：HSV、マイコプラズマなどの<span class="key">感染症</span>、<span class="key">薬剤</span>（サルファ剤、抗菌薬、NSAIDs、抗てんかん薬）、食品など</li>
+        <li>病態：<span class="highlight">アレルギー反応</span>が関与。薬剤開始から1〜3週以内に発症</li>
+        <li>前駆症状：発熱、倦怠感、頭痛</li>
+      </ul>
+
+      <h3>Stevens-Johnson症候群（SJS）＝ 皮膚粘膜眼症候群</h3>
+      <p>多形滲出性紅斑の重症型で、高熱・全身倦怠感を伴い、口唇・口腔、眼、外陰部など<span class="key">全身の粘膜</span>に紅斑・びらん・水疱が多発する。</p>
+      <ul>
+        <li><span class="key">口腔症状</span>：口唇の出血性びらん・血痂（出血性痂皮）、口腔咽頭粘膜のびらん・偽膜形成。高度な疼痛で摂食障害をきたす</li>
+        <li><span class="key">眼症状</span>：結膜充血、偽膜形成、角膜混濁（後遺症あり）</li>
+        <li><span class="key">皮膚症状</span>：非典型的ターゲット様紅斑（標的状紅斑）、弛緩性水疱</li>
+      </ul>
+
+      <h3>SJSとTENの体表面積による分類</h3>
+      <table>
+        <tr><th>分類</th><th>表皮剥離面積</th><th>特徴</th></tr>
+        <tr><td><span class="key">SJS</span></td><td><span class="highlight">体表面積の10%未満</span></td><td>粘膜症状が主体</td></tr>
+        <tr><td>SJS/TENオーバーラップ</td><td>10〜30%</td><td>移行型</td></tr>
+        <tr><td><span class="key">TEN</span>（中毒性表皮壊死融解症）</td><td><span class="highlight">30%超</span></td><td>広範な表皮壊死</td></tr>
+      </table>
+
+      <h3>原因薬剤（歯科関連で重要）</h3>
+      <table>
+        <tr><th>薬剤群</th><th>代表的薬剤</th></tr>
+        <tr><td>抗菌薬</td><td>サルファ剤、アミノペニシリン系（アモキシシリン）、セファロスポリン系、フルオロキノロン系</td></tr>
+        <tr><td>NSAIDs</td><td>ロキソプロフェン、ピロキシカム</td></tr>
+        <tr><td>抗てんかん薬</td><td>カルバマゼピン、フェニトイン、ラモトリギン</td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">治療の原則</div>
+        <ul>
+          <li><span class="highlight">原因薬剤の即時中止</span>が最優先</li>
+          <li>副腎皮質ステロイドの全身投与</li>
+          <li>免疫抑制剤投与、免疫グロブリン大量静注</li>
+          <li>口腔内の清拭、栄養補給（経管・中心静脈栄養）</li>
+        </ul>
+      </div>
+
+      <h3>薬疹の原因特定検査</h3>
+      <table>
+        <tr><th>検査</th><th>アレルギー型</th><th>方法・特徴</th></tr>
+        <tr><td><span class="key">プリックテスト</span></td><td>I型（即時型）</td><td>皮膚に試薬を置き針で刺入。15〜20分後に膨疹を判定</td></tr>
+        <tr><td><span class="key">パッチテスト</span></td><td>IV型（遅延型）</td><td>背部に試薬を貼付。48h・72h・1週間で判定</td></tr>
+        <tr><td><span class="key">リンパ球刺激試験（DLST）</span></td><td>IV型</td><td>患者リンパ球を疑わしい薬剤と培養し増殖反応を測定。対照の181%以上で陽性</td></tr>
+        <tr><td><span class="key">好塩基球活性化試験（BAT）</span></td><td>I型</td><td>フローサイトメトリーでCD63/CD203c発現を測定</td></tr>
+        <tr><td>内服試験（チャレンジテスト）</td><td>全型</td><td>最も信頼性が高いが<span class="caution">危険性も高い</span>。専門医の管理下で実施</td></tr>
+      </table>
+
+      <!-- 過去問：SJS関連 -->
+      <div class="question-box">
+        <div class="q-number">110C38</div>
+        <p>抗菌薬やNSAIDsの有害作用で高熱と粘膜の紅斑を伴う重症薬疹を特徴とするのはどれか。1つ選べ。</p>
+        <div class="choices">
+          a Reye症候群<br>
+          b 医原性Cushing症候群<br>
+          c Stevens-Johnson症候群<br>
+          d 薬剤性ネフローゼ症候群<br>
+          e 薬剤性Parkinson症候群
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】SJSは薬剤によるアレルギー反応で高熱・粘膜のびらん・紅斑を伴う重症薬疹である。Reye症候群はアスピリンと関連する脳症＋肝障害で、薬疹ではない。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">113D55</div>
+        <p>16歳の女子。口腔内の疼痛を主訴として来院した。1週前に感冒様症状があったため内科を受診し内服薬を服用したところ、翌日から発熱、口腔内の疼痛、皮膚の水疱および眼の異物感が出現したという。特記すべき既往はない。初診時の眼の写真（別冊No.11A）と口腔内写真（別冊No.11B）を別に示す。<br>最も考えられるのはどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/113回_Web画像/113D55.png" alt="別冊No.11">
+        </div>
+        <div class="choices">
+          a GVHD<br>
+          b 帯状疱疹<br>
+          c Behcet 病<br>
+          d 偽膜性カンジダ症<br>
+          e Stevens-Johnson 症候群
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】内服薬服用後の発熱＋口腔内疼痛＋皮膚水疱＋眼症状の組み合わせはSJSの典型的臨床像。GVHDは移植後、Behcet病は反復性口腔潰瘍で眼はぶどう膜炎が主体。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">103B23</div>
+        <p>63歳の男性。口腔内の疼痛を主訴として来院した。7日前から智歯周囲炎のため抗菌薬を服用している。昨日から熱発し、眼の充血と全身の皮膚の発赤とが生じ、口腔内全体がしみるようになり食事が困難になったという。初診時の口腔内写真（別冊No.21）を別に示す。血液検査の結果を表に示す。<br>この疾患の病態はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/103回_Web画像/103B23.png" alt="別冊No.21">
+        </div>
+        <div class="choices">
+          a 化学的損傷<br>
+          b 菌交代現象<br>
+          c 自己免疫疾患<br>
+          d 日和見感染症<br>
+          e アレルギー性疾患
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】抗菌薬服用後の発熱＋眼充血＋皮膚発赤＋口腔内びらんはSJSの臨床像。病態はアレルギー性疾患（薬剤に対する過敏反応）である。菌交代現象は抗菌薬使用後の常在菌バランス変化で、口腔カンジダ症などをきたす。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">116C73</div>
+        <p>抜歯後にアモキシシリン水和物とロキソプロフェンナトリウム水和物を投与したところ、3日目に38.5℃の発熱、全身倦怠感、口唇の水疱とびらん及び皮膚に結節性紅斑が現れた。<br>誘因を特定するための検査はどれか。3つ選べ。</p>
+        <div class="choices">
+          a HLA検査<br>
+          b 蛍光抗体直接法<br>
+          c プリックテスト<br>
+          d リンパ球刺激試験<br>
+          e 好塩基球活性化試験
+        </div>
+        <div class="answer">正解：c,d,e</div>
+        <p>【解説】薬疹の原因薬剤を特定する検査として、プリックテスト（即時型）、DLST（遅延型）、BAT（即時型）が適切。HLA検査は薬疹の発症リスク予測に使われるが原因特定ではない。蛍光抗体直接法は天疱瘡・類天疱瘡の診断法。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション2: 金属アレルギー ★★★ -->
+      <!-- ============================================ -->
+      <h2>2. 歯科用金属アレルギー</h2>
+
+      <h3>病態</h3>
+      <p>歯科用金属が唾液によって<span class="key">イオン化</span>し、口腔粘膜や消化管から吸収される。イオン化金属がハプテンとして生体タンパクと結合し、<span class="highlight">IV型（遅延型）アレルギー</span>を惹起する。感作が成立すると、金属との接触から<span class="key">24〜72時間後</span>に症状が出現する。</p>
+
+      <h3>原因金属</h3>
+      <table>
+        <tr><th>金属</th><th>パッチテスト陽性率</th><th>備考</th></tr>
+        <tr><td><span class="key">ニッケル</span></td><td>約25%</td><td>最も陽性率が高い</td></tr>
+        <tr><td><span class="key">パラジウム</span></td><td>約16.6%</td><td>歯科保険材料に多用</td></tr>
+        <tr><td>コバルト</td><td>高い</td><td>ニッケルと交差反応</td></tr>
+        <tr><td>クロム</td><td>中程度</td><td>ステンレスに含有</td></tr>
+        <tr><td>水銀</td><td>中程度</td><td>アマルガム由来</td></tr>
+      </table>
+
+      <h3>口腔内の症状</h3>
+      <ul>
+        <li><span class="key">口腔扁平苔癬様病変</span>：金属修復物に接した頬粘膜にレース状の白色病変（Wickham線条）</li>
+        <li>接触性口内炎・口唇炎：金属との接触部位のびらん・発赤</li>
+        <li>味覚異常、舌炎、口角炎</li>
+      </ul>
+      <p>全身症状として<span class="key">掌蹠膿疱症</span>、全身の皮膚炎・湿疹がみられることがある。</p>
+
+      <h3>パッチテストの方法</h3>
+      <div class="point-box">
+        <div class="point-box-title">パッチテスト判定スケジュール</div>
+        <ul>
+          <li>背部（肩甲骨間のやや下方）に試薬を貼付</li>
+          <li><span class="highlight">48時間後・72時間後・1週間後</span>の3回判定</li>
+          <li>歯科用金属（特にPd）は反応が遅いため、<span class="caution">1週間判定まで必ず行う</span></li>
+        </ul>
+      </div>
+
+      <h3>追加検査</h3>
+      <ul>
+        <li><span class="key">病理組織学検査</span>：口腔扁平苔癬様病変の確定診断</li>
+        <li><span class="key">金属修復物元素分析</span>：修復物に含まれる金属元素の同定</li>
+      </ul>
+
+      <h3>治療</h3>
+      <p>原因となった金属修復物を除去し、<span class="highlight">メタルフリー修復物（オールセラミック、ジルコニア等）への置換</span>を行う。副腎皮質ステロイド軟膏は対症療法であり、原因療法にはならない。</p>
+
+      <!-- 過去問：金属アレルギー関連 -->
+      <div class="question-box">
+        <div class="q-number">109B17</div>
+        <p>51歳の女性。口腔内の金属修復物に関する精査と加療のため、皮膚科からの紹介により来院した。皮膚科では手掌の疾患に対して副腎皮質ステロイド外用薬の投与を受けているという。初診時の手掌の写真（別冊No.17A）とエックス線写真（別冊No.17B）を別に示す。<br>まず行うべき対応はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109B17.png" alt="別冊No.17">
+        </div>
+        <div class="choices">
+          a 咬合調整<br>
+          b 金属修復物の研磨<br>
+          c 金属修復物の除去<br>
+          d 金属修復物装着歯の抜去<br>
+          e 歯科用金属のパッチテスト
+        </div>
+        <div class="answer">正解：e</div>
+        <p>【解説】掌蹠膿疱症で皮膚科から紹介された症例。金属アレルギーの関与が疑われるが、まず原因金属を特定するためにパッチテストを行う。いきなり金属修復物を除去するのは不適切。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">109D21</div>
+        <p>50歳の女性。口腔内の疼痛を主訴として来院した。1年前から違和感に気付いており、1か月前から左側頰粘膜に接触痛を感じるようになったという。口腔内写真（別冊No.21A）と、ある検査の写真（別冊No.21B）を別に示す。<br>追加して行う検査はどれか。2つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/109回_Web画像/109D21.png" alt="別冊No.21">
+        </div>
+        <div class="choices">
+          a 触覚検査<br>
+          b 味覚検査<br>
+          c 唾液成分検査<br>
+          d 病理組織学検査<br>
+          e 金属修復物元素分析
+        </div>
+        <div class="answer">正解：d,e</div>
+        <p>【解説】口腔扁平苔癬様病変が疑われ、パッチテストで金属に陽性反応がみられた症例。追加検査として、病変の確定診断のための病理組織学検査と、口腔内金属の成分を特定するための元素分析が必要。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">112D79</div>
+        <p>61歳の女性。左側頬部の疼痛を主訴として来院した。2年前に自覚し、徐々に増悪してきたという。病変が限局していることから、皮膚科で歯科用金属のパッチ テストを行ったところ、Pdを含む複数の金属に陽性反応がみられた。初診時の口腔内写真（別冊No.26A）と生検時の H-E染色病理組織像（別冊No.26B）を別に示す。<br>適切な原因療法はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/112回_Web画像/112D79_1.png" alt="別冊No.26A">
+          <img src="../../../images/112回_Web画像/112D79_2.png" alt="別冊No.26B">
+        </div>
+        <div class="choices">
+          a 金属修復物の研磨<br>
+          b 金属修復物装着歯の抜去<br>
+          c 金属修復物装着歯の咬合調整<br>
+          d メタルフリー修復物への置換<br>
+          e 副腎皮質ステロイド軟膏の塗布
+        </div>
+        <div class="answer">正解：d</div>
+        <p>【解説】パッチテストでPdを含む複数の金属に陽性の口腔扁平苔癬様病変。原因療法としてメタルフリー修復物への置換が適切。ステロイド軟膏は対症療法であり、研磨・咬合調整・抜歯は原因除去にならない。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション3: 血管性浮腫 ★★ -->
+      <!-- ============================================ -->
+      <h2>3. 血管性浮腫</h2>
+
+      <h3>Quincke浮腫（血管神経性浮腫）</h3>
+      <p>皮膚深層・粘膜下組織に生じる<span class="key">限局性の浮腫性腫脹</span>で、血管神経性浮腫（angioneurotic edema）、血管性浮腫（angioedema）とも呼ばれる。口唇、眼瞼、粘膜、口腔に好発し、リンパ組織の豊富な部位に発症しやすい。数時間から数日続き、再発することがある。</p>
+
+      <h3>遺伝性血管性浮腫（HAE: Hereditary Angioedema）</h3>
+      <p><span class="highlight">C1インヒビター（C1-INH）</span>の欠損または機能低下による反復性の浮腫。常染色体優性遺伝で、<span class="key">ブラジキニン</span>の過剰産生により血管透過性が亢進する。</p>
+
+      <h3>HAEの分類</h3>
+      <table>
+        <tr><th>型</th><th>頻度</th><th>C1-INH蛋白量</th><th>C1-INH活性</th></tr>
+        <tr><td><span class="key">I型</span></td><td>約85%</td><td><span class="highlight">低下</span></td><td>低下</td></tr>
+        <tr><td><span class="key">II型</span></td><td>約15%</td><td>正常〜増加</td><td><span class="highlight">低下</span></td></tr>
+      </table>
+
+      <div class="point-box">
+        <div class="point-box-title">HAEの診断ポイント</div>
+        <ul>
+          <li>反復する無痛性の口唇・顔面の腫脹</li>
+          <li>蕁麻疹を<span class="caution">伴わない</span></li>
+          <li>局所の熱感・発赤を認めない</li>
+          <li>数日で自然消退し、再発を繰り返す</li>
+          <li>検査：<span class="highlight">血中C1インヒビター</span>、<span class="key">補体C4</span>（発作時ほぼ全例で低下）</li>
+        </ul>
+      </div>
+
+      <h3>HAE vs アナフィラキシーの鑑別</h3>
+      <table>
+        <tr><th>鑑別点</th><th>HAE（遺伝性血管性浮腫）</th><th>アナフィラキシー</th></tr>
+        <tr><td>蕁麻疹</td><td><span class="caution">なし</span></td><td>あり</td></tr>
+        <tr><td>そう痒</td><td>少ない</td><td>強い</td></tr>
+        <tr><td>発症速度</td><td>緩慢（数時間）</td><td>急速（数分〜30分）</td></tr>
+        <tr><td>アドレナリン</td><td><span class="caution">無効</span></td><td>有効</td></tr>
+        <tr><td>抗ヒスタミン薬</td><td>無効</td><td>有効</td></tr>
+        <tr><td>C1-INH</td><td>低下</td><td>正常</td></tr>
+        <tr><td>補体C4</td><td>低下</td><td>正常</td></tr>
+        <tr><td>IgE</td><td>関与なし</td><td>関与あり</td></tr>
+        <tr><td>メディエーター</td><td>ブラジキニン</td><td>ヒスタミン</td></tr>
+      </table>
+
+      <h3>治療</h3>
+      <ul>
+        <li>急性発作時：<span class="highlight">C1インヒビター製剤の静脈注射</span></li>
+        <li>抗ヒスタミン薬、抗プラスミン薬（トラネキサム酸）</li>
+        <li>発作予防：ダナゾール（テストステロン誘導体）</li>
+        <li><span class="caution">HANEの喉頭浮腫は気道閉塞を招き致死的</span>となりうる</li>
+      </ul>
+
+      <!-- 過去問：血管性浮腫関連 -->
+      <div class="question-box">
+        <div class="q-number">116D65</div>
+        <p>急激な口唇腫脹を呈するのはどれか。2つ選べ。</p>
+        <div class="choices">
+          a 粘液嚢胞<br>
+          b 口唇ヘルペス<br>
+          c 肉芽腫性口唇炎<br>
+          d アナフィラキシー<br>
+          e 遺伝性血管性浮腫
+        </div>
+        <div class="answer">正解：d,e</div>
+        <p>【解説】「急激な」口唇腫脹がキーワード。アナフィラキシーは数分〜30分で発症、遺伝性血管性浮腫も数時間で急速に腫脹する。粘液嚢胞は緩徐に増大、肉芽腫性口唇炎は慢性経過、口唇ヘルペスは水疱が主体で腫脹は軽度。</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-number">114A73</div>
+        <p>下唇の無痛性腫脹を主訴として来院した患者の初診時の顔貌写真（別冊No.30）を別に示す。昨日から自覚しているという。以前にも同様の症状があったが、数日で消退したという。局所の熱感と発赤は認めない。<br>行うべき検査はどれか。1つ選べ。</p>
+        <div class="question-images">
+          <img src="../../../images/114回_Web画像/114A73.png" alt="別冊No.30">
+        </div>
+        <div class="choices">
+          a パッチテスト<br>
+          b プリックテスト<br>
+          c 血中 C1インヒビター<br>
+          d 血中プロカルシトニン<br>
+          e 末梢血リンパ球表面抗原検査
+        </div>
+        <div class="answer">正解：c</div>
+        <p>【解説】「無痛性」「数日で消退」「再発」「熱感・発赤なし」はHAEの典型的所見。血中C1インヒビターを測定する。パッチテストは遅延型アレルギー、プリックテストは即時型アレルギーの検査。プロカルシトニンは細菌感染のマーカー。</p>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- セクション4: アレルギーの分類（まとめ） -->
+      <!-- ============================================ -->
+      <h2>4. アレルギー反応の分類と検査の対応</h2>
+
+      <h3>Coombs-Gell分類と歯科関連疾患</h3>
+      <table>
+        <tr><th>型</th><th>名称</th><th>メディエーター</th><th>歯科関連疾患</th><th>検査</th></tr>
+        <tr><td><span class="key">I型</span></td><td>即時型</td><td>IgE、ヒスタミン</td><td>アナフィラキシー、蕁麻疹、気管支喘息</td><td>プリックテスト、BAT</td></tr>
+        <tr><td>II型</td><td>細胞傷害型</td><td>IgG、IgM、補体</td><td>自己免疫性溶血性貧血</td><td>Coombs試験</td></tr>
+        <tr><td>III型</td><td>免疫複合体型</td><td>免疫複合体、補体</td><td>SLE、血清病</td><td>免疫複合体測定</td></tr>
+        <tr><td><span class="key">IV型</span></td><td>遅延型</td><td>感作Tリンパ球</td><td>金属アレルギー、接触性口内炎、薬疹</td><td>パッチテスト、DLST</td></tr>
+      </table>
+      <p class="note">歯科国試ではI型（即時型）とIV型（遅延型）が特に重要。</p>
+
+    </div>
+  </div>
+</body>
+</html>

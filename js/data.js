@@ -9640,7 +9640,7 @@ const DATA = [
   {
     "id": "齲蝕学_齲蝕の分類と診断",
     "title": "齲蝕学_齲蝕の分類と診断",
-    "qaPath": "qa/subject/保存修復学/01_齲蝕学_齲蝕の分類と診断_QA.txt",
+    "qaPath": "qa/subject/保存修復学/01_齲蝕学_齲蝕の分類と診断_QA.json",
     "htmlPath": "html/subject/保存修復学/01_齲蝕学_齲蝕の分類と診断.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9648,7 +9648,7 @@ const DATA = [
   {
     "id": "歯の損耗_損耗と知覚過敏",
     "title": "歯の損耗_損耗と知覚過敏",
-    "qaPath": "qa/subject/保存修復学/02_歯の損耗_損耗と知覚過敏_QA.txt",
+    "qaPath": "qa/subject/保存修復学/02_歯の損耗_損耗と知覚過敏_QA.json",
     "htmlPath": "html/subject/保存修復学/02_歯の損耗_損耗と知覚過敏.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9656,7 +9656,7 @@ const DATA = [
   {
     "id": "診査と準備_術前診査と準備",
     "title": "診査と準備_術前診査と準備",
-    "qaPath": "qa/subject/保存修復学/03_診査と準備_術前診査と準備_QA.txt",
+    "qaPath": "qa/subject/保存修復学/03_診査と準備_術前診査と準備_QA.json",
     "htmlPath": "html/subject/保存修復学/03_診査と準備_術前診査と準備.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9664,7 +9664,7 @@ const DATA = [
   {
     "id": "窩洞形成の基礎_原則と器具",
     "title": "窩洞形成の基礎_原則と器具",
-    "qaPath": "qa/subject/保存修復学/04_窩洞形成の基礎_原則と器具_QA.txt",
+    "qaPath": "qa/subject/保存修復学/04_窩洞形成の基礎_原則と器具_QA.json",
     "htmlPath": "html/subject/保存修復学/04_窩洞形成の基礎_原則と器具.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9672,7 +9672,7 @@ const DATA = [
   {
     "id": "窩洞形成の基礎_術野確保法",
     "title": "窩洞形成の基礎_術野確保法",
-    "qaPath": "qa/subject/保存修復学/04_窩洞形成の基礎_術野確保法_QA.txt",
+    "qaPath": "qa/subject/保存修復学/04_窩洞形成の基礎_術野確保法_QA.json",
     "htmlPath": "html/subject/保存修復学/04_窩洞形成の基礎_術野確保法.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9680,7 +9680,7 @@ const DATA = [
   {
     "id": "直接修復_CRの基礎と特性",
     "title": "直接修復_CRの基礎と特性",
-    "qaPath": "qa/subject/保存修復学/05_直接修復_CRの基礎と特性_QA.txt",
+    "qaPath": "qa/subject/保存修復学/05_直接修復_CRの基礎と特性_QA.json",
     "htmlPath": "html/subject/保存修復学/05_直接修復_CRの基礎と特性.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9688,7 +9688,7 @@ const DATA = [
   {
     "id": "直接修復_CR修復手技",
     "title": "直接修復_CR修復手技",
-    "qaPath": "qa/subject/保存修復学/05_直接修復_CR修復手技_QA.txt",
+    "qaPath": "qa/subject/保存修復学/05_直接修復_CR修復手技_QA.json",
     "htmlPath": "html/subject/保存修復学/05_直接修復_CR修復手技.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9696,7 +9696,7 @@ const DATA = [
   {
     "id": "直接修復_アマルガム修復",
     "title": "直接修復_アマルガム修復",
-    "qaPath": "qa/subject/保存修復学/05_直接修復_アマルガム修復_QA.txt",
+    "qaPath": "qa/subject/保存修復学/05_直接修復_アマルガム修復_QA.json",
     "htmlPath": "html/subject/保存修復学/05_直接修復_アマルガム修復.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9704,7 +9704,7 @@ const DATA = [
   {
     "id": "直接修復_グラスアイオノマーセメント修復",
     "title": "直接修復_グラスアイオノマーセメント修復",
-    "qaPath": "qa/subject/保存修復学/05_直接修復_グラスアイオノマーセメント修復_QA.txt",
+    "qaPath": "qa/subject/保存修復学/05_直接修復_グラスアイオノマーセメント修復_QA.json",
     "htmlPath": "html/subject/保存修復学/05_直接修復_グラスアイオノマーセメント修復.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9712,7 +9712,7 @@ const DATA = [
   {
     "id": "直接修復_光重合と仕上げ",
     "title": "直接修復_光重合と仕上げ",
-    "qaPath": "qa/subject/保存修復学/05_直接修復_光重合と仕上げ_QA.txt",
+    "qaPath": "qa/subject/保存修復学/05_直接修復_光重合と仕上げ_QA.json",
     "htmlPath": "html/subject/保存修復学/05_直接修復_光重合と仕上げ.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9720,7 +9720,7 @@ const DATA = [
   {
     "id": "変色歯治療_診断と治療",
     "title": "変色歯治療_診断と治療",
-    "qaPath": "qa/subject/保存修復学/06_変色歯治療_診断と治療_QA.txt",
+    "qaPath": "qa/subject/保存修復学/06_変色歯治療_診断と治療_QA.json",
     "htmlPath": "html/subject/保存修復学/06_変色歯治療_診断と治療.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9728,7 +9728,7 @@ const DATA = [
   {
     "id": "間接修復_インレー総論",
     "title": "間接修復_インレー総論",
-    "qaPath": "qa/subject/保存修復学/07_間接修復_インレー総論_QA.txt",
+    "qaPath": "qa/subject/保存修復学/07_間接修復_インレー総論_QA.json",
     "htmlPath": "html/subject/保存修復学/07_間接修復_インレー総論.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9736,7 +9736,7 @@ const DATA = [
   {
     "id": "間接修復_セラミック・コンポジットインレー",
     "title": "間接修復_セラミック・コンポジットインレー",
-    "qaPath": "qa/subject/保存修復学/07_間接修復_セラミック・コンポジットインレー_QA.txt",
+    "qaPath": "qa/subject/保存修復学/07_間接修復_セラミック・コンポジットインレー_QA.json",
     "htmlPath": "html/subject/保存修復学/07_間接修復_セラミック・コンポジットインレー.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9744,7 +9744,7 @@ const DATA = [
   {
     "id": "間接修復_メタルインレー",
     "title": "間接修復_メタルインレー",
-    "qaPath": "qa/subject/保存修復学/07_間接修復_メタルインレー_QA.txt",
+    "qaPath": "qa/subject/保存修復学/07_間接修復_メタルインレー_QA.json",
     "htmlPath": "html/subject/保存修復学/07_間接修復_メタルインレー.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9752,7 +9752,7 @@ const DATA = [
   {
     "id": "間接修復_合着用セメント",
     "title": "間接修復_合着用セメント",
-    "qaPath": "qa/subject/保存修復学/07_間接修復_合着用セメント_QA.txt",
+    "qaPath": "qa/subject/保存修復学/07_間接修復_合着用セメント_QA.json",
     "htmlPath": "html/subject/保存修復学/07_間接修復_合着用セメント.html",
     "subject": "保存修復",
     "subjectCategory": "基礎"
@@ -9760,7 +9760,7 @@ const DATA = [
   {
     "id": "無歯顎者の診査と診断_前処置_エックス線診査",
     "title": "無歯顎者の診査と診断_前処置_エックス線診査",
-    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_エックス線診査_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_エックス線診査_QA.json",
     "htmlPath": "html/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_エックス線診査.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9768,7 +9768,7 @@ const DATA = [
   {
     "id": "無歯顎者の診査と診断_前処置_下顎運動の診査",
     "title": "無歯顎者の診査と診断_前処置_下顎運動の診査",
-    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_下顎運動の診査_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_下顎運動の診査_QA.json",
     "htmlPath": "html/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_下顎運動の診査.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9776,7 +9776,7 @@ const DATA = [
   {
     "id": "無歯顎者の診査と診断_前処置_口腔内診査",
     "title": "無歯顎者の診査と診断_前処置_口腔内診査",
-    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_口腔内診査_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_口腔内診査_QA.json",
     "htmlPath": "html/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_口腔内診査.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9784,7 +9784,7 @@ const DATA = [
   {
     "id": "無歯顎者の診査と診断_前処置_咬合検査",
     "title": "無歯顎者の診査と診断_前処置_咬合検査",
-    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_咬合検査_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_咬合検査_QA.json",
     "htmlPath": "html/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_咬合検査.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9792,7 +9792,7 @@ const DATA = [
   {
     "id": "無歯顎者の診査と診断_前処置_旧義歯の診査",
     "title": "無歯顎者の診査と診断_前処置_旧義歯の診査",
-    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_旧義歯の診査_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_旧義歯の診査_QA.json",
     "htmlPath": "html/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_旧義歯の診査.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9800,7 +9800,7 @@ const DATA = [
   {
     "id": "無歯顎者の診査と診断_前処置_顎堤吸収",
     "title": "無歯顎者の診査と診断_前処置_顎堤吸収",
-    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_顎堤吸収_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_顎堤吸収_QA.json",
     "htmlPath": "html/subject/全部床義歯学/01_無歯顎者の診査と診断_前処置_顎堤吸収.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9808,7 +9808,7 @@ const DATA = [
   {
     "id": "印象採得_模型製作_咬座印象",
     "title": "印象採得_模型製作_咬座印象",
-    "qaPath": "qa/subject/全部床義歯学/02_印象採得_模型製作_咬座印象_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/02_印象採得_模型製作_咬座印象_QA.json",
     "htmlPath": "html/subject/全部床義歯学/02_印象採得_模型製作_咬座印象.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9816,7 +9816,7 @@ const DATA = [
   {
     "id": "印象採得_模型製作_概形印象",
     "title": "印象採得_模型製作_概形印象",
-    "qaPath": "qa/subject/全部床義歯学/02_印象採得_模型製作_概形印象_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/02_印象採得_模型製作_概形印象_QA.json",
     "htmlPath": "html/subject/全部床義歯学/02_印象採得_模型製作_概形印象.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9824,7 +9824,7 @@ const DATA = [
   {
     "id": "印象採得_模型製作_精密印象",
     "title": "印象採得_模型製作_精密印象",
-    "qaPath": "qa/subject/全部床義歯学/02_印象採得_模型製作_精密印象_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/02_印象採得_模型製作_精密印象_QA.json",
     "htmlPath": "html/subject/全部床義歯学/02_印象採得_模型製作_精密印象.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9832,7 +9832,7 @@ const DATA = [
   {
     "id": "印象採得_模型製作_設計・個人トレー製作",
     "title": "印象採得_模型製作_設計・個人トレー製作",
-    "qaPath": "qa/subject/全部床義歯学/02_印象採得_模型製作_設計・個人トレー製作_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/02_印象採得_模型製作_設計・個人トレー製作_QA.json",
     "htmlPath": "html/subject/全部床義歯学/02_印象採得_模型製作_設計・個人トレー製作.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9840,7 +9840,7 @@ const DATA = [
   {
     "id": "咬合採得_咬合器_ゴシックアーチ",
     "title": "咬合採得_咬合器_ゴシックアーチ",
-    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_ゴシックアーチ_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_ゴシックアーチ_QA.json",
     "htmlPath": "html/subject/全部床義歯学/03_咬合採得_咬合器_ゴシックアーチ.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9848,7 +9848,7 @@ const DATA = [
   {
     "id": "咬合採得_咬合器_ニュートラルゾーン",
     "title": "咬合採得_咬合器_ニュートラルゾーン",
-    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_ニュートラルゾーン_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_ニュートラルゾーン_QA.json",
     "htmlPath": "html/subject/全部床義歯学/03_咬合採得_咬合器_ニュートラルゾーン.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9856,7 +9856,7 @@ const DATA = [
   {
     "id": "咬合採得_咬合器_仮想咬合平面",
     "title": "咬合採得_咬合器_仮想咬合平面",
-    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_仮想咬合平面_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_仮想咬合平面_QA.json",
     "htmlPath": "html/subject/全部床義歯学/03_咬合採得_咬合器_仮想咬合平面.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9864,7 +9864,7 @@ const DATA = [
   {
     "id": "咬合採得_咬合器_作業模型",
     "title": "咬合採得_咬合器_作業模型",
-    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_作業模型_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_作業模型_QA.json",
     "htmlPath": "html/subject/全部床義歯学/03_咬合採得_咬合器_作業模型.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9872,7 +9872,7 @@ const DATA = [
   {
     "id": "咬合採得_咬合器_咬合器",
     "title": "咬合採得_咬合器_咬合器",
-    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_咬合器_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_咬合器_QA.json",
     "htmlPath": "html/subject/全部床義歯学/03_咬合採得_咬合器_咬合器.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9880,7 +9880,7 @@ const DATA = [
   {
     "id": "咬合採得_咬合器_咬合床",
     "title": "咬合採得_咬合器_咬合床",
-    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_咬合床_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_咬合床_QA.json",
     "htmlPath": "html/subject/全部床義歯学/03_咬合採得_咬合器_咬合床.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9888,7 +9888,7 @@ const DATA = [
   {
     "id": "咬合採得_咬合器_顎間関係",
     "title": "咬合採得_咬合器_顎間関係",
-    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_顎間関係_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/03_咬合採得_咬合器_顎間関係_QA.json",
     "htmlPath": "html/subject/全部床義歯学/03_咬合採得_咬合器_顎間関係.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9896,7 +9896,7 @@ const DATA = [
   {
     "id": "人工歯排列_歯肉形成_人工歯排列",
     "title": "人工歯排列_歯肉形成_人工歯排列",
-    "qaPath": "qa/subject/全部床義歯学/04_人工歯排列_歯肉形成_人工歯排列_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/04_人工歯排列_歯肉形成_人工歯排列_QA.json",
     "htmlPath": "html/subject/全部床義歯学/04_人工歯排列_歯肉形成_人工歯排列.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9904,7 +9904,7 @@ const DATA = [
   {
     "id": "ろう義歯試適_ろう義歯試適",
     "title": "ろう義歯試適_ろう義歯試適",
-    "qaPath": "qa/subject/全部床義歯学/05_ろう義歯試適_ろう義歯試適_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/05_ろう義歯試適_ろう義歯試適_QA.json",
     "htmlPath": "html/subject/全部床義歯学/05_ろう義歯試適_ろう義歯試適.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9912,7 +9912,7 @@ const DATA = [
   {
     "id": "埋没_重合_削合_研磨_埋没・重合",
     "title": "埋没_重合_削合_研磨_埋没・重合",
-    "qaPath": "qa/subject/全部床義歯学/06_埋没_重合_削合_研磨_埋没・重合_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/06_埋没_重合_削合_研磨_埋没・重合_QA.json",
     "htmlPath": "html/subject/全部床義歯学/06_埋没_重合_削合_研磨_埋没・重合.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9920,7 +9920,7 @@ const DATA = [
   {
     "id": "装着_調整_患者教育_患者教育",
     "title": "装着_調整_患者教育_患者教育",
-    "qaPath": "qa/subject/全部床義歯学/07_装着_調整_患者教育_患者教育_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/07_装着_調整_患者教育_患者教育_QA.json",
     "htmlPath": "html/subject/全部床義歯学/07_装着_調整_患者教育_患者教育.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9928,7 +9928,7 @@ const DATA = [
   {
     "id": "装着_調整_患者教育_新義歯装着後の不快事項",
     "title": "装着_調整_患者教育_新義歯装着後の不快事項",
-    "qaPath": "qa/subject/全部床義歯学/07_装着_調整_患者教育_新義歯装着後の不快事項_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/07_装着_調整_患者教育_新義歯装着後の不快事項_QA.json",
     "htmlPath": "html/subject/全部床義歯学/07_装着_調整_患者教育_新義歯装着後の不快事項.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9936,7 +9936,7 @@ const DATA = [
   {
     "id": "術後管理_術後のトラブル_リライン・リベース",
     "title": "術後管理_術後のトラブル_リライン・リベース",
-    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_リライン・リベース_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_リライン・リベース_QA.json",
     "htmlPath": "html/subject/全部床義歯学/08_術後管理_術後のトラブル_リライン・リベース.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9944,7 +9944,7 @@ const DATA = [
   {
     "id": "術後管理_術後のトラブル_床下粘膜の異常",
     "title": "術後管理_術後のトラブル_床下粘膜の異常",
-    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_床下粘膜の異常_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_床下粘膜の異常_QA.json",
     "htmlPath": "html/subject/全部床義歯学/08_術後管理_術後のトラブル_床下粘膜の異常.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9952,7 +9952,7 @@ const DATA = [
   {
     "id": "術後管理_術後のトラブル_床下粘膜の疼痛",
     "title": "術後管理_術後のトラブル_床下粘膜の疼痛",
-    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_床下粘膜の疼痛_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_床下粘膜の疼痛_QA.json",
     "htmlPath": "html/subject/全部床義歯学/08_術後管理_術後のトラブル_床下粘膜の疼痛.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9960,7 +9960,7 @@ const DATA = [
   {
     "id": "術後管理_術後のトラブル_義歯の不具合",
     "title": "術後管理_術後のトラブル_義歯の不具合",
-    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_義歯の不具合_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_義歯の不具合_QA.json",
     "htmlPath": "html/subject/全部床義歯学/08_術後管理_術後のトラブル_義歯の不具合.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9968,7 +9968,7 @@ const DATA = [
   {
     "id": "術後管理_術後のトラブル_義歯性口内炎",
     "title": "術後管理_術後のトラブル_義歯性口内炎",
-    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_義歯性口内炎_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_義歯性口内炎_QA.json",
     "htmlPath": "html/subject/全部床義歯学/08_術後管理_術後のトラブル_義歯性口内炎.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9976,7 +9976,7 @@ const DATA = [
   {
     "id": "術後管理_術後のトラブル_術後管理",
     "title": "術後管理_術後のトラブル_術後管理",
-    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_術後管理_QA.txt",
+    "qaPath": "qa/subject/全部床義歯学/08_術後管理_術後のトラブル_術後管理_QA.json",
     "htmlPath": "html/subject/全部床義歯学/08_術後管理_術後のトラブル_術後管理.html",
     "subject": "全部床義歯",
     "subjectCategory": "基礎"
@@ -9984,7 +9984,7 @@ const DATA = [
   {
     "id": "健康と疾病_ICD",
     "title": "健康と疾病_ICD",
-    "qaPath": "qa/subject/公衆衛生/01_健康と疾病_ICD_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/01_健康と疾病_ICD_QA.json",
     "htmlPath": "html/subject/公衆衛生/01_健康と疾病_ICD.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -9992,7 +9992,7 @@ const DATA = [
   {
     "id": "健康と疾病_国際生活機能分類（ICF）",
     "title": "健康と疾病_国際生活機能分類（ICF）",
-    "qaPath": "qa/subject/公衆衛生/01_健康と疾病_国際生活機能分類（ICF）_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/01_健康と疾病_国際生活機能分類（ICF）_QA.json",
     "htmlPath": "html/subject/公衆衛生/01_健康と疾病_国際生活機能分類（ICF）.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10000,7 +10000,7 @@ const DATA = [
   {
     "id": "地域における保健対策_保健活動の進め方",
     "title": "地域における保健対策_保健活動の進め方",
-    "qaPath": "qa/subject/公衆衛生/02_地域における保健対策_保健活動の進め方_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/02_地域における保健対策_保健活動の進め方_QA.json",
     "htmlPath": "html/subject/公衆衛生/02_地域における保健対策_保健活動の進め方.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10008,7 +10008,7 @@ const DATA = [
   {
     "id": "地域における保健対策_地域保健",
     "title": "地域における保健対策_地域保健",
-    "qaPath": "qa/subject/公衆衛生/02_地域における保健対策_地域保健_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/02_地域における保健対策_地域保健_QA.json",
     "htmlPath": "html/subject/公衆衛生/02_地域における保健対策_地域保健.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10016,7 +10016,7 @@ const DATA = [
   {
     "id": "地域における保健対策_地域保健法",
     "title": "地域における保健対策_地域保健法",
-    "qaPath": "qa/subject/公衆衛生/02_地域における保健対策_地域保健法_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/02_地域における保健対策_地域保健法_QA.json",
     "htmlPath": "html/subject/公衆衛生/02_地域における保健対策_地域保健法.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10024,7 +10024,7 @@ const DATA = [
   {
     "id": "地域における保健対策_災害時における医療",
     "title": "地域における保健対策_災害時における医療",
-    "qaPath": "qa/subject/公衆衛生/02_地域における保健対策_災害時における医療_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/02_地域における保健対策_災害時における医療_QA.json",
     "htmlPath": "html/subject/公衆衛生/02_地域における保健対策_災害時における医療.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10032,7 +10032,7 @@ const DATA = [
   {
     "id": "各種統計と人口問題_人口統計",
     "title": "各種統計と人口問題_人口統計",
-    "qaPath": "qa/subject/公衆衛生/03_各種統計と人口問題_人口統計_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/03_各種統計と人口問題_人口統計_QA.json",
     "htmlPath": "html/subject/公衆衛生/03_各種統計と人口問題_人口統計.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10040,7 +10040,7 @@ const DATA = [
   {
     "id": "各種統計と人口問題_国家統計",
     "title": "各種統計と人口問題_国家統計",
-    "qaPath": "qa/subject/公衆衛生/03_各種統計と人口問題_国家統計_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/03_各種統計と人口問題_国家統計_QA.json",
     "htmlPath": "html/subject/公衆衛生/03_各種統計と人口問題_国家統計.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10048,7 +10048,7 @@ const DATA = [
   {
     "id": "食生活と環境_喫煙問題",
     "title": "食生活と環境_喫煙問題",
-    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_喫煙問題_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_喫煙問題_QA.json",
     "htmlPath": "html/subject/公衆衛生/04_食生活と環境_喫煙問題.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10056,7 +10056,7 @@ const DATA = [
   {
     "id": "食生活と環境_感染性廃棄物の処理",
     "title": "食生活と環境_感染性廃棄物の処理",
-    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_感染性廃棄物の処理_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_感染性廃棄物の処理_QA.json",
     "htmlPath": "html/subject/公衆衛生/04_食生活と環境_感染性廃棄物の処理.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10064,7 +10064,7 @@ const DATA = [
   {
     "id": "食生活と環境_水質基準",
     "title": "食生活と環境_水質基準",
-    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_水質基準_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_水質基準_QA.json",
     "htmlPath": "html/subject/公衆衛生/04_食生活と環境_水質基準.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10072,7 +10072,7 @@ const DATA = [
   {
     "id": "食生活と環境_環境と適応",
     "title": "食生活と環境_環境と適応",
-    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_環境と適応_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_環境と適応_QA.json",
     "htmlPath": "html/subject/公衆衛生/04_食生活と環境_環境と適応.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10080,7 +10080,7 @@ const DATA = [
   {
     "id": "食生活と環境_食中毒",
     "title": "食生活と環境_食中毒",
-    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_食中毒_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/04_食生活と環境_食中毒_QA.json",
     "htmlPath": "html/subject/公衆衛生/04_食生活と環境_食中毒.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10088,7 +10088,7 @@ const DATA = [
   {
     "id": "倫理と法規_EBM",
     "title": "倫理と法規_EBM",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_EBM_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_EBM_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_EBM.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10096,7 +10096,7 @@ const DATA = [
   {
     "id": "倫理と法規_GCP",
     "title": "倫理と法規_GCP",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_GCP_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_GCP_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_GCP.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10104,7 +10104,7 @@ const DATA = [
   {
     "id": "倫理と法規_POS",
     "title": "倫理と法規_POS",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_POS_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_POS_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_POS.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10112,7 +10112,7 @@ const DATA = [
   {
     "id": "倫理と法規_クリニカルパス",
     "title": "倫理と法規_クリニカルパス",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_クリニカルパス_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_クリニカルパス_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_クリニカルパス.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10120,7 +10120,7 @@ const DATA = [
   {
     "id": "倫理と法規_メタボリックシンドローム",
     "title": "倫理と法規_メタボリックシンドローム",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_メタボリックシンドローム_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_メタボリックシンドローム_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_メタボリックシンドローム.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10128,7 +10128,7 @@ const DATA = [
   {
     "id": "倫理と法規_健康増進事業",
     "title": "倫理と法規_健康増進事業",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_健康増進事業_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_健康増進事業_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_健康増進事業.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10136,7 +10136,7 @@ const DATA = [
   {
     "id": "倫理と法規_児童虐待",
     "title": "倫理と法規_児童虐待",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_児童虐待_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_児童虐待_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_児童虐待.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10144,7 +10144,7 @@ const DATA = [
   {
     "id": "倫理と法規_医の倫理に関する規定",
     "title": "倫理と法規_医の倫理に関する規定",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医の倫理に関する規定_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医の倫理に関する規定_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_医の倫理に関する規定.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10152,7 +10152,7 @@ const DATA = [
   {
     "id": "倫理と法規_医療情報電子化",
     "title": "倫理と法規_医療情報電子化",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医療情報電子化_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医療情報電子化_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_医療情報電子化.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10160,7 +10160,7 @@ const DATA = [
   {
     "id": "倫理と法規_医療法",
     "title": "倫理と法規_医療法",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医療法_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医療法_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_医療法.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10168,7 +10168,7 @@ const DATA = [
   {
     "id": "倫理と法規_医療関係法規",
     "title": "倫理と法規_医療関係法規",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医療関係法規_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医療関係法規_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_医療関係法規.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10176,7 +10176,7 @@ const DATA = [
   {
     "id": "倫理と法規_医療面接",
     "title": "倫理と法規_医療面接",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医療面接_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医療面接_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_医療面接.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10184,7 +10184,7 @@ const DATA = [
   {
     "id": "倫理と法規_医薬品医療機器等法",
     "title": "倫理と法規_医薬品医療機器等法",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医薬品医療機器等法_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_医薬品医療機器等法_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_医薬品医療機器等法.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10192,7 +10192,7 @@ const DATA = [
   {
     "id": "倫理と法規_各医療従事者の業務範囲",
     "title": "倫理と法規_各医療従事者の業務範囲",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_各医療従事者の業務範囲_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_各医療従事者の業務範囲_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_各医療従事者の業務範囲.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10200,7 +10200,7 @@ const DATA = [
   {
     "id": "倫理と法規_新オレンジプラン",
     "title": "倫理と法規_新オレンジプラン",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_新オレンジプラン_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_新オレンジプラン_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_新オレンジプラン.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10208,7 +10208,7 @@ const DATA = [
   {
     "id": "倫理と法規_歯科医師法",
     "title": "倫理と法規_歯科医師法",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_歯科医師法_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_歯科医師法_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_歯科医師法.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10216,7 +10216,7 @@ const DATA = [
   {
     "id": "倫理と法規_歯科技工士",
     "title": "倫理と法規_歯科技工士",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_歯科技工士_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_歯科技工士_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_歯科技工士.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10224,7 +10224,7 @@ const DATA = [
   {
     "id": "倫理と法規_歯科衛生士法",
     "title": "倫理と法規_歯科衛生士法",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_歯科衛生士法_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_歯科衛生士法_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_歯科衛生士法.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10232,7 +10232,7 @@ const DATA = [
   {
     "id": "倫理と法規_母子保健事業",
     "title": "倫理と法規_母子保健事業",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_母子保健事業_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_母子保健事業_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_母子保健事業.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10240,7 +10240,7 @@ const DATA = [
   {
     "id": "倫理と法規_治験審査委員会",
     "title": "倫理と法規_治験審査委員会",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_治験審査委員会_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_治験審査委員会_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_治験審査委員会.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10248,7 +10248,7 @@ const DATA = [
   {
     "id": "倫理と法規_研究上の倫理",
     "title": "倫理と法規_研究上の倫理",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_研究上の倫理_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_研究上の倫理_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_研究上の倫理.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10256,7 +10256,7 @@ const DATA = [
   {
     "id": "倫理と法規_診療録の保存",
     "title": "倫理と法規_診療録の保存",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_診療録の保存_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_診療録の保存_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_診療録の保存.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10264,7 +10264,7 @@ const DATA = [
   {
     "id": "倫理と法規_院内感染対策",
     "title": "倫理と法規_院内感染対策",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_院内感染対策_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_院内感染対策_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_院内感染対策.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10272,7 +10272,7 @@ const DATA = [
   {
     "id": "倫理と法規_高齢者医療確保法",
     "title": "倫理と法規_高齢者医療確保法",
-    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_高齢者医療確保法_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/05_倫理と法規_高齢者医療確保法_QA.json",
     "htmlPath": "html/subject/公衆衛生/05_倫理と法規_高齢者医療確保法.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10280,7 +10280,7 @@ const DATA = [
   {
     "id": "社会保障_年金保険",
     "title": "社会保障_年金保険",
-    "qaPath": "qa/subject/公衆衛生/06_社会保障_年金保険_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/06_社会保障_年金保険_QA.json",
     "htmlPath": "html/subject/公衆衛生/06_社会保障_年金保険.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10288,7 +10288,7 @@ const DATA = [
   {
     "id": "社会保障_社会保障",
     "title": "社会保障_社会保障",
-    "qaPath": "qa/subject/公衆衛生/06_社会保障_社会保障_QA.txt",
+    "qaPath": "qa/subject/公衆衛生/06_社会保障_社会保障_QA.json",
     "htmlPath": "html/subject/公衆衛生/06_社会保障_社会保障.html",
     "subject": "公衆衛生",
     "subjectCategory": "基礎"
@@ -10296,7 +10296,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_PMTC",
     "title": "口腔環境と予防_PMTC",
-    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_PMTC_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_PMTC_QA.json",
     "htmlPath": "html/subject/口腔衛生/02_口腔環境と予防_PMTC.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10304,7 +10304,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_ブラッシング法",
     "title": "口腔環境と予防_ブラッシング法",
-    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_ブラッシング法_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_ブラッシング法_QA.json",
     "htmlPath": "html/subject/口腔衛生/02_口腔環境と予防_ブラッシング法.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10312,7 +10312,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_ミュータンスレンサ球菌",
     "title": "口腔環境と予防_ミュータンスレンサ球菌",
-    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_ミュータンスレンサ球菌_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_ミュータンスレンサ球菌_QA.json",
     "htmlPath": "html/subject/口腔衛生/02_口腔環境と予防_ミュータンスレンサ球菌.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10320,7 +10320,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_歯の着色",
     "title": "口腔環境と予防_歯の着色",
-    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_歯の着色_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_歯の着色_QA.json",
     "htmlPath": "html/subject/口腔衛生/02_口腔環境と予防_歯の着色.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10328,7 +10328,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_歯磨剤・洗口液の組成",
     "title": "口腔環境と予防_歯磨剤・洗口液の組成",
-    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_歯磨剤・洗口液の組成_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_歯磨剤・洗口液の組成_QA.json",
     "htmlPath": "html/subject/口腔衛生/02_口腔環境と予防_歯磨剤・洗口液の組成.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10336,7 +10336,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_禁煙指導",
     "title": "口腔環境と予防_禁煙指導",
-    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_禁煙指導_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/02_口腔環境と予防_禁煙指導_QA.json",
     "htmlPath": "html/subject/口腔衛生/02_口腔環境と予防_禁煙指導.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10344,7 +10344,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_ステファン曲線",
     "title": "齲蝕の予防とフッ素_ステファン曲線",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_ステファン曲線_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_ステファン曲線_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_ステファン曲線.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10352,7 +10352,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_フッ化物の誤飲による急性中毒",
     "title": "齲蝕の予防とフッ素_フッ化物の誤飲による急性中毒",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_フッ化物の誤飲による急性中毒_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_フッ化物の誤飲による急性中毒_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_フッ化物の誤飲による急性中毒.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10360,7 +10360,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_フッ化物応用法",
     "title": "齲蝕の予防とフッ素_フッ化物応用法",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_フッ化物応用法_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_フッ化物応用法_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_フッ化物応用法.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10368,7 +10368,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_フッ化物歯面塗布",
     "title": "齲蝕の予防とフッ素_フッ化物歯面塗布",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_フッ化物歯面塗布_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_フッ化物歯面塗布_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_フッ化物歯面塗布.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10376,7 +10376,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_代用甘味料",
     "title": "齲蝕の予防とフッ素_代用甘味料",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_代用甘味料_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_代用甘味料_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_代用甘味料.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10384,7 +10384,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_唾液の機能",
     "title": "齲蝕の予防とフッ素_唾液の機能",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_唾液の機能_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_唾液の機能_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_唾液の機能.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10392,7 +10392,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_歯のフッ素症",
     "title": "齲蝕の予防とフッ素_歯のフッ素症",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_歯のフッ素症_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_歯のフッ素症_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_歯のフッ素症.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10400,7 +10400,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_歯のフッ素症の成立要因",
     "title": "齲蝕の予防とフッ素_歯のフッ素症の成立要因",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_歯のフッ素症の成立要因_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_歯のフッ素症の成立要因_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_歯のフッ素症の成立要因.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10408,7 +10408,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_齲蝕のリスク判定",
     "title": "齲蝕の予防とフッ素_齲蝕のリスク判定",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕のリスク判定_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕のリスク判定_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕のリスク判定.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10416,7 +10416,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_齲蝕の発生要因",
     "title": "齲蝕の予防とフッ素_齲蝕の発生要因",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕の発生要因_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕の発生要因_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕の発生要因.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10424,7 +10424,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_齲蝕予防",
     "title": "齲蝕の予防とフッ素_齲蝕予防",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕予防_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕予防_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕予防.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10432,7 +10432,7 @@ const DATA = [
   {
     "id": "齲蝕の予防とフッ素_齲蝕活動性試験",
     "title": "齲蝕の予防とフッ素_齲蝕活動性試験",
-    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕活動性試験_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕活動性試験_QA.json",
     "htmlPath": "html/subject/口腔衛生/03_齲蝕の予防とフッ素_齲蝕活動性試験.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10440,7 +10440,7 @@ const DATA = [
   {
     "id": "その他の疾患の予防_口臭の原因物質",
     "title": "その他の疾患の予防_口臭の原因物質",
-    "qaPath": "qa/subject/口腔衛生/04_その他の疾患の予防_口臭の原因物質_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/04_その他の疾患の予防_口臭の原因物質_QA.json",
     "htmlPath": "html/subject/口腔衛生/04_その他の疾患の予防_口臭の原因物質.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10448,7 +10448,7 @@ const DATA = [
   {
     "id": "その他の疾患の予防_口臭の対応",
     "title": "その他の疾患の予防_口臭の対応",
-    "qaPath": "qa/subject/口腔衛生/04_その他の疾患の予防_口臭の対応_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/04_その他の疾患の予防_口臭の対応_QA.json",
     "htmlPath": "html/subject/口腔衛生/04_その他の疾患の予防_口臭の対応.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10456,7 +10456,7 @@ const DATA = [
   {
     "id": "その他の疾患の予防_口臭の特徴",
     "title": "その他の疾患の予防_口臭の特徴",
-    "qaPath": "qa/subject/口腔衛生/04_その他の疾患の予防_口臭の特徴_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/04_その他の疾患の予防_口臭の特徴_QA.json",
     "htmlPath": "html/subject/口腔衛生/04_その他の疾患の予防_口臭の特徴.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10464,7 +10464,7 @@ const DATA = [
   {
     "id": "その他の疾患の予防_口臭検査法",
     "title": "その他の疾患の予防_口臭検査法",
-    "qaPath": "qa/subject/口腔衛生/04_その他の疾患の予防_口臭検査法_QA.txt",
+    "qaPath": "qa/subject/口腔衛生/04_その他の疾患の予防_口臭検査法_QA.json",
     "htmlPath": "html/subject/口腔衛生/04_その他の疾患の予防_口臭検査法.html",
     "subject": "口腔衛生",
     "subjectCategory": "基礎"
@@ -10472,7 +10472,7 @@ const DATA = [
   {
     "id": "微生物総論_微生物総論",
     "title": "微生物総論_微生物総論",
-    "qaPath": "qa/subject/微生物学・免疫学/01_微生物総論_微生物総論_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/01_微生物総論_微生物総論_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/01_微生物総論_微生物総論.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10480,7 +10480,7 @@ const DATA = [
   {
     "id": "細菌総論_常在微生物",
     "title": "細菌総論_常在微生物",
-    "qaPath": "qa/subject/微生物学・免疫学/02_細菌総論_常在微生物_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/02_細菌総論_常在微生物_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/02_細菌総論_常在微生物.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10488,7 +10488,7 @@ const DATA = [
   {
     "id": "細菌総論_細菌の検査",
     "title": "細菌総論_細菌の検査",
-    "qaPath": "qa/subject/微生物学・免疫学/02_細菌総論_細菌の検査_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/02_細菌総論_細菌の検査_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/02_細菌総論_細菌の検査.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10496,7 +10496,7 @@ const DATA = [
   {
     "id": "細菌総論_細菌の病原性",
     "title": "細菌総論_細菌の病原性",
-    "qaPath": "qa/subject/微生物学・免疫学/02_細菌総論_細菌の病原性_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/02_細菌総論_細菌の病原性_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/02_細菌総論_細菌の病原性.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10504,7 +10504,7 @@ const DATA = [
   {
     "id": "口腔微生物_プラーク",
     "title": "口腔微生物_プラーク",
-    "qaPath": "qa/subject/微生物学・免疫学/03_口腔微生物_プラーク_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/03_口腔微生物_プラーク_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/03_口腔微生物_プラーク.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10512,7 +10512,7 @@ const DATA = [
   {
     "id": "口腔微生物_歯周病原細菌",
     "title": "口腔微生物_歯周病原細菌",
-    "qaPath": "qa/subject/微生物学・免疫学/03_口腔微生物_歯周病原細菌_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/03_口腔微生物_歯周病原細菌_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/03_口腔微生物_歯周病原細菌.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10520,7 +10520,7 @@ const DATA = [
   {
     "id": "口腔微生物_齲蝕関連細菌",
     "title": "口腔微生物_齲蝕関連細菌",
-    "qaPath": "qa/subject/微生物学・免疫学/03_口腔微生物_齲蝕関連細菌_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/03_口腔微生物_齲蝕関連細菌_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/03_口腔微生物_齲蝕関連細菌.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10528,7 +10528,7 @@ const DATA = [
   {
     "id": "細菌と感染症_細菌と感染症",
     "title": "細菌と感染症_細菌と感染症",
-    "qaPath": "qa/subject/微生物学・免疫学/04_細菌と感染症_細菌と感染症_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/04_細菌と感染症_細菌と感染症_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/04_細菌と感染症_細菌と感染症.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10536,7 +10536,7 @@ const DATA = [
   {
     "id": "真菌・原虫と感染症_原虫と感染症",
     "title": "真菌・原虫と感染症_原虫と感染症",
-    "qaPath": "qa/subject/微生物学・免疫学/05_真菌・原虫と感染症_原虫と感染症_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/05_真菌・原虫と感染症_原虫と感染症_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/05_真菌・原虫と感染症_原虫と感染症.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10544,7 +10544,7 @@ const DATA = [
   {
     "id": "真菌・原虫と感染症_真菌と感染症",
     "title": "真菌・原虫と感染症_真菌と感染症",
-    "qaPath": "qa/subject/微生物学・免疫学/05_真菌・原虫と感染症_真菌と感染症_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/05_真菌・原虫と感染症_真菌と感染症_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/05_真菌・原虫と感染症_真菌と感染症.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10552,7 +10552,7 @@ const DATA = [
   {
     "id": "ウイルスと感染症_その他のウイルス",
     "title": "ウイルスと感染症_その他のウイルス",
-    "qaPath": "qa/subject/微生物学・免疫学/06_ウイルスと感染症_その他のウイルス_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/06_ウイルスと感染症_その他のウイルス_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/06_ウイルスと感染症_その他のウイルス.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10560,7 +10560,7 @@ const DATA = [
   {
     "id": "ウイルスと感染症_インフルエンザウイルス",
     "title": "ウイルスと感染症_インフルエンザウイルス",
-    "qaPath": "qa/subject/微生物学・免疫学/06_ウイルスと感染症_インフルエンザウイルス_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/06_ウイルスと感染症_インフルエンザウイルス_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/06_ウイルスと感染症_インフルエンザウイルス.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10568,7 +10568,7 @@ const DATA = [
   {
     "id": "ウイルスと感染症_ウイルス感染症",
     "title": "ウイルスと感染症_ウイルス感染症",
-    "qaPath": "qa/subject/微生物学・免疫学/06_ウイルスと感染症_ウイルス感染症_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/06_ウイルスと感染症_ウイルス感染症_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/06_ウイルスと感染症_ウイルス感染症.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10576,7 +10576,7 @@ const DATA = [
   {
     "id": "ウイルスと感染症_ヘルペスウイルス",
     "title": "ウイルスと感染症_ヘルペスウイルス",
-    "qaPath": "qa/subject/微生物学・免疫学/06_ウイルスと感染症_ヘルペスウイルス_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/06_ウイルスと感染症_ヘルペスウイルス_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/06_ウイルスと感染症_ヘルペスウイルス.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10584,7 +10584,7 @@ const DATA = [
   {
     "id": "感染経路・様式_感染症の伝播形式",
     "title": "感染経路・様式_感染症の伝播形式",
-    "qaPath": "qa/subject/微生物学・免疫学/07_感染経路・様式_感染症の伝播形式_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/07_感染経路・様式_感染症の伝播形式_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/07_感染経路・様式_感染症の伝播形式.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10592,7 +10592,7 @@ const DATA = [
   {
     "id": "消毒・滅菌_消毒",
     "title": "消毒・滅菌_消毒",
-    "qaPath": "qa/subject/微生物学・免疫学/08_消毒・滅菌_消毒_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/08_消毒・滅菌_消毒_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/08_消毒・滅菌_消毒.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10600,7 +10600,7 @@ const DATA = [
   {
     "id": "消毒・滅菌_滅菌・消毒法",
     "title": "消毒・滅菌_滅菌・消毒法",
-    "qaPath": "qa/subject/微生物学・免疫学/08_消毒・滅菌_滅菌・消毒法_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/08_消毒・滅菌_滅菌・消毒法_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/08_消毒・滅菌_滅菌・消毒法.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10608,7 +10608,7 @@ const DATA = [
   {
     "id": "免疫_サイトカイン",
     "title": "免疫_サイトカイン",
-    "qaPath": "qa/subject/微生物学・免疫学/09_免疫_サイトカイン_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/09_免疫_サイトカイン_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/09_免疫_サイトカイン.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10616,7 +10616,7 @@ const DATA = [
   {
     "id": "免疫_体液性免疫",
     "title": "免疫_体液性免疫",
-    "qaPath": "qa/subject/微生物学・免疫学/09_免疫_体液性免疫_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/09_免疫_体液性免疫_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/09_免疫_体液性免疫.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10624,7 +10624,7 @@ const DATA = [
   {
     "id": "免疫_免疫担当細胞",
     "title": "免疫_免疫担当細胞",
-    "qaPath": "qa/subject/微生物学・免疫学/09_免疫_免疫担当細胞_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/09_免疫_免疫担当細胞_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/09_免疫_免疫担当細胞.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10632,7 +10632,7 @@ const DATA = [
   {
     "id": "免疫_補体",
     "title": "免疫_補体",
-    "qaPath": "qa/subject/微生物学・免疫学/09_免疫_補体_QA.txt",
+    "qaPath": "qa/subject/微生物学・免疫学/09_免疫_補体_QA.json",
     "htmlPath": "html/subject/微生物学・免疫学/09_免疫_補体.html",
     "subject": "微生物学・免疫",
     "subjectCategory": "基礎"
@@ -10640,7 +10640,7 @@ const DATA = [
   {
     "id": "医の倫理と歯科医師のプロフェッショナリズム_医の倫理",
     "title": "医の倫理と歯科医師のプロフェッショナリズム_医の倫理",
-    "qaPath": "qa/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_医の倫理_QA.txt",
+    "qaPath": "qa/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_医の倫理_QA.json",
     "htmlPath": "html/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_医の倫理.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10648,7 +10648,7 @@ const DATA = [
   {
     "id": "医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係",
     "title": "医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係",
-    "qaPath": "qa/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係_QA.txt",
+    "qaPath": "qa/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係_QA.json",
     "htmlPath": "html/subject/必修/01_医の倫理と歯科医師のプロフェッショナリズム_歯科医師と患者・家族との関係.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10656,7 +10656,7 @@ const DATA = [
   {
     "id": "社会と歯科医療_チーム医療",
     "title": "社会と歯科医療_チーム医療",
-    "qaPath": "qa/subject/必修/02_社会と歯科医療_チーム医療_QA.txt",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_チーム医療_QA.json",
     "htmlPath": "html/subject/必修/02_社会と歯科医療_チーム医療.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10664,7 +10664,7 @@ const DATA = [
   {
     "id": "社会と歯科医療_保健・医療・福祉・介護の制度と医療経済",
     "title": "社会と歯科医療_保健・医療・福祉・介護の制度と医療経済",
-    "qaPath": "qa/subject/必修/02_社会と歯科医療_保健・医療・福祉・介護の制度と医療経済_QA.txt",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_保健・医療・福祉・介護の制度と医療経済_QA.json",
     "htmlPath": "html/subject/必修/02_社会と歯科医療_保健・医療・福祉・介護の制度と医療経済.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10672,7 +10672,7 @@ const DATA = [
   {
     "id": "社会と歯科医療_医療の質の確保",
     "title": "社会と歯科医療_医療の質の確保",
-    "qaPath": "qa/subject/必修/02_社会と歯科医療_医療の質の確保_QA.txt",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_医療の質の確保_QA.json",
     "htmlPath": "html/subject/必修/02_社会と歯科医療_医療の質の確保.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10680,7 +10680,7 @@ const DATA = [
   {
     "id": "社会と歯科医療_医療事故の防止",
     "title": "社会と歯科医療_医療事故の防止",
-    "qaPath": "qa/subject/必修/02_社会と歯科医療_医療事故の防止_QA.txt",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_医療事故の防止_QA.json",
     "htmlPath": "html/subject/必修/02_社会と歯科医療_医療事故の防止.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10688,7 +10688,7 @@ const DATA = [
   {
     "id": "社会と歯科医療_医療裁判",
     "title": "社会と歯科医療_医療裁判",
-    "qaPath": "qa/subject/必修/02_社会と歯科医療_医療裁判_QA.txt",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_医療裁判_QA.json",
     "htmlPath": "html/subject/必修/02_社会と歯科医療_医療裁判.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10696,7 +10696,7 @@ const DATA = [
   {
     "id": "社会と歯科医療_患者・障害者のもつ心理社会的問題と背景",
     "title": "社会と歯科医療_患者・障害者のもつ心理社会的問題と背景",
-    "qaPath": "qa/subject/必修/02_社会と歯科医療_患者・障害者のもつ心理社会的問題と背景_QA.txt",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_患者・障害者のもつ心理社会的問題と背景_QA.json",
     "htmlPath": "html/subject/必修/02_社会と歯科医療_患者・障害者のもつ心理社会的問題と背景.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10704,7 +10704,7 @@ const DATA = [
   {
     "id": "社会と歯科医療_臨床試験・治験と倫理",
     "title": "社会と歯科医療_臨床試験・治験と倫理",
-    "qaPath": "qa/subject/必修/02_社会と歯科医療_臨床試験・治験と倫理_QA.txt",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_臨床試験・治験と倫理_QA.json",
     "htmlPath": "html/subject/必修/02_社会と歯科医療_臨床試験・治験と倫理.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10712,7 +10712,7 @@ const DATA = [
   {
     "id": "社会と歯科医療_診療録・診療情報の記録と管理",
     "title": "社会と歯科医療_診療録・診療情報の記録と管理",
-    "qaPath": "qa/subject/必修/02_社会と歯科医療_診療録・診療情報の記録と管理_QA.txt",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_診療録・診療情報の記録と管理_QA.json",
     "htmlPath": "html/subject/必修/02_社会と歯科医療_診療録・診療情報の記録と管理.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10720,7 +10720,7 @@ const DATA = [
   {
     "id": "社会と歯科医療_院内感染対策",
     "title": "社会と歯科医療_院内感染対策",
-    "qaPath": "qa/subject/必修/02_社会と歯科医療_院内感染対策_QA.txt",
+    "qaPath": "qa/subject/必修/02_社会と歯科医療_院内感染対策_QA.json",
     "htmlPath": "html/subject/必修/02_社会と歯科医療_院内感染対策.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10728,7 +10728,7 @@ const DATA = [
   {
     "id": "予防と健康管理・増進_予防手段",
     "title": "予防と健康管理・増進_予防手段",
-    "qaPath": "qa/subject/必修/03_予防と健康管理・増進_予防手段_QA.txt",
+    "qaPath": "qa/subject/必修/03_予防と健康管理・増進_予防手段_QA.json",
     "htmlPath": "html/subject/必修/03_予防と健康管理・増進_予防手段.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10736,7 +10736,7 @@ const DATA = [
   {
     "id": "予防と健康管理・増進_健康増進と疾病予防",
     "title": "予防と健康管理・増進_健康増進と疾病予防",
-    "qaPath": "qa/subject/必修/03_予防と健康管理・増進_健康増進と疾病予防_QA.txt",
+    "qaPath": "qa/subject/必修/03_予防と健康管理・増進_健康増進と疾病予防_QA.json",
     "htmlPath": "html/subject/必修/03_予防と健康管理・増進_健康増進と疾病予防.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10744,7 +10744,7 @@ const DATA = [
   {
     "id": "予防と健康管理・増進_口腔健康管理",
     "title": "予防と健康管理・増進_口腔健康管理",
-    "qaPath": "qa/subject/必修/03_予防と健康管理・増進_口腔健康管理_QA.txt",
+    "qaPath": "qa/subject/必修/03_予防と健康管理・増進_口腔健康管理_QA.json",
     "htmlPath": "html/subject/必修/03_予防と健康管理・増進_口腔健康管理.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10752,7 +10752,7 @@ const DATA = [
   {
     "id": "予防と健康管理・増進_地域保健にかかる法規と制度",
     "title": "予防と健康管理・増進_地域保健にかかる法規と制度",
-    "qaPath": "qa/subject/必修/03_予防と健康管理・増進_地域保健にかかる法規と制度_QA.txt",
+    "qaPath": "qa/subject/必修/03_予防と健康管理・増進_地域保健にかかる法規と制度_QA.json",
     "htmlPath": "html/subject/必修/03_予防と健康管理・増進_地域保健にかかる法規と制度.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10760,7 +10760,7 @@ const DATA = [
   {
     "id": "人体の正常構造・機能_全身・口腔の構造と機能",
     "title": "人体の正常構造・機能_全身・口腔の構造と機能",
-    "qaPath": "qa/subject/必修/04_人体の正常構造・機能_全身・口腔の構造と機能_QA.txt",
+    "qaPath": "qa/subject/必修/04_人体の正常構造・機能_全身・口腔の構造と機能_QA.json",
     "htmlPath": "html/subject/必修/04_人体の正常構造・機能_全身・口腔の構造と機能.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10768,7 +10768,7 @@ const DATA = [
   {
     "id": "人体の正常構造・機能_全身・口腔の生態系",
     "title": "人体の正常構造・機能_全身・口腔の生態系",
-    "qaPath": "qa/subject/必修/04_人体の正常構造・機能_全身・口腔の生態系_QA.txt",
+    "qaPath": "qa/subject/必修/04_人体の正常構造・機能_全身・口腔の生態系_QA.json",
     "htmlPath": "html/subject/必修/04_人体の正常構造・機能_全身・口腔の生態系.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10776,7 +10776,7 @@ const DATA = [
   {
     "id": "人体の発生・成長・発達・加齢変化_人体の加齢変化",
     "title": "人体の発生・成長・発達・加齢変化_人体の加齢変化",
-    "qaPath": "qa/subject/必修/05_人体の発生・成長・発達・加齢変化_人体の加齢変化_QA.txt",
+    "qaPath": "qa/subject/必修/05_人体の発生・成長・発達・加齢変化_人体の加齢変化_QA.json",
     "htmlPath": "html/subject/必修/05_人体の発生・成長・発達・加齢変化_人体の加齢変化.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10784,7 +10784,7 @@ const DATA = [
   {
     "id": "人体の発生・成長・発達・加齢変化_人体の発生",
     "title": "人体の発生・成長・発達・加齢変化_人体の発生",
-    "qaPath": "qa/subject/必修/05_人体の発生・成長・発達・加齢変化_人体の発生_QA.txt",
+    "qaPath": "qa/subject/必修/05_人体の発生・成長・発達・加齢変化_人体の発生_QA.json",
     "htmlPath": "html/subject/必修/05_人体の発生・成長・発達・加齢変化_人体の発生.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10792,7 +10792,7 @@ const DATA = [
   {
     "id": "人体の発生・成長・発達・加齢変化_人体の発育",
     "title": "人体の発生・成長・発達・加齢変化_人体の発育",
-    "qaPath": "qa/subject/必修/05_人体の発生・成長・発達・加齢変化_人体の発育_QA.txt",
+    "qaPath": "qa/subject/必修/05_人体の発生・成長・発達・加齢変化_人体の発育_QA.json",
     "htmlPath": "html/subject/必修/05_人体の発生・成長・発達・加齢変化_人体の発育.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10800,7 +10800,7 @@ const DATA = [
   {
     "id": "人体の発生・成長・発達・加齢変化_口腔・顎顔面の成長・発育",
     "title": "人体の発生・成長・発達・加齢変化_口腔・顎顔面の成長・発育",
-    "qaPath": "qa/subject/必修/05_人体の発生・成長・発達・加齢変化_口腔・顎顔面の成長・発育_QA.txt",
+    "qaPath": "qa/subject/必修/05_人体の発生・成長・発達・加齢変化_口腔・顎顔面の成長・発育_QA.json",
     "htmlPath": "html/subject/必修/05_人体の発生・成長・発達・加齢変化_口腔・顎顔面の成長・発育.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10808,7 +10808,7 @@ const DATA = [
   {
     "id": "主要な疾患と障害の病因・病態_口腔・顎顔面領域の疾患と障害の概念",
     "title": "主要な疾患と障害の病因・病態_口腔・顎顔面領域の疾患と障害の概念",
-    "qaPath": "qa/subject/必修/06_主要な疾患と障害の病因・病態_口腔・顎顔面領域の疾患と障害の概念_QA.txt",
+    "qaPath": "qa/subject/必修/06_主要な疾患と障害の病因・病態_口腔・顎顔面領域の疾患と障害の概念_QA.json",
     "htmlPath": "html/subject/必修/06_主要な疾患と障害の病因・病態_口腔・顎顔面領域の疾患と障害の概念.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10816,7 +10816,7 @@ const DATA = [
   {
     "id": "主要な疾患と障害の病因・病態_疾病の概念",
     "title": "主要な疾患と障害の病因・病態_疾病の概念",
-    "qaPath": "qa/subject/必修/06_主要な疾患と障害の病因・病態_疾病の概念_QA.txt",
+    "qaPath": "qa/subject/必修/06_主要な疾患と障害の病因・病態_疾病の概念_QA.json",
     "htmlPath": "html/subject/必修/06_主要な疾患と障害の病因・病態_疾病の概念.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10824,7 +10824,7 @@ const DATA = [
   {
     "id": "主要症候_ショック",
     "title": "主要症候_ショック",
-    "qaPath": "qa/subject/必修/07_主要症候_ショック_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_ショック_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_ショック.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10832,7 +10832,7 @@ const DATA = [
   {
     "id": "主要症候_全身的疾患に関連する口腔症候",
     "title": "主要症候_全身的疾患に関連する口腔症候",
-    "qaPath": "qa/subject/必修/07_主要症候_全身的疾患に関連する口腔症候_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_全身的疾患に関連する口腔症候_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_全身的疾患に関連する口腔症候.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10840,7 +10840,7 @@ const DATA = [
   {
     "id": "主要症候_口腔・顎顔面領域の一般的症候",
     "title": "主要症候_口腔・顎顔面領域の一般的症候",
-    "qaPath": "qa/subject/必修/07_主要症候_口腔・顎顔面領域の一般的症候_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_口腔・顎顔面領域の一般的症候_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_口腔・顎顔面領域の一般的症候.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10848,7 +10848,7 @@ const DATA = [
   {
     "id": "主要症候_口腔粘膜・舌の症候",
     "title": "主要症候_口腔粘膜・舌の症候",
-    "qaPath": "qa/subject/必修/07_主要症候_口腔粘膜・舌の症候_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_口腔粘膜・舌の症候_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_口腔粘膜・舌の症候.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10856,7 +10856,7 @@ const DATA = [
   {
     "id": "主要症候_呼吸困難・チアノーゼ",
     "title": "主要症候_呼吸困難・チアノーゼ",
-    "qaPath": "qa/subject/必修/07_主要症候_呼吸困難・チアノーゼ_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_呼吸困難・チアノーゼ_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_呼吸困難・チアノーゼ.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10864,7 +10864,7 @@ const DATA = [
   {
     "id": "主要症候_唾液腺・リンパ節の症候",
     "title": "主要症候_唾液腺・リンパ節の症候",
-    "qaPath": "qa/subject/必修/07_主要症候_唾液腺・リンパ節の症候_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_唾液腺・リンパ節の症候_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_唾液腺・リンパ節の症候.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10872,7 +10872,7 @@ const DATA = [
   {
     "id": "主要症候_嘔気・嘔吐・誤嚥",
     "title": "主要症候_嘔気・嘔吐・誤嚥",
-    "qaPath": "qa/subject/必修/07_主要症候_嘔気・嘔吐・誤嚥_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_嘔気・嘔吐・誤嚥_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_嘔気・嘔吐・誤嚥.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10880,7 +10880,7 @@ const DATA = [
   {
     "id": "主要症候_意識障害・失神",
     "title": "主要症候_意識障害・失神",
-    "qaPath": "qa/subject/必修/07_主要症候_意識障害・失神_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_意識障害・失神_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_意識障害・失神.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10888,7 +10888,7 @@ const DATA = [
   {
     "id": "主要症候_歯・歯髄・歯周組織の症候",
     "title": "主要症候_歯・歯髄・歯周組織の症候",
-    "qaPath": "qa/subject/必修/07_主要症候_歯・歯髄・歯周組織の症候_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_歯・歯髄・歯周組織の症候_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_歯・歯髄・歯周組織の症候.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10896,7 +10896,7 @@ const DATA = [
   {
     "id": "主要症候_発熱・全身倦怠感",
     "title": "主要症候_発熱・全身倦怠感",
-    "qaPath": "qa/subject/必修/07_主要症候_発熱・全身倦怠感_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_発熱・全身倦怠感_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_発熱・全身倦怠感.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10904,7 +10904,7 @@ const DATA = [
   {
     "id": "主要症候_脱水・浮腫",
     "title": "主要症候_脱水・浮腫",
-    "qaPath": "qa/subject/必修/07_主要症候_脱水・浮腫_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_脱水・浮腫_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_脱水・浮腫.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10912,7 +10912,7 @@ const DATA = [
   {
     "id": "主要症候_薬物に関連する口腔症候",
     "title": "主要症候_薬物に関連する口腔症候",
-    "qaPath": "qa/subject/必修/07_主要症候_薬物に関連する口腔症候_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_薬物に関連する口腔症候_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_薬物に関連する口腔症候.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10920,7 +10920,7 @@ const DATA = [
   {
     "id": "主要症候_顎骨・顎関節の症候",
     "title": "主要症候_顎骨・顎関節の症候",
-    "qaPath": "qa/subject/必修/07_主要症候_顎骨・顎関節の症候_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_顎骨・顎関節の症候_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_顎骨・顎関節の症候.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10928,7 +10928,7 @@ const DATA = [
   {
     "id": "主要症候_黄疸・出血傾向",
     "title": "主要症候_黄疸・出血傾向",
-    "qaPath": "qa/subject/必修/07_主要症候_黄疸・出血傾向_QA.txt",
+    "qaPath": "qa/subject/必修/07_主要症候_黄疸・出血傾向_QA.json",
     "htmlPath": "html/subject/必修/07_主要症候_黄疸・出血傾向.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10936,7 +10936,7 @@ const DATA = [
   {
     "id": "診察の基本_全身の診察・バイタルサイン",
     "title": "診察の基本_全身の診察・バイタルサイン",
-    "qaPath": "qa/subject/必修/08_診察の基本_全身の診察・バイタルサイン_QA.txt",
+    "qaPath": "qa/subject/必修/08_診察の基本_全身の診察・バイタルサイン_QA.json",
     "htmlPath": "html/subject/必修/08_診察の基本_全身の診察・バイタルサイン.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10944,7 +10944,7 @@ const DATA = [
   {
     "id": "診察の基本_医療面接",
     "title": "診察の基本_医療面接",
-    "qaPath": "qa/subject/必修/08_診察の基本_医療面接_QA.txt",
+    "qaPath": "qa/subject/必修/08_診察の基本_医療面接_QA.json",
     "htmlPath": "html/subject/必修/08_診察の基本_医療面接.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10952,7 +10952,7 @@ const DATA = [
   {
     "id": "診察の基本_口腔・顎顔面の診察",
     "title": "診察の基本_口腔・顎顔面の診察",
-    "qaPath": "qa/subject/必修/08_診察の基本_口腔・顎顔面の診察_QA.txt",
+    "qaPath": "qa/subject/必修/08_診察の基本_口腔・顎顔面の診察_QA.json",
     "htmlPath": "html/subject/必修/08_診察の基本_口腔・顎顔面の診察.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10960,7 +10960,7 @@ const DATA = [
   {
     "id": "診察の基本_基本手技（視診・触診・打診・聴診）",
     "title": "診察の基本_基本手技（視診・触診・打診・聴診）",
-    "qaPath": "qa/subject/必修/08_診察の基本_基本手技（視診・触診・打診・聴診）_QA.txt",
+    "qaPath": "qa/subject/必修/08_診察の基本_基本手技（視診・触診・打診・聴診）_QA.json",
     "htmlPath": "html/subject/必修/08_診察の基本_基本手技（視診・触診・打診・聴診）.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10968,7 +10968,7 @@ const DATA = [
   {
     "id": "診察の基本_歯・歯周組織の診察",
     "title": "診察の基本_歯・歯周組織の診察",
-    "qaPath": "qa/subject/必修/08_診察の基本_歯・歯周組織の診察_QA.txt",
+    "qaPath": "qa/subject/必修/08_診察の基本_歯・歯周組織の診察_QA.json",
     "htmlPath": "html/subject/必修/08_診察の基本_歯・歯周組織の診察.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10976,7 +10976,7 @@ const DATA = [
   {
     "id": "診察の基本_歯列・咬合の診察",
     "title": "診察の基本_歯列・咬合の診察",
-    "qaPath": "qa/subject/必修/08_診察の基本_歯列・咬合の診察_QA.txt",
+    "qaPath": "qa/subject/必修/08_診察の基本_歯列・咬合の診察_QA.json",
     "htmlPath": "html/subject/必修/08_診察の基本_歯列・咬合の診察.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10984,7 +10984,7 @@ const DATA = [
   {
     "id": "診察の基本_診察のあり方",
     "title": "診察の基本_診察のあり方",
-    "qaPath": "qa/subject/必修/08_診察の基本_診察のあり方_QA.txt",
+    "qaPath": "qa/subject/必修/08_診察の基本_診察のあり方_QA.json",
     "htmlPath": "html/subject/必修/08_診察の基本_診察のあり方.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -10992,7 +10992,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_CT・MRI",
     "title": "検査・臨床判断の基本_CT・MRI",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_CT・MRI_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_CT・MRI_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_CT・MRI.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11000,7 +11000,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_エックス線撮影の原理・防護",
     "title": "検査・臨床判断の基本_エックス線撮影の原理・防護",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_エックス線撮影の原理・防護_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_エックス線撮影の原理・防護_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_エックス線撮影の原理・防護.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11008,7 +11008,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_パノラマエックス線撮影",
     "title": "検査・臨床判断の基本_パノラマエックス線撮影",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_パノラマエックス線撮影_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_パノラマエックス線撮影_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_パノラマエックス線撮影.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11016,7 +11016,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_口内法エックス線撮影",
     "title": "検査・臨床判断の基本_口内法エックス線撮影",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_口内法エックス線撮影_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_口内法エックス線撮影_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_口内法エックス線撮影.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11024,7 +11024,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_口腔・顎顔面の検査",
     "title": "検査・臨床判断の基本_口腔・顎顔面の検査",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_口腔・顎顔面の検査_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_口腔・顎顔面の検査_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_口腔・顎顔面の検査.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11032,7 +11032,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_基準値と結果の解釈",
     "title": "検査・臨床判断の基本_基準値と結果の解釈",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_基準値と結果の解釈_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_基準値と結果の解釈_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_基準値と結果の解釈.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11040,7 +11040,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_根拠に基づいた医療（EBM）",
     "title": "検査・臨床判断の基本_根拠に基づいた医療（EBM）",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_根拠に基づいた医療（EBM）_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_根拠に基づいた医療（EBM）_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_根拠に基づいた医療（EBM）.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11048,7 +11048,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_検査の意義と目標",
     "title": "検査・臨床判断の基本_検査の意義と目標",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_検査の意義と目標_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_検査の意義と目標_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_検査の意義と目標.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11056,7 +11056,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_生化学検査",
     "title": "検査・臨床判断の基本_生化学検査",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_生化学検査_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_生化学検査_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_生化学検査.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11064,7 +11064,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_病理学検査",
     "title": "検査・臨床判断の基本_病理学検査",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_病理学検査_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_病理学検査_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_病理学検査.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11072,7 +11072,7 @@ const DATA = [
   {
     "id": "検査・臨床判断の基本_血液学検査",
     "title": "検査・臨床判断の基本_血液学検査",
-    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_血液学検査_QA.txt",
+    "qaPath": "qa/subject/必修/09_検査・臨床判断の基本_血液学検査_QA.json",
     "htmlPath": "html/subject/必修/09_検査・臨床判断の基本_血液学検査.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11080,7 +11080,7 @@ const DATA = [
   {
     "id": "初期救急_救急患者の診察・トリアージ",
     "title": "初期救急_救急患者の診察・トリアージ",
-    "qaPath": "qa/subject/必修/10_初期救急_救急患者の診察・トリアージ_QA.txt",
+    "qaPath": "qa/subject/必修/10_初期救急_救急患者の診察・トリアージ_QA.json",
     "htmlPath": "html/subject/必修/10_初期救急_救急患者の診察・トリアージ.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11088,7 +11088,7 @@ const DATA = [
   {
     "id": "治療の基礎・基本手技_口腔機能のリハビリテーション",
     "title": "治療の基礎・基本手技_口腔機能のリハビリテーション",
-    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_口腔機能のリハビリテーション_QA.txt",
+    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_口腔機能のリハビリテーション_QA.json",
     "htmlPath": "html/subject/必修/11_治療の基礎・基本手技_口腔機能のリハビリテーション.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11096,7 +11096,7 @@ const DATA = [
   {
     "id": "治療の基礎・基本手技_患者管理の基本",
     "title": "治療の基礎・基本手技_患者管理の基本",
-    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_患者管理の基本_QA.txt",
+    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_患者管理の基本_QA.json",
     "htmlPath": "html/subject/必修/11_治療の基礎・基本手技_患者管理の基本.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11104,7 +11104,7 @@ const DATA = [
   {
     "id": "治療の基礎・基本手技_抜歯の基本",
     "title": "治療の基礎・基本手技_抜歯の基本",
-    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_抜歯の基本_QA.txt",
+    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_抜歯の基本_QA.json",
     "htmlPath": "html/subject/必修/11_治療の基礎・基本手技_抜歯の基本.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11112,7 +11112,7 @@ const DATA = [
   {
     "id": "治療の基礎・基本手技_歯科材料・機器",
     "title": "治療の基礎・基本手技_歯科材料・機器",
-    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_歯科材料・機器_QA.txt",
+    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_歯科材料・機器_QA.json",
     "htmlPath": "html/subject/必修/11_治療の基礎・基本手技_歯科材料・機器.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11120,7 +11120,7 @@ const DATA = [
   {
     "id": "治療の基礎・基本手技_膿瘍の処置・ドレナージ",
     "title": "治療の基礎・基本手技_膿瘍の処置・ドレナージ",
-    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_膿瘍の処置・ドレナージ_QA.txt",
+    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_膿瘍の処置・ドレナージ_QA.json",
     "htmlPath": "html/subject/必修/11_治療の基礎・基本手技_膿瘍の処置・ドレナージ.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11128,7 +11128,7 @@ const DATA = [
   {
     "id": "治療の基礎・基本手技_薬物療法",
     "title": "治療の基礎・基本手技_薬物療法",
-    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_薬物療法_QA.txt",
+    "qaPath": "qa/subject/必修/11_治療の基礎・基本手技_薬物療法_QA.json",
     "htmlPath": "html/subject/必修/11_治療の基礎・基本手技_薬物療法.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11136,7 +11136,7 @@ const DATA = [
   {
     "id": "一般教養的事項_一般教養的知識",
     "title": "一般教養的事項_一般教養的知識",
-    "qaPath": "qa/subject/必修/12_一般教養的事項_一般教養的知識_QA.txt",
+    "qaPath": "qa/subject/必修/12_一般教養的事項_一般教養的知識_QA.json",
     "htmlPath": "html/subject/必修/12_一般教養的事項_一般教養的知識.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11144,7 +11144,7 @@ const DATA = [
   {
     "id": "一般教養的事項_医学史・歯科医学史",
     "title": "一般教養的事項_医学史・歯科医学史",
-    "qaPath": "qa/subject/必修/12_一般教養的事項_医学史・歯科医学史_QA.txt",
+    "qaPath": "qa/subject/必修/12_一般教養的事項_医学史・歯科医学史_QA.json",
     "htmlPath": "html/subject/必修/12_一般教養的事項_医学史・歯科医学史.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11152,7 +11152,7 @@ const DATA = [
   {
     "id": "一般教養的事項_歯科医療に必要な基本的医学英語",
     "title": "一般教養的事項_歯科医療に必要な基本的医学英語",
-    "qaPath": "qa/subject/必修/12_一般教養的事項_歯科医療に必要な基本的医学英語_QA.txt",
+    "qaPath": "qa/subject/必修/12_一般教養的事項_歯科医療に必要な基本的医学英語_QA.json",
     "htmlPath": "html/subject/必修/12_一般教養的事項_歯科医療に必要な基本的医学英語.html",
     "subject": "必修",
     "subjectCategory": "基礎"
@@ -11160,7 +11160,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_摂食嚥下訓練",
     "title": "口腔環境と予防_摂食嚥下訓練",
-    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_摂食嚥下訓練_QA.txt",
+    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_摂食嚥下訓練_QA.json",
     "htmlPath": "html/subject/摂食嚥下/02_口腔環境と予防_摂食嚥下訓練.html",
     "subject": "摂食嚥下",
     "subjectCategory": "基礎"
@@ -11168,7 +11168,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_栄養療法",
     "title": "口腔環境と予防_栄養療法",
-    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_栄養療法_QA.txt",
+    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_栄養療法_QA.json",
     "htmlPath": "html/subject/摂食嚥下/02_口腔環境と予防_栄養療法.html",
     "subject": "摂食嚥下",
     "subjectCategory": "基礎"
@@ -11176,7 +11176,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_舌接触補助床",
     "title": "口腔環境と予防_舌接触補助床",
-    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_舌接触補助床_QA.txt",
+    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_舌接触補助床_QA.json",
     "htmlPath": "html/subject/摂食嚥下/02_口腔環境と予防_舌接触補助床.html",
     "subject": "摂食嚥下",
     "subjectCategory": "基礎"
@@ -11184,7 +11184,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_要介護者のリハビリテーション",
     "title": "口腔環境と予防_要介護者のリハビリテーション",
-    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_要介護者のリハビリテーション_QA.txt",
+    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_要介護者のリハビリテーション_QA.json",
     "htmlPath": "html/subject/摂食嚥下/02_口腔環境と予防_要介護者のリハビリテーション.html",
     "subject": "摂食嚥下",
     "subjectCategory": "基礎"
@@ -11192,7 +11192,7 @@ const DATA = [
   {
     "id": "口腔環境と予防_軟口蓋挙上装置",
     "title": "口腔環境と予防_軟口蓋挙上装置",
-    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_軟口蓋挙上装置_QA.txt",
+    "qaPath": "qa/subject/摂食嚥下/02_口腔環境と予防_軟口蓋挙上装置_QA.json",
     "htmlPath": "html/subject/摂食嚥下/02_口腔環境と予防_軟口蓋挙上装置.html",
     "subject": "摂食嚥下",
     "subjectCategory": "基礎"
@@ -11200,7 +11200,7 @@ const DATA = [
   {
     "id": "歯内療法学総論_CT診査",
     "title": "歯内療法学総論_CT診査",
-    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_CT診査_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_CT診査_QA.json",
     "htmlPath": "html/subject/歯内療法学/01_歯内療法学総論_CT診査.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11208,7 +11208,7 @@ const DATA = [
   {
     "id": "歯内療法学総論_X線診査",
     "title": "歯内療法学総論_X線診査",
-    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_X線診査_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_X線診査_QA.json",
     "htmlPath": "html/subject/歯内療法学/01_歯内療法学総論_X線診査.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11216,7 +11216,7 @@ const DATA = [
   {
     "id": "歯内療法学総論_加齢変化",
     "title": "歯内療法学総論_加齢変化",
-    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_加齢変化_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_加齢変化_QA.json",
     "htmlPath": "html/subject/歯内療法学/01_歯内療法学総論_加齢変化.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11224,7 +11224,7 @@ const DATA = [
   {
     "id": "歯内療法学総論_歯の解剖",
     "title": "歯内療法学総論_歯の解剖",
-    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_歯の解剖_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_歯の解剖_QA.json",
     "htmlPath": "html/subject/歯内療法学/01_歯内療法学総論_歯の解剖.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11232,7 +11232,7 @@ const DATA = [
   {
     "id": "歯内療法学総論_歯髄の生死診断",
     "title": "歯内療法学総論_歯髄の生死診断",
-    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_歯髄の生死診断_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_歯髄の生死診断_QA.json",
     "htmlPath": "html/subject/歯内療法学/01_歯内療法学総論_歯髄の生死診断.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11240,7 +11240,7 @@ const DATA = [
   {
     "id": "歯内療法学総論_疾患の診断",
     "title": "歯内療法学総論_疾患の診断",
-    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_疾患の診断_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_疾患の診断_QA.json",
     "htmlPath": "html/subject/歯内療法学/01_歯内療法学総論_疾患の診断.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11248,7 +11248,7 @@ const DATA = [
   {
     "id": "歯内療法学総論_診査・診断",
     "title": "歯内療法学総論_診査・診断",
-    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_診査・診断_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_診査・診断_QA.json",
     "htmlPath": "html/subject/歯内療法学/01_歯内療法学総論_診査・診断.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11256,7 +11256,7 @@ const DATA = [
   {
     "id": "歯内療法学総論_診査法",
     "title": "歯内療法学総論_診査法",
-    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_診査法_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/01_歯内療法学総論_診査法_QA.json",
     "htmlPath": "html/subject/歯内療法学/01_歯内療法学総論_診査法.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11264,7 +11264,7 @@ const DATA = [
   {
     "id": "歯髄疾患_歯根吸収",
     "title": "歯髄疾患_歯根吸収",
-    "qaPath": "qa/subject/歯内療法学/02_歯髄疾患_歯根吸収_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/02_歯髄疾患_歯根吸収_QA.json",
     "htmlPath": "html/subject/歯内療法学/02_歯髄疾患_歯根吸収.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11272,7 +11272,7 @@ const DATA = [
   {
     "id": "歯髄疾患_歯髄炎",
     "title": "歯髄疾患_歯髄炎",
-    "qaPath": "qa/subject/歯内療法学/02_歯髄疾患_歯髄炎_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/02_歯髄疾患_歯髄炎_QA.json",
     "htmlPath": "html/subject/歯内療法学/02_歯髄疾患_歯髄炎.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11280,7 +11280,7 @@ const DATA = [
   {
     "id": "歯髄疾患_歯髄疾患総論",
     "title": "歯髄疾患_歯髄疾患総論",
-    "qaPath": "qa/subject/歯内療法学/02_歯髄疾患_歯髄疾患総論_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/02_歯髄疾患_歯髄疾患総論_QA.json",
     "htmlPath": "html/subject/歯内療法学/02_歯髄疾患_歯髄疾患総論.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11288,7 +11288,7 @@ const DATA = [
   {
     "id": "歯髄疾患_象牙質知覚過敏症",
     "title": "歯髄疾患_象牙質知覚過敏症",
-    "qaPath": "qa/subject/歯内療法学/02_歯髄疾患_象牙質知覚過敏症_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/02_歯髄疾患_象牙質知覚過敏症_QA.json",
     "htmlPath": "html/subject/歯内療法学/02_歯髄疾患_象牙質知覚過敏症.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11296,7 +11296,7 @@ const DATA = [
   {
     "id": "根尖性歯周疾患_急性根尖性歯周炎",
     "title": "根尖性歯周疾患_急性根尖性歯周炎",
-    "qaPath": "qa/subject/歯内療法学/03_根尖性歯周疾患_急性根尖性歯周炎_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/03_根尖性歯周疾患_急性根尖性歯周炎_QA.json",
     "htmlPath": "html/subject/歯内療法学/03_根尖性歯周疾患_急性根尖性歯周炎.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11304,7 +11304,7 @@ const DATA = [
   {
     "id": "根尖性歯周疾患_慢性根尖性歯周炎",
     "title": "根尖性歯周疾患_慢性根尖性歯周炎",
-    "qaPath": "qa/subject/歯内療法学/03_根尖性歯周疾患_慢性根尖性歯周炎_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/03_根尖性歯周疾患_慢性根尖性歯周炎_QA.json",
     "htmlPath": "html/subject/歯内療法学/03_根尖性歯周疾患_慢性根尖性歯周炎.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11312,7 +11312,7 @@ const DATA = [
   {
     "id": "根尖性歯周疾患_根尖性歯周炎総論",
     "title": "根尖性歯周疾患_根尖性歯周炎総論",
-    "qaPath": "qa/subject/歯内療法学/03_根尖性歯周疾患_根尖性歯周炎総論_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/03_根尖性歯周疾患_根尖性歯周炎総論_QA.json",
     "htmlPath": "html/subject/歯内療法学/03_根尖性歯周疾患_根尖性歯周炎総論.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11320,7 +11320,7 @@ const DATA = [
   {
     "id": "歯内歯周疾患_歯内歯周疾患",
     "title": "歯内歯周疾患_歯内歯周疾患",
-    "qaPath": "qa/subject/歯内療法学/04_歯内歯周疾患_歯内歯周疾患_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/04_歯内歯周疾患_歯内歯周疾患_QA.json",
     "htmlPath": "html/subject/歯内療法学/04_歯内歯周疾患_歯内歯周疾患.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11328,7 +11328,7 @@ const DATA = [
   {
     "id": "歯内治療総論_マイクロスコープ",
     "title": "歯内治療総論_マイクロスコープ",
-    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_マイクロスコープ_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_マイクロスコープ_QA.json",
     "htmlPath": "html/subject/歯内療法学/05_歯内治療総論_マイクロスコープ.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11336,7 +11336,7 @@ const DATA = [
   {
     "id": "歯内治療総論_ラバーダム防湿",
     "title": "歯内治療総論_ラバーダム防湿",
-    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_ラバーダム防湿_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_ラバーダム防湿_QA.json",
     "htmlPath": "html/subject/歯内療法学/05_歯内治療総論_ラバーダム防湿.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11344,7 +11344,7 @@ const DATA = [
   {
     "id": "歯内治療総論_根管充填",
     "title": "歯内治療総論_根管充填",
-    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_根管充填_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_根管充填_QA.json",
     "htmlPath": "html/subject/歯内療法学/05_歯内治療総論_根管充填.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11352,7 +11352,7 @@ const DATA = [
   {
     "id": "歯内治療総論_根管拡大",
     "title": "歯内治療総論_根管拡大",
-    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_根管拡大_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_根管拡大_QA.json",
     "htmlPath": "html/subject/歯内療法学/05_歯内治療総論_根管拡大.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11360,7 +11360,7 @@ const DATA = [
   {
     "id": "歯内治療総論_根管洗浄・貼薬",
     "title": "歯内治療総論_根管洗浄・貼薬",
-    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_根管洗浄・貼薬_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_根管洗浄・貼薬_QA.json",
     "htmlPath": "html/subject/歯内療法学/05_歯内治療総論_根管洗浄・貼薬.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11368,7 +11368,7 @@ const DATA = [
   {
     "id": "歯内治療総論_髄室開拡",
     "title": "歯内治療総論_髄室開拡",
-    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_髄室開拡_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/05_歯内治療総論_髄室開拡_QA.json",
     "htmlPath": "html/subject/歯内療法学/05_歯内治療総論_髄室開拡.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11376,7 +11376,7 @@ const DATA = [
   {
     "id": "歯髄処置_抜髄法",
     "title": "歯髄処置_抜髄法",
-    "qaPath": "qa/subject/歯内療法学/06_歯髄処置_抜髄法_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/06_歯髄処置_抜髄法_QA.json",
     "htmlPath": "html/subject/歯内療法学/06_歯髄処置_抜髄法.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11384,7 +11384,7 @@ const DATA = [
   {
     "id": "歯髄処置_歯髄切断法",
     "title": "歯髄処置_歯髄切断法",
-    "qaPath": "qa/subject/歯内療法学/06_歯髄処置_歯髄切断法_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/06_歯髄処置_歯髄切断法_QA.json",
     "htmlPath": "html/subject/歯内療法学/06_歯髄処置_歯髄切断法.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11392,7 +11392,7 @@ const DATA = [
   {
     "id": "歯髄処置_歯髄鎮静法",
     "title": "歯髄処置_歯髄鎮静法",
-    "qaPath": "qa/subject/歯内療法学/06_歯髄処置_歯髄鎮静法_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/06_歯髄処置_歯髄鎮静法_QA.json",
     "htmlPath": "html/subject/歯内療法学/06_歯髄処置_歯髄鎮静法.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11400,7 +11400,7 @@ const DATA = [
   {
     "id": "歯髄処置_覆髄法",
     "title": "歯髄処置_覆髄法",
-    "qaPath": "qa/subject/歯内療法学/06_歯髄処置_覆髄法_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/06_歯髄処置_覆髄法_QA.json",
     "htmlPath": "html/subject/歯内療法学/06_歯髄処置_覆髄法.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11408,7 +11408,7 @@ const DATA = [
   {
     "id": "外科的歯内療法_歯の再植",
     "title": "外科的歯内療法_歯の再植",
-    "qaPath": "qa/subject/歯内療法学/07_外科的歯内療法_歯の再植_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/07_外科的歯内療法_歯の再植_QA.json",
     "htmlPath": "html/subject/歯内療法学/07_外科的歯内療法_歯の再植.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11416,7 +11416,7 @@ const DATA = [
   {
     "id": "外科的歯内療法_歯根尖切除術",
     "title": "外科的歯内療法_歯根尖切除術",
-    "qaPath": "qa/subject/歯内療法学/07_外科的歯内療法_歯根尖切除術_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/07_外科的歯内療法_歯根尖切除術_QA.json",
     "htmlPath": "html/subject/歯内療法学/07_外科的歯内療法_歯根尖切除術.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11424,7 +11424,7 @@ const DATA = [
   {
     "id": "偶発症_偶発症",
     "title": "偶発症_偶発症",
-    "qaPath": "qa/subject/歯内療法学/08_偶発症_偶発症_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/08_偶発症_偶発症_QA.json",
     "htmlPath": "html/subject/歯内療法学/08_偶発症_偶発症.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11432,7 +11432,7 @@ const DATA = [
   {
     "id": "歯の外傷_歯冠破折",
     "title": "歯の外傷_歯冠破折",
-    "qaPath": "qa/subject/歯内療法学/09_歯の外傷_歯冠破折_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/09_歯の外傷_歯冠破折_QA.json",
     "htmlPath": "html/subject/歯内療法学/09_歯の外傷_歯冠破折.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11440,7 +11440,7 @@ const DATA = [
   {
     "id": "歯の外傷_歯根破折",
     "title": "歯の外傷_歯根破折",
-    "qaPath": "qa/subject/歯内療法学/09_歯の外傷_歯根破折_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/09_歯の外傷_歯根破折_QA.json",
     "htmlPath": "html/subject/歯内療法学/09_歯の外傷_歯根破折.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11448,7 +11448,7 @@ const DATA = [
   {
     "id": "変色歯への対応_変色歯の原因",
     "title": "変色歯への対応_変色歯の原因",
-    "qaPath": "qa/subject/歯内療法学/10_変色歯への対応_変色歯の原因_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/10_変色歯への対応_変色歯の原因_QA.json",
     "htmlPath": "html/subject/歯内療法学/10_変色歯への対応_変色歯の原因.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11456,7 +11456,7 @@ const DATA = [
   {
     "id": "変色歯への対応_失活歯の漂白",
     "title": "変色歯への対応_失活歯の漂白",
-    "qaPath": "qa/subject/歯内療法学/10_変色歯への対応_失活歯の漂白_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/10_変色歯への対応_失活歯の漂白_QA.json",
     "htmlPath": "html/subject/歯内療法学/10_変色歯への対応_失活歯の漂白.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11464,7 +11464,7 @@ const DATA = [
   {
     "id": "変色歯への対応_漂白総論",
     "title": "変色歯への対応_漂白総論",
-    "qaPath": "qa/subject/歯内療法学/10_変色歯への対応_漂白総論_QA.txt",
+    "qaPath": "qa/subject/歯内療法学/10_変色歯への対応_漂白総論_QA.json",
     "htmlPath": "html/subject/歯内療法学/10_変色歯への対応_漂白総論.html",
     "subject": "歯内療法",
     "subjectCategory": "基礎"
@@ -11472,7 +11472,7 @@ const DATA = [
   {
     "id": "病因_全身性修飾因子",
     "title": "病因_全身性修飾因子",
-    "qaPath": "qa/subject/歯周病学/01_病因_全身性修飾因子_QA.txt",
+    "qaPath": "qa/subject/歯周病学/01_病因_全身性修飾因子_QA.json",
     "htmlPath": "html/subject/歯周病学/01_病因_全身性修飾因子.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11480,7 +11480,7 @@ const DATA = [
   {
     "id": "病因_咬合性外傷",
     "title": "病因_咬合性外傷",
-    "qaPath": "qa/subject/歯周病学/01_病因_咬合性外傷_QA.txt",
+    "qaPath": "qa/subject/歯周病学/01_病因_咬合性外傷_QA.json",
     "htmlPath": "html/subject/歯周病学/01_病因_咬合性外傷.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11488,7 +11488,7 @@ const DATA = [
   {
     "id": "病因_局所修飾因子",
     "title": "病因_局所修飾因子",
-    "qaPath": "qa/subject/歯周病学/01_病因_局所修飾因子_QA.txt",
+    "qaPath": "qa/subject/歯周病学/01_病因_局所修飾因子_QA.json",
     "htmlPath": "html/subject/歯周病学/01_病因_局所修飾因子.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11496,7 +11496,7 @@ const DATA = [
   {
     "id": "病因_歯石",
     "title": "病因_歯石",
-    "qaPath": "qa/subject/歯周病学/01_病因_歯石_QA.txt",
+    "qaPath": "qa/subject/歯周病学/01_病因_歯石_QA.json",
     "htmlPath": "html/subject/歯周病学/01_病因_歯石.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11504,7 +11504,7 @@ const DATA = [
   {
     "id": "病因_細菌と歯周疾患の疫学特性",
     "title": "病因_細菌と歯周疾患の疫学特性",
-    "qaPath": "qa/subject/歯周病学/01_病因_細菌と歯周疾患の疫学特性_QA.txt",
+    "qaPath": "qa/subject/歯周病学/01_病因_細菌と歯周疾患の疫学特性_QA.json",
     "htmlPath": "html/subject/歯周病学/01_病因_細菌と歯周疾患の疫学特性.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11512,7 +11512,7 @@ const DATA = [
   {
     "id": "病因_細菌叢因子・環境因子",
     "title": "病因_細菌叢因子・環境因子",
-    "qaPath": "qa/subject/歯周病学/01_病因_細菌叢因子・環境因子_QA.txt",
+    "qaPath": "qa/subject/歯周病学/01_病因_細菌叢因子・環境因子_QA.json",
     "htmlPath": "html/subject/歯周病学/01_病因_細菌叢因子・環境因子.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11520,7 +11520,7 @@ const DATA = [
   {
     "id": "疾患の分類と特徴_壊死性歯周疾患",
     "title": "疾患の分類と特徴_壊死性歯周疾患",
-    "qaPath": "qa/subject/歯周病学/02_疾患の分類と特徴_壊死性歯周疾患_QA.txt",
+    "qaPath": "qa/subject/歯周病学/02_疾患の分類と特徴_壊死性歯周疾患_QA.json",
     "htmlPath": "html/subject/歯周病学/02_疾患の分類と特徴_壊死性歯周疾患.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11528,7 +11528,7 @@ const DATA = [
   {
     "id": "疾患の分類と特徴_歯周疾患",
     "title": "疾患の分類と特徴_歯周疾患",
-    "qaPath": "qa/subject/歯周病学/02_疾患の分類と特徴_歯周疾患_QA.txt",
+    "qaPath": "qa/subject/歯周病学/02_疾患の分類と特徴_歯周疾患_QA.json",
     "htmlPath": "html/subject/歯周病学/02_疾患の分類と特徴_歯周疾患.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11536,7 +11536,7 @@ const DATA = [
   {
     "id": "疾患の分類と特徴_歯肉増殖症",
     "title": "疾患の分類と特徴_歯肉増殖症",
-    "qaPath": "qa/subject/歯周病学/02_疾患の分類と特徴_歯肉増殖症_QA.txt",
+    "qaPath": "qa/subject/歯周病学/02_疾患の分類と特徴_歯肉増殖症_QA.json",
     "htmlPath": "html/subject/歯周病学/02_疾患の分類と特徴_歯肉増殖症.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11544,7 +11544,7 @@ const DATA = [
   {
     "id": "疾患の分類と特徴_細菌性歯周炎",
     "title": "疾患の分類と特徴_細菌性歯周炎",
-    "qaPath": "qa/subject/歯周病学/02_疾患の分類と特徴_細菌性歯周炎_QA.txt",
+    "qaPath": "qa/subject/歯周病学/02_疾患の分類と特徴_細菌性歯周炎_QA.json",
     "htmlPath": "html/subject/歯周病学/02_疾患の分類と特徴_細菌性歯周炎.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11552,7 +11552,7 @@ const DATA = [
   {
     "id": "診査診断_アタッチメントレベル",
     "title": "診査診断_アタッチメントレベル",
-    "qaPath": "qa/subject/歯周病学/03_診査診断_アタッチメントレベル_QA.txt",
+    "qaPath": "qa/subject/歯周病学/03_診査診断_アタッチメントレベル_QA.json",
     "htmlPath": "html/subject/歯周病学/03_診査診断_アタッチメントレベル.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11560,7 +11560,7 @@ const DATA = [
   {
     "id": "診査診断_ポケット検査",
     "title": "診査診断_ポケット検査",
-    "qaPath": "qa/subject/歯周病学/03_診査診断_ポケット検査_QA.txt",
+    "qaPath": "qa/subject/歯周病学/03_診査診断_ポケット検査_QA.json",
     "htmlPath": "html/subject/歯周病学/03_診査診断_ポケット検査.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11568,7 +11568,7 @@ const DATA = [
   {
     "id": "診査診断_根分岐部病変",
     "title": "診査診断_根分岐部病変",
-    "qaPath": "qa/subject/歯周病学/03_診査診断_根分岐部病変_QA.txt",
+    "qaPath": "qa/subject/歯周病学/03_診査診断_根分岐部病変_QA.json",
     "htmlPath": "html/subject/歯周病学/03_診査診断_根分岐部病変.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11576,7 +11576,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_スケーリング",
     "title": "歯周基本治療_再評価_スケーリング",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_スケーリング_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_スケーリング_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_スケーリング.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11584,7 +11584,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_スケーリング・ルートプレーニング",
     "title": "歯周基本治療_再評価_スケーリング・ルートプレーニング",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_スケーリング・ルートプレーニング_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_スケーリング・ルートプレーニング_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_スケーリング・ルートプレーニング.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11592,7 +11592,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_全身疾患をもつ患者への対応",
     "title": "歯周基本治療_再評価_全身疾患をもつ患者への対応",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_全身疾患をもつ患者への対応_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_全身疾患をもつ患者への対応_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_全身疾患をもつ患者への対応.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11600,7 +11600,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_再評価",
     "title": "歯周基本治療_再評価_再評価",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_再評価_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_再評価_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_再評価.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11608,7 +11608,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_咬合調整",
     "title": "歯周基本治療_再評価_咬合調整",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_咬合調整_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_咬合調整_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_咬合調整.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11616,7 +11616,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_抗菌療法",
     "title": "歯周基本治療_再評価_抗菌療法",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_抗菌療法_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_抗菌療法_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_抗菌療法.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11624,7 +11624,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_抜歯適応症",
     "title": "歯周基本治療_再評価_抜歯適応症",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_抜歯適応症_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_抜歯適応症_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_抜歯適応症.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11632,7 +11632,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_暫間固定",
     "title": "歯周基本治療_再評価_暫間固定",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_暫間固定_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_暫間固定_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_暫間固定.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11640,7 +11640,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_歯内―歯周病変",
     "title": "歯周基本治療_再評価_歯内―歯周病変",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_歯内―歯周病変_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_歯内―歯周病変_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_歯内―歯周病変.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11648,7 +11648,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_歯周基本治療",
     "title": "歯周基本治療_再評価_歯周基本治療",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_歯周基本治療_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_歯周基本治療_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_歯周基本治療.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11656,7 +11656,7 @@ const DATA = [
   {
     "id": "歯周基本治療_再評価_治療計画",
     "title": "歯周基本治療_再評価_治療計画",
-    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_治療計画_QA.txt",
+    "qaPath": "qa/subject/歯周病学/04_歯周基本治療_再評価_治療計画_QA.json",
     "htmlPath": "html/subject/歯周病学/04_歯周基本治療_再評価_治療計画.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11664,7 +11664,7 @@ const DATA = [
   {
     "id": "歯周外科治療_GTR法",
     "title": "歯周外科治療_GTR法",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_GTR法_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_GTR法_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_GTR法.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11672,7 +11672,7 @@ const DATA = [
   {
     "id": "歯周外科治療_エナメルマトリックスタンパク質",
     "title": "歯周外科治療_エナメルマトリックスタンパク質",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_エナメルマトリックスタンパク質_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_エナメルマトリックスタンパク質_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_エナメルマトリックスタンパク質.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11680,7 +11680,7 @@ const DATA = [
   {
     "id": "歯周外科治療_フラップ手術",
     "title": "歯周外科治療_フラップ手術",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_フラップ手術_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_フラップ手術_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_フラップ手術.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11688,7 +11688,7 @@ const DATA = [
   {
     "id": "歯周外科治療_分岐部病変に対する外科処置",
     "title": "歯周外科治療_分岐部病変に対する外科処置",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_分岐部病変に対する外科処置_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_分岐部病変に対する外科処置_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_分岐部病変に対する外科処置.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11696,7 +11696,7 @@ const DATA = [
   {
     "id": "歯周外科治療_歯周形成手術",
     "title": "歯周外科治療_歯周形成手術",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_歯周形成手術_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_歯周形成手術_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_歯周形成手術.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11704,7 +11704,7 @@ const DATA = [
   {
     "id": "歯周外科治療_歯根切除術・ヘミセクション",
     "title": "歯周外科治療_歯根切除術・ヘミセクション",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_歯根切除術・ヘミセクション_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_歯根切除術・ヘミセクション_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_歯根切除術・ヘミセクション.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11712,7 +11712,7 @@ const DATA = [
   {
     "id": "歯周外科治療_歯肉切除術・歯肉整形術",
     "title": "歯周外科治療_歯肉切除術・歯肉整形術",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_歯肉切除術・歯肉整形術_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_歯肉切除術・歯肉整形術_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_歯肉切除術・歯肉整形術.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11720,7 +11720,7 @@ const DATA = [
   {
     "id": "歯周外科治療_術前検査",
     "title": "歯周外科治療_術前検査",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_術前検査_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_術前検査_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_術前検査.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11728,7 +11728,7 @@ const DATA = [
   {
     "id": "歯周外科治療_遊離歯肉移植術",
     "title": "歯周外科治療_遊離歯肉移植術",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_遊離歯肉移植術_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_遊離歯肉移植術_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_遊離歯肉移植術.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11736,7 +11736,7 @@ const DATA = [
   {
     "id": "歯周外科治療_骨切除術・骨整形術",
     "title": "歯周外科治療_骨切除術・骨整形術",
-    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_骨切除術・骨整形術_QA.txt",
+    "qaPath": "qa/subject/歯周病学/05_歯周外科治療_骨切除術・骨整形術_QA.json",
     "htmlPath": "html/subject/歯周病学/05_歯周外科治療_骨切除術・骨整形術.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11744,7 +11744,7 @@ const DATA = [
   {
     "id": "メインテナンス_メインテナンス・SPT",
     "title": "メインテナンス_メインテナンス・SPT",
-    "qaPath": "qa/subject/歯周病学/06_メインテナンス_メインテナンス・SPT_QA.txt",
+    "qaPath": "qa/subject/歯周病学/06_メインテナンス_メインテナンス・SPT_QA.json",
     "htmlPath": "html/subject/歯周病学/06_メインテナンス_メインテナンス・SPT.html",
     "subject": "歯周病",
     "subjectCategory": "基礎"
@@ -11752,7 +11752,7 @@ const DATA = [
   {
     "id": "材料の組成・物性_化学的性質：腐食",
     "title": "材料の組成・物性_化学的性質：腐食",
-    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_化学的性質：腐食_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_化学的性質：腐食_QA.json",
     "htmlPath": "html/subject/歯科理工学/01_材料の組成・物性_化学的性質：腐食.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11760,7 +11760,7 @@ const DATA = [
   {
     "id": "材料の組成・物性_有機材料",
     "title": "材料の組成・物性_有機材料",
-    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_有機材料_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_有機材料_QA.json",
     "htmlPath": "html/subject/歯科理工学/01_材料の組成・物性_有機材料.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11768,7 +11768,7 @@ const DATA = [
   {
     "id": "材料の組成・物性_機械的性質：応力とひずみ",
     "title": "材料の組成・物性_機械的性質：応力とひずみ",
-    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_機械的性質：応力とひずみ_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_機械的性質：応力とひずみ_QA.json",
     "htmlPath": "html/subject/歯科理工学/01_材料の組成・物性_機械的性質：応力とひずみ.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11776,7 +11776,7 @@ const DATA = [
   {
     "id": "材料の組成・物性_機械的性質：硬さ",
     "title": "材料の組成・物性_機械的性質：硬さ",
-    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_機械的性質：硬さ_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_機械的性質：硬さ_QA.json",
     "htmlPath": "html/subject/歯科理工学/01_材料の組成・物性_機械的性質：硬さ.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11784,7 +11784,7 @@ const DATA = [
   {
     "id": "材料の組成・物性_無機材料",
     "title": "材料の組成・物性_無機材料",
-    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_無機材料_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_無機材料_QA.json",
     "htmlPath": "html/subject/歯科理工学/01_材料の組成・物性_無機材料.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11792,7 +11792,7 @@ const DATA = [
   {
     "id": "材料の組成・物性_物理的性質：密度",
     "title": "材料の組成・物性_物理的性質：密度",
-    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_物理的性質：密度_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_物理的性質：密度_QA.json",
     "htmlPath": "html/subject/歯科理工学/01_材料の組成・物性_物理的性質：密度.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11800,7 +11800,7 @@ const DATA = [
   {
     "id": "材料の組成・物性_物理的性質：熱伝導率",
     "title": "材料の組成・物性_物理的性質：熱伝導率",
-    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_物理的性質：熱伝導率_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_物理的性質：熱伝導率_QA.json",
     "htmlPath": "html/subject/歯科理工学/01_材料の組成・物性_物理的性質：熱伝導率.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11808,7 +11808,7 @@ const DATA = [
   {
     "id": "材料の組成・物性_物理的性質：熱膨張係数",
     "title": "材料の組成・物性_物理的性質：熱膨張係数",
-    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_物理的性質：熱膨張係数_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_物理的性質：熱膨張係数_QA.json",
     "htmlPath": "html/subject/歯科理工学/01_材料の組成・物性_物理的性質：熱膨張係数.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11816,7 +11816,7 @@ const DATA = [
   {
     "id": "材料の組成・物性_生物学的性質：生体為害性",
     "title": "材料の組成・物性_生物学的性質：生体為害性",
-    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_生物学的性質：生体為害性_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/01_材料の組成・物性_生物学的性質：生体為害性_QA.json",
     "htmlPath": "html/subject/歯科理工学/01_材料の組成・物性_生物学的性質：生体為害性.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11824,7 +11824,7 @@ const DATA = [
   {
     "id": "印象材_ゴム質印象材",
     "title": "印象材_ゴム質印象材",
-    "qaPath": "qa/subject/歯科理工学/02_印象材_ゴム質印象材_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/02_印象材_ゴム質印象材_QA.json",
     "htmlPath": "html/subject/歯科理工学/02_印象材_ゴム質印象材.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11832,7 +11832,7 @@ const DATA = [
   {
     "id": "印象材_ハイドロコロイド印象材",
     "title": "印象材_ハイドロコロイド印象材",
-    "qaPath": "qa/subject/歯科理工学/02_印象材_ハイドロコロイド印象材_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/02_印象材_ハイドロコロイド印象材_QA.json",
     "htmlPath": "html/subject/歯科理工学/02_印象材_ハイドロコロイド印象材.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11840,7 +11840,7 @@ const DATA = [
   {
     "id": "印象材_印象材一般",
     "title": "印象材_印象材一般",
-    "qaPath": "qa/subject/歯科理工学/02_印象材_印象材一般_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/02_印象材_印象材一般_QA.json",
     "htmlPath": "html/subject/歯科理工学/02_印象材_印象材一般.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11848,7 +11848,7 @@ const DATA = [
   {
     "id": "模型材およびパターン材_ワックス",
     "title": "模型材およびパターン材_ワックス",
-    "qaPath": "qa/subject/歯科理工学/03_模型材およびパターン材_ワックス_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/03_模型材およびパターン材_ワックス_QA.json",
     "htmlPath": "html/subject/歯科理工学/03_模型材およびパターン材_ワックス.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11856,7 +11856,7 @@ const DATA = [
   {
     "id": "模型材およびパターン材_歯科用石膏",
     "title": "模型材およびパターン材_歯科用石膏",
-    "qaPath": "qa/subject/歯科理工学/03_模型材およびパターン材_歯科用石膏_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/03_模型材およびパターン材_歯科用石膏_QA.json",
     "htmlPath": "html/subject/歯科理工学/03_模型材およびパターン材_歯科用石膏.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11864,7 +11864,7 @@ const DATA = [
   {
     "id": "埋没材_石膏系埋没材",
     "title": "埋没材_石膏系埋没材",
-    "qaPath": "qa/subject/歯科理工学/04_埋没材_石膏系埋没材_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/04_埋没材_石膏系埋没材_QA.json",
     "htmlPath": "html/subject/歯科理工学/04_埋没材_石膏系埋没材.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11872,7 +11872,7 @@ const DATA = [
   {
     "id": "金属_貴金属：低融銀合金",
     "title": "金属_貴金属：低融銀合金",
-    "qaPath": "qa/subject/歯科理工学/05_金属_貴金属：低融銀合金_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/05_金属_貴金属：低融銀合金_QA.json",
     "htmlPath": "html/subject/歯科理工学/05_金属_貴金属：低融銀合金.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11880,7 +11880,7 @@ const DATA = [
   {
     "id": "金属_貴金属：金合金",
     "title": "金属_貴金属：金合金",
-    "qaPath": "qa/subject/歯科理工学/05_金属_貴金属：金合金_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/05_金属_貴金属：金合金_QA.json",
     "htmlPath": "html/subject/歯科理工学/05_金属_貴金属：金合金.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11888,7 +11888,7 @@ const DATA = [
   {
     "id": "金属_貴金属：金銀パラジウム合金",
     "title": "金属_貴金属：金銀パラジウム合金",
-    "qaPath": "qa/subject/歯科理工学/05_金属_貴金属：金銀パラジウム合金_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/05_金属_貴金属：金銀パラジウム合金_QA.json",
     "htmlPath": "html/subject/歯科理工学/05_金属_貴金属：金銀パラジウム合金.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11896,7 +11896,7 @@ const DATA = [
   {
     "id": "金属_貴金属：陶材焼付用金合金",
     "title": "金属_貴金属：陶材焼付用金合金",
-    "qaPath": "qa/subject/歯科理工学/05_金属_貴金属：陶材焼付用金合金_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/05_金属_貴金属：陶材焼付用金合金_QA.json",
     "htmlPath": "html/subject/歯科理工学/05_金属_貴金属：陶材焼付用金合金.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11904,7 +11904,7 @@ const DATA = [
   {
     "id": "金属_非貴金属：チタン",
     "title": "金属_非貴金属：チタン",
-    "qaPath": "qa/subject/歯科理工学/05_金属_非貴金属：チタン_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/05_金属_非貴金属：チタン_QA.json",
     "htmlPath": "html/subject/歯科理工学/05_金属_非貴金属：チタン.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11912,7 +11912,7 @@ const DATA = [
   {
     "id": "コンポジットレジン_コンポジットレジン総論",
     "title": "コンポジットレジン_コンポジットレジン総論",
-    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_コンポジットレジン総論_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_コンポジットレジン総論_QA.json",
     "htmlPath": "html/subject/歯科理工学/06_コンポジットレジン_コンポジットレジン総論.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11920,7 +11920,7 @@ const DATA = [
   {
     "id": "コンポジットレジン_接着前処理：シランカップリング剤",
     "title": "コンポジットレジン_接着前処理：シランカップリング剤",
-    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：シランカップリング剤_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：シランカップリング剤_QA.json",
     "htmlPath": "html/subject/歯科理工学/06_コンポジットレジン_接着前処理：シランカップリング剤.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11928,7 +11928,7 @@ const DATA = [
   {
     "id": "コンポジットレジン_接着前処理：ジルコニアの接着",
     "title": "コンポジットレジン_接着前処理：ジルコニアの接着",
-    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：ジルコニアの接着_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：ジルコニアの接着_QA.json",
     "htmlPath": "html/subject/歯科理工学/06_コンポジットレジン_接着前処理：ジルコニアの接着.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11936,7 +11936,7 @@ const DATA = [
   {
     "id": "コンポジットレジン_接着前処理：歯質接着性モノマー",
     "title": "コンポジットレジン_接着前処理：歯質接着性モノマー",
-    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：歯質接着性モノマー_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：歯質接着性モノマー_QA.json",
     "htmlPath": "html/subject/歯科理工学/06_コンポジットレジン_接着前処理：歯質接着性モノマー.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11944,7 +11944,7 @@ const DATA = [
   {
     "id": "コンポジットレジン_接着前処理：溶媒",
     "title": "コンポジットレジン_接着前処理：溶媒",
-    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：溶媒_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：溶媒_QA.json",
     "htmlPath": "html/subject/歯科理工学/06_コンポジットレジン_接着前処理：溶媒.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11952,7 +11952,7 @@ const DATA = [
   {
     "id": "コンポジットレジン_接着前処理：金属接着性プライマー",
     "title": "コンポジットレジン_接着前処理：金属接着性プライマー",
-    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：金属接着性プライマー_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/06_コンポジットレジン_接着前処理：金属接着性プライマー_QA.json",
     "htmlPath": "html/subject/歯科理工学/06_コンポジットレジン_接着前処理：金属接着性プライマー.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11960,7 +11960,7 @@ const DATA = [
   {
     "id": "セメント他_グラスアイオノマーセメント",
     "title": "セメント他_グラスアイオノマーセメント",
-    "qaPath": "qa/subject/歯科理工学/07_セメント他_グラスアイオノマーセメント_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/07_セメント他_グラスアイオノマーセメント_QA.json",
     "htmlPath": "html/subject/歯科理工学/07_セメント他_グラスアイオノマーセメント.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11968,7 +11968,7 @@ const DATA = [
   {
     "id": "セメント他_セメント一般",
     "title": "セメント他_セメント一般",
-    "qaPath": "qa/subject/歯科理工学/07_セメント他_セメント一般_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/07_セメント他_セメント一般_QA.json",
     "htmlPath": "html/subject/歯科理工学/07_セメント他_セメント一般.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11976,7 +11976,7 @@ const DATA = [
   {
     "id": "セメント他_予防填塞材：シーラント",
     "title": "セメント他_予防填塞材：シーラント",
-    "qaPath": "qa/subject/歯科理工学/07_セメント他_予防填塞材：シーラント_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/07_セメント他_予防填塞材：シーラント_QA.json",
     "htmlPath": "html/subject/歯科理工学/07_セメント他_予防填塞材：シーラント.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11984,7 +11984,7 @@ const DATA = [
   {
     "id": "セメント他_根管充填材",
     "title": "セメント他_根管充填材",
-    "qaPath": "qa/subject/歯科理工学/07_セメント他_根管充填材_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/07_セメント他_根管充填材_QA.json",
     "htmlPath": "html/subject/歯科理工学/07_セメント他_根管充填材.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -11992,7 +11992,7 @@ const DATA = [
   {
     "id": "歯冠修復用セラミックス_ニケイ酸リチウム",
     "title": "歯冠修復用セラミックス_ニケイ酸リチウム",
-    "qaPath": "qa/subject/歯科理工学/08_歯冠修復用セラミックス_ニケイ酸リチウム_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/08_歯冠修復用セラミックス_ニケイ酸リチウム_QA.json",
     "htmlPath": "html/subject/歯科理工学/08_歯冠修復用セラミックス_ニケイ酸リチウム.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12000,7 +12000,7 @@ const DATA = [
   {
     "id": "歯冠修復用セラミックス_陶材",
     "title": "歯冠修復用セラミックス_陶材",
-    "qaPath": "qa/subject/歯科理工学/08_歯冠修復用セラミックス_陶材_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/08_歯冠修復用セラミックス_陶材_QA.json",
     "htmlPath": "html/subject/歯科理工学/08_歯冠修復用セラミックス_陶材.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12008,7 +12008,7 @@ const DATA = [
   {
     "id": "義歯用材料_アタッチメント",
     "title": "義歯用材料_アタッチメント",
-    "qaPath": "qa/subject/歯科理工学/09_義歯用材料_アタッチメント_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/09_義歯用材料_アタッチメント_QA.json",
     "htmlPath": "html/subject/歯科理工学/09_義歯用材料_アタッチメント.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12016,7 +12016,7 @@ const DATA = [
   {
     "id": "義歯用材料_床用レジン",
     "title": "義歯用材料_床用レジン",
-    "qaPath": "qa/subject/歯科理工学/09_義歯用材料_床用レジン_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/09_義歯用材料_床用レジン_QA.json",
     "htmlPath": "html/subject/歯科理工学/09_義歯用材料_床用レジン.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12024,7 +12024,7 @@ const DATA = [
   {
     "id": "義歯用材料_床用金属材料",
     "title": "義歯用材料_床用金属材料",
-    "qaPath": "qa/subject/歯科理工学/09_義歯用材料_床用金属材料_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/09_義歯用材料_床用金属材料_QA.json",
     "htmlPath": "html/subject/歯科理工学/09_義歯用材料_床用金属材料.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12032,7 +12032,7 @@ const DATA = [
   {
     "id": "義歯用材料_床裏装材",
     "title": "義歯用材料_床裏装材",
-    "qaPath": "qa/subject/歯科理工学/09_義歯用材料_床裏装材_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/09_義歯用材料_床裏装材_QA.json",
     "htmlPath": "html/subject/歯科理工学/09_義歯用材料_床裏装材.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12040,7 +12040,7 @@ const DATA = [
   {
     "id": "矯正用材料_エラスティック",
     "title": "矯正用材料_エラスティック",
-    "qaPath": "qa/subject/歯科理工学/10_矯正用材料_エラスティック_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/10_矯正用材料_エラスティック_QA.json",
     "htmlPath": "html/subject/歯科理工学/10_矯正用材料_エラスティック.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12048,7 +12048,7 @@ const DATA = [
   {
     "id": "矯正用材料_矯正用線材料",
     "title": "矯正用材料_矯正用線材料",
-    "qaPath": "qa/subject/歯科理工学/10_矯正用材料_矯正用線材料_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/10_矯正用材料_矯正用線材料_QA.json",
     "htmlPath": "html/subject/歯科理工学/10_矯正用材料_矯正用線材料.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12056,7 +12056,7 @@ const DATA = [
   {
     "id": "インプラント用材料_インプラント体",
     "title": "インプラント用材料_インプラント体",
-    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_インプラント体_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_インプラント体_QA.json",
     "htmlPath": "html/subject/歯科理工学/11_インプラント用材料_インプラント体.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12064,7 +12064,7 @@ const DATA = [
   {
     "id": "インプラント用材料_インプラント体の表面処理",
     "title": "インプラント用材料_インプラント体の表面処理",
-    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_インプラント体の表面処理_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_インプラント体の表面処理_QA.json",
     "htmlPath": "html/subject/歯科理工学/11_インプラント用材料_インプラント体の表面処理.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12072,7 +12072,7 @@ const DATA = [
   {
     "id": "インプラント用材料_生体吸収性材料",
     "title": "インプラント用材料_生体吸収性材料",
-    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_生体吸収性材料_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_生体吸収性材料_QA.json",
     "htmlPath": "html/subject/歯科理工学/11_インプラント用材料_生体吸収性材料.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12080,7 +12080,7 @@ const DATA = [
   {
     "id": "インプラント用材料_骨接合・顎骨再建プレート",
     "title": "インプラント用材料_骨接合・顎骨再建プレート",
-    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_骨接合・顎骨再建プレート_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_骨接合・顎骨再建プレート_QA.json",
     "htmlPath": "html/subject/歯科理工学/11_インプラント用材料_骨接合・顎骨再建プレート.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12088,7 +12088,7 @@ const DATA = [
   {
     "id": "インプラント用材料_骨補填用材料",
     "title": "インプラント用材料_骨補填用材料",
-    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_骨補填用材料_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/11_インプラント用材料_骨補填用材料_QA.json",
     "htmlPath": "html/subject/歯科理工学/11_インプラント用材料_骨補填用材料.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12096,7 +12096,7 @@ const DATA = [
   {
     "id": "材料の取り扱い技術_熱処理",
     "title": "材料の取り扱い技術_熱処理",
-    "qaPath": "qa/subject/歯科理工学/12_材料の取り扱い技術_熱処理_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/12_材料の取り扱い技術_熱処理_QA.json",
     "htmlPath": "html/subject/歯科理工学/12_材料の取り扱い技術_熱処理.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12104,7 +12104,7 @@ const DATA = [
   {
     "id": "材料の取り扱い技術_鋳造",
     "title": "材料の取り扱い技術_鋳造",
-    "qaPath": "qa/subject/歯科理工学/12_材料の取り扱い技術_鋳造_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/12_材料の取り扱い技術_鋳造_QA.json",
     "htmlPath": "html/subject/歯科理工学/12_材料の取り扱い技術_鋳造.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12112,7 +12112,7 @@ const DATA = [
   {
     "id": "材料の取り扱い技術_鋳造欠陥",
     "title": "材料の取り扱い技術_鋳造欠陥",
-    "qaPath": "qa/subject/歯科理工学/12_材料の取り扱い技術_鋳造欠陥_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/12_材料の取り扱い技術_鋳造欠陥_QA.json",
     "htmlPath": "html/subject/歯科理工学/12_材料の取り扱い技術_鋳造欠陥.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12120,7 +12120,7 @@ const DATA = [
   {
     "id": "歯科用機械・器具_保存治療用器具",
     "title": "歯科用機械・器具_保存治療用器具",
-    "qaPath": "qa/subject/歯科理工学/13_歯科用機械・器具_保存治療用器具_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/13_歯科用機械・器具_保存治療用器具_QA.json",
     "htmlPath": "html/subject/歯科理工学/13_歯科用機械・器具_保存治療用器具.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12128,7 +12128,7 @@ const DATA = [
   {
     "id": "歯科用機械・器具_切削・研削・研磨材",
     "title": "歯科用機械・器具_切削・研削・研磨材",
-    "qaPath": "qa/subject/歯科理工学/13_歯科用機械・器具_切削・研削・研磨材_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/13_歯科用機械・器具_切削・研削・研磨材_QA.json",
     "htmlPath": "html/subject/歯科理工学/13_歯科用機械・器具_切削・研削・研磨材.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12136,7 +12136,7 @@ const DATA = [
   {
     "id": "歯科用機械・器具_回転切削器械",
     "title": "歯科用機械・器具_回転切削器械",
-    "qaPath": "qa/subject/歯科理工学/13_歯科用機械・器具_回転切削器械_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/13_歯科用機械・器具_回転切削器械_QA.json",
     "htmlPath": "html/subject/歯科理工学/13_歯科用機械・器具_回転切削器械.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12144,7 +12144,7 @@ const DATA = [
   {
     "id": "歯科用機械・器具_歯科用レーザー",
     "title": "歯科用機械・器具_歯科用レーザー",
-    "qaPath": "qa/subject/歯科理工学/13_歯科用機械・器具_歯科用レーザー_QA.txt",
+    "qaPath": "qa/subject/歯科理工学/13_歯科用機械・器具_歯科用レーザー_QA.json",
     "htmlPath": "html/subject/歯科理工学/13_歯科用機械・器具_歯科用レーザー.html",
     "subject": "歯科理工",
     "subjectCategory": "基礎"
@@ -12152,7 +12152,7 @@ const DATA = [
   {
     "id": "歯と歯周組織_セメント質の成分",
     "title": "歯と歯周組織_セメント質の成分",
-    "qaPath": "qa/subject/生化学/02_歯と歯周組織_セメント質の成分_QA.txt",
+    "qaPath": "qa/subject/生化学/02_歯と歯周組織_セメント質の成分_QA.json",
     "htmlPath": "html/subject/生化学/02_歯と歯周組織_セメント質の成分.html",
     "subject": "生化",
     "subjectCategory": "基礎"
@@ -12160,7 +12160,7 @@ const DATA = [
   {
     "id": "総論、統計学_データの種類",
     "title": "総論、統計学_データの種類",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_データの種類_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_データの種類_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_データの種類.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12168,7 +12168,7 @@ const DATA = [
   {
     "id": "総論、統計学_リスク要因曝露の影響ーオッズ比",
     "title": "総論、統計学_リスク要因曝露の影響ーオッズ比",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_リスク要因曝露の影響ーオッズ比_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_リスク要因曝露の影響ーオッズ比_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_リスク要因曝露の影響ーオッズ比.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12176,7 +12176,7 @@ const DATA = [
   {
     "id": "総論、統計学_リスク要因曝露の影響ー寄与危険度",
     "title": "総論、統計学_リスク要因曝露の影響ー寄与危険度",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_リスク要因曝露の影響ー寄与危険度_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_リスク要因曝露の影響ー寄与危険度_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_リスク要因曝露の影響ー寄与危険度.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12184,7 +12184,7 @@ const DATA = [
   {
     "id": "総論、統計学_リスク要因曝露の影響ー症例対照研究",
     "title": "総論、統計学_リスク要因曝露の影響ー症例対照研究",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_リスク要因曝露の影響ー症例対照研究_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_リスク要因曝露の影響ー症例対照研究_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_リスク要因曝露の影響ー症例対照研究.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12192,7 +12192,7 @@ const DATA = [
   {
     "id": "総論、統計学_リスク要因曝露の影響ー相対危険度",
     "title": "総論、統計学_リスク要因曝露の影響ー相対危険度",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_リスク要因曝露の影響ー相対危険度_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_リスク要因曝露の影響ー相対危険度_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_リスク要因曝露の影響ー相対危険度.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12200,7 +12200,7 @@ const DATA = [
   {
     "id": "総論、統計学_介入研究",
     "title": "総論、統計学_介入研究",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_介入研究_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_介入研究_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_介入研究.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12208,7 +12208,7 @@ const DATA = [
   {
     "id": "総論、統計学_分析疫学",
     "title": "総論、統計学_分析疫学",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_分析疫学_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_分析疫学_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_分析疫学.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12216,7 +12216,7 @@ const DATA = [
   {
     "id": "総論、統計学_検定法",
     "title": "総論、統計学_検定法",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_検定法_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_検定法_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_検定法.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12224,7 +12224,7 @@ const DATA = [
   {
     "id": "総論、統計学_疫学の研究方法",
     "title": "総論、統計学_疫学の研究方法",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_疫学の研究方法_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_疫学の研究方法_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_疫学の研究方法.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12232,7 +12232,7 @@ const DATA = [
   {
     "id": "総論、統計学_統計用語",
     "title": "総論、統計学_統計用語",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_統計用語_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_統計用語_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_統計用語.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12240,7 +12240,7 @@ const DATA = [
   {
     "id": "総論、統計学_費用対効果分析",
     "title": "総論、統計学_費用対効果分析",
-    "qaPath": "qa/subject/疫学/01_総論、統計学_費用対効果分析_QA.txt",
+    "qaPath": "qa/subject/疫学/01_総論、統計学_費用対効果分析_QA.json",
     "htmlPath": "html/subject/疫学/01_総論、統計学_費用対効果分析.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12248,7 +12248,7 @@ const DATA = [
   {
     "id": "疫学の指標_CFI",
     "title": "疫学の指標_CFI",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_CFI_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_CFI_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_CFI.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12256,7 +12256,7 @@ const DATA = [
   {
     "id": "疫学の指標_CPI",
     "title": "疫学の指標_CPI",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_CPI_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_CPI_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_CPI.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12264,7 +12264,7 @@ const DATA = [
   {
     "id": "疫学の指標_DMF歯率",
     "title": "疫学の指標_DMF歯率",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_DMF歯率_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_DMF歯率_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_DMF歯率.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12272,7 +12272,7 @@ const DATA = [
   {
     "id": "疫学の指標_OHI",
     "title": "疫学の指標_OHI",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_OHI_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_OHI_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_OHI.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12280,7 +12280,7 @@ const DATA = [
   {
     "id": "疫学の指標_PCR",
     "title": "疫学の指標_PCR",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_PCR_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_PCR_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_PCR.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12288,7 +12288,7 @@ const DATA = [
   {
     "id": "疫学の指標_PMA指数",
     "title": "疫学の指標_PMA指数",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_PMA指数_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_PMA指数_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_PMA指数.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12296,7 +12296,7 @@ const DATA = [
   {
     "id": "疫学の指標_スクリーニング検査",
     "title": "疫学の指標_スクリーニング検査",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_スクリーニング検査_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_スクリーニング検査_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_スクリーニング検査.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12304,7 +12304,7 @@ const DATA = [
   {
     "id": "疫学の指標_口腔内診査",
     "title": "疫学の指標_口腔内診査",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_口腔内診査_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_口腔内診査_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_口腔内診査.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12312,7 +12312,7 @@ const DATA = [
   {
     "id": "疫学の指標_歯口清掃状態の統計指標",
     "title": "疫学の指標_歯口清掃状態の統計指標",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_歯口清掃状態の統計指標_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_歯口清掃状態の統計指標_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_歯口清掃状態の統計指標.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12320,7 +12320,7 @@ const DATA = [
   {
     "id": "疫学の指標_齲蝕抑制率",
     "title": "疫学の指標_齲蝕抑制率",
-    "qaPath": "qa/subject/疫学/02_疫学の指標_齲蝕抑制率_QA.txt",
+    "qaPath": "qa/subject/疫学/02_疫学の指標_齲蝕抑制率_QA.json",
     "htmlPath": "html/subject/疫学/02_疫学の指標_齲蝕抑制率.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12328,7 +12328,7 @@ const DATA = [
   {
     "id": "齲蝕・歯周病・その他の疫学_WHOの口腔保健目標",
     "title": "齲蝕・歯周病・その他の疫学_WHOの口腔保健目標",
-    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_WHOの口腔保健目標_QA.txt",
+    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_WHOの口腔保健目標_QA.json",
     "htmlPath": "html/subject/疫学/03_齲蝕・歯周病・その他の疫学_WHOの口腔保健目標.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12336,7 +12336,7 @@ const DATA = [
   {
     "id": "齲蝕・歯周病・その他の疫学_不正咬合の疫学指標",
     "title": "齲蝕・歯周病・その他の疫学_不正咬合の疫学指標",
-    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_不正咬合の疫学指標_QA.txt",
+    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_不正咬合の疫学指標_QA.json",
     "htmlPath": "html/subject/疫学/03_齲蝕・歯周病・その他の疫学_不正咬合の疫学指標.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12344,7 +12344,7 @@ const DATA = [
   {
     "id": "齲蝕・歯周病・その他の疫学_全国乳幼児歯科健診",
     "title": "齲蝕・歯周病・その他の疫学_全国乳幼児歯科健診",
-    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_全国乳幼児歯科健診_QA.txt",
+    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_全国乳幼児歯科健診_QA.json",
     "htmlPath": "html/subject/疫学/03_齲蝕・歯周病・その他の疫学_全国乳幼児歯科健診.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12352,7 +12352,7 @@ const DATA = [
   {
     "id": "齲蝕・歯周病・その他の疫学_国民生活基礎調査",
     "title": "齲蝕・歯周病・その他の疫学_国民生活基礎調査",
-    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_国民生活基礎調査_QA.txt",
+    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_国民生活基礎調査_QA.json",
     "htmlPath": "html/subject/疫学/03_齲蝕・歯周病・その他の疫学_国民生活基礎調査.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12360,7 +12360,7 @@ const DATA = [
   {
     "id": "齲蝕・歯周病・その他の疫学_歯科疾患実態調査",
     "title": "齲蝕・歯周病・その他の疫学_歯科疾患実態調査",
-    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_歯科疾患実態調査_QA.txt",
+    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_歯科疾患実態調査_QA.json",
     "htmlPath": "html/subject/疫学/03_齲蝕・歯周病・その他の疫学_歯科疾患実態調査.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12368,7 +12368,7 @@ const DATA = [
   {
     "id": "齲蝕・歯周病・その他の疫学_永久歯の抜歯原因調査",
     "title": "齲蝕・歯周病・その他の疫学_永久歯の抜歯原因調査",
-    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_永久歯の抜歯原因調査_QA.txt",
+    "qaPath": "qa/subject/疫学/03_齲蝕・歯周病・その他の疫学_永久歯の抜歯原因調査_QA.json",
     "htmlPath": "html/subject/疫学/03_齲蝕・歯周病・その他の疫学_永久歯の抜歯原因調査.html",
     "subject": "疫学",
     "subjectCategory": "基礎"
@@ -12376,7 +12376,7 @@ const DATA = [
   {
     "id": "病理検査_細胞診",
     "title": "病理検査_細胞診",
-    "qaPath": "qa/subject/病理学/01_病理検査_細胞診_QA.txt",
+    "qaPath": "qa/subject/病理学/01_病理検査_細胞診_QA.json",
     "htmlPath": "html/subject/病理学/01_病理検査_細胞診.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12384,7 +12384,7 @@ const DATA = [
   {
     "id": "病理検査_組織診",
     "title": "病理検査_組織診",
-    "qaPath": "qa/subject/病理学/02_病理検査_組織診_QA.txt",
+    "qaPath": "qa/subject/病理学/02_病理検査_組織診_QA.json",
     "htmlPath": "html/subject/病理学/02_病理検査_組織診.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12392,7 +12392,7 @@ const DATA = [
   {
     "id": "病理検査_術中迅速病理診断",
     "title": "病理検査_術中迅速病理診断",
-    "qaPath": "qa/subject/病理学/03_病理検査_術中迅速病理診断_QA.txt",
+    "qaPath": "qa/subject/病理学/03_病理検査_術中迅速病理診断_QA.json",
     "htmlPath": "html/subject/病理学/03_病理検査_術中迅速病理診断.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12400,7 +12400,7 @@ const DATA = [
   {
     "id": "総論_代謝異常_変性",
     "title": "総論_代謝異常_変性",
-    "qaPath": "qa/subject/病理学/04_総論_代謝異常_変性_QA.txt",
+    "qaPath": "qa/subject/病理学/04_総論_代謝異常_変性_QA.json",
     "htmlPath": "html/subject/病理学/04_総論_代謝異常_変性.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12408,7 +12408,7 @@ const DATA = [
   {
     "id": "総論_代謝異常_尿酸代謝異常",
     "title": "総論_代謝異常_尿酸代謝異常",
-    "qaPath": "qa/subject/病理学/05_総論_代謝異常_尿酸代謝異常_QA.txt",
+    "qaPath": "qa/subject/病理学/05_総論_代謝異常_尿酸代謝異常_QA.json",
     "htmlPath": "html/subject/病理学/05_総論_代謝異常_尿酸代謝異常.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12416,7 +12416,7 @@ const DATA = [
   {
     "id": "総論_代謝異常_水電解質代謝異常",
     "title": "総論_代謝異常_水電解質代謝異常",
-    "qaPath": "qa/subject/病理学/06_総論_代謝異常_水電解質代謝異常_QA.txt",
+    "qaPath": "qa/subject/病理学/06_総論_代謝異常_水電解質代謝異常_QA.json",
     "htmlPath": "html/subject/病理学/06_総論_代謝異常_水電解質代謝異常.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12424,7 +12424,7 @@ const DATA = [
   {
     "id": "総論_先天異常_催奇形性",
     "title": "総論_先天異常_催奇形性",
-    "qaPath": "qa/subject/病理学/07_総論_先天異常_催奇形性_QA.txt",
+    "qaPath": "qa/subject/病理学/07_総論_先天異常_催奇形性_QA.json",
     "htmlPath": "html/subject/病理学/07_総論_先天異常_催奇形性.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12432,7 +12432,7 @@ const DATA = [
   {
     "id": "総論_先天異常_遺伝子病",
     "title": "総論_先天異常_遺伝子病",
-    "qaPath": "qa/subject/病理学/08_総論_先天異常_遺伝子病_QA.txt",
+    "qaPath": "qa/subject/病理学/08_総論_先天異常_遺伝子病_QA.json",
     "htmlPath": "html/subject/病理学/08_総論_先天異常_遺伝子病.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12440,7 +12440,7 @@ const DATA = [
   {
     "id": "総論_先天異常_染色体異常",
     "title": "総論_先天異常_染色体異常",
-    "qaPath": "qa/subject/病理学/09_総論_先天異常_染色体異常_QA.txt",
+    "qaPath": "qa/subject/病理学/09_総論_先天異常_染色体異常_QA.json",
     "htmlPath": "html/subject/病理学/09_総論_先天異常_染色体異常.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12448,7 +12448,7 @@ const DATA = [
   {
     "id": "総論_免疫異常_IgG4関連疾患",
     "title": "総論_免疫異常_IgG4関連疾患",
-    "qaPath": "qa/subject/病理学/10_総論_免疫異常_IgG4関連疾患_QA.txt",
+    "qaPath": "qa/subject/病理学/10_総論_免疫異常_IgG4関連疾患_QA.json",
     "htmlPath": "html/subject/病理学/10_総論_免疫異常_IgG4関連疾患.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12456,7 +12456,7 @@ const DATA = [
   {
     "id": "総論_免疫異常_自己免疫疾患",
     "title": "総論_免疫異常_自己免疫疾患",
-    "qaPath": "qa/subject/病理学/11_総論_免疫異常_自己免疫疾患_QA.txt",
+    "qaPath": "qa/subject/病理学/11_総論_免疫異常_自己免疫疾患_QA.json",
     "htmlPath": "html/subject/病理学/11_総論_免疫異常_自己免疫疾患.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12464,7 +12464,7 @@ const DATA = [
   {
     "id": "総論_増殖と修復_再生",
     "title": "総論_増殖と修復_再生",
-    "qaPath": "qa/subject/病理学/12_総論_増殖と修復_再生_QA.txt",
+    "qaPath": "qa/subject/病理学/12_総論_増殖と修復_再生_QA.json",
     "htmlPath": "html/subject/病理学/12_総論_増殖と修復_再生.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12472,7 +12472,7 @@ const DATA = [
   {
     "id": "総論_循環障害_出血の種類",
     "title": "総論_循環障害_出血の種類",
-    "qaPath": "qa/subject/病理学/13_総論_循環障害_出血の種類_QA.txt",
+    "qaPath": "qa/subject/病理学/13_総論_循環障害_出血の種類_QA.json",
     "htmlPath": "html/subject/病理学/13_総論_循環障害_出血の種類.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12480,7 +12480,7 @@ const DATA = [
   {
     "id": "総論_循環障害_塞栓症",
     "title": "総論_循環障害_塞栓症",
-    "qaPath": "qa/subject/病理学/14_総論_循環障害_塞栓症_QA.txt",
+    "qaPath": "qa/subject/病理学/14_総論_循環障害_塞栓症_QA.json",
     "htmlPath": "html/subject/病理学/14_総論_循環障害_塞栓症.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12488,7 +12488,7 @@ const DATA = [
   {
     "id": "総論_循環障害_浮腫",
     "title": "総論_循環障害_浮腫",
-    "qaPath": "qa/subject/病理学/15_総論_循環障害_浮腫_QA.txt",
+    "qaPath": "qa/subject/病理学/15_総論_循環障害_浮腫_QA.json",
     "htmlPath": "html/subject/病理学/15_総論_循環障害_浮腫.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12496,7 +12496,7 @@ const DATA = [
   {
     "id": "総論_感染_細菌感染",
     "title": "総論_感染_細菌感染",
-    "qaPath": "qa/subject/病理学/16_総論_感染_細菌感染_QA.txt",
+    "qaPath": "qa/subject/病理学/16_総論_感染_細菌感染_QA.json",
     "htmlPath": "html/subject/病理学/16_総論_感染_細菌感染.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12504,7 +12504,7 @@ const DATA = [
   {
     "id": "総論_炎症_化膿性炎",
     "title": "総論_炎症_化膿性炎",
-    "qaPath": "qa/subject/病理学/17_総論_炎症_化膿性炎_QA.txt",
+    "qaPath": "qa/subject/病理学/17_総論_炎症_化膿性炎_QA.json",
     "htmlPath": "html/subject/病理学/17_総論_炎症_化膿性炎.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12512,7 +12512,7 @@ const DATA = [
   {
     "id": "総論_炎症_急性炎症の特徴",
     "title": "総論_炎症_急性炎症の特徴",
-    "qaPath": "qa/subject/病理学/18_総論_炎症_急性炎症の特徴_QA.txt",
+    "qaPath": "qa/subject/病理学/18_総論_炎症_急性炎症の特徴_QA.json",
     "htmlPath": "html/subject/病理学/18_総論_炎症_急性炎症の特徴.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12520,7 +12520,7 @@ const DATA = [
   {
     "id": "総論_炎症_滲出性炎",
     "title": "総論_炎症_滲出性炎",
-    "qaPath": "qa/subject/病理学/19_総論_炎症_滲出性炎_QA.txt",
+    "qaPath": "qa/subject/病理学/19_総論_炎症_滲出性炎_QA.json",
     "htmlPath": "html/subject/病理学/19_総論_炎症_滲出性炎.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12528,7 +12528,7 @@ const DATA = [
   {
     "id": "総論_炎症_炎症の分類",
     "title": "総論_炎症_炎症の分類",
-    "qaPath": "qa/subject/病理学/20_総論_炎症_炎症の分類_QA.txt",
+    "qaPath": "qa/subject/病理学/20_総論_炎症_炎症の分類_QA.json",
     "htmlPath": "html/subject/病理学/20_総論_炎症_炎症の分類.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12536,7 +12536,7 @@ const DATA = [
   {
     "id": "総論_炎症_炎症の症候",
     "title": "総論_炎症_炎症の症候",
-    "qaPath": "qa/subject/病理学/21_総論_炎症_炎症の症候_QA.txt",
+    "qaPath": "qa/subject/病理学/21_総論_炎症_炎症の症候_QA.json",
     "htmlPath": "html/subject/病理学/21_総論_炎症_炎症の症候.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12544,7 +12544,7 @@ const DATA = [
   {
     "id": "総論_炎症_肉芽腫性炎",
     "title": "総論_炎症_肉芽腫性炎",
-    "qaPath": "qa/subject/病理学/22_総論_炎症_肉芽腫性炎_QA.txt",
+    "qaPath": "qa/subject/病理学/22_総論_炎症_肉芽腫性炎_QA.json",
     "htmlPath": "html/subject/病理学/22_総論_炎症_肉芽腫性炎.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12552,7 +12552,7 @@ const DATA = [
   {
     "id": "総論_生体適応現象_化生",
     "title": "総論_生体適応現象_化生",
-    "qaPath": "qa/subject/病理学/23_総論_生体適応現象_化生_QA.txt",
+    "qaPath": "qa/subject/病理学/23_総論_生体適応現象_化生_QA.json",
     "htmlPath": "html/subject/病理学/23_総論_生体適応現象_化生.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12560,7 +12560,7 @@ const DATA = [
   {
     "id": "総論_生体適応現象_増生",
     "title": "総論_生体適応現象_増生",
-    "qaPath": "qa/subject/病理学/24_総論_生体適応現象_増生_QA.txt",
+    "qaPath": "qa/subject/病理学/24_総論_生体適応現象_増生_QA.json",
     "htmlPath": "html/subject/病理学/24_総論_生体適応現象_増生.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12568,7 +12568,7 @@ const DATA = [
   {
     "id": "総論_病因論",
     "title": "総論_病因論",
-    "qaPath": "qa/subject/病理学/25_総論_病因論_QA.txt",
+    "qaPath": "qa/subject/病理学/25_総論_病因論_QA.json",
     "htmlPath": "html/subject/病理学/25_総論_病因論.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12576,7 +12576,7 @@ const DATA = [
   {
     "id": "総論_細胞死_アポトーシス",
     "title": "総論_細胞死_アポトーシス",
-    "qaPath": "qa/subject/病理学/26_総論_細胞死_アポトーシス_QA.txt",
+    "qaPath": "qa/subject/病理学/26_総論_細胞死_アポトーシス_QA.json",
     "htmlPath": "html/subject/病理学/26_総論_細胞死_アポトーシス.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12584,7 +12584,7 @@ const DATA = [
   {
     "id": "総論_腫瘍総論_癌遺伝子と癌抑制遺伝子",
     "title": "総論_腫瘍総論_癌遺伝子と癌抑制遺伝子",
-    "qaPath": "qa/subject/病理学/27_総論_腫瘍総論_癌遺伝子と癌抑制遺伝子_QA.txt",
+    "qaPath": "qa/subject/病理学/27_総論_腫瘍総論_癌遺伝子と癌抑制遺伝子_QA.json",
     "htmlPath": "html/subject/病理学/27_総論_腫瘍総論_癌遺伝子と癌抑制遺伝子.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12592,7 +12592,7 @@ const DATA = [
   {
     "id": "総論_腫瘍総論_腫瘍の分類",
     "title": "総論_腫瘍総論_腫瘍の分類",
-    "qaPath": "qa/subject/病理学/28_総論_腫瘍総論_腫瘍の分類_QA.txt",
+    "qaPath": "qa/subject/病理学/28_総論_腫瘍総論_腫瘍の分類_QA.json",
     "htmlPath": "html/subject/病理学/28_総論_腫瘍総論_腫瘍の分類.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12600,7 +12600,7 @@ const DATA = [
   {
     "id": "嚢胞_嚢胞の分類",
     "title": "嚢胞_嚢胞の分類",
-    "qaPath": "qa/subject/病理学/29_嚢胞_嚢胞の分類_QA.txt",
+    "qaPath": "qa/subject/病理学/29_嚢胞_嚢胞の分類_QA.json",
     "htmlPath": "html/subject/病理学/29_嚢胞_嚢胞の分類.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12608,7 +12608,7 @@ const DATA = [
   {
     "id": "嚢胞_嚢胞の構造",
     "title": "嚢胞_嚢胞の構造",
-    "qaPath": "qa/subject/病理学/30_嚢胞_嚢胞の構造_QA.txt",
+    "qaPath": "qa/subject/病理学/30_嚢胞_嚢胞の構造_QA.json",
     "htmlPath": "html/subject/病理学/30_嚢胞_嚢胞の構造.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12616,7 +12616,7 @@ const DATA = [
   {
     "id": "嚢胞_嚢胞の発生する組織",
     "title": "嚢胞_嚢胞の発生する組織",
-    "qaPath": "qa/subject/病理学/31_嚢胞_嚢胞の発生する組織_QA.txt",
+    "qaPath": "qa/subject/病理学/31_嚢胞_嚢胞の発生する組織_QA.json",
     "htmlPath": "html/subject/病理学/31_嚢胞_嚢胞の発生する組織.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12624,7 +12624,7 @@ const DATA = [
   {
     "id": "腫瘍_口腔粘膜の悪性腫瘍",
     "title": "腫瘍_口腔粘膜の悪性腫瘍",
-    "qaPath": "qa/subject/病理学/32_腫瘍_口腔粘膜の悪性腫瘍_QA.txt",
+    "qaPath": "qa/subject/病理学/32_腫瘍_口腔粘膜の悪性腫瘍_QA.json",
     "htmlPath": "html/subject/病理学/32_腫瘍_口腔粘膜の悪性腫瘍.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12632,7 +12632,7 @@ const DATA = [
   {
     "id": "腫瘍_口腔粘膜の良性腫瘍",
     "title": "腫瘍_口腔粘膜の良性腫瘍",
-    "qaPath": "qa/subject/病理学/33_腫瘍_口腔粘膜の良性腫瘍_QA.txt",
+    "qaPath": "qa/subject/病理学/33_腫瘍_口腔粘膜の良性腫瘍_QA.json",
     "htmlPath": "html/subject/病理学/33_腫瘍_口腔粘膜の良性腫瘍.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12640,7 +12640,7 @@ const DATA = [
   {
     "id": "腫瘍_唾液腺腫瘍",
     "title": "腫瘍_唾液腺腫瘍",
-    "qaPath": "qa/subject/病理学/34_腫瘍_唾液腺腫瘍_QA.txt",
+    "qaPath": "qa/subject/病理学/34_腫瘍_唾液腺腫瘍_QA.json",
     "htmlPath": "html/subject/病理学/34_腫瘍_唾液腺腫瘍.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12648,7 +12648,7 @@ const DATA = [
   {
     "id": "腫瘍_歯原性腫瘍",
     "title": "腫瘍_歯原性腫瘍",
-    "qaPath": "qa/subject/病理学/35_腫瘍_歯原性腫瘍_QA.txt",
+    "qaPath": "qa/subject/病理学/35_腫瘍_歯原性腫瘍_QA.json",
     "htmlPath": "html/subject/病理学/35_腫瘍_歯原性腫瘍.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12656,7 +12656,7 @@ const DATA = [
   {
     "id": "腫瘍_非上皮性悪性腫瘍",
     "title": "腫瘍_非上皮性悪性腫瘍",
-    "qaPath": "qa/subject/病理学/36_腫瘍_非上皮性悪性腫瘍_QA.txt",
+    "qaPath": "qa/subject/病理学/36_腫瘍_非上皮性悪性腫瘍_QA.json",
     "htmlPath": "html/subject/病理学/36_腫瘍_非上皮性悪性腫瘍.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12664,7 +12664,7 @@ const DATA = [
   {
     "id": "口腔粘膜疾患_口腔扁平苔癬",
     "title": "口腔粘膜疾患_口腔扁平苔癬",
-    "qaPath": "qa/subject/病理学/37_口腔粘膜疾患_口腔扁平苔癬_QA.txt",
+    "qaPath": "qa/subject/病理学/37_口腔粘膜疾患_口腔扁平苔癬_QA.json",
     "htmlPath": "html/subject/病理学/37_口腔粘膜疾患_口腔扁平苔癬.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12672,7 +12672,7 @@ const DATA = [
   {
     "id": "口腔粘膜疾患_口腔潜在的悪性疾患",
     "title": "口腔粘膜疾患_口腔潜在的悪性疾患",
-    "qaPath": "qa/subject/病理学/38_口腔粘膜疾患_口腔潜在的悪性疾患_QA.txt",
+    "qaPath": "qa/subject/病理学/38_口腔粘膜疾患_口腔潜在的悪性疾患_QA.json",
     "htmlPath": "html/subject/病理学/38_口腔粘膜疾患_口腔潜在的悪性疾患.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12680,7 +12680,7 @@ const DATA = [
   {
     "id": "唾液腺疾患_Küttner腫瘍",
     "title": "唾液腺疾患_Küttner腫瘍",
-    "qaPath": "qa/subject/病理学/39_唾液腺疾患_Küttner腫瘍_QA.txt",
+    "qaPath": "qa/subject/病理学/39_唾液腺疾患_Küttner腫瘍_QA.json",
     "htmlPath": "html/subject/病理学/39_唾液腺疾患_Küttner腫瘍.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12688,7 +12688,7 @@ const DATA = [
   {
     "id": "唾液腺疾患_Sjögren症候群",
     "title": "唾液腺疾患_Sjögren症候群",
-    "qaPath": "qa/subject/病理学/40_唾液腺疾患_Sjögren症候群_QA.txt",
+    "qaPath": "qa/subject/病理学/40_唾液腺疾患_Sjögren症候群_QA.json",
     "htmlPath": "html/subject/病理学/40_唾液腺疾患_Sjögren症候群.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12696,7 +12696,7 @@ const DATA = [
   {
     "id": "全身疾患_骨粗鬆症と合併症",
     "title": "全身疾患_骨粗鬆症と合併症",
-    "qaPath": "qa/subject/病理学/41_全身疾患_骨粗鬆症と合併症_QA.txt",
+    "qaPath": "qa/subject/病理学/41_全身疾患_骨粗鬆症と合併症_QA.json",
     "htmlPath": "html/subject/病理学/41_全身疾患_骨粗鬆症と合併症.html",
     "subject": "病理",
     "subjectCategory": "基礎"
@@ -12704,7 +12704,7 @@ const DATA = [
   {
     "id": "画像_側貌",
     "title": "画像_側貌",
-    "qaPath": "qa/subject/矯正/08a_画像_側貌_QA.txt",
+    "qaPath": "qa/subject/矯正/08a_画像_側貌_QA.json",
     "htmlPath": null,
     "subject": "矯正",
     "subjectCategory": "基礎"
@@ -12712,7 +12712,7 @@ const DATA = [
   {
     "id": "画像_Angle",
     "title": "画像_Angle",
-    "qaPath": "qa/subject/矯正/08b_画像_Angle_QA.txt",
+    "qaPath": "qa/subject/矯正/08b_画像_Angle_QA.json",
     "htmlPath": null,
     "subject": "矯正",
     "subjectCategory": "基礎"
@@ -12720,7 +12720,7 @@ const DATA = [
   {
     "id": "画像_臨床所見",
     "title": "画像_臨床所見",
-    "qaPath": "qa/subject/矯正/08c_画像_臨床所見_QA.txt",
+    "qaPath": "qa/subject/矯正/08c_画像_臨床所見_QA.json",
     "htmlPath": null,
     "subject": "矯正",
     "subjectCategory": "基礎"
@@ -12728,7 +12728,7 @@ const DATA = [
   {
     "id": "画像_器具",
     "title": "画像_器具",
-    "qaPath": "qa/subject/矯正/08d_画像_器具_QA.txt",
+    "qaPath": "qa/subject/矯正/08d_画像_器具_QA.json",
     "htmlPath": null,
     "subject": "矯正",
     "subjectCategory": "基礎"
@@ -12736,7 +12736,7 @@ const DATA = [
   {
     "id": "軟骨と骨",
     "title": "軟骨と骨",
-    "qaPath": "qa/subject/組織学/02_軟骨と骨_QA.txt",
+    "qaPath": "qa/subject/組織学/02_軟骨と骨_QA.json",
     "htmlPath": "html/subject/組織学/02_軟骨と骨.html",
     "subject": "組織",
     "subjectCategory": "基礎"
@@ -12744,7 +12744,7 @@ const DATA = [
   {
     "id": "歯",
     "title": "歯",
-    "qaPath": "qa/subject/組織学/03_歯_QA.txt",
+    "qaPath": "qa/subject/組織学/03_歯_QA.json",
     "htmlPath": "html/subject/組織学/03_歯.html",
     "subject": "組織",
     "subjectCategory": "基礎"
@@ -12752,7 +12752,7 @@ const DATA = [
   {
     "id": "歯周組織",
     "title": "歯周組織",
-    "qaPath": "qa/subject/組織学/04_歯周組織_QA.txt",
+    "qaPath": "qa/subject/組織学/04_歯周組織_QA.json",
     "htmlPath": "html/subject/組織学/04_歯周組織.html",
     "subject": "組織",
     "subjectCategory": "基礎"
@@ -12760,7 +12760,7 @@ const DATA = [
   {
     "id": "唾液腺",
     "title": "唾液腺",
-    "qaPath": "qa/subject/組織学/05_唾液腺_QA.txt",
+    "qaPath": "qa/subject/組織学/05_唾液腺_QA.json",
     "htmlPath": "html/subject/組織学/05_唾液腺.html",
     "subject": "組織",
     "subjectCategory": "基礎"
@@ -12768,7 +12768,7 @@ const DATA = [
   {
     "id": "発生",
     "title": "発生",
-    "qaPath": "qa/subject/組織学/06_発生_QA.txt",
+    "qaPath": "qa/subject/組織学/06_発生_QA.json",
     "htmlPath": "html/subject/組織学/06_発生.html",
     "subject": "組織",
     "subjectCategory": "基礎"
@@ -12776,7 +12776,7 @@ const DATA = [
   {
     "id": "加齢変化",
     "title": "加齢変化",
-    "qaPath": "qa/subject/組織学/07_加齢変化_QA.txt",
+    "qaPath": "qa/subject/組織学/07_加齢変化_QA.json",
     "htmlPath": "html/subject/組織学/07_加齢変化.html",
     "subject": "組織",
     "subjectCategory": "基礎"
@@ -12784,7 +12784,7 @@ const DATA = [
   {
     "id": "薬物療法の目的と分類_補充療法",
     "title": "薬物療法の目的と分類_補充療法",
-    "qaPath": "qa/subject/薬理学/01_薬物療法の目的と分類_補充療法_QA.txt",
+    "qaPath": "qa/subject/薬理学/01_薬物療法の目的と分類_補充療法_QA.json",
     "htmlPath": "html/subject/薬理学/01_薬物療法の目的と分類_補充療法.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12792,7 +12792,7 @@ const DATA = [
   {
     "id": "薬物の管理_劇薬・毒薬・麻薬・向精神薬の管理",
     "title": "薬物の管理_劇薬・毒薬・麻薬・向精神薬の管理",
-    "qaPath": "qa/subject/薬理学/02_薬物の管理_劇薬・毒薬・麻薬・向精神薬の管理_QA.txt",
+    "qaPath": "qa/subject/薬理学/02_薬物の管理_劇薬・毒薬・麻薬・向精神薬の管理_QA.json",
     "htmlPath": "html/subject/薬理学/02_薬物の管理_劇薬・毒薬・麻薬・向精神薬の管理.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12800,7 +12800,7 @@ const DATA = [
   {
     "id": "薬物の管理_後発医薬品",
     "title": "薬物の管理_後発医薬品",
-    "qaPath": "qa/subject/薬理学/02_薬物の管理_後発医薬品_QA.txt",
+    "qaPath": "qa/subject/薬理学/02_薬物の管理_後発医薬品_QA.json",
     "htmlPath": "html/subject/薬理学/02_薬物の管理_後発医薬品.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12808,7 +12808,7 @@ const DATA = [
   {
     "id": "薬物の管理_臨床試験",
     "title": "薬物の管理_臨床試験",
-    "qaPath": "qa/subject/薬理学/02_薬物の管理_臨床試験_QA.txt",
+    "qaPath": "qa/subject/薬理学/02_薬物の管理_臨床試験_QA.json",
     "htmlPath": "html/subject/薬理学/02_薬物の管理_臨床試験.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12816,7 +12816,7 @@ const DATA = [
   {
     "id": "用量_用量",
     "title": "用量_用量",
-    "qaPath": "qa/subject/薬理学/03_用量_用量_QA.txt",
+    "qaPath": "qa/subject/薬理学/03_用量_用量_QA.json",
     "htmlPath": "html/subject/薬理学/03_用量_用量.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12824,7 +12824,7 @@ const DATA = [
   {
     "id": "薬理作用の機序_受容体を介さない作用",
     "title": "薬理作用の機序_受容体を介さない作用",
-    "qaPath": "qa/subject/薬理学/04_薬理作用の機序_受容体を介さない作用_QA.txt",
+    "qaPath": "qa/subject/薬理学/04_薬理作用の機序_受容体を介さない作用_QA.json",
     "htmlPath": "html/subject/薬理学/04_薬理作用の機序_受容体を介さない作用.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12832,7 +12832,7 @@ const DATA = [
   {
     "id": "薬理作用の機序_受容体を介する作用",
     "title": "薬理作用の機序_受容体を介する作用",
-    "qaPath": "qa/subject/薬理学/04_薬理作用の機序_受容体を介する作用_QA.txt",
+    "qaPath": "qa/subject/薬理学/04_薬理作用の機序_受容体を介する作用_QA.json",
     "htmlPath": "html/subject/薬理学/04_薬理作用の機序_受容体を介する作用.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12840,7 +12840,7 @@ const DATA = [
   {
     "id": "薬物動態_バイオアベイラビリティ",
     "title": "薬物動態_バイオアベイラビリティ",
-    "qaPath": "qa/subject/薬理学/05_薬物動態_バイオアベイラビリティ_QA.txt",
+    "qaPath": "qa/subject/薬理学/05_薬物動態_バイオアベイラビリティ_QA.json",
     "htmlPath": "html/subject/薬理学/05_薬物動態_バイオアベイラビリティ.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12848,7 +12848,7 @@ const DATA = [
   {
     "id": "薬物動態_分布",
     "title": "薬物動態_分布",
-    "qaPath": "qa/subject/薬理学/05_薬物動態_分布_QA.txt",
+    "qaPath": "qa/subject/薬理学/05_薬物動態_分布_QA.json",
     "htmlPath": "html/subject/薬理学/05_薬物動態_分布.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12856,7 +12856,7 @@ const DATA = [
   {
     "id": "薬物動態_吸収",
     "title": "薬物動態_吸収",
-    "qaPath": "qa/subject/薬理学/05_薬物動態_吸収_QA.txt",
+    "qaPath": "qa/subject/薬理学/05_薬物動態_吸収_QA.json",
     "htmlPath": "html/subject/薬理学/05_薬物動態_吸収.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12864,7 +12864,7 @@ const DATA = [
   {
     "id": "薬物動態_排泄",
     "title": "薬物動態_排泄",
-    "qaPath": "qa/subject/薬理学/05_薬物動態_排泄_QA.txt",
+    "qaPath": "qa/subject/薬理学/05_薬物動態_排泄_QA.json",
     "htmlPath": "html/subject/薬理学/05_薬物動態_排泄.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12872,7 +12872,7 @@ const DATA = [
   {
     "id": "併用と相互作用_拮抗作用",
     "title": "併用と相互作用_拮抗作用",
-    "qaPath": "qa/subject/薬理学/06_併用と相互作用_拮抗作用_QA.txt",
+    "qaPath": "qa/subject/薬理学/06_併用と相互作用_拮抗作用_QA.json",
     "htmlPath": "html/subject/薬理学/06_併用と相互作用_拮抗作用.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12880,7 +12880,7 @@ const DATA = [
   {
     "id": "併用と相互作用_注意が必要な相互作用",
     "title": "併用と相互作用_注意が必要な相互作用",
-    "qaPath": "qa/subject/薬理学/06_併用と相互作用_注意が必要な相互作用_QA.txt",
+    "qaPath": "qa/subject/薬理学/06_併用と相互作用_注意が必要な相互作用_QA.json",
     "htmlPath": "html/subject/薬理学/06_併用と相互作用_注意が必要な相互作用.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12888,7 +12888,7 @@ const DATA = [
   {
     "id": "併用と相互作用_薬物相互作用",
     "title": "併用と相互作用_薬物相互作用",
-    "qaPath": "qa/subject/薬理学/06_併用と相互作用_薬物相互作用_QA.txt",
+    "qaPath": "qa/subject/薬理学/06_併用と相互作用_薬物相互作用_QA.json",
     "htmlPath": "html/subject/薬理学/06_併用と相互作用_薬物相互作用.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12896,7 +12896,7 @@ const DATA = [
   {
     "id": "副作用_副作用（全身）",
     "title": "副作用_副作用（全身）",
-    "qaPath": "qa/subject/薬理学/07_副作用_副作用（全身）_QA.txt",
+    "qaPath": "qa/subject/薬理学/07_副作用_副作用（全身）_QA.json",
     "htmlPath": "html/subject/薬理学/07_副作用_副作用（全身）.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12904,7 +12904,7 @@ const DATA = [
   {
     "id": "副作用_副作用（口腔・顎顔面領域）",
     "title": "副作用_副作用（口腔・顎顔面領域）",
-    "qaPath": "qa/subject/薬理学/07_副作用_副作用（口腔・顎顔面領域）_QA.txt",
+    "qaPath": "qa/subject/薬理学/07_副作用_副作用（口腔・顎顔面領域）_QA.json",
     "htmlPath": "html/subject/薬理学/07_副作用_副作用（口腔・顎顔面領域）.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12912,7 +12912,7 @@ const DATA = [
   {
     "id": "薬物適用上の注意点_妊婦",
     "title": "薬物適用上の注意点_妊婦",
-    "qaPath": "qa/subject/薬理学/08_薬物適用上の注意点_妊婦_QA.txt",
+    "qaPath": "qa/subject/薬理学/08_薬物適用上の注意点_妊婦_QA.json",
     "htmlPath": "html/subject/薬理学/08_薬物適用上の注意点_妊婦.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12920,7 +12920,7 @@ const DATA = [
   {
     "id": "薬物適用上の注意点_高齢者",
     "title": "薬物適用上の注意点_高齢者",
-    "qaPath": "qa/subject/薬理学/08_薬物適用上の注意点_高齢者_QA.txt",
+    "qaPath": "qa/subject/薬理学/08_薬物適用上の注意点_高齢者_QA.json",
     "htmlPath": "html/subject/薬理学/08_薬物適用上の注意点_高齢者.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12928,7 +12928,7 @@ const DATA = [
   {
     "id": "薬理学各論_ステロイド性抗炎症薬",
     "title": "薬理学各論_ステロイド性抗炎症薬",
-    "qaPath": "qa/subject/薬理学/09_薬理学各論_ステロイド性抗炎症薬_QA.txt",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_ステロイド性抗炎症薬_QA.json",
     "htmlPath": "html/subject/薬理学/09_薬理学各論_ステロイド性抗炎症薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12936,7 +12936,7 @@ const DATA = [
   {
     "id": "薬理学各論_局所麻酔薬",
     "title": "薬理学各論_局所麻酔薬",
-    "qaPath": "qa/subject/薬理学/09_薬理学各論_局所麻酔薬_QA.txt",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_局所麻酔薬_QA.json",
     "htmlPath": "html/subject/薬理学/09_薬理学各論_局所麻酔薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12944,7 +12944,7 @@ const DATA = [
   {
     "id": "薬理学各論_抗凝固薬",
     "title": "薬理学各論_抗凝固薬",
-    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗凝固薬_QA.txt",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗凝固薬_QA.json",
     "htmlPath": "html/subject/薬理学/09_薬理学各論_抗凝固薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12952,7 +12952,7 @@ const DATA = [
   {
     "id": "薬理学各論_抗悪性腫瘍薬",
     "title": "薬理学各論_抗悪性腫瘍薬",
-    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗悪性腫瘍薬_QA.txt",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗悪性腫瘍薬_QA.json",
     "htmlPath": "html/subject/薬理学/09_薬理学各論_抗悪性腫瘍薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12960,7 +12960,7 @@ const DATA = [
   {
     "id": "薬理学各論_抗真菌薬",
     "title": "薬理学各論_抗真菌薬",
-    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗真菌薬_QA.txt",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗真菌薬_QA.json",
     "htmlPath": "html/subject/薬理学/09_薬理学各論_抗真菌薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12968,7 +12968,7 @@ const DATA = [
   {
     "id": "薬理学各論_抗菌薬",
     "title": "薬理学各論_抗菌薬",
-    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗菌薬_QA.txt",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_抗菌薬_QA.json",
     "htmlPath": "html/subject/薬理学/09_薬理学各論_抗菌薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12976,7 +12976,7 @@ const DATA = [
   {
     "id": "薬理学各論_鎮痛薬",
     "title": "薬理学各論_鎮痛薬",
-    "qaPath": "qa/subject/薬理学/09_薬理学各論_鎮痛薬_QA.txt",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_鎮痛薬_QA.json",
     "htmlPath": "html/subject/薬理学/09_薬理学各論_鎮痛薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12984,7 +12984,7 @@ const DATA = [
   {
     "id": "薬理学各論_降圧薬",
     "title": "薬理学各論_降圧薬",
-    "qaPath": "qa/subject/薬理学/09_薬理学各論_降圧薬_QA.txt",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_降圧薬_QA.json",
     "htmlPath": "html/subject/薬理学/09_薬理学各論_降圧薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -12992,7 +12992,7 @@ const DATA = [
   {
     "id": "薬理学各論_非ステロイド性抗炎症薬",
     "title": "薬理学各論_非ステロイド性抗炎症薬",
-    "qaPath": "qa/subject/薬理学/09_薬理学各論_非ステロイド性抗炎症薬_QA.txt",
+    "qaPath": "qa/subject/薬理学/09_薬理学各論_非ステロイド性抗炎症薬_QA.json",
     "htmlPath": "html/subject/薬理学/09_薬理学各論_非ステロイド性抗炎症薬.html",
     "subject": "薬理",
     "subjectCategory": "基礎"
@@ -13000,7 +13000,7 @@ const DATA = [
   {
     "id": "部分床義歯の構成と要件_部分床義歯の構成",
     "title": "部分床義歯の構成と要件_部分床義歯の構成",
-    "qaPath": "qa/subject/部分床義歯学/01_部分床義歯の構成と要件_部分床義歯の構成_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/01_部分床義歯の構成と要件_部分床義歯の構成_QA.json",
     "htmlPath": "html/subject/部分床義歯学/01_部分床義歯の構成と要件_部分床義歯の構成.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13008,7 +13008,7 @@ const DATA = [
   {
     "id": "支台装置_支台装置",
     "title": "支台装置_支台装置",
-    "qaPath": "qa/subject/部分床義歯学/02_支台装置_支台装置_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/02_支台装置_支台装置_QA.json",
     "htmlPath": "html/subject/部分床義歯学/02_支台装置_支台装置.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13016,7 +13016,7 @@ const DATA = [
   {
     "id": "その他の構成装置_その他の構成装置",
     "title": "その他の構成装置_その他の構成装置",
-    "qaPath": "qa/subject/部分床義歯学/03_その他の構成装置_その他の構成装置_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/03_その他の構成装置_その他の構成装置_QA.json",
     "htmlPath": "html/subject/部分床義歯学/03_その他の構成装置_その他の構成装置.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13024,7 +13024,7 @@ const DATA = [
   {
     "id": "連結子_連結子",
     "title": "連結子_連結子",
-    "qaPath": "qa/subject/部分床義歯学/04_連結子_連結子_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/04_連結子_連結子_QA.json",
     "htmlPath": "html/subject/部分床義歯学/04_連結子_連結子.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13032,7 +13032,7 @@ const DATA = [
   {
     "id": "診査診断_前処置_診査・診断",
     "title": "診査診断_前処置_診査・診断",
-    "qaPath": "qa/subject/部分床義歯学/05_診査診断_前処置_診査・診断_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/05_診査診断_前処置_診査・診断_QA.json",
     "htmlPath": "html/subject/部分床義歯学/05_診査診断_前処置_診査・診断.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13040,7 +13040,7 @@ const DATA = [
   {
     "id": "印象採得_印象採得",
     "title": "印象採得_印象採得",
-    "qaPath": "qa/subject/部分床義歯学/06_印象採得_印象採得_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/06_印象採得_印象採得_QA.json",
     "htmlPath": "html/subject/部分床義歯学/06_印象採得_印象採得.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13048,7 +13048,7 @@ const DATA = [
   {
     "id": "設計_設計",
     "title": "設計_設計",
-    "qaPath": "qa/subject/部分床義歯学/07_設計_設計_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/07_設計_設計_QA.json",
     "htmlPath": "html/subject/部分床義歯学/07_設計_設計.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13056,7 +13056,7 @@ const DATA = [
   {
     "id": "メタルフレームの製作_メタルフレームの製作",
     "title": "メタルフレームの製作_メタルフレームの製作",
-    "qaPath": "qa/subject/部分床義歯学/08_メタルフレームの製作_メタルフレームの製作_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/08_メタルフレームの製作_メタルフレームの製作_QA.json",
     "htmlPath": "html/subject/部分床義歯学/08_メタルフレームの製作_メタルフレームの製作.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13064,7 +13064,7 @@ const DATA = [
   {
     "id": "咬合採得_咬合採得",
     "title": "咬合採得_咬合採得",
-    "qaPath": "qa/subject/部分床義歯学/09_咬合採得_咬合採得_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/09_咬合採得_咬合採得_QA.json",
     "htmlPath": "html/subject/部分床義歯学/09_咬合採得_咬合採得.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13072,7 +13072,7 @@ const DATA = [
   {
     "id": "口腔内試適_調整_装着_術後管理_口腔内試適",
     "title": "口腔内試適_調整_装着_術後管理_口腔内試適",
-    "qaPath": "qa/subject/部分床義歯学/10_口腔内試適_調整_装着_術後管理_口腔内試適_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/10_口腔内試適_調整_装着_術後管理_口腔内試適_QA.json",
     "htmlPath": "html/subject/部分床義歯学/10_口腔内試適_調整_装着_術後管理_口腔内試適.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13080,7 +13080,7 @@ const DATA = [
   {
     "id": "特殊な義歯_特殊な義歯",
     "title": "特殊な義歯_特殊な義歯",
-    "qaPath": "qa/subject/部分床義歯学/11_特殊な義歯_特殊な義歯_QA.txt",
+    "qaPath": "qa/subject/部分床義歯学/11_特殊な義歯_特殊な義歯_QA.json",
     "htmlPath": "html/subject/部分床義歯学/11_特殊な義歯_特殊な義歯.html",
     "subject": "部分床義歯",
     "subjectCategory": "基礎"
@@ -13827,6 +13827,726 @@ const DATA = [
     "qaPath": "qa/subject/歯科麻酔学/07_救急蘇生法_救急時の診断_QA.json",
     "htmlPath": "html/subject/歯科麻酔学/07_救急蘇生法_救急時の診断.html",
     "subject": "歯科麻酔",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_上顎の発育異常を伴う症候群",
+    "title": "先天異常・発育不全_上顎の発育異常を伴う症候群",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_上顎の発育異常を伴う症候群_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_上顎の発育異常を伴う症候群.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_下顎の発育異常を伴う症候群",
+    "title": "先天異常・発育不全_下顎の発育異常を伴う症候群",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_下顎の発育異常を伴う症候群_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_下顎の発育異常を伴う症候群.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_口唇裂の治療",
+    "title": "先天異常・発育不全_口唇裂の治療",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_口唇裂の治療_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_口唇裂の治療.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_口唇裂・口蓋裂・唇顎口蓋裂の病態",
+    "title": "先天異常・発育不全_口唇裂・口蓋裂・唇顎口蓋裂の病態",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_口唇裂・口蓋裂・唇顎口蓋裂の病態_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_口唇裂・口蓋裂・唇顎口蓋裂の病態.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_口蓋裂の治療",
+    "title": "先天異常・発育不全_口蓋裂の治療",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_口蓋裂の治療_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_口蓋裂の治療.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_唇顎口蓋裂の治療",
+    "title": "先天異常・発育不全_唇顎口蓋裂の治療",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_唇顎口蓋裂の治療_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_唇顎口蓋裂の治療.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_染色体異常による症候群",
+    "title": "先天異常・発育不全_染色体異常による症候群",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_染色体異常による症候群_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_染色体異常による症候群.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_歯の異常を伴う症候群",
+    "title": "先天異常・発育不全_歯の異常を伴う症候群",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_歯の異常を伴う症候群_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_歯の異常を伴う症候群.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_遺伝性を示す疾患",
+    "title": "先天異常・発育不全_遺伝性を示す疾患",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_遺伝性を示す疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_遺伝性を示す疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_頭蓋の異常を示す疾患",
+    "title": "先天異常・発育不全_頭蓋の異常を示す疾患",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_頭蓋の異常を示す疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_頭蓋の異常を示す疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_顎変形症の治療",
+    "title": "先天異常・発育不全_顎変形症の治療",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_顎変形症の治療_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_顎変形症の治療.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "先天異常・発育不全_鼻咽腔閉鎖機能・構音機能",
+    "title": "先天異常・発育不全_鼻咽腔閉鎖機能・構音機能",
+    "qaPath": "qa/subject/口腔外科学/01_先天異常・発育不全_鼻咽腔閉鎖機能・構音機能_QA.json",
+    "htmlPath": "html/subject/口腔外科学/01_先天異常・発育不全_鼻咽腔閉鎖機能・構音機能.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "顎関節疾患_顎運動の異常",
+    "title": "顎関節疾患_顎運動の異常",
+    "qaPath": "qa/subject/口腔外科学/02_顎関節疾患_顎運動の異常_QA.json",
+    "htmlPath": "html/subject/口腔外科学/02_顎関節疾患_顎運動の異常.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "顎関節疾患_顎関節症の分類と症状",
+    "title": "顎関節疾患_顎関節症の分類と症状",
+    "qaPath": "qa/subject/口腔外科学/02_顎関節疾患_顎関節症の分類と症状_QA.json",
+    "htmlPath": "html/subject/口腔外科学/02_顎関節疾患_顎関節症の分類と症状.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "顎関節疾患_顎関節症の治療",
+    "title": "顎関節疾患_顎関節症の治療",
+    "qaPath": "qa/subject/口腔外科学/02_顎関節疾患_顎関節症の治療_QA.json",
+    "htmlPath": "html/subject/口腔外科学/02_顎関節疾患_顎関節症の治療.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "顎関節疾患_顎関節症の誘因",
+    "title": "顎関節疾患_顎関節症の誘因",
+    "qaPath": "qa/subject/口腔外科学/02_顎関節疾患_顎関節症の誘因_QA.json",
+    "htmlPath": "html/subject/口腔外科学/02_顎関節疾患_顎関節症の誘因.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "顎関節疾患_顎関節脱臼",
+    "title": "顎関節疾患_顎関節脱臼",
+    "qaPath": "qa/subject/口腔外科学/02_顎関節疾患_顎関節脱臼_QA.json",
+    "htmlPath": "html/subject/口腔外科学/02_顎関節疾患_顎関節脱臼.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "損傷_損傷の防止",
+    "title": "損傷_損傷の防止",
+    "qaPath": "qa/subject/口腔外科学/03_損傷_損傷の防止_QA.json",
+    "htmlPath": "html/subject/口腔外科学/03_損傷_損傷の防止.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "損傷_軟組織の外傷",
+    "title": "損傷_軟組織の外傷",
+    "qaPath": "qa/subject/口腔外科学/03_損傷_軟組織の外傷_QA.json",
+    "htmlPath": "html/subject/口腔外科学/03_損傷_軟組織の外傷.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "損傷_骨折の診断・治療",
+    "title": "損傷_骨折の診断・治療",
+    "qaPath": "qa/subject/口腔外科学/03_損傷_骨折の診断・治療_QA.json",
+    "htmlPath": "html/subject/口腔外科学/03_損傷_骨折の診断・治療.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "損傷_骨折：その他の頭蓋骨骨折",
+    "title": "損傷_骨折：その他の頭蓋骨骨折",
+    "qaPath": "qa/subject/口腔外科学/03_損傷_骨折：その他の頭蓋骨骨折_QA.json",
+    "htmlPath": "html/subject/口腔外科学/03_損傷_骨折：その他の頭蓋骨骨折.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "損傷_骨折：下顎骨骨折",
+    "title": "損傷_骨折：下顎骨骨折",
+    "qaPath": "qa/subject/口腔外科学/03_損傷_骨折：下顎骨骨折_QA.json",
+    "htmlPath": "html/subject/口腔外科学/03_損傷_骨折：下顎骨骨折.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "炎症・アレルギー性疾患_BRONJ・ARONJ",
+    "title": "炎症・アレルギー性疾患_BRONJ・ARONJ",
+    "qaPath": "qa/subject/口腔外科学/04_炎症・アレルギー性疾患_BRONJ・ARONJ_QA.json",
+    "htmlPath": "html/subject/口腔外科学/04_炎症・アレルギー性疾患_BRONJ・ARONJ.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "炎症・アレルギー性疾患_アレルギー性疾患",
+    "title": "炎症・アレルギー性疾患_アレルギー性疾患",
+    "qaPath": "qa/subject/口腔外科学/04_炎症・アレルギー性疾患_アレルギー性疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/04_炎症・アレルギー性疾患_アレルギー性疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "炎症・アレルギー性疾患_上顎洞炎",
+    "title": "炎症・アレルギー性疾患_上顎洞炎",
+    "qaPath": "qa/subject/口腔外科学/04_炎症・アレルギー性疾患_上顎洞炎_QA.json",
+    "htmlPath": "html/subject/口腔外科学/04_炎症・アレルギー性疾患_上顎洞炎.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "炎症・アレルギー性疾患_膿瘍の処置",
+    "title": "炎症・アレルギー性疾患_膿瘍の処置",
+    "qaPath": "qa/subject/口腔外科学/04_炎症・アレルギー性疾患_膿瘍の処置_QA.json",
+    "htmlPath": "html/subject/口腔外科学/04_炎症・アレルギー性疾患_膿瘍の処置.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "炎症・アレルギー性疾患_顎口腔領域の炎症",
+    "title": "炎症・アレルギー性疾患_顎口腔領域の炎症",
+    "qaPath": "qa/subject/口腔外科学/04_炎症・アレルギー性疾患_顎口腔領域の炎症_QA.json",
+    "htmlPath": "html/subject/口腔外科学/04_炎症・アレルギー性疾患_顎口腔領域の炎症.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "炎症・アレルギー性疾患_顎骨の炎症",
+    "title": "炎症・アレルギー性疾患_顎骨の炎症",
+    "qaPath": "qa/subject/口腔外科学/04_炎症・アレルギー性疾患_顎骨の炎症_QA.json",
+    "htmlPath": "html/subject/口腔外科学/04_炎症・アレルギー性疾患_顎骨の炎症.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "感染症_ウイルス感染症",
+    "title": "感染症_ウイルス感染症",
+    "qaPath": "qa/subject/口腔外科学/05_感染症_ウイルス感染症_QA.json",
+    "htmlPath": "html/subject/口腔外科学/05_感染症_ウイルス感染症.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "感染症_真菌感染症",
+    "title": "感染症_真菌感染症",
+    "qaPath": "qa/subject/口腔外科学/05_感染症_真菌感染症_QA.json",
+    "htmlPath": "html/subject/口腔外科学/05_感染症_真菌感染症.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "口腔粘膜疾患_口腔粘膜疾患",
+    "title": "口腔粘膜疾患_口腔粘膜疾患",
+    "qaPath": "qa/subject/口腔外科学/06_口腔粘膜疾患_口腔粘膜疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/06_口腔粘膜疾患_口腔粘膜疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "口腔領域の神経疾患_口腔領域の神経疾患",
+    "title": "口腔領域の神経疾患_口腔領域の神経疾患",
+    "qaPath": "qa/subject/口腔外科学/07_口腔領域の神経疾患_口腔領域の神経疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/07_口腔領域の神経疾患_口腔領域の神経疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "血液疾患・出血性素因_出血性疾患",
+    "title": "血液疾患・出血性素因_出血性疾患",
+    "qaPath": "qa/subject/口腔外科学/08_血液疾患・出血性素因_出血性疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/08_血液疾患・出血性素因_出血性疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "血液疾患・出血性素因_白血病",
+    "title": "血液疾患・出血性素因_白血病",
+    "qaPath": "qa/subject/口腔外科学/08_血液疾患・出血性素因_白血病_QA.json",
+    "htmlPath": "html/subject/口腔外科学/08_血液疾患・出血性素因_白血病.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "血液疾患・出血性素因_貧血",
+    "title": "血液疾患・出血性素因_貧血",
+    "qaPath": "qa/subject/口腔外科学/08_血液疾患・出血性素因_貧血_QA.json",
+    "htmlPath": "html/subject/口腔外科学/08_血液疾患・出血性素因_貧血.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "嚢胞_WHO分類に含まれる嚢胞",
+    "title": "嚢胞_WHO分類に含まれる嚢胞",
+    "qaPath": "qa/subject/口腔外科学/09_嚢胞_WHO分類に含まれる嚢胞_QA.json",
+    "htmlPath": "html/subject/口腔外科学/09_嚢胞_WHO分類に含まれる嚢胞.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "嚢胞_軟組織に発生する嚢胞",
+    "title": "嚢胞_軟組織に発生する嚢胞",
+    "qaPath": "qa/subject/口腔外科学/09_嚢胞_軟組織に発生する嚢胞_QA.json",
+    "htmlPath": "html/subject/口腔外科学/09_嚢胞_軟組織に発生する嚢胞.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "嚢胞_顎骨嚢胞（非歯原性）",
+    "title": "嚢胞_顎骨嚢胞（非歯原性）",
+    "qaPath": "qa/subject/口腔外科学/09_嚢胞_顎骨嚢胞（非歯原性）_QA.json",
+    "htmlPath": "html/subject/口腔外科学/09_嚢胞_顎骨嚢胞（非歯原性）.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_上皮性悪性腫瘍：TNM分類",
+    "title": "腫瘍および類似疾患_上皮性悪性腫瘍：TNM分類",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：TNM分類_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：TNM分類.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_上皮性悪性腫瘍：治療",
+    "title": "腫瘍および類似疾患_上皮性悪性腫瘍：治療",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：治療_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：治療.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_上皮性悪性腫瘍：緩和医療",
+    "title": "腫瘍および類似疾患_上皮性悪性腫瘍：緩和医療",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：緩和医療_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：緩和医療.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_上皮性悪性腫瘍：術後対応",
+    "title": "腫瘍および類似疾患_上皮性悪性腫瘍：術後対応",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：術後対応_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：術後対応.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_上皮性悪性腫瘍：診断",
+    "title": "腫瘍および類似疾患_上皮性悪性腫瘍：診断",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：診断_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_上皮性悪性腫瘍：診断.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_口腔潜在的悪性疾患",
+    "title": "腫瘍および類似疾患_口腔潜在的悪性疾患",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_口腔潜在的悪性疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_口腔潜在的悪性疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_口腔粘膜の良性腫瘍",
+    "title": "腫瘍および類似疾患_口腔粘膜の良性腫瘍",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_口腔粘膜の良性腫瘍_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_口腔粘膜の良性腫瘍.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_歯原性腫瘍",
+    "title": "腫瘍および類似疾患_歯原性腫瘍",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_歯原性腫瘍_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_歯原性腫瘍.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_腫瘍類似疾患",
+    "title": "腫瘍および類似疾患_腫瘍類似疾患",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_腫瘍類似疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_腫瘍類似疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_非上皮性悪性腫瘍",
+    "title": "腫瘍および類似疾患_非上皮性悪性腫瘍",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_非上皮性悪性腫瘍_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_非上皮性悪性腫瘍.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_顎骨の腫瘍類縁疾患",
+    "title": "腫瘍および類似疾患_顎骨の腫瘍類縁疾患",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_顎骨の腫瘍類縁疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_顎骨の腫瘍類縁疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "腫瘍および類似疾患_顎骨の良性腫瘍",
+    "title": "腫瘍および類似疾患_顎骨の良性腫瘍",
+    "qaPath": "qa/subject/口腔外科学/10_腫瘍および類似疾患_顎骨の良性腫瘍_QA.json",
+    "htmlPath": "html/subject/口腔外科学/10_腫瘍および類似疾患_顎骨の良性腫瘍.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "唾液腺疾患_その他の唾液腺疾患",
+    "title": "唾液腺疾患_その他の唾液腺疾患",
+    "qaPath": "qa/subject/口腔外科学/11_唾液腺疾患_その他の唾液腺疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/11_唾液腺疾患_その他の唾液腺疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "唾液腺疾患_唾液腺悪性腫瘍",
+    "title": "唾液腺疾患_唾液腺悪性腫瘍",
+    "qaPath": "qa/subject/口腔外科学/11_唾液腺疾患_唾液腺悪性腫瘍_QA.json",
+    "htmlPath": "html/subject/口腔外科学/11_唾液腺疾患_唾液腺悪性腫瘍.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "唾液腺疾患_唾液腺良性腫瘍",
+    "title": "唾液腺疾患_唾液腺良性腫瘍",
+    "qaPath": "qa/subject/口腔外科学/11_唾液腺疾患_唾液腺良性腫瘍_QA.json",
+    "htmlPath": "html/subject/口腔外科学/11_唾液腺疾患_唾液腺良性腫瘍.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_GVHD",
+    "title": "全身疾患_GVHD",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_GVHD_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_GVHD.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_全身疾患の病態",
+    "title": "全身疾患_全身疾患の病態",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_全身疾患の病態_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_全身疾患の病態.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_全身的症候",
+    "title": "全身疾患_全身的症候",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_全身的症候_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_全身的症候.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_睡眠時無呼吸症候群",
+    "title": "全身疾患_睡眠時無呼吸症候群",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_睡眠時無呼吸症候群_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_睡眠時無呼吸症候群.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_精神・神経疾患：うつ病",
+    "title": "全身疾患_精神・神経疾患：うつ病",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_精神・神経疾患：うつ病_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_精神・神経疾患：うつ病.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_精神・神経疾患：神経変性疾患",
+    "title": "全身疾患_精神・神経疾患：神経変性疾患",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_精神・神経疾患：神経変性疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_精神・神経疾患：神経変性疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_精神・神経疾患：認知症",
+    "title": "全身疾患_精神・神経疾患：認知症",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_精神・神経疾患：認知症_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_精神・神経疾患：認知症.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_自己免疫疾患：Behçet病",
+    "title": "全身疾患_自己免疫疾患：Behçet病",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_自己免疫疾患：Behçet病_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_自己免疫疾患：Behçet病.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_自己免疫疾患：尋常性天疱瘡",
+    "title": "全身疾患_自己免疫疾患：尋常性天疱瘡",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_自己免疫疾患：尋常性天疱瘡_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_自己免疫疾患：尋常性天疱瘡.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_自己免疫疾患：川崎病",
+    "title": "全身疾患_自己免疫疾患：川崎病",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_自己免疫疾患：川崎病_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_自己免疫疾患：川崎病.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_自己免疫疾患：類天疱瘡",
+    "title": "全身疾患_自己免疫疾患：類天疱瘡",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_自己免疫疾患：類天疱瘡_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_自己免疫疾患：類天疱瘡.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "全身疾患_誤嚥性肺炎",
+    "title": "全身疾患_誤嚥性肺炎",
+    "qaPath": "qa/subject/口腔外科学/12_全身疾患_誤嚥性肺炎_QA.json",
+    "htmlPath": "html/subject/口腔外科学/12_全身疾患_誤嚥性肺炎.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_フレイルに関連する病態の検査",
+    "title": "手術総論・一般診査_フレイルに関連する病態の検査",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_フレイルに関連する病態の検査_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_フレイルに関連する病態の検査.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_体表所見",
+    "title": "手術総論・一般診査_体表所見",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_体表所見_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_体表所見.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_創面の処置",
+    "title": "手術総論・一般診査_創面の処置",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_創面の処置_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_創面の処置.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_口腔内検査・口腔機能検査",
+    "title": "手術総論・一般診査_口腔内検査・口腔機能検査",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_口腔内検査・口腔機能検査_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_口腔内検査・口腔機能検査.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_基準値",
+    "title": "手術総論・一般診査_基準値",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_基準値_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_基準値.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_心理テスト",
+    "title": "手術総論・一般診査_心理テスト",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_心理テスト_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_心理テスト.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_手術法：上顎洞底挙上術",
+    "title": "手術総論・一般診査_手術法：上顎洞底挙上術",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_手術法：上顎洞底挙上術_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_手術法：上顎洞底挙上術.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_手術法：嚢胞摘出術",
+    "title": "手術総論・一般診査_手術法：嚢胞摘出術",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_手術法：嚢胞摘出術_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_手術法：嚢胞摘出術.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_手術法：歯槽骨整形術",
+    "title": "手術総論・一般診査_手術法：歯槽骨整形術",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_手術法：歯槽骨整形術_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_手術法：歯槽骨整形術.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_手術法：皮膚切開",
+    "title": "手術総論・一般診査_手術法：皮膚切開",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_手術法：皮膚切開_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_手術法：皮膚切開.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_手術法：頸部郭清術",
+    "title": "手術総論・一般診査_手術法：頸部郭清術",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_手術法：頸部郭清術_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_手術法：頸部郭清術.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_手術法：顎下腺摘出術",
+    "title": "手術総論・一般診査_手術法：顎下腺摘出術",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_手術法：顎下腺摘出術_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_手術法：顎下腺摘出術.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_手術法：骨切り術",
+    "title": "手術総論・一般診査_手術法：骨切り術",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_手術法：骨切り術_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_手術法：骨切り術.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_手術法：骨移植",
+    "title": "手術総論・一般診査_手術法：骨移植",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_手術法：骨移植_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_手術法：骨移植.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_手術法：骨隆起切除術",
+    "title": "手術総論・一般診査_手術法：骨隆起切除術",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_手術法：骨隆起切除術_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_手術法：骨隆起切除術.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_抜歯とその手技",
+    "title": "手術総論・一般診査_抜歯とその手技",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_抜歯とその手技_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_抜歯とその手技.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_抜歯と全身疾患",
+    "title": "手術総論・一般診査_抜歯と全身疾患",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_抜歯と全身疾患_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_抜歯と全身疾患.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_抜歯の偶発症",
+    "title": "手術総論・一般診査_抜歯の偶発症",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_抜歯の偶発症_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_抜歯の偶発症.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_抜歯の治癒過程",
+    "title": "手術総論・一般診査_抜歯の治癒過程",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_抜歯の治癒過程_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_抜歯の治癒過程.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_栄養評価",
+    "title": "手術総論・一般診査_栄養評価",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_栄養評価_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_栄養評価.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_検体検査",
+    "title": "手術総論・一般診査_検体検査",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_検体検査_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_検体検査.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_止血法",
+    "title": "手術総論・一般診査_止血法",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_止血法_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_止血法.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_歯科治療中の偶発症",
+    "title": "手術総論・一般診査_歯科治療中の偶発症",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_歯科治療中の偶発症_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_歯科治療中の偶発症.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_皮膚検査",
+    "title": "手術総論・一般診査_皮膚検査",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_皮膚検査_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_皮膚検査.html",
+    "subject": "口腔外科",
+    "subjectCategory": "基礎"
+  },
+  {
+    "id": "手術総論・一般診査_縫合",
+    "title": "手術総論・一般診査_縫合",
+    "qaPath": "qa/subject/口腔外科学/13_手術総論・一般診査_縫合_QA.json",
+    "htmlPath": "html/subject/口腔外科学/13_手術総論・一般診査_縫合.html",
+    "subject": "口腔外科",
     "subjectCategory": "基礎"
   }
 ];

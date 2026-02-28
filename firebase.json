@@ -1,5 +1,64 @@
 {
   "firestore": {
     "rules": "firestore.rules"
+  },
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "firebase 2.json",
+      "firestore.rules",
+      "firestore.indexes.json",
+      ".firebaserc",
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/.gitignore",
+      "**/README.md",
+      "**/*.py",
+      "**/*.sh",
+      "**/*.md",
+      "**/*.csv",
+      "ios/**",
+      "www/**",
+      "国家試験過去問/**",
+      "国家試験過去問 2/**",
+      "scripts/**",
+      "reports/**",
+      "migrate*.html",
+      "migrate*.js",
+      "cleanup-*.js",
+      "check_questions*.js",
+      "capacitor.config.json",
+      "package.json",
+      "package-lock.json",
+      "images/**",
+      "print/**",
+      "echo",
+      "ls",
+      "mv",
+      "移動完了"
+    ],
+    "headers": [
+      {
+        "source": "**/*.js",
+        "headers": [{"key": "Cache-Control", "value": "no-cache, must-revalidate"}]
+      },
+      {
+        "source": "**/*.css",
+        "headers": [{"key": "Cache-Control", "value": "no-cache, must-revalidate"}]
+      },
+      {
+        "source": "**/*.json",
+        "headers": [{"key": "Cache-Control", "value": "no-cache, must-revalidate"}]
+      },
+      {
+        "source": "**/*.html",
+        "headers": [{"key": "Cache-Control", "value": "no-cache, must-revalidate"}]
+      },
+      {
+        "source": "**/*.webp",
+        "headers": [{"key": "Cache-Control", "value": "public, max-age=2592000"}]
+      }
+    ]
   }
 }

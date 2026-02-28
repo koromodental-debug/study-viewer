@@ -26,7 +26,7 @@ const KakomonModule = (function() {
   };
 
   // 定数
-  const YEARS = Array.from({ length: 17 }, (_, i) => 118 - i); // 118〜102
+  const YEARS = Array.from({ length: 18 }, (_, i) => 119 - i); // 119〜102
   const SESSIONS = ['A', 'B', 'C', 'D'];
   const SUBJECTS = [
     '解剖学', '組織学', '生理学', '生化学', '病理学', '薬理学',
@@ -1236,8 +1236,13 @@ const KakomonModule = (function() {
     const numChoices = question.numChoices || 1;
     const code = question.code || question.id || '';
 
-    const validChoices = Object.entries(choices)
+    let validChoices = Object.entries(choices)
       .filter(([key, value]) => value && value.trim() !== '');
+
+    // 画像参照型（選択肢テキストが空）の場合、a〜eのボタンを生成
+    if (validChoices.length === 0 && Object.keys(choices).length === 0) {
+      validChoices = ['a','b','c','d','e'].map(k => [k, k]);
+    }
 
     let imagesHtml = '';
     const hasImage = question.hasImage && question.imageFiles;

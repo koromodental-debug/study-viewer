@@ -1,0 +1,110 @@
+{
+  "subject": "微生物学・免疫学",
+  "questions": [
+    {
+      "code": "119A84",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 84,
+      "text": "Th17 細胞の機能はどれか。1つ選べ。",
+      "choices": {
+        "a": "IL-4の産生",
+        "b": "IFN-yの産生",
+        "c": "過剰な免疫応答の抑制",
+        "d": "B細胞でのIgE産生の誘導",
+        "e": "感染病巣への好中球の遊走 健康リテラシーが高い状態はどれか。2つ選べ。"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B5",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 5,
+      "text": "",
+      "choices": {
+        "a": "アウトカム",
+        "b": "アドヒアランス C エンパワメント",
+        "c": "",
+        "d": "リビングウィル",
+        "e": "コンプライアンス 5針刺し創部の洗浄後の消毒に用いるのはどれか。2つ選べ。"
+      },
+      "answer": "BC",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B7",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 7,
+      "text": "",
+      "choices": {
+        "a": "歯髄保存療法の実施 齲蝕象牙質内層の除去",
+        "b": "",
+        "c": "齲蝕病変の活動性評価",
+        "d": "表層下脱灰病変の除去",
+        "e": "窩洞外形の自浄域への設置 7 病原体関連分子パターンを認識する受容体はどれか。1つ選べ。"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C2",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 2,
+      "text": "トリプシン様プロテアーゼを産生するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "Tannerella forsythia",
+        "b": "Prevotella intermedia",
+        "c": "Fusobacterium nucleatem",
+        "d": "Corynebacterium matruchotiz",
+        "e": "Aggregatibacter actinomycetemcomitans"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D19",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 19,
+      "text": "HBV の不活化に有用な消毒薬はどれか。1つ選べ。",
+      "choices": {
+        "a": "イソプロパノール",
+        "b": "消毒用エタノール",
+        "c": "次亜塩素酸ナトリウム",
+        "d": "ベンザルコニウム塩化物",
+        "e": "クロルヘキシジングルコン酸塩"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    }
+  ]
+}

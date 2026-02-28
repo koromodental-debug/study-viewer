@@ -933,6 +933,195 @@
       "chapter": "",
       "theme": "",
       "keyword": ""
+    },
+    {
+      "code": "119A12",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 12,
+      "text": "アモキシシリン水和物で生じる副作用はどれか。1つ選べ。",
+      "choices": {
+        "a": "難聴",
+        "b": "貧血",
+        "c": "眼圧亢進",
+        "d": "味覚障害",
+        "e": "多形滲出性紅斑"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A28",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 28,
+      "text": "ロクロニウム臭化物の作用に拮抗するのはどれか。2つ選べ。",
+      "choices": {
+        "a": "フルマゼニル",
+        "b": "ネオスチグミン臭化物",
+        "c": "スガマデクスナトリウム",
+        "d": "デクスメデトミジン塩酸塩",
+        "e": "スキサメトニウム塩化物水和物"
+      },
+      "answer": "BC",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A38",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 38,
+      "text": "",
+      "choices": {
+        "a": "la 因子",
+        "b": "Xa 因子 C トロンビン",
+        "c": "",
+        "d": "フィブリノゲン",
+        "e": "プロトロンビン"
+      },
+      "answer": "BC",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A43",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 43,
+      "text": "心臓手術が予定されている患児に対し、外傷歯の抜歯を行うこととした。術前に アモキシシリン水和物の投与を行った。 この投与に該当するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "原因療法",
+        "b": "再生療法",
+        "c": "対症療法",
+        "d": "補充療法",
+        "e": "予防療法"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B77",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 77,
+      "text": "アフタ性口内炎に有効なのはどれか。2つ選べ。",
+      "choices": {
+        "a": "半夏瀉心湯",
+        "b": "アシクロビル",
+        "c": "デキサメタゾン",
+        "d": "アムホテリシンB",
+        "e": "アモキシシリン水和物"
+      },
+      "answer": "AC",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C10",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 10,
+      "text": "薬物と副作用の組合せで正しいのはどれか。1つ選べ。",
+      "choices": {
+        "a": "ビタミンB12製剤 - 味覚異常",
+        "b": "抗ヘルペスウイルス薬 - 顎骨壊死",
+        "c": "ピリミジン代謝拮抗薬 口腔粘膜炎",
+        "d": "イミダゾール系抗真菌薬 -歯の変色 - 歯肉肥大",
+        "e": "ニューキノロン系抗菌薬"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C55",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 55,
+      "text": "",
+      "choices": {
+        "a": "粘液囊胞",
+        "b": "Sjogren 症候群",
+        "c": "巨細胞封入体症",
+        "d": "流行性耳下腺炎",
+        "e": "壊死性唾液腺化生 55 口腔乾燥症の原因となる薬物とその適応疾患の組合せで正しいのはどれか。 2つ選べ。 - 本態性高血圧症"
+      },
+      "answer": "AE",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C80",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 80,
+      "text": "セツキシマブの標的分子はどれか。1つ選べ。",
+      "choices": {
+        "a": "CD 20",
+        "b": "EGFR",
+        "c": "HER 2",
+        "d": "PD-1",
+        "e": "VEGF"
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D48",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 48,
+      "text": "ニューキノロン系抗菌薬と併用するとけいれんを起こすことがあるのはどれか。 1つ選べ。",
+      "choices": {
+        "a": "リドカイン塩酸塩",
+        "b": "イソプレナリン塩酸塩",
+        "c": "モルヒネ塩酸塩水和物",
+        "d": "アトロピン硫酸塩水和物",
+        "e": "ロキソプロフェンナトリウム水和物"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
     }
   ]
 }

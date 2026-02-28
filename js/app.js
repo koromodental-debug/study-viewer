@@ -43,7 +43,8 @@
     floatingSearchCurrentSectionIdx: 0,     // 現在のグローバルセクションインデックス
     floatingSearchTotalSections: 0,         // 総セクション数
     pendingFloatingSearch: null,            // トピック切り替え後に継続する検索 {query, matchIndex}
-    isSearchScrolling: false                // 検索結果へのスクロール中フラグ（無限スクロールを一時停止）
+    isSearchScrolling: false,               // 検索結果へのスクロール中フラグ（無限スクロールを一時停止）
+    bandFilter: sessionStorage.getItem('studyViewer_bandFilter') || 'all'  // 帯域フィルタ
   };
 
   // DOM要素
@@ -134,7 +135,9 @@
     floatingSearchCount: document.getElementById('floating-search-count'),
     floatingSearchPrev: document.getElementById('floating-search-prev'),
     floatingSearchNext: document.getElementById('floating-search-next'),
-    floatingSearchClose: document.getElementById('floating-search-close')
+    floatingSearchClose: document.getElementById('floating-search-close'),
+    // 帯域フィルタバー
+    bandFilterBar: document.getElementById('band-filter-bar')
   };
 
   // 目次の状態管理
@@ -200,6 +203,9 @@
 
     // フローティング検索バー（GoodNotes風）のイベント設定
     setupFloatingSearchEvents();
+
+    // 帯域フィルタバーのイベント設定
+    setupBandFilterEvents();
 
     // フラッシュカード機能の初期化
     if (typeof FlashcardModule !== 'undefined') {
@@ -1457,6 +1463,11 @@
     state.firstLoadedTopicIndex = itemIndex;
     state.isLoadingMore = false;
 
+    // 帯域フィルタバーを非表示（新トピック読み込み時）
+    if (elements.bandFilterBar) {
+      elements.bandFilterBar.classList.remove('visible');
+    }
+
     // HTML（無限スクロール対応）
     if (item.htmlPath) {
       // 表示をクリアして新規読み込み
@@ -1552,6 +1563,8 @@
       // お気に入りボタンを追加（セクション内のh2に対して）- 遅延実行でパフォーマンス改善
       requestAnimationFrame(() => {
         injectFavoriteButtonsToSection(section, item);
+        detectAndTagBands(section);
+        updateBandFilterVisibility();
       });
 
       // 過去問カードの折りたたみ・画像遅延読み込み初期化（新規コンテンツ）
@@ -1603,6 +1616,8 @@
       // お気に入りボタンを追加（セクション内のh3に対して）- 遅延実行でパフォーマンス改善
       requestAnimationFrame(() => {
         injectFavoriteButtonsToSection(section, item);
+        detectAndTagBands(section);
+        updateBandFilterVisibility();
       });
 
       // 過去問カードの折りたたみ・画像遅延読み込み初期化（新規コンテンツ）
@@ -2072,6 +2087,83 @@
 
       wrapper.insertBefore(saveBtn, wrapper.firstChild);
       wrapper.insertBefore(favBtn, wrapper.firstChild);
+    });
+  }
+
+  /**
+   * セクション内の各カードに帯域タグ(data-band)を設定
+   */
+  function detectAndTagBands(section) {
+    const wrappers = section.querySelectorAll('.html-card-wrapper');
+    wrappers.forEach(wrapper => {
+      const h3 = wrapper.querySelector('h3');
+      if (!h3) { wrapper.dataset.band = 'none'; return; }
+      const spans = h3.querySelectorAll('span');
+      let band = 'none';
+      for (const span of spans) {
+        const text = span.textContent.trim();
+        if (text.startsWith('確保')) { band = 'kakuho'; break; }
+        if (text.startsWith('勝負')) { band = 'shoubu'; break; }
+        if (text.startsWith('捨て')) { band = 'sute'; break; }
+      }
+      wrapper.dataset.band = band;
+    });
+  }
+
+  /**
+   * 帯域フィルタバーの表示・件数更新
+   */
+  function updateBandFilterVisibility() {
+    if (!elements.bandFilterBar) return;
+    // フローティング検索表示中は非表示
+    if (elements.floatingSearchBar && elements.floatingSearchBar.style.display !== 'none') {
+      elements.bandFilterBar.classList.remove('visible');
+      return;
+    }
+    // htmlタブ以外では非表示
+    if (state.currentTab !== 'html') {
+      elements.bandFilterBar.classList.remove('visible');
+      return;
+    }
+    const wrappers = elements.htmlDisplay.querySelectorAll('.html-card-wrapper[data-band]');
+    let kakuho = 0, shoubu = 0, sute = 0, total = 0;
+    wrappers.forEach(w => {
+      const b = w.dataset.band;
+      if (b === 'kakuho') { kakuho++; total++; }
+      else if (b === 'shoubu') { shoubu++; total++; }
+      else if (b === 'sute') { sute++; total++; }
+    });
+    if (total === 0) {
+      elements.bandFilterBar.classList.remove('visible');
+      return;
+    }
+    elements.bandFilterBar.classList.add('visible');
+    const all = kakuho + shoubu + sute;
+    document.getElementById('band-count-all').textContent = all;
+    document.getElementById('band-count-kakuho').textContent = kakuho;
+    document.getElementById('band-count-shoubu').textContent = shoubu;
+    document.getElementById('band-count-sute').textContent = sute;
+    // 保存されたフィルタを復元
+    applyBandFilter(state.bandFilter);
+    // ボタンのアクティブ状態を復元
+    elements.bandFilterBar.querySelectorAll('.band-filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.bandFilter === state.bandFilter);
+    });
+  }
+
+  /**
+   * 帯域フィルタを適用
+   */
+  function applyBandFilter(filter) {
+    state.bandFilter = filter;
+    sessionStorage.setItem('studyViewer_bandFilter', filter);
+    const wrappers = elements.htmlDisplay.querySelectorAll('.html-card-wrapper[data-band]');
+    wrappers.forEach(w => {
+      if (filter === 'all') {
+        w.style.display = '';
+      } else {
+        w.style.display = w.dataset.band === filter ? '' : 'none';
+      }
     });
   }
 
@@ -3482,6 +3574,11 @@
 
     // タブ切り替え時はフローティング検索バーを閉じる
     hideFloatingSearch();
+
+    // html以外のタブでは帯域フィルタバーを非表示
+    if (tab !== 'html' && elements.bandFilterBar) {
+      elements.bandFilterBar.classList.remove('visible');
+    }
 
     // 履歴にpush（popstate以外かつ初期化済みの場合）
     if (!skipHistory && scrollHistory.initialized) {
@@ -5295,6 +5392,10 @@
     if (elements.toolFab) {
       elements.toolFab.style.display = 'none';
     }
+    // 帯域フィルタバーを非表示
+    if (elements.bandFilterBar) {
+      elements.bandFilterBar.classList.remove('visible');
+    }
     // 現在のトピック情報をクリア
     state.currentItem = null;
     // ローカルストレージから現在のトピックをクリア
@@ -5333,6 +5434,22 @@
     }, { passive: true });
   }
 
+  // ===== 帯域フィルタバー =====
+
+  function setupBandFilterEvents() {
+    if (!elements.bandFilterBar) return;
+    elements.bandFilterBar.addEventListener('click', (e) => {
+      const btn = e.target.closest('.band-filter-btn');
+      if (!btn) return;
+      const filter = btn.dataset.bandFilter;
+      if (!filter) return;
+      // ボタンのアクティブ状態を切り替え
+      elements.bandFilterBar.querySelectorAll('.band-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyBandFilter(filter);
+    });
+  }
+
   // ===== フローティング検索バー（GoodNotes風・全トピック横断） =====
 
   /**
@@ -5348,6 +5465,10 @@
     // FABを非表示
     if (elements.toolFab) {
       elements.toolFab.style.display = 'none';
+    }
+    // 帯域フィルタバーを一時非表示
+    if (elements.bandFilterBar) {
+      elements.bandFilterBar.classList.remove('visible');
     }
 
     if (query) {
@@ -5379,6 +5500,8 @@
     if (elements.toolFab) {
       elements.toolFab.style.display = 'flex';
     }
+    // 帯域フィルタバーを復元
+    updateBandFilterVisibility();
   }
 
   /**

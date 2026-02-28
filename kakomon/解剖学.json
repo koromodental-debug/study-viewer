@@ -1065,6 +1065,90 @@
       "chapter": "10_加齢変化",
       "theme": "下顎骨の加齢変化",
       "keyword": "歯の喪失"
+    },
+    {
+      "code": "119A57",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 57,
+      "text": "新生児において、眼瞼裂の下方傾斜、下眼験欠損および外耳奇形を認めた。 この症候群の原因となる部位はどれか。1つ選べ。",
+      "choices": {
+        "a": "第一咽頭弓",
+        "b": "第二咽頭弓",
+        "c": "第三咽頭弓",
+        "d": "第四咽頭弓",
+        "e": "第五咽頭弓"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B17",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 17,
+      "text": "",
+      "choices": {
+        "a": "照射時間",
+        "b": "歯肉",
+        "c": "舌縁",
+        "d": "舌背",
+        "e": "硬口蓋"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C58",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 58,
+      "text": "",
+      "choices": {
+        "a": "習慣性咀嚼側は右側とする。",
+        "b": "顔貌の対称性の回復を目指す。",
+        "c": "偏位した位置で咬合採得を行う。",
+        "d": "下顎位の健側への偏位を防止する。",
+        "e": "装置には下顎歯列の圧痕を付与する。 No. 18 A、B 58顔面神経に支配されるのはどれか。1つ選べ。"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D58",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 58,
+      "text": "エナメル芽細胞に由来するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "歯小皮",
+        "b": "獲得被膜 C エナメル紡錘",
+        "c": "",
+        "d": "Sharpey 線維 evon Korff の線維",
+        "e": ""
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
     }
   ]
 }

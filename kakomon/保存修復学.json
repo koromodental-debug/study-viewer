@@ -2877,6 +2877,363 @@
       "chapter": "07_インレー修復",
       "theme": "合着用セメント",
       "keyword": "合着用セメント"
+    },
+    {
+      "code": "119A10",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 10,
+      "text": "齲蝕象牙質内層の特徴で正しいのはどれか。1つ選べ。",
+      "choices": {
+        "a": "裂隙の形成",
+        "b": "細管の明瞭化",
+        "c": "不透明層の存在",
+        "d": "顆粒状結晶の存在",
+        "e": "表層下脱灰の存在"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A39",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 39,
+      "text": "光重合型コンポジットレジンを用いた4級修復で、分割積層塡塞を行う目的はど れか。1つ選べ。",
+      "choices": {
+        "a": "隔壁法の省略",
+        "b": "審美性の向上",
+        "c": "窩縁斜面の省略",
+        "d": "修復物の変色防止",
+        "e": "チェアタイムの短縮"
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A46",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 46,
+      "text": "72歳の男性。上顎左側小臼歯部の食片圧入を主訴として来院した。診察の結果、 15 に従来型グラスアイオノマーセメント修復を行うこととした。初診時の口腔内 写真（別冊No.10A）、エックス線画像（別冊No.10B）及び処置の操作過程の写真 （別冊No. 10C、D）を別に示す。 操作過程Dの後に接着性向上を目的として行うのはどれか。1つ選べ。",
+      "choices": {
+        "a": "ベベルの付与",
+        "b": "NaCIO の塗布",
+        "c": "ボンディング材の塗布",
+        "d": "リン酸エッチング材の塗布",
+        "e": "デンティンコンディショナーの塗布 No. 10 A、B、C、D"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A46.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A65",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 65,
+      "text": "58歳の女性。下顎右側臼歯の審美不良を主訴として来院した。検査の結果、コ ンポジットレジン修復を行うこととした。初診時（別冊No. 20A）及び旧修復物とと もに感染歯質の除去後（別冊No. 20B）の口腔内写真を別に示す。 修復にあたり審美性向上のために配慮すべき事項はどれか。1つ選べ。",
+      "choices": {
+        "a": "対咬関係",
+        "b": "光線照射時間の延長",
+        "c": "ラウンドベベルの付与",
+        "d": "トータルエッチングの実施",
+        "e": "デンティンシェードレジンの使用 No. 20 A、B"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A65.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A87",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 87,
+      "text": "窩洞形態に対するCファクターの模式図（別冊No. 31）を別に示す。 C値が2.0であるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "ア",
+        "b": "イ",
+        "c": "ウ",
+        "d": "エ",
+        "e": "オ No. 31"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A87.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B6",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 6,
+      "text": "",
+      "choices": {
+        "a": "グルタラール",
+        "b": "ポビドンヨード C 消毒用エタノール",
+        "c": "",
+        "d": "次亜塩素酸ナトリウム",
+        "e": "クロルヘキシジングルコン酸塩 6 MID＜Minimal Intervention Dentistry）における齲蝕のマネージメントで正しい のはどれか。1つ選べ。"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B15",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 15,
+      "text": "",
+      "choices": {
+        "a": "三叉神経上核",
+        "b": "三叉神経運動核",
+        "c": "三叉神経主感覚核",
+        "d": "三叉神経脊髄路核",
+        "e": "三叉神経中脳路核 15咬耗の原因となるのはどれか。2つ選べ。"
+      },
+      "answer": "AE",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B49",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 49,
+      "text": "35歳の男性。下顎右側第一大臼歯の一過性冷水痛を主訴として来院した。2週 前から自覚しているという。歯髄電気診には正常に反応する。光硬化型グラスアイ オノマーセメント修復を行うこととした。初診時のエックス線画像（別冊No. 13 A）、処置開始時（別冊No.13B）及び開拡後（別冊No.13C）の写真を別に示す。 考慮すべきなのはどれか。1つ選べ。",
+      "choices": {
+        "a": "外開き窩洞",
+        "b": "円形穿下の付与",
+        "c": "十分な予防拡大",
+        "d": "バットジョイント",
+        "e": "遠心への鳩尾形付与 No. 13A、B、C"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119B49.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C23",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 23,
+      "text": "要介護高齢者の上顎右側犬歯歯頸部の口腔内写真（別冊No.4）を別に示す。翻 病巣に探針を挿入できるが、引き抜く際に抵抗があった。 適切な対応はどれか。2つ選べ。",
+      "choices": {
+        "a": "経過観察",
+        "b": "再石灰化療法 C フッ化ジアンミン銀塗布",
+        "c": "",
+        "d": "次亜塩素酸ナトリウム塗布",
+        "e": "水酸化カルシウム製剤貼付 No. 4"
+      },
+      "answer": "BC",
+      "numChoices": 2,
+      "hasImage": true,
+      "imageFiles": "119C23.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C34",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 34,
+      "text": "",
+      "choices": {
+        "a": "歯槽骨の高さ",
+        "b": "付着歯肉の幅",
+        "c": "知覚過敏の有無",
+        "d": "OLearyの PCR",
+        "e": "歯周ポケット内の細菌叢 No. 7A、B 34 35歳の男性。下顎右側第一大臼歯のメタルインレー脱離による審美不良を主訴 として来院した。痛みがないためそのままにしていたという。打診痛はなく、歯髄 電気診で生活反応を示した。診察の結果、セラミックインレー修復を行うこととし た。初診時の口腔内写真（別冊No. 8A）とエックス線画像（別冊No.8B）を別に示す。 洞形成を行うにあたって考慮すべき事項はどれか。2つ選べ。"
+      },
+      "answer": "BE",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119C34.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C61",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 61,
+      "text": "",
+      "choices": {
+        "a": "鞍状型",
+        "b": "船底型 偏側型",
+        "c": "",
+        "d": "離底型",
+        "e": "リッジラップ型 No. 20 61 28歳の女性。上顎前歯部の審美不良を主訴として来院した。診察の結果、コン ポジットレジン修復を行うこととした。初診時の口腔内写真（別冊No. 21）を別に示 す。 形態回復で留意するのはどれか。3つ選べ。"
+      },
+      "answer": "ABD",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119C61.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C86",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 86,
+      "text": "象牙質知覚過敏症の診断に有効なのはどれか。2つ選べ。",
+      "choices": {
+        "a": "触診",
+        "b": "温度診",
+        "c": "透照診",
+        "d": "レーザー蛍光強度測定",
+        "e": "光干渉断層画像診断法＜OCT 法＞"
+      },
+      "answer": "AB",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D30",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 30,
+      "text": "24歳の女性。上顎右側第一大臼歯の冷水痛を主訴として来院した。検査の結果、 コンポジットレジン修復を行うこととした。初診時（別冊No. 5A）と除去後（別 冊No.5B）の口腔内写真を示す。 次に行うのはどれか。2つ選べ。",
+      "choices": {
+        "a": "隔壁設置",
+        "b": "歯間分離",
+        "c": "歯肉排除",
+        "d": "隣接面保護",
+        "e": "コーナーマトリックス設置 No. 5 A、B"
+      },
+      "answer": "AB",
+      "numChoices": 2,
+      "hasImage": true,
+      "imageFiles": "119D30.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D33",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 33,
+      "text": "ICDAS における歯冠部齲蝕のコードの構成要素はどれか。3つ選べ。 歯種 a",
+      "choices": {
+        "a": "",
+        "b": "修復",
+        "c": "活動性",
+        "d": "進行状態",
+        "e": "隣在歯の有無"
+      },
+      "answer": "BCD",
+      "numChoices": 3,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D66",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 66,
+      "text": "22歳の男性。下顎右側第一大臼歯の舌感不良を主訴として来院した。検査の結 果、フロアブルレジンを用いて修復を行うこととした。ラバーダム防湿後の口腔内 写真（別冊No.19）を別に示す。 洞形態で留意すべきなのはどれか。1つ選べ。",
+      "choices": {
+        "a": "審美的な外形",
+        "b": "箱型の窩洞形態",
+        "c": "ロングベベルの付与",
+        "d": "フレアータイプの付与",
+        "e": "遊離エナメル質の除去 No. 19"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119D66.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D67",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 67,
+      "text": "エナメル質表面処理後にコンポジットレジンを充塡した接着界面の走査電子顕微 鏡像（別冊No. 20）を別に示す。 矢印間の構造の機能で正しいのはどれか。2つ選べ。",
+      "choices": {
+        "a": "汚染面の除去",
+        "b": "ぬれ性の向上",
+        "c": "辺縁漏洩の防止",
+        "d": "スミヤー層の除去",
+        "e": "微細嵌合効力の発揮 No. 20"
+      },
+      "answer": "CE",
+      "numChoices": 2,
+      "hasImage": true,
+      "imageFiles": "119D67.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D75",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 75,
+      "text": "歯科用合金を用いた間接法修復物の模式図を示す。 劣 負荷される外力に対して、矢印で示す形態の効果で正しいのはどれか。 1つ選べ。",
+      "choices": {
+        "a": "嵌合効力",
+        "b": "拘止効力",
+        "c": "把持効力",
+        "d": "転覆防止効力",
+        "e": "すべり防止効力"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119D75.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
     }
   ]
 }

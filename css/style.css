@@ -16035,6 +16035,116 @@ body.is-practice .close-accordion-pill {
   }
 }
 
+/* ===== 帯域フィルタバー ===== */
+.band-filter-bar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px) + 12px);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(60, 60, 67, 0.12);
+  border-radius: 100px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+              opacity 0.3s ease,
+              visibility 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.band-filter-bar.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.band-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(60, 60, 67, 0.72);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.band-filter-btn.active {
+  background: #fff;
+  color: #1C1C1E;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.band-filter-btn:active {
+  opacity: 0.7;
+}
+
+.band-filter-btn span:last-child {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.band-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 演習モード時・フローティング検索表示中は非表示 */
+body.is-practice .band-filter-bar {
+  display: none !important;
+}
+
+/* ダークモード */
+[data-theme="dark"] .band-filter-bar {
+  background: rgba(44, 44, 46, 0.92);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .band-filter-btn {
+  color: rgba(235, 235, 245, 0.6);
+}
+
+[data-theme="dark"] .band-filter-btn.active {
+  background: rgba(99, 99, 102, 0.48);
+  color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* システムダークモード自動対応 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .band-filter-bar {
+    background: rgba(44, 44, 46, 0.92);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  :root:not([data-theme="light"]) .band-filter-btn {
+    color: rgba(235, 235, 245, 0.6);
+  }
+
+  :root:not([data-theme="light"]) .band-filter-btn.active {
+    background: rgba(99, 99, 102, 0.48);
+    color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
 /* === テーブル穴埋めカード === */
 
 .table-occlusion-mode .table-stage {

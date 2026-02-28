@@ -1512,6 +1512,153 @@
       "chapter": "07_全身疾患",
       "theme": "骨粗鬆症と合併症",
       "keyword": "薬理08-01副作用・有害作用"
+    },
+    {
+      "code": "119A22",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 22,
+      "text": "良性上皮間葉混合性歯原性腫瘍はどれか。2つ選べ。",
+      "choices": {
+        "a": "歯牙腫",
+        "b": "歯原性粘液腫",
+        "c": "原始性歯原性腫瘍",
+        "d": "セメント芽細胞腫",
+        "e": "腺腫様歯原性腫瘍"
+      },
+      "answer": "AC",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B2",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 2,
+      "text": "",
+      "choices": {
+        "a": "Go-Me",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": "ANS-PNS 2唾液腺に由来するのはどれか。1つ選べ。"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B41",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 41,
+      "text": "口腔に水疱が出現するのはどれか。2つ選べ。",
+      "choices": {
+        "a": "風疹",
+        "b": "麻疹",
+        "c": "手足口病",
+        "d": "ヘルパンギーナ",
+        "e": "流行性耳下腺炎"
+      },
+      "answer": "CD",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C18",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 18,
+      "text": "頰粘膜腫瘤の摘出物のHE 染色病理組織像（別冊No. 1）を別に示す。 認められる所見はどれか。1つ選べ。",
+      "choices": {
+        "a": "潰瘍",
+        "b": "出血 C 石灰化",
+        "c": "",
+        "d": "膿瘍形成",
+        "e": "結合組織増生 No. 1 ー 6 1"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119C18.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C66",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 66,
+      "text": "",
+      "choices": {
+        "a": "齲歯の無い者の割合",
+        "b": "ブリッジ装着者の割合 C 歯肉出血を有する者の割合",
+        "c": "",
+        "d": "20本以上の歯を有する者の割合",
+        "e": "4mm以上の歯周ポケットを有する者の割合 66 口腔粘膜疾患とその原因の組合せで正しいのはどれか。2つ選べ。 - 遺伝子変異"
+      },
+      "answer": "BC",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C84",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 84,
+      "text": "皮膚付属器を含むのはどれか。2つ選べ。",
+      "choices": {
+        "a": "歯肉嚢胞",
+        "b": "類皮嚢胞",
+        "c": "Koplik 斑",
+        "d": "Fordyce 斑",
+        "e": "歯原性角化嚢胞"
+      },
+      "answer": "BD",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D4",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 4,
+      "text": "内分泌器官とその機能低下によって生じる疾患の組合せで正しいのはどれか。 1つ選べ。 Cushing 病",
+      "choices": {
+        "a": "下垂体 Basedow 病",
+        "b": "甲状腺 - クレチン病",
+        "c": "副甲状腺",
+        "d": "副腎皮質 -Addison 病 褐色細胞腫",
+        "e": "副腎髄質"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
     }
   ]
 }

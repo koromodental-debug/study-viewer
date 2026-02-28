@@ -651,6 +651,132 @@
       "chapter": "07_炎症のケミカルメディエーター",
       "theme": "ケミカルメディエーター",
       "keyword": "異常05-03炎症のケミカルメディエーター"
+    },
+    {
+      "code": "119A18",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 18,
+      "text": "プロトロンビンからトロンビンへの変換に必要なのはどれか。1つ選べ。",
+      "choices": {
+        "a": "Ht",
+        "b": "K+",
+        "c": "CI",
+        "d": "Nat",
+        "e": "Cat"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A20",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 20,
+      "text": "必須アミノ酸はどれか。1つ選べ。",
+      "choices": {
+        "a": "バリン",
+        "b": "グリシン",
+        "c": "チロシン",
+        "d": "グルタミン酸",
+        "e": "アスパラギン酸"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B19",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 19,
+      "text": "アミノ酸の代謝産物を反映する検査項目はどれか。1つ選べ。",
+      "choices": {
+        "a": "FBS",
+        "b": "LDH",
+        "c": "尿素窒素",
+        "d": "クレアチニン",
+        "e": "直接ビリルビン"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D11",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 11,
+      "text": "リボソーム RNA が合成されるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "核小体",
+        "b": "小胞体",
+        "c": "ゴルジ装置",
+        "d": "リソソーム",
+        "e": "ミトコンドリア"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D54",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 54,
+      "text": "成長板軟骨において、軟骨細胞の肥大化に伴って分泌が亢進するコラーゲンはどれか。1つ選べ。",
+      "choices": {
+        "a": "Ⅰ型",
+        "b": "Ⅱ型",
+        "c": "Ⅳ型",
+        "d": "Ⅴ型",
+        "e": "Ⅹ型"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D77",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 77,
+      "text": "小腸におけるグルコースの吸収に必要なのはどれか。1つ選べ。",
+      "choices": {
+        "a": "Kt",
+        "b": "CI",
+        "c": "Nat",
+        "d": "",
+        "e": ""
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
     }
   ]
 }

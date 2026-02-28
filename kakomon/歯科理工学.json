@@ -1,0 +1,278 @@
+{
+  "subject": "歯科理工学",
+  "questions": [
+    {
+      "code": "119A3",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 3,
+      "text": "水溶液として歯質脱灰能を有するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "MDP",
+        "b": "MMA",
+        "c": "HEMA",
+        "d": "Bis-MEPP",
+        "e": "DMAEMA"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A29",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 29,
+      "text": "弾性エネルギーを求めるのに必要なのはどれか。2つ選べ。",
+      "choices": {
+        "a": "耐力",
+        "b": "弾性限",
+        "c": "最大強さ",
+        "d": "破断強さ",
+        "e": "Young（ヤング）率"
+      },
+      "answer": "BE",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B13",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 13,
+      "text": "",
+      "choices": {
+        "a": "血液- ー黄色",
+        "b": "メス ーオレンジ色 C 注射針一 一黄色",
+        "c": "",
+        "d": "縫合糸- ー赤色",
+        "e": "止血に使用したガーゼー 一赤色 13温度変化によって硬化する非弾性印象材はどれか。1つ選べ。"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B67",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 67,
+      "text": "モノマーの構造式を示す。 イ ウ ェ 接着性モノマーはどれか。2つ選べ。",
+      "choices": {
+        "a": "ア bイ",
+        "b": "",
+        "c": "ウ",
+        "d": "I",
+        "e": "オ"
+      },
+      "answer": "CD",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B87",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 87,
+      "text": "研究用模型を製作するため印象材を練和している写真（別冊No.33）を別に示す。 印象材粉末の成分で硬化を遅延させるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "ケイソウ土",
+        "b": "硫酸ナトリウム",
+        "c": "アルギン酸カリウム",
+        "d": "リン酸三ナトリウム",
+        "e": "アルギン酸ナトリウム No. 33"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119B87.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C72",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 72,
+      "text": "接着性モノマーと被着体との結合様式を模式図に示す。 o CH3 CHe=C-C-0-Cs-si ・Si-0- CH3 -Si-0- -Siー0ー CHz=C-C-0-CH6 Si -0 CH3 -Si-0- CH2=C-C-0-C3He Si-0 OH 被着体 このモノマーは、加水分解後、脱水縮合で結合している。 該するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "MDP",
+        "b": "MMA",
+        "c": "y-MPTS",
+        "d": "Bis-GMA",
+        "e": "VBATDT"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119C72.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C78",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 78,
+      "text": "陶材焼付用金合金と金属焼付用陶材との比較で、陶材が大きな値となるのはどれ か。2つ選べ。",
+      "choices": {
+        "a": "硬さ b 密度",
+        "b": "",
+        "c": "弾性係数",
+        "d": "引張強さ",
+        "e": "熱膨張係数 DKTX-02-CH-46"
+      },
+      "answer": "AC",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D17",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 17,
+      "text": "回転切削工具の直径（mm）と回転速度（rpm）の組合せで周速が最も大きいのはど れか。1つ選べ。",
+      "choices": {
+        "a": "15,000",
+        "b": "10,000",
+        "c": "8,000",
+        "d": "6,000",
+        "e": "4,000"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D28",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 28,
+      "text": "大連結子において、値が2倍になると荷重時のたわみが8倍になるのはどれか。 1つ選べ。",
+      "choices": {
+        "a": "幅",
+        "b": "厚さ",
+        "c": "長さ",
+        "d": "密度",
+        "e": "弾性係数"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D29",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 29,
+      "text": "ある硬化体の模式図を示す。 ～は高分子化合物 は粒子 1oo Coo. 00c Al-00C co0-4 0oc- 90c 、。。 歯質 アの元素はどれか。1つ選べ。 Na a",
+      "choices": {
+        "a": "",
+        "b": "Mg",
+        "c": "Ca",
+        "d": "Cu",
+        "e": "Sr"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119D29.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D44",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 44,
+      "text": "粘弾性的性質を示すのはどれか。2つ選べ。",
+      "choices": {
+        "a": "ポリスルフォン",
+        "b": "アクリル系軟質リライン材 C クリームタイプ義歯安定剤",
+        "c": "",
+        "d": "シリコーン系軟質リライン材",
+        "e": "ティッシュコンディショナー"
+      },
+      "answer": "BE",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D86",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 86,
+      "text": "非吸収性縫合糸の素材となるのはどれか。2つ選べ。",
+      "choices": {
+        "a": "シルク",
+        "b": "ポリエステル",
+        "c": "ポリグリコール酸",
+        "d": "ポリディオキサン",
+        "e": "ポリグラクチン 910"
+      },
+      "answer": "AB",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D87",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 87,
+      "text": "骨形成能を有する骨移植材はどれか。1つ選べ。",
+      "choices": {
+        "a": "異種骨",
+        "b": "自家骨 炭酸アパタイト",
+        "c": "",
+        "d": "リン酸三カルシウム",
+        "e": "ハイドロキシアパタイト"
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    }
+  ]
+}

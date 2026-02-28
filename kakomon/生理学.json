@@ -1239,6 +1239,237 @@
       "chapter": "13_発声と構音",
       "theme": "構音器",
       "keyword": "正常IV04-02発声に関連する解剖"
+    },
+    {
+      "code": "119A5",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 5,
+      "text": "ある臓器のH-E組織像（別冊No.1）を別に示す。 循環血液量の減少によって、この臓器から分泌されるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "レニン",
+        "b": "メラトニン",
+        "c": "カルシトニン",
+        "d": "アルドステロン",
+        "e": "プロラクチン＜PRL> No. 1 ："
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A5.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A64",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 64,
+      "text": "活性化されると心筋の収縮力が増大するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "ホスホジエステラーゼ",
+        "b": "Biアドレナリン受容体",
+        "c": "電位依存性K*チャネル",
+        "d": "Mアセチルコリン受容体",
+        "e": "Nat, K+-ATPase＜Nat/K+ポンプ）"
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A82",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 82,
+      "text": "脳の矢状断像の模式図を示す。 ア ウ エ 嘯下反射の誘発に関わる一次ニューロンが直接入力するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "ア bイ",
+        "b": "",
+        "c": "ウ d",
+        "d": "",
+        "e": "オ"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A82.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B3",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 3,
+      "text": "",
+      "choices": {
+        "a": "類皮嚢胞",
+        "b": "鼻歯槽嚢胞 甲状舌管嚢胞",
+        "c": "",
+        "d": "鼻口蓋管嚢胞",
+        "e": "Blandin-Nuhn 嚢胞 3 神経細胞の老化によって細胞内で増加するのはどれか。1つ選べ。"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B14",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 14,
+      "text": "",
+      "choices": {
+        "a": "寒天印象材",
+        "b": "アルジネート印象材",
+        "c": "シリコーンゴム印象材",
+        "d": "酸化亜鉛ユージノール印象材",
+        "e": "モデリングコンパウンド印象材 14 閉口筋にある筋紡錘を支配する感覚神経の細胞体があるのはどれか。1つ選べ。"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B33",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 33,
+      "text": "細胞内の受容体に結合するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "インスリン",
+        "b": "グルカゴン",
+        "c": "カルシトニン",
+        "d": "成長ホルモン",
+        "e": "活性型ビタミンD3"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B57",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 57,
+      "text": "ある運動を行った際の筋電図（別冊No. 19）を別に示す。 この筋電図波形が発生するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "感下",
+        "b": "開口",
+        "c": "呼吸",
+        "d": "咀嚼",
+        "e": "発音 No. 19"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119B57.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C11",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 11,
+      "text": "副交感神経活動の亢進によって起こるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "瞳孔の散大",
+        "b": "心拍数の増加",
+        "c": "膵液分泌の促進",
+        "d": "気管支平滑筋の弛緩",
+        "e": "副腎髄質からのホルモン分泌の促進"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C16",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 16,
+      "text": "味細胞において、甘味物質が結合するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "細胞内受容体",
+        "b": "酵素共役型受容体",
+        "c": "Ht-Na+交換輸送体",
+        "d": "Gタンパク質共役型受容体",
+        "e": "イオンチャネル内蔵型受容体"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C42",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 42,
+      "text": "唾液腺の腺房細胞に発現するα1アドレナリン受容体の活性化によって増加するのはどれか。2つ選べ。",
+      "choices": {
+        "a": "一酸化窒素〈NO〉",
+        "b": "サイクリックAMP〈cAMP〉",
+        "c": "サイクリックGMP〈cGMP〉",
+        "d": "ジアシルグリセロール〈DG〉",
+        "e": "イノシトール1,4,5-三リン酸〈IP₃〉"
+      },
+      "answer": "DE",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D12",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 12,
+      "text": "の下時に食道入口部を開大させる動作はどれか。1つ選べ。",
+      "choices": {
+        "a": "口唇閉鎖",
+        "b": "喉頭の挙上 鼻咽腔閉鎖",
+        "c": "",
+        "d": "舌と口蓋の接触",
+        "e": "上咽頭収縮筋の収縮 = 4 ="
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
     }
   ]
 }

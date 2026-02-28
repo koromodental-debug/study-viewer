@@ -1,0 +1,593 @@
+{
+  "subject": "小児歯科",
+  "questions": [
+    {
+      "code": "119A6",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 6,
+      "text": "歯の変色がみられるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "Riga-Fede 病",
+        "b": "新生児メレナ",
+        "c": "Turner 症候群",
+        "d": "第一第二鰓弓症候群",
+        "e": "von Recklinghausen 病"
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A14",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 14,
+      "text": "混合歯列期に起こるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "大泉門の閉鎖",
+        "b": "小泉門の閉鎖",
+        "c": "蝶篩骨軟骨結合の癒合",
+        "d": "蝶形骨間軟骨結合の癒合",
+        "e": "蝶後頭軟骨結合の癒合"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A30",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 30,
+      "text": "Blanch test で評価できるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "齲蝕リスク",
+        "b": "唾液分泌量 C 摂食の下機能",
+        "c": "",
+        "d": "咳嗽反射の有無",
+        "e": "上唇小帯の付着位置"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A35",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 35,
+      "text": "フッ化物歯面塗布法で正しいのはどれか。2つ選べ。",
+      "choices": {
+        "a": "簡易防湿後に実施する。",
+        "b": "セルフケアとして実施する。",
+        "c": "塗布後直ちに洗口を指示する。",
+        "d": "塗布後の歯質に着色を生じる。",
+        "e": "4歳未満の低年齢児に実施できる。"
+      },
+      "answer": "AE",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A50",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 50,
+      "text": "4歳の女児。上顎前歯の変を主訴として来院した。5か月前に転倒し、上顎左 側乳中切歯を強打したという。歯髄電気診に生活反応を示さなかった。初診時の口 腔内写真（別冊No.13A）とエックス線画像（別冊No.13B）を別に示す。 LAに対する適切な対応はどれか。1つ選べ。",
+      "choices": {
+        "a": "抜歯",
+        "b": "漂白",
+        "c": "経過観察",
+        "d": "感染根管治療",
+        "e": "コンポジットレジン修復 No. 13 A、B"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A50.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A76",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 76,
+      "text": "8歳の男児。上顎右側中切歯が生え代わらないことを主訴として来院した。初診 時の口腔内写真（別冊No. 26A）とエックス線画像（別冊No.26B）を別に示す。",
+      "choices": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": ""
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A76.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B20",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 20,
+      "text": "哺乳齲蝕の初発部位はどれか。1つ選べ。",
+      "choices": {
+        "a": "上顎乳前歯唇側面",
+        "b": "上顎乳前歯口蓋面",
+        "c": "下顎乳前歯唇側面",
+        "d": "下顎乳前歯舌側面",
+        "e": "下顎乳臼歯咬合面"
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B22",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 22,
+      "text": "8歳の男児。上顎右側乳犬歯遠心部に食物が挟まることを主訴として来院した。 1か月前から気付いていたが痛みがないのでそのままにしていたという。初診時の 口腔内写真（別冊No. 1A）とエックス線画像（別冊No.1B）を別に示す。 Cに対する適切な対応はどれか。1つ選べ。",
+      "choices": {
+        "a": "経過観察",
+        "b": "コンポジットレジン修復",
+        "c": "抜髄",
+        "d": "感染根管治療",
+        "e": "抜歯 No. 1A、B"
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119B22.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B34",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 34,
+      "text": "9歳の男児。下顎左側第一乳臼歯部の歯肉腫脹を主として来院した。軽度の動 揺はあるが、自発痛と打診痛はない。初診時の口腔内写真（別冊No. 7A）とエック ス線画像（別冊No.7B）を別に示す。 Dに対する適切な対応はどれか。1つ選べ。",
+      "choices": {
+        "a": "経過観察",
+        "b": "生活歯髄切断",
+        "c": "抜髄",
+        "d": "感染根管治療",
+        "e": "抜歯 No. 7 A、B"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119B34.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B53",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 53,
+      "text": "6歳の男児。転倒によって下顎前歯部を受傷したため来院した。下顎前歯部に動 揺は認められない。初診時の口腔内写真（別冊No.16A）とエックス線画像（別冊 No. 16B）を別に示す。 適切な対応はどれか。1つ選べ。",
+      "choices": {
+        "a": "固定",
+        "b": "整復",
+        "c": "抜歯",
+        "d": "抜髄",
+        "e": "経過観察 No. 16 A、B"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119B53.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B56",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 56,
+      "text": "生後3か月の乳児。舌の異常を主訴として来院した。出生時から哺乳瓶を使用し ているが、1週前から授乳時に号泣するという。初診時の体重は6,100gであっ た。初診時の口腔内写真（別冊No.18）を別に示す。 まず行うのはどれか。1つ選べ。",
+      "choices": {
+        "a": "A抜去",
+        "b": "経過観察",
+        "c": "舌の生検。",
+        "d": "人工乳首の変更",
+        "e": "I 切縁の形態修正 No. 18"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119B56.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B63",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 63,
+      "text": "9歳の男児。上顎左側中切歯の歯列不正を主訴として来院した。8歳になってか ら萌出し、徐々に突出してきたという。初診時の口腔内写真（別冊No. 21A、B）と エックス線画像（別冊No. 21C）を別に示す。 原因として考えられるのはどれか。2つ選べ。",
+      "choices": {
+        "a": "過剰歯",
+        "b": "癒合歯",
+        "c": "口腔習癖",
+        "d": "上唇小帯",
+        "e": "切歯結節 No. 21 A、B、C"
+      },
+      "answer": "AB OR AE OR BE OR CE",
+      "numChoices": 2,
+      "hasImage": true,
+      "imageFiles": "119B63.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B66",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 66,
+      "text": "軟骨無形成症児にみられる口腔所見はどれか。1つ選べ。",
+      "choices": {
+        "a": "溝状舌",
+        "b": "短根歯",
+        "c": "上顎の劣成長",
+        "d": "タウロドント",
+        "e": "歯の早期萌出"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B82",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 82,
+      "text": "離乳の開始時期で推奨されるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "生後1～2か月",
+        "b": "生後3～4か月 C 生後5～6か月",
+        "c": "",
+        "d": "生後7〜8か月",
+        "e": "生後9～10か月"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C1",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 1,
+      "text": "永久歯歯根吸収の原因となり得るのはどれか。1つ選べ。",
+      "choices": {
+        "a": "隣接する埋伏歯",
+        "b": "歯肉の線維性肥厚 隣在歯の骨性癒着",
+        "c": "",
+        "d": "乳歯歯根の吸収不全 乳歯萌出方向の異常",
+        "e": ""
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C37",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 37,
+      "text": "",
+      "choices": {
+        "a": "下唇の運動障害",
+        "b": "終生免疫の獲得 抗体価の定期的測定",
+        "c": "",
+        "d": "神経障害性疼痛の出現",
+        "e": "第™脳神経症状の出現 No. 10 A、B、C 37 症候群と口腔所見の組合せで正しいのはどれか。2つ選べ。"
+      },
+      "answer": "AE",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C41",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 41,
+      "text": "",
+      "choices": {
+        "a": "味覚閾値",
+        "b": "食塊形成能",
+        "c": "義歯の維持力",
+        "d": "齲蝕の発生確率",
+        "e": "口腔粘膜湿潤度 41 7歳児における上顎乳中切歯外傷の受傷様式と対応の組合せで正しいのはどれ か。1つ選べ。 整復固定"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C46",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 46,
+      "text": "",
+      "choices": {
+        "a": "ア bイ",
+        "b": "",
+        "c": "ウ",
+        "d": "エ",
+        "e": "オ No. 14A、B 46 8歳の男児。上顎両側中切歯の出遅延を主訴として来院した。歯の外傷の既往 はないという。上顎埋伏過剰歯を抜去することとした。初診時の口腔内写真（別冊 No. 15A）、エックス線画像（別冊No. 15B）及び歯科用コーンビームCT（別冊 No. 15C）を別に示す。抜歯手順と用いる器具を示す。 ③に入る器具はどれか。1つ選べ。 局所麻酔（注射器）→回→②→③→④→⑤→縫合（持針器）"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119C46.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C68",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 68,
+      "text": "",
+      "choices": {
+        "a": "骨折",
+        "b": "骨膜反応 C 唾液の停滞",
+        "c": "",
+        "d": "咽頭腔の偏位",
+        "e": "異所性石灰化物 No. 25 A、B、C、D 689歳の女児。近医で下顎右側第一大臼歯の位置異常を指摘され来院した。診断の 結果、6の遠心移動を行うこととした。初診時の口腔内写真（別冊No. 26A）とエッ クス線画像（別冊No. 26B）を別に示す。 6遠心移動後の対応はどれか。1つ選べ。"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119C68.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C76",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 76,
+      "text": "乳歯のコンポジットレジン冠修復で用いるのはどれか。2つ選べ。",
+      "choices": {
+        "a": "Tバンド",
+        "b": "ウェッジ",
+        "c": "金冠バサミ",
+        "d": "クラウンフォーム",
+        "e": "ポリエステル製マトリックス"
+      },
+      "answer": "CD",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C83",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 83,
+      "text": "9歳の女児。上顎右側側切歯の形態異常を主訴として来院した。歯髄電気診で生 活反応を示し、盲孔にリーマーを挿入しても疼痛はない。初診時の口腔内写真（別 冊No. 32A）とリーマー挿入時のエックス線画像（別冊No. 32B）を別に示す。 2への適切な対応はどれか。1つ選べ。",
+      "choices": {
+        "a": "抜髄",
+        "b": "経過観察",
+        "c": "生活断髄",
+        "d": "予防塡塞",
+        "e": "感染根管治療 No. 32 A、B"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119C83.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D1",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 1,
+      "text": "習慣性口呼吸を伴う小児でみられるのはどれか。2つ選べ。",
+      "choices": {
+        "a": "低位舌",
+        "b": "鼻唇角の開大",
+        "c": "上顎歯列弓の開大",
+        "d": "下顎骨の後下方回転",
+        "e": "下顎切歯の舌側傾斜"
+      },
+      "answer": "AD",
+      "numChoices": 2,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D9",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 9,
+      "text": "Hellman の歯齢で顎間空隙がみられるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "IA期",
+        "b": "IC期",
+        "c": "IIA期",
+        "d": "IIC期",
+        "e": "IIA期"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D21",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 21,
+      "text": "上顎乳中切歯の出開始時期に獲得する運動機能＜粗大運動）はどれか。 1つ選べ。",
+      "choices": {
+        "a": "走る",
+        "b": "寝返り",
+        "c": "首がすわる",
+        "d": "つかまり立ち",
+        "e": "ボールをける"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D31",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 31,
+      "text": "3歳児の歯科診療において保護者が同席する利点で正しいのはどれか。 1つ選べ。",
+      "choices": {
+        "a": "患児が精神的に安定する。",
+        "b": "チェアタイムの短縮に繋がる。",
+        "c": "治療内容の説明が省略できる。",
+        "d": "保護者の口腔内環境が改善される。",
+        "e": "患児との良好なラポールが形成できる。"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D39",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 39,
+      "text": "初めて歯科を受診する小児に有効な対応法はどれか。1つ選べ。",
+      "choices": {
+        "a": "タイムアウト法",
+        "b": "Tell-Show-Do法",
+        "c": "フラッディング法",
+        "d": "レスポンスコスト法",
+        "e": "ハンドオーバーマウス法"
+      },
+      "answer": "B",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D84",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 84,
+      "text": "6歳の男児。歯の変を主訴として来院した。下顎右側中切歯は2か月前に生え 始めたが、その時から変色していたという。1歳時に下顎乳前歯部外傷の既往があ るという。初診時の口腔内写真（別冊No. 30A、B）とエックス線画像（別冊No. 30 C）を別に示す。 Tへの適切な対応はどれか。1つ選べ。",
+      "choices": {
+        "a": "抜歯",
+        "b": "歯の漂白",
+        "c": "フッ化物塗布",
+        "d": "アペキシフィケーション",
+        "e": "コンポジットレジン修復 No. 30 A、B、C"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119D84.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D85",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 85,
+      "text": "児童虐待において身体的虐待はどれか。3つ選べ。",
+      "choices": {
+        "a": "顎骨骨折",
+        "b": "口角裂傷 歯冠破折",
+        "c": "",
+        "d": "多数歯齲蝕",
+        "e": "口腔清掃不良"
+      },
+      "answer": "ABC",
+      "numChoices": 3,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    }
+  ]
+}

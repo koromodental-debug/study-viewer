@@ -1,0 +1,341 @@
+{
+  "subject": "歯科放射線学",
+  "questions": [
+    {
+      "code": "119A11",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 11,
+      "text": "男性の放射線診療従事者が、個人モニタリングでガラスバッジ線量計を装着する 部位はどれか。1つ選べ。",
+      "choices": {
+        "a": "胸部",
+        "b": "頸部",
+        "c": "肩部",
+        "d": "腹部",
+        "e": "腰部"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A40",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 40,
+      "text": "86歳の女性。上顎前歯部口蓋側の腫脹を主訴として来院した。3か月前から自 覚していたが痛みがないため、そのままにしていたという。触診によって軽度の圧 痛を認めるが、粘膜のに異常は認めない。初診時のエックス線画像（別冊No.7 A）、CT 軟組織表示横断像（別冊No.7B）、CT 硬組織表示横断像（別冊No.7C）、 MRI脂肪抑制 T2 強調横断像（別冊No. 7D）及びMRI T1 強調冠状断像（別冊No.7 E）を別に示す。 最も考えられるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "歯根嚢胞",
+        "b": "粘液嚢胞",
+        "c": "鼻歯槽嚢胞",
+        "d": "鼻口蓋管嚢胞",
+        "e": "術後性上顎嚢胞 No. 7 A、B、C、D、E"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A40.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A47",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 47,
+      "text": "85歳の女性。上唇の腫脹を主訴として来院した。3か月前に自覚したが疼痛が ないためそのままにしていたところ次第に増大しているという。腫脹部は弾性硬で 可動性があるが圧痛はない。上下顎の義歯を使用しているが適合は不良である。初 診時の口腔内写真（別冊No. 11A）、パノラマエックス線画像（別冊No.11B）、超音 波検査像（別冊No.11C）及びMRI 脂肪抑制T2強調像（別冊No.11D）を別に示す。 考えられるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "脂肪腫",
+        "b": "静脈奇形",
+        "c": "多形性腺腫",
+        "d": "粘液嚢胞",
+        "e": "鼻歯槽嚢胞 No. 11 A、B、C、D ー 20一"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A47.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A54",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 54,
+      "text": "下顎右側大臼歯部の顎骨骨髄炎を疑う患者の初診時のエックス線画像（別冊 No. 15A）と3か月後のエックス線画像（別冊No. 15B）を別に示す。 初診時と比較した3か月後のエックス線画像で新たにみられるのはどれか。1つ 選べ。",
+      "choices": {
+        "a": "骨硬化",
+        "b": "骨膜反応",
+        "c": "病的骨折",
+        "d": "腐骨分離 歯槽頂部骨吸収 No. 15 A、B",
+        "e": ""
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119A54.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119A61",
+      "examNum": 119,
+      "section": "A",
+      "questionNum": 61,
+      "text": "放射線診療従事者で等価線量限度が定められているのはどれか。3つ選べ。",
+      "choices": {
+        "a": "脳",
+        "b": "皮膚",
+        "c": "水晶体",
+        "d": "唾液腺",
+        "e": "妊娠中の女性腹部"
+      },
+      "answer": "BCE",
+      "numChoices": 3,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B16",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 16,
+      "text": "口内法エックス線撮影において、小児と成人で変更するのはどれか。2つ選べ。",
+      "choices": {
+        "a": "照射時間",
+        "b": "照射筒の長さ",
+        "c": "焦点の大きさ",
+        "d": "ろ過板の厚さ",
+        "e": "検出器の大きさ"
+      },
+      "answer": "AE",
+      "numChoices": 2,
+      "hasImage": true,
+      "imageFiles": "119B16.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B23",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 23,
+      "text": "左側口底部の無痛性腫脹を主訴として来院した患者の MRI脂肪抑制T2強調冠 状断像（別冊No. 2A）、脂肪抑制T2強調横断像（別冊No. 2B）及び拡散強調像（別 冊No. 2C）を別に示す。 最も疑われるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "膿瘍",
+        "b": "脂肪腫",
+        "c": "唾石症",
+        "d": "顎下腺炎",
+        "e": "ラヌーラ No. 2 A、B、C"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119B23.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119B39",
+      "examNum": 119,
+      "section": "B",
+      "questionNum": 39,
+      "text": "組織内照射に用いる核種で、永久的に留置するのはどれか。1つ選べ。",
+      "choices": {
+        "a": "198Au",
+        "b": "6oCo",
+        "c": "137Cs",
+        "d": "192r",
+        "e": "220Ra"
+      },
+      "answer": "A",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C26",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 26,
+      "text": "口内法エックス線撮影時に被曝を感念して躊躇する患者への説明で正しいのはど れか。2つ選べ。 a「エックス線画像がないと治療は行えません」",
+      "choices": {
+        "a": "",
+        "b": "「エックス線の照射範囲を絞って撮影します」",
+        "c": "「防護エプロンをするので被曝はありません」 d「通常よりエックス線の量を少なくして撮影します」",
+        "d": "",
+        "e": "「エックス線画像から得られる情報で正確な診断が出来ます」"
+      },
+      "answer": "BE",
+      "numChoices": 2,
+      "hasImage": true,
+      "imageFiles": "119C26.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C39",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 39,
+      "text": "",
+      "choices": {
+        "a": "IMPA",
+        "b": "顔面角",
+        "c": "オーバーバイト",
+        "d": "オーバージェット",
+        "e": "下顎の歯槽基底弓長径 No. 11 39 治療に用いる放射線で、ブラックピークを形成するのはどれか。2つ選べ。"
+      },
+      "answer": "BD",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C62",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 62,
+      "text": "",
+      "choices": {
+        "a": "隅角徴",
+        "b": "歯冠豊隆",
+        "c": "辺縁封鎖性",
+        "d": "歯間鼓形空隙",
+        "e": "頰側寄り 1/3での接触点 No. 21 62 39歳の女性。かかりつけ歯科医で指摘された下顎左側臼歯部のエックス線不透 過像の精査を希望して来院した。自覚症状はなく、腫脹も認めない。初診時のエッ クス線画像（別冊No. 22A）と歯科用コーンビームCT（別冊No.22B）を別に示す。 疑われるのはどれか。1つ選べ。"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119C62.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119C67",
+      "examNum": 119,
+      "section": "C",
+      "questionNum": 67,
+      "text": "",
+      "choices": {
+        "a": "黒毛舌- - 自己抗体産生",
+        "b": "天疱瘡",
+        "c": "手足口病 - ウイルス感染",
+        "d": "口腔カンジダ症 一 - 細菌感染 - 牣理的刺激",
+        "e": "壊死性潰瘍性口内炎 67 59歳の男性。かかりつけ歯科医で指摘された下顎左側のエックス線異常像の精 査を希望して来院した。3年前に初めて左側顎下部の腫脹と疼痛を自覚して、その 後も時々繰り返しているという。初診時のエックス線画像（別冊No. 25A、B）、骨 表示 CT 横断像（別冊No. 25C）及び組織表示CT 横断像（別冊No.25D）を別に示 す。 画像から得られる所見はどれか。2つ選べ。"
+      },
+      "answer": "CE",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119C67.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D6",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 6,
+      "text": "上顎左側前歯部の口内法エックス線画像（別冊No. 1）を別に示す。 矢印で示すのはどれか。1つ選べ。",
+      "choices": {
+        "a": "鼻腔",
+        "b": "上顎洞",
+        "c": "切歯管",
+        "d": "前鼻棘",
+        "e": "鼻涙管 No.1"
+      },
+      "answer": "C",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119D6.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D8",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 8,
+      "text": "（ ） provides volumetric data that can be reformatted to display multi- dimensional images with ionizing radiation. （ ）に入るのはどれか。1つ選べ。",
+      "choices": {
+        "a": "Ultrasonography",
+        "b": "Panoramic radiography",
+        "c": "Intra-oral radiography",
+        "d": "Magnetic resonance imaging",
+        "e": "Cone beam computed tomography"
+      },
+      "answer": "E",
+      "numChoices": 1,
+      "hasImage": false,
+      "imageFiles": "",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D26",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 26,
+      "text": "44歳の女性。右側顎関節部の開口時痛を主訴として来院した。2年前から関節 音を自覚していたが、6か月前から音が消失し口が開きづらくなってきたという。 顎関節部に腫脹と発赤はなく、最大開口量は 38mm である。初診時のエックス線 画像（別冊No. 4A）、CT（別冊No.4B）及び右側顎関節のMRI（別冊No.4C）を別 に示す。 最も疑われるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "顎関節強直症",
+        "b": "滑膜性軟骨腫症",
+        "c": "痛風性顎関節炎",
+        "d": "変形性顎関節症",
+        "e": "急性化膿性顎関節炎 No. 4 A、B、C"
+      },
+      "answer": "D",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119D26.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    },
+    {
+      "code": "119D51",
+      "examNum": 119,
+      "section": "D",
+      "questionNum": 51,
+      "text": "75歳の女性。下顎左側大臼歯部の腫脹を主訴として来院した。半年前から自覚 していたが、疼痛がないためそのままにしていたという。粘膜の色に異常は認めな い。既往歴として15年前に乳癌の治療を受け、現在は経過観察中である。初診時 のエックス線画像（別冊No. 12A）とCT（別冊No.12B）を別に示す。 最も疑われるのはどれか。1つ選べ。",
+      "choices": {
+        "a": "歯根嚢胞",
+        "b": "顎骨骨髄炎 単純性骨嚢胞",
+        "c": "",
+        "d": "歯原性角化嚢胞",
+        "e": "乳癌の顎骨転移 No. 12 A、B"
+      },
+      "answer": "D OR E",
+      "numChoices": 1,
+      "hasImage": true,
+      "imageFiles": "119D51.png",
+      "chapter": "",
+      "theme": "",
+      "keyword": ""
+    }
+  ]
+}

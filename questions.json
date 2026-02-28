@@ -154355,7 +154355,9 @@
       "answer": "A",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A5_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -154447,7 +154449,9 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A9_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -154769,7 +154773,11 @@
       "answer": "AC",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A23_1.png",
+        "119A23_2.png",
+        "119A23_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -154861,7 +154869,9 @@
       "answer": "DE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A27_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -154976,7 +154986,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A32_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155022,7 +155034,12 @@
       "answer": "BD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A34_1.png",
+        "119A34_2.png",
+        "119A34_3.png",
+        "119A34_4.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155091,7 +155108,9 @@
       "answer": "A",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A37_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155160,7 +155179,12 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A40_1.png",
+        "119A40_2.png",
+        "119A40_3.png",
+        "119A40_de.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155183,7 +155207,11 @@
       "answer": "CE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A41_1.png",
+        "119A41_2.png",
+        "119A41_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155204,9 +155232,11 @@
       },
       "choiceCount": 1,
       "answer": "D",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A42_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155252,7 +155282,9 @@
       "answer": "ADE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A44_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155298,7 +155330,11 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A46_1.png",
+        "119A46_2.png",
+        "119A46_cd.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155321,7 +155357,12 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A47_1.png",
+        "119A47_2.png",
+        "119A47_3.png",
+        "119A47_4.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155342,9 +155383,12 @@
       },
       "choiceCount": 1,
       "answer": "B",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A48.png",
+        "119A48_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155390,7 +155434,10 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A50_1.png",
+        "119A50_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155459,7 +155506,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A53.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155482,7 +155531,10 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A54_1.png",
+        "119A54_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155528,7 +155580,12 @@
       "answer": "DE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A56_1.png",
+        "119A56_2.png",
+        "119A56_3.png",
+        "119A56_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155574,7 +155631,9 @@
       "answer": "ABE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A58.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155620,7 +155679,10 @@
       "answer": "AD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A60_1.png",
+        "119A60_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155689,7 +155751,11 @@
       "answer": "B OR E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A63_1.png",
+        "119A63_2.png",
+        "119A63_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155735,7 +155801,10 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A65_1.png",
+        "119A65_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155758,7 +155827,11 @@
       "answer": "AE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A66_1.png",
+        "119A66_2.png",
+        "119A66_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155827,7 +155900,9 @@
       "answer": "A",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A69_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155850,7 +155925,10 @@
       "answer": "B",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A70.png",
+        "119A70_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155896,7 +155974,10 @@
       "answer": "B",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A72_1.png",
+        "119A72_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155919,7 +156000,13 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A73_1.png",
+        "119A73_2.png",
+        "119A73_3.png",
+        "119A73_4.png",
+        "119A73_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155942,7 +156029,9 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A74.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -155988,7 +156077,10 @@
       "answer": "B",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A76_1.png",
+        "119A76_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156011,7 +156103,14 @@
       "answer": "ABCE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A77_1.png",
+        "119A77_2.png",
+        "119A77_3.png",
+        "119A77_4.png",
+        "119A77_5.png",
+        "119A77_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156057,7 +156156,12 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A79_1.png",
+        "119A79_2.png",
+        "119A79_3.png",
+        "119A79_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156103,7 +156207,11 @@
       "answer": "BD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A81_1.png",
+        "119A81_2.png",
+        "119A81_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156126,7 +156234,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A82_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156149,7 +156259,9 @@
       "answer": "ACD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A83.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156241,7 +156353,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A87.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156287,7 +156401,10 @@
       "answer": "ECBAD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119A89_1.png",
+        "119A89_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156561,9 +156678,11 @@
       },
       "choiceCount": 1,
       "answer": "A",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B11_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156816,7 +156935,10 @@
       "answer": "B",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B22_1.png",
+        "119B22_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156839,7 +156961,11 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B23_1.png",
+        "119B23_2.png",
+        "119B23_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156862,7 +156988,9 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B24_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156908,7 +157036,9 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B26_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -156929,9 +157059,11 @@
       },
       "choiceCount": 1,
       "answer": "CE",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B27_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157046,7 +157178,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B32_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157092,7 +157226,10 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B34_1.png",
+        "119B34_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157138,7 +157275,12 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B36_1.png",
+        "119B36_2.png",
+        "119B36_3.png",
+        "119B36_4.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157184,7 +157326,11 @@
       "answer": "B",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B38_1.png",
+        "119B38_2.png",
+        "119B38_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157299,7 +157445,12 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B43_1.png",
+        "119B43_2.png",
+        "119B43_3.png",
+        "119B43_4.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157322,7 +157473,11 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B44_1.png",
+        "119B44_2.png",
+        "119B44_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157368,7 +157523,9 @@
       "answer": "BDE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B46_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157437,7 +157594,11 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B49_1.png",
+        "119B49_2.png",
+        "119B49_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157460,7 +157621,11 @@
       "answer": "AE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B50_1.png",
+        "119B50_2.png",
+        "119B50_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157481,9 +157646,12 @@
       },
       "choiceCount": 1,
       "answer": "A",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B51_1.png",
+        "119B51_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157529,7 +157697,10 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B53_1.png",
+        "119B53_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157552,7 +157723,9 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B54_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157598,7 +157771,9 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B56_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157621,7 +157796,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B57_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157736,7 +157913,10 @@
       "answer": "AE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B62_1.png",
+        "119B62_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157759,7 +157939,11 @@
       "answer": "AB OR AE OR BE OR CE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B63_1.png",
+        "119B63_2.png",
+        "119B63_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157805,7 +157989,12 @@
       "answer": "A",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B65_1.png",
+        "119B65_2.png",
+        "119B65_3.png",
+        "119B65_4.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157849,9 +158038,11 @@
       },
       "choiceCount": 2,
       "answer": "CD",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B67_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157874,7 +158065,9 @@
       "answer": "DE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B68_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157895,9 +158088,11 @@
       },
       "choiceCount": 1,
       "answer": "BCE",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B69_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157920,7 +158115,12 @@
       "answer": "BDE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B70_1.png",
+        "119B70_2.png",
+        "119B70_3.png",
+        "119B70_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -157943,7 +158143,10 @@
       "answer": "BE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B71_1.png",
+        "119B71_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158035,7 +158238,13 @@
       "answer": "ABD OR BDE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B75_1.png",
+        "119B75_2.png",
+        "119B75_3.png",
+        "119B75_図1.png",
+        "119B75_図2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158058,7 +158267,12 @@
       "answer": "AB",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B76_1.png",
+        "119B76_2.png",
+        "119B76_図1.png",
+        "119B76_図2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158127,7 +158341,12 @@
       "answer": "ABE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B79_1.png",
+        "119B79_2.png",
+        "119B79_3.png",
+        "119B79_4.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158173,7 +158392,10 @@
       "answer": "ABC",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B81_1.png",
+        "119B81_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158242,7 +158464,11 @@
       "answer": "A",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B84_1.png",
+        "119B84_2.png",
+        "119B84_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158265,7 +158491,10 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B85_1.png",
+        "119B85_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158311,7 +158540,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B87_1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158378,9 +158609,11 @@
       },
       "choiceCount": 1,
       "answer": "BEACD",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119B90_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158794,7 +159027,9 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C18.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158863,7 +159098,10 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C21.png",
+        "119C21_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158886,7 +159124,13 @@
       "answer": "AD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C22_1.png",
+        "119C22_2.png",
+        "119C22_3.png",
+        "119C22_4.png",
+        "119C22_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -158909,7 +159153,9 @@
       "answer": "BC",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C23.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159024,7 +159270,10 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C28_1.png",
+        "119C28_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159070,7 +159319,11 @@
       "answer": "BCD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C30_1.png",
+        "119C30_2.png",
+        "119C30_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159139,7 +159392,10 @@
       "answer": "ABD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C33_1.png",
+        "119C33_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159162,7 +159418,10 @@
       "answer": "BE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C34_1.png",
+        "119C34_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159185,7 +159444,10 @@
       "answer": "BDE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C35_1.png",
+        "119C35_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159208,7 +159470,11 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C36_1.png",
+        "119C36_2.png",
+        "119C36_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159254,7 +159520,9 @@
       "answer": "CD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C38.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159369,7 +159637,9 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C43.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159392,7 +159662,9 @@
       "answer": "B",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C44.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159415,7 +159687,10 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C45_1.png",
+        "119C45_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159438,7 +159713,12 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C46_1.png",
+        "119C46_2.png",
+        "119C46_3.png",
+        "119C46_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159461,7 +159741,10 @@
       "answer": "A",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C47_1.png",
+        "119C47_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159484,7 +159767,9 @@
       "answer": "CDE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C48.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159691,7 +159976,10 @@
       "answer": "CE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C57_1.png",
+        "119C57_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159737,7 +160025,10 @@
       "answer": "AD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C59_1.png",
+        "119C59_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159760,7 +160051,9 @@
       "answer": "CE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C60.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159783,7 +160076,9 @@
       "answer": "ABD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C61.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159806,7 +160101,10 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C62_1.png",
+        "119C62_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159829,7 +160127,9 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C63.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159850,9 +160150,12 @@
       },
       "choiceCount": 1,
       "answer": "CD",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C64.png",
+        "119C64_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159875,7 +160178,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C65_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159921,7 +160226,12 @@
       "answer": "CE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C67_1.png",
+        "119C67_2.png",
+        "119C67_3.png",
+        "119C67_4.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159944,7 +160254,10 @@
       "answer": "A",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C68_1.png",
+        "119C68_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -159990,7 +160303,9 @@
       "answer": "A",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C70.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160011,9 +160326,11 @@
       },
       "choiceCount": 1,
       "answer": "B",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C71.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160036,7 +160353,9 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C72_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160105,7 +160424,13 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C75_1.png",
+        "119C75_2.png",
+        "119C75_3.png",
+        "119C75_4.png",
+        "119C75_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160197,7 +160522,11 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C79_1.png",
+        "119C79_2.png",
+        "119C79_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160243,7 +160572,9 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C81.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160289,7 +160620,10 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C83_1.png",
+        "119C83_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160335,7 +160669,9 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C85.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160381,7 +160717,11 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C87_1.png",
+        "119C87_2.png",
+        "119C87_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160404,7 +160744,10 @@
       "answer": "CDAEB",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C88_1.png",
+        "119C88_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160427,7 +160770,12 @@
       "answer": "ECBDA",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C89_1.png",
+        "119C89_2.png",
+        "119C89_3.png",
+        "119C89_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160450,7 +160798,9 @@
       "answer": "20",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119C90.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160588,7 +160938,9 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D6.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -160956,7 +161308,13 @@
       "answer": "BDE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D22_1.png",
+        "119D22_2.png",
+        "119D22_3.png",
+        "119D22_4.png",
+        "119D22_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161002,7 +161360,10 @@
       "answer": "AE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D24_1.png",
+        "119D24_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161048,7 +161409,11 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D26_1.png",
+        "119D26_2.png",
+        "119D26_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161117,7 +161482,9 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D29_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161140,7 +161507,10 @@
       "answer": "AB",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D30_1.png",
+        "119D30_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161232,7 +161602,11 @@
       "answer": "B",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D34_1.png",
+        "119D34_2.png",
+        "119D34_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161255,7 +161629,10 @@
       "answer": "BD",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D35.png",
+        "119D35_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161416,7 +161793,13 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D42_1.png",
+        "119D42_2.png",
+        "119D42_3.png",
+        "119D42_4.png",
+        "119D42_5.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161485,7 +161868,9 @@
       "answer": "AE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D45.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161508,7 +161893,9 @@
       "answer": "A",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D46.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161600,7 +161987,12 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D50_1.png",
+        "119D50_2.png",
+        "119D50_3.png",
+        "119D50_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161623,7 +162015,10 @@
       "answer": "D OR E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D51_1.png",
+        "119D51_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161644,9 +162039,11 @@
       },
       "choiceCount": 1,
       "answer": "C",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D52_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161715,7 +162112,11 @@
       "answer": "CE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D55.png",
+        "119D55_図1.png",
+        "119D55_図2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161738,7 +162139,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D56.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161761,7 +162164,9 @@
       "answer": "B",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D57.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161853,7 +162258,12 @@
       "answer": "CE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D61_1.png",
+        "119D61_2.png",
+        "119D61_3.png",
+        "119D61_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161899,7 +162309,9 @@
       "answer": "AC",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D63.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161945,7 +162357,10 @@
       "answer": "DE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D65_1.png",
+        "119D65_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161968,7 +162383,9 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D66.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -161991,7 +162408,9 @@
       "answer": "CE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D67.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162037,7 +162456,9 @@
       "answer": "B",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D69.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162060,7 +162481,12 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D70_1.png",
+        "119D70_2.png",
+        "119D70_3.png",
+        "119D70_4.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162129,7 +162555,9 @@
       "answer": "AC",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D73.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162175,7 +162603,9 @@
       "answer": "D",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D75_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162198,7 +162628,12 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D76_1.png",
+        "119D76_2.png",
+        "119D76_3.png",
+        "119D76_4.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162244,7 +162679,10 @@
       "answer": "ACD OR CDE",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D78_1.png",
+        "119D78_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162267,7 +162705,11 @@
       "answer": "E",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D79_1.png",
+        "119D79_2.png",
+        "119D79_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162313,7 +162755,11 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D81_1.png",
+        "119D81_2.png",
+        "119D81_図1.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162336,7 +162782,15 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D82_1.png",
+        "119D82_2.png",
+        "119D82_3.png",
+        "119D82_4.png",
+        "119D82_5.png",
+        "119D82_6.png",
+        "119D82_7.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162357,9 +162811,12 @@
       },
       "choiceCount": 1,
       "answer": "C",
-      "hasFigure": false,
+      "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D83_1.png",
+        "119D83_2.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162382,7 +162839,11 @@
       "answer": "C",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D84_1.png",
+        "119D84_2.png",
+        "119D84_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162474,7 +162935,11 @@
       "answer": "H",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D88_1.png",
+        "119D88_2.png",
+        "119D88_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,
@@ -162497,7 +162962,11 @@
       "answer": "ADCEB",
       "hasFigure": true,
       "figureRefs": [],
-      "images": [],
+      "images": [
+        "119D89_1.png",
+        "119D89_2.png",
+        "119D89_3.png"
+      ],
       "isExcluded": false,
       "category": null,
       "subcategory": null,

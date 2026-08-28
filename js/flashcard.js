@@ -830,9 +830,6 @@ const FlashcardModule = (function() {
 
     saveDailyStats(stats);
 
-    // 公開統計を自動更新（ログインユーザーは強制参加）
-    updatePublicStats();
-
     return stats;
   }
 
@@ -1004,20 +1001,6 @@ const FlashcardModule = (function() {
             </div>
           </div>
 
-          <!-- みんなの学習状況（直接表示） -->
-          <div class="stats-ranking-section">
-            <h3 class="stats-section-title">👥 みんなの学習状況</h3>
-            <p class="stats-ranking-desc">週間学習量ランキング（匿名）</p>
-            <div class="stats-ranking-list" id="stats-ranking-list">
-              <div class="ranking-loading">読み込み中...</div>
-            </div>
-            <div class="stats-ranking-average" id="stats-ranking-average" style="display:none;">
-              <span class="stats-ranking-average-label">全体平均:</span>
-              <span class="stats-ranking-average-value" id="stats-ranking-average-value">-</span>
-              <span class="stats-ranking-average-unit">枚/週</span>
-            </div>
-          </div>
-
           <!-- 閉じるボタン（末尾） -->
           <button class="stats-detail-close-bottom" id="stats-detail-close-bottom">閉じる</button>
         </div>
@@ -1047,8 +1030,6 @@ const FlashcardModule = (function() {
       });
     });
 
-    // ランキング読み込み
-    loadRankingInStats();
   }
 
   function closeStatsDetailSheet() {

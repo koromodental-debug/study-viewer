@@ -10,6 +10,9 @@
       "firestore.rules",
       "firestore.indexes.json",
       ".firebaserc",
+      "**/.*",
+      ".playwright-cli/**",
+      "output/**",
       "**/node_modules/**",
       "**/.git/**",
       "**/.gitignore",
@@ -24,6 +27,9 @@
       "国家試験過去問 2/**",
       "scripts/**",
       "reports/**",
+      "admin-*.html",
+      "qa-report.html",
+      "data/**",
       "migrate*.html",
       "migrate*.js",
       "cleanup-*.js",
@@ -39,6 +45,17 @@
       "移動完了"
     ],
     "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {"key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://cdnjs.cloudflare.com https://apis.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com wss://*.firebaseio.com https://*.firebaseapp.com; frame-src https://*.firebaseapp.com https://accounts.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; worker-src 'self' blob:; upgrade-insecure-requests"},
+          {"key": "X-Content-Type-Options", "value": "nosniff"},
+          {"key": "X-Frame-Options", "value": "DENY"},
+          {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+          {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"},
+          {"key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups"}
+        ]
+      },
       {
         "source": "**/*.js",
         "headers": [{"key": "Cache-Control", "value": "no-cache, must-revalidate"}]
